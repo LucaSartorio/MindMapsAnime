@@ -1,6 +1,11 @@
 // Tipi generici per Anime Interactive Maps
 // Pensati per essere riutilizzabili da qualsiasi opera (Naruto, One Piece, HxH, ...)
 
+import type { Localizable } from './i18n';
+
+export type { Localizable } from './i18n';
+export type { LocalizedText, SupportedLocale } from './i18n';
+
 export type WorldStatus = 'available' | 'coming_soon' | 'hidden';
 
 export type LocationType =
@@ -96,6 +101,8 @@ export interface MapBoundary {
   /** Slug usato per chiavi/lookup */
   slug: string;
   name: string;
+  /** Nome localizzato per UI (opzionale). */
+  localizedName?: Localizable;
   japaneseName?: string;
   type: BoundaryType;
   canonStatus: CanonStatus;
@@ -110,8 +117,8 @@ export interface MapBoundary {
   relatedCharacterIds?: string[];
   relatedArcIds?: string[];
   relatedEventIds?: string[];
-  descriptionShort: string;
-  descriptionLong?: string;
+  descriptionShort: Localizable;
+  descriptionLong?: Localizable;
   /** Colore principale del territorio (riempimento overlay) */
   color?: string;
   tags?: string[];
@@ -147,8 +154,8 @@ export interface AssetReference {
   license: string;
   /** Sorgente originale */
   source?: string;
-  /** Note utili (es. "placeholder generato localmente") */
-  notes?: string;
+  /** Note (localizzabili). */
+  notes?: Localizable;
 }
 
 /* ------------------------------ Mondo / Anime ------------------------------ */
@@ -158,8 +165,10 @@ export interface AnimeWorld {
   /** Slug usato nelle rotte: /worlds/:slug */
   slug: string;
   title: string;
-  subtitle?: string;
-  description: string;
+  /** Sottotitolo. Può essere stringa o LocalizedText. */
+  subtitle?: Localizable;
+  /** Descrizione del mondo. Può essere stringa o LocalizedText. */
+  description: Localizable;
   status: WorldStatus;
   /** Asset di copertina (id di un AssetReference) */
   coverAssetId?: string;
@@ -181,7 +190,8 @@ export interface MapLevel {
   /** Slug locale (es. "world", "konoha") */
   slug: string;
   name: string;
-  description?: string;
+  localizedName?: Localizable;
+  description?: Localizable;
   /** Mappa "padre" — utile per drill-down (world > nation > village) */
   parentLevelId?: string;
   /** Eventuale luogo che apre questo livello (es. Konoha apre sottomappa) */
@@ -199,6 +209,8 @@ export interface Nation {
   id: string;
   worldId: string;
   name: string;
+  /** Nome localizzato visualizzato in UI (opzionale, fallback su `name`). */
+  localizedName?: Localizable;
   nameLocal?: string;
   japaneseName?: string;
   /** Classificazione canon per la nazione */
@@ -209,8 +221,8 @@ export interface Nation {
     | 'anime_only'
     | 'movie_only'
     | 'uncertain';
-  description: string;
-  descriptionLong?: string;
+  description: Localizable;
+  descriptionLong?: Localizable;
   capitalLocationId?: string;
   /** Villaggi nascosti che appartengono a questa nazione */
   hiddenVillageIds?: string[];
@@ -232,13 +244,15 @@ export interface Location {
   worldId: string;
   mapLevelId: string;
   name: string;
+  /** Nome localizzato per UI. */
+  localizedName?: Localizable;
   nameLocal?: string;
   type: LocationType;
   /** Coordinate nella mappa (0..mapLevel.width) */
   x: number;
   y: number;
-  shortDescription: string;
-  longDescription?: string;
+  shortDescription: Localizable;
+  longDescription?: Localizable;
   nationId?: string;
   clanIds?: string[];
   characterIds?: string[];
@@ -284,8 +298,8 @@ export interface Character {
   gender?: string;
   firstMangaAppearance?: string;
   firstAnimeAppearance?: string;
-  shortDescription: string;
-  longDescription?: string;
+  shortDescription: Localizable;
+  longDescription?: Localizable;
   /** Abilità o tecniche caratteristiche */
   abilities?: string[];
   /** Kekkei Genkai posseduti */
@@ -329,12 +343,13 @@ export interface Faction {
   worldId: string;
   type: FactionType;
   name: string;
+  localizedName?: Localizable;
   nameLocal?: string;
   japaneseName?: string;
   nationId?: string;
   villageLocationId?: string;
-  description: string;
-  longDescription?: string;
+  description: Localizable;
+  longDescription?: Localizable;
   signatureAbilities?: string[];
   kekkeiGenkai?: string;
   /** Leader / capi noti */
@@ -359,10 +374,11 @@ export interface StoryArc {
   id: string;
   worldId: string;
   name: string;
-  saga?: string;
-  period?: string;
-  description: string;
-  longDescription?: string;
+  localizedName?: Localizable;
+  saga?: Localizable;
+  period?: Localizable;
+  description: Localizable;
+  longDescription?: Localizable;
   /** Ordine cronologico narrativo */
   order: number;
   locationIds?: string[];
@@ -387,11 +403,11 @@ export interface StoryArc {
 export interface TimelineEvent {
   id: string;
   worldId: string;
-  title: string;
-  description: string;
-  longDescription?: string;
+  title: Localizable;
+  description: Localizable;
+  longDescription?: Localizable;
   /** Periodo narrativo (es. "Naruto Parte I") */
-  period: string;
+  period: Localizable;
   arcId?: string;
   /** Luogo principale (legacy). */
   locationId?: string;
@@ -424,14 +440,14 @@ export interface RouteStep {
   id?: string;
   eventId?: string;
   arcId?: string;
-  label?: string;
+  label?: Localizable;
   /** Titolo dello step in UI; se assente usa label */
-  title?: string;
-  description?: string;
-  approximateTimeLabel?: string;
+  title?: Localizable;
+  description?: Localizable;
+  approximateTimeLabel?: Localizable;
   canonStatus?: CanonStatus;
   referenceStatus?: ReferenceStatus;
-  notes?: string;
+  notes?: Localizable;
 }
 
 export type RouteType =
@@ -449,8 +465,9 @@ export interface Route {
   worldId: string;
   type?: RouteType;
   name: string;
-  description: string;
-  longDescription?: string;
+  localizedName?: Localizable;
+  description: Localizable;
+  longDescription?: Localizable;
   /** Personaggio o gruppo protagonista del percorso (legacy). */
   protagonistCharacterIds: string[];
   /** Alias semantico per `protagonistCharacterIds` quando preferito. */
@@ -480,9 +497,10 @@ export interface Team {
   id: string;
   worldId: string;
   name: string;
+  localizedName?: Localizable;
   japaneseName?: string;
-  description: string;
-  longDescription?: string;
+  description: Localizable;
+  longDescription?: Localizable;
   /** Sensei o leader del team */
   leaderId?: string;
   memberIds: string[];

@@ -3,6 +3,9 @@ import { Card } from '@/components/common/Card';
 import { Badge } from '@/components/common/Badge';
 import { CanonPill, ReferencePill } from '@/components/common/StatusPill';
 import { cn } from '@/lib/cn';
+import { useLocaleStore } from '@/store/useLocaleStore';
+import { getLocalizedText } from '@/utils/localization';
+import { useTranslation } from 'react-i18next';
 
 interface StoryArcCardProps {
   arc: StoryArc;
@@ -17,9 +20,13 @@ export function StoryArcCard({
   active,
   onClick,
 }: StoryArcCardProps) {
+  const { t } = useTranslation();
+  const locale = useLocaleStore((s) => s.locale);
   const eventCount = dataset.events.filter((e) => e.arcId === arc.id).length;
   const locCount = (arc.locationIds ?? []).length;
   const charCount = (arc.characterIds ?? []).length;
+  const name = getLocalizedText(arc.localizedName, locale) || arc.name;
+  const saga = getLocalizedText(arc.saga, locale);
 
   return (
     <Card
@@ -36,20 +43,24 @@ export function StoryArcCard({
       >
         <div className="flex items-center justify-between text-[10px] uppercase tracking-widest text-ink-400 font-mono">
           <span>#{arc.order}</span>
-          {arc.saga && <span>{arc.saga}</span>}
+          {saga && <span>{saga}</span>}
         </div>
-        <h3 className="font-display text-lg text-ink-100">{arc.name}</h3>
+        <h3 className="font-display text-lg text-ink-100">{name}</h3>
         <p className="text-sm text-ink-300 leading-relaxed line-clamp-3">
-          {arc.description}
+          {getLocalizedText(arc.description, locale)}
         </p>
         <div className="flex flex-wrap items-center gap-1.5 mt-1">
           <CanonPill canon={arc.canon} />
           {arc.referenceStatus && (
             <ReferencePill status={arc.referenceStatus} />
           )}
-          <Badge>{eventCount} eventi</Badge>
-          {locCount > 0 && <Badge>{locCount} luoghi</Badge>}
-          {charCount > 0 && <Badge>{charCount} personaggi</Badge>}
+          <Badge>{t('modals.eventCount', { count: eventCount })}</Badge>
+          {locCount > 0 && (
+            <Badge>{t('modals.locationCount', { count: locCount })}</Badge>
+          )}
+          {charCount > 0 && (
+            <Badge>{t('modals.characterCount', { count: charCount })}</Badge>
+          )}
         </div>
       </button>
     </Card>

@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { IconButton } from '@/components/common/IconButton';
 import { useMapStore } from '@/store';
 
@@ -7,21 +8,22 @@ import { useMapStore } from '@/store';
  *  - Reset selezioni
  */
 export function MapControls() {
+  const { t } = useTranslation();
   const resetViewport = useMapStore((s) => s.resetViewport);
   const resetSelections = useMapStore((s) => s.resetSelections);
 
   return (
     <div className="panel inline-flex p-1 gap-1">
       <IconButton
-        aria-label="Reset zoom e centratura"
-        title="Reset vista"
+        aria-label={t('map.controls.resetView')}
+        title={t('map.controls.resetView')}
         onClick={resetViewport}
       >
         <span aria-hidden>⤾</span>
       </IconButton>
       <IconButton
-        aria-label="Reset selezioni mappa"
-        title="Reset selezioni"
+        aria-label={t('map.controls.resetSelections')}
+        title={t('map.controls.resetSelections')}
         onClick={resetSelections}
       >
         <span aria-hidden>⊘</span>

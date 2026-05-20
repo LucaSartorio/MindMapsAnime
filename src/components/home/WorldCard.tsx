@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import type { AnimeWorld } from '@/types';
 import { Card } from '@/components/common/Card';
 import { ComingSoonBadge } from './ComingSoonBadge';
+import { useLocaleStore } from '@/store/useLocaleStore';
+import { getLocalizedText } from '@/utils/localization';
 
 interface WorldCardProps {
   world: AnimeWorld;
@@ -53,7 +56,10 @@ function WorldCover({ world }: { world: AnimeWorld }) {
 }
 
 export function WorldCard({ world }: WorldCardProps) {
+  const { t } = useTranslation();
+  const locale = useLocaleStore((s) => s.locale);
   const isAvailable = world.status === 'available';
+  const description = getLocalizedText(world.description, locale);
   const inner = (
     <Card interactive className="relative overflow-hidden h-full">
       <div className="relative aspect-[16/9] overflow-hidden rounded-t-xl">
@@ -65,27 +71,31 @@ export function WorldCard({ world }: WorldCardProps) {
           </p>
           {world.subtitle && (
             <p className="text-xs font-mono text-ink-200 tracking-wide">
-              {world.subtitle}
+              {getLocalizedText(world.subtitle, locale)}
             </p>
           )}
         </div>
       </div>
       <div className="p-5 flex flex-col gap-4">
         <p className="text-sm text-ink-300 leading-relaxed line-clamp-3">
-          {world.description}
+          {description}
         </p>
         <div className="flex flex-wrap gap-1.5">
-          {world.tags.slice(0, 4).map((t) => (
-            <span key={t} className="chip text-[10px] uppercase">
-              {t}
+          {world.tags.slice(0, 4).map((tag) => (
+            <span key={tag} className="chip text-[10px] uppercase">
+              {tag}
             </span>
           ))}
         </div>
         <div className="mt-auto flex items-center justify-between">
           {isAvailable ? (
-            <span className="btn-primary px-4 py-2 text-sm">Esplora mappa →</span>
+            <span className="btn-primary px-4 py-2 text-sm">
+              {t('worldCard.explore')}
+            </span>
           ) : (
-            <span className="btn-disabled px-4 py-2 text-sm">In arrivo</span>
+            <span className="btn-disabled px-4 py-2 text-sm">
+              {t('worldCard.inArrivo')}
+            </span>
           )}
           <span className="text-[10px] uppercase tracking-widest font-mono text-ink-400">
             /{world.slug}
@@ -96,11 +106,10 @@ export function WorldCard({ world }: WorldCardProps) {
   );
 
   if (!isAvailable) {
-    // Anche se "coming soon" rendiamo cliccabile per atterrare sulla pagina dedicata.
     return (
       <Link
         to={`/worlds/${world.slug}`}
-        aria-label={`${world.title} (coming soon)`}
+        aria-label={`${world.title} · ${t('coming.badge')}`}
         className="block focus:outline-none"
       >
         {inner}
@@ -111,7 +120,7 @@ export function WorldCard({ world }: WorldCardProps) {
   return (
     <Link
       to={`/worlds/${world.slug}`}
-      aria-label={`Apri la mappa di ${world.title}`}
+      aria-label={`${t('worldCard.explore')} · ${world.title}`}
       className="block focus:outline-none"
     >
       {inner}

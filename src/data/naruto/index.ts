@@ -35,4 +35,8 @@ export const narutoDataset: WorldDataset = {
 };
 
 export { NARUTO_MAP_VIEWBOX, NARUTO_WORLD_MAP_SRC } from './mapConstants';
-export { narutoDataQuality, narutoDataQualitySummary } from './dataQuality';
+export {
+  narutoDataQuality,
+  narutoDataQualitySummary,
+  narutoTranslationTodos,
+} from './dataQuality';

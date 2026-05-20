@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import type { SearchResult } from '@/types';
 import { EmptyState } from '@/components/common/EmptyState';
 
@@ -6,31 +7,24 @@ interface SearchResultsProps {
   onSelect: (r: SearchResult) => void;
 }
 
-const KIND_LABELS: Record<SearchResult['kind'], string> = {
-  world: 'Mondo',
-  location: 'Luogo',
-  character: 'Personaggio',
-  faction: 'Clan/Fazione',
-  arc: 'Arco',
-  event: 'Evento',
-  nation: 'Nazione',
-  boundary: 'Regione',
-  route: 'Percorso',
-};
-
 export function SearchResults({ results, onSelect }: SearchResultsProps) {
+  const { t } = useTranslation();
   if (results.length === 0) {
     return (
       <div className="p-4">
         <EmptyState
-          title="Nessun risultato"
-          description="Prova con un altro termine."
+          title={t('search.emptyTitle')}
+          description={t('search.emptyDescription')}
         />
       </div>
     );
   }
   return (
-    <ul id="search-listbox" role="listbox" className="divide-y divide-ink-700/40">
+    <ul
+      id="search-listbox"
+      role="listbox"
+      className="divide-y divide-ink-700/40"
+    >
       {results.map((r) => (
         <li key={`${r.kind}-${r.id}`}>
           <button
@@ -49,7 +43,7 @@ export function SearchResults({ results, onSelect }: SearchResultsProps) {
               )}
             </span>
             <span className="chip text-[10px] uppercase tracking-widest">
-              {KIND_LABELS[r.kind]}
+              {t(`search.kinds.${r.kind}`)}
             </span>
           </button>
         </li>

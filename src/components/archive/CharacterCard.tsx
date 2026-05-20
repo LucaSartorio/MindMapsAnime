@@ -3,6 +3,11 @@ import { Card } from '@/components/common/Card';
 import { Badge } from '@/components/common/Badge';
 import { ReferencePill } from '@/components/common/StatusPill';
 import { cn } from '@/lib/cn';
+import { useLocaleStore } from '@/store/useLocaleStore';
+import {
+  getCharacterStatusLabel,
+  getLocalizedText,
+} from '@/utils/localization';
 
 interface CharacterCardProps {
   character: Character;
@@ -17,6 +22,7 @@ export function CharacterCard({
   active,
   onClick,
 }: CharacterCardProps) {
+  const locale = useLocaleStore((s) => s.locale);
   const village = character.villageLocationId
     ? dataset.locations.find((l) => l.id === character.villageLocationId)
     : undefined;
@@ -52,16 +58,20 @@ export function CharacterCard({
           )}
         </div>
         <p className="text-sm text-ink-300 leading-relaxed">
-          {character.shortDescription}
+          {getLocalizedText(character.shortDescription, locale)}
         </p>
         <div className="flex flex-wrap gap-1.5">
           {character.rank && <Badge variant="accent">{character.rank}</Badge>}
-          {village && <Badge>{village.name}</Badge>}
+          {village && (
+            <Badge>
+              {getLocalizedText(village.localizedName, locale) || village.name}
+            </Badge>
+          )}
           {clans.filter(Boolean).map(
             (c) =>
               c && (
                 <Badge key={c.id} variant="ember">
-                  {c.name}
+                  {getLocalizedText(c.localizedName, locale) || c.name}
                 </Badge>
               ),
           )}
@@ -75,7 +85,7 @@ export function CharacterCard({
             }
             className="capitalize"
           >
-            {character.status.replace('_', ' ')}
+            {getCharacterStatusLabel(character.status, locale)}
           </Badge>
         </div>
       </button>

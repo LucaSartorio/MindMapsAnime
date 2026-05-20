@@ -1,10 +1,13 @@
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
 import { Modal } from '@/components/common/Modal';
 import { Badge } from '@/components/common/Badge';
 import { Button } from '@/components/common/Button';
 import { CanonPill, ReferencePill } from '@/components/common/StatusPill';
 import { useMapStore, useUiStore } from '@/store';
+import { useLocaleStore } from '@/store/useLocaleStore';
+import { getLocalizedText } from '@/utils/localization';
 import { findCharacter, findNation } from '@/lib/entities';
 
 interface BoundaryDetailsModalProps {
@@ -16,6 +19,8 @@ export function BoundaryDetailsModal({
   dataset,
   boundaryId,
 }: BoundaryDetailsModalProps) {
+  const locale = useLocaleStore((s) => s.locale);
+  const { t } = useTranslation();
   const boundary = (dataset.boundaries ?? []).find((b) => b.id === boundaryId);
   const close = useUiStore((s) => s.closeModal);
   const openLocation = useUiStore((s) => s.openLocationModal);
@@ -29,8 +34,8 @@ export function BoundaryDetailsModal({
 
   if (!boundary) {
     return (
-      <Modal open onClose={close} title="Regione non trovata" size="sm">
-        <p>Riferimento non valido.</p>
+      <Modal open onClose={close} title={t("modals.notFound")} size="sm">
+        <p>{t("modals.invalidRef")}</p>
       </Modal>
     );
   }
@@ -63,8 +68,8 @@ export function BoundaryDetailsModal({
     <Modal
       open
       onClose={close}
-      eyebrow={`Regione · ${boundary.type.replace('_', ' ')}`}
-      title={boundary.name}
+      eyebrow={`${t('modals.boundary')} · ${boundary.type.replace('_', ' ')}`}
+      title={getLocalizedText(boundary.localizedName, locale) || boundary.name}
       badges={
         <>
           <CanonPill canon={boundary.canonStatus} />
@@ -75,7 +80,7 @@ export function BoundaryDetailsModal({
               onClick={() => openNation(nation.id)}
               className="chip-accent hover:border-chakra-300 hover:text-white"
             >
-              {nation.name}
+              {getLocalizedText(nation.localizedName, locale) || nation.name}
             </button>
           )}
         </>
@@ -91,11 +96,11 @@ export function BoundaryDetailsModal({
                 close();
               }}
             >
-              Centra sulla mappa
+              {t("modals.centerOnMap")}
             </Button>
           )}
           <Button variant="primary" onClick={close}>
-            Chiudi
+            {t("modals.close")}
           </Button>
         </>
       }
@@ -105,10 +110,12 @@ export function BoundaryDetailsModal({
           {boundary.japaneseName}
         </p>
       )}
-      <p className="leading-relaxed">{boundary.descriptionShort}</p>
+      <p className="leading-relaxed">
+        {getLocalizedText(boundary.descriptionShort, locale)}
+      </p>
       {boundary.descriptionLong && (
         <p className="text-ink-300 leading-relaxed">
-          {boundary.descriptionLong}
+          {getLocalizedText(boundary.descriptionLong, locale)}
         </p>
       )}
 
@@ -120,7 +127,7 @@ export function BoundaryDetailsModal({
       )}
 
       {villages.length > 0 && (
-        <Section title="Villaggi presenti">
+        <Section title={t("modals.villagesPresent")}>
           <div className="flex flex-wrap gap-1.5">
             {villages.map((l) => (
               <button
@@ -137,7 +144,7 @@ export function BoundaryDetailsModal({
       )}
 
       {specialPlaces.length > 0 && (
-        <Section title="Luoghi importanti">
+        <Section title={t("modals.specialPlaces")}>
           <div className="flex flex-wrap gap-1.5">
             {specialPlaces.map((l) => (
               <button
@@ -154,7 +161,7 @@ export function BoundaryDetailsModal({
       )}
 
       {characters.length > 0 && (
-        <Section title="Personaggi collegati">
+        <Section title={t("modals.relatedCharacters")}>
           <div className="flex flex-wrap gap-1.5">
             {characters.map((c) => (
               <button
@@ -171,7 +178,7 @@ export function BoundaryDetailsModal({
       )}
 
       {arcs.length > 0 && (
-        <Section title="Archi narrativi">
+        <Section title={t("modals.relatedArcs")}>
           <ul className="space-y-1.5">
             {arcs.map((a) => (
               <li key={a.id}>
@@ -190,7 +197,7 @@ export function BoundaryDetailsModal({
       )}
 
       {events.length > 0 && (
-        <Section title={`Eventi nel territorio (${events.length})`}>
+        <Section title={t('modals.eventsInTerritory', { count: events.length })}>
           <ul className="grid sm:grid-cols-2 gap-2 max-h-48 overflow-auto pr-1">
             {events.slice(0, 12).map((e) => (
               <li key={e.id}>
@@ -199,9 +206,11 @@ export function BoundaryDetailsModal({
                   onClick={() => openEvent(e.id)}
                   className="text-left w-full panel-soft p-2 hover:border-chakra-500/60"
                 >
-                  <p className="text-ink-100 text-xs">{e.title}</p>
+                  <p className="text-ink-100 text-xs">
+                    {getLocalizedText(e.title, locale)}
+                  </p>
                   <p className="text-[10px] text-ink-400 mt-0.5">
-                    #{e.order} · {e.period}
+                    #{e.order} · {getLocalizedText(e.period, locale)}
                   </p>
                 </button>
               </li>
@@ -211,7 +220,7 @@ export function BoundaryDetailsModal({
       )}
 
       {routes.length > 0 && (
-        <Section title="Percorsi che attraversano">
+        <Section title={t("modals.routesTraversing")}>
           <div className="flex flex-wrap gap-1.5">
             {routes.map((r) => (
               <button

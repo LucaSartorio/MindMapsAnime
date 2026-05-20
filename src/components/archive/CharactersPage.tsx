@@ -1,26 +1,29 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
 import { CharacterCard } from './CharacterCard';
 import { EmptyState } from '@/components/common/EmptyState';
 import { SourceNotice } from '@/components/common/SourceNotice';
 import { useUiStore } from '@/store';
+import { useLocaleStore } from '@/store/useLocaleStore';
+import { getLocalizedText } from '@/utils/localization';
 
 interface CharactersPageProps {
   dataset: WorldDataset;
 }
 
 export function CharactersPage({ dataset }: CharactersPageProps) {
+  const { t } = useTranslation();
+  const locale = useLocaleStore((s) => s.locale);
   const [params] = useSearchParams();
   const initialId = params.get('id');
   const [query, setQuery] = useState('');
   const [filterVillage, setFilterVillage] = useState<string>('');
   const openCharacterModal = useUiStore((s) => s.openCharacterModal);
 
-  // Deep-link: se arrivo con ?id=... apro subito la modal personaggio
   useEffect(() => {
     if (initialId) openCharacterModal(initialId);
-    // run only quando cambia id nella URL
   }, [initialId, openCharacterModal]);
 
   const villages = useMemo(
@@ -35,18 +38,17 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
     const q = query.trim().toLowerCase();
     return dataset.characters
       .filter((c) => {
-        if (
-          q &&
-          !c.name.toLowerCase().includes(q) &&
-          !c.shortDescription.toLowerCase().includes(q)
-        )
-          return false;
+        if (q) {
+          const desc = getLocalizedText(c.shortDescription, locale).toLowerCase();
+          if (!c.name.toLowerCase().includes(q) && !desc.includes(q))
+            return false;
+        }
         if (filterVillage && c.villageLocationId !== filterVillage)
           return false;
         return true;
       })
       .sort((a, b) => a.name.localeCompare(b.name));
-  }, [dataset.characters, query, filterVillage]);
+  }, [dataset.characters, query, filterVillage, locale]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6">
@@ -55,17 +57,17 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
           {dataset.world.title}
         </p>
         <h1 className="font-display text-3xl text-ink-100">
-          Archivio personaggi
+          {t('characters.archiveTitle')}
         </h1>
         <p className="text-sm text-ink-300 max-w-2xl">
-          Schede dei personaggi principali. Clicca per aprire i dettagli.
+          {t('characters.archiveLead')}
         </p>
       </header>
 
       <div className="flex flex-wrap items-center gap-3">
         <input
           type="search"
-          placeholder="Cerca un personaggio…"
+          placeholder={t('characters.searchPlaceholder')}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           className="panel-soft px-3 py-2 text-sm flex-1 min-w-[200px]"
@@ -74,12 +76,12 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
           value={filterVillage}
           onChange={(e) => setFilterVillage(e.target.value)}
           className="panel-soft px-3 py-2 text-sm"
-          aria-label="Filtra per villaggio"
+          aria-label={t('characters.villageFilterAria')}
         >
-          <option value="">Tutti i villaggi</option>
+          <option value="">{t('characters.villageFilter')}</option>
           {villages.map((v) => (
             <option key={v.id} value={v.id}>
-              {v.name}
+              {getLocalizedText(v.localizedName, locale) || v.name}
             </option>
           ))}
         </select>
@@ -89,8 +91,8 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
 
       {filtered.length === 0 ? (
         <EmptyState
-          title="Nessun personaggio"
-          description="Nessun risultato per i filtri attivi."
+          title={t('characters.empty')}
+          description={t('characters.emptyDescription')}
         />
       ) : (
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

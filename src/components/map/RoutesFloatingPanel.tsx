@@ -1,7 +1,10 @@
 import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
 import { FloatingPanel } from '@/components/common/FloatingPanel';
 import { useMapStore, useUiStore } from '@/store';
+import { useLocaleStore } from '@/store/useLocaleStore';
+import { getLocalizedText } from '@/utils/localization';
 import { Button } from '@/components/common/Button';
 
 interface RoutesFloatingPanelProps {
@@ -13,6 +16,8 @@ interface RoutesFloatingPanelProps {
  * Mostra solo le route che hanno step nel map level corrente.
  */
 export function RoutesFloatingPanel({ dataset }: RoutesFloatingPanelProps) {
+  const { t } = useTranslation();
+  const locale = useLocaleStore((s) => s.locale);
   const open = useUiStore((s) => s.isRoutesPanelOpen);
   const setOpen = useUiStore((s) => s.setRoutesPanel);
   const openRouteModal = useUiStore((s) => s.openRouteModal);
@@ -35,7 +40,7 @@ export function RoutesFloatingPanel({ dataset }: RoutesFloatingPanelProps) {
 
   return (
     <FloatingPanel
-      title="Percorsi"
+      title={t('map.routesPanel.title')}
       icon={<span className="text-[12px]">↯</span>}
       open={open}
       onOpenChange={setOpen}
@@ -47,14 +52,14 @@ export function RoutesFloatingPanel({ dataset }: RoutesFloatingPanelProps) {
             onClick={() => setSelectedRoute(null)}
             className="text-[11px] text-ink-300 hover:text-white px-2 py-0.5 rounded"
           >
-            Reset
+            {t('map.routesPanel.reset')}
           </button>
         ) : undefined
       }
     >
       {routes.length === 0 ? (
         <div className="p-4 text-xs text-ink-300">
-          Nessun percorso in questo livello mappa.
+          {t('map.routesPanel.empty')}
         </div>
       ) : (
         <div className="p-3 space-y-2">
@@ -83,7 +88,7 @@ export function RoutesFloatingPanel({ dataset }: RoutesFloatingPanelProps) {
                       }
                       className="flex-1 min-w-0 text-left text-xs text-ink-100 truncate"
                     >
-                      {r.name}
+                      {getLocalizedText(r.localizedName, locale) || r.name}
                     </button>
                     <span className="text-[10px] text-ink-400 shrink-0">
                       {r.steps.length}
@@ -91,7 +96,7 @@ export function RoutesFloatingPanel({ dataset }: RoutesFloatingPanelProps) {
                     <button
                       type="button"
                       onClick={() => openRouteModal(r.id)}
-                      aria-label={`Dettagli percorso ${r.name}`}
+                      aria-label={`${t('map.routesPanel.details')} · ${getLocalizedText(r.localizedName, locale) || r.name}`}
                       className="opacity-60 group-hover:opacity-100 h-6 w-6 grid place-items-center rounded text-ink-200 hover:text-white hover:bg-ink-700/70 shrink-0"
                     >
                       ⓘ
@@ -105,14 +110,14 @@ export function RoutesFloatingPanel({ dataset }: RoutesFloatingPanelProps) {
           {selected && (
             <div className="border-t border-ink-700/60 pt-2 space-y-2">
               <p className="text-[11px] text-ink-300 leading-relaxed">
-                {selected.description}
+                {getLocalizedText(selected.description, locale)}
               </p>
               <Button
                 variant="ghost"
                 onClick={() => openRouteModal(selected.id)}
                 className="!py-1 !px-2 !text-[11px] w-full justify-center"
               >
-                Apri dettagli percorso →
+                {t('map.routesPanel.openDetails')}
               </Button>
             </div>
           )}

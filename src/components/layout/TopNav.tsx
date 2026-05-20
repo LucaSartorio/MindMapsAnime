@@ -1,7 +1,9 @@
 import { Link, NavLink, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useUiStore, useWorldStore } from '@/store';
 import { cn } from '@/lib/cn';
 import { GlobalSearchDropdown } from '@/components/search/GlobalSearchDropdown';
+import { LanguageSwitcher } from '@/components/i18n/LanguageSwitcher';
 
 interface NavItem {
   to: string;
@@ -9,12 +11,10 @@ interface NavItem {
 }
 
 /**
- * Top navigation bar.
- * - Sempre visibile.
- * - In contesto mondo: mostra link interni (Mappa/Personaggi/...) + search.
- * - Mobile: nav items collassati dietro un toggle.
+ * Top navigation bar (i18n-aware).
  */
 export function TopNav() {
+  const { t } = useTranslation();
   const worldSlug = useWorldStore((s) => s.worldSlug);
   const dataset = useWorldStore((s) => s.dataset);
   const location = useLocation();
@@ -25,11 +25,14 @@ export function TopNav() {
 
   const worldItems: NavItem[] = inWorld
     ? [
-        { to: `/worlds/${worldSlug}`, label: 'Mappa' },
-        { to: `/worlds/${worldSlug}/characters`, label: 'Personaggi' },
-        { to: `/worlds/${worldSlug}/clans`, label: 'Clan & Fazioni' },
-        { to: `/worlds/${worldSlug}/arcs`, label: 'Archi' },
-        { to: `/worlds/${worldSlug}/sources`, label: 'Fonti' },
+        { to: `/worlds/${worldSlug}`, label: t('nav.map') },
+        {
+          to: `/worlds/${worldSlug}/characters`,
+          label: t('nav.characters'),
+        },
+        { to: `/worlds/${worldSlug}/clans`, label: t('nav.clansFactions') },
+        { to: `/worlds/${worldSlug}/arcs`, label: t('nav.arcs') },
+        { to: `/worlds/${worldSlug}/sources`, label: t('nav.sources') },
       ]
     : [];
 
@@ -39,14 +42,14 @@ export function TopNav() {
         <Link
           to="/"
           className="flex items-center gap-3 shrink-0"
-          aria-label="Anime Interactive Maps · homepage"
+          aria-label={`${t('app.title')} · ${t('nav.home')}`}
         >
           <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-chakra-500 to-ember-500 text-white font-bold font-display">
             A
           </span>
           <span className="hidden sm:flex flex-col leading-tight">
             <span className="font-display text-base text-ink-100">
-              Anime Interactive Maps
+              {t('app.title')}
             </span>
             {inWorld && dataset && (
               <span className="font-mono text-[10px] uppercase tracking-widest text-chakra-300">
@@ -59,7 +62,7 @@ export function TopNav() {
         {/* Nav desktop */}
         <nav
           className="hidden md:flex items-center gap-1 ml-2"
-          aria-label="Navigazione mondo"
+          aria-label={t('nav.openMobileNav')}
         >
           {worldItems.map((item) => (
             <NavLink
@@ -80,7 +83,7 @@ export function TopNav() {
           ))}
         </nav>
 
-        {/* Right cluster: search + about + mobile toggle */}
+        {/* Right cluster: search + about + language + mobile toggle */}
         <div className="ml-auto flex items-center gap-2 min-w-0 flex-1 justify-end">
           {inWorld && dataset && (
             <div className="hidden sm:block w-full max-w-xs">
@@ -91,15 +94,16 @@ export function TopNav() {
             to="/about"
             className="hidden md:inline-block px-3 py-1.5 rounded-md text-sm text-ink-300 hover:text-white"
           >
-            About
+            {t('nav.about')}
           </Link>
+          <LanguageSwitcher />
           {inWorld && (
             <button
               type="button"
               onClick={toggleMobileNav}
               aria-expanded={isMobileNavOpen}
               aria-controls="mobile-world-nav"
-              aria-label="Apri navigazione mondo"
+              aria-label={t('nav.openMobileNav')}
               className="md:hidden h-9 w-9 grid place-items-center rounded-md border border-ink-700/70 text-ink-100"
             >
               ☰
@@ -119,7 +123,7 @@ export function TopNav() {
       {inWorld && isMobileNavOpen && (
         <nav
           id="mobile-world-nav"
-          aria-label="Navigazione mondo (mobile)"
+          aria-label={t('nav.openMobileNav')}
           className="md:hidden border-t border-ink-700/60 bg-ink-950/95"
         >
           <ul className="px-2 py-2 grid grid-cols-2 gap-1">
@@ -148,7 +152,7 @@ export function TopNav() {
                 onClick={() => toggleMobileNav()}
                 className="block px-3 py-2 rounded-md text-sm text-ink-300 hover:text-white hover:bg-ink-800/70"
               >
-                About
+                {t('nav.about')}
               </Link>
             </li>
           </ul>

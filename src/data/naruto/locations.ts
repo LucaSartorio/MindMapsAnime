@@ -18,15 +18,24 @@ export const narutoLocations: Location[] = [
     worldId: 'world-naruto',
     mapLevelId: 'naruto-map-world',
     name: 'Konohagakure',
+    localizedName: {
+      it: 'Konohagakure · Villaggio della Foglia',
+      en: 'Konohagakure · Hidden Leaf Village',
+    },
     nameLocal: 'Hidden Leaf Village',
     type: 'village',
     x: 740,
     y: 395,
     boundaryId: 'boundary-fire',
     nationId: 'nation-fire',
-    shortDescription: 'Il Villaggio Nascosto della Foglia, sede dell\'Hokage.',
-    longDescription:
-      'Fondato da Hashirama Senju e Madara Uchiha. Una delle Cinque Grandi Nazioni Ninja. Sede di Naruto, Sasuke, Sakura e di numerosi clan storici.',
+    shortDescription: {
+      it: "Il Villaggio Nascosto della Foglia, sede dell'Hokage.",
+      en: 'The Hidden Leaf Village, seat of the Hokage.',
+    },
+    longDescription: {
+      it: 'Fondato da Hashirama Senju e Madara Uchiha. Una delle Cinque Grandi Nazioni Ninja. Sede di Naruto, Sasuke, Sakura e di numerosi clan storici.',
+      en: 'Founded by Hashirama Senju and Madara Uchiha. One of the Five Great Ninja Nations. Home of Naruto, Sasuke, Sakura and numerous historical clans.',
+    },
     clanIds: [
       'clan-uchiha',
       'clan-hyuga',
@@ -317,16 +326,21 @@ export const narutoLocations: Location[] = [
     worldId: 'world-naruto',
     mapLevelId: 'naruto-map-world',
     name: 'Valley of the End',
+    localizedName: { it: 'Valle della Fine', en: 'Valley of the End' },
     nameLocal: 'Shūmatsu no Tani',
     type: 'landmark',
     x: 700,
     y: 250,
     boundaryId: 'boundary-fire',
     nationId: 'nation-fire',
-    shortDescription:
-      'Valle simbolo dello scontro Hashirama-Madara, poi Naruto-Sasuke.',
-    longDescription:
-      'Segnata da due enormi statue. Teatro di due duelli storici tra Naruto e Sasuke.',
+    shortDescription: {
+      it: 'Valle simbolo dello scontro Hashirama-Madara, poi Naruto-Sasuke.',
+      en: 'Valley symbol of the Hashirama-Madara clash, later Naruto-Sasuke.',
+    },
+    longDescription: {
+      it: 'Segnata da due enormi statue. Teatro di due duelli storici tra Naruto e Sasuke.',
+      en: 'Marked by two huge statues. Setting of two historic duels between Naruto and Sasuke.',
+    },
     characterIds: ['char-naruto', 'char-sasuke', 'char-madara'],
     arcIds: ['arc-sasuke-retrieval', 'arc-kaguya-final'],
     importance: 'main',

@@ -1,16 +1,21 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
 import { StoryArcCard } from './StoryArcCard';
 import { EmptyState } from '@/components/common/EmptyState';
 import { SourceNotice } from '@/components/common/SourceNotice';
 import { useUiStore } from '@/store';
+import { useLocaleStore } from '@/store/useLocaleStore';
+import { getLocalizedText } from '@/utils/localization';
 
 interface StoryArcsPageProps {
   dataset: WorldDataset;
 }
 
 export function StoryArcsPage({ dataset }: StoryArcsPageProps) {
+  const { t } = useTranslation();
+  const locale = useLocaleStore((s) => s.locale);
   const [params] = useSearchParams();
   const initialId = params.get('id');
   const [query, setQuery] = useState('');
@@ -22,25 +27,33 @@ export function StoryArcsPage({ dataset }: StoryArcsPageProps) {
   }, [initialId, openArcModal]);
 
   const sagas = useMemo(
-    () => Array.from(new Set(dataset.arcs.map((a) => a.saga).filter(Boolean))),
-    [dataset.arcs],
-  ) as string[];
+    () =>
+      Array.from(
+        new Set(
+          dataset.arcs
+            .map((a) => getLocalizedText(a.saga, locale))
+            .filter(Boolean),
+        ),
+      ),
+    [dataset.arcs, locale],
+  );
 
   const items = useMemo(() => {
     const q = query.trim().toLowerCase();
     return [...dataset.arcs]
       .sort((a, b) => a.order - b.order)
       .filter((a) => {
-        if (saga && a.saga !== saga) return false;
-        if (
-          q &&
-          !a.name.toLowerCase().includes(q) &&
-          !a.description.toLowerCase().includes(q)
-        )
-          return false;
+        if (saga && getLocalizedText(a.saga, locale) !== saga) return false;
+        if (q) {
+          const desc = getLocalizedText(a.description, locale).toLowerCase();
+          const name = (
+            getLocalizedText(a.localizedName, locale) || a.name
+          ).toLowerCase();
+          if (!name.includes(q) && !desc.includes(q)) return false;
+        }
         return true;
       });
-  }, [dataset.arcs, query, saga]);
+  }, [dataset.arcs, query, saga, locale]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6">
@@ -48,17 +61,16 @@ export function StoryArcsPage({ dataset }: StoryArcsPageProps) {
         <p className="font-mono text-xs uppercase tracking-widest text-chakra-300">
           {dataset.world.title}
         </p>
-        <h1 className="font-display text-3xl text-ink-100">Archi narrativi</h1>
-        <p className="text-sm text-ink-300 max-w-2xl">
-          Lista cronologica degli archi narrativi del mondo. Ogni card mostra
-          il numero di eventi e di luoghi coinvolti.
-        </p>
+        <h1 className="font-display text-3xl text-ink-100">
+          {t('arcs.archiveTitle')}
+        </h1>
+        <p className="text-sm text-ink-300 max-w-2xl">{t('arcs.archiveLead')}</p>
       </header>
 
       <div className="flex flex-wrap items-center gap-3">
         <input
           type="search"
-          placeholder="Cerca un arco…"
+          placeholder={t('arcs.searchPlaceholder')}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           className="panel-soft px-3 py-2 text-sm flex-1 min-w-[200px]"
@@ -67,9 +79,9 @@ export function StoryArcsPage({ dataset }: StoryArcsPageProps) {
           value={saga}
           onChange={(e) => setSaga(e.target.value)}
           className="panel-soft px-3 py-2 text-sm"
-          aria-label="Filtra per saga"
+          aria-label={t('arcs.sagaFilterAria')}
         >
-          <option value="">Tutte le saghe</option>
+          <option value="">{t('arcs.sagaFilterAll')}</option>
           {sagas.map((s) => (
             <option key={s} value={s}>
               {s}
@@ -82,8 +94,8 @@ export function StoryArcsPage({ dataset }: StoryArcsPageProps) {
 
       {items.length === 0 ? (
         <EmptyState
-          title="Nessun arco"
-          description="Nessun arco corrisponde ai filtri."
+          title={t('arcs.empty')}
+          description={t('arcs.emptyDescription')}
         />
       ) : (
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

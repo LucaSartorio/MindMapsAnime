@@ -15,6 +15,8 @@ import {
 import '@xyflow/react/dist/style.css';
 import type { Location, Route, WorldDataset } from '@/types';
 import { useMapStore, useUiStore } from '@/store';
+import { useLocaleStore } from '@/store/useLocaleStore';
+import { getLocalizedText } from '@/utils/localization';
 import { filterLocations } from '@/lib/filters';
 import {
   MapNode,
@@ -48,6 +50,7 @@ export function InteractiveWorldMap(props: InteractiveWorldMapProps) {
 }
 
 function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
+  const locale = useLocaleStore((s) => s.locale);
   const activeMapLevelId = useMapStore((s) => s.activeMapLevelId);
   const selectedLocationId = useMapStore((s) => s.selectedLocationId);
   const selectedRouteId = useMapStore((s) => s.selectedRouteId);
@@ -160,7 +163,7 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
       type: 'map-node',
       position: { x: loc.x, y: loc.y },
       data: {
-        label: loc.name,
+        label: getLocalizedText(loc.localizedName, locale) || loc.name,
         type: loc.type,
         importance: loc.importance,
         selected: loc.id === selectedLocationId,
@@ -178,6 +181,7 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
     visibleLocations,
     selectedLocationId,
     highlightedLocationIds,
+    locale,
   ]);
 
   const edges = useMemo<Edge<MapEdgeData>[]>(() => {
@@ -209,13 +213,13 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
         target: targetLoc.id,
         data: {
           color: route.color,
-          label: target.label,
+          label: getLocalizedText(target.label, locale) || undefined,
           order: target.order,
         },
       });
     }
     return out;
-  }, [route, dataset.locations, activeLevel.id, filters.showRoutes, visibleLayers]);
+  }, [route, dataset.locations, activeLevel.id, filters.showRoutes, visibleLayers, locale]);
 
   // fitView al cambio level
   useEffect(() => {

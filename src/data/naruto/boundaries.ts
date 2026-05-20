@@ -29,10 +29,15 @@ export const narutoBoundaries: MapBoundary[] = [
     labelPosition: { x: 740, y: 395 },
     nationId: 'nation-fire',
     color: '#f06600',
-    descriptionShort:
-      'Una delle Cinque Grandi Nazioni. Foreste estese, clima caldo. Sede di Konohagakure.',
-    descriptionLong:
-      'Storicamente la più potente fra le cinque grandi nazioni. Governata dal Daimyō del Fuoco; ospita il Villaggio Nascosto della Foglia.',
+    localizedName: { it: 'Paese del Fuoco', en: 'Land of Fire' },
+    descriptionShort: {
+      it: 'Una delle Cinque Grandi Nazioni. Foreste estese, clima caldo. Sede di Konohagakure.',
+      en: 'One of the Five Great Nations. Vast forests, warm climate. Home of Konohagakure.',
+    },
+    descriptionLong: {
+      it: 'Storicamente la più potente fra le cinque grandi nazioni. Governata dal Daimyō del Fuoco; ospita il Villaggio Nascosto della Foglia.',
+      en: 'Historically the most powerful among the five great nations. Ruled by the Fire Daimyō; home of the Hidden Leaf Village.',
+    },
     tags: ['fire', 'foglia', 'hokage'],
   },
   {
@@ -50,10 +55,15 @@ export const narutoBoundaries: MapBoundary[] = [
     labelPosition: { x: 290, y: 590 },
     nationId: 'nation-wind',
     color: '#d4be78',
-    descriptionShort:
-      'Vasti deserti e dune. Sede di Sunagakure e del Kazekage.',
-    descriptionLong:
-      'Una delle cinque grandi nazioni. Clima desertico estremo. Il Daimyō del Vento ha storicamente intrattenuto rapporti complessi con quello del Fuoco.',
+    localizedName: { it: 'Paese del Vento', en: 'Land of Wind' },
+    descriptionShort: {
+      it: 'Vasti deserti e dune. Sede di Sunagakure e del Kazekage.',
+      en: 'Vast deserts and dunes. Home of Sunagakure and the Kazekage.',
+    },
+    descriptionLong: {
+      it: 'Una delle cinque grandi nazioni. Clima desertico estremo. Il Daimyō del Vento ha storicamente intrattenuto rapporti complessi con quello del Fuoco.',
+      en: "One of the five great nations. Extreme desert climate. The Wind Daimyō has historically had complex ties with the Fire Daimyō.",
+    },
     tags: ['deserto', 'sabbia'],
   },
   {
@@ -71,10 +81,15 @@ export const narutoBoundaries: MapBoundary[] = [
     labelPosition: { x: 1320, y: 555 },
     nationId: 'nation-water',
     color: '#4cb6ff',
-    descriptionShort:
-      'Arcipelago di isole nebbiose. Sede di Kirigakure.',
-    descriptionLong:
-      'Una delle cinque grandi nazioni. Centinaia di isole; storia interna violenta nota come "Bloody Mist".',
+    localizedName: { it: "Paese dell'Acqua", en: 'Land of Water' },
+    descriptionShort: {
+      it: 'Arcipelago di isole nebbiose. Sede di Kirigakure.',
+      en: 'Archipelago of misty islands. Home of Kirigakure.',
+    },
+    descriptionLong: {
+      it: 'Una delle cinque grandi nazioni. Centinaia di isole; storia interna violenta nota come "Bloody Mist".',
+      en: 'One of the five great nations. Hundreds of islands; violent internal history known as "Bloody Mist".',
+    },
     tags: ['nebbia', 'isole'],
   },
   {
@@ -92,10 +107,15 @@ export const narutoBoundaries: MapBoundary[] = [
     labelPosition: { x: 240, y: 230 },
     nationId: 'nation-earth',
     color: '#963c03',
-    descriptionShort:
-      'Terre rocciose e canyon. Sede di Iwagakure.',
-    descriptionLong:
-      'Una delle cinque grandi nazioni. Governata dal Tsuchikage. Spesso in conflitto con la Foglia.',
+    localizedName: { it: 'Paese della Terra', en: 'Land of Earth' },
+    descriptionShort: {
+      it: 'Terre rocciose e canyon. Sede di Iwagakure.',
+      en: 'Rocky lands and canyons. Home of Iwagakure.',
+    },
+    descriptionLong: {
+      it: 'Una delle cinque grandi nazioni. Governata dal Tsuchikage. Spesso in conflitto con la Foglia.',
+      en: 'One of the five great nations. Ruled by the Tsuchikage. Often in conflict with Konoha.',
+    },
     tags: ['rocce', 'tsuchikage'],
   },
   {
@@ -113,10 +133,15 @@ export const narutoBoundaries: MapBoundary[] = [
     labelPosition: { x: 1240, y: 220 },
     nationId: 'nation-lightning',
     color: '#1f9aff',
-    descriptionShort:
-      'Montagne aspre, alta densità di tempeste. Sede di Kumogakure.',
-    descriptionLong:
-      'Una delle cinque grandi nazioni. Capitale ninja Kumogakure, retta dal Raikage. Patria di Killer B.',
+    localizedName: { it: 'Paese del Fulmine', en: 'Land of Lightning' },
+    descriptionShort: {
+      it: 'Montagne aspre, alta densità di tempeste. Sede di Kumogakure.',
+      en: 'Rugged mountains, high frequency of storms. Home of Kumogakure.',
+    },
+    descriptionLong: {
+      it: 'Una delle cinque grandi nazioni. Capitale ninja Kumogakure, retta dal Raikage. Patria di Killer B.',
+      en: "One of the five great nations. Ninja capital Kumogakure, ruled by the Raikage. Killer B's homeland.",
+    },
     tags: ['fulmine', 'raikage'],
   },
 
@@ -136,8 +161,11 @@ export const narutoBoundaries: MapBoundary[] = [
     labelPosition: { x: 540, y: 260 },
     nationId: 'nation-rain',
     color: '#6aa8d8',
-    descriptionShort:
-      'Nazione di confine fra le grandi, costantemente sotto la pioggia.',
+    localizedName: { it: 'Paese della Pioggia', en: 'Land of Rain' },
+    descriptionShort: {
+      it: 'Nazione di confine fra le grandi, costantemente sotto la pioggia.',
+      en: 'Border nation among the great ones, constantly under rain.',
+    },
     descriptionLong:
       'Teatro di numerose guerre. Sede di Amegakure, dove operò l\'Akatsuki sotto Pain.',
     tags: ['pioggia', 'akatsuki', 'pain'],
@@ -258,10 +286,15 @@ export const narutoBoundaries: MapBoundary[] = [
     labelPosition: { x: 1112, y: 488 },
     nationId: 'nation-waves',
     color: '#5dc1d6',
-    descriptionShort:
-      'Piccola isola scenario della prima missione del Team 7.',
-    descriptionLong:
-      'Nazione povera oppressa da Gato. Il "Great Naruto Bridge" prende il nome dalla missione del Team 7.',
+    localizedName: { it: 'Paese delle Onde', en: 'Land of Waves' },
+    descriptionShort: {
+      it: 'Piccola isola scenario della prima missione del Team 7.',
+      en: "Small island, setting of Team 7's first mission.",
+    },
+    descriptionLong: {
+      it: 'Nazione povera oppressa da Gato. Il "Great Naruto Bridge" prende il nome dalla missione del Team 7.',
+      en: "Poor nation oppressed by Gato. The 'Great Naruto Bridge' is named after Team 7's mission.",
+    },
     tags: ['team-7', 'ponte', 'zabuza', 'haku'],
   },
   {
