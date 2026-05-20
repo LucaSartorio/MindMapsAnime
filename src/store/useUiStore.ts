@@ -11,6 +11,8 @@ export type ActiveModal =
   | { kind: 'arc'; id: string }
   | { kind: 'faction'; id: string }
   | { kind: 'route'; id: string }
+  | { kind: 'boundary'; id: string }
+  | { kind: 'nation'; id: string }
   | null;
 
 /**
@@ -41,6 +43,8 @@ interface UiState {
   openArcModal: (id: string) => void;
   openFactionModal: (id: string) => void;
   openRouteModal: (id: string) => void;
+  openBoundaryModal: (id: string) => void;
+  openNationModal: (id: string) => void;
   closeModal: () => void;
 
   // Drawer / pannelli floating
@@ -75,6 +79,8 @@ export const useUiStore = create<UiState>((set) => ({
   openArcModal: (id) => set({ activeModal: { kind: 'arc', id } }),
   openFactionModal: (id) => set({ activeModal: { kind: 'faction', id } }),
   openRouteModal: (id) => set({ activeModal: { kind: 'route', id } }),
+  openBoundaryModal: (id) => set({ activeModal: { kind: 'boundary', id } }),
+  openNationModal: (id) => set({ activeModal: { kind: 'nation', id } }),
   closeModal: () => set({ activeModal: null }),
 
   openFiltersDrawer: () => set({ isFiltersDrawerOpen: true }),

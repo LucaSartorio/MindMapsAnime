@@ -3,6 +3,9 @@ import type { Route } from '@/types';
 /**
  * Percorsi narrativi seed di Naruto.
  * Le linee tracciate tra location sono concettuali, non distanze reali.
+ *
+ * Coordinate dei nodi sono prese dai luoghi (vedi `locations.ts`)
+ * nel sistema del viewBox 1500 x 882.2204.
  */
 export const narutoRoutes: Route[] = [
   {
@@ -11,14 +14,74 @@ export const narutoRoutes: Route[] = [
     name: 'Team 7 · Missione nel Paese delle Onde',
     description:
       'Naruto, Sasuke, Sakura e Kakashi scortano Tazuna nel Paese delle Onde.',
-    protagonistCharacterIds: ['char-naruto', 'char-sasuke', 'char-sakura', 'char-kakashi'],
+    protagonistCharacterIds: [
+      'char-naruto',
+      'char-sasuke',
+      'char-sakura',
+      'char-kakashi',
+    ],
     arcId: 'arc-prologue',
     color: '#1f9aff',
     steps: [
       { order: 1, locationId: 'loc-konoha', label: 'Partenza da Konoha' },
-      { order: 2, locationId: 'loc-waves', label: 'Arrivo al Paese delle Onde', eventId: 'ev-waves-mission' },
+      {
+        order: 2,
+        locationId: 'loc-naruto-bridge',
+        label: 'Paese delle Onde',
+        eventId: 'ev-waves-mission',
+      },
     ],
     referenceStatus: 'verified',
+  },
+  {
+    id: 'route-chunin-exams',
+    worldId: 'world-naruto',
+    name: 'Esami Chunin · spostamenti',
+    description:
+      'Spostamenti dei team per gli Esami Chunin a Konoha.',
+    protagonistCharacterIds: ['char-naruto', 'char-sasuke', 'char-sakura'],
+    arcId: 'arc-chunin-exams',
+    color: '#ff9f3f',
+    steps: [
+      { order: 1, locationId: 'loc-suna', label: 'Suna arriva a Konoha' },
+      { order: 2, locationId: 'loc-konoha', label: 'Prima fase' },
+      { order: 3, locationId: 'loc-forest-of-death', label: 'Foresta della Morte', eventId: 'ev-forest-of-death' },
+      { order: 4, locationId: 'loc-konoha', label: 'Torneo finale', eventId: 'ev-chunin-tournament' },
+    ],
+    referenceStatus: 'verified',
+  },
+  {
+    id: 'route-konoha-crush',
+    worldId: 'world-naruto',
+    name: 'Invasione di Konoha',
+    description:
+      'L\'invasione di Konoha orchestrata da Orochimaru con Suna e Oto.',
+    protagonistCharacterIds: ['char-orochimaru', 'char-hiruzen'],
+    arcId: 'arc-konoha-crush',
+    color: '#7d0606',
+    steps: [
+      { order: 1, locationId: 'loc-oto', label: 'Preparativi a Otogakure' },
+      { order: 2, locationId: 'loc-suna', label: 'Alleanza con Suna' },
+      { order: 3, locationId: 'loc-konoha', label: 'Attacco a Konoha', eventId: 'ev-konoha-crush' },
+    ],
+    referenceStatus: 'verified',
+  },
+  {
+    id: 'route-search-tsunade',
+    worldId: 'world-naruto',
+    name: 'Ricerca di Tsunade',
+    description:
+      'Jiraiya e Naruto attraversano il Paese del Fuoco per trovare Tsunade.',
+    protagonistCharacterIds: ['char-jiraiya', 'char-naruto', 'char-tsunade'],
+    arcId: 'arc-search-tsunade',
+    color: '#86cdff',
+    steps: [
+      { order: 1, locationId: 'loc-konoha', label: 'Partenza' },
+      { order: 2, locationId: 'loc-konoha-ichiraku', label: 'Allenamento Rasengan' },
+      { order: 3, locationId: 'loc-shikkotsu-forest', label: 'Incontro con Tsunade' },
+      { order: 4, locationId: 'loc-konoha', label: 'Ritorno a Konoha', eventId: 'ev-tsunade-hokage' },
+    ],
+    referenceStatus: 'needs_verification',
   },
   {
     id: 'route-sasuke-defection',
@@ -30,31 +93,90 @@ export const narutoRoutes: Route[] = [
     arcId: 'arc-sasuke-retrieval',
     color: '#e10b0b',
     steps: [
-      { order: 1, locationId: 'loc-konoha', label: 'Diserzione', eventId: 'ev-sasuke-defection' },
+      { order: 1, locationId: 'loc-konoha-main-gate', label: 'Diserzione', eventId: 'ev-sasuke-defection' },
       { order: 2, locationId: 'loc-valley-of-end', label: 'Duello con Naruto', eventId: 'ev-valley-end-1' },
       { order: 3, locationId: 'loc-orochimaru-hideout', label: 'Nascondiglio di Orochimaru' },
     ],
     referenceStatus: 'verified',
   },
   {
-    id: 'route-naruto-training',
+    id: 'route-sasuke-retrieval',
     worldId: 'world-naruto',
-    name: 'Naruto · Allenamenti principali',
+    name: 'Recupero di Sasuke',
     description:
-      'Da Konoha a Mt. Myōboku passando per gli allenamenti con Jiraiya.',
-    protagonistCharacterIds: ['char-naruto'],
+      'Squadra Shikamaru inseguita dai Sound Four lungo il Paese del Fuoco.',
+    protagonistCharacterIds: [
+      'char-naruto',
+      'char-shikamaru',
+      'char-neji',
+      'char-rock-lee',
+    ],
+    arcId: 'arc-sasuke-retrieval',
     color: '#f06600',
     steps: [
-      { order: 1, locationId: 'loc-konoha-training-7', label: 'Team 7 / Prova dei sonagli', eventId: 'ev-team-7-formed' },
-      { order: 2, locationId: 'loc-konoha', label: 'Allenamento Rasengan' },
-      { order: 3, locationId: 'loc-mt-myoboku', label: 'Allenamento Sage Mode' },
+      { order: 1, locationId: 'loc-konoha-main-gate', label: 'Partenza', eventId: 'ev-sound-four-pursuit' },
+      { order: 2, locationId: 'loc-konoha-nara-forest', label: 'Strategia di Shikamaru' },
+      { order: 3, locationId: 'loc-valley-of-end', label: 'Naruto raggiunge Sasuke' },
+    ],
+    referenceStatus: 'verified',
+  },
+  {
+    id: 'route-kazekage-rescue',
+    worldId: 'world-naruto',
+    name: 'Salvataggio del Kazekage',
+    description:
+      'Team 7 e Team Guy partono da Konoha verso il Paese dei Fiumi.',
+    protagonistCharacterIds: [
+      'char-naruto',
+      'char-sakura',
+      'char-kakashi',
+      'char-gaara',
+      'char-guy',
+    ],
+    arcId: 'arc-kazekage-rescue',
+    color: '#d4be78',
+    steps: [
+      { order: 1, locationId: 'loc-konoha', label: 'Allarme dalla Sabbia' },
+      { order: 2, locationId: 'loc-suna', label: 'Suna · rapimento di Gaara', eventId: 'ev-gaara-kidnap' },
+      { order: 3, locationId: 'loc-akatsuki-rivers', label: 'Caverna di sigillamento', eventId: 'ev-gaara-rescue' },
+    ],
+    referenceStatus: 'verified',
+  },
+  {
+    id: 'route-tenchi-bridge',
+    worldId: 'world-naruto',
+    name: 'Ponte Tenchi',
+    description:
+      'Team Kakashi incontra la spia di Sasori e scopre Sai.',
+    protagonistCharacterIds: ['char-naruto', 'char-sakura', 'char-orochimaru'],
+    arcId: 'arc-tenchi-bridge',
+    color: '#62b8c4',
+    steps: [
+      { order: 1, locationId: 'loc-konoha', label: 'Partenza' },
+      { order: 2, locationId: 'loc-samurai-bridge', label: 'Tenchi Bridge', eventId: 'ev-tenchi-bridge' },
+      { order: 3, locationId: 'loc-orochimaru-hideout', label: 'Nascondiglio' },
+    ],
+    referenceStatus: 'needs_verification',
+  },
+  {
+    id: 'route-itachi-pursuit',
+    worldId: 'world-naruto',
+    name: 'Ricerca di Itachi',
+    description:
+      'Sasuke insegue Itachi attraverso i nascondigli di Orochimaru.',
+    protagonistCharacterIds: ['char-sasuke'],
+    arcId: 'arc-itachi-pursuit',
+    color: '#b00808',
+    steps: [
+      { order: 1, locationId: 'loc-orochimaru-hideout', label: 'Hebi' },
+      { order: 2, locationId: 'loc-orochimaru-hideout', label: 'Scontro con Itachi', eventId: 'ev-itachi-vs-sasuke' },
     ],
     referenceStatus: 'verified',
   },
   {
     id: 'route-akatsuki',
     worldId: 'world-naruto',
-    name: 'Akatsuki · Movimenti',
+    name: 'Movimento Akatsuki',
     description:
       'Spostamenti operativi dell\'Akatsuki ad Amegakure e oltre.',
     protagonistCharacterIds: ['char-itachi', 'char-pain', 'char-obito'],
@@ -68,48 +190,86 @@ export const narutoRoutes: Route[] = [
     referenceStatus: 'verified',
   },
   {
+    id: 'route-jiraiya',
+    worldId: 'world-naruto',
+    name: 'Jiraiya verso Amegakure',
+    description:
+      'Dal Monte Myōboku alle ricerche su Akatsuki ad Amegakure.',
+    protagonistCharacterIds: ['char-jiraiya'],
+    arcId: 'arc-jiraiya-gallant',
+    color: '#86cdff',
+    steps: [
+      { order: 1, locationId: 'loc-konoha', label: 'Konoha' },
+      { order: 2, locationId: 'loc-mt-myoboku', label: 'Mt. Myōboku' },
+      { order: 3, locationId: 'loc-ame', label: 'Infiltrazione', eventId: 'ev-jiraiya-vs-pain' },
+    ],
+    referenceStatus: 'verified',
+  },
+  {
+    id: 'route-pain-assault',
+    worldId: 'world-naruto',
+    name: 'Assalto di Pain',
+    description:
+      'I sei corpi di Pain lasciano Amegakure per attaccare Konoha.',
+    protagonistCharacterIds: ['char-pain'],
+    arcId: 'arc-pain-assault',
+    color: '#6aa8d8',
+    steps: [
+      { order: 1, locationId: 'loc-ame', label: 'Partenza da Amegakure' },
+      { order: 2, locationId: 'loc-konoha', label: 'Attacco a Konoha', eventId: 'ev-pain-attack' },
+    ],
+    referenceStatus: 'verified',
+  },
+  {
+    id: 'route-five-kage-summit',
+    worldId: 'world-naruto',
+    name: 'Summit dei Cinque Kage',
+    description:
+      'I Kage convergono nel Paese del Ferro. Sasuke attacca il vertice.',
+    protagonistCharacterIds: ['char-sasuke'],
+    arcId: 'arc-five-kage-summit',
+    color: '#c8ccd6',
+    steps: [
+      { order: 1, locationId: 'loc-konoha', label: 'Tsunade incapace · Danzo' },
+      { order: 2, locationId: 'loc-five-kage-meeting', label: 'Summit', eventId: 'ev-five-kage-summit' },
+      { order: 3, locationId: 'loc-five-kage-meeting', label: 'Attacco di Sasuke', eventId: 'ev-iron-summit-attack' },
+    ],
+    referenceStatus: 'verified',
+  },
+  {
+    id: 'route-turtle-island',
+    worldId: 'world-naruto',
+    name: 'Viaggio verso l\'Isola Tartaruga',
+    description:
+      'Naruto raggiunge l\'Isola Tartaruga per allenarsi a controllare Kurama.',
+    protagonistCharacterIds: ['char-naruto'],
+    arcId: 'arc-fourth-war-countdown',
+    color: '#5dc1d6',
+    steps: [
+      { order: 1, locationId: 'loc-konoha', label: 'Partenza segreta' },
+      { order: 2, locationId: 'loc-turtle-island', label: 'Allenamento Kurama', eventId: 'ev-naruto-killer-b-train' },
+    ],
+    referenceStatus: 'verified',
+  },
+  {
     id: 'route-fourth-war',
     worldId: 'world-naruto',
     name: 'Quarta Guerra Ninja',
     description:
       'Spostamento dell\'Alleanza Shinobi sui fronti della guerra.',
-    protagonistCharacterIds: ['char-naruto', 'char-sasuke', 'char-kakashi', 'char-gaara'],
+    protagonistCharacterIds: [
+      'char-naruto',
+      'char-sasuke',
+      'char-kakashi',
+      'char-gaara',
+    ],
     arcId: 'arc-fourth-war',
     color: '#ff8311',
     steps: [
       { order: 1, locationId: 'loc-konoha', label: 'Dichiarazione di guerra', eventId: 'ev-war-declaration' },
       { order: 2, locationId: 'loc-fourth-war-battlefield', label: 'Fronti principali', eventId: 'ev-edo-tensei-army' },
-      { order: 3, locationId: 'loc-valley-of-end', label: 'Duello finale', eventId: 'ev-valley-end-2' },
-    ],
-    referenceStatus: 'verified',
-  },
-  {
-    id: 'route-jiraiya',
-    worldId: 'world-naruto',
-    name: 'Jiraiya · Sentiero del Sennin',
-    description:
-      'Dai rospi di Mt. Myōboku alle ricerche su Akatsuki ad Amegakure.',
-    protagonistCharacterIds: ['char-jiraiya'],
-    color: '#86cdff',
-    steps: [
-      { order: 1, locationId: 'loc-konoha', label: 'Konoha' },
-      { order: 2, locationId: 'loc-mt-myoboku', label: 'Mt. Myōboku' },
-      { order: 3, locationId: 'loc-ame', label: 'Infiltrazione ad Amegakure', eventId: 'ev-jiraiya-vs-pain' },
-    ],
-    referenceStatus: 'verified',
-  },
-  {
-    id: 'route-itachi',
-    worldId: 'world-naruto',
-    name: 'Itachi · Doppio agente',
-    description:
-      'Dalla strage Uchiha al confronto finale col fratello.',
-    protagonistCharacterIds: ['char-itachi'],
-    color: '#b00808',
-    steps: [
-      { order: 1, locationId: 'loc-konoha-uchiha-district', label: 'Strage del clan', eventId: 'ev-uchiha-massacre' },
-      { order: 2, locationId: 'loc-akatsuki-hq', label: 'Akatsuki' },
-      { order: 3, locationId: 'loc-orochimaru-hideout', label: 'Scontro con Sasuke', eventId: 'ev-itachi-vs-sasuke' },
+      { order: 3, locationId: 'loc-kaguya-dimensions', label: 'Dimensioni Kaguya', eventId: 'ev-team-7-vs-kaguya' },
+      { order: 4, locationId: 'loc-valley-of-end', label: 'Duello finale', eventId: 'ev-valley-end-2' },
     ],
     referenceStatus: 'verified',
   },
@@ -122,10 +282,72 @@ export const narutoRoutes: Route[] = [
     protagonistCharacterIds: ['char-obito'],
     color: '#4cb6ff',
     steps: [
-      { order: 1, locationId: 'loc-konoha-uchiha-district', label: 'Infanzia Uchiha' },
-      { order: 2, locationId: 'loc-konoha', label: 'Attacco di Kurama', eventId: 'ev-kurama-attack' },
-      { order: 3, locationId: 'loc-akatsuki-hq', label: 'Mente Akatsuki' },
-      { order: 4, locationId: 'loc-fourth-war-battlefield', label: 'Quarta Guerra', eventId: 'ev-obito-vs-kakashi' },
+      { order: 1, locationId: 'loc-kannabi-bridge', label: 'Kannabi', eventId: 'ev-kannabi-bridge' },
+      { order: 2, locationId: 'loc-mountains-graveyard', label: 'Mountains\' Graveyard · con Madara' },
+      { order: 3, locationId: 'loc-konoha', label: 'Attacco di Kurama', eventId: 'ev-kurama-attack' },
+      { order: 4, locationId: 'loc-akatsuki-hq', label: 'Mente Akatsuki' },
+      { order: 5, locationId: 'loc-fourth-war-battlefield', label: 'Quarta Guerra', eventId: 'ev-obito-vs-kakashi' },
+    ],
+    referenceStatus: 'verified',
+  },
+  {
+    id: 'route-itachi',
+    worldId: 'world-naruto',
+    name: 'Itachi · Doppio agente',
+    description:
+      'Dalla strage Uchiha al confronto finale con Sasuke.',
+    protagonistCharacterIds: ['char-itachi'],
+    color: '#b00808',
+    steps: [
+      { order: 1, locationId: 'loc-konoha-uchiha-district', label: 'Strage del clan', eventId: 'ev-uchiha-massacre' },
+      { order: 2, locationId: 'loc-akatsuki-hq', label: 'Akatsuki' },
+      { order: 3, locationId: 'loc-orochimaru-hideout', label: 'Scontro con Sasuke', eventId: 'ev-itachi-vs-sasuke' },
+    ],
+    referenceStatus: 'verified',
+  },
+  {
+    id: 'route-naruto-training',
+    worldId: 'world-naruto',
+    name: 'Naruto · Allenamenti principali',
+    description:
+      'Da Konoha a Mt. Myōboku passando per gli allenamenti con Jiraiya.',
+    protagonistCharacterIds: ['char-naruto'],
+    color: '#f06600',
+    steps: [
+      { order: 1, locationId: 'loc-konoha-training-7', label: 'Team 7 / Prova dei sonagli', eventId: 'ev-team-7-formed' },
+      { order: 2, locationId: 'loc-konoha', label: 'Allenamento Rasengan', eventId: 'ev-rasengan-mastery' },
+      { order: 3, locationId: 'loc-mt-myoboku', label: 'Allenamento Sage Mode', eventId: 'ev-naruto-sage-mode' },
+      { order: 4, locationId: 'loc-turtle-island', label: 'Controllo Kurama', eventId: 'ev-naruto-killer-b-train' },
+    ],
+    referenceStatus: 'verified',
+  },
+  {
+    id: 'route-sasuke-arc',
+    worldId: 'world-naruto',
+    name: 'Sasuke · Hebi → Taka → Summit',
+    description:
+      'Sasuke da Hebi a Taka, fino all\'attacco al Summit dei Kage.',
+    protagonistCharacterIds: ['char-sasuke'],
+    color: '#7d0606',
+    steps: [
+      { order: 1, locationId: 'loc-orochimaru-hideout', label: 'Sasuke supera Orochimaru', eventId: 'ev-sasuke-killing-orochimaru' },
+      { order: 2, locationId: 'loc-akatsuki-hq', label: 'Tobi rivela la verità', eventId: 'ev-tobi-reveals-truth' },
+      { order: 3, locationId: 'loc-five-kage-meeting', label: 'Attacco al Summit', eventId: 'ev-iron-summit-attack' },
+    ],
+    referenceStatus: 'verified',
+  },
+  {
+    id: 'route-final-battle',
+    worldId: 'world-naruto',
+    name: 'Battaglia finale alla Valle della Fine',
+    description:
+      'Dalla dimensione Kaguya al duello conclusivo Naruto vs Sasuke.',
+    protagonistCharacterIds: ['char-naruto', 'char-sasuke'],
+    arcId: 'arc-final-battle',
+    color: '#e10b0b',
+    steps: [
+      { order: 1, locationId: 'loc-kaguya-dimensions', label: 'Sigillamento Kaguya', eventId: 'ev-team-7-vs-kaguya' },
+      { order: 2, locationId: 'loc-valley-of-end', label: 'Duello finale', eventId: 'ev-valley-end-2' },
     ],
     referenceStatus: 'verified',
   },

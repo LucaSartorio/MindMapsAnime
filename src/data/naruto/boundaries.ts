@@ -1,0 +1,510 @@
+import type { MapBoundary } from '@/types';
+
+/**
+ * Confini cliccabili per la world map Naruto.
+ *
+ * Tutti i `svgPathD` sono espressi nel sistema del viewBox della mappa
+ * (1500 x 882.2204). Sono allineati al placeholder
+ * `public/assets/worlds/naruto/maps/Naruto_World_Map.svg`.
+ *
+ * TODO sostituendo l'SVG:
+ *  - se cambi la mappa, rivedi i `svgPathD` e `labelPosition` per allinearli
+ *    ai nuovi continenti senza modificare il file originale.
+ *  - il viewBox 1500 x 882.2204 deve restare invariato per non rompere i pin.
+ */
+export const narutoBoundaries: MapBoundary[] = [
+  /* ============= GRANDI NAZIONI ============= */
+  {
+    id: 'boundary-fire',
+    worldId: 'world-naruto',
+    mapLevelId: 'naruto-map-world',
+    slug: 'fire',
+    name: 'Land of Fire',
+    japaneseName: 'Hi no Kuni',
+    type: 'great_nation',
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    svgPathD:
+      'M540 260 C 660 220, 880 220, 980 280 C 1030 320, 1040 410, 1010 470 C 970 530, 880 560, 770 560 C 660 555, 560 510, 510 440 C 480 390, 480 320, 540 260 Z',
+    labelPosition: { x: 740, y: 395 },
+    nationId: 'nation-fire',
+    color: '#f06600',
+    descriptionShort:
+      'Una delle Cinque Grandi Nazioni. Foreste estese, clima caldo. Sede di Konohagakure.',
+    descriptionLong:
+      'Storicamente la più potente fra le cinque grandi nazioni. Governata dal Daimyō del Fuoco; ospita il Villaggio Nascosto della Foglia.',
+    tags: ['fire', 'foglia', 'hokage'],
+  },
+  {
+    id: 'boundary-wind',
+    worldId: 'world-naruto',
+    mapLevelId: 'naruto-map-world',
+    slug: 'wind',
+    name: 'Land of Wind',
+    japaneseName: 'Kaze no Kuni',
+    type: 'great_nation',
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    svgPathD:
+      'M120 470 C 240 430, 420 430, 510 480 C 540 520, 540 600, 500 650 C 440 720, 300 740, 200 700 C 110 660, 70 580, 90 530 C 100 510, 110 490, 120 470 Z',
+    labelPosition: { x: 290, y: 590 },
+    nationId: 'nation-wind',
+    color: '#d4be78',
+    descriptionShort:
+      'Vasti deserti e dune. Sede di Sunagakure e del Kazekage.',
+    descriptionLong:
+      'Una delle cinque grandi nazioni. Clima desertico estremo. Il Daimyō del Vento ha storicamente intrattenuto rapporti complessi con quello del Fuoco.',
+    tags: ['deserto', 'sabbia'],
+  },
+  {
+    id: 'boundary-water',
+    worldId: 'world-naruto',
+    mapLevelId: 'naruto-map-world',
+    slug: 'water',
+    name: 'Land of Water',
+    japaneseName: 'Mizu no Kuni',
+    type: 'great_nation',
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    svgPathD:
+      'M1240 460 C 1320 440, 1410 470, 1440 530 C 1450 580, 1410 630, 1340 640 C 1270 645, 1220 610, 1210 560 C 1205 520, 1215 480, 1240 460 Z M1110 540 C 1160 525, 1210 560, 1215 600 C 1205 640, 1140 660, 1090 640 C 1050 620, 1060 570, 1110 540 Z M1300 680 C 1350 665, 1410 690, 1410 730 C 1395 770, 1330 770, 1290 745 C 1265 720, 1275 690, 1300 680 Z M1180 720 C 1220 712, 1260 730, 1255 760 C 1235 790, 1180 790, 1160 762 C 1150 745, 1160 728, 1180 720 Z',
+    labelPosition: { x: 1320, y: 555 },
+    nationId: 'nation-water',
+    color: '#4cb6ff',
+    descriptionShort:
+      'Arcipelago di isole nebbiose. Sede di Kirigakure.',
+    descriptionLong:
+      'Una delle cinque grandi nazioni. Centinaia di isole; storia interna violenta nota come "Bloody Mist".',
+    tags: ['nebbia', 'isole'],
+  },
+  {
+    id: 'boundary-earth',
+    worldId: 'world-naruto',
+    mapLevelId: 'naruto-map-world',
+    slug: 'earth',
+    name: 'Land of Earth',
+    japaneseName: 'Tsuchi no Kuni',
+    type: 'great_nation',
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    svgPathD:
+      'M70 140 C 160 100, 320 90, 420 130 C 480 170, 470 260, 430 320 C 390 360, 300 380, 220 360 C 150 350, 90 290, 60 230 C 50 200, 50 170, 70 140 Z',
+    labelPosition: { x: 240, y: 230 },
+    nationId: 'nation-earth',
+    color: '#963c03',
+    descriptionShort:
+      'Terre rocciose e canyon. Sede di Iwagakure.',
+    descriptionLong:
+      'Una delle cinque grandi nazioni. Governata dal Tsuchikage. Spesso in conflitto con la Foglia.',
+    tags: ['rocce', 'tsuchikage'],
+  },
+  {
+    id: 'boundary-lightning',
+    worldId: 'world-naruto',
+    mapLevelId: 'naruto-map-world',
+    slug: 'lightning',
+    name: 'Land of Lightning',
+    japaneseName: 'Kaminari no Kuni',
+    type: 'great_nation',
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    svgPathD:
+      'M1080 110 C 1180 80, 1320 90, 1410 150 C 1450 200, 1440 290, 1380 340 C 1320 380, 1220 380, 1140 350 C 1080 320, 1040 250, 1050 190 C 1055 160, 1065 130, 1080 110 Z',
+    labelPosition: { x: 1240, y: 220 },
+    nationId: 'nation-lightning',
+    color: '#1f9aff',
+    descriptionShort:
+      'Montagne aspre, alta densità di tempeste. Sede di Kumogakure.',
+    descriptionLong:
+      'Una delle cinque grandi nazioni. Capitale ninja Kumogakure, retta dal Raikage. Patria di Killer B.',
+    tags: ['fulmine', 'raikage'],
+  },
+
+  /* ============= NAZIONI MINORI ============= */
+  {
+    id: 'boundary-rain',
+    worldId: 'world-naruto',
+    mapLevelId: 'naruto-map-world',
+    slug: 'rain',
+    name: 'Land of Rain',
+    japaneseName: 'Ame no Kuni',
+    type: 'minor_nation',
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    svgPathD:
+      'M460 220 C 520 200, 600 210, 620 250 C 615 290, 560 310, 510 300 C 470 290, 440 260, 460 220 Z',
+    labelPosition: { x: 540, y: 260 },
+    nationId: 'nation-rain',
+    color: '#6aa8d8',
+    descriptionShort:
+      'Nazione di confine fra le grandi, costantemente sotto la pioggia.',
+    descriptionLong:
+      'Teatro di numerose guerre. Sede di Amegakure, dove operò l\'Akatsuki sotto Pain.',
+    tags: ['pioggia', 'akatsuki', 'pain'],
+  },
+  {
+    id: 'boundary-sound',
+    worldId: 'world-naruto',
+    mapLevelId: 'naruto-map-world',
+    slug: 'sound',
+    name: 'Land of Sound',
+    japaneseName: 'Oto no Kuni',
+    type: 'minor_nation',
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    svgPathD:
+      'M900 200 C 960 180, 1030 200, 1050 240 C 1040 280, 980 290, 930 280 C 890 270, 880 230, 900 200 Z',
+    labelPosition: { x: 965, y: 240 },
+    nationId: 'nation-sound',
+    color: '#a0a0b0',
+    descriptionShort:
+      'Piccola nazione fondata da Orochimaru per ospitare Otogakure.',
+    descriptionLong:
+      'Nazione fittizia creata da Orochimaru, situata fra il Paese del Fuoco e altri paesi minori. Composta da numerosi nascondigli ninja.',
+    tags: ['orochimaru', 'sound'],
+  },
+  {
+    id: 'boundary-grass',
+    worldId: 'world-naruto',
+    mapLevelId: 'naruto-map-world',
+    slug: 'grass',
+    name: 'Land of Grass',
+    japaneseName: 'Kusa no Kuni',
+    type: 'minor_nation',
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    svgPathD:
+      'M420 360 C 470 345, 530 360, 540 390 C 530 425, 470 435, 430 420 C 405 410, 405 380, 420 360 Z',
+    labelPosition: { x: 475, y: 395 },
+    nationId: 'nation-grass',
+    color: '#7fb05a',
+    descriptionShort:
+      'Praterie fra Iwa e Konoha. Sede di Kusagakure.',
+    descriptionLong:
+      'Frequente teatro di scontri durante le grandi guerre ninja. Confina con Iwa e con il Paese del Fuoco.',
+    tags: ['kusa', 'praterie'],
+  },
+  {
+    id: 'boundary-waterfalls',
+    worldId: 'world-naruto',
+    mapLevelId: 'naruto-map-world',
+    slug: 'waterfalls',
+    name: 'Land of Waterfalls',
+    japaneseName: 'Taki no Kuni',
+    type: 'minor_nation',
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    svgPathD:
+      'M1010 360 C 1060 350, 1110 370, 1115 400 C 1100 430, 1050 440, 1015 425 C 995 415, 995 380, 1010 360 Z',
+    labelPosition: { x: 1055, y: 395 },
+    nationId: 'nation-waterfalls',
+    color: '#62b8c4',
+    descriptionShort:
+      'Nazione boschiva nota per le cascate. Sede di Takigakure.',
+    tags: ['takigakure', 'cascate'],
+  },
+  {
+    id: 'boundary-hotwater',
+    worldId: 'world-naruto',
+    mapLevelId: 'naruto-map-world',
+    slug: 'hotwater',
+    name: 'Land of Hot Water',
+    japaneseName: 'Yu no Kuni',
+    type: 'minor_nation',
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    svgPathD:
+      'M880 130 C 930 115, 980 130, 990 160 C 980 190, 930 200, 895 188 C 870 178, 870 150, 880 130 Z',
+    labelPosition: { x: 932, y: 158 },
+    nationId: 'nation-hotwater',
+    color: '#d48a8a',
+    descriptionShort:
+      'Famosa per le sorgenti termali. Ospitò Yugakure.',
+    descriptionLong:
+      'Yugakure abbandonò la propria attività ninja diventando città turistica. Hidan vi crebbe.',
+    tags: ['yugakure', 'terme'],
+  },
+  {
+    id: 'boundary-iron',
+    worldId: 'world-naruto',
+    mapLevelId: 'naruto-map-world',
+    slug: 'iron',
+    name: 'Land of Iron',
+    japaneseName: 'Tetsu no Kuni',
+    type: 'minor_nation',
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    svgPathD:
+      'M620 110 C 700 90, 820 95, 870 120 C 880 150, 830 175, 750 178 C 670 175, 615 155, 620 110 Z',
+    labelPosition: { x: 745, y: 138 },
+    nationId: 'nation-iron',
+    color: '#c8ccd6',
+    descriptionShort:
+      'Nazione neutrale dei samurai, sede del Summit dei Cinque Kage.',
+    tags: ['iron', 'samurai', 'mifune'],
+  },
+  {
+    id: 'boundary-waves',
+    worldId: 'world-naruto',
+    mapLevelId: 'naruto-map-world',
+    slug: 'waves',
+    name: 'Land of Waves',
+    japaneseName: 'Nami no Kuni',
+    type: 'island',
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    svgPathD:
+      'M1090 470 C 1120 460, 1145 480, 1142 500 C 1125 515, 1095 510, 1085 495 C 1080 485, 1080 478, 1090 470 Z',
+    labelPosition: { x: 1112, y: 488 },
+    nationId: 'nation-waves',
+    color: '#5dc1d6',
+    descriptionShort:
+      'Piccola isola scenario della prima missione del Team 7.',
+    descriptionLong:
+      'Nazione povera oppressa da Gato. Il "Great Naruto Bridge" prende il nome dalla missione del Team 7.',
+    tags: ['team-7', 'ponte', 'zabuza', 'haku'],
+  },
+  {
+    id: 'boundary-tea',
+    worldId: 'world-naruto',
+    mapLevelId: 'naruto-map-world',
+    slug: 'tea',
+    name: 'Land of Tea',
+    japaneseName: 'Cha no Kuni',
+    type: 'minor_nation',
+    canonStatus: 'anime_only',
+    referenceStatus: 'needs_verification',
+    svgPathD:
+      'M720 580 C 790 575, 850 595, 855 625 C 840 655, 770 660, 720 645 C 695 635, 695 605, 720 580 Z',
+    labelPosition: { x: 780, y: 614 },
+    nationId: 'nation-tea',
+    color: '#9ec47a',
+    descriptionShort:
+      'Nazione costiera famosa per le piantagioni di tè (arco anime).',
+    tags: ['anime-only', 'tea'],
+  },
+  {
+    id: 'boundary-rivers',
+    worldId: 'world-naruto',
+    mapLevelId: 'naruto-map-world',
+    slug: 'rivers',
+    name: 'Land of Rivers',
+    japaneseName: 'Kawa no Kuni',
+    type: 'minor_nation',
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    svgPathD:
+      'M470 510 C 530 495, 590 510, 600 540 C 590 570, 540 580, 495 570 C 470 562, 460 530, 470 510 Z',
+    labelPosition: { x: 535, y: 540 },
+    nationId: 'nation-rivers',
+    color: '#7bb2cc',
+    descriptionShort:
+      'Cuscinetto fra Wind e Fire. Ospitò un nascondiglio Akatsuki.',
+    tags: ['akatsuki', 'sasori'],
+  },
+  {
+    id: 'boundary-birds',
+    worldId: 'world-naruto',
+    mapLevelId: 'naruto-map-world',
+    slug: 'birds',
+    name: 'Land of Birds',
+    japaneseName: 'Tori no Kuni',
+    type: 'minor_nation',
+    canonStatus: 'anime_only',
+    referenceStatus: 'needs_verification',
+    svgPathD:
+      'M1120 250 C 1170 240, 1220 255, 1225 285 C 1215 315, 1165 320, 1130 310 C 1110 300, 1110 270, 1120 250 Z',
+    labelPosition: { x: 1170, y: 282 },
+    nationId: 'nation-birds',
+    color: '#c8c47a',
+    descriptionShort:
+      'Filler arc nella prima serie (anime-only).',
+    tags: ['anime-only', 'filler'],
+  },
+  {
+    id: 'boundary-snow',
+    worldId: 'world-naruto',
+    mapLevelId: 'naruto-map-world',
+    slug: 'snow',
+    name: 'Land of Snow',
+    japaneseName: 'Yuki no Kuni',
+    type: 'minor_nation',
+    canonStatus: 'movie',
+    referenceStatus: 'needs_verification',
+    svgPathD:
+      'M820 30 C 900 20, 1000 25, 1020 50 C 1010 70, 920 80, 850 75 C 815 70, 815 50, 820 30 Z',
+    labelPosition: { x: 920, y: 50 },
+    nationId: 'nation-snow',
+    color: '#b8d8f0',
+    descriptionShort:
+      'Movie arc — successivamente "Land of Spring". Ospitò Yukigakure.',
+    tags: ['movie', 'koyuki'],
+  },
+  {
+    id: 'boundary-demons',
+    worldId: 'world-naruto',
+    mapLevelId: 'naruto-map-world',
+    slug: 'demons',
+    name: 'Land of Demons',
+    japaneseName: 'Ma no Kuni',
+    type: 'minor_nation',
+    canonStatus: 'movie',
+    referenceStatus: 'needs_verification',
+    svgPathD:
+      'M170 700 C 215 695, 260 715, 260 740 C 240 760, 195 760, 175 745 C 160 735, 160 720, 170 700 Z',
+    labelPosition: { x: 215, y: 730 },
+    nationId: 'nation-demons',
+    color: '#c87878',
+    descriptionShort:
+      'Movie arc — sigillamento di Moryo.',
+    tags: ['movie', 'shion'],
+  },
+  {
+    id: 'boundary-bears',
+    worldId: 'world-naruto',
+    mapLevelId: 'naruto-map-world',
+    slug: 'bears',
+    name: 'Land of Bears',
+    japaneseName: 'Kuma no Kuni',
+    type: 'minor_nation',
+    canonStatus: 'canon',
+    referenceStatus: 'needs_verification',
+    svgPathD:
+      'M140 60 C 180 50, 230 60, 245 80 C 235 100, 190 110, 155 100 C 135 95, 130 75, 140 60 Z',
+    labelPosition: { x: 195, y: 80 },
+    nationId: 'nation-bears',
+    color: '#a88a5a',
+    descriptionShort:
+      'Nazione settentrionale; ospitò Hoshigakure.',
+    tags: ['hoshigakure'],
+  },
+  {
+    id: 'boundary-mountains',
+    worldId: 'world-naruto',
+    mapLevelId: 'naruto-map-world',
+    slug: 'mountains',
+    name: 'Land of Mountains',
+    japaneseName: 'Yama no Kuni',
+    type: 'minor_nation',
+    canonStatus: 'canon',
+    referenceStatus: 'needs_verification',
+    svgPathD:
+      'M820 660 C 880 650, 950 670, 960 700 C 945 730, 870 740, 825 725 C 800 715, 800 680, 820 660 Z',
+    labelPosition: { x: 885, y: 695 },
+    nationId: 'nation-mountains',
+    color: '#9090b0',
+    descriptionShort:
+      'Nazione meridionale rocciosa.',
+    tags: ['montagne'],
+  },
+  {
+    id: 'boundary-forests',
+    worldId: 'world-naruto',
+    mapLevelId: 'naruto-map-world',
+    slug: 'forests',
+    name: 'Land of Forests',
+    japaneseName: 'Mori no Kuni',
+    type: 'region',
+    canonStatus: 'canon',
+    referenceStatus: 'needs_verification',
+    svgPathD:
+      'M770 470 C 820 460, 870 475, 875 500 C 860 525, 815 530, 780 518 C 765 510, 760 480, 770 470 Z',
+    labelPosition: { x: 820, y: 500 },
+    nationId: 'nation-forests',
+    color: '#5a9050',
+    descriptionShort:
+      'Regione boschiva del Paese del Fuoco.',
+    tags: ['foresta'],
+  },
+  {
+    id: 'boundary-valleys',
+    worldId: 'world-naruto',
+    mapLevelId: 'naruto-map-world',
+    slug: 'valleys',
+    name: 'Land of Valleys',
+    japaneseName: 'Tani no Kuni',
+    type: 'region',
+    canonStatus: 'canon',
+    referenceStatus: 'needs_verification',
+    svgPathD:
+      'M650 200 C 690 195, 730 210, 730 230 C 715 245, 680 245, 655 235 C 640 228, 640 215, 650 200 Z',
+    labelPosition: { x: 685, y: 220 },
+    color: '#90a890',
+    descriptionShort:
+      'Regione fra Iron e Fire, principalmente valli e fiumi.',
+    tags: ['valli'],
+  },
+  {
+    id: 'boundary-sea',
+    worldId: 'world-naruto',
+    mapLevelId: 'naruto-map-world',
+    slug: 'sea',
+    name: 'Land of the Sea',
+    japaneseName: 'Umi no Kuni',
+    type: 'island',
+    canonStatus: 'anime_only',
+    referenceStatus: 'needs_verification',
+    svgPathD:
+      'M1400 380 C 1430 370, 1460 385, 1455 405 C 1440 420, 1410 415, 1400 405 C 1395 395, 1395 385, 1400 380 Z',
+    labelPosition: { x: 1428, y: 395 },
+    color: '#46a8c8',
+    descriptionShort:
+      'Anime-only filler ad est della Land of Lightning.',
+    tags: ['anime-only', 'filler'],
+  },
+  {
+    id: 'boundary-claws',
+    worldId: 'world-naruto',
+    mapLevelId: 'naruto-map-world',
+    slug: 'claws',
+    name: 'Land of Claws',
+    japaneseName: 'Tsume no Kuni',
+    type: 'island',
+    canonStatus: 'anime_only',
+    referenceStatus: 'needs_verification',
+    svgPathD:
+      'M1300 60 C 1340 50, 1380 65, 1380 85 C 1365 100, 1325 100, 1310 90 C 1295 82, 1295 70, 1300 60 Z',
+    labelPosition: { x: 1338, y: 77 },
+    color: '#b86060',
+    descriptionShort:
+      'Filler arc nella serie originale.',
+    tags: ['anime-only', 'filler'],
+  },
+  {
+    id: 'boundary-fangs',
+    worldId: 'world-naruto',
+    mapLevelId: 'naruto-map-world',
+    slug: 'fangs',
+    name: 'Land of Fangs',
+    japaneseName: 'Kiba no Kuni',
+    type: 'minor_nation',
+    canonStatus: 'anime_only',
+    referenceStatus: 'needs_verification',
+    svgPathD:
+      'M540 730 C 580 720, 620 735, 620 755 C 605 770, 570 775, 545 760 C 535 752, 535 740, 540 730 Z',
+    labelPosition: { x: 580, y: 748 },
+    color: '#b06060',
+    descriptionShort:
+      'Anime-only arc (Hidan/Kakuzu).',
+    tags: ['anime-only', 'kakuzu'],
+  },
+  {
+    id: 'boundary-ricefields',
+    worldId: 'world-naruto',
+    mapLevelId: 'naruto-map-world',
+    slug: 'ricefields',
+    name: 'Land of Rice Fields',
+    japaneseName: 'Ta no Kuni',
+    type: 'minor_nation',
+    canonStatus: 'canon',
+    referenceStatus: 'needs_verification',
+    /* Sovrapposto a Sound: storicamente diventa Land of Sound. */
+    svgPathD:
+      'M905 205 C 960 188, 1020 205, 1042 240 C 1035 275, 980 285, 935 278 C 898 270, 892 232, 905 205 Z',
+    labelPosition: { x: 970, y: 250 },
+    color: '#c0b078',
+    descriptionShort:
+      'Antico nome della regione poi nota come Land of Sound.',
+    tags: ['rice', 'sound', 'orochimaru'],
+  },
+];

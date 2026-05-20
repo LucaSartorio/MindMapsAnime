@@ -47,6 +47,49 @@ export type FactionType =
   | 'army'
   | 'group';
 
+/* ------------------------------ Boundaries / Regioni ------------------------------ */
+
+export type BoundaryType =
+  | 'great_nation'
+  | 'minor_nation'
+  | 'region'
+  | 'island'
+  | 'special_area'
+  | 'unknown';
+
+/**
+ * MapBoundary: path SVG cliccabile per una nazione/regione del mondo.
+ * Coordinate nel sistema del viewBox della mappa di riferimento
+ * (per Naruto: 1500 x 882.2204).
+ */
+export interface MapBoundary {
+  id: string;
+  worldId: string;
+  mapLevelId: string;
+  /** Slug usato per chiavi/lookup */
+  slug: string;
+  name: string;
+  japaneseName?: string;
+  type: BoundaryType;
+  canonStatus: CanonStatus;
+  referenceStatus: ReferenceStatus;
+  /** Attributo `d` del path SVG che delimita il territorio */
+  svgPathD: string;
+  /** Punto consigliato per la label/centratura, in coord. viewBox */
+  labelPosition: { x: number; y: number };
+  /** Eventuale riferimento alla `Nation` corrispondente */
+  nationId?: string;
+  relatedLocationIds?: string[];
+  relatedCharacterIds?: string[];
+  relatedArcIds?: string[];
+  relatedEventIds?: string[];
+  descriptionShort: string;
+  descriptionLong?: string;
+  /** Colore principale del territorio (riempimento overlay) */
+  color?: string;
+  tags?: string[];
+}
+
 /* ------------------------------ Tema mondo ------------------------------ */
 
 export interface WorldTheme {
@@ -130,8 +173,27 @@ export interface Nation {
   worldId: string;
   name: string;
   nameLocal?: string;
+  japaneseName?: string;
+  /** Classificazione canon per la nazione */
+  type?:
+    | 'great_nation'
+    | 'minor_nation'
+    | 'neutral_land'
+    | 'anime_only'
+    | 'movie_only'
+    | 'uncertain';
   description: string;
+  descriptionLong?: string;
   capitalLocationId?: string;
+  /** Villaggi nascosti che appartengono a questa nazione */
+  hiddenVillageIds?: string[];
+  relatedLocationIds?: string[];
+  relatedArcIds?: string[];
+  relatedEventIds?: string[];
+  /** Boundary cliccabile associato (path SVG) */
+  boundaryId?: string;
+  canonStatus?: CanonStatus;
+  referenceStatus?: ReferenceStatus;
   color?: string;
   tags?: string[];
 }
@@ -159,7 +221,10 @@ export interface Location {
   /** Riferimenti manga/anime opzionali */
   mangaChapters?: string[];
   animeEpisodes?: string[];
+  canonStatus?: CanonStatus;
   referenceStatus?: ReferenceStatus;
+  /** Eventuale boundary di appartenenza */
+  boundaryId?: string;
   /** Eventuale sottomappa esplorabile */
   subMapLevelId?: string;
   assetIds?: string[];
@@ -287,6 +352,7 @@ export interface Route {
   arcId?: string;
   steps: RouteStep[];
   color?: string;
+  canonStatus?: CanonStatus;
   referenceStatus?: ReferenceStatus;
   tags?: string[];
 }
@@ -302,6 +368,8 @@ export interface WorldDataset {
   world: AnimeWorld;
   mapLevels: MapLevel[];
   nations: Nation[];
+  /** Boundary path cliccabili (overlay SVG). Opzionale per mondi senza mappa con regioni. */
+  boundaries?: MapBoundary[];
   locations: Location[];
   characters: Character[];
   factions: Faction[];
@@ -321,6 +389,7 @@ export type SearchResultKind =
   | 'arc'
   | 'event'
   | 'nation'
+  | 'boundary'
   | 'route';
 
 export interface SearchResult {
@@ -350,6 +419,24 @@ export interface MapFilters {
   showFactions: boolean;
 }
 
+/**
+ * Layer visibili sulla mappa.
+ * Ogni layer è indipendente; default sensato per non sovraccaricare l'utente.
+ */
+export interface VisibleLayers {
+  boundaries: boolean;
+  nationLabels: boolean;
+  mainVillages: boolean;
+  minorVillages: boolean;
+  specialPlaces: boolean;
+  routesCanon: boolean;
+  routesNonCanon: boolean;
+  eventsCanon: boolean;
+  eventsNonCanon: boolean;
+  arcsCanon: boolean;
+  arcsNonCanon: boolean;
+}
+
 export const defaultFilters: MapFilters = {
   locationTypes: [],
   nationIds: [],
@@ -362,4 +449,18 @@ export const defaultFilters: MapFilters = {
   showRoutes: true,
   showEvents: true,
   showFactions: true,
+};
+
+export const defaultLayers: VisibleLayers = {
+  boundaries: true,
+  nationLabels: true,
+  mainVillages: true,
+  minorVillages: true,
+  specialPlaces: true,
+  routesCanon: true,
+  routesNonCanon: false,
+  eventsCanon: true,
+  eventsNonCanon: false,
+  arcsCanon: true,
+  arcsNonCanon: false,
 };

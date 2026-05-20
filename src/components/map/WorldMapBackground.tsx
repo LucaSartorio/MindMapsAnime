@@ -1,4 +1,4 @@
-import type { MapLevel, Nation, WorldDataset } from '@/types';
+import type { MapLevel, WorldDataset } from '@/types';
 
 interface WorldMapBackgroundProps {
   level: MapLevel;
@@ -6,10 +6,15 @@ interface WorldMapBackgroundProps {
 }
 
 /**
- * Sfondo della mappa.
- * Quando un MapLevel ha un asset valido (con url) lo renderizziamo come immagine.
- * Altrimenti generiamo uno sfondo SVG concettuale e stilizzato, derivato dalle
- * nazioni del dataset. NON è una mappa ufficiale, solo un placeholder.
+ * Sfondo della mappa. Tre comportamenti possibili:
+ *
+ * 1. Asset registrato con `url` → carica l'immagine/SVG (es. Naruto World Map).
+ * 2. Map level "konoha" → placeholder SVG concettuale del villaggio.
+ * 3. Fallback → placeholder generico con label "no map".
+ *
+ * Il container è scalato per condividere il viewBox della mappa logica.
+ * Tutti i layer (boundaries, labels, React Flow nodi) si allineano usando
+ * lo stesso sistema coordinate.
  */
 export function WorldMapBackground({ level, dataset }: WorldMapBackgroundProps) {
   const asset = level.backgroundAssetId
@@ -22,55 +27,19 @@ export function WorldMapBackground({ level, dataset }: WorldMapBackgroundProps) 
         src={asset.url}
         alt={`Mappa di ${level.name}`}
         loading="lazy"
-        className="absolute inset-0 h-full w-full object-cover opacity-80"
+        className="absolute inset-0 h-full w-full object-contain select-none pointer-events-none"
+        draggable={false}
       />
     );
   }
 
-  // Fallback: SVG placeholder
   if (level.slug === 'konoha') {
     return <KonohaPlaceholder level={level} />;
   }
-  return <ElementalNationsPlaceholder level={level} dataset={dataset} />;
+  return <GenericPlaceholder level={level} />;
 }
 
-function ElementalNationsPlaceholder({
-  level,
-  dataset,
-}: {
-  level: MapLevel;
-  dataset: WorldDataset;
-}) {
-  // Regioni indicative per le Nazioni Elementali Naruto.
-  // Pure stilizzazione, NON corrisponde a una mappa ufficiale.
-  const regions: { id: string; d: string; nation?: Nation }[] = [
-    {
-      id: 'r-water',
-      d: 'M1100 150 q150 -40 250 60 q70 140 -40 220 q-160 80 -260 -40 q-80 -140 50 -240 Z',
-      nation: dataset.nations.find((n) => n.id === 'nation-water'),
-    },
-    {
-      id: 'r-earth',
-      d: 'M120 120 q200 -60 380 80 q40 140 -120 220 q-200 60 -320 -60 q-80 -140 60 -240 Z',
-      nation: dataset.nations.find((n) => n.id === 'nation-earth'),
-    },
-    {
-      id: 'r-lightning',
-      d: 'M1000 470 q160 -40 280 100 q60 160 -100 240 q-200 60 -300 -80 q-60 -160 120 -260 Z',
-      nation: dataset.nations.find((n) => n.id === 'nation-lightning'),
-    },
-    {
-      id: 'r-wind',
-      d: 'M300 540 q160 -40 320 80 q60 140 -120 240 q-220 80 -340 -40 q-100 -160 140 -280 Z',
-      nation: dataset.nations.find((n) => n.id === 'nation-wind'),
-    },
-    {
-      id: 'r-fire',
-      d: 'M620 380 q220 -50 360 90 q60 180 -160 280 q-260 80 -360 -80 q-100 -180 160 -290 Z',
-      nation: dataset.nations.find((n) => n.id === 'nation-fire'),
-    },
-  ];
-
+function GenericPlaceholder({ level }: { level: MapLevel }) {
   return (
     <svg
       viewBox={`0 0 ${level.width} ${level.height}`}
@@ -83,80 +52,17 @@ function ElementalNationsPlaceholder({
           <stop offset="0%" stopColor="#13151b" />
           <stop offset="100%" stopColor="#070709" />
         </radialGradient>
-        <pattern
-          id="bg-cross"
-          width="80"
-          height="80"
-          patternUnits="userSpaceOnUse"
-        >
-          <path
-            d="M40 0 V80 M0 40 H80"
-            stroke="rgba(255,255,255,0.04)"
-            strokeWidth="1"
-          />
-        </pattern>
       </defs>
-      <rect
-        width={level.width}
-        height={level.height}
-        fill="url(#bg-radial)"
-      />
-      <rect
-        width={level.width}
-        height={level.height}
-        fill="url(#bg-cross)"
-      />
-      {/* Bordo continente */}
-      <rect
-        x="30"
-        y="30"
-        width={level.width - 60}
-        height={level.height - 60}
-        rx="32"
-        fill="none"
-        stroke="rgba(255,255,255,0.06)"
-        strokeWidth="1.5"
-        strokeDasharray="6 8"
-      />
-      {regions.map((r) =>
-        r.nation ? (
-          <g key={r.id} opacity="0.55">
-            <path
-              d={r.d}
-              fill={r.nation.color ?? '#3a3f4f'}
-              fillOpacity="0.15"
-              stroke={r.nation.color ?? '#5b6275'}
-              strokeOpacity="0.5"
-              strokeWidth="1.5"
-            />
-          </g>
-        ) : null,
-      )}
-      {regions.map((r) =>
-        r.nation ? (
-          <text
-            key={`${r.id}-label`}
-            x={parseFloat(r.d.split(' ')[1])}
-            y={parseFloat(r.d.split(' ')[2]) + 40}
-            fill={r.nation.color ?? '#b6bbcb'}
-            fillOpacity="0.7"
-            fontSize="20"
-            fontFamily="Cinzel, serif"
-            textAnchor="start"
-          >
-            {r.nation.name}
-          </text>
-        ) : null,
-      )}
-      {/* Indicazione confini "non ufficiali" */}
+      <rect width={level.width} height={level.height} fill="url(#bg-radial)" />
       <text
-        x="40"
-        y={level.height - 28}
-        fill="rgba(255,255,255,0.35)"
-        fontSize="14"
+        x={level.width / 2}
+        y={level.height / 2}
+        textAnchor="middle"
+        fontSize="22"
         fontFamily="JetBrains Mono, monospace"
+        fill="rgba(255,255,255,0.3)"
       >
-        ※ placeholder · confini indicativi · non ufficiali
+        no map asset
       </text>
     </svg>
   );
@@ -187,17 +93,8 @@ function KonohaPlaceholder({ level }: { level: MapLevel }) {
           />
         </pattern>
       </defs>
-      <rect
-        width={level.width}
-        height={level.height}
-        fill="url(#leaf-grad)"
-      />
-      <rect
-        width={level.width}
-        height={level.height}
-        fill="url(#leaf-pat)"
-      />
-      {/* Mura del villaggio */}
+      <rect width={level.width} height={level.height} fill="url(#leaf-grad)" />
+      <rect width={level.width} height={level.height} fill="url(#leaf-pat)" />
       <ellipse
         cx={level.width / 2}
         cy={level.height / 2}
@@ -208,7 +105,6 @@ function KonohaPlaceholder({ level }: { level: MapLevel }) {
         strokeWidth="2"
         strokeDasharray="8 6"
       />
-      {/* Roccia degli Hokage stilizzata */}
       <path
         d="M 100 240 q 220 -120 1000 -10 q 30 70 -40 90 H 100 Z"
         fill="rgba(180,140,80,0.1)"

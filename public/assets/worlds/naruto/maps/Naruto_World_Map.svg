@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Naruto World Map · placeholder ad alta densità (CC0).
+  Disegnato localmente, NON è una mappa ufficiale.
+  Sostituire l'intero file con `Naruto_World_Map.svg` autorizzato mantenendo
+  lo stesso viewBox 1500 x 882.2204 per non rompere coordinate dei pin
+  e dei boundary path.
+  Quando si sostituisce, eventualmente rifinire `src/data/naruto/boundaries.ts`.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 882.2204" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <radialGradient id="ocean" cx="50%" cy="55%" r="70%">
+      <stop offset="0%" stop-color="#0b3a5a" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#040a15" stop-opacity="1"/>
+    </radialGradient>
+    <pattern id="grain" width="3" height="3" patternUnits="userSpaceOnUse">
+      <rect width="3" height="3" fill="#000" fill-opacity="0"/>
+      <circle cx="1" cy="1" r="0.4" fill="#ffffff" fill-opacity="0.04"/>
+    </pattern>
+    <radialGradient id="landFire" cx="55%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#3a2b1c"/>
+      <stop offset="60%" stop-color="#2a1d11"/>
+      <stop offset="100%" stop-color="#1a1209"/>
+    </radialGradient>
+    <radialGradient id="landWind" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#3a3322"/>
+      <stop offset="100%" stop-color="#231c11"/>
+    </radialGradient>
+    <radialGradient id="landEarth" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#33271a"/>
+      <stop offset="100%" stop-color="#1c1310"/>
+    </radialGradient>
+    <radialGradient id="landLightning" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#2c2735"/>
+      <stop offset="100%" stop-color="#15121d"/>
+    </radialGradient>
+    <radialGradient id="landWater" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#1a3a44"/>
+      <stop offset="100%" stop-color="#0b1d23"/>
+    </radialGradient>
+    <radialGradient id="landMinor" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#2a2418"/>
+      <stop offset="100%" stop-color="#14110a"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Oceano -->
+  <rect width="1500" height="882.2204" fill="url(#ocean)"/>
+  <rect width="1500" height="882.2204" fill="url(#grain)"/>
+
+  <!-- Cornice cartografica -->
+  <rect x="12" y="12" width="1476" height="858.2204" rx="14"
+        fill="none" stroke="rgba(212,190,120,0.18)" stroke-width="1.2" stroke-dasharray="4 6"/>
+
+  <!-- Reticolo discreto -->
+  <g stroke="rgba(255,255,255,0.04)" stroke-width="1">
+    <path d="M0 200 H1500 M0 400 H1500 M0 600 H1500 M0 800 H1500"/>
+    <path d="M200 0 V882 M400 0 V882 M600 0 V882 M800 0 V882 M1000 0 V882 M1200 0 V882 M1400 0 V882"/>
+  </g>
+
+  <!-- ============= GRANDI NAZIONI ============= -->
+
+  <!-- Land of Earth (NW) -->
+  <g>
+    <path d="M70 140 C 160 100, 320 90, 420 130 C 480 170, 470 260, 430 320 C 390 360, 300 380, 220 360 C 150 350, 90 290, 60 230 C 50 200, 50 170, 70 140 Z"
+          fill="url(#landEarth)" stroke="rgba(180,130,80,0.5)" stroke-width="1.4"/>
+  </g>
+
+  <!-- Land of Lightning (NE) -->
+  <g>
+    <path d="M1080 110 C 1180 80, 1320 90, 1410 150 C 1450 200, 1440 290, 1380 340 C 1320 380, 1220 380, 1140 350 C 1080 320, 1040 250, 1050 190 C 1055 160, 1065 130, 1080 110 Z"
+          fill="url(#landLightning)" stroke="rgba(140,140,200,0.55)" stroke-width="1.4"/>
+  </g>
+
+  <!-- Land of Fire (center) -->
+  <g>
+    <path d="M540 260 C 660 220, 880 220, 980 280 C 1030 320, 1040 410, 1010 470 C 970 530, 880 560, 770 560 C 660 555, 560 510, 510 440 C 480 390, 480 320, 540 260 Z"
+          fill="url(#landFire)" stroke="rgba(240,140,60,0.65)" stroke-width="1.5"/>
+  </g>
+
+  <!-- Land of Wind (SW) -->
+  <g>
+    <path d="M120 470 C 240 430, 420 430, 510 480 C 540 520, 540 600, 500 650 C 440 720, 300 740, 200 700 C 110 660, 70 580, 90 530 C 100 510, 110 490, 120 470 Z"
+          fill="url(#landWind)" stroke="rgba(220,200,110,0.55)" stroke-width="1.4"/>
+  </g>
+
+  <!-- Land of Water (E archipelago) -->
+  <g fill="url(#landWater)" stroke="rgba(80,180,210,0.55)" stroke-width="1.4">
+    <path d="M1240 460 C 1320 440, 1410 470, 1440 530 C 1450 580, 1410 630, 1340 640 C 1270 645, 1220 610, 1210 560 C 1205 520, 1215 480, 1240 460 Z"/>
+    <path d="M1110 540 C 1160 525, 1210 560, 1215 600 C 1205 640, 1140 660, 1090 640 C 1050 620, 1060 570, 1110 540 Z"/>
+    <path d="M1300 680 C 1350 665, 1410 690, 1410 730 C 1395 770, 1330 770, 1290 745 C 1265 720, 1275 690, 1300 680 Z"/>
+    <path d="M1180 720 C 1220 712, 1260 730, 1255 760 C 1235 790, 1180 790, 1160 762 C 1150 745, 1160 728, 1180 720 Z"/>
+  </g>
+
+  <!-- ============= NAZIONI MINORI ============= -->
+
+  <!-- Land of Rain (between Earth/Fire) -->
+  <path d="M460 220 C 520 200, 600 210, 620 250 C 615 290, 560 310, 510 300 C 470 290, 440 260, 460 220 Z"
+        fill="url(#landMinor)" stroke="rgba(80,140,200,0.45)" stroke-width="1.2"/>
+
+  <!-- Land of Sound (NE of Fire) -->
+  <path d="M900 200 C 960 180, 1030 200, 1050 240 C 1040 280, 980 290, 930 280 C 890 270, 880 230, 900 200 Z"
+        fill="url(#landMinor)" stroke="rgba(170,170,180,0.45)" stroke-width="1.2"/>
+
+  <!-- Land of Grass (W of Fire) -->
+  <path d="M420 360 C 470 345, 530 360, 540 390 C 530 425, 470 435, 430 420 C 405 410, 405 380, 420 360 Z"
+        fill="url(#landMinor)" stroke="rgba(140,200,120,0.4)" stroke-width="1.2"/>
+
+  <!-- Land of Waterfalls (between Fire & Lightning) -->
+  <path d="M1010 360 C 1060 350, 1110 370, 1115 400 C 1100 430, 1050 440, 1015 425 C 995 415, 995 380, 1010 360 Z"
+        fill="url(#landMinor)" stroke="rgba(120,200,210,0.4)" stroke-width="1.2"/>
+
+  <!-- Land of Hot Water -->
+  <path d="M880 130 C 930 115, 980 130, 990 160 C 980 190, 930 200, 895 188 C 870 178, 870 150, 880 130 Z"
+        fill="url(#landMinor)" stroke="rgba(220,140,140,0.4)" stroke-width="1.2"/>
+
+  <!-- Land of Iron (between Earth & Lightning, top center) -->
+  <path d="M620 110 C 700 90, 820 95, 870 120 C 880 150, 830 175, 750 178 C 670 175, 615 155, 620 110 Z"
+        fill="url(#landMinor)" stroke="rgba(220,220,230,0.45)" stroke-width="1.2"/>
+
+  <!-- Land of Waves (small island east of Fire) -->
+  <path d="M1090 470 C 1120 460, 1145 480, 1142 500 C 1125 515, 1095 510, 1085 495 C 1080 485, 1080 478, 1090 470 Z"
+        fill="url(#landMinor)" stroke="rgba(80,180,210,0.55)" stroke-width="1.2"/>
+
+  <!-- Land of Tea (S of Fire) -->
+  <path d="M720 580 C 790 575, 850 595, 855 625 C 840 655, 770 660, 720 645 C 695 635, 695 605, 720 580 Z"
+        fill="url(#landMinor)" stroke="rgba(150,200,150,0.4)" stroke-width="1.2"/>
+
+  <!-- Land of Rivers (between Wind & Fire) -->
+  <path d="M470 510 C 530 495, 590 510, 600 540 C 590 570, 540 580, 495 570 C 470 562, 460 530, 470 510 Z"
+        fill="url(#landMinor)" stroke="rgba(120,180,220,0.4)" stroke-width="1.2"/>
+
+  <!-- Land of Birds (E coast) -->
+  <path d="M1120 250 C 1170 240, 1220 255, 1225 285 C 1215 315, 1165 320, 1130 310 C 1110 300, 1110 270, 1120 250 Z"
+        fill="url(#landMinor)" stroke="rgba(200,200,140,0.35)" stroke-width="1.2"/>
+
+  <!-- Land of Snow (far north, anime-only) -->
+  <path d="M820 30 C 900 20, 1000 25, 1020 50 C 1010 70, 920 80, 850 75 C 815 70, 815 50, 820 30 Z"
+        fill="url(#landMinor)" stroke="rgba(190,210,240,0.4)" stroke-width="1.2" stroke-dasharray="4 3"/>
+
+  <!-- Land of Demons (peninsula SW) -->
+  <path d="M170 700 C 215 695, 260 715, 260 740 C 240 760, 195 760, 175 745 C 160 735, 160 720, 170 700 Z"
+        fill="url(#landMinor)" stroke="rgba(220,120,120,0.35)" stroke-width="1.2"/>
+
+  <!-- Land of Bears (NW corner) -->
+  <path d="M140 60 C 180 50, 230 60, 245 80 C 235 100, 190 110, 155 100 C 135 95, 130 75, 140 60 Z"
+        fill="url(#landMinor)" stroke="rgba(180,140,90,0.4)" stroke-width="1.2"/>
+
+  <!-- Land of Mountains (SE) -->
+  <path d="M820 660 C 880 650, 950 670, 960 700 C 945 730, 870 740, 825 725 C 800 715, 800 680, 820 660 Z"
+        fill="url(#landMinor)" stroke="rgba(150,140,180,0.4)" stroke-width="1.2"/>
+
+  <!-- Land of Forests (small inland Fire) -->
+  <path d="M770 470 C 820 460, 870 475, 875 500 C 860 525, 815 530, 780 518 C 765 510, 760 480, 770 470 Z"
+        fill="url(#landMinor)" stroke="rgba(80,160,80,0.4)" stroke-width="1.2"/>
+
+  <!-- Land of Valleys (S of Iron) -->
+  <path d="M650 200 C 690 195, 730 210, 730 230 C 715 245, 680 245, 655 235 C 640 228, 640 215, 650 200 Z"
+        fill="url(#landMinor)" stroke="rgba(160,180,160,0.35)" stroke-width="1.2"/>
+
+  <!-- Land of Sea (small island east of Lightning) -->
+  <path d="M1400 380 C 1430 370, 1460 385, 1455 405 C 1440 420, 1410 415, 1400 405 C 1395 395, 1395 385, 1400 380 Z"
+        fill="url(#landMinor)" stroke="rgba(70,170,200,0.4)" stroke-width="1.2"/>
+
+  <!-- Land of Claws (anime-only filler island far north-east) -->
+  <path d="M1300 60 C 1340 50, 1380 65, 1380 85 C 1365 100, 1325 100, 1310 90 C 1295 82, 1295 70, 1300 60 Z"
+        fill="url(#landMinor)" stroke="rgba(170,90,90,0.35)" stroke-width="1.2" stroke-dasharray="4 3"/>
+
+  <!-- Land of Fangs (south coast, minor) -->
+  <path d="M540 730 C 580 720, 620 735, 620 755 C 605 770, 570 775, 545 760 C 535 752, 535 740, 540 730 Z"
+        fill="url(#landMinor)" stroke="rgba(180,90,90,0.35)" stroke-width="1.2"/>
+
+  <!-- ============= ELEMENTI GEOGRAFICI ============= -->
+
+  <!-- Catena montuosa nord Fire -->
+  <g fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" stroke-width="0.8">
+    <path d="M620 280 l 16 -22 l 18 22 z"/>
+    <path d="M660 290 l 18 -25 l 20 25 z"/>
+    <path d="M700 285 l 16 -20 l 18 20 z"/>
+    <path d="M740 290 l 18 -24 l 20 24 z"/>
+    <path d="M780 285 l 14 -18 l 18 18 z"/>
+    <path d="M820 290 l 18 -22 l 22 22 z"/>
+  </g>
+
+  <!-- Foreste a sud di Konoha -->
+  <g fill="rgba(40,80,40,0.45)" stroke="rgba(40,80,40,0.7)" stroke-width="0.6">
+    <path d="M700 470 q 4 -16 12 -10 q 8 -8 14 8 q 10 -8 8 12 z"/>
+    <path d="M720 500 q 6 -14 12 -8 q 6 -6 12 8 q 8 -4 4 10 z"/>
+    <path d="M850 510 q 5 -14 12 -8 q 5 -6 12 8 q 8 -4 4 10 z"/>
+    <path d="M790 540 q 6 -14 12 -8 q 6 -6 14 8 q 6 -4 2 10 z"/>
+  </g>
+
+  <!-- Fiume principale che attraversa Fire -->
+  <path d="M560 320 C 700 360, 820 360, 940 350"
+        fill="none" stroke="rgba(80,170,210,0.55)" stroke-width="2.2" stroke-linecap="round"/>
+
+  <!-- Deserto dune (Wind) -->
+  <g fill="none" stroke="rgba(220,200,110,0.35)" stroke-width="1">
+    <path d="M180 560 q 30 -10 60 0"/>
+    <path d="M260 580 q 30 -10 60 0"/>
+    <path d="M340 600 q 30 -10 60 0"/>
+    <path d="M180 620 q 30 -10 60 0"/>
+    <path d="M260 640 q 30 -10 60 0"/>
+  </g>
+
+  <!-- Nebbia (Water) -->
+  <g fill="rgba(180,220,230,0.06)">
+    <ellipse cx="1310" cy="530" rx="80" ry="20"/>
+    <ellipse cx="1280" cy="580" rx="100" ry="22"/>
+    <ellipse cx="1330" cy="630" rx="90" ry="20"/>
+  </g>
+
+  <!-- Indicatore non-ufficiale -->
+  <text x="20" y="864" fill="rgba(255,255,255,0.32)" font-size="11" font-family="JetBrains Mono, monospace">
+    ※ placeholder · confini indicativi · non ufficiali · sostituibile con asset autorizzato
+  </text>
+  <text x="1290" y="864" fill="rgba(255,255,255,0.32)" font-size="11" font-family="JetBrains Mono, monospace">
+    viewBox 1500 × 882.2204
+  </text>
+
+  <!-- Bussola -->
+  <g transform="translate(1410 80)" stroke="rgba(212,190,120,0.6)" fill="rgba(212,190,120,0.18)" stroke-width="1">
+    <circle cx="0" cy="0" r="28" fill="none"/>
+    <path d="M0 -22 L4 0 L0 22 L-4 0 Z" fill="rgba(240,140,60,0.7)"/>
+    <path d="M-22 0 L0 4 L22 0 L0 -4 Z" fill="rgba(212,190,120,0.45)"/>
+    <text x="0" y="-32" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.6)" font-family="JetBrains Mono, monospace">N</text>
+  </g>
+</svg>

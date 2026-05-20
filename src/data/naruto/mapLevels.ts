@@ -8,9 +8,9 @@ export const narutoMapLevels: MapLevel[] = [
     name: 'Elemental Nations',
     description:
       'Mappa del continente principale. Cinque grandi nazioni e i loro Villaggi Nascosti.',
-    backgroundAssetId: 'naruto-world-background-placeholder',
-    width: 1600,
-    height: 1000,
+    backgroundAssetId: 'naruto-world-map-svg',
+    width: 1500,
+    height: 882.2204,
   },
   {
     id: 'naruto-map-konoha',

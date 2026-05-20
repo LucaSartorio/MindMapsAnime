@@ -198,6 +198,25 @@ export function searchDataset(
     );
     if (r) out.push(r);
   }
+  // Boundaries (regioni cliccabili sulla mappa)
+  for (const b of dataset.boundaries ?? []) {
+    const r = makeResult(
+      {
+        id: b.id,
+        kind: 'boundary',
+        worldId: b.worldId,
+        title: b.name,
+        subtitle: b.type.replace('_', ' '),
+      },
+      {
+        name: `${b.name} ${b.japaneseName ?? ''}`,
+        description: b.descriptionShort,
+        tags: b.tags,
+      },
+      query,
+    );
+    if (r) out.push(r);
+  }
 
   return out.sort((a, b) => b.score - a.score);
 }

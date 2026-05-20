@@ -1,4 +1,4 @@
-import type { LocationType, WorldDataset } from '@/types';
+import type { LocationType, VisibleLayers, WorldDataset } from '@/types';
 import { Drawer } from '@/components/common/Drawer';
 import { Button } from '@/components/common/Button';
 import { useMapStore, useUiStore } from '@/store';
@@ -29,6 +29,13 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
   const filters = useMapStore((s) => s.filters);
   const setFilters = useMapStore((s) => s.setFilters);
   const resetFilters = useMapStore((s) => s.resetFilters);
+  const visibleLayers = useMapStore((s) => s.visibleLayers);
+  const setVisibleLayer = useMapStore((s) => s.setVisibleLayer);
+  const resetLayers = useMapStore((s) => s.resetLayers);
+
+  function toggleLayer<K extends keyof VisibleLayers>(layer: K) {
+    setVisibleLayer(layer, !visibleLayers[layer] as VisibleLayers[K]);
+  }
 
   function toggleType(t: LocationType) {
     setFilters({
@@ -200,27 +207,77 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
             </div>
           </Section>
 
-          <Section title="Layers visibili">
-            <div className="space-y-2 text-ink-200">
+          <Section title="Layers mappa">
+            <div className="space-y-1.5 text-ink-200">
+              <CheckRow
+                checked={visibleLayers.boundaries}
+                onChange={() => toggleLayer('boundaries')}
+                label="Mostra confini"
+              />
+              <CheckRow
+                checked={visibleLayers.nationLabels}
+                onChange={() => toggleLayer('nationLabels')}
+                label="Mostra nomi nazioni"
+              />
+              <CheckRow
+                checked={visibleLayers.mainVillages}
+                onChange={() => toggleLayer('mainVillages')}
+                label="Mostra villaggi principali"
+              />
+              <CheckRow
+                checked={visibleLayers.minorVillages}
+                onChange={() => toggleLayer('minorVillages')}
+                label="Mostra villaggi minori"
+              />
+              <CheckRow
+                checked={visibleLayers.specialPlaces}
+                onChange={() => toggleLayer('specialPlaces')}
+                label="Mostra luoghi speciali"
+              />
+            </div>
+          </Section>
+
+          <Section title="Layers narrativi">
+            <div className="space-y-1.5 text-ink-200">
               <CheckRow
                 checked={filters.showRoutes}
                 onChange={(v) => setFilters({ showRoutes: v })}
                 label="Mostra percorsi"
               />
               <CheckRow
-                checked={filters.showEvents}
-                onChange={(v) => setFilters({ showEvents: v })}
-                label="Mostra eventi (timeline)"
+                checked={visibleLayers.routesCanon}
+                onChange={() => toggleLayer('routesCanon')}
+                label="Route canon"
               />
               <CheckRow
-                checked={filters.showFactions}
-                onChange={(v) => setFilters({ showFactions: v })}
-                label="Mostra clan/fazioni"
+                checked={visibleLayers.routesNonCanon}
+                onChange={() => toggleLayer('routesNonCanon')}
+                label="Route anime-only / filler"
+              />
+              <CheckRow
+                checked={visibleLayers.eventsCanon}
+                onChange={() => toggleLayer('eventsCanon')}
+                label="Eventi canon"
+              />
+              <CheckRow
+                checked={visibleLayers.eventsNonCanon}
+                onChange={() => toggleLayer('eventsNonCanon')}
+                label="Eventi anime-only / filler"
+              />
+              <CheckRow
+                checked={visibleLayers.arcsCanon}
+                onChange={() => toggleLayer('arcsCanon')}
+                label="Archi canon"
+              />
+              <CheckRow
+                checked={visibleLayers.arcsNonCanon}
+                onChange={() => toggleLayer('arcsNonCanon')}
+                label="Archi anime-only"
               />
               <CheckRow
                 checked={filters.canonOnly}
                 onChange={(v) => setFilters({ canonOnly: v })}
-                label="Solo canon"
+                label="Solo canon (filtro globale)"
                 emberAccent
               />
             </div>
@@ -228,7 +285,14 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
         </div>
 
         <footer className="px-4 py-3 border-t border-ink-700/60 shrink-0 flex gap-2">
-          <Button variant="ghost" onClick={resetFilters} className="flex-1">
+          <Button
+            variant="ghost"
+            onClick={() => {
+              resetFilters();
+              resetLayers();
+            }}
+            className="flex-1"
+          >
             Reset
           </Button>
           <Button variant="primary" onClick={close} className="flex-1">

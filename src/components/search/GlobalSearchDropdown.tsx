@@ -125,7 +125,18 @@ export function GlobalSearchDropdown({
         break;
       case 'nation':
         navigate(`/worlds/${slug}`);
+        ui.openNationModal(r.id);
         break;
+      case 'boundary': {
+        const b = dataset.boundaries?.find((x) => x.id === r.id);
+        if (b) {
+          map.setActiveMapLevel(b.mapLevelId);
+          map.setSelectedBoundary(b.id);
+          navigate(`/worlds/${slug}`);
+          ui.openBoundaryModal(b.id);
+        }
+        break;
+      }
       default:
         break;
     }

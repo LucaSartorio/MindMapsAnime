@@ -14,6 +14,7 @@ const KIND_LABELS: Record<SearchResult['kind'], string> = {
   arc: 'Arco',
   event: 'Evento',
   nation: 'Nazione',
+  boundary: 'Regione',
   route: 'Percorso',
 };
 

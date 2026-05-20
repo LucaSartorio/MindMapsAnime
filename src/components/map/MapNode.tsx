@@ -52,7 +52,6 @@ function MapNodeBase({ data }: NodeProps) {
         d.highlighted && 'drop-shadow-[0_0_8px_rgba(255,131,17,0.7)]',
       )}
     >
-      {/* Handle invisibili necessari a React Flow per disegnare edges */}
       <Handle
         type="target"
         position={Position.Left}
@@ -104,3 +103,40 @@ function MapNodeBase({ data }: NodeProps) {
 }
 
 export const MapNode = memo(MapNodeBase);
+
+/**
+ * Nodo "layer" che rende un'arbitraria slice JSX (SVG di sfondo, overlay
+ * boundary, layer di labels) nello spazio coordinate React Flow.
+ * - non draggable, non selectable, non zIndex-bound interattivo
+ * - posizionato dal dataset
+ */
+export interface MapLayerNodeData {
+  width: number;
+  height: number;
+  content: React.ReactNode;
+  /** Z-index relativo a React Flow node container */
+  z?: number;
+  [key: string]: unknown;
+}
+
+function MapLayerNodeBase({ data }: NodeProps) {
+  const d = data as MapLayerNodeData;
+  // IMPORTANTE: pointer-events: none su tutto il container e sui figli,
+  // così il pan/zoom di React Flow riceve gli eventi quando il cursore
+  // è sull'SVG di sfondo. I singoli `<path>` cliccabili (boundary)
+  // riattivano `pointer-events: auto` localmente.
+  return (
+    <div
+      style={{
+        width: d.width,
+        height: d.height,
+        pointerEvents: 'none',
+        zIndex: d.z ?? 0,
+      }}
+    >
+      {d.content}
+    </div>
+  );
+}
+
+export const MapLayerNode = memo(MapLayerNodeBase);
