@@ -1,0 +1,106 @@
+import { memo } from 'react';
+import { Handle, Position, type NodeProps } from '@xyflow/react';
+import { cn } from '@/lib/cn';
+import type { Importance, LocationType } from '@/types';
+
+export interface MapNodeData {
+  label: string;
+  type: LocationType;
+  importance: Importance;
+  selected?: boolean;
+  highlighted?: boolean;
+  hasSubMap?: boolean;
+  [key: string]: unknown;
+}
+
+/** Mappa tipo location → icona testuale (no asset esterni). */
+const TYPE_ICON: Record<LocationType, string> = {
+  village: '⛩',
+  city: '◉',
+  nation: '✦',
+  landmark: '◆',
+  battlefield: '⚔',
+  hideout: '☖',
+  sacred_place: '⌘',
+  training_area: '✺',
+  region: '◇',
+  ruins: '⌬',
+  bridge: '═',
+  forest: '❅',
+  mountain: '▲',
+  cave: '◯',
+};
+
+const IMPORTANCE_SIZE: Record<Importance, string> = {
+  main: 'w-4 h-4',
+  secondary: 'w-3.5 h-3.5',
+  minor: 'w-2.5 h-2.5',
+};
+
+const IMPORTANCE_TEXT: Record<Importance, string> = {
+  main: 'text-sm font-semibold',
+  secondary: 'text-xs font-medium',
+  minor: 'text-[10px] font-medium',
+};
+
+function MapNodeBase({ data }: NodeProps) {
+  const d = data as MapNodeData;
+  return (
+    <div
+      className={cn(
+        'group relative flex items-center gap-2 cursor-pointer select-none',
+        d.highlighted && 'drop-shadow-[0_0_8px_rgba(255,131,17,0.7)]',
+      )}
+    >
+      {/* Handle invisibili necessari a React Flow per disegnare edges */}
+      <Handle
+        type="target"
+        position={Position.Left}
+        className="!opacity-0 !pointer-events-none"
+      />
+      <Handle
+        type="source"
+        position={Position.Right}
+        className="!opacity-0 !pointer-events-none"
+      />
+      <span
+        className={cn(
+          'rounded-full ring-2 transition',
+          IMPORTANCE_SIZE[d.importance],
+          d.selected
+            ? 'bg-ember-400 ring-ember-200 shadow-ember'
+            : d.highlighted
+              ? 'bg-ember-500 ring-ember-300/70'
+              : 'bg-chakra-400 ring-chakra-200/40 group-hover:ring-chakra-200',
+        )}
+        aria-hidden
+      />
+      <span
+        className={cn(
+          'whitespace-nowrap px-2 py-0.5 rounded-md backdrop-blur-sm border transition',
+          IMPORTANCE_TEXT[d.importance],
+          d.selected
+            ? 'bg-ember-900/80 border-ember-500/70 text-ember-100'
+            : d.highlighted
+              ? 'bg-ember-900/40 border-ember-600/50 text-ember-100'
+              : 'bg-ink-900/80 border-ink-600/60 text-ink-100 group-hover:border-chakra-500/60',
+        )}
+      >
+        <span className="mr-1 text-chakra-300" aria-hidden>
+          {TYPE_ICON[d.type]}
+        </span>
+        {d.label}
+        {d.hasSubMap && (
+          <span
+            className="ml-1.5 text-[10px] text-scroll-200 font-mono"
+            aria-label="ha una sottomappa esplorabile"
+          >
+            ⤢
+          </span>
+        )}
+      </span>
+    </div>
+  );
+}
+
+export const MapNode = memo(MapNodeBase);

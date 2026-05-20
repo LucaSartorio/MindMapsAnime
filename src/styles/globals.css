@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Stili globali per Anime Interactive Maps */
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: radial-gradient(
+      ellipse at top,
+      rgba(31, 154, 255, 0.08),
+      transparent 50%
+    ),
+    radial-gradient(ellipse at bottom, rgba(240, 102, 0, 0.05), transparent 55%),
+    #070709;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Cinzel', Georgia, serif;
+    letter-spacing: 0.02em;
+  }
+
+  *:focus-visible {
+    @apply outline-none ring-2 ring-chakra-400 ring-offset-2 ring-offset-ink-950;
+  }
+
+  ::selection {
+    background: rgba(31, 154, 255, 0.4);
+    color: #fff;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply rounded-xl border border-ink-700/80 bg-ink-900/70 backdrop-blur-md;
+  }
+  .panel-soft {
+    @apply rounded-xl border border-ink-700/40 bg-ink-800/40 backdrop-blur-sm;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full border border-ink-600/60 bg-ink-800/60 px-2.5 py-0.5 text-xs font-medium text-ink-200;
+  }
+  .chip-accent {
+    @apply chip border-chakra-600/50 bg-chakra-900/40 text-chakra-100;
+  }
+  .chip-ember {
+    @apply chip border-ember-600/50 bg-ember-900/40 text-ember-100;
+  }
+  .chip-warning {
+    @apply chip border-yellow-700/50 bg-yellow-900/30 text-yellow-200;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-3.5 py-2 text-sm font-semibold transition;
+  }
+  .btn-primary {
+    @apply btn bg-chakra-500 text-white hover:bg-chakra-400 active:bg-chakra-600 shadow-glow;
+  }
+  .btn-ember {
+    @apply btn bg-ember-500 text-white hover:bg-ember-400 active:bg-ember-600 shadow-ember;
+  }
+  .btn-ghost {
+    @apply btn bg-transparent text-ink-100 border border-ink-600/70 hover:bg-ink-800/80;
+  }
+  .btn-disabled {
+    @apply btn bg-ink-700/60 text-ink-300 cursor-not-allowed opacity-70;
+  }
+  .grid-bg {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.04) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+}
+
+/* Override leggero per React Flow */
+.react-flow__attribution {
+  display: none !important;
+}
+.react-flow__background {
+  background: transparent !important;
+}
+.react-flow__node {
+  font-family: 'Inter', sans-serif;
+}
+.react-flow__minimap {
+  background: rgba(12, 13, 17, 0.85) !important;
+  border: 1px solid rgba(38, 42, 54, 0.7) !important;
+  border-radius: 8px;
+}
+.react-flow__controls {
+  background: rgba(12, 13, 17, 0.9) !important;
+  border: 1px solid rgba(38, 42, 54, 0.7) !important;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.react-flow__controls-button {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(38, 42, 54, 0.6) !important;
+  color: #b6bbcb !important;
+}
+.react-flow__controls-button:hover {
+  background: rgba(31, 154, 255, 0.15) !important;
+  color: #fff !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(7, 7, 9, 0.4);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(91, 98, 117, 0.4);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(91, 98, 117, 0.7);
+}
