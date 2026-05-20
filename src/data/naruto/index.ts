@@ -4,9 +4,11 @@ import { narutoLocations } from './locations';
 import { narutoCharacters } from './characters';
 import { narutoClans } from './clans';
 import { narutoFactions } from './factions';
+import { narutoTeams } from './teams';
 import { narutoArcs } from './arcs';
 import { narutoEvents } from './events';
 import { narutoRoutes } from './routes';
+import { narutoCharacterRoutes } from './characterRoutes';
 import { narutoAssets } from './assets';
 import { narutoNations } from './nations';
 import { narutoMapLevels } from './mapLevels';
@@ -22,12 +24,15 @@ export const narutoDataset: WorldDataset = {
   boundaries: narutoBoundaries,
   locations: narutoLocations,
   characters: narutoCharacters,
-  // Per la pagina "Clans & Factions" uniamo clan + organizzazioni in un solo array.
+  // Per la pagina "Clans & Factions" uniamo clan + organizzazioni/eserciti/gruppi.
   factions: [...narutoClans, ...narutoFactions],
+  teams: narutoTeams,
   arcs: narutoArcs,
   events: narutoEvents,
-  routes: narutoRoutes,
+  // Percorsi narrativi + percorsi specifici dei personaggi
+  routes: [...narutoRoutes, ...narutoCharacterRoutes],
   assets: narutoAssets,
 };
 
 export { NARUTO_MAP_VIEWBOX, NARUTO_WORLD_MAP_SRC } from './mapConstants';
+export { narutoDataQuality, narutoDataQualitySummary } from './dataQuality';

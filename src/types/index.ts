@@ -40,6 +40,33 @@ export type CharacterStatus =
   | 'unknown'
   | 'varies_by_era';
 
+/**
+ * Importanza del personaggio nell'opera.
+ * Usata per filtri e gerarchia visiva nell'archivio.
+ */
+export type CharacterImportance =
+  | 'main'
+  | 'major'
+  | 'supporting'
+  | 'minor'
+  | 'background';
+
+/**
+ * Ruoli narrativi (cumulativi: un personaggio può ricoprirne più di uno).
+ */
+export type CharacterRole =
+  | 'protagonist'
+  | 'antagonist'
+  | 'supporting'
+  | 'mentor'
+  | 'kage'
+  | 'jinchuriki'
+  | 'akatsuki'
+  | 'villain'
+  | 'ally'
+  | 'neutral'
+  | 'background';
+
 export type FactionType =
   | 'clan'
   | 'organization'
@@ -237,23 +264,54 @@ export interface Character {
   id: string;
   worldId: string;
   name: string;
+  /** Soprannomi/varianti (es. "Yellow Flash", "Kyuubi no Naruto") */
+  aliases?: string[];
   nameLocal?: string;
+  japaneseName?: string;
+  /** Importanza narrativa (filtra archivio personaggi) */
+  importance?: CharacterImportance;
+  /** Ruoli narrativi (uno o più) */
+  role?: CharacterRole[];
   villageLocationId?: string;
   nationId?: string;
   clanIds?: string[];
   factionIds?: string[];
+  /** Team specifici (Team 7, Team Guy, Sound Four, ...) */
+  teamIds?: string[];
   rank?: string;
+  /** Generazione narrativa (es. "Konoha 11", "Sannin", "Founders") */
+  generation?: string;
+  gender?: string;
   firstMangaAppearance?: string;
   firstAnimeAppearance?: string;
   shortDescription: string;
   longDescription?: string;
+  /** Abilità o tecniche caratteristiche */
+  abilities?: string[];
+  /** Kekkei Genkai posseduti */
+  kekkeiGenkai?: string[];
+  /** Contratti di evocazione */
+  summons?: string[];
+  /** Maestri */
+  teachers?: string[];
+  /** Allievi */
+  students?: string[];
+  /** Famiglia (parenti) */
+  family?: string[];
+  /** Alleati ricorrenti */
+  allies?: string[];
+  /** Nemici principali */
+  enemies?: string[];
   locationIds?: string[];
   eventIds?: string[];
   arcIds?: string[];
+  /** Route principali in cui il personaggio è coinvolto */
+  routeIds?: string[];
   /** Relazioni narrative principali (mentore, rivale, ...) */
   relationships?: CharacterRelationship[];
   assetIds?: string[];
   status: CharacterStatus;
+  canonStatus?: CanonStatus;
   referenceStatus?: ReferenceStatus;
   tags?: string[];
 }
@@ -272,15 +330,22 @@ export interface Faction {
   type: FactionType;
   name: string;
   nameLocal?: string;
+  japaneseName?: string;
   nationId?: string;
   villageLocationId?: string;
   description: string;
+  longDescription?: string;
   signatureAbilities?: string[];
   kekkeiGenkai?: string;
+  /** Leader / capi noti */
+  leaderIds?: string[];
   characterIds?: string[];
   locationIds?: string[];
   eventIds?: string[];
   arcIds?: string[];
+  /** Route collegate (route di fazione, es. spostamenti dell'Akatsuki) */
+  routeIds?: string[];
+  canonStatus?: CanonStatus;
   referenceStatus?: ReferenceStatus;
   tags?: string[];
 }
@@ -295,15 +360,24 @@ export interface StoryArc {
   worldId: string;
   name: string;
   saga?: string;
+  period?: string;
   description: string;
+  longDescription?: string;
   /** Ordine cronologico narrativo */
   order: number;
   locationIds?: string[];
+  nationIds?: string[];
+  boundaryIds?: string[];
   characterIds?: string[];
+  clanIds?: string[];
+  factionIds?: string[];
   eventIds?: string[];
+  routeIds?: string[];
   mangaChapters?: string[];
   animeEpisodes?: string[];
+  /** Alias di compatibilità: usare `canonStatus` preferibilmente. */
   canon: CanonStatus;
+  canonStatus?: CanonStatus;
   referenceStatus?: ReferenceStatus;
   tags?: string[];
 }
@@ -315,17 +389,27 @@ export interface TimelineEvent {
   worldId: string;
   title: string;
   description: string;
+  longDescription?: string;
   /** Periodo narrativo (es. "Naruto Parte I") */
   period: string;
   arcId?: string;
+  /** Luogo principale (legacy). */
   locationId?: string;
+  /** Tutti i luoghi coinvolti se l'evento si svolge in più posti. */
+  locationIds?: string[];
+  boundaryIds?: string[];
+  nationIds?: string[];
   characterIds?: string[];
+  clanIds?: string[];
   factionIds?: string[];
+  routeIds?: string[];
   mangaChapters?: string[];
   animeEpisodes?: string[];
   /** Ordine cronologico numerico (più basso = prima) */
   order: number;
+  /** Alias legacy; preferire `canonStatus`. */
   canon: CanonStatus;
+  canonStatus?: CanonStatus;
   referenceStatus: ReferenceStatus;
   tags?: string[];
 }
@@ -336,22 +420,77 @@ export interface RouteStep {
   /** Posizione nello step (1-indexed) */
   order: number;
   locationId: string;
+  /** id step opzionale per riferimento esterno */
+  id?: string;
   eventId?: string;
+  arcId?: string;
   label?: string;
+  /** Titolo dello step in UI; se assente usa label */
+  title?: string;
+  description?: string;
+  approximateTimeLabel?: string;
+  canonStatus?: CanonStatus;
+  referenceStatus?: ReferenceStatus;
   notes?: string;
 }
+
+export type RouteType =
+  | 'narrative'
+  | 'character'
+  | 'faction'
+  | 'war_front'
+  | 'training'
+  | 'mission';
+
+export type RouteLineStyle = 'solid' | 'dashed' | 'dotted';
 
 export interface Route {
   id: string;
   worldId: string;
+  type?: RouteType;
   name: string;
   description: string;
-  /** Personaggio o gruppo protagonista del percorso */
+  longDescription?: string;
+  /** Personaggio o gruppo protagonista del percorso (legacy). */
   protagonistCharacterIds: string[];
+  /** Alias semantico per `protagonistCharacterIds` quando preferito. */
+  primaryCharacterIds?: string[];
+  relatedCharacterIds?: string[];
   /** Arco narrativo principale */
   arcId?: string;
+  relatedArcIds?: string[];
+  relatedEventIds?: string[];
+  relatedLocationIds?: string[];
   steps: RouteStep[];
   color?: string;
+  lineStyle?: RouteLineStyle;
+  canonStatus?: CanonStatus;
+  referenceStatus?: ReferenceStatus;
+  tags?: string[];
+}
+
+/* ------------------------------ Teams ------------------------------ */
+
+/**
+ * Team: piccolo gruppo operativo (es. Team 7, Team Guy, Sound Four).
+ * È una specializzazione di Faction con type='group' ma rappresentato
+ * come entità a sé per chiarezza semantica.
+ */
+export interface Team {
+  id: string;
+  worldId: string;
+  name: string;
+  japaneseName?: string;
+  description: string;
+  longDescription?: string;
+  /** Sensei o leader del team */
+  leaderId?: string;
+  memberIds: string[];
+  villageLocationId?: string;
+  nationId?: string;
+  arcIds?: string[];
+  eventIds?: string[];
+  routeIds?: string[];
   canonStatus?: CanonStatus;
   referenceStatus?: ReferenceStatus;
   tags?: string[];
@@ -373,6 +512,8 @@ export interface WorldDataset {
   locations: Location[];
   characters: Character[];
   factions: Faction[];
+  /** Team specifici (Team 7, Sound Four, ...) — opzionale. */
+  teams?: Team[];
   arcs: StoryArc[];
   events: TimelineEvent[];
   routes: Route[];

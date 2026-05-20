@@ -26,6 +26,7 @@ export function CharacterDetailsModal({
   const openLocation = useUiStore((s) => s.openLocationModal);
   const openFaction = useUiStore((s) => s.openFactionModal);
   const openArc = useUiStore((s) => s.openArcModal);
+  const openRoute = useUiStore((s) => s.openRouteModal);
   const openCharacter = useUiStore((s) => s.openCharacterModal);
   const openEvent = useUiStore((s) => s.openEventModal);
   const setActiveMapLevel = useMapStore((s) => s.setActiveMapLevel);
@@ -54,6 +55,12 @@ export function CharacterDetailsModal({
   const locations = (character.locationIds ?? [])
     .map((id) => findLocation(dataset, id))
     .filter((l): l is NonNullable<typeof l> => !!l);
+  const charRoutes = dataset.routes.filter(
+    (r) =>
+      r.protagonistCharacterIds.includes(character.id) ||
+      (r.primaryCharacterIds ?? []).includes(character.id) ||
+      (r.relatedCharacterIds ?? []).includes(character.id),
+  );
 
   const statusVariant: 'success' | 'danger' | 'default' =
     character.status === 'alive'
@@ -71,6 +78,14 @@ export function CharacterDetailsModal({
       badges={
         <>
           {character.rank && <Badge variant="accent">{character.rank}</Badge>}
+          {character.importance && (
+            <Badge className="capitalize">{character.importance}</Badge>
+          )}
+          {(character.role ?? []).map((r) => (
+            <Badge key={r} variant="ember" className="capitalize">
+              {r}
+            </Badge>
+          ))}
           {village && <Badge>{village.name}</Badge>}
           {nation && <Badge>{nation.name}</Badge>}
           <Badge variant={statusVariant} className="capitalize">
@@ -107,11 +122,139 @@ export function CharacterDetailsModal({
           {character.nameLocal}
         </p>
       )}
+      {character.aliases && character.aliases.length > 0 && (
+        <p className="text-xs text-ink-400 italic">
+          alias: {character.aliases.join(' · ')}
+        </p>
+      )}
       <p className="leading-relaxed">{character.shortDescription}</p>
       {character.longDescription && (
         <p className="text-ink-300 leading-relaxed">
           {character.longDescription}
         </p>
+      )}
+
+      {(character.abilities ?? []).length > 0 && (
+        <Section title="Abilità">
+          <div className="flex flex-wrap gap-1.5">
+            {character.abilities!.map((a) => (
+              <Badge key={a} variant="ember">
+                {a}
+              </Badge>
+            ))}
+          </div>
+        </Section>
+      )}
+
+      {(character.kekkeiGenkai ?? []).length > 0 && (
+        <Section title="Kekkei Genkai">
+          <div className="flex flex-wrap gap-1.5">
+            {character.kekkeiGenkai!.map((k) => (
+              <Badge key={k} variant="danger">
+                {k}
+              </Badge>
+            ))}
+          </div>
+        </Section>
+      )}
+
+      {(character.family ?? []).length > 0 && (
+        <Section title="Famiglia">
+          <div className="flex flex-wrap gap-1.5">
+            {character.family!.map((id) => {
+              const f = findCharacter(dataset, id);
+              if (!f) return null;
+              return (
+                <button
+                  key={id}
+                  type="button"
+                  onClick={() => openCharacter(id)}
+                  className="chip hover:border-chakra-500/70 hover:text-white"
+                >
+                  {f.name}
+                </button>
+              );
+            })}
+          </div>
+        </Section>
+      )}
+
+      {(character.teachers ?? []).length > 0 && (
+        <Section title="Maestri">
+          <div className="flex flex-wrap gap-1.5">
+            {character.teachers!.map((id) => {
+              const f = findCharacter(dataset, id);
+              if (!f) return null;
+              return (
+                <button
+                  key={id}
+                  type="button"
+                  onClick={() => openCharacter(id)}
+                  className="chip hover:border-chakra-500/70 hover:text-white"
+                >
+                  {f.name}
+                </button>
+              );
+            })}
+          </div>
+        </Section>
+      )}
+
+      {(character.students ?? []).length > 0 && (
+        <Section title="Allievi">
+          <div className="flex flex-wrap gap-1.5">
+            {character.students!.map((id) => {
+              const f = findCharacter(dataset, id);
+              if (!f) return null;
+              return (
+                <button
+                  key={id}
+                  type="button"
+                  onClick={() => openCharacter(id)}
+                  className="chip hover:border-chakra-500/70 hover:text-white"
+                >
+                  {f.name}
+                </button>
+              );
+            })}
+          </div>
+        </Section>
+      )}
+
+      {((character.allies ?? []).length > 0 ||
+        (character.enemies ?? []).length > 0) && (
+        <Section title="Alleati / Nemici">
+          <div className="flex flex-wrap gap-1.5">
+            {(character.allies ?? []).map((id) => {
+              const f = findCharacter(dataset, id);
+              if (!f) return null;
+              return (
+                <button
+                  key={`ally-${id}`}
+                  type="button"
+                  onClick={() => openCharacter(id)}
+                  className="chip border-emerald-700/50 bg-emerald-900/30 text-emerald-200 hover:text-white"
+                >
+                  + {f.name}
+                </button>
+              );
+            })}
+            {(character.enemies ?? []).map((id) => {
+              const f = findCharacter(dataset, id);
+              if (!f) return null;
+              return (
+                <button
+                  key={`enemy-${id}`}
+                  type="button"
+                  onClick={() => openCharacter(id)}
+                  className="chip border-red-700/50 bg-red-900/30 text-red-200 hover:text-white"
+                >
+                  − {f.name}
+                </button>
+              );
+            })}
+          </div>
+        </Section>
       )}
 
       {clans.length > 0 && (
@@ -190,6 +333,28 @@ export function CharacterDetailsModal({
               </li>
             ))}
           </ul>
+        </Section>
+      )}
+
+      {charRoutes.length > 0 && (
+        <Section title={`Percorsi (${charRoutes.length})`}>
+          <div className="flex flex-wrap gap-1.5">
+            {charRoutes.map((r) => (
+              <button
+                key={r.id}
+                type="button"
+                onClick={() => openRoute(r.id)}
+                className="chip hover:border-chakra-500/70 hover:text-white"
+              >
+                <span
+                  aria-hidden
+                  className="inline-block w-2 h-2 rounded-full"
+                  style={{ background: r.color ?? '#1f9aff' }}
+                />
+                {r.name}
+              </button>
+            ))}
+          </div>
         </Section>
       )}
 
