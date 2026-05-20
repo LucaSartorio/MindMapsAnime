@@ -1,19 +1,25 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import type { WorldDataset } from '@/types';
 import { StoryArcCard } from './StoryArcCard';
 import { EmptyState } from '@/components/common/EmptyState';
 import { SourceNotice } from '@/components/common/SourceNotice';
+import { useUiStore } from '@/store';
 
 interface StoryArcsPageProps {
   dataset: WorldDataset;
 }
 
 export function StoryArcsPage({ dataset }: StoryArcsPageProps) {
-  const [params, setParams] = useSearchParams();
-  const activeId = params.get('id');
+  const [params] = useSearchParams();
+  const initialId = params.get('id');
   const [query, setQuery] = useState('');
   const [saga, setSaga] = useState('');
+  const openArcModal = useUiStore((s) => s.openArcModal);
+
+  useEffect(() => {
+    if (initialId) openArcModal(initialId);
+  }, [initialId, openArcModal]);
 
   const sagas = useMemo(
     () => Array.from(new Set(dataset.arcs.map((a) => a.saga).filter(Boolean))),
@@ -86,8 +92,7 @@ export function StoryArcsPage({ dataset }: StoryArcsPageProps) {
               <StoryArcCard
                 arc={a}
                 dataset={dataset}
-                active={a.id === activeId}
-                onClick={() => setParams({ id: a.id })}
+                onClick={() => openArcModal(a.id)}
               />
             </li>
           ))}

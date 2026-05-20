@@ -7,6 +7,7 @@ interface MapLevelSwitcherProps {
   onChange: (id: string) => void;
 }
 
+/** Switch compatto tra livelli mappa (world / konoha / ...). */
 export function MapLevelSwitcher({
   levels,
   activeId,
@@ -14,7 +15,7 @@ export function MapLevelSwitcher({
 }: MapLevelSwitcherProps) {
   if (levels.length <= 1) return null;
   return (
-    <div className="panel inline-flex items-center p-1 gap-1">
+    <div className="panel inline-flex items-center p-1 gap-1" role="tablist">
       {levels.map((lvl) => {
         const active = lvl.id === activeId;
         return (
@@ -22,6 +23,8 @@ export function MapLevelSwitcher({
             key={lvl.id}
             type="button"
             onClick={() => onChange(lvl.id)}
+            role="tab"
+            aria-selected={active}
             aria-pressed={active}
             className={cn(
               'px-3 py-1.5 rounded-md text-xs font-medium transition',

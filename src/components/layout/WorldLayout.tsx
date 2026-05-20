@@ -1,43 +1,47 @@
-import { useEffect } from 'react';
+import { useEffect, type ReactNode } from 'react';
 import { useParams } from 'react-router-dom';
 import type { WorldDataset } from '@/types';
 import { useMapStore, useUiStore, useWorldStore } from '@/store';
-import { Drawer } from '@/components/common/Drawer';
-import { GlobalSearch } from '@/components/search/GlobalSearch';
-import { LeftFiltersPanel } from './LeftFiltersPanel';
-import { RightDetailsPanel } from './RightDetailsPanel';
-import { BottomTimelinePanel } from './BottomTimelinePanel';
+import { FiltersDrawer } from '@/components/drawers/FiltersDrawer';
+import { ModalRoot } from '@/components/modals/ModalRoot';
+import { MapLevelSwitcher } from '@/components/map/MapLevelSwitcher';
+import { MapControls } from '@/components/map/MapControls';
+import { MapLegendFloating } from '@/components/map/MapLegendFloating';
+import { RoutesFloatingPanel } from '@/components/map/RoutesFloatingPanel';
+import { TimelineBottomSheet } from '@/components/timeline/TimelineBottomSheet';
+import { IconButton } from '@/components/common/IconButton';
 
 interface WorldLayoutProps {
   dataset: WorldDataset;
-  /** Contenuto principale (mappa o pagina interna del mondo) */
-  children: React.ReactNode;
-  /** Mostra timeline in basso (default true). */
-  showTimeline?: boolean;
+  /** Contenuto principale (di solito la mappa full-screen) */
+  children: ReactNode;
+  /**
+   * Se true (default) sovrappone i controlli mappa, timeline, percorsi.
+   * Le pagine archive (characters/clans/arcs/sources) passano false.
+   */
+  mapOverlays?: boolean;
 }
 
 /**
- * Layout condiviso da tutte le pagine all'interno di un singolo mondo.
- * - sidebar filtri a sinistra (drawer su mobile)
- * - dettaglio a destra (drawer su mobile)
- * - timeline collassabile in basso
- * - search bar contestuale
+ * Layout map-first del mondo.
+ *
+ * - Riempie tutto lo spazio sotto la TopNav.
+ * - Il children (canvas mappa) occupa l'intera area.
+ * - Tutti i controlli sono FLOATING, posizionati sopra il canvas.
+ * - Modali e drawer sono renderizzati come fixed sopra tutto.
  */
 export function WorldLayout({
   dataset,
   children,
-  showTimeline = true,
+  mapOverlays = true,
 }: WorldLayoutProps) {
   const { worldSlug } = useParams();
   const setActiveWorld = useWorldStore((s) => s.setActiveWorld);
   const setActiveMapLevel = useMapStore((s) => s.setActiveMapLevel);
-  const leftOpen = useUiStore((s) => s.leftPanelOpen);
-  const rightOpen = useUiStore((s) => s.rightPanelOpen);
-  const setLeft = useUiStore((s) => s.setLeftPanel);
-  const setRight = useUiStore((s) => s.setRightPanel);
-  const toggleLeft = useUiStore((s) => s.toggleLeftPanel);
+  const activeMapLevelId = useMapStore((s) => s.activeMapLevelId);
+  const openFilters = useUiStore((s) => s.openFiltersDrawer);
 
-  // Quando il dataset cambia, sincronizziamo store globale + map level di default.
+  // Quando cambia il dataset/route, sincronizziamo store e map level di default.
   useEffect(() => {
     setActiveWorld(worldSlug ?? null, dataset);
     if (dataset.world.defaultMapLevelId) {
@@ -48,78 +52,90 @@ export function WorldLayout({
     return () => setActiveWorld(null, null);
   }, [worldSlug, dataset, setActiveWorld, setActiveMapLevel]);
 
+  // Chiudiamo modali e drawer al cambio mondo per ripartire puliti.
+  useEffect(() => {
+    return () => {
+      useUiStore.getState().closeModal();
+      useUiStore.getState().closeFiltersDrawer();
+    };
+  }, [worldSlug]);
+
+  if (!mapOverlays) {
+    // Modalità "pagina interna" (archivi, fonti): niente overlay mappa,
+    // solo content + modali condivise.
+    return (
+      <div className="relative flex-1 flex flex-col min-h-0">
+        <div className="flex-1 min-h-0 overflow-auto">{children}</div>
+        <FiltersDrawer dataset={dataset} />
+        <ModalRoot dataset={dataset} />
+      </div>
+    );
+  }
+
   return (
-    <div className="relative flex-1 flex flex-col">
-      {/* Toolbar superiore del mondo */}
-      <div className="border-b border-ink-700/40 bg-ink-950/60 backdrop-blur-md">
-        <div className="mx-auto max-w-7xl px-4 py-2 flex items-center justify-between gap-3 flex-wrap">
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={toggleLeft}
-              aria-label="Mostra/nascondi filtri"
-              className="btn-ghost !py-1.5 !px-2.5 text-xs"
-            >
-              ☰ Filtri
-            </button>
-            <span className="text-xs text-ink-400 hidden sm:inline">
-              {dataset.world.title}
-            </span>
+    <div className="relative flex-1 flex flex-col min-h-0">
+      {/* Canvas mappa: occupa tutto */}
+      <div className="relative flex-1 min-h-0">
+        {children}
+
+        {/* Overlay floating sopra la mappa.
+            pointer-events-none sul layer; pointer-events-auto sui figli. */}
+        <div
+          aria-hidden={false}
+          className="pointer-events-none absolute inset-0 flex flex-col p-3 sm:p-4 gap-3"
+        >
+          {/* Top row: filtri (sinistra) · level switcher (centro) · controls (destra) */}
+          <div className="flex items-start justify-between gap-3 flex-wrap">
+            <div className="pointer-events-auto flex items-center gap-2">
+              <IconButton
+                aria-label="Apri filtri mappa"
+                title="Filtri"
+                onClick={openFilters}
+              >
+                <span aria-hidden>☰</span>
+              </IconButton>
+              <span className="panel hidden sm:inline-flex px-2.5 py-1.5 text-[11px] uppercase tracking-widest font-mono text-chakra-300">
+                {dataset.world.title}
+              </span>
+            </div>
+
+            <div className="pointer-events-auto">
+              <MapLevelSwitcher
+                levels={dataset.mapLevels}
+                activeId={activeMapLevelId}
+                onChange={setActiveMapLevel}
+              />
+            </div>
+
+            <div className="pointer-events-auto">
+              <MapControls />
+            </div>
           </div>
-          <GlobalSearch dataset={dataset} />
+
+          {/* Spacer */}
+          <div className="flex-1" />
+
+          {/* Bottom row: legenda (sinistra) · timeline (centro) · percorsi (destra)
+              Solo i singoli pannelli ricevono pointer events, l'area attorno
+              resta trasparente per permettere pan/zoom della mappa. */}
+          <div className="flex items-end justify-between gap-3 flex-wrap">
+            <div className="pointer-events-auto">
+              <MapLegendFloating />
+            </div>
+            <div className="flex-1 min-w-[280px] max-w-3xl mx-auto flex">
+              {/* TimelineBottomSheet ha già pointer-events-auto sulla section */}
+              <TimelineBottomSheet dataset={dataset} />
+            </div>
+            <div className="pointer-events-auto">
+              <RoutesFloatingPanel dataset={dataset} />
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="relative flex-1 grid grid-cols-1 md:grid-cols-[280px_1fr] lg:grid-cols-[300px_1fr_380px] min-h-0">
-        {/* Sidebar filtri desktop */}
-        <aside
-          className={
-            'hidden md:flex border-r border-ink-700/40 bg-ink-900/40 ' +
-            (leftOpen ? '' : 'md:hidden')
-          }
-        >
-          <LeftFiltersPanel dataset={dataset} />
-        </aside>
-
-        {/* Sidebar filtri mobile (drawer) */}
-        <Drawer
-          open={leftOpen}
-          side="left"
-          onClose={() => setLeft(false)}
-          ariaLabel="Filtri mappa"
-          className="md:hidden"
-        >
-          <LeftFiltersPanel dataset={dataset} />
-        </Drawer>
-
-        {/* Contenuto principale */}
-        <section className="relative min-h-0 flex flex-col">
-          <div className="flex-1 min-h-0 relative">{children}</div>
-          {showTimeline && <BottomTimelinePanel dataset={dataset} />}
-        </section>
-
-        {/* Pannello dettagli desktop */}
-        <aside className="hidden lg:flex border-l border-ink-700/40 bg-ink-900/40">
-          <RightDetailsPanel
-            dataset={dataset}
-            onClose={() => setRight(false)}
-          />
-        </aside>
-      </div>
-
-      {/* Pannello dettagli mobile/tablet (drawer) */}
-      <Drawer
-        open={rightOpen}
-        side="right"
-        onClose={() => setRight(false)}
-        ariaLabel="Dettaglio luogo"
-        className="lg:hidden"
-      >
-        <RightDetailsPanel
-          dataset={dataset}
-          onClose={() => setRight(false)}
-        />
-      </Drawer>
+      {/* Drawer e modali globali */}
+      <FiltersDrawer dataset={dataset} />
+      <ModalRoot dataset={dataset} />
     </div>
   );
 }

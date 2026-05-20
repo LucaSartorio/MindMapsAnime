@@ -1,0 +1,235 @@
+import { useNavigate } from 'react-router-dom';
+import type { WorldDataset } from '@/types';
+import { Modal } from '@/components/common/Modal';
+import { Badge } from '@/components/common/Badge';
+import { Button } from '@/components/common/Button';
+import { ReferencePill } from '@/components/common/StatusPill';
+import { useMapStore, useUiStore } from '@/store';
+import {
+  findCharacter,
+  findFaction,
+  findLocation,
+  findNation,
+} from '@/lib/entities';
+
+interface CharacterDetailsModalProps {
+  dataset: WorldDataset;
+  characterId: string;
+}
+
+export function CharacterDetailsModal({
+  dataset,
+  characterId,
+}: CharacterDetailsModalProps) {
+  const character = findCharacter(dataset, characterId);
+  const close = useUiStore((s) => s.closeModal);
+  const openLocation = useUiStore((s) => s.openLocationModal);
+  const openFaction = useUiStore((s) => s.openFactionModal);
+  const openArc = useUiStore((s) => s.openArcModal);
+  const openCharacter = useUiStore((s) => s.openCharacterModal);
+  const openEvent = useUiStore((s) => s.openEventModal);
+  const setActiveMapLevel = useMapStore((s) => s.setActiveMapLevel);
+  const setSelectedLocation = useMapStore((s) => s.setSelectedLocation);
+  const navigate = useNavigate();
+
+  if (!character) {
+    return (
+      <Modal open onClose={close} title="Personaggio non trovato" size="sm">
+        <p>Riferimento non valido.</p>
+      </Modal>
+    );
+  }
+
+  const village = findLocation(dataset, character.villageLocationId);
+  const nation = findNation(dataset, character.nationId);
+  const clans = (character.clanIds ?? [])
+    .map((id) => findFaction(dataset, id))
+    .filter((c): c is NonNullable<typeof c> => !!c);
+  const arcs = (character.arcIds ?? [])
+    .map((id) => dataset.arcs.find((a) => a.id === id))
+    .filter((a): a is NonNullable<typeof a> => !!a);
+  const events = dataset.events
+    .filter((e) => (e.characterIds ?? []).includes(character.id))
+    .sort((a, b) => a.order - b.order);
+  const locations = (character.locationIds ?? [])
+    .map((id) => findLocation(dataset, id))
+    .filter((l): l is NonNullable<typeof l> => !!l);
+
+  const statusVariant: 'success' | 'danger' | 'default' =
+    character.status === 'alive'
+      ? 'success'
+      : character.status === 'deceased'
+        ? 'danger'
+        : 'default';
+
+  return (
+    <Modal
+      open
+      onClose={close}
+      eyebrow="Personaggio"
+      title={character.name}
+      badges={
+        <>
+          {character.rank && <Badge variant="accent">{character.rank}</Badge>}
+          {village && <Badge>{village.name}</Badge>}
+          {nation && <Badge>{nation.name}</Badge>}
+          <Badge variant={statusVariant} className="capitalize">
+            {character.status.replace('_', ' ')}
+          </Badge>
+          {character.referenceStatus && (
+            <ReferencePill status={character.referenceStatus} />
+          )}
+        </>
+      }
+      footer={
+        <>
+          {village && (
+            <Button
+              variant="ghost"
+              onClick={() => {
+                setActiveMapLevel(village.mapLevelId);
+                setSelectedLocation(village.id);
+                navigate(`/worlds/${dataset.world.slug}`);
+                close();
+              }}
+            >
+              Mostra villaggio sulla mappa
+            </Button>
+          )}
+          <Button variant="primary" onClick={close}>
+            Chiudi
+          </Button>
+        </>
+      }
+    >
+      {character.nameLocal && (
+        <p className="text-xs text-ink-300 italic -mt-2">
+          {character.nameLocal}
+        </p>
+      )}
+      <p className="leading-relaxed">{character.shortDescription}</p>
+      {character.longDescription && (
+        <p className="text-ink-300 leading-relaxed">
+          {character.longDescription}
+        </p>
+      )}
+
+      {clans.length > 0 && (
+        <Section title="Clan / Fazioni">
+          <div className="flex flex-wrap gap-1.5">
+            {clans.map((c) => (
+              <button
+                key={c.id}
+                type="button"
+                onClick={() => openFaction(c.id)}
+                className="chip-accent hover:border-chakra-300 hover:text-white"
+              >
+                {c.name}
+              </button>
+            ))}
+          </div>
+        </Section>
+      )}
+
+      {character.relationships && character.relationships.length > 0 && (
+        <Section title="Relazioni">
+          <ul className="space-y-1.5">
+            {character.relationships.map((r) => {
+              const target = findCharacter(dataset, r.targetCharacterId);
+              if (!target) return null;
+              return (
+                <li
+                  key={r.targetCharacterId}
+                  className="flex items-center justify-between gap-2 panel-soft px-3 py-2"
+                >
+                  <button
+                    type="button"
+                    onClick={() => openCharacter(target.id)}
+                    className="text-left text-ink-100 hover:text-chakra-200"
+                  >
+                    {target.name}
+                  </button>
+                  <span className="text-xs text-ink-300">{r.label}</span>
+                </li>
+              );
+            })}
+          </ul>
+        </Section>
+      )}
+
+      {locations.length > 0 && (
+        <Section title="Luoghi collegati">
+          <div className="flex flex-wrap gap-1.5">
+            {locations.map((l) => (
+              <button
+                key={l.id}
+                type="button"
+                onClick={() => openLocation(l.id)}
+                className="chip hover:border-chakra-500/70 hover:text-white"
+              >
+                {l.name}
+              </button>
+            ))}
+          </div>
+        </Section>
+      )}
+
+      {arcs.length > 0 && (
+        <Section title="Archi narrativi">
+          <ul className="space-y-1.5">
+            {arcs.map((a) => (
+              <li key={a.id}>
+                <button
+                  type="button"
+                  onClick={() => openArc(a.id)}
+                  className="text-left text-ink-100 hover:text-chakra-200 inline-flex items-center gap-2"
+                >
+                  <span className="text-ember-400">◆</span>
+                  {a.name}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </Section>
+      )}
+
+      {events.length > 0 && (
+        <Section title="Eventi principali">
+          <ul className="grid sm:grid-cols-2 gap-2">
+            {events.slice(0, 8).map((e) => (
+              <li key={e.id}>
+                <button
+                  type="button"
+                  onClick={() => openEvent(e.id)}
+                  className="text-left w-full panel-soft p-3 hover:border-chakra-500/60 transition"
+                >
+                  <p className="text-ink-100 text-sm">{e.title}</p>
+                  <p className="text-[11px] text-ink-400 mt-0.5">
+                    #{e.order} · {e.period}
+                  </p>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </Section>
+      )}
+    </Modal>
+  );
+}
+
+function Section({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section>
+      <h3 className="font-display text-[11px] uppercase tracking-widest text-chakra-300 mb-2">
+        {title}
+      </h3>
+      {children}
+    </section>
+  );
+}
