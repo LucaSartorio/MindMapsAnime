@@ -1,0 +1,57 @@
+import type { StoryArc, WorldDataset } from '@/types';
+import { Card } from '@/components/common/Card';
+import { Badge } from '@/components/common/Badge';
+import { CanonPill, ReferencePill } from '@/components/common/StatusPill';
+import { cn } from '@/lib/cn';
+
+interface StoryArcCardProps {
+  arc: StoryArc;
+  dataset: WorldDataset;
+  active?: boolean;
+  onClick?: () => void;
+}
+
+export function StoryArcCard({
+  arc,
+  dataset,
+  active,
+  onClick,
+}: StoryArcCardProps) {
+  const eventCount = dataset.events.filter((e) => e.arcId === arc.id).length;
+  const locCount = (arc.locationIds ?? []).length;
+  const charCount = (arc.characterIds ?? []).length;
+
+  return (
+    <Card
+      interactive
+      className={cn(
+        'p-4 h-full',
+        active && 'border-ember-500/70 shadow-ember',
+      )}
+    >
+      <button
+        type="button"
+        onClick={onClick}
+        className="text-left w-full flex flex-col gap-3"
+      >
+        <div className="flex items-center justify-between text-[10px] uppercase tracking-widest text-ink-400 font-mono">
+          <span>#{arc.order}</span>
+          {arc.saga && <span>{arc.saga}</span>}
+        </div>
+        <h3 className="font-display text-lg text-ink-100">{arc.name}</h3>
+        <p className="text-sm text-ink-300 leading-relaxed line-clamp-3">
+          {arc.description}
+        </p>
+        <div className="flex flex-wrap items-center gap-1.5 mt-1">
+          <CanonPill canon={arc.canon} />
+          {arc.referenceStatus && (
+            <ReferencePill status={arc.referenceStatus} />
+          )}
+          <Badge>{eventCount} eventi</Badge>
+          {locCount > 0 && <Badge>{locCount} luoghi</Badge>}
+          {charCount > 0 && <Badge>{charCount} personaggi</Badge>}
+        </div>
+      </button>
+    </Card>
+  );
+}
