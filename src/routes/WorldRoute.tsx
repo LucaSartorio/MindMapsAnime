@@ -7,7 +7,7 @@ import { WorldMapPage } from '@/pages/WorldMapPage';
 import { ComingSoonWorldPage } from '@/pages/ComingSoonWorldPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 
-// Lazy load delle pagine archive: non sono necessarie sulla mappa
+// Lazy load delle pagine archive
 const CharactersPage = lazy(() =>
   import('@/components/archive/CharactersPage').then((m) => ({
     default: m.CharactersPage,
@@ -65,7 +65,7 @@ export function WorldRoute() {
       <Route
         index
         element={
-          <WorldLayout dataset={dataset}>
+          <WorldLayout dataset={dataset} mapOverlays>
             <WorldMapPage dataset={dataset} />
           </WorldLayout>
         }
@@ -73,7 +73,7 @@ export function WorldRoute() {
       <Route
         path="characters"
         element={
-          <WorldLayout dataset={dataset} showTimeline={false}>
+          <WorldLayout dataset={dataset} mapOverlays={false}>
             <LazyFallback>
               <CharactersPage dataset={dataset} />
             </LazyFallback>
@@ -83,7 +83,7 @@ export function WorldRoute() {
       <Route
         path="clans"
         element={
-          <WorldLayout dataset={dataset} showTimeline={false}>
+          <WorldLayout dataset={dataset} mapOverlays={false}>
             <LazyFallback>
               <ClansAndFactionsPage dataset={dataset} />
             </LazyFallback>
@@ -93,7 +93,7 @@ export function WorldRoute() {
       <Route
         path="arcs"
         element={
-          <WorldLayout dataset={dataset} showTimeline={false}>
+          <WorldLayout dataset={dataset} mapOverlays={false}>
             <LazyFallback>
               <StoryArcsPage dataset={dataset} />
             </LazyFallback>
@@ -103,7 +103,7 @@ export function WorldRoute() {
       <Route
         path="sources"
         element={
-          <WorldLayout dataset={dataset} showTimeline={false}>
+          <WorldLayout dataset={dataset} mapOverlays={false}>
             <LazyFallback>
               <SourcesPage dataset={dataset} />
             </LazyFallback>

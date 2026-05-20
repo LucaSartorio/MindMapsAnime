@@ -1,19 +1,27 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import type { WorldDataset } from '@/types';
 import { CharacterCard } from './CharacterCard';
 import { EmptyState } from '@/components/common/EmptyState';
 import { SourceNotice } from '@/components/common/SourceNotice';
+import { useUiStore } from '@/store';
 
 interface CharactersPageProps {
   dataset: WorldDataset;
 }
 
 export function CharactersPage({ dataset }: CharactersPageProps) {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const activeId = searchParams.get('id');
+  const [params] = useSearchParams();
+  const initialId = params.get('id');
   const [query, setQuery] = useState('');
   const [filterVillage, setFilterVillage] = useState<string>('');
+  const openCharacterModal = useUiStore((s) => s.openCharacterModal);
+
+  // Deep-link: se arrivo con ?id=... apro subito la modal personaggio
+  useEffect(() => {
+    if (initialId) openCharacterModal(initialId);
+    // run only quando cambia id nella URL
+  }, [initialId, openCharacterModal]);
 
   const villages = useMemo(
     () =>
@@ -50,8 +58,7 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
           Archivio personaggi
         </h1>
         <p className="text-sm text-ink-300 max-w-2xl">
-          Schede sintetiche dei personaggi principali del mondo. Clicca una
-          card per vederne i dettagli.
+          Schede dei personaggi principali. Clicca per aprire i dettagli.
         </p>
       </header>
 
@@ -92,8 +99,7 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
               <CharacterCard
                 character={c}
                 dataset={dataset}
-                active={c.id === activeId}
-                onClick={() => setSearchParams({ id: c.id })}
+                onClick={() => openCharacterModal(c.id)}
               />
             </li>
           ))}

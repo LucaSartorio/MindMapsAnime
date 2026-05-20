@@ -1,29 +1,31 @@
-import { Button } from '@/components/common/Button';
+import { IconButton } from '@/components/common/IconButton';
 import { useMapStore } from '@/store';
 
-/** Pulsanti aggiuntivi accanto al canvas (reset view, reset selezioni). */
+/**
+ * Cluster di icone in alto a destra:
+ *  - Reset vista (fitView)
+ *  - Reset selezioni
+ */
 export function MapControls() {
   const resetViewport = useMapStore((s) => s.resetViewport);
   const resetSelections = useMapStore((s) => s.resetSelections);
 
   return (
     <div className="panel inline-flex p-1 gap-1">
-      <Button
-        variant="ghost"
-        onClick={resetViewport}
+      <IconButton
         aria-label="Reset zoom e centratura"
-        className="!py-1.5 !px-2.5 !text-xs"
+        title="Reset vista"
+        onClick={resetViewport}
       >
-        Reset vista
-      </Button>
-      <Button
-        variant="ghost"
-        onClick={resetSelections}
+        <span aria-hidden>⤾</span>
+      </IconButton>
+      <IconButton
         aria-label="Reset selezioni mappa"
-        className="!py-1.5 !px-2.5 !text-xs"
+        title="Reset selezioni"
+        onClick={resetSelections}
       >
-        Reset selezioni
-      </Button>
+        <span aria-hidden>⊘</span>
+      </IconButton>
     </div>
   );
 }

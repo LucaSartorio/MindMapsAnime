@@ -1,7 +1,8 @@
 import type { TimelineEvent, WorldDataset } from '@/types';
 import { CanonPill, ReferencePill } from '@/components/common/StatusPill';
-import { useMapStore } from '@/store';
+import { useMapStore, useUiStore } from '@/store';
 import { cn } from '@/lib/cn';
+import { findLocation } from '@/lib/entities';
 
 interface TimelineEventCardProps {
   event: TimelineEvent;
@@ -9,24 +10,23 @@ interface TimelineEventCardProps {
   active?: boolean;
 }
 
+/** Card singolo evento timeline. Cliccando apre modal dedicata. */
 export function TimelineEventCard({
   event,
   dataset,
   active,
 }: TimelineEventCardProps) {
-  const setSelectedEvent = useMapStore((s) => s.setSelectedTimelineEvent);
+  const openEventModal = useUiStore((s) => s.openEventModal);
   const setSelectedLocation = useMapStore((s) => s.setSelectedLocation);
   const setActiveMapLevel = useMapStore((s) => s.setActiveMapLevel);
-  const location = event.locationId
-    ? dataset.locations.find((l) => l.id === event.locationId)
-    : undefined;
+  const location = findLocation(dataset, event.locationId);
 
   function handleClick() {
-    setSelectedEvent(event.id);
     if (location) {
       setActiveMapLevel(location.mapLevelId);
       setSelectedLocation(location.id);
     }
+    openEventModal(event.id);
   }
 
   return (

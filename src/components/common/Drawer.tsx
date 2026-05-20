@@ -28,12 +28,13 @@ export function Drawer({
     return () => document.removeEventListener('keydown', onKey);
   }, [open, onClose]);
 
+  // Posizione + bordi. La larghezza viene sempre dal consumer via className.
   const sideClasses =
     side === 'left'
-      ? 'left-0 top-0 h-full w-[90vw] max-w-sm border-r'
+      ? 'left-0 top-0 h-full border-r'
       : side === 'right'
-        ? 'right-0 top-0 h-full w-[90vw] max-w-sm border-l'
-        : 'left-0 bottom-0 w-full max-h-[80vh] border-t';
+        ? 'right-0 top-0 h-full border-l'
+        : 'left-0 right-0 bottom-0 max-h-[80vh] border-t w-full';
 
   const slide =
     side === 'left'

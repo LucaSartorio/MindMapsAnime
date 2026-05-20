@@ -1,9 +1,10 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import type { FactionType, WorldDataset } from '@/types';
 import { ClanFactionCard } from './ClanFactionCard';
 import { EmptyState } from '@/components/common/EmptyState';
 import { SourceNotice } from '@/components/common/SourceNotice';
+import { useUiStore } from '@/store';
 
 interface ClansAndFactionsPageProps {
   dataset: WorldDataset;
@@ -19,10 +20,15 @@ const TYPES: { value: FactionType | ''; label: string }[] = [
 ];
 
 export function ClansAndFactionsPage({ dataset }: ClansAndFactionsPageProps) {
-  const [params, setParams] = useSearchParams();
-  const activeId = params.get('id');
+  const [params] = useSearchParams();
+  const initialId = params.get('id');
   const [filter, setFilter] = useState<FactionType | ''>('');
   const [query, setQuery] = useState('');
+  const openFactionModal = useUiStore((s) => s.openFactionModal);
+
+  useEffect(() => {
+    if (initialId) openFactionModal(initialId);
+  }, [initialId, openFactionModal]);
 
   const items = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -96,8 +102,7 @@ export function ClansAndFactionsPage({ dataset }: ClansAndFactionsPageProps) {
               <ClanFactionCard
                 faction={f}
                 dataset={dataset}
-                active={f.id === activeId}
-                onClick={() => setParams({ id: f.id })}
+                onClick={() => openFactionModal(f.id)}
               />
             </li>
           ))}
