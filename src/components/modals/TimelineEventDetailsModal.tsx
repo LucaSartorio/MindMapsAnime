@@ -1,10 +1,13 @@
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
 import { Modal } from '@/components/common/Modal';
 import { Badge } from '@/components/common/Badge';
 import { Button } from '@/components/common/Button';
 import { CanonPill, ReferencePill } from '@/components/common/StatusPill';
 import { useMapStore, useUiStore } from '@/store';
+import { useLocaleStore } from '@/store/useLocaleStore';
+import { getLocalizedText } from '@/utils/localization';
 import {
   findArc,
   findCharacter,
@@ -22,6 +25,8 @@ export function TimelineEventDetailsModal({
   dataset,
   eventId,
 }: TimelineEventDetailsModalProps) {
+  const locale = useLocaleStore((s) => s.locale);
+  const { t } = useTranslation();
   const event = findEvent(dataset, eventId);
   const close = useUiStore((s) => s.closeModal);
   const openLocation = useUiStore((s) => s.openLocationModal);
@@ -34,8 +39,8 @@ export function TimelineEventDetailsModal({
 
   if (!event) {
     return (
-      <Modal open onClose={close} title="Evento non trovato" size="sm">
-        <p>Riferimento non valido.</p>
+      <Modal open onClose={close} title={t("modals.notFound")} size="sm">
+        <p>{t("modals.invalidRef")}</p>
       </Modal>
     );
   }
@@ -58,8 +63,8 @@ export function TimelineEventDetailsModal({
     <Modal
       open
       onClose={close}
-      eyebrow={`Evento · ${event.period}`}
-      title={event.title}
+      eyebrow={`${t('modals.event')} · ${getLocalizedText(event.period, locale)}`}
+      title={getLocalizedText(event.title, locale)}
       badges={
         <>
           <Badge>#{event.order}</Badge>
@@ -79,20 +84,22 @@ export function TimelineEventDetailsModal({
                 close();
               }}
             >
-              Centra sulla mappa
+              {t("modals.centerOnMap")}
             </Button>
           )}
           <Button variant="primary" onClick={close}>
-            Chiudi
+            {t("modals.close")}
           </Button>
         </>
       }
     >
-      <p className="leading-relaxed">{event.description}</p>
+      <p className="leading-relaxed">
+        {getLocalizedText(event.description, locale)}
+      </p>
 
       {!isVerified && (
         <div className="rounded-md border border-yellow-700/40 bg-yellow-900/20 px-3 py-2 text-xs text-yellow-200">
-          Dato da verificare. Capitoli/episodi non confermati.
+          {t("modals.needsVerificationEvent")}
         </div>
       )}
 
@@ -103,9 +110,9 @@ export function TimelineEventDetailsModal({
           className="panel-soft p-3 w-full text-left hover:border-chakra-500/60"
         >
           <p className="text-[10px] uppercase tracking-widest text-chakra-300 font-mono">
-            Arco narrativo
+            {t("modals.arcLabel")}
           </p>
-          <p className="text-ink-100 mt-0.5">{arc.name}</p>
+          <p className="text-ink-100 mt-0.5">{getLocalizedText(arc.localizedName, locale) || arc.name}</p>
         </button>
       )}
 
@@ -116,16 +123,16 @@ export function TimelineEventDetailsModal({
           className="panel-soft p-3 w-full text-left hover:border-chakra-500/60"
         >
           <p className="text-[10px] uppercase tracking-widest text-chakra-300 font-mono">
-            Luogo
+            {t("modals.location")}
           </p>
-          <p className="text-ink-100 mt-0.5">{location.name}</p>
+          <p className="text-ink-100 mt-0.5">{getLocalizedText(location.localizedName, locale) || location.name}</p>
         </button>
       )}
 
       {hasReferences && (
         <section>
           <h3 className="font-display text-[11px] uppercase tracking-widest text-chakra-300 mb-2">
-            Riferimenti
+            {t("modals.references")}
           </h3>
           {event.mangaChapters?.length ? (
             <p className="text-ink-300">
@@ -143,7 +150,7 @@ export function TimelineEventDetailsModal({
       {characters.length > 0 && (
         <section>
           <h3 className="font-display text-[11px] uppercase tracking-widest text-chakra-300 mb-2">
-            Personaggi coinvolti
+            {t("modals.relatedCharacters")}
           </h3>
           <div className="flex flex-wrap gap-1.5">
             {characters.map((c) => (
@@ -163,7 +170,7 @@ export function TimelineEventDetailsModal({
       {factions.length > 0 && (
         <section>
           <h3 className="font-display text-[11px] uppercase tracking-widest text-chakra-300 mb-2">
-            Clan / Fazioni
+            {t("modals.relatedClans")}
           </h3>
           <div className="flex flex-wrap gap-1.5">
             {factions.map((f) => (

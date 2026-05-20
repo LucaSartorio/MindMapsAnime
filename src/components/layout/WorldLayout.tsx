@@ -1,5 +1,6 @@
 import { useEffect, type ReactNode } from 'react';
 import { useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
 import { useMapStore, useUiStore, useWorldStore } from '@/store';
 import { FiltersDrawer } from '@/components/drawers/FiltersDrawer';
@@ -35,6 +36,7 @@ export function WorldLayout({
   children,
   mapOverlays = true,
 }: WorldLayoutProps) {
+  const { t } = useTranslation();
   const { worldSlug } = useParams();
   const setActiveWorld = useWorldStore((s) => s.setActiveWorld);
   const setActiveMapLevel = useMapStore((s) => s.setActiveMapLevel);
@@ -88,8 +90,8 @@ export function WorldLayout({
           <div className="flex items-start justify-between gap-3 flex-wrap">
             <div className="pointer-events-auto flex items-center gap-2">
               <IconButton
-                aria-label="Apri filtri mappa"
-                title="Filtri"
+                aria-label={t('map.controls.filtersAria')}
+                title={t('map.controls.filters')}
                 onClick={openFilters}
               >
                 <span aria-hidden>☰</span>

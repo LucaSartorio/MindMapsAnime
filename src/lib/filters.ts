@@ -4,6 +4,7 @@ import type {
   TimelineEvent,
   WorldDataset,
 } from '@/types';
+import { getLocalizedText } from '@/utils/localization';
 
 /**
  * Funzioni pure di filtraggio.
@@ -72,8 +73,15 @@ export function filterEvents(
     if (filters.arcIds.length > 0 && (!ev.arcId || !filters.arcIds.includes(ev.arcId))) {
       return false;
     }
-    if (filters.periods.length > 0 && !filters.periods.includes(ev.period)) {
-      return false;
+    if (filters.periods.length > 0) {
+      // Match in either locale: il filtro contiene la stringa nella lingua attiva
+      // al momento del click, ma confrontiamo entrambe per non perdere eventi.
+      const periodIt = getLocalizedText(ev.period, 'it');
+      const periodEn = getLocalizedText(ev.period, 'en');
+      const match =
+        filters.periods.includes(periodIt) ||
+        filters.periods.includes(periodEn);
+      if (!match) return false;
     }
     if (
       filters.characterIds.length > 0 &&

@@ -1,8 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import type { SearchResult, WorldDataset } from '@/types';
 import { searchDataset } from '@/lib/search';
 import { useMapStore, useUiStore } from '@/store';
+import { useLocaleStore } from '@/store/useLocaleStore';
 import { SearchResults } from './SearchResults';
 
 interface GlobalSearchDropdownProps {
@@ -24,6 +26,8 @@ export function GlobalSearchDropdown({
   dataset,
   showKbHint = false,
 }: GlobalSearchDropdownProps) {
+  const { t } = useTranslation();
+  const locale = useLocaleStore((s) => s.locale);
   const [query, setQuery] = useState('');
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -31,8 +35,8 @@ export function GlobalSearchDropdown({
   const navigate = useNavigate();
 
   const results = useMemo(
-    () => (query ? searchDataset(query, dataset).slice(0, 10) : []),
-    [query, dataset],
+    () => (query ? searchDataset(query, dataset, locale).slice(0, 10) : []),
+    [query, dataset, locale],
   );
 
   // Click fuori → chiude
@@ -145,7 +149,7 @@ export function GlobalSearchDropdown({
   return (
     <div ref={containerRef} className="relative w-full max-w-md">
       <label htmlFor="global-search" className="sr-only">
-        Cerca nel mondo {dataset.world.title}
+        {t('search.label', { world: dataset.world.title })}
       </label>
       <div className="relative">
         <span
@@ -164,7 +168,7 @@ export function GlobalSearchDropdown({
             setOpen(true);
           }}
           onFocus={() => setOpen(true)}
-          placeholder={`Cerca in ${dataset.world.title}…`}
+          placeholder={t('search.placeholder', { world: dataset.world.title })}
           className="w-full panel-soft pl-8 pr-10 py-2 text-sm placeholder-ink-400 focus:border-chakra-500"
           aria-autocomplete="list"
           aria-expanded={open && results.length > 0}

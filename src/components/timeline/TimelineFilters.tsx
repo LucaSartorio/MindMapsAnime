@@ -1,19 +1,30 @@
+import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
 import { useMapStore } from '@/store';
+import { useLocaleStore } from '@/store/useLocaleStore';
+import { getLocalizedText } from '@/utils/localization';
 
 interface TimelineFiltersProps {
   dataset: WorldDataset;
 }
 
 /**
- * Filtri compatti per la timeline.
- * Riusa lo stesso MapFilters globale per coerenza con la mappa.
+ * Filtri compatti per la timeline (locale-aware).
+ * I `period` ora possono essere `LocalizedText`: usiamo la stringa nella
+ * lingua attiva come chiave del filtro e come label.
  */
 export function TimelineFilters({ dataset }: TimelineFiltersProps) {
+  const { t } = useTranslation();
+  const locale = useLocaleStore((s) => s.locale);
   const filters = useMapStore((s) => s.filters);
   const setFilters = useMapStore((s) => s.setFilters);
 
-  const periods = Array.from(new Set(dataset.events.map((e) => e.period)));
+  // Periods estratti dalla lingua attiva per coerenza con il filtro.
+  const periods = Array.from(
+    new Set(
+      dataset.events.map((e) => getLocalizedText(e.period, locale)).filter(Boolean),
+    ),
+  );
   const arcs = dataset.arcs;
 
   function togglePeriod(p: string) {
@@ -35,7 +46,7 @@ export function TimelineFilters({ dataset }: TimelineFiltersProps) {
     <div className="flex flex-wrap items-center gap-2">
       <div className="flex flex-wrap items-center gap-1.5">
         <span className="text-[10px] uppercase tracking-widest text-ink-400 font-mono">
-          Periodo
+          {t('filters.period')}
         </span>
         {periods.map((p) => {
           const active = filters.periods.includes(p);
@@ -59,7 +70,7 @@ export function TimelineFilters({ dataset }: TimelineFiltersProps) {
       </div>
       <div className="flex flex-wrap items-center gap-1.5">
         <span className="text-[10px] uppercase tracking-widest text-ink-400 font-mono">
-          Arco
+          {t('filters.arc')}
         </span>
         {arcs.map((a) => {
           const active = filters.arcIds.includes(a.id);
@@ -76,7 +87,7 @@ export function TimelineFilters({ dataset }: TimelineFiltersProps) {
                   : 'border-ink-600/60 text-ink-200 hover:border-ember-500/50')
               }
             >
-              {a.name}
+              {getLocalizedText(a.localizedName, locale) || a.name}
             </button>
           );
         })}
@@ -88,7 +99,7 @@ export function TimelineFilters({ dataset }: TimelineFiltersProps) {
           onChange={(e) => setFilters({ canonOnly: e.target.checked })}
           className="accent-chakra-500"
         />
-        Solo canon
+        {t('filters.canonOnly')}
       </label>
     </div>
   );

@@ -12,9 +12,14 @@ export const animeWorlds: AnimeWorld[] = [
     id: 'world-naruto',
     slug: 'naruto',
     title: 'Naruto',
-    subtitle: 'Elemental Nations · Ninja World',
-    description:
-      'Esplora le Nazioni Elementali, i Cinque Villaggi Nascosti e i percorsi dei ninja più iconici. Dalle missioni nel Paese delle Onde alla Quarta Guerra Ninja.',
+    subtitle: {
+      it: 'Nazioni Elementali · Mondo Ninja',
+      en: 'Elemental Nations · Ninja World',
+    },
+    description: {
+      it: 'Esplora le Nazioni Elementali, i Cinque Villaggi Nascosti e i percorsi dei ninja più iconici. Dalle missioni nel Paese delle Onde alla Quarta Guerra Ninja.',
+      en: 'Explore the Elemental Nations, the Five Hidden Villages and the journeys of the most iconic ninja. From the Land of Waves to the Fourth Shinobi World War.',
+    },
     status: 'available',
     theme: {
       primary: '#f06600',
@@ -37,9 +42,14 @@ export const animeWorlds: AnimeWorld[] = [
     id: 'world-hunterxhunter',
     slug: 'hunterxhunter',
     title: 'Hunter x Hunter',
-    subtitle: 'A world of Hunters · Coming soon',
-    description:
-      'Il mondo di Gon, Killua e degli Hunter è in arrivo. Esploreremo Yorknew, Greed Island, il Continente Oscuro e i territori conosciuti.',
+    subtitle: {
+      it: 'Un mondo di Hunter · In arrivo',
+      en: 'A world of Hunters · Coming soon',
+    },
+    description: {
+      it: 'Il mondo di Gon, Killua e degli Hunter è in arrivo. Esploreremo Yorknew, Greed Island, il Continente Oscuro e i territori conosciuti.',
+      en: "Gon, Killua and the Hunters' world is coming. We'll explore Yorknew, Greed Island, the Dark Continent and the known territories.",
+    },
     status: 'coming_soon',
     theme: {
       primary: '#1f9aff',

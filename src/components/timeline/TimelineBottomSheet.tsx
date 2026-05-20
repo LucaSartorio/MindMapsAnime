@@ -1,6 +1,9 @@
 import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
 import { useMapStore, useUiStore } from '@/store';
+import { useLocaleStore } from '@/store/useLocaleStore';
+import { getLocalizedText } from '@/utils/localization';
 import { filterEvents } from '@/lib/filters';
 import { TimelineEventCard } from './TimelineEventCard';
 import { TimelineFilters } from './TimelineFilters';
@@ -10,14 +13,9 @@ interface TimelineBottomSheetProps {
   dataset: WorldDataset;
 }
 
-/**
- * Bottom sheet della timeline narrativa.
- * - barra compatta di default in basso
- * - si espande mostrando filtri + card scrollabili orizzontalmente
- * - se è selezionato un percorso/luogo, filtra automaticamente gli eventi
- * - bottone "Mostra tutto" per resettare il filtro contestuale
- */
 export function TimelineBottomSheet({ dataset }: TimelineBottomSheetProps) {
+  const { t } = useTranslation();
+  const locale = useLocaleStore((s) => s.locale);
   const open = useUiStore((s) => s.isTimelineOpen);
   const toggle = useUiStore((s) => s.toggleTimeline);
   const filters = useMapStore((s) => s.filters);
@@ -37,7 +35,6 @@ export function TimelineBottomSheet({ dataset }: TimelineBottomSheetProps) {
 
   const events = useMemo(() => {
     let base = filterEvents(dataset.events, filters);
-    // Filtro contestuale: percorso o luogo selezionato
     if (route) {
       const ids = new Set(
         route.steps.map((s) => s.eventId).filter(Boolean) as string[],
@@ -55,14 +52,16 @@ export function TimelineBottomSheet({ dataset }: TimelineBottomSheetProps) {
   }, [dataset.events, filters, route, selectedLocationId]);
 
   const contextLabel = route
-    ? `Filtrata su percorso · ${route.name}`
+    ? t('map.timeline.filteredOnRoute', {
+        name: getLocalizedText(route.localizedName, locale) || route.name,
+      })
     : selectedLocationId
-      ? `Filtrata su luogo selezionato`
+      ? t('map.timeline.filteredOnLocation')
       : null;
 
   return (
     <section
-      aria-label="Timeline narrativa"
+      aria-label={t('map.timeline.title')}
       className="panel pointer-events-auto overflow-hidden flex flex-col w-full"
     >
       <header
@@ -74,10 +73,10 @@ export function TimelineBottomSheet({ dataset }: TimelineBottomSheetProps) {
             ⌛
           </span>
           <h3 className="font-display text-[11px] uppercase tracking-widest text-chakra-300">
-            Timeline narrativa
+            {t('map.timeline.title')}
           </h3>
           <span className="text-[10px] text-ink-400 shrink-0">
-            {events.length} eventi
+            {t('map.timeline.events', { count: events.length })}
           </span>
           {contextLabel && (
             <span className="hidden sm:inline text-[10px] text-ember-300 truncate">
@@ -95,7 +94,7 @@ export function TimelineBottomSheet({ dataset }: TimelineBottomSheetProps) {
           }}
           className="btn-ghost !py-0.5 !px-2 text-[11px]"
         >
-          {open ? '▾ Riduci' : '▸ Espandi'}
+          {open ? t('map.timeline.collapse') : t('map.timeline.expand')}
         </button>
       </header>
       {open && (
@@ -114,14 +113,14 @@ export function TimelineBottomSheet({ dataset }: TimelineBottomSheetProps) {
                 }}
                 className="text-[11px] text-ink-300 hover:text-white px-2 py-0.5 rounded"
               >
-                Mostra tutto
+                {t('map.timeline.showAll')}
               </button>
             )}
           </div>
           {events.length === 0 ? (
             <EmptyState
-              title="Nessun evento corrispondente"
-              description="Rimuovi qualche filtro per vedere più eventi."
+              title={t('map.timeline.empty')}
+              description={t('map.timeline.emptyDescription')}
             />
           ) : (
             <ol className="flex gap-3 overflow-x-auto pb-2 snap-x">

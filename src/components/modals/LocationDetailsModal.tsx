@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
 import { Modal } from '@/components/common/Modal';
 import { Badge } from '@/components/common/Badge';
@@ -12,6 +13,8 @@ import {
   findLocation,
   findNation,
 } from '@/lib/entities';
+import { useLocaleStore } from '@/store/useLocaleStore';
+import { getLocalizedText } from '@/utils/localization';
 
 interface LocationDetailsModalProps {
   dataset: WorldDataset;
@@ -23,6 +26,8 @@ export function LocationDetailsModal({
   dataset,
   locationId,
 }: LocationDetailsModalProps) {
+  const locale = useLocaleStore((s) => s.locale);
+  const { t } = useTranslation();
   const location = findLocation(dataset, locationId);
   const close = useUiStore((s) => s.closeModal);
   const openCharacter = useUiStore((s) => s.openCharacterModal);
@@ -57,8 +62,8 @@ export function LocationDetailsModal({
 
   if (!location) {
     return (
-      <Modal open onClose={close} title="Luogo non trovato" size="sm">
-        <p>Questo riferimento non esiste più nel dataset.</p>
+      <Modal open onClose={close} title={t("modals.notFound")} size="sm">
+        <p>{t("modals.invalidRef")}</p>
       </Modal>
     );
   }
@@ -85,10 +90,10 @@ export function LocationDetailsModal({
           Luogo · <span className="capitalize">{location.type.replace('_', ' ')}</span>
         </>
       }
-      title={location.name}
+      title={getLocalizedText(location.localizedName, locale) || location.name}
       badges={
         <>
-          {nation && <Badge variant="accent">{nation.name}</Badge>}
+          {nation && <Badge variant="accent">{getLocalizedText(nation.localizedName, locale) || nation.name}</Badge>}
           <Badge variant={location.importance === 'main' ? 'ember' : 'default'} className="capitalize">
             {location.importance}
           </Badge>
@@ -108,7 +113,7 @@ export function LocationDetailsModal({
                 close();
               }}
             >
-              Zoom nel luogo →
+              {t('modals.showSubmap')}
             </Button>
           )}
           {events.length > 0 && (
@@ -120,7 +125,7 @@ export function LocationDetailsModal({
                 close();
               }}
             >
-              Mostra timeline collegata
+              {t("modals.showTimeline")}
             </Button>
           )}
           {routes.length > 0 && (
@@ -132,11 +137,11 @@ export function LocationDetailsModal({
                 close();
               }}
             >
-              Mostra percorso collegato
+              {t("modals.showRoute")}
             </Button>
           )}
           <Button variant="primary" onClick={close}>
-            Chiudi
+            {t("modals.close")}
           </Button>
         </>
       }
@@ -144,9 +149,13 @@ export function LocationDetailsModal({
       {location.nameLocal && (
         <p className="text-xs text-ink-300 italic -mt-2">{location.nameLocal}</p>
       )}
-      <p className="leading-relaxed">{location.shortDescription}</p>
+      <p className="leading-relaxed">
+        {getLocalizedText(location.shortDescription, locale)}
+      </p>
       {location.longDescription && (
-        <p className="text-ink-300 leading-relaxed">{location.longDescription}</p>
+        <p className="text-ink-300 leading-relaxed">
+          {getLocalizedText(location.longDescription, locale)}
+        </p>
       )}
 
       {!isVerified && (
@@ -157,7 +166,7 @@ export function LocationDetailsModal({
       )}
 
       {(location.mangaChapters?.length || location.animeEpisodes?.length) && (
-        <Section title="Riferimenti">
+        <Section title={t("modals.references")}>
           {location.mangaChapters?.length ? (
             <p className="text-ink-300">
               <strong>Manga:</strong> {location.mangaChapters.join(', ')}
@@ -172,7 +181,7 @@ export function LocationDetailsModal({
       )}
 
       {events.length > 0 && (
-        <Section title="Eventi qui">
+        <Section title={t("modals.eventsHere")}>
           <ul className="grid sm:grid-cols-2 gap-2">
             {events.map((e) => (
               <li key={e.id}>
@@ -181,9 +190,11 @@ export function LocationDetailsModal({
                   onClick={() => openEvent(e.id)}
                   className="text-left w-full panel-soft p-3 hover:border-chakra-500/60 transition"
                 >
-                  <p className="text-ink-100 text-sm">{e.title}</p>
+                  <p className="text-ink-100 text-sm">
+                    {getLocalizedText(e.title, locale)}
+                  </p>
                   <p className="text-[11px] text-ink-400 mt-0.5">
-                    #{e.order} · {e.period}
+                    #{e.order} · {getLocalizedText(e.period, locale)}
                   </p>
                 </button>
               </li>
@@ -193,7 +204,7 @@ export function LocationDetailsModal({
       )}
 
       {characters.length > 0 && (
-        <Section title="Personaggi collegati">
+        <Section title={t("modals.relatedCharacters")}>
           <div className="flex flex-wrap gap-1.5">
             {characters.map((c) => (
               <button
@@ -210,7 +221,7 @@ export function LocationDetailsModal({
       )}
 
       {factions.length > 0 && (
-        <Section title="Clan / Fazioni">
+        <Section title={t("modals.relatedClans")}>
           <div className="flex flex-wrap gap-1.5">
             {factions.map((f) => (
               <button
@@ -227,7 +238,7 @@ export function LocationDetailsModal({
       )}
 
       {arcs.length > 0 && (
-        <Section title="Archi narrativi">
+        <Section title={t("modals.relatedArcs")}>
           <ul className="space-y-1.5">
             {arcs.map((a) => (
               <li key={a.id}>
@@ -246,7 +257,7 @@ export function LocationDetailsModal({
       )}
 
       {routes.length > 0 && (
-        <Section title="Percorsi che passano qui">
+        <Section title={t("modals.routesPassingHere")}>
           <div className="flex flex-wrap gap-1.5">
             {routes.map((r) => (
               <button
@@ -267,7 +278,7 @@ export function LocationDetailsModal({
         </Section>
       )}
 
-      <Section title="Galleria">
+      <Section title={t("modals.gallery")}>
         <div className="grid grid-cols-3 gap-2">
           {[0, 1, 2].map((i) => (
             <div
@@ -280,7 +291,7 @@ export function LocationDetailsModal({
           ))}
         </div>
         <p className="text-[10px] text-ink-400 mt-1.5">
-          Immagini ufficiali non incluse per copyright.
+          {t('modals.galleryNote')}
         </p>
       </Section>
     </Modal>

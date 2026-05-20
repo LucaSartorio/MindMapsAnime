@@ -1,5 +1,8 @@
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
+import { useLocaleStore } from '@/store/useLocaleStore';
+import { getLocalizedText } from '@/utils/localization';
 import { Modal } from '@/components/common/Modal';
 import { Badge } from '@/components/common/Badge';
 import { Button } from '@/components/common/Button';
@@ -21,6 +24,8 @@ export function CharacterDetailsModal({
   dataset,
   characterId,
 }: CharacterDetailsModalProps) {
+  const locale = useLocaleStore((s) => s.locale);
+  const { t } = useTranslation();
   const character = findCharacter(dataset, characterId);
   const close = useUiStore((s) => s.closeModal);
   const openLocation = useUiStore((s) => s.openLocationModal);
@@ -35,8 +40,8 @@ export function CharacterDetailsModal({
 
   if (!character) {
     return (
-      <Modal open onClose={close} title="Personaggio non trovato" size="sm">
-        <p>Riferimento non valido.</p>
+      <Modal open onClose={close} title={t("modals.notFound")} size="sm">
+        <p>{t("modals.invalidRef")}</p>
       </Modal>
     );
   }
@@ -73,7 +78,7 @@ export function CharacterDetailsModal({
     <Modal
       open
       onClose={close}
-      eyebrow="Personaggio"
+      eyebrow={t("modals.character")}
       title={character.name}
       badges={
         <>
@@ -86,8 +91,8 @@ export function CharacterDetailsModal({
               {r}
             </Badge>
           ))}
-          {village && <Badge>{village.name}</Badge>}
-          {nation && <Badge>{nation.name}</Badge>}
+          {village && <Badge>{getLocalizedText(village.localizedName, locale) || village.name}</Badge>}
+          {nation && <Badge>{getLocalizedText(nation.localizedName, locale) || nation.name}</Badge>}
           <Badge variant={statusVariant} className="capitalize">
             {character.status.replace('_', ' ')}
           </Badge>
@@ -108,11 +113,11 @@ export function CharacterDetailsModal({
                 close();
               }}
             >
-              Mostra villaggio sulla mappa
+              {t("modals.showVillage")}
             </Button>
           )}
           <Button variant="primary" onClick={close}>
-            Chiudi
+            {t("modals.close")}
           </Button>
         </>
       }
@@ -124,18 +129,20 @@ export function CharacterDetailsModal({
       )}
       {character.aliases && character.aliases.length > 0 && (
         <p className="text-xs text-ink-400 italic">
-          alias: {character.aliases.join(' · ')}
+          {t('modals.aliases', { aliases: character.aliases.join(' · ') })}
         </p>
       )}
-      <p className="leading-relaxed">{character.shortDescription}</p>
+      <p className="leading-relaxed">
+        {getLocalizedText(character.shortDescription, locale)}
+      </p>
       {character.longDescription && (
         <p className="text-ink-300 leading-relaxed">
-          {character.longDescription}
+          {getLocalizedText(character.longDescription, locale)}
         </p>
       )}
 
       {(character.abilities ?? []).length > 0 && (
-        <Section title="Abilità">
+        <Section title={t("modals.abilities")}>
           <div className="flex flex-wrap gap-1.5">
             {character.abilities!.map((a) => (
               <Badge key={a} variant="ember">
@@ -147,7 +154,7 @@ export function CharacterDetailsModal({
       )}
 
       {(character.kekkeiGenkai ?? []).length > 0 && (
-        <Section title="Kekkei Genkai">
+        <Section title={t("modals.kekkeiGenkai")}>
           <div className="flex flex-wrap gap-1.5">
             {character.kekkeiGenkai!.map((k) => (
               <Badge key={k} variant="danger">
@@ -159,7 +166,7 @@ export function CharacterDetailsModal({
       )}
 
       {(character.family ?? []).length > 0 && (
-        <Section title="Famiglia">
+        <Section title={t("modals.family")}>
           <div className="flex flex-wrap gap-1.5">
             {character.family!.map((id) => {
               const f = findCharacter(dataset, id);
@@ -180,7 +187,7 @@ export function CharacterDetailsModal({
       )}
 
       {(character.teachers ?? []).length > 0 && (
-        <Section title="Maestri">
+        <Section title={t("modals.teachers")}>
           <div className="flex flex-wrap gap-1.5">
             {character.teachers!.map((id) => {
               const f = findCharacter(dataset, id);
@@ -201,7 +208,7 @@ export function CharacterDetailsModal({
       )}
 
       {(character.students ?? []).length > 0 && (
-        <Section title="Allievi">
+        <Section title={t("modals.students")}>
           <div className="flex flex-wrap gap-1.5">
             {character.students!.map((id) => {
               const f = findCharacter(dataset, id);
@@ -223,7 +230,7 @@ export function CharacterDetailsModal({
 
       {((character.allies ?? []).length > 0 ||
         (character.enemies ?? []).length > 0) && (
-        <Section title="Alleati / Nemici">
+        <Section title={t("modals.alliesEnemies")}>
           <div className="flex flex-wrap gap-1.5">
             {(character.allies ?? []).map((id) => {
               const f = findCharacter(dataset, id);
@@ -258,7 +265,7 @@ export function CharacterDetailsModal({
       )}
 
       {clans.length > 0 && (
-        <Section title="Clan / Fazioni">
+        <Section title={t("modals.relatedClans")}>
           <div className="flex flex-wrap gap-1.5">
             {clans.map((c) => (
               <button
@@ -275,7 +282,7 @@ export function CharacterDetailsModal({
       )}
 
       {character.relationships && character.relationships.length > 0 && (
-        <Section title="Relazioni">
+        <Section title={t("modals.relationships")}>
           <ul className="space-y-1.5">
             {character.relationships.map((r) => {
               const target = findCharacter(dataset, r.targetCharacterId);
@@ -301,7 +308,7 @@ export function CharacterDetailsModal({
       )}
 
       {locations.length > 0 && (
-        <Section title="Luoghi collegati">
+        <Section title={t("modals.relatedLocations")}>
           <div className="flex flex-wrap gap-1.5">
             {locations.map((l) => (
               <button
@@ -318,7 +325,7 @@ export function CharacterDetailsModal({
       )}
 
       {arcs.length > 0 && (
-        <Section title="Archi narrativi">
+        <Section title={t("modals.relatedArcs")}>
           <ul className="space-y-1.5">
             {arcs.map((a) => (
               <li key={a.id}>
@@ -337,7 +344,7 @@ export function CharacterDetailsModal({
       )}
 
       {charRoutes.length > 0 && (
-        <Section title={`Percorsi (${charRoutes.length})`}>
+        <Section title={t('modals.routes', { count: charRoutes.length })}>
           <div className="flex flex-wrap gap-1.5">
             {charRoutes.map((r) => (
               <button
@@ -359,7 +366,7 @@ export function CharacterDetailsModal({
       )}
 
       {events.length > 0 && (
-        <Section title="Eventi principali">
+        <Section title={t("modals.relatedEvents")}>
           <ul className="grid sm:grid-cols-2 gap-2">
             {events.slice(0, 8).map((e) => (
               <li key={e.id}>
@@ -368,9 +375,11 @@ export function CharacterDetailsModal({
                   onClick={() => openEvent(e.id)}
                   className="text-left w-full panel-soft p-3 hover:border-chakra-500/60 transition"
                 >
-                  <p className="text-ink-100 text-sm">{e.title}</p>
+                  <p className="text-ink-100 text-sm">
+                    {getLocalizedText(e.title, locale)}
+                  </p>
                   <p className="text-[11px] text-ink-400 mt-0.5">
-                    #{e.order} · {e.period}
+                    #{e.order} · {getLocalizedText(e.period, locale)}
                   </p>
                 </button>
               </li>

@@ -1,29 +1,37 @@
+import { useTranslation } from 'react-i18next';
 import type { LocationType, VisibleLayers, WorldDataset } from '@/types';
 import { Drawer } from '@/components/common/Drawer';
 import { Button } from '@/components/common/Button';
 import { useMapStore, useUiStore } from '@/store';
+import { useLocaleStore } from '@/store/useLocaleStore';
+import {
+  getLocalizedText,
+  getLocationTypeLabel,
+} from '@/utils/localization';
 
 interface FiltersDrawerProps {
   dataset: WorldDataset;
 }
 
-const LOCATION_TYPE_LABELS: { type: LocationType; label: string }[] = [
-  { type: 'village', label: 'Villaggi' },
-  { type: 'city', label: 'Città' },
-  { type: 'nation', label: 'Nazioni' },
-  { type: 'landmark', label: 'Landmark' },
-  { type: 'battlefield', label: 'Battaglie' },
-  { type: 'hideout', label: 'Nascondigli' },
-  { type: 'sacred_place', label: 'Sacri' },
-  { type: 'training_area', label: 'Allenamento' },
-  { type: 'region', label: 'Regioni' },
-  { type: 'ruins', label: 'Rovine' },
-  { type: 'bridge', label: 'Ponti' },
-  { type: 'forest', label: 'Foreste' },
+const LOCATION_TYPES: LocationType[] = [
+  'village',
+  'city',
+  'nation',
+  'landmark',
+  'battlefield',
+  'hideout',
+  'sacred_place',
+  'training_area',
+  'region',
+  'ruins',
+  'bridge',
+  'forest',
 ];
 
-/** Drawer filtri: apribile via floating button, chiudibile con ESC/X/click fuori. */
+/** Drawer filtri tradotto IT/EN. */
 export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
+  const { t } = useTranslation();
+  const locale = useLocaleStore((s) => s.locale);
   const open = useUiStore((s) => s.isFiltersDrawerOpen);
   const close = useUiStore((s) => s.closeFiltersDrawer);
   const filters = useMapStore((s) => s.filters);
@@ -37,11 +45,11 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
     setVisibleLayer(layer, !visibleLayers[layer] as VisibleLayers[K]);
   }
 
-  function toggleType(t: LocationType) {
+  function toggleType(tp: LocationType) {
     setFilters({
-      locationTypes: filters.locationTypes.includes(t)
-        ? filters.locationTypes.filter((x) => x !== t)
-        : [...filters.locationTypes, t],
+      locationTypes: filters.locationTypes.includes(tp)
+        ? filters.locationTypes.filter((x) => x !== tp)
+        : [...filters.locationTypes, tp],
     });
   }
   function toggleNation(id: string) {
@@ -82,7 +90,7 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
       open={open}
       side="left"
       onClose={close}
-      ariaLabel="Filtri mappa"
+      ariaLabel={t('filters.title')}
       className="w-[92vw] sm:max-w-sm"
     >
       <div className="h-full flex flex-col">
@@ -92,13 +100,13 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
               {dataset.world.title}
             </p>
             <h2 className="font-display text-base text-ink-100">
-              Filtri mappa
+              {t('filters.title')}
             </h2>
           </div>
           <button
             type="button"
             onClick={close}
-            aria-label="Chiudi filtri"
+            aria-label={t('filters.close')}
             className="h-8 w-8 grid place-items-center rounded-md text-ink-300 hover:text-white hover:bg-ink-800/70"
           >
             ×
@@ -106,21 +114,21 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
         </header>
 
         <div className="flex-1 overflow-auto p-4 space-y-5 text-sm">
-          <Section title="Tipo luogo">
+          <Section title={t('filters.locationType')}>
             <div className="flex flex-wrap gap-1.5">
-              {LOCATION_TYPE_LABELS.map(({ type, label }) => (
+              {LOCATION_TYPES.map((type) => (
                 <Pill
                   key={type}
                   active={filters.locationTypes.includes(type)}
                   onClick={() => toggleType(type)}
                 >
-                  {label}
+                  {getLocationTypeLabel(type, locale)}
                 </Pill>
               ))}
             </div>
           </Section>
 
-          <Section title="Nazione">
+          <Section title={t('filters.nation')}>
             <ul className="space-y-1.5">
               {dataset.nations.map((n) => (
                 <li key={n.id}>
@@ -136,14 +144,14 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
                       className="inline-block w-2.5 h-2.5 rounded-full"
                       style={{ background: n.color ?? '#5b6275' }}
                     />
-                    {n.name}
+                    {getLocalizedText(n.localizedName, locale) || n.name}
                   </label>
                 </li>
               ))}
             </ul>
           </Section>
 
-          <Section title="Villaggio">
+          <Section title={t('filters.village')}>
             <div className="flex flex-wrap gap-1.5">
               {villages.map((v) => (
                 <Pill
@@ -151,13 +159,13 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
                   active={filters.nationIds.includes(v.nationId ?? '')}
                   onClick={() => v.nationId && toggleNation(v.nationId)}
                 >
-                  {v.name}
+                  {getLocalizedText(v.localizedName, locale) || v.name}
                 </Pill>
               ))}
             </div>
           </Section>
 
-          <Section title="Arco narrativo">
+          <Section title={t('filters.arc')}>
             <div className="flex flex-wrap gap-1.5">
               {dataset.arcs
                 .slice()
@@ -169,13 +177,13 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
                     active={filters.arcIds.includes(a.id)}
                     onClick={() => toggleArc(a.id)}
                   >
-                    {a.name}
+                    {getLocalizedText(a.localizedName, locale) || a.name}
                   </Pill>
                 ))}
             </div>
           </Section>
 
-          <Section title="Personaggio">
+          <Section title={t('filters.character')}>
             <div className="flex flex-wrap gap-1.5 max-h-40 overflow-auto pr-1">
               {dataset.characters
                 .slice()
@@ -192,7 +200,7 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
             </div>
           </Section>
 
-          <Section title="Importanza">
+          <Section title={t('filters.importance')}>
             <div className="flex flex-wrap gap-1.5">
               {(['main', 'secondary', 'minor'] as const).map((i) => (
                 <Pill
@@ -201,83 +209,89 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
                   active={filters.importance.includes(i)}
                   onClick={() => toggleImportance(i)}
                 >
-                  <span className="capitalize">{i}</span>
+                  {t(
+                    i === 'main'
+                      ? 'filters.importanceMain'
+                      : i === 'secondary'
+                        ? 'filters.importanceSecondary'
+                        : 'filters.importanceMinor',
+                  )}
                 </Pill>
               ))}
             </div>
           </Section>
 
-          <Section title="Layers mappa">
+          <Section title={t('filters.layersMap')}>
             <div className="space-y-1.5 text-ink-200">
               <CheckRow
                 checked={visibleLayers.boundaries}
                 onChange={() => toggleLayer('boundaries')}
-                label="Mostra confini"
+                label={t('filters.showBoundaries')}
               />
               <CheckRow
                 checked={visibleLayers.nationLabels}
                 onChange={() => toggleLayer('nationLabels')}
-                label="Mostra nomi nazioni"
+                label={t('filters.showNationLabels')}
               />
               <CheckRow
                 checked={visibleLayers.mainVillages}
                 onChange={() => toggleLayer('mainVillages')}
-                label="Mostra villaggi principali"
+                label={t('filters.showMainVillages')}
               />
               <CheckRow
                 checked={visibleLayers.minorVillages}
                 onChange={() => toggleLayer('minorVillages')}
-                label="Mostra villaggi minori"
+                label={t('filters.showMinorVillages')}
               />
               <CheckRow
                 checked={visibleLayers.specialPlaces}
                 onChange={() => toggleLayer('specialPlaces')}
-                label="Mostra luoghi speciali"
+                label={t('filters.showSpecialPlaces')}
               />
             </div>
           </Section>
 
-          <Section title="Layers narrativi">
+          <Section title={t('filters.layersStory')}>
             <div className="space-y-1.5 text-ink-200">
               <CheckRow
                 checked={filters.showRoutes}
                 onChange={(v) => setFilters({ showRoutes: v })}
-                label="Mostra percorsi"
+                label={t('filters.showRoutes')}
               />
               <CheckRow
                 checked={visibleLayers.routesCanon}
                 onChange={() => toggleLayer('routesCanon')}
-                label="Route canon"
+                label={t('filters.routesCanon')}
               />
               <CheckRow
                 checked={visibleLayers.routesNonCanon}
                 onChange={() => toggleLayer('routesNonCanon')}
-                label="Route anime-only / filler"
+                label={t('filters.routesNonCanon')}
               />
               <CheckRow
                 checked={visibleLayers.eventsCanon}
                 onChange={() => toggleLayer('eventsCanon')}
-                label="Eventi canon"
+                label={t('filters.eventsCanon')}
               />
               <CheckRow
                 checked={visibleLayers.eventsNonCanon}
                 onChange={() => toggleLayer('eventsNonCanon')}
-                label="Eventi anime-only / filler"
+                label={t('filters.eventsNonCanon')}
               />
               <CheckRow
                 checked={visibleLayers.arcsCanon}
                 onChange={() => toggleLayer('arcsCanon')}
-                label="Archi canon"
+                label={t('filters.arcsCanon')}
               />
               <CheckRow
                 checked={visibleLayers.arcsNonCanon}
                 onChange={() => toggleLayer('arcsNonCanon')}
-                label="Archi anime-only"
+                label={t('filters.arcsNonCanon')}
               />
               <CheckRow
                 checked={filters.canonOnly}
                 onChange={(v) => setFilters({ canonOnly: v })}
-                label="Solo canon (filtro globale)"
+                label={t('filters.canonOnly')}
                 emberAccent
               />
             </div>
@@ -293,10 +307,10 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
             }}
             className="flex-1"
           >
-            Reset
+            {t('filters.reset')}
           </Button>
           <Button variant="primary" onClick={close} className="flex-1">
-            Applica
+            {t('filters.apply')}
           </Button>
         </footer>
       </div>

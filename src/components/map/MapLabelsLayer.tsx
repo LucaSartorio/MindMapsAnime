@@ -1,6 +1,8 @@
 import { useMemo } from 'react';
 import type { MapLevel, WorldDataset } from '@/types';
 import { useMapStore } from '@/store';
+import { useLocaleStore } from '@/store/useLocaleStore';
+import { getLocalizedText } from '@/utils/localization';
 
 interface MapLabelsLayerProps {
   dataset: WorldDataset;
@@ -16,6 +18,7 @@ interface MapLabelsLayerProps {
  */
 export function MapLabelsLayer({ dataset, level }: MapLabelsLayerProps) {
   const visibleLayers = useMapStore((s) => s.visibleLayers);
+  const locale = useLocaleStore((s) => s.locale);
   const boundaries = dataset.boundaries ?? [];
 
   const levelBoundaries = useMemo(
@@ -37,6 +40,7 @@ export function MapLabelsLayer({ dataset, level }: MapLabelsLayerProps) {
         const isMain = b.type === 'great_nation';
         const fontSize = isMain ? 18 : 12;
         const color = b.color ?? '#b6bbcb';
+        const label = getLocalizedText(b.localizedName, locale) || b.name;
         return (
           <g key={`label-${b.id}`}>
             {/* Pillola di sfondo per leggibilità */}
@@ -53,7 +57,7 @@ export function MapLabelsLayer({ dataset, level }: MapLabelsLayerProps) {
               strokeLinejoin="round"
               opacity={0.92}
             >
-              {b.name}
+              {label}
             </text>
             <text
               x={b.labelPosition.x}
@@ -65,7 +69,7 @@ export function MapLabelsLayer({ dataset, level }: MapLabelsLayerProps) {
               fill={color}
               opacity={isMain ? 0.95 : 0.8}
             >
-              {b.name}
+              {label}
             </text>
           </g>
         );

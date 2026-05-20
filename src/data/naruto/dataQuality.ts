@@ -153,6 +153,99 @@ export const narutoDataQuality: DataQualityEntry[] = [
   },
 ];
 
+/**
+ * Translation TODOs noti.
+ *
+ * Lista esplicita di campi che non sono ancora `LocalizedText` (cioè restano
+ * stringa singola in italiano) o che hanno traduzioni che vanno riviste.
+ *
+ * Strategia editoriale:
+ *  - I campi più visibili (worlds, nations, boundaries principali, location
+ *    chiave, archi principali) sono già `LocalizedText`.
+ *  - I campi narrativi di nicchia (descrizioni eventi/personaggi minori,
+ *    step di route, ecc.) sono in italiano singolo: il fallback automatico
+ *    di `getLocalizedText` li mostra in IT anche quando la UI è in EN.
+ *  - Vanno tradotti progressivamente. `npm run validate:i18n -- --strict`
+ *    elenca tutti i campi mono-lingua come warning.
+ */
+export interface TranslationTodo {
+  entityType:
+    | 'world'
+    | 'nation'
+    | 'boundary'
+    | 'location'
+    | 'character'
+    | 'faction'
+    | 'team'
+    | 'arc'
+    | 'event'
+    | 'route'
+    | 'route_step';
+  entityId: string;
+  field: string;
+  locale: 'it' | 'en' | 'both';
+  reason: string;
+}
+
+export const narutoTranslationTodos: TranslationTodo[] = [
+  {
+    entityType: 'event',
+    entityId: '*',
+    field: 'title/description/period',
+    locale: 'en',
+    reason:
+      'La maggior parte degli 111 eventi è ancora in italiano singolo. Coprire EN progressivamente: il fallback IT preserva la UI funzionante.',
+  },
+  {
+    entityType: 'character',
+    entityId: '*',
+    field: 'shortDescription/longDescription',
+    locale: 'en',
+    reason:
+      'Le 90 schede personaggi sono in italiano singolo. Tradurre in EN i 4 main + Sannin + Kage prima della pubblicazione bilingue.',
+  },
+  {
+    entityType: 'route_step',
+    entityId: '*',
+    field: 'title/description',
+    locale: 'en',
+    reason:
+      'I 41 route hanno step ancora in italiano. Da tradurre.',
+  },
+  {
+    entityType: 'arc',
+    entityId: '*',
+    field: 'description',
+    locale: 'en',
+    reason:
+      "Le descrizioni dei 23 archi sono ancora in italiano singolo.",
+  },
+  {
+    entityType: 'boundary',
+    entityId: 'boundary-sound|boundary-grass|boundary-waterfalls|boundary-hotwater|boundary-iron|...',
+    field: 'descriptionShort/descriptionLong',
+    locale: 'en',
+    reason:
+      'Le 5 grandi nazioni + Land of Rain + Land of Waves hanno traduzione completa. Le altre boundary minori (sound, grass, waterfalls, hotwater, iron, rivers, etc.) sono in IT singolo.',
+  },
+  {
+    entityType: 'faction',
+    entityId: '*',
+    field: 'description',
+    locale: 'en',
+    reason:
+      'Le descrizioni di clan/fazioni (~31) sono in italiano singolo.',
+  },
+  {
+    entityType: 'location',
+    entityId: '*',
+    field: 'shortDescription/longDescription/localizedName',
+    locale: 'en',
+    reason:
+      'Solo Konohagakure e Valley of the End hanno traduzioni complete. Le altre 38 location sono in IT singolo.',
+  },
+];
+
 /** Totale problemi noti, utile per badge in UI. */
 export const narutoDataQualitySummary = {
   total: narutoDataQuality.length,
@@ -161,4 +254,5 @@ export const narutoDataQualitySummary = {
     (d) => d.kind === 'needs_verification',
   ).length,
   uncertain: narutoDataQuality.filter((d) => d.kind === 'uncertain').length,
+  translationTodos: narutoTranslationTodos.length,
 };

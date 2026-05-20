@@ -1,10 +1,13 @@
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
 import { Modal } from '@/components/common/Modal';
 import { Badge } from '@/components/common/Badge';
 import { Button } from '@/components/common/Button';
 import { CanonPill, ReferencePill } from '@/components/common/StatusPill';
 import { useMapStore, useUiStore } from '@/store';
+import { useLocaleStore } from '@/store/useLocaleStore';
+import { getLocalizedText } from '@/utils/localization';
 import { findLocation, findNation } from '@/lib/entities';
 
 interface NationDetailsModalProps {
@@ -16,6 +19,8 @@ export function NationDetailsModal({
   dataset,
   nationId,
 }: NationDetailsModalProps) {
+  const locale = useLocaleStore((s) => s.locale);
+  const { t } = useTranslation();
   const nation = findNation(dataset, nationId);
   const close = useUiStore((s) => s.closeModal);
   const openLocation = useUiStore((s) => s.openLocationModal);
@@ -27,8 +32,8 @@ export function NationDetailsModal({
 
   if (!nation) {
     return (
-      <Modal open onClose={close} title="Nazione non trovata" size="sm">
-        <p>Riferimento non valido.</p>
+      <Modal open onClose={close} title={t("modals.notFound")} size="sm">
+        <p>{t("modals.invalidRef")}</p>
       </Modal>
     );
   }
@@ -58,8 +63,8 @@ export function NationDetailsModal({
     <Modal
       open
       onClose={close}
-      eyebrow={`Nazione · ${nation.type?.replace('_', ' ') ?? 'unknown'}`}
-      title={nation.name}
+      eyebrow={`${t('modals.nation')} · ${nation.type?.replace('_', ' ') ?? ''}`}
+      title={getLocalizedText(nation.localizedName, locale) || nation.name}
       badges={
         <>
           {nation.canonStatus && <CanonPill canon={nation.canonStatus} />}
@@ -78,7 +83,7 @@ export function NationDetailsModal({
               variant="ghost"
               onClick={() => openBoundary(boundary.id)}
             >
-              Vedi confine sulla mappa
+              {t("modals.seeBoundary")}
             </Button>
           )}
           {hiddenVillages[0] && (
@@ -90,11 +95,11 @@ export function NationDetailsModal({
                 close();
               }}
             >
-              Apri sulla mappa
+              {t("modals.openOnMap")}
             </Button>
           )}
           <Button variant="primary" onClick={close}>
-            Chiudi
+            {t("modals.close")}
           </Button>
         </>
       }
@@ -102,13 +107,17 @@ export function NationDetailsModal({
       {nation.nameLocal && (
         <p className="text-xs text-ink-300 italic -mt-2">{nation.nameLocal}</p>
       )}
-      <p className="leading-relaxed">{nation.description}</p>
+      <p className="leading-relaxed">
+        {getLocalizedText(nation.description, locale)}
+      </p>
       {nation.descriptionLong && (
-        <p className="text-ink-300 leading-relaxed">{nation.descriptionLong}</p>
+        <p className="text-ink-300 leading-relaxed">
+          {getLocalizedText(nation.descriptionLong, locale)}
+        </p>
       )}
 
       {hiddenVillages.length > 0 && (
-        <Section title="Villaggi nascosti">
+        <Section title={t("modals.hiddenVillages")}>
           <div className="flex flex-wrap gap-1.5">
             {hiddenVillages.map((l) => (
               <button
@@ -125,7 +134,7 @@ export function NationDetailsModal({
       )}
 
       {otherLocations.length > 0 && (
-        <Section title="Luoghi importanti">
+        <Section title={t("modals.specialPlaces")}>
           <div className="flex flex-wrap gap-1.5">
             {otherLocations.map((l) => (
               <button
@@ -142,7 +151,7 @@ export function NationDetailsModal({
       )}
 
       {arcs.length > 0 && (
-        <Section title="Archi narrativi">
+        <Section title={t("modals.relatedArcs")}>
           <ul className="space-y-1.5">
             {arcs.map((a) => (
               <li key={a.id}>
@@ -161,7 +170,7 @@ export function NationDetailsModal({
       )}
 
       {events.length > 0 && (
-        <Section title={`Eventi nella nazione (${events.length})`}>
+        <Section title={t('modals.eventsInNation', { count: events.length })}>
           <ul className="grid sm:grid-cols-2 gap-2 max-h-48 overflow-auto pr-1">
             {events.slice(0, 12).map((e) => (
               <li key={e.id}>
@@ -170,9 +179,11 @@ export function NationDetailsModal({
                   onClick={() => openEvent(e.id)}
                   className="text-left w-full panel-soft p-2 hover:border-chakra-500/60"
                 >
-                  <p className="text-ink-100 text-xs">{e.title}</p>
+                  <p className="text-ink-100 text-xs">
+                    {getLocalizedText(e.title, locale)}
+                  </p>
                   <p className="text-[10px] text-ink-400 mt-0.5">
-                    #{e.order} · {e.period}
+                    #{e.order} · {getLocalizedText(e.period, locale)}
                   </p>
                 </button>
               </li>

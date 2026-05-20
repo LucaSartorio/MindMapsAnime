@@ -1,10 +1,13 @@
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
 import { Modal } from '@/components/common/Modal';
 import { Badge } from '@/components/common/Badge';
 import { Button } from '@/components/common/Button';
 import { ReferencePill } from '@/components/common/StatusPill';
 import { useMapStore, useUiStore } from '@/store';
+import { useLocaleStore } from '@/store/useLocaleStore';
+import { getLocalizedText } from '@/utils/localization';
 import { findArc, findCharacter, findLocation, findRoute } from '@/lib/entities';
 
 interface RouteDetailsModalProps {
@@ -16,6 +19,8 @@ export function RouteDetailsModal({
   dataset,
   routeId,
 }: RouteDetailsModalProps) {
+  const locale = useLocaleStore((s) => s.locale);
+  const { t } = useTranslation();
   const route = findRoute(dataset, routeId);
   const close = useUiStore((s) => s.closeModal);
   const openLocation = useUiStore((s) => s.openLocationModal);
@@ -27,8 +32,8 @@ export function RouteDetailsModal({
 
   if (!route) {
     return (
-      <Modal open onClose={close} title="Percorso non trovato" size="sm">
-        <p>Riferimento non valido.</p>
+      <Modal open onClose={close} title={t("modals.notFound")} size="sm">
+        <p>{t("modals.invalidRef")}</p>
       </Modal>
     );
   }
@@ -43,12 +48,12 @@ export function RouteDetailsModal({
     <Modal
       open
       onClose={close}
-      eyebrow="Percorso narrativo"
-      title={route.name}
+      eyebrow={t("modals.route")}
+      title={getLocalizedText(route.localizedName, locale) || route.name}
       badges={
         <>
           <Badge>{steps.length} step</Badge>
-          {arc && <Badge variant="accent">{arc.name}</Badge>}
+          {arc && <Badge variant="accent">{getLocalizedText(arc.localizedName, locale) || arc.name}</Badge>}
           {route.referenceStatus && (
             <ReferencePill status={route.referenceStatus} />
           )}
@@ -64,15 +69,17 @@ export function RouteDetailsModal({
               close();
             }}
           >
-            Mostra sulla mappa
+            {t("modals.showOnMap")}
           </Button>
           <Button variant="primary" onClick={close}>
-            Chiudi
+            {t("modals.close")}
           </Button>
         </>
       }
     >
-      <p className="leading-relaxed">{route.description}</p>
+      <p className="leading-relaxed">
+        {getLocalizedText(route.description, locale)}
+      </p>
 
       {protagonists.length > 0 && (
         <section>
@@ -101,9 +108,9 @@ export function RouteDetailsModal({
           className="panel-soft p-3 w-full text-left hover:border-chakra-500/60"
         >
           <p className="text-[10px] uppercase tracking-widest text-chakra-300 font-mono">
-            Arco principale
+            {t("modals.mainArc")}
           </p>
-          <p className="text-ink-100 mt-0.5">{arc.name}</p>
+          <p className="text-ink-100 mt-0.5">{getLocalizedText(arc.localizedName, locale) || arc.name}</p>
         </button>
       )}
 
@@ -130,15 +137,19 @@ export function RouteDetailsModal({
                       onClick={() => openLocation(loc.id)}
                       className="text-left text-ink-100 hover:text-chakra-200 truncate block"
                     >
-                      {s.label ?? loc.name}
+                      {getLocalizedText(s.title ?? s.label, locale) ||
+                        getLocalizedText(loc.localizedName, locale) ||
+                        (getLocalizedText(loc.localizedName, locale) || loc.name)}
                     </button>
                   ) : (
                     <span className="text-ink-100 truncate">
-                      {s.label ?? 'Luogo sconosciuto'}
+                      {getLocalizedText(s.title ?? s.label, locale) || '—'}
                     </span>
                   )}
                   {s.notes && (
-                    <p className="text-[11px] text-ink-400">{s.notes}</p>
+                    <p className="text-[11px] text-ink-400">
+                      {getLocalizedText(s.notes, locale)}
+                    </p>
                   )}
                 </div>
                 {ev && (

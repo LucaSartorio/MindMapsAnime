@@ -1,9 +1,12 @@
 import type { WorldDataset } from '@/types';
 import { Modal } from '@/components/common/Modal';
+import { useTranslation } from 'react-i18next';
 import { Badge } from '@/components/common/Badge';
 import { Button } from '@/components/common/Button';
 import { ReferencePill } from '@/components/common/StatusPill';
 import { useUiStore } from '@/store';
+import { useLocaleStore } from '@/store/useLocaleStore';
+import { getLocalizedText } from '@/utils/localization';
 import { findCharacter, findFaction, findLocation } from '@/lib/entities';
 
 interface FactionDetailsModalProps {
@@ -15,6 +18,8 @@ export function FactionDetailsModal({
   dataset,
   factionId,
 }: FactionDetailsModalProps) {
+  const locale = useLocaleStore((s) => s.locale);
+  const { t } = useTranslation();
   const faction = findFaction(dataset, factionId);
   const close = useUiStore((s) => s.closeModal);
   const openCharacter = useUiStore((s) => s.openCharacterModal);
@@ -23,8 +28,8 @@ export function FactionDetailsModal({
 
   if (!faction) {
     return (
-      <Modal open onClose={close} title="Clan/Fazione non trovata" size="sm">
-        <p>Riferimento non valido.</p>
+      <Modal open onClose={close} title={t("modals.notFound")} size="sm">
+        <p>{t("modals.invalidRef")}</p>
       </Modal>
     );
   }
@@ -45,7 +50,7 @@ export function FactionDetailsModal({
       open
       onClose={close}
       eyebrow={`${faction.type.replace('_', ' ')}`}
-      title={faction.name}
+      title={getLocalizedText(faction.localizedName, locale) || faction.name}
       badges={
         <>
           <Badge
@@ -60,7 +65,7 @@ export function FactionDetailsModal({
           >
             {faction.type}
           </Badge>
-          {village && <Badge>{village.name}</Badge>}
+          {village && <Badge>{getLocalizedText(village.localizedName, locale) || village.name}</Badge>}
           {faction.kekkeiGenkai && (
             <Badge variant="danger">{faction.kekkeiGenkai}</Badge>
           )}
@@ -78,7 +83,9 @@ export function FactionDetailsModal({
       {faction.nameLocal && (
         <p className="text-xs text-ink-300 italic -mt-2">{faction.nameLocal}</p>
       )}
-      <p className="leading-relaxed">{faction.description}</p>
+      <p className="leading-relaxed">
+        {getLocalizedText(faction.description, locale)}
+      </p>
 
       {(faction.signatureAbilities ?? []).length > 0 && (
         <section>
