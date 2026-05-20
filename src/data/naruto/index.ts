@@ -10,6 +10,7 @@ import { narutoRoutes } from './routes';
 import { narutoAssets } from './assets';
 import { narutoNations } from './nations';
 import { narutoMapLevels } from './mapLevels';
+import { narutoBoundaries } from './boundaries';
 
 const naruto = animeWorlds.find((w) => w.slug === 'naruto')!;
 
@@ -18,6 +19,7 @@ export const narutoDataset: WorldDataset = {
   world: naruto,
   mapLevels: narutoMapLevels,
   nations: narutoNations,
+  boundaries: narutoBoundaries,
   locations: narutoLocations,
   characters: narutoCharacters,
   // Per la pagina "Clans & Factions" uniamo clan + organizzazioni in un solo array.
@@ -27,3 +29,5 @@ export const narutoDataset: WorldDataset = {
   routes: narutoRoutes,
   assets: narutoAssets,
 };
+
+export { NARUTO_MAP_VIEWBOX, NARUTO_WORLD_MAP_SRC } from './mapConstants';

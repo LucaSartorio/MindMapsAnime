@@ -13,37 +13,32 @@ import {
   type NodeTypes,
 } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
-import type {
-  Location,
-  Route,
-  WorldDataset,
-} from '@/types';
+import type { Location, Route, WorldDataset } from '@/types';
 import { useMapStore, useUiStore } from '@/store';
 import { filterLocations } from '@/lib/filters';
-import { MapNode, type MapNodeData } from './MapNode';
+import {
+  MapNode,
+  MapLayerNode,
+  type MapNodeData,
+  type MapLayerNodeData,
+} from './MapNode';
 import { MapEdge, type MapEdgeData } from './MapEdge';
 import { WorldMapBackground } from './WorldMapBackground';
+import { MapBoundaryOverlay } from './MapBoundaryOverlay';
+import { MapLabelsLayer } from './MapLabelsLayer';
 
-const NODE_TYPES: NodeTypes = { 'map-node': MapNode };
+const NODE_TYPES: NodeTypes = {
+  'map-node': MapNode,
+  'map-layer': MapLayerNode,
+};
 const EDGE_TYPES: EdgeTypes = { 'map-edge': MapEdge };
 
 interface InteractiveWorldMapProps {
   dataset: WorldDataset;
 }
 
-/**
- * Canvas React Flow puro: nodi + edges + sfondo.
- * Nessun overlay UI qui dentro — i floating panel sono renderizzati dal
- * WorldLayout sopra il canvas con `pointer-events-none/auto`.
- *
- * Comportamento:
- *  - fitView all'avvio
- *  - fitView al cambio mapLevel
- *  - fitView al reset (viewportResetKey)
- *  - fitView ai nodi del percorso selezionato
- *  - click su nodo apre LocationDetailsModal (via store UI)
- *  - doppio click su nodo con sottomappa → cambia mapLevel
- */
+const FIT_VIEW_OPTIONS = { padding: 0.18, duration: 600 } as const;
+
 export function InteractiveWorldMap(props: InteractiveWorldMapProps) {
   return (
     <ReactFlowProvider>
@@ -52,13 +47,12 @@ export function InteractiveWorldMap(props: InteractiveWorldMapProps) {
   );
 }
 
-const FIT_VIEW_OPTIONS = { padding: 0.22, duration: 600 } as const;
-
 function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
   const activeMapLevelId = useMapStore((s) => s.activeMapLevelId);
   const selectedLocationId = useMapStore((s) => s.selectedLocationId);
   const selectedRouteId = useMapStore((s) => s.selectedRouteId);
   const filters = useMapStore((s) => s.filters);
+  const visibleLayers = useMapStore((s) => s.visibleLayers);
   const viewportResetKey = useMapStore((s) => s.viewportResetKey);
   const setActiveMapLevel = useMapStore((s) => s.setActiveMapLevel);
   const setSelectedLocation = useMapStore((s) => s.setSelectedLocation);
@@ -72,15 +66,22 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
     [dataset.mapLevels, activeMapLevelId],
   );
 
-  // Locations del livello corrente filtrate
+  // Locations del livello, filtrate + filtro layer (main/minor villages, special places)
   const visibleLocations = useMemo<Location[]>(() => {
     const base = dataset.locations.filter(
       (l) => l.mapLevelId === activeLevel.id,
     );
-    return filterLocations(base, filters, dataset);
-  }, [dataset, activeLevel.id, filters]);
+    const filtered = filterLocations(base, filters, dataset);
+    return filtered.filter((l) => {
+      if (l.type === 'village') {
+        return l.importance === 'main'
+          ? visibleLayers.mainVillages
+          : visibleLayers.minorVillages;
+      }
+      return visibleLayers.specialPlaces;
+    });
+  }, [dataset, activeLevel.id, filters, visibleLayers]);
 
-  // Highlight derivato dalla route selezionata
   const route: Route | undefined = useMemo(
     () => dataset.routes.find((r) => r.id === selectedRouteId),
     [dataset.routes, selectedRouteId],
@@ -90,8 +91,71 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
     [route],
   );
 
-  const nodes = useMemo<Node<MapNodeData>[]>(() => {
-    return visibleLocations.map((loc) => ({
+  // Nodi: layer di sfondo (z=0), layer confini (z=1), layer labels (z=2),
+  // pin location (default React Flow).
+  const nodes = useMemo<Node<MapNodeData | MapLayerNodeData>[]>(() => {
+    const layerNodes: Node<MapLayerNodeData>[] = [
+      {
+        id: '__layer-background',
+        type: 'map-layer',
+        position: { x: 0, y: 0 },
+        data: {
+          width: activeLevel.width,
+          height: activeLevel.height,
+          z: 0,
+          content: (
+            <div
+              className="relative"
+              style={{ width: activeLevel.width, height: activeLevel.height }}
+            >
+              <WorldMapBackground level={activeLevel} dataset={dataset} />
+            </div>
+          ),
+        },
+        draggable: false,
+        selectable: false,
+        deletable: false,
+        focusable: false,
+        zIndex: -10,
+        style: { pointerEvents: 'none' as const },
+      },
+      {
+        id: '__layer-boundaries',
+        type: 'map-layer',
+        position: { x: 0, y: 0 },
+        data: {
+          width: activeLevel.width,
+          height: activeLevel.height,
+          z: 1,
+          content: <MapBoundaryOverlay dataset={dataset} level={activeLevel} />,
+        },
+        draggable: false,
+        selectable: false,
+        deletable: false,
+        focusable: false,
+        zIndex: -5,
+        style: { pointerEvents: 'none' as const },
+      },
+      {
+        id: '__layer-labels',
+        type: 'map-layer',
+        position: { x: 0, y: 0 },
+        data: {
+          width: activeLevel.width,
+          height: activeLevel.height,
+          z: 2,
+          content: <MapLabelsLayer dataset={dataset} level={activeLevel} />,
+        },
+        draggable: false,
+        selectable: false,
+        deletable: false,
+        focusable: false,
+        zIndex: -1,
+        style: { pointerEvents: 'none' as const },
+      },
+    ];
+
+    const pinNodes: Node<MapNodeData>[] = visibleLocations.map((loc) => ({
       id: loc.id,
       type: 'map-node',
       position: { x: loc.x, y: loc.y },
@@ -106,10 +170,25 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
       draggable: false,
       selectable: true,
     }));
-  }, [visibleLocations, selectedLocationId, highlightedLocationIds]);
+
+    return [...layerNodes, ...pinNodes];
+  }, [
+    activeLevel,
+    dataset,
+    visibleLocations,
+    selectedLocationId,
+    highlightedLocationIds,
+  ]);
 
   const edges = useMemo<Edge<MapEdgeData>[]>(() => {
     if (!route || !filters.showRoutes) return [];
+    // Canon check: usa `canonStatus` se presente, altrimenti `referenceStatus`
+    // come proxy ("verified" → canon-like).
+    const isCanonRoute = route.canonStatus
+      ? route.canonStatus === 'canon'
+      : route.referenceStatus === 'verified';
+    if (isCanonRoute && !visibleLayers.routesCanon) return [];
+    if (!isCanonRoute && !visibleLayers.routesNonCanon) return [];
     const steps = [...route.steps].sort((a, b) => a.order - b.order);
     const out: Edge<MapEdgeData>[] = [];
     for (let i = 0; i < steps.length - 1; i++) {
@@ -136,9 +215,9 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
       });
     }
     return out;
-  }, [route, dataset.locations, activeLevel.id, filters.showRoutes]);
+  }, [route, dataset.locations, activeLevel.id, filters.showRoutes, visibleLayers]);
 
-  // fitView al cambio mapLevel o filtri principali
+  // fitView al cambio level
   useEffect(() => {
     const id = setTimeout(() => fitView(FIT_VIEW_OPTIONS), 80);
     return () => clearTimeout(id);
@@ -149,7 +228,7 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
     fitView(FIT_VIEW_OPTIONS);
   }, [viewportResetKey, fitView]);
 
-  // fitBounds sui nodi del percorso selezionato (se almeno 2)
+  // fitBounds sui nodi del percorso selezionato
   useEffect(() => {
     if (!route) return;
     const stepLocs = route.steps
@@ -160,7 +239,7 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
     const xs = stepLocs.map((l) => l.x);
     const ys = stepLocs.map((l) => l.y);
     const minX = Math.min(...xs) - 80;
-    const maxX = Math.max(...xs) + 220; // padding extra a destra per le label
+    const maxX = Math.max(...xs) + 220;
     const minY = Math.min(...ys) - 80;
     const maxY = Math.max(...ys) + 80;
     const id = setTimeout(
@@ -174,7 +253,7 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
     return () => clearTimeout(id);
   }, [route, dataset.locations, activeLevel.id, fitBounds]);
 
-  // Centra sul luogo selezionato (smooth)
+  // Centra sul luogo selezionato
   useEffect(() => {
     if (!selectedLocationId) return;
     const loc = visibleLocations.find((l) => l.id === selectedLocationId);
@@ -189,10 +268,13 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
   }, [selectedLocationId, visibleLocations, setCenter, getZoom]);
 
   function handleNodeClick(_: unknown, node: Node) {
+    // ignora layer
+    if (node.id.startsWith('__layer-')) return;
     setSelectedLocation(node.id);
     openLocationModal(node.id);
   }
   function handleNodeDoubleClick(_: unknown, node: Node) {
+    if (node.id.startsWith('__layer-')) return;
     const loc = dataset.locations.find((l) => l.id === node.id);
     if (loc?.subMapLevelId) {
       setActiveMapLevel(loc.subMapLevelId);
@@ -201,11 +283,6 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
 
   return (
     <div className="relative h-full w-full">
-      {/* Sfondo SVG / immagine: scalato sul viewport React Flow */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <WorldMapBackground level={activeLevel} dataset={dataset} />
-      </div>
-
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -215,8 +292,8 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
         onNodeDoubleClick={handleNodeDoubleClick}
         fitView
         fitViewOptions={FIT_VIEW_OPTIONS}
-        minZoom={0.25}
-        maxZoom={2.5}
+        minZoom={0.2}
+        maxZoom={3}
         defaultEdgeOptions={{ type: 'map-edge' }}
         proOptions={{ hideAttribution: true }}
         nodesDraggable={false}
@@ -228,22 +305,21 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
           variant={BackgroundVariant.Dots}
           gap={32}
           size={1}
-          color="rgba(255,255,255,0.05)"
+          color="rgba(255,255,255,0.04)"
         />
-        {/* Zoom controls: a sinistra, sotto il cluster top-left della WorldLayout */}
         <Controls
           showInteractive={false}
           position="top-left"
           className="!shadow-none"
           style={{ marginTop: 56 }}
         />
-        {/* MiniMap: in alto a destra, sotto il cluster MapControls */}
         <MiniMap
           pannable
           zoomable
           position="top-right"
           maskColor="rgba(7,7,9,0.85)"
           nodeColor={(n) => {
+            if (n.id.startsWith('__layer-')) return 'transparent';
             const d = n.data as MapNodeData;
             return d.selected
               ? '#ff8311'

@@ -6,14 +6,16 @@ import { TimelineEventDetailsModal } from './TimelineEventDetailsModal';
 import { StoryArcDetailsModal } from './StoryArcDetailsModal';
 import { FactionDetailsModal } from './FactionDetailsModal';
 import { RouteDetailsModal } from './RouteDetailsModal';
+import { BoundaryDetailsModal } from './BoundaryDetailsModal';
+import { NationDetailsModal } from './NationDetailsModal';
 
 interface ModalRootProps {
   dataset: WorldDataset;
 }
 
 /**
- * Dispatcher unico delle modali per il mondo attivo.
- * Una sola modale per volta: il tipo è derivato da useUiStore.activeModal.
+ * Dispatcher unico delle modali. Una sola modale per volta:
+ * il tipo è derivato da useUiStore.activeModal.
  */
 export function ModalRoot({ dataset }: ModalRootProps) {
   const activeModal = useUiStore((s) => s.activeModal);
@@ -22,24 +24,15 @@ export function ModalRoot({ dataset }: ModalRootProps) {
   switch (activeModal.kind) {
     case 'location':
       return (
-        <LocationDetailsModal
-          dataset={dataset}
-          locationId={activeModal.id}
-        />
+        <LocationDetailsModal dataset={dataset} locationId={activeModal.id} />
       );
     case 'character':
       return (
-        <CharacterDetailsModal
-          dataset={dataset}
-          characterId={activeModal.id}
-        />
+        <CharacterDetailsModal dataset={dataset} characterId={activeModal.id} />
       );
     case 'event':
       return (
-        <TimelineEventDetailsModal
-          dataset={dataset}
-          eventId={activeModal.id}
-        />
+        <TimelineEventDetailsModal dataset={dataset} eventId={activeModal.id} />
       );
     case 'arc':
       return <StoryArcDetailsModal dataset={dataset} arcId={activeModal.id} />;
@@ -49,6 +42,12 @@ export function ModalRoot({ dataset }: ModalRootProps) {
       );
     case 'route':
       return <RouteDetailsModal dataset={dataset} routeId={activeModal.id} />;
+    case 'boundary':
+      return (
+        <BoundaryDetailsModal dataset={dataset} boundaryId={activeModal.id} />
+      );
+    case 'nation':
+      return <NationDetailsModal dataset={dataset} nationId={activeModal.id} />;
     default:
       return null;
   }
