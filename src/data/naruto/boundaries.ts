@@ -27,8 +27,8 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'verified',
     svgPathD:
-      'M 540 348 L 940 353 L 945 525 L 825 678 L 570 676 L 515 478 Z',
-    labelPosition: { x: 760, y: 560 },
+      'M 514 416 L 553 437 L 621 416 L 661 436 L 703 425 L 738 439 L 777 434 L 792 477 L 838 477 L 873 518 L 888 538 L 888 576 L 912 596 L 876 721 L 895 739 L 923 736 L 912 763 L 924 783 L 923 817 L 900 837 L 888 881 L 782 879 L 802 830 L 850 809 L 865 782 L 827 748 L 752 766 L 662 754 L 608 826 L 594 829 L 583 817 L 594 795 L 594 721 L 533 638 L 486 617 L 473 581 L 485 541 L 468 515 L 461 456 L 491 421 L 512 417 Z',
+    labelPosition: { x: 808, y: 600 },
     nationId: 'nation-fire',
     color: '#f06600',
     localizedName: { it: 'Paese del Fuoco', en: 'Land of Fire' },
@@ -53,8 +53,8 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'verified',
     svgPathD:
-      'M 0 395 L 395 395 L 403 619 L 270 869 L 5 866 L 0 582 Z',
-    labelPosition: { x: 175, y: 650 },
+      'M 147 462 L 180 474 L 224 524 L 289 553 L 327 555 L 415 597 L 430 646 L 423 663 L 458 696 L 462 753 L 444 798 L 473 829 L 468 881 L 0 881 L 0 536 L 59 492 L 147 463 Z',
+    labelPosition: { x: 160, y: 660 },
     nationId: 'nation-wind',
     color: '#d4be78',
     localizedName: { it: 'Paese del Vento', en: 'Land of Wind' },
@@ -79,8 +79,8 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'verified',
     svgPathD:
-      'M 1163 539 L 1295 543 L 1303 632 L 1210 658 L 1163 595 Z',
-    labelPosition: { x: 1230, y: 560 },
+      'M 1232 587 L 1298 588 L 1333 631 L 1341 658 L 1308 719 L 1264 728 L 1217 681 L 1214 634 L 1230 588 Z',
+    labelPosition: { x: 1275, y: 655 },
     nationId: 'nation-water',
     color: '#4cb6ff',
     localizedName: { it: "Paese dell'Acqua", en: 'Land of Water' },
@@ -105,8 +105,8 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'verified',
     svgPathD:
-      'M 0 31 L 415 18 L 420 156 L 380 275 L 175 280 L 0 202 Z',
-    labelPosition: { x: 145, y: 181 },
+      'M 0 2 L 412 2 L 427 27 L 420 53 L 438 79 L 435 128 L 415 151 L 424 201 L 455 232 L 474 232 L 485 210 L 533 219 L 508 244 L 492 328 L 476 343 L 477 390 L 435 436 L 367 468 L 244 475 L 180 405 L 0 402 L 0 3 Z',
+    labelPosition: { x: 157, y: 175 },
     nationId: 'nation-earth',
     color: '#963c03',
     localizedName: { it: 'Paese della Terra', en: 'Land of Earth' },
@@ -131,8 +131,8 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'verified',
     svgPathD:
-      'M 880 15 L 1405 36 L 1430 250 L 1285 380 L 1000 353 L 883 182 Z',
-    labelPosition: { x: 1180, y: 160 },
+      'M 1068 2 L 1315 3 L 1253 105 L 1252 152 L 1277 213 L 1236 326 L 1197 341 L 1180 311 L 1150 340 L 1085 343 L 1059 373 L 1024 387 L 994 366 L 973 375 L 915 369 L 897 379 L 891 355 L 876 347 L 868 314 L 921 276 L 936 251 L 985 226 L 986 171 L 1024 134 L 1015 105 L 1026 99 L 1026 76 L 1053 50 L 1067 3 Z',
+    labelPosition: { x: 1190, y: 165 },
     nationId: 'nation-lightning',
     color: '#1f9aff',
     localizedName: { it: 'Paese del Fulmine', en: 'Land of Lightning' },
@@ -159,8 +159,8 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'verified',
     svgPathD:
-      'M 475 250 L 513 192 L 607 192 L 645 250 L 607 308 L 513 308 Z',
-    labelPosition: { x: 560, y: 250 },
+      'M 706 151 L 736 154 L 755 180 L 762 206 L 752 226 L 762 247 L 744 267 L 705 276 L 700 302 L 685 312 L 688 341 L 636 413 L 588 422 L 576 352 L 592 309 L 585 297 L 594 276 L 614 271 L 644 238 L 638 210 L 700 171 L 705 152 Z',
+    labelPosition: { x: 576, y: 254 },
     nationId: 'nation-rain',
     color: '#6aa8d8',
     localizedName: { it: 'Paese della Pioggia', en: 'Land of Rain' },
@@ -184,8 +184,8 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',
     svgPathD:
-      'M 730 244 L 865 251 L 860 372 L 743 376 L 720 301 Z',
-    labelPosition: { x: 793, y: 312 },
+      'M 785 309 L 826 320 L 862 314 L 891 382 L 855 372 L 835 401 L 814 393 L 805 369 L 764 338 L 783 311 Z',
+    labelPosition: { x: 834, y: 322 },
     nationId: 'nation-frost',
     color: '#dfe7ef',
     descriptionShort: {
@@ -205,8 +205,8 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'verified',
     svgPathD:
-      'M 613 369 L 695 369 L 695 430 L 615 430 Z',
-    labelPosition: { x: 652, y: 400 },
+      'M 694 338 L 730 341 L 720 393 L 726 428 L 705 419 L 662 431 L 641 416 L 692 340 Z',
+    labelPosition: { x: 686, y: 412 },
     nationId: 'nation-sound',
     color: '#a0a0b0',
     descriptionShort:
@@ -226,8 +226,8 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'verified',
     svgPathD:
-      'M 365 380 L 403 322 L 497 322 L 535 380 L 497 438 L 403 438 Z',
-    labelPosition: { x: 450, y: 380 },
+      'M 509 268 L 589 276 L 571 344 L 583 424 L 552 431 L 518 411 L 488 417 L 479 399 L 482 340 L 497 329 L 509 270 Z',
+    labelPosition: { x: 477, y: 394 },
     nationId: 'nation-grass',
     color: '#7fb05a',
     descriptionShort:
@@ -247,8 +247,8 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'verified',
     svgPathD:
-      'M 935 374 L 973 316 L 1067 316 L 1105 374 L 1067 432 L 973 432 Z',
-    labelPosition: { x: 1020, y: 374 },
+      'M 990 389 L 1027 335 L 1117 335 L 1154 389 L 1117 443 L 1027 443 Z',
+    labelPosition: { x: 1072, y: 389 },
     nationId: 'nation-waterfalls',
     color: '#62b8c4',
     descriptionShort:
@@ -266,8 +266,8 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'verified',
     svgPathD:
-      'M 865 155 L 903 97 L 997 97 L 1035 155 L 997 213 L 903 213 Z',
-    labelPosition: { x: 950, y: 155 },
+      'M 917 169 L 954 115 L 1044 115 L 1081 169 L 1044 223 L 954 223 Z',
+    labelPosition: { x: 999, y: 169 },
     nationId: 'nation-hotwater',
     color: '#d48a8a',
     descriptionShort:
@@ -287,8 +287,8 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'verified',
     svgPathD:
-      'M 625 118 L 663 60 L 757 60 L 795 118 L 757 176 L 663 176 Z',
-    labelPosition: { x: 710, y: 118 },
+      'M 670 135 L 707 81 L 797 81 L 834 135 L 797 189 L 707 189 Z',
+    labelPosition: { x: 752, y: 135 },
     nationId: 'nation-iron',
     color: '#c8ccd6',
     descriptionShort:
@@ -306,8 +306,8 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'verified',
     svgPathD:
-      'M 1000 478 L 1038 420 L 1132 420 L 1170 478 L 1132 536 L 1038 536 Z',
-    labelPosition: { x: 1085, y: 478 },
+      'M 1037 498 L 1074 444 L 1164 444 L 1201 498 L 1164 552 L 1074 552 Z',
+    labelPosition: { x: 1119, y: 498 },
     nationId: 'nation-waves',
     color: '#5dc1d6',
     localizedName: { it: 'Paese delle Onde', en: 'Land of Waves' },
@@ -332,8 +332,8 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'anime_only',
     referenceStatus: 'needs_verification',
     svgPathD:
-      'M 680 609 L 718 551 L 812 551 L 850 609 L 812 667 L 718 667 Z',
-    labelPosition: { x: 765, y: 609 },
+      'M 723 623 L 760 569 L 850 569 L 887 623 L 850 677 L 760 677 Z',
+    labelPosition: { x: 805, y: 623 },
     nationId: 'nation-tea',
     color: '#9ec47a',
     descriptionShort:
@@ -351,8 +351,8 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'verified',
     svgPathD:
-      'M 400 525 L 438 467 L 532 467 L 570 525 L 532 583 L 438 583 Z',
-    labelPosition: { x: 485, y: 525 },
+      'M 431 540 L 468 486 L 558 486 L 595 540 L 558 594 L 468 594 Z',
+    labelPosition: { x: 513, y: 540 },
     nationId: 'nation-rivers',
     color: '#7bb2cc',
     descriptionShort:
@@ -370,8 +370,8 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'anime_only',
     referenceStatus: 'needs_verification',
     svgPathD:
-      'M 1230 265 L 1268 207 L 1362 207 L 1400 265 L 1362 323 L 1268 323 Z',
-    labelPosition: { x: 1315, y: 265 },
+      'M 1299 280 L 1336 226 L 1426 226 L 1463 280 L 1426 334 L 1336 334 Z',
+    labelPosition: { x: 1381, y: 280 },
     nationId: 'nation-birds',
     color: '#c8c47a',
     descriptionShort:
@@ -389,8 +389,8 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'movie',
     referenceStatus: 'needs_verification',
     svgPathD:
-      'M 800 55 L 838 -3 L 932 -3 L 970 55 L 932 113 L 838 113 Z',
-    labelPosition: { x: 885, y: 55 },
+      'M 849 55 L 886 1 L 976 1 L 1013 55 L 976 109 L 886 109 Z',
+    labelPosition: { x: 931, y: 55 },
     nationId: 'nation-snow',
     color: '#b8d8f0',
     descriptionShort:
@@ -408,8 +408,8 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'movie',
     referenceStatus: 'needs_verification',
     svgPathD:
-      'M 85 713 L 123 655 L 217 655 L 255 713 L 217 771 L 123 771 Z',
-    labelPosition: { x: 170, y: 713 },
+      'M 103 727 L 140 673 L 230 673 L 267 727 L 230 781 L 140 781 Z',
+    labelPosition: { x: 185, y: 727 },
     nationId: 'nation-demons',
     color: '#c87878',
     descriptionShort:
@@ -427,8 +427,8 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',
     svgPathD:
-      'M 140 90 L 178 32 L 272 32 L 310 90 L 272 148 L 178 148 Z',
-    labelPosition: { x: 225, y: 90 },
+      'M 181 95 L 218 41 L 308 41 L 345 95 L 308 149 L 218 149 Z',
+    labelPosition: { x: 263, y: 95 },
     nationId: 'nation-bears',
     color: '#a88a5a',
     descriptionShort:
@@ -446,8 +446,8 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',
     svgPathD:
-      'M 760 681 L 798 623 L 892 623 L 930 681 L 892 739 L 798 739 Z',
-    labelPosition: { x: 845, y: 681 },
+      'M 807 700 L 844 646 L 934 646 L 971 700 L 934 754 L 844 754 Z',
+    labelPosition: { x: 889, y: 700 },
     nationId: 'nation-mountains',
     color: '#9090b0',
     descriptionShort:
@@ -465,8 +465,8 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',
     svgPathD:
-      'M 675 485 L 713 427 L 807 427 L 845 485 L 807 543 L 713 543 Z',
-    labelPosition: { x: 760, y: 485 },
+      'M 718 498 L 755 444 L 845 444 L 882 498 L 845 552 L 755 552 Z',
+    labelPosition: { x: 800, y: 498 },
     nationId: 'nation-forests',
     color: '#5a9050',
     descriptionShort:
@@ -484,8 +484,8 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',
     svgPathD:
-      'M 560 197 L 598 139 L 692 139 L 730 197 L 692 255 L 598 255 Z',
-    labelPosition: { x: 645, y: 197 },
+      'M 599 213 L 636 159 L 726 159 L 763 213 L 726 267 L 636 267 Z',
+    labelPosition: { x: 681, y: 213 },
     color: '#90a890',
     descriptionShort:
       'Regione fra Iron e Fire, principalmente valli e fiumi.',
@@ -502,8 +502,8 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'anime_only',
     referenceStatus: 'needs_verification',
     svgPathD:
-      'M 1272 379 L 1310 321 L 1404 321 L 1442 379 L 1404 437 L 1310 437 Z',
-    labelPosition: { x: 1357, y: 379 },
+      'M 1342 394 L 1379 340 L 1469 340 L 1506 394 L 1469 448 L 1379 448 Z',
+    labelPosition: { x: 1424, y: 394 },
     color: '#46a8c8',
     descriptionShort:
       'Anime-only filler ad est della Land of Lightning.',
@@ -520,8 +520,8 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'anime_only',
     referenceStatus: 'needs_verification',
     svgPathD:
-      'M 1205 58 L 1243 0 L 1337 0 L 1375 58 L 1337 116 L 1243 116 Z',
-    labelPosition: { x: 1290, y: 58 },
+      'M 1267 80 L 1304 26 L 1394 26 L 1431 80 L 1394 134 L 1304 134 Z',
+    labelPosition: { x: 1349, y: 80 },
     color: '#b86060',
     descriptionShort:
       'Filler arc nella serie originale.',
@@ -538,8 +538,8 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'anime_only',
     referenceStatus: 'needs_verification',
     svgPathD:
-      'M 445 733 L 483 675 L 577 675 L 615 733 L 577 791 L 483 791 Z',
-    labelPosition: { x: 530, y: 733 },
+      'M 479 749 L 516 695 L 606 695 L 643 749 L 606 803 L 516 803 Z',
+    labelPosition: { x: 561, y: 749 },
     color: '#b06060',
     descriptionShort:
       'Anime-only arc (Hidan/Kakuzu).',
@@ -557,8 +557,8 @@ export const narutoBoundaries: MapBoundary[] = [
     referenceStatus: 'needs_verification',
     /* Sovrapposto a Sound: storicamente diventa Land of Sound. */
     svgPathD:
-      'M 845 232 L 883 174 L 977 174 L 1015 232 L 977 290 L 883 290 Z',
-    labelPosition: { x: 930, y: 232 },
+      'M 891 236 L 928 182 L 1018 182 L 1055 236 L 1018 290 L 928 290 Z',
+    labelPosition: { x: 973, y: 236 },
     color: '#c0b078',
     descriptionShort:
       'Antico nome della regione poi nota come Land of Sound.',
