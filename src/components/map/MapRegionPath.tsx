@@ -11,9 +11,11 @@ interface MapRegionPathProps {
 
 /**
  * Singolo path SVG cliccabile per una nazione/regione.
- * - fill quasi trasparente per non oscurare la mappa sottostante
- * - stroke più visibile per indicare il bordo cliccabile
- * - hover / selected = riempimento più marcato
+ *
+ * IMPORTANTE: la world map di base (PNG) disegna già i confini visibili.
+ * Questo overlay quindi è INVISIBILE di default (fill/stroke trasparenti)
+ * e mostra un highlight solo su hover/selezione. Resta cliccabile grazie a
+ * `pointer-events: all`, che cattura il click anche sull'area non dipinta.
  */
 function MapRegionPathBase({
   boundary,
@@ -23,17 +25,18 @@ function MapRegionPathBase({
   onHoverChange,
 }: MapRegionPathProps) {
   const color = boundary.color ?? '#1f9aff';
-  // Calcolo opacità in base allo stato
-  const fillOpacity = selected ? 0.32 : hovered ? 0.22 : 0.06;
-  const strokeOpacity = selected ? 0.95 : hovered ? 0.85 : 0.45;
-  const strokeWidth = selected ? 2.5 : hovered ? 2 : 1.4;
+  // Default invisibile; highlight solo su hover/selezione per non sovrapporsi
+  // ai confini già presenti nel PNG.
+  const fillOpacity = selected ? 0.25 : hovered ? 0.15 : 0;
+  const strokeOpacity = selected ? 0.95 : hovered ? 0.7 : 0;
+  const strokeWidth = selected ? 2.5 : hovered ? 2 : 0;
 
   return (
     <g
       role="button"
       tabIndex={0}
       aria-label={`${boundary.name} (${boundary.type.replace('_', ' ')})`}
-      className="cursor-pointer outline-none focus-visible:opacity-100"
+      className="cursor-pointer outline-none"
       onClick={(e) => {
         e.stopPropagation();
         onClick?.(boundary);
@@ -58,8 +61,10 @@ function MapRegionPathBase({
         strokeWidth={strokeWidth}
         strokeLinejoin="round"
         style={{
-          transition: 'all 160ms ease-out',
-          pointerEvents: 'auto',
+          transition: 'fill-opacity 160ms ease-out, stroke-opacity 160ms ease-out',
+          // `all` cattura il click sull'intera area del path anche quando
+          // è trasparente (a differenza di `auto`/`visiblePainted`).
+          pointerEvents: 'all',
         }}
       />
     </g>
