@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "validate:data": "tsx --tsconfig scripts/tsconfig.json scripts/validate-data.ts",
     "validate:i18n": "tsx --tsconfig scripts/tsconfig.json scripts/validate-i18n.ts",
-    "extract:boundaries": "tsx --tsconfig scripts/tsconfig.json scripts/extract-boundaries.ts"
+    "extract:boundaries": "tsx --tsconfig scripts/tsconfig.json scripts/extract-boundaries.ts",
+    "find:dots": "tsx --tsconfig scripts/tsconfig.json scripts/find-red-dots.ts"
   },
   "dependencies": {
     "@xyflow/react": "^12.3.5",
