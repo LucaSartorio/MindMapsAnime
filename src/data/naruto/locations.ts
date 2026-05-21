@@ -233,8 +233,8 @@ export const narutoLocations: Location[] = [
     name: 'Takigakure',
     nameLocal: 'Hidden Waterfall Village',
     type: 'village',
-    x: 1055,
-    y: 395,
+    x: 600,
+    y: 300,
     boundaryId: 'boundary-waterfalls',
     nationId: 'nation-waterfalls',
     shortDescription:
@@ -288,8 +288,8 @@ export const narutoLocations: Location[] = [
     name: 'Hoshigakure',
     nameLocal: 'Hidden Star Village',
     type: 'village',
-    x: 195,
-    y: 80,
+    x: 70,
+    y: 430,
     boundaryId: 'boundary-bears',
     nationId: 'nation-bears',
     shortDescription:
@@ -306,8 +306,8 @@ export const narutoLocations: Location[] = [
     name: 'Yukigakure',
     nameLocal: 'Hidden Snow Village',
     type: 'village',
-    x: 920,
-    y: 50,
+    x: 250,
+    y: 40,
     boundaryId: 'boundary-snow',
     nationId: 'nation-snow',
     shortDescription:
@@ -324,8 +324,8 @@ export const narutoLocations: Location[] = [
     name: 'Soragakure',
     nameLocal: 'Hidden Sky Village',
     type: 'village',
-    x: 750,
-    y: 80,
+    x: 1150,
+    y: 40,
     nationId: 'nation-sky',
     shortDescription:
       'Villaggio del Cielo (Shippuden movie).',
