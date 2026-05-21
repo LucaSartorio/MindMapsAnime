@@ -171,6 +171,28 @@ export const narutoBoundaries: MapBoundary[] = [
     tags: ['pioggia', 'akatsuki', 'pain'],
   },
   {
+    id: 'boundary-frost',
+    worldId: 'world-naruto',
+    mapLevelId: 'naruto-map-world',
+    slug: 'frost',
+    name: 'Land of Frost',
+    localizedName: { it: 'Paese del Gelo', en: 'Land of Frost' },
+    japaneseName: 'Shimo no Kuni',
+    type: 'minor_nation',
+    canonStatus: 'canon',
+    referenceStatus: 'needs_verification',
+    svgPathD:
+      'M770 250 C 840 235, 910 250, 920 290 C 910 330, 845 342, 795 330 C 758 320, 752 280, 770 250 Z',
+    labelPosition: { x: 838, y: 292 },
+    nationId: 'nation-frost',
+    color: '#dfe7ef',
+    descriptionShort: {
+      it: 'Piccola nazione settentrionale dal clima rigido.',
+      en: 'Small northern nation with a harsh climate.',
+    },
+    tags: ['gelo', 'nord'],
+  },
+  {
     id: 'boundary-sound',
     worldId: 'world-naruto',
     mapLevelId: 'naruto-map-world',

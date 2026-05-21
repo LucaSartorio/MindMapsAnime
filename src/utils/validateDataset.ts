@@ -241,11 +241,15 @@ export function validateDataset(dataset: WorldDataset): ValidationReport {
   }
 
   /* ---------- Locations ---------- */
+  const asId = new Set(dataset.assets.map((x) => x.id));
   for (const l of dataset.locations) {
     if (!l.name)
       addIssue(issues, 'error', 'missing_name', 'location', `Location ${l.id} senza nome`, l.id);
     if (!mlId.has(l.mapLevelId))
       addIssue(issues, 'error', 'broken_ref', 'location', `Location ${l.id} mapLevelId inesistente: ${l.mapLevelId}`, l.id);
+    // Coordinate finite e plausibili
+    if (!Number.isFinite(l.x) || !Number.isFinite(l.y))
+      addIssue(issues, 'error', 'bad_coordinates', 'location', `Location ${l.id} coordinate non valide (${l.x},${l.y})`, l.id);
     checkSingleRef(l.nationId, nId, 'location', 'nationId', l.id, issues);
     checkSingleRef(l.boundaryId, bId, 'location', 'boundaryId', l.id, issues);
     checkSingleRef(l.subMapLevelId, mlId, 'location', 'subMapLevelId', l.id, issues);
@@ -253,6 +257,17 @@ export function validateDataset(dataset: WorldDataset): ValidationReport {
     checkRef(l.characterIds, cId, 'location', 'characterIds', l.id, issues);
     checkRef(l.eventIds, eId, 'location', 'eventIds', l.id, issues);
     checkRef(l.arcIds, aId, 'location', 'arcIds', l.id, issues);
+    checkRef(l.assetIds, asId, 'location', 'assetIds', l.id, issues);
+  }
+
+  /* ---------- Map levels ---------- */
+  for (const ml of dataset.mapLevels) {
+    if (ml.parentLevelId && !mlId.has(ml.parentLevelId))
+      addIssue(issues, 'error', 'broken_ref', 'mapLevel', `MapLevel ${ml.id} parentLevelId inesistente: ${ml.parentLevelId}`, ml.id);
+    if (ml.triggerLocationId && !lId.has(ml.triggerLocationId))
+      addIssue(issues, 'error', 'broken_ref', 'mapLevel', `MapLevel ${ml.id} triggerLocationId inesistente: ${ml.triggerLocationId}`, ml.id);
+    if (ml.backgroundAssetId && !asId.has(ml.backgroundAssetId))
+      addIssue(issues, 'warning', 'broken_ref', 'mapLevel', `MapLevel ${ml.id} backgroundAssetId inesistente: ${ml.backgroundAssetId}`, ml.id);
   }
 
   /* ---------- Routes ---------- */
