@@ -33,13 +33,12 @@ const VIEWBOX_H = 882.2204;
 const SEEDS: { slug: string; x: number; y: number; tol?: number }[] = [
   { slug: 'fire', x: 0.54, y: 0.66 },
   { slug: 'wind', x: 0.16, y: 0.72 },
-  { slug: 'earth', x: 0.14, y: 0.24 },
+  { slug: 'earth', x: 0.1, y: 0.12 },
   { slug: 'lightning', x: 0.79, y: 0.24 },
-  { slug: 'water', x: 0.82, y: 0.63 },
-  { slug: 'frost', x: 0.556, y: 0.4 },
-  { slug: 'sound', x: 0.452, y: 0.45 },
-  // minori: aggiungi/aggiusta seed se servono
-  { slug: 'rain', x: 0.385, y: 0.31 },
+  { slug: 'water', x: 0.84, y: 0.72 },
+  { slug: 'frost', x: 0.53, y: 0.37 },
+  { slug: 'sound', x: 0.435, y: 0.46 },
+  { slug: 'rain', x: 0.4, y: 0.33 },
   { slug: 'grass', x: 0.34, y: 0.46 },
 ];
 

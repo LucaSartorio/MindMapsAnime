@@ -27,7 +27,7 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'verified',
     svgPathD:
-      'M 764 379 L 889 400 L 957 472 L 952 555 L 868 669 L 722 700 L 607 690 L 555 597 L 545 493 L 597 410 Z',
+      'M 514 416 L 553 437 L 621 416 L 661 436 L 703 425 L 738 439 L 777 434 L 792 477 L 838 477 L 873 518 L 888 538 L 888 576 L 912 596 L 876 721 L 895 739 L 923 736 L 912 763 L 924 783 L 923 817 L 900 837 L 888 881 L 782 879 L 802 830 L 850 809 L 865 782 L 827 748 L 752 766 L 662 754 L 608 826 L 594 829 L 583 817 L 594 795 L 594 721 L 533 638 L 486 617 L 473 581 L 485 541 L 468 515 L 461 456 L 491 421 L 512 417 Z',
     labelPosition: { x: 808, y: 600 },
     nationId: 'nation-fire',
     color: '#f06600',
@@ -53,7 +53,7 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'verified',
     svgPathD:
-      'M 0 425 L 221 420 L 305 534 L 294 700 L 211 845 L 44 882 L 0 804 Z',
+      'M 147 462 L 180 474 L 224 524 L 289 553 L 327 555 L 415 597 L 430 646 L 423 663 L 458 696 L 462 753 L 444 798 L 473 829 L 468 881 L 0 881 L 0 536 L 59 492 L 147 463 Z',
     labelPosition: { x: 160, y: 660 },
     nationId: 'nation-wind',
     color: '#d4be78',
@@ -79,8 +79,8 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'verified',
     svgPathD:
-      'M 1218 555 L 1359 555 L 1370 649 L 1276 675 L 1218 612 Z',
-    labelPosition: { x: 1253, y: 540 },
+      'M 1232 587 L 1298 588 L 1333 631 L 1341 658 L 1308 719 L 1264 728 L 1217 681 L 1214 634 L 1230 588 Z',
+    labelPosition: { x: 1275, y: 655 },
     nationId: 'nation-water',
     color: '#4cb6ff',
     localizedName: { it: "Paese dell'Acqua", en: 'Land of Water' },
@@ -105,7 +105,7 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'verified',
     svgPathD:
-      'M 0 47 L 440 31 L 451 161 L 409 285 L 190 296 L 23 213 L 0 109 Z',
+      'M 0 2 L 412 2 L 427 27 L 420 53 L 438 79 L 435 128 L 415 151 L 424 201 L 455 232 L 474 232 L 485 210 L 533 219 L 508 244 L 492 328 L 476 343 L 477 390 L 435 436 L 367 468 L 244 475 L 180 405 L 0 402 L 0 3 Z',
     labelPosition: { x: 157, y: 175 },
     nationId: 'nation-earth',
     color: '#963c03',
@@ -131,7 +131,7 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'verified',
     svgPathD:
-      'M 926 36 L 1469 52 L 1500 265 L 1370 389 L 1056 374 L 931 202 Z',
+      'M 1068 2 L 1315 3 L 1253 105 L 1252 152 L 1277 213 L 1236 326 L 1197 341 L 1180 311 L 1150 340 L 1085 343 L 1059 373 L 1024 387 L 994 366 L 973 375 L 915 369 L 897 379 L 891 355 L 876 347 L 868 314 L 921 276 L 936 251 L 985 226 L 986 171 L 1024 134 L 1015 105 L 1026 99 L 1026 76 L 1053 50 L 1067 3 Z',
     labelPosition: { x: 1190, y: 165 },
     nationId: 'nation-lightning',
     color: '#1f9aff',
@@ -159,7 +159,7 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'verified',
     svgPathD:
-      'M 494 254 L 531 200 L 621 200 L 658 254 L 621 308 L 531 308 Z',
+      'M 706 151 L 736 154 L 755 180 L 762 206 L 752 226 L 762 247 L 744 267 L 705 276 L 700 302 L 685 312 L 688 341 L 636 413 L 588 422 L 576 352 L 592 309 L 585 297 L 594 276 L 614 271 L 644 238 L 638 210 L 700 171 L 705 152 Z',
     labelPosition: { x: 576, y: 254 },
     nationId: 'nation-rain',
     color: '#6aa8d8',
@@ -184,7 +184,7 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',
     svgPathD:
-      'M 769 265 L 910 270 L 905 384 L 780 389 L 754 317 Z',
+      'M 785 309 L 826 320 L 862 314 L 891 382 L 855 372 L 835 401 L 814 393 L 805 369 L 764 338 L 783 311 Z',
     labelPosition: { x: 834, y: 322 },
     nationId: 'nation-frost',
     color: '#dfe7ef',
@@ -205,7 +205,7 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'verified',
     svgPathD:
-      'M 639 384 L 733 384 L 733 446 L 643 446 Z',
+      'M 694 338 L 730 341 L 720 393 L 726 428 L 705 419 L 662 431 L 641 416 L 692 340 Z',
     labelPosition: { x: 686, y: 412 },
     nationId: 'nation-sound',
     color: '#a0a0b0',
@@ -226,7 +226,7 @@ export const narutoBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'verified',
     svgPathD:
-      'M 395 394 L 432 340 L 522 340 L 559 394 L 522 448 L 432 448 Z',
+      'M 509 268 L 589 276 L 571 344 L 583 424 L 552 431 L 518 411 L 488 417 L 479 399 L 482 340 L 497 329 L 509 270 Z',
     labelPosition: { x: 477, y: 394 },
     nationId: 'nation-grass',
     color: '#7fb05a',
