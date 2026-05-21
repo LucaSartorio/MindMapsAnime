@@ -280,15 +280,34 @@ export function LocationDetailsModal({
 
       <Section title={t("modals.gallery")}>
         <div className="grid grid-cols-3 gap-2">
-          {[0, 1, 2].map((i) => (
-            <div
-              key={i}
-              aria-hidden
-              className="aspect-square rounded-lg border border-dashed border-ink-600/60 bg-ink-800/40 grid place-items-center text-[10px] text-ink-400 font-mono"
-            >
-              placeholder
-            </div>
-          ))}
+          {(() => {
+            const assets = (location.assetIds ?? [])
+              .map((id) => dataset.assets.find((a) => a.id === id))
+              .filter((a): a is NonNullable<typeof a> => !!a);
+            const slots = assets.length > 0 ? assets : [null, null, null];
+            return slots.map((a, i) => {
+              if (a?.url) {
+                return (
+                  <img
+                    key={a.id}
+                    src={a.url}
+                    alt={a.name}
+                    loading="lazy"
+                    className="aspect-square w-full rounded-lg object-cover border border-ink-600/60"
+                  />
+                );
+              }
+              return (
+                <div
+                  key={a?.id ?? i}
+                  aria-hidden
+                  className="aspect-square rounded-lg border border-dashed border-ink-600/60 bg-ink-800/40 grid place-items-center text-[10px] text-ink-400 font-mono text-center px-1"
+                >
+                  {a ? 'placeholder' : 'placeholder'}
+                </div>
+              );
+            });
+          })()}
         </div>
         <p className="text-[10px] text-ink-400 mt-1.5">
           {t('modals.galleryNote')}

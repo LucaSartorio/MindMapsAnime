@@ -151,6 +151,32 @@ export const narutoDataQuality: DataQualityEntry[] = [
     note:
       'Coordinate dei luoghi minori (Hoshigakure, Yukigakure, Soragakure) sono indicative. Da rivedere con la mappa reale.',
   },
+
+  /* Sotto-mappe villaggio (espansione) */
+  {
+    area: 'boundaries',
+    kind: 'missing',
+    note:
+      'World map: copiare il PNG di riferimento in public/assets/worlds/naruto/maps/naruto_world_reference_expanded.png. Finché manca, lo sfondo mostra uno stato neutro con istruzioni. Dopo, riallineare boundary svgPathD e coordinate dei pin alla nuova immagine.',
+  },
+  {
+    area: 'locations',
+    kind: 'needs_verification',
+    note:
+      'POI delle sotto-mappe Suna/Kiri/Iwa/Kumo/Ame/Oto/Uzu/Taki: coordinate concettuali e molti POI marcati needs_verification. Konoha è la sotto-mappa più dettagliata (22 POI).',
+  },
+  {
+    area: 'locations',
+    kind: 'missing',
+    note:
+      'Sotto-mappe non ancora create: Yugakure, Hoshigakure, Yukigakure, Soragakure, Kusagakure (solo pin world map per ora).',
+  },
+  {
+    area: 'assets',
+    kind: 'needs_verification',
+    note:
+      'Immagini villaggio (naruto-img-*) sono placeholder. Sostituire con immagini con licenza chiara aggiornando `url` in assets.ts.',
+  },
 ];
 
 /**
