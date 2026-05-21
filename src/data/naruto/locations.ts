@@ -170,8 +170,8 @@ export const narutoLocations: Location[] = [
     name: 'Amegakure',
     nameLocal: 'Hidden Rain Village',
     type: 'village',
-    x: 560,
-    y: 250,
+    x: 518,
+    y: 354,
     boundaryId: 'boundary-rain',
     nationId: 'nation-rain',
     shortDescription:
@@ -252,8 +252,8 @@ export const narutoLocations: Location[] = [
     name: 'Yugakure',
     nameLocal: 'Hidden Hot Water Village',
     type: 'village',
-    x: 932,
-    y: 158,
+    x: 758,
+    y: 393,
     boundaryId: 'boundary-hotwater',
     nationId: 'nation-hotwater',
     shortDescription:
@@ -589,8 +589,8 @@ export const narutoLocations: Location[] = [
     mapLevelId: 'naruto-map-world',
     name: 'Turtle Island',
     type: 'landmark',
-    x: 1355,
-    y: 700,
+    x: 1177,
+    y: 330,
     boundaryId: 'boundary-water',
     shortDescription:
       'Isola dove Naruto si allena per controllare Kurama.',
