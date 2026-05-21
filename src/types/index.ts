@@ -612,7 +612,10 @@ export const defaultFilters: MapFilters = {
 
 export const defaultLayers: VisibleLayers = {
   boundaries: true,
-  nationLabels: true,
+  // La world map PNG ha già le etichette delle nazioni stampate sopra:
+  // di default NON sovrapponiamo le label dell'overlay (evita duplicati).
+  // L'utente può riattivarle dai filtri.
+  nationLabels: false,
   mainVillages: true,
   minorVillages: true,
   specialPlaces: true,
