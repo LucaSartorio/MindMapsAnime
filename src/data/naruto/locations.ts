@@ -193,8 +193,8 @@ export const narutoLocations: Location[] = [
     name: 'Otogakure',
     nameLocal: 'Hidden Sound Village',
     type: 'village',
-    x: 905,
-    y: 295,
+    x: 691,
+    y: 389,
     boundaryId: 'boundary-sound',
     nationId: 'nation-sound',
     shortDescription:
@@ -215,8 +215,8 @@ export const narutoLocations: Location[] = [
     name: 'Kusagakure',
     nameLocal: 'Hidden Grass Village',
     type: 'village',
-    x: 475,
-    y: 395,
+    x: 428,
+    y: 476,
     boundaryId: 'boundary-grass',
     nationId: 'nation-grass',
     shortDescription:
@@ -270,8 +270,8 @@ export const narutoLocations: Location[] = [
     name: 'Uzushiogakure Ruins',
     nameLocal: 'Hidden Eddy Village (ruins)',
     type: 'ruins',
-    x: 1112,
-    y: 488,
+    x: 952,
+    y: 635,
     shortDescription:
       'Rovine del villaggio del clan Uzumaki, distrutto in guerra.',
     clanIds: ['clan-uzumaki'],

@@ -16,7 +16,11 @@ const VIEWBOX_W = 1500;
 const VIEWBOX_H = 882.2204;
 
 function isDotRed(r: number, g: number, b: number): boolean {
-  return r >= 150 && g <= 95 && b <= 95 && r - g >= 70 && r - b >= 70;
+  // I pallini sono rossi/salmone molto saturi. Il riempimento rosa del Paese
+  // del Fuoco e' rgb(209,143,143) -> R-G=66; i pallini hanno R-G>=122.
+  // Soglia 90 (relativa) li separa includendo anche i pallini piu' aranciati
+  // (es. Kumo rgb(235,113,70)), che la vecchia soglia g<=95 scartava.
+  return r >= 150 && r - g >= 90 && r - b >= 90;
 }
 
 function main() {
