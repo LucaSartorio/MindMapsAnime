@@ -209,6 +209,7 @@ export const narutoBoundaries: MapBoundary[] = [
     labelPosition: { x: 686, y: 412 },
     nationId: 'nation-sound',
     color: '#a0a0b0',
+    localizedName: { it: 'Paese del Suono', en: 'Land of Sound' },
     descriptionShort:
       'Piccola nazione fondata da Orochimaru per ospitare Otogakure.',
     descriptionLong:
@@ -230,6 +231,7 @@ export const narutoBoundaries: MapBoundary[] = [
     labelPosition: { x: 477, y: 394 },
     nationId: 'nation-grass',
     color: '#7fb05a',
+    localizedName: { it: "Paese dell'Erba", en: 'Land of Grass' },
     descriptionShort:
       'Praterie fra Iwa e Konoha. Sede di Kusagakure.',
     descriptionLong:
@@ -251,6 +253,7 @@ export const narutoBoundaries: MapBoundary[] = [
     labelPosition: { x: 1072, y: 389 },
     nationId: 'nation-waterfalls',
     color: '#62b8c4',
+    localizedName: { it: 'Paese delle Cascate', en: 'Land of Waterfalls' },
     descriptionShort:
       'Nazione boschiva nota per le cascate. Sede di Takigakure.',
     tags: ['takigakure', 'cascate'],
@@ -270,6 +273,7 @@ export const narutoBoundaries: MapBoundary[] = [
     labelPosition: { x: 999, y: 169 },
     nationId: 'nation-hotwater',
     color: '#d48a8a',
+    localizedName: { it: "Paese dell'Acqua Calda", en: 'Land of Hot Water' },
     descriptionShort:
       'Famosa per le sorgenti termali. Ospitò Yugakure.',
     descriptionLong:
@@ -291,6 +295,7 @@ export const narutoBoundaries: MapBoundary[] = [
     labelPosition: { x: 752, y: 135 },
     nationId: 'nation-iron',
     color: '#c8ccd6',
+    localizedName: { it: 'Paese del Ferro', en: 'Land of Iron' },
     descriptionShort:
       'Nazione neutrale dei samurai, sede del Summit dei Cinque Kage.',
     tags: ['iron', 'samurai', 'mifune'],
@@ -336,6 +341,7 @@ export const narutoBoundaries: MapBoundary[] = [
     labelPosition: { x: 805, y: 623 },
     nationId: 'nation-tea',
     color: '#9ec47a',
+    localizedName: { it: 'Paese del Tè', en: 'Land of Tea' },
     descriptionShort:
       'Nazione costiera famosa per le piantagioni di tè (arco anime).',
     tags: ['anime-only', 'tea'],
@@ -355,6 +361,7 @@ export const narutoBoundaries: MapBoundary[] = [
     labelPosition: { x: 513, y: 540 },
     nationId: 'nation-rivers',
     color: '#7bb2cc',
+    localizedName: { it: 'Paese dei Fiumi', en: 'Land of Rivers' },
     descriptionShort:
       'Cuscinetto fra Wind e Fire. Ospitò un nascondiglio Akatsuki.',
     tags: ['akatsuki', 'sasori'],
@@ -374,6 +381,7 @@ export const narutoBoundaries: MapBoundary[] = [
     labelPosition: { x: 1381, y: 280 },
     nationId: 'nation-birds',
     color: '#c8c47a',
+    localizedName: { it: 'Paese degli Uccelli', en: 'Land of Birds' },
     descriptionShort:
       'Filler arc nella prima serie (anime-only).',
     tags: ['anime-only', 'filler'],
@@ -393,6 +401,7 @@ export const narutoBoundaries: MapBoundary[] = [
     labelPosition: { x: 931, y: 55 },
     nationId: 'nation-snow',
     color: '#b8d8f0',
+    localizedName: { it: 'Paese della Neve', en: 'Land of Snow' },
     descriptionShort:
       'Movie arc — successivamente "Land of Spring". Ospitò Yukigakure.',
     tags: ['movie', 'koyuki'],
@@ -412,6 +421,7 @@ export const narutoBoundaries: MapBoundary[] = [
     labelPosition: { x: 185, y: 727 },
     nationId: 'nation-demons',
     color: '#c87878',
+    localizedName: { it: 'Paese dei Demoni', en: 'Land of Demons' },
     descriptionShort:
       'Movie arc — sigillamento di Moryo.',
     tags: ['movie', 'shion'],
@@ -431,6 +441,7 @@ export const narutoBoundaries: MapBoundary[] = [
     labelPosition: { x: 263, y: 95 },
     nationId: 'nation-bears',
     color: '#a88a5a',
+    localizedName: { it: 'Paese degli Orsi', en: 'Land of Bears' },
     descriptionShort:
       'Nazione settentrionale; ospitò Hoshigakure.',
     tags: ['hoshigakure'],
@@ -450,6 +461,7 @@ export const narutoBoundaries: MapBoundary[] = [
     labelPosition: { x: 889, y: 700 },
     nationId: 'nation-mountains',
     color: '#9090b0',
+    localizedName: { it: 'Paese delle Montagne', en: 'Land of Mountains' },
     descriptionShort:
       'Nazione meridionale rocciosa.',
     tags: ['montagne'],
@@ -469,6 +481,7 @@ export const narutoBoundaries: MapBoundary[] = [
     labelPosition: { x: 800, y: 498 },
     nationId: 'nation-forests',
     color: '#5a9050',
+    localizedName: { it: 'Paese delle Foreste', en: 'Land of Forests' },
     descriptionShort:
       'Regione boschiva del Paese del Fuoco.',
     tags: ['foresta'],
@@ -487,6 +500,7 @@ export const narutoBoundaries: MapBoundary[] = [
       'M 599 213 L 636 159 L 726 159 L 763 213 L 726 267 L 636 267 Z',
     labelPosition: { x: 681, y: 213 },
     color: '#90a890',
+    localizedName: { it: 'Paese delle Valli', en: 'Land of Valleys' },
     descriptionShort:
       'Regione fra Iron e Fire, principalmente valli e fiumi.',
     tags: ['valli'],
@@ -505,6 +519,7 @@ export const narutoBoundaries: MapBoundary[] = [
       'M 1342 394 L 1379 340 L 1469 340 L 1506 394 L 1469 448 L 1379 448 Z',
     labelPosition: { x: 1424, y: 394 },
     color: '#46a8c8',
+    localizedName: { it: 'Paese del Mare', en: 'Land of the Sea' },
     descriptionShort:
       'Anime-only filler ad est della Land of Lightning.',
     tags: ['anime-only', 'filler'],
@@ -523,6 +538,7 @@ export const narutoBoundaries: MapBoundary[] = [
       'M 1267 80 L 1304 26 L 1394 26 L 1431 80 L 1394 134 L 1304 134 Z',
     labelPosition: { x: 1349, y: 80 },
     color: '#b86060',
+    localizedName: { it: 'Paese degli Artigli', en: 'Land of Claws' },
     descriptionShort:
       'Filler arc nella serie originale.',
     tags: ['anime-only', 'filler'],
@@ -541,6 +557,7 @@ export const narutoBoundaries: MapBoundary[] = [
       'M 479 749 L 516 695 L 606 695 L 643 749 L 606 803 L 516 803 Z',
     labelPosition: { x: 561, y: 749 },
     color: '#b06060',
+    localizedName: { it: 'Paese delle Zanne', en: 'Land of Fangs' },
     descriptionShort:
       'Anime-only arc (Hidan/Kakuzu).',
     tags: ['anime-only', 'kakuzu'],
@@ -560,6 +577,7 @@ export const narutoBoundaries: MapBoundary[] = [
       'M 891 236 L 928 182 L 1018 182 L 1055 236 L 1018 290 L 928 290 Z',
     labelPosition: { x: 973, y: 236 },
     color: '#c0b078',
+    localizedName: { it: 'Paese delle Risaie', en: 'Land of Rice Fields' },
     descriptionShort:
       'Antico nome della regione poi nota come Land of Sound.',
     tags: ['rice', 'sound', 'orochimaru'],
