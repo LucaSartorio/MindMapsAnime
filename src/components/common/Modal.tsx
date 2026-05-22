@@ -11,6 +11,8 @@ interface ModalProps {
   eyebrow?: ReactNode;
   /** Badge/azioni accanto al titolo */
   badges?: ReactNode;
+  /** Banner/immagine opzionale renderizzato in cima alla modale */
+  media?: ReactNode;
   children: ReactNode;
   className?: string;
   /** Larghezza max della modale */
@@ -39,6 +41,7 @@ export function Modal({
   title,
   eyebrow,
   badges,
+  media,
   children,
   className,
   size = 'lg',
@@ -106,6 +109,12 @@ export function Modal({
           className,
         )}
       >
+        {media && (
+          <div className="relative h-36 sm:h-44 shrink-0 overflow-hidden rounded-t-2xl bg-ink-900">
+            {media}
+            <div className="absolute inset-0 bg-gradient-to-t from-ink-900/80 to-transparent pointer-events-none" />
+          </div>
+        )}
         {(title || eyebrow || badges) && (
           <header className="px-5 py-4 border-b border-ink-700/60 flex items-start gap-3 shrink-0">
             <div className="flex-1 min-w-0">

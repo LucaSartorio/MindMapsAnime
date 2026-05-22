@@ -5,6 +5,7 @@ import type { WorldDataset } from '@/types';
 import { Modal } from '@/components/common/Modal';
 import { Badge } from '@/components/common/Badge';
 import { Button } from '@/components/common/Button';
+import { EntityImage } from '@/components/common/EntityImage';
 import { ReferencePill } from '@/components/common/StatusPill';
 import { useMapStore, useUiStore } from '@/store';
 import {
@@ -85,6 +86,15 @@ export function LocationDetailsModal({
     <Modal
       open
       onClose={close}
+      media={
+        <EntityImage
+          kind="location"
+          id={location.id}
+          name={getLocalizedText(location.localizedName, locale) || location.name}
+          villageId={location.id}
+          locationType={location.type}
+        />
+      }
       eyebrow={
         <>
           Luogo · <span className="capitalize">{location.type.replace('_', ' ')}</span>
@@ -300,10 +310,15 @@ export function LocationDetailsModal({
               return (
                 <div
                   key={a?.id ?? i}
-                  aria-hidden
-                  className="aspect-square rounded-lg border border-dashed border-ink-600/60 bg-ink-800/40 grid place-items-center text-[10px] text-ink-400 font-mono text-center px-1"
+                  className="aspect-square w-full rounded-lg overflow-hidden border border-ink-600/60"
                 >
-                  {a ? 'placeholder' : 'placeholder'}
+                  <EntityImage
+                    kind="location"
+                    id={`${location.id}-${i}`}
+                    name={getLocalizedText(location.localizedName, locale) || location.name}
+                    villageId={location.id}
+                    locationType={location.type}
+                  />
                 </div>
               );
             });

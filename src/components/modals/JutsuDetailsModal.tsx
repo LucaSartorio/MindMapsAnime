@@ -9,6 +9,7 @@ import {
 import { Modal } from '@/components/common/Modal';
 import { Badge } from '@/components/common/Badge';
 import { Button } from '@/components/common/Button';
+import { EntityImage } from '@/components/common/EntityImage';
 import { ReferencePill } from '@/components/common/StatusPill';
 import { useUiStore } from '@/store';
 import { findCharacter, findFaction, findJutsu } from '@/lib/entities';
@@ -45,6 +46,14 @@ export function JutsuDetailsModal({ dataset, jutsuId }: JutsuDetailsModalProps) 
     <Modal
       open
       onClose={close}
+      media={
+        <EntityImage
+          kind="jutsu"
+          id={jutsu.id}
+          name={getLocalizedText(jutsu.localizedName, locale) || jutsu.name}
+          chakraNature={jutsu.chakraNature?.[0]}
+        />
+      }
       eyebrow={t('modals.jutsu')}
       title={getLocalizedText(jutsu.localizedName, locale) || jutsu.name}
       badges={

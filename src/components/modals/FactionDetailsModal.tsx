@@ -3,6 +3,7 @@ import { Modal } from '@/components/common/Modal';
 import { useTranslation } from 'react-i18next';
 import { Badge } from '@/components/common/Badge';
 import { Button } from '@/components/common/Button';
+import { EntityImage } from '@/components/common/EntityImage';
 import { ReferencePill } from '@/components/common/StatusPill';
 import { useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
@@ -58,6 +59,14 @@ export function FactionDetailsModal({
     <Modal
       open
       onClose={close}
+      media={
+        <EntityImage
+          kind="clan"
+          id={faction.id}
+          name={getLocalizedText(faction.localizedName, locale) || faction.name}
+          villageId={faction.villageLocationId}
+        />
+      }
       eyebrow={`${faction.type.replace('_', ' ')}`}
       title={getLocalizedText(faction.localizedName, locale) || faction.name}
       badges={
@@ -85,7 +94,7 @@ export function FactionDetailsModal({
       }
       footer={
         <Button variant="primary" onClick={close}>
-          Chiudi
+          {t('modals.close')}
         </Button>
       }
     >
