@@ -21,6 +21,8 @@ export const narutoRoutes: Route[] = [
       'char-kakashi',
     ],
     arcId: 'arc-prologue',
+    mangaChapters: ['1-33'],
+    animeEpisodes: ['ep. 1-19'],
     color: '#1f9aff',
     steps: [
       { order: 1, locationId: 'loc-konoha', label: 'Partenza da Konoha' },
@@ -41,6 +43,8 @@ export const narutoRoutes: Route[] = [
       'Spostamenti dei team per gli Esami Chunin a Konoha.',
     protagonistCharacterIds: ['char-naruto', 'char-sasuke', 'char-sakura'],
     arcId: 'arc-chunin-exams',
+    mangaChapters: ['34-115'],
+    animeEpisodes: ['ep. 20-67'],
     color: '#ff9f3f',
     steps: [
       { order: 1, locationId: 'loc-suna', label: 'Suna arriva a Konoha' },
@@ -58,6 +62,8 @@ export const narutoRoutes: Route[] = [
       'L\'invasione di Konoha orchestrata da Orochimaru con Suna e Oto.',
     protagonistCharacterIds: ['char-orochimaru', 'char-hiruzen'],
     arcId: 'arc-konoha-crush',
+    mangaChapters: ['116-138'],
+    animeEpisodes: ['ep. 68-80'],
     color: '#7d0606',
     steps: [
       { order: 1, locationId: 'loc-oto', label: 'Preparativi a Otogakure' },
@@ -74,6 +80,8 @@ export const narutoRoutes: Route[] = [
       'Jiraiya e Naruto attraversano il Paese del Fuoco per trovare Tsunade.',
     protagonistCharacterIds: ['char-jiraiya', 'char-naruto', 'char-tsunade'],
     arcId: 'arc-search-tsunade',
+    mangaChapters: ['139-171'],
+    animeEpisodes: ['ep. 81-100'],
     color: '#86cdff',
     steps: [
       { order: 1, locationId: 'loc-konoha', label: 'Partenza' },
@@ -91,6 +99,8 @@ export const narutoRoutes: Route[] = [
       'Sasuke abbandona Konoha per cercare potere da Orochimaru.',
     protagonistCharacterIds: ['char-sasuke'],
     arcId: 'arc-sasuke-retrieval',
+    mangaChapters: ['172-238'],
+    animeEpisodes: ['ep. 107-135'],
     color: '#e10b0b',
     steps: [
       { order: 1, locationId: 'loc-konoha-main-gate', label: 'Diserzione', eventId: 'ev-sasuke-defection' },
@@ -112,6 +122,8 @@ export const narutoRoutes: Route[] = [
       'char-rock-lee',
     ],
     arcId: 'arc-sasuke-retrieval',
+    mangaChapters: ['172-238'],
+    animeEpisodes: ['ep. 107-135'],
     color: '#f06600',
     steps: [
       { order: 1, locationId: 'loc-konoha-main-gate', label: 'Partenza', eventId: 'ev-sound-four-pursuit' },
@@ -134,6 +146,8 @@ export const narutoRoutes: Route[] = [
       'char-guy',
     ],
     arcId: 'arc-kazekage-rescue',
+    mangaChapters: ['245-281'],
+    animeEpisodes: ['Shippuden ep. 1-32'],
     color: '#d4be78',
     steps: [
       { order: 1, locationId: 'loc-konoha', label: 'Allarme dalla Sabbia' },
@@ -150,6 +164,8 @@ export const narutoRoutes: Route[] = [
       'Team Kakashi incontra la spia di Sasori e scopre Sai.',
     protagonistCharacterIds: ['char-naruto', 'char-sakura', 'char-orochimaru'],
     arcId: 'arc-tenchi-bridge',
+    mangaChapters: ['282-310'],
+    animeEpisodes: ['Shippuden ep. 33-53'],
     color: '#62b8c4',
     steps: [
       { order: 1, locationId: 'loc-konoha', label: 'Partenza' },
@@ -166,6 +182,8 @@ export const narutoRoutes: Route[] = [
       'Sasuke insegue Itachi attraverso i nascondigli di Orochimaru.',
     protagonistCharacterIds: ['char-sasuke'],
     arcId: 'arc-itachi-pursuit',
+    mangaChapters: ['343-369'],
+    animeEpisodes: ['Shippuden ep. 113-118'],
     color: '#b00808',
     steps: [
       { order: 1, locationId: 'loc-orochimaru-hideout', label: 'Hebi' },
@@ -180,6 +198,8 @@ export const narutoRoutes: Route[] = [
     description:
       'Spostamenti operativi dell\'Akatsuki ad Amegakure e oltre.',
     protagonistCharacterIds: ['char-itachi', 'char-pain', 'char-obito'],
+    mangaChapters: ['139-144', '245-281', '403-449'],
+    animeEpisodes: ['ep. 83-84', 'Shippuden ep. 1-32', 'Shippuden ep. 152-175'],
     color: '#7d0606',
     steps: [
       { order: 1, locationId: 'loc-akatsuki-hq', label: 'Quartier generale' },
@@ -197,6 +217,8 @@ export const narutoRoutes: Route[] = [
       'Dal Monte Myōboku alle ricerche su Akatsuki ad Amegakure.',
     protagonistCharacterIds: ['char-jiraiya'],
     arcId: 'arc-jiraiya-gallant',
+    mangaChapters: ['370-383'],
+    animeEpisodes: ['Shippuden ep. 127-133'],
     color: '#86cdff',
     steps: [
       { order: 1, locationId: 'loc-konoha', label: 'Konoha' },
@@ -213,6 +235,8 @@ export const narutoRoutes: Route[] = [
       'I sei corpi di Pain lasciano Amegakure per attaccare Konoha.',
     protagonistCharacterIds: ['char-pain'],
     arcId: 'arc-pain-assault',
+    mangaChapters: ['403-449'],
+    animeEpisodes: ['Shippuden ep. 152-175'],
     color: '#6aa8d8',
     steps: [
       { order: 1, locationId: 'loc-ame', label: 'Partenza da Amegakure' },
@@ -228,6 +252,8 @@ export const narutoRoutes: Route[] = [
       'I Kage convergono nel Paese del Ferro. Sasuke attacca il vertice.',
     protagonistCharacterIds: ['char-sasuke'],
     arcId: 'arc-five-kage-summit',
+    mangaChapters: ['450-483'],
+    animeEpisodes: ['Shippuden ep. 197-214'],
     color: '#c8ccd6',
     steps: [
       { order: 1, locationId: 'loc-konoha', label: 'Tsunade incapace · Danzo' },
@@ -244,6 +270,8 @@ export const narutoRoutes: Route[] = [
       'Naruto raggiunge l\'Isola Tartaruga per allenarsi a controllare Kurama.',
     protagonistCharacterIds: ['char-naruto'],
     arcId: 'arc-fourth-war-countdown',
+    mangaChapters: ['484-515'],
+    animeEpisodes: ['Shippuden ep. 215-222'],
     color: '#5dc1d6',
     steps: [
       { order: 1, locationId: 'loc-konoha', label: 'Partenza segreta' },
@@ -264,6 +292,8 @@ export const narutoRoutes: Route[] = [
       'char-gaara',
     ],
     arcId: 'arc-fourth-war',
+    mangaChapters: ['516-699'],
+    animeEpisodes: ['Shippuden ep. 261-479'],
     color: '#ff8311',
     steps: [
       { order: 1, locationId: 'loc-konoha', label: 'Dichiarazione di guerra', eventId: 'ev-war-declaration' },
@@ -280,6 +310,8 @@ export const narutoRoutes: Route[] = [
     description:
       'Dal ponte Kannabi al campo della Quarta Guerra.',
     protagonistCharacterIds: ['char-obito'],
+    mangaChapters: ['243-244', '516-657'],
+    animeEpisodes: ['Shippuden ep. 119-120', 'Shippuden ep. 261-375'],
     color: '#4cb6ff',
     steps: [
       { order: 1, locationId: 'loc-kannabi-bridge', label: 'Kannabi', eventId: 'ev-kannabi-bridge' },
@@ -297,6 +329,8 @@ export const narutoRoutes: Route[] = [
     description:
       'Dalla strage Uchiha al confronto finale con Sasuke.',
     protagonistCharacterIds: ['char-itachi'],
+    mangaChapters: ['222-225', '343-402'],
+    animeEpisodes: ['Shippuden ep. 141-143', 'Shippuden ep. 113-143'],
     color: '#b00808',
     steps: [
       { order: 1, locationId: 'loc-konoha-uchiha-district', label: 'Strage del clan', eventId: 'ev-uchiha-massacre' },
@@ -312,6 +346,8 @@ export const narutoRoutes: Route[] = [
     description:
       'Da Konoha a Mt. Myōboku passando per gli allenamenti con Jiraiya.',
     protagonistCharacterIds: ['char-naruto'],
+    mangaChapters: ['1-515'],
+    animeEpisodes: ['ep. 1-220', 'Shippuden ep. 1-256'],
     color: '#f06600',
     steps: [
       { order: 1, locationId: 'loc-konoha-training-7', label: 'Team 7 / Prova dei sonagli', eventId: 'ev-team-7-formed' },
@@ -328,6 +364,8 @@ export const narutoRoutes: Route[] = [
     description:
       'Sasuke da Hebi a Taka, fino all\'attacco al Summit dei Kage.',
     protagonistCharacterIds: ['char-sasuke'],
+    mangaChapters: ['343-483'],
+    animeEpisodes: ['Shippuden ep. 113-214'],
     color: '#7d0606',
     steps: [
       { order: 1, locationId: 'loc-orochimaru-hideout', label: 'Sasuke supera Orochimaru', eventId: 'ev-sasuke-killing-orochimaru' },
@@ -344,6 +382,8 @@ export const narutoRoutes: Route[] = [
       'Dalla dimensione Kaguya al duello conclusivo Naruto vs Sasuke.',
     protagonistCharacterIds: ['char-naruto', 'char-sasuke'],
     arcId: 'arc-final-battle',
+    mangaChapters: ['693-699'],
+    animeEpisodes: ['Shippuden ep. 474-479'],
     color: '#e10b0b',
     steps: [
       { order: 1, locationId: 'loc-kaguya-dimensions', label: 'Sigillamento Kaguya', eventId: 'ev-team-7-vs-kaguya' },

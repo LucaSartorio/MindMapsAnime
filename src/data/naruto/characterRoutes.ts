@@ -22,6 +22,8 @@ export const narutoCharacterRoutes: Route[] = [
     protagonistCharacterIds: ['char-sakura'],
     primaryCharacterIds: ['char-sakura'],
     relatedArcIds: ['arc-prologue', 'arc-kazekage-rescue', 'arc-fourth-war'],
+    mangaChapters: ['1-700'],
+    animeEpisodes: ['ep. 1-220', 'Shippuden ep. 1-500'],
     color: '#ff6fa3',
     lineStyle: 'solid',
     steps: [
@@ -43,6 +45,8 @@ export const narutoCharacterRoutes: Route[] = [
       'Dalla guerra a Kannabi Bridge al ruolo di Sesto Hokage.',
     protagonistCharacterIds: ['char-kakashi'],
     primaryCharacterIds: ['char-kakashi'],
+    mangaChapters: ['1-700'],
+    animeEpisodes: ['ep. 1-220', 'Shippuden ep. 1-500'],
     color: '#a0aab8',
     lineStyle: 'solid',
     steps: [
@@ -64,6 +68,8 @@ export const narutoCharacterRoutes: Route[] = [
       'Dal lutto post-guerra al ritorno a Konoha come Quinto Hokage.',
     protagonistCharacterIds: ['char-tsunade'],
     primaryCharacterIds: ['char-tsunade'],
+    mangaChapters: ['139-171', '245-700'],
+    animeEpisodes: ['ep. 81-100', 'Shippuden ep. 1-500'],
     color: '#f5d182',
     lineStyle: 'solid',
     steps: [
@@ -84,6 +90,8 @@ export const narutoCharacterRoutes: Route[] = [
       'Dal tradimento di Konoha alla fondazione del Villaggio del Suono.',
     protagonistCharacterIds: ['char-orochimaru'],
     primaryCharacterIds: ['char-orochimaru'],
+    mangaChapters: ['116-138', '282-310'],
+    animeEpisodes: ['ep. 68-80', 'Shippuden ep. 33-53'],
     color: '#8a8aa0',
     lineStyle: 'solid',
     steps: [
@@ -104,6 +112,8 @@ export const narutoCharacterRoutes: Route[] = [
       'Da arma del Quarto Kazekage a Quinto Kazekage e simbolo di pace.',
     protagonistCharacterIds: ['char-gaara'],
     primaryCharacterIds: ['char-gaara'],
+    mangaChapters: ['34-115', '245-281', '516-568'],
+    animeEpisodes: ['ep. 20-67', 'Shippuden ep. 1-32', 'Shippuden ep. 261-329'],
     color: '#d4be78',
     lineStyle: 'solid',
     steps: [
@@ -125,6 +135,8 @@ export const narutoCharacterRoutes: Route[] = [
       'Dall\'ombra del clan Hyuga al fianco di Naruto nella Quarta Guerra.',
     protagonistCharacterIds: ['char-hinata'],
     primaryCharacterIds: ['char-hinata'],
+    mangaChapters: ['34-115', '403-449', '614'],
+    animeEpisodes: ['ep. 20-67', 'Shippuden ep. 152-175', 'Shippuden ep. 364'],
     color: '#b8a8d8',
     lineStyle: 'solid',
     steps: [
@@ -145,6 +157,8 @@ export const narutoCharacterRoutes: Route[] = [
       'Dal genin del Team 10 al consigliere strategico dell\'Hokage.',
     protagonistCharacterIds: ['char-shikamaru'],
     primaryCharacterIds: ['char-shikamaru'],
+    mangaChapters: ['34-115', '311-342', '516-700'],
+    animeEpisodes: ['ep. 20-67', 'Shippuden ep. 72-88', 'Shippuden ep. 261-500'],
     color: '#5a6470',
     lineStyle: 'solid',
     steps: [
@@ -165,6 +179,8 @@ export const narutoCharacterRoutes: Route[] = [
       'Dalla rinascita post-Gaara alla Quarta Guerra.',
     protagonistCharacterIds: ['char-rock-lee'],
     primaryCharacterIds: ['char-rock-lee'],
+    mangaChapters: ['34-115', '245-281', '516-568'],
+    animeEpisodes: ['ep. 20-67', 'Shippuden ep. 1-32', 'Shippuden ep. 261-329'],
     color: '#5cb85c',
     lineStyle: 'solid',
     steps: [
@@ -185,6 +201,8 @@ export const narutoCharacterRoutes: Route[] = [
       'Dagli orfani di Ame al leader dell\'Akatsuki che assedia Konoha.',
     protagonistCharacterIds: ['char-pain'],
     primaryCharacterIds: ['char-pain'],
+    mangaChapters: ['372-374', '403-449'],
+    animeEpisodes: ['Shippuden ep. 127-128', 'Shippuden ep. 152-175'],
     color: '#5b6a78',
     lineStyle: 'solid',
     steps: [
@@ -205,6 +223,8 @@ export const narutoCharacterRoutes: Route[] = [
       'Da orfana ad ultimo presidio dell\'Akatsuki di Yahiko.',
     protagonistCharacterIds: ['char-konan'],
     primaryCharacterIds: ['char-konan'],
+    mangaChapters: ['372-374', '509-510'],
+    animeEpisodes: ['Shippuden ep. 127-128', 'Shippuden ep. 252-253'],
     color: '#86a4d8',
     lineStyle: 'solid',
     steps: [
@@ -224,6 +244,8 @@ export const narutoCharacterRoutes: Route[] = [
       'Da assistente di Orochimaru a maestro dell\'Edo Tensei nella Quarta Guerra.',
     protagonistCharacterIds: ['char-kabuto'],
     primaryCharacterIds: ['char-kabuto'],
+    mangaChapters: ['34-115', '282-310', '516-593'],
+    animeEpisodes: ['ep. 20-67', 'Shippuden ep. 33-53', 'Shippuden ep. 261-339'],
     color: '#a89868',
     lineStyle: 'solid',
     steps: [
@@ -244,6 +266,8 @@ export const narutoCharacterRoutes: Route[] = [
       'Da missing-nin di Iwa ad Akatsuki, fino al suicidio contro Sasuke.',
     protagonistCharacterIds: ['char-deidara'],
     primaryCharacterIds: ['char-deidara'],
+    mangaChapters: ['245-281', '355-362'],
+    animeEpisodes: ['Shippuden ep. 1-32', 'Shippuden ep. 115-117'],
     color: '#d8b86a',
     lineStyle: 'solid',
     steps: [
@@ -264,6 +288,8 @@ export const narutoCharacterRoutes: Route[] = [
       'Da Suna all\'Akatsuki, fino allo scontro con la nonna Chiyo.',
     protagonistCharacterIds: ['char-sasori'],
     primaryCharacterIds: ['char-sasori'],
+    mangaChapters: ['245-281'],
+    animeEpisodes: ['Shippuden ep. 1-32'],
     color: '#c87878',
     lineStyle: 'solid',
     steps: [
@@ -283,6 +309,8 @@ export const narutoCharacterRoutes: Route[] = [
       'Da Taki a missing-nin ad Akatsuki.',
     protagonistCharacterIds: ['char-kakuzu'],
     primaryCharacterIds: ['char-kakuzu'],
+    mangaChapters: ['311-342'],
+    animeEpisodes: ['Shippuden ep. 72-88'],
     color: '#3a6044',
     lineStyle: 'dashed',
     steps: [
@@ -302,6 +330,8 @@ export const narutoCharacterRoutes: Route[] = [
       'Da Yugakure all\'Akatsuki, fino alla sepoltura nella foresta Nara.',
     protagonistCharacterIds: ['char-hidan'],
     primaryCharacterIds: ['char-hidan'],
+    mangaChapters: ['311-342'],
+    animeEpisodes: ['Shippuden ep. 72-88'],
     color: '#9c5b8b',
     lineStyle: 'dashed',
     steps: [
@@ -321,6 +351,8 @@ export const narutoCharacterRoutes: Route[] = [
       'Da Sette Spadaccini ad Akatsuki accanto a Itachi.',
     protagonistCharacterIds: ['char-kisame'],
     primaryCharacterIds: ['char-kisame'],
+    mangaChapters: ['139-144', '484-515'],
+    animeEpisodes: ['ep. 83-84', 'Shippuden ep. 215-222'],
     color: '#3a6478',
     lineStyle: 'solid',
     steps: [
@@ -341,6 +373,8 @@ export const narutoCharacterRoutes: Route[] = [
       'Da Kumo all\'Isola Tartaruga, fino al fianco di Naruto.',
     protagonistCharacterIds: ['char-killer-b'],
     primaryCharacterIds: ['char-killer-b'],
+    mangaChapters: ['384-402', '484-515', '516-650'],
+    animeEpisodes: ['Shippuden ep. 134-143', 'Shippuden ep. 215-256', 'Shippuden ep. 261-361'],
     color: '#3868c0',
     lineStyle: 'solid',
     steps: [
@@ -360,6 +394,8 @@ export const narutoCharacterRoutes: Route[] = [
       'Dal Team Minato all\'Hokage caduto contro Kurama.',
     protagonistCharacterIds: ['char-minato'],
     primaryCharacterIds: ['char-minato'],
+    mangaChapters: ['1', '239-244', '499-504'],
+    animeEpisodes: ['ep. 1-2', 'Shippuden ep. 119-120', 'Shippuden ep. 247-249'],
     color: '#f0c850',
     lineStyle: 'solid',
     steps: [
@@ -380,6 +416,8 @@ export const narutoCharacterRoutes: Route[] = [
       'Da bambina di Uzushio a jinchūriki di Konoha, madre di Naruto.',
     protagonistCharacterIds: ['char-kushina'],
     primaryCharacterIds: ['char-kushina'],
+    mangaChapters: ['498-504'],
+    animeEpisodes: ['Shippuden ep. 246-249'],
     color: '#ef4444',
     lineStyle: 'dashed',
     steps: [
@@ -399,6 +437,8 @@ export const narutoCharacterRoutes: Route[] = [
       'Dalla rivalità con Madara alla fondazione di Konoha.',
     protagonistCharacterIds: ['char-hashirama'],
     primaryCharacterIds: ['char-hashirama'],
+    mangaChapters: ['399-402', '559-565'],
+    animeEpisodes: ['Shippuden ep. 343-346', 'Shippuden ep. 321-322'],
     color: '#3aa07a',
     lineStyle: 'solid',
     steps: [
@@ -418,6 +458,8 @@ export const narutoCharacterRoutes: Route[] = [
       'Dal Team Tobirama al Summit dei Kage, dove muore per mano di Sasuke.',
     protagonistCharacterIds: ['char-danzo'],
     primaryCharacterIds: ['char-danzo'],
+    mangaChapters: ['450-483'],
+    animeEpisodes: ['Shippuden ep. 197-214'],
     color: '#454552',
     lineStyle: 'solid',
     steps: [
