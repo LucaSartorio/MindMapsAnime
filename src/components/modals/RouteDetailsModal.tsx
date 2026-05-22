@@ -52,7 +52,7 @@ export function RouteDetailsModal({
       title={getLocalizedText(route.localizedName, locale) || route.name}
       badges={
         <>
-          <Badge>{steps.length} step</Badge>
+          <Badge>{t('modals.stepCount', { count: steps.length })}</Badge>
           {arc && <Badge variant="accent">{getLocalizedText(arc.localizedName, locale) || arc.name}</Badge>}
           {route.referenceStatus && (
             <ReferencePill status={route.referenceStatus} />
@@ -81,10 +81,28 @@ export function RouteDetailsModal({
         {getLocalizedText(route.description, locale)}
       </p>
 
+      {((route.mangaChapters?.length ?? 0) > 0 || (route.animeEpisodes?.length ?? 0) > 0) && (
+        <section>
+          <h3 className="font-display text-[11px] uppercase tracking-widest text-chakra-300 mb-2">
+            {t('modals.references')}
+          </h3>
+          {route.mangaChapters?.length ? (
+            <p className="text-ink-300">
+              <strong>{t('modals.manga')}:</strong> {route.mangaChapters.join(', ')}
+            </p>
+          ) : null}
+          {route.animeEpisodes?.length ? (
+            <p className="text-ink-300">
+              <strong>{t('modals.anime')}:</strong> {route.animeEpisodes.join(', ')}
+            </p>
+          ) : null}
+        </section>
+      )}
+
       {protagonists.length > 0 && (
         <section>
           <h3 className="font-display text-[11px] uppercase tracking-widest text-chakra-300 mb-2">
-            Protagonisti
+            {t('modals.protagonists')}
           </h3>
           <div className="flex flex-wrap gap-1.5">
             {protagonists.map((c) => (
@@ -116,7 +134,7 @@ export function RouteDetailsModal({
 
       <section>
         <h3 className="font-display text-[11px] uppercase tracking-widest text-chakra-300 mb-2">
-          Ordine degli step
+          {t('modals.stepsOrder')}
         </h3>
         <ol className="space-y-1.5">
           {steps.map((s) => {
@@ -158,7 +176,7 @@ export function RouteDetailsModal({
                     onClick={() => openEvent(ev.id)}
                     className="chip text-[10px] hover:border-chakra-500/70 hover:text-white"
                   >
-                    evento
+                    {t('modals.eventLink')}
                   </button>
                 )}
               </li>

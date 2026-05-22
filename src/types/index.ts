@@ -576,6 +576,8 @@ export interface Route {
   steps: RouteStep[];
   color?: string;
   lineStyle?: RouteLineStyle;
+  mangaChapters?: string[];
+  animeEpisodes?: string[];
   canonStatus?: CanonStatus;
   referenceStatus?: ReferenceStatus;
   tags?: string[];

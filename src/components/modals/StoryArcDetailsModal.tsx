@@ -60,7 +60,7 @@ export function StoryArcDetailsModal({
       }
       footer={
         <Button variant="primary" onClick={close}>
-          Chiudi
+          {t('modals.close')}
         </Button>
       }
     >
@@ -95,7 +95,7 @@ export function StoryArcDetailsModal({
       {locations.length > 0 && (
         <section>
           <h3 className="font-display text-[11px] uppercase tracking-widest text-chakra-300 mb-2">
-            Luoghi coinvolti
+            {t('modals.relatedLocations')}
           </h3>
           <div className="flex flex-wrap gap-1.5">
             {locations.map((l) => (
@@ -105,7 +105,7 @@ export function StoryArcDetailsModal({
                 onClick={() => openLocation(l.id)}
                 className="chip hover:border-chakra-500/70 hover:text-white"
               >
-                {l.name}
+                {getLocalizedText(l.localizedName, locale) || l.name}
               </button>
             ))}
           </div>
@@ -135,7 +135,7 @@ export function StoryArcDetailsModal({
       {events.length > 0 && (
         <section>
           <h3 className="font-display text-[11px] uppercase tracking-widest text-chakra-300 mb-2">
-            Eventi dell'arco
+            {t('modals.arcEvents')}
           </h3>
           <ol className="space-y-1.5">
             {events.map((e) => (
