@@ -188,7 +188,7 @@ export const narutoFactions: Faction[] = [
     japaneseName: '霧の忍刀七人衆',
     description:
       'Élite di sette spadaccini di Kirigakure. Ogni membro porta una delle Sette Spade.',
-    characterIds: ['char-zabuza', 'char-kisame', 'char-mangetsu', 'char-chojuro'],
+    characterIds: ['char-zabuza', 'char-kisame', 'char-mangetsu', 'char-chojuro', 'char-ameyuri-ringo', 'char-jinin-akebino', 'char-kushimaru-kuriarare', 'char-fuguki-suikazan'],
     locationIds: ['loc-kiri'],
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -202,7 +202,7 @@ export const narutoFactions: Faction[] = [
     description:
       'Scorta d\'élite di Orochimaru: Tayuya, Sakon/Ukon, Jirobo, Kidomaru. Più tardi Kimimaro.',
     leaderIds: ['char-orochimaru'],
-    characterIds: ['char-kimimaro'],
+    characterIds: ['char-kimimaro', 'char-tayuya', 'char-sakon', 'char-jirobo', 'char-kidomaru'],
     locationIds: ['loc-oto'],
     arcIds: ['arc-sasuke-retrieval'],
     canonStatus: 'canon',

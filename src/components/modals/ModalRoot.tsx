@@ -8,6 +8,7 @@ import { FactionDetailsModal } from './FactionDetailsModal';
 import { RouteDetailsModal } from './RouteDetailsModal';
 import { BoundaryDetailsModal } from './BoundaryDetailsModal';
 import { NationDetailsModal } from './NationDetailsModal';
+import { JutsuDetailsModal } from './JutsuDetailsModal';
 
 interface ModalRootProps {
   dataset: WorldDataset;
@@ -48,6 +49,8 @@ export function ModalRoot({ dataset }: ModalRootProps) {
       );
     case 'nation':
       return <NationDetailsModal dataset={dataset} nationId={activeModal.id} />;
+    case 'jutsu':
+      return <JutsuDetailsModal dataset={dataset} jutsuId={activeModal.id} />;
     default:
       return null;
   }

@@ -131,10 +131,12 @@ export function validateDataset(dataset: WorldDataset): ValidationReport {
   checkUnique(dataset.boundaries, 'boundary', issues);
   checkUnique(dataset.mapLevels, 'mapLevel', issues);
   checkUnique(dataset.assets, 'asset', issues);
+  checkUnique(dataset.jutsu, 'jutsu', issues);
 
   // Pool di id validi
   const cId = new Set(dataset.characters.map((x) => x.id));
   const fId = new Set(dataset.factions.map((x) => x.id));
+  const jutsuId = new Set((dataset.jutsu ?? []).map((x) => x.id));
   const tId = new Set((dataset.teams ?? []).map((x) => x.id));
   const aId = new Set(dataset.arcs.map((x) => x.id));
   const eId = new Set(dataset.events.map((x) => x.id));
@@ -161,6 +163,7 @@ export function validateDataset(dataset: WorldDataset): ValidationReport {
     checkRef(c.eventIds, eId, 'character', 'eventIds', c.id, issues);
     checkRef(c.locationIds, lId, 'character', 'locationIds', c.id, issues);
     checkRef(c.routeIds, rId, 'character', 'routeIds', c.id, issues);
+    checkRef(c.jutsuIds, jutsuId, 'character', 'jutsuIds', c.id, issues);
     checkRef(c.teachers, cId, 'character', 'teachers', c.id, issues);
     checkRef(c.students, cId, 'character', 'students', c.id, issues);
     checkRef(c.family, cId, 'character', 'family', c.id, issues);
@@ -187,6 +190,7 @@ export function validateDataset(dataset: WorldDataset): ValidationReport {
     checkRef(f.arcIds, aId, 'faction', 'arcIds', f.id, issues);
     checkRef(f.eventIds, eId, 'faction', 'eventIds', f.id, issues);
     checkRef(f.routeIds, rId, 'faction', 'routeIds', f.id, issues);
+    checkRef(f.jutsuIds, jutsuId, 'faction', 'jutsuIds', f.id, issues);
   }
 
   /* ---------- Teams ---------- */
@@ -290,6 +294,16 @@ export function validateDataset(dataset: WorldDataset): ValidationReport {
         checkSingleRef(s.arcId, aId, 'route', `step#${s.order}.arcId`, r.id, issues);
       }
     }
+  }
+
+  /* ---------- Jutsu ---------- */
+  for (const j of dataset.jutsu ?? []) {
+    if (!j.name)
+      addIssue(issues, 'error', 'missing_name', 'jutsu', `Jutsu ${j.id} senza nome`, j.id);
+    if (!j.type)
+      addIssue(issues, 'error', 'missing_type', 'jutsu', `Jutsu ${j.id} senza type`, j.id);
+    checkRef(j.characterIds, cId, 'jutsu', 'characterIds', j.id, issues);
+    checkRef(j.clanIds, fId, 'jutsu', 'clanIds', j.id, issues);
   }
 
   /* ---------- Nations ---------- */

@@ -1,6 +1,7 @@
 import type {
   Character,
   Faction,
+  Jutsu,
   Location,
   Route,
   StoryArc,
@@ -45,3 +46,8 @@ export const findRoute = (
 
 export const findNation = (dataset: WorldDataset, id?: string | null) =>
   dataset.nations.find((n) => n.id === id);
+
+export const findJutsu = (
+  dataset: WorldDataset,
+  id?: string | null,
+): Jutsu | undefined => (dataset.jutsu ?? []).find((j) => j.id === id);

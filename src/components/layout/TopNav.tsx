@@ -31,6 +31,7 @@ export function TopNav() {
           label: t('nav.characters'),
         },
         { to: `/worlds/${worldSlug}/clans`, label: t('nav.clansFactions') },
+        { to: `/worlds/${worldSlug}/jutsu`, label: t('nav.jutsu') },
         { to: `/worlds/${worldSlug}/arcs`, label: t('nav.arcs') },
         { to: `/worlds/${worldSlug}/sources`, label: t('nav.sources') },
       ]

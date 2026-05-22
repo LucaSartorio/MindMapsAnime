@@ -70,8 +70,10 @@ export function getLocalizedArray(
 
 import type {
   CanonStatus,
+  ChakraNature,
   CharacterImportance,
   CharacterStatus,
+  JutsuType,
   LocationType,
   ReferenceStatus,
   WorldStatus,
@@ -164,4 +166,56 @@ export function getLocationTypeLabel(
     cave: { it: 'Caverna', en: 'Cave' },
   };
   return getLocalizedText(map[type], locale);
+}
+
+export function getJutsuTypeLabel(
+  type: JutsuType,
+  locale: SupportedLocale,
+): string {
+  const map: Record<JutsuType, LocalizedText> = {
+    ninjutsu: { it: 'Ninjutsu', en: 'Ninjutsu' },
+    taijutsu: { it: 'Taijutsu', en: 'Taijutsu' },
+    genjutsu: { it: 'Genjutsu', en: 'Genjutsu' },
+    fuinjutsu: { it: 'Fūinjutsu (sigilli)', en: 'Fūinjutsu (sealing)' },
+    senjutsu: { it: 'Senjutsu (eremitico)', en: 'Senjutsu (sage)' },
+    kenjutsu: { it: 'Kenjutsu (spada)', en: 'Kenjutsu (sword)' },
+    ijutsu: { it: 'Ijutsu (medico)', en: 'Ijutsu (medical)' },
+    hiden: { it: 'Hiden (segreto di clan)', en: 'Hiden (clan secret)' },
+    doujutsu: { it: 'Dōjutsu (oculare)', en: 'Dōjutsu (ocular)' },
+    tailed_beast: { it: 'Bestia con Code', en: 'Tailed Beast' },
+    cooperation: { it: 'Cooperazione', en: 'Cooperation' },
+  };
+  return getLocalizedText(map[type], locale);
+}
+
+export function getChakraNatureLabel(
+  nature: ChakraNature,
+  locale: SupportedLocale,
+): string {
+  const map: Record<ChakraNature, LocalizedText> = {
+    fire: { it: 'Fuoco (Katon)', en: 'Fire (Katon)' },
+    water: { it: 'Acqua (Suiton)', en: 'Water (Suiton)' },
+    earth: { it: 'Terra (Doton)', en: 'Earth (Doton)' },
+    lightning: { it: 'Fulmine (Raiton)', en: 'Lightning (Raiton)' },
+    wind: { it: 'Vento (Fūton)', en: 'Wind (Fūton)' },
+    yin: { it: 'Yin', en: 'Yin' },
+    yang: { it: 'Yang', en: 'Yang' },
+    yin_yang: { it: 'Yin-Yang', en: 'Yin-Yang' },
+    wood: { it: 'Legno (Mokuton)', en: 'Wood (Mokuton)' },
+    ice: { it: 'Ghiaccio (Hyōton)', en: 'Ice (Hyōton)' },
+    lava: { it: 'Lava (Yōton)', en: 'Lava (Yōton)' },
+    boil: { it: 'Vapore (Futton)', en: 'Boil (Futton)' },
+    magnet: { it: 'Magnete (Jiton)', en: 'Magnet (Jiton)' },
+    explosion: { it: 'Esplosione (Bakuton)', en: 'Explosion (Bakuton)' },
+    storm: { it: 'Tempesta (Ranton)', en: 'Storm (Ranton)' },
+    dust: { it: 'Polvere (Jinton)', en: 'Dust (Jinton)' },
+    scorch: { it: 'Arsura (Shakuton)', en: 'Scorch (Shakuton)' },
+    crystal: { it: 'Cristallo (Shōton)', en: 'Crystal (Shōton)' },
+    dark: { it: 'Oscurità', en: 'Dark' },
+    swift: { it: 'Velocità (Jinton)', en: 'Swift' },
+    steel: { it: 'Acciaio', en: 'Steel' },
+    shadow: { it: 'Ombra', en: 'Shadow' },
+    sand: { it: 'Sabbia', en: 'Sand' },
+  };
+  return getLocalizedText(map[nature], locale);
 }

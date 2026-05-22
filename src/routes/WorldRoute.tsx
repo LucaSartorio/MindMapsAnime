@@ -23,6 +23,11 @@ const StoryArcsPage = lazy(() =>
     default: m.StoryArcsPage,
   })),
 );
+const JutsuPage = lazy(() =>
+  import('@/components/archive/JutsuPage').then((m) => ({
+    default: m.JutsuPage,
+  })),
+);
 const SourcesPage = lazy(() =>
   import('@/pages/SourcesPage').then((m) => ({ default: m.SourcesPage })),
 );
@@ -96,6 +101,16 @@ export function WorldRoute() {
           <WorldLayout dataset={dataset} mapOverlays={false}>
             <LazyFallback>
               <StoryArcsPage dataset={dataset} />
+            </LazyFallback>
+          </WorldLayout>
+        }
+      />
+      <Route
+        path="jutsu"
+        element={
+          <WorldLayout dataset={dataset} mapOverlays={false}>
+            <LazyFallback>
+              <JutsuPage dataset={dataset} />
             </LazyFallback>
           </WorldLayout>
         }

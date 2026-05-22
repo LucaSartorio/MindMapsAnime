@@ -7,7 +7,12 @@ import { ReferencePill } from '@/components/common/StatusPill';
 import { useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText } from '@/utils/localization';
-import { findCharacter, findFaction, findLocation } from '@/lib/entities';
+import {
+  findCharacter,
+  findFaction,
+  findJutsu,
+  findLocation,
+} from '@/lib/entities';
 
 interface FactionDetailsModalProps {
   dataset: WorldDataset;
@@ -25,6 +30,7 @@ export function FactionDetailsModal({
   const openCharacter = useUiStore((s) => s.openCharacterModal);
   const openLocation = useUiStore((s) => s.openLocationModal);
   const openArc = useUiStore((s) => s.openArcModal);
+  const openJutsu = useUiStore((s) => s.openJutsuModal);
 
   if (!faction) {
     return (
@@ -44,6 +50,9 @@ export function FactionDetailsModal({
   const arcs = (faction.arcIds ?? [])
     .map((id) => dataset.arcs.find((a) => a.id === id))
     .filter((a): a is NonNullable<typeof a> => !!a);
+  const jutsu = (faction.jutsuIds ?? [])
+    .map((id) => findJutsu(dataset, id))
+    .filter((j): j is NonNullable<typeof j> => !!j);
 
   return (
     <Modal
@@ -97,6 +106,26 @@ export function FactionDetailsModal({
               <Badge key={a} variant="ember">
                 {a}
               </Badge>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {jutsu.length > 0 && (
+        <section>
+          <h3 className="font-display text-[11px] uppercase tracking-widest text-chakra-300 mb-2">
+            {t('modals.relatedJutsu')}
+          </h3>
+          <div className="flex flex-wrap gap-1.5">
+            {jutsu.map((j) => (
+              <button
+                key={j.id}
+                type="button"
+                onClick={() => openJutsu(j.id)}
+                className="chip hover:border-chakra-500/70 hover:text-white"
+              >
+                {getLocalizedText(j.localizedName, locale) || j.name}
+              </button>
             ))}
           </div>
         </section>

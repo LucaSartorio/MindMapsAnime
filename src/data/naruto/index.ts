@@ -2,8 +2,10 @@ import type { WorldDataset } from '@/types';
 import { animeWorlds } from '@/data/worlds';
 import { narutoLocations } from './locations';
 import { narutoCharacters } from './characters';
+import { narutoCharactersExtra } from './charactersExtra';
 import { narutoClans } from './clans';
 import { narutoFactions } from './factions';
+import { narutoClansExtra, narutoFactionsExtra } from './factionsExtra';
 import { narutoTeams } from './teams';
 import { narutoArcs } from './arcs';
 import { narutoEvents } from './events';
@@ -13,6 +15,7 @@ import { narutoAssets } from './assets';
 import { narutoNations } from './nations';
 import { narutoMapLevels } from './mapLevels';
 import { narutoBoundaries } from './boundaries';
+import { narutoJutsu } from './jutsu';
 
 const naruto = animeWorlds.find((w) => w.slug === 'naruto')!;
 
@@ -23,14 +26,15 @@ export const narutoDataset: WorldDataset = {
   nations: narutoNations,
   boundaries: narutoBoundaries,
   locations: narutoLocations,
-  characters: narutoCharacters,
+  characters: [...narutoCharacters, ...narutoCharactersExtra],
   // Per la pagina "Clans & Factions" uniamo clan + organizzazioni/eserciti/gruppi.
-  factions: [...narutoClans, ...narutoFactions],
+  factions: [...narutoClans, ...narutoClansExtra, ...narutoFactions, ...narutoFactionsExtra],
   teams: narutoTeams,
   arcs: narutoArcs,
   events: narutoEvents,
   // Percorsi narrativi + percorsi specifici dei personaggi
   routes: [...narutoRoutes, ...narutoCharacterRoutes],
+  jutsu: narutoJutsu,
   assets: narutoAssets,
 };
 

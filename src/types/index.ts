@@ -79,6 +79,81 @@ export type FactionType =
   | 'army'
   | 'group';
 
+/* ------------------------------ Jutsu ------------------------------ */
+
+export type JutsuType =
+  | 'ninjutsu'
+  | 'taijutsu'
+  | 'genjutsu'
+  | 'fuinjutsu'
+  | 'senjutsu'
+  | 'kenjutsu'
+  | 'ijutsu'
+  | 'hiden'
+  | 'doujutsu'
+  | 'tailed_beast'
+  | 'cooperation';
+
+export type ChakraNature =
+  | 'fire'
+  | 'water'
+  | 'earth'
+  | 'lightning'
+  | 'wind'
+  | 'yin'
+  | 'yang'
+  | 'yin_yang'
+  | 'wood'
+  | 'ice'
+  | 'lava'
+  | 'boil'
+  | 'magnet'
+  | 'explosion'
+  | 'storm'
+  | 'dust'
+  | 'scorch'
+  | 'crystal'
+  | 'dark'
+  | 'swift'
+  | 'steel'
+  | 'shadow'
+  | 'sand';
+
+export type HandSeal =
+  | 'Bird'
+  | 'Boar'
+  | 'Dog'
+  | 'Dragon'
+  | 'Hare'
+  | 'Horse'
+  | 'Monkey'
+  | 'Ox'
+  | 'Ram'
+  | 'Rat'
+  | 'Serpent'
+  | 'Tiger'
+  | 'Tiger-Horse-Dog'
+  | 'None';
+
+export type JutsuClassification =
+  | 'kekkei_genkai'
+  | 'kekkei_mora'
+  | 'space_time'
+  | 'medical'
+  | 'barrier'
+  | 'clone'
+  | 'transformation'
+  | 'summoning'
+  | 'sealing'
+  | 'cursed_seal'
+  | 'senjutsu'
+  | 'tailed_beast'
+  | 'dojutsu'
+  | 'reincarnation'
+  | 'supplementary'
+  | 'offensive'
+  | 'defensive';
+
 /* ------------------------------ Boundaries / Regioni ------------------------------ */
 
 export type BoundaryType =
@@ -300,10 +375,12 @@ export interface Character {
   firstAnimeAppearance?: string;
   shortDescription: Localizable;
   longDescription?: Localizable;
-  /** Abilità o tecniche caratteristiche */
+  /** Abilità o tecniche caratteristiche (free-text legacy) */
   abilities?: string[];
   /** Kekkei Genkai posseduti */
   kekkeiGenkai?: string[];
+  /** Jutsu noti (riferimenti a Jutsu.id) */
+  jutsuIds?: string[];
   /** Contratti di evocazione */
   summons?: string[];
   /** Maestri */
@@ -352,6 +429,8 @@ export interface Faction {
   longDescription?: Localizable;
   signatureAbilities?: string[];
   kekkeiGenkai?: string;
+  /** Jutsu / tecniche firma del clan o fazione (riferimenti a Jutsu.id) */
+  jutsuIds?: string[];
   /** Leader / capi noti */
   leaderIds?: string[];
   characterIds?: string[];
@@ -514,6 +593,35 @@ export interface Team {
   tags?: string[];
 }
 
+/* ------------------------------ Jutsu ------------------------------ */
+
+export interface Jutsu {
+  id: string;
+  worldId: string;
+  name: string;
+  localizedName?: Localizable;
+  japaneseName?: string;
+  /** Tipo principale (ninjutsu, taijutsu, genjutsu, …) */
+  type: JutsuType;
+  /** Classificazioni aggiuntive (kekkei_genkai, space_time, medical, …) */
+  classification?: JutsuClassification[];
+  /** Natura/e del chakra richieste */
+  chakraNature?: ChakraNature[];
+  /** Sequenza di sigilli delle mani (in ordine) */
+  handSeals?: HandSeal[];
+  /** Rango ufficiale E/D/C/B/A/S */
+  rank?: 'E' | 'D' | 'C' | 'B' | 'A' | 'S';
+  /** Personaggi che usano/possiedono questo jutsu */
+  characterIds?: string[];
+  /** Clan a cui questa tecnica è associata (hiden, kekkei genkai, …) */
+  clanIds?: string[];
+  shortDescription: Localizable;
+  longDescription?: Localizable;
+  canonStatus?: CanonStatus;
+  referenceStatus?: ReferenceStatus;
+  tags?: string[];
+}
+
 /* ------------------------------ WorldDataset ------------------------------ */
 
 /**
@@ -535,6 +643,8 @@ export interface WorldDataset {
   arcs: StoryArc[];
   events: TimelineEvent[];
   routes: Route[];
+  /** Tecniche ninja (ninjutsu, taijutsu, genjutsu, …). Opzionale. */
+  jutsu?: Jutsu[];
   assets: AssetReference[];
 }
 
@@ -549,7 +659,8 @@ export type SearchResultKind =
   | 'event'
   | 'nation'
   | 'boundary'
-  | 'route';
+  | 'route'
+  | 'jutsu';
 
 export interface SearchResult {
   id: string;

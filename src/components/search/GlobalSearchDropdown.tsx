@@ -103,6 +103,10 @@ export function GlobalSearchDropdown({
         navigate(`/worlds/${slug}`);
         ui.openFactionModal(r.id);
         break;
+      case 'jutsu':
+        navigate(`/worlds/${slug}`);
+        ui.openJutsuModal(r.id);
+        break;
       case 'arc':
         navigate(`/worlds/${slug}`);
         ui.openArcModal(r.id);
