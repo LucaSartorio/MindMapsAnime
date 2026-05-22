@@ -264,6 +264,33 @@ altrimenti usa il placeholder SVG generato localmente.
 
 ---
 
+## ✦ Immagini delle schede (personaggi, jutsu, clan, luoghi)
+
+Ogni scheda mostra un **placeholder SVG tematico** generato localmente e
+coerente con l'entità (avatar con colore del villaggio per i personaggi, icona
+colorata per natura del chakra sui jutsu, stemma per i clan, silhouette per
+tipo di luogo). Componente: `src/components/common/EntityImage.tsx`.
+
+Per usare un'immagine reale (di cui possiedi i diritti), basta un **drop-in**:
+salva il file con il nome dell'id dell'entità sotto la cartella corretta e
+verrà mostrato automaticamente al posto del placeholder (risoluzione a
+build-time via `import.meta.glob`):
+
+```
+src/assets/worlds/naruto/
+├── characters/<characterId>.jpg   es. char-naruto.jpg
+├── jutsu/<jutsuId>.jpg            es. jutsu-rasengan.jpg
+├── clans/<factionId>.jpg          es. clan-uchiha.jpg
+├── locations/<locationId>.jpg     es. loc-konoha.jpg
+└── arcs/<arcId>.jpg
+```
+
+Formati supportati: `jpg`, `jpeg`, `png`, `webp`, `avif`, `svg`. Nessuna
+modifica al codice necessaria. **Non** inserire immagini protette da copyright
+senza i relativi diritti.
+
+---
+
 ## ✦ Copyright & dati narrativi
 
 - I dati narrativi sono **seed iniziali**: vanno verificati su fonti ufficiali

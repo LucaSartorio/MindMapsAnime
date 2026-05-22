@@ -1,6 +1,7 @@
 import type { Faction, WorldDataset } from '@/types';
 import { Card } from '@/components/common/Card';
 import { Badge } from '@/components/common/Badge';
+import { EntityImage } from '@/components/common/EntityImage';
 import { cn } from '@/lib/cn';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText } from '@/utils/localization';
@@ -29,15 +30,24 @@ export function ClanFactionCard({
     <Card
       interactive
       className={cn(
-        'p-4 h-full',
+        'p-0 h-full overflow-hidden cursor-pointer',
         active && 'border-ember-500/70 shadow-ember',
       )}
     >
       <button
         type="button"
         onClick={onClick}
-        className="text-left w-full flex flex-col gap-2"
+        className="text-left w-full h-full flex flex-col"
       >
+        <div className="aspect-[16/10] w-full overflow-hidden border-b border-ink-700/50">
+          <EntityImage
+            kind="clan"
+            id={faction.id}
+            name={name}
+            villageId={faction.villageLocationId}
+          />
+        </div>
+        <div className="flex flex-col gap-2 p-4">
         <div className="flex items-center justify-between gap-2">
           <h3 className="font-display text-lg text-ink-100">{name}</h3>
           <Badge
@@ -73,6 +83,7 @@ export function ClanFactionCard({
               {a}
             </Badge>
           ))}
+        </div>
         </div>
       </button>
     </Card>

@@ -1,6 +1,7 @@
 import type { Character, WorldDataset } from '@/types';
 import { Card } from '@/components/common/Card';
 import { Badge } from '@/components/common/Badge';
+import { EntityImage } from '@/components/common/EntityImage';
 import { ReferencePill } from '@/components/common/StatusPill';
 import { cn } from '@/lib/cn';
 import { useLocaleStore } from '@/store/useLocaleStore';
@@ -34,15 +35,24 @@ export function CharacterCard({
     <Card
       interactive
       className={cn(
-        'cursor-pointer p-4 h-full flex flex-col gap-3',
+        'cursor-pointer p-0 h-full overflow-hidden flex flex-col',
         active && 'border-ember-500/70 shadow-ember',
       )}
     >
       <button
         type="button"
         onClick={onClick}
-        className="flex flex-col gap-3 text-left w-full"
+        className="flex flex-col text-left w-full h-full"
       >
+        <div className="aspect-[16/10] w-full overflow-hidden border-b border-ink-700/50">
+          <EntityImage
+            kind="character"
+            id={character.id}
+            name={character.name}
+            villageId={character.villageLocationId}
+          />
+        </div>
+        <div className="flex flex-col gap-3 p-4">
         <div className="flex items-start justify-between gap-3">
           <div>
             <h3 className="font-display text-lg text-ink-100">
@@ -94,6 +104,7 @@ export function CharacterCard({
           >
             {getCharacterStatusLabel(character.status, locale)}
           </Badge>
+        </div>
         </div>
       </button>
     </Card>

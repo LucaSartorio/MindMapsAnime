@@ -6,6 +6,7 @@ import { getLocalizedText } from '@/utils/localization';
 import { Modal } from '@/components/common/Modal';
 import { Badge } from '@/components/common/Badge';
 import { Button } from '@/components/common/Button';
+import { EntityImage } from '@/components/common/EntityImage';
 import { ReferencePill } from '@/components/common/StatusPill';
 import { useMapStore, useUiStore } from '@/store';
 import {
@@ -84,6 +85,14 @@ export function CharacterDetailsModal({
     <Modal
       open
       onClose={close}
+      media={
+        <EntityImage
+          kind="character"
+          id={character.id}
+          name={character.name}
+          villageId={character.villageLocationId}
+        />
+      }
       eyebrow={t("modals.character")}
       title={character.name}
       badges={
