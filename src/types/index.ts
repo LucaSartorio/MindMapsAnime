@@ -609,8 +609,8 @@ export interface Jutsu {
   chakraNature?: ChakraNature[];
   /** Sequenza di sigilli delle mani (in ordine) */
   handSeals?: HandSeal[];
-  /** Rango ufficiale D/C/B/A/S */
-  rank?: 'D' | 'C' | 'B' | 'A' | 'S';
+  /** Rango ufficiale E/D/C/B/A/S */
+  rank?: 'E' | 'D' | 'C' | 'B' | 'A' | 'S';
   /** Personaggi che usano/possiedono questo jutsu */
   characterIds?: string[];
   /** Clan a cui questa tecnica è associata (hiden, kekkei genkai, …) */
