@@ -15,6 +15,8 @@ export const narutoArcs: StoryArc[] = [
     order: 0,
     description:
       'Era dei Sengoku, fondazione di Konoha, Terza Guerra Ninja, attacco di Kurama, massacro Uchiha.',
+    mangaChapters: ['399-402', '462-464', '499-504', '518-520', '576-590'],
+    animeEpisodes: ['Shippuden ep. 141-143', 'Shippuden ep. 244', 'Shippuden ep. 247-249', 'Shippuden ep. 253-254', 'Shippuden ep. 343-346', 'Shippuden ep. 420-422', 'Shippuden ep. 452-456'],
     canon: 'canon',
     referenceStatus: 'verified',
     tags: ['lore', 'pre-serie'],
@@ -29,6 +31,8 @@ export const narutoArcs: StoryArc[] = [
     order: 1,
     description:
       'Formazione del Team 7 e prima missione di rango C nel Paese delle Onde.',
+    mangaChapters: ['1-33'],
+    animeEpisodes: ['ep. 1-19'],
     locationIds: ['loc-konoha', 'loc-naruto-bridge'],
     characterIds: ['char-naruto', 'char-sasuke', 'char-sakura', 'char-kakashi'],
     canon: 'canon',
@@ -43,6 +47,8 @@ export const narutoArcs: StoryArc[] = [
     order: 2,
     description:
       'Esami di promozione a chunin tenuti a Konoha. Introduzione di Gaara e Orochimaru.',
+    mangaChapters: ['34-115'],
+    animeEpisodes: ['ep. 20-67'],
     locationIds: ['loc-konoha', 'loc-forest-of-death'],
     characterIds: [
       'char-naruto',
@@ -67,6 +73,8 @@ export const narutoArcs: StoryArc[] = [
     order: 3,
     description:
       'Invasione di Konoha orchestrata da Orochimaru con Suna e Oto. Morte di Hiruzen.',
+    mangaChapters: ['116-138'],
+    animeEpisodes: ['ep. 68-80'],
     locationIds: ['loc-konoha'],
     characterIds: ['char-orochimaru', 'char-hiruzen', 'char-gaara'],
     canon: 'canon',
@@ -81,6 +89,8 @@ export const narutoArcs: StoryArc[] = [
     order: 4,
     description:
       'Jiraiya e Naruto cercano Tsunade come Quinto Hokage. Primo incontro con membri Akatsuki.',
+    mangaChapters: ['139-171'],
+    animeEpisodes: ['ep. 81-100'],
     characterIds: [
       'char-jiraiya',
       'char-naruto',
@@ -99,6 +109,8 @@ export const narutoArcs: StoryArc[] = [
     order: 5,
     description:
       'Sasuke abbandona Konoha. Missione "Sound Four" e duello alla Valle della Fine.',
+    mangaChapters: ['172-238'],
+    animeEpisodes: ['ep. 107-135'],
     locationIds: ['loc-konoha', 'loc-valley-of-end'],
     characterIds: ['char-naruto', 'char-sasuke', 'char-shikamaru', 'char-neji'],
     canon: 'canon',
@@ -115,6 +127,8 @@ export const narutoArcs: StoryArc[] = [
     order: 6,
     description:
       'Akatsuki rapisce Gaara. Salvataggio del Team 7 e Team Guy.',
+    mangaChapters: ['245-281'],
+    animeEpisodes: ['Shippuden ep. 1-32'],
     locationIds: ['loc-suna', 'loc-akatsuki-rivers'],
     characterIds: [
       'char-naruto',
@@ -136,6 +150,8 @@ export const narutoArcs: StoryArc[] = [
     order: 7,
     description:
       'Incontro al ponte con la spia di Sasori. Introduzione di Sai.',
+    mangaChapters: ['282-310'],
+    animeEpisodes: ['Shippuden ep. 33-53'],
     locationIds: ['loc-samurai-bridge'],
     characterIds: [
       'char-naruto',
@@ -155,6 +171,8 @@ export const narutoArcs: StoryArc[] = [
     order: 8,
     description:
       'Scontri Hidan/Kakuzu vs Konoha. Vendetta di Shikamaru.',
+    mangaChapters: ['311-342'],
+    animeEpisodes: ['Shippuden ep. 72-88'],
     characterIds: ['char-shikamaru'],
     canon: 'canon',
     referenceStatus: 'verified',
@@ -168,6 +186,8 @@ export const narutoArcs: StoryArc[] = [
     order: 9,
     description:
       'Sasuke insegue Itachi, Hebi vs Akatsuki, duello fra fratelli.',
+    mangaChapters: ['343-369'],
+    animeEpisodes: ['Shippuden ep. 113-118'],
     locationIds: ['loc-orochimaru-hideout'],
     characterIds: ['char-sasuke', 'char-itachi'],
     canon: 'canon',
@@ -182,6 +202,8 @@ export const narutoArcs: StoryArc[] = [
     order: 10,
     description:
       'Jiraiya s\'infiltra ad Amegakure e affronta Pain. Morte di Jiraiya.',
+    mangaChapters: ['370-383'],
+    animeEpisodes: ['Shippuden ep. 127-133'],
     locationIds: ['loc-ame'],
     characterIds: ['char-jiraiya', 'char-pain'],
     canon: 'canon',
@@ -196,6 +218,8 @@ export const narutoArcs: StoryArc[] = [
     order: 11,
     description:
       'Verità su Itachi rivelata da Tobi. Risveglio Mangekyo eterno in Sasuke.',
+    mangaChapters: ['384-402'],
+    animeEpisodes: ['Shippuden ep. 134-143'],
     characterIds: ['char-sasuke', 'char-itachi', 'char-obito'],
     canon: 'canon',
     referenceStatus: 'verified',
@@ -209,6 +233,8 @@ export const narutoArcs: StoryArc[] = [
     order: 12,
     description:
       'Pain attacca Konoha cercando Naruto. Sage Mode di Naruto. Riconciliazione con Nagato.',
+    mangaChapters: ['403-449'],
+    animeEpisodes: ['Shippuden ep. 152-175'],
     locationIds: ['loc-konoha'],
     characterIds: ['char-pain', 'char-naruto', 'char-tsunade', 'char-hinata'],
     canon: 'canon',
@@ -223,6 +249,8 @@ export const narutoArcs: StoryArc[] = [
     order: 13,
     description:
       'I Kage si riuniscono nel Paese del Ferro per discutere la minaccia Akatsuki. Sasuke attacca il vertice.',
+    mangaChapters: ['450-483'],
+    animeEpisodes: ['Shippuden ep. 197-214'],
     locationIds: ['loc-five-kage-meeting'],
     characterIds: ['char-sasuke'],
     canon: 'canon',
@@ -237,6 +265,8 @@ export const narutoArcs: StoryArc[] = [
     order: 14,
     description:
       'Preparativi all\'Alleanza Shinobi. Allenamento di Naruto sull\'Isola Tartaruga.',
+    mangaChapters: ['484-515'],
+    animeEpisodes: ['Shippuden ep. 215-222'],
     locationIds: ['loc-turtle-island'],
     characterIds: ['char-naruto', 'char-kakashi'],
     canon: 'canon',
@@ -251,6 +281,8 @@ export const narutoArcs: StoryArc[] = [
     order: 15,
     description:
       'I cinque eserciti scendono in campo. Edo Tensei di Kabuto. Madara redivivo.',
+    mangaChapters: ['516-534'],
+    animeEpisodes: ['Shippuden ep. 261-278'],
     locationIds: ['loc-fourth-war-battlefield'],
     characterIds: [
       'char-naruto',
@@ -272,6 +304,8 @@ export const narutoArcs: StoryArc[] = [
     order: 16,
     description:
       'Madara recupera il Rinnegan, sblocca le Dieci Code, Guy apre l\'Ottavo Cancello.',
+    mangaChapters: ['534-568'],
+    animeEpisodes: ['Shippuden ep. 279-296'],
     locationIds: ['loc-fourth-war-battlefield'],
     characterIds: ['char-madara', 'char-guy', 'char-obito'],
     canon: 'canon',
@@ -286,6 +320,8 @@ export const narutoArcs: StoryArc[] = [
     order: 17,
     description:
       'Obito diventa jinchuriki delle Dieci Code, viene riportato in sé da Kakashi e Naruto.',
+    mangaChapters: ['568-650'],
+    animeEpisodes: ['Shippuden ep. 296-361'],
     locationIds: ['loc-fourth-war-battlefield'],
     characterIds: ['char-obito', 'char-kakashi', 'char-naruto'],
     canon: 'canon',
@@ -300,6 +336,8 @@ export const narutoArcs: StoryArc[] = [
     order: 18,
     description:
       'Black Zetsu tradisce Madara. Kaguya appare come vera minaccia finale.',
+    mangaChapters: ['651-699'],
+    animeEpisodes: ['Shippuden ep. 458-469'],
     locationIds: ['loc-kaguya-dimensions'],
     characterIds: ['char-naruto', 'char-sasuke', 'char-kakashi'],
     canon: 'canon',
@@ -314,6 +352,8 @@ export const narutoArcs: StoryArc[] = [
     order: 19,
     description:
       'Duello conclusivo Naruto vs Sasuke alla Valle della Fine. Riconciliazione.',
+    mangaChapters: ['693-699'],
+    animeEpisodes: ['Shippuden ep. 474-479'],
     locationIds: ['loc-valley-of-end'],
     characterIds: ['char-naruto', 'char-sasuke'],
     canon: 'canon',
@@ -328,6 +368,8 @@ export const narutoArcs: StoryArc[] = [
     order: 20,
     description:
       'Ricostruzione di Konoha. Kakashi guida il villaggio come Sesto Hokage.',
+    mangaChapters: ['699-700'],
+    animeEpisodes: ['Shippuden ep. 479-480'],
     canon: 'canon',
     referenceStatus: 'verified',
     tags: ['post-war'],
@@ -341,6 +383,7 @@ export const narutoArcs: StoryArc[] = [
     order: 21,
     description:
       'Movie. Toneri minaccia la Terra dalla Luna; Naruto e Hinata si avvicinano.',
+    animeEpisodes: ['Film 10'],
     canon: 'movie',
     referenceStatus: 'verified',
     tags: ['movie', 'naruto-hinata'],
@@ -354,6 +397,8 @@ export const narutoArcs: StoryArc[] = [
     order: 22,
     description:
       'Naruto Uzumaki realizza il sogno d\'infanzia diventando Settimo Hokage.',
+    mangaChapters: ['700'],
+    animeEpisodes: ['Shippuden ep. 479-500'],
     canon: 'canon',
     referenceStatus: 'verified',
     tags: ['hokage', 'epilogo'],
