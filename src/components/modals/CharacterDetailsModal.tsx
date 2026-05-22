@@ -15,6 +15,7 @@ import {
   findLocation,
   findNation,
 } from '@/lib/entities';
+import { getNinjaRankLabel } from '@/utils/localization';
 
 interface CharacterDetailsModalProps {
   dataset: WorldDataset;
@@ -87,7 +88,14 @@ export function CharacterDetailsModal({
       title={character.name}
       badges={
         <>
-          {character.rank && <Badge variant="accent">{character.rank}</Badge>}
+          {character.ninjaRank && (
+            <Badge variant="accent">
+              {getNinjaRankLabel(character.ninjaRank, locale)}
+            </Badge>
+          )}
+          {character.rank && (
+            <Badge className="capitalize">{character.rank}</Badge>
+          )}
           {character.importance && (
             <Badge className="capitalize">{character.importance}</Badge>
           )}

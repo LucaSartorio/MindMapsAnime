@@ -15,7 +15,7 @@ export const narutoArcs: StoryArc[] = [
     description:
       'Era dei Sengoku, fondazione di Konoha, Terza Guerra Ninja, attacco di Kurama, massacro Uchiha.',
     canon: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['lore', 'pre-serie'],
   },
   /* --- Naruto Parte I --- */
@@ -136,7 +136,7 @@ export const narutoArcs: StoryArc[] = [
       'char-sasuke',
     ],
     canon: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
   },
   {
     id: 'arc-akatsuki-suppression',
@@ -308,7 +308,7 @@ export const narutoArcs: StoryArc[] = [
     description:
       'Ricostruzione di Konoha. Kakashi guida il villaggio come Sesto Hokage.',
     canon: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['post-war'],
   },
   {
@@ -320,7 +320,7 @@ export const narutoArcs: StoryArc[] = [
     description:
       'Movie. Toneri minaccia la Terra dalla Luna; Naruto e Hinata si avvicinano.',
     canon: 'movie',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['movie', 'naruto-hinata'],
   },
   {

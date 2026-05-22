@@ -1,17 +1,30 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import type { WorldDataset } from '@/types';
+import type { NinjaRank, WorldDataset } from '@/types';
 import { CharacterCard } from './CharacterCard';
 import { EmptyState } from '@/components/common/EmptyState';
 import { SourceNotice } from '@/components/common/SourceNotice';
 import { useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
-import { getLocalizedText } from '@/utils/localization';
+import { getNinjaRankLabel, getLocalizedText } from '@/utils/localization';
 
 interface CharactersPageProps {
   dataset: WorldDataset;
 }
+
+const NINJA_RANKS: NinjaRank[] = [
+  'academy_student',
+  'genin',
+  'chunin',
+  'tokubetsu_jonin',
+  'jonin',
+  'anbu',
+  'sannin',
+  'kage',
+  'missing_nin',
+  'other',
+];
 
 export function CharactersPage({ dataset }: CharactersPageProps) {
   const { t } = useTranslation();
@@ -20,6 +33,7 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
   const initialId = params.get('id');
   const [query, setQuery] = useState('');
   const [filterVillage, setFilterVillage] = useState<string>('');
+  const [filterRank, setFilterRank] = useState<string>('');
   const openCharacterModal = useUiStore((s) => s.openCharacterModal);
 
   useEffect(() => {
@@ -45,10 +59,12 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
         }
         if (filterVillage && c.villageLocationId !== filterVillage)
           return false;
+        if (filterRank && c.ninjaRank !== filterRank)
+          return false;
         return true;
       })
       .sort((a, b) => a.name.localeCompare(b.name));
-  }, [dataset.characters, query, filterVillage, locale]);
+  }, [dataset.characters, query, filterVillage, filterRank, locale]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6">
@@ -82,6 +98,19 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
           {villages.map((v) => (
             <option key={v.id} value={v.id}>
               {getLocalizedText(v.localizedName, locale) || v.name}
+            </option>
+          ))}
+        </select>
+        <select
+          value={filterRank}
+          onChange={(e) => setFilterRank(e.target.value)}
+          className="panel-soft px-3 py-2 text-sm"
+          aria-label={t('characters.rankFilterAria')}
+        >
+          <option value="">{t('characters.rankFilter')}</option>
+          {NINJA_RANKS.map((r) => (
+            <option key={r} value={r}>
+              {getNinjaRankLabel(r, locale)}
             </option>
           ))}
         </select>

@@ -32,7 +32,7 @@ export const narutoClansExtra: Faction[] = [
     characterIds: ['char-mei'],
     locationIds: ['loc-kiri'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['kiri', 'kekkei-genkai', 'dual-kkgi'],
   },
 
@@ -59,7 +59,7 @@ export const narutoClansExtra: Faction[] = [
     kekkeiGenkai: 'Genjutsu (advanced kekkei genkai)',
     locationIds: ['loc-konoha'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['konoha', 'genjutsu', 'kekkei-genkai'],
   },
 
@@ -85,7 +85,7 @@ export const narutoClansExtra: Faction[] = [
     characterIds: [],
     locationIds: ['loc-oto'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['oto', 'orochimaru', 'shuriken'],
   },
 
@@ -134,7 +134,7 @@ export const narutoClansExtra: Faction[] = [
     characterIds: ['char-danzo'],
     locationIds: ['loc-konoha'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['konoha', 'root', 'politica'],
   },
 
@@ -185,8 +185,9 @@ export const narutoClansExtra: Faction[] = [
     characterIds: ['char-guy', 'char-rock-lee'],
     locationIds: ['loc-konoha'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['konoha', 'taijutsu', 'eight-gates'],
+    jutsuIds: ['jutsu-eight-gates', 'jutsu-reverse-lotus'],
   },
 
   /* ------------------------------------------------------------------ */
@@ -208,7 +209,7 @@ export const narutoClansExtra: Faction[] = [
     characterIds: ['char-dan-kato'],
     locationIds: ['loc-konoha'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['konoha', 'minore'],
   },
 ];
@@ -491,7 +492,7 @@ export const narutoFactionsExtra: Faction[] = [
     locationIds: ['loc-kumo'],
     arcIds: ['arc-five-kage-summit'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['kumo', 'squadra'],
   },
 

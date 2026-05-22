@@ -79,6 +79,20 @@ export type FactionType =
   | 'army'
   | 'group';
 
+/* --------------------------- Ninja Rank ---------------------------- */
+
+export type NinjaRank =
+  | 'academy_student'
+  | 'genin'
+  | 'chunin'
+  | 'tokubetsu_jonin'
+  | 'jonin'
+  | 'anbu'
+  | 'sannin'
+  | 'kage'
+  | 'missing_nin'
+  | 'other';
+
 /* ------------------------------ Jutsu ------------------------------ */
 
 export type JutsuType =
@@ -368,6 +382,8 @@ export interface Character {
   /** Team specifici (Team 7, Team Guy, Sound Four, ...) */
   teamIds?: string[];
   rank?: string;
+  /** Grado ninja tipizzato per filtri e localizzazione */
+  ninjaRank?: NinjaRank;
   /** Generazione narrativa (es. "Konoha 11", "Sannin", "Founders") */
   generation?: string;
   gender?: string;
