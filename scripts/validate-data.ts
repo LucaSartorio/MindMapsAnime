@@ -24,6 +24,7 @@ lines.push(`Routes    : ${narutoDataset.routes.length}`);
 lines.push(`Locations : ${narutoDataset.locations.length}`);
 lines.push(`Nations   : ${narutoDataset.nations.length}`);
 lines.push(`Boundaries: ${narutoDataset.boundaries?.length ?? 0}`);
+lines.push(`Jutsu     : ${narutoDataset.jutsu?.length ?? 0}`);
 lines.push('');
 lines.push(`Errors  : ${report.errors.length}`);
 lines.push(`Warnings: ${report.warnings.length}`);
