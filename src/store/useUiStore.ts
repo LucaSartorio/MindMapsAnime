@@ -13,6 +13,7 @@ export type ActiveModal =
   | { kind: 'route'; id: string }
   | { kind: 'boundary'; id: string }
   | { kind: 'nation'; id: string }
+  | { kind: 'jutsu'; id: string }
   | null;
 
 /**
@@ -45,6 +46,7 @@ interface UiState {
   openRouteModal: (id: string) => void;
   openBoundaryModal: (id: string) => void;
   openNationModal: (id: string) => void;
+  openJutsuModal: (id: string) => void;
   closeModal: () => void;
 
   // Drawer / pannelli floating
@@ -81,6 +83,7 @@ export const useUiStore = create<UiState>((set) => ({
   openRouteModal: (id) => set({ activeModal: { kind: 'route', id } }),
   openBoundaryModal: (id) => set({ activeModal: { kind: 'boundary', id } }),
   openNationModal: (id) => set({ activeModal: { kind: 'nation', id } }),
+  openJutsuModal: (id) => set({ activeModal: { kind: 'jutsu', id } }),
   closeModal: () => set({ activeModal: null }),
 
   openFiltersDrawer: () => set({ isFiltersDrawerOpen: true }),

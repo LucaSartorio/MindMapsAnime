@@ -255,6 +255,31 @@ export function searchDataset(
     );
     if (r) out.push(r);
   }
+  for (const j of dataset.jutsu ?? []) {
+    const localized = getLocalizedText(j.localizedName, locale);
+    const r = makeResult(
+      {
+        id: j.id,
+        kind: 'jutsu',
+        worldId: j.worldId,
+        title: localized || j.name,
+        subtitle: j.type,
+      },
+      {
+        nameCandidates: [
+          j.name,
+          localized,
+          getLocalizedText(j.localizedName, 'it'),
+          getLocalizedText(j.localizedName, 'en'),
+          j.japaneseName,
+        ],
+        descriptionCandidates: [getLocalizedText(j.shortDescription, locale)],
+        tags: j.tags,
+      },
+      query,
+    );
+    if (r) out.push(r);
+  }
   for (const b of dataset.boundaries ?? []) {
     const localized = getLocalizedText(b.localizedName, locale);
     const r = makeResult(

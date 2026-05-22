@@ -11,6 +11,7 @@ import { useMapStore, useUiStore } from '@/store';
 import {
   findCharacter,
   findFaction,
+  findJutsu,
   findLocation,
   findNation,
 } from '@/lib/entities';
@@ -34,6 +35,7 @@ export function CharacterDetailsModal({
   const openRoute = useUiStore((s) => s.openRouteModal);
   const openCharacter = useUiStore((s) => s.openCharacterModal);
   const openEvent = useUiStore((s) => s.openEventModal);
+  const openJutsu = useUiStore((s) => s.openJutsuModal);
   const setActiveMapLevel = useMapStore((s) => s.setActiveMapLevel);
   const setSelectedLocation = useMapStore((s) => s.setSelectedLocation);
   const navigate = useNavigate();
@@ -51,6 +53,9 @@ export function CharacterDetailsModal({
   const clans = (character.clanIds ?? [])
     .map((id) => findFaction(dataset, id))
     .filter((c): c is NonNullable<typeof c> => !!c);
+  const jutsu = (character.jutsuIds ?? [])
+    .map((id) => findJutsu(dataset, id))
+    .filter((j): j is NonNullable<typeof j> => !!j);
   const arcs = (character.arcIds ?? [])
     .map((id) => dataset.arcs.find((a) => a.id === id))
     .filter((a): a is NonNullable<typeof a> => !!a);
@@ -275,6 +280,23 @@ export function CharacterDetailsModal({
                 className="chip-accent hover:border-chakra-300 hover:text-white"
               >
                 {c.name}
+              </button>
+            ))}
+          </div>
+        </Section>
+      )}
+
+      {jutsu.length > 0 && (
+        <Section title={t('modals.relatedJutsu')}>
+          <div className="flex flex-wrap gap-1.5">
+            {jutsu.map((j) => (
+              <button
+                key={j.id}
+                type="button"
+                onClick={() => openJutsu(j.id)}
+                className="chip hover:border-chakra-500/70 hover:text-white"
+              >
+                {getLocalizedText(j.localizedName, locale) || j.name}
               </button>
             ))}
           </div>
