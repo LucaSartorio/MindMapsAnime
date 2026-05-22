@@ -7,6 +7,7 @@ import { useLocaleStore } from '@/store/useLocaleStore';
 import {
   getCharacterStatusLabel,
   getLocalizedText,
+  getNinjaRankLabel,
 } from '@/utils/localization';
 
 interface CharacterCardProps {
@@ -61,7 +62,13 @@ export function CharacterCard({
           {getLocalizedText(character.shortDescription, locale)}
         </p>
         <div className="flex flex-wrap gap-1.5">
-          {character.rank && <Badge variant="accent">{character.rank}</Badge>}
+          {character.ninjaRank ? (
+            <Badge variant="accent">
+              {getNinjaRankLabel(character.ninjaRank, locale)}
+            </Badge>
+          ) : character.rank ? (
+            <Badge variant="accent">{character.rank}</Badge>
+          ) : null}
           {village && (
             <Badge>
               {getLocalizedText(village.localizedName, locale) || village.name}

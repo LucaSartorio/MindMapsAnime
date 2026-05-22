@@ -30,6 +30,7 @@ export const narutoCharacters: Character[] = [
     factionIds: ['faction-allied-shinobi'],
     teamIds: ['team-7'],
     rank: 'Hokage (Settimo)',
+    ninjaRank: 'kage',
     generation: 'Konoha 11',
     shortDescription:
       'Protagonista. Jinchūriki di Kurama, ninja della Foglia, futuro Settimo Hokage.',
@@ -96,6 +97,7 @@ export const narutoCharacters: Character[] = [
     clanIds: ['clan-uchiha'],
     teamIds: ['team-7', 'team-taka'],
     rank: 'Shinobi vagante',
+    ninjaRank: 'missing_nin',
     generation: 'Konoha 11',
     shortDescription:
       'Ultimo sopravvissuto del massacro Uchiha, rivale e amico di Naruto.',
@@ -152,6 +154,7 @@ export const narutoCharacters: Character[] = [
     nationId: 'nation-fire',
     teamIds: ['team-7'],
     rank: 'Medical-nin / Jonin',
+    ninjaRank: 'jonin',
     generation: 'Konoha 11',
     shortDescription:
       'Ninja medico, allieva di Tsunade, membro del Team 7.',
@@ -185,6 +188,7 @@ export const narutoCharacters: Character[] = [
     clanIds: ['clan-hatake'],
     teamIds: ['team-7', 'team-minato'],
     rank: 'Hokage (Sesto)',
+    ninjaRank: 'kage',
     generation: 'Sannin-era apprentice',
     shortDescription:
       '"Il Ninja che copia". Capitano del Team 7, Sesto Hokage.',
@@ -225,6 +229,7 @@ export const narutoCharacters: Character[] = [
     nationId: 'nation-fire',
     teamIds: ['team-sannin'],
     rank: 'Sannin',
+    ninjaRank: 'sannin',
     generation: 'Sannin',
     shortDescription:
       'Uno dei Tre Sannin. Maestro di Naruto e di Minato. Saggio dei rospi.',
@@ -261,6 +266,7 @@ export const narutoCharacters: Character[] = [
     clanIds: ['clan-senju', 'clan-uzumaki'],
     teamIds: ['team-sannin'],
     rank: 'Hokage (Quinto)',
+    ninjaRank: 'kage',
     generation: 'Sannin',
     shortDescription:
       'Una dei Tre Sannin. Quinto Hokage. La più grande ninja medico.',
@@ -290,6 +296,7 @@ export const narutoCharacters: Character[] = [
     factionIds: ['faction-akatsuki'],
     teamIds: ['team-sannin'],
     rank: 'Sannin / Missing-nin',
+    ninjaRank: 'sannin',
     generation: 'Sannin',
     shortDescription:
       'Sannin rinnegato, fondatore del Villaggio del Suono. Cerca l\'immortalità.',
@@ -317,6 +324,7 @@ export const narutoCharacters: Character[] = [
     nationId: 'nation-fire',
     clanIds: ['clan-sarutobi'],
     rank: 'Hokage (Terzo)',
+    ninjaRank: 'kage',
     generation: 'Pre-Sannin',
     shortDescription:
       'Il "Professore". Terzo Hokage, maestro dei Sannin.',
@@ -343,6 +351,7 @@ export const narutoCharacters: Character[] = [
     nationId: 'nation-fire',
     teamIds: ['team-minato'],
     rank: 'Hokage (Quarto)',
+    ninjaRank: 'kage',
     generation: 'Pre-Naruto',
     shortDescription:
       '"Yellow Flash". Quarto Hokage, padre di Naruto.',
@@ -373,6 +382,7 @@ export const narutoCharacters: Character[] = [
     clanIds: ['clan-uzumaki'],
     nationId: 'nation-fire',
     rank: 'Jonin / Jinchūriki',
+    ninjaRank: 'jonin',
     shortDescription:
       'Madre di Naruto, precedente jinchūriki di Kurama.',
     abilities: ['Fuinjutsu', 'Adamantine Chains', 'Kyuubi containment'],
@@ -396,6 +406,7 @@ export const narutoCharacters: Character[] = [
     nationId: 'nation-fire',
     clanIds: ['clan-senju'],
     rank: 'Hokage (Primo)',
+    ninjaRank: 'kage',
     generation: 'Founders',
     shortDescription:
       'Co-fondatore di Konoha e Primo Hokage. Maestro del Mokuton.',
@@ -422,6 +433,7 @@ export const narutoCharacters: Character[] = [
     nationId: 'nation-fire',
     clanIds: ['clan-senju'],
     rank: 'Hokage (Secondo)',
+    ninjaRank: 'kage',
     generation: 'Founders',
     shortDescription:
       'Secondo Hokage e fratello di Hashirama. Inventore di numerose tecniche.',
@@ -445,6 +457,7 @@ export const narutoCharacters: Character[] = [
     clanIds: ['clan-uzumaki'],
     nationId: 'nation-fire',
     rank: 'Jinchūriki',
+    ninjaRank: 'other',
     generation: 'Founders',
     shortDescription:
       'Prima jinchūriki di Kurama, moglie di Hashirama.',
@@ -470,6 +483,7 @@ export const narutoCharacters: Character[] = [
     clanIds: ['clan-nara'],
     teamIds: ['team-10'],
     rank: 'Jonin / Consigliere Hokage',
+    ninjaRank: 'jonin',
     generation: 'Konoha 11',
     shortDescription:
       'Stratega geniale, utilizzatore di kagemane.',
@@ -495,6 +509,7 @@ export const narutoCharacters: Character[] = [
     clanIds: ['clan-akimichi'],
     teamIds: ['team-10'],
     rank: 'Jonin',
+    ninjaRank: 'jonin',
     generation: 'Konoha 11',
     shortDescription:
       'Specialista di tecniche di espansione corporea. Trio Ino-Shika-Cho.',
@@ -518,6 +533,7 @@ export const narutoCharacters: Character[] = [
     clanIds: ['clan-yamanaka'],
     teamIds: ['team-10'],
     rank: 'Jonin',
+    ninjaRank: 'jonin',
     generation: 'Konoha 11',
     shortDescription:
       'Esperta di tecniche mentali, trio Ino-Shika-Cho.',
@@ -541,6 +557,7 @@ export const narutoCharacters: Character[] = [
     clanIds: ['clan-inuzuka'],
     teamIds: ['team-8'],
     rank: 'Jonin',
+    ninjaRank: 'chunin',
     generation: 'Konoha 11',
     shortDescription:
       'Combattente in coppia col cane-ninja Akamaru.',
@@ -564,6 +581,7 @@ export const narutoCharacters: Character[] = [
     clanIds: ['clan-hyuga'],
     teamIds: ['team-8'],
     rank: 'Chunin / Jonin',
+    ninjaRank: 'jonin',
     generation: 'Konoha 11',
     shortDescription:
       'Erede del clan Hyuga. Innamorata di Naruto fin dall\'infanzia.',
@@ -589,6 +607,7 @@ export const narutoCharacters: Character[] = [
     clanIds: ['clan-aburame'],
     teamIds: ['team-8'],
     rank: 'Jonin',
+    ninjaRank: 'chunin',
     generation: 'Konoha 11',
     shortDescription:
       'Specialista di insetti kikaichu, sensore e tracker.',
@@ -610,6 +629,7 @@ export const narutoCharacters: Character[] = [
     nationId: 'nation-fire',
     teamIds: ['team-guy'],
     rank: 'Jonin',
+    ninjaRank: 'jonin',
     generation: 'Konoha 11',
     shortDescription:
       'Specialista di taijutsu, allievo prediletto di Might Guy.',
@@ -634,6 +654,7 @@ export const narutoCharacters: Character[] = [
     clanIds: ['clan-hyuga'],
     teamIds: ['team-guy'],
     rank: 'Jonin',
+    ninjaRank: 'jonin',
     generation: 'Konoha 11',
     shortDescription:
       'Prodigio del ramo cadetto Hyuga, maestro del Byakugan.',
@@ -657,6 +678,7 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-konoha',
     teamIds: ['team-guy'],
     rank: 'Jonin',
+    ninjaRank: 'jonin',
     generation: 'Konoha 11',
     shortDescription:
       'Weapon specialist del Team Guy.',
@@ -678,6 +700,7 @@ export const narutoCharacters: Character[] = [
     teamIds: ['team-7'],
     factionIds: ['faction-root', 'faction-anbu'],
     rank: 'Jonin',
+    ninjaRank: 'anbu',
     shortDescription:
       'Ex Root, sostituisce Sasuke nel Team 7. Ninja delle illustrazioni viventi.',
     abilities: ['Super Beast Imitating Drawing', 'Mental Conditioning'],
@@ -699,6 +722,7 @@ export const narutoCharacters: Character[] = [
     teamIds: ['team-7'],
     factionIds: ['faction-anbu'],
     rank: 'Jonin / ANBU',
+    ninjaRank: 'anbu',
     shortDescription:
       'Capitano ANBU usato come sostituto di Kakashi nel Team 7. Possessore del Mokuton via esperimento.',
     abilities: ['Mokuton (artificial)', 'Suppression of bijū chakra'],
@@ -720,6 +744,7 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-konoha',
     clanIds: ['clan-sarutobi'],
     rank: 'Jonin',
+    ninjaRank: 'jonin',
     shortDescription:
       'Nipote del Terzo Hokage. Allievo di Naruto, futuro sensei di Boruto.',
     abilities: ['Rasengan'],
@@ -740,6 +765,7 @@ export const narutoCharacters: Character[] = [
     role: ['mentor'],
     villageLocationId: 'loc-konoha',
     rank: 'Chunin / Insegnante',
+    ninjaRank: 'chunin',
     shortDescription:
       'Insegnante all\'Accademia Ninja. Figura paterna per Naruto.',
     locationIds: ['loc-konoha', 'loc-konoha-academy'],
@@ -759,6 +785,7 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-konoha',
     teamIds: ['team-guy'],
     rank: 'Jonin',
+    ninjaRank: 'jonin',
     shortDescription:
       '"La Bestia Verde di Konoha". Maestro del taijutsu.',
     abilities: ['Eight Inner Gates', 'Strong Fist'],
@@ -782,6 +809,7 @@ export const narutoCharacters: Character[] = [
     clanIds: ['clan-sarutobi'],
     teamIds: ['team-10'],
     rank: 'Jonin',
+    ninjaRank: 'jonin',
     shortDescription:
       'Sensei del Team 10, figlio del Terzo Hokage.',
     abilities: ['Wind Style', 'Chakra Blade'],
@@ -801,6 +829,7 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-konoha',
     teamIds: ['team-8'],
     rank: 'Jonin',
+    ninjaRank: 'jonin',
     shortDescription:
       'Sensei del Team 8, specializzata in genjutsu.',
     abilities: ['Genjutsu specialist'],
@@ -818,6 +847,7 @@ export const narutoCharacters: Character[] = [
     role: ['supporting'],
     villageLocationId: 'loc-konoha',
     rank: 'Jonin / Tokubetsu',
+    ninjaRank: 'tokubetsu_jonin',
     shortDescription:
       'Ex allieva di Orochimaru, esaminatrice della seconda prova Chunin.',
     teachers: ['char-orochimaru'],
@@ -836,6 +866,7 @@ export const narutoCharacters: Character[] = [
     role: ['supporting'],
     villageLocationId: 'loc-konoha',
     rank: 'Jonin',
+    ninjaRank: 'jonin',
     shortDescription:
       'Allieva e assistente di Tsunade.',
     abilities: ['Medical Ninjutsu'],
@@ -854,6 +885,7 @@ export const narutoCharacters: Character[] = [
     role: ['supporting'],
     villageLocationId: 'loc-konoha',
     rank: 'Jonin',
+    ninjaRank: 'tokubetsu_jonin',
     shortDescription:
       'Tutor d\'élite, insegnante di Konohamaru.',
     students: ['char-konohamaru'],
@@ -871,6 +903,7 @@ export const narutoCharacters: Character[] = [
     role: ['supporting'],
     villageLocationId: 'loc-konoha',
     rank: 'Tokubetsu Jonin',
+    ninjaRank: 'jonin',
     shortDescription:
       'Capo della Squadra di Tortura e Interrogatorio. Esaminatore della prima prova Chunin.',
     locationIds: ['loc-konoha'],
@@ -889,6 +922,7 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-konoha',
     clanIds: ['clan-yamanaka'],
     rank: 'Jonin',
+    ninjaRank: 'jonin',
     shortDescription:
       'Capo del clan Yamanaka, padre di Ino. Esperto di intelligence.',
     family: ['char-ino'],
@@ -907,6 +941,7 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-konoha',
     clanIds: ['clan-nara'],
     rank: 'Jonin / Commander',
+    ninjaRank: 'jonin',
     shortDescription:
       'Capo del clan Nara e stratega capo dell\'Alleanza Shinobi.',
     family: ['char-shikamaru'],
@@ -926,6 +961,7 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-konoha',
     clanIds: ['clan-akimichi'],
     rank: 'Jonin',
+    ninjaRank: 'jonin',
     shortDescription:
       'Capo del clan Akimichi, padre di Choji.',
     family: ['char-choji'],
@@ -944,6 +980,7 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-konoha',
     clanIds: ['clan-hyuga'],
     rank: 'Jonin',
+    ninjaRank: 'jonin',
     shortDescription:
       'Capo del clan Hyuga, padre di Hinata e Hanabi.',
     family: ['char-hinata', 'char-neji'],
@@ -962,6 +999,7 @@ export const narutoCharacters: Character[] = [
     role: ['supporting'],
     villageLocationId: 'loc-konoha',
     clanIds: ['clan-hyuga'],
+    ninjaRank: 'jonin',
     shortDescription:
       'Padre di Neji, gemello di Hiashi del ramo cadetto.',
     family: ['char-neji'],
@@ -982,6 +1020,7 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-konoha',
     factionIds: ['faction-root'],
     rank: 'Kage candidate / Shadow Hokage',
+    ninjaRank: 'jonin',
     shortDescription:
       'Capo della divisione segreta Root. Antagonista politico chiave.',
     abilities: ['Izanagi', 'Wood Release (transplanted)', 'Multiple Sharingan (transplanted)'],
@@ -1008,6 +1047,7 @@ export const narutoCharacters: Character[] = [
     nationId: 'nation-wind',
     teamIds: ['team-suna-siblings'],
     rank: 'Kazekage (Quinto)',
+    ninjaRank: 'kage',
     generation: 'Konoha 11 era',
     shortDescription:
       'Jinchūriki di Shukaku, da antagonista degli esami Chunin a Kazekage.',
@@ -1033,6 +1073,7 @@ export const narutoCharacters: Character[] = [
     nationId: 'nation-wind',
     teamIds: ['team-suna-siblings'],
     rank: 'Jonin',
+    ninjaRank: 'jonin',
     shortDescription:
       'Sorella maggiore di Gaara, esperta di vento e ventaglio.',
     abilities: ['Wind Release', 'Folding Fan'],
@@ -1054,6 +1095,7 @@ export const narutoCharacters: Character[] = [
     nationId: 'nation-wind',
     teamIds: ['team-suna-siblings'],
     rank: 'Jonin',
+    ninjaRank: 'jonin',
     shortDescription:
       'Marionettista di Suna, fratello di Gaara.',
     abilities: ['Puppet Technique'],
@@ -1073,6 +1115,7 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-suna',
     teamIds: ['team-suna-siblings'],
     rank: 'Jonin',
+    ninjaRank: 'jonin',
     shortDescription:
       'Sensei della squadra di Gaara/Temari/Kankuro.',
     locationIds: ['loc-suna'],
@@ -1090,6 +1133,7 @@ export const narutoCharacters: Character[] = [
     role: ['kage'],
     villageLocationId: 'loc-suna',
     rank: 'Kazekage (Quarto)',
+    ninjaRank: 'kage',
     shortDescription:
       'Quarto Kazekage, padre di Gaara.',
     abilities: ['Magnet Release', 'Gold Dust'],
@@ -1110,6 +1154,7 @@ export const narutoCharacters: Character[] = [
     role: ['supporting', 'ally'],
     villageLocationId: 'loc-suna',
     rank: 'Veterana',
+    ninjaRank: 'jonin',
     shortDescription:
       'Veterana marionettista di Suna, nonna di Sasori.',
     abilities: ['Puppetry', 'Reincarnation Jutsu'],
@@ -1128,6 +1173,7 @@ export const narutoCharacters: Character[] = [
     importance: 'background',
     role: ['supporting'],
     villageLocationId: 'loc-suna',
+    ninjaRank: 'jonin',
     shortDescription:
       'Zio di Gaara, figura tragica della sua infanzia.',
     family: ['char-gaara'],
@@ -1150,6 +1196,7 @@ export const narutoCharacters: Character[] = [
     nationId: 'nation-water',
     factionIds: ['faction-seven-swordsmen'],
     rank: 'Missing-nin',
+    ninjaRank: 'missing_nin',
     shortDescription:
       'Uno dei Sette Spadaccini della Nebbia. Antagonista nel Paese delle Onde.',
     abilities: ['Silent Killing', 'Kubikiribocho (Executioner\'s Blade)'],
@@ -1170,6 +1217,7 @@ export const narutoCharacters: Character[] = [
     role: ['supporting'],
     nationId: 'nation-water',
     clanIds: ['clan-yuki'],
+    ninjaRank: 'other',
     shortDescription:
       'Allievo di Zabuza. Possessore del Hyoton (Ice Release).',
     abilities: ['Ice Release', 'Senbon mastery'],
@@ -1194,6 +1242,7 @@ export const narutoCharacters: Character[] = [
     factionIds: ['faction-akatsuki', 'faction-seven-swordsmen'],
     clanIds: ['clan-hoshigaki'],
     rank: 'Missing-nin',
+    ninjaRank: 'missing_nin',
     shortDescription:
       'Akatsuki, compagno di Itachi. Spadaccino della Nebbia con Samehada.',
     abilities: ['Water Release', 'Samehada (chakra-eating sword)'],
@@ -1215,6 +1264,7 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-kiri',
     nationId: 'nation-water',
     rank: 'Mizukage (Quinto)',
+    ninjaRank: 'kage',
     shortDescription:
       'Quinta Mizukage, possessore di Lava e Boil Release.',
     abilities: ['Lava Release', 'Boil Release'],
@@ -1236,6 +1286,7 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-kiri',
     nationId: 'nation-water',
     rank: 'Mizukage (Quarto)',
+    ninjaRank: 'kage',
     shortDescription:
       'Quarto Mizukage, jinchūriki di Isobu (Sanbi). Controllato da Obito.',
     locationIds: ['loc-kiri'],
@@ -1254,6 +1305,7 @@ export const narutoCharacters: Character[] = [
     nationId: 'nation-water',
     factionIds: ['faction-seven-swordsmen'],
     rank: 'Mizukage (Sesto)',
+    ninjaRank: 'kage',
     shortDescription:
       'Spadaccino della Nebbia, futuro Sesto Mizukage.',
     abilities: ['Hiramekarei'],
@@ -1272,6 +1324,7 @@ export const narutoCharacters: Character[] = [
     nationId: 'nation-water',
     clanIds: ['clan-hozuki'],
     teamIds: ['team-taka'],
+    ninjaRank: 'other',
     shortDescription:
       'Membro di Taka. Clan Hozuki, capace di trasformarsi in acqua.',
     abilities: ['Hydrification Technique'],
@@ -1293,12 +1346,13 @@ export const narutoCharacters: Character[] = [
     nationId: 'nation-water',
     clanIds: ['clan-hozuki'],
     factionIds: ['faction-seven-swordsmen'],
+    ninjaRank: 'missing_nin',
     shortDescription:
       'Fratello maggiore di Suigetsu, "Secondo Coming" dei Sette Spadaccini.',
     family: ['char-suigetsu'],
     status: 'deceased',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['hozuki', 'spadaccini'],
   },
   {
@@ -1309,6 +1363,7 @@ export const narutoCharacters: Character[] = [
     role: ['supporting'],
     villageLocationId: 'loc-kiri',
     rank: 'Jonin',
+    ninjaRank: 'jonin',
     shortDescription:
       'Guardia del corpo del Mizukage. Possiede un Byakugan trapiantato.',
     kekkeiGenkai: ['Byakugan (transplanted)'],
@@ -1328,6 +1383,7 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-kumo',
     nationId: 'nation-lightning',
     rank: 'Raikage (Quarto)',
+    ninjaRank: 'kage',
     shortDescription:
       'Quarto Raikage, fratello adottivo di Killer B.',
     abilities: ['Lightning Release', 'Liger Bomb', 'Lightning Cloak'],
@@ -1350,6 +1406,7 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-kumo',
     nationId: 'nation-lightning',
     rank: 'Jonin / Jinchūriki',
+    ninjaRank: 'jonin',
     shortDescription:
       'Jinchūriki di Gyuki. Mentore di Naruto sull\'Isola Tartaruga.',
     abilities: ['Eight-Tails Transformation', 'Seven Swords Dance'],
@@ -1371,6 +1428,7 @@ export const narutoCharacters: Character[] = [
     role: ['kage', 'supporting'],
     villageLocationId: 'loc-kumo',
     rank: 'Raikage (Quinto, post-war)',
+    ninjaRank: 'jonin',
     shortDescription:
       'Guardia di A, futuro Quinto Raikage. Specialista Storm Release.',
     abilities: ['Storm Release', 'Black Lightning'],
@@ -1391,6 +1449,7 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-kumo',
     nationId: 'nation-lightning',
     rank: 'Jonin',
+    ninjaRank: 'jonin',
     shortDescription:
       'Jinchūriki del Two-Tails Matatabi.',
     locationIds: ['loc-kumo'],
@@ -1409,6 +1468,7 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-iwa',
     nationId: 'nation-earth',
     rank: 'Tsuchikage (Terzo)',
+    ninjaRank: 'kage',
     shortDescription:
       'Terzo Tsuchikage, maestro del Dust Release.',
     abilities: ['Dust Release', 'Levitation'],
@@ -1430,6 +1490,7 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-iwa',
     nationId: 'nation-earth',
     rank: 'Tsuchikage (Quarto)',
+    ninjaRank: 'kage',
     shortDescription:
       'Nipote di Onoki, futuro Quarto Tsuchikage.',
     abilities: ['Lava Release'],
@@ -1448,6 +1509,7 @@ export const narutoCharacters: Character[] = [
     role: ['kage'],
     villageLocationId: 'loc-iwa',
     rank: 'Tsuchikage (Secondo)',
+    ninjaRank: 'kage',
     shortDescription:
       'Secondo Tsuchikage, maestro di Onoki. Edo Tensei nella Quarta Guerra.',
     abilities: ['Dust Release'],
@@ -1466,6 +1528,7 @@ export const narutoCharacters: Character[] = [
     role: ['jinchuriki'],
     villageLocationId: 'loc-iwa',
     rank: 'Jinchūriki',
+    ninjaRank: 'jonin',
     shortDescription:
       'Jinchūriki del Four-Tails Son Goku.',
     abilities: ['Lava Release'],
@@ -1482,6 +1545,7 @@ export const narutoCharacters: Character[] = [
     name: 'Han',
     importance: 'background',
     role: ['jinchuriki'],
+    ninjaRank: 'jonin',
     villageLocationId: 'loc-iwa',
     shortDescription:
       'Jinchūriki del Five-Tails Kokuo.',
@@ -1498,6 +1562,7 @@ export const narutoCharacters: Character[] = [
     name: 'Utakata',
     importance: 'background',
     role: ['jinchuriki'],
+    ninjaRank: 'missing_nin',
     villageLocationId: 'loc-kiri',
     shortDescription:
       'Jinchūriki del Six-Tails Saiken.',
@@ -1512,6 +1577,7 @@ export const narutoCharacters: Character[] = [
     name: 'Fu',
     importance: 'background',
     role: ['jinchuriki'],
+    ninjaRank: 'jonin',
     villageLocationId: 'loc-taki',
     shortDescription:
       'Jinchūriki del Seven-Tails Chomei.',
@@ -1534,6 +1600,7 @@ export const narutoCharacters: Character[] = [
     clanIds: ['clan-uchiha'],
     factionIds: ['faction-akatsuki', 'faction-anbu'],
     rank: 'ANBU / Akatsuki',
+    ninjaRank: 'missing_nin',
     shortDescription:
       'Genio Uchiha, ha sterminato il proprio clan per ordini segreti di Konoha.',
     longDescription:
@@ -1567,6 +1634,7 @@ export const narutoCharacters: Character[] = [
     nationId: 'nation-fire',
     clanIds: ['clan-uchiha'],
     rank: 'Co-fondatore di Konoha',
+    ninjaRank: 'other',
     generation: 'Founders',
     shortDescription:
       'Leggendario Uchiha, antagonista principale della Quarta Guerra Ninja.',
@@ -1588,6 +1656,7 @@ export const narutoCharacters: Character[] = [
     name: 'Izuna Uchiha',
     importance: 'background',
     role: ['supporting'],
+    ninjaRank: 'other',
     clanIds: ['clan-uchiha'],
     shortDescription:
       'Fratello minore di Madara. Donò gli occhi al fratello.',
@@ -1612,6 +1681,7 @@ export const narutoCharacters: Character[] = [
     factionIds: ['faction-akatsuki'],
     teamIds: ['team-minato'],
     rank: 'Chunin / Akatsuki mastermind',
+    ninjaRank: 'missing_nin',
     shortDescription:
       'Compagno di Kakashi creduto morto, in seguito mente dietro l\'Akatsuki come "Tobi".',
     abilities: ['Sharingan', 'Mangekyō Sharingan', 'Kamui', 'Wood Release (Hashirama cells)'],
@@ -1637,6 +1707,7 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-konoha',
     clanIds: ['clan-uchiha'],
     rank: 'ANBU',
+    ninjaRank: 'anbu',
     shortDescription:
       'Migliore amico di Itachi. Possessore del Kotoamatsukami.',
     abilities: ['Sharingan', 'Mangekyō Sharingan', 'Kotoamatsukami'],
@@ -1656,6 +1727,7 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-konoha',
     clanIds: ['clan-uchiha'],
     rank: 'Capitano Konoha Military Police',
+    ninjaRank: 'jonin',
     shortDescription:
       'Capo del clan Uchiha. Padre di Itachi e Sasuke.',
     family: ['char-itachi', 'char-sasuke', 'char-mikoto'],
@@ -1671,6 +1743,7 @@ export const narutoCharacters: Character[] = [
     name: 'Mikoto Uchiha',
     importance: 'background',
     role: ['supporting'],
+    ninjaRank: 'jonin',
     villageLocationId: 'loc-konoha',
     clanIds: ['clan-uchiha'],
     shortDescription:
@@ -1690,6 +1763,7 @@ export const narutoCharacters: Character[] = [
     role: ['antagonist', 'akatsuki', 'villain'],
     villageLocationId: 'loc-ame',
     rank: 'Leader Akatsuki',
+    ninjaRank: 'missing_nin',
     clanIds: ['clan-uzumaki'],
     factionIds: ['faction-akatsuki'],
     teamIds: ['team-ame-orphans'],
@@ -1717,6 +1791,7 @@ export const narutoCharacters: Character[] = [
     factionIds: ['faction-akatsuki'],
     teamIds: ['team-ame-orphans'],
     rank: 'Akatsuki',
+    ninjaRank: 'missing_nin',
     shortDescription:
       'Membro dell\'Akatsuki, compagna di Nagato/Yahiko.',
     abilities: ['Paper Manipulation'],
@@ -1734,6 +1809,7 @@ export const narutoCharacters: Character[] = [
     name: 'Yahiko',
     importance: 'minor',
     role: ['supporting'],
+    ninjaRank: 'other',
     villageLocationId: 'loc-ame',
     teamIds: ['team-ame-orphans'],
     shortDescription:
@@ -1754,6 +1830,7 @@ export const narutoCharacters: Character[] = [
     nationId: 'nation-earth',
     factionIds: ['faction-akatsuki'],
     rank: 'Akatsuki',
+    ninjaRank: 'missing_nin',
     shortDescription:
       'Akatsuki dell\'Iwa, artista esplosivo con argilla.',
     abilities: ['Explosion Release (Bakuton)', 'Clay Sculpting'],
@@ -1777,6 +1854,7 @@ export const narutoCharacters: Character[] = [
     nationId: 'nation-wind',
     factionIds: ['faction-akatsuki'],
     rank: 'Akatsuki',
+    ninjaRank: 'missing_nin',
     shortDescription:
       'Maestro marionettista di Suna entrato nell\'Akatsuki.',
     abilities: ['Puppet Mastery', 'Iron Sand (Magnet Release transplanted)'],
@@ -1798,6 +1876,7 @@ export const narutoCharacters: Character[] = [
     nationId: 'nation-hotwater',
     factionIds: ['faction-akatsuki'],
     rank: 'Akatsuki',
+    ninjaRank: 'missing_nin',
     shortDescription:
       'Akatsuki immortale di Yugakure, seguace di Jashin.',
     abilities: ['Immortality', 'Curse Technique (Jashin)'],
@@ -1819,6 +1898,7 @@ export const narutoCharacters: Character[] = [
     nationId: 'nation-waterfalls',
     factionIds: ['faction-akatsuki'],
     rank: 'Akatsuki',
+    ninjaRank: 'missing_nin',
     shortDescription:
       'Akatsuki di Taki. Vita prolungata rubando cuori altrui.',
     abilities: ['Earth Grudge Fear (Five Hearts)', 'All five elements'],
@@ -1837,6 +1917,7 @@ export const narutoCharacters: Character[] = [
     role: ['akatsuki', 'antagonist'],
     factionIds: ['faction-akatsuki'],
     rank: 'Akatsuki',
+    ninjaRank: 'other',
     shortDescription:
       'Akatsuki bipartito (White/Black). Strumento del piano di Kaguya.',
     abilities: ['Plant Manipulation', 'Mayfly Technique'],
@@ -1856,6 +1937,7 @@ export const narutoCharacters: Character[] = [
     clanIds: ['clan-uzumaki'],
     teamIds: ['team-taka'],
     rank: 'Sensor',
+    ninjaRank: 'other',
     shortDescription:
       'Sensor del clan Uzumaki, membro Taka.',
     abilities: ['Sensory Perception', 'Healing Bite'],
@@ -1872,6 +1954,7 @@ export const narutoCharacters: Character[] = [
     name: 'Jugo',
     importance: 'supporting',
     role: ['supporting'],
+    ninjaRank: 'other',
     teamIds: ['team-taka'],
     shortDescription:
       'Membro di Taka, fonte del Sigillo Maledetto di Orochimaru.',
@@ -1890,6 +1973,7 @@ export const narutoCharacters: Character[] = [
     role: ['antagonist'],
     villageLocationId: 'loc-konoha',
     rank: 'Missing-nin',
+    ninjaRank: 'missing_nin',
     shortDescription:
       'Ex spia di Orochimaru, maestro Edo Tensei nella Quarta Guerra.',
     abilities: ['Medical Ninjutsu', 'Sage Mode (Snake)', 'Edo Tensei'],
@@ -1908,6 +1992,7 @@ export const narutoCharacters: Character[] = [
     name: 'Kimimaro Kaguya',
     importance: 'supporting',
     role: ['antagonist'],
+    ninjaRank: 'jonin',
     clanIds: ['clan-kaguya'],
     shortDescription:
       'Ultimo del clan Kaguya. Bodyguard di Orochimaru.',
@@ -1930,6 +2015,7 @@ export const narutoCharacters: Character[] = [
     importance: 'major',
     role: ['antagonist', 'villain'],
     rank: 'Primordial',
+    ninjaRank: 'other',
     generation: 'Otsutsuki',
     shortDescription:
       'Madre del Saggio dei Sei Cammini, principio della chakra sulla Terra.',
@@ -1952,6 +2038,7 @@ export const narutoCharacters: Character[] = [
     importance: 'major',
     role: ['mentor', 'supporting'],
     rank: 'Sage',
+    ninjaRank: 'other',
     generation: 'Otsutsuki',
     shortDescription:
       'Saggio dei Sei Cammini. Padre del ninshu e fondatore della dottrina shinobi.',
@@ -1972,6 +2059,7 @@ export const narutoCharacters: Character[] = [
     importance: 'background',
     role: ['supporting'],
     generation: 'Otsutsuki',
+    ninjaRank: 'other',
     shortDescription:
       'Fratello gemello di Hagoromo. Antenato del clan Hyuga.',
     kekkeiGenkai: ['Byakugan'],
@@ -1988,6 +2076,7 @@ export const narutoCharacters: Character[] = [
     importance: 'background',
     role: ['supporting'],
     generation: 'Otsutsuki',
+    ninjaRank: 'other',
     shortDescription:
       'Primogenito di Hagoromo. Antenato degli Uchiha. Sasuke ne è la reincarnazione.',
     abilities: ['Mangekyō Sharingan (innate)'],
@@ -2005,6 +2094,7 @@ export const narutoCharacters: Character[] = [
     importance: 'background',
     role: ['supporting'],
     generation: 'Otsutsuki',
+    ninjaRank: 'other',
     shortDescription:
       'Secondogenito di Hagoromo. Antenato dei Senju/Uzumaki. Naruto ne è la reincarnazione.',
     family: ['char-hagoromo'],

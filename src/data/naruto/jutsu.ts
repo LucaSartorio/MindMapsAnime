@@ -208,6 +208,7 @@ export const narutoJutsu: Jutsu[] = [
     type: 'taijutsu',
     classification: ['offensive', 'supplementary'],
     characterIds: ['char-guy', 'char-rock-lee'],
+    clanIds: ['clan-maito'],
     shortDescription: {
       it: 'Tecnica che rimuove i limitatori del chakra del corpo aprendo sequenzialmente otto "cancelli" interni, potenziando in modo devastante ma autodistruttivo.',
       en: 'Technique that removes the body\'s chakra limiters by sequentially opening eight internal "gates", granting devastating power at great physical cost.',
@@ -230,6 +231,7 @@ export const narutoJutsu: Jutsu[] = [
     classification: ['offensive'],
     rank: 'A',
     characterIds: ['char-rock-lee', 'char-guy'],
+    clanIds: ['clan-maito'],
     shortDescription: {
       it: 'Versione potenziata del Loto Primario che richiede l\'apertura degli Otto Cancelli. Lancio seguito da serie devastante di colpi.',
       en: 'Enhanced version of the Primary Lotus requiring the Eight Gates to be opened. Launch followed by devastating combo strike.',
@@ -1097,7 +1099,7 @@ export const narutoJutsu: Jutsu[] = [
       en: 'Summons four stone pillars that immobilize the target and discharge lightning.',
     },
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['lightning'],
   },
 
@@ -1161,7 +1163,7 @@ export const narutoJutsu: Jutsu[] = [
       en: 'Launches multiple spheres of compressed wind that pierce targets.',
     },
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['wind'],
   },
 

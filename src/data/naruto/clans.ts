@@ -233,7 +233,7 @@ export const narutoClans: Faction[] = [
     characterIds: ['char-kisame'],
     locationIds: ['loc-kiri'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['kiri'],
   },
   {
@@ -266,7 +266,7 @@ export const narutoClans: Faction[] = [
     characterIds: ['char-rasa', 'char-gaara', 'char-temari', 'char-kankuro'],
     locationIds: ['loc-suna'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['suna', 'kazekage'],
   },
   {

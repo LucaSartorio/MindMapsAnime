@@ -75,6 +75,7 @@ import type {
   CharacterStatus,
   JutsuType,
   LocationType,
+  NinjaRank,
   ReferenceStatus,
   WorldStatus,
 } from '@/types';
@@ -166,6 +167,25 @@ export function getLocationTypeLabel(
     cave: { it: 'Caverna', en: 'Cave' },
   };
   return getLocalizedText(map[type], locale);
+}
+
+export function getNinjaRankLabel(
+  rank: NinjaRank,
+  locale: SupportedLocale,
+): string {
+  const map: Record<NinjaRank, LocalizedText> = {
+    academy_student: { it: 'Studente Accademia', en: 'Academy Student' },
+    genin: { it: 'Genin', en: 'Genin' },
+    chunin: { it: 'Chunin', en: 'Chunin' },
+    tokubetsu_jonin: { it: 'Jonin Speciale', en: 'Tokubetsu Jonin' },
+    jonin: { it: 'Jonin', en: 'Jonin' },
+    anbu: { it: 'ANBU', en: 'ANBU' },
+    sannin: { it: 'Sannin', en: 'Sannin' },
+    kage: { it: 'Kage', en: 'Kage' },
+    missing_nin: { it: 'Missing-nin', en: 'Missing-nin' },
+    other: { it: 'Altro', en: 'Other' },
+  };
+  return getLocalizedText(map[rank], locale);
 }
 
 export function getJutsuTypeLabel(

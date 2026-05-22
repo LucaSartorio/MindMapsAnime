@@ -26,6 +26,7 @@ export const narutoCharactersExtra: Character[] = [
     nationId: 'nation-sound',
     factionIds: ['faction-sound-four'],
     rank: 'Jonin (Sound)',
+    ninjaRank: 'jonin',
     generation: 'Sound Four',
     gender: 'female',
     shortDescription: {
@@ -58,6 +59,7 @@ export const narutoCharactersExtra: Character[] = [
     nationId: 'nation-sound',
     factionIds: ['faction-sound-four'],
     rank: 'Jonin (Sound)',
+    ninjaRank: 'jonin',
     generation: 'Sound Four',
     gender: 'male',
     shortDescription: {
@@ -89,6 +91,7 @@ export const narutoCharactersExtra: Character[] = [
     nationId: 'nation-sound',
     factionIds: ['faction-sound-four'],
     rank: 'Jonin (Sound)',
+    ninjaRank: 'jonin',
     generation: 'Sound Four',
     gender: 'male',
     shortDescription: {
@@ -120,6 +123,7 @@ export const narutoCharactersExtra: Character[] = [
     nationId: 'nation-sound',
     factionIds: ['faction-sound-four'],
     rank: 'Jonin (Sound)',
+    ninjaRank: 'jonin',
     generation: 'Sound Four',
     gender: 'male',
     shortDescription: {
@@ -154,6 +158,7 @@ export const narutoCharactersExtra: Character[] = [
     villageLocationId: 'loc-oto',
     nationId: 'nation-sound',
     rank: 'Genin (Sound)',
+    ninjaRank: 'genin',
     generation: 'Chunin Exams',
     gender: 'male',
     shortDescription: {
@@ -178,6 +183,7 @@ export const narutoCharactersExtra: Character[] = [
     villageLocationId: 'loc-oto',
     nationId: 'nation-sound',
     rank: 'Genin (Sound)',
+    ninjaRank: 'genin',
     generation: 'Chunin Exams',
     gender: 'female',
     shortDescription: {
@@ -202,6 +208,7 @@ export const narutoCharactersExtra: Character[] = [
     villageLocationId: 'loc-oto',
     nationId: 'nation-sound',
     rank: 'Genin (Sound)',
+    ninjaRank: 'genin',
     generation: 'Chunin Exams',
     gender: 'male',
     shortDescription: {
@@ -230,6 +237,7 @@ export const narutoCharactersExtra: Character[] = [
     villageLocationId: 'loc-kumo',
     nationId: 'nation-lightning',
     rank: 'Jonin',
+    ninjaRank: 'jonin',
     generation: 'Fourth War era',
     gender: 'female',
     shortDescription: {
@@ -254,6 +262,7 @@ export const narutoCharactersExtra: Character[] = [
     villageLocationId: 'loc-kumo',
     nationId: 'nation-lightning',
     rank: 'Chunin',
+    ninjaRank: 'chunin',
     generation: 'Fourth War era',
     gender: 'female',
     shortDescription: {
@@ -278,6 +287,7 @@ export const narutoCharactersExtra: Character[] = [
     villageLocationId: 'loc-kumo',
     nationId: 'nation-lightning',
     rank: 'Chunin',
+    ninjaRank: 'chunin',
     generation: 'Fourth War era',
     gender: 'male',
     shortDescription: {
@@ -289,7 +299,7 @@ export const narutoCharactersExtra: Character[] = [
     enemies: ['char-kinkaku', 'char-ginkaku'],
     status: 'deceased',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['kumo', 'chunin', 'team-samui'],
   },
 
@@ -303,6 +313,7 @@ export const narutoCharactersExtra: Character[] = [
     villageLocationId: 'loc-kumo',
     nationId: 'nation-lightning',
     rank: 'Jonin',
+    ninjaRank: 'jonin',
     generation: 'Fourth War era',
     gender: 'male',
     shortDescription: {
@@ -331,6 +342,7 @@ export const narutoCharactersExtra: Character[] = [
     villageLocationId: 'loc-iwa',
     nationId: 'nation-earth',
     rank: 'Jonin',
+    ninjaRank: 'jonin',
     generation: 'Fourth War era',
     gender: 'male',
     shortDescription: {
@@ -361,6 +373,7 @@ export const narutoCharactersExtra: Character[] = [
     nationId: 'nation-water',
     factionIds: ['faction-seven-swordsmen'],
     rank: 'Jonin (Kiri)',
+    ninjaRank: 'jonin',
     generation: 'Seven Swordsmen',
     gender: 'female',
     shortDescription: {
@@ -371,7 +384,7 @@ export const narutoCharactersExtra: Character[] = [
     jutsuIds: ['jutsu-raiton-thunderbolt'],
     status: 'deceased',
     canonStatus: 'anime_only',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['kiri', 'seven-swordsmen', 'kenjutsu', 'lightning'],
   },
 
@@ -386,6 +399,7 @@ export const narutoCharactersExtra: Character[] = [
     nationId: 'nation-water',
     factionIds: ['faction-seven-swordsmen'],
     rank: 'Jonin (Kiri)',
+    ninjaRank: 'jonin',
     generation: 'Seven Swordsmen',
     gender: 'male',
     shortDescription: {
@@ -395,7 +409,7 @@ export const narutoCharactersExtra: Character[] = [
     abilities: ['Kabutowari (Helmet-Splitter)', 'Heavy Weapons Kenjutsu'],
     status: 'deceased',
     canonStatus: 'anime_only',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['kiri', 'seven-swordsmen', 'kenjutsu'],
   },
 
@@ -410,6 +424,7 @@ export const narutoCharactersExtra: Character[] = [
     nationId: 'nation-water',
     factionIds: ['faction-seven-swordsmen'],
     rank: 'Jonin (Kiri)',
+    ninjaRank: 'jonin',
     generation: 'Seven Swordsmen',
     gender: 'male',
     shortDescription: {
@@ -419,7 +434,7 @@ export const narutoCharactersExtra: Character[] = [
     abilities: ['Nuibari (Long Sword)', 'Wire Suture Technique'],
     status: 'deceased',
     canonStatus: 'anime_only',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['kiri', 'seven-swordsmen', 'kenjutsu'],
   },
 
@@ -434,6 +449,7 @@ export const narutoCharactersExtra: Character[] = [
     nationId: 'nation-water',
     factionIds: ['faction-seven-swordsmen'],
     rank: 'Jonin (Kiri)',
+    ninjaRank: 'jonin',
     generation: 'Seven Swordsmen (original)',
     gender: 'male',
     shortDescription: {
@@ -443,7 +459,7 @@ export const narutoCharactersExtra: Character[] = [
     abilities: ['Samehada (original wielder)', 'Water Release'],
     status: 'deceased',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['kiri', 'seven-swordsmen', 'samehada'],
   },
 
@@ -461,6 +477,7 @@ export const narutoCharactersExtra: Character[] = [
     nationId: 'nation-fire',
     clanIds: ['clan-uchiha'],
     rank: 'Clan Leader (Warring States)',
+    ninjaRank: 'other',
     generation: 'Warring States',
     gender: 'male',
     shortDescription: {
@@ -473,7 +490,7 @@ export const narutoCharactersExtra: Character[] = [
     enemies: ['char-hashirama'],
     status: 'deceased',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['uchiha', 'warring-states', 'clan-leader'],
   },
 
@@ -488,6 +505,7 @@ export const narutoCharactersExtra: Character[] = [
     nationId: 'nation-fire',
     clanIds: ['clan-uchiha'],
     rank: 'Genin',
+    ninjaRank: 'genin',
     generation: 'Itachi-era',
     gender: 'female',
     shortDescription: {
@@ -500,7 +518,7 @@ export const narutoCharactersExtra: Character[] = [
     allies: ['char-itachi'],
     status: 'deceased',
     canonStatus: 'novel',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['uchiha', 'itachi', 'massacre'],
   },
 
@@ -515,6 +533,7 @@ export const narutoCharactersExtra: Character[] = [
     nationId: 'nation-fire',
     clanIds: ['clan-uchiha'],
     rank: 'Jonin',
+    ninjaRank: 'jonin',
     generation: 'Hiruzen-era',
     gender: 'male',
     shortDescription: {
@@ -526,7 +545,7 @@ export const narutoCharactersExtra: Character[] = [
     allies: ['char-hiruzen'],
     status: 'deceased',
     canonStatus: 'novel',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['uchiha', 'hiruzen-era', 'loyal-uchiha'],
   },
 
@@ -545,6 +564,7 @@ export const narutoCharactersExtra: Character[] = [
     villageLocationId: 'loc-konoha',
     nationId: 'nation-fire',
     rank: 'Jonin',
+    ninjaRank: 'jonin',
     generation: 'Sannin-era',
     gender: 'male',
     shortDescription: {
@@ -575,6 +595,7 @@ export const narutoCharactersExtra: Character[] = [
     nationId: 'nation-fire',
     clanIds: ['clan-senju'],
     rank: 'Genin',
+    ninjaRank: 'genin',
     generation: 'Sannin-era',
     gender: 'male',
     shortDescription: {
@@ -602,6 +623,7 @@ export const narutoCharactersExtra: Character[] = [
     role: ['antagonist', 'ally', 'jinchuriki'],
     nationId: 'nation-fire',
     generation: 'Tailed Beasts',
+    ninjaRank: 'other',
     gender: 'male',
     shortDescription: {
       it: 'La Bestia dalla Nove Code. Sigillata in Naruto da Minato. Inizialmente ostile, diventa alleata di Naruto dopo aver instaurato un legame di fiducia.',
@@ -631,6 +653,7 @@ export const narutoCharactersExtra: Character[] = [
     role: ['antagonist', 'jinchuriki'],
     nationId: 'nation-wind',
     generation: 'Tailed Beasts',
+    ninjaRank: 'other',
     shortDescription: {
       it: 'Il Tanuki dalla Una Coda. Sigillato in Gaara di Suna. Manipola la sabbia con grande potenza e porta alla pazzia i propri jinchuuriki.',
       en: 'The One-Tailed Tanuki. Sealed within Gaara of Suna. Manipulates sand with great power and drives its jinchūriki to madness.',
@@ -655,6 +678,7 @@ export const narutoCharactersExtra: Character[] = [
     role: ['jinchuriki'],
     nationId: 'nation-lightning',
     generation: 'Tailed Beasts',
+    ninjaRank: 'other',
     gender: 'female',
     shortDescription: {
       it: 'Il Gatto Fantasma dalla Due Code. Sigillato in Yugito Nii di Kumo. Controlla fiamme blu di chakra.',
@@ -679,6 +703,7 @@ export const narutoCharactersExtra: Character[] = [
     role: ['jinchuriki'],
     nationId: 'nation-earth',
     generation: 'Tailed Beasts',
+    ninjaRank: 'other',
     gender: 'male',
     shortDescription: {
       it: 'Il Re delle Scimmie dalla Quattro Code. Sigillato in Roshi di Iwa. Usa la Lava Release combinando fuoco e terra.',
@@ -704,6 +729,7 @@ export const narutoCharactersExtra: Character[] = [
     role: ['ally', 'jinchuriki'],
     nationId: 'nation-lightning',
     generation: 'Tailed Beasts',
+    ninjaRank: 'other',
     gender: 'male',
     shortDescription: {
       it: 'Il Toro-Polpo dalla Otto Code. Sigillato in Killer B di Kumo. Coopera volentieri col proprio jinchuuriki a differenza degli altri Bijuu.',
@@ -737,6 +763,7 @@ export const narutoCharactersExtra: Character[] = [
     villageLocationId: 'loc-suna',
     nationId: 'nation-wind',
     rank: 'Elder / Retired Jonin',
+    ninjaRank: 'other',
     generation: 'Elder',
     gender: 'male',
     shortDescription: {
@@ -762,6 +789,7 @@ export const narutoCharactersExtra: Character[] = [
     villageLocationId: 'loc-suna',
     nationId: 'nation-wind',
     rank: 'Jonin',
+    ninjaRank: 'jonin',
     generation: 'Third War era',
     gender: 'female',
     shortDescription: {
@@ -772,7 +800,7 @@ export const narutoCharactersExtra: Character[] = [
     kekkeiGenkai: ['Scorch Release'],
     status: 'deceased',
     canonStatus: 'anime_only',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['suna', 'scorch-release', 'third-war', 'kekkei-genkai'],
   },
 
@@ -786,6 +814,7 @@ export const narutoCharactersExtra: Character[] = [
     villageLocationId: 'loc-iwa',
     nationId: 'nation-earth',
     rank: 'Jonin',
+    ninjaRank: 'jonin',
     generation: 'Third War era',
     gender: 'male',
     shortDescription: {
@@ -797,7 +826,7 @@ export const narutoCharactersExtra: Character[] = [
     jutsuIds: ['jutsu-explosion-release'],
     status: 'deceased',
     canonStatus: 'anime_only',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['iwa', 'explosion-release', 'third-war', 'kekkei-genkai'],
   },
 
@@ -811,6 +840,7 @@ export const narutoCharactersExtra: Character[] = [
     villageLocationId: 'loc-kumo',
     nationId: 'nation-lightning',
     rank: 'Jonin',
+    ninjaRank: 'jonin',
     generation: 'Third War era',
     gender: 'male',
     shortDescription: {
@@ -822,7 +852,7 @@ export const narutoCharactersExtra: Character[] = [
     jutsuIds: ['jutsu-magnet-release'],
     status: 'deceased',
     canonStatus: 'anime_only',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['kumo', 'magnet-release', 'third-war', 'kekkei-genkai'],
   },
 
@@ -838,6 +868,7 @@ export const narutoCharactersExtra: Character[] = [
     nationId: 'nation-water',
     clanIds: ['clan-hozuki'],
     rank: 'Mizukage (Secondo)',
+    ninjaRank: 'kage',
     generation: 'Kage (Second Generation)',
     gender: 'male',
     shortDescription: {
@@ -867,6 +898,7 @@ export const narutoCharactersExtra: Character[] = [
     clanIds: ['clan-yamanaka'],
     factionIds: ['faction-root'],
     rank: 'ANBU (Root)',
+    ninjaRank: 'anbu',
     generation: 'Root',
     gender: 'male',
     shortDescription: {
@@ -896,6 +928,7 @@ export const narutoCharactersExtra: Character[] = [
     clanIds: ['clan-aburame'],
     factionIds: ['faction-root'],
     rank: 'ANBU (Root)',
+    ninjaRank: 'anbu',
     generation: 'Root',
     gender: 'male',
     shortDescription: {
@@ -920,6 +953,7 @@ export const narutoCharactersExtra: Character[] = [
     role: ['ally', 'kage'],
     nationId: 'nation-waterfalls',
     rank: 'Leader di Taki',
+    ninjaRank: 'other',
     generation: 'Part I',
     gender: 'male',
     shortDescription: {
@@ -929,7 +963,7 @@ export const narutoCharactersExtra: Character[] = [
     abilities: ['Hero Water Amplification', 'Water Release'],
     status: 'alive',
     canonStatus: 'anime_only',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['taki', 'hero-water', 'village-leader'],
   },
 
@@ -944,6 +978,7 @@ export const narutoCharactersExtra: Character[] = [
     nationId: 'nation-fire',
     clanIds: ['clan-hyuga'],
     rank: 'Jonin',
+    ninjaRank: 'jonin',
     generation: 'Konoha 11-era',
     gender: 'female',
     shortDescription: {
@@ -970,6 +1005,7 @@ export const narutoCharactersExtra: Character[] = [
     villageLocationId: 'loc-konoha',
     nationId: 'nation-fire',
     rank: 'Chunin / Jonin',
+    ninjaRank: 'jonin',
     generation: 'Konohamaru-era',
     gender: 'female',
     shortDescription: {
@@ -993,6 +1029,7 @@ export const narutoCharactersExtra: Character[] = [
     villageLocationId: 'loc-konoha',
     nationId: 'nation-fire',
     rank: 'Chunin / Jonin',
+    ninjaRank: 'chunin',
     generation: 'Konohamaru-era',
     gender: 'male',
     shortDescription: {
@@ -1016,6 +1053,7 @@ export const narutoCharactersExtra: Character[] = [
     villageLocationId: 'loc-konoha',
     nationId: 'nation-fire',
     rank: 'Jonin',
+    ninjaRank: 'chunin',
     generation: 'Part I–II',
     gender: 'male',
     shortDescription: {
@@ -1039,6 +1077,7 @@ export const narutoCharactersExtra: Character[] = [
     villageLocationId: 'loc-konoha',
     nationId: 'nation-fire',
     rank: 'Jonin',
+    ninjaRank: 'chunin',
     generation: 'Part I–II',
     gender: 'male',
     shortDescription: {
@@ -1063,6 +1102,7 @@ export const narutoCharactersExtra: Character[] = [
     villageLocationId: 'loc-kumo',
     nationId: 'nation-lightning',
     rank: 'Jonin (Kumo)',
+    ninjaRank: 'other',
     generation: 'Second War era',
     gender: 'male',
     shortDescription: {
@@ -1089,6 +1129,7 @@ export const narutoCharactersExtra: Character[] = [
     villageLocationId: 'loc-kumo',
     nationId: 'nation-lightning',
     rank: 'Jonin (Kumo)',
+    ninjaRank: 'other',
     generation: 'Second War era',
     gender: 'male',
     shortDescription: {
