@@ -10,6 +10,7 @@ export const narutoArcs: StoryArc[] = [
     id: 'arc-pre-series',
     worldId: 'world-naruto',
     name: 'Pre-series',
+    localizedName: { it: 'Pre-serie', en: 'Pre-series' },
     saga: 'Pre-serie',
     order: 0,
     description:
@@ -23,6 +24,7 @@ export const narutoArcs: StoryArc[] = [
     id: 'arc-prologue',
     worldId: 'world-naruto',
     name: 'Prologue · Land of Waves',
+    localizedName: { it: 'Prologo · Paese delle Onde', en: 'Prologue · Land of Waves' },
     saga: 'Naruto Parte I',
     order: 1,
     description:
@@ -36,6 +38,7 @@ export const narutoArcs: StoryArc[] = [
     id: 'arc-chunin-exams',
     worldId: 'world-naruto',
     name: 'Chunin Exams',
+    localizedName: { it: 'Esami Chūnin', en: 'Chunin Exams' },
     saga: 'Naruto Parte I',
     order: 2,
     description:
@@ -59,6 +62,7 @@ export const narutoArcs: StoryArc[] = [
     id: 'arc-konoha-crush',
     worldId: 'world-naruto',
     name: 'Konoha Crush',
+    localizedName: { it: 'Distruzione di Konoha', en: 'Konoha Crush' },
     saga: 'Naruto Parte I',
     order: 3,
     description:
@@ -72,6 +76,7 @@ export const narutoArcs: StoryArc[] = [
     id: 'arc-search-tsunade',
     worldId: 'world-naruto',
     name: 'Search for Tsunade',
+    localizedName: { it: 'La Ricerca di Tsunade', en: 'Search for Tsunade' },
     saga: 'Naruto Parte I',
     order: 4,
     description:
@@ -89,6 +94,7 @@ export const narutoArcs: StoryArc[] = [
     id: 'arc-sasuke-retrieval',
     worldId: 'world-naruto',
     name: 'Sasuke Retrieval',
+    localizedName: { it: 'Il Recupero di Sasuke', en: 'Sasuke Retrieval' },
     saga: 'Naruto Parte I',
     order: 5,
     description:
@@ -104,6 +110,7 @@ export const narutoArcs: StoryArc[] = [
     id: 'arc-kazekage-rescue',
     worldId: 'world-naruto',
     name: 'Kazekage Rescue',
+    localizedName: { it: 'Il Salvataggio del Kazekage', en: 'Kazekage Rescue' },
     saga: 'Naruto Shippuden',
     order: 6,
     description:
@@ -124,6 +131,7 @@ export const narutoArcs: StoryArc[] = [
     id: 'arc-tenchi-bridge',
     worldId: 'world-naruto',
     name: 'Tenchi Bridge Reconnaissance',
+    localizedName: { it: 'Ricognizione al Ponte Tenchi', en: 'Tenchi Bridge Reconnaissance' },
     saga: 'Naruto Shippuden',
     order: 7,
     description:
@@ -142,6 +150,7 @@ export const narutoArcs: StoryArc[] = [
     id: 'arc-akatsuki-suppression',
     worldId: 'world-naruto',
     name: 'Akatsuki Suppression Mission',
+    localizedName: { it: "Missione di Soppressione dell'Akatsuki", en: 'Akatsuki Suppression Mission' },
     saga: 'Naruto Shippuden',
     order: 8,
     description:
@@ -154,6 +163,7 @@ export const narutoArcs: StoryArc[] = [
     id: 'arc-itachi-pursuit',
     worldId: 'world-naruto',
     name: 'Itachi Pursuit Mission',
+    localizedName: { it: 'Missione di Inseguimento di Itachi', en: 'Itachi Pursuit Mission' },
     saga: 'Naruto Shippuden',
     order: 9,
     description:
@@ -167,6 +177,7 @@ export const narutoArcs: StoryArc[] = [
     id: 'arc-jiraiya-gallant',
     worldId: 'world-naruto',
     name: 'Tale of Jiraiya the Gallant',
+    localizedName: { it: 'La Leggenda di Jiraiya il Galante', en: 'Tale of Jiraiya the Gallant' },
     saga: 'Naruto Shippuden',
     order: 10,
     description:
@@ -180,6 +191,7 @@ export const narutoArcs: StoryArc[] = [
     id: 'arc-fated-brothers',
     worldId: 'world-naruto',
     name: 'Fated Battle Between Brothers',
+    localizedName: { it: 'Lo Scontro Fatale tra Fratelli', en: 'Fated Battle Between Brothers' },
     saga: 'Naruto Shippuden',
     order: 11,
     description:
@@ -192,6 +204,7 @@ export const narutoArcs: StoryArc[] = [
     id: 'arc-pain-assault',
     worldId: 'world-naruto',
     name: 'Pain Assault on Konoha',
+    localizedName: { it: "L'Assalto di Pain a Konoha", en: 'Pain Assault on Konoha' },
     saga: 'Naruto Shippuden',
     order: 12,
     description:
@@ -205,6 +218,7 @@ export const narutoArcs: StoryArc[] = [
     id: 'arc-five-kage-summit',
     worldId: 'world-naruto',
     name: 'Five Kage Summit',
+    localizedName: { it: 'Il Summit dei Cinque Kage', en: 'Five Kage Summit' },
     saga: 'Naruto Shippuden',
     order: 13,
     description:
@@ -218,6 +232,7 @@ export const narutoArcs: StoryArc[] = [
     id: 'arc-fourth-war-countdown',
     worldId: 'world-naruto',
     name: 'Fourth Shinobi World War · Countdown',
+    localizedName: { it: 'Quarta Grande Guerra Ninja · Conto alla Rovescia', en: 'Fourth Shinobi World War · Countdown' },
     saga: 'Naruto Shippuden',
     order: 14,
     description:
@@ -231,6 +246,7 @@ export const narutoArcs: StoryArc[] = [
     id: 'arc-fourth-war',
     worldId: 'world-naruto',
     name: 'Fourth Shinobi World War · Confrontation',
+    localizedName: { it: 'Quarta Grande Guerra Ninja · Scontro', en: 'Fourth Shinobi World War · Confrontation' },
     saga: 'Naruto Shippuden',
     order: 15,
     description:
@@ -251,6 +267,7 @@ export const narutoArcs: StoryArc[] = [
     id: 'arc-fourth-war-climax',
     worldId: 'world-naruto',
     name: 'Fourth Shinobi World War · Climax',
+    localizedName: { it: 'Quarta Grande Guerra Ninja · Apice', en: 'Fourth Shinobi World War · Climax' },
     saga: 'Naruto Shippuden',
     order: 16,
     description:
@@ -264,6 +281,7 @@ export const narutoArcs: StoryArc[] = [
     id: 'arc-ten-tails-jinchuriki',
     worldId: 'world-naruto',
     name: 'Birth of the Ten-Tails\' Jinchuriki',
+    localizedName: { it: 'La Nascita del Jinchūriki delle Dieci Code', en: "Birth of the Ten-Tails' Jinchuriki" },
     saga: 'Naruto Shippuden',
     order: 17,
     description:
@@ -277,6 +295,7 @@ export const narutoArcs: StoryArc[] = [
     id: 'arc-kaguya-final',
     worldId: 'world-naruto',
     name: 'Kaguya Otsutsuki Strikes',
+    localizedName: { it: "L'Attacco di Kaguya Ōtsutsuki", en: 'Kaguya Otsutsuki Strikes' },
     saga: 'Naruto Shippuden',
     order: 18,
     description:
@@ -290,6 +309,7 @@ export const narutoArcs: StoryArc[] = [
     id: 'arc-final-battle',
     worldId: 'world-naruto',
     name: 'Naruto and Sasuke Final Battle',
+    localizedName: { it: 'La Battaglia Finale tra Naruto e Sasuke', en: 'Naruto and Sasuke Final Battle' },
     saga: 'Naruto Shippuden',
     order: 19,
     description:
@@ -303,6 +323,7 @@ export const narutoArcs: StoryArc[] = [
     id: 'arc-post-war',
     worldId: 'world-naruto',
     name: 'Kakashi Hokage / Blank Period',
+    localizedName: { it: 'Kakashi Hokage / Periodo Vuoto', en: 'Kakashi Hokage / Blank Period' },
     saga: 'Post-serie',
     order: 20,
     description:
@@ -315,6 +336,7 @@ export const narutoArcs: StoryArc[] = [
     id: 'arc-the-last',
     worldId: 'world-naruto',
     name: 'The Last (movie)',
+    localizedName: { it: 'The Last (film)', en: 'The Last (movie)' },
     saga: 'Post-serie',
     order: 21,
     description:
@@ -327,6 +349,7 @@ export const narutoArcs: StoryArc[] = [
     id: 'arc-naruto-hokage',
     worldId: 'world-naruto',
     name: 'Naruto becomes Hokage',
+    localizedName: { it: 'Naruto diventa Hokage', en: 'Naruto becomes Hokage' },
     saga: 'Post-serie',
     order: 22,
     description:
