@@ -4,6 +4,7 @@ import type { WorldDataset } from '@/types';
 import { Modal } from '@/components/common/Modal';
 import { Badge } from '@/components/common/Badge';
 import { Button } from '@/components/common/Button';
+import { YouTubeEmbed } from '@/components/common/YouTubeEmbed';
 import { CanonPill, ReferencePill } from '@/components/common/StatusPill';
 import { useMapStore, useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
@@ -164,6 +165,18 @@ export function TimelineEventDetailsModal({
               </button>
             ))}
           </div>
+        </section>
+      )}
+
+      {event.battleVideoUrl && (
+        <section>
+          <h3 className="font-display text-[11px] uppercase tracking-widest text-chakra-300 mb-2">
+            {t("modals.battle")}
+          </h3>
+          <YouTubeEmbed
+            url={event.battleVideoUrl}
+            title={getLocalizedText(event.title, locale)}
+          />
         </section>
       )}
 

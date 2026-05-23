@@ -516,6 +516,8 @@ export interface TimelineEvent {
   routeIds?: string[];
   mangaChapters?: string[];
   animeEpisodes?: string[];
+  /** Link YouTube dello scontro (mostra un player nel modale evento). */
+  battleVideoUrl?: string;
   /** Ordine cronologico numerico (più basso = prima) */
   order: number;
   /** Alias legacy; preferire `canonStatus`. */
