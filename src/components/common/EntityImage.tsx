@@ -23,6 +23,13 @@ interface EntityImageProps {
   villageId?: string;
   /** Tipo di luogo (location). */
   locationType?: LocationType;
+  /**
+   * Come adattare un'immagine reale al contenitore:
+   * - `cover` (default): riempie e ritaglia.
+   * - `contain`: mostra l'immagine intera ridimensionata, con sfondo
+   *   sfocato a riempire lo spazio restante.
+   */
+  fit?: 'cover' | 'contain';
 }
 
 function hslBase(id: string): string {
@@ -42,11 +49,30 @@ export function EntityImage({
   chakraNature,
   villageId,
   locationType,
+  fit = 'cover',
 }: EntityImageProps) {
   const uid = useId().replace(/:/g, '');
   const dropIn = resolveDropInImage(kind, id);
 
   if (dropIn) {
+    if (fit === 'contain') {
+      return (
+        <div className={cn('overflow-hidden bg-ink-900', className)}>
+          <img
+            src={dropIn}
+            alt=""
+            aria-hidden
+            className="absolute inset-0 h-full w-full object-cover scale-110 blur-2xl opacity-40"
+          />
+          <img
+            src={dropIn}
+            alt={name}
+            loading="lazy"
+            className="absolute inset-0 h-full w-full object-contain"
+          />
+        </div>
+      );
+    }
     return (
       <img
         src={dropIn}
