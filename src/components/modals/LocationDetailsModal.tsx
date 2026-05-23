@@ -97,6 +97,7 @@ export function LocationDetailsModal({
           name={getLocalizedText(location.localizedName, locale) || location.name}
           villageId={location.id}
           locationType={location.type}
+          className="absolute inset-0"
         />
       }
       eyebrow={

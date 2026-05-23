@@ -52,6 +52,7 @@ export function JutsuDetailsModal({ dataset, jutsuId }: JutsuDetailsModalProps) 
           id={jutsu.id}
           name={getLocalizedText(jutsu.localizedName, locale) || jutsu.name}
           chakraNature={jutsu.chakraNature?.[0]}
+          className="absolute inset-0"
         />
       }
       eyebrow={t('modals.jutsu')}
