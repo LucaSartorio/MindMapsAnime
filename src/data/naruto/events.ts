@@ -1094,6 +1094,7 @@ export const narutoEvents: TimelineEvent[] = [
     arcId: 'arc-fourth-war',
     mangaChapters: ['579-593'],
     animeEpisodes: ['Shippuden ep. 338-339'],
+    battleVideoUrl: 'https://www.youtube.com/watch?v=PUHh8_PC-vA',
     characterIds: ['char-itachi', 'char-sasuke'],
     order: 68,
     canon: 'canon',

@@ -231,6 +231,7 @@ export const it = {
     relatedLocations: 'Luoghi collegati',
     mainAbilities: 'Abilità principali',
     eventLink: 'evento',
+    battle: 'Scontro',
   },
   characters: {
     archiveTitle: 'Archivio personaggi',

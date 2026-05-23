@@ -228,6 +228,7 @@ export const en = {
     relatedLocations: 'Related locations',
     mainAbilities: 'Main abilities',
     eventLink: 'event',
+    battle: 'Battle',
   },
   characters: {
     archiveTitle: 'Characters archive',
