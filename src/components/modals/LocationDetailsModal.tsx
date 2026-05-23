@@ -314,7 +314,7 @@ export function LocationDetailsModal({
                 >
                   <EntityImage
                     kind="location"
-                    id={`${location.id}-${i}`}
+                    id={i === 0 ? location.id : `${location.id}-${i + 1}`}
                     name={getLocalizedText(location.localizedName, locale) || location.name}
                     villageId={location.id}
                     locationType={location.type}
