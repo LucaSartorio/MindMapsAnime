@@ -111,7 +111,7 @@ export function Modal({
       >
         {media && (
           <div className="relative h-36 sm:h-44 shrink-0 overflow-hidden rounded-t-2xl bg-ink-900">
-            <div className="absolute inset-0 [&>*]:h-full [&>*]:w-full">{media}</div>
+            {media}
             <div className="absolute inset-0 bg-gradient-to-t from-ink-900/80 to-transparent pointer-events-none" />
           </div>
         )}

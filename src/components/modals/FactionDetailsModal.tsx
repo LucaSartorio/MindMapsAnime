@@ -65,6 +65,7 @@ export function FactionDetailsModal({
           id={faction.id}
           name={getLocalizedText(faction.localizedName, locale) || faction.name}
           villageId={faction.villageLocationId}
+          className="absolute inset-0"
         />
       }
       eyebrow={`${faction.type.replace('_', ' ')}`}
