@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
@@ -6,6 +6,7 @@ import { Modal } from '@/components/common/Modal';
 import { Badge } from '@/components/common/Badge';
 import { Button } from '@/components/common/Button';
 import { EntityImage } from '@/components/common/EntityImage';
+import { ImageLightbox } from '@/components/common/ImageLightbox';
 import { ReferencePill } from '@/components/common/StatusPill';
 import { useMapStore, useUiStore } from '@/store';
 import {
@@ -40,6 +41,9 @@ export function LocationDetailsModal({
   const setActiveMapLevel = useMapStore((s) => s.setActiveMapLevel);
   const setTimeline = useUiStore((s) => s.setTimeline);
   const navigate = useNavigate();
+  const [lightbox, setLightbox] = useState<
+    null | { url?: string; entityId?: string; name: string }
+  >(null);
   const goToMap = () => navigate(`/worlds/${dataset.world.slug}`);
 
   const events = useMemo(
@@ -295,31 +299,41 @@ export function LocationDetailsModal({
               .map((id) => dataset.assets.find((a) => a.id === id))
               .filter((a): a is NonNullable<typeof a> => !!a);
             const slots = assets.length > 0 ? assets : [null, null, null];
+            const locName =
+              getLocalizedText(location.localizedName, locale) || location.name;
             return slots.map((a, i) => {
-              if (a?.url) {
-                return (
-                  <img
-                    key={a.id}
-                    src={a.url}
-                    alt={a.name}
-                    loading="lazy"
-                    className="aspect-square w-full rounded-lg object-cover border border-ink-600/60"
-                  />
-                );
-              }
+              const entityId =
+                i === 0 ? location.id : `${location.id}-${i + 1}`;
               return (
-                <div
+                <button
                   key={a?.id ?? i}
-                  className="aspect-square w-full rounded-lg overflow-hidden border border-ink-600/60"
+                  type="button"
+                  onClick={() =>
+                    setLightbox(
+                      a?.url
+                        ? { url: a.url, name: a.name }
+                        : { entityId, name: locName },
+                    )
+                  }
+                  className="aspect-square w-full rounded-lg overflow-hidden border border-ink-600/60 hover:border-chakra-500/70 transition focus:outline-none focus:ring-2 focus:ring-chakra-500/60"
                 >
-                  <EntityImage
-                    kind="location"
-                    id={i === 0 ? location.id : `${location.id}-${i + 1}`}
-                    name={getLocalizedText(location.localizedName, locale) || location.name}
-                    villageId={location.id}
-                    locationType={location.type}
-                  />
-                </div>
+                  {a?.url ? (
+                    <img
+                      src={a.url}
+                      alt={a.name}
+                      loading="lazy"
+                      className="block w-full h-full object-cover"
+                    />
+                  ) : (
+                    <EntityImage
+                      kind="location"
+                      id={entityId}
+                      name={locName}
+                      villageId={location.id}
+                      locationType={location.type}
+                    />
+                  )}
+                </button>
               );
             });
           })()}
@@ -328,6 +342,28 @@ export function LocationDetailsModal({
           {t('modals.galleryNote')}
         </p>
       </Section>
+
+      <ImageLightbox
+        open={lightbox !== null}
+        onClose={() => setLightbox(null)}
+        label={lightbox?.name}
+      >
+        {lightbox?.url ? (
+          <img
+            src={lightbox.url}
+            alt={lightbox.name}
+            className="block w-full h-full object-cover"
+          />
+        ) : lightbox?.entityId ? (
+          <EntityImage
+            kind="location"
+            id={lightbox.entityId}
+            name={lightbox.name}
+            villageId={location.id}
+            locationType={location.type}
+          />
+        ) : null}
+      </ImageLightbox>
     </Modal>
   );
 }

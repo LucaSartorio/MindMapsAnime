@@ -52,7 +52,7 @@ export function EntityImage({
         src={dropIn}
         alt={name}
         loading="lazy"
-        className={cn('w-full h-full object-cover', className)}
+        className={cn('block w-full h-full object-cover', className)}
       />
     );
   }
