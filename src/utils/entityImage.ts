@@ -40,6 +40,25 @@ export function resolveDropInImage(
   return null;
 }
 
+/**
+ * Logo del mondo/manga. Aggiungi un file `src/assets/worlds/logos/<slug>.<ext>`
+ * (es. `naruto.png`) e verrà mostrato sulla card della homepage al posto del
+ * placeholder generato.
+ */
+const WORLD_LOGOS = import.meta.glob(
+  '../assets/worlds/logos/*.{jpg,jpeg,png,webp,avif,svg}',
+  { eager: true, query: '?url', import: 'default' },
+) as Record<string, string>;
+
+export function resolveWorldLogo(slug: string): string | null {
+  for (const [path, url] of Object.entries(WORLD_LOGOS)) {
+    const file = path.slice(path.lastIndexOf('/') + 1);
+    const base = file.slice(0, file.lastIndexOf('.'));
+    if (base === slug) return url;
+  }
+  return null;
+}
+
 /* ------------------------------ Palette ------------------------------ */
 
 export const CHAKRA_COLORS: Record<ChakraNature, string> = {
