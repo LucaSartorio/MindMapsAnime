@@ -5,53 +5,51 @@ import { Card } from '@/components/common/Card';
 import { ComingSoonBadge } from './ComingSoonBadge';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText } from '@/utils/localization';
+import { resolveWorldLogo } from '@/utils/entityImage';
 
 interface WorldCardProps {
   world: AnimeWorld;
 }
 
-/** SVG placeholder personalizzato per il singolo mondo. */
+/**
+ * Copertina del mondo: sfondo tematico + logo del manga.
+ * Il logo si aggiunge come drop-in in `src/assets/worlds/logos/<slug>.<ext>`;
+ * in assenza resta il solo sfondo tematico.
+ */
 function WorldCover({ world }: { world: AnimeWorld }) {
-  const { primary, accent, highlight } = world.theme;
-  // Generiamo un placeholder visivamente coerente col tema del mondo.
-  // Ogni mondo ha un proprio "look", senza usare asset protetti.
+  const { primary, accent } = world.theme;
+  const logo = resolveWorldLogo(world.slug);
   return (
-    <svg
-      viewBox="0 0 400 240"
-      preserveAspectRatio="xMidYMid slice"
-      className="absolute inset-0 h-full w-full"
-      aria-hidden
-    >
-      <defs>
-        <radialGradient id={`g-${world.id}`} cx="50%" cy="40%" r="60%">
-          <stop offset="0%" stopColor={primary} stopOpacity="0.85" />
-          <stop offset="60%" stopColor={accent} stopOpacity="0.35" />
-          <stop offset="100%" stopColor="#070709" stopOpacity="1" />
-        </radialGradient>
-        <pattern id={`p-${world.id}`} width="40" height="40" patternUnits="userSpaceOnUse">
-          <path d="M0 40 L40 0" stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
-        </pattern>
-      </defs>
-      <rect width="400" height="240" fill={`url(#g-${world.id})`} />
-      <rect width="400" height="240" fill={`url(#p-${world.id})`} />
-      {/* Cerchio centrale = "mappa" */}
-      <g transform="translate(200 120)">
-        <circle r="64" fill="none" stroke="rgba(255,255,255,0.6)" strokeWidth="1.5" />
-        <circle r="42" fill="none" stroke={accent} strokeWidth="1.5" opacity="0.7" />
-        <circle r="22" fill={highlight} opacity="0.85" />
-        <path
-          d="M-64 0 L64 0 M0 -64 L0 64"
-          stroke="rgba(255,255,255,0.45)"
-          strokeWidth="1"
-          strokeDasharray="2 4"
-        />
-        {/* Punti sulla "mappa" */}
-        <circle cx="-30" cy="-20" r="3.5" fill="#fff" />
-        <circle cx="22" cy="14" r="3.5" fill="#fff" />
-        <circle cx="-12" cy="32" r="3.5" fill="#fff" />
-        <circle cx="40" cy="-26" r="3.5" fill="#fff" />
-      </g>
-    </svg>
+    <div className="absolute inset-0">
+      <svg
+        viewBox="0 0 400 240"
+        preserveAspectRatio="xMidYMid slice"
+        className="absolute inset-0 h-full w-full"
+        aria-hidden
+      >
+        <defs>
+          <radialGradient id={`g-${world.id}`} cx="50%" cy="40%" r="62%">
+            <stop offset="0%" stopColor={primary} stopOpacity="0.85" />
+            <stop offset="60%" stopColor={accent} stopOpacity="0.32" />
+            <stop offset="100%" stopColor="#070709" stopOpacity="1" />
+          </radialGradient>
+          <pattern id={`p-${world.id}`} width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M0 40 L40 0" stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
+          </pattern>
+        </defs>
+        <rect width="400" height="240" fill={`url(#g-${world.id})`} />
+        <rect width="400" height="240" fill={`url(#p-${world.id})`} />
+      </svg>
+      {logo && (
+        <div className="absolute inset-x-0 top-0 bottom-14 grid place-items-center p-6">
+          <img
+            src={logo}
+            alt={`${world.title} logo`}
+            className="max-h-full max-w-full object-contain drop-shadow-[0_2px_14px_rgba(0,0,0,0.65)]"
+          />
+        </div>
+      )}
+    </div>
   );
 }
 

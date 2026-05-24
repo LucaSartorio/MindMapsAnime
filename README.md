@@ -289,6 +289,19 @@ Formati supportati: `jpg`, `jpeg`, `png`, `webp`, `avif`, `svg`. Nessuna
 modifica al codice necessaria. **Non** inserire immagini protette da copyright
 senza i relativi diritti.
 
+### Logo del mondo (card homepage)
+
+La copertina di ogni mondo in homepage mostra uno sfondo tematico. Per
+aggiungere il **logo del manga** al centro della card, salva un file con lo
+slug del mondo:
+
+```
+src/assets/worlds/logos/<slug>.png   es. naruto.png, onepiece.png, dragonball.png
+```
+
+Stessa logica drop-in (auto-discovery a build-time). Consigliato un PNG/SVG con
+sfondo trasparente. In assenza del file resta il solo sfondo tematico.
+
 ---
 
 ## ✦ Copyright & dati narrativi
