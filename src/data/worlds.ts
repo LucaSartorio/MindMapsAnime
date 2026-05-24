@@ -64,7 +64,88 @@ export const animeWorlds: AnimeWorld[] = [
       yearStart: 1998,
     },
   },
-  // Slot futuri: One Piece, Dragon Ball, Attack on Titan, Bleach, Jujutsu Kaisen.
+  {
+    id: 'world-onepiece',
+    slug: 'onepiece',
+    title: 'One Piece',
+    subtitle: {
+      it: 'Grand Line · Era della Pirateria',
+      en: 'Grand Line · The Pirate Era',
+    },
+    description: {
+      it: 'Il mondo di Rufy e della ciurma di Cappello di Paglia è in arrivo. Navigheremo la Grand Line, da East Blue a Wano, tra isole, i quattro Mari e la rotta verso il One Piece.',
+      en: "Luffy and the Straw Hat crew's world is coming. We'll sail the Grand Line, from East Blue to Wano, across islands, the four Seas and the route toward the One Piece.",
+    },
+    status: 'coming_soon',
+    theme: {
+      primary: '#e23b3b',
+      accent: '#f5b21a',
+      highlight: '#1f9aff',
+    },
+    availableMapLevelIds: [],
+    tags: ['shonen', 'pirati', 'eiichiro oda', 'jump'],
+    metadata: {
+      author: 'Eiichiro Oda',
+      publisher: 'Shueisha',
+      yearStart: 1997,
+    },
+  },
+  {
+    id: 'world-dragonball',
+    slug: 'dragonball',
+    title: 'Dragon Ball',
+    subtitle: {
+      it: 'Sfere del Drago · Arti Marziali',
+      en: 'Dragon Balls · Martial Arts',
+    },
+    description: {
+      it: 'Il mondo di Goku è in arrivo. Dalla ricerca delle sette Sfere del Drago ai tornei di arti marziali, fino agli scontri contro Freezer, Cell e Majin Bu.',
+      en: "Goku's world is coming. From the search for the seven Dragon Balls to the martial arts tournaments, up to the battles against Frieza, Cell and Majin Buu.",
+    },
+    status: 'coming_soon',
+    theme: {
+      primary: '#f5a01f',
+      accent: '#2f7fe0',
+      highlight: '#e10b0b',
+    },
+    availableMapLevelIds: [],
+    tags: ['shonen', 'arti marziali', 'akira toriyama', 'jump'],
+    metadata: {
+      author: 'Akira Toriyama',
+      publisher: 'Shueisha',
+      yearStart: 1984,
+      yearEnd: 1995,
+    },
+  },
+  {
+    id: 'world-attackontitan',
+    slug: 'attackontitan',
+    title: 'Attack on Titan',
+    subtitle: {
+      it: 'L\'attacco dei Giganti · Mura e Titani',
+      en: 'Attack on Titan · Walls and Titans',
+    },
+    description: {
+      it: 'Il mondo oltre le Mura è in arrivo. Seguiremo Eren e il Corpo di Ricerca tra i tre muri — Maria, Rose e Sina —, l\'isola di Paradis e Marley.',
+      en: "The world beyond the Walls is coming. We'll follow Eren and the Survey Corps across the three walls — Maria, Rose and Sina —, Paradis Island and Marley.",
+    },
+    status: 'coming_soon',
+    theme: {
+      primary: '#6f7d4e',
+      accent: '#b0823f',
+      highlight: '#9e2b25',
+      background: '#0c0d11',
+    },
+    availableMapLevelIds: [],
+    tags: ['azione', 'titani', 'hajime isayama', 'kodansha'],
+    metadata: {
+      author: 'Hajime Isayama',
+      publisher: 'Kodansha',
+      yearStart: 2009,
+      yearEnd: 2021,
+    },
+  },
+  // Slot futuri: Bleach, Jujutsu Kaisen, Demon Slayer.
 ];
 
 /** Recupera un mondo tramite slug. */
