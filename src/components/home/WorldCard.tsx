@@ -41,7 +41,7 @@ function WorldCover({ world }: { world: AnimeWorld }) {
         <rect width="400" height="240" fill={`url(#p-${world.id})`} />
       </svg>
       {logo && (
-        <div className="absolute inset-x-0 top-0 bottom-14 grid place-items-center p-6">
+        <div className="absolute inset-0 flex items-center justify-center p-6 pb-16">
           <img
             src={logo}
             alt={`${world.title} logo`}
