@@ -41,11 +41,16 @@ function WorldCover({ world }: { world: AnimeWorld }) {
         <rect width="400" height="240" fill={`url(#p-${world.id})`} />
       </svg>
       {logo && (
-        <div className="absolute inset-0 flex items-center justify-center p-6 pb-16">
+        <div className="absolute inset-0 flex items-center justify-center px-7 pt-6 pb-14">
           <img
             src={logo}
             alt={`${world.title} logo`}
-            className="max-h-full max-w-full object-contain drop-shadow-[0_2px_14px_rgba(0,0,0,0.65)]"
+            style={
+              world.theme.logoScale
+                ? { transform: `scale(${world.theme.logoScale})` }
+                : undefined
+            }
+            className="h-auto w-auto max-h-[72%] max-w-[86%] object-contain drop-shadow-[0_2px_14px_rgba(0,0,0,0.65)]"
           />
         </div>
       )}

@@ -91,8 +91,7 @@ export function CharacterDetailsModal({
           id={character.id}
           name={character.name}
           villageId={character.villageLocationId}
-          fit="contain"
-          className="absolute inset-0"
+          fit="cover"
         />
       }
       eyebrow={t("modals.character")}

@@ -224,6 +224,14 @@ export interface WorldTheme {
   highlight: string;
   /** Colore sfondo specifico (opzionale, fallback al tema dark globale) */
   background?: string;
+  /**
+   * Fattore di scala del logo sulla card della homepage (default 1).
+   * Serve a uniformare l'impatto visivo di loghi con margini interni
+   * diversi: es. un logo con molto spazio trasparente attorno può usare
+   * 1.15-1.3 per "pareggiare" gli altri. Non incide sul layout, è solo
+   * un transform: scale() applicato all'immagine.
+   */
+  logoScale?: number;
 }
 
 /* ------------------------------ Asset ------------------------------ */

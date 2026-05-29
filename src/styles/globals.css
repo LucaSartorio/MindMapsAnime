@@ -121,6 +121,57 @@ body {
   color: #fff !important;
 }
 
+/* ------------------------------------------------------------------ *
+ * Cursore tematico per mondo (approccio ibrido)
+ * - `--world-cursor` è impostata da WorldLayout solo quando il mondo ha
+ *   un cursore tematico (es. Naruto → vortice della Foglia).
+ * - Il vortice è il cursore "ambientale" su sfondi, header, testo e aree
+ *   non interattive.
+ * - Gli elementi interattivi mantengono il cursore funzionale (manina su
+ *   click, I-beam sul testo, not-allowed sui disabilitati), perché è
+ *   un'affordance fondamentale.
+ * - La mappa (React Flow) conserva grab/grabbing dai propri stili: i suoi
+ *   selettori dichiarano il cursore direttamente sul pane, quindi vincono.
+ * ------------------------------------------------------------------ */
+.world-cursor {
+  cursor: var(--world-cursor, auto);
+}
+.world-cursor a[href],
+.world-cursor button,
+.world-cursor select,
+.world-cursor summary,
+.world-cursor label,
+.world-cursor [role='button'],
+.world-cursor [role='tab'],
+.world-cursor [role='link'],
+.world-cursor [role='menuitem'],
+.world-cursor input[type='checkbox'],
+.world-cursor input[type='radio'],
+.world-cursor input[type='range'],
+.world-cursor input[type='submit'],
+.world-cursor input[type='button'],
+.world-cursor input[type='file'],
+.world-cursor input[type='color'] {
+  cursor: pointer;
+}
+.world-cursor input:not([type]),
+.world-cursor input[type='text'],
+.world-cursor input[type='search'],
+.world-cursor input[type='email'],
+.world-cursor input[type='url'],
+.world-cursor input[type='tel'],
+.world-cursor input[type='password'],
+.world-cursor input[type='number'],
+.world-cursor textarea,
+.world-cursor [contenteditable='true'] {
+  cursor: text;
+}
+.world-cursor button:disabled,
+.world-cursor [disabled],
+.world-cursor [aria-disabled='true'] {
+  cursor: not-allowed;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;

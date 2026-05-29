@@ -54,35 +54,6 @@ export function EntityImage({
   const uid = useId().replace(/:/g, '');
   const dropIn = resolveDropInImage(kind, id);
 
-  if (dropIn) {
-    if (fit === 'contain') {
-      return (
-        <div className={cn('overflow-hidden bg-ink-900', className)}>
-          <img
-            src={dropIn}
-            alt=""
-            aria-hidden
-            className="absolute inset-0 h-full w-full object-cover scale-110 blur-2xl opacity-40"
-          />
-          <img
-            src={dropIn}
-            alt={name}
-            loading="lazy"
-            className="absolute inset-0 h-full w-full object-contain"
-          />
-        </div>
-      );
-    }
-    return (
-      <img
-        src={dropIn}
-        alt={name}
-        loading="lazy"
-        className={cn('block w-full h-full object-cover', className)}
-      />
-    );
-  }
-
   const initials = getInitials(name);
 
   let base: string;
@@ -100,6 +71,44 @@ export function EntityImage({
 
   const light = shade(base, 0.28);
   const dark = shade(base, -0.55);
+
+  // Sfondo opaco tematico: i PNG con trasparenza non mostrano più il
+  // "vuoto" (niente scacchiera/sfondo casuale) ma una tinta coerente
+  // con l'entità.
+  const themedBg = `linear-gradient(155deg, ${light} 0%, ${base} 45%, ${dark} 100%)`;
+
+  if (dropIn) {
+    if (fit === 'contain') {
+      return (
+        <div
+          className={cn('relative overflow-hidden h-full w-full', className)}
+          style={{ background: themedBg }}
+        >
+          <img
+            src={dropIn}
+            alt=""
+            aria-hidden
+            className="absolute inset-0 h-full w-full object-cover scale-110 blur-2xl opacity-45"
+          />
+          <img
+            src={dropIn}
+            alt={name}
+            loading="lazy"
+            className="absolute inset-0 h-full w-full object-contain"
+          />
+        </div>
+      );
+    }
+    return (
+      <img
+        src={dropIn}
+        alt={name}
+        loading="lazy"
+        style={{ background: themedBg }}
+        className={cn('block w-full h-full object-cover', className)}
+      />
+    );
+  }
 
   return (
     <svg

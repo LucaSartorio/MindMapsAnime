@@ -26,6 +26,8 @@ export const animeWorlds: AnimeWorld[] = [
       accent: '#1f9aff',
       highlight: '#e10b0b',
       background: '#0c0d11',
+      // Il logo Naruto ha margini interni ampi: lo "pareggiamo" agli altri.
+      logoScale: 1.18,
     },
     defaultMapLevelId: 'naruto-map-world',
     availableMapLevelIds: ['naruto-map-world', 'naruto-map-konoha'],
