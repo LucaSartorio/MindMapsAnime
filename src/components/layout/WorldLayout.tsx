@@ -1,4 +1,4 @@
-import { useEffect, type ReactNode } from 'react';
+import { useEffect, type CSSProperties, type ReactNode } from 'react';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
@@ -45,7 +45,13 @@ export function WorldLayout({
   const openFilters = useUiStore((s) => s.openFiltersDrawer);
 
   // Cursore tematico del mondo (es. Naruto → vortice della Foglia).
+  // Ibrido: il vortice è il cursore ambientale; gli elementi interattivi
+  // mantengono i cursori funzionali via le regole `.world-cursor` in CSS.
   const worldCursor = resolveWorldCursor(worldSlug ?? dataset.world.slug);
+  const cursorClass = worldCursor ? ' world-cursor' : '';
+  const cursorStyle = worldCursor
+    ? ({ '--world-cursor': worldCursor } as CSSProperties)
+    : undefined;
 
   // Quando cambia il dataset/route, sincronizziamo store e map level di default.
   useEffect(() => {
@@ -71,8 +77,8 @@ export function WorldLayout({
     // solo content + modali condivise.
     return (
       <div
-        className="relative flex-1 flex flex-col min-h-0"
-        style={worldCursor ? { cursor: worldCursor } : undefined}
+        className={`relative flex-1 flex flex-col min-h-0${cursorClass}`}
+        style={cursorStyle}
       >
         <div className="flex-1 min-h-0 overflow-auto">{children}</div>
         <FiltersDrawer dataset={dataset} />
@@ -83,8 +89,8 @@ export function WorldLayout({
 
   return (
     <div
-      className="relative flex-1 flex flex-col min-h-0"
-      style={worldCursor ? { cursor: worldCursor } : undefined}
+      className={`relative flex-1 flex flex-col min-h-0${cursorClass}`}
+      style={cursorStyle}
     >
       {/* Canvas mappa: occupa tutto */}
       <div className="relative flex-1 min-h-0">
