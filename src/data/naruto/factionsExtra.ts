@@ -549,4 +549,38 @@ export const narutoFactionsExtra: Faction[] = [
     referenceStatus: 'verified',
     tags: ['oto', 'orochimaru', 'villaggio', 'sperimentazione'],
   },
+
+  /* ------------------------------------------------------------------ */
+  /*  KARA (era Boruto)                                                  */
+  /* ------------------------------------------------------------------ */
+  {
+    id: 'faction-kara',
+    worldId: 'world-naruto',
+    type: 'organization',
+    name: 'Kara',
+    nameLocal: 'Kara',
+    japaneseName: '殻',
+    description: {
+      it: 'Organizzazione segreta dell\'era Boruto guidata da Jigen (vaso di Isshiki Ōtsutsuki). Riunisce membri "Inner" potenziati da modifiche cibernetiche e Strumenti Ninja Scientifici, con l\'obiettivo di coltivare un Albero Divino e i suoi Frutti del Chakra.',
+      en: 'Secret organization of the Boruto era led by Jigen (vessel of Isshiki Ōtsutsuki). It gathers "Inner" members enhanced with cybernetic modifications and Scientific Ninja Tools, aiming to cultivate a God Tree and its Chakra Fruit.',
+    },
+    longDescription: {
+      it: 'Kara ("guscio") è strutturata in un nucleo di "Inner" contrassegnati da numeri romani e da una rete di "Outer" infiltrati nelle nazioni. Dietro la facciata religiosa, il vero scopo di Isshiki è far rinascere il proprio clan sacrificando il pianeta. Lo scienziato Amado e il clone Kashin Koji complottano dall\'interno per rovesciarlo.',
+      en: 'Kara ("husk") is structured around a core of "Inners" marked with Roman numerals and a network of "Outers" embedded across the nations. Behind its cult-like facade, Isshiki\'s true goal is to revive his clan by sacrificing the planet. The scientist Amado and the clone Kashin Koji scheme from within to overthrow him.',
+    },
+    signatureAbilities: ['Karma', 'Strumenti Ninja Scientifici', 'Modifiche cibernetiche'],
+    leaderIds: ['char-isshiki'],
+    characterIds: [
+      'char-isshiki',
+      'char-kashin-koji',
+      'char-amado',
+      'char-delta',
+      'char-boro',
+      'char-code',
+      'char-kawaki',
+    ],
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['kara', 'boruto-era', 'organizzazione', 'otsutsuki'],
+  },
 ];
