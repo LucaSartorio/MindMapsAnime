@@ -624,6 +624,7 @@ export const narutoCharactersBatch1: Character[] = [
     family: ['char-naruto', 'char-hinata', 'char-himawari'],
     teachers: ['char-konohamaru', 'char-sasuke'],
     locationIds: ['loc-konoha'],
+    arcIds: ['arc-momoshiki', 'arc-kara-actuation', 'arc-vessel', 'arc-code-omnipotence'],
     status: 'alive',
     canonStatus: 'canon',
     referenceStatus: 'verified',

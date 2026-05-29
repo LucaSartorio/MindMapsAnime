@@ -11,7 +11,9 @@ import { narutoClansExtra, narutoFactionsExtra } from './factionsExtra';
 import { narutoTeams } from './teams';
 import { narutoTeamsBatch1 } from './teamsBatch1';
 import { narutoArcs } from './arcs';
+import { narutoArcsBatch1 } from './arcsBatch1';
 import { narutoEvents } from './events';
+import { narutoEventsBatch1 } from './eventsBatch1';
 import { narutoRoutes } from './routes';
 import { narutoCharacterRoutes } from './characterRoutes';
 import { narutoAssets } from './assets';
@@ -39,8 +41,8 @@ export const narutoDataset: WorldDataset = {
   // Per la pagina "Clans & Factions" uniamo clan + organizzazioni/eserciti/gruppi.
   factions: [...narutoClans, ...narutoClansExtra, ...narutoFactions, ...narutoFactionsExtra],
   teams: [...narutoTeams, ...narutoTeamsBatch1],
-  arcs: narutoArcs,
-  events: narutoEvents,
+  arcs: [...narutoArcs, ...narutoArcsBatch1],
+  events: [...narutoEvents, ...narutoEventsBatch1],
   // Percorsi narrativi + percorsi specifici dei personaggi
   routes: [...narutoRoutes, ...narutoCharacterRoutes],
   jutsu: [...narutoJutsu, ...narutoJutsuBatch1],

@@ -1,0 +1,161 @@
+import type { TimelineEvent } from '@/types';
+
+/**
+ * Eventi timeline Naruto · Batch 1 — era Boruto.
+ *
+ * Proseguono dopo l'ultimo evento esistente (order 111).
+ * Titoli e descrizioni bilingui `{ it, en }`; cross-ref solo verso id esistenti.
+ */
+export const narutoEventsBatch1: TimelineEvent[] = [
+  {
+    id: 'ev-boruto-chunin-exams',
+    worldId: 'world-naruto',
+    title: {
+      it: 'Esame Chūnin: la squalifica di Boruto',
+      en: 'Chūnin Exams: Boruto\'s disqualification',
+    },
+    description: {
+      it: 'Boruto usa di nascosto uno Strumento Ninja Scientifico (Kote) durante l\'Esame Chūnin e viene squalificato dal padre Naruto davanti a tutti.',
+      en: 'Boruto secretly uses a Scientific Ninja Tool (Kote) during the Chūnin Exams and is disqualified by his father Naruto in front of everyone.',
+    },
+    period: { it: 'Era Boruto', en: 'Boruto Era' },
+    arcId: 'arc-momoshiki',
+    locationId: 'loc-konoha-exam-arena',
+    characterIds: ['char-boruto', 'char-naruto', 'char-sarada', 'char-mitsuki'],
+    mangaChapters: ['Boruto 4-6'],
+    order: 112,
+    canon: 'canon',
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['boruto-era', 'chunin-exams'],
+  },
+  {
+    id: 'ev-momoshiki-attack',
+    worldId: 'world-naruto',
+    title: {
+      it: 'Attacco di Momoshiki e Kinshiki',
+      en: 'Momoshiki and Kinshiki\'s attack',
+    },
+    description: {
+      it: 'Gli Ōtsutsuki irrompono nello stadio dell\'Esame Chūnin per estrarre Kurama da Naruto. Sasuke, i Kage e Boruto reagiscono.',
+      en: 'The Ōtsutsuki storm the Chūnin Exam stadium to extract Kurama from Naruto. Sasuke, the Kage and Boruto fight back.',
+    },
+    period: { it: 'Era Boruto', en: 'Boruto Era' },
+    arcId: 'arc-momoshiki',
+    locationId: 'loc-konoha-exam-arena',
+    characterIds: ['char-momoshiki', 'char-kinshiki', 'char-naruto', 'char-sasuke', 'char-boruto'],
+    mangaChapters: ['Boruto 6-8'],
+    order: 113,
+    canon: 'canon',
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['boruto-era', 'otsutsuki'],
+  },
+  {
+    id: 'ev-momoshiki-defeat-karma',
+    worldId: 'world-naruto',
+    title: {
+      it: 'Sconfitta di Momoshiki e nascita del Karma',
+      en: 'Momoshiki\'s defeat and the birth of Karma',
+    },
+    description: {
+      it: 'Padre e figlio uniscono un Rasengan gigante: Boruto sferra il colpo decisivo a Momoshiki. Morente, l\'Ōtsutsuki imprime il marchio del Karma su Boruto.',
+      en: 'Father and son combine a giant Rasengan: Boruto strikes the decisive blow against Momoshiki. Dying, the Ōtsutsuki brands Boruto with Karma.',
+    },
+    period: { it: 'Era Boruto', en: 'Boruto Era' },
+    arcId: 'arc-momoshiki',
+    locationId: 'loc-konoha',
+    characterIds: ['char-boruto', 'char-naruto', 'char-momoshiki', 'char-sasuke'],
+    mangaChapters: ['Boruto 8'],
+    order: 114,
+    canon: 'canon',
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['boruto-era', 'karma', 'rasengan'],
+  },
+  {
+    id: 'ev-kawaki-arrival',
+    worldId: 'world-naruto',
+    title: {
+      it: 'Kawaki accolto da Naruto',
+      en: 'Kawaki taken in by Naruto',
+    },
+    description: {
+      it: 'In fuga da Kara, il giovane Kawaki viene ospitato a casa di Naruto, dove a poco a poco stringe un legame conflittuale con Boruto.',
+      en: 'On the run from Kara, the young Kawaki is sheltered in Naruto\'s home, where he gradually forms a conflicted bond with Boruto.',
+    },
+    period: { it: 'Era Boruto', en: 'Boruto Era' },
+    arcId: 'arc-kara-actuation',
+    locationId: 'loc-konoha',
+    characterIds: ['char-kawaki', 'char-naruto', 'char-boruto'],
+    mangaChapters: ['Boruto 23-26'],
+    order: 115,
+    canon: 'canon',
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['boruto-era', 'kara', 'kawaki'],
+  },
+  {
+    id: 'ev-jigen-seals-naruto',
+    worldId: 'world-naruto',
+    title: {
+      it: 'Jigen sigilla Naruto',
+      en: 'Jigen seals Naruto',
+    },
+    description: {
+      it: 'Jigen — vaso di Isshiki Ōtsutsuki — affronta Naruto e Sasuke: sigilla l\'Hokage in un\'altra dimensione e ferisce gravemente Sasuke.',
+      en: 'Jigen — vessel of Isshiki Ōtsutsuki — confronts Naruto and Sasuke: he seals the Hokage in another dimension and gravely wounds Sasuke.',
+    },
+    period: { it: 'Era Boruto', en: 'Boruto Era' },
+    arcId: 'arc-vessel',
+    characterIds: ['char-isshiki', 'char-naruto', 'char-sasuke'],
+    mangaChapters: ['Boruto 38-40'],
+    order: 116,
+    canon: 'canon',
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['boruto-era', 'kara', 'isshiki'],
+  },
+  {
+    id: 'ev-boro-battle',
+    worldId: 'world-naruto',
+    title: {
+      it: 'Team 7 contro Boro',
+      en: 'Team 7 versus Boro',
+    },
+    description: {
+      it: 'Per liberare Naruto, Boruto, Sarada, Mitsuki e Kawaki affrontano l\'Inner Boro e la sua rigenerazione estrema. Il Karma di Boruto si manifesta in modo allarmante.',
+      en: 'To free Naruto, Boruto, Sarada, Mitsuki and Kawaki battle the Inner Boro and his extreme regeneration. Boruto\'s Karma manifests alarmingly.',
+    },
+    period: { it: 'Era Boruto', en: 'Boruto Era' },
+    arcId: 'arc-vessel',
+    characterIds: ['char-boro', 'char-boruto', 'char-sarada', 'char-mitsuki', 'char-kawaki'],
+    mangaChapters: ['Boruto 48-52'],
+    order: 117,
+    canon: 'canon',
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['boruto-era', 'kara'],
+  },
+  {
+    id: 'ev-isshiki-death',
+    worldId: 'world-naruto',
+    title: {
+      it: 'La fine di Isshiki, l\'ascesa di Code',
+      en: 'Isshiki\'s end, Code\'s rise',
+    },
+    description: {
+      it: 'Isshiki perisce esaurendo la sua durata vitale. Prima di morire designa Code, ultimo vaso col Karma Bianco, come proprio erede vendicatore.',
+      en: 'Isshiki perishes as his lifespan runs out. Before dying he designates Code, the last vessel bearing White Karma, as his avenging heir.',
+    },
+    period: { it: 'Era Boruto', en: 'Boruto Era' },
+    arcId: 'arc-code-omnipotence',
+    characterIds: ['char-isshiki', 'char-code', 'char-naruto', 'char-sasuke', 'char-kawaki'],
+    mangaChapters: ['Boruto 52-53'],
+    order: 118,
+    canon: 'canon',
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['boruto-era', 'kara', 'code'],
+  },
+];

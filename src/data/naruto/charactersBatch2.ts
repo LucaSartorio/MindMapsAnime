@@ -143,6 +143,7 @@ export const narutoCharactersBatch2: Character[] = [
     allies: ['char-boruto', 'char-naruto'],
     enemies: ['char-isshiki'],
     locationIds: ['loc-konoha'],
+    arcIds: ['arc-kara-actuation', 'arc-vessel', 'arc-code-omnipotence'],
     status: 'alive',
     canonStatus: 'canon',
     referenceStatus: 'verified',
