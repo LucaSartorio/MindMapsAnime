@@ -1,0 +1,408 @@
+import type { Jutsu } from '@/types';
+
+/**
+ * Tecniche ninja Naruto · Batch 1 (canon, verified).
+ *
+ * Aggiunge firme iconiche finora assenti, ognuna collegata a personaggi
+ * già presenti nel dataset. Stesse convenzioni di `jutsu.ts`:
+ *  - `localizedName` e descrizioni come `{ it, en }`
+ *  - `characterIds` / `clanIds` solo verso id esistenti
+ *  - `handSeals` omesso quando la sequenza non è certa
+ */
+export const narutoJutsuBatch1: Jutsu[] = [
+  /* ============================ FULMINE ============================ */
+  {
+    id: 'jutsu-raikiri',
+    worldId: 'world-naruto',
+    name: 'Lightning Cutter (Raikiri)',
+    localizedName: { it: 'Saetta Fulminante (Raikiri)', en: 'Lightning Cutter (Raikiri)' },
+    japaneseName: '雷切',
+    type: 'ninjutsu',
+    classification: ['offensive'],
+    chakraNature: ['lightning'],
+    rank: 'A',
+    characterIds: ['char-kakashi', 'char-sasuke'],
+    shortDescription: {
+      it: 'Versione perfezionata del Chidori, firma di Kakashi. Concentra fulmine nella mano fino a "tagliare un fulmine", con velocità d\'affondo letale.',
+      en: 'Kakashi\'s refined version of the Chidori. Concentrates lightning in the hand until it can "cut lightning itself", delivered in a lethal thrust.',
+    },
+    longDescription: {
+      it: 'Kakashi sviluppò il Raikiri come evoluzione del Chidori; il nome deriva dalla leggenda secondo cui ne avrebbe usato uno per tagliare un fulmine. Richiede lo Sharingan per compensare la visione a tunnel data dalla velocità di carica.',
+      en: 'Kakashi developed the Raikiri as an evolution of the Chidori; its name comes from the legend that he once cut a bolt of lightning with it. It relies on the Sharingan to offset the tunnel vision caused by the charge speed.',
+    },
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['kakashi', 'lightning', 'chidori-family'],
+  },
+  {
+    id: 'jutsu-kirin',
+    worldId: 'world-naruto',
+    name: 'Kirin',
+    localizedName: { it: 'Kirin', en: 'Kirin' },
+    japaneseName: '麒麟',
+    type: 'ninjutsu',
+    classification: ['offensive'],
+    chakraNature: ['lightning'],
+    rank: 'S',
+    characterIds: ['char-sasuke'],
+    shortDescription: {
+      it: 'Tecnica devastante di Sasuke: incanala un vero fulmine naturale guidandolo sul bersaglio alla velocità della luce, impossibile da schivare.',
+      en: 'Sasuke\'s devastating technique: channels a real lightning bolt and guides it onto the target at the speed of light, impossible to dodge.',
+    },
+    longDescription: {
+      it: 'Sasuke crea prima nubi temporalesche con grandi fiammate, poi usa il proprio chakra come parafulmine per dirigere una scarica naturale. Usato per la prima volta contro Itachi.',
+      en: 'Sasuke first generates thunderclouds with massive flames, then uses his own chakra as a lightning rod to direct a natural bolt. First used against Itachi.',
+    },
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['sasuke', 'lightning', 'natural-lightning'],
+  },
+  {
+    id: 'jutsu-lightning-lariat',
+    worldId: 'world-naruto',
+    name: 'Lightning Release: Lariat',
+    localizedName: { it: 'Arte del Fulmine: Lariat', en: 'Lightning Release: Lariat' },
+    japaneseName: '雷遁・ラリアット',
+    type: 'ninjutsu',
+    classification: ['offensive'],
+    chakraNature: ['lightning'],
+    rank: 'A',
+    characterIds: ['char-killer-b', 'char-a'],
+    shortDescription: {
+      it: 'Carica taijutsu potenziata dal fulmine: l\'avambraccio avvolto di chakra colpisce il bersaglio con la forza di una clothesline devastante.',
+      en: 'A lightning-enhanced taijutsu charge: the forearm, wrapped in chakra, strikes the target with the force of a devastating clothesline.',
+    },
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['kumo', 'lightning', 'raikage', 'killer-b'],
+  },
+
+  /* ============================ FUOCO / BLAZE ============================ */
+  {
+    id: 'jutsu-blaze-kagutsuchi',
+    worldId: 'world-naruto',
+    name: 'Blaze Release: Kagutsuchi',
+    localizedName: { it: 'Arte della Fiamma Nera: Kagutsuchi', en: 'Blaze Release: Kagutsuchi' },
+    japaneseName: '炎遁・加具土命',
+    type: 'ninjutsu',
+    classification: ['kekkei_genkai', 'offensive'],
+    chakraNature: ['fire'],
+    characterIds: ['char-sasuke', 'char-itachi'],
+    clanIds: ['clan-uchiha'],
+    shortDescription: {
+      it: 'Controllo manuale delle fiamme nere di Amaterasu: Sasuke le modella in lame, frecce e reti, superando il limite delle fiamme inestinguibili.',
+      en: 'Manual shaping of Amaterasu\'s black flames: Sasuke molds them into blades, arrows and nets, going beyond the limit of the inextinguishable fire.',
+    },
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['uchiha', 'mangekyo', 'amaterasu', 'blaze'],
+  },
+
+  /* ============================ MARIONETTE (SUNA) ============================ */
+  {
+    id: 'jutsu-puppet-technique',
+    worldId: 'world-naruto',
+    name: 'Puppet Technique',
+    localizedName: { it: 'Tecnica delle Marionette', en: 'Puppet Technique' },
+    japaneseName: '傀儡の術 (Kugutsu no Jutsu)',
+    type: 'ninjutsu',
+    classification: ['supplementary', 'offensive'],
+    rank: 'C',
+    characterIds: ['char-sasori', 'char-kankuro', 'char-chiyo', 'char-monzaemon'],
+    shortDescription: {
+      it: 'Arte fondante di Suna: il marionettista controlla pupazzi armati tramite fili di chakra, combattendo a distanza con trappole e lame avvelenate.',
+      en: 'Suna\'s founding art: the puppeteer controls armed puppets via chakra threads, fighting at range with traps and poisoned blades.',
+    },
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['suna', 'puppet', 'hiden'],
+  },
+  {
+    id: 'jutsu-chakra-threads',
+    worldId: 'world-naruto',
+    name: 'Chakra Threads',
+    localizedName: { it: 'Fili di Chakra', en: 'Chakra Threads' },
+    japaneseName: 'チャクラの糸',
+    type: 'ninjutsu',
+    classification: ['supplementary'],
+    rank: 'D',
+    characterIds: ['char-sasori', 'char-kankuro', 'char-chiyo'],
+    shortDescription: {
+      it: 'Sottili fili di chakra emessi dalle dita per manovrare marionette o oggetti a distanza. Base imprescindibile dell\'arte dei marionettisti.',
+      en: 'Thin threads of chakra emitted from the fingertips to manipulate puppets or objects at range. The indispensable basis of the puppeteer\'s art.',
+    },
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['suna', 'puppet', 'support'],
+  },
+
+  /* ============================ TAIJUTSU ============================ */
+  {
+    id: 'jutsu-front-lotus',
+    worldId: 'world-naruto',
+    name: 'Front Lotus',
+    localizedName: { it: 'Loto Frontale', en: 'Front Lotus' },
+    japaneseName: '表蓮華 (Omote Renge)',
+    type: 'taijutsu',
+    classification: ['offensive'],
+    rank: 'B',
+    characterIds: ['char-rock-lee', 'char-guy'],
+    shortDescription: {
+      it: 'Tecnica proibita che richiede l\'apertura della prima Porta. Avvolto l\'avversario nelle bende, lo si scaglia al suolo con una piroetta devastante.',
+      en: 'A forbidden technique requiring the first Gate to be opened. Wrapping the opponent in bandages, the user drives them into the ground with a devastating spinning slam.',
+    },
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['konoha', 'taijutsu', 'eight-gates', 'forbidden'],
+  },
+  {
+    id: 'jutsu-night-guy',
+    worldId: 'world-naruto',
+    name: 'Night Guy',
+    localizedName: { it: 'Guy Notturno', en: 'Night Guy' },
+    japaneseName: '夜ガイ (Yagai)',
+    type: 'taijutsu',
+    classification: ['offensive'],
+    rank: 'S',
+    characterIds: ['char-guy'],
+    shortDescription: {
+      it: 'Tecnica suprema dell\'Ottava Porta: un calcio così rapido da incendiare l\'aria, capace di ferire perfino Madara nello stato dei Sei Percorsi. Costa la vita all\'utilizzatore.',
+      en: 'The ultimate technique of the Eighth Gate: a kick so fast it ignites the air, able to wound even Six-Paths Madara. It costs the user their life.',
+    },
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['konoha', 'taijutsu', 'eight-gates', 'guy'],
+  },
+
+  /* ============================ HYŪGA ============================ */
+  {
+    id: 'jutsu-twin-lion-fists',
+    worldId: 'world-naruto',
+    name: 'Gentle Step: Twin Lion Fists',
+    localizedName: { it: 'Passo Gentile: Pugni dei Leoni Gemelli', en: 'Gentle Step: Twin Lion Fists' },
+    japaneseName: '柔歩双獅子拳 (Jūho Sōshiken)',
+    type: 'taijutsu',
+    classification: ['kekkei_genkai', 'offensive'],
+    characterIds: ['char-hinata'],
+    clanIds: ['clan-hyuga'],
+    shortDescription: {
+      it: 'Tecnica avanzata di Hinata: due teste di leone di chakra avvolgono le mani, distruggendo la rete di chakra dell\'avversario a ogni colpo.',
+      en: 'Hinata\'s advanced technique: two chakra lion-heads envelop the hands, shredding the opponent\'s chakra network with every strike.',
+    },
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['hyuga', 'gentle-fist', 'hinata'],
+  },
+  {
+    id: 'jutsu-eight-trigrams-vacuum-palm',
+    worldId: 'world-naruto',
+    name: 'Eight Trigrams Vacuum Palm',
+    localizedName: { it: 'Otto Trigrammi: Palmo del Vuoto', en: 'Eight Trigrams Vacuum Palm' },
+    japaneseName: '八卦空掌 (Hakke Kūshō)',
+    type: 'taijutsu',
+    classification: ['kekkei_genkai', 'offensive'],
+    characterIds: ['char-neji', 'char-hinata', 'char-hiashi'],
+    clanIds: ['clan-hyuga'],
+    shortDescription: {
+      it: 'Colpo di palmo Hyūga che proietta a distanza un\'onda di chakra compresso, capace di respingere bersagli senza contatto fisico.',
+      en: 'A Hyūga palm strike that projects a wave of compressed chakra at range, repelling targets without physical contact.',
+    },
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['hyuga', 'gentle-fist', 'ranged'],
+  },
+
+  /* ============================ RINNEGAN ============================ */
+  {
+    id: 'jutsu-bansho-tenin',
+    worldId: 'world-naruto',
+    name: 'Universal Pull (Banshō Ten\'in)',
+    localizedName: { it: 'Attrazione Universale (Banshō Ten\'in)', en: 'Universal Pull (Banshō Ten\'in)' },
+    japaneseName: '万象天引',
+    type: 'ninjutsu',
+    classification: ['dojutsu'],
+    characterIds: ['char-pain', 'char-nagato', 'char-madara', 'char-sasuke'],
+    shortDescription: {
+      it: 'Potere della Via Deva del Rinnegan: attira verso di sé persone e oggetti, complementare alla Spinta Divina. Soggetto a un breve tempo di ricarica.',
+      en: 'A power of the Rinnegan\'s Deva Path: pulls people and objects toward the user, the counterpart to Almighty Push. Subject to a brief cooldown.',
+    },
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['rinnegan', 'deva-path', 'pain'],
+  },
+
+  /* ============================ BESTIE CON CODA ============================ */
+  {
+    id: 'jutsu-tailed-beast-mode',
+    worldId: 'world-naruto',
+    name: 'Tailed Beast Mode',
+    localizedName: { it: 'Modalità Bestia con Coda', en: 'Tailed Beast Mode' },
+    japaneseName: '尾獣モード (Bijū Mōdo)',
+    type: 'tailed_beast',
+    classification: ['tailed_beast', 'transformation'],
+    characterIds: ['char-naruto', 'char-killer-b'],
+    shortDescription: {
+      it: 'Trasformazione completa del jinchūriki nella propria Bestia con Coda, o in una versione di chakra a misura umana grazie a un legame di fiducia con essa.',
+      en: 'Full transformation of the jinchūriki into their Tailed Beast, or into a human-sized chakra avatar of it, achieved through a bond of trust with the beast.',
+    },
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['jinchuriki', 'tailed-beast', 'transformation'],
+  },
+
+  /* ============================ TRASFORMAZIONE ============================ */
+  {
+    id: 'jutsu-sexy-technique',
+    worldId: 'world-naruto',
+    name: 'Sexy Technique',
+    localizedName: { it: 'Tecnica Seducente', en: 'Sexy Technique' },
+    japaneseName: '色気の術 (Oiroke no Jutsu)',
+    type: 'ninjutsu',
+    classification: ['transformation', 'supplementary'],
+    rank: 'E',
+    characterIds: ['char-naruto', 'char-konohamaru'],
+    shortDescription: {
+      it: 'Trasformazione comica inventata da Naruto: assume le sembianze di una giovane donna per cogliere di sorpresa (e mettere KO) gli avversari distratti.',
+      en: 'A comedic transformation invented by Naruto: takes the form of a young woman to catch distracted opponents off guard (and knock them out).',
+    },
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['naruto', 'transformation', 'comic'],
+  },
+
+  /* ============================ ŌTSUTSUKI / ERA BORUTO ============================ */
+  {
+    id: 'jutsu-tenseigan',
+    worldId: 'world-naruto',
+    name: 'Tenseigan',
+    localizedName: { it: 'Tenseigan', en: 'Tenseigan' },
+    japaneseName: '転生眼',
+    type: 'doujutsu',
+    classification: ['kekkei_genkai', 'dojutsu'],
+    characterIds: ['char-toneri'],
+    clanIds: ['clan-otsutsuki'],
+    shortDescription: {
+      it: 'Doujutsu nato dalla fusione del chakra Hyūga e Ōtsutsuki. Concede enormi riserve di chakra, controllo della gravità e una modalità di Chakra dei Sei Percorsi.',
+      en: 'A dōjutsu born from merging Hyūga and Ōtsutsuki chakra. Grants vast chakra reserves, gravity control and a Six Paths-style chakra mode.',
+    },
+    canonStatus: 'movie',
+    referenceStatus: 'verified',
+    tags: ['otsutsuki', 'dojutsu', 'moon', 'movie'],
+  },
+  {
+    id: 'jutsu-karma',
+    worldId: 'world-naruto',
+    name: 'Karma (Kāma)',
+    localizedName: { it: 'Karma (Kāma)', en: 'Karma (Kāma)' },
+    japaneseName: '楔 (Kāma)',
+    type: 'ninjutsu',
+    classification: ['kekkei_mora', 'supplementary'],
+    characterIds: ['char-boruto', 'char-kawaki', 'char-code'],
+    clanIds: ['clan-otsutsuki'],
+    shortDescription: {
+      it: 'Sigillo-marchio impresso dagli Ōtsutsuki: archivia i dati dell\'ospite e potenzia l\'utilizzatore, fungendo da "backup" per la rinascita dell\'Ōtsutsuki.',
+      en: 'A seal-mark branded by the Ōtsutsuki: it stores the host\'s data and empowers the user, serving as a "backup" for the Ōtsutsuki\'s resurrection.',
+    },
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['boruto-era', 'otsutsuki', 'karma'],
+  },
+
+  /* ============================ NATURE KEKKEI GENKAI ============================ */
+  {
+    id: 'jutsu-scorch-release',
+    worldId: 'world-naruto',
+    name: 'Scorch Release',
+    localizedName: { it: 'Arte dell\'Incenerimento', en: 'Scorch Release' },
+    japaneseName: '灼遁 (Shakuton)',
+    type: 'ninjutsu',
+    classification: ['kekkei_genkai', 'offensive'],
+    chakraNature: ['scorch'],
+    characterIds: ['char-pakura'],
+    shortDescription: {
+      it: 'Kekkei genkai che combina fuoco e vento per generare orbi super-roventi che disidratano il bersaglio fino a ridurlo in cenere. Firma di Pakura di Suna.',
+      en: 'A kekkei genkai combining fire and wind to create super-heated orbs that dehydrate the target into ash. The signature of Pakura of Suna.',
+    },
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['suna', 'kekkei-genkai', 'scorch', 'pakura'],
+  },
+
+  /* ============================ VENTO ============================ */
+  {
+    id: 'jutsu-wind-cyclone-scythe',
+    worldId: 'world-naruto',
+    name: 'Wind Release: Cyclone Scythe',
+    localizedName: { it: 'Arte del Vento: Falce Ciclonica', en: 'Wind Release: Cyclone Scythe' },
+    japaneseName: '風遁・鎌鼬 (Kamaitachi)',
+    type: 'ninjutsu',
+    classification: ['offensive'],
+    chakraNature: ['wind'],
+    rank: 'B',
+    characterIds: ['char-temari'],
+    shortDescription: {
+      it: 'Con un colpo del suo ventaglio gigante, Temari scatena raffiche taglienti come lame in grado di spazzare via interi schieramenti nemici.',
+      en: 'With a swing of her giant fan, Temari unleashes blade-sharp gusts capable of sweeping away entire enemy ranks.',
+    },
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['suna', 'wind', 'temari', 'fan'],
+  },
+
+  /* ============================ SENJUTSU ============================ */
+  {
+    id: 'jutsu-frog-kata',
+    worldId: 'world-naruto',
+    name: 'Sage Art: Frog Kata',
+    localizedName: { it: 'Arte Eremitica: Kata del Rospo', en: 'Sage Art: Frog Kata' },
+    japaneseName: '仙法・蛙組手 (Senpō: Kaeru Kumite)',
+    type: 'senjutsu',
+    classification: ['senjutsu', 'offensive'],
+    characterIds: ['char-jiraiya', 'char-naruto'],
+    shortDescription: {
+      it: 'Taijutsu in Modalità Eremitica: l\'energia naturale estende il raggio dei colpi creando un "guscio" di chakra attorno al corpo, ampliando portata e potenza.',
+      en: 'Sage Mode taijutsu: natural energy extends the reach of strikes by forming a chakra "shell" around the body, increasing range and power.',
+    },
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['senjutsu', 'toad-sage', 'jiraiya', 'naruto'],
+  },
+
+  /* ============================ GENJUTSU / KENJUTSU ============================ */
+  {
+    id: 'jutsu-hell-viewing',
+    worldId: 'world-naruto',
+    name: 'Demonic Illusion: Hell Viewing Technique',
+    localizedName: { it: 'Illusione Demoniaca: Visione Infernale', en: 'Demonic Illusion: Hell Viewing Technique' },
+    japaneseName: '魔幻・地獄絵 (Magen: Jigoku Tsukaru)',
+    type: 'genjutsu',
+    classification: ['supplementary'],
+    rank: 'C',
+    characterIds: ['char-kurenai'],
+    shortDescription: {
+      it: 'Genjutsu che proietta nella mente del bersaglio la propria paura più grande, paralizzandolo con visioni terrificanti. Tecnica caratteristica di Kurenai.',
+      en: 'A genjutsu that projects the target\'s greatest fear into their mind, paralyzing them with terrifying visions. Kurenai\'s signature technique.',
+    },
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['konoha', 'genjutsu', 'kurenai'],
+  },
+  {
+    id: 'jutsu-dance-of-crescent-moon',
+    worldId: 'world-naruto',
+    name: 'Dance of the Crescent Moon',
+    localizedName: { it: 'Danza della Luna Crescente', en: 'Dance of the Crescent Moon' },
+    japaneseName: '三日月の舞 (Mikazuki no Mai)',
+    type: 'kenjutsu',
+    classification: ['offensive'],
+    rank: 'B',
+    characterIds: ['char-hayate'],
+    shortDescription: {
+      it: 'Tecnica di spada che impiega due cloni per attaccare il bersaglio da tre angolazioni simultanee. Arte caratteristica di Hayate Gekkō.',
+      en: 'A sword technique that uses two clones to attack the target from three simultaneous angles. The signature art of Hayate Gekkō.',
+    },
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['konoha', 'kenjutsu', 'hayate'],
+  },
+];
