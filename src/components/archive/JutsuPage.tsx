@@ -5,13 +5,14 @@ import type { ChakraNature, JutsuType, WorldDataset } from '@/types';
 import { JutsuCard } from './JutsuCard';
 import { EmptyState } from '@/components/common/EmptyState';
 import { SourceNotice } from '@/components/common/SourceNotice';
-import { useUiStore } from '@/store';
+import { useMapStore, useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import {
   getChakraNatureLabel,
   getJutsuTypeLabel,
   getLocalizedText,
 } from '@/utils/localization';
+import { filterJutsuBySeries } from '@/lib/filters';
 
 interface JutsuPageProps {
   dataset: WorldDataset;
@@ -26,8 +27,12 @@ export function JutsuPage({ dataset }: JutsuPageProps) {
   const [filterType, setFilterType] = useState<string>('');
   const [filterNature, setFilterNature] = useState<string>('');
   const openJutsuModal = useUiStore((s) => s.openJutsuModal);
+  const filters = useMapStore((s) => s.filters);
 
-  const allJutsu = useMemo(() => dataset.jutsu ?? [], [dataset.jutsu]);
+  const allJutsu = useMemo(
+    () => filterJutsuBySeries(dataset.jutsu ?? [], filters, dataset),
+    [dataset, filters],
+  );
 
   useEffect(() => {
     if (initialId) openJutsuModal(initialId);

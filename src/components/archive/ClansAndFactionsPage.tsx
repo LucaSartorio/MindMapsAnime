@@ -5,9 +5,10 @@ import type { FactionType, WorldDataset } from '@/types';
 import { ClanFactionCard } from './ClanFactionCard';
 import { EmptyState } from '@/components/common/EmptyState';
 import { SourceNotice } from '@/components/common/SourceNotice';
-import { useUiStore } from '@/store';
+import { useMapStore, useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText } from '@/utils/localization';
+import { filterFactionsBySeries } from '@/lib/filters';
 
 interface ClansAndFactionsPageProps {
   dataset: WorldDataset;
@@ -30,6 +31,7 @@ export function ClansAndFactionsPage({ dataset }: ClansAndFactionsPageProps) {
   const [filter, setFilter] = useState<FactionType | ''>('');
   const [query, setQuery] = useState('');
   const openFactionModal = useUiStore((s) => s.openFactionModal);
+  const filters = useMapStore((s) => s.filters);
 
   useEffect(() => {
     if (initialId) openFactionModal(initialId);
@@ -37,7 +39,8 @@ export function ClansAndFactionsPage({ dataset }: ClansAndFactionsPageProps) {
 
   const items = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return dataset.factions
+    const bySeries = filterFactionsBySeries(dataset.factions, filters, dataset);
+    return bySeries
       .filter((f) => {
         if (filter && f.type !== filter) return false;
         if (q) {
@@ -48,7 +51,7 @@ export function ClansAndFactionsPage({ dataset }: ClansAndFactionsPageProps) {
         return true;
       })
       .sort((a, b) => a.name.localeCompare(b.name));
-  }, [dataset.factions, filter, query, locale]);
+  }, [dataset, filters, filter, query, locale]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6">

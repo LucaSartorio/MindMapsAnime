@@ -1,10 +1,23 @@
 import type {
+  Character,
+  Faction,
+  Jutsu,
   Location,
   MapFilters,
+  Team,
   TimelineEvent,
   WorldDataset,
 } from '@/types';
 import { getLocalizedText } from '@/utils/localization';
+import {
+  characterSeries,
+  eventSeries,
+  factionSeries,
+  jutsuSeries,
+  locationSeries,
+  matchesSelectedSeries,
+  teamSeries,
+} from '@/lib/series';
 
 /**
  * Funzioni pure di filtraggio.
@@ -19,6 +32,9 @@ export function filterLocations(
   return locations.filter((loc) => {
     // Elementi "da verificare": nascosti di default, mostrabili dal filtro.
     if (!filters.showUnverified && loc.referenceStatus === 'needs_verification') {
+      return false;
+    }
+    if (!matchesSelectedSeries(locationSeries(loc, dataset), filters.series)) {
       return false;
     }
     if (
@@ -72,9 +88,13 @@ export function filterLocations(
 export function filterEvents(
   events: TimelineEvent[],
   filters: MapFilters,
+  dataset?: WorldDataset,
 ): TimelineEvent[] {
   return events.filter((ev) => {
     if (filters.arcIds.length > 0 && (!ev.arcId || !filters.arcIds.includes(ev.arcId))) {
+      return false;
+    }
+    if (dataset && !matchesSelectedSeries(eventSeries(ev, dataset), filters.series)) {
       return false;
     }
     if (filters.periods.length > 0) {
@@ -110,4 +130,53 @@ export function filterEvents(
     if (filters.canonOnly && ev.canon !== 'canon') return false;
     return true;
   });
+}
+
+/**
+ * Filtra i personaggi per il solo filtro Serie (`filters.series`).
+ * Pensato per le pagine archivio / ricerca: gli altri filtri della mappa
+ * non hanno semantica utile sui personaggi al di fuori della mappa.
+ */
+export function filterCharactersBySeries(
+  characters: Character[],
+  filters: MapFilters,
+  dataset: WorldDataset,
+): Character[] {
+  if (filters.series.length === 0) return characters;
+  return characters.filter((c) =>
+    matchesSelectedSeries(characterSeries(c, dataset), filters.series),
+  );
+}
+
+export function filterJutsuBySeries(
+  jutsu: Jutsu[],
+  filters: MapFilters,
+  dataset: WorldDataset,
+): Jutsu[] {
+  if (filters.series.length === 0) return jutsu;
+  return jutsu.filter((j) =>
+    matchesSelectedSeries(jutsuSeries(j, dataset), filters.series),
+  );
+}
+
+export function filterFactionsBySeries(
+  factions: Faction[],
+  filters: MapFilters,
+  dataset: WorldDataset,
+): Faction[] {
+  if (filters.series.length === 0) return factions;
+  return factions.filter((f) =>
+    matchesSelectedSeries(factionSeries(f, dataset), filters.series),
+  );
+}
+
+export function filterTeamsBySeries(
+  teams: Team[],
+  filters: MapFilters,
+  dataset: WorldDataset,
+): Team[] {
+  if (filters.series.length === 0) return teams;
+  return teams.filter((t) =>
+    matchesSelectedSeries(teamSeries(t, dataset), filters.series),
+  );
 }

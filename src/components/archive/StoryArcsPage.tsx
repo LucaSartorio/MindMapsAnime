@@ -5,9 +5,10 @@ import type { WorldDataset } from '@/types';
 import { StoryArcCard } from './StoryArcCard';
 import { EmptyState } from '@/components/common/EmptyState';
 import { SourceNotice } from '@/components/common/SourceNotice';
-import { useUiStore } from '@/store';
+import { useMapStore, useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText } from '@/utils/localization';
+import { arcSeries, matchesSelectedSeries } from '@/lib/series';
 
 interface StoryArcsPageProps {
   dataset: WorldDataset;
@@ -21,6 +22,7 @@ export function StoryArcsPage({ dataset }: StoryArcsPageProps) {
   const [query, setQuery] = useState('');
   const [saga, setSaga] = useState('');
   const openArcModal = useUiStore((s) => s.openArcModal);
+  const filters = useMapStore((s) => s.filters);
 
   useEffect(() => {
     if (initialId) openArcModal(initialId);
@@ -43,6 +45,7 @@ export function StoryArcsPage({ dataset }: StoryArcsPageProps) {
     return [...dataset.arcs]
       .sort((a, b) => a.order - b.order)
       .filter((a) => {
+        if (!matchesSelectedSeries(arcSeries(a), filters.series)) return false;
         if (saga && getLocalizedText(a.saga, locale) !== saga) return false;
         if (q) {
           const desc = getLocalizedText(a.description, locale).toLowerCase();
@@ -53,7 +56,7 @@ export function StoryArcsPage({ dataset }: StoryArcsPageProps) {
         }
         return true;
       });
-  }, [dataset.arcs, query, saga, locale]);
+  }, [dataset.arcs, filters.series, query, saga, locale]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6">
