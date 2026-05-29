@@ -32,6 +32,56 @@ const ARC_SERIES_OVERRIDES: Record<string, Series[]> = {
   'arc-post-war': ['shippuden', 'boruto'],
 };
 
+/**
+ * Personaggi che attraversano TUTTE le serie principali e che nel dataset
+ * non hanno tutti gli arcIds collegati. Override esplicito così il filtro
+ * Serie non li nasconde quando l'utente seleziona, p.es., "solo Naruto".
+ *
+ * Lista volutamente minimal: solo la "core cast" che il pubblico si
+ * aspetta di vedere in ogni era. Le presenze occasionali si gestiscono
+ * con il proprio campo `series` sull'entità.
+ */
+const CHARACTER_SERIES_OVERRIDES: Record<string, Series[]> = {
+  // Konoha 12 (originale + Sai), Konohamaru e mentori che appaiono in tutte e tre.
+  'char-naruto': ['naruto', 'shippuden', 'boruto', 'movies'],
+  'char-sasuke': ['naruto', 'shippuden', 'boruto', 'movies'],
+  'char-sakura': ['naruto', 'shippuden', 'boruto', 'movies'],
+  'char-kakashi': ['naruto', 'shippuden', 'boruto', 'movies'],
+  'char-hinata': ['naruto', 'shippuden', 'boruto', 'movies'],
+  'char-shikamaru': ['naruto', 'shippuden', 'boruto', 'movies'],
+  'char-ino': ['naruto', 'shippuden', 'boruto'],
+  'char-choji': ['naruto', 'shippuden', 'boruto'],
+  'char-kiba': ['naruto', 'shippuden', 'boruto'],
+  'char-shino': ['naruto', 'shippuden', 'boruto'],
+  'char-rock-lee': ['naruto', 'shippuden', 'boruto'],
+  'char-tenten': ['naruto', 'shippuden', 'boruto'],
+  'char-konohamaru': ['naruto', 'shippuden', 'boruto', 'movies'],
+  'char-sai': ['shippuden', 'boruto'],
+  'char-yamato': ['shippuden', 'boruto'],
+  'char-tsunade': ['naruto', 'shippuden', 'boruto'],
+  'char-iruka': ['naruto', 'shippuden', 'boruto'],
+  // Suna siblings (presenze ricorrenti fino a Boruto).
+  'char-gaara': ['naruto', 'shippuden', 'boruto', 'movies'],
+  'char-temari': ['naruto', 'shippuden', 'boruto'],
+  'char-kankuro': ['naruto', 'shippuden', 'boruto'],
+  // Akatsuki / antagonisti debuttati in Naruto P1 ma rilevanti anche dopo.
+  'char-itachi': ['naruto', 'shippuden'],
+  'char-kabuto': ['naruto', 'shippuden', 'boruto'],
+  'char-orochimaru': ['naruto', 'shippuden', 'boruto'],
+  'char-jiraiya': ['naruto', 'shippuden'],
+  // Kage tradizionali ricorrenti.
+  'char-killer-b': ['shippuden', 'boruto'],
+  'char-a': ['shippuden', 'boruto'],
+  'char-mei': ['shippuden', 'boruto'],
+  'char-chojuro': ['shippuden', 'boruto'],
+  'char-darui': ['shippuden', 'boruto'],
+  'char-kurotsuchi': ['shippuden', 'boruto'],
+  // Personaggi di Konoha presenti nell'era Boruto.
+  'char-guy': ['naruto', 'shippuden', 'boruto'],
+  'char-asuma': ['naruto', 'shippuden'],
+  'char-kurenai': ['naruto', 'shippuden', 'boruto'],
+};
+
 /** Restituisce le serie di un singolo arco. */
 export function arcSeries(arc: Pick<StoryArc, 'id' | 'order' | 'canonStatus' | 'canon'>): Series[] {
   if (ARC_SERIES_OVERRIDES[arc.id]) return ARC_SERIES_OVERRIDES[arc.id];
@@ -102,6 +152,9 @@ export function characterSeries(
   character: Character,
   dataset: WorldDataset,
 ): Series[] {
+  if (character.series && character.series.length > 0) return character.series;
+  const override = CHARACTER_SERIES_OVERRIDES[character.id];
+  if (override) return override;
   return deriveFromArcs(character, arcIndexFor(dataset));
 }
 
