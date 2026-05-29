@@ -43,14 +43,27 @@ const IMPORTANCE_TEXT: Record<Importance, string> = {
   minor: 'text-[10px] font-medium',
 };
 
+/** Raggio (px) del pallino per importanza: serve ad ancorarne il centro. */
+const IMPORTANCE_DOT_RADIUS: Record<Importance, number> = {
+  main: 8,
+  secondary: 7,
+  minor: 5,
+};
+
 function MapNodeBase({ data }: NodeProps) {
   const d = data as MapNodeData;
+  // React Flow posiziona il nodo dal suo angolo in alto a sinistra. Per far
+  // combaciare il CENTRO del pallino con la coordinata (loc.x, loc.y) — quindi
+  // con il puntino rosso della mappa — trasliamo la riga di mezza altezza e di
+  // mezzo pallino in orizzontale.
+  const dotRadius = IMPORTANCE_DOT_RADIUS[d.importance];
   return (
     <div
       className={cn(
         'group relative flex items-center gap-2 cursor-pointer select-none',
         d.highlighted && 'drop-shadow-[0_0_8px_rgba(255,131,17,0.7)]',
       )}
+      style={{ transform: `translate(${-dotRadius}px, -50%)` }}
     >
       <Handle
         type="target"

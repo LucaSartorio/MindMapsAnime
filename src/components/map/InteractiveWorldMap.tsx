@@ -59,6 +59,7 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
   const viewportResetKey = useMapStore((s) => s.viewportResetKey);
   const setActiveMapLevel = useMapStore((s) => s.setActiveMapLevel);
   const setSelectedLocation = useMapStore((s) => s.setSelectedLocation);
+  const setHoveredBoundary = useMapStore((s) => s.setHoveredBoundary);
   const openLocationModal = useUiStore((s) => s.openLocationModal);
   const { fitView, setCenter, getZoom, fitBounds } = useReactFlow();
 
@@ -284,6 +285,22 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
       setActiveMapLevel(loc.subMapLevelId);
     }
   }
+  // Passando sopra un pin si rivela il confine della sua nazione/regione
+  // (i confini minori sono nascosti finché non si passa sul loro POI).
+  function handleNodeMouseEnter(_: unknown, node: Node) {
+    if (node.id.startsWith('__layer-')) return;
+    const loc = dataset.locations.find((l) => l.id === node.id);
+    if (!loc?.boundaryId) return;
+    // Solo i confini MINORI si rivelano passando sul POI; le grandi nazioni
+    // si evidenziano passando sulla loro area (per non "allagare" la mappa
+    // quando si scorre sui villaggi interni a una grande nazione).
+    const b = dataset.boundaries?.find((x) => x.id === loc.boundaryId);
+    if (b && b.type !== 'great_nation') setHoveredBoundary(loc.boundaryId);
+  }
+  function handleNodeMouseLeave(_: unknown, node: Node) {
+    if (node.id.startsWith('__layer-')) return;
+    setHoveredBoundary(null);
+  }
 
   return (
     <div className="relative h-full w-full">
@@ -294,6 +311,8 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
         edgeTypes={EDGE_TYPES}
         onNodeClick={handleNodeClick}
         onNodeDoubleClick={handleNodeDoubleClick}
+        onNodeMouseEnter={handleNodeMouseEnter}
+        onNodeMouseLeave={handleNodeMouseLeave}
         fitView
         fitViewOptions={FIT_VIEW_OPTIONS}
         minZoom={0.2}
@@ -302,8 +321,9 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
         proOptions={{ hideAttribution: true }}
         nodesDraggable={false}
         elementsSelectable
-        panOnScroll
+        zoomOnScroll
         zoomOnPinch
+        panOnDrag
       >
         <Background
           variant={BackgroundVariant.Dots}
