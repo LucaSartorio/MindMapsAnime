@@ -17,6 +17,10 @@ export function filterLocations(
   dataset: WorldDataset,
 ): Location[] {
   return locations.filter((loc) => {
+    // Elementi "da verificare": nascosti di default, mostrabili dal filtro.
+    if (!filters.showUnverified && loc.referenceStatus === 'needs_verification') {
+      return false;
+    }
     if (
       filters.locationTypes.length > 0 &&
       !filters.locationTypes.includes(loc.type)

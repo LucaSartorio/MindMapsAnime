@@ -114,6 +114,7 @@ export const it = {
     showMainVillages: 'Mostra villaggi principali',
     showMinorVillages: 'Mostra villaggi minori',
     showSpecialPlaces: 'Mostra luoghi speciali',
+    showUnverified: 'Mostra elementi da verificare',
     showRoutes: 'Mostra percorsi',
     routesCanon: 'Percorsi canon',
     routesNonCanon: 'Percorsi anime-only / filler',

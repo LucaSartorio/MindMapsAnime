@@ -319,7 +319,7 @@ export const narutoCharacterRoutes: Route[] = [
       { order: 3, locationId: 'loc-konoha', title: 'Operazioni Hidan/Kakuzu', eventId: 'ev-hidan-kakuzu' },
     ],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
   },
   {
     id: 'route-char-hidan',
@@ -340,7 +340,7 @@ export const narutoCharacterRoutes: Route[] = [
       { order: 3, locationId: 'loc-konoha-nara-forest', title: 'Sepolto da Shikamaru', eventId: 'ev-hidan-burial' },
     ],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
   },
   {
     id: 'route-char-kisame',
@@ -426,7 +426,7 @@ export const narutoCharacterRoutes: Route[] = [
       { order: 3, locationId: 'loc-konoha', title: 'Sacrificio per Naruto', eventId: 'ev-kurama-attack' },
     ],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
   },
   {
     id: 'route-char-hashirama',

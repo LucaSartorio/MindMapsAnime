@@ -32,11 +32,18 @@ export function MapBoundaryOverlay({ dataset, level }: MapBoundaryOverlayProps) 
   const setSelectedBoundary = useMapStore((s) => s.setSelectedBoundary);
   const openBoundaryModal = useUiStore((s) => s.openBoundaryModal);
   const visibleLayers = useMapStore((s) => s.visibleLayers);
+  const showUnverified = useMapStore((s) => s.filters.showUnverified);
 
-  // Solo boundaries del map level corrente
+  // Solo boundaries del map level corrente; quelli "da verificare" sono
+  // nascosti di default (mostrabili dal filtro dedicato).
   const levelBoundaries = useMemo(
-    () => boundaries.filter((b) => b.mapLevelId === level.id),
-    [boundaries, level.id],
+    () =>
+      boundaries.filter(
+        (b) =>
+          b.mapLevelId === level.id &&
+          (showUnverified || b.referenceStatus !== 'needs_verification'),
+      ),
+    [boundaries, level.id, showUnverified],
   );
 
   if (!visibleLayers.boundaries || levelBoundaries.length === 0) {

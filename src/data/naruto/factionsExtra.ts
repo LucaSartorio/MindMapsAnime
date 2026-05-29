@@ -157,7 +157,7 @@ export const narutoClansExtra: Faction[] = [
     characterIds: [],
     locationIds: ['loc-konoha'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['konoha', 'genjutsu'],
   },
 
@@ -471,7 +471,7 @@ export const narutoFactionsExtra: Faction[] = [
     characterIds: ['char-gaara', 'char-temari', 'char-kankuro'],
     locationIds: ['loc-suna'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['suna', 'guardia', 'kazekage'],
   },
 

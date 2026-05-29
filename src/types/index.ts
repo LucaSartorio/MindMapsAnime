@@ -704,6 +704,9 @@ export interface MapFilters {
   periods: string[];
   importance: Importance[];
   canonOnly: boolean;
+  /** Mostra anche gli elementi con referenceStatus 'needs_verification'
+   * (nascosti di default sulla mappa). */
+  showUnverified: boolean;
   showRoutes: boolean;
   showEvents: boolean;
   showFactions: boolean;
@@ -736,6 +739,7 @@ export const defaultFilters: MapFilters = {
   periods: [],
   importance: [],
   canonOnly: false,
+  showUnverified: false,
   showRoutes: true,
   showEvents: true,
   showFactions: true,

@@ -111,6 +111,7 @@ export const en = {
     showMainVillages: 'Show main villages',
     showMinorVillages: 'Show minor villages',
     showSpecialPlaces: 'Show special places',
+    showUnverified: 'Show items to verify',
     showRoutes: 'Show routes',
     routesCanon: 'Canon routes',
     routesNonCanon: 'Anime-only / filler routes',

@@ -174,7 +174,7 @@ export const narutoNations: Nation[] = [
     japaneseName: '霜の国',
     type: 'minor_nation',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     boundaryId: 'boundary-frost',
     description: {
       it: 'Piccola nazione settentrionale fra Fulmine e Fuoco, dal clima rigido.',
@@ -303,7 +303,7 @@ export const narutoNations: Nation[] = [
     japaneseName: '田の国',
     type: 'minor_nation',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     boundaryId: 'boundary-ricefields',
     description: {
       it: 'Antico nome della regione divenuta Land of Sound.',
@@ -321,7 +321,7 @@ export const narutoNations: Nation[] = [
     japaneseName: '熊の国',
     type: 'minor_nation',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     boundaryId: 'boundary-bears',
     description: {
       it: 'Nazione settentrionale; ospitò Hoshigakure.',
@@ -340,7 +340,7 @@ export const narutoNations: Nation[] = [
     japaneseName: '山の国',
     type: 'minor_nation',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     boundaryId: 'boundary-mountains',
     description: {
       it: 'Nazione meridionale rocciosa.',
@@ -358,7 +358,7 @@ export const narutoNations: Nation[] = [
     japaneseName: '森の国',
     type: 'minor_nation',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     boundaryId: 'boundary-forests',
     description: {
       it: 'Regione boschiva nel Paese del Fuoco.',

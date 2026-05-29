@@ -182,7 +182,7 @@ export const narutoBoundaries: MapBoundary[] = [
     japaneseName: 'Shimo no Kuni',
     type: 'minor_nation',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     svgPathD:
       'M 785 309 L 826 320 L 862 314 L 891 382 L 855 372 L 835 401 L 814 393 L 805 369 L 764 338 L 783 311 Z',
     labelPosition: { x: 834, y: 322 },
@@ -435,7 +435,7 @@ export const narutoBoundaries: MapBoundary[] = [
     japaneseName: 'Kuma no Kuni',
     type: 'minor_nation',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     svgPathD:
       'M 34 430 L 60 392 L 124 392 L 150 430 L 124 468 L 60 468 Z',
     labelPosition: { x: 92, y: 430 },
@@ -455,7 +455,7 @@ export const narutoBoundaries: MapBoundary[] = [
     japaneseName: 'Yama no Kuni',
     type: 'minor_nation',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     svgPathD:
       'M 892 838 L 918 800 L 982 800 L 1008 838 L 982 876 L 918 876 Z',
     labelPosition: { x: 950, y: 838 },
@@ -475,7 +475,7 @@ export const narutoBoundaries: MapBoundary[] = [
     japaneseName: 'Mori no Kuni',
     type: 'region',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     svgPathD:
       'M 632 470 L 658 432 L 722 432 L 748 470 L 722 508 L 658 508 Z',
     labelPosition: { x: 690, y: 470 },
@@ -495,7 +495,7 @@ export const narutoBoundaries: MapBoundary[] = [
     japaneseName: 'Tani no Kuni',
     type: 'region',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     svgPathD:
       'M 457 725 L 483 687 L 547 687 L 573 725 L 547 763 L 483 763 Z',
     labelPosition: { x: 515, y: 725 },
@@ -571,7 +571,7 @@ export const narutoBoundaries: MapBoundary[] = [
     japaneseName: 'Ta no Kuni',
     type: 'minor_nation',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     /* Sovrapposto a Sound: storicamente diventa Land of Sound. */
     svgPathD:
       'M 702 300 L 728 262 L 792 262 L 818 300 L 792 338 L 728 338 Z',

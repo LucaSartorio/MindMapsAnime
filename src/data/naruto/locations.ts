@@ -416,7 +416,7 @@ export const narutoLocations: Location[] = [
     characterIds: ['char-orochimaru', 'char-sasuke'],
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['serpenti', 'sennin'],
   },
   {
@@ -433,7 +433,7 @@ export const narutoLocations: Location[] = [
     characterIds: ['char-tsunade'],
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['lumache', 'sennin'],
   },
   {
@@ -471,7 +471,7 @@ export const narutoLocations: Location[] = [
     arcIds: ['arc-tenchi-bridge'],
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['ponte'],
   },
   {
@@ -529,7 +529,7 @@ export const narutoLocations: Location[] = [
     arcIds: ['arc-sasuke-retrieval', 'arc-itachi-pursuit'],
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['orochimaru', 'sound'],
   },
   {
@@ -674,7 +674,7 @@ export const narutoLocations: Location[] = [
     },
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['gelo', 'nord'],
   },
   {
@@ -750,7 +750,7 @@ export const narutoLocations: Location[] = [
     },
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['montagne'],
   },
   {
@@ -769,7 +769,7 @@ export const narutoLocations: Location[] = [
     },
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['foresta'],
   },
   {
@@ -788,7 +788,7 @@ export const narutoLocations: Location[] = [
     },
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['valli'],
   },
   {
@@ -864,7 +864,7 @@ export const narutoLocations: Location[] = [
     },
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['rice', 'sound', 'orochimaru'],
   },
 
@@ -997,7 +997,7 @@ export const narutoLocations: Location[] = [
     shortDescription: 'Ospedale ninja del villaggio.',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['ospedale'],
   },
   {
@@ -1071,7 +1071,7 @@ export const narutoLocations: Location[] = [
     characterIds: ['char-itachi', 'char-kakashi'],
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['anbu', 'ombra'],
   },
   {
@@ -1109,7 +1109,7 @@ export const narutoLocations: Location[] = [
     },
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['addestramento'],
   },
   {
@@ -1169,7 +1169,7 @@ export const narutoLocations: Location[] = [
     clanIds: ['clan-yamanaka', 'faction-intelligence-division'],
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['intelligence'],
   },
   {
@@ -1187,7 +1187,7 @@ export const narutoLocations: Location[] = [
     },
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['memoriale'],
   },
   {
@@ -1248,7 +1248,7 @@ export const narutoLocations: Location[] = [
     characterIds: ['char-choji'],
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['cibo', 'akimichi'],
   },
 
@@ -1308,7 +1308,7 @@ export const narutoLocations: Location[] = [
     },
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['accademia'],
   },
   {
@@ -1328,7 +1328,7 @@ export const narutoLocations: Location[] = [
     characterIds: ['char-kankuro', 'char-sasori', 'char-chiyo'],
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['marionette'],
   },
   {
@@ -1348,7 +1348,7 @@ export const narutoLocations: Location[] = [
     characterIds: ['char-gaara', 'char-chiyo'],
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['medic-nin'],
   },
   {
@@ -1427,7 +1427,7 @@ export const narutoLocations: Location[] = [
     },
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['accademia', 'bloody-mist'],
   },
   {
@@ -1470,7 +1470,7 @@ export const narutoLocations: Location[] = [
     characterIds: ['char-zabuza', 'char-kisame', 'char-chojuro'],
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['spadaccini'],
   },
   {
@@ -1568,7 +1568,7 @@ export const narutoLocations: Location[] = [
     },
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['accademia'],
   },
   {
@@ -1687,7 +1687,7 @@ export const narutoLocations: Location[] = [
     },
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['accademia'],
   },
   {
@@ -1747,7 +1747,7 @@ export const narutoLocations: Location[] = [
     },
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['ponti', 'industriale'],
   },
   {
@@ -1767,7 +1767,7 @@ export const narutoLocations: Location[] = [
     characterIds: ['char-jiraiya', 'char-pain', 'char-konan', 'char-yahiko'],
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['orfani', 'jiraiya'],
   },
   {
@@ -1829,7 +1829,7 @@ export const narutoLocations: Location[] = [
     characterIds: ['char-jugo', 'char-kimimaro'],
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['prigione', 'esperimenti'],
   },
   {
@@ -1889,7 +1889,7 @@ export const narutoLocations: Location[] = [
     clanIds: ['clan-uzumaki'],
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['uzumaki', 'rovine'],
   },
   {
@@ -1908,7 +1908,7 @@ export const narutoLocations: Location[] = [
     clanIds: ['clan-uzumaki'],
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['fuinjutsu'],
   },
   {
@@ -1926,7 +1926,7 @@ export const narutoLocations: Location[] = [
     },
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['vortici'],
   },
 
@@ -1947,7 +1947,7 @@ export const narutoLocations: Location[] = [
     },
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['cascata'],
   },
   {
@@ -1966,7 +1966,7 @@ export const narutoLocations: Location[] = [
     },
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['acqua-eroe'],
   },
   {
