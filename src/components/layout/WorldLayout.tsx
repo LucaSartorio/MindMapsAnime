@@ -11,6 +11,7 @@ import { MapLegendFloating } from '@/components/map/MapLegendFloating';
 import { RoutesFloatingPanel } from '@/components/map/RoutesFloatingPanel';
 import { TimelineBottomSheet } from '@/components/timeline/TimelineBottomSheet';
 import { IconButton } from '@/components/common/IconButton';
+import { resolveWorldCursor } from '@/utils/worldCursor';
 
 interface WorldLayoutProps {
   dataset: WorldDataset;
@@ -43,6 +44,9 @@ export function WorldLayout({
   const activeMapLevelId = useMapStore((s) => s.activeMapLevelId);
   const openFilters = useUiStore((s) => s.openFiltersDrawer);
 
+  // Cursore tematico del mondo (es. Naruto → vortice della Foglia).
+  const worldCursor = resolveWorldCursor(worldSlug ?? dataset.world.slug);
+
   // Quando cambia il dataset/route, sincronizziamo store e map level di default.
   useEffect(() => {
     setActiveWorld(worldSlug ?? null, dataset);
@@ -66,7 +70,10 @@ export function WorldLayout({
     // Modalità "pagina interna" (archivi, fonti): niente overlay mappa,
     // solo content + modali condivise.
     return (
-      <div className="relative flex-1 flex flex-col min-h-0">
+      <div
+        className="relative flex-1 flex flex-col min-h-0"
+        style={worldCursor ? { cursor: worldCursor } : undefined}
+      >
         <div className="flex-1 min-h-0 overflow-auto">{children}</div>
         <FiltersDrawer dataset={dataset} />
         <ModalRoot dataset={dataset} />
@@ -75,7 +82,10 @@ export function WorldLayout({
   }
 
   return (
-    <div className="relative flex-1 flex flex-col min-h-0">
+    <div
+      className="relative flex-1 flex flex-col min-h-0"
+      style={worldCursor ? { cursor: worldCursor } : undefined}
+    >
       {/* Canvas mappa: occupa tutto */}
       <div className="relative flex-1 min-h-0">
         {children}

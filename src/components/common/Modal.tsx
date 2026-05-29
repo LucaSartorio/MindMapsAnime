@@ -109,14 +109,13 @@ export function Modal({
           className,
         )}
       >
-        {media && (
-          <div className="relative h-36 sm:h-44 shrink-0 overflow-hidden rounded-t-2xl bg-ink-900">
-            {media}
-            <div className="absolute inset-0 bg-gradient-to-t from-ink-900/80 to-transparent pointer-events-none" />
-          </div>
-        )}
-        {(title || eyebrow || badges) && (
-          <header className="px-5 py-4 border-b border-ink-700/60 flex items-start gap-3 shrink-0">
+        {(title || eyebrow || badges || media) && (
+          <header className="px-5 py-4 border-b border-ink-700/60 flex items-start gap-4 shrink-0 rounded-t-2xl">
+            {media && (
+              <div className="relative h-20 w-20 sm:h-24 sm:w-24 shrink-0 overflow-hidden rounded-xl border border-ink-700/60 bg-ink-900 shadow-lg">
+                {media}
+              </div>
+            )}
             <div className="flex-1 min-w-0">
               {eyebrow && (
                 <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-chakra-300 mb-1">
