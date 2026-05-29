@@ -126,6 +126,12 @@ export const en = {
     importanceMain: 'Main',
     importanceSecondary: 'Secondary',
     importanceMinor: 'Minor',
+    series: 'Series',
+    seriesHint: 'Filter by narrative block (Naruto · Shippuden · Boruto · Movies)',
+    seriesNaruto: 'Naruto (Part 1)',
+    seriesShippuden: 'Naruto Shippuden',
+    seriesBoruto: 'Boruto (Next Generations)',
+    seriesMovies: 'Movies',
   },
   search: {
     placeholder: 'Search in {{world}}…',

@@ -34,7 +34,7 @@ export function TimelineBottomSheet({ dataset }: TimelineBottomSheetProps) {
   );
 
   const events = useMemo(() => {
-    let base = filterEvents(dataset.events, filters);
+    let base = filterEvents(dataset.events, filters, dataset);
     if (route) {
       const ids = new Set(
         route.steps.map((s) => s.eventId).filter(Boolean) as string[],

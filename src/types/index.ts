@@ -358,6 +358,8 @@ export interface Location {
   /** Eventuale sottomappa esplorabile */
   subMapLevelId?: string;
   assetIds?: string[];
+  /** Macro-serie / blocchi narrativi in cui compare il luogo. */
+  series?: Series[];
   tags?: string[];
 }
 
@@ -420,6 +422,8 @@ export interface Character {
   status: CharacterStatus;
   canonStatus?: CanonStatus;
   referenceStatus?: ReferenceStatus;
+  /** Macro-serie / blocchi narrativi in cui appare il personaggio. */
+  series?: Series[];
   tags?: string[];
 }
 
@@ -457,6 +461,8 @@ export interface Faction {
   routeIds?: string[];
   canonStatus?: CanonStatus;
   referenceStatus?: ReferenceStatus;
+  /** Macro-serie / blocchi narrativi in cui è attivo il clan/fazione. */
+  series?: Series[];
   tags?: string[];
 }
 
@@ -490,6 +496,8 @@ export interface StoryArc {
   canon: CanonStatus;
   canonStatus?: CanonStatus;
   referenceStatus?: ReferenceStatus;
+  /** Macro-serie / blocchi narrativi a cui appartiene l'arco. */
+  series?: Series[];
   tags?: string[];
 }
 
@@ -524,6 +532,8 @@ export interface TimelineEvent {
   canon: CanonStatus;
   canonStatus?: CanonStatus;
   referenceStatus: ReferenceStatus;
+  /** Macro-serie / blocchi narrativi in cui rientra l'evento. */
+  series?: Series[];
   tags?: string[];
 }
 
@@ -610,6 +620,8 @@ export interface Team {
   routeIds?: string[];
   canonStatus?: CanonStatus;
   referenceStatus?: ReferenceStatus;
+  /** Macro-serie / blocchi narrativi in cui opera il team. */
+  series?: Series[];
   tags?: string[];
 }
 
@@ -639,6 +651,8 @@ export interface Jutsu {
   longDescription?: Localizable;
   canonStatus?: CanonStatus;
   referenceStatus?: ReferenceStatus;
+  /** Macro-serie / blocchi narrativi in cui appare la tecnica. */
+  series?: Series[];
   tags?: string[];
 }
 
@@ -695,6 +709,19 @@ export interface SearchResult {
 
 /* ------------------------------ Filtri ------------------------------ */
 
+/**
+ * Macro-serie / blocchi narrativi di Naruto. Usati come filtro globale:
+ * "voglio vedere solo Naruto Parte 1", "solo Boruto", "tutti i film", ecc.
+ * Una stessa entità può appartenere a più serie (es. Naruto e Shippuden).
+ *  - 'naruto'    → Naruto (Parte 1, archi 1-9 circa)
+ *  - 'shippuden' → Naruto Shippuden (Parte 2)
+ *  - 'boruto'    → Boruto: Naruto Next Generations / Two Blue Vortex
+ *  - 'movies'    → Lungometraggi (The Last, Boruto: Naruto the Movie, ecc.)
+ */
+export type Series = 'naruto' | 'shippuden' | 'boruto' | 'movies';
+
+export const ALL_SERIES: Series[] = ['naruto', 'shippuden', 'boruto', 'movies'];
+
 export interface MapFilters {
   locationTypes: LocationType[];
   nationIds: string[];
@@ -703,6 +730,8 @@ export interface MapFilters {
   factionIds: string[];
   periods: string[];
   importance: Importance[];
+  /** Serie / blocco narrativo. Vuoto = nessun filtro (tutte le serie). */
+  series: Series[];
   canonOnly: boolean;
   /** Mostra anche gli elementi con referenceStatus 'needs_verification'
    * (nascosti di default sulla mappa). */
@@ -738,6 +767,7 @@ export const defaultFilters: MapFilters = {
   factionIds: [],
   periods: [],
   importance: [],
+  series: [],
   canonOnly: false,
   showUnverified: false,
   showRoutes: true,

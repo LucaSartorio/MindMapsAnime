@@ -5,9 +5,10 @@ import type { NinjaRank, WorldDataset } from '@/types';
 import { CharacterCard } from './CharacterCard';
 import { EmptyState } from '@/components/common/EmptyState';
 import { SourceNotice } from '@/components/common/SourceNotice';
-import { useUiStore } from '@/store';
+import { useMapStore, useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getNinjaRankLabel, getLocalizedText } from '@/utils/localization';
+import { filterCharactersBySeries } from '@/lib/filters';
 
 interface CharactersPageProps {
   dataset: WorldDataset;
@@ -35,6 +36,7 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
   const [filterVillage, setFilterVillage] = useState<string>('');
   const [filterRank, setFilterRank] = useState<string>('');
   const openCharacterModal = useUiStore((s) => s.openCharacterModal);
+  const filters = useMapStore((s) => s.filters);
 
   useEffect(() => {
     if (initialId) openCharacterModal(initialId);
@@ -50,7 +52,8 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return dataset.characters
+    const bySeries = filterCharactersBySeries(dataset.characters, filters, dataset);
+    return bySeries
       .filter((c) => {
         if (q) {
           const desc = getLocalizedText(c.shortDescription, locale).toLowerCase();
@@ -64,7 +67,7 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
         return true;
       })
       .sort((a, b) => a.name.localeCompare(b.name));
-  }, [dataset.characters, query, filterVillage, filterRank, locale]);
+  }, [dataset, filters, query, filterVillage, filterRank, locale]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6">
