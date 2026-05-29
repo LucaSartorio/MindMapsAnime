@@ -157,7 +157,7 @@ export const narutoClansExtra: Faction[] = [
     characterIds: [],
     locationIds: ['loc-konoha'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['konoha', 'genjutsu'],
   },
 
@@ -471,7 +471,7 @@ export const narutoFactionsExtra: Faction[] = [
     characterIds: ['char-gaara', 'char-temari', 'char-kankuro'],
     locationIds: ['loc-suna'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['suna', 'guardia', 'kazekage'],
   },
 
@@ -548,5 +548,93 @@ export const narutoFactionsExtra: Faction[] = [
     canonStatus: 'canon',
     referenceStatus: 'verified',
     tags: ['oto', 'orochimaru', 'villaggio', 'sperimentazione'],
+  },
+
+  /* ------------------------------------------------------------------ */
+  /*  KARA (era Boruto)                                                  */
+  /* ------------------------------------------------------------------ */
+  {
+    id: 'faction-kara',
+    worldId: 'world-naruto',
+    type: 'organization',
+    name: 'Kara',
+    nameLocal: 'Kara',
+    japaneseName: '殻',
+    description: {
+      it: 'Organizzazione segreta dell\'era Boruto guidata da Jigen (vaso di Isshiki Ōtsutsuki). Riunisce membri "Inner" potenziati da modifiche cibernetiche e Strumenti Ninja Scientifici, con l\'obiettivo di coltivare un Albero Divino e i suoi Frutti del Chakra.',
+      en: 'Secret organization of the Boruto era led by Jigen (vessel of Isshiki Ōtsutsuki). It gathers "Inner" members enhanced with cybernetic modifications and Scientific Ninja Tools, aiming to cultivate a God Tree and its Chakra Fruit.',
+    },
+    longDescription: {
+      it: 'Kara ("guscio") è strutturata in un nucleo di "Inner" contrassegnati da numeri romani e da una rete di "Outer" infiltrati nelle nazioni. Dietro la facciata religiosa, il vero scopo di Isshiki è far rinascere il proprio clan sacrificando il pianeta. Lo scienziato Amado e il clone Kashin Koji complottano dall\'interno per rovesciarlo.',
+      en: 'Kara ("husk") is structured around a core of "Inners" marked with Roman numerals and a network of "Outers" embedded across the nations. Behind its cult-like facade, Isshiki\'s true goal is to revive his clan by sacrificing the planet. The scientist Amado and the clone Kashin Koji scheme from within to overthrow him.',
+    },
+    signatureAbilities: ['Karma', 'Strumenti Ninja Scientifici', 'Modifiche cibernetiche'],
+    leaderIds: ['char-isshiki'],
+    characterIds: [
+      'char-isshiki',
+      'char-kashin-koji',
+      'char-amado',
+      'char-delta',
+      'char-boro',
+      'char-code',
+      'char-kawaki',
+    ],
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['kara', 'boruto-era', 'organizzazione', 'otsutsuki'],
+  },
+
+  /* ------------------------------------------------------------------ */
+  /*  DODICI NINJA GUARDIANI                                             */
+  /* ------------------------------------------------------------------ */
+  {
+    id: 'faction-twelve-guardian-ninja',
+    worldId: 'world-naruto',
+    type: 'organization',
+    name: 'Twelve Guardian Ninja',
+    nameLocal: 'Ninja Guardiani dei Dodici',
+    japaneseName: '守護忍十二士',
+    nationId: 'nation-fire',
+    description: {
+      it: 'Corpo d\'élite di dodici shinobi scelti fra i migliori di Konoha per proteggere il Daimyō del Paese del Fuoco. Asuma Sarutobi ne fece parte prima di tornare al villaggio.',
+      en: 'Elite unit of twelve shinobi chosen among Konoha\'s best to protect the Daimyō of the Land of Fire. Asuma Sarutobi served among them before returning to the village.',
+    },
+    longDescription: {
+      it: 'I Dodici Ninja Guardiani vigilavano sulla corte del Feudatario del Fuoco. Diversi membri, fra cui Asuma e Chiriku, finirono nella lista delle taglie cacciata da Kakuzu dell\'Akatsuki per il valore del loro chakra.',
+      en: 'The Twelve Guardian Ninja watched over the Fire Daimyō\'s court. Several members, including Asuma and Chiriku, ended up on the bounty list hunted by the Akatsuki\'s Kakuzu for their valuable chakra.',
+    },
+    signatureAbilities: ['Guardia del Daimyō', 'Chakra Blades (Asuma)'],
+    characterIds: ['char-asuma'],
+    locationIds: ['loc-konoha'],
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['konoha', 'fire-daimyo', 'guardiani', 'asuma'],
+  },
+
+  /* ------------------------------------------------------------------ */
+  /*  ARMATA DI ZETSU BIANCHI                                            */
+  /* ------------------------------------------------------------------ */
+  {
+    id: 'faction-white-zetsu-army',
+    worldId: 'world-naruto',
+    type: 'army',
+    name: 'White Zetsu Army',
+    nameLocal: 'Armata degli Zetsu Bianchi',
+    japaneseName: '白ゼツの軍勢',
+    description: {
+      it: 'Esercito di cloni Zetsu Bianchi generati dall\'Albero Divino e plasmati con le cellule di Hashirama, schierato da Madara e Obito nella Quarta Guerra Ninja.',
+      en: 'Army of White Zetsu clones produced by the God Tree and shaped with Hashirama\'s cells, fielded by Madara and Obito in the Fourth Shinobi World War.',
+    },
+    longDescription: {
+      it: 'Gli Zetsu Bianchi sono originariamente vittime umane assimilate dall\'Albero Divino di Kaguya. Capaci di trasformarsi e mimetizzarsi, infiltrarono l\'Alleanza Shinobi assumendo l\'aspetto dei soldati caduti.',
+      en: 'The White Zetsu are originally human victims absorbed by Kaguya\'s God Tree. Able to transform and camouflage, they infiltrated the Shinobi Alliance by taking the forms of fallen soldiers.',
+    },
+    signatureAbilities: ['Trasformazione', 'Mimetismo', 'Fusione con il terreno'],
+    leaderIds: ['char-madara', 'char-obito'],
+    characterIds: ['char-zetsu'],
+    arcIds: ['arc-fourth-war'],
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['fourth-war', 'zetsu', 'god-tree', 'esercito'],
   },
 ];

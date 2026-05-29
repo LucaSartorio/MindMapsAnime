@@ -248,6 +248,12 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
                 onChange={() => toggleLayer('specialPlaces')}
                 label={t('filters.showSpecialPlaces')}
               />
+              <CheckRow
+                checked={filters.showUnverified}
+                onChange={(v) => setFilters({ showUnverified: v })}
+                label={t('filters.showUnverified')}
+                emberAccent
+              />
             </div>
           </Section>
 

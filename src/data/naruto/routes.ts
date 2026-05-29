@@ -89,7 +89,7 @@ export const narutoRoutes: Route[] = [
       { order: 3, locationId: 'loc-shikkotsu-forest', label: 'Incontro con Tsunade' },
       { order: 4, locationId: 'loc-konoha', label: 'Ritorno a Konoha', eventId: 'ev-tsunade-hokage' },
     ],
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
   },
   {
     id: 'route-sasuke-defection',
@@ -172,7 +172,7 @@ export const narutoRoutes: Route[] = [
       { order: 2, locationId: 'loc-samurai-bridge', label: 'Tenchi Bridge', eventId: 'ev-tenchi-bridge' },
       { order: 3, locationId: 'loc-orochimaru-hideout', label: 'Nascondiglio' },
     ],
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
   },
   {
     id: 'route-itachi-pursuit',

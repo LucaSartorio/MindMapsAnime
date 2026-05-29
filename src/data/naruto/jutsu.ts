@@ -1017,7 +1017,7 @@ export const narutoJutsu: Jutsu[] = [
       en: 'Creates a large controllable rock staff or lance for attacks.',
     },
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['earth'],
   },
 

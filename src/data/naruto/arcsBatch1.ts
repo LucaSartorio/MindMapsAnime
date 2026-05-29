@@ -1,0 +1,143 @@
+import type { StoryArc } from '@/types';
+
+/**
+ * Archi narrativi Naruto · Batch 1 — era Boruto.
+ *
+ * Continuano la cronologia dopo `arc-naruto-hokage` (order 22).
+ * Cross-ref solo verso id già presenti nel dataset (personaggi delle
+ * batch precedenti, faction-kara, loc-konoha).
+ */
+export const narutoArcsBatch1: StoryArc[] = [
+  {
+    id: 'arc-momoshiki',
+    worldId: 'world-naruto',
+    name: 'Chūnin Exams & Momoshiki Attack',
+    localizedName: {
+      it: 'Esame Chūnin e Attacco di Momoshiki',
+      en: 'Chūnin Exams & Momoshiki Attack',
+    },
+    saga: 'Boruto',
+    order: 23,
+    period: { it: 'Era Boruto', en: 'Boruto Era' },
+    description: {
+      it: 'Durante l\'Esame Chūnin di Konoha, gli Ōtsutsuki Momoshiki e Kinshiki attaccano per divorare il chakra di Kurama. Naruto, Sasuke e i Kage li affrontano; Boruto sferra il colpo finale e riceve il marchio del Karma.',
+      en: 'During Konoha\'s Chūnin Exams, the Ōtsutsuki Momoshiki and Kinshiki attack to devour Kurama\'s chakra. Naruto, Sasuke and the Kage face them; Boruto lands the finishing blow and is branded with Karma.',
+    },
+    locationIds: ['loc-konoha'],
+    nationIds: ['nation-fire'],
+    characterIds: [
+      'char-boruto',
+      'char-sarada',
+      'char-mitsuki',
+      'char-naruto',
+      'char-sasuke',
+      'char-konohamaru',
+      'char-momoshiki',
+      'char-kinshiki',
+    ],
+    mangaChapters: ['Boruto 1-10'],
+    animeEpisodes: ['Film: Boruto - Naruto the Movie'],
+    canon: 'canon',
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['boruto-era', 'otsutsuki', 'chunin-exams', 'karma'],
+  },
+  {
+    id: 'arc-kara-actuation',
+    worldId: 'world-naruto',
+    name: 'Kara Actuation',
+    localizedName: {
+      it: 'Il Risveglio di Kara',
+      en: 'Kara Actuation',
+    },
+    saga: 'Boruto',
+    order: 24,
+    period: { it: 'Era Boruto', en: 'Boruto Era' },
+    description: {
+      it: 'L\'organizzazione Kara entra in scena. Kawaki, "vaso" in fuga, viene accolto da Naruto, mentre Jigen e gli Inner cercano di recuperarlo. Emergono le trame di Amado e Kashin Koji.',
+      en: 'The Kara organization steps onto the stage. Kawaki, a runaway "vessel", is taken in by Naruto, while Jigen and the Inners seek to reclaim him. The schemes of Amado and Kashin Koji surface.',
+    },
+    locationIds: ['loc-konoha'],
+    nationIds: ['nation-fire'],
+    factionIds: ['faction-kara'],
+    characterIds: [
+      'char-kawaki',
+      'char-boruto',
+      'char-naruto',
+      'char-sasuke',
+      'char-isshiki',
+      'char-kashin-koji',
+      'char-amado',
+      'char-delta',
+    ],
+    mangaChapters: ['Boruto 15-25'],
+    canon: 'canon',
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['boruto-era', 'kara', 'kawaki'],
+  },
+  {
+    id: 'arc-vessel',
+    worldId: 'world-naruto',
+    name: 'Vessel',
+    localizedName: {
+      it: 'Il Vaso',
+      en: 'Vessel',
+    },
+    saga: 'Boruto',
+    order: 25,
+    period: { it: 'Era Boruto', en: 'Boruto Era' },
+    description: {
+      it: 'Jigen sigilla Naruto e travolge Sasuke, rivelando l\'Ōtsutsuki Isshiki che lo abita. Il Team 7 e Kawaki sconfiggono l\'Inner Boro per liberare l\'Hokage.',
+      en: 'Jigen seals Naruto and overwhelms Sasuke, revealing the Ōtsutsuki Isshiki dwelling within him. Team 7 and Kawaki defeat the Inner Boro to free the Hokage.',
+    },
+    locationIds: ['loc-konoha'],
+    factionIds: ['faction-kara'],
+    characterIds: [
+      'char-naruto',
+      'char-sasuke',
+      'char-kawaki',
+      'char-boruto',
+      'char-sarada',
+      'char-mitsuki',
+      'char-isshiki',
+      'char-boro',
+    ],
+    mangaChapters: ['Boruto 38-52'],
+    canon: 'canon',
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['boruto-era', 'kara', 'isshiki'],
+  },
+  {
+    id: 'arc-code-omnipotence',
+    worldId: 'world-naruto',
+    name: 'Code & Eida',
+    localizedName: {
+      it: 'Code e l\'Onniscienza di Eida',
+      en: 'Code & Eida\'s Omniscience',
+    },
+    saga: 'Boruto',
+    order: 26,
+    period: { it: 'Era Boruto', en: 'Boruto Era' },
+    description: {
+      it: 'Dopo la caduta di Isshiki, l\'ultimo vaso Code giura vendetta. La cyborg onnisciente Eida e il fratello Daemon alterano gli equilibri, mentre il legame tra Boruto e Kawaki si incrina.',
+      en: 'After Isshiki\'s fall, the last vessel Code vows revenge. The omniscient cyborg Eida and her brother Daemon shift the balance, while the bond between Boruto and Kawaki fractures.',
+    },
+    locationIds: ['loc-konoha'],
+    characterIds: [
+      'char-code',
+      'char-eida',
+      'char-daemon',
+      'char-kawaki',
+      'char-boruto',
+      'char-amado',
+      'char-naruto',
+    ],
+    mangaChapters: ['Boruto 53-79'],
+    canon: 'canon',
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['boruto-era', 'code', 'eida'],
+  },
+];
