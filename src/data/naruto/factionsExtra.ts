@@ -583,4 +583,58 @@ export const narutoFactionsExtra: Faction[] = [
     referenceStatus: 'verified',
     tags: ['kara', 'boruto-era', 'organizzazione', 'otsutsuki'],
   },
+
+  /* ------------------------------------------------------------------ */
+  /*  DODICI NINJA GUARDIANI                                             */
+  /* ------------------------------------------------------------------ */
+  {
+    id: 'faction-twelve-guardian-ninja',
+    worldId: 'world-naruto',
+    type: 'organization',
+    name: 'Twelve Guardian Ninja',
+    nameLocal: 'Ninja Guardiani dei Dodici',
+    japaneseName: '守護忍十二士',
+    nationId: 'nation-fire',
+    description: {
+      it: 'Corpo d\'élite di dodici shinobi scelti fra i migliori di Konoha per proteggere il Daimyō del Paese del Fuoco. Asuma Sarutobi ne fece parte prima di tornare al villaggio.',
+      en: 'Elite unit of twelve shinobi chosen among Konoha\'s best to protect the Daimyō of the Land of Fire. Asuma Sarutobi served among them before returning to the village.',
+    },
+    longDescription: {
+      it: 'I Dodici Ninja Guardiani vigilavano sulla corte del Feudatario del Fuoco. Diversi membri, fra cui Asuma e Chiriku, finirono nella lista delle taglie cacciata da Kakuzu dell\'Akatsuki per il valore del loro chakra.',
+      en: 'The Twelve Guardian Ninja watched over the Fire Daimyō\'s court. Several members, including Asuma and Chiriku, ended up on the bounty list hunted by the Akatsuki\'s Kakuzu for their valuable chakra.',
+    },
+    signatureAbilities: ['Guardia del Daimyō', 'Chakra Blades (Asuma)'],
+    characterIds: ['char-asuma'],
+    locationIds: ['loc-konoha'],
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['konoha', 'fire-daimyo', 'guardiani', 'asuma'],
+  },
+
+  /* ------------------------------------------------------------------ */
+  /*  ARMATA DI ZETSU BIANCHI                                            */
+  /* ------------------------------------------------------------------ */
+  {
+    id: 'faction-white-zetsu-army',
+    worldId: 'world-naruto',
+    type: 'army',
+    name: 'White Zetsu Army',
+    nameLocal: 'Armata degli Zetsu Bianchi',
+    japaneseName: '白ゼツの軍勢',
+    description: {
+      it: 'Esercito di cloni Zetsu Bianchi generati dall\'Albero Divino e plasmati con le cellule di Hashirama, schierato da Madara e Obito nella Quarta Guerra Ninja.',
+      en: 'Army of White Zetsu clones produced by the God Tree and shaped with Hashirama\'s cells, fielded by Madara and Obito in the Fourth Shinobi World War.',
+    },
+    longDescription: {
+      it: 'Gli Zetsu Bianchi sono originariamente vittime umane assimilate dall\'Albero Divino di Kaguya. Capaci di trasformarsi e mimetizzarsi, infiltrarono l\'Alleanza Shinobi assumendo l\'aspetto dei soldati caduti.',
+      en: 'The White Zetsu are originally human victims absorbed by Kaguya\'s God Tree. Able to transform and camouflage, they infiltrated the Shinobi Alliance by taking the forms of fallen soldiers.',
+    },
+    signatureAbilities: ['Trasformazione', 'Mimetismo', 'Fusione con il terreno'],
+    leaderIds: ['char-madara', 'char-obito'],
+    characterIds: ['char-zetsu'],
+    arcIds: ['arc-fourth-war'],
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['fourth-war', 'zetsu', 'god-tree', 'esercito'],
+  },
 ];

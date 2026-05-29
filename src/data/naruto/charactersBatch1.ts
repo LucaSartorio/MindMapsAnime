@@ -616,6 +616,7 @@ export const narutoCharactersBatch1: Character[] = [
     ninjaRank: 'genin',
     generation: 'New Era',
     gender: 'male',
+    teamIds: ['team-konohamaru'],
     shortDescription: {
       it: 'Figlio di Naruto e Hinata, protagonista del periodo "Boruto". Erede del Karma di Momoshiki e successore della prossima generazione ninja.',
       en: 'Son of Naruto and Hinata, protagonist of the "Boruto" era. Bearer of Momoshiki\'s Karma and successor of the next ninja generation.',
@@ -665,6 +666,7 @@ export const narutoCharactersBatch1: Character[] = [
     ninjaRank: 'genin',
     generation: 'New Era',
     gender: 'female',
+    teamIds: ['team-konohamaru'],
     shortDescription: {
       it: 'Figlia di Sasuke e Sakura, eredita lo Sharingan. Sogno dichiarato: diventare Hokage. Membro del Team Konohamaru con Boruto e Mitsuki.',
       en: 'Daughter of Sasuke and Sakura, inherits the Sharingan. Stated dream: become Hokage. Member of Team Konohamaru alongside Boruto and Mitsuki.',
@@ -692,6 +694,7 @@ export const narutoCharactersBatch1: Character[] = [
     ninjaRank: 'genin',
     generation: 'New Era',
     gender: 'male',
+    teamIds: ['team-konohamaru'],
     shortDescription: {
       it: 'Figlio sintetico di Orochimaru creato come "Sage Bianco". Sage del Serpente. Membro del Team Konohamaru con Boruto e Sarada.',
       en: 'Synthetic child of Orochimaru created as a "White Sage". Snake Sage. Member of Team Konohamaru alongside Boruto and Sarada.',
@@ -719,6 +722,7 @@ export const narutoCharactersBatch1: Character[] = [
     ninjaRank: 'genin',
     generation: 'New Era',
     gender: 'male',
+    teamIds: ['team-moegi'],
     shortDescription: {
       it: 'Figlio di Shikamaru e Temari. Membro del Team Moegi (Ino-Shika-Cho di nuova generazione) con Inojin e Chocho.',
       en: 'Son of Shikamaru and Temari. Member of Team Moegi (next-gen Ino-Shika-Chō) with Inojin and Chocho.',
@@ -745,6 +749,7 @@ export const narutoCharactersBatch1: Character[] = [
     ninjaRank: 'genin',
     generation: 'New Era',
     gender: 'male',
+    teamIds: ['team-moegi'],
     shortDescription: {
       it: 'Figlio di Sai e Ino. Eredita le tecniche di disegno-ninja del padre e le abilità mentali del clan Yamanaka.',
       en: 'Son of Sai and Ino. Inherits his father\'s ink ninjutsu and the Yamanaka clan\'s mind techniques.',
@@ -771,6 +776,7 @@ export const narutoCharactersBatch1: Character[] = [
     ninjaRank: 'genin',
     generation: 'New Era',
     gender: 'female',
+    teamIds: ['team-moegi'],
     shortDescription: {
       it: 'Figlia di Choji e Karui. Erede delle tecniche del clan Akimichi nel Team Moegi.',
       en: 'Daughter of Choji and Karui. Heir to the Akimichi clan techniques in Team Moegi.',
