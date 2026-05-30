@@ -3,12 +3,29 @@ import { useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { FactionType, WorldDataset } from '@/types';
 import { ClanFactionCard } from './ClanFactionCard';
+import { FeaturedStrip, type FeaturedTile } from './FeaturedStrip';
+import { EntityImage } from '@/components/common/EntityImage';
 import { EmptyState } from '@/components/common/EmptyState';
 import { SourceNotice } from '@/components/common/SourceNotice';
 import { useMapStore, useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText } from '@/utils/localization';
 import { filterFactionsBySeries } from '@/lib/filters';
+
+/** Clan in evidenza: lista curata di id che "valgono la copertina" se il
+ *  mondo li include. Stabile e prevedibile, senza pescare a caso. */
+const CLAN_FEATURED_ORDER = [
+  'clan-uchiha',
+  'clan-senju',
+  'clan-uzumaki',
+  'clan-hyuga',
+  'clan-akimichi',
+  'clan-nara',
+  'clan-yamanaka',
+  'clan-aburame',
+  'clan-inuzuka',
+  'clan-hatake',
+];
 
 interface ClansAndFactionsPageProps {
   dataset: WorldDataset;
@@ -53,6 +70,43 @@ export function ClansAndFactionsPage({ dataset }: ClansAndFactionsPageProps) {
       .sort((a, b) => a.name.localeCompare(b.name));
   }, [dataset, filters, filter, query, locale]);
 
+  /** Vetrina clan: prende dalla whitelist in ordine, intersecando con
+   *  quanto è presente nel dataset filtrato per serie. Vuota se l'utente
+   *  sta cercando o filtrando per tipo. */
+  const featuredItems: FeaturedTile[] = useMemo(() => {
+    if (query.trim() || filter) return [];
+    const bySeries = filterFactionsBySeries(dataset.factions, filters, dataset);
+    const map = new Map(bySeries.map((f) => [f.id, f]));
+    const ranked = CLAN_FEATURED_ORDER
+      .map((id) => map.get(id))
+      .filter((f): f is NonNullable<typeof f> => !!f)
+      .slice(0, 6);
+    return ranked.map((f) => {
+      const name = getLocalizedText(f.localizedName, locale) || f.name;
+      const village = f.villageLocationId
+        ? dataset.locations.find((l) => l.id === f.villageLocationId)
+        : undefined;
+      return {
+        id: f.id,
+        title: name,
+        subtitle: village
+          ? getLocalizedText(village.localizedName, locale) || village.name
+          : undefined,
+        caption: f.type.toUpperCase(),
+        image: (
+          <EntityImage
+            kind="clan"
+            id={f.id}
+            name={name}
+            villageId={f.villageLocationId}
+            fit="cover"
+          />
+        ),
+        onClick: () => openFactionModal(f.id),
+      };
+    });
+  }, [dataset, filters, locale, query, filter, openFactionModal]);
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6">
       <header className="space-y-2">
@@ -94,6 +148,12 @@ export function ClansAndFactionsPage({ dataset }: ClansAndFactionsPageProps) {
       </div>
 
       <SourceNotice compact />
+
+      <FeaturedStrip
+        title={t('clans.featuredTitle')}
+        hint={t('clans.featuredHint')}
+        items={featuredItems}
+      />
 
       {items.length === 0 ? (
         <EmptyState

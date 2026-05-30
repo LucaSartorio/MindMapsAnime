@@ -3,6 +3,8 @@ import { useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { NinjaRank, WorldDataset } from '@/types';
 import { CharacterCard } from './CharacterCard';
+import { FeaturedStrip, type FeaturedTile } from './FeaturedStrip';
+import { EntityImage } from '@/components/common/EntityImage';
 import { EmptyState } from '@/components/common/EmptyState';
 import { SourceNotice } from '@/components/common/SourceNotice';
 import { useMapStore, useUiStore } from '@/store';
@@ -69,6 +71,46 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
       .sort((a, b) => a.name.localeCompare(b.name));
   }, [dataset, filters, query, filterVillage, filterRank, locale]);
 
+  /** Vetrina iniziale: i sei "main" più rappresentativi (filtrati per serie,
+   * ignorando ricerca/filtri locali — non vogliamo che cambi sotto le mani
+   * scrivendo nella search box). Quando l'utente cerca o filtra, la nasconde
+   * per dare priorità ai risultati. */
+  const featuredItems: FeaturedTile[] = useMemo(() => {
+    if (query.trim() || filterVillage || filterRank) return [];
+    const bySeries = filterCharactersBySeries(dataset.characters, filters, dataset);
+    const ranked = bySeries
+      .filter((c) => c.importance === 'main' || c.importance === 'major')
+      .sort((a, b) => {
+        // Priorità ai 'main', poi ordine alfabetico per stabilità.
+        if (a.importance !== b.importance) return a.importance === 'main' ? -1 : 1;
+        return a.name.localeCompare(b.name);
+      })
+      .slice(0, 6);
+    return ranked.map((c) => {
+      const v = c.villageLocationId
+        ? dataset.locations.find((l) => l.id === c.villageLocationId)
+        : undefined;
+      return {
+        id: c.id,
+        title: c.name,
+        subtitle: v
+          ? getLocalizedText(v.localizedName, locale) || v.name
+          : undefined,
+        caption: c.ninjaRank ? getNinjaRankLabel(c.ninjaRank, locale) : undefined,
+        image: (
+          <EntityImage
+            kind="character"
+            id={c.id}
+            name={c.name}
+            villageId={c.villageLocationId}
+            fit="cover"
+          />
+        ),
+        onClick: () => openCharacterModal(c.id),
+      };
+    });
+  }, [dataset, filters, locale, query, filterVillage, filterRank, openCharacterModal]);
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6">
       <header className="space-y-2">
@@ -120,6 +162,12 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
       </div>
 
       <SourceNotice compact />
+
+      <FeaturedStrip
+        title={t('characters.featuredTitle')}
+        hint={t('characters.featuredHint')}
+        items={featuredItems}
+      />
 
       {filtered.length === 0 ? (
         <EmptyState

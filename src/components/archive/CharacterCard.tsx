@@ -35,43 +35,48 @@ export function CharacterCard({
     <Card
       interactive
       className={cn(
-        'cursor-pointer p-0 h-full overflow-hidden flex flex-col',
+        'cursor-pointer p-0 h-full overflow-hidden',
         active && 'border-ember-500/70 shadow-ember',
       )}
     >
       <button
         type="button"
         onClick={onClick}
-        className="flex flex-col text-left w-full h-full"
+        className="flex flex-col text-left w-full h-full p-4 gap-3"
       >
-        <div className="aspect-[16/10] w-full overflow-hidden border-b border-ink-700/50">
-          <EntityImage
-            kind="character"
-            id={character.id}
-            name={character.name}
-            villageId={character.villageLocationId}
-          />
-        </div>
-        <div className="flex flex-col gap-3 p-4">
-        <div className="flex items-start justify-between gap-3">
-          <div>
-            <h3 className="font-display text-lg text-ink-100">
-              {character.name}
-            </h3>
+        {/* Riga superiore: miniatura quadrata + titolo (stesso linguaggio del modale) */}
+        <div className="flex items-start gap-3">
+          <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl border border-ink-700/60 bg-ink-900 shadow-md">
+            <EntityImage
+              kind="character"
+              id={character.id}
+              name={character.name}
+              villageId={character.villageLocationId}
+              fit="cover"
+            />
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-start justify-between gap-2">
+              <h3 className="font-display text-lg text-ink-100 leading-tight line-clamp-2">
+                {character.name}
+              </h3>
+              {character.referenceStatus && (
+                <ReferencePill status={character.referenceStatus} />
+              )}
+            </div>
             {character.nameLocal && (
-              <p className="text-xs text-ink-300 italic">
+              <p className="text-xs text-ink-300 italic truncate mt-0.5">
                 {character.nameLocal}
               </p>
             )}
           </div>
-          {character.referenceStatus && (
-            <ReferencePill status={character.referenceStatus} />
-          )}
         </div>
-        <p className="text-sm text-ink-300 leading-relaxed">
+
+        <p className="text-sm text-ink-300 leading-relaxed line-clamp-3">
           {getLocalizedText(character.shortDescription, locale)}
         </p>
-        <div className="flex flex-wrap gap-1.5">
+
+        <div className="flex flex-wrap gap-1.5 mt-auto">
           {character.ninjaRank ? (
             <Badge variant="accent">
               {getNinjaRankLabel(character.ninjaRank, locale)}
@@ -104,7 +109,6 @@ export function CharacterCard({
           >
             {getCharacterStatusLabel(character.status, locale)}
           </Badge>
-        </div>
         </div>
       </button>
     </Card>

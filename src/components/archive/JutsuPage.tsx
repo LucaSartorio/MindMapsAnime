@@ -3,6 +3,8 @@ import { useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { ChakraNature, JutsuType, WorldDataset } from '@/types';
 import { JutsuCard } from './JutsuCard';
+import { FeaturedStrip, type FeaturedTile } from './FeaturedStrip';
+import { EntityImage } from '@/components/common/EntityImage';
 import { EmptyState } from '@/components/common/EmptyState';
 import { SourceNotice } from '@/components/common/SourceNotice';
 import { useMapStore, useUiStore } from '@/store';
@@ -78,6 +80,43 @@ export function JutsuPage({ dataset }: JutsuPageProps) {
       );
   }, [allJutsu, query, filterType, filterNature, locale]);
 
+  /** Vetrina jutsu: tecniche S-rank (poi A) per dare il senso di "epicità".
+   * Nascosta quando l'utente sta cercando o filtrando per tipo/natura. */
+  const featuredItems: FeaturedTile[] = useMemo(() => {
+    if (query.trim() || filterType || filterNature) return [];
+    const ranked = allJutsu
+      .filter((j) => j.rank === 'S' || j.rank === 'A')
+      .sort((a, b) => {
+        if (a.rank !== b.rank) return a.rank === 'S' ? -1 : 1;
+        const an = getLocalizedText(a.localizedName, locale) || a.name;
+        const bn = getLocalizedText(b.localizedName, locale) || b.name;
+        return an.localeCompare(bn);
+      })
+      .slice(0, 6);
+    return ranked.map((j) => {
+      const n = getLocalizedText(j.localizedName, locale) || j.name;
+      const nature = j.chakraNature?.[0]
+        ? getChakraNatureLabel(j.chakraNature[0], locale)
+        : undefined;
+      return {
+        id: j.id,
+        title: n,
+        subtitle: nature,
+        caption: j.rank ? `RANK ${j.rank}` : undefined,
+        image: (
+          <EntityImage
+            kind="jutsu"
+            id={j.id}
+            name={n}
+            chakraNature={j.chakraNature?.[0]}
+            fit="cover"
+          />
+        ),
+        onClick: () => openJutsuModal(j.id),
+      };
+    });
+  }, [allJutsu, locale, query, filterType, filterNature, openJutsuModal]);
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6">
       <header className="space-y-2">
@@ -127,6 +166,12 @@ export function JutsuPage({ dataset }: JutsuPageProps) {
       </div>
 
       <SourceNotice compact />
+
+      <FeaturedStrip
+        title={t('jutsu.featuredTitle')}
+        hint={t('jutsu.featuredHint')}
+        items={featuredItems}
+      />
 
       {filtered.length === 0 ? (
         <EmptyState

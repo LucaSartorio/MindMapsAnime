@@ -248,6 +248,8 @@ export const en = {
     rankFilterAria: 'Filter by ninja rank',
     empty: 'No characters',
     emptyDescription: 'No results for the active filters.',
+    featuredTitle: 'Featured',
+    featuredHint: 'Main characters',
   },
   clans: {
     archiveTitle: 'Clans & Factions',
@@ -264,6 +266,8 @@ export const en = {
     },
     empty: 'No clan or faction',
     emptyDescription: 'No results for the current filters.',
+    featuredTitle: 'Legendary clans',
+    featuredHint: 'The most iconic clans of the world',
   },
   jutsu: {
     archiveTitle: 'Jutsu archive',
@@ -277,6 +281,8 @@ export const en = {
     rankLabel: 'Rank {{rank}}',
     empty: 'No jutsu',
     emptyDescription: 'No results for the active filters.',
+    featuredTitle: 'Iconic techniques',
+    featuredHint: 'S-rank techniques',
   },
   arcs: {
     archiveTitle: 'Story arcs',
@@ -287,6 +293,8 @@ export const en = {
     sagaFilterAria: 'Filter by saga',
     empty: 'No arcs',
     emptyDescription: 'No arcs match the filters.',
+    featuredTitle: 'Main sagas',
+    featuredHint: 'The most important narrative arcs',
   },
   sources: {
     title: 'Sources & assets',

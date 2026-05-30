@@ -3,6 +3,8 @@ import { useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
 import { StoryArcCard } from './StoryArcCard';
+import { FeaturedStrip, type FeaturedTile } from './FeaturedStrip';
+import { EntityImage } from '@/components/common/EntityImage';
 import { EmptyState } from '@/components/common/EmptyState';
 import { SourceNotice } from '@/components/common/SourceNotice';
 import { useMapStore, useUiStore } from '@/store';
@@ -58,6 +60,30 @@ export function StoryArcsPage({ dataset }: StoryArcsPageProps) {
       });
   }, [dataset.arcs, filters.series, query, saga, locale]);
 
+  /** Vetrina archi: canon, primi 6 in ordine cronologico (così guida
+   *  l'occhio dalla pre-serie alle saghe successive). Nascosta su ricerca
+   *  o filtro saga. */
+  const featuredItems: FeaturedTile[] = useMemo(() => {
+    if (query.trim() || saga) return [];
+    const ranked = [...dataset.arcs]
+      .filter((a) => matchesSelectedSeries(arcSeries(a), filters.series))
+      .filter((a) => (a.canonStatus ?? a.canon) === 'canon')
+      .sort((a, b) => a.order - b.order)
+      .slice(0, 6);
+    return ranked.map((a) => {
+      const name = getLocalizedText(a.localizedName, locale) || a.name;
+      const sagaName = getLocalizedText(a.saga, locale);
+      return {
+        id: a.id,
+        title: name,
+        subtitle: sagaName || undefined,
+        caption: `#${a.order}`,
+        image: <EntityImage kind="arc" id={a.id} name={name} fit="cover" />,
+        onClick: () => openArcModal(a.id),
+      };
+    });
+  }, [dataset.arcs, filters.series, locale, query, saga, openArcModal]);
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6">
       <header className="space-y-2">
@@ -94,6 +120,12 @@ export function StoryArcsPage({ dataset }: StoryArcsPageProps) {
       </div>
 
       <SourceNotice compact />
+
+      <FeaturedStrip
+        title={t('arcs.featuredTitle')}
+        hint={t('arcs.featuredHint')}
+        items={featuredItems}
+      />
 
       {items.length === 0 ? (
         <EmptyState
