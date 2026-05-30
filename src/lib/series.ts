@@ -9,6 +9,19 @@ import type {
   TimelineEvent,
   WorldDataset,
 } from '@/types';
+import { ALL_SERIES } from '@/types';
+
+/**
+ * Le "serie" (blocchi narrativi: Parte 1 · Shippuden · Boruto · Film) sono un
+ * concetto specifico di Naruto: la mappatura arco→serie qui sotto è tarata
+ * sugli ordini/episodi di Naruto. Per gli altri mondi (es. Hunter x Hunter)
+ * il concetto non si applica, quindi il filtro "Serie" va nascosto.
+ *
+ * Restituisce le opzioni serie applicabili a un mondo (vuoto = niente filtro).
+ */
+export function worldSeriesOptions(world: { slug: string }): Series[] {
+  return world.slug === 'naruto' ? ALL_SERIES : [];
+}
 
 /**
  * Mappa esplicita arc → serie per gli archi del mondo Naruto.

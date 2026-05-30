@@ -19,6 +19,8 @@ const VIEWBOX_H = 1187;
 const SIMPLIFY_EPSILON = 6;
 
 const SEEDS: { slug: string; x: number; y: number; tol?: number }[] = [
+  { slug: 'nw-main', x: 0.40, y: 0.31 },
+  { slug: 'kukanyu-pen', x: 0.315, y: 0.40 },
   { slug: 'yorbian', x: 0.34, y: 0.585 },
   { slug: 'azian', x: 0.655, y: 0.40 },
   { slug: 'new-continent', x: 0.79, y: 0.44, tol: 50 },

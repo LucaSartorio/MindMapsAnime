@@ -88,9 +88,9 @@ writeFileSync('/tmp/hxh-overlay.png', PNG.sync.write(out));
 
 // crop regions of the overlay for detailed inspection
 const cropBoxes: Record<string, [number, number, number, number]> = {
-  west: [0.25, 0.18, 0.50, 0.82],
-  east: [0.50, 0.25, 0.92, 1.0],
-  topbottom: [0.40, 0.0, 0.95, 0.22],
+  nw: [0.27, 0.22, 0.47, 0.45],
+  ysouth: [0.28, 0.5, 0.50, 0.84],
+  azian: [0.54, 0.33, 0.74, 0.62],
 };
 for (const [name, [fx0, fy0, fx1, fy1]] of Object.entries(cropBoxes)) {
   const x0 = Math.floor(fx0 * OW);
