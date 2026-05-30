@@ -6,7 +6,7 @@
  */
 export const it = {
   app: {
-    title: 'Anime Interactive Maps',
+    title: 'Mappe Interattive Anime',
     tagline:
       'Esplora i mondi dei tuoi anime e manga preferiti attraverso mappe interattive, timeline, personaggi, archi narrativi e percorsi.',
     eyebrow: 'atlante interattivo · anime & manga',

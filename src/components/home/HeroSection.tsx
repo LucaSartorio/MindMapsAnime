@@ -24,12 +24,6 @@ export function HeroSection() {
         <p className="mt-6 text-base sm:text-lg md:text-xl text-ink-200 max-w-2xl mx-auto leading-relaxed">
           {t('app.tagline')}
         </p>
-        <div className="mt-10 flex items-center justify-center gap-3 flex-wrap">
-          <span className="chip">React Flow</span>
-          <span className="chip-accent">Zero backend</span>
-          <span className="chip-ember">{t('home.featureExtensibleTitle')}</span>
-          <span className="chip">Multi-mondo</span>
-        </div>
       </div>
     </section>
   );
