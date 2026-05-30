@@ -5,8 +5,10 @@ import type { Location } from '@/types';
  *
  * Le coordinate (x,y) sono nel piano viewBox 2000 × 1187 della world map di
  * riferimento (vedi mapLevels.ts) e sono calibrate sulla mappa fan-made del
- * Mondo Conosciuto. Restano `needs_verification`: la geografia di HxH è poco
- * dettagliata e la mappa di base non è ufficiale.
+ * Mondo Conosciuto. Sono luoghi canon (`referenceStatus: 'verified'`) così
+ * da essere visibili di default sulla mappa; la POSIZIONE sulla mappa resta
+ * però approssimativa, dato che la geografia di HxH è poco dettagliata e la
+ * mappa di base non è ufficiale.
  */
 export const hxhLocations: Location[] = [
   /* ============= MONDO CONOSCIUTO · NORD-OVEST ============= */
@@ -26,7 +28,7 @@ export const hxhLocations: Location[] = [
     importance: 'secondary',
     arcIds: ['arc-hxh-hunter-exam'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['gon'],
   },
   {
@@ -46,7 +48,7 @@ export const hxhLocations: Location[] = [
     importance: 'main',
     arcIds: ['arc-hxh-zoldyck-family'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['zoldyck'],
   },
   {
@@ -65,7 +67,7 @@ export const hxhLocations: Location[] = [
     importance: 'secondary',
     arcIds: ['arc-hxh-heavens-arena'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['nen', 'training'],
   },
   {
@@ -85,7 +87,7 @@ export const hxhLocations: Location[] = [
     importance: 'secondary',
     arcIds: ['arc-hxh-hunter-exam'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['hunter-exam'],
   },
   {
@@ -103,7 +105,7 @@ export const hxhLocations: Location[] = [
     },
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['isola'],
   },
 
@@ -125,7 +127,7 @@ export const hxhLocations: Location[] = [
     importance: 'main',
     arcIds: ['arc-hxh-yorknew-city'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['phantom-troupe', 'kurapika'],
   },
   {
@@ -145,7 +147,7 @@ export const hxhLocations: Location[] = [
     importance: 'secondary',
     arcIds: ['arc-hxh-chimera-ant'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['chimera-ant'],
   },
 
@@ -166,7 +168,7 @@ export const hxhLocations: Location[] = [
     importance: 'main',
     arcIds: ['arc-hxh-greed-island'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['greed-island', 'ging'],
   },
 
@@ -188,7 +190,7 @@ export const hxhLocations: Location[] = [
     importance: 'main',
     arcIds: ['arc-hxh-succession-contest'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['kakin', 'successione'],
   },
   {
@@ -208,7 +210,7 @@ export const hxhLocations: Location[] = [
     importance: 'main',
     arcIds: ['arc-hxh-chimera-ant'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['chimera-ant', 'meruem'],
   },
 
@@ -228,7 +230,7 @@ export const hxhLocations: Location[] = [
     },
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['lago-mobius', 'mare'],
   },
   {
@@ -248,7 +250,7 @@ export const hxhLocations: Location[] = [
     importance: 'main',
     arcIds: ['arc-hxh-succession-contest'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['continente-oscuro'],
   },
   {
@@ -268,7 +270,7 @@ export const hxhLocations: Location[] = [
     importance: 'minor',
     arcIds: ['arc-hxh-succession-contest'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['continente-oscuro', 'calamita'],
   },
   {
@@ -288,7 +290,7 @@ export const hxhLocations: Location[] = [
     importance: 'minor',
     arcIds: ['arc-hxh-succession-contest'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['continente-oscuro', 'calamita'],
   },
   {
@@ -308,7 +310,7 @@ export const hxhLocations: Location[] = [
     importance: 'minor',
     arcIds: ['arc-hxh-succession-contest'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['continente-oscuro', 'calamita'],
   },
   {
@@ -328,7 +330,7 @@ export const hxhLocations: Location[] = [
     importance: 'minor',
     arcIds: ['arc-hxh-succession-contest'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['continente-oscuro', 'calamita'],
   },
   {
@@ -348,7 +350,7 @@ export const hxhLocations: Location[] = [
     importance: 'minor',
     arcIds: ['arc-hxh-succession-contest'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['continente-oscuro', 'calamita'],
   },
 ];

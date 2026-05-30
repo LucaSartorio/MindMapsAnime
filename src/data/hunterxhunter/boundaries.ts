@@ -31,7 +31,7 @@ export const hxhBoundaries: MapBoundary[] = [
     localizedName: { it: 'Mondo Conosciuto', en: 'Known World' },
     type: 'special_area',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     svgPathD:
       'M 530 309 L 1450 309 L 1450 973 L 530 973 Z',
     labelPosition: { x: 970, y: 560 },
@@ -51,7 +51,7 @@ export const hxhBoundaries: MapBoundary[] = [
     localizedName: { it: 'Continente Oscuro', en: 'Dark Continent' },
     type: 'region',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     svgPathD:
       'M 0 0 L 2000 0 L 2000 250 L 1500 205 L 1000 160 L 500 205 L 0 250 Z',
     labelPosition: { x: 980, y: 70 },
@@ -72,7 +72,7 @@ export const hxhBoundaries: MapBoundary[] = [
     localizedName: { it: 'Continente di Yorbian', en: 'Yorbian Continent' },
     type: 'region',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     svgPathD:
       'M 866 589 L 862 616 L 874 608 L 879 613 L 890 610 L 898 623 L 896 638 L 903 629 L 919 631 L 920 639 L 900 652 L 912 646 L 932 652 L 927 668 L 931 676 L 918 692 L 906 691 L 898 702 L 865 716 L 854 736 L 846 732 L 850 744 L 791 763 L 796 774 L 790 782 L 804 762 L 823 758 L 838 768 L 842 754 L 852 756 L 864 781 L 848 790 L 824 787 L 820 802 L 808 803 L 813 822 L 807 827 L 787 814 L 806 800 L 787 794 L 788 783 L 777 783 L 777 797 L 766 793 L 779 803 L 784 823 L 756 810 L 745 816 L 750 824 L 773 825 L 778 847 L 772 852 L 767 842 L 765 856 L 755 849 L 743 861 L 705 856 L 697 848 L 681 852 L 677 839 L 690 837 L 675 833 L 672 825 L 679 824 L 669 821 L 708 809 L 709 831 L 735 839 L 742 828 L 723 814 L 730 799 L 702 798 L 673 809 L 660 800 L 662 817 L 609 802 L 627 765 L 619 774 L 613 767 L 599 770 L 616 742 L 614 720 L 603 710 L 612 695 L 599 674 L 613 675 L 635 642 L 618 633 L 604 652 L 599 638 L 588 648 L 575 627 L 605 624 L 619 611 L 636 608 L 655 617 L 663 617 L 659 610 L 664 609 L 707 613 L 735 625 L 756 645 L 755 652 L 812 666 L 814 658 L 857 643 L 853 606 L 866 590 Z',
     labelPosition: { x: 754, y: 720 },
@@ -93,7 +93,7 @@ export const hxhBoundaries: MapBoundary[] = [
     localizedName: { it: 'Continente di Azian', en: 'Azian Continent' },
     type: 'region',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     svgPathD:
       'M 1277 317 L 1294 323 L 1294 341 L 1311 345 L 1327 370 L 1325 414 L 1343 431 L 1346 445 L 1360 430 L 1383 445 L 1391 439 L 1371 413 L 1344 404 L 1357 392 L 1354 374 L 1380 386 L 1385 406 L 1416 431 L 1421 458 L 1397 484 L 1388 484 L 1388 466 L 1369 472 L 1387 522 L 1387 555 L 1377 572 L 1404 584 L 1374 581 L 1364 571 L 1355 577 L 1366 603 L 1391 598 L 1394 611 L 1380 616 L 1380 623 L 1396 627 L 1409 621 L 1408 638 L 1434 659 L 1427 669 L 1420 674 L 1407 663 L 1395 662 L 1381 645 L 1354 649 L 1306 638 L 1291 628 L 1288 610 L 1272 602 L 1220 609 L 1205 596 L 1178 599 L 1155 584 L 1146 560 L 1130 547 L 1166 537 L 1209 479 L 1196 471 L 1172 491 L 1162 471 L 1166 449 L 1220 433 L 1239 442 L 1246 425 L 1259 423 L 1255 460 L 1264 463 L 1280 453 L 1283 434 L 1262 409 L 1291 388 L 1291 355 L 1270 330 L 1277 318 Z',
     labelPosition: { x: 1280, y: 480 },
@@ -114,7 +114,7 @@ export const hxhBoundaries: MapBoundary[] = [
     localizedName: { it: 'Nuovo Continente', en: 'New Continent' },
     type: 'region',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     svgPathD:
       'M 1574 316 L 1584 320 L 1588 334 L 1611 334 L 1617 356 L 1609 370 L 1623 376 L 1636 405 L 1633 450 L 1649 463 L 1655 481 L 1641 501 L 1640 522 L 1618 530 L 1609 544 L 1593 551 L 1580 551 L 1569 535 L 1530 542 L 1513 527 L 1520 509 L 1511 492 L 1523 478 L 1527 449 L 1545 427 L 1526 395 L 1527 372 L 1573 317 Z',
     labelPosition: { x: 1582, y: 462 },
@@ -137,7 +137,7 @@ export const hxhBoundaries: MapBoundary[] = [
     localizedName: { it: 'Repubblica di Padokia', en: 'Republic of Padokia' },
     type: 'minor_nation',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     svgPathD:
       'M 690 315 L 770 305 L 815 330 L 810 375 L 760 395 L 700 385 L 680 350 Z',
     labelPosition: { x: 744, y: 347 },
@@ -158,7 +158,7 @@ export const hxhBoundaries: MapBoundary[] = [
     localizedName: { it: 'Repubblica di Mimbo', en: 'Mimbo Republic' },
     type: 'minor_nation',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     svgPathD:
       'M 690 365 L 760 365 L 790 395 L 760 420 L 705 422 L 678 398 Z',
     labelPosition: { x: 732, y: 392 },
@@ -179,7 +179,7 @@ export const hxhBoundaries: MapBoundary[] = [
     localizedName: { it: "Regno di Kukan'yu", en: "Kukan'yu Kingdom" },
     type: 'minor_nation',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     svgPathD:
       'M 590 420 L 670 415 L 695 450 L 670 485 L 615 495 L 585 460 Z',
     labelPosition: { x: 634, y: 452 },
@@ -202,7 +202,7 @@ export const hxhBoundaries: MapBoundary[] = [
     localizedName: { it: 'Stati Uniti di Saherta', en: 'United States of Saherta' },
     type: 'great_nation',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     svgPathD:
       'M 615 645 L 715 640 L 745 670 L 720 705 L 645 708 L 610 678 Z',
     labelPosition: { x: 666, y: 673 },
@@ -223,7 +223,7 @@ export const hxhBoundaries: MapBoundary[] = [
     localizedName: { it: 'Unione di Mitene', en: 'Mitene Union' },
     type: 'great_nation',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     svgPathD:
       'M 720 880 L 820 870 L 855 905 L 835 950 L 760 962 L 705 925 Z',
     labelPosition: { x: 784, y: 912 },
@@ -246,7 +246,7 @@ export const hxhBoundaries: MapBoundary[] = [
     localizedName: { it: 'Regno di Kakin', en: 'Kingdom of Kakin' },
     type: 'great_nation',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     svgPathD:
       'M 1160 490 L 1260 485 L 1290 525 L 1260 565 L 1185 570 L 1150 530 Z',
     labelPosition: { x: 1210, y: 525 },
@@ -267,7 +267,7 @@ export const hxhBoundaries: MapBoundary[] = [
     localizedName: { it: 'Federazione di Ochima', en: 'Federation of Ochima' },
     type: 'great_nation',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     svgPathD:
       'M 1255 610 L 1370 605 L 1410 650 L 1380 700 L 1300 715 L 1250 670 Z',
     labelPosition: { x: 1308, y: 655 },
@@ -290,7 +290,7 @@ export const hxhBoundaries: MapBoundary[] = [
     localizedName: { it: 'Unione di Begerossé', en: 'Begerossé Union' },
     type: 'island',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     svgPathD:
       'M 1053 760 L 1089 778 L 1126 761 L 1147 767 L 1155 797 L 1150 813 L 1095 835 L 1080 822 L 1062 832 L 1036 802 L 1037 770 L 1052 761 Z',
     labelPosition: { x: 1118, y: 815 },
