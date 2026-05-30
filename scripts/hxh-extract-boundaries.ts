@@ -1,0 +1,128 @@
+/**
+ * Estrazione automatica dei contorni delle terre isolate della world map HxH.
+ *
+ * Stessa pipeline di extract-boundaries.ts (region-growing da seed → Moore
+ * tracing → Douglas–Peucker → scala al viewBox), tarata sul PNG HxH.
+ * Funziona solo per masse di terra ISOLATE e mono-colore (i continenti e le
+ * isole): le singole nazioni dentro uno stesso continente condividono il
+ * colore e non sono separabili, quindi restano poligoni disegnati a mano.
+ *
+ * Uso: npx tsx --tsconfig scripts/tsconfig.json scripts/hxh-extract-boundaries.ts
+ * Output: stampa gli svgPathD pronti da incollare in boundaries.ts.
+ */
+import { readFileSync, existsSync } from 'node:fs';
+import { PNG } from 'pngjs';
+
+const MAP_PATH = 'public/assets/worlds/hunterxhunter/maps/hxh-world-map.png';
+const VIEWBOX_W = 2000;
+const VIEWBOX_H = 1187;
+const SIMPLIFY_EPSILON = 6;
+
+const SEEDS: { slug: string; x: number; y: number; tol?: number }[] = [
+  { slug: 'yorbian', x: 0.34, y: 0.585 },
+  { slug: 'azian', x: 0.655, y: 0.40 },
+  { slug: 'new-continent', x: 0.79, y: 0.44, tol: 50 },
+  { slug: 'begerosse', x: 0.535, y: 0.685 },
+];
+
+function colorDist(r1: number, g1: number, b1: number, r2: number, g2: number, b2: number) {
+  return Math.sqrt((r1 - r2) ** 2 + (g1 - g2) ** 2 + (b1 - b2) ** 2);
+}
+
+function growRegion(png: PNG, seedX: number, seedY: number, tol: number) {
+  const { width: w, height: h, data } = png;
+  const sIdx = (seedY * w + seedX) * 4;
+  const sr = data[sIdx], sg = data[sIdx + 1], sb = data[sIdx + 2];
+  const mask = new Uint8Array(w * h);
+  const stack = [seedY * w + seedX];
+  mask[seedY * w + seedX] = 1;
+  while (stack.length) {
+    const p = stack.pop()!;
+    const x = p % w, y = (p / w) | 0;
+    for (const [nx, ny] of [[x + 1, y], [x - 1, y], [x, y + 1], [x, y - 1]] as const) {
+      if (nx < 0 || ny < 0 || nx >= w || ny >= h) continue;
+      const np = ny * w + nx;
+      if (mask[np]) continue;
+      const ni = np * 4;
+      if (colorDist(sr, sg, sb, data[ni], data[ni + 1], data[ni + 2]) <= tol) {
+        mask[np] = 1;
+        stack.push(np);
+      }
+    }
+  }
+  return { mask, w, h };
+}
+
+function traceContour(mask: Uint8Array, w: number, h: number): [number, number][] {
+  const at = (x: number, y: number) => (x < 0 || y < 0 || x >= w || y >= h ? 0 : mask[y * w + x]);
+  let start = -1;
+  for (let i = 0; i < mask.length; i++) if (mask[i]) { start = i; break; }
+  if (start < 0) return [];
+  const sx = start % w, sy = (start / w) | 0;
+  const contour: [number, number][] = [];
+  const dirs = [[1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0], [-1, -1], [0, -1], [1, -1]];
+  let cx = sx, cy = sy, dir = 6, steps = 0;
+  const maxSteps = w * h * 4;
+  do {
+    contour.push([cx, cy]);
+    let found = false;
+    for (let k = 0; k < 8; k++) {
+      const nd = (dir + 6 + k) % 8;
+      const nx = cx + dirs[nd][0], ny = cy + dirs[nd][1];
+      if (at(nx, ny)) { cx = nx; cy = ny; dir = nd; found = true; break; }
+    }
+    if (!found) break;
+    steps++;
+  } while ((cx !== sx || cy !== sy) && steps < maxSteps);
+  return contour;
+}
+
+function simplify(points: [number, number][], eps: number): [number, number][] {
+  if (points.length < 3) return points;
+  const sqEps = eps * eps;
+  const keep = new Uint8Array(points.length);
+  keep[0] = keep[points.length - 1] = 1;
+  const stack: [number, number][] = [[0, points.length - 1]];
+  while (stack.length) {
+    const [a, b] = stack.pop()!;
+    let maxD = 0, idx = -1;
+    const [ax, ay] = points[a], [bx, by] = points[b];
+    for (let i = a + 1; i < b; i++) {
+      const [px, py] = points[i];
+      const dx = bx - ax, dy = by - ay;
+      const t = ((px - ax) * dx + (py - ay) * dy) / (dx * dx + dy * dy || 1);
+      const projx = ax + t * dx, projy = ay + t * dy;
+      const d = (px - projx) ** 2 + (py - projy) ** 2;
+      if (d > maxD) { maxD = d; idx = i; }
+    }
+    if (maxD > sqEps && idx > 0) { keep[idx] = 1; stack.push([a, idx], [idx, b]); }
+  }
+  return points.filter((_, i) => keep[i]);
+}
+
+function toPath(points: [number, number][], w: number, h: number): string {
+  if (points.length < 3) return '';
+  const sx = VIEWBOX_W / w, sy = VIEWBOX_H / h;
+  return 'M ' + points.map(([x, y]) => `${(x * sx).toFixed(0)} ${(y * sy).toFixed(0)}`).join(' L ') + ' Z';
+}
+
+if (!existsSync(MAP_PATH)) {
+  // eslint-disable-next-line no-console
+  console.error(`PNG non trovato: ${MAP_PATH}`);
+  process.exit(1);
+}
+const png = PNG.sync.read(readFileSync(MAP_PATH));
+const { width: w, height: h } = png;
+// eslint-disable-next-line no-console
+console.log(`PNG ${w}x${h} → viewBox ${VIEWBOX_W}x${VIEWBOX_H}\n`);
+for (const seed of SEEDS) {
+  const px = Math.min(w - 1, Math.round(seed.x * w));
+  const py = Math.min(h - 1, Math.round(seed.y * h));
+  const { mask } = growRegion(png, px, py, seed.tol ?? 42);
+  const count = mask.reduce((a, b) => a + b, 0);
+  const simplified = simplify(traceContour(mask, w, h), SIMPLIFY_EPSILON);
+  // eslint-disable-next-line no-console
+  console.log(`/* ${seed.slug} · seed(${px},${py}) · ${count}px · ${simplified.length} pts */`);
+  // eslint-disable-next-line no-console
+  console.log(`'${toPath(simplified, w, h)}',\n`);
+}
