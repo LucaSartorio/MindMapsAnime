@@ -293,8 +293,6 @@ export const en = {
     sagaFilterAria: 'Filter by saga',
     empty: 'No arcs',
     emptyDescription: 'No arcs match the filters.',
-    featuredTitle: 'Main sagas',
-    featuredHint: 'The most important narrative arcs',
   },
   sources: {
     title: 'Sources & assets',

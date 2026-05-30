@@ -16,6 +16,18 @@ import {
 } from '@/utils/localization';
 import { filterJutsuBySeries } from '@/lib/filters';
 
+/** Jutsu in evidenza: lista curata di id che vogliamo vedere nella
+ *  striscia, in ordine. Stabile e indipendente dal rango (così possiamo
+ *  includere tecniche A-rank come il Rasengan accanto a S-rank). */
+const JUTSU_FEATURED_ORDER = [
+  'jutsu-rasengan',
+  'jutsu-chidori',
+  'jutsu-kamui',
+  'jutsu-amaterasu',
+  'jutsu-sage-mode-toad',
+  'jutsu-chibaku-tensei',
+];
+
 interface JutsuPageProps {
   dataset: WorldDataset;
 }
@@ -80,18 +92,15 @@ export function JutsuPage({ dataset }: JutsuPageProps) {
       );
   }, [allJutsu, query, filterType, filterNature, locale]);
 
-  /** Vetrina jutsu: tecniche S-rank (poi A) per dare il senso di "epicità".
-   * Nascosta quando l'utente sta cercando o filtrando per tipo/natura. */
+  /** Vetrina jutsu: prende dalla whitelist in ordine, intersecando con
+   * quanto è presente nel dataset filtrato per serie. Nascosta se l'utente
+   * sta cercando o filtrando per tipo/natura. */
   const featuredItems: FeaturedTile[] = useMemo(() => {
     if (query.trim() || filterType || filterNature) return [];
-    const ranked = allJutsu
-      .filter((j) => j.rank === 'S' || j.rank === 'A')
-      .sort((a, b) => {
-        if (a.rank !== b.rank) return a.rank === 'S' ? -1 : 1;
-        const an = getLocalizedText(a.localizedName, locale) || a.name;
-        const bn = getLocalizedText(b.localizedName, locale) || b.name;
-        return an.localeCompare(bn);
-      })
+    const map = new Map(allJutsu.map((j) => [j.id, j]));
+    const ranked = JUTSU_FEATURED_ORDER
+      .map((id) => map.get(id))
+      .filter((j): j is NonNullable<typeof j> => !!j)
       .slice(0, 6);
     return ranked.map((j) => {
       const n = getLocalizedText(j.localizedName, locale) || j.name;
