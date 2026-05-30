@@ -1,5 +1,6 @@
 import type { WorldDataset } from '@/types';
 import { narutoDataset } from '@/data/naruto';
+import { hunterxhunterDataset } from '@/data/hunterxhunter';
 
 /**
  * Registro dei WorldDataset disponibili.
@@ -13,7 +14,7 @@ import { narutoDataset } from '@/data/naruto';
  */
 export const worldDatasets: Record<string, WorldDataset> = {
   [narutoDataset.world.slug]: narutoDataset,
-  // hunterxhunter: hunterxhunterDataset, // appena disponibile
+  [hunterxhunterDataset.world.slug]: hunterxhunterDataset,
 };
 
 /** Recupera il dataset di un mondo dato il suo slug. */

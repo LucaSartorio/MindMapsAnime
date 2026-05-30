@@ -49,16 +49,18 @@ export const animeWorlds: AnimeWorld[] = [
       en: 'A world of Hunters · Coming soon',
     },
     description: {
-      it: 'Il mondo di Gon, Killua e degli Hunter è in arrivo. Esploreremo Yorknew, Greed Island, il Continente Oscuro e i territori conosciuti.',
-      en: "Gon, Killua and the Hunters' world is coming. We'll explore Yorknew, Greed Island, the Dark Continent and the known territories.",
+      it: 'Il mondo di Gon, Killua e degli Hunter. Personaggi, tecniche Nen, fazioni e archi narrativi; la mappa geografica arriverà in seguito.',
+      en: "Gon, Killua and the Hunters' world. Characters, Nen techniques, factions and story arcs; the geographic map is coming later.",
     },
-    status: 'coming_soon',
+    status: 'available',
     theme: {
       primary: '#1f9aff',
       accent: '#f06600',
       highlight: '#e10b0b',
     },
-    availableMapLevelIds: [],
+    defaultMapLevelId: 'hxh-map-world',
+    availableMapLevelIds: ['hxh-map-world'],
+    coverAssetId: 'hxh-cover-placeholder',
     tags: ['shonen', 'hunter', 'yoshihiro togashi', 'jump'],
     metadata: {
       author: 'Yoshihiro Togashi',
