@@ -4,44 +4,27 @@ import type { MapBoundary } from '@/types';
  * Confini cliccabili per la world map Hunter x Hunter.
  *
  * Tutti i `svgPathD` sono nel viewBox 2000 × 1187 e tracciano le regioni
- * della mappa di riferimento (fan-made) del Mondo Conosciuto. Fungono da
- * aree cliccabili + highlight su hover/selezione (vedi MapRegionPath);
- * l'overlay è invisibile di default perché il PNG porta già etichette e
- * confini disegnati.
+ * della mappa di riferimento (fan-made) del Mondo Conosciuto.
  *
- * I contorni delle terre isolate (Yorbian, Azian, Nuovo Continente,
- * Begerossé) sono estratti automaticamente dal PNG con
+ * Comportamento (vedi MapRegionPath):
+ * - `great_nation` → area direttamente cliccabile (apre la scheda) e che si
+ *   evidenzia al passaggio del mouse sull'area: usato per le grandi
+ *   federazioni (Saherta, Mitene, Kakin, Ochima).
+ * - regioni/isole/nazioni minori → si rivelano solo passando sul loro pin
+ *   (la location collega `boundaryId`). I dettagli si aprono dal pin.
+ *
+ * Contorni delle terre ISOLATE (Yorbian, Azian, Nuovo Continente, Begerossé,
+ * penisola di Kukan'yu, corpo nord-ovest) estratti dal PNG con
  * `scripts/hxh-extract-boundaries.ts` (region-growing sul colore + Moore
- * tracing). Le singole nazioni dentro uno stesso continente condividono il
- * colore e non sono separabili: restano poligoni disegnati a mano.
+ * tracing). Le nazioni che condividono lo stesso continente (Saherta/Mitene,
+ * Kakin/Ochima, Padokia/Mimbo) sono partizioni disegnate a mano del relativo
+ * corpo, perché lo stesso colore non è separabile automaticamente.
  *
- * Ordine: prima le macro-regioni (Mondo Conosciuto, continenti) così che le
- * hot-zone delle singole nazioni, definite dopo, restino cliccabili sopra.
- *
- * TODO: se sostituisci il PNG, rivedi `svgPathD` e `labelPosition`.
+ * Ordine: prima le macro-regioni (continenti), poi le nazioni, così che le
+ * hot-zone delle nazioni restino cliccabili sopra.
  */
 export const hxhBoundaries: MapBoundary[] = [
-  /* ============= MACRO-REGIONI ============= */
-  {
-    id: 'boundary-hxh-known-world',
-    worldId: 'world-hunterxhunter',
-    mapLevelId: 'hxh-map-world',
-    slug: 'known-world',
-    name: 'Known World',
-    localizedName: { it: 'Mondo Conosciuto', en: 'Known World' },
-    type: 'special_area',
-    canonStatus: 'canon',
-    referenceStatus: 'verified',
-    svgPathD:
-      'M 530 309 L 1450 309 L 1450 973 L 530 973 Z',
-    labelPosition: { x: 970, y: 560 },
-    color: '#7fb2c8',
-    descriptionShort: {
-      it: 'La porzione esplorata e mappata del mondo di Hunter x Hunter, racchiusa dal confine tratteggiato in mezzo al Lago Mobius.',
-      en: 'The explored, charted portion of the Hunter x Hunter world, enclosed by the dashed border amid Lake Mobius.',
-    },
-    tags: ['known-world'],
-  },
+  /* ============= MACRO-REGIONI / CONTINENTI ============= */
   {
     id: 'boundary-hxh-dark-continent',
     worldId: 'world-hunterxhunter',
@@ -75,7 +58,7 @@ export const hxhBoundaries: MapBoundary[] = [
     referenceStatus: 'verified',
     svgPathD:
       'M 866 589 L 862 616 L 874 608 L 879 613 L 890 610 L 898 623 L 896 638 L 903 629 L 919 631 L 920 639 L 900 652 L 912 646 L 932 652 L 927 668 L 931 676 L 918 692 L 906 691 L 898 702 L 865 716 L 854 736 L 846 732 L 850 744 L 791 763 L 796 774 L 790 782 L 804 762 L 823 758 L 838 768 L 842 754 L 852 756 L 864 781 L 848 790 L 824 787 L 820 802 L 808 803 L 813 822 L 807 827 L 787 814 L 806 800 L 787 794 L 788 783 L 777 783 L 777 797 L 766 793 L 779 803 L 784 823 L 756 810 L 745 816 L 750 824 L 773 825 L 778 847 L 772 852 L 767 842 L 765 856 L 755 849 L 743 861 L 705 856 L 697 848 L 681 852 L 677 839 L 690 837 L 675 833 L 672 825 L 679 824 L 669 821 L 708 809 L 709 831 L 735 839 L 742 828 L 723 814 L 730 799 L 702 798 L 673 809 L 660 800 L 662 817 L 609 802 L 627 765 L 619 774 L 613 767 L 599 770 L 616 742 L 614 720 L 603 710 L 612 695 L 599 674 L 613 675 L 635 642 L 618 633 L 604 652 L 599 638 L 588 648 L 575 627 L 605 624 L 619 611 L 636 608 L 655 617 L 663 617 L 659 610 L 664 609 L 707 613 L 735 625 L 756 645 L 755 652 L 812 666 L 814 658 L 857 643 L 853 606 L 866 590 Z',
-    labelPosition: { x: 754, y: 720 },
+    labelPosition: { x: 754, y: 730 },
     nationId: 'nation-hxh-yorbian',
     color: '#9ec27a',
     descriptionShort: {
@@ -96,7 +79,7 @@ export const hxhBoundaries: MapBoundary[] = [
     referenceStatus: 'verified',
     svgPathD:
       'M 1277 317 L 1294 323 L 1294 341 L 1311 345 L 1327 370 L 1325 414 L 1343 431 L 1346 445 L 1360 430 L 1383 445 L 1391 439 L 1371 413 L 1344 404 L 1357 392 L 1354 374 L 1380 386 L 1385 406 L 1416 431 L 1421 458 L 1397 484 L 1388 484 L 1388 466 L 1369 472 L 1387 522 L 1387 555 L 1377 572 L 1404 584 L 1374 581 L 1364 571 L 1355 577 L 1366 603 L 1391 598 L 1394 611 L 1380 616 L 1380 623 L 1396 627 L 1409 621 L 1408 638 L 1434 659 L 1427 669 L 1420 674 L 1407 663 L 1395 662 L 1381 645 L 1354 649 L 1306 638 L 1291 628 L 1288 610 L 1272 602 L 1220 609 L 1205 596 L 1178 599 L 1155 584 L 1146 560 L 1130 547 L 1166 537 L 1209 479 L 1196 471 L 1172 491 L 1162 471 L 1166 449 L 1220 433 L 1239 442 L 1246 425 L 1259 423 L 1255 460 L 1264 463 L 1280 453 L 1283 434 L 1262 409 L 1291 388 L 1291 355 L 1270 330 L 1277 318 Z',
-    labelPosition: { x: 1280, y: 480 },
+    labelPosition: { x: 1290, y: 470 },
     nationId: 'nation-hxh-azian',
     color: '#9ec27a',
     descriptionShort: {
@@ -139,8 +122,8 @@ export const hxhBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'verified',
     svgPathD:
-      'M 690 315 L 770 305 L 815 330 L 810 375 L 760 395 L 700 385 L 680 350 Z',
-    labelPosition: { x: 744, y: 347 },
+      'M 690 372 L 712 345 L 745 326 L 800 330 L 848 326 L 853 378 L 858 398 L 800 398 L 730 396 L 695 386 Z',
+    labelPosition: { x: 766, y: 360 },
     nationId: 'nation-hxh-padokia',
     color: '#a7c98a',
     descriptionShort: {
@@ -160,13 +143,13 @@ export const hxhBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'verified',
     svgPathD:
-      'M 690 365 L 760 365 L 790 395 L 760 420 L 705 422 L 678 398 Z',
-    labelPosition: { x: 732, y: 392 },
+      'M 695 392 L 800 398 L 858 396 L 882 418 L 890 452 L 876 477 L 815 462 L 758 426 L 705 452 L 686 432 L 690 405 Z',
+    labelPosition: { x: 748, y: 430 },
     nationId: 'nation-hxh-mimbo',
     color: '#a7c98a',
     descriptionShort: {
-      it: 'Repubblica del gruppo di terre nord-occidentali, vicina alla Torre Celeste.',
-      en: 'Republic of the north-western landmass group, near Heavens Arena.',
+      it: 'Repubblica del corpo di terre nord-occidentale, vicina alla Torre Celeste.',
+      en: 'Republic of the north-western landmass, near Heavens Arena.',
     },
     tags: ['mimbo'],
   },
@@ -181,8 +164,8 @@ export const hxhBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'verified',
     svgPathD:
-      'M 590 420 L 670 415 L 695 450 L 670 485 L 615 495 L 585 460 Z',
-    labelPosition: { x: 634, y: 452 },
+      'M 620 380 L 635 400 L 666 491 L 698 506 L 716 525 L 723 557 L 716 572 L 702 579 L 705 559 L 673 559 L 677 579 L 660 581 L 595 569 L 593 524 L 602 512 L 606 477 L 617 467 L 613 452 L 622 442 L 620 381 Z',
+    labelPosition: { x: 632, y: 470 },
     nationId: 'nation-hxh-kukanyu',
     color: '#a7c98a',
     descriptionShort: {
@@ -204,13 +187,13 @@ export const hxhBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'verified',
     svgPathD:
-      'M 615 645 L 715 640 L 745 670 L 720 705 L 645 708 L 610 678 Z',
-    labelPosition: { x: 666, y: 673 },
+      'M 585 632 L 660 612 L 740 625 L 815 645 L 875 690 L 905 750 L 872 795 L 770 800 L 660 788 L 600 740 L 575 680 Z',
+    labelPosition: { x: 700, y: 690 },
     nationId: 'nation-hxh-saherta',
     color: '#8fbf6e',
     descriptionShort: {
-      it: 'Grande federazione del continente di Yorbian, fra le potenze del Mondo Conosciuto.',
-      en: 'Large federation of the Yorbian continent, among the powers of the Known World.',
+      it: 'Grande federazione che occupa il corpo principale del continente di Yorbian.',
+      en: 'Large federation occupying the main body of the Yorbian continent.',
     },
     tags: ['saherta', 'yorbian'],
   },
@@ -225,13 +208,13 @@ export const hxhBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'verified',
     svgPathD:
-      'M 720 880 L 820 870 L 855 905 L 835 950 L 760 962 L 705 925 Z',
-    labelPosition: { x: 784, y: 912 },
+      'M 690 800 L 800 800 L 900 845 L 890 905 L 800 945 L 705 918 L 662 855 Z',
+    labelPosition: { x: 788, y: 872 },
     nationId: 'nation-hxh-mitene',
     color: '#8fbf6e',
     descriptionShort: {
-      it: 'Unione di stati nel sud di Yorbian; al suo interno la regione autonoma NGL.',
-      en: 'Union of states in southern Yorbian; the NGL autonomous region lies within it.',
+      it: 'Unione di stati nell\'arcipelago meridionale di Yorbian; al suo interno la regione autonoma NGL.',
+      en: 'Union of states in the southern Yorbian archipelago; the NGL autonomous region lies within it.',
     },
     tags: ['mitene', 'ngl'],
   },
@@ -248,8 +231,8 @@ export const hxhBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'verified',
     svgPathD:
-      'M 1160 490 L 1260 485 L 1290 525 L 1260 565 L 1185 570 L 1150 530 Z',
-    labelPosition: { x: 1210, y: 525 },
+      'M 1135 458 L 1230 428 L 1300 450 L 1312 520 L 1270 578 L 1180 582 L 1140 530 Z',
+    labelPosition: { x: 1212, y: 508 },
     nationId: 'nation-hxh-kakin',
     color: '#8fbf6e',
     descriptionShort: {
@@ -269,8 +252,8 @@ export const hxhBoundaries: MapBoundary[] = [
     canonStatus: 'canon',
     referenceStatus: 'verified',
     svgPathD:
-      'M 1255 610 L 1370 605 L 1410 650 L 1380 700 L 1300 715 L 1250 670 Z',
-    labelPosition: { x: 1308, y: 655 },
+      'M 1268 560 L 1360 552 L 1432 600 L 1420 662 L 1340 688 L 1268 662 L 1252 600 Z',
+    labelPosition: { x: 1338, y: 628 },
     nationId: 'nation-hxh-ochima',
     color: '#8fbf6e',
     descriptionShort: {
@@ -293,7 +276,7 @@ export const hxhBoundaries: MapBoundary[] = [
     referenceStatus: 'verified',
     svgPathD:
       'M 1053 760 L 1089 778 L 1126 761 L 1147 767 L 1155 797 L 1150 813 L 1095 835 L 1080 822 L 1062 832 L 1036 802 L 1037 770 L 1052 761 Z',
-    labelPosition: { x: 1118, y: 815 },
+    labelPosition: { x: 1095, y: 800 },
     nationId: 'nation-hxh-begerosse',
     color: '#8fbf6e',
     descriptionShort: {

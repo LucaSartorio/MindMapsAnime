@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import type { LocationType, Series, VisibleLayers, WorldDataset } from '@/types';
-import { ALL_SERIES } from '@/types';
+import { worldSeriesOptions } from '@/lib/series';
 import { Drawer } from '@/components/common/Drawer';
 import { Button } from '@/components/common/Button';
 import { useMapStore, useUiStore } from '@/store';
@@ -94,6 +94,10 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
     .filter((l) => l.type === 'village')
     .sort((a, b) => a.name.localeCompare(b.name));
 
+  // Le "serie" (blocchi narrativi) si applicano solo ai mondi che le usano
+  // (Naruto). Per gli altri la sezione resta nascosta.
+  const seriesOptions = worldSeriesOptions(dataset.world);
+
   return (
     <Drawer
       open={open}
@@ -123,23 +127,25 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
         </header>
 
         <div className="flex-1 overflow-auto p-4 space-y-5 text-sm">
-          <Section title={t('filters.series')}>
-            <p className="text-[11px] text-ink-400 mb-2">
-              {t('filters.seriesHint')}
-            </p>
-            <div className="flex flex-wrap gap-1.5">
-              {ALL_SERIES.map((s) => (
-                <Pill
-                  key={s}
-                  active={filters.series.includes(s)}
-                  onClick={() => toggleSeries(s)}
-                  variant={s === 'movies' ? 'ember' : 'chakra'}
-                >
-                  {t(`filters.series${s.charAt(0).toUpperCase() + s.slice(1)}` as const)}
-                </Pill>
-              ))}
-            </div>
-          </Section>
+          {seriesOptions.length > 0 && (
+            <Section title={t('filters.series')}>
+              <p className="text-[11px] text-ink-400 mb-2">
+                {t('filters.seriesHint')}
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {seriesOptions.map((s) => (
+                  <Pill
+                    key={s}
+                    active={filters.series.includes(s)}
+                    onClick={() => toggleSeries(s)}
+                    variant={s === 'movies' ? 'ember' : 'chakra'}
+                  >
+                    {t(`filters.series${s.charAt(0).toUpperCase() + s.slice(1)}` as const)}
+                  </Pill>
+                ))}
+              </div>
+            </Section>
+          )}
 
           <Section title={t('filters.locationType')}>
             <div className="flex flex-wrap gap-1.5">
@@ -178,19 +184,21 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
             </ul>
           </Section>
 
-          <Section title={t('filters.village')}>
-            <div className="flex flex-wrap gap-1.5">
-              {villages.map((v) => (
-                <Pill
-                  key={v.id}
-                  active={filters.nationIds.includes(v.nationId ?? '')}
-                  onClick={() => v.nationId && toggleNation(v.nationId)}
-                >
-                  {getLocalizedText(v.localizedName, locale) || v.name}
-                </Pill>
-              ))}
-            </div>
-          </Section>
+          {villages.length > 0 && (
+            <Section title={t('filters.village')}>
+              <div className="flex flex-wrap gap-1.5">
+                {villages.map((v) => (
+                  <Pill
+                    key={v.id}
+                    active={filters.nationIds.includes(v.nationId ?? '')}
+                    onClick={() => v.nationId && toggleNation(v.nationId)}
+                  >
+                    {getLocalizedText(v.localizedName, locale) || v.name}
+                  </Pill>
+                ))}
+              </div>
+            </Section>
+          )}
 
           <Section title={t('filters.arc')}>
             <div className="flex flex-wrap gap-1.5">
