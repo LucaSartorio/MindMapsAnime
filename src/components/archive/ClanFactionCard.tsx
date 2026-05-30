@@ -37,39 +37,49 @@ export function ClanFactionCard({
       <button
         type="button"
         onClick={onClick}
-        className="text-left w-full h-full flex flex-col"
+        className="text-left w-full h-full flex flex-col p-4 gap-3"
       >
-        <div className="aspect-[16/10] w-full overflow-hidden border-b border-ink-700/50">
-          <EntityImage
-            kind="clan"
-            id={faction.id}
-            name={name}
-            villageId={faction.villageLocationId}
-          />
+        <div className="flex items-start gap-3">
+          <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl border border-ink-700/60 bg-ink-900 shadow-md">
+            <EntityImage
+              kind="clan"
+              id={faction.id}
+              name={name}
+              villageId={faction.villageLocationId}
+              fit="cover"
+            />
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-start justify-between gap-2">
+              <h3 className="font-display text-lg text-ink-100 leading-tight line-clamp-2">
+                {name}
+              </h3>
+              <Badge
+                variant={
+                  faction.type === 'clan'
+                    ? 'accent'
+                    : faction.type === 'organization'
+                      ? 'ember'
+                      : 'default'
+                }
+                className="capitalize shrink-0"
+              >
+                {faction.type}
+              </Badge>
+            </div>
+            {faction.nameLocal && (
+              <p className="text-xs text-ink-300 italic truncate mt-0.5">
+                {faction.nameLocal}
+              </p>
+            )}
+          </div>
         </div>
-        <div className="flex flex-col gap-2 p-4">
-        <div className="flex items-center justify-between gap-2">
-          <h3 className="font-display text-lg text-ink-100">{name}</h3>
-          <Badge
-            variant={
-              faction.type === 'clan'
-                ? 'accent'
-                : faction.type === 'organization'
-                  ? 'ember'
-                  : 'default'
-            }
-            className="capitalize"
-          >
-            {faction.type}
-          </Badge>
-        </div>
-        {faction.nameLocal && (
-          <p className="text-xs text-ink-300 italic">{faction.nameLocal}</p>
-        )}
-        <p className="text-sm text-ink-300 leading-relaxed">
+
+        <p className="text-sm text-ink-300 leading-relaxed line-clamp-3">
           {getLocalizedText(faction.description, locale)}
         </p>
-        <div className="flex flex-wrap gap-1.5 mt-1">
+
+        <div className="flex flex-wrap gap-1.5 mt-auto">
           {village && (
             <Badge>
               {getLocalizedText(village.localizedName, locale) || village.name}
@@ -83,7 +93,6 @@ export function ClanFactionCard({
               {a}
             </Badge>
           ))}
-        </div>
         </div>
       </button>
     </Card>

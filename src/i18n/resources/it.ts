@@ -251,6 +251,8 @@ export const it = {
     rankFilterAria: 'Filtra per grado ninja',
     empty: 'Nessun personaggio',
     emptyDescription: 'Nessun risultato per i filtri attivi.',
+    featuredTitle: 'In evidenza',
+    featuredHint: 'Personaggi principali',
   },
   clans: {
     archiveTitle: 'Clan & Fazioni',
@@ -267,6 +269,8 @@ export const it = {
     },
     empty: 'Nessun clan o fazione',
     emptyDescription: 'Nessun risultato per i filtri attuali.',
+    featuredTitle: 'Clan leggendari',
+    featuredHint: 'I clan più iconici del mondo',
   },
   jutsu: {
     archiveTitle: 'Archivio jutsu',
@@ -280,6 +284,8 @@ export const it = {
     rankLabel: 'Rango {{rank}}',
     empty: 'Nessun jutsu',
     emptyDescription: 'Nessun risultato per i filtri attivi.',
+    featuredTitle: 'Tecniche iconiche',
+    featuredHint: 'Le tecniche di rango S',
   },
   arcs: {
     archiveTitle: 'Archi narrativi',
@@ -290,6 +296,8 @@ export const it = {
     sagaFilterAria: 'Filtra per saga',
     empty: 'Nessun arco',
     emptyDescription: 'Nessun arco corrisponde ai filtri.',
+    featuredTitle: 'Saghe principali',
+    featuredHint: 'Gli archi narrativi più importanti',
   },
   sources: {
     title: 'Fonti & asset',
