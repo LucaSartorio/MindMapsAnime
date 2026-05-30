@@ -3,7 +3,7 @@ import type { MapBoundary } from '@/types';
 /**
  * Confini cliccabili per la world map Hunter x Hunter.
  *
- * Tutti i `svgPathD` sono nel viewBox 2000 × 1180 e tracciano le regioni
+ * Tutti i `svgPathD` sono nel viewBox 2000 × 1187 e tracciano le regioni
  * della mappa di riferimento (fan-made) del Mondo Conosciuto. Sono
  * poligoni approssimati che fungono da aree cliccabili + highlight su
  * hover/selezione (vedi MapRegionPath); l'overlay è invisibile di default
@@ -26,8 +26,9 @@ export const hxhBoundaries: MapBoundary[] = [
     type: 'special_area',
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',
-    svgPathD: 'M 530 300 L 1470 300 L 1470 925 L 530 925 Z',
-    labelPosition: { x: 1010, y: 560 },
+    svgPathD:
+      'M 530 309 L 1450 309 L 1450 973 L 530 973 Z',
+    labelPosition: { x: 970, y: 560 },
     color: '#7fb2c8',
     descriptionShort: {
       it: 'La porzione esplorata e mappata del mondo di Hunter x Hunter, racchiusa dal confine tratteggiato in mezzo al Lago Mobius.',
@@ -45,8 +46,9 @@ export const hxhBoundaries: MapBoundary[] = [
     type: 'region',
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',
-    svgPathD: 'M 0 0 L 2000 0 L 2000 240 L 1500 200 L 1000 150 L 500 200 L 0 240 Z',
-    labelPosition: { x: 900, y: 70 },
+    svgPathD:
+      'M 0 0 L 2000 0 L 2000 250 L 1500 205 L 1000 160 L 500 205 L 0 250 Z',
+    labelPosition: { x: 980, y: 70 },
     nationId: 'nation-hxh-dark-continent',
     color: '#3a3326',
     descriptionShort: {
@@ -65,8 +67,9 @@ export const hxhBoundaries: MapBoundary[] = [
     type: 'region',
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',
-    svgPathD: 'M 600 660 L 760 645 L 880 690 L 905 760 L 870 850 L 900 905 L 840 950 L 740 930 L 660 870 L 585 800 L 575 710 Z',
-    labelPosition: { x: 730, y: 740 },
+    svgPathD:
+      'M 600 640 L 730 615 L 850 645 L 905 700 L 920 760 L 885 820 L 905 860 L 840 877 L 740 860 L 650 815 L 585 740 L 575 680 Z',
+    labelPosition: { x: 754, y: 720 },
     nationId: 'nation-hxh-yorbian',
     color: '#9ec27a',
     descriptionShort: {
@@ -85,8 +88,9 @@ export const hxhBoundaries: MapBoundary[] = [
     type: 'region',
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',
-    svgPathD: 'M 1180 470 L 1320 440 L 1450 470 L 1500 540 L 1470 620 L 1390 700 L 1300 690 L 1230 620 L 1170 560 L 1160 500 Z',
-    labelPosition: { x: 1320, y: 530 },
+    svgPathD:
+      'M 1150 440 L 1290 405 L 1410 440 L 1446 510 L 1430 600 L 1380 690 L 1320 770 L 1260 700 L 1200 620 L 1135 540 L 1124 480 Z',
+    labelPosition: { x: 1280, y: 480 },
     nationId: 'nation-hxh-azian',
     color: '#9ec27a',
     descriptionShort: {
@@ -105,8 +109,9 @@ export const hxhBoundaries: MapBoundary[] = [
     type: 'region',
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',
-    svgPathD: 'M 1450 430 L 1520 445 L 1540 500 L 1525 560 L 1490 610 L 1450 600 L 1430 540 L 1435 470 Z',
-    labelPosition: { x: 1480, y: 520 },
+    svgPathD:
+      'M 1545 365 L 1620 375 L 1660 430 L 1650 500 L 1610 555 L 1560 540 L 1535 470 L 1538 405 Z',
+    labelPosition: { x: 1582, y: 462 },
     nationId: 'nation-hxh-new-continent',
     color: '#c9b896',
     descriptionShort: {
@@ -127,8 +132,9 @@ export const hxhBoundaries: MapBoundary[] = [
     type: 'minor_nation',
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',
-    svgPathD: 'M 640 370 L 760 355 L 830 385 L 840 440 L 790 470 L 700 465 L 645 430 Z',
-    labelPosition: { x: 730, y: 410 },
+    svgPathD:
+      'M 690 315 L 770 305 L 815 330 L 810 375 L 760 395 L 700 385 L 680 350 Z',
+    labelPosition: { x: 744, y: 347 },
     nationId: 'nation-hxh-padokia',
     color: '#a7c98a',
     descriptionShort: {
@@ -147,8 +153,9 @@ export const hxhBoundaries: MapBoundary[] = [
     type: 'minor_nation',
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',
-    svgPathD: 'M 630 460 L 760 465 L 800 510 L 760 550 L 670 555 L 615 510 Z',
-    labelPosition: { x: 700, y: 505 },
+    svgPathD:
+      'M 690 365 L 760 365 L 790 395 L 760 420 L 705 422 L 678 398 Z',
+    labelPosition: { x: 732, y: 392 },
     nationId: 'nation-hxh-mimbo',
     color: '#a7c98a',
     descriptionShort: {
@@ -167,8 +174,9 @@ export const hxhBoundaries: MapBoundary[] = [
     type: 'minor_nation',
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',
-    svgPathD: 'M 600 540 L 720 535 L 770 575 L 740 620 L 660 635 L 600 600 L 585 565 Z',
-    labelPosition: { x: 660, y: 580 },
+    svgPathD:
+      'M 590 420 L 670 415 L 695 450 L 670 485 L 615 495 L 585 460 Z',
+    labelPosition: { x: 634, y: 452 },
     nationId: 'nation-hxh-kukanyu',
     color: '#a7c98a',
     descriptionShort: {
@@ -189,8 +197,9 @@ export const hxhBoundaries: MapBoundary[] = [
     type: 'great_nation',
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',
-    svgPathD: 'M 620 650 L 760 645 L 820 685 L 790 725 L 690 730 L 620 700 Z',
-    labelPosition: { x: 705, y: 688 },
+    svgPathD:
+      'M 615 645 L 715 640 L 745 670 L 720 705 L 645 708 L 610 678 Z',
+    labelPosition: { x: 666, y: 673 },
     nationId: 'nation-hxh-saherta',
     color: '#8fbf6e',
     descriptionShort: {
@@ -209,8 +218,9 @@ export const hxhBoundaries: MapBoundary[] = [
     type: 'great_nation',
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',
-    svgPathD: 'M 720 830 L 850 820 L 910 870 L 890 930 L 800 955 L 720 910 L 700 865 Z',
-    labelPosition: { x: 810, y: 890 },
+    svgPathD:
+      'M 720 880 L 820 870 L 855 905 L 835 950 L 760 962 L 705 925 Z',
+    labelPosition: { x: 784, y: 912 },
     nationId: 'nation-hxh-mitene',
     color: '#8fbf6e',
     descriptionShort: {
@@ -231,8 +241,9 @@ export const hxhBoundaries: MapBoundary[] = [
     type: 'great_nation',
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',
-    svgPathD: 'M 1160 540 L 1260 535 L 1290 590 L 1255 640 L 1180 645 L 1150 595 Z',
-    labelPosition: { x: 1210, y: 590 },
+    svgPathD:
+      'M 1160 490 L 1260 485 L 1290 525 L 1260 565 L 1185 570 L 1150 530 Z',
+    labelPosition: { x: 1210, y: 525 },
     nationId: 'nation-hxh-kakin',
     color: '#8fbf6e',
     descriptionShort: {
@@ -251,8 +262,9 @@ export const hxhBoundaries: MapBoundary[] = [
     type: 'great_nation',
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',
-    svgPathD: 'M 1280 640 L 1410 635 L 1460 690 L 1430 745 L 1330 760 L 1275 705 Z',
-    labelPosition: { x: 1360, y: 700 },
+    svgPathD:
+      'M 1255 610 L 1370 605 L 1410 650 L 1380 700 L 1300 715 L 1250 670 Z',
+    labelPosition: { x: 1308, y: 655 },
     nationId: 'nation-hxh-ochima',
     color: '#8fbf6e',
     descriptionShort: {
@@ -273,8 +285,9 @@ export const hxhBoundaries: MapBoundary[] = [
     type: 'island',
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',
-    svgPathD: 'M 1050 740 L 1170 730 L 1230 790 L 1200 860 L 1110 895 L 1030 850 L 1020 785 Z',
-    labelPosition: { x: 1120, y: 810 },
+    svgPathD:
+      'M 1055 770 L 1170 760 L 1215 805 L 1190 865 L 1110 895 L 1040 855 L 1035 805 Z',
+    labelPosition: { x: 1118, y: 815 },
     nationId: 'nation-hxh-begerosse',
     color: '#8fbf6e',
     descriptionShort: {
