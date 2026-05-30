@@ -3,12 +3,19 @@ import type { MapLevel } from '@/types';
 /**
  * Map levels Hunter x Hunter.
  *
- * In questa fase la mappa è accantonata: esiste solo un world map level
- * placeholder (sfondo neutro generato localmente) per rendere il mondo
- * navigabile. La geografia reale (continenti, Continente Oscuro, ecc.)
- * verrà aggiunta in seguito mantenendo lo stesso viewBox.
+ * La world map usa come sfondo la mappa di riferimento (fan-made) del
+ * "Known World". Tutte le coordinate di `location.x/y`, dei `svgPathD` dei
+ * boundary e dei `labelPosition` sono espresse nel piano viewBox
+ * 2000 × 1180 (= `width`/`height` di questo livello), che corrisponde
+ * all'aspect ratio del PNG di riferimento.
+ *
+ * Se sostituisci il PNG con uno di proporzioni diverse, aggiorna
+ * width/height mantenendo lo stesso aspect ratio per non disallineare i pin.
  */
-export const HXH_MAP_VIEWBOX = { width: 1500, height: 900 } as const;
+export const HXH_MAP_VIEWBOX = { width: 2000, height: 1180 } as const;
+
+/** Path locale del PNG di riferimento (vive in public/, servito alla root). */
+export const HXH_WORLD_MAP_SRC = '/assets/worlds/hunterxhunter/maps/hxh-world-map.png';
 
 export const hxhMapLevels: MapLevel[] = [
   {
@@ -18,10 +25,10 @@ export const hxhMapLevels: MapLevel[] = [
     name: 'Known World',
     localizedName: { it: 'Mondo Conosciuto', en: 'Known World' },
     description: {
-      it: 'Mappa del mondo conosciuto di Hunter x Hunter (placeholder). Geografia in arrivo.',
-      en: 'Map of the known Hunter x Hunter world (placeholder). Geography coming soon.',
+      it: 'Mappa del mondo conosciuto di Hunter x Hunter: i continenti del Mondo Conosciuto entro il confine, il Lago Mobius e il Continente Oscuro che lo circonda.',
+      en: 'Map of the Hunter x Hunter known world: the Known World continents within the border, Lake Mobius and the surrounding Dark Continent.',
     },
-    backgroundAssetId: 'hxh-world-map-placeholder',
+    backgroundAssetId: 'hxh-world-map-reference',
     width: HXH_MAP_VIEWBOX.width,
     height: HXH_MAP_VIEWBOX.height,
   },
