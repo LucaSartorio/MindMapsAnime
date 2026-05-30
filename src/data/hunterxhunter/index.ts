@@ -1,13 +1,37 @@
+import type { WorldDataset } from '@/types';
+import { animeWorlds } from '@/data/worlds';
+import { hxhMapLevels } from './mapLevels';
+import { hxhNations } from './nations';
+import { hxhLocations } from './locations';
+import { hxhCharacters } from './characters';
+import { hxhCharactersBatch1 } from './charactersBatch1';
+import { hxhFactions } from './factions';
+import { hxhArcs } from './arcs';
+import { hxhNen } from './nen';
+import { hxhAssets } from './assets';
+
+const hunterxhunter = animeWorlds.find((w) => w.slug === 'hunterxhunter')!;
+
 /**
- * Placeholder per il dataset Hunter x Hunter.
+ * Dataset Hunter x Hunter (in costruzione).
  *
- * In homepage la card appare come "Coming soon" sfruttando solo
- * la voce in src/data/worlds.ts.
- *
- * Per implementare HxH:
- * 1. cambiare lo `status` del world a 'available' in worlds.ts
- * 2. creare i file dataset (locations, characters, ...) come per naruto/
- * 3. esportare un `hunterxhunterDataset` qui sotto
- * 4. registrarlo in src/data/registry.ts
+ * Stato attuale: personaggi principali/maggiori, fazioni, archi narrativi e
+ * tecniche Nen firma. La mappa geografica è volutamente accantonata
+ * (solo un world map placeholder); eventi e percorsi verranno aggiunti
+ * nei prossimi batch.
  */
-export {};
+export const hunterxhunterDataset: WorldDataset = {
+  world: hunterxhunter,
+  mapLevels: hxhMapLevels,
+  nations: hxhNations,
+  locations: hxhLocations,
+  characters: [...hxhCharacters, ...hxhCharactersBatch1],
+  factions: hxhFactions,
+  arcs: hxhArcs,
+  events: [],
+  routes: [],
+  jutsu: hxhNen,
+  assets: hxhAssets,
+};
+
+export { HXH_MAP_VIEWBOX } from './mapLevels';

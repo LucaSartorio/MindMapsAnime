@@ -204,6 +204,14 @@ export function getJutsuTypeLabel(
     doujutsu: { it: 'Dōjutsu (oculare)', en: 'Dōjutsu (ocular)' },
     tailed_beast: { it: 'Bestia con Code', en: 'Tailed Beast' },
     cooperation: { it: 'Cooperazione', en: 'Cooperation' },
+    // --- Hunter x Hunter · Nen ---
+    nen: { it: 'Nen (fondamentale)', en: 'Nen (fundamental)' },
+    enhancement: { it: 'Potenziamento (Enhancement)', en: 'Enhancement' },
+    transmutation: { it: 'Trasmutazione (Transmutation)', en: 'Transmutation' },
+    conjuration: { it: 'Materializzazione (Conjuration)', en: 'Conjuration' },
+    emission: { it: 'Emissione (Emission)', en: 'Emission' },
+    manipulation: { it: 'Manipolazione (Manipulation)', en: 'Manipulation' },
+    specialization: { it: 'Specializzazione (Specialization)', en: 'Specialization' },
   };
   return getLocalizedText(map[type], locale);
 }

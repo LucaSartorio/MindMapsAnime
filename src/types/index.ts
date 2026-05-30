@@ -106,7 +106,17 @@ export type JutsuType =
   | 'hiden'
   | 'doujutsu'
   | 'tailed_beast'
-  | 'cooperation';
+  | 'cooperation'
+  // --- Hunter x Hunter · Nen ---
+  // Categoria di Nen ("Hatsu") + un valore generico per i fondamentali
+  // (Ten, Zetsu, Ren, Hatsu, Gyo, In, En, Shu, Ko, Ken, Ryu).
+  | 'nen'
+  | 'enhancement'
+  | 'transmutation'
+  | 'conjuration'
+  | 'emission'
+  | 'manipulation'
+  | 'specialization';
 
 export type ChakraNature =
   | 'fire'
