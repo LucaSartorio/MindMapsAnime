@@ -19,7 +19,7 @@ const CLAN_FEATURED_ORDER = [
   'clan-senju',
   'clan-uzumaki',
   'clan-hyuga',
-  'clan-akimichi',
+  'faction-akatsuki-original',
   'clan-nara',
   'clan-yamanaka',
   'clan-aburame',

@@ -296,8 +296,6 @@ export const it = {
     sagaFilterAria: 'Filtra per saga',
     empty: 'Nessun arco',
     emptyDescription: 'Nessun arco corrisponde ai filtri.',
-    featuredTitle: 'Saghe principali',
-    featuredHint: 'Gli archi narrativi più importanti',
   },
   sources: {
     title: 'Fonti & asset',
