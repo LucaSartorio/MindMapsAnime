@@ -45,12 +45,12 @@ export const animeWorlds: AnimeWorld[] = [
     slug: 'hunterxhunter',
     title: 'Hunter x Hunter',
     subtitle: {
-      it: 'Un mondo di Hunter · In arrivo',
-      en: 'A world of Hunters · Coming soon',
+      it: 'Un mondo di Hunter',
+      en: 'A world of Hunters',
     },
     description: {
-      it: 'Il mondo di Gon, Killua e degli Hunter. Personaggi, tecniche Nen, fazioni e archi narrativi; la mappa geografica arriverà in seguito.',
-      en: "Gon, Killua and the Hunters' world. Characters, Nen techniques, factions and story arcs; the geographic map is coming later.",
+      it: 'Il mondo di Gon, Killua e degli Hunter. Personaggi, tecniche Nen, fazioni, archi narrativi e la mappa del Mondo Conosciuto: continenti, nazioni, Lago Mobius e Continente Oscuro.',
+      en: "Gon, Killua and the Hunters' world. Characters, Nen techniques, factions, story arcs and the map of the Known World: continents, nations, Lake Mobius and the Dark Continent.",
     },
     status: 'available',
     theme: {

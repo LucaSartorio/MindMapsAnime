@@ -2,6 +2,7 @@ import type { WorldDataset } from '@/types';
 import { animeWorlds } from '@/data/worlds';
 import { hxhMapLevels } from './mapLevels';
 import { hxhNations } from './nations';
+import { hxhBoundaries } from './boundaries';
 import { hxhLocations } from './locations';
 import { hxhCharacters } from './characters';
 import { hxhCharactersBatch1 } from './charactersBatch1';
@@ -20,15 +21,16 @@ const hunterxhunter = animeWorlds.find((w) => w.slug === 'hunterxhunter')!;
 /**
  * Dataset Hunter x Hunter (in costruzione).
  *
- * Stato attuale: personaggi principali/maggiori, fazioni, archi narrativi e
- * tecniche Nen firma. La mappa geografica è volutamente accantonata
- * (solo un world map placeholder); eventi e percorsi verranno aggiunti
- * nei prossimi batch.
+ * Stato attuale: personaggi principali/maggiori, fazioni, archi narrativi,
+ * tecniche Nen firma e la world map estesa del Mondo Conosciuto (nazioni,
+ * continenti, confini cliccabili e luoghi iconici) su mappa di riferimento
+ * fan-made.
  */
 export const hunterxhunterDataset: WorldDataset = {
   world: hunterxhunter,
   mapLevels: hxhMapLevels,
   nations: hxhNations,
+  boundaries: hxhBoundaries,
   locations: hxhLocations,
   characters: [
     ...hxhCharacters,
