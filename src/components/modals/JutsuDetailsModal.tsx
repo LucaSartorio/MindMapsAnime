@@ -5,6 +5,7 @@ import {
   getChakraNatureLabel,
   getJutsuTypeLabel,
   getLocalizedText,
+  getTechniqueTerm,
 } from '@/utils/localization';
 import { Modal } from '@/components/common/Modal';
 import { Badge } from '@/components/common/Badge';
@@ -55,7 +56,7 @@ export function JutsuDetailsModal({ dataset, jutsuId }: JutsuDetailsModalProps) 
           fit="cover"
         />
       }
-      eyebrow={t('modals.jutsu')}
+      eyebrow={t('modals.jutsu', { term: getTechniqueTerm(dataset.world.slug, locale) })}
       title={getLocalizedText(jutsu.localizedName, locale) || jutsu.name}
       badges={
         <>

@@ -7,7 +7,7 @@ import { EntityImage } from '@/components/common/EntityImage';
 import { ReferencePill } from '@/components/common/StatusPill';
 import { useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
-import { getLocalizedText } from '@/utils/localization';
+import { getLocalizedText, getTechniqueTerm } from '@/utils/localization';
 import {
   findCharacter,
   findFaction,
@@ -124,7 +124,7 @@ export function FactionDetailsModal({
       {jutsu.length > 0 && (
         <section>
           <h3 className="font-display text-[11px] uppercase tracking-widest text-chakra-300 mb-2">
-            {t('modals.relatedJutsu')}
+            {t('modals.relatedJutsu', { term: getTechniqueTerm(dataset.world.slug, locale) })}
           </h3>
           <div className="flex flex-wrap gap-1.5">
             {jutsu.map((j) => (

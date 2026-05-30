@@ -13,6 +13,7 @@ import {
   getChakraNatureLabel,
   getJutsuTypeLabel,
   getLocalizedText,
+  getTechniqueTerm,
 } from '@/utils/localization';
 import { filterJutsuBySeries } from '@/lib/filters';
 
@@ -20,12 +21,20 @@ import { filterJutsuBySeries } from '@/lib/filters';
  *  striscia, in ordine. Stabile e indipendente dal rango (così possiamo
  *  includere tecniche A-rank come il Rasengan accanto a S-rank). */
 const JUTSU_FEATURED_ORDER = [
+  // Naruto
   'jutsu-rasengan',
   'jutsu-chidori',
   'jutsu-kamui',
   'jutsu-amaterasu',
   'jutsu-sage-mode-toad',
   'jutsu-chibaku-tensei',
+  // Hunter x Hunter (Nen) — gli id assenti nel mondo attivo vengono ignorati
+  'jutsu-hxh-jajanken',
+  'jutsu-hxh-godspeed',
+  'jutsu-hxh-chain-jail',
+  'jutsu-hxh-bungee-gum',
+  'jutsu-hxh-skill-hunter',
+  'jutsu-hxh-100-type-guanyin',
 ];
 
 interface JutsuPageProps {
@@ -35,6 +44,7 @@ interface JutsuPageProps {
 export function JutsuPage({ dataset }: JutsuPageProps) {
   const { t } = useTranslation();
   const locale = useLocaleStore((s) => s.locale);
+  const term = getTechniqueTerm(dataset.world.slug, locale);
   const [params] = useSearchParams();
   const initialId = params.get('id');
   const [query, setQuery] = useState('');
@@ -133,7 +143,7 @@ export function JutsuPage({ dataset }: JutsuPageProps) {
           {dataset.world.title}
         </p>
         <h1 className="font-display text-3xl text-ink-100">
-          {t('jutsu.archiveTitle')}
+          {t('jutsu.archiveTitle', { term })}
         </h1>
         <p className="text-sm text-ink-300 max-w-2xl">{t('jutsu.archiveLead')}</p>
       </header>
@@ -141,7 +151,7 @@ export function JutsuPage({ dataset }: JutsuPageProps) {
       <div className="flex flex-wrap items-center gap-3">
         <input
           type="search"
-          placeholder={t('jutsu.searchPlaceholder')}
+          placeholder={t('jutsu.searchPlaceholder', { term })}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           className="panel-soft px-3 py-2 text-sm flex-1 min-w-[200px]"
@@ -150,7 +160,7 @@ export function JutsuPage({ dataset }: JutsuPageProps) {
           value={filterType}
           onChange={(e) => setFilterType(e.target.value)}
           className="panel-soft px-3 py-2 text-sm"
-          aria-label={t('jutsu.typeFilterAria')}
+          aria-label={t('jutsu.typeFilterAria', { term })}
         >
           <option value="">{t('jutsu.typeFilterAll')}</option>
           {types.map((ty) => (
@@ -159,19 +169,21 @@ export function JutsuPage({ dataset }: JutsuPageProps) {
             </option>
           ))}
         </select>
-        <select
-          value={filterNature}
-          onChange={(e) => setFilterNature(e.target.value)}
-          className="panel-soft px-3 py-2 text-sm"
-          aria-label={t('jutsu.natureFilterAria')}
-        >
-          <option value="">{t('jutsu.natureFilterAll')}</option>
-          {natures.map((n) => (
-            <option key={n} value={n}>
-              {getChakraNatureLabel(n, locale)}
-            </option>
-          ))}
-        </select>
+        {natures.length > 0 && (
+          <select
+            value={filterNature}
+            onChange={(e) => setFilterNature(e.target.value)}
+            className="panel-soft px-3 py-2 text-sm"
+            aria-label={t('jutsu.natureFilterAria')}
+          >
+            <option value="">{t('jutsu.natureFilterAll')}</option>
+            {natures.map((n) => (
+              <option key={n} value={n}>
+                {getChakraNatureLabel(n, locale)}
+              </option>
+            ))}
+          </select>
+        )}
       </div>
 
       <SourceNotice compact />

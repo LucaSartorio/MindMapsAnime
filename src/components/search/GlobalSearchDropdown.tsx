@@ -5,6 +5,7 @@ import type { SearchResult, WorldDataset } from '@/types';
 import { searchDataset } from '@/lib/search';
 import { useMapStore, useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
+import { getTechniqueTerm } from '@/utils/localization';
 import { SearchResults } from './SearchResults';
 
 interface GlobalSearchDropdownProps {
@@ -189,7 +190,11 @@ export function GlobalSearchDropdown({
       </div>
       {open && query && (
         <div className="absolute z-[55] mt-2 left-0 right-0 panel max-h-96 overflow-auto">
-          <SearchResults results={results} onSelect={handleSelect} />
+          <SearchResults
+            results={results}
+            onSelect={handleSelect}
+            techniqueTerm={getTechniqueTerm(dataset.world.slug, locale)}
+          />
         </div>
       )}
     </div>
