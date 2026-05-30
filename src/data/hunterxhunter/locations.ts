@@ -3,7 +3,7 @@ import type { Location } from '@/types';
 /**
  * Luoghi iconici di Hunter x Hunter.
  *
- * Le coordinate (x,y) sono nel piano viewBox 2000 × 1180 della world map di
+ * Le coordinate (x,y) sono nel piano viewBox 2000 × 1187 della world map di
  * riferimento (vedi mapLevels.ts) e sono calibrate sulla mappa fan-made del
  * Mondo Conosciuto. Restano `needs_verification`: la geografia di HxH è poco
  * dettagliata e la mappa di base non è ufficiale.
@@ -18,7 +18,7 @@ export const hxhLocations: Location[] = [
     localizedName: { it: 'Isola della Balena', en: 'Whale Island' },
     type: 'landmark',
     x: 560,
-    y: 330,
+    y: 290,
     shortDescription: {
       it: 'Piccola isola natale di Gon Freecss, cresciuto dalla zia Mito.',
       en: 'Small island, birthplace of Gon Freecss, raised by his aunt Mito.',
@@ -36,8 +36,8 @@ export const hxhLocations: Location[] = [
     name: 'Kukuroo Mountain (Zoldyck Estate)',
     localizedName: { it: 'Monte Kukuroo (Tenuta Zoldyck)', en: 'Kukuroo Mountain (Zoldyck Estate)' },
     type: 'mountain',
-    x: 745,
-    y: 415,
+    x: 744,
+    y: 352,
     shortDescription: {
       it: 'Tenuta fortificata della famiglia di assassini Zoldyck, sorvegliata da Mike e dalla Porta della Prova.',
       en: 'Fortified estate of the Zoldyck assassin family, guarded by Mike and the Testing Gate.',
@@ -56,8 +56,8 @@ export const hxhLocations: Location[] = [
     name: 'Heavens Arena',
     localizedName: { it: 'Torre Celeste', en: 'Heavens Arena' },
     type: 'landmark',
-    x: 830,
-    y: 490,
+    x: 820,
+    y: 394,
     shortDescription: {
       it: 'Grattacielo-arena di 251 piani dove si combatte per scalare i ranghi; qui Gon e Killua imparano il Nen.',
       en: '251-floor combat skyscraper where fighters climb the ranks; here Gon and Killua learn Nen.',
@@ -75,8 +75,8 @@ export const hxhLocations: Location[] = [
     name: 'Zaban City',
     localizedName: { it: 'Città di Zaban', en: 'Zaban City' },
     type: 'city',
-    x: 670,
-    y: 600,
+    x: 642,
+    y: 478,
     shortDescription: {
       it: "Metropoli del Regno di Kukan'yu, sede della fase finale dell'Esame per Hunter.",
       en: "Metropolis of the Kukan'yu Kingdom, hosting the final phase of the Hunter Exam.",
@@ -95,8 +95,8 @@ export const hxhLocations: Location[] = [
     name: 'Jappon',
     localizedName: { it: 'Jappon', en: 'Jappon' },
     type: 'landmark',
-    x: 835,
-    y: 545,
+    x: 786,
+    y: 487,
     shortDescription: {
       it: 'Arcipelago insulare al centro del Mondo Conosciuto, fra i gruppi di terre nord-occidentali.',
       en: 'Island archipelago at the centre of the Known World, among the north-western landmasses.',
@@ -116,7 +116,7 @@ export const hxhLocations: Location[] = [
     localizedName: { it: 'Città di Yorknew', en: 'Yorknew City' },
     type: 'city',
     x: 620,
-    y: 730,
+    y: 706,
     shortDescription: {
       it: "Enorme metropoli del continente di Yorbian che ospita l'asta del Mercato Nero; teatro dello scontro con la Brigata Fantasma.",
       en: 'Huge metropolis of the Yorbian continent hosting the Underground Auction; stage of the clash with the Phantom Troupe.',
@@ -135,8 +135,8 @@ export const hxhLocations: Location[] = [
     name: 'NGL — Neo-Green Life',
     localizedName: { it: 'NGL — Neo-Green Life', en: 'NGL — Neo-Green Life' },
     type: 'region',
-    x: 815,
-    y: 885,
+    x: 770,
+    y: 888,
     shortDescription: {
       it: 'Regione autonoma anti-tecnologia nella Mitene Union, dove nasce la regina delle Formiche Chimera.',
       en: 'Anti-technology autonomous region within the Mitene Union, where the Chimera Ant Queen is born.',
@@ -157,8 +157,8 @@ export const hxhLocations: Location[] = [
     name: 'Greed Island',
     localizedName: { it: 'Greed Island', en: 'Greed Island' },
     type: 'region',
-    x: 955,
-    y: 720,
+    x: 946,
+    y: 678,
     shortDescription: {
       it: 'Videogioco realizzato col Nen su una vera isola: i giocatori vengono trasportati dentro al gioco.',
       en: 'A Nen-made video game built on a real island: players are transported inside the game.',
@@ -178,8 +178,8 @@ export const hxhLocations: Location[] = [
     name: 'Kingdom of Kakin',
     localizedName: { it: 'Regno di Kakin', en: 'Kingdom of Kakin' },
     type: 'nation',
-    x: 1205,
-    y: 590,
+    x: 1210,
+    y: 528,
     shortDescription: {
       it: 'Regno del continente di Azian da cui salpa la nave Black Whale verso il Continente Oscuro; teatro della guerra di successione.',
       en: 'Kingdom of the Azian continent from which the Black Whale ship sails to the Dark Continent; stage of the succession war.',
@@ -198,8 +198,8 @@ export const hxhLocations: Location[] = [
     name: 'East Gorteau Palace',
     localizedName: { it: 'Palazzo di East Gorteau', en: 'East Gorteau Palace' },
     type: 'city',
-    x: 1370,
-    y: 500,
+    x: 1340,
+    y: 470,
     shortDescription: {
       it: "Palazzo reale di East Gorteau, covo del Re delle Formiche Chimera e teatro della battaglia finale dell'arco.",
       en: "Royal palace of East Gorteau, lair of the Chimera Ant King and stage of the arc's final battle.",
@@ -220,8 +220,8 @@ export const hxhLocations: Location[] = [
     name: 'Lake Mobius',
     localizedName: { it: 'Lago Mobius', en: 'Lake Mobius' },
     type: 'landmark',
-    x: 215,
-    y: 595,
+    x: 300,
+    y: 600,
     shortDescription: {
       it: "Immenso specchio d'acqua che separa il Mondo Conosciuto dal Continente Oscuro che lo circonda.",
       en: 'Immense body of water separating the Known World from the surrounding Dark Continent.',
@@ -238,8 +238,8 @@ export const hxhLocations: Location[] = [
     name: 'Dark Continent',
     localizedName: { it: 'Continente Oscuro', en: 'Dark Continent' },
     type: 'region',
-    x: 905,
-    y: 120,
+    x: 820,
+    y: 105,
     shortDescription: {
       it: 'Terra inesplorata oltre il mondo conosciuto, meta della spedizione e dimora di calamità leggendarie.',
       en: 'Unexplored land beyond the known world, destination of the expedition and home of legendary calamities.',
@@ -258,8 +258,8 @@ export const hxhLocations: Location[] = [
     name: 'Saherta (Dark Continent)',
     localizedName: { it: 'Saherta (Continente Oscuro)', en: 'Saherta (Dark Continent)' },
     type: 'landmark',
-    x: 1000,
-    y: 188,
+    x: 1034,
+    y: 135,
     shortDescription: {
       it: 'Regione del Continente Oscuro legata a una delle Cinque Calamità, raggiunta da una passata spedizione.',
       en: 'Region of the Dark Continent tied to one of the Five Calamities, reached by a past expedition.',
@@ -278,8 +278,8 @@ export const hxhLocations: Location[] = [
     name: 'Begerossé (Dark Continent)',
     localizedName: { it: 'Begerossé (Continente Oscuro)', en: 'Begerossé (Dark Continent)' },
     type: 'landmark',
-    x: 1305,
-    y: 130,
+    x: 1298,
+    y: 78,
     shortDescription: {
       it: 'Regione del Continente Oscuro legata a una delle Cinque Calamità, raggiunta da una passata spedizione.',
       en: 'Region of the Dark Continent tied to one of the Five Calamities, reached by a past expedition.',
@@ -298,8 +298,8 @@ export const hxhLocations: Location[] = [
     name: "Kukan'yu (Dark Continent)",
     localizedName: { it: "Kukan'yu (Continente Oscuro)", en: "Kukan'yu (Dark Continent)" },
     type: 'landmark',
-    x: 898,
-    y: 1030,
+    x: 1152,
+    y: 1090,
     shortDescription: {
       it: 'Regione del Continente Oscuro legata a una delle Cinque Calamità, raggiunta da una passata spedizione.',
       en: 'Region of the Dark Continent tied to one of the Five Calamities, reached by a past expedition.',
@@ -318,8 +318,8 @@ export const hxhLocations: Location[] = [
     name: 'Mimbo (Dark Continent)',
     localizedName: { it: 'Mimbo (Continente Oscuro)', en: 'Mimbo (Dark Continent)' },
     type: 'landmark',
-    x: 1000,
-    y: 1120,
+    x: 1586,
+    y: 1140,
     shortDescription: {
       it: 'Regione del Continente Oscuro legata a una delle Cinque Calamità, raggiunta da una passata spedizione.',
       en: 'Region of the Dark Continent tied to one of the Five Calamities, reached by a past expedition.',
@@ -338,8 +338,8 @@ export const hxhLocations: Location[] = [
     name: 'Ochima (Dark Continent)',
     localizedName: { it: 'Ochima (Continente Oscuro)', en: 'Ochima (Dark Continent)' },
     type: 'landmark',
-    x: 1460,
-    y: 1030,
+    x: 1786,
+    y: 1093,
     shortDescription: {
       it: 'Regione del Continente Oscuro legata a una delle Cinque Calamità, raggiunta da una passata spedizione.',
       en: 'Region of the Dark Continent tied to one of the Five Calamities, reached by a past expedition.',
