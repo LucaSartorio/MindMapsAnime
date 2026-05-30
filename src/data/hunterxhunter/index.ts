@@ -5,8 +5,11 @@ import { hxhNations } from './nations';
 import { hxhLocations } from './locations';
 import { hxhCharacters } from './characters';
 import { hxhCharactersBatch1 } from './charactersBatch1';
+import { hxhCharactersBatch2 } from './charactersBatch2';
 import { hxhFactions } from './factions';
 import { hxhArcs } from './arcs';
+import { hxhEvents } from './events';
+import { hxhRoutes } from './routes';
 import { hxhNen } from './nen';
 import { hxhAssets } from './assets';
 
@@ -25,11 +28,11 @@ export const hunterxhunterDataset: WorldDataset = {
   mapLevels: hxhMapLevels,
   nations: hxhNations,
   locations: hxhLocations,
-  characters: [...hxhCharacters, ...hxhCharactersBatch1],
+  characters: [...hxhCharacters, ...hxhCharactersBatch1, ...hxhCharactersBatch2],
   factions: hxhFactions,
   arcs: hxhArcs,
-  events: [],
-  routes: [],
+  events: hxhEvents,
+  routes: hxhRoutes,
   jutsu: hxhNen,
   assets: hxhAssets,
 };

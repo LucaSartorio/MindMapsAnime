@@ -1,6 +1,8 @@
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useUiStore, useWorldStore } from '@/store';
+import { useLocaleStore } from '@/store/useLocaleStore';
+import { getTechniqueTerm } from '@/utils/localization';
 import { cn } from '@/lib/cn';
 import { GlobalSearchDropdown } from '@/components/search/GlobalSearchDropdown';
 import { LanguageSwitcher } from '@/components/i18n/LanguageSwitcher';
@@ -17,6 +19,7 @@ export function TopNav() {
   const { t } = useTranslation();
   const worldSlug = useWorldStore((s) => s.worldSlug);
   const dataset = useWorldStore((s) => s.dataset);
+  const locale = useLocaleStore((s) => s.locale);
   const location = useLocation();
   const isMobileNavOpen = useUiStore((s) => s.isMobileNavOpen);
   const toggleMobileNav = useUiStore((s) => s.toggleMobileNav);
@@ -31,7 +34,7 @@ export function TopNav() {
           label: t('nav.characters'),
         },
         { to: `/worlds/${worldSlug}/clans`, label: t('nav.clansFactions') },
-        { to: `/worlds/${worldSlug}/jutsu`, label: t('nav.jutsu') },
+        { to: `/worlds/${worldSlug}/jutsu`, label: getTechniqueTerm(worldSlug, locale) },
         { to: `/worlds/${worldSlug}/arcs`, label: t('nav.arcs') },
         { to: `/worlds/${worldSlug}/sources`, label: t('nav.sources') },
       ]

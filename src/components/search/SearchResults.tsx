@@ -5,9 +5,11 @@ import { EmptyState } from '@/components/common/EmptyState';
 interface SearchResultsProps {
   results: SearchResult[];
   onSelect: (r: SearchResult) => void;
+  /** Termine per le tecniche del mondo attivo (es. "Nen" per HxH). */
+  techniqueTerm?: string;
 }
 
-export function SearchResults({ results, onSelect }: SearchResultsProps) {
+export function SearchResults({ results, onSelect, techniqueTerm }: SearchResultsProps) {
   const { t } = useTranslation();
   if (results.length === 0) {
     return (
@@ -43,7 +45,7 @@ export function SearchResults({ results, onSelect }: SearchResultsProps) {
               )}
             </span>
             <span className="chip text-[10px] uppercase tracking-widest">
-              {t(`search.kinds.${r.kind}`)}
+              {t(`search.kinds.${r.kind}`, { term: techniqueTerm ?? 'Jutsu' })}
             </span>
           </button>
         </li>
