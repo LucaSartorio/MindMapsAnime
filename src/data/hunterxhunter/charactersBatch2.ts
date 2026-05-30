@@ -112,6 +112,7 @@ export const hxhCharactersBatch2: Character[] = [
     name: 'Genthru',
     aliases: ['The Bomber'],
     japaneseName: 'ゲンスルー',
+    jutsuIds: ['jutsu-hxh-little-flower'],
     importance: 'supporting',
     role: ['antagonist'],
     rank: 'Giocatore di Greed Island',
