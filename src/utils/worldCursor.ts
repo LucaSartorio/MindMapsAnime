@@ -57,13 +57,18 @@ const DROPIN_HOTSPOTS: Record<string, [number, number]> = {
 /**
  * Normalizza un SVG drop-in per renderlo "cursor-ready":
  *  - dimensioni esterne a 32×32 (così Safari, che rispetta width/height,
- *    non lo mostra in dimensione originale);
+ *    non scala in base alle dimensioni originali);
  *  - se manca il viewBox, lo deriva dai width/height originali, così la
  *    sagoma non viene tagliata o squashata;
- *  - inietta un blocco `<style>` che FORZA il fill a bianco e aggiunge
- *    un sottile stroke scuro: il cursore resta visibile sia su sfondi
- *    scuri sia su sfondi chiari; `!important` ha la priorità sugli
- *    attributi `fill="..."` espliciti del file originale.
+ *  - sostituisce i colori "nero puro" usati in `fill` / `stroke` (inclusi
+ *    quelli dentro `style="..."`) con bianco. Funziona sia per SVG
+ *    fill-based (un solido nero → solido bianco) sia stroke-based
+ *    (`fill: none; stroke: #000` → `fill: none; stroke: #fff`).
+ *
+ * Lo swap è chirurgico: tocca solo i VALORI dei colori di disegno, non
+ * la struttura dell'SVG né i metadati (Inkscape `bordercolor`,
+ * `pagecolor`, ecc.). Niente CSS injection con `!important` → non
+ * stravolge SVG con `fill: none` intenzionale.
  */
 function normalizeCursorSvg(raw: string): string {
   let svg = raw.trim();
@@ -73,11 +78,15 @@ function normalizeCursorSvg(raw: string): string {
   // Via gli eventuali commenti per ridurre la URI.
   svg = svg.replace(/<!--[\s\S]*?-->/g, '');
 
+  // 1) Color swap nero → bianco, limitato ai valori di fill/stroke.
+  svg = swapDarkColors(svg);
+
+  // 2) Dimensioni esterne: forziamo width/height a 32 e preserviamo
+  //    (o deriviamo) il viewBox.
   const openMatch = svg.match(/<svg\b[^>]*>/i);
   if (!openMatch) return svg;
   const openTag = openMatch[0];
 
-  // Estraiamo viewBox e (se serve) lo deriviamo da width/height.
   let viewBox = openTag.match(/\bviewBox\s*=\s*"([^"]+)"/i)?.[1] ?? null;
   if (!viewBox) {
     const w = parseFloat(openTag.match(/\bwidth\s*=\s*"([\d.]+)/i)?.[1] ?? '0');
@@ -85,8 +94,6 @@ function normalizeCursorSvg(raw: string): string {
     if (w > 0 && h > 0) viewBox = `0 0 ${w} ${h}`;
   }
 
-  // Ricomponiamo l'apertura del tag: forziamo width/height a 32 e
-  // teniamo (o impostiamo) un viewBox sensato.
   let newOpen = openTag
     .replace(/\swidth\s*=\s*"[^"]*"/i, '')
     .replace(/\sheight\s*=\s*"[^"]*"/i, '')
@@ -96,12 +103,46 @@ function normalizeCursorSvg(raw: string): string {
     `<svg width="32" height="32"${viewBox ? ` viewBox="${viewBox}"` : ''}`,
   );
 
-  // Style globale: bianco + bordino scuro su qualsiasi forma. Usiamo
-  // `!important` per scavalcare gli attributi `fill`/`stroke` espliciti.
-  const styleBlock =
-    '<style>path,polygon,polyline,circle,ellipse,rect,g{fill:#ffffff !important;stroke:#0a1410 !important;stroke-width:0.8 !important;stroke-linejoin:round;stroke-linecap:round;}</style>';
+  return svg.replace(openTag, newOpen);
+}
 
-  return svg.replace(openTag, `${newOpen}${styleBlock}`);
+/** Sostituisce il nero "puro" con bianco solo nei valori di colore usati
+ * da `fill`, `stroke` e dentro le dichiarazioni `style="..."`. */
+function swapDarkColors(svg: string): string {
+  // Pattern per i nomi/codifiche di nero che vogliamo sostituire. Word
+  // boundaries (`\b`) e check su carattere successivo evitano collisioni
+  // con prefissi più lunghi (es. #000abc, "blackgrey", ecc.).
+  const swap = (s: string): string =>
+    s
+      .replace(/rgba?\s*\(\s*0\s*,\s*0\s*,\s*0(\s*,[^)]*)?\)/gi, '#ffffff')
+      .replace(/#000000(?![0-9a-f])/gi, '#ffffff')
+      .replace(/#000(?![0-9a-f])/gi, '#ffffff')
+      .replace(/(^|[^a-zA-Z-])black(?![a-zA-Z-])/g, '$1#ffffff');
+
+  // 1) Attributi diretti: fill="..." / stroke="..." (anche con singoli apici).
+  svg = svg.replace(
+    /\b(fill|stroke)\s*=\s*(?:"([^"]*)"|'([^']*)')/gi,
+    (m, prop, dq, sq) => {
+      const val = dq ?? sq;
+      const next = swap(val);
+      if (next === val) return m;
+      return dq != null ? `${prop}="${next}"` : `${prop}='${next}'`;
+    },
+  );
+
+  // 2) Valori CSS dentro style="...": sostituiamo nell'intera stringa
+  //    style, lo swap colpisce solo i colori effettivi.
+  svg = svg.replace(
+    /\bstyle\s*=\s*(?:"([^"]*)"|'([^']*)')/gi,
+    (m, dq, sq) => {
+      const val = dq ?? sq;
+      const next = swap(val);
+      if (next === val) return m;
+      return dq != null ? `style="${next}"` : `style='${next}'`;
+    },
+  );
+
+  return svg;
 }
 
 function dataUriCursor(svg: string, hotspot: [number, number]): string {
