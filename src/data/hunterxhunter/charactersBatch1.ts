@@ -465,6 +465,10 @@ export const hxhCharactersBatch1: Character[] = [
     factionIds: ['faction-hxh-chimera-ants', 'faction-hxh-royal-guard'],
     rank: 'Guardia Reale',
     gender: 'X',
+    longDescription: {
+      it: 'Guardia Reale delle Formiche Chimera, di categoria Specialista, agile e curiosa come un felino. La sua Doctor Blythe guarisce, mentre Terpsichora anima i cadaveri come marionette. Uccide Kite, scatenando la furia di Gon che la annienta.',
+      en: 'A Chimera Ant Royal Guard and Specialist, agile and curious as a cat. Their Doctor Blythe heals, while Terpsichora animates corpses as puppets. They kill Kite, unleashing the fury of Gon, who annihilates them.',
+    },
     shortDescription: {
       it: 'Guardia Reale dai tratti felini, Specialista. Uccide Kite, scatenando la furia di Gon.',
       en: 'Cat-like Royal Guard, a Specialist. Kills Kite, unleashing Gon\'s fury.',
