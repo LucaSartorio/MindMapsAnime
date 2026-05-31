@@ -14,6 +14,7 @@ import { hxhFactions } from './factions';
 import { hxhArcs } from './arcs';
 import { hxhEvents } from './events';
 import { hxhEventsBatch1 } from './eventsBatch1';
+import { hxhEventsBatch2 } from './eventsBatch2';
 import { hxhRoutes } from './routes';
 import { hxhNen } from './nen';
 import { hxhNenBatch1 } from './nenBatch1';
@@ -46,7 +47,7 @@ export const hunterxhunterDataset: WorldDataset = {
   ],
   factions: hxhFactions,
   arcs: hxhArcs,
-  events: [...hxhEvents, ...hxhEventsBatch1],
+  events: [...hxhEvents, ...hxhEventsBatch1, ...hxhEventsBatch2],
   routes: hxhRoutes,
   jutsu: [...hxhNen, ...hxhNenBatch1, ...hxhNenBatch2],
   assets: hxhAssets,
