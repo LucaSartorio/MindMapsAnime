@@ -195,6 +195,10 @@ export const hxhCharacters: Character[] = [
     nationId: 'nation-hxh-padokia',
     rank: 'Assassino professionista',
     gender: 'M',
+    longDescription: {
+      it: 'Primogenito degli Zoldyck e assassino professionista dalla mente manipolatrice. Manipolatore, infigge aghi di Nen che controllano corpo e mente delle vittime, incluso il fratello Killua. Stringe un patto ambiguo con Hisoka.',
+      en: 'The Zoldyck firstborn and a professional assassin with a manipulative mind. A Manipulator, he drives in Nen needles that control victims\' bodies and minds, including his brother Killua. He strikes an ambiguous pact with Hisoka.',
+    },
     shortDescription: {
       it: 'Fratello maggiore di Killua e assassino spietato. Manipolatore che controlla le vittime con aghi Nen.',
       en: 'Killua\'s eldest brother and a ruthless assassin. A Manipulator who controls victims with Nen needles.',
@@ -286,6 +290,10 @@ export const hxhCharacters: Character[] = [
     factionIds: ['faction-hxh-hunter-association', 'faction-hxh-zodiacs'],
     rank: 'Double-Star Hunter / Zodiac (Topo)',
     gender: 'M',
+    longDescription: {
+      it: 'Padre di Gon e Hunter di rango leggendario, dotato di abilità versatili e di un\'intelligenza fuori scala. Riluttante alla paternità, lascia indizi anziché risposte, spingendo Gon a crescere da solo. È tra i pionieri della spedizione verso il Continente Oscuro.',
+      en: 'Gon\'s father and a legendary-rank Hunter with versatile abilities and off-the-charts intelligence. Reluctant about fatherhood, he leaves clues rather than answers, pushing Gon to grow on his own. He is among the pioneers of the Dark Continent expedition.',
+    },
     shortDescription: {
       it: 'Padre di Gon e uno degli Hunter più capaci al mondo. Creatore (insieme ad altri) di Greed Island.',
       en: 'Gon\'s father and one of the world\'s most capable Hunters. Co-creator of Greed Island.',
@@ -313,6 +321,10 @@ export const hxhCharacters: Character[] = [
     factionIds: ['faction-hxh-hunter-association'],
     rank: 'Double-Star Stone Hunter',
     gender: 'F',
+    longDescription: {
+      it: 'Maestra di Nen secolare che cela il proprio vero aspetto dietro le sembianze di una ragazzina. Trasmutatrice, con la sua Magical Esthetician cura e modella i corpi. Forgia Gon e Killua negli usi avanzati dell\'aura durante Greed Island.',
+      en: 'A centuries-old Nen master who hides her true form behind the appearance of a little girl. A Transmuter, her Magical Esthetician heals and reshapes bodies. She forges Gon and Killua in advanced aura usage during Greed Island.',
+    },
     shortDescription: {
       it: 'Hunter ultracentenaria dall\'aspetto di ragazzina, maestra di Nen di Gon e Killua su Greed Island. Trasmutatrice.',
       en: 'A centuries-old Hunter who looks like a young girl, Nen master of Gon and Killua on Greed Island. A Transmuter.',

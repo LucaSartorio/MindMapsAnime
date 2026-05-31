@@ -176,6 +176,10 @@ export const hxhEvents: TimelineEvent[] = [
       it: 'Anni prima, la Brigata Fantasma annienta il clan Kurta per depredarne gli Occhi Scarlatti. Kurapika sopravvive.',
       en: 'Years earlier, the Phantom Troupe wipes out the Kurta clan to plunder their Scarlet Eyes. Kurapika survives.',
     },
+    longDescription: {
+      it: 'In un solo giorno la Brigata Fantasma stermina il clan Kurta per impossessarsi dei loro Occhi Scarlatti, tra i tesori più pregiati del mercato nero. Kurapika, lontano dal villaggio, sopravvive: l\'eccidio fonda tutta la sua sete di vendetta.',
+      en: 'In a single day the Phantom Troupe wipes out the Kurta clan to seize their Scarlet Eyes, among the black market\'s most prized treasures. Kurapika, away from the village, survives: the massacre founds his entire thirst for revenge.',
+    },
     period: { it: 'Città di Yorknew', en: 'Yorknew City' },
     arcId: 'arc-hxh-yorknew-city',
     characterIds: ['char-hxh-kurapika', 'char-hxh-chrollo'],
@@ -254,6 +258,10 @@ export const hxhEvents: TimelineEvent[] = [
     description: {
       it: 'Per salvare i compagni e Chrollo, Pakunoda accetta il vincolo Nen di Kurapika e ne paga il prezzo con la vita.',
       en: 'To save her comrades and Chrollo, Pakunoda accepts Kurapika\'s Nen vow and pays for it with her life.',
+    },
+    longDescription: {
+      it: 'Per salvare i compagni catturati e onorare l\'ordine di Chrollo, Pakunoda trasmette ai Ragni le proprie memorie con un colpo finale, sacrificando la vita. Il suo gesto rispetta il patto con Gon e Killua e svela la profondità dei legami nella Brigata.',
+      en: 'To save her captured comrades and honour Chrollo\'s order, Pakunoda transmits her memories to the Spiders with a final shot, sacrificing her life. Her act honours the pact with Gon and Killua and reveals the depth of the Troupe\'s bonds.',
     },
     period: { it: 'Città di Yorknew', en: 'Yorknew City' },
     arcId: 'arc-hxh-yorknew-city',
@@ -454,6 +462,10 @@ export const hxhEvents: TimelineEvent[] = [
       it: 'Netero scatena il Bodhisattva dalle Cento Forme e, infine, la Rosa Miniatura, in un duello senza ritorno con Meruem.',
       en: 'Netero unleashes the Hundred-Type Guanyin and, finally, the Miniature Rose, in a no-return duel with Meruem.',
     },
+    longDescription: {
+      it: 'Lo scontro culmine dell\'arco: il Presidente Netero affronta da solo il Re delle Formiche, scaricando la sua Hundred-Type Guanyin Bodhisattva fino allo Zero Hand. Incapace di vincere, attiva nel proprio cuore la Rosa Miniaturizzata: muore portando con sé il veleno che condannerà Meruem.',
+      en: 'The arc\'s climactic battle: Chairman Netero faces the Ant King alone, unloading his Hundred-Type Guanyin Bodhisattva down to the Zero Hand. Unable to win, he triggers the Miniature Rose in his own heart: he dies, carrying with him the poison that will doom Meruem.',
+    },
     period: { it: 'Formiche Chimera', en: 'Chimera Ant' },
     arcId: 'arc-hxh-chimera-ant',
     locationId: 'loc-hxh-east-gorteau',
@@ -474,6 +486,10 @@ export const hxhEvents: TimelineEvent[] = [
       it: 'Per vendicare Kite, Gon sacrifica il proprio futuro trasformandosi in un adulto e annienta Neferpitou.',
       en: 'To avenge Kite, Gon sacrifices his own future, transforming into an adult, and annihilates Neferpitou.',
     },
+    longDescription: {
+      it: 'Davanti al corpo di Kite, Gon impone a Neferpitou di guarire Komugi, poi esplode in una furia disperata: rinuncia a tutto il proprio futuro per assumere una forma adulta dal potere mostruoso e annientare la Guardia Reale. La vittoria gli costa quasi la vita e il Nen.',
+      en: 'Before Kite\'s body, Gon forces Neferpitou to heal Komugi, then erupts in despairing fury: he gives up his entire future to take on a monstrously powerful adult form and annihilate the Royal Guard. The victory nearly costs him his life and his Nen.',
+    },
     period: { it: 'Formiche Chimera', en: 'Chimera Ant' },
     arcId: 'arc-hxh-chimera-ant',
     locationId: 'loc-hxh-east-gorteau',
@@ -493,6 +509,10 @@ export const hxhEvents: TimelineEvent[] = [
     description: {
       it: 'Avvelenato dalla Rosa, Meruem trascorre le ultime ore giocando a Gungi con Komugi, morendo accanto a lei.',
       en: 'Poisoned by the Rose, Meruem spends his final hours playing Gungi with Komugi, dying at her side.',
+    },
+    longDescription: {
+      it: 'Recuperata la memoria, Meruem rinuncia al dominio e cerca solo Komugi. I due trascorrono gli ultimi istanti giocando a Gungi mentre il veleno li avvolge: la fine più umana per la creatura nata come arma perfetta.',
+      en: 'With his memory restored, Meruem renounces dominion and seeks only Komugi. The two spend their final moments playing Gungi as the poison takes them: the most human end for a creature born as the perfect weapon.',
     },
     period: { it: 'Formiche Chimera', en: 'Chimera Ant' },
     arcId: 'arc-hxh-chimera-ant',
@@ -552,6 +572,10 @@ export const hxhEvents: TimelineEvent[] = [
     description: {
       it: 'Sulla cima del Mondo Albero, Gon incontra il padre Ging: la fine del suo viaggio iniziale.',
       en: 'Atop the World Tree, Gon meets his father Ging: the end of his initial journey.',
+    },
+    longDescription: {
+      it: 'In cima all\'Albero del Mondo, Gon incontra finalmente il padre. Non c\'è resa dei conti, ma una conversazione che chiude il suo viaggio: Ging gli insegna che la vera meta era il cammino stesso e gli amici incontrati lungo la strada.',
+      en: 'Atop the World Tree, Gon finally meets his father. There is no showdown, but a conversation that closes his journey: Ging teaches him that the real destination was the road itself and the friends met along the way.',
     },
     period: { it: 'Elezione del 13° Presidente', en: '13th Chairman Election' },
     arcId: 'arc-hxh-election',
