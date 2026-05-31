@@ -9,9 +9,11 @@ import { hxhCharactersBatch1 } from './charactersBatch1';
 import { hxhCharactersBatch2 } from './charactersBatch2';
 import { hxhCharactersBatch3 } from './charactersBatch3';
 import { hxhCharactersBatch4 } from './charactersBatch4';
+import { hxhCharactersBatch5 } from './charactersBatch5';
 import { hxhFactions } from './factions';
 import { hxhArcs } from './arcs';
 import { hxhEvents } from './events';
+import { hxhEventsBatch1 } from './eventsBatch1';
 import { hxhRoutes } from './routes';
 import { hxhNen } from './nen';
 import { hxhNenBatch1 } from './nenBatch1';
@@ -40,10 +42,11 @@ export const hunterxhunterDataset: WorldDataset = {
     ...hxhCharactersBatch2,
     ...hxhCharactersBatch3,
     ...hxhCharactersBatch4,
+    ...hxhCharactersBatch5,
   ],
   factions: hxhFactions,
   arcs: hxhArcs,
-  events: hxhEvents,
+  events: [...hxhEvents, ...hxhEventsBatch1],
   routes: hxhRoutes,
   jutsu: [...hxhNen, ...hxhNenBatch1, ...hxhNenBatch2],
   assets: hxhAssets,
