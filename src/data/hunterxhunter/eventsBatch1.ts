@@ -147,7 +147,7 @@ export const hxhEventsBatch1: TimelineEvent[] = [
     characterIds: ['char-hxh-gon', 'char-hxh-kurapika', 'char-hxh-leorio', 'char-hxh-canary'],
     factionIds: ['faction-hxh-zoldyck'],
     order: 4.2,
-    mangaChapters: ['38-39'],
+    mangaChapters: ['39-40'],
     animeEpisodes: ['22'],
     canon: 'canon',
     referenceStatus: 'verified',
