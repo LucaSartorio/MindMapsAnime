@@ -138,7 +138,7 @@ export function WorldLayout({
               resta trasparente per permettere pan/zoom della mappa. */}
           <div className="flex items-end justify-between gap-3 flex-wrap">
             <div className="pointer-events-auto">
-              <MapLegendFloating />
+              <MapLegendFloating dataset={dataset} />
             </div>
             <div className="flex-1 min-w-[280px] max-w-3xl mx-auto flex">
               {/* TimelineBottomSheet ha già pointer-events-auto sulla section */}

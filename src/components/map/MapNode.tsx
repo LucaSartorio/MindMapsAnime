@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import { Handle, Position, type NodeProps } from '@xyflow/react';
 import { cn } from '@/lib/cn';
+import { LOCATION_TYPE_ICON } from '@/lib/locationTypes';
 import type { Importance, LocationType } from '@/types';
 
 export interface MapNodeData {
@@ -12,24 +13,6 @@ export interface MapNodeData {
   hasSubMap?: boolean;
   [key: string]: unknown;
 }
-
-/** Mappa tipo location → icona testuale (no asset esterni). */
-const TYPE_ICON: Record<LocationType, string> = {
-  village: '⛩',
-  city: '◉',
-  nation: '✦',
-  landmark: '◆',
-  battlefield: '⚔',
-  hideout: '☖',
-  sacred_place: '⌘',
-  training_area: '✺',
-  region: '◇',
-  ruins: '⌬',
-  bridge: '═',
-  forest: '❅',
-  mountain: '▲',
-  cave: '◯',
-};
 
 const IMPORTANCE_SIZE: Record<Importance, string> = {
   main: 'w-4 h-4',
@@ -99,7 +82,7 @@ function MapNodeBase({ data }: NodeProps) {
         )}
       >
         <span className="mr-1 text-chakra-300" aria-hidden>
-          {TYPE_ICON[d.type]}
+          {LOCATION_TYPE_ICON[d.type]}
         </span>
         {d.label}
         {d.hasSubMap && (
