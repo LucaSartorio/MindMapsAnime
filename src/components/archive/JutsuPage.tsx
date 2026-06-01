@@ -9,12 +9,13 @@ import { EmptyState } from '@/components/common/EmptyState';
 import { SourceNotice } from '@/components/common/SourceNotice';
 import { useMapStore, useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
+import { getLocalizedText } from '@/utils/localization';
 import {
-  getChakraNatureLabel,
-  getJutsuTypeLabel,
-  getLocalizedText,
-  getTechniqueTerm,
-} from '@/utils/localization';
+  getAbilityAttribute,
+  getAbilityCategoryLabel,
+  getAbilityCategoryTerm,
+  getAbilityTerm,
+} from '@/lib/worldConfig';
 import { filterJutsuBySeries } from '@/lib/filters';
 
 /** Jutsu in evidenza: lista curata di id che vogliamo vedere nella
@@ -44,7 +45,13 @@ interface JutsuPageProps {
 export function JutsuPage({ dataset }: JutsuPageProps) {
   const { t } = useTranslation();
   const locale = useLocaleStore((s) => s.locale);
-  const term = getTechniqueTerm(dataset.world.slug, locale);
+  const term = getAbilityTerm(dataset.world, locale);
+  // Attributo secondario (per Naruto: natura del chakra). `null` se il mondo
+  // non lo usa: in quel caso il filtro e i badge relativi spariscono.
+  const attribute = useMemo(
+    () => getAbilityAttribute(dataset.world, locale),
+    [dataset.world, locale],
+  );
   const [params] = useSearchParams();
   const initialId = params.get('id');
   const [query, setQuery] = useState('');
@@ -114,9 +121,10 @@ export function JutsuPage({ dataset }: JutsuPageProps) {
       .slice(0, 6);
     return ranked.map((j) => {
       const n = getLocalizedText(j.localizedName, locale) || j.name;
-      const nature = j.chakraNature?.[0]
-        ? getChakraNatureLabel(j.chakraNature[0], locale)
-        : undefined;
+      const nature =
+        attribute && j.chakraNature?.[0]
+          ? attribute.label(j.chakraNature[0])
+          : undefined;
       return {
         id: j.id,
         title: n,
@@ -134,7 +142,7 @@ export function JutsuPage({ dataset }: JutsuPageProps) {
         onClick: () => openJutsuModal(j.id),
       };
     });
-  }, [allJutsu, locale, query, filterType, filterNature, openJutsuModal]);
+  }, [allJutsu, locale, query, filterType, filterNature, openJutsuModal, attribute]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6">
@@ -160,26 +168,30 @@ export function JutsuPage({ dataset }: JutsuPageProps) {
           value={filterType}
           onChange={(e) => setFilterType(e.target.value)}
           className="panel-soft px-3 py-2 text-sm"
-          aria-label={t('jutsu.typeFilterAria', { term })}
+          aria-label={getAbilityCategoryTerm(
+            dataset.world,
+            locale,
+            t('jutsu.typeFilterAria', { term }),
+          )}
         >
           <option value="">{t('jutsu.typeFilterAll')}</option>
           {types.map((ty) => (
             <option key={ty} value={ty}>
-              {getJutsuTypeLabel(ty, locale)}
+              {getAbilityCategoryLabel(dataset.world, ty, locale)}
             </option>
           ))}
         </select>
-        {natures.length > 0 && (
+        {attribute && natures.length > 0 && (
           <select
             value={filterNature}
             onChange={(e) => setFilterNature(e.target.value)}
             className="panel-soft px-3 py-2 text-sm"
-            aria-label={t('jutsu.natureFilterAria')}
+            aria-label={attribute.term}
           >
             <option value="">{t('jutsu.natureFilterAll')}</option>
             {natures.map((n) => (
               <option key={n} value={n}>
-                {getChakraNatureLabel(n, locale)}
+                {attribute.label(n)}
               </option>
             ))}
           </select>

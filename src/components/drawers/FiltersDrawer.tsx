@@ -1,6 +1,8 @@
+import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { LocationType, Series, VisibleLayers, WorldDataset } from '@/types';
 import { worldSeriesOptions } from '@/lib/series';
+import { getNationTerm } from '@/lib/worldConfig';
 import { Drawer } from '@/components/common/Drawer';
 import { Button } from '@/components/common/Button';
 import { useMapStore, useUiStore } from '@/store';
@@ -14,19 +16,27 @@ interface FiltersDrawerProps {
   dataset: WorldDataset;
 }
 
-const LOCATION_TYPES: LocationType[] = [
+/**
+ * Ordine di presentazione dei tipi di luogo. La lista mostrata viene poi
+ * filtrata sui soli tipi effettivamente presenti nel dataset attivo, così
+ * ogni mondo espone solo i propri (Naruto: villaggi/campi di battaglia…;
+ * Hunter x Hunter: città/regioni/rovine…).
+ */
+const LOCATION_TYPE_ORDER: LocationType[] = [
   'village',
   'city',
   'nation',
+  'region',
   'landmark',
   'battlefield',
   'hideout',
   'sacred_place',
   'training_area',
-  'region',
   'ruins',
   'bridge',
   'forest',
+  'mountain',
+  'cave',
 ];
 
 /** Drawer filtri tradotto IT/EN. */
@@ -90,13 +100,34 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
     });
   }
 
-  const villages = dataset.locations
-    .filter((l) => l.type === 'village')
-    .sort((a, b) => a.name.localeCompare(b.name));
+  // Solo i tipi di luogo realmente presenti nel mondo attivo.
+  const locationTypes = useMemo(() => {
+    const present = new Set(dataset.locations.map((l) => l.type));
+    return LOCATION_TYPE_ORDER.filter((type) => present.has(type));
+  }, [dataset.locations]);
+
+  const villages = useMemo(
+    () =>
+      dataset.locations
+        .filter((l) => l.type === 'village')
+        .sort((a, b) => a.name.localeCompare(b.name)),
+    [dataset.locations],
+  );
+
+  const sortedArcs = useMemo(
+    () => dataset.arcs.slice().sort((a, b) => a.order - b.order),
+    [dataset.arcs],
+  );
+
+  const sortedCharacters = useMemo(
+    () => dataset.characters.slice().sort((a, b) => a.name.localeCompare(b.name)),
+    [dataset.characters],
+  );
 
   // Le "serie" (blocchi narrativi) si applicano solo ai mondi che le usano
   // (Naruto). Per gli altri la sezione resta nascosta.
   const seriesOptions = worldSeriesOptions(dataset.world);
+  const nationTerm = getNationTerm(dataset.world, locale, t('filters.nation'));
 
   return (
     <Drawer
@@ -147,21 +178,23 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
             </Section>
           )}
 
-          <Section title={t('filters.locationType')}>
-            <div className="flex flex-wrap gap-1.5">
-              {LOCATION_TYPES.map((type) => (
-                <Pill
-                  key={type}
-                  active={filters.locationTypes.includes(type)}
-                  onClick={() => toggleType(type)}
-                >
-                  {getLocationTypeLabel(type, locale)}
-                </Pill>
-              ))}
-            </div>
-          </Section>
+          {locationTypes.length > 0 && (
+            <Section title={t('filters.locationType')}>
+              <div className="flex flex-wrap gap-1.5">
+                {locationTypes.map((type) => (
+                  <Pill
+                    key={type}
+                    active={filters.locationTypes.includes(type)}
+                    onClick={() => toggleType(type)}
+                  >
+                    {getLocationTypeLabel(type, locale)}
+                  </Pill>
+                ))}
+              </div>
+            </Section>
+          )}
 
-          <Section title={t('filters.nation')}>
+          <Section title={nationTerm}>
             <ul className="space-y-1.5">
               {dataset.nations.map((n) => (
                 <li key={n.id}>
@@ -202,36 +235,30 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
 
           <Section title={t('filters.arc')}>
             <div className="flex flex-wrap gap-1.5">
-              {dataset.arcs
-                .slice()
-                .sort((a, b) => a.order - b.order)
-                .map((a) => (
-                  <Pill
-                    key={a.id}
-                    variant="ember"
-                    active={filters.arcIds.includes(a.id)}
-                    onClick={() => toggleArc(a.id)}
-                  >
-                    {getLocalizedText(a.localizedName, locale) || a.name}
-                  </Pill>
-                ))}
+              {sortedArcs.map((a) => (
+                <Pill
+                  key={a.id}
+                  variant="ember"
+                  active={filters.arcIds.includes(a.id)}
+                  onClick={() => toggleArc(a.id)}
+                >
+                  {getLocalizedText(a.localizedName, locale) || a.name}
+                </Pill>
+              ))}
             </div>
           </Section>
 
           <Section title={t('filters.character')}>
             <div className="flex flex-wrap gap-1.5 max-h-40 overflow-auto pr-1">
-              {dataset.characters
-                .slice()
-                .sort((a, b) => a.name.localeCompare(b.name))
-                .map((c) => (
-                  <Pill
-                    key={c.id}
-                    active={filters.characterIds.includes(c.id)}
-                    onClick={() => toggleCharacter(c.id)}
-                  >
-                    {c.name}
-                  </Pill>
-                ))}
+              {sortedCharacters.map((c) => (
+                <Pill
+                  key={c.id}
+                  active={filters.characterIds.includes(c.id)}
+                  onClick={() => toggleCharacter(c.id)}
+                >
+                  {c.name}
+                </Pill>
+              ))}
             </div>
           </Section>
 

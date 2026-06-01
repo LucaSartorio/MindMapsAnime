@@ -24,6 +24,21 @@ import {
  * Da usare con useMemo nei componenti per evitare ricalcoli inutili.
  */
 
+/**
+ * Indice `eventId → evento` con cache per-dataset (WeakMap).
+ * Evita `dataset.events.find()` ripetuto dentro `filterLocations`
+ * (prima O(luoghi × eventi), ora O(luoghi)).
+ */
+const eventsByIdCache = new WeakMap<WorldDataset, Map<string, TimelineEvent>>();
+function eventsById(dataset: WorldDataset): Map<string, TimelineEvent> {
+  let index = eventsByIdCache.get(dataset);
+  if (!index) {
+    index = new Map(dataset.events.map((e) => [e.id, e]));
+    eventsByIdCache.set(dataset, index);
+  }
+  return index;
+}
+
 export function filterLocations(
   locations: Location[],
   filters: MapFilters,
@@ -71,8 +86,9 @@ export function filterLocations(
       return false;
     }
     if (filters.canonOnly) {
+      const index = eventsById(dataset);
       const events = (loc.eventIds ?? [])
-        .map((id) => dataset.events.find((e) => e.id === id))
+        .map((id) => index.get(id))
         .filter((e): e is TimelineEvent => !!e);
       const hasNonCanon = events.some((e) => e.canon !== 'canon');
       if (hasNonCanon && events.length > 0) {

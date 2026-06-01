@@ -5,11 +5,12 @@ import { EntityImage } from '@/components/common/EntityImage';
 import { ReferencePill } from '@/components/common/StatusPill';
 import { cn } from '@/lib/cn';
 import { useLocaleStore } from '@/store/useLocaleStore';
+import { getLocalizedText } from '@/utils/localization';
 import {
-  getChakraNatureLabel,
-  getJutsuTypeLabel,
-  getLocalizedText,
-} from '@/utils/localization';
+  getAbilityAttribute,
+  getAbilityCategoryLabel,
+  worldShowsAbilityRank,
+} from '@/lib/worldConfig';
 
 interface JutsuCardProps {
   jutsu: Jutsu;
@@ -18,8 +19,10 @@ interface JutsuCardProps {
   onClick?: () => void;
 }
 
-export function JutsuCard({ jutsu, active, onClick }: JutsuCardProps) {
+export function JutsuCard({ jutsu, dataset, active, onClick }: JutsuCardProps) {
   const locale = useLocaleStore((s) => s.locale);
+  const world = dataset.world;
+  const attribute = getAbilityAttribute(world, locale);
 
   const name = getLocalizedText(jutsu.localizedName, locale) || jutsu.name;
 
@@ -66,13 +69,18 @@ export function JutsuCard({ jutsu, active, onClick }: JutsuCardProps) {
         </p>
 
         <div className="flex flex-wrap gap-1.5 mt-auto">
-          <Badge variant="accent">{getJutsuTypeLabel(jutsu.type, locale)}</Badge>
-          {jutsu.rank && <Badge variant="ember">{jutsu.rank}</Badge>}
-          {(jutsu.chakraNature ?? []).map((n) => (
-            <Badge key={n} variant="danger">
-              {getChakraNatureLabel(n, locale)}
-            </Badge>
-          ))}
+          <Badge variant="accent">
+            {getAbilityCategoryLabel(world, jutsu.type, locale)}
+          </Badge>
+          {worldShowsAbilityRank(world) && jutsu.rank && (
+            <Badge variant="ember">{jutsu.rank}</Badge>
+          )}
+          {attribute &&
+            (jutsu.chakraNature ?? []).map((n) => (
+              <Badge key={n} variant="danger">
+                {attribute.label(n)}
+              </Badge>
+            ))}
         </div>
       </button>
     </Card>

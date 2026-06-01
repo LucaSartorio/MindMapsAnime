@@ -39,6 +39,16 @@ export const animeWorlds: AnimeWorld[] = [
       yearStart: 1999,
       yearEnd: 2014,
     },
+    config: {
+      ability: {
+        term: 'Jutsu',
+        // Categorie e nature usano le mappe globali (id noti di Naruto).
+        attribute: { term: { it: 'Natura del chakra', en: 'Chakra nature' } },
+        showHandSeals: true,
+        showRank: true,
+      },
+      characterRank: { term: { it: 'Grado ninja', en: 'Ninja rank' } },
+    },
   },
   {
     id: 'world-hunterxhunter',
@@ -67,6 +77,15 @@ export const animeWorlds: AnimeWorld[] = [
       publisher: 'Shueisha',
       yearStart: 1998,
     },
+    config: {
+      ability: {
+        term: { it: 'Nen', en: 'Nen' },
+        categoryTerm: { it: 'Categoria', en: 'Category' },
+        // Niente `attribute`: il Nen non ha "natura del chakra".
+        // Niente sigilli delle mani né rango ufficiale E…S.
+      },
+      // Niente `characterRank`: gli Hunter non hanno i gradi ninja.
+    },
   },
   {
     id: 'world-onepiece',
@@ -92,6 +111,18 @@ export const animeWorlds: AnimeWorld[] = [
       author: 'Eiichiro Oda',
       publisher: 'Shueisha',
       yearStart: 1997,
+    },
+    config: {
+      ability: {
+        term: { it: 'Frutti del Diavolo', en: 'Devil Fruits' },
+        categoryTerm: { it: 'Tipo di frutto', en: 'Fruit type' },
+        categories: [
+          { id: 'paramecia', label: 'Paramecia' },
+          { id: 'zoan', label: 'Zoan' },
+          { id: 'logia', label: 'Logia' },
+        ],
+      },
+      nationTerm: { it: 'Mare / Isola', en: 'Sea / Island' },
     },
   },
   {
@@ -120,6 +151,12 @@ export const animeWorlds: AnimeWorld[] = [
       yearStart: 1984,
       yearEnd: 1995,
     },
+    config: {
+      ability: {
+        term: { it: 'Tecniche', en: 'Techniques' },
+        categoryTerm: { it: 'Tipo', en: 'Type' },
+      },
+    },
   },
   {
     id: 'world-attackontitan',
@@ -147,6 +184,13 @@ export const animeWorlds: AnimeWorld[] = [
       publisher: 'Kodansha',
       yearStart: 2009,
       yearEnd: 2021,
+    },
+    config: {
+      ability: {
+        term: { it: 'Abilità', en: 'Abilities' },
+        categoryTerm: { it: 'Tipo', en: 'Type' },
+      },
+      nationTerm: { it: 'Territorio', en: 'Territory' },
     },
   },
   // Slot futuri: Bleach, Jujutsu Kaisen, Demon Slayer.

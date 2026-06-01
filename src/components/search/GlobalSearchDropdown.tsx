@@ -5,7 +5,7 @@ import type { SearchResult, WorldDataset } from '@/types';
 import { searchDataset } from '@/lib/search';
 import { useMapStore, useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
-import { getTechniqueTerm } from '@/utils/localization';
+import { getAbilityTerm } from '@/lib/worldConfig';
 import { SearchResults } from './SearchResults';
 
 interface GlobalSearchDropdownProps {
@@ -193,7 +193,7 @@ export function GlobalSearchDropdown({
           <SearchResults
             results={results}
             onSelect={handleSelect}
-            techniqueTerm={getTechniqueTerm(dataset.world.slug, locale)}
+            techniqueTerm={getAbilityTerm(dataset.world, locale)}
           />
         </div>
       )}

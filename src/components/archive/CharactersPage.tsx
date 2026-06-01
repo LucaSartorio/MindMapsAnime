@@ -9,14 +9,16 @@ import { EmptyState } from '@/components/common/EmptyState';
 import { SourceNotice } from '@/components/common/SourceNotice';
 import { useMapStore, useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
-import { getNinjaRankLabel, getLocalizedText } from '@/utils/localization';
+import { getLocalizedText } from '@/utils/localization';
+import { getCharacterRankSystem } from '@/lib/worldConfig';
 import { filterCharactersBySeries } from '@/lib/filters';
 
 interface CharactersPageProps {
   dataset: WorldDataset;
 }
 
-const NINJA_RANKS: NinjaRank[] = [
+/** Ordine canonico dei gradi; la lista mostrata è filtrata sui gradi presenti. */
+const NINJA_RANK_ORDER: NinjaRank[] = [
   'academy_student',
   'genin',
   'chunin',
@@ -51,6 +53,22 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
         .sort((a, b) => a.name.localeCompare(b.name)),
     [dataset.locations],
   );
+
+  // Sistema di gradi dinamico: presente solo se il mondo lo configura e se
+  // esistono personaggi con un grado. HxH (nessun grado ninja) non lo mostra.
+  const rankSystem = useMemo(
+    () => getCharacterRankSystem(dataset.world, locale),
+    [dataset.world, locale],
+  );
+  const ranks = useMemo(() => {
+    if (!rankSystem) return [];
+    const present = new Set(
+      dataset.characters
+        .map((c) => c.ninjaRank)
+        .filter((r): r is NinjaRank => !!r),
+    );
+    return NINJA_RANK_ORDER.filter((r) => present.has(r));
+  }, [dataset.characters, rankSystem]);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -96,7 +114,8 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
         subtitle: v
           ? getLocalizedText(v.localizedName, locale) || v.name
           : undefined,
-        caption: c.ninjaRank ? getNinjaRankLabel(c.ninjaRank, locale) : undefined,
+        caption:
+          rankSystem && c.ninjaRank ? rankSystem.label(c.ninjaRank) : undefined,
         image: (
           <EntityImage
             kind="character"
@@ -146,19 +165,21 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
             </option>
           ))}
         </select>
-        <select
-          value={filterRank}
-          onChange={(e) => setFilterRank(e.target.value)}
-          className="panel-soft px-3 py-2 text-sm"
-          aria-label={t('characters.rankFilterAria')}
-        >
-          <option value="">{t('characters.rankFilter')}</option>
-          {NINJA_RANKS.map((r) => (
-            <option key={r} value={r}>
-              {getNinjaRankLabel(r, locale)}
-            </option>
-          ))}
-        </select>
+        {ranks.length > 0 && rankSystem && (
+          <select
+            value={filterRank}
+            onChange={(e) => setFilterRank(e.target.value)}
+            className="panel-soft px-3 py-2 text-sm"
+            aria-label={rankSystem.term}
+          >
+            <option value="">{t('characters.rankFilter')}</option>
+            {ranks.map((r) => (
+              <option key={r} value={r}>
+                {rankSystem.label(r)}
+              </option>
+            ))}
+          </select>
+        )}
       </div>
 
       <SourceNotice compact />

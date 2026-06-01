@@ -16,7 +16,8 @@ import {
   findLocation,
   findNation,
 } from '@/lib/entities';
-import { getNinjaRankLabel, getTechniqueTerm } from '@/utils/localization';
+import { getNinjaRankLabel } from '@/utils/localization';
+import { getAbilityTerm } from '@/lib/worldConfig';
 
 interface CharacterDetailsModalProps {
   dataset: WorldDataset;
@@ -305,7 +306,7 @@ export function CharacterDetailsModal({
       )}
 
       {jutsu.length > 0 && (
-        <Section title={t('modals.relatedJutsu', { term: getTechniqueTerm(dataset.world.slug, locale) })}>
+        <Section title={t('modals.relatedJutsu', { term: getAbilityTerm(dataset.world, locale) })}>
           <div className="flex flex-wrap gap-1.5">
             {jutsu.map((j) => (
               <button
