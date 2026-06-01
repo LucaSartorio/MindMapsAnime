@@ -188,23 +188,6 @@ export function getNinjaRankLabel(
   return getLocalizedText(map[rank], locale);
 }
 
-/**
- * Termine usato per le "tecniche" di un mondo (etichetta della sezione e dei
- * modali). Default: "Jutsu" (Naruto). Hunter x Hunter usa "Nen".
- * IDs/slug restano invariati: cambia solo l'etichetta UI.
- */
-export function getTechniqueTerm(
-  worldSlug: string | undefined,
-  locale: SupportedLocale,
-): string {
-  const map: Record<string, LocalizedText> = {
-    hunterxhunter: { it: 'Nen', en: 'Nen' },
-  };
-  const entry = worldSlug ? map[worldSlug] : undefined;
-  if (entry) return getLocalizedText(entry, locale);
-  return 'Jutsu';
-}
-
 export function getJutsuTypeLabel(
   type: JutsuType,
   locale: SupportedLocale,

@@ -1,12 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
 import { useLocaleStore } from '@/store/useLocaleStore';
+import { getLocalizedText } from '@/utils/localization';
 import {
-  getChakraNatureLabel,
-  getJutsuTypeLabel,
-  getLocalizedText,
-  getTechniqueTerm,
-} from '@/utils/localization';
+  getAbilityAttribute,
+  getAbilityCategoryLabel,
+  getAbilityTerm,
+  worldShowsAbilityRank,
+  worldShowsHandSeals,
+} from '@/lib/worldConfig';
 import { Modal } from '@/components/common/Modal';
 import { Badge } from '@/components/common/Badge';
 import { Button } from '@/components/common/Button';
@@ -24,6 +26,8 @@ export function JutsuDetailsModal({ dataset, jutsuId }: JutsuDetailsModalProps) 
   const locale = useLocaleStore((s) => s.locale);
   const { t } = useTranslation();
   const jutsu = findJutsu(dataset, jutsuId);
+  const world = dataset.world;
+  const attribute = getAbilityAttribute(world, locale);
   const close = useUiStore((s) => s.closeModal);
   const openCharacter = useUiStore((s) => s.openCharacterModal);
   const openFaction = useUiStore((s) => s.openFactionModal);
@@ -56,17 +60,22 @@ export function JutsuDetailsModal({ dataset, jutsuId }: JutsuDetailsModalProps) 
           fit="cover"
         />
       }
-      eyebrow={t('modals.jutsu', { term: getTechniqueTerm(dataset.world.slug, locale) })}
+      eyebrow={t('modals.jutsu', { term: getAbilityTerm(world, locale) })}
       title={getLocalizedText(jutsu.localizedName, locale) || jutsu.name}
       badges={
         <>
-          <Badge variant="accent">{getJutsuTypeLabel(jutsu.type, locale)}</Badge>
-          {jutsu.rank && <Badge variant="ember">{t('jutsu.rankLabel', { rank: jutsu.rank })}</Badge>}
-          {(jutsu.chakraNature ?? []).map((n) => (
-            <Badge key={n} variant="danger">
-              {getChakraNatureLabel(n, locale)}
-            </Badge>
-          ))}
+          <Badge variant="accent">
+            {getAbilityCategoryLabel(world, jutsu.type, locale)}
+          </Badge>
+          {worldShowsAbilityRank(world) && jutsu.rank && (
+            <Badge variant="ember">{t('jutsu.rankLabel', { rank: jutsu.rank })}</Badge>
+          )}
+          {attribute &&
+            (jutsu.chakraNature ?? []).map((n) => (
+              <Badge key={n} variant="danger">
+                {attribute.label(n)}
+              </Badge>
+            ))}
           {jutsu.referenceStatus && (
             <ReferencePill status={jutsu.referenceStatus} />
           )}
@@ -90,19 +99,19 @@ export function JutsuDetailsModal({ dataset, jutsuId }: JutsuDetailsModalProps) 
         </p>
       )}
 
-      {(jutsu.chakraNature ?? []).length > 0 && (
-        <Section title={t('modals.chakraNature')}>
+      {attribute && (jutsu.chakraNature ?? []).length > 0 && (
+        <Section title={attribute.term}>
           <div className="flex flex-wrap gap-1.5">
             {jutsu.chakraNature!.map((n) => (
               <Badge key={n} variant="danger">
-                {getChakraNatureLabel(n, locale)}
+                {attribute.label(n)}
               </Badge>
             ))}
           </div>
         </Section>
       )}
 
-      {(jutsu.handSeals ?? []).length > 0 && (
+      {worldShowsHandSeals(world) && (jutsu.handSeals ?? []).length > 0 && (
         <Section title={t('modals.handSeals')}>
           <div className="flex flex-wrap items-center gap-1.5">
             {jutsu.handSeals!.map((seal, i) => (

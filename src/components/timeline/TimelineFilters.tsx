@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
 import { useMapStore } from '@/store';
@@ -20,10 +21,16 @@ export function TimelineFilters({ dataset }: TimelineFiltersProps) {
   const setFilters = useMapStore((s) => s.setFilters);
 
   // Periods estratti dalla lingua attiva per coerenza con il filtro.
-  const periods = Array.from(
-    new Set(
-      dataset.events.map((e) => getLocalizedText(e.period, locale)).filter(Boolean),
-    ),
+  const periods = useMemo(
+    () =>
+      Array.from(
+        new Set(
+          dataset.events
+            .map((e) => getLocalizedText(e.period, locale))
+            .filter(Boolean),
+        ),
+      ),
+    [dataset.events, locale],
   );
   const arcs = dataset.arcs;
 

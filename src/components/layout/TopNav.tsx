@@ -2,7 +2,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useUiStore, useWorldStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
-import { getTechniqueTerm } from '@/utils/localization';
+import { getAbilityTerm } from '@/lib/worldConfig';
 import { cn } from '@/lib/cn';
 import { GlobalSearchDropdown } from '@/components/search/GlobalSearchDropdown';
 import { LanguageSwitcher } from '@/components/i18n/LanguageSwitcher';
@@ -34,7 +34,7 @@ export function TopNav() {
           label: t('nav.characters'),
         },
         { to: `/worlds/${worldSlug}/clans`, label: t('nav.clansFactions') },
-        { to: `/worlds/${worldSlug}/jutsu`, label: getTechniqueTerm(worldSlug, locale) },
+        { to: `/worlds/${worldSlug}/jutsu`, label: getAbilityTerm(dataset?.world, locale) },
         { to: `/worlds/${worldSlug}/arcs`, label: t('nav.arcs') },
         { to: `/worlds/${worldSlug}/sources`, label: t('nav.sources') },
       ]

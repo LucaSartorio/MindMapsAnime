@@ -287,6 +287,11 @@ export interface AnimeWorld {
   availableMapLevelIds: string[];
   tags: string[];
   metadata?: Record<string, string | number | boolean | null>;
+  /**
+   * Configurazione dinamica per-mondo (sistema di poteri, gradi, facet).
+   * Rende la UI adattabile a ogni anime senza hardcoding di Naruto.
+   */
+  config?: WorldConfig;
 }
 
 /* ------------------------------ Map Level ------------------------------ */
@@ -672,6 +677,72 @@ export interface Jutsu {
   /** Macro-serie / blocchi narrativi in cui appare la tecnica. */
   series?: Series[];
   tags?: string[];
+}
+
+/* ------------------------------ World Config ------------------------------ */
+
+/** Coppia `id → etichetta localizzata`, riusabile per categorie, gradi, opzioni. */
+export interface LabeledOption {
+  id: string;
+  label: Localizable;
+}
+
+/**
+ * Attributo secondario di una tecnica.
+ * Naruto: natura del chakra. Altri mondi possono usarlo per "tipo di frutto",
+ * "elemento", ecc. Omettere l'intero attributo nasconde il relativo filtro.
+ */
+export interface AbilityAttributeConfig {
+  /** Etichetta del facet (es. "Natura del chakra", "Tipo di frutto"). */
+  term: Localizable;
+  /** Etichette esplicite dei valori; se assenti si usa il fallback legacy. */
+  options?: LabeledOption[];
+}
+
+/**
+ * Sistema di "poteri" di un mondo, reso dinamico per anime.
+ *  - Naruto → Jutsu
+ *  - Hunter x Hunter → Nen
+ *  - Dragon Ball → Tecniche
+ *  - One Piece → Frutti del Diavolo
+ * IDs/slug degli oggetti tecnica restano invariati: cambia solo la UI.
+ */
+export interface AbilitySystemConfig {
+  /** Termine UI del sistema (nav, modali, titolo archivio). */
+  term: Localizable;
+  /** Etichetta del filtro categoria nell'archivio (default: "Tipo"). */
+  categoryTerm?: Localizable;
+  /** Etichette per id-categoria; se assenti, fallback alla mappa globale. */
+  categories?: LabeledOption[];
+  /** Attributo secondario (natura del chakra, …). Omesso = facet nascosto. */
+  attribute?: AbilityAttributeConfig;
+  /** Mostra la sequenza di sigilli delle mani (specifico di Naruto). */
+  showHandSeals?: boolean;
+  /** Mostra il badge del rango ufficiale E…S. */
+  showRank?: boolean;
+}
+
+/** Sistema di gradi dei personaggi (Naruto: gradi ninja; altri: Hunter, ecc.). */
+export interface RankSystemConfig {
+  /** Etichetta del facet (es. "Grado ninja", "Grado Hunter"). */
+  term: Localizable;
+  /** Etichette per id-grado; se assenti, fallback alla mappa globale. */
+  options?: LabeledOption[];
+}
+
+/**
+ * Configurazione per-mondo: centralizza tutte le "voci" che cambiano da un
+ * anime all'altro (sistema di poteri, gradi, etichette dei facet), così la UI
+ * resta generica e adattabile a ogni opera. Tutti i campi sono opzionali:
+ * in assenza si applicano default generici.
+ */
+export interface WorldConfig {
+  /** Sistema di poteri/tecniche del mondo. */
+  ability?: AbilitySystemConfig;
+  /** Sistema di gradi dei personaggi. */
+  characterRank?: RankSystemConfig;
+  /** Etichetta del facet "nazione" (es. "Nazione", "Continente", "Mare"). */
+  nationTerm?: Localizable;
 }
 
 /* ------------------------------ WorldDataset ------------------------------ */
