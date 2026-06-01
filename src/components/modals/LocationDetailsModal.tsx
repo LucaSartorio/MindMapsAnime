@@ -16,7 +16,7 @@ import {
   findNation,
 } from '@/lib/entities';
 import { useLocaleStore } from '@/store/useLocaleStore';
-import { getLocalizedText } from '@/utils/localization';
+import { getLocalizedText, getLocationTypeLabel } from '@/utils/localization';
 
 interface LocationDetailsModalProps {
   dataset: WorldDataset;
@@ -102,7 +102,7 @@ export function LocationDetailsModal({
       }
       eyebrow={
         <>
-          Luogo · <span className="capitalize">{location.type.replace('_', ' ')}</span>
+          {t('modals.location')} · {getLocationTypeLabel(location.type, locale)}
         </>
       }
       title={getLocalizedText(location.localizedName, locale) || location.name}

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import type { FactionType, WorldDataset } from '@/types';
+import type { WorldDataset } from '@/types';
 import { ClanFactionCard } from './ClanFactionCard';
 import { FeaturedStrip, type FeaturedTile } from './FeaturedStrip';
 import { EntityImage } from '@/components/common/EntityImage';
@@ -10,42 +10,33 @@ import { SourceNotice } from '@/components/common/SourceNotice';
 import { useMapStore, useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText } from '@/utils/localization';
+import { getFeaturedIds, humanizeId } from '@/lib/worldConfig';
 import { filterFactionsBySeries } from '@/lib/filters';
-
-/** Clan in evidenza: lista curata di id che "valgono la copertina" se il
- *  mondo li include. Stabile e prevedibile, senza pescare a caso. */
-const CLAN_FEATURED_ORDER = [
-  'clan-uchiha',
-  'clan-senju',
-  'clan-uzumaki',
-  'clan-hyuga',
-  'faction-akatsuki-original',
-  'clan-nara',
-  'clan-yamanaka',
-  'clan-aburame',
-  'clan-inuzuka',
-  'clan-hatake',
-];
 
 interface ClansAndFactionsPageProps {
   dataset: WorldDataset;
 }
 
-const TYPE_KEYS: Array<{ value: FactionType | ''; tKey: string }> = [
-  { value: '', tKey: 'clans.types.all' },
-  { value: 'clan', tKey: 'clans.types.clan' },
-  { value: 'organization', tKey: 'clans.types.organization' },
-  { value: 'army', tKey: 'clans.types.army' },
-  { value: 'group', tKey: 'clans.types.group' },
-  { value: 'village', tKey: 'clans.types.village' },
-];
+/**
+ * Etichette i18n note per i tipi di fazione. I tipi presentati vengono
+ * derivati dal dataset (solo quelli realmente usati dal mondo); tipi
+ * sconosciuti ottengono un'etichetta "humanizzata" automaticamente.
+ */
+const FACTION_TYPE_ORDER = ['clan', 'organization', 'army', 'group', 'village'];
+const FACTION_TYPE_TKEY: Record<string, string> = {
+  clan: 'clans.types.clan',
+  organization: 'clans.types.organization',
+  army: 'clans.types.army',
+  group: 'clans.types.group',
+  village: 'clans.types.village',
+};
 
 export function ClansAndFactionsPage({ dataset }: ClansAndFactionsPageProps) {
   const { t } = useTranslation();
   const locale = useLocaleStore((s) => s.locale);
   const [params] = useSearchParams();
   const initialId = params.get('id');
-  const [filter, setFilter] = useState<FactionType | ''>('');
+  const [filter, setFilter] = useState<string>('');
   const [query, setQuery] = useState('');
   const openFactionModal = useUiStore((s) => s.openFactionModal);
   const filters = useMapStore((s) => s.filters);
@@ -53,6 +44,26 @@ export function ClansAndFactionsPage({ dataset }: ClansAndFactionsPageProps) {
   useEffect(() => {
     if (initialId) openFactionModal(initialId);
   }, [initialId, openFactionModal]);
+
+  // Tipi di fazione realmente presenti nel mondo attivo, in ordine canonico
+  // (i tipi extra non noti vengono comunque inclusi in coda).
+  const typeOptions = useMemo(() => {
+    const present = new Set(dataset.factions.map((f) => f.type));
+    const known = FACTION_TYPE_ORDER.filter((tp) => present.has(tp));
+    const extra = [...present].filter((tp) => !FACTION_TYPE_ORDER.includes(tp));
+    const ordered = [...known, ...extra];
+    const label = (tp: string) =>
+      FACTION_TYPE_TKEY[tp] ? t(FACTION_TYPE_TKEY[tp]) : humanizeId(tp);
+    return [
+      { value: '', label: t('clans.types.all') },
+      ...ordered.map((tp) => ({ value: tp, label: label(tp) })),
+    ];
+  }, [dataset.factions, t]);
+
+  const featuredOrder = useMemo(
+    () => getFeaturedIds(dataset.world, 'factions'),
+    [dataset.world],
+  );
 
   const items = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -77,7 +88,7 @@ export function ClansAndFactionsPage({ dataset }: ClansAndFactionsPageProps) {
     if (query.trim() || filter) return [];
     const bySeries = filterFactionsBySeries(dataset.factions, filters, dataset);
     const map = new Map(bySeries.map((f) => [f.id, f]));
-    const ranked = CLAN_FEATURED_ORDER
+    const ranked = featuredOrder
       .map((id) => map.get(id))
       .filter((f): f is NonNullable<typeof f> => !!f)
       .slice(0, 6);
@@ -105,7 +116,7 @@ export function ClansAndFactionsPage({ dataset }: ClansAndFactionsPageProps) {
         onClick: () => openFactionModal(f.id),
       };
     });
-  }, [dataset, filters, locale, query, filter, openFactionModal]);
+  }, [dataset, filters, locale, query, filter, openFactionModal, featuredOrder]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6">
@@ -128,9 +139,9 @@ export function ClansAndFactionsPage({ dataset }: ClansAndFactionsPageProps) {
           className="panel-soft px-3 py-2 text-sm flex-1 min-w-[200px]"
         />
         <div className="flex flex-wrap gap-1.5">
-          {TYPE_KEYS.map((tk) => (
+          {typeOptions.map((tk) => (
             <button
-              key={tk.value}
+              key={tk.value || 'all'}
               type="button"
               onClick={() => setFilter(tk.value)}
               aria-pressed={filter === tk.value}
@@ -141,7 +152,7 @@ export function ClansAndFactionsPage({ dataset }: ClansAndFactionsPageProps) {
                   : 'border-ink-600/60 text-ink-200 hover:border-chakra-500/50')
               }
             >
-              {t(tk.tKey)}
+              {tk.label}
             </button>
           ))}
         </div>

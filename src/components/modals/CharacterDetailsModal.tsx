@@ -2,7 +2,11 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
 import { useLocaleStore } from '@/store/useLocaleStore';
-import { getLocalizedText } from '@/utils/localization';
+import {
+  getCharacterImportanceLabel,
+  getCharacterStatusLabel,
+  getLocalizedText,
+} from '@/utils/localization';
 import { Modal } from '@/components/common/Modal';
 import { Badge } from '@/components/common/Badge';
 import { Button } from '@/components/common/Button';
@@ -16,8 +20,11 @@ import {
   findLocation,
   findNation,
 } from '@/lib/entities';
-import { getNinjaRankLabel } from '@/utils/localization';
-import { getAbilityTerm } from '@/lib/worldConfig';
+import {
+  getAbilityTerm,
+  getCharacterRankSystem,
+  getRoleLabel,
+} from '@/lib/worldConfig';
 
 interface CharacterDetailsModalProps {
   dataset: WorldDataset;
@@ -75,6 +82,8 @@ export function CharacterDetailsModal({
       (r.relatedCharacterIds ?? []).includes(character.id),
   );
 
+  const rankSystem = getCharacterRankSystem(dataset.world, locale);
+
   const statusVariant: 'success' | 'danger' | 'default' =
     character.status === 'alive'
       ? 'success'
@@ -99,26 +108,26 @@ export function CharacterDetailsModal({
       title={character.name}
       badges={
         <>
-          {character.ninjaRank && (
+          {character.ninjaRank && rankSystem && (
             <Badge variant="accent">
-              {getNinjaRankLabel(character.ninjaRank, locale)}
+              {rankSystem.label(character.ninjaRank)}
             </Badge>
           )}
           {character.rank && (
             <Badge className="capitalize">{character.rank}</Badge>
           )}
           {character.importance && (
-            <Badge className="capitalize">{character.importance}</Badge>
+            <Badge>{getCharacterImportanceLabel(character.importance, locale)}</Badge>
           )}
           {(character.role ?? []).map((r) => (
-            <Badge key={r} variant="ember" className="capitalize">
-              {r}
+            <Badge key={r} variant="ember">
+              {getRoleLabel(dataset.world, r, locale)}
             </Badge>
           ))}
           {village && <Badge>{getLocalizedText(village.localizedName, locale) || village.name}</Badge>}
           {nation && <Badge>{getLocalizedText(nation.localizedName, locale) || nation.name}</Badge>}
-          <Badge variant={statusVariant} className="capitalize">
-            {character.status.replace('_', ' ')}
+          <Badge variant={statusVariant}>
+            {getCharacterStatusLabel(character.status, locale)}
           </Badge>
           {character.referenceStatus && (
             <ReferencePill status={character.referenceStatus} />

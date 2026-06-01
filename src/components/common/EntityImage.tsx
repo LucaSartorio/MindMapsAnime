@@ -17,8 +17,8 @@ interface EntityImageProps {
   id: string;
   name: string;
   className?: string;
-  /** Natura del chakra principale (jutsu). */
-  chakraNature?: ChakraNature;
+  /** Attributo principale della tecnica (Naruto: natura del chakra). String libera. */
+  chakraNature?: string;
   /** Id della location del villaggio (personaggi/clan). */
   villageId?: string;
   /** Tipo di luogo (location). */
@@ -58,7 +58,7 @@ export function EntityImage({
 
   let base: string;
   if (kind === 'jutsu') {
-    base = chakraNature ? CHAKRA_COLORS[chakraNature] : hslBase(id);
+    base = (chakraNature && CHAKRA_COLORS[chakraNature as ChakraNature]) || hslBase(id);
   } else if (kind === 'character') {
     base = (villageId && VILLAGE_COLORS[villageId]) || hslBase(id);
   } else if (kind === 'clan') {

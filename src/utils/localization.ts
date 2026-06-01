@@ -146,6 +146,29 @@ export function getCharacterImportanceLabel(
   return getLocalizedText(map[importance], locale);
 }
 
+/**
+ * Etichetta localizzata per un ruolo "universale" (protagonista, antagonista, …).
+ * Restituisce `''` per ruoli sconosciuti/specifici di un'opera: chi chiama
+ * (`worldConfig.getCharacterRoleLabel`) gestisce config per-mondo e fallback.
+ */
+export function getCharacterRoleLabel(
+  role: string,
+  locale: SupportedLocale,
+): string {
+  const map: Record<string, LocalizedText> = {
+    protagonist: { it: 'Protagonista', en: 'Protagonist' },
+    antagonist: { it: 'Antagonista', en: 'Antagonist' },
+    supporting: { it: 'Comprimario', en: 'Supporting' },
+    mentor: { it: 'Mentore', en: 'Mentor' },
+    villain: { it: 'Cattivo', en: 'Villain' },
+    ally: { it: 'Alleato', en: 'Ally' },
+    neutral: { it: 'Neutrale', en: 'Neutral' },
+    background: { it: 'Sfondo', en: 'Background' },
+  };
+  const entry = map[role];
+  return entry ? getLocalizedText(entry, locale) : '';
+}
+
 export function getLocationTypeLabel(
   type: LocationType,
   locale: SupportedLocale,

@@ -5,11 +5,8 @@ import { EntityImage } from '@/components/common/EntityImage';
 import { ReferencePill } from '@/components/common/StatusPill';
 import { cn } from '@/lib/cn';
 import { useLocaleStore } from '@/store/useLocaleStore';
-import {
-  getCharacterStatusLabel,
-  getLocalizedText,
-  getNinjaRankLabel,
-} from '@/utils/localization';
+import { getCharacterStatusLabel, getLocalizedText } from '@/utils/localization';
+import { getCharacterRankSystem } from '@/lib/worldConfig';
 
 interface CharacterCardProps {
   character: Character;
@@ -25,6 +22,7 @@ export function CharacterCard({
   onClick,
 }: CharacterCardProps) {
   const locale = useLocaleStore((s) => s.locale);
+  const rankSystem = getCharacterRankSystem(dataset.world, locale);
   const village = character.villageLocationId
     ? dataset.locations.find((l) => l.id === character.villageLocationId)
     : undefined;
@@ -77,9 +75,9 @@ export function CharacterCard({
         </p>
 
         <div className="flex flex-wrap gap-1.5 mt-auto">
-          {character.ninjaRank ? (
+          {character.ninjaRank && rankSystem ? (
             <Badge variant="accent">
-              {getNinjaRankLabel(character.ninjaRank, locale)}
+              {rankSystem.label(character.ninjaRank)}
             </Badge>
           ) : character.rank ? (
             <Badge variant="accent">{character.rank}</Badge>

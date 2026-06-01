@@ -48,6 +48,34 @@ export const animeWorlds: AnimeWorld[] = [
         showRank: true,
       },
       characterRank: { term: { it: 'Grado ninja', en: 'Ninja rank' } },
+      // Ruoli specifici di Naruto (quelli universali sono già localizzati).
+      characterRoles: [
+        { id: 'kage', label: 'Kage' },
+        { id: 'jinchuriki', label: 'Jinchūriki' },
+        { id: 'akatsuki', label: 'Akatsuki' },
+      ],
+      featured: {
+        abilities: [
+          'jutsu-rasengan',
+          'jutsu-chidori',
+          'jutsu-kamui',
+          'jutsu-amaterasu',
+          'jutsu-sage-mode-toad',
+          'jutsu-chibaku-tensei',
+        ],
+        factions: [
+          'clan-uchiha',
+          'clan-senju',
+          'clan-uzumaki',
+          'clan-hyuga',
+          'faction-akatsuki-original',
+          'clan-nara',
+          'clan-yamanaka',
+          'clan-aburame',
+          'clan-inuzuka',
+          'clan-hatake',
+        ],
+      },
     },
   },
   {
@@ -85,6 +113,24 @@ export const animeWorlds: AnimeWorld[] = [
         // Niente sigilli delle mani né rango ufficiale E…S.
       },
       // Niente `characterRank`: gli Hunter non hanno i gradi ninja.
+      featured: {
+        abilities: [
+          'jutsu-hxh-jajanken',
+          'jutsu-hxh-godspeed',
+          'jutsu-hxh-chain-jail',
+          'jutsu-hxh-bungee-gum',
+          'jutsu-hxh-skill-hunter',
+          'jutsu-hxh-100-type-guanyin',
+        ],
+        factions: [
+          'faction-hxh-hunter-association',
+          'faction-hxh-zoldyck',
+          'faction-hxh-phantom-troupe',
+          'faction-hxh-kurta',
+          'faction-hxh-chimera-ants',
+          'faction-hxh-zodiacs',
+        ],
+      },
     },
   },
   {
