@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import type { LocationType, Series, VisibleLayers, WorldDataset } from '@/types';
 import { worldSeriesOptions } from '@/lib/series';
 import { getNationTerm } from '@/lib/worldConfig';
+import { presentLocationTypes } from '@/lib/locationTypes';
 import { Drawer } from '@/components/common/Drawer';
 import { Button } from '@/components/common/Button';
 import { useMapStore, useUiStore } from '@/store';
@@ -15,29 +16,6 @@ import {
 interface FiltersDrawerProps {
   dataset: WorldDataset;
 }
-
-/**
- * Ordine di presentazione dei tipi di luogo. La lista mostrata viene poi
- * filtrata sui soli tipi effettivamente presenti nel dataset attivo, così
- * ogni mondo espone solo i propri (Naruto: villaggi/campi di battaglia…;
- * Hunter x Hunter: città/regioni/rovine…).
- */
-const LOCATION_TYPE_ORDER: LocationType[] = [
-  'village',
-  'city',
-  'nation',
-  'region',
-  'landmark',
-  'battlefield',
-  'hideout',
-  'sacred_place',
-  'training_area',
-  'ruins',
-  'bridge',
-  'forest',
-  'mountain',
-  'cave',
-];
 
 /** Drawer filtri tradotto IT/EN. */
 export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
@@ -101,10 +79,10 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
   }
 
   // Solo i tipi di luogo realmente presenti nel mondo attivo.
-  const locationTypes = useMemo(() => {
-    const present = new Set(dataset.locations.map((l) => l.type));
-    return LOCATION_TYPE_ORDER.filter((type) => present.has(type));
-  }, [dataset.locations]);
+  const locationTypes = useMemo(
+    () => presentLocationTypes(dataset.locations),
+    [dataset.locations],
+  );
 
   const villages = useMemo(
     () =>
