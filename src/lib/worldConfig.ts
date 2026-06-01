@@ -9,6 +9,7 @@ import type {
 } from '@/types';
 import {
   getChakraNatureLabel,
+  getCharacterRoleLabel,
   getJutsuTypeLabel,
   getLocalizedText,
   getNinjaRankLabel,
@@ -29,6 +30,23 @@ import {
 /** Termine di default quando un mondo non dichiara un `ability.term`. */
 const DEFAULT_ABILITY_TERM: Localizable = { it: 'Tecniche', en: 'Techniques' };
 
+/**
+ * Ordine di default dei gradi (Naruto). Usato quando il mondo non fornisce
+ * `characterRank.options` proprie.
+ */
+const DEFAULT_RANK_ORDER: string[] = [
+  'academy_student',
+  'genin',
+  'chunin',
+  'tokubetsu_jonin',
+  'jonin',
+  'anbu',
+  'sannin',
+  'kage',
+  'missing_nin',
+  'other',
+];
+
 function labelFromOptions(
   options: LabeledOption[] | undefined,
   id: string,
@@ -37,6 +55,16 @@ function labelFromOptions(
   if (!options) return undefined;
   const match = options.find((o) => o.id === id);
   return match ? getLocalizedText(match.label, locale) : undefined;
+}
+
+/**
+ * Fallback finale per un id senza etichetta: "missing_nin" → "Missing nin",
+ * "devil-fruit" → "Devil fruit". Garantisce che QUALSIASI mondo nuovo mostri
+ * etichette leggibili anche senza config.
+ */
+export function humanizeId(id: string): string {
+  const spaced = id.replace(/[-_]+/g, ' ').trim();
+  return spaced.charAt(0).toUpperCase() + spaced.slice(1);
 }
 
 /** Termine UI del sistema di poteri (es. "Jutsu", "Nen", "Frutti del Diavolo"). */
@@ -69,8 +97,9 @@ export function getAbilityCategoryLabel(
     locale,
   );
   if (fromConfig) return fromConfig;
-  // Fallback: mappa globale (copre gli id noti di Naruto e Hunter x Hunter).
-  return getJutsuTypeLabel(category as JutsuType, locale);
+  // Fallback: mappa globale (copre gli id noti di Naruto e Hunter x Hunter),
+  // poi humanize per qualsiasi id sconosciuto di un mondo futuro.
+  return getJutsuTypeLabel(category as JutsuType, locale) || humanizeId(category);
 }
 
 /** Attributo secondario risolto (natura del chakra, …), o `null` se il mondo non lo usa. */
@@ -91,8 +120,8 @@ export function getAbilityAttribute(
     term: getLocalizedText(attribute.term, locale),
     label: (valueId) =>
       labelFromOptions(attribute.options, valueId, locale) ??
-      // Fallback legacy: nature del chakra di Naruto.
-      getChakraNatureLabel(valueId as ChakraNature, locale),
+      // Fallback legacy (nature del chakra di Naruto), poi humanize.
+      (getChakraNatureLabel(valueId as ChakraNature, locale) || humanizeId(valueId)),
   };
 }
 
@@ -124,9 +153,42 @@ export function getCharacterRankSystem(
     term: getLocalizedText(rank.term, locale),
     label: (id) =>
       labelFromOptions(rank.options, id, locale) ??
-      // Fallback legacy: gradi ninja di Naruto.
-      getNinjaRankLabel(id as NinjaRank, locale),
+      // Fallback legacy (gradi ninja di Naruto), poi humanize.
+      (getNinjaRankLabel(id as NinjaRank, locale) || humanizeId(id)),
   };
+}
+
+/**
+ * Ordine dei gradi del mondo: gli id delle `characterRank.options` se presenti
+ * (definiscono anche l'ordine), altrimenti l'ordine noto di Naruto.
+ */
+export function getCharacterRankOrder(world: AnimeWorld | undefined): string[] {
+  const options = world?.config?.characterRank?.options;
+  if (options && options.length > 0) return options.map((o) => o.id);
+  return DEFAULT_RANK_ORDER;
+}
+
+/**
+ * Etichetta di un ruolo personaggio: config del mondo → ruoli universali
+ * localizzati → humanize. Adattabile a ogni opera.
+ */
+export function getRoleLabel(
+  world: AnimeWorld | undefined,
+  role: string,
+  locale: SupportedLocale,
+): string {
+  return (
+    labelFromOptions(world?.config?.characterRoles, role, locale) ??
+    (getCharacterRoleLabel(role, locale) || humanizeId(role))
+  );
+}
+
+/** Lista curata "in evidenza" per una pagina archivio (vuota se non configurata). */
+export function getFeaturedIds(
+  world: AnimeWorld | undefined,
+  kind: 'abilities' | 'factions',
+): string[] {
+  return world?.config?.featured?.[kind] ?? [];
 }
 
 /** Etichetta del facet "nazione", con fallback all'etichetta i18n generica. */

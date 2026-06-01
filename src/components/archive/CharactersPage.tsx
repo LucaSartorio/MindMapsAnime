@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import type { NinjaRank, WorldDataset } from '@/types';
+import type { WorldDataset } from '@/types';
 import { CharacterCard } from './CharacterCard';
 import { FeaturedStrip, type FeaturedTile } from './FeaturedStrip';
 import { EntityImage } from '@/components/common/EntityImage';
@@ -10,26 +10,12 @@ import { SourceNotice } from '@/components/common/SourceNotice';
 import { useMapStore, useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText } from '@/utils/localization';
-import { getCharacterRankSystem } from '@/lib/worldConfig';
+import { getCharacterRankOrder, getCharacterRankSystem } from '@/lib/worldConfig';
 import { filterCharactersBySeries } from '@/lib/filters';
 
 interface CharactersPageProps {
   dataset: WorldDataset;
 }
-
-/** Ordine canonico dei gradi; la lista mostrata è filtrata sui gradi presenti. */
-const NINJA_RANK_ORDER: NinjaRank[] = [
-  'academy_student',
-  'genin',
-  'chunin',
-  'tokubetsu_jonin',
-  'jonin',
-  'anbu',
-  'sannin',
-  'kage',
-  'missing_nin',
-  'other',
-];
 
 export function CharactersPage({ dataset }: CharactersPageProps) {
   const { t } = useTranslation();
@@ -65,10 +51,10 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
     const present = new Set(
       dataset.characters
         .map((c) => c.ninjaRank)
-        .filter((r): r is NinjaRank => !!r),
+        .filter((r): r is string => !!r),
     );
-    return NINJA_RANK_ORDER.filter((r) => present.has(r));
-  }, [dataset.characters, rankSystem]);
+    return getCharacterRankOrder(dataset.world).filter((r) => present.has(r));
+  }, [dataset.characters, dataset.world, rankSystem]);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();

@@ -110,7 +110,7 @@ export function FactionDetailsModal({
       {(faction.signatureAbilities ?? []).length > 0 && (
         <section>
           <h3 className="font-display text-[11px] uppercase tracking-widest text-chakra-300 mb-2">
-            Abilità principali
+            {t('modals.mainAbilities')}
           </h3>
           <div className="flex flex-wrap gap-1.5">
             {faction.signatureAbilities!.map((a) => (
@@ -145,7 +145,7 @@ export function FactionDetailsModal({
       {characters.length > 0 && (
         <section>
           <h3 className="font-display text-[11px] uppercase tracking-widest text-chakra-300 mb-2">
-            Personaggi principali
+            {t('modals.mainCharacters')}
           </h3>
           <div className="flex flex-wrap gap-1.5">
             {characters.map((c) => (
@@ -165,7 +165,7 @@ export function FactionDetailsModal({
       {locations.length > 0 && (
         <section>
           <h3 className="font-display text-[11px] uppercase tracking-widest text-chakra-300 mb-2">
-            Luoghi collegati
+            {t('modals.relatedLocations')}
           </h3>
           <div className="flex flex-wrap gap-1.5">
             {locations.map((l) => (
@@ -185,7 +185,7 @@ export function FactionDetailsModal({
       {arcs.length > 0 && (
         <section>
           <h3 className="font-display text-[11px] uppercase tracking-widest text-chakra-300 mb-2">
-            Archi coinvolti
+            {t('modals.arcsInvolved')}
           </h3>
           <ul className="space-y-1.5">
             {arcs.map((a) => (

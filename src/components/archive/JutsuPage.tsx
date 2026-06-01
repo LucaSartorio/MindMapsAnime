@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import type { ChakraNature, JutsuType, WorldDataset } from '@/types';
+import type { WorldDataset } from '@/types';
 import { JutsuCard } from './JutsuCard';
 import { FeaturedStrip, type FeaturedTile } from './FeaturedStrip';
 import { EntityImage } from '@/components/common/EntityImage';
@@ -15,28 +15,9 @@ import {
   getAbilityCategoryLabel,
   getAbilityCategoryTerm,
   getAbilityTerm,
+  getFeaturedIds,
 } from '@/lib/worldConfig';
 import { filterJutsuBySeries } from '@/lib/filters';
-
-/** Jutsu in evidenza: lista curata di id che vogliamo vedere nella
- *  striscia, in ordine. Stabile e indipendente dal rango (così possiamo
- *  includere tecniche A-rank come il Rasengan accanto a S-rank). */
-const JUTSU_FEATURED_ORDER = [
-  // Naruto
-  'jutsu-rasengan',
-  'jutsu-chidori',
-  'jutsu-kamui',
-  'jutsu-amaterasu',
-  'jutsu-sage-mode-toad',
-  'jutsu-chibaku-tensei',
-  // Hunter x Hunter (Nen) — gli id assenti nel mondo attivo vengono ignorati
-  'jutsu-hxh-jajanken',
-  'jutsu-hxh-godspeed',
-  'jutsu-hxh-chain-jail',
-  'jutsu-hxh-bungee-gum',
-  'jutsu-hxh-skill-hunter',
-  'jutsu-hxh-100-type-guanyin',
-];
 
 interface JutsuPageProps {
   dataset: WorldDataset;
@@ -69,14 +50,19 @@ export function JutsuPage({ dataset }: JutsuPageProps) {
     if (initialId) openJutsuModal(initialId);
   }, [initialId, openJutsuModal]);
 
+  const featuredOrder = useMemo(
+    () => getFeaturedIds(dataset.world, 'abilities'),
+    [dataset.world],
+  );
+
   const types = useMemo(() => {
-    const set = new Set<JutsuType>();
+    const set = new Set<string>();
     for (const j of allJutsu) set.add(j.type);
     return [...set].sort();
   }, [allJutsu]);
 
   const natures = useMemo(() => {
-    const set = new Set<ChakraNature>();
+    const set = new Set<string>();
     for (const j of allJutsu) for (const n of j.chakraNature ?? []) set.add(n);
     return [...set].sort();
   }, [allJutsu]);
@@ -98,7 +84,7 @@ export function JutsuPage({ dataset }: JutsuPageProps) {
             return false;
         }
         if (filterType && j.type !== filterType) return false;
-        if (filterNature && !(j.chakraNature ?? []).includes(filterNature as ChakraNature))
+        if (filterNature && !(j.chakraNature ?? []).includes(filterNature))
           return false;
         return true;
       })
@@ -115,7 +101,7 @@ export function JutsuPage({ dataset }: JutsuPageProps) {
   const featuredItems: FeaturedTile[] = useMemo(() => {
     if (query.trim() || filterType || filterNature) return [];
     const map = new Map(allJutsu.map((j) => [j.id, j]));
-    const ranked = JUTSU_FEATURED_ORDER
+    const ranked = featuredOrder
       .map((id) => map.get(id))
       .filter((j): j is NonNullable<typeof j> => !!j)
       .slice(0, 6);
@@ -142,7 +128,7 @@ export function JutsuPage({ dataset }: JutsuPageProps) {
         onClick: () => openJutsuModal(j.id),
       };
     });
-  }, [allJutsu, locale, query, filterType, filterNature, openJutsuModal, attribute]);
+  }, [allJutsu, locale, query, filterType, filterNature, openJutsuModal, attribute, featuredOrder]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6">

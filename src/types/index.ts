@@ -57,16 +57,16 @@ export type CharacterImportance =
   | 'background';
 
 /**
- * Ruoli narrativi (cumulativi: un personaggio può ricoprirne più di uno).
+ * Ruoli narrativi universali. Le `Character.role` sono `string` libere: questi
+ * sono i ruoli "noti" con etichetta localizzata di default (vedi
+ * `getCharacterRoleLabel`). I ruoli specifici di un'opera (es. Naruto: kage,
+ * jinchuriki, akatsuki) si etichettano via `WorldConfig.characterRoles`.
  */
 export type CharacterRole =
   | 'protagonist'
   | 'antagonist'
   | 'supporting'
   | 'mentor'
-  | 'kage'
-  | 'jinchuriki'
-  | 'akatsuki'
   | 'villain'
   | 'ally'
   | 'neutral'
@@ -81,6 +81,12 @@ export type FactionType =
 
 /* --------------------------- Ninja Rank ---------------------------- */
 
+/**
+ * Gradi "noti" di Naruto, usati come etichette di default da
+ * `getNinjaRankLabel`. Il campo `Character.ninjaRank` è una `string` libera:
+ * ogni mondo definisce il proprio sistema di gradi via
+ * `WorldConfig.characterRank`.
+ */
 export type NinjaRank =
   | 'academy_student'
   | 'genin'
@@ -398,8 +404,11 @@ export interface Character {
   japaneseName?: string;
   /** Importanza narrativa (filtra archivio personaggi) */
   importance?: CharacterImportance;
-  /** Ruoli narrativi (uno o più) */
-  role?: CharacterRole[];
+  /**
+   * Ruoli narrativi (uno o più). String libera per essere adattabile a ogni
+   * opera; etichetta risolta via `getCharacterRoleLabel` / `WorldConfig`.
+   */
+  role?: string[];
   villageLocationId?: string;
   nationId?: string;
   clanIds?: string[];
@@ -407,8 +416,11 @@ export interface Character {
   /** Team specifici (Team 7, Team Guy, Sound Four, ...) */
   teamIds?: string[];
   rank?: string;
-  /** Grado ninja tipizzato per filtri e localizzazione */
-  ninjaRank?: NinjaRank;
+  /**
+   * Id del grado del personaggio (Naruto: grado ninja). String libera: ogni
+   * mondo definisce i propri gradi e le etichette via `WorldConfig.characterRank`.
+   */
+  ninjaRank?: string;
   /** Generazione narrativa (es. "Konoha 11", "Sannin", "Founders") */
   generation?: string;
   gender?: string;
@@ -461,7 +473,8 @@ export interface CharacterRelationship {
 export interface Faction {
   id: string;
   worldId: string;
-  type: FactionType;
+  /** Tipo di fazione. String libera per nuovi mondi; i tipi "noti" sono in `FactionType`. */
+  type: FactionType | (string & {});
   name: string;
   localizedName?: Localizable;
   nameLocal?: string;
@@ -656,13 +669,21 @@ export interface Jutsu {
   name: string;
   localizedName?: Localizable;
   japaneseName?: string;
-  /** Tipo principale (ninjutsu, taijutsu, genjutsu, …) */
-  type: JutsuType;
-  /** Classificazioni aggiuntive (kekkei_genkai, space_time, medical, …) */
-  classification?: JutsuClassification[];
-  /** Natura/e del chakra richieste */
-  chakraNature?: ChakraNature[];
-  /** Sequenza di sigilli delle mani (in ordine) */
+  /**
+   * Categoria principale della tecnica. String libera (Naruto: ninjutsu…;
+   * HxH: enhancement…; altri mondi: i propri id). Etichetta risolta via
+   * `getAbilityCategoryLabel` / `WorldConfig.ability.categories`.
+   * I valori "noti" sono in `JutsuType`.
+   */
+  type: JutsuType | (string & {});
+  /** Classificazioni aggiuntive (libere; note in `JutsuClassification`). */
+  classification?: (JutsuClassification | (string & {}))[];
+  /**
+   * Attributo secondario (Naruto: natura del chakra). String libera: ogni mondo
+   * lo definisce via `WorldConfig.ability.attribute`. Noti in `ChakraNature`.
+   */
+  chakraNature?: (ChakraNature | (string & {}))[];
+  /** Sequenza di sigilli delle mani (in ordine, specifico di Naruto) */
   handSeals?: HandSeal[];
   /** Rango ufficiale E/D/C/B/A/S */
   rank?: 'E' | 'D' | 'C' | 'B' | 'A' | 'S';
@@ -722,27 +743,46 @@ export interface AbilitySystemConfig {
   showRank?: boolean;
 }
 
-/** Sistema di gradi dei personaggi (Naruto: gradi ninja; altri: Hunter, ecc.). */
+/**
+ * Sistema di gradi dei personaggi (Naruto: gradi ninja; altri: Hunter, ecc.).
+ * Le `options`, se presenti, definiscono anche l'ORDINE di presentazione del
+ * filtro; se assenti si usa l'ordine noto di Naruto.
+ */
 export interface RankSystemConfig {
   /** Etichetta del facet (es. "Grado ninja", "Grado Hunter"). */
   term: Localizable;
-  /** Etichette per id-grado; se assenti, fallback alla mappa globale. */
+  /** Etichette+ordine per id-grado; se assenti, fallback alla mappa globale. */
   options?: LabeledOption[];
+}
+
+/** Liste curate "in evidenza" mostrate nelle pagine archivio. */
+export interface WorldFeaturedConfig {
+  /** Id tecniche da mettere in vetrina nell'archivio tecniche. */
+  abilities?: string[];
+  /** Id clan/fazioni da mettere in vetrina nell'archivio fazioni. */
+  factions?: string[];
 }
 
 /**
  * Configurazione per-mondo: centralizza tutte le "voci" che cambiano da un
- * anime all'altro (sistema di poteri, gradi, etichette dei facet), così la UI
- * resta generica e adattabile a ogni opera. Tutti i campi sono opzionali:
- * in assenza si applicano default generici.
+ * anime all'altro (sistema di poteri, gradi, ruoli, vetrine, etichette dei
+ * facet), così la UI resta generica e adattabile a ogni opera. Tutti i campi
+ * sono opzionali: in assenza si applicano default generici.
  */
 export interface WorldConfig {
   /** Sistema di poteri/tecniche del mondo. */
   ability?: AbilitySystemConfig;
   /** Sistema di gradi dei personaggi. */
   characterRank?: RankSystemConfig;
+  /**
+   * Etichette dei ruoli specifici dell'opera (es. Naruto: kage, jinchuriki,
+   * akatsuki). I ruoli universali sono già localizzati di default.
+   */
+  characterRoles?: LabeledOption[];
   /** Etichetta del facet "nazione" (es. "Nazione", "Continente", "Mare"). */
   nationTerm?: Localizable;
+  /** Liste curate per le vetrine delle pagine archivio. */
+  featured?: WorldFeaturedConfig;
 }
 
 /* ------------------------------ WorldDataset ------------------------------ */

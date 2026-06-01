@@ -16,13 +16,16 @@ const KIND_FOLDER: Record<EntityImageKind, string> = {
 };
 
 /**
- * Drop-in images. To show a real (licensed) image for an entity, add a file
- * named `<entityId>.<ext>` under `src/assets/worlds/naruto/<folder>/`, e.g.
- * `src/assets/worlds/naruto/characters/char-naruto.jpg`. It is discovered at
- * build time and overrides the generated SVG placeholder automatically.
+ * Drop-in images, per QUALSIASI mondo. Per mostrare un'immagine reale
+ * (licenziata) di un'entità, aggiungi un file `<entityId>.<ext>` sotto
+ * `src/assets/worlds/<slug>/<folder>/`, es.
+ * `src/assets/worlds/naruto/characters/char-naruto.jpg` o
+ * `src/assets/worlds/hunterxhunter/clans/faction-hxh-zoldyck.png`.
+ * Viene scoperto a build time e sostituisce il placeholder SVG generato.
+ * Gli id sono prefissati per mondo, quindi non collidono tra anime.
  */
 const DROP_IN = import.meta.glob(
-  '../assets/worlds/naruto/**/*.{jpg,jpeg,png,webp,avif,svg}',
+  '../assets/worlds/*/{characters,jutsu,clans,locations,arcs}/*.{jpg,jpeg,png,webp,avif,svg}',
   { eager: true, query: '?url', import: 'default' },
 ) as Record<string, string>;
 
