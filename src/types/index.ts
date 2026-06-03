@@ -1,4 +1,4 @@
-// Tipi generici per Anime Interactive Maps
+// Tipi generici per Mappe Interattive
 // Pensati per essere riutilizzabili da qualsiasi opera (Naruto, One Piece, HxH, ...)
 
 import type { Localizable } from './i18n';

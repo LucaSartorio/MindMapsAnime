@@ -4,7 +4,7 @@
  */
 export const en = {
   app: {
-    title: 'Anime Interactive Maps',
+    title: 'Interactive Maps',
     tagline:
       'Explore the worlds of your favorite anime and manga through interactive maps, timelines, characters, story arcs and journeys.',
     eyebrow: 'interactive atlas · anime & manga',
@@ -23,7 +23,7 @@ export const en = {
   home: {
     worldsHeading: 'Available worlds',
     worldsLead:
-      'Open an interactive map and start exploring. Naruto is available as the first world. More are on the way.',
+      'Open an interactive map and start exploring.',
     searchWorldsPlaceholder: 'Search an anime…',
     searchLabel: 'Search an anime',
     emptyTitle: 'No world found',
@@ -321,7 +321,7 @@ export const en = {
   },
   about: {
     eyebrow: 'About',
-    title: 'Anime Interactive Maps',
+    title: 'Interactive Maps',
     lead:
       'A generic frontend platform for interactive maps of anime and manga. For each supported work you can explore the world, its nations, villages, characters, story arcs and protagonists\' journeys.',
     offersTitle: 'What it offers',
