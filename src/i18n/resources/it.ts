@@ -6,7 +6,7 @@
  */
 export const it = {
   app: {
-    title: 'Mappe Interattive Anime',
+    title: 'Mappe Interattive',
     tagline:
       'Esplora i mondi dei tuoi anime e manga preferiti attraverso mappe interattive, timeline, personaggi, archi narrativi e percorsi.',
     eyebrow: 'atlante interattivo · anime & manga',
@@ -25,7 +25,7 @@ export const it = {
   home: {
     worldsHeading: 'Mondi disponibili',
     worldsLead:
-      'Apri una mappa interattiva e inizia a esplorare. Naruto è disponibile come primo mondo. Stiamo lavorando sui prossimi.',
+      'Apri una mappa interattiva e inizia a esplorare.',
     searchWorldsPlaceholder: 'Cerca un anime…',
     searchLabel: 'Cerca un anime',
     emptyTitle: 'Nessun mondo trovato',
@@ -324,7 +324,7 @@ export const it = {
   },
   about: {
     eyebrow: 'Informazioni',
-    title: 'Anime Interactive Maps',
+    title: 'Mappe Interattive',
     lead:
       'Una piattaforma frontend generica dedicata alle mappe interattive di anime e manga. Per ogni opera supportata puoi esplorare il mondo, le nazioni, i villaggi, i personaggi, gli archi narrativi e i percorsi dei protagonisti.',
     offersTitle: 'Cosa offre',

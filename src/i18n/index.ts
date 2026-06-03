@@ -5,7 +5,7 @@ import { it } from './resources/it';
 import { en } from './resources/en';
 
 /**
- * Setup i18n per Anime Interactive Maps.
+ * Setup i18n per Mappe Interattive.
  *
  * - Lingue: italiano (default), inglese.
  * - Persistenza: `localStorage` chiave `animeInteractiveMaps.locale`.
