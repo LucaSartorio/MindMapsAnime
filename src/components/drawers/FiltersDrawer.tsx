@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { LocationType, Series, VisibleLayers, WorldDataset } from '@/types';
 import { worldSeriesOptions } from '@/lib/series';
-import { getNationTerm } from '@/lib/worldConfig';
+import { getNationTerm, getPlacesTerm } from '@/lib/worldConfig';
 import { presentLocationTypes } from '@/lib/locationTypes';
 import { Drawer } from '@/components/common/Drawer';
 import { Button } from '@/components/common/Button';
@@ -106,6 +106,7 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
   // (Naruto). Per gli altri la sezione resta nascosta.
   const seriesOptions = worldSeriesOptions(dataset.world);
   const nationTerm = getNationTerm(dataset.world, locale, t('filters.nation'));
+  const placesTerm = getPlacesTerm(dataset.world, locale, t('filters.placesDefault'));
 
   return (
     <Drawer
@@ -196,7 +197,7 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
           </Section>
 
           {villages.length > 0 && (
-            <Section title={t('filters.village')}>
+            <Section title={placesTerm}>
               <div className="flex flex-wrap gap-1.5">
                 {villages.map((v) => (
                   <Pill
@@ -276,12 +277,12 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
               <CheckRow
                 checked={visibleLayers.mainVillages}
                 onChange={() => toggleLayer('mainVillages')}
-                label={t('filters.showMainVillages')}
+                label={t('filters.showMainVillages', { places: placesTerm })}
               />
               <CheckRow
                 checked={visibleLayers.minorVillages}
                 onChange={() => toggleLayer('minorVillages')}
-                label={t('filters.showMinorVillages')}
+                label={t('filters.showMinorVillages', { places: placesTerm })}
               />
               <CheckRow
                 checked={visibleLayers.specialPlaces}

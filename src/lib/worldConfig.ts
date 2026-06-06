@@ -200,3 +200,23 @@ export function getNationTerm(
   const term = world?.config?.nationTerm;
   return term ? getLocalizedText(term, locale) : fallback;
 }
+
+/** Etichetta dell'archivio fazioni, con fallback all'etichetta i18n generica. */
+export function getFactionsTerm(
+  world: AnimeWorld | undefined,
+  locale: SupportedLocale,
+  fallback: string,
+): string {
+  const term = world?.config?.factionsTerm;
+  return term ? getLocalizedText(term, locale) : fallback;
+}
+
+/** Etichetta del facet "luoghi/villaggi", con fallback all'etichetta i18n. */
+export function getPlacesTerm(
+  world: AnimeWorld | undefined,
+  locale: SupportedLocale,
+  fallback: string,
+): string {
+  const term = world?.config?.placesTerm;
+  return term ? getLocalizedText(term, locale) : fallback;
+}

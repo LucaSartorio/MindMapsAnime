@@ -781,6 +781,18 @@ export interface WorldConfig {
   characterRoles?: LabeledOption[];
   /** Etichetta del facet "nazione" (es. "Nazione", "Continente", "Mare"). */
   nationTerm?: Localizable;
+  /**
+   * Etichetta del facet "luoghi/villaggi" (sezione filtro e toggle layer).
+   * Naruto: "villaggi"; One Piece: "luoghi". Minuscolo: i titoli di sezione lo
+   * rendono maiuscolo via CSS, i toggle lo usano in frase. Fallback i18n.
+   */
+  placesTerm?: Localizable;
+  /**
+   * Etichetta dell'archivio fazioni / voce di navigazione (es. Naruto:
+   * "Clan & Fazioni"; One Piece: "Ciurme & Fazioni"). Se assente si usa
+   * l'etichetta i18n generica.
+   */
+  factionsTerm?: Localizable;
   /** Liste curate per le vetrine delle pagine archivio. */
   featured?: WorldFeaturedConfig;
 }

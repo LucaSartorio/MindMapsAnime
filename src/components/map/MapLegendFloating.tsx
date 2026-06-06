@@ -32,6 +32,8 @@ export function MapLegendFloating({ dataset }: MapLegendFloatingProps) {
     () => dataset.locations.some((l) => l.subMapLevelId),
     [dataset.locations],
   );
+  const hasRoutes = dataset.routes.length > 0;
+  const hasEvents = dataset.events.length > 0;
 
   return (
     <FloatingPanel
@@ -57,6 +59,35 @@ export function MapLegendFloating({ dataset }: MapLegendFloatingProps) {
                 ⤢
               </span>{' '}
               {t('map.legend.submap')}
+            </li>
+          )}
+          {hasRoutes && (
+            <li className="text-ink-300">
+              <span aria-hidden className="mr-2 inline-flex w-4 items-center justify-center align-middle">
+                <svg width="16" height="8" viewBox="0 0 16 8">
+                  <line
+                    x1="0"
+                    y1="4"
+                    x2="16"
+                    y2="4"
+                    stroke="#f5b21a"
+                    strokeWidth="2"
+                    strokeDasharray="5 3"
+                  />
+                </svg>
+              </span>{' '}
+              {t('map.legend.routes')}
+            </li>
+          )}
+          {hasEvents && (
+            <li className="text-ink-300">
+              <span
+                aria-hidden
+                className="mr-2 inline-grid h-4 w-4 place-items-center rounded-full bg-ember-500/90 text-[9px] font-bold text-white align-middle"
+              >
+                1
+              </span>{' '}
+              {t('map.legend.events')}
             </li>
           )}
         </ul>
