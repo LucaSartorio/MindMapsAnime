@@ -8,7 +8,9 @@
  */
 import { onepieceDataset, ONEPIECE_MAP_VIEWBOX } from '../src/data/onepiece';
 
-const pins = onepieceDataset.locations.map((l) => ({
+const pins = onepieceDataset.locations
+  .filter((l) => l.mapLevelId === 'op-map-world')
+  .map((l) => ({
   id: l.id,
   name: l.name,
   x: l.x,
