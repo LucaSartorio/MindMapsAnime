@@ -15,6 +15,7 @@ const CREW = [
   'char-op-nami',
   'char-op-usopp',
   'char-op-sanji',
+  'char-op-chopper',
   'char-op-robin',
 ];
 

@@ -16,12 +16,13 @@ export const onepieceCharactersWestBlue: Character[] = [
     gender: 'female',
     villageLocationId: 'loc-op-ohara',
     nationId: 'nation-op-west-blue',
-    factionIds: ['faction-op-straw-hat-pirates'],
+    factionIds: ['faction-op-straw-hat-pirates', 'faction-op-baroque-works'],
     family: ['char-op-olvia'],
     relationships: [
       { targetCharacterId: 'char-op-saul', label: 'Protettore d\'infanzia' },
+      { targetCharacterId: 'char-op-crocodile', label: 'Ex socio nella Baroque Works' },
     ],
-    arcIds: ['arc-op-ohara'],
+    arcIds: ['arc-op-ohara', 'arc-op-alabasta'],
     shortDescription: {
       it: "Archeologa della ciurma e unica persona al mondo capace di leggere i Poneglyph. Unica superstite di Ohara, braccata dal Governo Mondiale fin da bambina; si unirà ai Cappello di Paglia dopo Alabasta.",
       en: "The crew's archaeologist and the only person alive able to read the Poneglyphs. The sole survivor of Ohara, hunted by the World Government since childhood; she joins the Straw Hats after Alabasta.",
