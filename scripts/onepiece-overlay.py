@@ -36,6 +36,23 @@ except Exception:
 COLORS = {"main": (231, 11, 11), "secondary": (245, 130, 26), "minor": (245, 210, 26)}
 R = 9
 
+
+def hex_to_rgb(h):
+    h = h.lstrip("#")
+    if len(h) != 6:
+        return (255, 255, 255)
+    return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4))
+
+
+# Rotte: polilinee sotto i pin
+for r in data.get("routes", []):
+    col = hex_to_rgb(r.get("color", "#ffffff"))
+    pts = [(p["x"] * sx, p["y"] * sy) for p in r.get("points", [])]
+    if len(pts) >= 2:
+        draw.line(pts, fill=col, width=5, joint="curve")
+        for (cx, cy) in pts:
+            draw.ellipse([cx - 5, cy - 5, cx + 5, cy + 5], outline=col, width=3)
+
 for p in pins:
     px = p["x"] * sx
     py = p["y"] * sy
