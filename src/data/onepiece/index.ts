@@ -7,6 +7,7 @@ import { onepieceLocationsParadise } from './locationsParadise';
 import { onepieceLocationsRedLine } from './locationsRedLine';
 import { onepieceLocationsNewWorld } from './locationsNewWorld';
 import { onepieceLocationsBlues } from './locationsBlues';
+import { onepieceLocationsExtra } from './locationsExtra';
 import { onepieceFactions } from './factions';
 import { onepieceFactionsSouthBlue } from './factionsSouthBlue';
 import { onepieceFactionsNorthBlue } from './factionsNorthBlue';
@@ -28,6 +29,7 @@ import { onepieceEventsNorthBlue } from './eventsNorthBlue';
 import { onepieceEventsWestBlue } from './eventsWestBlue';
 import { onepieceEventsRedLine } from './eventsRedLine';
 import { onepieceRoutes } from './routes';
+import { onepieceRoutesGrandLine } from './routesGrandLine';
 import { onepieceAssets } from './assets';
 
 const onepiece = animeWorlds.find((w) => w.slug === 'onepiece')!;
@@ -61,6 +63,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceLocationsRedLine,
     ...onepieceLocationsNewWorld,
     ...onepieceLocationsBlues,
+    ...onepieceLocationsExtra,
   ],
   characters: [
     ...onepieceCharactersEastBlue,
@@ -90,7 +93,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceEventsWestBlue,
     ...onepieceEventsRedLine,
   ],
-  routes: onepieceRoutes,
+  routes: [...onepieceRoutes, ...onepieceRoutesGrandLine],
   assets: onepieceAssets,
 };
 

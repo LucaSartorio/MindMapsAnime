@@ -17,6 +17,19 @@ const pins = onepieceDataset.locations.map((l) => ({
   nationId: l.nationId ?? null,
 }));
 
+const byId = new Map(onepieceDataset.locations.map((l) => [l.id, l]));
+const routes = onepieceDataset.routes.map((r) => ({
+  id: r.id,
+  color: r.color ?? '#ffffff',
+  lineStyle: r.lineStyle ?? 'solid',
+  points: r.steps
+    .slice()
+    .sort((a, b) => a.order - b.order)
+    .map((s) => byId.get(s.locationId))
+    .filter((l): l is NonNullable<typeof l> => !!l)
+    .map((l) => ({ x: l.x, y: l.y })),
+}));
+
 process.stdout.write(
-  JSON.stringify({ viewBox: ONEPIECE_MAP_VIEWBOX, pins }, null, 2) + '\n',
+  JSON.stringify({ viewBox: ONEPIECE_MAP_VIEWBOX, pins, routes }, null, 2) + '\n',
 );
