@@ -299,8 +299,8 @@ export const onepieceLocationsNewWorld: Location[] = [
     name: 'New Marineford (Marine HQ)',
     localizedName: { it: 'Nuovo Marineford (QG Marina)', en: 'New Marineford (Marine HQ)' },
     type: 'landmark',
-    x: 150,
-    y: 475,
+    x: 25,
+    y: 458,
     shortDescription: {
       it: "Il nuovo quartier generale della Marina nel New World, già base G-1, trasferito qui dopo la Guerra al Vertice per fronteggiare gli Imperatori.",
       en: 'The new Marine Headquarters in the New World, formerly base G-1, relocated here after the Summit War to face the Emperors.',
