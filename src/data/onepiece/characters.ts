@@ -160,12 +160,12 @@ export const onepieceCharactersEastBlue: Character[] = [
     gender: 'male',
     villageLocationId: 'loc-op-germa-kingdom',
     locationIds: ['loc-op-baratie'],
-    factionIds: ['faction-op-straw-hat-pirates'],
+    factionIds: ['faction-op-straw-hat-pirates', 'faction-op-germa-66'],
     teachers: ['char-op-zeff'],
     relationships: [
       { targetCharacterId: 'char-op-zeff', label: 'Mentore / figura paterna' },
     ],
-    arcIds: ['arc-op-baratie', 'arc-op-arlong-park', 'arc-op-loguetown'],
+    arcIds: ['arc-op-baratie', 'arc-op-arlong-park', 'arc-op-loguetown', 'arc-op-whole-cake'],
     routeIds: ['route-op-eastblue'],
     shortDescription: {
       it: "Cuoco della ciurma e combattente che usa solo le gambe (per non rovinarsi le mani). Sogna di trovare All Blue, il mare leggendario di tutti i pesci.",

@@ -16,10 +16,12 @@ import { onepieceFactionsWestBlue } from './factionsWestBlue';
 import { onepieceFactionsRedLine } from './factionsRedLine';
 import { onepieceFactionsParadise } from './factionsParadise';
 import { onepieceFactionsParadise2 } from './factionsParadise2';
+import { onepieceFactionsWholeCakeWano } from './factionsWholeCakeWano';
 import { onepieceCharactersEastBlue } from './characters';
 import { onepieceCharactersParadise } from './charactersParadise';
 import { onepieceCharactersParadise2 } from './charactersParadise2';
 import { onepieceCharactersNewWorldSagas } from './charactersNewWorldSagas';
+import { onepieceCharactersWholeCakeWano } from './charactersWholeCakeWano';
 import { onepieceCharactersSouthBlue } from './charactersSouthBlue';
 import { onepieceCharactersNorthBlue } from './charactersNorthBlue';
 import { onepieceCharactersWestBlue } from './charactersWestBlue';
@@ -32,6 +34,7 @@ import { onepieceArcsRedLine } from './arcsRedLine';
 import { onepieceArcsParadise } from './arcsParadise';
 import { onepieceArcsParadise2 } from './arcsParadise2';
 import { onepieceArcsNewWorldSagas } from './arcsNewWorldSagas';
+import { onepieceArcsWholeCakeWano } from './arcsWholeCakeWano';
 import { onepieceEvents } from './events';
 import { onepieceEventsSouthBlue } from './eventsSouthBlue';
 import { onepieceEventsNorthBlue } from './eventsNorthBlue';
@@ -40,6 +43,7 @@ import { onepieceEventsRedLine } from './eventsRedLine';
 import { onepieceEventsParadise } from './eventsParadise';
 import { onepieceEventsParadise2 } from './eventsParadise2';
 import { onepieceEventsNewWorldSagas } from './eventsNewWorldSagas';
+import { onepieceEventsWholeCakeWano } from './eventsWholeCakeWano';
 import { onepieceRoutes } from './routes';
 import { onepieceRoutesGrandLine } from './routesGrandLine';
 import { onepieceAssets } from './assets';
@@ -87,6 +91,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceCharactersParadise,
     ...onepieceCharactersParadise2,
     ...onepieceCharactersNewWorldSagas,
+    ...onepieceCharactersWholeCakeWano,
   ],
   factions: [
     ...onepieceFactions,
@@ -96,6 +101,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceFactionsRedLine,
     ...onepieceFactionsParadise,
     ...onepieceFactionsParadise2,
+    ...onepieceFactionsWholeCakeWano,
   ],
   arcs: [
     ...onepieceArcs,
@@ -106,6 +112,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceArcsParadise,
     ...onepieceArcsParadise2,
     ...onepieceArcsNewWorldSagas,
+    ...onepieceArcsWholeCakeWano,
   ],
   events: [
     ...onepieceEvents,
@@ -116,6 +123,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceEventsParadise,
     ...onepieceEventsParadise2,
     ...onepieceEventsNewWorldSagas,
+    ...onepieceEventsWholeCakeWano,
   ],
   routes: [...onepieceRoutes, ...onepieceRoutesGrandLine],
   assets: onepieceAssets,

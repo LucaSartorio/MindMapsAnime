@@ -194,7 +194,7 @@ export const onepieceCharactersRedLine: Character[] = [
     villageLocationId: 'loc-op-fishman-island',
     locationIds: ['loc-op-fishman-island', 'loc-op-marineford'],
     factionIds: ['faction-op-straw-hat-pirates', 'faction-op-sun-pirates', 'faction-op-shichibukai'],
-    arcIds: ['arc-op-fishman-island', 'arc-op-marineford', 'arc-op-impel-down'],
+    arcIds: ['arc-op-fishman-island', 'arc-op-marineford', 'arc-op-impel-down', 'arc-op-whole-cake', 'arc-op-wano'],
     shortDescription: {
       it: "Uomo-pesce squalo balena, maestro di Karate Tritonico ed ex Corsaro. Già capitano dei Pirati del Sole, diventa il timoniere dei Cappello di Paglia. Ponte tra umani e uomini-pesce.",
       en: "A whale-shark fish-man, master of Fish-Man Karate and a former Warlord. Once captain of the Sun Pirates, he becomes the Straw Hats' helmsman. A bridge between humans and fish-men.",
