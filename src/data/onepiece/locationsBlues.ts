@@ -440,8 +440,8 @@ export const onepieceLocationsBlues: Location[] = [
     x: 1620,
     y: 650,
     shortDescription: {
-      it: "Regno di South Blue popolato da uccelli giganteschi, dove Usop trascorse parte dei due anni di separazione (nel manga, nel New World).",
-      en: 'A South Blue kingdom of giant birds.',
+      it: "Regno popolato da uccelli giganteschi (il «Birdie Kingdom»), dove Tony Tony Chopper trascorse i due anni di separazione studiando le erbe medicinali.",
+      en: "A kingdom of giant birds (the 'Birdie Kingdom'), where Tony Tony Chopper spent the two-year separation studying medicinal herbs.",
     },
     nationId: 'nation-op-south-blue',
     importance: 'minor',

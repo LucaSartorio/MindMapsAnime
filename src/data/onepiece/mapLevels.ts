@@ -16,7 +16,7 @@ import type { MapLevel } from '@/types';
 export const ONEPIECE_MAP_VIEWBOX = { width: 2000, height: 1000 } as const;
 
 /** Path locale dell'immagine di riferimento (vive in public/, servita alla root). */
-export const ONEPIECE_WORLD_MAP_SRC = '/assets/worlds/onepiece/maps/onepiece-world-map.jpg';
+export const ONEPIECE_WORLD_MAP_SRC = '/assets/worlds/onepiece/maps/onepiece-world-map.jpeg';
 
 export const onepieceMapLevels: MapLevel[] = [
   {

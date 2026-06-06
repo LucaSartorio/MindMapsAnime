@@ -29,13 +29,13 @@ export const onepieceAssets: AssetReference[] = [
     name: 'One Piece world map (reference)',
     kind: 'map',
     // Copia qui l'immagine della mappa: il file non è incluso nel repo.
-    url: '/assets/worlds/onepiece/maps/onepiece-world-map.jpg',
+    url: '/assets/worlds/onepiece/maps/onepiece-world-map.jpeg',
     source: 'fan-made / reference map',
     license: 'fan-art / da verificare',
     author: 'da attribuire',
     notes: {
-      it: "Mappa del mondo di One Piece usata come riferimento geografico (viewBox 2000 × 1000). Non è materiale ufficiale: il mondo rappresentato è © Eiichiro Oda / Shueisha. Il file va copiato manualmente in public/assets/worlds/onepiece/maps/onepiece-world-map.jpg.",
-      en: 'One Piece world map used as a geographic reference (viewBox 2000 × 1000). Not official material: the depicted world is © Eiichiro Oda / Shueisha. The file must be copied manually into public/assets/worlds/onepiece/maps/onepiece-world-map.jpg.',
+      it: "Mappa del mondo di One Piece usata come riferimento geografico (viewBox 2000 × 1000). Non è materiale ufficiale: il mondo rappresentato è © Eiichiro Oda / Shueisha. Il file va copiato manualmente in public/assets/worlds/onepiece/maps/onepiece-world-map.jpeg.",
+      en: 'One Piece world map used as a geographic reference (viewBox 2000 × 1000). Not official material: the depicted world is © Eiichiro Oda / Shueisha. The file must be copied manually into public/assets/worlds/onepiece/maps/onepiece-world-map.jpeg.',
     },
   },
   {

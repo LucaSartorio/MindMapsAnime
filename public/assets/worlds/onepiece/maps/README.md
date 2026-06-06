@@ -2,7 +2,7 @@
 
 Drop the world-map image here as:
 
-    onepiece-world-map.jpg
+    onepiece-world-map.jpeg
 
 (referenced by `op-world-map-reference` in `src/data/onepiece/assets.ts`
 and by `ONEPIECE_WORLD_MAP_SRC` in `src/data/onepiece/mapLevels.ts`).
