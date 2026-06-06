@@ -14,7 +14,9 @@ import { onepieceFactionsSouthBlue } from './factionsSouthBlue';
 import { onepieceFactionsNorthBlue } from './factionsNorthBlue';
 import { onepieceFactionsWestBlue } from './factionsWestBlue';
 import { onepieceFactionsRedLine } from './factionsRedLine';
+import { onepieceFactionsParadise } from './factionsParadise';
 import { onepieceCharactersEastBlue } from './characters';
+import { onepieceCharactersParadise } from './charactersParadise';
 import { onepieceCharactersSouthBlue } from './charactersSouthBlue';
 import { onepieceCharactersNorthBlue } from './charactersNorthBlue';
 import { onepieceCharactersWestBlue } from './charactersWestBlue';
@@ -24,11 +26,13 @@ import { onepieceArcsSouthBlue } from './arcsSouthBlue';
 import { onepieceArcsNorthBlue } from './arcsNorthBlue';
 import { onepieceArcsWestBlue } from './arcsWestBlue';
 import { onepieceArcsRedLine } from './arcsRedLine';
+import { onepieceArcsParadise } from './arcsParadise';
 import { onepieceEvents } from './events';
 import { onepieceEventsSouthBlue } from './eventsSouthBlue';
 import { onepieceEventsNorthBlue } from './eventsNorthBlue';
 import { onepieceEventsWestBlue } from './eventsWestBlue';
 import { onepieceEventsRedLine } from './eventsRedLine';
+import { onepieceEventsParadise } from './eventsParadise';
 import { onepieceRoutes } from './routes';
 import { onepieceRoutesGrandLine } from './routesGrandLine';
 import { onepieceAssets } from './assets';
@@ -73,6 +77,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceCharactersNorthBlue,
     ...onepieceCharactersWestBlue,
     ...onepieceCharactersRedLine,
+    ...onepieceCharactersParadise,
   ],
   factions: [
     ...onepieceFactions,
@@ -80,6 +85,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceFactionsNorthBlue,
     ...onepieceFactionsWestBlue,
     ...onepieceFactionsRedLine,
+    ...onepieceFactionsParadise,
   ],
   arcs: [
     ...onepieceArcs,
@@ -87,6 +93,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceArcsNorthBlue,
     ...onepieceArcsWestBlue,
     ...onepieceArcsRedLine,
+    ...onepieceArcsParadise,
   ],
   events: [
     ...onepieceEvents,
@@ -94,6 +101,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceEventsNorthBlue,
     ...onepieceEventsWestBlue,
     ...onepieceEventsRedLine,
+    ...onepieceEventsParadise,
   ],
   routes: [...onepieceRoutes, ...onepieceRoutesGrandLine],
   assets: onepieceAssets,
