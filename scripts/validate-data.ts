@@ -9,9 +9,10 @@
 import type { WorldDataset } from '../src/types';
 import { narutoDataset } from '../src/data/naruto';
 import { hunterxhunterDataset } from '../src/data/hunterxhunter';
+import { onepieceDataset } from '../src/data/onepiece';
 import { validateDataset } from '../src/utils/validateDataset';
 
-const datasets: WorldDataset[] = [narutoDataset, hunterxhunterDataset];
+const datasets: WorldDataset[] = [narutoDataset, hunterxhunterDataset, onepieceDataset];
 
 const lines: string[] = [];
 lines.push('=== Anime Interactive Maps · dataset validator ===');

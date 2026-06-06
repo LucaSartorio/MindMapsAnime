@@ -142,16 +142,18 @@ export const animeWorlds: AnimeWorld[] = [
       en: 'Grand Line · The Pirate Era',
     },
     description: {
-      it: 'Il mondo di Rufy e della ciurma di Cappello di Paglia è in arrivo. Navigheremo la Grand Line, da East Blue a Wano, tra isole, i quattro Mari e la rotta verso il One Piece.',
-      en: "Luffy and the Straw Hat crew's world is coming. We'll sail the Grand Line, from East Blue to Wano, across islands, the four Seas and the route toward the One Piece.",
+      it: 'Il mondo di Rufy e della ciurma di Cappello di Paglia. Naviga la Grand Line, da East Blue a Wano, tra le isole dei quattro Mari, Paradise, il New World e la rotta verso il One Piece.',
+      en: "Luffy and the Straw Hat crew's world. Sail the Grand Line, from East Blue to Wano, across the islands of the four Seas, Paradise, the New World and the route toward the One Piece.",
     },
-    status: 'coming_soon',
+    status: 'available',
     theme: {
       primary: '#e23b3b',
       accent: '#f5b21a',
       highlight: '#1f9aff',
     },
-    availableMapLevelIds: [],
+    defaultMapLevelId: 'op-map-world',
+    availableMapLevelIds: ['op-map-world'],
+    coverAssetId: 'op-cover-placeholder',
     tags: ['shonen', 'pirati', 'eiichiro oda', 'jump'],
     metadata: {
       author: 'Eiichiro Oda',
