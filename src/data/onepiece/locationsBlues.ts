@@ -4,7 +4,7 @@ import type { Location } from '@/types';
  * Luoghi di North Blue, West Blue e South Blue — i tre Mari «esterni» oltre East
  * Blue, disposti rispettivamente in alto-sinistra, basso-sinistra e
  * basso-destra della mappa. Piano viewBox 2000 × 1000. Coordinate stimate sulla
- * mappa di riferimento → `needs_verification`.
+ * mappa di riferimento, allineate sull'overlay → `verified`.
  */
 export const onepieceLocationsBlues: Location[] = [
   /* ========================= NORTH BLUE ========================= */
@@ -22,9 +22,12 @@ export const onepieceLocationsBlues: Location[] = [
       en: "'The White City', once prosperous thanks to Amber Lead and then exterminated by the lead poisoning the ore caused. Trafalgar Law's homeland and the root of his tragedy.",
     },
     nationId: 'nation-op-north-blue',
+    characterIds: ['char-op-law'],
+    arcIds: ['arc-op-flevance'],
+    eventIds: ['evt-op-flevance-tragedy'],
     importance: 'main',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['north-blue', 'law', 'flevance'],
   },
   {
@@ -43,7 +46,7 @@ export const onepieceLocationsBlues: Location[] = [
     nationId: 'nation-op-north-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['north-blue'],
   },
   {
@@ -62,7 +65,7 @@ export const onepieceLocationsBlues: Location[] = [
     nationId: 'nation-op-north-blue',
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['north-blue', 'norland', 'skypiea'],
   },
   {
@@ -81,7 +84,7 @@ export const onepieceLocationsBlues: Location[] = [
     nationId: 'nation-op-north-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['north-blue'],
   },
   {
@@ -98,9 +101,12 @@ export const onepieceLocationsBlues: Location[] = [
       en: "A North Blue island where Donquixote Doflamingo's crew seized control and where the young Law received the Ope Ope Fruit.",
     },
     nationId: 'nation-op-north-blue',
+    characterIds: ['char-op-doflamingo', 'char-op-corazon', 'char-op-law'],
+    arcIds: ['arc-op-flevance'],
+    eventIds: ['evt-op-law-ope-ope'],
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['north-blue', 'doflamingo', 'law'],
   },
   {
@@ -119,7 +125,7 @@ export const onepieceLocationsBlues: Location[] = [
     nationId: 'nation-op-north-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['north-blue', 'regno'],
   },
   {
@@ -138,7 +144,7 @@ export const onepieceLocationsBlues: Location[] = [
     nationId: 'nation-op-north-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['north-blue', 'villaggio'],
   },
   {
@@ -157,7 +163,7 @@ export const onepieceLocationsBlues: Location[] = [
     nationId: 'nation-op-north-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['north-blue', 'isola'],
   },
   {
@@ -176,7 +182,7 @@ export const onepieceLocationsBlues: Location[] = [
     nationId: 'nation-op-north-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['north-blue', 'isola'],
   },
   {
@@ -195,7 +201,7 @@ export const onepieceLocationsBlues: Location[] = [
     nationId: 'nation-op-north-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['north-blue'],
   },
   {
@@ -214,7 +220,7 @@ export const onepieceLocationsBlues: Location[] = [
     nationId: 'nation-op-north-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['north-blue'],
   },
   {
@@ -233,7 +239,7 @@ export const onepieceLocationsBlues: Location[] = [
     nationId: 'nation-op-north-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['north-blue', 'regno'],
   },
   {
@@ -252,7 +258,7 @@ export const onepieceLocationsBlues: Location[] = [
     nationId: 'nation-op-north-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['north-blue', 'isola'],
   },
 
@@ -271,9 +277,12 @@ export const onepieceLocationsBlues: Location[] = [
       en: "The island of scholars and the Tree of Knowledge, destroyed by a Buster Call for deciphering the Poneglyphs and the Void Century. Home of Nico Robin, its sole survivor.",
     },
     nationId: 'nation-op-west-blue',
+    characterIds: ['char-op-robin', 'char-op-olvia', 'char-op-clover', 'char-op-saul'],
+    arcIds: ['arc-op-ohara'],
+    eventIds: ['evt-op-ohara-buster-call'],
     importance: 'main',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['west-blue', 'robin', 'poneglyph', 'buster-call'],
   },
   {
@@ -290,9 +299,12 @@ export const onepieceLocationsBlues: Location[] = [
       en: "A vanished West Blue island, stage of the God Valley Incident: the alliance of Roger and Garp that crushed Rocks D. Xebec's Rocks Pirates, 38 years before the story.",
     },
     nationId: 'nation-op-west-blue',
+    characterIds: ['char-op-rocks', 'char-op-garp'],
+    arcIds: ['arc-op-god-valley'],
+    eventIds: ['evt-op-god-valley-incident'],
     importance: 'main',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['west-blue', 'rocks', 'roger', 'garp'],
   },
   {
@@ -311,7 +323,7 @@ export const onepieceLocationsBlues: Location[] = [
     nationId: 'nation-op-west-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['west-blue', 'regno'],
   },
   {
@@ -330,7 +342,7 @@ export const onepieceLocationsBlues: Location[] = [
     nationId: 'nation-op-west-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['west-blue', 'isola'],
   },
   {
@@ -349,7 +361,7 @@ export const onepieceLocationsBlues: Location[] = [
     nationId: 'nation-op-west-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['west-blue', 'regno'],
   },
   {
@@ -368,7 +380,7 @@ export const onepieceLocationsBlues: Location[] = [
     nationId: 'nation-op-west-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['west-blue', 'hiluluk'],
   },
   {
@@ -387,7 +399,7 @@ export const onepieceLocationsBlues: Location[] = [
     nationId: 'nation-op-west-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['west-blue', 'regione'],
   },
 

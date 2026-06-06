@@ -9,12 +9,20 @@ import { onepieceLocationsNewWorld } from './locationsNewWorld';
 import { onepieceLocationsBlues } from './locationsBlues';
 import { onepieceFactions } from './factions';
 import { onepieceFactionsSouthBlue } from './factionsSouthBlue';
+import { onepieceFactionsNorthBlue } from './factionsNorthBlue';
+import { onepieceFactionsWestBlue } from './factionsWestBlue';
 import { onepieceCharactersEastBlue } from './characters';
 import { onepieceCharactersSouthBlue } from './charactersSouthBlue';
+import { onepieceCharactersNorthBlue } from './charactersNorthBlue';
+import { onepieceCharactersWestBlue } from './charactersWestBlue';
 import { onepieceArcs } from './arcs';
 import { onepieceArcsSouthBlue } from './arcsSouthBlue';
+import { onepieceArcsNorthBlue } from './arcsNorthBlue';
+import { onepieceArcsWestBlue } from './arcsWestBlue';
 import { onepieceEvents } from './events';
 import { onepieceEventsSouthBlue } from './eventsSouthBlue';
+import { onepieceEventsNorthBlue } from './eventsNorthBlue';
+import { onepieceEventsWestBlue } from './eventsWestBlue';
 import { onepieceRoutes } from './routes';
 import { onepieceAssets } from './assets';
 
@@ -50,10 +58,30 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceLocationsNewWorld,
     ...onepieceLocationsBlues,
   ],
-  characters: [...onepieceCharactersEastBlue, ...onepieceCharactersSouthBlue],
-  factions: [...onepieceFactions, ...onepieceFactionsSouthBlue],
-  arcs: [...onepieceArcs, ...onepieceArcsSouthBlue],
-  events: [...onepieceEvents, ...onepieceEventsSouthBlue],
+  characters: [
+    ...onepieceCharactersEastBlue,
+    ...onepieceCharactersSouthBlue,
+    ...onepieceCharactersNorthBlue,
+    ...onepieceCharactersWestBlue,
+  ],
+  factions: [
+    ...onepieceFactions,
+    ...onepieceFactionsSouthBlue,
+    ...onepieceFactionsNorthBlue,
+    ...onepieceFactionsWestBlue,
+  ],
+  arcs: [
+    ...onepieceArcs,
+    ...onepieceArcsSouthBlue,
+    ...onepieceArcsNorthBlue,
+    ...onepieceArcsWestBlue,
+  ],
+  events: [
+    ...onepieceEvents,
+    ...onepieceEventsSouthBlue,
+    ...onepieceEventsNorthBlue,
+    ...onepieceEventsWestBlue,
+  ],
   routes: onepieceRoutes,
   assets: onepieceAssets,
 };
