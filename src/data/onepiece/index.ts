@@ -8,9 +8,13 @@ import { onepieceLocationsRedLine } from './locationsRedLine';
 import { onepieceLocationsNewWorld } from './locationsNewWorld';
 import { onepieceLocationsBlues } from './locationsBlues';
 import { onepieceFactions } from './factions';
+import { onepieceFactionsSouthBlue } from './factionsSouthBlue';
 import { onepieceCharactersEastBlue } from './characters';
+import { onepieceCharactersSouthBlue } from './charactersSouthBlue';
 import { onepieceArcs } from './arcs';
+import { onepieceArcsSouthBlue } from './arcsSouthBlue';
 import { onepieceEvents } from './events';
+import { onepieceEventsSouthBlue } from './eventsSouthBlue';
 import { onepieceRoutes } from './routes';
 import { onepieceAssets } from './assets';
 
@@ -46,10 +50,10 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceLocationsNewWorld,
     ...onepieceLocationsBlues,
   ],
-  characters: [...onepieceCharactersEastBlue],
-  factions: onepieceFactions,
-  arcs: onepieceArcs,
-  events: onepieceEvents,
+  characters: [...onepieceCharactersEastBlue, ...onepieceCharactersSouthBlue],
+  factions: [...onepieceFactions, ...onepieceFactionsSouthBlue],
+  arcs: [...onepieceArcs, ...onepieceArcsSouthBlue],
+  events: [...onepieceEvents, ...onepieceEventsSouthBlue],
   routes: onepieceRoutes,
   assets: onepieceAssets,
 };

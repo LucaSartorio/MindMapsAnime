@@ -90,7 +90,7 @@ export const onepieceFactions: Faction[] = [
       en: "The movement fighting the World Government and the Celestial Dragons, led by Monkey D. Dragon, Luffy's father. It first appears at Loguetown.",
     },
     leaderIds: ['char-op-dragon'],
-    characterIds: ['char-op-dragon'],
+    characterIds: ['char-op-dragon', 'char-op-kuma'],
     canonStatus: 'canon',
     referenceStatus: 'verified',
     tags: ['rivoluzionari'],
