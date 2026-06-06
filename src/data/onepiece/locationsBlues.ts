@@ -22,9 +22,12 @@ export const onepieceLocationsBlues: Location[] = [
       en: "'The White City', once prosperous thanks to Amber Lead and then exterminated by the lead poisoning the ore caused. Trafalgar Law's homeland and the root of his tragedy.",
     },
     nationId: 'nation-op-north-blue',
+    characterIds: ['char-op-law'],
+    arcIds: ['arc-op-flevance'],
+    eventIds: ['evt-op-flevance-tragedy'],
     importance: 'main',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['north-blue', 'law', 'flevance'],
   },
   {
@@ -43,7 +46,7 @@ export const onepieceLocationsBlues: Location[] = [
     nationId: 'nation-op-north-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['north-blue'],
   },
   {
@@ -62,7 +65,7 @@ export const onepieceLocationsBlues: Location[] = [
     nationId: 'nation-op-north-blue',
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['north-blue', 'norland', 'skypiea'],
   },
   {
@@ -81,7 +84,7 @@ export const onepieceLocationsBlues: Location[] = [
     nationId: 'nation-op-north-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['north-blue'],
   },
   {
@@ -98,9 +101,12 @@ export const onepieceLocationsBlues: Location[] = [
       en: "A North Blue island where Donquixote Doflamingo's crew seized control and where the young Law received the Ope Ope Fruit.",
     },
     nationId: 'nation-op-north-blue',
+    characterIds: ['char-op-doflamingo', 'char-op-corazon', 'char-op-law'],
+    arcIds: ['arc-op-flevance'],
+    eventIds: ['evt-op-law-ope-ope'],
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['north-blue', 'doflamingo', 'law'],
   },
   {
@@ -119,7 +125,7 @@ export const onepieceLocationsBlues: Location[] = [
     nationId: 'nation-op-north-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['north-blue', 'regno'],
   },
   {
@@ -138,7 +144,7 @@ export const onepieceLocationsBlues: Location[] = [
     nationId: 'nation-op-north-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['north-blue', 'villaggio'],
   },
   {
@@ -157,7 +163,7 @@ export const onepieceLocationsBlues: Location[] = [
     nationId: 'nation-op-north-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['north-blue', 'isola'],
   },
   {
@@ -176,7 +182,7 @@ export const onepieceLocationsBlues: Location[] = [
     nationId: 'nation-op-north-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['north-blue', 'isola'],
   },
   {
@@ -195,7 +201,7 @@ export const onepieceLocationsBlues: Location[] = [
     nationId: 'nation-op-north-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['north-blue'],
   },
   {
@@ -214,7 +220,7 @@ export const onepieceLocationsBlues: Location[] = [
     nationId: 'nation-op-north-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['north-blue'],
   },
   {
@@ -233,7 +239,7 @@ export const onepieceLocationsBlues: Location[] = [
     nationId: 'nation-op-north-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['north-blue', 'regno'],
   },
   {
@@ -252,7 +258,7 @@ export const onepieceLocationsBlues: Location[] = [
     nationId: 'nation-op-north-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['north-blue', 'isola'],
   },
 
