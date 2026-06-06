@@ -26,7 +26,7 @@ export const onepieceLocationsParadise: Location[] = [
     eventIds: ['evt-op-enter-grand-line'],
     importance: 'main',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['grand-line', 'red-line', 'ingresso'],
   },
   {
