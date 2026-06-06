@@ -1,0 +1,36 @@
+import type { MapLevel } from '@/types';
+
+/**
+ * Map levels One Piece.
+ *
+ * La world map usa come sfondo la mappa del mondo di One Piece (i quattro Mari,
+ * la Red Line, la Grand Line con Paradise e New World e le due fasce di Calm
+ * Belt). Tutte le coordinate di `location.x/y`, dei `svgPathD` dei boundary e dei
+ * `labelPosition` sono espresse nel piano viewBox 2000 × 1000, che corrisponde
+ * all'aspect ratio ~2:1 della mappa di riferimento.
+ *
+ * Se sostituisci l'immagine con una di proporzioni diverse, aggiorna
+ * width/height mantenendo lo stesso aspect ratio per non disallineare i pin.
+ * Conversione px → flow:  flowX = px_x / imgW * 2000 ,  flowY = px_y / imgH * 1000.
+ */
+export const ONEPIECE_MAP_VIEWBOX = { width: 2000, height: 1000 } as const;
+
+/** Path locale dell'immagine di riferimento (vive in public/, servita alla root). */
+export const ONEPIECE_WORLD_MAP_SRC = '/assets/worlds/onepiece/maps/onepiece-world-map.jpg';
+
+export const onepieceMapLevels: MapLevel[] = [
+  {
+    id: 'op-map-world',
+    worldId: 'world-onepiece',
+    slug: 'world',
+    name: 'World Map',
+    localizedName: { it: 'Mappa del Mondo', en: 'World Map' },
+    description: {
+      it: 'Mappa del mondo di One Piece: i quattro Mari (North, East, West, South Blue), la Red Line con Mary Geoise e Reverse Mountain, la Grand Line divisa tra Paradise e New World, e le due fasce di Calm Belt.',
+      en: "Map of the One Piece world: the four Seas (North, East, West, South Blue), the Red Line with Mary Geoise and Reverse Mountain, the Grand Line split between Paradise and the New World, and the two Calm Belt bands.",
+    },
+    backgroundAssetId: 'op-world-map-reference',
+    width: ONEPIECE_MAP_VIEWBOX.width,
+    height: ONEPIECE_MAP_VIEWBOX.height,
+  },
+];
