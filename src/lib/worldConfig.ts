@@ -210,3 +210,13 @@ export function getFactionsTerm(
   const term = world?.config?.factionsTerm;
   return term ? getLocalizedText(term, locale) : fallback;
 }
+
+/** Etichetta del facet "luoghi/villaggi", con fallback all'etichetta i18n. */
+export function getPlacesTerm(
+  world: AnimeWorld | undefined,
+  locale: SupportedLocale,
+  fallback: string,
+): string {
+  const term = world?.config?.placesTerm;
+  return term ? getLocalizedText(term, locale) : fallback;
+}

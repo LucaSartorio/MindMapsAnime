@@ -172,6 +172,7 @@ export const animeWorlds: AnimeWorld[] = [
       },
       nationTerm: { it: 'Mare / Isola', en: 'Sea / Island' },
       factionsTerm: { it: 'Ciurme & Fazioni', en: 'Crews & Factions' },
+      placesTerm: { it: 'luoghi', en: 'places' },
     },
   },
   {
