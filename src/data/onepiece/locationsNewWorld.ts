@@ -71,8 +71,8 @@ export const onepieceLocationsNewWorld: Location[] = [
     name: 'Zou',
     localizedName: { it: 'Zou', en: 'Zou' },
     type: 'landmark',
-    x: 520,
-    y: 470,
+    x: 483,
+    y: 510,
     shortDescription: {
       it: "Una foresta-regno sul dorso di Zunesha, un elefante millenario che cammina nel mare. Patria della tribù dei Mink e custode di uno dei Road Poneglyph.",
       en: "A forest-kingdom on the back of Zunesha, a millennia-old elephant walking through the sea. Home of the Mink tribe and keeper of one of the Road Poneglyphs.",
@@ -90,8 +90,8 @@ export const onepieceLocationsNewWorld: Location[] = [
     name: 'Whole Cake Island',
     localizedName: { it: 'Whole Cake Island', en: 'Whole Cake Island' },
     type: 'nation',
-    x: 415,
-    y: 468,
+    x: 400,
+    y: 455,
     shortDescription: {
       it: "L'isola-torta capitale di Totland, territorio dell'Imperatrice Big Mom. Un regno fiabesco e crudele dove la ciurma strappa Sanji al matrimonio combinato con i Vinsmoke.",
       en: "The cake-island capital of Totland, domain of the Empress Big Mom. A fairy-tale yet cruel realm where the crew rescues Sanji from his arranged marriage with the Vinsmoke.",
@@ -128,8 +128,8 @@ export const onepieceLocationsNewWorld: Location[] = [
     name: 'Wano Kingdom',
     localizedName: { it: 'Paese di Wano', en: 'Wano Kingdom' },
     type: 'nation',
-    x: 650,
-    y: 475,
+    x: 637,
+    y: 460,
     shortDescription: {
       it: "Nazione isolazionista in stile feudale giapponese, chiusa al mondo da secoli. Patria dei Kozuki e dei migliori spadai; teatro della guerra contro lo shogun Orochi e l'Imperatore Kaido.",
       en: "An isolationist nation in feudal-Japanese style, closed to the world for centuries. Homeland of the Kozuki and the finest swordsmiths; stage of the war against shogun Orochi and the Emperor Kaido.",
@@ -166,8 +166,8 @@ export const onepieceLocationsNewWorld: Location[] = [
     name: 'Germa Kingdom',
     localizedName: { it: 'Regno del Germa', en: 'Germa Kingdom' },
     type: 'nation',
-    x: 585,
-    y: 458,
+    x: 576,
+    y: 448,
     shortDescription: {
       it: "Il «Regno senza terra»: una flotta-nazione mobile a forma di lumaca, dominata dalla famiglia Vinsmoke e dal suo esercito clonato del Germa 66. È la casa d'origine di Sanji.",
       en: "The 'Kingdom without a land': a mobile snail-shaped fleet-nation, ruled by the Vinsmoke family and its cloned Germa 66 army. Sanji's birthplace.",
