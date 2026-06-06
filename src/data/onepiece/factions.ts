@@ -29,6 +29,8 @@ export const onepieceFactions: Faction[] = [
       'char-op-sanji',
       'char-op-chopper',
       'char-op-robin',
+      'char-op-franky',
+      'char-op-brook',
       'char-op-jinbe',
     ],
     locationIds: ['loc-op-foosha-village'],
