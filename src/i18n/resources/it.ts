@@ -279,17 +279,17 @@ export const it = {
   jutsu: {
     archiveTitle: 'Archivio {{term}}',
     archiveLead:
-      'Le tecniche di questo mondo e chi le padroneggia. Clicca su una tecnica per i dettagli.',
+      'I poteri e le abilità di questo mondo, e chi li padroneggia. Clicca su una voce per i dettagli.',
     searchPlaceholder: 'Cerca {{term}}…',
     typeFilterAll: 'Tutti i tipi',
     typeFilterAria: 'Filtra per tipo di {{term}}',
-    natureFilterAll: 'Tutte le nature',
-    natureFilterAria: 'Filtra per natura del chakra',
+    natureFilterAll: 'Tutti gli attributi',
+    natureFilterAria: 'Filtra per attributo',
     rankLabel: 'Rango {{rank}}',
-    empty: 'Nessuna tecnica',
+    empty: 'Nessun risultato',
     emptyDescription: 'Nessun risultato per i filtri attivi.',
-    featuredTitle: 'Tecniche iconiche',
-    featuredHint: 'Le tecniche più rappresentative',
+    featuredTitle: 'In evidenza',
+    featuredHint: 'Le voci più rappresentative',
   },
   arcs: {
     archiveTitle: 'Archi narrativi',
