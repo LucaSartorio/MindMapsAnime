@@ -1,0 +1,166 @@
+import type { Faction } from '@/types';
+
+/**
+ * Ciurme e fazioni di One Piece — popolamento per mare, a partire da East Blue.
+ *
+ * `type: 'crew'` identifica le ciurme pirata (etichetta "Ciurme"); le grandi
+ * organizzazioni del mondo (Marina, Governo Mondiale, Armata Rivoluzionaria)
+ * usano `type: 'organization'`. I `characterIds`/`leaderIds` puntano a
+ * personaggi definiti in `characters*.ts`.
+ */
+export const onepieceFactions: Faction[] = [
+  /* ===================== CIURME & FAZIONI · EAST BLUE ===================== */
+  {
+    id: 'faction-op-straw-hat-pirates',
+    worldId: 'world-onepiece',
+    type: 'crew',
+    name: 'Straw Hat Pirates',
+    localizedName: { it: 'Pirati di Cappello di Paglia', en: 'Straw Hat Pirates' },
+    description: {
+      it: "La ciurma di Monkey D. Rufy, nata in East Blue. Pochi membri ma straordinari, uniti dal sogno di ciascuno e dalla rotta verso il One Piece.",
+      en: "Monkey D. Luffy's crew, born in East Blue. Few members but extraordinary, bound by each one's dream and the route toward the One Piece.",
+    },
+    leaderIds: ['char-op-luffy'],
+    characterIds: [
+      'char-op-luffy',
+      'char-op-zoro',
+      'char-op-nami',
+      'char-op-usopp',
+      'char-op-sanji',
+    ],
+    locationIds: ['loc-op-foosha-village'],
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['ciurma', 'protagonisti', 'east-blue'],
+  },
+  {
+    id: 'faction-op-red-hair-pirates',
+    worldId: 'world-onepiece',
+    type: 'crew',
+    name: 'Red Hair Pirates',
+    localizedName: { it: 'Pirati del Rosso', en: 'Red Hair Pirates' },
+    description: {
+      it: "La ciurma dell'Imperatore «Capelli Rossi» Shanks, che ispirò Rufy a Foosha affidandogli il cappello di paglia.",
+      en: "The crew of the Emperor 'Red-Haired' Shanks, who inspired Luffy at Foosha by entrusting him with the straw hat.",
+    },
+    leaderIds: ['char-op-shanks'],
+    characterIds: ['char-op-shanks'],
+    locationIds: ['loc-op-foosha-village'],
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['ciurma', 'imperatori', 'east-blue'],
+  },
+  {
+    id: 'faction-op-marines',
+    worldId: 'world-onepiece',
+    type: 'organization',
+    name: 'Marines',
+    localizedName: { it: 'Marina', en: 'Marines' },
+    description: {
+      it: "Le forze armate marittime del Governo Mondiale, garanti dell'ordine e nemiche dei pirati. Onnipresenti dai quartieri di East Blue fino al New World.",
+      en: "The maritime armed forces of the World Government, guarantors of order and enemies of pirates. Ever-present from the East Blue bases to the New World.",
+    },
+    characterIds: ['char-op-coby', 'char-op-morgan', 'char-op-smoker', 'char-op-garp'],
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['marina', 'governo-mondiale'],
+  },
+  {
+    id: 'faction-op-world-government',
+    worldId: 'world-onepiece',
+    type: 'organization',
+    name: 'World Government',
+    localizedName: { it: 'Governo Mondiale', en: 'World Government' },
+    description: {
+      it: "L'alleanza di oltre 170 nazioni che governa il mondo, retta dai Cinque Astri di Saggezza e, nell'ombra, da Imu. Custode dei segreti del Secolo Vuoto.",
+      en: "The alliance of over 170 nations that rules the world, led by the Five Elders and, in the shadows, by Imu. Keeper of the secrets of the Void Century.",
+    },
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['governo-mondiale'],
+  },
+  {
+    id: 'faction-op-revolutionary-army',
+    worldId: 'world-onepiece',
+    type: 'organization',
+    name: 'Revolutionary Army',
+    localizedName: { it: 'Armata Rivoluzionaria', en: 'Revolutionary Army' },
+    description: {
+      it: "Il movimento che combatte il Governo Mondiale e i Draghi Celesti, guidato da Monkey D. Dragon, il padre di Rufy. Compare per la prima volta a Loguetown.",
+      en: "The movement fighting the World Government and the Celestial Dragons, led by Monkey D. Dragon, Luffy's father. It first appears at Loguetown.",
+    },
+    leaderIds: ['char-op-dragon'],
+    characterIds: ['char-op-dragon'],
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['rivoluzionari'],
+  },
+  {
+    id: 'faction-op-buggy-pirates',
+    worldId: 'world-onepiece',
+    type: 'crew',
+    name: 'Buggy Pirates',
+    localizedName: { it: 'Pirati di Bagy', en: 'Buggy Pirates' },
+    description: {
+      it: "La ciurma del pagliaccio Bagy il Clown, già mozzo sulla nave di Roger. Razzia Orange Town con il potere del Frutto Frammento.",
+      en: "The crew of Buggy the Clown, once a cabin boy on Roger's ship. It plunders Orange Town with the power of the Chop-Chop Fruit.",
+    },
+    leaderIds: ['char-op-buggy'],
+    characterIds: ['char-op-buggy'],
+    locationIds: ['loc-op-orange-town'],
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['ciurma', 'east-blue'],
+  },
+  {
+    id: 'faction-op-black-cat-pirates',
+    worldId: 'world-onepiece',
+    type: 'crew',
+    name: 'Black Cat Pirates',
+    localizedName: { it: 'Pirati del Gatto Nero', en: 'Black Cat Pirates' },
+    description: {
+      it: "La ciurma del Capitano Kuro «dai Mille Piani», che tramò per tre anni sotto mentite spoglie per derubare Syrup Village.",
+      en: "The crew of Captain Kuro 'of a Thousand Plans', who schemed for three years under a false identity to rob Syrup Village.",
+    },
+    leaderIds: ['char-op-kuro'],
+    characterIds: ['char-op-kuro'],
+    locationIds: ['loc-op-syrup-village'],
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['ciurma', 'east-blue'],
+  },
+  {
+    id: 'faction-op-krieg-pirates',
+    worldId: 'world-onepiece',
+    type: 'crew',
+    name: 'Krieg Pirates',
+    localizedName: { it: 'Pirati di Krieg', en: 'Krieg Pirates' },
+    description: {
+      it: "L'armata di Don Krieg, il «più infido di East Blue», dotata di armi e veleni. Devastata nella Grand Line da Mihawk e poi sconfitta al Baratie.",
+      en: "Don Krieg's armada, the 'most wicked in East Blue', armed with weapons and poisons. Wrecked in the Grand Line by Mihawk and then defeated at the Baratie.",
+    },
+    leaderIds: ['char-op-don-krieg'],
+    characterIds: ['char-op-don-krieg'],
+    locationIds: ['loc-op-baratie'],
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['ciurma', 'east-blue'],
+  },
+  {
+    id: 'faction-op-arlong-pirates',
+    worldId: 'world-onepiece',
+    type: 'crew',
+    name: 'Arlong Pirates',
+    localizedName: { it: 'Pirati di Arlong', en: 'Arlong Pirates' },
+    description: {
+      it: "La ciurma di uomini-pesce di Arlong la Sega, che soggiogò le Isole Conomi e ridusse Nami a cartografa schiava. Suprematisti che disprezzano gli umani.",
+      en: "Arlong the Saw's Fish-Man crew, which subjugated the Conomi Islands and enslaved Nami as their cartographer. Supremacists who despise humans.",
+    },
+    leaderIds: ['char-op-arlong'],
+    characterIds: ['char-op-arlong'],
+    locationIds: ['loc-op-arlong-park', 'loc-op-conomi-islands'],
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['ciurma', 'uomini-pesce', 'east-blue'],
+  },
+];

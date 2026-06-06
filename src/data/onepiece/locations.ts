@@ -24,7 +24,7 @@ export const onepieceLocationsEastBlue: Location[] = [
     nationId: 'nation-op-east-blue',
     importance: 'main',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['east-blue', 'isola', 'rufy'],
   },
   {
@@ -43,7 +43,7 @@ export const onepieceLocationsEastBlue: Location[] = [
     nationId: 'nation-op-east-blue',
     importance: 'main',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['east-blue', 'villaggio', 'rufy', 'shanks'],
   },
   {
@@ -62,7 +62,7 @@ export const onepieceLocationsEastBlue: Location[] = [
     nationId: 'nation-op-east-blue',
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['east-blue', 'regno', 'sabo'],
   },
   {
@@ -81,7 +81,7 @@ export const onepieceLocationsEastBlue: Location[] = [
     nationId: 'nation-op-east-blue',
     importance: 'main',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['east-blue', 'marina', 'zoro'],
   },
   {
@@ -100,7 +100,7 @@ export const onepieceLocationsEastBlue: Location[] = [
     nationId: 'nation-op-east-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['east-blue', 'isola'],
   },
   {
@@ -119,7 +119,7 @@ export const onepieceLocationsEastBlue: Location[] = [
     nationId: 'nation-op-east-blue',
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['east-blue', 'bagy'],
   },
   {
@@ -138,7 +138,7 @@ export const onepieceLocationsEastBlue: Location[] = [
     nationId: 'nation-op-east-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['east-blue', 'isola'],
   },
   {
@@ -157,7 +157,7 @@ export const onepieceLocationsEastBlue: Location[] = [
     nationId: 'nation-op-east-blue',
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['east-blue', 'isola'],
   },
   {
@@ -176,7 +176,7 @@ export const onepieceLocationsEastBlue: Location[] = [
     nationId: 'nation-op-east-blue',
     importance: 'main',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['east-blue', 'villaggio', 'usop', 'going-merry'],
   },
   {
@@ -195,7 +195,7 @@ export const onepieceLocationsEastBlue: Location[] = [
     nationId: 'nation-op-east-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['east-blue', 'isola'],
   },
   {
@@ -214,7 +214,7 @@ export const onepieceLocationsEastBlue: Location[] = [
     nationId: 'nation-op-east-blue',
     importance: 'main',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['east-blue', 'sanji', 'ristorante'],
   },
   {
@@ -233,7 +233,7 @@ export const onepieceLocationsEastBlue: Location[] = [
     nationId: 'nation-op-east-blue',
     importance: 'main',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['east-blue', 'nami', 'arlong'],
   },
   {
@@ -252,7 +252,7 @@ export const onepieceLocationsEastBlue: Location[] = [
     nationId: 'nation-op-east-blue',
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['east-blue', 'villaggio', 'nami'],
   },
   {
@@ -271,7 +271,7 @@ export const onepieceLocationsEastBlue: Location[] = [
     nationId: 'nation-op-east-blue',
     importance: 'main',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['east-blue', 'arlong', 'nami', 'tritoni'],
   },
   {
@@ -290,7 +290,7 @@ export const onepieceLocationsEastBlue: Location[] = [
     nationId: 'nation-op-east-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['east-blue', 'villaggio'],
   },
   {
@@ -309,7 +309,7 @@ export const onepieceLocationsEastBlue: Location[] = [
     nationId: 'nation-op-east-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['east-blue', 'isola'],
   },
   {
@@ -328,7 +328,7 @@ export const onepieceLocationsEastBlue: Location[] = [
     nationId: 'nation-op-east-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['east-blue', 'regno'],
   },
   {
@@ -347,7 +347,7 @@ export const onepieceLocationsEastBlue: Location[] = [
     nationId: 'nation-op-east-blue',
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['east-blue', 'ponte', 'robin', 'governo-mondiale'],
   },
   {
@@ -366,7 +366,7 @@ export const onepieceLocationsEastBlue: Location[] = [
     nationId: 'nation-op-east-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['east-blue', 'isola'],
   },
   {
@@ -385,7 +385,7 @@ export const onepieceLocationsEastBlue: Location[] = [
     nationId: 'nation-op-east-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['east-blue', 'isola'],
   },
   {
@@ -404,7 +404,7 @@ export const onepieceLocationsEastBlue: Location[] = [
     nationId: 'nation-op-east-blue',
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['east-blue', 'villaggio', 'zoro', 'wano'],
   },
   {
@@ -423,7 +423,7 @@ export const onepieceLocationsEastBlue: Location[] = [
     nationId: 'nation-op-east-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['east-blue', 'isola'],
   },
   {
@@ -442,7 +442,7 @@ export const onepieceLocationsEastBlue: Location[] = [
     nationId: 'nation-op-east-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['east-blue', 'regno'],
   },
   {
@@ -461,7 +461,7 @@ export const onepieceLocationsEastBlue: Location[] = [
     nationId: 'nation-op-east-blue',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['east-blue', 'regione'],
   },
   {
@@ -480,7 +480,7 @@ export const onepieceLocationsEastBlue: Location[] = [
     nationId: 'nation-op-east-blue',
     importance: 'main',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['east-blue', 'roger', 'loguetown'],
   },
   {
@@ -499,7 +499,7 @@ export const onepieceLocationsEastBlue: Location[] = [
     nationId: 'nation-op-east-blue',
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['east-blue', 'isola', 'loguetown'],
   },
 ];

@@ -10,7 +10,7 @@ import { SourceNotice } from '@/components/common/SourceNotice';
 import { useMapStore, useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText } from '@/utils/localization';
-import { getFeaturedIds, humanizeId } from '@/lib/worldConfig';
+import { getFactionsTerm, getFeaturedIds, humanizeId } from '@/lib/worldConfig';
 import { filterFactionsBySeries } from '@/lib/filters';
 
 interface ClansAndFactionsPageProps {
@@ -22,9 +22,10 @@ interface ClansAndFactionsPageProps {
  * derivati dal dataset (solo quelli realmente usati dal mondo); tipi
  * sconosciuti ottengono un'etichetta "humanizzata" automaticamente.
  */
-const FACTION_TYPE_ORDER = ['clan', 'organization', 'army', 'group', 'village'];
+const FACTION_TYPE_ORDER = ['crew', 'clan', 'organization', 'army', 'group', 'village'];
 const FACTION_TYPE_TKEY: Record<string, string> = {
   clan: 'clans.types.clan',
+  crew: 'clans.types.crew',
   organization: 'clans.types.organization',
   army: 'clans.types.army',
   group: 'clans.types.group',
@@ -125,7 +126,7 @@ export function ClansAndFactionsPage({ dataset }: ClansAndFactionsPageProps) {
           {dataset.world.title}
         </p>
         <h1 className="font-display text-3xl text-ink-100">
-          {t('clans.archiveTitle')}
+          {getFactionsTerm(dataset.world, locale, t('clans.archiveTitle'))}
         </h1>
         <p className="text-sm text-ink-300 max-w-2xl">{t('clans.archiveLead')}</p>
       </header>

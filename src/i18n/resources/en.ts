@@ -259,6 +259,7 @@ export const en = {
     types: {
       all: 'All',
       clan: 'Clans',
+      crew: 'Crews',
       organization: 'Organizations',
       army: 'Armies',
       group: 'Groups',

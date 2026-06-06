@@ -262,6 +262,7 @@ export const it = {
     types: {
       all: 'Tutti',
       clan: 'Clan',
+      crew: 'Ciurme',
       organization: 'Organizzazioni',
       army: 'Eserciti',
       group: 'Gruppi',

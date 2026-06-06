@@ -7,6 +7,11 @@ import { onepieceLocationsParadise } from './locationsParadise';
 import { onepieceLocationsRedLine } from './locationsRedLine';
 import { onepieceLocationsNewWorld } from './locationsNewWorld';
 import { onepieceLocationsBlues } from './locationsBlues';
+import { onepieceFactions } from './factions';
+import { onepieceCharactersEastBlue } from './characters';
+import { onepieceArcs } from './arcs';
+import { onepieceEvents } from './events';
+import { onepieceRoutes } from './routes';
 import { onepieceAssets } from './assets';
 
 const onepiece = animeWorlds.find((w) => w.slug === 'onepiece')!;
@@ -21,10 +26,14 @@ const onepiece = animeWorlds.find((w) => w.slug === 'onepiece')!;
  * marcate `needs_verification` finché non si rifiniscono sull'immagine ad alta
  * risoluzione.
  *
- * Fasi successive (da popolare): personaggi (ciurma di Cappello di Paglia,
- * Imperatori, Marina, Corsari…), fazioni, archi narrativi, eventi della
- * timeline, rotte (il viaggio della ciurma) e i Frutti del Diavolo come
- * `jutsu`/abilità.
+ * EAST BLUE COMPLETO: POI verificati (allineati sulla mappa), le ciurme e i
+ * personaggi della Saga di East Blue (i 5 Cappello di Paglia + alleati,
+ * Marina e antagonisti), i 6 archi narrativi, la timeline degli eventi e il
+ * percorso della ciurma da Foosha a Reverse Mountain.
+ *
+ * Fasi successive (in ordine): South Blue, North Blue, West Blue, Calm Belt,
+ * Red Line — POI verificati, percorsi, archi e timeline per ciascuno — e i
+ * Frutti del Diavolo come `jutsu`/abilità.
  */
 export const onepieceDataset: WorldDataset = {
   world: onepiece,
@@ -37,11 +46,11 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceLocationsNewWorld,
     ...onepieceLocationsBlues,
   ],
-  characters: [],
-  factions: [],
-  arcs: [],
-  events: [],
-  routes: [],
+  characters: [...onepieceCharactersEastBlue],
+  factions: onepieceFactions,
+  arcs: onepieceArcs,
+  events: onepieceEvents,
+  routes: onepieceRoutes,
   assets: onepieceAssets,
 };
 

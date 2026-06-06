@@ -781,6 +781,12 @@ export interface WorldConfig {
   characterRoles?: LabeledOption[];
   /** Etichetta del facet "nazione" (es. "Nazione", "Continente", "Mare"). */
   nationTerm?: Localizable;
+  /**
+   * Etichetta dell'archivio fazioni / voce di navigazione (es. Naruto:
+   * "Clan & Fazioni"; One Piece: "Ciurme & Fazioni"). Se assente si usa
+   * l'etichetta i18n generica.
+   */
+  factionsTerm?: Localizable;
   /** Liste curate per le vetrine delle pagine archivio. */
   featured?: WorldFeaturedConfig;
 }
