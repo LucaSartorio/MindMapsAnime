@@ -33,4 +33,20 @@ export const onepieceMapLevels: MapLevel[] = [
     width: ONEPIECE_MAP_VIEWBOX.width,
     height: ONEPIECE_MAP_VIEWBOX.height,
   },
+  {
+    id: 'op-map-totland',
+    worldId: 'world-onepiece',
+    slug: 'totland',
+    name: 'Totland (Whole Cake Island)',
+    localizedName: { it: 'Totland (Whole Cake Island)', en: 'Totland (Whole Cake Island)' },
+    description: {
+      it: "Sotto-mappa del territorio di Big Mom: l'arcipelago di Totland e le sue isole-dolce attorno a Whole Cake Island. Posizioni concettuali.",
+      en: "Sub-map of Big Mom's domain: the Totland archipelago and its sweets-islands around Whole Cake Island. Conceptual positions.",
+    },
+    parentLevelId: 'op-map-world',
+    triggerLocationId: 'loc-op-whole-cake-island',
+    backgroundAssetId: 'op-totland-submap-placeholder',
+    width: 1200,
+    height: 800,
+  },
 ];

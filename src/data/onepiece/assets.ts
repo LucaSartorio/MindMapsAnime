@@ -38,6 +38,19 @@ export const onepieceAssets: AssetReference[] = [
     },
   },
   {
+    id: 'op-totland-submap-placeholder',
+    worldId: 'world-onepiece',
+    name: 'Totland sub-map (placeholder SVG)',
+    kind: 'placeholder',
+    source: 'local',
+    license: 'placeholder/CC0',
+    author: 'local',
+    notes: {
+      it: 'Placeholder concettuale della sotto-mappa di Totland (schema, posizioni indicative).',
+      en: 'Conceptual placeholder for the Totland sub-map (schematic, indicative positions).',
+    },
+  },
+  {
     id: 'op-world-map-placeholder',
     worldId: 'world-onepiece',
     name: 'One Piece world map (placeholder SVG)',

@@ -97,6 +97,7 @@ export const onepieceLocationsNewWorld: Location[] = [
       en: "The cake-island capital of Totland, domain of the Empress Big Mom. A fairy-tale yet cruel realm where the crew rescues Sanji from his arranged marriage with the Vinsmoke.",
     },
     nationId: 'nation-op-grand-line-new-world',
+    subMapLevelId: 'op-map-totland',
     importance: 'main',
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',

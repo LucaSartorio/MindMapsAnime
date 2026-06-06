@@ -276,17 +276,17 @@ export const en = {
   jutsu: {
     archiveTitle: '{{term}} archive',
     archiveLead:
-      "This world's techniques and who wields them. Click a technique for details.",
+      "This world's powers and abilities, and who wields them. Click an entry for details.",
     searchPlaceholder: 'Search {{term}}…',
     typeFilterAll: 'All types',
     typeFilterAria: 'Filter by {{term}} type',
-    natureFilterAll: 'All natures',
-    natureFilterAria: 'Filter by chakra nature',
+    natureFilterAll: 'All attributes',
+    natureFilterAria: 'Filter by attribute',
     rankLabel: 'Rank {{rank}}',
-    empty: 'No techniques',
+    empty: 'No results',
     emptyDescription: 'No results for the active filters.',
-    featuredTitle: 'Iconic techniques',
-    featuredHint: 'The most representative techniques',
+    featuredTitle: 'Featured',
+    featuredHint: 'The most representative entries',
   },
   arcs: {
     archiveTitle: 'Story arcs',
