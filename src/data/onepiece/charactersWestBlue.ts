@@ -22,6 +22,7 @@ export const onepieceCharactersWestBlue: Character[] = [
       { targetCharacterId: 'char-op-saul', label: 'Protettore d\'infanzia' },
       { targetCharacterId: 'char-op-crocodile', label: 'Ex socio nella Baroque Works' },
     ],
+    jutsuIds: ['fruit-op-hana-hana'],
     arcIds: ['arc-op-ohara', 'arc-op-alabasta'],
     shortDescription: {
       it: "Archeologa della ciurma e unica persona al mondo capace di leggere i Poneglyph. Unica superstite di Ohara, braccata dal Governo Mondiale fin da bambina; si unirà ai Cappello di Paglia dopo Alabasta.",

@@ -23,6 +23,7 @@ export const onepieceCharactersEastBlue: Character[] = [
     factionIds: ['faction-op-straw-hat-pirates'],
     family: ['char-op-dragon', 'char-op-garp'],
     allies: ['char-op-coby'],
+    jutsuIds: ['fruit-op-hito-hito-nika'],
     relationships: [
       { targetCharacterId: 'char-op-shanks', label: 'Idolo / mentore' },
     ],

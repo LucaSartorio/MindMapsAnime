@@ -18,6 +18,7 @@ export const onepieceCharactersNorthBlue: Character[] = [
     nationId: 'nation-op-north-blue',
     factionIds: ['faction-op-heart-pirates'],
     enemies: ['char-op-doflamingo'],
+    jutsuIds: ['fruit-op-ope-ope'],
     relationships: [
       { targetCharacterId: 'char-op-corazon', label: 'Salvatore' },
     ],
@@ -44,6 +45,7 @@ export const onepieceCharactersNorthBlue: Character[] = [
     factionIds: ['faction-op-donquixote-pirates'],
     family: ['char-op-corazon'],
     enemies: ['char-op-law'],
+    jutsuIds: ['fruit-op-ito-ito'],
     relationships: [
       { targetCharacterId: 'char-op-corazon', label: 'Fratello minore (da lui ucciso)' },
     ],

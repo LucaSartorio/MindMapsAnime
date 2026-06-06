@@ -18,6 +18,7 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
     locationIds: ['loc-op-whole-cake-island', 'loc-op-wano'],
     factionIds: ['faction-op-big-mom-pirates', 'faction-op-yonko'],
     enemies: ['char-op-luffy'],
+    jutsuIds: ['fruit-op-soru-soru'],
     arcIds: ['arc-op-whole-cake', 'arc-op-wano'],
     shortDescription: {
       it: "Imperatrice e regina di Totland, utente del Frutto Anima Anima: ruba gli anni di vita altrui e infonde anima negli oggetti. Brama un mondo in cui tutte le razze convivano sotto il suo dominio.",
@@ -141,6 +142,7 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
     locationIds: ['loc-op-onigashima', 'loc-op-wano'],
     factionIds: ['faction-op-beasts-pirates', 'faction-op-yonko'],
     enemies: ['char-op-luffy'],
+    jutsuIds: ['fruit-op-uo-uo'],
     arcIds: ['arc-op-wano'],
     shortDescription: {
       it: "Imperatore e «creatura più forte del mondo», utente di uno Zoan mitologico del dragone. Da Onigashima opprime Wano e mira a scatenare una nuova grande guerra con un esercito di SMILE.",

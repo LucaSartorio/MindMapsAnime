@@ -173,6 +173,16 @@ export const animeWorlds: AnimeWorld[] = [
       nationTerm: { it: 'Mare / Isola', en: 'Sea / Island' },
       factionsTerm: { it: 'Ciurme & Fazioni', en: 'Crews & Factions' },
       placesTerm: { it: 'luoghi', en: 'places' },
+      featured: {
+        abilities: [
+          'fruit-op-hito-hito-nika',
+          'fruit-op-mera-mera',
+          'fruit-op-ope-ope',
+          'fruit-op-uo-uo',
+          'fruit-op-yami-yami',
+          'fruit-op-gura-gura',
+        ],
+      },
     },
   },
   {

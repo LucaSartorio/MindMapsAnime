@@ -18,6 +18,7 @@ export const onepieceCharactersParadise: Character[] = [
     villageLocationId: 'loc-op-drum-island',
     factionIds: ['faction-op-straw-hat-pirates'],
     teachers: ['char-op-hiluluk', 'char-op-kureha'],
+    jutsuIds: ['fruit-op-hito-hito'],
     arcIds: ['arc-op-drum'],
     shortDescription: {
       it: "Medico della ciurma: una renna che ha mangiato il Frutto Homo Homo e può parlare e trasformarsi. Sogna di diventare un dottore capace di curare ogni male.",

@@ -53,9 +53,9 @@ export const onepieceCharactersParadise2: Character[] = [
     importance: 'major',
     role: ['antagonist'],
     gender: 'male',
-    factionIds: ['faction-op-cp9'],
+    factionIds: ['faction-op-cp9', 'faction-op-cp0'],
     enemies: ['char-op-luffy'],
-    arcIds: ['arc-op-water-seven', 'arc-op-enies-lobby'],
+    arcIds: ['arc-op-water-seven', 'arc-op-enies-lobby', 'arc-op-egghead'],
     shortDescription: {
       it: "Il più letale agente della CP9, infiltrato a Water Seven come carpentiere. Utente di uno Zoan del leopardo e maestro del Rokushiki, incarna la «Giustizia Oscura» del Governo Mondiale.",
       en: "The deadliest CP9 agent, infiltrated into Water Seven as a shipwright. A leopard Zoan user and master of Rokushiki, he embodies the World Government's 'Dark Justice'.",
@@ -132,6 +132,7 @@ export const onepieceCharactersParadise2: Character[] = [
     role: ['supporting'],
     gender: 'male',
     factionIds: ['faction-op-straw-hat-pirates'],
+    jutsuIds: ['fruit-op-yomi-yomi'],
     arcIds: ['arc-op-thriller-bark'],
     shortDescription: {
       it: "Musicista della ciurma: uno scheletro vivente riportato in vita dal Frutto Rinascita. Attende da decenni di riunirsi alla balena Laboon a Twin Cape. Si unisce ai Cappello di Paglia a Thriller Bark.",
