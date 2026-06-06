@@ -11,18 +11,22 @@ import { onepieceFactions } from './factions';
 import { onepieceFactionsSouthBlue } from './factionsSouthBlue';
 import { onepieceFactionsNorthBlue } from './factionsNorthBlue';
 import { onepieceFactionsWestBlue } from './factionsWestBlue';
+import { onepieceFactionsRedLine } from './factionsRedLine';
 import { onepieceCharactersEastBlue } from './characters';
 import { onepieceCharactersSouthBlue } from './charactersSouthBlue';
 import { onepieceCharactersNorthBlue } from './charactersNorthBlue';
 import { onepieceCharactersWestBlue } from './charactersWestBlue';
+import { onepieceCharactersRedLine } from './charactersRedLine';
 import { onepieceArcs } from './arcs';
 import { onepieceArcsSouthBlue } from './arcsSouthBlue';
 import { onepieceArcsNorthBlue } from './arcsNorthBlue';
 import { onepieceArcsWestBlue } from './arcsWestBlue';
+import { onepieceArcsRedLine } from './arcsRedLine';
 import { onepieceEvents } from './events';
 import { onepieceEventsSouthBlue } from './eventsSouthBlue';
 import { onepieceEventsNorthBlue } from './eventsNorthBlue';
 import { onepieceEventsWestBlue } from './eventsWestBlue';
+import { onepieceEventsRedLine } from './eventsRedLine';
 import { onepieceRoutes } from './routes';
 import { onepieceAssets } from './assets';
 
@@ -63,24 +67,28 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceCharactersSouthBlue,
     ...onepieceCharactersNorthBlue,
     ...onepieceCharactersWestBlue,
+    ...onepieceCharactersRedLine,
   ],
   factions: [
     ...onepieceFactions,
     ...onepieceFactionsSouthBlue,
     ...onepieceFactionsNorthBlue,
     ...onepieceFactionsWestBlue,
+    ...onepieceFactionsRedLine,
   ],
   arcs: [
     ...onepieceArcs,
     ...onepieceArcsSouthBlue,
     ...onepieceArcsNorthBlue,
     ...onepieceArcsWestBlue,
+    ...onepieceArcsRedLine,
   ],
   events: [
     ...onepieceEvents,
     ...onepieceEventsSouthBlue,
     ...onepieceEventsNorthBlue,
     ...onepieceEventsWestBlue,
+    ...onepieceEventsRedLine,
   ],
   routes: onepieceRoutes,
   assets: onepieceAssets,
