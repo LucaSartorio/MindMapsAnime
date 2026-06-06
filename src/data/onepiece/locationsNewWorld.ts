@@ -128,8 +128,8 @@ export const onepieceLocationsNewWorld: Location[] = [
     name: 'Wano Kingdom',
     localizedName: { it: 'Paese di Wano', en: 'Wano Kingdom' },
     type: 'nation',
-    x: 637,
-    y: 460,
+    x: 632,
+    y: 445,
     shortDescription: {
       it: "Nazione isolazionista in stile feudale giapponese, chiusa al mondo da secoli. Patria dei Kozuki e dei migliori spadai; teatro della guerra contro lo shogun Orochi e l'Imperatore Kaido.",
       en: "An isolationist nation in feudal-Japanese style, closed to the world for centuries. Homeland of the Kozuki and the finest swordsmiths; stage of the war against shogun Orochi and the Emperor Kaido.",
@@ -147,8 +147,8 @@ export const onepieceLocationsNewWorld: Location[] = [
     name: 'Onigashima',
     localizedName: { it: 'Onigashima', en: 'Onigashima' },
     type: 'landmark',
-    x: 668,
-    y: 492,
+    x: 650,
+    y: 448,
     shortDescription: {
       it: "L'isola-teschio degli oni al largo di Wano, roccaforte dell'Imperatore Kaido e dei Pirati delle Cento Bestie. Teatro della battaglia decisiva dell'alleanza ninja-pirata-mink-samurai.",
       en: "The skull-shaped oni island off Wano, stronghold of the Emperor Kaido and the Beasts Pirates. Stage of the decisive battle of the ninja-pirate-mink-samurai alliance.",
@@ -223,8 +223,8 @@ export const onepieceLocationsNewWorld: Location[] = [
     name: 'Sphinx Island',
     localizedName: { it: 'Isola di Sphinx', en: 'Sphinx Island' },
     type: 'village',
-    x: 612,
-    y: 512,
+    x: 703,
+    y: 474,
     shortDescription: {
       it: "Il villaggio natale di Edward Newgate (Barbabianca), che lo considerava l'unico paese che lo aveva accolto come una famiglia.",
       en: "The home village of Edward Newgate (Whitebeard), who regarded it as the only country that welcomed him as family.",
@@ -356,8 +356,8 @@ export const onepieceLocationsNewWorld: Location[] = [
     name: 'Winner Island',
     localizedName: { it: 'Isola di Winner', en: 'Winner Island' },
     type: 'landmark',
-    x: 742,
-    y: 462,
+    x: 723,
+    y: 450,
     shortDescription: {
       it: "Isola del New World nei pressi di Wano.",
       en: 'A New World island near Wano.',
