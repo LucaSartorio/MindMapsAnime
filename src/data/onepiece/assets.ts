@@ -4,11 +4,10 @@ import type { AssetReference } from '@/types';
  * Asset One Piece.
  *
  * IMPORTANTE copyright: nessuna immagine ufficiale (logo/screen/scan) è inclusa
- * nel repo. La world map qui referenziata è una mappa di riferimento fornita
- * dall'utente: va trattata come materiale da verificare (`needs_verification`)
- * e attribuita all'autore originale. Il file binario NON è committato: va
- * copiato manualmente nel percorso indicato da `url` (vedi `WorldMapBackground`,
- * che mostra uno stato neutro finché manca).
+ * nel repo. La world map qui referenziata è una mappa di riferimento fan-made
+ * fornita dall'utente (presente nel repo al percorso indicato da `url`): va
+ * trattata come materiale da verificare (`needs_verification`) e attribuita
+ * all'autore originale. Il mondo rappresentato è © Eiichiro Oda / Shueisha.
  */
 export const onepieceAssets: AssetReference[] = [
   {
@@ -34,8 +33,8 @@ export const onepieceAssets: AssetReference[] = [
     license: 'fan-art / da verificare',
     author: 'da attribuire',
     notes: {
-      it: "Mappa del mondo di One Piece usata come riferimento geografico (viewBox 2000 × 1000). Non è materiale ufficiale: il mondo rappresentato è © Eiichiro Oda / Shueisha. Il file va copiato manualmente in public/assets/worlds/onepiece/maps/onepiece-world-map.jpeg.",
-      en: 'One Piece world map used as a geographic reference (viewBox 2000 × 1000). Not official material: the depicted world is © Eiichiro Oda / Shueisha. The file must be copied manually into public/assets/worlds/onepiece/maps/onepiece-world-map.jpeg.',
+      it: "Mappa del mondo di One Piece (4096 × 2048 px) usata come riferimento geografico, mappata sul piano viewBox 2000 × 1000. Non è materiale ufficiale: il mondo rappresentato è © Eiichiro Oda / Shueisha. File incluso in public/assets/worlds/onepiece/maps/onepiece-world-map.jpeg.",
+      en: 'One Piece world map (4096 × 2048 px) used as a geographic reference, mapped onto the 2000 × 1000 viewBox plane. Not official material: the depicted world is © Eiichiro Oda / Shueisha. File included at public/assets/worlds/onepiece/maps/onepiece-world-map.jpeg.',
     },
   },
   {
