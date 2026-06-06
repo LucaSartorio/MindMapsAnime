@@ -123,6 +123,7 @@ export const onepieceFactionsRedLine: Faction[] = [
       'char-op-doflamingo',
       'char-op-kuma',
       'char-op-crocodile',
+      'char-op-moria',
     ],
     canonStatus: 'canon',
     referenceStatus: 'verified',

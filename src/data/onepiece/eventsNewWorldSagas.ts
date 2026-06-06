@@ -1,0 +1,62 @@
+import type { TimelineEvent } from '@/types';
+
+/** Eventi della timeline del New World: Punk Hazard e Dressrosa. */
+export const onepieceEventsNewWorldSagas: TimelineEvent[] = [
+  {
+    id: 'evt-op-ph-alliance',
+    worldId: 'world-onepiece',
+    title: { it: "L'alleanza Rufy-Law", en: 'The Luffy-Law alliance' },
+    description: {
+      it: "A Punk Hazard la ciurma sgomina il laboratorio di Caesar Clown, libera i bambini cavia e cattura lo scienziato. Rufy e Trafalgar Law siglano un'alleanza ufficiale con un solo obiettivo: detronizzare l'Imperatore Kaido.",
+      en: "On Punk Hazard the crew smashes Caesar Clown's lab, frees the test-subject children and captures the scientist. Luffy and Trafalgar Law seal an official alliance with one goal: to dethrone the Emperor Kaido.",
+    },
+    period: { it: 'New World · Punk Hazard', en: 'New World · Punk Hazard' },
+    arcId: 'arc-op-punk-hazard',
+    locationId: 'loc-op-punk-hazard',
+    characterIds: ['char-op-luffy', 'char-op-law', 'char-op-caesar', 'char-op-smoker'],
+    factionIds: ['faction-op-straw-hat-pirates', 'faction-op-heart-pirates'],
+    order: 62,
+    canon: 'canon',
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['punk-hazard', 'law', 'alleanza'],
+  },
+  {
+    id: 'evt-op-doflamingo-defeat',
+    worldId: 'world-onepiece',
+    title: { it: 'La caduta di Doflamingo', en: "Doflamingo's fall" },
+    description: {
+      it: "Dopo una battaglia che coinvolge l'intera Dressrosa, Rufy abbatte il Corsaro Donquijote Doflamingo, ponendo fine al suo regno del terrore e alla fabbrica di SMILE che riforniva Kaido.",
+      en: "After a battle engulfing all of Dressrosa, Luffy strikes down the Warlord Donquixote Doflamingo, ending his reign of terror and the SMILE factory that supplied Kaido.",
+    },
+    period: { it: 'New World · Dressrosa', en: 'New World · Dressrosa' },
+    arcId: 'arc-op-dressrosa',
+    locationId: 'loc-op-dressrosa',
+    characterIds: ['char-op-luffy', 'char-op-law', 'char-op-doflamingo', 'char-op-kyros'],
+    factionIds: ['faction-op-donquixote-pirates', 'faction-op-straw-hat-pirates'],
+    order: 64,
+    canon: 'canon',
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['dressrosa', 'doflamingo'],
+  },
+  {
+    id: 'evt-op-sabo-mera-mera',
+    worldId: 'world-onepiece',
+    title: { it: 'Sabo eredita il fuoco di Ace', en: "Sabo inherits Ace's flame" },
+    description: {
+      it: "Nel torneo del Colosseo Corrida, Sabo — fratello giurato di Rufy e Ace — conquista il Frutto Mera Mera, ereditando la volontà di fuoco del fratello defunto. La liberazione di Dressrosa accende mille nuove alleanze.",
+      en: "In the Corrida Colosseum tournament, Sabo — sworn brother of Luffy and Ace — wins the Flame-Flame Fruit, inheriting his late brother's will of fire. The liberation of Dressrosa kindles a thousand new alliances.",
+    },
+    period: { it: 'New World · Dressrosa', en: 'New World · Dressrosa' },
+    arcId: 'arc-op-dressrosa',
+    locationId: 'loc-op-dressrosa',
+    characterIds: ['char-op-sabo', 'char-op-luffy', 'char-op-rebecca'],
+    factionIds: ['faction-op-revolutionary-army'],
+    order: 65,
+    canon: 'canon',
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['dressrosa', 'sabo', 'mera-mera'],
+  },
+];

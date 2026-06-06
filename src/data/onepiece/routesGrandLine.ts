@@ -17,6 +17,8 @@ const CREW = [
   'char-op-sanji',
   'char-op-chopper',
   'char-op-robin',
+  'char-op-franky',
+  'char-op-brook',
 ];
 
 export const onepieceRoutesGrandLine: Route[] = [

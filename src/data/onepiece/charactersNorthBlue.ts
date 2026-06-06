@@ -18,10 +18,11 @@ export const onepieceCharactersNorthBlue: Character[] = [
     nationId: 'nation-op-north-blue',
     factionIds: ['faction-op-heart-pirates'],
     enemies: ['char-op-doflamingo'],
+    jutsuIds: ['fruit-op-ope-ope'],
     relationships: [
       { targetCharacterId: 'char-op-corazon', label: 'Salvatore' },
     ],
-    arcIds: ['arc-op-flevance'],
+    arcIds: ['arc-op-flevance', 'arc-op-punk-hazard', 'arc-op-dressrosa'],
     shortDescription: {
       it: "Capitano dei Pirati di Heart, originario di Flevance e sopravvissuto al suo sterminio. Utente del Frutto Ope Ope, dono di Corazon. Una delle Undici Supernove e poi alleato di Rufy contro Doflamingo e Kaido.",
       en: "Captain of the Heart Pirates, born in Flevance and a survivor of its extermination. User of the Ope Ope Fruit, Corazon's gift. One of the Eleven Supernovas and later Luffy's ally against Doflamingo and Kaido.",
@@ -44,10 +45,11 @@ export const onepieceCharactersNorthBlue: Character[] = [
     factionIds: ['faction-op-donquixote-pirates'],
     family: ['char-op-corazon'],
     enemies: ['char-op-law'],
+    jutsuIds: ['fruit-op-ito-ito'],
     relationships: [
       { targetCharacterId: 'char-op-corazon', label: 'Fratello minore (da lui ucciso)' },
     ],
-    arcIds: ['arc-op-flevance'],
+    arcIds: ['arc-op-flevance', 'arc-op-dressrosa'],
     shortDescription: {
       it: "Discendente di Draghi Celesti, ex re di Dressrosa ed ex Corsaro. Trafficante d'armi e di SMILE sotto lo pseudonimo «Joker», utente del Frutto Filo Filo. Uccise il fratello Corazon e diede la caccia a Law.",
       en: "A descendant of Celestial Dragons, former king of Dressrosa and ex-Warlord. An arms and SMILE trafficker under the alias 'Joker', user of the String-String Fruit. He killed his brother Corazon and hunted Law.",

@@ -15,8 +15,15 @@ import { onepieceFactionsNorthBlue } from './factionsNorthBlue';
 import { onepieceFactionsWestBlue } from './factionsWestBlue';
 import { onepieceFactionsRedLine } from './factionsRedLine';
 import { onepieceFactionsParadise } from './factionsParadise';
+import { onepieceFactionsParadise2 } from './factionsParadise2';
+import { onepieceFactionsWholeCakeWano } from './factionsWholeCakeWano';
+import { onepieceFactionsEgghead } from './factionsEgghead';
 import { onepieceCharactersEastBlue } from './characters';
 import { onepieceCharactersParadise } from './charactersParadise';
+import { onepieceCharactersParadise2 } from './charactersParadise2';
+import { onepieceCharactersNewWorldSagas } from './charactersNewWorldSagas';
+import { onepieceCharactersWholeCakeWano } from './charactersWholeCakeWano';
+import { onepieceCharactersEgghead } from './charactersEgghead';
 import { onepieceCharactersSouthBlue } from './charactersSouthBlue';
 import { onepieceCharactersNorthBlue } from './charactersNorthBlue';
 import { onepieceCharactersWestBlue } from './charactersWestBlue';
@@ -27,14 +34,23 @@ import { onepieceArcsNorthBlue } from './arcsNorthBlue';
 import { onepieceArcsWestBlue } from './arcsWestBlue';
 import { onepieceArcsRedLine } from './arcsRedLine';
 import { onepieceArcsParadise } from './arcsParadise';
+import { onepieceArcsParadise2 } from './arcsParadise2';
+import { onepieceArcsNewWorldSagas } from './arcsNewWorldSagas';
+import { onepieceArcsWholeCakeWano } from './arcsWholeCakeWano';
+import { onepieceArcsEgghead } from './arcsEgghead';
 import { onepieceEvents } from './events';
 import { onepieceEventsSouthBlue } from './eventsSouthBlue';
 import { onepieceEventsNorthBlue } from './eventsNorthBlue';
 import { onepieceEventsWestBlue } from './eventsWestBlue';
 import { onepieceEventsRedLine } from './eventsRedLine';
 import { onepieceEventsParadise } from './eventsParadise';
+import { onepieceEventsParadise2 } from './eventsParadise2';
+import { onepieceEventsNewWorldSagas } from './eventsNewWorldSagas';
+import { onepieceEventsWholeCakeWano } from './eventsWholeCakeWano';
+import { onepieceEventsEgghead } from './eventsEgghead';
 import { onepieceRoutes } from './routes';
 import { onepieceRoutesGrandLine } from './routesGrandLine';
+import { onepieceDevilFruits } from './devilFruits';
 import { onepieceAssets } from './assets';
 
 const onepiece = animeWorlds.find((w) => w.slug === 'onepiece')!;
@@ -78,6 +94,10 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceCharactersWestBlue,
     ...onepieceCharactersRedLine,
     ...onepieceCharactersParadise,
+    ...onepieceCharactersParadise2,
+    ...onepieceCharactersNewWorldSagas,
+    ...onepieceCharactersWholeCakeWano,
+    ...onepieceCharactersEgghead,
   ],
   factions: [
     ...onepieceFactions,
@@ -86,6 +106,9 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceFactionsWestBlue,
     ...onepieceFactionsRedLine,
     ...onepieceFactionsParadise,
+    ...onepieceFactionsParadise2,
+    ...onepieceFactionsWholeCakeWano,
+    ...onepieceFactionsEgghead,
   ],
   arcs: [
     ...onepieceArcs,
@@ -94,6 +117,10 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceArcsWestBlue,
     ...onepieceArcsRedLine,
     ...onepieceArcsParadise,
+    ...onepieceArcsParadise2,
+    ...onepieceArcsNewWorldSagas,
+    ...onepieceArcsWholeCakeWano,
+    ...onepieceArcsEgghead,
   ],
   events: [
     ...onepieceEvents,
@@ -102,8 +129,13 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceEventsWestBlue,
     ...onepieceEventsRedLine,
     ...onepieceEventsParadise,
+    ...onepieceEventsParadise2,
+    ...onepieceEventsNewWorldSagas,
+    ...onepieceEventsWholeCakeWano,
+    ...onepieceEventsEgghead,
   ],
   routes: [...onepieceRoutes, ...onepieceRoutesGrandLine],
+  jutsu: onepieceDevilFruits,
   assets: onepieceAssets,
 };
 
