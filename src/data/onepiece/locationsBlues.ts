@@ -270,8 +270,8 @@ export const onepieceLocationsBlues: Location[] = [
     name: 'Ohara',
     localizedName: { it: 'Ohara', en: 'Ohara' },
     type: 'ruins',
-    x: 557,
-    y: 780,
+    x: 560,
+    y: 785,
     shortDescription: {
       it: "L'isola degli studiosi e dell'Albero della Conoscenza, distrutta da un Buster Call per aver decifrato i Poneglyph e il Secolo Vuoto. Patria di Nico Robin, unica superstite.",
       en: "The island of scholars and the Tree of Knowledge, destroyed by a Buster Call for deciphering the Poneglyphs and the Void Century. Home of Nico Robin, its sole survivor.",
@@ -292,8 +292,8 @@ export const onepieceLocationsBlues: Location[] = [
     name: 'God Valley',
     localizedName: { it: 'God Valley', en: 'God Valley' },
     type: 'battlefield',
-    x: 660,
-    y: 680,
+    x: 663,
+    y: 670,
     shortDescription: {
       it: "Isola scomparsa di West Blue, teatro dell'Incidente di God Valley: l'alleanza tra Roger e Garp che annientò i Pirati di Rocks di Xebec, 38 anni prima della storia.",
       en: "A vanished West Blue island, stage of the God Valley Incident: the alliance of Roger and Garp that crushed Rocks D. Xebec's Rocks Pirates, 38 years before the story.",
