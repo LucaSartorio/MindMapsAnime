@@ -5,6 +5,10 @@ export const onepieceEventsParadise: TimelineEvent[] = [
   {
     id: 'evt-op-hiluluk-dream',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Su Drum, il ciarlatano dal cuore d'oro Dr. Hiluluk aveva accolto la renna emarginata Chopper. Morendo, gli lascia la convinzione che una persona muore davvero solo quando viene dimenticata; il suo sogno di una cura per ogni male diventa la stella polare di Chopper medico.",
+      en: "On Drum, the golden-hearted quack Dr. Hiluluk had taken in the shunned reindeer Chopper. Dying, he leaves him the belief that a person truly dies only when forgotten; his dream of a cure for every illness becomes Chopper the doctor's guiding star.",
+    },
     mangaChapters: ["140-144"],
     animeEpisodes: ["84-86"],
     title: { it: 'Il sogno di Hiluluk', en: "Hiluluk's dream" },
@@ -25,6 +29,10 @@ export const onepieceEventsParadise: TimelineEvent[] = [
   {
     id: 'evt-op-chopper-joins',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Caduto Wapol, la renna-medico Tony Tony Chopper esita: si crede un mostro perché né uomo né animale. Rufy lo vuole comunque con sé e, dopo l'addio commosso a Kureha, Chopper lascia Drum per diventare il dottore di bordo dei Cappello di Paglia.",
+      en: "With Wapol fallen, the reindeer-doctor Tony Tony Chopper hesitates: he thinks himself a monster, neither man nor beast. Luffy wants him aboard regardless and, after a tearful farewell to Kureha, Chopper leaves Drum to become the Straw Hats' ship's doctor.",
+    },
     mangaChapters: ["149-154"],
     animeEpisodes: ["89-91"],
     title: { it: 'Chopper si unisce alla ciurma', en: 'Chopper joins the crew' },
@@ -46,6 +54,10 @@ export const onepieceEventsParadise: TimelineEvent[] = [
   {
     id: 'evt-op-alabasta-war',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Ad Alubarna esercito reale e ribelli, manipolati dalla Baroque Works, stanno per massacrarsi. Mentre i compagni piegano gli agenti nemici, Rufy affronta Crocodile per la terza volta e, sfruttando il sangue e l'acqua, lo abbatte definitivamente, fermando una bomba destinata a radere al suolo la piazza.",
+      en: "At Alubarna the royal army and rebels, manipulated by Baroque Works, are about to slaughter each other. As the crewmates beat the enemy agents, Luffy faces Crocodile a third time and, exploiting blood and water, finally fells him, stopping a bomb meant to level the plaza.",
+    },
     mangaChapters: ["200-212"],
     animeEpisodes: ["120-128"],
     title: { it: 'La guerra di Alabasta', en: 'The Alabasta war' },
@@ -67,6 +79,10 @@ export const onepieceEventsParadise: TimelineEvent[] = [
   {
     id: 'evt-op-vivi-farewell',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Salvata Alabasta, Vivi deve scegliere tra il sogno di mare e il dovere verso il suo popolo: resta come principessa. Sul molo, per non comprometterli, la ciurma le risponde mostrando di nascosto il marchio dell'amicizia sul braccio: resteranno per sempre compagni, ovunque vadano.",
+      en: "With Alabasta saved, Vivi must choose between the dream of the sea and her duty to her people: she stays as princess. On the dock, to avoid compromising them, the crew answers her by secretly showing the mark of friendship on their arms: they will remain comrades forever, wherever they go.",
+    },
     mangaChapters: ["213-217"],
     animeEpisodes: ["129-130"],
     title: { it: "L'addio di Vivi", en: "Vivi's farewell" },
@@ -88,6 +104,10 @@ export const onepieceEventsParadise: TimelineEvent[] = [
   {
     id: 'evt-op-skypiea-enel',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Enel, utente del Frutto Fulmine, è di fatto invincibile sull'isola del cielo — ma Rufy, immune all'elettricità per la sua natura di gomma, è l'unico che possa toccarlo. In un lungo scontro Rufy lo abbatte e ne ferma il piano di sterminio, ponendo fine al suo regno di terrore.",
+      en: "Enel, user of the Rumble-Rumble Fruit, is effectively invincible on the sky island — but Luffy, immune to electricity thanks to his rubber body, is the only one who can touch him. In a long clash Luffy beats him and stops his plan of extermination, ending his reign of terror.",
+    },
     mangaChapters: ["293-298"],
     animeEpisodes: ["188-191"],
     title: { it: 'La caduta di «Dio» Enel', en: "The fall of 'God' Enel" },
@@ -109,6 +129,10 @@ export const onepieceEventsParadise: TimelineEvent[] = [
   {
     id: 'evt-op-skypiea-bell',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Per provare ai Shandia e a Mont Blanc Cricket che la città d'oro di Shandora era reale, Rufy fa risuonare la grande campana d'oro perduta da 400 anni. Il suo rintocco — la «Voce di tutte le cose» — riecheggia fino al mare di sotto, riconciliando i popoli del cielo.",
+      en: "To prove to the Shandia and Mont Blanc Cricket that the city of gold Shandora was real, Luffy rings the great golden bell lost for 400 years. Its toll — the 'Voice of all things' — echoes all the way down to the sea below, reconciling the peoples of the sky.",
+    },
     mangaChapters: ["299-302"],
     animeEpisodes: ["192-195"],
     title: { it: "La campana d'oro di Shandora", en: 'The golden bell of Shandora' },

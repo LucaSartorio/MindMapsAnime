@@ -8,6 +8,10 @@ export const onepieceEventsWestBlue: TimelineEvent[] = [
   {
     id: 'evt-op-god-valley-incident',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "38 anni prima della storia, sull'isola di God Valley, durante il crudele gioco di caccia dei Draghi Celesti, il futuro Re dei Pirati Gol D. Roger e il viceammiraglio Garp strinsero un'alleanza irripetibile e annientarono i Pirati di Rocks di Xebec, che riunivano i futuri Imperatori Barbabianca, Big Mom e Kaido.",
+      en: "38 years before the story, on God Valley island, during the Celestial Dragons' cruel hunting game, the future Pirate King Gol D. Roger and Vice Admiral Garp formed a one-time alliance and annihilated Xebec's Rocks Pirates, who gathered the future Emperors Whitebeard, Big Mom and Kaido.",
+    },
     mangaChapters: ["1095-1096"],
     animeEpisodes: ["958-959"],
     title: { it: "L'incidente di God Valley", en: 'The God Valley Incident' },
@@ -29,6 +33,10 @@ export const onepieceEventsWestBlue: TimelineEvent[] = [
   {
     id: 'evt-op-ohara-buster-call',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "22 anni prima, per aver decifrato i Poneglyph e sfiorato la verità del Secolo Vuoto, gli archeologi di Ohara sono dichiarati nemici del mondo. Il Governo Mondiale ordina un Buster Call che incenerisce l'isola e l'Albero della Conoscenza; Olvia e il gigante Saul si sacrificano per salvare la sola sopravvissuta, Nico Robin.",
+      en: "22 years before, for deciphering the Poneglyphs and brushing the truth of the Void Century, Ohara's archaeologists are branded enemies of the world. The World Government orders a Buster Call that incinerates the island and the Tree of Knowledge; Olvia and the giant Saul sacrifice themselves to save the sole survivor, Nico Robin.",
+    },
     mangaChapters: ["391-398"],
     animeEpisodes: ["274-278"],
     title: { it: 'Il Buster Call su Ohara', en: 'The Buster Call on Ohara' },
