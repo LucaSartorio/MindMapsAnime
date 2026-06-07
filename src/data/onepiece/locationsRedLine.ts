@@ -37,8 +37,8 @@ export const onepieceLocationsRedLine: Location[] = [
     name: 'Marineford',
     localizedName: { it: 'Marineford', en: 'Marineford' },
     type: 'battlefield',
-    x: 1826,
-    y: 491,
+    x: 1812,
+    y: 525,
     shortDescription: {
       it: "L'ex quartier generale della Marina sotto la Red Line, di fronte a Mary Geoise. Teatro della Guerra al Vertice contro i Pirati di Barbabianca per l'esecuzione di Ace.",
       en: "The former Marine Headquarters beneath the Red Line, facing Mary Geoise. Stage of the Summit War against the Whitebeard Pirates over Ace's execution.",
@@ -69,8 +69,8 @@ export const onepieceLocationsRedLine: Location[] = [
     name: 'Sabaody Archipelago',
     localizedName: { it: 'Arcipelago Sabaody', en: 'Sabaody Archipelago' },
     type: 'landmark',
-    x: 1904,
-    y: 486,
+    x: 1914,
+    y: 508,
     shortDescription: {
       it: "Arcipelago di 79 boschi di mangrovie alla fine di Paradise, ultima tappa prima della Red Line. Mercato di schiavi, covo di Nobili Mondiali e luogo dove la ciurma viene dispersa da Bartholomew Kuma.",
       en: 'An archipelago of 79 mangrove groves at the end of Paradise, the last stop before the Red Line. A slave market, a haunt of World Nobles, and the place where the crew is scattered by Bartholomew Kuma.',
@@ -119,8 +119,8 @@ export const onepieceLocationsRedLine: Location[] = [
     name: 'Impel Down',
     localizedName: { it: 'Impel Down', en: 'Impel Down' },
     type: 'hideout',
-    x: 1785,
-    y: 575,
+    x: 1782,
+    y: 586,
     shortDescription: {
       it: "La prigione sottomarina di massima sicurezza del Governo Mondiale, nella Calm Belt: sei livelli infernali da cui «nessuno è mai evaso», fino all'irruzione di Rufy.",
       en: "The World Government's maximum-security underwater prison in the Calm Belt: six infernal levels from which 'no one has ever escaped', until Luffy's break-in.",
@@ -147,8 +147,8 @@ export const onepieceLocationsRedLine: Location[] = [
     name: 'Amazon Lily',
     localizedName: { it: 'Amazon Lily', en: 'Amazon Lily' },
     type: 'landmark',
-    x: 1700,
-    y: 574,
+    x: 1699,
+    y: 586,
     shortDescription: {
       it: "Isola della Calm Belt abitata solo da donne guerriere, le Kuja, governate dall'Imperatrice Pirata Boa Hancock. Vietata agli uomini.",
       en: "A Calm Belt island inhabited only by warrior women, the Kuja, ruled by the Pirate Empress Boa Hancock. Forbidden to men.",

@@ -349,6 +349,12 @@ export interface Nation {
   relatedEventIds?: string[];
   /** Boundary cliccabile associato (path SVG) */
   boundaryId?: string;
+  /**
+   * Posizione consigliata per la label di nazione sull'overlay (coord. viewBox
+   * del world map). Usata dal layer "nomi nazioni" quando il mondo non ha
+   * boundary con labelPosition (es. One Piece: i nomi dei Mari).
+   */
+  labelPosition?: { x: number; y: number };
   canonStatus?: CanonStatus;
   referenceStatus?: ReferenceStatus;
   color?: string;

@@ -26,7 +26,21 @@ export function MapLabelsLayer({ dataset, level }: MapLabelsLayerProps) {
     [boundaries, level.id],
   );
 
-  if (!visibleLayers.nationLabels || levelBoundaries.length === 0) return null;
+  // Fallback per i mondi senza boundary (es. One Piece): nomi delle nazioni/mari
+  // posizionati via `nation.labelPosition`. Solo sul livello world (top).
+  const nationLabels = useMemo(
+    () =>
+      level.parentLevelId
+        ? []
+        : dataset.nations.filter((n) => n.labelPosition),
+    [dataset.nations, level.parentLevelId],
+  );
+
+  if (
+    !visibleLayers.nationLabels ||
+    (levelBoundaries.length === 0 && nationLabels.length === 0)
+  )
+    return null;
 
   return (
     <svg
@@ -68,6 +82,42 @@ export function MapLabelsLayer({ dataset, level }: MapLabelsLayerProps) {
               fontWeight={isMain ? 700 : 500}
               fill={color}
               opacity={isMain ? 0.95 : 0.8}
+            >
+              {label}
+            </text>
+          </g>
+        );
+      })}
+      {nationLabels.map((n) => {
+        const pos = n.labelPosition!;
+        const label = getLocalizedText(n.localizedName, locale) || n.name;
+        const color = n.color ?? '#cdd3e3';
+        return (
+          <g key={`nation-label-${n.id}`}>
+            <text
+              x={pos.x}
+              y={pos.y}
+              textAnchor="middle"
+              fontFamily="Cinzel, serif"
+              fontSize={20}
+              fontWeight={700}
+              fill="rgba(7,7,9,0.85)"
+              stroke="rgba(7,7,9,0.85)"
+              strokeWidth={5}
+              strokeLinejoin="round"
+              opacity={0.92}
+            >
+              {label}
+            </text>
+            <text
+              x={pos.x}
+              y={pos.y}
+              textAnchor="middle"
+              fontFamily="Cinzel, serif"
+              fontSize={20}
+              fontWeight={700}
+              fill={color}
+              opacity={0.95}
             >
               {label}
             </text>

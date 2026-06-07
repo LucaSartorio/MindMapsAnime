@@ -390,8 +390,8 @@ export const onepieceLocationsParadise: Location[] = [
     name: 'Enies Lobby',
     localizedName: { it: 'Enies Lobby', en: 'Enies Lobby' },
     type: 'landmark',
-    x: 1750,
-    y: 490,
+    x: 1719,
+    y: 522,
     shortDescription: {
       it: "L'isola giudiziaria del Governo Mondiale, dove «non esiste la notte». Qui la ciurma dichiara guerra al Governo per salvare Nico Robin e brucia la bandiera.",
       en: "The judicial island of the World Government, where 'night never falls'. Here the crew declares war on the Government to save Nico Robin and burns its flag.",
@@ -412,8 +412,8 @@ export const onepieceLocationsParadise: Location[] = [
     name: 'Thriller Bark',
     localizedName: { it: 'Thriller Bark', en: 'Thriller Bark' },
     type: 'landmark',
-    x: 1802,
-    y: 457,
+    x: 1782,
+    y: 496,
     shortDescription: {
       it: "La più grande nave del mondo, un'isola-galeone avvolta nella nebbia del Triangolo Florian. Regno del Corsaro Gekko Moria, ladro di ombre, dove la ciurma trova Brook.",
       en: "The largest ship in the world, a galleon-island shrouded in the Florian Triangle's fog. Realm of the Warlord Gecko Moria, a stealer of shadows, where the crew finds Brook.",
@@ -453,8 +453,8 @@ export const onepieceLocationsParadise: Location[] = [
     name: 'Lulusia Kingdom',
     localizedName: { it: 'Regno di Lulusia', en: 'Lulusia Kingdom' },
     type: 'city',
-    x: 1882,
-    y: 455,
+    x: 1860,
+    y: 461,
     shortDescription: {
       it: "Piccolo regno di Paradise vicino alla Calm Belt, cancellato dall'esistenza dal potere segreto di Imu attraverso un'arma ancestrale.",
       en: "A small Paradise kingdom near the Calm Belt, wiped from existence by Imu's secret power through an ancient weapon.",
@@ -462,7 +462,7 @@ export const onepieceLocationsParadise: Location[] = [
     nationId: 'nation-op-grand-line-paradise',
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['paradise', 'imu', 'governo-mondiale'],
   },
 ];
