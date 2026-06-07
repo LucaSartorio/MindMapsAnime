@@ -43,6 +43,7 @@ export const onepieceLocationsNewWorld: Location[] = [
       en: "A kingdom of passion and living toys, ruled from the shadows by the Warlord Donquixote Doflamingo. Here the crew and its alliance smash the SMILE factory and free the country.",
     },
     nationId: 'nation-op-grand-line-new-world',
+    subMapLevelId: 'op-map-dressrosa',
     characterIds: ['char-op-doflamingo', 'char-op-law', 'char-op-sabo', 'char-op-rebecca', 'char-op-kyros', 'char-op-luffy'],
     arcIds: ['arc-op-dressrosa'],
     eventIds: ['evt-op-doflamingo-defeat', 'evt-op-sabo-mera-mera'],

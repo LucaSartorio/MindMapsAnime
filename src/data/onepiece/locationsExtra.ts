@@ -30,12 +30,12 @@ export const onepieceLocationsExtra: Location[] = [
   {
     id: 'loc-op-upper-yard',
     worldId: 'world-onepiece',
-    mapLevelId: 'op-map-world',
+    mapLevelId: 'op-map-skypiea',
     name: 'Upper Yard',
     localizedName: { it: 'Upper Yard', en: 'Upper Yard' },
     type: 'sacred_place',
-    x: 1382,
-    y: 504,
+    x: 760,
+    y: 360,
     shortDescription: {
       it: "Il «giardino di Dio» di Skypiea: la metà di Jaya scagliata in cielo dalla Knock-Up Stream, foresta sacra dove si nasconde l'oro di Shandora.",
       en: "Skypiea's 'God's garden': the half of Jaya blasted skyward by the Knock-Up Stream, a sacred forest hiding the gold of Shandora.",

@@ -152,7 +152,14 @@ export const animeWorlds: AnimeWorld[] = [
       highlight: '#1f9aff',
     },
     defaultMapLevelId: 'op-map-world',
-    availableMapLevelIds: ['op-map-world', 'op-map-totland', 'op-map-alabasta', 'op-map-wano'],
+    availableMapLevelIds: [
+      'op-map-world',
+      'op-map-totland',
+      'op-map-alabasta',
+      'op-map-wano',
+      'op-map-skypiea',
+      'op-map-dressrosa',
+    ],
     coverAssetId: 'op-cover-placeholder',
     tags: ['shonen', 'pirati', 'eiichiro oda', 'jump'],
     metadata: {

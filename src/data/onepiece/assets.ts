@@ -77,6 +77,32 @@ export const onepieceAssets: AssetReference[] = [
     },
   },
   {
+    id: 'op-skypiea-submap-placeholder',
+    worldId: 'world-onepiece',
+    name: 'Skypiea sub-map (placeholder SVG)',
+    kind: 'placeholder',
+    source: 'local',
+    license: 'placeholder/CC0',
+    author: 'local',
+    notes: {
+      it: 'Placeholder concettuale della sotto-mappa di Skypiea.',
+      en: 'Conceptual placeholder for the Skypiea sub-map.',
+    },
+  },
+  {
+    id: 'op-dressrosa-submap-placeholder',
+    worldId: 'world-onepiece',
+    name: 'Dressrosa sub-map (placeholder SVG)',
+    kind: 'placeholder',
+    source: 'local',
+    license: 'placeholder/CC0',
+    author: 'local',
+    notes: {
+      it: 'Placeholder concettuale della sotto-mappa di Dressrosa.',
+      en: 'Conceptual placeholder for the Dressrosa sub-map.',
+    },
+  },
+  {
     id: 'op-world-map-placeholder',
     worldId: 'world-onepiece',
     name: 'One Piece world map (placeholder SVG)',
