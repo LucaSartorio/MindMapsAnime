@@ -38,6 +38,21 @@ export function RoutesFloatingPanel({ dataset }: RoutesFloatingPanelProps) {
 
   const selected = routes.find((r) => r.id === selectedRouteId);
 
+  // Raggruppa i percorsi per `group` (mantenendo l'ordine di prima apparizione).
+  const groups = useMemo(() => {
+    const order: string[] = [];
+    const byLabel = new Map<string, typeof routes>();
+    for (const r of routes) {
+      const label = r.group ? getLocalizedText(r.group, locale) : '';
+      if (!byLabel.has(label)) {
+        byLabel.set(label, []);
+        order.push(label);
+      }
+      byLabel.get(label)!.push(r);
+    }
+    return order.map((label) => ({ label, items: byLabel.get(label)! }));
+  }, [routes, locale]);
+
   return (
     <FloatingPanel
       title={t('map.routesPanel.title')}
@@ -62,50 +77,59 @@ export function RoutesFloatingPanel({ dataset }: RoutesFloatingPanelProps) {
           {t('map.routesPanel.empty')}
         </div>
       ) : (
-        <div className="p-3 space-y-2">
-          <ul className="space-y-1">
-            {routes.map((r) => {
-              const active = r.id === selectedRouteId;
-              return (
-                <li key={r.id}>
-                  <div
-                    className={
-                      'group flex items-center gap-2 px-2 py-1.5 rounded-md transition ' +
-                      (active
-                        ? 'bg-ember-500/20 border border-ember-500/50'
-                        : 'border border-transparent hover:bg-ink-800/70')
-                    }
-                  >
-                    <span
-                      aria-hidden
-                      className="inline-block w-2.5 h-2.5 rounded-full shrink-0"
-                      style={{ background: r.color ?? '#1f9aff' }}
-                    />
-                    <button
-                      type="button"
-                      onClick={() =>
-                        setSelectedRoute(active ? null : r.id)
-                      }
-                      className="flex-1 min-w-0 text-left text-xs text-ink-100 truncate"
-                    >
-                      {getLocalizedText(r.localizedName, locale) || r.name}
-                    </button>
-                    <span className="text-[10px] text-ink-400 shrink-0">
-                      {r.steps.length}
-                    </span>
-                    <button
-                      type="button"
-                      onClick={() => openRouteModal(r.id)}
-                      aria-label={`${t('map.routesPanel.details')} · ${getLocalizedText(r.localizedName, locale) || r.name}`}
-                      className="opacity-60 group-hover:opacity-100 h-6 w-6 grid place-items-center rounded text-ink-200 hover:text-white hover:bg-ink-700/70 shrink-0"
-                    >
-                      ⓘ
-                    </button>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
+        <div className="p-3 space-y-3">
+          {groups.map((g) => (
+            <div key={g.label || '_default'} className="space-y-1">
+              {g.label && (
+                <h4 className="text-[10px] uppercase tracking-widest text-chakra-300 font-mono px-1">
+                  {g.label}
+                </h4>
+              )}
+              <ul className="space-y-1">
+                {g.items.map((r) => {
+                  const active = r.id === selectedRouteId;
+                  return (
+                    <li key={r.id}>
+                      <div
+                        className={
+                          'group flex items-center gap-2 px-2 py-1.5 rounded-md transition ' +
+                          (active
+                            ? 'bg-ember-500/20 border border-ember-500/50'
+                            : 'border border-transparent hover:bg-ink-800/70')
+                        }
+                      >
+                        <span
+                          aria-hidden
+                          className="inline-block w-2.5 h-2.5 rounded-full shrink-0"
+                          style={{ background: r.color ?? '#1f9aff' }}
+                        />
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setSelectedRoute(active ? null : r.id)
+                          }
+                          className="flex-1 min-w-0 text-left text-xs text-ink-100 truncate"
+                        >
+                          {getLocalizedText(r.localizedName, locale) || r.name}
+                        </button>
+                        <span className="text-[10px] text-ink-400 shrink-0">
+                          {r.steps.length}
+                        </span>
+                        <button
+                          type="button"
+                          onClick={() => openRouteModal(r.id)}
+                          aria-label={`${t('map.routesPanel.details')} · ${getLocalizedText(r.localizedName, locale) || r.name}`}
+                          className="opacity-60 group-hover:opacity-100 h-6 w-6 grid place-items-center rounded text-ink-200 hover:text-white hover:bg-ink-700/70 shrink-0"
+                        >
+                          ⓘ
+                        </button>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          ))}
 
           {selected && (
             <div className="border-t border-ink-700/60 pt-2 space-y-2">

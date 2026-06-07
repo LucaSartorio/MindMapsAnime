@@ -14,6 +14,10 @@ const SABAODY: RouteStep = {
   title: { it: 'Sabaody — la dispersione', en: 'Sabaody — the scattering' },
 };
 
+/** Raggruppamenti tematici dei percorsi (mostrati come sezioni nel pannello). */
+const GROUP_TIMESKIP = { it: 'Ciurma divisa (2 anni)', en: 'Crew split (2 years)' } as const;
+const GROUP_SUPERNOVA = { it: 'Supernove', en: 'Supernovas' } as const;
+
 /** Rotta semplice a 2 tappe: Sabaody → destinazione. */
 function trip(
   id: string,
@@ -37,6 +41,7 @@ function trip(
     type: 'character',
     name: nameIt,
     localizedName: { it: nameIt, en: nameEn },
+    group: lineStyle === 'dotted' ? GROUP_TIMESKIP : GROUP_SUPERNOVA,
     description: { it: descIt, en: descEn },
     protagonistCharacterIds: [protagonist],
     ...(related.length ? { relatedCharacterIds: related } : {}),
@@ -106,6 +111,7 @@ export const onepieceRoutesExtra: Route[] = [
     type: 'character',
     name: 'Law — la rotta dell\'alleanza',
     localizedName: { it: "Law — la rotta dell'alleanza", en: "Law — the alliance route" },
+    group: GROUP_SUPERNOVA,
     description: {
       it: "La rotta di Trafalgar Law nel New World: dopo i due anni torna in scena come Corsaro, si allea con Rufy e percorre Punk Hazard, Dressrosa, Zou e Wano per detronizzare gli Imperatori.",
       en: "Trafalgar Law's route in the New World: after the two years he returns as a Warlord, allies with Luffy and travels Punk Hazard, Dressrosa, Zou and Wano to dethrone the Emperors.",
