@@ -1,0 +1,103 @@
+import type { Faction } from '@/types';
+
+/**
+ * Le ciurme delle altre Supernove della Peggiore Generazione (Sabaody).
+ */
+export const onepieceFactionsSupernovas: Faction[] = [
+  {
+    id: 'faction-op-kid-pirates',
+    worldId: 'world-onepiece',
+    type: 'crew',
+    name: 'Kid Pirates',
+    localizedName: { it: 'Pirati di Kid', en: 'Kid Pirates' },
+    description: {
+      it: "La ciurma di Eustass Kid, una delle più temute Supernove di Sabaody. Con il luogotenente Killer raggiunse il New World e Wano, dove si alleò con Rufy e Law contro gli Imperatori.",
+      en: "Eustass Kid's crew, one of the most feared Supernovas of Sabaody. With his lieutenant Killer it reached the New World and Wano, allying with Luffy and Law against the Emperors.",
+    },
+    leaderIds: ['char-op-kid'],
+    characterIds: ['char-op-kid', 'char-op-killer'],
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['ciurma', 'peggiore-generazione', 'south-blue'],
+  },
+  {
+    id: 'faction-op-hawkins-pirates',
+    worldId: 'world-onepiece',
+    type: 'crew',
+    name: 'Hawkins Pirates',
+    localizedName: { it: 'Pirati di Hawkins', en: 'Hawkins Pirates' },
+    description: {
+      it: "La ciurma del «Mago» Basil Hawkins, Supernova di North Blue. Nel New World passò sotto la bandiera dei Pirati delle Cento Bestie di Kaido.",
+      en: "The crew of the 'Magician' Basil Hawkins, a North Blue Supernova. In the New World it came under the flag of Kaido's Beasts Pirates.",
+    },
+    leaderIds: ['char-op-hawkins'],
+    characterIds: ['char-op-hawkins'],
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['ciurma', 'peggiore-generazione', 'north-blue'],
+  },
+  {
+    id: 'faction-op-drake-pirates',
+    worldId: 'world-onepiece',
+    type: 'crew',
+    name: 'Drake Pirates',
+    localizedName: { it: 'Pirati di Drake', en: 'Drake Pirates' },
+    description: {
+      it: "La ciurma dell'ex viceammiraglio X Drake, Supernova e segreto agente dell'unità SWORD della Marina, infiltrato tra i Tobiroppo di Kaido a Wano.",
+      en: "The crew of the former rear admiral X Drake, a Supernova and secret agent of the Marines' SWORD unit, infiltrated among Kaido's Tobiroppo at Wano.",
+    },
+    leaderIds: ['char-op-drake'],
+    characterIds: ['char-op-drake'],
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['ciurma', 'peggiore-generazione', 'marina'],
+  },
+  {
+    id: 'faction-op-on-air-pirates',
+    worldId: 'world-onepiece',
+    type: 'crew',
+    name: 'On-Air Pirates',
+    localizedName: { it: 'Pirati On-Air', en: 'On-Air Pirates' },
+    description: {
+      it: "La ciurma di Scratchmen Apoo, Supernova-strumento musicale. Doppiogiochista nel New World, finì al servizio di Kaido.",
+      en: "Scratchmen Apoo's crew, the musical-instrument Supernova. A double-dealer in the New World, he ended up serving Kaido.",
+    },
+    leaderIds: ['char-op-apoo'],
+    characterIds: ['char-op-apoo'],
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['ciurma', 'peggiore-generazione'],
+  },
+  {
+    id: 'faction-op-fire-tank-pirates',
+    worldId: 'world-onepiece',
+    type: 'crew',
+    name: 'Fire Tank Pirates',
+    localizedName: { it: 'Pirati Fire Tank', en: 'Fire Tank Pirates' },
+    description: {
+      it: "La ciurma-mafia di Capone «Gang» Bege, Supernova di West Blue. Entrata nella famiglia di Big Mom per matrimonio, ne tentò l'assassinio a Whole Cake Island.",
+      en: "The mafia-crew of Capone 'Gang' Bege, a West Blue Supernova. Married into Big Mom's family, it attempted her assassination at Whole Cake Island.",
+    },
+    leaderIds: ['char-op-bege'],
+    characterIds: ['char-op-bege'],
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['ciurma', 'peggiore-generazione', 'west-blue'],
+  },
+  {
+    id: 'faction-op-fallen-monk-pirates',
+    worldId: 'world-onepiece',
+    type: 'crew',
+    name: 'Fallen Monk Pirates',
+    localizedName: { it: 'Pirati del Monaco Caduto', en: 'Fallen Monk Pirates' },
+    description: {
+      it: "La ciurma di Urouge, il «Monaco Folle» disceso da un'Isola del Cielo. Una delle poche Supernove a prosperare nel New World.",
+      en: "The crew of Urouge, the 'Mad Monk' descended from a Sky Island. One of the few Supernovas to thrive in the New World.",
+    },
+    leaderIds: ['char-op-urouge'],
+    characterIds: ['char-op-urouge'],
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['ciurma', 'peggiore-generazione', 'cielo'],
+  },
+];

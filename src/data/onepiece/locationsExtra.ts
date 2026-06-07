@@ -610,4 +610,23 @@ export const onepieceLocationsExtra: Location[] = [
     referenceStatus: 'verified',
     tags: ['new-world', 'wano', 'kozuki'],
   },
+  {
+    id: 'loc-op-boin-archipelago',
+    worldId: 'world-onepiece',
+    mapLevelId: 'op-map-world',
+    name: 'Boin Archipelago',
+    localizedName: { it: 'Arcipelago Boin', en: 'Boin Archipelago' },
+    type: 'forest',
+    x: 1505,
+    y: 612,
+    shortDescription: {
+      it: "Isola-foresta vorace della Grand Line dove Bartholomew Kuma scaraventò Usop durante la dispersione: una trappola di abbondanza che ingrassa le prede prima di divorarle. Qui Usop si allenò per due anni.",
+      en: "A voracious forest-island of the Grand Line where Bartholomew Kuma flung Usopp during the scattering: a trap of plenty that fattens its prey before devouring it. Here Usopp trained for two years.",
+    },
+    nationId: 'nation-op-grand-line-paradise',
+    importance: 'minor',
+    canonStatus: 'canon',
+    referenceStatus: 'needs_verification',
+    tags: ['paradise', 'timeskip', 'usop'],
+  },
 ];

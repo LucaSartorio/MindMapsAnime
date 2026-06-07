@@ -19,6 +19,7 @@ import { onepieceFactionsParadise } from './factionsParadise';
 import { onepieceFactionsParadise2 } from './factionsParadise2';
 import { onepieceFactionsWholeCakeWano } from './factionsWholeCakeWano';
 import { onepieceFactionsEgghead } from './factionsEgghead';
+import { onepieceFactionsSupernovas } from './factionsSupernovas';
 import { onepieceCharactersEastBlue } from './characters';
 import { onepieceCharactersParadise } from './charactersParadise';
 import { onepieceCharactersParadise2 } from './charactersParadise2';
@@ -29,6 +30,7 @@ import { onepieceCharactersSouthBlue } from './charactersSouthBlue';
 import { onepieceCharactersNorthBlue } from './charactersNorthBlue';
 import { onepieceCharactersWestBlue } from './charactersWestBlue';
 import { onepieceCharactersRedLine } from './charactersRedLine';
+import { onepieceCharactersSupernovas } from './charactersSupernovas';
 import { onepieceArcs } from './arcs';
 import { onepieceArcsSouthBlue } from './arcsSouthBlue';
 import { onepieceArcsNorthBlue } from './arcsNorthBlue';
@@ -52,6 +54,7 @@ import { onepieceEventsEgghead } from './eventsEgghead';
 import { onepieceEventsExtra } from './eventsExtra';
 import { onepieceRoutes } from './routes';
 import { onepieceRoutesGrandLine } from './routesGrandLine';
+import { onepieceRoutesExtra } from './routesExtra';
 import { onepieceDevilFruits } from './devilFruits';
 import { onepieceAssets } from './assets';
 
@@ -101,6 +104,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceCharactersNewWorldSagas,
     ...onepieceCharactersWholeCakeWano,
     ...onepieceCharactersEgghead,
+    ...onepieceCharactersSupernovas,
   ],
   factions: [
     ...onepieceFactions,
@@ -112,6 +116,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceFactionsParadise2,
     ...onepieceFactionsWholeCakeWano,
     ...onepieceFactionsEgghead,
+    ...onepieceFactionsSupernovas,
   ],
   arcs: [
     ...onepieceArcs,
@@ -138,7 +143,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceEventsEgghead,
     ...onepieceEventsExtra,
   ],
-  routes: [...onepieceRoutes, ...onepieceRoutesGrandLine],
+  routes: [...onepieceRoutes, ...onepieceRoutesGrandLine, ...onepieceRoutesExtra],
   jutsu: onepieceDevilFruits,
   assets: onepieceAssets,
 };
