@@ -36,8 +36,8 @@ export const onepieceLocationsParadise: Location[] = [
     name: 'Twin Cape',
     localizedName: { it: 'Capo Gemello', en: 'Twin Cape' },
     type: 'landmark',
-    x: 1045,
-    y: 503,
+    x: 1068,
+    y: 538,
     shortDescription: {
       it: "Il faro all'imbocco della Grand Line, casa del guardiano Crocus e della balena Laboon, che da 50 anni attende il ritorno dei suoi pirati.",
       en: 'The lighthouse at the mouth of the Grand Line, home of the keeper Crocus and the whale Laboon, who has awaited her pirates for 50 years.',
@@ -45,7 +45,7 @@ export const onepieceLocationsParadise: Location[] = [
     nationId: 'nation-op-grand-line-paradise',
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['paradise', 'laboon', 'crocus'],
   },
   {
@@ -55,8 +55,8 @@ export const onepieceLocationsParadise: Location[] = [
     name: 'Whisky Peak (Cactus Island)',
     localizedName: { it: 'Whisky Peak (Isola Cactus)', en: 'Whisky Peak (Cactus Island)' },
     type: 'city',
-    x: 1064,
-    y: 484,
+    x: 1103,
+    y: 513,
     shortDescription: {
       it: "Città dei cactus che accoglie i pirati come eroi salvo poi derubarli: covo dei cacciatori di taglie della Baroque Works. Qui Vivi rivela la sua identità.",
       en: 'A cactus-shaped town that welcomes pirates as heroes only to rob them: a nest of Baroque Works bounty hunters. Here Vivi reveals her identity.',
@@ -64,7 +64,7 @@ export const onepieceLocationsParadise: Location[] = [
     nationId: 'nation-op-grand-line-paradise',
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['paradise', 'baroque-works', 'vivi'],
   },
   {
@@ -74,8 +74,8 @@ export const onepieceLocationsParadise: Location[] = [
     name: 'Little Garden',
     localizedName: { it: 'Little Garden', en: 'Little Garden' },
     type: 'landmark',
-    x: 1099,
-    y: 466,
+    x: 1108,
+    y: 470,
     shortDescription: {
       it: "Isola preistorica fuori dal tempo, popolata da dinosauri e dai due giganti di Elbaf Dorry e Brogy, eterni rivali da cent'anni.",
       en: 'A prehistoric island frozen in time, populated by dinosaurs and by the two Elbaf giants Dorry and Brogy, eternal rivals for a hundred years.',
@@ -83,7 +83,7 @@ export const onepieceLocationsParadise: Location[] = [
     nationId: 'nation-op-grand-line-paradise',
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['paradise', 'giganti', 'elbaf'],
   },
   {
@@ -93,8 +93,8 @@ export const onepieceLocationsParadise: Location[] = [
     name: 'Drum Island (Sakura Kingdom)',
     localizedName: { it: 'Drum Island (Regno di Sakura)', en: 'Drum Island (Sakura Kingdom)' },
     type: 'city',
-    x: 1140,
-    y: 466,
+    x: 1186,
+    y: 482,
     shortDescription: {
       it: "Isola invernale dalle vette innevate, regno dei medici. Qui Rufy recluta Tony Tony Chopper, allievo della dottoressa Kureha e del compianto Hiluluk.",
       en: 'A snow-capped winter island, a kingdom of doctors. Here Luffy recruits Tony Tony Chopper, pupil of Dr. Kureha and the late Hiluluk.',
@@ -115,8 +115,8 @@ export const onepieceLocationsParadise: Location[] = [
     name: 'Sandy Island (Alabasta)',
     localizedName: { it: 'Isola Sandy (Alabasta)', en: 'Sandy Island (Alabasta)' },
     type: 'nation',
-    x: 1230,
-    y: 457,
+    x: 1250,
+    y: 478,
     shortDescription: {
       it: "Vasto regno desertico governato dalla famiglia Nefertari. Teatro della guerra civile orchestrata da Crocodile e della Baroque Works, sventata dalla ciurma a fianco della principessa Vivi.",
       en: "A vast desert kingdom ruled by the Nefertari family. Stage of the civil war engineered by Crocodile and Baroque Works, foiled by the crew alongside Princess Vivi.",
@@ -137,8 +137,8 @@ export const onepieceLocationsParadise: Location[] = [
     name: 'Nanohana',
     localizedName: { it: 'Nanohana', en: 'Nanohana' },
     type: 'city',
-    x: 1242,
-    y: 478,
+    x: 1263,
+    y: 503,
     shortDescription: {
       it: "Città portuale di Alabasta, prospera per il commercio dei profumi. Qui Rufy si imbatte di nuovo in Ace.",
       en: 'A port town of Alabasta, prosperous from the perfume trade. Here Luffy crosses paths again with Ace.',
@@ -146,7 +146,7 @@ export const onepieceLocationsParadise: Location[] = [
     nationId: 'nation-op-grand-line-paradise',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['paradise', 'alabasta'],
   },
   {
@@ -156,8 +156,8 @@ export const onepieceLocationsParadise: Location[] = [
     name: 'Rainbase',
     localizedName: { it: 'Rainbase', en: 'Rainbase' },
     type: 'city',
-    x: 1252,
-    y: 490,
+    x: 1228,
+    y: 485,
     shortDescription: {
       it: "Città del gioco d'azzardo di Alabasta, dove sorge il Rain Dinners, il casinò-quartier generale di Crocodile.",
       en: "Alabasta's gambling city, home to Rain Dinners, the casino-headquarters of Crocodile.",
@@ -165,7 +165,7 @@ export const onepieceLocationsParadise: Location[] = [
     nationId: 'nation-op-grand-line-paradise',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['paradise', 'alabasta', 'crocodile'],
   },
   {
@@ -175,8 +175,8 @@ export const onepieceLocationsParadise: Location[] = [
     name: 'Erumalu',
     localizedName: { it: 'Erumalu', en: 'Erumalu' },
     type: 'ruins',
-    x: 1228,
-    y: 484,
+    x: 1233,
+    y: 503,
     shortDescription: {
       it: "«La città del verde», un tempo florida e ora ridotta a rovine dalla siccità causata da Crocodile in Alabasta.",
       en: "'The city of green', once flourishing and now reduced to ruins by the drought Crocodile inflicted on Alabasta.",
@@ -184,7 +184,7 @@ export const onepieceLocationsParadise: Location[] = [
     nationId: 'nation-op-grand-line-paradise',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['paradise', 'alabasta', 'rovine'],
   },
   {
@@ -194,8 +194,8 @@ export const onepieceLocationsParadise: Location[] = [
     name: 'Yuba',
     localizedName: { it: 'Yuba', en: 'Yuba' },
     type: 'village',
-    x: 1260,
-    y: 497,
+    x: 1258,
+    y: 500,
     shortDescription: {
       it: "Oasi di Alabasta dove si raduna l'esercito ribelle, ormai sepolta dalle tempeste di sabbia. Qui resiste Toto.",
       en: "An Alabasta oasis where the rebel army gathers, now buried by sandstorms. Toto holds out here.",
@@ -203,7 +203,7 @@ export const onepieceLocationsParadise: Location[] = [
     nationId: 'nation-op-grand-line-paradise',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['paradise', 'alabasta', 'ribelli'],
   },
   {
@@ -214,7 +214,7 @@ export const onepieceLocationsParadise: Location[] = [
     localizedName: { it: 'Katorea', en: 'Katorea' },
     type: 'village',
     x: 1268,
-    y: 500,
+    y: 506,
     shortDescription: {
       it: "Città di Alabasta divenuta punto di raccolta dell'esercito ribelle guidato da Koza.",
       en: "An Alabasta town that became the rallying point of the rebel army led by Koza.",
@@ -222,7 +222,7 @@ export const onepieceLocationsParadise: Location[] = [
     nationId: 'nation-op-grand-line-paradise',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['paradise', 'alabasta', 'ribelli'],
   },
   {
@@ -232,8 +232,8 @@ export const onepieceLocationsParadise: Location[] = [
     name: 'Long Ring Long Land',
     localizedName: { it: 'Long Ring Long Land', en: 'Long Ring Long Land' },
     type: 'landmark',
-    x: 1436,
-    y: 458,
+    x: 1448,
+    y: 480,
     shortDescription: {
       it: "Isola lunghissima e stretta dove si svolge il Davy Back Fight contro la ciurma di Foxy il Volpe Argentata.",
       en: 'A very long, narrow island where the Davy Back Fight against Foxy the Silver Fox is held.',
@@ -241,7 +241,7 @@ export const onepieceLocationsParadise: Location[] = [
     nationId: 'nation-op-grand-line-paradise',
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['paradise', 'foxy', 'davy-back-fight'],
   },
   {
@@ -252,7 +252,7 @@ export const onepieceLocationsParadise: Location[] = [
     localizedName: { it: 'Jaya', en: 'Jaya' },
     type: 'landmark',
     x: 1333,
-    y: 489,
+    y: 527,
     shortDescription: {
       it: "Isola dei pirati e dei cacciatori di sogni: metà di essa fu spazzata in cielo dalla Knock-Up Stream, diventando l'Upper Yard di Skypiea.",
       en: "A pirates' and dreamers' island: half of it was blasted skyward by the Knock-Up Stream, becoming Skypiea's Upper Yard.",
@@ -260,7 +260,7 @@ export const onepieceLocationsParadise: Location[] = [
     nationId: 'nation-op-grand-line-paradise',
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['paradise', 'jaya', 'skypiea'],
   },
   {
@@ -270,8 +270,8 @@ export const onepieceLocationsParadise: Location[] = [
     name: 'Mock Town',
     localizedName: { it: 'Mock Town', en: 'Mock Town' },
     type: 'city',
-    x: 1309,
-    y: 483,
+    x: 1318,
+    y: 515,
     shortDescription: {
       it: "Città-covo di pirati su Jaya, dove la ciurma incontra Bellamy e dove Blackbeard pronuncia la sua filosofia dei sogni.",
       en: "A pirate den-town on Jaya, where the crew meets Bellamy and where Blackbeard voices his philosophy of dreams.",
@@ -279,7 +279,7 @@ export const onepieceLocationsParadise: Location[] = [
     nationId: 'nation-op-grand-line-paradise',
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['paradise', 'jaya', 'bellamy', 'blackbeard'],
   },
   {
@@ -290,7 +290,7 @@ export const onepieceLocationsParadise: Location[] = [
     localizedName: { it: 'Skypiea', en: 'Skypiea' },
     type: 'sacred_place',
     x: 1397,
-    y: 474,
+    y: 490,
     shortDescription: {
       it: "Isola del cielo a 10.000 metri d'altitudine, fatta di nuvole. Regno di «Dio» Enel, custode dell'oro della città perduta di Shandora.",
       en: "A sky island at 10,000 metres, made of clouds. The realm of 'God' Enel, keeper of the gold of the lost city of Shandora.",
@@ -330,8 +330,8 @@ export const onepieceLocationsParadise: Location[] = [
     name: 'Water Seven',
     localizedName: { it: 'Water Seven', en: 'Water Seven' },
     type: 'city',
-    x: 1587,
-    y: 478,
+    x: 1605,
+    y: 485,
     shortDescription: {
       it: "«La città dell'acqua»: metropoli di canali e cantieri navali, patria dei migliori carpentieri. Qui nasce la Thousand Sunny e Franky si unisce alla ciurma.",
       en: "'The city of water': a metropolis of canals and shipyards, home of the finest shipwrights. Here the Thousand Sunny is born and Franky joins the crew.",
@@ -352,8 +352,8 @@ export const onepieceLocationsParadise: Location[] = [
     name: 'San Faldo',
     localizedName: { it: 'San Faldo', en: 'San Faldo' },
     type: 'city',
-    x: 1543,
-    y: 493,
+    x: 1560,
+    y: 525,
     shortDescription: {
       it: "Città collegata a Water Seven dal Sea Train, nota per i suoi acquedotti e le sue feste.",
       en: 'A city linked to Water Seven by the Sea Train, known for its aqueducts and festivals.',
@@ -361,7 +361,7 @@ export const onepieceLocationsParadise: Location[] = [
     nationId: 'nation-op-grand-line-paradise',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['paradise', 'sea-train'],
   },
   {
@@ -371,8 +371,8 @@ export const onepieceLocationsParadise: Location[] = [
     name: 'St. Poplar',
     localizedName: { it: 'St. Poplar', en: 'St. Poplar' },
     type: 'city',
-    x: 1572,
-    y: 513,
+    x: 1608,
+    y: 540,
     shortDescription: {
       it: "«La città primaverile», collegata dal Sea Train, salvata dalla ciurma di Franky in passato.",
       en: "'The spring city', linked by the Sea Train, once saved by the Franky Family.",
@@ -380,7 +380,7 @@ export const onepieceLocationsParadise: Location[] = [
     nationId: 'nation-op-grand-line-paradise',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['paradise', 'sea-train'],
   },
   {
@@ -412,8 +412,8 @@ export const onepieceLocationsParadise: Location[] = [
     name: 'Thriller Bark',
     localizedName: { it: 'Thriller Bark', en: 'Thriller Bark' },
     type: 'landmark',
-    x: 1782,
-    y: 496,
+    x: 1793,
+    y: 490,
     shortDescription: {
       it: "La più grande nave del mondo, un'isola-galeone avvolta nella nebbia del Triangolo Florian. Regno del Corsaro Gekko Moria, ladro di ombre, dove la ciurma trova Brook.",
       en: "The largest ship in the world, a galleon-island shrouded in the Florian Triangle's fog. Realm of the Warlord Gecko Moria, a stealer of shadows, where the crew finds Brook.",
