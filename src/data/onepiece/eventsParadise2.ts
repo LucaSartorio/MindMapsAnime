@@ -5,6 +5,10 @@ export const onepieceEventsParadise2: TimelineEvent[] = [
   {
     id: 'evt-op-robin-taken',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Per proteggere la ciurma da un Buster Call, Nico Robin si consegna alla CP9 fingendo di tradire i compagni e di voler morire. Rapita insieme a Franky e portata verso Enies Lobby sul Sea Train, lascia dietro di sé una ciurma spezzata e decisa a inseguirla.",
+      en: "To protect the crew from a Buster Call, Nico Robin surrenders to CP9, feigning betrayal and a wish to die. Abducted along with Franky and taken toward Enies Lobby on the Sea Train, she leaves behind a shattered crew determined to chase her.",
+    },
     mangaChapters: ["356-362"],
     animeEpisodes: ["252-258"],
     title: { it: 'Nico Robin scompare', en: 'Nico Robin disappears' },
@@ -26,6 +30,10 @@ export const onepieceEventsParadise2: TimelineEvent[] = [
   {
     id: 'evt-op-declaration-war',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Sul tetto della torre Robin, per la prima volta in vita sua, urla di voler vivere. In risposta Rufy ordina a Usop di incendiare la bandiera del Governo Mondiale davanti al mondo intero: una dichiarazione di guerra a tutto il potere costituito, per amore di una sola compagna.",
+      en: "Atop the tower Robin, for the first time in her life, cries that she wants to live. In answer Luffy orders Usopp to burn the World Government flag before the whole world: a declaration of war on all established power, for the sake of a single friend.",
+    },
     mangaChapters: ["383-398"],
     animeEpisodes: ["278-290"],
     title: { it: 'La dichiarazione di guerra', en: 'The declaration of war' },
@@ -47,6 +55,10 @@ export const onepieceEventsParadise2: TimelineEvent[] = [
   {
     id: 'evt-op-robin-rescue',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Strappata Robin al Governo Mondiale, la ciurma fugge mentre un Buster Call rade al suolo Enies Lobby. Per la prima volta da bambina, Robin ha una famiglia per cui vivere e compagni disposti a dichiarare guerra al mondo pur di salvarla.",
+      en: "Tearing Robin from the World Government, the crew escapes as a Buster Call levels Enies Lobby. For the first time since childhood, Robin has a family to live for and comrades willing to declare war on the world to save her.",
+    },
     mangaChapters: ["419-427"],
     animeEpisodes: ["305-309"],
     title: { it: 'La liberazione di Robin', en: "Robin's rescue" },
@@ -68,6 +80,10 @@ export const onepieceEventsParadise2: TimelineEvent[] = [
   {
     id: 'evt-op-franky-joins',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Tornati a Water Seven, la ciurma dà l'ultimo saluto alla Going Merry, il cui spirito ringrazia i compagni prima di ardere in un funerale vichingo. Con il sacro legno dell'Albero Adam, Franky costruisce la Thousand Sunny e, dopo qualche resistenza, sale a bordo come carpentiere.",
+      en: "Back in Water Seven, the crew gives the Going Merry a last farewell; her spirit thanks the crew before burning in a Viking funeral. With the sacred Adam Wood, Franky builds the Thousand Sunny and, after some resistance, comes aboard as shipwright.",
+    },
     mangaChapters: ["434-437"],
     animeEpisodes: ["319-321"],
     title: { it: 'Franky e la Thousand Sunny', en: 'Franky and the Thousand Sunny' },
@@ -89,6 +105,10 @@ export const onepieceEventsParadise2: TimelineEvent[] = [
   {
     id: 'evt-op-moria-defeat',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Nel Triangolo Florian il Corsaro Gekko Moria ruba le ombre per animare un esercito di zombie e anima il gigante Oars con quella di Rufy. Recuperate le ombre rubate a tutta l'isola, Rufy sconfigge Moria e libera Thriller Bark e i suoi prigionieri dall'incubo.",
+      en: "In the Florian Triangle the Warlord Gecko Moria steals shadows to animate an army of zombies and animates the giant Oars with Luffy's. Reclaiming the shadows stolen from the whole island, Luffy defeats Moria and frees Thriller Bark and its captives from the nightmare.",
+    },
     mangaChapters: ["473-482"],
     animeEpisodes: ["369-377"],
     title: { it: 'La caduta di Gekko Moria', en: "Gecko Moria's fall" },
@@ -110,6 +130,10 @@ export const onepieceEventsParadise2: TimelineEvent[] = [
   {
     id: 'evt-op-brook-joins',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Riavuta la sua ombra, lo scheletro musicista Brook — vivo da cinquant'anni grazie al Frutto Rinascita — si unisce ai Cappello di Paglia. Subito dopo il Corsaro Bartholomew Kuma mette alla prova la ciurma esausta, e Zoro si carica in segreto di tutto il dolore di Rufy pur di salvarlo.",
+      en: "With his shadow returned, the skeleton musician Brook — alive for fifty years thanks to the Revive-Revive Fruit — joins the Straw Hats. Right after, the Warlord Bartholomew Kuma tests the exhausted crew, and Zoro secretly takes on all of Luffy's pain to save him.",
+    },
     mangaChapters: ["485-489"],
     animeEpisodes: ["378-381"],
     title: { it: 'Brook si unisce alla ciurma', en: 'Brook joins the crew' },

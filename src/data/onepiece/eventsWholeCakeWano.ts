@@ -5,6 +5,10 @@ export const onepieceEventsWholeCakeWano: TimelineEvent[] = [
   {
     id: 'evt-op-sanji-rescue',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "La ciurma e i suoi alleati strappano Sanji al matrimonio combinato e mandano in pezzi il piano di Big Mom. Fuggono da Totland mentre l'Imperatrice furiosa li insegue, e solo una torta nuziale degna del suo palato riesce infine a placarne l'ira.",
+      en: "The crew and its allies tear Sanji from the arranged marriage and shatter Big Mom's plan. They flee Totland as the furious Empress pursues them, and only a wedding cake worthy of her palate finally quells her rage.",
+    },
     mangaChapters: ["897-899"],
     animeEpisodes: ["868-871"],
     title: { it: 'Il salvataggio di Sanji', en: "Sanji's rescue" },
@@ -26,6 +30,10 @@ export const onepieceEventsWholeCakeWano: TimelineEvent[] = [
   {
     id: 'evt-op-katakuri-duel',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Nel Mondo degli Specchi Rufy affronta Charlotte Katakuri, il più forte dei Comandanti dei Dolci, in un duello estenuante. Risvegliando una preveggenza dell'Ambizione capace di intravedere il futuro, Rufy lo eguaglia e lo sconfigge, conquistandone il rispetto.",
+      en: "In the Mirro-World Luffy faces Charlotte Katakuri, the strongest Sweet Commander, in a grueling duel. Awakening a foresight of Haki able to glimpse the future, Luffy matches and defeats him, earning his respect.",
+    },
     mangaChapters: ["882-896"],
     animeEpisodes: ["850-866"],
     title: { it: 'Rufy contro Katakuri', en: 'Luffy vs Katakuri' },
@@ -47,6 +55,10 @@ export const onepieceEventsWholeCakeWano: TimelineEvent[] = [
   {
     id: 'evt-op-oden-legacy',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Il grande flashback di Wano rivela la vita di Kozuki Oden: i viaggi con Barbabianca e poi con Roger fino a Laugh Tale, il ritorno a un Paese caduto sotto Orochi e Kaido, e la sua esecuzione, affrontata con dignità. Il suo testamento accende la promessa di vendetta dei Nove Foderi Rossi.",
+      en: "The great Wano flashback reveals the life of Kozuki Oden: his voyages with Whitebeard and then Roger to Laugh Tale, his return to a country fallen to Orochi and Kaido, and his execution, faced with dignity. His testament lights the Nine Red Scabbards' vow of vengeance.",
+    },
     mangaChapters: ["960-972"],
     animeEpisodes: ["960-972"],
     title: { it: "L'eredità di Kozuki Oden", en: "Kozuki Oden's legacy" },
@@ -68,6 +80,10 @@ export const onepieceEventsWholeCakeWano: TimelineEvent[] = [
   {
     id: 'evt-op-onigashima-war',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "L'alleanza di samurai, pirati, mink e ninja assalta Onigashima durante il festival del fuoco. Mentre i Nove Foderi Rossi affrontano Kaido e gli equipaggi si scontrano piano per piano, lo scontro decisivo per il futuro di Wano e del mondo divampa nella fortezza dell'Imperatore.",
+      en: "The alliance of samurai, pirates, minks and ninja storms Onigashima during the fire festival. As the Nine Red Scabbards face Kaido and the crews clash floor by floor, the decisive battle for the future of Wano and the world erupts in the Emperor's fortress.",
+    },
     mangaChapters: ["985-1040"],
     animeEpisodes: ["1015-1070"],
     title: { it: 'La guerra di Onigashima', en: 'The Onigashima war' },
@@ -89,6 +105,10 @@ export const onepieceEventsWholeCakeWano: TimelineEvent[] = [
   {
     id: 'evt-op-kaido-defeat',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Con il potere del Gear 5, Rufy abbatte l'Imperatore Kaido e lo precipita nel magma sotto Onigashima, liberando Wano. Momonosuke diventa shogun, il Paese si apre a un futuro di pace e il mondo proclama Rufy uno dei nuovi Quattro Imperatori.",
+      en: "With the power of Gear 5, Luffy strikes down the Emperor Kaido and plunges him into the magma beneath Onigashima, freeing Wano. Momonosuke becomes shogun, the country opens to a future of peace, and the world proclaims Luffy one of the new Four Emperors.",
+    },
     mangaChapters: ["1049-1050"],
     animeEpisodes: ["1076-1078"],
     title: { it: 'La caduta di Kaido', en: "Kaido's fall" },

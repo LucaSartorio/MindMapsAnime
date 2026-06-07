@@ -11,6 +11,10 @@ export const onepieceEvents: TimelineEvent[] = [
   {
     id: 'evt-op-shanks-hat',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Shanks e i suoi pirati passano un periodo a Foosha, dove il piccolo Rufy li venera. Per provare il proprio coraggio Rufy ingoia il Frutto Gom Gom; quando dei banditi e poi un Re del Mare lo minacciano, Shanks accorre e perde il braccio sinistro per salvarlo. Prima di ripartire gli affida il suo cappello di paglia, promessa di restituirlo da grande pirata.",
+      en: "Shanks and his pirates spend a season at Foosha, where young Luffy idolises them. To prove his courage Luffy swallows the Gum-Gum Fruit; when bandits and then a Sea King threaten him, Shanks rushes in and loses his left arm to save him. Before leaving he entrusts Luffy with his straw hat, a promise to return it as a great pirate.",
+    },
     mangaChapters: ["1"],
     animeEpisodes: ["1", "4"],
     title: { it: 'Il cappello di paglia di Shanks', en: "Shanks's straw hat" },
@@ -32,6 +36,10 @@ export const onepieceEvents: TimelineEvent[] = [
   {
     id: 'evt-op-luffy-sets-sail',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Dieci anni dopo, a diciassette anni, Rufy lascia il villaggio di Foosha su una piccola barca. Sfugge a un gigantesco Re del Mare e dichiara al mare aperto la propria meta: radunare una ciurma, trovare il One Piece e diventare Re dei Pirati.",
+      en: "Ten years later, at seventeen, Luffy leaves Foosha village on a little boat. He escapes a giant Sea King and declares his goal to the open sea: to gather a crew, find the One Piece and become Pirate King.",
+    },
     mangaChapters: ["1"],
     animeEpisodes: ["1"],
     title: { it: 'Rufy salpa', en: 'Luffy sets sail' },
@@ -53,6 +61,10 @@ export const onepieceEvents: TimelineEvent[] = [
   {
     id: 'evt-op-zoro-recruited',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "A Shells Town Rufy scopre il cacciatore di pirati Roronoa Zoro legato a un palo dal tirannico capitano della Marina Morgan. Liberatolo e deposto Morgan, Rufy lo convince a diventare il suo primo compagno: Zoro giura di diventare il più grande spadaccino del mondo.",
+      en: "At Shells Town Luffy finds the pirate-hunter Roronoa Zoro tied to a post by the tyrannical Marine captain Morgan. Freeing him and deposing Morgan, Luffy convinces him to become his first companion: Zoro vows to become the world's greatest swordsman.",
+    },
     mangaChapters: ["3-7"],
     animeEpisodes: ["2-3"],
     title: { it: 'Zoro si unisce alla ciurma', en: 'Zoro joins the crew' },
@@ -74,6 +86,10 @@ export const onepieceEvents: TimelineEvent[] = [
   {
     id: 'evt-op-buggy-orange-town',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Orange Town è terrorizzata dai Pirati di Bagy il Clown, utente del Frutto Frammento. Tra il cane fedele Chouchou e il sindaco Boodle, Rufy e Zoro smantellano la banda e Rufy spedisce in cielo Bagy con un colpo di cannone, gettando le basi di una rivalità destinata a durare.",
+      en: "Orange Town is terrorised by Buggy the Clown's pirates, user of the Chop-Chop Fruit. Amid the loyal dog Chouchou and mayor Boodle, Luffy and Zoro dismantle the gang and Luffy blasts Buggy skyward with a cannon, laying the seeds of a lasting rivalry.",
+    },
     mangaChapters: ["9-21"],
     animeEpisodes: ["5-8"],
     title: { it: 'Scontro con Bagy il Clown', en: 'Clash with Buggy the Clown' },
@@ -95,6 +111,10 @@ export const onepieceEvents: TimelineEvent[] = [
   {
     id: 'evt-op-nami-meets-luffy',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "La ladra Nami, che deruba i pirati per uno scopo segreto, incrocia Rufy a Orange Town fingendosi sua alleata. Diffidente ma incuriosita, comincia a navigare con lui pur senza fidarsi: è l'inizio del legame con la futura navigatrice della ciurma.",
+      en: "Nami, a thief who robs pirates for a secret purpose, crosses Luffy at Orange Town posing as his ally. Wary but intrigued, she begins sailing with him without trusting him: the start of the bond with the crew's future navigator.",
+    },
     mangaChapters: ["8-9"],
     animeEpisodes: ["4-5"],
     title: { it: 'Nami incontra Rufy', en: 'Nami meets Luffy' },
@@ -116,6 +136,10 @@ export const onepieceEvents: TimelineEvent[] = [
   {
     id: 'evt-op-usopp-kuro',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "A Syrup Village il bugiardo Usop scopre che il maggiordomo Klahadore è il Capitano Kuro dei Pirati del Gatto Nero, deciso ad assassinare l'ereditiera Kaya. Con la ciurma respinge l'assalto sulla salita del villaggio; Rufy batte Kuro e una Kaya riconoscente dona ai pirati la caravella Going Merry. Usop salpa come cecchino.",
+      en: "At Syrup Village the liar Usopp discovers that the butler Klahadore is Captain Kuro of the Black Cat Pirates, set on murdering the heiress Kaya. With the crew he repels the assault on the village slope; Luffy beats Kuro, and a grateful Kaya gives the pirates the caravel Going Merry. Usopp sets sail as sniper.",
+    },
     mangaChapters: ["23-41"],
     animeEpisodes: ["9-17"],
     title: { it: 'Il complotto di Kuro', en: "Kuro's plot" },
@@ -137,6 +161,10 @@ export const onepieceEvents: TimelineEvent[] = [
   {
     id: 'evt-op-baratie-krieg',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Sul ristorante galleggiante Baratie il cuoco Sanji onora il debito di vita con Zeff servendo persino i nemici affamati. Quando Don Krieg, tornato distrutto dalla Grand Line, assalta il locale per rubarne una nave, Rufy lo affronta e lo sconfigge difendendo il ristorante.",
+      en: "On the floating restaurant Baratie the cook Sanji honours his life-debt to Zeff by feeding even starving enemies. When Don Krieg, returned broken from the Grand Line, storms the place to steal a ship, Luffy faces and defeats him, defending the restaurant.",
+    },
     mangaChapters: ["44-68"],
     animeEpisodes: ["21-30"],
     title: { it: "Assalto al Baratie", en: 'Assault on the Baratie' },
@@ -158,6 +186,10 @@ export const onepieceEvents: TimelineEvent[] = [
   {
     id: 'evt-op-zoro-vs-mihawk',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Attratto dal Baratie, il più grande spadaccino del mondo Dracule Mihawk «Occhi di Falco» accetta la sfida di Zoro e lo sconfigge con una sola, piccola lama, risparmiandolo. Zoro giura davanti a Rufy di non perdere mai più: nasce il suo obiettivo di superare proprio Mihawk.",
+      en: "Drawn to the Baratie, the world's greatest swordsman Dracule 'Hawk-Eyes' Mihawk accepts Zoro's challenge and defeats him with a single small blade, sparing him. Before Luffy, Zoro vows never to lose again: his goal to surpass Mihawk himself is born.",
+    },
     mangaChapters: ["50-51"],
     animeEpisodes: ["24-25"],
     title: { it: 'Zoro contro Mihawk', en: 'Zoro vs Mihawk' },
@@ -178,6 +210,10 @@ export const onepieceEvents: TimelineEvent[] = [
   {
     id: 'evt-op-arlong-liberation',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Sulle Isole Conomi Rufy scopre che Nami era schiava dell'uomo-pesce Arlong, costretta a comprare la libertà del villaggio mappa dopo mappa. Tradita dal corrotto Nezumi, Nami chiede aiuto: Rufy distrugge Arlong Park e abbatte Arlong, liberando Cocoyashi da una tirannia decennale.",
+      en: "On the Conomi Islands Luffy learns Nami was enslaved by the fish-man Arlong, forced to buy back her village map by map. Betrayed by the corrupt Nezumi, Nami asks for help: Luffy destroys Arlong Park and strikes down Arlong, freeing Cocoyashi from a decade of tyranny.",
+    },
     mangaChapters: ["83-94"],
     animeEpisodes: ["40-43"],
     title: { it: "La caduta di Arlong Park", en: 'The fall of Arlong Park' },
@@ -199,6 +235,10 @@ export const onepieceEvents: TimelineEvent[] = [
   {
     id: 'evt-op-nami-joins',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Liberata dal giogo di Arlong e riabbracciato il villaggio, Nami sceglie finalmente di unirsi ai Cappello di Paglia come navigatrice. Tra le lacrime e i saluti di Cocoyashi, ruba un cappello per gioco e salpa: la ciurma ha la sua timoniera delle rotte.",
+      en: "Freed from Arlong's yoke and reunited with her village, Nami finally chooses to join the Straw Hats as navigator. Amid Cocoyashi's tears and farewells, she playfully snatches a hat and sails off: the crew has its chart-reader.",
+    },
     mangaChapters: ["94-95"],
     animeEpisodes: ["43-44"],
     title: { it: 'Nami entra nella ciurma', en: 'Nami joins the crew' },
@@ -220,6 +260,10 @@ export const onepieceEvents: TimelineEvent[] = [
   {
     id: 'evt-op-loguetown-execution',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "A Loguetown, dove fu giustiziato Gol D. Roger, Rufy sale per curiosità sul patibolo del Re dei Pirati. Bagy, alleato con Alvida, sta per decapitarlo quando un fulmine lo salva; il rivoluzionario Dragon, padre di Rufy, copre di nascosto la fuga del figlio dal capitano Smoker.",
+      en: "At Loguetown, where Gol D. Roger was executed, Luffy climbs the Pirate King's scaffold out of curiosity. Buggy, allied with Alvida, is about to behead him when a lightning bolt saves him; the revolutionary Dragon, Luffy's father, secretly covers his son's escape from captain Smoker.",
+    },
     mangaChapters: ["98-99"],
     animeEpisodes: ["48-52"],
     title: { it: "Il patibolo di Loguetown", en: 'The Loguetown scaffold' },
@@ -241,6 +285,10 @@ export const onepieceEvents: TimelineEvent[] = [
   {
     id: 'evt-op-enter-grand-line',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Sotto una tempesta i Cappello di Paglia risalgono il canale di Reverse Mountain, la montagna che incanala le correnti dei quattro mari, ed entrano nella Grand Line. Si chiude la Saga di East Blue e comincia il vero viaggio verso il One Piece.",
+      en: "Under a storm the Straw Hats climb the channel of Reverse Mountain, the peak that funnels the currents of the four seas, and enter the Grand Line. The East Blue Saga closes and the true journey toward the One Piece begins.",
+    },
     mangaChapters: ["101-105"],
     animeEpisodes: ["53", "61-63"],
     title: { it: "Ingresso nella Grand Line", en: 'Entering the Grand Line' },

@@ -8,6 +8,10 @@ export const onepieceEventsRedLine: TimelineEvent[] = [
   {
     id: 'evt-op-fisher-tiger-raid',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "L'eroe uomo-pesce Fisher Tiger irrompe a Mary Geoise e libera gli schiavi dei Draghi Celesti, scuotendo il mondo. Fonda i Pirati del Sole, in cui militano il futuro pacificatore Jinbe e il futuro tiranno Arlong: due visioni opposte del rapporto con gli umani.",
+      en: "The fish-man hero Fisher Tiger storms Mary Geoise and frees the Celestial Dragons' slaves, shaking the world. He founds the Sun Pirates, serving among them the future peacemaker Jinbe and the future tyrant Arlong: two opposite visions of dealing with humans.",
+    },
     mangaChapters: ["621-623"],
     animeEpisodes: ["540-542"],
     title: { it: "L'assalto di Fisher Tiger a Mary Geoise", en: "Fisher Tiger's raid on Mary Geoise" },
@@ -29,6 +33,10 @@ export const onepieceEventsRedLine: TimelineEvent[] = [
   {
     id: 'evt-op-sabaody-scatter',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Dopo aver colpito un Drago Celeste e affrontato la Marina e l'ammiraglio Kizaru, la ciurma è circondata. Bartholomew Kuma appare e, uno a uno, scaraventa i nove Cappello di Paglia ai quattro angoli del mondo: comincia la separazione di due anni che li renderà più forti.",
+      en: "After striking a Celestial Dragon and facing the Marines and Admiral Kizaru, the crew is surrounded. Bartholomew Kuma appears and, one by one, flings the nine Straw Hats to the four corners of the world: the two-year separation that will make them stronger begins.",
+    },
     mangaChapters: ["510-513"],
     animeEpisodes: ["400-405"],
     title: { it: 'La dispersione di Sabaody', en: 'The Sabaody scattering' },
@@ -50,6 +58,10 @@ export const onepieceEventsRedLine: TimelineEvent[] = [
   {
     id: 'evt-op-luffy-amazon',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Scaraventato sull'isola delle sole donne Kuja, Rufy rischia la condanna a morte come maschio intruso. Vedendo senza giudicarlo il marchio della schiavitù che l'Imperatrice Boa Hancock nasconde con vergogna, ne conquista il cuore; lei deciderà di aiutarlo a salvare Ace.",
+      en: "Flung onto the island of the all-female Kuja, Luffy risks a death sentence as a male intruder. Seeing, without judging, the slave brand Empress Boa Hancock hides in shame, he wins her heart; she will decide to help him save Ace.",
+    },
     mangaChapters: ["514-524"],
     animeEpisodes: ["408-417"],
     title: { it: 'Rufy ad Amazon Lily', en: 'Luffy on Amazon Lily' },
@@ -71,6 +83,10 @@ export const onepieceEventsRedLine: TimelineEvent[] = [
   {
     id: 'evt-op-impel-breakout',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Introdotto da Hancock, Rufy si infiltra a Impel Down per salvare Ace e scende tra i sei livelli infernali. Avvelenato da Magellan e salvato da Ivankov, scopre che Ace è già a Marineford; insieme a Jinbe, Crocodile e a un esercito di evasi guida una clamorosa rivolta verso l'uscita.",
+      en: "Smuggled in by Hancock, Luffy infiltrates Impel Down to save Ace and descends its six infernal levels. Poisoned by Magellan and saved by Ivankov, he learns Ace is already at Marineford; with Jinbe, Crocodile and an army of escapees he leads a spectacular revolt to the exit.",
+    },
     mangaChapters: ["525-549"],
     animeEpisodes: ["430-452"],
     title: { it: 'Evasione da Impel Down', en: 'The Impel Down breakout' },
@@ -98,6 +114,10 @@ export const onepieceEventsRedLine: TimelineEvent[] = [
   {
     id: 'evt-op-marineford-war',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Marina e Pirati di Barbabianca si schiantano in una battaglia colossale per l'esecuzione di Ace: vi accorrono ammiragli, Corsari, giganti e Supernove. Tra inganni, eroismi e sacrifici, l'esito resta in bilico fino all'arrivo di Rufy e degli evasi di Impel Down.",
+      en: "Marines and Whitebeard Pirates collide in a colossal battle over Ace's execution: admirals, Warlords, giants and Supernovas converge. Amid deceptions, heroics and sacrifices, the outcome hangs in the balance until the arrival of Luffy and the Impel Down escapees.",
+    },
     mangaChapters: ["550-574"],
     animeEpisodes: ["457-483"],
     title: { it: 'La Guerra al Vertice', en: 'The Summit War' },
@@ -127,6 +147,10 @@ export const onepieceEventsRedLine: TimelineEvent[] = [
   {
     id: 'evt-op-ace-death',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Mentre Rufy e Ace fuggono, l'ammiraglio Akainu provoca Ace, che si volta a difendere il fratello e incassa in pieno un pugno di magma. Portgas D. Ace muore tra le braccia di Rufy ringraziandolo di averlo amato: una perdita che lo spezzerà nel profondo.",
+      en: "As Luffy and Ace flee, Admiral Akainu goads Ace, who turns to defend his brother and takes a fist of magma full on. Portgas D. Ace dies in Luffy's arms, thanking him for loving him: a loss that will break him to the core.",
+    },
     mangaChapters: ["573-574"],
     animeEpisodes: ["483-484"],
     title: { it: 'La morte di Ace', en: "Ace's death" },
@@ -147,6 +171,10 @@ export const onepieceEventsRedLine: TimelineEvent[] = [
   {
     id: 'evt-op-whitebeard-death',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Tradito e crivellato di colpi, Barbabianca muore in piedi, senza una ferita alla schiena, dopo aver proclamato al mondo che il One Piece esiste davvero. Nell'ombra, Barbanera e la sua ciurma ne ricoprono il corpo e gli strappano misteriosamente il potere del Frutto Tremarella.",
+      en: "Betrayed and riddled with wounds, Whitebeard dies standing, without a wound on his back, after proclaiming to the world that the One Piece truly exists. In the shadows, Blackbeard and his crew cover his body and mysteriously tear away the power of the Tremor-Tremor Fruit.",
+    },
     mangaChapters: ["576-577"],
     animeEpisodes: ["485-486"],
     title: { it: 'La fine di Barbabianca', en: "Whitebeard's last stand" },
@@ -168,6 +196,10 @@ export const onepieceEventsRedLine: TimelineEvent[] = [
   {
     id: 'evt-op-fishman-island',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Tornata insieme dopo due anni, la ciurma discende sull'Isola degli Uomini-Pesce e sventa il colpo di stato di Hody Jones, che vuole sterminare la famiglia reale Ryugu e dichiarare guerra agli umani. Rufy protegge la principessa Shirahoshi e rinsalda il sogno di pace di Otohime.",
+      en: "Reunited after two years, the crew descends to Fish-Man Island and foils Hody Jones's coup, who seeks to wipe out the Ryugu royal family and declare war on humans. Luffy protects Princess Shirahoshi and upholds Otohime's dream of peace.",
+    },
     mangaChapters: ["629-649"],
     animeEpisodes: ["543-569"],
     title: { it: 'Il golpe di Hody Jones', en: "Hody Jones's coup" },
@@ -189,6 +221,10 @@ export const onepieceEventsRedLine: TimelineEvent[] = [
   {
     id: 'evt-op-reverie',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Durante la Reverie a Mary Geoise, mentre i re del mondo si riuniscono, dietro le quinte si rivela l'esistenza di Imu: il sovrano segreto che siede sul Trono Vuoto, sopra i Cinque Astri di Saggezza, e che decide quali nomi e quali regni cancellare dalla storia.",
+      en: "During the Reverie at Mary Geoise, as the world's kings gather, behind the scenes the existence of Imu is revealed: the secret ruler who sits on the Empty Throne, above the Five Elders, and who decides which names and kingdoms to erase from history.",
+    },
     mangaChapters: ["905-908"],
     animeEpisodes: ["883-889"],
     title: { it: 'La Reverie e il Trono Vuoto', en: 'The Reverie and the Empty Throne' },

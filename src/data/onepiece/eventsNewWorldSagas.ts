@@ -5,6 +5,10 @@ export const onepieceEventsNewWorldSagas: TimelineEvent[] = [
   {
     id: 'evt-op-ph-alliance',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Sgominato il laboratorio e catturato Caesar, Rufy e Trafalgar Law siglano ufficialmente un'alleanza con un unico, folle obiettivo: detronizzare uno dei Quattro Imperatori, Kaido. Smoker e la Marina G-5 lasciano partire la ciurma verso il regno di Doflamingo, Dressrosa.",
+      en: "With the lab smashed and Caesar captured, Luffy and Trafalgar Law officially seal an alliance with one mad goal: to dethrone one of the Four Emperors, Kaido. Smoker and the G-5 Marines let the crew leave for Doflamingo's kingdom, Dressrosa.",
+    },
     mangaChapters: ["695-699"],
     animeEpisodes: ["623-625"],
     title: { it: "L'alleanza Rufy-Law", en: 'The Luffy-Law alliance' },
@@ -26,6 +30,10 @@ export const onepieceEventsNewWorldSagas: TimelineEvent[] = [
   {
     id: 'evt-op-doflamingo-defeat',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Dopo una battaglia che coinvolge l'intera Dressrosa, Rufy abbatte Doflamingo con il Gear Fourth, ponendo fine al suo regno del terrore e alla fabbrica di SMILE. La caduta di un Corsaro scuote l'equilibrio del mondo e fa esplodere la fama di Rufy.",
+      en: "After a battle engulfing all of Dressrosa, Luffy strikes down Doflamingo with Gear Fourth, ending his reign of terror and the SMILE factory. The fall of a Warlord shakes the world's balance and sends Luffy's fame soaring.",
+    },
     mangaChapters: ["790-793"],
     animeEpisodes: ["731-733"],
     title: { it: 'La caduta di Doflamingo', en: "Doflamingo's fall" },
@@ -47,6 +55,10 @@ export const onepieceEventsNewWorldSagas: TimelineEvent[] = [
   {
     id: 'evt-op-sabo-mera-mera',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Nel Colosseo Corrida, Sabo — fratello giurato di Rufy e Ace e numero due dei rivoluzionari — conquista il Frutto Mera Mera, ereditando la volontà di fuoco del fratello defunto. La liberazione di Dressrosa accende mille alleanze sotto la bandiera di Rufy.",
+      en: "In the Corrida Colosseum, Sabo — sworn brother of Luffy and Ace and the Revolutionaries' number two — wins the Flame-Flame Fruit, inheriting his late brother's will of fire. The liberation of Dressrosa kindles a thousand alliances under Luffy's flag.",
+    },
     mangaChapters: ["730-744"],
     animeEpisodes: ["672-694"],
     title: { it: 'Sabo eredita il fuoco di Ace', en: "Sabo inherits Ace's flame" },
