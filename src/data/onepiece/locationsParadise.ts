@@ -93,8 +93,8 @@ export const onepieceLocationsParadise: Location[] = [
     name: 'Drum Island (Sakura Kingdom)',
     localizedName: { it: 'Drum Island (Regno di Sakura)', en: 'Drum Island (Sakura Kingdom)' },
     type: 'city',
-    x: 1176,
-    y: 497,
+    x: 1186,
+    y: 461,
     shortDescription: {
       it: "Isola invernale dalle vette innevate, regno dei medici. Qui Rufy recluta Tony Tony Chopper, allievo della dottoressa Kureha e del compianto Hiluluk.",
       en: 'A snow-capped winter island, a kingdom of doctors. Here Luffy recruits Tony Tony Chopper, pupil of Dr. Kureha and the late Hiluluk.',
@@ -332,8 +332,8 @@ export const onepieceLocationsParadise: Location[] = [
     name: 'Water Seven',
     localizedName: { it: 'Water Seven', en: 'Water Seven' },
     type: 'city',
-    x: 1587,
-    y: 479,
+    x: 1626,
+    y: 472,
     shortDescription: {
       it: "«La città dell'acqua»: metropoli di canali e cantieri navali, patria dei migliori carpentieri. Qui nasce la Thousand Sunny e Franky si unisce alla ciurma.",
       en: "'The city of water': a metropolis of canals and shipyards, home of the finest shipwrights. Here the Thousand Sunny is born and Franky joins the crew.",
