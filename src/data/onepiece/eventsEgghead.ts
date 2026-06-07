@@ -5,6 +5,8 @@ export const onepieceEventsEgghead: TimelineEvent[] = [
   {
     id: 'evt-op-egghead-attack',
     worldId: 'world-onepiece',
+    mangaChapters: ["1093-1110"],
+    animeEpisodes: ["1110-1122"],
     title: { it: "L'assalto a Egghead", en: 'The assault on Egghead' },
     description: {
       it: "Per zittire Vegapunk e i suoi segreti, il Governo Mondiale invia a Egghead l'ammiraglio Kizaru, la CP0 e l'Astro Saturn con le armi Seraphim. La ciurma e gli alleati resistono in una battaglia che intreccia scienza, tradimenti e i destini di Kuma e Bonney.",
@@ -24,6 +26,7 @@ export const onepieceEventsEgghead: TimelineEvent[] = [
   {
     id: 'evt-op-vegapunk-message',
     worldId: 'world-onepiece',
+    mangaChapters: ["1113-1116"],
     title: { it: 'Il messaggio di Vegapunk', en: "Vegapunk's message" },
     description: {
       it: "In punto di morte, Vegapunk avvia una trasmissione globale destinata a rivelare al mondo intero la verità nascosta dal Governo Mondiale, scuotendo alle fondamenta l'ordine costituito alla soglia del capitolo finale.",

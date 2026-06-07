@@ -31,6 +31,8 @@ export const onepieceRoutesGrandLine: Route[] = [
       it: 'Paradise — la prima metà della Grand Line',
       en: 'Paradise — the first half of the Grand Line',
     },
+    mangaChapters: ['106-513'],
+    animeEpisodes: ['62-405'],
     description: {
       it: "Il viaggio della ciurma da Reverse Mountain fino all'Arcipelago Sabaody, attraverso le isole di Paradise: Whisky Peak, Little Garden, Drum, Alabasta, Jaya, Skypiea, Water Seven, Enies Lobby e Thriller Bark.",
       en: "The crew's voyage from Reverse Mountain to the Sabaody Archipelago, across the islands of Paradise: Whisky Peak, Little Garden, Drum, Alabasta, Jaya, Skypiea, Water Seven, Enies Lobby and Thriller Bark.",
@@ -65,6 +67,8 @@ export const onepieceRoutesGrandLine: Route[] = [
       it: 'Rufy — la corsa per salvare Ace',
       en: "Luffy — the race to save Ace",
     },
+    mangaChapters: ['514-580'],
+    animeEpisodes: ['408-489'],
     description: {
       it: "La deviazione di Rufy durante la separazione: scaraventato ad Amazon Lily, irrompe a Impel Down e si getta nella Guerra al Vertice di Marineford per salvare il fratello Ace.",
       en: "Luffy's detour during the separation: flung to Amazon Lily, he breaks into Impel Down and throws himself into the Marineford Summit War to save his brother Ace.",
@@ -92,9 +96,11 @@ export const onepieceRoutesGrandLine: Route[] = [
       it: 'New World — la seconda metà della Grand Line',
       en: 'New World — the second half of the Grand Line',
     },
+    mangaChapters: ['603-1125'],
+    animeEpisodes: ['523-1122'],
     description: {
-      it: "Il viaggio della ciurma nel New World, da Fish-Man Island in poi: Punk Hazard, Dressrosa, Zou, Whole Cake Island e Wano, verso il traguardo finale di Laugh Tale.",
-      en: "The crew's voyage in the New World, from Fish-Man Island onward: Punk Hazard, Dressrosa, Zou, Whole Cake Island and Wano, toward the final goal of Laugh Tale.",
+      it: "Il viaggio della ciurma nel New World, da Fish-Man Island in poi: Punk Hazard, Dressrosa, Zou, Whole Cake Island, Wano ed Egghead, verso il traguardo finale di Laugh Tale.",
+      en: "The crew's voyage in the New World, from Fish-Man Island onward: Punk Hazard, Dressrosa, Zou, Whole Cake Island, Wano and Egghead, toward the final goal of Laugh Tale.",
     },
     protagonistCharacterIds: [...CREW, 'char-op-jinbe'],
     color: '#9e2b8f',
@@ -108,7 +114,8 @@ export const onepieceRoutesGrandLine: Route[] = [
       { order: 3, locationId: 'loc-op-dressrosa', title: { it: 'Dressrosa — Doflamingo', en: 'Dressrosa — Doflamingo' } },
       { order: 4, locationId: 'loc-op-zou', title: { it: 'Zou', en: 'Zou' } },
       { order: 5, locationId: 'loc-op-whole-cake-island', title: { it: 'Whole Cake Island — Big Mom', en: 'Whole Cake Island — Big Mom' } },
-      { order: 6, locationId: 'loc-op-wano', title: { it: 'Wano — Kaido', en: 'Wano — Kaido' } },
+      { order: 6, locationId: 'loc-op-wano', arcId: 'arc-op-wano', eventId: 'evt-op-kaido-defeat', title: { it: 'Wano — Kaido', en: 'Wano — Kaido' } },
+      { order: 7, locationId: 'loc-op-egghead', arcId: 'arc-op-egghead', eventId: 'evt-op-egghead-attack', title: { it: "Egghead — Vegapunk", en: 'Egghead — Vegapunk' } },
     ],
   },
 ];

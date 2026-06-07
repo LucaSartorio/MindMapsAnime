@@ -5,6 +5,8 @@ export const onepieceEventsParadise2: TimelineEvent[] = [
   {
     id: 'evt-op-robin-taken',
     worldId: 'world-onepiece',
+    mangaChapters: ["356-362"],
+    animeEpisodes: ["252-258"],
     title: { it: 'Nico Robin scompare', en: 'Nico Robin disappears' },
     description: {
       it: "A Water Seven Nico Robin si consegna alla CP9 per proteggere la ciurma, fingendo di tradirla. La Going Merry è dichiarata irreparabile e i Cappello di Paglia si dividono.",
@@ -24,6 +26,8 @@ export const onepieceEventsParadise2: TimelineEvent[] = [
   {
     id: 'evt-op-declaration-war',
     worldId: 'world-onepiece',
+    mangaChapters: ["383-398"],
+    animeEpisodes: ["278-290"],
     title: { it: 'La dichiarazione di guerra', en: 'The declaration of war' },
     description: {
       it: "A Enies Lobby Robin, per la prima volta, urla di voler vivere. La ciurma incendia la bandiera del Governo Mondiale davanti al mondo intero: una sfida aperta a tutto il potere costituito.",
@@ -43,6 +47,8 @@ export const onepieceEventsParadise2: TimelineEvent[] = [
   {
     id: 'evt-op-robin-rescue',
     worldId: 'world-onepiece',
+    mangaChapters: ["419-427"],
+    animeEpisodes: ["305-309"],
     title: { it: 'La liberazione di Robin', en: "Robin's rescue" },
     description: {
       it: "Rufy sconfigge Rob Lucci e la ciurma strappa Nico Robin al Governo Mondiale, fuggendo dal Buster Call che rade al suolo Enies Lobby. Robin ritrova una famiglia per cui vivere.",
@@ -62,6 +68,8 @@ export const onepieceEventsParadise2: TimelineEvent[] = [
   {
     id: 'evt-op-franky-joins',
     worldId: 'world-onepiece',
+    mangaChapters: ["434-437"],
+    animeEpisodes: ["319-321"],
     title: { it: 'Franky e la Thousand Sunny', en: 'Franky and the Thousand Sunny' },
     description: {
       it: "Tornati a Water Seven, la ciurma dà l'addio alla Going Merry. Con il legno sacro dell'Albero Adam, Franky costruisce la Thousand Sunny e sale a bordo come carpentiere.",
@@ -81,6 +89,8 @@ export const onepieceEventsParadise2: TimelineEvent[] = [
   {
     id: 'evt-op-moria-defeat',
     worldId: 'world-onepiece',
+    mangaChapters: ["473-482"],
+    animeEpisodes: ["369-377"],
     title: { it: 'La caduta di Gekko Moria', en: "Gecko Moria's fall" },
     description: {
       it: "Recuperate le ombre rubate, Rufy sconfigge il Corsaro Gekko Moria e libera Thriller Bark e i suoi prigionieri dall'incubo degli zombie.",
@@ -100,6 +110,8 @@ export const onepieceEventsParadise2: TimelineEvent[] = [
   {
     id: 'evt-op-brook-joins',
     worldId: 'world-onepiece',
+    mangaChapters: ["485-489"],
+    animeEpisodes: ["378-381"],
     title: { it: 'Brook si unisce alla ciurma', en: 'Brook joins the crew' },
     description: {
       it: "Riavuta la sua ombra, lo scheletro musicista Brook si unisce ai Cappello di Paglia. Poco dopo Bartholomew Kuma mette alla prova la ciurma esausta e Zoro si carica in segreto di tutto il dolore di Rufy.",

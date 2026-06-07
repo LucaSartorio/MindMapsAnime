@@ -8,6 +8,8 @@ export const onepieceEventsRedLine: TimelineEvent[] = [
   {
     id: 'evt-op-fisher-tiger-raid',
     worldId: 'world-onepiece',
+    mangaChapters: ["621-623"],
+    animeEpisodes: ["540-542"],
     title: { it: "L'assalto di Fisher Tiger a Mary Geoise", en: "Fisher Tiger's raid on Mary Geoise" },
     description: {
       it: "Fisher Tiger irrompe a Mary Geoise e libera gli schiavi dei Draghi Celesti, scuotendo il mondo. Fonda i Pirati del Sole, in cui militeranno Jinbe e Arlong su strade destinate a dividersi.",
@@ -27,6 +29,8 @@ export const onepieceEventsRedLine: TimelineEvent[] = [
   {
     id: 'evt-op-sabaody-scatter',
     worldId: 'world-onepiece',
+    mangaChapters: ["510-513"],
+    animeEpisodes: ["400-405"],
     title: { it: 'La dispersione di Sabaody', en: 'The Sabaody scattering' },
     description: {
       it: "Dopo lo scontro con la Marina e un Drago Celeste, Bartholomew Kuma scaraventa i Cappello di Paglia ai quattro angoli del mondo. Rayleigh appare e la ciurma si separa per due anni.",
@@ -46,6 +50,8 @@ export const onepieceEventsRedLine: TimelineEvent[] = [
   {
     id: 'evt-op-luffy-amazon',
     worldId: 'world-onepiece',
+    mangaChapters: ["514-524"],
+    animeEpisodes: ["408-417"],
     title: { it: 'Rufy ad Amazon Lily', en: 'Luffy on Amazon Lily' },
     description: {
       it: "Scaraventato sull'isola delle Kuja, Rufy si guadagna la fiducia e l'amore di Boa Hancock, che decide di aiutarlo a raggiungere Impel Down per salvare il fratello Ace.",
@@ -65,6 +71,8 @@ export const onepieceEventsRedLine: TimelineEvent[] = [
   {
     id: 'evt-op-impel-breakout',
     worldId: 'world-onepiece',
+    mangaChapters: ["525-549"],
+    animeEpisodes: ["430-452"],
     title: { it: 'Evasione da Impel Down', en: 'The Impel Down breakout' },
     description: {
       it: "Rufy irrompe nella prigione di Impel Down per salvare Ace; affronta il direttore Magellan, si allea con Ivankov e Jinbe e guida una clamorosa evasione di massa verso Marineford.",
@@ -90,6 +98,8 @@ export const onepieceEventsRedLine: TimelineEvent[] = [
   {
     id: 'evt-op-marineford-war',
     worldId: 'world-onepiece',
+    mangaChapters: ["550-574"],
+    animeEpisodes: ["457-483"],
     title: { it: 'La Guerra al Vertice', en: 'The Summit War' },
     description: {
       it: "La Marina al gran completo e i Pirati di Barbabianca si scontrano a Marineford per l'esecuzione di Ace. Vi accorrono ammiragli, Corsari e Rufy: è la battaglia più imponente dell'era.",
@@ -117,6 +127,8 @@ export const onepieceEventsRedLine: TimelineEvent[] = [
   {
     id: 'evt-op-ace-death',
     worldId: 'world-onepiece',
+    mangaChapters: ["573-574"],
+    animeEpisodes: ["483-484"],
     title: { it: 'La morte di Ace', en: "Ace's death" },
     description: {
       it: "Liberato dal patibolo, Ace si frappone tra Rufy e l'ammiraglio Akainu e muore tra le braccia del fratello. La sua perdita segnerà per sempre Rufy.",
@@ -135,6 +147,8 @@ export const onepieceEventsRedLine: TimelineEvent[] = [
   {
     id: 'evt-op-whitebeard-death',
     worldId: 'world-onepiece',
+    mangaChapters: ["576-577"],
+    animeEpisodes: ["485-486"],
     title: { it: 'La fine di Barbabianca', en: "Whitebeard's last stand" },
     description: {
       it: "Barbabianca muore in piedi, senza una ferita alla schiena, dopo aver proclamato che il One Piece esiste davvero. Barbanera ne ruba il potere del Frutto Tremarella.",
@@ -154,6 +168,8 @@ export const onepieceEventsRedLine: TimelineEvent[] = [
   {
     id: 'evt-op-fishman-island',
     worldId: 'world-onepiece',
+    mangaChapters: ["629-649"],
+    animeEpisodes: ["543-569"],
     title: { it: 'Il golpe di Hody Jones', en: "Hody Jones's coup" },
     description: {
       it: "Tornata insieme dopo due anni, la ciurma sventa il colpo di stato di Hody Jones contro la famiglia reale Ryugu, protegge la principessa Shirahoshi e rinsalda il patto di pace di Otohime.",
@@ -173,6 +189,8 @@ export const onepieceEventsRedLine: TimelineEvent[] = [
   {
     id: 'evt-op-reverie',
     worldId: 'world-onepiece',
+    mangaChapters: ["905-908"],
+    animeEpisodes: ["883-889"],
     title: { it: 'La Reverie e il Trono Vuoto', en: 'The Reverie and the Empty Throne' },
     description: {
       it: "Durante la Reverie a Mary Geoise si svela l'esistenza di Imu, il sovrano segreto che siede sul Trono Vuoto al di sopra dei Cinque Astri di Saggezza, custode dei segreti del mondo.",

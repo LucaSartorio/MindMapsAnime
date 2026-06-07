@@ -5,6 +5,8 @@ export const onepieceEventsParadise: TimelineEvent[] = [
   {
     id: 'evt-op-hiluluk-dream',
     worldId: 'world-onepiece',
+    mangaChapters: ["140-144"],
+    animeEpisodes: ["84-86"],
     title: { it: 'Il sogno di Hiluluk', en: "Hiluluk's dream" },
     description: {
       it: "Su Drum, il dottor Hiluluk muore lasciando a Chopper la convinzione che una persona muore davvero solo quando viene dimenticata. Il suo sogno di una cura miracolosa segna per sempre la renna.",
@@ -23,6 +25,8 @@ export const onepieceEventsParadise: TimelineEvent[] = [
   {
     id: 'evt-op-chopper-joins',
     worldId: 'world-onepiece',
+    mangaChapters: ["149-154"],
+    animeEpisodes: ["89-91"],
     title: { it: 'Chopper si unisce alla ciurma', en: 'Chopper joins the crew' },
     description: {
       it: "Dopo la caduta del tiranno Wapol per mano di Rufy, la renna-medico Tony Tony Chopper lascia Drum Island e Kureha per diventare il dottore dei Cappello di Paglia.",
@@ -42,6 +46,8 @@ export const onepieceEventsParadise: TimelineEvent[] = [
   {
     id: 'evt-op-alabasta-war',
     worldId: 'world-onepiece',
+    mangaChapters: ["200-212"],
+    animeEpisodes: ["120-128"],
     title: { it: 'La guerra di Alabasta', en: 'The Alabasta war' },
     description: {
       it: "Ad Alubarna esercito reale e ribelli stanno per massacrarsi a vicenda mentre Rufy affronta Crocodile a Rainbase e nel deserto. Sconfitto il Corsaro e fermata la pioggia di sangue, Alabasta è salva.",
@@ -61,6 +67,8 @@ export const onepieceEventsParadise: TimelineEvent[] = [
   {
     id: 'evt-op-vivi-farewell',
     worldId: 'world-onepiece',
+    mangaChapters: ["213-217"],
+    animeEpisodes: ["129-130"],
     title: { it: "L'addio di Vivi", en: "Vivi's farewell" },
     description: {
       it: "Salvata Alabasta, Vivi sceglie di restare con il suo popolo come principessa. Sul molo, la ciurma le risponde mostrando di nascosto il marchio dell'amicizia: resteranno per sempre compagni.",
@@ -80,6 +88,8 @@ export const onepieceEventsParadise: TimelineEvent[] = [
   {
     id: 'evt-op-skypiea-enel',
     worldId: 'world-onepiece',
+    mangaChapters: ["293-298"],
+    animeEpisodes: ["188-191"],
     title: { it: 'La caduta di «Dio» Enel', en: "The fall of 'God' Enel" },
     description: {
       it: "Sull'isola del cielo, Rufy — immune ai fulmini grazie alla sua natura di gomma — è l'unico capace di sconfiggere il «Dio» Enel, ponendo fine al suo regno di terrore su Skypiea.",
@@ -99,6 +109,8 @@ export const onepieceEventsParadise: TimelineEvent[] = [
   {
     id: 'evt-op-skypiea-bell',
     worldId: 'world-onepiece',
+    mangaChapters: ["299-302"],
+    animeEpisodes: ["192-195"],
     title: { it: "La campana d'oro di Shandora", en: 'The golden bell of Shandora' },
     description: {
       it: "Rufy fa risuonare la grande campana d'oro di Shandora, perduta da 400 anni: la sua «Voce di tutte le cose» raggiunge il fondo, rivelando a Mont Blanc Cricket e ai Shandia che la città d'oro era reale.",

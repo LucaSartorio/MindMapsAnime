@@ -12,6 +12,12 @@ export const onepieceArcs: StoryArc[] = [
   {
     id: 'arc-op-romance-dawn',
     worldId: 'world-onepiece',
+    mangaChapters: ["1-7"],
+    animeEpisodes: ["1-3"],
+    longDescription: {
+      it: "Foosha: il piccolo Rufy idolatra Shanks e i Pirati del Rosso; mangia per errore il Frutto Gom Gom e Shanks perde un braccio salvandolo da un Re del Mare, affidandogli il cappello di paglia da restituire una volta diventato un grande pirata. Dieci anni dopo Rufy salpa, sfugge a un altro Re del Mare e raggiunge la nave di Alvida, dove fa amicizia con il timido mozzo Coby. A Shells Town smaschera la tirannia del capitano della Marina Morgan e libera dal patibolo lo spadaccino Roronoa Zoro, che diventa il suo primo compagno.",
+      en: "Foosha: young Luffy idolises Shanks and the Red-Hair Pirates; he accidentally eats the Gum-Gum Fruit and Shanks loses an arm saving him from a Sea King, entrusting him the straw hat to be returned once he becomes a great pirate. Ten years later Luffy sets sail, escapes another Sea King and reaches Alvida's ship, befriending the timid cabin boy Coby. At Shells Town he exposes the tyranny of Marine captain Morgan and frees the swordsman Roronoa Zoro from the scaffold; Zoro becomes his first companion.",
+    },
     name: 'Romance Dawn',
     localizedName: { it: "L'alba di un'avventura", en: 'Romance Dawn' },
     saga: EAST_BLUE_SAGA,
@@ -31,7 +37,7 @@ export const onepieceArcs: StoryArc[] = [
       'char-op-zoro',
     ],
     factionIds: ['faction-op-straw-hat-pirates', 'faction-op-red-hair-pirates', 'faction-op-marines'],
-    eventIds: ['evt-op-shanks-hat', 'evt-op-luffy-sets-sail', 'evt-op-zoro-recruited'],
+    eventIds: ['evt-op-shanks-hat', 'evt-op-luffy-sets-sail', 'evt-op-zoro-recruited', 'evt-op-rd-gomu-gomu', 'evt-op-rd-coby-alvida'],
     routeIds: ['route-op-eastblue'],
     canon: 'canon',
     canonStatus: 'canon',
@@ -41,6 +47,12 @@ export const onepieceArcs: StoryArc[] = [
   {
     id: 'arc-op-orange-town',
     worldId: 'world-onepiece',
+    mangaChapters: ["8-21"],
+    animeEpisodes: ["4-8"],
+    longDescription: {
+      it: "Diretti a Orange Town, Rufy e Zoro incrociano la ladra Nami. La cittadina è terrorizzata dai Pirati di Bagy il Clown, utente del Frutto Frammento. Tra il cane fedele Chouchou, il sindaco Boodle e i numeri da circo di Bagy, Rufy distrugge la banda e fa saltare in aria il pirata con un colpo di cannone, mentre Nami decide di seguire interessatamente la ciurma.",
+      en: "Heading to Orange Town, Luffy and Zoro cross paths with the thief Nami. The town is terrorised by Buggy the Clown's pirates, user of the Chop-Chop Fruit. Amid the loyal dog Chouchou, mayor Boodle and Buggy's circus tricks, Luffy wrecks the gang and blasts the pirate away with a cannon shot, while Nami decides to follow the crew out of self-interest.",
+    },
     name: 'Orange Town',
     localizedName: { it: 'Bagy il Clown', en: 'Orange Town' },
     saga: EAST_BLUE_SAGA,
@@ -64,6 +76,12 @@ export const onepieceArcs: StoryArc[] = [
   {
     id: 'arc-op-syrup-village',
     worldId: 'world-onepiece',
+    mangaChapters: ["22-41"],
+    animeEpisodes: ["9-18"],
+    longDescription: {
+      it: "A Syrup Village il bugiardo Usop e i suoi tre amici scoprono che il maggiordomo Klahadore è in realtà il Capitano Kuro dei Pirati del Gatto Nero, deciso ad assassinare l'ereditiera Kaya per impadronirsi della sua fortuna. Sulla salita del villaggio Rufy, Zoro e Nami respingono l'assalto e Rufy piega Kuro e la sua tecnica fulminea. Riconoscente, Kaya dona alla ciurma la caravella Going Merry e Usop salpa come cecchino.",
+      en: "At Syrup Village the liar Usopp and his three friends discover that the butler Klahadore is really Captain Kuro of the Black Cat Pirates, set on murdering the heiress Kaya to seize her fortune. On the village slope Luffy, Zoro and Nami repel the assault and Luffy beats Kuro and his lightning technique. Grateful, Kaya gives the crew the caravel Going Merry and Usopp sets sail as sniper.",
+    },
     name: 'Syrup Village',
     localizedName: { it: 'Il complotto di Kuro', en: 'Syrup Village' },
     saga: EAST_BLUE_SAGA,
@@ -93,6 +111,12 @@ export const onepieceArcs: StoryArc[] = [
   {
     id: 'arc-op-baratie',
     worldId: 'world-onepiece',
+    mangaChapters: ["42-68"],
+    animeEpisodes: ["19-30"],
+    longDescription: {
+      it: "Sul ristorante galleggiante Baratie il cuoco-teppista Sanji serve di nascosto persino i nemici affamati, per onorare il debito di vita con il padrone Zeff. Arriva Don Krieg, tornato distrutto dalla Grand Line, e assalta il locale per rubarne una nave; compare anche Dracule Mihawk «Occhi di Falco», che insegue Krieg e batte Zoro nel duello che fissa per sempre il suo obiettivo. Rufy sconfigge Krieg; Sanji, dopo l'addio a Zeff, salpa come cuoco della ciurma. Nel frattempo Nami fugge rubando la Going Merry.",
+      en: "On the floating restaurant Baratie the cook-thug Sanji secretly feeds even starving enemies, honouring his life-debt to owner Zeff. Don Krieg arrives, returned broken from the Grand Line, and storms the place to steal a ship; 'Hawk-Eyes' Dracule Mihawk also appears, chasing Krieg and beating Zoro in the duel that sets his goal forever. Luffy defeats Krieg; Sanji, after bidding Zeff farewell, sets sail as the crew's cook. Meanwhile Nami flees, stealing the Going Merry.",
+    },
     name: 'Baratie',
     localizedName: { it: 'Il ristorante in mare', en: 'Baratie' },
     saga: EAST_BLUE_SAGA,
@@ -115,7 +139,7 @@ export const onepieceArcs: StoryArc[] = [
       'char-op-mihawk',
     ],
     factionIds: ['faction-op-straw-hat-pirates', 'faction-op-krieg-pirates'],
-    eventIds: ['evt-op-baratie-krieg', 'evt-op-zoro-vs-mihawk'],
+    eventIds: ['evt-op-baratie-krieg', 'evt-op-zoro-vs-mihawk', 'evt-op-baratie-sanji-intro'],
     routeIds: ['route-op-eastblue'],
     canon: 'canon',
     canonStatus: 'canon',
@@ -125,6 +149,12 @@ export const onepieceArcs: StoryArc[] = [
   {
     id: 'arc-op-arlong-park',
     worldId: 'world-onepiece',
+    mangaChapters: ["69-95"],
+    animeEpisodes: ["31-44"],
+    longDescription: {
+      it: "Sulle Isole Conomi la ciurma scopre il segreto di Nami: per anni ha derubato i pirati per ricomprare la libertà del suo villaggio, schiavo dell'uomo-pesce Arlong. Tradita dal corrotto tenente Nezumi, Nami crolla e per la prima volta chiede aiuto a Rufy. La ciurma assalta Arlong Park: Zoro, Sanji e Usop piegano gli ufficiali, e Rufy — gettato in mare con i piedi nel cemento e ripescato — demolisce Arlong e la sua torre. Liberata Cocoyashi, Nami si unisce per sempre ai Cappello di Paglia, che ottengono la prima taglia.",
+      en: "On the Conomi Islands the crew learns Nami's secret: for years she robbed pirates to buy back the freedom of her village, enslaved by the fish-man Arlong. Betrayed by the corrupt lieutenant Nezumi, Nami breaks down and for the first time asks Luffy for help. The crew storms Arlong Park: Zoro, Sanji and Usopp beat the officers, and Luffy — thrown into the sea with cemented feet and pulled out — demolishes Arlong and his tower. Cocoyashi freed, Nami joins the Straw Hats for good, who earn their first bounty.",
+    },
     name: 'Arlong Park',
     localizedName: { it: 'Il passato di Nami', en: 'Arlong Park' },
     saga: EAST_BLUE_SAGA,
@@ -150,7 +180,7 @@ export const onepieceArcs: StoryArc[] = [
       'char-op-bellemere',
     ],
     factionIds: ['faction-op-straw-hat-pirates', 'faction-op-arlong-pirates'],
-    eventIds: ['evt-op-arlong-liberation', 'evt-op-nami-joins'],
+    eventIds: ['evt-op-arlong-liberation', 'evt-op-nami-joins', 'evt-op-arlong-nami-past'],
     routeIds: ['route-op-eastblue'],
     canon: 'canon',
     canonStatus: 'canon',
@@ -160,6 +190,12 @@ export const onepieceArcs: StoryArc[] = [
   {
     id: 'arc-op-loguetown',
     worldId: 'world-onepiece',
+    mangaChapters: ["96-105"],
+    animeEpisodes: ["45-53", "61-63"],
+    longDescription: {
+      it: "A Loguetown, «la città dell'inizio e della fine» dove fu giustiziato Gol D. Roger, la ciurma fa provviste: Zoro compra due nuove spade da Ipponmatsu, Sanji affronta il mercato, Rufy sale sul patibolo di Roger. Lì Bagy, alleato con Alvida, sta per decapitarlo, ma un fulmine lo salva. Il rivoluzionario Dragon copre di nascosto la fuga del figlio dal capitano Smoker. Sotto la tempesta la ciurma risale Reverse Mountain ed entra nella Grand Line, lasciandosi East Blue alle spalle.",
+      en: "At Loguetown, 'the town of the beginning and the end' where Gol D. Roger was executed, the crew stocks up: Zoro buys two new swords from Ipponmatsu, Sanji works the market, Luffy climbs Roger's scaffold. There Buggy, allied with Alvida, is about to behead him, but a lightning bolt saves him. The revolutionary Dragon quietly covers his son's escape from captain Smoker. Through the storm the crew climbs Reverse Mountain and enters the Grand Line, leaving East Blue behind.",
+    },
     name: 'Loguetown',
     localizedName: { it: "La città dell'inizio e della fine", en: 'Loguetown' },
     saga: EAST_BLUE_SAGA,
@@ -187,7 +223,7 @@ export const onepieceArcs: StoryArc[] = [
       'faction-op-revolutionary-army',
       'faction-op-buggy-pirates',
     ],
-    eventIds: ['evt-op-loguetown-execution', 'evt-op-enter-grand-line'],
+    eventIds: ['evt-op-loguetown-execution', 'evt-op-enter-grand-line', 'evt-op-loguetown-zoro-swords'],
     routeIds: ['route-op-eastblue'],
     canon: 'canon',
     canonStatus: 'canon',

@@ -10,6 +10,7 @@ export const onepieceEventsSouthBlue: TimelineEvent[] = [
   {
     id: 'evt-op-sorbet-rebellion',
     worldId: 'world-onepiece',
+    mangaChapters: ["1094-1096"],
     title: { it: 'La ribellione del Regno di Sorbet', en: 'The Sorbet Kingdom rebellion' },
     description: {
       it: "Nel Regno di Sorbet, in South Blue, gli abitanti oppressi si ribellano alla tirannia. Tra loro crescono Bartholomew Kuma e l'amica Ginny, segnati da povertà e ingiustizia.",
@@ -29,6 +30,7 @@ export const onepieceEventsSouthBlue: TimelineEvent[] = [
   {
     id: 'evt-op-kuma-sacrifice',
     worldId: 'world-onepiece',
+    mangaChapters: ["1097-1102"],
     title: { it: 'Il sacrificio di Kuma', en: "Kuma's sacrifice" },
     description: {
       it: "Per salvare la figlia adottiva Bonney, Kuma si offre come cavia del programma Pacifista di Vegapunk, accettando di perdere progressivamente memoria e volontà fino a diventare un'arma umana del Governo Mondiale.",

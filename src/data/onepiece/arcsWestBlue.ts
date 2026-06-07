@@ -8,6 +8,12 @@ export const onepieceArcsWestBlue: StoryArc[] = [
   {
     id: 'arc-op-god-valley',
     worldId: 'world-onepiece',
+    mangaChapters: ["957", "1095-1096"],
+    animeEpisodes: ["958-959"],
+    longDescription: {
+      it: "Evento cancellato dalla storia ufficiale e narrato per frammenti: 38 anni prima, sull'isola di God Valley in West Blue, si tenne il crudele gioco di caccia dei Draghi Celesti. Lì il giovane Gol D. Roger e il viceammiraglio Garp strinsero un'alleanza irripetibile e annientarono i Pirati di Rocks di Rocks D. Xebec — la ciurma che riuniva i futuri Imperatori Barbabianca, Big Mom e Kaido. La sparizione dell'isola e la verità sui Draghi Celesti restano tra i segreti meglio custoditi del mondo.",
+      en: "An event erased from official history, told only in fragments: 38 years ago, on God Valley island in West Blue, the Celestial Dragons held their cruel hunting game. There the young Gol D. Roger and Vice Admiral Garp formed a one-time alliance and annihilated Rocks D. Xebec's Rocks Pirates — the crew that gathered the future Emperors Whitebeard, Big Mom and Kaido. The island's disappearance and the truth about the Celestial Dragons remain among the world's best-kept secrets.",
+    },
     name: 'God Valley Incident',
     localizedName: { it: "L'incidente di God Valley", en: 'God Valley Incident' },
     saga: { it: 'Backstory · West Blue', en: 'Backstory · West Blue' },
@@ -30,6 +36,12 @@ export const onepieceArcsWestBlue: StoryArc[] = [
   {
     id: 'arc-op-ohara',
     worldId: 'world-onepiece',
+    mangaChapters: ["391-398"],
+    animeEpisodes: ["274-278"],
+    longDescription: {
+      it: "Il flashback di Enies Lobby racconta la fine di Ohara, l'isola degli studiosi in West Blue. Avendo decifrato i Poneglyph e sfiorato la verità del Secolo Vuoto, gli archeologi guidati dal professor Clover sono dichiarati nemici del mondo. Il Governo Mondiale scatena un Buster Call che incenerisce l'isola e la sua biblioteca, l'Albero della Conoscenza. L'archeologa Nico Olvia e il gigante Jaguar D. Saul si sacrificano per salvare la piccola Nico Robin, unica sopravvissuta, che eredita la capacità di leggere i Poneglyph e una taglia da bambina.",
+      en: "The Enies Lobby flashback tells of the end of Ohara, the scholars' island in West Blue. Having deciphered the Poneglyphs and brushed the truth of the Void Century, the archaeologists led by Professor Clover are branded enemies of the world. The World Government unleashes a Buster Call that incinerates the island and its library, the Tree of Knowledge. The archaeologist Nico Olvia and the giant Jaguar D. Saul sacrifice themselves to save little Nico Robin, the sole survivor, who inherits the ability to read Poneglyphs and a bounty as a child.",
+    },
     name: 'Ohara & the Buster Call',
     localizedName: { it: 'Ohara e il Buster Call', en: 'Ohara & the Buster Call' },
     saga: { it: 'Backstory · West Blue', en: 'Backstory · West Blue' },

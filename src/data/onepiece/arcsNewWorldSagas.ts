@@ -5,6 +5,12 @@ export const onepieceArcsNewWorldSagas: StoryArc[] = [
   {
     id: 'arc-op-punk-hazard',
     worldId: 'world-onepiece',
+    mangaChapters: ["654-699"],
+    animeEpisodes: ["579-625"],
+    longDescription: {
+      it: "Primo vero approdo nel New World: un'isola spaccata tra fuoco e ghiaccio, teatro degli esperimenti del folle scienziato Caesar Clown al servizio di Doflamingo e di Kaido. La ciurma libera i bambini giganti drogati, sfugge al gas mortale Shinokuni e si unisce ai samurai Kinemon e Kanjuro in cerca del piccolo Momonosuke. Catturato Caesar, Rufy e Trafalgar Law siglano ufficialmente un'alleanza con un unico obiettivo: detronizzare un Imperatore. Smoker e la Marina G-5 lasciano partire la ciurma verso Dressrosa.",
+      en: "The first real landfall in the New World: an island split between fire and ice, stage of the experiments of the mad scientist Caesar Clown serving Doflamingo and Kaido. The crew frees the drugged giant children, escapes the deadly Shinokuni gas and joins the samurai Kinemon and Kanjuro searching for little Momonosuke. With Caesar captured, Luffy and Trafalgar Law officially seal an alliance with one goal: to dethrone an Emperor. Smoker and the G-5 Marines let the crew leave for Dressrosa.",
+    },
     name: 'Punk Hazard',
     localizedName: { it: 'Punk Hazard', en: 'Punk Hazard' },
     saga: { it: 'Saga di Dressrosa', en: 'Dressrosa Saga' },
@@ -18,7 +24,7 @@ export const onepieceArcsNewWorldSagas: StoryArc[] = [
     nationIds: ['nation-op-grand-line-new-world'],
     characterIds: ['char-op-luffy', 'char-op-law', 'char-op-caesar', 'char-op-smoker', 'char-op-tashigi', 'char-op-chopper'],
     factionIds: ['faction-op-straw-hat-pirates', 'faction-op-heart-pirates', 'faction-op-donquixote-pirates', 'faction-op-marines'],
-    eventIds: ['evt-op-ph-alliance'],
+    eventIds: ['evt-op-ph-alliance', 'evt-op-ph-dragon', 'evt-op-ph-caesar-gas'],
     canon: 'canon',
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -27,6 +33,12 @@ export const onepieceArcsNewWorldSagas: StoryArc[] = [
   {
     id: 'arc-op-dressrosa',
     worldId: 'world-onepiece',
+    mangaChapters: ["700-801"],
+    animeEpisodes: ["629-746"],
+    longDescription: {
+      it: "Per smascherare Doflamingo l'alleanza sbarca a Dressrosa, regno di passioni, giocattoli viventi e gladiatori. Mentre Law tenta lo scambio di Caesar e si rivela il suo legame con Corazon, Rufy entra nel torneo del Colosseo Corrida per il Frutto Mera Mera e ritrova il fratello Sabo, che lo conquista al suo posto. Sotto la città i nani Tontatta e la famiglia Riku si ribellano alla fabbrica di SMILE; sull'altopiano del Re divampa la battaglia contro Pica, Trebol e Diamante. Dopo uno scontro durissimo Rufy abbatte Doflamingo: cade un Corsaro, salta il sistema dei Corsari e nasce la grande alleanza della Flotta dei Sette.",
+      en: "To expose Doflamingo the alliance lands on Dressrosa, a kingdom of passion, living toys and gladiators. As Law attempts the Caesar exchange and his bond with Corazon is revealed, Luffy enters the Corrida Colosseum tournament for the Flame-Flame Fruit and reunites with his brother Sabo, who wins it in his stead. Beneath the city the Tontatta dwarves and the Riku family rise against the SMILE factory; on the King's Plateau the battle rages against Pica, Trebol and Diamante. After a grueling fight Luffy strikes down Doflamingo: a Warlord falls, the Warlord system collapses, and the great alliance of the Straw Hat Grand Fleet is born.",
+    },
     name: 'Dressrosa',
     localizedName: { it: 'Dressrosa', en: 'Dressrosa' },
     saga: { it: 'Saga di Dressrosa', en: 'Dressrosa Saga' },
@@ -40,7 +52,7 @@ export const onepieceArcsNewWorldSagas: StoryArc[] = [
     nationIds: ['nation-op-grand-line-new-world'],
     characterIds: ['char-op-luffy', 'char-op-law', 'char-op-doflamingo', 'char-op-sabo', 'char-op-rebecca', 'char-op-kyros', 'char-op-trebol', 'char-op-pica', 'char-op-diamante', 'char-op-zoro'],
     factionIds: ['faction-op-straw-hat-pirates', 'faction-op-heart-pirates', 'faction-op-donquixote-pirates', 'faction-op-revolutionary-army'],
-    eventIds: ['evt-op-doflamingo-defeat', 'evt-op-sabo-mera-mera'],
+    eventIds: ['evt-op-doflamingo-defeat', 'evt-op-sabo-mera-mera', 'evt-op-dr-colosseum', 'evt-op-dr-tontatta', 'evt-op-dr-birdcage'],
     canon: 'canon',
     canonStatus: 'canon',
     referenceStatus: 'verified',

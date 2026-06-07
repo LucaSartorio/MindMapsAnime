@@ -15,6 +15,8 @@ export const onepieceRoutes: Route[] = [
       it: 'East Blue — il primo viaggio',
       en: 'East Blue — the first voyage',
     },
+    mangaChapters: ['1-105'],
+    animeEpisodes: ['1-63'],
     description: {
       it: "Il viaggio dei Cappello di Paglia attraverso East Blue: da Foosha, dove Rufy salpa, alla raccolta dei primi compagni, fino all'ingresso nella Grand Line a Reverse Mountain.",
       en: "The Straw Hats' journey across East Blue: from Foosha, where Luffy sets sail, through gathering the first companions, to entering the Grand Line at Reverse Mountain.",

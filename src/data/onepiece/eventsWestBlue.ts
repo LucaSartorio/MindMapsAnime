@@ -8,6 +8,8 @@ export const onepieceEventsWestBlue: TimelineEvent[] = [
   {
     id: 'evt-op-god-valley-incident',
     worldId: 'world-onepiece',
+    mangaChapters: ["1095-1096"],
+    animeEpisodes: ["958-959"],
     title: { it: "L'incidente di God Valley", en: 'The God Valley Incident' },
     description: {
       it: "38 anni prima della storia, sull'isola di God Valley, Gol D. Roger e il marine Garp si alleano per la prima e unica volta e annientano i Pirati di Rocks, ponendo fine all'ascesa di Rocks D. Xebec.",
@@ -27,6 +29,8 @@ export const onepieceEventsWestBlue: TimelineEvent[] = [
   {
     id: 'evt-op-ohara-buster-call',
     worldId: 'world-onepiece',
+    mangaChapters: ["391-398"],
+    animeEpisodes: ["274-278"],
     title: { it: 'Il Buster Call su Ohara', en: 'The Buster Call on Ohara' },
     description: {
       it: "22 anni prima della storia il Governo Mondiale rade al suolo Ohara con un Buster Call, per impedire che gli studiosi rivelino la verità del Secolo Vuoto. Muoiono tutti gli archeologi; sopravvive solo Nico Robin, salvata dal gigante Saul.",
