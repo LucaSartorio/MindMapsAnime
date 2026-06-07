@@ -27,6 +27,7 @@ export const onepieceNations: Nation[] = [
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',
     color: '#2f7fe0',
+    labelPosition: { x: 1620, y: 45 },
     tags: ['mare', 'east-blue'],
   },
   {
@@ -42,6 +43,7 @@ export const onepieceNations: Nation[] = [
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',
     color: '#2f7fe0',
+    labelPosition: { x: 380, y: 45 },
     tags: ['mare', 'north-blue'],
   },
   {
@@ -57,6 +59,7 @@ export const onepieceNations: Nation[] = [
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',
     color: '#2f7fe0',
+    labelPosition: { x: 360, y: 965 },
     tags: ['mare', 'west-blue'],
   },
   {
@@ -72,6 +75,7 @@ export const onepieceNations: Nation[] = [
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',
     color: '#2f7fe0',
+    labelPosition: { x: 1640, y: 965 },
     tags: ['mare', 'south-blue'],
   },
   {
@@ -87,6 +91,7 @@ export const onepieceNations: Nation[] = [
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',
     color: '#3fbf8f',
+    labelPosition: { x: 1180, y: 452 },
     tags: ['grand-line', 'paradise'],
   },
   {
@@ -102,6 +107,7 @@ export const onepieceNations: Nation[] = [
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',
     color: '#9e2b8f',
+    labelPosition: { x: 150, y: 452 },
     tags: ['grand-line', 'new-world'],
   },
   {
@@ -117,6 +123,7 @@ export const onepieceNations: Nation[] = [
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',
     color: '#7fb8d8',
+    labelPosition: { x: 700, y: 432 },
     tags: ['calm-belt'],
   },
   {
@@ -132,6 +139,7 @@ export const onepieceNations: Nation[] = [
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',
     color: '#c0392b',
+    labelPosition: { x: 975, y: 250 },
     tags: ['red-line'],
   },
 ];
