@@ -10,6 +10,12 @@ export const onepieceCharactersNewWorldSagas: Character[] = [
   {
     id: 'char-op-caesar',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "658",
+    firstAnimeAppearance: "581",
+    longDescription: {
+      it: "Caesar Clown, scienziato folle ed ex collega di Vegapunk, utente del frutto Gas. Creò armi di sterminio di massa a Punk Hazard al servizio di Doflamingo e Kaido, finché la ciurma non lo catturò.",
+      en: "Caesar Clown, a mad scientist and former colleague of Vegapunk, user of the Gas-Gas Fruit. He built weapons of mass extermination on Punk Hazard for Doflamingo and Kaido, until the crew captured him.",
+    },
     name: 'Caesar Clown',
     aliases: ['Master'],
     importance: 'major',
@@ -31,6 +37,12 @@ export const onepieceCharactersNewWorldSagas: Character[] = [
   {
     id: 'char-op-tashigi',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "98",
+    firstAnimeAppearance: "48",
+    longDescription: {
+      it: "Sergente (poi capitano) della Marina, abile spadaccina identica all'amica d'infanzia di Zoro, Kuina. Sottoposta e braccio destro di Smoker, sogna di recuperare le spade leggendarie dalle mani dei criminali.",
+      en: "A Marine sergeant (later captain) and skilled swordswoman, identical to Zoro's childhood friend Kuina. Smoker's subordinate and right hand, she dreams of reclaiming legendary swords from criminals.",
+    },
     name: 'Tashigi',
     importance: 'supporting',
     role: ['neutral', 'ally'],
@@ -51,6 +63,12 @@ export const onepieceCharactersNewWorldSagas: Character[] = [
   {
     id: 'char-op-sabo',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "583",
+    firstAnimeAppearance: "494",
+    longDescription: {
+      it: "Capo di stato maggiore dell'Armata Rivoluzionaria e fratello giurato di Rufy e Ace, creduto morto da bambino a Goa. Ereditò il frutto Fiamma di Ace al Colosseo Corrida di Dressrosa.",
+      en: "Chief of staff of the Revolutionary Army and sworn brother of Luffy and Ace, believed dead as a child at Goa. He inherited Ace's Flame-Flame Fruit at the Corrida Colosseum in Dressrosa.",
+    },
     name: 'Sabo',
     importance: 'major',
     role: ['ally'],
@@ -74,6 +92,12 @@ export const onepieceCharactersNewWorldSagas: Character[] = [
   {
     id: 'char-op-rebecca',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "703",
+    firstAnimeAppearance: "631",
+    longDescription: {
+      it: "Gladiatrice del Colosseo Corrida e principessa di Dressrosa, nipote di Re Riku. Combatté senza mai uccidere per ribaltare la tirannia di Doflamingo e proteggere il padre giocattolo, Kyros.",
+      en: "A gladiator of the Corrida Colosseum and princess of Dressrosa, granddaughter of King Riku. She fought without ever killing to overturn Doflamingo's tyranny and protect her toy-soldier father, Kyros.",
+    },
     name: 'Rebecca',
     importance: 'supporting',
     role: ['ally'],
@@ -94,6 +118,12 @@ export const onepieceCharactersNewWorldSagas: Character[] = [
   {
     id: 'char-op-kyros',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "743",
+    firstAnimeAppearance: "693",
+    longDescription: {
+      it: "Leggendario gladiatore di Dressrosa e marito della principessa Scarlett, trasformato in soldatino di legno dal potere di Sugar. Decapitò personalmente Doflamingo dal trono, liberando il regno.",
+      en: "A legendary gladiator of Dressrosa and husband of Princess Scarlett, turned into a toy soldier by Sugar's power. He personally cut Doflamingo down from the throne, freeing the kingdom.",
+    },
     name: 'Kyros',
     importance: 'supporting',
     role: ['ally'],
@@ -114,6 +144,12 @@ export const onepieceCharactersNewWorldSagas: Character[] = [
   {
     id: 'char-op-trebol',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "722",
+    firstAnimeAppearance: "661",
+    longDescription: {
+      it: "Ufficiale anziano e «mente» della famiglia Donquijote, utente del frutto Colla. Tra coloro che spinsero Doflamingo verso il potere fin dall'infanzia.",
+      en: "A senior officer and the 'brains' of the Donquixote family, user of the Sticky-Sticky Fruit. One of those who pushed Doflamingo toward power since childhood.",
+    },
     name: 'Trebol',
     importance: 'supporting',
     role: ['antagonist'],
@@ -133,6 +169,12 @@ export const onepieceCharactersNewWorldSagas: Character[] = [
   {
     id: 'char-op-pica',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "724",
+    firstAnimeAppearance: "663",
+    longDescription: {
+      it: "Ufficiale della famiglia Donquijote dalla voce stridula e dal corpo gigantesco, utente del frutto Roccia con cui controlla il terreno di Dressrosa. Sconfitto da Zoro.",
+      en: "An officer of the Donquixote family with a squeaky voice and giant body, user of the Stone-Stone Fruit, controlling the terrain of Dressrosa. Beaten by Zoro.",
+    },
     name: 'Pica',
     importance: 'supporting',
     role: ['antagonist'],
@@ -153,6 +195,12 @@ export const onepieceCharactersNewWorldSagas: Character[] = [
   {
     id: 'char-op-diamante',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "703",
+    firstAnimeAppearance: "633",
+    longDescription: {
+      it: "Ufficiale combattente della famiglia Donquijote ed esuberante campione del Colosseo Corrida, utente del frutto Bandiera. Tra i tre capi dell'esercito di Doflamingo a Dressrosa.",
+      en: "A combat officer of the Donquixote family and flamboyant champion of the Corrida Colosseum, user of the Flag-Flag Fruit. One of the three heads of Doflamingo's army at Dressrosa.",
+    },
     name: 'Diamante',
     importance: 'supporting',
     role: ['antagonist'],

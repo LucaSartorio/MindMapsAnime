@@ -10,6 +10,12 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
   {
     id: 'char-op-big-mom',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "651",
+    firstAnimeAppearance: "571",
+    longDescription: {
+      it: "Charlotte Linlin «Big Mom», una dei Quattro Imperatori e matriarca di Totland, utente del frutto Anima. Affamata di longevità e di un mondo dove ogni razza convive, cadde infine a Wano.",
+      en: "Charlotte Linlin 'Big Mom', one of the Four Emperors and matriarch of Totland, user of the Soul-Soul Fruit. Craving longevity and a world where all races coexist, she finally fell at Wano.",
+    },
     name: 'Charlotte Linlin',
     aliases: ['Big Mom'],
     importance: 'major',
@@ -32,6 +38,12 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
   {
     id: 'char-op-katakuri',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "834",
+    firstAnimeAppearance: "798",
+    longDescription: {
+      it: "Charlotte Katakuri, il più forte dei Comandanti dei Dolci di Big Mom, utente del frutto Mochi e di un'Ambizione preveggente. Riconobbe Rufy come avversario degno dopo il duello negli specchi.",
+      en: "Charlotte Katakuri, the strongest of Big Mom's Sweet Commanders, user of the Mochi-Mochi Fruit and a foreseeing Haki. He acknowledged Luffy as a worthy opponent after the mirror duel.",
+    },
     name: 'Charlotte Katakuri',
     importance: 'major',
     role: ['antagonist', 'neutral'],
@@ -54,6 +66,12 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
   {
     id: 'char-op-pudding',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "825",
+    firstAnimeAppearance: "784",
+    longDescription: {
+      it: "Charlotte Pudding, 35ª figlia di Big Mom, della razza dei Tre Occhi e utente del frutto Memoria. Promessa sposa di Sanji in un complotto, finì per innamorarsene e aiutare la ciurma a fuggire.",
+      en: "Charlotte Pudding, Big Mom's 35th daughter, of the Three-Eye Tribe and user of the Memo-Memo Fruit. Betrothed to Sanji in a plot, she ended up falling for him and helping the crew escape.",
+    },
     name: 'Charlotte Pudding',
     importance: 'supporting',
     role: ['ally', 'neutral'],
@@ -73,6 +91,12 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
   {
     id: 'char-op-brulee',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "847",
+    firstAnimeAppearance: "813",
+    longDescription: {
+      it: "Charlotte Brûlée, figlia di Big Mom e utente del frutto Specchio, padrona del «Mondo degli Specchi» che collega tutta Totland. Suo malgrado, fu la chiave della fuga della ciurma.",
+      en: "Charlotte Brûlée, Big Mom's daughter and user of the Mirror-Mirror Fruit, mistress of the 'Mirro-World' linking all of Totland. Against her will, she became the key to the crew's escape.",
+    },
     name: 'Charlotte Brûlée',
     importance: 'supporting',
     role: ['antagonist'],
@@ -92,6 +116,12 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
   {
     id: 'char-op-judge',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "832",
+    firstAnimeAppearance: "793",
+    longDescription: {
+      it: "Vinsmoke Judge, re del Germa 66 e padre di Sanji, scienziato spietato che modificò geneticamente i propri figli come armi viventi, privandone Sanji per la sua «debolezza».",
+      en: "Vinsmoke Judge, king of Germa 66 and Sanji's father, a ruthless scientist who genetically engineered his children as living weapons, stripping Sanji of it for his 'weakness'.",
+    },
     name: 'Vinsmoke Judge',
     importance: 'supporting',
     role: ['antagonist', 'neutral'],
@@ -114,6 +144,12 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
   {
     id: 'char-op-pedro',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "810",
+    firstAnimeAppearance: "758",
+    longDescription: {
+      it: "Guerriero mink della tribù della giungla di Zou ed ex pirata, alleato della ciurma. Si sacrificò a Cacao Island per garantire la fuga e scommettere sulla nuova generazione.",
+      en: "A mink warrior of Zou's jungle tribe and a former pirate, an ally of the crew. He sacrificed himself at Cacao Island to secure the escape and bet on the new generation.",
+    },
     name: 'Pedro',
     importance: 'supporting',
     role: ['ally'],
@@ -134,6 +170,12 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
   {
     id: 'char-op-kaido',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "795",
+    firstAnimeAppearance: "739",
+    longDescription: {
+      it: "Kaido «delle Cento Bestie», uno dei Quattro Imperatori e «la creatura più forte del mondo», utente dello Zoan del drago azzurro. Tiranno di Wano, fu abbattuto da Rufy in Gear 5 a Onigashima.",
+      en: "Kaido 'of the Beasts', one of the Four Emperors and 'the strongest creature in the world', user of the azure dragon Zoan. Tyrant of Wano, he was felled by Luffy in Gear 5 at Onigashima.",
+    },
     name: 'Kaido',
     aliases: ['Kaido delle Cento Bestie', 'La creatura più forte del mondo'],
     importance: 'major',
@@ -156,6 +198,12 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
   {
     id: 'char-op-king',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "921",
+    firstAnimeAppearance: "952",
+    longDescription: {
+      it: "King «l'Incendio», braccio destro di Kaido e Calamità delle Cento Bestie, utente dello Zoan dello pteranodonte e ultimo della razza Lunaria. Fu sconfitto da Zoro a Onigashima.",
+      en: "King 'the Wildfire', Kaido's right hand and a Calamity of the Beasts, user of the pteranodon Zoan and the last of the Lunarian race. He was beaten by Zoro at Onigashima.",
+    },
     name: 'King',
     aliases: ["L'Incendio"],
     importance: 'supporting',
@@ -177,6 +225,12 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
   {
     id: 'char-op-orochi',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "739",
+    firstAnimeAppearance: "672",
+    longDescription: {
+      it: "Kurozumi Orochi, infido shogun di Wano alleato di Kaido, utente dello Zoan del serpente a otto teste che gli dona otto vite. Tiranno che ridusse il Paese alla miseria.",
+      en: "Kurozumi Orochi, the treacherous shogun of Wano allied with Kaido, user of the eight-headed serpent Zoan that grants him eight lives. A tyrant who reduced the country to misery.",
+    },
     name: 'Kurozumi Orochi',
     importance: 'supporting',
     role: ['antagonist'],
@@ -196,6 +250,12 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
   {
     id: 'char-op-oden',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "770",
+    firstAnimeAppearance: "959",
+    longDescription: {
+      it: "Kozuki Oden, leggendario daimyo di Kuri che navigò con Barbabianca e Roger fino a Laugh Tale. Tornato a Wano, fu giustiziato da Orochi e Kaido lasciando ai Foderi Rossi la promessa di aprire i confini.",
+      en: "Kozuki Oden, the legendary daimyo of Kuri who sailed with Whitebeard and Roger to Laugh Tale. Returning to Wano, he was executed by Orochi and Kaido, leaving the Red Scabbards the vow to open the borders.",
+    },
     name: 'Kozuki Oden',
     importance: 'major',
     role: ['ally'],
@@ -216,6 +276,12 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
   {
     id: 'char-op-momonosuke',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "690",
+    firstAnimeAppearance: "611",
+    longDescription: {
+      it: "Kozuki Momonosuke, figlio di Oden ed erede del clan, sbalzato nel futuro dal potere della madre Toki. Utente di uno Zoan artificiale del drago, da adulto diventa shogun della Wano libera.",
+      en: "Kozuki Momonosuke, son of Oden and heir of the clan, hurled into the future by his mother Toki's power. User of an artificial dragon Zoan, as an adult he becomes shogun of a free Wano.",
+    },
     name: 'Kozuki Momonosuke',
     importance: 'supporting',
     role: ['ally'],
@@ -236,6 +302,12 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
   {
     id: 'char-op-yamato',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "983",
+    firstAnimeAppearance: "1015",
+    longDescription: {
+      it: "Yamato, figlia di Kaido che si proclama erede di Oden, utente dello Zoan mitologico del lupo divino Okuchi no Makami. Combatté contro il padre per liberare Wano.",
+      en: "Yamato, Kaido's child who claims to be Oden's heir, user of the mythical Zoan of the divine wolf Okuchi no Makami. She fought against her father to free Wano.",
+    },
     name: 'Yamato',
     importance: 'major',
     role: ['ally'],
@@ -258,6 +330,12 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
   {
     id: 'char-op-kinemon',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "655",
+    firstAnimeAppearance: "579",
+    longDescription: {
+      it: "Kozuki Kinemon, capo dei Nove Foderi Rossi e fedele samurai di Oden, utente del frutto Abito e di una tecnica di fuoco-taglio. Guidò il complotto per rovesciare Kaido e Orochi.",
+      en: "Kozuki Kinemon, leader of the Nine Red Scabbards and Oden's loyal samurai, user of the Garb-Garb Fruit and a fire-cutting technique. He led the plot to overthrow Kaido and Orochi.",
+    },
     name: "Kin'emon",
     importance: 'supporting',
     role: ['ally'],

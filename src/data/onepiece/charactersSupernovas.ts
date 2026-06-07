@@ -12,6 +12,10 @@ export const onepieceCharactersSupernovas: Character[] = [
   {
     id: 'char-op-kid',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Eustass Kid, capitano dei Pirati di Kid e Supernova dalla taglia altissima, utente del frutto Magnete. Perse un braccio contro Shanks e a Wano si alleò con Rufy e Law contro gli Imperatori.",
+      en: "Eustass Kid, captain of the Kid Pirates and a sky-high-bounty Supernova, user of the Magnet-Magnet Fruit. He lost an arm to Shanks and at Wano allied with Luffy and Law against the Emperors.",
+    },
     name: 'Eustass Kid',
     aliases: ['Capitan Kid'],
     importance: 'major',
@@ -33,6 +37,10 @@ export const onepieceCharactersSupernovas: Character[] = [
   {
     id: 'char-op-killer',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Killer «il Soldato del Massacro», luogotenente di Eustass Kid e Supernova. A Wano fu costretto a mangiare uno SMILE difettoso che lo fa ridere contro la sua volontà, prima della liberazione.",
+      en: "Killer 'the Massacre Soldier', Eustass Kid's lieutenant and a Supernova. At Wano he was forced to eat a defective SMILE that makes him laugh against his will, before being freed.",
+    },
     name: 'Killer',
     aliases: ['Soldato del Massacro'],
     importance: 'supporting',
@@ -54,6 +62,10 @@ export const onepieceCharactersSupernovas: Character[] = [
   {
     id: 'char-op-hawkins',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Basil Hawkins «il Mago», Supernova di North Blue che combina il frutto Paglia con i tarocchi per leggere le probabilità. Nel New World servì Kaido come Headliner.",
+      en: "Basil Hawkins 'the Magician', a North Blue Supernova combining the Straw-Straw Fruit with tarot to read odds. In the New World he served Kaido as a Headliner.",
+    },
     name: 'Basil Hawkins',
     aliases: ['Il Mago'],
     importance: 'supporting',
@@ -75,6 +87,10 @@ export const onepieceCharactersSupernovas: Character[] = [
   {
     id: 'char-op-drake',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "X Drake, ex viceammiraglio diventato Supernova, utente dello Zoan ancestrale dell'allosauro. A Wano militò tra i Tobiroppo di Kaido pur essendo un agente segreto dell'unità SWORD.",
+      en: "X Drake, a former rear admiral turned Supernova, user of the ancient allosaurus Zoan. At Wano he served among Kaido's Tobiroppo while secretly an agent of the SWORD unit.",
+    },
     name: 'X Drake',
     aliases: ['Red Flag'],
     importance: 'supporting',
@@ -96,6 +112,10 @@ export const onepieceCharactersSupernovas: Character[] = [
   {
     id: 'char-op-apoo',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Scratchmen Apoo, capitano dei Pirati On-Air e Supernova il cui corpo è uno strumento musicale. Doppiogiochista, finì alleato di Kaido nel New World.",
+      en: "Scratchmen Apoo, captain of the On-Air Pirates and a Supernova whose body is a musical instrument. A double-dealer, he ended up allied with Kaido in the New World.",
+    },
     name: 'Scratchmen Apoo',
     aliases: ['Roar of the Sea'],
     importance: 'supporting',
@@ -116,6 +136,10 @@ export const onepieceCharactersSupernovas: Character[] = [
   {
     id: 'char-op-bege',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Capone «Gang» Bege, boss mafioso di West Blue e Supernova, utente del frutto Castello che trasforma il corpo in fortezza. Entrato per matrimonio nella famiglia di Big Mom, ne orchestrò il tradimento.",
+      en: "Capone 'Gang' Bege, a West Blue mafia boss and Supernova, user of the Castle-Castle Fruit that turns his body into a fortress. Married into Big Mom's family, he masterminded the betrayal.",
+    },
     name: 'Capone Bege',
     aliases: ['Gang'],
     importance: 'supporting',
@@ -137,6 +161,10 @@ export const onepieceCharactersSupernovas: Character[] = [
   {
     id: 'char-op-urouge',
     worldId: 'world-onepiece',
+    longDescription: {
+      it: "Urouge «il Monaco Folle», Supernova proveniente da un'Isola del Cielo, il cui frutto converte il danno subito in forza. Sopravvissuto al New World, vi si fece un nome.",
+      en: "Urouge 'the Mad Monk', a Supernova from a Sky Island whose fruit converts damage taken into strength. A survivor of the New World, he made a name there.",
+    },
     name: 'Urouge',
     aliases: ['Monaco Folle'],
     importance: 'supporting',

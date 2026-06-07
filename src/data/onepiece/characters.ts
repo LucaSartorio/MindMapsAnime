@@ -186,6 +186,12 @@ export const onepieceCharactersEastBlue: Character[] = [
   {
     id: 'char-op-shanks',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "1",
+    firstAnimeAppearance: "4",
+    longDescription: {
+      it: "Imperatore «il Rosso», capitano dei Pirati del Rosso ed ex mozzo di Roger. Donò a Rufy il cappello di paglia perdendo un braccio per salvarlo, e pose fine alla Guerra al Vertice. Uno dei più influenti e potenti pirati del mondo.",
+      en: "The Emperor 'Red-Haired', captain of the Red-Hair Pirates and a former cabin boy of Roger. He gave Luffy the straw hat, losing an arm to save him, and ended the Summit War. One of the most influential and powerful pirates in the world.",
+    },
     name: 'Shanks',
     aliases: ['Capelli Rossi', 'Akagami'],
     importance: 'major',
@@ -206,6 +212,12 @@ export const onepieceCharactersEastBlue: Character[] = [
   {
     id: 'char-op-coby',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "2",
+    firstAnimeAppearance: "1",
+    longDescription: {
+      it: "Da timido mozzo prigioniero di Alvida a promettente ufficiale della Marina. Amico-rivale di Rufy, incarna l'ideale di una «Giustizia» giusta; a Marineford implorò la fine della guerra. Membro dell'unità segreta SWORD.",
+      en: "From a timid cabin boy held by Alvida to a promising Marine officer. A friend-rival of Luffy, he embodies the ideal of a just 'Justice'; at Marineford he begged for the war to end. A member of the secret SWORD unit.",
+    },
     name: 'Coby',
     importance: 'supporting',
     role: ['ally'],
@@ -227,6 +239,12 @@ export const onepieceCharactersEastBlue: Character[] = [
   {
     id: 'char-op-morgan',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "3",
+    firstAnimeAppearance: "2",
+    longDescription: {
+      it: "«Mano d'Ascia» Morgan, capitano della Marina tirannico e violento che opprimeva Shells Town. Primo antagonista della serie, fu deposto da Rufy quando questi liberò Zoro dal patibolo.",
+      en: "'Axe-Hand' Morgan, a tyrannical and violent Marine captain who oppressed Shells Town. The first antagonist of the series, he was deposed by Luffy when he freed Zoro from the scaffold.",
+    },
     name: 'Morgan',
     aliases: ["Morgan Mano d'Ascia"],
     importance: 'minor',
@@ -248,6 +266,12 @@ export const onepieceCharactersEastBlue: Character[] = [
   {
     id: 'char-op-smoker',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "98",
+    firstAnimeAppearance: "48",
+    longDescription: {
+      it: "«il Cacciatore Bianco», marine integerrimo utente del frutto Fumo Fumo. Inseguì Rufy da Loguetown a Punk Hazard prima di lasciarlo andare, e milita nella segreta unità SWORD opponendosi alla «Giustizia Assoluta».",
+      en: "'White Hunter', an upright Marine and user of the Smoke-Smoke Fruit. He pursued Luffy from Loguetown to Punk Hazard before letting him go, and serves in the secret SWORD unit, opposing 'Absolute Justice'.",
+    },
     name: 'Smoker',
     aliases: ['Cacciatore Bianco'],
     importance: 'supporting',
@@ -270,6 +294,12 @@ export const onepieceCharactersEastBlue: Character[] = [
   {
     id: 'char-op-garp',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "92",
+    firstAnimeAppearance: "45",
+    longDescription: {
+      it: "Viceammiraglio «il Pugno», eroe della Marina che mise più volte all'angolo Roger e annientò Rocks a God Valley. Nonno di Rufy e padre adottivo di Ace, rifiutò sempre il grado di ammiraglio.",
+      en: "Vice Admiral Garp 'the Fist', a Marine hero who repeatedly cornered Roger and annihilated Rocks at God Valley. Luffy's grandfather and Ace's foster father, he always refused the rank of admiral.",
+    },
     name: 'Monkey D. Garp',
     aliases: ['Pugno', "L'Eroe della Marina"],
     importance: 'major',
@@ -291,6 +321,12 @@ export const onepieceCharactersEastBlue: Character[] = [
   {
     id: 'char-op-dragon',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "100",
+    firstAnimeAppearance: "52",
+    longDescription: {
+      it: "Monkey D. Dragon, capo supremo dell'Armata Rivoluzionaria e «il criminale più ricercato del mondo». Padre di Rufy e figlio di Garp, salvò Rufy a Loguetown; i suoi scopi restano avvolti nel mistero.",
+      en: "Monkey D. Dragon, supreme leader of the Revolutionary Army and 'the world's most wanted criminal'. Luffy's father and Garp's son, he saved Luffy at Loguetown; his aims remain shrouded in mystery.",
+    },
     name: 'Monkey D. Dragon',
     aliases: ['Il Rivoluzionario', "L'uomo più pericoloso del mondo"],
     importance: 'major',
@@ -314,6 +350,12 @@ export const onepieceCharactersEastBlue: Character[] = [
   {
     id: 'char-op-buggy',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "9",
+    firstAnimeAppearance: "5",
+    longDescription: {
+      it: "«il Clown» Buggy, ex mozzo della ciurma di Roger e utente del frutto Smembra Smembra. Da nemico di East Blue, una catena di fortunati equivoci lo porta fino al rango di Imperatore e leader della Cross Guild.",
+      en: "Buggy 'the Clown', a former cabin boy of Roger's crew and user of the Chop-Chop Fruit. From an East Blue enemy, a chain of lucky misunderstandings carries him to the rank of Emperor and leader of the Cross Guild.",
+    },
     name: 'Bagy',
     aliases: ['Bagy il Clown', 'Buggy'],
     importance: 'major',
@@ -339,6 +381,12 @@ export const onepieceCharactersEastBlue: Character[] = [
   {
     id: 'char-op-kuro',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "25",
+    firstAnimeAppearance: "9",
+    longDescription: {
+      it: "Capitano Kuro «dai Mille Piani», pirata dei Gatti Neri che si finse il maggiordomo Klahadore per assassinare l'ereditiera Kaya. Velocissimo e spietato, fu sconfitto da Rufy a Syrup Village.",
+      en: "Captain Kuro 'of a Hundred Plans', a Black Cat pirate who posed as the butler Klahadore to murder the heiress Kaya. Blindingly fast and ruthless, he was beaten by Luffy at Syrup Village.",
+    },
     name: 'Kuro',
     aliases: ['Kuro dai Mille Piani', 'Capitano Kuro'],
     importance: 'supporting',
@@ -361,6 +409,12 @@ export const onepieceCharactersEastBlue: Character[] = [
   {
     id: 'char-op-don-krieg',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "44",
+    firstAnimeAppearance: "21",
+    longDescription: {
+      it: "Don Krieg «l'Ammiraglio della Flotta», spietato pirata corazzato di East Blue. Tornato distrutto dalla Grand Line dopo l'incontro con Mihawk, assaltò il Baratie e fu sconfitto da Rufy.",
+      en: "Don Krieg 'the Foul Play', a ruthless armored pirate of East Blue. Returned broken from the Grand Line after meeting Mihawk, he assaulted the Baratie and was beaten by Luffy.",
+    },
     name: 'Don Krieg',
     aliases: ['Mano Insanguinata'],
     importance: 'supporting',
@@ -383,6 +437,12 @@ export const onepieceCharactersEastBlue: Character[] = [
   {
     id: 'char-op-mihawk',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "50",
+    firstAnimeAppearance: "24",
+    longDescription: {
+      it: "Dracule Mihawk «Occhi di Falco», il più grande spadaccino del mondo ed ex Corsaro. Sconfisse Zoro al Baratie diventandone il modello da superare, e in seguito lo addestrò a Kuraigana.",
+      en: "Dracule Mihawk 'Hawk-Eyes', the world's greatest swordsman and a former Warlord. He beat Zoro at the Baratie, becoming the goal he must surpass, and later trained him at Kuraigana.",
+    },
     name: 'Dracule Mihawk',
     aliases: ['Occhi di Falco'],
     importance: 'major',
@@ -404,6 +464,12 @@ export const onepieceCharactersEastBlue: Character[] = [
   {
     id: 'char-op-arlong',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "69",
+    firstAnimeAppearance: "31",
+    longDescription: {
+      it: "Uomo-pesce sega capitano dei Pirati di Arlong, disprezza gli umani come razza inferiore. Schiavizzò Nami e le Isole Conomi per anni, finché Rufy non abbatté lui e la sua torre. Ex membro dei Pirati del Sole.",
+      en: "A sawshark fish-man, captain of the Arlong Pirates, who despises humans as an inferior race. He enslaved Nami and the Conomi Islands for years, until Luffy felled him and his tower. A former member of the Sun Pirates.",
+    },
     name: 'Arlong',
     aliases: ['Arlong la Sega'],
     importance: 'major',
@@ -426,6 +492,12 @@ export const onepieceCharactersEastBlue: Character[] = [
   {
     id: 'char-op-bellemere',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "78",
+    firstAnimeAppearance: "38",
+    longDescription: {
+      it: "Ex marine dal carattere indomito che adottò Nami e Nojiko crescendole nella povertà ma nell'amore. Fu uccisa da Arlong per aver dichiarato con fierezza di essere la loro madre.",
+      en: "A fiercely strong-willed former Marine who adopted Nami and Nojiko, raising them poor but loved. She was killed by Arlong for proudly declaring she was their mother.",
+    },
     name: 'Bell-mère',
     importance: 'supporting',
     role: ['ally'],
@@ -447,6 +519,12 @@ export const onepieceCharactersEastBlue: Character[] = [
   {
     id: 'char-op-zeff',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "43",
+    firstAnimeAppearance: "20",
+    longDescription: {
+      it: "«Gamba Rossa» Zeff, ex pirata e proprietario-cuoco del ristorante galleggiante Baratie. Salvò da bambino Sanji sacrificando la propria gamba, e lo crebbe insegnandogli a cucinare e a non sprecare mai il cibo.",
+      en: "'Red-Leg' Zeff, a former pirate and owner-chef of the floating restaurant Baratie. As a child he saved Sanji by sacrificing his own leg, and raised him, teaching him to cook and never to waste food.",
+    },
     name: 'Zeff',
     aliases: ['Gamba Rossa'],
     importance: 'supporting',

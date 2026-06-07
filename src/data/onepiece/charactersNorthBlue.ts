@@ -9,6 +9,12 @@ export const onepieceCharactersNorthBlue: Character[] = [
   {
     id: 'char-op-law',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "498",
+    firstAnimeAppearance: "392",
+    longDescription: {
+      it: "Trafalgar D. Water Law «il Chirurgo della Morte», capitano degli Heart Pirates ed ex Corsaro, utente del leggendario frutto Op Op. Salvato da bambino da Corazon, si alleò con Rufy per abbattere gli Imperatori.",
+      en: "Trafalgar D. Water Law 'the Surgeon of Death', captain of the Heart Pirates and a former Warlord, user of the legendary Op-Op Fruit. Saved as a child by Corazon, he allied with Luffy to topple the Emperors.",
+    },
     name: 'Trafalgar D. Water Law',
     aliases: ['Trafalgar Law', 'Il Chirurgo della Morte'],
     importance: 'major',
@@ -35,6 +41,12 @@ export const onepieceCharactersNorthBlue: Character[] = [
   {
     id: 'char-op-doflamingo',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "233",
+    firstAnimeAppearance: "151",
+    longDescription: {
+      it: "Donquijote Doflamingo «Joker», ex Drago Celeste, Corsaro e re ombra di Dressrosa, trafficante d'armi e di Frutti SMILE per Kaido. Utente del frutto Filo, fu abbattuto da Rufy in Gear Fourth.",
+      en: "Donquixote Doflamingo 'Joker', a former Celestial Dragon, Warlord and shadow king of Dressrosa, an arms and SMILE-Fruit dealer for Kaido. User of the String-String Fruit, he was felled by Luffy in Gear Fourth.",
+    },
     name: 'Donquijote Doflamingo',
     aliases: ['Joker', 'Doffy'],
     importance: 'major',
@@ -62,6 +74,12 @@ export const onepieceCharactersNorthBlue: Character[] = [
   {
     id: 'char-op-corazon',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "761",
+    firstAnimeAppearance: "703",
+    longDescription: {
+      it: "Donquijote Rosinante «Corazon», fratello di Doflamingo e ufficiale segreto della Marina, utente del frutto Quiete. Sacrificò la vita per curare e salvare il piccolo Law dal Saturnismo e dall'odio.",
+      en: "Donquixote Rosinante 'Corazon', Doflamingo's brother and a secret Marine officer, user of the Calm-Calm Fruit. He gave his life to cure and save young Law from lead poisoning and hatred.",
+    },
     name: 'Donquijote Rosinante',
     aliases: ['Corazon', 'Cora-san'],
     importance: 'major',

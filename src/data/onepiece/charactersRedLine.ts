@@ -10,6 +10,12 @@ export const onepieceCharactersRedLine: Character[] = [
   {
     id: 'char-op-ace',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "154",
+    firstAnimeAppearance: "91",
+    longDescription: {
+      it: "Portgas D. Ace «Pugno di Fuoco», comandante della 2ª divisione di Barbabianca, figlio di Gol D. Roger e fratello giurato di Rufy e Sabo. Utente del frutto Fiamma, morì a Marineford proteggendo Rufy.",
+      en: "Portgas D. Ace 'Fire Fist', commander of Whitebeard's 2nd division, son of Gol D. Roger and sworn brother of Luffy and Sabo. User of the Flame-Flame Fruit, he died at Marineford protecting Luffy.",
+    },
     name: 'Portgas D. Ace',
     aliases: ['Pugno di Fuoco'],
     importance: 'major',
@@ -35,6 +41,12 @@ export const onepieceCharactersRedLine: Character[] = [
   {
     id: 'char-op-whitebeard',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "234",
+    firstAnimeAppearance: "151",
+    longDescription: {
+      it: "Edward Newgate «Barbabianca», l'uomo più forte del mondo e Imperatore, padre putativo della sua enorme flotta. Utente del frutto Tremarella, morì in piedi a Marineford proclamando che il One Piece esiste.",
+      en: "Edward Newgate 'Whitebeard', the strongest man in the world and an Emperor, father-figure to his vast fleet. User of the Tremor-Tremor Fruit, he died standing at Marineford, proclaiming the One Piece is real.",
+    },
     name: 'Edward Newgate',
     aliases: ['Barbabianca', "L'uomo più forte del mondo"],
     importance: 'major',
@@ -57,6 +69,12 @@ export const onepieceCharactersRedLine: Character[] = [
   {
     id: 'char-op-blackbeard',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "223",
+    firstAnimeAppearance: "146",
+    longDescription: {
+      it: "Marshall D. Teach «Barbanera», ex membro di Barbabianca diventato Imperatore. Unico al mondo a possedere due Frutti (Tenebra e Tremarella), tessé per decenni il piano per scalare l'era della pirateria.",
+      en: "Marshall D. Teach 'Blackbeard', a former Whitebeard subordinate turned Emperor. Uniquely in the world he holds two fruits (Dark and Tremor), having spun a decades-long plan to rise atop the pirate era.",
+    },
     name: 'Marshall D. Teach',
     aliases: ['Barbanera', 'Kurohige'],
     importance: 'major',
@@ -78,6 +96,12 @@ export const onepieceCharactersRedLine: Character[] = [
   {
     id: 'char-op-sengoku',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "233",
+    firstAnimeAppearance: "151",
+    longDescription: {
+      it: "«il Buddha», ex Grande Ammiraglio della Marina al comando durante la Guerra al Vertice. Utente di uno Zoan mitologico, dopo Marineford si dimise diventando Ispettore Generale.",
+      en: "'The Buddha', former Fleet Admiral of the Marines in command during the Summit War. A user of a mythical Zoan, he resigned after Marineford to become Inspector General.",
+    },
     name: 'Sengoku',
     aliases: ['Sengoku il Buddha'],
     importance: 'supporting',
@@ -98,6 +122,12 @@ export const onepieceCharactersRedLine: Character[] = [
   {
     id: 'char-op-akainu',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "397",
+    firstAnimeAppearance: "278",
+    longDescription: {
+      it: "Sakazuki «Akainu», ammiraglio del magma fautore della «Giustizia Assoluta». A Marineford uccise Ace; divenne poi Grande Ammiraglio, guidando una Marina più spietata che mai.",
+      en: "Sakazuki 'Akainu', the magma admiral and champion of 'Absolute Justice'. At Marineford he killed Ace; he later became Fleet Admiral, leading a Marine force more ruthless than ever.",
+    },
     name: 'Sakazuki',
     aliases: ['Akainu', 'Cane Rosso'],
     importance: 'major',
@@ -121,6 +151,11 @@ export const onepieceCharactersRedLine: Character[] = [
   {
     id: 'char-op-hancock',
     worldId: 'world-onepiece',
+    firstAnimeAppearance: "409",
+    longDescription: {
+      it: "Boa Hancock «l'Imperatrice Pirata», ex Corsaro e regina di Amazon Lily, ritenuta la donna più bella del mondo. Utente del frutto Fascino, si innamorò di Rufy e lo aiutò a raggiungere Impel Down.",
+      en: "Boa Hancock 'the Pirate Empress', a former Warlord and queen of Amazon Lily, deemed the most beautiful woman in the world. User of the Love-Love Fruit, she fell for Luffy and helped him reach Impel Down.",
+    },
     name: 'Boa Hancock',
     aliases: ['Imperatrice Pirata', 'Principessa Serpente'],
     importance: 'major',
@@ -145,6 +180,12 @@ export const onepieceCharactersRedLine: Character[] = [
   {
     id: 'char-op-magellan',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "525",
+    firstAnimeAppearance: "424",
+    longDescription: {
+      it: "Direttore della prigione di Impel Down, utente del frutto Veleno e quasi imbattibile tra le sue mura. Avvelenò Rufy quasi a morte, ma non poté impedire la grande evasione né l'irruzione di Barbanera.",
+      en: "Warden of Impel Down prison, user of the Venom Fruit and nearly unbeatable within its walls. He poisoned Luffy nearly to death, but could not prevent the great escape nor Blackbeard's break-in.",
+    },
     name: 'Magellan',
     importance: 'supporting',
     role: ['antagonist', 'neutral'],
@@ -164,6 +205,12 @@ export const onepieceCharactersRedLine: Character[] = [
   {
     id: 'char-op-ivankov',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "537",
+    firstAnimeAppearance: "438",
+    longDescription: {
+      it: "Emporio Ivankov, «regina» del Kamabakka e comandante dell'Armata Rivoluzionaria, utente del frutto Ormone. Salvò Rufy a Impel Down e a Marineford e addestrò Sanji ai New-Kama.",
+      en: "Emporio Ivankov, 'queen' of Kamabakka and a commander of the Revolutionary Army, user of the Hormone-Hormone Fruit. He saved Luffy at Impel Down and Marineford and trained Sanji in New-Kama Kenpo.",
+    },
     name: 'Emporio Ivankov',
     aliases: ['Iva-san', 'Regina degli Okama'],
     importance: 'supporting',
@@ -186,6 +233,12 @@ export const onepieceCharactersRedLine: Character[] = [
   {
     id: 'char-op-jinbe',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "528",
+    firstAnimeAppearance: "430",
+    longDescription: {
+      it: "Timoniere della ciurma, uomo-pesce e maestro di Karate degli Uomini-Pesce. Ex Corsaro e capitano dei Pirati del Sole, erede del sogno di pace di Fisher Tiger e Otohime, si unì ai Cappello di Paglia dopo Whole Cake Island.",
+      en: "The crew's helmsman, a fish-man and master of Fish-Man Karate. A former Warlord and captain of the Sun Pirates, heir to Fisher Tiger and Otohime's dream of peace, he joined the Straw Hats after Whole Cake Island.",
+    },
     name: 'Jinbe',
     aliases: ['Cavaliere del Mare'],
     importance: 'main',
@@ -207,6 +260,12 @@ export const onepieceCharactersRedLine: Character[] = [
   {
     id: 'char-op-fisher-tiger',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "621",
+    firstAnimeAppearance: "540",
+    longDescription: {
+      it: "Eroe degli uomini-pesce, fondatore dei Pirati del Sole, che assaltò Mary Geoise e liberò gli schiavi dei Draghi Celesti. Il suo lascito divise Jinbe e Arlong tra perdono e odio.",
+      en: "A hero of the fish-men, founder of the Sun Pirates, who stormed Mary Geoise and freed the Celestial Dragons' slaves. His legacy split Jinbe and Arlong between forgiveness and hatred.",
+    },
     name: 'Fisher Tiger',
     importance: 'supporting',
     role: ['ally'],
@@ -226,6 +285,12 @@ export const onepieceCharactersRedLine: Character[] = [
   {
     id: 'char-op-shirahoshi',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "611",
+    firstAnimeAppearance: "529",
+    longDescription: {
+      it: "Principessa sirena di Fish-Man Island, gigantesca e timidissima, in realtà l'arma ancestrale Poseidon capace di comandare i Re del Mare. Protetta da Rufy dal golpe di Hody.",
+      en: "The mermaid princess of Fish-Man Island, giant and extremely timid, in truth the ancient weapon Poseidon, able to command the Sea Kings. Protected by Luffy from Hody's coup.",
+    },
     name: 'Shirahoshi',
     aliases: ['Principessa Sirena'],
     importance: 'supporting',
@@ -246,6 +311,12 @@ export const onepieceCharactersRedLine: Character[] = [
   {
     id: 'char-op-hody',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "611",
+    firstAnimeAppearance: "529",
+    longDescription: {
+      it: "Hody Jones, capo dei Nuovi Pirati Uomini-Pesce, fanatico razzista che voleva sterminare la famiglia reale Ryugu e dichiarare guerra agli umani. Drogato di Energy Steroid, fu sconfitto da Rufy.",
+      en: "Hody Jones, leader of the New Fish-Man Pirates, a racist fanatic bent on wiping out the Ryugu royal family and declaring war on humans. Hooked on Energy Steroids, he was beaten by Luffy.",
+    },
     name: 'Hody Jones',
     importance: 'supporting',
     role: ['antagonist'],
@@ -268,6 +339,12 @@ export const onepieceCharactersRedLine: Character[] = [
   {
     id: 'char-op-rayleigh',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "0",
+    firstAnimeAppearance: "0",
+    longDescription: {
+      it: "Silvers Rayleigh «il Re Oscuro», ex vicecapitano dei Pirati di Roger e maestro d'armi di Rufy a Rusukaina. Uno dei pochi a conoscere la verità sul One Piece e sull'ultima isola.",
+      en: "Silvers Rayleigh 'the Dark King', former first mate of Roger's Pirates and Luffy's combat master at Rusukaina. One of the few who know the truth about the One Piece and the final island.",
+    },
     name: 'Silvers Rayleigh',
     aliases: ['Il Re Oscuro'],
     importance: 'major',
@@ -291,6 +368,12 @@ export const onepieceCharactersRedLine: Character[] = [
   {
     id: 'char-op-imu',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "906",
+    firstAnimeAppearance: "885",
+    longDescription: {
+      it: "Imu, il sovrano segreto del mondo che siede sul Trono Vuoto di Mary Geoise al di sopra dei Cinque Astri. Antichissimo e onnipotente, decide quali nazioni e nomi cancellare dalla storia.",
+      en: "Imu, the secret ruler of the world who sits on the Empty Throne of Mary Geoise above the Five Elders. Ancient and all-powerful, Imu decides which nations and names to erase from history.",
+    },
     name: 'Imu',
     aliases: ['Imu-sama'],
     importance: 'major',
