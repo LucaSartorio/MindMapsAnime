@@ -615,6 +615,8 @@ export interface Route {
   type?: RouteType;
   name: string;
   localizedName?: Localizable;
+  /** Raggruppamento tematico del percorso (es. "Storia principale", "Supernove"). */
+  group?: Localizable;
   description: Localizable;
   longDescription?: Localizable;
   /** Personaggio o gruppo protagonista del percorso (legacy). */

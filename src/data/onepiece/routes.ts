@@ -15,6 +15,7 @@ export const onepieceRoutes: Route[] = [
       it: 'East Blue — il primo viaggio',
       en: 'East Blue — the first voyage',
     },
+    group: { it: 'Storia principale', en: 'Main story' },
     mangaChapters: ['1-105'],
     animeEpisodes: ['1-63'],
     description: {

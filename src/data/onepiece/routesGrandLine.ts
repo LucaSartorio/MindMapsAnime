@@ -31,6 +31,7 @@ export const onepieceRoutesGrandLine: Route[] = [
       it: 'Paradise — la prima metà della Grand Line',
       en: 'Paradise — the first half of the Grand Line',
     },
+    group: { it: 'Storia principale', en: 'Main story' },
     mangaChapters: ['106-513'],
     animeEpisodes: ['62-405'],
     description: {
@@ -67,6 +68,7 @@ export const onepieceRoutesGrandLine: Route[] = [
       it: 'Rufy — la corsa per salvare Ace',
       en: "Luffy — the race to save Ace",
     },
+    group: { it: 'Storia principale', en: 'Main story' },
     mangaChapters: ['514-580'],
     animeEpisodes: ['408-489'],
     description: {
@@ -96,6 +98,7 @@ export const onepieceRoutesGrandLine: Route[] = [
       it: 'New World — la seconda metà della Grand Line',
       en: 'New World — the second half of the Grand Line',
     },
+    group: { it: 'Storia principale', en: 'Main story' },
     mangaChapters: ['603-1125'],
     animeEpisodes: ['523-1122'],
     description: {
