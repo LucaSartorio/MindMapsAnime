@@ -74,10 +74,6 @@ function MapNodeBase({ data }: NodeProps) {
         className={cn(
           'whitespace-nowrap px-2 py-0.5 rounded-md backdrop-blur-sm border transition',
           IMPORTANCE_TEXT[d.importance],
-          // Di default la targhetta col nome è nascosta (mostra solo il pallino):
-          // evita il muro di etichette sovrapposte nelle aree dense. Appare al
-          // passaggio del mouse e resta visibile se il pin è selezionato/evidenziato.
-          !d.selected && !d.highlighted && 'hidden group-hover:inline-block',
           d.selected
             ? 'bg-ember-900/80 border-ember-500/70 text-ember-100'
             : d.highlighted
