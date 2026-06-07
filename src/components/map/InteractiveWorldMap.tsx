@@ -70,19 +70,18 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
     [dataset.mapLevels, activeMapLevelId],
   );
 
-  // Locations del livello, filtrate + filtro layer (main/minor villages, special places)
+  // Locations del livello, filtrate + filtro layer (per importanza: principali /
+  // secondari·speciali / minori). La distinzione è sull'`importance` così da
+  // valere per ogni mondo (non solo dove i luoghi sono di tipo "village").
   const visibleLocations = useMemo<Location[]>(() => {
     const base = dataset.locations.filter(
       (l) => l.mapLevelId === activeLevel.id,
     );
     const filtered = filterLocations(base, filters, dataset);
     return filtered.filter((l) => {
-      if (l.type === 'village') {
-        return l.importance === 'main'
-          ? visibleLayers.mainVillages
-          : visibleLayers.minorVillages;
-      }
-      return visibleLayers.specialPlaces;
+      if (l.importance === 'main') return visibleLayers.mainVillages;
+      if (l.importance === 'minor') return visibleLayers.minorVillages;
+      return visibleLayers.specialPlaces; // 'secondary'
     });
   }, [dataset, activeLevel.id, filters, visibleLayers]);
 

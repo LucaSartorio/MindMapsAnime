@@ -74,8 +74,8 @@ export const onepieceLocationsExtra: Location[] = [
     name: 'Egghead',
     localizedName: { it: 'Egghead', en: 'Egghead' },
     type: 'landmark',
-    x: 663,
-    y: 546,
+    x: 701,
+    y: 524,
     shortDescription: {
       it: "L'«isola del futuro» del New World, laboratorio avveniristico del dottor Vegapunk, il più grande scienziato del mondo. Avamposto della tecnologia del Governo Mondiale.",
       en: "The New World's 'island of the future', the futuristic lab of Dr. Vegapunk, the world's greatest scientist. An outpost of World Government technology.",
