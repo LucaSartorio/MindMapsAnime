@@ -5,6 +5,8 @@ export const onepieceEventsWholeCakeWano: TimelineEvent[] = [
   {
     id: 'evt-op-sanji-rescue',
     worldId: 'world-onepiece',
+    mangaChapters: ["897-899"],
+    animeEpisodes: ["868-871"],
     title: { it: 'Il salvataggio di Sanji', en: "Sanji's rescue" },
     description: {
       it: "La ciurma e i suoi alleati strappano Sanji al matrimonio combinato e mandano in pezzi il piano di Big Mom, fuggendo da Totland con una torta di pace tra i fragori dell'Imperatrice furiosa.",
@@ -24,6 +26,8 @@ export const onepieceEventsWholeCakeWano: TimelineEvent[] = [
   {
     id: 'evt-op-katakuri-duel',
     worldId: 'world-onepiece',
+    mangaChapters: ["882-896"],
+    animeEpisodes: ["850-866"],
     title: { it: 'Rufy contro Katakuri', en: 'Luffy vs Katakuri' },
     description: {
       it: "Nel Mondo degli Specchi Rufy affronta Charlotte Katakuri in un duello estenuante e, risvegliando la preveggenza dell'Ambizione, sconfigge il più forte dei Comandanti dei Dolci conquistandone il rispetto.",
@@ -43,6 +47,8 @@ export const onepieceEventsWholeCakeWano: TimelineEvent[] = [
   {
     id: 'evt-op-oden-legacy',
     worldId: 'world-onepiece',
+    mangaChapters: ["960-972"],
+    animeEpisodes: ["960-972"],
     title: { it: "L'eredità di Kozuki Oden", en: "Kozuki Oden's legacy" },
     description: {
       it: "Il flashback di Wano rivela la vita di Kozuki Oden: i viaggi con Barbabianca e Roger fino a Laugh Tale, il ritorno a un Paese caduto sotto Orochi e Kaido, e la sua esecuzione, che accese la promessa di vendetta dei Nove Foderi Rossi.",
@@ -62,6 +68,8 @@ export const onepieceEventsWholeCakeWano: TimelineEvent[] = [
   {
     id: 'evt-op-onigashima-war',
     worldId: 'world-onepiece',
+    mangaChapters: ["985-1040"],
+    animeEpisodes: ["1015-1070"],
     title: { it: 'La guerra di Onigashima', en: 'The Onigashima war' },
     description: {
       it: "L'alleanza ninja-pirata-mink-samurai assalta Onigashima durante il festival del fuoco. Sul tetto dell'isola, cinque capitani affrontano i due Imperatori Kaido e Big Mom nello scontro decisivo per il futuro di Wano e del mondo.",
@@ -81,6 +89,8 @@ export const onepieceEventsWholeCakeWano: TimelineEvent[] = [
   {
     id: 'evt-op-kaido-defeat',
     worldId: 'world-onepiece',
+    mangaChapters: ["1049-1050"],
+    animeEpisodes: ["1076-1078"],
     title: { it: 'La caduta di Kaido', en: "Kaido's fall" },
     description: {
       it: "Risvegliando il Gear 5, Rufy abbatte l'Imperatore Kaido e libera Wano. Momonosuke diventa shogun e il mondo riconosce Rufy come uno dei nuovi Quattro Imperatori.",

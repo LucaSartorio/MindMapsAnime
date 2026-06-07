@@ -5,6 +5,12 @@ export const onepieceArcsWholeCakeWano: StoryArc[] = [
   {
     id: 'arc-op-whole-cake',
     worldId: 'world-onepiece',
+    mangaChapters: ["825-902"],
+    animeEpisodes: ["783-877"],
+    longDescription: {
+      it: "Per riportare a casa Sanji, promesso sposo di Pudding nel piano dell'Imperatrice Big Mom, una squadra della ciurma entra a Totland con l'aiuto dei mink e del guerriero Pedro. Tra il tradimento e il riscatto della famiglia Vinsmoke (il Germa 66), il tè avvelenato e il crollo di Big Mom davanti alla foto del Sanji «gentile», Rufy resiste in un duello-maratona contro Charlotte Katakuri nel Mondo degli Specchi, risvegliando la preveggenza dell'Ambizione. Il sacrificio di Pedro e una torta nuziale placano l'ira dell'Imperatrice: la ciurma fugge da Totland e Jinbe promette di unirsi presto.",
+      en: "To bring Sanji home — betrothed to Pudding in Empress Big Mom's plan — part of the crew enters Totland with the help of the minks and the warrior Pedro. Amid the betrayal and redemption of the Vinsmoke family (Germa 66), the poisoned tea and Big Mom's breakdown before the photo of the 'kind' Sanji, Luffy holds out in a marathon duel against Charlotte Katakuri in the Mirro-World, awakening the foresight of Haki. Pedro's sacrifice and a wedding cake quell the Empress's fury: the crew escapes Totland and Jinbe vows to join soon.",
+    },
     name: 'Whole Cake Island',
     localizedName: { it: 'Whole Cake Island', en: 'Whole Cake Island' },
     saga: { it: 'Saga di Whole Cake Island', en: 'Whole Cake Island Saga' },
@@ -27,6 +33,12 @@ export const onepieceArcsWholeCakeWano: StoryArc[] = [
   {
     id: 'arc-op-wano',
     worldId: 'world-onepiece',
+    mangaChapters: ["909-1057"],
+    animeEpisodes: ["890-1085"],
+    longDescription: {
+      it: "Nel Paese chiuso di Wano, sotto lo shogun Orochi e l'Imperatore Kaido, la ciurma riunisce la grande alleanza: samurai Kozuki, mink, Heart Pirates e i Nove Foderi Rossi di Oden. Il lungo flashback rivela la vita e l'esecuzione di Kozuki Oden. Dopo il raid fallito di Udon e l'addestramento di Rufy all'Ambizione, l'alleanza assalta Onigashima durante il festival del fuoco. Sul tetto della fortezza cinque capitani affrontano Kaido e Big Mom; Rufy cade più volte ma risorge risvegliando il suo Frutto come Gear 5 — Nika. Abbattuto Kaido, Wano è libera, Momonosuke diventa shogun e il mondo proclama Rufy uno dei nuovi Quattro Imperatori.",
+      en: "In the secluded country of Wano, under shogun Orochi and the Emperor Kaido, the crew gathers the grand alliance: Kozuki samurai, minks, Heart Pirates and Oden's Nine Red Scabbards. A long flashback reveals the life and execution of Kozuki Oden. After the failed Udon raid and Luffy's Haki training, the alliance storms Onigashima during the fire festival. Atop the fortress five captains face Kaido and Big Mom; Luffy falls again and again but rises by awakening his fruit as Gear 5 — Nika. With Kaido beaten, Wano is free, Momonosuke becomes shogun and the world proclaims Luffy one of the new Four Emperors.",
+    },
     name: 'Wano Country',
     localizedName: { it: 'Il Paese di Wano', en: 'Wano Country' },
     saga: { it: 'Saga di Wano', en: 'Wano Saga' },

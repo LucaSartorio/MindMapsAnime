@@ -5,6 +5,12 @@ export const onepieceArcsParadise: StoryArc[] = [
   {
     id: 'arc-op-drum',
     worldId: 'world-onepiece',
+    mangaChapters: ["130-154"],
+    animeEpisodes: ["78-91"],
+    longDescription: {
+      it: "Lasciate Whisky Peak e Little Garden, con Nami gravemente malata la ciurma cerca un medico e approda sull'isola invernale di Drum. Il paese è stato abbandonato dal vile re Wapol, fuggito all'arrivo di Barbabianca; l'unica dottoressa è l'eccentrica centenaria Kureha, assistita dalla renna parlante Tony Tony Chopper. Tra i ricordi del dottor Hiluluk — morto convinto che si muoia davvero solo quando si è dimenticati — Rufy scala il castello, respinge il ritorno di Wapol e convince Chopper, emarginato perché «mostro», a salpare come medico di bordo.",
+      en: "Leaving Whisky Peak and Little Garden, with Nami gravely ill the crew seeks a doctor and lands on the winter island of Drum. The country has been abandoned by the vile king Wapol, who fled at Whitebeard's arrival; the only doctor is the eccentric centenarian Kureha, helped by the talking reindeer Tony Tony Chopper. Amid the memory of Dr. Hiluluk — who died believing one truly dies only when forgotten — Luffy scales the castle, repels Wapol's return and convinces Chopper, shunned as a 'monster', to set sail as ship's doctor.",
+    },
     name: 'Drum Island',
     localizedName: { it: 'Drum Island', en: 'Drum Island' },
     saga: { it: 'Saga di Alabasta', en: 'Alabasta Saga' },
@@ -27,6 +33,12 @@ export const onepieceArcsParadise: StoryArc[] = [
   {
     id: 'arc-op-alabasta',
     worldId: 'world-onepiece',
+    mangaChapters: ["155-217"],
+    animeEpisodes: ["92-130"],
+    longDescription: {
+      it: "Con la principessa Nefertari Vivi a bordo, la ciurma corre a salvare Alabasta dalla guerra civile orchestrata dalla Baroque Works del Corsaro Crocodile (Mr. 0). Dopo Nanohana, Rainbase e la trappola di Rain Dinners, attraversano il deserto fino ad Alubarna mentre i compagni piegano uno a uno gli agenti della Baroque. Rufy affronta Crocodile per tre volte e, aiutato dall'acqua, lo sconfigge e ferma la bomba sulla piazza reale. Nico Robin si unisce alla ciurma; Vivi sceglie di restare regina e saluta i compagni con il marchio segreto dell'amicizia.",
+      en: "With Princess Nefertari Vivi aboard, the crew races to save Alabasta from the civil war engineered by the Warlord Crocodile's Baroque Works (Mr. 0). Past Nanohana, Rainbase and the Rain Dinners trap, they cross the desert to Alubarna while the crewmates beat the Baroque agents one by one. Luffy faces Crocodile three times and, aided by water, defeats him and stops the bomb over the royal plaza. Nico Robin joins the crew; Vivi chooses to remain queen and bids her friends farewell with the secret mark of friendship.",
+    },
     name: 'Alabasta',
     localizedName: { it: 'Alabasta', en: 'Alabasta' },
     saga: { it: 'Saga di Alabasta', en: 'Alabasta Saga' },
@@ -49,6 +61,12 @@ export const onepieceArcsParadise: StoryArc[] = [
   {
     id: 'arc-op-skypiea',
     worldId: 'world-onepiece',
+    mangaChapters: ["218-302"],
+    animeEpisodes: ["144-195"],
+    longDescription: {
+      it: "A Jaya, tra Mock Town e Bellamy, Mont Blanc Cricket aiuta la ciurma a farsi catapultare in cielo dalla Knock-Up Stream. A Skypiea, isola di nuvole a 10.000 metri, i Cappello di Paglia finiscono nel conflitto secolare tra abitanti del cielo e Shandia, e nel «gioco» mortale del tiranno «Dio» Enel, utente del Frutto Goro Goro. Esplorando l'Upper Yard, l'antica Shandora e l'arca volante Maxim, Rufy — immune ai fulmini per la sua natura di gomma — è l'unico capace di battere Enel, e fa risuonare la grande campana d'oro perduta da 400 anni.",
+      en: "At Jaya, amid Mock Town and Bellamy, Mont Blanc Cricket helps the crew get launched skyward by the Knock-Up Stream. On Skypiea, a cloud island at 10,000 metres, the Straw Hats are caught in the age-old conflict between sky dwellers and Shandia, and in the deadly 'game' of the tyrant 'God' Enel, user of the Rumble-Rumble Fruit. Exploring the Upper Yard, ancient Shandora and the flying ark Maxim, Luffy — immune to lightning thanks to his rubber body — is the only one able to beat Enel, and rings the great golden bell lost for 400 years.",
+    },
     name: 'Skypiea',
     localizedName: { it: 'Skypiea', en: 'Skypiea' },
     saga: { it: 'Saga di Skypiea', en: 'Skypiea Saga' },

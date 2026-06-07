@@ -11,6 +11,8 @@ export const onepieceEvents: TimelineEvent[] = [
   {
     id: 'evt-op-shanks-hat',
     worldId: 'world-onepiece',
+    mangaChapters: ["1"],
+    animeEpisodes: ["1", "4"],
     title: { it: 'Il cappello di paglia di Shanks', en: "Shanks's straw hat" },
     description: {
       it: "A Foosha, Shanks perde un braccio per salvare il piccolo Rufy da un Re del Mare e gli affida il cappello di paglia, da restituire una volta diventato un grande pirata.",
@@ -30,6 +32,8 @@ export const onepieceEvents: TimelineEvent[] = [
   {
     id: 'evt-op-luffy-sets-sail',
     worldId: 'world-onepiece',
+    mangaChapters: ["1"],
+    animeEpisodes: ["1"],
     title: { it: 'Rufy salpa', en: 'Luffy sets sail' },
     description: {
       it: "A 17 anni Rufy lascia Foosha su una piccola barca, deciso a radunare una ciurma e trovare il One Piece per diventare Re dei Pirati.",
@@ -49,6 +53,8 @@ export const onepieceEvents: TimelineEvent[] = [
   {
     id: 'evt-op-zoro-recruited',
     worldId: 'world-onepiece',
+    mangaChapters: ["3-7"],
+    animeEpisodes: ["2-3"],
     title: { it: 'Zoro si unisce alla ciurma', en: 'Zoro joins the crew' },
     description: {
       it: "A Shells Town Rufy libera Roronoa Zoro dal patibolo e depone il tirannico capitano Morgan. Zoro diventa il primo compagno e spadaccino della ciurma.",
@@ -68,6 +74,8 @@ export const onepieceEvents: TimelineEvent[] = [
   {
     id: 'evt-op-buggy-orange-town',
     worldId: 'world-onepiece',
+    mangaChapters: ["9-21"],
+    animeEpisodes: ["5-8"],
     title: { it: 'Scontro con Bagy il Clown', en: 'Clash with Buggy the Clown' },
     description: {
       it: "A Orange Town Rufy e Zoro sconfiggono il pirata Bagy il Clown, utente del Frutto Frammento, che terrorizzava la cittadina.",
@@ -87,6 +95,8 @@ export const onepieceEvents: TimelineEvent[] = [
   {
     id: 'evt-op-nami-meets-luffy',
     worldId: 'world-onepiece',
+    mangaChapters: ["8-9"],
+    animeEpisodes: ["4-5"],
     title: { it: 'Nami incontra Rufy', en: 'Nami meets Luffy' },
     description: {
       it: "La ladra Nami, specializzata nel derubare i pirati, incrocia Rufy a Orange Town: nasce un'alleanza interessata che la porterà a navigare con la ciurma.",
@@ -106,6 +116,8 @@ export const onepieceEvents: TimelineEvent[] = [
   {
     id: 'evt-op-usopp-kuro',
     worldId: 'world-onepiece',
+    mangaChapters: ["23-41"],
+    animeEpisodes: ["9-17"],
     title: { it: 'Il complotto di Kuro', en: "Kuro's plot" },
     description: {
       it: "A Syrup Village la ciurma aiuta Usop a sventare il piano del Capitano Kuro contro Kaya. In cambio i pirati ricevono la caravella Going Merry e Usop si unisce a loro.",
@@ -125,6 +137,8 @@ export const onepieceEvents: TimelineEvent[] = [
   {
     id: 'evt-op-baratie-krieg',
     worldId: 'world-onepiece',
+    mangaChapters: ["44-68"],
+    animeEpisodes: ["21-30"],
     title: { it: "Assalto al Baratie", en: 'Assault on the Baratie' },
     description: {
       it: "Don Krieg, tornato distrutto dalla Grand Line, assalta il Baratie per impadronirsi di una nave. Rufy lo sconfigge e Sanji decide di salpare con la ciurma.",
@@ -144,6 +158,8 @@ export const onepieceEvents: TimelineEvent[] = [
   {
     id: 'evt-op-zoro-vs-mihawk',
     worldId: 'world-onepiece',
+    mangaChapters: ["50-51"],
+    animeEpisodes: ["24-25"],
     title: { it: 'Zoro contro Mihawk', en: 'Zoro vs Mihawk' },
     description: {
       it: "Al Baratie Zoro sfida Dracule Mihawk, il più grande spadaccino del mondo, e viene sconfitto. Sopravvissuto, giura che non perderà mai più: nasce il suo obiettivo.",
@@ -162,6 +178,8 @@ export const onepieceEvents: TimelineEvent[] = [
   {
     id: 'evt-op-arlong-liberation',
     worldId: 'world-onepiece',
+    mangaChapters: ["83-94"],
+    animeEpisodes: ["40-43"],
     title: { it: "La caduta di Arlong Park", en: 'The fall of Arlong Park' },
     description: {
       it: "Rufy distrugge Arlong Park e abbatte l'uomo-pesce Arlong, liberando le Isole Conomi dalla sua tirannia decennale e riscattando il villaggio di Nami.",
@@ -181,6 +199,8 @@ export const onepieceEvents: TimelineEvent[] = [
   {
     id: 'evt-op-nami-joins',
     worldId: 'world-onepiece',
+    mangaChapters: ["94-95"],
+    animeEpisodes: ["43-44"],
     title: { it: 'Nami entra nella ciurma', en: 'Nami joins the crew' },
     description: {
       it: "Liberata da Arlong, Nami sceglie finalmente di unirsi ai Cappello di Paglia come navigatrice, lasciando Cocoyashi tra le lacrime e i saluti del villaggio.",
@@ -200,6 +220,8 @@ export const onepieceEvents: TimelineEvent[] = [
   {
     id: 'evt-op-loguetown-execution',
     worldId: 'world-onepiece',
+    mangaChapters: ["98-99"],
+    animeEpisodes: ["48-52"],
     title: { it: "Il patibolo di Loguetown", en: 'The Loguetown scaffold' },
     description: {
       it: "Sul patibolo dove morì Roger, Bagy sta per giustiziare Rufy: un fulmine lo salva. Il rivoluzionario Dragon osserva e copre la fuga del figlio dalla Marina di Smoker.",
@@ -219,6 +241,8 @@ export const onepieceEvents: TimelineEvent[] = [
   {
     id: 'evt-op-enter-grand-line',
     worldId: 'world-onepiece',
+    mangaChapters: ["101-105"],
+    animeEpisodes: ["53", "61-63"],
     title: { it: "Ingresso nella Grand Line", en: 'Entering the Grand Line' },
     description: {
       it: "Risalendo Reverse Mountain, i Cappello di Paglia entrano nella Grand Line: la Saga di East Blue si chiude e comincia il vero viaggio verso il One Piece.",

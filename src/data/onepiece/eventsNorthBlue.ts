@@ -10,6 +10,8 @@ export const onepieceEventsNorthBlue: TimelineEvent[] = [
   {
     id: 'evt-op-flevance-tragedy',
     worldId: 'world-onepiece',
+    mangaChapters: ["760-763"],
+    animeEpisodes: ["703-706"],
     title: { it: 'La tragedia di Flevance', en: 'The Flevance tragedy' },
     description: {
       it: "La «Città Bianca» di Flevance, arricchitasi con il Piombo Ambrato, scopre troppo tardi che il minerale provoca un Saturnismo mortale. Le nazioni vicine, temendo il contagio, sterminano gli abitanti: il giovane Law perde la famiglia e fugge, malato.",
@@ -28,6 +30,8 @@ export const onepieceEventsNorthBlue: TimelineEvent[] = [
   {
     id: 'evt-op-law-ope-ope',
     worldId: 'world-onepiece',
+    mangaChapters: ["764-767"],
+    animeEpisodes: ["707-711"],
     title: { it: 'Il dono del Frutto Ope Ope', en: 'The gift of the Ope Ope Fruit' },
     description: {
       it: "A Minion Island, Corazon — ufficiale segreto della Marina infiltrato tra i Donquijote — sacrifica la vita per donare a Law il Frutto Ope Ope, curandolo dal Saturnismo e strappandolo all'odio del fratello Doflamingo.",

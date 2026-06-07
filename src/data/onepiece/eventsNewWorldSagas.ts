@@ -5,6 +5,8 @@ export const onepieceEventsNewWorldSagas: TimelineEvent[] = [
   {
     id: 'evt-op-ph-alliance',
     worldId: 'world-onepiece',
+    mangaChapters: ["695-699"],
+    animeEpisodes: ["623-625"],
     title: { it: "L'alleanza Rufy-Law", en: 'The Luffy-Law alliance' },
     description: {
       it: "A Punk Hazard la ciurma sgomina il laboratorio di Caesar Clown, libera i bambini cavia e cattura lo scienziato. Rufy e Trafalgar Law siglano un'alleanza ufficiale con un solo obiettivo: detronizzare l'Imperatore Kaido.",
@@ -24,6 +26,8 @@ export const onepieceEventsNewWorldSagas: TimelineEvent[] = [
   {
     id: 'evt-op-doflamingo-defeat',
     worldId: 'world-onepiece',
+    mangaChapters: ["790-793"],
+    animeEpisodes: ["731-733"],
     title: { it: 'La caduta di Doflamingo', en: "Doflamingo's fall" },
     description: {
       it: "Dopo una battaglia che coinvolge l'intera Dressrosa, Rufy abbatte il Corsaro Donquijote Doflamingo, ponendo fine al suo regno del terrore e alla fabbrica di SMILE che riforniva Kaido.",
@@ -43,6 +47,8 @@ export const onepieceEventsNewWorldSagas: TimelineEvent[] = [
   {
     id: 'evt-op-sabo-mera-mera',
     worldId: 'world-onepiece',
+    mangaChapters: ["730-744"],
+    animeEpisodes: ["672-694"],
     title: { it: 'Sabo eredita il fuoco di Ace', en: "Sabo inherits Ace's flame" },
     description: {
       it: "Nel torneo del Colosseo Corrida, Sabo — fratello giurato di Rufy e Ace — conquista il Frutto Mera Mera, ereditando la volontà di fuoco del fratello defunto. La liberazione di Dressrosa accende mille nuove alleanze.",

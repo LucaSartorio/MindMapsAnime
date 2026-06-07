@@ -9,6 +9,12 @@ export const onepieceArcsRedLine: StoryArc[] = [
   {
     id: 'arc-op-sabaody',
     worldId: 'world-onepiece',
+    mangaChapters: ["490-513"],
+    animeEpisodes: ["385-405"],
+    longDescription: {
+      it: "All'Arcipelago Sabaody, ultima tappa di Paradise, si radunano le undici Supernove. La ciurma scopre il mercato di schiavi dei Draghi Celesti; per salvare la sirena Camie, Rufy abbatte con un pugno il Drago Celeste Saint Charloss, scatenando la reazione del Governo. Mentre la Marina e l'ammiraglio Kizaru circondano l'isola, Silvers Rayleigh rivela il proprio passato di vicecapitano di Roger, e Bartholomew Kuma scaraventa i nove Cappello di Paglia ai quattro angoli del mondo: comincia la separazione di due anni.",
+      en: "At the Sabaody Archipelago, the last stop of Paradise, the eleven Supernovas gather. The crew discovers the Celestial Dragons' slave market; to save the mermaid Camie, Luffy punches down the Celestial Dragon Saint Charloss, triggering the Government's wrath. As the Marines and Admiral Kizaru surround the island, Silvers Rayleigh reveals his past as Roger's first mate, and Bartholomew Kuma flings the nine Straw Hats to the four corners of the world: the two-year separation begins.",
+    },
     name: 'Sabaody Archipelago',
     localizedName: { it: 'Arcipelago Sabaody', en: 'Sabaody Archipelago' },
     saga: { it: 'Saga di Sabaody', en: 'Sabaody Saga' },
@@ -31,6 +37,12 @@ export const onepieceArcsRedLine: StoryArc[] = [
   {
     id: 'arc-op-amazon-lily',
     worldId: 'world-onepiece',
+    mangaChapters: ["514-524"],
+    animeEpisodes: ["408-417"],
+    longDescription: {
+      it: "Kuma scaraventa Rufy su Amazon Lily, l'isola delle sole guerriere Kuja nella Calm Belt. Condannato a morte come maschio intruso, Rufy conquista invece il cuore dell'Imperatrice Boa Hancock svelando, senza giudicarlo, il marchio della schiavitù che lei nasconde con vergogna. Appresa la notizia che il fratello Ace sarà giustiziato, Rufy convince Hancock ad accompagnarlo: l'Imperatrice lo introduce di nascosto a Impel Down sfruttando il proprio status di Corsaro.",
+      en: "Kuma flings Luffy onto Amazon Lily, the island of the all-female Kuja warriors in the Calm Belt. Sentenced to death as a male intruder, Luffy instead wins Empress Boa Hancock's heart by seeing, without judging, the slave brand she hides in shame. On learning his brother Ace will be executed, Luffy convinces Hancock to come with him: the Empress smuggles him into Impel Down using her Warlord status.",
+    },
     name: 'Amazon Lily',
     localizedName: { it: 'Amazon Lily', en: 'Amazon Lily' },
     saga: { it: 'Saga di Sabaody', en: 'Sabaody Saga' },
@@ -53,6 +65,12 @@ export const onepieceArcsRedLine: StoryArc[] = [
   {
     id: 'arc-op-impel-down',
     worldId: 'world-onepiece',
+    mangaChapters: ["525-549"],
+    animeEpisodes: ["422-456"],
+    longDescription: {
+      it: "Rufy si infiltra nella prigione sottomarina di Impel Down per salvare Ace. Scende tra i sei livelli infernali, ritrova vecchi nemici diventati alleati — Bagy, Mr. 3, Crocodile — ed è avvelenato dal direttore Magellan. Salvato in extremis dalla regina dei travestiti Emporio Ivankov, scopre che Ace è già stato trasferito a Marineford. Insieme a Jinbe, Crocodile e a un esercito di evasi guida una clamorosa rivolta e fugge dalla prigione, proprio mentre Barbanera vi entra per reclutare i mostri del Livello 6.",
+      en: "Luffy infiltrates the underwater prison of Impel Down to save Ace. He descends its six infernal levels, reunites with old enemies turned allies — Buggy, Mr. 3, Crocodile — and is poisoned by Warden Magellan. Saved at the last moment by the queen of cross-dressers Emporio Ivankov, he learns Ace has already been moved to Marineford. Together with Jinbe, Crocodile and an army of escapees he leads a spectacular revolt and breaks out, just as Blackbeard enters to recruit the monsters of Level 6.",
+    },
     name: 'Impel Down',
     localizedName: { it: 'Impel Down', en: 'Impel Down' },
     saga: { it: 'Saga di Marineford', en: 'Marineford Saga' },
@@ -81,6 +99,12 @@ export const onepieceArcsRedLine: StoryArc[] = [
   {
     id: 'arc-op-marineford',
     worldId: 'world-onepiece',
+    mangaChapters: ["550-580"],
+    animeEpisodes: ["457-489"],
+    longDescription: {
+      it: "La Guerra al Vertice esplode nella piazza di Marineford: i Pirati di Barbabianca e i loro alleati si schiantano contro la Marina al gran completo, i tre ammiragli e i Corsari, per impedire l'esecuzione di Portgas D. Ace. Rufy irrompe con gli evasi di Impel Down. Tra l'inganno di Squardo, la caduta di Oars Jr. e mille sacrifici, Ace viene liberato ma muore proteggendo Rufy dal magma di Akainu. Barbabianca cade in piedi proclamando che il One Piece esiste; Barbanera ne ruba il potere. Shanks pone fine alla guerra; un Rufy spezzato è salvato da Jinbe e Trafalgar Law.",
+      en: "The Summit War erupts in the plaza of Marineford: the Whitebeard Pirates and their allies crash against the full Marine force, the three admirals and the Warlords, to stop the execution of Portgas D. Ace. Luffy bursts in with the Impel Down escapees. Amid Squardo's deception, the fall of Oars Jr. and countless sacrifices, Ace is freed but dies shielding Luffy from Akainu's magma. Whitebeard dies standing, proclaiming the One Piece is real; Blackbeard steals his power. Shanks ends the war; a shattered Luffy is saved by Jinbe and Trafalgar Law.",
+    },
     name: 'Marineford / Summit War',
     localizedName: { it: 'La Guerra al Vertice', en: 'Marineford / Summit War' },
     saga: { it: 'Saga di Marineford', en: 'Marineford Saga' },
@@ -119,6 +143,12 @@ export const onepieceArcsRedLine: StoryArc[] = [
   {
     id: 'arc-op-fishman-island',
     worldId: 'world-onepiece',
+    mangaChapters: ["603-653"],
+    animeEpisodes: ["523-574"],
+    longDescription: {
+      it: "Riunita dopo due anni, la ciurma discende a 10.000 metri fino all'Isola degli Uomini-Pesce, sotto la Red Line. Tra il backstory di Fisher Tiger, della regina Otohime e di Arlong, i Cappello di Paglia sventano il colpo di stato dei Nuovi Pirati Uomini-Pesce di Hody Jones, che vuole sterminare la famiglia reale Ryugu e dichiarare guerra agli umani. Rufy protegge la principessa sirena Shirahoshi — l'arma ancestrale Poseidon — sconfigge Hody, e raccoglie il sogno di pace di Otohime e Jinbe prima di salpare verso il New World.",
+      en: "Reunited after two years, the crew descends 10,000 metres to Fish-Man Island beneath the Red Line. Amid the backstory of Fisher Tiger, Queen Otohime and Arlong, the Straw Hats foil the coup of Hody Jones's New Fish-Man Pirates, who seek to wipe out the Ryugu royal family and declare war on humans. Luffy protects the mermaid princess Shirahoshi — the ancient weapon Poseidon — defeats Hody, and carries forward Otohime and Jinbe's dream of peace before sailing for the New World.",
+    },
     name: 'Fish-Man Island',
     localizedName: { it: 'Isola degli Uomini-Pesce', en: 'Fish-Man Island' },
     saga: { it: 'Saga di Fish-Man Island', en: 'Fish-Man Island Saga' },
@@ -151,6 +181,12 @@ export const onepieceArcsRedLine: StoryArc[] = [
   {
     id: 'arc-op-reverie',
     worldId: 'world-onepiece',
+    mangaChapters: ["903-908"],
+    animeEpisodes: ["878-889"],
+    longDescription: {
+      it: "A Mary Geoise si apre la Reverie, il consiglio quadriennale dei re del mondo: vi accorrono Vivi e Cobra di Alabasta, Shirahoshi, Rebecca e Leo, i sovrani alleati dei Cappello di Paglia. Dietro le quinte si muovono i Corsari ormai destinati all'abolizione, Sabo e i rivoluzionari, e Re Cobra incontra l'Imperatrice. Nel cuore del Pangea, sopra i Cinque Astri di Saggezza, si rivela l'esistenza di Imu, il sovrano segreto sul Trono Vuoto, che decide quali nomi cancellare dalla storia.",
+      en: "At Mary Geoise the Reverie opens, the quadrennial council of the world's kings: Vivi and Cobra of Alabasta, Shirahoshi, Rebecca and Leo, the Straw Hats' allied rulers all attend. Behind the scenes move the soon-to-be-abolished Warlords, Sabo and the revolutionaries, and King Cobra meets the secret ruler. In the heart of Pangaea, above the Five Elders, the existence of Imu is revealed — the hidden sovereign on the Empty Throne, who decides which names to erase from history.",
+    },
     name: 'Reverie',
     localizedName: { it: 'La Reverie (Levely)', en: 'Reverie' },
     saga: { it: 'Saga del New World', en: 'New World Saga' },
