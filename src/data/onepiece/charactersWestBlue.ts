@@ -9,6 +9,12 @@ export const onepieceCharactersWestBlue: Character[] = [
   {
     id: 'char-op-robin',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "114",
+    firstAnimeAppearance: "67",
+    longDescription: {
+      it: "Archeologa della ciurma e unica al mondo capace di leggere i Poneglyph. Sola sopravvissuta di Ohara, braccata dal Governo Mondiale da bambina, trovò finalmente una famiglia nei Cappello di Paglia. Sogna di scoprire la vera storia del Secolo Vuoto.",
+      en: "The crew's archaeologist and the only person able to read the Poneglyphs. The sole survivor of Ohara, hunted by the World Government since childhood, she finally found a family in the Straw Hats. She dreams of uncovering the true history of the Void Century.",
+    },
     name: 'Nico Robin',
     aliases: ['Bambina del Demonio', 'Miss All Sunday'],
     importance: 'main',
@@ -36,6 +42,12 @@ export const onepieceCharactersWestBlue: Character[] = [
   {
     id: 'char-op-olvia',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "392",
+    firstAnimeAppearance: "276",
+    longDescription: {
+      it: "Nico Olvia, archeologa di Ohara e madre di Robin, che diede la vita nel Buster Call pur di salvare la figlia e la conoscenza del Secolo Vuoto.",
+      en: "Nico Olvia, an archaeologist of Ohara and Robin's mother, who gave her life in the Buster Call to save her daughter and the knowledge of the Void Century.",
+    },
     name: 'Nico Olvia',
     importance: 'supporting',
     role: ['ally'],
@@ -57,6 +69,12 @@ export const onepieceCharactersWestBlue: Character[] = [
   {
     id: 'char-op-clover',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "395",
+    firstAnimeAppearance: "277",
+    longDescription: {
+      it: "Professor Clover, capo degli archeologi di Ohara, che sfiorò la verità sul Regno Perduto del Secolo Vuoto: la sua domanda al Governo Mondiale fu interrotta da una raffica di cannone.",
+      en: "Professor Clover, head of Ohara's archaeologists, who brushed the truth of the Lost Kingdom of the Void Century: his question to the World Government was cut off by a hail of cannon fire.",
+    },
     name: 'Professor Clover',
     importance: 'supporting',
     role: ['ally'],
@@ -77,6 +95,12 @@ export const onepieceCharactersWestBlue: Character[] = [
   {
     id: 'char-op-saul',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "396",
+    firstAnimeAppearance: "277",
+    longDescription: {
+      it: "Jaguar D. Saul, gigante ed ex viceammiraglio disertore, che salvò la piccola Robin dal Buster Call di Ohara insegnandole a ridere anche nel dolore.",
+      en: "Jaguar D. Saul, a giant and former vice admiral turned deserter, who saved young Robin from the Ohara Buster Call, teaching her to laugh even in pain.",
+    },
     name: 'Jaguar D. Saul',
     aliases: ['Saul'],
     importance: 'supporting',
@@ -101,6 +125,12 @@ export const onepieceCharactersWestBlue: Character[] = [
   {
     id: 'char-op-rocks',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "957",
+    firstAnimeAppearance: "966",
+    longDescription: {
+      it: "Rocks D. Xebec, capitano dei Pirati di Rocks che mezzo secolo fa riunì i futuri Imperatori. Ambiva a diventare «Re del mondo» ma fu annientato a God Valley dall'alleanza di Roger e Garp.",
+      en: "Rocks D. Xebec, captain of the Rocks Pirates who half a century ago gathered the future Emperors. He aimed to become 'King of the world' but was annihilated at God Valley by the Roger-Garp alliance.",
+    },
     name: 'Rocks D. Xebec',
     aliases: ['Rocks'],
     importance: 'major',

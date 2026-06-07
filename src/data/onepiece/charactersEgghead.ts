@@ -9,6 +9,12 @@ export const onepieceCharactersEgghead: Character[] = [
   {
     id: 'char-op-vegapunk',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "433",
+    firstAnimeAppearance: "317",
+    longDescription: {
+      it: "Dr. Vegapunk «lo Stella», il più grande scienziato del mondo, mente a secoli avanti suddivisa in sei satelliti. A Egghead rivelò verità proibite prima di lasciare un messaggio in mondovisione.",
+      en: "Dr. Vegapunk 'the Star', the world's greatest scientist, a mind centuries ahead split into six satellites. On Egghead he revealed forbidden truths before leaving a worldwide broadcast.",
+    },
     name: 'Dr. Vegapunk',
     aliases: ['Stella'],
     importance: 'major',
@@ -29,6 +35,12 @@ export const onepieceCharactersEgghead: Character[] = [
   {
     id: 'char-op-york',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "1065",
+    firstAnimeAppearance: "1098",
+    longDescription: {
+      it: "Punk-06 «York», il satellite-avidità del dottor Vegapunk. A Egghead tradì gli altri satelliti pattuendo con il Governo Mondiale per diventare l'unica, immortale Vegapunk.",
+      en: "Punk-06 'York', the greed-satellite of Dr. Vegapunk. On Egghead she betrayed the other satellites, bargaining with the World Government to become the sole, immortal Vegapunk.",
+    },
     name: 'Vegapunk York',
     importance: 'supporting',
     role: ['antagonist'],
@@ -47,6 +59,12 @@ export const onepieceCharactersEgghead: Character[] = [
   {
     id: 'char-op-saturn',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "1086",
+    firstAnimeAppearance: "1101",
+    longDescription: {
+      it: "Jaygarcia Saturn, uno dei Cinque Astri di Saggezza e «Dio Guerriero della Difesa Scientifica», creatura quasi divina dietro l'autorità segreta del Governo Mondiale. Comandò l'assalto a Egghead.",
+      en: "Jaygarcia Saturn, one of the Five Elders and 'Warrior God of Science Defense', a near-divine creature behind the World Government's secret authority. He led the assault on Egghead.",
+    },
     name: 'Jaygarcia Saturn',
     aliases: ['Astro di Saggezza della Scienza e della Difesa'],
     importance: 'major',
@@ -67,6 +85,12 @@ export const onepieceCharactersEgghead: Character[] = [
   {
     id: 'char-op-kizaru',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "506",
+    firstAnimeAppearance: "397",
+    longDescription: {
+      it: "Borsalino «Kizaru», ammiraglio della luce dall'atteggiamento svogliato ma dalla potenza spaventosa. Si scontrò con la ciurma a Sabaody, Marineford ed Egghead, muovendosi alla velocità della luce.",
+      en: "Borsalino 'Kizaru', the light admiral, lackadaisical in manner but terrifying in power. He clashed with the crew at Sabaody, Marineford and Egghead, moving at the speed of light.",
+    },
     name: 'Borsalino',
     aliases: ['Kizaru'],
     importance: 'major',
@@ -87,6 +111,12 @@ export const onepieceCharactersEgghead: Character[] = [
   {
     id: 'char-op-stussy',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "956",
+    firstAnimeAppearance: "1097",
+    longDescription: {
+      it: "Stussy, «la Regina del Piacere» e agente della CP0, in realtà clone di una leggendaria pirata creato da Vegapunk. A Egghead voltò le spalle al Governo per proteggere lo scienziato.",
+      en: "Stussy, 'the Queen of the Pleasure District' and a CP0 agent, in truth a clone of a legendary pirate created by Vegapunk. On Egghead she turned against the Government to protect the scientist.",
+    },
     name: 'Stussy',
     importance: 'supporting',
     role: ['neutral', 'ally'],

@@ -10,6 +10,12 @@ export const onepieceCharactersParadise2: Character[] = [
   {
     id: 'char-op-franky',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "329",
+    firstAnimeAppearance: "233",
+    longDescription: {
+      it: "Carpentiere cyborg della ciurma, costruttore della Thousand Sunny con il legno sacro dell'Albero Adam. Allievo del leggendario Tom, custodisce parte dei progetti dell'arma Pluton. Sogna di costruire una nave che faccia il giro del mondo.",
+      en: "The crew's cyborg shipwright, builder of the Thousand Sunny from the sacred Adam Wood. A pupil of the legendary Tom, he safeguards part of the blueprints of the weapon Pluton. He dreams of building a ship that sails around the world.",
+    },
     name: 'Franky',
     aliases: ['Cutty Flam'],
     importance: 'main',
@@ -30,6 +36,12 @@ export const onepieceCharactersParadise2: Character[] = [
   {
     id: 'char-op-iceburg',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "323",
+    firstAnimeAppearance: "230",
+    longDescription: {
+      it: "Sindaco di Water Seven e geniale capomastro della Galley-La, allievo di Tom insieme a Franky. Custode di metà dei progetti dell'arma Pluton, sopravvisse all'agguato della CP9.",
+      en: "Mayor of Water Seven and the brilliant master shipwright of Galley-La, a pupil of Tom alongside Franky. Keeper of half the blueprints of the weapon Pluton, he survived CP9's ambush.",
+    },
     name: 'Iceburg',
     importance: 'supporting',
     role: ['ally'],
@@ -49,6 +61,12 @@ export const onepieceCharactersParadise2: Character[] = [
   {
     id: 'char-op-lucci',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "347",
+    firstAnimeAppearance: "252",
+    longDescription: {
+      it: "Rob Lucci, agente più letale della CP9 (poi CP0), utente dello Zoan del leopardo e maestro del Rokushiki. Avversario che spinse Rufy a sbloccare il Gear Second a Enies Lobby.",
+      en: "Rob Lucci, the deadliest agent of CP9 (later CP0), user of the leopard Zoan and master of Rokushiki. The opponent who pushed Luffy to unlock Gear Second at Enies Lobby.",
+    },
     name: 'Rob Lucci',
     importance: 'major',
     role: ['antagonist'],
@@ -68,6 +86,12 @@ export const onepieceCharactersParadise2: Character[] = [
   {
     id: 'char-op-kaku',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "329",
+    firstAnimeAppearance: "233",
+    longDescription: {
+      it: "Agente della CP9 e abile spadaccino, valutatore navale a Water Seven sotto copertura. Utente dello Zoan ancestrale della giraffa, affrontò Zoro a Enies Lobby.",
+      en: "A CP9 agent and skilled swordsman, an undercover ship inspector at Water Seven. User of the ancient giraffe Zoan, he faced Zoro at Enies Lobby.",
+    },
     name: 'Kaku',
     importance: 'supporting',
     role: ['antagonist'],
@@ -87,6 +111,12 @@ export const onepieceCharactersParadise2: Character[] = [
   {
     id: 'char-op-blueno',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "344",
+    firstAnimeAppearance: "243",
+    longDescription: {
+      it: "Agente della CP9 e barista a Water Seven sotto copertura, utente del frutto Porta Porta con cui apre varchi nello spazio. Primo avversario contro cui Rufy mostrò il Gear Second.",
+      en: "A CP9 agent and undercover bartender at Water Seven, user of the Door-Door Fruit, opening passages in space. The first opponent against whom Luffy showed the Gear Second.",
+    },
     name: 'Blueno',
     importance: 'supporting',
     role: ['antagonist'],
@@ -105,6 +135,12 @@ export const onepieceCharactersParadise2: Character[] = [
   {
     id: 'char-op-spandam',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "375",
+    firstAnimeAppearance: "264",
+    longDescription: {
+      it: "Capo della CP9 e poi della CP0, codardo e ambizioso, artefice della caccia a Nico Robin e del Buster Call su Enies Lobby. Brandisce la spada-elefante Funkfreed.",
+      en: "Leader of CP9 and later CP0, a cowardly and ambitious schemer, architect of the hunt for Nico Robin and the Buster Call on Enies Lobby. He wields the elephant-sword Funkfreed.",
+    },
     name: 'Spandam',
     importance: 'supporting',
     role: ['antagonist'],
@@ -126,6 +162,12 @@ export const onepieceCharactersParadise2: Character[] = [
   {
     id: 'char-op-brook',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "442",
+    firstAnimeAppearance: "337",
+    longDescription: {
+      it: "Musicista e spadaccino scheletro della ciurma, vivo da oltre cinquant'anni grazie al frutto Rinascita. Diventato la star musicale «Soul King», maneggia il freddo dell'oltretomba. Sogna di rivedere la balena Laboon a Reverse Mountain.",
+      en: "The crew's skeleton musician and swordsman, alive for over fifty years thanks to the Revive-Revive Fruit. Now the music star 'Soul King', he wields the chill of the afterlife. He dreams of reuniting with the whale Laboon at Reverse Mountain.",
+    },
     name: 'Brook',
     aliases: ['Soul King'],
     importance: 'main',
@@ -146,6 +188,12 @@ export const onepieceCharactersParadise2: Character[] = [
   {
     id: 'char-op-moria',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "442",
+    firstAnimeAppearance: "337",
+    longDescription: {
+      it: "Gecko Moria, ex Corsaro e signore di Thriller Bark, utente del frutto Ombra con cui creò un esercito di zombie. Perse la sua ciurma contro Kaido e fu sconfitto da Rufy nel Triangolo Florian.",
+      en: "Gecko Moria, a former Warlord and lord of Thriller Bark, user of the Shadow-Shadow Fruit to build a zombie army. He lost his crew to Kaido and was beaten by Luffy in the Florian Triangle.",
+    },
     name: 'Gecko Moria',
     importance: 'major',
     role: ['antagonist'],
@@ -166,6 +214,12 @@ export const onepieceCharactersParadise2: Character[] = [
   {
     id: 'char-op-perona',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "443",
+    firstAnimeAppearance: "344",
+    longDescription: {
+      it: "«la Principessa Fantasma» Perona, utente del frutto Spettro che genera fantasmi deprimenti ed esplosivi. Da nemica a Thriller Bark, finì a vegliare su Zoro a Kuraigana e si legò a Mihawk.",
+      en: "Perona 'the Ghost Princess', user of the Hollow-Hollow Fruit that creates depressing and explosive ghosts. From a Thriller Bark enemy, she ended up watching over Zoro at Kuraigana, bonding with Mihawk.",
+    },
     name: 'Perona',
     aliases: ['Principessa Fantasma'],
     importance: 'supporting',

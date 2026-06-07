@@ -56,6 +56,7 @@ import { onepieceRoutes } from './routes';
 import { onepieceRoutesGrandLine } from './routesGrandLine';
 import { onepieceRoutesExtra } from './routesExtra';
 import { onepieceDevilFruits } from './devilFruits';
+import { onepieceDevilFruitsExtra } from './devilFruitsExtra';
 import { onepieceAssets } from './assets';
 
 const onepiece = animeWorlds.find((w) => w.slug === 'onepiece')!;
@@ -144,7 +145,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceEventsExtra,
   ],
   routes: [...onepieceRoutes, ...onepieceRoutesGrandLine, ...onepieceRoutesExtra],
-  jutsu: onepieceDevilFruits,
+  jutsu: [...onepieceDevilFruits, ...onepieceDevilFruitsExtra],
   assets: onepieceAssets,
 };
 

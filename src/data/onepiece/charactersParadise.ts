@@ -36,6 +36,12 @@ export const onepieceCharactersParadise: Character[] = [
   {
     id: 'char-op-kureha',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "135",
+    firstAnimeAppearance: "81",
+    longDescription: {
+      it: "La «Strega» Dr. Kureha, eccentrica dottoressa centenaria di Drum e maestra di medicina di Chopper, allieva spirituale di Hiluluk.",
+      en: "The 'Witch' Dr. Kureha, the eccentric centenarian doctor of Drum and Chopper's medical mentor, a spiritual successor of Hiluluk.",
+    },
     name: 'Dr. Kureha',
     importance: 'supporting',
     role: ['mentor', 'ally'],
@@ -55,6 +61,12 @@ export const onepieceCharactersParadise: Character[] = [
   {
     id: 'char-op-hiluluk',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "140",
+    firstAnimeAppearance: "84",
+    longDescription: {
+      it: "Dr. Hiluluk, ciarlatano dal cuore d'oro di Drum che accolse Chopper. Morì convinto che una persona muore davvero solo quando viene dimenticata, lasciando un sogno di cura per ogni male.",
+      en: "Dr. Hiluluk, the golden-hearted quack of Drum who took in Chopper. He died believing a person truly dies only when forgotten, leaving a dream of a cure for every illness.",
+    },
     name: 'Dr. Hiluluk',
     importance: 'supporting',
     role: ['mentor'],
@@ -77,6 +89,12 @@ export const onepieceCharactersParadise: Character[] = [
   {
     id: 'char-op-wapol',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "134",
+    firstAnimeAppearance: "78",
+    longDescription: {
+      it: "Wapol «dalle Fauci d'Acciaio», vile re-tiranno di Drum fuggito all'arrivo di Barbabianca, utente del frutto Mangia. Sconfitto da Rufy, finì paradossalmente per arricchirsi con i giocattoli.",
+      en: "Wapol 'of the Steel Jaws', the cowardly tyrant-king of Drum who fled at Whitebeard's arrival, user of the Munch-Munch Fruit. Beaten by Luffy, he paradoxically grew rich making toys.",
+    },
     name: 'Wapol',
     aliases: ['Re Wapol'],
     importance: 'supporting',
@@ -98,6 +116,12 @@ export const onepieceCharactersParadise: Character[] = [
   {
     id: 'char-op-dalton',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "135",
+    firstAnimeAppearance: "82",
+    longDescription: {
+      it: "Dalton, capitano della guardia di Drum e utente dello Zoan del bisonte, che difese il popolo dalla tirannia di Wapol e divenne re del rinato Regno di Sakura.",
+      en: "Dalton, captain of Drum's guard and user of the bison Zoan, who defended the people from Wapol's tyranny and became king of the reborn Sakura Kingdom.",
+    },
     name: 'Dalton',
     importance: 'supporting',
     role: ['ally'],
@@ -119,6 +143,12 @@ export const onepieceCharactersParadise: Character[] = [
   {
     id: 'char-op-crocodile',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "155",
+    firstAnimeAppearance: "92",
+    longDescription: {
+      it: "Ex Corsaro «Mr. 0», boss della Baroque Works che tentò di rovesciare Alabasta. Utente del frutto Sabbia Sabbia, sconfitto da Rufy, evase da Impel Down e oggi co-guida la Cross Guild con Mihawk.",
+      en: "Former Warlord 'Mr. 0', boss of Baroque Works who tried to topple Alabasta. User of the Sand-Sand Fruit, defeated by Luffy, he broke out of Impel Down and now co-leads the Cross Guild with Mihawk.",
+    },
     name: 'Crocodile',
     aliases: ['Mr. 0'],
     importance: 'major',
@@ -143,6 +173,12 @@ export const onepieceCharactersParadise: Character[] = [
   {
     id: 'char-op-vivi',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "103",
+    firstAnimeAppearance: "62",
+    longDescription: {
+      it: "Nefertari Vivi, principessa di Alabasta che si infiltrò nella Baroque Works come «Miss Wednesday» per salvare il regno. Compagna onoraria della ciurma, scelse di restare con il suo popolo come futura regina.",
+      en: "Nefertari Vivi, princess of Alabasta who infiltrated Baroque Works as 'Miss Wednesday' to save her kingdom. An honorary member of the crew, she chose to stay with her people as future queen.",
+    },
     name: 'Nefertari Vivi',
     aliases: ['Miss Wednesday'],
     importance: 'major',
@@ -164,6 +200,12 @@ export const onepieceCharactersParadise: Character[] = [
   {
     id: 'char-op-cobra',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "155",
+    firstAnimeAppearance: "92",
+    longDescription: {
+      it: "Nefertari Cobra, saggio re di Alabasta e padre di Vivi, della stirpe che 800 anni fa rifiutò il trono mondiale. Le sue domande sulla vera storia gli costarono la vita alla Reverie.",
+      en: "Nefertari Cobra, the wise king of Alabasta and Vivi's father, of the line that 800 years ago refused the world throne. His questions about the true history cost him his life at the Reverie.",
+    },
     name: 'Nefertari Cobra',
     importance: 'supporting',
     role: ['ally'],
@@ -183,6 +225,12 @@ export const onepieceCharactersParadise: Character[] = [
   {
     id: 'char-op-koza',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "163",
+    firstAnimeAppearance: "99",
+    longDescription: {
+      it: "Leader dell'esercito ribelle di Alabasta e amico d'infanzia di Vivi, manipolato dalla Baroque Works fino a sfiorare la guerra civile. Difese il regno fino all'ultimo.",
+      en: "Leader of Alabasta's rebel army and Vivi's childhood friend, manipulated by Baroque Works to the brink of civil war. He defended the kingdom to the last.",
+    },
     name: 'Koza',
     importance: 'supporting',
     role: ['ally'],
@@ -201,6 +249,12 @@ export const onepieceCharactersParadise: Character[] = [
   {
     id: 'char-op-pell',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "197",
+    firstAnimeAppearance: "120",
+    longDescription: {
+      it: "Pell «il Falco», capo della guardia reale di Alabasta e utente dello Zoan del falcone. Si sacrificò portando in cielo la bomba della Baroque Works, sopravvivendo per miracolo.",
+      en: "Pell 'the Falcon', head of Alabasta's royal guard and user of the falcon Zoan. He sacrificed himself carrying Baroque Works' bomb skyward, surviving by a miracle.",
+    },
     name: 'Pell',
     importance: 'supporting',
     role: ['ally'],
@@ -221,6 +275,12 @@ export const onepieceCharactersParadise: Character[] = [
   {
     id: 'char-op-enel',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "237",
+    firstAnimeAppearance: "153",
+    longDescription: {
+      it: "«Dio» Enel, tiranno di Skypiea e utente del frutto Fulmine, che si credeva onnipotente. Sconfitto da Rufy, immune all'elettricità, lasciò l'isola del cielo per la luna.",
+      en: "'God' Enel, tyrant of Skypiea and user of the Rumble-Rumble Fruit, who believed himself omnipotent. Beaten by Luffy, immune to electricity, he left the sky island for the moon.",
+    },
     name: 'Enel',
     aliases: ['God Enel'],
     importance: 'major',
@@ -241,6 +301,12 @@ export const onepieceCharactersParadise: Character[] = [
   {
     id: 'char-op-gan-fall',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "238",
+    firstAnimeAppearance: "154",
+    longDescription: {
+      it: "Il «Cavaliere del Cielo» Gan Fall, ex Dio di Skypiea giusto e benevolo, che a cavallo di Pierre difende i deboli. Aiutò la ciurma contro Enel.",
+      en: "The 'Sky Knight' Gan Fall, the former, just and benevolent God of Skypiea, who defends the weak astride Pierre. He helped the crew against Enel.",
+    },
     name: 'Gan Fall',
     aliases: ['Il Cavaliere del Cielo'],
     importance: 'supporting',
@@ -260,6 +326,12 @@ export const onepieceCharactersParadise: Character[] = [
   {
     id: 'char-op-wiper',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "237",
+    firstAnimeAppearance: "156",
+    longDescription: {
+      it: "Guerriero Shandia discendente di Calgara, deciso a riprendere la terra ancestrale dell'Upper Yard. Combatté con coraggio suicida contro Enel.",
+      en: "A Shandia warrior descended from Calgara, determined to reclaim the ancestral land of the Upper Yard. He fought Enel with suicidal courage.",
+    },
     name: 'Wiper',
     importance: 'supporting',
     role: ['ally', 'neutral'],
@@ -279,6 +351,12 @@ export const onepieceCharactersParadise: Character[] = [
   {
     id: 'char-op-conis',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "238",
+    firstAnimeAppearance: "154",
+    longDescription: {
+      it: "Gentile abitante di Angel Island che aiuta la ciurma a orientarsi a Skypiea, ribellandosi infine alla tirannia di Enel insieme al padre Pagaya.",
+      en: "A kind resident of Angel Island who helps the crew find their way on Skypiea, finally rebelling against Enel's tyranny alongside her father Pagaya.",
+    },
     name: 'Conis',
     importance: 'supporting',
     role: ['ally'],

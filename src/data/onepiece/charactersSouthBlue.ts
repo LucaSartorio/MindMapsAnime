@@ -9,6 +9,12 @@ export const onepieceCharactersSouthBlue: Character[] = [
   {
     id: 'char-op-kuma',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "234",
+    firstAnimeAppearance: "151",
+    longDescription: {
+      it: "Bartholomew Kuma «il Tiranno», ex Corsaro e comandante rivoluzionario, ridotto a Pacifista senza volontà dal Governo Mondiale. Disperse i Cappello di Paglia a Sabaody per proteggerli; padre adottivo di Bonney.",
+      en: "Bartholomew Kuma 'the Tyrant', a former Warlord and Revolutionary commander, reduced to a will-less Pacifista by the World Government. He scattered the Straw Hats at Sabaody to protect them; Bonney's adoptive father.",
+    },
     name: 'Bartholomew Kuma',
     aliases: ['Il Tiranno', 'Kuma'],
     importance: 'major',
@@ -31,6 +37,12 @@ export const onepieceCharactersSouthBlue: Character[] = [
   {
     id: 'char-op-bonney',
     worldId: 'world-onepiece',
+    firstMangaAppearance: "498",
+    firstAnimeAppearance: "392",
+    longDescription: {
+      it: "Jewelry Bonney, giovane capitana pirata della Peggiore Generazione e figlia adottiva di Kuma, utente del frutto Età. Ad Egghead scoprì la verità sul sacrificio del padre.",
+      en: "Jewelry Bonney, a young pirate captain of the Worst Generation and Kuma's adoptive daughter, user of the Age-Age Fruit. On Egghead she learned the truth of her father's sacrifice.",
+    },
     name: 'Jewelry Bonney',
     aliases: ['La Grande Mangiatrice'],
     importance: 'major',
