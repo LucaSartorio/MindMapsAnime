@@ -51,6 +51,32 @@ export const onepieceAssets: AssetReference[] = [
     },
   },
   {
+    id: 'op-alabasta-submap-placeholder',
+    worldId: 'world-onepiece',
+    name: 'Alabasta sub-map (placeholder SVG)',
+    kind: 'placeholder',
+    source: 'local',
+    license: 'placeholder/CC0',
+    author: 'local',
+    notes: {
+      it: 'Placeholder concettuale della sotto-mappa di Alabasta.',
+      en: 'Conceptual placeholder for the Alabasta sub-map.',
+    },
+  },
+  {
+    id: 'op-wano-submap-placeholder',
+    worldId: 'world-onepiece',
+    name: 'Wano sub-map (placeholder SVG)',
+    kind: 'placeholder',
+    source: 'local',
+    license: 'placeholder/CC0',
+    author: 'local',
+    notes: {
+      it: 'Placeholder concettuale della sotto-mappa di Wano.',
+      en: 'Conceptual placeholder for the Wano sub-map.',
+    },
+  },
+  {
     id: 'op-world-map-placeholder',
     worldId: 'world-onepiece',
     name: 'One Piece world map (placeholder SVG)',
