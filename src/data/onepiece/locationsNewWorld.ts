@@ -202,8 +202,8 @@ export const onepieceLocationsNewWorld: Location[] = [
     name: 'Karakuri Island',
     localizedName: { it: 'Isola di Karakuri', en: 'Karakuri Island' },
     type: 'landmark',
-    x: 345,
-    y: 470,
+    x: 1724,
+    y: 461,
     shortDescription: {
       it: "Isola invernale del New World, terra natale del genio Vegapunk e luogo dove Franky si ricostruì il corpo durante i due anni di separazione.",
       en: "A winter island of the New World, birthplace of the genius Vegapunk and the place where Franky rebuilt his body during the two-year separation.",
@@ -211,7 +211,7 @@ export const onepieceLocationsNewWorld: Location[] = [
     nationId: 'nation-op-grand-line-new-world',
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['new-world', 'vegapunk', 'franky'],
   },
   {
@@ -259,8 +259,8 @@ export const onepieceLocationsNewWorld: Location[] = [
     name: 'Momoiro Island',
     localizedName: { it: 'Isola di Momoiro', en: 'Momoiro Island' },
     type: 'landmark',
-    x: 935,
-    y: 468,
+    x: 1684,
+    y: 476,
     shortDescription: {
       it: "Isola rosa del New World, sede della «Newkama Land», il regno sotterraneo degli okama fondato da Emporio Ivankov.",
       en: "A pink New World island, home of 'Newkama Land', the underground okama realm founded by Emporio Ivankov.",
@@ -268,7 +268,7 @@ export const onepieceLocationsNewWorld: Location[] = [
     nationId: 'nation-op-grand-line-new-world',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['new-world', 'ivankov', 'newkama'],
   },
   {
@@ -278,8 +278,8 @@ export const onepieceLocationsNewWorld: Location[] = [
     name: 'Kuraigana Island',
     localizedName: { it: 'Isola di Kuraigana', en: 'Kuraigana Island' },
     type: 'ruins',
-    x: 965,
-    y: 500,
+    x: 1895,
+    y: 537,
     shortDescription: {
       it: "Isola desolata del Regno di Shikkearu, dimora di Dracule Mihawk e degli Humandrills. Qui Zoro si allena per due anni sotto il più grande spadaccino del mondo.",
       en: "A desolate island of the Shikkearu Kingdom, home of Dracule Mihawk and the Humandrills. Here Zoro trains for two years under the world's greatest swordsman.",
@@ -287,7 +287,7 @@ export const onepieceLocationsNewWorld: Location[] = [
     nationId: 'nation-op-grand-line-new-world',
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['new-world', 'mihawk', 'zoro'],
   },
   {
