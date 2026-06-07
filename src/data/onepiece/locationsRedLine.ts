@@ -15,8 +15,8 @@ export const onepieceLocationsRedLine: Location[] = [
     name: 'Mary Geoise',
     localizedName: { it: 'Mary Geoise', en: 'Mary Geoise' },
     type: 'city',
-    x: 20,
-    y: 488,
+    x: 28,
+    y: 512,
     shortDescription: {
       it: "La capitale del Governo Mondiale in cima alla Red Line, dimora dei Nobili Mondiali (Draghi Celesti) e dei Cinque Astri di Saggezza. Sotto il suo trono vuoto si cela Imu e il Pangea Castle.",
       en: "The World Government capital atop the Red Line, home of the World Nobles (Celestial Dragons) and the Five Elders. Beneath its empty throne lurk Imu and Pangaea Castle.",
@@ -91,8 +91,8 @@ export const onepieceLocationsRedLine: Location[] = [
     name: 'Fish-Man Island',
     localizedName: { it: 'Isola degli Uomini-Pesce', en: 'Fish-Man Island' },
     type: 'city',
-    x: 25,
-    y: 507,
+    x: 42,
+    y: 532,
     shortDescription: {
       it: "Regno sottomarino a 10.000 metri di profondità sotto la Red Line, patria di uomini-pesce e sirene. Soglia del New World, governato dalla famiglia reale Ryugu.",
       en: 'An underwater kingdom 10,000 metres beneath the Red Line, home of fish-men and merfolk. The threshold of the New World, ruled by the Ryugu royal family.',
@@ -170,8 +170,8 @@ export const onepieceLocationsRedLine: Location[] = [
     name: 'Rusukaina',
     localizedName: { it: 'Rusukaina', en: 'Rusukaina' },
     type: 'training_area',
-    x: 1675,
-    y: 569,
+    x: 1668,
+    y: 562,
     shortDescription: {
       it: "Isola selvaggia della Calm Belt nei pressi di Amazon Lily, popolata da belve feroci. Qui Rufy si allena per due anni sotto Rayleigh, padroneggiando l'Ambizione (Haki).",
       en: "A wild Calm Belt island near Amazon Lily, teeming with savage beasts. Here Luffy trains for two years under Rayleigh, mastering Haki.",
