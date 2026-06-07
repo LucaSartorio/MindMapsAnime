@@ -49,6 +49,7 @@ import { onepieceEventsParadise2 } from './eventsParadise2';
 import { onepieceEventsNewWorldSagas } from './eventsNewWorldSagas';
 import { onepieceEventsWholeCakeWano } from './eventsWholeCakeWano';
 import { onepieceEventsEgghead } from './eventsEgghead';
+import { onepieceEventsExtra } from './eventsExtra';
 import { onepieceRoutes } from './routes';
 import { onepieceRoutesGrandLine } from './routesGrandLine';
 import { onepieceDevilFruits } from './devilFruits';
@@ -135,6 +136,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceEventsNewWorldSagas,
     ...onepieceEventsWholeCakeWano,
     ...onepieceEventsEgghead,
+    ...onepieceEventsExtra,
   ],
   routes: [...onepieceRoutes, ...onepieceRoutesGrandLine],
   jutsu: onepieceDevilFruits,

@@ -24,7 +24,7 @@ export const onepieceArcsEgghead: StoryArc[] = [
     nationIds: ['nation-op-grand-line-new-world'],
     characterIds: ['char-op-luffy', 'char-op-vegapunk', 'char-op-saturn', 'char-op-kizaru', 'char-op-stussy', 'char-op-york', 'char-op-bonney', 'char-op-kuma'],
     factionIds: ['faction-op-straw-hat-pirates', 'faction-op-five-elders', 'faction-op-cp0', 'faction-op-marines', 'faction-op-world-government'],
-    eventIds: ['evt-op-egghead-attack', 'evt-op-vegapunk-message'],
+    eventIds: ['evt-op-egghead-attack', 'evt-op-vegapunk-message', 'evt-op-egg-satellites', 'evt-op-egg-kuma-bonney', 'evt-op-egg-kizaru-saturn'],
     canon: 'canon',
     canonStatus: 'canon',
     referenceStatus: 'verified',
