@@ -94,6 +94,7 @@ export const onepieceLocationsExtra: Location[] = [
     id: 'loc-op-elbaf',
     worldId: 'world-onepiece',
     mapLevelId: 'op-map-world',
+    subMapLevelId: 'op-map-elbaf',
     name: 'Elbaf',
     localizedName: { it: 'Elbaf', en: 'Elbaf' },
     type: 'landmark',
