@@ -55,8 +55,8 @@ export const onepieceLocationsParadise: Location[] = [
     name: 'Whisky Peak (Cactus Island)',
     localizedName: { it: 'Whisky Peak (Isola Cactus)', en: 'Whisky Peak (Cactus Island)' },
     type: 'city',
-    x: 1105,
-    y: 520,
+    x: 1093,
+    y: 494,
     shortDescription: {
       it: "Città dei cactus che accoglie i pirati come eroi salvo poi derubarli: covo dei cacciatori di taglie della Baroque Works. Qui Vivi rivela la sua identità.",
       en: 'A cactus-shaped town that welcomes pirates as heroes only to rob them: a nest of Baroque Works bounty hunters. Here Vivi reveals her identity.',
