@@ -24,7 +24,7 @@ export const onepieceLocationsExtra2: Location[] = [
     eventIds: ['evt-op-roger-laugh-tale'],
     importance: 'main',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['new-world', 'laugh-tale', 'one-piece', 'roger'],
   },
 ];

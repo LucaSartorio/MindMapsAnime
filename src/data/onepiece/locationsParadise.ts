@@ -55,8 +55,8 @@ export const onepieceLocationsParadise: Location[] = [
     name: 'Whisky Peak (Cactus Island)',
     localizedName: { it: 'Whisky Peak (Isola Cactus)', en: 'Whisky Peak (Cactus Island)' },
     type: 'city',
-    x: 1105,
-    y: 520,
+    x: 1093,
+    y: 494,
     shortDescription: {
       it: "Città dei cactus che accoglie i pirati come eroi salvo poi derubarli: covo dei cacciatori di taglie della Baroque Works. Qui Vivi rivela la sua identità.",
       en: 'A cactus-shaped town that welcomes pirates as heroes only to rob them: a nest of Baroque Works bounty hunters. Here Vivi reveals her identity.',
@@ -313,8 +313,8 @@ export const onepieceLocationsParadise: Location[] = [
     name: 'Weatheria',
     localizedName: { it: 'Weatheria', en: 'Weatheria' },
     type: 'sacred_place',
-    x: 1519,
-    y: 472,
+    x: 1488,
+    y: 478,
     shortDescription: {
       it: "Isola del cielo abitata da scienziati del meteo, dove Nami studia la scienza del clima durante i due anni di separazione.",
       en: "A sky island inhabited by weather scientists, where Nami studies the science of climate during the two-year separation.",
@@ -322,7 +322,7 @@ export const onepieceLocationsParadise: Location[] = [
     nationId: 'nation-op-grand-line-paradise',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['paradise', 'cielo', 'nami'],
   },
   {
@@ -445,7 +445,7 @@ export const onepieceLocationsParadise: Location[] = [
     nationId: 'nation-op-grand-line-paradise',
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['paradise', 'nebbia', 'florian'],
   },
   {

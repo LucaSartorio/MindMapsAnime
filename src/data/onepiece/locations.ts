@@ -159,8 +159,8 @@ export const onepieceLocationsEastBlue: Location[] = [
     name: 'Gecko Islands',
     localizedName: { it: 'Isole Gecko', en: 'Gecko Islands' },
     type: 'landmark',
-    x: 1441,
-    y: 205,
+    x: 1448,
+    y: 230,
     shortDescription: {
       it: "Arcipelago di East Blue dove si trova Syrup Village.",
       en: 'East Blue archipelago where Syrup Village is located.',
@@ -178,8 +178,8 @@ export const onepieceLocationsEastBlue: Location[] = [
     name: 'Syrup Village',
     localizedName: { it: 'Villaggio di Syrup', en: 'Syrup Village' },
     type: 'village',
-    x: 1401,
-    y: 208,
+    x: 1428,
+    y: 235,
     shortDescription: {
       it: "Villaggio natale di Usop sulle Isole Gecko. Qui i pirati ottengono la Going Merry e Usop si unisce alla ciurma dopo la sconfitta di Cravatta.",
       en: "Usopp's home village on the Gecko Islands. Here the pirates obtain the Going Merry and Usopp joins the crew after Kuro's defeat.",
@@ -459,8 +459,8 @@ export const onepieceLocationsEastBlue: Location[] = [
     name: 'Oykot Kingdom',
     localizedName: { it: 'Regno di Oykot', en: 'Oykot Kingdom' },
     type: 'city',
-    x: 1232,
-    y: 387,
+    x: 1300,
+    y: 356,
     shortDescription: {
       it: "Regno di East Blue («Tokyo» al contrario), citato come terra d'origine di alcuni personaggi.",
       en: "East Blue kingdom ('Tokyo' reversed), cited as the homeland of some characters.",
