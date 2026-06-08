@@ -42,6 +42,10 @@ import { onepieceCharactersExtra } from './charactersExtra';
 import { onepieceCharactersExtra2 } from './charactersExtra2';
 import { onepieceCharactersExtra3 } from './charactersExtra3';
 import { onepieceCharactersExtra4 } from './charactersExtra4';
+import { onepieceCharactersExtra5 } from './charactersExtra5';
+import { onepieceCharactersExtra6 } from './charactersExtra6';
+import { onepieceCharactersExtra7 } from './charactersExtra7';
+import { onepieceCharactersFilms } from './charactersFilms';
 import { onepieceArcs } from './arcs';
 import { onepieceArcsSouthBlue } from './arcsSouthBlue';
 import { onepieceArcsNorthBlue } from './arcsNorthBlue';
@@ -135,6 +139,10 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceCharactersExtra2,
     ...onepieceCharactersExtra3,
     ...onepieceCharactersExtra4,
+    ...onepieceCharactersExtra5,
+    ...onepieceCharactersExtra6,
+    ...onepieceCharactersExtra7,
+    ...onepieceCharactersFilms,
   ].map((c) => (onepieceBounties[c.id] ? { ...c, bounties: onepieceBounties[c.id] } : c)),
   factions: [
     ...onepieceFactions,
