@@ -34,7 +34,11 @@ export const onepieceFactionsExtra: Faction[] = [
       en: "The grand fleet of seven allied crews born at Dressrosa, sworn to Luffy. It gathers thousands of pirates ready to rush to his side, while keeping their own independence.",
     },
     leaderIds: ['char-op-luffy'],
-    characterIds: ['char-op-luffy', 'char-op-bartolomeo', 'char-op-cavendish'],
+    characterIds: [
+      'char-op-luffy',
+      'char-op-cavendish', 'char-op-bartolomeo', 'char-op-sai', 'char-op-leo', 'char-op-ideo', 'char-op-hajrudin', 'char-op-orlumbus',
+      'char-op-chinjao', 'char-op-blue-gilly', 'char-op-suleiman', 'char-op-gambia', 'char-op-mansherry',
+    ],
     locationIds: ['loc-op-dressrosa'],
     canonStatus: 'canon',
     referenceStatus: 'verified',
