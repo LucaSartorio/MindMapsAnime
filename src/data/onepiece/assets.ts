@@ -167,4 +167,19 @@ export const onepieceAssets: AssetReference[] = [
       en: 'Neutral world-map placeholder, used as a fallback when the reference map is unavailable.',
     },
   },
+  ...['impel-down', 'enies-lobby', 'water-seven', 'thriller-bark', 'zou', 'punk-hazard', 'amazon-lily', 'drum-island'].map(
+    (slug) => ({
+      id: `op-${slug}-submap-placeholder`,
+      worldId: 'world-onepiece',
+      name: `${slug} sub-map (placeholder SVG)`,
+      kind: 'placeholder' as const,
+      source: 'local' as const,
+      license: 'placeholder/CC0',
+      author: 'local',
+      notes: {
+        it: `Placeholder concettuale della sotto-mappa di ${slug}.`,
+        en: `Conceptual placeholder for the ${slug} sub-map.`,
+      },
+    }),
+  ),
 ];
