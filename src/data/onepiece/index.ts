@@ -41,6 +41,7 @@ import { onepieceCharactersSupernovas } from './charactersSupernovas';
 import { onepieceCharactersExtra } from './charactersExtra';
 import { onepieceCharactersExtra2 } from './charactersExtra2';
 import { onepieceCharactersExtra3 } from './charactersExtra3';
+import { onepieceCharactersExtra4 } from './charactersExtra4';
 import { onepieceArcs } from './arcs';
 import { onepieceArcsSouthBlue } from './arcsSouthBlue';
 import { onepieceArcsNorthBlue } from './arcsNorthBlue';
@@ -51,6 +52,7 @@ import { onepieceArcsParadise2 } from './arcsParadise2';
 import { onepieceArcsNewWorldSagas } from './arcsNewWorldSagas';
 import { onepieceArcsWholeCakeWano } from './arcsWholeCakeWano';
 import { onepieceArcsEgghead } from './arcsEgghead';
+import { onepieceArcsExtra } from './arcsExtra';
 import { onepieceEvents } from './events';
 import { onepieceEventsSouthBlue } from './eventsSouthBlue';
 import { onepieceEventsNorthBlue } from './eventsNorthBlue';
@@ -65,11 +67,13 @@ import { onepieceEventsExtra } from './eventsExtra';
 import { onepieceEventsExtra2 } from './eventsExtra2';
 import { onepieceEventsBattles } from './eventsBattles';
 import { onepieceEventsBattles2 } from './eventsBattles2';
+import { onepieceEventsExtra3 } from './eventsExtra3';
 import { onepieceRoutes } from './routes';
 import { onepieceRoutesGrandLine } from './routesGrandLine';
 import { onepieceRoutesExtra } from './routesExtra';
 import { onepieceDevilFruits } from './devilFruits';
 import { onepieceDevilFruitsExtra } from './devilFruitsExtra';
+import { onepieceDevilFruitsExtra2 } from './devilFruitsExtra2';
 import { onepieceAssets } from './assets';
 
 const onepiece = animeWorlds.find((w) => w.slug === 'onepiece')!;
@@ -128,6 +132,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceCharactersExtra,
     ...onepieceCharactersExtra2,
     ...onepieceCharactersExtra3,
+    ...onepieceCharactersExtra4,
   ],
   factions: [
     ...onepieceFactions,
@@ -153,6 +158,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceArcsNewWorldSagas,
     ...onepieceArcsWholeCakeWano,
     ...onepieceArcsEgghead,
+    ...onepieceArcsExtra,
   ],
   events: [
     ...onepieceEvents,
@@ -169,9 +175,10 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceEventsExtra2,
     ...onepieceEventsBattles,
     ...onepieceEventsBattles2,
+    ...onepieceEventsExtra3,
   ],
   routes: [...onepieceRoutes, ...onepieceRoutesGrandLine, ...onepieceRoutesExtra],
-  jutsu: [...onepieceDevilFruits, ...onepieceDevilFruitsExtra],
+  jutsu: [...onepieceDevilFruits, ...onepieceDevilFruitsExtra, ...onepieceDevilFruitsExtra2],
   assets: onepieceAssets,
 };
 
