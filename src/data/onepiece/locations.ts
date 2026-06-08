@@ -459,8 +459,8 @@ export const onepieceLocationsEastBlue: Location[] = [
     name: 'Oykot Kingdom',
     localizedName: { it: 'Regno di Oykot', en: 'Oykot Kingdom' },
     type: 'city',
-    x: 1232,
-    y: 387,
+    x: 1300,
+    y: 356,
     shortDescription: {
       it: "Regno di East Blue («Tokyo» al contrario), citato come terra d'origine di alcuni personaggi.",
       en: "East Blue kingdom ('Tokyo' reversed), cited as the homeland of some characters.",
