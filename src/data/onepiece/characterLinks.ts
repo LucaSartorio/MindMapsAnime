@@ -110,7 +110,7 @@ export const onepieceCharacterLinks: Record<string, LinkPatch> = {
       { targetCharacterId: 'char-op-luffy', label: 'Capitano' },
       { targetCharacterId: 'char-op-olvia', label: 'Madre' },
       { targetCharacterId: 'char-op-saul', label: 'La salvò da bambina' },
-      { targetCharacterId: 'char-op-clover', label: 'Studiosi di Ohara' },
+      { targetCharacterId: 'char-op-clover', label: 'Studioso capo di Ohara' },
     ],
   ),
   'char-op-franky': L(
@@ -144,7 +144,7 @@ export const onepieceCharacterLinks: Record<string, LinkPatch> = {
     [
       { targetCharacterId: 'char-op-whitebeard', label: 'Capitano / figura paterna' },
       { targetCharacterId: 'char-op-luffy', label: 'Fratello minore' },
-      { targetCharacterId: 'char-op-blackbeard', label: 'Lo sconfisse e consegnò' },
+      { targetCharacterId: 'char-op-blackbeard', label: 'Ex sottoposto che lo sconfisse e consegnò alla Marina' },
     ],
   ),
   'char-op-sabo': L(
@@ -438,7 +438,7 @@ export const onepieceCharacterLinks: Record<string, LinkPatch> = {
   'char-op-lao-g': L(['arc-op-dressrosa'], ['evt-op-doflamingo-defeat'], ['char-op-doflamingo'], ['char-op-kyros']),
   'char-op-buffalo': L(['arc-op-dressrosa', 'arc-op-punk-hazard'], ['evt-op-doflamingo-defeat'], ['char-op-doflamingo', 'char-op-caesar'], ['char-op-luffy']),
   'char-op-scarlett': L(['arc-op-dressrosa'], undefined, undefined, ['char-op-diamante'], ['char-op-kyros', 'char-op-rebecca', 'char-op-viola', 'char-op-riku'],
-    [{ targetCharacterId: 'char-op-kyros', label: 'Moglie' }, { targetCharacterId: 'char-op-rebecca', label: 'Figlia' }]),
+    [{ targetCharacterId: 'char-op-kyros', label: 'Marito' }, { targetCharacterId: 'char-op-rebecca', label: 'Figlia' }]),
   'char-op-mansherry': L(['arc-op-dressrosa'], ['evt-op-dr-tontatta'], ['char-op-leo', 'char-op-luffy'], ['char-op-doflamingo']),
 
   /* ===================== Zou ===================== */
@@ -459,28 +459,28 @@ export const onepieceCharacterLinks: Record<string, LinkPatch> = {
   'char-op-flampe': L(['arc-op-whole-cake'], ['evt-op-katakuri-duel'], ['char-op-big-mom'], ['char-op-luffy'], ['char-op-big-mom', 'char-op-katakuri'],
     [{ targetCharacterId: 'char-op-katakuri', label: 'Idolo poi tradito' }]),
   'char-op-streusen': L(['arc-op-whole-cake'], undefined, ['char-op-big-mom'], undefined, undefined,
-    [{ targetCharacterId: 'char-op-big-mom', label: 'Cuoco capo' }]),
+    [{ targetCharacterId: 'char-op-big-mom', label: 'Capitana (ne è il cuoco capo)' }]),
   'char-op-pound': L(['arc-op-whole-cake'], undefined, ['char-op-chiffon'], undefined, ['char-op-chiffon', 'char-op-lola', 'char-op-big-mom'],
     [{ targetCharacterId: 'char-op-big-mom', label: 'Ex consorte' }, { targetCharacterId: 'char-op-chiffon', label: 'Figlia' }]),
   'char-op-vito': L(['arc-op-whole-cake'], undefined, ['char-op-bege', 'char-op-chiffon'], undefined, undefined,
     [{ targetCharacterId: 'char-op-bege', label: 'Capo' }]),
   'char-op-zeus': L(['arc-op-whole-cake', 'arc-op-wano'], undefined, ['char-op-nami'], ['char-op-big-mom'], undefined,
-    [{ targetCharacterId: 'char-op-nami', label: 'Arma del Clima Tact' }, { targetCharacterId: 'char-op-big-mom', label: 'Creatore' }]),
+    [{ targetCharacterId: 'char-op-nami', label: 'Padrona (lo ospita nel Clima Tact)' }, { targetCharacterId: 'char-op-big-mom', label: 'Creatrice' }]),
 
   /* ===================== Wano / Egghead / era di Roger ===================== */
   'char-op-sukiyaki': L(['arc-op-wano'], undefined, ['char-op-momonosuke', 'char-op-hiyori'], ['char-op-orochi'], ['char-op-oden', 'char-op-momonosuke', 'char-op-hiyori'],
-    [{ targetCharacterId: 'char-op-oden', label: 'Padre' }]),
+    [{ targetCharacterId: 'char-op-oden', label: 'Figlio' }, { targetCharacterId: 'char-op-momonosuke', label: 'Nipote' }]),
   'char-op-guernica': L(['arc-op-wano'], ['evt-op-onigashima-war'], ['char-op-doflamingo'], ['char-op-luffy'], undefined,
-    [{ targetCharacterId: 'char-op-kaido', label: 'Eliminato da lui' }]),
+    [{ targetCharacterId: 'char-op-kaido', label: 'Lo eliminò a Onigashima' }]),
   'char-op-s-snake': L(['arc-op-egghead'], ['evt-op-egghead-attack'], ['char-op-saturn', 'char-op-kizaru'], ['char-op-luffy'], undefined,
-    [{ targetCharacterId: 'char-op-hancock', label: 'Modello genetico' }, { targetCharacterId: 'char-op-vegapunk', label: 'Creazione' }]),
+    [{ targetCharacterId: 'char-op-hancock', label: 'Modello genetico' }, { targetCharacterId: 'char-op-vegapunk', label: 'Creatore' }]),
   'char-op-s-shark': L(['arc-op-egghead'], ['evt-op-egghead-attack'], ['char-op-saturn', 'char-op-kizaru'], ['char-op-luffy'], undefined,
-    [{ targetCharacterId: 'char-op-jinbe', label: 'Modello genetico' }, { targetCharacterId: 'char-op-vegapunk', label: 'Creazione' }]),
+    [{ targetCharacterId: 'char-op-jinbe', label: 'Modello genetico' }, { targetCharacterId: 'char-op-vegapunk', label: 'Creatore' }]),
   'char-op-shimotsuki-ushimaru': L(['arc-op-wano'], undefined, ['char-op-oden'], ['char-op-kaido', 'char-op-orochi']),
 
   /* ===================== Film ===================== */
   'char-op-uta': L(undefined, undefined, ['char-op-luffy'], undefined, ['char-op-shanks'],
-    [{ targetCharacterId: 'char-op-shanks', label: 'Padre adottivo' }, { targetCharacterId: 'char-op-luffy', label: "Amica d'infanzia" }]),
+    [{ targetCharacterId: 'char-op-shanks', label: 'Padre adottivo' }, { targetCharacterId: 'char-op-luffy', label: "Amico d'infanzia" }]),
   'char-op-gild-tesoro': L(undefined, undefined, undefined, ['char-op-luffy']),
   'char-op-douglas-bullet': L(undefined, undefined, undefined, ['char-op-luffy', 'char-op-buggy'], undefined,
     [{ targetCharacterId: 'char-op-roger', label: 'Ex ciurma di Roger' }]),
@@ -502,12 +502,28 @@ const uniq = (a?: string[], b?: string[]): string[] | undefined => {
   return Array.from(new Set([...(a ?? []), ...(b ?? [])]));
 };
 
+/**
+ * Unisce le relazioni del personaggio con quelle del patch, deduplicando per
+ * `targetCharacterId`: si tiene la prima occorrenza (quella già dichiarata nel
+ * file di definizione, scritta a mano), scartando i doppioni del patch.
+ */
+const mergeRelationships = (c: Character, patch: LinkPatch): Rel[] => {
+  const out: Rel[] = [];
+  const seen = new Set<string>();
+  for (const r of [...(c.relationships ?? []), ...(patch.relationships ?? [])]) {
+    if (r.targetCharacterId === c.id || seen.has(r.targetCharacterId)) continue;
+    seen.add(r.targetCharacterId);
+    out.push(r);
+  }
+  return out;
+};
+
 /** Applica i collegamenti della «tela» ai personaggi, unendo gli array in modo additivo. */
 export function withCharacterLinks(characters: Character[]): Character[] {
   return characters.map((c) => {
     const patch = onepieceCharacterLinks[c.id];
     if (!patch) return c;
-    const relationships = [...(c.relationships ?? []), ...(patch.relationships ?? [])];
+    const relationships = mergeRelationships(c, patch);
     return {
       ...c,
       ...(uniq(c.factionIds, patch.factionIds) ? { factionIds: uniq(c.factionIds, patch.factionIds) } : {}),
