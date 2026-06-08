@@ -36,7 +36,271 @@ const L = (
   ...(relationships ? { relationships } : {}),
 });
 
+/** I dieci Cappello di Paglia: la ciurma. Usata per generare la mesh di alleanze. */
+const CREW = [
+  'char-op-luffy', 'char-op-zoro', 'char-op-nami', 'char-op-usopp', 'char-op-sanji',
+  'char-op-chopper', 'char-op-robin', 'char-op-franky', 'char-op-brook', 'char-op-jinbe',
+];
+/** Compagni di ciurma di un dato membro (tutti gli altri nove). */
+const mates = (id: string) => CREW.filter((c) => c !== id);
+
 export const onepieceCharacterLinks: Record<string, LinkPatch> = {
+  /* ===================== Ciurma di Cappello di Paglia (mesh completa) ===================== */
+  'char-op-luffy': L(
+    undefined, undefined, mates('char-op-luffy'),
+    ['char-op-crocodile', 'char-op-enel', 'char-op-lucci', 'char-op-doflamingo', 'char-op-kaido', 'char-op-big-mom', 'char-op-blackbeard', 'char-op-akainu'],
+    ['char-op-ace', 'char-op-sabo', 'char-op-garp', 'char-op-dragon'],
+    [
+      { targetCharacterId: 'char-op-shanks', label: 'Gli donò il cappello di paglia' },
+      { targetCharacterId: 'char-op-rayleigh', label: "Maestro dell'Ambizione" },
+      { targetCharacterId: 'char-op-ace', label: 'Fratello giurato' },
+      { targetCharacterId: 'char-op-sabo', label: 'Fratello giurato' },
+      { targetCharacterId: 'char-op-zoro', label: 'Vicecapitano / spadaccino' },
+      { targetCharacterId: 'char-op-sanji', label: 'Cuoco di bordo' },
+    ],
+  ),
+  'char-op-zoro': L(
+    undefined, undefined, mates('char-op-zoro'), ['char-op-mihawk'], ['char-op-kuina'],
+    [
+      { targetCharacterId: 'char-op-luffy', label: 'Capitano' },
+      { targetCharacterId: 'char-op-mihawk', label: 'Maestro e obiettivo da superare' },
+      { targetCharacterId: 'char-op-kuina', label: "Rivale d'infanzia (promessa)" },
+      { targetCharacterId: 'char-op-koushiro', label: 'Maestro di spada' },
+    ],
+  ),
+  'char-op-nami': L(
+    undefined, undefined, [...mates('char-op-nami'), 'char-op-genzo', 'char-op-nojiko'],
+    ['char-op-arlong'], ['char-op-nojiko', 'char-op-bellemere'],
+    [
+      { targetCharacterId: 'char-op-luffy', label: 'Capitano' },
+      { targetCharacterId: 'char-op-bellemere', label: 'Madre adottiva' },
+      { targetCharacterId: 'char-op-arlong', label: 'Aguzzino del passato' },
+    ],
+  ),
+  'char-op-usopp': L(
+    undefined, undefined, [...mates('char-op-usopp'), 'char-op-kaya'],
+    undefined, ['char-op-yasopp', 'char-op-banchina'],
+    [
+      { targetCharacterId: 'char-op-luffy', label: 'Capitano' },
+      { targetCharacterId: 'char-op-yasopp', label: 'Padre (cecchino del Rosso)' },
+      { targetCharacterId: 'char-op-kaya', label: "Amica d'infanzia" },
+    ],
+  ),
+  'char-op-sanji': L(
+    undefined, undefined, mates('char-op-sanji'),
+    undefined, ['char-op-judge', 'char-op-reiju', 'char-op-ichiji', 'char-op-niji', 'char-op-yonji'],
+    [
+      { targetCharacterId: 'char-op-luffy', label: 'Capitano' },
+      { targetCharacterId: 'char-op-judge', label: 'Padre (Germa 66)' },
+      { targetCharacterId: 'char-op-reiju', label: 'Sorella maggiore' },
+    ],
+  ),
+  'char-op-chopper': L(
+    undefined, undefined, [...mates('char-op-chopper'), 'char-op-dalton'], undefined, undefined,
+    [
+      { targetCharacterId: 'char-op-luffy', label: 'Capitano' },
+      { targetCharacterId: 'char-op-hiluluk', label: 'Maestro / figura paterna' },
+      { targetCharacterId: 'char-op-kureha', label: 'Maestra di medicina' },
+    ],
+  ),
+  'char-op-robin': L(
+    undefined, undefined, mates('char-op-robin'),
+    ['char-op-spandam', 'char-op-akainu'], ['char-op-olvia'],
+    [
+      { targetCharacterId: 'char-op-luffy', label: 'Capitano' },
+      { targetCharacterId: 'char-op-olvia', label: 'Madre' },
+      { targetCharacterId: 'char-op-saul', label: 'La salvò da bambina' },
+      { targetCharacterId: 'char-op-clover', label: 'Studiosi di Ohara' },
+    ],
+  ),
+  'char-op-franky': L(
+    undefined, undefined, [...mates('char-op-franky'), 'char-op-iceburg', 'char-op-zambai'], undefined, undefined,
+    [
+      { targetCharacterId: 'char-op-luffy', label: 'Capitano' },
+      { targetCharacterId: 'char-op-tom', label: 'Maestro costruttore' },
+      { targetCharacterId: 'char-op-iceburg', label: 'Fratello di bottega' },
+    ],
+  ),
+  'char-op-brook': L(
+    undefined, undefined, mates('char-op-brook'), undefined, undefined,
+    [{ targetCharacterId: 'char-op-luffy', label: 'Capitano' }],
+  ),
+  'char-op-jinbe': L(
+    undefined, undefined, [...mates('char-op-jinbe'), 'char-op-fisher-tiger', 'char-op-aladine'],
+    ['char-op-hody'], undefined,
+    [
+      { targetCharacterId: 'char-op-luffy', label: 'Capitano' },
+      { targetCharacterId: 'char-op-fisher-tiger', label: 'Mentore (Pirati del Sole)' },
+      { targetCharacterId: 'char-op-ace', label: 'Amico a Impel Down e Marineford' },
+      { targetCharacterId: 'char-op-whitebeard', label: 'Ex alleato Imperatore' },
+    ],
+  ),
+
+  /* ===================== Fratelli ASL / Rivoluzionari ===================== */
+  'char-op-ace': L(
+    ['arc-op-marineford'], ['evt-op-ace-death', 'evt-op-marineford-war'],
+    ['char-op-whitebeard', 'char-op-marco', 'char-op-jinbe'], ['char-op-blackbeard', 'char-op-akainu'],
+    ['char-op-luffy', 'char-op-sabo', 'char-op-garp', 'char-op-roger', 'char-op-rouge', 'char-op-dragon'],
+    [
+      { targetCharacterId: 'char-op-whitebeard', label: 'Capitano / figura paterna' },
+      { targetCharacterId: 'char-op-luffy', label: 'Fratello minore' },
+      { targetCharacterId: 'char-op-blackbeard', label: 'Lo sconfisse e consegnò' },
+    ],
+  ),
+  'char-op-sabo': L(
+    undefined, undefined, ['char-op-dragon', 'char-op-koala', 'char-op-hack', 'char-op-ivankov', 'char-op-luffy'],
+    ['char-op-burgess'], ['char-op-luffy', 'char-op-ace'],
+    [
+      { targetCharacterId: 'char-op-ace', label: 'Fratello giurato' },
+      { targetCharacterId: 'char-op-luffy', label: 'Fratello giurato' },
+      { targetCharacterId: 'char-op-dragon', label: "Capo dell'Armata Rivoluzionaria" },
+    ],
+  ),
+  'char-op-dragon': L(
+    undefined, undefined, ['char-op-sabo', 'char-op-koala', 'char-op-ivankov', 'char-op-karasu', 'char-op-betty', 'char-op-morley', 'char-op-lindbergh'],
+    ['char-op-akainu'], ['char-op-luffy', 'char-op-garp'],
+    [
+      { targetCharacterId: 'char-op-luffy', label: 'Figlio' },
+      { targetCharacterId: 'char-op-garp', label: 'Padre' },
+    ],
+  ),
+
+  /* ===================== Imperatori / leggende ===================== */
+  'char-op-shanks': L(
+    undefined, ['evt-op-mf-shanks-ends-war', 'evt-op-shanks-hat'],
+    ['char-op-benn-beckman', 'char-op-yasopp', 'char-op-lucky-roux'], ['char-op-blackbeard'], ['char-op-uta'],
+    [
+      { targetCharacterId: 'char-op-luffy', label: 'Gli donò il cappello' },
+      { targetCharacterId: 'char-op-roger', label: 'Ex ciurma di Roger' },
+      { targetCharacterId: 'char-op-mihawk', label: 'Rivale di un tempo' },
+    ],
+  ),
+  'char-op-whitebeard': L(
+    undefined, undefined, ['char-op-marco', 'char-op-jozu', 'char-op-vista', 'char-op-izo', 'char-op-jinbe', 'char-op-ace'],
+    ['char-op-blackbeard', 'char-op-akainu'], undefined,
+    [
+      { targetCharacterId: 'char-op-ace', label: 'Figlio di ciurma' },
+      { targetCharacterId: 'char-op-roger', label: "Rivale dell'epoca" },
+      { targetCharacterId: 'char-op-blackbeard', label: 'Ex sottoposto traditore' },
+    ],
+  ),
+  'char-op-blackbeard': L(
+    undefined, undefined,
+    ['char-op-burgess', 'char-op-shiryu', 'char-op-lafitte', 'char-op-doc-q', 'char-op-pizarro', 'char-op-van-augur', 'char-op-catarina-devon', 'char-op-sanjuan-wolf', 'char-op-vasco-shot'],
+    ['char-op-ace', 'char-op-whitebeard', 'char-op-luffy', 'char-op-shanks'], undefined,
+    [
+      { targetCharacterId: 'char-op-whitebeard', label: 'Ex capitano (tradito)' },
+      { targetCharacterId: 'char-op-ace', label: 'Lo consegnò alla Marina' },
+    ],
+  ),
+  'char-op-kaido': L(
+    undefined, undefined, ['char-op-king', 'char-op-queen', 'char-op-jack', 'char-op-orochi', 'char-op-big-mom'],
+    ['char-op-luffy', 'char-op-oden', 'char-op-kinemon', 'char-op-yamato'], ['char-op-yamato'],
+    [
+      { targetCharacterId: 'char-op-yamato', label: 'Figlio/a (in rivolta)' },
+      { targetCharacterId: 'char-op-oden', label: 'Nemico storico' },
+    ],
+  ),
+  'char-op-big-mom': L(
+    undefined, undefined, ['char-op-kaido'],
+    ['char-op-luffy'],
+    ['char-op-katakuri', 'char-op-smoothie', 'char-op-cracker', 'char-op-perospero', 'char-op-daifuku', 'char-op-oven', 'char-op-brulee', 'char-op-pudding', 'char-op-chiffon', 'char-op-lola'],
+    [{ targetCharacterId: 'char-op-kaido', label: 'Alleanza poi rivalità' }, { targetCharacterId: 'char-op-carmel', label: 'La crebbe' }],
+  ),
+
+  /* ===================== Corsari / Donquijote ===================== */
+  'char-op-doflamingo': L(
+    undefined, undefined, ['char-op-trebol', 'char-op-diamante', 'char-op-pica', 'char-op-vergo', 'char-op-gladius', 'char-op-baby-5', 'char-op-jora'],
+    ['char-op-law', 'char-op-luffy'], ['char-op-corazon'],
+    [
+      { targetCharacterId: 'char-op-corazon', label: 'Fratello minore (lo uccise)' },
+      { targetCharacterId: 'char-op-law', label: 'Ex sottoposto divenuto nemesi' },
+    ],
+  ),
+  'char-op-law': L(
+    undefined, undefined, ['char-op-bepo', 'char-op-shachi', 'char-op-penguin', 'char-op-kid'],
+    ['char-op-doflamingo'], undefined,
+    [
+      { targetCharacterId: 'char-op-corazon', label: 'Lo salvò (Cora-san)' },
+      { targetCharacterId: 'char-op-doflamingo', label: 'Nemesi' },
+      { targetCharacterId: 'char-op-luffy', label: "Alleato d'avventura" },
+    ],
+  ),
+  'char-op-hancock': L(
+    undefined, undefined, ['char-op-luffy', 'char-op-gloriosa', 'char-op-marguerite'],
+    undefined, ['char-op-sandersonia', 'char-op-marigold'],
+    [
+      { targetCharacterId: 'char-op-luffy', label: 'Amato' },
+      { targetCharacterId: 'char-op-gloriosa', label: 'Anziana / mentore' },
+    ],
+  ),
+
+  /* ===================== Marina / Roger ===================== */
+  'char-op-garp': L(
+    undefined, undefined, ['char-op-sengoku', 'char-op-tsuru', 'char-op-kong', 'char-op-coby'],
+    ['char-op-roger', 'char-op-chinjao'], ['char-op-luffy', 'char-op-ace', 'char-op-dragon'],
+    [
+      { targetCharacterId: 'char-op-roger', label: 'Eterno rivale' },
+      { targetCharacterId: 'char-op-luffy', label: 'Nipote' },
+      { targetCharacterId: 'char-op-dragon', label: 'Figlio' },
+    ],
+  ),
+  'char-op-roger': L(
+    undefined, ['evt-op-roger-execution', 'evt-op-roger-laugh-tale'],
+    ['char-op-rayleigh', 'char-op-scopper-gaban', 'char-op-oden', 'char-op-crocus', 'char-op-shanks', 'char-op-buggy'],
+    ['char-op-whitebeard', 'char-op-garp'], ['char-op-ace', 'char-op-rouge'],
+    [
+      { targetCharacterId: 'char-op-rayleigh', label: 'Vicecapitano' },
+      { targetCharacterId: 'char-op-ace', label: 'Figlio' },
+      { targetCharacterId: 'char-op-garp', label: 'Eterno rivale' },
+    ],
+  ),
+
+  /* ===================== Foderi Rossi di Wano ===================== */
+  'char-op-kinemon': L(
+    undefined, undefined, ['char-op-luffy', 'char-op-momonosuke', 'char-op-denjiro', 'char-op-kiku', 'char-op-raizo', 'char-op-kawamatsu', 'char-op-ashura', 'char-op-inuarashi', 'char-op-nekomamushi'],
+    ['char-op-kaido', 'char-op-orochi', 'char-op-kanjuro'], undefined,
+    [
+      { targetCharacterId: 'char-op-oden', label: 'Signore (Kozuki Oden)' },
+      { targetCharacterId: 'char-op-momonosuke', label: 'Erede da proteggere' },
+      { targetCharacterId: 'char-op-kanjuro', label: 'Compagno rivelatosi traditore' },
+    ],
+  ),
+  'char-op-yamato': L(
+    undefined, undefined, ['char-op-luffy', 'char-op-momonosuke', 'char-op-ace'],
+    ['char-op-kaido'], ['char-op-kaido'],
+    [
+      { targetCharacterId: 'char-op-kaido', label: 'Padre (a cui si ribella)' },
+      { targetCharacterId: 'char-op-oden', label: 'Modello ed eredità' },
+      { targetCharacterId: 'char-op-ace', label: 'Vecchio amico' },
+    ],
+  ),
+
+  /* ===================== Grand Fleet (capitani già presenti) ===================== */
+  'char-op-bartolomeo': L(
+    ['arc-op-dressrosa'], ['evt-op-dr-colosseum', 'evt-op-doflamingo-defeat'],
+    ['char-op-luffy', 'char-op-cavendish', 'char-op-sai', 'char-op-leo', 'char-op-ideo', 'char-op-hajrudin', 'char-op-orlumbus', 'char-op-gambia'],
+    ['char-op-doflamingo'], undefined,
+    [{ targetCharacterId: 'char-op-luffy', label: 'Idolo e capo della Grand Fleet' }],
+  ),
+  'char-op-cavendish': L(
+    ['arc-op-dressrosa'], ['evt-op-dr-colosseum', 'evt-op-doflamingo-defeat'],
+    ['char-op-luffy', 'char-op-bartolomeo', 'char-op-sai', 'char-op-leo', 'char-op-ideo', 'char-op-hajrudin', 'char-op-orlumbus'],
+    ['char-op-doflamingo'], undefined,
+    [{ targetCharacterId: 'char-op-luffy', label: 'Capo della Grand Fleet' }],
+  ),
+  'char-op-leo': L(
+    ['arc-op-dressrosa'], ['evt-op-dr-tontatta', 'evt-op-doflamingo-defeat'],
+    ['char-op-luffy', 'char-op-cavendish', 'char-op-bartolomeo', 'char-op-sai', 'char-op-ideo', 'char-op-hajrudin', 'char-op-orlumbus', 'char-op-mansherry'],
+    ['char-op-doflamingo'], undefined,
+    [{ targetCharacterId: 'char-op-luffy', label: 'Capo della Grand Fleet' }],
+  ),
+  'char-op-hajrudin': L(
+    undefined, undefined, ['char-op-cavendish', 'char-op-bartolomeo', 'char-op-sai', 'char-op-leo', 'char-op-ideo', 'char-op-orlumbus'],
+    undefined, undefined,
+    [{ targetCharacterId: 'char-op-luffy', label: 'Capo della Grand Fleet' }],
+  ),
+
   /* ===================== East Blue ===================== */
   'char-op-makino': L(['arc-op-romance-dawn'], ['evt-op-shanks-hat'], ['char-op-luffy', 'char-op-shanks']),
   'char-op-woop-slap': L(['arc-op-romance-dawn'], undefined, ['char-op-luffy', 'char-op-makino']),
@@ -175,7 +439,6 @@ export const onepieceCharacterLinks: Record<string, LinkPatch> = {
   'char-op-buffalo': L(['arc-op-dressrosa', 'arc-op-punk-hazard'], ['evt-op-doflamingo-defeat'], ['char-op-doflamingo', 'char-op-caesar'], ['char-op-luffy']),
   'char-op-scarlett': L(['arc-op-dressrosa'], undefined, undefined, ['char-op-diamante'], ['char-op-kyros', 'char-op-rebecca', 'char-op-viola', 'char-op-riku'],
     [{ targetCharacterId: 'char-op-kyros', label: 'Moglie' }, { targetCharacterId: 'char-op-rebecca', label: 'Figlia' }]),
-  'char-op-leo': L(['arc-op-dressrosa'], ['evt-op-dr-tontatta', 'evt-op-doflamingo-defeat'], ['char-op-luffy', 'char-op-mansherry'], ['char-op-doflamingo']),
   'char-op-mansherry': L(['arc-op-dressrosa'], ['evt-op-dr-tontatta'], ['char-op-leo', 'char-op-luffy'], ['char-op-doflamingo']),
 
   /* ===================== Zou ===================== */
