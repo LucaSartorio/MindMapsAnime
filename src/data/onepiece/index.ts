@@ -11,6 +11,7 @@ import { onepieceLocationsExtra } from './locationsExtra';
 import { onepieceLocationsTotland } from './locationsTotland';
 import { onepieceLocationsSubmaps } from './locationsSubmaps';
 import { onepieceLocationsSubmaps2 } from './locationsSubmaps2';
+import { onepieceLocationsSubmaps3 } from './locationsSubmaps3';
 import { onepieceLocationsExtra2 } from './locationsExtra2';
 import { onepieceFactions } from './factions';
 import { onepieceFactionsSouthBlue } from './factionsSouthBlue';
@@ -36,6 +37,7 @@ import { onepieceCharactersRedLine } from './charactersRedLine';
 import { onepieceCharactersSupernovas } from './charactersSupernovas';
 import { onepieceCharactersExtra } from './charactersExtra';
 import { onepieceCharactersExtra2 } from './charactersExtra2';
+import { onepieceCharactersExtra3 } from './charactersExtra3';
 import { onepieceArcs } from './arcs';
 import { onepieceArcsSouthBlue } from './arcsSouthBlue';
 import { onepieceArcsNorthBlue } from './arcsNorthBlue';
@@ -102,6 +104,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceLocationsTotland,
     ...onepieceLocationsSubmaps,
     ...onepieceLocationsSubmaps2,
+    ...onepieceLocationsSubmaps3,
     ...onepieceLocationsExtra2,
   ],
   characters: [
@@ -118,6 +121,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceCharactersSupernovas,
     ...onepieceCharactersExtra,
     ...onepieceCharactersExtra2,
+    ...onepieceCharactersExtra3,
   ],
   factions: [
     ...onepieceFactions,

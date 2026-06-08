@@ -1,0 +1,88 @@
+import type { Character, CharacterImportance, CharacterStatus } from '@/types';
+
+/**
+ * I quattro Astri di Saggezza rimanenti (oltre a Saturn) e i fratelli Vinsmoke del
+ * Germa 66 (oltre al padre Judge). Collegati alle fazioni esistenti `five-elders`
+ * e `germa-66`.
+ */
+const C = (
+  id: string, name: string, aliases: string[] | undefined,
+  importance: CharacterImportance, role: string[], gender: string,
+  factionIds: string[] | undefined, locationIds: string[] | undefined,
+  fm: string | undefined, fa: string | undefined,
+  sit: string, sen: string, lit: string, len: string,
+  status: CharacterStatus, tags: string[],
+): Character => ({
+  id, worldId: 'world-onepiece', name,
+  ...(aliases ? { aliases } : {}),
+  importance, role, gender,
+  ...(factionIds ? { factionIds } : {}),
+  ...(locationIds ? { locationIds } : {}),
+  ...(fm ? { firstMangaAppearance: fm } : {}),
+  ...(fa ? { firstAnimeAppearance: fa } : {}),
+  shortDescription: { it: sit, en: sen },
+  longDescription: { it: lit, en: len },
+  status, canonStatus: 'canon', referenceStatus: 'verified', tags,
+});
+
+export const onepieceCharactersExtra3: Character[] = [
+  /* ---------------------- I Cinque Astri di Saggezza ---------------------- */
+  C('char-op-mars', 'Marcus Mars', ['Dio Guerriero dell\'Ambiente'], 'supporting', ['antagonist'], 'male',
+    ['faction-op-five-elders'], ['loc-op-mary-geoise', 'loc-op-egghead'], '233', '151',
+    "Astro di Saggezza e «Dio Guerriero dell'Ambiente», utente di uno Zoan mitologico dell'uccello Itsumade.",
+    "An Elder and 'Warrior God of Environment', user of a mythical Zoan of the bird Itsumade.",
+    "Saint Marcus Mars, uno dei Cinque Astri che governano in segreto il Governo Mondiale dal Pangea Castle. A Egghead rivela la propria forma di creatura mitologica volante, partecipando alla caccia a Vegapunk.",
+    "Saint Marcus Mars, one of the Five Elders who secretly rule the World Government from Pangaea Castle. On Egghead he reveals his flying mythological-creature form, joining the hunt for Vegapunk.",
+    'alive', ['cinque-astri', 'governo-mondiale', 'mitologico']),
+  C('char-op-warcury', 'Topman Warcury', ['Dio Guerriero della Giustizia'], 'supporting', ['antagonist'], 'male',
+    ['faction-op-five-elders'], ['loc-op-mary-geoise', 'loc-op-egghead'], '233', '151',
+    "Astro di Saggezza e «Dio Guerriero della Giustizia», utente di uno Zoan mitologico bestiale e possente.",
+    "An Elder and 'Warrior God of Justice', user of a brutal, powerful mythical Zoan.",
+    "Saint Topman Warcury, uno dei Cinque Astri, incarna la «Giustizia» suprema del Governo Mondiale. A Egghead scatena la sua forma mitologica devastante contro la ciurma e gli alleati di Vegapunk.",
+    "Saint Topman Warcury, one of the Five Elders, embodies the supreme 'Justice' of the World Government. On Egghead he unleashes his devastating mythological form against the crew and Vegapunk's allies.",
+    'alive', ['cinque-astri', 'governo-mondiale', 'mitologico']),
+  C('char-op-nusjuro', 'Ethanbaron V. Nusjuro', ['Dio Guerriero della Finanza'], 'supporting', ['antagonist'], 'male',
+    ['faction-op-five-elders'], ['loc-op-mary-geoise', 'loc-op-egghead'], '233', '151',
+    "Astro di Saggezza e «Dio Guerriero della Finanza», freddo spadaccino utente di uno Zoan mitologico.",
+    "An Elder and 'Warrior God of Finance', a cold swordsman and user of a mythical Zoan.",
+    "Saint Ethanbaron V. Nusjuro, uno dei Cinque Astri, è il volto glaciale del potere economico del Governo Mondiale. A Egghead combatte come letale spadaccino nella sua forma mitologica.",
+    "Saint Ethanbaron V. Nusjuro, one of the Five Elders, is the icy face of the World Government's economic power. On Egghead he fights as a lethal swordsman in his mythological form.",
+    'alive', ['cinque-astri', 'governo-mondiale', 'mitologico']),
+  C('char-op-jupeter', 'Shepherd Ju Peter', ['Dio Guerriero dell\'Agricoltura'], 'supporting', ['antagonist'], 'male',
+    ['faction-op-five-elders'], ['loc-op-mary-geoise', 'loc-op-egghead'], '233', '151',
+    "Astro di Saggezza e «Dio Guerriero dell'Agricoltura», utente di uno Zoan mitologico dalla forma vermiforme.",
+    "An Elder and 'Warrior God of Agriculture', user of a worm-shaped mythical Zoan.",
+    "Saint Shepherd Ju Peter, uno dei Cinque Astri, sovrintende alle risorse del mondo. A Egghead rivela la sua mostruosa forma mitologica vermiforme nella battaglia contro Vegapunk.",
+    "Saint Shepherd Ju Peter, one of the Five Elders, oversees the world's resources. On Egghead he reveals his monstrous worm-like mythological form in the battle against Vegapunk.",
+    'alive', ['cinque-astri', 'governo-mondiale', 'mitologico']),
+
+  /* ------------------------- Fratelli Vinsmoke (Germa 66) ------------------------- */
+  C('char-op-reiju', 'Vinsmoke Reiju', ['Poison Pink'], 'supporting', ['neutral'], 'female',
+    ['faction-op-germa-66'], ['loc-op-germa-kingdom', 'loc-op-whole-cake-island'], '824', '783',
+    "Primogenita dei Vinsmoke e unica gentile con Sanji, capace di assorbire e neutralizzare ogni veleno.",
+    "The eldest Vinsmoke and the only one kind to Sanji, able to absorb and neutralise any poison.",
+    "Vinsmoke Reiju «Poison Pink», comandante dell'esercito del Germa 66, è la sola della famiglia ad aver protetto da bambino il fratello Sanji. Le sue modifiche genetiche le permettono di assorbire i veleni e di combattere con eleganza letale.",
+    "Vinsmoke Reiju 'Poison Pink', a commander of the Germa 66 army, is the only family member who protected the child Sanji. Her genetic modifications let her absorb poisons and fight with lethal elegance.",
+    'alive', ['germa', 'vinsmoke', 'whole-cake']),
+  C('char-op-ichiji', 'Vinsmoke Ichiji', ['Sparking Red'], 'minor', ['neutral'], 'male',
+    ['faction-op-germa-66'], ['loc-op-germa-kingdom', 'loc-op-whole-cake-island'], '832', '793',
+    "Primogenito maschio dei Vinsmoke e soldato del Germa 66, privo di emozioni e dotato di poteri di fuoco.",
+    "The eldest Vinsmoke son and Germa 66 soldier, emotionless and gifted with fire powers.",
+    "Vinsmoke Ichiji «Sparking Red», geneticamente modificato dal padre Judge come arma vivente, combatte con l'esoscheletro Raid Suit del Germa 66; freddo verso Sanji, ne riconosce infine il valore a Whole Cake Island.",
+    "Vinsmoke Ichiji 'Sparking Red', genetically engineered by his father Judge as a living weapon, fights with the Germa 66 Raid Suit; cold toward Sanji, he finally acknowledges his worth at Whole Cake Island.",
+    'alive', ['germa', 'vinsmoke', 'whole-cake']),
+  C('char-op-niji', 'Vinsmoke Niji', ['Stealth Blue'], 'minor', ['neutral'], 'male',
+    ['faction-op-germa-66'], ['loc-op-germa-kingdom', 'loc-op-whole-cake-island'], '832', '793',
+    "Secondo fratello Vinsmoke e soldato del Germa 66, crudele e dotato di poteri elettrici.",
+    "The second Vinsmoke brother and Germa 66 soldier, cruel and gifted with electric powers.",
+    "Vinsmoke Niji «Stealth Blue», soldato modificato del Germa 66, sadico e spietato soprattutto verso Sanji da bambino; combatte con il Raid Suit e l'elettricità, riconoscendo il fratello solo alla resa dei conti.",
+    "Vinsmoke Niji 'Stealth Blue', an engineered Germa 66 soldier, sadistic and merciless especially toward the child Sanji; he fights with the Raid Suit and electricity, acknowledging his brother only in the showdown.",
+    'alive', ['germa', 'vinsmoke', 'whole-cake']),
+  C('char-op-yonji', 'Vinsmoke Yonji', ['Winch Green'], 'minor', ['neutral'], 'male',
+    ['faction-op-germa-66'], ['loc-op-germa-kingdom', 'loc-op-whole-cake-island'], '832', '793',
+    "Fratello minore dei Vinsmoke e soldato del Germa 66, vanesio e dotato di forza meccanica potenziata.",
+    "The youngest Vinsmoke brother and Germa 66 soldier, vain and gifted with enhanced mechanical strength.",
+    "Vinsmoke Yonji «Winch Green», il più giovane dei fratelli modificati del Germa 66, robusto e arrogante; combatte con il Raid Suit e una forza meccanica potenziata, ricredendosi sul fratello Sanji a Whole Cake Island.",
+    "Vinsmoke Yonji 'Winch Green', the youngest of the engineered Germa 66 brothers, sturdy and arrogant; he fights with the Raid Suit and enhanced mechanical strength, changing his mind about Sanji at Whole Cake Island.",
+    'alive', ['germa', 'vinsmoke', 'whole-cake']),
+];

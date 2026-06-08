@@ -129,6 +129,32 @@ export const onepieceAssets: AssetReference[] = [
     },
   },
   {
+    id: 'op-egghead-submap-placeholder',
+    worldId: 'world-onepiece',
+    name: 'Egghead sub-map (placeholder SVG)',
+    kind: 'placeholder',
+    source: 'local',
+    license: 'placeholder/CC0',
+    author: 'local',
+    notes: {
+      it: "Placeholder concettuale della sotto-mappa di Egghead.",
+      en: 'Conceptual placeholder for the Egghead sub-map.',
+    },
+  },
+  {
+    id: 'op-fishman-submap-placeholder',
+    worldId: 'world-onepiece',
+    name: 'Fish-Man Island sub-map (placeholder SVG)',
+    kind: 'placeholder',
+    source: 'local',
+    license: 'placeholder/CC0',
+    author: 'local',
+    notes: {
+      it: "Placeholder concettuale della sotto-mappa dell'Isola degli Uomini-Pesce.",
+      en: 'Conceptual placeholder for the Fish-Man Island sub-map.',
+    },
+  },
+  {
     id: 'op-world-map-placeholder',
     worldId: 'world-onepiece',
     name: 'One Piece world map (placeholder SVG)',

@@ -161,6 +161,8 @@ export const animeWorlds: AnimeWorld[] = [
       'op-map-dressrosa',
       'op-map-sabaody',
       'op-map-marineford',
+      'op-map-egghead',
+      'op-map-fishman-island',
     ],
     coverAssetId: 'op-cover-placeholder',
     tags: ['shonen', 'pirati', 'eiichiro oda', 'jump'],

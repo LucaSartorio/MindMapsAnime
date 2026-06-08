@@ -81,6 +81,7 @@ export const onepieceLocationsExtra: Location[] = [
       en: "The New World's 'island of the future', the futuristic lab of Dr. Vegapunk, the world's greatest scientist. An outpost of World Government technology.",
     },
     nationId: 'nation-op-grand-line-new-world',
+    subMapLevelId: 'op-map-egghead',
     characterIds: ['char-op-vegapunk', 'char-op-saturn', 'char-op-kizaru', 'char-op-stussy', 'char-op-york', 'char-op-bonney', 'char-op-luffy'],
     arcIds: ['arc-op-egghead'],
     eventIds: ['evt-op-egghead-attack', 'evt-op-vegapunk-message'],

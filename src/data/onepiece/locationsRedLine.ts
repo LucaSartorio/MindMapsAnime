@@ -100,6 +100,7 @@ export const onepieceLocationsRedLine: Location[] = [
       en: 'An underwater kingdom 10,000 metres beneath the Red Line, home of fish-men and merfolk. The threshold of the New World, ruled by the Ryugu royal family.',
     },
     nationId: 'nation-op-red-line',
+    subMapLevelId: 'op-map-fishman-island',
     characterIds: [
       'char-op-jinbe',
       'char-op-shirahoshi',
