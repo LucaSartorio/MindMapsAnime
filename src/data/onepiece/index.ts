@@ -45,6 +45,7 @@ import { onepieceCharactersExtra4 } from './charactersExtra4';
 import { onepieceCharactersExtra5 } from './charactersExtra5';
 import { onepieceCharactersExtra6 } from './charactersExtra6';
 import { onepieceCharactersExtra7 } from './charactersExtra7';
+import { onepieceCharactersExtra8 } from './charactersExtra8';
 import { onepieceCharactersFilms } from './charactersFilms';
 import { onepieceArcs } from './arcs';
 import { onepieceArcsSouthBlue } from './arcsSouthBlue';
@@ -81,6 +82,7 @@ import { onepieceDevilFruitsExtra } from './devilFruitsExtra';
 import { onepieceDevilFruitsExtra2 } from './devilFruitsExtra2';
 import { onepieceAssets } from './assets';
 import { onepieceBounties } from './bounties';
+import { withCharacterLinks } from './characterLinks';
 
 const onepiece = animeWorlds.find((w) => w.slug === 'onepiece')!;
 
@@ -123,27 +125,30 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceLocationsSubmaps5,
     ...onepieceLocationsExtra2,
   ],
-  characters: [
-    ...onepieceCharactersEastBlue,
-    ...onepieceCharactersSouthBlue,
-    ...onepieceCharactersNorthBlue,
-    ...onepieceCharactersWestBlue,
-    ...onepieceCharactersRedLine,
-    ...onepieceCharactersParadise,
-    ...onepieceCharactersParadise2,
-    ...onepieceCharactersNewWorldSagas,
-    ...onepieceCharactersWholeCakeWano,
-    ...onepieceCharactersEgghead,
-    ...onepieceCharactersSupernovas,
-    ...onepieceCharactersExtra,
-    ...onepieceCharactersExtra2,
-    ...onepieceCharactersExtra3,
-    ...onepieceCharactersExtra4,
-    ...onepieceCharactersExtra5,
-    ...onepieceCharactersExtra6,
-    ...onepieceCharactersExtra7,
-    ...onepieceCharactersFilms,
-  ].map((c) => (onepieceBounties[c.id] ? { ...c, bounties: onepieceBounties[c.id] } : c)),
+  characters: withCharacterLinks(
+    [
+      ...onepieceCharactersEastBlue,
+      ...onepieceCharactersSouthBlue,
+      ...onepieceCharactersNorthBlue,
+      ...onepieceCharactersWestBlue,
+      ...onepieceCharactersRedLine,
+      ...onepieceCharactersParadise,
+      ...onepieceCharactersParadise2,
+      ...onepieceCharactersNewWorldSagas,
+      ...onepieceCharactersWholeCakeWano,
+      ...onepieceCharactersEgghead,
+      ...onepieceCharactersSupernovas,
+      ...onepieceCharactersExtra,
+      ...onepieceCharactersExtra2,
+      ...onepieceCharactersExtra3,
+      ...onepieceCharactersExtra4,
+      ...onepieceCharactersExtra5,
+      ...onepieceCharactersExtra6,
+      ...onepieceCharactersExtra7,
+      ...onepieceCharactersExtra8,
+      ...onepieceCharactersFilms,
+    ].map((c) => (onepieceBounties[c.id] ? { ...c, bounties: onepieceBounties[c.id] } : c)),
+  ),
   factions: [
     ...onepieceFactions,
     ...onepieceFactionsSouthBlue,
