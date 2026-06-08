@@ -97,7 +97,7 @@ export const onepieceCharactersSupernovas: Character[] = [
     role: ['neutral'],
     gender: 'male',
     nationId: 'nation-op-north-blue',
-    factionIds: ['faction-op-drake-pirates'],
+    factionIds: ['faction-op-drake-pirates', 'faction-op-sword'],
     firstMangaAppearance: SN_DEBUT.manga,
     firstAnimeAppearance: SN_DEBUT.anime,
     shortDescription: {

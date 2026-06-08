@@ -155,7 +155,7 @@ export const onepieceCharactersParadise: Character[] = [
     role: ['villain', 'antagonist'],
     gender: 'male',
     locationIds: ['loc-op-alabasta', 'loc-op-rainbase'],
-    factionIds: ['faction-op-baroque-works', 'faction-op-shichibukai'],
+    factionIds: ['faction-op-baroque-works', 'faction-op-shichibukai', 'faction-op-cross-guild'],
     enemies: ['char-op-luffy', 'char-op-vivi'],
     relationships: [
       { targetCharacterId: 'char-op-robin', label: 'Vice (Miss All Sunday)' },

@@ -224,7 +224,7 @@ export const onepieceCharactersEastBlue: Character[] = [
     gender: 'male',
     locationIds: ['loc-op-shells-town'],
     nationId: 'nation-op-east-blue',
-    factionIds: ['faction-op-marines'],
+    factionIds: ['faction-op-marines', 'faction-op-sword'],
     allies: ['char-op-luffy'],
     arcIds: ['arc-op-romance-dawn'],
     shortDescription: {
@@ -279,7 +279,7 @@ export const onepieceCharactersEastBlue: Character[] = [
     gender: 'male',
     locationIds: ['loc-op-loguetown'],
     nationId: 'nation-op-east-blue',
-    factionIds: ['faction-op-marines'],
+    factionIds: ['faction-op-marines', 'faction-op-sword'],
     enemies: ['char-op-luffy'],
     arcIds: ['arc-op-loguetown'],
     shortDescription: {
@@ -363,7 +363,7 @@ export const onepieceCharactersEastBlue: Character[] = [
     gender: 'male',
     locationIds: ['loc-op-orange-town'],
     nationId: 'nation-op-east-blue',
-    factionIds: ['faction-op-buggy-pirates'],
+    factionIds: ['faction-op-buggy-pirates', 'faction-op-cross-guild'],
     enemies: ['char-op-luffy'],
     relationships: [
       { targetCharacterId: 'char-op-shanks', label: 'Ex compagno sulla nave di Roger' },
@@ -437,6 +437,7 @@ export const onepieceCharactersEastBlue: Character[] = [
   {
     id: 'char-op-mihawk',
     worldId: 'world-onepiece',
+    factionIds: ['faction-op-cross-guild'],
     firstMangaAppearance: "50",
     firstAnimeAppearance: "24",
     longDescription: {

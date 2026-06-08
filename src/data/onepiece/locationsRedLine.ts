@@ -44,6 +44,7 @@ export const onepieceLocationsRedLine: Location[] = [
       en: "The former Marine Headquarters beneath the Red Line, facing Mary Geoise. Stage of the Summit War against the Whitebeard Pirates over Ace's execution.",
     },
     nationId: 'nation-op-red-line',
+    subMapLevelId: 'op-map-marineford',
     characterIds: [
       'char-op-ace',
       'char-op-whitebeard',
@@ -76,6 +77,7 @@ export const onepieceLocationsRedLine: Location[] = [
       en: 'An archipelago of 79 mangrove groves at the end of Paradise, the last stop before the Red Line. A slave market, a haunt of World Nobles, and the place where the crew is scattered by Bartholomew Kuma.',
     },
     nationId: 'nation-op-red-line',
+    subMapLevelId: 'op-map-sabaody',
     characterIds: ['char-op-luffy', 'char-op-rayleigh', 'char-op-kuma', 'char-op-hancock'],
     arcIds: ['arc-op-sabaody'],
     eventIds: ['evt-op-sabaody-scatter'],

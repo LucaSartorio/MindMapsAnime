@@ -10,6 +10,8 @@ import { onepieceLocationsBlues } from './locationsBlues';
 import { onepieceLocationsExtra } from './locationsExtra';
 import { onepieceLocationsTotland } from './locationsTotland';
 import { onepieceLocationsSubmaps } from './locationsSubmaps';
+import { onepieceLocationsSubmaps2 } from './locationsSubmaps2';
+import { onepieceLocationsExtra2 } from './locationsExtra2';
 import { onepieceFactions } from './factions';
 import { onepieceFactionsSouthBlue } from './factionsSouthBlue';
 import { onepieceFactionsNorthBlue } from './factionsNorthBlue';
@@ -20,6 +22,7 @@ import { onepieceFactionsParadise2 } from './factionsParadise2';
 import { onepieceFactionsWholeCakeWano } from './factionsWholeCakeWano';
 import { onepieceFactionsEgghead } from './factionsEgghead';
 import { onepieceFactionsSupernovas } from './factionsSupernovas';
+import { onepieceFactionsExtra } from './factionsExtra';
 import { onepieceCharactersEastBlue } from './characters';
 import { onepieceCharactersParadise } from './charactersParadise';
 import { onepieceCharactersParadise2 } from './charactersParadise2';
@@ -31,6 +34,7 @@ import { onepieceCharactersNorthBlue } from './charactersNorthBlue';
 import { onepieceCharactersWestBlue } from './charactersWestBlue';
 import { onepieceCharactersRedLine } from './charactersRedLine';
 import { onepieceCharactersSupernovas } from './charactersSupernovas';
+import { onepieceCharactersExtra } from './charactersExtra';
 import { onepieceArcs } from './arcs';
 import { onepieceArcsSouthBlue } from './arcsSouthBlue';
 import { onepieceArcsNorthBlue } from './arcsNorthBlue';
@@ -52,6 +56,7 @@ import { onepieceEventsNewWorldSagas } from './eventsNewWorldSagas';
 import { onepieceEventsWholeCakeWano } from './eventsWholeCakeWano';
 import { onepieceEventsEgghead } from './eventsEgghead';
 import { onepieceEventsExtra } from './eventsExtra';
+import { onepieceEventsExtra2 } from './eventsExtra2';
 import { onepieceRoutes } from './routes';
 import { onepieceRoutesGrandLine } from './routesGrandLine';
 import { onepieceRoutesExtra } from './routesExtra';
@@ -93,6 +98,8 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceLocationsExtra,
     ...onepieceLocationsTotland,
     ...onepieceLocationsSubmaps,
+    ...onepieceLocationsSubmaps2,
+    ...onepieceLocationsExtra2,
   ],
   characters: [
     ...onepieceCharactersEastBlue,
@@ -106,6 +113,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceCharactersWholeCakeWano,
     ...onepieceCharactersEgghead,
     ...onepieceCharactersSupernovas,
+    ...onepieceCharactersExtra,
   ],
   factions: [
     ...onepieceFactions,
@@ -118,6 +126,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceFactionsWholeCakeWano,
     ...onepieceFactionsEgghead,
     ...onepieceFactionsSupernovas,
+    ...onepieceFactionsExtra,
   ],
   arcs: [
     ...onepieceArcs,
@@ -143,6 +152,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceEventsWholeCakeWano,
     ...onepieceEventsEgghead,
     ...onepieceEventsExtra,
+    ...onepieceEventsExtra2,
   ],
   routes: [...onepieceRoutes, ...onepieceRoutesGrandLine, ...onepieceRoutesExtra],
   jutsu: [...onepieceDevilFruits, ...onepieceDevilFruitsExtra],
