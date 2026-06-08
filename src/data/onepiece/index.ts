@@ -21,6 +21,7 @@ import { onepieceFactionsParadise2 } from './factionsParadise2';
 import { onepieceFactionsWholeCakeWano } from './factionsWholeCakeWano';
 import { onepieceFactionsEgghead } from './factionsEgghead';
 import { onepieceFactionsSupernovas } from './factionsSupernovas';
+import { onepieceFactionsExtra } from './factionsExtra';
 import { onepieceCharactersEastBlue } from './characters';
 import { onepieceCharactersParadise } from './charactersParadise';
 import { onepieceCharactersParadise2 } from './charactersParadise2';
@@ -123,6 +124,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceFactionsWholeCakeWano,
     ...onepieceFactionsEgghead,
     ...onepieceFactionsSupernovas,
+    ...onepieceFactionsExtra,
   ],
   arcs: [
     ...onepieceArcs,

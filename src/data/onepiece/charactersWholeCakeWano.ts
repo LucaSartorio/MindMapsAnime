@@ -144,6 +144,7 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
   {
     id: 'char-op-pedro',
     worldId: 'world-onepiece',
+    factionIds: ['faction-op-mokomo'],
     firstMangaAppearance: "810",
     firstAnimeAppearance: "758",
     longDescription: {
