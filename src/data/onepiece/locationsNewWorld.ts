@@ -204,8 +204,8 @@ export const onepieceLocationsNewWorld: Location[] = [
     name: 'Karakuri Island',
     localizedName: { it: 'Isola di Karakuri', en: 'Karakuri Island' },
     type: 'landmark',
-    x: 1722,
-    y: 485,
+    x: 1740,
+    y: 486,
     shortDescription: {
       it: "Isola invernale del New World, terra natale del genio Vegapunk e luogo dove Franky si ricostruì il corpo durante i due anni di separazione.",
       en: "A winter island of the New World, birthplace of the genius Vegapunk and the place where Franky rebuilt his body during the two-year separation.",
@@ -261,8 +261,8 @@ export const onepieceLocationsNewWorld: Location[] = [
     name: 'Momoiro Island',
     localizedName: { it: 'Isola di Momoiro', en: 'Momoiro Island' },
     type: 'landmark',
-    x: 1681,
-    y: 480,
+    x: 1683,
+    y: 472,
     shortDescription: {
       it: "Isola rosa del New World, sede della «Newkama Land», il regno sotterraneo degli okama fondato da Emporio Ivankov.",
       en: "A pink New World island, home of 'Newkama Land', the underground okama realm founded by Emporio Ivankov.",
@@ -280,8 +280,8 @@ export const onepieceLocationsNewWorld: Location[] = [
     name: 'Kuraigana Island',
     localizedName: { it: 'Isola di Kuraigana', en: 'Kuraigana Island' },
     type: 'ruins',
-    x: 1882,
-    y: 523,
+    x: 1878,
+    y: 535,
     shortDescription: {
       it: "Isola desolata del Regno di Shikkearu, dimora di Dracule Mihawk e degli Humandrills. Qui Zoro si allena per due anni sotto il più grande spadaccino del mondo.",
       en: "A desolate island of the Shikkearu Kingdom, home of Dracule Mihawk and the Humandrills. Here Zoro trains for two years under the world's greatest swordsman.",
@@ -337,8 +337,8 @@ export const onepieceLocationsNewWorld: Location[] = [
     name: 'Mystoria Island',
     localizedName: { it: 'Isola di Mystoria', en: 'Mystoria Island' },
     type: 'landmark',
-    x: 135,
-    y: 500,
+    x: 100,
+    y: 503,
     shortDescription: {
       it: "Isola del New World ai margini occidentali della mappa.",
       en: 'A New World island at the western edge of the map.',
