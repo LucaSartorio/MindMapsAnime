@@ -159,6 +159,8 @@ export const animeWorlds: AnimeWorld[] = [
       'op-map-wano',
       'op-map-skypiea',
       'op-map-dressrosa',
+      'op-map-sabaody',
+      'op-map-marineford',
     ],
     coverAssetId: 'op-cover-placeholder',
     tags: ['shonen', 'pirati', 'eiichiro oda', 'jump'],

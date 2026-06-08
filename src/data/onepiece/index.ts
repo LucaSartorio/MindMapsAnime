@@ -10,6 +10,7 @@ import { onepieceLocationsBlues } from './locationsBlues';
 import { onepieceLocationsExtra } from './locationsExtra';
 import { onepieceLocationsTotland } from './locationsTotland';
 import { onepieceLocationsSubmaps } from './locationsSubmaps';
+import { onepieceLocationsSubmaps2 } from './locationsSubmaps2';
 import { onepieceLocationsExtra2 } from './locationsExtra2';
 import { onepieceFactions } from './factions';
 import { onepieceFactionsSouthBlue } from './factionsSouthBlue';
@@ -97,6 +98,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceLocationsExtra,
     ...onepieceLocationsTotland,
     ...onepieceLocationsSubmaps,
+    ...onepieceLocationsSubmaps2,
     ...onepieceLocationsExtra2,
   ],
   characters: [

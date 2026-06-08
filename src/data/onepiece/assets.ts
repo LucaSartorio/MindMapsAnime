@@ -103,6 +103,32 @@ export const onepieceAssets: AssetReference[] = [
     },
   },
   {
+    id: 'op-sabaody-submap-placeholder',
+    worldId: 'world-onepiece',
+    name: 'Sabaody sub-map (placeholder SVG)',
+    kind: 'placeholder',
+    source: 'local',
+    license: 'placeholder/CC0',
+    author: 'local',
+    notes: {
+      it: "Placeholder concettuale della sotto-mappa dell'Arcipelago Sabaody.",
+      en: 'Conceptual placeholder for the Sabaody Archipelago sub-map.',
+    },
+  },
+  {
+    id: 'op-marineford-submap-placeholder',
+    worldId: 'world-onepiece',
+    name: 'Marineford sub-map (placeholder SVG)',
+    kind: 'placeholder',
+    source: 'local',
+    license: 'placeholder/CC0',
+    author: 'local',
+    notes: {
+      it: 'Placeholder concettuale della sotto-mappa di Marineford.',
+      en: 'Conceptual placeholder for the Marineford sub-map.',
+    },
+  },
+  {
     id: 'op-world-map-placeholder',
     worldId: 'world-onepiece',
     name: 'One Piece world map (placeholder SVG)',
