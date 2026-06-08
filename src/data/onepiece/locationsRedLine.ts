@@ -12,6 +12,7 @@ export const onepieceLocationsRedLine: Location[] = [
     id: 'loc-op-mary-geoise',
     worldId: 'world-onepiece',
     mapLevelId: 'op-map-world',
+    subMapLevelId: 'op-map-mary-geoise',
     name: 'Mary Geoise',
     localizedName: { it: 'Mary Geoise', en: 'Mary Geoise' },
     type: 'city',

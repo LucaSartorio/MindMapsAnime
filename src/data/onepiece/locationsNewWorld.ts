@@ -184,6 +184,7 @@ export const onepieceLocationsNewWorld: Location[] = [
     id: 'loc-op-germa-kingdom',
     worldId: 'world-onepiece',
     mapLevelId: 'op-map-world',
+    subMapLevelId: 'op-map-germa-kingdom',
     name: 'Germa Kingdom',
     localizedName: { it: 'Regno del Germa', en: 'Germa Kingdom' },
     type: 'nation',

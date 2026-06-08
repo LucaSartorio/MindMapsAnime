@@ -250,6 +250,7 @@ export const onepieceLocationsParadise: Location[] = [
     id: 'loc-op-jaya',
     worldId: 'world-onepiece',
     mapLevelId: 'op-map-world',
+    subMapLevelId: 'op-map-jaya',
     name: 'Jaya',
     localizedName: { it: 'Jaya', en: 'Jaya' },
     type: 'landmark',

@@ -182,4 +182,19 @@ export const onepieceAssets: AssetReference[] = [
       },
     }),
   ),
+  ...['mary-geoise', 'dawn-island', 'loguetown', 'jaya', 'ohara', 'elbaf', 'god-valley', 'germa-kingdom'].map(
+    (slug) => ({
+      id: `op-${slug}-submap-placeholder`,
+      worldId: 'world-onepiece',
+      name: `${slug} sub-map (placeholder SVG)`,
+      kind: 'placeholder' as const,
+      source: 'local' as const,
+      license: 'placeholder/CC0',
+      author: 'local',
+      notes: {
+        it: `Placeholder concettuale della sotto-mappa di ${slug}.`,
+        en: `Conceptual placeholder for the ${slug} sub-map.`,
+      },
+    }),
+  ),
 ];
