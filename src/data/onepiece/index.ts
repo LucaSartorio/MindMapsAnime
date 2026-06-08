@@ -67,6 +67,7 @@ import { onepieceEventsExtra } from './eventsExtra';
 import { onepieceEventsExtra2 } from './eventsExtra2';
 import { onepieceEventsBattles } from './eventsBattles';
 import { onepieceEventsBattles2 } from './eventsBattles2';
+import { onepieceEventsBattles3 } from './eventsBattles3';
 import { onepieceEventsExtra3 } from './eventsExtra3';
 import { onepieceRoutes } from './routes';
 import { onepieceRoutesGrandLine } from './routesGrandLine';
@@ -75,6 +76,7 @@ import { onepieceDevilFruits } from './devilFruits';
 import { onepieceDevilFruitsExtra } from './devilFruitsExtra';
 import { onepieceDevilFruitsExtra2 } from './devilFruitsExtra2';
 import { onepieceAssets } from './assets';
+import { onepieceBounties } from './bounties';
 
 const onepiece = animeWorlds.find((w) => w.slug === 'onepiece')!;
 
@@ -133,7 +135,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceCharactersExtra2,
     ...onepieceCharactersExtra3,
     ...onepieceCharactersExtra4,
-  ],
+  ].map((c) => (onepieceBounties[c.id] ? { ...c, bounties: onepieceBounties[c.id] } : c)),
   factions: [
     ...onepieceFactions,
     ...onepieceFactionsSouthBlue,
@@ -175,6 +177,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceEventsExtra2,
     ...onepieceEventsBattles,
     ...onepieceEventsBattles2,
+    ...onepieceEventsBattles3,
     ...onepieceEventsExtra3,
   ],
   routes: [...onepieceRoutes, ...onepieceRoutesGrandLine, ...onepieceRoutesExtra],

@@ -400,6 +400,18 @@ export interface Location {
 
 /* ------------------------------ Character ------------------------------ */
 
+/** Una voce della progressione delle taglie di un personaggio. */
+export interface BountyEntry {
+  /** Importo della taglia in Berry (stringa formattata, es. "1.500.000.000"). */
+  amount: string;
+  /** Capitolo del manga in cui la taglia è mostrata. */
+  mangaChapter?: string;
+  /** Episodio dell'anime in cui la taglia è mostrata. */
+  animeEpisode?: string;
+  /** Contesto opzionale (es. "dopo Enies Lobby"). */
+  note?: Localizable;
+}
+
 export interface Character {
   id: string;
   worldId: string;
@@ -432,6 +444,12 @@ export interface Character {
   gender?: string;
   firstMangaAppearance?: string;
   firstAnimeAppearance?: string;
+  /**
+   * Progressione delle taglie (One Piece): in ordine cronologico crescente,
+   * con il capitolo/episodio in cui ciascuna taglia viene mostrata. L'ultima
+   * voce è la taglia attuale.
+   */
+  bounties?: BountyEntry[];
   shortDescription: Localizable;
   longDescription?: Localizable;
   /** Abilità o tecniche caratteristiche (free-text legacy) */

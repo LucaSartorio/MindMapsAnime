@@ -174,6 +174,47 @@ export function CharacterDetailsModal({
         </p>
       )}
 
+      {(character.bounties ?? []).length > 0 && (
+        <Section title={t('modals.bounty')}>
+          <ol className="space-y-1.5">
+            {character.bounties!.map((b, i) => {
+              const last = i === character.bounties!.length - 1;
+              const refs = [
+                b.mangaChapter ? `Manga ${b.mangaChapter}` : null,
+                b.animeEpisode ? `Anime ${b.animeEpisode}` : null,
+              ].filter(Boolean);
+              return (
+                <li
+                  key={i}
+                  className="flex items-baseline justify-between gap-2 text-sm"
+                >
+                  <span className="flex items-baseline gap-2 min-w-0">
+                    <span
+                      className={
+                        'font-mono font-semibold ' +
+                        (last ? 'text-ember-300' : 'text-ink-300')
+                      }
+                    >
+                      ฿{b.amount}
+                    </span>
+                    {b.note && (
+                      <span className="text-[11px] text-ink-400 truncate">
+                        {getLocalizedText(b.note, locale)}
+                      </span>
+                    )}
+                  </span>
+                  {refs.length > 0 && (
+                    <span className="text-[10px] text-ink-500 font-mono shrink-0">
+                      {refs.join(' · ')}
+                    </span>
+                  )}
+                </li>
+              );
+            })}
+          </ol>
+        </Section>
+      )}
+
       {(character.abilities ?? []).length > 0 && (
         <Section title={t("modals.abilities")}>
           <div className="flex flex-wrap gap-1.5">

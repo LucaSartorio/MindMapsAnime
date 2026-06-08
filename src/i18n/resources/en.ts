@@ -195,6 +195,7 @@ export const en = {
     noData: 'No data available',
     villagesPresent: 'Villages here',
     specialPlaces: 'Important places',
+    bounty: 'Bounties',
     hiddenVillages: 'Hidden villages',
     eventsInTerritory: 'Events in territory ({{count}})',
     eventsInNation: 'Events in nation ({{count}})',

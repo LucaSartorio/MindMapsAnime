@@ -198,6 +198,7 @@ export const it = {
     noData: 'Nessun dato disponibile',
     villagesPresent: 'Villaggi presenti',
     specialPlaces: 'Luoghi importanti',
+    bounty: 'Taglie',
     hiddenVillages: 'Villaggi nascosti',
     eventsInTerritory: 'Eventi nel territorio ({{count}})',
     eventsInNation: 'Eventi nella nazione ({{count}})',
