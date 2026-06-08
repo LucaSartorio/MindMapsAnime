@@ -313,8 +313,8 @@ export const onepieceLocationsParadise: Location[] = [
     name: 'Weatheria',
     localizedName: { it: 'Weatheria', en: 'Weatheria' },
     type: 'sacred_place',
-    x: 1488,
-    y: 478,
+    x: 1490,
+    y: 467,
     shortDescription: {
       it: "Isola del cielo abitata da scienziati del meteo, dove Nami studia la scienza del clima durante i due anni di separazione.",
       en: "A sky island inhabited by weather scientists, where Nami studies the science of climate during the two-year separation.",
