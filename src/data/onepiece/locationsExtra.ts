@@ -155,7 +155,7 @@ export const onepieceLocationsExtra: Location[] = [
     localizedName: { it: 'Baltigo', en: 'Baltigo' },
     type: 'hideout',
     x: 594,
-    y: 549,
+    y: 561,
     shortDescription: {
       it: "L'«isola dell'ultimo soffio», un tempo quartier generale segreto dell'Armata Rivoluzionaria di Dragon, poi abbandonata e distrutta.",
       en: "The 'island of the last breath', once the secret headquarters of Dragon's Revolutionary Army, later abandoned and destroyed.",
