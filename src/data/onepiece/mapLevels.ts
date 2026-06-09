@@ -94,8 +94,9 @@ export const onepieceMapLevels: MapLevel[] = [
     parentLevelId: 'op-map-world',
     triggerLocationId: 'loc-op-skypiea',
     backgroundAssetId: 'op-skypiea-submap-placeholder',
-    width: 1200,
-    height: 800,
+    // Immagine reale 1061 × 797: piano viewBox = pixel dell'immagine (pin in px).
+    width: 1061,
+    height: 797,
   },
   {
     id: 'op-map-dressrosa',

@@ -25,6 +25,7 @@ import type { AssetReference } from '@/types';
  * aggiorna width/height nel MapLevel mantenendo lo stesso aspect ratio.
  */
 export const ONEPIECE_SUBMAP_IMAGE_URLS: Record<string, string> = {
+  skypiea: '/assets/worlds/onepiece/maps/onepiece-skypiea-submap.jpg',
   // wano: '/assets/worlds/onepiece/maps/onepiece-wano-submap.jpeg',
   // alabasta: '/assets/worlds/onepiece/maps/onepiece-alabasta-submap.jpeg',
 };
