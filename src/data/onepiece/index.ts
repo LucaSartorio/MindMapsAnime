@@ -1,4 +1,4 @@
-import type { WorldDataset } from '@/types';
+import type { Location, WorldDataset } from '@/types';
 import { animeWorlds } from '@/data/worlds';
 import { onepieceMapLevels } from './mapLevels';
 import { onepieceNations } from './nations';
@@ -106,11 +106,46 @@ const onepiece = animeWorlds.find((w) => w.slug === 'onepiece')!;
  * Red Line — POI verificati, percorsi, archi e timeline per ciascuno — e i
  * Frutti del Diavolo come `jutsu`/abilità.
  */
+/**
+ * I luoghi delle sotto-mappe sono quasi tutti posti canonici realmente esistenti
+ * (es. il Patibolo di Roger a Loguetown, i livelli di Impel Down, la Torre della
+ * Giustizia di Enies Lobby): vanno quindi marcati `verified`. Restano
+ * `needs_verification` solo i pochi luoghi davvero dubbi — interni di God Valley
+ * (isola distrutta e mai mappata), dettagli di Elbaf non ancora mostrati e alcune
+ * stanze speculative — elencati qui sotto.
+ */
+const onepieceStillUnverifiedSubmapLocs = new Set<string>([
+  // God Valley: l'isola fu distrutta ~38 anni fa, la sua geografia interna è ignota.
+  'loc-op-gv-hunt', 'loc-op-gv-village', 'loc-op-gv-landing', 'loc-op-gv-forest',
+  // Elbaf: dettagli non ancora canonicamente mostrati/posizionati.
+  'loc-op-eb-dueling-ground', 'loc-op-eb-forge', 'loc-op-eb-hall',
+  // Stanze/luoghi specifici speculativi.
+  'loc-op-gk-sora', // Camera della Regina Sora (Germa)
+  'loc-op-oh-olvia-lab', // Studio personale di Nico Olvia (Ohara)
+  'loc-op-mg-national-treasure', // Camera del Tesoro Nazionale (Mary Geoise, mistero irrisolto)
+  'loc-op-eg-kuma-room', // Camera di Kuma (Egghead)
+]);
+
+/**
+ * Marca `verified` i luoghi delle sotto-mappe che sono canonici e realmente
+ * esistenti, lasciando `needs_verification` solo quelli nel set dei dubbi.
+ * I luoghi della mappa del mondo (`op-map-world`) non vengono toccati.
+ */
+function withVerifiedSubmaps(locations: Location[]): Location[] {
+  return locations.map((l) =>
+    l.mapLevelId !== 'op-map-world' &&
+    l.referenceStatus === 'needs_verification' &&
+    !onepieceStillUnverifiedSubmapLocs.has(l.id)
+      ? { ...l, referenceStatus: 'verified' }
+      : l,
+  );
+}
+
 export const onepieceDataset: WorldDataset = {
   world: onepiece,
   mapLevels: onepieceMapLevels,
   nations: onepieceNations,
-  locations: [
+  locations: withVerifiedSubmaps([
     ...onepieceLocationsEastBlue,
     ...onepieceLocationsParadise,
     ...onepieceLocationsRedLine,
@@ -125,7 +160,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceLocationsSubmaps4,
     ...onepieceLocationsSubmaps5,
     ...onepieceLocationsExtra2,
-  ],
+  ]),
   characters: withCharacterLinks(
     [
       ...onepieceCharactersEastBlue,

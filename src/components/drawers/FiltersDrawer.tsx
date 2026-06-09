@@ -34,6 +34,9 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
     setVisibleLayer(layer, !visibleLayers[layer] as VisibleLayers[K]);
   }
 
+  /** Alcuni mondi (es. One Piece) non hanno confini disegnati: in tal caso il toggle è inutile. */
+  const hasBoundaries = (dataset.boundaries?.length ?? 0) > 0;
+
   function toggleType(tp: LocationType) {
     setFilters({
       locationTypes: filters.locationTypes.includes(tp)
@@ -264,11 +267,13 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
 
           <Section title={t('filters.layersMap')}>
             <div className="space-y-1.5 text-ink-200">
-              <CheckRow
-                checked={visibleLayers.boundaries}
-                onChange={() => toggleLayer('boundaries')}
-                label={t('filters.showBoundaries')}
-              />
+              {hasBoundaries && (
+                <CheckRow
+                  checked={visibleLayers.boundaries}
+                  onChange={() => toggleLayer('boundaries')}
+                  label={t('filters.showBoundaries')}
+                />
+              )}
               <CheckRow
                 checked={visibleLayers.nationLabels}
                 onChange={() => toggleLayer('nationLabels')}
