@@ -219,7 +219,7 @@ export const onepieceEventsExtra: TimelineEvent[] = [
       en: "In Mock Town on Jaya, Luffy and Zoro silently take the humiliations of the pirate Bellamy, who mocks dreams. Mont Blanc Cricket then helps the crew aim for the sky.",
     },
     period: { it: 'Paradise · Skypiea', en: 'Paradise · Skypiea' },
-    arcId: 'arc-op-skypiea', locationId: 'loc-op-mock-town',
+    arcId: 'arc-op-skypiea', locationId: 'loc-op-jy-mock-town',
     characterIds: ['char-op-luffy', 'char-op-zoro'],
     mangaChapters: ['223-236'], animeEpisodes: ['145-152'],
     order: 16.2, canon: c, canonStatus: c, referenceStatus: v, tags: ['jaya', 'bellamy', 'mock-town'],
