@@ -25,3 +25,36 @@ Render an annotated overlay of every location pin on the map:
 
 (pins coloured by importance: main = red, secondary = orange, minor = yellow).
 Requires Python + Pillow (`pip install Pillow`).
+
+## Sub-map images (sotto-mappe)
+
+Sub-maps (Wano, Alabasta, Skypiea, Loguetown, Impel Down, …) use a generated
+SVG placeholder until you provide a real image. To add one:
+
+1. **File** → drop it in this folder. Recommended name:
+
+       onepiece-<slug>-submap.jpeg     e.g. onepiece-wano-submap.jpeg
+
+   `<slug>` is the sub-map slug (see `slug` in `src/data/onepiece/mapLevels.ts`):
+   `wano`, `alabasta`, `skypiea`, `dressrosa`, `totland`, `sabaody`, `marineford`,
+   `egghead`, `fishman-island`, `impel-down`, `enies-lobby`, `water-seven`,
+   `thriller-bark`, `zou`, `punk-hazard`, `amazon-lily`, `drum-island`,
+   `mary-geoise`, `dawn-island`, `loguetown`, `jaya`, `ohara`, `elbaf`,
+   `god-valley`, `germa-kingdom`.
+
+2. **Wire it** → add one line to `ONEPIECE_SUBMAP_IMAGE_URLS` in
+   `src/data/onepiece/assets.ts`:
+
+       wano: '/assets/worlds/onepiece/maps/onepiece-wano-submap.jpeg',
+
+   That promotes the `op-wano-submap-placeholder` asset to a real `<img>`.
+
+3. **Coordinate plane** → sub-map pins use the MapLevel `width`/`height`
+   (default **1200 × 800**). If your image has a different aspect ratio, update
+   `width`/`height` for that level in `mapLevels.ts` (keep the same ratio), then:
+
+       flowX = px_x / imgW * width
+       flowY = px_y / imgH * height
+
+Paths are served from the site root, so the `url` always starts with
+`/assets/worlds/onepiece/maps/…` (the `public/` prefix is dropped at runtime).

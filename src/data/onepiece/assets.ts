@@ -9,7 +9,27 @@ import type { AssetReference } from '@/types';
  * trattata come materiale da verificare (`needs_verification`) e attribuita
  * all'autore originale. Il mondo rappresentato è © Eiichiro Oda / Shueisha.
  */
-export const onepieceAssets: AssetReference[] = [
+/**
+ * Immagini reali delle sotto-mappe.
+ *
+ * Per dare a una sotto-mappa la sua immagine (al posto del placeholder SVG):
+ *  1. metti il file in  `public/assets/worlds/onepiece/maps/`
+ *     (nome consigliato: `onepiece-<slug>-submap.jpeg`, es. `onepiece-wano-submap.jpeg`);
+ *  2. aggiungi qui una riga  `<slug>: '/assets/worlds/onepiece/maps/onepiece-<slug>-submap.jpeg'`.
+ *
+ * Lo `<slug>` è quello della sotto-mappa (vedi `slug` in `mapLevels.ts`, es.
+ * `wano`, `alabasta`, `skypiea`, `dressrosa`, `loguetown`, `drum-island`, …):
+ * coincide con la parte centrale dell'id dell'asset `op-<slug>-submap-placeholder`.
+ * I pin della sotto-mappa usano il piano viewBox dato da `width`/`height` del
+ * relativo MapLevel (default 1200 × 800): se l'immagine ha proporzioni diverse,
+ * aggiorna width/height nel MapLevel mantenendo lo stesso aspect ratio.
+ */
+export const ONEPIECE_SUBMAP_IMAGE_URLS: Record<string, string> = {
+  // wano: '/assets/worlds/onepiece/maps/onepiece-wano-submap.jpeg',
+  // alabasta: '/assets/worlds/onepiece/maps/onepiece-alabasta-submap.jpeg',
+};
+
+const onepieceBaseAssets: AssetReference[] = [
   {
     id: 'op-cover-placeholder',
     worldId: 'world-onepiece',
@@ -198,3 +218,15 @@ export const onepieceAssets: AssetReference[] = [
     }),
   ),
 ];
+
+/**
+ * Se per una sotto-mappa è stata fornita un'immagine reale in
+ * `ONEPIECE_SUBMAP_IMAGE_URLS`, il relativo asset placeholder viene promosso a
+ * `kind: 'map'` con la `url` indicata (così `WorldMapBackground` la disegna come
+ * <img> invece del placeholder SVG). Altrimenti resta il placeholder.
+ */
+export const onepieceAssets: AssetReference[] = onepieceBaseAssets.map((a) => {
+  const m = /^op-(.+)-submap-placeholder$/.exec(a.id);
+  const url = m ? ONEPIECE_SUBMAP_IMAGE_URLS[m[1]] : undefined;
+  return url ? { ...a, kind: 'map', url } : a;
+});
