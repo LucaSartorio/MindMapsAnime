@@ -26,8 +26,10 @@ import type { AssetReference } from '@/types';
  */
 export const ONEPIECE_SUBMAP_IMAGE_URLS: Record<string, string> = {
   skypiea: '/assets/worlds/onepiece/maps/onepiece-skypiea-submap.jpg',
-  // wano: '/assets/worlds/onepiece/maps/onepiece-wano-submap.jpeg',
-  // alabasta: '/assets/worlds/onepiece/maps/onepiece-alabasta-submap.jpeg',
+  alabasta: '/assets/worlds/onepiece/maps/onepiece-alabasta-sub.jpg',
+  wano: '/assets/worlds/onepiece/maps/onepiece-wano-submap.jpg',
+  'enies-lobby': '/assets/worlds/onepiece/maps/onepiece-enieslobby-sub.jpg',
+  jaya: '/assets/worlds/onepiece/maps/onepiece-jaya-sub.jpg',
 };
 
 const onepieceBaseAssets: AssetReference[] = [
