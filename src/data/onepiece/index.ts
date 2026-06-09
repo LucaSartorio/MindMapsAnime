@@ -141,11 +141,71 @@ function withVerifiedSubmaps(locations: Location[]): Location[] {
   );
 }
 
+/**
+ * Posizioni dei pin (in pixel dell'immagine) sulle sotto-mappe che hanno una
+ * mappa reale: ricavate leggendo le etichette dell'immagine (Alabasta, Jaya),
+ * l'ordine canonico verticale (Enies Lobby) o la disposizione delle regioni
+ * (Wano). Sovrascrivono le coordinate concettuali dei file di definizione.
+ */
+const onepieceSubmapPinOverrides: Record<string, { x: number; y: number }> = {
+  /* --- Alabasta (1192 × 670) --- */
+  'loc-op-rainbase': { x: 350, y: 325 },
+  'loc-op-al-rain-dinners': { x: 300, y: 355 },
+  'loc-op-alubarna': { x: 560, y: 305 },
+  'loc-op-al-royal-palace': { x: 575, y: 270 },
+  'loc-op-al-tomb': { x: 610, y: 285 },
+  'loc-op-tamarisk': { x: 845, y: 330 },
+  'loc-op-al-sandora': { x: 515, y: 370 },
+  'loc-op-al-desert': { x: 705, y: 415 },
+  'loc-op-yuba': { x: 360, y: 465 },
+  'loc-op-al-spiders-cafe': { x: 325, y: 580 },
+  'loc-op-erumalu': { x: 500, y: 580 },
+  'loc-op-katorea': { x: 655, y: 562 },
+  'loc-op-nanohana': { x: 600, y: 620 },
+
+  /* --- Jaya (1192 × 670) --- */
+  'loc-op-jy-mock-town': { x: 322, y: 240 },
+  'loc-op-jy-bar': { x: 372, y: 290 },
+  'loc-op-jy-cricket-house': { x: 846, y: 157 },
+  'loc-op-jy-south-half': { x: 787, y: 415 },
+  'loc-op-jy-knock-up': { x: 660, y: 560 },
+
+  /* --- Enies Lobby (469 × 600), stack verticale dal basso (arrivo) all'alto --- */
+  'loc-op-el-station': { x: 160, y: 520 },
+  'loc-op-el-plaza': { x: 250, y: 460 },
+  'loc-op-el-courthouse': { x: 235, y: 320 },
+  'loc-op-el-tower': { x: 235, y: 200 },
+  'loc-op-el-gates': { x: 235, y: 110 },
+  'loc-op-el-bridge': { x: 225, y: 32 },
+
+  /* --- Wano (2000 × 1406): regioni a petalo + Onigashima staccata sotto --- */
+  'loc-op-flower-capital': { x: 1000, y: 470 },
+  'loc-op-kuri': { x: 360, y: 600 },
+  'loc-op-wn-kibi': { x: 700, y: 300 },
+  'loc-op-wn-ringo': { x: 1300, y: 290 },
+  'loc-op-wn-hakumai': { x: 1560, y: 450 },
+  'loc-op-wn-udon': { x: 820, y: 740 },
+  'loc-op-onigashima': { x: 1000, y: 1170 },
+  'loc-op-wn-oden-castle': { x: 300, y: 470 },
+  'loc-op-wn-mt-atama': { x: 180, y: 440 },
+  'loc-op-wn-amigasa': { x: 260, y: 720 },
+  'loc-op-wn-bakura': { x: 520, y: 650 },
+  'loc-op-wn-okobore': { x: 700, y: 600 },
+};
+
+/** Applica le posizioni dei pin delle sotto-mappe con immagine reale. */
+function withSubmapPins(locations: Location[]): Location[] {
+  return locations.map((l) => {
+    const p = onepieceSubmapPinOverrides[l.id];
+    return p ? { ...l, x: p.x, y: p.y } : l;
+  });
+}
+
 export const onepieceDataset: WorldDataset = {
   world: onepiece,
   mapLevels: onepieceMapLevels,
   nations: onepieceNations,
-  locations: withVerifiedSubmaps([
+  locations: withSubmapPins(withVerifiedSubmaps([
     ...onepieceLocationsEastBlue,
     ...onepieceLocationsParadise,
     ...onepieceLocationsRedLine,
@@ -160,7 +220,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceLocationsSubmaps4,
     ...onepieceLocationsSubmaps5,
     ...onepieceLocationsExtra2,
-  ]),
+  ])),
   characters: withCharacterLinks(
     [
       ...onepieceCharactersEastBlue,

@@ -15,6 +15,21 @@ import type { MapLevel } from '@/types';
  */
 export const ONEPIECE_MAP_VIEWBOX = { width: 2000, height: 1000 } as const;
 
+/**
+ * Dimensioni native (px) delle sotto-mappe che hanno un'immagine reale: il piano
+ * viewBox coincide con i pixel dell'immagine, così i pin si esprimono in pixel e
+ * l'immagine non viene distorta. Le sotto-mappe ancora a placeholder usano il
+ * default 1200 × 800.
+ */
+const SUBMAP_DIMS: Record<string, { width: number; height: number }> = {
+  skypiea: { width: 1061, height: 797 },
+  alabasta: { width: 1192, height: 670 },
+  wano: { width: 2000, height: 1406 },
+  'enies-lobby': { width: 469, height: 600 },
+  jaya: { width: 1192, height: 670 },
+};
+const dims = (slug: string) => SUBMAP_DIMS[slug] ?? { width: 1200, height: 800 };
+
 /** Path locale dell'immagine di riferimento (vive in public/, servita alla root). */
 export const ONEPIECE_WORLD_MAP_SRC = '/assets/worlds/onepiece/maps/onepiece-world-map.jpeg';
 
@@ -62,8 +77,7 @@ export const onepieceMapLevels: MapLevel[] = [
     parentLevelId: 'op-map-world',
     triggerLocationId: 'loc-op-alabasta',
     backgroundAssetId: 'op-alabasta-submap-placeholder',
-    width: 1200,
-    height: 800,
+    ...dims('alabasta'),
   },
   {
     id: 'op-map-wano',
@@ -78,8 +92,7 @@ export const onepieceMapLevels: MapLevel[] = [
     parentLevelId: 'op-map-world',
     triggerLocationId: 'loc-op-wano',
     backgroundAssetId: 'op-wano-submap-placeholder',
-    width: 1200,
-    height: 800,
+    ...dims('wano'),
   },
   {
     id: 'op-map-skypiea',
@@ -94,9 +107,7 @@ export const onepieceMapLevels: MapLevel[] = [
     parentLevelId: 'op-map-world',
     triggerLocationId: 'loc-op-skypiea',
     backgroundAssetId: 'op-skypiea-submap-placeholder',
-    // Immagine reale 1061 × 797: piano viewBox = pixel dell'immagine (pin in px).
-    width: 1061,
-    height: 797,
+    ...dims('skypiea'),
   },
   {
     id: 'op-map-dressrosa',
@@ -213,8 +224,7 @@ export const onepieceMapLevels: MapLevel[] = [
     parentLevelId: 'op-map-world' as const,
     triggerLocationId: trigger,
     backgroundAssetId: `op-${slug}-submap-placeholder`,
-    width: 1200,
-    height: 800,
+    ...dims(slug),
   })),
   ...([
     ['mary-geoise', 'loc-op-mary-geoise', 'Mary Geoise', 'Mary Geoise',
@@ -251,7 +261,6 @@ export const onepieceMapLevels: MapLevel[] = [
     parentLevelId: 'op-map-world' as const,
     triggerLocationId: trigger,
     backgroundAssetId: `op-${slug}-submap-placeholder`,
-    width: 1200,
-    height: 800,
+    ...dims(slug),
   })),
 ];
