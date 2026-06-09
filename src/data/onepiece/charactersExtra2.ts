@@ -108,7 +108,7 @@ export const onepieceCharactersExtra2: Character[] = [
     "Señor Pink, a melancholy gentleman dressed as a baby for a vow of love, fights Franky at Dressrosa in a duel that reveals his tragic family story.",
     'alive', ['donquijote', 'dressrosa']),
   C('char-op-bellamy', 'Bellamy', ['la Iena'], 'minor', ['neutral'], 'male',
-    ['faction-op-donquixote-pirates'], ['loc-op-mock-town'], '223', '151',
+    ['faction-op-donquixote-pirates'], ['loc-op-jy-mock-town'], '223', '151',
     "Pirata utente del frutto Molla che derise i sogni a Jaya, poi ammiratore disilluso di Rufy a Dressrosa.",
     "A Spring-Fruit pirate who mocked dreams at Jaya, later a disillusioned admirer of Luffy at Dressrosa.",
     "Bellamy «la Iena» schernì Rufy a Mock Town; anni dopo, ridotto a pedina di Doflamingo, ritrova rispetto per il sogno che aveva deriso e si scontra con Rufy a Dressrosa.",
