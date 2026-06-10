@@ -95,10 +95,12 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
     [route],
   );
 
-  // Nodi: layer di sfondo (z=0), layer confini (z=1), layer labels (z=2),
-  // pin location (default React Flow).
-  const nodes = useMemo<Node<MapNodeData | MapLayerNodeData>[]>(() => {
-    const layerNodes: Node<MapLayerNodeData>[] = [
+  // Layer nodi (sfondo, confini, labels): dipendono SOLO da livello+dataset,
+  // non dalla selezione. Memoizzati a parte così cliccare un pin non
+  // ricostruisce (né ri-renderizza) l'overlay confini SVG e le labels —
+  // mantengono identità e i loro nodi memo vengono saltati da React Flow.
+  const layerNodes = useMemo<Node<MapLayerNodeData>[]>(() => {
+    return [
       {
         id: '__layer-background',
         type: 'map-layer',
@@ -158,8 +160,12 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
         style: { pointerEvents: 'none' as const },
       },
     ];
+  }, [activeLevel, dataset]);
 
-    const pinNodes: Node<MapNodeData>[] = visibleLocations.map((loc) => ({
+  // Pin location: dipendono da quali luoghi sono visibili, dalla selezione e
+  // dalla locale (label). Ricostruirli al cambio selezione è leggero.
+  const pinNodes = useMemo<Node<MapNodeData>[]>(() => {
+    return visibleLocations.map((loc) => ({
       id: loc.id,
       type: 'map-node',
       position: { x: loc.x, y: loc.y },
@@ -174,16 +180,12 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
       draggable: false,
       selectable: true,
     }));
+  }, [visibleLocations, selectedLocationId, highlightedLocationIds, locale]);
 
-    return [...layerNodes, ...pinNodes];
-  }, [
-    activeLevel,
-    dataset,
-    visibleLocations,
-    selectedLocationId,
-    highlightedLocationIds,
-    locale,
-  ]);
+  const nodes = useMemo<Node<MapNodeData | MapLayerNodeData>[]>(
+    () => [...layerNodes, ...pinNodes],
+    [layerNodes, pinNodes],
+  );
 
   const edges = useMemo<Edge<MapEdgeData>[]>(() => {
     if (!route || !filters.showRoutes) return [];
