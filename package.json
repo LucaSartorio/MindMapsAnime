@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@vercel/speed-insights": "^2.0.0",
+    "@vercel/analytics": "^2.0.1",
     "@xyflow/react": "^12.3.5",
     "i18next": "^23.16.8",
     "i18next-browser-languagedetector": "^8.2.1",
