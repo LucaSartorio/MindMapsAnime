@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useDeferredValue, useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
@@ -39,6 +39,8 @@ export function ClansAndFactionsPage({ dataset }: ClansAndFactionsPageProps) {
   const initialId = params.get('id');
   const [filter, setFilter] = useState<string>('');
   const [query, setQuery] = useState('');
+  // Differita: i tasti dipingono subito, il refiltro gira a bassa priorità.
+  const deferredQuery = useDeferredValue(query);
   const openFactionModal = useUiStore((s) => s.openFactionModal);
   const filters = useMapStore((s) => s.filters);
 
@@ -67,7 +69,7 @@ export function ClansAndFactionsPage({ dataset }: ClansAndFactionsPageProps) {
   );
 
   const items = useMemo(() => {
-    const q = query.trim().toLowerCase();
+    const q = deferredQuery.trim().toLowerCase();
     const bySeries = filterFactionsBySeries(dataset.factions, filters, dataset);
     return bySeries
       .filter((f) => {
@@ -80,13 +82,13 @@ export function ClansAndFactionsPage({ dataset }: ClansAndFactionsPageProps) {
         return true;
       })
       .sort((a, b) => a.name.localeCompare(b.name));
-  }, [dataset, filters, filter, query, locale]);
+  }, [dataset, filters, filter, deferredQuery, locale]);
 
   /** Vetrina clan: prende dalla whitelist in ordine, intersecando con
    *  quanto è presente nel dataset filtrato per serie. Vuota se l'utente
    *  sta cercando o filtrando per tipo. */
   const featuredItems: FeaturedTile[] = useMemo(() => {
-    if (query.trim() || filter) return [];
+    if (deferredQuery.trim() || filter) return [];
     const bySeries = filterFactionsBySeries(dataset.factions, filters, dataset);
     const map = new Map(bySeries.map((f) => [f.id, f]));
     const ranked = featuredOrder
@@ -117,7 +119,7 @@ export function ClansAndFactionsPage({ dataset }: ClansAndFactionsPageProps) {
         onClick: () => openFactionModal(f.id),
       };
     });
-  }, [dataset, filters, locale, query, filter, openFactionModal, featuredOrder]);
+  }, [dataset, filters, locale, deferredQuery, filter, openFactionModal, featuredOrder]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6">
