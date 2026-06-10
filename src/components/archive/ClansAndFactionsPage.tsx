@@ -177,11 +177,11 @@ export function ClansAndFactionsPage({ dataset }: ClansAndFactionsPageProps) {
       ) : (
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((f) => (
-            <li key={f.id}>
+            <li key={f.id} className="cv-auto">
               <ClanFactionCard
                 faction={f}
                 dataset={dataset}
-                onClick={() => openFactionModal(f.id)}
+                onSelect={openFactionModal}
               />
             </li>
           ))}

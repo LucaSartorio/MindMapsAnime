@@ -157,6 +157,29 @@ async function main() {
       console.log(`${ok ? '✓' : '✗'} ${check.path}${detail}`);
     }
 
+    // Interazione: cliccare una card personaggio deve aprire il modale
+    // (valida il wiring onSelect dopo la memoizzazione).
+    {
+      await page.goto(`${BASE}/worlds/onepiece/characters`, {
+        waitUntil: 'networkidle',
+        timeout: 30_000,
+      });
+      const before = consoleErrors.length;
+      await page.locator('main button, ul button').first().click();
+      const dialog = page.locator('[role="dialog"]');
+      const ok = await dialog
+        .first()
+        .waitFor({ state: 'visible', timeout: 8_000 })
+        .then(() => true, () => false);
+      const newErrors = consoleErrors.length - before;
+      if (!ok || newErrors > 0) failures += 1;
+      console.log(
+        `${ok && newErrors === 0 ? '✓' : '✗'} click card → modale${
+          ok ? '' : ' (modale non aperto)'
+        }${newErrors ? ` (${newErrors} errori console)` : ''}`,
+      );
+    }
+
     await browser.close();
   } catch (err) {
     console.error('Errore durante lo smoke test:', err);

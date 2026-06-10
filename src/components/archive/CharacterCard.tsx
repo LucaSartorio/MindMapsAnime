@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import type { Character, WorldDataset } from '@/types';
 import { Card } from '@/components/common/Card';
 import { Badge } from '@/components/common/Badge';
@@ -12,14 +13,14 @@ interface CharacterCardProps {
   character: Character;
   dataset: WorldDataset;
   active?: boolean;
-  onClick?: () => void;
+  onSelect: (id: string) => void;
 }
 
-export function CharacterCard({
+function CharacterCardComponent({
   character,
   dataset,
   active,
-  onClick,
+  onSelect,
 }: CharacterCardProps) {
   const locale = useLocaleStore((s) => s.locale);
   const rankSystem = getCharacterRankSystem(dataset.world, locale);
@@ -39,7 +40,7 @@ export function CharacterCard({
     >
       <button
         type="button"
-        onClick={onClick}
+        onClick={() => onSelect(character.id)}
         className="flex flex-col text-left w-full h-full p-4 gap-3"
       >
         {/* Riga superiore: miniatura quadrata + titolo (stesso linguaggio del modale) */}
@@ -112,3 +113,5 @@ export function CharacterCard({
     </Card>
   );
 }
+
+export const CharacterCard = memo(CharacterCardComponent);

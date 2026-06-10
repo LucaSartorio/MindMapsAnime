@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import type { Jutsu, WorldDataset } from '@/types';
 import { Card } from '@/components/common/Card';
 import { Badge } from '@/components/common/Badge';
@@ -16,10 +17,10 @@ interface JutsuCardProps {
   jutsu: Jutsu;
   dataset: WorldDataset;
   active?: boolean;
-  onClick?: () => void;
+  onSelect: (id: string) => void;
 }
 
-export function JutsuCard({ jutsu, dataset, active, onClick }: JutsuCardProps) {
+function JutsuCardComponent({ jutsu, dataset, active, onSelect }: JutsuCardProps) {
   const locale = useLocaleStore((s) => s.locale);
   const world = dataset.world;
   const attribute = getAbilityAttribute(world, locale);
@@ -36,7 +37,7 @@ export function JutsuCard({ jutsu, dataset, active, onClick }: JutsuCardProps) {
     >
       <button
         type="button"
-        onClick={onClick}
+        onClick={() => onSelect(jutsu.id)}
         className="flex flex-col text-left w-full h-full p-4 gap-3"
       >
         <div className="flex items-start gap-3">
@@ -86,3 +87,5 @@ export function JutsuCard({ jutsu, dataset, active, onClick }: JutsuCardProps) {
     </Card>
   );
 }
+
+export const JutsuCard = memo(JutsuCardComponent);
