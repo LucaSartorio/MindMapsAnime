@@ -6,6 +6,7 @@ import { ComingSoonBadge } from './ComingSoonBadge';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText } from '@/utils/localization';
 import { resolveWorldLogo } from '@/utils/entityImage';
+import { loadWorldDataset } from '@/data/registry';
 
 interface WorldCardProps {
   world: AnimeWorld;
@@ -120,11 +121,18 @@ export function WorldCard({ world }: WorldCardProps) {
     );
   }
 
+  // Prefetch del chunk dataset al primo hover/touch: al click la mappa
+  // apre senza attesa (il loader ha cache + dedup, chiamarlo più volte è ok).
+  const prefetch = () => void loadWorldDataset(world.slug).catch(() => {});
+
   return (
     <Link
       to={`/worlds/${world.slug}`}
       aria-label={`${t('worldCard.explore')} · ${world.title}`}
       className="block focus:outline-none"
+      onMouseEnter={prefetch}
+      onTouchStart={prefetch}
+      onFocus={prefetch}
     >
       {inner}
     </Link>

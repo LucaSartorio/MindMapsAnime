@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useDeferredValue, useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
@@ -23,6 +23,9 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
   const [params] = useSearchParams();
   const initialId = params.get('id');
   const [query, setQuery] = useState('');
+  // Differita: i tasti dipingono subito, il refiltro delle card (centinaia su
+  // One Piece) avviene in un render a bassa priorità → INP basso.
+  const deferredQuery = useDeferredValue(query);
   const [filterVillage, setFilterVillage] = useState<string>('');
   const [filterRank, setFilterRank] = useState<string>('');
   const openCharacterModal = useUiStore((s) => s.openCharacterModal);
@@ -57,7 +60,7 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
   }, [dataset.characters, dataset.world, rankSystem]);
 
   const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase();
+    const q = deferredQuery.trim().toLowerCase();
     const bySeries = filterCharactersBySeries(dataset.characters, filters, dataset);
     return bySeries
       .filter((c) => {
@@ -73,14 +76,14 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
         return true;
       })
       .sort((a, b) => a.name.localeCompare(b.name));
-  }, [dataset, filters, query, filterVillage, filterRank, locale]);
+  }, [dataset, filters, deferredQuery, filterVillage, filterRank, locale]);
 
   /** Vetrina iniziale: i sei "main" più rappresentativi (filtrati per serie,
    * ignorando ricerca/filtri locali — non vogliamo che cambi sotto le mani
    * scrivendo nella search box). Quando l'utente cerca o filtra, la nasconde
    * per dare priorità ai risultati. */
   const featuredItems: FeaturedTile[] = useMemo(() => {
-    if (query.trim() || filterVillage || filterRank) return [];
+    if (deferredQuery.trim() || filterVillage || filterRank) return [];
     const bySeries = filterCharactersBySeries(dataset.characters, filters, dataset);
     const ranked = bySeries
       .filter((c) => c.importance === 'main' || c.importance === 'major')
@@ -114,7 +117,7 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
         onClick: () => openCharacterModal(c.id),
       };
     });
-  }, [dataset, filters, locale, query, filterVillage, filterRank, openCharacterModal]);
+  }, [dataset, filters, locale, deferredQuery, filterVillage, filterRank, openCharacterModal]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6">

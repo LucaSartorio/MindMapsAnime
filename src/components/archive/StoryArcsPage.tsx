@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useDeferredValue, useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
@@ -20,6 +20,8 @@ export function StoryArcsPage({ dataset }: StoryArcsPageProps) {
   const [params] = useSearchParams();
   const initialId = params.get('id');
   const [query, setQuery] = useState('');
+  // Differita: i tasti dipingono subito, il refiltro gira a bassa priorità.
+  const deferredQuery = useDeferredValue(query);
   const [saga, setSaga] = useState('');
   const openArcModal = useUiStore((s) => s.openArcModal);
   const filters = useMapStore((s) => s.filters);
@@ -41,7 +43,7 @@ export function StoryArcsPage({ dataset }: StoryArcsPageProps) {
   );
 
   const items = useMemo(() => {
-    const q = query.trim().toLowerCase();
+    const q = deferredQuery.trim().toLowerCase();
     return [...dataset.arcs]
       .sort((a, b) => a.order - b.order)
       .filter((a) => {
@@ -56,7 +58,7 @@ export function StoryArcsPage({ dataset }: StoryArcsPageProps) {
         }
         return true;
       });
-  }, [dataset.arcs, filters.series, query, saga, locale]);
+  }, [dataset.arcs, filters.series, deferredQuery, saga, locale]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6">
