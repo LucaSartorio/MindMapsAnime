@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import type { StoryArc, WorldDataset } from '@/types';
 import { Card } from '@/components/common/Card';
 import { Badge } from '@/components/common/Badge';
@@ -11,14 +12,14 @@ interface StoryArcCardProps {
   arc: StoryArc;
   dataset: WorldDataset;
   active?: boolean;
-  onClick?: () => void;
+  onSelect: (id: string) => void;
 }
 
-export function StoryArcCard({
+function StoryArcCardComponent({
   arc,
   dataset,
   active,
-  onClick,
+  onSelect,
 }: StoryArcCardProps) {
   const { t } = useTranslation();
   const locale = useLocaleStore((s) => s.locale);
@@ -38,7 +39,7 @@ export function StoryArcCard({
     >
       <button
         type="button"
-        onClick={onClick}
+        onClick={() => onSelect(arc.id)}
         className="text-left w-full flex flex-col gap-3"
       >
         <div className="flex items-center justify-between text-[10px] uppercase tracking-widest text-ink-400 font-mono">
@@ -66,3 +67,5 @@ export function StoryArcCard({
     </Card>
   );
 }
+
+export const StoryArcCard = memo(StoryArcCardComponent);

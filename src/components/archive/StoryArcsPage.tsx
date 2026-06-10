@@ -105,11 +105,11 @@ export function StoryArcsPage({ dataset }: StoryArcsPageProps) {
       ) : (
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((a) => (
-            <li key={a.id}>
+            <li key={a.id} className="cv-auto">
               <StoryArcCard
                 arc={a}
                 dataset={dataset}
-                onClick={() => openArcModal(a.id)}
+                onSelect={openArcModal}
               />
             </li>
           ))}

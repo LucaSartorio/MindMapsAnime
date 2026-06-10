@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import type { Faction, WorldDataset } from '@/types';
 import { Card } from '@/components/common/Card';
 import { Badge } from '@/components/common/Badge';
@@ -10,14 +11,14 @@ interface ClanFactionCardProps {
   faction: Faction;
   dataset: WorldDataset;
   active?: boolean;
-  onClick?: () => void;
+  onSelect: (id: string) => void;
 }
 
-export function ClanFactionCard({
+function ClanFactionCardComponent({
   faction,
   dataset,
   active,
-  onClick,
+  onSelect,
 }: ClanFactionCardProps) {
   const locale = useLocaleStore((s) => s.locale);
   const village = faction.villageLocationId
@@ -36,7 +37,7 @@ export function ClanFactionCard({
     >
       <button
         type="button"
-        onClick={onClick}
+        onClick={() => onSelect(faction.id)}
         className="text-left w-full h-full flex flex-col p-4 gap-3"
       >
         <div className="flex items-start gap-3">
@@ -98,3 +99,5 @@ export function ClanFactionCard({
     </Card>
   );
 }
+
+export const ClanFactionCard = memo(ClanFactionCardComponent);

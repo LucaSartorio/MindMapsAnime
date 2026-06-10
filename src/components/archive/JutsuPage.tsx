@@ -202,11 +202,11 @@ export function JutsuPage({ dataset }: JutsuPageProps) {
       ) : (
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {filtered.map((j) => (
-            <li key={j.id}>
+            <li key={j.id} className="cv-auto">
               <JutsuCard
                 jutsu={j}
                 dataset={dataset}
-                onClick={() => openJutsuModal(j.id)}
+                onSelect={openJutsuModal}
               />
             </li>
           ))}

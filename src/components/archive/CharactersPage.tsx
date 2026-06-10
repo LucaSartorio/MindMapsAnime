@@ -187,11 +187,11 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
       ) : (
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {filtered.map((c) => (
-            <li key={c.id}>
+            <li key={c.id} className="cv-auto">
               <CharacterCard
                 character={c}
                 dataset={dataset}
-                onClick={() => openCharacterModal(c.id)}
+                onSelect={openCharacterModal}
               />
             </li>
           ))}
