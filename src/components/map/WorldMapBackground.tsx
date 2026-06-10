@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { MapLevel, WorldDataset } from '@/types';
+import { getHxhSubmapBackground } from './submaps/HxhSubmapBackgrounds';
 
 interface WorldMapBackgroundProps {
   level: MapLevel;
@@ -43,6 +44,11 @@ export function WorldMapBackground({ level, dataset }: WorldMapBackgroundProps) 
 
   if (level.slug === 'konoha') {
     return <KonohaPlaceholder level={level} />;
+  }
+  // Sotto-mappe HxH con sfondo SVG dedicato (Torre Celeste, Zoldyck, …).
+  if (level.worldId === 'world-hunterxhunter' && level.parentLevelId) {
+    const hxh = getHxhSubmapBackground(level);
+    if (hxh) return hxh;
   }
   if (level.parentLevelId) {
     return <VillageSubmapPlaceholder level={level} />;

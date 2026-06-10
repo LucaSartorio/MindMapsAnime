@@ -97,7 +97,13 @@ export const animeWorlds: AnimeWorld[] = [
       highlight: '#e10b0b',
     },
     defaultMapLevelId: 'hxh-map-world',
-    availableMapLevelIds: ['hxh-map-world'],
+    availableMapLevelIds: [
+      'hxh-map-world',
+      'hxh-map-heavens-arena',
+      'hxh-map-zoldyck',
+      'hxh-map-greed-island',
+      'hxh-map-east-gorteau',
+    ],
     coverAssetId: 'hxh-cover-placeholder',
     tags: ['shonen', 'hunter', 'yoshihiro togashi', 'jump'],
     metadata: {

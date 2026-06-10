@@ -32,4 +32,68 @@ export const hxhMapLevels: MapLevel[] = [
     width: HXH_MAP_VIEWBOX.width,
     height: HXH_MAP_VIEWBOX.height,
   },
+
+  /* ===================== SOTTO-MAPPE (drill-down) ===================== */
+  // Schemi concettuali: posizioni indicative su un piano dedicato. Si aprono
+  // con doppio click sul pin "trigger" della world map (subMapLevelId).
+  {
+    id: 'hxh-map-heavens-arena',
+    worldId: 'world-hunterxhunter',
+    slug: 'heavens-arena',
+    name: 'Heavens Arena',
+    localizedName: { it: 'Torre Celeste · i piani', en: 'Heavens Arena · the floors' },
+    description: {
+      it: 'Sotto-mappa schematica della Torre Celeste: i piani-chiave dove si combatte e si impara il Nen. Posizioni concettuali.',
+      en: 'Schematic sub-map of Heavens Arena: the key floors where one fights and learns Nen. Conceptual positions.',
+    },
+    parentLevelId: 'hxh-map-world',
+    triggerLocationId: 'loc-hxh-heavens-arena',
+    width: 1000,
+    height: 1400,
+  },
+  {
+    id: 'hxh-map-zoldyck',
+    worldId: 'world-hunterxhunter',
+    slug: 'zoldyck-estate',
+    name: 'Kukuroo Mountain',
+    localizedName: { it: 'Monte Kukuroo · Tenuta Zoldyck', en: 'Kukuroo Mountain · Zoldyck Estate' },
+    description: {
+      it: 'Sotto-mappa della tenuta degli Zoldyck sul Monte Kukuroo: dalla Porta della Prova alla residenza. Posizioni concettuali.',
+      en: 'Sub-map of the Zoldyck estate on Kukuroo Mountain: from the Testing Gate to the residence. Conceptual positions.',
+    },
+    parentLevelId: 'hxh-map-world',
+    triggerLocationId: 'loc-hxh-zoldyck-estate',
+    width: 1200,
+    height: 900,
+  },
+  {
+    id: 'hxh-map-greed-island',
+    worldId: 'world-hunterxhunter',
+    slug: 'greed-island',
+    name: 'Greed Island',
+    localizedName: { it: 'Greed Island · il gioco', en: 'Greed Island · the game' },
+    description: {
+      it: 'Sotto-mappa del mondo-gioco di Greed Island: le città-carta principali. Posizioni concettuali.',
+      en: 'Sub-map of the Greed Island game world: the main card-towns. Conceptual positions.',
+    },
+    parentLevelId: 'hxh-map-world',
+    triggerLocationId: 'loc-hxh-greed-island',
+    width: 1300,
+    height: 900,
+  },
+  {
+    id: 'hxh-map-east-gorteau',
+    worldId: 'world-hunterxhunter',
+    slug: 'east-gorteau-palace',
+    name: 'East Gorteau Palace',
+    localizedName: { it: 'Palazzo di East Gorteau', en: 'East Gorteau Palace' },
+    description: {
+      it: 'Sotto-mappa del palazzo reale di East Gorteau: le aree dello scontro finale con le Formiche Chimera. Posizioni concettuali.',
+      en: 'Sub-map of the East Gorteau royal palace: the areas of the final clash with the Chimera Ants. Conceptual positions.',
+    },
+    parentLevelId: 'hxh-map-world',
+    triggerLocationId: 'loc-hxh-east-gorteau',
+    width: 1200,
+    height: 900,
+  },
 ];
