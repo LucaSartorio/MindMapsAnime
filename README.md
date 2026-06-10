@@ -1,99 +1,135 @@
-# Anime Interactive Maps
+# Mappe Interattive
 
-Piattaforma frontend generica per **mappe interattive di anime e manga**.
-Per ogni opera puoi esplorare mondo, nazioni, villaggi, luoghi simbolo,
-personaggi, clan & fazioni, jutsu/tecniche, archi narrativi, eventi della
+Piattaforma frontend generica per **mappe interattive di mondi narrativi**
+(anime, manga e oltre). Per ogni opera puoi esplorare mondo, nazioni, regioni,
+villaggi/luoghi simbolo, personaggi, clan & fazioni, sistema di poteri
+(jutsu / nen / frutti del diavolo / tecniche…), archi narrativi, eventi della
 timeline e percorsi dei protagonisti.
 
 **Stack:** React 18 + TypeScript (strict) + Vite + Zustand + React Flow
-(`@xyflow/react`) + Tailwind CSS + React Router.
-Nessun backend, nessun database remoto — tutti i dati vivono in file
-TypeScript locali sotto `src/data/`.
+(`@xyflow/react`) + Tailwind CSS + React Router. Vercel Analytics + Speed
+Insights per la telemetria. Nessun backend, nessun database remoto — **tutti i
+dati vivono in file TypeScript locali** sotto `src/data/`.
+
+Lo scheletro dell'app è **interamente dataset-driven e dinamico per mondo**:
+aggiungere un'opera significa creare un dataset + una config, senza toccare i
+componenti.
 
 ---
 
 ## ✦ Mondi inclusi
 
-| Mondo           | Slug            | Stato         |
-| --------------- | --------------- | ------------- |
-| Naruto          | `naruto`        | ✓ Disponibile |
-| Hunter x Hunter | `hunterxhunter` | Coming soon   |
+| Mondo            | Slug            | Stato         | Sistema di poteri   |
+| ---------------- | --------------- | ------------- | ------------------- |
+| Naruto           | `naruto`        | ✓ Disponibile | Jutsu               |
+| Hunter x Hunter  | `hunterxhunter` | ✓ Disponibile | Nen                 |
+| One Piece        | `onepiece`      | ✓ Disponibile | Frutti del Diavolo  |
+| Dragon Ball      | `dragonball`    | Coming soon   | Tecniche            |
+| Attack on Titan  | `attackontitan` | Coming soon   | Abilità             |
 
-### Dataset Naruto (stato attuale)
+### Dataset attuali
 
-| Entità        | Quantità |
-| ------------- | -------- |
-| Personaggi    | 131      |
-| Clan & fazioni | 51      |
-| Team          | 10       |
-| Jutsu         | 101      |
-| Archi narrativi | 23     |
-| Eventi timeline | 111    |
-| Percorsi      | 41       |
-| Luoghi        | 88       |
-| Nazioni       | 26       |
-| Confini (boundaries) | 26 |
-| Livelli mappa | 10       |
+| Entità            | Naruto | Hunter x Hunter | One Piece |
+| ----------------- | -----: | --------------: | --------: |
+| Personaggi        |    206 |             120 |       367 |
+| Clan & fazioni    |     54 |              10 |        44 |
+| Team              |     12 |               0 |         0 |
+| Tecniche (jutsu)  |    134 |              60 |       117 |
+| Archi narrativi   |     32 |               8 |        31 |
+| Eventi timeline   |    118 |              93 |       185 |
+| Percorsi          |     41 |              16 |        22 |
+| Luoghi            |     99 |              43 |       320 |
+| Nazioni           |     26 |              14 |         8 |
+| Confini (boundary)|     26 |              12 |         0 |
+| Livelli mappa     |     10 |               5 |        10 |
 
-**Livelli mappa:** mondo (Nazioni Elementali) + 9 sotto-mappe:
-Konohagakure, Sunagakure, Kirigakure, Iwagakure, Kumogakure, Amegakure,
-Otogakure, Uzushiogakure, Takigakure.
+**Livelli mappa** = world map + sotto-mappe drill-down:
 
-**Lingue UI:** italiano (default) e inglese — selezionabile dall'interfaccia.
+- **Naruto** — Konoha, Suna, Kiri, Iwa, Kumo, Ame, Oto, Uzushio, Taki.
+- **Hunter x Hunter** — Heavens Arena, Zoldyck Estate, Greed Island, East
+  Gorteau Palace.
+- **One Piece** — Totland, Alabasta, Wano, Skypiea, Dressrosa, Sabaody,
+  Marineford, Egghead, Fishman Island.
+
+**Lingue UI:** italiano (default) e inglese — selezionabili dall'interfaccia.
 
 ---
 
 ## ✦ Comandi
 
 ```bash
-# installa le dipendenze
-npm install
+npm install                 # installa le dipendenze
 
-# avvia il dev server (Vite) → http://localhost:5173
-npm run dev
+npm run dev                 # dev server (Vite) → http://localhost:5173
+npm run build               # build di produzione: tsc -b + vite build
+npm run preview             # anteprima del bundle di produzione
 
-# build di produzione  (tsc -b + vite build)
-npm run build
-
-# anteprima del bundle produzione
-npm run preview
-
-# valida l'integrità del dataset (ref, coords, duplicati) — exit 1 se errori
-npm run validate:data
-
-# controlla le chiavi di traduzione mancanti tra en.ts e it.ts
-npm run validate:i18n
-
-# rigenera i path SVG dei confini nazionali dalla PNG di mappa
-npm run extract:boundaries
-
-# rileva i puntini rossi (marker villaggi) nella PNG e restituisce le coordinate
-npm run find:dots
+npm run validate:data       # valida TUTTI i dataset (ref rotti, coords, duplicati) — exit 1 se errori
+npm run validate:i18n       # chiavi di traduzione mancanti/vuote tra it.ts ed en.ts
+npm run extract:boundaries  # rigenera i path SVG dei confini Naruto dalla PNG
+npm run find:dots           # rileva i marker rossi dei villaggi nella PNG → coordinate flow
 ```
 
-> `npm run build` esegue `tsc -b` come gate di correttezza: zero errori TypeScript
-> sono richiesti prima del deploy. `npm run validate:data` è il gate dati.
+> **Gate di correttezza:** `npx tsc -b` (incluso in `npm run build`) deve dare
+> zero errori. **Gate dati:** `npm run validate:data` deve dare zero errori
+> ogni volta che si tocca `src/data/`.
+
+`npm run lint` (`eslint .`) **non** è configurato — non farci affidamento.
 
 Gli script sotto `scripts/` girano con `tsx --tsconfig scripts/tsconfig.json`
-perché importano `src/` tramite l'alias `@/`.
+perché importano `src/` tramite l'alias `@/`. Oltre ai 4 esposti come npm
+script, `scripts/` contiene tooling per-mondo (estrazione confini HxH, overlay e
+snap dei pin One Piece, ottimizzazione mappa HxH).
+
+---
+
+## ✦ Sistema dinamico per-mondo (`WorldConfig`)
+
+Tutte le "voci" che cambiano da un'opera all'altra sono centralizzate in
+`AnimeWorld.config` (tipo `WorldConfig` in `src/types/index.ts`), risolte dagli
+helper di `src/lib/worldConfig.ts`. La UI non hardcoda mai termini di un'opera:
+passa `dataset.world` e ottiene etichette già localizzate.
+
+| Config                 | A cosa serve                                              | Esempio                                   |
+| ---------------------- | --------------------------------------------------------- | ----------------------------------------- |
+| `ability.term`         | Nome del sistema di poteri (nav, modali, archivio)        | Jutsu · Nen · Frutti del Diavolo          |
+| `ability.categories`   | Etichette delle categorie di tecnica                      | enhancement → "Potenziamento"             |
+| `ability.attribute`    | Attributo secondario (Naruto: natura del chakra)          | omesso su HxH → niente filtro natura      |
+| `ability.showHandSeals`/`showRank` | Sigilli delle mani / rango E…S (solo Naruto)  | `false` su HxH/One Piece                  |
+| `characterRank`        | Sistema di gradi dei personaggi + ordine                  | Grado ninja (Naruto)                      |
+| `characterRoles`       | Ruoli specifici dell'opera                                | kage, jinchuriki, akatsuki                |
+| `nationTerm`/`placesTerm`/`factionsTerm` | Etichette dei facet                     | "Mare / Isola", "Ciurme & Fazioni"        |
+| `featured`             | Liste curate per le vetrine archivio                      | jutsu/clan in evidenza                    |
+
+**Risoluzione etichette a cascata:** config del mondo → mappa "nota"
+(Naruto/HxH) → `humanizeId()`. Così un id sconosciuto di un mondo futuro ottiene
+comunque un'etichetta leggibile, senza toccare union globali o mappe di label.
+
+I campi tipizzati delle entità (`Jutsu.type`, `Character.role`,
+`Character.ninjaRank`, `Faction.type`, …) accettano **stringhe libere**: i tipi
+"noti" (`JutsuType`, `NinjaRank`, …) restano come riferimento/autocomplete, ma
+ogni mondo può introdurre i propri id.
+
+Filtri e legenda sono **derivati dai dati**: i tipi di luogo, i gradi e i tipi
+di fazione mostrati sono solo quelli realmente presenti nel mondo attivo.
 
 ---
 
 ## ✦ Rotte applicazione
 
-| Path                           | Descrizione                                |
-| ------------------------------ | ------------------------------------------ |
-| `/`                            | Homepage con la griglia dei mondi          |
-| `/about`                       | Informazioni sul progetto                  |
-| `/worlds/:slug`                | Mappa interattiva del mondo                |
-| `/worlds/:slug/characters`     | Archivio personaggi (filtri + gradi ninja) |
-| `/worlds/:slug/clans`          | Archivio clan & fazioni                    |
-| `/worlds/:slug/jutsu`          | Archivio jutsu                             |
-| `/worlds/:slug/arcs`           | Archivio archi narrativi                   |
-| `/worlds/:slug/sources`        | Fonti, asset e note editoriali             |
+| Path                       | Descrizione                                       |
+| -------------------------- | ------------------------------------------------- |
+| `/`                        | Homepage con la griglia dei mondi                 |
+| `/about`                   | Informazioni sul progetto                         |
+| `/worlds/:slug`            | Mappa interattiva del mondo                       |
+| `/worlds/:slug/characters` | Archivio personaggi (filtri + gradi dinamici)     |
+| `/worlds/:slug/clans`      | Archivio clan & fazioni (tipi derivati dai dati)  |
+| `/worlds/:slug/jutsu`      | Archivio tecniche (termine/categorie per-mondo)   |
+| `/worlds/:slug/arcs`       | Archivio archi narrativi                          |
+| `/worlds/:slug/sources`    | Fonti, asset e note editoriali                    |
 
 I mondi con `status: 'coming_soon'` aprono automaticamente una pagina segnaposto
-senza necessità di routing manuale.
+(`ComingSoonWorldPage`) senza routing manuale.
 
 ---
 
@@ -101,206 +137,148 @@ senza necessità di routing manuale.
 
 ```
 src/
-├── types/index.ts              ← tipi generici: WorldDataset, Location,
-│                                 Character, Faction, Jutsu, NinjaRank, …
+├── types/index.ts              ← tipi generici: WorldDataset, AnimeWorld,
+│                                 WorldConfig, Location, Character, Faction, Jutsu…
 ├── data/
-│   ├── worlds.ts               ← registro animeWorlds (status, theme, slug)
+│   ├── worlds.ts               ← registro animeWorlds (status, theme, config)
 │   ├── registry.ts             ← worldDatasets map, getWorldDataset(slug)
-│   ├── hunterxhunter/index.ts  ← placeholder coming soon
-│   └── naruto/
-│       ├── index.ts            ← narutoDataset: WorldDataset (assembly)
-│       ├── assets.ts           ← AssetReference con license/author/url
-│       ├── mapLevels.ts        ← 10 livelli mappa
-│       ├── mapConstants.ts     ← NARUTO_MAP_VIEWBOX (1500 × 882.2)
-│       ├── nations.ts          ← 26 nazioni
-│       ├── boundaries.ts       ← 26 confini SVG con localizedName IT/EN
-│       ├── locations.ts        ← 88 luoghi con coordinate e cross-ref
-│       ├── characters.ts       ← 90 personaggi principali + ninjaRank
-│       ├── charactersExtra.ts  ← 41 personaggi secondari + ninjaRank
-│       ├── clans.ts            ← clan principali
-│       ├── factions.ts         ← fazioni principali (Akatsuki, ANBU, …)
-│       ├── factionsExtra.ts    ← clan/fazioni secondarie
-│       ├── jutsu.ts            ← 101 jutsu con chakraNature/handSeals
-│       ├── arcs.ts             ← 23 archi con localizedName IT/EN
-│       ├── events.ts           ← 111 eventi timeline
-│       ├── routes.ts           ← percorsi narrativi (es. Team 7)
-│       ├── characterRoutes.ts  ← percorsi dei singoli personaggi
-│       ├── teams.ts            ← 10 team
-│       ├── relations.ts        ← relazioni inter-personaggio
-│       └── dataQuality.ts      ← note editoriali e TODO dati
-├── store/
-│   ├── useWorldStore.ts        ← mondo attivo
-│   ├── useMapStore.ts          ← livello mappa, selezioni, filtri, viewport
-│   ├── useUiStore.ts           ← modal attivo, pannelli
-│   └── useLocaleStore.ts       ← locale (it | en), persistenza localStorage
+│   ├── naruto/                 ← dataset Naruto (jutsu, clan+factions, teams, …)
+│   ├── hunterxhunter/          ← dataset HxH (nen, 4 sotto-mappe)
+│   └── onepiece/               ← dataset One Piece (frutti, 9 sotto-mappe)
+│       └── …                     ogni cartella: index.ts + assets, mapLevels,
+│                                 mapConstants, nations, boundaries, locations,
+│                                 characters*, factions/clans, arcs, events,
+│                                 routes, …
+├── store/                      ← Zustand: useWorldStore, useMapStore,
+│                                 useUiStore, useLocaleStore
 ├── i18n/
-│   ├── index.ts                ← inizializzazione i18next
-│   └── resources/
-│       ├── it.ts               ← stringhe UI italiano (default)
-│       └── en.ts               ← stringhe UI inglese
+│   ├── index.ts                ← init i18next (default IT, key localStorage)
+│   └── resources/{it,en}.ts    ← stringhe UI
 ├── lib/
 │   ├── cn.ts                   ← classnames helper
-│   ├── entities.ts             ← findCharacter, findLocation, findJutsu, …
+│   ├── entities.ts             ← findCharacter/Location/Jutsu/… per id
 │   ├── search.ts               ← ricerca globale con ranking
-│   └── filters.ts              ← funzioni pure di filtraggio mappa
+│   ├── filters.ts              ← funzioni pure di filtraggio (+ cache WeakMap)
+│   ├── series.ts               ← blocchi narrativi Naruto (Parte 1/Shippuden/…)
+│   ├── worldConfig.ts          ← risoluzione config per-mondo (termini, label)
+│   ├── locationTypes.ts        ← icone + ordine tipi di luogo (pin/filtri/legenda)
+│   └── worldMapPrefs.ts        ← preferenze di resa mappa per-mondo (overlay confini)
 ├── utils/
-│   ├── localization.ts         ← getLocalizedText, getNinjaRankLabel, …
+│   ├── localization.ts         ← getLocalizedText + label enum localizzate
+│   ├── entityImage.ts          ← placeholder SVG + drop-in immagini (tutti i mondi)
+│   ├── worldCursor.ts          ← cursore tematico per-mondo
 │   ├── buildIndexes.ts         ← Map<id, entity> per lookup O(1)
 │   └── validateDataset.ts      ← logica di validazione (usata dallo script)
-├── routes/
-│   ├── AppRouter.tsx
-│   └── WorldRoute.tsx          ← risolve dataset per :worldSlug, lazy-load pagine
+├── routes/                     ← AppRouter, WorldRoute (lazy-load pagine)
 └── components/
-    ├── common/                 ← Badge, Button, Card, Modal, Drawer,
-    │                             EmptyState, StatusPill, SourceNotice
-    ├── home/                   ← HomePage, WorldGrid, WorldCard
-    ├── layout/                 ← AppShell, TopNav, WorldLayout
-    ├── map/                    ← InteractiveWorldMap, MapNode, MapEdge,
-    │                             MapLabelsLayer, MapBoundaryOverlay,
-    │                             MapControls, MapLegendFloating,
-    │                             MapLevelSwitcher, RoutesFloatingPanel,
-    │                             WorldMapBackground
-    ├── timeline/               ← TimelineBottomSheet, TimelineEventCard,
-    │                             TimelineFilters
-    ├── search/                 ← GlobalSearchDropdown
-    ├── drawers/                ← FiltersDrawer
-    ├── archive/                ← CharactersPage, CharacterCard,
-    │                             ClansAndFactionsPage, ClanFactionCard,
-    │                             JutsuPage, JutsuCard,
-    │                             StoryArcsPage, StoryArcCard
-    └── modals/                 ← ModalRoot, CharacterDetailsModal,
-                                  FactionDetailsModal, JutsuDetailsModal,
-                                  LocationDetailsModal, NationDetailsModal,
-                                  BoundaryDetailsModal, RouteDetailsModal,
-                                  StoryArcDetailsModal,
-                                  TimelineEventDetailsModal
+    ├── common/                 ← Badge, Button, Card, Modal, Drawer, EntityImage…
+    ├── home/ · layout/         ← HomePage/WorldGrid · AppShell/TopNav/WorldLayout
+    ├── map/                    ← InteractiveWorldMap, MapNode, MapBoundaryOverlay,
+    │                             MapLegendFloating, MapLevelSwitcher, …
+    ├── timeline/ · search/ · drawers/   ← timeline · ricerca · FiltersDrawer
+    ├── archive/                ← CharactersPage, ClansAndFactionsPage, JutsuPage,
+    │                             StoryArcsPage (+ relative Card)
+    └── modals/                 ← ModalRoot + modali dettaglio per ogni entità
 ```
 
 ---
 
 ## ✦ Sistema di coordinate mappa
 
-I dati di posizione (location `x/y`, boundary `svgPathD`, `labelPosition`)
-vivono nel piano **viewBox 1500 × 882.2204** (`NARUTO_MAP_VIEWBOX` in
-`src/data/naruto/mapConstants.ts`). La PNG di riferimento è **990 × 579 px**.
+Ogni mondo ha il **proprio piano viewBox**, pari a `MapLevel.width/height` del
+suo world map. I dati di posizione (location `x/y`, boundary `svgPathD`,
+`labelPosition`) vivono in quel piano.
 
-Conversione pixel PNG → coordinate flow:
+| Mondo           | Costante                    | viewBox        |
+| --------------- | --------------------------- | -------------- |
+| Naruto          | `NARUTO_MAP_VIEWBOX`        | 1500 × 882.2204 |
+| Hunter x Hunter | `HXH_MAP_VIEWBOX`           | 2000 × 1187    |
+| One Piece       | `ONEPIECE_MAP_VIEWBOX`      | 2000 × 1000    |
+
+Esempio di conversione (Naruto, PNG di riferimento 990 × 579 px):
 
 ```
 flowX = px_x / 990 * 1500
 flowY = px_y / 579 * 882.2204
 ```
 
-Gli script `find:dots` ed `extract:boundaries` emettono coordinate già
-convertite in questo piano — incollale direttamente nei file dati.
-Le sotto-mappe hanno width/height propri definiti nel rispettivo `MapLevel`.
+Gli script PNG-reader (`find:dots`, `extract:boundaries`, …) emettono coordinate
+**già convertite** nel piano flow del mondo — incollale direttamente nei dati.
+Le sotto-mappe hanno `width/height` propri nel rispettivo `MapLevel`. Se
+sostituisci l'immagine di una mappa, mantieni lo stesso viewBox o tutti i pin si
+spostano.
 
 ---
 
 ## ✦ Tipo `Localizable` e i18n
 
-Le stringhe dati usano il tipo `Localizable = string | { it: string; en: string }`.
-Risolvile **sempre** tramite `getLocalizedText(value, locale)` (in
-`src/utils/localization.ts`) — mai inserire un oggetto `Localizable`
-direttamente in JSX (darebbe `[object Object]`).
+Le stringhe **dati** usano `Localizable = string | { it: string; en: string }`.
+Risolvile **sempre** con `getLocalizedText(value, locale)` /
+`getEntityDisplayName(...)` (`src/utils/localization.ts`) — mai mettere un
+oggetto `Localizable` direttamente in JSX (darebbe `[object Object]` e non
+compila). **ID, slug e chiavi non si traducono mai.**
 
-Le stringhe UI vivono in `src/i18n/resources/{it,en}.ts`. La lingua di default
-è l'italiano; la persistenza usa la chiave localStorage
-`animeInteractiveMaps.locale`.
+Le stringhe **UI** vivono in `src/i18n/resources/{it,en}.ts`. Default italiano;
+persistenza in `localStorage` con chiave `animeInteractiveMaps.locale`.
 
 ---
 
 ## ✦ Aggiungere un nuovo anime / manga
 
-1. **Registra il mondo** in `src/data/worlds.ts`:
+1. **Registra il mondo** in `src/data/worlds.ts` con `status`, `theme` e la
+   `config` per-mondo (termine del sistema di poteri, gradi, ruoli, vetrine…):
 
    ```ts
    {
-     id: 'world-onepiece',
-     slug: 'onepiece',
-     title: 'One Piece',
+     id: 'world-onepiece', slug: 'onepiece', title: 'One Piece',
      status: 'available',
-     theme: { primary: '#...', accent: '#...', highlight: '#...' },
-     availableMapLevelIds: ['onepiece-map-world'],
+     theme: { primary: '#…', accent: '#…', highlight: '#…' },
      defaultMapLevelId: 'onepiece-map-world',
+     availableMapLevelIds: ['onepiece-map-world', /* sotto-mappe… */],
+     config: {
+       ability: {
+         term: { it: 'Frutti del Diavolo', en: 'Devil Fruits' },
+         categories: [{ id: 'paramecia', label: 'Paramecia' }, /* … */],
+       },
+       nationTerm: { it: 'Mare / Isola', en: 'Sea / Island' },
+     },
    }
    ```
 
-2. **Crea la cartella dataset** `src/data/onepiece/` con:
-   `assets.ts`, `mapLevels.ts`, `mapConstants.ts`, `nations.ts`,
-   `boundaries.ts`, `locations.ts`, `characters.ts`, `clans.ts`,
-   `factions.ts`, `jutsu.ts`, `arcs.ts`, `events.ts`, `routes.ts`,
-   `characterRoutes.ts`, `teams.ts` — e `index.ts` che esporta
-   `onepieceDataset: WorldDataset`.
+2. **Crea la cartella dataset** `src/data/<slug>/` con i file entità
+   (`assets`, `mapLevels`, `mapConstants`, `nations`, `boundaries`, `locations`,
+   `characters`, `factions`/`clans`, `arcs`, `events`, `routes`, tecniche…) e un
+   `index.ts` che esporta `<slug>Dataset: WorldDataset`.
 
-3. **Registra il dataset** in `src/data/registry.ts`:
+3. **Registra il dataset** in `src/data/registry.ts` (import + voce nella mappa
+   `worldDatasets`).
 
-   ```ts
-   import { onepieceDataset } from '@/data/onepiece';
+4. **Valida:** `npm run validate:data` (0 errori prima di qualunque merge).
 
-   export const worldDatasets = {
-     naruto: narutoDataset,
-     onepiece: onepieceDataset,
-   };
-   ```
-
-4. **Valida:** `npm run validate:data` (0 errori richiesti prima di qualunque
-   merge).
-
-Mappa, filtri, timeline, archivi, ricerca globale e modal si adattano
-automaticamente al nuovo dataset.
+Mappa, filtri, legenda, timeline, archivi, ricerca globale e modali si adattano
+automaticamente al nuovo dataset e alla sua config.
 
 ---
 
-## ✦ Sostituire i placeholder mappa
+## ✦ Immagini: mappe, schede e loghi
 
-1. Salva l'immagine autorizzata in `public/assets/worlds/<slug>/map.jpg`.
-2. Aggiungi un `AssetReference` in `src/data/<slug>/assets.ts` con i campi
-   obbligatori `license`, `author`, `source`, `url`.
-3. Imposta `backgroundAssetId` nel `MapLevel` corrispondente.
+**Sfondo mappa** — imposta `backgroundAssetId` nel `MapLevel` e aggiungi un
+`AssetReference` in `src/data/<slug>/assets.ts` (campi obbligatori `license`,
+`author`, `source`, `url`). `WorldMapBackground` mostra l'immagine se `url` è
+valorizzato, altrimenti un placeholder SVG generato.
 
-`WorldMapBackground` mostra l'immagine se `asset.url` è valorizzato,
-altrimenti usa il placeholder SVG generato localmente.
-
----
-
-## ✦ Immagini delle schede (personaggi, jutsu, clan, luoghi)
-
-Ogni scheda mostra un **placeholder SVG tematico** generato localmente e
-coerente con l'entità (avatar con colore del villaggio per i personaggi, icona
-colorata per natura del chakra sui jutsu, stemma per i clan, silhouette per
-tipo di luogo). Componente: `src/components/common/EntityImage.tsx`.
-
-Per usare un'immagine reale (di cui possiedi i diritti), basta un **drop-in**:
-salva il file con il nome dell'id dell'entità sotto la cartella corretta e
-verrà mostrato automaticamente al posto del placeholder (risoluzione a
-build-time via `import.meta.glob`):
+**Schede entità** — `EntityImage` genera un placeholder SVG tematico; per usare
+un'immagine reale basta un **drop-in** con il nome = id dell'entità, per
+qualunque mondo (auto-discovery a build-time via `import.meta.glob`):
 
 ```
-src/assets/worlds/naruto/
-├── characters/<characterId>.jpg   es. char-naruto.jpg
-├── jutsu/<jutsuId>.jpg            es. jutsu-rasengan.jpg
-├── clans/<factionId>.jpg          es. clan-uchiha.jpg
-├── locations/<locationId>.jpg     es. loc-konoha.jpg
-└── arcs/<arcId>.jpg
+src/assets/worlds/<slug>/{characters,jutsu,clans,locations,arcs}/<entityId>.<ext>
 ```
 
-Formati supportati: `jpg`, `jpeg`, `png`, `webp`, `avif`, `svg`. Nessuna
-modifica al codice necessaria. **Non** inserire immagini protette da copyright
-senza i relativi diritti.
+**Logo del mondo** (card homepage) — `src/assets/worlds/logos/<slug>.png`.
 
-### Logo del mondo (card homepage)
-
-La copertina di ogni mondo in homepage mostra uno sfondo tematico. Per
-aggiungere il **logo del manga** al centro della card, salva un file con lo
-slug del mondo:
-
-```
-src/assets/worlds/logos/<slug>.png   es. naruto.png, onepiece.png, dragonball.png
-```
-
-Stessa logica drop-in (auto-discovery a build-time). Consigliato un PNG/SVG con
-sfondo trasparente. In assenza del file resta il solo sfondo tematico.
+Formati: `jpg, jpeg, png, webp, avif, svg`. **Non** inserire immagini protette da
+copyright senza i diritti.
 
 ---
 
@@ -308,39 +286,19 @@ sfondo trasparente. In assenza del file resta il solo sfondo tematico.
 
 - I dati narrativi sono **seed iniziali**: vanno verificati su fonti ufficiali
   prima della pubblicazione.
-- I riferimenti a capitoli/episodi non ancora confermati restano marcati
-  `referenceStatus: 'needs_verification'` e mostrati in UI con un avviso.
-- **Nessuna immagine ufficiale** è inclusa nel repository. Ogni asset deve avere
-  `license`, `author`, `source` e `url` documentati nel rispettivo `assets.ts`.
-
----
-
-## ✦ TODO aperti (Naruto)
-
-- [ ] Confermare numeri di capitolo/episodio sugli eventi (molti ancora vuoti).
-- [ ] Verificare le posizioni esatte sulla mappa per luoghi secondari e confini.
-- [ ] Tradurre in bilingue i testi `shortDescription`/`longDescription` ancora
-      in singola lingua italiana (rotte, eventi, location minori).
-- [ ] Sostituire i placeholder SVG con asset autorizzati.
-- [ ] Aggiungere sotto-mappe mancanti (es. Valle della Fine, Monte Myoboku).
+- I riferimenti a capitoli/episodi non confermati restano
+  `referenceStatus: 'needs_verification'` (e in UI compaiono con un avviso);
+  i contenuti non-canon usano il `canonStatus` corrispondente.
+- **Nessuna immagine ufficiale** è inclusa nel repository: ogni asset deve avere
+  `license`, `author`, `source`, `url` documentati nel rispettivo `assets.ts`.
 
 ---
 
 ## ✦ Deploy
 
-Compatibile con Vercel e Netlify (SPA su Vite, output `dist/`).
-
-**Vercel** — preset "Vite", comando `npm run build`, output `dist/`.
-Aggiungi `vercel.json` per il rewrite SPA:
-```json
-{ "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }] }
-```
-
-**Netlify** — comando `npm run build`, publish `dist/`.
-Aggiungi `public/_redirects`:
-```
-/*  /index.html  200
-```
+SPA Vite con output `dist/`, deployata su **Vercel** (Analytics + Speed Insights
+già integrati in `src/App.tsx`). Preset "Vite", comando `npm run build`, output
+`dist/`. Per il routing SPA, rewrite di tutte le rotte su `/index.html`.
 
 ---
 
