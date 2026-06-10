@@ -18,6 +18,7 @@ import { useMapStore, useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText } from '@/utils/localization';
 import { filterLocations } from '@/lib/filters';
+import { worldShowsBoundaryHighlight } from '@/lib/worldMapPrefs';
 import {
   MapNode,
   MapLayerNode,
@@ -289,6 +290,8 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
   // (i confini minori sono nascosti finché non si passa sul loro POI).
   function handleNodeMouseEnter(_: unknown, node: Node) {
     if (node.id.startsWith('__layer-')) return;
+    // Mondi con mappa illustrata (es. HxH) non usano l'overlay dei confini.
+    if (!worldShowsBoundaryHighlight(dataset.world)) return;
     const loc = dataset.locations.find((l) => l.id === node.id);
     if (!loc?.boundaryId) return;
     // Solo i confini MINORI si rivelano passando sul POI; le grandi nazioni
