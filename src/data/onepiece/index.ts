@@ -18,6 +18,7 @@ import { onepieceLocationsSubmaps5 } from './locationsSubmaps5';
 import { onepieceLocationsExtra2 } from './locationsExtra2';
 import { onepieceLocationsSpace } from './locationsSpace';
 import { onepieceLocationsThreeWorlds } from './locationsThreeWorlds';
+import { onepieceLocationsExtra3 } from './locationsExtra3';
 import { onepieceFactions } from './factions';
 import { onepieceFactionsSouthBlue } from './factionsSouthBlue';
 import { onepieceFactionsNorthBlue } from './factionsNorthBlue';
@@ -30,6 +31,7 @@ import { onepieceFactionsEgghead } from './factionsEgghead';
 import { onepieceFactionsSupernovas } from './factionsSupernovas';
 import { onepieceFactionsExtra } from './factionsExtra';
 import { onepieceFactionsWeapons } from './factionsWeapons';
+import { onepieceFactionsExtra2 } from './factionsExtra2';
 import { onepieceCharactersEastBlue } from './characters';
 import { onepieceCharactersParadise } from './charactersParadise';
 import { onepieceCharactersParadise2 } from './charactersParadise2';
@@ -51,6 +53,7 @@ import { onepieceCharactersExtra7 } from './charactersExtra7';
 import { onepieceCharactersExtra8 } from './charactersExtra8';
 import { onepieceCharactersGrandFleet } from './charactersGrandFleet';
 import { onepieceCharactersFilms } from './charactersFilms';
+import { onepieceCharactersExtra9 } from './charactersExtra9';
 import { onepieceArcs } from './arcs';
 import { onepieceArcsSouthBlue } from './arcsSouthBlue';
 import { onepieceArcsNorthBlue } from './arcsNorthBlue';
@@ -81,12 +84,14 @@ import { onepieceEventsExtra3 } from './eventsExtra3';
 import { onepieceEventsSpace } from './eventsSpace';
 import { onepieceEventsThreeWorlds } from './eventsThreeWorlds';
 import { onepieceEventsCovers } from './eventsCovers';
+import { onepieceEventsExtra4 } from './eventsExtra4';
 import { onepieceRoutes } from './routes';
 import { onepieceRoutesGrandLine } from './routesGrandLine';
 import { onepieceRoutesExtra } from './routesExtra';
 import { onepieceDevilFruits } from './devilFruits';
 import { onepieceDevilFruitsExtra } from './devilFruitsExtra';
 import { onepieceDevilFruitsExtra2 } from './devilFruitsExtra2';
+import { onepieceDevilFruitsExtra3 } from './devilFruitsExtra3';
 import { onepieceAssets } from './assets';
 import { onepieceBounties } from './bounties';
 import { onepieceTrivia } from './trivia';
@@ -270,6 +275,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceLocationsExtra2,
     ...onepieceLocationsSpace,
     ...onepieceLocationsThreeWorlds,
+    ...onepieceLocationsExtra3,
   ]))),
   characters: withCharacterLinks(
     [
@@ -294,6 +300,7 @@ export const onepieceDataset: WorldDataset = {
       ...onepieceCharactersExtra8,
       ...onepieceCharactersGrandFleet,
       ...onepieceCharactersFilms,
+      ...onepieceCharactersExtra9,
     ].map((c) => {
       const b = onepieceBounties[c.id];
       const t = onepieceTrivia[c.id];
@@ -313,6 +320,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceFactionsSupernovas,
     ...onepieceFactionsExtra,
     ...onepieceFactionsWeapons,
+    ...onepieceFactionsExtra2,
   ],
   arcs: [
     ...onepieceArcs,
@@ -347,9 +355,10 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceEventsSpace,
     ...onepieceEventsThreeWorlds,
     ...onepieceEventsCovers,
+    ...onepieceEventsExtra4,
   ],
   routes: [...onepieceRoutes, ...onepieceRoutesGrandLine, ...onepieceRoutesExtra],
-  jutsu: [...onepieceDevilFruits, ...onepieceDevilFruitsExtra, ...onepieceDevilFruitsExtra2],
+  jutsu: [...onepieceDevilFruits, ...onepieceDevilFruitsExtra, ...onepieceDevilFruitsExtra2, ...onepieceDevilFruitsExtra3],
   assets: onepieceAssets,
 };
 
