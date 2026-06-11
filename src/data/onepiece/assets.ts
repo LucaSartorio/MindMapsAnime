@@ -205,7 +205,7 @@ const onepieceBaseAssets: AssetReference[] = [
       },
     }),
   ),
-  ...['mary-geoise', 'dawn-island', 'loguetown', 'jaya', 'ohara', 'elbaf', 'god-valley', 'germa-kingdom'].map(
+  ...['mary-geoise', 'dawn-island', 'loguetown', 'jaya', 'ohara', 'elbaf', 'god-valley', 'germa-kingdom', 'space'].map(
     (slug) => ({
       id: `op-${slug}-submap-placeholder`,
       worldId: 'world-onepiece',

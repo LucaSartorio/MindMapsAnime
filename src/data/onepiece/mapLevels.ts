@@ -251,6 +251,9 @@ export const onepieceMapLevels: MapLevel[] = [
     ['germa-kingdom', 'loc-op-germa-kingdom', 'Germa Kingdom', 'Germa Kingdom',
       "Sotto-mappa del regno militare itinerante: le navi-lumaca del Germa 66 e il laboratorio dei Vinsmoke.",
       "Sub-map of the roving militarist kingdom: the snail-ships of Germa 66 and the Vinsmoke laboratory."],
+    ['space', 'loc-op-space', 'Spazio', 'Space',
+      "Sotto-mappa dello spazio (Operazioni Spaziali di Enel): la Luna, l'antica città lunare di Birka, i Pirati Spaziali e la Stella Polare. Doppio clic su «Terra» per tornare alla mappa principale.",
+      "Sub-map of space (Enel's Space Operations): the Moon, the ancient lunar city of Birka, the Space Pirates and the Polar Star. Double-click 'Earth' to return to the main map."],
   ] as const).map(([slug, trigger, nit, nen, dit, den]) => ({
     id: `op-map-${slug}`,
     worldId: 'world-onepiece',

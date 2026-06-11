@@ -16,6 +16,7 @@ import { onepieceLocationsSubmapsExtra } from './locationsSubmapsExtra';
 import { onepieceLocationsSubmaps4 } from './locationsSubmaps4';
 import { onepieceLocationsSubmaps5 } from './locationsSubmaps5';
 import { onepieceLocationsExtra2 } from './locationsExtra2';
+import { onepieceLocationsSpace } from './locationsSpace';
 import { onepieceFactions } from './factions';
 import { onepieceFactionsSouthBlue } from './factionsSouthBlue';
 import { onepieceFactionsNorthBlue } from './factionsNorthBlue';
@@ -75,6 +76,7 @@ import { onepieceEventsBattles } from './eventsBattles';
 import { onepieceEventsBattles2 } from './eventsBattles2';
 import { onepieceEventsBattles3 } from './eventsBattles3';
 import { onepieceEventsExtra3 } from './eventsExtra3';
+import { onepieceEventsSpace } from './eventsSpace';
 import { onepieceRoutes } from './routes';
 import { onepieceRoutesGrandLine } from './routesGrandLine';
 import { onepieceRoutesExtra } from './routesExtra';
@@ -261,6 +263,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceLocationsSubmaps4,
     ...onepieceLocationsSubmaps5,
     ...onepieceLocationsExtra2,
+    ...onepieceLocationsSpace,
   ]))),
   characters: withCharacterLinks(
     [
@@ -330,6 +333,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceEventsBattles2,
     ...onepieceEventsBattles3,
     ...onepieceEventsExtra3,
+    ...onepieceEventsSpace,
   ],
   routes: [...onepieceRoutes, ...onepieceRoutesGrandLine, ...onepieceRoutesExtra],
   jutsu: [...onepieceDevilFruits, ...onepieceDevilFruitsExtra, ...onepieceDevilFruitsExtra2],

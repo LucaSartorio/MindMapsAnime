@@ -185,6 +185,7 @@ export const animeWorlds: AnimeWorld[] = [
       'op-map-elbaf',
       'op-map-god-valley',
       'op-map-germa-kingdom',
+      'op-map-space',
     ],
     coverAssetId: 'op-cover-placeholder',
     tags: ['shonen', 'pirati', 'eiichiro oda', 'jump'],
