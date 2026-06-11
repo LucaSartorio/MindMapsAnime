@@ -17,6 +17,7 @@ import { onepieceLocationsSubmaps4 } from './locationsSubmaps4';
 import { onepieceLocationsSubmaps5 } from './locationsSubmaps5';
 import { onepieceLocationsExtra2 } from './locationsExtra2';
 import { onepieceLocationsSpace } from './locationsSpace';
+import { onepieceLocationsThreeWorlds } from './locationsThreeWorlds';
 import { onepieceFactions } from './factions';
 import { onepieceFactionsSouthBlue } from './factionsSouthBlue';
 import { onepieceFactionsNorthBlue } from './factionsNorthBlue';
@@ -28,6 +29,7 @@ import { onepieceFactionsWholeCakeWano } from './factionsWholeCakeWano';
 import { onepieceFactionsEgghead } from './factionsEgghead';
 import { onepieceFactionsSupernovas } from './factionsSupernovas';
 import { onepieceFactionsExtra } from './factionsExtra';
+import { onepieceFactionsWeapons } from './factionsWeapons';
 import { onepieceCharactersEastBlue } from './characters';
 import { onepieceCharactersParadise } from './charactersParadise';
 import { onepieceCharactersParadise2 } from './charactersParadise2';
@@ -77,6 +79,7 @@ import { onepieceEventsBattles2 } from './eventsBattles2';
 import { onepieceEventsBattles3 } from './eventsBattles3';
 import { onepieceEventsExtra3 } from './eventsExtra3';
 import { onepieceEventsSpace } from './eventsSpace';
+import { onepieceEventsThreeWorlds } from './eventsThreeWorlds';
 import { onepieceRoutes } from './routes';
 import { onepieceRoutesGrandLine } from './routesGrandLine';
 import { onepieceRoutesExtra } from './routesExtra';
@@ -264,6 +267,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceLocationsSubmaps5,
     ...onepieceLocationsExtra2,
     ...onepieceLocationsSpace,
+    ...onepieceLocationsThreeWorlds,
   ]))),
   characters: withCharacterLinks(
     [
@@ -302,6 +306,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceFactionsEgghead,
     ...onepieceFactionsSupernovas,
     ...onepieceFactionsExtra,
+    ...onepieceFactionsWeapons,
   ],
   arcs: [
     ...onepieceArcs,
@@ -334,6 +339,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceEventsBattles3,
     ...onepieceEventsExtra3,
     ...onepieceEventsSpace,
+    ...onepieceEventsThreeWorlds,
   ],
   routes: [...onepieceRoutes, ...onepieceRoutesGrandLine, ...onepieceRoutesExtra],
   jutsu: [...onepieceDevilFruits, ...onepieceDevilFruitsExtra, ...onepieceDevilFruitsExtra2],
