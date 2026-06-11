@@ -215,6 +215,19 @@ export function CharacterDetailsModal({
         </Section>
       )}
 
+      {(character.trivia ?? []).length > 0 && (
+        <Section title={t('modals.trivia')}>
+          <ul className="space-y-1.5">
+            {character.trivia!.map((tv, i) => (
+              <li key={i} className="flex gap-2 text-sm text-ink-200 leading-relaxed">
+                <span className="text-chakra-300 shrink-0" aria-hidden>›</span>
+                <span>{getLocalizedText(tv, locale)}</span>
+              </li>
+            ))}
+          </ul>
+        </Section>
+      )}
+
       {(character.abilities ?? []).length > 0 && (
         <Section title={t("modals.abilities")}>
           <div className="flex flex-wrap gap-1.5">

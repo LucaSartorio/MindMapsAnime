@@ -198,6 +198,7 @@ export const en = {
     specialPlaces: 'Important places',
     bounty: 'Bounties',
     poneglyphMeaning: 'What it reveals',
+    trivia: 'Trivia (SBS)',
     hiddenVillages: 'Hidden villages',
     eventsInTerritory: 'Events in territory ({{count}})',
     eventsInNation: 'Events in nation ({{count}})',
