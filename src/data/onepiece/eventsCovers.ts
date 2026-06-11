@@ -85,4 +85,18 @@ export const onepieceEventsCovers: TimelineEvent[] = [
     "Sopravvissuto a Fish-Man Island, Caribou tenta di prosperare nel Nuovo Mondo ma finisce sempre nei guai, incrociando marine e pirati ben più forti di lui: una comica galleria del mare più pericoloso.",
     "Having survived Fish-Man Island, Caribou tries to thrive in the New World but always lands in trouble, crossing Marines and pirates far stronger than he is: a comic tour of the most dangerous sea.",
     'loc-op-fishman-island', ['char-op-caribou'], 'copertine 654-699', 60.5, ['caribou', 'nuovo-mondo']),
+
+  V('evt-op-cover-grandfleet', 'Le Storie della Flotta dei Cappello di Paglia', 'The Stories of the Self-Proclaimed Straw Hat Grand Fleet',
+    "Le sette ciurme della Grand Fleet aiutano la gente nel nome di Rufy, nei mari del mondo.",
+    "The seven crews of the Grand Fleet help people in Luffy's name across the world's seas.",
+    "Dopo Dressrosa, Cavendish, Bartolomeo, Sai, Leo, Ideo, Hajrudin e Orlumbus seminano gesta eroiche (e comiche) ovunque, alimentando la leggenda dei Cappello di Paglia pur conservando la propria indipendenza.",
+    "After Dressrosa, Cavendish, Bartolomeo, Sai, Leo, Ideo, Hajrudin and Orlumbus spread heroic (and comic) deeds everywhere, fueling the Straw Hats' legend while keeping their independence.",
+    'loc-op-dressrosa', ['char-op-cavendish', 'char-op-bartolomeo', 'char-op-sai', 'char-op-leo', 'char-op-ideo', 'char-op-hajrudin', 'char-op-orlumbus'], 'copertine 795-801', 63.8, ['grand-fleet', 'dressrosa']),
+
+  V('evt-op-cover-reverie', 'Dai Ponti del Mondo (verso la Reverie)', 'From the Decks of the World',
+    "Mentre re e principi salpano per la Reverie a Mary Geoise, il mondo intero si mette in moto.",
+    "As kings and princes set sail for the Reverie at Mary Geoise, the whole world stirs.",
+    "La cover story segue i sovrani diretti alla Reverie — Vivi e Cobra di Alabasta, la famiglia Riku di Dressrosa — e i tanti volti del mondo: i Rivoluzionari di Sabo, Wapol in disgrazia, Bartolomeo e Bellamy. Un grande affresco che prepara lo storico Consiglio dei Re.",
+    "The cover story follows the rulers bound for the Reverie — Vivi and Cobra of Alabasta, the Riku family of Dressrosa — and the world's many faces: Sabo's Revolutionaries, a disgraced Wapol, Bartolomeo and Bellamy. A grand fresco setting up the historic Council of Kings.",
+    'loc-op-mary-geoise', ['char-op-vivi', 'char-op-cobra', 'char-op-sabo', 'char-op-wapol', 'char-op-rebecca', 'char-op-kyros', 'char-op-bartolomeo', 'char-op-bellamy'], 'copertine 904-908', 69.5, ['reverie', 'mary-geoise']),
 ];
