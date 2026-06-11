@@ -14,8 +14,8 @@ export const onepieceLocationsThreeWorlds: Location[] = [
     name: 'First World',
     localizedName: { it: 'Primo Mondo', en: 'First World' },
     type: 'sacred_place',
-    x: 1540,
-    y: 850,
+    x: 1960,
+    y: 800,
     shortDescription: {
       it: "Il «Primo Mondo» dei Testi Harley: un'antichissima civiltà incredibilmente avanzata, in cui ardeva già la fonte di energia infinita — le «fiamme» — che secoli dopo Vegapunk inseguirà.",
       en: "The 'First World' of the Harley texts: an extremely ancient, incredibly advanced civilization where the infinite energy source — the 'flames' — that Vegapunk would later chase already burned.",
@@ -38,8 +38,8 @@ export const onepieceLocationsThreeWorlds: Location[] = [
     name: 'Second World',
     localizedName: { it: 'Secondo Mondo', en: 'Second World' },
     type: 'sacred_place',
-    x: 1660,
-    y: 900,
+    x: 1960,
+    y: 860,
     shortDescription: {
       it: "Il «Secondo Mondo»: il Secolo Vuoto. L'era di Joy Boy — il «Sole» Nika —, della Grande Guerra e del diluvio che sommerse e quasi distrusse il mondo.",
       en: "The 'Second World': the Void Century. The era of Joy Boy — the 'Sun' Nika —, of the Great War and the flood that submerged and nearly destroyed the world.",
@@ -62,8 +62,8 @@ export const onepieceLocationsThreeWorlds: Location[] = [
     name: 'Third World',
     localizedName: { it: 'Terzo Mondo', en: 'Third World' },
     type: 'sacred_place',
-    x: 1780,
-    y: 850,
+    x: 1960,
+    y: 920,
     shortDescription: {
       it: "Il «Terzo Mondo»: la nostra era, segnata dal ritorno del Dio del Sole Nika. I Testi profetizzano che egli «danzerà e riderà guidando il mondo verso la sua fine».",
       en: "The 'Third World': the present era, marked by the return of the Sun God Nika. The texts foretell that he 'will dance and laugh as he leads the world to its end'.",
