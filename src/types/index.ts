@@ -497,6 +497,8 @@ export interface Character {
   referenceStatus?: ReferenceStatus;
   /** Macro-serie / blocchi narrativi in cui appare il personaggio. */
   series?: Series[];
+  /** Curiosità da SBS / copertine (One Piece): fatti extra mostrati come elenco. */
+  trivia?: Localizable[];
   tags?: string[];
 }
 

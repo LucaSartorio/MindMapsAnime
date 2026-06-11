@@ -201,6 +201,7 @@ export const it = {
     specialPlaces: 'Luoghi importanti',
     bounty: 'Taglie',
     poneglyphMeaning: 'Cosa rivela',
+    trivia: 'Curiosità (SBS)',
     hiddenVillages: 'Villaggi nascosti',
     eventsInTerritory: 'Eventi nel territorio ({{count}})',
     eventsInNation: 'Eventi nella nazione ({{count}})',
