@@ -139,4 +139,80 @@ export const onepieceTrivia: Record<string, Localizable[]> = {
   'char-op-shirahoshi': [
     { it: 'Principessa sirena di Fish-Man Island e attuale arma ancestrale Poseidon: può richiamare e comandare i giganteschi Re del Mare.', en: 'Mermaid princess of Fish-Man Island and the current Ancient Weapon Poseidon: she can summon and command the giant Sea Kings.' },
   ],
+
+  /* --------------------------- Supernove --------------------------- */
+  'char-op-killer': [
+    { it: 'Braccio destro di Kid. A Wano, come l’assassino «Kamazo», fu costretto a mangiare uno SMILE difettoso che lo fa ridere a comando — anche quando vorrebbe piangere.', en: "Kid's right hand. In Wano, as the assassin 'Kamazo', he was forced to eat a defective SMILE that makes him laugh on command — even when he wants to cry." },
+  ],
+  'char-op-hawkins': [
+    { it: 'Basil Hawkins, «il Mago». Con i tarocchi predice le probabilità di sopravvivenza e, col Frutto Paglia, trasforma il corpo in un fantoccio voodoo.', en: 'Basil Hawkins, "the Magician". With tarot cards he predicts survival odds and, with the Straw-Straw Fruit, turns his body into a voodoo doll.' },
+  ],
+  'char-op-apoo': [
+    { it: 'Scratchmen Apoo, «il Demone del Suono». Trasforma il proprio corpo in strumenti musicali e converte i suoni in attacchi a distanza.', en: 'Scratchmen Apoo, "the Roar of the Sea". He turns his body into musical instruments and converts sound into ranged attacks.' },
+  ],
+  'char-op-drake': [
+    { it: 'X Drake, ex contrammiraglio della Marina e capo dell’unità segreta SWORD, infiltrato tra i Pirati delle Cento Bestie. Zoan dell’allosauro.', en: 'X Drake, a former Marine rear admiral and head of the secret unit SWORD, infiltrated among the Beasts Pirates. Allosaurus Zoan.' },
+  ],
+  'char-op-urouge': [
+    { it: 'Urouge, «il Monaco Folle». Il suo Frutto converte il danno subìto in pura forza fisica: più lo colpisci, più diventa grosso.', en: 'Urouge, "the Mad Monk". His fruit converts damage taken into raw physical strength: the more you hit him, the bigger he grows.' },
+  ],
+  'char-op-bonney': [
+    { it: 'Jewelry Bonney manipola l’età propria e altrui. Figlia di Bartholomew Kuma, è legata da un terribile segreto ai Draghi Celesti.', en: "Jewelry Bonney manipulates her own and others' age. The daughter of Bartholomew Kuma, she's bound by a terrible secret to the Celestial Dragons." },
+  ],
+  'char-op-bege': [
+    { it: 'Capone «Gang» Bege, boss mafioso. Il Frutto Castello gli permette di ospitare un’intera fortezza — e un esercito — dentro il proprio corpo.', en: 'Capone "Gang" Bege, a mafia boss. The Castle-Castle Fruit lets him house an entire fortress — and an army — inside his own body.' },
+  ],
+
+  /* --------------------------- Ammiragli --------------------------- */
+  'char-op-akainu': [
+    { it: 'Sakazuki, attuale Grand’Ammiraglio. Il magma del suo Frutto «sovrasta» il fuoco; incarna la «Giustizia Assoluta» più spietata.', en: 'Sakazuki, the current Fleet Admiral. His fruit\'s magma "outranks" fire; he embodies the most ruthless "Absolute Justice".' },
+  ],
+  'char-op-aokiji': [
+    { it: 'Kuzan, ex ammiraglio del ghiaccio. Lasciò la Marina dopo aver perso contro Akainu la corsa a Grand’Ammiraglio; oggi è affiliato a Barbanera.', en: "Kuzan, the former ice admiral. He left the Marines after losing the race for Fleet Admiral to Akainu; today he's affiliated with Blackbeard." },
+  ],
+  'char-op-kizaru': [
+    { it: 'Borsalino, ammiraglio della luce. Si muove e colpisce alla velocità della luce; flemmatico e ambiguo, segue gli ordini senza farsi domande.', en: 'Borsalino, the light admiral. He moves and strikes at the speed of light; laid-back and ambiguous, he follows orders without question.' },
+  ],
+  'char-op-fujitora': [
+    { it: 'Issho, ammiraglio cieco che controlla la gravità: si accecò di proposito per non vedere più il male del mondo. Vuole abolire il sistema dei Corsari.', en: 'Issho, the blind admiral who controls gravity: he blinded himself on purpose so as not to see the world\'s evil any longer. He seeks to abolish the Warlord system.' },
+  ],
+  'char-op-greenbull': [
+    { it: 'Aramaki «Toro Verde», ammiraglio dai poteri vegetali. Può restare anni senza mangiare, assorbendo nutrimento dalla vita che lo circonda.', en: 'Aramaki "Green Bull", the admiral of plant powers. He can go years without eating, absorbing nourishment from the life around him.' },
+  ],
+
+  /* --------------------------- Marina / Wano / altri --------------------------- */
+  'char-op-smoker': [
+    { it: 'Cacciatore implacabile dal Frutto Fumo e dal manganello di pietra di mare. Insegue Rufy fin dai tempi di Loguetown, mosso da una giustizia tutta sua.', en: 'A relentless hunter with the Smoke-Smoke Fruit and a Seastone jutte. He has chased Luffy since Loguetown, driven by a justice all his own.' },
+  ],
+  'char-op-tashigi': [
+    { it: 'Spadaccina della Marina, è identica alla defunta Kuina: una somiglianza che turba profondamente Zoro ogni volta che la incontra.', en: 'A Marine swordswoman, she is identical to the late Kuina: a resemblance that deeply unsettles Zoro whenever they meet.' },
+  ],
+  'char-op-coby': [
+    { it: 'Da timido mozzo di Alvida a eroe della Marina: a Marineford risvegliò l’Ambizione dell’Osservazione. Sogna di diventare ammiraglio.', en: "From Alvida's timid chore-boy to a Marine hero: at Marineford he awakened Observation Haki. He dreams of becoming an admiral." },
+  ],
+  'char-op-magellan': [
+    { it: 'Direttore di Impel Down: il Frutto Veleno lo rende mortale al solo tatto, ma — gag celebre — lo costringe a passare ore in bagno.', en: 'Warden of Impel Down: the Venom-Venom Fruit makes him lethal to the touch, but — a famous gag — forces him to spend hours on the toilet.' },
+  ],
+  'char-op-enel': [
+    { it: 'Falso «Dio» di Skypiea: il Frutto Fulmine lo rende quasi onnipotente tra le nuvole, e il «Mantra» (Ambizione) gli fa prevedere le mosse. Dopo la sconfitta partì per la Luna.', en: "The false 'God' of Skypiea: the Rumble-Rumble Fruit makes him near-omnipotent among the clouds, and 'Mantra' (Haki) lets him foresee moves. After his defeat he left for the Moon." },
+  ],
+  'char-op-marco': [
+    { it: 'Marco la Fenice, primo comandante di Barbabianca. Lo Zoan mitologico della fenice gli dona fiamme azzurre che rigenerano le ferite.', en: "Marco the Phoenix, Whitebeard's first-division commander. The mythical phoenix Zoan grants him blue flames that heal wounds." },
+  ],
+  'char-op-yamato': [
+    { it: 'Figlio/a di Kaido, si identifica come Kozuki Oden dopo averne letto il diario. Possiede lo Zoan mitologico del lupo divino Okuchi no Makami.', en: "Kaido's child, who identifies as Kozuki Oden after reading his journal. They wield the mythical Zoan of the guardian wolf Okuchi no Makami." },
+  ],
+  'char-op-kinemon': [
+    { it: 'Capo dei Nove Foderi Rossi e maestro dello stile «Volpe di Fuoco», capace di tagliare le fiamme. Con un’arte da kitsune sa travestire chiunque.', en: "Leader of the Nine Red Scabbards and master of the 'Foxfire' style, able to cut flames. With a kitsune art he can disguise anyone." },
+  ],
+  'char-op-momonosuke': [
+    { it: 'Kozuki Momonosuke, erede di Wano. Mangiò un Frutto artificiale del drago creato da Vegapunk; la madre Toki lo proiettò vent’anni nel futuro.', en: 'Kozuki Momonosuke, heir of Wano. He ate an artificial dragon fruit made by Vegapunk; his mother Toki sent him twenty years into the future.' },
+  ],
+  'char-op-pudding': [
+    { it: 'Charlotte Pudding, ibrida del clan dei Tre Occhi. Da finta promessa sposa-trappola di Sanji, finì per innamorarsene davvero.', en: 'Charlotte Pudding, a hybrid of the Three-Eye Tribe. From a fake bride-trap for Sanji, she ended up truly falling for him.' },
+  ],
+  'char-op-perospero': [
+    { it: 'Charlotte Perospero, primogenito di Big Mom e Ministro delle Caramelle. Il Frutto Lecca Lecca gli permette di creare e plasmare caramello solido.', en: "Charlotte Perospero, Big Mom's eldest son and Minister of Candy. The Lick-Lick Fruit lets him create and shape solid candy." },
+  ],
 };
+
