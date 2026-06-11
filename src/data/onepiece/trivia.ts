@@ -308,6 +308,96 @@ export const onepieceTrivia: Record<string, Localizable[]> = {
   'char-op-crocus': [
     { it: 'Crocus, medico della ciurma di Roger e guardiano del faro di Reverse Mountain, dove veglia sulla balena Laboon che attende da 50 anni il ritorno dei suoi amici.', en: "Crocus, the doctor of Roger's crew and keeper of the Reverse Mountain lighthouse, where he watches over the whale Laboon, who has awaited his friends' return for 50 years." },
   ],
+
+  /* --------------------------- Famiglia Donquijote --------------------------- */
+  'char-op-corazon': [
+    { it: 'Donquijote Rosinante «Corazon», fratello minore di Doflamingo e agente infiltrato della Marina. Il Frutto Calma azzera i suoni attorno a sé; salvò Law a costo della vita.', en: "Donquixote Rosinante 'Corazon', Doflamingo's younger brother and an undercover Marine. The Calm-Calm Fruit silences all sound around him; he saved Law at the cost of his own life." },
+  ],
+  'char-op-trebol': [
+    { it: 'Trebol, uno dei tre dirigenti dei Donquijote. Il Frutto Appiccicoso genera melma adesiva; fu lui a plasmare il giovane Doflamingo nutrendone la sete di potere.', en: "Trebol, one of the three Donquixote executives. The Sticky-Sticky Fruit generates adhesive slime; it was he who shaped the young Doflamingo, feeding his lust for power." },
+  ],
+  'char-op-diamante': [
+    { it: 'Diamante, dirigente dei Donquijote. Il suo Frutto rende «svolazzante» qualunque materiale, flessibile come stoffa — corpo e armi compresi.', en: "Diamante, a Donquixote executive. His fruit makes any material 'flutter', as flexible as cloth — his body and weapons included." },
+  ],
+  'char-op-pica': [
+    { it: 'Pica, dirigente dei Donquijote dalla voce stridula e ridicola. Il Frutto Roccia gli permette di fondersi con la pietra e animare colossi grandi come montagne.', en: 'Pica, a Donquixote executive with an absurdly squeaky voice. The Stone-Stone Fruit lets him merge with stone and animate mountain-sized colossi.' },
+  ],
+  'char-op-vergo': [
+    { it: 'Vergo, spia dei Donquijote infiltrata nella Marina fino al grado di viceammiraglio. Maestro d’Ambizione, riveste l’intero corpo rendendolo durissimo.', en: 'Vergo, a Donquixote spy embedded in the Marines up to vice-admiral rank. A Haki master, he coats his whole body to make it incredibly hard.' },
+  ],
+  'char-op-sugar': [
+    { it: 'Sugar: il Frutto Giocattolo trasforma le persone in giocattoli, cancellandole dalla memoria di tutti. Per averne mangiato, resta eternamente bambina.', en: 'Sugar: the Hobby-Hobby Fruit turns people into toys, erasing them from everyone’s memory. Having eaten it, she stays a child forever.' },
+  ],
+  'char-op-baby-5': [
+    { it: 'Baby 5, agente dei Donquijote che trasforma il corpo in qualsiasi arma. Incapace di dire di no a chi le chiede aiuto, finì per sposare Sai della Happo Navy.', en: "Baby 5, a Donquixote agent who turns her body into any weapon. Unable to refuse anyone who asks for help, she ended up marrying Sai of the Happo Navy." },
+  ],
+
+  /* --------------------------- Pirati di Barbanera --------------------------- */
+  'char-op-burgess': [
+    { it: 'Jesus Burgess «il Campione», timoniere di Barbanera e lottatore di forza erculea, sempre in cerca dello scontro più forte.', en: "Jesus Burgess 'the Champion', Blackbeard's helmsman and a wrestler of herculean strength, forever seeking the strongest opponent." },
+  ],
+  'char-op-shiryu': [
+    { it: 'Shiryu «della Pioggia», ex capo dei secondini di Impel Down. Evaso, rubò il Frutto Invisibile e divenne uno dei comandanti di Barbanera.', en: "Shiryu 'of the Rain', the former chief jailer of Impel Down. Escaped, he stole the Clear-Clear Fruit and became one of Blackbeard's commanders." },
+  ],
+  'char-op-van-augur': [
+    { it: 'Van Augur «il Supersonico», cecchino di Barbanera dalla mira infallibile a distanze impossibili; il suo Frutto può teletrasportare sé stesso e gli altri.', en: "Van Augur 'the Supersonic', Blackbeard's sniper with unerring aim at impossible ranges; his fruit can warp himself and others." },
+  ],
+
+  /* --------------------------- Pirati delle Cento Bestie --------------------------- */
+  'char-op-king': [
+    { it: 'King «l’Incendio», braccio destro di Kaido e ultimo dei Lunaria, dalla pelle ignifuga. Zoan antico del pteranodonte.', en: "King 'the Wildfire', Kaido's right hand and the last of the Lunarians, with fireproof skin. Ancient pteranodon Zoan." },
+  ],
+  'char-op-queen': [
+    { it: 'Queen «la Peste», Calamità e scienziato pazzo. Corpo cyborg, Zoan del brachiosauro e una sfrenata passione per lo spettacolo.', en: "Queen 'the Plague', a Calamity and mad scientist. A cyborg body, a brachiosaurus Zoan and an unbridled passion for showmanship." },
+  ],
+  'char-op-jack': [
+    { it: 'Jack «la Siccità», Calamità di Kaido. Lo Zoan del mammut lo rende quasi indistruttibile: devastò Zou per giorni a caccia di Raizo.', en: "Jack 'the Drought', one of Kaido's Calamities. The mammoth Zoan makes him nearly indestructible: he ravaged Zou for days hunting Raizo." },
+  ],
+  'char-op-whos-who': [
+    { it: 'Who’s Who, Tobiroppo ed ex agente della CP9. Zoan della tigre dai denti a sciabola; custodisce un legame segreto con la leggenda di Joy Boy e del Sole Nika.', en: "Who's Who, a Tobiroppo and former CP9 agent. A saber-tooth tiger Zoan; he holds a secret link to the legend of Joy Boy and the Sun God Nika." },
+  ],
+  'char-op-black-maria': [
+    { it: 'Black Maria, Tobiroppo: gigantesca cortigiana dallo Zoan del ragno preistorico, manovra ragnatele e veleno.', en: 'Black Maria, a Tobiroppo: a giant courtesan with a prehistoric-spider Zoan, wielding webs and poison.' },
+  ],
+  'char-op-page-one': [
+    { it: 'Page One, Tobiroppo dallo Zoan dello spinosauro; fratello minore di Ulti, ingenuo ma di una forza bruta spaventosa.', en: "Page One, a Tobiroppo with a spinosaurus Zoan; Ulti's little brother, naive but terrifyingly strong." },
+  ],
+  'char-op-ulti': [
+    { it: 'Ulti, Tobiroppo dallo Zoan del pachicefalosauro: testarda e violenta, ma sciogliendosi d’affetto per il fratello Page One.', en: "Ulti, a Tobiroppo with a pachycephalosaurus Zoan: stubborn and violent, yet melting with affection for her brother Page One." },
+  ],
+
+  /* --------------------------- Skypiea / East Blue / vari --------------------------- */
+  'char-op-wiper': [
+    { it: 'Wiper, guerriero Shandia discendente di Calgara. Usa le «dial» esplosive e il «Vearth» per sfidare il «Dio» Enel e riprendersi la terra ancestrale.', en: "Wiper, a Shandia warrior descended from Calgara. He uses explosive dials and 'Vearth' to challenge 'God' Enel and reclaim his ancestral land." },
+  ],
+  'char-op-gan-fall': [
+    { it: 'Gan Fall, ex «Dio» (sovrano) di Skypiea prima dell’usurpazione di Enel; cavalca il fedele uccello Pierre.', en: "Gan Fall, the former 'God' (ruler) of Skypiea before Enel's usurpation; he rides his faithful bird Pierre." },
+  ],
+  'char-op-foxy': [
+    { it: 'Foxy «il Volpe Argentata». Il Frutto Lento emette raggi che rallentano di trenta secondi tutto ciò che colpiscono.', en: "Foxy 'the Silver Fox'. The Slow-Slow Fruit emits beams that slow whatever they hit by thirty seconds." },
+  ],
+  'char-op-bon-clay': [
+    { it: 'Bentham «Mr. 2 Bon Clay», okama dal Frutto Copia: assume volto e corpo di chiunque tocchi. Sacrificò la propria libertà a Impel Down per salvare gli amici.', en: "Bentham 'Mr. 2 Bon Clay', an okama with the Clone-Clone Fruit: he takes on the face and body of anyone he touches. He sacrificed his freedom at Impel Down to save his friends." },
+  ],
+  'char-op-bellamy': [
+    { it: 'Bellamy «la Iena». Il Frutto Molla gli permette di rimbalzare e caricare colpi devastanti; ammiratore di Doflamingo, ne fu poi tradito.', en: "Bellamy 'the Hyena'. The Spring-Spring Fruit lets him bounce and load devastating blows; an admirer of Doflamingo, he was later betrayed by him." },
+  ],
+  'char-op-bartolomeo': [
+    { it: 'Bartolomeo «il Cannibale», fan sfegatato dei Cappello di Paglia. Il Frutto Barriera crea muri invisibili e indistruttibili.', en: "Bartolomeo 'the Cannibal', a diehard Straw Hat fan. The Barrier-Barrier Fruit creates invisible, indestructible walls." },
+  ],
+  'char-op-cavendish': [
+    { it: 'Cavendish «il Cavaliere Bianco», bellissimo e narcisista. Nel sonno si trasforma nello spietato spadaccino «Hakuba», di cui non ricorda nulla.', en: "Cavendish 'the White Horse', beautiful and narcissistic. In his sleep he becomes the merciless swordsman 'Hakuba', of whom he remembers nothing." },
+  ],
+  'char-op-vivi': [
+    { it: 'Nefertari Vivi, principessa di Alabasta. Viaggiò con la ciurma come «Miss Wednesday» della Baroque Works per smascherare Crocodile; membro onorario per sempre.', en: "Nefertari Vivi, princess of Alabasta. She traveled with the crew as 'Miss Wednesday' of Baroque Works to expose Crocodile; an honorary member forever." },
+  ],
+  'char-op-pell': [
+    { it: 'Pell, guardiano reale di Alabasta dallo Zoan del falco. Si sacrificò portando in cielo una bomba colossale per salvare Alubarna… e sopravvisse.', en: 'Pell, a royal guardian of Alabasta with a falcon Zoan. He sacrificed himself carrying a colossal bomb into the sky to save Alubarna… and survived.' },
+  ],
+  'char-op-chaka': [
+    { it: 'Chaka «lo Sciacallo», uno dei due massimi guerrieri di Alabasta, dallo Zoan dello sciacallo; fedele custode della famiglia reale Nefertari.', en: "Chaka 'the Jackal', one of Alabasta's two greatest warriors, with a jackal Zoan; a loyal guardian of the Nefertari royal family." },
+  ],
 };
+
 
 
