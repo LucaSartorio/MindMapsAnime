@@ -214,5 +214,100 @@ export const onepieceTrivia: Record<string, Localizable[]> = {
   'char-op-perospero': [
     { it: 'Charlotte Perospero, primogenito di Big Mom e Ministro delle Caramelle. Il Frutto Lecca Lecca gli permette di creare e plasmare caramello solido.', en: "Charlotte Perospero, Big Mom's eldest son and Minister of Candy. The Lick-Lick Fruit lets him create and shape solid candy." },
   ],
+  'char-op-cracker': [
+    { it: 'Charlotte Cracker, Comandante dei Dolci. Il Frutto Biscotto crea soldati-biscotto pressoché infiniti e un’armatura attorno a sé.', en: 'Charlotte Cracker, a Sweet Commander. The Biscuit-Biscuit Fruit creates near-endless biscuit soldiers and armor around himself.' },
+  ],
+  'char-op-smoothie': [
+    { it: 'Charlotte Smoothie, Comandante dei Dolci. Il Frutto Strizza può spremere il succo — e la vita — da qualsiasi cosa, persone comprese.', en: 'Charlotte Smoothie, a Sweet Commander. The Wring-Wring Fruit can squeeze the juice — and the life — out of anything, people included.' },
+  ],
+  'char-op-oven': [
+    { it: 'Charlotte Oven, Ministro del Rosolato. Il Frutto Calore surriscalda ciò che tocca: può far bollire persino la superficie del mare.', en: 'Charlotte Oven, Minister of Browning. The Heat-Heat Fruit superheats whatever he touches: he can boil even the surface of the sea.' },
+  ],
+  'char-op-daifuku': [
+    { it: 'Charlotte Daifuku, Ministro dei Fagioli. Strofinandosi il corpo evoca un possente genio guerriero, come da una lampada.', en: 'Charlotte Daifuku, Minister of Beans. By rubbing his body he summons a mighty warrior genie, as if from a lamp.' },
+  ],
+  'char-op-brulee': [
+    { it: 'Charlotte Brûlée. Il Frutto Specchio le consente di muoversi tra gli specchi e di imprigionare i nemici nel «Mondo degli Specchi».', en: 'Charlotte Brûlée. The Mirror-Mirror Fruit lets her travel through mirrors and trap enemies in the "Mirro-World".' },
+  ],
+
+  /* --------------------------- Comandanti di Barbabianca --------------------------- */
+  'char-op-jozu': [
+    { it: 'Jozu «Diamante», terzo comandante di Barbabianca. Il Frutto Splendore trasforma il suo corpo in diamante indistruttibile.', en: "Jozu 'Diamond', Whitebeard's third-division commander. The Glint-Glint Fruit turns his body into indestructible diamond." },
+  ],
+  'char-op-vista': [
+    { it: 'Vista «Spada Fiorita», quinto comandante di Barbabianca: uno spadaccino tanto abile da reggere lo scontro con Dracule Mihawk.', en: "Vista 'Flower Sword', Whitebeard's fifth-division commander: a swordsman skilled enough to hold his own against Dracule Mihawk." },
+  ],
+  'char-op-izo': [
+    { it: 'Izo, comandante di Barbabianca originario di Wano e fratello di Kiku. Combatte con due pistole e un’eleganza tutta sua.', en: "Izo, a Whitebeard commander originally from Wano and Kiku's brother. He fights with two pistols and a style all his own." },
+  ],
+
+  /* --------------------------- Wano --------------------------- */
+  'char-op-denjiro': [
+    { it: 'Denjiro, fedelissimo di Oden. Per vent’anni si finse il cortigiano Kyoshiro al servizio di Orochi, preparando in segreto la rivolta.', en: "Denjiro, Oden's most loyal man. For twenty years he posed as the courtesan-boss Kyoshiro in Orochi's service, secretly preparing the revolt." },
+  ],
+  'char-op-kiku': [
+    { it: 'Kikunojo, samurai dei Nove Foderi Rossi e sorella di Izo: donna nell’animo, leale fino al sacrificio.', en: "Kikunojo, a samurai of the Nine Red Scabbards and Izo's sister: a woman at heart, loyal to the point of sacrifice." },
+  ],
+  'char-op-kawamatsu': [
+    { it: 'Kawamatsu il Kappa, samurai uomo-pesce. Restò imprigionato per anni custodendo le spade dei Foderi Rossi in attesa del giorno della vendetta.', en: 'Kawamatsu the Kappa, a fish-man samurai. He stayed imprisoned for years, guarding the Scabbards’ swords until the day of vengeance.' },
+  ],
+  'char-op-raizo': [
+    { it: 'Raizo, ninja dei Foderi Rossi. La sua presenza nascosta a Zou fu la causa scatenante dell’assalto di Jack al Ducato di Mokomo.', en: "Raizo, a ninja of the Red Scabbards. His hidden presence on Zou was the trigger for Jack's assault on the Mokomo Dukedom." },
+  ],
+  'char-op-hiyori': [
+    { it: 'Kozuki Hiyori, figlia di Oden. Per anni si nascose come la cortigiana Komurasaki, ritenuta la donna più bella di Wano.', en: "Kozuki Hiyori, Oden's daughter. For years she hid as the courtesan Komurasaki, said to be the most beautiful woman in Wano." },
+  ],
+  'char-op-orochi': [
+    { it: 'Kurozumi Orochi, shogun usurpatore di Wano. Il Frutto Serpente a Otto Teste gli dona più vite, rendendolo difficilissimo da uccidere.', en: 'Kurozumi Orochi, the usurper shogun of Wano. The Snake-Snake Fruit (Eight-Headed Serpent) grants him multiple lives, making him very hard to kill.' },
+  ],
+  'char-op-tama': [
+    { it: 'Otama, bambina di Wano. Il suo Frutto le permette di ammansire animali e gifter offrendo dango impastati col proprio sangue.', en: "Otama, a Wano child. Her fruit lets her tame animals and gifters by offering dango kneaded with her own blood." },
+  ],
+  'char-op-hyogoro': [
+    { it: 'Hyogoro «il Fiore», leggendario boss della yakuza di Wano. In prigione insegnò a Rufy a rivestire i colpi con l’Ambizione (Ryuo).', en: "Hyogoro 'the Flower', a legendary Wano yakuza boss. In prison he taught Luffy to coat his blows with Haki (Ryuo)." },
+  ],
+
+  /* --------------------------- Armata Rivoluzionaria --------------------------- */
+  'char-op-dragon': [
+    { it: 'Monkey D. Dragon, «il criminale più pericoloso del mondo» e capo dei Rivoluzionari. Padre di Rufy e figlio di Garp; i suoi poteri restano un mistero.', en: 'Monkey D. Dragon, "the world\'s most dangerous criminal" and leader of the Revolutionaries. Luffy\'s father and Garp\'s son; his powers remain a mystery.' },
+  ],
+  'char-op-koala': [
+    { it: 'Koala, istruttrice dei Rivoluzionari ed ex schiava liberata da Fisher Tiger. Crebbe tra i Pirati del Sole e padroneggia il Karate degli Uomini-Pesce.', en: 'Koala, a Revolutionary instructor and a former slave freed by Fisher Tiger. She grew up among the Sun Pirates and masters Fish-Man Karate.' },
+  ],
+  'char-op-hack': [
+    { it: 'Hack, uomo-pesce maestro del Karate degli Uomini-Pesce e istruttore dell’Armata Rivoluzionaria; un fervente sostenitore della convivenza tra le razze.', en: 'Hack, a fish-man master of Fish-Man Karate and a Revolutionary Army instructor; a fervent believer in coexistence between the races.' },
+  ],
+
+  /* --------------------------- Governo / CP / leggende --------------------------- */
+  'char-op-imu': [
+    { it: 'Imu, il sovrano segreto che siede sul Trono Vuoto di Mary Geoise, al di sopra dei Cinque Astri: la sua esistenza è il segreto più grande del mondo.', en: 'Imu, the secret ruler who sits on the Empty Throne of Mary Geoise, above the Five Elders: their very existence is the world’s greatest secret.' },
+  ],
+  'char-op-sengoku': [
+    { it: 'Sengoku «il Buddha», ex Grand’Ammiraglio. Lo Zoan mitologico del Daibutsu e la sua saggezza guidarono la Marina nell’era di Roger.', en: "Sengoku 'the Buddha', a former Fleet Admiral. The mythical Daibutsu Zoan and his wisdom led the Marines through Roger's era." },
+  ],
+  'char-op-lucci': [
+    { it: 'Rob Lucci, l’agente più letale della CP9 e poi della CP0. Lo Zoan del leopardo e la dottrina del «Giudizio Tenebroso» ne fanno un killer spietato.', en: "Rob Lucci, the deadliest agent of CP9 and later CP0. The leopard Zoan and the doctrine of 'Dark Justice' make him a merciless killer." },
+  ],
+  'char-op-kaku': [
+    { it: 'Kaku, agente della CP9 dallo Zoan della giraffa. Era anche un geniale ispettore navale della Galley-La, capace di valutare una nave a colpo d’occhio.', en: 'Kaku, a CP9 agent with the giraffe Zoan. He was also a brilliant Galley-La ship inspector, able to appraise a vessel at a glance.' },
+  ],
+  'char-op-spandam': [
+    { it: 'Spandam, capo codardo della CP9: scatenò il Buster Call su Enies Lobby e brandiva Funkfreed, una spada-elefante vivente.', en: 'Spandam, the cowardly CP9 chief: he called the Buster Call on Enies Lobby and wielded Funkfreed, a living elephant-sword.' },
+  ],
+
+  /* --------------------------- Uomini-pesce / era di Roger --------------------------- */
+  'char-op-fisher-tiger': [
+    { it: 'Fisher Tiger, eroe degli uomini-pesce: assaltò Mary Geoise e liberò gli schiavi. Morì rifiutando il sangue umano per le trasfusioni, vittima del proprio orgoglio ferito.', en: "Fisher Tiger, a fish-man hero: he stormed Mary Geoise and freed the slaves. He died refusing human blood for transfusions, a victim of his own wounded pride." },
+  ],
+  'char-op-arlong': [
+    { it: 'Arlong, uomo-pesce sega. Il suo odio razzista verso gli umani affonda le radici nelle ingiustizie e nello sfruttamento subìti dal suo popolo.', en: "Arlong, a sawshark fish-man. His racist hatred of humans is rooted in the injustices and exploitation his people suffered." },
+  ],
+  'char-op-rayleigh': [
+    { it: 'Silvers Rayleigh, «il Re Oscuro» e vicecapitano di Roger. Ritiratosi come gabbiere a Sabaody, addestrò Rufy all’Ambizione durante i due anni.', en: "Silvers Rayleigh, 'the Dark King' and Roger's first mate. Retired as a coating mechanic at Sabaody, he trained Luffy in Haki during the two years." },
+  ],
+  'char-op-crocus': [
+    { it: 'Crocus, medico della ciurma di Roger e guardiano del faro di Reverse Mountain, dove veglia sulla balena Laboon che attende da 50 anni il ritorno dei suoi amici.', en: "Crocus, the doctor of Roger's crew and keeper of the Reverse Mountain lighthouse, where he watches over the whale Laboon, who has awaited his friends' return for 50 years." },
+  ],
 };
+
 
