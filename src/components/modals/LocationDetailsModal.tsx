@@ -191,6 +191,16 @@ export function LocationDetailsModal({
               {getLocalizedText(location.poneglyph.note, locale)}
             </p>
           )}
+          {location.poneglyph.inscription && (
+            <div className="mt-2 border-l-2 border-red-500/60 pl-2.5">
+              <p className="text-[10px] font-semibold uppercase tracking-wide text-red-300/90">
+                {t('modals.poneglyphMeaning')}
+              </p>
+              <p className="mt-0.5 text-sm italic leading-relaxed text-red-100">
+                {getLocalizedText(location.poneglyph.inscription, locale)}
+              </p>
+            </div>
+          )}
         </div>
       )}
 

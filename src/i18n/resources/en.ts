@@ -197,6 +197,7 @@ export const en = {
     villagesPresent: 'Villages here',
     specialPlaces: 'Important places',
     bounty: 'Bounties',
+    poneglyphMeaning: 'What it reveals',
     hiddenVillages: 'Hidden villages',
     eventsInTerritory: 'Events in territory ({{count}})',
     eventsInNation: 'Events in nation ({{count}})',

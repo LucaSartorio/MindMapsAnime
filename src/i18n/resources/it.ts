@@ -200,6 +200,7 @@ export const it = {
     villagesPresent: 'Villaggi presenti',
     specialPlaces: 'Luoghi importanti',
     bounty: 'Taglie',
+    poneglyphMeaning: 'Cosa rivela',
     hiddenVillages: 'Villaggi nascosti',
     eventsInTerritory: 'Eventi nel territorio ({{count}})',
     eventsInNation: 'Eventi nella nazione ({{count}})',

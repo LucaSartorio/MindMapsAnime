@@ -408,6 +408,8 @@ export interface PoneglyphRef {
   kind: PoneglyphKind;
   /** Contesto: dove/quando è stato trovato, letto o rubato. */
   note?: Localizable;
+  /** Traduzione / significato di ciò che vi è inciso. */
+  inscription?: Localizable;
 }
 
 /* ------------------------------ Character ------------------------------ */
