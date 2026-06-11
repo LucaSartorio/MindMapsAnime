@@ -1,11 +1,18 @@
-import { lazy, Suspense, type ReactNode } from 'react';
+import { lazy, Suspense, useEffect, useState, type ReactNode } from 'react';
 import { Navigate, Route, Routes, useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import type { WorldDataset } from '@/types';
 import { findWorldBySlug } from '@/data/worlds';
-import { getWorldDataset } from '@/data/registry';
+import { getLoadedWorldDataset, loadWorldDataset } from '@/data/registry';
 import { WorldLayout } from '@/components/layout/WorldLayout';
-import { WorldMapPage } from '@/pages/WorldMapPage';
 import { ComingSoonWorldPage } from '@/pages/ComingSoonWorldPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
+
+// Lazy: la pagina mappa porta con sé React Flow (~180KB) — non deve pesare
+// sull'avvio dell'app (homepage) ma caricarsi solo entrando in un mondo.
+const WorldMapPage = lazy(() =>
+  import('@/pages/WorldMapPage').then((m) => ({ default: m.WorldMapPage })),
+);
 
 // Lazy load delle pagine archive
 const CharactersPage = lazy(() =>
@@ -47,12 +54,43 @@ function LazyFallback({ children }: { children: ReactNode }) {
 }
 
 /**
- * Router del singolo mondo. Risolve il dataset dallo slug,
- * mostra la pagina coming-soon o 404 in caso contrario.
+ * Router del singolo mondo. Risolve il dataset dallo slug — il dataset è
+ * code-splittato per mondo e caricato in async (vedi `src/data/registry.ts`),
+ * così il bundle iniziale resta leggero. Mostra coming-soon o 404 altrimenti.
  */
 export function WorldRoute() {
+  const { t } = useTranslation();
   const { worldSlug } = useParams();
   const world = worldSlug ? findWorldBySlug(worldSlug) : undefined;
+  const slug = world?.status === 'available' ? world.slug : undefined;
+
+  // Sync se già in cache (navigazioni successive), altrimenti fetch del chunk.
+  const [dataset, setDataset] = useState<WorldDataset | undefined>(() =>
+    slug ? getLoadedWorldDataset(slug) : undefined,
+  );
+  const [failed, setFailed] = useState(false);
+
+  useEffect(() => {
+    if (!slug) return;
+    const cached = getLoadedWorldDataset(slug);
+    if (cached) {
+      setDataset(cached);
+      return;
+    }
+    let cancelled = false;
+    setDataset(undefined);
+    setFailed(false);
+    loadWorldDataset(slug)
+      .then((d) => {
+        if (!cancelled) setDataset(d);
+      })
+      .catch(() => {
+        if (!cancelled) setFailed(true);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [slug]);
 
   if (!world) {
     return <NotFoundPage />;
@@ -60,9 +98,15 @@ export function WorldRoute() {
   if (world.status !== 'available') {
     return <ComingSoonWorldPage world={world} />;
   }
-  const dataset = getWorldDataset(world.slug);
-  if (!dataset) {
+  if (failed) {
     return <ComingSoonWorldPage world={world} />;
+  }
+  if (!dataset) {
+    return (
+      <div className="flex-1 grid place-items-center text-ink-300 text-sm">
+        {t('common.loading')}
+      </div>
+    );
   }
 
   return (
@@ -71,7 +115,9 @@ export function WorldRoute() {
         index
         element={
           <WorldLayout dataset={dataset} mapOverlays>
-            <WorldMapPage dataset={dataset} />
+            <LazyFallback>
+              <WorldMapPage dataset={dataset} />
+            </LazyFallback>
           </WorldLayout>
         }
       />

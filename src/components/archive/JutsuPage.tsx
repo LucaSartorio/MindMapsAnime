@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useDeferredValue, useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
@@ -36,6 +36,8 @@ export function JutsuPage({ dataset }: JutsuPageProps) {
   const [params] = useSearchParams();
   const initialId = params.get('id');
   const [query, setQuery] = useState('');
+  // Differita: i tasti dipingono subito, il refiltro pesante gira a bassa priorità.
+  const deferredQuery = useDeferredValue(query);
   const [filterType, setFilterType] = useState<string>('');
   const [filterNature, setFilterNature] = useState<string>('');
   const openJutsuModal = useUiStore((s) => s.openJutsuModal);
@@ -68,7 +70,7 @@ export function JutsuPage({ dataset }: JutsuPageProps) {
   }, [allJutsu]);
 
   const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase();
+    const q = deferredQuery.trim().toLowerCase();
     return allJutsu
       .filter((j) => {
         if (q) {
@@ -93,13 +95,13 @@ export function JutsuPage({ dataset }: JutsuPageProps) {
           getLocalizedText(b.localizedName, locale) || b.name,
         ),
       );
-  }, [allJutsu, query, filterType, filterNature, locale]);
+  }, [allJutsu, deferredQuery, filterType, filterNature, locale]);
 
   /** Vetrina jutsu: prende dalla whitelist in ordine, intersecando con
    * quanto è presente nel dataset filtrato per serie. Nascosta se l'utente
    * sta cercando o filtrando per tipo/natura. */
   const featuredItems: FeaturedTile[] = useMemo(() => {
-    if (query.trim() || filterType || filterNature) return [];
+    if (deferredQuery.trim() || filterType || filterNature) return [];
     const map = new Map(allJutsu.map((j) => [j.id, j]));
     const ranked = featuredOrder
       .map((id) => map.get(id))
@@ -128,7 +130,7 @@ export function JutsuPage({ dataset }: JutsuPageProps) {
         onClick: () => openJutsuModal(j.id),
       };
     });
-  }, [allJutsu, locale, query, filterType, filterNature, openJutsuModal, attribute, featuredOrder]);
+  }, [allJutsu, locale, deferredQuery, filterType, filterNature, openJutsuModal, attribute, featuredOrder]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6">
@@ -200,11 +202,11 @@ export function JutsuPage({ dataset }: JutsuPageProps) {
       ) : (
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {filtered.map((j) => (
-            <li key={j.id}>
+            <li key={j.id} className="cv-auto">
               <JutsuCard
                 jutsu={j}
                 dataset={dataset}
-                onClick={() => openJutsuModal(j.id)}
+                onSelect={openJutsuModal}
               />
             </li>
           ))}

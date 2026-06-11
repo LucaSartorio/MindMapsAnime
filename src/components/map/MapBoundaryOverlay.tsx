@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import type { MapBoundary, MapLevel, WorldDataset } from '@/types';
 import { useMapStore, useUiStore } from '@/store';
+import { worldShowsBoundaryHighlight } from '@/lib/worldMapPrefs';
 import { MapRegionPath } from './MapRegionPath';
 
 interface MapBoundaryOverlayProps {
@@ -46,7 +47,13 @@ export function MapBoundaryOverlay({ dataset, level }: MapBoundaryOverlayProps) 
     [boundaries, level.id, showUnverified],
   );
 
-  if (!visibleLayers.boundaries || levelBoundaries.length === 0) {
+  // Mondi con mappa illustrata (es. HxH) non usano l'overlay vettoriale:
+  // la mappa di base disegna già i confini, qui lasciamo solo i pin.
+  if (
+    !worldShowsBoundaryHighlight(dataset.world) ||
+    !visibleLayers.boundaries ||
+    levelBoundaries.length === 0
+  ) {
     return null;
   }
 

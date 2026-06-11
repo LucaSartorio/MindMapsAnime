@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { LocationType, Series, VisibleLayers, WorldDataset } from '@/types';
 import { worldSeriesOptions } from '@/lib/series';
@@ -29,6 +29,14 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
   const visibleLayers = useMapStore((s) => s.visibleLayers);
   const setVisibleLayer = useMapStore((s) => s.setVisibleLayer);
   const resetLayers = useMapStore((s) => s.resetLayers);
+
+  // Mount lazy: il contenuto (centinaia di pill) viene renderizzato solo alla
+  // prima apertura. Il drawer è montato su OGNI pagina del mondo: senza questo
+  // pagheremmo il costo anche per chi non apre mai i filtri (peggio l'INP).
+  // Dopo la prima apertura resta montato, così l'animazione di chiusura
+  // mantiene il contenuto e le riaperture sono istantanee.
+  const everOpenedRef = useRef(false);
+  if (open) everOpenedRef.current = true;
 
   function toggleLayer<K extends keyof VisibleLayers>(layer: K) {
     setVisibleLayer(layer, !visibleLayers[layer] as VisibleLayers[K]);
@@ -124,6 +132,7 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
       ariaLabel={t('filters.title')}
       className="w-[92vw] sm:max-w-sm"
     >
+      {everOpenedRef.current && (
       <div className="h-full flex flex-col">
         <header className="px-4 py-3 border-b border-ink-700/60 flex items-center justify-between gap-2 shrink-0">
           <div>
@@ -379,6 +388,7 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
           </Button>
         </footer>
       </div>
+      )}
     </Drawer>
   );
 }

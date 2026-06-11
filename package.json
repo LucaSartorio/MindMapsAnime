@@ -10,10 +10,13 @@
     "preview": "vite preview",
     "validate:data": "tsx --tsconfig scripts/tsconfig.json scripts/validate-data.ts",
     "validate:i18n": "tsx --tsconfig scripts/tsconfig.json scripts/validate-i18n.ts",
+    "smoke": "npm run build && tsx --tsconfig scripts/tsconfig.json scripts/smoke.ts",
     "extract:boundaries": "tsx --tsconfig scripts/tsconfig.json scripts/extract-boundaries.ts",
     "find:dots": "tsx --tsconfig scripts/tsconfig.json scripts/find-red-dots.ts"
   },
   "dependencies": {
+    "@vercel/speed-insights": "^2.0.0",
+    "@vercel/analytics": "^2.0.1",
     "@xyflow/react": "^12.3.5",
     "i18next": "^23.16.8",
     "i18next-browser-languagedetector": "^8.2.1",
@@ -30,6 +33,7 @@
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.3",
     "autoprefixer": "^10.4.20",
+    "playwright": "^1.56.0",
     "pngjs": "^7.0.0",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.14",

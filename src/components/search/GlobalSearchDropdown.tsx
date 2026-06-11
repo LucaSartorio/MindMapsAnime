@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { SearchResult, WorldDataset } from '@/types';
@@ -35,9 +35,15 @@ export function GlobalSearchDropdown({
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
 
+  // Query differita: il tasto digitato dipinge subito, la ricerca (pesante sui
+  // dataset grandi, es. One Piece) gira in un render a bassa priorità → INP basso.
+  const deferredQuery = useDeferredValue(query);
   const results = useMemo(
-    () => (query ? searchDataset(query, dataset, locale).slice(0, 10) : []),
-    [query, dataset, locale],
+    () =>
+      deferredQuery
+        ? searchDataset(deferredQuery, dataset, locale).slice(0, 10)
+        : [],
+    [deferredQuery, dataset, locale],
   );
 
   // Click fuori → chiude

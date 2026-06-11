@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Perf: salta render/layout/paint delle card archivio fuori viewport.
+   `contain-intrinsic-size` riserva l'altezza stimata così scrollbar e scroll
+   restano stabili. Nei browser senza supporto la regola è ignorata. */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 320px;
+}
+
 /* Stili globali per Anime Interactive Maps */
 :root {
   color-scheme: dark;
