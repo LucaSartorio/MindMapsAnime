@@ -118,6 +118,7 @@ export const it = {
     showMinorVillages: 'Mostra {{places}} minori',
     showSpecialPlaces: 'Mostra luoghi speciali',
     showUnverified: 'Mostra elementi da verificare',
+    highlightPoneglyphs: 'Evidenzia i Poneglyph',
     showRoutes: 'Mostra percorsi',
     routesCanon: 'Percorsi canon',
     routesNonCanon: 'Percorsi anime-only / filler',

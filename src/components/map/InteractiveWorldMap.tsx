@@ -175,6 +175,7 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
         importance: loc.importance,
         selected: loc.id === selectedLocationId,
         highlighted: highlightedLocationIds.has(loc.id),
+        poneglyph: filters.highlightPoneglyphs && !!loc.poneglyph,
         hasSubMap: !!loc.subMapLevelId,
       },
       draggable: false,
@@ -182,6 +183,16 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
     }));
   }, [visibleLocations, selectedLocationId, highlightedLocationIds, locale]);
 
+    return [...layerNodes, ...pinNodes];
+  }, [
+    activeLevel,
+    dataset,
+    visibleLocations,
+    selectedLocationId,
+    highlightedLocationIds,
+    filters.highlightPoneglyphs,
+    locale,
+  ]);
   const nodes = useMemo<Node<MapNodeData | MapLayerNodeData>[]>(
     () => [...layerNodes, ...pinNodes],
     [layerNodes, pinNodes],

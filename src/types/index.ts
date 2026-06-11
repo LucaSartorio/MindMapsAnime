@@ -395,7 +395,19 @@ export interface Location {
   assetIds?: string[];
   /** Macro-serie / blocchi narrativi in cui compare il luogo. */
   series?: Series[];
+  /** Eventuale Poneglyph presente/trovato/letto/rubato in questo luogo (One Piece). */
+  poneglyph?: PoneglyphRef;
   tags?: string[];
+}
+
+/** Tipo di Poneglyph (One Piece). */
+export type PoneglyphKind = 'road' | 'information' | 'rio';
+
+/** Riferimento a un Poneglyph collocato in un luogo. */
+export interface PoneglyphRef {
+  kind: PoneglyphKind;
+  /** Contesto: dove/quando è stato trovato, letto o rubato. */
+  note?: Localizable;
 }
 
 /* ------------------------------ Character ------------------------------ */
@@ -906,6 +918,8 @@ export interface MapFilters {
   showRoutes: boolean;
   showEvents: boolean;
   showFactions: boolean;
+  /** Evidenzia in rosso i luoghi che contengono un Poneglyph (One Piece). */
+  highlightPoneglyphs: boolean;
 }
 
 /**
@@ -940,6 +954,7 @@ export const defaultFilters: MapFilters = {
   showRoutes: true,
   showEvents: true,
   showFactions: true,
+  highlightPoneglyphs: false,
 };
 
 export const defaultLayers: VisibleLayers = {
