@@ -1,4 +1,4 @@
-import type { Location, WorldDataset } from '@/types';
+import type { Location, PoneglyphRef, WorldDataset } from '@/types';
 import { animeWorlds } from '@/data/worlds';
 import { onepieceMapLevels } from './mapLevels';
 import { onepieceNations } from './nations';
@@ -201,11 +201,52 @@ function withSubmapPins(locations: Location[]): Location[] {
   });
 }
 
+/**
+ * Poneglyph di One Piece, collocati nei luoghi dove sono stati trovati / letti /
+ * rubati. Marcati sia sull'isola della mappa del mondo (per evidenziarla con il
+ * filtro) sia sul punto preciso della relativa sotto-mappa.
+ *  - `road`        → i 4 Road Poneglyph rossi che triangolano Laugh Tale
+ *  - `information` → Poneglyph storici sul Secolo Vuoto
+ *  - `rio`         → il Rio Poneglyph, la storia completa (Laugh Tale)
+ */
+const onepiecePoneglyphs: Record<string, PoneglyphRef> = {
+  // Alabasta — Poneglyph informativo (Plutone), letto da Robin
+  'loc-op-alabasta': { kind: 'information', note: { it: "Poneglyph informativo nella Tomba Reale di Alubarna: Nico Robin vi lesse l'ubicazione dell'arma ancestrale Plutone.", en: "Information Poneglyph in the Royal Tomb of Alubarna: Nico Robin read on it the location of the Ancient Weapon Pluton." } },
+  'loc-op-al-tomb': { kind: 'information', note: { it: "Robin vi lesse di nascosto l'indizio sull'arma ancestrale Plutone.", en: "Robin secretly read here the clue to the Ancient Weapon Pluton." } },
+  // Skypiea — Poneglyph informativo con il messaggio di Roger
+  'loc-op-skypiea': { kind: 'information', note: { it: "Poneglyph informativo tra le rovine di Shandora: Robin vi trovò un messaggio inciso da Gol D. Roger.", en: "Information Poneglyph among the ruins of Shandora: Robin found a message engraved by Gol D. Roger." } },
+  'loc-op-sky-shandora': { kind: 'information', note: { it: "Sull'altare d'oro di Shandora; recava le parole lasciate da Gol D. Roger.", en: "On Shandora's golden altar; it bore the words left by Gol D. Roger." } },
+  // Fish-Man Island — Road Poneglyph (Foresta Marina) + Poneglyph delle scuse di Joy Boy
+  'loc-op-fishman-island': { kind: 'road', note: { it: "Road Poneglyph nella Foresta Marina, accanto al Poneglyph delle scuse di Joy Boy; Robin lo decifrò.", en: "Road Poneglyph in the Sea Forest, beside Joy Boy's apology Poneglyph; Robin deciphered it." } },
+  'loc-op-fm-sea-forest': { kind: 'road', note: { it: "Uno dei quattro Road Poneglyph; vi sorge anche il Poneglyph delle scuse di Joy Boy.", en: "One of the four Road Poneglyphs; Joy Boy's apology Poneglyph also stands here." } },
+  // Zou — Road Poneglyph affidato ai Mink dai Pirati di Roger
+  'loc-op-zou': { kind: 'road', note: { it: "Road Poneglyph affidato dai Pirati di Roger ai Mink e custodito per secoli; Robin ne prese un calco.", en: "Road Poneglyph entrusted by Roger's Pirates to the Minks and guarded for centuries; Robin took a rubbing." } },
+  'loc-op-zo-poneglyph': { kind: 'road', note: { it: "Custodito nel cuore di Zunesha; Robin ne realizzò un calco da portare a Rufy.", en: "Kept in the heart of Zunesha; Robin made a rubbing of it for Luffy." } },
+  // Whole Cake Island — Road Poneglyph di Big Mom, rubato (calco) da Robin e Brook
+  'loc-op-whole-cake-island': { kind: 'road', note: { it: "Road Poneglyph nella sala del tesoro di Big Mom; Robin e Brook ne rubarono di nascosto un calco.", en: "Road Poneglyph in Big Mom's treasure room; Robin and Brook secretly stole a rubbing of it." } },
+  'loc-op-tl-chateau': { kind: 'road', note: { it: "Nella stanza-tesoro del Whole Cake Château; calco rubato da Brook durante la festa del tè.", en: "In the treasure room of Whole Cake Château; rubbing stolen by Brook during the tea party." } },
+  // Wano / Onigashima — Road Poneglyph di Kaido; patria dei Kozuki costruttori dei Poneglyph
+  'loc-op-wano': { kind: 'road', note: { it: "Road Poneglyph di Kaido a Onigashima; Robin ne prese un calco durante l'assalto. Wano è la patria dei Kozuki, i costruttori dei Poneglyph.", en: "Kaido's Road Poneglyph on Onigashima; Robin took a rubbing during the raid. Wano is the homeland of the Kozuki, makers of the Poneglyphs." } },
+  'loc-op-onigashima': { kind: 'road', note: { it: "Custodito da Kaido; Robin ne fece un calco nel caos della guerra di Onigashima.", en: "Kept by Kaido; Robin took a rubbing of it amid the chaos of the Onigashima war." } },
+  // Ohara — Poneglyph studiato dagli archeologi, causa del Buster Call
+  'loc-op-ohara': { kind: 'information', note: { it: "Gli archeologi di Ohara decifravano i Poneglyph: il professor Clover ne lesse uno durante il Buster Call che rase al suolo l'isola.", en: "The Ohara archaeologists deciphered Poneglyphs: Professor Clover read one during the Buster Call that razed the island." } },
+  'loc-op-oh-tree': { kind: 'information', note: { it: "Studiato all'ombra dell'Albero della Conoscenza dagli studiosi di Ohara.", en: "Studied in the shade of the Tree of Knowledge by the Ohara scholars." } },
+  // Laugh Tale — Rio Poneglyph, la storia completa
+  'loc-op-laugh-tale': { kind: 'rio', note: { it: "Rio Poneglyph: l'unione di tutti i Poneglyph informativi, la vera storia del Secolo Vuoto. Letto solo da Roger e dalla sua ciurma.", en: "Rio Poneglyph: the union of all Information Poneglyphs, the true history of the Void Century. Read only by Roger and his crew." } },
+};
+
+/** Aggancia ai luoghi il riferimento al Poneglyph eventualmente presente. */
+function withPoneglyphs(locations: Location[]): Location[] {
+  return locations.map((l) =>
+    onepiecePoneglyphs[l.id] ? { ...l, poneglyph: onepiecePoneglyphs[l.id] } : l,
+  );
+}
+
 export const onepieceDataset: WorldDataset = {
   world: onepiece,
   mapLevels: onepieceMapLevels,
   nations: onepieceNations,
-  locations: withSubmapPins(withVerifiedSubmaps([
+  locations: withPoneglyphs(withSubmapPins(withVerifiedSubmaps([
     ...onepieceLocationsEastBlue,
     ...onepieceLocationsParadise,
     ...onepieceLocationsRedLine,
@@ -220,7 +261,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceLocationsSubmaps4,
     ...onepieceLocationsSubmaps5,
     ...onepieceLocationsExtra2,
-  ])),
+  ]))),
   characters: withCharacterLinks(
     [
       ...onepieceCharactersEastBlue,

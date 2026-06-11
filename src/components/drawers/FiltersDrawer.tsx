@@ -36,6 +36,11 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
 
   /** Alcuni mondi (es. One Piece) non hanno confini disegnati: in tal caso il toggle è inutile. */
   const hasBoundaries = (dataset.boundaries?.length ?? 0) > 0;
+  /** Il filtro Poneglyph appare solo se il mondo ne ha (One Piece). */
+  const hasPoneglyphs = useMemo(
+    () => dataset.locations.some((l) => l.poneglyph),
+    [dataset.locations],
+  );
 
   function toggleType(tp: LocationType) {
     setFilters({
@@ -300,6 +305,14 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
                 label={t('filters.showUnverified')}
                 emberAccent
               />
+              {hasPoneglyphs && (
+                <CheckRow
+                  checked={filters.highlightPoneglyphs}
+                  onChange={(v) => setFilters({ highlightPoneglyphs: v })}
+                  label={t('filters.highlightPoneglyphs')}
+                  emberAccent
+                />
+              )}
             </div>
           </Section>
 

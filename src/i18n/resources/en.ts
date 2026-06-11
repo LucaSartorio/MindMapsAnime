@@ -115,6 +115,7 @@ export const en = {
     showMinorVillages: 'Show minor {{places}}',
     showSpecialPlaces: 'Show special places',
     showUnverified: 'Show items to verify',
+    highlightPoneglyphs: 'Highlight Poneglyphs',
     showRoutes: 'Show routes',
     routesCanon: 'Canon routes',
     routesNonCanon: 'Anime-only / filler routes',

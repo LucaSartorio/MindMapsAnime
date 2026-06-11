@@ -168,6 +168,7 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
         importance: loc.importance,
         selected: loc.id === selectedLocationId,
         highlighted: highlightedLocationIds.has(loc.id),
+        poneglyph: filters.highlightPoneglyphs && !!loc.poneglyph,
         hasSubMap: !!loc.subMapLevelId,
       },
       draggable: false,
@@ -181,6 +182,7 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
     visibleLocations,
     selectedLocationId,
     highlightedLocationIds,
+    filters.highlightPoneglyphs,
     locale,
   ]);
 

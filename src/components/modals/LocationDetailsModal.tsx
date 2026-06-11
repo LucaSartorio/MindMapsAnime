@@ -17,6 +17,13 @@ import {
 } from '@/lib/entities';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText, getLocationTypeLabel } from '@/utils/localization';
+import type { PoneglyphKind } from '@/types';
+
+const PONEGLYPH_KIND_LABEL: Record<PoneglyphKind, { it: string; en: string }> = {
+  road: { it: 'Road Poneglyph', en: 'Road Poneglyph' },
+  information: { it: 'Poneglyph informativo', en: 'Information Poneglyph' },
+  rio: { it: 'Rio Poneglyph', en: 'Rio Poneglyph' },
+};
 
 interface LocationDetailsModalProps {
   dataset: WorldDataset;
@@ -171,6 +178,20 @@ export function LocationDetailsModal({
         <p className="text-ink-300 leading-relaxed">
           {getLocalizedText(location.longDescription, locale)}
         </p>
+      )}
+
+      {location.poneglyph && (
+        <div className="rounded-md border border-red-600/50 bg-red-950/30 px-3 py-2">
+          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-red-200">
+            <span aria-hidden>◈</span>
+            {PONEGLYPH_KIND_LABEL[location.poneglyph.kind][locale === 'en' ? 'en' : 'it']}
+          </div>
+          {location.poneglyph.note && (
+            <p className="mt-1 text-sm leading-relaxed text-red-100/90">
+              {getLocalizedText(location.poneglyph.note, locale)}
+            </p>
+          )}
+        </div>
       )}
 
       {!isVerified && (

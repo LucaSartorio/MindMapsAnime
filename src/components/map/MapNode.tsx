@@ -10,6 +10,8 @@ export interface MapNodeData {
   importance: Importance;
   selected?: boolean;
   highlighted?: boolean;
+  /** Luogo con un Poneglyph, evidenziato in rosso quando il filtro è attivo. */
+  poneglyph?: boolean;
   hasSubMap?: boolean;
   [key: string]: unknown;
 }
@@ -44,7 +46,9 @@ function MapNodeBase({ data }: NodeProps) {
     <div
       className={cn(
         'group relative flex items-center gap-2 cursor-pointer select-none',
-        d.highlighted && 'drop-shadow-[0_0_8px_rgba(255,131,17,0.7)]',
+        d.poneglyph
+          ? 'drop-shadow-[0_0_10px_rgba(239,68,68,0.9)]'
+          : d.highlighted && 'drop-shadow-[0_0_8px_rgba(255,131,17,0.7)]',
       )}
       style={{ transform: `translate(${-dotRadius}px, -50%)` }}
     >
@@ -62,11 +66,13 @@ function MapNodeBase({ data }: NodeProps) {
         className={cn(
           'rounded-full ring-2 transition',
           IMPORTANCE_SIZE[d.importance],
-          d.selected
-            ? 'bg-ember-400 ring-ember-200 shadow-ember'
-            : d.highlighted
-              ? 'bg-ember-500 ring-ember-300/70'
-              : 'bg-chakra-400 ring-chakra-200/40 group-hover:ring-chakra-200',
+          d.poneglyph
+            ? 'bg-red-500 ring-red-300 shadow-[0_0_6px_rgba(239,68,68,0.9)]'
+            : d.selected
+              ? 'bg-ember-400 ring-ember-200 shadow-ember'
+              : d.highlighted
+                ? 'bg-ember-500 ring-ember-300/70'
+                : 'bg-chakra-400 ring-chakra-200/40 group-hover:ring-chakra-200',
         )}
         aria-hidden
       />
@@ -74,11 +80,13 @@ function MapNodeBase({ data }: NodeProps) {
         className={cn(
           'whitespace-nowrap px-2 py-0.5 rounded-md backdrop-blur-sm border transition',
           IMPORTANCE_TEXT[d.importance],
-          d.selected
-            ? 'bg-ember-900/80 border-ember-500/70 text-ember-100'
-            : d.highlighted
-              ? 'bg-ember-900/40 border-ember-600/50 text-ember-100'
-              : 'bg-ink-900/80 border-ink-600/60 text-ink-100 group-hover:border-chakra-500/60',
+          d.poneglyph
+            ? 'bg-red-950/80 border-red-500/70 text-red-100'
+            : d.selected
+              ? 'bg-ember-900/80 border-ember-500/70 text-ember-100'
+              : d.highlighted
+                ? 'bg-ember-900/40 border-ember-600/50 text-ember-100'
+                : 'bg-ink-900/80 border-ink-600/60 text-ink-100 group-hover:border-chakra-500/60',
         )}
       >
         <span className="mr-1 text-chakra-300" aria-hidden>
