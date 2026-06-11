@@ -181,18 +181,14 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
       draggable: false,
       selectable: true,
     }));
-  }, [visibleLocations, selectedLocationId, highlightedLocationIds, locale]);
-
-    return [...layerNodes, ...pinNodes];
   }, [
-    activeLevel,
-    dataset,
     visibleLocations,
     selectedLocationId,
     highlightedLocationIds,
     filters.highlightPoneglyphs,
     locale,
   ]);
+
   const nodes = useMemo<Node<MapNodeData | MapLayerNodeData>[]>(
     () => [...layerNodes, ...pinNodes],
     [layerNodes, pinNodes],
