@@ -11,7 +11,7 @@ const S = (
   it: string, en: string, lit: string | undefined, len: string | undefined,
   leaderIds: string[] | undefined, characterIds: string[], locationIds: string[] | undefined, tags: string[],
 ): Faction => ({
-  id, worldId: 'world-onepiece', type: 'group', name,
+  id, worldId: 'world-onepiece', type: 'vessel', name,
   localizedName: { it: nit, en: nen },
   description: { it, en },
   ...(lit && len ? { longDescription: { it: lit, en: len } } : {}),

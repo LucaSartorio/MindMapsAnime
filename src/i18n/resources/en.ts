@@ -271,6 +271,7 @@ export const en = {
       army: 'Armies',
       group: 'Groups',
       village: 'Villages',
+      vessel: 'Ships',
     },
     empty: 'No clan or faction',
     emptyDescription: 'No results for the current filters.',

@@ -274,6 +274,7 @@ export const it = {
       army: 'Eserciti',
       group: 'Gruppi',
       village: 'Villaggi',
+      vessel: 'Navi',
     },
     empty: 'Nessun clan o fazione',
     emptyDescription: 'Nessun risultato per i filtri attuali.',

@@ -22,7 +22,7 @@ interface ClansAndFactionsPageProps {
  * derivati dal dataset (solo quelli realmente usati dal mondo); tipi
  * sconosciuti ottengono un'etichetta "humanizzata" automaticamente.
  */
-const FACTION_TYPE_ORDER = ['crew', 'clan', 'organization', 'army', 'group', 'village'];
+const FACTION_TYPE_ORDER = ['crew', 'clan', 'organization', 'army', 'group', 'village', 'vessel'];
 const FACTION_TYPE_TKEY: Record<string, string> = {
   clan: 'clans.types.clan',
   crew: 'clans.types.crew',
@@ -30,6 +30,7 @@ const FACTION_TYPE_TKEY: Record<string, string> = {
   army: 'clans.types.army',
   group: 'clans.types.group',
   village: 'clans.types.village',
+  vessel: 'clans.types.vessel',
 };
 
 export function ClansAndFactionsPage({ dataset }: ClansAndFactionsPageProps) {
