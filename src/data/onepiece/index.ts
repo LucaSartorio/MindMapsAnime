@@ -33,6 +33,7 @@ import { onepieceFactionsExtra } from './factionsExtra';
 import { onepieceFactionsWeapons } from './factionsWeapons';
 import { onepieceFactionsExtra2 } from './factionsExtra2';
 import { onepieceFactionsConcepts } from './factionsConcepts';
+import { onepieceFactionsShips } from './factionsShips';
 import { onepieceCharactersEastBlue } from './characters';
 import { onepieceCharactersParadise } from './charactersParadise';
 import { onepieceCharactersParadise2 } from './charactersParadise2';
@@ -325,6 +326,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceFactionsWeapons,
     ...onepieceFactionsExtra2,
     ...onepieceFactionsConcepts,
+    ...onepieceFactionsShips,
   ],
   arcs: [
     ...onepieceArcs,
