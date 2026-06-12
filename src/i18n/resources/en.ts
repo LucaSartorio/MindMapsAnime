@@ -272,6 +272,8 @@ export const en = {
       group: 'Groups',
       village: 'Villages',
       vessel: 'Ships',
+      race: 'Races',
+      concept: 'Concepts',
     },
     empty: 'No clan or faction',
     emptyDescription: 'No results for the current filters.',

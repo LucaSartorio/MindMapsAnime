@@ -275,6 +275,8 @@ export const it = {
       group: 'Gruppi',
       village: 'Villaggi',
       vessel: 'Navi',
+      race: 'Razze',
+      concept: 'Concetti',
     },
     empty: 'Nessun clan o fazione',
     emptyDescription: 'Nessun risultato per i filtri attuali.',
