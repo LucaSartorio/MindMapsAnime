@@ -32,6 +32,7 @@ import { onepieceFactionsSupernovas } from './factionsSupernovas';
 import { onepieceFactionsExtra } from './factionsExtra';
 import { onepieceFactionsWeapons } from './factionsWeapons';
 import { onepieceFactionsExtra2 } from './factionsExtra2';
+import { onepieceFactionsConcepts } from './factionsConcepts';
 import { onepieceCharactersEastBlue } from './characters';
 import { onepieceCharactersParadise } from './charactersParadise';
 import { onepieceCharactersParadise2 } from './charactersParadise2';
@@ -54,6 +55,7 @@ import { onepieceCharactersExtra8 } from './charactersExtra8';
 import { onepieceCharactersGrandFleet } from './charactersGrandFleet';
 import { onepieceCharactersFilms } from './charactersFilms';
 import { onepieceCharactersExtra9 } from './charactersExtra9';
+import { onepieceCharactersExtra10 } from './charactersExtra10';
 import { onepieceArcs } from './arcs';
 import { onepieceArcsSouthBlue } from './arcsSouthBlue';
 import { onepieceArcsNorthBlue } from './arcsNorthBlue';
@@ -301,6 +303,7 @@ export const onepieceDataset: WorldDataset = {
       ...onepieceCharactersGrandFleet,
       ...onepieceCharactersFilms,
       ...onepieceCharactersExtra9,
+      ...onepieceCharactersExtra10,
     ].map((c) => {
       const b = onepieceBounties[c.id];
       const t = onepieceTrivia[c.id];
@@ -321,6 +324,7 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceFactionsExtra,
     ...onepieceFactionsWeapons,
     ...onepieceFactionsExtra2,
+    ...onepieceFactionsConcepts,
   ],
   arcs: [
     ...onepieceArcs,
