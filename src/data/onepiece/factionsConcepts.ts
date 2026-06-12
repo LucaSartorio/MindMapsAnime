@@ -11,7 +11,7 @@ const K = (
   it: string, en: string, lit: string, len: string,
   characterIds: string[] | undefined, locationIds: string[] | undefined, tags: string[],
 ): Faction => ({
-  id, worldId: 'world-onepiece', type: 'group', name,
+  id, worldId: 'world-onepiece', type: 'concept', name,
   localizedName: { it: nit, en: nen },
   description: { it, en },
   longDescription: { it: lit, en: len },
