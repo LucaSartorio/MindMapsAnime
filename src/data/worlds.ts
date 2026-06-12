@@ -202,6 +202,7 @@ export const animeWorlds: AnimeWorld[] = [
           { id: 'paramecia', label: 'Paramecia' },
           { id: 'zoan', label: 'Zoan' },
           { id: 'logia', label: 'Logia' },
+          { id: 'haki', label: 'Ambizione (Haki)' },
         ],
       },
       nationTerm: { it: 'Mare / Isola', en: 'Sea / Island' },
