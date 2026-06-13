@@ -13,6 +13,7 @@ import { hxhCharactersBatch3 } from './charactersBatch3';
 import { hxhCharactersBatch4 } from './charactersBatch4';
 import { hxhCharactersBatch5 } from './charactersBatch5';
 import { hxhFactions } from './factions';
+import { hxhFactionsBatch1 } from './factionsBatch1';
 import { hxhArcs } from './arcs';
 import { hxhEvents } from './events';
 import { hxhEventsBatch1 } from './eventsBatch1';
@@ -50,7 +51,7 @@ export const hunterxhunterDataset: WorldDataset = {
     ...hxhCharactersBatch4,
     ...hxhCharactersBatch5,
   ],
-  factions: hxhFactions,
+  factions: [...hxhFactions, ...hxhFactionsBatch1],
   arcs: hxhArcs,
   events: [...hxhEvents, ...hxhEventsBatch1, ...hxhEventsBatch2, ...hxhEventsBatch3],
   routes: [...hxhRoutes, ...hxhRoutesBatch1, ...hxhRoutesBatch2],
