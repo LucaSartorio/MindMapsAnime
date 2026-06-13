@@ -4,6 +4,7 @@ import { hxhMapLevels } from './mapLevels';
 import { hxhNations } from './nations';
 import { hxhBoundaries } from './boundaries';
 import { hxhLocations } from './locations';
+import { hxhLocationsBatch1 } from './locationsBatch1';
 import { hxhSubmapLocations } from './submapLocations';
 import { hxhCharacters } from './characters';
 import { hxhCharactersBatch1 } from './charactersBatch1';
@@ -40,7 +41,7 @@ export const hunterxhunterDataset: WorldDataset = {
   mapLevels: hxhMapLevels,
   nations: hxhNations,
   boundaries: hxhBoundaries,
-  locations: [...hxhLocations, ...hxhSubmapLocations],
+  locations: [...hxhLocations, ...hxhLocationsBatch1, ...hxhSubmapLocations],
   characters: [
     ...hxhCharacters,
     ...hxhCharactersBatch1,
