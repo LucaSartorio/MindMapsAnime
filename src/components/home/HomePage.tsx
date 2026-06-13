@@ -9,16 +9,29 @@ import { EmptyState } from '@/components/common/EmptyState';
 import { Card } from '@/components/common/Card';
 import { useLocaleStore } from '@/store/useLocaleStore';
 
+/** Quanti mondi mostrare prima del "Mostra tutti" (homepage compatta). */
+const INITIAL_VISIBLE = 3;
+
 export function HomePage() {
   const { t } = useTranslation();
   const locale = useLocaleStore((s) => s.locale);
   const [query, setQuery] = useState('');
+  const [showAll, setShowAll] = useState(false);
   const filteredWorlds = useMemo(() => {
     if (!query.trim()) return animeWorlds;
     const results = searchWorlds(query, animeWorlds, locale);
     const ids = new Set(results.map((r) => r.id));
     return animeWorlds.filter((w) => ids.has(w.id));
   }, [query, locale]);
+
+  // Durante una ricerca mostriamo tutti i risultati (il filtro non va limitato);
+  // altrimenti solo i primi `INITIAL_VISIBLE` finché non si espande.
+  const isSearching = query.trim().length > 0;
+  const collapsed = !isSearching && !showAll;
+  const visibleWorlds = collapsed
+    ? filteredWorlds.slice(0, INITIAL_VISIBLE)
+    : filteredWorlds;
+  const canToggle = !isSearching && filteredWorlds.length > INITIAL_VISIBLE;
 
   return (
     <div>
@@ -54,7 +67,7 @@ export function HomePage() {
           </header>
 
           {filteredWorlds.length > 0 ? (
-            <WorldGrid worlds={filteredWorlds} />
+            <WorldGrid worlds={visibleWorlds} />
           ) : (
             <Card className="p-10">
               <EmptyState
@@ -62,6 +75,24 @@ export function HomePage() {
                 description={t('home.emptyDescription')}
               />
             </Card>
+          )}
+
+          {canToggle && (
+            <div className="flex justify-center">
+              <button
+                type="button"
+                onClick={() => setShowAll((v) => !v)}
+                aria-expanded={showAll}
+                className="panel-soft px-5 py-2.5 text-sm text-ink-100 hover:border-chakra-500/60 hover:text-white transition inline-flex items-center gap-2"
+              >
+                {showAll
+                  ? t('home.showLess')
+                  : t('home.showAll', { count: filteredWorlds.length })}
+                <span aria-hidden className="text-chakra-300">
+                  {showAll ? '▲' : '▼'}
+                </span>
+              </button>
+            </div>
           )}
         </section>
 

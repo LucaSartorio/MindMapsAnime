@@ -43,6 +43,8 @@ export const it = {
     aboutCta: 'Vai alla pagina About per saperne di più sul progetto.',
     exploreMap: 'Esplora mappa',
     comingSoon: 'In arrivo',
+    showAll: 'Mostra tutti i mondi ({{count}})',
+    showLess: 'Mostra meno',
   },
   worldCard: {
     explore: 'Esplora mappa →',

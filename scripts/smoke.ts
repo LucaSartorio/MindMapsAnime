@@ -89,7 +89,7 @@ interface Check {
 }
 
 const CHECKS: Check[] = [
-  { path: '/', anyOf: ['Mappe Interattive', 'Interactive Maps'], selector: 'a[href^="/worlds/"]', minCount: 5 },
+  { path: '/', anyOf: ['Mappe Interattive', 'Interactive Maps'], selector: 'a[href^="/worlds/"]', minCount: 3 },
   { path: '/worlds/naruto', anyOf: ['Naruto'], selector: '.react-flow__node', minCount: 10 },
   { path: '/worlds/onepiece', anyOf: ['One Piece'], selector: '.react-flow__node', minCount: 10 },
   { path: '/worlds/hunterxhunter', anyOf: ['Hunter'], selector: '.react-flow__node', minCount: 5 },
@@ -155,6 +155,26 @@ async function main() {
       }
       if (!ok) failures += 1;
       console.log(`${ok ? '✓' : '✗'} ${check.path}${detail}`);
+    }
+
+    // Interazione: "Mostra tutti" in homepage espande la lista dei mondi.
+    {
+      await page.goto(`${BASE}/`, { waitUntil: 'networkidle', timeout: 30_000 });
+      const cards = page.locator(
+        'section[aria-labelledby="worlds-heading"] li a[href^="/worlds/"]',
+      );
+      const before = await cards.count();
+      const toggle = page.locator(
+        'section[aria-labelledby="worlds-heading"] button[aria-expanded]',
+      );
+      await toggle.click();
+      await page.waitForTimeout(150);
+      const after = await cards.count();
+      const ok = before === 3 && after > before;
+      if (!ok) failures += 1;
+      console.log(
+        `${ok ? '✓' : '✗'} homepage "mostra tutti": ${before} → ${after}`,
+      );
     }
 
     // Interazione: cliccare una card personaggio deve aprire il modale
