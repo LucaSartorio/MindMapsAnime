@@ -41,6 +41,8 @@ export const en = {
     aboutCta: 'Go to the About page to learn more about the project.',
     exploreMap: 'Explore map',
     comingSoon: 'Coming soon',
+    showAll: 'Show all worlds ({{count}})',
+    showLess: 'Show less',
   },
   worldCard: {
     explore: 'Explore map →',
