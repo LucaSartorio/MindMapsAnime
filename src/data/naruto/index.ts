@@ -27,6 +27,7 @@ import { narutoBoundaries } from './boundaries';
 import { narutoJutsu } from './jutsu';
 import { narutoJutsuBatch1 } from './jutsuBatch1';
 import { narutoJutsuBatch2 } from './jutsuBatch2';
+import { narutoJutsuBatch3 } from './jutsuBatch3';
 
 const naruto = animeWorlds.find((w) => w.slug === 'naruto')!;
 
@@ -53,7 +54,7 @@ export const narutoDataset: WorldDataset = {
   events: [...narutoEvents, ...narutoEventsBatch1],
   // Percorsi narrativi + percorsi specifici dei personaggi
   routes: [...narutoRoutes, ...narutoCharacterRoutes],
-  jutsu: [...narutoJutsu, ...narutoJutsuBatch1, ...narutoJutsuBatch2],
+  jutsu: [...narutoJutsu, ...narutoJutsuBatch1, ...narutoJutsuBatch2, ...narutoJutsuBatch3],
   assets: narutoAssets,
 };
 
