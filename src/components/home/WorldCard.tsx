@@ -65,8 +65,8 @@ export function WorldCard({ world }: WorldCardProps) {
   const isAvailable = world.status === 'available';
   const description = getLocalizedText(world.description, locale);
   const inner = (
-    <Card interactive className="relative overflow-hidden h-full">
-      <div className="relative aspect-[16/9] overflow-hidden rounded-t-xl">
+    <Card interactive className="relative overflow-hidden flex flex-1 flex-col">
+      <div className="relative aspect-[16/9] overflow-hidden rounded-t-xl shrink-0">
         <WorldCover world={world} />
         {world.status === 'coming_soon' && <ComingSoonBadge />}
         <div className="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-ink-950/95 via-ink-950/70 to-transparent">
@@ -80,7 +80,7 @@ export function WorldCard({ world }: WorldCardProps) {
           )}
         </div>
       </div>
-      <div className="p-5 flex flex-col gap-4">
+      <div className="p-5 flex flex-1 flex-col gap-4">
         <p className="text-sm text-ink-300 leading-relaxed line-clamp-3">
           {description}
         </p>
@@ -114,7 +114,7 @@ export function WorldCard({ world }: WorldCardProps) {
       <Link
         to={`/worlds/${world.slug}`}
         aria-label={`${world.title} · ${t('coming.badge')}`}
-        className="block focus:outline-none"
+        className="flex flex-1 flex-col focus:outline-none"
       >
         {inner}
       </Link>
@@ -129,7 +129,7 @@ export function WorldCard({ world }: WorldCardProps) {
     <Link
       to={`/worlds/${world.slug}`}
       aria-label={`${t('worldCard.explore')} · ${world.title}`}
-      className="block focus:outline-none"
+      className="flex flex-1 flex-col focus:outline-none"
       onMouseEnter={prefetch}
       onTouchStart={prefetch}
       onFocus={prefetch}
