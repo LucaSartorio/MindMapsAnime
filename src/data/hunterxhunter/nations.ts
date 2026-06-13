@@ -238,4 +238,48 @@ export const hxhNations: Nation[] = [
     referenceStatus: 'needs_verification',
     tags: ['begerosse'],
   },
+
+  /* ============= MITENE UNION · repubbliche membri ============= */
+  {
+    id: 'nation-hxh-rokario',
+    worldId: 'world-hunterxhunter',
+    name: 'Republic of Rokario',
+    localizedName: { it: 'Repubblica di Rokario', en: 'Republic of Rokario' },
+    type: 'minor_nation',
+    description: {
+      it: 'Repubblica della Mitene Union confinante con la NGL; ospita la Fiera del Continente Oscuro indetta dalla V6 e il porto di partenza della Black Whale.',
+      en: 'Mitene Union republic bordering the NGL; hosts the V6 Dark Continent Expo and the departure port of the Black Whale.',
+    },
+    canonStatus: 'canon',
+    referenceStatus: 'needs_verification',
+    tags: ['mitene', 'continente-oscuro'],
+  },
+  {
+    id: 'nation-hxh-hass',
+    worldId: 'world-hunterxhunter',
+    name: 'Republic of Hass',
+    localizedName: { it: 'Repubblica di Hass', en: 'Republic of Hass' },
+    type: 'minor_nation',
+    description: {
+      it: 'Repubblica della Mitene Union, confinante a est con la Repubblica di Rokario.',
+      en: 'Mitene Union republic, bordering the Republic of Rokario to the east.',
+    },
+    canonStatus: 'canon',
+    referenceStatus: 'needs_verification',
+    tags: ['mitene'],
+  },
+  {
+    id: 'nation-hxh-west-gorteau',
+    worldId: 'world-hunterxhunter',
+    name: 'Republic of West Gorteau',
+    localizedName: { it: 'Repubblica di West Gorteau', en: 'Republic of West Gorteau' },
+    type: 'minor_nation',
+    description: {
+      it: 'Repubblica della Mitene Union, controparte occidentale della dittatura di East Gorteau.',
+      en: 'Mitene Union republic, the western counterpart to the East Gorteau dictatorship.',
+    },
+    canonStatus: 'canon',
+    referenceStatus: 'needs_verification',
+    tags: ['mitene'],
+  },
 ];

@@ -4,6 +4,7 @@ import { hxhMapLevels } from './mapLevels';
 import { hxhNations } from './nations';
 import { hxhBoundaries } from './boundaries';
 import { hxhLocations } from './locations';
+import { hxhLocationsBatch1 } from './locationsBatch1';
 import { hxhSubmapLocations } from './submapLocations';
 import { hxhCharacters } from './characters';
 import { hxhCharactersBatch1 } from './charactersBatch1';
@@ -11,18 +12,22 @@ import { hxhCharactersBatch2 } from './charactersBatch2';
 import { hxhCharactersBatch3 } from './charactersBatch3';
 import { hxhCharactersBatch4 } from './charactersBatch4';
 import { hxhCharactersBatch5 } from './charactersBatch5';
+import { hxhCharactersBatch6 } from './charactersBatch6';
 import { hxhFactions } from './factions';
+import { hxhFactionsBatch1 } from './factionsBatch1';
 import { hxhArcs } from './arcs';
 import { hxhEvents } from './events';
 import { hxhEventsBatch1 } from './eventsBatch1';
 import { hxhEventsBatch2 } from './eventsBatch2';
 import { hxhEventsBatch3 } from './eventsBatch3';
+import { hxhEventsBatch4 } from './eventsBatch4';
 import { hxhRoutes } from './routes';
 import { hxhRoutesBatch1 } from './routesBatch1';
 import { hxhRoutesBatch2 } from './routesBatch2';
 import { hxhNen } from './nen';
 import { hxhNenBatch1 } from './nenBatch1';
 import { hxhNenBatch2 } from './nenBatch2';
+import { hxhNenBatch3 } from './nenBatch3';
 import { hxhAssets } from './assets';
 
 const hunterxhunter = animeWorlds.find((w) => w.slug === 'hunterxhunter')!;
@@ -40,7 +45,7 @@ export const hunterxhunterDataset: WorldDataset = {
   mapLevels: hxhMapLevels,
   nations: hxhNations,
   boundaries: hxhBoundaries,
-  locations: [...hxhLocations, ...hxhSubmapLocations],
+  locations: [...hxhLocations, ...hxhLocationsBatch1, ...hxhSubmapLocations],
   characters: [
     ...hxhCharacters,
     ...hxhCharactersBatch1,
@@ -48,12 +53,19 @@ export const hunterxhunterDataset: WorldDataset = {
     ...hxhCharactersBatch3,
     ...hxhCharactersBatch4,
     ...hxhCharactersBatch5,
+    ...hxhCharactersBatch6,
   ],
-  factions: hxhFactions,
+  factions: [...hxhFactions, ...hxhFactionsBatch1],
   arcs: hxhArcs,
-  events: [...hxhEvents, ...hxhEventsBatch1, ...hxhEventsBatch2, ...hxhEventsBatch3],
+  events: [
+    ...hxhEvents,
+    ...hxhEventsBatch1,
+    ...hxhEventsBatch2,
+    ...hxhEventsBatch3,
+    ...hxhEventsBatch4,
+  ],
   routes: [...hxhRoutes, ...hxhRoutesBatch1, ...hxhRoutesBatch2],
-  jutsu: [...hxhNen, ...hxhNenBatch1, ...hxhNenBatch2],
+  jutsu: [...hxhNen, ...hxhNenBatch1, ...hxhNenBatch2, ...hxhNenBatch3],
   assets: hxhAssets,
 };
 
