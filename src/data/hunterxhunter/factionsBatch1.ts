@@ -146,4 +146,39 @@ export const hxhFactionsBatch1: Faction[] = [
     referenceStatus: 'verified',
     tags: ['successione', 'mafia', 'cha-r'],
   },
+
+  /* ===================== CHIMERA ANT · struttura militare ===================== */
+  {
+    id: 'faction-hxh-squadron-leaders',
+    worldId: 'world-hunterxhunter',
+    type: 'army',
+    name: 'Chimera Ant Squadron Leaders',
+    localizedName: { it: 'Capi-squadra delle Formiche Chimera', en: 'Chimera Ant Squadron Leaders' },
+    description: {
+      it: 'La gerarchia militare delle Formiche Chimera sotto il Re e le Guardie Reali: i capi-squadra più forti (Colt, Cheetu, Leol, Welfin, Zazan…) comandano ufficiali e soldati.',
+      en: "The Chimera Ants' military hierarchy under the King and Royal Guard: the strongest squadron leaders (Colt, Cheetu, Leol, Welfin, Zazan…) command officers and peons.",
+    },
+    characterIds: ['char-hxh-colt', 'char-hxh-cheetu', 'char-hxh-leol', 'char-hxh-welfin', 'char-hxh-zazan', 'char-hxh-yunju', 'char-hxh-bihorn', 'char-hxh-pell'],
+    arcIds: ['arc-hxh-chimera-ant'],
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['chimera-ant', 'gerarchia'],
+  },
+  {
+    id: 'faction-hxh-zazan-squad',
+    worldId: 'world-hunterxhunter',
+    type: 'group',
+    name: "Zazan's Squad",
+    localizedName: { it: 'Squadra di Zazan', en: "Zazan's Squad" },
+    description: {
+      it: 'Squadra dissidente di Formiche Chimera guidata dal capo-squadra Zazan, che invade Meteor City; affrontata e annientata dalla Brigata Fantasma.',
+      en: "A breakaway Chimera Ant squad led by squadron leader Zazan that invades Meteor City; faced and wiped out by the Phantom Troupe.",
+    },
+    leaderIds: ['char-hxh-zazan'],
+    characterIds: ['char-hxh-zazan'],
+    arcIds: ['arc-hxh-chimera-ant'],
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['chimera-ant', 'meteor-city'],
+  },
 ];
