@@ -637,4 +637,79 @@ export const narutoFactionsExtra: Faction[] = [
     referenceStatus: 'verified',
     tags: ['fourth-war', 'zetsu', 'god-tree', 'esercito'],
   },
+
+  /* ------------------------------------------------------------------ */
+  /*  CLAN FUNATO (era Boruto · Funato War)                              */
+  /* ------------------------------------------------------------------ */
+  {
+    id: 'faction-funato',
+    worldId: 'world-naruto',
+    type: 'clan',
+    name: 'Funato Clan',
+    nameLocal: 'Funato Ikka',
+    japaneseName: '舟戸一家',
+    nationId: 'nation-water',
+    description: {
+      it: 'Clan di pirati del Paese dell\'Acqua che si ribella a Kirigakure per il controllo dei mari durante l\'era Boruto.',
+      en: 'A pirate clan of the Land of Water that rebels against Kirigakure for control of the seas during the Boruto era.',
+    },
+    longDescription: {
+      it: 'Guidati dal patriarca Araumi, i Funato scatenano la "Guerra dei Funato" contro il Sesto Mizukage Chōjurō. Dominano la navigazione e usano bestie marine e artiglieria navale.',
+      en: 'Led by patriarch Araumi, the Funato wage the "Funato War" against the Sixth Mizukage Chōjurō. They dominate seafaring and deploy sea beasts and naval artillery.',
+    },
+    leaderIds: ['char-araumi'],
+    characterIds: ['char-araumi', 'char-isari', 'char-kobuna'],
+    arcIds: ['arc-funato-war'],
+    canonStatus: 'anime_only',
+    referenceStatus: 'verified',
+    tags: ['boruto-era', 'water', 'pirates', 'funato'],
+  },
+
+  /* ------------------------------------------------------------------ */
+  /*  CULTO DI JASHIN                                                    */
+  /* ------------------------------------------------------------------ */
+  {
+    id: 'faction-jashin-cult',
+    worldId: 'world-naruto',
+    type: 'organization',
+    name: 'Cult of Jashin',
+    nameLocal: 'Jashin-kyō',
+    japaneseName: 'ジャシン教',
+    description: {
+      it: 'Religione che venera il dio malvagio Jashin e predica la morte totale come unica forma di completamento. Hidan dell\'Akatsuki ne è il fedele più noto.',
+      en: 'A religion worshipping the evil god Jashin, preaching total death as the only true completion. The Akatsuki\'s Hidan is its most notorious devotee.',
+    },
+    longDescription: {
+      it: 'I seguaci più devoti, come Hidan, ottengono una pseudo-immortalità tramite rituali di sangue che legano la propria vita a quella della vittima. Diffuso nel Paese degli Acquazzoni.',
+      en: 'Its most devoted followers, like Hidan, gain a pseudo-immortality through blood rituals that bind their life to the victim\'s. Rooted in the Land of Hot Water.',
+    },
+    leaderIds: ['char-hidan'],
+    characterIds: ['char-hidan'],
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['religion', 'hidan', 'immortality'],
+  },
+
+  /* ------------------------------------------------------------------ */
+  /*  KAMINARIMON COMPANY (era Boruto)                                   */
+  /* ------------------------------------------------------------------ */
+  {
+    id: 'faction-kaminarimon',
+    worldId: 'world-naruto',
+    type: 'organization',
+    name: 'Kaminarimon Company',
+    nameLocal: 'Kaminarimon Konpanī',
+    japaneseName: '雷門カンパニー',
+    nationId: 'nation-fire',
+    villageLocationId: 'loc-konoha',
+    description: {
+      it: 'Grande conglomerato tecnologico di Konoha nell\'era Boruto, simbolo dell\'industrializzazione del villaggio. Famiglia di Denki Kaminarimon.',
+      en: 'A major technology conglomerate of Konoha in the Boruto era, a symbol of the village\'s industrialization. The family business of Denki Kaminarimon.',
+    },
+    characterIds: ['char-denki'],
+    locationIds: ['loc-konoha'],
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['boruto-era', 'konoha', 'technology', 'company'],
+  },
 ];

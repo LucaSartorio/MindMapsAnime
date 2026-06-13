@@ -1,6 +1,7 @@
 import type { WorldDataset } from '@/types';
 import { animeWorlds } from '@/data/worlds';
 import { narutoLocations } from './locations';
+import { narutoLocationsBatch1 } from './locationsBatch1';
 import { narutoCharacters } from './characters';
 import { narutoCharactersExtra } from './charactersExtra';
 import { narutoCharactersBatch1 } from './charactersBatch1';
@@ -22,6 +23,7 @@ import { narutoRoutes } from './routes';
 import { narutoCharacterRoutes } from './characterRoutes';
 import { narutoAssets } from './assets';
 import { narutoNations } from './nations';
+import { narutoNationsBatch1 } from './nationsBatch1';
 import { narutoMapLevels } from './mapLevels';
 import { narutoBoundaries } from './boundaries';
 import { narutoJutsu } from './jutsu';
@@ -35,9 +37,9 @@ const naruto = animeWorlds.find((w) => w.slug === 'naruto')!;
 export const narutoDataset: WorldDataset = {
   world: naruto,
   mapLevels: narutoMapLevels,
-  nations: narutoNations,
+  nations: [...narutoNations, ...narutoNationsBatch1],
   boundaries: narutoBoundaries,
-  locations: narutoLocations,
+  locations: [...narutoLocations, ...narutoLocationsBatch1],
   characters: [
     ...narutoCharacters,
     ...narutoCharactersExtra,
