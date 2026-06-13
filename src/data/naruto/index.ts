@@ -6,6 +6,7 @@ import { narutoCharactersExtra } from './charactersExtra';
 import { narutoCharactersBatch1 } from './charactersBatch1';
 import { narutoCharactersBatch2 } from './charactersBatch2';
 import { narutoCharactersBatch3 } from './charactersBatch3';
+import { narutoCharactersBatch4 } from './charactersBatch4';
 import { narutoClans } from './clans';
 import { narutoFactions } from './factions';
 import { narutoClansExtra, narutoFactionsExtra } from './factionsExtra';
@@ -41,6 +42,7 @@ export const narutoDataset: WorldDataset = {
     ...narutoCharactersBatch1,
     ...narutoCharactersBatch2,
     ...narutoCharactersBatch3,
+    ...narutoCharactersBatch4,
   ],
   // Per la pagina "Clans & Factions" uniamo clan + organizzazioni/eserciti/gruppi.
   factions: [...narutoClans, ...narutoClansExtra, ...narutoFactions, ...narutoFactionsExtra],
