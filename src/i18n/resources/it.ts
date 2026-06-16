@@ -412,4 +412,174 @@ export const it = {
     italian: 'Italiano',
     english: 'English',
   },
+  footer: {
+    rights: 'Tutti i diritti riservati.',
+    legalNav: 'Link legali',
+    privacy: 'Privacy Policy',
+    cookiePolicy: 'Cookie Policy',
+    manageCookies: 'Gestisci cookie',
+  },
+  cookie: {
+    banner: {
+      title: 'Rispettiamo la tua privacy',
+      body: 'Utilizziamo cookie tecnici necessari al funzionamento del sito e, solo previo tuo consenso, strumenti di analisi per comprendere come viene utilizzato. Puoi accettare, rifiutare o personalizzare la tua scelta. Le tue preferenze sono modificabili in qualsiasi momento.',
+      readMore: 'Maggiori informazioni nella Cookie Policy',
+    },
+    actions: {
+      acceptAll: 'Accetta tutti',
+      rejectAll: 'Rifiuta',
+      customize: 'Personalizza',
+      save: 'Salva preferenze',
+    },
+    prefs: {
+      title: 'Preferenze cookie',
+      intro: 'Gestisci il tuo consenso per le diverse categorie. I cookie tecnici sono sempre attivi perché indispensabili; gli strumenti di analisi si attivano solo se presti il consenso.',
+      necessaryTitle: 'Cookie tecnici (necessari)',
+      necessaryBody: 'Indispensabili per il corretto funzionamento del sito (es. memorizzazione della lingua e delle preferenze sui cookie). Non richiedono consenso.',
+      alwaysOn: 'Sempre attivi',
+      analyticsTitle: 'Cookie e strumenti di analisi',
+      analyticsBody: 'Ci aiutano a raccogliere statistiche aggregate e anonime sull’utilizzo del sito (Vercel Analytics e Speed Insights) per migliorarne le prestazioni. Si attivano solo con il tuo consenso.',
+    },
+  },
+  privacyPolicy: {
+    eyebrow: 'informativa · privacy',
+    title: 'Informativa sulla Privacy',
+    lastUpdated: 'Ultimo aggiornamento: 16 giugno 2026',
+    intro:
+      'La presente informativa descrive le modalità di trattamento dei dati personali degli utenti che consultano questo sito, ai sensi del Regolamento (UE) 2016/679 (“GDPR”) e del d.lgs. 196/2003 e s.m.i. (“Codice Privacy”).',
+    sections: [
+      {
+        heading: '1. Titolare del trattamento',
+        paragraphs: [
+          'Il Titolare del trattamento è Luca Sartorio, contattabile all’indirizzo email luca.sartorio19@gmail.com per ogni richiesta relativa al trattamento dei dati personali e all’esercizio dei diritti previsti dal GDPR.',
+        ],
+      },
+      {
+        heading: '2. Tipologie di dati trattati',
+        paragraphs: [
+          'Questo sito è un progetto a scopo informativo e dimostrativo, privo di registrazione utenti e di moduli di raccolta dati. Possono comunque essere trattati i seguenti dati:',
+        ],
+        bullets: [
+          'Dati di navigazione: i sistemi informatici e le procedure software preposte al funzionamento del sito acquisiscono, nel normale esercizio, alcuni dati la cui trasmissione è implicita nell’uso dei protocolli di Internet (es. indirizzi IP, tipo di browser, sistema operativo, data e ora della richiesta). Tali dati sono trattati dal fornitore di hosting per finalità tecniche e di sicurezza.',
+          'Dati raccolti tramite strumenti di analisi: solo previo consenso, statistiche aggregate e anonime sull’utilizzo delle pagine (Vercel Analytics e Speed Insights).',
+          'Preferenze salvate localmente: lingua selezionata e scelte sui cookie, memorizzate nel browser tramite localStorage; non vengono trasmesse al Titolare né a terzi.',
+        ],
+      },
+      {
+        heading: '3. Finalità e base giuridica del trattamento',
+        bullets: [
+          'Erogazione e funzionamento del sito, sicurezza e diagnostica tecnica: base giuridica nel legittimo interesse del Titolare (art. 6, par. 1, lett. f, GDPR).',
+          'Analisi statistica aggregata per migliorare contenuti e prestazioni: base giuridica nel consenso dell’interessato (art. 6, par. 1, lett. a, GDPR), revocabile in qualsiasi momento.',
+          'Memorizzazione delle preferenze (lingua, consenso cookie): necessaria a erogare il servizio richiesto dall’utente.',
+        ],
+      },
+      {
+        heading: '4. Strumenti e servizi di terze parti',
+        paragraphs: [
+          'Il sito è ospitato su Vercel Inc. e utilizza i servizi Vercel Web Analytics e Speed Insights per la misurazione, in forma aggregata e anonima, dell’utilizzo e delle prestazioni delle pagine. Tali strumenti sono attivati esclusivamente previo consenso dell’utente. Per maggiori dettagli si rimanda all’informativa privacy di Vercel (vercel.com/legal/privacy-policy).',
+        ],
+      },
+      {
+        heading: '5. Trasferimento dei dati extra UE',
+        paragraphs: [
+          'Alcuni fornitori (es. Vercel) potrebbero trattare dati in Paesi al di fuori dello Spazio Economico Europeo. In tal caso il trasferimento avviene nel rispetto delle garanzie adeguate previste dagli artt. 44 e ss. del GDPR, quali le Clausole Contrattuali Standard approvate dalla Commissione Europea.',
+        ],
+      },
+      {
+        heading: '6. Periodo di conservazione',
+        paragraphs: [
+          'I dati di navigazione e le statistiche sono conservati per il tempo strettamente necessario alle finalità per cui sono raccolti, in conformità alle policy dei fornitori. Le preferenze salvate nel browser permangono fino alla loro cancellazione da parte dell’utente o alla scadenza prevista.',
+        ],
+      },
+      {
+        heading: '7. Diritti dell’interessato',
+        paragraphs: [
+          'In qualità di interessato, l’utente può esercitare in qualsiasi momento i diritti previsti dagli artt. 15-22 del GDPR, scrivendo a luca.sartorio19@gmail.com:',
+        ],
+        bullets: [
+          'accesso ai propri dati personali;',
+          'rettifica dei dati inesatti o integrazione di quelli incompleti;',
+          'cancellazione dei dati (“diritto all’oblio”);',
+          'limitazione del trattamento;',
+          'portabilità dei dati;',
+          'opposizione al trattamento;',
+          'revoca del consenso in qualsiasi momento, senza pregiudicare la liceità del trattamento basato sul consenso prestato prima della revoca.',
+        ],
+      },
+      {
+        heading: '8. Reclamo all’Autorità di controllo',
+        paragraphs: [
+          'L’interessato ha diritto di proporre reclamo all’Autorità Garante per la protezione dei dati personali (www.garanteprivacy.it) qualora ritenga che il trattamento dei propri dati avvenga in violazione della normativa vigente.',
+        ],
+      },
+      {
+        heading: '9. Cookie',
+        paragraphs: [
+          'Per informazioni dettagliate sui cookie e sugli strumenti di tracciamento utilizzati si rinvia alla Cookie Policy, disponibile nel footer del sito.',
+        ],
+      },
+      {
+        heading: '10. Modifiche alla presente informativa',
+        paragraphs: [
+          'Il Titolare si riserva di aggiornare la presente informativa per adeguarla a modifiche normative o ai servizi offerti. Le eventuali variazioni saranno pubblicate in questa pagina con indicazione della data di ultimo aggiornamento.',
+        ],
+      },
+    ],
+  },
+  cookiePolicy: {
+    eyebrow: 'informativa · cookie',
+    title: 'Cookie Policy',
+    lastUpdated: 'Ultimo aggiornamento: 16 giugno 2026',
+    intro:
+      'La presente Cookie Policy spiega cosa sono i cookie e le tecnologie analoghe, quali vengono utilizzati su questo sito e come gestire le tue preferenze, in conformità al GDPR, alla Direttiva ePrivacy 2002/58/CE e alle Linee guida del Garante Privacy del 10 giugno 2021.',
+    sections: [
+      {
+        heading: '1. Cosa sono i cookie',
+        paragraphs: [
+          'I cookie sono piccoli file di testo che i siti visitati inviano al dispositivo dell’utente, dove vengono memorizzati per essere ritrasmessi agli stessi siti alla visita successiva. Tecnologie analoghe (es. localStorage) consentono di memorizzare informazioni nel browser per finalità simili.',
+        ],
+      },
+      {
+        heading: '2. Cookie tecnici (necessari)',
+        paragraphs: [
+          'Sono indispensabili per il funzionamento del sito e per erogare i servizi richiesti dall’utente. Non richiedono consenso, ai sensi dell’art. 122 del Codice Privacy. Su questo sito vengono utilizzati esclusivamente per:',
+        ],
+        bullets: [
+          'memorizzare la lingua selezionata dall’utente;',
+          'memorizzare le scelte espresse in materia di cookie, per non riproporre il banner ad ogni visita.',
+        ],
+      },
+      {
+        heading: '3. Cookie e strumenti di analisi',
+        paragraphs: [
+          'Sono utilizzati per raccogliere informazioni statistiche, in forma aggregata e anonima, sull’utilizzo del sito (Vercel Web Analytics e Speed Insights), al fine di migliorarne contenuti e prestazioni. Questi strumenti vengono attivati esclusivamente previo tuo consenso e restano disattivati in caso di rifiuto.',
+        ],
+      },
+      {
+        heading: '4. Cookie di terze parti',
+        paragraphs: [
+          'I servizi di analisi sopra indicati sono forniti da Vercel Inc. Per conoscere le modalità di trattamento dei dati da parte di tale fornitore si rimanda alla relativa informativa privacy (vercel.com/legal/privacy-policy).',
+        ],
+      },
+      {
+        heading: '5. Gestione e revoca del consenso',
+        paragraphs: [
+          'Al primo accesso viene mostrato un banner che consente di accettare, rifiutare o personalizzare l’uso dei cookie non tecnici. Puoi modificare o revocare le tue scelte in qualsiasi momento tramite il link “Gestisci cookie” presente nel footer o il pulsante in questa pagina.',
+          'È inoltre possibile gestire o eliminare i cookie direttamente dalle impostazioni del proprio browser. La disabilitazione dei cookie tecnici potrebbe compromettere alcune funzionalità del sito.',
+        ],
+      },
+      {
+        heading: '6. Durata',
+        paragraphs: [
+          'Le preferenze relative al consenso sono conservate nel browser fino alla loro revoca o cancellazione da parte dell’utente, e comunque non oltre i termini consigliati dal Garante. Decorso tale periodo, il consenso viene nuovamente richiesto.',
+        ],
+      },
+      {
+        heading: '7. Riferimenti normativi e contatti',
+        paragraphs: [
+          'Regolamento (UE) 2016/679 (GDPR), d.lgs. 196/2003 (Codice Privacy), Linee guida cookie del Garante Privacy del 10 giugno 2021. Per qualsiasi richiesta è possibile contattare il Titolare all’indirizzo luca.sartorio19@gmail.com.',
+        ],
+      },
+    ],
+  },
 } as const;
