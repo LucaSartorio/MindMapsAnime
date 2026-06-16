@@ -7,7 +7,6 @@ import { HeroSection } from './HeroSection';
 import { WorldGrid } from './WorldGrid';
 import { EmptyState } from '@/components/common/EmptyState';
 import { Card } from '@/components/common/Card';
-import { Footer } from '@/components/layout/Footer';
 import { useLocaleStore } from '@/store/useLocaleStore';
 
 /** Quanti mondi mostrare prima del "Mostra tutti" (homepage compatta). */
@@ -130,8 +129,6 @@ export function HomePage() {
           </Link>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }
