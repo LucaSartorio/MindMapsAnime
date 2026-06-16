@@ -2,13 +2,15 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Card } from '@/components/common/Card';
 import { SourceNotice } from '@/components/common/SourceNotice';
+import { Footer } from '@/components/layout/Footer';
 
 export function AboutPage() {
   const { t } = useTranslation();
   const offers = t('about.offers', { returnObjects: true }) as string[];
 
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 space-y-6">
+    <div className="flex-1 overflow-auto">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 space-y-6">
       <header className="space-y-2">
         <p className="font-mono text-xs uppercase tracking-widest text-chakra-300">
           {t('about.eyebrow')}
@@ -43,6 +45,8 @@ export function AboutPage() {
           {t('about.backToHome')}
         </Link>
       </p>
+      </div>
+      <Footer />
     </div>
   );
 }

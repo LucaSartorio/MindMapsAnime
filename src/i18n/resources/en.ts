@@ -409,4 +409,174 @@ export const en = {
     italian: 'Italiano',
     english: 'English',
   },
+  footer: {
+    rights: 'All rights reserved.',
+    legalNav: 'Legal links',
+    privacy: 'Privacy Policy',
+    cookiePolicy: 'Cookie Policy',
+    manageCookies: 'Manage cookies',
+  },
+  cookie: {
+    banner: {
+      title: 'We respect your privacy',
+      body: 'We use technical cookies that are necessary for the site to work and, only with your consent, analytics tools to understand how it is used. You can accept, reject or customize your choice. You can change your preferences at any time.',
+      readMore: 'More information in the Cookie Policy',
+    },
+    actions: {
+      acceptAll: 'Accept all',
+      rejectAll: 'Reject',
+      customize: 'Customize',
+      save: 'Save preferences',
+    },
+    prefs: {
+      title: 'Cookie preferences',
+      intro: 'Manage your consent for the different categories. Technical cookies are always on because they are essential; analytics tools are enabled only if you give your consent.',
+      necessaryTitle: 'Technical cookies (necessary)',
+      necessaryBody: 'Essential for the proper functioning of the site (e.g. storing your language and cookie preferences). They do not require consent.',
+      alwaysOn: 'Always on',
+      analyticsTitle: 'Analytics cookies and tools',
+      analyticsBody: 'They help us collect aggregated and anonymous statistics about how the site is used (Vercel Analytics and Speed Insights) to improve its performance. They are enabled only with your consent.',
+    },
+  },
+  privacyPolicy: {
+    eyebrow: 'notice · privacy',
+    title: 'Privacy Policy',
+    lastUpdated: 'Last updated: 16 June 2026',
+    intro:
+      'This privacy policy describes how the personal data of users browsing this website is processed, pursuant to Regulation (EU) 2016/679 (“GDPR”) and Italian Legislative Decree 196/2003 as amended (“Privacy Code”).',
+    sections: [
+      {
+        heading: '1. Data Controller',
+        paragraphs: [
+          'The Data Controller is Luca Sartorio, who can be reached at luca.sartorio19@gmail.com for any request concerning the processing of personal data and the exercise of the rights granted by the GDPR.',
+        ],
+      },
+      {
+        heading: '2. Types of data processed',
+        paragraphs: [
+          'This website is an informational and demonstrative project, with no user registration and no data collection forms. The following data may nonetheless be processed:',
+        ],
+        bullets: [
+          'Browsing data: the computer systems and software procedures used to operate the site acquire, during their normal operation, certain data whose transmission is implicit in the use of Internet protocols (e.g. IP addresses, browser type, operating system, date and time of the request). Such data is processed by the hosting provider for technical and security purposes.',
+          'Data collected through analytics tools: only with your consent, aggregated and anonymous statistics on page usage (Vercel Analytics and Speed Insights).',
+          'Preferences stored locally: the selected language and cookie choices, stored in the browser via localStorage; they are not transmitted to the Controller or to third parties.',
+        ],
+      },
+      {
+        heading: '3. Purposes and legal basis of processing',
+        bullets: [
+          'Delivery and operation of the site, security and technical diagnostics: legal basis in the legitimate interest of the Controller (Art. 6(1)(f) GDPR).',
+          'Aggregated statistical analysis to improve content and performance: legal basis in the consent of the data subject (Art. 6(1)(a) GDPR), which can be withdrawn at any time.',
+          'Storing preferences (language, cookie consent): necessary to deliver the service requested by the user.',
+        ],
+      },
+      {
+        heading: '4. Third-party tools and services',
+        paragraphs: [
+          'The site is hosted on Vercel Inc. and uses Vercel Web Analytics and Speed Insights to measure, in aggregated and anonymous form, the usage and performance of the pages. These tools are enabled only with the user’s consent. For more details please refer to Vercel’s privacy policy (vercel.com/legal/privacy-policy).',
+        ],
+      },
+      {
+        heading: '5. Transfer of data outside the EU',
+        paragraphs: [
+          'Some providers (e.g. Vercel) may process data in countries outside the European Economic Area. In such cases the transfer takes place in compliance with the appropriate safeguards provided for in Art. 44 et seq. of the GDPR, such as the Standard Contractual Clauses approved by the European Commission.',
+        ],
+      },
+      {
+        heading: '6. Retention period',
+        paragraphs: [
+          'Browsing data and statistics are kept for the time strictly necessary for the purposes for which they are collected, in accordance with the providers’ policies. Preferences stored in the browser remain until they are deleted by the user or until they expire.',
+        ],
+      },
+      {
+        heading: '7. Rights of the data subject',
+        paragraphs: [
+          'As a data subject, you may exercise at any time the rights set out in Art. 15-22 of the GDPR by writing to luca.sartorio19@gmail.com:',
+        ],
+        bullets: [
+          'access to your personal data;',
+          'rectification of inaccurate data or completion of incomplete data;',
+          'erasure of data (“right to be forgotten”);',
+          'restriction of processing;',
+          'data portability;',
+          'objection to processing;',
+          'withdrawal of consent at any time, without affecting the lawfulness of processing based on consent given before its withdrawal.',
+        ],
+      },
+      {
+        heading: '8. Complaint to the supervisory authority',
+        paragraphs: [
+          'You have the right to lodge a complaint with the Italian Data Protection Authority (www.garanteprivacy.it) if you believe that the processing of your data infringes the applicable legislation.',
+        ],
+      },
+      {
+        heading: '9. Cookies',
+        paragraphs: [
+          'For detailed information on the cookies and tracking tools used, please refer to the Cookie Policy, available in the site footer.',
+        ],
+      },
+      {
+        heading: '10. Changes to this policy',
+        paragraphs: [
+          'The Controller reserves the right to update this policy to reflect regulatory changes or changes to the services offered. Any changes will be published on this page together with the date of the last update.',
+        ],
+      },
+    ],
+  },
+  cookiePolicy: {
+    eyebrow: 'notice · cookies',
+    title: 'Cookie Policy',
+    lastUpdated: 'Last updated: 16 June 2026',
+    intro:
+      'This Cookie Policy explains what cookies and similar technologies are, which ones are used on this website and how to manage your preferences, in compliance with the GDPR, the ePrivacy Directive 2002/58/EC and the Italian Data Protection Authority’s guidelines of 10 June 2021.',
+    sections: [
+      {
+        heading: '1. What cookies are',
+        paragraphs: [
+          'Cookies are small text files that the websites you visit send to your device, where they are stored and sent back to the same sites on your next visit. Similar technologies (e.g. localStorage) allow information to be stored in the browser for comparable purposes.',
+        ],
+      },
+      {
+        heading: '2. Technical cookies (necessary)',
+        paragraphs: [
+          'They are essential for the operation of the site and to deliver the services requested by the user. They do not require consent, pursuant to Art. 122 of the Italian Privacy Code. On this site they are used exclusively to:',
+        ],
+        bullets: [
+          'store the language selected by the user;',
+          'store the choices made regarding cookies, so the banner is not shown again on every visit.',
+        ],
+      },
+      {
+        heading: '3. Analytics cookies and tools',
+        paragraphs: [
+          'They are used to collect statistical information, in aggregated and anonymous form, about the use of the site (Vercel Web Analytics and Speed Insights), in order to improve its content and performance. These tools are enabled only with your consent and remain disabled if you refuse.',
+        ],
+      },
+      {
+        heading: '4. Third-party cookies',
+        paragraphs: [
+          'The analytics services indicated above are provided by Vercel Inc. To learn how this provider processes data, please refer to its privacy policy (vercel.com/legal/privacy-policy).',
+        ],
+      },
+      {
+        heading: '5. Managing and withdrawing consent',
+        paragraphs: [
+          'On your first visit a banner is shown that lets you accept, reject or customize the use of non-technical cookies. You can change or withdraw your choices at any time using the “Manage cookies” link in the footer or the button on this page.',
+          'You can also manage or delete cookies directly from your browser settings. Disabling technical cookies may impair some site functionality.',
+        ],
+      },
+      {
+        heading: '6. Duration',
+        paragraphs: [
+          'Consent preferences are stored in the browser until they are withdrawn or deleted by the user, and in any case no longer than the periods recommended by the Authority. After that period, consent is requested again.',
+        ],
+      },
+      {
+        heading: '7. Legal references and contacts',
+        paragraphs: [
+          'Regulation (EU) 2016/679 (GDPR), Italian Legislative Decree 196/2003 (Privacy Code), Italian Data Protection Authority cookie guidelines of 10 June 2021. For any request you can contact the Controller at luca.sartorio19@gmail.com.',
+        ],
+      },
+    ],
+  },
 } as const;

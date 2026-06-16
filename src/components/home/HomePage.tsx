@@ -7,6 +7,7 @@ import { HeroSection } from './HeroSection';
 import { WorldGrid } from './WorldGrid';
 import { EmptyState } from '@/components/common/EmptyState';
 import { Card } from '@/components/common/Card';
+import { Footer } from '@/components/layout/Footer';
 import { useLocaleStore } from '@/store/useLocaleStore';
 
 /** Quanti mondi mostrare prima del "Mostra tutti" (homepage compatta). */
@@ -123,12 +124,14 @@ export function HomePage() {
           </Card>
         </section>
 
-        <footer className="mt-16 text-center text-xs text-ink-400">
+        <div className="mt-16 text-center text-xs text-ink-400">
           <Link to="/about" className="text-chakra-300 hover:underline">
             {t('home.aboutCta')}
           </Link>
-        </footer>
+        </div>
       </main>
+
+      <Footer />
     </div>
   );
 }
