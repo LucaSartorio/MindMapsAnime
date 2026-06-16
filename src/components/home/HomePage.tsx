@@ -7,6 +7,7 @@ import { HeroSection } from './HeroSection';
 import { WorldGrid } from './WorldGrid';
 import { EmptyState } from '@/components/common/EmptyState';
 import { Card } from '@/components/common/Card';
+import { Seo } from '@/components/seo/Seo';
 import { useLocaleStore } from '@/store/useLocaleStore';
 
 /** Quanti mondi mostrare prima del "Mostra tutti" (homepage compatta). */
@@ -35,6 +36,7 @@ export function HomePage() {
 
   return (
     <div>
+      <Seo path="/" />
       <HeroSection />
 
       <main className="max-w-6xl mx-auto px-6 pb-24">

@@ -7,6 +7,7 @@ import { getLoadedWorldDataset, loadWorldDataset } from '@/data/registry';
 import { WorldLayout } from '@/components/layout/WorldLayout';
 import { ComingSoonWorldPage } from '@/pages/ComingSoonWorldPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
+import { Seo } from '@/components/seo/Seo';
 
 // Lazy: la pagina mappa porta con sé React Flow (~180KB) — non deve pesare
 // sull'avvio dell'app (homepage) ma caricarsi solo entrando in un mondo.
@@ -110,7 +111,9 @@ export function WorldRoute() {
   }
 
   return (
-    <Routes>
+    <>
+      <Seo />
+      <Routes>
       <Route
         index
         element={
@@ -172,6 +175,7 @@ export function WorldRoute() {
         }
       />
       <Route path="*" element={<Navigate to="." replace />} />
-    </Routes>
+      </Routes>
+    </>
   );
 }
