@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { AnimeWorld } from '@/types';
 import { Card } from '@/components/common/Card';
+import { Seo } from '@/components/seo/Seo';
 import { WorldStatusPill } from '@/components/common/StatusPill';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText } from '@/utils/localization';
@@ -17,6 +18,7 @@ export function ComingSoonWorldPage({ world }: ComingSoonWorldPageProps) {
 
   return (
     <div className="flex-1 grid place-items-center px-6 py-16">
+      <Seo path={`/worlds/${world.slug}`} />
       <Card className="max-w-lg w-full p-8 text-center space-y-5">
         <p className="font-mono text-xs uppercase tracking-widest text-chakra-300">
           /worlds/{world.slug}

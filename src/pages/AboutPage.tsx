@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Card } from '@/components/common/Card';
 import { SourceNotice } from '@/components/common/SourceNotice';
+import { Seo } from '@/components/seo/Seo';
 
 export function AboutPage() {
   const { t } = useTranslation();
@@ -9,6 +10,7 @@ export function AboutPage() {
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 space-y-6">
+      <Seo path="/about" />
       <header className="space-y-2">
         <p className="font-mono text-xs uppercase tracking-widest text-chakra-300">
           {t('about.eyebrow')}

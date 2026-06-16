@@ -23,7 +23,8 @@ components (see "Per-world dynamic config").
 
 ```bash
 npm run dev              # Vite dev server → http://localhost:5173
-npm run build            # tsc -b && vite build  (the tsc step is the real correctness gate)
+npm run build            # tsc -b && vite build && npm run prerender  (the tsc step is the real correctness gate)
+npm run prerender        # SEO: inject per-route meta/OG/JSON-LD into static HTML per route + write sitemap.xml
 npm run preview          # serve the built bundle
 npm run validate:data    # validate ALL registered datasets; exits 1 on integrity errors
 npm run validate:i18n    # report missing/empty UI translations between it.ts and en.ts
