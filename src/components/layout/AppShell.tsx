@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { TopNav } from './TopNav';
+import { CookieConsent } from '@/components/cookie/CookieConsent';
 
 interface AppShellProps {
   children: ReactNode;
@@ -15,6 +16,7 @@ export function AppShell({ children }: AppShellProps) {
     <div className="h-dvh flex flex-col">
       <TopNav />
       <main className="flex-1 flex flex-col min-h-0">{children}</main>
+      <CookieConsent />
     </div>
   );
 }
