@@ -2,7 +2,6 @@ import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Card } from '@/components/common/Card';
-import { Footer } from '@/components/layout/Footer';
 
 export interface LegalSection {
   heading: string;
@@ -36,8 +35,7 @@ export function LegalPage({
   const { t } = useTranslation();
 
   return (
-    <div className="flex-1 overflow-auto">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 space-y-6">
+    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 space-y-6">
         <header className="space-y-2">
           <p className="font-mono text-xs uppercase tracking-widest text-chakra-300">
             {eyebrow}
@@ -67,13 +65,11 @@ export function LegalPage({
 
         {children}
 
-        <p className="text-sm text-ink-300 leading-relaxed">
-          <Link to="/" className="text-chakra-300 hover:underline">
-            {t('about.backToHome')}
-          </Link>
-        </p>
-      </div>
-      <Footer />
+      <p className="text-sm text-ink-300 leading-relaxed">
+        <Link to="/" className="text-chakra-300 hover:underline">
+          {t('about.backToHome')}
+        </Link>
+      </p>
     </div>
   );
 }
