@@ -16,6 +16,9 @@
     "find:dots": "tsx --tsconfig scripts/tsconfig.json scripts/find-red-dots.ts"
   },
   "dependencies": {
+    "@fontsource/cinzel": "^5.2.8",
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/jetbrains-mono": "^5.2.8",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "@xyflow/react": "^12.3.5",

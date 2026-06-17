@@ -18,7 +18,15 @@ import { create } from 'zustand';
 export const COOKIE_CONSENT_STORAGE_KEY = 'animeInteractiveMaps.cookieConsent';
 
 /** Aggiornare quando cambia l'informativa: invalida i consensi precedenti. */
-export const COOKIE_CONSENT_VERSION = 1;
+export const COOKIE_CONSENT_VERSION = 2;
+
+/**
+ * Durata massima del consenso (6 mesi). Le Linee guida del Garante (2021)
+ * indicano di non riproporre il banner a ogni accesso, ma di riacquisire il
+ * consenso trascorso un periodo ragionevole: scaduto, il banner ricompare.
+ */
+export const COOKIE_CONSENT_MAX_AGE_DAYS = 180;
+const MAX_AGE_MS = COOKIE_CONSENT_MAX_AGE_DAYS * 24 * 60 * 60 * 1000;
 
 export interface CookieConsent {
   /** Cookie tecnici: sempre attivi, non richiedono consenso. */
@@ -52,10 +60,13 @@ function readStoredConsent(): CookieConsent | null {
     const parsed = JSON.parse(raw) as Partial<CookieConsent>;
     // Consenso valido solo se della versione corrente dell'informativa.
     if (parsed.version !== COOKIE_CONSENT_VERSION) return null;
+    // Consenso scaduto (> 6 mesi): va riacquisito.
+    const ts = typeof parsed.timestamp === 'string' ? Date.parse(parsed.timestamp) : NaN;
+    if (Number.isNaN(ts) || Date.now() - ts > MAX_AGE_MS) return null;
     return {
       necessary: true,
       analytics: Boolean(parsed.analytics),
-      timestamp: typeof parsed.timestamp === 'string' ? parsed.timestamp : new Date().toISOString(),
+      timestamp: new Date(ts).toISOString(),
       version: COOKIE_CONSENT_VERSION,
     };
   } catch {
