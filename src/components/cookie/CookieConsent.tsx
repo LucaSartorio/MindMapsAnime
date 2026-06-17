@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Modal } from '@/components/common/Modal';
@@ -27,28 +27,39 @@ export function CookieConsent() {
 
   // Stato locale del toggle analytics nel dialog preferenze.
   const [analytics, setAnalytics] = useState(consent?.analytics ?? false);
+  const bannerRef = useRef<HTMLDivElement>(null);
 
   // All'apertura del dialog, riallinea il toggle al consenso salvato.
   useEffect(() => {
     if (isPreferencesOpen) setAnalytics(consent?.analytics ?? false);
   }, [isPreferencesOpen, consent?.analytics]);
 
+  // A11y: quando il banner appare, sposta il focus su di esso così gli utenti
+  // da tastiera / screen reader lo raggiungono e lo sentono annunciare.
+  const bannerVisible = isBannerOpen && !isPreferencesOpen;
+  useEffect(() => {
+    if (bannerVisible) bannerRef.current?.focus();
+  }, [bannerVisible]);
+
   return (
     <>
       {/* Banner di prima scelta */}
-      {isBannerOpen && !isPreferencesOpen && (
+      {bannerVisible && (
         <div
+          ref={bannerRef}
           role="dialog"
           aria-modal="false"
-          aria-label={t('cookie.banner.title')}
-          className="fixed inset-x-0 bottom-0 z-[55] p-3 sm:p-4"
+          aria-labelledby="cookie-banner-title"
+          aria-describedby="cookie-banner-desc"
+          tabIndex={-1}
+          className="fixed inset-x-0 bottom-0 z-[55] p-3 sm:p-4 outline-none"
         >
           <div className="mx-auto max-w-3xl panel rounded-2xl shadow-2xl p-5 space-y-4">
             <div className="space-y-1.5">
-              <h2 className="font-display text-lg text-ink-100">
+              <h2 id="cookie-banner-title" className="font-display text-lg text-ink-100">
                 {t('cookie.banner.title')}
               </h2>
-              <p className="text-sm text-ink-300 leading-relaxed">
+              <p id="cookie-banner-desc" className="text-sm text-ink-300 leading-relaxed">
                 {t('cookie.banner.body')}{' '}
                 <Link
                   to="/cookie-policy"

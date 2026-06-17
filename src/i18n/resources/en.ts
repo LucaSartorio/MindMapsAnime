@@ -409,6 +409,9 @@ export const en = {
     italian: 'Italiano',
     english: 'English',
   },
+  a11y: {
+    skipToContent: 'Skip to main content',
+  },
   footer: {
     rights: 'All rights reserved.',
     legalNav: 'Legal links',
@@ -474,6 +477,7 @@ export const en = {
         heading: '4. Third-party tools and services',
         paragraphs: [
           'The site is hosted on Vercel Inc. and uses Vercel Web Analytics and Speed Insights to measure, in aggregated and anonymous form, the usage and performance of the pages. These tools are enabled only with the user’s consent. For more details please refer to Vercel’s privacy policy (vercel.com/legal/privacy-policy).',
+          'Fonts are hosted directly on the site (self-hosted): no request is made to third-party font CDNs (e.g. Google Fonts) and, consequently, no user IP address is transmitted to such services to load the fonts.',
         ],
       },
       {
@@ -510,13 +514,25 @@ export const en = {
         ],
       },
       {
-        heading: '9. Cookies',
+        heading: '9. Minors',
+        paragraphs: [
+          'The site is not directed at children under the age of 14 and does not knowingly collect minors’ personal data. Under Art. 8 GDPR and Art. 2-quinquies of the Italian Privacy Code, in Italy a minor who has reached the age of 14 may validly give consent in relation to information society services. If a parent or guardian believes that a minor has provided personal data, they may contact the Controller to have it deleted.',
+        ],
+      },
+      {
+        heading: '10. Profiling and automated decision-making',
+        paragraphs: [
+          'The Controller does not carry out any profiling or automated decision-making within the meaning of Art. 22 GDPR. Any data collected is not sold, transferred or commercialised to third parties for marketing purposes.',
+        ],
+      },
+      {
+        heading: '11. Cookies',
         paragraphs: [
           'For detailed information on the cookies and tracking tools used, please refer to the Cookie Policy, available in the site footer.',
         ],
       },
       {
-        heading: '10. Changes to this policy',
+        heading: '12. Changes to this policy',
         paragraphs: [
           'The Controller reserves the right to update this policy to reflect regulatory changes or changes to the services offered. Any changes will be published on this page together with the date of the last update.',
         ],

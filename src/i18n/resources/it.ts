@@ -412,6 +412,9 @@ export const it = {
     italian: 'Italiano',
     english: 'English',
   },
+  a11y: {
+    skipToContent: 'Salta al contenuto principale',
+  },
   footer: {
     rights: 'Tutti i diritti riservati.',
     legalNav: 'Link legali',
@@ -477,6 +480,7 @@ export const it = {
         heading: '4. Strumenti e servizi di terze parti',
         paragraphs: [
           'Il sito è ospitato su Vercel Inc. e utilizza i servizi Vercel Web Analytics e Speed Insights per la misurazione, in forma aggregata e anonima, dell’utilizzo e delle prestazioni delle pagine. Tali strumenti sono attivati esclusivamente previo consenso dell’utente. Per maggiori dettagli si rimanda all’informativa privacy di Vercel (vercel.com/legal/privacy-policy).',
+          'I caratteri tipografici sono ospitati direttamente sul sito (self-hosted): non viene effettuata alcuna richiesta a CDN di font di terze parti (es. Google Fonts) e, di conseguenza, nessun indirizzo IP degli utenti viene trasmesso a tali servizi per il caricamento dei font.',
         ],
       },
       {
@@ -513,13 +517,25 @@ export const it = {
         ],
       },
       {
-        heading: '9. Cookie',
+        heading: '9. Minori',
+        paragraphs: [
+          'Il sito non è rivolto a minori di anni 14 e non raccoglie consapevolmente dati personali di minori. Ai sensi dell’art. 8 del GDPR e dell’art. 2-quinquies del Codice Privacy, in Italia il minore che ha compiuto 14 anni può prestare validamente il consenso in relazione ai servizi della società dell’informazione. Qualora un genitore o tutore ritenga che un minore abbia comunicato dati personali, può contattare il Titolare per ottenerne la cancellazione.',
+        ],
+      },
+      {
+        heading: '10. Profilazione e decisioni automatizzate',
+        paragraphs: [
+          'Il Titolare non effettua alcuna attività di profilazione né processi decisionali automatizzati ai sensi dell’art. 22 del GDPR. I dati eventualmente raccolti non sono oggetto di vendita, cessione o commercializzazione a terzi per finalità di marketing.',
+        ],
+      },
+      {
+        heading: '11. Cookie',
         paragraphs: [
           'Per informazioni dettagliate sui cookie e sugli strumenti di tracciamento utilizzati si rinvia alla Cookie Policy, disponibile nel footer del sito.',
         ],
       },
       {
-        heading: '10. Modifiche alla presente informativa',
+        heading: '12. Modifiche alla presente informativa',
         paragraphs: [
           'Il Titolare si riserva di aggiornare la presente informativa per adeguarla a modifiche normative o ai servizi offerti. Le eventuali variazioni saranno pubblicate in questa pagina con indicazione della data di ultimo aggiornamento.',
         ],

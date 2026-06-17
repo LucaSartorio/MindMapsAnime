@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* A11y: rispetta la preferenza di sistema "riduci animazioni". */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* Perf: salta render/layout/paint delle card archivio fuori viewport.
    `contain-intrinsic-size` riserva l'altezza stimata così scrollbar e scroll
    restano stabili. Nei browser senza supporto la regola è ignorata. */
