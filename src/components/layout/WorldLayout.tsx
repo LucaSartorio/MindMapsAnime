@@ -11,6 +11,7 @@ import { MapLegendFloating } from '@/components/map/MapLegendFloating';
 import { RoutesFloatingPanel } from '@/components/map/RoutesFloatingPanel';
 import { TimelineBottomSheet } from '@/components/timeline/TimelineBottomSheet';
 import { IconButton } from '@/components/common/IconButton';
+import { OnboardingOverlay } from '@/components/onboarding/OnboardingOverlay';
 import { resolveWorldCursor } from '@/utils/worldCursor';
 
 interface WorldLayoutProps {
@@ -43,6 +44,7 @@ export function WorldLayout({
   const setActiveMapLevel = useMapStore((s) => s.setActiveMapLevel);
   const activeMapLevelId = useMapStore((s) => s.activeMapLevelId);
   const openFilters = useUiStore((s) => s.openFiltersDrawer);
+  const openHelp = useUiStore((s) => s.openHelp);
 
   // Cursore tematico del mondo (es. Naruto → vortice della Foglia).
   // Ibrido: il vortice è il cursore ambientale; gli elementi interattivi
@@ -125,7 +127,14 @@ export function WorldLayout({
               />
             </div>
 
-            <div className="pointer-events-auto">
+            <div className="pointer-events-auto flex items-center gap-2">
+              <IconButton
+                aria-label={t('onboarding.helpAria')}
+                title={t('onboarding.helpButton')}
+                onClick={openHelp}
+              >
+                <span aria-hidden>?</span>
+              </IconButton>
               <MapControls />
             </div>
           </div>
@@ -154,6 +163,7 @@ export function WorldLayout({
       {/* Drawer e modali globali */}
       <FiltersDrawer dataset={dataset} />
       <ModalRoot dataset={dataset} />
+      <OnboardingOverlay />
     </div>
   );
 }

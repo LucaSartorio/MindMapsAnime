@@ -14,8 +14,8 @@ import type { MapLevel } from '@/types';
  */
 export const HXH_MAP_VIEWBOX = { width: 2000, height: 1187 } as const;
 
-/** Path locale del PNG di riferimento (vive in public/, servito alla root). */
-export const HXH_WORLD_MAP_SRC = '/assets/worlds/hunterxhunter/maps/hxh-world-map.png';
+/** Path locale dell'immagine di riferimento (vive in public/, servita alla root). */
+export const HXH_WORLD_MAP_SRC = '/assets/worlds/hunterxhunter/maps/hxh-world-map.webp';
 
 export const hxhMapLevels: MapLevel[] = [
   {

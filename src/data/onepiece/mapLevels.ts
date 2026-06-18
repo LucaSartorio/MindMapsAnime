@@ -31,7 +31,7 @@ const SUBMAP_DIMS: Record<string, { width: number; height: number }> = {
 const dims = (slug: string) => SUBMAP_DIMS[slug] ?? { width: 1200, height: 800 };
 
 /** Path locale dell'immagine di riferimento (vive in public/, servita alla root). */
-export const ONEPIECE_WORLD_MAP_SRC = '/assets/worlds/onepiece/maps/onepiece-world-map.jpeg';
+export const ONEPIECE_WORLD_MAP_SRC = '/assets/worlds/onepiece/maps/onepiece-world-map.webp';
 
 export const onepieceMapLevels: MapLevel[] = [
   {
