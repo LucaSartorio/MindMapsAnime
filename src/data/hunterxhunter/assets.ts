@@ -29,7 +29,7 @@ export const hxhAssets: AssetReference[] = [
     name: 'Hunter x Hunter world map (fan-made reference)',
     kind: 'map',
     // Copia qui il PNG della mappa: il file non è incluso nel repo.
-    url: '/assets/worlds/hunterxhunter/maps/hxh-world-map.png',
+    url: '/assets/worlds/hunterxhunter/maps/hxh-world-map.webp',
     source: 'fan-made map (Sharpsider)',
     license: 'fan-art / da verificare',
     author: 'Sharpsider',

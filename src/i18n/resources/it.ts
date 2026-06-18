@@ -389,6 +389,23 @@ export const it = {
     supporting: 'Secondario',
     background: 'Sfondo',
   },
+  onboarding: {
+    helpButton: 'Come si usa',
+    helpAria: 'Apri la guida alla mappa',
+    title: 'Come esplorare la mappa',
+    intro: 'Pochi gesti per orientarti in questo mondo:',
+    steps: {
+      panZoom:
+        'Trascina per spostarti; usa la rotella o i pulsanti +/− per lo zoom.',
+      pin: 'Clicca un segnaposto per aprire la scheda del luogo.',
+      submap:
+        'Doppio clic su un segnaposto con sotto-mappa per entrare nel dettaglio.',
+      filters: 'Usa ☰ per filtrare luoghi, personaggi, fazioni ed eventi.',
+      search: 'Premi “/” per cercare in questo mondo.',
+      timeline: 'Apri la timeline in basso per seguire archi ed eventi.',
+    },
+    cta: 'Inizia a esplorare',
+  },
   common: {
     close: 'Chiudi',
     loading: 'Caricamento…',
@@ -400,6 +417,8 @@ export const it = {
     reset: 'Reset',
     showMore: 'Mostra altro',
     showLess: 'Mostra meno',
+    copyLink: 'Copia link',
+    linkCopied: 'Link copiato!',
   },
   validation: {
     needsTranslation: 'Traduzione mancante per {{field}}',

@@ -5,8 +5,8 @@ import { useCookieConsent } from '@/store/useCookieConsent';
 import { DiscordIcon, InstagramIcon, XIcon } from './SocialIcons';
 
 /**
- * Link social. Spazio già predisposto: sostituire `href` con gli URL
- * reali quando disponibili (placeholder `#` finché non configurati).
+ * Link social. Per attivarne uno, imposta l'URL reale in `href`: finché resta
+ * vuoto il link viene nascosto (niente link morti in produzione).
  */
 interface SocialLink {
   key: string;
@@ -15,11 +15,13 @@ interface SocialLink {
   Icon: ComponentType<SVGProps<SVGSVGElement>>;
 }
 
-const SOCIAL_LINKS: SocialLink[] = [
-  { key: 'instagram', label: 'Instagram', href: '#', Icon: InstagramIcon },
-  { key: 'discord', label: 'Discord', href: '#', Icon: DiscordIcon },
-  { key: 'x', label: 'X', href: '#', Icon: XIcon },
+const ALL_SOCIAL: SocialLink[] = [
+  { key: 'instagram', label: 'Instagram', href: '', Icon: InstagramIcon },
+  { key: 'discord', label: 'Discord', href: '', Icon: DiscordIcon },
+  { key: 'x', label: 'X', href: '', Icon: XIcon },
 ];
+
+const SOCIAL_LINKS = ALL_SOCIAL.filter((l) => l.href !== '');
 
 const CURRENT_YEAR = new Date().getFullYear();
 const OWNER = 'Luca Sartorio';
@@ -40,15 +42,14 @@ export function Footer() {
         </p>
 
         <div className="order-1 flex items-center gap-4 sm:order-2">
-          <ul className="flex items-center gap-3">
-            {SOCIAL_LINKS.map(({ key, label, href, Icon }) => {
-              const isPlaceholder = href === '#';
-              return (
+          {SOCIAL_LINKS.length > 0 && (
+            <ul className="flex items-center gap-3">
+              {SOCIAL_LINKS.map(({ key, label, href, Icon }) => (
                 <li key={key}>
                   <a
                     href={href}
-                    target={isPlaceholder ? undefined : '_blank'}
-                    rel={isPlaceholder ? undefined : 'noopener noreferrer'}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={label}
                     title={label}
                     className="inline-flex text-ink-300 transition hover:text-white"
@@ -56,9 +57,9 @@ export function Footer() {
                     <Icon className="h-4 w-4" />
                   </a>
                 </li>
-              );
-            })}
-          </ul>
+              ))}
+            </ul>
+          )}
 
           <nav
             aria-label={t('footer.legalNav')}

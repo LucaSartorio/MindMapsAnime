@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { cn } from '@/lib/cn';
 
 interface ModalProps {
@@ -19,6 +20,11 @@ interface ModalProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
   /** Footer opzionale (azioni primarie) */
   footer?: ReactNode;
+  /**
+   * Mostra il pulsante "copia link" nell'header. Attivo di default: l'URL
+   * riflette la modale aperta (deep-link), quindi è sempre condivisibile.
+   */
+  shareable?: boolean;
 }
 
 const SIZE_MAP: Record<NonNullable<ModalProps['size']>, string> = {
@@ -46,9 +52,22 @@ export function Modal({
   className,
   size = 'lg',
   footer,
+  shareable = true,
 }: ModalProps) {
+  const { t } = useTranslation();
   const closeRef = useRef<HTMLButtonElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
+  const [copied, setCopied] = useState(false);
+
+  async function handleCopyLink() {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1800);
+    } catch {
+      // clipboard non disponibile (contesto non sicuro): nessuna azione
+    }
+  }
 
   // ESC + scroll lock
   useEffect(() => {
@@ -131,15 +150,33 @@ export function Modal({
                 <div className="mt-2 flex flex-wrap gap-1.5">{badges}</div>
               )}
             </div>
-            <button
-              ref={closeRef}
-              type="button"
-              aria-label="Chiudi"
-              onClick={onClose}
-              className="h-8 w-8 grid place-items-center rounded-md text-ink-300 hover:text-white hover:bg-ink-800/70 shrink-0"
-            >
-              ×
-            </button>
+            <div className="flex items-center gap-1 shrink-0">
+              {shareable && (
+                <button
+                  type="button"
+                  aria-label={copied ? t('common.linkCopied') : t('common.copyLink')}
+                  title={copied ? t('common.linkCopied') : t('common.copyLink')}
+                  onClick={handleCopyLink}
+                  className={cn(
+                    'h-8 w-8 grid place-items-center rounded-md hover:bg-ink-800/70',
+                    copied
+                      ? 'text-chakra-300'
+                      : 'text-ink-300 hover:text-white',
+                  )}
+                >
+                  {copied ? '✓' : '🔗'}
+                </button>
+              )}
+              <button
+                ref={closeRef}
+                type="button"
+                aria-label={t('common.close')}
+                onClick={onClose}
+                className="h-8 w-8 grid place-items-center rounded-md text-ink-300 hover:text-white hover:bg-ink-800/70"
+              >
+                ×
+              </button>
+            </div>
           </header>
         )}
         <div className="flex-1 overflow-auto px-5 py-4 text-sm text-ink-200 space-y-5">
