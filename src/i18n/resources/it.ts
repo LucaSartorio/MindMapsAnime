@@ -492,6 +492,7 @@ export const it = {
     cookiePolicy: 'Cookie Policy',
     manageCookies: 'Gestisci cookie',
     support: 'Sostieni il progetto',
+    socialSoon: 'presto disponibile',
   },
   support: {
     eyebrow: 'supporto',

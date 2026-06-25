@@ -487,6 +487,7 @@ export const en = {
     cookiePolicy: 'Cookie Policy',
     manageCookies: 'Manage cookies',
     support: 'Support the project',
+    socialSoon: 'coming soon',
   },
   support: {
     eyebrow: 'support',
