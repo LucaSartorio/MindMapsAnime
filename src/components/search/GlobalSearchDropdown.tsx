@@ -12,6 +12,10 @@ interface GlobalSearchDropdownProps {
   dataset: WorldDataset;
   /** Mostra il bottone "/" hint nel placeholder se vero (desktop). */
   showKbHint?: boolean;
+  /** Mette il focus sull'input al mount (usato dall'overlay di ricerca). */
+  autoFocus?: boolean;
+  /** Chiamato dopo la selezione di un risultato o alla chiusura (Escape). */
+  onClose?: () => void;
 }
 
 /**
@@ -26,6 +30,8 @@ interface GlobalSearchDropdownProps {
 export function GlobalSearchDropdown({
   dataset,
   showKbHint = false,
+  autoFocus = false,
+  onClose,
 }: GlobalSearchDropdownProps) {
   const { t } = useTranslation();
   const locale = useLocaleStore((s) => s.locale);
@@ -33,6 +39,8 @@ export function GlobalSearchDropdown({
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
   const navigate = useNavigate();
 
   // Query differita: il tasto digitato dipinge subito, la ricerca (pesante sui
@@ -45,6 +53,11 @@ export function GlobalSearchDropdown({
         : [],
     [deferredQuery, dataset, locale],
   );
+
+  // Focus automatico quando aperto via overlay.
+  useEffect(() => {
+    if (autoFocus) inputRef.current?.focus();
+  }, [autoFocus]);
 
   // Click fuori → chiude
   useEffect(() => {
@@ -77,6 +90,7 @@ export function GlobalSearchDropdown({
       if (e.key === 'Escape' && document.activeElement === inputRef.current) {
         inputRef.current?.blur();
         setOpen(false);
+        onCloseRef.current?.();
       }
     }
     document.addEventListener('keydown', onKey);
@@ -90,6 +104,7 @@ export function GlobalSearchDropdown({
     setOpen(false);
     setQuery('');
     inputRef.current?.blur();
+    onCloseRef.current?.();
 
     switch (r.kind) {
       case 'location': {

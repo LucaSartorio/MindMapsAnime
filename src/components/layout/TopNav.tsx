@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useUiStore, useWorldStore } from '@/store';
@@ -25,8 +26,35 @@ export function TopNav() {
   const isMobileNavOpen = useUiStore((s) => s.isMobileNavOpen);
   const toggleMobileNav = useUiStore((s) => s.toggleMobileNav);
   const openReport = useReportStore((s) => s.open);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   const inWorld = location.pathname.startsWith('/worlds/') && worldSlug;
+
+  // Chiudi la ricerca quando cambia pagina.
+  useEffect(() => {
+    setSearchOpen(false);
+  }, [location.pathname]);
+
+  // Scorciatoia "/" per aprire la ricerca, Esc per chiuderla (solo nei mondi).
+  useEffect(() => {
+    if (!inWorld) return;
+    function onKey(e: KeyboardEvent) {
+      const tag = (e.target as HTMLElement | null)?.tagName;
+      if (
+        e.key === '/' &&
+        tag !== 'INPUT' &&
+        tag !== 'TEXTAREA' &&
+        !e.metaKey &&
+        !e.ctrlKey
+      ) {
+        e.preventDefault();
+        setSearchOpen(true);
+      }
+      if (e.key === 'Escape') setSearchOpen(false);
+    }
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [inWorld]);
 
   const worldItems: NavItem[] = inWorld
     ? [
@@ -97,9 +125,27 @@ export function TopNav() {
             shrink-0: non si restringe mai → la ricerca non viene mai coperta. */}
         <div className="ml-auto flex items-center gap-2 shrink-0">
           {inWorld && dataset && (
-            <div className="hidden xl:block w-64 2xl:w-72 shrink-0">
-              <GlobalSearchDropdown dataset={dataset} showKbHint />
-            </div>
+            <button
+              type="button"
+              onClick={() => setSearchOpen((v) => !v)}
+              aria-expanded={searchOpen}
+              aria-label={t('search.label', { world: dataset.world.title })}
+              title={t('search.kbHint')}
+              className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-ink-700/70 text-ink-200 hover:text-white hover:border-chakra-500/60"
+            >
+              <svg
+                aria-hidden
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                className="h-[18px] w-[18px]"
+              >
+                <circle cx="11" cy="11" r="7" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </button>
           )}
           <Link
             to="/about"
@@ -132,12 +178,26 @@ export function TopNav() {
         </div>
       </div>
 
-      {/* Sub-bar search: riga dedicata e full-width sotto xl, così la ricerca
-          ha sempre lo stesso spazio comodo a prescindere dal mondo. */}
-      {inWorld && dataset && (
-        <div className="xl:hidden px-4 pb-2">
-          <GlobalSearchDropdown dataset={dataset} />
-        </div>
+      {/* Overlay ricerca: aperto dall'icona 🔍 (o dal tasto "/"). Full-width,
+          non compete con il menu → scala a qualsiasi mondo. */}
+      {inWorld && dataset && searchOpen && (
+        <>
+          <div
+            className="fixed inset-0 z-20"
+            aria-hidden
+            onClick={() => setSearchOpen(false)}
+          />
+          <div className="relative z-30 px-4 pb-3">
+            <div className="mx-auto max-w-2xl">
+              <GlobalSearchDropdown
+                dataset={dataset}
+                autoFocus
+                showKbHint
+                onClose={() => setSearchOpen(false)}
+              />
+            </div>
+          </div>
+        </>
       )}
 
       {/* Mobile world nav */}
