@@ -38,9 +38,6 @@ const JutsuPage = lazy(() =>
     default: m.JutsuPage,
   })),
 );
-const SourcesPage = lazy(() =>
-  import('@/pages/SourcesPage').then((m) => ({ default: m.SourcesPage })),
-);
 
 function LazyFallback({ children }: { children: ReactNode }) {
   return (
@@ -165,16 +162,6 @@ export function WorldRoute() {
           <WorldLayout dataset={dataset} mapOverlays={false}>
             <LazyFallback>
               <JutsuPage dataset={dataset} />
-            </LazyFallback>
-          </WorldLayout>
-        }
-      />
-      <Route
-        path="sources"
-        element={
-          <WorldLayout dataset={dataset} mapOverlays={false}>
-            <LazyFallback>
-              <SourcesPage dataset={dataset} />
             </LazyFallback>
           </WorldLayout>
         }

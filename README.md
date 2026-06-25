@@ -126,7 +126,6 @@ di fazione mostrati sono solo quelli realmente presenti nel mondo attivo.
 | `/worlds/:slug/clans`      | Archivio clan & fazioni (tipi derivati dai dati)  |
 | `/worlds/:slug/jutsu`      | Archivio tecniche (termine/categorie per-mondo)   |
 | `/worlds/:slug/arcs`       | Archivio archi narrativi                          |
-| `/worlds/:slug/sources`    | Fonti, asset e note editoriali                    |
 
 I mondi con `status: 'coming_soon'` aprono automaticamente una pagina segnaposto
 (`ComingSoonWorldPage`) senza routing manuale.
