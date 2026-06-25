@@ -477,6 +477,9 @@ export interface Character {
   abilities?: string[];
   /** Kekkei Genkai posseduti */
   kekkeiGenkai?: string[];
+  /** Nature del chakra del personaggio. Se omesso, il selettore può
+   * dedurlo dai jutsu collegati. Vedi `getCharacterChakraNatures`. */
+  chakraNatures?: ChakraNature[];
   /** Jutsu noti (riferimenti a Jutsu.id) */
   jutsuIds?: string[];
   /** Contratti di evocazione */

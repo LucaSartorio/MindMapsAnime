@@ -3,10 +3,13 @@ import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import {
+  getChakraNatureLabel,
   getCharacterImportanceLabel,
   getCharacterStatusLabel,
   getLocalizedText,
 } from '@/utils/localization';
+import { CHAKRA_COLORS } from '@/utils/entityImage';
+import { getCharacterChakraNatures } from '@/lib/characterChakra';
 import { Modal } from '@/components/common/Modal';
 import { Badge } from '@/components/common/Badge';
 import { Button } from '@/components/common/Button';
@@ -68,9 +71,12 @@ export function CharacterDetailsModal({
   const jutsu = (character.jutsuIds ?? [])
     .map((id) => findJutsu(dataset, id))
     .filter((j): j is NonNullable<typeof j> => !!j);
-  const arcs = (character.arcIds ?? [])
-    .map((id) => dataset.arcs.find((a) => a.id === id))
-    .filter((a): a is NonNullable<typeof a> => !!a);
+  // Archi: discover bidirezionale (sia char.arcIds sia arc.characterIds).
+  const arcIdSet = new Set(character.arcIds ?? []);
+  const arcs = dataset.arcs
+    .filter((a) => arcIdSet.has(a.id) || (a.characterIds ?? []).includes(character.id))
+    .sort((a, b) => a.order - b.order);
+  const chakraNatures = getCharacterChakraNatures(character, dataset);
   const events = dataset.events
     .filter((e) => (e.characterIds ?? []).includes(character.id))
     .sort((a, b) => a.order - b.order);
@@ -255,6 +261,26 @@ export function CharacterDetailsModal({
               <Badge key={k} variant="danger">
                 {k}
               </Badge>
+            ))}
+          </div>
+        </Section>
+      )}
+
+      {chakraNatures.length > 0 && (
+        <Section title={t('modals.chakraNature')}>
+          <div className="flex flex-wrap gap-1.5">
+            {chakraNatures.map((n) => (
+              <span
+                key={n}
+                className="inline-flex items-center gap-1.5 rounded-full border border-ink-700/60 bg-ink-900/70 px-2.5 py-1 text-xs text-ink-100"
+              >
+                <span
+                  aria-hidden
+                  className="inline-block h-2.5 w-2.5 rounded-full ring-1 ring-black/30"
+                  style={{ backgroundColor: CHAKRA_COLORS[n] }}
+                />
+                {getChakraNatureLabel(n, locale)}
+              </span>
             ))}
           </div>
         </Section>
