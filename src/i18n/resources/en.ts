@@ -437,6 +437,21 @@ export const en = {
     supporting: 'Supporting',
     background: 'Background',
   },
+  onboarding: {
+    helpButton: 'How to use',
+    helpAria: 'Open the map guide',
+    title: 'How to explore the map',
+    intro: 'A few gestures to find your way around this world:',
+    steps: {
+      panZoom: 'Drag to pan; use the wheel or the +/− buttons to zoom.',
+      pin: 'Click a pin to open the place details.',
+      submap: 'Double-click a pin with a sub-map to drill into it.',
+      filters: 'Use ☰ to filter places, characters, factions and events.',
+      search: 'Press “/” to search within this world.',
+      timeline: 'Open the timeline at the bottom to follow arcs and events.',
+    },
+    cta: 'Start exploring',
+  },
   common: {
     close: 'Close',
     loading: 'Loading…',
@@ -448,6 +463,8 @@ export const en = {
     reset: 'Reset',
     showMore: 'Show more',
     showLess: 'Show less',
+    copyLink: 'Copy link',
+    linkCopied: 'Link copied!',
   },
   validation: {
     needsTranslation: 'Missing translation for {{field}}',

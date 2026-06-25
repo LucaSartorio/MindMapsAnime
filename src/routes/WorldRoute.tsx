@@ -8,6 +8,8 @@ import { WorldLayout } from '@/components/layout/WorldLayout';
 import { ComingSoonWorldPage } from '@/pages/ComingSoonWorldPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import { Seo } from '@/components/seo/Seo';
+import { ErrorBoundary } from '@/components/common/ErrorBoundary';
+import { ModalDeepLink } from '@/components/modals/ModalDeepLink';
 
 // Lazy: la pagina mappa porta con sé React Flow (~180KB) — non deve pesare
 // sull'avvio dell'app (homepage) ma caricarsi solo entrando in un mondo.
@@ -42,15 +44,17 @@ const SourcesPage = lazy(() =>
 
 function LazyFallback({ children }: { children: ReactNode }) {
   return (
-    <Suspense
-      fallback={
-        <div className="flex-1 grid place-items-center text-ink-300 text-sm">
-          Caricamento…
-        </div>
-      }
-    >
-      {children}
-    </Suspense>
+    <ErrorBoundary variant="section">
+      <Suspense
+        fallback={
+          <div className="flex-1 grid place-items-center text-ink-300 text-sm">
+            Caricamento…
+          </div>
+        }
+      >
+        {children}
+      </Suspense>
+    </ErrorBoundary>
   );
 }
 
@@ -113,6 +117,7 @@ export function WorldRoute() {
   return (
     <>
       <Seo />
+      <ModalDeepLink dataset={dataset} />
       <Routes>
       <Route
         index

@@ -6,8 +6,10 @@ import { EntityImage } from '@/components/common/EntityImage';
 import { ReferencePill } from '@/components/common/StatusPill';
 import { cn } from '@/lib/cn';
 import { useLocaleStore } from '@/store/useLocaleStore';
-import { getCharacterStatusLabel, getLocalizedText } from '@/utils/localization';
-import { getCharacterRankSystem } from '@/lib/worldConfig';
+import { getCharacterStatusLabel, getChakraNatureLabel, getLocalizedText } from '@/utils/localization';
+import { getAbilityCategoryLabel, getCharacterRankSystem } from '@/lib/worldConfig';
+import { getCharacterChakraNatures } from '@/lib/characterChakra';
+import { CHAKRA_COLORS } from '@/utils/entityImage';
 
 interface CharacterCardProps {
   character: Character;
@@ -29,6 +31,7 @@ function CharacterCardComponent({
     : undefined;
   const clans =
     character.clanIds?.map((id) => dataset.factions.find((f) => f.id === id)) ?? [];
+  const natures = getCharacterChakraNatures(character, dataset);
 
   return (
     <Card
@@ -68,6 +71,26 @@ function CharacterCardComponent({
                 {character.nameLocal}
               </p>
             )}
+            {natures.length > 0 && (
+              <div
+                className="mt-1 flex items-center gap-1"
+                aria-label={natures
+                  .map((n) => getChakraNatureLabel(n, locale))
+                  .join(', ')}
+                title={natures
+                  .map((n) => getChakraNatureLabel(n, locale))
+                  .join(' · ')}
+              >
+                {natures.slice(0, 6).map((n) => (
+                  <span
+                    key={n}
+                    aria-hidden
+                    className="inline-block h-2 w-2 rounded-full ring-1 ring-black/40"
+                    style={{ backgroundColor: CHAKRA_COLORS[n] }}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         </div>
 
@@ -83,6 +106,11 @@ function CharacterCardComponent({
           ) : character.rank ? (
             <Badge variant="accent">{character.rank}</Badge>
           ) : null}
+          {character.abilityCategory && (
+            <Badge variant="default">
+              {getAbilityCategoryLabel(dataset.world, character.abilityCategory, locale)}
+            </Badge>
+          )}
           {village && (
             <Badge>
               {getLocalizedText(village.localizedName, locale) || village.name}

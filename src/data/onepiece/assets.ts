@@ -25,11 +25,11 @@ import type { AssetReference } from '@/types';
  * aggiorna width/height nel MapLevel mantenendo lo stesso aspect ratio.
  */
 export const ONEPIECE_SUBMAP_IMAGE_URLS: Record<string, string> = {
-  skypiea: '/assets/worlds/onepiece/maps/onepiece-skypiea-submap.jpg',
-  alabasta: '/assets/worlds/onepiece/maps/onepiece-alabasta-sub.jpg',
-  wano: '/assets/worlds/onepiece/maps/onepiece-wano-submap.jpg',
-  'enies-lobby': '/assets/worlds/onepiece/maps/onepiece-enieslobby-sub.jpg',
-  jaya: '/assets/worlds/onepiece/maps/onepiece-jaya-sub.jpg',
+  skypiea: '/assets/worlds/onepiece/maps/onepiece-skypiea-submap.webp',
+  alabasta: '/assets/worlds/onepiece/maps/onepiece-alabasta-sub.webp',
+  wano: '/assets/worlds/onepiece/maps/onepiece-wano-submap.webp',
+  'enies-lobby': '/assets/worlds/onepiece/maps/onepiece-enieslobby-sub.webp',
+  jaya: '/assets/worlds/onepiece/maps/onepiece-jaya-sub.webp',
 };
 
 const onepieceBaseAssets: AssetReference[] = [
@@ -51,7 +51,7 @@ const onepieceBaseAssets: AssetReference[] = [
     name: 'One Piece world map (reference)',
     kind: 'map',
     // Copia qui l'immagine della mappa: il file non è incluso nel repo.
-    url: '/assets/worlds/onepiece/maps/onepiece-world-map.jpeg',
+    url: '/assets/worlds/onepiece/maps/onepiece-world-map.webp',
     source: 'fan-made / reference map',
     license: 'fan-art / da verificare',
     author: 'da attribuire',

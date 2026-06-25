@@ -48,6 +48,10 @@ export function TimelineEventDetailsModal({
 
   const arc = findArc(dataset, event.arcId);
   const location = findLocation(dataset, event.locationId);
+  const otherLocations = (event.locationIds ?? [])
+    .filter((id) => id !== event.locationId)
+    .map((id) => findLocation(dataset, id))
+    .filter((l): l is NonNullable<typeof l> => !!l);
   const characters = (event.characterIds ?? [])
     .map((id) => findCharacter(dataset, id))
     .filter((c): c is NonNullable<typeof c> => !!c);
@@ -128,6 +132,26 @@ export function TimelineEventDetailsModal({
           </p>
           <p className="text-ink-100 mt-0.5">{getLocalizedText(location.localizedName, locale) || location.name}</p>
         </button>
+      )}
+
+      {otherLocations.length > 0 && (
+        <section>
+          <h3 className="font-display text-[11px] uppercase tracking-widest text-chakra-300 mb-2">
+            {t("modals.relatedLocations")}
+          </h3>
+          <div className="flex flex-wrap gap-1.5">
+            {otherLocations.map((l) => (
+              <button
+                key={l.id}
+                type="button"
+                onClick={() => openLocation(l.id)}
+                className="chip hover:border-chakra-500/70 hover:text-white"
+              >
+                {getLocalizedText(l.localizedName, locale) || l.name}
+              </button>
+            ))}
+          </div>
+        </section>
       )}
 
       {hasReferences && (

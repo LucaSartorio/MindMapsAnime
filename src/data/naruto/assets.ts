@@ -38,7 +38,7 @@ export const narutoAssets: AssetReference[] = [
     worldId: 'world-naruto',
     name: 'Naruto World Map (reference, expanded)',
     kind: 'map',
-    url: '/assets/worlds/naruto/maps/naruto_world_reference_expanded.png',
+    url: '/assets/worlds/naruto/maps/naruto_world_reference_expanded.webp',
     source: 'user_provided',
     license: 'to_verify',
     author: 'unknown',

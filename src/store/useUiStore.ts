@@ -36,6 +36,8 @@ interface UiState {
   isTimelineOpen: boolean;
   /** Nav mobile */
   isMobileNavOpen: boolean;
+  /** Overlay di onboarding / aiuto (come usare la mappa) */
+  isHelpOpen: boolean;
 
   // Modali — apertura tipizzata
   openLocationModal: (id: string) => void;
@@ -65,6 +67,10 @@ interface UiState {
 
   toggleMobileNav: () => void;
   setMobileNav: (open: boolean) => void;
+
+  openHelp: () => void;
+  closeHelp: () => void;
+  toggleHelp: () => void;
 }
 
 export const useUiStore = create<UiState>((set) => ({
@@ -74,6 +80,7 @@ export const useUiStore = create<UiState>((set) => ({
   isLegendOpen: false,
   isTimelineOpen: false,
   isMobileNavOpen: false,
+  isHelpOpen: false,
 
   openLocationModal: (id) => set({ activeModal: { kind: 'location', id } }),
   openCharacterModal: (id) => set({ activeModal: { kind: 'character', id } }),
@@ -103,4 +110,8 @@ export const useUiStore = create<UiState>((set) => ({
 
   toggleMobileNav: () => set((s) => ({ isMobileNavOpen: !s.isMobileNavOpen })),
   setMobileNav: (open) => set({ isMobileNavOpen: open }),
+
+  openHelp: () => set({ isHelpOpen: true }),
+  closeHelp: () => set({ isHelpOpen: false }),
+  toggleHelp: () => set((s) => ({ isHelpOpen: !s.isHelpOpen })),
 }));

@@ -453,6 +453,13 @@ export interface Character {
    * mondo definisce i propri gradi e le etichette via `WorldConfig.characterRank`.
    */
   ninjaRank?: string;
+  /**
+   * Categoria del sistema di potere del mondo, se applicabile al personaggio.
+   * Per Hunter x Hunter è la categoria Nen (enhancement, transmutation,
+   * conjuration, emission, manipulation, specialization). Risolta in UI via
+   * `getAbilityCategoryLabel`. Stringa libera per estensibilità tra mondi.
+   */
+  abilityCategory?: string;
   /** Generazione narrativa (es. "Konoha 11", "Sannin", "Founders") */
   generation?: string;
   gender?: string;
@@ -470,6 +477,9 @@ export interface Character {
   abilities?: string[];
   /** Kekkei Genkai posseduti */
   kekkeiGenkai?: string[];
+  /** Nature del chakra del personaggio. Se omesso, il selettore può
+   * dedurlo dai jutsu collegati. Vedi `getCharacterChakraNatures`. */
+  chakraNatures?: ChakraNature[];
   /** Jutsu noti (riferimenti a Jutsu.id) */
   jutsuIds?: string[];
   /** Contratti di evocazione */
