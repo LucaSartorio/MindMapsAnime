@@ -21,6 +21,8 @@ import {
   findNation,
 } from '@/lib/entities';
 import {
+  getAbilityCategoryLabel,
+  getAbilityCategoryTerm,
   getAbilityTerm,
   getCharacterRankSystem,
   getRoleLabel,
@@ -124,6 +126,12 @@ export function CharacterDetailsModal({
               {getRoleLabel(dataset.world, r, locale)}
             </Badge>
           ))}
+          {character.abilityCategory && (
+            <Badge variant="accent">
+              {getAbilityCategoryTerm(dataset.world, locale, locale === 'it' ? 'Categoria' : 'Category')}:{' '}
+              {getAbilityCategoryLabel(dataset.world, character.abilityCategory, locale)}
+            </Badge>
+          )}
           {village && <Badge>{getLocalizedText(village.localizedName, locale) || village.name}</Badge>}
           {nation && <Badge>{getLocalizedText(nation.localizedName, locale) || nation.name}</Badge>}
           <Badge variant={statusVariant}>
