@@ -41,7 +41,6 @@ export function TopNav() {
         },
         { to: `/worlds/${worldSlug}/jutsu`, label: getAbilityTerm(dataset?.world, locale) },
         { to: `/worlds/${worldSlug}/arcs`, label: t('nav.arcs') },
-        { to: `/worlds/${worldSlug}/sources`, label: t('nav.sources') },
       ]
     : [];
 
@@ -68,9 +67,11 @@ export function TopNav() {
           </span>
         </Link>
 
-        {/* Nav desktop */}
+        {/* Nav desktop — flessibile: occupa lo spazio tra logo e cluster destro
+            e, se troppo lunga, scorre in orizzontale invece di sovrapporsi
+            alla ricerca (che resta a dimensione fissa). */}
         <nav
-          className="hidden md:flex items-center gap-1 ml-2"
+          className="hidden md:flex items-center gap-1 ml-2 min-w-0 flex-1 overflow-x-auto scrollbar-none"
           aria-label={t('nav.openMobileNav')}
         >
           {worldItems.map((item) => (
@@ -80,7 +81,7 @@ export function TopNav() {
               end
               className={({ isActive }) =>
                 cn(
-                  'px-3 py-1.5 rounded-md text-sm transition',
+                  'px-2.5 py-1.5 rounded-md text-sm whitespace-nowrap transition',
                   isActive
                     ? 'bg-chakra-500/20 text-chakra-100 border border-chakra-500/40'
                     : 'text-ink-200 hover:text-white hover:bg-ink-800/70',
@@ -92,8 +93,9 @@ export function TopNav() {
           ))}
         </nav>
 
-        {/* Right cluster: search + about + language + mobile toggle */}
-        <div className="ml-auto flex items-center gap-2 min-w-0 flex-1 justify-end">
+        {/* Right cluster: search + about + report + language + mobile toggle.
+            shrink-0: non si restringe mai → la ricerca non viene mai coperta. */}
+        <div className="ml-auto flex items-center gap-2 shrink-0">
           {inWorld && dataset && (
             <div className="hidden xl:block w-64 2xl:w-72 shrink-0">
               <GlobalSearchDropdown dataset={dataset} showKbHint />

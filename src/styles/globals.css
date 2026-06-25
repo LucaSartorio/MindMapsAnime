@@ -14,6 +14,15 @@
   }
 }
 
+/* Scroll orizzontale senza scrollbar visibile (es. nav che eccede la larghezza). */
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
 /* Perf: salta render/layout/paint delle card archivio fuori viewport.
    `contain-intrinsic-size` riserva l'altezza stimata così scrollbar e scroll
    restano stabili. Nei browser senza supporto la regola è ignorata. */

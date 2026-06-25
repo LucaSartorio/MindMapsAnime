@@ -206,11 +206,6 @@ export function getAllRoutes(): RouteSeo[] {
         label: 'Archi narrativi',
         desc: `Archi narrativi e timeline di ${worldName}: cronologia degli eventi e degli archi della storia.`,
       },
-      {
-        seg: 'sources',
-        label: 'Fonti',
-        desc: `Fonti e riferimenti dei dati su ${worldName}: licenze, autori e attribuzioni del materiale.`,
-      },
     ];
 
     for (const sp of subPages) {
