@@ -1,4 +1,4 @@
-import type { Character, Jutsu } from '@/types';
+import type { Character, Jutsu, TimelineEvent } from '@/types';
 
 /**
  * Collegamenti e arricchimento automatico delle schede personaggio HxH.
@@ -140,6 +140,84 @@ const ENEMIES: readonly Rel[] = [
 ];
 
 /* ============================================ COSTRUZIONE MAPPE SIMMETRICHE */
+/* ===================================== EVENTI → personaggi aggiuntivi */
+/**
+ * Aggancia a eventi canonici i personaggi finora "orfani" (non comparivano in
+ * nessun evento), così ogni scheda è raggiungibile dalla timeline. Mappa:
+ * eventId → personaggi (short id) da aggiungere ai characterIds dell'evento.
+ */
+const EVENT_EXTRA_CHARS: Record<string, readonly string[]> = {
+  'ev-hxh-killua-family-room': ['gotoh'], // maggiordomo capo degli Zoldyck
+  'ev-hxh-queen-washes-ashore': ['gyro'], // fondatore della NGL, origine delle Formiche
+  'ev-hxh-final-phase': ['bodoro'], // candidato ucciso da Killua nei duelli finali
+  'ev-hxh-zevil-island': ['geretta'], // cacciatore candidato della quarta fase
+  'ev-hxh-troupe-gathers': ['zepile'], // esperto d'antiquariato che aiuta a Yorknew
+  'ev-hxh-greed-island-auction': ['battera'], // mecenate che finanzia Greed Island
+  'ev-hxh-ging-message': ['dwun', 'list'], // i Game Master creatori del gioco
+  'ev-hxh-toward-new-continent': ['brion', 'ai', 'hellbell', 'pap', 'zobae'], // le 5 Calamità, mete della spedizione
+};
+
+/* ================================== FAZIONI → membri aggiuntivi (mafia) */
+/** factionId → personaggi (short id) da aggiungere ai characterIds. */
+const FACTION_EXTRA_CHARS: Record<string, readonly string[]> = {
+  'faction-hxh-mafia': ['light-nostrade'], // i Nostrade operano sotto la Comunità Mafiosa
+  'faction-hxh-cha-r': ['nobunaga'], // i Ragni alleati della Cha-R contro la Heil-Ly
+};
+
+/**
+ * eventId → fazioni (id) da aggiungere, così Ten Dons e Shadow Beasts (privi
+ * di membri nominati nel cast) restano raggiungibili dalla timeline.
+ */
+const EVENT_EXTRA_FACTIONS: Record<string, readonly string[]> = {
+  'ev-hxh-troupe-vs-shadowbeasts': ['faction-hxh-shadow-beasts', 'faction-hxh-ten-dons'],
+  'ev-hxh-auction-massacre': ['faction-hxh-ten-dons'],
+};
+
+/**
+ * eventId → luoghi (id pieno) da aggiungere ai `locationIds`, così i luoghi
+ * canonici (tappe dell'Esame, interni delle sotto-mappe, città di Greed
+ * Island, World Tree…) sono raggiungibili dalla timeline oltre che dalla mappa.
+ */
+const EVENT_EXTRA_LOCATIONS: Record<string, readonly string[]> = {
+  // Esame per Hunter (tappe)
+  'ev-hxh-ship-storm': ['loc-hxh-dolle-harbor'],
+  'ev-hxh-swindlers-swamp': ['loc-hxh-milsy-wetlands'],
+  'ev-hxh-trick-tower': ['loc-hxh-trick-tower'],
+  'ev-hxh-zevil-island': ['loc-hxh-zevil-island'],
+  // Torre Celeste (piani interni)
+  'ev-hxh-heavens-arrival': ['loc-hxh-ha-entrance'],
+  'ev-hxh-arena-fighters': ['loc-hxh-ha-floor200'],
+  'ev-hxh-gon-floor-matches': ['loc-hxh-ha-floor200'],
+  'ev-hxh-gon-vs-hisoka': ['loc-hxh-ha-floor251'],
+  'ev-hxh-hisoka-vs-kastro': ['loc-hxh-ha-floor251'],
+  // Tenuta Zoldyck (interni)
+  'ev-hxh-testing-gate-canary': ['loc-hxh-zd-testing-gate'],
+  'ev-hxh-killua-family-room': ['loc-hxh-zd-torture-room', 'loc-hxh-zd-residence'],
+  'ev-hxh-kukuroo-climb': ['loc-hxh-zd-testing-gate'],
+  // Greed Island (città)
+  'ev-hxh-enter-greed-island': ['loc-hxh-gi-starting-point'],
+  'ev-hxh-bisky-training': ['loc-hxh-gi-masadora'],
+  'ev-hxh-meet-tsezguerra': ['loc-hxh-gi-antokiba'],
+  'ev-hxh-dodgeball-razor': ['loc-hxh-gi-soufrabi'],
+  'ev-hxh-gon-vs-genthru': ['loc-hxh-gi-battlefield'],
+  'ev-hxh-ging-message': ['loc-hxh-gi-limeiro'],
+  // East Gorteau (interni palazzo) + Peijin
+  'ev-hxh-selection-broadcast': ['loc-hxh-peijin', 'loc-hxh-eg-gate'],
+  'ev-hxh-palace-assault': ['loc-hxh-eg-gate', 'loc-hxh-eg-courtyard'],
+  'ev-hxh-morel-knuckle-youpi': ['loc-hxh-eg-courtyard'],
+  'ev-hxh-knuckle-vs-youpi': ['loc-hxh-eg-courtyard'],
+  'ev-hxh-netero-vs-meruem': ['loc-hxh-eg-throne'],
+  'ev-hxh-meruem-komugi': ['loc-hxh-eg-gungi-room'],
+  'ev-hxh-king-death': ['loc-hxh-eg-gungi-room'],
+  'ev-hxh-meruem-awakens': ['loc-hxh-eg-gungi-room'],
+  // Elezione / lore
+  'ev-hxh-chairman-election': ['loc-hxh-swardani-city'],
+  'ev-hxh-pariston-wins': ['loc-hxh-swardani-city'],
+  'ev-hxh-gon-meets-ging': ['loc-hxh-world-tree'],
+  // Continente Oscuro
+  'ev-hxh-expo-rokario': ['loc-hxh-rokario-site'],
+};
+
 function addBoth(map: Map<string, Set<string>>, a: string, b: string) {
   if (a === b) return;
   if (!map.has(a)) map.set(a, new Set());
@@ -237,5 +315,49 @@ export function enrichHxhCharacters(
     next.students = merge(c.students, studentsMap.get(c.id));
     next.jutsuIds = merge(c.jutsuIds, jutsuByChar.get(c.id));
     return next;
+  });
+}
+
+/**
+ * Aggancia agli eventi i personaggi/fazioni "orfani" (vedi EVENT_EXTRA_CHARS /
+ * EVENT_EXTRA_FACTIONS), così ogni nodo è raggiungibile dalla timeline.
+ */
+export function enrichHxhEvents(events: TimelineEvent[]): TimelineEvent[] {
+  return events.map((e) => {
+    const extraC = EVENT_EXTRA_CHARS[e.id];
+    const extraF = EVENT_EXTRA_FACTIONS[e.id];
+    const extraL = EVENT_EXTRA_LOCATIONS[e.id];
+    if (!extraC && !extraF && !extraL) return e;
+    const next: TimelineEvent = { ...e };
+    if (extraC) {
+      next.characterIds = [
+        ...new Set([...(e.characterIds ?? []), ...extraC.map(C)]),
+      ];
+    }
+    if (extraF) {
+      next.factionIds = [...new Set([...(e.factionIds ?? []), ...extraF])];
+    }
+    if (extraL) {
+      // include il locationId "principale" se presente, così non si perde
+      const base = e.locationId ? [e.locationId] : [];
+      next.locationIds = [
+        ...new Set([...base, ...(e.locationIds ?? []), ...extraL]),
+      ];
+    }
+    return next;
+  });
+}
+
+/** Aggiunge a fazioni selezionate membri canonici già presenti nel cast. */
+export function enrichHxhFactions<T extends { id: string; characterIds?: string[] }>(
+  factions: T[],
+): T[] {
+  return factions.map((f) => {
+    const extra = FACTION_EXTRA_CHARS[f.id];
+    if (!extra) return f;
+    return {
+      ...f,
+      characterIds: [...new Set([...(f.characterIds ?? []), ...extra.map(C)])],
+    };
   });
 }

@@ -29,7 +29,7 @@ import { hxhNen } from './nen';
 import { hxhNenBatch1 } from './nenBatch1';
 import { hxhNenBatch2 } from './nenBatch2';
 import { hxhNenBatch3 } from './nenBatch3';
-import { enrichHxhCharacters } from './relations';
+import { enrichHxhCharacters, enrichHxhEvents, enrichHxhFactions } from './relations';
 import { hxhAssets } from './assets';
 
 const hunterxhunter = animeWorlds.find((w) => w.slug === 'hunterxhunter')!;
@@ -65,15 +65,15 @@ export const hunterxhunterDataset: WorldDataset = {
   boundaries: hxhBoundaries,
   locations: [...hxhLocations, ...hxhLocationsBatch1, ...hxhSubmapLocations],
   characters: hxhAllCharacters,
-  factions: [...hxhFactions, ...hxhFactionsBatch1],
+  factions: enrichHxhFactions([...hxhFactions, ...hxhFactionsBatch1]),
   arcs: hxhArcs,
-  events: [
+  events: enrichHxhEvents([
     ...hxhEvents,
     ...hxhEventsBatch1,
     ...hxhEventsBatch2,
     ...hxhEventsBatch3,
     ...hxhEventsBatch4,
-  ],
+  ]),
   routes: [...hxhRoutes, ...hxhRoutesBatch1, ...hxhRoutesBatch2],
   jutsu: hxhAllJutsu,
   assets: hxhAssets,
