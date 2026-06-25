@@ -29,6 +29,7 @@ import { hxhNen } from './nen';
 import { hxhNenBatch1 } from './nenBatch1';
 import { hxhNenBatch2 } from './nenBatch2';
 import { hxhNenBatch3 } from './nenBatch3';
+import { enrichHxhCharacters } from './relations';
 import { hxhAssets } from './assets';
 
 const hunterxhunter = animeWorlds.find((w) => w.slug === 'hunterxhunter')!;
@@ -41,13 +42,10 @@ const hunterxhunter = animeWorlds.find((w) => w.slug === 'hunterxhunter')!;
  * continenti, confini cliccabili e luoghi iconici) su mappa di riferimento
  * fan-made.
  */
-export const hunterxhunterDataset: WorldDataset = {
-  world: hunterxhunter,
-  mapLevels: hxhMapLevels,
-  nations: hxhNations,
-  boundaries: hxhBoundaries,
-  locations: [...hxhLocations, ...hxhLocationsBatch1, ...hxhSubmapLocations],
-  characters: [
+const hxhAllJutsu = [...hxhNen, ...hxhNenBatch1, ...hxhNenBatch2, ...hxhNenBatch3];
+
+const hxhAllCharacters = enrichHxhCharacters(
+  [
     ...hxhCharacters,
     ...hxhCharactersBatch1,
     ...hxhCharactersBatch2,
@@ -57,6 +55,16 @@ export const hunterxhunterDataset: WorldDataset = {
     ...hxhCharactersBatch6,
     ...hxhCharactersBatch7,
   ],
+  hxhAllJutsu,
+);
+
+export const hunterxhunterDataset: WorldDataset = {
+  world: hunterxhunter,
+  mapLevels: hxhMapLevels,
+  nations: hxhNations,
+  boundaries: hxhBoundaries,
+  locations: [...hxhLocations, ...hxhLocationsBatch1, ...hxhSubmapLocations],
+  characters: hxhAllCharacters,
   factions: [...hxhFactions, ...hxhFactionsBatch1],
   arcs: hxhArcs,
   events: [
@@ -67,7 +75,7 @@ export const hunterxhunterDataset: WorldDataset = {
     ...hxhEventsBatch4,
   ],
   routes: [...hxhRoutes, ...hxhRoutesBatch1, ...hxhRoutesBatch2],
-  jutsu: [...hxhNen, ...hxhNenBatch1, ...hxhNenBatch2, ...hxhNenBatch3],
+  jutsu: hxhAllJutsu,
   assets: hxhAssets,
 };
 

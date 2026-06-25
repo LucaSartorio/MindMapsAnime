@@ -7,7 +7,7 @@ import { ReferencePill } from '@/components/common/StatusPill';
 import { cn } from '@/lib/cn';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getCharacterStatusLabel, getLocalizedText } from '@/utils/localization';
-import { getCharacterRankSystem } from '@/lib/worldConfig';
+import { getAbilityCategoryLabel, getCharacterRankSystem } from '@/lib/worldConfig';
 
 interface CharacterCardProps {
   character: Character;
@@ -83,6 +83,11 @@ function CharacterCardComponent({
           ) : character.rank ? (
             <Badge variant="accent">{character.rank}</Badge>
           ) : null}
+          {character.abilityCategory && (
+            <Badge variant="default">
+              {getAbilityCategoryLabel(dataset.world, character.abilityCategory, locale)}
+            </Badge>
+          )}
           {village && (
             <Badge>
               {getLocalizedText(village.localizedName, locale) || village.name}
