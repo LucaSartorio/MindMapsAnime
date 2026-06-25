@@ -469,6 +469,22 @@ export const en = {
     privacy: 'Privacy Policy',
     cookiePolicy: 'Cookie Policy',
     manageCookies: 'Manage cookies',
+    support: 'Support the project',
+  },
+  support: {
+    eyebrow: 'support',
+    title: 'Support us',
+    lead: 'Interactive Maps is a free, ad-free project maintained in spare time. If you find it useful or fun, you can support it: every contribution is voluntary and much appreciated.',
+    donateTitle: 'Make a donation',
+    donateBody:
+      'A donation helps cover the costs (domain and hosting) and dedicate time to developing new worlds and features.',
+    donateButton: 'Donate with PayPal',
+    donateSoon: 'Donations will be available soon.',
+    note: 'The donation is a free and voluntary contribution, with no goods or services in return: it is not a purchase.',
+    otherTitle: 'Other ways to support',
+    otherIntro: 'Not just money — you can help in these ways too.',
+    otherReport: 'Report a bug or suggest an improvement',
+    otherShare: 'Share the site with other anime and manga fans.',
   },
   cookie: {
     banner: {

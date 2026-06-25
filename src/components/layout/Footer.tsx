@@ -39,7 +39,13 @@ export function Footer() {
           © {CURRENT_YEAR} {OWNER}. {t('footer.rights')}
         </p>
 
-        <div className="order-1 flex items-center gap-4 sm:order-2">
+        <div className="order-1 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 sm:order-2">
+          <Link
+            to="/supporta"
+            className="inline-flex items-center gap-1 text-xs font-medium text-ember-300 hover:text-ember-200 hover:underline"
+          >
+            <span aria-hidden>♥</span> {t('footer.support')}
+          </Link>
           <ul className="flex items-center gap-3">
             {SOCIAL_LINKS.map(({ key, label, href, Icon }) => {
               const isPlaceholder = href === '#';

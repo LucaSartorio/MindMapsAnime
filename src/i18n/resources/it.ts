@@ -472,6 +472,22 @@ export const it = {
     privacy: 'Privacy Policy',
     cookiePolicy: 'Cookie Policy',
     manageCookies: 'Gestisci cookie',
+    support: 'Sostieni il progetto',
+  },
+  support: {
+    eyebrow: 'supporto',
+    title: 'Supportaci',
+    lead: 'Mappe Interattive è un progetto gratuito e senza pubblicità, mantenuto nel tempo libero. Se ti è utile o ti diverte, puoi sostenerlo: ogni contributo è volontario e molto apprezzato.',
+    donateTitle: 'Fai una donazione',
+    donateBody:
+      'Una donazione aiuta a coprire i costi (dominio e hosting) e a dedicare tempo allo sviluppo di nuovi mondi e funzionalità.',
+    donateButton: 'Dona con PayPal',
+    donateSoon: 'La donazione sarà presto disponibile.',
+    note: 'La donazione è un contributo libero e volontario, senza alcun bene o servizio in cambio: non costituisce un acquisto.',
+    otherTitle: 'Altri modi per supportare',
+    otherIntro: 'Non solo soldi: puoi dare una mano anche così.',
+    otherReport: 'Segnala un bug o proponi una miglioria',
+    otherShare: 'Condividi il sito con altri appassionati di anime e manga.',
   },
   cookie: {
     banner: {

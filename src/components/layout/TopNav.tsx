@@ -95,7 +95,7 @@ export function TopNav() {
         {/* Right cluster: search + about + language + mobile toggle */}
         <div className="ml-auto flex items-center gap-2 min-w-0 flex-1 justify-end">
           {inWorld && dataset && (
-            <div className="hidden sm:block w-full max-w-xs">
+            <div className="hidden xl:block w-64 2xl:w-72 shrink-0">
               <GlobalSearchDropdown dataset={dataset} showKbHint />
             </div>
           )}
@@ -130,9 +130,10 @@ export function TopNav() {
         </div>
       </div>
 
-      {/* Sub-bar search mobile */}
+      {/* Sub-bar search: riga dedicata e full-width sotto xl, così la ricerca
+          ha sempre lo stesso spazio comodo a prescindere dal mondo. */}
       {inWorld && dataset && (
-        <div className="sm:hidden px-4 pb-2">
+        <div className="xl:hidden px-4 pb-2">
           <GlobalSearchDropdown dataset={dataset} />
         </div>
       )}

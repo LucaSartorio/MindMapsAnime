@@ -127,6 +127,20 @@ export function getAllRoutes(): RouteSeo[] {
     ],
   });
   routes.push({
+    path: '/supporta',
+    title: 'Supportaci',
+    description:
+      'Supporta Mappe Interattive: un atlante interattivo gratuito e senza pubblicità su anime e manga. Una donazione aiuta a coprire i costi e a sviluppare nuovi mondi e funzionalità.',
+    changefreq: 'monthly',
+    priority: 0.5,
+    jsonLd: [
+      breadcrumb([
+        { name: 'Home', path: '/' },
+        { name: 'Supportaci', path: '/supporta' },
+      ]),
+    ],
+  });
+  routes.push({
     path: '/privacy',
     title: 'Informativa sulla Privacy',
     description:
