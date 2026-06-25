@@ -1,5 +1,4 @@
 import { useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { animeWorlds } from '@/data/worlds';
 import { searchWorlds } from '@/lib/search';
@@ -124,12 +123,6 @@ export function HomePage() {
             </p>
           </Card>
         </section>
-
-        <div className="mt-16 text-center text-xs text-ink-400">
-          <Link to="/about" className="text-chakra-300 hover:underline">
-            {t('home.aboutCta')}
-          </Link>
-        </div>
       </main>
     </div>
   );
