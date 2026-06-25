@@ -11,6 +11,7 @@ import { narutoCharactersBatch3 } from './charactersBatch3';
 import { narutoCharactersBatch4 } from './charactersBatch4';
 import { narutoCharactersBatch5 } from './charactersBatch5';
 import { narutoCharactersBatch6 } from './charactersBatch6';
+import { NARUTO_CHAKRA_OVERRIDES } from './charactersChakraOverrides';
 import { narutoClans } from './clans';
 import { narutoFactions } from './factions';
 import { narutoClansExtra, narutoFactionsExtra } from './factionsExtra';
@@ -32,26 +33,36 @@ import { narutoJutsu } from './jutsu';
 import { narutoJutsuBatch1 } from './jutsuBatch1';
 import { narutoJutsuBatch2 } from './jutsuBatch2';
 import { narutoJutsuBatch3 } from './jutsuBatch3';
+import { densifyCrossLinks } from '@/lib/crossLinks';
 
 const naruto = animeWorlds.find((w) => w.slug === 'naruto')!;
 
+const characters = [
+  ...narutoCharacters,
+  ...narutoCharactersExtra,
+  ...narutoCharactersBatch1,
+  ...narutoCharactersBatch2,
+  ...narutoCharactersBatch3,
+  ...narutoCharactersBatch4,
+  ...narutoCharactersBatch5,
+  ...narutoCharactersBatch6,
+].map((c) => {
+  const override = NARUTO_CHAKRA_OVERRIDES[c.id];
+  // L'override vince sull'esplicito; se l'override è [] (caso: Lee, Guy,
+  // Mifune — niente nature ninja), lo lasciamo come "esplicitamente vuoto"
+  // così l'UI non lo deduce dai jutsu generici.
+  if (override !== undefined) return { ...c, chakraNatures: override };
+  return c;
+});
+
 /** Dataset completo del mondo Naruto. */
-export const narutoDataset: WorldDataset = {
+export const narutoDataset: WorldDataset = densifyCrossLinks({
   world: naruto,
   mapLevels: narutoMapLevels,
   nations: [...narutoNations, ...narutoNationsBatch1],
   boundaries: narutoBoundaries,
   locations: [...narutoLocations, ...narutoLocationsBatch1, ...narutoLocationsBatch2],
-  characters: [
-    ...narutoCharacters,
-    ...narutoCharactersExtra,
-    ...narutoCharactersBatch1,
-    ...narutoCharactersBatch2,
-    ...narutoCharactersBatch3,
-    ...narutoCharactersBatch4,
-    ...narutoCharactersBatch5,
-    ...narutoCharactersBatch6,
-  ],
+  characters,
   // Per la pagina "Clans & Factions" uniamo clan + organizzazioni/eserciti/gruppi.
   factions: [...narutoClans, ...narutoClansExtra, ...narutoFactions, ...narutoFactionsExtra],
   teams: [...narutoTeams, ...narutoTeamsBatch1],
@@ -61,7 +72,7 @@ export const narutoDataset: WorldDataset = {
   routes: [...narutoRoutes, ...narutoCharacterRoutes],
   jutsu: [...narutoJutsu, ...narutoJutsuBatch1, ...narutoJutsuBatch2, ...narutoJutsuBatch3],
   assets: narutoAssets,
-};
+});
 
 export { NARUTO_MAP_VIEWBOX, NARUTO_WORLD_MAP_SRC } from './mapConstants';
 export {
