@@ -27,6 +27,10 @@ export function TopNav() {
   const toggleMobileNav = useUiStore((s) => s.toggleMobileNav);
   const openReport = useReportStore((s) => s.open);
   const [searchOpen, setSearchOpen] = useState(false);
+  // Stati per l'animazione apertura/chiusura: `mounted` tiene l'elemento nel
+  // DOM durante l'uscita, `shown` pilota le classi di transizione.
+  const [searchMounted, setSearchMounted] = useState(false);
+  const [searchShown, setSearchShown] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
 
   const inWorld = location.pathname.startsWith('/worlds/') && worldSlug;
@@ -35,6 +39,18 @@ export function TopNav() {
   useEffect(() => {
     setSearchOpen(false);
   }, [location.pathname]);
+
+  // Mount/animate in & out (durata ~150ms; ridotta da prefers-reduced-motion).
+  useEffect(() => {
+    if (searchOpen) {
+      setSearchMounted(true);
+      const id = requestAnimationFrame(() => setSearchShown(true));
+      return () => cancelAnimationFrame(id);
+    }
+    setSearchShown(false);
+    const id = setTimeout(() => setSearchMounted(false), 160);
+    return () => clearTimeout(id);
+  }, [searchOpen]);
 
   // Click fuori dal dropdown di ricerca → chiude.
   useEffect(() => {
@@ -162,8 +178,15 @@ export function TopNav() {
               </button>
 
               {/* Dropdown di ricerca in sovraimpressione, ancorato sotto la lente. */}
-              {searchOpen && (
-                <div className="absolute right-0 top-full z-50 mt-2 w-[min(92vw,28rem)]">
+              {searchMounted && (
+                <div
+                  className={cn(
+                    'absolute right-0 top-full z-50 mt-2 w-[min(88vw,20rem)] origin-top-right transition duration-150 ease-out',
+                    searchShown
+                      ? 'opacity-100 scale-100 translate-y-0'
+                      : 'pointer-events-none opacity-0 scale-95 -translate-y-1',
+                  )}
+                >
                   <GlobalSearchDropdown
                     dataset={dataset}
                     autoFocus
