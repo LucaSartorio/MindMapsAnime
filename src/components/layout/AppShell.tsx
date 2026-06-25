@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { TopNav } from './TopNav';
 import { Footer } from './Footer';
 import { CookieConsent } from '@/components/cookie/CookieConsent';
+import { ReportModal } from '@/components/report/ReportModal';
 
 interface AppShellProps {
   children: ReactNode;
@@ -34,6 +35,7 @@ export function AppShell({ children }: AppShellProps) {
       </main>
       <Footer />
       <CookieConsent />
+      <ReportModal />
     </div>
   );
 }

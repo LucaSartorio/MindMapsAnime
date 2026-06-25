@@ -19,6 +19,57 @@ export const en = {
     about: 'About',
     openMobileNav: 'Open world navigation',
     home: 'Homepage',
+    report: 'Report',
+    reportTitle: 'Report a bug or suggest an improvement',
+  },
+  report: {
+    eyebrow: 'feedback',
+    title: 'Report a bug or suggest an improvement',
+    cancel: 'Cancel',
+    submit: 'Send',
+    sending: 'Sending…',
+    successTitle: 'Thank you!',
+    successBody:
+      'Your report has been sent successfully. I will review it as soon as possible.',
+    consent:
+      'I consent to the processing of the data provided to handle this report, as described in the',
+    consentLink: 'Privacy Policy',
+    worldsNone: 'None / General',
+    errorNoKey:
+      'The form is not configured yet (missing send key). Please try again later or contact the owner.',
+    errorGeneric: 'Sending failed. Please try again in a moment.',
+    errorNetwork: 'Network error: check your connection and try again.',
+    errorEmail: 'Please enter a valid email address.',
+    fields: {
+      type: 'Type',
+      name: 'Name',
+      email: 'Email',
+      worlds: 'Related world(s)',
+      category: 'Category',
+      description: 'Description',
+      page: 'Page',
+    },
+    types: {
+      bug: 'Bug',
+      improvement: 'Improvement',
+    },
+    categories: {
+      map: 'Map',
+      characters: 'Characters',
+      factions: 'Factions / Clans',
+      abilities: 'Abilities / Techniques',
+      arcs: 'Arcs & Timeline',
+      routes: 'Routes',
+      search: 'Search',
+      sources: 'Sources',
+      ui: 'Interface / Visuals',
+      other: 'Other',
+    },
+    placeholders: {
+      name: 'Your name (optional)',
+      email: 'So we can reach you (optional)',
+      description: 'Describe the bug or improvement in detail…',
+    },
   },
   home: {
     worldsHeading: 'Available worlds',
@@ -463,6 +514,7 @@ export const en = {
           'Browsing data: the computer systems and software procedures used to operate the site acquire, during their normal operation, certain data whose transmission is implicit in the use of Internet protocols (e.g. IP addresses, browser type, operating system, date and time of the request). Such data is processed by the hosting provider for technical and security purposes.',
           'Data collected through analytics tools: only with your consent, aggregated and anonymous statistics on page usage (Vercel Analytics and Speed Insights).',
           'Preferences stored locally: the selected language and cookie choices, stored in the browser via localStorage; they are not transmitted to the Controller or to third parties.',
+          'Data provided through the report form ("Report a bug / suggest an improvement"): name (optional), email address (optional) and the content of the report, provided voluntarily by the user.',
         ],
       },
       {
@@ -471,6 +523,7 @@ export const en = {
           'Delivery and operation of the site, security and technical diagnostics: legal basis in the legitimate interest of the Controller (Art. 6(1)(f) GDPR).',
           'Aggregated statistical analysis to improve content and performance: legal basis in the consent of the data subject (Art. 6(1)(a) GDPR), which can be withdrawn at any time.',
           'Storing preferences (language, cookie consent): necessary to deliver the service requested by the user.',
+          'Handling bug reports and suggestions sent through the dedicated form: legal basis in consent (Art. 6(1)(a) GDPR), which can be withdrawn at any time.',
         ],
       },
       {
@@ -478,12 +531,13 @@ export const en = {
         paragraphs: [
           'The site is hosted on Vercel Inc. and uses Vercel Web Analytics and Speed Insights to measure, in aggregated and anonymous form, the usage and performance of the pages. These tools are enabled only with the user’s consent. For more details please refer to Vercel’s privacy policy (vercel.com/legal/privacy-policy).',
           'Fonts are hosted directly on the site (self-hosted): no request is made to third-party font CDNs (e.g. Google Fonts) and, consequently, no user IP address is transmitted to such services to load the fonts.',
+          'Reports sent through the "Report a bug / suggest an improvement" form are delivered to the Controller via the Web3Forms service, which acts as a provider for delivering the message by email. The data entered is processed solely to handle the report. Please refer to the provider’s privacy policy (web3forms.com/privacy).',
         ],
       },
       {
         heading: '5. Transfer of data outside the EU',
         paragraphs: [
-          'Some providers (e.g. Vercel) may process data in countries outside the European Economic Area. In such cases the transfer takes place in compliance with the appropriate safeguards provided for in Art. 44 et seq. of the GDPR, such as the Standard Contractual Clauses approved by the European Commission.',
+          'Some providers (e.g. Vercel and Web3Forms) may process data in countries outside the European Economic Area. In such cases the transfer takes place in compliance with the appropriate safeguards provided for in Art. 44 et seq. of the GDPR, such as the Standard Contractual Clauses approved by the European Commission.',
         ],
       },
       {

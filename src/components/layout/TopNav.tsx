@@ -1,6 +1,7 @@
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useUiStore, useWorldStore } from '@/store';
+import { useReportStore } from '@/store/useReportStore';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getAbilityTerm, getFactionsTerm } from '@/lib/worldConfig';
 import { cn } from '@/lib/cn';
@@ -23,6 +24,7 @@ export function TopNav() {
   const location = useLocation();
   const isMobileNavOpen = useUiStore((s) => s.isMobileNavOpen);
   const toggleMobileNav = useUiStore((s) => s.toggleMobileNav);
+  const openReport = useReportStore((s) => s.open);
 
   const inWorld = location.pathname.startsWith('/worlds/') && worldSlug;
 
@@ -103,6 +105,15 @@ export function TopNav() {
           >
             {t('nav.about')}
           </Link>
+          <button
+            type="button"
+            onClick={openReport}
+            title={t('nav.reportTitle')}
+            className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm border border-ink-700/70 text-ink-200 hover:text-white hover:border-chakra-500/60"
+          >
+            <span aria-hidden>🐛</span>
+            {t('nav.report')}
+          </button>
           <LanguageSwitcher />
           {inWorld && (
             <button
@@ -161,6 +172,18 @@ export function TopNav() {
               >
                 {t('nav.about')}
               </Link>
+            </li>
+            <li>
+              <button
+                type="button"
+                onClick={() => {
+                  toggleMobileNav();
+                  openReport();
+                }}
+                className="block w-full text-left px-3 py-2 rounded-md text-sm text-ink-300 hover:text-white hover:bg-ink-800/70"
+              >
+                🐛 {t('nav.report')}
+              </button>
             </li>
           </ul>
         </nav>

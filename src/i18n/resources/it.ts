@@ -21,6 +21,57 @@ export const it = {
     about: 'Informazioni',
     openMobileNav: 'Apri navigazione mondo',
     home: 'Homepage',
+    report: 'Segnala',
+    reportTitle: 'Segnala un bug o proponi una miglioria',
+  },
+  report: {
+    eyebrow: 'feedback',
+    title: 'Segnala un bug o proponi una miglioria',
+    cancel: 'Annulla',
+    submit: 'Invia',
+    sending: 'Invio…',
+    successTitle: 'Grazie!',
+    successBody:
+      'La tua segnalazione è stata inviata correttamente. La esaminerò il prima possibile.',
+    consent:
+      'Acconsento al trattamento dei dati forniti per gestire questa segnalazione, come descritto nella',
+    consentLink: 'Privacy Policy',
+    worldsNone: 'Nessuno / Generale',
+    errorNoKey:
+      'Modulo non ancora configurato (manca la chiave di invio). Riprova più tardi o contatta il titolare.',
+    errorGeneric: 'Invio non riuscito. Riprova tra qualche istante.',
+    errorNetwork: 'Errore di rete: controlla la connessione e riprova.',
+    errorEmail: 'Inserisci un indirizzo email valido.',
+    fields: {
+      type: 'Tipo',
+      name: 'Nome',
+      email: 'Email',
+      worlds: 'Mondo/i di riferimento',
+      category: 'Categoria',
+      description: 'Descrizione',
+      page: 'Pagina',
+    },
+    types: {
+      bug: 'Bug',
+      improvement: 'Miglioria',
+    },
+    categories: {
+      map: 'Mappa',
+      characters: 'Personaggi',
+      factions: 'Fazioni / Clan',
+      abilities: 'Abilità / Tecniche',
+      arcs: 'Archi & Timeline',
+      routes: 'Percorsi',
+      search: 'Ricerca',
+      sources: 'Fonti',
+      ui: 'Interfaccia / Grafica',
+      other: 'Altro',
+    },
+    placeholders: {
+      name: 'Come ti chiami (facoltativo)',
+      email: 'Per ricontattarti (facoltativo)',
+      description: 'Descrivi il bug o la miglioria nel dettaglio…',
+    },
   },
   home: {
     worldsHeading: 'Mondi disponibili',
@@ -466,6 +517,7 @@ export const it = {
           'Dati di navigazione: i sistemi informatici e le procedure software preposte al funzionamento del sito acquisiscono, nel normale esercizio, alcuni dati la cui trasmissione è implicita nell’uso dei protocolli di Internet (es. indirizzi IP, tipo di browser, sistema operativo, data e ora della richiesta). Tali dati sono trattati dal fornitore di hosting per finalità tecniche e di sicurezza.',
           'Dati raccolti tramite strumenti di analisi: solo previo consenso, statistiche aggregate e anonime sull’utilizzo delle pagine (Vercel Analytics e Speed Insights).',
           'Preferenze salvate localmente: lingua selezionata e scelte sui cookie, memorizzate nel browser tramite localStorage; non vengono trasmesse al Titolare né a terzi.',
+          'Dati conferiti tramite il modulo di segnalazione ("Segnala un bug / Proponi miglioria"): nome (facoltativo), indirizzo email (facoltativo) e il contenuto della segnalazione, forniti volontariamente dall’utente.',
         ],
       },
       {
@@ -474,6 +526,7 @@ export const it = {
           'Erogazione e funzionamento del sito, sicurezza e diagnostica tecnica: base giuridica nel legittimo interesse del Titolare (art. 6, par. 1, lett. f, GDPR).',
           'Analisi statistica aggregata per migliorare contenuti e prestazioni: base giuridica nel consenso dell’interessato (art. 6, par. 1, lett. a, GDPR), revocabile in qualsiasi momento.',
           'Memorizzazione delle preferenze (lingua, consenso cookie): necessaria a erogare il servizio richiesto dall’utente.',
+          'Gestione delle segnalazioni di bug e dei suggerimenti inviati tramite l’apposito modulo: base giuridica nel consenso (art. 6, par. 1, lett. a, GDPR), revocabile in qualsiasi momento.',
         ],
       },
       {
@@ -481,12 +534,13 @@ export const it = {
         paragraphs: [
           'Il sito è ospitato su Vercel Inc. e utilizza i servizi Vercel Web Analytics e Speed Insights per la misurazione, in forma aggregata e anonima, dell’utilizzo e delle prestazioni delle pagine. Tali strumenti sono attivati esclusivamente previo consenso dell’utente. Per maggiori dettagli si rimanda all’informativa privacy di Vercel (vercel.com/legal/privacy-policy).',
           'I caratteri tipografici sono ospitati direttamente sul sito (self-hosted): non viene effettuata alcuna richiesta a CDN di font di terze parti (es. Google Fonts) e, di conseguenza, nessun indirizzo IP degli utenti viene trasmesso a tali servizi per il caricamento dei font.',
+          'Le segnalazioni inviate tramite il modulo "Segnala un bug / Proponi miglioria" sono recapitate al Titolare tramite il servizio Web3Forms (Web3Forms, c/o servizio di form delivery), che agisce quale fornitore per la consegna del messaggio via email. I dati inseriti sono trattati esclusivamente per gestire la segnalazione. Si rimanda alla privacy policy del fornitore (web3forms.com/privacy).',
         ],
       },
       {
         heading: '5. Trasferimento dei dati extra UE',
         paragraphs: [
-          'Alcuni fornitori (es. Vercel) potrebbero trattare dati in Paesi al di fuori dello Spazio Economico Europeo. In tal caso il trasferimento avviene nel rispetto delle garanzie adeguate previste dagli artt. 44 e ss. del GDPR, quali le Clausole Contrattuali Standard approvate dalla Commissione Europea.',
+          'Alcuni fornitori (es. Vercel e Web3Forms) potrebbero trattare dati in Paesi al di fuori dello Spazio Economico Europeo. In tal caso il trasferimento avviene nel rispetto delle garanzie adeguate previste dagli artt. 44 e ss. del GDPR, quali le Clausole Contrattuali Standard approvate dalla Commissione Europea.',
         ],
       },
       {
