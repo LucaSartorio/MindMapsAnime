@@ -24,7 +24,12 @@ const CATEGORY_KEYS = [
 ] as const;
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+// Access key Web3Forms: è pubblica per design (consente solo l'invio verso
+// l'email del titolare, con protezione anti-spam) → ok averla nel client.
+// Sovrascrivibile con VITE_WEB3FORMS_ACCESS_KEY se un giorno servisse.
+const ACCESS_KEY =
+  import.meta.env.VITE_WEB3FORMS_ACCESS_KEY ??
+  'fcb04440-4ad1-4d79-a153-e0148cb1d5bb';
 
 const inputClass =
   'w-full panel-soft px-3 py-2 text-sm text-ink-100 placeholder-ink-400 focus:border-chakra-500';
