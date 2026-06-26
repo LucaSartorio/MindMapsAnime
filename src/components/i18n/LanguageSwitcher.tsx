@@ -1,14 +1,24 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type ComponentType, type SVGProps } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import type { SupportedLocale } from '@/types/i18n';
 import { cn } from '@/lib/cn';
+import { ItalyFlag, UkFlag } from './Flags';
 
 interface LocaleOption {
   code: SupportedLocale;
-  flag: string;
+  Flag: ComponentType<SVGProps<SVGSVGElement>>;
   short: string;
   label: string;
+}
+
+/** Bandiera SVG con contenitore arrotondato (resa identica su ogni OS). */
+function Flag({ as: FlagSvg }: { as: ComponentType<SVGProps<SVGSVGElement>> }) {
+  return (
+    <span className="inline-block h-3.5 w-5 shrink-0 overflow-hidden rounded-[2px] ring-1 ring-white/15">
+      <FlagSvg className="h-full w-full" />
+    </span>
+  );
 }
 
 /**
@@ -29,13 +39,13 @@ export function LanguageSwitcher() {
   const options: LocaleOption[] = [
     {
       code: 'it',
-      flag: '🇮🇹',
+      Flag: ItalyFlag,
       short: 'IT',
       label: t('languageSwitcher.italian'),
     },
     {
       code: 'en',
-      flag: '🇬🇧',
+      Flag: UkFlag,
       short: 'EN',
       label: t('languageSwitcher.english'),
     },
@@ -84,9 +94,7 @@ export function LanguageSwitcher() {
           'focus-visible:ring-2 focus-visible:ring-chakra-400',
         )}
       >
-        <span aria-hidden className="text-base leading-none">
-          {current.flag}
-        </span>
+        <Flag as={current.Flag} />
         <span className="font-mono text-[11px] tracking-widest">
           {current.short}
         </span>
@@ -116,7 +124,7 @@ export function LanguageSwitcher() {
                       : 'text-ink-200 hover:bg-ink-800/70',
                   )}
                 >
-                  <span aria-hidden>{o.flag}</span>
+                  <Flag as={o.Flag} />
                   <span className="flex-1">{o.label}</span>
                   <span className="font-mono text-[10px] tracking-widest text-ink-400">
                     {o.short}
