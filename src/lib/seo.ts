@@ -11,7 +11,7 @@ import { getAbilityTerm, getFactionsTerm } from '@/lib/worldConfig';
  */
 
 export const SITE = {
-  url: 'https://mindmapsanime.vercel.app',
+  url: 'https://animapverse.com',
   name: 'Mappe Interattive',
   shortName: 'Mappe Interattive',
   defaultTitle: 'Mappe Interattive — Atlante interattivo di anime e manga',
