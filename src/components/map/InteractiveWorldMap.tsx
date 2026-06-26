@@ -3,7 +3,6 @@ import {
   Background,
   BackgroundVariant,
   Controls,
-  MiniMap,
   ReactFlow,
   ReactFlowProvider,
   useReactFlow,
@@ -346,23 +345,6 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
           showInteractive={false}
           position="top-left"
           className="!shadow-none"
-          style={{ marginTop: 56 }}
-        />
-        <MiniMap
-          pannable
-          zoomable
-          position="top-right"
-          maskColor="rgba(7,7,9,0.85)"
-          nodeColor={(n) => {
-            if (n.id.startsWith('__layer-')) return 'transparent';
-            const d = n.data as MapNodeData;
-            return d.selected
-              ? '#ff8311'
-              : d.highlighted
-                ? '#ffa654'
-                : '#1f9aff';
-          }}
-          nodeStrokeColor="#0c0d11"
           style={{ marginTop: 56 }}
         />
       </ReactFlow>

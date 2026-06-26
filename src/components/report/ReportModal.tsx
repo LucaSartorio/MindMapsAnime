@@ -166,6 +166,7 @@ export function ReportModal() {
       title={t('report.title')}
       eyebrow={t('report.eyebrow')}
       size="md"
+      shareable={false}
       footer={footer}
     >
       {status === 'success' ? (
