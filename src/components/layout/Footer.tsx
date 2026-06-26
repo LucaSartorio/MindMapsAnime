@@ -20,7 +20,7 @@ const SOCIAL_LINKS: SocialLink[] = [
   {
     key: 'instagram',
     label: 'Instagram',
-    href: 'https://www.instagram.com/animapverse',
+    href: 'https://www.instagram.com/ani_map_verse',
     Icon: InstagramIcon,
   },
   { key: 'discord', label: 'Discord', href: '', Icon: DiscordIcon },
