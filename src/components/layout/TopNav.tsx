@@ -109,9 +109,13 @@ export function TopNav() {
           className="flex items-center gap-3 shrink-0"
           aria-label={`${t('app.title')} · ${t('nav.home')}`}
         >
-          <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-chakra-500 to-ember-500 text-white font-bold font-display">
-            A
-          </span>
+          <img
+            src="/favicon.png"
+            alt=""
+            width={36}
+            height={36}
+            className="h-9 w-9 shrink-0 object-contain"
+          />
           <span className="hidden sm:flex flex-col leading-tight">
             <span className="font-display text-base text-ink-100">
               {t('app.title')}
