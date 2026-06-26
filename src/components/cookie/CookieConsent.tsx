@@ -91,6 +91,7 @@ export function CookieConsent() {
         onClose={closePreferences}
         title={t('cookie.prefs.title')}
         size="md"
+        shareable={false}
         footer={
           <>
             <Button variant="ghost" onClick={rejectAll}>

@@ -213,23 +213,21 @@ export function TopNav() {
             {t('nav.report')}
           </button>
           <LanguageSwitcher />
-          {inWorld && (
-            <button
-              type="button"
-              onClick={toggleMobileNav}
-              aria-expanded={isMobileNavOpen}
-              aria-controls="mobile-world-nav"
-              aria-label={t('nav.openMobileNav')}
-              className="md:hidden h-9 w-9 grid place-items-center rounded-md border border-ink-700/70 text-ink-100"
-            >
-              ☰
-            </button>
-          )}
+          <button
+            type="button"
+            onClick={toggleMobileNav}
+            aria-expanded={isMobileNavOpen}
+            aria-controls="mobile-world-nav"
+            aria-label={t('nav.openMobileNav')}
+            className="md:hidden h-9 w-9 grid place-items-center rounded-md border border-ink-700/70 text-ink-100"
+          >
+            ☰
+          </button>
         </div>
       </div>
 
-      {/* Mobile world nav */}
-      {inWorld && isMobileNavOpen && (
+      {/* Menu mobile: voci del mondo (se presente) + About + Segnala. */}
+      {isMobileNavOpen && (
         <nav
           id="mobile-world-nav"
           aria-label={t('nav.openMobileNav')}
