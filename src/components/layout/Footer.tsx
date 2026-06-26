@@ -17,9 +17,19 @@ interface SocialLink {
 }
 
 const SOCIAL_LINKS: SocialLink[] = [
-  { key: 'instagram', label: 'Instagram', href: '', Icon: InstagramIcon },
+  {
+    key: 'instagram',
+    label: 'Instagram',
+    href: 'https://www.instagram.com/animapverse',
+    Icon: InstagramIcon,
+  },
   { key: 'discord', label: 'Discord', href: '', Icon: DiscordIcon },
-  { key: 'x', label: 'X', href: '', Icon: XIcon },
+  {
+    key: 'x',
+    label: 'X',
+    href: 'https://x.com/animapverse',
+    Icon: XIcon,
+  },
 ];
 
 const CURRENT_YEAR = new Date().getFullYear();
