@@ -431,7 +431,7 @@ function Pill({
         (active
           ? variant === 'ember'
             ? 'bg-ember-500 text-white border-ember-300'
-            : 'bg-chakra-500 text-white border-chakra-300'
+            : 'bg-chakra-600 text-white border-chakra-400'
           : `border-ink-600/60 text-ink-200 ${
               variant === 'ember'
                 ? 'hover:border-ember-500/50'

@@ -38,7 +38,7 @@ export function HomePage() {
       <Seo path="/" />
       <HeroSection />
 
-      <main className="max-w-6xl mx-auto px-6 pb-24">
+      <div className="max-w-6xl mx-auto px-6 pb-24">
         <section aria-labelledby="worlds-heading" className="flex flex-col gap-6">
           <header className="flex items-end justify-between flex-wrap gap-4">
             <div>
@@ -123,7 +123,7 @@ export function HomePage() {
             </p>
           </Card>
         </section>
-      </main>
+      </div>
     </div>
   );
 }

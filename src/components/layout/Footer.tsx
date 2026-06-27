@@ -77,6 +77,7 @@ export function Footer() {
                 // Placeholder: spazio predisposto, non ancora collegato.
                 <li key={key}>
                   <span
+                    role="img"
                     aria-label={`${label} — ${t('footer.socialSoon')}`}
                     title={`${label} — ${t('footer.socialSoon')}`}
                     className="inline-flex text-ink-500/70"

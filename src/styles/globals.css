@@ -96,11 +96,12 @@ body {
   .btn {
     @apply inline-flex items-center justify-center gap-2 rounded-lg px-3.5 py-2 text-sm font-semibold transition;
   }
+  /* Contrasto AA: testo bianco su chakra-600 ≈ 6:1 (su chakra-500 era ~4:1). */
   .btn-primary {
-    @apply btn bg-chakra-500 text-white hover:bg-chakra-400 active:bg-chakra-600 shadow-glow;
+    @apply btn bg-chakra-600 text-white hover:bg-chakra-700 active:bg-chakra-800 shadow-glow;
   }
   .btn-ember {
-    @apply btn bg-ember-500 text-white hover:bg-ember-400 active:bg-ember-600 shadow-ember;
+    @apply btn bg-ember-600 text-white hover:bg-ember-700 active:bg-ember-800 shadow-ember;
   }
   .btn-ghost {
     @apply btn bg-transparent text-ink-100 border border-ink-600/70 hover:bg-ink-800/80;
