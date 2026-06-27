@@ -44,11 +44,10 @@ export function MapLevelSwitcher({
             onClick={() => onChange(lvl.id)}
             role="tab"
             aria-selected={active}
-            aria-pressed={active}
             className={cn(
               'px-3 py-1.5 rounded-md text-xs font-medium transition inline-flex items-center gap-1',
               active
-                ? 'bg-chakra-500 text-white shadow-glow'
+                ? 'bg-chakra-600 text-white shadow-glow'
                 : 'text-ink-200 hover:bg-ink-800/80',
             )}
           >

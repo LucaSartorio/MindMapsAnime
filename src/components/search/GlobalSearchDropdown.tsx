@@ -196,6 +196,7 @@ export function GlobalSearchDropdown({
           onFocus={() => setOpen(true)}
           placeholder={t('search.placeholder', { world: dataset.world.title })}
           className="w-full panel-soft pl-8 pr-10 py-2 text-sm placeholder-ink-400 focus:border-chakra-500"
+          role="combobox"
           aria-autocomplete="list"
           aria-expanded={open && results.length > 0}
           aria-controls="search-listbox"

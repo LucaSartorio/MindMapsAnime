@@ -103,7 +103,9 @@ export function LanguageSwitcher() {
         </span>
       </button>
       {open && (
-        <ul
+        // role=listbox con figli role=option DIRETTI (niente <ul>/<li> che
+        // romperebbero la relazione ARIA richiesta).
+        <div
           role="listbox"
           aria-label={t('languageSwitcher.label')}
           className="absolute right-0 z-50 mt-1.5 min-w-[160px] panel overflow-hidden"
@@ -111,29 +113,28 @@ export function LanguageSwitcher() {
           {options.map((o) => {
             const selected = o.code === locale;
             return (
-              <li key={o.code}>
-                <button
-                  type="button"
-                  role="option"
-                  aria-selected={selected}
-                  onClick={() => handleSelect(o.code)}
-                  className={cn(
-                    'w-full text-left flex items-center gap-2 px-3 py-2 text-sm',
-                    selected
-                      ? 'bg-chakra-500/15 text-chakra-100'
-                      : 'text-ink-200 hover:bg-ink-800/70',
-                  )}
-                >
-                  <Flag as={o.Flag} />
-                  <span className="flex-1">{o.label}</span>
-                  <span className="font-mono text-[10px] tracking-widest text-ink-400">
-                    {o.short}
-                  </span>
-                </button>
-              </li>
+              <button
+                key={o.code}
+                type="button"
+                role="option"
+                aria-selected={selected}
+                onClick={() => handleSelect(o.code)}
+                className={cn(
+                  'w-full text-left flex items-center gap-2 px-3 py-2 text-sm',
+                  selected
+                    ? 'bg-chakra-500/15 text-chakra-100'
+                    : 'text-ink-200 hover:bg-ink-800/70',
+                )}
+              >
+                <Flag as={o.Flag} />
+                <span className="flex-1">{o.label}</span>
+                <span className="font-mono text-[10px] tracking-widest text-ink-400">
+                  {o.short}
+                </span>
+              </button>
             );
           })}
-        </ul>
+        </div>
       )}
     </div>
   );

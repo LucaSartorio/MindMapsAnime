@@ -66,7 +66,7 @@ export function TimelineFilters({ dataset }: TimelineFiltersProps) {
               className={
                 'px-2 py-0.5 rounded-full text-[11px] border transition ' +
                 (active
-                  ? 'bg-chakra-500 text-white border-chakra-300'
+                  ? 'bg-chakra-600 text-white border-chakra-400'
                   : 'border-ink-600/60 text-ink-200 hover:border-chakra-500/50')
               }
             >
