@@ -14,6 +14,31 @@
   }
 }
 
+/* A11y oltre l'AA — Contrasto elevato di Windows (forced-colors): gli anelli di
+   focus via box-shadow (Tailwind ring) vengono rimossi, quindi ripristiniamo un
+   contorno reale con i colori di sistema. (WCAG 2.4.7 / 2.4.13) */
+@media (forced-colors: active) {
+  *:focus-visible {
+    outline: 3px solid Highlight;
+    outline-offset: 2px;
+  }
+}
+
+/* Utenti che richiedono più contrasto: azioni a contrasto AAA (~9:1) e bordi
+   più marcati. (WCAG 1.4.6 enhanced) */
+@media (prefers-contrast: more) {
+  .btn-primary {
+    background-color: #054b86; /* chakra-700 · bianco ≈ 8.9:1 */
+  }
+  .btn-ember {
+    background-color: #963c03; /* ember-700 */
+  }
+  .panel,
+  .panel-soft {
+    border-color: rgba(228, 231, 240, 0.5);
+  }
+}
+
 /* Scroll orizzontale senza scrollbar visibile (es. nav che eccede la larghezza). */
 .scrollbar-none {
   scrollbar-width: none;
