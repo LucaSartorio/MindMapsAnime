@@ -1,5 +1,5 @@
 import type { MapLevel } from '@/types';
-import { DRAGONBALL_COSMIC_VIEWBOX, DRAGONBALL_MAP_VIEWBOX, DRAGONBALL_NAMEK_VIEWBOX } from './mapConstants';
+import { DRAGONBALL_COSMIC_VIEWBOX, DRAGONBALL_GT_SPACE_VIEWBOX, DRAGONBALL_MAP_VIEWBOX, DRAGONBALL_NAMEK_VIEWBOX } from './mapConstants';
 
 /**
  * Map level Dragon Ball.
@@ -58,5 +58,21 @@ export const dbzMapLevels: MapLevel[] = [
     backgroundAssetId: 'dbz-namek-map-placeholder',
     width: DRAGONBALL_NAMEK_VIEWBOX.width,
     height: DRAGONBALL_NAMEK_VIEWBOX.height,
+  },
+  {
+    id: 'dbz-map-gt-space',
+    worldId: 'world-dragonball',
+    slug: 'gt-space',
+    name: 'Space (GT)',
+    localizedName: { it: 'Spazio (GT)', en: 'Space (GT)' },
+    description: {
+      it: "Dragon Ball GT: lo spazio profondo percorso da Goku, Trunks e Pan a bordo della nave spaziale nella caccia alle Sfere del Drago Nere — dal Pianeta Imecca al Pianeta Macchina M-2, da Gelbo (Luud) a Beehay e al Pianeta-ospedale Pital — più il Nuovo Pianeta Plant dei Tsufuru della Saga di Baby. Schema stellare, posizioni indicative. Doppio clic su «Terra» per tornare alla mappa principale.",
+      en: "Dragon Ball GT: the deep space traveled by Goku, Trunks and Pan aboard their starship while hunting the Black Star Dragon Balls — from Planet Imecka to the Machine Planet M-2, from Gelbo (Luud) to Beehay and the hospital planet Pital — plus the Tuffles' New Planet Plant of the Baby Saga. Star chart, indicative positions. Double-click 'Earth' to return to the main map.",
+    },
+    parentLevelId: 'dbz-map-world',
+    triggerLocationId: 'loc-dbz-gt-space-gate',
+    backgroundAssetId: 'dbz-gt-space-map-placeholder',
+    width: DRAGONBALL_GT_SPACE_VIEWBOX.width,
+    height: DRAGONBALL_GT_SPACE_VIEWBOX.height,
   },
 ];

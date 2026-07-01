@@ -21,6 +21,14 @@ export const DRAGONBALL_COSMIC_VIEWBOX = { width: 1400, height: 900 } as const;
 /** Piano concettuale della sotto-mappa del Pianeta Namecc. */
 export const DRAGONBALL_NAMEK_VIEWBOX = { width: 1300, height: 850 } as const;
 
+/**
+ * Piano concettuale della sotto-mappa "Spazio (GT)": lo spazio profondo
+ * percorso in Dragon Ball GT durante la caccia alle Sfere del Drago Nere
+ * (Imecca, M-2, Gelbo/Luud, Beehay, Pital) e il Nuovo Pianeta Plant della
+ * Saga di Baby. Diagramma stellare, non una mappa in scala.
+ */
+export const DRAGONBALL_GT_SPACE_VIEWBOX = { width: 1600, height: 1000 } as const;
+
 /** Path locale dell'immagine di riferimento (vive in public/, servita alla root). */
 export const DRAGONBALL_WORLD_MAP_SRC =
   '/assets/worlds/dragonball/maps/dragonball-world-map.png';

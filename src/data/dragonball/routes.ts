@@ -252,4 +252,54 @@ export const dragonballRoutes: Route[] = [
     referenceStatus: 'verified',
     tags: ['torneo-del-potere'],
   },
+
+  /* --------------------------------- Dragon Ball GT --------------------------------- */
+  {
+    id: 'route-dbz-gt-black-star-journey',
+    worldId: 'world-dragonball',
+    type: 'mission',
+    name: 'Dragon Ball GT · Space Journey',
+    localizedName: { it: 'Dragon Ball GT · Viaggio spaziale', en: 'Dragon Ball GT · Space Journey' },
+    group: { it: 'Dragon Ball GT', en: 'Dragon Ball GT' },
+    description: {
+      it: "Dragon Ball GT: dalla Terra allo spazio profondo, il viaggio di Goku, Trunks e Pan a caccia delle Sfere del Drago Nere — Imecca, Gelbo (Luud), il Pianeta Macchina M-2, Beehay, Pital — fino al Nuovo Pianeta Plant della Saga di Baby, e ritorno sulla Terra. Attraversa la mappa della Terra e la sotto-mappa «Spazio (GT)».",
+      en: "Dragon Ball GT: from Earth into deep space, the journey of Goku, Trunks and Pan hunting the Black Star Dragon Balls — Imecka, Gelbo (Luud), the Machine Planet M-2, Beehay, Pital — up to New Planet Plant of the Baby Saga, and back to Earth. It spans the Earth map and the 'Space (GT)' sub-map.",
+    },
+    protagonistCharacterIds: ['char-dbz-goku', 'char-dbz-trunks', 'char-dbz-gt-pan'],
+    relatedCharacterIds: ['char-dbz-gt-giru', 'char-dbz-gt-baby', 'char-dbz-vegeta'],
+    relatedArcIds: ['arc-dbz-gt-black-star', 'arc-dbz-gt-baby'],
+    // Percorso multi-livello: Terra → sotto-mappa «Spazio (GT)». Gli edge si
+    // disegnano solo tra step consecutivi sullo stesso livello, quindi il salto
+    // di livello (step 2→3) è volutamente privo di linea.
+    relatedLocationIds: [
+      'loc-dbz-capsule-corp',
+      'loc-dbz-gt-space-gate',
+      'loc-dbz-gt-earth-gate',
+      'loc-dbz-gt-imecka',
+      'loc-dbz-gt-gelbo',
+      'loc-dbz-gt-m2',
+      'loc-dbz-gt-beehay',
+      'loc-dbz-gt-pital',
+      'loc-dbz-gt-new-plant',
+    ],
+    steps: [
+      // — Livello Terra —
+      { order: 1, locationId: 'loc-dbz-capsule-corp', label: { it: 'Partenza dalla Capsule Corporation', en: 'Departure from Capsule Corporation' }, description: { it: 'Goku bambino, Trunks e Pan salpano sulla nave spaziale per recuperare le Sfere del Drago Nere.', en: 'Kid Goku, Trunks and Pan set sail on the starship to recover the Black Star Dragon Balls.' } },
+      { order: 2, locationId: 'loc-dbz-gt-space-gate', label: { it: 'Rotta spaziale (GT)', en: 'Space route (GT)' }, description: { it: 'Doppio clic sul pin «Spazio (GT)» per salire alla sotto-mappa spaziale di GT.', en: "Double-click the 'Space (GT)' pin to go up to GT's space sub-map." } },
+      // — Sotto-mappa «Spazio (GT)» —
+      { order: 3, locationId: 'loc-dbz-gt-earth-gate', label: { it: 'Partenza dalla Terra', en: 'Departing Earth' } },
+      { order: 4, locationId: 'loc-dbz-gt-imecka', eventId: 'evt-dbz-gt-imecka-ledgic', label: { it: 'Pianeta Imecca', en: 'Planet Imecka' }, description: { it: 'Scontro con Ledgic; si unisce Giru.', en: 'Clash with Ledgic; Giru joins.' } },
+      { order: 5, locationId: 'loc-dbz-gt-gelbo', eventId: 'evt-dbz-gt-luud', label: { it: 'Pianeta Gelbo (Luud)', en: 'Planet Gelbo (Luud)' } },
+      { order: 6, locationId: 'loc-dbz-gt-m2', eventId: 'evt-dbz-gt-general-rilldo', label: { it: 'Pianeta Macchina M-2', en: 'Machine Planet M-2' }, description: { it: 'Generale Rilldo, Dr. Myuu e la nascita di Baby.', en: 'General Rilldo, Dr. Myuu and the birth of Baby.' } },
+      { order: 7, locationId: 'loc-dbz-gt-beehay', label: { it: 'Pianeta Beehay', en: 'Planet Beehay' } },
+      { order: 8, locationId: 'loc-dbz-gt-pital', label: { it: 'Pianeta Pital', en: 'Planet Pital' } },
+      { order: 9, locationId: 'loc-dbz-gt-new-plant', eventId: 'evt-dbz-gt-goku-ssj4-vs-baby', label: { it: 'Nuovo Pianeta Plant', en: 'New Planet Plant' }, description: { it: 'Scontro finale della Saga di Baby: Goku Super Saiyan 4 contro Baby.', en: "Baby Saga climax: Super Saiyan 4 Goku vs. Baby." } },
+      { order: 10, locationId: 'loc-dbz-gt-earth-gate', label: { it: 'Ritorno sulla Terra', en: 'Return to Earth' }, description: { it: 'Doppio clic su «Terra» per tornare alla mappa principale.', en: "Double-click 'Earth' to return to the main map." } },
+    ],
+    color: '#9b59b6',
+    lineStyle: 'dashed',
+    canonStatus: 'anime_only',
+    referenceStatus: 'verified',
+    tags: ['gt', 'sfere-del-drago-nere', 'spazio'],
+  },
 ];

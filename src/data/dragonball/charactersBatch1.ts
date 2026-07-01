@@ -16,13 +16,13 @@ export const dragonballCharactersBatch1: Character[] = [
     race: 'fusion',
     transformations: [
       { id: 'tr-gogeta-ssj', name: 'Super Saiyan', order: 1, kind: 'transformation' },
-      { id: 'tr-gogeta-ssj4', name: 'Super Saiyan 4', order: 2, kind: 'transformation', description: { it: 'Fusione mostrata in Dragon Ball GT.', en: 'A fusion shown in Dragon Ball GT.' }, canonStatus: 'anime_only' },
+      { id: 'tr-gogeta-ssj4', name: 'Super Saiyan 4', localizedName: { it: 'Super Saiyan 4 (GT)', en: 'Super Saiyan 4 (GT)' }, order: 2, kind: 'transformation', description: { it: 'Dragon Ball GT: fusione tra Goku e Vegeta in Super Saiyan 4, schierata contro Omega Shenron nella saga dei Draghi Malvagi.', en: 'Dragon Ball GT: a fusion of Super Saiyan 4 Goku and Vegeta, deployed against Omega Shenron in the Shadow Dragon Saga.' }, arcId: 'arc-dbz-gt-shadow-dragons', canonStatus: 'anime_only' },
       { id: 'tr-gogeta-blue', name: 'Super Saiyan Blue', order: 3, kind: 'transformation', description: { it: 'Fusione tramite Danza della Fusione mostrata nel film Dragon Ball Super: Broly.', en: "A Fusion Dance fusion shown in the movie Dragon Ball Super: Broly." }, arcId: 'arc-dbz-broly-movie', canonStatus: 'movie' },
     ],
     jutsuIds: ['jutsu-dbz-fusion-dance'],
     family: ['char-dbz-goku', 'char-dbz-vegeta'],
-    enemies: ['char-dbz-broly'],
-    arcIds: ['arc-dbz-broly-movie'],
+    enemies: ['char-dbz-broly', 'char-dbz-gt-omega-shenron'],
+    arcIds: ['arc-dbz-broly-movie', 'arc-dbz-gt-shadow-dragons'],
     shortDescription: {
       it: 'Fusione tramite Danza della Fusione tra Goku e Vegeta: la controparte "equilibrata" di Vegetto, nata dal balletto della fusione anziché dagli orecchini Potara.',
       en: "A Fusion Dance fusion of Goku and Vegeta: Vegito's 'balanced' counterpart, born from the fusion dance rather than the Potara earrings.",

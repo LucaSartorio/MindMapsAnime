@@ -311,4 +311,36 @@ export const dragonballJutsu: Jutsu[] = [
     referenceStatus: 'verified',
     tags: ['squadra-ginyu'],
   },
+
+  /* -------------------------------- Dragon Ball GT -------------------------------- */
+  {
+    id: 'jutsu-dbz-gt-dragon-fist',
+    worldId: 'world-dragonball',
+    name: 'Dragon Fist',
+    localizedName: { it: 'Pugno del Drago (Ryū-ken)', en: 'Dragon Fist' },
+    type: 'energy_blast',
+    characterIds: ['char-dbz-goku'],
+    shortDescription: {
+      it: "Dragon Ball GT: colpo definitivo di Goku, che carica il pugno di ki trapassando il nemico mentre si manifesta un enorme drago dorato d'energia. Decisivo contro Super C-17 e Omega Shenron.",
+      en: "Dragon Ball GT: Goku's ultimate blow, driving a ki-charged fist through the enemy while a huge golden energy dragon manifests. Decisive against Super 17 and Omega Shenron.",
+    },
+    canonStatus: 'anime_only',
+    referenceStatus: 'verified',
+    tags: ['gt', 'tecnica-firma'],
+  },
+  {
+    id: 'jutsu-dbz-gt-x10-kamehameha',
+    worldId: 'world-dragonball',
+    name: '10x Kamehameha',
+    localizedName: { it: 'Kamehameha x10', en: '10x Kamehameha' },
+    type: 'energy_blast',
+    characterIds: ['char-dbz-goku'],
+    shortDescription: {
+      it: 'Dragon Ball GT: versione decuplicata del Kamehameha, sferrata da Goku Super Saiyan 4 (e da Gogeta SS4) come attacco risolutivo contro i nemici più potenti.',
+      en: 'Dragon Ball GT: a tenfold Kamehameha unleashed by Super Saiyan 4 Goku (and SS4 Gogeta) as a finishing attack against the strongest foes.',
+    },
+    canonStatus: 'anime_only',
+    referenceStatus: 'verified',
+    tags: ['gt', 'super-saiyan-4'],
+  },
 ];

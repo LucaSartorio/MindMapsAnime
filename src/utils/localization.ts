@@ -217,6 +217,8 @@ export function getRaceLabel(race: string, locale: SupportedLocale): string {
     alien: { it: 'Alieno', en: 'Alien' },
     fusion: { it: 'Fusione', en: 'Fusion' },
     divine_entity: { it: 'Entità divina', en: 'Divine entity' },
+    tuffle: { it: 'Tsufuru (Tuffle)', en: 'Tuffle' },
+    machine_mutant: { it: 'Mutante Macchina', en: 'Machine Mutant' },
     unknown: { it: 'Sconosciuta', en: 'Unknown' },
   };
   const entry = map[race as Race];

@@ -333,4 +333,40 @@ export const dragonballFactions: Faction[] = [
     referenceStatus: 'verified',
     tags: ['squadra-ginyu', 'famiglia-di-freezer'],
   },
+
+  /* -------------------------------- Dragon Ball GT -------------------------------- */
+  {
+    id: 'faction-dbz-gt-machine-mutants',
+    worldId: 'world-dragonball',
+    type: 'group',
+    name: 'Machine Mutants',
+    localizedName: { it: 'Mutanti Macchina', en: 'Machine Mutants' },
+    description: {
+      it: "Dragon Ball GT: gli esseri bio-meccanici creati dal Dr. Myuu sul Pianeta M-2 — tra cui il Generale Rilldo, Luud, il parassita Baby e (con il Dr. Gero) Super C-17.",
+      en: "Dragon Ball GT: the bio-mechanical beings created by Dr. Myuu on Planet M-2 — including General Rilldo, Luud, the parasite Baby and (with Dr. Gero) Super 17.",
+    },
+    leaderIds: ['char-dbz-gt-dr-myuu'],
+    characterIds: ['char-dbz-gt-dr-myuu', 'char-dbz-gt-general-rilldo', 'char-dbz-gt-luud', 'char-dbz-gt-baby', 'char-dbz-gt-super-17'],
+    locationIds: ['loc-dbz-gt-m2', 'loc-dbz-gt-gelbo'],
+    arcIds: ['arc-dbz-gt-black-star', 'arc-dbz-gt-baby', 'arc-dbz-gt-super-17'],
+    canonStatus: 'anime_only',
+    referenceStatus: 'verified',
+    tags: ['gt', 'mutanti-macchina'],
+  },
+  {
+    id: 'faction-dbz-gt-shadow-dragons',
+    worldId: 'world-dragonball',
+    type: 'group',
+    name: 'Shadow Dragons',
+    localizedName: { it: 'Draghi Malvagi (Shadow Dragon)', en: 'Shadow Dragons' },
+    description: {
+      it: "Dragon Ball GT: i sette draghi nati dall'energia negativa accumulata da ogni desiderio esaudito dalle Sfere del Drago. Il più forte è Syn/Omega Shenron; Nuova Shenron diventa alleato di Goku.",
+      en: "Dragon Ball GT: the seven dragons born from the negative energy built up by every wish granted by the Dragon Balls. The strongest is Syn/Omega Shenron; Nuova Shenron becomes Goku's ally.",
+    },
+    characterIds: ['char-dbz-gt-syn-shenron', 'char-dbz-gt-omega-shenron', 'char-dbz-gt-nuova-shenron'],
+    arcIds: ['arc-dbz-gt-shadow-dragons'],
+    canonStatus: 'anime_only',
+    referenceStatus: 'verified',
+    tags: ['gt', 'draghi-malvagi'],
+  },
 ];

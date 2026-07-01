@@ -170,4 +170,27 @@ export const dragonballNations: Nation[] = [
     referenceStatus: 'verified',
     tags: ['aldila'],
   },
+  {
+    id: 'nation-dbz-gt-space',
+    worldId: 'world-dragonball',
+    name: 'GT Space (planets)',
+    localizedName: { it: 'Spazio GT (pianeti)', en: 'GT Space (planets)' },
+    type: 'neutral_land',
+    description: {
+      it: "Dragon Ball GT: i pianeti percorsi durante la caccia alle Sfere del Drago Nere (Imecca, il Pianeta Macchina M-2, Gelbo/Luud, Beehay, Pital) e il Nuovo Pianeta Plant ricreato da Baby per gli Tsufuru.",
+      en: "Dragon Ball GT: the planets traveled during the Black Star Dragon Ball hunt (Imecka, the Machine Planet M-2, Gelbo/Luud, Beehay, Pital) and the New Planet Plant recreated by Baby for the Tuffles.",
+    },
+    relatedLocationIds: [
+      'loc-dbz-gt-imecka',
+      'loc-dbz-gt-m2',
+      'loc-dbz-gt-gelbo',
+      'loc-dbz-gt-beehay',
+      'loc-dbz-gt-pital',
+      'loc-dbz-gt-new-plant',
+    ],
+    relatedArcIds: ['arc-dbz-gt-black-star', 'arc-dbz-gt-baby'],
+    canonStatus: 'anime_only',
+    referenceStatus: 'verified',
+    tags: ['gt', 'sfere-del-drago-nere', 'tsufuru'],
+  },
 ];
