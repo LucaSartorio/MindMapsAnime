@@ -6,8 +6,8 @@ import { EntityImage } from '@/components/common/EntityImage';
 import { ReferencePill } from '@/components/common/StatusPill';
 import { cn } from '@/lib/cn';
 import { useLocaleStore } from '@/store/useLocaleStore';
-import { getCharacterStatusLabel, getChakraNatureLabel, getLocalizedText } from '@/utils/localization';
-import { getAbilityCategoryLabel, getCharacterRankSystem } from '@/lib/worldConfig';
+import { getCharacterStatusLabel, getChakraNatureLabel, getLocalizedText, getRaceLabel } from '@/utils/localization';
+import { getAbilityCategoryLabel, getCharacterRankSystem, humanizeId } from '@/lib/worldConfig';
 import { getCharacterChakraNatures } from '@/lib/characterChakra';
 import { CHAKRA_COLORS } from '@/utils/entityImage';
 
@@ -32,6 +32,9 @@ function CharacterCardComponent({
   const clans =
     character.clanIds?.map((id) => dataset.factions.find((f) => f.id === id)) ?? [];
   const natures = getCharacterChakraNatures(character, dataset);
+  const raceLabel = character.race
+    ? getRaceLabel(character.race, locale) || humanizeId(character.race)
+    : undefined;
 
   return (
     <Card
@@ -99,6 +102,7 @@ function CharacterCardComponent({
         </p>
 
         <div className="flex flex-wrap gap-1.5 mt-auto">
+          {raceLabel && <Badge variant="danger">{raceLabel}</Badge>}
           {character.ninjaRank && rankSystem ? (
             <Badge variant="accent">
               {rankSystem.label(character.ninjaRank)}

@@ -22,7 +22,10 @@ export type LocationType =
   | 'bridge'
   | 'forest'
   | 'mountain'
-  | 'cave';
+  | 'cave'
+  // --- Dragon Ball: luoghi cosmici (pianeti, dimensioni/aldilà) ---
+  | 'planet'
+  | 'dimension';
 
 export type Importance = 'main' | 'secondary' | 'minor';
 
@@ -98,6 +101,32 @@ export type NinjaRank =
   | 'kage'
   | 'missing_nin'
   | 'other';
+
+/* ------------------------------ Razza / specie ------------------------------ */
+
+/**
+ * Razze/specie "note", usate come etichette di default da `getRaceLabel`.
+ * Il campo `Character.race` è una `string` libera: qualsiasi mondo può
+ * popolarlo con un id proprio (fallback: `humanizeId`). Introdotto per
+ * Dragon Ball (Saiyan, Namecciano, Majin, …) ma riutilizzabile da altri mondi.
+ */
+export type Race =
+  | 'saiyan'
+  | 'saiyan_hybrid'
+  | 'human'
+  | 'namekian'
+  | 'majin'
+  | 'android'
+  | 'demon'
+  | 'angel'
+  | 'god_of_destruction'
+  | 'kaioshin'
+  | 'frost_demon'
+  | 'dragon'
+  | 'alien'
+  | 'fusion'
+  | 'divine_entity'
+  | 'unknown';
 
 /* ------------------------------ Jutsu ------------------------------ */
 
@@ -426,6 +455,32 @@ export interface BountyEntry {
   note?: Localizable;
 }
 
+/**
+ * Tipo di potenziamento di una `CharacterTransformation`: distingue una
+ * trasformazione fisica vera e propria da un power-up/tecnica temporanea,
+ * una fusione o uno stato speciale. Puramente descrittivo (badge in UI).
+ */
+export type TransformationKind = 'transformation' | 'power_up' | 'fusion' | 'state';
+
+/**
+ * Una trasformazione o power-up ottenuto da un personaggio (es. Dragon Ball:
+ * Super Saiyan, Kaio-ken, Ultra Istinto…). Elencate su `Character.transformations`
+ * in ordine cronologico/di potenza crescente tramite `order`.
+ */
+export interface CharacterTransformation {
+  id: string;
+  name: string;
+  localizedName?: Localizable;
+  /** Ordine cronologico/di potenza crescente (più basso = prima/più debole). */
+  order: number;
+  /** Trasformazione fisica, power-up temporaneo, fusione o stato speciale. */
+  kind?: TransformationKind;
+  description?: Localizable;
+  /** Arco narrativo in cui viene ottenuta/mostrata per la prima volta. */
+  arcId?: string;
+  canonStatus?: CanonStatus;
+}
+
 export interface Character {
   id: string;
   worldId: string;
@@ -436,6 +491,13 @@ export interface Character {
   japaneseName?: string;
   /** Importanza narrativa (filtra archivio personaggi) */
   importance?: CharacterImportance;
+  /**
+   * Razza/specie del personaggio (libera; noti in `Race`). Es. Dragon Ball:
+   * Saiyan, Namecciano, Majin, Androide… Etichetta risolta via `getRaceLabel`.
+   */
+  race?: string;
+  /** Trasformazioni e power-up ottenuti (Dragon Ball: Super Saiyan, Kaio-ken…). */
+  transformations?: CharacterTransformation[];
   /**
    * Ruoli narrativi (uno o più). String libera per essere adattabile a ogni
    * opera; etichetta risolta via `getCharacterRoleLabel` / `WorldConfig`.

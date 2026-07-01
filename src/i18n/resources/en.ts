@@ -296,6 +296,8 @@ export const en = {
     mainAbilities: 'Main abilities',
     eventLink: 'event',
     battle: 'Battle',
+    race: 'Race',
+    transformations: 'Transformations & Power-ups',
   },
   characters: {
     archiveTitle: 'Characters archive',
@@ -306,6 +308,8 @@ export const en = {
     villageFilterAria: 'Filter by village',
     rankFilter: 'All ranks',
     rankFilterAria: 'Filter by ninja rank',
+    raceFilter: 'All races',
+    raceFilterAria: 'Filter by race',
     empty: 'No characters',
     emptyDescription: 'No results for the active filters.',
     featuredTitle: 'Featured',

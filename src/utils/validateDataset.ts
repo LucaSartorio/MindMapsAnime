@@ -174,6 +174,11 @@ export function validateDataset(dataset: WorldDataset): ValidationReport {
         checkSingleRef(rel.targetCharacterId, cId, 'character', 'relationships.targetCharacterId', c.id, issues);
       }
     }
+    if (c.transformations) {
+      for (const tr of c.transformations) {
+        checkSingleRef(tr.arcId, aId, 'character', `transformations.${tr.id}.arcId`, c.id, issues);
+      }
+    }
   }
 
   /* ---------- Factions ---------- */
