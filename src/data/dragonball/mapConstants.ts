@@ -22,4 +22,4 @@ export const DRAGONBALL_COSMIC_VIEWBOX = { width: 1400, height: 900 } as const;
 
 /** Path locale dell'immagine di riferimento (vive in public/, servita alla root). */
 export const DRAGONBALL_WORLD_MAP_SRC =
-  '/assets/worlds/dragonball/maps/dragonball-world-map.webp';
+  '/assets/worlds/dragonball/maps/dragonball-world-map.png';

@@ -39,8 +39,8 @@ export const dragonballAssets: AssetReference[] = [
     license: 'fan-art / da verificare — richiede autorizzazione prima della pubblicazione',
     author: 'Kris Ambry',
     notes: {
-      it: 'Mappa amatoriale della Terra di Dragon Ball. Usata come riferimento geografico (viewBox 1800 × 1200); le coordinate dei pin sono posizioni concettuali stimate dal layout del poster, da rifinire quando il file viene aggiunto. Non è materiale ufficiale: il mondo rappresentato è © Akira Toriyama / Shueisha, il disegno della mappa è © dell\'autore indicato. Il file va copiato manualmente in public/assets/worlds/dragonball/maps/dragonball-world-map.webp.',
-      en: 'Fan-made map of the Dragon Ball Earth. Used as a geographic reference (viewBox 1800 × 1200); pin coordinates are conceptual positions estimated from the poster layout, to refine once the file is added. Not official material: the depicted world is © Akira Toriyama / Shueisha, the map artwork is © the listed author. The file must be copied manually into public/assets/worlds/dragonball/maps/dragonball-world-map.webp.',
+      it: 'Mappa amatoriale della Terra di Dragon Ball. Usata come riferimento geografico (viewBox 1800 × 1200); le coordinate dei pin sono posizioni concettuali stimate dal layout del poster, da rifinire quando il file viene aggiunto. Non è materiale ufficiale: il mondo rappresentato è © Akira Toriyama / Shueisha, il disegno della mappa è © dell\'autore indicato. Il file va copiato manualmente in public/assets/worlds/dragonball/maps/dragonball-world-map.png.',
+      en: 'Fan-made map of the Dragon Ball Earth. Used as a geographic reference (viewBox 1800 × 1200); pin coordinates are conceptual positions estimated from the poster layout, to refine once the file is added. Not official material: the depicted world is © Akira Toriyama / Shueisha, the map artwork is © the listed author. The file must be copied manually into public/assets/worlds/dragonball/maps/dragonball-world-map.png.',
     },
   },
   {
