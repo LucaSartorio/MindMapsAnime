@@ -9,8 +9,8 @@ import { EmptyState } from '@/components/common/EmptyState';
 import { SourceNotice } from '@/components/common/SourceNotice';
 import { useMapStore, useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
-import { getLocalizedText } from '@/utils/localization';
-import { getCharacterRankOrder, getCharacterRankSystem } from '@/lib/worldConfig';
+import { getLocalizedText, getRaceLabel } from '@/utils/localization';
+import { getCharacterRankOrder, getCharacterRankSystem, humanizeId } from '@/lib/worldConfig';
 import { filterCharactersBySeries } from '@/lib/filters';
 
 interface CharactersPageProps {
@@ -28,6 +28,7 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
   const deferredQuery = useDeferredValue(query);
   const [filterVillage, setFilterVillage] = useState<string>('');
   const [filterRank, setFilterRank] = useState<string>('');
+  const [filterRace, setFilterRace] = useState<string>('');
   const openCharacterModal = useUiStore((s) => s.openCharacterModal);
   const filters = useMapStore((s) => s.filters);
 
@@ -59,6 +60,19 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
     return getCharacterRankOrder(dataset.world).filter((r) => present.has(r));
   }, [dataset.characters, dataset.world, rankSystem]);
 
+  // Razze presenti nel dataset (Dragon Ball: Saiyan, Namecciano, …). Filtro
+  // dinamico: mondi senza `character.race` non mostrano il selettore.
+  const races = useMemo(() => {
+    const present = new Set(
+      dataset.characters.map((c) => c.race).filter((r): r is string => !!r),
+    );
+    return Array.from(present).sort((a, b) =>
+      (getRaceLabel(a, locale) || humanizeId(a)).localeCompare(
+        getRaceLabel(b, locale) || humanizeId(b),
+      ),
+    );
+  }, [dataset.characters, locale]);
+
   const filtered = useMemo(() => {
     const q = deferredQuery.trim().toLowerCase();
     const bySeries = filterCharactersBySeries(dataset.characters, filters, dataset);
@@ -73,17 +87,19 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
           return false;
         if (filterRank && c.ninjaRank !== filterRank)
           return false;
+        if (filterRace && c.race !== filterRace)
+          return false;
         return true;
       })
       .sort((a, b) => a.name.localeCompare(b.name));
-  }, [dataset, filters, deferredQuery, filterVillage, filterRank, locale]);
+  }, [dataset, filters, deferredQuery, filterVillage, filterRank, filterRace, locale]);
 
   /** Vetrina iniziale: i sei "main" più rappresentativi (filtrati per serie,
    * ignorando ricerca/filtri locali — non vogliamo che cambi sotto le mani
    * scrivendo nella search box). Quando l'utente cerca o filtra, la nasconde
    * per dare priorità ai risultati. */
   const featuredItems: FeaturedTile[] = useMemo(() => {
-    if (deferredQuery.trim() || filterVillage || filterRank) return [];
+    if (deferredQuery.trim() || filterVillage || filterRank || filterRace) return [];
     const bySeries = filterCharactersBySeries(dataset.characters, filters, dataset);
     const ranked = bySeries
       .filter((c) => c.importance === 'main' || c.importance === 'major')
@@ -117,7 +133,7 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
         onClick: () => openCharacterModal(c.id),
       };
     });
-  }, [dataset, filters, locale, deferredQuery, filterVillage, filterRank, openCharacterModal]);
+  }, [dataset, filters, locale, deferredQuery, filterVillage, filterRank, filterRace, openCharacterModal]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6">
@@ -165,6 +181,21 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
             {ranks.map((r) => (
               <option key={r} value={r}>
                 {rankSystem.label(r)}
+              </option>
+            ))}
+          </select>
+        )}
+        {races.length > 0 && (
+          <select
+            value={filterRace}
+            onChange={(e) => setFilterRace(e.target.value)}
+            className="panel-soft px-3 py-2 text-sm"
+            aria-label={t('characters.raceFilterAria')}
+          >
+            <option value="">{t('characters.raceFilter')}</option>
+            {races.map((r) => (
+              <option key={r} value={r}>
+                {getRaceLabel(r, locale) || humanizeId(r)}
               </option>
             ))}
           </select>

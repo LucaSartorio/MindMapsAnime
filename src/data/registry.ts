@@ -19,6 +19,7 @@ const worldDatasetLoaders: Record<string, () => Promise<WorldDataset>> = {
   hunterxhunter: () =>
     import('@/data/hunterxhunter').then((m) => m.hunterxhunterDataset),
   onepiece: () => import('@/data/onepiece').then((m) => m.onepieceDataset),
+  dragonball: () => import('@/data/dragonball').then((m) => m.dragonballDataset),
 };
 
 /** Cache dei dataset già caricati (gli oggetti sono singleton immutabili). */

@@ -7,6 +7,8 @@ import {
   getCharacterImportanceLabel,
   getCharacterStatusLabel,
   getLocalizedText,
+  getRaceLabel,
+  getTransformationKindLabel,
 } from '@/utils/localization';
 import { CHAKRA_COLORS } from '@/utils/entityImage';
 import { getCharacterChakraNatures } from '@/lib/characterChakra';
@@ -29,6 +31,7 @@ import {
   getAbilityTerm,
   getCharacterRankSystem,
   getRoleLabel,
+  humanizeId,
 } from '@/lib/worldConfig';
 
 interface CharacterDetailsModalProps {
@@ -91,6 +94,12 @@ export function CharacterDetailsModal({
   );
 
   const rankSystem = getCharacterRankSystem(dataset.world, locale);
+  const raceLabel = character.race
+    ? getRaceLabel(character.race, locale) || humanizeId(character.race)
+    : undefined;
+  const transformations = [...(character.transformations ?? [])].sort(
+    (a, b) => a.order - b.order,
+  );
 
   const statusVariant: 'success' | 'danger' | 'default' =
     character.status === 'alive'
@@ -116,6 +125,7 @@ export function CharacterDetailsModal({
       title={character.name}
       badges={
         <>
+          {raceLabel && <Badge variant="danger">{raceLabel}</Badge>}
           {character.ninjaRank && rankSystem && (
             <Badge variant="accent">
               {rankSystem.label(character.ninjaRank)}
@@ -186,6 +196,38 @@ export function CharacterDetailsModal({
         <p className="text-ink-300 leading-relaxed">
           {getLocalizedText(character.longDescription, locale)}
         </p>
+      )}
+
+      {transformations.length > 0 && (
+        <Section title={t('modals.transformations')}>
+          <ol className="space-y-1.5">
+            {transformations.map((tr) => (
+              <li
+                key={tr.id}
+                className="flex items-start justify-between gap-2 panel-soft px-3 py-2"
+              >
+                <div className="min-w-0">
+                  <p className="text-sm text-ink-100">
+                    <span className="text-ink-500 font-mono text-[11px] mr-1.5">
+                      #{tr.order}
+                    </span>
+                    {getLocalizedText(tr.localizedName, locale) || tr.name}
+                  </p>
+                  {tr.description && (
+                    <p className="text-xs text-ink-400 mt-0.5">
+                      {getLocalizedText(tr.description, locale)}
+                    </p>
+                  )}
+                </div>
+                {tr.kind && (
+                  <Badge variant="ember" className="shrink-0">
+                    {getTransformationKindLabel(tr.kind, locale)}
+                  </Badge>
+                )}
+              </li>
+            ))}
+          </ol>
+        </Section>
       )}
 
       {(character.bounties ?? []).length > 0 && (

@@ -76,7 +76,9 @@ import type {
   JutsuType,
   LocationType,
   NinjaRank,
+  Race,
   ReferenceStatus,
+  TransformationKind,
   WorldStatus,
 } from '@/types';
 
@@ -188,8 +190,51 @@ export function getLocationTypeLabel(
     forest: { it: 'Foresta', en: 'Forest' },
     mountain: { it: 'Montagna', en: 'Mountain' },
     cave: { it: 'Caverna', en: 'Cave' },
+    planet: { it: 'Pianeta', en: 'Planet' },
+    dimension: { it: 'Dimensione', en: 'Dimension' },
   };
   return getLocalizedText(map[type], locale);
+}
+
+/**
+ * Etichetta di una razza/specie "nota" (vedi `Race`). Ritorna `''` per razze
+ * sconosciute/specifiche di un'opera: chi chiama gestisce l'humanize fallback.
+ */
+export function getRaceLabel(race: string, locale: SupportedLocale): string {
+  const map: Record<Race, LocalizedText> = {
+    saiyan: { it: 'Saiyan', en: 'Saiyan' },
+    saiyan_hybrid: { it: 'Saiyan ibrido', en: 'Saiyan hybrid' },
+    human: { it: 'Terrestre', en: 'Human' },
+    namekian: { it: 'Namecciano', en: 'Namekian' },
+    majin: { it: 'Majin', en: 'Majin' },
+    android: { it: 'Androide / Cyborg', en: 'Android / Cyborg' },
+    demon: { it: 'Demone', en: 'Demon' },
+    angel: { it: 'Angelo', en: 'Angel' },
+    god_of_destruction: { it: 'Dio della Distruzione', en: 'God of Destruction' },
+    kaioshin: { it: 'Kaiōshin', en: 'Kaiōshin' },
+    frost_demon: { it: 'Frost Demon (razza di Freezer)', en: 'Frost Demon (Frieza’s race)' },
+    dragon: { it: 'Drago eterno', en: 'Eternal Dragon' },
+    alien: { it: 'Alieno', en: 'Alien' },
+    fusion: { it: 'Fusione', en: 'Fusion' },
+    divine_entity: { it: 'Entità divina', en: 'Divine entity' },
+    unknown: { it: 'Sconosciuta', en: 'Unknown' },
+  };
+  const entry = map[race as Race];
+  return entry ? getLocalizedText(entry, locale) : '';
+}
+
+/** Etichetta del tipo di `CharacterTransformation` (trasformazione, power-up, fusione, stato). */
+export function getTransformationKindLabel(
+  kind: TransformationKind,
+  locale: SupportedLocale,
+): string {
+  const map: Record<TransformationKind, LocalizedText> = {
+    transformation: { it: 'Trasformazione', en: 'Transformation' },
+    power_up: { it: 'Power-up', en: 'Power-up' },
+    fusion: { it: 'Fusione', en: 'Fusion' },
+    state: { it: 'Stato', en: 'State' },
+  };
+  return getLocalizedText(map[kind], locale);
 }
 
 export function getNinjaRankLabel(

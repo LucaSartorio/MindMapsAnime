@@ -299,6 +299,8 @@ export const it = {
     mainAbilities: 'Abilità principali',
     eventLink: 'evento',
     battle: 'Scontro',
+    race: 'Razza',
+    transformations: 'Trasformazioni & Power-up',
   },
   characters: {
     archiveTitle: 'Archivio personaggi',
@@ -309,6 +311,8 @@ export const it = {
     villageFilterAria: 'Filtra per villaggio',
     rankFilter: 'Tutti i gradi',
     rankFilterAria: 'Filtra per grado ninja',
+    raceFilter: 'Tutte le razze',
+    raceFilterAria: 'Filtra per razza',
     empty: 'Nessun personaggio',
     emptyDescription: 'Nessun risultato per i filtri attivi.',
     featuredTitle: 'In evidenza',

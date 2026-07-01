@@ -23,6 +23,8 @@ export const LOCATION_TYPE_ORDER: LocationType[] = [
   'forest',
   'mountain',
   'cave',
+  'planet',
+  'dimension',
 ];
 
 /** Tipo di luogo → icona testuale (nessun asset esterno). */
@@ -41,6 +43,8 @@ export const LOCATION_TYPE_ICON: Record<LocationType, string> = {
   forest: '❅',
   mountain: '▲',
   cave: '◯',
+  planet: '●',
+  dimension: '✧',
 };
 
 /**
