@@ -1,5 +1,5 @@
 import type { MapLevel } from '@/types';
-import { DRAGONBALL_COSMIC_VIEWBOX, DRAGONBALL_MAP_VIEWBOX } from './mapConstants';
+import { DRAGONBALL_COSMIC_VIEWBOX, DRAGONBALL_MAP_VIEWBOX, DRAGONBALL_NAMEK_VIEWBOX } from './mapConstants';
 
 /**
  * Map level Dragon Ball.
@@ -42,5 +42,21 @@ export const dbzMapLevels: MapLevel[] = [
     backgroundAssetId: 'dbz-cosmic-map-placeholder',
     width: DRAGONBALL_COSMIC_VIEWBOX.width,
     height: DRAGONBALL_COSMIC_VIEWBOX.height,
+  },
+  {
+    id: 'dbz-map-namek',
+    worldId: 'world-dragonball',
+    slug: 'namek',
+    name: 'Namek',
+    localizedName: { it: 'Namecc', en: 'Namek' },
+    description: {
+      it: "Sotto-mappa concettuale del Pianeta Namecc: i villaggi namecciani, la casa del Capo Anziano Guru, il punto di atterraggio di Vegeta, l'astronave di Freezer e i campi di battaglia della Saga di Namecc/Freezer. Posizioni indicative su un pianeta dalla geografia mai mostrata in scala nella serie. Doppio clic su «Universo» per tornare alla mappa cosmica.",
+      en: "Conceptual sub-map of Planet Namek: the Namekian villages, Grand Elder Guru's house, Vegeta's landing site, Frieza's spaceship and the battlefields of the Namek/Frieza Saga. Indicative positions on a planet whose geography was never shown to scale in the series. Double-click 'Universe' to return to the cosmic map.",
+    },
+    parentLevelId: 'dbz-map-cosmic',
+    triggerLocationId: 'loc-dbz-namek-planet',
+    backgroundAssetId: 'dbz-namek-map-placeholder',
+    width: DRAGONBALL_NAMEK_VIEWBOX.width,
+    height: DRAGONBALL_NAMEK_VIEWBOX.height,
   },
 ];

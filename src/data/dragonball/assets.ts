@@ -56,4 +56,17 @@ export const dragonballAssets: AssetReference[] = [
       en: 'Neutral placeholder for the "Universe" sub-map (planets, Other World, Tournament of Power): conceptual diagram, not a scale map.',
     },
   },
+  {
+    id: 'dbz-namek-map-placeholder',
+    worldId: 'world-dragonball',
+    name: 'Dragon Ball Namek map (placeholder SVG)',
+    kind: 'placeholder',
+    source: 'local',
+    license: 'placeholder/CC0',
+    author: 'local',
+    notes: {
+      it: 'Placeholder neutro per la sotto-mappa del Pianeta Namecc: schema concettuale, non una mappa in scala (la geografia di Namecc non è mai stata mostrata in scala nella serie).',
+      en: "Neutral placeholder for Planet Namek's sub-map: conceptual diagram, not a scale map (Namek's geography was never shown to scale in the series).",
+    },
+  },
 ];

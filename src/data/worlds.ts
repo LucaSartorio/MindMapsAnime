@@ -239,7 +239,7 @@ export const animeWorlds: AnimeWorld[] = [
       highlight: '#e10b0b',
     },
     defaultMapLevelId: 'dbz-map-world',
-    availableMapLevelIds: ['dbz-map-world', 'dbz-map-cosmic'],
+    availableMapLevelIds: ['dbz-map-world', 'dbz-map-cosmic', 'dbz-map-namek'],
     coverAssetId: 'dbz-cover-placeholder',
     tags: ['shonen', 'arti marziali', 'akira toriyama', 'jump'],
     metadata: {

@@ -5,6 +5,7 @@ import { dragonballNations } from './nations';
 import { dragonballLocations } from './locations';
 import { dragonballCharacters } from './characters';
 import { dragonballCharactersBatch1 } from './charactersBatch1';
+import { dragonballCharactersFriezaSaga } from './charactersFriezaSaga';
 import { dragonballFactions } from './factions';
 import { dragonballArcs } from './arcs';
 import { dragonballEvents } from './events';
@@ -30,7 +31,7 @@ export const dragonballDataset: WorldDataset = {
   mapLevels: dbzMapLevels,
   nations: dragonballNations,
   locations: dragonballLocations,
-  characters: [...dragonballCharacters, ...dragonballCharactersBatch1],
+  characters: [...dragonballCharacters, ...dragonballCharactersBatch1, ...dragonballCharactersFriezaSaga],
   factions: dragonballFactions,
   arcs: dragonballArcs,
   events: dragonballEvents,

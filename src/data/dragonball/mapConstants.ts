@@ -18,6 +18,9 @@ export const DRAGONBALL_MAP_VIEWBOX = { width: 1785, height: 1261 } as const;
 /** Piano concettuale della sotto-mappa "cosmica" (pianeti, Aldilà, Torneo del Potere). */
 export const DRAGONBALL_COSMIC_VIEWBOX = { width: 1400, height: 900 } as const;
 
+/** Piano concettuale della sotto-mappa del Pianeta Namecc. */
+export const DRAGONBALL_NAMEK_VIEWBOX = { width: 1300, height: 850 } as const;
+
 /** Path locale dell'immagine di riferimento (vive in public/, servita alla root). */
 export const DRAGONBALL_WORLD_MAP_SRC =
   '/assets/worlds/dragonball/maps/dragonball-world-map.png';
