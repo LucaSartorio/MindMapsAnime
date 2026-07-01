@@ -37,6 +37,7 @@ export function GlobalSearchDropdown({
   const locale = useLocaleStore((s) => s.locale);
   const [query, setQuery] = useState('');
   const [open, setOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const onCloseRef = useRef(onClose);
@@ -58,6 +59,48 @@ export function GlobalSearchDropdown({
   useEffect(() => {
     if (autoFocus) inputRef.current?.focus();
   }, [autoFocus]);
+
+  // Ogni nuova ricerca riparte dal primo risultato.
+  useEffect(() => {
+    setActiveIndex(0);
+  }, [results]);
+
+  const optionId = (index: number) => `search-opt-${index}`;
+
+  // Navigazione da tastiera del listbox (pattern combobox WAI-ARIA):
+  // ↑/↓ spostano l'evidenziazione, Invio apre, Home/End vanno agli estremi.
+  function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
+    if (results.length === 0) return;
+    switch (e.key) {
+      case 'ArrowDown':
+        e.preventDefault();
+        setOpen(true);
+        setActiveIndex((i) => Math.min(i + 1, results.length - 1));
+        break;
+      case 'ArrowUp':
+        e.preventDefault();
+        setActiveIndex((i) => Math.max(i - 1, 0));
+        break;
+      case 'Home':
+        e.preventDefault();
+        setActiveIndex(0);
+        break;
+      case 'End':
+        e.preventDefault();
+        setActiveIndex(results.length - 1);
+        break;
+      case 'Enter': {
+        const r = results[activeIndex];
+        if (open && r) {
+          e.preventDefault();
+          handleSelect(r);
+        }
+        break;
+      }
+      default:
+        break;
+    }
+  }
 
   // Click fuori → chiude
   useEffect(() => {
@@ -194,12 +237,16 @@ export function GlobalSearchDropdown({
             setOpen(true);
           }}
           onFocus={() => setOpen(true)}
+          onKeyDown={handleKeyDown}
           placeholder={t('search.placeholder', { world: dataset.world.title })}
           className="w-full panel-soft pl-8 pr-10 py-2 text-sm placeholder-ink-400 focus:border-chakra-500"
           role="combobox"
           aria-autocomplete="list"
           aria-expanded={open && results.length > 0}
           aria-controls="search-listbox"
+          aria-activedescendant={
+            open && results.length > 0 ? optionId(activeIndex) : undefined
+          }
         />
         {showKbHint && !query && (
           <kbd
@@ -211,12 +258,22 @@ export function GlobalSearchDropdown({
         )}
       </div>
       {open && query && (
-        <div className="absolute z-[55] mt-2 left-0 right-0 panel max-h-96 overflow-auto">
-          <SearchResults
-            results={results}
-            onSelect={handleSelect}
-            techniqueTerm={getAbilityTerm(dataset.world, locale)}
-          />
+        <div className="absolute z-[55] mt-2 left-0 right-0 panel overflow-hidden">
+          <div className="max-h-80 overflow-auto">
+            <SearchResults
+              results={results}
+              onSelect={handleSelect}
+              techniqueTerm={getAbilityTerm(dataset.world, locale)}
+              activeIndex={activeIndex}
+              optionId={optionId}
+              onActiveIndexChange={setActiveIndex}
+            />
+          </div>
+          {results.length > 0 && (
+            <div className="hidden border-t border-ink-700/50 px-3 py-1.5 font-mono text-[10px] text-ink-400 sm:block">
+              {t('search.navHint')}
+            </div>
+          )}
         </div>
       )}
     </div>

@@ -85,9 +85,12 @@ export function Modal({
     }
   }
 
-  // ESC + scroll lock
+  // ESC + scroll lock + ripristino del focus alla chiusura
   useEffect(() => {
     if (!open) return;
+    // Elemento che aveva il focus prima dell'apertura (il pin / il pulsante che
+    // ha aperto la scheda): ci torna il focus alla chiusura (WCAG 2.4.3).
+    const previouslyFocused = document.activeElement as HTMLElement | null;
     function onKey(e: KeyboardEvent) {
       if (e.key === 'Escape') onClose();
       if (e.key === 'Tab') {
@@ -117,6 +120,11 @@ export function Modal({
       document.removeEventListener('keydown', onKey);
       document.body.style.overflow = prevOverflow;
       clearTimeout(id);
+      // Ripristina il focus al trigger (se è ancora nel DOM). Nei cross-link a
+      // catena i ripristini si compongono e il focus finisce sull'ultima scheda.
+      if (previouslyFocused && document.contains(previouslyFocused)) {
+        previouslyFocused.focus();
+      }
     };
   }, [open, onClose]);
 

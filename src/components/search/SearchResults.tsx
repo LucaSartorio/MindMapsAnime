@@ -1,5 +1,7 @@
+import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { SearchResult } from '@/types';
+import { cn } from '@/lib/cn';
 import { EmptyState } from '@/components/common/EmptyState';
 
 interface SearchResultsProps {
@@ -7,10 +9,32 @@ interface SearchResultsProps {
   onSelect: (r: SearchResult) => void;
   /** Termine per le tecniche del mondo attivo (es. "Nen" per HxH). */
   techniqueTerm?: string;
+  /** Indice attualmente evidenziato (navigazione da tastiera). */
+  activeIndex?: number;
+  /** Costruisce l'id di ciascuna opzione per `aria-activedescendant`. */
+  optionId?: (index: number) => string;
+  /** Aggiorna l'indice attivo al passaggio del mouse. */
+  onActiveIndexChange?: (index: number) => void;
 }
 
-export function SearchResults({ results, onSelect, techniqueTerm }: SearchResultsProps) {
+export function SearchResults({
+  results,
+  onSelect,
+  techniqueTerm,
+  activeIndex = 0,
+  optionId,
+  onActiveIndexChange,
+}: SearchResultsProps) {
   const { t } = useTranslation();
+  const listRef = useRef<HTMLDivElement>(null);
+
+  // Tiene l'opzione attiva sempre visibile durante la navigazione da tastiera.
+  useEffect(() => {
+    listRef.current
+      ?.querySelector('[aria-selected="true"]')
+      ?.scrollIntoView({ block: 'nearest' });
+  }, [activeIndex, results]);
+
   if (results.length === 0) {
     return (
       <div className="p-4">
@@ -23,27 +47,40 @@ export function SearchResults({ results, onSelect, techniqueTerm }: SearchResult
   }
   return (
     // role=listbox con figli role=option diretti (niente <ul>/<li>).
-    <div id="search-listbox" role="listbox" className="divide-y divide-ink-700/40">
-      {results.map((r) => (
-        <button
-          key={`${r.kind}-${r.id}`}
-          type="button"
-          role="option"
-          aria-selected="false"
-          onClick={() => onSelect(r)}
-          className="w-full text-left flex items-center justify-between gap-3 px-3 py-2.5 hover:bg-chakra-500/10"
-        >
-          <span className="flex flex-col min-w-0">
-            <span className="text-sm text-ink-100 truncate">{r.title}</span>
-            {r.subtitle && (
-              <span className="text-xs text-ink-400 truncate">{r.subtitle}</span>
+    <div
+      ref={listRef}
+      id="search-listbox"
+      role="listbox"
+      className="divide-y divide-ink-700/40"
+    >
+      {results.map((r, i) => {
+        const active = i === activeIndex;
+        return (
+          <button
+            key={`${r.kind}-${r.id}`}
+            id={optionId?.(i)}
+            type="button"
+            role="option"
+            aria-selected={active}
+            onClick={() => onSelect(r)}
+            onMouseMove={() => onActiveIndexChange?.(i)}
+            className={cn(
+              'flex w-full items-center justify-between gap-3 px-3 py-2.5 text-left',
+              active ? 'bg-chakra-500/20' : 'hover:bg-chakra-500/10',
             )}
-          </span>
-          <span className="chip text-[10px] uppercase tracking-widest">
-            {t(`search.kinds.${r.kind}`, { term: techniqueTerm ?? 'Jutsu' })}
-          </span>
-        </button>
-      ))}
+          >
+            <span className="flex min-w-0 flex-col">
+              <span className="truncate text-sm text-ink-100">{r.title}</span>
+              {r.subtitle && (
+                <span className="truncate text-xs text-ink-400">{r.subtitle}</span>
+              )}
+            </span>
+            <span className="chip text-[10px] uppercase tracking-widest">
+              {t(`search.kinds.${r.kind}`, { term: techniqueTerm ?? 'Jutsu' })}
+            </span>
+          </button>
+        );
+      })}
     </div>
   );
 }

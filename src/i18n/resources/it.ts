@@ -208,7 +208,8 @@ export const it = {
   search: {
     placeholder: 'Cerca in {{world}}…',
     label: 'Cerca nel mondo {{world}}',
-    kbHint: 'Premi / per cercare',
+    kbHint: 'Premi ⌘K (o /) per cercare',
+    navHint: '↑↓ naviga · ↵ apri · esc chiudi',
     emptyTitle: 'Nessun risultato',
     emptyDescription: 'Prova con un altro termine.',
     kinds: {
