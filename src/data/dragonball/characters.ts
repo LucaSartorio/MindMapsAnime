@@ -580,8 +580,8 @@ export const dragonballCharacters: Character[] = [
   {
     id: 'char-dbz-vegito',
     worldId: 'world-dragonball',
-    name: 'Vegetto',
-    aliases: ['Vegito'],
+    name: 'Vegeth',
+    aliases: ['Vegetto', 'Vegito'],
     japaneseName: 'ベジット',
     importance: 'major',
     role: ['ally'],

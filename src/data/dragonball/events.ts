@@ -1080,10 +1080,10 @@ export const dragonballEvents: TimelineEvent[] = [
   {
     id: 'evt-dbz-vegito-vs-super-buu',
     worldId: 'world-dragonball',
-    title: { it: 'Vegetto contro Super Bu', en: 'Vegito vs. Super Buu' },
+    title: { it: 'Vegeth contro Super Bu', en: 'Vegeth vs. Super Buu' },
     description: {
-      it: "Goku e Vegeta si fondono con gli orecchini Potara in Vegetto, il guerriero più potente mai apparso: domina completamente Super Bu (che ha assorbito Gohan) e si lascia assorbire di proposito per liberare gli amici dall'interno del mostro.",
-      en: "Goku and Vegeta fuse with the Potara earrings into Vegito, the mightiest warrior yet seen: he utterly dominates Super Buu (who has absorbed Gohan) and lets himself be absorbed on purpose to free his friends from inside the monster.",
+      it: "Goku e Vegeta si fondono con gli orecchini Potara in Vegeth, il guerriero più potente mai apparso: domina completamente Super Bu (che ha assorbito Gohan) e si lascia assorbire di proposito per liberare gli amici dall'interno del mostro.",
+      en: "Goku and Vegeta fuse with the Potara earrings into Vegeth (Vegito), the mightiest warrior yet seen: he utterly dominates Super Buu (who has absorbed Gohan) and lets himself be absorbed on purpose to free his friends from inside the monster.",
     },
     period: { it: 'Dragon Ball Z · Saga di Majin Bu', en: 'Dragon Ball Z · Majin Buu Saga' },
     arcId: 'arc-dbz-majin-buu',
@@ -1102,7 +1102,7 @@ export const dragonballEvents: TimelineEvent[] = [
     worldId: 'world-dragonball',
     title: { it: 'Goku e Vegeta contro Kid Bu', en: 'Goku and Vegeta vs. Kid Buu' },
     description: {
-      it: "Espulso da Super Bu, Kid Bu — la forma originaria e più distruttiva — annienta la Terra intera per puro divertimento: Goku e Vegeta (fuso in Vegetto tramite Potara nel manga) lo affrontano prima della Genkidama finale.",
+      it: "Espulso da Super Bu, Kid Bu — la forma originaria e più distruttiva — annienta la Terra intera per puro divertimento: Goku e Vegeta (fuso in Vegeth tramite Potara nel manga) lo affrontano prima della Genkidama finale.",
       en: "Ejected from Super Buu, Kid Buu — the original, most destructive form — annihilates the entire Earth for pure amusement: Goku and Vegeta (fused into Vegito via Potara in the manga) confront him before the final Spirit Bomb.",
     },
     period: { it: 'Dragon Ball Z · Saga di Majin Bu', en: 'Dragon Ball Z · Majin Buu Saga' },

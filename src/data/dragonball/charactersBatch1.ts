@@ -24,7 +24,7 @@ export const dragonballCharactersBatch1: Character[] = [
     enemies: ['char-dbz-broly', 'char-dbz-gt-omega-shenron'],
     arcIds: ['arc-dbz-broly-movie', 'arc-dbz-gt-shadow-dragons'],
     shortDescription: {
-      it: 'Fusione tramite Danza della Fusione tra Goku e Vegeta: la controparte "equilibrata" di Vegetto, nata dal balletto della fusione anziché dagli orecchini Potara.',
+      it: 'Fusione tramite Danza della Fusione tra Goku e Vegeta: la controparte "equilibrata" di Vegeth, nata dal balletto della fusione anziché dagli orecchini Potara.',
       en: "A Fusion Dance fusion of Goku and Vegeta: Vegito's 'balanced' counterpart, born from the fusion dance rather than the Potara earrings.",
     },
     status: 'varies_by_era',
