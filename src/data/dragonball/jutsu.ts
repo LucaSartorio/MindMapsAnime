@@ -296,4 +296,19 @@ export const dragonballJutsu: Jutsu[] = [
     referenceStatus: 'verified',
     tags: ['freezer'],
   },
+  {
+    id: 'jutsu-dbz-body-change',
+    worldId: 'world-dragonball',
+    name: 'Body Change',
+    localizedName: { it: 'Scambio di Corpo (Body Change)', en: 'Body Change' },
+    type: 'support',
+    characterIds: ['char-dbz-captain-ginyu'],
+    shortDescription: {
+      it: "Tecnica firma di Capitan Ginyu: scambia il proprio corpo con quello di un bersaglio, permettendogli di cambiare involucro a piacimento — finché non resta bloccato in un corpo troppo debole.",
+      en: "Captain Ginyu's signature technique: swaps his body with a target's, letting him change bodies at will — until he gets stuck in one too weak to use it again.",
+    },
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['squadra-ginyu'],
+  },
 ];
