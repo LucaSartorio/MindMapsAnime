@@ -79,7 +79,7 @@ export const dragonballCharactersBatch1: Character[] = [
     },
     status: 'deceased',
     canonStatus: 'anime_only',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['saiyan', 'pianeta-vegeta'],
   },
   {
@@ -201,7 +201,7 @@ export const dragonballCharactersBatch1: Character[] = [
     },
     status: 'alive',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['dio-della-distruzione', 'universo-6'],
   },
   {
@@ -222,7 +222,7 @@ export const dragonballCharactersBatch1: Character[] = [
     },
     status: 'alive',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['angelo', 'universo-6'],
   },
   {
@@ -298,7 +298,7 @@ export const dragonballCharactersBatch1: Character[] = [
     },
     status: 'alive',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['pride-troopers', 'universo-11'],
   },
   {
@@ -320,7 +320,7 @@ export const dragonballCharactersBatch1: Character[] = [
     },
     status: 'alive',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['universo-6', 'sicario'],
   },
   {
@@ -445,7 +445,7 @@ export const dragonballCharactersBatch1: Character[] = [
     },
     status: 'unknown',
     canonStatus: 'movie',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['androide', 'red-ribbon', 'film'],
   },
   {
@@ -467,7 +467,7 @@ export const dragonballCharactersBatch1: Character[] = [
     },
     status: 'unknown',
     canonStatus: 'movie',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['androide', 'red-ribbon', 'film'],
   },
   {
@@ -488,7 +488,7 @@ export const dragonballCharactersBatch1: Character[] = [
     },
     status: 'deceased',
     canonStatus: 'movie',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['bio-androide', 'red-ribbon', 'film'],
   },
 ];

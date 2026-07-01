@@ -63,10 +63,15 @@ export const useMapStore = create<MapState>((set) => ({
   viewportResetKey: 0,
 
   setActiveMapLevel: (id) =>
+    // NB: NON azzeriamo `selectedRouteId` qui. Un percorso può attraversare
+    // più livelli mappa (es. la Saga di Freezer: Terra → mappa cosmica →
+    // sotto-mappa di Namecc) e i suoi edge si disegnano per-livello: cambiando
+    // livello vogliamo che la selezione persista, così ogni tratta riappare
+    // sulla mappa corrispondente. Location e boundary restano legate al
+    // livello e vengono deselezionate.
     set({
       activeMapLevelId: id,
       selectedLocationId: null,
-      selectedRouteId: null,
       selectedBoundaryId: null,
     }),
   setSelectedLocation: (id) => set({ selectedLocationId: id }),

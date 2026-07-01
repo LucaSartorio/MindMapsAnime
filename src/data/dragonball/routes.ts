@@ -65,7 +65,7 @@ export const dragonballRoutes: Route[] = [
     color: DRAGONBALL_SAGA_COLORS.redRibbonArmy,
     lineStyle: 'solid',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['red-ribbon', 'sagas-poster'],
   },
   {
@@ -133,11 +133,32 @@ export const dragonballRoutes: Route[] = [
     protagonistCharacterIds: ['char-dbz-krillin', 'char-dbz-bulma', 'char-dbz-gohan'],
     relatedCharacterIds: ['char-dbz-goku', 'char-dbz-vegeta', 'char-dbz-frieza'],
     arcId: 'arc-dbz-namek-frieza',
-    relatedLocationIds: ['loc-dbz-capsule-corp', 'loc-dbz-space-gate', 'loc-dbz-namek-planet'],
+    relatedLocationIds: [
+      'loc-dbz-capsule-corp',
+      'loc-dbz-space-gate',
+      'loc-dbz-earth-gate',
+      'loc-dbz-namek-planet',
+      'loc-dbz-namek-moori-village',
+      'loc-dbz-namek-guru-house',
+      'loc-dbz-namek-battlefield-plains',
+      'loc-dbz-namek-final-battlefield',
+    ],
+    // Il percorso attraversa TRE livelli mappa (Terra → mappa cosmica →
+    // sotto-mappa di Namecc): gli edge si disegnano solo tra step consecutivi
+    // sullo stesso livello, quindi ogni "salto" di livello (step 2→3 e 4→5) è
+    // volutamente privo di linea — il tratto riappare sul livello successivo.
     steps: [
+      // — Livello Terra —
       { order: 1, locationId: 'loc-dbz-capsule-corp', label: { it: 'Partenza dalla Capsule Corporation', en: 'Departure from Capsule Corporation' }, description: { it: 'Costruzione della navicella spaziale per raggiungere Namecc.', en: 'Building the spaceship to reach Namek.' } },
-      { order: 2, locationId: 'loc-dbz-space-gate', label: { it: 'Rotta spaziale', en: 'Space route' } },
-      { order: 3, locationId: 'loc-dbz-namek-planet', eventId: 'evt-dbz-frieza-defeated-namek', label: { it: 'Sconfitta di Freezer su Namecc', en: 'Frieza defeated on Namek' } },
+      { order: 2, locationId: 'loc-dbz-space-gate', label: { it: 'Rotta spaziale verso Namecc', en: 'Space route to Namek' }, description: { it: 'Doppio clic sul pin "Spazio" per salire alla mappa cosmica.', en: 'Double-click the "Space" pin to go up to the cosmic map.' } },
+      // — Mappa cosmica —
+      { order: 3, locationId: 'loc-dbz-earth-gate', label: { it: 'Partenza dalla Terra', en: 'Departing Earth' } },
+      { order: 4, locationId: 'loc-dbz-namek-planet', label: { it: 'Arrivo sul Pianeta Namecc', en: 'Arrival on Planet Namek' }, description: { it: 'Doppio clic sul Pianeta Namecc per scendere sulla sotto-mappa.', en: 'Double-click Planet Namek to drill into its sub-map.' } },
+      // — Sotto-mappa di Namecc —
+      { order: 5, locationId: 'loc-dbz-namek-moori-village', label: { it: 'Villaggio di Moori', en: "Moori's Village" }, description: { it: 'Crilin e Gohan salvano Dende dalla strage degli uomini di Freezer.', en: "Krillin and Gohan save Dende from the massacre by Frieza's men." } },
+      { order: 6, locationId: 'loc-dbz-namek-guru-house', label: { it: 'Casa del Capo Anziano', en: "Grand Elder's House" }, description: { it: 'Potenziale sbloccato e ricerca delle Sfere del Drago namecciane.', en: 'Potential unlocked and the hunt for the Namekian Dragon Balls.' } },
+      { order: 7, locationId: 'loc-dbz-namek-battlefield-plains', label: { it: 'Scontro con la Squadra Ginyu', en: 'Clash with the Ginyu Force' } },
+      { order: 8, locationId: 'loc-dbz-namek-final-battlefield', eventId: 'evt-dbz-frieza-defeated-namek', label: { it: 'Sconfitta di Freezer su Namecc', en: 'Frieza defeated on Namek' }, description: { it: 'Goku diventa Super Saiyan e sconfigge Freezer prima della distruzione del pianeta.', en: 'Goku becomes a Super Saiyan and defeats Frieza before the planet is destroyed.' } },
     ],
     color: DRAGONBALL_SAGA_COLORS.frieza,
     lineStyle: 'dashed',
@@ -216,10 +237,13 @@ export const dragonballRoutes: Route[] = [
     protagonistCharacterIds: ['char-dbz-goku', 'char-dbz-vegeta'],
     relatedCharacterIds: ['char-dbz-whis', 'char-dbz-beerus', 'char-dbz-jiren'],
     arcId: 'arc-dbz-tournament-of-power',
-    relatedLocationIds: ['loc-dbz-beerus-planet', 'loc-dbz-space-gate', 'loc-dbz-tournament-arena'],
+    // Interamente sulla mappa cosmica (in precedenza uno step passava per il pin
+    // "Spazio" sulla Terra, spezzando la linea su due livelli: nessun edge era
+    // disegnato). Ora i tre step sono tutti sul livello cosmico.
+    relatedLocationIds: ['loc-dbz-beerus-planet', 'loc-dbz-earth-gate', 'loc-dbz-tournament-arena'],
     steps: [
       { order: 1, locationId: 'loc-dbz-beerus-planet', label: { it: 'Addestramento con Whis', en: 'Training with Whis' }, description: { it: "Preparazione fisica e spirituale in vista del torneo.", en: 'Physical and spiritual preparation ahead of the tournament.' } },
-      { order: 2, locationId: 'loc-dbz-space-gate', label: { it: 'Verso il Mondo del Nulla', en: 'Toward the Null Realm' } },
+      { order: 2, locationId: 'loc-dbz-earth-gate', label: { it: "Raduno della squadra dell'Universo 7", en: 'Universe 7 team gathers' }, description: { it: 'Goku recluta i dieci guerrieri che rappresenteranno la Terra e l’Universo 7.', en: 'Goku recruits the ten warriors who will represent Earth and Universe 7.' } },
       { order: 3, locationId: 'loc-dbz-tournament-arena', eventId: 'evt-dbz-tournament-of-power', label: { it: 'Il Torneo del Potere', en: 'The Tournament of Power' }, description: { it: "Lo scontro finale contro Jiren e l'Universo 11.", en: 'The final clash against Jiren and Universe 11.' } },
     ],
     color: '#e10b0b',

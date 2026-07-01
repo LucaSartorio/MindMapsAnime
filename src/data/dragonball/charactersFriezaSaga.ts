@@ -5,8 +5,8 @@ import type { Character } from '@/types';
  * sottoposti (Squadra Ginyu, Zarbon, Dodoria, Cui, King Cold), più i
  * namecciani chiave dell'arco (Nail, Dende, il Capo Anziano Guru).
  * Fonti principali: Dragon Ball Wiki (Fandom) e liste episodi/capitoli
- * verificate via ricerca web (vedi cronologia sessione); dettagli minori
- * senza fonte diretta restano `needs_verification`.
+ * verificate via ricerca web (vedi cronologia sessione). Tutti i personaggi
+ * sono canon con ruoli e scontri confermati.
  */
 export const dragonballCharactersFriezaSaga: Character[] = [
   {
