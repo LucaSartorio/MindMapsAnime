@@ -181,7 +181,7 @@ export const dragonballLocations: Location[] = [
     characterIds: ['char-dbz-piccolo'],
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['namecciano', 'kami'],
   },
   {
@@ -220,7 +220,7 @@ export const dragonballLocations: Location[] = [
     nationId: 'nation-dbz-earth',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['regione'],
   },
   {
@@ -241,7 +241,7 @@ export const dragonballLocations: Location[] = [
     arcIds: ['arc-dbz-majin-buu'],
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['majin-bu'],
   },
   {
@@ -262,7 +262,7 @@ export const dragonballLocations: Location[] = [
     arcIds: ['arc-dbz-red-ribbon'],
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['red-ribbon'],
   },
   {
@@ -281,7 +281,7 @@ export const dragonballLocations: Location[] = [
     nationId: 'nation-dbz-earth',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['villaggio'],
   },
   {
@@ -301,7 +301,7 @@ export const dragonballLocations: Location[] = [
     arcIds: ['arc-dbz-red-ribbon'],
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['red-ribbon'],
   },
   {
@@ -320,7 +320,7 @@ export const dragonballLocations: Location[] = [
     nationId: 'nation-dbz-earth',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['città'],
   },
   {
@@ -361,7 +361,7 @@ export const dragonballLocations: Location[] = [
     nationId: 'nation-dbz-earth',
     importance: 'minor',
     canonStatus: 'uncertain',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['da-verificare'],
   },
   {
@@ -382,7 +382,7 @@ export const dragonballLocations: Location[] = [
     arcIds: ['arc-dbz-androids'],
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['freezer'],
   },
   {
@@ -424,7 +424,7 @@ export const dragonballLocations: Location[] = [
     arcIds: ['arc-dbz-androids'],
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['androidi'],
   },
   {
@@ -465,7 +465,7 @@ export const dragonballLocations: Location[] = [
     nationId: 'nation-dbz-earth',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['città'],
   },
   {
@@ -506,7 +506,7 @@ export const dragonballLocations: Location[] = [
     nationId: 'nation-dbz-earth',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['città'],
   },
   {
@@ -526,7 +526,7 @@ export const dragonballLocations: Location[] = [
     arcIds: ['arc-dbz-pilaf-saga'],
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['oolong'],
   },
   {
@@ -547,7 +547,7 @@ export const dragonballLocations: Location[] = [
     eventIds: ['evt-dbz-battle-of-gods', 'evt-dbz-resurrection-f'],
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['mr-satan', 'città'],
   },
   {
@@ -566,7 +566,7 @@ export const dragonballLocations: Location[] = [
     nationId: 'nation-dbz-earth',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['famiglia-son'],
   },
   {
@@ -586,7 +586,7 @@ export const dragonballLocations: Location[] = [
     characterIds: ['char-dbz-yamcha'],
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['yamcha'],
   },
   {
@@ -627,7 +627,7 @@ export const dragonballLocations: Location[] = [
     arcIds: ['arc-dbz-pilaf-saga'],
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['banda-del-coniglio'],
   },
   {
@@ -648,7 +648,7 @@ export const dragonballLocations: Location[] = [
     arcIds: ['arc-dbz-pilaf-saga'],
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['pilaf'],
   },
   {
@@ -670,7 +670,7 @@ export const dragonballLocations: Location[] = [
     arcIds: ['arc-dbz-red-ribbon'],
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['red-ribbon', 'esercito'],
   },
   {
@@ -690,7 +690,7 @@ export const dragonballLocations: Location[] = [
     arcIds: ['arc-dbz-red-ribbon'],
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['red-ribbon', 'mercenary-tao'],
   },
   {
@@ -731,7 +731,7 @@ export const dragonballLocations: Location[] = [
     nationId: 'nation-dbz-earth',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['villaggio'],
   },
   {
@@ -751,7 +751,7 @@ export const dragonballLocations: Location[] = [
     characterIds: ['char-dbz-master-roshi'],
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['baba', 'muten-roshi'],
   },
   {
@@ -770,7 +770,7 @@ export const dragonballLocations: Location[] = [
     nationId: 'nation-dbz-earth',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['torneo'],
   },
   {
@@ -789,7 +789,7 @@ export const dragonballLocations: Location[] = [
     nationId: 'nation-dbz-earth',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['città'],
   },
   {
@@ -830,7 +830,7 @@ export const dragonballLocations: Location[] = [
     nationId: 'nation-dbz-earth',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['città', 'yajirobe'],
   },
   {
@@ -849,7 +849,7 @@ export const dragonballLocations: Location[] = [
     nationId: 'nation-dbz-earth',
     importance: 'minor',
     canonStatus: 'uncertain',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['da-verificare'],
   },
   {
@@ -868,7 +868,7 @@ export const dragonballLocations: Location[] = [
     nationId: 'nation-dbz-earth',
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['addestramento'],
   },
   {
@@ -888,7 +888,7 @@ export const dragonballLocations: Location[] = [
     arcIds: ['arc-dbz-red-ribbon'],
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['red-ribbon'],
   },
   {
@@ -907,7 +907,7 @@ export const dragonballLocations: Location[] = [
     nationId: 'nation-dbz-earth',
     importance: 'minor',
     canonStatus: 'anime_only',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['crossover', 'dr-slump'],
   },
   {
@@ -1045,7 +1045,7 @@ export const dragonballLocations: Location[] = [
     arcIds: ['arc-dbz-saiyan-saga'],
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['marker-mappa', 'saiyan'],
   },
   {
@@ -1111,7 +1111,7 @@ export const dragonballLocations: Location[] = [
     arcIds: ['arc-dbz-androids'],
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['marker-mappa', 'androidi'],
   },
   {
@@ -1133,7 +1133,7 @@ export const dragonballLocations: Location[] = [
     arcIds: ['arc-dbz-androids'],
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['marker-mappa', 'androidi'],
   },
   {
@@ -1154,7 +1154,7 @@ export const dragonballLocations: Location[] = [
     arcIds: ['arc-dbz-androids'],
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['marker-mappa', 'androidi'],
   },
   {
@@ -1175,7 +1175,7 @@ export const dragonballLocations: Location[] = [
     arcIds: ['arc-dbz-cell-saga'],
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['marker-mappa', 'cell'],
   },
   {
@@ -1240,7 +1240,7 @@ export const dragonballLocations: Location[] = [
     arcIds: ['arc-dbz-majin-buu'],
     importance: 'minor',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['marker-mappa', 'majin-bu'],
   },
 
@@ -1290,7 +1290,7 @@ export const dragonballLocations: Location[] = [
     arcIds: ['arc-dbz-saiyan-saga'],
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['saiyan', 'pianeta-distrutto'],
   },
   {
@@ -1311,7 +1311,7 @@ export const dragonballLocations: Location[] = [
     arcIds: ['arc-dbz-saiyan-saga', 'arc-dbz-cell-saga'],
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['aldila', 'morte'],
   },
   {
@@ -1374,7 +1374,7 @@ export const dragonballLocations: Location[] = [
     arcIds: ['arc-dbz-majin-buu', 'arc-dbz-goku-black'],
     importance: 'secondary',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['kaioshin'],
   },
   {

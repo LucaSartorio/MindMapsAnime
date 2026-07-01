@@ -106,7 +106,7 @@ export const dragonballFactions: Faction[] = [
     characterIds: ['char-dbz-frieza', 'char-dbz-cui', 'char-dbz-king-cold'],
     arcIds: ['arc-dbz-namek-frieza'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['razza'],
   },
   {
@@ -154,7 +154,7 @@ export const dragonballFactions: Faction[] = [
     characterIds: ['char-dbz-zamasu', 'char-dbz-goku-black'],
     arcIds: ['arc-dbz-goku-black'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['razza', 'divinita'],
   },
   {
@@ -207,7 +207,7 @@ export const dragonballFactions: Faction[] = [
     locationIds: ['loc-dbz-red-ribbon-hq', 'loc-dbz-gero-lab'],
     arcIds: ['arc-dbz-red-ribbon', 'arc-dbz-androids', 'arc-dbz-super-hero'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['esercito', 'villain'],
   },
   {
@@ -242,7 +242,7 @@ export const dragonballFactions: Faction[] = [
     locationIds: ['loc-dbz-babidis-spaceship'],
     arcIds: ['arc-dbz-majin-buu'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['magia', 'villain'],
   },
   {
@@ -259,7 +259,7 @@ export const dragonballFactions: Faction[] = [
     locationIds: ['loc-dbz-tournament-arena'],
     arcIds: ['arc-dbz-tournament-of-power'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['universo-11', 'torneo-del-potere'],
   },
   {
@@ -293,7 +293,7 @@ export const dragonballFactions: Faction[] = [
     characterIds: ['char-dbz-champa', 'char-dbz-vados', 'char-dbz-hit'],
     arcIds: ['arc-dbz-universe-6', 'arc-dbz-tournament-of-power'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['universo-6'],
   },
   {

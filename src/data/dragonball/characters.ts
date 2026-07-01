@@ -595,7 +595,7 @@ export const dragonballCharacters: Character[] = [
     },
     status: 'varies_by_era',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['fusione', 'potara'],
   },
   {
@@ -619,7 +619,7 @@ export const dragonballCharacters: Character[] = [
     },
     status: 'alive',
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['terrestre', 'samurai'],
   },
 ];

@@ -178,7 +178,7 @@ export const dragonballJutsu: Jutsu[] = [
       en: 'An ancient sealing technique that imprisons an enemy inside a container, at great risk to the one performing it.',
     },
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['sigillo'],
   },
   {
@@ -251,7 +251,7 @@ export const dragonballJutsu: Jutsu[] = [
       en: "A divine form taught by Beerus, based on a warrior's pride: power grows the more damage is taken.",
     },
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['stato'],
   },
   {

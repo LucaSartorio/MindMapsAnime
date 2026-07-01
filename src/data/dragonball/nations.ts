@@ -135,7 +135,7 @@ export const dragonballNations: Nation[] = [
     relatedLocationIds: ['loc-dbz-vegeta-planet'],
     relatedArcIds: ['arc-dbz-saiyan-saga'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['saiyan', 'pianeta-distrutto'],
   },
   {
@@ -167,7 +167,7 @@ export const dragonballNations: Nation[] = [
     relatedLocationIds: ['loc-dbz-other-world', 'loc-dbz-kaio-planet', 'loc-dbz-sacred-world-kais'],
     relatedArcIds: ['arc-dbz-saiyan-saga', 'arc-dbz-cell-saga', 'arc-dbz-majin-buu', 'arc-dbz-goku-black'],
     canonStatus: 'canon',
-    referenceStatus: 'needs_verification',
+    referenceStatus: 'verified',
     tags: ['aldila'],
   },
 ];
