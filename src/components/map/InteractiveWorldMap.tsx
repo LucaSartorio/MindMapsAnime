@@ -6,6 +6,7 @@ import {
   ReactFlow,
   ReactFlowProvider,
   useReactFlow,
+  useViewport,
   type Edge,
   type EdgeTypes,
   type Node,
@@ -16,7 +17,8 @@ import type { Location, Route, WorldDataset } from '@/types';
 import { useMapStore, useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText } from '@/utils/localization';
-import { filterLocations } from '@/lib/filters';
+import { selectVisibleLocations } from '@/lib/filters';
+import { clusterLocations } from '@/lib/clusterPins';
 import { worldShowsBoundaryHighlight } from '@/lib/worldMapPrefs';
 import {
   MapNode,
@@ -24,6 +26,7 @@ import {
   type MapNodeData,
   type MapLayerNodeData,
 } from './MapNode';
+import { MapClusterNode, type MapClusterNodeData } from './MapClusterNode';
 import { MapEdge, type MapEdgeData } from './MapEdge';
 import { WorldMapBackground } from './WorldMapBackground';
 import { MapBoundaryOverlay } from './MapBoundaryOverlay';
@@ -32,6 +35,7 @@ import { MapLabelsLayer } from './MapLabelsLayer';
 const NODE_TYPES: NodeTypes = {
   'map-node': MapNode,
   'map-layer': MapLayerNode,
+  'map-cluster': MapClusterNode,
 };
 const EDGE_TYPES: EdgeTypes = { 'map-edge': MapEdge };
 
@@ -62,6 +66,10 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
   const setHoveredBoundary = useMapStore((s) => s.setHoveredBoundary);
   const openLocationModal = useUiStore((s) => s.openLocationModal);
   const { fitView, setCenter, getZoom, fitBounds } = useReactFlow();
+  // Zoom corrente per il clustering. Quantizzato a passi di 0.05 così i cluster
+  // si ricalcolano solo a soglie discrete (non a ogni frame di zoom/pinch).
+  const { zoom } = useViewport();
+  const quantizedZoom = Math.round(zoom * 20) / 20;
 
   const activeLevel = useMemo(
     () =>
@@ -73,17 +81,10 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
   // Locations del livello, filtrate + filtro layer (per importanza: principali /
   // secondari·speciali / minori). La distinzione è sull'`importance` così da
   // valere per ogni mondo (non solo dove i luoghi sono di tipo "village").
-  const visibleLocations = useMemo<Location[]>(() => {
-    const base = dataset.locations.filter(
-      (l) => l.mapLevelId === activeLevel.id,
-    );
-    const filtered = filterLocations(base, filters, dataset);
-    return filtered.filter((l) => {
-      if (l.importance === 'main') return visibleLayers.mainVillages;
-      if (l.importance === 'minor') return visibleLayers.minorVillages;
-      return visibleLayers.specialPlaces; // 'secondary'
-    });
-  }, [dataset, activeLevel.id, filters, visibleLayers]);
+  const visibleLocations = useMemo<Location[]>(
+    () => selectVisibleLocations(dataset, activeLevel.id, filters, visibleLayers),
+    [dataset, activeLevel.id, filters, visibleLayers],
+  );
 
   const route: Route | undefined = useMemo(
     () => dataset.routes.find((r) => r.id === selectedRouteId),
@@ -92,6 +93,19 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
   const highlightedLocationIds = useMemo(
     () => new Set(route?.steps.map((s) => s.locationId) ?? []),
     [route],
+  );
+
+  // Luoghi da tenere sempre come pin singoli (mai dentro un cluster): quello
+  // selezionato e le tappe del percorso attivo (per non rompere gli archi).
+  const keepIds = useMemo(() => {
+    const s = new Set<string>(highlightedLocationIds);
+    if (selectedLocationId) s.add(selectedLocationId);
+    return s;
+  }, [highlightedLocationIds, selectedLocationId]);
+
+  const clusterEntries = useMemo(
+    () => clusterLocations(visibleLocations, quantizedZoom, keepIds),
+    [visibleLocations, quantizedZoom, keepIds],
   );
 
   // Layer nodi (sfondo, confini, labels): dipendono SOLO da livello+dataset,
@@ -161,34 +175,48 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
     ];
   }, [activeLevel, dataset]);
 
-  // Pin location: dipendono da quali luoghi sono visibili, dalla selezione e
-  // dalla locale (label). Ricostruirli al cambio selezione è leggero.
-  const pinNodes = useMemo<Node<MapNodeData>[]>(() => {
-    return visibleLocations.map((loc) => ({
-      id: loc.id,
-      type: 'map-node',
-      position: { x: loc.x, y: loc.y },
-      data: {
-        label: getLocalizedText(loc.localizedName, locale) || loc.name,
-        type: loc.type,
-        importance: loc.importance,
-        selected: loc.id === selectedLocationId,
-        highlighted: highlightedLocationIds.has(loc.id),
-        poneglyph: filters.highlightPoneglyphs && !!loc.poneglyph,
-        hasSubMap: !!loc.subMapLevelId,
-      },
-      draggable: false,
-      selectable: true,
-    }));
+  // Pin location + cluster: derivati dalle voci clusterizzate. I singoli pin
+  // dipendono da selezione/locale; i cluster dal solo zoom quantizzato.
+  const pinNodes = useMemo<Node<MapNodeData | MapClusterNodeData>[]>(() => {
+    return clusterEntries.map((entry) => {
+      if (entry.kind === 'cluster') {
+        const c = entry.cluster;
+        return {
+          id: c.id,
+          type: 'map-cluster',
+          position: { x: c.x, y: c.y },
+          data: { count: c.count, bbox: c.bbox },
+          draggable: false,
+          selectable: false,
+        };
+      }
+      const loc = entry.location;
+      return {
+        id: loc.id,
+        type: 'map-node',
+        position: { x: loc.x, y: loc.y },
+        data: {
+          label: getLocalizedText(loc.localizedName, locale) || loc.name,
+          type: loc.type,
+          importance: loc.importance,
+          selected: loc.id === selectedLocationId,
+          highlighted: highlightedLocationIds.has(loc.id),
+          poneglyph: filters.highlightPoneglyphs && !!loc.poneglyph,
+          hasSubMap: !!loc.subMapLevelId,
+        },
+        draggable: false,
+        selectable: true,
+      };
+    });
   }, [
-    visibleLocations,
+    clusterEntries,
     selectedLocationId,
     highlightedLocationIds,
     filters.highlightPoneglyphs,
     locale,
   ]);
 
-  const nodes = useMemo<Node<MapNodeData | MapLayerNodeData>[]>(
+  const nodes = useMemo<Node<MapNodeData | MapLayerNodeData | MapClusterNodeData>[]>(
     () => [...layerNodes, ...pinNodes],
     [layerNodes, pinNodes],
   );
@@ -283,11 +311,26 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
   function handleNodeClick(_: unknown, node: Node) {
     // ignora layer
     if (node.id.startsWith('__layer-')) return;
+    // Cluster: zoom sul bounding box dei membri → il cluster si "apre".
+    if (node.id.startsWith('__cluster-')) {
+      const { bbox } = node.data as MapClusterNodeData;
+      const pad = 60;
+      fitBounds(
+        {
+          x: bbox.x - pad,
+          y: bbox.y - pad,
+          width: bbox.width + pad * 2,
+          height: bbox.height + pad * 2,
+        },
+        { padding: 0.2, duration: 500 },
+      );
+      return;
+    }
     setSelectedLocation(node.id);
     openLocationModal(node.id);
   }
   function handleNodeDoubleClick(_: unknown, node: Node) {
-    if (node.id.startsWith('__layer-')) return;
+    if (node.id.startsWith('__layer-') || node.id.startsWith('__cluster-')) return;
     const loc = dataset.locations.find((l) => l.id === node.id);
     if (loc?.subMapLevelId) {
       setActiveMapLevel(loc.subMapLevelId);

@@ -1,14 +1,25 @@
-import { useMemo, useRef } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { LocationType, Series, VisibleLayers, WorldDataset } from '@/types';
 import { worldSeriesOptions } from '@/lib/series';
-import { getNationTerm, getPlacesTerm } from '@/lib/worldConfig';
+import {
+  getFactionsTerm,
+  getNationTerm,
+  getPlacesTerm,
+} from '@/lib/worldConfig';
 import { presentLocationTypes } from '@/lib/locationTypes';
 import { Drawer } from '@/components/common/Drawer';
 import { Button } from '@/components/common/Button';
+import { FilterSection } from '@/components/filters/FilterSection';
+import { FilterChip } from '@/components/filters/FilterChip';
+import { FilterSearchField } from '@/components/filters/FilterSearchField';
+import { ToggleRow } from '@/components/filters/ToggleRow';
+import { ActiveFilterBar } from '@/components/filters/ActiveFilterBar';
+import { useFilteredLocations } from '@/lib/mapSelectors';
 import { useMapStore, useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import {
+  getEntityDisplayName,
   getLocalizedText,
   getLocationTypeLabel,
 } from '@/utils/localization';
@@ -17,7 +28,14 @@ interface FiltersDrawerProps {
   dataset: WorldDataset;
 }
 
-/** Drawer filtri tradotto IT/EN. */
+/** Soglia oltre la quale una lista lunga riceve un campo di ricerca interno. */
+const SEARCH_THRESHOLD = 12;
+
+/**
+ * Drawer filtri della mappa (redesign): ricerca globale, riepilogo dei filtri
+ * attivi, sezioni collassabili con conteggio, conteggio risultati live.
+ * IT/EN via i18n. Le associazioni con lo store sono invariate.
+ */
 export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
   const { t } = useTranslation();
   const locale = useLocaleStore((s) => s.locale);
@@ -29,12 +47,15 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
   const visibleLayers = useMapStore((s) => s.visibleLayers);
   const setVisibleLayer = useMapStore((s) => s.setVisibleLayer);
   const resetLayers = useMapStore((s) => s.resetLayers);
+  const resultCount = useFilteredLocations(dataset).length;
 
-  // Mount lazy: il contenuto (centinaia di pill) viene renderizzato solo alla
-  // prima apertura. Il drawer è montato su OGNI pagina del mondo: senza questo
-  // pagheremmo il costo anche per chi non apre mai i filtri (peggio l'INP).
-  // Dopo la prima apertura resta montato, così l'animazione di chiusura
-  // mantiene il contenuto e le riaperture sono istantanee.
+  // Ricerca interna alle liste lunghe.
+  const [charQuery, setCharQuery] = useState('');
+  const [factionQuery, setFactionQuery] = useState('');
+  const [placeQuery, setPlaceQuery] = useState('');
+
+  // Mount lazy: il contenuto (centinaia di chip) è renderizzato solo alla prima
+  // apertura, poi resta montato (riaperture istantanee, animazione fluida).
   const everOpenedRef = useRef(false);
   if (open) everOpenedRef.current = true;
 
@@ -42,9 +63,7 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
     setVisibleLayer(layer, !visibleLayers[layer] as VisibleLayers[K]);
   }
 
-  /** Alcuni mondi (es. One Piece) non hanno confini disegnati: in tal caso il toggle è inutile. */
   const hasBoundaries = (dataset.boundaries?.length ?? 0) > 0;
-  /** Il filtro Poneglyph appare solo se il mondo ne ha (One Piece). */
   const hasPoneglyphs = useMemo(
     () => dataset.locations.some((l) => l.poneglyph),
     [dataset.locations],
@@ -78,6 +97,13 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
         : [...filters.characterIds, id],
     });
   }
+  function toggleFaction(id: string) {
+    setFilters({
+      factionIds: filters.factionIds.includes(id)
+        ? filters.factionIds.filter((x) => x !== id)
+        : [...filters.factionIds, id],
+    });
+  }
   function toggleImportance(i: 'main' | 'secondary' | 'minor') {
     setFilters({
       importance: filters.importance.includes(i)
@@ -85,7 +111,6 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
         : [...filters.importance, i],
     });
   }
-
   function toggleSeries(s: Series) {
     setFilters({
       series: filters.series.includes(s)
@@ -94,7 +119,6 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
     });
   }
 
-  // Solo i tipi di luogo realmente presenti nel mondo attivo.
   const locationTypes = useMemo(
     () => presentLocationTypes(dataset.locations),
     [dataset.locations],
@@ -118,11 +142,52 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
     [dataset.characters],
   );
 
-  // Le "serie" (blocchi narrativi) si applicano solo ai mondi che le usano
-  // (Naruto). Per gli altri la sezione resta nascosta.
+  const sortedFactions = useMemo(
+    () =>
+      dataset.factions
+        .slice()
+        .sort((a, b) =>
+          (getEntityDisplayName(a, locale) || a.name).localeCompare(
+            getEntityDisplayName(b, locale) || b.name,
+          ),
+        ),
+    [dataset.factions, locale],
+  );
+
+  const filteredCharacters = useMemo(() => {
+    const q = charQuery.trim().toLowerCase();
+    if (!q) return sortedCharacters;
+    return sortedCharacters.filter((c) =>
+      (getEntityDisplayName(c, locale) || c.name).toLowerCase().includes(q),
+    );
+  }, [sortedCharacters, charQuery, locale]);
+
+  const filteredFactions = useMemo(() => {
+    const q = factionQuery.trim().toLowerCase();
+    if (!q) return sortedFactions;
+    return sortedFactions.filter((f) =>
+      (getEntityDisplayName(f, locale) || f.name).toLowerCase().includes(q),
+    );
+  }, [sortedFactions, factionQuery, locale]);
+
+  const filteredVillages = useMemo(() => {
+    const q = placeQuery.trim().toLowerCase();
+    if (!q) return villages;
+    return villages.filter((v) =>
+      (getLocalizedText(v.localizedName, locale) || v.name).toLowerCase().includes(q),
+    );
+  }, [villages, placeQuery, locale]);
+
   const seriesOptions = worldSeriesOptions(dataset.world);
   const nationTerm = getNationTerm(dataset.world, locale, t('filters.nation'));
   const placesTerm = getPlacesTerm(dataset.world, locale, t('filters.placesDefault'));
+  const factionsTerm = getFactionsTerm(dataset.world, locale, t('filters.factions'));
+
+  // Quante scelte di ciascuna sezione "villaggio" sono attive (i chip villaggio
+  // filtrano per nazione del villaggio: coerente col comportamento storico).
+  const activeVillageCount = villages.filter(
+    (v) => v.nationId && filters.nationIds.includes(v.nationId),
+  ).length;
 
   return (
     <Drawer
@@ -133,337 +198,356 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
       className="w-[92vw] sm:max-w-sm"
     >
       {everOpenedRef.current && (
-      <div className="h-full flex flex-col">
-        <header className="px-4 py-3 border-b border-ink-700/60 flex items-center justify-between gap-2 shrink-0">
-          <div>
-            <p className="font-mono text-[10px] uppercase tracking-widest text-chakra-300">
-              {dataset.world.title}
-            </p>
-            <h2 className="font-display text-base text-ink-100">
-              {t('filters.title')}
-            </h2>
-          </div>
-          <button
-            type="button"
-            onClick={close}
-            aria-label={t('filters.close')}
-            className="h-8 w-8 grid place-items-center rounded-md text-ink-300 hover:text-white hover:bg-ink-800/70"
-          >
-            ×
-          </button>
-        </header>
-
-        <div className="flex-1 overflow-auto p-4 space-y-5 text-sm">
-          {seriesOptions.length > 0 && (
-            <Section title={t('filters.series')}>
-              <p className="text-[11px] text-ink-400 mb-2">
-                {t('filters.seriesHint')}
+        <div className="flex h-full flex-col">
+          <header className="flex shrink-0 items-center justify-between gap-2 border-b border-ink-700/60 px-4 py-3">
+            <div>
+              <p className="font-mono text-[10px] uppercase tracking-widest text-chakra-300">
+                {dataset.world.title}
               </p>
-              <div className="flex flex-wrap gap-1.5">
-                {seriesOptions.map((s) => (
-                  <Pill
-                    key={s}
-                    active={filters.series.includes(s)}
-                    onClick={() => toggleSeries(s)}
-                    variant={s === 'movies' ? 'ember' : 'chakra'}
-                  >
-                    {t(`filters.series${s.charAt(0).toUpperCase() + s.slice(1)}` as const)}
-                  </Pill>
-                ))}
-              </div>
-            </Section>
-          )}
+              <h2 className="font-display text-base text-ink-100">
+                {t('filters.title')}
+              </h2>
+            </div>
+            <button
+              type="button"
+              onClick={close}
+              aria-label={t('filters.close')}
+              className="grid h-9 w-9 place-items-center rounded-md text-ink-300 transition hover:bg-ink-800/70 hover:text-white"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
+          </header>
 
-          {locationTypes.length > 0 && (
-            <Section title={t('filters.locationType')}>
-              <div className="flex flex-wrap gap-1.5">
-                {locationTypes.map((type) => (
-                  <Pill
-                    key={type}
-                    active={filters.locationTypes.includes(type)}
-                    onClick={() => toggleType(type)}
-                  >
-                    {getLocationTypeLabel(type, locale)}
-                  </Pill>
-                ))}
-              </div>
-            </Section>
-          )}
+          {/* Riepilogo filtri attivi + conteggio risultati */}
+          <div className="shrink-0 border-b border-ink-700/40 px-4 py-3">
+            <ActiveFilterBar dataset={dataset} variant="inline" />
+          </div>
 
-          <Section title={nationTerm}>
-            <ul className="space-y-1.5">
-              {dataset.nations.map((n) => (
-                <li key={n.id}>
-                  <label className="flex items-center gap-2 text-ink-200 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={filters.nationIds.includes(n.id)}
-                      onChange={() => toggleNation(n.id)}
-                      className="accent-chakra-500"
+          <div className="flex-1 space-y-1 overflow-auto px-4 py-2 text-sm">
+            {seriesOptions.length > 0 && (
+              <FilterSection
+                title={t('filters.series')}
+                activeCount={filters.series.length}
+                hint={t('filters.seriesHint')}
+              >
+                <div className="flex flex-wrap gap-1.5">
+                  {seriesOptions.map((s) => (
+                    <FilterChip
+                      key={s}
+                      active={filters.series.includes(s)}
+                      onToggle={() => toggleSeries(s)}
+                      variant={s === 'movies' ? 'ember' : 'accent'}
+                    >
+                      {t(`filters.series${s.charAt(0).toUpperCase() + s.slice(1)}` as const)}
+                    </FilterChip>
+                  ))}
+                </div>
+              </FilterSection>
+            )}
+
+            {locationTypes.length > 0 && (
+              <FilterSection
+                title={t('filters.locationType')}
+                activeCount={filters.locationTypes.length}
+              >
+                <div className="flex flex-wrap gap-1.5">
+                  {locationTypes.map((type) => (
+                    <FilterChip
+                      key={type}
+                      active={filters.locationTypes.includes(type)}
+                      onToggle={() => toggleType(type)}
+                    >
+                      {getLocationTypeLabel(type, locale)}
+                    </FilterChip>
+                  ))}
+                </div>
+              </FilterSection>
+            )}
+
+            <FilterSection title={nationTerm} activeCount={filters.nationIds.length}>
+              <ul className="space-y-0.5">
+                {dataset.nations.map((n) => (
+                  <li key={n.id}>
+                    <label className="flex cursor-pointer items-center gap-2 rounded-md px-1 py-1 text-ink-200 transition hover:bg-ink-800/40">
+                      <input
+                        type="checkbox"
+                        checked={filters.nationIds.includes(n.id)}
+                        onChange={() => toggleNation(n.id)}
+                        className="h-4 w-4 accent-chakra-500"
+                      />
+                      <span
+                        aria-hidden
+                        className="inline-block h-2.5 w-2.5 rounded-full"
+                        style={{ background: n.color ?? '#5b6275' }}
+                      />
+                      {getLocalizedText(n.localizedName, locale) || n.name}
+                    </label>
+                  </li>
+                ))}
+              </ul>
+            </FilterSection>
+
+            {villages.length > 0 && (
+              <FilterSection
+                title={placesTerm}
+                activeCount={activeVillageCount}
+                defaultOpen={activeVillageCount > 0}
+              >
+                {villages.length > SEARCH_THRESHOLD && (
+                  <div className="mb-2">
+                    <FilterSearchField
+                      value={placeQuery}
+                      onChange={setPlaceQuery}
+                      placeholder={t('filters.searchPlaces')}
+                      label={t('filters.searchPlaces')}
+                      clearLabel={t('filters.clearSearch')}
                     />
-                    <span
-                      aria-hidden
-                      className="inline-block w-2.5 h-2.5 rounded-full"
-                      style={{ background: n.color ?? '#5b6275' }}
-                    />
-                    {getLocalizedText(n.localizedName, locale) || n.name}
-                  </label>
-                </li>
-              ))}
-            </ul>
-          </Section>
+                  </div>
+                )}
+                {filteredVillages.length === 0 ? (
+                  <p className="px-1 py-2 text-xs text-ink-400">{t('filters.noMatches')}</p>
+                ) : (
+                  <div className="flex max-h-48 flex-wrap gap-1.5 overflow-auto pr-1">
+                    {filteredVillages.map((v) => (
+                      <FilterChip
+                        key={v.id}
+                        active={!!v.nationId && filters.nationIds.includes(v.nationId)}
+                        onToggle={() => v.nationId && toggleNation(v.nationId)}
+                      >
+                        {getLocalizedText(v.localizedName, locale) || v.name}
+                      </FilterChip>
+                    ))}
+                  </div>
+                )}
+              </FilterSection>
+            )}
 
-          {villages.length > 0 && (
-            <Section title={placesTerm}>
+            <FilterSection
+              title={t('filters.arc')}
+              activeCount={filters.arcIds.length}
+              defaultOpen={filters.arcIds.length > 0}
+            >
               <div className="flex flex-wrap gap-1.5">
-                {villages.map((v) => (
-                  <Pill
-                    key={v.id}
-                    active={filters.nationIds.includes(v.nationId ?? '')}
-                    onClick={() => v.nationId && toggleNation(v.nationId)}
+                {sortedArcs.map((a) => (
+                  <FilterChip
+                    key={a.id}
+                    variant="ember"
+                    active={filters.arcIds.includes(a.id)}
+                    onToggle={() => toggleArc(a.id)}
                   >
-                    {getLocalizedText(v.localizedName, locale) || v.name}
-                  </Pill>
+                    {getLocalizedText(a.localizedName, locale) || a.name}
+                  </FilterChip>
                 ))}
               </div>
-            </Section>
-          )}
+            </FilterSection>
 
-          <Section title={t('filters.arc')}>
-            <div className="flex flex-wrap gap-1.5">
-              {sortedArcs.map((a) => (
-                <Pill
-                  key={a.id}
-                  variant="ember"
-                  active={filters.arcIds.includes(a.id)}
-                  onClick={() => toggleArc(a.id)}
-                >
-                  {getLocalizedText(a.localizedName, locale) || a.name}
-                </Pill>
-              ))}
-            </div>
-          </Section>
-
-          <Section title={t('filters.character')}>
-            <div className="flex flex-wrap gap-1.5 max-h-40 overflow-auto pr-1">
-              {sortedCharacters.map((c) => (
-                <Pill
-                  key={c.id}
-                  active={filters.characterIds.includes(c.id)}
-                  onClick={() => toggleCharacter(c.id)}
-                >
-                  {c.name}
-                </Pill>
-              ))}
-            </div>
-          </Section>
-
-          <Section title={t('filters.importance')}>
-            <div className="flex flex-wrap gap-1.5">
-              {(['main', 'secondary', 'minor'] as const).map((i) => (
-                <Pill
-                  key={i}
-                  variant="ember"
-                  active={filters.importance.includes(i)}
-                  onClick={() => toggleImportance(i)}
-                >
-                  {t(
-                    i === 'main'
-                      ? 'filters.importanceMain'
-                      : i === 'secondary'
-                        ? 'filters.importanceSecondary'
-                        : 'filters.importanceMinor',
-                  )}
-                </Pill>
-              ))}
-            </div>
-          </Section>
-
-          <Section title={t('filters.layersMap')}>
-            <div className="space-y-1.5 text-ink-200">
-              {hasBoundaries && (
-                <CheckRow
-                  checked={visibleLayers.boundaries}
-                  onChange={() => toggleLayer('boundaries')}
-                  label={t('filters.showBoundaries')}
-                />
+            <FilterSection
+              title={t('filters.character')}
+              activeCount={filters.characterIds.length}
+              defaultOpen={filters.characterIds.length > 0}
+            >
+              {sortedCharacters.length > SEARCH_THRESHOLD && (
+                <div className="mb-2">
+                  <FilterSearchField
+                    value={charQuery}
+                    onChange={setCharQuery}
+                    placeholder={t('filters.searchCharacters')}
+                    label={t('filters.searchCharacters')}
+                    clearLabel={t('filters.clearSearch')}
+                  />
+                </div>
               )}
-              <CheckRow
-                checked={visibleLayers.nationLabels}
-                onChange={() => toggleLayer('nationLabels')}
-                label={t('filters.showNationLabels')}
-              />
-              <CheckRow
-                checked={visibleLayers.mainVillages}
-                onChange={() => toggleLayer('mainVillages')}
-                label={t('filters.showMainVillages', { places: placesTerm })}
-              />
-              <CheckRow
-                checked={visibleLayers.minorVillages}
-                onChange={() => toggleLayer('minorVillages')}
-                label={t('filters.showMinorVillages', { places: placesTerm })}
-              />
-              <CheckRow
-                checked={visibleLayers.specialPlaces}
-                onChange={() => toggleLayer('specialPlaces')}
-                label={t('filters.showSpecialPlaces')}
-              />
-              <CheckRow
-                checked={filters.showUnverified}
-                onChange={(v) => setFilters({ showUnverified: v })}
-                label={t('filters.showUnverified')}
-                emberAccent
-              />
-              {hasPoneglyphs && (
-                <CheckRow
-                  checked={filters.highlightPoneglyphs}
-                  onChange={(v) => setFilters({ highlightPoneglyphs: v })}
-                  label={t('filters.highlightPoneglyphs')}
-                  emberAccent
-                />
+              {filteredCharacters.length === 0 ? (
+                <p className="px-1 py-2 text-xs text-ink-400">{t('filters.noMatches')}</p>
+              ) : (
+                <div className="flex max-h-48 flex-wrap gap-1.5 overflow-auto pr-1">
+                  {filteredCharacters.map((c) => (
+                    <FilterChip
+                      key={c.id}
+                      active={filters.characterIds.includes(c.id)}
+                      onToggle={() => toggleCharacter(c.id)}
+                    >
+                      {getEntityDisplayName(c, locale) || c.name}
+                    </FilterChip>
+                  ))}
+                </div>
               )}
-            </div>
-          </Section>
+            </FilterSection>
 
-          <Section title={t('filters.layersStory')}>
-            <div className="space-y-1.5 text-ink-200">
-              <CheckRow
-                checked={filters.showRoutes}
-                onChange={(v) => setFilters({ showRoutes: v })}
-                label={t('filters.showRoutes')}
-              />
-              <CheckRow
-                checked={visibleLayers.routesCanon}
-                onChange={() => toggleLayer('routesCanon')}
-                label={t('filters.routesCanon')}
-              />
-              <CheckRow
-                checked={visibleLayers.routesNonCanon}
-                onChange={() => toggleLayer('routesNonCanon')}
-                label={t('filters.routesNonCanon')}
-              />
-              <CheckRow
-                checked={visibleLayers.eventsCanon}
-                onChange={() => toggleLayer('eventsCanon')}
-                label={t('filters.eventsCanon')}
-              />
-              <CheckRow
-                checked={visibleLayers.eventsNonCanon}
-                onChange={() => toggleLayer('eventsNonCanon')}
-                label={t('filters.eventsNonCanon')}
-              />
-              <CheckRow
-                checked={visibleLayers.arcsCanon}
-                onChange={() => toggleLayer('arcsCanon')}
-                label={t('filters.arcsCanon')}
-              />
-              <CheckRow
-                checked={visibleLayers.arcsNonCanon}
-                onChange={() => toggleLayer('arcsNonCanon')}
-                label={t('filters.arcsNonCanon')}
-              />
-              <CheckRow
-                checked={filters.canonOnly}
-                onChange={(v) => setFilters({ canonOnly: v })}
-                label={t('filters.canonOnly')}
-                emberAccent
-              />
-            </div>
-          </Section>
+            {sortedFactions.length > 0 && (
+              <FilterSection
+                title={factionsTerm}
+                activeCount={filters.factionIds.length}
+                defaultOpen={filters.factionIds.length > 0}
+              >
+                {sortedFactions.length > SEARCH_THRESHOLD && (
+                  <div className="mb-2">
+                    <FilterSearchField
+                      value={factionQuery}
+                      onChange={setFactionQuery}
+                      placeholder={t('filters.searchFactions')}
+                      label={t('filters.searchFactions')}
+                      clearLabel={t('filters.clearSearch')}
+                    />
+                  </div>
+                )}
+                {filteredFactions.length === 0 ? (
+                  <p className="px-1 py-2 text-xs text-ink-400">{t('filters.noMatches')}</p>
+                ) : (
+                  <div className="flex max-h-48 flex-wrap gap-1.5 overflow-auto pr-1">
+                    {filteredFactions.map((f) => (
+                      <FilterChip
+                        key={f.id}
+                        active={filters.factionIds.includes(f.id)}
+                        onToggle={() => toggleFaction(f.id)}
+                      >
+                        {getEntityDisplayName(f, locale) || f.name}
+                      </FilterChip>
+                    ))}
+                  </div>
+                )}
+              </FilterSection>
+            )}
+
+            <FilterSection
+              title={t('filters.importance')}
+              activeCount={filters.importance.length}
+            >
+              <div className="flex flex-wrap gap-1.5">
+                {(['main', 'secondary', 'minor'] as const).map((i) => (
+                  <FilterChip
+                    key={i}
+                    variant="ember"
+                    active={filters.importance.includes(i)}
+                    onToggle={() => toggleImportance(i)}
+                  >
+                    {t(
+                      i === 'main'
+                        ? 'filters.importanceMain'
+                        : i === 'secondary'
+                          ? 'filters.importanceSecondary'
+                          : 'filters.importanceMinor',
+                    )}
+                  </FilterChip>
+                ))}
+              </div>
+            </FilterSection>
+
+            <FilterSection title={t('filters.layersMap')} defaultOpen={false}>
+              <div className="space-y-0.5">
+                {hasBoundaries && (
+                  <ToggleRow
+                    checked={visibleLayers.boundaries}
+                    onChange={() => toggleLayer('boundaries')}
+                    label={t('filters.showBoundaries')}
+                  />
+                )}
+                <ToggleRow
+                  checked={visibleLayers.nationLabels}
+                  onChange={() => toggleLayer('nationLabels')}
+                  label={t('filters.showNationLabels')}
+                />
+                <ToggleRow
+                  checked={visibleLayers.mainVillages}
+                  onChange={() => toggleLayer('mainVillages')}
+                  label={t('filters.showMainVillages', { places: placesTerm })}
+                />
+                <ToggleRow
+                  checked={visibleLayers.minorVillages}
+                  onChange={() => toggleLayer('minorVillages')}
+                  label={t('filters.showMinorVillages', { places: placesTerm })}
+                />
+                <ToggleRow
+                  checked={visibleLayers.specialPlaces}
+                  onChange={() => toggleLayer('specialPlaces')}
+                  label={t('filters.showSpecialPlaces')}
+                />
+                <ToggleRow
+                  checked={filters.showUnverified}
+                  onChange={(v) => setFilters({ showUnverified: v })}
+                  label={t('filters.showUnverified')}
+                  accent="ember"
+                />
+                {hasPoneglyphs && (
+                  <ToggleRow
+                    checked={filters.highlightPoneglyphs}
+                    onChange={(v) => setFilters({ highlightPoneglyphs: v })}
+                    label={t('filters.highlightPoneglyphs')}
+                    accent="ember"
+                  />
+                )}
+              </div>
+            </FilterSection>
+
+            <FilterSection title={t('filters.layersStory')} defaultOpen={false}>
+              <div className="space-y-0.5">
+                <ToggleRow
+                  checked={filters.showRoutes}
+                  onChange={(v) => setFilters({ showRoutes: v })}
+                  label={t('filters.showRoutes')}
+                />
+                <ToggleRow
+                  checked={visibleLayers.routesCanon}
+                  onChange={() => toggleLayer('routesCanon')}
+                  label={t('filters.routesCanon')}
+                />
+                <ToggleRow
+                  checked={visibleLayers.routesNonCanon}
+                  onChange={() => toggleLayer('routesNonCanon')}
+                  label={t('filters.routesNonCanon')}
+                />
+                <ToggleRow
+                  checked={visibleLayers.eventsCanon}
+                  onChange={() => toggleLayer('eventsCanon')}
+                  label={t('filters.eventsCanon')}
+                />
+                <ToggleRow
+                  checked={visibleLayers.eventsNonCanon}
+                  onChange={() => toggleLayer('eventsNonCanon')}
+                  label={t('filters.eventsNonCanon')}
+                />
+                <ToggleRow
+                  checked={visibleLayers.arcsCanon}
+                  onChange={() => toggleLayer('arcsCanon')}
+                  label={t('filters.arcsCanon')}
+                />
+                <ToggleRow
+                  checked={visibleLayers.arcsNonCanon}
+                  onChange={() => toggleLayer('arcsNonCanon')}
+                  label={t('filters.arcsNonCanon')}
+                />
+                <ToggleRow
+                  checked={filters.canonOnly}
+                  onChange={(v) => setFilters({ canonOnly: v })}
+                  label={t('filters.canonOnly')}
+                  accent="ember"
+                />
+              </div>
+            </FilterSection>
+          </div>
+
+          <footer className="flex shrink-0 items-center gap-2 border-t border-ink-700/60 px-4 py-3">
+            <span className="mr-auto text-xs text-ink-400" aria-live="polite">
+              {t('filters.resultsCount', { count: resultCount })}
+            </span>
+            <Button
+              variant="ghost"
+              onClick={() => {
+                resetFilters();
+                resetLayers();
+              }}
+            >
+              {t('filters.reset')}
+            </Button>
+            <Button variant="primary" onClick={close}>
+              {t('filters.apply')}
+            </Button>
+          </footer>
         </div>
-
-        <footer className="px-4 py-3 border-t border-ink-700/60 shrink-0 flex gap-2">
-          <Button
-            variant="ghost"
-            onClick={() => {
-              resetFilters();
-              resetLayers();
-            }}
-            className="flex-1"
-          >
-            {t('filters.reset')}
-          </Button>
-          <Button variant="primary" onClick={close} className="flex-1">
-            {t('filters.apply')}
-          </Button>
-        </footer>
-      </div>
       )}
     </Drawer>
-  );
-}
-
-function Section({
-  title,
-  children,
-}: {
-  title: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <section>
-      <h3 className="text-xs uppercase tracking-widest text-ink-400 font-mono mb-2">
-        {title}
-      </h3>
-      {children}
-    </section>
-  );
-}
-
-function Pill({
-  active,
-  onClick,
-  children,
-  variant = 'chakra',
-}: {
-  active: boolean;
-  onClick: () => void;
-  children: React.ReactNode;
-  variant?: 'chakra' | 'ember';
-}) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      aria-pressed={active}
-      className={
-        'px-2 py-0.5 rounded-full text-[11px] border transition ' +
-        (active
-          ? variant === 'ember'
-            ? 'bg-ember-500 text-white border-ember-300'
-            : 'bg-chakra-600 text-white border-chakra-400'
-          : `border-ink-600/60 text-ink-200 ${
-              variant === 'ember'
-                ? 'hover:border-ember-500/50'
-                : 'hover:border-chakra-500/50'
-            }`)
-      }
-    >
-      {children}
-    </button>
-  );
-}
-
-function CheckRow({
-  checked,
-  onChange,
-  label,
-  emberAccent,
-}: {
-  checked: boolean;
-  onChange: (v: boolean) => void;
-  label: string;
-  emberAccent?: boolean;
-}) {
-  return (
-    <label className="flex items-center gap-2 cursor-pointer">
-      <input
-        type="checkbox"
-        checked={checked}
-        onChange={(e) => onChange(e.target.checked)}
-        className={emberAccent ? 'accent-ember-500' : 'accent-chakra-500'}
-      />
-      {label}
-    </label>
   );
 }

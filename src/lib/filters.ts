@@ -6,6 +6,7 @@ import type {
   MapFilters,
   Team,
   TimelineEvent,
+  VisibleLayers,
   WorldDataset,
 } from '@/types';
 import { getLocalizedText } from '@/utils/localization';
@@ -98,6 +99,34 @@ export function filterLocations(
       }
     }
     return true;
+  });
+}
+
+/**
+ * Luoghi realmente visibili sulla mappa per un dato livello: applica sia i
+ * filtri (`filterLocations`) sia il gating dei layer per importanza
+ * (principali / minori / secondari·speciali).
+ *
+ * Sorgente unica di verità condivisa tra il canvas (`InteractiveWorldMap`) e i
+ * consumatori che devono contare/mostrare i risultati (barra filtri attivi,
+ * footer del drawer). Così conteggio e pin non divergono mai.
+ */
+export function selectVisibleLocations(
+  dataset: WorldDataset,
+  activeMapLevelId: string | null,
+  filters: MapFilters,
+  layers: VisibleLayers,
+): Location[] {
+  const activeLevel =
+    dataset.mapLevels.find((l) => l.id === activeMapLevelId) ??
+    dataset.mapLevels[0];
+  if (!activeLevel) return [];
+  const base = dataset.locations.filter((l) => l.mapLevelId === activeLevel.id);
+  const filtered = filterLocations(base, filters, dataset);
+  return filtered.filter((l) => {
+    if (l.importance === 'main') return layers.mainVillages;
+    if (l.importance === 'minor') return layers.minorVillages;
+    return layers.specialPlaces; // 'secondary'
   });
 }
 

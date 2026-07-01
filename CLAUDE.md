@@ -92,7 +92,15 @@ Everything that varies per work is centralized in `AnimeWorld.config` (`WorldCon
 - **Non-interactive "layer" nodes** (`MapLayerNode`) at fixed `(0,0)` with `pointer-events: none`
   and negative `zIndex`: background image, boundary overlay, labels. Layer node ids are prefixed
   `__layer-` and ignored by click handlers.
-- **One interactive pin node** (`MapNode`) per visible location.
+- **One interactive pin node** (`MapNode`) per visible location. Pins are tinted by
+  category via `LOCATION_TYPE_COLOR` (`src/lib/locationTypes.ts`) — colour is never the only
+  cue (the type icon + label stay), and the selected/highlighted/poneglyph states override it.
+  The floating legend shows the same per-type colour swatches.
+- **Cluster nodes** (`MapClusterNode`): when many pins crowd together, `clusterLocations`
+  (`src/lib/clusterPins.ts`) merges them into a counted badge. It's grid clustering in **world
+  space** (cell = `targetPx / zoom`, quantized), so it only recomputes on zoom, not pan; the
+  selected pin and active-route steps are kept unclustered so schede/edges never break. Clicking a
+  cluster `fitBounds` to its members (it "opens").
 
 `WorldMapBackground` renders the map level's `backgroundAssetId` as an `<img>` when the asset has a
 `url`, otherwise falls back to locally-generated SVG placeholders. Boundaries (`MapBoundaryOverlay` /
@@ -101,6 +109,33 @@ worlds use a fan-made map that already draws its own borders, so `src/lib/worldM
 (`worldShowsBoundaryHighlight`) disables the highlight overlay for them (e.g. HxH) while keeping pins
 clickable. Clicking a pin opens its location modal; double-clicking a pin with `subMapLevelId` drills
 into the sub-map.
+
+### Filters UX & design-system primitives (AniMapVerse redesign)
+The map-filters experience is built from small, reusable, accessible primitives in
+`src/components/filters/` — reuse these instead of hand-rolling chips/toggles/sections:
+- `FilterChip` — toggle pill with `aria-pressed` (state is never colour-only), optional count.
+- `FilterSection` — collapsible group (`<button aria-expanded aria-controls>`) with an active-count badge.
+- `FilterSearchField` — labelled `type="search"` used to filter long option lists in place
+  (`SEARCH_THRESHOLD = 12` in `FiltersDrawer`).
+- `ToggleRow` — accessible `role="switch"` row (used for map/story layer toggles).
+- `ActiveFilterBar` — removable summary of active filters + live result count (`aria-live`), in two
+  variants: `floating` (over the map in `WorldLayout`, hidden when no filters) and `inline` (top of
+  `FiltersDrawer`). Its tokens come from `useActiveFilterTokens(dataset)`, which localizes every
+  active value and exposes a per-token `remove()`.
+
+`FiltersDrawer` composes these into grouped, collapsible sections (Series, Location type, Nation,
+Places, Arcs, Characters, **Factions/Clans**, Importance, Map/Story layers) and preserves the exact
+Zustand wiring (`setFilters`, `resetFilters`, `setVisibleLayer`, `resetLayers`).
+
+**Result count = single source of truth**: `selectVisibleLocations(dataset, levelId, filters, layers)`
+in `src/lib/filters.ts` applies filters + per-importance layer gating; the map canvas and the
+`useFilteredLocations(dataset)` hook (`src/lib/mapSelectors.ts`, used by the count/summary) both go
+through it, so the number shown never diverges from the pins rendered.
+
+Design tokens live in `tailwind.config.js` (`shadow-panel/pop/focus`, `animate-fadeIn/popIn`) and
+reusable classes in `src/styles/globals.css` under `@layer components` (`.field`, `.count-badge`,
+`.active-chip`). The existing `ink/chakra/ember/sharingan/scroll` palette, `.panel`, `.chip`, and
+`.btn-*` classes are unchanged — new tokens are additive.
 
 ### Coordinate system (important)
 Each world has its OWN viewBox plane equal to its world-map `MapLevel.width`/`height`. All
@@ -113,6 +148,15 @@ For Naruto the reference PNG is 990 × 579 px, so convert: `flowX = px_x / 990 *
 `flowY = px_y / 579 * 882.2204`. Sub-maps have their own width/height. If you replace a map image,
 keep the same viewBox or all pins break. The PNG-reading scripts (`find-red-dots`, `extract-boundaries`,
 via `pngjs`) emit coordinates already converted to the flow plane — paste their output into the data.
+
+### Detail schede as a docked panel
+`src/components/common/Modal.tsx` is the single shell behind every detail scheda (dispatched by
+`ModalRoot` from `useUiStore.activeModal`). It defaults to `placement="docked"`: a right-anchored
+side panel on desktop / bottom sheet on mobile, so opening a scheda **doesn't cover the map** (the
+selected pin stays highlighted behind it). `placement="center"` restores the classic centered card.
+Content components are untouched — the presentation switch is entirely inside `Modal`. Opening a
+location scheda syncs `selectedLocation` (in `LocationDetailsModal`) so the map re-centres even when
+reached via a cross-link.
 
 ### State (Zustand, `src/store/`)
 - `useWorldStore` — active world + dataset.

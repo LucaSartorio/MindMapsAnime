@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
@@ -46,7 +46,14 @@ export function LocationDetailsModal({
   const openRoute = useUiStore((s) => s.openRouteModal);
   const setRoute = useMapStore((s) => s.setSelectedRoute);
   const setActiveMapLevel = useMapStore((s) => s.setActiveMapLevel);
+  const setSelectedLocation = useMapStore((s) => s.setSelectedLocation);
   const setTimeline = useUiStore((s) => s.setTimeline);
+
+  // La scheda è ancorata a lato: sincronizziamo la selezione così la mappa
+  // dietro centra/evidenzia il luogo (anche se aperto da un cross-link).
+  useEffect(() => {
+    if (location) setSelectedLocation(location.id);
+  }, [location, setSelectedLocation]);
   const navigate = useNavigate();
   const [lightbox, setLightbox] = useState<
     null | { url?: string; entityId?: string; name: string }

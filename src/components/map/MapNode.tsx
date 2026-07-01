@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { Handle, Position, type NodeProps } from '@xyflow/react';
 import { cn } from '@/lib/cn';
-import { LOCATION_TYPE_ICON } from '@/lib/locationTypes';
+import { LOCATION_TYPE_COLOR, LOCATION_TYPE_ICON } from '@/lib/locationTypes';
 import type { Importance, LocationType } from '@/types';
 
 export interface MapNodeData {
@@ -42,6 +42,10 @@ function MapNodeBase({ data }: NodeProps) {
   // con il puntino rosso della mappa — trasliamo la riga di mezza altezza e di
   // mezzo pallino in orizzontale.
   const dotRadius = IMPORTANCE_DOT_RADIUS[d.importance];
+  // Colore di categoria del marker. Gli stati speciali (poneglyph / selezionato
+  // / evidenziato) hanno la precedenza e usano le classi dedicate qui sotto.
+  const categoryColor = LOCATION_TYPE_COLOR[d.type];
+  const special = !!d.poneglyph || !!d.selected || !!d.highlighted;
   return (
     <div
       className={cn(
@@ -72,8 +76,9 @@ function MapNodeBase({ data }: NodeProps) {
               ? 'bg-ember-400 ring-ember-200 shadow-ember'
               : d.highlighted
                 ? 'bg-ember-500 ring-ember-300/70'
-                : 'bg-chakra-400 ring-chakra-200/40 group-hover:ring-chakra-200',
+                : 'ring-white/25 group-hover:ring-white/50',
         )}
+        style={special ? undefined : { backgroundColor: categoryColor }}
         aria-hidden
       />
       <span
@@ -89,7 +94,11 @@ function MapNodeBase({ data }: NodeProps) {
                 : 'bg-ink-900/80 border-ink-600/60 text-ink-100 group-hover:border-chakra-500/60',
         )}
       >
-        <span className="mr-1 text-chakra-300" aria-hidden>
+        <span
+          className={cn('mr-1', special && 'text-current')}
+          style={special ? undefined : { color: categoryColor }}
+          aria-hidden
+        >
           {LOCATION_TYPE_ICON[d.type]}
         </span>
         {d.label}

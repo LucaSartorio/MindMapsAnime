@@ -25,13 +25,28 @@ interface ModalProps {
    * riflette la modale aperta (deep-link), quindi è sempre condivisibile.
    */
   shareable?: boolean;
+  /**
+   * `docked` (default) = pannello ancorato a destra su desktop / bottom-sheet su
+   * mobile: la scheda non copre la mappa, così non si perde il contesto.
+   * `center` = card centrata classica (per contesti non-mappa).
+   */
+  placement?: 'docked' | 'center';
 }
 
-const SIZE_MAP: Record<NonNullable<ModalProps['size']>, string> = {
+/** Larghezza della card centrata (fallback `placement="center"`). */
+const CENTER_SIZE: Record<NonNullable<ModalProps['size']>, string> = {
   sm: 'max-w-md',
   md: 'max-w-xl',
   lg: 'max-w-2xl',
   xl: 'max-w-3xl',
+};
+
+/** Larghezza del pannello ancorato su desktop (mobile è sempre full-width). */
+const DOCK_WIDTH: Record<NonNullable<ModalProps['size']>, string> = {
+  sm: 'sm:w-[23rem]',
+  md: 'sm:w-[27rem]',
+  lg: 'sm:w-[32rem]',
+  xl: 'sm:w-[36rem]',
 };
 
 /**
@@ -53,6 +68,7 @@ export function Modal({
   size = 'lg',
   footer,
   shareable = true,
+  placement = 'docked',
 }: ModalProps) {
   const { t } = useTranslation();
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -106,25 +122,44 @@ export function Modal({
 
   if (!open) return null;
 
+  const docked = placement === 'docked';
+
   return (
     <div
       role="dialog"
       aria-modal="true"
       aria-label={title}
-      className="fixed inset-0 z-[60] flex items-end sm:items-center justify-center p-0 sm:p-4"
+      className={cn(
+        'fixed inset-0 z-[60] flex',
+        docked
+          ? 'items-end justify-center sm:items-stretch sm:justify-end'
+          : 'items-end justify-center sm:items-center p-0 sm:p-4',
+      )}
     >
       <div
         aria-hidden
         onClick={onClose}
-        className="absolute inset-0 bg-black/55 backdrop-blur-[2px] animate-[fadeIn_120ms_ease-out]"
+        className={cn(
+          'absolute inset-0 animate-[fadeIn_120ms_ease-out] bg-black/55 backdrop-blur-[2px]',
+          // Su desktop il pannello ancorato lascia intravedere la mappa: scrim
+          // più leggero e senza blur.
+          docked && 'sm:bg-black/25 sm:backdrop-blur-0',
+        )}
       />
       <div
         ref={dialogRef}
         className={cn(
-          'panel relative z-10 w-full flex flex-col max-h-[92dvh] sm:max-h-[85dvh]',
-          'rounded-t-2xl sm:rounded-2xl',
-          SIZE_MAP[size],
-          'shadow-2xl',
+          'panel relative z-10 flex w-full flex-col shadow-2xl',
+          docked
+            ? cn(
+                'max-h-[92dvh] rounded-t-2xl animate-slideUp',
+                'sm:h-full sm:max-h-none sm:rounded-none sm:rounded-l-2xl sm:border-l sm:animate-slideInRight',
+                DOCK_WIDTH[size],
+              )
+            : cn(
+                'max-h-[92dvh] rounded-t-2xl animate-slideUp sm:max-h-[85dvh] sm:rounded-2xl sm:animate-popIn',
+                CENTER_SIZE[size],
+              ),
           className,
         )}
       >
