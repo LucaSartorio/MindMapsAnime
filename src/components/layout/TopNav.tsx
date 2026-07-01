@@ -79,6 +79,12 @@ export function TopNav() {
         e.preventDefault();
         setSearchOpen(true);
       }
+      // ⌘K / Ctrl+K: apre la ricerca da qualsiasi punto del mondo (funziona
+      // anche mentre si è dentro un input, come nei palette da tastiera).
+      if ((e.metaKey || e.ctrlKey) && (e.key === 'k' || e.key === 'K')) {
+        e.preventDefault();
+        setSearchOpen(true);
+      }
       if (e.key === 'Escape') setSearchOpen(false);
     }
     document.addEventListener('keydown', onKey);

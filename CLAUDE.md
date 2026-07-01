@@ -158,6 +158,21 @@ Content components are untouched — the presentation switch is entirely inside 
 location scheda syncs `selectedLocation` (in `LocationDetailsModal`) so the map re-centres even when
 reached via a cross-link.
 
+### Search & keyboard access (⌘K)
+`GlobalSearchDropdown` (mounted in `TopNav`, per-world) is the keyboard entry point to every
+entity: open with **⌘K / Ctrl+K** or `/`, type, then navigate results with ↑/↓ (Home/End), open with
+Enter, close with Esc. It's a WAI-ARIA combobox — the input carries `aria-activedescendant` and each
+`SearchResults` option has a stable id + `aria-selected`, and the active option scrolls into view.
+Selecting a result opens the matching scheda and centres the map (for geolocated kinds). Reaching any
+of the 80+ pins by keyboard goes through search rather than a Tab-trap over every marker.
+
+### Focus management (a11y)
+`Modal` and `Drawer` both trap Tab, close on Esc, and **restore focus to the trigger** on close
+(WCAG 2.4.3). The closed `Drawer` is marked `inert` so its off-screen controls leave the tab order
+and the a11y tree (prevents tabbing into a hidden panel / `aria-hidden-focus`). Verify with
+`npm run audit:a11y` (axe-core, WCAG 2.2 AA) — start `npm run preview` first; the scenario list in
+`scripts/a11y-audit.mjs` covers the map, filters drawer, docked schede and search overlay.
+
 ### State (Zustand, `src/store/`)
 - `useWorldStore` — active world + dataset.
 - `useMapStore` — active map level, selected location/route, `filters` (`MapFilters`),

@@ -47,6 +47,7 @@ const scenarios = [
   { name: 'cookie-policy', go: async (p) => { await p.goto(BASE + '/cookie-policy'); await accept(p, /accetta tutti|accept all/i); } },
   { name: 'supporta', go: async (p) => { await p.goto(BASE + '/supporta'); await accept(p, /accetta tutti|accept all/i); } },
   { name: 'map (naruto)', go: async (p) => { await p.goto(BASE + '/worlds/naruto'); await p.waitForTimeout(700); await accept(p, /accetta tutti|accept all/i); await accept(p, /start exploring|inizia|esplora/i); await p.waitForTimeout(400); } },
+  { name: 'filters drawer', go: async (p) => { await p.goto(BASE + '/worlds/naruto'); await p.waitForTimeout(700); await accept(p, /accetta tutti|accept all/i); await accept(p, /start exploring|inizia|esplora/i); await p.getByRole('button', { name: /apri filtri mappa|open map filters/i }).first().click().catch(()=>{}); await p.waitForTimeout(400); const chip = p.locator('aside[role="dialog"] button[aria-pressed="false"]'); if (await chip.count()) await chip.first().click().catch(()=>{}); await p.waitForTimeout(300); } },
   { name: 'characters', go: async (p) => { await p.goto(BASE + '/worlds/naruto/characters'); await accept(p, /accetta tutti|accept all/i); await p.waitForTimeout(400); } },
   { name: 'clans', go: async (p) => { await p.goto(BASE + '/worlds/onepiece/clans'); await accept(p, /accetta tutti|accept all/i); await p.waitForTimeout(400); } },
   { name: 'jutsu', go: async (p) => { await p.goto(BASE + '/worlds/onepiece/jutsu'); await accept(p, /accetta tutti|accept all/i); await p.waitForTimeout(400); } },

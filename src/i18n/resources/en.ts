@@ -205,7 +205,8 @@ export const en = {
   search: {
     placeholder: 'Search in {{world}}…',
     label: 'Search in world {{world}}',
-    kbHint: 'Press / to search',
+    kbHint: 'Press ⌘K (or /) to search',
+    navHint: '↑↓ navigate · ↵ open · esc close',
     emptyTitle: 'No results',
     emptyDescription: 'Try a different term.',
     kinds: {
