@@ -5,7 +5,11 @@ import { FloatingPanel } from '@/components/common/FloatingPanel';
 import { useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocationTypeLabel } from '@/utils/localization';
-import { LOCATION_TYPE_ICON, presentLocationTypes } from '@/lib/locationTypes';
+import {
+  LOCATION_TYPE_COLOR,
+  LOCATION_TYPE_ICON,
+  presentLocationTypes,
+} from '@/lib/locationTypes';
 
 interface MapLegendFloatingProps {
   dataset: WorldDataset;
@@ -46,10 +50,17 @@ export function MapLegendFloating({ dataset }: MapLegendFloatingProps) {
       <div className="p-3 text-[11px] text-ink-200 space-y-2">
         <ul className="space-y-1">
           {types.map((type) => (
-            <li key={type}>
-              <span className="text-chakra-300 mr-2 inline-block w-4 text-center">
+            <li key={type} className="flex items-center gap-2">
+              <span
+                aria-hidden
+                className="inline-grid h-4 w-4 place-items-center rounded-full text-[10px]"
+                style={{
+                  color: LOCATION_TYPE_COLOR[type],
+                  boxShadow: `inset 0 0 0 1.5px ${LOCATION_TYPE_COLOR[type]}`,
+                }}
+              >
                 {LOCATION_TYPE_ICON[type]}
-              </span>{' '}
+              </span>
               {getLocationTypeLabel(type, locale)}
             </li>
           ))}

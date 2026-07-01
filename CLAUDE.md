@@ -92,7 +92,15 @@ Everything that varies per work is centralized in `AnimeWorld.config` (`WorldCon
 - **Non-interactive "layer" nodes** (`MapLayerNode`) at fixed `(0,0)` with `pointer-events: none`
   and negative `zIndex`: background image, boundary overlay, labels. Layer node ids are prefixed
   `__layer-` and ignored by click handlers.
-- **One interactive pin node** (`MapNode`) per visible location.
+- **One interactive pin node** (`MapNode`) per visible location. Pins are tinted by
+  category via `LOCATION_TYPE_COLOR` (`src/lib/locationTypes.ts`) — colour is never the only
+  cue (the type icon + label stay), and the selected/highlighted/poneglyph states override it.
+  The floating legend shows the same per-type colour swatches.
+- **Cluster nodes** (`MapClusterNode`): when many pins crowd together, `clusterLocations`
+  (`src/lib/clusterPins.ts`) merges them into a counted badge. It's grid clustering in **world
+  space** (cell = `targetPx / zoom`, quantized), so it only recomputes on zoom, not pan; the
+  selected pin and active-route steps are kept unclustered so schede/edges never break. Clicking a
+  cluster `fitBounds` to its members (it "opens").
 
 `WorldMapBackground` renders the map level's `backgroundAssetId` as an `<img>` when the asset has a
 `url`, otherwise falls back to locally-generated SVG placeholders. Boundaries (`MapBoundaryOverlay` /
@@ -140,6 +148,15 @@ For Naruto the reference PNG is 990 × 579 px, so convert: `flowX = px_x / 990 *
 `flowY = px_y / 579 * 882.2204`. Sub-maps have their own width/height. If you replace a map image,
 keep the same viewBox or all pins break. The PNG-reading scripts (`find-red-dots`, `extract-boundaries`,
 via `pngjs`) emit coordinates already converted to the flow plane — paste their output into the data.
+
+### Detail schede as a docked panel
+`src/components/common/Modal.tsx` is the single shell behind every detail scheda (dispatched by
+`ModalRoot` from `useUiStore.activeModal`). It defaults to `placement="docked"`: a right-anchored
+side panel on desktop / bottom sheet on mobile, so opening a scheda **doesn't cover the map** (the
+selected pin stays highlighted behind it). `placement="center"` restores the classic centered card.
+Content components are untouched — the presentation switch is entirely inside `Modal`. Opening a
+location scheda syncs `selectedLocation` (in `LocationDetailsModal`) so the map re-centres even when
+reached via a cross-link.
 
 ### State (Zustand, `src/store/`)
 - `useWorldStore` — active world + dataset.

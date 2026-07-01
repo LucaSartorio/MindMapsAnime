@@ -79,6 +79,9 @@ export default {
         // prefers-reduced-motion via la regola globale in globals.css).
         fadeIn: 'fadeIn 0.18s ease-out both',
         popIn: 'popIn 0.16s ease-out both',
+        // Entrata dei pannelli scheda: bottom-sheet su mobile, side-panel su desktop.
+        slideUp: 'slideUp 0.22s cubic-bezier(0.22,1,0.36,1) both',
+        slideInRight: 'slideInRight 0.24s cubic-bezier(0.22,1,0.36,1) both',
       },
       keyframes: {
         pulseSoft: {
@@ -96,6 +99,14 @@ export default {
         popIn: {
           from: { opacity: '0', transform: 'translateY(4px) scale(0.98)' },
           to: { opacity: '1', transform: 'translateY(0) scale(1)' },
+        },
+        slideUp: {
+          from: { opacity: '0', transform: 'translateY(100%)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        slideInRight: {
+          from: { opacity: '0', transform: 'translateX(24px)' },
+          to: { opacity: '1', transform: 'translateX(0)' },
         },
       },
     },
