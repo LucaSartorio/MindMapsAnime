@@ -9,6 +9,7 @@ import { MapLevelSwitcher } from '@/components/map/MapLevelSwitcher';
 import { MapControls } from '@/components/map/MapControls';
 import { MapLegendFloating } from '@/components/map/MapLegendFloating';
 import { RoutesFloatingPanel } from '@/components/map/RoutesFloatingPanel';
+import { ActiveFilterBar } from '@/components/filters/ActiveFilterBar';
 import { TimelineBottomSheet } from '@/components/timeline/TimelineBottomSheet';
 import { IconButton } from '@/components/common/IconButton';
 import { OnboardingOverlay } from '@/components/onboarding/OnboardingOverlay';
@@ -137,6 +138,12 @@ export function WorldLayout({
               </IconButton>
               <MapControls />
             </div>
+          </div>
+
+          {/* Barra dei filtri attivi: appare solo quando c'è almeno un filtro,
+              così di default non copre la mappa. */}
+          <div className="flex">
+            <ActiveFilterBar dataset={dataset} variant="floating" />
           </div>
 
           {/* Spacer */}

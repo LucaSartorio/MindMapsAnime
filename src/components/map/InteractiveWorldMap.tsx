@@ -16,7 +16,7 @@ import type { Location, Route, WorldDataset } from '@/types';
 import { useMapStore, useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText } from '@/utils/localization';
-import { filterLocations } from '@/lib/filters';
+import { selectVisibleLocations } from '@/lib/filters';
 import { worldShowsBoundaryHighlight } from '@/lib/worldMapPrefs';
 import {
   MapNode,
@@ -73,17 +73,10 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
   // Locations del livello, filtrate + filtro layer (per importanza: principali /
   // secondari·speciali / minori). La distinzione è sull'`importance` così da
   // valere per ogni mondo (non solo dove i luoghi sono di tipo "village").
-  const visibleLocations = useMemo<Location[]>(() => {
-    const base = dataset.locations.filter(
-      (l) => l.mapLevelId === activeLevel.id,
-    );
-    const filtered = filterLocations(base, filters, dataset);
-    return filtered.filter((l) => {
-      if (l.importance === 'main') return visibleLayers.mainVillages;
-      if (l.importance === 'minor') return visibleLayers.minorVillages;
-      return visibleLayers.specialPlaces; // 'secondary'
-    });
-  }, [dataset, activeLevel.id, filters, visibleLayers]);
+  const visibleLocations = useMemo<Location[]>(
+    () => selectVisibleLocations(dataset, activeLevel.id, filters, visibleLayers),
+    [dataset, activeLevel.id, filters, visibleLayers],
+  );
 
   const route: Route | undefined = useMemo(
     () => dataset.routes.find((r) => r.id === selectedRouteId),

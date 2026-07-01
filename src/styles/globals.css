@@ -142,6 +142,31 @@ body {
       linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
     background-size: 48px 48px;
   }
+
+  /* ---- Redesign AniMapVerse · primitive del design system ---- */
+
+  /* Campo di input/ricerca coerente (filtri, ricerca opzioni). Il focus ring
+     globale (*:focus-visible) fornisce già l'anello AA. */
+  .field {
+    @apply w-full rounded-lg border border-ink-600/60 bg-ink-950/50 px-3 py-2 text-sm text-ink-100 placeholder:text-ink-400 outline-none transition focus:border-chakra-500/70;
+  }
+
+  /* Badge numerico compatto (conteggio filtri attivi / risultati). */
+  .count-badge {
+    @apply inline-flex min-w-[1.25rem] items-center justify-center rounded-full bg-chakra-500/20 px-1.5 text-[11px] font-semibold leading-5 text-chakra-100 tabular-nums;
+  }
+  .count-badge-ember {
+    @apply count-badge bg-ember-500/20 text-ember-100;
+  }
+
+  /* Chip filtro attivo rimovibile (barra "filtri attivi" sopra la mappa e nel
+     drawer). Bersaglio ≥ 28px, testo + pulsante di rimozione. */
+  .active-chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-chakra-500/40 bg-chakra-900/50 py-1 pl-2.5 pr-1 text-xs font-medium text-chakra-50 backdrop-blur-sm;
+  }
+  .active-chip-remove {
+    @apply grid h-5 w-5 place-items-center rounded-full text-chakra-200 transition hover:bg-chakra-500/30 hover:text-white;
+  }
 }
 
 /* Override leggero per React Flow */

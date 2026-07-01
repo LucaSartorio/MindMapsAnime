@@ -102,6 +102,33 @@ worlds use a fan-made map that already draws its own borders, so `src/lib/worldM
 clickable. Clicking a pin opens its location modal; double-clicking a pin with `subMapLevelId` drills
 into the sub-map.
 
+### Filters UX & design-system primitives (AniMapVerse redesign)
+The map-filters experience is built from small, reusable, accessible primitives in
+`src/components/filters/` — reuse these instead of hand-rolling chips/toggles/sections:
+- `FilterChip` — toggle pill with `aria-pressed` (state is never colour-only), optional count.
+- `FilterSection` — collapsible group (`<button aria-expanded aria-controls>`) with an active-count badge.
+- `FilterSearchField` — labelled `type="search"` used to filter long option lists in place
+  (`SEARCH_THRESHOLD = 12` in `FiltersDrawer`).
+- `ToggleRow` — accessible `role="switch"` row (used for map/story layer toggles).
+- `ActiveFilterBar` — removable summary of active filters + live result count (`aria-live`), in two
+  variants: `floating` (over the map in `WorldLayout`, hidden when no filters) and `inline` (top of
+  `FiltersDrawer`). Its tokens come from `useActiveFilterTokens(dataset)`, which localizes every
+  active value and exposes a per-token `remove()`.
+
+`FiltersDrawer` composes these into grouped, collapsible sections (Series, Location type, Nation,
+Places, Arcs, Characters, **Factions/Clans**, Importance, Map/Story layers) and preserves the exact
+Zustand wiring (`setFilters`, `resetFilters`, `setVisibleLayer`, `resetLayers`).
+
+**Result count = single source of truth**: `selectVisibleLocations(dataset, levelId, filters, layers)`
+in `src/lib/filters.ts` applies filters + per-importance layer gating; the map canvas and the
+`useFilteredLocations(dataset)` hook (`src/lib/mapSelectors.ts`, used by the count/summary) both go
+through it, so the number shown never diverges from the pins rendered.
+
+Design tokens live in `tailwind.config.js` (`shadow-panel/pop/focus`, `animate-fadeIn/popIn`) and
+reusable classes in `src/styles/globals.css` under `@layer components` (`.field`, `.count-badge`,
+`.active-chip`). The existing `ink/chakra/ember/sharingan/scroll` palette, `.panel`, `.chip`, and
+`.btn-*` classes are unchanged — new tokens are additive.
+
 ### Coordinate system (important)
 Each world has its OWN viewBox plane equal to its world-map `MapLevel.width`/`height`. All
 `location.x/y`, boundary `svgPathD`, and `labelPosition` values use that plane:
