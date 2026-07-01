@@ -69,4 +69,17 @@ export const dragonballAssets: AssetReference[] = [
       en: "Neutral placeholder for Planet Namek's sub-map: conceptual diagram, not a scale map (Namek's geography was never shown to scale in the series).",
     },
   },
+  {
+    id: 'dbz-gt-space-map-placeholder',
+    worldId: 'world-dragonball',
+    name: 'Dragon Ball GT space map (SVG star chart)',
+    kind: 'placeholder',
+    source: 'local',
+    license: 'placeholder/CC0',
+    author: 'local',
+    notes: {
+      it: 'Carta stellare SVG generata localmente per la sotto-mappa "Spazio (GT)" (pianeti della caccia alle Sfere del Drago Nere e Nuovo Pianeta Plant): schema concettuale, non una mappa in scala. Nessun asset ufficiale.',
+      en: 'Locally generated SVG star chart for the "Space (GT)" sub-map (Black Star Dragon Ball planets and New Planet Plant): conceptual diagram, not a scale map. No official assets.',
+    },
+  },
 ];

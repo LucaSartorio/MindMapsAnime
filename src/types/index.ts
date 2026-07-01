@@ -126,6 +126,8 @@ export type Race =
   | 'alien'
   | 'fusion'
   | 'divine_entity'
+  | 'tuffle'
+  | 'machine_mutant'
   | 'unknown';
 
 /* ------------------------------ Jutsu ------------------------------ */

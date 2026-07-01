@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { MapLevel, WorldDataset } from '@/types';
 import { getHxhSubmapBackground } from './submaps/HxhSubmapBackgrounds';
+import { getDragonballSubmapBackground } from './submaps/DragonballSubmapBackgrounds';
 
 interface WorldMapBackgroundProps {
   level: MapLevel;
@@ -49,6 +50,11 @@ export function WorldMapBackground({ level, dataset }: WorldMapBackgroundProps) 
   if (level.worldId === 'world-hunterxhunter' && level.parentLevelId) {
     const hxh = getHxhSubmapBackground(level);
     if (hxh) return hxh;
+  }
+  // Sotto-mappe Dragon Ball con sfondo SVG dedicato (Spazio GT, …).
+  if (level.worldId === 'world-dragonball' && level.parentLevelId) {
+    const dbz = getDragonballSubmapBackground(level);
+    if (dbz) return dbz;
   }
   if (level.parentLevelId) {
     return <VillageSubmapPlaceholder level={level} />;
