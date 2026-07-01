@@ -56,7 +56,7 @@ export const dragonballFactions: Faction[] = [
       it: 'Gli abitanti "ordinari" della Terra: senza poteri innati, compensano con addestramento, tecnica e determinazione — spesso al fianco dei Saiyan.',
       en: "Earth's 'ordinary' inhabitants: with no innate powers, they make up for it with training, technique and determination — often fighting alongside the Saiyans.",
     },
-    characterIds: ['char-dbz-krillin', 'char-dbz-yamcha', 'char-dbz-tenshinhan', 'char-dbz-chaozu', 'char-dbz-bulma', 'char-dbz-chichi', 'char-dbz-master-roshi'],
+    characterIds: ['char-dbz-krillin', 'char-dbz-yamcha', 'char-dbz-tenshinhan', 'char-dbz-chaozu', 'char-dbz-bulma', 'char-dbz-chichi', 'char-dbz-master-roshi', 'char-dbz-yajirobe'],
     arcIds: ['arc-dbz-tenkaichi-tournament'],
     canonStatus: 'canon',
     referenceStatus: 'verified',
