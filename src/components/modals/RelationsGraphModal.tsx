@@ -20,13 +20,12 @@ import { useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getEntityDisplayName } from '@/utils/localization';
 import { findCharacter } from '@/lib/entities';
+import { buildWorldGraph, characterConnections, type RelKind } from '@/lib/graph';
 
 interface RelationsGraphModalProps {
   dataset: WorldDataset;
   characterId: string;
 }
-
-type RelKind = 'family' | 'mentor' | 'student' | 'ally' | 'enemy' | 'other';
 
 const REL_COLOR: Record<RelKind, string> = {
   family: '#c084fc',
@@ -88,30 +87,19 @@ export function RelationsGraphModal({ dataset, characterId }: RelationsGraphModa
 
   const focus = findCharacter(dataset, focusId);
 
+  // Legami derivati dal knowledge graph (stessa logica, sorgente unica).
   const connections = useMemo<Connection[]>(() => {
     if (!focus) return [];
+    const graph = buildWorldGraph(dataset);
     const out: Connection[] = [];
-    const seen = new Set<string>([focus.id]);
-    const add = (ids: string[] | undefined, kind: RelKind, label: string) => {
-      for (const id of ids ?? []) {
-        if (seen.has(id)) continue;
-        const c = findCharacter(dataset, id);
-        if (!c) continue;
-        seen.add(id);
-        out.push({ char: c, kind, label });
-      }
-    };
-    add(focus.family, 'family', t('modals.relations.family'));
-    add(focus.teachers, 'mentor', t('modals.relations.mentor'));
-    add(focus.students, 'student', t('modals.relations.student'));
-    add(focus.allies, 'ally', t('modals.relations.ally'));
-    add(focus.enemies, 'enemy', t('modals.relations.enemy'));
-    for (const r of focus.relationships ?? []) {
-      if (seen.has(r.targetCharacterId)) continue;
-      const c = findCharacter(dataset, r.targetCharacterId);
-      if (!c) continue;
-      seen.add(r.targetCharacterId);
-      out.push({ char: c, kind: 'other', label: r.label || t('modals.relations.other') });
+    for (const cc of characterConnections(graph, focus.id)) {
+      const char = findCharacter(dataset, cc.targetId);
+      if (!char) continue;
+      out.push({
+        char,
+        kind: cc.kind,
+        label: cc.label || t(`modals.relations.${cc.kind}`),
+      });
     }
     return out;
   }, [focus, dataset, t]);
