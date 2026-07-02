@@ -128,8 +128,23 @@ The map-filters experience is built from small, reusable, accessible primitives 
   active value and exposes a per-token `remove()`.
 
 `FiltersDrawer` composes these into grouped, collapsible sections (Series, Location type, Nation,
-Places, Arcs, Characters, **Factions/Clans**, Importance, Map/Story layers) and preserves the exact
-Zustand wiring (`setFilters`, `resetFilters`, `setVisibleLayer`, `resetLayers`).
+Places, Arcs, Characters, **Factions/Clans**, Importance, Options) and preserves the exact Zustand
+wiring (`setFilters`, `resetFilters`). **Layer visibility lives in a separate `LayersDrawer`**, not
+in the filters — see "Map shell" below.
+
+### Map shell: tool rail & layer manager (immersive atlas)
+`ToolRail` (`src/components/map/ToolRail.tsx`) is the single, accessible home for map tools:
+a vertical floating rail on desktop (left, icon-only + `aria-label`/tooltip) and a **bottom nav**
+on mobile (icon + label, ≥44px targets). Each panel tool exposes `aria-pressed` reflecting its open
+state. It toggles the existing store state (filters, layers, legend, timeline, routes) plus reset
+view / clear selection / help — so there's one predictable entry point instead of scattered buttons.
+`WorldLayout` mounts it and keeps only the level switcher (centred) + `ActiveFilterBar` in the top
+overlay; the React Flow zoom `<Controls>` stay top-left, the floating panels bottom.
+
+**Filters vs layers are separated** (clear mental model): `FiltersDrawer` = *which data* (chips +
+options), `LayersDrawer` (`src/components/drawers/LayersDrawer.tsx`) = *what's visible* (map/story
+layer toggles, moved out of filters). The two drawers are **mutually exclusive** in `useUiStore`
+(`openFiltersDrawer`/`openLayersDrawer` each close the other) so only one is open at a time.
 
 **Result count = single source of truth**: `selectVisibleLocations(dataset, levelId, filters, layers)`
 in `src/lib/filters.ts` applies filters + per-importance layer gating; the map canvas and the

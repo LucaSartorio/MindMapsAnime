@@ -113,6 +113,23 @@ export const en = {
       filters: 'Filters',
       filtersAria: 'Open map filters',
     },
+    tools: {
+      rail: 'Map tools',
+      search: 'Search',
+      filters: 'Filters',
+      layers: 'Layers',
+      legend: 'Legend',
+      timeline: 'Timeline',
+      routes: 'Routes',
+      resetView: 'Reset view',
+      resetSelections: 'Clear selection',
+      help: 'Help',
+    },
+    layers: {
+      title: 'Map layers',
+      subtitle: 'Choose what to show on the map',
+      reset: 'Reset layers',
+    },
     legend: {
       title: 'Legend',
       village: 'Village',
@@ -205,6 +222,7 @@ export const en = {
     searchPlaces: 'Search place…',
     clearSearch: 'Clear search',
     noMatches: 'No matches.',
+    options: 'Options',
   },
   search: {
     placeholder: 'Search in {{world}}…',

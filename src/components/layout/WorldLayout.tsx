@@ -1,17 +1,16 @@
 import { useEffect, type CSSProperties, type ReactNode } from 'react';
 import { useParams } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
 import { useMapStore, useUiStore, useWorldStore } from '@/store';
 import { FiltersDrawer } from '@/components/drawers/FiltersDrawer';
+import { LayersDrawer } from '@/components/drawers/LayersDrawer';
 import { ModalRoot } from '@/components/modals/ModalRoot';
 import { MapLevelSwitcher } from '@/components/map/MapLevelSwitcher';
-import { MapControls } from '@/components/map/MapControls';
+import { ToolRail } from '@/components/map/ToolRail';
 import { MapLegendFloating } from '@/components/map/MapLegendFloating';
 import { RoutesFloatingPanel } from '@/components/map/RoutesFloatingPanel';
 import { ActiveFilterBar } from '@/components/filters/ActiveFilterBar';
 import { TimelineBottomSheet } from '@/components/timeline/TimelineBottomSheet';
-import { IconButton } from '@/components/common/IconButton';
 import { OnboardingOverlay } from '@/components/onboarding/OnboardingOverlay';
 import { resolveWorldCursor } from '@/utils/worldCursor';
 
@@ -39,13 +38,10 @@ export function WorldLayout({
   children,
   mapOverlays = true,
 }: WorldLayoutProps) {
-  const { t } = useTranslation();
   const { worldSlug } = useParams();
   const setActiveWorld = useWorldStore((s) => s.setActiveWorld);
   const setActiveMapLevel = useMapStore((s) => s.setActiveMapLevel);
   const activeMapLevelId = useMapStore((s) => s.activeMapLevelId);
-  const openFilters = useUiStore((s) => s.openFiltersDrawer);
-  const openHelp = useUiStore((s) => s.openHelp);
 
   // Cursore tematico del mondo (es. Naruto → vortice della Foglia).
   // Ibrido: il vortice è il cursore ambientale; gli elementi interattivi
@@ -72,6 +68,7 @@ export function WorldLayout({
     return () => {
       useUiStore.getState().closeModal();
       useUiStore.getState().closeFiltersDrawer();
+      useUiStore.getState().closeLayersDrawer();
     };
   }, [worldSlug]);
 
@@ -99,44 +96,25 @@ export function WorldLayout({
       <div className="relative flex-1 min-h-0">
         {children}
 
+        {/* Tool rail (desktop, sinistra) + bottom nav (mobile): home unica e
+            accessibile degli strumenti mappa. */}
+        <ToolRail />
+
         {/* Overlay floating sopra la mappa.
-            pointer-events-none sul layer; pointer-events-auto sui figli. */}
+            pointer-events-none sul layer; pointer-events-auto sui figli.
+            Padding bottom extra su mobile per non finire sotto la bottom nav. */}
         <div
           aria-hidden={false}
-          className="pointer-events-none absolute inset-0 flex flex-col p-3 sm:p-4 gap-3"
+          className="pointer-events-none absolute inset-0 flex flex-col gap-3 px-3 pt-3 pb-24 sm:px-4 sm:pt-4 md:pb-4"
         >
-          {/* Top row: filtri (sinistra) · level switcher (centro) · controls (destra) */}
-          <div className="flex items-start justify-between gap-3 flex-wrap">
-            <div className="pointer-events-auto flex items-center gap-2">
-              <IconButton
-                aria-label={t('map.controls.filtersAria')}
-                title={t('map.controls.filters')}
-                onClick={openFilters}
-              >
-                <span aria-hidden>☰</span>
-              </IconButton>
-              <span className="panel hidden sm:inline-flex px-2.5 py-1.5 text-[11px] uppercase tracking-widest font-mono text-chakra-300">
-                {dataset.world.title}
-              </span>
-            </div>
-
+          {/* Top: selettore del livello mappa, centrato. */}
+          <div className="flex justify-center">
             <div className="pointer-events-auto">
               <MapLevelSwitcher
                 levels={dataset.mapLevels}
                 activeId={activeMapLevelId}
                 onChange={setActiveMapLevel}
               />
-            </div>
-
-            <div className="pointer-events-auto flex items-center gap-2">
-              <IconButton
-                aria-label={t('onboarding.helpAria')}
-                title={t('onboarding.helpButton')}
-                onClick={openHelp}
-              >
-                <span aria-hidden>?</span>
-              </IconButton>
-              <MapControls />
             </div>
           </div>
 
@@ -169,6 +147,7 @@ export function WorldLayout({
 
       {/* Drawer e modali globali */}
       <FiltersDrawer dataset={dataset} />
+      <LayersDrawer dataset={dataset} />
       <ModalRoot dataset={dataset} />
       <OnboardingOverlay />
     </div>

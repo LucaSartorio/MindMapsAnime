@@ -115,6 +115,23 @@ export const it = {
       filters: 'Filtri',
       filtersAria: 'Apri filtri mappa',
     },
+    tools: {
+      rail: 'Strumenti mappa',
+      search: 'Cerca',
+      filters: 'Filtri',
+      layers: 'Livelli',
+      legend: 'Legenda',
+      timeline: 'Timeline',
+      routes: 'Percorsi',
+      resetView: 'Reset vista',
+      resetSelections: 'Deseleziona',
+      help: 'Aiuto',
+    },
+    layers: {
+      title: 'Livelli mappa',
+      subtitle: 'Scegli cosa mostrare sulla mappa',
+      reset: 'Ripristina livelli',
+    },
     legend: {
       title: 'Legenda',
       village: 'Villaggio',
@@ -208,6 +225,7 @@ export const it = {
     searchPlaces: 'Cerca luogo…',
     clearSearch: 'Pulisci ricerca',
     noMatches: 'Nessuna corrispondenza.',
+    options: 'Opzioni',
   },
   search: {
     placeholder: 'Cerca in {{world}}…',

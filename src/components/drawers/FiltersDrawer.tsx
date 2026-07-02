@@ -1,6 +1,6 @@
 import { useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import type { LocationType, Series, VisibleLayers, WorldDataset } from '@/types';
+import type { LocationType, Series, WorldDataset } from '@/types';
 import { worldSeriesOptions } from '@/lib/series';
 import {
   getFactionsTerm,
@@ -44,9 +44,6 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
   const filters = useMapStore((s) => s.filters);
   const setFilters = useMapStore((s) => s.setFilters);
   const resetFilters = useMapStore((s) => s.resetFilters);
-  const visibleLayers = useMapStore((s) => s.visibleLayers);
-  const setVisibleLayer = useMapStore((s) => s.setVisibleLayer);
-  const resetLayers = useMapStore((s) => s.resetLayers);
   const resultCount = useFilteredLocations(dataset).length;
 
   // Ricerca interna alle liste lunghe.
@@ -59,11 +56,6 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
   const everOpenedRef = useRef(false);
   if (open) everOpenedRef.current = true;
 
-  function toggleLayer<K extends keyof VisibleLayers>(layer: K) {
-    setVisibleLayer(layer, !visibleLayers[layer] as VisibleLayers[K]);
-  }
-
-  const hasBoundaries = (dataset.boundaries?.length ?? 0) > 0;
   const hasPoneglyphs = useMemo(
     () => dataset.locations.some((l) => l.poneglyph),
     [dataset.locations],
@@ -436,34 +428,15 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
               </div>
             </FilterSection>
 
-            <FilterSection title={t('filters.layersMap')} defaultOpen={false}>
+            {/* Opzioni sui dati (canon/da verificare/poneglyph). La VISIBILITÀ dei
+                livelli mappa/narrativi vive nel drawer "Livelli" separato. */}
+            <FilterSection title={t('filters.options')}>
               <div className="space-y-0.5">
-                {hasBoundaries && (
-                  <ToggleRow
-                    checked={visibleLayers.boundaries}
-                    onChange={() => toggleLayer('boundaries')}
-                    label={t('filters.showBoundaries')}
-                  />
-                )}
                 <ToggleRow
-                  checked={visibleLayers.nationLabels}
-                  onChange={() => toggleLayer('nationLabels')}
-                  label={t('filters.showNationLabels')}
-                />
-                <ToggleRow
-                  checked={visibleLayers.mainVillages}
-                  onChange={() => toggleLayer('mainVillages')}
-                  label={t('filters.showMainVillages', { places: placesTerm })}
-                />
-                <ToggleRow
-                  checked={visibleLayers.minorVillages}
-                  onChange={() => toggleLayer('minorVillages')}
-                  label={t('filters.showMinorVillages', { places: placesTerm })}
-                />
-                <ToggleRow
-                  checked={visibleLayers.specialPlaces}
-                  onChange={() => toggleLayer('specialPlaces')}
-                  label={t('filters.showSpecialPlaces')}
+                  checked={filters.canonOnly}
+                  onChange={(v) => setFilters({ canonOnly: v })}
+                  label={t('filters.canonOnly')}
+                  accent="ember"
                 />
                 <ToggleRow
                   checked={filters.showUnverified}
@@ -481,65 +454,13 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
                 )}
               </div>
             </FilterSection>
-
-            <FilterSection title={t('filters.layersStory')} defaultOpen={false}>
-              <div className="space-y-0.5">
-                <ToggleRow
-                  checked={filters.showRoutes}
-                  onChange={(v) => setFilters({ showRoutes: v })}
-                  label={t('filters.showRoutes')}
-                />
-                <ToggleRow
-                  checked={visibleLayers.routesCanon}
-                  onChange={() => toggleLayer('routesCanon')}
-                  label={t('filters.routesCanon')}
-                />
-                <ToggleRow
-                  checked={visibleLayers.routesNonCanon}
-                  onChange={() => toggleLayer('routesNonCanon')}
-                  label={t('filters.routesNonCanon')}
-                />
-                <ToggleRow
-                  checked={visibleLayers.eventsCanon}
-                  onChange={() => toggleLayer('eventsCanon')}
-                  label={t('filters.eventsCanon')}
-                />
-                <ToggleRow
-                  checked={visibleLayers.eventsNonCanon}
-                  onChange={() => toggleLayer('eventsNonCanon')}
-                  label={t('filters.eventsNonCanon')}
-                />
-                <ToggleRow
-                  checked={visibleLayers.arcsCanon}
-                  onChange={() => toggleLayer('arcsCanon')}
-                  label={t('filters.arcsCanon')}
-                />
-                <ToggleRow
-                  checked={visibleLayers.arcsNonCanon}
-                  onChange={() => toggleLayer('arcsNonCanon')}
-                  label={t('filters.arcsNonCanon')}
-                />
-                <ToggleRow
-                  checked={filters.canonOnly}
-                  onChange={(v) => setFilters({ canonOnly: v })}
-                  label={t('filters.canonOnly')}
-                  accent="ember"
-                />
-              </div>
-            </FilterSection>
           </div>
 
           <footer className="flex shrink-0 items-center gap-2 border-t border-ink-700/60 px-4 py-3">
             <span className="mr-auto text-xs text-ink-400" aria-live="polite">
               {t('filters.resultsCount', { count: resultCount })}
             </span>
-            <Button
-              variant="ghost"
-              onClick={() => {
-                resetFilters();
-                resetLayers();
-              }}
-            >
+            <Button variant="ghost" onClick={() => resetFilters()}>
               {t('filters.reset')}
             </Button>
             <Button variant="primary" onClick={close}>
