@@ -191,7 +191,10 @@ has content). Other modals still scroll — extend them with `Tabs` the same way
 - **Route stepper** (`src/components/map/RouteStepper.tsx`, embedded in `RouteDetailsModal`): "follow
   the route" — Prev/Next + auto **Play** walk the map through a route's steps by setting
   `selectedRoute` + `selectedLocation` in the store (the canvas centres/highlights each step). No
-  React Flow access needed from the modal — it drives the shared store, the map reacts.
+  React Flow access needed from the modal — it drives the shared store, the map reacts. The step
+  **index is controlled by `RouteDetailsModal`** (`activeIndex`/`onActiveIndexChange`), so the
+  scheda's steps-order list highlights the current step (`aria-current="step"`, glow) and marks the
+  passed ones done (✓) as playback advances — you see at a glance where you've arrived.
 
 ### Knowledge graph (derived semantic layer)
 `src/lib/graph/` builds a **derived** knowledge graph — a *projection* of the existing
@@ -272,6 +275,13 @@ each type row is an `aria-pressed` toggle bound to `filters.locationTypes` (same
 so no divergence), with per-type colour swatches and a "show all" reset. `RoutesFloatingPanel` marks
 the active route with `aria-pressed` + a non-colour "Active" badge; `TimelineBottomSheet`'s header is
 a single disclosure button (no mouse-only `div`), and its event strip is a labelled list.
+
+**Timeline playback**: the timeline is deliberately **filter-free** (lean). Its "▶ Riproduci" button
+starts a **play-all-events** walk (like a whole-world story mode): each tick sets `selectedTimelineEvent`
++ `selectedLocation` so the map centres/focuses event-by-event. While playing, the sheet **collapses to
+a compact player bar** (progress + Pausa/Riprendi + Stop) shown only during playback; `isTimelineOpen`
+stays true so `useMapMode` reports `timeline`. Playback walks a route-scoped-or-all list that is
+independent of `selectedLocationId` (which the walk itself sets), so it never shrinks mid-play.
 
 ### Search & keyboard access (⌘K)
 `GlobalSearchDropdown` (mounted in `TopNav`, per-world) is the keyboard entry point to every

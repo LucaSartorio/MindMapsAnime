@@ -11,6 +11,9 @@ interface RouteStepperProps {
   routeId: string;
   /** Tappe già ordinate per `order`. */
   steps: Route['steps'];
+  /** Indice della tappa corrente (controllato): la scheda evidenzia la stessa. */
+  activeIndex: number;
+  onActiveIndexChange: (i: number) => void;
 }
 
 /** Intervallo (ms) tra una tappa e l'altra in modalità "Play". */
@@ -25,23 +28,29 @@ const PLAY_INTERVAL = 1600;
  * canvas reagisce centrando/evidenziando la tappa corrente. Così l'esperienza
  * è quella di seguire il viaggio del personaggio.
  */
-export function RouteStepper({ dataset, routeId, steps }: RouteStepperProps) {
+export function RouteStepper({
+  dataset,
+  routeId,
+  steps,
+  activeIndex,
+  onActiveIndexChange,
+}: RouteStepperProps) {
   const { t } = useTranslation();
   const locale = useLocaleStore((s) => s.locale);
   const setSelectedRoute = useMapStore((s) => s.setSelectedRoute);
   const setSelectedLocation = useMapStore((s) => s.setSelectedLocation);
-  const [index, setIndex] = useState(0);
+  const index = activeIndex;
   const [playing, setPlaying] = useState(false);
 
   const go = useCallback(
     (i: number) => {
       const clamped = Math.max(0, Math.min(i, steps.length - 1));
-      setIndex(clamped);
+      onActiveIndexChange(clamped);
       setSelectedRoute(routeId);
       const loc = findLocation(dataset, steps[clamped]?.locationId);
       if (loc) setSelectedLocation(loc.id);
     },
-    [dataset, routeId, steps, setSelectedRoute, setSelectedLocation],
+    [dataset, routeId, steps, onActiveIndexChange, setSelectedRoute, setSelectedLocation],
   );
 
   // All'apertura: assicura che la rotta sia disegnata e centra sulla prima tappa.
