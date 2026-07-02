@@ -343,4 +343,51 @@ export const dragonballJutsu: Jutsu[] = [
     referenceStatus: 'verified',
     tags: ['gt', 'super-saiyan-4'],
   },
+
+  /* -------------------------------- Dragon Ball Super -------------------------------- */
+  {
+    id: 'jutsu-dbz-time-skip',
+    worldId: 'world-dragonball',
+    name: 'Time-Skip',
+    localizedName: { it: 'Salto nel Tempo', en: 'Time-Skip' },
+    type: 'support',
+    characterIds: ['char-dbz-hit'],
+    shortDescription: {
+      it: "Dragon Ball Super: tecnica firma di Hit che congela il tempo per una frazione di secondo, permettendogli di colpire il bersaglio prima che possa reagire.",
+      en: "Dragon Ball Super: Hit's signature technique that freezes time for a split second, letting him strike the target before it can react.",
+    },
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['universo-6', 'hit'],
+  },
+  {
+    id: 'jutsu-dbz-forced-spirit-fission',
+    worldId: 'world-dragonball',
+    name: 'Forced Spirit Fission',
+    localizedName: { it: 'Scissione Spirituale Forzata', en: 'Forced Spirit Fission' },
+    type: 'support',
+    characterIds: ['char-dbz-vegeta'],
+    shortDescription: {
+      it: "Dragon Ball Super (manga): tecnica appresa da Vegeta sul Pianeta Yardrat, capace di separare e restituire l'energia vitale che Moro aveva assorbito dalle sue vittime.",
+      en: "Dragon Ball Super (manga): a technique Vegeta learns on Planet Yardrat, able to split off and return the life energy Moro had absorbed from his victims.",
+    },
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['manga', 'yardrat', 'vegeta'],
+  },
+  {
+    id: 'jutsu-dbz-god-of-destruction-hakai',
+    worldId: 'world-dragonball',
+    name: 'God of Destruction Aura',
+    localizedName: { it: "Aura del Dio della Distruzione", en: 'God of Destruction Aura' },
+    type: 'divine',
+    characterIds: ['char-dbz-toppo', 'char-dbz-vegeta'],
+    shortDescription: {
+      it: "Dragon Ball Super: l'aura viola dei Distruttori, che imbeve gli attacchi dell'energia della Distruzione (Hakai). Sfoderata da Toppo al Torneo del Potere e in seguito appresa in parte da Vegeta.",
+      en: "Dragon Ball Super: the purple aura of the Destroyers, imbuing attacks with the energy of Destruction (Hakai). Unleashed by Toppo at the Tournament of Power and later partly learned by Vegeta.",
+    },
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+    tags: ['divinita', 'torneo-del-potere'],
+  },
 ];

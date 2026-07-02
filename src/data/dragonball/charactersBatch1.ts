@@ -311,8 +311,10 @@ export const dragonballCharactersBatch1: Character[] = [
     clanIds: ['faction-dbz-universe-6-team'],
     race: 'alien',
     transformations: [],
+    jutsuIds: ['jutsu-dbz-time-skip'],
     enemies: ['char-dbz-goku'],
     allies: ['char-dbz-goku'],
+    eventIds: ['evt-dbz-goku-vs-hit'],
     arcIds: ['arc-dbz-universe-6', 'arc-dbz-tournament-of-power'],
     shortDescription: {
       it: "Assassino leggendario dell'Universo 6, capace di manipolare una frazione di secondo di tempo: professionista imperturbabile, non tradisce mai un contratto.",
