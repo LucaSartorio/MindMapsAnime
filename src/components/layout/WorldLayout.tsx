@@ -10,6 +10,7 @@ import { ToolRail } from '@/components/map/ToolRail';
 import { MapLegendFloating } from '@/components/map/MapLegendFloating';
 import { RoutesFloatingPanel } from '@/components/map/RoutesFloatingPanel';
 import { MapFocusBreadcrumb } from '@/components/map/MapFocusBreadcrumb';
+import { StoryModePanel } from '@/components/map/StoryModePanel';
 import { ActiveFilterBar } from '@/components/filters/ActiveFilterBar';
 import { TimelineBottomSheet } from '@/components/timeline/TimelineBottomSheet';
 import { OnboardingOverlay } from '@/components/onboarding/OnboardingOverlay';
@@ -70,6 +71,7 @@ export function WorldLayout({
       useUiStore.getState().closeModal();
       useUiStore.getState().closeFiltersDrawer();
       useUiStore.getState().closeLayersDrawer();
+      useUiStore.getState().closeStory();
     };
   }, [worldSlug]);
 
@@ -150,6 +152,7 @@ export function WorldLayout({
       {/* Drawer e modali globali */}
       <FiltersDrawer dataset={dataset} />
       <LayersDrawer dataset={dataset} />
+      <StoryModePanel dataset={dataset} />
       <ModalRoot dataset={dataset} />
       <OnboardingOverlay />
     </div>

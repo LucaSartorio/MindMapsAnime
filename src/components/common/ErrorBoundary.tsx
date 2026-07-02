@@ -90,7 +90,7 @@ export class ErrorBoundary extends Component<
             <button
               type="button"
               onClick={this.handleRetry}
-              className="rounded-lg bg-chakra-500 px-4 py-2 text-sm font-medium text-white transition hover:bg-chakra-400"
+              className="rounded-lg bg-chakra-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-chakra-700"
             >
               {t.retry}
             </button>

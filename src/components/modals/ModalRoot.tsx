@@ -9,6 +9,7 @@ import { RouteDetailsModal } from './RouteDetailsModal';
 import { BoundaryDetailsModal } from './BoundaryDetailsModal';
 import { NationDetailsModal } from './NationDetailsModal';
 import { JutsuDetailsModal } from './JutsuDetailsModal';
+import { RelationsGraphModal } from './RelationsGraphModal';
 
 interface ModalRootProps {
   dataset: WorldDataset;
@@ -51,6 +52,10 @@ export function ModalRoot({ dataset }: ModalRootProps) {
       return <NationDetailsModal dataset={dataset} nationId={activeModal.id} />;
     case 'jutsu':
       return <JutsuDetailsModal dataset={dataset} jutsuId={activeModal.id} />;
+    case 'relations':
+      return (
+        <RelationsGraphModal dataset={dataset} characterId={activeModal.id} />
+      );
     default:
       return null;
   }

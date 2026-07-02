@@ -14,6 +14,7 @@ export type ActiveModal =
   | { kind: 'boundary'; id: string }
   | { kind: 'nation'; id: string }
   | { kind: 'jutsu'; id: string }
+  | { kind: 'relations'; id: string }
   | null;
 
 /**
@@ -40,6 +41,8 @@ interface UiState {
   isMobileNavOpen: boolean;
   /** Overlay di onboarding / aiuto (come usare la mappa) */
   isHelpOpen: boolean;
+  /** Story Mode guidata: id dell'arco in riproduzione (null = inattiva) */
+  storyArcId: string | null;
 
   // Modali — apertura tipizzata
   openLocationModal: (id: string) => void;
@@ -51,7 +54,12 @@ interface UiState {
   openBoundaryModal: (id: string) => void;
   openNationModal: (id: string) => void;
   openJutsuModal: (id: string) => void;
+  openRelationsModal: (id: string) => void;
   closeModal: () => void;
+
+  // Story Mode guidata
+  openStory: (arcId: string) => void;
+  closeStory: () => void;
 
   // Drawer / pannelli floating
   openFiltersDrawer: () => void;
@@ -88,6 +96,7 @@ export const useUiStore = create<UiState>((set) => ({
   isTimelineOpen: false,
   isMobileNavOpen: false,
   isHelpOpen: false,
+  storyArcId: null,
 
   openLocationModal: (id) => set({ activeModal: { kind: 'location', id } }),
   openCharacterModal: (id) => set({ activeModal: { kind: 'character', id } }),
@@ -98,7 +107,12 @@ export const useUiStore = create<UiState>((set) => ({
   openBoundaryModal: (id) => set({ activeModal: { kind: 'boundary', id } }),
   openNationModal: (id) => set({ activeModal: { kind: 'nation', id } }),
   openJutsuModal: (id) => set({ activeModal: { kind: 'jutsu', id } }),
+  openRelationsModal: (id) => set({ activeModal: { kind: 'relations', id } }),
   closeModal: () => set({ activeModal: null }),
+
+  // Story Mode: apre l'overlay narrativo per un arco e chiude eventuali modali.
+  openStory: (arcId) => set({ storyArcId: arcId, activeModal: null }),
+  closeStory: () => set({ storyArcId: null }),
 
   // Filtri e Layer sono drawer mutuamente esclusivi: aprirne uno chiude l'altro
   // (un solo drawer alla volta → niente pannelli sovrapposti a caso).

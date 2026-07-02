@@ -193,6 +193,21 @@ has content). Other modals still scroll — extend them with `Tabs` the same way
   `selectedRoute` + `selectedLocation` in the store (the canvas centres/highlights each step). No
   React Flow access needed from the modal — it drives the shared store, the map reacts.
 
+### Story Mode & Relations Mode
+- **Story Mode** (`StoryModePanel`, `useUiStore.storyArcId` + `openStory`/`closeStory`): a guided,
+  non-modal side panel (bottom sheet on mobile) that walks an arc's events in order. Started from
+  `StoryArcDetailsModal` ("▶ Avvia storia guidata"). Each step sets `selectedLocation` +
+  `selectedTimelineEvent`, so the map centres and focus mode dims the rest — the map is the stage.
+  Prev/Next + Play; Esc exits. Mounted in `WorldLayout`, closed on world change.
+- **Relations Mode** (`RelationsGraphModal`, modal kind `relations`): a navigable **React Flow**
+  graph of a character's connections (family/mentor/student/ally/enemy + `relationships`), radial
+  layout, colour+labelled edges, click a node/list-item to refocus. The graph is `aria-hidden`
+  (non-focusable, `disableKeyboardA11y`); the **accessible path is the list below it**. Opened from
+  `CharacterDetailsModal` ("Mappa delle relazioni"). Radius scales with connection count.
+- **Gotcha**: any new `ActiveModal` kind must be registered in `ModalDeepLink.KINDS` (+ `entityExists`
+  + `openModal`). That component syncs `activeModal` ↔ URL and **closes any modal whose kind it
+  doesn't know** — an unregistered kind silently unmounts on open.
+
 ### Floating map panels (legend · routes · timeline)
 The over-map panels share `FloatingPanel` (`src/components/common/FloatingPanel.tsx`), a WAI-ARIA
 **disclosure**: one title button with `aria-expanded`/`aria-controls` + rotating chevron toggles the

@@ -29,6 +29,7 @@ const KINDS: ModalKind[] = [
   'boundary',
   'nation',
   'jutsu',
+  'relations',
 ];
 
 function entityExists(
@@ -55,6 +56,9 @@ function entityExists(
       return dataset.nations.some((x) => x.id === id);
     case 'jutsu':
       return (dataset.jutsu ?? []).some((x) => x.id === id);
+    case 'relations':
+      // La vista relazioni è ancorata a un personaggio.
+      return dataset.characters.some((x) => x.id === id);
     default:
       return false;
   }
@@ -81,6 +85,8 @@ function openModal(kind: ModalKind, id: string): void {
       return s.openNationModal(id);
     case 'jutsu':
       return s.openJutsuModal(id);
+    case 'relations':
+      return s.openRelationsModal(id);
   }
 }
 

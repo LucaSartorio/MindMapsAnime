@@ -54,6 +54,7 @@ export function CharacterDetailsModal({
   const openCharacter = useUiStore((s) => s.openCharacterModal);
   const openEvent = useUiStore((s) => s.openEventModal);
   const openJutsu = useUiStore((s) => s.openJutsuModal);
+  const openRelations = useUiStore((s) => s.openRelationsModal);
   const setActiveMapLevel = useMapStore((s) => s.setActiveMapLevel);
   const setSelectedLocation = useMapStore((s) => s.setSelectedLocation);
   const navigate = useNavigate();
@@ -160,6 +161,16 @@ export function CharacterDetailsModal({
       }
       footer={
         <>
+          {(character.relationships?.length ||
+            character.family?.length ||
+            character.allies?.length ||
+            character.enemies?.length ||
+            character.teachers?.length ||
+            character.students?.length) && (
+            <Button variant="ghost" onClick={() => openRelations(character.id)}>
+              {t('modals.viewRelations')}
+            </Button>
+          )}
           {village && (
             <Button
               variant="ghost"
