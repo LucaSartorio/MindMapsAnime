@@ -13,6 +13,8 @@ export interface MapNodeData {
   /** Luogo con un Poneglyph, evidenziato in rosso quando il filtro è attivo. */
   poneglyph?: boolean;
   hasSubMap?: boolean;
+  /** Focus mode: attenua i pin non collegati all'elemento selezionato. */
+  dimmed?: boolean;
   [key: string]: unknown;
 }
 
@@ -53,6 +55,12 @@ function MapNodeBase({ data }: NodeProps) {
         d.poneglyph
           ? 'drop-shadow-[0_0_10px_rgba(239,68,68,0.9)]'
           : d.highlighted && 'drop-shadow-[0_0_8px_rgba(255,131,17,0.7)]',
+        // Focus mode: i pin non collegati sfumano, ma tornano pieni al passaggio
+        // del mouse così restano scopribili/cliccabili.
+        d.dimmed &&
+          !d.selected &&
+          !d.highlighted &&
+          'opacity-40 transition-opacity hover:opacity-100',
       )}
       style={{ transform: `translate(${-dotRadius}px, -50%)` }}
     >

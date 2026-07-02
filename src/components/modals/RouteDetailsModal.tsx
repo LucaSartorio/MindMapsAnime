@@ -4,6 +4,7 @@ import type { WorldDataset } from '@/types';
 import { Modal } from '@/components/common/Modal';
 import { Badge } from '@/components/common/Badge';
 import { Button } from '@/components/common/Button';
+import { RouteStepper } from '@/components/map/RouteStepper';
 import { ReferencePill } from '@/components/common/StatusPill';
 import { useMapStore, useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
@@ -80,6 +81,11 @@ export function RouteDetailsModal({
       <p className="leading-relaxed">
         {getLocalizedText(route.description, locale)}
       </p>
+
+      {/* "Segui il percorso": cammina la mappa tappa per tappa (Prev/Next/Play). */}
+      {steps.length > 1 && (
+        <RouteStepper dataset={dataset} routeId={route.id} steps={steps} />
+      )}
 
       {((route.mangaChapters?.length ?? 0) > 0 || (route.animeEpisodes?.length ?? 0) > 0) && (
         <section>

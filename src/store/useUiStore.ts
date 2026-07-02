@@ -28,6 +28,8 @@ interface UiState {
   activeModal: ActiveModal;
   /** Drawer dei filtri */
   isFiltersDrawerOpen: boolean;
+  /** Drawer dei layer (visibilità sulla mappa), separato dai filtri */
+  isLayersDrawerOpen: boolean;
   /** Pannello floating dei percorsi (in basso a destra) */
   isRoutesPanelOpen: boolean;
   /** Legenda compatta (in basso a sinistra) */
@@ -56,6 +58,10 @@ interface UiState {
   closeFiltersDrawer: () => void;
   toggleFiltersDrawer: () => void;
 
+  openLayersDrawer: () => void;
+  closeLayersDrawer: () => void;
+  toggleLayersDrawer: () => void;
+
   toggleRoutesPanel: () => void;
   setRoutesPanel: (open: boolean) => void;
 
@@ -76,6 +82,7 @@ interface UiState {
 export const useUiStore = create<UiState>((set) => ({
   activeModal: null,
   isFiltersDrawerOpen: false,
+  isLayersDrawerOpen: false,
   isRoutesPanelOpen: false,
   isLegendOpen: false,
   isTimelineOpen: false,
@@ -93,10 +100,25 @@ export const useUiStore = create<UiState>((set) => ({
   openJutsuModal: (id) => set({ activeModal: { kind: 'jutsu', id } }),
   closeModal: () => set({ activeModal: null }),
 
-  openFiltersDrawer: () => set({ isFiltersDrawerOpen: true }),
+  // Filtri e Layer sono drawer mutuamente esclusivi: aprirne uno chiude l'altro
+  // (un solo drawer alla volta → niente pannelli sovrapposti a caso).
+  openFiltersDrawer: () =>
+    set({ isFiltersDrawerOpen: true, isLayersDrawerOpen: false }),
   closeFiltersDrawer: () => set({ isFiltersDrawerOpen: false }),
   toggleFiltersDrawer: () =>
-    set((s) => ({ isFiltersDrawerOpen: !s.isFiltersDrawerOpen })),
+    set((s) => ({
+      isFiltersDrawerOpen: !s.isFiltersDrawerOpen,
+      isLayersDrawerOpen: false,
+    })),
+
+  openLayersDrawer: () =>
+    set({ isLayersDrawerOpen: true, isFiltersDrawerOpen: false }),
+  closeLayersDrawer: () => set({ isLayersDrawerOpen: false }),
+  toggleLayersDrawer: () =>
+    set((s) => ({
+      isLayersDrawerOpen: !s.isLayersDrawerOpen,
+      isFiltersDrawerOpen: false,
+    })),
 
   toggleRoutesPanel: () =>
     set((s) => ({ isRoutesPanelOpen: !s.isRoutesPanelOpen })),
