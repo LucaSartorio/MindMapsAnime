@@ -71,7 +71,10 @@ export function Tabs({ items, ariaLabel, defaultTabId }: TabsProps) {
         role="tablist"
         aria-label={ariaLabel}
         onKeyDown={onKeyDown}
-        className="sticky top-0 z-10 -mx-5 mb-4 flex gap-1 overflow-x-auto border-b border-ink-700/60 bg-ink-900/90 px-5 backdrop-blur scrollbar-none"
+        // flex-wrap (non scroll orizzontale): nel pannello stretto tutte le tab
+        // restano visibili e raggiungibili su più righe, senza allargare la scheda
+        // (una tab a scomparsa in fondo — es. "Galleria" — non si vedeva mai).
+        className="sticky top-0 z-10 -mx-5 mb-4 flex flex-wrap gap-x-1 border-b border-ink-700/60 bg-ink-900/90 px-5 backdrop-blur"
       >
         {items.map((it) => {
           const selected = it.id === activeItem.id;
