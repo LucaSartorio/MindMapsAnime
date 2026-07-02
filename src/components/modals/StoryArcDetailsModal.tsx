@@ -1,4 +1,5 @@
 import type { WorldDataset } from '@/types';
+import { useNavigate } from 'react-router-dom';
 import { Modal } from '@/components/common/Modal';
 import { useTranslation } from 'react-i18next';
 import { Badge } from '@/components/common/Badge';
@@ -25,6 +26,8 @@ export function StoryArcDetailsModal({
   const openLocation = useUiStore((s) => s.openLocationModal);
   const openCharacter = useUiStore((s) => s.openCharacterModal);
   const openEvent = useUiStore((s) => s.openEventModal);
+  const openStory = useUiStore((s) => s.openStory);
+  const navigate = useNavigate();
 
   if (!arc) {
     return (
@@ -59,9 +62,22 @@ export function StoryArcDetailsModal({
         </>
       }
       footer={
-        <Button variant="primary" onClick={close}>
-          {t('modals.close')}
-        </Button>
+        <>
+          {events.length > 0 && (
+            <Button
+              variant="ember"
+              onClick={() => {
+                openStory(arc.id);
+                navigate(`/worlds/${dataset.world.slug}`);
+              }}
+            >
+              ▶ {t('map.story.start')}
+            </Button>
+          )}
+          <Button variant="primary" onClick={close}>
+            {t('modals.close')}
+          </Button>
+        </>
       }
     >
       <p className="leading-relaxed">

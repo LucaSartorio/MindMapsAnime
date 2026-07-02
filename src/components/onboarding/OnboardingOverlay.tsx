@@ -60,7 +60,7 @@ export function OnboardingOverlay() {
         <button
           type="button"
           onClick={closeHelp}
-          className="rounded-lg bg-chakra-500 px-4 py-2 text-sm font-medium text-white transition hover:bg-chakra-400"
+          className="rounded-lg bg-chakra-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-chakra-700"
         >
           {t('onboarding.cta')}
         </button>
