@@ -80,7 +80,7 @@ export const dragonballCharacters: Character[] = [
       { id: 'tr-vegeta-baby', name: 'Baby Vegeta', localizedName: { it: 'Baby Vegeta (posseduto)', en: 'Baby Vegeta (possessed)' }, order: 9, kind: 'state', description: { it: "Dragon Ball GT: il parassita Tsufuru Baby s'impossessa del corpo di Vegeta, arrivando alla forma di Grande Scimmione Dorato (Great Ape Baby).", en: 'Dragon Ball GT: the Tuffle parasite Baby takes over Vegeta’s body, culminating in the Golden Great Ape (Great Ape Baby) form.' }, arcId: 'arc-dbz-gt-baby', canonStatus: 'anime_only' },
       { id: 'tr-vegeta-ssj4', name: 'Super Saiyan 4', localizedName: { it: 'Super Saiyan 4 (GT)', en: 'Super Saiyan 4 (GT)' }, order: 10, kind: 'transformation', description: { it: 'Dragon Ball GT: liberato dal controllo di Baby, Vegeta raggiunge il Super Saiyan 4 grazie al Generatore di Onde Blutz costruito da Bulma.', en: 'Dragon Ball GT: freed from Baby’s control, Vegeta reaches Super Saiyan 4 thanks to the Blutz Wave Generator built by Bulma.' }, arcId: 'arc-dbz-gt-baby', canonStatus: 'anime_only' },
     ],
-    jutsuIds: ['jutsu-dbz-galick-gun', 'jutsu-dbz-final-flash', 'jutsu-dbz-big-bang-attack'],
+    jutsuIds: ['jutsu-dbz-galick-gun', 'jutsu-dbz-final-flash', 'jutsu-dbz-big-bang-attack', 'jutsu-dbz-forced-spirit-fission', 'jutsu-dbz-god-of-destruction-hakai'],
     family: ['char-dbz-bulma', 'char-dbz-trunks', 'char-dbz-bardock'],
     allies: ['char-dbz-goku', 'char-dbz-piccolo', 'char-dbz-krillin'],
     enemies: ['char-dbz-frieza', 'char-dbz-cell', 'char-dbz-majin-buu', 'char-dbz-jiren'],

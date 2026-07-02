@@ -9,6 +9,8 @@ import { dragonballCharactersFriezaSaga } from './charactersFriezaSaga';
 import { dragonballCharactersGT } from './charactersGT';
 import { dragonballCharactersMovies } from './charactersMovies';
 import { dragonballCharactersFiller } from './charactersFiller';
+import { dragonballCharactersSuper } from './charactersSuper';
+import { dragonballCharactersSupporting } from './charactersSupporting';
 import { dragonballFactions } from './factions';
 import { dragonballArcs } from './arcs';
 import { dragonballEvents } from './events';
@@ -41,6 +43,8 @@ export const dragonballDataset: WorldDataset = {
     ...dragonballCharactersGT,
     ...dragonballCharactersMovies,
     ...dragonballCharactersFiller,
+    ...dragonballCharactersSuper,
+    ...dragonballCharactersSupporting,
   ],
   factions: dragonballFactions,
   arcs: dragonballArcs,

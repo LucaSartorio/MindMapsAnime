@@ -128,6 +128,7 @@ export type Race =
   | 'divine_entity'
   | 'tuffle'
   | 'machine_mutant'
+  | 'cerealian'
   | 'unknown';
 
 /* ------------------------------ Jutsu ------------------------------ */
