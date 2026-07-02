@@ -100,7 +100,11 @@ Everything that varies per work is centralized in `AnimeWorld.config` (`WorldCon
   (`src/lib/clusterPins.ts`) merges them into a counted badge. It's grid clustering in **world
   space** (cell = `targetPx / zoom`, quantized), so it only recomputes on zoom, not pan; the
   selected pin and active-route steps are kept unclustered so schede/edges never break. Clicking a
-  cluster `fitBounds` to its members (it "opens").
+  cluster `fitBounds` to its members (it "opens"). Near-coincident pins (e.g. One Piece
+  Cocoyashi/Arlong, ~3 units apart) are nudged apart by `spreadOverlappingPins` (deterministic,
+  tiny, non-destructive) so they never stack, and clustering **fully dissolves above
+  `CLUSTER_OFF_ZOOM` (2.6)** — at (near) max zoom every pin is individually visible/clickable, so no
+  cluster can get "stuck".
 
 `WorldMapBackground` renders the map level's `backgroundAssetId` as an `<img>` when the asset has a
 `url`, otherwise falls back to locally-generated SVG placeholders. Boundaries (`MapBoundaryOverlay` /
@@ -157,6 +161,15 @@ selected pin stays highlighted behind it). `placement="center"` restores the cla
 Content components are untouched — the presentation switch is entirely inside `Modal`. Opening a
 location scheda syncs `selectedLocation` (in `LocationDetailsModal`) so the map re-centres even when
 reached via a cross-link.
+
+### Floating map panels (legend · routes · timeline)
+The over-map panels share `FloatingPanel` (`src/components/common/FloatingPanel.tsx`), a WAI-ARIA
+**disclosure**: one title button with `aria-expanded`/`aria-controls` + rotating chevron toggles the
+content (state is announced, not just visual). `MapLegendFloating` is also an **interactive filter** —
+each type row is an `aria-pressed` toggle bound to `filters.locationTypes` (same state as the drawer,
+so no divergence), with per-type colour swatches and a "show all" reset. `RoutesFloatingPanel` marks
+the active route with `aria-pressed` + a non-colour "Active" badge; `TimelineBottomSheet`'s header is
+a single disclosure button (no mouse-only `div`), and its event strip is a labelled list.
 
 ### Search & keyboard access (⌘K)
 `GlobalSearchDropdown` (mounted in `TopNav`, per-world) is the keyboard entry point to every

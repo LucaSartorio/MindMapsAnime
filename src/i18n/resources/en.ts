@@ -124,6 +124,8 @@ export const en = {
       submap: 'Sub-map',
       routes: 'Narrative route',
       events: 'Step / event',
+      filterHint: 'Tap a type to filter it on the map.',
+      showAll: 'Show all',
       hint:
         'Orange nodes = selected or on an active route. Dashed lines = narrative route.',
     },
@@ -133,6 +135,8 @@ export const en = {
       reset: 'Reset',
       details: 'Route details',
       openDetails: 'Open route details →',
+      stepsLabel: 'steps',
+      active: 'Active',
     },
     timeline: {
       title: 'Narrative timeline',

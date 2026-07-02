@@ -64,37 +64,35 @@ export function TimelineBottomSheet({ dataset }: TimelineBottomSheetProps) {
       aria-label={t('map.timeline.title')}
       className="panel pointer-events-auto overflow-hidden flex flex-col w-full"
     >
-      <header
-        className="flex items-center justify-between gap-3 px-3 py-1.5 cursor-pointer select-none"
-        onClick={toggle}
-      >
-        <div className="flex items-center gap-2 min-w-0">
-          <span aria-hidden className="text-chakra-300">
-            ⌛
-          </span>
-          <h3 className="font-display text-[11px] uppercase tracking-widest text-chakra-300">
-            {t('map.timeline.title')}
-          </h3>
-          <span className="text-[10px] text-ink-400 shrink-0">
-            {t('map.timeline.events', { count: events.length })}
-          </span>
-          {contextLabel && (
-            <span className="hidden sm:inline text-[10px] text-ember-300 truncate">
-              · {contextLabel}
-            </span>
-          )}
-        </div>
+      <header>
+        {/* Un unico pulsante-disclosure: tastiera-friendly (niente div cliccabile
+            mouse-only) e stato annunciato via aria-expanded. */}
         <button
           type="button"
           aria-expanded={open}
           aria-controls="timeline-body"
-          onClick={(e) => {
-            e.stopPropagation();
-            toggle();
-          }}
-          className="btn-ghost !py-0.5 !px-2 text-[11px]"
+          onClick={toggle}
+          className="flex w-full select-none items-center justify-between gap-3 px-3 py-1.5 text-left"
         >
-          {open ? t('map.timeline.collapse') : t('map.timeline.expand')}
+          <span className="flex min-w-0 items-center gap-2">
+            <span aria-hidden className="text-chakra-300">
+              ⌛
+            </span>
+            <span className="font-display text-[11px] uppercase tracking-widest text-chakra-300">
+              {t('map.timeline.title')}
+            </span>
+            <span className="shrink-0 text-[10px] text-ink-400">
+              {t('map.timeline.events', { count: events.length })}
+            </span>
+            {contextLabel && (
+              <span className="hidden truncate text-[10px] text-ember-300 sm:inline">
+                · {contextLabel}
+              </span>
+            )}
+          </span>
+          <span aria-hidden className="btn-ghost shrink-0 !px-2 !py-0.5 text-[11px]">
+            {open ? t('map.timeline.collapse') : t('map.timeline.expand')}
+          </span>
         </button>
       </header>
       {open && (
@@ -123,7 +121,10 @@ export function TimelineBottomSheet({ dataset }: TimelineBottomSheetProps) {
               description={t('map.timeline.emptyDescription')}
             />
           ) : (
-            <ol className="flex gap-3 overflow-x-auto pb-2 snap-x">
+            <ol
+              aria-label={t('map.timeline.title')}
+              className="flex snap-x gap-3 overflow-x-auto pb-2"
+            >
               {events.map((e) => (
                 <li key={e.id}>
                   <TimelineEventCard

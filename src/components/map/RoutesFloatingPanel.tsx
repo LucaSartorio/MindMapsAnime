@@ -105,15 +105,22 @@ export function RoutesFloatingPanel({ dataset }: RoutesFloatingPanelProps) {
                         />
                         <button
                           type="button"
+                          aria-pressed={active}
                           onClick={() =>
                             setSelectedRoute(active ? null : r.id)
                           }
-                          className="flex-1 min-w-0 text-left text-xs text-ink-100 truncate"
+                          className="flex-1 min-w-0 truncate text-left text-xs text-ink-100"
                         >
                           {getLocalizedText(r.localizedName, locale) || r.name}
                         </button>
-                        <span className="text-[10px] text-ink-400 shrink-0">
+                        {active && (
+                          <span className="shrink-0 rounded-full bg-ember-500/25 px-1.5 text-[9px] font-semibold uppercase tracking-wide text-ember-200">
+                            {t('map.routesPanel.active')}
+                          </span>
+                        )}
+                        <span className="shrink-0 text-[10px] text-ink-400">
                           {r.steps.length}
+                          <span className="sr-only"> {t('map.routesPanel.stepsLabel')}</span>
                         </span>
                         <button
                           type="button"

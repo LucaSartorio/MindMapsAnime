@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react';
+import { useId, useState, type ReactNode } from 'react';
 import { cn } from '@/lib/cn';
 
 interface FloatingPanelProps {
@@ -14,14 +14,16 @@ interface FloatingPanelProps {
   className?: string;
   /** Contenuto reso solo quando aperto (utile per lazy compute) */
   children: ReactNode;
-  /** Azione mostrata accanto alla X (es. Reset) */
+  /** Azione mostrata nell'header quando aperto (es. Reset) */
   headerAction?: ReactNode;
 }
 
 /**
- * Pannello compatto floating: di default mostra solo un bottone con titolo.
- * Cliccando si espande. Pensato per essere posizionato sopra la mappa
- * (vedi `pointer-events-auto` nei contenitori parent).
+ * Pannello floating collassabile (disclosure WAI-ARIA).
+ *
+ * Un unico pulsante-titolo con `aria-expanded`/`aria-controls` apre e chiude il
+ * contenuto: chevron rotante + stato annunciato agli screen reader (non solo
+ * visivo). Pensato per stare sopra la mappa (`pointer-events-auto`).
  */
 export function FloatingPanel({
   title,
@@ -35,28 +37,43 @@ export function FloatingPanel({
 }: FloatingPanelProps) {
   const [internalOpen, setInternalOpen] = useState(defaultOpen);
   const isOpen = open ?? internalOpen;
+  const contentId = useId();
 
   function setOpen(next: boolean) {
     if (onOpenChange) onOpenChange(next);
     else setInternalOpen(next);
   }
 
+  const toggle = (
+    <button
+      type="button"
+      onClick={() => setOpen(!isOpen)}
+      aria-expanded={isOpen}
+      aria-controls={isOpen ? contentId : undefined}
+      className="flex min-w-0 flex-1 items-center gap-2 text-left"
+    >
+      {icon && (
+        <span aria-hidden className="text-chakra-300">
+          {icon}
+        </span>
+      )}
+      <span className="truncate font-display text-[11px] uppercase tracking-widest text-chakra-300">
+        {title}
+      </span>
+      <span
+        aria-hidden
+        className={cn('text-ink-400 transition-transform', isOpen && 'rotate-90')}
+      >
+        ›
+      </span>
+    </button>
+  );
+
   if (!isOpen) {
     return (
-      <button
-        type="button"
-        onClick={() => setOpen(true)}
-        aria-expanded={false}
-        className="panel pointer-events-auto inline-flex items-center gap-2 px-3 py-1.5 text-xs font-medium text-ink-100 hover:border-chakra-500/50 transition"
-      >
-        {icon && <span aria-hidden>{icon}</span>}
-        <span className="font-display uppercase tracking-widest text-[11px] text-chakra-300">
-          {title}
-        </span>
-        <span aria-hidden className="text-ink-400">
-          ›
-        </span>
-      </button>
+      <div className="panel pointer-events-auto inline-flex items-center px-3 py-1.5 transition hover:border-chakra-500/50">
+        {toggle}
+      </div>
     );
   }
 
@@ -68,26 +85,13 @@ export function FloatingPanel({
         className,
       )}
     >
-      <header className="flex items-center justify-between gap-2 px-3 py-2 border-b border-ink-700/60">
-        <div className="flex items-center gap-2 min-w-0">
-          {icon && <span aria-hidden className="text-chakra-300">{icon}</span>}
-          <h3 className="font-display uppercase tracking-widest text-[11px] text-chakra-300 truncate">
-            {title}
-          </h3>
-        </div>
-        <div className="flex items-center gap-1 shrink-0">
-          {headerAction}
-          <button
-            type="button"
-            onClick={() => setOpen(false)}
-            aria-label={`Chiudi pannello ${title}`}
-            className="h-7 w-7 grid place-items-center rounded-md text-ink-300 hover:text-white hover:bg-ink-800/70"
-          >
-            ×
-          </button>
-        </div>
+      <header className="flex items-center justify-between gap-2 border-b border-ink-700/60 px-3 py-2">
+        {toggle}
+        {headerAction && <div className="shrink-0">{headerAction}</div>}
       </header>
-      <div className="flex-1 overflow-auto">{children}</div>
+      <div id={contentId} className="flex-1 overflow-auto">
+        {children}
+      </div>
     </section>
   );
 }
