@@ -288,6 +288,8 @@ export const en = {
     relatedCharacters: 'Related characters',
     mainCharacters: 'Main characters',
     relatedClans: 'Clans / Factions',
+    connectedPlaces: 'Connected places',
+    relatedNation: 'Nation',
     relatedFactions: 'Clans / Factions',
     relatedArcs: 'Story arcs',
     arcEvents: 'Arc events',

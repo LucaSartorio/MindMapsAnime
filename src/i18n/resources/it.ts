@@ -291,6 +291,8 @@ export const it = {
     relatedCharacters: 'Personaggi collegati',
     mainCharacters: 'Personaggi principali',
     relatedClans: 'Clan / Fazioni',
+    connectedPlaces: 'Luoghi collegati',
+    relatedNation: 'Nazione',
     relatedFactions: 'Clan / Fazioni',
     relatedArcs: 'Archi narrativi',
     arcEvents: 'Eventi dell\'arco',

@@ -211,8 +211,23 @@ It's the single engine for relation logic that was previously duplicated inline:
   the selected place to its related places — a layer node under the pins, only while a place is
   selected. Reinforces the focus dimming; bounded so it never becomes a global web.
 
+**Generic query API** (pure, memoization-friendly; feeds schede + search): `getConnectedEntities(graph,
+ref)` returns the depth-1 neighbour `EntityRef[]` of any entity (deduped); `getConnectedEntitiesByType`
+filters that to one `EntityType`; `getGraphContextForEntity(graph, ref)` returns an `EntityGraphContext`
+— the same depth-1 neighbours **bucketed by type** (`places/characters/events/arcs/factions/routes/
+nations/techniques`) plus the raw `relations` edges. Everything takes/returns `EntityRef`s (`{type,id}`),
+so consumers never touch dataset internals. The UI adapter `entityRefLabel(dataset, ref, locale)`
+(`src/lib/graphRefs.ts`) resolves a ref to its localized display name via the existing `find*` helpers —
+opening actions stay in the components (they own the store openers).
+
+**Graph-fed detail panel**: `LocationDetailsModal` has a **"Relazioni" tab** (shown only when it has
+content, with a count badge) built entirely from the graph — connected places (`relatedPlaceIds`, 2-hop)
++ arcs/factions/nations (`getGraphContextForEntity`), each a clickable chip that opens the target scheda
+via a local `openRef` dispatcher. No relation data is re-derived in the component.
+
 Adding a new relation = emit more edges in `buildWorldGraph` from the fields that already exist;
-consumers (focus, relations, overlay, and future search/schede) read from the same graph.
+consumers (focus, relations overlay, the schede's Relations tab, and future search) read from the same
+graph via these queries — no per-consumer traversal.
 
 ### Story Mode & Relations Mode
 - **Story Mode** (`StoryModePanel`, `useUiStore.storyArcId` + `openStory`/`closeStory`): a guided,

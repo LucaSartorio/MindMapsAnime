@@ -250,3 +250,80 @@ export function characterConnections(graph: WorldGraph, characterId: string): Ch
         CHAR_PRIORITY.indexOf(b.kind === 'other' ? 'related' : b.kind),
     );
 }
+
+/* ---------------------------------------------------------------- *
+ * API di query generiche (pure, testabili) — sezione 7 del brief.
+ * Interrogano il grafo in modo contestuale (mai globale) e alimentano
+ * focus mode, scheda dettaglio, ricerca e viste relazioni.
+ * ---------------------------------------------------------------- */
+
+export function getConnectedEntities(graph: WorldGraph, ref: EntityRef): EntityRef[] {
+  const seen = new Set<string>();
+  const out: EntityRef[] = [];
+  for (const e of neighbors(graph, entityKey(ref.type, ref.id))) {
+    if (seen.has(e.to)) continue;
+    seen.add(e.to);
+    out.push(parseKey(e.to));
+  }
+  return out;
+}
+
+export function getConnectedEntitiesByType(
+  graph: WorldGraph,
+  ref: EntityRef,
+  type: EntityType,
+): EntityRef[] {
+  return getConnectedEntities(graph, ref).filter((r) => r.type === type);
+}
+
+/** Contesto-grafo di profondità 1 di un'entità, raggruppato per tipo. */
+export interface EntityGraphContext {
+  entity: EntityRef;
+  places: EntityRef[];
+  characters: EntityRef[];
+  events: EntityRef[];
+  arcs: EntityRef[];
+  factions: EntityRef[];
+  routes: EntityRef[];
+  nations: EntityRef[];
+  techniques: EntityRef[];
+  /** Archi (relazioni) diretti, per etichette/tipi. */
+  relations: GraphEdge[];
+}
+
+export function getGraphContextForEntity(
+  graph: WorldGraph,
+  ref: EntityRef,
+): EntityGraphContext {
+  const edges = neighbors(graph, entityKey(ref.type, ref.id));
+  const buckets: Record<EntityType, EntityRef[]> = {
+    character: [],
+    place: [],
+    event: [],
+    arc: [],
+    faction: [],
+    route: [],
+    nation: [],
+    technique: [],
+  };
+  const seen: Partial<Record<EntityType, Set<string>>> = {};
+  for (const e of edges) {
+    const r = parseKey(e.to);
+    const set = (seen[r.type] ??= new Set<string>());
+    if (set.has(r.id)) continue;
+    set.add(r.id);
+    buckets[r.type].push(r);
+  }
+  return {
+    entity: ref,
+    places: buckets.place,
+    characters: buckets.character,
+    events: buckets.event,
+    arcs: buckets.arc,
+    factions: buckets.faction,
+    routes: buckets.route,
+    nations: buckets.nation,
+    techniques: buckets.technique,
+    relations: edges,
+  };
+}

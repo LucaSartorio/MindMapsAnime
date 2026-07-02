@@ -18,6 +18,13 @@ import {
 } from '@/lib/entities';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText, getLocationTypeLabel } from '@/utils/localization';
+import {
+  buildWorldGraph,
+  getGraphContextForEntity,
+  relatedPlaceIds,
+  type EntityRef,
+} from '@/lib/graph';
+import { entityRefLabel } from '@/lib/graphRefs';
 import type { PoneglyphKind } from '@/types';
 
 const PONEGLYPH_KIND_LABEL: Record<PoneglyphKind, { it: string; en: string }> = {
@@ -45,6 +52,9 @@ export function LocationDetailsModal({
   const openArc = useUiStore((s) => s.openArcModal);
   const openEvent = useUiStore((s) => s.openEventModal);
   const openRoute = useUiStore((s) => s.openRouteModal);
+  const openLocation = useUiStore((s) => s.openLocationModal);
+  const openNation = useUiStore((s) => s.openNationModal);
+  const openJutsu = useUiStore((s) => s.openJutsuModal);
   const setRoute = useMapStore((s) => s.setSelectedRoute);
   const setActiveMapLevel = useMapStore((s) => s.setActiveMapLevel);
   const setSelectedLocation = useMapStore((s) => s.setSelectedLocation);
@@ -306,6 +316,64 @@ export function LocationDetailsModal({
     </>
   );
 
+  // Scheda alimentata dal knowledge graph: contesto di profondità 1 + i luoghi
+  // collegati (2 hop via arco/personaggi/rotta). Nessun ricalcolo sparso.
+  const graph = buildWorldGraph(dataset);
+  const ctx = getGraphContextForEntity(graph, { type: 'place', id: location.id });
+  const connectedPlaceRefs: EntityRef[] = [...relatedPlaceIds(graph, location.id)]
+    .filter((id) => id !== location.id)
+    .map((id) => ({ type: 'place', id }));
+  const relationCount =
+    connectedPlaceRefs.length + ctx.arcs.length + ctx.factions.length + ctx.nations.length;
+
+  function openRef(ref: EntityRef) {
+    switch (ref.type) {
+      case 'place':
+        return openLocation(ref.id);
+      case 'character':
+        return openCharacter(ref.id);
+      case 'event':
+        return openEvent(ref.id);
+      case 'arc':
+        return openArc(ref.id);
+      case 'faction':
+        return openFaction(ref.id);
+      case 'route':
+        return openRoute(ref.id);
+      case 'nation':
+        return openNation(ref.id);
+      case 'technique':
+        return openJutsu(ref.id);
+      default:
+        return undefined;
+    }
+  }
+  const relGroup = (title: string, refs: EntityRef[]) =>
+    refs.length === 0 ? null : (
+      <Section title={title}>
+        <div className="flex flex-wrap gap-1.5">
+          {refs.map((r) => (
+            <button
+              key={`${r.type}:${r.id}`}
+              type="button"
+              onClick={() => openRef(r)}
+              className="chip hover:border-chakra-500/70 hover:text-white"
+            >
+              {entityRefLabel(dataset, r, locale)}
+            </button>
+          ))}
+        </div>
+      </Section>
+    );
+  const relationsTab = (
+    <>
+      {relGroup(t('modals.connectedPlaces'), connectedPlaceRefs)}
+      {relGroup(t('modals.relatedArcs'), ctx.arcs)}
+      {relGroup(t('modals.relatedClans'), ctx.factions)}
+      {relGroup(t('modals.relatedNation'), ctx.nations)}
+    </>
+  );
+
   // Solo i tab con contenuto (la Panoramica e la Galleria sono sempre presenti).
   const tabs: TabItem[] = [
     { id: 'overview', label: t('modals.tabOverview'), content: overviewTab },
@@ -322,6 +390,14 @@ export function LocationDetailsModal({
       : []),
     ...(routes.length > 0
       ? [{ id: 'routes', label: t('modals.tabRoutes'), badge: routes.length, content: routesTab }]
+      : []),
+    ...(relationCount > 0
+      ? [{
+          id: 'relations',
+          label: t('modals.relations.title'),
+          badge: relationCount,
+          content: relationsTab,
+        }]
       : []),
     { id: 'gallery', label: t('modals.tabGallery'), content: galleryTab },
   ];
