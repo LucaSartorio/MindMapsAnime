@@ -1,4 +1,4 @@
-import type { WorldDataset } from '@/types';
+import type { Localizable, WorldDataset } from '@/types';
 
 /**
  * Knowledge graph DERIVATO (non migrato) di un mondo.
@@ -20,7 +20,12 @@ export type EntityType =
   | 'faction'
   | 'route'
   | 'nation'
-  | 'technique';
+  | 'technique'
+  // Nodi-gruppo DERIVATI da campi liberi già presenti nel dataset: emessi solo
+  // quando il campo esiste, così restano world-agnostic (es. `race` solo dove i
+  // personaggi la valorizzano, `saga` dove gli archi la valorizzano).
+  | 'race'
+  | 'saga';
 
 export type RelationType =
   | 'located_in'
@@ -38,7 +43,9 @@ export type RelationType =
   | 'student'
   | 'ally'
   | 'enemy'
-  | 'related';
+  | 'related'
+  | 'of_race'
+  | 'in_saga';
 
 export interface EntityRef {
   type: EntityType;
@@ -68,6 +75,22 @@ export interface CharConnection {
   kind: RelKind;
   /** Etichetta specifica (da `relationships`) quando `kind === 'other'`. */
   label?: string;
+}
+
+/**
+ * Chiave stabile e locale-indipendente per una saga (`StoryArc.saga`, un
+ * `Localizable`): due archi con la stessa saga producono lo stesso nodo. Usata
+ * sia dal builder sia dall'adapter di etichette, così restano allineati.
+ */
+export function sagaKey(saga: Localizable): string {
+  const base = typeof saga === 'string' ? saga : saga.it || saga.en || '';
+  return base
+    .trim()
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
 }
 
 export function entityKey(type: EntityType, id: string): string {
@@ -142,6 +165,8 @@ export function buildWorldGraph(dataset: WorldDataset): WorldGraph {
 
   for (const c of dataset.characters) {
     link('character', c.id, 'place', c.villageLocationId, 'appears_at');
+    // Nodo-gruppo razza: emesso solo se il personaggio la valorizza (world-agnostic).
+    link('character', c.id, 'race', c.race, 'of_race');
     for (const id of c.locationIds ?? []) link('character', c.id, 'place', id, 'appears_at');
     for (const id of c.clanIds ?? []) link('character', c.id, 'faction', id, 'member_of');
     for (const id of c.arcIds ?? []) link('character', c.id, 'arc', id, 'in_arc');
@@ -181,6 +206,8 @@ export function buildWorldGraph(dataset: WorldDataset): WorldGraph {
   for (const a of dataset.arcs) {
     for (const id of a.characterIds ?? []) link('arc', a.id, 'character', id, 'in_arc');
     for (const id of a.locationIds ?? []) link('arc', a.id, 'place', id, 'in_arc');
+    // Nodo-gruppo saga: emesso solo se l'arco la valorizza (world-agnostic).
+    if (a.saga) link('arc', a.id, 'saga', sagaKey(a.saga), 'in_saga');
   }
 
   const graph: WorldGraph = { adjacency };
@@ -276,6 +303,36 @@ export function getConnectedEntitiesByType(
   return getConnectedEntities(graph, ref).filter((r) => r.type === type);
 }
 
+/**
+ * Entità di tipo `memberType` che condividono con `ref` un nodo-gruppo di tipo
+ * `via` (2 hop), escluso `ref` stesso. Generico e world-agnostic: ritorna `[]`
+ * se quel gruppo non esiste nel dataset (es. `race` assente in un mondo, `saga`
+ * non valorizzata). Usato per "stessa razza" (character/race/character) e
+ * "stessa saga" (arc/saga/arc), ma riutilizzabile per futuri raggruppamenti.
+ */
+export function coMembers(
+  graph: WorldGraph,
+  ref: EntityRef,
+  via: EntityType,
+  memberType: EntityType,
+): EntityRef[] {
+  const start = entityKey(ref.type, ref.id);
+  const seen = new Set<string>([entityKey(ref.type, ref.id)]);
+  const out: EntityRef[] = [];
+  for (const e of neighbors(graph, start)) {
+    const group = parseKey(e.to);
+    if (group.type !== via) continue;
+    for (const e2 of neighbors(graph, e.to)) {
+      if (seen.has(e2.to)) continue;
+      const member = parseKey(e2.to);
+      if (member.type !== memberType) continue;
+      seen.add(e2.to);
+      out.push(member);
+    }
+  }
+  return out;
+}
+
 /** Contesto-grafo di profondità 1 di un'entità, raggruppato per tipo. */
 export interface EntityGraphContext {
   entity: EntityRef;
@@ -287,6 +344,8 @@ export interface EntityGraphContext {
   routes: EntityRef[];
   nations: EntityRef[];
   techniques: EntityRef[];
+  races: EntityRef[];
+  sagas: EntityRef[];
   /** Archi (relazioni) diretti, per etichette/tipi. */
   relations: GraphEdge[];
 }
@@ -305,6 +364,8 @@ export function getGraphContextForEntity(
     route: [],
     nation: [],
     technique: [],
+    race: [],
+    saga: [],
   };
   const seen: Partial<Record<EntityType, Set<string>>> = {};
   for (const e of edges) {
@@ -324,6 +385,8 @@ export function getGraphContextForEntity(
     routes: buckets.route,
     nations: buckets.nation,
     techniques: buckets.technique,
+    races: buckets.race,
+    sagas: buckets.saga,
     relations: edges,
   };
 }

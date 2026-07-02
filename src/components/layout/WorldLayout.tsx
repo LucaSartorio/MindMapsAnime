@@ -10,6 +10,7 @@ import { ToolRail } from '@/components/map/ToolRail';
 import { MapLegendFloating } from '@/components/map/MapLegendFloating';
 import { RoutesFloatingPanel } from '@/components/map/RoutesFloatingPanel';
 import { MapFocusBreadcrumb } from '@/components/map/MapFocusBreadcrumb';
+import { MapModeIndicator } from '@/components/map/MapModeIndicator';
 import { StoryModePanel } from '@/components/map/StoryModePanel';
 import { ActiveFilterBar } from '@/components/filters/ActiveFilterBar';
 import { TimelineBottomSheet } from '@/components/timeline/TimelineBottomSheet';
@@ -119,7 +120,10 @@ export function WorldLayout({
                 onChange={setActiveMapLevel}
               />
             </div>
-            <MapFocusBreadcrumb dataset={dataset} />
+            <div className="pointer-events-auto flex flex-wrap items-center justify-center gap-2">
+              <MapModeIndicator />
+              <MapFocusBreadcrumb dataset={dataset} />
+            </div>
           </div>
 
           {/* Barra dei filtri attivi: appare solo quando c'è almeno un filtro,

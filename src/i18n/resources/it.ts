@@ -139,6 +139,15 @@ export const it = {
       exit: 'Esci',
       exitAria: 'Esci dalla modalità focus',
     },
+    mode: {
+      label: 'Modalità',
+      announce: 'Modalità mappa: {{mode}}',
+      explore: 'Esplorazione',
+      timeline: 'Timeline',
+      routes: 'Percorso',
+      relations: 'Relazioni',
+      story: 'Storia guidata',
+    },
     story: {
       title: 'Storia guidata',
       start: 'Avvia storia guidata',
@@ -250,6 +259,7 @@ export const it = {
     label: 'Cerca nel mondo {{world}}',
     kbHint: 'Premi ⌘K (o /) per cercare',
     navHint: '↑↓ naviga · ↵ apri · esc chiudi',
+    relatedTo: 'Correlate a {{title}}',
     emptyTitle: 'Nessun risultato',
     emptyDescription: 'Prova con un altro termine.',
     kinds: {
@@ -293,6 +303,8 @@ export const it = {
     relatedClans: 'Clan / Fazioni',
     connectedPlaces: 'Luoghi collegati',
     relatedNation: 'Nazione',
+    sameRace: 'Stessa razza',
+    sameSaga: 'Stessa saga',
     relatedFactions: 'Clan / Fazioni',
     relatedArcs: 'Archi narrativi',
     arcEvents: 'Eventi dell\'arco',

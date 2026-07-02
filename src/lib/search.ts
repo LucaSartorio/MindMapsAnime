@@ -1,10 +1,13 @@
 import type {
   AnimeWorld,
   SearchResult,
+  SearchResultKind,
   SupportedLocale,
   WorldDataset,
 } from '@/types';
 import { getLocalizedText } from '@/utils/localization';
+import { buildWorldGraph, getConnectedEntities, type EntityType } from '@/lib/graph';
+import { entityRefLabel } from '@/lib/graphRefs';
 
 /**
  * Ricerca generica con ranking semplice e locale-aware:
@@ -102,6 +105,63 @@ export function searchWorlds(
     if (r) out.push(r);
   }
   return out.sort((a, b) => b.score - a.score);
+}
+
+// Mappa tipo-grafo ↔ tipo-risultato. I nodi-gruppo (race/saga) non hanno una
+// scheda propria, quindi non compaiono come risultati di ricerca.
+const ENTITY_TYPE_TO_KIND: Partial<Record<EntityType, SearchResultKind>> = {
+  place: 'location',
+  character: 'character',
+  event: 'event',
+  arc: 'arc',
+  faction: 'faction',
+  route: 'route',
+  nation: 'nation',
+  technique: 'jutsu',
+};
+const KIND_TO_ENTITY_TYPE: Partial<Record<SearchResultKind, EntityType>> = {
+  location: 'place',
+  character: 'character',
+  event: 'event',
+  arc: 'arc',
+  faction: 'faction',
+  route: 'route',
+  nation: 'nation',
+  jutsu: 'technique',
+};
+
+/**
+ * Espande la ricerca alle RELAZIONI: date le coordinate del match in cima
+ * (kind+id), ritorna le entità collegate nel knowledge graph come `SearchResult`
+ * marcati `relatedTo`. Rende la ⌘K anche un esploratore di relazioni, in modo
+ * world-agnostic (nessun termine hardcoded, funziona per ogni dataset).
+ */
+export function relatedResults(
+  dataset: WorldDataset,
+  kind: SearchResultKind,
+  id: string,
+  locale: SupportedLocale,
+  relatedToTitle: string,
+  limit = 6,
+): SearchResult[] {
+  const type = KIND_TO_ENTITY_TYPE[kind];
+  if (!type) return [];
+  const graph = buildWorldGraph(dataset);
+  const out: SearchResult[] = [];
+  for (const ref of getConnectedEntities(graph, { type, id })) {
+    const refKind = ENTITY_TYPE_TO_KIND[ref.type];
+    if (!refKind) continue;
+    out.push({
+      id: ref.id,
+      kind: refKind,
+      worldId: dataset.world.id,
+      title: entityRefLabel(dataset, ref, locale),
+      score: 0,
+      relatedTo: relatedToTitle,
+    });
+    if (out.length >= limit) break;
+  }
+  return out;
 }
 
 /** Cerca dentro un singolo dataset (un mondo) cercando in IT/EN/canonico. */
