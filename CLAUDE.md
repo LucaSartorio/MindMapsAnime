@@ -138,8 +138,10 @@ a vertical floating rail on desktop (left, icon-only + `aria-label`/tooltip) and
 on mobile (icon + label, ≥44px targets). Each panel tool exposes `aria-pressed` reflecting its open
 state. It toggles the existing store state (filters, layers, legend, timeline, routes) plus reset
 view / clear selection / help — so there's one predictable entry point instead of scattered buttons.
-`WorldLayout` mounts it and keeps only the level switcher (centred) + `ActiveFilterBar` in the top
-overlay; the React Flow zoom `<Controls>` stay top-left, the floating panels bottom.
+`WorldLayout` mounts it and keeps only the level switcher (centred) + `ActiveFilterBar` +
+`MapFocusBreadcrumb` in the top overlay; the React Flow zoom `<Controls>` stay top-left, the floating
+panels bottom. The header (`TopNav`) also gains a `WorldSwitcher` — an accessible dropdown to jump
+between anime worlds without going back home.
 
 **Filters vs layers are separated** (clear mental model): `FiltersDrawer` = *which data* (chips +
 options), `LayersDrawer` (`src/components/drawers/LayersDrawer.tsx`) = *what's visible* (map/story
@@ -168,14 +170,28 @@ For Naruto the reference PNG is 990 × 579 px, so convert: `flowX = px_x / 990 *
 keep the same viewBox or all pins break. The PNG-reading scripts (`find-red-dots`, `extract-boundaries`,
 via `pngjs`) emit coordinates already converted to the flow plane — paste their output into the data.
 
-### Detail schede as a docked panel
+### Detail schede as a docked panel (tabbed)
 `src/components/common/Modal.tsx` is the single shell behind every detail scheda (dispatched by
 `ModalRoot` from `useUiStore.activeModal`). It defaults to `placement="docked"`: a right-anchored
 side panel on desktop / bottom sheet on mobile, so opening a scheda **doesn't cover the map** (the
 selected pin stays highlighted behind it). `placement="center"` restores the classic centered card.
-Content components are untouched — the presentation switch is entirely inside `Modal`. Opening a
-location scheda syncs `selectedLocation` (in `LocationDetailsModal`) so the map re-centres even when
-reached via a cross-link.
+Opening a location scheda syncs `selectedLocation` (in `LocationDetailsModal`) so the map re-centres
+even when reached via a cross-link.
+
+Long schede use `Tabs` (`src/components/common/Tabs.tsx`), an accessible WAI-ARIA tablist
+(roving tabindex, ←/→/Home/End, `role="tabpanel"`). `LocationDetailsModal` is organised into
+Overview / Events / Characters / Routes / Gallery tabs (each with a count badge, shown only when it
+has content). Other modals still scroll — extend them with `Tabs` the same way when needed.
+
+### Focus mode & route stepper (narrative interactions)
+- **Focus mode**: when a location or route is selected, `InteractiveWorldMap` computes a "related"
+  set (same arc / same characters / same route) and passes `dimmed` to the unrelated `MapNode`s, so
+  the connected context stands out. `MapFocusBreadcrumb` shows what's in focus + an "exit" that
+  clears the selection; clicking the map pane (`onPaneClick`) also exits.
+- **Route stepper** (`src/components/map/RouteStepper.tsx`, embedded in `RouteDetailsModal`): "follow
+  the route" — Prev/Next + auto **Play** walk the map through a route's steps by setting
+  `selectedRoute` + `selectedLocation` in the store (the canvas centres/highlights each step). No
+  React Flow access needed from the modal — it drives the shared store, the map reacts.
 
 ### Floating map panels (legend · routes · timeline)
 The over-map panels share `FloatingPanel` (`src/components/common/FloatingPanel.tsx`), a WAI-ARIA

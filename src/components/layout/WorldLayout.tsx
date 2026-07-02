@@ -9,6 +9,7 @@ import { MapLevelSwitcher } from '@/components/map/MapLevelSwitcher';
 import { ToolRail } from '@/components/map/ToolRail';
 import { MapLegendFloating } from '@/components/map/MapLegendFloating';
 import { RoutesFloatingPanel } from '@/components/map/RoutesFloatingPanel';
+import { MapFocusBreadcrumb } from '@/components/map/MapFocusBreadcrumb';
 import { ActiveFilterBar } from '@/components/filters/ActiveFilterBar';
 import { TimelineBottomSheet } from '@/components/timeline/TimelineBottomSheet';
 import { OnboardingOverlay } from '@/components/onboarding/OnboardingOverlay';
@@ -107,8 +108,8 @@ export function WorldLayout({
           aria-hidden={false}
           className="pointer-events-none absolute inset-0 flex flex-col gap-3 px-3 pt-3 pb-24 sm:px-4 sm:pt-4 md:pb-4"
         >
-          {/* Top: selettore del livello mappa, centrato. */}
-          <div className="flex justify-center">
+          {/* Top: selettore del livello mappa (centro) + breadcrumb focus. */}
+          <div className="flex flex-col items-center gap-2">
             <div className="pointer-events-auto">
               <MapLevelSwitcher
                 levels={dataset.mapLevels}
@@ -116,6 +117,7 @@ export function WorldLayout({
                 onChange={setActiveMapLevel}
               />
             </div>
+            <MapFocusBreadcrumb dataset={dataset} />
           </div>
 
           {/* Barra dei filtri attivi: appare solo quando c'è almeno un filtro,

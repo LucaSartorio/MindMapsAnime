@@ -71,6 +71,7 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
   const viewportResetKey = useMapStore((s) => s.viewportResetKey);
   const setActiveMapLevel = useMapStore((s) => s.setActiveMapLevel);
   const setSelectedLocation = useMapStore((s) => s.setSelectedLocation);
+  const resetSelections = useMapStore((s) => s.resetSelections);
   const setHoveredBoundary = useMapStore((s) => s.setHoveredBoundary);
   const openLocationModal = useUiStore((s) => s.openLocationModal);
   const { fitView, setCenter, getZoom, fitBounds } = useReactFlow();
@@ -124,6 +125,35 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
         : clusterLocations(spreadLocations, quantizedZoom, keepIds),
     [spreadLocations, quantizedZoom, keepIds],
   );
+
+  // Focus mode: quando c'è una selezione (luogo o percorso), calcola i luoghi
+  // "collegati" (stesso arco, stessi personaggi, stesso percorso). I pin non
+  // collegati vengono attenuati (`dimmed`) per far risaltare il contesto.
+  // `null` = nessun focus attivo (mappa piena).
+  const focusRelatedIds = useMemo<Set<string> | null>(() => {
+    if (!selectedLocationId && !selectedRouteId) return null;
+    const set = new Set<string>();
+    if (route) for (const s of route.steps) set.add(s.locationId);
+    if (selectedLocationId) {
+      set.add(selectedLocationId);
+      const origin = dataset.locations.find((l) => l.id === selectedLocationId);
+      if (origin) {
+        const arcSet = new Set(origin.arcIds ?? []);
+        const charSet = new Set(origin.characterIds ?? []);
+        for (const loc of dataset.locations) {
+          if (loc.mapLevelId !== activeLevel.id) continue;
+          if ((loc.arcIds ?? []).some((a) => arcSet.has(a))) set.add(loc.id);
+          if ((loc.characterIds ?? []).some((c) => charSet.has(c))) set.add(loc.id);
+        }
+        for (const r of dataset.routes) {
+          if (r.steps.some((s) => s.locationId === origin.id)) {
+            for (const s of r.steps) set.add(s.locationId);
+          }
+        }
+      }
+    }
+    return set;
+  }, [selectedLocationId, selectedRouteId, route, dataset.locations, dataset.routes, activeLevel.id]);
 
   // Layer nodi (sfondo, confini, labels): dipendono SOLO da livello+dataset,
   // non dalla selezione. Memoizzati a parte così cliccare un pin non
@@ -220,6 +250,7 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
           highlighted: highlightedLocationIds.has(loc.id),
           poneglyph: filters.highlightPoneglyphs && !!loc.poneglyph,
           hasSubMap: !!loc.subMapLevelId,
+          dimmed: !!focusRelatedIds && !focusRelatedIds.has(loc.id),
         },
         draggable: false,
         selectable: true,
@@ -230,6 +261,7 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
     selectedLocationId,
     highlightedLocationIds,
     filters.highlightPoneglyphs,
+    focusRelatedIds,
     locale,
   ]);
 
@@ -346,6 +378,11 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
     setSelectedLocation(node.id);
     openLocationModal(node.id);
   }
+  // Click sullo sfondo mappa: esce dal focus (deseleziona). Con una scheda
+  // aperta lo scrim la intercetta prima, quindi qui arriva solo a mappa "libera".
+  function handlePaneClick() {
+    if (selectedLocationId || selectedRouteId) resetSelections();
+  }
   function handleNodeDoubleClick(_: unknown, node: Node) {
     if (node.id.startsWith('__layer-') || node.id.startsWith('__cluster-')) return;
     const loc = dataset.locations.find((l) => l.id === node.id);
@@ -381,6 +418,7 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
         edgeTypes={EDGE_TYPES}
         onNodeClick={handleNodeClick}
         onNodeDoubleClick={handleNodeDoubleClick}
+        onPaneClick={handlePaneClick}
         onNodeMouseEnter={handleNodeMouseEnter}
         onNodeMouseLeave={handleNodeMouseLeave}
         fitView

@@ -7,6 +7,7 @@ import { useLocaleStore } from '@/store/useLocaleStore';
 import { getAbilityTerm, getFactionsTerm } from '@/lib/worldConfig';
 import { cn } from '@/lib/cn';
 import { GlobalSearchDropdown } from '@/components/search/GlobalSearchDropdown';
+import { WorldSwitcher } from '@/components/layout/WorldSwitcher';
 import { LanguageSwitcher } from '@/components/i18n/LanguageSwitcher';
 
 interface NavItem {
@@ -126,13 +127,15 @@ export function TopNav() {
             <span className="font-display text-base text-ink-100">
               {t('app.title')}
             </span>
-            {inWorld && dataset && (
-              <span className="font-mono text-[10px] uppercase tracking-widest text-chakra-300">
-                · {dataset.world.title}
-              </span>
-            )}
           </span>
         </Link>
+
+        {/* Selettore universo: cambia anime dall'header (Esplora resta primaria). */}
+        {inWorld && worldSlug && (
+          <div className="hidden shrink-0 sm:block">
+            <WorldSwitcher currentSlug={worldSlug} />
+          </div>
+        )}
 
         {/* Nav desktop — flessibile: occupa lo spazio tra logo e cluster destro
             e, se troppo lunga, scorre in orizzontale invece di sovrapporsi
