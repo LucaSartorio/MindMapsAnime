@@ -1,5 +1,7 @@
+import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { cn } from '@/lib/cn';
 import type { WorldDataset } from '@/types';
 import { Modal } from '@/components/common/Modal';
 import { Badge } from '@/components/common/Badge';
@@ -31,6 +33,14 @@ export function RouteDetailsModal({
   const setSelectedRoute = useMapStore((s) => s.setSelectedRoute);
   const navigate = useNavigate();
 
+  // Tappa corrente condivisa con lo stepper: la lista sotto evidenzia la stessa
+  // tappa (e segna come "fatte" quelle già passate) mentre la play avanza.
+  const [activeStep, setActiveStep] = useState(0);
+  const steps = useMemo(
+    () => (route ? [...route.steps].sort((a, b) => a.order - b.order) : []),
+    [route],
+  );
+
   if (!route) {
     return (
       <Modal open onClose={close} title={t("modals.notFound")} size="sm">
@@ -43,7 +53,6 @@ export function RouteDetailsModal({
     .map((id) => findCharacter(dataset, id))
     .filter((c): c is NonNullable<typeof c> => !!c);
   const arc = findArc(dataset, route.arcId);
-  const steps = [...route.steps].sort((a, b) => a.order - b.order);
 
   return (
     <Modal
@@ -84,7 +93,13 @@ export function RouteDetailsModal({
 
       {/* "Segui il percorso": cammina la mappa tappa per tappa (Prev/Next/Play). */}
       {steps.length > 1 && (
-        <RouteStepper dataset={dataset} routeId={route.id} steps={steps} />
+        <RouteStepper
+          dataset={dataset}
+          routeId={route.id}
+          steps={steps}
+          activeIndex={activeStep}
+          onActiveIndexChange={setActiveStep}
+        />
       )}
 
       {((route.mangaChapters?.length ?? 0) > 0 || (route.animeEpisodes?.length ?? 0) > 0) && (
@@ -143,17 +158,31 @@ export function RouteDetailsModal({
           {t('modals.stepsOrder')}
         </h3>
         <ol className="space-y-1.5">
-          {steps.map((s) => {
+          {steps.map((s, i) => {
             const loc = findLocation(dataset, s.locationId);
             const ev = s.eventId
               ? dataset.events.find((e) => e.id === s.eventId)
               : undefined;
+            // Con lo stepper attivo: la tappa corrente si illumina, quelle già
+            // passate restano segnate → si capisce a colpo d'occhio dove si è.
+            const isCurrent = steps.length > 1 && i === activeStep;
+            const isDone = steps.length > 1 && i < activeStep;
             return (
               <li
                 key={s.order}
-                className="panel-soft px-3 py-2 flex items-center gap-2"
+                aria-current={isCurrent ? 'step' : undefined}
+                className={cn(
+                  'panel-soft px-3 py-2 flex items-center gap-2 transition',
+                  isCurrent && 'border-chakra-400/70 bg-chakra-500/10 shadow-focus',
+                  isDone && 'opacity-60',
+                )}
               >
-                <Badge>#{s.order}</Badge>
+                <Badge
+                  variant={isCurrent ? 'accent' : 'default'}
+                  className={isDone ? 'text-chakra-300' : undefined}
+                >
+                  {isDone ? '✓' : `#${s.order}`}
+                </Badge>
                 <div className="flex-1 min-w-0">
                   {loc ? (
                     <button
