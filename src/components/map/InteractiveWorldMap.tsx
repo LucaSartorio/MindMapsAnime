@@ -18,7 +18,7 @@ import { useMapStore, useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText } from '@/utils/localization';
 import { selectVisibleLocations } from '@/lib/filters';
-import { clusterLocations } from '@/lib/clusterPins';
+import { clusterLocations, spreadOverlappingPins } from '@/lib/clusterPins';
 import { worldShowsBoundaryHighlight } from '@/lib/worldMapPrefs';
 import {
   MapNode,
@@ -44,6 +44,14 @@ interface InteractiveWorldMapProps {
 }
 
 const FIT_VIEW_OPTIONS = { padding: 0.18, duration: 600 } as const;
+
+/**
+ * Oltre questo zoom il clustering si scioglie del tutto: a zoom (quasi) massimo
+ * si vedono SEMPRE tutti i pin, così i gruppi di luoghi troppo vicini per
+ * separarsi con la griglia (es. Cocoyashi/Arlong in One Piece) non restano mai
+ * "intrappolati" in un badge che non si apre. `maxZoom` del canvas è 3.
+ */
+const CLUSTER_OFF_ZOOM = 2.6;
 
 export function InteractiveWorldMap(props: InteractiveWorldMapProps) {
   return (
@@ -86,6 +94,12 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
     [dataset, activeLevel.id, filters, visibleLayers],
   );
 
+  // Scosta i pin quasi sovrapposti così a zoom alto restano distinti/cliccabili.
+  const spreadLocations = useMemo(
+    () => spreadOverlappingPins(visibleLocations),
+    [visibleLocations],
+  );
+
   const route: Route | undefined = useMemo(
     () => dataset.routes.find((r) => r.id === selectedRouteId),
     [dataset.routes, selectedRouteId],
@@ -104,8 +118,11 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
   }, [highlightedLocationIds, selectedLocationId]);
 
   const clusterEntries = useMemo(
-    () => clusterLocations(visibleLocations, quantizedZoom, keepIds),
-    [visibleLocations, quantizedZoom, keepIds],
+    () =>
+      quantizedZoom >= CLUSTER_OFF_ZOOM
+        ? spreadLocations.map((location) => ({ kind: 'pin' as const, location }))
+        : clusterLocations(spreadLocations, quantizedZoom, keepIds),
+    [spreadLocations, quantizedZoom, keepIds],
   );
 
   // Layer nodi (sfondo, confini, labels): dipendono SOLO da livello+dataset,
@@ -294,10 +311,10 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
     return () => clearTimeout(id);
   }, [route, dataset.locations, activeLevel.id, fitBounds]);
 
-  // Centra sul luogo selezionato
+  // Centra sul luogo selezionato (coord. "spread", così centra sul pin renderizzato)
   useEffect(() => {
     if (!selectedLocationId) return;
-    const loc = visibleLocations.find((l) => l.id === selectedLocationId);
+    const loc = spreadLocations.find((l) => l.id === selectedLocationId);
     if (!loc) return;
     const id = setTimeout(() => {
       setCenter(loc.x + 40, loc.y, {
@@ -306,7 +323,7 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
       });
     }, 50);
     return () => clearTimeout(id);
-  }, [selectedLocationId, visibleLocations, setCenter, getZoom]);
+  }, [selectedLocationId, spreadLocations, setCenter, getZoom]);
 
   function handleNodeClick(_: unknown, node: Node) {
     // ignora layer

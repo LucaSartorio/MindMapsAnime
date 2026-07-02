@@ -16,6 +16,53 @@ export type ClusterEntry =
   | { kind: 'cluster'; cluster: PinCluster };
 
 /**
+ * Separa i pin (quasi) sovrapposti disponendoli su un piccolo cerchio attorno
+ * al loro baricentro, così a zoom alto sono distinti e cliccabili.
+ *
+ * Alcuni luoghi hanno coordinate quasi identiche (es. in One Piece
+ * Cocoyashi/Arlong Park distano ~3 unità): senza questo, a zoom massimo
+ * resterebbero impilati e impossibili da separare. Lo scostamento è minimo
+ * (pochi punti su un piano di migliaia) e deterministico (ordine per id), NON
+ * modifica i dati sorgente e scala a qualsiasi mondo senza ritocchi manuali.
+ */
+export function spreadOverlappingPins(
+  locations: Location[],
+  mergeDist = 12,
+  radius = 16,
+): Location[] {
+  if (locations.length < 2) return locations;
+  const used = new Set<number>();
+  const result: Location[] = [];
+  for (let i = 0; i < locations.length; i++) {
+    if (used.has(i)) continue;
+    const group = [locations[i]];
+    used.add(i);
+    for (let j = i + 1; j < locations.length; j++) {
+      if (used.has(j)) continue;
+      if (Math.hypot(locations[j].x - locations[i].x, locations[j].y - locations[i].y) <= mergeDist) {
+        group.push(locations[j]);
+        used.add(j);
+      }
+    }
+    if (group.length === 1) {
+      result.push(group[0]);
+      continue;
+    }
+    const cx = group.reduce((s, l) => s + l.x, 0) / group.length;
+    const cy = group.reduce((s, l) => s + l.y, 0) / group.length;
+    // Raggio che garantisce distanza adiacente sufficiente anche con molti membri.
+    const r = Math.max(radius, 15 / Math.sin(Math.PI / group.length));
+    [...group]
+      .sort((a, b) => a.id.localeCompare(b.id))
+      .forEach((loc, k) => {
+        const angle = (2 * Math.PI * k) / group.length - Math.PI / 2;
+        result.push({ ...loc, x: cx + r * Math.cos(angle), y: cy + r * Math.sin(angle) });
+      });
+  }
+  return result;
+}
+
+/**
  * Clustering a griglia in spazio-mondo per ridurre il caos quando ci sono
  * molti pin ravvicinati.
  *

@@ -126,6 +126,8 @@ export const it = {
       submap: 'Sottomappa',
       routes: 'Percorso narrativo',
       events: 'Tappa / evento',
+      filterHint: 'Tocca un tipo per filtrarlo sulla mappa.',
+      showAll: 'Mostra tutti',
       hint:
         'Nodi arancioni = selezionati o su un percorso attivo. Linee tratteggiate = percorso narrativo.',
     },
@@ -135,6 +137,8 @@ export const it = {
       reset: 'Reset',
       details: 'Dettagli percorso',
       openDetails: 'Apri dettagli percorso →',
+      stepsLabel: 'tappe',
+      active: 'Attivo',
     },
     timeline: {
       title: 'Timeline narrativa',
