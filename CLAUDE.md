@@ -193,6 +193,27 @@ has content). Other modals still scroll — extend them with `Tabs` the same way
   `selectedRoute` + `selectedLocation` in the store (the canvas centres/highlights each step). No
   React Flow access needed from the modal — it drives the shared store, the map reacts.
 
+### Knowledge graph (derived semantic layer)
+`src/lib/graph/` builds a **derived** knowledge graph — a *projection* of the existing
+`WorldDataset`, NOT a migration: no data duplication, the data files stay the single source of
+truth. `buildWorldGraph(dataset)` walks the existing id-arrays (`location.characterIds/arcIds/…`,
+`event.locationId/…`, `character.family/teachers/allies/relationships/…`, `route.steps`, `faction.*`,
+`arc.*`) and emits typed, bidirectional edges into an adjacency map, **memoized per-dataset**
+(WeakMap, like `buildIndexes`). Nodes are keyed `type:id` (`entityKey`/`parseKey`); relation types
+are semantic (`appears_at`, `happened_at`, `in_arc`, `member_of`, `family|mentor|student|ally|enemy`,
+`uses`, `passes_through`…). The graph is **queried contextually, never shown globally**.
+
+It's the single engine for relation logic that was previously duplicated inline:
+- `relatedPlaceIds(graph, placeId)` → focus mode's "related places" set (`InteractiveWorldMap`).
+- `characterConnections(graph, characterId)` → the `RelationsGraphModal` connections (deduped by
+  priority family > mentor > student > ally > enemy > other).
+- `MapRelationsOverlay` draws **contextual** place→place connectors (≤12, dashed, `aria-hidden`) from
+  the selected place to its related places — a layer node under the pins, only while a place is
+  selected. Reinforces the focus dimming; bounded so it never becomes a global web.
+
+Adding a new relation = emit more edges in `buildWorldGraph` from the fields that already exist;
+consumers (focus, relations, overlay, and future search/schede) read from the same graph.
+
 ### Story Mode & Relations Mode
 - **Story Mode** (`StoryModePanel`, `useUiStore.storyArcId` + `openStory`/`closeStory`): a guided,
   non-modal side panel (bottom sheet on mobile) that walks an arc's events in order. Started from

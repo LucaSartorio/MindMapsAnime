@@ -19,6 +19,8 @@ import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText } from '@/utils/localization';
 import { selectVisibleLocations } from '@/lib/filters';
 import { clusterLocations, spreadOverlappingPins } from '@/lib/clusterPins';
+import { buildWorldGraph, relatedPlaceIds } from '@/lib/graph';
+import { MapRelationsOverlay } from './MapRelationsOverlay';
 import { worldShowsBoundaryHighlight } from '@/lib/worldMapPrefs';
 import {
   MapNode,
@@ -101,6 +103,10 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
     [visibleLocations],
   );
 
+  // Knowledge graph derivato del mondo (memoizzato per-dataset): motore unico
+  // per le relazioni contestuali (focus mode + overlay).
+  const graph = useMemo(() => buildWorldGraph(dataset), [dataset]);
+
   const route: Route | undefined = useMemo(
     () => dataset.routes.find((r) => r.id === selectedRouteId),
     [dataset.routes, selectedRouteId],
@@ -134,26 +140,13 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
     if (!selectedLocationId && !selectedRouteId) return null;
     const set = new Set<string>();
     if (route) for (const s of route.steps) set.add(s.locationId);
+    // Luoghi collegati derivati dal knowledge graph (stesso arco / personaggi /
+    // rotta): un'unica sorgente invece del calcolo inline duplicato.
     if (selectedLocationId) {
-      set.add(selectedLocationId);
-      const origin = dataset.locations.find((l) => l.id === selectedLocationId);
-      if (origin) {
-        const arcSet = new Set(origin.arcIds ?? []);
-        const charSet = new Set(origin.characterIds ?? []);
-        for (const loc of dataset.locations) {
-          if (loc.mapLevelId !== activeLevel.id) continue;
-          if ((loc.arcIds ?? []).some((a) => arcSet.has(a))) set.add(loc.id);
-          if ((loc.characterIds ?? []).some((c) => charSet.has(c))) set.add(loc.id);
-        }
-        for (const r of dataset.routes) {
-          if (r.steps.some((s) => s.locationId === origin.id)) {
-            for (const s of r.steps) set.add(s.locationId);
-          }
-        }
-      }
+      for (const id of relatedPlaceIds(graph, selectedLocationId)) set.add(id);
     }
     return set;
-  }, [selectedLocationId, selectedRouteId, route, dataset.locations, dataset.routes, activeLevel.id]);
+  }, [selectedLocationId, selectedRouteId, route, graph]);
 
   // Layer nodi (sfondo, confini, labels): dipendono SOLO da livello+dataset,
   // non dalla selezione. Memoizzati a parte così cliccare un pin non
@@ -265,9 +258,43 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
     locale,
   ]);
 
+  // Overlay dei connettori contestuali: presente solo quando un luogo è
+  // selezionato (e ha collegati visibili). Sotto i pin, sopra lo sfondo.
+  const relationsLayerNode = useMemo<Node<MapLayerNodeData> | null>(() => {
+    if (!selectedLocationId || !focusRelatedIds) return null;
+    return {
+      id: '__layer-relations',
+      type: 'map-layer',
+      position: { x: 0, y: 0 },
+      data: {
+        width: activeLevel.width,
+        height: activeLevel.height,
+        z: 1,
+        content: (
+          <MapRelationsOverlay
+            level={activeLevel}
+            fromId={selectedLocationId}
+            relatedIds={focusRelatedIds}
+            locations={spreadLocations}
+          />
+        ),
+      },
+      draggable: false,
+      selectable: false,
+      deletable: false,
+      focusable: false,
+      zIndex: -2,
+      style: { pointerEvents: 'none' as const },
+    };
+  }, [selectedLocationId, focusRelatedIds, spreadLocations, activeLevel]);
+
   const nodes = useMemo<Node<MapNodeData | MapLayerNodeData | MapClusterNodeData>[]>(
-    () => [...layerNodes, ...pinNodes],
-    [layerNodes, pinNodes],
+    () => [
+      ...layerNodes,
+      ...(relationsLayerNode ? [relationsLayerNode] : []),
+      ...pinNodes,
+    ],
+    [layerNodes, relationsLayerNode, pinNodes],
   );
 
   const edges = useMemo<Edge<MapEdgeData>[]>(() => {
