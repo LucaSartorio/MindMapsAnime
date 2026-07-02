@@ -1,6 +1,6 @@
 import type { WorldDataset } from '@/types';
 import type { SupportedLocale } from '@/types/i18n';
-import type { EntityRef } from '@/lib/graph';
+import { sagaKey, type EntityRef } from '@/lib/graph';
 import {
   findArc,
   findCharacter,
@@ -10,7 +10,12 @@ import {
   findNation,
   findRoute,
 } from '@/lib/entities';
-import { getEntityDisplayName, getLocalizedText } from '@/utils/localization';
+import {
+  getEntityDisplayName,
+  getLocalizedText,
+  getRaceLabel,
+} from '@/utils/localization';
+import { humanizeId } from '@/lib/worldConfig';
 
 /**
  * Adapter UI: risolve un `EntityRef` del grafo nel suo nome visualizzabile,
@@ -54,6 +59,14 @@ export function entityRefLabel(
     case 'technique': {
       const j = findJutsu(dataset, ref.id);
       return j ? getLocalizedText(j.localizedName, locale) || j.name : ref.id;
+    }
+    case 'race':
+      // `race` è un id libero (es. 'saiyan'): etichetta nota → humanize fallback.
+      return getRaceLabel(ref.id, locale) || humanizeId(ref.id);
+    case 'saga': {
+      // Nodo derivato: risolvo l'etichetta localizzata dal primo arco della saga.
+      const arc = dataset.arcs.find((a) => a.saga && sagaKey(a.saga) === ref.id);
+      return arc?.saga ? getLocalizedText(arc.saga, locale) : humanizeId(ref.id);
     }
     default:
       return ref.id;

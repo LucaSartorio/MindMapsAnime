@@ -33,6 +33,9 @@ import {
   getRoleLabel,
   humanizeId,
 } from '@/lib/worldConfig';
+import { buildRelationGroups } from '@/lib/relationGroups';
+import { RelationsPanel } from '@/components/common/RelationsPanel';
+import { useOpenEntityRef } from '@/lib/useOpenEntityRef';
 
 interface CharacterDetailsModalProps {
   dataset: WorldDataset;
@@ -55,6 +58,7 @@ export function CharacterDetailsModal({
   const openEvent = useUiStore((s) => s.openEventModal);
   const openJutsu = useUiStore((s) => s.openJutsuModal);
   const openRelations = useUiStore((s) => s.openRelationsModal);
+  const openRef = useOpenEntityRef();
   const setActiveMapLevel = useMapStore((s) => s.setActiveMapLevel);
   const setSelectedLocation = useMapStore((s) => s.setSelectedLocation);
   const navigate = useNavigate();
@@ -66,6 +70,17 @@ export function CharacterDetailsModal({
       </Modal>
     );
   }
+
+  // La scheda personaggio mostra già luoghi/fazioni/archi/tecniche/rotte e i
+  // legami tra personaggi: dal graph aggiungo solo ciò che è nuovo (es. "stessa
+  // razza", valorizzata da Dragon Ball; vuota → invisibile negli altri mondi).
+  const relationGroups = buildRelationGroups(
+    dataset,
+    { type: 'character', id: character.id },
+    t,
+    locale,
+    ['places', 'factions', 'arcs', 'techniques', 'routes'],
+  );
 
   const village = findLocation(dataset, character.villageLocationId);
   const nation = findNation(dataset, character.nationId);
@@ -578,6 +593,8 @@ export function CharacterDetailsModal({
           </ul>
         </Section>
       )}
+
+      <RelationsPanel dataset={dataset} groups={relationGroups} onOpen={openRef} />
     </Modal>
   );
 }

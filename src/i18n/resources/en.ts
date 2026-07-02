@@ -137,6 +137,15 @@ export const en = {
       exit: 'Exit',
       exitAria: 'Exit focus mode',
     },
+    mode: {
+      label: 'Mode',
+      announce: 'Map mode: {{mode}}',
+      explore: 'Explore',
+      timeline: 'Timeline',
+      routes: 'Route',
+      relations: 'Relations',
+      story: 'Guided story',
+    },
     story: {
       title: 'Guided story',
       start: 'Start guided story',
@@ -247,6 +256,7 @@ export const en = {
     label: 'Search in world {{world}}',
     kbHint: 'Press ⌘K (or /) to search',
     navHint: '↑↓ navigate · ↵ open · esc close',
+    relatedTo: 'Related to {{title}}',
     emptyTitle: 'No results',
     emptyDescription: 'Try a different term.',
     kinds: {
@@ -290,6 +300,8 @@ export const en = {
     relatedClans: 'Clans / Factions',
     connectedPlaces: 'Connected places',
     relatedNation: 'Nation',
+    sameRace: 'Same race',
+    sameSaga: 'Same saga',
     relatedFactions: 'Clans / Factions',
     relatedArcs: 'Story arcs',
     arcEvents: 'Arc events',

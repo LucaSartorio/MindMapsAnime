@@ -2,7 +2,7 @@ import { useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { SearchResult, WorldDataset } from '@/types';
-import { searchDataset } from '@/lib/search';
+import { relatedResults, searchDataset } from '@/lib/search';
 import { useMapStore, useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getAbilityTerm } from '@/lib/worldConfig';
@@ -47,13 +47,19 @@ export function GlobalSearchDropdown({
   // Query differita: il tasto digitato dipinge subito, la ricerca (pesante sui
   // dataset grandi, es. One Piece) gira in un render a bassa priorità → INP basso.
   const deferredQuery = useDeferredValue(query);
-  const results = useMemo(
-    () =>
-      deferredQuery
-        ? searchDataset(deferredQuery, dataset, locale).slice(0, 10)
-        : [],
-    [deferredQuery, dataset, locale],
-  );
+  const results = useMemo(() => {
+    if (!deferredQuery) return [];
+    const direct = searchDataset(deferredQuery, dataset, locale).slice(0, 10);
+    if (direct.length === 0) return direct;
+    // Solo su un match forte (nome esatto/prefisso) la ricerca si estende alle
+    // relazioni del risultato in cima: evita rumore sulle query generiche.
+    const top = direct[0];
+    if (top.score < 70) return direct;
+    const related = relatedResults(dataset, top.kind, top.id, locale, top.title).filter(
+      (r) => !direct.some((d) => d.kind === r.kind && d.id === r.id),
+    );
+    return [...direct, ...related];
+  }, [deferredQuery, dataset, locale]);
 
   // Focus automatico quando aperto via overlay.
   useEffect(() => {

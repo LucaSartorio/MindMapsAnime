@@ -962,6 +962,12 @@ export interface SearchResult {
   score: number;
   /** Tag che hanno matchato, utile per debug/UX */
   matchedTags?: string[];
+  /**
+   * Se valorizzato, il risultato NON è un match diretto sul testo ma una entità
+   * collegata (dal knowledge graph) al match in cima: contiene il titolo di
+   * quest'ultimo, così la UI può raggrupparlo sotto "Correlate a …".
+   */
+  relatedTo?: string;
 }
 
 /* ------------------------------ Filtri ------------------------------ */

@@ -9,6 +9,9 @@ import { useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText } from '@/utils/localization';
 import { findArc, findCharacter, findLocation } from '@/lib/entities';
+import { buildRelationGroups } from '@/lib/relationGroups';
+import { RelationsPanel } from '@/components/common/RelationsPanel';
+import { useOpenEntityRef } from '@/lib/useOpenEntityRef';
 
 interface StoryArcDetailsModalProps {
   dataset: WorldDataset;
@@ -27,6 +30,7 @@ export function StoryArcDetailsModal({
   const openCharacter = useUiStore((s) => s.openCharacterModal);
   const openEvent = useUiStore((s) => s.openEventModal);
   const openStory = useUiStore((s) => s.openStory);
+  const openRef = useOpenEntityRef();
   const navigate = useNavigate();
 
   if (!arc) {
@@ -46,6 +50,16 @@ export function StoryArcDetailsModal({
   const events = dataset.events
     .filter((e) => e.arcId === arc.id)
     .sort((a, b) => a.order - b.order);
+
+  // Relazioni dal knowledge graph: escludo ciò che la scheda già mostra
+  // esplicitamente (luoghi, personaggi, eventi) → restano saga, fazioni, rotte.
+  const relationGroups = buildRelationGroups(
+    dataset,
+    { type: 'arc', id: arc.id },
+    t,
+    locale,
+    ['places', 'characters', 'events'],
+  );
 
   return (
     <Modal
@@ -174,6 +188,8 @@ export function StoryArcDetailsModal({
           </ol>
         </section>
       )}
+
+      <RelationsPanel dataset={dataset} groups={relationGroups} onOpen={openRef} />
     </Modal>
   );
 }

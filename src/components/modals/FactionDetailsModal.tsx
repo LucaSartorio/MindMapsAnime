@@ -15,6 +15,9 @@ import {
   findJutsu,
   findLocation,
 } from '@/lib/entities';
+import { buildRelationGroups } from '@/lib/relationGroups';
+import { RelationsPanel } from '@/components/common/RelationsPanel';
+import { useOpenEntityRef } from '@/lib/useOpenEntityRef';
 
 interface FactionDetailsModalProps {
   dataset: WorldDataset;
@@ -33,6 +36,7 @@ export function FactionDetailsModal({
   const openLocation = useUiStore((s) => s.openLocationModal);
   const openArc = useUiStore((s) => s.openArcModal);
   const openJutsu = useUiStore((s) => s.openJutsuModal);
+  const openRef = useOpenEntityRef();
 
   if (!faction) {
     return (
@@ -55,6 +59,15 @@ export function FactionDetailsModal({
   const jutsu = (faction.jutsuIds ?? [])
     .map((id) => findJutsu(dataset, id))
     .filter((j): j is NonNullable<typeof j> => !!j);
+
+  // Relazioni dal graph: escludo ciò che la scheda già mostra → restano rotte/nazione.
+  const relationGroups = buildRelationGroups(
+    dataset,
+    { type: 'faction', id: faction.id },
+    t,
+    locale,
+    ['characters', 'places', 'arcs', 'techniques'],
+  );
 
   return (
     <Modal
@@ -203,6 +216,8 @@ export function FactionDetailsModal({
           </ul>
         </section>
       )}
+
+      <RelationsPanel dataset={dataset} groups={relationGroups} onOpen={openRef} />
     </Modal>
   );
 }

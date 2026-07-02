@@ -134,14 +134,23 @@ export function RelationsGraphModal({ dataset, characterId }: RelationsGraphModa
 
   const edges = useMemo<Edge[]>(() => {
     if (!focus) return [];
+    // Su hub molto connessi (es. Goku, 40+ legami) le etichette d'arco si
+    // accavallano al centro in un groviglio illeggibile: oltre soglia le nascondo
+    // e lascio parlare il COLORE dell'arco (il tipo resta esplicito nell'elenco
+    // sotto). Sotto soglia le etichette sono poche e utili → restano.
+    const showLabels = connections.length <= 12;
     return connections.map((c) => ({
       id: `${focus.id}--${c.char.id}`,
       source: focus.id,
       target: c.char.id,
-      label: c.label,
-      labelBgPadding: [4, 2],
-      labelStyle: { fill: '#e4e7f0', fontSize: 10 },
-      labelBgStyle: { fill: '#0c0d11', fillOpacity: 0.85 },
+      ...(showLabels
+        ? {
+            label: c.label,
+            labelBgPadding: [4, 2] as [number, number],
+            labelStyle: { fill: '#e4e7f0', fontSize: 10 },
+            labelBgStyle: { fill: '#0c0d11', fillOpacity: 0.85 },
+          }
+        : {}),
       style: { stroke: REL_COLOR[c.kind], strokeWidth: 1.5 },
     }));
   }, [focus, connections]);

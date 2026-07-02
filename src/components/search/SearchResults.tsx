@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { Fragment, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { SearchResult } from '@/types';
 import { cn } from '@/lib/cn';
@@ -55,30 +55,41 @@ export function SearchResults({
     >
       {results.map((r, i) => {
         const active = i === activeIndex;
+        // Intestazione "Correlate a …" prima del primo risultato di relazione.
+        const showRelatedHeader = !!r.relatedTo && !results[i - 1]?.relatedTo;
         return (
-          <button
-            key={`${r.kind}-${r.id}`}
-            id={optionId?.(i)}
-            type="button"
-            role="option"
-            aria-selected={active}
-            onClick={() => onSelect(r)}
-            onMouseMove={() => onActiveIndexChange?.(i)}
-            className={cn(
-              'flex w-full items-center justify-between gap-3 px-3 py-2.5 text-left',
-              active ? 'bg-chakra-500/20' : 'hover:bg-chakra-500/10',
+          <Fragment key={`${r.kind}-${r.id}`}>
+            {showRelatedHeader && (
+              <div
+                role="presentation"
+                className="bg-ink-900/50 px-3 py-1.5 text-[10px] font-display uppercase tracking-widest text-ink-400"
+              >
+                {t('search.relatedTo', { title: r.relatedTo })}
+              </div>
             )}
-          >
-            <span className="flex min-w-0 flex-col">
-              <span className="truncate text-sm text-ink-100">{r.title}</span>
-              {r.subtitle && (
-                <span className="truncate text-xs text-ink-400">{r.subtitle}</span>
+            <button
+              id={optionId?.(i)}
+              type="button"
+              role="option"
+              aria-selected={active}
+              onClick={() => onSelect(r)}
+              onMouseMove={() => onActiveIndexChange?.(i)}
+              className={cn(
+                'flex w-full items-center justify-between gap-3 px-3 py-2.5 text-left',
+                active ? 'bg-chakra-500/20' : 'hover:bg-chakra-500/10',
               )}
-            </span>
-            <span className="chip text-[10px] uppercase tracking-widest">
-              {t(`search.kinds.${r.kind}`, { term: techniqueTerm ?? 'Jutsu' })}
-            </span>
-          </button>
+            >
+              <span className="flex min-w-0 flex-col">
+                <span className="truncate text-sm text-ink-100">{r.title}</span>
+                {r.subtitle && (
+                  <span className="truncate text-xs text-ink-400">{r.subtitle}</span>
+                )}
+              </span>
+              <span className="chip text-[10px] uppercase tracking-widest">
+                {t(`search.kinds.${r.kind}`, { term: techniqueTerm ?? 'Jutsu' })}
+              </span>
+            </button>
+          </Fragment>
         );
       })}
     </div>
