@@ -17,7 +17,6 @@ const IconLayers = (
 const IconLegend = <span aria-hidden className="text-[15px]">⌖</span>;
 const IconTimeline = <span aria-hidden className="text-[15px]">⌛</span>;
 const IconRoutes = <span aria-hidden className="text-[16px]">↯</span>;
-const IconReset = <span aria-hidden className="text-[16px]">⤾</span>;
 const IconDeselect = <span aria-hidden className="text-[15px]">⊘</span>;
 const IconHelp = <span aria-hidden className="text-[15px] font-semibold">?</span>;
 
@@ -52,7 +51,6 @@ export function ToolRail() {
   const toggleRoutes = useUiStore((s) => s.toggleRoutesPanel);
   const isHelpOpen = useUiStore((s) => s.isHelpOpen);
   const toggleHelp = useUiStore((s) => s.toggleHelp);
-  const resetViewport = useMapStore((s) => s.resetViewport);
   const resetSelections = useMapStore((s) => s.resetSelections);
 
   const panelTools: Tool[] = [
@@ -62,18 +60,20 @@ export function ToolRail() {
     { key: 'timeline', label: t('map.tools.timeline'), icon: IconTimeline, onClick: toggleTimeline, active: isTimelineOpen },
     { key: 'routes', label: t('map.tools.routes'), icon: IconRoutes, onClick: toggleRoutes, active: isRoutesOpen },
   ];
+  // Nota: niente "reset vista" qui — il quadrato fit-view dei Controls React Flow
+  // (in alto a sinistra) ricentra già la mappa, sarebbe un doppione.
   const actionTools: Tool[] = [
-    { key: 'resetView', label: t('map.tools.resetView'), icon: IconReset, onClick: resetViewport },
     { key: 'resetSel', label: t('map.tools.resetSelections'), icon: IconDeselect, onClick: resetSelections },
     { key: 'help', label: t('map.tools.help'), icon: IconHelp, onClick: toggleHelp, active: isHelpOpen },
   ];
 
   return (
     <>
-      {/* Desktop: rail verticale a sinistra, centrata */}
+      {/* Desktop: rail verticale a sinistra, ancorata IN ALTO (sotto i Controls
+          zoom) così non si sovrappone alla legenda in basso a sinistra. */}
       <nav
         aria-label={t('map.tools.rail')}
-        className="pointer-events-auto absolute left-3 top-1/2 z-10 hidden -translate-y-1/2 md:block"
+        className="pointer-events-auto absolute left-3 top-36 z-10 hidden md:block"
       >
         <div className="panel flex flex-col gap-1 p-1 shadow-panel">
           {panelTools.map((tool) => (
@@ -92,7 +92,7 @@ export function ToolRail() {
         className="pointer-events-auto fixed inset-x-0 bottom-2 z-30 flex justify-center md:hidden"
       >
         <div className="panel flex items-center gap-1 rounded-2xl p-1 shadow-panel">
-          {[panelTools[0], panelTools[1], actionTools[0], actionTools[2]].map((tool) => (
+          {[panelTools[0], panelTools[1], panelTools[3], actionTools[1]].map((tool) => (
             <button
               key={tool.key}
               type="button"

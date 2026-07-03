@@ -58,7 +58,9 @@ export function MapLegendFloating({ dataset }: MapLegendFloatingProps) {
       icon={<span className="text-[12px]">⌖</span>}
       open={open}
       onOpenChange={setOpen}
-      className="max-w-[260px]"
+      // Altezza limitata (contenuto scrollabile): con molti tipi — es. Dragon
+      // Ball, 16 tipi — la legenda non cresce all'infinito ma scrolla.
+      className="max-w-[260px] max-h-[70dvh]"
       headerAction={
         anyTypeFilter ? (
           <button

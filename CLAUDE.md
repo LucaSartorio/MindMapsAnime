@@ -134,13 +134,16 @@ in the filters — see "Map shell" below.
 
 ### Map shell: tool rail & layer manager (immersive atlas)
 `ToolRail` (`src/components/map/ToolRail.tsx`) is the single, accessible home for map tools:
-a vertical floating rail on desktop (left, icon-only + `aria-label`/tooltip) and a **bottom nav**
-on mobile (icon + label, ≥44px targets). Each panel tool exposes `aria-pressed` reflecting its open
-state. It toggles the existing store state (filters, layers, legend, timeline, routes) plus reset
-view / clear selection / help — so there's one predictable entry point instead of scattered buttons.
-`WorldLayout` mounts it and keeps only the level switcher (centred) + `ActiveFilterBar` +
-`MapFocusBreadcrumb` in the top overlay; the React Flow zoom `<Controls>` stay top-left, the floating
-panels bottom. The header (`TopNav`) also gains a `WorldSwitcher` — an accessible dropdown to jump
+a vertical floating rail on desktop (left, **top-anchored below the zoom `<Controls>`**, icon-only +
+`aria-label`/tooltip) and a **bottom nav** on mobile (icon + label, ≥44px targets). Each panel tool
+exposes `aria-pressed` reflecting its open state. It toggles the existing store state (filters, layers,
+legend, timeline, routes) plus clear selection / help — so there's one predictable entry point instead
+of scattered buttons. There is **no "reset view" tool**: the React Flow `<Controls>` fit-view square
+already recenters, so it'd be a duplicate. `WorldLayout` mounts it and keeps only the level switcher
+(centred) + `ActiveFilterBar` + `MapFocusBreadcrumb` in the top overlay; the React Flow zoom
+`<Controls>` stay top-left, the floating panels bottom. The bottom-left legend gets a desktop-only
+left offset (`md:ml-16`) so it sits to the right of the vertical rail and never overlaps it (its height
+is capped + scrollable for type-heavy worlds like Dragon Ball). The header (`TopNav`) also gains a `WorldSwitcher` — an accessible dropdown to jump
 between anime worlds without going back home.
 
 **Filters vs layers are separated** (clear mental model): `FiltersDrawer` = *which data* (chips +

@@ -139,7 +139,9 @@ export function WorldLayout({
               Solo i singoli pannelli ricevono pointer events, l'area attorno
               resta trasparente per permettere pan/zoom della mappa. */}
           <div className="flex items-end justify-between gap-3 flex-wrap">
-            <div className="pointer-events-auto">
+            {/* ml su desktop: la legenda parte a destra della tool rail verticale
+                (che è ancorata a sinistra), così non si sovrappongono mai. */}
+            <div className="pointer-events-auto md:ml-16">
               <MapLegendFloating dataset={dataset} />
             </div>
             <div className="flex-1 min-w-[280px] max-w-3xl mx-auto flex">
