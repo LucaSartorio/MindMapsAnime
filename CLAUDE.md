@@ -146,6 +146,13 @@ left offset (`md:ml-16`) so it sits to the right of the vertical rail and never 
 is capped + scrollable for type-heavy worlds like Dragon Ball). The header (`TopNav`) also gains a `WorldSwitcher` — an accessible dropdown to jump
 between anime worlds without going back home.
 
+**Mobile floating panels**: on desktop the legend/timeline/routes stay as always-visible collapsed pills
+at the bottom corners; on **mobile** they'd stack and cover the map, so `WorldLayout` hides each closed
+pill (`max-md:hidden` when its store flag is false) → the map is clean by default and those panels are
+opened from the **full-width bottom nav** (which on mobile lists *all* panel tools + help). Mobile opens
+**one floating panel at a time** — `ToolRail.onMobileToolClick` sets the tapped panel's flag and clears
+the other two (desktop keeps independent toggles).
+
 **Filters vs layers are separated** (clear mental model): `FiltersDrawer` = *which data* (chips +
 options), `LayersDrawer` (`src/components/drawers/LayersDrawer.tsx`) = *what's visible* (map/story
 layer toggles, moved out of filters). The two drawers are **mutually exclusive** in `useUiStore`
