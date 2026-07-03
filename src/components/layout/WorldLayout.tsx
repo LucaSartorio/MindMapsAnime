@@ -1,6 +1,7 @@
 import { useEffect, type CSSProperties, type ReactNode } from 'react';
 import { useParams } from 'react-router-dom';
 import type { WorldDataset } from '@/types';
+import { cn } from '@/lib/cn';
 import { useMapStore, useUiStore, useWorldStore } from '@/store';
 import { FiltersDrawer } from '@/components/drawers/FiltersDrawer';
 import { LayersDrawer } from '@/components/drawers/LayersDrawer';
@@ -45,6 +46,12 @@ export function WorldLayout({
   const setActiveWorld = useWorldStore((s) => s.setActiveWorld);
   const setActiveMapLevel = useMapStore((s) => s.setActiveMapLevel);
   const activeMapLevelId = useMapStore((s) => s.activeMapLevelId);
+  // Su mobile i pannelli galleggianti (legenda/timeline/percorsi) si mostrano
+  // SOLO quando aperti dalla bottom nav: da chiusi restano nascosti così non
+  // coprono la mappa (su desktop restano invece i pill sempre visibili).
+  const isLegendOpen = useUiStore((s) => s.isLegendOpen);
+  const isTimelineOpen = useUiStore((s) => s.isTimelineOpen);
+  const isRoutesOpen = useUiStore((s) => s.isRoutesPanelOpen);
 
   // Cursore tematico del mondo (es. Naruto → vortice della Foglia).
   // Ibrido: il vortice è il cursore ambientale; gli elementi interattivi
@@ -140,15 +147,23 @@ export function WorldLayout({
               resta trasparente per permettere pan/zoom della mappa. */}
           <div className="flex items-end justify-between gap-3 flex-wrap">
             {/* ml su desktop: la legenda parte a destra della tool rail verticale
-                (che è ancorata a sinistra), così non si sovrappongono mai. */}
-            <div className="pointer-events-auto md:ml-16">
+                (che è ancorata a sinistra), così non si sovrappongono mai.
+                max-md:hidden da chiusa: su mobile non ingombra la mappa. */}
+            <div
+              className={cn('pointer-events-auto md:ml-16', !isLegendOpen && 'max-md:hidden')}
+            >
               <MapLegendFloating dataset={dataset} />
             </div>
-            <div className="flex-1 min-w-[280px] max-w-3xl mx-auto flex">
+            <div
+              className={cn(
+                'flex-1 min-w-[280px] max-w-3xl mx-auto flex',
+                !isTimelineOpen && 'max-md:hidden',
+              )}
+            >
               {/* TimelineBottomSheet ha già pointer-events-auto sulla section */}
               <TimelineBottomSheet dataset={dataset} />
             </div>
-            <div className="pointer-events-auto">
+            <div className={cn('pointer-events-auto', !isRoutesOpen && 'max-md:hidden')}>
               <RoutesFloatingPanel dataset={dataset} />
             </div>
           </div>

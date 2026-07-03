@@ -51,7 +51,22 @@ export function ToolRail() {
   const toggleRoutes = useUiStore((s) => s.toggleRoutesPanel);
   const isHelpOpen = useUiStore((s) => s.isHelpOpen);
   const toggleHelp = useUiStore((s) => s.toggleHelp);
+  const setLegend = useUiStore((s) => s.setLegend);
+  const setTimeline = useUiStore((s) => s.setTimeline);
+  const setRoutesPanel = useUiStore((s) => s.setRoutesPanel);
   const resetSelections = useMapStore((s) => s.resetSelections);
+
+  // Su mobile i pannelli galleggianti si aprono UNO ALLA VOLTA (bottom-sheet):
+  // aprirne uno chiude gli altri, così non si impilano sopra la mappa. Su
+  // desktop restano invece i toggle indipendenti (pill ai vari angoli).
+  const FLOATING = new Set(['legend', 'timeline', 'routes']);
+  function onMobileToolClick(tool: Tool) {
+    if (!FLOATING.has(tool.key)) return tool.onClick();
+    const willOpen = !tool.active;
+    setLegend(tool.key === 'legend' && willOpen);
+    setTimeline(tool.key === 'timeline' && willOpen);
+    setRoutesPanel(tool.key === 'routes' && willOpen);
+  }
 
   const panelTools: Tool[] = [
     { key: 'filters', label: t('map.tools.filters'), icon: IconFilters, onClick: toggleFilters, active: isFiltersOpen },
@@ -86,28 +101,30 @@ export function ToolRail() {
         </div>
       </nav>
 
-      {/* Mobile: bottom nav con i tool "drawer" (icona + etichetta) */}
+      {/* Mobile: bottom nav a tutta larghezza con TUTTI i pannelli (legenda,
+          timeline, percorsi inclusi) + aiuto. Così su mobile quei pannelli non
+          galleggiano sulla mappa: si aprono da qui, uno alla volta. */}
       <nav
         aria-label={t('map.tools.rail')}
-        className="pointer-events-auto fixed inset-x-0 bottom-2 z-30 flex justify-center md:hidden"
+        className="pointer-events-auto fixed inset-x-2 bottom-2 z-30 md:hidden"
       >
-        <div className="panel flex items-center gap-1 rounded-2xl p-1 shadow-panel">
-          {[panelTools[0], panelTools[1], panelTools[3], actionTools[1]].map((tool) => (
+        <div className="panel flex items-stretch gap-0.5 rounded-2xl p-1 shadow-panel">
+          {[...panelTools, actionTools[actionTools.length - 1]].map((tool) => (
             <button
               key={tool.key}
               type="button"
-              onClick={tool.onClick}
+              onClick={() => onMobileToolClick(tool)}
               aria-label={tool.label}
               {...(tool.active !== undefined ? { 'aria-pressed': tool.active } : {})}
               className={cn(
-                'flex h-14 min-w-[4rem] flex-col items-center justify-center gap-0.5 rounded-xl px-2 transition',
+                'flex h-14 min-w-0 flex-1 flex-col items-center justify-center gap-0.5 rounded-xl px-0.5 transition',
                 tool.active
                   ? 'bg-chakra-500/25 text-chakra-100'
                   : 'text-ink-200 hover:bg-ink-800/70 hover:text-white',
               )}
             >
               <span className="grid h-5 place-items-center">{tool.icon}</span>
-              <span className="text-[10px] font-medium">{tool.label}</span>
+              <span className="max-w-full truncate text-[9px] font-medium">{tool.label}</span>
             </button>
           ))}
         </div>
