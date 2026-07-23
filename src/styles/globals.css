@@ -179,6 +179,16 @@ body {
 .react-flow__node {
   font-family: 'Inter', sans-serif;
 }
+/* Pin e cluster sono a dimensione COSTANTE: il contenuto è contro-scalato di
+   1/zoom, ma il box di layout del nodo resta a grandezza naturale, quindi a zoom
+   alto il wrapper React Flow diventa un enorme rettangolo trasparente che
+   intercetterebbe i click (bloccando mappa e altri pin). Lo rendiamo trasparente
+   agli eventi: solo il contenuto visibile (pointer-events:auto, vedi MapNode /
+   MapClusterNode) è cliccabile, e il click risale comunque a onNodeClick. */
+.react-flow__node-map-node,
+.react-flow__node-map-cluster {
+  pointer-events: none !important;
+}
 .react-flow__minimap {
   background: rgba(12, 13, 17, 0.85) !important;
   border: 1px solid rgba(38, 42, 54, 0.7) !important;

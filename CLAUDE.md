@@ -96,6 +96,14 @@ Everything that varies per work is centralized in `AnimeWorld.config` (`WorldCon
   category via `LOCATION_TYPE_COLOR` (`src/lib/locationTypes.ts`) — colour is never the only
   cue (the type icon + label stay), and the selected/highlighted/poneglyph states override it.
   The floating legend shows the same per-type colour swatches.
+  **Constant screen size**: React Flow scales nodes with the zoom, so pin labels grew with the
+  zoom and always overlapped (zooming never separated close pins). `MapNode`/`MapClusterNode`
+  **counter-scale by `1/zoom`** (`useStore` reading the viewport zoom, quantized to limit
+  re-renders) so pins+labels stay a fixed screen size — zooming genuinely spreads the pins and
+  labels stop piling up. A CSS counter-scale doesn't shrink the *layout* box, so the RF node
+  wrapper stays huge and would block clicks over a big transparent area; the wrappers are
+  `pointer-events:none !important` (globals.css) with only the visible content `pointer-events:auto`
+  (clicks still bubble to `onNodeClick`). The a11y audit clicks that visible content, not the wrapper.
 - **Cluster nodes** (`MapClusterNode`): when many pins crowd together, `clusterLocations`
   (`src/lib/clusterPins.ts`) merges them into a counted badge. It's grid clustering in **world
   space** (cell = `targetPx / zoom`, quantized), so it only recomputes on zoom, not pan; the
