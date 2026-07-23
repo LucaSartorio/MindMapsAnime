@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { Handle, Position, type NodeProps } from '@xyflow/react';
+import { Handle, Position, useStore, type NodeProps } from '@xyflow/react';
 import { cn } from '@/lib/cn';
 import { LOCATION_TYPE_COLOR, LOCATION_TYPE_ICON } from '@/lib/locationTypes';
 import type { Importance, LocationType } from '@/types';
@@ -48,7 +48,20 @@ function MapNodeBase({ data }: NodeProps) {
   // / evidenziato) hanno la precedenza e usano le classi dedicate qui sotto.
   const categoryColor = LOCATION_TYPE_COLOR[d.type];
   const special = !!d.poneglyph || !!d.selected || !!d.highlighted;
+  // Dimensione COSTANTE a schermo: React Flow scala i nodi con lo zoom, quindi
+  // le etichette crescevano insieme allo zoom e si sovrapponevano sempre
+  // (avvicinarsi non le separava). Contro-scalando di 1/zoom il fattore si
+  // annulla → pin ed etichette restano della stessa dimensione a ogni zoom e
+  // zoomando i pin si allontanano davvero. Lo zoom è quantizzato per limitare i
+  // re-render dei (tanti) nodi durante pinch/scroll.
+  const zoom = useStore((s) => Math.round(s.transform[2] * 50) / 50) || 1;
+  // pointer-events-auto ripristina la cliccabilità solo sul contenuto visibile
+  // (il wrapper del nodo è pointer-events:none in globals.css → vedi commento).
   return (
+    <div
+      className="pointer-events-auto origin-top-left"
+      style={{ transform: `scale(${1 / zoom})` }}
+    >
     <div
       className={cn(
         'group relative flex items-center gap-2 cursor-pointer select-none',
@@ -119,6 +132,7 @@ function MapNodeBase({ data }: NodeProps) {
           </span>
         )}
       </span>
+    </div>
     </div>
   );
 }
