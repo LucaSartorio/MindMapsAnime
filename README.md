@@ -21,13 +21,20 @@ componenti.
 
 ## ✦ Mondi inclusi
 
-| Mondo            | Slug            | Stato         | Sistema di poteri   |
-| ---------------- | --------------- | ------------- | ------------------- |
-| Naruto           | `naruto`        | ✓ Disponibile | Jutsu               |
-| Hunter x Hunter  | `hunterxhunter` | ✓ Disponibile | Nen                 |
-| One Piece        | `onepiece`      | ✓ Disponibile | Frutti del Diavolo  |
-| Dragon Ball      | `dragonball`    | ✓ Disponibile | Tecniche            |
-| Attack on Titan  | `attackontitan` | Coming soon   | Abilità             |
+| Mondo               | Slug                 | Stato         | Sistema di poteri            |
+| ------------------- | -------------------- | ------------- | ---------------------------- |
+| Naruto              | `naruto`             | ✓ Disponibile | Jutsu                        |
+| Hunter x Hunter     | `hunterxhunter`      | ✓ Disponibile | Nen                          |
+| One Piece           | `onepiece`           | ✓ Disponibile | Frutti del Diavolo           |
+| Dragon Ball         | `dragonball`         | ✓ Disponibile | Tecniche                     |
+| Attack on Titan     | `attackontitan`      | In arrivo     | Abilità                      |
+| Bleach              | `bleach`             | In arrivo     | Zanpakutō & Poteri spirituali |
+| Fullmetal Alchemist | `fullmetalalchemist` | In arrivo     | Alchimia                     |
+| Frieren             | `frieren`            | In arrivo     | Magia                        |
+| Toriko              | `toriko`             | In arrivo     | Tecniche Gourmet             |
+| Fairy Tail          | `fairytail`          | In arrivo     | Magia                        |
+| Jujutsu Kaisen      | `jujutsukaisen`      | In arrivo     | Tecniche Malefiche           |
+| Demon Slayer        | `demonslayer`        | In arrivo     | Respirazioni & Arti Demoniache |
 
 ### Dataset attuali
 
