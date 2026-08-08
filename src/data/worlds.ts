@@ -321,7 +321,271 @@ export const animeWorlds: AnimeWorld[] = [
       nationTerm: { it: 'Territorio', en: 'Territory' },
     },
   },
-  // Slot futuri: Bleach, Jujutsu Kaisen, Demon Slayer.
+  {
+    id: 'world-bleach',
+    slug: 'bleach',
+    title: 'Bleach',
+    subtitle: {
+      it: 'Soul Society · Shinigami',
+      en: 'Soul Society · Soul Reapers',
+    },
+    description: {
+      it: 'La mappa dei tre mondi di Bleach è in arrivo: Karakura e il Mondo dei Vivi, la Soul Society con il Seireitei e il Rukongai, Hueco Mundo e Las Noches. Ichigo, il Gotei 13, gli Espada e i Quincy.',
+      en: "The map of Bleach's three worlds is coming: Karakura and the World of the Living, the Soul Society with the Seireitei and the Rukongai, Hueco Mundo and Las Noches. Ichigo, the Gotei 13, the Espada and the Quincy.",
+    },
+    status: 'coming_soon',
+    theme: {
+      primary: '#e8552d',
+      accent: '#4fb3d9',
+      highlight: '#c9d1d9',
+      background: '#0c0d11',
+    },
+    availableMapLevelIds: [],
+    tags: ['shonen', 'shinigami', 'tite kubo', 'jump'],
+    metadata: {
+      author: 'Tite Kubo',
+      publisher: 'Shueisha',
+      yearStart: 2001,
+      yearEnd: 2016,
+    },
+    config: {
+      ability: {
+        term: { it: 'Zanpakutō & Poteri spirituali', en: 'Zanpakutō & Spiritual powers' },
+        categoryTerm: { it: 'Tipo', en: 'Type' },
+      },
+      characterRank: { term: { it: 'Grado', en: 'Rank' } },
+      nationTerm: { it: 'Mondo / Dimensione', en: 'World / Dimension' },
+      factionsTerm: { it: 'Divisioni & Fazioni', en: 'Divisions & Factions' },
+      placesTerm: { it: 'luoghi', en: 'places' },
+    },
+  },
+  {
+    id: 'world-fullmetalalchemist',
+    slug: 'fullmetalalchemist',
+    title: 'Fullmetal Alchemist',
+    subtitle: {
+      it: 'Amestris · Scambio Equivalente',
+      en: 'Amestris · Equivalent Exchange',
+    },
+    description: {
+      it: 'Il viaggio di Edward e Alphonse Elric è in arrivo: Amestris con Central, Resembool, Ishval e Briggs, il regno di Xing e la ricerca della Pietra Filosofale.',
+      en: "Edward and Alphonse Elric's journey is coming: Amestris with Central, Resembool, Ishval and Briggs, the kingdom of Xing and the search for the Philosopher's Stone.",
+    },
+    status: 'coming_soon',
+    theme: {
+      primary: '#b8232f',
+      accent: '#d4af37',
+      highlight: '#4a90d9',
+      background: '#0c0d11',
+    },
+    availableMapLevelIds: [],
+    tags: ['shonen', 'alchimia', 'hiromu arakawa', 'square enix'],
+    metadata: {
+      author: 'Hiromu Arakawa',
+      publisher: 'Square Enix',
+      yearStart: 2001,
+      yearEnd: 2010,
+    },
+    config: {
+      ability: {
+        term: { it: 'Alchimia', en: 'Alchemy' },
+        categoryTerm: { it: 'Tipo', en: 'Type' },
+      },
+      characterRank: { term: { it: 'Grado militare', en: 'Military rank' } },
+      nationTerm: { it: 'Nazione / Regione', en: 'Nation / Region' },
+      factionsTerm: { it: 'Fazioni & Organizzazioni', en: 'Factions & Organizations' },
+      placesTerm: { it: 'luoghi', en: 'places' },
+    },
+  },
+  {
+    id: 'world-frieren',
+    slug: 'frieren',
+    title: 'Frieren',
+    subtitle: {
+      it: 'Oltre la fine del viaggio',
+      en: 'Beyond Journey’s End',
+    },
+    description: {
+      it: 'Il lungo cammino di Frieren verso Aureole è in arrivo: le terre del Nord, le città e i villaggi attraversati dalla compagnia dell’Eroe, i demoni e le prove da Mago di Prima Classe.',
+      en: "Frieren's long road to Aureole is coming: the northern lands, the towns and villages crossed by the Hero's party, the demons and the First-Class Mage exams.",
+    },
+    status: 'coming_soon',
+    theme: {
+      primary: '#66c2b5',
+      accent: '#c9a7e0',
+      highlight: '#f0e6d2',
+      background: '#0c0d11',
+    },
+    availableMapLevelIds: [],
+    tags: ['fantasy', 'magia', 'kanehito yamada', 'shogakukan'],
+    metadata: {
+      author: 'Kanehito Yamada',
+      artist: 'Tsukasa Abe',
+      publisher: 'Shogakukan',
+      yearStart: 2020,
+    },
+    config: {
+      ability: {
+        term: { it: 'Magia', en: 'Magic' },
+        categoryTerm: { it: 'Tipo di magia', en: 'Magic type' },
+      },
+      characterRank: { term: { it: 'Classe di Mago', en: 'Mage class' } },
+      nationTerm: { it: 'Regione', en: 'Region' },
+      factionsTerm: { it: 'Gruppi & Fazioni', en: 'Groups & Factions' },
+      placesTerm: { it: 'luoghi', en: 'places' },
+    },
+  },
+  {
+    id: 'world-toriko',
+    slug: 'toriko',
+    title: 'Toriko',
+    subtitle: {
+      it: 'Gourmet World · Cacciatori di cibo',
+      en: 'Gourmet World · Gourmet Hunters',
+    },
+    description: {
+      it: 'L’era del Gourmet è in arrivo: il Mondo Umano e il Gourmet World, gli ingredienti leggendari, i Quattro Re Celesti e la caccia al GOD.',
+      en: 'The Gourmet Age is coming: the Human World and the Gourmet World, the legendary ingredients, the Four Heavenly Kings and the hunt for GOD.',
+    },
+    status: 'coming_soon',
+    theme: {
+      primary: '#1fa37a',
+      accent: '#f2a413',
+      highlight: '#e0453e',
+      background: '#0c0d11',
+    },
+    availableMapLevelIds: [],
+    tags: ['shonen', 'gourmet', 'mitsutoshi shimabukuro', 'jump'],
+    metadata: {
+      author: 'Mitsutoshi Shimabukuro',
+      publisher: 'Shueisha',
+      yearStart: 2008,
+      yearEnd: 2016,
+    },
+    config: {
+      ability: {
+        term: { it: 'Tecniche Gourmet', en: 'Gourmet techniques' },
+        categoryTerm: { it: 'Tipo', en: 'Type' },
+      },
+      nationTerm: { it: 'Mondo / Regione', en: 'World / Region' },
+      factionsTerm: { it: 'Organizzazioni & Fazioni', en: 'Organizations & Factions' },
+      placesTerm: { it: 'luoghi', en: 'places' },
+    },
+  },
+  {
+    id: 'world-fairytail',
+    slug: 'fairytail',
+    title: 'Fairy Tail',
+    subtitle: {
+      it: 'Fiore · Gilde di maghi',
+      en: 'Fiore · Wizard Guilds',
+    },
+    description: {
+      it: 'Il continente di Ishgar è in arrivo: il regno di Fiore con Magnolia e la gilda di Fairy Tail, i Grandi Giochi Magici, Edolas e Alvarez.',
+      en: 'The continent of Ishgar is coming: the kingdom of Fiore with Magnolia and the Fairy Tail guild, the Grand Magic Games, Edolas and Alvarez.',
+    },
+    status: 'coming_soon',
+    theme: {
+      primary: '#d2232a',
+      accent: '#f5b21a',
+      highlight: '#3aa0d9',
+      background: '#0c0d11',
+    },
+    availableMapLevelIds: [],
+    tags: ['shonen', 'gilde', 'hiro mashima', 'kodansha'],
+    metadata: {
+      author: 'Hiro Mashima',
+      publisher: 'Kodansha',
+      yearStart: 2006,
+      yearEnd: 2017,
+    },
+    config: {
+      ability: {
+        term: { it: 'Magia', en: 'Magic' },
+        categoryTerm: { it: 'Tipo di magia', en: 'Magic type' },
+      },
+      characterRank: { term: { it: 'Grado di mago', en: 'Wizard rank' } },
+      nationTerm: { it: 'Regno / Regione', en: 'Kingdom / Region' },
+      factionsTerm: { it: 'Gilde & Fazioni', en: 'Guilds & Factions' },
+      placesTerm: { it: 'luoghi', en: 'places' },
+    },
+  },
+  {
+    id: 'world-jujutsukaisen',
+    slug: 'jujutsukaisen',
+    title: 'Jujutsu Kaisen',
+    subtitle: {
+      it: 'Stregoni & Spiriti Malefici',
+      en: 'Sorcerers & Cursed Spirits',
+    },
+    description: {
+      it: 'Il Giappone degli stregoni è in arrivo: gli istituti di arti occulte di Tokyo e Kyoto, Shibuya e Shinjuku, il Culling Game e le dita di Sukuna.',
+      en: "The sorcerers' Japan is coming: the Tokyo and Kyoto jujutsu high schools, Shibuya and Shinjuku, the Culling Game and Sukuna's fingers.",
+    },
+    status: 'coming_soon',
+    theme: {
+      primary: '#5a4b9c',
+      accent: '#3f7fb5',
+      highlight: '#c0392b',
+      background: '#0c0d11',
+    },
+    availableMapLevelIds: [],
+    tags: ['shonen', 'stregoni', 'gege akutami', 'jump'],
+    metadata: {
+      author: 'Gege Akutami',
+      publisher: 'Shueisha',
+      yearStart: 2018,
+      yearEnd: 2024,
+    },
+    config: {
+      ability: {
+        term: { it: 'Tecniche Malefiche', en: 'Cursed techniques' },
+        categoryTerm: { it: 'Tipo', en: 'Type' },
+      },
+      characterRank: { term: { it: 'Grado stregone', en: 'Sorcerer grade' } },
+      nationTerm: { it: 'Regione / Prefettura', en: 'Region / Prefecture' },
+      factionsTerm: { it: 'Fazioni & Organizzazioni', en: 'Factions & Organizations' },
+      placesTerm: { it: 'luoghi', en: 'places' },
+    },
+  },
+  {
+    id: 'world-demonslayer',
+    slug: 'demonslayer',
+    title: 'Demon Slayer',
+    subtitle: {
+      it: 'Kimetsu no Yaiba · Era Taishō',
+      en: 'Kimetsu no Yaiba · Taishō Era',
+    },
+    description: {
+      it: 'Il Giappone dell’era Taishō è in arrivo: il Monte Sagiri e la Selezione Finale, il Quartiere a Luci Rosse, il Villaggio dei Forgiatori, la Corporazione Ammazzademoni e le Lune Crescenti.',
+      en: 'Taishō-era Japan is coming: Mount Sagiri and the Final Selection, the Entertainment District, the Swordsmith Village, the Demon Slayer Corps and the Twelve Kizuki.',
+    },
+    status: 'coming_soon',
+    theme: {
+      primary: '#1f7a5a',
+      accent: '#c1272d',
+      highlight: '#e8b647',
+      background: '#0c0d11',
+    },
+    availableMapLevelIds: [],
+    tags: ['shonen', 'demoni', 'koyoharu gotouge', 'jump'],
+    metadata: {
+      author: 'Koyoharu Gotouge',
+      publisher: 'Shueisha',
+      yearStart: 2016,
+      yearEnd: 2020,
+    },
+    config: {
+      ability: {
+        term: { it: 'Respirazioni & Arti Demoniache', en: 'Breathing styles & Blood Demon Arts' },
+        categoryTerm: { it: 'Tipo', en: 'Type' },
+      },
+      characterRank: { term: { it: 'Grado', en: 'Rank' } },
+      nationTerm: { it: 'Regione', en: 'Region' },
+      factionsTerm: { it: 'Fazioni & Organizzazioni', en: 'Factions & Organizations' },
+      placesTerm: { it: 'luoghi', en: 'places' },
+    },
+  },
 ];
 
 /** Recupera un mondo tramite slug. */
