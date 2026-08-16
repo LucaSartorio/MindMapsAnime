@@ -213,6 +213,13 @@ export const dragonballCharactersGT: Character[] = [
     id: 'char-dbz-gt-super-17',
     worldId: 'world-dragonball',
     name: 'Super 17',
+    localizedName: {
+      it: 'Super 17',
+      en: 'Super 17',
+      fr: 'Super C-17',
+      de: 'Super C-17',
+      es: 'Súper 17',
+    },
     aliases: ['Super C-17'],
     japaneseName: 'スーパー17号',
     importance: 'major',

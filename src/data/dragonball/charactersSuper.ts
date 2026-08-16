@@ -234,6 +234,13 @@ export const dragonballCharactersSuper: Character[] = [
     id: 'char-dbz-fused-zamasu',
     worldId: 'world-dragonball',
     name: 'Zamasu Fuso',
+    localizedName: {
+      it: 'Zamasu Fuso',
+      en: 'Fused Zamasu',
+      fr: 'Zamasu fusionné',
+      de: 'Fusionierter Zamasu',
+      es: 'Zamasu fusionado',
+    },
     aliases: ['Fused Zamasu'],
     japaneseName: '合体ザマス',
     importance: 'major',

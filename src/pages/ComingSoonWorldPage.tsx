@@ -23,7 +23,9 @@ export function ComingSoonWorldPage({ world }: ComingSoonWorldPageProps) {
         <p className="font-mono text-xs uppercase tracking-widest text-chakra-300">
           /worlds/{world.slug}
         </p>
-        <h1 className="font-display text-3xl text-ink-100">{world.title}</h1>
+        <h1 className="font-display text-3xl text-ink-100">
+          {getLocalizedText(world.title, locale)}
+        </h1>
         <div className="flex justify-center">
           <WorldStatusPill status={world.status} />
         </div>

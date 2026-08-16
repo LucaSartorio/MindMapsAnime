@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useUiStore, useWorldStore } from '@/store';
 import { useReportStore } from '@/store/useReportStore';
 import { useLocaleStore } from '@/store/useLocaleStore';
+import { getLocalizedText } from '@/utils/localization';
 import { getAbilityTerm, getFactionsTerm } from '@/lib/worldConfig';
 import { cn } from '@/lib/cn';
 import { GlobalSearchDropdown } from '@/components/search/GlobalSearchDropdown';
@@ -172,7 +173,7 @@ export function TopNav() {
                 type="button"
                 onClick={() => setSearchOpen((v) => !v)}
                 aria-expanded={searchOpen}
-                aria-label={t('search.label', { world: dataset.world.title })}
+                aria-label={t('search.label', { world: getLocalizedText(dataset.world.title, locale) })}
                 title={t('search.kbHint')}
                 className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-ink-700/70 text-ink-200 hover:text-white hover:border-chakra-500/60"
               >

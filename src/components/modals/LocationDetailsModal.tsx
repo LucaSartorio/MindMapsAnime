@@ -17,7 +17,7 @@ import {
   findNation,
 } from '@/lib/entities';
 import { useLocaleStore } from '@/store/useLocaleStore';
-import { getLocalizedText, getLocationTypeLabel } from '@/utils/localization';
+import { getLocalizedText, getLocationTypeLabel, getEntityDisplayName } from '@/utils/localization';
 import { buildRelationGroups, relationGroupsCount } from '@/lib/relationGroups';
 import { RelationsPanel } from '@/components/common/RelationsPanel';
 import { useOpenEntityRef } from '@/lib/useOpenEntityRef';
@@ -238,7 +238,7 @@ export function LocationDetailsModal({
                 onClick={() => openCharacter(c.id)}
                 className="chip hover:border-chakra-500/70 hover:text-white"
               >
-                {c.name}
+                {getEntityDisplayName(c, locale)}
               </button>
             ))}
           </div>

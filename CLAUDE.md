@@ -358,6 +358,25 @@ six languages; world-specific labels go through `src/lib/worldConfig.ts`, not ra
 **Never hardcode a user-facing string in a component** — including `aria-label`s. Add a key to all
 six resource files (or a local `LocalizedText` map resolved via `getLocalizedText`) instead.
 
+**Names of works and entities.** `AnimeWorld.title` is `Localizable`: many titles change per language
+(Attack on Titan → L'Attacco dei Giganti → 進撃の巨人), others don't (Naruto, One Piece) — a plain
+string is fine there. `Character` now has `localizedName` like every other entity; populate it **only
+when the name actually diverges** between dubs (Crilin / Krillin / Krilin), since identical names
+resolve correctly through the fallback anyway. `getEntityDisplayName` resolves, in order: exact
+`localizedName` for the locale → exact `name` → **`japaneseName` when the locale is `ja`** (the
+datasets already carry it for ~690 entities) → the usual fallback cascade. So adding `japaneseName`
+to an entity automatically gives it a real Japanese display name.
+
+**Tags are keys, not text.** `series.ts` filters on `'boruto-era'` and search scores over tags, so
+tag *values* are never translated. `getTagLabel(tag, locale)` (`src/lib/tagLabels.ts`) resolves the
+displayed label: known-tag map → `humanizeId`. Proper nouns (`akatsuki`, `zoldyck`) fall through
+unchanged, which is the intended behaviour — adding a tag to a dataset needs no change there.
+
+**Measuring coverage.** `npm run validate:i18n` prints, per world and per entity kind, how many
+`Localizable` fields are translated in each language, plus how many entities carry a `japaneseName`.
+Dataset coverage is *informative*, not blocking: narrative content is authored in IT/EN and the other
+languages fall back to English. The UI-key check is the blocking part.
+
 **Adding a language:** add the code to `SUPPORTED_LOCALES` + its `LOCALE_META`/`LOCALE_FALLBACKS`
 entries (`src/types/i18n.ts`), create `src/i18n/resources/<code>.ts`, register it in
 `src/i18n/index.ts` and in `UI_RESOURCES` (`src/utils/validateI18n.ts`), add its flag to

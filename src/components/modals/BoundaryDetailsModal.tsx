@@ -7,8 +7,9 @@ import { Button } from '@/components/common/Button';
 import { CanonPill, ReferencePill } from '@/components/common/StatusPill';
 import { useMapStore, useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
-import { getLocalizedText } from '@/utils/localization';
+import { getLocalizedText, getEntityDisplayName } from '@/utils/localization';
 import { findCharacter, findNation } from '@/lib/entities';
+import { getTagLabel } from '@/lib/tagLabels';
 
 interface BoundaryDetailsModalProps {
   dataset: WorldDataset;
@@ -170,7 +171,7 @@ export function BoundaryDetailsModal({
                 onClick={() => openCharacter(c.id)}
                 className="chip hover:border-chakra-500/70 hover:text-white"
               >
-                {c.name}
+                {getEntityDisplayName(c, locale)}
               </button>
             ))}
           </div>
@@ -243,8 +244,8 @@ export function BoundaryDetailsModal({
 
       {boundary.tags && boundary.tags.length > 0 && (
         <div className="flex flex-wrap gap-1.5">
-          {boundary.tags.map((t) => (
-            <Badge key={t}>#{t}</Badge>
+          {boundary.tags.map((tag) => (
+            <Badge key={tag}>#{getTagLabel(tag, locale)}</Badge>
           ))}
         </div>
       )}

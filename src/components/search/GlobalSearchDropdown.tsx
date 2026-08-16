@@ -5,6 +5,7 @@ import type { SearchResult, WorldDataset } from '@/types';
 import { relatedResults, searchDataset } from '@/lib/search';
 import { useMapStore, useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
+import { getLocalizedText } from '@/utils/localization';
 import { getAbilityTerm } from '@/lib/worldConfig';
 import { SearchResults } from './SearchResults';
 
@@ -224,7 +225,7 @@ export function GlobalSearchDropdown({
   return (
     <div ref={containerRef} className="relative w-full max-w-md">
       <label htmlFor="global-search" className="sr-only">
-        {t('search.label', { world: dataset.world.title })}
+        {t('search.label', { world: getLocalizedText(dataset.world.title, locale) })}
       </label>
       <div className="relative">
         <span
@@ -244,7 +245,7 @@ export function GlobalSearchDropdown({
           }}
           onFocus={() => setOpen(true)}
           onKeyDown={handleKeyDown}
-          placeholder={t('search.placeholder', { world: dataset.world.title })}
+          placeholder={t('search.placeholder', { world: getLocalizedText(dataset.world.title, locale) })}
           className="w-full panel-soft pl-8 pr-10 py-2 text-sm placeholder-ink-400 focus:border-chakra-500"
           role="combobox"
           aria-autocomplete="list"

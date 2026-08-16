@@ -9,7 +9,7 @@ import { EmptyState } from '@/components/common/EmptyState';
 import { SourceNotice } from '@/components/common/SourceNotice';
 import { useMapStore, useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
-import { getLocalizedText, getRaceLabel } from '@/utils/localization';
+import { getLocalizedText, getRaceLabel, getEntityDisplayName } from '@/utils/localization';
 import { getCharacterRankOrder, getCharacterRankSystem, humanizeId } from '@/lib/worldConfig';
 import { filterCharactersBySeries } from '@/lib/filters';
 
@@ -125,7 +125,7 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
           <EntityImage
             kind="character"
             id={c.id}
-            name={c.name}
+            name={getEntityDisplayName(c, locale)}
             villageId={c.villageLocationId}
             fit="cover"
           />
@@ -139,7 +139,7 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6">
       <header className="space-y-2">
         <p className="font-mono text-xs uppercase tracking-widest text-chakra-300">
-          {dataset.world.title}
+          {getLocalizedText(dataset.world.title, locale)}
         </p>
         <h1 className="font-display text-3xl text-ink-100">
           {t('characters.archiveTitle')}

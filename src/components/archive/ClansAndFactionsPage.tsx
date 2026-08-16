@@ -128,7 +128,7 @@ export function ClansAndFactionsPage({ dataset }: ClansAndFactionsPageProps) {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6">
       <header className="space-y-2">
         <p className="font-mono text-xs uppercase tracking-widest text-chakra-300">
-          {dataset.world.title}
+          {getLocalizedText(dataset.world.title, locale)}
         </p>
         <h1 className="font-display text-3xl text-ink-100">
           {getFactionsTerm(dataset.world, locale, t('clans.archiveTitle'))}
