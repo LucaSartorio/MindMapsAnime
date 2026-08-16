@@ -1,19 +1,41 @@
 import { useEffect, useRef, useState, type ComponentType, type SVGProps } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocaleStore } from '@/store/useLocaleStore';
-import type { SupportedLocale } from '@/types/i18n';
+import { LOCALE_META, SUPPORTED_LOCALES, type SupportedLocale } from '@/types/i18n';
 import { cn } from '@/lib/cn';
-import { ItalyFlag, UkFlag } from './Flags';
+import {
+  FranceFlag,
+  GermanyFlag,
+  ItalyFlag,
+  JapanFlag,
+  SpainFlag,
+  UkFlag,
+} from './Flags';
 
-interface LocaleOption {
-  code: SupportedLocale;
-  Flag: ComponentType<SVGProps<SVGSVGElement>>;
-  short: string;
-  label: string;
-}
+type FlagComponent = ComponentType<SVGProps<SVGSVGElement>>;
+
+/** Bandiera per lingua. Aggiungere una lingua = aggiungere qui la sua bandiera. */
+const LOCALE_FLAG: Record<SupportedLocale, FlagComponent> = {
+  it: ItalyFlag,
+  en: UkFlag,
+  ja: JapanFlag,
+  fr: FranceFlag,
+  de: GermanyFlag,
+  es: SpainFlag,
+};
+
+/** Chiave i18n dell'etichetta (il testo è l'endonimo, uguale in ogni lingua). */
+const LOCALE_LABEL_KEY: Record<SupportedLocale, string> = {
+  it: 'languageSwitcher.italian',
+  en: 'languageSwitcher.english',
+  ja: 'languageSwitcher.japanese',
+  fr: 'languageSwitcher.french',
+  de: 'languageSwitcher.german',
+  es: 'languageSwitcher.spanish',
+};
 
 /** Bandiera SVG con contenitore arrotondato (resa identica su ogni OS). */
-function Flag({ as: FlagSvg }: { as: ComponentType<SVGProps<SVGSVGElement>> }) {
+function Flag({ as: FlagSvg }: { as: FlagComponent }) {
   return (
     <span className="inline-block h-3.5 w-5 shrink-0 overflow-hidden rounded-[2px] ring-1 ring-white/15">
       <FlagSvg className="h-full w-full" />
@@ -24,8 +46,9 @@ function Flag({ as: FlagSvg }: { as: ComponentType<SVGProps<SVGSVGElement>> }) {
 /**
  * Selettore lingua per la TopNav.
  *
- * - bandiera + codice lingua (IT/EN) sul bottone
- * - dropdown con etichetta completa
+ * - bandiera + codice lingua (IT/EN/JA/FR/DE/ES) sul bottone
+ * - dropdown con etichetta completa, generato da `SUPPORTED_LOCALES`: una
+ *   nuova lingua compare automaticamente qui
  * - cambia lingua tramite store (sincronizza i18next + localStorage)
  * - accessibile: aria-label, ESC chiude, click fuori chiude, focus ring
  */
@@ -36,20 +59,12 @@ export function LanguageSwitcher() {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const options: LocaleOption[] = [
-    {
-      code: 'it',
-      Flag: ItalyFlag,
-      short: 'IT',
-      label: t('languageSwitcher.italian'),
-    },
-    {
-      code: 'en',
-      Flag: UkFlag,
-      short: 'EN',
-      label: t('languageSwitcher.english'),
-    },
-  ];
+  const options = SUPPORTED_LOCALES.map((code) => ({
+    code,
+    Flag: LOCALE_FLAG[code],
+    short: LOCALE_META[code].short,
+    label: t(LOCALE_LABEL_KEY[code]),
+  }));
 
   const current = options.find((o) => o.code === locale) ?? options[0];
 
@@ -104,11 +119,12 @@ export function LanguageSwitcher() {
       </button>
       {open && (
         // role=listbox con figli role=option DIRETTI (niente <ul>/<li> che
-        // romperebbero la relazione ARIA richiesta).
+        // romperebbero la relazione ARIA richiesta). La lista scrolla quando
+        // le lingue non entrano nel viewport (es. mobile in orizzontale).
         <div
           role="listbox"
           aria-label={t('languageSwitcher.label')}
-          className="absolute right-0 z-50 mt-1.5 min-w-[160px] panel overflow-hidden"
+          className="absolute right-0 z-50 mt-1.5 min-w-[160px] max-h-[60vh] overflow-y-auto panel"
         >
           {options.map((o) => {
             const selected = o.code === locale;

@@ -160,7 +160,7 @@ export function CharacterDetailsModal({
           ))}
           {character.abilityCategory && (
             <Badge variant="accent">
-              {getAbilityCategoryTerm(dataset.world, locale, locale === 'it' ? 'Categoria' : 'Category')}:{' '}
+              {getAbilityCategoryTerm(dataset.world, locale, t('modals.category'))}:{' '}
               {getAbilityCategoryLabel(dataset.world, character.abilityCategory, locale)}
             </Badge>
           )}

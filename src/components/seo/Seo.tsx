@@ -9,6 +9,7 @@ import {
   pageTitle,
   type RouteSeo,
 } from '@/lib/seo';
+import { LOCALE_META, SUPPORTED_LOCALES } from '@/types/i18n';
 
 interface SeoProps {
   /** Override del path da indicizzare (default: location corrente). */
@@ -45,8 +46,12 @@ export function Seo(props: SeoProps) {
   const noindex = props.noindex ?? route?.noindex ?? false;
   const canonical = absoluteUrl(path);
   const jsonLd = props.jsonLd ?? route?.jsonLd;
-  const ogLocale = locale === 'en' ? 'en_US' : 'it_IT';
-  const ogAltLocale = locale === 'en' ? 'it_IT' : 'en_US';
+  // og:locale è la lingua attiva; le alternative sono tutte le altre lingue
+  // supportate, così i crawler sanno che la stessa pagina esiste anche lì.
+  const ogLocale = LOCALE_META[locale].ogLocale;
+  const ogAltLocales = SUPPORTED_LOCALES.filter((l) => l !== locale).map(
+    (l) => LOCALE_META[l].ogLocale,
+  );
 
   return (
     <Helmet htmlAttributes={{ lang: locale }}>
@@ -72,7 +77,9 @@ export function Seo(props: SeoProps) {
       <meta property="og:image:width" content={String(SITE.ogImageWidth)} />
       <meta property="og:image:height" content={String(SITE.ogImageHeight)} />
       <meta property="og:locale" content={ogLocale} />
-      <meta property="og:locale:alternate" content={ogAltLocale} />
+      {ogAltLocales.map((alt) => (
+        <meta key={alt} property="og:locale:alternate" content={alt} />
+      ))}
 
       {/* Twitter / X */}
       <meta name="twitter:card" content="summary_large_image" />

@@ -4,16 +4,41 @@
  * Controlla:
  *  - LocalizedText senza chiave `it` o `en`
  *  - LocalizedText con stringhe vuote
- *  - chiavi missing tra `it.ts` e `en.ts` (UI resources)
+ *  - chiavi missing fra TUTTE le lingue UI (it, en, ja, fr, de, es), usando
+ *    l'italiano (locale di default) come riferimento
  *  - campi del dataset Naruto privi di traduzione su lingua secondaria
+ *
+ * I dataset sono scritti nelle sole `SOURCE_LOCALES` (it/en): le altre lingue
+ * traducono l'interfaccia e ricadono su queste tramite `LOCALE_FALLBACKS`,
+ * quindi NON vengono richieste sui campi `Localizable`.
  *
  * Output: report con errors/warnings + lista entità/campi mancanti.
  */
 
 import type { Localizable, WorldDataset } from '@/types';
-import { isLocalizedText, type SupportedLocale } from '@/types/i18n';
+import {
+  DEFAULT_LOCALE,
+  SOURCE_LOCALES,
+  SUPPORTED_LOCALES,
+  isLocalizedText,
+  type SupportedLocale,
+} from '@/types/i18n';
 import { it as itResources } from '@/i18n/resources/it';
 import { en as enResources } from '@/i18n/resources/en';
+import { ja as jaResources } from '@/i18n/resources/ja';
+import { fr as frResources } from '@/i18n/resources/fr';
+import { de as deResources } from '@/i18n/resources/de';
+import { es as esResources } from '@/i18n/resources/es';
+
+/** Risorse UI per lingua: la sorgente di verità del confronto chiavi. */
+const UI_RESOURCES: Record<SupportedLocale, unknown> = {
+  it: itResources,
+  en: enResources,
+  ja: jaResources,
+  fr: frResources,
+  de: deResources,
+  es: esResources,
+};
 
 export type I18nSeverity = 'error' | 'warning';
 
@@ -94,8 +119,8 @@ function checkLocalizable(
     return;
   }
   if (isLocalizedText(value)) {
-    const locales: SupportedLocale[] = ['it', 'en'];
-    for (const loc of locales) {
+    // Solo le lingue sorgente: le altre ricadono su queste per design.
+    for (const loc of SOURCE_LOCALES) {
       const v = (value as Partial<Record<SupportedLocale, string>>)[loc];
       if (v === undefined) {
         addIssue(
@@ -129,19 +154,41 @@ export function validateI18n(
 ): I18nReport {
   const issues: I18nIssue[] = [];
 
-  // 1. UI resources: chiavi non in sync
-  const itKeys = new Set<string>();
-  const enKeys = new Set<string>();
-  collectKeys(itResources, '', itKeys);
-  collectKeys(enResources, '', enKeys);
-
-  for (const k of itKeys) {
-    if (!enKeys.has(k))
-      addIssue(issues, 'error', 'ui_missing_en', `UI key missing in EN: ${k}`);
+  // 1. UI resources: chiavi non in sync fra tutte le lingue supportate.
+  // Riferimento = locale di default; ogni altra lingua deve avere le stesse
+  // chiavi, né una in meno (traduzione mancante) né una in più (chiave orfana).
+  const keysByLocale = new Map<SupportedLocale, Set<string>>();
+  for (const loc of SUPPORTED_LOCALES) {
+    const keys = new Set<string>();
+    collectKeys(UI_RESOURCES[loc], '', keys);
+    keysByLocale.set(loc, keys);
   }
-  for (const k of enKeys) {
-    if (!itKeys.has(k))
-      addIssue(issues, 'error', 'ui_missing_it', `UI key missing in IT: ${k}`);
+  const referenceKeys = keysByLocale.get(DEFAULT_LOCALE)!;
+
+  for (const loc of SUPPORTED_LOCALES) {
+    if (loc === DEFAULT_LOCALE) continue;
+    const keys = keysByLocale.get(loc)!;
+    const upper = loc.toUpperCase();
+    for (const k of referenceKeys) {
+      if (!keys.has(k)) {
+        addIssue(
+          issues,
+          'error',
+          `ui_missing_${loc}`,
+          `UI key missing in ${upper}: ${k}`,
+        );
+      }
+    }
+    for (const k of keys) {
+      if (!referenceKeys.has(k)) {
+        addIssue(
+          issues,
+          'error',
+          `ui_missing_${DEFAULT_LOCALE}`,
+          `UI key missing in ${DEFAULT_LOCALE.toUpperCase()} (present in ${upper}): ${k}`,
+        );
+      }
+    }
   }
 
   // 2. Dataset Naruto: campi visualizzati

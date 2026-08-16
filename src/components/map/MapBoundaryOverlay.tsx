@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { MapBoundary, MapLevel, WorldDataset } from '@/types';
 import { useMapStore, useUiStore } from '@/store';
 import { worldShowsBoundaryHighlight } from '@/lib/worldMapPrefs';
@@ -26,6 +27,7 @@ interface MapBoundaryOverlayProps {
  * background), e in cima a tutto React Flow renderizza i nodi.
  */
 export function MapBoundaryOverlay({ dataset, level }: MapBoundaryOverlayProps) {
+  const { t } = useTranslation();
   const boundaries = dataset.boundaries ?? [];
   const hoveredBoundaryId = useMapStore((s) => s.hoveredBoundaryId);
   const selectedBoundaryId = useMapStore((s) => s.selectedBoundaryId);
@@ -67,7 +69,7 @@ export function MapBoundaryOverlay({ dataset, level }: MapBoundaryOverlayProps) 
       viewBox={`0 0 ${level.width} ${level.height}`}
       preserveAspectRatio="xMidYMid meet"
       className="absolute inset-0 h-full w-full"
-      aria-label="Confini delle nazioni"
+      aria-label={t('map.boundariesAria')}
     >
       {levelBoundaries.map((b) => (
         <MapRegionPath

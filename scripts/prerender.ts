@@ -70,7 +70,9 @@ function buildHead(route: RouteSeo): string {
     `<meta property="og:image:width" content="${SITE.ogImageWidth}" />`,
     `<meta property="og:image:height" content="${SITE.ogImageHeight}" />`,
     `<meta property="og:locale" content="${SITE.locale}" />`,
-    `<meta property="og:locale:alternate" content="${SITE.altLocale}" />`,
+    ...SITE.altLocales.map(
+      (alt) => `<meta property="og:locale:alternate" content="${alt}" />`,
+    ),
     `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:title" content="${esc(title)}" />`,
     `<meta name="twitter:description" content="${esc(description)}" />`,

@@ -200,6 +200,8 @@ export const en = {
     },
     enterSubmap: 'Zoom into location →',
     backToWorld: 'Back to world map',
+    boundariesAria: 'Nation boundaries',
+    hasSubmapAria: 'has an explorable sub-map',
   },
   filters: {
     title: 'Map filters',
@@ -294,6 +296,7 @@ export const en = {
     relatedJutsu: 'Related {{term}}',
     handSeals: 'Hand seals',
     chakraNature: 'Chakra nature',
+    category: 'Category',
     classification: 'Classification',
     usedBy: 'Used by',
     ninjaRank: 'Ninja rank',
@@ -579,8 +582,14 @@ export const en = {
   },
   languageSwitcher: {
     label: 'Change language',
+    // Endonyms: every user recognizes their own language even when the
+    // interface is currently in another one.
     italian: 'Italiano',
     english: 'English',
+    japanese: '日本語',
+    french: 'Français',
+    german: 'Deutsch',
+    spanish: 'Español',
   },
   a11y: {
     skipToContent: 'Skip to main content',

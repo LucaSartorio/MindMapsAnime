@@ -334,16 +334,37 @@ modes and keeps a persistent `aria-live="polite"` region that **announces every 
 to explore). Labels are generic `map.mode.*` keys → world-agnostic.
 
 ### i18n & the `Localizable` type
-i18next + react-i18next. Default locale **Italian (`it`)**, plus English (`en`). Persistence:
-`localStorage` key `animeInteractiveMaps.locale` (`I18N_STORAGE_KEY` in `src/i18n/index.ts`).
-UI strings live in `src/i18n/resources/{it,en}.ts` — keep keys in sync across both files.
+i18next + react-i18next. **Six UI languages**, listed in `SUPPORTED_LOCALES` (`src/types/i18n.ts`):
+Italian (`it`, default) · English (`en`) · Japanese (`ja`) · French (`fr`) · German (`de`) ·
+Spanish (`es`). Persistence: `localStorage` key `animeInteractiveMaps.locale` (`I18N_STORAGE_KEY`
+in `src/i18n/index.ts`); on first visit the browser's preferred language is matched by base tag
+(`fr-CA` → `fr`). UI strings live in `src/i18n/resources/<locale>.ts` — **keep keys in sync across
+all six files**; `npm run validate:i18n` diffs every locale against `it` (the reference) and fails
+on any missing or orphan key.
 
-**Data** strings use the `Localizable` type (`string | { it; en }`). Always resolve them through
-`getLocalizedText(value, locale)` / `getEntityDisplayName(...)` (`src/utils/localization.ts`) —
-never place a `Localizable` object directly in JSX (it would render `[object Object]` and fail
-type-checking). Enum labels (canon status, location type, character role/rank, etc.) have localized
-helpers there; world-specific labels go through `src/lib/worldConfig.ts`, not raw i18n keys.
+**Source vs UI languages.** Datasets are authored only in the `SOURCE_LOCALES` (`it`/`en`); the four
+newer languages translate the *interface*. `LOCALE_FALLBACKS` defines the per-language cascade
+(`ja|fr|de|es` → `en` → `it`), so an untranslated dataset field renders in English rather than
+Italian. The i18n validator therefore only requires `it`/`en` on `Localizable` fields.
+
+**Data** strings use the `Localizable` type (`string | { it; en; ja?; fr?; de?; es? }` — `it`/`en`
+required, the rest optional). Always resolve them through `getLocalizedText(value, locale)` /
+`getEntityDisplayName(...)` (`src/utils/localization.ts`) — never place a `Localizable` object
+directly in JSX (it would render `[object Object]` and fail type-checking). Enum labels (canon
+status, location type, character role/rank, etc.) have localized helpers there, translated in all
+six languages; world-specific labels go through `src/lib/worldConfig.ts`, not raw i18n keys.
 **IDs, slugs, and keys are never translated.**
+
+**Never hardcode a user-facing string in a component** — including `aria-label`s. Add a key to all
+six resource files (or a local `LocalizedText` map resolved via `getLocalizedText`) instead.
+
+**Adding a language:** add the code to `SUPPORTED_LOCALES` + its `LOCALE_META`/`LOCALE_FALLBACKS`
+entries (`src/types/i18n.ts`), create `src/i18n/resources/<code>.ts`, register it in
+`src/i18n/index.ts` and in `UI_RESOURCES` (`src/utils/validateI18n.ts`), add its flag to
+`src/components/i18n/Flags.tsx` + `LOCALE_FLAG`/`LOCALE_LABEL_KEY` in `LanguageSwitcher.tsx`, a
+`languageSwitcher.<language>` key (the endonym) in every resource file, and an `ErrorBoundary`
+`STRINGS` entry. The language switcher, `og:locale:alternate` tags and the SEO/prerender metadata
+are all derived from `SUPPORTED_LOCALES` and pick it up automatically.
 
 ### Entity images
 `src/components/common/EntityImage.tsx` renders a themed SVG placeholder per entity. A real image is

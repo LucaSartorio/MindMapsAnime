@@ -1,5 +1,10 @@
 import { Component, type ErrorInfo, type ReactNode } from 'react';
 import { I18N_STORAGE_KEY } from '@/i18n';
+import {
+  DEFAULT_LOCALE,
+  SUPPORTED_LOCALES,
+  type SupportedLocale,
+} from '@/types/i18n';
 
 /**
  * Error boundary applicativo. React richiede un class component per
@@ -22,7 +27,10 @@ interface ErrorBoundaryState {
   hasError: boolean;
 }
 
-const STRINGS = {
+const STRINGS: Record<
+  SupportedLocale,
+  { title: string; body: string; retry: string; home: string }
+> = {
   it: {
     title: 'Qualcosa è andato storto',
     body: 'Si è verificato un errore imprevisto. Puoi riprovare a caricare la pagina o tornare alla home.',
@@ -35,14 +43,42 @@ const STRINGS = {
     retry: 'Try again',
     home: 'Back to home',
   },
-} as const;
+  ja: {
+    title: '問題が発生しました',
+    body: '予期しないエラーが発生しました。ページを再読み込みするか、ホームに戻ってください。',
+    retry: '再試行',
+    home: 'ホームに戻る',
+  },
+  fr: {
+    title: 'Une erreur est survenue',
+    body: 'Une erreur inattendue s’est produite. Vous pouvez recharger la page ou revenir à l’accueil.',
+    retry: 'Réessayer',
+    home: 'Revenir à l’accueil',
+  },
+  de: {
+    title: 'Etwas ist schiefgelaufen',
+    body: 'Es ist ein unerwarteter Fehler aufgetreten. Du kannst die Seite neu laden oder zur Startseite zurückkehren.',
+    retry: 'Erneut versuchen',
+    home: 'Zurück zur Startseite',
+  },
+  es: {
+    title: 'Algo ha salido mal',
+    body: 'Se ha producido un error inesperado. Puedes recargar la página o volver al inicio.',
+    retry: 'Reintentar',
+    home: 'Volver al inicio',
+  },
+};
 
-function currentLocale(): 'it' | 'en' {
+function currentLocale(): SupportedLocale {
   try {
-    return localStorage.getItem(I18N_STORAGE_KEY) === 'en' ? 'en' : 'it';
+    const stored = localStorage.getItem(I18N_STORAGE_KEY);
+    if (stored && (SUPPORTED_LOCALES as readonly string[]).includes(stored)) {
+      return stored as SupportedLocale;
+    }
   } catch {
-    return 'it';
+    // localStorage non disponibile
   }
+  return DEFAULT_LOCALE;
 }
 
 export class ErrorBoundary extends Component<
