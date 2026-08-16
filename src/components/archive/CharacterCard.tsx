@@ -6,7 +6,7 @@ import { EntityImage } from '@/components/common/EntityImage';
 import { ReferencePill } from '@/components/common/StatusPill';
 import { cn } from '@/lib/cn';
 import { useLocaleStore } from '@/store/useLocaleStore';
-import { getCharacterStatusLabel, getChakraNatureLabel, getLocalizedText, getRaceLabel } from '@/utils/localization';
+import { getCharacterStatusLabel, getChakraNatureLabel, getLocalizedText, getRaceLabel, getEntityDisplayName } from '@/utils/localization';
 import { getAbilityCategoryLabel, getCharacterRankSystem, humanizeId } from '@/lib/worldConfig';
 import { getCharacterChakraNatures } from '@/lib/characterChakra';
 import { CHAKRA_COLORS } from '@/utils/entityImage';
@@ -55,7 +55,7 @@ function CharacterCardComponent({
             <EntityImage
               kind="character"
               id={character.id}
-              name={character.name}
+              name={getEntityDisplayName(character, locale)}
               villageId={character.villageLocationId}
               fit="cover"
             />
@@ -63,7 +63,7 @@ function CharacterCardComponent({
           <div className="flex-1 min-w-0">
             <div className="flex items-start justify-between gap-2">
               <h3 className="font-display text-lg text-ink-100 leading-tight line-clamp-2">
-                {character.name}
+                {getEntityDisplayName(character, locale)}
               </h3>
               {character.referenceStatus && (
                 <ReferencePill status={character.referenceStatus} />

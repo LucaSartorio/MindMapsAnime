@@ -8,6 +8,7 @@ import { FilterSection } from '@/components/filters/FilterSection';
 import { ToggleRow } from '@/components/filters/ToggleRow';
 import { useMapStore, useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
+import { getLocalizedText } from '@/utils/localization';
 
 interface LayersDrawerProps {
   dataset: WorldDataset;
@@ -53,7 +54,7 @@ export function LayersDrawer({ dataset }: LayersDrawerProps) {
           <header className="flex shrink-0 items-center justify-between gap-2 border-b border-ink-700/60 px-4 py-3">
             <div>
               <p className="font-mono text-[10px] uppercase tracking-widest text-chakra-300">
-                {dataset.world.title}
+                {getLocalizedText(dataset.world.title, locale)}
               </p>
               <h2 className="font-display text-base text-ink-100">
                 {t('map.layers.title')}

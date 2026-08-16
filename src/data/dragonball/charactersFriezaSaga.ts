@@ -232,6 +232,13 @@ export const dragonballCharactersFriezaSaga: Character[] = [
     id: 'char-dbz-dende',
     worldId: 'world-dragonball',
     name: 'Dende',
+    localizedName: {
+      it: 'Dende',
+      en: 'Dende',
+      fr: 'Dendé',
+      de: 'Dende',
+      es: 'Dende',
+    },
     japaneseName: 'デンデ',
     importance: 'supporting',
     role: ['ally'],

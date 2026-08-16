@@ -9,6 +9,7 @@ import {
   getLocalizedText,
   getRaceLabel,
   getTransformationKindLabel,
+  getEntityDisplayName,
 } from '@/utils/localization';
 import { CHAKRA_COLORS } from '@/utils/entityImage';
 import { getCharacterChakraNatures } from '@/lib/characterChakra';
@@ -132,13 +133,13 @@ export function CharacterDetailsModal({
         <EntityImage
           kind="character"
           id={character.id}
-          name={character.name}
+          name={getEntityDisplayName(character, locale)}
           villageId={character.villageLocationId}
           fit="cover"
         />
       }
       eyebrow={t("modals.character")}
-      title={character.name}
+      title={getEntityDisplayName(character, locale)}
       badges={
         <>
           {raceLabel && <Badge variant="danger">{raceLabel}</Badge>}
@@ -463,7 +464,7 @@ export function CharacterDetailsModal({
                 onClick={() => openFaction(c.id)}
                 className="chip-accent hover:border-chakra-300 hover:text-white"
               >
-                {c.name}
+                {getEntityDisplayName(c, locale)}
               </button>
             ))}
           </div>

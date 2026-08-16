@@ -194,7 +194,7 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
           <header className="flex shrink-0 items-center justify-between gap-2 border-b border-ink-700/60 px-4 py-3">
             <div>
               <p className="font-mono text-[10px] uppercase tracking-widest text-chakra-300">
-                {dataset.world.title}
+                {getLocalizedText(dataset.world.title, locale)}
               </p>
               <h2 className="font-display text-base text-ink-100">
                 {t('filters.title')}

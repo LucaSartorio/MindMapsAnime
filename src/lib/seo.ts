@@ -167,7 +167,7 @@ export function getAllRoutes(): RouteSeo[] {
 
   // --- Mondi ---
   for (const world of animeWorlds) {
-    const worldName = world.title;
+    const worldName = it(world.title, world.slug);
     const desc = it(world.description, SITE.description);
     const worldPath = `/worlds/${world.slug}`;
     const crumbs = [

@@ -7,7 +7,7 @@ import { EntityImage } from '@/components/common/EntityImage';
 import { ReferencePill } from '@/components/common/StatusPill';
 import { useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
-import { getLocalizedText } from '@/utils/localization';
+import { getLocalizedText, getEntityDisplayName } from '@/utils/localization';
 import { getAbilityTerm } from '@/lib/worldConfig';
 import {
   findCharacter,
@@ -168,7 +168,7 @@ export function FactionDetailsModal({
                 onClick={() => openCharacter(c.id)}
                 className="chip hover:border-chakra-500/70 hover:text-white"
               >
-                {c.name}
+                {getEntityDisplayName(c, locale)}
               </button>
             ))}
           </div>

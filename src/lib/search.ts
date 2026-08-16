@@ -5,7 +5,7 @@ import type {
   SupportedLocale,
   WorldDataset,
 } from '@/types';
-import { getLocalizedText } from '@/utils/localization';
+import { getLocalizedText, getEntityDisplayName } from '@/utils/localization';
 import { buildWorldGraph, getConnectedEntities, type EntityType } from '@/lib/graph';
 import { entityRefLabel } from '@/lib/graphRefs';
 
@@ -85,7 +85,7 @@ export function searchWorlds(
   if (!query) return [];
   const out: SearchResult[] = [];
   for (const w of worlds) {
-    const title = w.title;
+    const title = getLocalizedText(w.title, locale);
     const subtitleLocalized = getLocalizedText(w.subtitle, locale);
     const descriptionLocalized = getLocalizedText(w.description, locale);
     const r = makeResult(
@@ -206,11 +206,19 @@ export function searchDataset(
         id: c.id,
         kind: 'character',
         worldId: c.worldId,
-        title: c.name,
+        title: getEntityDisplayName(c, locale),
         subtitle: c.rank,
       },
       {
-        nameCandidates: [c.name, c.nameLocal, ...(c.aliases ?? [])],
+        // Il nome è cercabile in ogni sua forma: localizzata, originale,
+        // giapponese e alias, così ⌘K trova "Krillin", "Crilin" e "クリリン".
+        nameCandidates: [
+          getEntityDisplayName(c, locale),
+          c.name,
+          c.nameLocal,
+          c.japaneseName,
+          ...(c.aliases ?? []),
+        ],
         descriptionCandidates: [getLocalizedText(c.shortDescription, locale)],
         tags: c.tags,
       },

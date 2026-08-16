@@ -9,6 +9,7 @@ import { useMapStore, useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText } from '@/utils/localization';
 import { findLocation, findNation } from '@/lib/entities';
+import { getTagLabel } from '@/lib/tagLabels';
 
 interface NationDetailsModalProps {
   dataset: WorldDataset;
@@ -194,8 +195,8 @@ export function NationDetailsModal({
 
       {nation.tags && nation.tags.length > 0 && (
         <div className="flex flex-wrap gap-1.5">
-          {nation.tags.map((t) => (
-            <Badge key={t}>#{t}</Badge>
+          {nation.tags.map((tag) => (
+            <Badge key={tag}>#{getTagLabel(tag, locale)}</Badge>
           ))}
         </div>
       )}

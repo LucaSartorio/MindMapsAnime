@@ -48,19 +48,60 @@ export function getLocalizedText(
   return '';
 }
 
-/** Risolve un nome localizzato preferendo `localizedName` quando presente. */
+/**
+ * Traduzione ESATTA nella lingua richiesta, senza catena di fallback.
+ * Serve a distinguere "tradotto in questa lingua" da "risolto per fallback".
+ *
+ * Una `string` semplice NON conta come traduzione esatta: è il nome nella
+ * lingua sorgente, valido per tutte le lingue solo come ultimo ripiego. Se
+ * contasse, un `name: 'Crilin'` verrebbe scambiato per la versione giapponese
+ * e coprirebbe il `japaneseName` reale.
+ */
+function exactTranslation(
+  value: Localizable | undefined,
+  locale: SupportedLocale,
+): string | undefined {
+  if (!value || typeof value === 'string') return undefined;
+  if (!isLocalizedText(value)) return undefined;
+  const v = (value as LocalizedTextOptional)[locale];
+  return v && v.trim() !== '' ? v : undefined;
+}
+
+/**
+ * Risolve il nome visualizzato di un'entità, nell'ordine:
+ *
+ *  1. `localizedName` tradotto **esattamente** nella lingua richiesta
+ *     (i doppiaggi rinominano i personaggi: Crilin / Krillin / クリリン);
+ *  2. `name` tradotto esattamente in quella lingua;
+ *  3. per il **giapponese**, il `japaneseName` già presente nei dataset —
+ *     è il nome originale, quindi è sempre preferibile a un ripiego europeo;
+ *  4. la normale cascata di fallback (`LOCALE_FALLBACKS`) su
+ *     `localizedName` → `name` → `title`.
+ */
 export function getEntityDisplayName(
   entity:
     | {
         name?: Localizable;
         localizedName?: Localizable;
         title?: Localizable;
+        japaneseName?: string;
       }
     | undefined
     | null,
   locale: SupportedLocale,
 ): string {
   if (!entity) return '';
+
+  const exact =
+    exactTranslation(entity.localizedName, locale) ??
+    exactTranslation(entity.name, locale) ??
+    exactTranslation(entity.title, locale);
+  if (exact) return exact;
+
+  if (locale === 'ja' && entity.japaneseName && entity.japaneseName.trim()) {
+    return entity.japaneseName;
+  }
+
   const fromLocalized = getLocalizedText(entity.localizedName, locale);
   if (fromLocalized) return fromLocalized;
   const fromName = getLocalizedText(entity.name, locale);

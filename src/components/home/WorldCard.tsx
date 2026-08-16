@@ -7,6 +7,7 @@ import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText } from '@/utils/localization';
 import { resolveWorldLogo } from '@/utils/entityImage';
 import { loadWorldDataset } from '@/data/registry';
+import { getTagLabel } from '@/lib/tagLabels';
 
 interface WorldCardProps {
   world: AnimeWorld;
@@ -18,8 +19,10 @@ interface WorldCardProps {
  * in assenza resta il solo sfondo tematico.
  */
 function WorldCover({ world }: { world: AnimeWorld }) {
+  const locale = useLocaleStore((s) => s.locale);
   const { primary, accent } = world.theme;
   const logo = resolveWorldLogo(world.slug);
+  const title = getLocalizedText(world.title, locale);
   return (
     <div className="absolute inset-0">
       <svg
@@ -45,7 +48,7 @@ function WorldCover({ world }: { world: AnimeWorld }) {
         <div className="absolute inset-0 flex items-center justify-center px-7 pt-6 pb-14">
           <img
             src={logo}
-            alt={`${world.title} logo`}
+            alt={`${title} logo`}
             style={
               world.theme.logoScale
                 ? { transform: `scale(${world.theme.logoScale})` }
@@ -63,6 +66,7 @@ export function WorldCard({ world }: WorldCardProps) {
   const { t } = useTranslation();
   const locale = useLocaleStore((s) => s.locale);
   const isAvailable = world.status === 'available';
+  const title = getLocalizedText(world.title, locale);
   const description = getLocalizedText(world.description, locale);
   const inner = (
     <Card interactive className="relative overflow-hidden flex flex-1 flex-col">
@@ -71,7 +75,7 @@ export function WorldCard({ world }: WorldCardProps) {
         {world.status === 'coming_soon' && <ComingSoonBadge />}
         <div className="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-ink-950/95 via-ink-950/70 to-transparent">
           <p className="font-display text-2xl text-white drop-shadow-lg">
-            {world.title}
+            {title}
           </p>
           {world.subtitle && (
             <p className="text-xs font-mono text-ink-200 tracking-wide">
@@ -87,7 +91,7 @@ export function WorldCard({ world }: WorldCardProps) {
         <div className="flex flex-wrap gap-1.5">
           {world.tags.slice(0, 4).map((tag) => (
             <span key={tag} className="chip text-[10px] uppercase">
-              {tag}
+              {getTagLabel(tag, locale)}
             </span>
           ))}
         </div>
@@ -113,7 +117,7 @@ export function WorldCard({ world }: WorldCardProps) {
     return (
       <Link
         to={`/worlds/${world.slug}`}
-        aria-label={`${world.title} · ${t('coming.badge')}`}
+        aria-label={`${title} · ${t('coming.badge')}`}
         className="flex flex-1 flex-col focus:outline-none"
       >
         {inner}
@@ -128,7 +132,7 @@ export function WorldCard({ world }: WorldCardProps) {
   return (
     <Link
       to={`/worlds/${world.slug}`}
-      aria-label={`${t('worldCard.explore')} · ${world.title}`}
+      aria-label={`${t('worldCard.explore')} · ${title}`}
       className="flex flex-1 flex-col focus:outline-none"
       onMouseEnter={prefetch}
       onTouchStart={prefetch}

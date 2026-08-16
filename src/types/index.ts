@@ -309,7 +309,13 @@ export interface AnimeWorld {
   id: string;
   /** Slug usato nelle rotte: /worlds/:slug */
   slug: string;
-  title: string;
+  /**
+   * Titolo dell'opera. `Localizable` perché molti titoli cambiano da lingua a
+   * lingua (Attack on Titan → L'Attacco dei Giganti → 進撃の巨人), mentre altri
+   * restano identici ovunque (Naruto, One Piece): in quel caso basta una
+   * stringa semplice e vale per tutte le lingue.
+   */
+  title: Localizable;
   /** Sottotitolo. Può essere stringa o LocalizedText. */
   subtitle?: Localizable;
   /** Descrizione del mondo. Può essere stringa o LocalizedText. */
@@ -488,6 +494,13 @@ export interface Character {
   id: string;
   worldId: string;
   name: string;
+  /**
+   * Nome localizzato, quando cambia da lingua a lingua: i doppiaggi
+   * rinominano molti personaggi (Crilin / Krillin / クリリン). Come per le
+   * altre entità, `getEntityDisplayName` lo preferisce a `name`; se assente
+   * si ricade su `japaneseName` (per il giapponese) e infine su `name`.
+   */
+  localizedName?: Localizable;
   /** Soprannomi/varianti (es. "Yellow Flash", "Kyuubi no Naruto") */
   aliases?: string[];
   nameLocal?: string;

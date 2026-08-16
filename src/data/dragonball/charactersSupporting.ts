@@ -10,6 +10,13 @@ export const dragonballCharactersSupporting: Character[] = [
     id: 'char-dbz-mr-satan',
     worldId: 'world-dragonball',
     name: 'Mr. Satan',
+    localizedName: {
+      it: 'Mr. Satan',
+      en: 'Mr. Satan',
+      fr: 'Hercule',
+      de: 'Mr. Satan',
+      es: 'Mr. Satán',
+    },
     aliases: ['Hercule', 'Mark'],
     japaneseName: 'ミスター・サタン',
     importance: 'supporting',

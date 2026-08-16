@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
 import { useMapStore, useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
-import { getLocalizedText } from '@/utils/localization';
+import { getLocalizedText, getEntityDisplayName } from '@/utils/localization';
 import { findCharacter, findLocation } from '@/lib/entities';
 
 interface StoryModePanelProps {
@@ -164,7 +164,7 @@ export function StoryModePanel({ dataset }: StoryModePanelProps) {
                   onClick={() => openCharacter(c.id)}
                   className="chip hover:border-chakra-500/70 hover:text-white"
                 >
-                  {c.name}
+                  {getEntityDisplayName(c, locale)}
                 </button>
               ))}
             </div>

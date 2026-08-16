@@ -2,6 +2,8 @@ import { useEffect, useId, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { animeWorlds } from '@/data/worlds';
+import { useLocaleStore } from '@/store/useLocaleStore';
+import { getLocalizedText } from '@/utils/localization';
 import { cn } from '@/lib/cn';
 
 interface WorldSwitcherProps {
@@ -17,6 +19,7 @@ interface WorldSwitcherProps {
  */
 export function WorldSwitcher({ currentSlug }: WorldSwitcherProps) {
   const { t } = useTranslation();
+  const locale = useLocaleStore((s) => s.locale);
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const firstItemRef = useRef<HTMLAnchorElement>(null);
@@ -55,7 +58,7 @@ export function WorldSwitcher({ currentSlug }: WorldSwitcherProps) {
         aria-label={t('nav.switchWorld')}
         className="inline-flex items-center gap-1.5 rounded-md border border-ink-700/70 px-2.5 py-1.5 text-sm text-ink-100 transition hover:border-chakra-500/60 hover:text-white"
       >
-        <span className="font-display text-[13px]">{current?.title ?? currentSlug}</span>
+        <span className="font-display text-[13px]">{current ? getLocalizedText(current.title, locale) : currentSlug}</span>
         <span aria-hidden className={cn('text-ink-400 transition-transform', open && 'rotate-180')}>
           ▾
         </span>
@@ -79,7 +82,7 @@ export function WorldSwitcher({ currentSlug }: WorldSwitcherProps) {
                   aria-disabled
                   className="flex items-center justify-between gap-2 rounded-md px-3 py-2 text-sm text-ink-400"
                 >
-                  {w.title}
+                  {getLocalizedText(w.title, locale)}
                   <span className="rounded-full bg-ink-800 px-1.5 py-0.5 text-[9px] uppercase tracking-wide text-ink-300">
                     {t('nav.comingSoon')}
                   </span>
@@ -101,7 +104,7 @@ export function WorldSwitcher({ currentSlug }: WorldSwitcherProps) {
                     : 'text-ink-100 hover:bg-ink-800/70 hover:text-white',
                 )}
               >
-                {w.title}
+                {getLocalizedText(w.title, locale)}
                 {isCurrent && (
                   <span aria-hidden className="text-chakra-300">
                     ✓

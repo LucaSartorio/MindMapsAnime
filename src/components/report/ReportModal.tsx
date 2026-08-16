@@ -5,6 +5,8 @@ import { Modal } from '@/components/common/Modal';
 import { Button } from '@/components/common/Button';
 import { animeWorlds } from '@/data/worlds';
 import { useReportStore } from '@/store/useReportStore';
+import { useLocaleStore } from '@/store/useLocaleStore';
+import { getLocalizedText } from '@/utils/localization';
 
 type ReportType = 'bug' | 'improvement';
 type Status = 'idle' | 'submitting' | 'success' | 'error';
@@ -44,6 +46,7 @@ const labelClass = 'block text-xs font-medium text-ink-200 mb-1';
  */
 export function ReportModal() {
   const { t } = useTranslation();
+  const locale = useLocaleStore((s) => s.locale);
   const isOpen = useReportStore((s) => s.isOpen);
   const close = useReportStore((s) => s.close);
 
@@ -101,7 +104,10 @@ export function ReportModal() {
     const categoryLabel = t(`report.categories.${category}`);
     const worldLabels =
       worlds
-        .map((slug) => animeWorlds.find((w) => w.slug === slug)?.title ?? slug)
+        .map((slug) => {
+          const w = animeWorlds.find((x) => x.slug === slug);
+          return w ? getLocalizedText(w.title, locale) : slug;
+        })
         .join(', ') || t('report.worldsNone');
 
     const payload: Record<string, string> = {
@@ -260,7 +266,7 @@ export function ReportModal() {
                       onChange={() => toggleWorld(w.slug)}
                       className="sr-only"
                     />
-                    {w.title}
+                    {getLocalizedText(w.title, locale)}
                   </label>
                 );
               })}
