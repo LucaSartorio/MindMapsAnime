@@ -1,4 +1,5 @@
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Handle, Position, useStore, type NodeProps } from '@xyflow/react';
 import { cn } from '@/lib/cn';
 import { LOCATION_TYPE_COLOR, LOCATION_TYPE_ICON } from '@/lib/locationTypes';
@@ -38,6 +39,7 @@ const IMPORTANCE_DOT_RADIUS: Record<Importance, number> = {
 };
 
 function MapNodeBase({ data }: NodeProps) {
+  const { t } = useTranslation();
   const d = data as MapNodeData;
   // React Flow posiziona il nodo dal suo angolo in alto a sinistra. Per far
   // combaciare il CENTRO del pallino con la coordinata (loc.x, loc.y) — quindi
@@ -126,7 +128,7 @@ function MapNodeBase({ data }: NodeProps) {
         {d.hasSubMap && (
           <span
             className="ml-1.5 text-[10px] text-scroll-200 font-mono"
-            aria-label="ha una sottomappa esplorabile"
+            aria-label={t('map.hasSubmapAria')}
           >
             ⤢
           </span>

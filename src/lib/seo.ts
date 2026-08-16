@@ -1,4 +1,5 @@
 import type { Localizable } from '@/types';
+import { DEFAULT_LOCALE, LOCALE_META, SUPPORTED_LOCALES } from '@/types/i18n';
 import { animeWorlds } from '@/data/worlds';
 import { getAbilityTerm, getFactionsTerm } from '@/lib/worldConfig';
 
@@ -20,7 +21,14 @@ export const SITE = {
   description:
     'Esplora i mondi dei tuoi anime e manga preferiti attraverso mappe interattive, timeline, personaggi, fazioni, archi narrativi e percorsi. Naruto, Hunter x Hunter, One Piece e altri.',
   locale: 'it_IT',
-  altLocale: 'en_US',
+  /**
+   * Lingue alternative dichiarate ai crawler (`og:locale:alternate`): la stessa
+   * pagina è disponibile in tutte le lingue supportate dall'interfaccia.
+   * Derivata da `SUPPORTED_LOCALES`, così una nuova lingua compare da sola.
+   */
+  altLocales: SUPPORTED_LOCALES.filter((l) => l !== DEFAULT_LOCALE).map(
+    (l) => LOCALE_META[l].ogLocale,
+  ),
   /** Lingua di default del contenuto pre-renderizzato. */
   lang: 'it',
   ogImage: '/og-image.png',

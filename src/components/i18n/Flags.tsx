@@ -26,3 +26,41 @@ export function UkFlag(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
+export function JapanFlag(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 30 20" preserveAspectRatio="none" aria-hidden {...props}>
+      <rect width="30" height="20" fill="#ffffff" />
+      <circle cx="15" cy="10" r="6" fill="#bc002d" />
+    </svg>
+  );
+}
+
+export function FranceFlag(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 3 2" preserveAspectRatio="none" aria-hidden {...props}>
+      <rect width="3" height="2" fill="#ffffff" />
+      <rect width="1" height="2" x="0" fill="#002395" />
+      <rect width="1" height="2" x="2" fill="#ed2939" />
+    </svg>
+  );
+}
+
+export function GermanyFlag(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 3 3" preserveAspectRatio="none" aria-hidden {...props}>
+      <rect width="3" height="1" y="0" fill="#000000" />
+      <rect width="3" height="1" y="1" fill="#dd0000" />
+      <rect width="3" height="1" y="2" fill="#ffce00" />
+    </svg>
+  );
+}
+
+export function SpainFlag(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 3 2" preserveAspectRatio="none" aria-hidden {...props}>
+      <rect width="3" height="2" fill="#aa151b" />
+      <rect width="3" height="1" y="0.5" fill="#f1bf00" />
+    </svg>
+  );
+}

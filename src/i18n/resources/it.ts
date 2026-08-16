@@ -203,6 +203,8 @@ export const it = {
     },
     enterSubmap: 'Zoom nel luogo →',
     backToWorld: 'Torna alla mappa mondiale',
+    boundariesAria: 'Confini delle nazioni',
+    hasSubmapAria: 'ha una sottomappa esplorabile',
   },
   filters: {
     title: 'Filtri mappa',
@@ -297,6 +299,7 @@ export const it = {
     relatedJutsu: '{{term}} collegati',
     handSeals: 'Sigilli delle mani',
     chakraNature: 'Natura del chakra',
+    category: 'Categoria',
     classification: 'Classificazione',
     usedBy: 'Utilizzato da',
     ninjaRank: 'Grado ninja',
@@ -584,8 +587,14 @@ export const it = {
   },
   languageSwitcher: {
     label: 'Cambia lingua',
+    // Nomi nella lingua stessa: convenzione dei selettori lingua, così ogni
+    // utente riconosce la propria anche se l'interfaccia è in un'altra lingua.
     italian: 'Italiano',
     english: 'English',
+    japanese: '日本語',
+    french: 'Français',
+    german: 'Deutsch',
+    spanish: 'Español',
   },
   a11y: {
     skipToContent: 'Salta al contenuto principale',

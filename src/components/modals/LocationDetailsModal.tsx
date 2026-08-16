@@ -21,12 +21,33 @@ import { getLocalizedText, getLocationTypeLabel } from '@/utils/localization';
 import { buildRelationGroups, relationGroupsCount } from '@/lib/relationGroups';
 import { RelationsPanel } from '@/components/common/RelationsPanel';
 import { useOpenEntityRef } from '@/lib/useOpenEntityRef';
-import type { PoneglyphKind } from '@/types';
+import type { LocalizedText, PoneglyphKind } from '@/types';
 
-const PONEGLYPH_KIND_LABEL: Record<PoneglyphKind, { it: string; en: string }> = {
-  road: { it: 'Road Poneglyph', en: 'Road Poneglyph' },
-  information: { it: 'Poneglyph informativo', en: 'Information Poneglyph' },
-  rio: { it: 'Rio Poneglyph', en: 'Rio Poneglyph' },
+const PONEGLYPH_KIND_LABEL: Record<PoneglyphKind, LocalizedText> = {
+  road: {
+    it: 'Road Poneglyph',
+    en: 'Road Poneglyph',
+    ja: 'ロード・ポーネグリフ',
+    fr: 'Road Poneglyph',
+    de: 'Road-Poneglyphe',
+    es: 'Road Poneglyph',
+  },
+  information: {
+    it: 'Poneglyph informativo',
+    en: 'Information Poneglyph',
+    ja: '歴史の本文（ポーネグリフ）',
+    fr: 'Poneglyph d’information',
+    de: 'Informations-Poneglyphe',
+    es: 'Poneglyph informativo',
+  },
+  rio: {
+    it: 'Rio Poneglyph',
+    en: 'Rio Poneglyph',
+    ja: 'リオ・ポーネグリフ',
+    fr: 'Rio Poneglyph',
+    de: 'Rio-Poneglyphe',
+    es: 'Rio Poneglyph',
+  },
 };
 
 interface LocationDetailsModalProps {
@@ -124,7 +145,7 @@ export function LocationDetailsModal({
         <div className="rounded-md border border-red-600/50 bg-red-950/30 px-3 py-2">
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-red-200">
             <span aria-hidden>◈</span>
-            {PONEGLYPH_KIND_LABEL[location.poneglyph.kind][locale === 'en' ? 'en' : 'it']}
+            {getLocalizedText(PONEGLYPH_KIND_LABEL[location.poneglyph.kind], locale)}
           </div>
           {location.poneglyph.note && (
             <p className="mt-1 text-sm leading-relaxed text-red-100/90">
