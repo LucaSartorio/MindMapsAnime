@@ -432,6 +432,7 @@ export const en = {
       group: 'Groups',
       village: 'Villages',
       vessel: 'Ships',
+      squad: 'Squads',
       race: 'Races',
       concept: 'Concepts',
     },

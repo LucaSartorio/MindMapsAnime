@@ -17,6 +17,7 @@ import { narutoDataset } from '../src/data/naruto';
 import { hunterxhunterDataset } from '../src/data/hunterxhunter';
 import { onepieceDataset } from '../src/data/onepiece';
 import { dragonballDataset } from '../src/data/dragonball';
+import { blackcloverDataset } from '../src/data/blackclover';
 import { validateI18n, datasetCoverage } from '../src/utils/validateI18n';
 import { SUPPORTED_LOCALES, type SupportedLocale } from '../src/types/i18n';
 import type { WorldDataset } from '../src/types';
@@ -62,6 +63,7 @@ const datasets: Array<[string, WorldDataset]> = [
   ['Hunter x Hunter', hunterxhunterDataset],
   ['One Piece', onepieceDataset],
   ['Dragon Ball', dragonballDataset],
+  ['Black Clover', blackcloverDataset],
 ];
 
 const pct = (n: number, tot: number) =>

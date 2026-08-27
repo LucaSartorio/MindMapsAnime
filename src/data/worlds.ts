@@ -1,4 +1,10 @@
 import type { AnimeWorld } from '@/types';
+import {
+  BLACKCLOVER_MAGIC_ATTRIBUTES,
+  BLACKCLOVER_MAGIC_KINDS,
+  BLACKCLOVER_RANKS,
+  BLACKCLOVER_ROLES,
+} from '@/data/blackclover/config';
 
 /**
  * Registro generico di tutti gli anime/manga supportati o pianificati.
@@ -786,21 +792,23 @@ export const animeWorlds: AnimeWorld[] = [
       es: 'Reino del Trébol · Caballeros Mágicos',
     },
     description: {
-      it: 'Il Regno di Clover è in arrivo: Asta, nato senza un briciolo di magia, e Yuno, prodigio del vento, in corsa per il titolo di Imperatore Magico. I grimori, le nove compagnie dei Cavalieri Magici e il Toro Nero, l’Occhio Magico della Notte Bianca, gli elfi, il Regno di Diamond, quello di Spade e i Diavoli oltre il velo.',
-      en: 'The Clover Kingdom is coming: Asta, born without a shred of magic, and Yuno, the wind prodigy, both racing for the title of Wizard King. The grimoires, the nine Magic Knight squads and the Black Bulls, the Eye of the Midnight Sun, the elves, the Diamond and Spade Kingdoms and the Devils beyond the veil.',
-      ja: 'クローバー王国が近日公開。魔力を持たずに生まれたアスタと、風の天才ユノ——二人が目指すのは魔法帝の座。魔導書、九つの魔法騎士団と黒の暴牛、白夜の魔眼、エルフたち、ダイヤモンド王国とスペード王国、そして扉の向こうの悪魔たち。',
-      fr: 'Le Royaume de Clover arrive bientôt : Asta, né sans la moindre magie, et Yuno, prodige du vent, tous deux en course pour le titre d’Empereur-Mage. Les grimoires, les neuf compagnies de Chevaliers-Mages et le Taureau Noir, l’Œil Maléfique du Soleil Levant, les elfes, les Royaumes de Diamond et de Spade, et les Démons au-delà du voile.',
-      de: 'Das Königreich Clover kommt bald: Asta, ohne einen Funken Magie geboren, und Yuno, das Windtalent, beide im Rennen um den Titel des Magierkönigs. Die Grimoires, die neun Magierritter-Kompanien und die Schwarzen Stiere, das Auge der Mitternachtssonne, die Elfen, die Königreiche Diamond und Spade sowie die Teufel jenseits des Schleiers.',
-      es: 'El Reino del Trébol está en camino: Asta, nacido sin una pizca de magia, y Yuno, prodigio del viento, ambos en la carrera por el título de Rey Mago. Los grimorios, las nueve órdenes de Caballeros Mágicos y los Toros Negros, el Ojo de la Noche Blanca, los elfos, los Reinos de Diamante y de Picas, y los Demonios más allá del velo.',
+      it: 'Il continente dei quattro semi: il Regno di Clover di Asta e Yuno, Diamond a est, Spade a nord, Heart a ovest. I grimori e la Torre, le nove compagnie dei Cavalieri Magici e il Toro Nero, l’Occhio Magico della Notte Bianca e gli elfi, la Triade Oscura e i diavoli oltre la porta dell’Inframondo.',
+      en: 'The continent of the four suits: Asta and Yuno’s Clover Kingdom, Diamond to the east, Spade to the north, Heart to the west. The grimoires and their Tower, the nine Magic Knight squads and the Black Bulls, the Eye of the Midnight Sun and the elves, the Dark Triad and the devils beyond the gate to the Underworld.',
+      ja: '四つのスートの大陸——アスタとユノのクローバー王国、東のダイヤモンド、北のスペード、西のハート。魔導書とその塔、九つの魔法騎士団と黒の暴牛、白夜の魔眼とエルフたち、三魔眼、そして冥界の扉の向こうの悪魔たち。',
+      fr: 'Le continent des quatre enseignes : le Royaume de Clover d’Asta et Yuno, Diamond à l’est, Spade au nord, Heart à l’ouest. Les grimoires et leur Tour, les neuf compagnies de Chevaliers-Mages et le Taureau Noir, l’Œil Maléfique du Soleil Levant et les elfes, la Triade des Ténèbres et les démons au-delà de la porte du monde souterrain.',
+      de: 'Der Kontinent der vier Farben: das Königreich Clover von Asta und Yuno, Diamond im Osten, Spade im Norden, Heart im Westen. Die Grimoires und ihr Turm, die neun Magierritter-Kompanien und die Schwarzen Stiere, das Auge der Mitternachtssonne und die Elfen, die Dunkle Triade und die Teufel jenseits des Tors zur Unterwelt.',
+      es: 'El continente de los cuatro palos: el Reino del Trébol de Asta y Yuno, Diamante al este, Picas al norte, Corazón al oeste. Los grimorios y su Torre, las nueve órdenes de Caballeros Mágicos y los Toros Negros, el Ojo de la Noche Blanca y los elfos, la Tríada Oscura y los demonios más allá de la puerta del Inframundo.',
     },
-    status: 'coming_soon',
+    status: 'available',
+    coverAssetId: 'bc-cover-placeholder',
     theme: {
       primary: '#2fa05f',
       accent: '#e0b23c',
       highlight: '#7a4fd6',
       background: '#0c0d11',
     },
-    availableMapLevelIds: [],
+    defaultMapLevelId: 'bc-map-world',
+    availableMapLevelIds: ['bc-map-world', 'bc-map-underworld'],
     tags: ['shonen', 'magia', 'yuki tabata', 'jump'],
     metadata: {
       author: 'Yūki Tabata',
@@ -810,12 +818,44 @@ export const animeWorlds: AnimeWorld[] = [
     config: {
       ability: {
         term: { it: 'Magia & Grimori', en: 'Magic & Grimoires', ja: '魔法と魔導書', fr: 'Magie & Grimoires', de: 'Magie & Grimoires', es: 'Magia y grimorios' },
+        // In Black Clover ogni mago ha UN attributo magico, che lo definisce
+        // molto più del suo grado: è quindi la "categoria" della tecnica
+        // (`jutsu.type`) e il badge del personaggio (`character.abilityCategory`).
         categoryTerm: { it: 'Attributo magico', en: 'Magic attribute', ja: '魔法属性', fr: 'Attribut magique', de: 'Magie-Attribut', es: 'Atributo mágico' },
+        categories: BLACKCLOVER_MAGIC_ATTRIBUTES,
+        // Facet secondario: la classificazione della magia (d'attributo,
+        // composita, di creazione, degli spiriti, proibita, diabolica, …).
+        attribute: {
+          term: { it: 'Classificazione', en: 'Classification', ja: '分類', fr: 'Classification', de: 'Klassifikation', es: 'Clasificación' },
+          options: BLACKCLOVER_MAGIC_KINDS,
+        },
       },
-      characterRank: { term: { it: 'Grado di Cavaliere Magico', en: 'Magic Knight rank', ja: '魔法騎士の階級', fr: 'Rang de Chevalier-Mage', de: 'Rang der Magierritter', es: 'Rango de Caballero Mágico' } },
+      characterRank: {
+        term: { it: 'Grado di Cavaliere Magico', en: 'Magic Knight rank', ja: '魔法騎士の階級', fr: 'Rang de Chevalier-Mage', de: 'Rang der Magierritter', es: 'Rango de Caballero Mágico' },
+        options: BLACKCLOVER_RANKS,
+      },
+      characterRoles: BLACKCLOVER_ROLES,
       nationTerm: { it: 'Regno / Regione', en: 'Kingdom / Region', ja: '王国 / 地域', fr: 'Royaume / Région', de: 'Königreich / Region', es: 'Reino / Región' },
       factionsTerm: { it: 'Compagnie & Fazioni', en: 'Squads & Factions', ja: '騎士団と勢力', fr: 'Compagnies & Factions', de: 'Kompanien & Fraktionen', es: 'Órdenes y facciones' },
       placesTerm: { it: 'luoghi', en: 'places', ja: '場所', fr: 'lieux', de: 'Orte', es: 'lugares' },
+      featured: {
+        abilities: [
+          'magic-bc-anti-magic',
+          'magic-bc-wind',
+          'magic-bc-dark',
+          'magic-bc-time',
+          'magic-bc-light',
+          'magic-bc-gravity',
+        ],
+        factions: [
+          'faction-bc-black-bulls',
+          'faction-bc-golden-dawn',
+          'faction-bc-silver-eagle',
+          'faction-bc-crimson-lion',
+          'faction-bc-eye-midnight-sun',
+          'faction-bc-dark-triad',
+        ],
+      },
     },
   },
 ];

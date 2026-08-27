@@ -430,6 +430,7 @@ export const de = {
       group: 'Gruppen',
       village: 'Dörfer',
       vessel: 'Schiffe',
+      squad: 'Kompanien',
       race: 'Rassen',
       concept: 'Konzepte',
     },

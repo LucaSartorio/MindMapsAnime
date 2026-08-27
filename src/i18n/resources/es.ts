@@ -430,6 +430,7 @@ export const es = {
       group: 'Grupos',
       village: 'Aldeas',
       vessel: 'Barcos',
+      squad: 'Órdenes',
       race: 'Razas',
       concept: 'Conceptos',
     },

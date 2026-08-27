@@ -6,7 +6,12 @@
  * vettoriale dei confini (niente highlight su hover/selezione), mantenendo i
  * pin cliccabili. Per Naruto invece l'overlay resta attivo.
  */
-const WORLDS_WITHOUT_BOUNDARY_HIGHLIGHT = new Set<string>(['hunterxhunter']);
+const WORLDS_WITHOUT_BOUNDARY_HIGHLIGHT = new Set<string>([
+  'hunterxhunter',
+  // La mappa su pergamena di Black Clover disegna già i propri confini e i
+  // simboli dei quattro semi: niente overlay vettoriale sopra.
+  'blackclover',
+]);
 
 /** True se per questo mondo l'overlay dei confini va mostrato/evidenziato. */
 export function worldShowsBoundaryHighlight(world: { slug: string }): boolean {
