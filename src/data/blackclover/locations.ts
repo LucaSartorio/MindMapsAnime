@@ -50,7 +50,7 @@ export const blackcloverLocations: Location[] = [
     nationId: 'nation-bc-clover',
     characterIds: ['char-bc-julius', 'char-bc-augustus', 'char-bc-marx', 'char-bc-damnatio', 'char-bc-asta', 'char-bc-yuno'],
     eventIds: ['evt-bc-entrance-exam', 'evt-bc-asta-joins-black-bulls', 'evt-bc-star-awards-festival', 'evt-bc-fuegoleon-defeated', 'evt-bc-gueldre-arrested', 'evt-bc-royal-capital-assault', 'evt-bc-julius-death', 'evt-bc-elf-reincarnation', 'evt-bc-lucius-awakens', 'evt-bc-paladins-created', 'evt-bc-judgement-day', 'evt-bc-asta-returns'],
-    arcIds: ['arc-bc-entrance-exam', 'arc-bc-eye-midnight-sun', 'arc-bc-royal-knights-exam', 'arc-bc-royal-capital-assault', 'arc-bc-elf-reincarnation', 'arc-bc-lucius-paladins', 'arc-bc-final-arc'],
+    arcIds: ['arc-bc-entrance-exam', 'arc-bc-eye-midnight-sun', 'arc-bc-star-awards', 'arc-bc-royal-knights-exam', 'arc-bc-royal-capital-assault', 'arc-bc-elf-reincarnation', 'arc-bc-lucius-paladins', 'arc-bc-final-arc'],
     importance: 'main',
     canonStatus: 'canon',
     referenceStatus: 'verified',

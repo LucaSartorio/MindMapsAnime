@@ -3,7 +3,7 @@
 Il dataset Black Clover si aspetta qui l'immagine della world map:
 
 ```
-public/assets/worlds/blackclover/maps/blackclover-world-map.png
+public/assets/worlds/blackclover/maps/blackclover-world-map.jpg
 ```
 
 - Referenziata da `bc-world-map-reference` in `src/data/blackclover/assets.ts`

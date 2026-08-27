@@ -3,15 +3,19 @@ import { animeWorlds } from '@/data/worlds';
 import { blackcloverMapLevels } from './mapLevels';
 import { blackcloverNations } from './nations';
 import { blackcloverLocations } from './locations';
+import { blackcloverLocationsBatch1 } from './locationsBatch1';
 import { blackcloverCharacters } from './characters';
+import { blackcloverCharactersBatch1 } from './charactersBatch1';
 import { blackcloverCharactersMagicKnights } from './charactersMagicKnights';
 import { blackcloverCharactersCloverRealm } from './charactersCloverRealm';
 import { blackcloverCharactersElves } from './charactersElves';
 import { blackcloverCharactersSpade } from './charactersSpade';
 import { blackcloverCharactersOtherLands } from './charactersOtherLands';
 import { blackcloverFactions } from './factions';
+import { blackcloverFactionsBatch1 } from './factionsBatch1';
 import { blackcloverArcs } from './arcs';
 import { blackcloverEvents } from './events';
+import { blackcloverEventsBatch1 } from './eventsBatch1';
 import { blackcloverRoutes } from './routes';
 import { blackcloverMagic } from './magic';
 import { blackcloverAssets } from './assets';
@@ -40,18 +44,19 @@ export const blackcloverDataset: WorldDataset = {
   world: blackclover,
   mapLevels: blackcloverMapLevels,
   nations: blackcloverNations,
-  locations: blackcloverLocations,
+  locations: [...blackcloverLocations, ...blackcloverLocationsBatch1],
   characters: [
     ...blackcloverCharacters,
+    ...blackcloverCharactersBatch1,
     ...blackcloverCharactersMagicKnights,
     ...blackcloverCharactersCloverRealm,
     ...blackcloverCharactersElves,
     ...blackcloverCharactersSpade,
     ...blackcloverCharactersOtherLands,
   ],
-  factions: blackcloverFactions,
+  factions: [...blackcloverFactions, ...blackcloverFactionsBatch1],
   arcs: blackcloverArcs,
-  events: blackcloverEvents,
+  events: [...blackcloverEvents, ...blackcloverEventsBatch1],
   routes: blackcloverRoutes,
   jutsu: blackcloverMagic,
   assets: blackcloverAssets,

@@ -462,7 +462,8 @@ export const blackcloverCharactersOtherLands: Character[] = [
     nationId: 'nation-bc-neutral',
     clanIds: ['faction-bc-spirits'],
     jutsuIds: ['magic-bc-earth'],
-    arcIds: ['arc-bc-spade-raid'],
+    locationIds: ['loc-bc-grand-magic-zone', 'loc-bc-qliphoth-tree'],
+    arcIds: ['arc-bc-heart-kingdom', 'arc-bc-spade-raid'],
     shortDescription: {
       it: "Lo spirito della terra, il quarto dei quattro spiriti elementali del mondo di Black Clover.",
       en: "The earth spirit, fourth of the four elemental spirits of the Black Clover world.",

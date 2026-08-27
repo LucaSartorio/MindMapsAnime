@@ -86,7 +86,7 @@ export const blackcloverCharactersCloverRealm: Character[] = [
     jutsuIds: ['magic-bc-recovery'],
     allies: ['char-bc-julius', 'char-bc-fuegoleon'],
     locationIds: ['loc-bc-royal-capital'],
-    arcIds: ['arc-bc-eye-midnight-sun', 'arc-bc-elf-reincarnation'],
+    arcIds: ['arc-bc-star-awards', 'arc-bc-elf-reincarnation'],
     shortDescription: {
       it: 'Il miglior guaritore del Regno di Clover: la sua Magia di Guarigione tiene in vita Fuegoleon dopo il colpo del Terzo Occhio.',
       en: "The Clover Kingdom's best healer: his Recovery Magic keeps Fuegoleon alive after the Third Eye's strike.",
