@@ -35,6 +35,7 @@ componenti.
 | Fairy Tail          | `fairytail`          | In arrivo     | Magia                        |
 | Jujutsu Kaisen      | `jujutsukaisen`      | In arrivo     | Tecniche Malefiche           |
 | Demon Slayer        | `demonslayer`        | In arrivo     | Respirazioni & Arti Demoniache |
+| Black Clover        | `blackclover`        | In arrivo     | Magia & Grimori              |
 
 ### Dataset attuali
 
