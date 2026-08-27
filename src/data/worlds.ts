@@ -836,7 +836,7 @@ export const animeWorlds: AnimeWorld[] = [
       },
       characterRoles: BLACKCLOVER_ROLES,
       nationTerm: { it: 'Regno / Regione', en: 'Kingdom / Region', ja: '王国 / 地域', fr: 'Royaume / Région', de: 'Königreich / Region', es: 'Reino / Región' },
-      factionsTerm: { it: 'Compagnie & Fazioni', en: 'Squads & Factions', ja: '騎士団と勢力', fr: 'Compagnies & Factions', de: 'Kompanien & Fraktionen', es: 'Órdenes y facciones' },
+      factionsTerm: { it: 'Compagnie', en: 'Squads', ja: '騎士団', fr: 'Compagnies', de: 'Kompanien', es: 'Órdenes' },
       placesTerm: { it: 'luoghi', en: 'places', ja: '場所', fr: 'lieux', de: 'Orte', es: 'lugares' },
       featured: {
         abilities: [

@@ -410,7 +410,7 @@ export const blackcloverCharactersMagicKnights: Character[] = [
     ],
     locationIds: ['loc-bc-vermillion-mansion', 'loc-bc-royal-capital'],
     eventIds: ['evt-bc-fuegoleon-defeated'],
-    arcIds: ['arc-bc-eye-midnight-sun', 'arc-bc-elf-reincarnation', 'arc-bc-spade-raid', 'arc-bc-final-arc'],
+    arcIds: ['arc-bc-eye-midnight-sun', 'arc-bc-star-awards', 'arc-bc-elf-reincarnation', 'arc-bc-spade-raid', 'arc-bc-final-arc'],
     shortDescription: {
       it: "Capitano del Leone Cremisi e candidato naturale a Imperatore Magico: giudica un mago per quello che fa, non per il sangue che ha.",
       en: 'Captain of the Crimson Lions and the natural candidate for Wizard King: he judges a mage by what they do, not by the blood they carry.',
@@ -685,7 +685,7 @@ export const blackcloverCharactersMagicKnights: Character[] = [
     jutsuIds: ['magic-bc-vortex'],
     allies: ['char-bc-julius'],
     locationIds: ['loc-bc-royal-capital'],
-    arcIds: ['arc-bc-royal-knights-exam', 'arc-bc-elf-reincarnation', 'arc-bc-spade-raid'],
+    arcIds: ['arc-bc-star-awards', 'arc-bc-royal-knights-exam', 'arc-bc-elf-reincarnation', 'arc-bc-spade-raid'],
     shortDescription: {
       it: "Il capitano che eredita l'Orca Viola dopo l'arresto di Gueldre: Magia del Vortice e un senso del dovere che il predecessore non aveva.",
       en: "The captain who inherits the Purple Orcas after Gueldre's arrest: Vortex Magic and a sense of duty his predecessor lacked.",
@@ -711,7 +711,7 @@ export const blackcloverCharactersMagicKnights: Character[] = [
     enemies: ['char-bc-julius', 'char-bc-zora'],
     locationIds: ['loc-bc-royal-capital'],
     eventIds: ['evt-bc-gueldre-arrested'],
-    arcIds: ['arc-bc-eye-midnight-sun'],
+    arcIds: ['arc-bc-star-awards'],
     shortDescription: {
       it: "L'ex capitano dell'Orca Viola, corrotto fino al midollo: la sua Magia della Permeazione lo rendeva intangibile — non abbastanza da sfuggire a Julius.",
       en: "The former Purple Orca captain, corrupt to the core: his Permeation Magic made him intangible — not enough to escape Julius.",

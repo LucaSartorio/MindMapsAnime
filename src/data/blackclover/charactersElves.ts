@@ -101,7 +101,7 @@ export const blackcloverCharactersElves: Character[] = [
     enemies: ['char-bc-fuegoleon', 'char-bc-asta'],
     locationIds: ['loc-bc-royal-capital', 'loc-bc-shadow-palace'],
     eventIds: ['evt-bc-fuegoleon-defeated'],
-    arcIds: ['arc-bc-eye-midnight-sun', 'arc-bc-elf-reincarnation'],
+    arcIds: ['arc-bc-star-awards', 'arc-bc-elf-reincarnation'],
     shortDescription: {
       it: "Uno dei tre del Terzo Occhio: la sua Magia dell'Imitazione copia qualunque incantesimo abbia visto, e con essa abbatte Fuegoleon nella Capitale.",
       en: "One of the three of the Third Eye: his Imitation Magic copies any spell he has seen, and with it he cuts down Fuegoleon in the capital.",
