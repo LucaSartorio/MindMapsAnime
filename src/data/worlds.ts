@@ -766,6 +766,58 @@ export const animeWorlds: AnimeWorld[] = [
       placesTerm: { it: 'luoghi', en: 'places', ja: '場所', fr: 'lieux', de: 'Orte', es: 'lugares' },
     },
   },
+  {
+    id: 'world-blackclover',
+    slug: 'blackclover',
+    title: {
+      it: 'Black Clover',
+      en: 'Black Clover',
+      ja: 'ブラッククローバー',
+      fr: 'Black Clover',
+      de: 'Black Clover',
+      es: 'Black Clover',
+    },
+    subtitle: {
+      it: 'Regno di Clover · Cavalieri Magici',
+      en: 'Clover Kingdom · Magic Knights',
+      ja: 'クローバー王国 · 魔法騎士団',
+      fr: 'Royaume de Clover · Chevaliers-Mages',
+      de: 'Königreich Clover · Magierritter',
+      es: 'Reino del Trébol · Caballeros Mágicos',
+    },
+    description: {
+      it: 'Il Regno di Clover è in arrivo: Asta, nato senza un briciolo di magia, e Yuno, prodigio del vento, in corsa per il titolo di Imperatore Magico. I grimori, le nove compagnie dei Cavalieri Magici e il Toro Nero, l’Occhio Magico della Notte Bianca, gli elfi, il Regno di Diamond, quello di Spade e i Diavoli oltre il velo.',
+      en: 'The Clover Kingdom is coming: Asta, born without a shred of magic, and Yuno, the wind prodigy, both racing for the title of Wizard King. The grimoires, the nine Magic Knight squads and the Black Bulls, the Eye of the Midnight Sun, the elves, the Diamond and Spade Kingdoms and the Devils beyond the veil.',
+      ja: 'クローバー王国が近日公開。魔力を持たずに生まれたアスタと、風の天才ユノ——二人が目指すのは魔法帝の座。魔導書、九つの魔法騎士団と黒の暴牛、白夜の魔眼、エルフたち、ダイヤモンド王国とスペード王国、そして扉の向こうの悪魔たち。',
+      fr: 'Le Royaume de Clover arrive bientôt : Asta, né sans la moindre magie, et Yuno, prodige du vent, tous deux en course pour le titre d’Empereur-Mage. Les grimoires, les neuf compagnies de Chevaliers-Mages et le Taureau Noir, l’Œil Maléfique du Soleil Levant, les elfes, les Royaumes de Diamond et de Spade, et les Démons au-delà du voile.',
+      de: 'Das Königreich Clover kommt bald: Asta, ohne einen Funken Magie geboren, und Yuno, das Windtalent, beide im Rennen um den Titel des Magierkönigs. Die Grimoires, die neun Magierritter-Kompanien und die Schwarzen Stiere, das Auge der Mitternachtssonne, die Elfen, die Königreiche Diamond und Spade sowie die Teufel jenseits des Schleiers.',
+      es: 'El Reino del Trébol está en camino: Asta, nacido sin una pizca de magia, y Yuno, prodigio del viento, ambos en la carrera por el título de Rey Mago. Los grimorios, las nueve órdenes de Caballeros Mágicos y los Toros Negros, el Ojo de la Noche Blanca, los elfos, los Reinos de Diamante y de Picas, y los Demonios más allá del velo.',
+    },
+    status: 'coming_soon',
+    theme: {
+      primary: '#2fa05f',
+      accent: '#e0b23c',
+      highlight: '#7a4fd6',
+      background: '#0c0d11',
+    },
+    availableMapLevelIds: [],
+    tags: ['shonen', 'magia', 'yuki tabata', 'jump'],
+    metadata: {
+      author: 'Yūki Tabata',
+      publisher: 'Shueisha',
+      yearStart: 2015,
+    },
+    config: {
+      ability: {
+        term: { it: 'Magia & Grimori', en: 'Magic & Grimoires', ja: '魔法と魔導書', fr: 'Magie & Grimoires', de: 'Magie & Grimoires', es: 'Magia y grimorios' },
+        categoryTerm: { it: 'Attributo magico', en: 'Magic attribute', ja: '魔法属性', fr: 'Attribut magique', de: 'Magie-Attribut', es: 'Atributo mágico' },
+      },
+      characterRank: { term: { it: 'Grado di Cavaliere Magico', en: 'Magic Knight rank', ja: '魔法騎士の階級', fr: 'Rang de Chevalier-Mage', de: 'Rang der Magierritter', es: 'Rango de Caballero Mágico' } },
+      nationTerm: { it: 'Regno / Regione', en: 'Kingdom / Region', ja: '王国 / 地域', fr: 'Royaume / Région', de: 'Königreich / Region', es: 'Reino / Región' },
+      factionsTerm: { it: 'Compagnie & Fazioni', en: 'Squads & Factions', ja: '騎士団と勢力', fr: 'Compagnies & Factions', de: 'Kompanien & Fraktionen', es: 'Órdenes y facciones' },
+      placesTerm: { it: 'luoghi', en: 'places', ja: '場所', fr: 'lieux', de: 'Orte', es: 'lugares' },
+    },
+  },
 ];
 
 /** Recupera un mondo tramite slug. */

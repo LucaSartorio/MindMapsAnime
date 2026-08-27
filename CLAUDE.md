@@ -13,8 +13,8 @@ Tailwind + React Router. Vercel Analytics + Speed Insights (mounted in `src/App.
 
 **Available worlds:** Naruto, Hunter x Hunter, One Piece, Dragon Ball (`status: 'available'`,
 full datasets). **Coming soon:** Attack on Titan, Bleach, Fullmetal Alchemist, Frieren, Toriko,
-Fairy Tail, Jujutsu Kaisen, Demon Slayer (registered in `worlds.ts`, no dataset yet → render
-`ComingSoonWorldPage`).
+Fairy Tail, Jujutsu Kaisen, Demon Slayer, Black Clover (registered in `worlds.ts`, no dataset
+yet → render `ComingSoonWorldPage`).
 
 The app is fully **dataset-driven and dynamic per world**: a new world = a dataset + a
 `WorldConfig`, with zero component edits. Do NOT hardcode world-specific terms in shared
