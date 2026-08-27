@@ -426,6 +426,7 @@ export const ja = {
       group: 'グループ',
       village: '里',
       vessel: '船',
+      squad: '騎士団',
       race: '種族',
       concept: '概念',
     },

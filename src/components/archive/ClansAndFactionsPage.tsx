@@ -22,8 +22,9 @@ interface ClansAndFactionsPageProps {
  * derivati dal dataset (solo quelli realmente usati dal mondo); tipi
  * sconosciuti ottengono un'etichetta "humanizzata" automaticamente.
  */
-const FACTION_TYPE_ORDER = ['crew', 'clan', 'organization', 'army', 'group', 'village', 'vessel', 'race', 'concept'];
+const FACTION_TYPE_ORDER = ['squad', 'crew', 'clan', 'organization', 'army', 'group', 'village', 'vessel', 'race', 'concept'];
 const FACTION_TYPE_TKEY: Record<string, string> = {
+  squad: 'clans.types.squad',
   clan: 'clans.types.clan',
   crew: 'clans.types.crew',
   organization: 'clans.types.organization',

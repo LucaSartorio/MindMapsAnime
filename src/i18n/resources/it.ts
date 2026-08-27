@@ -435,6 +435,7 @@ export const it = {
       group: 'Gruppi',
       village: 'Villaggi',
       vessel: 'Navi',
+      squad: 'Compagnie',
       race: 'Razze',
       concept: 'Concetti',
     },
