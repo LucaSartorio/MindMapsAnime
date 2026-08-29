@@ -129,11 +129,99 @@ export const CLAN_COLORS: Record<string, string> = {
   'faction-allied-shinobi': '#3a8ae8',
 };
 
-/** Hue deterministico (0-359) da una stringa id. */
-export function hashHue(s: string): number {
+/** Hash deterministico (uint32) da una stringa id. */
+export function hashCode(s: string): number {
   let h = 0;
   for (let i = 0; i < s.length; i += 1) h = (h * 31 + s.charCodeAt(i)) >>> 0;
-  return h % 360;
+  return h;
+}
+
+/** Hue deterministico (0-359) da una stringa id. */
+export function hashHue(s: string): number {
+  return hashCode(s) % 360;
+}
+
+/* --------------------------- Conversioni colore --------------------------- */
+
+interface Hsl {
+  h: number;
+  s: number;
+  l: number;
+}
+
+/** hex (#rgb o #rrggbb) → HSL (h 0-360, s/l 0-100). */
+export function hexToHsl(hex: string): Hsl {
+  const m = hex.replace('#', '');
+  const full =
+    m.length === 3
+      ? m
+          .split('')
+          .map((c) => c + c)
+          .join('')
+      : m;
+  const num = parseInt(full, 16);
+  const r = ((num >> 16) & 0xff) / 255;
+  const g = ((num >> 8) & 0xff) / 255;
+  const b = (num & 0xff) / 255;
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+  const d = max - min;
+  let h = 0;
+  if (d !== 0) {
+    if (max === r) h = ((g - b) / d) % 6;
+    else if (max === g) h = (b - r) / d + 2;
+    else h = (r - g) / d + 4;
+  }
+  h = Math.round(h * 60);
+  if (h < 0) h += 360;
+  const l = (max + min) / 2;
+  const s = d === 0 ? 0 : d / (1 - Math.abs(2 * l - 1));
+  return { h, s: Math.round(s * 100), l: Math.round(l * 100) };
+}
+
+/** HSL → hex. */
+export function hslToHex({ h, s, l }: Hsl): string {
+  const sat = Math.min(100, Math.max(0, s)) / 100;
+  const lig = Math.min(100, Math.max(0, l)) / 100;
+  const c = (1 - Math.abs(2 * lig - 1)) * sat;
+  const hh = (((h % 360) + 360) % 360) / 60;
+  const x = c * (1 - Math.abs((hh % 2) - 1));
+  const [r1, g1, b1] =
+    hh < 1
+      ? [c, x, 0]
+      : hh < 2
+        ? [x, c, 0]
+        : hh < 3
+          ? [0, c, x]
+          : hh < 4
+            ? [0, x, c]
+            : hh < 5
+              ? [x, 0, c]
+              : [c, 0, x];
+  const m = lig - c / 2;
+  const to = (v: number) =>
+    Math.round((v + m) * 255)
+      .toString(16)
+      .padStart(2, '0');
+  return `#${to(r1)}${to(g1)}${to(b1)}`;
+}
+
+/**
+ * Variazione deterministica di un colore a partire da un id: mantiene la
+ * "famiglia" cromatica (quella del mondo) ma dà a ogni entità una sfumatura
+ * propria, così le schede non sembrano tutte identiche.
+ */
+export function jitterColor(hex: string, id: string): string {
+  const { h, s, l } = hexToHsl(hex);
+  const n = hashCode(id);
+  return hslToHex({
+    // Scarto di tonalità volutamente stretto: l'entità si distingue dalle altre
+    // ma resta nella famiglia cromatica dell'opera (un blu Dragon Ball non deve
+    // virare al verde).
+    h: h + (((n >> 3) % 17) - 8), // ±8°
+    s: Math.min(74, Math.max(30, s + (((n >> 8) % 17) - 8))),
+    l: Math.min(58, Math.max(34, l + (((n >> 13) % 19) - 9))),
+  });
 }
 
 /** Iniziali (max 2 lettere) dal nome visualizzato. */
