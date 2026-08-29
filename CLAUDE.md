@@ -385,12 +385,37 @@ entries (`src/types/i18n.ts`), create `src/i18n/resources/<code>.ts`, register i
 `STRINGS` entry. The language switcher, `og:locale:alternate` tags and the SEO/prerender metadata
 are all derived from `SUPPORTED_LOCALES` and pick it up automatically.
 
-### Entity images
+### Entity images & per-world placeholders
 `src/components/common/EntityImage.tsx` renders a themed SVG placeholder per entity. A real image is
 used if a **drop-in** file named `<entityId>.<ext>` exists under
 `src/assets/worlds/<slug>/{characters,jutsu,clans,locations,arcs}/` (auto-discovered at build time via
 `import.meta.glob`, for ALL worlds). World logos: `src/assets/worlds/logos/<slug>.png`. World cursor:
 `src/utils/worldCursor.ts`.
+
+**The generated placeholders are per-world.** They used to be drawn on Naruto's visual codes (ninja
+headband on characters, chakra swirl on techniques) and were reused for every world — a straw-hat
+pirate got a forehead protector. Now each world declares its own symbols in the registry
+`src/lib/worldPlaceholders.ts`:
+- `WORLD_STYLES[slug]` picks a **motif** per kind — `character` (headband · straw hat · spiky hair ·
+  Nen aura · grimoire · hood · blade · …), `ability` (chakra swirl · devil fruit · ki orb · Nen
+  hexagram · magic circle · slash · …) and `emblem` (crest · Jolly Roger · dragon ball · Hunter badge ·
+  squad banner · wings · …), drawn by `src/components/common/entityArt.tsx`. All shapes are **original
+  geometry**, never official artwork (see Copyright below).
+- `ink` is the world's signature colour used *inside* the motif (straw gold, ki orange, Nen cyan,
+  grimoire gold), so the symbol stays recognisable whatever the entity's tint.
+- Background tints derive from the world's own `theme` (`primary/accent/highlight` in `worlds.ts`) via
+  `getWorldEntityColor`, with a per-kind slot (`DEFAULT_TINT`, overridable per world through `tint`)
+  and a **narrow** deterministic hue jitter — entities differ from each other without leaving the
+  world's palette.
+- Per-entity colour overrides live in `WORLD_ENTITY_COLORS`, **scoped by world**: Naruto's chakra
+  natures / villages / clans tint only Naruto (Dragon Ball reuses attribute ids like `wind` with a
+  different meaning, and used to inherit Naruto's greens).
+
+`EntityImage` resolves the world from `useWorldStore` (optional `worldSlug` prop overrides it for
+cross-world cards), so call sites don't change. A world absent from the registry falls back to neutral
+motifs but still gets its own palette — **adding an anime needs no component edits**; add an entry only
+to give it dedicated symbols. Location silhouettes stay driven by `LocationType` (world-agnostic) and
+cover `planet`/`dimension`/`ruins`/`hideout` too, so cosmic worlds don't render village rooftops.
 
 ## Data & content conventions
 

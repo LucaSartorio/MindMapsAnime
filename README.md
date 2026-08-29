@@ -325,6 +325,24 @@ qualunque mondo (auto-discovery a build-time via `import.meta.glob`):
 src/assets/worlds/<slug>/{characters,jutsu,clans,locations,arcs}/<entityId>.<ext>
 ```
 
+**Placeholder per-mondo** — ogni opera ha i suoi simboli, dichiarati nel registro
+`src/lib/worldPlaceholders.ts` e disegnati da `src/components/common/entityArt.tsx`
+(forme originali, mai artwork ufficiale):
+
+| Mondo           | Personaggi           | Poteri              | Clan / fazioni      |
+| --------------- | -------------------- | ------------------- | ------------------- |
+| Naruto          | protettore frontale  | spirale di chakra   | stemma a scudo      |
+| One Piece       | cappello di paglia   | Frutto del Diavolo  | Jolly Roger         |
+| Dragon Ball     | capigliatura a punte | sfera di ki         | sfera del drago     |
+| Hunter x Hunter | aura Nen             | esagramma Nen       | placca da Hunter    |
+| Black Clover    | grimorio + quadrifoglio | cerchio magico   | stendardo di compagnia |
+
+I colori di fondo derivano dal `theme` del mondo, con una variazione per entità
+volutamente stretta: schede diverse restano distinguibili senza uscire dalla
+palette dell'opera. Un mondo non elencato usa forme neutre ma **già colorate col
+suo tema**: aggiungere un anime non richiede modifiche ai componenti — basta una
+voce nel registro per dargli simboli dedicati (i mondi "in arrivo" ce l'hanno già).
+
 **Logo del mondo** (card homepage) — `src/assets/worlds/logos/<slug>.png`.
 
 Formati: `jpg, jpeg, png, webp, avif, svg`. **Non** inserire immagini protette da
