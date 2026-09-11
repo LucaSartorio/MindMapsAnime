@@ -39,6 +39,7 @@ export function RouteStepper({
   const locale = useLocaleStore((s) => s.locale);
   const setSelectedRoute = useMapStore((s) => s.setSelectedRoute);
   const setSelectedLocation = useMapStore((s) => s.setSelectedLocation);
+  const setActiveMapLevel = useMapStore((s) => s.setActiveMapLevel);
   const index = activeIndex;
   const [playing, setPlaying] = useState(false);
 
@@ -48,9 +49,25 @@ export function RouteStepper({
       onActiveIndexChange(clamped);
       setSelectedRoute(routeId);
       const loc = findLocation(dataset, steps[clamped]?.locationId);
-      if (loc) setSelectedLocation(loc.id);
+      if (loc) {
+        // Una rotta può attraversare più livelli (world map → sotto-mappa di
+        // una capitale → Inframondo): senza allineare il livello, gli step
+        // fuori da quello attivo non verrebbero né disegnati né centrati e il
+        // "segui il percorso" sembrerebbe fermo. Stessa convenzione della
+        // timeline e di Story Mode: chi seleziona un luogo imposta il livello.
+        setActiveMapLevel(loc.mapLevelId);
+        setSelectedLocation(loc.id);
+      }
     },
-    [dataset, routeId, steps, onActiveIndexChange, setSelectedRoute, setSelectedLocation],
+    [
+      dataset,
+      routeId,
+      steps,
+      onActiveIndexChange,
+      setSelectedRoute,
+      setSelectedLocation,
+      setActiveMapLevel,
+    ],
   );
 
   // All'apertura: assicura che la rotta sia disegnata e centra sulla prima tappa.

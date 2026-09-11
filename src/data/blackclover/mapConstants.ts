@@ -21,6 +21,16 @@ export const BLACKCLOVER_MAP_VIEWBOX = { width: 1500, height: 1057 } as const;
  */
 export const BLACKCLOVER_UNDERWORLD_VIEWBOX = { width: 1200, height: 1400 } as const;
 
+/**
+ * Piano concettuale delle sotto-mappe "cittadine": la Capitale Reale di Clover,
+ * la fortezza del Regno di Spade, il Regno di Heart e il Regno di Diamond.
+ * Nessuna di queste ha una planimetria ufficiale nell'opera: sono schemi che
+ * dispongono i luoghi CANONICI in modo coerente con quanto la storia mostra
+ * (il castello al centro, i quartieri nobili vicini, il Palazzo delle Ombre
+ * sotto la città…), non mappe in scala.
+ */
+export const BLACKCLOVER_CITY_VIEWBOX = { width: 1200, height: 900 } as const;
+
 /** Path locale dell'immagine di riferimento (vive in public/, servita alla root). */
 export const BLACKCLOVER_WORLD_MAP_SRC =
   '/assets/worlds/blackclover/maps/blackclover-world-map.jpg';

@@ -808,7 +808,14 @@ export const animeWorlds: AnimeWorld[] = [
       background: '#0c0d11',
     },
     defaultMapLevelId: 'bc-map-world',
-    availableMapLevelIds: ['bc-map-world', 'bc-map-underworld'],
+    availableMapLevelIds: [
+      'bc-map-world',
+      'bc-map-royal-capital',
+      'bc-map-spade-castle',
+      'bc-map-heart-kingdom',
+      'bc-map-diamond-kingdom',
+      'bc-map-underworld',
+    ],
     tags: ['shonen', 'magia', 'yuki tabata', 'jump'],
     metadata: {
       author: 'Yūki Tabata',
