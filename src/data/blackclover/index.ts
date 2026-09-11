@@ -4,6 +4,7 @@ import { blackcloverMapLevels } from './mapLevels';
 import { blackcloverNations } from './nations';
 import { blackcloverLocations } from './locations';
 import { blackcloverLocationsBatch1 } from './locationsBatch1';
+import { blackcloverLocationsSubmaps } from './locationsSubmaps';
 import { blackcloverCharacters } from './characters';
 import { blackcloverCharactersBatch1 } from './charactersBatch1';
 import { blackcloverCharactersMagicKnights } from './charactersMagicKnights';
@@ -44,7 +45,11 @@ export const blackcloverDataset: WorldDataset = {
   world: blackclover,
   mapLevels: blackcloverMapLevels,
   nations: blackcloverNations,
-  locations: [...blackcloverLocations, ...blackcloverLocationsBatch1],
+  locations: [
+    ...blackcloverLocations,
+    ...blackcloverLocationsBatch1,
+    ...blackcloverLocationsSubmaps,
+  ],
   characters: [
     ...blackcloverCharacters,
     ...blackcloverCharactersBatch1,
