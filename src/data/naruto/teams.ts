@@ -14,10 +14,14 @@ export const narutoTeams: Team[] = [
     worldId: 'world-naruto',
     name: 'Team 7',
     japaneseName: '第七班',
-    description:
-      'Squadra genin di Konoha composta originariamente da Naruto, Sasuke e Sakura sotto Kakashi.',
-    longDescription:
-      'Erede ideale del Team Minato. Dopo la diserzione di Sasuke e il time skip, la squadra viene ricomposta con Sai e Yamato. Cuore della serie.',
+    description: {
+      it: 'Squadra genin di Konoha composta originariamente da Naruto, Sasuke e Sakura sotto Kakashi.',
+      en: 'Konoha genin squad originally made up of Naruto, Sasuke and Sakura under Kakashi.',
+    },
+    longDescription: {
+      it: 'Erede ideale del Team Minato. Dopo la diserzione di Sasuke e il time skip, la squadra viene ricomposta con Sai e Yamato. Cuore della serie.',
+      en: "The ideal heir of Team Minato. After Sasuke's desertion and the time skip, the squad is rebuilt with Sai and Yamato. The heart of the series.",
+    },
     leaderId: 'char-kakashi',
     memberIds: [
       'char-naruto',
@@ -38,8 +42,10 @@ export const narutoTeams: Team[] = [
     worldId: 'world-naruto',
     name: 'Team 8',
     japaneseName: '第八班',
-    description:
-      'Squadra di tracking di Konoha guidata da Kurenai: Hinata, Kiba (con Akamaru), Shino.',
+    description: {
+      it: 'Squadra di tracking di Konoha guidata da Kurenai: Hinata, Kiba (con Akamaru), Shino.',
+      en: 'Konoha tracking squad led by Kurenai: Hinata, Kiba (with Akamaru), Shino.',
+    },
     leaderId: 'char-kurenai',
     memberIds: ['char-hinata', 'char-kiba', 'char-shino'],
     villageLocationId: 'loc-konoha',
@@ -53,8 +59,10 @@ export const narutoTeams: Team[] = [
     worldId: 'world-naruto',
     name: 'Team 10 · Ino-Shika-Cho',
     japaneseName: '第十班',
-    description:
-      'Squadra Ino-Shika-Cho della nuova generazione: Ino, Shikamaru e Choji sotto Asuma.',
+    description: {
+      it: 'Squadra Ino-Shika-Cho della nuova generazione: Ino, Shikamaru e Choji sotto Asuma.',
+      en: "The new generation's Ino-Shika-Cho squad: Ino, Shikamaru and Choji under Asuma.",
+    },
     leaderId: 'char-asuma',
     memberIds: ['char-ino', 'char-shikamaru', 'char-choji'],
     villageLocationId: 'loc-konoha',
@@ -68,8 +76,10 @@ export const narutoTeams: Team[] = [
     worldId: 'world-naruto',
     name: 'Team Guy',
     japaneseName: 'ガイ班',
-    description:
-      'Squadra di Konoha guidata da Might Guy: Rock Lee, Neji Hyuga, Tenten.',
+    description: {
+      it: 'Squadra di Konoha guidata da Might Guy: Rock Lee, Neji Hyuga, Tenten.',
+      en: 'Konoha squad led by Might Guy: Rock Lee, Neji Hyuga, Tenten.',
+    },
     leaderId: 'char-guy',
     memberIds: ['char-rock-lee', 'char-neji', 'char-tenten'],
     villageLocationId: 'loc-konoha',
@@ -82,8 +92,10 @@ export const narutoTeams: Team[] = [
     id: 'team-minato',
     worldId: 'world-naruto',
     name: 'Team Minato',
-    description:
-      'Squadra storica di Minato: Kakashi, Obito, Rin. Operativa durante la Terza Guerra Ninja.',
+    description: {
+      it: 'Squadra storica di Minato: Kakashi, Obito, Rin. Operativa durante la Terza Guerra Ninja.',
+      en: "Minato's historic squad: Kakashi, Obito, Rin. Active during the Third Shinobi World War.",
+    },
     leaderId: 'char-minato',
     memberIds: ['char-kakashi', 'char-obito'],
     villageLocationId: 'loc-konoha',
@@ -97,8 +109,10 @@ export const narutoTeams: Team[] = [
     id: 'team-sannin',
     worldId: 'world-naruto',
     name: 'Legendary Sannin',
-    description:
-      'I Tre Ninja Leggendari: Jiraiya, Tsunade, Orochimaru. Allievi di Hiruzen.',
+    description: {
+      it: 'I Tre Ninja Leggendari: Jiraiya, Tsunade, Orochimaru. Allievi di Hiruzen.',
+      en: 'The Three Legendary Ninja: Jiraiya, Tsunade, Orochimaru. Students of Hiruzen.',
+    },
     leaderId: 'char-hiruzen',
     memberIds: ['char-jiraiya', 'char-tsunade', 'char-orochimaru'],
     villageLocationId: 'loc-konoha',
@@ -110,8 +124,10 @@ export const narutoTeams: Team[] = [
     id: 'team-suna-siblings',
     worldId: 'world-naruto',
     name: 'Sand Siblings',
-    description:
-      'Squadra di Suna composta dai tre figli del Quarto Kazekage: Gaara, Temari, Kankuro.',
+    description: {
+      it: 'Squadra di Suna composta dai tre figli del Quarto Kazekage: Gaara, Temari, Kankuro.',
+      en: "Suna squad made up of the Fourth Kazekage's three children: Gaara, Temari, Kankuro.",
+    },
     leaderId: 'char-baki',
     memberIds: ['char-gaara', 'char-temari', 'char-kankuro'],
     villageLocationId: 'loc-suna',
@@ -124,8 +140,10 @@ export const narutoTeams: Team[] = [
     id: 'team-taka',
     worldId: 'world-naruto',
     name: 'Taka (ex Hebi)',
-    description:
-      'Squadra di Sasuke dopo aver lasciato Orochimaru: Sasuke, Suigetsu, Karin, Jugo.',
+    description: {
+      it: 'Squadra di Sasuke dopo aver lasciato Orochimaru: Sasuke, Suigetsu, Karin, Jugo.',
+      en: "Sasuke's squad after leaving Orochimaru: Sasuke, Suigetsu, Karin, Jugo.",
+    },
     leaderId: 'char-sasuke',
     memberIds: ['char-sasuke', 'char-suigetsu', 'char-karin', 'char-jugo'],
     arcIds: ['arc-itachi-pursuit', 'arc-five-kage-summit'],
@@ -137,8 +155,10 @@ export const narutoTeams: Team[] = [
     id: 'team-sound-four',
     worldId: 'world-naruto',
     name: 'Sound Four',
-    description:
-      'Scorta d\'élite di Orochimaru: Tayuya, Sakon/Ukon, Jirobo, Kidomaru. Più tardi Kimimaro.',
+    description: {
+      it: 'Scorta d\'élite di Orochimaru: Tayuya, Sakon/Ukon, Jirobo, Kidomaru. Più tardi Kimimaro.',
+      en: "Orochimaru's elite escort: Tayuya, Sakon/Ukon, Jirobo, Kidomaru. Later Kimimaro.",
+    },
     memberIds: [],
     arcIds: ['arc-sasuke-retrieval'],
     canonStatus: 'canon',
@@ -149,8 +169,10 @@ export const narutoTeams: Team[] = [
     id: 'team-ame-orphans',
     worldId: 'world-naruto',
     name: 'Ame Orphans',
-    description:
-      'Yahiko, Konan e Nagato, addestrati da Jiraiya durante la Terza Guerra Ninja.',
+    description: {
+      it: 'Yahiko, Konan e Nagato, addestrati da Jiraiya durante la Terza Guerra Ninja.',
+      en: 'Yahiko, Konan and Nagato, trained by Jiraiya during the Third Shinobi World War.',
+    },
     leaderId: 'char-jiraiya',
     memberIds: ['char-pain'],
     villageLocationId: 'loc-ame',

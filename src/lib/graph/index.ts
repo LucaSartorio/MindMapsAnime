@@ -58,8 +58,8 @@ export interface GraphEdge {
   /** Chiave `type:id` del nodo di arrivo. */
   to: string;
   type: RelationType;
-  /** Etichetta libera (es. label di `character.relationships`). */
-  label?: string;
+  /** Etichetta libera (es. label di `character.relationships`), localizzabile. */
+  label?: Localizable;
 }
 
 export interface WorldGraph {
@@ -74,7 +74,7 @@ export interface CharConnection {
   targetId: string;
   kind: RelKind;
   /** Etichetta specifica (da `relationships`) quando `kind === 'other'`. */
-  label?: string;
+  label?: Localizable;
 }
 
 /**
@@ -128,7 +128,7 @@ export function buildWorldGraph(dataset: WorldDataset): WorldGraph {
     bType: EntityType,
     bId: string | undefined | null,
     type: RelationType,
-    opts?: { directed?: boolean; label?: string },
+    opts?: { directed?: boolean; label?: Localizable },
   ) => {
     if (!aId || !bId) return;
     const from = entityKey(aType, aId);
@@ -260,7 +260,7 @@ function toRelKind(type: RelationType): RelKind {
  */
 export function characterConnections(graph: WorldGraph, characterId: string): CharConnection[] {
   const start = entityKey('character', characterId);
-  const byTarget = new Map<string, { type: RelationType; label?: string }>();
+  const byTarget = new Map<string, { type: RelationType; label?: Localizable }>();
   for (const e of neighbors(graph, start)) {
     const ref = parseKey(e.to);
     if (ref.type !== 'character') continue;

@@ -509,7 +509,7 @@ export function CharacterDetailsModal({
                   >
                     {target.name}
                   </button>
-                  <span className="text-xs text-ink-300">{r.label}</span>
+                  <span className="text-xs text-ink-300">{getLocalizedText(r.label, locale)}</span>
                 </li>
               );
             })}

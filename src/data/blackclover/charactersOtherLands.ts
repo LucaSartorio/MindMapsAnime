@@ -22,8 +22,8 @@ export const blackcloverCharactersOtherLands: Character[] = [
     allies: ['char-bc-fana-diamond', 'char-bc-fanzell', 'char-bc-asta'],
     enemies: ['char-bc-moris', 'char-bc-ladros'],
     relationships: [
-      { targetCharacterId: 'char-bc-fana-diamond', label: 'Amica d\'infanzia', notes: "L'unica sopravvissuta con lui alla selezione dell'accademia; la promessa di vedere il mondo insieme regge tutto il suo arco." },
-      { targetCharacterId: 'char-bc-asta', label: 'Ex nemico', notes: "Lo affronta nel dungeon; è Asta a incrinare per primo la sua obbedienza a Diamond." },
+      { targetCharacterId: 'char-bc-fana-diamond', label: { it: 'Amica d\'infanzia', en: 'Childhood friend' }, notes: "L'unica sopravvissuta con lui alla selezione dell'accademia; la promessa di vedere il mondo insieme regge tutto il suo arco." },
+      { targetCharacterId: 'char-bc-asta', label: { it: 'Ex nemico', en: 'Former enemy' }, notes: "Lo affronta nel dungeon; è Asta a incrinare per primo la sua obbedienza a Diamond." },
     ],
     locationIds: ['loc-bc-dungeon-east', 'loc-bc-kiten', 'loc-bc-diamond-academy', 'loc-bc-witches-forest'],
     eventIds: ['evt-bc-asta-vs-mars', 'evt-bc-kiten-invasion', 'evt-bc-fana-mars-reunion'],
@@ -59,8 +59,8 @@ export const blackcloverCharactersOtherLands: Character[] = [
     allies: ['char-bc-mars', 'char-bc-asta', 'char-bc-theresa'],
     enemies: ['char-bc-moris'],
     relationships: [
-      { targetCharacterId: 'char-bc-fana-elf', label: 'Anima elfica reincarnata in lei' },
-      { targetCharacterId: 'char-bc-mars', label: 'Amico d\'infanzia' },
+      { targetCharacterId: 'char-bc-fana-elf', label: { it: 'Anima elfica reincarnata in lei', en: 'Elf soul reincarnated in her' } },
+      { targetCharacterId: 'char-bc-mars', label: { it: 'Amico d\'infanzia', en: 'Childhood friend' } },
     ],
     locationIds: ['loc-bc-witches-forest', 'loc-bc-diamond-academy', 'loc-bc-diamond-lab'],
     eventIds: ['evt-bc-witches-forest-battle', 'evt-bc-fana-mars-reunion'],
@@ -273,8 +273,8 @@ export const blackcloverCharactersOtherLands: Character[] = [
     allies: ['char-bc-noelle', 'char-bc-gaja', 'char-bc-floga', 'char-bc-potrof', 'char-bc-undine', 'char-bc-julius'],
     enemies: ['char-bc-vanica', 'char-bc-megicula'],
     relationships: [
-      { targetCharacterId: 'char-bc-noelle', label: 'Amica', notes: 'Due donne colpite dalla stessa maledizione, a vent\'anni di distanza.' },
-      { targetCharacterId: 'char-bc-undine', label: 'Spirito dell\'acqua' },
+      { targetCharacterId: 'char-bc-noelle', label: { it: 'Amica', en: 'Friend' }, notes: 'Due donne colpite dalla stessa maledizione, a vent\'anni di distanza.' },
+      { targetCharacterId: 'char-bc-undine', label: { it: 'Spirito dell\'acqua', en: 'Water spirit' } },
     ],
     locationIds: ['loc-bc-heart-capital', 'loc-bc-grand-magic-zone'],
     eventIds: ['evt-bc-heart-alliance', 'evt-bc-vanica-heart'],
@@ -385,7 +385,7 @@ export const blackcloverCharactersOtherLands: Character[] = [
     jutsuIds: ['magic-bc-wind', 'magic-bc-spirit-dive'],
     allies: ['char-bc-yuno'],
     relationships: [
-      { targetCharacterId: 'char-bc-yuno', label: 'Patto di spirito', notes: 'Innamorata di lui e gelosissima di chiunque gli si avvicini.' },
+      { targetCharacterId: 'char-bc-yuno', label: { it: 'Patto di spirito', en: 'Spirit pact' }, notes: 'Innamorata di lui e gelosissima di chiunque gli si avvicini.' },
     ],
     locationIds: ['loc-bc-dungeon-east'],
     eventIds: ['evt-bc-yuno-sylph'],
@@ -519,8 +519,8 @@ export const blackcloverCharactersOtherLands: Character[] = [
     students: ['char-bc-asta'],
     allies: ['char-bc-ryuya', 'char-bc-asta'],
     relationships: [
-      { targetCharacterId: 'char-bc-yami', label: 'Fratello maggiore', notes: 'Lo considera il traditore che ha abbandonato la famiglia; scoprirà che è stato il mare a portarlo via.' },
-      { targetCharacterId: 'char-bc-asta', label: 'Allievo riluttante', notes: "Gli insegna lo Zetten pur detestando l'idea di allenare un allievo di Yami." },
+      { targetCharacterId: 'char-bc-yami', label: { it: 'Fratello maggiore', en: 'Older brother' }, notes: 'Lo considera il traditore che ha abbandonato la famiglia; scoprirà che è stato il mare a portarlo via.' },
+      { targetCharacterId: 'char-bc-asta', label: { it: 'Allievo riluttante', en: 'Reluctant student' }, notes: "Gli insegna lo Zetten pur detestando l'idea di allenare un allievo di Yami." },
     ],
     locationIds: ['loc-bc-hino-country', 'loc-bc-ryuzen-shrine'],
     eventIds: ['evt-bc-asta-zetten'],
@@ -713,8 +713,8 @@ export const blackcloverCharactersOtherLands: Character[] = [
     family: ['char-bc-vanessa'],
     enemies: ['char-bc-asta', 'char-bc-vanessa'],
     relationships: [
-      { targetCharacterId: 'char-bc-vanessa', label: 'Figlia', notes: "L'ha tenuta in gabbia per «proteggerne» il potere; il Filo Rosso del Destino di Vanessa è la risposta a quella gabbia." },
-      { targetCharacterId: 'char-bc-asta', label: 'Sangue anti-magico', notes: 'Prende il controllo del suo sangue per usarne l\'anti-magia come arma.' },
+      { targetCharacterId: 'char-bc-vanessa', label: { it: 'Figlia', en: 'Daughter' }, notes: "L'ha tenuta in gabbia per «proteggerne» il potere; il Filo Rosso del Destino di Vanessa è la risposta a quella gabbia." },
+      { targetCharacterId: 'char-bc-asta', label: { it: 'Sangue anti-magico', en: 'Anti-magic blood' }, notes: 'Prende il controllo del suo sangue per usarne l\'anti-magia come arma.' },
     ],
     locationIds: ['loc-bc-witches-forest'],
     eventIds: ['evt-bc-witch-queen-blood', 'evt-bc-witches-forest-battle'],

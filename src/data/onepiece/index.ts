@@ -1,3 +1,4 @@
+import { onepieceSlugs } from './slugs';
 import type { Location, PoneglyphRef, WorldDataset } from '@/types';
 import { animeWorlds } from '@/data/worlds';
 import { onepieceMapLevels } from './mapLevels';
@@ -258,6 +259,8 @@ function withPoneglyphs(locations: Location[]): Location[] {
 }
 
 export const onepieceDataset: WorldDataset = {
+  // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
+  seoSlugs: onepieceSlugs,
   world: onepiece,
   mapLevels: onepieceMapLevels,
   nations: onepieceNations,

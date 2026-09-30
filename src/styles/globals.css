@@ -48,6 +48,30 @@
   display: none;
 }
 
+/* Header a 3 zone (TopNav): spaziature fluide che si riducono con la viewport
+   PRIMA di sacrificare qualsiasi contenuto (gap → padding → menu "Altro"). */
+.topnav-bar {
+  --hdr-px: clamp(0.75rem, 1.4vw, 2rem);
+  --hdr-gap: clamp(0.5rem, 1.1vw, 1.5rem);
+  padding-inline: var(--hdr-px);
+  column-gap: var(--hdr-gap);
+}
+
+/* Tab del mondo: contenitore interrogato dalle regole @container generate da
+   `worldTabsCss` (src/lib/navOverflow.ts). Di default "Altro" e le voci del
+   suo menu sono nascoste; le regole generate le mostrano solo se servono. */
+.world-tabs {
+  container: worldtabs / inline-size;
+}
+.world-tab {
+  padding-inline: var(--tab-px, 0.75rem);
+}
+.wt-more,
+.wt-m,
+.wt-more-current {
+  display: none;
+}
+
 /* Perf: salta render/layout/paint delle card archivio fuori viewport.
    `contain-intrinsic-size` riserva l'altezza stimata così scrollbar e scroll
    restano stabili. Nei browser senza supporto la regola è ignorata. */

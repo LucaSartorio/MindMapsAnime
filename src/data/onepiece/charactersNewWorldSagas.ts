@@ -76,8 +76,8 @@ export const onepieceCharactersNewWorldSagas: Character[] = [
     locationIds: ['loc-op-dressrosa'],
     factionIds: ['faction-op-revolutionary-army'],
     relationships: [
-      { targetCharacterId: 'char-op-luffy', label: 'Fratello giurato' },
-      { targetCharacterId: 'char-op-dragon', label: 'Comandante e mentore' },
+      { targetCharacterId: 'char-op-luffy', label: { it: 'Fratello giurato', en: 'Sworn brother' } },
+      { targetCharacterId: 'char-op-dragon', label: { it: 'Comandante e mentore', en: 'Commander and mentor' } },
     ],
     arcIds: ['arc-op-dressrosa'],
     shortDescription: {

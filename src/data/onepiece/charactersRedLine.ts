@@ -26,7 +26,7 @@ export const onepieceCharactersRedLine: Character[] = [
     family: ['char-op-luffy', 'char-op-garp'],
     enemies: ['char-op-blackbeard', 'char-op-akainu'],
     relationships: [
-      { targetCharacterId: 'char-op-whitebeard', label: 'Capitano / padre putativo' },
+      { targetCharacterId: 'char-op-whitebeard', label: { it: 'Capitano / padre putativo', en: 'Captain / surrogate father' } },
     ],
     arcIds: ['arc-op-marineford'],
     shortDescription: {
@@ -165,7 +165,7 @@ export const onepieceCharactersRedLine: Character[] = [
     locationIds: ['loc-op-amazon-lily', 'loc-op-marineford'],
     factionIds: ['faction-op-kuja-pirates', 'faction-op-shichibukai'],
     relationships: [
-      { targetCharacterId: 'char-op-luffy', label: 'Innamorata di Rufy' },
+      { targetCharacterId: 'char-op-luffy', label: { it: 'Innamorata di Rufy', en: 'In love with Luffy' } },
     ],
     arcIds: ['arc-op-amazon-lily', 'arc-op-marineford'],
     shortDescription: {
@@ -353,7 +353,7 @@ export const onepieceCharactersRedLine: Character[] = [
     locationIds: ['loc-op-sabaody'],
     factionIds: ['faction-op-roger-pirates'],
     relationships: [
-      { targetCharacterId: 'char-op-luffy', label: "Maestro di Haki durante i due anni" },
+      { targetCharacterId: 'char-op-luffy', label: { it: "Maestro di Haki durante i due anni", en: 'Haki master during the two years' } },
     ],
     arcIds: ['arc-op-sabaody'],
     shortDescription: {

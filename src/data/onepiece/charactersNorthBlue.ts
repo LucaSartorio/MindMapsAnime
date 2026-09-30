@@ -26,7 +26,7 @@ export const onepieceCharactersNorthBlue: Character[] = [
     enemies: ['char-op-doflamingo'],
     jutsuIds: ['fruit-op-ope-ope'],
     relationships: [
-      { targetCharacterId: 'char-op-corazon', label: 'Salvatore' },
+      { targetCharacterId: 'char-op-corazon', label: { it: 'Salvatore', en: 'Saviour' } },
     ],
     arcIds: ['arc-op-flevance', 'arc-op-punk-hazard', 'arc-op-dressrosa'],
     shortDescription: {
@@ -59,7 +59,7 @@ export const onepieceCharactersNorthBlue: Character[] = [
     enemies: ['char-op-law'],
     jutsuIds: ['fruit-op-ito-ito'],
     relationships: [
-      { targetCharacterId: 'char-op-corazon', label: 'Fratello minore (da lui ucciso)' },
+      { targetCharacterId: 'char-op-corazon', label: { it: 'Fratello minore (da lui ucciso)', en: 'Younger brother (killed by him)' } },
     ],
     arcIds: ['arc-op-flevance', 'arc-op-dressrosa'],
     shortDescription: {
@@ -90,7 +90,7 @@ export const onepieceCharactersNorthBlue: Character[] = [
     factionIds: ['faction-op-donquixote-pirates', 'faction-op-marines'],
     family: ['char-op-doflamingo'],
     relationships: [
-      { targetCharacterId: 'char-op-law', label: 'Protetto come un figlio' },
+      { targetCharacterId: 'char-op-law', label: { it: 'Protetto come un figlio', en: 'Protected like a son' } },
     ],
     arcIds: ['arc-op-flevance'],
     shortDescription: {

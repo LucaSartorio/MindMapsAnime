@@ -32,7 +32,7 @@ export const onepieceCharactersEastBlue: Character[] = [
     allies: ['char-op-coby'],
     jutsuIds: ['fruit-op-hito-hito-nika'],
     relationships: [
-      { targetCharacterId: 'char-op-shanks', label: 'Idolo / mentore' },
+      { targetCharacterId: 'char-op-shanks', label: { it: 'Idolo / mentore', en: 'Idol / mentor' } },
     ],
     arcIds: [
       'arc-op-romance-dawn',
@@ -76,7 +76,7 @@ export const onepieceCharactersEastBlue: Character[] = [
     factionIds: ['faction-op-straw-hat-pirates'],
     enemies: ['char-op-mihawk'],
     relationships: [
-      { targetCharacterId: 'char-op-mihawk', label: 'Obiettivo da superare' },
+      { targetCharacterId: 'char-op-mihawk', label: { it: 'Obiettivo da superare', en: 'Goal to surpass' } },
     ],
     arcIds: [
       'arc-op-romance-dawn',
@@ -185,7 +185,7 @@ export const onepieceCharactersEastBlue: Character[] = [
     factionIds: ['faction-op-straw-hat-pirates', 'faction-op-germa-66'],
     teachers: ['char-op-zeff'],
     relationships: [
-      { targetCharacterId: 'char-op-zeff', label: 'Mentore / figura paterna' },
+      { targetCharacterId: 'char-op-zeff', label: { it: 'Mentore / figura paterna', en: 'Mentor / father figure' } },
     ],
     arcIds: ['arc-op-baratie', 'arc-op-arlong-park', 'arc-op-loguetown', 'arc-op-whole-cake'],
     routeIds: ['route-op-eastblue'],
@@ -387,7 +387,7 @@ export const onepieceCharactersEastBlue: Character[] = [
     factionIds: ['faction-op-buggy-pirates', 'faction-op-cross-guild'],
     enemies: ['char-op-luffy'],
     relationships: [
-      { targetCharacterId: 'char-op-shanks', label: 'Ex compagno sulla nave di Roger' },
+      { targetCharacterId: 'char-op-shanks', label: { it: 'Ex compagno sulla nave di Roger', en: "Former shipmate on Roger's ship" } },
     ],
     arcIds: ['arc-op-orange-town', 'arc-op-loguetown'],
     shortDescription: {

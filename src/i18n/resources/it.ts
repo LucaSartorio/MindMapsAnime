@@ -24,6 +24,8 @@ export const it = {
     report: 'Segnala',
     reportTitle: 'Segnala un bug o proponi una miglioria',
     switchWorld: 'Cambia universo',
+    more: 'Altro',
+    worldSections: 'Sezioni del mondo',
     comingSoon: 'Presto',
     overview: 'Panoramica',
     locations: 'Luoghi',

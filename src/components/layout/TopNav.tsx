@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useUiStore, useWorldStore } from '@/store';
 import { useReportStore } from '@/store/useReportStore';
@@ -9,18 +9,45 @@ import { getAbilityTerm, getFactionsTerm } from '@/lib/worldConfig';
 import { cn } from '@/lib/cn';
 import { GlobalSearchDropdown } from '@/components/search/GlobalSearchDropdown';
 import { WorldSwitcher } from '@/components/layout/WorldSwitcher';
+import { WorldTabs, type WorldTab } from '@/components/layout/WorldTabs';
 import { LanguageSwitcher } from '@/components/i18n/LanguageSwitcher';
 import { useSeoLang } from '@/seo/useSeoLang';
 import { categoryPath, homePath, langFromPath, mapPath, parseSeoPath, staticPagePath, worldPath } from '@/seo/paths';
 import { worldHasCategory } from '@/seo/metadata';
 
-interface NavItem {
-  to: string;
-  label: string;
-}
+type ParsedPath = ReturnType<typeof parseSeoPath>;
 
 /**
- * Top navigation bar (i18n-aware).
+ * Tab attiva derivata dalla ROUTE (non dal prefisso dell'URL): la landing
+ * accende Panoramica, `/map` Mappa, un indice e tutte le sue schede la tab
+ * della categoria (`/characters/*` → Personaggi). Le regioni sono luoghi; la
+ * timeline non ha una tab propria.
+ */
+export function activeWorldTabKey(parsed: ParsedPath): string | null {
+  switch (parsed.kind) {
+    case 'world':
+      return 'overview';
+    case 'map':
+      return 'map';
+    case 'category':
+    case 'entity':
+      return parsed.category === 'regions' ? 'locations' : parsed.category;
+    default:
+      return null;
+  }
+}
+
+const iconClass =
+  'inline-flex h-9 w-9 items-center justify-center rounded-md border border-ink-700/70 text-ink-200 transition hover:border-chakra-500/60 hover:text-white';
+
+/**
+ * Header a 3 zone:
+ *  - SINISTRA (non si restringe): logo + selettore dell'anime;
+ *  - CENTRO (`min-width: 0`, flessibile): tab del mondo (`WorldTabs`), che
+ *    riducono padding e poi usano "Altro" solo quando lo spazio manca davvero;
+ *  - DESTRA (non si restringe): ricerca compatta (icona → popup), info,
+ *    segnalazione, lingua, menu mobile.
+ * Le zone non si sovrappongono mai: nessuna tab può finire sotto la ricerca.
  */
 export function TopNav() {
   const { t } = useTranslation();
@@ -104,85 +131,66 @@ export function TopNav() {
 
   // Navigazione del mondo: link HTML reali (crawlabili) verso landing, mappa e
   // indici — solo le categorie che il mondo possiede davvero.
-  const worldItems: NavItem[] =
+  const worldItems: WorldTab[] =
     inWorld && dataset
       ? [
-          { to: worldPath(lang, dataset), label: t('nav.overview') },
-          { to: mapPath(lang, dataset), label: t('nav.map') },
-          { to: categoryPath(lang, dataset, 'characters'), label: t('nav.characters') },
-          { to: categoryPath(lang, dataset, 'locations'), label: t('nav.locations') },
+          { key: 'overview', to: worldPath(lang, dataset), label: t('nav.overview') },
+          { key: 'map', to: mapPath(lang, dataset), label: t('nav.map') },
+          { key: 'characters', to: categoryPath(lang, dataset, 'characters'), label: t('nav.characters') },
+          { key: 'locations', to: categoryPath(lang, dataset, 'locations'), label: t('nav.locations') },
           {
+            key: 'factions',
             to: categoryPath(lang, dataset, 'factions'),
             label: getFactionsTerm(dataset.world, locale, t('nav.clansFactions')),
           },
           ...(worldHasCategory(dataset, 'abilities')
-            ? [{ to: categoryPath(lang, dataset, 'abilities'), label: getAbilityTerm(dataset.world, locale) }]
+            ? [{ key: 'abilities', to: categoryPath(lang, dataset, 'abilities'), label: getAbilityTerm(dataset.world, locale) }]
             : []),
-          { to: categoryPath(lang, dataset, 'arcs'), label: t('nav.arcs') },
+          { key: 'arcs', to: categoryPath(lang, dataset, 'arcs'), label: t('nav.arcs') },
           ...(worldHasCategory(dataset, 'journeys')
-            ? [{ to: categoryPath(lang, dataset, 'journeys'), label: t('nav.journeys') }]
+            ? [{ key: 'journeys', to: categoryPath(lang, dataset, 'journeys'), label: t('nav.journeys') }]
             : []),
         ]
       : [];
+  const activeKey = inWorld ? activeWorldTabKey(parsed) : null;
 
   return (
     <header className="sticky top-0 z-30 border-b border-ink-700/60 bg-ink-950/85 backdrop-blur-md">
-      <div className="mx-auto max-w-7xl px-4 py-2.5 flex items-center gap-4">
-        <Link
-          to={homePath(lang)}
-          className="flex items-center gap-3 shrink-0"
-          aria-label={`${t('app.title')} · ${t('nav.home')}`}
-        >
-          <img
-            src="/favicon.png"
-            alt=""
-            width={36}
-            height={36}
-            className="h-9 w-9 shrink-0 object-contain"
-          />
-          <span className="hidden sm:flex flex-col leading-tight">
-            <span className="font-display text-base text-ink-100">
-              {t('app.title')}
+      <div className="topnav-bar mx-auto flex w-full max-w-[1920px] items-center py-2.5">
+        {/* SINISTRA: logo + selettore universo (mai compressi). */}
+        <div className="flex shrink-0 items-center gap-[var(--hdr-gap)]">
+          <Link
+            to={homePath(lang)}
+            className="flex shrink-0 items-center gap-3"
+            aria-label={`${t('app.title')} · ${t('nav.home')}`}
+          >
+            <img
+              src="/favicon.png"
+              alt=""
+              width={36}
+              height={36}
+              className="h-9 w-9 shrink-0 object-contain"
+            />
+            {/* Wordmark: nascosto su tablet (md–lg) per lasciare spazio alle tab. */}
+            <span className={cn('hidden flex-col leading-tight sm:flex', inWorld && 'md:hidden lg:flex')}>
+              <span className="font-display text-base text-ink-100 whitespace-nowrap">
+                {t('app.title')}
+              </span>
             </span>
-          </span>
-        </Link>
+          </Link>
 
-        {/* Selettore universo: cambia anime dall'header (Esplora resta primaria). */}
-        {inWorld && worldSlug && (
-          <div className="hidden shrink-0 sm:block">
-            <WorldSwitcher currentSlug={worldSlug} />
-          </div>
-        )}
+          {inWorld && worldSlug && (
+            <div className="hidden shrink-0 sm:block">
+              <WorldSwitcher currentSlug={worldSlug} />
+            </div>
+          )}
+        </div>
 
-        {/* Nav desktop — flessibile: occupa lo spazio tra logo e cluster destro
-            e, se troppo lunga, scorre in orizzontale invece di sovrapporsi
-            alla ricerca (che resta a dimensione fissa). */}
-        <nav
-          className="hidden md:flex items-center gap-1 ml-2 min-w-0 flex-1 overflow-x-auto scrollbar-none"
-          aria-label={t('nav.openMobileNav')}
-        >
-          {worldItems.map((item) => (
-            <NavLink
-              key={item.to}
-              to={item.to}
-              end
-              className={({ isActive }) =>
-                cn(
-                  'px-2.5 py-1.5 rounded-md text-sm whitespace-nowrap transition',
-                  isActive
-                    ? 'bg-chakra-500/20 text-chakra-100 border border-chakra-500/40'
-                    : 'text-ink-200 hover:text-white hover:bg-ink-800/70',
-                )
-              }
-            >
-              {item.label}
-            </NavLink>
-          ))}
-        </nav>
+        {/* CENTRO: tab del mondo (desktop/tablet). */}
+        {inWorld ? <WorldTabs tabs={worldItems} activeKey={activeKey} /> : <div className="flex-1" />}
 
-        {/* Right cluster: search + about + report + language + mobile toggle.
-            shrink-0: non si restringe mai → la ricerca non viene mai coperta. */}
-        <div className="ml-auto flex items-center gap-2 shrink-0">
+        {/* DESTRA: ricerca + utility compatte + lingua + menu mobile. */}
+        <div className="flex shrink-0 items-center gap-1.5">
           {inWorld && dataset && (
             <div ref={searchRef} className="relative">
               <button
@@ -191,7 +199,7 @@ export function TopNav() {
                 aria-expanded={searchOpen}
                 aria-label={t('search.label', { world: getLocalizedText(dataset.world.title, locale) })}
                 title={t('search.kbHint')}
-                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-ink-700/70 text-ink-200 hover:text-white hover:border-chakra-500/60"
+                className={iconClass}
               >
                 <svg
                   aria-hidden
@@ -229,18 +237,26 @@ export function TopNav() {
           )}
           <Link
             to={staticPagePath(lang, 'about')}
-            className="hidden md:inline-block px-3 py-1.5 rounded-md text-sm text-ink-300 hover:text-white"
+            aria-label={t('nav.about')}
+            title={t('nav.about')}
+            className={cn(iconClass, 'max-md:hidden')}
           >
-            {t('nav.about')}
+            <svg aria-hidden viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" className="h-[18px] w-[18px]">
+              <circle cx="12" cy="12" r="9" />
+              <line x1="12" y1="11" x2="12" y2="16.5" />
+              <circle cx="12" cy="7.75" r="0.6" fill="currentColor" />
+            </svg>
           </Link>
           <button
             type="button"
             onClick={openReport}
+            aria-label={t('nav.report')}
             title={t('nav.reportTitle')}
-            className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm border border-ink-700/70 text-ink-200 hover:text-white hover:border-chakra-500/60"
+            className={cn(iconClass, 'max-md:hidden')}
           >
-            <span aria-hidden>🐛</span>
-            {t('nav.report')}
+            <svg aria-hidden viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="h-[18px] w-[18px]">
+              <path d="M5 21V4h11l-1.5 4L16 12H5" />
+            </svg>
           </button>
           <LanguageSwitcher />
           <button
@@ -265,22 +281,20 @@ export function TopNav() {
         >
           <ul className="px-2 py-2 grid grid-cols-2 gap-1">
             {worldItems.map((item) => (
-              <li key={item.to}>
-                <NavLink
+              <li key={item.key}>
+                <Link
                   to={item.to}
-                  end
+                  aria-current={item.key === activeKey ? 'page' : undefined}
                   onClick={() => toggleMobileNav()}
-                  className={({ isActive }) =>
-                    cn(
-                      'block px-3 py-2 rounded-md text-sm',
-                      isActive
-                        ? 'bg-chakra-500/20 text-chakra-100'
-                        : 'text-ink-200 hover:text-white hover:bg-ink-800/70',
-                    )
-                  }
+                  className={cn(
+                    'block px-3 py-2 rounded-md text-sm',
+                    item.key === activeKey
+                      ? 'bg-chakra-500/20 text-chakra-100'
+                      : 'text-ink-200 hover:text-white hover:bg-ink-800/70',
+                  )}
                 >
                   {item.label}
-                </NavLink>
+                </Link>
               </li>
             ))}
             <li>

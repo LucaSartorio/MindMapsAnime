@@ -1,3 +1,4 @@
+import { blackcloverSlugs } from './slugs';
 import type { WorldDataset } from '@/types';
 import { animeWorlds } from '@/data/worlds';
 import { blackcloverMapLevels } from './mapLevels';
@@ -42,6 +43,8 @@ const blackclover = animeWorlds.find((w) => w.slug === 'blackclover')!;
  * del mondo in `src/data/worlds.ts`.
  */
 export const blackcloverDataset: WorldDataset = {
+  // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
+  seoSlugs: blackcloverSlugs,
   world: blackclover,
   mapLevels: blackcloverMapLevels,
   nations: blackcloverNations,

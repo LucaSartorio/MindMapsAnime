@@ -26,9 +26,9 @@ export const blackcloverCharactersBatch1: Character[] = [
     allies: ['char-bc-liebe'],
     enemies: ['char-bc-lucifero'],
     relationships: [
-      { targetCharacterId: 'char-bc-liebe', label: 'Lo ha cresciuto come un figlio', notes: "Ha accolto un diavolo senza magia scacciato dall'Inframondo e gli ha dato un nome e una casa." },
-      { targetCharacterId: 'char-bc-asta', label: 'Madre', notes: 'Il legame che unisce Asta e Liebe non è solo un patto: è una famiglia.' },
-      { targetCharacterId: 'char-bc-lucifero', label: 'Uccisa da lui', notes: 'Lucifero se ne serve usando il corpo di Liebe — la ferita da cui nasce tutta la loro vendetta.' },
+      { targetCharacterId: 'char-bc-liebe', label: { it: 'Lo ha cresciuto come un figlio', en: 'Raised him like a son' }, notes: "Ha accolto un diavolo senza magia scacciato dall'Inframondo e gli ha dato un nome e una casa." },
+      { targetCharacterId: 'char-bc-asta', label: { it: 'Madre', en: 'Mother' }, notes: 'Il legame che unisce Asta e Liebe non è solo un patto: è una famiglia.' },
+      { targetCharacterId: 'char-bc-lucifero', label: { it: 'Uccisa da lui', en: 'Killed by him' }, notes: 'Lucifero se ne serve usando il corpo di Liebe — la ferita da cui nasce tutta la loro vendetta.' },
     ],
     locationIds: ['loc-bc-hage'],
     eventIds: ['evt-bc-licita-and-liebe'],
@@ -61,7 +61,7 @@ export const blackcloverCharactersBatch1: Character[] = [
     jutsuIds: ['magic-bc-ash'],
     family: ['char-bc-zora'],
     relationships: [
-      { targetCharacterId: 'char-bc-zora', label: 'Figlio', notes: "Il mantello del padre è il motivo per cui Zora combatte, e il motivo per cui disprezza chi lo indossa senza meritarlo." },
+      { targetCharacterId: 'char-bc-zora', label: { it: 'Figlio', en: 'Son' }, notes: "Il mantello del padre è il motivo per cui Zora combatte, e il motivo per cui disprezza chi lo indossa senza meritarlo." },
     ],
     locationIds: ['loc-bc-royal-capital'],
     eventIds: ['evt-bc-zara-death'],
@@ -112,7 +112,7 @@ export const blackcloverCharactersBatch1: Character[] = [
     nationId: 'nation-bc-clover',
     clanIds: ['faction-bc-purple-orca', 'faction-bc-race-human'],
     relationships: [
-      { targetCharacterId: 'char-bc-zora', label: 'Identità rubata', notes: 'Zora Ideale entra nella selezione dei Royal Knights spacciandosi per lui.' },
+      { targetCharacterId: 'char-bc-zora', label: { it: 'Identità rubata', en: 'Stolen identity' }, notes: 'Zora Ideale entra nella selezione dei Royal Knights spacciandosi per lui.' },
     ],
     locationIds: ['loc-bc-purple-orca-base'],
     arcIds: ['arc-bc-royal-knights-exam'],
@@ -333,7 +333,7 @@ export const blackcloverCharactersBatch1: Character[] = [
     clanIds: ['faction-bc-magic-knights', 'faction-bc-race-human'],
     enemies: ['char-bc-asta', 'char-bc-yuno', 'char-bc-julius'],
     relationships: [
-      { targetCharacterId: 'char-bc-julius', label: 'Predecessore', notes: 'Il 27° Imperatore Magico, che Julius ha dovuto fermare e imprigionare.' },
+      { targetCharacterId: 'char-bc-julius', label: { it: 'Predecessore', en: 'Predecessor' }, notes: 'Il 27° Imperatore Magico, che Julius ha dovuto fermare e imprigionare.' },
     ],
     locationIds: ['loc-bc-royal-capital', 'loc-bc-clover-castle'],
     eventIds: ['evt-bc-conrad-leto'],

@@ -18,7 +18,7 @@ import { Button } from '@/components/common/Button';
 import { cn } from '@/lib/cn';
 import { useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
-import { getEntityDisplayName } from '@/utils/localization';
+import { getEntityDisplayName, getLocalizedText } from '@/utils/localization';
 import { findCharacter } from '@/lib/entities';
 import { buildWorldGraph, characterConnections, type RelKind } from '@/lib/graph';
 
@@ -98,11 +98,11 @@ export function RelationsGraphModal({ dataset, characterId }: RelationsGraphModa
       out.push({
         char,
         kind: cc.kind,
-        label: cc.label || t(`modals.relations.${cc.kind}`),
+        label: getLocalizedText(cc.label, locale) || t(`modals.relations.${cc.kind}`),
       });
     }
     return out;
-  }, [focus, dataset, t]);
+  }, [focus, dataset, t, locale]);
 
   const nodes = useMemo<Node<RelNodeData>[]>(() => {
     if (!focus) return [];

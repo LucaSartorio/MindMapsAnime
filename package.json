@@ -19,7 +19,8 @@
     "build:ssr": "vite build --ssr src/entry-server.tsx --outDir dist-server",
     "seo:check": "tsx --tsconfig scripts/tsconfig.json scripts/seo-check.ts",
     "test:seo": "tsx --tsconfig scripts/tsconfig.json scripts/test-seo.ts",
-    "preview:static": "tsx --tsconfig scripts/tsconfig.json scripts/serve-static.ts"
+    "preview:static": "tsx --tsconfig scripts/tsconfig.json scripts/serve-static.ts",
+    "seo:slugs": "tsx --tsconfig scripts/tsconfig.json scripts/sync-slugs.ts"
   },
   "dependencies": {
     "@fontsource/cinzel": "^5.2.8",

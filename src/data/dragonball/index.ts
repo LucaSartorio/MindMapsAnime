@@ -1,3 +1,4 @@
+import { dragonballSlugs } from './slugs';
 import type { WorldDataset } from '@/types';
 import { animeWorlds } from '@/data/worlds';
 import { dbzMapLevels } from './mapLevels';
@@ -32,6 +33,8 @@ const dragonball = animeWorlds.find((w) => w.slug === 'dragonball')!;
  * Estendibile con nuovi personaggi/archi senza modifiche strutturali.
  */
 export const dragonballDataset: WorldDataset = {
+  // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
+  seoSlugs: dragonballSlugs,
   world: dragonball,
   mapLevels: dbzMapLevels,
   nations: dragonballNations,

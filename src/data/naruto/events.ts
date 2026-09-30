@@ -13,10 +13,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-sage-six-paths',
     worldId: 'world-naruto',
-    title: 'Era del Saggio dei Sei Cammini',
-    description:
-      'Hagoromo Otsutsuki sigilla la madre Kaguya e fonda la dottrina ninja, lasciando l\'eredità ai figli Asura e Indra.',
-    period: 'Pre-series',
+    title: { it: 'Era del Saggio dei Sei Cammini', en: 'Era of the Sage of Six Paths' },
+    description: {
+      it: 'Hagoromo Otsutsuki sigilla la madre Kaguya e fonda la dottrina ninja, lasciando l\'eredità ai figli Asura e Indra.',
+      en: 'Hagoromo Otsutsuki seals his mother Kaguya and founds the ninja doctrine, leaving his legacy to his sons Asura and Indra.',
+    },
+    period: { it: 'Pre-serie', en: 'Pre-series' },
     arcId: 'arc-pre-series',
     mangaChapters: ['462-464'],
     animeEpisodes: ['Shippuden ep. 420-422'],
@@ -28,10 +30,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-foundation-konoha',
     worldId: 'world-naruto',
-    title: 'Fondazione di Konohagakure',
-    description:
-      'Hashirama Senju e Madara Uchiha fondano insieme il Villaggio Nascosto della Foglia, fine dell\'Era dei Sengoku.',
-    period: 'Pre-series',
+    title: { it: 'Fondazione di Konohagakure', en: 'Founding of Konohagakure' },
+    description: {
+      it: 'Hashirama Senju e Madara Uchiha fondano insieme il Villaggio Nascosto della Foglia, fine dell\'Era dei Sengoku.',
+      en: 'Hashirama Senju and Madara Uchiha found the Hidden Leaf Village together, ending the Warring States period.',
+    },
+    period: { it: 'Pre-serie', en: 'Pre-series' },
     arcId: 'arc-pre-series',
     mangaChapters: ['399-402'],
     animeEpisodes: ['Shippuden ep. 343-346'],
@@ -45,10 +49,15 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-valley-end-hashirama-madara',
     worldId: 'world-naruto',
-    title: 'Hashirama vs Madara alla Valle della Fine',
-    description:
-      'Scontro decisivo fra Hashirama e Madara. Nascono le due statue della Valle della Fine.',
-    period: 'Pre-series',
+    title: {
+      it: 'Hashirama vs Madara alla Valle della Fine',
+      en: 'Hashirama vs Madara at the Valley of the End',
+    },
+    description: {
+      it: 'Scontro decisivo fra Hashirama e Madara. Nascono le due statue della Valle della Fine.',
+      en: 'The decisive clash between Hashirama and Madara. The two statues of the Valley of the End are born.',
+    },
+    period: { it: 'Pre-serie', en: 'Pre-series' },
     arcId: 'arc-pre-series',
     mangaChapters: ['399-400'],
     animeEpisodes: ['Shippuden ep. 343-345'],
@@ -61,10 +70,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-uzushio-destruction',
     worldId: 'world-naruto',
-    title: 'Caduta di Uzushiogakure',
-    description:
-      'Coalizione di villaggi distrugge Uzushio per timore del clan Uzumaki.',
-    period: 'Pre-series',
+    title: { it: 'Caduta di Uzushiogakure', en: 'Fall of Uzushiogakure' },
+    description: {
+      it: 'Coalizione di villaggi distrugge Uzushio per timore del clan Uzumaki.',
+      en: 'A coalition of villages destroys Uzushio out of fear of the Uzumaki clan.',
+    },
+    period: { it: 'Pre-serie', en: 'Pre-series' },
     arcId: 'arc-pre-series',
     mangaChapters: ['499'],
     animeEpisodes: ['Shippuden ep. 244'],
@@ -77,10 +88,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-third-war',
     worldId: 'world-naruto',
-    title: 'Terza Guerra Ninja',
-    description:
-      'Conflitto globale fra le cinque grandi nazioni. Minato si afferma come "Yellow Flash".',
-    period: 'Pre-series',
+    title: { it: 'Terza Guerra Ninja', en: 'Third Shinobi World War' },
+    description: {
+      it: 'Conflitto globale fra le cinque grandi nazioni. Minato si afferma come "Yellow Flash".',
+      en: 'A global conflict between the five great nations. Minato makes his name as the "Yellow Flash".',
+    },
+    period: { it: 'Pre-serie', en: 'Pre-series' },
     arcId: 'arc-pre-series',
     mangaChapters: ['240-244'],
     animeEpisodes: ['Shippuden ep. 119-120'],
@@ -92,10 +105,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-kannabi-bridge',
     worldId: 'world-naruto',
-    title: 'Battaglia del ponte Kannabi',
-    description:
-      'Missione del Team Minato. Presunta morte di Obito. Kakashi riceve lo Sharingan.',
-    period: 'Pre-series',
+    title: { it: 'Battaglia del ponte Kannabi', en: 'Battle of Kannabi Bridge' },
+    description: {
+      it: 'Missione del Team Minato. Presunta morte di Obito. Kakashi riceve lo Sharingan.',
+      en: "Team Minato's mission. Obito's supposed death. Kakashi receives the Sharingan.",
+    },
+    period: { it: 'Pre-serie', en: 'Pre-series' },
     arcId: 'arc-pre-series',
     mangaChapters: ['243-244'],
     animeEpisodes: ['Shippuden ep. 119-120'],
@@ -108,10 +123,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-ame-orphans',
     worldId: 'world-naruto',
-    title: 'Gli orfani di Ame · Jiraiya',
-    description:
-      'Jiraiya addestra Yahiko, Konan e Nagato durante la guerra ad Amegakure.',
-    period: 'Pre-series',
+    title: { it: 'Gli orfani di Ame · Jiraiya', en: 'The orphans of Ame · Jiraiya' },
+    description: {
+      it: 'Jiraiya addestra Yahiko, Konan e Nagato durante la guerra ad Amegakure.',
+      en: 'Jiraiya trains Yahiko, Konan and Nagato during the war in Amegakure.',
+    },
+    period: { it: 'Pre-serie', en: 'Pre-series' },
     arcId: 'arc-pre-series',
     mangaChapters: ['372-374'],
     animeEpisodes: ['Shippuden ep. 127-128'],
@@ -124,10 +141,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-kurama-attack',
     worldId: 'world-naruto',
-    title: 'Attacco di Kurama a Konoha',
-    description:
-      'Obito libera Kurama. Minato e Kushina si sacrificano per sigillarlo nel neonato Naruto.',
-    period: 'Pre-series',
+    title: { it: 'Attacco di Kurama a Konoha', en: "Kurama's attack on Konoha" },
+    description: {
+      it: 'Obito libera Kurama. Minato e Kushina si sacrificano per sigillarlo nel neonato Naruto.',
+      en: 'Obito unleashes Kurama. Minato and Kushina sacrifice themselves to seal it inside the newborn Naruto.',
+    },
+    period: { it: 'Pre-serie', en: 'Pre-series' },
     arcId: 'arc-pre-series',
     mangaChapters: ['1', '499-504'],
     animeEpisodes: ['ep. 1-2', 'Shippuden ep. 247-249'],
@@ -140,10 +159,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-uchiha-massacre',
     worldId: 'world-naruto',
-    title: 'Massacro del clan Uchiha',
-    description:
-      'Itachi stermina il clan Uchiha sotto ordini segreti, risparmiando Sasuke.',
-    period: 'Pre-series',
+    title: { it: 'Massacro del clan Uchiha', en: 'Uchiha clan massacre' },
+    description: {
+      it: 'Itachi stermina il clan Uchiha sotto ordini segreti, risparmiando Sasuke.',
+      en: 'Itachi wipes out the Uchiha clan under secret orders, sparing Sasuke.',
+    },
+    period: { it: 'Pre-serie', en: 'Pre-series' },
     arcId: 'arc-pre-series',
     mangaChapters: ['222-225', '576-590'],
     animeEpisodes: ['Shippuden ep. 141-143', 'Shippuden ep. 452-456'],
@@ -159,10 +180,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-team-7-formed',
     worldId: 'world-naruto',
-    title: 'Formazione del Team 7',
-    description:
-      'Naruto, Sasuke e Sakura vengono assegnati a Kakashi. Prova dei sonagli.',
-    period: 'Naruto Parte I',
+    title: { it: 'Formazione del Team 7', en: 'Formation of Team 7' },
+    description: {
+      it: 'Naruto, Sasuke e Sakura vengono assegnati a Kakashi. Prova dei sonagli.',
+      en: 'Naruto, Sasuke and Sakura are assigned to Kakashi. The bell test.',
+    },
+    period: { it: 'Naruto Parte I', en: 'Naruto Part I' },
     arcId: 'arc-prologue',
     mangaChapters: ['3-4'],
     animeEpisodes: ['ep. 3'],
@@ -175,10 +198,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-waves-mission',
     worldId: 'world-naruto',
-    title: 'Missione nel Paese delle Onde',
-    description:
-      'Scorta di Tazuna. Scontro con Zabuza e Haku. Risveglio dello Sharingan di Sasuke.',
-    period: 'Naruto Parte I',
+    title: { it: 'Missione nel Paese delle Onde', en: 'Mission in the Land of Waves' },
+    description: {
+      it: 'Scorta di Tazuna. Scontro con Zabuza e Haku. Risveglio dello Sharingan di Sasuke.',
+      en: "Escorting Tazuna. Clash with Zabuza and Haku. Sasuke's Sharingan awakens.",
+    },
+    period: { it: 'Naruto Parte I', en: 'Naruto Part I' },
     arcId: 'arc-prologue',
     mangaChapters: ['8-33'],
     animeEpisodes: ['ep. 6-19'],
@@ -191,10 +216,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-naruto-meets-ichiraku',
     worldId: 'world-naruto',
-    title: 'Naruto al ramen Ichiraku',
-    description:
-      'Scena ricorrente: Naruto trova rifugio nel ramen di Teuchi e Ayame.',
-    period: 'Naruto Parte I',
+    title: { it: 'Naruto al ramen Ichiraku', en: 'Naruto at Ichiraku Ramen' },
+    description: {
+      it: 'Scena ricorrente: Naruto trova rifugio nel ramen di Teuchi e Ayame.',
+      en: "A recurring scene: Naruto finds refuge in Teuchi and Ayame's ramen shop.",
+    },
+    period: { it: 'Naruto Parte I', en: 'Naruto Part I' },
     mangaChapters: ['1'],
     animeEpisodes: ['ep. 1'],
     locationId: 'loc-konoha-ichiraku',
@@ -206,9 +233,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-chunin-first-phase',
     worldId: 'world-naruto',
-    title: 'Prima fase Esami Chunin',
-    description: 'Test scritto di Ibiki Morino. Pressione psicologica.',
-    period: 'Naruto Parte I',
+    title: { it: 'Prima fase Esami Chunin', en: 'Chunin Exams, first stage' },
+    description: {
+      it: 'Test scritto di Ibiki Morino. Pressione psicologica.',
+      en: "Ibiki Morino's written test. Psychological pressure.",
+    },
+    period: { it: 'Naruto Parte I', en: 'Naruto Part I' },
     arcId: 'arc-chunin-exams',
     mangaChapters: ['34-41'],
     animeEpisodes: ['ep. 20-25'],
@@ -220,10 +250,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-forest-of-death',
     worldId: 'world-naruto',
-    title: 'Seconda fase: Foresta della Morte',
-    description:
-      'Orochimaru incontra Sasuke e gli imprime il Sigillo Maledetto.',
-    period: 'Naruto Parte I',
+    title: { it: 'Seconda fase: Foresta della Morte', en: 'Second stage: the Forest of Death' },
+    description: {
+      it: 'Orochimaru incontra Sasuke e gli imprime il Sigillo Maledetto.',
+      en: 'Orochimaru meets Sasuke and gives him the Curse Mark.',
+    },
+    period: { it: 'Naruto Parte I', en: 'Naruto Part I' },
     arcId: 'arc-chunin-exams',
     mangaChapters: ['42-68'],
     animeEpisodes: ['ep. 26-36'],
@@ -236,10 +268,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-chunin-prelims',
     worldId: 'world-naruto',
-    title: 'Preliminari Esami Chunin',
-    description:
-      'Combattimenti preliminari nello stadio. Hinata vs Neji, Rock Lee vs Gaara.',
-    period: 'Naruto Parte I',
+    title: { it: 'Preliminari Esami Chunin', en: 'Chunin Exams preliminaries' },
+    description: {
+      it: 'Combattimenti preliminari nello stadio. Hinata vs Neji, Rock Lee vs Gaara.',
+      en: 'Preliminary fights in the arena. Hinata vs Neji, Rock Lee vs Gaara.',
+    },
+    period: { it: 'Naruto Parte I', en: 'Naruto Part I' },
     arcId: 'arc-chunin-exams',
     mangaChapters: ['68-94'],
     animeEpisodes: ['ep. 37-52'],
@@ -257,10 +291,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-chunin-tournament',
     worldId: 'world-naruto',
-    title: 'Tornament finale Esami Chunin',
-    description:
-      'Naruto vs Neji, Sasuke vs Gaara, Shikamaru vs Temari.',
-    period: 'Naruto Parte I',
+    title: { it: 'Torneo finale Esami Chunin', en: 'Chunin Exams final tournament' },
+    description: {
+      it: 'Naruto vs Neji, Sasuke vs Gaara, Shikamaru vs Temari.',
+      en: 'Naruto vs Neji, Sasuke vs Gaara, Shikamaru vs Temari.',
+    },
+    period: { it: 'Naruto Parte I', en: 'Naruto Part I' },
     arcId: 'arc-chunin-exams',
     mangaChapters: ['99-115'],
     animeEpisodes: ['ep. 59-67'],
@@ -279,10 +315,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-konoha-crush',
     worldId: 'world-naruto',
-    title: 'Invasione di Konoha',
-    description:
-      'Suna e Oto attaccano Konoha. Hiruzen muore sigillando le braccia di Orochimaru.',
-    period: 'Naruto Parte I',
+    title: { it: 'Invasione di Konoha', en: 'Invasion of Konoha' },
+    description: {
+      it: 'Suna e Oto attaccano Konoha. Hiruzen muore sigillando le braccia di Orochimaru.',
+      en: "Suna and Oto attack Konoha. Hiruzen dies sealing Orochimaru's arms.",
+    },
+    period: { it: 'Naruto Parte I', en: 'Naruto Part I' },
     arcId: 'arc-konoha-crush',
     mangaChapters: ['116-124'],
     animeEpisodes: ['ep. 68-73'],
@@ -295,10 +333,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-naruto-vs-gaara',
     worldId: 'world-naruto',
-    title: 'Naruto vs Gaara',
-    description:
-      'Naruto sconfigge il jinchuriki di Shukaku, iniziando la redenzione di Gaara.',
-    period: 'Naruto Parte I',
+    title: { it: 'Naruto vs Gaara', en: 'Naruto vs Gaara' },
+    description: {
+      it: 'Naruto sconfigge il jinchuriki di Shukaku, iniziando la redenzione di Gaara.',
+      en: "Naruto defeats Shukaku's jinchūriki, beginning Gaara's redemption.",
+    },
+    period: { it: 'Naruto Parte I', en: 'Naruto Part I' },
     arcId: 'arc-konoha-crush',
     mangaChapters: ['130-138'],
     animeEpisodes: ['ep. 77-80'],
@@ -312,10 +352,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-search-tsunade',
     worldId: 'world-naruto',
-    title: 'Ricerca di Tsunade',
-    description:
-      'Jiraiya e Naruto convincono Tsunade a tornare a Konoha come Quinto Hokage.',
-    period: 'Naruto Parte I',
+    title: { it: 'Ricerca di Tsunade', en: 'Search for Tsunade' },
+    description: {
+      it: 'Jiraiya e Naruto convincono Tsunade a tornare a Konoha come Quinto Hokage.',
+      en: 'Jiraiya and Naruto convince Tsunade to return to Konoha as the Fifth Hokage.',
+    },
+    period: { it: 'Naruto Parte I', en: 'Naruto Part I' },
     arcId: 'arc-search-tsunade',
     mangaChapters: ['139-171'],
     animeEpisodes: ['ep. 81-100'],
@@ -327,10 +369,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-akatsuki-debut',
     worldId: 'world-naruto',
-    title: 'Akatsuki appare a Konoha',
-    description:
-      'Itachi e Kisame visitano Konoha alla ricerca del Kyuubi.',
-    period: 'Naruto Parte I',
+    title: { it: 'Akatsuki appare a Konoha', en: 'The Akatsuki appear in Konoha' },
+    description: {
+      it: 'Itachi e Kisame visitano Konoha alla ricerca del Kyuubi.',
+      en: 'Itachi and Kisame visit Konoha in search of the Nine-Tails.',
+    },
+    period: { it: 'Naruto Parte I', en: 'Naruto Part I' },
     arcId: 'arc-search-tsunade',
     mangaChapters: ['142-144'],
     animeEpisodes: ['ep. 83-84'],
@@ -344,9 +388,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-tsunade-hokage',
     worldId: 'world-naruto',
-    title: 'Tsunade diventa Quinto Hokage',
-    description: 'Tsunade torna a Konoha e assume la carica di Quinto Hokage.',
-    period: 'Naruto Parte I',
+    title: { it: 'Tsunade diventa Quinto Hokage', en: 'Tsunade becomes the Fifth Hokage' },
+    description: {
+      it: 'Tsunade torna a Konoha e assume la carica di Quinto Hokage.',
+      en: 'Tsunade returns to Konoha and takes office as the Fifth Hokage.',
+    },
+    period: { it: 'Naruto Parte I', en: 'Naruto Part I' },
     arcId: 'arc-search-tsunade',
     mangaChapters: ['169-171'],
     animeEpisodes: ['ep. 94-100'],
@@ -359,10 +406,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-sasuke-defection',
     worldId: 'world-naruto',
-    title: 'Diserzione di Sasuke',
-    description:
-      'Sasuke abbandona Konoha verso Orochimaru, scortato dai Sound Four.',
-    period: 'Naruto Parte I',
+    title: { it: 'Diserzione di Sasuke', en: "Sasuke's desertion" },
+    description: {
+      it: 'Sasuke abbandona Konoha verso Orochimaru, scortato dai Sound Four.',
+      en: 'Sasuke leaves Konoha for Orochimaru, escorted by the Sound Four.',
+    },
+    period: { it: 'Naruto Parte I', en: 'Naruto Part I' },
     arcId: 'arc-sasuke-retrieval',
     mangaChapters: ['172-175'],
     animeEpisodes: ['ep. 107-109'],
@@ -375,10 +424,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-sound-four-pursuit',
     worldId: 'world-naruto',
-    title: 'Inseguimento dei Sound Four',
-    description:
-      'Shikamaru guida un team genin per recuperare Sasuke. Battaglie multiple.',
-    period: 'Naruto Parte I',
+    title: { it: 'Inseguimento dei Sound Four', en: 'Pursuit of the Sound Four' },
+    description: {
+      it: 'Shikamaru guida un team genin per recuperare Sasuke. Battaglie multiple.',
+      en: 'Shikamaru leads a team of genin to bring Sasuke back. Multiple battles.',
+    },
+    period: { it: 'Naruto Parte I', en: 'Naruto Part I' },
     arcId: 'arc-sasuke-retrieval',
     mangaChapters: ['185-219'],
     animeEpisodes: ['ep. 113-128'],
@@ -395,10 +446,15 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-valley-end-1',
     worldId: 'world-naruto',
-    title: 'Duello alla Valle della Fine (Parte I)',
-    description:
-      'Naruto vs Sasuke. Naruto sconfitto, Sasuke prosegue verso Orochimaru.',
-    period: 'Naruto Parte I',
+    title: {
+      it: 'Duello alla Valle della Fine (Parte I)',
+      en: 'Duel at the Valley of the End (Part I)',
+    },
+    description: {
+      it: 'Naruto vs Sasuke. Naruto sconfitto, Sasuke prosegue verso Orochimaru.',
+      en: 'Naruto vs Sasuke. Naruto is defeated and Sasuke goes on to Orochimaru.',
+    },
+    period: { it: 'Naruto Parte I', en: 'Naruto Part I' },
     arcId: 'arc-sasuke-retrieval',
     mangaChapters: ['230-238'],
     animeEpisodes: ['ep. 128-135'],
@@ -413,10 +469,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-timeskip',
     worldId: 'world-naruto',
-    title: 'Time Skip · Allenamento con Jiraiya',
-    description:
-      'Naruto si allena per due anni e mezzo con Jiraiya. Sakura studia con Tsunade.',
-    period: 'Time Skip',
+    title: { it: 'Time Skip · Allenamento con Jiraiya', en: 'Time skip · Training with Jiraiya' },
+    description: {
+      it: 'Naruto si allena per due anni e mezzo con Jiraiya. Sakura studia con Tsunade.',
+      en: 'Naruto trains with Jiraiya for two and a half years. Sakura studies under Tsunade.',
+    },
+    period: { it: 'Time Skip', en: 'Time skip' },
     mangaChapters: ['238-245'],
     animeEpisodes: ['ep. 135', 'Shippuden ep. 1'],
     characterIds: ['char-naruto', 'char-jiraiya', 'char-sakura', 'char-tsunade'],
@@ -427,10 +485,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-sasuke-killing-orochimaru',
     worldId: 'world-naruto',
-    title: 'Sasuke assorbe Orochimaru',
-    description:
-      'Sasuke supera Orochimaru e assume il controllo. Forma Hebi.',
-    period: 'Time Skip',
+    title: { it: 'Sasuke assorbe Orochimaru', en: 'Sasuke absorbs Orochimaru' },
+    description: {
+      it: 'Sasuke supera Orochimaru e assume il controllo. Forma Hebi.',
+      en: 'Sasuke overpowers Orochimaru and takes control. He forms Hebi.',
+    },
+    period: { it: 'Time Skip', en: 'Time skip' },
     arcId: 'arc-akatsuki-suppression',
     mangaChapters: ['343-344'],
     animeEpisodes: ['Shippuden ep. 113-114'],
@@ -445,10 +505,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-gaara-kidnap',
     worldId: 'world-naruto',
-    title: 'Rapimento di Gaara',
-    description:
-      'Deidara e Sasori catturano Gaara per estrarre Shukaku.',
-    period: 'Naruto Shippuden',
+    title: { it: 'Rapimento di Gaara', en: "Gaara's abduction" },
+    description: {
+      it: 'Deidara e Sasori catturano Gaara per estrarre Shukaku.',
+      en: 'Deidara and Sasori capture Gaara to extract Shukaku.',
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     arcId: 'arc-kazekage-rescue',
     mangaChapters: ['245-250'],
     animeEpisodes: ['Shippuden ep. 1-5'],
@@ -461,10 +523,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-gaara-rescue',
     worldId: 'world-naruto',
-    title: 'Salvataggio di Gaara',
-    description:
-      'Team 7 e Team Guy salvano Gaara. Sacrificio di Lady Chiyo per riportarlo in vita.',
-    period: 'Naruto Shippuden',
+    title: { it: 'Salvataggio di Gaara', en: "Gaara's rescue" },
+    description: {
+      it: 'Team 7 e Team Guy salvano Gaara. Sacrificio di Lady Chiyo per riportarlo in vita.',
+      en: 'Team 7 and Team Guy rescue Gaara. Lady Chiyo sacrifices herself to bring him back to life.',
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     arcId: 'arc-kazekage-rescue',
     mangaChapters: ['257-281'],
     animeEpisodes: ['Shippuden ep. 15-32'],
@@ -483,9 +547,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-tenchi-bridge',
     worldId: 'world-naruto',
-    title: 'Operazione Tenchi Bridge',
-    description: 'Incontro con la spia di Sasori. Introduzione di Sai.',
-    period: 'Naruto Shippuden',
+    title: { it: 'Operazione Tenchi Bridge', en: 'Tenchi Bridge operation' },
+    description: {
+      it: 'Incontro con la spia di Sasori. Introduzione di Sai.',
+      en: "Meeting with Sasori's spy. Introduction of Sai.",
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     arcId: 'arc-tenchi-bridge',
     mangaChapters: ['282-295'],
     animeEpisodes: ['Shippuden ep. 33-45'],
@@ -497,10 +564,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-hidan-kakuzu',
     worldId: 'world-naruto',
-    title: 'Hidan e Kakuzu vs Konoha',
-    description:
-      'Asuma cade per mano di Hidan. Vendetta di Shikamaru: sigilla Hidan.',
-    period: 'Naruto Shippuden',
+    title: { it: 'Hidan e Kakuzu vs Konoha', en: 'Hidan and Kakuzu vs Konoha' },
+    description: {
+      it: 'Asuma cade per mano di Hidan. Vendetta di Shikamaru: sigilla Hidan.',
+      en: "Asuma falls at Hidan's hands. Shikamaru's revenge: he seals Hidan away.",
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     arcId: 'arc-akatsuki-suppression',
     mangaChapters: ['312-342'],
     animeEpisodes: ['Shippuden ep. 72-88'],
@@ -512,10 +581,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-jiraiya-vs-pain',
     worldId: 'world-naruto',
-    title: 'Jiraiya vs Pain',
-    description:
-      'Jiraiya s\'infiltra ad Amegakure e muore contro i sei corpi di Pain.',
-    period: 'Naruto Shippuden',
+    title: { it: 'Jiraiya vs Pain', en: 'Jiraiya vs Pain' },
+    description: {
+      it: 'Jiraiya s\'infiltra ad Amegakure e muore contro i sei corpi di Pain.',
+      en: "Jiraiya infiltrates Amegakure and dies fighting Pain's six bodies.",
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     arcId: 'arc-jiraiya-gallant',
     mangaChapters: ['381-383'],
     animeEpisodes: ['Shippuden ep. 131-133'],
@@ -529,10 +600,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-itachi-vs-sasuke',
     worldId: 'world-naruto',
-    title: 'Itachi vs Sasuke',
-    description:
-      'Duello finale fra fratelli. Itachi muore lasciando lo Sharingan al fratello.',
-    period: 'Naruto Shippuden',
+    title: { it: 'Itachi vs Sasuke', en: 'Itachi vs Sasuke' },
+    description: {
+      it: 'Duello finale fra fratelli. Itachi muore lasciando lo Sharingan al fratello.',
+      en: 'The final duel between the brothers. Itachi dies, leaving his Sharingan to his brother.',
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     arcId: 'arc-itachi-pursuit',
     mangaChapters: ['384-402'],
     animeEpisodes: ['Shippuden ep. 134-143'],
@@ -545,10 +618,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-tobi-reveals-truth',
     worldId: 'world-naruto',
-    title: 'Tobi rivela la verità su Itachi',
-    description:
-      'Tobi rivela a Sasuke il sacrificio di Itachi. Inizio della vendetta verso Konoha.',
-    period: 'Naruto Shippuden',
+    title: { it: 'Tobi rivela la verità su Itachi', en: 'Tobi reveals the truth about Itachi' },
+    description: {
+      it: 'Tobi rivela a Sasuke il sacrificio di Itachi. Inizio della vendetta verso Konoha.',
+      en: "Tobi reveals Itachi's sacrifice to Sasuke. The start of Sasuke's revenge against Konoha.",
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     arcId: 'arc-fated-brothers',
     mangaChapters: ['397-402'],
     animeEpisodes: ['Shippuden ep. 141-143'],
@@ -560,10 +635,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-naruto-sage-mode',
     worldId: 'world-naruto',
-    title: 'Naruto completa l\'allenamento Sage',
-    description:
-      'Naruto apprende la Sennin Mode sul Monte Myōboku.',
-    period: 'Naruto Shippuden',
+    title: { it: 'Naruto completa l\'allenamento Sage', en: 'Naruto completes his Sage training' },
+    description: {
+      it: 'Naruto apprende la Sennin Mode sul Monte Myōboku.',
+      en: 'Naruto learns Sage Mode on Mount Myōboku.',
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     mangaChapters: ['405-418'],
     animeEpisodes: ['Shippuden ep. 148-152'],
     locationId: 'loc-mt-myoboku',
@@ -575,10 +652,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-pain-attack',
     worldId: 'world-naruto',
-    title: 'Pain attacca Konoha',
-    description:
-      'Distruzione del villaggio. Naruto in Sage Mode sconfigge i Sei Cammini.',
-    period: 'Naruto Shippuden',
+    title: { it: 'Pain attacca Konoha', en: 'Pain attacks Konoha' },
+    description: {
+      it: 'Distruzione del villaggio. Naruto in Sage Mode sconfigge i Sei Cammini.',
+      en: 'The village is destroyed. Naruto in Sage Mode defeats the Six Paths.',
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     arcId: 'arc-pain-assault',
     mangaChapters: ['420-425'],
     animeEpisodes: ['Shippuden ep. 157-162'],
@@ -591,10 +670,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-nagato-redemption',
     worldId: 'world-naruto',
-    title: 'Riconciliazione con Nagato',
-    description:
-      'Nagato risuscita gli abitanti di Konoha sacrificando la propria vita.',
-    period: 'Naruto Shippuden',
+    title: { it: 'Riconciliazione con Nagato', en: 'Reconciliation with Nagato' },
+    description: {
+      it: 'Nagato risuscita gli abitanti di Konoha sacrificando la propria vita.',
+      en: 'Nagato revives the people of Konoha at the cost of his own life.',
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     arcId: 'arc-pain-assault',
     mangaChapters: ['443-449'],
     animeEpisodes: ['Shippuden ep. 172-175'],
@@ -607,10 +688,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-five-kage-summit',
     worldId: 'world-naruto',
-    title: 'Vertice dei Cinque Kage',
-    description:
-      'I Kage si riuniscono nel Paese del Ferro. Sasuke attacca il vertice.',
-    period: 'Naruto Shippuden',
+    title: { it: 'Vertice dei Cinque Kage', en: 'Five Kage Summit' },
+    description: {
+      it: 'I Kage si riuniscono nel Paese del Ferro. Sasuke attacca il vertice.',
+      en: 'The Kage gather in the Land of Iron. Sasuke attacks the summit.',
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     arcId: 'arc-five-kage-summit',
     mangaChapters: ['450-470'],
     animeEpisodes: ['Shippuden ep. 197-207'],
@@ -623,10 +706,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-sasuke-mangekyo-eternal',
     worldId: 'world-naruto',
-    title: 'Sasuke ottiene il Mangekyō Eterno',
-    description:
-      'Sasuke trapianta gli occhi di Itachi ottenendo il Mangekyō Sharingan Eterno.',
-    period: 'Naruto Shippuden',
+    title: { it: 'Sasuke ottiene il Mangekyō Eterno', en: 'Sasuke obtains the Eternal Mangekyō' },
+    description: {
+      it: 'Sasuke trapianta gli occhi di Itachi ottenendo il Mangekyō Sharingan Eterno.',
+      en: "Sasuke transplants Itachi's eyes and obtains the Eternal Mangekyō Sharingan.",
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     arcId: 'arc-fated-brothers',
     mangaChapters: ['464-466'],
     animeEpisodes: ['Shippuden ep. 204-206'],
@@ -638,10 +723,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-naruto-meets-kushina',
     worldId: 'world-naruto',
-    title: 'Naruto incontra Kushina',
-    description:
-      'Naruto incontra il ricordo di sua madre durante il controllo del Kyuubi.',
-    period: 'Naruto Shippuden',
+    title: { it: 'Naruto incontra Kushina', en: 'Naruto meets Kushina' },
+    description: {
+      it: 'Naruto incontra il ricordo di sua madre durante il controllo del Kyuubi.',
+      en: 'Naruto meets the memory of his mother while taking control of the Nine-Tails.',
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     mangaChapters: ['498-499'],
     animeEpisodes: ['Shippuden ep. 246-247'],
     characterIds: ['char-naruto', 'char-kushina'],
@@ -654,10 +741,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-war-declaration',
     worldId: 'world-naruto',
-    title: 'Dichiarazione di Guerra',
-    description:
-      'L\'Alleanza Shinobi si forma. Madara annuncia la Quarta Guerra Ninja.',
-    period: 'Quarta Guerra Ninja',
+    title: { it: 'Dichiarazione di Guerra', en: 'Declaration of War' },
+    description: {
+      it: 'L\'Alleanza Shinobi si forma. Madara annuncia la Quarta Guerra Ninja.',
+      en: 'The Shinobi Alliance is formed. Madara announces the Fourth Shinobi World War.',
+    },
+    period: { it: 'Quarta Guerra Ninja', en: 'Fourth Shinobi World War' },
     arcId: 'arc-fourth-war-countdown',
     mangaChapters: ['484-488'],
     animeEpisodes: ['Shippuden ep. 215-216'],
@@ -668,10 +757,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-naruto-killer-b-train',
     worldId: 'world-naruto',
-    title: 'Allenamento sull\'Isola Tartaruga',
-    description:
-      'Naruto domina Kurama con l\'aiuto di Killer B sull\'Isola Tartaruga.',
-    period: 'Quarta Guerra Ninja',
+    title: { it: 'Allenamento sull\'Isola Tartaruga', en: 'Training on Island Turtle' },
+    description: {
+      it: 'Naruto domina Kurama con l\'aiuto di Killer B sull\'Isola Tartaruga.',
+      en: "Naruto masters Kurama with Killer B's help on Island Turtle.",
+    },
+    period: { it: 'Quarta Guerra Ninja', en: 'Fourth Shinobi World War' },
     arcId: 'arc-fourth-war-countdown',
     mangaChapters: ['493-515'],
     animeEpisodes: ['Shippuden ep. 243-256'],
@@ -684,10 +775,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-edo-tensei-army',
     worldId: 'world-naruto',
-    title: 'Esercito Edo Tensei',
-    description:
-      'Kabuto rianima centinaia di shinobi del passato. Battaglie su più fronti.',
-    period: 'Quarta Guerra Ninja',
+    title: { it: 'Esercito Edo Tensei', en: 'Edo Tensei army' },
+    description: {
+      it: 'Kabuto rianima centinaia di shinobi del passato. Battaglie su più fronti.',
+      en: 'Kabuto reanimates hundreds of shinobi from the past. Battles on several fronts.',
+    },
+    period: { it: 'Quarta Guerra Ninja', en: 'Fourth Shinobi World War' },
     arcId: 'arc-fourth-war',
     mangaChapters: ['516-520'],
     animeEpisodes: ['Shippuden ep. 261-265'],
@@ -699,10 +792,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-gaara-onoki-vs-madara',
     worldId: 'world-naruto',
-    title: 'Gaara e Onoki vs Madara',
-    description:
-      'I Kage tentano di contenere Madara redivivo. Combattimento epico.',
-    period: 'Quarta Guerra Ninja',
+    title: { it: 'Gaara e Onoki vs Madara', en: 'Gaara and Onoki vs Madara' },
+    description: {
+      it: 'I Kage tentano di contenere Madara redivivo. Combattimento epico.',
+      en: 'The Kage try to hold back the revived Madara. An epic fight.',
+    },
+    period: { it: 'Quarta Guerra Ninja', en: 'Fourth Shinobi World War' },
     arcId: 'arc-fourth-war',
     mangaChapters: ['559-565'],
     animeEpisodes: ['Shippuden ep. 321-322'],
@@ -715,10 +810,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-naruto-bijuu',
     worldId: 'world-naruto',
-    title: 'Naruto e Kurama riconciliati',
-    description:
-      'Naruto entra in modalità Kurama collaborativa. Salva i jinchuriki.',
-    period: 'Quarta Guerra Ninja',
+    title: { it: 'Naruto e Kurama riconciliati', en: 'Naruto and Kurama reconciled' },
+    description: {
+      it: 'Naruto entra in modalità Kurama collaborativa. Salva i jinchuriki.',
+      en: 'Naruto enters a cooperative Kurama mode. He saves the jinchūriki.',
+    },
+    period: { it: 'Quarta Guerra Ninja', en: 'Fourth Shinobi World War' },
     arcId: 'arc-fourth-war',
     mangaChapters: ['571-572'],
     animeEpisodes: ['Shippuden ep. 329'],
@@ -730,10 +827,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-obito-true-identity',
     worldId: 'world-naruto',
-    title: 'Vera identità di Tobi',
-    description:
-      '"Tobi" si rivela essere Obito Uchiha, sopravvissuto a Kannabi.',
-    period: 'Quarta Guerra Ninja',
+    title: { it: 'Vera identità di Tobi', en: "Tobi's true identity" },
+    description: {
+      it: '"Tobi" si rivela essere Obito Uchiha, sopravvissuto a Kannabi.',
+      en: '"Tobi" turns out to be Obito Uchiha, who survived Kannabi.',
+    },
+    period: { it: 'Quarta Guerra Ninja', en: 'Fourth Shinobi World War' },
     arcId: 'arc-fourth-war',
     mangaChapters: ['597-599'],
     animeEpisodes: ['Shippuden ep. 343-344'],
@@ -745,10 +844,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-obito-vs-kakashi',
     worldId: 'world-naruto',
-    title: 'Obito vs Kakashi',
-    description:
-      'Confronto definitivo fra ex compagni. Obito diventa jinchuriki delle Dieci Code.',
-    period: 'Quarta Guerra Ninja',
+    title: { it: 'Obito vs Kakashi', en: 'Obito vs Kakashi' },
+    description: {
+      it: 'Confronto definitivo fra ex compagni. Obito diventa jinchuriki delle Dieci Code.',
+      en: "The final confrontation between former teammates. Obito becomes the Ten-Tails' jinchūriki.",
+    },
+    period: { it: 'Quarta Guerra Ninja', en: 'Fourth Shinobi World War' },
     arcId: 'arc-ten-tails-jinchuriki',
     mangaChapters: ['606-609'],
     animeEpisodes: ['Shippuden ep. 375'],
@@ -761,10 +862,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-obito-redemption',
     worldId: 'world-naruto',
-    title: 'Redenzione di Obito',
-    description:
-      'Obito si ribella a Madara, aiuta Naruto e Sasuke prima di morire.',
-    period: 'Quarta Guerra Ninja',
+    title: { it: 'Redenzione di Obito', en: "Obito's redemption" },
+    description: {
+      it: 'Obito si ribella a Madara, aiuta Naruto e Sasuke prima di morire.',
+      en: 'Obito turns against Madara and helps Naruto and Sasuke before dying.',
+    },
+    period: { it: 'Quarta Guerra Ninja', en: 'Fourth Shinobi World War' },
     arcId: 'arc-ten-tails-jinchuriki',
     mangaChapters: ['650-657'],
     animeEpisodes: ['Shippuden ep. 471-472'],
@@ -777,10 +880,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-might-guy-eight-gates',
     worldId: 'world-naruto',
-    title: 'Might Guy apre l\'Ottavo Cancello',
-    description:
-      'Guy combatte Madara in Six Paths Mode aprendo l\'Ottava Porta della Morte.',
-    period: 'Quarta Guerra Ninja',
+    title: { it: 'Might Guy apre l\'Ottavo Cancello', en: 'Might Guy opens the Eighth Gate' },
+    description: {
+      it: 'Guy combatte Madara in Six Paths Mode aprendo l\'Ottava Porta della Morte.',
+      en: 'Guy fights Madara in Six Paths Mode by opening the Eighth Gate of Death.',
+    },
+    period: { it: 'Quarta Guerra Ninja', en: 'Fourth Shinobi World War' },
     arcId: 'arc-fourth-war-climax',
     mangaChapters: ['667-670'],
     animeEpisodes: ['Shippuden ep. 418-421'],
@@ -792,10 +897,15 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-naruto-sasuke-six-paths',
     worldId: 'world-naruto',
-    title: 'Naruto e Sasuke ricevono i poteri dei Sei Cammini',
-    description:
-      'Hagoromo trasmette poteri a Naruto e Sasuke per fermare Madara.',
-    period: 'Quarta Guerra Ninja',
+    title: {
+      it: 'Naruto e Sasuke ricevono i poteri dei Sei Cammini',
+      en: 'Naruto and Sasuke receive the powers of the Six Paths',
+    },
+    description: {
+      it: 'Hagoromo trasmette poteri a Naruto e Sasuke per fermare Madara.',
+      en: 'Hagoromo passes his powers on to Naruto and Sasuke to stop Madara.',
+    },
+    period: { it: 'Quarta Guerra Ninja', en: 'Fourth Shinobi World War' },
     arcId: 'arc-fourth-war-climax',
     mangaChapters: ['671-674'],
     animeEpisodes: ['Shippuden ep. 421-424'],
@@ -807,10 +917,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-kaguya-resurrection',
     worldId: 'world-naruto',
-    title: 'Risveglio di Kaguya Otsutsuki',
-    description:
-      'Black Zetsu tradisce Madara. Kaguya appare come vera minaccia finale.',
-    period: 'Quarta Guerra Ninja',
+    title: { it: 'Risveglio di Kaguya Otsutsuki', en: 'Kaguya Otsutsuki awakens' },
+    description: {
+      it: 'Black Zetsu tradisce Madara. Kaguya appare come vera minaccia finale.',
+      en: 'Black Zetsu betrays Madara. Kaguya appears as the true final threat.',
+    },
+    period: { it: 'Quarta Guerra Ninja', en: 'Fourth Shinobi World War' },
     arcId: 'arc-kaguya-final',
     mangaChapters: ['678-681'],
     animeEpisodes: ['Shippuden ep. 458-461'],
@@ -821,10 +933,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-team-7-vs-kaguya',
     worldId: 'world-naruto',
-    title: 'Team 7 vs Kaguya',
-    description:
-      'Naruto, Sasuke, Sakura e Kakashi sigillano Kaguya attraverso dimensioni multiple.',
-    period: 'Quarta Guerra Ninja',
+    title: { it: 'Team 7 vs Kaguya', en: 'Team 7 vs Kaguya' },
+    description: {
+      it: 'Naruto, Sasuke, Sakura e Kakashi sigillano Kaguya attraverso dimensioni multiple.',
+      en: 'Naruto, Sasuke, Sakura and Kakashi seal Kaguya across multiple dimensions.',
+    },
+    period: { it: 'Quarta Guerra Ninja', en: 'Fourth Shinobi World War' },
     arcId: 'arc-kaguya-final',
     mangaChapters: ['681-699'],
     animeEpisodes: ['Shippuden ep. 461-469'],
@@ -837,10 +951,15 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-valley-end-2',
     worldId: 'world-naruto',
-    title: 'Duello finale alla Valle della Fine (Parte II)',
-    description:
-      'Naruto e Sasuke si scontrano per l\'ultima volta. Riconciliazione.',
-    period: 'Quarta Guerra Ninja',
+    title: {
+      it: 'Duello finale alla Valle della Fine (Parte II)',
+      en: 'Final duel at the Valley of the End (Part II)',
+    },
+    description: {
+      it: 'Naruto e Sasuke si scontrano per l\'ultima volta. Riconciliazione.',
+      en: 'Naruto and Sasuke clash one last time. Reconciliation.',
+    },
+    period: { it: 'Quarta Guerra Ninja', en: 'Fourth Shinobi World War' },
     arcId: 'arc-final-battle',
     mangaChapters: ['696-699'],
     animeEpisodes: ['Shippuden ep. 476-479'],
@@ -855,10 +974,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-kakashi-hokage',
     worldId: 'world-naruto',
-    title: 'Kakashi diventa Sesto Hokage',
-    description:
-      'Ricostruzione di Konoha. Kakashi guida il villaggio nella nuova era di pace.',
-    period: 'Post-war',
+    title: { it: 'Kakashi diventa Sesto Hokage', en: 'Kakashi becomes the Sixth Hokage' },
+    description: {
+      it: 'Ricostruzione di Konoha. Kakashi guida il villaggio nella nuova era di pace.',
+      en: 'Rebuilding of Konoha. Kakashi leads the village into a new era of peace.',
+    },
+    period: { it: 'Post-war', en: 'Post-war' },
     arcId: 'arc-post-war',
     mangaChapters: ['699-700'],
     animeEpisodes: ['Shippuden ep. 479-480'],
@@ -871,10 +992,15 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-the-last-toneri',
     worldId: 'world-naruto',
-    title: 'Toneri minaccia la Terra (The Last)',
-    description:
-      'Movie. Toneri Otsutsuki tenta di far precipitare la Luna. Naruto e Hinata si dichiarano.',
-    period: 'Post-war',
+    title: {
+      it: 'Toneri minaccia la Terra (The Last)',
+      en: 'Toneri threatens the Earth (The Last)',
+    },
+    description: {
+      it: 'Movie. Toneri Otsutsuki tenta di far precipitare la Luna. Naruto e Hinata si dichiarano.',
+      en: 'Movie. Toneri Otsutsuki tries to make the Moon crash into the Earth. Naruto and Hinata confess their feelings.',
+    },
+    period: { it: 'Post-war', en: 'Post-war' },
     arcId: 'arc-the-last',
     animeEpisodes: ['Film 10'],
     characterIds: ['char-naruto', 'char-hinata'],
@@ -885,10 +1011,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-naruto-hokage',
     worldId: 'world-naruto',
-    title: 'Naruto diventa Settimo Hokage',
-    description:
-      'Naruto Uzumaki realizza il sogno d\'infanzia. Apre l\'era Boruto.',
-    period: 'Post-war',
+    title: { it: 'Naruto diventa Settimo Hokage', en: 'Naruto becomes the Seventh Hokage' },
+    description: {
+      it: 'Naruto Uzumaki realizza il sogno d\'infanzia. Apre l\'era Boruto.',
+      en: 'Naruto Uzumaki fulfils his childhood dream. The Boruto era begins.',
+    },
+    period: { it: 'Post-war', en: 'Post-war' },
     arcId: 'arc-naruto-hokage',
     mangaChapters: ['700'],
     animeEpisodes: ['Shippuden ep. 500'],
@@ -901,10 +1029,15 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-sasuke-redemption',
     worldId: 'world-naruto',
-    title: 'Sasuke parte in viaggio espiatorio',
-    description:
-      'Sasuke lascia Konoha per proteggere il mondo nell\'ombra. "Ombra Hokage".',
-    period: 'Post-war',
+    title: {
+      it: 'Sasuke parte in viaggio espiatorio',
+      en: 'Sasuke sets out on a journey of atonement',
+    },
+    description: {
+      it: 'Sasuke lascia Konoha per proteggere il mondo nell\'ombra. "Ombra Hokage".',
+      en: 'Sasuke leaves Konoha to protect the world from the shadows. The "Shadow Hokage".',
+    },
+    period: { it: 'Post-war', en: 'Post-war' },
     arcId: 'arc-post-war',
     mangaChapters: ['699-700'],
     animeEpisodes: ['Shippuden ep. 479-480'],
@@ -918,10 +1051,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-itachi-anbu',
     worldId: 'world-naruto',
-    title: 'Itachi entra negli ANBU',
-    description:
-      'Itachi viene reclutato negli ANBU di Konoha, agendo come doppio agente.',
-    period: 'Pre-series',
+    title: { it: 'Itachi entra negli ANBU', en: 'Itachi joins the ANBU' },
+    description: {
+      it: 'Itachi viene reclutato negli ANBU di Konoha, agendo come doppio agente.',
+      en: "Itachi is recruited into Konoha's ANBU, acting as a double agent.",
+    },
+    period: { it: 'Pre-serie', en: 'Pre-series' },
     arcId: 'arc-pre-series',
     mangaChapters: ['222-226'],
     animeEpisodes: ['Shippuden ep. 452-456'],
@@ -935,10 +1070,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-orochimaru-defects',
     worldId: 'world-naruto',
-    title: 'Orochimaru viene scoperto e fugge',
-    description:
-      'Hiruzen scopre gli esperimenti di Orochimaru. Lo lascia fuggire da Konoha.',
-    period: 'Pre-series',
+    title: { it: 'Orochimaru viene scoperto e fugge', en: 'Orochimaru is discovered and flees' },
+    description: {
+      it: 'Hiruzen scopre gli esperimenti di Orochimaru. Lo lascia fuggire da Konoha.',
+      en: "Hiruzen discovers Orochimaru's experiments and lets him escape from Konoha.",
+    },
+    period: { it: 'Pre-serie', en: 'Pre-series' },
     arcId: 'arc-pre-series',
     mangaChapters: ['121-122'],
     animeEpisodes: ['ep. 69-70'],
@@ -951,10 +1088,15 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-tobi-founds-akatsuki',
     worldId: 'world-naruto',
-    title: 'Tobi prende il controllo dell\'Akatsuki',
-    description:
-      'Dopo la morte di Yahiko, Tobi (Obito) usa Nagato come strumento del piano "Tsuki no Me".',
-    period: 'Pre-series',
+    title: {
+      it: 'Tobi prende il controllo dell\'Akatsuki',
+      en: 'Tobi takes control of the Akatsuki',
+    },
+    description: {
+      it: 'Dopo la morte di Yahiko, Tobi (Obito) usa Nagato come strumento del piano "Tsuki no Me".',
+      en: 'After Yahiko\'s death, Tobi (Obito) uses Nagato as a tool for the "Eye of the Moon" plan (Tsuki no Me).',
+    },
+    period: { it: 'Pre-serie', en: 'Pre-series' },
     arcId: 'arc-pre-series',
     mangaChapters: ['444-447'],
     animeEpisodes: ['Shippuden ep. 349-350'],
@@ -968,10 +1110,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-zabuza-haku-death',
     worldId: 'world-naruto',
-    title: 'Morte di Zabuza e Haku',
-    description:
-      'Il duello sul ponte finisce con la morte di entrambi i Demoni della Nebbia.',
-    period: 'Naruto Parte I',
+    title: { it: 'Morte di Zabuza e Haku', en: 'Death of Zabuza and Haku' },
+    description: {
+      it: 'Il duello sul ponte finisce con la morte di entrambi i Demoni della Nebbia.',
+      en: 'The duel on the bridge ends with the death of both Demons of the Mist.',
+    },
+    period: { it: 'Naruto Parte I', en: 'Naruto Part I' },
     arcId: 'arc-prologue',
     mangaChapters: ['29-32'],
     animeEpisodes: ['ep. 18-19'],
@@ -983,10 +1127,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-rasengan-mastery',
     worldId: 'world-naruto',
-    title: 'Naruto padroneggia il Rasengan',
-    description:
-      'Naruto apprende il Rasengan da Jiraiya durante la ricerca di Tsunade.',
-    period: 'Naruto Parte I',
+    title: { it: 'Naruto padroneggia il Rasengan', en: 'Naruto masters the Rasengan' },
+    description: {
+      it: 'Naruto apprende il Rasengan da Jiraiya durante la ricerca di Tsunade.',
+      en: 'Naruto learns the Rasengan from Jiraiya during the search for Tsunade.',
+    },
+    period: { it: 'Naruto Parte I', en: 'Naruto Part I' },
     arcId: 'arc-search-tsunade',
     mangaChapters: ['150-160'],
     animeEpisodes: ['ep. 88-92'],
@@ -998,10 +1144,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-curse-mark-mastery',
     worldId: 'world-naruto',
-    title: 'Sasuke padroneggia il Sigillo Maledetto',
-    description:
-      'Sasuke supera la prima fase del Sigillo Maledetto in vista del recupero.',
-    period: 'Naruto Parte I',
+    title: { it: 'Sasuke padroneggia il Sigillo Maledetto', en: 'Sasuke masters the Curse Mark' },
+    description: {
+      it: 'Sasuke supera la prima fase del Sigillo Maledetto in vista del recupero.',
+      en: 'Sasuke overcomes the first stage of the Curse Mark ahead of the recovery mission.',
+    },
+    period: { it: 'Naruto Parte I', en: 'Naruto Part I' },
     arcId: 'arc-sasuke-retrieval',
     mangaChapters: ['177-185'],
     animeEpisodes: ['ep. 109-113'],
@@ -1013,10 +1161,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-shippuden-team7-reunion',
     worldId: 'world-naruto',
-    title: 'Team 7 si rincontra (Shippuden)',
-    description:
-      'Dopo la timeskip Naruto e Sakura tornano a Konoha e formano il nuovo Team 7 con Sai e Yamato.',
-    period: 'Naruto Shippuden',
+    title: { it: 'Team 7 si rincontra (Shippuden)', en: 'Team 7 reunites (Shippuden)' },
+    description: {
+      it: 'Dopo la timeskip Naruto e Sakura tornano a Konoha e formano il nuovo Team 7 con Sai e Yamato.',
+      en: 'After the time skip, Naruto and Sakura return to Konoha and form the new Team 7 with Sai and Yamato.',
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     mangaChapters: ['245-248'],
     animeEpisodes: ['Shippuden ep. 1-3'],
     locationId: 'loc-konoha',
@@ -1028,10 +1178,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-konan-vs-obito',
     worldId: 'world-naruto',
-    title: 'Konan vs Obito',
-    description:
-      'Konan affronta Obito ad Amegakure per vendicare Yahiko e Nagato. Muore in battaglia.',
-    period: 'Naruto Shippuden',
+    title: { it: 'Konan vs Obito', en: 'Konan vs Obito' },
+    description: {
+      it: 'Konan affronta Obito ad Amegakure per vendicare Yahiko e Nagato. Muore in battaglia.',
+      en: 'Konan confronts Obito in Amegakure to avenge Yahiko and Nagato. She dies in battle.',
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     arcId: 'arc-fated-brothers',
     mangaChapters: ['509-510'],
     animeEpisodes: ['Shippuden ep. 252-253'],
@@ -1044,10 +1196,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-killer-b-vs-sasuke',
     worldId: 'world-naruto',
-    title: 'Killer B vs Sasuke',
-    description:
-      'Taka attacca Killer B per catturare il jinchuriki di Gyuki.',
-    period: 'Naruto Shippuden',
+    title: { it: 'Killer B vs Sasuke', en: 'Killer B vs Sasuke' },
+    description: {
+      it: 'Taka attacca Killer B per catturare il jinchuriki di Gyuki.',
+      en: "Taka attacks Killer B to capture Gyūki's jinchūriki.",
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     arcId: 'arc-fated-brothers',
     mangaChapters: ['410-413'],
     animeEpisodes: ['Shippuden ep. 143-144'],
@@ -1059,10 +1213,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-shikamaru-vs-hidan',
     worldId: 'world-naruto',
-    title: 'Shikamaru vs Hidan',
-    description:
-      'Shikamaru sigilla Hidan in una fossa nel Paese del Fuoco, vendicando Asuma.',
-    period: 'Naruto Shippuden',
+    title: { it: 'Shikamaru vs Hidan', en: 'Shikamaru vs Hidan' },
+    description: {
+      it: 'Shikamaru sigilla Hidan in una fossa nel Paese del Fuoco, vendicando Asuma.',
+      en: 'Shikamaru seals Hidan in a pit in the Land of Fire, avenging Asuma.',
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     arcId: 'arc-akatsuki-suppression',
     mangaChapters: ['337-342'],
     animeEpisodes: ['Shippuden ep. 83-88'],
@@ -1075,10 +1231,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-deidara-vs-sasuke',
     worldId: 'world-naruto',
-    title: 'Deidara vs Sasuke',
-    description:
-      'Deidara, sopravvissuto al rapimento di Gaara, si suicida tentando di uccidere Sasuke.',
-    period: 'Naruto Shippuden',
+    title: { it: 'Deidara vs Sasuke', en: 'Deidara vs Sasuke' },
+    description: {
+      it: 'Deidara, sopravvissuto al rapimento di Gaara, si suicida tentando di uccidere Sasuke.',
+      en: "Deidara, having survived Gaara's abduction, blows himself up trying to kill Sasuke.",
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     arcId: 'arc-itachi-pursuit',
     mangaChapters: ['355-362'],
     animeEpisodes: ['Shippuden ep. 115-117'],
@@ -1090,10 +1248,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-kabuto-vs-itachi',
     worldId: 'world-naruto',
-    title: 'Itachi e Sasuke vs Kabuto',
-    description:
-      'Itachi (Edo Tensei) e Sasuke sigillano Kabuto, interrompendo l\'Edo Tensei.',
-    period: 'Quarta Guerra Ninja',
+    title: { it: 'Itachi e Sasuke vs Kabuto', en: 'Itachi and Sasuke vs Kabuto' },
+    description: {
+      it: 'Itachi (Edo Tensei) e Sasuke sigillano Kabuto, interrompendo l\'Edo Tensei.',
+      en: 'Itachi (Edo Tensei) and Sasuke seal Kabuto, stopping the Edo Tensei.',
+    },
+    period: { it: 'Quarta Guerra Ninja', en: 'Fourth Shinobi World War' },
     arcId: 'arc-fourth-war',
     mangaChapters: ['579-593'],
     animeEpisodes: ['Shippuden ep. 338-339'],
@@ -1106,10 +1266,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-fourth-war-bijuu',
     worldId: 'world-naruto',
-    title: 'I bijū tornano liberi',
-    description:
-      'Naruto libera i bijū dal Gedo Mazo dopo aver fermato lo Tsuki no Me.',
-    period: 'Quarta Guerra Ninja',
+    title: { it: 'I bijū tornano liberi', en: 'The tailed beasts are freed' },
+    description: {
+      it: 'Naruto libera i bijū dal Gedo Mazo dopo aver fermato lo Tsuki no Me.',
+      en: 'Naruto frees the tailed beasts from the Gedo Mazo after stopping the Eye of the Moon plan.',
+    },
+    period: { it: 'Quarta Guerra Ninja', en: 'Fourth Shinobi World War' },
     arcId: 'arc-fourth-war-climax',
     mangaChapters: ['692'],
     animeEpisodes: ['Shippuden ep. 473'],
@@ -1121,10 +1283,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-konoha-rebuilt',
     worldId: 'world-naruto',
-    title: 'Konoha ricostruita',
-    description:
-      'Yamato e i ninja Mokuton aiutano a ricostruire il villaggio dopo Pain e la guerra.',
-    period: 'Post-war',
+    title: { it: 'Konoha ricostruita', en: 'Konoha rebuilt' },
+    description: {
+      it: 'Yamato e i ninja Mokuton aiutano a ricostruire il villaggio dopo Pain e la guerra.',
+      en: 'Yamato and the Wood Release ninja help rebuild the village after Pain and the war.',
+    },
+    period: { it: 'Post-war', en: 'Post-war' },
     arcId: 'arc-post-war',
     mangaChapters: ['699-700'],
     animeEpisodes: ['Shippuden ep. 479-480'],
@@ -1136,10 +1300,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-anbu-shadow',
     worldId: 'world-naruto',
-    title: 'Operazioni segrete ANBU',
-    description:
-      'Numerose missioni ANBU eseguite nell\'ombra. Riferimenti narrativi sparsi.',
-    period: 'Naruto Parte I',
+    title: { it: 'Operazioni segrete ANBU', en: 'Secret ANBU operations' },
+    description: {
+      it: 'Numerose missioni ANBU eseguite nell\'ombra. Riferimenti narrativi sparsi.',
+      en: 'Numerous ANBU missions carried out in the shadows. Scattered narrative references.',
+    },
+    period: { it: 'Naruto Parte I', en: 'Naruto Part I' },
     animeEpisodes: ['ep. 1-220'],
     factionIds: ['faction-anbu'],
     order: 71,
@@ -1150,10 +1316,15 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-snow-movie',
     worldId: 'world-naruto',
-    title: 'Missione nel Paese della Neve (movie)',
-    description:
-      'Team 7 protegge la principessa Koyuki, futura erede dello Yukigakure.',
-    period: 'Naruto Parte I',
+    title: {
+      it: 'Missione nel Paese della Neve (movie)',
+      en: 'Mission in the Land of Snow (movie)',
+    },
+    description: {
+      it: 'Team 7 protegge la principessa Koyuki, futura erede dello Yukigakure.',
+      en: 'Team 7 protects Princess Koyuki, future heir of Yukigakure.',
+    },
+    period: { it: 'Naruto Parte I', en: 'Naruto Part I' },
     animeEpisodes: ['Film 1'],
     locationId: 'loc-yuki',
     characterIds: ['char-naruto', 'char-sasuke', 'char-sakura', 'char-kakashi'],
@@ -1165,10 +1336,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-demons-movie',
     worldId: 'world-naruto',
-    title: 'Sigillamento di Moryo (movie)',
-    description:
-      'Naruto scorta la sacerdotessa Shion nel Paese dei Demoni per sigillare Moryo.',
-    period: 'Naruto Shippuden',
+    title: { it: 'Sigillamento di Moryo (movie)', en: 'Sealing of Moryo (movie)' },
+    description: {
+      it: 'Naruto scorta la sacerdotessa Shion nel Paese dei Demoni per sigillare Moryo.',
+      en: 'Naruto escorts the priestess Shion to the Land of Demons to seal Moryo.',
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     animeEpisodes: ['Film 4'],
     characterIds: ['char-naruto'],
     order: 73,
@@ -1179,10 +1352,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-sky-movie',
     worldId: 'world-naruto',
-    title: 'Bonds · Sky ninja (movie)',
-    description:
-      'Movie Shippuden con i ninja del Cielo. Marcato come movie/anime-only.',
-    period: 'Naruto Shippuden',
+    title: { it: 'Bonds · Sky ninja (movie)', en: 'Bonds · Sky ninja (movie)' },
+    description: {
+      it: 'Movie Shippuden con i ninja del Cielo. Marcato come movie/anime-only.',
+      en: 'Shippuden movie featuring the ninja of the Sky. Marked as movie/anime-only.',
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     animeEpisodes: ['Film 5'],
     locationId: 'loc-sora',
     order: 74,
@@ -1193,10 +1368,15 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-hidan-burial',
     worldId: 'world-naruto',
-    title: 'Hidan sepolto nella fossa del clan Nara',
-    description:
-      'Hidan, immortale ma immobilizzato, resta sepolto nei pressi della foresta Nara.',
-    period: 'Naruto Shippuden',
+    title: {
+      it: 'Hidan sepolto nella fossa del clan Nara',
+      en: "Hidan buried in the Nara clan's pit",
+    },
+    description: {
+      it: 'Hidan, immortale ma immobilizzato, resta sepolto nei pressi della foresta Nara.',
+      en: 'Hidan, immortal but immobilised, remains buried near the Nara forest.',
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     arcId: 'arc-akatsuki-suppression',
     mangaChapters: ['339-342'],
     animeEpisodes: ['Shippuden ep. 85-88'],
@@ -1209,10 +1389,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-tobi-revealed-to-kakashi',
     worldId: 'world-naruto',
-    title: 'Kakashi affronta la verità su Obito',
-    description:
-      'Kakashi scopre che il suo ex compagno è dietro la maschera di Tobi.',
-    period: 'Quarta Guerra Ninja',
+    title: { it: 'Kakashi affronta la verità su Obito', en: 'Kakashi faces the truth about Obito' },
+    description: {
+      it: 'Kakashi scopre che il suo ex compagno è dietro la maschera di Tobi.',
+      en: "Kakashi discovers that his former teammate is behind Tobi's mask.",
+    },
+    period: { it: 'Quarta Guerra Ninja', en: 'Fourth Shinobi World War' },
     arcId: 'arc-fourth-war',
     mangaChapters: ['597-602'],
     animeEpisodes: ['Shippuden ep. 343-346'],
@@ -1224,10 +1406,15 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-naruto-becomes-symbol',
     worldId: 'world-naruto',
-    title: 'Naruto è riconosciuto come eroe del villaggio',
-    description:
-      'Dopo Pain, Naruto è acclamato dagli abitanti come salvatore di Konoha.',
-    period: 'Naruto Shippuden',
+    title: {
+      it: 'Naruto è riconosciuto come eroe del villaggio',
+      en: "Naruto is recognised as the village's hero",
+    },
+    description: {
+      it: 'Dopo Pain, Naruto è acclamato dagli abitanti come salvatore di Konoha.',
+      en: "After Pain, Naruto is hailed by the villagers as Konoha's saviour.",
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     arcId: 'arc-pain-assault',
     mangaChapters: ['449'],
     animeEpisodes: ['Shippuden ep. 175'],
@@ -1240,10 +1427,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-iron-summit-attack',
     worldId: 'world-naruto',
-    title: 'Attacco di Sasuke al Summit',
-    description:
-      'Taka attacca il Summit dei Kage nel Paese del Ferro per uccidere Danzo.',
-    period: 'Naruto Shippuden',
+    title: { it: 'Attacco di Sasuke al Summit', en: "Sasuke's attack on the Summit" },
+    description: {
+      it: 'Taka attacca il Summit dei Kage nel Paese del Ferro per uccidere Danzo.',
+      en: 'Taka attacks the Kage Summit in the Land of Iron to kill Danzo.',
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     arcId: 'arc-five-kage-summit',
     mangaChapters: ['454-464'],
     animeEpisodes: ['Shippuden ep. 197-204'],
@@ -1256,10 +1445,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-danzo-vs-sasuke',
     worldId: 'world-naruto',
-    title: 'Sasuke vs Danzo',
-    description:
-      'Sasuke uccide Danzo, custode del Kotoamatsukami e degli Sharingan di Shisui.',
-    period: 'Naruto Shippuden',
+    title: { it: 'Sasuke vs Danzo', en: 'Sasuke vs Danzo' },
+    description: {
+      it: 'Sasuke uccide Danzo, custode del Kotoamatsukami e degli Sharingan di Shisui.',
+      en: "Sasuke kills Danzo, keeper of Kotoamatsukami and of Shisui's Sharingan.",
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     arcId: 'arc-five-kage-summit',
     mangaChapters: ['474-483'],
     animeEpisodes: ['Shippuden ep. 209-214'],
@@ -1271,10 +1462,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-boruto-bridge',
     worldId: 'world-naruto',
-    title: 'Inizio dell\'era Boruto',
-    description:
-      'Una nuova generazione prende il posto dei genitori. Estensione fuori dall\'arco principale.',
-    period: 'Post-war',
+    title: { it: 'Inizio dell\'era Boruto', en: 'Start of the Boruto era' },
+    description: {
+      it: 'Una nuova generazione prende il posto dei genitori. Estensione fuori dall\'arco principale.',
+      en: "A new generation takes its parents' place. An extension beyond the main story.",
+    },
+    period: { it: 'Post-war', en: 'Post-war' },
     arcId: 'arc-naruto-hokage',
     mangaChapters: ['700'],
     animeEpisodes: ['Shippuden ep. 500'],
@@ -1290,10 +1483,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-indra-asura-conflict',
     worldId: 'world-naruto',
-    title: 'Inizio del conflitto Indra-Asura',
-    description:
-      'Hagoromo nomina erede Asura. Indra si ribella. Le due stirpi iniziano una rivalità che si reincarnerà in Madara/Hashirama, poi Sasuke/Naruto.',
-    period: 'Pre-series',
+    title: { it: 'Inizio del conflitto Indra-Asura', en: 'Start of the Indra–Asura conflict' },
+    description: {
+      it: 'Hagoromo nomina erede Asura. Indra si ribella. Le due stirpi iniziano una rivalità che si reincarnerà in Madara/Hashirama, poi Sasuke/Naruto.',
+      en: 'Hagoromo names Asura his heir. Indra rebels. The two lineages begin a rivalry that will be reincarnated in Madara/Hashirama, then Sasuke/Naruto.',
+    },
+    period: { it: 'Pre-serie', en: 'Pre-series' },
     arcId: 'arc-pre-series',
     mangaChapters: ['462-464', '671'],
     animeEpisodes: ['Shippuden ep. 420-422', 'Shippuden ep. 462'],
@@ -1306,10 +1501,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-first-shinobi-war',
     worldId: 'world-naruto',
-    title: 'Prima Guerra Ninja',
-    description:
-      'Conflitto seguito alla morte di Hashirama. Stabilità imposta dalle Cinque Nazioni.',
-    period: 'Pre-series',
+    title: { it: 'Prima Guerra Ninja', en: 'First Shinobi World War' },
+    description: {
+      it: 'Conflitto seguito alla morte di Hashirama. Stabilità imposta dalle Cinque Nazioni.',
+      en: "A conflict that followed Hashirama's death. Stability imposed by the Five Nations.",
+    },
+    period: { it: 'Pre-serie', en: 'Pre-series' },
     arcId: 'arc-pre-series',
     mangaChapters: ['518-520'],
     animeEpisodes: ['Shippuden ep. 253-254'],
@@ -1321,10 +1518,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-second-shinobi-war',
     worldId: 'world-naruto',
-    title: 'Seconda Guerra Ninja',
-    description:
-      'Conflitto in cui combattono i Sannin sotto Hiruzen. Origine dei loro nomi leggendari (Hanzo li battezza Sannin).',
-    period: 'Pre-series',
+    title: { it: 'Seconda Guerra Ninja', en: 'Second Shinobi World War' },
+    description: {
+      it: 'Conflitto in cui combattono i Sannin sotto Hiruzen. Origine dei loro nomi leggendari (Hanzo li battezza Sannin).',
+      en: 'The conflict in which the Sannin fought under Hiruzen. The origin of their legendary names (Hanzo christened them Sannin).',
+    },
+    period: { it: 'Pre-serie', en: 'Pre-series' },
     arcId: 'arc-pre-series',
     mangaChapters: ['382-383'],
     animeEpisodes: ['Shippuden ep. 127-128'],
@@ -1337,10 +1536,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-tobirama-team',
     worldId: 'world-naruto',
-    title: 'Il Team di Tobirama',
-    description:
-      'Hiruzen, Danzo, Koharu e Homura sono formati dal Secondo Hokage.',
-    period: 'Pre-series',
+    title: { it: 'Il Team di Tobirama', en: "Tobirama's team" },
+    description: {
+      it: 'Hiruzen, Danzo, Koharu e Homura sono formati dal Secondo Hokage.',
+      en: 'Hiruzen, Danzo, Koharu and Homura are trained by the Second Hokage.',
+    },
+    period: { it: 'Pre-serie', en: 'Pre-series' },
     arcId: 'arc-pre-series',
     mangaChapters: ['399-402'],
     animeEpisodes: ['Shippuden ep. 343-346'],
@@ -1353,10 +1554,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-foundation-of-suna',
     worldId: 'world-naruto',
-    title: 'Fondazione di Sunagakure',
-    description:
-      'Il Daimyō del Vento istituisce il villaggio ninja della Sabbia.',
-    period: 'Pre-series',
+    title: { it: 'Fondazione di Sunagakure', en: 'Founding of Sunagakure' },
+    description: {
+      it: 'Il Daimyō del Vento istituisce il villaggio ninja della Sabbia.',
+      en: 'The Wind Daimyō establishes the ninja village of the Sand.',
+    },
+    period: { it: 'Pre-serie', en: 'Pre-series' },
     arcId: 'arc-pre-series',
     mangaChapters: ['97-100'],
     animeEpisodes: ['ep. 55-56'],
@@ -1370,10 +1573,15 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-foundation-other-villages',
     worldId: 'world-naruto',
-    title: 'Fondazione dei Cinque Villaggi Nascosti',
-    description:
-      'Dopo Konoha, gli altri villaggi nascosti vengono istituiti dalle rispettive grandi nazioni.',
-    period: 'Pre-series',
+    title: {
+      it: 'Fondazione dei Cinque Villaggi Nascosti',
+      en: 'Founding of the Five Hidden Villages',
+    },
+    description: {
+      it: 'Dopo Konoha, gli altri villaggi nascosti vengono istituiti dalle rispettive grandi nazioni.',
+      en: 'After Konoha, the other hidden villages are established by their respective great nations.',
+    },
+    period: { it: 'Pre-serie', en: 'Pre-series' },
     arcId: 'arc-pre-series',
     mangaChapters: ['399-402'],
     animeEpisodes: ['Shippuden ep. 343-346'],
@@ -1386,10 +1594,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-hanzo-fight-sannin',
     worldId: 'world-naruto',
-    title: 'Hanzo battezza i Sannin',
-    description:
-      'Durante la Seconda Guerra, Hanzo della Salamandra riconosce Jiraiya, Tsunade e Orochimaru come "Tre Ninja Leggendari".',
-    period: 'Pre-series',
+    title: { it: 'Hanzo battezza i Sannin', en: 'Hanzo christens the Sannin' },
+    description: {
+      it: 'Durante la Seconda Guerra, Hanzo della Salamandra riconosce Jiraiya, Tsunade e Orochimaru come "Tre Ninja Leggendari".',
+      en: 'During the Second War, Hanzo of the Salamander recognises Jiraiya, Tsunade and Orochimaru as the "Three Legendary Ninja".',
+    },
+    period: { it: 'Pre-serie', en: 'Pre-series' },
     arcId: 'arc-pre-series',
     mangaChapters: ['170-171'],
     animeEpisodes: ['ep. 96-97'],
@@ -1401,10 +1611,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-jiraiya-trains-orphans',
     worldId: 'world-naruto',
-    title: 'Jiraiya addestra gli Orfani di Ame',
-    description:
-      'Yahiko, Konan e Nagato vengono allenati da Jiraiya prima che lui torni a Konoha.',
-    period: 'Pre-series',
+    title: { it: 'Jiraiya addestra gli Orfani di Ame', en: 'Jiraiya trains the Orphans of Ame' },
+    description: {
+      it: 'Yahiko, Konan e Nagato vengono allenati da Jiraiya prima che lui torni a Konoha.',
+      en: 'Yahiko, Konan and Nagato are trained by Jiraiya before he returns to Konoha.',
+    },
+    period: { it: 'Pre-serie', en: 'Pre-series' },
     arcId: 'arc-pre-series',
     mangaChapters: ['372-374'],
     animeEpisodes: ['Shippuden ep. 127-128'],
@@ -1417,10 +1629,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-yahiko-death',
     worldId: 'world-naruto',
-    title: 'Morte di Yahiko',
-    description:
-      'Yahiko viene ucciso. Nagato adotta il nome di "Pain" e prende il controllo dell\'Akatsuki originale.',
-    period: 'Pre-series',
+    title: { it: 'Morte di Yahiko', en: 'Death of Yahiko' },
+    description: {
+      it: 'Yahiko viene ucciso. Nagato adotta il nome di "Pain" e prende il controllo dell\'Akatsuki originale.',
+      en: 'Yahiko is killed. Nagato takes the name "Pain" and seizes control of the original Akatsuki.',
+    },
+    period: { it: 'Pre-serie', en: 'Pre-series' },
     arcId: 'arc-pre-series',
     mangaChapters: ['444-447'],
     animeEpisodes: ['Shippuden ep. 349-351'],
@@ -1433,10 +1647,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-shisui-death',
     worldId: 'world-naruto',
-    title: 'Morte di Shisui Uchiha',
-    description:
-      'Shisui muore lasciando a Itachi un occhio col Kotoamatsukami. Itachi viene incolpato.',
-    period: 'Pre-series',
+    title: { it: 'Morte di Shisui Uchiha', en: 'Death of Shisui Uchiha' },
+    description: {
+      it: 'Shisui muore lasciando a Itachi un occhio col Kotoamatsukami. Itachi viene incolpato.',
+      en: 'Shisui dies, leaving Itachi an eye with Kotoamatsukami. Itachi is blamed.',
+    },
+    period: { it: 'Pre-serie', en: 'Pre-series' },
     arcId: 'arc-pre-series',
     mangaChapters: ['220-222'],
     animeEpisodes: ['Shippuden ep. 452-456'],
@@ -1449,10 +1665,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-itachi-anbu-captain',
     worldId: 'world-naruto',
-    title: 'Itachi promosso capitano ANBU',
-    description:
-      'A 13 anni Itachi diventa capitano ANBU. Coordina il doppio gioco prima del massacro.',
-    period: 'Pre-series',
+    title: { it: 'Itachi promosso capitano ANBU', en: 'Itachi promoted to ANBU captain' },
+    description: {
+      it: 'A 13 anni Itachi diventa capitano ANBU. Coordina il doppio gioco prima del massacro.',
+      en: 'At 13, Itachi becomes an ANBU captain. He plays his double game before the massacre.',
+    },
+    period: { it: 'Pre-serie', en: 'Pre-series' },
     arcId: 'arc-pre-series',
     mangaChapters: ['222-225'],
     animeEpisodes: ['Shippuden ep. 452-456'],
@@ -1468,10 +1686,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-mizuki-scroll',
     worldId: 'world-naruto',
-    title: 'Mizuki ruba il Pergamena dei Sigilli',
-    description:
-      'Mizuki inganna Naruto. Iruka difende Naruto e questi padroneggia il Kage Bunshin.',
-    period: 'Naruto Parte I',
+    title: { it: 'Mizuki ruba la Pergamena dei Sigilli', en: 'Mizuki steals the Scroll of Seals' },
+    description: {
+      it: 'Mizuki inganna Naruto. Iruka difende Naruto e questi padroneggia il Kage Bunshin.',
+      en: 'Mizuki deceives Naruto. Iruka defends Naruto, who masters the Shadow Clone Technique.',
+    },
+    period: { it: 'Naruto Parte I', en: 'Naruto Part I' },
     arcId: 'arc-prologue',
     mangaChapters: ['1'],
     animeEpisodes: ['ep. 1'],
@@ -1484,10 +1704,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-haku-zabuza-truce',
     worldId: 'world-naruto',
-    title: 'Tregua di Haku e Zabuza',
-    description:
-      'Sul ponte del Paese delle Onde Haku si sacrifica per Zabuza. Zabuza si pente.',
-    period: 'Naruto Parte I',
+    title: { it: 'Tregua di Haku e Zabuza', en: 'The truce of Haku and Zabuza' },
+    description: {
+      it: 'Sul ponte del Paese delle Onde Haku si sacrifica per Zabuza. Zabuza si pente.',
+      en: 'On the bridge in the Land of Waves, Haku sacrifices himself for Zabuza. Zabuza repents.',
+    },
+    period: { it: 'Naruto Parte I', en: 'Naruto Part I' },
     arcId: 'arc-prologue',
     mangaChapters: ['29-32'],
     animeEpisodes: ['ep. 18-19'],
@@ -1500,10 +1722,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-curse-mark-given',
     worldId: 'world-naruto',
-    title: 'Sasuke riceve il Sigillo Maledetto',
-    description:
-      'Orochimaru morde Sasuke nella Foresta della Morte imprimendogli il Sigillo Maledetto del Cielo.',
-    period: 'Naruto Parte I',
+    title: { it: 'Sasuke riceve il Sigillo Maledetto', en: 'Sasuke receives the Curse Mark' },
+    description: {
+      it: 'Orochimaru morde Sasuke nella Foresta della Morte imprimendogli il Sigillo Maledetto del Cielo.',
+      en: 'Orochimaru bites Sasuke in the Forest of Death, branding him with the Curse Mark of Heaven.',
+    },
+    period: { it: 'Naruto Parte I', en: 'Naruto Part I' },
     arcId: 'arc-chunin-exams',
     mangaChapters: ['49-50'],
     animeEpisodes: ['ep. 30-31'],
@@ -1516,10 +1740,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-rock-lee-vs-gaara',
     worldId: 'world-naruto',
-    title: 'Rock Lee vs Gaara',
-    description:
-      'Rock Lee usa gli Otto Cancelli contro Gaara. Sconfitto, finisce in ospedale gravemente ferito.',
-    period: 'Naruto Parte I',
+    title: { it: 'Rock Lee vs Gaara', en: 'Rock Lee vs Gaara' },
+    description: {
+      it: 'Rock Lee usa gli Otto Cancelli contro Gaara. Sconfitto, finisce in ospedale gravemente ferito.',
+      en: 'Rock Lee uses the Eight Gates against Gaara. Defeated, he ends up in hospital badly injured.',
+    },
+    period: { it: 'Naruto Parte I', en: 'Naruto Part I' },
     arcId: 'arc-chunin-exams',
     mangaChapters: ['84-86'],
     animeEpisodes: ['ep. 48-50'],
@@ -1532,10 +1758,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-neji-vs-hinata',
     worldId: 'world-naruto',
-    title: 'Neji vs Hinata',
-    description:
-      'Preliminari Chunin: scontro fra cugini Hyuga.',
-    period: 'Naruto Parte I',
+    title: { it: 'Neji vs Hinata', en: 'Neji vs Hinata' },
+    description: {
+      it: 'Preliminari Chunin: scontro fra cugini Hyuga.',
+      en: 'Chunin preliminaries: a clash between Hyuga cousins.',
+    },
+    period: { it: 'Naruto Parte I', en: 'Naruto Part I' },
     arcId: 'arc-chunin-exams',
     mangaChapters: ['78-80'],
     animeEpisodes: ['ep. 44-45'],
@@ -1548,10 +1776,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-asuma-death',
     worldId: 'world-naruto',
-    title: 'Morte di Asuma Sarutobi',
-    description:
-      'Asuma cade per mano di Hidan. Lascia un\'eredità a Shikamaru e un figlio non ancora nato.',
-    period: 'Naruto Shippuden',
+    title: { it: 'Morte di Asuma Sarutobi', en: 'Death of Asuma Sarutobi' },
+    description: {
+      it: 'Asuma cade per mano di Hidan. Lascia un\'eredità a Shikamaru e un figlio non ancora nato.',
+      en: "Asuma falls at Hidan's hands. He leaves a legacy to Shikamaru and a child yet to be born.",
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     arcId: 'arc-akatsuki-suppression',
     mangaChapters: ['329-330'],
     animeEpisodes: ['Shippuden ep. 80-81'],
@@ -1563,10 +1793,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-sasori-defeat',
     worldId: 'world-naruto',
-    title: 'Sconfitta di Sasori',
-    description:
-      'Sakura e Lady Chiyo sconfiggono Sasori. Lady Chiyo cede la vita per riportare Gaara.',
-    period: 'Naruto Shippuden',
+    title: { it: 'Sconfitta di Sasori', en: 'Defeat of Sasori' },
+    description: {
+      it: 'Sakura e Lady Chiyo sconfiggono Sasori. Lady Chiyo cede la vita per riportare Gaara.',
+      en: 'Sakura and Lady Chiyo defeat Sasori. Lady Chiyo gives her life to bring Gaara back.',
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     arcId: 'arc-kazekage-rescue',
     mangaChapters: ['262-281'],
     animeEpisodes: ['Shippuden ep. 20-32'],
@@ -1579,10 +1811,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-naruto-rasenshuriken',
     worldId: 'world-naruto',
-    title: 'Naruto padroneggia il Rasenshuriken',
-    description:
-      'Allenamento di Naruto e Yamato. Sviluppo del Wind Release: Rasenshuriken.',
-    period: 'Naruto Shippuden',
+    title: { it: 'Naruto padroneggia il Rasenshuriken', en: 'Naruto masters the Rasenshuriken' },
+    description: {
+      it: 'Allenamento di Naruto e Yamato. Sviluppo del Wind Release: Rasenshuriken.',
+      en: 'Naruto trains with Yamato. Development of Wind Release: Rasenshuriken.',
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     arcId: 'arc-akatsuki-suppression',
     mangaChapters: ['318-325'],
     animeEpisodes: ['Shippuden ep. 72-76'],
@@ -1594,10 +1828,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-konan-defeat',
     worldId: 'world-naruto',
-    title: 'Konan affronta Obito',
-    description:
-      'Konan tenta di vendicare Yahiko e Nagato attaccando Obito ad Amegakure. Muore in battaglia.',
-    period: 'Naruto Shippuden',
+    title: { it: 'Konan affronta Obito', en: 'Konan confronts Obito' },
+    description: {
+      it: 'Konan tenta di vendicare Yahiko e Nagato attaccando Obito ad Amegakure. Muore in battaglia.',
+      en: 'Konan tries to avenge Yahiko and Nagato by attacking Obito in Amegakure. She dies in battle.',
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     arcId: 'arc-fated-brothers',
     mangaChapters: ['509-510'],
     animeEpisodes: ['Shippuden ep. 252-253'],
@@ -1610,10 +1846,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-killer-b-vs-taka',
     worldId: 'world-naruto',
-    title: 'Taka attacca Killer B',
-    description:
-      'La squadra di Sasuke tenta di catturare il jinchūriki delle Otto Code.',
-    period: 'Naruto Shippuden',
+    title: { it: 'Taka attacca Killer B', en: 'Taka attacks Killer B' },
+    description: {
+      it: 'La squadra di Sasuke tenta di catturare il jinchūriki delle Otto Code.',
+      en: "Sasuke's team tries to capture the Eight-Tails' jinchūriki.",
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     arcId: 'arc-fated-brothers',
     mangaChapters: ['410-413'],
     animeEpisodes: ['Shippuden ep. 143-144'],
@@ -1626,10 +1864,15 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-naruto-vs-pain-ame',
     worldId: 'world-naruto',
-    title: 'Naruto entra in Sage Mode contro Pain',
-    description:
-      'Naruto attiva la Sage Mode appresa al Monte Myōboku e sconfigge i Sei Cammini.',
-    period: 'Naruto Shippuden',
+    title: {
+      it: 'Naruto entra in Sage Mode contro Pain',
+      en: 'Naruto enters Sage Mode against Pain',
+    },
+    description: {
+      it: 'Naruto attiva la Sage Mode appresa al Monte Myōboku e sconfigge i Sei Cammini.',
+      en: 'Naruto activates the Sage Mode he learned on Mount Myōboku and defeats the Six Paths.',
+    },
+    period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     arcId: 'arc-pain-assault',
     mangaChapters: ['430-449'],
     animeEpisodes: ['Shippuden ep. 163-175'],
@@ -1642,10 +1885,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-neji-sacrifice',
     worldId: 'world-naruto',
-    title: 'Sacrificio di Neji Hyuga',
-    description:
-      'Neji muore proteggendo Naruto e Hinata da un attacco delle Dieci Code.',
-    period: 'Quarta Guerra Ninja',
+    title: { it: 'Sacrificio di Neji Hyuga', en: "Neji Hyuga's sacrifice" },
+    description: {
+      it: 'Neji muore proteggendo Naruto e Hinata da un attacco delle Dieci Code.',
+      en: 'Neji dies protecting Naruto and Hinata from a Ten-Tails attack.',
+    },
+    period: { it: 'Quarta Guerra Ninja', en: 'Fourth Shinobi World War' },
     arcId: 'arc-fourth-war',
     mangaChapters: ['614'],
     animeEpisodes: ['Shippuden ep. 364'],
@@ -1658,10 +1903,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-naruto-sasuke-alliance',
     worldId: 'world-naruto',
-    title: 'Alleanza Naruto / Sasuke',
-    description:
-      'Itachi (Edo Tensei) convince Sasuke a unirsi alla guerra. Sasuke arriva sul campo a fianco di Naruto.',
-    period: 'Quarta Guerra Ninja',
+    title: { it: 'Alleanza Naruto / Sasuke', en: 'Naruto / Sasuke alliance' },
+    description: {
+      it: 'Itachi (Edo Tensei) convince Sasuke a unirsi alla guerra. Sasuke arriva sul campo a fianco di Naruto.',
+      en: 'Itachi (Edo Tensei) convinces Sasuke to join the war. Sasuke arrives on the battlefield alongside Naruto.',
+    },
+    period: { it: 'Quarta Guerra Ninja', en: 'Fourth Shinobi World War' },
     arcId: 'arc-fourth-war-climax',
     mangaChapters: ['619-628'],
     animeEpisodes: ['Shippuden ep. 370-375'],
@@ -1674,10 +1921,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-team-7-reunited',
     worldId: 'world-naruto',
-    title: 'Team 7 riunito sul fronte',
-    description:
-      'Naruto, Sasuke, Sakura e Kakashi combattono fianco a fianco per la prima volta da anni.',
-    period: 'Quarta Guerra Ninja',
+    title: { it: 'Team 7 riunito sul fronte', en: 'Team 7 reunited on the front line' },
+    description: {
+      it: 'Naruto, Sasuke, Sakura e Kakashi combattono fianco a fianco per la prima volta da anni.',
+      en: 'Naruto, Sasuke, Sakura and Kakashi fight side by side for the first time in years.',
+    },
+    period: { it: 'Quarta Guerra Ninja', en: 'Fourth Shinobi World War' },
     arcId: 'arc-fourth-war-climax',
     mangaChapters: ['631-632'],
     animeEpisodes: ['Shippuden ep. 378'],
@@ -1690,10 +1939,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-kakashi-double-mangekyo',
     worldId: 'world-naruto',
-    title: 'Kakashi riceve il doppio Mangekyō',
-    description:
-      'Obito trasferisce a Kakashi gli occhi col Mangekyō Sharingan completo. Susanoo "Perfect" temporaneo.',
-    period: 'Quarta Guerra Ninja',
+    title: { it: 'Kakashi riceve il doppio Mangekyō', en: 'Kakashi receives the double Mangekyō' },
+    description: {
+      it: 'Obito trasferisce a Kakashi gli occhi col Mangekyō Sharingan completo. Susanoo "Perfect" temporaneo.',
+      en: 'Obito transfers his eyes with the complete Mangekyō Sharingan to Kakashi. A temporary "Perfect" Susanoo.',
+    },
+    period: { it: 'Quarta Guerra Ninja', en: 'Fourth Shinobi World War' },
     arcId: 'arc-fourth-war-climax',
     mangaChapters: ['688-690'],
     animeEpisodes: ['Shippuden ep. 471-472'],
@@ -1705,10 +1956,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-sasuke-rinnegan',
     worldId: 'world-naruto',
-    title: 'Sasuke ottiene il Rinnegan',
-    description:
-      'Hagoromo dona a Sasuke metà del suo potere, attivando il Rinnegan dell\'occhio sinistro.',
-    period: 'Quarta Guerra Ninja',
+    title: { it: 'Sasuke ottiene il Rinnegan', en: 'Sasuke obtains the Rinnegan' },
+    description: {
+      it: 'Hagoromo dona a Sasuke metà del suo potere, attivando il Rinnegan dell\'occhio sinistro.',
+      en: 'Hagoromo gives Sasuke half of his power, activating the Rinnegan in his left eye.',
+    },
+    period: { it: 'Quarta Guerra Ninja', en: 'Fourth Shinobi World War' },
     arcId: 'arc-fourth-war-climax',
     mangaChapters: ['671-674'],
     animeEpisodes: ['Shippuden ep. 421-424'],
@@ -1720,10 +1973,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-kakashi-becomes-hokage-elect',
     worldId: 'world-naruto',
-    title: 'Kakashi designato Sesto Hokage',
-    description:
-      'Dopo Kaguya, Kakashi viene nominato Sesto Hokage. Inizia la ricostruzione.',
-    period: 'Post-war',
+    title: { it: 'Kakashi designato Sesto Hokage', en: 'Kakashi named Sixth Hokage' },
+    description: {
+      it: 'Dopo Kaguya, Kakashi viene nominato Sesto Hokage. Inizia la ricostruzione.',
+      en: 'After Kaguya, Kakashi is appointed Sixth Hokage. Reconstruction begins.',
+    },
+    period: { it: 'Post-war', en: 'Post-war' },
     arcId: 'arc-post-war',
     mangaChapters: ['699-700'],
     animeEpisodes: ['Shippuden ep. 479-480'],
@@ -1736,10 +1991,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-naruto-loses-arm',
     worldId: 'world-naruto',
-    title: 'Naruto e Sasuke perdono un braccio',
-    description:
-      'Nel duello finale alla Valle della Fine entrambi perdono il braccio destro.',
-    period: 'Quarta Guerra Ninja',
+    title: { it: 'Naruto e Sasuke perdono un braccio', en: 'Naruto and Sasuke each lose an arm' },
+    description: {
+      it: 'Nel duello finale alla Valle della Fine entrambi perdono il braccio destro.',
+      en: 'In the final duel at the Valley of the End, both lose their right arm.',
+    },
+    period: { it: 'Quarta Guerra Ninja', en: 'Fourth Shinobi World War' },
     arcId: 'arc-final-battle',
     mangaChapters: ['696-699'],
     animeEpisodes: ['Shippuden ep. 476-479'],
@@ -1752,10 +2009,15 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-naruto-prosthetic-arm',
     worldId: 'world-naruto',
-    title: 'Tsunade crea il braccio di Hashirama per Naruto',
-    description:
-      'Naruto riceve un braccio costruito con cellule di Hashirama. Sasuke rifiuta.',
-    period: 'Post-war',
+    title: {
+      it: 'Tsunade crea il braccio di Hashirama per Naruto',
+      en: "Tsunade creates Hashirama's arm for Naruto",
+    },
+    description: {
+      it: 'Naruto riceve un braccio costruito con cellule di Hashirama. Sasuke rifiuta.',
+      en: "Naruto receives an arm built from Hashirama's cells. Sasuke refuses one.",
+    },
+    period: { it: 'Post-war', en: 'Post-war' },
     arcId: 'arc-post-war',
     mangaChapters: ['699-700'],
     animeEpisodes: ['Shippuden ep. 479-480'],
@@ -1768,10 +2030,12 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-naruto-hinata-wedding',
     worldId: 'world-naruto',
-    title: 'Matrimonio Naruto-Hinata',
-    description:
-      'A Konoha si celebra il matrimonio di Naruto e Hinata.',
-    period: 'Post-war',
+    title: { it: 'Matrimonio Naruto-Hinata', en: "Naruto and Hinata's wedding" },
+    description: {
+      it: 'A Konoha si celebra il matrimonio di Naruto e Hinata.',
+      en: "Naruto and Hinata's wedding is celebrated in Konoha.",
+    },
+    period: { it: 'Post-war', en: 'Post-war' },
     animeEpisodes: ['Shippuden ep. 500'],
     locationId: 'loc-konoha',
     characterIds: ['char-naruto', 'char-hinata'],

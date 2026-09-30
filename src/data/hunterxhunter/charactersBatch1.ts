@@ -116,7 +116,7 @@ export const hxhCharactersBatch1: Character[] = [
     family: ['char-hxh-killua', 'char-hxh-silva', 'char-hxh-kikyo'],
     arcIds: ['arc-hxh-election'],
     relationships: [
-      { targetCharacterId: 'char-hxh-killua', label: 'Fratello protettore' },
+      { targetCharacterId: 'char-hxh-killua', label: { it: 'Fratello protettore', en: 'Protective brother' } },
     ],
     status: 'alive',
     canonStatus: 'canon',
@@ -446,8 +446,8 @@ export const hxhCharactersBatch1: Character[] = [
     locationIds: ['loc-hxh-east-gorteau'],
     arcIds: ['arc-hxh-chimera-ant'],
     relationships: [
-      { targetCharacterId: 'char-hxh-komugi', label: 'Compagna di Gungi / legame' },
-      { targetCharacterId: 'char-hxh-netero', label: 'Avversario' },
+      { targetCharacterId: 'char-hxh-komugi', label: { it: 'Compagna di Gungi / legame', en: 'Gungi partner / bond' } },
+      { targetCharacterId: 'char-hxh-netero', label: { it: 'Avversario', en: 'Opponent' } },
     ],
     status: 'deceased',
     canonStatus: 'canon',
@@ -478,7 +478,7 @@ export const hxhCharactersBatch1: Character[] = [
     locationIds: ['loc-hxh-east-gorteau'],
     arcIds: ['arc-hxh-chimera-ant'],
     relationships: [
-      { targetCharacterId: 'char-hxh-gon', label: 'Avversario finale' },
+      { targetCharacterId: 'char-hxh-gon', label: { it: 'Avversario finale', en: 'Final opponent' } },
     ],
     status: 'deceased',
     canonStatus: 'canon',
@@ -546,7 +546,7 @@ export const hxhCharactersBatch1: Character[] = [
     locationIds: ['loc-hxh-east-gorteau'],
     arcIds: ['arc-hxh-chimera-ant'],
     relationships: [
-      { targetCharacterId: 'char-hxh-meruem', label: 'Legame col Re' },
+      { targetCharacterId: 'char-hxh-meruem', label: { it: 'Legame col Re', en: 'Bond with the King' } },
     ],
     status: 'deceased',
     canonStatus: 'canon',

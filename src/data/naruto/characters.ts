@@ -32,10 +32,14 @@ export const narutoCharacters: Character[] = [
     rank: 'Hokage (Settimo)',
     ninjaRank: 'kage',
     generation: 'Konoha 11',
-    shortDescription:
-      'Protagonista. Jinchūriki di Kurama, ninja della Foglia, futuro Settimo Hokage.',
-    longDescription:
-      'Cresciuto orfano e isolato, Naruto diventa simbolo di volontà, fratellanza e perdono. Apprende il Rasengan da Jiraiya, evolve in Sage Mode, in Six Paths Mode e collabora con Kurama.',
+    shortDescription: {
+      it: 'Protagonista. Jinchūriki di Kurama, ninja della Foglia, futuro Settimo Hokage.',
+      en: "Protagonist. Kurama's jinchūriki, Leaf ninja and future Seventh Hokage.",
+    },
+    longDescription: {
+      it: 'Cresciuto orfano e isolato, Naruto diventa simbolo di volontà, fratellanza e perdono. Apprende il Rasengan da Jiraiya, evolve in Sage Mode, in Six Paths Mode e collabora con Kurama.',
+      en: 'Raised as a lonely orphan, Naruto becomes a symbol of willpower, brotherhood and forgiveness. He learns the Rasengan from Jiraiya, evolves into Sage Mode and Six Paths Mode, and works together with Kurama.',
+    },
     abilities: ['Rasengan', 'Rasenshuriken', 'Sage Mode', 'Kage Bunshin', 'Six Paths Mode'],
     jutsuIds: [
       'jutsu-kage-bunshin', 'jutsu-rasengan', 'jutsu-rasenshuriken',
@@ -71,13 +75,13 @@ export const narutoCharacters: Character[] = [
       'route-fourth-war',
     ],
     relationships: [
-      { targetCharacterId: 'char-sasuke', label: 'Rivale / Migliore amico' },
-      { targetCharacterId: 'char-sakura', label: 'Compagna di team' },
-      { targetCharacterId: 'char-kakashi', label: 'Sensei' },
-      { targetCharacterId: 'char-jiraiya', label: 'Maestro / Padrino' },
-      { targetCharacterId: 'char-minato', label: 'Padre' },
-      { targetCharacterId: 'char-kushina', label: 'Madre' },
-      { targetCharacterId: 'char-hinata', label: 'Sposa' },
+      { targetCharacterId: 'char-sasuke', label: { it: 'Rivale / Migliore amico', en: 'Rival / Best friend' } },
+      { targetCharacterId: 'char-sakura', label: { it: 'Compagna di team', en: 'Teammate' } },
+      { targetCharacterId: 'char-kakashi', label: { it: 'Sensei', en: 'Sensei' } },
+      { targetCharacterId: 'char-jiraiya', label: { it: 'Maestro / Padrino', en: 'Teacher / Godfather' } },
+      { targetCharacterId: 'char-minato', label: { it: 'Padre', en: 'Father' } },
+      { targetCharacterId: 'char-kushina', label: { it: 'Madre', en: 'Mother' } },
+      { targetCharacterId: 'char-hinata', label: { it: 'Sposa', en: 'Wife' } },
     ],
     status: 'alive',
     canonStatus: 'canon',
@@ -99,10 +103,14 @@ export const narutoCharacters: Character[] = [
     rank: 'Shinobi vagante',
     ninjaRank: 'missing_nin',
     generation: 'Konoha 11',
-    shortDescription:
-      'Ultimo sopravvissuto del massacro Uchiha, rivale e amico di Naruto.',
-    longDescription:
-      'Erede del clan Uchiha, perseguita inizialmente vendetta verso il fratello Itachi. La sua parabola lo porta dal Team 7 a Orochimaru, alla Foglia e infine al ruolo di "ombra Hokage".',
+    shortDescription: {
+      it: 'Ultimo sopravvissuto del massacro Uchiha, rivale e amico di Naruto.',
+      en: "Last survivor of the Uchiha massacre, Naruto's rival and friend.",
+    },
+    longDescription: {
+      it: 'Erede del clan Uchiha, perseguita inizialmente vendetta verso il fratello Itachi. La sua parabola lo porta dal Team 7 a Orochimaru, alla Foglia e infine al ruolo di "ombra Hokage".',
+      en: 'Heir of the Uchiha clan, he initially seeks revenge against his brother Itachi. His path takes him from Team 7 to Orochimaru, back to the Leaf and finally to the role of "shadow Hokage".',
+    },
     abilities: ['Sharingan', 'Mangekyō Sharingan', 'Rinnegan', 'Chidori', 'Amaterasu', 'Susanoo'],
     kekkeiGenkai: ['Sharingan'],
     jutsuIds: [
@@ -133,10 +141,10 @@ export const narutoCharacters: Character[] = [
     ],
     routeIds: ['route-sasuke-defection', 'route-sasuke-arc', 'route-final-battle'],
     relationships: [
-      { targetCharacterId: 'char-itachi', label: 'Fratello maggiore' },
-      { targetCharacterId: 'char-naruto', label: 'Rivale / Amico' },
-      { targetCharacterId: 'char-orochimaru', label: 'Mentore oscuro' },
-      { targetCharacterId: 'char-sakura', label: 'Sposa' },
+      { targetCharacterId: 'char-itachi', label: { it: 'Fratello maggiore', en: 'Older brother' } },
+      { targetCharacterId: 'char-naruto', label: { it: 'Rivale / Amico', en: 'Rival / Friend' } },
+      { targetCharacterId: 'char-orochimaru', label: { it: 'Mentore oscuro', en: 'Dark mentor' } },
+      { targetCharacterId: 'char-sakura', label: { it: 'Sposa', en: 'Wife' } },
     ],
     status: 'alive',
     canonStatus: 'canon',
@@ -156,8 +164,10 @@ export const narutoCharacters: Character[] = [
     rank: 'Medical-nin / Jonin',
     ninjaRank: 'jonin',
     generation: 'Konoha 11',
-    shortDescription:
-      'Ninja medico, allieva di Tsunade, membro del Team 7.',
+    shortDescription: {
+      it: 'Ninja medico, allieva di Tsunade, membro del Team 7.',
+      en: "Medical ninja, Tsunade's student, member of Team 7.",
+    },
     abilities: ['Medical Ninjutsu', 'Chakra Enhanced Strength', 'Byakugou'],
     jutsuIds: ['jutsu-mystical-palm', 'jutsu-yin-seal-release', 'jutsu-creation-rebirth', 'jutsu-healing-technique', 'jutsu-henge', 'jutsu-kawarimi'],
     teachers: ['char-kakashi', 'char-tsunade'],
@@ -166,9 +176,9 @@ export const narutoCharacters: Character[] = [
     arcIds: ['arc-prologue', 'arc-chunin-exams', 'arc-kazekage-rescue', 'arc-fourth-war'],
     routeIds: ['route-team7-waves', 'route-kazekage-rescue'],
     relationships: [
-      { targetCharacterId: 'char-tsunade', label: 'Maestra' },
-      { targetCharacterId: 'char-naruto', label: 'Compagno di team' },
-      { targetCharacterId: 'char-sasuke', label: 'Sposo' },
+      { targetCharacterId: 'char-tsunade', label: { it: 'Maestra', en: 'Teacher' } },
+      { targetCharacterId: 'char-naruto', label: { it: 'Compagno di team', en: 'Teammate' } },
+      { targetCharacterId: 'char-sasuke', label: { it: 'Sposo', en: 'Husband' } },
     ],
     status: 'alive',
     canonStatus: 'canon',
@@ -190,10 +200,14 @@ export const narutoCharacters: Character[] = [
     rank: 'Hokage (Sesto)',
     ninjaRank: 'kage',
     generation: 'Sannin-era apprentice',
-    shortDescription:
-      '"Il Ninja che copia". Capitano del Team 7, Sesto Hokage.',
-    longDescription:
-      'Genio precoce allievo di Minato. Porta lo Sharingan donatogli da Obito. Mentore del Team 7, futuro Sesto Hokage.',
+    shortDescription: {
+      it: '"Il Ninja che copia". Capitano del Team 7, Sesto Hokage.',
+      en: '"The Copy Ninja". Captain of Team 7, Sixth Hokage.',
+    },
+    longDescription: {
+      it: 'Genio precoce allievo di Minato. Porta lo Sharingan donatogli da Obito. Mentore del Team 7, futuro Sesto Hokage.',
+      en: "A precocious genius and Minato's student. He carries the Sharingan given to him by Obito. Mentor of Team 7 and future Sixth Hokage.",
+    },
     abilities: ['Sharingan', 'Chidori', 'Raikiri', 'Mangekyō Sharingan (temporary)', 'Kamui'],
     kekkeiGenkai: ['Sharingan (transplanted)'],
     jutsuIds: [
@@ -208,8 +222,8 @@ export const narutoCharacters: Character[] = [
     arcIds: ['arc-prologue', 'arc-chunin-exams', 'arc-fourth-war'],
     routeIds: ['route-team7-waves', 'route-kazekage-rescue'],
     relationships: [
-      { targetCharacterId: 'char-obito', label: 'Compagno / Antagonista' },
-      { targetCharacterId: 'char-minato', label: 'Sensei' },
+      { targetCharacterId: 'char-obito', label: { it: 'Compagno / Antagonista', en: 'Companion / Antagonist' } },
+      { targetCharacterId: 'char-minato', label: { it: 'Sensei', en: 'Sensei' } },
     ],
     status: 'alive',
     canonStatus: 'canon',
@@ -231,8 +245,10 @@ export const narutoCharacters: Character[] = [
     rank: 'Sannin',
     ninjaRank: 'sannin',
     generation: 'Sannin',
-    shortDescription:
-      'Uno dei Tre Sannin. Maestro di Naruto e di Minato. Saggio dei rospi.',
+    shortDescription: {
+      it: 'Uno dei Tre Sannin. Maestro di Naruto e di Minato. Saggio dei rospi.',
+      en: 'One of the Three Sannin. Teacher of Naruto and Minato. The Toad Sage.',
+    },
     abilities: ['Sage Mode', 'Rasengan', 'Frog Kata', 'Fuinjutsu'],
     jutsuIds: ['jutsu-sage-mode-toad', 'jutsu-rasengan', 'jutsu-toad-oil-flame-bullet', 'jutsu-summoning', 'jutsu-four-symbols-seal', 'jutsu-kage-bunshin'],
     summons: ['Toads (Gamabunta)'],
@@ -244,10 +260,10 @@ export const narutoCharacters: Character[] = [
     arcIds: ['arc-search-tsunade', 'arc-akatsuki-suppression', 'arc-jiraiya-gallant'],
     routeIds: ['route-jiraiya'],
     relationships: [
-      { targetCharacterId: 'char-naruto', label: 'Allievo / Figlioccio' },
-      { targetCharacterId: 'char-minato', label: 'Allievo' },
-      { targetCharacterId: 'char-tsunade', label: 'Compagna Sannin' },
-      { targetCharacterId: 'char-orochimaru', label: 'Compagno Sannin' },
+      { targetCharacterId: 'char-naruto', label: { it: 'Allievo / Figlioccio', en: 'Student / Godson' } },
+      { targetCharacterId: 'char-minato', label: { it: 'Allievo', en: 'Student' } },
+      { targetCharacterId: 'char-tsunade', label: { it: 'Compagna Sannin', en: 'Fellow Sannin' } },
+      { targetCharacterId: 'char-orochimaru', label: { it: 'Compagno Sannin', en: 'Fellow Sannin' } },
     ],
     status: 'deceased',
     canonStatus: 'canon',
@@ -268,8 +284,10 @@ export const narutoCharacters: Character[] = [
     rank: 'Hokage (Quinto)',
     ninjaRank: 'kage',
     generation: 'Sannin',
-    shortDescription:
-      'Una dei Tre Sannin. Quinto Hokage. La più grande ninja medico.',
+    shortDescription: {
+      it: 'Una dei Tre Sannin. Quinto Hokage. La più grande ninja medico.',
+      en: 'One of the Three Sannin. Fifth Hokage. The greatest medical ninja.',
+    },
     abilities: ['Medical Ninjutsu', 'Byakugou Seal', 'Super Strength', 'Creation Rebirth'],
     jutsuIds: ['jutsu-mystical-palm', 'jutsu-yin-seal-release', 'jutsu-creation-rebirth', 'jutsu-summoning', 'jutsu-healing-technique'],
     summons: ['Slugs (Katsuyu)'],
@@ -298,8 +316,10 @@ export const narutoCharacters: Character[] = [
     rank: 'Sannin / Missing-nin',
     ninjaRank: 'sannin',
     generation: 'Sannin',
-    shortDescription:
-      'Sannin rinnegato, fondatore del Villaggio del Suono. Cerca l\'immortalità.',
+    shortDescription: {
+      it: 'Sannin rinnegato, fondatore del Villaggio del Suono. Cerca l\'immortalità.',
+      en: 'Rogue Sannin and founder of the Hidden Sound Village. He seeks immortality.',
+    },
     abilities: ['Edo Tensei', 'Body Switching', 'Snake Summons', 'Forbidden Jutsu'],
     jutsuIds: ['jutsu-edo-tensei', 'jutsu-living-corpse-reincarnation', 'jutsu-sage-mode-snake', 'jutsu-summoning', 'jutsu-cursed-seal-heaven', 'jutsu-suiton-water-dragon'],
     summons: ['Snakes (Manda)'],
@@ -326,8 +346,10 @@ export const narutoCharacters: Character[] = [
     rank: 'Hokage (Terzo)',
     ninjaRank: 'kage',
     generation: 'Pre-Sannin',
-    shortDescription:
-      'Il "Professore". Terzo Hokage, maestro dei Sannin.',
+    shortDescription: {
+      it: 'Il "Professore". Terzo Hokage, maestro dei Sannin.',
+      en: '"The Professor". Third Hokage and teacher of the Sannin.',
+    },
     abilities: ['All five elements', 'Enma summon', 'Reaper Death Seal'],
     jutsuIds: ['jutsu-reaper-death-seal', 'jutsu-summoning', 'jutsu-kage-bunshin', 'jutsu-doton-earth-wall'],
     summons: ['Monkey King Enma'],
@@ -353,8 +375,10 @@ export const narutoCharacters: Character[] = [
     rank: 'Hokage (Quarto)',
     ninjaRank: 'kage',
     generation: 'Pre-Naruto',
-    shortDescription:
-      '"Yellow Flash". Quarto Hokage, padre di Naruto.',
+    shortDescription: {
+      it: '"Yellow Flash". Quarto Hokage, padre di Naruto.',
+      en: '"Yellow Flash". Fourth Hokage and Naruto\'s father.',
+    },
     abilities: ['Flying Thunder God Technique', 'Rasengan', 'Sage Mode', 'Sealing Jutsu'],
     jutsuIds: ['jutsu-hiraishin', 'jutsu-rasengan', 'jutsu-four-symbols-seal', 'jutsu-eight-trigrams-seal', 'jutsu-sage-mode-toad', 'jutsu-kage-bunshin'],
     teachers: ['char-jiraiya'],
@@ -363,8 +387,8 @@ export const narutoCharacters: Character[] = [
     locationIds: ['loc-konoha'],
     arcIds: ['arc-pre-series', 'arc-fourth-war'],
     relationships: [
-      { targetCharacterId: 'char-naruto', label: 'Figlio' },
-      { targetCharacterId: 'char-kushina', label: 'Sposo' },
+      { targetCharacterId: 'char-naruto', label: { it: 'Figlio', en: 'Son' } },
+      { targetCharacterId: 'char-kushina', label: { it: 'Sposo', en: 'Husband' } },
     ],
     status: 'deceased',
     canonStatus: 'canon',
@@ -383,8 +407,10 @@ export const narutoCharacters: Character[] = [
     nationId: 'nation-fire',
     rank: 'Jonin / Jinchūriki',
     ninjaRank: 'jonin',
-    shortDescription:
-      'Madre di Naruto, precedente jinchūriki di Kurama.',
+    shortDescription: {
+      it: 'Madre di Naruto, precedente jinchūriki di Kurama.',
+      en: "Naruto's mother and Kurama's previous jinchūriki.",
+    },
     abilities: ['Fuinjutsu', 'Adamantine Chains', 'Kyuubi containment'],
     jutsuIds: ['jutsu-adamantine-sealing-chains', 'jutsu-eight-trigrams-seal', 'jutsu-four-symbols-seal'],
     family: ['char-naruto', 'char-minato'],
@@ -408,8 +434,10 @@ export const narutoCharacters: Character[] = [
     rank: 'Hokage (Primo)',
     ninjaRank: 'kage',
     generation: 'Founders',
-    shortDescription:
-      'Co-fondatore di Konoha e Primo Hokage. Maestro del Mokuton.',
+    shortDescription: {
+      it: 'Co-fondatore di Konoha e Primo Hokage. Maestro del Mokuton.',
+      en: 'Co-founder of Konoha and First Hokage. Master of Wood Release (Mokuton).',
+    },
     abilities: ['Mokuton (Wood Release)', 'Sage Mode', 'Wood Style Creation'],
     kekkeiGenkai: ['Mokuton'],
     jutsuIds: ['jutsu-mokuton-wood-clone', 'jutsu-mokuton-wood-dragon', 'jutsu-mokuton-deep-forest', 'jutsu-mokuton-four-pillars', 'jutsu-sage-mode-toad', 'jutsu-summoning'],
@@ -435,8 +463,10 @@ export const narutoCharacters: Character[] = [
     rank: 'Hokage (Secondo)',
     ninjaRank: 'kage',
     generation: 'Founders',
-    shortDescription:
-      'Secondo Hokage e fratello di Hashirama. Inventore di numerose tecniche.',
+    shortDescription: {
+      it: 'Secondo Hokage e fratello di Hashirama. Inventore di numerose tecniche.',
+      en: "Second Hokage and Hashirama's brother. Inventor of numerous techniques.",
+    },
     abilities: ['Water Release', 'Edo Tensei (creator)', 'Hiraishin no Jutsu (proto)'],
     jutsuIds: ['jutsu-edo-tensei', 'jutsu-hiraishin', 'jutsu-suiton-water-dragon', 'jutsu-suiton-water-prison', 'jutsu-suiton-wall', 'jutsu-kage-bunshin'],
     family: ['char-hashirama'],
@@ -459,8 +489,10 @@ export const narutoCharacters: Character[] = [
     rank: 'Jinchūriki',
     ninjaRank: 'other',
     generation: 'Founders',
-    shortDescription:
-      'Prima jinchūriki di Kurama, moglie di Hashirama.',
+    shortDescription: {
+      it: 'Prima jinchūriki di Kurama, moglie di Hashirama.',
+      en: "Kurama's first jinchūriki and Hashirama's wife.",
+    },
     abilities: ['Fuinjutsu', 'Adamantine Sealing Chains'],
     jutsuIds: ['jutsu-adamantine-sealing-chains', 'jutsu-four-symbols-seal'],
     family: ['char-hashirama'],
@@ -485,8 +517,10 @@ export const narutoCharacters: Character[] = [
     rank: 'Jonin / Consigliere Hokage',
     ninjaRank: 'jonin',
     generation: 'Konoha 11',
-    shortDescription:
-      'Stratega geniale, utilizzatore di kagemane.',
+    shortDescription: {
+      it: 'Stratega geniale, utilizzatore di kagemane.',
+      en: 'Brilliant strategist and user of the Shadow Imitation Technique (kagemane).',
+    },
     abilities: ['Shadow Possession Jutsu', 'Shadow Strangle Jutsu'],
     jutsuIds: ['jutsu-kagemane', 'jutsu-shadow-sewing'],
     teachers: ['char-asuma', 'char-shikaku'],
@@ -511,8 +545,10 @@ export const narutoCharacters: Character[] = [
     rank: 'Jonin',
     ninjaRank: 'jonin',
     generation: 'Konoha 11',
-    shortDescription:
-      'Specialista di tecniche di espansione corporea. Trio Ino-Shika-Cho.',
+    shortDescription: {
+      it: 'Specialista di tecniche di espansione corporea. Trio Ino-Shika-Cho.',
+      en: 'Specialist in body expansion techniques. Part of the Ino-Shika-Cho trio.',
+    },
     abilities: ['Multi-Size Technique', 'Calorie Control', 'Butterfly Mode'],
     jutsuIds: ['jutsu-multi-size', 'jutsu-calorie-control', 'jutsu-butterfly-mode'],
     family: ['char-choza'],
@@ -535,8 +571,10 @@ export const narutoCharacters: Character[] = [
     rank: 'Jonin',
     ninjaRank: 'jonin',
     generation: 'Konoha 11',
-    shortDescription:
-      'Esperta di tecniche mentali, trio Ino-Shika-Cho.',
+    shortDescription: {
+      it: 'Esperta di tecniche mentali, trio Ino-Shika-Cho.',
+      en: 'Expert in mind techniques, part of the Ino-Shika-Cho trio.',
+    },
     abilities: ['Mind Body Switch Technique', 'Telepathy', 'Medical Ninjutsu'],
     jutsuIds: ['jutsu-mind-body-switch', 'jutsu-mind-body-disturbance', 'jutsu-mystical-palm'],
     family: ['char-inoichi'],
@@ -559,8 +597,10 @@ export const narutoCharacters: Character[] = [
     rank: 'Jonin',
     ninjaRank: 'chunin',
     generation: 'Konoha 11',
-    shortDescription:
-      'Combattente in coppia col cane-ninja Akamaru.',
+    shortDescription: {
+      it: 'Combattente in coppia col cane-ninja Akamaru.',
+      en: 'Fights in tandem with the ninja dog Akamaru.',
+    },
     abilities: ['Beast Mimicry', 'Fang Passing Fang'],
     jutsuIds: ['jutsu-fang-passing-fang'],
     locationIds: ['loc-konoha'],
@@ -583,13 +623,15 @@ export const narutoCharacters: Character[] = [
     rank: 'Chunin / Jonin',
     ninjaRank: 'jonin',
     generation: 'Konoha 11',
-    shortDescription:
-      'Erede del clan Hyuga. Innamorata di Naruto fin dall\'infanzia.',
+    shortDescription: {
+      it: 'Erede del clan Hyuga. Innamorata di Naruto fin dall\'infanzia.',
+      en: 'Heiress of the Hyuga clan. In love with Naruto since childhood.',
+    },
     abilities: ['Byakugan', 'Gentle Fist', 'Twin Lion Fists'],
     kekkeiGenkai: ['Byakugan'],
     jutsuIds: ['jutsu-byakugan', 'jutsu-gentle-fist', 'jutsu-eight-trigrams-64-palms'],
     family: ['char-hiashi', 'char-neji'],
-    relationships: [{ targetCharacterId: 'char-naruto', label: 'Sposa' }],
+    relationships: [{ targetCharacterId: 'char-naruto', label: { it: 'Sposa', en: 'Wife' } }],
     locationIds: ['loc-konoha', 'loc-konoha-hyuga-compound'],
     arcIds: ['arc-chunin-exams', 'arc-pain-assault', 'arc-fourth-war'],
     status: 'alive',
@@ -609,8 +651,10 @@ export const narutoCharacters: Character[] = [
     rank: 'Jonin',
     ninjaRank: 'chunin',
     generation: 'Konoha 11',
-    shortDescription:
-      'Specialista di insetti kikaichu, sensore e tracker.',
+    shortDescription: {
+      it: 'Specialista di insetti kikaichu, sensore e tracker.',
+      en: 'Specialist in kikaichu insects, sensor and tracker.',
+    },
     abilities: ['Insect Manipulation', 'Bug Cloning'],
     jutsuIds: ['jutsu-insect-jamming'],
     locationIds: ['loc-konoha'],
@@ -631,14 +675,16 @@ export const narutoCharacters: Character[] = [
     rank: 'Jonin',
     ninjaRank: 'jonin',
     generation: 'Konoha 11',
-    shortDescription:
-      'Specialista di taijutsu, allievo prediletto di Might Guy.',
+    shortDescription: {
+      it: 'Specialista di taijutsu, allievo prediletto di Might Guy.',
+      en: "Taijutsu specialist and Might Guy's favourite student.",
+    },
     abilities: ['Eight Inner Gates', 'Strong Fist', 'Drunken Fist'],
     jutsuIds: ['jutsu-eight-gates', 'jutsu-reverse-lotus'],
     teachers: ['char-guy'],
     locationIds: ['loc-konoha'],
     arcIds: ['arc-chunin-exams', 'arc-fourth-war'],
-    relationships: [{ targetCharacterId: 'char-guy', label: 'Sensei' }],
+    relationships: [{ targetCharacterId: 'char-guy', label: { it: 'Sensei', en: 'Sensei' } }],
     status: 'alive',
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -656,8 +702,10 @@ export const narutoCharacters: Character[] = [
     rank: 'Jonin',
     ninjaRank: 'jonin',
     generation: 'Konoha 11',
-    shortDescription:
-      'Prodigio del ramo cadetto Hyuga, maestro del Byakugan.',
+    shortDescription: {
+      it: 'Prodigio del ramo cadetto Hyuga, maestro del Byakugan.',
+      en: 'Prodigy of the Hyuga branch family, master of the Byakugan.',
+    },
     abilities: ['Byakugan', 'Gentle Fist', 'Eight Trigrams Palms Rotation'],
     kekkeiGenkai: ['Byakugan'],
     jutsuIds: ['jutsu-byakugan', 'jutsu-gentle-fist', 'jutsu-eight-trigrams-rotation', 'jutsu-eight-trigrams-64-palms'],
@@ -680,8 +728,10 @@ export const narutoCharacters: Character[] = [
     rank: 'Jonin',
     ninjaRank: 'jonin',
     generation: 'Konoha 11',
-    shortDescription:
-      'Weapon specialist del Team Guy.',
+    shortDescription: {
+      it: 'Specialista di armi del Team Guy.',
+      en: 'Weapons specialist of Team Guy.',
+    },
     abilities: ['Sealing Jutsu', 'Weapons Mastery'],
     locationIds: ['loc-konoha'],
     arcIds: ['arc-chunin-exams', 'arc-fourth-war'],
@@ -701,8 +751,10 @@ export const narutoCharacters: Character[] = [
     factionIds: ['faction-root', 'faction-anbu'],
     rank: 'Jonin',
     ninjaRank: 'anbu',
-    shortDescription:
-      'Ex Root, sostituisce Sasuke nel Team 7. Ninja delle illustrazioni viventi.',
+    shortDescription: {
+      it: 'Ex Root, sostituisce Sasuke nel Team 7. Ninja delle illustrazioni viventi.',
+      en: 'Former Root member who replaces Sasuke in Team 7. A ninja of living ink drawings.',
+    },
     abilities: ['Super Beast Imitating Drawing', 'Mental Conditioning'],
     locationIds: ['loc-konoha'],
     arcIds: ['arc-tenchi-bridge'],
@@ -723,8 +775,10 @@ export const narutoCharacters: Character[] = [
     factionIds: ['faction-anbu'],
     rank: 'Jonin / ANBU',
     ninjaRank: 'anbu',
-    shortDescription:
-      'Capitano ANBU usato come sostituto di Kakashi nel Team 7. Possessore del Mokuton via esperimento.',
+    shortDescription: {
+      it: 'Capitano ANBU usato come sostituto di Kakashi nel Team 7. Possessore del Mokuton via esperimento.',
+      en: 'ANBU captain who stands in for Kakashi in Team 7. He wields Wood Release through experimentation.',
+    },
     abilities: ['Mokuton (artificial)', 'Suppression of bijū chakra'],
     kekkeiGenkai: ['Mokuton (artificial)'],
     jutsuIds: ['jutsu-mokuton-wood-clone', 'jutsu-mokuton-four-pillars'],
@@ -745,8 +799,10 @@ export const narutoCharacters: Character[] = [
     clanIds: ['clan-sarutobi'],
     rank: 'Jonin',
     ninjaRank: 'jonin',
-    shortDescription:
-      'Nipote del Terzo Hokage. Allievo di Naruto, futuro sensei di Boruto.',
+    shortDescription: {
+      it: 'Nipote del Terzo Hokage. Allievo di Naruto, futuro sensei di Boruto.',
+      en: "Grandson of the Third Hokage. Naruto's pupil and Boruto's future sensei.",
+    },
     abilities: ['Rasengan'],
     jutsuIds: ['jutsu-rasengan', 'jutsu-kage-bunshin', 'jutsu-henge'],
     teachers: ['char-naruto', 'char-ebisu'],
@@ -766,8 +822,10 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-konoha',
     rank: 'Chunin / Insegnante',
     ninjaRank: 'chunin',
-    shortDescription:
-      'Insegnante all\'Accademia Ninja. Figura paterna per Naruto.',
+    shortDescription: {
+      it: 'Insegnante all\'Accademia Ninja. Figura paterna per Naruto.',
+      en: 'Teacher at the Ninja Academy. A father figure for Naruto.',
+    },
     locationIds: ['loc-konoha', 'loc-konoha-academy'],
     students: ['char-naruto'],
     status: 'alive',
@@ -786,14 +844,16 @@ export const narutoCharacters: Character[] = [
     teamIds: ['team-guy'],
     rank: 'Jonin',
     ninjaRank: 'jonin',
-    shortDescription:
-      '"La Bestia Verde di Konoha". Maestro del taijutsu.',
+    shortDescription: {
+      it: '"La Bestia Verde di Konoha". Maestro del taijutsu.',
+      en: '"Konoha\'s Green Beast". Master of taijutsu.',
+    },
     abilities: ['Eight Inner Gates', 'Strong Fist'],
     jutsuIds: ['jutsu-eight-gates', 'jutsu-reverse-lotus'],
     students: ['char-rock-lee'],
     locationIds: ['loc-konoha', 'loc-fourth-war-battlefield'],
     arcIds: ['arc-fourth-war'],
-    relationships: [{ targetCharacterId: 'char-rock-lee', label: 'Allievo' }],
+    relationships: [{ targetCharacterId: 'char-rock-lee', label: { it: 'Allievo', en: 'Student' } }],
     status: 'alive',
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -810,8 +870,10 @@ export const narutoCharacters: Character[] = [
     teamIds: ['team-10'],
     rank: 'Jonin',
     ninjaRank: 'jonin',
-    shortDescription:
-      'Sensei del Team 10, figlio del Terzo Hokage.',
+    shortDescription: {
+      it: 'Sensei del Team 10, figlio del Terzo Hokage.',
+      en: "Team 10's sensei and son of the Third Hokage.",
+    },
     abilities: ['Wind Style', 'Chakra Blade'],
     family: ['char-hiruzen', 'char-konohamaru'],
     locationIds: ['loc-konoha'],
@@ -830,8 +892,10 @@ export const narutoCharacters: Character[] = [
     teamIds: ['team-8'],
     rank: 'Jonin',
     ninjaRank: 'jonin',
-    shortDescription:
-      'Sensei del Team 8, specializzata in genjutsu.',
+    shortDescription: {
+      it: 'Sensei del Team 8, specializzata in genjutsu.',
+      en: "Team 8's sensei, specialised in genjutsu.",
+    },
     abilities: ['Genjutsu specialist'],
     locationIds: ['loc-konoha'],
     status: 'alive',
@@ -848,8 +912,10 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-konoha',
     rank: 'Jonin / Tokubetsu',
     ninjaRank: 'tokubetsu_jonin',
-    shortDescription:
-      'Ex allieva di Orochimaru, esaminatrice della seconda prova Chunin.',
+    shortDescription: {
+      it: 'Ex allieva di Orochimaru, esaminatrice della seconda prova Chunin.',
+      en: "Orochimaru's former student and examiner of the second Chunin Exam stage.",
+    },
     teachers: ['char-orochimaru'],
     locationIds: ['loc-konoha', 'loc-forest-of-death'],
     arcIds: ['arc-chunin-exams'],
@@ -867,8 +933,10 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-konoha',
     rank: 'Jonin',
     ninjaRank: 'jonin',
-    shortDescription:
-      'Allieva e assistente di Tsunade.',
+    shortDescription: {
+      it: 'Allieva e assistente di Tsunade.',
+      en: "Tsunade's student and assistant.",
+    },
     abilities: ['Medical Ninjutsu'],
     teachers: ['char-tsunade'],
     locationIds: ['loc-konoha'],
@@ -886,8 +954,10 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-konoha',
     rank: 'Jonin',
     ninjaRank: 'tokubetsu_jonin',
-    shortDescription:
-      'Tutor d\'élite, insegnante di Konohamaru.',
+    shortDescription: {
+      it: 'Tutor d\'élite, insegnante di Konohamaru.',
+      en: "Elite tutor and Konohamaru's teacher.",
+    },
     students: ['char-konohamaru'],
     locationIds: ['loc-konoha'],
     status: 'alive',
@@ -904,8 +974,10 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-konoha',
     rank: 'Tokubetsu Jonin',
     ninjaRank: 'jonin',
-    shortDescription:
-      'Capo della Squadra di Tortura e Interrogatorio. Esaminatore della prima prova Chunin.',
+    shortDescription: {
+      it: 'Capo della Squadra di Tortura e Interrogatorio. Esaminatore della prima prova Chunin.',
+      en: 'Head of the Torture and Interrogation Force. Examiner of the first Chunin Exam stage.',
+    },
     locationIds: ['loc-konoha'],
     arcIds: ['arc-chunin-exams'],
     status: 'alive',
@@ -923,8 +995,10 @@ export const narutoCharacters: Character[] = [
     clanIds: ['clan-yamanaka'],
     rank: 'Jonin',
     ninjaRank: 'jonin',
-    shortDescription:
-      'Capo del clan Yamanaka, padre di Ino. Esperto di intelligence.',
+    shortDescription: {
+      it: 'Capo del clan Yamanaka, padre di Ino. Esperto di intelligence.',
+      en: "Head of the Yamanaka clan and Ino's father. Intelligence expert.",
+    },
     family: ['char-ino'],
     locationIds: ['loc-konoha'],
     status: 'deceased',
@@ -942,8 +1016,10 @@ export const narutoCharacters: Character[] = [
     clanIds: ['clan-nara'],
     rank: 'Jonin / Commander',
     ninjaRank: 'jonin',
-    shortDescription:
-      'Capo del clan Nara e stratega capo dell\'Alleanza Shinobi.',
+    shortDescription: {
+      it: 'Capo del clan Nara e stratega capo dell\'Alleanza Shinobi.',
+      en: 'Head of the Nara clan and chief strategist of the Shinobi Alliance.',
+    },
     family: ['char-shikamaru'],
     locationIds: ['loc-konoha'],
     arcIds: ['arc-fourth-war'],
@@ -962,8 +1038,10 @@ export const narutoCharacters: Character[] = [
     clanIds: ['clan-akimichi'],
     rank: 'Jonin',
     ninjaRank: 'jonin',
-    shortDescription:
-      'Capo del clan Akimichi, padre di Choji.',
+    shortDescription: {
+      it: 'Capo del clan Akimichi, padre di Choji.',
+      en: "Head of the Akimichi clan and Choji's father.",
+    },
     family: ['char-choji'],
     locationIds: ['loc-konoha'],
     status: 'alive',
@@ -981,8 +1059,10 @@ export const narutoCharacters: Character[] = [
     clanIds: ['clan-hyuga'],
     rank: 'Jonin',
     ninjaRank: 'jonin',
-    shortDescription:
-      'Capo del clan Hyuga, padre di Hinata e Hanabi.',
+    shortDescription: {
+      it: 'Capo del clan Hyuga, padre di Hinata e Hanabi.',
+      en: 'Head of the Hyuga clan, father of Hinata and Hanabi.',
+    },
     family: ['char-hinata', 'char-neji'],
     kekkeiGenkai: ['Byakugan'],
     locationIds: ['loc-konoha', 'loc-konoha-hyuga-compound'],
@@ -1000,8 +1080,10 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-konoha',
     clanIds: ['clan-hyuga'],
     ninjaRank: 'jonin',
-    shortDescription:
-      'Padre di Neji, gemello di Hiashi del ramo cadetto.',
+    shortDescription: {
+      it: 'Padre di Neji, gemello di Hiashi del ramo cadetto.',
+      en: "Neji's father and Hiashi's twin brother from the branch family.",
+    },
     family: ['char-neji'],
     kekkeiGenkai: ['Byakugan'],
     locationIds: ['loc-konoha'],
@@ -1021,8 +1103,10 @@ export const narutoCharacters: Character[] = [
     factionIds: ['faction-root'],
     rank: 'Kage candidate / Shadow Hokage',
     ninjaRank: 'jonin',
-    shortDescription:
-      'Capo della divisione segreta Root. Antagonista politico chiave.',
+    shortDescription: {
+      it: 'Capo della divisione segreta Root. Antagonista politico chiave.',
+      en: 'Head of the secret Root division. A key political antagonist.',
+    },
     abilities: ['Izanagi', 'Wood Release (transplanted)', 'Multiple Sharingan (transplanted)'],
     kekkeiGenkai: ['Sharingan (transplanted)', 'Mokuton (transplanted)'],
     jutsuIds: ['jutsu-izanagi', 'jutsu-sharingan', 'jutsu-mokuton-wood-clone'],
@@ -1049,8 +1133,10 @@ export const narutoCharacters: Character[] = [
     rank: 'Kazekage (Quinto)',
     ninjaRank: 'kage',
     generation: 'Konoha 11 era',
-    shortDescription:
-      'Jinchūriki di Shukaku, da antagonista degli esami Chunin a Kazekage.',
+    shortDescription: {
+      it: 'Jinchūriki di Shukaku, da antagonista degli esami Chunin a Kazekage.',
+      en: "Shukaku's jinchūriki, from antagonist of the Chunin Exams to Kazekage.",
+    },
     abilities: ['Sand Manipulation', 'Magnet Release', 'Shukaku\'s Power'],
     kekkeiGenkai: ['Magnet Release'],
     jutsuIds: ['jutsu-sand-manipulation', 'jutsu-sand-coffin', 'jutsu-magnet-release', 'jutsu-tailed-beast-ball'],
@@ -1074,11 +1160,13 @@ export const narutoCharacters: Character[] = [
     teamIds: ['team-suna-siblings'],
     rank: 'Jonin',
     ninjaRank: 'jonin',
-    shortDescription:
-      'Sorella maggiore di Gaara, esperta di vento e ventaglio.',
+    shortDescription: {
+      it: 'Sorella maggiore di Gaara, esperta di vento e ventaglio.',
+      en: "Gaara's older sister, an expert in wind and fan techniques.",
+    },
     abilities: ['Wind Release', 'Folding Fan'],
     family: ['char-gaara', 'char-kankuro'],
-    relationships: [{ targetCharacterId: 'char-shikamaru', label: 'Sposo' }],
+    relationships: [{ targetCharacterId: 'char-shikamaru', label: { it: 'Sposo', en: 'Husband' } }],
     locationIds: ['loc-suna', 'loc-konoha'],
     status: 'alive',
     canonStatus: 'canon',
@@ -1096,8 +1184,10 @@ export const narutoCharacters: Character[] = [
     teamIds: ['team-suna-siblings'],
     rank: 'Jonin',
     ninjaRank: 'jonin',
-    shortDescription:
-      'Marionettista di Suna, fratello di Gaara.',
+    shortDescription: {
+      it: 'Marionettista di Suna, fratello di Gaara.',
+      en: "Suna puppeteer and Gaara's brother.",
+    },
     abilities: ['Puppet Technique'],
     family: ['char-gaara', 'char-temari'],
     locationIds: ['loc-suna'],
@@ -1116,8 +1206,10 @@ export const narutoCharacters: Character[] = [
     teamIds: ['team-suna-siblings'],
     rank: 'Jonin',
     ninjaRank: 'jonin',
-    shortDescription:
-      'Sensei della squadra di Gaara/Temari/Kankuro.',
+    shortDescription: {
+      it: 'Sensei della squadra di Gaara/Temari/Kankuro.',
+      en: 'Sensei of the Gaara/Temari/Kankuro squad.',
+    },
     locationIds: ['loc-suna'],
     status: 'alive',
     canonStatus: 'canon',
@@ -1134,8 +1226,10 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-suna',
     rank: 'Kazekage (Quarto)',
     ninjaRank: 'kage',
-    shortDescription:
-      'Quarto Kazekage, padre di Gaara.',
+    shortDescription: {
+      it: 'Quarto Kazekage, padre di Gaara.',
+      en: "Fourth Kazekage and Gaara's father.",
+    },
     abilities: ['Magnet Release', 'Gold Dust'],
     kekkeiGenkai: ['Magnet Release'],
     family: ['char-gaara', 'char-temari', 'char-kankuro'],
@@ -1155,8 +1249,10 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-suna',
     rank: 'Veterana',
     ninjaRank: 'jonin',
-    shortDescription:
-      'Veterana marionettista di Suna, nonna di Sasori.',
+    shortDescription: {
+      it: 'Veterana marionettista di Suna, nonna di Sasori.',
+      en: "Veteran Suna puppeteer and Sasori's grandmother.",
+    },
     abilities: ['Puppetry', 'Reincarnation Jutsu'],
     family: ['char-sasori'],
     locationIds: ['loc-suna'],
@@ -1174,8 +1270,10 @@ export const narutoCharacters: Character[] = [
     role: ['supporting'],
     villageLocationId: 'loc-suna',
     ninjaRank: 'jonin',
-    shortDescription:
-      'Zio di Gaara, figura tragica della sua infanzia.',
+    shortDescription: {
+      it: 'Zio di Gaara, figura tragica della sua infanzia.',
+      en: "Gaara's uncle, a tragic figure of his childhood.",
+    },
     family: ['char-gaara'],
     locationIds: ['loc-suna'],
     status: 'deceased',
@@ -1197,8 +1295,10 @@ export const narutoCharacters: Character[] = [
     factionIds: ['faction-seven-swordsmen'],
     rank: 'Missing-nin',
     ninjaRank: 'missing_nin',
-    shortDescription:
-      'Uno dei Sette Spadaccini della Nebbia. Antagonista nel Paese delle Onde.',
+    shortDescription: {
+      it: 'Uno dei Sette Spadaccini della Nebbia. Antagonista nel Paese delle Onde.',
+      en: 'One of the Seven Ninja Swordsmen of the Mist. Antagonist in the Land of Waves.',
+    },
     abilities: ['Silent Killing', 'Kubikiribocho (Executioner\'s Blade)'],
     jutsuIds: ['jutsu-suiton-hiding-mist', 'jutsu-suiton-water-dragon'],
     students: ['char-haku'],
@@ -1218,8 +1318,10 @@ export const narutoCharacters: Character[] = [
     nationId: 'nation-water',
     clanIds: ['clan-yuki'],
     ninjaRank: 'other',
-    shortDescription:
-      'Allievo di Zabuza. Possessore del Hyoton (Ice Release).',
+    shortDescription: {
+      it: 'Allievo di Zabuza. Possessore del Hyoton (Ice Release).',
+      en: "Zabuza's pupil. Wielder of Ice Release (Hyoton).",
+    },
     abilities: ['Ice Release', 'Senbon mastery'],
     kekkeiGenkai: ['Hyoton'],
     jutsuIds: ['jutsu-hyoton-ice-mirrors'],
@@ -1243,8 +1345,10 @@ export const narutoCharacters: Character[] = [
     clanIds: ['clan-hoshigaki'],
     rank: 'Missing-nin',
     ninjaRank: 'missing_nin',
-    shortDescription:
-      'Akatsuki, compagno di Itachi. Spadaccino della Nebbia con Samehada.',
+    shortDescription: {
+      it: 'Akatsuki, compagno di Itachi. Spadaccino della Nebbia con Samehada.',
+      en: "Akatsuki member and Itachi's partner. Swordsman of the Mist with Samehada.",
+    },
     abilities: ['Water Release', 'Samehada (chakra-eating sword)'],
     jutsuIds: ['jutsu-suiton-water-dragon', 'jutsu-suiton-great-shark', 'jutsu-suiton-exploding-wave', 'jutsu-hydrification'],
     locationIds: ['loc-akatsuki-hq'],
@@ -1265,8 +1369,10 @@ export const narutoCharacters: Character[] = [
     nationId: 'nation-water',
     rank: 'Mizukage (Quinto)',
     ninjaRank: 'kage',
-    shortDescription:
-      'Quinta Mizukage, possessore di Lava e Boil Release.',
+    shortDescription: {
+      it: 'Quinta Mizukage, possessore di Lava e Boil Release.',
+      en: 'Fifth Mizukage, wielder of Lava and Boil Release.',
+    },
     abilities: ['Lava Release', 'Boil Release'],
     kekkeiGenkai: ['Lava Release', 'Boil Release'],
     jutsuIds: ['jutsu-lava-release', 'jutsu-boil-release'],
@@ -1287,8 +1393,10 @@ export const narutoCharacters: Character[] = [
     nationId: 'nation-water',
     rank: 'Mizukage (Quarto)',
     ninjaRank: 'kage',
-    shortDescription:
-      'Quarto Mizukage, jinchūriki di Isobu (Sanbi). Controllato da Obito.',
+    shortDescription: {
+      it: 'Quarto Mizukage, jinchūriki di Isobu (Sanbi). Controllato da Obito.',
+      en: 'Fourth Mizukage, jinchūriki of Isobu (Three-Tails). Controlled by Obito.',
+    },
     locationIds: ['loc-kiri'],
     status: 'deceased',
     canonStatus: 'canon',
@@ -1306,8 +1414,10 @@ export const narutoCharacters: Character[] = [
     factionIds: ['faction-seven-swordsmen'],
     rank: 'Mizukage (Sesto)',
     ninjaRank: 'kage',
-    shortDescription:
-      'Spadaccino della Nebbia, futuro Sesto Mizukage.',
+    shortDescription: {
+      it: 'Spadaccino della Nebbia, futuro Sesto Mizukage.',
+      en: 'Swordsman of the Mist and future Sixth Mizukage.',
+    },
     abilities: ['Hiramekarei'],
     locationIds: ['loc-kiri'],
     status: 'alive',
@@ -1325,8 +1435,10 @@ export const narutoCharacters: Character[] = [
     clanIds: ['clan-hozuki'],
     teamIds: ['team-taka'],
     ninjaRank: 'other',
-    shortDescription:
-      'Membro di Taka. Clan Hozuki, capace di trasformarsi in acqua.',
+    shortDescription: {
+      it: 'Membro di Taka. Clan Hozuki, capace di trasformarsi in acqua.',
+      en: 'Member of Taka. From the Hozuki clan, able to turn into water.',
+    },
     abilities: ['Hydrification Technique'],
     jutsuIds: ['jutsu-hydrification', 'jutsu-suiton-water-prison'],
     family: ['char-mangetsu'],
@@ -1347,8 +1459,10 @@ export const narutoCharacters: Character[] = [
     clanIds: ['clan-hozuki'],
     factionIds: ['faction-seven-swordsmen'],
     ninjaRank: 'missing_nin',
-    shortDescription:
-      'Fratello maggiore di Suigetsu, "Secondo Coming" dei Sette Spadaccini.',
+    shortDescription: {
+      it: 'Fratello maggiore di Suigetsu, il «Secondo Avvento» dei Sette Spadaccini.',
+      en: 'Suigetsu\'s older brother, the "Second Coming" of the Seven Swordsmen.',
+    },
     family: ['char-suigetsu'],
     status: 'deceased',
     canonStatus: 'canon',
@@ -1364,8 +1478,10 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-kiri',
     rank: 'Jonin',
     ninjaRank: 'jonin',
-    shortDescription:
-      'Guardia del corpo del Mizukage. Possiede un Byakugan trapiantato.',
+    shortDescription: {
+      it: 'Guardia del corpo del Mizukage. Possiede un Byakugan trapiantato.',
+      en: "The Mizukage's bodyguard. He has a transplanted Byakugan.",
+    },
     kekkeiGenkai: ['Byakugan (transplanted)'],
     arcIds: ['arc-five-kage-summit'],
     status: 'deceased',
@@ -1384,8 +1500,10 @@ export const narutoCharacters: Character[] = [
     nationId: 'nation-lightning',
     rank: 'Raikage (Quarto)',
     ninjaRank: 'kage',
-    shortDescription:
-      'Quarto Raikage, fratello adottivo di Killer B.',
+    shortDescription: {
+      it: 'Quarto Raikage, fratello adottivo di Killer B.',
+      en: "Fourth Raikage and Killer B's adoptive brother.",
+    },
     abilities: ['Lightning Release', 'Liger Bomb', 'Lightning Cloak'],
     jutsuIds: ['jutsu-raiton-armor'],
     family: ['char-killer-b'],
@@ -1407,8 +1525,10 @@ export const narutoCharacters: Character[] = [
     nationId: 'nation-lightning',
     rank: 'Jonin / Jinchūriki',
     ninjaRank: 'jonin',
-    shortDescription:
-      'Jinchūriki di Gyuki. Mentore di Naruto sull\'Isola Tartaruga.',
+    shortDescription: {
+      it: 'Jinchūriki di Gyuki. Mentore di Naruto sull\'Isola Tartaruga.',
+      en: "Gyūki's jinchūriki. Naruto's mentor on Island Turtle.",
+    },
     abilities: ['Eight-Tails Transformation', 'Seven Swords Dance'],
     jutsuIds: ['jutsu-tailed-beast-ball', 'jutsu-raiton-thunderbolt'],
     family: ['char-a'],
@@ -1429,8 +1549,10 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-kumo',
     rank: 'Raikage (Quinto, post-war)',
     ninjaRank: 'jonin',
-    shortDescription:
-      'Guardia di A, futuro Quinto Raikage. Specialista Storm Release.',
+    shortDescription: {
+      it: 'Guardia di A, futuro Quinto Raikage. Specialista Storm Release.',
+      en: "A's bodyguard and future Fifth Raikage. Storm Release specialist.",
+    },
     abilities: ['Storm Release', 'Black Lightning'],
     kekkeiGenkai: ['Storm Release'],
     jutsuIds: ['jutsu-storm-release', 'jutsu-raiton-false-darkness'],
@@ -1450,8 +1572,10 @@ export const narutoCharacters: Character[] = [
     nationId: 'nation-lightning',
     rank: 'Jonin',
     ninjaRank: 'jonin',
-    shortDescription:
-      'Jinchūriki del Two-Tails Matatabi.',
+    shortDescription: {
+      it: 'Jinchūriki del Two-Tails Matatabi.',
+      en: 'Jinchūriki of the Two-Tails Matatabi.',
+    },
     locationIds: ['loc-kumo'],
     status: 'deceased',
     canonStatus: 'canon',
@@ -1469,8 +1593,10 @@ export const narutoCharacters: Character[] = [
     nationId: 'nation-earth',
     rank: 'Tsuchikage (Terzo)',
     ninjaRank: 'kage',
-    shortDescription:
-      'Terzo Tsuchikage, maestro del Dust Release.',
+    shortDescription: {
+      it: 'Terzo Tsuchikage, maestro del Dust Release.',
+      en: 'Third Tsuchikage, master of Dust Release.',
+    },
     abilities: ['Dust Release', 'Levitation'],
     kekkeiGenkai: ['Dust Release'],
     jutsuIds: ['jutsu-dust-release'],
@@ -1491,8 +1617,10 @@ export const narutoCharacters: Character[] = [
     nationId: 'nation-earth',
     rank: 'Tsuchikage (Quarto)',
     ninjaRank: 'kage',
-    shortDescription:
-      'Nipote di Onoki, futuro Quarto Tsuchikage.',
+    shortDescription: {
+      it: 'Nipote di Onoki, futuro Quarto Tsuchikage.',
+      en: "Onoki's granddaughter and future Fourth Tsuchikage.",
+    },
     abilities: ['Lava Release'],
     family: ['char-onoki'],
     locationIds: ['loc-iwa'],
@@ -1510,8 +1638,10 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-iwa',
     rank: 'Tsuchikage (Secondo)',
     ninjaRank: 'kage',
-    shortDescription:
-      'Secondo Tsuchikage, maestro di Onoki. Edo Tensei nella Quarta Guerra.',
+    shortDescription: {
+      it: 'Secondo Tsuchikage, maestro di Onoki. Edo Tensei nella Quarta Guerra.',
+      en: "Second Tsuchikage and Onoki's teacher. Reanimated by Edo Tensei in the Fourth War.",
+    },
     abilities: ['Dust Release'],
     kekkeiGenkai: ['Dust Release'],
     arcIds: ['arc-fourth-war'],
@@ -1529,8 +1659,10 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-iwa',
     rank: 'Jinchūriki',
     ninjaRank: 'jonin',
-    shortDescription:
-      'Jinchūriki del Four-Tails Son Goku.',
+    shortDescription: {
+      it: 'Jinchūriki del Four-Tails Son Goku.',
+      en: 'Jinchūriki of the Four-Tails Son Goku.',
+    },
     abilities: ['Lava Release'],
     kekkeiGenkai: ['Lava Release'],
     locationIds: ['loc-iwa'],
@@ -1547,8 +1679,10 @@ export const narutoCharacters: Character[] = [
     role: ['jinchuriki'],
     ninjaRank: 'jonin',
     villageLocationId: 'loc-iwa',
-    shortDescription:
-      'Jinchūriki del Five-Tails Kokuo.',
+    shortDescription: {
+      it: 'Jinchūriki del Five-Tails Kokuo.',
+      en: 'Jinchūriki of the Five-Tails Kokuo.',
+    },
     abilities: ['Steam Release'],
     locationIds: ['loc-iwa'],
     status: 'deceased',
@@ -1564,8 +1698,10 @@ export const narutoCharacters: Character[] = [
     role: ['jinchuriki'],
     ninjaRank: 'missing_nin',
     villageLocationId: 'loc-kiri',
-    shortDescription:
-      'Jinchūriki del Six-Tails Saiken.',
+    shortDescription: {
+      it: 'Jinchūriki del Six-Tails Saiken.',
+      en: 'Jinchūriki of the Six-Tails Saiken.',
+    },
     status: 'deceased',
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -1579,8 +1715,10 @@ export const narutoCharacters: Character[] = [
     role: ['jinchuriki'],
     ninjaRank: 'jonin',
     villageLocationId: 'loc-taki',
-    shortDescription:
-      'Jinchūriki del Seven-Tails Chomei.',
+    shortDescription: {
+      it: 'Jinchūriki del Seven-Tails Chomei.',
+      en: 'Jinchūriki of the Seven-Tails Chomei.',
+    },
     status: 'deceased',
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -1601,10 +1739,14 @@ export const narutoCharacters: Character[] = [
     factionIds: ['faction-akatsuki', 'faction-anbu'],
     rank: 'ANBU / Akatsuki',
     ninjaRank: 'missing_nin',
-    shortDescription:
-      'Genio Uchiha, ha sterminato il proprio clan per ordini segreti di Konoha.',
-    longDescription:
-      'Doppio agente. Membro Akatsuki per proteggere Konoha. Maestro del Mangekyō Sharingan: Tsukuyomi, Amaterasu, Susanoo.',
+    shortDescription: {
+      it: 'Genio Uchiha, ha sterminato il proprio clan per ordini segreti di Konoha.',
+      en: "Uchiha genius who wiped out his own clan on Konoha's secret orders.",
+    },
+    longDescription: {
+      it: 'Doppio agente. Membro Akatsuki per proteggere Konoha. Maestro del Mangekyō Sharingan: Tsukuyomi, Amaterasu, Susanoo.',
+      en: 'Double agent. Joined the Akatsuki to protect Konoha. Master of the Mangekyō Sharingan: Tsukuyomi, Amaterasu, Susanoo.',
+    },
     abilities: ['Sharingan', 'Mangekyō Sharingan', 'Tsukuyomi', 'Amaterasu', 'Susanoo', 'Edo Tensei (resistance)'],
     kekkeiGenkai: ['Sharingan'],
     jutsuIds: ['jutsu-sharingan', 'jutsu-mangekyou-sharingan', 'jutsu-tsukuyomi', 'jutsu-amaterasu', 'jutsu-susanoo', 'jutsu-kotoamatsukami', 'jutsu-katon-fireball'],
@@ -1615,8 +1757,8 @@ export const narutoCharacters: Character[] = [
     arcIds: ['arc-itachi-pursuit', 'arc-fourth-war'],
     routeIds: ['route-itachi'],
     relationships: [
-      { targetCharacterId: 'char-sasuke', label: 'Fratello minore' },
-      { targetCharacterId: 'char-obito', label: 'Co-cospiratore' },
+      { targetCharacterId: 'char-sasuke', label: { it: 'Fratello minore', en: 'Younger brother' } },
+      { targetCharacterId: 'char-obito', label: { it: 'Co-cospiratore', en: 'Co-conspirator' } },
     ],
     status: 'deceased',
     canonStatus: 'canon',
@@ -1636,8 +1778,10 @@ export const narutoCharacters: Character[] = [
     rank: 'Co-fondatore di Konoha',
     ninjaRank: 'other',
     generation: 'Founders',
-    shortDescription:
-      'Leggendario Uchiha, antagonista principale della Quarta Guerra Ninja.',
+    shortDescription: {
+      it: 'Leggendario Uchiha, antagonista principale della Quarta Guerra Ninja.',
+      en: 'Legendary Uchiha and the main antagonist of the Fourth Shinobi World War.',
+    },
     abilities: ['Sharingan', 'Eternal Mangekyō Sharingan', 'Rinnegan', 'Susanoo', 'Wood Release', 'Six Paths Powers'],
     kekkeiGenkai: ['Sharingan', 'Rinnegan'],
     jutsuIds: ['jutsu-sharingan', 'jutsu-eternal-mangekyou-sharingan', 'jutsu-rinnegan', 'jutsu-susanoo', 'jutsu-amaterasu', 'jutsu-mokuton-deep-forest', 'jutsu-deva-path', 'jutsu-chibaku-tensei', 'jutsu-infinite-tsukuyomi', 'jutsu-truth-seeker-orbs'],
@@ -1658,8 +1802,10 @@ export const narutoCharacters: Character[] = [
     role: ['supporting'],
     ninjaRank: 'other',
     clanIds: ['clan-uchiha'],
-    shortDescription:
-      'Fratello minore di Madara. Donò gli occhi al fratello.',
+    shortDescription: {
+      it: 'Fratello minore di Madara. Donò gli occhi al fratello.',
+      en: "Madara's younger brother. He gave his eyes to his brother.",
+    },
     abilities: ['Mangekyō Sharingan'],
     kekkeiGenkai: ['Sharingan'],
     family: ['char-madara'],
@@ -1682,8 +1828,10 @@ export const narutoCharacters: Character[] = [
     teamIds: ['team-minato'],
     rank: 'Chunin / Akatsuki mastermind',
     ninjaRank: 'missing_nin',
-    shortDescription:
-      'Compagno di Kakashi creduto morto, in seguito mente dietro l\'Akatsuki come "Tobi".',
+    shortDescription: {
+      it: 'Compagno di Kakashi creduto morto, in seguito mente dietro l\'Akatsuki come "Tobi".',
+      en: 'Kakashi\'s teammate, believed dead, later the mastermind behind the Akatsuki as "Tobi".',
+    },
     abilities: ['Sharingan', 'Mangekyō Sharingan', 'Kamui', 'Wood Release (Hashirama cells)'],
     kekkeiGenkai: ['Sharingan'],
     jutsuIds: ['jutsu-sharingan', 'jutsu-mangekyou-sharingan', 'jutsu-kamui', 'jutsu-mokuton-wood-clone', 'jutsu-infinite-tsukuyomi'],
@@ -1691,7 +1839,7 @@ export const narutoCharacters: Character[] = [
     locationIds: ['loc-konoha-uchiha-district', 'loc-akatsuki-hq', 'loc-fourth-war-battlefield', 'loc-mountains-graveyard'],
     arcIds: ['arc-akatsuki-suppression', 'arc-fourth-war', 'arc-kaguya-final', 'arc-ten-tails-jinchuriki'],
     routeIds: ['route-obito'],
-    relationships: [{ targetCharacterId: 'char-kakashi', label: 'Compagno' }],
+    relationships: [{ targetCharacterId: 'char-kakashi', label: { it: 'Compagno', en: 'Companion' } }],
     status: 'deceased',
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -1708,8 +1856,10 @@ export const narutoCharacters: Character[] = [
     clanIds: ['clan-uchiha'],
     rank: 'ANBU',
     ninjaRank: 'anbu',
-    shortDescription:
-      'Migliore amico di Itachi. Possessore del Kotoamatsukami.',
+    shortDescription: {
+      it: 'Migliore amico di Itachi. Possessore del Kotoamatsukami.',
+      en: "Itachi's best friend. Wielder of Kotoamatsukami.",
+    },
     abilities: ['Sharingan', 'Mangekyō Sharingan', 'Kotoamatsukami'],
     kekkeiGenkai: ['Sharingan'],
     jutsuIds: ['jutsu-sharingan', 'jutsu-mangekyou-sharingan', 'jutsu-kotoamatsukami', 'jutsu-shunshin'],
@@ -1728,8 +1878,10 @@ export const narutoCharacters: Character[] = [
     clanIds: ['clan-uchiha'],
     rank: 'Capitano Konoha Military Police',
     ninjaRank: 'jonin',
-    shortDescription:
-      'Capo del clan Uchiha. Padre di Itachi e Sasuke.',
+    shortDescription: {
+      it: 'Capo del clan Uchiha. Padre di Itachi e Sasuke.',
+      en: 'Head of the Uchiha clan. Father of Itachi and Sasuke.',
+    },
     family: ['char-itachi', 'char-sasuke', 'char-mikoto'],
     kekkeiGenkai: ['Sharingan'],
     status: 'deceased',
@@ -1746,8 +1898,7 @@ export const narutoCharacters: Character[] = [
     ninjaRank: 'jonin',
     villageLocationId: 'loc-konoha',
     clanIds: ['clan-uchiha'],
-    shortDescription:
-      'Madre di Itachi e Sasuke.',
+    shortDescription: { it: 'Madre di Itachi e Sasuke.', en: 'Mother of Itachi and Sasuke.' },
     family: ['char-itachi', 'char-sasuke', 'char-fugaku'],
     status: 'deceased',
     canonStatus: 'canon',
@@ -1767,8 +1918,10 @@ export const narutoCharacters: Character[] = [
     clanIds: ['clan-uzumaki'],
     factionIds: ['faction-akatsuki'],
     teamIds: ['team-ame-orphans'],
-    shortDescription:
-      'Discendente Uzumaki, possessore del Rinnegan, leader dell\'Akatsuki.',
+    shortDescription: {
+      it: 'Discendente Uzumaki, possessore del Rinnegan, leader dell\'Akatsuki.',
+      en: 'Uzumaki descendant, wielder of the Rinnegan and leader of the Akatsuki.',
+    },
     abilities: ['Rinnegan', 'Six Paths of Pain', 'Chibaku Tensei', 'Almighty Push'],
     kekkeiGenkai: ['Rinnegan'],
     jutsuIds: ['jutsu-rinnegan', 'jutsu-deva-path', 'jutsu-chibaku-tensei', 'jutsu-preta-path', 'jutsu-asura-path', 'jutsu-human-path', 'jutsu-animal-path', 'jutsu-naraka-path', 'jutsu-outer-path'],
@@ -1792,8 +1945,10 @@ export const narutoCharacters: Character[] = [
     teamIds: ['team-ame-orphans'],
     rank: 'Akatsuki',
     ninjaRank: 'missing_nin',
-    shortDescription:
-      'Membro dell\'Akatsuki, compagna di Nagato/Yahiko.',
+    shortDescription: {
+      it: 'Membro dell\'Akatsuki, compagna di Nagato/Yahiko.',
+      en: 'Akatsuki member and companion of Nagato/Yahiko.',
+    },
     abilities: ['Paper Manipulation'],
     teachers: ['char-jiraiya'],
     locationIds: ['loc-ame'],
@@ -1812,8 +1967,10 @@ export const narutoCharacters: Character[] = [
     ninjaRank: 'other',
     villageLocationId: 'loc-ame',
     teamIds: ['team-ame-orphans'],
-    shortDescription:
-      'Fondatore dell\'Akatsuki originale. Volto del corpo Deva di Pain.',
+    shortDescription: {
+      it: 'Fondatore dell\'Akatsuki originale. Volto del corpo Deva di Pain.',
+      en: "Founder of the original Akatsuki. The face of Pain's Deva Path body.",
+    },
     teachers: ['char-jiraiya'],
     status: 'deceased',
     canonStatus: 'canon',
@@ -1831,8 +1988,10 @@ export const narutoCharacters: Character[] = [
     factionIds: ['faction-akatsuki'],
     rank: 'Akatsuki',
     ninjaRank: 'missing_nin',
-    shortDescription:
-      'Akatsuki dell\'Iwa, artista esplosivo con argilla.',
+    shortDescription: {
+      it: 'Akatsuki dell\'Iwa, artista esplosivo con argilla.',
+      en: 'Akatsuki member from Iwa, an explosive artist working with clay.',
+    },
     abilities: ['Explosion Release (Bakuton)', 'Clay Sculpting'],
     kekkeiGenkai: ['Explosion Release'],
     jutsuIds: ['jutsu-explosion-release'],
@@ -1855,8 +2014,10 @@ export const narutoCharacters: Character[] = [
     factionIds: ['faction-akatsuki'],
     rank: 'Akatsuki',
     ninjaRank: 'missing_nin',
-    shortDescription:
-      'Maestro marionettista di Suna entrato nell\'Akatsuki.',
+    shortDescription: {
+      it: 'Maestro marionettista di Suna entrato nell\'Akatsuki.',
+      en: 'Master puppeteer from Suna who joined the Akatsuki.',
+    },
     abilities: ['Puppet Mastery', 'Iron Sand (Magnet Release transplanted)'],
     family: ['char-chiyo'],
     locationIds: ['loc-suna', 'loc-akatsuki-rivers'],
@@ -1877,8 +2038,10 @@ export const narutoCharacters: Character[] = [
     factionIds: ['faction-akatsuki'],
     rank: 'Akatsuki',
     ninjaRank: 'missing_nin',
-    shortDescription:
-      'Akatsuki immortale di Yugakure, seguace di Jashin.',
+    shortDescription: {
+      it: 'Akatsuki immortale di Yugakure, seguace di Jashin.',
+      en: 'Immortal Akatsuki member from Yugakure, a follower of Jashin.',
+    },
     abilities: ['Immortality', 'Curse Technique (Jashin)'],
     locationIds: ['loc-konoha-nara-forest', 'loc-akatsuki-hq'],
     arcIds: ['arc-akatsuki-suppression'],
@@ -1899,8 +2062,10 @@ export const narutoCharacters: Character[] = [
     factionIds: ['faction-akatsuki'],
     rank: 'Akatsuki',
     ninjaRank: 'missing_nin',
-    shortDescription:
-      'Akatsuki di Taki. Vita prolungata rubando cuori altrui.',
+    shortDescription: {
+      it: 'Akatsuki di Taki. Vita prolungata rubando cuori altrui.',
+      en: "Akatsuki member from Taki. He prolongs his life by stealing other people's hearts.",
+    },
     abilities: ['Earth Grudge Fear (Five Hearts)', 'All five elements'],
     locationIds: ['loc-taki', 'loc-akatsuki-hq'],
     arcIds: ['arc-akatsuki-suppression'],
@@ -1918,8 +2083,10 @@ export const narutoCharacters: Character[] = [
     factionIds: ['faction-akatsuki'],
     rank: 'Akatsuki',
     ninjaRank: 'other',
-    shortDescription:
-      'Akatsuki bipartito (White/Black). Strumento del piano di Kaguya.',
+    shortDescription: {
+      it: 'Akatsuki bipartito (White/Black). Strumento del piano di Kaguya.',
+      en: "Two-sided Akatsuki member (White/Black). An instrument of Kaguya's plan.",
+    },
     abilities: ['Plant Manipulation', 'Mayfly Technique'],
     locationIds: ['loc-akatsuki-hq', 'loc-fourth-war-battlefield'],
     arcIds: ['arc-fourth-war', 'arc-kaguya-final'],
@@ -1938,8 +2105,10 @@ export const narutoCharacters: Character[] = [
     teamIds: ['team-taka'],
     rank: 'Sensor',
     ninjaRank: 'other',
-    shortDescription:
-      'Sensor del clan Uzumaki, membro Taka.',
+    shortDescription: {
+      it: 'Ninja sensore del clan Uzumaki, membro di Taka.',
+      en: 'Sensor from the Uzumaki clan, member of Taka.',
+    },
     abilities: ['Sensory Perception', 'Healing Bite'],
     locationIds: ['loc-orochimaru-hideout'],
     arcIds: ['arc-itachi-pursuit'],
@@ -1956,8 +2125,10 @@ export const narutoCharacters: Character[] = [
     role: ['supporting'],
     ninjaRank: 'other',
     teamIds: ['team-taka'],
-    shortDescription:
-      'Membro di Taka, fonte del Sigillo Maledetto di Orochimaru.',
+    shortDescription: {
+      it: 'Membro di Taka, fonte del Sigillo Maledetto di Orochimaru.',
+      en: "Member of Taka, the source of Orochimaru's Curse Mark.",
+    },
     abilities: ['Sage Transformation', 'Body Modification'],
     locationIds: ['loc-orochimaru-hideout'],
     status: 'alive',
@@ -1974,8 +2145,10 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-konoha',
     rank: 'Missing-nin',
     ninjaRank: 'missing_nin',
-    shortDescription:
-      'Ex spia di Orochimaru, maestro Edo Tensei nella Quarta Guerra.',
+    shortDescription: {
+      it: 'Ex spia di Orochimaru, maestro Edo Tensei nella Quarta Guerra.',
+      en: "Orochimaru's former spy and master of Edo Tensei in the Fourth War.",
+    },
     abilities: ['Medical Ninjutsu', 'Sage Mode (Snake)', 'Edo Tensei'],
     jutsuIds: ['jutsu-edo-tensei', 'jutsu-sage-mode-snake', 'jutsu-mystical-palm', 'jutsu-healing-technique'],
     teachers: ['char-orochimaru'],
@@ -1994,8 +2167,10 @@ export const narutoCharacters: Character[] = [
     role: ['antagonist'],
     ninjaRank: 'jonin',
     clanIds: ['clan-kaguya'],
-    shortDescription:
-      'Ultimo del clan Kaguya. Bodyguard di Orochimaru.',
+    shortDescription: {
+      it: 'Ultimo del clan Kaguya. Bodyguard di Orochimaru.',
+      en: "Last of the Kaguya clan. Orochimaru's bodyguard.",
+    },
     abilities: ['Shikotsumyaku (Dead Bone Pulse)'],
     kekkeiGenkai: ['Shikotsumyaku'],
     jutsuIds: ['jutsu-shikotsumyaku'],
@@ -2017,8 +2192,10 @@ export const narutoCharacters: Character[] = [
     rank: 'Primordial',
     ninjaRank: 'other',
     generation: 'Otsutsuki',
-    shortDescription:
-      'Madre del Saggio dei Sei Cammini, principio della chakra sulla Terra.',
+    shortDescription: {
+      it: 'Madre del Saggio dei Sei Cammini, principio della chakra sulla Terra.',
+      en: 'Mother of the Sage of Six Paths, the origin of chakra on Earth.',
+    },
     abilities: ['Kekkei Mōra', 'Rinne Sharingan', 'Dimension Travel'],
     kekkeiGenkai: ['Byakugan', 'Rinne Sharingan'],
     jutsuIds: ['jutsu-rinne-sharingan', 'jutsu-byakugan', 'jutsu-infinite-tsukuyomi', 'jutsu-truth-seeker-orbs'],
@@ -2040,8 +2217,10 @@ export const narutoCharacters: Character[] = [
     rank: 'Sage',
     ninjaRank: 'other',
     generation: 'Otsutsuki',
-    shortDescription:
-      'Saggio dei Sei Cammini. Padre del ninshu e fondatore della dottrina shinobi.',
+    shortDescription: {
+      it: 'Saggio dei Sei Cammini. Padre del ninshu e fondatore della dottrina shinobi.',
+      en: 'Sage of Six Paths. Father of ninshū and founder of the shinobi doctrine.',
+    },
     abilities: ['Six Paths Sage Mode', 'Rinnegan', 'Creation of All Things'],
     kekkeiGenkai: ['Rinnegan', 'Sharingan'],
     jutsuIds: ['jutsu-rinnegan', 'jutsu-sage-mode-six-paths', 'jutsu-outer-path', 'jutsu-chibaku-tensei'],
@@ -2060,8 +2239,10 @@ export const narutoCharacters: Character[] = [
     role: ['supporting'],
     generation: 'Otsutsuki',
     ninjaRank: 'other',
-    shortDescription:
-      'Fratello gemello di Hagoromo. Antenato del clan Hyuga.',
+    shortDescription: {
+      it: 'Fratello gemello di Hagoromo. Antenato del clan Hyuga.',
+      en: "Hagoromo's twin brother. Ancestor of the Hyuga clan.",
+    },
     kekkeiGenkai: ['Byakugan'],
     family: ['char-kaguya', 'char-hagoromo'],
     status: 'deceased',
@@ -2077,8 +2258,10 @@ export const narutoCharacters: Character[] = [
     role: ['supporting'],
     generation: 'Otsutsuki',
     ninjaRank: 'other',
-    shortDescription:
-      'Primogenito di Hagoromo. Antenato degli Uchiha. Sasuke ne è la reincarnazione.',
+    shortDescription: {
+      it: 'Primogenito di Hagoromo. Antenato degli Uchiha. Sasuke ne è la reincarnazione.',
+      en: "Hagoromo's firstborn son. Ancestor of the Uchiha. Sasuke is his reincarnation.",
+    },
     abilities: ['Mangekyō Sharingan (innate)'],
     kekkeiGenkai: ['Sharingan'],
     family: ['char-hagoromo'],
@@ -2095,8 +2278,10 @@ export const narutoCharacters: Character[] = [
     role: ['supporting'],
     generation: 'Otsutsuki',
     ninjaRank: 'other',
-    shortDescription:
-      'Secondogenito di Hagoromo. Antenato dei Senju/Uzumaki. Naruto ne è la reincarnazione.',
+    shortDescription: {
+      it: 'Secondogenito di Hagoromo. Antenato dei Senju/Uzumaki. Naruto ne è la reincarnazione.',
+      en: "Hagoromo's second son. Ancestor of the Senju/Uzumaki. Naruto is his reincarnation.",
+    },
     family: ['char-hagoromo'],
     status: 'deceased',
     canonStatus: 'canon',

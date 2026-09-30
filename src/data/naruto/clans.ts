@@ -14,8 +14,10 @@ export const narutoClans: Faction[] = [
     nameLocal: 'Uzumaki Ichizoku',
     japaneseName: 'うずまき一族',
     villageLocationId: 'loc-uzushio-ruins',
-    description:
-      'Clan leggendario di longevità e maestria nei sigilli (fūinjutsu). Distrutto durante una guerra; pochi sopravvissuti.',
+    description: {
+      it: 'Clan leggendario di longevità e maestria nei sigilli (fūinjutsu). Distrutto durante una guerra; pochi sopravvissuti.',
+      en: 'Legendary clan known for its longevity and mastery of sealing (fūinjutsu). Destroyed during a war; few survivors.',
+    },
     signatureAbilities: ['Fūinjutsu', 'Adamantine Sealing Chains', 'Longevità'],
     jutsuIds: ['jutsu-adamantine-sealing-chains', 'jutsu-four-symbols-seal', 'jutsu-eight-trigrams-seal'],
     characterIds: ['char-naruto', 'char-kushina', 'char-mito', 'char-karin', 'char-pain'],
@@ -32,8 +34,10 @@ export const narutoClans: Faction[] = [
     nameLocal: 'Uchiha Ichizoku',
     japaneseName: 'うちは一族',
     villageLocationId: 'loc-konoha',
-    description:
-      'Clan storico discendente da Indra Otsutsuki. Famoso per il dōjutsu Sharingan.',
+    description: {
+      it: 'Clan storico discendente da Indra Otsutsuki. Famoso per il dōjutsu Sharingan.',
+      en: 'Historic clan descended from Indra Otsutsuki. Famous for the Sharingan dōjutsu.',
+    },
     signatureAbilities: ['Sharingan', 'Mangekyō Sharingan', 'Katon'],
     kekkeiGenkai: 'Sharingan',
     jutsuIds: ['jutsu-sharingan', 'jutsu-mangekyou-sharingan', 'jutsu-eternal-mangekyou-sharingan', 'jutsu-amaterasu', 'jutsu-tsukuyomi', 'jutsu-susanoo', 'jutsu-izanagi', 'jutsu-izanami', 'jutsu-katon-fireball'],
@@ -51,8 +55,10 @@ export const narutoClans: Faction[] = [
     name: 'Hyuga Clan',
     nameLocal: 'Hyūga Ichizoku',
     villageLocationId: 'loc-konoha',
-    description:
-      'Clan di Konoha noto per il dōjutsu Byakugan e il Jūken (Gentle Fist).',
+    description: {
+      it: 'Clan di Konoha noto per il dōjutsu Byakugan e il Jūken (Gentle Fist).',
+      en: 'Konoha clan known for the Byakugan dōjutsu and the Jūken (Gentle Fist).',
+    },
     signatureAbilities: ['Byakugan', 'Gentle Fist', 'Sealing of branch family'],
     kekkeiGenkai: 'Byakugan',
     jutsuIds: ['jutsu-byakugan', 'jutsu-gentle-fist', 'jutsu-eight-trigrams-64-palms', 'jutsu-eight-trigrams-rotation'],
@@ -69,8 +75,10 @@ export const narutoClans: Faction[] = [
     type: 'clan',
     name: 'Nara Clan',
     villageLocationId: 'loc-konoha',
-    description:
-      'Esperti di tecniche dell\'ombra (Kagemane). Allevatori di cervi e farmacisti.',
+    description: {
+      it: 'Esperti di tecniche dell\'ombra (Kagemane). Allevatori di cervi e farmacisti.',
+      en: 'Experts in shadow techniques (Kagemane). Deer breeders and pharmacists.',
+    },
     signatureAbilities: ['Kagemane no Jutsu', 'Shadow Sewing', 'Pharmacology'],
     jutsuIds: ['jutsu-kagemane', 'jutsu-shadow-sewing'],
     characterIds: ['char-shikamaru', 'char-shikaku'],
@@ -85,8 +93,10 @@ export const narutoClans: Faction[] = [
     type: 'clan',
     name: 'Akimichi Clan',
     villageLocationId: 'loc-konoha',
-    description:
-      'Clan di guerrieri massicci, esperti in tecniche di espansione corporea.',
+    description: {
+      it: 'Clan di guerrieri massicci, esperti in tecniche di espansione corporea.',
+      en: 'Clan of massive warriors, experts in body expansion techniques.',
+    },
     signatureAbilities: ['Multi-Size Technique', 'Calorie Control', 'Butterfly Mode'],
     jutsuIds: ['jutsu-multi-size', 'jutsu-calorie-control', 'jutsu-butterfly-mode'],
     characterIds: ['char-choji', 'char-choza'],
@@ -101,8 +111,10 @@ export const narutoClans: Faction[] = [
     type: 'clan',
     name: 'Yamanaka Clan',
     villageLocationId: 'loc-konoha',
-    description:
-      'Specialisti in tecniche di possessione mentale e telepatia.',
+    description: {
+      it: 'Specialisti in tecniche di possessione mentale e telepatia.',
+      en: 'Specialists in mind possession and telepathy techniques.',
+    },
     signatureAbilities: ['Mind Body Switch Technique', 'Telepathy', 'Intelligence Division'],
     jutsuIds: ['jutsu-mind-body-switch', 'jutsu-mind-body-disturbance'],
     characterIds: ['char-ino', 'char-inoichi'],
@@ -117,8 +129,10 @@ export const narutoClans: Faction[] = [
     type: 'clan',
     name: 'Aburame Clan',
     villageLocationId: 'loc-konoha',
-    description:
-      'Clan che convive simbioticamente con gli insetti kikaichu.',
+    description: {
+      it: 'Clan che convive simbioticamente con gli insetti kikaichu.',
+      en: 'Clan that lives in symbiosis with kikaichu insects.',
+    },
     signatureAbilities: ['Insect Manipulation', 'Bug Cloning'],
     jutsuIds: ['jutsu-insect-jamming'],
     characterIds: ['char-shino'],
@@ -133,8 +147,10 @@ export const narutoClans: Faction[] = [
     type: 'clan',
     name: 'Inuzuka Clan',
     villageLocationId: 'loc-konoha',
-    description:
-      'Clan di guerrieri che combatte insieme a cani-ninja partner.',
+    description: {
+      it: 'Clan di guerrieri che combatte insieme a cani-ninja partner.',
+      en: 'Clan of warriors who fight together with ninja dog partners.',
+    },
     signatureAbilities: ['Beast Mimicry', 'Fang Passing Fang'],
     jutsuIds: ['jutsu-fang-passing-fang'],
     characterIds: ['char-kiba'],
@@ -149,8 +165,10 @@ export const narutoClans: Faction[] = [
     type: 'clan',
     name: 'Senju Clan',
     villageLocationId: 'loc-konoha',
-    description:
-      'Clan dei "Mille jutsu", co-fondatori di Konoha. Discendenti di Asura Otsutsuki.',
+    description: {
+      it: 'Clan dei "Mille jutsu", co-fondatori di Konoha. Discendenti di Asura Otsutsuki.',
+      en: 'Clan of "a thousand jutsu" and co-founders of Konoha. Descendants of Asura Otsutsuki.',
+    },
     signatureAbilities: ['Mokuton (Wood Release)', 'Versatilità elementale'],
     kekkeiGenkai: 'Mokuton',
     jutsuIds: ['jutsu-mokuton-wood-clone', 'jutsu-mokuton-wood-dragon', 'jutsu-mokuton-deep-forest', 'jutsu-mokuton-four-pillars'],
@@ -167,8 +185,10 @@ export const narutoClans: Faction[] = [
     type: 'clan',
     name: 'Sarutobi Clan',
     villageLocationId: 'loc-konoha',
-    description:
-      'Famiglia che ha dato vari Hokage e jonin. Contratto con le scimmie.',
+    description: {
+      it: 'Famiglia che ha dato vari Hokage e jonin. Contratto con le scimmie.',
+      en: 'Family that produced several Hokage and jonin. Contract with the monkeys.',
+    },
     signatureAbilities: ['Monkey Summon (Enma)', 'Wind Release'],
     characterIds: ['char-hiruzen', 'char-asuma', 'char-konohamaru'],
     locationIds: ['loc-konoha'],
@@ -182,8 +202,10 @@ export const narutoClans: Faction[] = [
     type: 'clan',
     name: 'Hatake Clan',
     villageLocationId: 'loc-konoha',
-    description:
-      'Famiglia di Kakashi. Noti per Hatake Sakumo, "Zanna Bianca" di Konoha.',
+    description: {
+      it: 'Famiglia di Kakashi. Noti per Hatake Sakumo, "Zanna Bianca" di Konoha.',
+      en: 'Kakashi\'s family. Known for Sakumo Hatake, Konoha\'s "White Fang".',
+    },
     characterIds: ['char-kakashi'],
     locationIds: ['loc-konoha'],
     canonStatus: 'canon',
@@ -195,8 +217,10 @@ export const narutoClans: Faction[] = [
     worldId: 'world-naruto',
     type: 'clan',
     name: 'Kaguya Clan',
-    description:
-      'Clan annientato di guerrieri ossei, noti per il Shikotsumyaku.',
+    description: {
+      it: 'Clan annientato di guerrieri ossei, noti per il Shikotsumyaku.',
+      en: 'Annihilated clan of bone warriors, known for the Shikotsumyaku.',
+    },
     signatureAbilities: ['Shikotsumyaku (Dead Bone Pulse)'],
     kekkeiGenkai: 'Shikotsumyaku',
     jutsuIds: ['jutsu-shikotsumyaku'],
@@ -211,8 +235,10 @@ export const narutoClans: Faction[] = [
     type: 'clan',
     name: 'Hozuki Clan',
     villageLocationId: 'loc-kiri',
-    description:
-      'Clan di Kirigakure capace di trasformarsi in acqua (Hydrification Technique).',
+    description: {
+      it: 'Clan di Kirigakure capace di trasformarsi in acqua (Hydrification Technique).',
+      en: 'Kirigakure clan able to turn into water (Hydrification Technique).',
+    },
     signatureAbilities: ['Hydrification Technique', 'Water Manipulation'],
     jutsuIds: ['jutsu-hydrification'],
     characterIds: ['char-suigetsu', 'char-mangetsu', 'char-gengetsu'],
@@ -227,8 +253,10 @@ export const narutoClans: Faction[] = [
     type: 'clan',
     name: 'Hoshigaki Clan',
     villageLocationId: 'loc-kiri',
-    description:
-      'Clan di Kirigakure con tratti squalo. Kisame è il membro più noto.',
+    description: {
+      it: 'Clan di Kirigakure con tratti squalo. Kisame è il membro più noto.',
+      en: 'Kirigakure clan with shark-like traits. Kisame is its best-known member.',
+    },
     signatureAbilities: ['Water Release', 'Shark-like physiology'],
     characterIds: ['char-kisame'],
     locationIds: ['loc-kiri'],
@@ -242,8 +270,10 @@ export const narutoClans: Faction[] = [
     type: 'clan',
     name: 'Yuki Clan',
     villageLocationId: 'loc-kiri',
-    description:
-      'Clan di Kirigakure con il Hyoton (Ice Release). Perseguitato durante le purghe.',
+    description: {
+      it: 'Clan di Kirigakure con il Hyoton (Ice Release). Perseguitato durante le purghe.',
+      en: 'Kirigakure clan with Ice Release (Hyoton). Persecuted during the purges.',
+    },
     signatureAbilities: ['Ice Release'],
     kekkeiGenkai: 'Hyoton',
     jutsuIds: ['jutsu-hyoton-ice-mirrors'],
@@ -260,8 +290,10 @@ export const narutoClans: Faction[] = [
     name: 'Kazekage Bloodline',
     nameLocal: 'Family of the Wind Shadow',
     villageLocationId: 'loc-suna',
-    description:
-      'Famiglia dei Kazekage di Suna. Rasa e i suoi figli (Gaara, Temari, Kankuro).',
+    description: {
+      it: 'Famiglia dei Kazekage di Suna. Rasa e i suoi figli (Gaara, Temari, Kankuro).',
+      en: "Suna's family of Kazekage. Rasa and his children (Gaara, Temari, Kankuro).",
+    },
     leaderIds: ['char-rasa'],
     characterIds: ['char-rasa', 'char-gaara', 'char-temari', 'char-kankuro'],
     locationIds: ['loc-suna'],
@@ -275,8 +307,10 @@ export const narutoClans: Faction[] = [
     type: 'clan',
     name: 'Otsutsuki Clan',
     japaneseName: '大筒木一族',
-    description:
-      'Stirpe celeste da cui discendono Hagoromo e Hamura. Origine del chakra sulla Terra.',
+    description: {
+      it: 'Stirpe celeste da cui discendono Hagoromo e Hamura. Origine del chakra sulla Terra.',
+      en: 'Celestial lineage from which Hagoromo and Hamura descend. The origin of chakra on Earth.',
+    },
     signatureAbilities: ['Byakugan', 'Rinnegan', 'Kekkei Mōra'],
     kekkeiGenkai: 'Byakugan / Rinne Sharingan',
     jutsuIds: ['jutsu-byakugan', 'jutsu-rinnegan', 'jutsu-rinne-sharingan', 'jutsu-chibaku-tensei', 'jutsu-outer-path'],

@@ -110,20 +110,38 @@ creerebbe quasi-duplicati. Restano una preferenza client applicata sugli URL
 
 ---
 
-## 4. Slug
+## 4. Slug (stabili e indipendenti dalla lingua)
 
-`src/seo/slug.ts` è l'unica fonte degli slug:
+Uno slug pubblicato è **permanente**: identico in `/it` e `/en`, non cambia se
+l'entità viene tradotta, rinominata o riordinata nel dataset.
 
-- derivati dal **nome inglese** (`getEntityDisplayName(e, 'en')`), ASCII
-  kebab-case: diacritici normalizzati, apostrofi rimossi, `&` → `and`;
-- nome non latino → slug dall'id (senza prefisso di tipo);
-- **collisioni** nella stessa categoria: la prima entità (ordine del dataset,
-  append-only) tiene lo slug base, le altre ricevono un suffisso dall'id.
-  `npm run validate:data` le segnala;
-- **rinomina**: fissare `slug: 'vecchio-slug'` sull'entità, oppure aggiungere
-  `previousSlugs: ['vecchio-slug']` → il prerender genera una pagina di
-  redirect (meta refresh 0 + canonical) e il client fa `<Navigate replace>`;
+- **Derivazione** (`src/seo/slug.ts`, unica fonte): dal **nome inglese**
+  (`getEntityDisplayName(e, 'en')`), ASCII kebab-case — diacritici normalizzati,
+  apostrofi rimossi, `&` → `and`; nome non latino → slug dall'id. Vale **solo
+  per le entità nuove**.
+- **Lock pubblicato** (`src/data/<world>/slugs.ts`, `SeoSlugLock`, importato in
+  `seoSlugs` del dataset): mappa `categoria → id → slug` di tutti gli slug già
+  online, generata da `npm run seo:slugs` e **mai modificata a mano**.
+  Precedenza: `entity.slug` (pin esplicito) → lock → derivato. Così tradurre
+  `localizedName` (es. il nome inglese di un percorso di Naruto) non sposta
+  l'URL: lo slug resta quello congelato.
+- **Collisioni** nella stessa categoria: la prima entità tiene lo slug base, le
+  altre ricevono un suffisso dall'id; uno slug del lock il cui id non esiste più
+  resta **riservato** (non viene riassegnato a un'altra entità).
+- **Rinomina volontaria di un URL**: impostare `slug: 'nuovo-slug'` sull'entità
+  e lanciare `npm run seo:slugs` → il lock registra il vecchio slug in
+  `redirects` (redirect permanente: pagina con meta refresh 0 + canonical, e
+  `<Navigate replace>` sul client). In alternativa `previousSlugs: ['vecchio']`.
+  I redirect puntano sempre allo slug **vivo** (niente catene, verificato da
+  `test:seo`).
 - slug riservati: `page`, `map`, `index`, `new`, `edit`.
+
+**Workflow per contenuti nuovi**: aggiungi l'entità → `npm run seo:slugs` (il
+nuovo slug entra nel lock) → commit del file `slugs.ts` insieme ai dati.
+Controlli: `validate:data` (errori `slug_not_locked`, `slug_lock_missing`,
+`duplicate_slug`, `invalid_slug`; avvisi `slug_renamed`, `slug_collision`),
+`test:seo` (nessuna entità fuori dal lock, stesso slug in ogni lingua, redirect
+validi), `npm run seo:slugs -- --check` (lock aggiornato).
 
 ---
 
@@ -147,8 +165,40 @@ utenti e fanno parte del grafo di link): sotto soglia sono solo `noindex`.
 
 **Lingua reale**: una stringa `Localizable` semplice è testo italiano non
 tradotto. La pagina `/en` di un'entità con sola descrizione italiana resta
-`noindex` (niente finte traduzioni). Oggi riguarda ~220 entità di Naruto:
-tradurle nel dataset le rende indicizzabili in inglese **senza toccare codice**.
+`noindex` (niente finte traduzioni). Per questo **ogni testo narrativo va
+scritto `{ it, en }`** (vedi §5b): oggi nessuna pagina è esclusa per
+traduzione mancante.
+
+**Motivi di esclusione** (`noindexReason` in `src/seo/metadata.ts`, riepilogati
+per lingua dal prerender a fine build): `legal_page`, `coming_soon`,
+`thin_content` (sotto soglia in entrambe le lingue), `not_translated`.
+
+### 5b. Localizzazione obbligatoria IT/EN dei contenuti SEO
+
+Lo **schema** dei campi `Localizable` (`src/utils/localizableFields.ts`) elenca,
+per ogni tipo di entità, quali campi sono **testo** (descrizioni, titoli,
+periodi, etichette delle relazioni, tappe dei percorsi… → devono essere
+`{ it, en }` con entrambe le lingue non vuote) e quali sono **nomi**
+(`localizedName`, titolo dell'opera → stringa semplice ammessa se il nome è
+uguale in tutte le lingue). Quando si aggiunge un campo `Localizable` a
+un'entità va aggiunto anche lì.
+
+```ts
+shortDescription: {
+  it: 'Protagonista. Jinchūriki di Kurama, ninja della Foglia.',
+  en: "Protagonist. Kurama's jinchūriki, a Leaf ninja.",
+},
+```
+
+Nomi canonici (Uchiha, Akatsuki, Konohagakure, Rasengan) invariati; nessuna
+lore o parola chiave inventata; se il nome italiano diverge dal doppiaggio
+inglese, `localizedName: { it, en }`.
+
+Controlli (bloccanti): `npm run validate:i18n` (errori `plain_string`,
+`missing_it`, `missing_en`, `empty`, `missing_field`; avvisi euristici
+`en_looks_italian`, `it_looks_english`, `italian_name_without_en`),
+`test:seo` (nessun campo di testo non localizzato), `seo:check` (nessuna pagina
+`/en` indicizzabile con description italiana).
 
 ---
 
@@ -242,7 +292,9 @@ Solo tipi pertinenti, niente dati inventati:
 1. Dataset + `WorldConfig` + registry come da CLAUDE.md ("Adding a new world").
 2. In `src/data/worlds.ts` impostare `urlSlug` (kebab-case, permanente) e
    `metadata.author/publisher` reali (finiscono nel JSON-LD `about`).
-3. `npm run build`. Automaticamente: landing, mappa, indici, pagine entità,
+3. Scrivere ogni testo narrativo `{ it, en }` (§5b), poi `npm run seo:slugs`
+   e importare il `slugs.ts` generato nel dataset (`seoSlugs`).
+4. `npm run build`. Automaticamente: landing, mappa, indici, pagine entità,
    timeline, metadati IT/EN, hreflang, `sitemap-<world>.xml`, link nell'header,
    nella home e in `llms.txt`. `test:seo` e `seo:check` verificano tutto.
 
@@ -267,7 +319,10 @@ npm run build                 # include test:seo e seo:check
 npm run preview:static        # http://localhost:4173 con redirect/404 reali
 curl -sI localhost:4173/questo-url-non-esiste    # → 404
 curl -sI localhost:4173/worlds/naruto            # → 308 /it/naruto/map
-npm run smoke                 # browser: rotte chiave, idratazione, selettore lingua, 404
+npm run validate:data         # integrità dati + lock slug + contenuti sotto soglia
+npm run validate:i18n         # chiavi UI + campi Localizable di tutti i mondi
+npm run seo:slugs -- --check  # lock degli slug aggiornato
+npm run smoke                 # browser: rotte, idratazione, lingua, 404, header responsive
 BASE=http://localhost:4173 npm run audit:a11y   # axe WCAG 2.2 AA
 ```
 

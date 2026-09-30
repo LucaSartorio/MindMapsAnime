@@ -406,7 +406,7 @@ export const hxhCharactersBatch3: Character[] = [
     locationIds: ['loc-hxh-kakin'],
     arcIds: ['arc-hxh-succession-contest'],
     relationships: [
-      { targetCharacterId: 'char-hxh-kurapika', label: 'Protetta da Kurapika' },
+      { targetCharacterId: 'char-hxh-kurapika', label: { it: 'Protetta da Kurapika', en: 'Protected by Kurapika' } },
     ],
     status: 'alive',
     canonStatus: 'canon',
@@ -432,7 +432,7 @@ export const hxhCharactersBatch3: Character[] = [
     locationIds: ['loc-hxh-kakin'],
     arcIds: ['arc-hxh-succession-contest'],
     relationships: [
-      { targetCharacterId: 'char-hxh-kurapika', label: 'Datore di lavoro' },
+      { targetCharacterId: 'char-hxh-kurapika', label: { it: 'Datore di lavoro', en: 'Employer' } },
     ],
     status: 'alive',
     canonStatus: 'canon',

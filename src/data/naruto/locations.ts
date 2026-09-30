@@ -84,9 +84,11 @@ export const narutoLocations: Location[] = [
     y: 755,
     boundaryId: 'boundary-wind',
     nationId: 'nation-wind',
-    shortDescription: 'Villaggio Nascosto della Sabbia.',
-    longDescription:
-      'Capitale ninja del Paese del Vento. Patria del Kazekage Gaara.',
+    shortDescription: { it: 'Villaggio Nascosto della Sabbia.', en: 'The Hidden Sand Village.' },
+    longDescription: {
+      it: 'Capitale ninja del Paese del Vento. Patria del Kazekage Gaara.',
+      en: 'Ninja capital of the Land of Wind. Home of the Kazekage Gaara.',
+    },
     characterIds: ['char-gaara'],
     arcIds: ['arc-chunin-exams', 'arc-kazekage-rescue'],
     subMapLevelId: 'naruto-map-suna',
@@ -107,10 +109,14 @@ export const narutoLocations: Location[] = [
     y: 659,
     boundaryId: 'boundary-water',
     nationId: 'nation-water',
-    shortDescription:
-      'Villaggio Nascosto della Nebbia, isole del Paese dell\'Acqua.',
-    longDescription:
-      'Storia interna violenta nota come "Bloody Mist". Sette Spadaccini della Nebbia.',
+    shortDescription: {
+      it: 'Villaggio Nascosto della Nebbia, isole del Paese dell\'Acqua.',
+      en: 'The Hidden Mist Village, on the islands of the Land of Water.',
+    },
+    longDescription: {
+      it: 'Storia interna violenta nota come "Bloody Mist". Sette Spadaccini della Nebbia.',
+      en: 'A violent internal history known as the "Bloody Mist". The Seven Ninja Swordsmen of the Mist.',
+    },
     arcIds: ['arc-prologue'],
     subMapLevelId: 'naruto-map-kiri',
     assetIds: ['naruto-img-kiri'],
@@ -130,9 +136,11 @@ export const narutoLocations: Location[] = [
     y: 280,
     boundaryId: 'boundary-earth',
     nationId: 'nation-earth',
-    shortDescription: 'Villaggio Nascosto della Roccia.',
-    longDescription:
-      'Capitale ninja del Paese della Terra, governato dal Tsuchikage.',
+    shortDescription: { it: 'Villaggio Nascosto della Roccia.', en: 'The Hidden Stone Village.' },
+    longDescription: {
+      it: 'Capitale ninja del Paese della Terra, governato dal Tsuchikage.',
+      en: 'Ninja capital of the Land of Earth, ruled by the Tsuchikage.',
+    },
     subMapLevelId: 'naruto-map-iwa',
     assetIds: ['naruto-img-iwa'],
     importance: 'main',
@@ -151,9 +159,11 @@ export const narutoLocations: Location[] = [
     y: 265,
     boundaryId: 'boundary-lightning',
     nationId: 'nation-lightning',
-    shortDescription: 'Villaggio Nascosto delle Nuvole.',
-    longDescription:
-      'Sede del Raikage. Casa di Killer B e dei suoi predecessori jinchuriki.',
+    shortDescription: { it: 'Villaggio Nascosto delle Nuvole.', en: 'The Hidden Cloud Village.' },
+    longDescription: {
+      it: 'Sede del Raikage. Casa di Killer B e dei suoi predecessori jinchuriki.',
+      en: 'Seat of the Raikage. Home of Killer B and the jinchūriki who preceded him.',
+    },
     subMapLevelId: 'naruto-map-kumo',
     assetIds: ['naruto-img-kumo'],
     importance: 'main',
@@ -174,8 +184,10 @@ export const narutoLocations: Location[] = [
     y: 354,
     boundaryId: 'boundary-rain',
     nationId: 'nation-rain',
-    shortDescription:
-      'Villaggio della Pioggia, base operativa di Pain e dell\'Akatsuki.',
+    shortDescription: {
+      it: 'Villaggio della Pioggia, base operativa di Pain e dell\'Akatsuki.',
+      en: 'The Rain Village, operational base of Pain and the Akatsuki.',
+    },
     characterIds: ['char-pain'],
     clanIds: ['faction-akatsuki'],
     arcIds: ['arc-pain-assault', 'arc-akatsuki-suppression'],
@@ -197,8 +209,10 @@ export const narutoLocations: Location[] = [
     y: 389,
     boundaryId: 'boundary-sound',
     nationId: 'nation-sound',
-    shortDescription:
-      'Villaggio del Suono, fondato da Orochimaru.',
+    shortDescription: {
+      it: 'Villaggio del Suono, fondato da Orochimaru.',
+      en: 'The Sound Village, founded by Orochimaru.',
+    },
     characterIds: ['char-orochimaru', 'char-sasuke'],
     arcIds: ['arc-sasuke-retrieval', 'arc-itachi-pursuit'],
     subMapLevelId: 'naruto-map-oto',
@@ -219,8 +233,10 @@ export const narutoLocations: Location[] = [
     y: 476,
     boundaryId: 'boundary-grass',
     nationId: 'nation-grass',
-    shortDescription:
-      'Villaggio dell\'Erba, fra Iwa e Konoha.',
+    shortDescription: {
+      it: 'Villaggio dell\'Erba, fra Iwa e Konoha.',
+      en: 'The Grass Village, between Iwa and Konoha.',
+    },
     importance: 'minor',
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -237,8 +253,10 @@ export const narutoLocations: Location[] = [
     y: 300,
     boundaryId: 'boundary-waterfalls',
     nationId: 'nation-waterfalls',
-    shortDescription:
-      'Villaggio della Cascata. Origini di Kakuzu.',
+    shortDescription: {
+      it: 'Villaggio della Cascata. Origini di Kakuzu.',
+      en: "The Waterfall Village. Kakuzu's place of origin.",
+    },
     subMapLevelId: 'naruto-map-taki',
     importance: 'minor',
     canonStatus: 'canon',
@@ -256,8 +274,10 @@ export const narutoLocations: Location[] = [
     y: 393,
     boundaryId: 'boundary-hotwater',
     nationId: 'nation-hotwater',
-    shortDescription:
-      'Villaggio delle Terme, ormai pacificato. Origini di Hidan.',
+    shortDescription: {
+      it: 'Villaggio delle Terme, ormai pacificato. Origini di Hidan.',
+      en: "The Hot Water Village, now at peace. Hidan's place of origin.",
+    },
     importance: 'minor',
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -273,8 +293,10 @@ export const narutoLocations: Location[] = [
     type: 'ruins',
     x: 952,
     y: 635,
-    shortDescription:
-      'Rovine del villaggio del clan Uzumaki, distrutto in guerra.',
+    shortDescription: {
+      it: 'Rovine del villaggio del clan Uzumaki, distrutto in guerra.',
+      en: "Ruins of the Uzumaki clan's village, destroyed in war.",
+    },
     clanIds: ['clan-uzumaki'],
     subMapLevelId: 'naruto-map-uzu',
     importance: 'minor',
@@ -293,8 +315,10 @@ export const narutoLocations: Location[] = [
     y: 430,
     boundaryId: 'boundary-bears',
     nationId: 'nation-bears',
-    shortDescription:
-      'Villaggio della Stella (anime-only / filler).',
+    shortDescription: {
+      it: 'Villaggio della Stella (anime-only / filler).',
+      en: 'The Star Village (anime-only / filler).',
+    },
     importance: 'minor',
     canonStatus: 'anime_only',
     referenceStatus: 'needs_verification',
@@ -311,8 +335,7 @@ export const narutoLocations: Location[] = [
     y: 64,
     boundaryId: 'boundary-snow',
     nationId: 'nation-snow',
-    shortDescription:
-      'Villaggio della Neve (movie).',
+    shortDescription: { it: 'Villaggio della Neve (movie).', en: 'The Snow Village (movie).' },
     importance: 'minor',
     canonStatus: 'movie',
     referenceStatus: 'needs_verification',
@@ -328,8 +351,10 @@ export const narutoLocations: Location[] = [
     x: 1150,
     y: 40,
     nationId: 'nation-sky',
-    shortDescription:
-      'Villaggio del Cielo (Shippuden movie).',
+    shortDescription: {
+      it: 'Villaggio del Cielo (Shippuden movie).',
+      en: 'The Sky Village (Shippuden movie).',
+    },
     importance: 'minor',
     canonStatus: 'movie',
     referenceStatus: 'needs_verification',
@@ -375,8 +400,10 @@ export const narutoLocations: Location[] = [
     y: 440,
     boundaryId: 'boundary-fire',
     nationId: 'nation-fire',
-    shortDescription:
-      'Training Ground 44, scenario della seconda prova degli Esami Chunin.',
+    shortDescription: {
+      it: 'Training Ground 44, scenario della seconda prova degli Esami Chunin.',
+      en: 'Training Ground 44, the setting of the second stage of the Chunin Exams.',
+    },
     arcIds: ['arc-chunin-exams'],
     importance: 'secondary',
     canonStatus: 'canon',
@@ -394,8 +421,10 @@ export const narutoLocations: Location[] = [
     x: 830,
     y: 540,
     boundaryId: 'boundary-fire',
-    shortDescription:
-      'Casa dei rospi summoning. Allenamento Sage di Jiraiya e Naruto.',
+    shortDescription: {
+      it: 'Casa dei rospi summoning. Allenamento Sage di Jiraiya e Naruto.',
+      en: 'Home of the summoned toads. Where Jiraiya and Naruto trained as Sages.',
+    },
     characterIds: ['char-naruto', 'char-jiraiya'],
     importance: 'secondary',
     canonStatus: 'canon',
@@ -411,8 +440,10 @@ export const narutoLocations: Location[] = [
     type: 'cave',
     x: 940,
     y: 540,
-    shortDescription:
-      'Caverna sacra dei serpenti, dimora del Sage of Snakes.',
+    shortDescription: {
+      it: 'Caverna sacra dei serpenti, dimora del Sage of Snakes.',
+      en: 'Sacred cave of the snakes, home of the Sage of Snakes.',
+    },
     characterIds: ['char-orochimaru', 'char-sasuke'],
     importance: 'secondary',
     canonStatus: 'canon',
@@ -428,8 +459,10 @@ export const narutoLocations: Location[] = [
     type: 'forest',
     x: 820,
     y: 500,
-    shortDescription:
-      'Foresta sacra delle lumache, dimora di Lady Katsuyu.',
+    shortDescription: {
+      it: 'Foresta sacra delle lumache, dimora di Lady Katsuyu.',
+      en: 'Sacred forest of the slugs, home of Lady Katsuyu.',
+    },
     characterIds: ['char-tsunade'],
     importance: 'minor',
     canonStatus: 'canon',
@@ -446,8 +479,10 @@ export const narutoLocations: Location[] = [
     x: 700,
     y: 360,
     boundaryId: 'boundary-fire',
-    shortDescription:
-      'Antica vallata, nascondiglio segreto degli Uchiha e di Obito.',
+    shortDescription: {
+      it: 'Antica vallata, nascondiglio segreto degli Uchiha e di Obito.',
+      en: 'An ancient valley, secret hideout of the Uchiha and of Obito.',
+    },
     characterIds: ['char-obito', 'char-madara'],
     importance: 'secondary',
     canonStatus: 'canon',
@@ -466,8 +501,10 @@ export const narutoLocations: Location[] = [
     x: 560,
     y: 430,
     boundaryId: 'boundary-grass',
-    shortDescription:
-      'Punto d\'incontro decisivo nell\'arco del Tenchi Bridge.',
+    shortDescription: {
+      it: 'Punto d\'incontro decisivo nell\'arco del Tenchi Bridge.',
+      en: 'Decisive meeting point in the Tenchi Bridge arc.',
+    },
     arcIds: ['arc-tenchi-bridge'],
     importance: 'secondary',
     canonStatus: 'canon',
@@ -484,8 +521,10 @@ export const narutoLocations: Location[] = [
     x: 470,
     y: 320,
     boundaryId: 'boundary-grass',
-    shortDescription:
-      'Ponte distrutto durante la Terza Guerra Ninja dal Team Minato.',
+    shortDescription: {
+      it: 'Ponte distrutto durante la Terza Guerra Ninja dal Team Minato.',
+      en: 'Bridge destroyed by Team Minato during the Third Shinobi World War.',
+    },
     characterIds: ['char-kakashi', 'char-obito', 'char-minato'],
     importance: 'secondary',
     canonStatus: 'canon',
@@ -503,8 +542,10 @@ export const narutoLocations: Location[] = [
     y: 488,
     boundaryId: 'boundary-waves',
     nationId: 'nation-waves',
-    shortDescription:
-      'Ponte costruito nel Paese delle Onde, chiamato in onore di Naruto.',
+    shortDescription: {
+      it: 'Ponte costruito nel Paese delle Onde, chiamato in onore di Naruto.',
+      en: 'Bridge built in the Land of Waves and named in honour of Naruto.',
+    },
     arcIds: ['arc-prologue'],
     importance: 'secondary',
     canonStatus: 'canon',
@@ -523,8 +564,10 @@ export const narutoLocations: Location[] = [
     x: 960,
     y: 320,
     boundaryId: 'boundary-sound',
-    shortDescription:
-      'Uno dei numerosi nascondigli di Orochimaru.',
+    shortDescription: {
+      it: 'Uno dei numerosi nascondigli di Orochimaru.',
+      en: "One of Orochimaru's many hideouts.",
+    },
     characterIds: ['char-orochimaru', 'char-sasuke'],
     arcIds: ['arc-sasuke-retrieval', 'arc-itachi-pursuit'],
     importance: 'secondary',
@@ -542,8 +585,10 @@ export const narutoLocations: Location[] = [
     x: 520,
     y: 230,
     boundaryId: 'boundary-rain',
-    shortDescription:
-      'Quartier generale dell\'Akatsuki ad Amegakure.',
+    shortDescription: {
+      it: 'Quartier generale dell\'Akatsuki ad Amegakure.',
+      en: 'Akatsuki headquarters in Amegakure.',
+    },
     clanIds: ['faction-akatsuki'],
     arcIds: ['arc-akatsuki-suppression', 'arc-itachi-pursuit'],
     importance: 'secondary',
@@ -561,8 +606,10 @@ export const narutoLocations: Location[] = [
     x: 535,
     y: 540,
     boundaryId: 'boundary-rivers',
-    shortDescription:
-      'Nascondiglio nel Paese dei Fiumi usato per sigillare i bijū.',
+    shortDescription: {
+      it: 'Nascondiglio nel Paese dei Fiumi usato per sigillare i bijū.',
+      en: 'Hideout in the Land of Rivers used to seal the tailed beasts.',
+    },
     arcIds: ['arc-kazekage-rescue'],
     importance: 'secondary',
     canonStatus: 'canon',
@@ -581,8 +628,10 @@ export const narutoLocations: Location[] = [
     x: 750,
     y: 138,
     boundaryId: 'boundary-iron',
-    shortDescription:
-      'Campi della Quarta Guerra Ninja, prossimi al Paese del Ferro.',
+    shortDescription: {
+      it: 'Campi della Quarta Guerra Ninja, prossimi al Paese del Ferro.',
+      en: 'Battlefields of the Fourth Shinobi World War, near the Land of Iron.',
+    },
     characterIds: [
       'char-naruto',
       'char-sasuke',
@@ -606,8 +655,10 @@ export const narutoLocations: Location[] = [
     x: 1177,
     y: 330,
     boundaryId: 'boundary-water',
-    shortDescription:
-      'Isola dove Naruto si allena per controllare Kurama.',
+    shortDescription: {
+      it: 'Isola dove Naruto si allena per controllare Kurama.',
+      en: 'Island where Naruto trains to control Kurama.',
+    },
     characterIds: ['char-naruto'],
     arcIds: ['arc-fourth-war'],
     importance: 'secondary',
@@ -626,8 +677,10 @@ export const narutoLocations: Location[] = [
     y: 150,
     boundaryId: 'boundary-iron',
     nationId: 'nation-iron',
-    shortDescription:
-      'Sala del Summit dei Cinque Kage nel Paese del Ferro.',
+    shortDescription: {
+      it: 'Sala del Summit dei Cinque Kage nel Paese del Ferro.',
+      en: 'Five Kage Summit hall in the Land of Iron.',
+    },
     arcIds: ['arc-five-kage-summit'],
     importance: 'secondary',
     canonStatus: 'canon',
@@ -643,10 +696,14 @@ export const narutoLocations: Location[] = [
     type: 'sacred_place',
     x: 60,
     y: 60,
-    shortDescription:
-      'Dimensioni separate (lava, deserto, ghiaccio, cuore). Pseudo-location off-map.',
-    longDescription:
-      'Le dimensioni accessibili tramite Kekkei Mōra di Kaguya: lava, ghiaccio, sabbia, acida e dimensione del cuore. Non mappabili geograficamente.',
+    shortDescription: {
+      it: 'Dimensioni separate (lava, deserto, ghiaccio, cuore). Pseudo-location off-map.',
+      en: 'Separate dimensions (lava, desert, ice, heart). An off-map pseudo-location.',
+    },
+    longDescription: {
+      it: 'Le dimensioni accessibili tramite Kekkei Mōra di Kaguya: lava, ghiaccio, sabbia, acida e dimensione del cuore. Non mappabili geograficamente.',
+      en: "The dimensions reachable through Kaguya's Kekkei Mōra: lava, ice, sand, acid and the heart dimension. They cannot be mapped geographically.",
+    },
     arcIds: ['arc-kaguya-final'],
     importance: 'secondary',
     canonStatus: 'canon',
@@ -878,7 +935,10 @@ export const narutoLocations: Location[] = [
     type: 'landmark',
     x: 600,
     y: 240,
-    shortDescription: 'Sede dell\'Hokage, sopra la Roccia degli Hokage.',
+    shortDescription: {
+      it: 'Sede dell\'Hokage, sopra la Roccia degli Hokage.',
+      en: 'Seat of the Hokage, above the Hokage Rock.',
+    },
     characterIds: ['char-hiruzen', 'char-tsunade', 'char-minato'],
     importance: 'main',
     canonStatus: 'canon',
@@ -893,7 +953,10 @@ export const narutoLocations: Location[] = [
     type: 'landmark',
     x: 700,
     y: 360,
-    shortDescription: 'Il ristorante di ramen preferito da Naruto.',
+    shortDescription: {
+      it: 'Il ristorante di ramen preferito da Naruto.',
+      en: "Naruto's favourite ramen restaurant.",
+    },
     characterIds: ['char-naruto'],
     importance: 'secondary',
     canonStatus: 'canon',
@@ -909,7 +972,10 @@ export const narutoLocations: Location[] = [
     type: 'training_area',
     x: 540,
     y: 460,
-    shortDescription: 'Accademia ninja dove vengono formate le nuove leve.',
+    shortDescription: {
+      it: 'Accademia ninja dove vengono formate le nuove leve.',
+      en: 'Ninja academy where new recruits are trained.',
+    },
     importance: 'main',
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -924,8 +990,10 @@ export const narutoLocations: Location[] = [
     type: 'training_area',
     x: 880,
     y: 520,
-    shortDescription:
-      'Campo d\'addestramento del Team 7. Iconica prova dei sonagli.',
+    shortDescription: {
+      it: 'Campo d\'addestramento del Team 7. Iconica prova dei sonagli.',
+      en: "Team 7's training ground. Setting of the iconic bell test.",
+    },
     characterIds: ['char-naruto', 'char-sasuke', 'char-sakura', 'char-kakashi'],
     importance: 'main',
     canonStatus: 'canon',
@@ -941,8 +1009,10 @@ export const narutoLocations: Location[] = [
     type: 'region',
     x: 360,
     y: 600,
-    shortDescription:
-      'Quartiere storico del clan Uchiha, teatro della loro tragedia.',
+    shortDescription: {
+      it: 'Quartiere storico del clan Uchiha, teatro della loro tragedia.',
+      en: 'Historic district of the Uchiha clan, the scene of their tragedy.',
+    },
     clanIds: ['clan-uchiha'],
     characterIds: ['char-sasuke', 'char-itachi', 'char-obito'],
     importance: 'main',
@@ -959,7 +1029,10 @@ export const narutoLocations: Location[] = [
     type: 'region',
     x: 920,
     y: 660,
-    shortDescription: 'Quartier generale del clan Hyuga.',
+    shortDescription: {
+      it: 'Quartier generale del clan Hyuga.',
+      en: 'Headquarters of the Hyuga clan.',
+    },
     clanIds: ['clan-hyuga'],
     characterIds: ['char-hinata', 'char-neji'],
     importance: 'secondary',
@@ -976,8 +1049,10 @@ export const narutoLocations: Location[] = [
     type: 'forest',
     x: 240,
     y: 400,
-    shortDescription:
-      'Foresta privata del clan Nara, dove allevano cervi.',
+    shortDescription: {
+      it: 'Foresta privata del clan Nara, dove allevano cervi.',
+      en: "The Nara clan's private forest, where they raise deer.",
+    },
     clanIds: ['clan-nara'],
     characterIds: ['char-shikamaru'],
     importance: 'secondary',
@@ -994,7 +1069,7 @@ export const narutoLocations: Location[] = [
     type: 'landmark',
     x: 760,
     y: 240,
-    shortDescription: 'Ospedale ninja del villaggio.',
+    shortDescription: { it: 'Ospedale ninja del villaggio.', en: "The village's ninja hospital." },
     importance: 'minor',
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -1009,8 +1084,10 @@ export const narutoLocations: Location[] = [
     type: 'landmark',
     x: 1040,
     y: 760,
-    shortDescription:
-      'Porta principale del villaggio, presidiata da chunin.',
+    shortDescription: {
+      it: 'Porta principale del villaggio, presidiata da chunin.',
+      en: "The village's main gate, guarded by chunin.",
+    },
     importance: 'secondary',
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -1025,8 +1102,10 @@ export const narutoLocations: Location[] = [
     type: 'sacred_place',
     x: 460,
     y: 220,
-    shortDescription:
-      'Pietra commemorativa dei ninja caduti. Luogo di riflessione di Kakashi.',
+    shortDescription: {
+      it: 'Pietra commemorativa dei ninja caduti. Luogo di riflessione di Kakashi.',
+      en: "Memorial stone for fallen ninja. Kakashi's place of reflection.",
+    },
     characterIds: ['char-kakashi'],
     importance: 'secondary',
     canonStatus: 'canon',

@@ -369,19 +369,26 @@ export function isTranslatedIn(dataset: WorldDataset, category: SeoCategory, id:
  * finti duplicati "tradotti") finché il dataset non riceve la traduzione.
  */
 export function isIndexable(resolved: ResolvedPage): boolean {
+  return noindexReason(resolved) === null;
+}
+
+/** Perché una pagina è `noindex` (per report e test); `null` = indicizzabile. */
+export type NoindexReason = 'legal_page' | 'coming_soon' | 'thin_content' | 'not_translated';
+
+export function noindexReason(resolved: ResolvedPage): NoindexReason | null {
   const { page, lang } = resolved;
   switch (page.kind) {
     case 'static':
-      return page.page === 'about' || page.page === 'support';
+      return page.page === 'about' || page.page === 'support' ? null : 'legal_page';
     case 'world':
-      return !!page.dataset; // i mondi "in arrivo" non hanno ancora contenuto
+      return page.dataset ? null : 'coming_soon'; // i mondi "in arrivo" non hanno ancora contenuto
     case 'entity':
-      return (
-        isTranslatedIn(page.dataset, page.category, page.id, lang) &&
-        SEO_LOCALES.some((l) => entityQuality(page.dataset, page.category, page.id, l).indexable)
-      );
+      if (!SEO_LOCALES.some((l) => entityQuality(page.dataset, page.category, page.id, l).indexable)) {
+        return 'thin_content';
+      }
+      return isTranslatedIn(page.dataset, page.category, page.id, lang) ? null : 'not_translated';
     default:
-      return true;
+      return null;
   }
 }
 
