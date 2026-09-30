@@ -76,7 +76,7 @@ export function WorldTabs({ tabs, activeKey }: WorldTabsProps) {
                 to={tab.to}
                 aria-current={active ? 'page' : undefined}
                 className={cn(
-                  'world-tab block rounded-md border py-1.5 text-sm whitespace-nowrap transition',
+                  'world-tab flex h-9 items-center rounded-md border text-sm whitespace-nowrap transition',
                   active
                     ? 'border-chakra-500/40 bg-chakra-500/20 text-chakra-100'
                     : 'border-transparent text-ink-200 hover:bg-ink-800/70 hover:text-white',
@@ -96,7 +96,7 @@ export function WorldTabs({ tabs, activeKey }: WorldTabsProps) {
           onClick={() => setOpen((o) => !o)}
           aria-expanded={open}
           aria-controls={menuId}
-          className="wt-more world-tab relative items-center gap-1 rounded-md border border-transparent py-1.5 text-sm whitespace-nowrap text-ink-200 transition hover:bg-ink-800/70 hover:text-white"
+          className="wt-more world-tab relative h-9 items-center gap-1 rounded-md border border-transparent text-sm whitespace-nowrap text-ink-200 transition hover:bg-ink-800/70 hover:text-white"
         >
           {/* Indicatore "la sezione attiva è qui dentro" (mostrato dal CSS). */}
           <span

@@ -48,13 +48,14 @@
   display: none;
 }
 
-/* Header a 3 zone (TopNav): spaziature fluide che si riducono con la viewport
-   PRIMA di sacrificare qualsiasi contenuto (gap → padding → menu "Altro"). */
+/* Header a 3 zone (TopNav): margini esterni e distacco delle utility fluidi,
+   che si riducono con la viewport PRIMA di sacrificare contenuto (spazi →
+   padding delle tab → menu "Altro"). Le spaziature interne del blocco
+   sinistro (logo 16px selettore 12px │ 12px tab) sono fisse per regolarità. */
 .topnav-bar {
   --hdr-px: clamp(0.75rem, 1.4vw, 2rem);
   --hdr-gap: clamp(0.5rem, 1.1vw, 1.5rem);
   padding-inline: var(--hdr-px);
-  column-gap: var(--hdr-gap);
 }
 
 /* Tab del mondo: contenitore interrogato dalle regole @container generate da

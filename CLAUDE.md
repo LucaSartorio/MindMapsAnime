@@ -169,7 +169,14 @@ left offset (`md:ml-16`) so it sits to the right of the vertical rail and never 
 is capped + scrollable for type-heavy worlds like Dragon Ball). The header (`TopNav`) also gains a `WorldSwitcher` — an accessible dropdown to jump
 between anime worlds without going back home.
 
-**Header navigation (`TopNav`) — 3 zones, never two rows.** LEFT (`shrink-0`): logo + `WorldSwitcher`;
+**Header navigation (`TopNav`) — 3 zones, never two rows.** Canonical order: **Logo → Anime selector →
+Divider → Section navigation → Utilities** (spacing: logo 16px selector 12px │ 12px tabs; every control —
+selector, tabs, "More", search/info/report icons, language — is **36px (`h-9`) and vertically centred by
+flex**, no offsets/transforms). The anime selector is **neutral** (ink border/bg, never blue): blue is
+reserved for the active tab (selector = current world, tab = current section). Its menu is left-anchored
+under it (`left-0 top-full mt-1.5`, `min-w-full w-max`, opaque), current world = neutral highlight + ✓,
+WAI-ARIA menu button (↑/↓/Home/End, Esc returns focus, Tab/click-outside close, focus starts on the current
+world). The divider (`[data-nav-divider]`) is shown only where tabs are (≥md). LEFT (`shrink-0`): logo + `WorldSwitcher`;
 CENTER (`flex-1 min-w-0`): `WorldTabs` (`src/components/layout/WorldTabs.tsx`); RIGHT (`shrink-0`): compact
 search icon (→ popover `GlobalSearchDropdown`), About/Report icon buttons (`aria-label` + `title`), language,
 mobile ☰. The zones can never overlap, so no tab can slide under the search. Space adapts **in CSS only**
@@ -181,7 +188,8 @@ when the active tab is inside it). Measured: all tabs visible at 1920/1600/1440/
 with German labels); "More" only kicks in ≤1280. Labels are `whitespace-nowrap`, never truncated. The
 **active tab is derived from the route** (`activeWorldTabKey(parseSeoPath(...))`): landing → Overview, `/map`
 → Map, a category index *and all its entity pages* → that category (`regions` → Locations), timeline → none.
-`npm run smoke` asserts this (5 routes × 6 viewports: one row, no overlap/clipping, correct active tab).
+`npm run smoke` asserts this (5 routes × 6 viewports: one row, no overlap/clipping, correct active tab,
+equal control heights + shared vertical centre, divider between selector and tabs, menu anchored to the selector).
 
 **Anime selector rule**: choosing a world in `WorldSwitcher` ALWAYS opens that world's **Overview**
 (`worldPath(lang, w)` = `/{lang}/{world}`) from any section, and resets the previous world's context
