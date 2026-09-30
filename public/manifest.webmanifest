@@ -1,12 +1,13 @@
 {
-  "name": "Mappe Interattive — Atlante di anime e manga",
-  "short_name": "Mappe Interattive",
-  "description": "Esplora i mondi dei tuoi anime e manga preferiti attraverso mappe interattive, timeline, personaggi, fazioni, archi narrativi e percorsi.",
+  "name": "AniMapVerse — Interactive anime & manga world maps",
+  "short_name": "AniMapVerse",
+  "description": "Interactive maps of anime and manga worlds: locations, characters, story arcs, factions, journeys and timelines.",
+  "id": "/",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "orientation": "any",
-  "lang": "it",
+  "lang": "en",
   "background_color": "#070709",
   "theme_color": "#070709",
   "icons": [

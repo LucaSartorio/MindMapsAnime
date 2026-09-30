@@ -16,6 +16,8 @@ import {
   findFaction,
   findLocation,
 } from '@/lib/entities';
+import { mapPath } from '@/seo/paths';
+import { useSeoLang } from '@/seo/useSeoLang';
 
 interface TimelineEventDetailsModalProps {
   dataset: WorldDataset;
@@ -37,6 +39,7 @@ export function TimelineEventDetailsModal({
   const setActiveMapLevel = useMapStore((s) => s.setActiveMapLevel);
   const setSelectedLocation = useMapStore((s) => s.setSelectedLocation);
   const navigate = useNavigate();
+  const seoLang = useSeoLang();
 
   if (!event) {
     return (
@@ -85,7 +88,7 @@ export function TimelineEventDetailsModal({
               onClick={() => {
                 setActiveMapLevel(location.mapLevelId);
                 setSelectedLocation(location.id);
-                navigate(`/worlds/${dataset.world.slug}`);
+                navigate(mapPath(seoLang, dataset));
                 close();
               }}
             >

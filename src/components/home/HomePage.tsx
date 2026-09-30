@@ -9,8 +9,17 @@ import { Card } from '@/components/common/Card';
 import { Seo } from '@/components/seo/Seo';
 import { useLocaleStore } from '@/store/useLocaleStore';
 
-/** Quanti mondi mostrare prima del "Mostra tutti" (homepage compatta). */
-const INITIAL_VISIBLE = 3;
+/**
+ * Ordine della griglia: prima i mondi esplorabili, poi quelli "in arrivo".
+ * Tutti i mondi disponibili sono sempre visibili (e quindi raggiungibili con
+ * link HTML reali, anche dai crawler); il "Mostra tutti" nasconde solo gli
+ * "in arrivo" in eccesso. Un nuovo mondo disponibile compare da solo.
+ */
+const ORDERED_WORLDS = [
+  ...animeWorlds.filter((w) => w.status === 'available'),
+  ...animeWorlds.filter((w) => w.status === 'coming_soon'),
+];
+const INITIAL_VISIBLE = Math.max(3, ORDERED_WORLDS.filter((w) => w.status === 'available').length);
 
 export function HomePage() {
   const { t } = useTranslation();
@@ -18,10 +27,10 @@ export function HomePage() {
   const [query, setQuery] = useState('');
   const [showAll, setShowAll] = useState(false);
   const filteredWorlds = useMemo(() => {
-    if (!query.trim()) return animeWorlds;
-    const results = searchWorlds(query, animeWorlds, locale);
+    if (!query.trim()) return ORDERED_WORLDS;
+    const results = searchWorlds(query, ORDERED_WORLDS, locale);
     const ids = new Set(results.map((r) => r.id));
-    return animeWorlds.filter((w) => ids.has(w.id));
+    return ORDERED_WORLDS.filter((w) => ids.has(w.id));
   }, [query, locale]);
 
   // Durante una ricerca mostriamo tutti i risultati (il filtro non va limitato);
@@ -35,7 +44,7 @@ export function HomePage() {
 
   return (
     <div>
-      <Seo path="/" />
+      <Seo />
       <HeroSection />
 
       <div className="max-w-6xl mx-auto px-6 pb-24">

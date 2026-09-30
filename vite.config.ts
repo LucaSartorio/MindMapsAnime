@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import path from 'node:path';
 
 // Configurazione Vite per Mappe Interattive
-export default defineConfig(({ command }) => {
+export default defineConfig(({ command, isSsrBuild }) => {
   const isBuild = command === 'build';
 
   return {
@@ -29,6 +29,12 @@ export default defineConfig(({ command }) => {
       // senza mappa per risalire al sorgente originale (default Vite, reso
       // esplicito e intenzionale).
       sourcemap: false,
+      // Il manifest serve SOLO a scripts/prerender.ts (modulepreload dei chunk
+      // di ogni rotta); il prerender lo rimuove da dist/ a fine build.
+      manifest: !isSsrBuild,
+      // La build SSR (`src/entry-server.tsx` → dist-server/) serve solo al
+      // pre-rendering: non copiamo di nuovo `public/` (mappe pesanti).
+      copyPublicDir: !isSsrBuild,
     },
     // NB: niente `manualChunks` custom. Un tentativo di vendor-chunking manuale
     // ha creato import circolari tra chunk (react ⇄ vendor) rompendo l'init dei

@@ -10,6 +10,8 @@ import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText } from '@/utils/localization';
 import { findLocation, findNation } from '@/lib/entities';
 import { getTagLabel } from '@/lib/tagLabels';
+import { mapPath } from '@/seo/paths';
+import { useSeoLang } from '@/seo/useSeoLang';
 
 interface NationDetailsModalProps {
   dataset: WorldDataset;
@@ -29,6 +31,7 @@ export function NationDetailsModal({
   const openArc = useUiStore((s) => s.openArcModal);
   const openEvent = useUiStore((s) => s.openEventModal);
   const navigate = useNavigate();
+  const seoLang = useSeoLang();
   const setActiveMapLevel = useMapStore((s) => s.setActiveMapLevel);
 
   if (!nation) {
@@ -92,7 +95,7 @@ export function NationDetailsModal({
               variant="ghost"
               onClick={() => {
                 setActiveMapLevel(hiddenVillages[0].mapLevelId);
-                navigate(`/worlds/${dataset.world.slug}`);
+                navigate(mapPath(seoLang, dataset));
                 close();
               }}
             >

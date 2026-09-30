@@ -1,8 +1,0 @@
-# Mappe Interattive — robots.txt
-User-agent: *
-Allow: /
-
-# Risorse non utili all'indicizzazione
-Disallow: /assets/
-
-Sitemap: https://animapverse.com/sitemap.xml

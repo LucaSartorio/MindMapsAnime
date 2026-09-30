@@ -1,9 +1,12 @@
-import { create } from 'zustand';
 import type { WorldDataset } from '@/types';
+import { createSnapshotStore } from './snapshotStore';
 
 /**
  * Store del mondo attualmente caricato.
  * Generico: ogni anime risolto via slug popola lo stesso store.
+ *
+ * Snapshot SSR = stato corrente: il mondo attivo è impostato PRIMA del primo
+ * render (pre-rendering e `preloadRoute` in main.tsx), vedi `createSnapshotStore`.
  */
 interface WorldState {
   worldSlug: string | null;
@@ -12,7 +15,7 @@ interface WorldState {
   reset: () => void;
 }
 
-export const useWorldStore = create<WorldState>((set) => ({
+export const useWorldStore = createSnapshotStore<WorldState>((set) => ({
   worldSlug: null,
   dataset: null,
   setActiveWorld: (slug, dataset) =>

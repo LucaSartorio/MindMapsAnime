@@ -12,6 +12,8 @@ import { useMapStore, useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText, getEntityDisplayName } from '@/utils/localization';
 import { findArc, findCharacter, findLocation, findRoute } from '@/lib/entities';
+import { mapPath } from '@/seo/paths';
+import { useSeoLang } from '@/seo/useSeoLang';
 
 interface RouteDetailsModalProps {
   dataset: WorldDataset;
@@ -32,6 +34,7 @@ export function RouteDetailsModal({
   const openEvent = useUiStore((s) => s.openEventModal);
   const setSelectedRoute = useMapStore((s) => s.setSelectedRoute);
   const navigate = useNavigate();
+  const seoLang = useSeoLang();
 
   // Tappa corrente condivisa con lo stepper: la lista sotto evidenzia la stessa
   // tappa (e segna come "fatte" quelle già passate) mentre la play avanza.
@@ -75,7 +78,7 @@ export function RouteDetailsModal({
             variant="ember"
             onClick={() => {
               setSelectedRoute(route.id);
-              navigate(`/worlds/${dataset.world.slug}`);
+              navigate(mapPath(seoLang, dataset));
               close();
             }}
           >

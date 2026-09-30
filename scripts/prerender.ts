@@ -1,158 +1,246 @@
 /**
- * Pre-rendering SEO statico.
+ * Pre-rendering statico (SSG) — eseguito DOPO `vite build` (client) e
+ * `vite build --ssr src/entry-server.tsx` (server).
  *
- * Eseguito DOPO `vite build`. Per ogni rotta nota (vedi `src/lib/seo.ts`):
- *  - genera un file HTML dedicato (es. `dist/about/index.html`) a partire dal
- *    template `dist/index.html`;
- *  - inietta i meta tag SEO corretti (title, description, canonical, Open Graph,
- *    Twitter, robots, JSON-LD) direttamente nell'HTML statico, così i crawler
- *    che NON eseguono JavaScript leggono comunque i metadati giusti;
- *  - inserisce un fallback testuale nel `#root` (H1 + descrizione) per
- *    l'indicizzazione anche senza JS. Il client lo sostituisce al mount.
+ * Per OGNI pagina pubblica enumerata dai dati (`src/seo/routes.ts`):
+ *  - rende l'app React completa in HTML (`renderApp`, stesso albero del client);
+ *  - inietta nel `<head>` title, description, canonical, hreflang, robots,
+ *    Open Graph, Twitter e JSON-LD (`buildPageMeta` → `renderHeadHtml`);
+ *  - aggiunge i preload critici (font, immagine LCP della mappa, chunk della
+ *    rotta) e scrive `dist/<path>/index.html`.
  *
- * Genera inoltre `dist/sitemap.xml`. `robots.txt` e le immagini OG sono serviti
- * staticamente da `public/`.
+ * Genera inoltre: `404.html` (servito con status 404 da Vercel), le pagine di
+ * redirect per gli slug rinominati, `sitemap*.xml`, `robots.txt`, `llms.txt`.
+ * Nessun file è scritto a mano: tutto deriva da dataset + `src/seo/`.
  */
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
+import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
-import {
-  SITE,
-  absoluteUrl,
-  getAllRoutes,
-  pageTitle,
-  type RouteSeo,
-} from '../src/lib/seo';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import type * as Entry from '../src/entry-server';
+import type { ResolvedPage } from '../src/seo/metadata';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const DIST = resolve(__dirname, '..', 'dist');
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const DIST = join(ROOT, 'dist');
+const SERVER_ENTRY = join(ROOT, 'dist-server', 'entry-server.js');
 
-function esc(s: string): string {
-  return s
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
+function fail(msg: string): never {
+  console.error(`[prerender] ${msg}`);
+  process.exit(1);
 }
 
-/** Rimuove dal template i tag SEO che gestiamo per rotta, per evitare duplicati. */
-function stripManagedTags(html: string): string {
-  return html
-    .replace(/<title>[\s\S]*?<\/title>/i, '')
-    .replace(/<meta\s+name="(?:description|robots|author|twitter:[^"]*)"[^>]*>/gi, '')
-    .replace(/<meta\s+property="og:[^"]*"[^>]*>/gi, '')
-    .replace(/<link\s+rel="canonical"[^>]*>/gi, '');
+const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+
+/* ------------------------------- asset hints ------------------------------ */
+
+interface ManifestChunk {
+  file: string;
+  imports?: string[];
+  isEntry?: boolean;
 }
 
-function buildHead(route: RouteSeo): string {
-  const title = pageTitle(route.title);
-  const description = route.description;
-  const canonical = absoluteUrl(route.path);
-  const image = absoluteUrl(route.image ?? SITE.ogImage);
-  const type = route.type ?? 'website';
-  const robots = route.noindex
-    ? 'noindex, nofollow'
-    : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
-
-  const tags = [
-    `<title>${esc(title)}</title>`,
-    `<meta name="description" content="${esc(description)}" />`,
-    `<meta name="author" content="${esc(SITE.author)}" />`,
-    `<meta name="robots" content="${robots}" />`,
-    `<link rel="canonical" href="${esc(canonical)}" />`,
-    `<meta property="og:type" content="${type}" />`,
-    `<meta property="og:site_name" content="${esc(SITE.name)}" />`,
-    `<meta property="og:title" content="${esc(title)}" />`,
-    `<meta property="og:description" content="${esc(description)}" />`,
-    `<meta property="og:url" content="${esc(canonical)}" />`,
-    `<meta property="og:image" content="${esc(image)}" />`,
-    `<meta property="og:image:width" content="${SITE.ogImageWidth}" />`,
-    `<meta property="og:image:height" content="${SITE.ogImageHeight}" />`,
-    `<meta property="og:locale" content="${SITE.locale}" />`,
-    ...SITE.altLocales.map(
-      (alt) => `<meta property="og:locale:alternate" content="${alt}" />`,
-    ),
-    `<meta name="twitter:card" content="summary_large_image" />`,
-    `<meta name="twitter:title" content="${esc(title)}" />`,
-    `<meta name="twitter:description" content="${esc(description)}" />`,
-    `<meta name="twitter:image" content="${esc(image)}" />`,
-  ];
-
-  for (const block of route.jsonLd ?? []) {
-    // `<` escapato per non chiudere prematuramente lo <script>.
-    const json = JSON.stringify(block).replace(/</g, '\\u003c');
-    tags.push(`<script type="application/ld+json">${json}</script>`);
-  }
-
-  return tags.join('\n    ');
+function readManifest(): Record<string, ManifestChunk> {
+  const p = join(DIST, '.vite', 'manifest.json');
+  if (!existsSync(p)) return {};
+  return JSON.parse(readFileSync(p, 'utf8')) as Record<string, ManifestChunk>;
 }
 
-/** Fallback testuale visibile ai crawler senza JS (sostituito al mount). */
-function buildBodyFallback(route: RouteSeo): string {
-  return (
-    `<div style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">` +
-    `<h1>${esc(route.title)}</h1>` +
-    `<p>${esc(route.description)}</p>` +
-    `<nav><a href="/">Home</a></nav>` +
-    `</div>`
-  );
+/** File JS (con dipendenze) di un modulo lazy, esclusi quelli già nell'entry. */
+function chunkFiles(manifest: Record<string, ManifestChunk>, key: string, entryFiles: Set<string>): string[] {
+  const out = new Set<string>();
+  const walk = (k: string) => {
+    const c = manifest[k];
+    if (!c || entryFiles.has(c.file) || out.has(c.file)) return;
+    out.add(c.file);
+    for (const i of c.imports ?? []) walk(i);
+  };
+  walk(key);
+  return [...out];
 }
 
-function pathToFile(routePath: string): string {
-  if (routePath === '/') return join(DIST, 'index.html');
-  return join(DIST, routePath.replace(/^\//, ''), 'index.html');
+function entryFileSet(manifest: Record<string, ManifestChunk>): Set<string> {
+  const out = new Set<string>();
+  const walk = (k: string) => {
+    const c = manifest[k];
+    if (!c || out.has(c.file)) return;
+    out.add(c.file);
+    for (const i of c.imports ?? []) walk(i);
+  };
+  for (const [k, c] of Object.entries(manifest)) if (c.isEntry) walk(k);
+  return out;
 }
 
-function buildSitemap(routes: RouteSeo[]): string {
-  const today = new Date().toISOString().slice(0, 10);
-  const urls = routes
-    .filter((r) => !r.noindex)
-    .map((r) => {
-      const parts = [
-        `    <loc>${esc(absoluteUrl(r.path))}</loc>`,
-        `    <lastmod>${today}</lastmod>`,
-      ];
-      if (r.changefreq) parts.push(`    <changefreq>${r.changefreq}</changefreq>`);
-      if (r.priority != null) parts.push(`    <priority>${r.priority.toFixed(1)}</priority>`);
-      return `  <url>\n${parts.join('\n')}\n  </url>`;
-    })
-    .join('\n');
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
+/** Font usati above-the-fold (testo base + titoli). */
+function criticalFonts(): string[] {
+  const files = readdirSync(join(DIST, 'assets'));
+  const pick = (re: RegExp) => files.find((f) => re.test(f));
+  return [pick(/^inter-latin-400-normal-.*\.woff2$/), pick(/^cinzel-latin-700-normal-.*\.woff2$/)]
+    .filter((f): f is string => !!f)
+    .map((f) => `/assets/${f}`);
 }
 
-function main() {
-  const templatePath = join(DIST, 'index.html');
-  let template: string;
+/** Data (YYYY-MM-DD) dell'ultimo commit che ha toccato un path: `lastmod` reale. */
+function gitDate(path: string): string | undefined {
   try {
-    template = readFileSync(templatePath, 'utf8');
+    const out = execFileSync('git', ['log', '-1', '--format=%cs', '--', path], { cwd: ROOT, encoding: 'utf8' }).trim();
+    return /^\d{4}-\d{2}-\d{2}$/.test(out) ? out : undefined;
   } catch {
-    console.error(`[prerender] dist/index.html non trovato. Esegui prima "vite build".`);
-    process.exit(1);
+    return undefined;
+  }
+}
+
+/* --------------------------------- main ---------------------------------- */
+
+async function main() {
+  const templatePath = join(DIST, 'index.html');
+  if (!existsSync(templatePath)) fail('dist/index.html non trovato: esegui prima "vite build".');
+  if (!existsSync(SERVER_ENTRY)) fail('dist-server/entry-server.js non trovato: esegui "vite build --ssr src/entry-server.tsx --outDir dist-server".');
+  const template = readFileSync(templatePath, 'utf8');
+  if (!template.includes('<!--seo-head-->') || !template.includes('<!--app-html-->')) {
+    fail('index.html non contiene i segnaposto <!--seo-head--> / <!--app-html-->.');
   }
 
-  const base = stripManagedTags(template);
-  const routes = getAllRoutes();
+  const entry = (await import(pathToFileURL(SERVER_ENTRY).href)) as typeof Entry;
+  const datasets = await entry.setup();
+  const pages = entry.enumeratePages(datasets);
+
+  const manifest = readManifest();
+  const entryFiles = entryFileSet(manifest);
+  const fonts = criticalFonts();
+  const ARCHIVE: Record<string, string> = {
+    characters: 'src/components/archive/CharactersPage.tsx',
+    factions: 'src/components/archive/ClansAndFactionsPage.tsx',
+    arcs: 'src/components/archive/StoryArcsPage.tsx',
+    abilities: 'src/components/archive/JutsuPage.tsx',
+  };
+
+  function hintsFor(r: ResolvedPage | null): string[] {
+    const tags = fonts.map((f) => `<link rel="preload" href="${f}" as="font" type="font/woff2" crossorigin />`);
+    const p = r?.page;
+    if (!p || p.kind === 'home' || p.kind === 'static') return tags;
+    const keys = ['src/routes/WorldRoute.tsx'];
+    const dataset = p.dataset;
+    if (dataset) keys.push(`src/data/${dataset.world.slug}/index.ts`);
+    keys.push(p.kind === 'category' && ARCHIVE[p.category] ? ARCHIVE[p.category] : 'src/pages/seo/SeoPageSwitch.tsx');
+    const js = new Set(keys.flatMap((k) => chunkFiles(manifest, k, entryFiles)));
+    for (const f of js) tags.push(`<link rel="modulepreload" crossorigin href="/${f}" />`);
+    if (p.kind === 'map' && dataset) {
+      const img = entry.worldMapImage(dataset);
+      if (img) tags.push(`<link rel="preload" as="image" href="${esc(img.url)}" fetchpriority="high" />`);
+    }
+    return tags;
+  }
+
+  function page(head: string, lang: string, body: string): string {
+    return template
+      .replace(/<html lang="[^"]*"/, `<html lang="${lang}"`)
+      .replace(/<title>[\s\S]*?<\/title>\s*/, '')
+      .replace('<!--seo-head-->', head)
+      .replace('<!--app-html-->', body);
+  }
+
+  function outFile(path: string): string {
+    return join(DIST, path.replace(/^\//, ''), 'index.html');
+  }
 
   let written = 0;
-  for (const route of routes) {
-    const head = buildHead(route);
-    let html = base.replace('</head>', `    ${head}\n  </head>`);
-    html = html.replace(
-      '<div id="root"></div>',
-      `<div id="root">${buildBodyFallback(route)}</div>`,
-    );
-    const outFile = pathToFile(route.path);
-    mkdirSync(dirname(outFile), { recursive: true });
-    writeFileSync(outFile, html, 'utf8');
+  const t0 = Date.now();
+  for (const r of pages) {
+    const meta = entry.buildPageMeta(r);
+    const body = entry.renderApp(r.path, r.lang, r);
+    const head = [entry.renderHeadHtml(meta), ...hintsFor(r)].join('\n    ');
+    const file = outFile(r.path);
+    mkdirSync(dirname(file), { recursive: true });
+    writeFileSync(file, page(head, r.lang, body), 'utf8');
     written++;
   }
 
-  writeFileSync(join(DIST, 'sitemap.xml'), buildSitemap(routes), 'utf8');
+  // 404: servito da Vercel con status 404 per ogni path inesistente.
+  {
+    const meta = entry.notFoundMeta('en');
+    const body = entry.renderApp('/en/404', 'en', null);
+    writeFileSync(join(DIST, '404.html'), page([entry.renderHeadHtml(meta), ...hintsFor(null)].join('\n    '), 'en', body), 'utf8');
+  }
 
+  // `/`: in produzione vercel.json redirige per lingua PRIMA di servire questo
+  // file. Resta come fallback sicuro: home inglese, noindex, canonical su /en.
+  {
+    const home = pages.find((p) => p.lang === 'en' && p.page.kind === 'home')!;
+    const meta = { ...entry.buildPageMeta(home), robots: 'noindex, follow', alternates: [] };
+    const body = entry.renderApp('/en', 'en', home);
+    writeFileSync(templatePath, page([entry.renderHeadHtml(meta), ...hintsFor(home)].join('\n    '), 'en', body), 'utf8');
+  }
+
+  // Slug rinominati (`previousSlugs`): redirect permanente lato client
+  // (meta refresh 0 = redirect permanente per Google) + canonical al nuovo URL.
+  const redirects = entry.enumerateSlugRedirects(datasets);
+  for (const r of redirects) {
+    const target = entry.absoluteUrl(r.to);
+    const html =
+      `<!doctype html><html lang="${r.lang}"><head><meta charset="utf-8" />` +
+      `<meta name="robots" content="noindex, follow" /><link rel="canonical" href="${esc(target)}" />` +
+      `<meta http-equiv="refresh" content="0; url=${esc(r.to)}" /><title>${esc(entry.SITE.name)}</title></head>` +
+      `<body><a href="${esc(r.to)}">${esc(target)}</a></body></html>`;
+    const file = outFile(r.from);
+    mkdirSync(dirname(file), { recursive: true });
+    writeFileSync(file, html, 'utf8');
+  }
+
+  // Sitemap (index + una per gruppo) con lastmod REALE dei dati del mondo.
+  const worldDates = new Map<string, string | undefined>();
+  const lastmodFor = (r: ResolvedPage) => {
+    const p = r.page;
+    const slug = p.kind === 'world' ? p.world.slug : 'dataset' in p && p.dataset ? p.dataset.world.slug : undefined;
+    if (!slug || !datasets.has(slug)) return undefined;
+    if (!worldDates.has(slug)) worldDates.set(slug, gitDate(`src/data/${slug}`));
+    return worldDates.get(slug);
+  };
+  const sitemaps = entry.buildSitemaps(pages, lastmodFor);
+  for (const s of sitemaps) writeFileSync(join(DIST, s.file), s.xml, 'utf8');
+
+  // robots.txt — generato dalla stessa config (prefissi tecnici, sitemap).
+  const robots = [
+    '# AniMapVerse — robots.txt (generato da scripts/prerender.ts)',
+    'User-agent: *',
+    'Allow: /',
+    '# Stati UI della SPA (schede aperte, filtri): la canonical è sempre l\'URL senza query.',
+    'Disallow: /*?',
+    '# Route tecniche riservate (social card, share preview, render).',
+    ...entry.TECHNICAL_PATH_PREFIXES.map((p) => `Disallow: ${p}`),
+    '',
+    `Sitemap: ${entry.SITE.origin}/sitemap.xml`,
+    '',
+  ].join('\n');
+  writeFileSync(join(DIST, 'robots.txt'), robots, 'utf8');
+
+  // llms.txt — sommario complementare (NON sostituisce sitemap/robots).
+  const llms = [
+    `# ${entry.SITE.name}`,
+    '',
+    '> Interactive maps of anime and manga worlds: locations, characters, story arcs, factions, character journeys and timelines, connected to each other. AniMapVerse is an independent fan project; the works belong to their respective authors and publishers.',
+    '',
+    '## Worlds',
+    ...[...datasets.values()].map(
+      (d) =>
+        `- [${entry.getLocalizedText(d.world.title, 'en')}](${entry.absoluteUrl(entry.worldPath('en', d))}): ${entry.getLocalizedText(d.world.description, 'en')}`,
+    ),
+    '',
+    '## Sitemaps',
+    `- [Sitemap index](${entry.SITE.origin}/sitemap.xml)`,
+    '',
+  ].join('\n');
+  writeFileSync(join(DIST, 'llms.txt'), llms, 'utf8');
+
+  // Il manifest serviva solo qui: non pubblicarlo.
+  rmSync(join(DIST, '.vite'), { recursive: true, force: true });
+
+  const indexable = sitemaps.reduce((n, s) => n + s.urls.length, 0);
   console.log(
-    `[prerender] ${written} pagine generate · sitemap.xml con ${routes.filter((r) => !r.noindex).length} URL`,
+    `[prerender] ${written} pagine in ${((Date.now() - t0) / 1000).toFixed(1)}s · ${indexable} URL indicizzabili in ${sitemaps.length - 1} sitemap · ${redirects.length} redirect di slug`,
   );
 }
 
-main();
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

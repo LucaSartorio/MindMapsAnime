@@ -1,5 +1,4 @@
 import { useEffect, type CSSProperties, type ReactNode } from 'react';
-import { useParams } from 'react-router-dom';
 import type { WorldDataset } from '@/types';
 import { cn } from '@/lib/cn';
 import { useMapStore, useUiStore, useWorldStore } from '@/store';
@@ -42,7 +41,9 @@ export function WorldLayout({
   children,
   mapOverlays = true,
 }: WorldLayoutProps) {
-  const { worldSlug } = useParams();
+  // Slug INTERNO del mondo (non il segmento URL): è la chiave usata da store,
+  // placeholder a tema, cursori e asset.
+  const worldSlug = dataset.world.slug;
   const setActiveWorld = useWorldStore((s) => s.setActiveWorld);
   const setActiveMapLevel = useMapStore((s) => s.setActiveMapLevel);
   const activeMapLevelId = useMapStore((s) => s.activeMapLevelId);
@@ -56,7 +57,7 @@ export function WorldLayout({
   // Cursore tematico del mondo (es. Naruto → vortice della Foglia).
   // Ibrido: il vortice è il cursore ambientale; gli elementi interattivi
   // mantengono i cursori funzionali via le regole `.world-cursor` in CSS.
-  const worldCursor = resolveWorldCursor(worldSlug ?? dataset.world.slug);
+  const worldCursor = resolveWorldCursor(worldSlug);
   const cursorClass = worldCursor ? ' world-cursor' : '';
   const cursorStyle = worldCursor
     ? ({ '--world-cursor': worldCursor } as CSSProperties)
@@ -64,7 +65,7 @@ export function WorldLayout({
 
   // Quando cambia il dataset/route, sincronizziamo store e map level di default.
   useEffect(() => {
-    setActiveWorld(worldSlug ?? null, dataset);
+    setActiveWorld(worldSlug, dataset);
     if (dataset.world.defaultMapLevelId) {
       setActiveMapLevel(dataset.world.defaultMapLevelId);
     } else if (dataset.mapLevels[0]) {

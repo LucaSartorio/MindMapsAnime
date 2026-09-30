@@ -112,8 +112,8 @@ export function ReportModal() {
 
     const payload: Record<string, string> = {
       access_key: ACCESS_KEY,
-      subject: `[${typeLabel}] Mappe Interattive — ${categoryLabel}`,
-      from_name: name.trim() || 'Mappe Interattive',
+      subject: `[${typeLabel}] AniMapVerse — ${categoryLabel}`,
+      from_name: name.trim() || 'AniMapVerse',
       [t('report.fields.type')]: typeLabel,
       [t('report.fields.name')]: name.trim() || '—',
       [t('report.fields.email')]: email.trim() || '—',

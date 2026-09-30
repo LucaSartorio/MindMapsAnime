@@ -303,12 +303,36 @@ export interface AssetReference {
   notes?: Localizable;
 }
 
+/* ------------------------------ SEO slug ------------------------------ */
+
+/**
+ * Campi opzionali per il sistema di slug SEO (`src/seo/slug.ts`). Di norma lo
+ * slug si DERIVA dal nome inglese dell'entità: questi campi servono solo a
+ * fissarlo (`slug`) o a non perdere gli URL dopo una rinomina (`previousSlugs`
+ * → pagine di redirect generate al build).
+ */
+export interface SeoSlugFields {
+  /** Slug pubblico fissato a mano (kebab-case ASCII). */
+  slug?: string;
+  /** Slug precedenti: generano un redirect permanente verso quello attuale. */
+  previousSlugs?: string[];
+}
+
 /* ------------------------------ Mondo / Anime ------------------------------ */
 
 export interface AnimeWorld {
   id: string;
-  /** Slug usato nelle rotte: /worlds/:slug */
+  /**
+   * Id-slug interno e permanente del mondo (cartelle dati/asset, registry,
+   * cursori). NON è necessariamente lo slug dell'URL: vedi `urlSlug`.
+   */
   slug: string;
+  /**
+   * Segmento pubblico dell'URL (`/{lang}/{urlSlug}`), leggibile e separato da
+   * trattini (es. `hunter-x-hunter`). Se assente coincide con `slug`.
+   * È PERMANENTE: cambiarlo rompe URL indicizzati (serve un redirect).
+   */
+  urlSlug?: string;
   /**
    * Titolo dell'opera. `Localizable` perché molti titoli cambiano da lingua a
    * lingua (Attack on Titan → L'Attacco dei Giganti → 進撃の巨人), mentre altri
@@ -361,7 +385,7 @@ export interface MapLevel {
 
 /* ------------------------------ Nation ------------------------------ */
 
-export interface Nation {
+export interface Nation extends SeoSlugFields {
   id: string;
   worldId: string;
   name: string;
@@ -401,7 +425,7 @@ export interface Nation {
 
 /* ------------------------------ Location ------------------------------ */
 
-export interface Location {
+export interface Location extends SeoSlugFields {
   id: string;
   worldId: string;
   mapLevelId: string;
@@ -490,7 +514,7 @@ export interface CharacterTransformation {
   canonStatus?: CanonStatus;
 }
 
-export interface Character {
+export interface Character extends SeoSlugFields {
   id: string;
   worldId: string;
   name: string;
@@ -598,7 +622,7 @@ export interface CharacterRelationship {
 
 /* ------------------------------ Clan / Faction ------------------------------ */
 
-export interface Faction {
+export interface Faction extends SeoSlugFields {
   id: string;
   worldId: string;
   /** Tipo di fazione. String libera per nuovi mondi; i tipi "noti" sono in `FactionType`. */
@@ -635,7 +659,7 @@ export type Clan = Faction;
 
 /* ------------------------------ Story Arc ------------------------------ */
 
-export interface StoryArc {
+export interface StoryArc extends SeoSlugFields {
   id: string;
   worldId: string;
   name: string;
@@ -731,7 +755,7 @@ export type RouteType =
 
 export type RouteLineStyle = 'solid' | 'dashed' | 'dotted';
 
-export interface Route {
+export interface Route extends SeoSlugFields {
   id: string;
   worldId: string;
   type?: RouteType;
@@ -793,7 +817,7 @@ export interface Team {
 
 /* ------------------------------ Jutsu ------------------------------ */
 
-export interface Jutsu {
+export interface Jutsu extends SeoSlugFields {
   id: string;
   worldId: string;
   name: string;

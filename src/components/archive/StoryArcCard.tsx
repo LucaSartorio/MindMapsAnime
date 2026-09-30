@@ -4,6 +4,9 @@ import { Card } from '@/components/common/Card';
 import { Badge } from '@/components/common/Badge';
 import { CanonPill, ReferencePill } from '@/components/common/StatusPill';
 import { cn } from '@/lib/cn';
+import { CardLink } from '@/components/seo/CardLink';
+import { entityPath } from '@/seo/paths';
+import { useSeoLang } from '@/seo/useSeoLang';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText } from '@/utils/localization';
 import { useTranslation } from 'react-i18next';
@@ -23,6 +26,7 @@ function StoryArcCardComponent({
 }: StoryArcCardProps) {
   const { t } = useTranslation();
   const locale = useLocaleStore((s) => s.locale);
+  const lang = useSeoLang();
   const eventCount = dataset.events.filter((e) => e.arcId === arc.id).length;
   const locCount = (arc.locationIds ?? []).length;
   const charCount = (arc.characterIds ?? []).length;
@@ -37,9 +41,9 @@ function StoryArcCardComponent({
         active && 'border-ember-500/70 shadow-ember',
       )}
     >
-      <button
-        type="button"
-        onClick={() => onSelect(arc.id)}
+      <CardLink
+        href={entityPath(lang, dataset, 'arcs', arc.id)!}
+        onOpen={() => onSelect(arc.id)}
         className="text-left w-full flex flex-col gap-3"
       >
         <div className="flex items-center justify-between text-[10px] uppercase tracking-widest text-ink-400 font-mono">
@@ -63,7 +67,7 @@ function StoryArcCardComponent({
             <Badge>{t('modals.characterCount', { count: charCount })}</Badge>
           )}
         </div>
-      </button>
+      </CardLink>
     </Card>
   );
 }

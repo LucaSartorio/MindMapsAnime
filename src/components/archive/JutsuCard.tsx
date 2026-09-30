@@ -5,6 +5,9 @@ import { Badge } from '@/components/common/Badge';
 import { EntityImage } from '@/components/common/EntityImage';
 import { ReferencePill } from '@/components/common/StatusPill';
 import { cn } from '@/lib/cn';
+import { CardLink } from '@/components/seo/CardLink';
+import { entityPath } from '@/seo/paths';
+import { useSeoLang } from '@/seo/useSeoLang';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText } from '@/utils/localization';
 import {
@@ -22,6 +25,7 @@ interface JutsuCardProps {
 
 function JutsuCardComponent({ jutsu, dataset, active, onSelect }: JutsuCardProps) {
   const locale = useLocaleStore((s) => s.locale);
+  const lang = useSeoLang();
   const world = dataset.world;
   const attribute = getAbilityAttribute(world, locale);
 
@@ -35,9 +39,9 @@ function JutsuCardComponent({ jutsu, dataset, active, onSelect }: JutsuCardProps
         active && 'border-ember-500/70 shadow-ember',
       )}
     >
-      <button
-        type="button"
-        onClick={() => onSelect(jutsu.id)}
+      <CardLink
+        href={entityPath(lang, dataset, 'abilities', jutsu.id)!}
+        onOpen={() => onSelect(jutsu.id)}
         className="flex flex-col text-left w-full h-full p-4 gap-3"
       >
         <div className="flex items-start gap-3">
@@ -83,7 +87,7 @@ function JutsuCardComponent({ jutsu, dataset, active, onSelect }: JutsuCardProps
               </Badge>
             ))}
         </div>
-      </button>
+      </CardLink>
     </Card>
   );
 }

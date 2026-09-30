@@ -7,10 +7,6 @@ import {
 } from '@/types/i18n';
 import { it } from './resources/it';
 import { en } from './resources/en';
-import { ja } from './resources/ja';
-import { fr } from './resources/fr';
-import { de } from './resources/de';
-import { es } from './resources/es';
 
 /**
  * Setup i18n per Mappe Interattive.
@@ -61,18 +57,41 @@ export function initialLocale(): SupportedLocale {
   return readStoredLocale() ?? detectBrowserLocale() ?? DEFAULT_LOCALE;
 }
 
+/**
+ * Risorse UI: IT/EN (lingue con URL indicizzabili, servono anche al
+ * pre-rendering) sono nel bundle iniziale; le altre lingue sono chunk separati
+ * caricati on-demand da `ensureLocaleResources` — chi naviga in italiano o
+ * inglese non scarica ~150 KB di traduzioni che non usa.
+ */
 const resources = {
   it: { translation: it },
   en: { translation: en },
-  ja: { translation: ja },
-  fr: { translation: fr },
-  de: { translation: de },
-  es: { translation: es },
 } as const;
+
+type ResourceModule = Record<string, unknown>;
+const LAZY_RESOURCES: Partial<Record<SupportedLocale, () => Promise<ResourceModule>>> = {
+  ja: () => import('./resources/ja').then((m) => m.ja),
+  fr: () => import('./resources/fr').then((m) => m.fr),
+  de: () => import('./resources/de').then((m) => m.de),
+  es: () => import('./resources/es').then((m) => m.es),
+};
+
+/** Carica (una volta) le risorse UI di una lingua. Risolve subito per IT/EN. */
+export async function ensureLocaleResources(locale: SupportedLocale): Promise<void> {
+  if (i18n.hasResourceBundle(locale, 'translation')) return;
+  const load = LAZY_RESOURCES[locale];
+  if (!load) return;
+  const bundle = await load();
+  i18n.addResourceBundle(locale, 'translation', bundle, true, true);
+}
 
 void i18n.use(initReactI18next).init({
   resources,
-  lng: initialLocale(),
+  // La lingua reale viene impostata in `src/main.tsx` dopo aver caricato le
+  // risorse e allineato la lingua all'URL; qui partiamo sempre da una lingua
+  // già presente nel bundle.
+  lng: DEFAULT_LOCALE,
+  partialBundledLanguages: true,
   fallbackLng: DEFAULT_LOCALE,
   supportedLngs: SUPPORTED_LOCALES,
   interpolation: {

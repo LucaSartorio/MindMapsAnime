@@ -8,6 +8,8 @@ import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText } from '@/utils/localization';
 import { getAbilityTerm } from '@/lib/worldConfig';
 import { SearchResults } from './SearchResults';
+import { mapPath } from '@/seo/paths';
+import { useSeoLang } from '@/seo/useSeoLang';
 
 interface GlobalSearchDropdownProps {
   dataset: WorldDataset;
@@ -44,6 +46,7 @@ export function GlobalSearchDropdown({
   const onCloseRef = useRef(onClose);
   onCloseRef.current = onClose;
   const navigate = useNavigate();
+  const seoLang = useSeoLang();
 
   // Query differita: il tasto digitato dipinge subito, la ricerca (pesante sui
   // dataset grandi, es. One Piece) gira in un render a bassa priorità → INP basso.
@@ -148,7 +151,6 @@ export function GlobalSearchDropdown({
   }, []);
 
   function handleSelect(r: SearchResult) {
-    const slug = dataset.world.slug;
     const ui = useUiStore.getState();
     const map = useMapStore.getState();
     setOpen(false);
@@ -162,25 +164,25 @@ export function GlobalSearchDropdown({
         if (loc) {
           map.setActiveMapLevel(loc.mapLevelId);
           map.setSelectedLocation(loc.id);
-          navigate(`/worlds/${slug}`);
+          navigate(mapPath(seoLang, dataset));
           ui.openLocationModal(loc.id);
         }
         break;
       }
       case 'character':
-        navigate(`/worlds/${slug}`);
+        navigate(mapPath(seoLang, dataset));
         ui.openCharacterModal(r.id);
         break;
       case 'faction':
-        navigate(`/worlds/${slug}`);
+        navigate(mapPath(seoLang, dataset));
         ui.openFactionModal(r.id);
         break;
       case 'jutsu':
-        navigate(`/worlds/${slug}`);
+        navigate(mapPath(seoLang, dataset));
         ui.openJutsuModal(r.id);
         break;
       case 'arc':
-        navigate(`/worlds/${slug}`);
+        navigate(mapPath(seoLang, dataset));
         ui.openArcModal(r.id);
         break;
       case 'event': {
@@ -193,18 +195,18 @@ export function GlobalSearchDropdown({
               map.setSelectedLocation(loc.id);
             }
           }
-          navigate(`/worlds/${slug}`);
+          navigate(mapPath(seoLang, dataset));
           ui.openEventModal(ev.id);
         }
         break;
       }
       case 'route':
         map.setSelectedRoute(r.id);
-        navigate(`/worlds/${slug}`);
+        navigate(mapPath(seoLang, dataset));
         ui.openRouteModal(r.id);
         break;
       case 'nation':
-        navigate(`/worlds/${slug}`);
+        navigate(mapPath(seoLang, dataset));
         ui.openNationModal(r.id);
         break;
       case 'boundary': {
@@ -212,7 +214,7 @@ export function GlobalSearchDropdown({
         if (b) {
           map.setActiveMapLevel(b.mapLevelId);
           map.setSelectedBoundary(b.id);
-          navigate(`/worlds/${slug}`);
+          navigate(mapPath(seoLang, dataset));
           ui.openBoundaryModal(b.id);
         }
         break;

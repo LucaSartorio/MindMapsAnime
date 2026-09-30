@@ -2,6 +2,8 @@ import { useDeferredValue, useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
+import type { ResolvedPage } from '@/seo/metadata';
+import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { StoryArcCard } from './StoryArcCard';
 import { EmptyState } from '@/components/common/EmptyState';
 import { SourceNotice } from '@/components/common/SourceNotice';
@@ -12,9 +14,11 @@ import { arcSeries, matchesSelectedSeries } from '@/lib/series';
 
 interface StoryArcsPageProps {
   dataset: WorldDataset;
+  /** Pagina risolta (breadcrumb crawlabile). */
+  resolved?: ResolvedPage;
 }
 
-export function StoryArcsPage({ dataset }: StoryArcsPageProps) {
+export function StoryArcsPage({ dataset, resolved }: StoryArcsPageProps) {
   const { t } = useTranslation();
   const locale = useLocaleStore((s) => s.locale);
   const [params] = useSearchParams();
@@ -62,6 +66,7 @@ export function StoryArcsPage({ dataset }: StoryArcsPageProps) {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6">
+      {resolved && <Breadcrumbs resolved={resolved} />}
       <header className="space-y-2">
         <p className="font-mono text-xs uppercase tracking-widest text-chakra-300">
           {getLocalizedText(dataset.world.title, locale)}

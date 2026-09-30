@@ -16,10 +16,12 @@ export function HeroSection() {
 
       <div className="relative max-w-6xl mx-auto px-6 pt-24 pb-16 sm:pt-32 sm:pb-24 text-center">
         <p className="font-mono text-xs uppercase tracking-[0.3em] text-chakra-300 mb-4">
-          {t('app.eyebrow')}
+          {t('app.title')} · {t('app.eyebrow')}
         </p>
+        {/* H1 descrittivo (dice a utenti e crawler cos'è il sito); il brand
+            AniMapVerse resta nell'eyebrow, nell'header e nel <title>. */}
         <h1 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold text-ink-100 leading-tight">
-          {t('app.title')}
+          {t('home.heroTitle')}
         </h1>
         <p className="mt-6 text-base sm:text-lg md:text-xl text-ink-200 max-w-2xl mx-auto leading-relaxed">
           {t('app.tagline')}

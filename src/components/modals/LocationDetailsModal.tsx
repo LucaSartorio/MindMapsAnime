@@ -22,6 +22,8 @@ import { buildRelationGroups, relationGroupsCount } from '@/lib/relationGroups';
 import { RelationsPanel } from '@/components/common/RelationsPanel';
 import { useOpenEntityRef } from '@/lib/useOpenEntityRef';
 import type { LocalizedText, PoneglyphKind } from '@/types';
+import { mapPath } from '@/seo/paths';
+import { useSeoLang } from '@/seo/useSeoLang';
 
 const PONEGLYPH_KIND_LABEL: Record<PoneglyphKind, LocalizedText> = {
   road: {
@@ -81,10 +83,11 @@ export function LocationDetailsModal({
     if (location) setSelectedLocation(location.id);
   }, [location, setSelectedLocation]);
   const navigate = useNavigate();
+  const seoLang = useSeoLang();
   const [lightbox, setLightbox] = useState<
     null | { url?: string; entityId?: string; name: string }
   >(null);
-  const goToMap = () => navigate(`/worlds/${dataset.world.slug}`);
+  const goToMap = () => navigate(mapPath(seoLang, dataset));
 
   const events = useMemo(
     () =>

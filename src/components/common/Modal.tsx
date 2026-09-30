@@ -1,7 +1,9 @@
 import type { ReactNode } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/cn';
+import { useActiveEntityPagePath } from '@/seo/useEntityPage';
 
 interface ModalProps {
   open: boolean;
@@ -74,6 +76,10 @@ export function Modal({
   const closeRef = useRef<HTMLButtonElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
   const [copied, setCopied] = useState(false);
+  // Link alla pagina completa (indicizzabile) dell'entità della scheda aperta.
+  const entityPage = useActiveEntityPagePath(shareable);
+  const { pathname } = useLocation();
+  const pagePath = entityPage && entityPage.split('#')[0] !== pathname ? entityPage : undefined;
 
   async function handleCopyLink() {
     try {
@@ -194,6 +200,16 @@ export function Modal({
               )}
             </div>
             <div className="flex items-center gap-1 shrink-0">
+              {pagePath && (
+                <Link
+                  to={pagePath}
+                  aria-label={t('seoPages.openPage')}
+                  title={t('seoPages.openPage')}
+                  className="h-8 w-8 grid place-items-center rounded-md text-ink-300 hover:text-white hover:bg-ink-800/70"
+                >
+                  <span aria-hidden>↗</span>
+                </Link>
+              )}
               {shareable && (
                 <button
                   type="button"

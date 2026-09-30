@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react';
 import type { WorldDataset } from '@/types';
 import { useUiStore } from '@/store';
 import { LocationDetailsModal } from './LocationDetailsModal';
@@ -9,7 +10,12 @@ import { RouteDetailsModal } from './RouteDetailsModal';
 import { BoundaryDetailsModal } from './BoundaryDetailsModal';
 import { NationDetailsModal } from './NationDetailsModal';
 import { JutsuDetailsModal } from './JutsuDetailsModal';
-import { RelationsGraphModal } from './RelationsGraphModal';
+
+// Lazy: la vista relazioni usa React Flow (~150 KB). Importata staticamente
+// trascinava React Flow in ogni pagina di mondo (anche archivi e pagine SEO).
+const RelationsGraphModal = lazy(() =>
+  import('./RelationsGraphModal').then((m) => ({ default: m.RelationsGraphModal })),
+);
 
 interface ModalRootProps {
   dataset: WorldDataset;
@@ -54,7 +60,9 @@ export function ModalRoot({ dataset }: ModalRootProps) {
       return <JutsuDetailsModal dataset={dataset} jutsuId={activeModal.id} />;
     case 'relations':
       return (
-        <RelationsGraphModal dataset={dataset} characterId={activeModal.id} />
+        <Suspense fallback={null}>
+          <RelationsGraphModal dataset={dataset} characterId={activeModal.id} />
+        </Suspense>
       );
     default:
       return null;

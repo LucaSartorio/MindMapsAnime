@@ -105,9 +105,12 @@ componenti.
 npm install                 # installa le dipendenze
 
 npm run dev                 # dev server (Vite) → http://localhost:5173
-npm run build               # produzione: tsc -b + vite build + prerender (SEO)
-npm run prerender           # inietta meta/OG/JSON-LD per rotta + sitemap.xml
-npm run preview             # anteprima del bundle di produzione
+npm run build               # produzione: tsc -b + test:seo + vite build + build:ssr + prerender + seo:check
+npm run prerender           # SSG: HTML statico per ogni pagina + sitemap/robots/llms.txt (vedi docs/SEO.md)
+npm run test:seo            # invarianti SEO sulle sorgenti (slug, URL, metadati, hreflang, sitemap)
+npm run seo:check           # verifica l'HTML generato in dist/ (canonical, hreflang, link rotti…) — bloccante
+npm run preview:static      # serve dist/ con la semantica di Vercel (redirect, 404 veri) → :4173
+npm run preview             # anteprima Vite (NB: risponde 200 a qualsiasi path)
 
 npm run validate:data       # valida TUTTI i dataset (ref rotti, coords, duplicati) — exit 1 se errori
 npm run validate:i18n       # chiavi di traduzione mancanti/vuote tra it.ts ed en.ts
@@ -166,15 +169,27 @@ di fazione mostrati sono solo quelli realmente presenti nel mondo attivo.
 
 ## ✦ Rotte applicazione
 
-| Path                       | Descrizione                                       |
-| -------------------------- | ------------------------------------------------- |
-| `/`                        | Homepage con la griglia dei mondi                 |
-| `/about`                   | Informazioni sul progetto                         |
-| `/worlds/:slug`            | Mappa interattiva del mondo                       |
-| `/worlds/:slug/characters` | Archivio personaggi (filtri + gradi dinamici)     |
-| `/worlds/:slug/clans`      | Archivio clan & fazioni (tipi derivati dai dati)  |
-| `/worlds/:slug/jutsu`      | Archivio tecniche (termine/categorie per-mondo)   |
-| `/worlds/:slug/arcs`       | Archivio archi narrativi                          |
+Tutte le pagine pubbliche vivono sotto un prefisso di lingua (`it` | `en`) e
+sono **pre-renderizzate** in HTML statico (architettura SEO in
+[`docs/SEO.md`](docs/SEO.md)).
+
+| Path                                   | Descrizione                                             |
+| -------------------------------------- | ------------------------------------------------------- |
+| `/`                                    | Redirect alla lingua preferita (`/it` o `/en`)          |
+| `/{lang}`                              | Homepage con la griglia dei mondi                       |
+| `/{lang}/about` · `/support`           | Informazioni · Supporta il progetto                     |
+| `/{lang}/{world}`                      | Landing del mondo (hub con link a tutto)                |
+| `/{lang}/{world}/map`                  | Mappa interattiva                                       |
+| `/{lang}/{world}/characters`           | Archivio personaggi (filtri + gradi dinamici)           |
+| `/{lang}/{world}/factions`             | Archivio clan & fazioni                                 |
+| `/{lang}/{world}/abilities`            | Archivio tecniche (termine/categorie per-mondo)         |
+| `/{lang}/{world}/arcs`                 | Archivio archi narrativi                                |
+| `/{lang}/{world}/locations` · `/journeys` · `/regions` | Directory di luoghi, percorsi, regioni  |
+| `/{lang}/{world}/timeline`             | Cronologia degli eventi                                 |
+| `/{lang}/{world}/{category}/{slug}`    | Pagina di un'entità (es. `/en/naruto/characters/itachi-uchiha`) |
+
+Le vecchie rotte (`/worlds/:slug/...`, `/about`, `/supporta`…) rispondono con
+un redirect 308 alle nuove (vedi `vercel.json`).
 
 Le modali di dettaglio sono **deep-linkabili** (es. `?location=<id>`): l'URL
 riflette la scheda aperta ed è condivisibile. I mondi con
@@ -379,8 +394,9 @@ overlay di ricerca.
 
 SPA Vite con output `dist/`, deployata su **Vercel** (Analytics + Speed Insights
 già integrati in `src/App.tsx`). Preset "Vite", comando `npm run build` (che
-esegue anche il prerender SEO), output `dist/`. Per il routing SPA, rewrite di
-tutte le rotte su `/index.html`.
+esegue anche il pre-rendering SEO), output `dist/`. **Nessun rewrite SPA**: ogni
+pagina esiste come file statico e i path sconosciuti ricevono `404.html` con
+status 404 (niente soft-404). Redirect e header sono in `vercel.json`.
 
 ---
 

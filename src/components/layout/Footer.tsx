@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useCookieConsent } from '@/store/useCookieConsent';
 import { DiscordIcon, InstagramIcon, XIcon } from './SocialIcons';
+import { staticPagePath } from '@/seo/paths';
+import { useSeoLang } from '@/seo/useSeoLang';
 
 /**
  * Link social. Lo spazio è predisposto per Instagram, Discord e X: le icone
@@ -41,6 +43,7 @@ const OWNER = 'Luca Sartorio';
  */
 export function Footer() {
   const { t } = useTranslation();
+  const lang = useSeoLang();
   const openPreferences = useCookieConsent((s) => s.openPreferences);
 
   return (
@@ -52,7 +55,7 @@ export function Footer() {
 
         <div className="order-1 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 sm:order-2">
           <Link
-            to="/supporta"
+            to={staticPagePath(lang, 'support')}
             className="inline-flex items-center gap-1 text-xs font-medium text-ember-300 hover:text-ember-200 hover:underline"
           >
             <span aria-hidden>♥</span> {t('footer.support')}
@@ -93,14 +96,20 @@ export function Footer() {
             aria-label={t('footer.legalNav')}
             className="flex items-center gap-2 text-[11px] text-ink-400"
           >
-            <Link to="/privacy" className="hover:text-chakra-300 hover:underline">
+            <Link to={staticPagePath(lang, 'about')} className="hover:text-chakra-300 hover:underline">
+              {t('nav.about')}
+            </Link>
+            <span aria-hidden className="text-ink-600">
+              ·
+            </span>
+            <Link to={staticPagePath(lang, 'privacy')} className="hover:text-chakra-300 hover:underline">
               {t('footer.privacy')}
             </Link>
             <span aria-hidden className="text-ink-600">
               ·
             </span>
             <Link
-              to="/cookie-policy"
+              to={staticPagePath(lang, 'cookie-policy')}
               className="hover:text-chakra-300 hover:underline"
             >
               {t('footer.cookiePolicy')}

@@ -4,6 +4,7 @@ import { TopNav } from './TopNav';
 import { Footer } from './Footer';
 import { CookieConsent } from '@/components/cookie/CookieConsent';
 import { ReportModal } from '@/components/report/ReportModal';
+import { useHydrated } from '@/lib/useHydrated';
 
 interface AppShellProps {
   children: ReactNode;
@@ -18,6 +19,10 @@ interface AppShellProps {
  */
 export function AppShell({ children }: AppShellProps) {
   const { t } = useTranslation();
+  // Banner cookie e modale segnalazioni dipendono da stato solo-browser
+  // (consenso in localStorage): montati dopo l'idratazione, mai nell'HTML
+  // pre-renderizzato (che resta identico per tutti, crawler compresi).
+  const hydrated = useHydrated();
   return (
     <div className="h-dvh flex flex-col">
       <a
@@ -34,8 +39,12 @@ export function AppShell({ children }: AppShellProps) {
         {children}
       </main>
       <Footer />
-      <CookieConsent />
-      <ReportModal />
+      {hydrated && (
+        <>
+          <CookieConsent />
+          <ReportModal />
+        </>
+      )}
     </div>
   );
 }

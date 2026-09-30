@@ -31,16 +31,16 @@
     </g>
 
     <text x="120" y="40" font-family="Arial, Helvetica, sans-serif" font-size="20"
-      letter-spacing="6" fill="#8fc6ff" font-weight="600">ATLANTE INTERATTIVO · ANIME &amp; MANGA</text>
+      letter-spacing="6" fill="#8fc6ff" font-weight="600">INTERACTIVE ATLAS · ANIME &amp; MANGA</text>
     <text x="120" y="92" font-family="Georgia, 'Times New Roman', serif" font-size="64"
-      font-weight="700" fill="#f3f5f9">Mappe Interattive</text>
+      font-weight="700" fill="#f3f5f9">AniMapVerse</text>
   </g>
 
   <text x="96" y="372" font-family="Arial, Helvetica, sans-serif" font-size="30" fill="#b6bbcb">
-    Esplora i mondi dei tuoi anime preferiti: mappe, timeline,
+    Interactive maps of anime &amp; manga worlds: locations,
   </text>
   <text x="96" y="414" font-family="Arial, Helvetica, sans-serif" font-size="30" fill="#b6bbcb">
-    personaggi, fazioni, archi narrativi e percorsi.
+    characters, story arcs, factions and journeys.
   </text>
 
   <!-- World chips -->

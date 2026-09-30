@@ -4,17 +4,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Interactive Maps ("Mappe Interattive") — a frontend-only SPA for exploring interactive
+**AniMapVerse** (https://animapverse.com; formerly "Mappe Interattive") — a frontend-only SPA,
+statically pre-rendered page by page for SEO (see "SEO architecture"), for exploring interactive
 maps of narrative worlds (worlds, nations, regions, villages/landmarks, characters,
 factions, arcs, timeline events, routes, and a per-world "power system"). Stack:
 React 18 + TypeScript (strict) + Vite + Zustand + React Flow (`@xyflow/react`) +
 Tailwind + React Router. Vercel Analytics + Speed Insights (mounted in `src/App.tsx`).
 **No backend, no database** — all content lives in local TypeScript files under `src/data/`.
 
-**Available worlds:** Naruto, Hunter x Hunter, One Piece, Dragon Ball (`status: 'available'`,
-full datasets). **Coming soon:** Attack on Titan, Bleach, Fullmetal Alchemist, Frieren, Toriko,
-Fairy Tail, Jujutsu Kaisen, Demon Slayer, Black Clover (registered in `worlds.ts`, no dataset
-yet → render `ComingSoonWorldPage`).
+**Available worlds:** Naruto, Hunter x Hunter, One Piece, Dragon Ball, Black Clover
+(`status: 'available'`, full datasets). **Coming soon:** Attack on Titan, Bleach, Fullmetal
+Alchemist, Frieren, Toriko, Fairy Tail, Jujutsu Kaisen, Demon Slayer (registered in `worlds.ts`,
+no dataset yet → render `ComingSoonWorldPage`, noindex).
 
 The app is fully **dataset-driven and dynamic per world**: a new world = a dataset + a
 `WorldConfig`, with zero component edits. Do NOT hardcode world-specific terms in shared
@@ -24,18 +25,24 @@ components (see "Per-world dynamic config").
 
 ```bash
 npm run dev              # Vite dev server → http://localhost:5173
-npm run build            # tsc -b && vite build && npm run prerender  (the tsc step is the real correctness gate)
-npm run prerender        # SEO: inject per-route meta/OG/JSON-LD into static HTML per route + write sitemap.xml
-npm run preview          # serve the built bundle
+npm run build            # tsc -b && test:seo && vite build && build:ssr && prerender && seo:check (ALL blocking)
+npm run build:ssr        # vite build --ssr src/entry-server.tsx → dist-server/ (build-only, gitignored)
+npm run prerender        # SSG: one static HTML per public page + 404.html + sitemap*.xml + robots.txt + llms.txt
+npm run test:seo         # SEO invariants on sources (slugs, URL round-trip, metadata, hreflang, sitemap)
+npm run seo:check        # SEO checks on the generated dist/ HTML (canonical, hreflang, dup titles, broken links…)
+npm run preview:static   # serve dist/ with Vercel semantics (redirects, real 404s) → :4173
+npm run smoke            # build + browser smoke test (routes, hydration kept, language switch, 404, modals)
+npm run preview          # Vite preview (NB: answers 200 to ANY path — use preview:static for HTTP tests)
 npm run validate:data    # validate ALL registered datasets; exits 1 on integrity errors
 npm run validate:i18n    # report missing/empty UI translations between it.ts and en.ts
 npm run extract:boundaries  # regenerate Naruto nation boundary SVG paths from the world PNG
 npm run find:dots        # detect the red village-marker dots in the Naruto PNG, print flow coords
 ```
 
-- **There is no test framework** and `npm run lint` (`eslint .`) has no eslint config or
-  dependency installed — do not rely on it. After any change, the gate is `npx tsc -b`
-  (or `npm run build`), plus `npm run validate:data` whenever you touch `src/data/`.
+- **There is no test framework** (the SEO tests use plain `node:assert` in `scripts/`) and
+  `npm run lint` (`eslint .`) has no eslint config or dependency installed — do not rely on it.
+  After any change, the gate is `npm run build` (tsc + SEO tests + prerender + seo:check), plus
+  `npm run validate:data` whenever you touch `src/data/` (it also checks SEO slug collisions).
 - `npm install` is required first in a fresh checkout (node_modules is not committed).
 - `scripts/*.ts` run under `tsx --tsconfig scripts/tsconfig.json` because they import `src/`
   via the `@/` alias. Besides the 4 npm scripts there is per-world tooling in `scripts/`
@@ -54,11 +61,16 @@ Each world is a single `WorldDataset` object (shape in `src/types/index.ts`): `w
   per-world `config: WorldConfig`.
 - `src/data/<slug>/index.ts` — assembles and exports `<slug>Dataset: WorldDataset`. (Naruto's
   index merges `clans + factions` into `factions`, and `routes + characterRoutes` into `routes`.)
-- `src/data/registry.ts` — `worldDatasets` map keyed by slug; `getWorldDataset(slug)` resolves it.
-  Currently registers `naruto`, `hunterxhunter`, `onepiece`.
-- `src/routes/WorldRoute.tsx` resolves the dataset from `:worldSlug`; `coming_soon` worlds render
-  `ComingSoonWorldPage`. Everything downstream (map, filters, legend, timeline, archives, search)
-  is dataset-driven and adapts automatically.
+- `src/data/registry.ts` — lazy loaders keyed by the INTERNAL slug (`loadWorldDataset(slug)`,
+  `getLoadedWorldDataset(slug)`): naruto, hunterxhunter, onepiece, dragonball, blackclover.
+- A world has two slugs: `slug` (internal, permanent: data dirs, assets, store, registry) and
+  `urlSlug` (public URL segment, e.g. `hunter-x-hunter`; `getWorldUrlSlug`/`findWorldByUrlSlug`).
+  Never build a URL from `world.slug` — use the path builders in `src/seo/paths.ts`.
+- `src/routes/WorldRoute.tsx` (a lazy chunk) resolves the world from `/{lang}/:worldSlug`, loads
+  the dataset, then delegates "does this page exist?" to `resolveSeoPath` (→ real 404 otherwise)
+  and mounts the page for its kind (landing, map, archive, directory, entity, timeline).
+  `coming_soon` worlds only have a (noindex) landing → `ComingSoonWorldPage`. Everything
+  downstream (map, filters, legend, timeline, archives, search) is dataset-driven.
 
 **Entities cross-reference each other by string `id`** (e.g. `location.characterIds`,
 `character.clanIds`, `route.steps[].locationId`). `npm run validate:data` checks every
@@ -314,7 +326,7 @@ of the 80+ pins by keyboard goes through search rather than a Tab-trap over ever
 `Modal` and `Drawer` both trap Tab, close on Esc, and **restore focus to the trigger** on close
 (WCAG 2.4.3). The closed `Drawer` is marked `inert` so its off-screen controls leave the tab order
 and the a11y tree (prevents tabbing into a hidden panel / `aria-hidden-focus`). Verify with
-`npm run audit:a11y` (axe-core, WCAG 2.2 AA) — start `npm run preview` first; the scenario list in
+`npm run audit:a11y` (axe-core, WCAG 2.2 AA) — start `npm run preview:static` first (`BASE=http://localhost:4173`); the scenario list in
 `scripts/a11y-audit.mjs` covers the map, filters drawer, docked schede and search overlay.
 
 ### State (Zustand, `src/store/`)
@@ -323,7 +335,14 @@ and the a11y tree (prevents tabbing into a hidden panel / `aria-hidden-focus`). 
   `visibleLayers` (`VisibleLayers`), `viewportResetKey`.
 - `useUiStore` — a single `activeModal` (one modal at a time; opening a new one replaces it) plus
   floating panels / drawers / timeline bottom-sheet (map-first: panels float or stay hidden).
-- `useLocaleStore` — current locale (note: not re-exported from `store/index.ts`).
+- `useLocaleStore` — current locale (note: not re-exported from `store/index.ts`). `setLocale` =
+  explicit user choice (loads lazy resources, persists); `syncLocale` = align to the URL language
+  without persisting; `setLocaleNow` = synchronous, for pre-render/boot.
+- **SSR gotcha**: zustand 4.5 renders SSR *and hydration* from the store's INITIAL state. Stores
+  that are set before the first render (`useLocaleStore`, `useWorldStore`) are built with
+  `createSnapshotStore` (`src/store/snapshotStore.ts`) so the snapshot is the current state. Any
+  other store read during the first render must keep its initial value identical on server and
+  client (or be gated by `useHydrated`), otherwise hydration mismatches.
 
 **Map interaction mode** (`src/lib/mapMode.ts`): `useMapMode()` is the single, **derived** source of truth
 for the active mode — `story | relations | routes | timeline | explore` — computed from existing store
@@ -340,7 +359,10 @@ Spanish (`es`). Persistence: `localStorage` key `animeInteractiveMaps.locale` (`
 in `src/i18n/index.ts`); on first visit the browser's preferred language is matched by base tag
 (`fr-CA` → `fr`). UI strings live in `src/i18n/resources/<locale>.ts` — **keep keys in sync across
 all six files**; `npm run validate:i18n` diffs every locale against `it` (the reference) and fails
-on any missing or orphan key.
+on any missing or orphan key. `it`/`en` are bundled (they are the URL languages and the pre-render
+needs them); `ja/fr/de/es` are lazy chunks loaded by `ensureLocaleResources` (`LAZY_RESOURCES` in
+`src/i18n/index.ts`). The **URL language** (`/it`, `/en`) decides the content language; the stored
+UI preference is applied only when compatible (e.g. `ja` on `/en`), see `src/main.tsx`.
 
 **Source vs UI languages.** Datasets are authored only in the `SOURCE_LOCALES` (`it`/`en`); the four
 newer languages translate the *interface*. `LOCALE_FALLBACKS` defines the per-language cascade
@@ -379,11 +401,12 @@ languages fall back to English. The UI-key check is the blocking part.
 
 **Adding a language:** add the code to `SUPPORTED_LOCALES` + its `LOCALE_META`/`LOCALE_FALLBACKS`
 entries (`src/types/i18n.ts`), create `src/i18n/resources/<code>.ts`, register it in
-`src/i18n/index.ts` and in `UI_RESOURCES` (`src/utils/validateI18n.ts`), add its flag to
+`LAZY_RESOURCES` (`src/i18n/index.ts`) and in `UI_RESOURCES` (`src/utils/validateI18n.ts`), add its flag to
 `src/components/i18n/Flags.tsx` + `LOCALE_FLAG`/`LOCALE_LABEL_KEY` in `LanguageSwitcher.tsx`, a
 `languageSwitcher.<language>` key (the endonym) in every resource file, and an `ErrorBoundary`
-`STRINGS` entry. The language switcher, `og:locale:alternate` tags and the SEO/prerender metadata
-are all derived from `SUPPORTED_LOCALES` and pick it up automatically.
+`STRINGS` entry. A UI-only language gets NO URLs; giving a language its own indexable URLs
+(`/xx/...`) requires authoring the datasets in it and adding it to `SOURCE_LOCALES`/`SeoLocale` +
+`SEO_STRINGS` (see docs/SEO.md) — never expose URLs whose content is only a fallback.
 
 ### Entity images & per-world placeholders
 `src/components/common/EntityImage.tsx` renders a themed SVG placeholder per entity. A real image is
@@ -417,9 +440,54 @@ motifs but still gets its own palette — **adding an anime needs no component e
 to give it dedicated symbols. Location silhouettes stay driven by `LocationType` (world-agnostic) and
 cover `planet`/`dimension`/`ruins`/`hideout` too, so cosmic worlds don't render village rooftops.
 
+## SEO architecture (MANDATORY — read `docs/SEO.md`)
+
+AniMapVerse is **SEO-first**: every public page is pre-rendered (SSG) into real HTML with its own
+metadata, and every indexable entity has a stable URL. The whole layer lives in `src/seo/` and is
+**data-driven**: never hand-write SEO for a single world/entity/page.
+
+- **URLs** (`src/seo/paths.ts`): `/{lang}/{world}/{category}/{slug}` with `lang ∈ it|en`
+  (`SEO_LOCALES` = dataset source languages; ja/fr/de/es are UI-only and live on `/en`), English
+  segments for both languages, lowercase, no trailing slash, no query. Build every internal link
+  with the path helpers (`worldPath`, `mapPath`, `categoryPath`, `entityPath`, `refPath` for graph
+  refs) + `useSeoLang()`. Never concatenate `/worlds/...` or use `world.slug` in a URL.
+- **Slugs** (`src/seo/slug.ts`) are the only slug source (derived from the English name). To rename
+  an entity without breaking its URL set `slug` (pin) or `previousSlugs` (redirect).
+- **Existence = `resolveSeoPath`** (`src/seo/metadata.ts`): the router, the pre-renderer and the
+  sitemap all use it. Unknown paths must render `NotFoundPage` (real 404 via `404.html`) — never a
+  silent `<Navigate>` to the map (soft-404).
+- **Metadata** come only from `buildPageMeta` (title/description in `src/seo/strings.ts`, IT/EN),
+  applied by `<Seo resolved=… />` on the client and `renderHeadHtml` at build. Do not add
+  `<title>`/meta/canonical tags anywhere else (managed tags carry `data-seo`).
+- **Index/noindex** (`isIndexable`, `src/seo/quality.ts`): entity pages are indexable only above a
+  content threshold AND when their text truly exists in that language (a plain-string
+  `Localizable` counts as Italian). hreflang lists only indexable versions (reciprocal); noindex
+  pages are excluded from the sitemap. Legal pages, coming-soon worlds, 404 and query URLs are noindex.
+- **Internal linking**: SEO-relevant relations must be real `<a href>` (`Link`), not `onClick`
+  only. Archive cards use `CardLink` (href to the entity page, click still opens the modal).
+  Graph relations → `RefLinks`/`refPath`. Every page renders `Breadcrumbs` (same trail as JSON-LD).
+- **Structured data** (`src/seo/schema.ts`): only WebSite/Organization/WebPage/CollectionPage/
+  AboutPage/BreadcrumbList + `about` (the work as `CreativeWorkSeries`, author/publisher only from
+  `AnimeWorld.metadata`; entities as `Thing`). Never invent ratings, dates, authors or ownership:
+  AniMapVerse is the site, the works belong to their owners.
+- **SSR-safety**: page components must render identically on server and first client render
+  (no `window`/`localStorage` during render, browser-only UI behind `useHydrated`). Route chunks are
+  declared in `src/routes/lazyPages.tsx` with `lazyWithPreload` so `main.tsx`/`entry-server.tsx`
+  preload them (hydration without fallback flashes). One `<h1>` per page (map page: sr-only).
+- **Technical routes** (`/og/*`, `/share/*`, `/social/*`, `/render/*`) are reserved and never
+  indexable (robots + X-Robots-Tag + excluded from sitemap). Put future social-card assets there.
+
+**Checklist for EVERY new feature / entity type / page** — evaluate and implement:
+SEO URL · metadata (title + description, IT/EN) · canonical · hreflang · sitemap inclusion ·
+internal links (real anchors, breadcrumbs) · structured data (only if truthful) · index/noindex ·
+SSR-safety of the first render. Then `npm run build` must pass (`test:seo` + `seo:check` are
+blocking) and, for UI changes, `npm run smoke`.
+
 ## Data & content conventions
 
 - When adding/removing an entity, update every referencing id array and run `validate:data`.
+- **Translate new narrative text in both `it` and `en`**: an entity whose description exists only in
+  one language gets a `noindex` page in the other (see "SEO architecture").
 - `canonStatus` / `referenceStatus`: mark uncertain data `referenceStatus: 'needs_verification'`
   and anime/movie-only content with the matching `canonStatus`. Never present uncertain data as
   hard canon.
@@ -429,10 +497,13 @@ cover `planet`/`dimension`/`ruins`/`hideout` too, so cosmic worlds don't render 
 
 ## Adding a new world
 
-1. Register the world in `src/data/worlds.ts` (id, slug, `status`, `theme`, map level ids) and add
-   its `config: WorldConfig` (power-system `term`/categories, ranks, roles, facet terms, featured).
+1. Register the world in `src/data/worlds.ts` (id, slug, **`urlSlug`** — kebab-case, permanent —,
+   `status`, `theme`, map level ids, real `metadata.author/publisher`) and add its
+   `config: WorldConfig` (power-system `term`/categories, ranks, roles, facet terms, featured).
 2. Create `src/data/<slug>/` with the entity files (`assets`, `mapLevels`, `mapConstants`, `nations`,
    `boundaries`, `locations`, `characters`, `factions`/`clans`, `arcs`, `events`, `routes`, abilities…)
    and an `index.ts` exporting `<slug>Dataset: WorldDataset`.
-3. Add it to `worldDatasets` in `src/data/registry.ts` and flip `status` to `'available'` in `worlds.ts`.
-4. Run `npx tsc -b` and `npm run validate:data` (both must pass).
+3. Add its loader in `src/data/registry.ts` and flip `status` to `'available'` in `worlds.ts`.
+4. Run `npm run validate:data` and `npm run build` (both must pass). No SEO work is needed: landing,
+   map, indexes, entity pages, timeline, IT/EN metadata, hreflang, `sitemap-<world>.xml`, header and
+   home links and `llms.txt` are generated from the data.

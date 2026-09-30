@@ -4,6 +4,9 @@ import { Card } from '@/components/common/Card';
 import { Badge } from '@/components/common/Badge';
 import { EntityImage } from '@/components/common/EntityImage';
 import { cn } from '@/lib/cn';
+import { CardLink } from '@/components/seo/CardLink';
+import { entityPath } from '@/seo/paths';
+import { useSeoLang } from '@/seo/useSeoLang';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText } from '@/utils/localization';
 
@@ -21,6 +24,7 @@ function ClanFactionCardComponent({
   onSelect,
 }: ClanFactionCardProps) {
   const locale = useLocaleStore((s) => s.locale);
+  const lang = useSeoLang();
   const village = faction.villageLocationId
     ? dataset.locations.find((l) => l.id === faction.villageLocationId)
     : undefined;
@@ -35,9 +39,9 @@ function ClanFactionCardComponent({
         active && 'border-ember-500/70 shadow-ember',
       )}
     >
-      <button
-        type="button"
-        onClick={() => onSelect(faction.id)}
+      <CardLink
+        href={entityPath(lang, dataset, 'factions', faction.id)!}
+        onOpen={() => onSelect(faction.id)}
         className="text-left w-full h-full flex flex-col p-4 gap-3"
       >
         <div className="flex items-start gap-3">
@@ -95,7 +99,7 @@ function ClanFactionCardComponent({
             </Badge>
           ))}
         </div>
-      </button>
+      </CardLink>
     </Card>
   );
 }

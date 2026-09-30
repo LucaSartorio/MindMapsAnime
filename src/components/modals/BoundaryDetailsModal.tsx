@@ -10,6 +10,8 @@ import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText, getEntityDisplayName } from '@/utils/localization';
 import { findCharacter, findNation } from '@/lib/entities';
 import { getTagLabel } from '@/lib/tagLabels';
+import { mapPath } from '@/seo/paths';
+import { useSeoLang } from '@/seo/useSeoLang';
 
 interface BoundaryDetailsModalProps {
   dataset: WorldDataset;
@@ -31,6 +33,7 @@ export function BoundaryDetailsModal({
   const openRoute = useUiStore((s) => s.openRouteModal);
   const openNation = useUiStore((s) => s.openNationModal);
   const navigate = useNavigate();
+  const seoLang = useSeoLang();
   const setActiveMapLevel = useMapStore((s) => s.setActiveMapLevel);
 
   if (!boundary) {
@@ -93,7 +96,7 @@ export function BoundaryDetailsModal({
               variant="ghost"
               onClick={() => {
                 setActiveMapLevel(boundary.mapLevelId);
-                navigate(`/worlds/${dataset.world.slug}`);
+                navigate(mapPath(seoLang, dataset));
                 close();
               }}
             >

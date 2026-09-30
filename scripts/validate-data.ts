@@ -13,6 +13,10 @@ import { onepieceDataset } from '../src/data/onepiece';
 import { dragonballDataset } from '../src/data/dragonball';
 import { blackcloverDataset } from '../src/data/blackclover';
 import { validateDataset } from '../src/utils/validateDataset';
+import { animeWorlds, getWorldUrlSlug } from '../src/data/worlds';
+import { SEO_CATEGORIES, categoryEntities } from '../src/seo/categories';
+import { getSlugIndex, slugify } from '../src/seo/slug';
+import { STATIC_PAGES } from '../src/seo/paths';
 
 const datasets: WorldDataset[] = [
   narutoDataset,
@@ -61,7 +65,46 @@ for (const dataset of datasets) {
       lines.push(`[WARN] ${w.entity}/${w.id ?? '?'} · ${w.code} · ${w.message}`);
     }
   }
+  // --- SEO: slug delle pagine entità (src/seo/slug.ts) ---
+  const slugIndex = getSlugIndex(dataset);
+  for (const c of slugIndex.collisions) {
+    lines.push(
+      `[WARN] seo/${c.category} · slug_collision · "${c.slug}" condiviso da ${c.ids.join(', ')} → disambiguato con suffisso; valuta \`slug\` esplicito`,
+    );
+  }
+  for (const category of SEO_CATEGORIES) {
+    for (const e of categoryEntities(dataset, category)) {
+      for (const s of [e.slug, ...(e.previousSlugs ?? [])].filter((x): x is string => !!x)) {
+        if (slugify(s) !== s) {
+          anyErrors = true;
+          lines.push(`[ERR ] seo/${category}/${e.id} · invalid_slug · "${s}" non è kebab-case ASCII (atteso "${slugify(s)}")`);
+        }
+      }
+    }
+  }
   lines.push('────────────────────────────────────────');
+}
+
+// --- SEO: slug URL dei mondi ---
+{
+  const seen = new Map<string, string>();
+  for (const w of animeWorlds) {
+    const u = getWorldUrlSlug(w);
+    if (slugify(u) !== u) {
+      anyErrors = true;
+      lines.push(`[ERR ] world/${w.slug} · invalid_url_slug · "${u}"`);
+    }
+    if ((STATIC_PAGES as readonly string[]).includes(u)) {
+      anyErrors = true;
+      lines.push(`[ERR ] world/${w.slug} · reserved_url_slug · "${u}" collide con una pagina statica`);
+    }
+    const dup = seen.get(u);
+    if (dup) {
+      anyErrors = true;
+      lines.push(`[ERR ] world/${w.slug} · duplicate_url_slug · "${u}" già usato da ${dup}`);
+    }
+    seen.set(u, w.slug);
+  }
 }
 
 // eslint-disable-next-line no-console
