@@ -2,6 +2,8 @@ import { useDeferredValue, useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
+import type { ResolvedPage } from '@/seo/metadata';
+import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { JutsuCard } from './JutsuCard';
 import { FeaturedStrip, type FeaturedTile } from './FeaturedStrip';
 import { EntityImage } from '@/components/common/EntityImage';
@@ -21,9 +23,11 @@ import { filterJutsuBySeries } from '@/lib/filters';
 
 interface JutsuPageProps {
   dataset: WorldDataset;
+  /** Pagina risolta (breadcrumb crawlabile). */
+  resolved?: ResolvedPage;
 }
 
-export function JutsuPage({ dataset }: JutsuPageProps) {
+export function JutsuPage({ dataset, resolved }: JutsuPageProps) {
   const { t } = useTranslation();
   const locale = useLocaleStore((s) => s.locale);
   const term = getAbilityTerm(dataset.world, locale);
@@ -134,6 +138,7 @@ export function JutsuPage({ dataset }: JutsuPageProps) {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6">
+      {resolved && <Breadcrumbs resolved={resolved} />}
       <header className="space-y-2">
         <p className="font-mono text-xs uppercase tracking-widest text-chakra-300">
           {getLocalizedText(dataset.world.title, locale)}

@@ -10,6 +10,9 @@ import { cn } from '@/lib/cn';
 import { GlobalSearchDropdown } from '@/components/search/GlobalSearchDropdown';
 import { WorldSwitcher } from '@/components/layout/WorldSwitcher';
 import { LanguageSwitcher } from '@/components/i18n/LanguageSwitcher';
+import { useSeoLang } from '@/seo/useSeoLang';
+import { categoryPath, homePath, langFromPath, mapPath, parseSeoPath, staticPagePath, worldPath } from '@/seo/paths';
+import { worldHasCategory } from '@/seo/metadata';
 
 interface NavItem {
   to: string;
@@ -35,7 +38,13 @@ export function TopNav() {
   const [searchShown, setSearchShown] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
 
-  const inWorld = location.pathname.startsWith('/worlds/') && worldSlug;
+  const lang = useSeoLang();
+  const parsed = parseSeoPath(location.pathname);
+  const inWorld =
+    'world' in parsed &&
+    !!dataset &&
+    parsed.world.slug === worldSlug &&
+    !!langFromPath(location.pathname);
 
   // Chiudi la ricerca quando cambia pagina.
   useEffect(() => {
@@ -93,27 +102,34 @@ export function TopNav() {
     return () => document.removeEventListener('keydown', onKey);
   }, [inWorld]);
 
-  const worldItems: NavItem[] = inWorld
-    ? [
-        { to: `/worlds/${worldSlug}`, label: t('nav.map') },
-        {
-          to: `/worlds/${worldSlug}/characters`,
-          label: t('nav.characters'),
-        },
-        {
-          to: `/worlds/${worldSlug}/clans`,
-          label: getFactionsTerm(dataset?.world, locale, t('nav.clansFactions')),
-        },
-        { to: `/worlds/${worldSlug}/jutsu`, label: getAbilityTerm(dataset?.world, locale) },
-        { to: `/worlds/${worldSlug}/arcs`, label: t('nav.arcs') },
-      ]
-    : [];
+  // Navigazione del mondo: link HTML reali (crawlabili) verso landing, mappa e
+  // indici — solo le categorie che il mondo possiede davvero.
+  const worldItems: NavItem[] =
+    inWorld && dataset
+      ? [
+          { to: worldPath(lang, dataset), label: t('nav.overview') },
+          { to: mapPath(lang, dataset), label: t('nav.map') },
+          { to: categoryPath(lang, dataset, 'characters'), label: t('nav.characters') },
+          { to: categoryPath(lang, dataset, 'locations'), label: t('nav.locations') },
+          {
+            to: categoryPath(lang, dataset, 'factions'),
+            label: getFactionsTerm(dataset.world, locale, t('nav.clansFactions')),
+          },
+          ...(worldHasCategory(dataset, 'abilities')
+            ? [{ to: categoryPath(lang, dataset, 'abilities'), label: getAbilityTerm(dataset.world, locale) }]
+            : []),
+          { to: categoryPath(lang, dataset, 'arcs'), label: t('nav.arcs') },
+          ...(worldHasCategory(dataset, 'journeys')
+            ? [{ to: categoryPath(lang, dataset, 'journeys'), label: t('nav.journeys') }]
+            : []),
+        ]
+      : [];
 
   return (
     <header className="sticky top-0 z-30 border-b border-ink-700/60 bg-ink-950/85 backdrop-blur-md">
       <div className="mx-auto max-w-7xl px-4 py-2.5 flex items-center gap-4">
         <Link
-          to="/"
+          to={homePath(lang)}
           className="flex items-center gap-3 shrink-0"
           aria-label={`${t('app.title')} · ${t('nav.home')}`}
         >
@@ -212,7 +228,7 @@ export function TopNav() {
             </div>
           )}
           <Link
-            to="/about"
+            to={staticPagePath(lang, 'about')}
             className="hidden md:inline-block px-3 py-1.5 rounded-md text-sm text-ink-300 hover:text-white"
           >
             {t('nav.about')}
@@ -269,7 +285,7 @@ export function TopNav() {
             ))}
             <li>
               <Link
-                to="/about"
+                to={staticPagePath(lang, 'about')}
                 onClick={() => toggleMobileNav()}
                 className="block px-3 py-2 rounded-md text-sm text-ink-300 hover:text-white hover:bg-ink-800/70"
               >

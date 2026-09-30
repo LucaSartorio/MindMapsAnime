@@ -3,14 +3,17 @@ import { useTranslation } from 'react-i18next';
 import { Card } from '@/components/common/Card';
 import { SourceNotice } from '@/components/common/SourceNotice';
 import { Seo } from '@/components/seo/Seo';
+import { homePath } from '@/seo/paths';
+import { useSeoLang } from '@/seo/useSeoLang';
 
 export function AboutPage() {
   const { t } = useTranslation();
+  const lang = useSeoLang();
   const offers = t('about.offers', { returnObjects: true }) as string[];
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 space-y-6">
-      <Seo path="/about" />
+      <Seo />
       <header className="space-y-2">
         <p className="font-mono text-xs uppercase tracking-widest text-chakra-300">
           {t('about.eyebrow')}
@@ -41,7 +44,7 @@ export function AboutPage() {
       <SourceNotice />
 
       <p className="text-sm text-ink-300 leading-relaxed">
-        <Link to="/" className="text-chakra-300 hover:underline">
+        <Link to={homePath(lang)} className="text-chakra-300 hover:underline">
           {t('about.backToHome')}
         </Link>
       </p>

@@ -10,6 +10,9 @@ import { getCharacterStatusLabel, getChakraNatureLabel, getLocalizedText, getRac
 import { getAbilityCategoryLabel, getCharacterRankSystem, humanizeId } from '@/lib/worldConfig';
 import { getCharacterChakraNatures } from '@/lib/characterChakra';
 import { CHAKRA_COLORS } from '@/utils/entityImage';
+import { CardLink } from '@/components/seo/CardLink';
+import { entityPath } from '@/seo/paths';
+import { useSeoLang } from '@/seo/useSeoLang';
 
 interface CharacterCardProps {
   character: Character;
@@ -25,6 +28,7 @@ function CharacterCardComponent({
   onSelect,
 }: CharacterCardProps) {
   const locale = useLocaleStore((s) => s.locale);
+  const lang = useSeoLang();
   const rankSystem = getCharacterRankSystem(dataset.world, locale);
   const village = character.villageLocationId
     ? dataset.locations.find((l) => l.id === character.villageLocationId)
@@ -44,9 +48,9 @@ function CharacterCardComponent({
         active && 'border-ember-500/70 shadow-ember',
       )}
     >
-      <button
-        type="button"
-        onClick={() => onSelect(character.id)}
+      <CardLink
+        href={entityPath(lang, dataset, 'characters', character.id)!}
+        onOpen={() => onSelect(character.id)}
         className="flex flex-col text-left w-full h-full p-4 gap-3"
       >
         {/* Riga superiore: miniatura quadrata + titolo (stesso linguaggio del modale) */}
@@ -141,7 +145,7 @@ function CharacterCardComponent({
             {getCharacterStatusLabel(character.status, locale)}
           </Badge>
         </div>
-      </button>
+      </CardLink>
     </Card>
   );
 }

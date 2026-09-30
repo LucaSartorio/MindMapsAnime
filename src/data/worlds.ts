@@ -17,6 +17,7 @@ export const animeWorlds: AnimeWorld[] = [
   {
     id: 'world-naruto',
     slug: 'naruto',
+    urlSlug: 'naruto',
     title: {
       it: 'Naruto',
       en: 'Naruto',
@@ -102,6 +103,7 @@ export const animeWorlds: AnimeWorld[] = [
   {
     id: 'world-hunterxhunter',
     slug: 'hunterxhunter',
+    urlSlug: 'hunter-x-hunter',
     title: {
       it: 'Hunter x Hunter',
       en: 'Hunter x Hunter',
@@ -178,6 +180,7 @@ export const animeWorlds: AnimeWorld[] = [
   {
     id: 'world-onepiece',
     slug: 'onepiece',
+    urlSlug: 'one-piece',
     title: {
       it: 'One Piece',
       en: 'One Piece',
@@ -274,6 +277,7 @@ export const animeWorlds: AnimeWorld[] = [
   {
     id: 'world-dragonball',
     slug: 'dragonball',
+    urlSlug: 'dragon-ball',
     title: {
       it: 'Dragon Ball',
       en: 'Dragon Ball',
@@ -355,6 +359,7 @@ export const animeWorlds: AnimeWorld[] = [
   {
     id: 'world-attackontitan',
     slug: 'attackontitan',
+    urlSlug: 'attack-on-titan',
     title: {
       it: 'L’Attacco dei Giganti',
       en: 'Attack on Titan',
@@ -405,6 +410,7 @@ export const animeWorlds: AnimeWorld[] = [
   {
     id: 'world-bleach',
     slug: 'bleach',
+    urlSlug: 'bleach',
     title: {
       it: 'Bleach',
       en: 'Bleach',
@@ -458,6 +464,7 @@ export const animeWorlds: AnimeWorld[] = [
   {
     id: 'world-fullmetalalchemist',
     slug: 'fullmetalalchemist',
+    urlSlug: 'fullmetal-alchemist',
     title: {
       it: 'Fullmetal Alchemist',
       en: 'Fullmetal Alchemist',
@@ -511,6 +518,7 @@ export const animeWorlds: AnimeWorld[] = [
   {
     id: 'world-frieren',
     slug: 'frieren',
+    urlSlug: 'frieren',
     title: {
       it: 'Frieren',
       en: 'Frieren',
@@ -564,6 +572,7 @@ export const animeWorlds: AnimeWorld[] = [
   {
     id: 'world-toriko',
     slug: 'toriko',
+    urlSlug: 'toriko',
     title: {
       it: 'Toriko',
       en: 'Toriko',
@@ -616,6 +625,7 @@ export const animeWorlds: AnimeWorld[] = [
   {
     id: 'world-fairytail',
     slug: 'fairytail',
+    urlSlug: 'fairy-tail',
     title: {
       it: 'Fairy Tail',
       en: 'Fairy Tail',
@@ -669,6 +679,7 @@ export const animeWorlds: AnimeWorld[] = [
   {
     id: 'world-jujutsukaisen',
     slug: 'jujutsukaisen',
+    urlSlug: 'jujutsu-kaisen',
     title: {
       it: 'Jujutsu Kaisen',
       en: 'Jujutsu Kaisen',
@@ -722,6 +733,7 @@ export const animeWorlds: AnimeWorld[] = [
   {
     id: 'world-demonslayer',
     slug: 'demonslayer',
+    urlSlug: 'demon-slayer',
     title: {
       it: 'Demon Slayer',
       en: 'Demon Slayer',
@@ -775,6 +787,7 @@ export const animeWorlds: AnimeWorld[] = [
   {
     id: 'world-blackclover',
     slug: 'blackclover',
+    urlSlug: 'black-clover',
     title: {
       it: 'Black Clover',
       en: 'Black Clover',
@@ -870,4 +883,14 @@ export const animeWorlds: AnimeWorld[] = [
 /** Recupera un mondo tramite slug. */
 export function findWorldBySlug(slug: string): AnimeWorld | undefined {
   return animeWorlds.find((w) => w.slug === slug);
+}
+
+/** Segmento pubblico dell'URL di un mondo (`urlSlug`, fallback `slug`). */
+export function getWorldUrlSlug(world: AnimeWorld): string {
+  return world.urlSlug ?? world.slug;
+}
+
+/** Recupera un mondo dal segmento pubblico dell'URL (`/{lang}/{urlSlug}`). */
+export function findWorldByUrlSlug(urlSlug: string): AnimeWorld | undefined {
+  return animeWorlds.find((w) => getWorldUrlSlug(w) === urlSlug);
 }

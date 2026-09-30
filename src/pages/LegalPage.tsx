@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Card } from '@/components/common/Card';
 import { Seo } from '@/components/seo/Seo';
+import { homePath } from '@/seo/paths';
+import { useSeoLang } from '@/seo/useSeoLang';
 
 export interface LegalSection {
   heading: string;
@@ -34,6 +36,7 @@ export function LegalPage({
   children,
 }: LegalPageProps) {
   const { t } = useTranslation();
+  const lang = useSeoLang();
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 space-y-6">
@@ -68,7 +71,7 @@ export function LegalPage({
         {children}
 
       <p className="text-sm text-ink-300 leading-relaxed">
-        <Link to="/" className="text-chakra-300 hover:underline">
+        <Link to={homePath(lang)} className="text-chakra-300 hover:underline">
           {t('about.backToHome')}
         </Link>
       </p>

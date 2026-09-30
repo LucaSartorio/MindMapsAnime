@@ -2,6 +2,8 @@ import { useDeferredValue, useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
+import type { ResolvedPage } from '@/seo/metadata';
+import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { CharacterCard } from './CharacterCard';
 import { FeaturedStrip, type FeaturedTile } from './FeaturedStrip';
 import { EntityImage } from '@/components/common/EntityImage';
@@ -15,9 +17,11 @@ import { filterCharactersBySeries } from '@/lib/filters';
 
 interface CharactersPageProps {
   dataset: WorldDataset;
+  /** Pagina risolta (breadcrumb crawlabile). */
+  resolved?: ResolvedPage;
 }
 
-export function CharactersPage({ dataset }: CharactersPageProps) {
+export function CharactersPage({ dataset, resolved }: CharactersPageProps) {
   const { t } = useTranslation();
   const locale = useLocaleStore((s) => s.locale);
   const [params] = useSearchParams();
@@ -137,6 +141,7 @@ export function CharactersPage({ dataset }: CharactersPageProps) {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6">
+      {resolved && <Breadcrumbs resolved={resolved} />}
       <header className="space-y-2">
         <p className="font-mono text-xs uppercase tracking-widest text-chakra-300">
           {getLocalizedText(dataset.world.title, locale)}

@@ -2,6 +2,8 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Card } from '@/components/common/Card';
 import { Seo } from '@/components/seo/Seo';
+import { homePath } from '@/seo/paths';
+import { useSeoLang } from '@/seo/useSeoLang';
 import { useReportStore } from '@/store/useReportStore';
 
 const PAYPAL_URL = import.meta.env.VITE_PAYPAL_URL;
@@ -10,11 +12,12 @@ const PAYPAL_CONFIGURED = Boolean(PAYPAL_URL && /^https?:\/\//.test(PAYPAL_URL))
 /** Pagina "Supportaci": donazione volontaria + altri modi per contribuire. */
 export function SupportPage() {
   const { t } = useTranslation();
+  const lang = useSeoLang();
   const openReport = useReportStore((s) => s.open);
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 space-y-6">
-      <Seo path="/supporta" />
+      <Seo />
       <header className="space-y-2">
         <p className="font-mono text-xs uppercase tracking-widest text-chakra-300">
           {t('support.eyebrow')}
@@ -63,7 +66,7 @@ export function SupportPage() {
       </Card>
 
       <p className="text-sm text-ink-300 leading-relaxed">
-        <Link to="/" className="text-chakra-300 hover:underline">
+        <Link to={homePath(lang)} className="text-chakra-300 hover:underline">
           {t('about.backToHome')}
         </Link>
       </p>

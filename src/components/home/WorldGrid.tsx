@@ -8,9 +8,9 @@ interface WorldGridProps {
 export function WorldGrid({ worlds }: WorldGridProps) {
   return (
     <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {worlds.map((w) => (
+      {worlds.map((w, i) => (
         <li key={w.id} className="flex flex-col">
-          <WorldCard world={w} />
+          <WorldCard world={w} eager={i < 3} />
         </li>
       ))}
     </ul>

@@ -2,6 +2,8 @@ import { useDeferredValue, useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
+import type { ResolvedPage } from '@/seo/metadata';
+import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { ClanFactionCard } from './ClanFactionCard';
 import { FeaturedStrip, type FeaturedTile } from './FeaturedStrip';
 import { EntityImage } from '@/components/common/EntityImage';
@@ -15,6 +17,8 @@ import { filterFactionsBySeries } from '@/lib/filters';
 
 interface ClansAndFactionsPageProps {
   dataset: WorldDataset;
+  /** Pagina risolta (breadcrumb crawlabile). */
+  resolved?: ResolvedPage;
 }
 
 /**
@@ -36,7 +40,7 @@ const FACTION_TYPE_TKEY: Record<string, string> = {
   concept: 'clans.types.concept',
 };
 
-export function ClansAndFactionsPage({ dataset }: ClansAndFactionsPageProps) {
+export function ClansAndFactionsPage({ dataset, resolved }: ClansAndFactionsPageProps) {
   const { t } = useTranslation();
   const locale = useLocaleStore((s) => s.locale);
   const [params] = useSearchParams();
@@ -127,6 +131,7 @@ export function ClansAndFactionsPage({ dataset }: ClansAndFactionsPageProps) {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6">
+      {resolved && <Breadcrumbs resolved={resolved} />}
       <header className="space-y-2">
         <p className="font-mono text-xs uppercase tracking-widest text-chakra-300">
           {getLocalizedText(dataset.world.title, locale)}

@@ -37,6 +37,8 @@ import {
 import { buildRelationGroups } from '@/lib/relationGroups';
 import { RelationsPanel } from '@/components/common/RelationsPanel';
 import { useOpenEntityRef } from '@/lib/useOpenEntityRef';
+import { mapPath } from '@/seo/paths';
+import { useSeoLang } from '@/seo/useSeoLang';
 
 interface CharacterDetailsModalProps {
   dataset: WorldDataset;
@@ -63,6 +65,7 @@ export function CharacterDetailsModal({
   const setActiveMapLevel = useMapStore((s) => s.setActiveMapLevel);
   const setSelectedLocation = useMapStore((s) => s.setSelectedLocation);
   const navigate = useNavigate();
+  const seoLang = useSeoLang();
 
   if (!character) {
     return (
@@ -193,7 +196,7 @@ export function CharacterDetailsModal({
               onClick={() => {
                 setActiveMapLevel(village.mapLevelId);
                 setSelectedLocation(village.id);
-                navigate(`/worlds/${dataset.world.slug}`);
+                navigate(mapPath(seoLang, dataset));
                 close();
               }}
             >

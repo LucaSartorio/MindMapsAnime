@@ -1,8 +1,8 @@
-import { lazy, Suspense, useEffect, useState, type ReactNode } from 'react';
-import { Navigate, Route, Routes, useParams } from 'react-router-dom';
+import { Suspense, useEffect, useMemo, useState, type ReactNode } from 'react';
+import { Navigate, useLocation, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
-import { findWorldBySlug } from '@/data/worlds';
+import { findWorldByUrlSlug } from '@/data/worlds';
 import { getLoadedWorldDataset, loadWorldDataset } from '@/data/registry';
 import { WorldLayout } from '@/components/layout/WorldLayout';
 import { ComingSoonWorldPage } from '@/pages/ComingSoonWorldPage';
@@ -10,42 +10,23 @@ import { NotFoundPage } from '@/pages/NotFoundPage';
 import { Seo } from '@/components/seo/Seo';
 import { ErrorBoundary } from '@/components/common/ErrorBoundary';
 import { ModalDeepLink } from '@/components/modals/ModalDeepLink';
-
-// Lazy: la pagina mappa porta con sé React Flow (~180KB) — non deve pesare
-// sull'avvio dell'app (homepage) ma caricarsi solo entrando in un mondo.
-const WorldMapPage = lazy(() =>
-  import('@/pages/WorldMapPage').then((m) => ({ default: m.WorldMapPage })),
-);
-
-// Lazy load delle pagine archive
-const CharactersPage = lazy(() =>
-  import('@/components/archive/CharactersPage').then((m) => ({
-    default: m.CharactersPage,
-  })),
-);
-const ClansAndFactionsPage = lazy(() =>
-  import('@/components/archive/ClansAndFactionsPage').then((m) => ({
-    default: m.ClansAndFactionsPage,
-  })),
-);
-const StoryArcsPage = lazy(() =>
-  import('@/components/archive/StoryArcsPage').then((m) => ({
-    default: m.StoryArcsPage,
-  })),
-);
-const JutsuPage = lazy(() =>
-  import('@/components/archive/JutsuPage').then((m) => ({
-    default: m.JutsuPage,
-  })),
-);
+import { resolveSeoPath, type ResolvedPage } from '@/seo/metadata';
+import {
+  CharactersPage,
+  ClansAndFactionsPage,
+  JutsuPage,
+  SeoPages,
+  StoryArcsPage,
+} from './lazyPages';
 
 function LazyFallback({ children }: { children: ReactNode }) {
+  const { t } = useTranslation();
   return (
     <ErrorBoundary variant="section">
       <Suspense
         fallback={
           <div className="flex-1 grid place-items-center text-ink-300 text-sm">
-            Caricamento…
+            {t('common.loading')}
           </div>
         }
       >
@@ -56,17 +37,20 @@ function LazyFallback({ children }: { children: ReactNode }) {
 }
 
 /**
- * Router del singolo mondo. Risolve il dataset dallo slug — il dataset è
- * code-splittato per mondo e caricato in async (vedi `src/data/registry.ts`),
- * così il bundle iniziale resta leggero. Mostra coming-soon o 404 altrimenti.
+ * Router del singolo mondo (`/{lang}/{world}/...`). Risolve il dataset (chunk
+ * lazy per mondo, vedi `src/data/registry.ts`), poi delega TUTTA la decisione
+ * "questa pagina esiste?" a `resolveSeoPath` — la stessa funzione usata dal
+ * pre-rendering e dalla sitemap. Path sconosciuto → 404 vero (non un redirect
+ * silenzioso alla mappa: eviterebbe soft-404).
  */
 export function WorldRoute() {
   const { t } = useTranslation();
   const { worldSlug } = useParams();
-  const world = worldSlug ? findWorldBySlug(worldSlug) : undefined;
+  const location = useLocation();
+  const world = worldSlug ? findWorldByUrlSlug(worldSlug) : undefined;
   const slug = world?.status === 'available' ? world.slug : undefined;
 
-  // Sync se già in cache (navigazioni successive), altrimenti fetch del chunk.
+  // Sync se già in cache (navigazioni successive, idratazione), altrimenti fetch.
   const [dataset, setDataset] = useState<WorldDataset | undefined>(() =>
     slug ? getLoadedWorldDataset(slug) : undefined,
   );
@@ -94,14 +78,18 @@ export function WorldRoute() {
     };
   }, [slug]);
 
-  if (!world) {
-    return <NotFoundPage />;
-  }
-  if (world.status !== 'available') {
-    return <ComingSoonWorldPage world={world} />;
-  }
-  if (failed) {
-    return <ComingSoonWorldPage world={world} />;
+  const resolved = useMemo<ResolvedPage | null>(
+    () =>
+      dataset || !slug
+        ? resolveSeoPath(location.pathname, (s) => (s === dataset?.world.slug ? dataset : undefined))
+        : null,
+    [location.pathname, dataset, slug],
+  );
+
+  if (!world) return <NotFoundPage />;
+  if (world.status !== 'available' || failed) {
+    // I mondi "in arrivo" hanno solo la landing.
+    return resolved?.page.kind === 'world' ? <ComingSoonWorldPage world={world} /> : <NotFoundPage />;
   }
   if (!dataset) {
     return (
@@ -110,64 +98,40 @@ export function WorldRoute() {
       </div>
     );
   }
+  if (!resolved) return <NotFoundPage />;
+  // Slug precedente / forma non canonica → URL canonico.
+  if (resolved.path !== location.pathname.replace(/\/+$/, '')) {
+    return <Navigate to={`${resolved.path}${location.search}${location.hash}`} replace />;
+  }
+
+  const kind = resolved.page.kind;
+  const archiveCategory = kind === 'category' && resolved.page.kind === 'category' ? resolved.page.category : null;
+
+  let content: ReactNode;
+  switch (archiveCategory) {
+    case 'characters':
+      content = <CharactersPage dataset={dataset} resolved={resolved} />;
+      break;
+    case 'factions':
+      content = <ClansAndFactionsPage dataset={dataset} resolved={resolved} />;
+      break;
+    case 'arcs':
+      content = <StoryArcsPage dataset={dataset} resolved={resolved} />;
+      break;
+    case 'abilities':
+      content = <JutsuPage dataset={dataset} resolved={resolved} />;
+      break;
+    default:
+      content = <SeoPages resolved={resolved} />;
+  }
 
   return (
     <>
-      <Seo />
+      <Seo resolved={resolved} />
       <ModalDeepLink dataset={dataset} />
-      <Routes>
-      <Route
-        index
-        element={
-          <WorldLayout dataset={dataset} mapOverlays>
-            <LazyFallback>
-              <WorldMapPage dataset={dataset} />
-            </LazyFallback>
-          </WorldLayout>
-        }
-      />
-      <Route
-        path="characters"
-        element={
-          <WorldLayout dataset={dataset} mapOverlays={false}>
-            <LazyFallback>
-              <CharactersPage dataset={dataset} />
-            </LazyFallback>
-          </WorldLayout>
-        }
-      />
-      <Route
-        path="clans"
-        element={
-          <WorldLayout dataset={dataset} mapOverlays={false}>
-            <LazyFallback>
-              <ClansAndFactionsPage dataset={dataset} />
-            </LazyFallback>
-          </WorldLayout>
-        }
-      />
-      <Route
-        path="arcs"
-        element={
-          <WorldLayout dataset={dataset} mapOverlays={false}>
-            <LazyFallback>
-              <StoryArcsPage dataset={dataset} />
-            </LazyFallback>
-          </WorldLayout>
-        }
-      />
-      <Route
-        path="jutsu"
-        element={
-          <WorldLayout dataset={dataset} mapOverlays={false}>
-            <LazyFallback>
-              <JutsuPage dataset={dataset} />
-            </LazyFallback>
-          </WorldLayout>
-        }
-      />
-      <Route path="*" element={<Navigate to="." replace />} />
-      </Routes>
+      <WorldLayout dataset={dataset} mapOverlays={kind === 'map'}>
+        <LazyFallback>{content}</LazyFallback>
+      </WorldLayout>
     </>
   );
 }

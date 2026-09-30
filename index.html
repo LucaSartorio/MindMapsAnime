@@ -1,81 +1,34 @@
 <!doctype html>
-<html lang="it" class="dark">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.png" sizes="any" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#070709" />
-    <meta name="apple-mobile-web-app-title" content="Mappe Interattive" />
+    <meta name="application-name" content="AniMapVerse" />
+    <meta name="apple-mobile-web-app-title" content="AniMapVerse" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="format-detection" content="telephone=no" />
-
-    <!-- SEO predefinito (il pre-rendering e react-helmet sovrascrivono per rotta) -->
-    <title>Mappe Interattive — Atlante interattivo di anime e manga</title>
-    <meta
-      name="description"
-      content="Esplora i mondi dei tuoi anime e manga preferiti attraverso mappe interattive, timeline, personaggi, fazioni, archi narrativi e percorsi. Naruto, Hunter x Hunter, One Piece e altri."
-    />
     <meta name="author" content="Luca Sartorio" />
-    <meta
-      name="robots"
-      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-    />
-    <link rel="canonical" href="https://animapverse.com/" />
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Mappe Interattive" />
-    <meta
-      property="og:title"
-      content="Mappe Interattive — Atlante interattivo di anime e manga"
-    />
-    <meta
-      property="og:description"
-      content="Esplora i mondi dei tuoi anime e manga preferiti: mappe interattive, timeline, personaggi, fazioni, archi narrativi e percorsi."
-    />
-    <meta property="og:url" content="https://animapverse.com/" />
-    <meta
-      property="og:image"
-      content="https://animapverse.com/og-image.png"
-    />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="it_IT" />
-    <meta property="og:locale:alternate" content="en_US" />
-    <meta property="og:locale:alternate" content="ja_JP" />
-    <meta property="og:locale:alternate" content="fr_FR" />
-    <meta property="og:locale:alternate" content="de_DE" />
-    <meta property="og:locale:alternate" content="es_ES" />
-
-    <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Mappe Interattive — Atlante interattivo di anime e manga"
-    />
-    <meta
-      name="twitter:description"
-      content="Esplora i mondi dei tuoi anime e manga preferiti: mappe, timeline, personaggi, fazioni, archi e percorsi."
-    />
-    <meta
-      name="twitter:image"
-      content="https://animapverse.com/og-image.png"
-    />
-
+    <!--
+      Title, description, canonical, hreflang, robots, Open Graph e JSON-LD
+      NON stanno qui: sono generati per ogni rotta da `src/seo/` e iniettati
+      nell'HTML statico da `scripts/prerender.ts` (e aggiornati dal client in
+      navigazione SPA, tag marcati `data-seo`). Vedi docs/SEO.md.
+    -->
+    <title>AniMapVerse</title>
+    <!--seo-head-->
     <!-- I font sono self-hosted (vedi src/main.tsx): nessuna richiesta a
          CDN di terze parti, nessun indirizzo IP trasmesso a Google. -->
   </head>
   <body class="bg-ink-950 text-ink-100 antialiased">
-    <div id="root"></div>
+    <div id="root"><!--app-html--></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

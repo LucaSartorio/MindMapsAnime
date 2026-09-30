@@ -1,19 +1,303 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
+  "redirects": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.animapverse.com"
+        }
+      ],
+      "destination": "https://animapverse.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^it.*"
+        }
+      ],
+      "destination": "/it",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "destination": "/en",
+      "permanent": false
+    },
+    {
+      "source": "/about",
+      "destination": "/it/about",
+      "permanent": true
+    },
+    {
+      "source": "/supporta",
+      "destination": "/it/support",
+      "permanent": true
+    },
+    {
+      "source": "/privacy",
+      "destination": "/it/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/cookie-policy",
+      "destination": "/it/cookie-policy",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/naruto",
+      "destination": "/it/naruto/map",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/naruto/characters",
+      "destination": "/it/naruto/characters",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/naruto/clans",
+      "destination": "/it/naruto/factions",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/naruto/arcs",
+      "destination": "/it/naruto/arcs",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/naruto/jutsu",
+      "destination": "/it/naruto/abilities",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/naruto/:rest*",
+      "destination": "/it/naruto/map",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/hunterxhunter",
+      "destination": "/it/hunter-x-hunter/map",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/hunterxhunter/characters",
+      "destination": "/it/hunter-x-hunter/characters",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/hunterxhunter/clans",
+      "destination": "/it/hunter-x-hunter/factions",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/hunterxhunter/arcs",
+      "destination": "/it/hunter-x-hunter/arcs",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/hunterxhunter/jutsu",
+      "destination": "/it/hunter-x-hunter/abilities",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/hunterxhunter/:rest*",
+      "destination": "/it/hunter-x-hunter/map",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/onepiece",
+      "destination": "/it/one-piece/map",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/onepiece/characters",
+      "destination": "/it/one-piece/characters",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/onepiece/clans",
+      "destination": "/it/one-piece/factions",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/onepiece/arcs",
+      "destination": "/it/one-piece/arcs",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/onepiece/jutsu",
+      "destination": "/it/one-piece/abilities",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/onepiece/:rest*",
+      "destination": "/it/one-piece/map",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/dragonball",
+      "destination": "/it/dragon-ball/map",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/dragonball/characters",
+      "destination": "/it/dragon-ball/characters",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/dragonball/clans",
+      "destination": "/it/dragon-ball/factions",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/dragonball/arcs",
+      "destination": "/it/dragon-ball/arcs",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/dragonball/jutsu",
+      "destination": "/it/dragon-ball/abilities",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/dragonball/:rest*",
+      "destination": "/it/dragon-ball/map",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/attackontitan",
+      "destination": "/it/attack-on-titan",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/attackontitan/:rest*",
+      "destination": "/it/attack-on-titan",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/bleach",
+      "destination": "/it/bleach",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/bleach/:rest*",
+      "destination": "/it/bleach",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/fullmetalalchemist",
+      "destination": "/it/fullmetal-alchemist",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/fullmetalalchemist/:rest*",
+      "destination": "/it/fullmetal-alchemist",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/frieren",
+      "destination": "/it/frieren",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/frieren/:rest*",
+      "destination": "/it/frieren",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/toriko",
+      "destination": "/it/toriko",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/toriko/:rest*",
+      "destination": "/it/toriko",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/fairytail",
+      "destination": "/it/fairy-tail",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/fairytail/:rest*",
+      "destination": "/it/fairy-tail",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/jujutsukaisen",
+      "destination": "/it/jujutsu-kaisen",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/jujutsukaisen/:rest*",
+      "destination": "/it/jujutsu-kaisen",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/demonslayer",
+      "destination": "/it/demon-slayer",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/demonslayer/:rest*",
+      "destination": "/it/demon-slayer",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/blackclover",
+      "destination": "/it/black-clover/map",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/blackclover/characters",
+      "destination": "/it/black-clover/characters",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/blackclover/clans",
+      "destination": "/it/black-clover/factions",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/blackclover/arcs",
+      "destination": "/it/black-clover/arcs",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/blackclover/jutsu",
+      "destination": "/it/black-clover/abilities",
+      "permanent": true
+    },
+    {
+      "source": "/worlds/blackclover/:rest*",
+      "destination": "/it/black-clover/map",
+      "permanent": true
     }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
         {
           "key": "Permissions-Policy",
           "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()"
@@ -30,6 +314,60 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/worlds/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
+      "source": "/(sitemap.*\\.xml|robots\\.txt|llms\\.txt)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/og/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/share/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/social/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/render/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
         }
       ]
     }

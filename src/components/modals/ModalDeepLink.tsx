@@ -6,7 +6,7 @@ import { useUiStore, type ActiveModal } from '@/store/useUiStore';
 /**
  * Sincronizza la modale attiva con i query param dell'URL, in entrambe le
  * direzioni, così ogni entità è deep-linkabile e condivisibile:
- *   /worlds/naruto?character=char-naruto
+ *   /en/naruto/map?character=char-naruto
  *
  * - URL → store: all'apertura del link (o col tasto "indietro") apre/chiude la
  *   modale corrispondente, validando che l'id esista nel dataset attivo.

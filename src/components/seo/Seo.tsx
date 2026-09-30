@@ -1,97 +1,47 @@
-import { useMemo } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { useEffect, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useLocaleStore } from '@/store/useLocaleStore';
+import { getLoadedWorldDataset } from '@/data/registry';
+import { LOCALE_META } from '@/types/i18n';
 import {
-  SITE,
-  absoluteUrl,
-  getRouteSeoMap,
-  pageTitle,
-  type RouteSeo,
-} from '@/lib/seo';
-import { LOCALE_META, SUPPORTED_LOCALES } from '@/types/i18n';
+  buildPageMeta,
+  notFoundMeta,
+  resolveSeoPath,
+  type ResolvedPage,
+} from '@/seo/metadata';
+import { applyHead } from '@/seo/head';
+import { useSeoLang } from '@/seo/useSeoLang';
 
 interface SeoProps {
-  /** Override del path da indicizzare (default: location corrente). */
-  path?: string;
-  title?: string;
-  description?: string;
-  image?: string;
-  type?: 'website' | 'article';
-  noindex?: boolean;
-  jsonLd?: Record<string, unknown>[];
+  /** Pagina già risolta (le pagine di mondo la passano); altrimenti dal pathname. */
+  resolved?: ResolvedPage | null;
+  /** Forza i metadati 404 (noindex, nessuna canonical). */
+  notFound?: boolean;
 }
 
 /**
- * Imposta i meta tag SEO della pagina corrente (client-side, per la SPA e per
- * i crawler che eseguono JS). Gli stessi metadati sono pre-renderizzati in
- * HTML statico al build da `scripts/prerender.ts`, usando `src/lib/seo.ts`.
+ * Sincronizza il `<head>` con la pagina corrente durante la navigazione SPA.
  *
- * Risolve i default dalla configurazione per-rotta; ogni prop esplicita ha la
- * precedenza, così le pagine possono passare titoli/descrizioni localizzati.
+ * NON contiene logica SEO propria: i metadati arrivano da `buildPageMeta`
+ * (`src/seo/metadata.ts`), la stessa funzione che il pre-rendering usa per
+ * scrivere l'HTML statico — quindi title/canonical/hreflang coincidono sempre
+ * fra HTML iniziale e DOM renderizzato. Non renderizza nulla.
  */
-export function Seo(props: SeoProps) {
-  const location = useLocation();
-  const locale = useLocaleStore((s) => s.locale);
+export function Seo({ resolved, notFound }: SeoProps) {
+  const { pathname } = useLocation();
+  const lang = useSeoLang();
+  const uiLocale = useLocaleStore((s) => s.locale);
 
-  const path = props.path ?? location.pathname;
-  const map = useMemo(() => getRouteSeoMap(), []);
-  const route: RouteSeo | undefined = map.get(path);
+  const meta = useMemo(() => {
+    if (notFound) return notFoundMeta(lang);
+    const r = resolved === undefined ? resolveSeoPath(pathname, getLoadedWorldDataset) : resolved;
+    return r ? buildPageMeta(r) : notFoundMeta(lang);
+  }, [notFound, resolved, pathname, lang]);
 
-  const rawTitle = props.title ?? route?.title ?? SITE.defaultTitle;
-  const title = pageTitle(rawTitle);
-  const description = props.description ?? route?.description ?? SITE.description;
-  const image = absoluteUrl(props.image ?? route?.image ?? SITE.ogImage);
-  const type = props.type ?? route?.type ?? 'website';
-  const noindex = props.noindex ?? route?.noindex ?? false;
-  const canonical = absoluteUrl(path);
-  const jsonLd = props.jsonLd ?? route?.jsonLd;
-  // og:locale è la lingua attiva; le alternative sono tutte le altre lingue
-  // supportate, così i crawler sanno che la stessa pagina esiste anche lì.
-  const ogLocale = LOCALE_META[locale].ogLocale;
-  const ogAltLocales = SUPPORTED_LOCALES.filter((l) => l !== locale).map(
-    (l) => LOCALE_META[l].ogLocale,
-  );
+  useEffect(() => {
+    // `lang` dell'<html>: la lingua in cui l'utente legge l'interfaccia.
+    applyHead(meta, LOCALE_META[uiLocale].htmlLang);
+  }, [meta, uiLocale]);
 
-  return (
-    <Helmet htmlAttributes={{ lang: locale }}>
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      <link rel="canonical" href={canonical} />
-      <meta
-        name="robots"
-        content={
-          noindex
-            ? 'noindex, nofollow'
-            : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
-        }
-      />
-
-      {/* Open Graph */}
-      <meta property="og:type" content={type} />
-      <meta property="og:site_name" content={SITE.name} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:url" content={canonical} />
-      <meta property="og:image" content={image} />
-      <meta property="og:image:width" content={String(SITE.ogImageWidth)} />
-      <meta property="og:image:height" content={String(SITE.ogImageHeight)} />
-      <meta property="og:locale" content={ogLocale} />
-      {ogAltLocales.map((alt) => (
-        <meta key={alt} property="og:locale:alternate" content={alt} />
-      ))}
-
-      {/* Twitter / X */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
-
-      {jsonLd?.map((block, i) => (
-        <script key={i} type="application/ld+json">
-          {JSON.stringify(block)}
-        </script>
-      ))}
-    </Helmet>
-  );
+  return null;
 }

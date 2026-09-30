@@ -5,6 +5,8 @@ import { animeWorlds } from '@/data/worlds';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText } from '@/utils/localization';
 import { cn } from '@/lib/cn';
+import { mapPath } from '@/seo/paths';
+import { useSeoLang } from '@/seo/useSeoLang';
 
 interface WorldSwitcherProps {
   currentSlug: string;
@@ -20,6 +22,7 @@ interface WorldSwitcherProps {
 export function WorldSwitcher({ currentSlug }: WorldSwitcherProps) {
   const { t } = useTranslation();
   const locale = useLocaleStore((s) => s.locale);
+  const lang = useSeoLang();
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const firstItemRef = useRef<HTMLAnchorElement>(null);
@@ -93,7 +96,7 @@ export function WorldSwitcher({ currentSlug }: WorldSwitcherProps) {
               <Link
                 key={w.id}
                 ref={i === 0 ? firstItemRef : undefined}
-                to={`/worlds/${w.slug}`}
+                to={mapPath(lang, w)}
                 role="menuitem"
                 onClick={() => setOpen(false)}
                 aria-current={isCurrent ? 'page' : undefined}

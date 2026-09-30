@@ -86,24 +86,36 @@ interface Check {
   selector?: string;
   /** Conteggio minimo del selettore. */
   minCount?: number;
+  /**
+   * L'HTML pre-renderizzato deve essere IDRATATO (nodi DOM conservati), non
+   * ricreato: un mismatch di idratazione fa ricostruire il DOM al client.
+   */
+  hydrated?: boolean;
 }
 
 const CHECKS: Check[] = [
-  { path: '/', anyOf: ['Mappe Interattive', 'Interactive Maps'], selector: 'a[href^="/worlds/"]', minCount: 3 },
-  { path: '/worlds/naruto', anyOf: ['Naruto'], selector: '.react-flow__node', minCount: 10 },
-  { path: '/worlds/onepiece', anyOf: ['One Piece'], selector: '.react-flow__node', minCount: 10 },
-  { path: '/worlds/hunterxhunter', anyOf: ['Hunter'], selector: '.react-flow__node', minCount: 5 },
-  { path: '/worlds/naruto/characters', anyOf: ['Naruto'], selector: 'input[type=search]', minCount: 1 },
-  { path: '/worlds/onepiece/characters', anyOf: ['One Piece'], selector: 'input[type=search]', minCount: 1 },
-  { path: '/worlds/hunterxhunter/jutsu', anyOf: ['Nen'], selector: 'input[type=search]', minCount: 1 },
-  { path: '/about', anyOf: ['Mappe Interattive', 'Interactive Maps'] },
+  // `/` → redirect per lingua (307) → home: i mondi disponibili sono link reali.
+  { path: '/', anyOf: ['AniMapVerse'], selector: 'a[href^="/en/"]', minCount: 5, hydrated: true },
+  { path: '/en/naruto', anyOf: ['Naruto'], selector: 'main h1', minCount: 1, hydrated: true },
+  { path: '/en/naruto/map', anyOf: ['Naruto'], selector: '.react-flow__node', minCount: 10 },
+  { path: '/en/one-piece/map', anyOf: ['One Piece'], selector: '.react-flow__node', minCount: 10 },
+  { path: '/it/hunter-x-hunter/map', anyOf: ['Hunter'], selector: '.react-flow__node', minCount: 5 },
+  { path: '/en/naruto/characters', anyOf: ['Naruto'], selector: 'input[type=search]', minCount: 1, hydrated: true },
+  { path: '/it/one-piece/characters', anyOf: ['One Piece'], selector: 'input[type=search]', minCount: 1 },
+  { path: '/en/hunter-x-hunter/abilities', anyOf: ['Nen'], selector: 'input[type=search]', minCount: 1 },
+  { path: '/en/naruto/characters/itachi-uchiha', anyOf: ['Itachi'], selector: 'nav[aria-label] ol li', minCount: 3, hydrated: true },
+  { path: '/it/one-piece/locations/page/2', anyOf: ['One Piece'], selector: 'main article a[href^="/it/one-piece/locations/"]', minCount: 20, hydrated: true },
+  { path: '/en/naruto/timeline', anyOf: ['Naruto'], selector: 'li[id^="event-"]', minCount: 10, hydrated: true },
+  { path: '/en/about', anyOf: ['AniMapVerse'] },
 ];
 
 async function main() {
+  // Server con semantica Vercel (redirect, 404 veri): `vite preview` servirebbe
+  // index.html con 200 per qualsiasi path.
   const preview: ChildProcess = spawn(
     'npx',
-    ['vite', 'preview', '--port', String(PORT), '--strictPort'],
-    { stdio: 'ignore' },
+    ['tsx', '--tsconfig', 'scripts/tsconfig.json', 'scripts/serve-static.ts'],
+    { stdio: 'ignore', env: { ...process.env, PORT: String(PORT) } },
   );
 
   let failures = 0;
@@ -113,6 +125,16 @@ async function main() {
     await waitForServer(BASE);
     const browser = await launchBrowser();
     const page = await browser.newPage();
+    // Marca i nodi dell'HTML statico prima che React parta: se dopo il boot il
+    // primo figlio di #root è ancora lo stesso nodo, l'idratazione è riuscita.
+    await page.addInitScript(() => {
+      document.addEventListener('DOMContentLoaded', () => {
+        const first = document.getElementById('root')?.firstElementChild as
+          | (Element & { __ssr?: boolean })
+          | null;
+        if (first) first.__ssr = true;
+      });
+    });
     page.on('pageerror', (e) => consoleErrors.push(`pageerror: ${e.message}`));
     page.on('console', (m: ConsoleMessage) => {
       const text = m.text();
@@ -148,6 +170,15 @@ async function main() {
           detail = ` (selettore non trovato: ${check.selector})`;
         }
       }
+      if (ok && check.hydrated) {
+        const kept = await page.evaluate(
+          () => (document.getElementById('root')?.firstElementChild as { __ssr?: boolean } | null)?.__ssr === true,
+        );
+        if (!kept) {
+          ok = false;
+          detail += ' (HTML statico ricreato: mismatch di idratazione)';
+        } else detail += ' · idratato';
+      }
       const newErrors = consoleErrors.length - before;
       if (newErrors > 0) {
         ok = false;
@@ -157,35 +188,54 @@ async function main() {
       console.log(`${ok ? '✓' : '✗'} ${check.path}${detail}`);
     }
 
-    // Interazione: "Mostra tutti" in homepage espande la lista dei mondi.
+    // HTTP: 404 reale (niente soft-404) e redirect legacy.
     {
-      await page.goto(`${BASE}/`, { waitUntil: 'networkidle', timeout: 30_000 });
-      const cards = page.locator(
-        'section[aria-labelledby="worlds-heading"] li a[href^="/worlds/"]',
-      );
+      const r404 = await fetch(`${BASE}/questo-url-non-esiste-123`, { redirect: 'manual' });
+      const legacy = await fetch(`${BASE}/worlds/naruto/clans`, { redirect: 'manual' });
+      const ok =
+        r404.status === 404 &&
+        legacy.status === 308 &&
+        legacy.headers.get('location') === '/it/naruto/factions';
+      if (!ok) failures += 1;
+      console.log(`${ok ? '✓' : '✗'} HTTP 404=${r404.status} · legacy ${legacy.status} → ${legacy.headers.get('location')}`);
+    }
+
+    // Interazione: "Mostra tutti" in homepage espande i mondi "in arrivo".
+    {
+      await page.goto(`${BASE}/en`, { waitUntil: 'networkidle', timeout: 30_000 });
+      const cards = page.locator('section[aria-labelledby="worlds-heading"] li a[href^="/en/"]');
       const before = await cards.count();
-      const toggle = page.locator(
-        'section[aria-labelledby="worlds-heading"] button[aria-expanded]',
-      );
+      const toggle = page.locator('section[aria-labelledby="worlds-heading"] button[aria-expanded]');
       await toggle.click();
       await page.waitForTimeout(150);
       const after = await cards.count();
-      const ok = before === 3 && after > before;
+      const ok = before >= 5 && after > before;
       if (!ok) failures += 1;
-      console.log(
-        `${ok ? '✓' : '✗'} homepage "mostra tutti": ${before} → ${after}`,
-      );
+      console.log(`${ok ? '✓' : '✗'} homepage "mostra tutti": ${before} → ${after}`);
+    }
+
+    // Selettore lingua: dalla pagina entità EN a quella IT equivalente.
+    {
+      await page.goto(`${BASE}/en/naruto/characters/itachi-uchiha`, { waitUntil: 'networkidle', timeout: 30_000 });
+      await page.getByRole('button', { name: /change language|cambia lingua/i }).first().click();
+      await page.getByRole('option', { name: /italiano/i }).first().click();
+      await page.waitForURL('**/it/naruto/characters/itachi-uchiha', { timeout: 8_000 }).catch(() => {});
+      const ok = page.url().endsWith('/it/naruto/characters/itachi-uchiha');
+      if (!ok) failures += 1;
+      console.log(`${ok ? '✓' : '✗'} cambio lingua EN → IT: ${page.url().replace(BASE, '')}`);
     }
 
     // Interazione: cliccare una card personaggio deve aprire il modale
     // (valida il wiring onSelect dopo la memoizzazione).
     {
-      await page.goto(`${BASE}/worlds/onepiece/characters`, {
+      await page.goto(`${BASE}/en/one-piece/characters`, {
         waitUntil: 'networkidle',
         timeout: 30_000,
       });
       const before = consoleErrors.length;
-      await page.locator('main button, ul button').first().click();
+      // Le card sono link reali verso la pagina entità: il click semplice apre
+      // comunque la scheda modale (UX invariata).
+      await page.locator('main ul li a[href^="/en/one-piece/characters/"]').first().click();
       const dialog = page.locator('[role="dialog"]');
       const ok = await dialog
         .first()

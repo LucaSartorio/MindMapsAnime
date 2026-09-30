@@ -8,9 +8,15 @@ import { getLocalizedText } from '@/utils/localization';
 import { resolveWorldLogo } from '@/utils/entityImage';
 import { loadWorldDataset } from '@/data/registry';
 import { getTagLabel } from '@/lib/tagLabels';
+import { getWorldUrlSlug } from '@/data/worlds';
+import { worldPath } from '@/seo/paths';
+import { useSeoLang } from '@/seo/useSeoLang';
+import { WorldRoute } from '@/routes/lazyPages';
 
 interface WorldCardProps {
   world: AnimeWorld;
+  /** Le prime card sono sopra la piega: il logo non va caricato in lazy. */
+  eager?: boolean;
 }
 
 /**
@@ -18,7 +24,7 @@ interface WorldCardProps {
  * Il logo si aggiunge come drop-in in `src/assets/worlds/logos/<slug>.<ext>`;
  * in assenza resta il solo sfondo tematico.
  */
-function WorldCover({ world }: { world: AnimeWorld }) {
+function WorldCover({ world, eager }: { world: AnimeWorld; eager?: boolean }) {
   const locale = useLocaleStore((s) => s.locale);
   const { primary, accent } = world.theme;
   const logo = resolveWorldLogo(world.slug);
@@ -49,6 +55,8 @@ function WorldCover({ world }: { world: AnimeWorld }) {
           <img
             src={logo}
             alt={`${title} logo`}
+            loading={eager ? 'eager' : 'lazy'}
+            decoding="async"
             style={
               world.theme.logoScale
                 ? { transform: `scale(${world.theme.logoScale})` }
@@ -62,8 +70,10 @@ function WorldCover({ world }: { world: AnimeWorld }) {
   );
 }
 
-export function WorldCard({ world }: WorldCardProps) {
+export function WorldCard({ world, eager }: WorldCardProps) {
   const { t } = useTranslation();
+  const lang = useSeoLang();
+  const href = worldPath(lang, world);
   const locale = useLocaleStore((s) => s.locale);
   const isAvailable = world.status === 'available';
   const title = getLocalizedText(world.title, locale);
@@ -71,7 +81,7 @@ export function WorldCard({ world }: WorldCardProps) {
   const inner = (
     <Card interactive className="relative overflow-hidden flex flex-1 flex-col">
       <div className="relative aspect-[16/9] overflow-hidden rounded-t-xl shrink-0">
-        <WorldCover world={world} />
+        <WorldCover world={world} eager={eager} />
         {world.status === 'coming_soon' && <ComingSoonBadge />}
         <div className="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-ink-950/95 via-ink-950/70 to-transparent">
           <p className="font-display text-2xl text-white drop-shadow-lg">
@@ -106,7 +116,7 @@ export function WorldCard({ world }: WorldCardProps) {
             </span>
           )}
           <span className="text-[10px] uppercase tracking-widest font-mono text-ink-400">
-            /{world.slug}
+            /{getWorldUrlSlug(world)}
           </span>
         </div>
       </div>
@@ -116,7 +126,7 @@ export function WorldCard({ world }: WorldCardProps) {
   if (!isAvailable) {
     return (
       <Link
-        to={`/worlds/${world.slug}`}
+        to={href}
         aria-label={`${title} · ${t('coming.badge')}`}
         className="flex flex-1 flex-col focus:outline-none"
       >
@@ -127,11 +137,14 @@ export function WorldCard({ world }: WorldCardProps) {
 
   // Prefetch del chunk dataset al primo hover/touch: al click la mappa
   // apre senza attesa (il loader ha cache + dedup, chiamarlo più volte è ok).
-  const prefetch = () => void loadWorldDataset(world.slug).catch(() => {});
+  const prefetch = () => {
+    void loadWorldDataset(world.slug).catch(() => {});
+    void WorldRoute.preload().catch(() => {});
+  };
 
   return (
     <Link
-      to={`/worlds/${world.slug}`}
+      to={href}
       aria-label={`${t('worldCard.explore')} · ${title}`}
       className="flex flex-1 flex-col focus:outline-none"
       onMouseEnter={prefetch}

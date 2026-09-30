@@ -30,7 +30,11 @@ export function WorldMapBackground({ level, dataset }: WorldMapBackgroundProps) 
       <img
         src={asset.url}
         alt={`Map · ${level.name}`}
-        loading="lazy"
+        // È l'elemento più grande della rotta /map (LCP): niente lazy-load, e
+        // priorità alta (è lo stesso URL precaricato dall'HTML statico).
+        loading="eager"
+        decoding="async"
+        {...({ fetchpriority: 'high' } as Record<string, string>)}
         className="absolute inset-0 h-full w-full object-contain select-none pointer-events-none"
         draggable={false}
         onError={() => setImgFailed(true)}

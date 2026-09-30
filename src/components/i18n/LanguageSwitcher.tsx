@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState, type ComponentType, type SVGProps } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { seoLocaleFor } from '@/seo/config';
+import { langFromPath, swapLangInPath } from '@/seo/paths';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { LOCALE_META, SUPPORTED_LOCALES, type SupportedLocale } from '@/types/i18n';
 import { cn } from '@/lib/cn';
@@ -56,6 +59,8 @@ export function LanguageSwitcher() {
   const { t } = useTranslation();
   const locale = useLocaleStore((s) => s.locale);
   const setLocale = useLocaleStore((s) => s.setLocale);
+  const location = useLocation();
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -92,6 +97,14 @@ export function LanguageSwitcher() {
   function handleSelect(code: SupportedLocale) {
     setLocale(code);
     setOpen(false);
+    // La lingua dei CONTENUTI è nell'URL (/it · /en): se la lingua scelta
+    // corrisponde a un altro prefisso, passa alla stessa pagina in quella
+    // lingua (è anche la sua alternativa hreflang). Query e hash conservati.
+    const target = seoLocaleFor(code);
+    const current = langFromPath(location.pathname);
+    if (current && current !== target) {
+      navigate(`${swapLangInPath(location.pathname, target)}${location.search}${location.hash}`);
+    }
   }
 
   return (

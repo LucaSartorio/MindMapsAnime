@@ -12,6 +12,8 @@ import { findArc, findCharacter, findLocation } from '@/lib/entities';
 import { buildRelationGroups } from '@/lib/relationGroups';
 import { RelationsPanel } from '@/components/common/RelationsPanel';
 import { useOpenEntityRef } from '@/lib/useOpenEntityRef';
+import { mapPath } from '@/seo/paths';
+import { useSeoLang } from '@/seo/useSeoLang';
 
 interface StoryArcDetailsModalProps {
   dataset: WorldDataset;
@@ -32,6 +34,7 @@ export function StoryArcDetailsModal({
   const openStory = useUiStore((s) => s.openStory);
   const openRef = useOpenEntityRef();
   const navigate = useNavigate();
+  const seoLang = useSeoLang();
 
   if (!arc) {
     return (
@@ -82,7 +85,7 @@ export function StoryArcDetailsModal({
               variant="ember"
               onClick={() => {
                 openStory(arc.id);
-                navigate(`/worlds/${dataset.world.slug}`);
+                navigate(mapPath(seoLang, dataset));
               }}
             >
               ▶ {t('map.story.start')}
