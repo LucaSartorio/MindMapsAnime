@@ -417,7 +417,7 @@ export const narutoNations: Nation[] = [
     referenceStatus: 'needs_verification',
     boundaryId: 'boundary-snow',
     description: {
-      it: 'Movie arc — divenne "Land of Spring". Ospitò Yukigakure.',
+      it: 'Arco del film — divenne il "Paese della Primavera". Ospitò Yukigakure.',
       en: 'Movie arc — became the "Land of Spring". Hosted Yukigakure.',
     },
     hiddenVillageIds: ['loc-yuki'],

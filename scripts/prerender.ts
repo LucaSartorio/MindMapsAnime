@@ -145,6 +145,16 @@ async function main() {
 
   let written = 0;
   const t0 = Date.now();
+  // Riepilogo di indicizzazione per lingua (report di build): indicizzabili /
+  // esclusi con motivo (legal_page, coming_soon, thin_content, not_translated).
+  const summary = new Map<string, { indexable: number; excluded: Map<string, number> }>();
+  for (const r of pages) {
+    const s = summary.get(r.lang) ?? { indexable: 0, excluded: new Map<string, number>() };
+    summary.set(r.lang, s);
+    const reason = entry.noindexReason(r);
+    if (reason === null) s.indexable++;
+    else s.excluded.set(reason, (s.excluded.get(reason) ?? 0) + 1);
+  }
   for (const r of pages) {
     const meta = entry.buildPageMeta(r);
     const body = entry.renderApp(r.path, r.lang, r);
@@ -238,6 +248,10 @@ async function main() {
   console.log(
     `[prerender] ${written} pagine in ${((Date.now() - t0) / 1000).toFixed(1)}s · ${indexable} URL indicizzabili in ${sitemaps.length - 1} sitemap · ${redirects.length} redirect di slug`,
   );
+  for (const [lang, s] of summary) {
+    const ex = [...s.excluded].map(([k, n]) => `${k} ${n}`).join(', ') || 'nessuno';
+    console.log(`[prerender]   /${lang}: ${s.indexable} indicizzabili · noindex: ${ex}`);
+  }
 }
 
 main().catch((err) => {

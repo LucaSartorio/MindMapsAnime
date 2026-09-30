@@ -168,8 +168,10 @@ export const narutoBoundaries: MapBoundary[] = [
       it: 'Nazione di confine fra le grandi, costantemente sotto la pioggia.',
       en: 'Border nation among the great ones, constantly under rain.',
     },
-    descriptionLong:
-      'Teatro di numerose guerre. Sede di Amegakure, dove operò l\'Akatsuki sotto Pain.',
+    descriptionLong: {
+      it: 'Teatro di numerose guerre. Sede di Amegakure, dove operò l\'Akatsuki sotto Pain.',
+      en: 'A theatre of many wars. Home of Amegakure, where the Akatsuki operated under Pain.',
+    },
     tags: ['pioggia', 'akatsuki', 'pain'],
   },
   {
@@ -210,10 +212,14 @@ export const narutoBoundaries: MapBoundary[] = [
     nationId: 'nation-sound',
     color: '#a0a0b0',
     localizedName: { it: 'Paese del Suono', en: 'Land of Sound' },
-    descriptionShort:
-      'Piccola nazione fondata da Orochimaru per ospitare Otogakure.',
-    descriptionLong:
-      'Nazione fittizia creata da Orochimaru, situata fra il Paese del Fuoco e altri paesi minori. Composta da numerosi nascondigli ninja.',
+    descriptionShort: {
+      it: 'Piccola nazione fondata da Orochimaru per ospitare Otogakure.',
+      en: 'A small nation founded by Orochimaru to host Otogakure.',
+    },
+    descriptionLong: {
+      it: 'Nazione fittizia creata da Orochimaru, situata fra il Paese del Fuoco e altri paesi minori. Composta da numerosi nascondigli ninja.',
+      en: 'A fictional nation created by Orochimaru, located between the Land of Fire and other minor countries. Made up of numerous ninja hideouts.',
+    },
     tags: ['orochimaru', 'sound'],
   },
   {
@@ -232,10 +238,14 @@ export const narutoBoundaries: MapBoundary[] = [
     nationId: 'nation-grass',
     color: '#7fb05a',
     localizedName: { it: "Paese dell'Erba", en: 'Land of Grass' },
-    descriptionShort:
-      'Praterie fra Iwa e Konoha. Sede di Kusagakure.',
-    descriptionLong:
-      'Frequente teatro di scontri durante le grandi guerre ninja. Confina con Iwa e con il Paese del Fuoco.',
+    descriptionShort: {
+      it: 'Praterie fra Iwa e Konoha. Sede di Kusagakure.',
+      en: 'Grasslands between Iwa and Konoha. Home of Kusagakure.',
+    },
+    descriptionLong: {
+      it: 'Frequente teatro di scontri durante le grandi guerre ninja. Confina con Iwa e con il Paese del Fuoco.',
+      en: 'A frequent battleground during the great ninja wars. It borders Iwa and the Land of Fire.',
+    },
     tags: ['kusa', 'praterie'],
   },
   {
@@ -254,8 +264,10 @@ export const narutoBoundaries: MapBoundary[] = [
     nationId: 'nation-waterfalls',
     color: '#62b8c4',
     localizedName: { it: 'Paese delle Cascate', en: 'Land of Waterfalls' },
-    descriptionShort:
-      'Nazione boschiva nota per le cascate. Sede di Takigakure.',
+    descriptionShort: {
+      it: 'Nazione boschiva nota per le cascate. Sede di Takigakure.',
+      en: 'A wooded nation known for its waterfalls. Home of Takigakure.',
+    },
     tags: ['takigakure', 'cascate'],
   },
   {
@@ -274,10 +286,14 @@ export const narutoBoundaries: MapBoundary[] = [
     nationId: 'nation-hotwater',
     color: '#d48a8a',
     localizedName: { it: "Paese dell'Acqua Calda", en: 'Land of Hot Water' },
-    descriptionShort:
-      'Famosa per le sorgenti termali. Ospitò Yugakure.',
-    descriptionLong:
-      'Yugakure abbandonò la propria attività ninja diventando città turistica. Hidan vi crebbe.',
+    descriptionShort: {
+      it: 'Famosa per le sorgenti termali. Ospitò Yugakure.',
+      en: 'Famous for its hot springs. Once home to Yugakure.',
+    },
+    descriptionLong: {
+      it: 'Yugakure abbandonò la propria attività ninja diventando città turistica. Hidan vi crebbe.',
+      en: 'Yugakure gave up its ninja activities and became a tourist town. Hidan grew up there.',
+    },
     tags: ['yugakure', 'terme'],
   },
   {
@@ -296,8 +312,10 @@ export const narutoBoundaries: MapBoundary[] = [
     nationId: 'nation-iron',
     color: '#c8ccd6',
     localizedName: { it: 'Paese del Ferro', en: 'Land of Iron' },
-    descriptionShort:
-      'Nazione neutrale dei samurai, sede del Summit dei Cinque Kage.',
+    descriptionShort: {
+      it: 'Nazione neutrale dei samurai, sede del Summit dei Cinque Kage.',
+      en: 'The neutral nation of the samurai, host of the Five Kage Summit.',
+    },
     tags: ['iron', 'samurai', 'mifune'],
   },
   {
@@ -342,8 +360,10 @@ export const narutoBoundaries: MapBoundary[] = [
     nationId: 'nation-tea',
     color: '#9ec47a',
     localizedName: { it: 'Paese del Tè', en: 'Land of Tea' },
-    descriptionShort:
-      'Nazione costiera famosa per le piantagioni di tè (arco anime).',
+    descriptionShort: {
+      it: 'Nazione costiera famosa per le piantagioni di tè (arco anime).',
+      en: 'A coastal nation famous for its tea plantations (anime arc).',
+    },
     tags: ['anime-only', 'tea'],
   },
   {
@@ -362,8 +382,10 @@ export const narutoBoundaries: MapBoundary[] = [
     nationId: 'nation-rivers',
     color: '#7bb2cc',
     localizedName: { it: 'Paese dei Fiumi', en: 'Land of Rivers' },
-    descriptionShort:
-      'Cuscinetto fra Wind e Fire. Ospitò un nascondiglio Akatsuki.',
+    descriptionShort: {
+      it: 'Cuscinetto fra il Paese del Vento e quello del Fuoco. Ospitò un nascondiglio Akatsuki.',
+      en: 'A buffer between the Land of Wind and the Land of Fire. It hosted an Akatsuki hideout.',
+    },
     tags: ['akatsuki', 'sasori'],
   },
   {
@@ -382,8 +404,10 @@ export const narutoBoundaries: MapBoundary[] = [
     nationId: 'nation-birds',
     color: '#c8c47a',
     localizedName: { it: 'Paese degli Uccelli', en: 'Land of Birds' },
-    descriptionShort:
-      'Filler arc nella prima serie (anime-only).',
+    descriptionShort: {
+      it: 'Arco filler della prima serie (solo anime).',
+      en: 'Filler arc in the original series (anime-only).',
+    },
     tags: ['anime-only', 'filler'],
   },
   {
@@ -402,8 +426,10 @@ export const narutoBoundaries: MapBoundary[] = [
     nationId: 'nation-snow',
     color: '#b8d8f0',
     localizedName: { it: 'Paese della Neve', en: 'Land of Snow' },
-    descriptionShort:
-      'Movie arc — successivamente "Land of Spring". Ospitò Yukigakure.',
+    descriptionShort: {
+      it: 'Arco del film — successivamente il «Paese della Primavera». Ospitò Yukigakure.',
+      en: 'Movie arc — later the "Land of Spring". Once home to Yukigakure.',
+    },
     tags: ['movie', 'koyuki'],
   },
   {
@@ -422,8 +448,10 @@ export const narutoBoundaries: MapBoundary[] = [
     nationId: 'nation-demons',
     color: '#c87878',
     localizedName: { it: 'Paese dei Demoni', en: 'Land of Demons' },
-    descriptionShort:
-      'Movie arc — sigillamento di Moryo.',
+    descriptionShort: {
+      it: 'Arco del film — sigillamento di Moryo.',
+      en: 'Movie arc — the sealing of Moryo.',
+    },
     tags: ['movie', 'shion'],
   },
   {
@@ -442,8 +470,10 @@ export const narutoBoundaries: MapBoundary[] = [
     nationId: 'nation-bears',
     color: '#a88a5a',
     localizedName: { it: 'Paese degli Orsi', en: 'Land of Bears' },
-    descriptionShort:
-      'Nazione settentrionale; ospitò Hoshigakure.',
+    descriptionShort: {
+      it: 'Nazione settentrionale; ospitò Hoshigakure.',
+      en: 'A northern nation; once home to Hoshigakure.',
+    },
     tags: ['hoshigakure'],
   },
   {
@@ -462,8 +492,7 @@ export const narutoBoundaries: MapBoundary[] = [
     nationId: 'nation-mountains',
     color: '#9090b0',
     localizedName: { it: 'Paese delle Montagne', en: 'Land of Mountains' },
-    descriptionShort:
-      'Nazione meridionale rocciosa.',
+    descriptionShort: { it: 'Nazione meridionale rocciosa.', en: 'A rocky southern nation.' },
     tags: ['montagne'],
   },
   {
@@ -482,8 +511,10 @@ export const narutoBoundaries: MapBoundary[] = [
     nationId: 'nation-forests',
     color: '#5a9050',
     localizedName: { it: 'Paese delle Foreste', en: 'Land of Forests' },
-    descriptionShort:
-      'Regione boschiva del Paese del Fuoco.',
+    descriptionShort: {
+      it: 'Regione boschiva del Paese del Fuoco.',
+      en: 'A wooded region of the Land of Fire.',
+    },
     tags: ['foresta'],
   },
   {
@@ -501,8 +532,10 @@ export const narutoBoundaries: MapBoundary[] = [
     labelPosition: { x: 515, y: 725 },
     color: '#90a890',
     localizedName: { it: 'Paese delle Valli', en: 'Land of Valleys' },
-    descriptionShort:
-      'Regione fra Iron e Fire, principalmente valli e fiumi.',
+    descriptionShort: {
+      it: 'Regione fra il Paese del Ferro e quello del Fuoco, principalmente valli e fiumi.',
+      en: 'A region between the Land of Iron and the Land of Fire, mostly valleys and rivers.',
+    },
     tags: ['valli'],
   },
   {
@@ -520,8 +553,10 @@ export const narutoBoundaries: MapBoundary[] = [
     labelPosition: { x: 1147, y: 745 },
     color: '#46a8c8',
     localizedName: { it: 'Paese del Mare', en: 'Land of the Sea' },
-    descriptionShort:
-      'Anime-only filler ad est della Land of Lightning.',
+    descriptionShort: {
+      it: "Filler esclusivo dell'anime, a est del Paese del Fulmine.",
+      en: 'Anime-only filler, east of the Land of Lightning.',
+    },
     tags: ['anime-only', 'filler'],
   },
   {
@@ -539,8 +574,10 @@ export const narutoBoundaries: MapBoundary[] = [
     labelPosition: { x: 1360, y: 92 },
     color: '#b86060',
     localizedName: { it: 'Paese degli Artigli', en: 'Land of Claws' },
-    descriptionShort:
-      'Filler arc nella serie originale.',
+    descriptionShort: {
+      it: 'Arco filler della serie originale.',
+      en: 'Filler arc in the original series.',
+    },
     tags: ['anime-only', 'filler'],
   },
   {
@@ -558,8 +595,10 @@ export const narutoBoundaries: MapBoundary[] = [
     labelPosition: { x: 880, y: 560 },
     color: '#b06060',
     localizedName: { it: 'Paese delle Zanne', en: 'Land of Fangs' },
-    descriptionShort:
-      'Anime-only arc (Hidan/Kakuzu).',
+    descriptionShort: {
+      it: "Arco esclusivo dell'anime (Hidan/Kakuzu).",
+      en: 'Anime-only arc (Hidan/Kakuzu).',
+    },
     tags: ['anime-only', 'kakuzu'],
   },
   {
@@ -578,8 +617,10 @@ export const narutoBoundaries: MapBoundary[] = [
     labelPosition: { x: 760, y: 300 },
     color: '#c0b078',
     localizedName: { it: 'Paese delle Risaie', en: 'Land of Rice Fields' },
-    descriptionShort:
-      'Antico nome della regione poi nota come Land of Sound.',
+    descriptionShort: {
+      it: 'Antico nome della regione poi nota come Paese del Suono.',
+      en: 'Ancient name of the region later known as the Land of Sound.',
+    },
     tags: ['rice', 'sound', 'orochimaru'],
   },
 ];

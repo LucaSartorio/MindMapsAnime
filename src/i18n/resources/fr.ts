@@ -22,6 +22,8 @@ export const fr = {
     report: 'Signaler',
     reportTitle: 'Signaler un bug ou proposer une amélioration',
     switchWorld: 'Changer de monde',
+    more: 'Plus',
+    worldSections: 'Sections du monde',
     comingSoon: 'Bientôt',
     overview: 'Aperçu',
     locations: 'Lieux',

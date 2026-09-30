@@ -22,6 +22,8 @@ export const ja = {
     report: '報告',
     reportTitle: 'バグの報告・改善の提案',
     switchWorld: 'ワールドを切り替える',
+    more: 'その他',
+    worldSections: 'ワールドのセクション',
     comingSoon: '近日',
     overview: '概要',
     locations: '場所',

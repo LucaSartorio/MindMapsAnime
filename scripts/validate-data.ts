@@ -1,33 +1,36 @@
 /**
  * Script CLI per `npm run validate:data`.
  *
- * Stampa report leggibile dei problemi rilevati nel dataset Naruto.
+ * Valida TUTTI i mondi registrati (data-driven, via `src/data/registry.ts`):
+ * integrità referenziale (`validateDataset`) + SEO (slug congelati, duplicati,
+ * mancanti, contenuto minimo delle pagine entità).
  * Exit code:
  *  - 0 → nessun errore (eventuali warning sono solo informativi)
  *  - 1 → almeno un errore di integrità
  */
 import type { WorldDataset } from '../src/types';
-import { narutoDataset } from '../src/data/naruto';
-import { hunterxhunterDataset } from '../src/data/hunterxhunter';
-import { onepieceDataset } from '../src/data/onepiece';
-import { dragonballDataset } from '../src/data/dragonball';
-import { blackcloverDataset } from '../src/data/blackclover';
 import { validateDataset } from '../src/utils/validateDataset';
 import { animeWorlds, getWorldUrlSlug } from '../src/data/worlds';
+import { hasWorldDataset, loadWorldDataset } from '../src/data/registry';
+import { getLocalizedText } from '../src/utils/localization';
 import { SEO_CATEGORIES, categoryEntities } from '../src/seo/categories';
 import { getSlugIndex, slugify } from '../src/seo/slug';
 import { STATIC_PAGES } from '../src/seo/paths';
+import { entityQuality } from '../src/seo/quality';
 
-const datasets: WorldDataset[] = [
-  narutoDataset,
-  hunterxhunterDataset,
-  onepieceDataset,
-  dragonballDataset,
-  blackcloverDataset,
-];
+const datasets: WorldDataset[] = [];
+for (const w of animeWorlds) {
+  if (w.status !== 'available') continue;
+  if (!hasWorldDataset(w.slug)) {
+    console.error(`[ERR ] world/${w.slug} · status 'available' ma nessun loader in src/data/registry.ts`);
+    process.exit(1);
+  }
+  const d = await loadWorldDataset(w.slug);
+  if (d) datasets.push(d);
+}
 
 const lines: string[] = [];
-lines.push('=== Anime Interactive Maps · dataset validator ===');
+lines.push('=== AniMapVerse · dataset validator ===');
 
 let anyErrors = false;
 
@@ -36,7 +39,7 @@ for (const dataset of datasets) {
   anyErrors = anyErrors || report.hasErrors;
 
   lines.push('');
-  lines.push(`World: ${dataset.world.title} (${dataset.world.slug})`);
+  lines.push(`World: ${getLocalizedText(dataset.world.title, 'en')} (${dataset.world.slug})`);
   lines.push('');
   lines.push(`Characters: ${dataset.characters.length}`);
   lines.push(`Factions  : ${dataset.factions.length}`);
@@ -65,23 +68,51 @@ for (const dataset of datasets) {
       lines.push(`[WARN] ${w.entity}/${w.id ?? '?'} · ${w.code} · ${w.message}`);
     }
   }
-  // --- SEO: slug delle pagine entità (src/seo/slug.ts) ---
+  // --- SEO: slug delle pagine entità (src/seo/slug.ts + src/data/<world>/slugs.ts) ---
   const slugIndex = getSlugIndex(dataset);
+  const seoErr = (m: string) => {
+    anyErrors = true;
+    lines.push(`[ERR ] ${m}`);
+  };
+  if (!dataset.seoSlugs) {
+    seoErr(`seo/${dataset.world.slug} · slug_lock_missing · manca \`seoSlugs\` nel dataset → npm run seo:slugs e importa src/data/${dataset.world.slug}/slugs.ts in index.ts`);
+  }
+  for (const u of slugIndex.unlocked) {
+    seoErr(`seo/${u.category}/${u.id} · slug_not_locked · slug "${u.slug}" solo derivato (non congelato) → npm run seo:slugs`);
+  }
+  for (const category of SEO_CATEGORIES) {
+    const seen = new Map<string, string>();
+    for (const [id, slug] of slugIndex.byId[category]) {
+      const other = seen.get(slug);
+      if (other) seoErr(`seo/${category}/${id} · duplicate_slug · "${slug}" già usato da ${other}`);
+      seen.set(slug, id);
+    }
+    for (const e of categoryEntities(dataset, category)) {
+      for (const s of [e.slug, ...(e.previousSlugs ?? [])].filter((x): x is string => !!x)) {
+        if (slugify(s) !== s) {
+          seoErr(`seo/${category}/${e.id} · invalid_slug · "${s}" non è kebab-case ASCII (atteso "${slugify(s)}")`);
+        }
+      }
+    }
+  }
+  for (const r of slugIndex.renamed) {
+    lines.push(`[WARN] seo/${r.category}/${r.id} · slug_renamed · "${r.from}" → "${r.to}" (redirect permanente) → npm run seo:slugs`);
+  }
+  for (const s of slugIndex.stale) {
+    lines.push(`[INFO] seo/${s.category}/${s.id} · slug_retired · "${s.slug}" (entità rimossa: slug riservato, mai riassegnato)`);
+  }
   for (const c of slugIndex.collisions) {
     lines.push(
       `[WARN] seo/${c.category} · slug_collision · "${c.slug}" condiviso da ${c.ids.join(', ')} → disambiguato con suffisso; valuta \`slug\` esplicito`,
     );
   }
-  for (const category of SEO_CATEGORIES) {
-    for (const e of categoryEntities(dataset, category)) {
-      for (const s of [e.slug, ...(e.previousSlugs ?? [])].filter((x): x is string => !!x)) {
-        if (slugify(s) !== s) {
-          anyErrors = true;
-          lines.push(`[ERR ] seo/${category}/${e.id} · invalid_slug · "${s}" non è kebab-case ASCII (atteso "${slugify(s)}")`);
-        }
-      }
-    }
-  }
+  // Contenuto minimo: le entità sotto soglia hanno una pagina `noindex` (informativo).
+  const thin = SEO_CATEGORIES.map((c) => {
+    const list = categoryEntities(dataset, c);
+    const below = list.filter((e) => !entityQuality(dataset, c, e.id, 'en').indexable && !entityQuality(dataset, c, e.id, 'it').indexable);
+    return below.length ? `${c} ${below.length}/${list.length}` : '';
+  }).filter(Boolean);
+  if (thin.length) lines.push(`[INFO] seo · sotto la soglia di contenuto (pagina noindex): ${thin.join(' · ')}`);
   lines.push('────────────────────────────────────────');
 }
 

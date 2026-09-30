@@ -5,66 +5,60 @@
  * Exit 0 se nessun errore (warning ignorati).
  *
  * Il validatore delle chiavi UI è bloccante: tutte e sei le lingue devono avere
- * le stesse chiavi. La copertura dei DATASET è invece informativa — i contenuti
- * narrativi sono scritti in IT/EN e le altre lingue si aggiungono nel tempo,
- * ricadendo su inglese finché non sono tradotte.
+ * le stesse chiavi. La copertura ja/fr/de/es dei dataset è invece informativa:
+ * quelle lingue ricadono sull'inglese finché non sono tradotte.
  *
- * Per evitare di sommergere il report di "mono_locale" su dataset ancora
- * in fase di traduzione, di default ignoriamo questo warning. Si può
- * abilitare con --strict.
+ * Anche i CONTENUTI dei dataset sono bloccanti: ogni campo narrativo
+ * (schema in src/utils/localizableFields.ts) deve esistere in IT e in EN, per
+ * TUTTI i mondi registrati. `--strict` rende bloccanti anche i warning
+ * euristici (testo EN che sembra italiano e simili).
  */
-import { narutoDataset } from '../src/data/naruto';
-import { hunterxhunterDataset } from '../src/data/hunterxhunter';
-import { onepieceDataset } from '../src/data/onepiece';
-import { dragonballDataset } from '../src/data/dragonball';
-import { blackcloverDataset } from '../src/data/blackclover';
-import { validateI18n, datasetCoverage } from '../src/utils/validateI18n';
+import { animeWorlds } from '../src/data/worlds';
+import { hasWorldDataset, loadWorldDataset } from '../src/data/registry';
+import { getLocalizedText } from '../src/utils/localization';
+import { validateUiKeys, validateDatasetI18n, datasetCoverage } from '../src/utils/validateI18n';
 import { SUPPORTED_LOCALES, type SupportedLocale } from '../src/types/i18n';
 import type { WorldDataset } from '../src/types';
 
 const strict = process.argv.includes('--strict');
 
-const report = validateI18n(narutoDataset, {
-  ignoreMonoLocale: !strict,
-});
+// Tutti i mondi REGISTRATI (data-driven: un mondo nuovo è validato da solo).
+const datasets: Array<[string, WorldDataset]> = [];
+for (const w of animeWorlds) {
+  if (w.status !== 'available' || !hasWorldDataset(w.slug)) continue;
+  const d = await loadWorldDataset(w.slug);
+  if (d) datasets.push([getLocalizedText(w.title, 'en'), d]);
+}
 
 const lines: string[] = [];
-lines.push('=== Anime Interactive Maps · i18n validator ===');
-lines.push(`Mode: ${strict ? 'strict' : 'lenient (mono_locale warnings ignored)'}`);
+let blocking = 0;
+lines.push('=== AniMapVerse · i18n validator ===');
+lines.push(`Mode: ${strict ? 'strict (anche i warning euristici bloccano)' : 'default'}`);
 lines.push('');
+
+const ui = validateUiKeys();
+blocking += ui.errors.length;
 lines.push('--- Chiavi UI (bloccante: tutte le lingue allineate) ---');
-lines.push(`Errors  : ${report.errors.length}`);
-lines.push(`Warnings: ${report.warnings.length}`);
+lines.push(`Errors  : ${ui.errors.length}`);
+for (const e of ui.errors) lines.push(`[ERR ] ${e.code} · ${e.message}`);
 lines.push('');
 
-if (report.errors.length > 0) {
-  lines.push('--- ERRORS ---');
-  for (const e of report.errors) {
-    lines.push(`[ERR ] ${e.code} · ${e.message}`);
-  }
-  lines.push('');
+lines.push('--- Contenuti dei dataset (bloccante: ogni testo narrativo in IT **e** EN) ---');
+for (const [label, ds] of datasets) {
+  const r = validateDatasetI18n(ds);
+  blocking += r.errors.length + (strict ? r.warnings.length : 0);
+  lines.push(`${label.padEnd(18)} errors ${String(r.errors.length).padStart(4)} · warnings ${String(r.warnings.length).padStart(3)}`);
+  for (const e of r.errors.slice(0, 40)) lines.push(`  [ERR ] ${e.code} · ${e.message}`);
+  if (r.errors.length > 40) lines.push(`  … altri ${r.errors.length - 40} errori`);
+  for (const w of r.warnings.slice(0, 15)) lines.push(`  [WARN] ${w.code} · ${w.message}`);
+  if (r.warnings.length > 15) lines.push(`  … altri ${r.warnings.length - 15} warning`);
 }
-
-if (report.warnings.length > 0) {
-  lines.push('--- WARNINGS (top 60) ---');
-  for (const w of report.warnings.slice(0, 60)) {
-    lines.push(`[WARN] ${w.code} · ${w.message}`);
-  }
-  if (report.warnings.length > 60) {
-    lines.push(`... ${report.warnings.length - 60} more warnings`);
-  }
-  lines.push('');
-}
+lines.push('');
+lines.push('Nuovo contenuto? Ogni campo narrativo va scritto come { it: "…", en: "…" }');
+lines.push('(schema: src/utils/localizableFields.ts). Una stringa semplice = solo italiano.');
+lines.push('');
 
 /* -------- Copertura traduzioni dei dataset (informativa) -------- */
-
-const datasets: Array<[string, WorldDataset]> = [
-  ['Naruto', narutoDataset],
-  ['Hunter x Hunter', hunterxhunterDataset],
-  ['One Piece', onepieceDataset],
-  ['Dragon Ball', dragonballDataset],
-  ['Black Clover', blackcloverDataset],
-];
 
 const pct = (n: number, tot: number) =>
   tot === 0 ? '  —  ' : `${((n / tot) * 100).toFixed(0).padStart(3)}%`;
@@ -136,4 +130,4 @@ for (const l of SUPPORTED_LOCALES) {
 // eslint-disable-next-line no-console
 console.log(lines.join('\n'));
 
-process.exit(report.hasErrors ? 1 : 0);
+process.exit(blocking > 0 ? 1 : 0);

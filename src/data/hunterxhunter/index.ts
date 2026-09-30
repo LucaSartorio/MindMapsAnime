@@ -1,3 +1,4 @@
+import { hunterxhunterSlugs } from './slugs';
 import type { WorldDataset } from '@/types';
 import { animeWorlds } from '@/data/worlds';
 import { hxhMapLevels } from './mapLevels';
@@ -59,6 +60,8 @@ const hxhAllCharacters = enrichHxhCharacters(
 );
 
 export const hunterxhunterDataset: WorldDataset = {
+  // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
+  seoSlugs: hunterxhunterSlugs,
   world: hunterxhunter,
   mapLevels: hxhMapLevels,
   nations: hxhNations,

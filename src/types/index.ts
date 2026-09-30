@@ -318,6 +318,18 @@ export interface SeoSlugFields {
   previousSlugs?: string[];
 }
 
+/**
+ * Registro degli slug PUBBLICATI di un mondo (`src/data/<world>/slugs.ts`,
+ * generato da `npm run seo:slugs`). Una volta pubblicato uno slug è congelato:
+ * tradurre o rinominare un'entità non cambia più il suo URL.
+ */
+export interface SeoSlugLock {
+  /** categoria SEO → id entità → slug pubblicato. Mai rimuovere voci. */
+  slugs: Record<string, Record<string, string>>;
+  /** categoria SEO → slug precedente → id entità (redirect permanenti). */
+  redirects?: Record<string, Record<string, string>>;
+}
+
 /* ------------------------------ Mondo / Anime ------------------------------ */
 
 export interface AnimeWorld {
@@ -616,7 +628,8 @@ export interface Character extends SeoSlugFields {
 
 export interface CharacterRelationship {
   targetCharacterId: string;
-  label: string;
+  /** Etichetta della relazione (localizzabile: mostrata nelle schede e nel grafo). */
+  label: Localizable;
   notes?: string;
 }
 
@@ -975,6 +988,8 @@ export interface WorldDataset {
   /** Tecniche ninja (ninjutsu, taijutsu, genjutsu, …). Opzionale. */
   jutsu?: Jutsu[];
   assets: AssetReference[];
+  /** Slug pubblicati congelati (vedi `SeoSlugLock`). Obbligatorio per i mondi disponibili. */
+  seoSlugs?: SeoSlugLock;
 }
 
 /* ------------------------------ Ricerca ------------------------------ */

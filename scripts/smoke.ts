@@ -250,6 +250,78 @@ async function main() {
       );
     }
 
+    // Header desktop: 1 riga, 3 zone mai sovrapposte, nessuna tab tagliata,
+    // tab attiva corretta anche sulle route figlie, "Altro" solo se serve.
+    {
+      const cases: { path: string; active: string }[] = [
+        { path: '/it/naruto', active: 'Panoramica' },
+        { path: '/it/naruto/map', active: 'Mappa' },
+        { path: '/it/one-piece/characters/monkey-d-luffy', active: 'Personaggi' },
+        { path: '/en/hunter-x-hunter/locations', active: 'Locations' },
+        { path: '/en/black-clover/arcs', active: 'Story Arcs' },
+      ];
+      const hp = await browser.newPage();
+      // tsx/esbuild avvolge le funzioni nominate con `__name`: nel browser serve lo shim.
+      await hp.addInitScript(() => {
+        (globalThis as { __name?: unknown }).__name = (f: unknown) => f;
+      });
+      let headerFailures = 0;
+      for (const width of [1920, 1600, 1440, 1366, 1024, 768]) {
+        await hp.setViewportSize({ width, height: 900 });
+        for (const c of cases) {
+          await hp.goto(`${BASE}${c.path}`, { waitUntil: 'networkidle', timeout: 30_000 });
+          const r = await hp.evaluate(() => {
+            const R = (el: Element) => el.getBoundingClientRect();
+            const shown = (el: Element | null) => !!el && getComputedStyle(el).display !== 'none' && R(el).width > 0;
+            const header = document.querySelector('header')!;
+            const [left, , right] = [...header.firstElementChild!.children];
+            const nav = header.querySelector('nav.world-tabs')!;
+            const list = nav.querySelector('.world-tabs__list')!;
+            const tabs = [...list.children].filter(shown);
+            const active = nav.querySelector('[aria-current="page"]');
+            return {
+              height: R(header).height,
+              overlap: R(left).right > R(nav).left + 0.5 || R(nav).right > R(right).left + 0.5,
+              clipped: tabs.some((li) => R(li).right > R(list).right + 0.5),
+              visible: tabs.length,
+              total: list.children.length,
+              more: shown(nav.querySelector('.wt-more')),
+              active: active?.textContent ?? null,
+              activeShown: !!active && (shown(active.closest('li')) || shown(nav.querySelector('.wt-more-current'))),
+              hscroll: document.documentElement.scrollWidth > innerWidth,
+            };
+          });
+          const problems = [
+            r.height > 64 && `altezza ${r.height}`,
+            r.overlap && 'zone sovrapposte',
+            r.clipped && 'tab tagliata',
+            r.hscroll && 'scroll orizzontale',
+            r.active !== c.active && `tab attiva "${r.active}" ≠ "${c.active}"`,
+            !r.activeShown && 'tab attiva non visibile',
+            width >= 1366 && (r.more || r.visible < r.total) && `"Altro" a ${width}px`,
+            r.visible < r.total && !r.more && 'tab nascoste senza "Altro"',
+          ].filter(Boolean);
+          if (problems.length) {
+            failures += 1;
+            headerFailures += 1;
+            console.log(`✗ header ${width}px ${c.path}: ${problems.join(', ')}`);
+          }
+        }
+      }
+      console.log(`${headerFailures ? '✗' : '✓'} header responsive: ${cases.length} route × 6 viewport verificate`);
+
+      // Selettore anime: da una scheda porta SEMPRE alla Panoramica del nuovo mondo.
+      await hp.setViewportSize({ width: 1440, height: 900 });
+      await hp.goto(`${BASE}/it/one-piece/characters/monkey-d-luffy`, { waitUntil: 'networkidle', timeout: 30_000 });
+      await hp.getByRole('button', { name: 'Cambia universo' }).click();
+      await hp.getByRole('menuitem', { name: 'Naruto' }).click();
+      await hp.waitForURL(/\/it\/naruto$/, { timeout: 8_000 }).catch(() => {});
+      const okSwitch = new URL(hp.url()).pathname === '/it/naruto';
+      if (!okSwitch) failures += 1;
+      console.log(`${okSwitch ? '✓' : '✗'} selettore anime → Panoramica: ${new URL(hp.url()).pathname}`);
+      await hp.close();
+    }
+
     await browser.close();
   } catch (err) {
     console.error('Errore durante lo smoke test:', err);

@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { animeWorlds } from '@/data/worlds';
 import { useLocaleStore } from '@/store/useLocaleStore';
+import { useMapStore, useUiStore } from '@/store';
 import { getLocalizedText } from '@/utils/localization';
 import { cn } from '@/lib/cn';
-import { mapPath } from '@/seo/paths';
+import { worldPath } from '@/seo/paths';
 import { useSeoLang } from '@/seo/useSeoLang';
 
 interface WorldSwitcherProps {
@@ -14,6 +15,12 @@ interface WorldSwitcherProps {
 
 /**
  * Selettore di universo nell'header: cambia anime senza tornare alla home.
+ *
+ * Regola di navigazione: scegliere un anime porta SEMPRE alla sua Panoramica
+ * (`/{lang}/{world}`), da qualunque sezione ci si trovi (mappa, scheda,
+ * indice…): il contesto del mondo precedente non ha senso nel nuovo. Vale solo
+ * per questa azione esplicita — i deep link (`/one-piece/map`,
+ * `/one-piece/characters/luffy`) restano validi e non vengono reindirizzati.
  *
  * Disclosure accessibile: `aria-expanded`/`aria-controls`, chiusura con Esc e
  * click-fuori, focus al primo elemento all'apertura. I mondi "coming soon"
@@ -29,6 +36,19 @@ export function WorldSwitcher({ currentSlug }: WorldSwitcherProps) {
   const menuId = useId();
 
   const current = animeWorlds.find((w) => w.slug === currentSlug);
+
+  // Cambio anime = nuovo contesto: selezioni, filtri e schede del mondo
+  // precedente (id che non esistono nel nuovo) vengono azzerati.
+  const choose = (slug: string) => {
+    setOpen(false);
+    if (slug === currentSlug) return;
+    const map = useMapStore.getState();
+    map.resetSelections();
+    map.resetFilters();
+    const ui = useUiStore.getState();
+    ui.closeModal();
+    ui.closeStory();
+  };
 
   useEffect(() => {
     if (!open) return;
@@ -96,9 +116,9 @@ export function WorldSwitcher({ currentSlug }: WorldSwitcherProps) {
               <Link
                 key={w.id}
                 ref={i === 0 ? firstItemRef : undefined}
-                to={mapPath(lang, w)}
+                to={worldPath(lang, w)}
                 role="menuitem"
-                onClick={() => setOpen(false)}
+                onClick={() => choose(w.slug)}
                 aria-current={isCurrent ? 'page' : undefined}
                 className={cn(
                   'flex items-center justify-between gap-2 rounded-md px-3 py-2 text-sm transition',

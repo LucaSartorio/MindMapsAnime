@@ -1,4 +1,4 @@
-import type { Character, CharacterImportance, CharacterStatus } from '@/types';
+import type { Character, CharacterRelationship, CharacterImportance, CharacterStatus } from '@/types';
 
 /**
  * Decima ondata: comprimari minori finora non coperti — ufficiali dei Nuovi
@@ -10,7 +10,7 @@ interface Seed {
   importance: CharacterImportance; role: string[]; gender: string; status: CharacterStatus;
   factionIds?: string[]; locationIds?: string[]; arcIds?: string[];
   allies?: string[]; enemies?: string[]; family?: string[];
-  relationships?: { targetCharacterId: string; label: string }[];
+  relationships?: CharacterRelationship[];
   fm?: string; fa?: string; it: string; en: string; tags: string[];
 }
 const C = (s: Seed): Character => ({
@@ -65,7 +65,7 @@ export const onepieceCharactersExtra10: Character[] = [
   C({ id: 'char-op-gancho', name: 'Gancho', importance: 'background', role: ['ally'], gender: 'male', status: 'alive',
     factionIds: ['faction-op-race-tontatta'], locationIds: ['loc-op-green-bit'], arcIds: ['arc-op-dressrosa'],
     family: ['char-op-mansherry'], allies: ['char-op-luffy', 'char-op-leo'],
-    relationships: [{ targetCharacterId: 'char-op-mansherry', label: 'Padre (re dei Tontatta)' }],
+    relationships: [{ targetCharacterId: 'char-op-mansherry', label: { it: 'Padre (re dei Tontatta)', en: 'Father (king of the Tontatta)' } }],
     fm: '742', fa: '694',
     it: "Re dei nani Tontatta e padre della principessa Mansherry; spunta sempre dai luoghi più improbabili.",
     en: "King of the Tontatta dwarves and father of Princess Mansherry; he always pops up from the most improbable places.",
@@ -139,7 +139,7 @@ export const onepieceCharactersExtra10: Character[] = [
     tags: ['whole-cake', 'fire-tank'] }),
   C({ id: 'char-op-stelly', name: 'Sterry', aliases: ['Stelly'], importance: 'background', role: ['antagonist'], gender: 'male', status: 'alive',
     locationIds: ['loc-op-goa-kingdom'], family: ['char-op-sabo'],
-    relationships: [{ targetCharacterId: 'char-op-sabo', label: 'Fratello adottivo (rivelato alla Reverie)' }],
+    relationships: [{ targetCharacterId: 'char-op-sabo', label: { it: 'Fratello adottivo (rivelato alla Reverie)', en: 'Adoptive brother (revealed at the Reverie)' } }],
     fm: '588', fa: '498',
     it: "Re del Regno di Goa, viziato e crudele fratello adottivo di Sabo; partecipa alla Reverie tra i sovrani.",
     en: "King of the Goa Kingdom, the spoiled and cruel adoptive brother of Sabo; he attends the Reverie among the rulers.",

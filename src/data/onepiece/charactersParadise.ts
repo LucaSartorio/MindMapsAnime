@@ -74,7 +74,7 @@ export const onepieceCharactersParadise: Character[] = [
     locationIds: ['loc-op-drum-island', 'loc-op-kano-country'],
     students: ['char-op-chopper'],
     relationships: [
-      { targetCharacterId: 'char-op-kureha', label: 'Collega e amica' },
+      { targetCharacterId: 'char-op-kureha', label: { it: 'Collega e amica', en: 'Colleague and friend' } },
     ],
     arcIds: ['arc-op-drum'],
     shortDescription: {
@@ -158,7 +158,7 @@ export const onepieceCharactersParadise: Character[] = [
     factionIds: ['faction-op-baroque-works', 'faction-op-shichibukai', 'faction-op-cross-guild'],
     enemies: ['char-op-luffy', 'char-op-vivi'],
     relationships: [
-      { targetCharacterId: 'char-op-robin', label: 'Vice (Miss All Sunday)' },
+      { targetCharacterId: 'char-op-robin', label: { it: 'Vice (Miss All Sunday)', en: 'Deputy (Miss All Sunday)' } },
     ],
     arcIds: ['arc-op-alabasta'],
     shortDescription: {

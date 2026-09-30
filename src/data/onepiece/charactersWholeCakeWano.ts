@@ -51,7 +51,7 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
     locationIds: ['loc-op-whole-cake-island'],
     factionIds: ['faction-op-big-mom-pirates'],
     relationships: [
-      { targetCharacterId: 'char-op-luffy', label: 'Avversario rispettato' },
+      { targetCharacterId: 'char-op-luffy', label: { it: 'Avversario rispettato', en: 'Respected opponent' } },
     ],
     arcIds: ['arc-op-whole-cake'],
     shortDescription: {
@@ -129,7 +129,7 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
     locationIds: ['loc-op-germa-kingdom'],
     factionIds: ['faction-op-germa-66'],
     relationships: [
-      { targetCharacterId: 'char-op-sanji', label: 'Figlio rinnegato' },
+      { targetCharacterId: 'char-op-sanji', label: { it: 'Figlio rinnegato', en: 'Disowned son' } },
     ],
     arcIds: ['arc-op-whole-cake'],
     shortDescription: {
@@ -315,8 +315,8 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
     gender: 'other',
     locationIds: ['loc-op-onigashima'],
     relationships: [
-      { targetCharacterId: 'char-op-kaido', label: 'Padre, a cui si oppone' },
-      { targetCharacterId: 'char-op-oden', label: 'Modello e ispirazione' },
+      { targetCharacterId: 'char-op-kaido', label: { it: 'Padre, a cui si oppone', en: 'Father, whom he opposes' } },
+      { targetCharacterId: 'char-op-oden', label: { it: 'Modello e ispirazione', en: 'Role model and inspiration' } },
     ],
     arcIds: ['arc-op-wano'],
     shortDescription: {

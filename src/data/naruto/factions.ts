@@ -16,10 +16,14 @@ export const narutoFactions: Faction[] = [
     name: 'Akatsuki',
     nameLocal: 'Akatsuki',
     japaneseName: '暁',
-    description:
-      'Organizzazione di missing-nin, fondata ad Amegakure. Strumento del piano "Tsuki no Me" di Tobi/Madara.',
-    longDescription:
-      'Fondata da Yahiko, Konan e Nagato. Riformata da Obito per catturare i nove Bijū e attivare il Mugen Tsukuyomi. Sciolta dopo la Quarta Guerra.',
+    description: {
+      it: 'Organizzazione di missing-nin, fondata ad Amegakure. Strumento del piano "Tsuki no Me" di Tobi/Madara.',
+      en: 'Organisation of missing-nin founded in Amegakure. The instrument of Tobi/Madara\'s "Eye of the Moon" plan.',
+    },
+    longDescription: {
+      it: 'Fondata da Yahiko, Konan e Nagato. Riformata da Obito per catturare i nove Bijū e attivare il Mugen Tsukuyomi. Sciolta dopo la Quarta Guerra.',
+      en: 'Founded by Yahiko, Konan and Nagato. Reformed by Obito to capture the nine tailed beasts and activate the Infinite Tsukuyomi. Disbanded after the Fourth War.',
+    },
     signatureAbilities: ['Sealing of Bijū', 'Coordinazione missing-nin'],
     leaderIds: ['char-pain', 'char-obito'],
     characterIds: [
@@ -49,8 +53,10 @@ export const narutoFactions: Faction[] = [
     type: 'army',
     name: 'Allied Shinobi Forces',
     japaneseName: '忍連合軍',
-    description:
-      'Coalizione delle cinque grandi nazioni unite contro Akatsuki e Madara nella Quarta Guerra Ninja.',
+    description: {
+      it: 'Coalizione delle cinque grandi nazioni unite contro Akatsuki e Madara nella Quarta Guerra Ninja.',
+      en: 'Coalition of the five great nations united against the Akatsuki and Madara in the Fourth Shinobi World War.',
+    },
     leaderIds: ['char-a', 'char-mei', 'char-gaara', 'char-onoki', 'char-tsunade'],
     characterIds: ['char-naruto', 'char-kakashi', 'char-gaara', 'char-killer-b', 'char-darui'],
     locationIds: ['loc-fourth-war-battlefield'],
@@ -68,8 +74,10 @@ export const narutoFactions: Faction[] = [
     type: 'group',
     name: 'ANBU Black Ops',
     japaneseName: '暗部',
-    description:
-      'Forze speciali dirette dell\'Hokage. Operazioni segrete, assassinii politici, scorta dei VIP.',
+    description: {
+      it: 'Forze speciali dirette dell\'Hokage. Operazioni segrete, assassinii politici, scorta dei VIP.',
+      en: 'Special forces reporting directly to the Hokage. Secret operations, political assassinations, VIP escorts.',
+    },
     leaderIds: [],
     characterIds: ['char-kakashi', 'char-itachi', 'char-yamato', 'char-ibiki', 'char-sai'],
     locationIds: ['loc-konoha'],
@@ -84,8 +92,10 @@ export const narutoFactions: Faction[] = [
     name: 'Root',
     nameLocal: 'Ne',
     japaneseName: '根',
-    description:
-      'Divisione segreta dell\'ANBU fondata da Danzo, operante al di fuori dell\'autorità dell\'Hokage.',
+    description: {
+      it: 'Divisione segreta dell\'ANBU fondata da Danzo, operante al di fuori dell\'autorità dell\'Hokage.',
+      en: "Secret ANBU division founded by Danzo, operating outside the Hokage's authority.",
+    },
     leaderIds: ['char-danzo'],
     characterIds: ['char-sai', 'char-danzo'],
     locationIds: ['loc-konoha'],
@@ -99,8 +109,10 @@ export const narutoFactions: Faction[] = [
     type: 'group',
     name: 'Konoha Military Police Force',
     japaneseName: 'うちは警務部隊',
-    description:
-      'Polizia militare di Konoha, fondata dal clan Uchiha. Sciolta dopo il massacro.',
+    description: {
+      it: 'Polizia militare di Konoha, fondata dal clan Uchiha. Sciolta dopo il massacro.',
+      en: "Konoha's military police, founded by the Uchiha clan. Disbanded after the massacre.",
+    },
     leaderIds: ['char-fugaku'],
     characterIds: ['char-fugaku'],
     locationIds: ['loc-konoha', 'loc-konoha-uchiha-district'],
@@ -113,8 +125,10 @@ export const narutoFactions: Faction[] = [
     worldId: 'world-naruto',
     type: 'group',
     name: 'Ninja Academy',
-    description:
-      'Istituto di formazione dei genin di Konoha.',
+    description: {
+      it: 'Istituto di formazione dei genin di Konoha.',
+      en: "Konoha's training institute for genin.",
+    },
     leaderIds: ['char-iruka'],
     characterIds: ['char-iruka', 'char-ebisu'],
     locationIds: ['loc-konoha', 'loc-konoha-academy'],
@@ -127,8 +141,10 @@ export const narutoFactions: Faction[] = [
     worldId: 'world-naruto',
     type: 'group',
     name: 'Medical Corps',
-    description:
-      'Corpo medico-ninja di Konoha. Coordinato da Tsunade, poi Sakura.',
+    description: {
+      it: 'Corpo medico-ninja di Konoha. Coordinato da Tsunade, poi Sakura.',
+      en: "Konoha's medical-ninja corps. Led by Tsunade, then Sakura.",
+    },
     leaderIds: ['char-tsunade'],
     characterIds: ['char-tsunade', 'char-shizune', 'char-sakura', 'char-ino'],
     locationIds: ['loc-konoha', 'loc-konoha-hospital'],
@@ -142,8 +158,10 @@ export const narutoFactions: Faction[] = [
     worldId: 'world-naruto',
     type: 'group',
     name: 'Sensor Division',
-    description:
-      'Divisione sensoriale dell\'Alleanza Shinobi. Localizzazione e tracciamento del nemico.',
+    description: {
+      it: 'Divisione sensoriale dell\'Alleanza Shinobi. Localizzazione e tracciamento del nemico.',
+      en: 'Sensor division of the Shinobi Alliance. Locates and tracks the enemy.',
+    },
     characterIds: ['char-karin'],
     arcIds: ['arc-fourth-war'],
     canonStatus: 'canon',
@@ -155,8 +173,10 @@ export const narutoFactions: Faction[] = [
     worldId: 'world-naruto',
     type: 'group',
     name: 'Intelligence Division',
-    description:
-      'Divisione di intelligence dell\'Alleanza, guidata da Inoichi e dai Nara.',
+    description: {
+      it: 'Divisione di intelligence dell\'Alleanza, guidata da Inoichi e dai Nara.',
+      en: "The Alliance's intelligence division, led by Inoichi and the Nara.",
+    },
     leaderIds: ['char-inoichi', 'char-shikaku'],
     characterIds: ['char-inoichi', 'char-shikaku'],
     arcIds: ['arc-fourth-war'],
@@ -171,8 +191,10 @@ export const narutoFactions: Faction[] = [
     worldId: 'world-naruto',
     type: 'group',
     name: 'Five Kage',
-    description:
-      'I cinque leader dei Villaggi Nascosti. Si riuniscono in summit per le decisioni globali.',
+    description: {
+      it: 'I cinque leader dei Villaggi Nascosti. Si riuniscono in summit per le decisioni globali.',
+      en: 'The five leaders of the Hidden Villages. They meet in summits for global decisions.',
+    },
     characterIds: ['char-tsunade', 'char-a', 'char-mei', 'char-gaara', 'char-onoki', 'char-kakashi', 'char-naruto'],
     locationIds: ['loc-five-kage-meeting'],
     arcIds: ['arc-five-kage-summit'],
@@ -186,8 +208,10 @@ export const narutoFactions: Faction[] = [
     type: 'group',
     name: 'Seven Ninja Swordsmen of the Mist',
     japaneseName: '霧の忍刀七人衆',
-    description:
-      'Élite di sette spadaccini di Kirigakure. Ogni membro porta una delle Sette Spade.',
+    description: {
+      it: 'Élite di sette spadaccini di Kirigakure. Ogni membro porta una delle Sette Spade.',
+      en: 'Elite of seven swordsmen from Kirigakure. Each member carries one of the Seven Swords.',
+    },
     characterIds: ['char-zabuza', 'char-kisame', 'char-mangetsu', 'char-chojuro', 'char-ameyuri-ringo', 'char-jinin-akebino', 'char-kushimaru-kuriarare', 'char-fuguki-suikazan'],
     locationIds: ['loc-kiri'],
     canonStatus: 'canon',
@@ -199,8 +223,10 @@ export const narutoFactions: Faction[] = [
     worldId: 'world-naruto',
     type: 'group',
     name: 'Sound Four',
-    description:
-      'Scorta d\'élite di Orochimaru: Tayuya, Sakon/Ukon, Jirobo, Kidomaru. Più tardi Kimimaro.',
+    description: {
+      it: 'Scorta d\'élite di Orochimaru: Tayuya, Sakon/Ukon, Jirobo, Kidomaru. Più tardi Kimimaro.',
+      en: "Orochimaru's elite escort: Tayuya, Sakon/Ukon, Jirobo, Kidomaru. Later Kimimaro.",
+    },
     leaderIds: ['char-orochimaru'],
     characterIds: ['char-kimimaro', 'char-tayuya', 'char-sakon', 'char-jirobo', 'char-kidomaru'],
     locationIds: ['loc-oto'],
@@ -215,8 +241,10 @@ export const narutoFactions: Faction[] = [
     type: 'group',
     name: 'Taka',
     nameLocal: 'Hawk',
-    description:
-      'Squadra di Sasuke formata dopo aver lasciato Orochimaru: Suigetsu, Karin, Jugo.',
+    description: {
+      it: 'Squadra di Sasuke formata dopo aver lasciato Orochimaru: Suigetsu, Karin, Jugo.',
+      en: "Sasuke's squad formed after leaving Orochimaru: Suigetsu, Karin, Jugo.",
+    },
     leaderIds: ['char-sasuke'],
     characterIds: ['char-sasuke', 'char-suigetsu', 'char-karin', 'char-jugo'],
     arcIds: ['arc-itachi-pursuit', 'arc-five-kage-summit'],
@@ -229,8 +257,10 @@ export const narutoFactions: Faction[] = [
     worldId: 'world-naruto',
     type: 'group',
     name: 'Legendary Sannin',
-    description:
-      'I Tre Ninja Leggendari di Konoha: Jiraiya, Tsunade, Orochimaru.',
+    description: {
+      it: 'I Tre Ninja Leggendari di Konoha: Jiraiya, Tsunade, Orochimaru.',
+      en: "Konoha's Three Legendary Ninja: Jiraiya, Tsunade, Orochimaru.",
+    },
     characterIds: ['char-jiraiya', 'char-tsunade', 'char-orochimaru'],
     locationIds: ['loc-konoha'],
     canonStatus: 'canon',

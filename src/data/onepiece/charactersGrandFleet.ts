@@ -1,4 +1,4 @@
-import type { Character, CharacterImportance, CharacterStatus } from '@/types';
+import type { Character, CharacterRelationship, CharacterImportance, CharacterStatus } from '@/types';
 
 /**
  * Cappello di Paglia Grand Fleet — la grande flotta di sette ciurme alleate nata
@@ -22,7 +22,7 @@ interface Seed {
   allies?: string[];
   enemies?: string[];
   family?: string[];
-  relationships?: { targetCharacterId: string; label: string }[];
+  relationships?: CharacterRelationship[];
   fm?: string;
   fa?: string;
   it: string;
@@ -71,9 +71,9 @@ export const onepieceCharactersGrandFleet: Character[] = [
     allies: ['char-op-luffy', ...others('char-op-sai')], enemies: ['char-op-doflamingo', 'char-op-baby-5'],
     family: ['char-op-chinjao'],
     relationships: [
-      { targetCharacterId: 'char-op-chinjao', label: 'Nonno' },
-      { targetCharacterId: 'char-op-baby-5', label: 'Promessa sposa' },
-      { targetCharacterId: 'char-op-luffy', label: 'Giurò fedeltà alla Grand Fleet' },
+      { targetCharacterId: 'char-op-chinjao', label: { it: 'Nonno', en: 'Grandfather' } },
+      { targetCharacterId: 'char-op-baby-5', label: { it: 'Promessa sposa', en: 'Fiancée' } },
+      { targetCharacterId: 'char-op-luffy', label: { it: 'Giurò fedeltà alla Grand Fleet', en: 'Swore loyalty to the Grand Fleet' } },
     ],
     fm: '719', fa: '649',
     it: "Tredicesimo capo della Happo Navy e nipote di Chinjao, maestro dell'arte marziale Hasshoken; 3ª divisione della Grand Fleet.",
@@ -89,9 +89,9 @@ export const onepieceCharactersGrandFleet: Character[] = [
     allies: ['char-op-luffy', 'char-op-sai'], enemies: ['char-op-garp', 'char-op-doflamingo'],
     family: ['char-op-sai'],
     relationships: [
-      { targetCharacterId: 'char-op-garp', label: 'Gli spezzò la testa-trapano' },
-      { targetCharacterId: 'char-op-sai', label: 'Nipote ed erede' },
-      { targetCharacterId: 'char-op-luffy', label: 'Erede della volontà di Garp' },
+      { targetCharacterId: 'char-op-garp', label: { it: 'Gli spezzò la testa-trapano', en: 'Broke his drill head' } },
+      { targetCharacterId: 'char-op-sai', label: { it: 'Nipote ed erede', en: 'Grandson and heir' } },
+      { targetCharacterId: 'char-op-luffy', label: { it: 'Erede della volontà di Garp', en: "Heir to Garp's will" } },
     ],
     fm: '716', fa: '649',
     it: "Leggendario ex pirata dalla testa a trapano, nonno di Sai, un tempo terrore dei mari con una taglia da 500 milioni.",
@@ -107,7 +107,7 @@ export const onepieceCharactersGrandFleet: Character[] = [
     factionIds: [GF], locationIds: ['loc-op-dressrosa'],
     arcIds: ['arc-op-dressrosa'], eventIds: ['evt-op-dr-colosseum', 'evt-op-doflamingo-defeat'],
     allies: ['char-op-luffy', 'char-op-blue-gilly', 'char-op-suleiman', ...others('char-op-ideo')], enemies: ['char-op-doflamingo'],
-    relationships: [{ targetCharacterId: 'char-op-luffy', label: 'Giurò fedeltà alla Grand Fleet' }],
+    relationships: [{ targetCharacterId: 'char-op-luffy', label: { it: 'Giurò fedeltà alla Grand Fleet', en: 'Swore loyalty to the Grand Fleet' } }],
     fm: '719', fa: '649',
     it: "Pugile della tribù dalle braccia lunghe, capo della 4ª divisione della Grand Fleet con pugni dalla potenza esplosiva.",
     en: "A long-arm-tribe boxer, leader of the Grand Fleet's 4th division with explosively powerful punches.",
@@ -120,7 +120,7 @@ export const onepieceCharactersGrandFleet: Character[] = [
     factionIds: [GF], locationIds: ['loc-op-dressrosa'],
     arcIds: ['arc-op-dressrosa'], eventIds: ['evt-op-dr-colosseum'],
     allies: ['char-op-luffy', 'char-op-ideo', 'char-op-suleiman'], enemies: ['char-op-doflamingo'],
-    relationships: [{ targetCharacterId: 'char-op-ideo', label: 'Capo di divisione' }],
+    relationships: [{ targetCharacterId: 'char-op-ideo', label: { it: 'Capo di divisione', en: 'Division commander' } }],
     fm: '714', fa: '649',
     it: "Maestro di arti marziali della tribù dalle gambe lunghe, combattente del Jiao-style nella 4ª divisione.",
     en: "A long-leg-tribe martial artist, a Jiao-style fighter in the 4th division.",
@@ -133,7 +133,7 @@ export const onepieceCharactersGrandFleet: Character[] = [
     factionIds: [GF], locationIds: ['loc-op-dressrosa'],
     arcIds: ['arc-op-dressrosa'], eventIds: ['evt-op-dr-colosseum'],
     allies: ['char-op-luffy', 'char-op-ideo', 'char-op-blue-gilly'], enemies: ['char-op-doflamingo'],
-    relationships: [{ targetCharacterId: 'char-op-ideo', label: 'Capo di divisione' }],
+    relationships: [{ targetCharacterId: 'char-op-ideo', label: { it: 'Capo di divisione', en: 'Division commander' } }],
     fm: '714', fa: '649',
     it: "Assassino dal volto cucito, abile spadaccino della 4ª divisione della Grand Fleet.",
     en: "A stitched-faced assassin and skilled swordsman of the Grand Fleet's 4th division.",
@@ -148,7 +148,7 @@ export const onepieceCharactersGrandFleet: Character[] = [
     factionIds: [GF], locationIds: ['loc-op-dressrosa'],
     arcIds: ['arc-op-dressrosa'], eventIds: ['evt-op-doflamingo-defeat'],
     allies: ['char-op-luffy', 'char-op-bartolomeo', 'char-op-cavendish'],
-    relationships: [{ targetCharacterId: 'char-op-bartolomeo', label: 'Capitano (Barto Club)' }],
+    relationships: [{ targetCharacterId: 'char-op-bartolomeo', label: { it: 'Capitano (Barto Club)', en: 'Captain (Barto Club)' } }],
     fm: '795', fa: '736',
     it: "Braccio destro di Bartolomeo nel Barto Club, la ciurma di fan sfegatati di Rufy, 2ª divisione della Grand Fleet.",
     en: "Bartolomeo's right hand in the Barto Club, Luffy's diehard-fan crew, 2nd division of the Grand Fleet.",
@@ -163,7 +163,7 @@ export const onepieceCharactersGrandFleet: Character[] = [
     factionIds: [GF], locationIds: ['loc-op-dressrosa'],
     arcIds: ['arc-op-dressrosa'], eventIds: ['evt-op-dr-colosseum', 'evt-op-doflamingo-defeat'],
     allies: ['char-op-luffy', ...others('char-op-orlumbus')], enemies: ['char-op-doflamingo'],
-    relationships: [{ targetCharacterId: 'char-op-luffy', label: 'Giurò fedeltà alla Grand Fleet' }],
+    relationships: [{ targetCharacterId: 'char-op-luffy', label: { it: 'Giurò fedeltà alla Grand Fleet', en: 'Swore loyalty to the Grand Fleet' } }],
     fm: '719', fa: '649',
     it: "Ex nobile esploratore e ammiraglio della flotta Yonta Maria, capo della 7ª e più numerosa divisione della Grand Fleet.",
     en: "A former noble explorer and admiral of the Yonta Maria fleet, leader of the Grand Fleet's 7th and largest division.",

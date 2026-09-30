@@ -9,7 +9,10 @@
  *  - parse/costruzione URL: ogni pagina enumerata si risolve in se stessa;
  *  - metadati: title/description/canonical presenti, title unici, canonical
  *    assoluta, hreflang reciproci e solo verso pagine indicizzabili;
- *  - sitemap: nessun duplicato, niente noindex/route tecniche, copertura.
+ *  - sitemap: nessun duplicato, niente noindex/route tecniche, copertura;
+ *  - slug stabili: tutte le entità nel lock pubblicato (`npm run seo:slugs`),
+ *    stesso slug in ogni lingua, redirect verso slug vivi;
+ *  - localizzazione: nessun testo narrativo senza `{ it, en }`.
  */
 import assert from 'node:assert/strict';
 import type { WorldDataset } from '../src/types';
@@ -22,6 +25,7 @@ import { buildPageMeta, resolveSeoPath, isIndexable } from '../src/seo/metadata'
 import { enumeratePages } from '../src/seo/routes';
 import { buildSitemaps } from '../src/seo/sitemap';
 import { SITE, isTechnicalPath, seoLocaleFor } from '../src/seo/config';
+import { auditLocalizable } from '../src/utils/localizableFields';
 
 let passed = 0;
 function test(name: string, fn: () => void) {
@@ -89,6 +93,41 @@ async function main() {
           assert.equal(idx.bySlug[c].get(slug), id);
         }
       }
+    }
+  });
+
+  test('slug stabili: ogni entità è nel lock pubblicato, i redirect puntano a slug vivi', () => {
+    for (const d of datasets.values()) {
+      assert.ok(d.seoSlugs, `${d.world.slug}: seoSlugs mancante (npm run seo:slugs)`);
+      const idx = getSlugIndex(d);
+      assert.equal(idx.unlocked.length, 0, `${d.world.slug}: slug non congelati ${idx.unlocked.slice(0, 5).join(', ')} → npm run seo:slugs`);
+      for (const c of SEO_CATEGORIES) {
+        for (const [from, id] of idx.redirects[c]) {
+          const to = idx.byId[c].get(id);
+          assert.ok(to, `${d.world.slug}/${c}: redirect ${from} → id ${id} inesistente`);
+          assert.notEqual(from, to, `${d.world.slug}/${c}: redirect su se stesso ${from}`);
+          assert.ok(!idx.bySlug[c].has(from), `${d.world.slug}/${c}: ${from} è sia slug vivo sia redirect`);
+        }
+      }
+    }
+  });
+
+  test('slug indipendenti dalla lingua: la stessa entità ha lo stesso slug in /it e /en', () => {
+    for (const r of enumeratePages(datasets)) {
+      if (r.page.kind !== 'entity' || r.lang !== 'it') continue;
+      const other = resolveSeoPath(swapLangInPath(r.path, 'en'), (s) => datasets.get(s));
+      assert.ok(other && other.page.kind === 'entity' && other.page.id === r.page.id, `${r.path}: controparte /en diversa`);
+    }
+  });
+
+  test('localizzazione: nessun testo narrativo in stringa semplice o senza IT/EN', () => {
+    for (const d of datasets.values()) {
+      const errors = auditLocalizable(d).filter((i) => i.severity === 'error');
+      assert.equal(
+        errors.length,
+        0,
+        `${d.world.slug}: ${errors.length} campi non localizzati, es. ${errors.slice(0, 3).map((e) => `${e.kind}/${e.id}.${e.field} (${e.code})`).join('; ')} → npm run validate:i18n`,
+      );
     }
   });
 

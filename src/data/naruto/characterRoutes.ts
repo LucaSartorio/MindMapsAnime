@@ -17,8 +17,11 @@ export const narutoCharacterRoutes: Route[] = [
     worldId: 'world-naruto',
     type: 'character',
     name: 'Sakura · Crescita medica',
-    description:
-      'Da genin del Team 7 a ninja medico capo allieva di Tsunade.',
+    localizedName: { it: 'Sakura · Crescita medica', en: 'Sakura · Medical growth' },
+    description: {
+      it: 'Da genin del Team 7 a ninja medico capo allieva di Tsunade.',
+      en: "From Team 7 genin to chief medical ninja and Tsunade's student.",
+    },
     protagonistCharacterIds: ['char-sakura'],
     primaryCharacterIds: ['char-sakura'],
     relatedArcIds: ['arc-prologue', 'arc-kazekage-rescue', 'arc-fourth-war'],
@@ -27,11 +30,20 @@ export const narutoCharacterRoutes: Route[] = [
     color: '#ff6fa3',
     lineStyle: 'solid',
     steps: [
-      { order: 1, locationId: 'loc-konoha-academy', title: 'Accademia' },
-      { order: 2, locationId: 'loc-konoha-training-7', title: 'Team 7' },
-      { order: 3, locationId: 'loc-konoha-hospital', title: 'Allenamento medico con Tsunade' },
-      { order: 4, locationId: 'loc-akatsuki-rivers', title: 'Sconfigge Sasori', eventId: 'ev-sasori-defeat' },
-      { order: 5, locationId: 'loc-fourth-war-battlefield', title: 'Battaglia finale' },
+      { order: 1, locationId: 'loc-konoha-academy', title: { it: 'Accademia', en: 'Academy' } },
+      { order: 2, locationId: 'loc-konoha-training-7', title: { it: 'Team 7', en: 'Team 7' } },
+      { order: 3, locationId: 'loc-konoha-hospital', title: {
+        it: 'Allenamento medico con Tsunade',
+        en: 'Medical training with Tsunade',
+      } },
+      { order: 4, locationId: 'loc-akatsuki-rivers', title: {
+        it: 'Sconfigge Sasori',
+        en: 'Defeats Sasori',
+      }, eventId: 'ev-sasori-defeat' },
+      { order: 5, locationId: 'loc-fourth-war-battlefield', title: {
+        it: 'Battaglia finale',
+        en: 'Final battle',
+      } },
     ],
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -41,8 +53,11 @@ export const narutoCharacterRoutes: Route[] = [
     worldId: 'world-naruto',
     type: 'character',
     name: 'Kakashi · Dal Team Minato all\'Hokage',
-    description:
-      'Dalla guerra a Kannabi Bridge al ruolo di Sesto Hokage.',
+    localizedName: { it: "Kakashi · Dal Team Minato all'Hokage", en: 'Kakashi · From Team Minato to Hokage' },
+    description: {
+      it: 'Dalla guerra a Kannabi Bridge al ruolo di Sesto Hokage.',
+      en: 'From the war at Kannabi Bridge to the role of Sixth Hokage.',
+    },
     protagonistCharacterIds: ['char-kakashi'],
     primaryCharacterIds: ['char-kakashi'],
     mangaChapters: ['1-700'],
@@ -50,11 +65,26 @@ export const narutoCharacterRoutes: Route[] = [
     color: '#a0aab8',
     lineStyle: 'solid',
     steps: [
-      { order: 1, locationId: 'loc-kannabi-bridge', title: 'Kannabi (perde Obito)', eventId: 'ev-kannabi-bridge' },
-      { order: 2, locationId: 'loc-konoha-memorial', title: 'Memorial Stone (lutto)' },
-      { order: 3, locationId: 'loc-konoha-training-7', title: 'Sensei del Team 7', eventId: 'ev-team-7-formed' },
-      { order: 4, locationId: 'loc-fourth-war-battlefield', title: 'Quarta Guerra', eventId: 'ev-obito-vs-kakashi' },
-      { order: 5, locationId: 'loc-konoha-hokage-residence', title: 'Sesto Hokage', eventId: 'ev-kakashi-becomes-hokage-elect' },
+      { order: 1, locationId: 'loc-kannabi-bridge', title: {
+        it: 'Kannabi (perde Obito)',
+        en: 'Kannabi (loses Obito)',
+      }, eventId: 'ev-kannabi-bridge' },
+      { order: 2, locationId: 'loc-konoha-memorial', title: {
+        it: 'Memorial Stone (lutto)',
+        en: 'Memorial Stone (mourning)',
+      } },
+      { order: 3, locationId: 'loc-konoha-training-7', title: {
+        it: 'Sensei del Team 7',
+        en: "Team 7's sensei",
+      }, eventId: 'ev-team-7-formed' },
+      { order: 4, locationId: 'loc-fourth-war-battlefield', title: {
+        it: 'Quarta Guerra',
+        en: 'Fourth War',
+      }, eventId: 'ev-obito-vs-kakashi' },
+      { order: 5, locationId: 'loc-konoha-hokage-residence', title: {
+        it: 'Sesto Hokage',
+        en: 'Sixth Hokage',
+      }, eventId: 'ev-kakashi-becomes-hokage-elect' },
     ],
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -64,8 +94,11 @@ export const narutoCharacterRoutes: Route[] = [
     worldId: 'world-naruto',
     type: 'character',
     name: 'Tsunade · Sannin → Hokage',
-    description:
-      'Dal lutto post-guerra al ritorno a Konoha come Quinto Hokage.',
+    localizedName: { it: 'Tsunade · Sannin → Hokage', en: 'Tsunade · Sannin → Hokage' },
+    description: {
+      it: 'Dal lutto post-guerra al ritorno a Konoha come Quinto Hokage.',
+      en: 'From post-war grief to returning to Konoha as the Fifth Hokage.',
+    },
     protagonistCharacterIds: ['char-tsunade'],
     primaryCharacterIds: ['char-tsunade'],
     mangaChapters: ['139-171', '245-700'],
@@ -73,10 +106,22 @@ export const narutoCharacterRoutes: Route[] = [
     color: '#f5d182',
     lineStyle: 'solid',
     steps: [
-      { order: 1, locationId: 'loc-konoha', title: 'Allieva di Hiruzen' },
-      { order: 2, locationId: 'loc-shikkotsu-forest', title: 'Esilio · lumache' },
-      { order: 3, locationId: 'loc-konoha', title: 'Ritorno come Quinto Hokage', eventId: 'ev-tsunade-hokage' },
-      { order: 4, locationId: 'loc-fourth-war-battlefield', title: 'Quarta Guerra' },
+      { order: 1, locationId: 'loc-konoha', title: {
+        it: 'Allieva di Hiruzen',
+        en: "Hiruzen's student",
+      } },
+      { order: 2, locationId: 'loc-shikkotsu-forest', title: {
+        it: 'Esilio · lumache',
+        en: 'Exile · slugs',
+      } },
+      { order: 3, locationId: 'loc-konoha', title: {
+        it: 'Ritorno come Quinto Hokage',
+        en: 'Return as the Fifth Hokage',
+      }, eventId: 'ev-tsunade-hokage' },
+      { order: 4, locationId: 'loc-fourth-war-battlefield', title: {
+        it: 'Quarta Guerra',
+        en: 'Fourth War',
+      } },
     ],
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -86,8 +131,11 @@ export const narutoCharacterRoutes: Route[] = [
     worldId: 'world-naruto',
     type: 'character',
     name: 'Orochimaru · Sannin → Otogakure',
-    description:
-      'Dal tradimento di Konoha alla fondazione del Villaggio del Suono.',
+    localizedName: { it: 'Orochimaru · Sannin → Otogakure', en: 'Orochimaru · Sannin → Otogakure' },
+    description: {
+      it: 'Dal tradimento di Konoha alla fondazione del Villaggio del Suono.',
+      en: 'From betraying Konoha to founding the Hidden Sound Village.',
+    },
     protagonistCharacterIds: ['char-orochimaru'],
     primaryCharacterIds: ['char-orochimaru'],
     mangaChapters: ['116-138', '282-310'],
@@ -95,10 +143,19 @@ export const narutoCharacterRoutes: Route[] = [
     color: '#8a8aa0',
     lineStyle: 'solid',
     steps: [
-      { order: 1, locationId: 'loc-konoha', title: 'Diserzione', eventId: 'ev-orochimaru-defects' },
-      { order: 2, locationId: 'loc-ryuchi-cave', title: 'Caverna dei Serpenti' },
-      { order: 3, locationId: 'loc-oto', title: 'Fondazione Otogakure' },
-      { order: 4, locationId: 'loc-orochimaru-hideout', title: 'Nascondiglio · Sasuke' },
+      { order: 1, locationId: 'loc-konoha', title: { it: 'Diserzione', en: 'Desertion' }, eventId: 'ev-orochimaru-defects' },
+      { order: 2, locationId: 'loc-ryuchi-cave', title: {
+        it: 'Caverna dei Serpenti',
+        en: 'Snake Cave',
+      } },
+      { order: 3, locationId: 'loc-oto', title: {
+        it: 'Fondazione Otogakure',
+        en: 'Founding of Otogakure',
+      } },
+      { order: 4, locationId: 'loc-orochimaru-hideout', title: {
+        it: 'Nascondiglio · Sasuke',
+        en: 'Hideout · Sasuke',
+      } },
     ],
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -108,8 +165,11 @@ export const narutoCharacterRoutes: Route[] = [
     worldId: 'world-naruto',
     type: 'character',
     name: 'Gaara · Dal mostro al Kazekage',
-    description:
-      'Da arma del Quarto Kazekage a Quinto Kazekage e simbolo di pace.',
+    localizedName: { it: 'Gaara · Dal mostro al Kazekage', en: 'Gaara · From monster to Kazekage' },
+    description: {
+      it: 'Da arma del Quarto Kazekage a Quinto Kazekage e simbolo di pace.',
+      en: "From the Fourth Kazekage's weapon to Fifth Kazekage and symbol of peace.",
+    },
     protagonistCharacterIds: ['char-gaara'],
     primaryCharacterIds: ['char-gaara'],
     mangaChapters: ['34-115', '245-281', '516-568'],
@@ -117,11 +177,20 @@ export const narutoCharacterRoutes: Route[] = [
     color: '#d4be78',
     lineStyle: 'solid',
     steps: [
-      { order: 1, locationId: 'loc-suna', title: 'Suna · infanzia' },
-      { order: 2, locationId: 'loc-konoha', title: 'Esami Chunin · invasione' },
-      { order: 3, locationId: 'loc-suna', title: 'Diventa Kazekage' },
-      { order: 4, locationId: 'loc-akatsuki-rivers', title: 'Rapito, rianimato', eventId: 'ev-gaara-rescue' },
-      { order: 5, locationId: 'loc-fourth-war-battlefield', title: 'Comandante divisione', eventId: 'ev-gaara-onoki-vs-madara' },
+      { order: 1, locationId: 'loc-suna', title: { it: 'Suna · infanzia', en: 'Suna · childhood' } },
+      { order: 2, locationId: 'loc-konoha', title: {
+        it: 'Esami Chunin · invasione',
+        en: 'Chunin Exams · invasion',
+      } },
+      { order: 3, locationId: 'loc-suna', title: { it: 'Diventa Kazekage', en: 'Becomes Kazekage' } },
+      { order: 4, locationId: 'loc-akatsuki-rivers', title: {
+        it: 'Rapito, rianimato',
+        en: 'Abducted, revived',
+      }, eventId: 'ev-gaara-rescue' },
+      { order: 5, locationId: 'loc-fourth-war-battlefield', title: {
+        it: 'Comandante divisione',
+        en: 'Division commander',
+      }, eventId: 'ev-gaara-onoki-vs-madara' },
     ],
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -131,8 +200,11 @@ export const narutoCharacterRoutes: Route[] = [
     worldId: 'world-naruto',
     type: 'character',
     name: 'Hinata · Volontà e Byakugan',
-    description:
-      'Dall\'ombra del clan Hyuga al fianco di Naruto nella Quarta Guerra.',
+    localizedName: { it: 'Hinata · Volontà e Byakugan', en: 'Hinata · Willpower and Byakugan' },
+    description: {
+      it: 'Dall\'ombra del clan Hyuga al fianco di Naruto nella Quarta Guerra.',
+      en: "From the shadow of the Hyuga clan to Naruto's side in the Fourth War.",
+    },
     protagonistCharacterIds: ['char-hinata'],
     primaryCharacterIds: ['char-hinata'],
     mangaChapters: ['34-115', '403-449', '614'],
@@ -140,10 +212,19 @@ export const narutoCharacterRoutes: Route[] = [
     color: '#b8a8d8',
     lineStyle: 'solid',
     steps: [
-      { order: 1, locationId: 'loc-konoha-hyuga-compound', title: 'Hyuga Compound' },
-      { order: 2, locationId: 'loc-konoha', title: 'Esami Chunin', eventId: 'ev-neji-vs-hinata' },
-      { order: 3, locationId: 'loc-konoha', title: 'Difende Naruto da Pain', eventId: 'ev-pain-attack' },
-      { order: 4, locationId: 'loc-fourth-war-battlefield', title: 'Quarta Guerra', eventId: 'ev-neji-sacrifice' },
+      { order: 1, locationId: 'loc-konoha-hyuga-compound', title: {
+        it: 'Hyuga Compound',
+        en: 'Hyuga Compound',
+      } },
+      { order: 2, locationId: 'loc-konoha', title: { it: 'Esami Chunin', en: 'Chunin Exams' }, eventId: 'ev-neji-vs-hinata' },
+      { order: 3, locationId: 'loc-konoha', title: {
+        it: 'Difende Naruto da Pain',
+        en: 'Defends Naruto from Pain',
+      }, eventId: 'ev-pain-attack' },
+      { order: 4, locationId: 'loc-fourth-war-battlefield', title: {
+        it: 'Quarta Guerra',
+        en: 'Fourth War',
+      }, eventId: 'ev-neji-sacrifice' },
     ],
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -153,8 +234,11 @@ export const narutoCharacterRoutes: Route[] = [
     worldId: 'world-naruto',
     type: 'character',
     name: 'Shikamaru · Stratega',
-    description:
-      'Dal genin del Team 10 al consigliere strategico dell\'Hokage.',
+    localizedName: { it: 'Shikamaru · Stratega', en: 'Shikamaru · Strategist' },
+    description: {
+      it: 'Dal genin del Team 10 al consigliere strategico dell\'Hokage.',
+      en: "From Team 10 genin to the Hokage's strategic advisor.",
+    },
     protagonistCharacterIds: ['char-shikamaru'],
     primaryCharacterIds: ['char-shikamaru'],
     mangaChapters: ['34-115', '311-342', '516-700'],
@@ -162,10 +246,19 @@ export const narutoCharacterRoutes: Route[] = [
     color: '#5a6470',
     lineStyle: 'solid',
     steps: [
-      { order: 1, locationId: 'loc-konoha-nara-forest', title: 'Nara Forest · infanzia' },
-      { order: 2, locationId: 'loc-konoha', title: 'Esami Chunin' },
-      { order: 3, locationId: 'loc-konoha-nara-forest', title: 'Hidan sepolto', eventId: 'ev-hidan-burial' },
-      { order: 4, locationId: 'loc-fourth-war-battlefield', title: 'Stratega Alleanza' },
+      { order: 1, locationId: 'loc-konoha-nara-forest', title: {
+        it: 'Nara Forest · infanzia',
+        en: 'Nara Forest · childhood',
+      } },
+      { order: 2, locationId: 'loc-konoha', title: { it: 'Esami Chunin', en: 'Chunin Exams' } },
+      { order: 3, locationId: 'loc-konoha-nara-forest', title: {
+        it: 'Hidan sepolto',
+        en: 'Hidan buried',
+      }, eventId: 'ev-hidan-burial' },
+      { order: 4, locationId: 'loc-fourth-war-battlefield', title: {
+        it: 'Stratega Alleanza',
+        en: 'Alliance strategist',
+      } },
     ],
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -175,8 +268,11 @@ export const narutoCharacterRoutes: Route[] = [
     worldId: 'world-naruto',
     type: 'character',
     name: 'Rock Lee · Il taijutsu',
-    description:
-      'Dalla rinascita post-Gaara alla Quarta Guerra.',
+    localizedName: { it: 'Rock Lee · Il taijutsu', en: 'Rock Lee · Taijutsu' },
+    description: {
+      it: 'Dalla rinascita post-Gaara alla Quarta Guerra.',
+      en: 'From his post-Gaara recovery to the Fourth War.',
+    },
     protagonistCharacterIds: ['char-rock-lee'],
     primaryCharacterIds: ['char-rock-lee'],
     mangaChapters: ['34-115', '245-281', '516-568'],
@@ -184,10 +280,19 @@ export const narutoCharacterRoutes: Route[] = [
     color: '#5cb85c',
     lineStyle: 'solid',
     steps: [
-      { order: 1, locationId: 'loc-konoha', title: 'Allenamento con Guy' },
-      { order: 2, locationId: 'loc-konoha', title: 'Esami Chunin', eventId: 'ev-rock-lee-vs-gaara' },
-      { order: 3, locationId: 'loc-konoha-hospital', title: 'Operazione di Tsunade' },
-      { order: 4, locationId: 'loc-fourth-war-battlefield', title: 'Quarta Guerra' },
+      { order: 1, locationId: 'loc-konoha', title: {
+        it: 'Allenamento con Guy',
+        en: 'Training with Guy',
+      } },
+      { order: 2, locationId: 'loc-konoha', title: { it: 'Esami Chunin', en: 'Chunin Exams' }, eventId: 'ev-rock-lee-vs-gaara' },
+      { order: 3, locationId: 'loc-konoha-hospital', title: {
+        it: 'Operazione di Tsunade',
+        en: "Tsunade's surgery",
+      } },
+      { order: 4, locationId: 'loc-fourth-war-battlefield', title: {
+        it: 'Quarta Guerra',
+        en: 'Fourth War',
+      } },
     ],
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -197,8 +302,11 @@ export const narutoCharacterRoutes: Route[] = [
     worldId: 'world-naruto',
     type: 'character',
     name: 'Nagato/Pain · Da Ame a Konoha',
-    description:
-      'Dagli orfani di Ame al leader dell\'Akatsuki che assedia Konoha.',
+    localizedName: { it: 'Nagato/Pain · Da Ame a Konoha', en: 'Nagato/Pain · From Ame to Konoha' },
+    description: {
+      it: 'Dagli orfani di Ame al leader dell\'Akatsuki che assedia Konoha.',
+      en: 'From the orphans of Ame to the Akatsuki leader who besieges Konoha.',
+    },
     protagonistCharacterIds: ['char-pain'],
     primaryCharacterIds: ['char-pain'],
     mangaChapters: ['372-374', '403-449'],
@@ -206,10 +314,16 @@ export const narutoCharacterRoutes: Route[] = [
     color: '#5b6a78',
     lineStyle: 'solid',
     steps: [
-      { order: 1, locationId: 'loc-ame', title: 'Orfani di Ame', eventId: 'ev-ame-orphans' },
-      { order: 2, locationId: 'loc-ame', title: 'Morte Yahiko · diventa Pain', eventId: 'ev-yahiko-death' },
-      { order: 3, locationId: 'loc-ame', title: 'Uccide Jiraiya', eventId: 'ev-jiraiya-vs-pain' },
-      { order: 4, locationId: 'loc-konoha', title: 'Distrugge Konoha', eventId: 'ev-pain-attack' },
+      { order: 1, locationId: 'loc-ame', title: { it: 'Orfani di Ame', en: 'Orphans of Ame' }, eventId: 'ev-ame-orphans' },
+      { order: 2, locationId: 'loc-ame', title: {
+        it: 'Morte Yahiko · diventa Pain',
+        en: "Yahiko's death · becomes Pain",
+      }, eventId: 'ev-yahiko-death' },
+      { order: 3, locationId: 'loc-ame', title: { it: 'Uccide Jiraiya', en: 'Kills Jiraiya' }, eventId: 'ev-jiraiya-vs-pain' },
+      { order: 4, locationId: 'loc-konoha', title: {
+        it: 'Distrugge Konoha',
+        en: 'Destroys Konoha',
+      }, eventId: 'ev-pain-attack' },
     ],
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -219,8 +333,11 @@ export const narutoCharacterRoutes: Route[] = [
     worldId: 'world-naruto',
     type: 'character',
     name: 'Konan · Angelo di Ame',
-    description:
-      'Da orfana ad ultimo presidio dell\'Akatsuki di Yahiko.',
+    localizedName: { it: 'Konan · Angelo di Ame', en: 'Konan · Angel of Ame' },
+    description: {
+      it: 'Da orfana ad ultimo presidio dell\'Akatsuki di Yahiko.',
+      en: "From orphan to the last guardian of Yahiko's Akatsuki.",
+    },
     protagonistCharacterIds: ['char-konan'],
     primaryCharacterIds: ['char-konan'],
     mangaChapters: ['372-374', '509-510'],
@@ -228,9 +345,9 @@ export const narutoCharacterRoutes: Route[] = [
     color: '#86a4d8',
     lineStyle: 'solid',
     steps: [
-      { order: 1, locationId: 'loc-ame', title: 'Orfani di Ame' },
-      { order: 2, locationId: 'loc-akatsuki-hq', title: 'Akatsuki' },
-      { order: 3, locationId: 'loc-ame', title: 'Konan vs Obito', eventId: 'ev-konan-defeat' },
+      { order: 1, locationId: 'loc-ame', title: { it: 'Orfani di Ame', en: 'Orphans of Ame' } },
+      { order: 2, locationId: 'loc-akatsuki-hq', title: { it: 'Akatsuki', en: 'Akatsuki' } },
+      { order: 3, locationId: 'loc-ame', title: { it: 'Konan vs Obito', en: 'Konan vs Obito' }, eventId: 'ev-konan-defeat' },
     ],
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -240,8 +357,11 @@ export const narutoCharacterRoutes: Route[] = [
     worldId: 'world-naruto',
     type: 'character',
     name: 'Kabuto · Dalla spia al Sage of Snakes',
-    description:
-      'Da assistente di Orochimaru a maestro dell\'Edo Tensei nella Quarta Guerra.',
+    localizedName: { it: 'Kabuto · Dalla spia al Sage of Snakes', en: 'Kabuto · From spy to Sage of Snakes' },
+    description: {
+      it: 'Da assistente di Orochimaru a maestro dell\'Edo Tensei nella Quarta Guerra.',
+      en: "From Orochimaru's assistant to master of Edo Tensei in the Fourth War.",
+    },
     protagonistCharacterIds: ['char-kabuto'],
     primaryCharacterIds: ['char-kabuto'],
     mangaChapters: ['34-115', '282-310', '516-593'],
@@ -249,10 +369,22 @@ export const narutoCharacterRoutes: Route[] = [
     color: '#a89868',
     lineStyle: 'solid',
     steps: [
-      { order: 1, locationId: 'loc-konoha', title: 'Spia a Konoha (esami Chunin)' },
-      { order: 2, locationId: 'loc-orochimaru-hideout', title: 'Assistente Orochimaru' },
-      { order: 3, locationId: 'loc-ryuchi-cave', title: 'Caverna Ryūchi · Sage Mode' },
-      { order: 4, locationId: 'loc-fourth-war-battlefield', title: 'Edo Tensei in guerra', eventId: 'ev-edo-tensei-army' },
+      { order: 1, locationId: 'loc-konoha', title: {
+        it: 'Spia a Konoha (esami Chunin)',
+        en: 'Spy in Konoha (Chunin Exams)',
+      } },
+      { order: 2, locationId: 'loc-orochimaru-hideout', title: {
+        it: 'Assistente Orochimaru',
+        en: "Orochimaru's assistant",
+      } },
+      { order: 3, locationId: 'loc-ryuchi-cave', title: {
+        it: 'Caverna Ryūchi · Sage Mode',
+        en: 'Ryūchi Cave · Sage Mode',
+      } },
+      { order: 4, locationId: 'loc-fourth-war-battlefield', title: {
+        it: 'Edo Tensei in guerra',
+        en: 'Edo Tensei in the war',
+      }, eventId: 'ev-edo-tensei-army' },
     ],
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -262,8 +394,11 @@ export const narutoCharacterRoutes: Route[] = [
     worldId: 'world-naruto',
     type: 'character',
     name: 'Deidara · Artista esplosivo',
-    description:
-      'Da missing-nin di Iwa ad Akatsuki, fino al suicidio contro Sasuke.',
+    localizedName: { it: 'Deidara · Artista esplosivo', en: 'Deidara · Explosive artist' },
+    description: {
+      it: 'Da missing-nin di Iwa ad Akatsuki, fino al suicidio contro Sasuke.',
+      en: 'From Iwa missing-nin to Akatsuki, up to his suicide against Sasuke.',
+    },
     protagonistCharacterIds: ['char-deidara'],
     primaryCharacterIds: ['char-deidara'],
     mangaChapters: ['245-281', '355-362'],
@@ -271,10 +406,16 @@ export const narutoCharacterRoutes: Route[] = [
     color: '#d8b86a',
     lineStyle: 'solid',
     steps: [
-      { order: 1, locationId: 'loc-iwa', title: 'Iwa · esplosivi' },
-      { order: 2, locationId: 'loc-akatsuki-hq', title: 'Akatsuki' },
-      { order: 3, locationId: 'loc-akatsuki-rivers', title: 'Rapisce Gaara', eventId: 'ev-gaara-kidnap' },
-      { order: 4, locationId: 'loc-orochimaru-hideout', title: 'Esplode contro Sasuke', eventId: 'ev-deidara-vs-sasuke' },
+      { order: 1, locationId: 'loc-iwa', title: { it: 'Iwa · esplosivi', en: 'Iwa · explosives' } },
+      { order: 2, locationId: 'loc-akatsuki-hq', title: { it: 'Akatsuki', en: 'Akatsuki' } },
+      { order: 3, locationId: 'loc-akatsuki-rivers', title: {
+        it: 'Rapisce Gaara',
+        en: 'Abducts Gaara',
+      }, eventId: 'ev-gaara-kidnap' },
+      { order: 4, locationId: 'loc-orochimaru-hideout', title: {
+        it: 'Esplode contro Sasuke',
+        en: 'Blows himself up against Sasuke',
+      }, eventId: 'ev-deidara-vs-sasuke' },
     ],
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -284,8 +425,11 @@ export const narutoCharacterRoutes: Route[] = [
     worldId: 'world-naruto',
     type: 'character',
     name: 'Sasori · Marionettista',
-    description:
-      'Da Suna all\'Akatsuki, fino allo scontro con la nonna Chiyo.',
+    localizedName: { it: 'Sasori · Marionettista', en: 'Sasori · Puppeteer' },
+    description: {
+      it: 'Da Suna all\'Akatsuki, fino allo scontro con la nonna Chiyo.',
+      en: 'From Suna to the Akatsuki, up to the clash with his grandmother Chiyo.',
+    },
     protagonistCharacterIds: ['char-sasori'],
     primaryCharacterIds: ['char-sasori'],
     mangaChapters: ['245-281'],
@@ -293,9 +437,15 @@ export const narutoCharacterRoutes: Route[] = [
     color: '#c87878',
     lineStyle: 'solid',
     steps: [
-      { order: 1, locationId: 'loc-suna', title: 'Suna · marionettista' },
-      { order: 2, locationId: 'loc-akatsuki-hq', title: 'Akatsuki' },
-      { order: 3, locationId: 'loc-akatsuki-rivers', title: 'Sconfitto da Sakura/Chiyo', eventId: 'ev-sasori-defeat' },
+      { order: 1, locationId: 'loc-suna', title: {
+        it: 'Suna · marionettista',
+        en: 'Suna · puppeteer',
+      } },
+      { order: 2, locationId: 'loc-akatsuki-hq', title: { it: 'Akatsuki', en: 'Akatsuki' } },
+      { order: 3, locationId: 'loc-akatsuki-rivers', title: {
+        it: 'Sconfitto da Sakura/Chiyo',
+        en: 'Defeated by Sakura/Chiyo',
+      }, eventId: 'ev-sasori-defeat' },
     ],
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -305,8 +455,11 @@ export const narutoCharacterRoutes: Route[] = [
     worldId: 'world-naruto',
     type: 'character',
     name: 'Kakuzu · Ladro di cuori',
-    description:
-      'Da Taki a missing-nin ad Akatsuki.',
+    localizedName: { it: 'Kakuzu · Ladro di cuori', en: 'Kakuzu · Heart thief' },
+    description: {
+      it: 'Da Taki a missing-nin ad Akatsuki.',
+      en: 'From Taki to missing-nin to Akatsuki.',
+    },
     protagonistCharacterIds: ['char-kakuzu'],
     primaryCharacterIds: ['char-kakuzu'],
     mangaChapters: ['311-342'],
@@ -314,9 +467,15 @@ export const narutoCharacterRoutes: Route[] = [
     color: '#3a6044',
     lineStyle: 'dashed',
     steps: [
-      { order: 1, locationId: 'loc-taki', title: 'Takigakure (origini)' },
-      { order: 2, locationId: 'loc-akatsuki-hq', title: 'Akatsuki' },
-      { order: 3, locationId: 'loc-konoha', title: 'Operazioni Hidan/Kakuzu', eventId: 'ev-hidan-kakuzu' },
+      { order: 1, locationId: 'loc-taki', title: {
+        it: 'Takigakure (origini)',
+        en: 'Takigakure (origins)',
+      } },
+      { order: 2, locationId: 'loc-akatsuki-hq', title: { it: 'Akatsuki', en: 'Akatsuki' } },
+      { order: 3, locationId: 'loc-konoha', title: {
+        it: 'Operazioni Hidan/Kakuzu',
+        en: 'Hidan/Kakuzu operations',
+      }, eventId: 'ev-hidan-kakuzu' },
     ],
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -326,8 +485,11 @@ export const narutoCharacterRoutes: Route[] = [
     worldId: 'world-naruto',
     type: 'character',
     name: 'Hidan · Jashinista',
-    description:
-      'Da Yugakure all\'Akatsuki, fino alla sepoltura nella foresta Nara.',
+    localizedName: { it: 'Hidan · Jashinista', en: 'Hidan · Jashinist' },
+    description: {
+      it: 'Da Yugakure all\'Akatsuki, fino alla sepoltura nella foresta Nara.',
+      en: 'From Yugakure to the Akatsuki, up to his burial in the Nara forest.',
+    },
     protagonistCharacterIds: ['char-hidan'],
     primaryCharacterIds: ['char-hidan'],
     mangaChapters: ['311-342'],
@@ -335,9 +497,15 @@ export const narutoCharacterRoutes: Route[] = [
     color: '#9c5b8b',
     lineStyle: 'dashed',
     steps: [
-      { order: 1, locationId: 'loc-yu', title: 'Yugakure · origini' },
-      { order: 2, locationId: 'loc-akatsuki-hq', title: 'Akatsuki' },
-      { order: 3, locationId: 'loc-konoha-nara-forest', title: 'Sepolto da Shikamaru', eventId: 'ev-hidan-burial' },
+      { order: 1, locationId: 'loc-yu', title: {
+        it: 'Yugakure · origini',
+        en: 'Yugakure · origins',
+      } },
+      { order: 2, locationId: 'loc-akatsuki-hq', title: { it: 'Akatsuki', en: 'Akatsuki' } },
+      { order: 3, locationId: 'loc-konoha-nara-forest', title: {
+        it: 'Sepolto da Shikamaru',
+        en: 'Buried by Shikamaru',
+      }, eventId: 'ev-hidan-burial' },
     ],
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -347,8 +515,11 @@ export const narutoCharacterRoutes: Route[] = [
     worldId: 'world-naruto',
     type: 'character',
     name: 'Kisame · Mostro della Nebbia',
-    description:
-      'Da Sette Spadaccini ad Akatsuki accanto a Itachi.',
+    localizedName: { it: 'Kisame · Mostro della Nebbia', en: 'Kisame · Monster of the Mist' },
+    description: {
+      it: 'Da Sette Spadaccini ad Akatsuki accanto a Itachi.',
+      en: 'From the Seven Swordsmen to the Akatsuki alongside Itachi.',
+    },
     protagonistCharacterIds: ['char-kisame'],
     primaryCharacterIds: ['char-kisame'],
     mangaChapters: ['139-144', '484-515'],
@@ -356,10 +527,22 @@ export const narutoCharacterRoutes: Route[] = [
     color: '#3a6478',
     lineStyle: 'solid',
     steps: [
-      { order: 1, locationId: 'loc-kiri', title: 'Kirigakure · Spadaccini' },
-      { order: 2, locationId: 'loc-akatsuki-hq', title: 'Akatsuki · con Itachi' },
-      { order: 3, locationId: 'loc-konoha', title: 'Caccia al Kyuubi', eventId: 'ev-akatsuki-debut' },
-      { order: 4, locationId: 'loc-turtle-island', title: 'Spiando Killer B' },
+      { order: 1, locationId: 'loc-kiri', title: {
+        it: 'Kirigakure · Spadaccini',
+        en: 'Kirigakure · Swordsmen',
+      } },
+      { order: 2, locationId: 'loc-akatsuki-hq', title: {
+        it: 'Akatsuki · con Itachi',
+        en: 'Akatsuki · with Itachi',
+      } },
+      { order: 3, locationId: 'loc-konoha', title: {
+        it: 'Caccia al Kyuubi',
+        en: 'Hunting the Nine-Tails',
+      }, eventId: 'ev-akatsuki-debut' },
+      { order: 4, locationId: 'loc-turtle-island', title: {
+        it: 'Spiando Killer B',
+        en: 'Spying on Killer B',
+      } },
     ],
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -369,8 +552,11 @@ export const narutoCharacterRoutes: Route[] = [
     worldId: 'world-naruto',
     type: 'character',
     name: 'Killer B · Jinchūriki di Gyuki',
-    description:
-      'Da Kumo all\'Isola Tartaruga, fino al fianco di Naruto.',
+    localizedName: { it: 'Killer B · Jinchūriki di Gyuki', en: 'Killer B · Jinchūriki of Gyūki' },
+    description: {
+      it: 'Da Kumo all\'Isola Tartaruga, fino al fianco di Naruto.',
+      en: "From Kumo to Island Turtle, up to fighting at Naruto's side.",
+    },
     protagonistCharacterIds: ['char-killer-b'],
     primaryCharacterIds: ['char-killer-b'],
     mangaChapters: ['384-402', '484-515', '516-650'],
@@ -378,9 +564,18 @@ export const narutoCharacterRoutes: Route[] = [
     color: '#3868c0',
     lineStyle: 'solid',
     steps: [
-      { order: 1, locationId: 'loc-kumo', title: 'Kumo · addestramento' },
-      { order: 2, locationId: 'loc-turtle-island', title: 'Allena Naruto', eventId: 'ev-naruto-killer-b-train' },
-      { order: 3, locationId: 'loc-fourth-war-battlefield', title: 'Combatte in guerra' },
+      { order: 1, locationId: 'loc-kumo', title: {
+        it: 'Kumo · addestramento',
+        en: 'Kumo · training',
+      } },
+      { order: 2, locationId: 'loc-turtle-island', title: {
+        it: 'Allena Naruto',
+        en: 'Trains Naruto',
+      }, eventId: 'ev-naruto-killer-b-train' },
+      { order: 3, locationId: 'loc-fourth-war-battlefield', title: {
+        it: 'Combatte in guerra',
+        en: 'Fights in the war',
+      } },
     ],
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -390,8 +585,11 @@ export const narutoCharacterRoutes: Route[] = [
     worldId: 'world-naruto',
     type: 'character',
     name: 'Minato · Yellow Flash',
-    description:
-      'Dal Team Minato all\'Hokage caduto contro Kurama.',
+    localizedName: { it: 'Minato · Yellow Flash', en: 'Minato · Yellow Flash' },
+    description: {
+      it: 'Dal Team Minato all\'Hokage caduto contro Kurama.',
+      en: 'From Team Minato to the Hokage who fell against Kurama.',
+    },
     protagonistCharacterIds: ['char-minato'],
     primaryCharacterIds: ['char-minato'],
     mangaChapters: ['1', '239-244', '499-504'],
@@ -399,10 +597,19 @@ export const narutoCharacterRoutes: Route[] = [
     color: '#f0c850',
     lineStyle: 'solid',
     steps: [
-      { order: 1, locationId: 'loc-konoha', title: 'Team Minato' },
-      { order: 2, locationId: 'loc-kannabi-bridge', title: 'Kannabi · Yellow Flash', eventId: 'ev-kannabi-bridge' },
-      { order: 3, locationId: 'loc-konoha-hokage-residence', title: 'Quarto Hokage' },
-      { order: 4, locationId: 'loc-konoha', title: 'Sigillamento di Kurama', eventId: 'ev-kurama-attack' },
+      { order: 1, locationId: 'loc-konoha', title: { it: 'Team Minato', en: 'Team Minato' } },
+      { order: 2, locationId: 'loc-kannabi-bridge', title: {
+        it: 'Kannabi · Yellow Flash',
+        en: 'Kannabi · Yellow Flash',
+      }, eventId: 'ev-kannabi-bridge' },
+      { order: 3, locationId: 'loc-konoha-hokage-residence', title: {
+        it: 'Quarto Hokage',
+        en: 'Fourth Hokage',
+      } },
+      { order: 4, locationId: 'loc-konoha', title: {
+        it: 'Sigillamento di Kurama',
+        en: 'Sealing of Kurama',
+      }, eventId: 'ev-kurama-attack' },
     ],
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -412,8 +619,11 @@ export const narutoCharacterRoutes: Route[] = [
     worldId: 'world-naruto',
     type: 'character',
     name: 'Kushina · Da Uzushio a Konoha',
-    description:
-      'Da bambina di Uzushio a jinchūriki di Konoha, madre di Naruto.',
+    localizedName: { it: 'Kushina · Da Uzushio a Konoha', en: 'Kushina · From Uzushio to Konoha' },
+    description: {
+      it: 'Da bambina di Uzushio a jinchūriki di Konoha, madre di Naruto.',
+      en: "From a child of Uzushio to Konoha's jinchūriki and Naruto's mother.",
+    },
     protagonistCharacterIds: ['char-kushina'],
     primaryCharacterIds: ['char-kushina'],
     mangaChapters: ['498-504'],
@@ -421,9 +631,18 @@ export const narutoCharacterRoutes: Route[] = [
     color: '#ef4444',
     lineStyle: 'dashed',
     steps: [
-      { order: 1, locationId: 'loc-uzushio-ruins', title: 'Uzushiogakure · infanzia' },
-      { order: 2, locationId: 'loc-konoha', title: 'Konoha · diventa jinchūriki' },
-      { order: 3, locationId: 'loc-konoha', title: 'Sacrificio per Naruto', eventId: 'ev-kurama-attack' },
+      { order: 1, locationId: 'loc-uzushio-ruins', title: {
+        it: 'Uzushiogakure · infanzia',
+        en: 'Uzushiogakure · childhood',
+      } },
+      { order: 2, locationId: 'loc-konoha', title: {
+        it: 'Konoha · diventa jinchūriki',
+        en: 'Konoha · becomes jinchūriki',
+      } },
+      { order: 3, locationId: 'loc-konoha', title: {
+        it: 'Sacrificio per Naruto',
+        en: 'Sacrifice for Naruto',
+      }, eventId: 'ev-kurama-attack' },
     ],
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -433,8 +652,11 @@ export const narutoCharacterRoutes: Route[] = [
     worldId: 'world-naruto',
     type: 'character',
     name: 'Hashirama · Primo Hokage',
-    description:
-      'Dalla rivalità con Madara alla fondazione di Konoha.',
+    localizedName: { it: 'Hashirama · Primo Hokage', en: 'Hashirama · First Hokage' },
+    description: {
+      it: 'Dalla rivalità con Madara alla fondazione di Konoha.',
+      en: 'From the rivalry with Madara to the founding of Konoha.',
+    },
     protagonistCharacterIds: ['char-hashirama'],
     primaryCharacterIds: ['char-hashirama'],
     mangaChapters: ['399-402', '559-565'],
@@ -442,9 +664,18 @@ export const narutoCharacterRoutes: Route[] = [
     color: '#3aa07a',
     lineStyle: 'solid',
     steps: [
-      { order: 1, locationId: 'loc-konoha', title: 'Fondazione Konoha', eventId: 'ev-foundation-konoha' },
-      { order: 2, locationId: 'loc-valley-of-end', title: 'Duello con Madara', eventId: 'ev-valley-end-hashirama-madara' },
-      { order: 3, locationId: 'loc-fourth-war-battlefield', title: 'Edo Tensei (guerra)' },
+      { order: 1, locationId: 'loc-konoha', title: {
+        it: 'Fondazione Konoha',
+        en: 'Founding of Konoha',
+      }, eventId: 'ev-foundation-konoha' },
+      { order: 2, locationId: 'loc-valley-of-end', title: {
+        it: 'Duello con Madara',
+        en: 'Duel with Madara',
+      }, eventId: 'ev-valley-end-hashirama-madara' },
+      { order: 3, locationId: 'loc-fourth-war-battlefield', title: {
+        it: 'Edo Tensei (guerra)',
+        en: 'Edo Tensei (war)',
+      } },
     ],
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -454,8 +685,11 @@ export const narutoCharacterRoutes: Route[] = [
     worldId: 'world-naruto',
     type: 'character',
     name: 'Danzo · L\'ombra di Konoha',
-    description:
-      'Dal Team Tobirama al Summit dei Kage, dove muore per mano di Sasuke.',
+    localizedName: { it: "Danzo · L'ombra di Konoha", en: 'Danzo · The shadow of Konoha' },
+    description: {
+      it: 'Dal Team Tobirama al Summit dei Kage, dove muore per mano di Sasuke.',
+      en: "From Tobirama's team to the Kage Summit, where he dies at Sasuke's hands.",
+    },
     protagonistCharacterIds: ['char-danzo'],
     primaryCharacterIds: ['char-danzo'],
     mangaChapters: ['450-483'],
@@ -463,10 +697,22 @@ export const narutoCharacterRoutes: Route[] = [
     color: '#454552',
     lineStyle: 'solid',
     steps: [
-      { order: 1, locationId: 'loc-konoha', title: 'Team di Tobirama', eventId: 'ev-tobirama-team' },
-      { order: 2, locationId: 'loc-konoha', title: 'Fondazione Root' },
-      { order: 3, locationId: 'loc-five-kage-meeting', title: 'Attacco al Summit', eventId: 'ev-iron-summit-attack' },
-      { order: 4, locationId: 'loc-five-kage-meeting', title: 'Sconfitto da Sasuke', eventId: 'ev-danzo-vs-sasuke' },
+      { order: 1, locationId: 'loc-konoha', title: {
+        it: 'Team di Tobirama',
+        en: "Tobirama's team",
+      }, eventId: 'ev-tobirama-team' },
+      { order: 2, locationId: 'loc-konoha', title: {
+        it: 'Fondazione Root',
+        en: 'Founding of Root',
+      } },
+      { order: 3, locationId: 'loc-five-kage-meeting', title: {
+        it: 'Attacco al Summit',
+        en: 'Attack on the Summit',
+      }, eventId: 'ev-iron-summit-attack' },
+      { order: 4, locationId: 'loc-five-kage-meeting', title: {
+        it: 'Sconfitto da Sasuke',
+        en: 'Defeated by Sasuke',
+      }, eventId: 'ev-danzo-vs-sasuke' },
     ],
     canonStatus: 'canon',
     referenceStatus: 'verified',

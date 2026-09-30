@@ -16,7 +16,7 @@ export const narutoArcsBatch1: StoryArc[] = [
       it: 'Esame Chūnin e Attacco di Momoshiki',
       en: 'Chūnin Exams & Momoshiki Attack',
     },
-    saga: 'Boruto',
+    saga: { it: 'Boruto', en: 'Boruto' },
     order: 23,
     period: { it: 'Era Boruto', en: 'Boruto Era' },
     description: {
@@ -50,7 +50,7 @@ export const narutoArcsBatch1: StoryArc[] = [
       it: 'Il Risveglio di Kara',
       en: 'Kara Actuation',
     },
-    saga: 'Boruto',
+    saga: { it: 'Boruto', en: 'Boruto' },
     order: 24,
     period: { it: 'Era Boruto', en: 'Boruto Era' },
     description: {
@@ -84,7 +84,7 @@ export const narutoArcsBatch1: StoryArc[] = [
       it: 'Il Vaso',
       en: 'Vessel',
     },
-    saga: 'Boruto',
+    saga: { it: 'Boruto', en: 'Boruto' },
     order: 25,
     period: { it: 'Era Boruto', en: 'Boruto Era' },
     description: {
@@ -117,7 +117,7 @@ export const narutoArcsBatch1: StoryArc[] = [
       it: 'Code e l\'Onniscienza di Eida',
       en: 'Code & Eida\'s Omniscience',
     },
-    saga: 'Boruto',
+    saga: { it: 'Boruto', en: 'Boruto' },
     order: 26,
     period: { it: 'Era Boruto', en: 'Boruto Era' },
     description: {

@@ -25,8 +25,8 @@ export const onepieceCharactersWestBlue: Character[] = [
     factionIds: ['faction-op-straw-hat-pirates', 'faction-op-baroque-works'],
     family: ['char-op-olvia'],
     relationships: [
-      { targetCharacterId: 'char-op-saul', label: 'Protettore d\'infanzia' },
-      { targetCharacterId: 'char-op-crocodile', label: 'Ex socio nella Baroque Works' },
+      { targetCharacterId: 'char-op-saul', label: { it: 'Protettore d\'infanzia', en: 'Childhood protector' } },
+      { targetCharacterId: 'char-op-crocodile', label: { it: 'Ex socio nella Baroque Works', en: 'Former partner in Baroque Works' } },
     ],
     jutsuIds: ['fruit-op-hana-hana'],
     arcIds: ['arc-op-ohara', 'arc-op-alabasta'],
@@ -110,7 +110,7 @@ export const onepieceCharactersWestBlue: Character[] = [
     nationId: 'nation-op-west-blue',
     factionIds: ['faction-op-marines'],
     relationships: [
-      { targetCharacterId: 'char-op-robin', label: 'Salvò la piccola Robin' },
+      { targetCharacterId: 'char-op-robin', label: { it: 'Salvò la piccola Robin', en: 'Saved little Robin' } },
     ],
     arcIds: ['arc-op-ohara'],
     shortDescription: {

@@ -1,3 +1,4 @@
+import { narutoSlugs } from './slugs';
 import type { WorldDataset } from '@/types';
 import { animeWorlds } from '@/data/worlds';
 import { narutoLocations } from './locations';
@@ -70,6 +71,8 @@ const characters = [
 
 /** Dataset completo del mondo Naruto. */
 export const narutoDataset: WorldDataset = densifyCrossLinks({
+  // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
+  seoSlugs: narutoSlugs,
   world: naruto,
   mapLevels: narutoMapLevels,
   nations: [...narutoNations, ...narutoNationsBatch1],
