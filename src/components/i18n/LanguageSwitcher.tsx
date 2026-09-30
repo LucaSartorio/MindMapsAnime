@@ -116,7 +116,7 @@ export function LanguageSwitcher() {
         aria-expanded={open}
         aria-label={t('languageSwitcher.label')}
         className={cn(
-          'inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-sm',
+          'inline-flex h-9 items-center gap-1.5 px-2.5 rounded-md text-sm',
           'border border-ink-700/70 bg-ink-900/60 text-ink-100',
           'hover:bg-ink-800/80 hover:border-chakra-500/40 transition',
           'focus-visible:ring-2 focus-visible:ring-chakra-400',
@@ -126,9 +126,13 @@ export function LanguageSwitcher() {
         <span className="font-mono text-[11px] tracking-widest">
           {current.short}
         </span>
-        <span aria-hidden className="text-ink-400 text-xs">
-          ▾
-        </span>
+        <svg
+          aria-hidden
+          viewBox="0 0 12 12"
+          className={cn('h-3 w-3 shrink-0 text-ink-400 transition-transform', open && 'rotate-180')}
+        >
+          <path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+        </svg>
       </button>
       {open && (
         // role=listbox con figli role=option DIRETTI (niente <ul>/<li> che

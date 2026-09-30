@@ -274,8 +274,19 @@ async function main() {
             const R = (el: Element) => el.getBoundingClientRect();
             const shown = (el: Element | null) => !!el && getComputedStyle(el).display !== 'none' && R(el).width > 0;
             const header = document.querySelector('header')!;
-            const [left, , right] = [...header.firstElementChild!.children];
+            const bar = header.firstElementChild!;
+            const left = bar.firstElementChild!;
+            const right = bar.lastElementChild!;
             const nav = header.querySelector('nav.world-tabs')!;
+            const divider = header.querySelector('[data-nav-divider]');
+            // Selettore, tab visibili e utility: stessa altezza e stesso centro verticale.
+            const controls = [
+              header.querySelector('button[aria-haspopup="menu"]'),
+              ...[...nav.querySelectorAll('.world-tabs__list > li > a')].filter(shown),
+              ...[...right.querySelectorAll(':scope > a, :scope > button, :scope > div > button')].filter(shown),
+            ].filter((el): el is Element => !!el);
+            const heights = new Set(controls.map((el) => Math.round(R(el).height)));
+            const centers = controls.map((el) => R(el).top + R(el).height / 2);
             const list = nav.querySelector('.world-tabs__list')!;
             const tabs = [...list.children].filter(shown);
             const active = nav.querySelector('[aria-current="page"]');
@@ -289,6 +300,9 @@ async function main() {
               active: active?.textContent ?? null,
               activeShown: !!active && (shown(active.closest('li')) || shown(nav.querySelector('.wt-more-current'))),
               hscroll: document.documentElement.scrollWidth > innerWidth,
+              heights: [...heights],
+              centerSpread: Math.max(...centers) - Math.min(...centers),
+              divider: shown(divider) && R(divider).left >= R(left).right && R(divider).right <= R(nav).left,
             };
           });
           const problems = [
@@ -300,6 +314,9 @@ async function main() {
             !r.activeShown && 'tab attiva non visibile',
             width >= 1366 && (r.more || r.visible < r.total) && `"Altro" a ${width}px`,
             r.visible < r.total && !r.more && 'tab nascoste senza "Altro"',
+            r.heights.length !== 1 && `altezze diverse ${r.heights.join('/')}`,
+            r.centerSpread > 1 && `centri verticali sfalsati di ${r.centerSpread.toFixed(1)}px`,
+            !r.divider && 'divisore selettore │ tab assente o fuori posto',
           ].filter(Boolean);
           if (problems.length) {
             failures += 1;
@@ -314,6 +331,15 @@ async function main() {
       await hp.setViewportSize({ width: 1440, height: 900 });
       await hp.goto(`${BASE}/it/one-piece/characters/monkey-d-luffy`, { waitUntil: 'networkidle', timeout: 30_000 });
       await hp.getByRole('button', { name: 'Cambia universo' }).click();
+      await hp.waitForTimeout(400); // fine dell'animazione popIn
+      const anchor = await hp.evaluate(() => {
+        const btn = document.querySelector('header button[aria-haspopup="menu"]')!.getBoundingClientRect();
+        const menu = document.querySelector('header [role="menu"]')!.getBoundingClientRect();
+        return { dx: Math.abs(menu.left - btn.left), gap: menu.top - btn.bottom, wider: menu.width >= btn.width };
+      });
+      const okAnchor = anchor.dx < 1 && anchor.gap >= 0 && anchor.gap <= 10 && anchor.wider;
+      if (!okAnchor) failures += 1;
+      console.log(`${okAnchor ? '✓' : '✗'} menu anime ancorato al selettore: ${JSON.stringify(anchor)}`);
       await hp.getByRole('menuitem', { name: 'Naruto' }).click();
       await hp.waitForURL(/\/it\/naruto$/, { timeout: 8_000 }).catch(() => {});
       const okSwitch = new URL(hp.url()).pathname === '/it/naruto';

@@ -41,8 +41,10 @@ const iconClass =
   'inline-flex h-9 w-9 items-center justify-center rounded-md border border-ink-700/70 text-ink-200 transition hover:border-chakra-500/60 hover:text-white';
 
 /**
- * Header a 3 zone:
- *  - SINISTRA (non si restringe): logo + selettore dell'anime;
+ * Header a 3 zone — Logo → Selettore anime → Divisore → Sezioni → Utility:
+ *  - SINISTRA (non si restringe): logo + selettore dell'anime (16px fra i due),
+ *    poi un divisore verticale discreto (12px per lato) che separa il
+ *    contesto (il mondo) dalle sezioni;
  *  - CENTRO (`min-width: 0`, flessibile): tab del mondo (`WorldTabs`), che
  *    riducono padding e poi usano "Altro" solo quando lo spazio manca davvero;
  *  - DESTRA (non si restringe): ricerca compatta (icona → popup), info,
@@ -158,7 +160,7 @@ export function TopNav() {
     <header className="sticky top-0 z-30 border-b border-ink-700/60 bg-ink-950/85 backdrop-blur-md">
       <div className="topnav-bar mx-auto flex w-full max-w-[1920px] items-center py-2.5">
         {/* SINISTRA: logo + selettore universo (mai compressi). */}
-        <div className="flex shrink-0 items-center gap-[var(--hdr-gap)]">
+        <div className="flex shrink-0 items-center gap-4">
           <Link
             to={homePath(lang)}
             className="flex shrink-0 items-center gap-3"
@@ -186,11 +188,18 @@ export function TopNav() {
           )}
         </div>
 
-        {/* CENTRO: tab del mondo (desktop/tablet). */}
-        {inWorld ? <WorldTabs tabs={worldItems} activeKey={activeKey} /> : <div className="flex-1" />}
+        {/* Divisore contesto │ sezioni + CENTRO: tab del mondo (desktop/tablet). */}
+        {inWorld ? (
+          <>
+            <span aria-hidden data-nav-divider className="mx-3 hidden h-5 w-px shrink-0 bg-ink-500/40 md:block" />
+            <WorldTabs tabs={worldItems} activeKey={activeKey} />
+          </>
+        ) : (
+          <div className="flex-1" />
+        )}
 
         {/* DESTRA: ricerca + utility compatte + lingua + menu mobile. */}
-        <div className="flex shrink-0 items-center gap-1.5">
+        <div className="ml-[var(--hdr-gap)] flex shrink-0 items-center gap-1.5">
           {inWorld && dataset && (
             <div ref={searchRef} className="relative">
               <button
