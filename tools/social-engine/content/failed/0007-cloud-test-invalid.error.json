@@ -1,0 +1,15 @@
+{
+  "kind": "data",
+  "errors": [
+    "Cannot render CharacterJourney:\n  character \"sasuke-uchia\" not found in \"naruto\".\n  Did you mean: sasuke-uchiha (char-sasuke)?"
+  ],
+  "failedAt": "2026-10-01T09:06:22.243Z",
+  "sourceFile": "0007-cloud-test-invalid.json",
+  "config": {
+    "template": "characterJourney",
+    "anime": "naruto",
+    "subject": "sasuke-uchia",
+    "locale": "it",
+    "notes": "TEST FIXTURE: deliberately wrong subject to verify partial-failure handling in the cloud. Delete after the test."
+  }
+}
