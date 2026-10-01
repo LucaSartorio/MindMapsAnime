@@ -8,23 +8,6 @@ export const REPO_ROOT = path.resolve(ENGINE_DIR, '../..');
 export const PUBLIC_DIR = path.join(REPO_ROOT, 'public');
 export const SRC_DIR = path.join(REPO_ROOT, 'src');
 export const ENTRY_POINT = path.join(ENGINE_DIR, 'index.ts');
-export const OUTPUT_DIR = path.join(ENGINE_DIR, 'output');
-export const CACHE_DIR = path.join(ENGINE_DIR, '.cache');
-
-/**
- * Output file for a render: `--out` when given (must be .mp4), otherwise
- * `output/<subject>-<template>-<locale>.mp4` — same config → same path.
- */
-export function resolveOutputPath(baseName: string, out?: string): string {
-  if (out) {
-    const abs = path.resolve(process.cwd(), out);
-    if (path.extname(abs).toLowerCase() !== '.mp4') throw new Error(`--out must end with .mp4 (got ${out})`);
-    return abs;
-  }
-  if (!/^[a-z0-9][a-z0-9-]*$/.test(baseName)) throw new Error(`Invalid output name "${baseName}"`);
-  return path.join(OUTPUT_DIR, `${baseName}.mp4`);
-}
-
 /**
  * Headless Chromium for Remotion: `--browser-executable`, then
  * `SOCIAL_BROWSER_EXECUTABLE`, then a Playwright "headless shell" if one is

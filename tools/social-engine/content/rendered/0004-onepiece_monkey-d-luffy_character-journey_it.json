@@ -1,0 +1,12 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "id": "character-journey:onepiece:monkey-d-luffy",
+  "status": "queued",
+  "template": "characterJourney",
+  "anime": "onepiece",
+  "subject": "monkey-d-luffy",
+  "locale": "it",
+  "durationSeconds": 23,
+  "hook": "Segui il viaggio di Monkey D. Rufy nel mondo di One Piece.",
+  "cta": "Esplora il percorso completo su AniMapVerse"
+}

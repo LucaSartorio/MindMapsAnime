@@ -12,35 +12,18 @@ import { VERTICAL_FORMAT } from '../config/defaults';
 import type { CharacterJourneyConfig } from '../config/types';
 import { buildCharacterJourney, pickHighlights, sampleStops } from '../data/journey';
 import { loadWorld } from '../data/world';
-import { RenderDataError, SocialEngineError } from '../lib/errors';
+import { RenderDataError } from '../lib/errors';
 import { resolveCharacterJourney } from '../templates/characterJourney/resolve';
 import { maxStopsForDuration, planJourney } from '../templates/characterJourney/timeline';
 import { TEMPLATE_LIST, findTemplate, parseSocialVideoConfig } from '../templates/registry';
-import { ENGINE_DIR, OUTPUT_DIR, REPO_ROOT, SRC_DIR, resolveOutputPath } from './paths';
+import { ENGINE_DIR, REPO_ROOT, SRC_DIR } from '../render/paths';
+import { fileStemFor } from '../pipeline/ids';
+import { rejects, section, test } from './harness';
 
-let passed = 0;
-const failures: string[] = [];
-async function test(name: string, fn: () => void | Promise<void>) {
-  try {
-    await fn();
-    passed++;
-    console.log(`  ✔ ${name}`);
-  } catch (err) {
-    failures.push(name);
-    console.log(`  ✖ ${name}\n    ${err instanceof Error ? err.message.split('\n').join('\n    ') : String(err)}`);
-  }
-}
-async function rejects(fn: () => Promise<unknown>, pattern: RegExp, type: new (...a: never[]) => Error = SocialEngineError) {
-  await assert.rejects(fn, (err: unknown) => {
-    assert.ok(err instanceof type, `expected ${type.name}, got ${String(err)}`);
-    assert.match((err as Error).message, pattern);
-    return true;
-  });
-}
 const itachi: CharacterJourneyConfig = { template: 'characterJourney', anime: 'naruto', subject: 'itachi-uchiha' };
 const example = JSON.parse(readFileSync(path.join(ENGINE_DIR, 'examples/itachi-character-journey.json'), 'utf8')) as unknown;
 
-console.log('\nconfig schema');
+section('config schema');
 await test('the Itachi example is valid', () => {
   const r = parseSocialVideoConfig(example);
   assert.ok(r.ok, r.ok ? '' : r.errors.join('; '));
@@ -65,15 +48,15 @@ await test('audio must be a local audio file path', () => {
   assert.ok(!parseSocialVideoConfig({ ...itachi, audio: { src: 'a.mp3', volume: 3 } }).ok);
   assert.ok(parseSocialVideoConfig({ ...itachi, audio: { src: 'music/a.mp3', volume: 0.5 } }).ok);
 });
-await test('every content/*.json config is valid', () => {
-  const dir = path.join(ENGINE_DIR, 'content');
-  for (const file of readdirSync(dir).filter((f) => f.endsWith('.json'))) {
+await test('every example config is a valid video config', () => {
+  const dir = path.join(ENGINE_DIR, 'examples');
+  for (const file of readdirSync(dir).filter((f) => f.endsWith('-character-journey.json'))) {
     const r = parseSocialVideoConfig(JSON.parse(readFileSync(path.join(dir, file), 'utf8')));
     assert.ok(r.ok, `${file}: ${r.ok ? '' : r.errors.join('; ')}`);
   }
 });
 
-console.log('\ntemplate registry');
+section('template registry');
 await test('ids, composition ids and CLI names are unique', () => {
   for (const key of ['id', 'compositionId', 'cliName'] as const) {
     const values = TEMPLATE_LIST.map((t) => t[key]);
@@ -88,7 +71,7 @@ await test('lookup by id or CLI name; each example parses', () => {
   }
 });
 
-console.log('\ndata resolution');
+section('data resolution');
 await test('anime: internal slug and public URL slug both resolve', async () => {
   assert.equal((await loadWorld('hunterxhunter')).world.slug, 'hunterxhunter');
   assert.equal((await loadWorld('hunter-x-hunter')).world.slug, 'hunterxhunter');
@@ -141,12 +124,12 @@ await test('template is generic: Sasuke, Kakashi, Luffy, Zoro, Gon, Killua all r
   }
 });
 
-console.log('\nlocalization');
+section('localization');
 await test('it/en: hook, CTA, names and URLs come out in the right language', async () => {
   const en = await resolveCharacterJourney({ ...itachi, locale: 'en' });
   const it = await resolveCharacterJourney({ ...itachi, locale: 'it' });
-  assert.equal(en.hook, "Follow Itachi Uchiha's journey across the Naruto world");
-  assert.equal(it.hook, 'Segui il viaggio di Itachi Uchiha nel mondo di Naruto');
+  assert.equal(en.hook, "Follow Itachi Uchiha's journey across the Naruto world.");
+  assert.equal(it.hook, 'Segui il viaggio di Itachi Uchiha nel mondo di Naruto.');
   assert.notEqual(en.cta, it.cta);
   assert.equal(en.map.name, 'Elemental Nations');
   assert.equal(it.map.name, 'Nazioni Elementali');
@@ -165,7 +148,7 @@ await test('explicit hook/CTA override the defaults', async () => {
   assert.equal(data.cta, 'Custom CTA');
 });
 
-console.log('\nrhythm & sampling');
+section('rhythm & sampling');
 await test('sampling keeps first/last, respects max and order', () => {
   const stops = Array.from({ length: 10 }, (_, i) => ({ score: i % 3, id: i, anchorLocationId: `p${i}` }));
   const out = sampleStops(stops, 5);
@@ -207,16 +190,15 @@ await test('short videos animate fewer stops', () => {
   assert.ok(maxStopsForDuration(12) >= 2);
 });
 
-console.log('\noutput & isolation');
-await test('output path is deterministic and under output/', async () => {
+section('output & isolation');
+await test('resolution is deterministic and exposes a canonical identity', async () => {
   const t = findTemplate('characterJourney');
   assert.ok(t);
-  const a = await t.resolve(itachi);
+  const a = await t.resolve({ ...itachi, subject: 'char-itachi' });
   const b = await t.resolve(itachi);
-  assert.equal(a.outputBaseName, 'itachi-uchiha-character-journey-en');
-  assert.deepEqual(a.props, b.props);
-  assert.equal(resolveOutputPath(a.outputBaseName), path.join(OUTPUT_DIR, 'itachi-uchiha-character-journey-en.mp4'));
-  assert.throws(() => resolveOutputPath('x', 'video.mov'));
+  assert.deepEqual(a.identity, { anime: 'naruto', subject: 'itachi-uchiha', subjectName: 'Itachi Uchiha', locale: 'en' });
+  assert.deepEqual(a.props.data, b.props.data);
+  assert.equal(fileStemFor({ contentId: 'character-journey:naruto:itachi-uchiha', locale: 'en', variant: null }), 'naruto_itachi-uchiha_character-journey_en');
 });
 await test('renders, caches and media files are gitignored', () => {
   const gi = readFileSync(path.join(REPO_ROOT, '.gitignore'), 'utf8');
@@ -240,5 +222,3 @@ await test('the public app never imports the engine or Remotion', () => {
   assert.ok(!Object.keys(pkg.dependencies).some((d) => d === 'remotion' || d.startsWith('@remotion/')), 'Remotion must stay a devDependency');
 });
 
-console.log(`\n${failures.length ? '✖' : '✔'} ${passed} passed, ${failures.length} failed\n`);
-if (failures.length) process.exit(1);

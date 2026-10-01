@@ -1,0 +1,4733 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-01T07:24:14.051Z",
+  "locales": [
+    "en",
+    "it"
+  ],
+  "idFormat": "<template>:<anime>:<subject>  (one video = id@locale[+variant])",
+  "templates": {
+    "characterJourney": {
+      "cliName": "character-journey",
+      "description": "A character's journey across the world map: hook → map → animated route → key locations → CTA.",
+      "durationSeconds": {
+        "min": 12,
+        "max": 60,
+        "default": 22
+      },
+      "summary": {
+        "naruto": {
+          "available": 29,
+          "excluded": 221
+        },
+        "hunterxhunter": {
+          "available": 30,
+          "excluded": 126
+        },
+        "onepiece": {
+          "available": 50,
+          "excluded": 367
+        },
+        "dragonball": {
+          "available": 21,
+          "excluded": 82
+        },
+        "blackclover": {
+          "available": 50,
+          "excluded": 87
+        }
+      },
+      "items": [
+        {
+          "id": "character-journey:naruto:naruto-uzumaki",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "naruto-uzumaki",
+          "displayName": {
+            "en": "Naruto Uzumaki",
+            "it": "Naruto Uzumaki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "main",
+            "places": 14,
+            "animatedStops": 6,
+            "arcs": 10
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:naruto:sasuke-uchiha",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "sasuke-uchiha",
+          "displayName": {
+            "en": "Sasuke Uchiha",
+            "it": "Sasuke Uchiha"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "main",
+            "places": 15,
+            "animatedStops": 6,
+            "arcs": 10
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:naruto:sakura-haruno",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "sakura-haruno",
+          "displayName": {
+            "en": "Sakura Haruno",
+            "it": "Sakura Haruno"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "main",
+            "places": 9,
+            "animatedStops": 6,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:naruto:kakashi-hatake",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "kakashi-hatake",
+          "displayName": {
+            "en": "Kakashi Hatake",
+            "it": "Kakashi Hatake"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "main",
+            "places": 9,
+            "animatedStops": 6,
+            "arcs": 6
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:naruto:jiraiya",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "jiraiya",
+          "displayName": {
+            "en": "Jiraiya",
+            "it": "Jiraiya"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 19,
+          "facts": {
+            "importance": "major",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:naruto:tsunade-senju",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "tsunade-senju",
+          "displayName": {
+            "en": "Tsunade Senju",
+            "it": "Tsunade Senju"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 21,
+          "facts": {
+            "importance": "major",
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:naruto:orochimaru",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "orochimaru",
+          "displayName": {
+            "en": "Orochimaru",
+            "it": "Orochimaru"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "major",
+            "places": 7,
+            "animatedStops": 6,
+            "arcs": 4
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:naruto:minato-namikaze",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "minato-namikaze",
+          "displayName": {
+            "en": "Minato Namikaze",
+            "it": "Minato Namikaze"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:naruto:kushina-uzumaki",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "kushina-uzumaki",
+          "displayName": {
+            "en": "Kushina Uzumaki",
+            "it": "Kushina Uzumaki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 0
+          },
+          "renderedLocales": [
+            "en"
+          ],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": true,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:naruto:hashirama-senju",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "hashirama-senju",
+          "displayName": {
+            "en": "Hashirama Senju",
+            "it": "Hashirama Senju"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:naruto:shikamaru-nara",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "shikamaru-nara",
+          "displayName": {
+            "en": "Shikamaru Nara",
+            "it": "Shikamaru Nara"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 19,
+          "facts": {
+            "importance": "supporting",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:naruto:hinata-hyuga",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "hinata-hyuga",
+          "displayName": {
+            "en": "Hinata Hyuga",
+            "it": "Hinata Hyuga"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:naruto:rock-lee",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "rock-lee",
+          "displayName": {
+            "en": "Rock Lee",
+            "it": "Rock Lee"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 0
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:naruto:neji-hyuga",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "neji-hyuga",
+          "displayName": {
+            "en": "Neji Hyuga",
+            "it": "Neji Hyuga"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:naruto:danzo-shimura",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "danzo-shimura",
+          "displayName": {
+            "en": "Danzo Shimura",
+            "it": "Danzo Shimura"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:naruto:gaara",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "gaara",
+          "displayName": {
+            "en": "Gaara",
+            "it": "Gaara"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "major",
+            "places": 8,
+            "animatedStops": 6,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:naruto:kisame-hoshigaki",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "kisame-hoshigaki",
+          "displayName": {
+            "en": "Kisame Hoshigaki",
+            "it": "Kisame Hoshigaki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 19,
+          "facts": {
+            "importance": "major",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:naruto:killer-b",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "killer-b",
+          "displayName": {
+            "en": "Killer B",
+            "it": "Killer B"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:naruto:itachi-uchiha",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "itachi-uchiha",
+          "displayName": {
+            "en": "Itachi Uchiha",
+            "it": "Itachi Uchiha"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 21,
+          "facts": {
+            "importance": "major",
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 4
+          },
+          "renderedLocales": [
+            "en",
+            "it"
+          ],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": true,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:naruto:madara-uchiha",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "madara-uchiha",
+          "displayName": {
+            "en": "Madara Uchiha",
+            "it": "Madara Uchiha"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "main",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:naruto:obito-uchiha",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "obito-uchiha",
+          "displayName": {
+            "en": "Obito Uchiha",
+            "it": "Obito Uchiha"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "main",
+            "places": 6,
+            "animatedStops": 6,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:naruto:pain-nagato",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "pain-nagato",
+          "displayName": {
+            "en": "Pain / Nagato",
+            "it": "Pain / Nagato"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:naruto:konan",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "konan",
+          "displayName": {
+            "en": "Konan",
+            "it": "Konan"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "supporting",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:naruto:deidara",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "deidara",
+          "displayName": {
+            "en": "Deidara",
+            "it": "Deidara"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 19,
+          "facts": {
+            "importance": "major",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:naruto:sasori",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "sasori",
+          "displayName": {
+            "en": "Sasori",
+            "it": "Sasori"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:naruto:hidan",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "hidan",
+          "displayName": {
+            "en": "Hidan",
+            "it": "Hidan"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:naruto:kakuzu",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "kakuzu",
+          "displayName": {
+            "en": "Kakuzu",
+            "it": "Kakuzu"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:naruto:kabuto-yakushi",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "kabuto-yakushi",
+          "displayName": {
+            "en": "Kabuto Yakushi",
+            "it": "Kabuto Yakushi"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 19,
+          "facts": {
+            "importance": "major",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:naruto:tazuna",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "tazuna",
+          "displayName": {
+            "en": "Tazuna",
+            "it": "Tazuna"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:gon-freecss",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "gon-freecss",
+          "displayName": {
+            "en": "Gon Freecss",
+            "it": "Gon Freecss"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "main",
+            "places": 9,
+            "animatedStops": 6,
+            "arcs": 7
+          },
+          "renderedLocales": [
+            "en"
+          ],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": true,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:killua-zoldyck",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "killua-zoldyck",
+          "displayName": {
+            "en": "Killua Zoldyck",
+            "it": "Killua Zoldyck"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "main",
+            "places": 9,
+            "animatedStops": 6,
+            "arcs": 6
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:kurapika",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "kurapika",
+          "displayName": {
+            "en": "Kurapika",
+            "it": "Kurapika"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 19,
+          "facts": {
+            "importance": "main",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 4
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:leorio-paradinight",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "leorio-paradinight",
+          "displayName": {
+            "en": "Leorio Paradinight",
+            "it": "Leorio Paradinight"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 19,
+          "facts": {
+            "importance": "main",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 4
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:hisoka-morow",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "hisoka-morow",
+          "displayName": {
+            "en": "Hisoka Morow",
+            "it": "Hisoka Morow"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 21,
+          "facts": {
+            "importance": "major",
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 5
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:illumi-zoldyck",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "illumi-zoldyck",
+          "displayName": {
+            "en": "Illumi Zoldyck",
+            "it": "Illumi Zoldyck"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:chrollo-lucilfer",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "chrollo-lucilfer",
+          "displayName": {
+            "en": "Chrollo Lucilfer",
+            "it": "Chrollo Lucilfer"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:ging-freecss",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "ging-freecss",
+          "displayName": {
+            "en": "Ging Freecss",
+            "it": "Ging Freecss"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 19,
+          "facts": {
+            "importance": "major",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:silva-zoldyck",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "silva-zoldyck",
+          "displayName": {
+            "en": "Silva Zoldyck",
+            "it": "Silva Zoldyck"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:zeno-zoldyck",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "zeno-zoldyck",
+          "displayName": {
+            "en": "Zeno Zoldyck",
+            "it": "Zeno Zoldyck"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:machi-komacine",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "machi-komacine",
+          "displayName": {
+            "en": "Machi Komacine",
+            "it": "Machi Komacine"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:feitan-portor",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "feitan-portor",
+          "displayName": {
+            "en": "Feitan Portor",
+            "it": "Feitan Portor"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:phinks-magcub",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "phinks-magcub",
+          "displayName": {
+            "en": "Phinks Magcub",
+            "it": "Phinks Magcub"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:nobunaga-hazama",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "nobunaga-hazama",
+          "displayName": {
+            "en": "Nobunaga Hazama",
+            "it": "Nobunaga Hazama"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:meruem",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "meruem",
+          "displayName": {
+            "en": "Meruem",
+            "it": "Meruem"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:neferpitou",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "neferpitou",
+          "displayName": {
+            "en": "Neferpitou",
+            "it": "Neferpitou"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:shaiapouf",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "shaiapouf",
+          "displayName": {
+            "en": "Shaiapouf",
+            "it": "Shaiapouf"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:menthuthuyoupi",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "menthuthuyoupi",
+          "displayName": {
+            "en": "Menthuthuyoupi",
+            "it": "Menthuthuyoupi"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:cheadle-yorkshire",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "cheadle-yorkshire",
+          "displayName": {
+            "en": "Cheadle Yorkshire",
+            "it": "Cheadle Yorkshire"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:pariston-hill",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "pariston-hill",
+          "displayName": {
+            "en": "Pariston Hill",
+            "it": "Pariston Hill"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:beyond-netero",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "beyond-netero",
+          "displayName": {
+            "en": "Beyond Netero",
+            "it": "Beyond Netero"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "supporting",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:tserriednich-hui-guo-rou",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "tserriednich-hui-guo-rou",
+          "displayName": {
+            "en": "Tserriednich Hui Guo Rou",
+            "it": "Tserriednich Hui Guo Rou"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:tonpa",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "tonpa",
+          "displayName": {
+            "en": "Tonpa",
+            "it": "Tonpa"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:pokkle",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "pokkle",
+          "displayName": {
+            "en": "Pokkle",
+            "it": "Pokkle"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:ponzu",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "ponzu",
+          "displayName": {
+            "en": "Ponzu",
+            "it": "Ponzu"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:mizaistom-nana",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "mizaistom-nana",
+          "displayName": {
+            "en": "Mizaistom Nana",
+            "it": "Mizaistom Nana"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:woble-hui-guo-rou",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "woble-hui-guo-rou",
+          "displayName": {
+            "en": "Woble Hui Guo Rou",
+            "it": "Woble Hui Guo Rou"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:oito-hui-guo-rou",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "oito-hui-guo-rou",
+          "displayName": {
+            "en": "Oito Hui Guo Rou",
+            "it": "Oito Hui Guo Rou"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:hinrigh-biganduffno",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "hinrigh-biganduffno",
+          "displayName": {
+            "en": "Hinrigh Biganduffno",
+            "it": "Hinrigh Biganduffno"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:hunterxhunter:morena-prudo",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "morena-prudo",
+          "displayName": {
+            "en": "Morena Prudo",
+            "it": "Morena Prudo"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:monkey-d-luffy",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "monkey-d-luffy",
+          "displayName": {
+            "en": "Monkey D. Luffy",
+            "it": "Monkey D. Rufy"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "main",
+            "places": 29,
+            "animatedStops": 6,
+            "arcs": 22
+          },
+          "renderedLocales": [
+            "it"
+          ],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": true,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:roronoa-zoro",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "roronoa-zoro",
+          "displayName": {
+            "en": "Roronoa Zoro",
+            "it": "Roronoa Zoro"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "main",
+            "places": 17,
+            "animatedStops": 6,
+            "arcs": 15
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:nami",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "nami",
+          "displayName": {
+            "en": "Nami",
+            "it": "Nami"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "main",
+            "places": 13,
+            "animatedStops": 6,
+            "arcs": 11
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:usopp",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "usopp",
+          "displayName": {
+            "en": "Usopp",
+            "it": "Usop"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "main",
+            "places": 15,
+            "animatedStops": 6,
+            "arcs": 12
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:sanji",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "sanji",
+          "displayName": {
+            "en": "Sanji",
+            "it": "Sanji"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "main",
+            "places": 15,
+            "animatedStops": 6,
+            "arcs": 13
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:shanks",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "shanks",
+          "displayName": {
+            "en": "Shanks",
+            "it": "Shanks"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:coby",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "coby",
+          "displayName": {
+            "en": "Coby",
+            "it": "Coby"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:smoker",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "smoker",
+          "displayName": {
+            "en": "Smoker",
+            "it": "Smoker"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "supporting",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:monkey-d-garp",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "monkey-d-garp",
+          "displayName": {
+            "en": "Monkey D. Garp",
+            "it": "Monkey D. Garp"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:bagy",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "bagy",
+          "displayName": {
+            "en": "Bagy",
+            "it": "Bagy"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:dracule-mihawk",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "dracule-mihawk",
+          "displayName": {
+            "en": "Dracule Mihawk",
+            "it": "Dracule Mihawk"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:arlong",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "arlong",
+          "displayName": {
+            "en": "Arlong",
+            "it": "Arlong"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:bell-mere",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "bell-mere",
+          "displayName": {
+            "en": "Bell-mère",
+            "it": "Bell-mère"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:bartholomew-kuma",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "bartholomew-kuma",
+          "displayName": {
+            "en": "Bartholomew Kuma",
+            "it": "Bartholomew Kuma"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 21,
+          "facts": {
+            "importance": "major",
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 5
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:jewelry-bonney",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "jewelry-bonney",
+          "displayName": {
+            "en": "Jewelry Bonney",
+            "it": "Jewelry Bonney"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 19,
+          "facts": {
+            "importance": "major",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:trafalgar-d-water-law",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "trafalgar-d-water-law",
+          "displayName": {
+            "en": "Trafalgar D. Water Law",
+            "it": "Trafalgar D. Water Law"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "major",
+            "places": 7,
+            "animatedStops": 6,
+            "arcs": 4
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:donquijote-doflamingo",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "donquijote-doflamingo",
+          "displayName": {
+            "en": "Donquijote Doflamingo",
+            "it": "Donquijote Doflamingo"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:nico-robin",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "nico-robin",
+          "displayName": {
+            "en": "Nico Robin",
+            "it": "Nico Robin"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "main",
+            "places": 8,
+            "animatedStops": 6,
+            "arcs": 6
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:edward-newgate",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "edward-newgate",
+          "displayName": {
+            "en": "Edward Newgate",
+            "it": "Edward Newgate"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:marshall-d-teach",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "marshall-d-teach",
+          "displayName": {
+            "en": "Marshall D. Teach",
+            "it": "Marshall D. Teach"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:boa-hancock",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "boa-hancock",
+          "displayName": {
+            "en": "Boa Hancock",
+            "it": "Boa Hancock"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:emporio-ivankov",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "emporio-ivankov",
+          "displayName": {
+            "en": "Emporio Ivankov",
+            "it": "Emporio Ivankov"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:jinbe",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "jinbe",
+          "displayName": {
+            "en": "Jinbe",
+            "it": "Jinbe"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "main",
+            "places": 6,
+            "animatedStops": 6,
+            "arcs": 5
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:tony-tony-chopper",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "tony-tony-chopper",
+          "displayName": {
+            "en": "Tony Tony Chopper",
+            "it": "Tony Tony Chopper"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "main",
+            "places": 8,
+            "animatedStops": 6,
+            "arcs": 6
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:crocodile",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "crocodile",
+          "displayName": {
+            "en": "Crocodile",
+            "it": "Crocodile"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:nefertari-vivi",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "nefertari-vivi",
+          "displayName": {
+            "en": "Nefertari Vivi",
+            "it": "Nefertari Vivi"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 19,
+          "facts": {
+            "importance": "major",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:nefertari-cobra",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "nefertari-cobra",
+          "displayName": {
+            "en": "Nefertari Cobra",
+            "it": "Nefertari Cobra"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:enel",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "enel",
+          "displayName": {
+            "en": "Enel",
+            "it": "Enel"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:franky",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "franky",
+          "displayName": {
+            "en": "Franky",
+            "it": "Franky"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "main",
+            "places": 7,
+            "animatedStops": 6,
+            "arcs": 4
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:rob-lucci",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "rob-lucci",
+          "displayName": {
+            "en": "Rob Lucci",
+            "it": "Rob Lucci"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:kaku",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "kaku",
+          "displayName": {
+            "en": "Kaku",
+            "it": "Kaku"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:blueno",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "blueno",
+          "displayName": {
+            "en": "Blueno",
+            "it": "Blueno"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:brook",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "brook",
+          "displayName": {
+            "en": "Brook",
+            "it": "Brook"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 19,
+          "facts": {
+            "importance": "main",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:tashigi",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "tashigi",
+          "displayName": {
+            "en": "Tashigi",
+            "it": "Tashigi"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:sabo",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "sabo",
+          "displayName": {
+            "en": "Sabo",
+            "it": "Sabo"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:charlotte-linlin",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "charlotte-linlin",
+          "displayName": {
+            "en": "Charlotte Linlin",
+            "it": "Charlotte Linlin"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:kaido",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "kaido",
+          "displayName": {
+            "en": "Kaido",
+            "it": "Kaido"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:kinemon",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "kinemon",
+          "displayName": {
+            "en": "Kin'emon",
+            "it": "Kin'emon"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:jaygarcia-saturn",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "jaygarcia-saturn",
+          "displayName": {
+            "en": "Jaygarcia Saturn",
+            "it": "Jaygarcia Saturn"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:borsalino",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "borsalino",
+          "displayName": {
+            "en": "Borsalino",
+            "it": "Borsalino"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:eustass-kid",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "eustass-kid",
+          "displayName": {
+            "en": "Eustass Kid",
+            "it": "Eustass Kid"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 0
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:killer",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "killer",
+          "displayName": {
+            "en": "Killer",
+            "it": "Killer"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 0
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:basil-hawkins",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "basil-hawkins",
+          "displayName": {
+            "en": "Basil Hawkins",
+            "it": "Basil Hawkins"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 0
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:x-drake",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "x-drake",
+          "displayName": {
+            "en": "X Drake",
+            "it": "X Drake"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 0
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:scratchmen-apoo",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "scratchmen-apoo",
+          "displayName": {
+            "en": "Scratchmen Apoo",
+            "it": "Scratchmen Apoo"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 0
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:capone-bege",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "capone-bege",
+          "displayName": {
+            "en": "Capone Bege",
+            "it": "Capone Bege"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 0
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:urouge",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "urouge",
+          "displayName": {
+            "en": "Urouge",
+            "it": "Urouge"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 0
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:gol-d-roger",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "gol-d-roger",
+          "displayName": {
+            "en": "Gol D. Roger",
+            "it": "Gol D. Roger"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:kuzan",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "kuzan",
+          "displayName": {
+            "en": "Kuzan",
+            "it": "Kuzan"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:onepiece:marco",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "marco",
+          "displayName": {
+            "en": "Marco",
+            "it": "Marco"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:dragonball:goku",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "goku",
+          "displayName": {
+            "en": "Goku",
+            "it": "Son Goku"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "main",
+            "places": 32,
+            "animatedStops": 6,
+            "arcs": 16
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:dragonball:vegeta",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "vegeta",
+          "displayName": {
+            "en": "Vegeta",
+            "it": "Vegeta"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "main",
+            "places": 11,
+            "animatedStops": 6,
+            "arcs": 8
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:dragonball:gohan",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "gohan",
+          "displayName": {
+            "en": "Gohan",
+            "it": "Son Gohan"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "main",
+            "places": 6,
+            "animatedStops": 6,
+            "arcs": 4
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:dragonball:future-trunks",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "future-trunks",
+          "displayName": {
+            "en": "Future Trunks",
+            "it": "Trunks del Futuro"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:dragonball:piccolo",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "piccolo",
+          "displayName": {
+            "en": "Piccolo",
+            "it": "Piccolo"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "main",
+            "places": 7,
+            "animatedStops": 6,
+            "arcs": 5
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:dragonball:krillin",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "krillin",
+          "displayName": {
+            "en": "Krillin",
+            "it": "Crilin"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 21,
+          "facts": {
+            "importance": "major",
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 5
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:dragonball:tien-shinhan",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "tien-shinhan",
+          "displayName": {
+            "en": "Tien Shinhan",
+            "it": "Tenshinhan"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "supporting",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:dragonball:chiaotzu",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "chiaotzu",
+          "displayName": {
+            "en": "Chiaotzu",
+            "it": "Jiaozi"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:dragonball:bulma",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "bulma",
+          "displayName": {
+            "en": "Bulma",
+            "it": "Bulma"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:dragonball:master-roshi",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "master-roshi",
+          "displayName": {
+            "en": "Master Roshi",
+            "it": "Genio delle Tartarughe"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:dragonball:frieza",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "frieza",
+          "displayName": {
+            "en": "Frieza",
+            "it": "Freezer"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 19,
+          "facts": {
+            "importance": "main",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 4
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:dragonball:cell",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "cell",
+          "displayName": {
+            "en": "Cell",
+            "it": "Cell"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 19,
+          "facts": {
+            "importance": "main",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:dragonball:majin-buu",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "majin-buu",
+          "displayName": {
+            "en": "Majin Buu",
+            "it": "Majin Bu"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "main",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:dragonball:yajirobe",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "yajirobe",
+          "displayName": {
+            "en": "Yajirobe",
+            "it": "Yajirobe"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:dragonball:android-17",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "android-17",
+          "displayName": {
+            "en": "Android 17",
+            "it": "C-17"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:dragonball:android-18",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "android-18",
+          "displayName": {
+            "en": "Android 18",
+            "it": "C-18"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:dragonball:dr-gero",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "dr-gero",
+          "displayName": {
+            "en": "Dr. Gero",
+            "it": "Dr. Gero"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 19,
+          "facts": {
+            "importance": "supporting",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:dragonball:pan",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "pan",
+          "displayName": {
+            "en": "Pan",
+            "it": "Pan"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 21,
+          "facts": {
+            "importance": "major",
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:dragonball:dr-myuu",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "dr-myuu",
+          "displayName": {
+            "en": "Dr. Myuu",
+            "it": "Dr. Myuu"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "supporting",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:dragonball:baby",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "baby",
+          "displayName": {
+            "en": "Baby",
+            "it": "Baby"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "main",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:dragonball:hell-fighter-17",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "hell-fighter-17",
+          "displayName": {
+            "en": "Hell Fighter 17",
+            "it": "Hell Fighter 17"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:asta",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "asta",
+          "displayName": {
+            "en": "Asta",
+            "it": "Asta"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "main",
+            "places": 16,
+            "animatedStops": 6,
+            "arcs": 12
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:yami-sukehiro",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "yami-sukehiro",
+          "displayName": {
+            "en": "Yami Sukehiro",
+            "it": "Yami Sukehiro"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "main",
+            "places": 10,
+            "animatedStops": 6,
+            "arcs": 8
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:noelle-silva",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "noelle-silva",
+          "displayName": {
+            "en": "Noelle Silva",
+            "it": "Noelle Silva"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "main",
+            "places": 11,
+            "animatedStops": 6,
+            "arcs": 9
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:magna-swing",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "magna-swing",
+          "displayName": {
+            "en": "Magna Swing",
+            "it": "Magna Swing"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "supporting",
+            "places": 6,
+            "animatedStops": 6,
+            "arcs": 6
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:luck-voltia",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "luck-voltia",
+          "displayName": {
+            "en": "Luck Voltia",
+            "it": "Luck Voltia"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "supporting",
+            "places": 6,
+            "animatedStops": 6,
+            "arcs": 6
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:vanessa-enoteca",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "vanessa-enoteca",
+          "displayName": {
+            "en": "Vanessa Enoteca",
+            "it": "Vanessa Enoteca"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "supporting",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:charmy-pappitson",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "charmy-pappitson",
+          "displayName": {
+            "en": "Charmy Pappitson",
+            "it": "Charmy Pappitson"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "supporting",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:finral-roulacase",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "finral-roulacase",
+          "displayName": {
+            "en": "Finral Roulacase",
+            "it": "Finral Roulacase"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "supporting",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:zora-ideale",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "zora-ideale",
+          "displayName": {
+            "en": "Zora Ideale",
+            "it": "Zora Ideale"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:secre-swallowtail-nero",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "secre-swallowtail-nero",
+          "displayName": {
+            "en": "Secre Swallowtail (Nero)",
+            "it": "Secre Swallowtail (Nero)"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 19,
+          "facts": {
+            "importance": "supporting",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:nacht-faust",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "nacht-faust",
+          "displayName": {
+            "en": "Nacht Faust",
+            "it": "Nacht Faust"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:liebe",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "liebe",
+          "displayName": {
+            "en": "Liebe",
+            "it": "Liebe"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "major",
+            "places": 6,
+            "animatedStops": 6,
+            "arcs": 4
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:yuno-grinberryall",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "yuno-grinberryall",
+          "displayName": {
+            "en": "Yuno Grinberryall",
+            "it": "Yuno Grinberryall"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "main",
+            "places": 12,
+            "animatedStops": 6,
+            "arcs": 9
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:william-vangeance",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "william-vangeance",
+          "displayName": {
+            "en": "William Vangeance",
+            "it": "William Vangeance"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 19,
+          "facts": {
+            "importance": "major",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:langris-vaude",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "langris-vaude",
+          "displayName": {
+            "en": "Langris Vaude",
+            "it": "Langris Vaude"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "supporting",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:mimosa-vermillion",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "mimosa-vermillion",
+          "displayName": {
+            "en": "Mimosa Vermillion",
+            "it": "Mimosa Vermillion"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "supporting",
+            "places": 7,
+            "animatedStops": 6,
+            "arcs": 6
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:klaus-lunettes",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "klaus-lunettes",
+          "displayName": {
+            "en": "Klaus Lunettes",
+            "it": "Klaus Lunettes"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "supporting",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:nozel-silva",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "nozel-silva",
+          "displayName": {
+            "en": "Nozel Silva",
+            "it": "Nozel Silva"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:mereoleona-vermillion",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "mereoleona-vermillion",
+          "displayName": {
+            "en": "Mereoleona Vermillion",
+            "it": "Mereoleona Vermillion"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:leopold-vermillion",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "leopold-vermillion",
+          "displayName": {
+            "en": "Leopold Vermillion",
+            "it": "Leopold Vermillion"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "supporting",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:charlotte-roselei",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "charlotte-roselei",
+          "displayName": {
+            "en": "Charlotte Roselei",
+            "it": "Charlotte Roselei"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:jack-the-ripper",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "jack-the-ripper",
+          "displayName": {
+            "en": "Jack the Ripper",
+            "it": "Jack the Ripper"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:julius-novachrono",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "julius-novachrono",
+          "displayName": {
+            "en": "Julius Novachrono",
+            "it": "Julius Novachrono"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 21,
+          "facts": {
+            "importance": "major",
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 5
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:sister-lily",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "sister-lily",
+          "displayName": {
+            "en": "Sister Lily",
+            "it": "Sorella Lily"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 19,
+          "facts": {
+            "importance": "supporting",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:lumiere-silvamillion-clover",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "lumiere-silvamillion-clover",
+          "displayName": {
+            "en": "Lumiere Silvamillion Clover",
+            "it": "Lumiere Silvamillion Clover"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:patry-patolli",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "patry-patolli",
+          "displayName": {
+            "en": "Patry (Patolli)",
+            "it": "Patry (Patolli)"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 23,
+          "facts": {
+            "importance": "major",
+            "places": 6,
+            "animatedStops": 6,
+            "arcs": 6
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:licht",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "licht",
+          "displayName": {
+            "en": "Licht",
+            "it": "Licht"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:vetto-the-despair",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "vetto-the-despair",
+          "displayName": {
+            "en": "Vetto the Despair",
+            "it": "Vetto della Disperazione"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:fana-the-loveless",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "fana-the-loveless",
+          "displayName": {
+            "en": "Fana the Loveless",
+            "it": "Fana la Senza Amore"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:valtos",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "valtos",
+          "displayName": {
+            "en": "Valtos",
+            "it": "Valtos"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:sally",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "sally",
+          "displayName": {
+            "en": "Sally",
+            "it": "Sally"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:rades-spirito",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "rades-spirito",
+          "displayName": {
+            "en": "Rades Spirito",
+            "it": "Rades Spirito"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:lira",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "lira",
+          "displayName": {
+            "en": "Lira",
+            "it": "Lira"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:zagred",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "zagred",
+          "displayName": {
+            "en": "Zagred",
+            "it": "Zagred"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:dante-zogratis",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "dante-zogratis",
+          "displayName": {
+            "en": "Dante Zogratis",
+            "it": "Dante Zogratis"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:vanica-zogratis",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "vanica-zogratis",
+          "displayName": {
+            "en": "Vanica Zogratis",
+            "it": "Vanica Zogratis"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:zenon-zogratis",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "zenon-zogratis",
+          "displayName": {
+            "en": "Zenon Zogratis",
+            "it": "Zenon Zogratis"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 19,
+          "facts": {
+            "importance": "major",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:lucius-zogratis",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "lucius-zogratis",
+          "displayName": {
+            "en": "Lucius Zogratis",
+            "it": "Lucius Zogratis"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 21,
+          "facts": {
+            "importance": "major",
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:lucifero",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "lucifero",
+          "displayName": {
+            "en": "Lucifero",
+            "it": "Lucifero"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:beelzebub",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "beelzebub",
+          "displayName": {
+            "en": "Beelzebub",
+            "it": "Beelzebub"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:megicula",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "megicula",
+          "displayName": {
+            "en": "Megicula",
+            "it": "Megicula"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:mars",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "mars",
+          "displayName": {
+            "en": "Mars",
+            "it": "Mars"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 19,
+          "facts": {
+            "importance": "supporting",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:fana-diamond-kingdom",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "fana-diamond-kingdom",
+          "displayName": {
+            "en": "Fana (Diamond Kingdom)",
+            "it": "Fana (Regno di Diamond)"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 19,
+          "facts": {
+            "importance": "supporting",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:ladros",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "ladros",
+          "displayName": {
+            "en": "Ladros",
+            "it": "Ladros"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:lolopechka",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "lolopechka",
+          "displayName": {
+            "en": "Lolopechka",
+            "it": "Lolopechka"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 15,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:gaja",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "gaja",
+          "displayName": {
+            "en": "Gaja",
+            "it": "Gaja"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "minor",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:sylph-bell",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "sylph-bell",
+          "displayName": {
+            "en": "Sylph (Bell)",
+            "it": "Sylph (Bell)"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "supporting",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:undine",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "undine",
+          "displayName": {
+            "en": "Undine",
+            "it": "Undine"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 19,
+          "facts": {
+            "importance": "minor",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 3
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:ryuya-ryudo",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "ryuya-ryudo",
+          "displayName": {
+            "en": "Ryuya Ryudo",
+            "it": "Ryuya Ryudo"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "supporting",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        },
+        {
+          "id": "character-journey:blackclover:ichika-yami",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "ichika-yami",
+          "displayName": {
+            "en": "Ichika Yami",
+            "it": "Ichika Yami"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 17,
+          "facts": {
+            "importance": "supporting",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 2
+          },
+          "renderedLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false
+        }
+      ]
+    }
+  }
+}

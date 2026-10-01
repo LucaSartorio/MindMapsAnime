@@ -22,7 +22,7 @@ export type VideoCopy = {
 export const VIDEO_COPY: Record<VideoLocale, VideoCopy> = {
   en: {
     templateLabel: 'Character Journey',
-    hook: "Follow {name}'s journey across the {anime} world",
+    hook: "Follow {name}'s journey across the {anime} world.",
     cta: 'Explore the full journey on AniMapVerse',
     mapKicker: 'The map',
     stop: 'Stop',
@@ -35,8 +35,8 @@ export const VIDEO_COPY: Record<VideoLocale, VideoCopy> = {
   },
   it: {
     templateLabel: 'Il viaggio del personaggio',
-    hook: 'Segui il viaggio di {name} nel mondo di {anime}',
-    cta: "Esplora l'intero viaggio su AniMapVerse",
+    hook: 'Segui il viaggio di {name} nel mondo di {anime}.',
+    cta: 'Esplora il percorso completo su AniMapVerse',
     mapKicker: 'La mappa',
     stop: 'Tappa',
     stops: 'tappe',

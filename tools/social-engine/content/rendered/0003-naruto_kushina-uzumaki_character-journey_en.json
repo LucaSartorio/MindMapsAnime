@@ -1,0 +1,12 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "id": "character-journey:naruto:kushina-uzumaki",
+  "status": "queued",
+  "template": "characterJourney",
+  "anime": "naruto",
+  "subject": "kushina-uzumaki",
+  "locale": "en",
+  "durationSeconds": 15,
+  "hook": "Follow Kushina Uzumaki's journey across the Naruto world.",
+  "cta": "Explore the full journey on AniMapVerse"
+}

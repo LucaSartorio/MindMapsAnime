@@ -50,6 +50,8 @@ export function CharacterJourney({ data }: CharacterJourneyProps) {
   const introText = fadeWindow(frame, plan.intro.start + 6, plan.stops[0].arrive - 4, 12, 8);
   const recapAppear = progress(frame, plan.recap.start + Math.round(fps * 0.5), 12) * (1 - progress(frame, plan.cta.start, 8));
   const highlightSet = new Set(data.highlights);
+  // "0 story arcs" says nothing: the arcs count only appears when the data has arcs.
+  const statsLine = [`${data.stats.stops} ${copy.stops}`, ...(data.stats.arcs > 0 ? [`${data.stats.arcs} ${copy.arcs}`] : [])].join(' · ');
   const screen = points.map((p) => toScreen(camera, p, width));
   // Paint order: in the recap, key stops go on top of other pins at the same place.
   const markerOrder = points.map((_, i) => i).sort((a, b) => (inRecap ? Number(highlightSet.has(a)) - Number(highlightSet.has(b)) : 0) || a - b);
@@ -114,7 +116,7 @@ export function CharacterJourney({ data }: CharacterJourneyProps) {
           <Kicker>{copy.mapKicker}</Kicker>
           <div style={{ fontFamily: FONTS.display, fontWeight: 700, fontSize: 70, color: COLORS.white, lineHeight: 1.05, textShadow: '0 4px 24px rgba(0,0,0,0.8)' }}>{data.map.name}</div>
           <div style={{ fontFamily: FONTS.sans, fontWeight: 500, fontSize: 32, color: COLORS.ink200 }}>
-            {data.stats.stops} {copy.stops} · {data.stats.arcs} {copy.arcs}
+            {statsLine}
           </div>
         </div>
       )}
@@ -134,7 +136,7 @@ export function CharacterJourney({ data }: CharacterJourneyProps) {
 
       <KeyLocations
         heading={copy.keyLocations}
-        stats={`${data.stats.stops} ${copy.stops} · ${data.stats.arcs} ${copy.arcs}`}
+        stats={statsLine}
         start={plan.recap.start + Math.round(fps * 0.5)}
         appear={recapAppear}
         items={data.highlights.map((i) => {

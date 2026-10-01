@@ -41,6 +41,8 @@ export type CharacterJourney = {
   routeIds: string[];
   /** Stops before sampling. */
   candidateCount: number;
+  /** Route steps / events of the character whose place can't be drawn on the world map (no coordinates). */
+  unmappedCount: number;
 };
 
 const IMPORTANCE_SCORE: Record<string, number> = { main: 3, secondary: 2, minor: 1 };
@@ -84,6 +86,7 @@ export function buildCharacterJourney(
 
   // --- 1. route steps (authoritative order) ---------------------------------
   const candidates: Candidate[] = [];
+  let unmappedCount = 0;
   const coveredArcs = new Set<string>();
   // A route with no datable step can only be placed via its related arcs (the
   // earliest); if that's impossible too and other routes are dated, it is left
@@ -111,7 +114,10 @@ export function buildCharacterJourney(
     let prevKey = Number.NEGATIVE_INFINITY;
     steps.forEach((step, i) => {
       const projected = project(step.locationId);
-      if (!projected) return;
+      if (!projected) {
+        unmappedCount++;
+        return;
+      }
       const arcId = arcs[i];
       if (arcId && raw[i] !== undefined) coveredArcs.add(arcId);
       const own = raw[i] ?? (Number.isFinite(prevKey) ? prevKey + 0.5 : firstKnown >= 0 ? (raw[firstKnown] as number) - (firstKnown - i) * 0.01 : i);
@@ -140,7 +146,10 @@ export function buildCharacterJourney(
       const locId = eventLocationId(ev);
       if (order === undefined || !locId) continue;
       const projected = project(locId);
-      if (!projected) continue;
+      if (!projected) {
+        unmappedCount++;
+        continue;
+      }
       candidates.push({
         key: order * 1000 + 500 + ev.order / 1000,
         source: 'event',
@@ -176,6 +185,7 @@ export function buildCharacterJourney(
     stops: merged.map(({ key: _key, ...stop }) => stop),
     routeIds: routes.filter((r) => !anyDatable || datable(r)).map((r) => r.id),
     candidateCount: merged.length,
+    unmappedCount,
   };
 }
 
