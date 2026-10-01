@@ -7,7 +7,7 @@
 
 /** Languages a social video can be rendered in = the datasets' source languages. */
 export type VideoLocale = 'it' | 'en';
-export const VIDEO_LOCALES: readonly VideoLocale[] = ['it', 'en'];
+export const VIDEO_LOCALES: readonly VideoLocale[] = ['en', 'it'];
 
 /** Template ids (camelCase, as written in JSON configs). */
 export type TemplateId = 'characterJourney';

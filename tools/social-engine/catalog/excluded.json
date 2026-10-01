@@ -1,0 +1,6195 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-01T07:24:14.051Z",
+  "templates": {
+    "characterJourney": {
+      "byReason": {
+        "single_location": 251,
+        "no_journey_data": 632
+      },
+      "items": [
+        {
+          "anime": "naruto",
+          "subject": "hiruzen-sarutobi",
+          "subjectId": "char-hiruzen",
+          "displayName": "Hiruzen Sarutobi",
+          "reason": "single_location"
+        },
+        {
+          "anime": "naruto",
+          "subject": "tobirama-senju",
+          "subjectId": "char-tobirama",
+          "displayName": "Tobirama Senju",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "mito-uzumaki",
+          "subjectId": "char-mito",
+          "displayName": "Mito Uzumaki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "choji-akimichi",
+          "subjectId": "char-choji",
+          "displayName": "Choji Akimichi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "ino-yamanaka",
+          "subjectId": "char-ino",
+          "displayName": "Ino Yamanaka",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "kiba-inuzuka",
+          "subjectId": "char-kiba",
+          "displayName": "Kiba Inuzuka",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "shino-aburame",
+          "subjectId": "char-shino",
+          "displayName": "Shino Aburame",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "tenten",
+          "subjectId": "char-tenten",
+          "displayName": "Tenten",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "sai",
+          "subjectId": "char-sai",
+          "displayName": "Sai",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "yamato",
+          "subjectId": "char-yamato",
+          "displayName": "Yamato",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "konohamaru-sarutobi",
+          "subjectId": "char-konohamaru",
+          "displayName": "Konohamaru Sarutobi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "iruka-umino",
+          "subjectId": "char-iruka",
+          "displayName": "Iruka Umino",
+          "reason": "single_location"
+        },
+        {
+          "anime": "naruto",
+          "subject": "might-guy",
+          "subjectId": "char-guy",
+          "displayName": "Might Guy",
+          "reason": "single_location"
+        },
+        {
+          "anime": "naruto",
+          "subject": "asuma-sarutobi",
+          "subjectId": "char-asuma",
+          "displayName": "Asuma Sarutobi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "kurenai-yuhi",
+          "subjectId": "char-kurenai",
+          "displayName": "Kurenai Yuhi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "anko-mitarashi",
+          "subjectId": "char-anko",
+          "displayName": "Anko Mitarashi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "shizune",
+          "subjectId": "char-shizune",
+          "displayName": "Shizune",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "ebisu",
+          "subjectId": "char-ebisu",
+          "displayName": "Ebisu",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "ibiki-morino",
+          "subjectId": "char-ibiki",
+          "displayName": "Ibiki Morino",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "inoichi-yamanaka",
+          "subjectId": "char-inoichi",
+          "displayName": "Inoichi Yamanaka",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "shikaku-nara",
+          "subjectId": "char-shikaku",
+          "displayName": "Shikaku Nara",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "choza-akimichi",
+          "subjectId": "char-choza",
+          "displayName": "Choza Akimichi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "hiashi-hyuga",
+          "subjectId": "char-hiashi",
+          "displayName": "Hiashi Hyuga",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "hizashi-hyuga",
+          "subjectId": "char-hizashi",
+          "displayName": "Hizashi Hyuga",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "temari",
+          "subjectId": "char-temari",
+          "displayName": "Temari",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "kankuro",
+          "subjectId": "char-kankuro",
+          "displayName": "Kankuro",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "baki",
+          "subjectId": "char-baki",
+          "displayName": "Baki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "rasa",
+          "subjectId": "char-rasa",
+          "displayName": "Rasa",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "lady-chiyo",
+          "subjectId": "char-chiyo",
+          "displayName": "Lady Chiyo",
+          "reason": "single_location"
+        },
+        {
+          "anime": "naruto",
+          "subject": "yashamaru",
+          "subjectId": "char-yashamaru",
+          "displayName": "Yashamaru",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "zabuza-momochi",
+          "subjectId": "char-zabuza",
+          "displayName": "Zabuza Momochi",
+          "reason": "single_location"
+        },
+        {
+          "anime": "naruto",
+          "subject": "haku",
+          "subjectId": "char-haku",
+          "displayName": "Haku",
+          "reason": "single_location"
+        },
+        {
+          "anime": "naruto",
+          "subject": "mei-terumi",
+          "subjectId": "char-mei",
+          "displayName": "Mei Terumi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "yagura-karatachi",
+          "subjectId": "char-yagura",
+          "displayName": "Yagura Karatachi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "chojuro",
+          "subjectId": "char-chojuro",
+          "displayName": "Chojuro",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "suigetsu-hozuki",
+          "subjectId": "char-suigetsu",
+          "displayName": "Suigetsu Hozuki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "mangetsu-hozuki",
+          "subjectId": "char-mangetsu",
+          "displayName": "Mangetsu Hozuki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "ao",
+          "subjectId": "char-ao",
+          "displayName": "Ao",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "a",
+          "subjectId": "char-a",
+          "displayName": "A",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "darui",
+          "subjectId": "char-darui",
+          "displayName": "Darui",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "yugito-nii",
+          "subjectId": "char-yugito",
+          "displayName": "Yugito Nii",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "onoki",
+          "subjectId": "char-onoki",
+          "displayName": "Onoki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "kurotsuchi",
+          "subjectId": "char-kurotsuchi",
+          "displayName": "Kurotsuchi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "mu",
+          "subjectId": "char-mu",
+          "displayName": "Mu",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "roshi",
+          "subjectId": "char-roshi",
+          "displayName": "Roshi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "han",
+          "subjectId": "char-han",
+          "displayName": "Han",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "utakata",
+          "subjectId": "char-utakata",
+          "displayName": "Utakata",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "fu",
+          "subjectId": "char-fu",
+          "displayName": "Fu",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "izuna-uchiha",
+          "subjectId": "char-izuna",
+          "displayName": "Izuna Uchiha",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "shisui-uchiha",
+          "subjectId": "char-shisui",
+          "displayName": "Shisui Uchiha",
+          "reason": "single_location"
+        },
+        {
+          "anime": "naruto",
+          "subject": "fugaku-uchiha",
+          "subjectId": "char-fugaku",
+          "displayName": "Fugaku Uchiha",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "mikoto-uchiha",
+          "subjectId": "char-mikoto",
+          "displayName": "Mikoto Uchiha",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "yahiko",
+          "subjectId": "char-yahiko",
+          "displayName": "Yahiko",
+          "reason": "single_location"
+        },
+        {
+          "anime": "naruto",
+          "subject": "zetsu",
+          "subjectId": "char-zetsu",
+          "displayName": "Zetsu",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "karin-uzumaki",
+          "subjectId": "char-karin",
+          "displayName": "Karin Uzumaki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "jugo",
+          "subjectId": "char-jugo",
+          "displayName": "Jugo",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "kimimaro-kaguya",
+          "subjectId": "char-kimimaro",
+          "displayName": "Kimimaro Kaguya",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "kaguya-otsutsuki",
+          "subjectId": "char-kaguya",
+          "displayName": "Kaguya Otsutsuki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "hagoromo-otsutsuki",
+          "subjectId": "char-hagoromo",
+          "displayName": "Hagoromo Otsutsuki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "hamura-otsutsuki",
+          "subjectId": "char-hamura",
+          "displayName": "Hamura Otsutsuki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "indra-otsutsuki",
+          "subjectId": "char-indra",
+          "displayName": "Indra Otsutsuki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "asura-otsutsuki",
+          "subjectId": "char-asura",
+          "displayName": "Asura Otsutsuki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "tayuya",
+          "subjectId": "char-tayuya",
+          "displayName": "Tayuya",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "sakon",
+          "subjectId": "char-sakon",
+          "displayName": "Sakon",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "jirobo",
+          "subjectId": "char-jirobo",
+          "displayName": "Jirōbō",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "kidomaru",
+          "subjectId": "char-kidomaru",
+          "displayName": "Kidōmaru",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "dosu-kinuta",
+          "subjectId": "char-dosu",
+          "displayName": "Dosu Kinuta",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "kin-tsuchi",
+          "subjectId": "char-kin",
+          "displayName": "Kin Tsuchi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "zaku-abumi",
+          "subjectId": "char-zaku",
+          "displayName": "Zaku Abumi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "samui",
+          "subjectId": "char-samui",
+          "displayName": "Samui",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "karui",
+          "subjectId": "char-karui",
+          "displayName": "Karui",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "atsui",
+          "subjectId": "char-atsui",
+          "displayName": "Atsui",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "c",
+          "subjectId": "char-c",
+          "displayName": "C",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "akatsuchi",
+          "subjectId": "char-akatsuchi",
+          "displayName": "Akatsuchi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "ameyuri-ringo",
+          "subjectId": "char-ameyuri-ringo",
+          "displayName": "Ameyuri Ringo",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "jinin-akebino",
+          "subjectId": "char-jinin-akebino",
+          "displayName": "Jinin Akebino",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "kushimaru-kuriarare",
+          "subjectId": "char-kushimaru-kuriarare",
+          "displayName": "Kushimaru Kuriarare",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "fuguki-suikazan",
+          "subjectId": "char-fuguki-suikazan",
+          "displayName": "Fuguki Suikazan",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "tajima-uchiha",
+          "subjectId": "char-tajima",
+          "displayName": "Tajima Uchiha",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "izumi-uchiha",
+          "subjectId": "char-izumi-uchiha",
+          "displayName": "Izumi Uchiha",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "kagami-uchiha",
+          "subjectId": "char-kagami-uchiha",
+          "displayName": "Kagami Uchiha",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "dan-kato",
+          "subjectId": "char-dan-kato",
+          "displayName": "Dan Katō",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "nawaki",
+          "subjectId": "char-nawaki",
+          "displayName": "Nawaki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "kurama",
+          "subjectId": "char-kurama",
+          "displayName": "Kurama",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "shukaku",
+          "subjectId": "char-shukaku",
+          "displayName": "Shukaku",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "matatabi",
+          "subjectId": "char-matatabi",
+          "displayName": "Matatabi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "son-goku",
+          "subjectId": "char-son-goku",
+          "displayName": "Son Gokū",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "gyuki",
+          "subjectId": "char-gyuki",
+          "displayName": "Gyūki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "ebizo",
+          "subjectId": "char-ebizo",
+          "displayName": "Ebizō",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "pakura",
+          "subjectId": "char-pakura",
+          "displayName": "Pakura",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "gari",
+          "subjectId": "char-gari",
+          "displayName": "Gari",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "toroi",
+          "subjectId": "char-toroi",
+          "displayName": "Toroi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "gengetsu-hozuki",
+          "subjectId": "char-gengetsu",
+          "displayName": "Gengetsu Hōzuki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "fu-yamanaka",
+          "subjectId": "char-fuu-yamanaka",
+          "displayName": "Fū Yamanaka",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "torune-aburame",
+          "subjectId": "char-torune",
+          "displayName": "Torune Aburame",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "shibuki",
+          "subjectId": "char-shibuki",
+          "displayName": "Shibuki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "hanabi-hyuga",
+          "subjectId": "char-hanabi",
+          "displayName": "Hanabi Hyūga",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "moegi-kazamatsuri",
+          "subjectId": "char-moegi",
+          "displayName": "Moegi Kazamatsuri",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "udon-ise",
+          "subjectId": "char-udon",
+          "displayName": "Udon Ise",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "kotetsu-hagane",
+          "subjectId": "char-kotetsu",
+          "displayName": "Kotetsu Hagane",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "izumo-kamizuki",
+          "subjectId": "char-izumo",
+          "displayName": "Izumo Kamizuki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "kinkaku",
+          "subjectId": "char-kinkaku",
+          "displayName": "Kinkaku",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "ginkaku",
+          "subjectId": "char-ginkaku",
+          "displayName": "Ginkaku",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "koharu-utatane",
+          "subjectId": "char-koharu",
+          "displayName": "Koharu Utatane",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "homura-mitokado",
+          "subjectId": "char-homura",
+          "displayName": "Homura Mitokado",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "tsume-inuzuka",
+          "subjectId": "char-tsume",
+          "displayName": "Tsume Inuzuka",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "hana-inuzuka",
+          "subjectId": "char-hana-inuzuka",
+          "displayName": "Hana Inuzuka",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "shibi-aburame",
+          "subjectId": "char-shibi-aburame",
+          "displayName": "Shibi Aburame",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "mebuki-haruno",
+          "subjectId": "char-mebuki",
+          "displayName": "Mebuki Haruno",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "kizashi-haruno",
+          "subjectId": "char-kizashi",
+          "displayName": "Kizashi Haruno",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "teuchi",
+          "subjectId": "char-teuchi",
+          "displayName": "Teuchi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "ayame",
+          "subjectId": "char-ayame",
+          "displayName": "Ayame",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "nagato-uzumaki",
+          "subjectId": "char-nagato",
+          "displayName": "Nagato Uzumaki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "hanzo",
+          "subjectId": "char-hanzo",
+          "displayName": "Hanzō",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "monzaemon-chikamatsu",
+          "subjectId": "char-monzaemon",
+          "displayName": "Monzaemon Chikamatsu",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "omoi",
+          "subjectId": "char-omoi",
+          "displayName": "Omoi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "mabui",
+          "subjectId": "char-mabui",
+          "displayName": "Mabui",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "raiga-kurosuki",
+          "subjectId": "char-raiga",
+          "displayName": "Raiga Kurosuki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "mifune",
+          "subjectId": "char-mifune",
+          "displayName": "Mifune",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "fukasaku",
+          "subjectId": "char-fukasaku",
+          "displayName": "Fukasaku",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "shima",
+          "subjectId": "char-shima",
+          "displayName": "Shima",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "gamabunta",
+          "subjectId": "char-gamabunta",
+          "displayName": "Gamabunta",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "gamakichi",
+          "subjectId": "char-gamakichi",
+          "displayName": "Gamakichi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "manda",
+          "subjectId": "char-manda",
+          "displayName": "Manda",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "katsuyu",
+          "subjectId": "char-katsuyu",
+          "displayName": "Katsuyu",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "boruto-uzumaki",
+          "subjectId": "char-boruto",
+          "displayName": "Boruto Uzumaki",
+          "reason": "single_location"
+        },
+        {
+          "anime": "naruto",
+          "subject": "himawari-uzumaki",
+          "subjectId": "char-himawari",
+          "displayName": "Himawari Uzumaki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "sarada-uchiha",
+          "subjectId": "char-sarada",
+          "displayName": "Sarada Uchiha",
+          "reason": "single_location"
+        },
+        {
+          "anime": "naruto",
+          "subject": "mitsuki",
+          "subjectId": "char-mitsuki",
+          "displayName": "Mitsuki",
+          "reason": "single_location"
+        },
+        {
+          "anime": "naruto",
+          "subject": "shikadai-nara",
+          "subjectId": "char-shikadai",
+          "displayName": "Shikadai Nara",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "inojin-yamanaka",
+          "subjectId": "char-inojin",
+          "displayName": "Inojin Yamanaka",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "chocho-akimichi",
+          "subjectId": "char-chocho",
+          "displayName": "Chocho Akimichi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "toneri-otsutsuki",
+          "subjectId": "char-toneri",
+          "displayName": "Toneri Otsutsuki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "iwabe-yuino",
+          "subjectId": "char-iwabe",
+          "displayName": "Iwabe Yuino",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "sumire-kakei",
+          "subjectId": "char-sumire",
+          "displayName": "Sumire Kakei",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "metal-lee",
+          "subjectId": "char-metal-lee",
+          "displayName": "Metal Lee",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "momoshiki-otsutsuki",
+          "subjectId": "char-momoshiki",
+          "displayName": "Momoshiki Ōtsutsuki",
+          "reason": "single_location"
+        },
+        {
+          "anime": "naruto",
+          "subject": "kinshiki-otsutsuki",
+          "subjectId": "char-kinshiki",
+          "displayName": "Kinshiki Ōtsutsuki",
+          "reason": "single_location"
+        },
+        {
+          "anime": "naruto",
+          "subject": "isshiki-otsutsuki",
+          "subjectId": "char-isshiki",
+          "displayName": "Isshiki Ōtsutsuki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "urashiki-otsutsuki",
+          "subjectId": "char-urashiki",
+          "displayName": "Urashiki Ōtsutsuki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "kawaki",
+          "subjectId": "char-kawaki",
+          "displayName": "Kawaki",
+          "reason": "single_location"
+        },
+        {
+          "anime": "naruto",
+          "subject": "kashin-koji",
+          "subjectId": "char-kashin-koji",
+          "displayName": "Kashin Koji",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "amado-sanzu",
+          "subjectId": "char-amado",
+          "displayName": "Amado Sanzu",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "delta",
+          "subjectId": "char-delta",
+          "displayName": "Delta",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "boro",
+          "subjectId": "char-boro",
+          "displayName": "Boro",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "code",
+          "subjectId": "char-code",
+          "displayName": "Code",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "eida",
+          "subjectId": "char-eida",
+          "displayName": "Eida",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "daemon",
+          "subjectId": "char-daemon",
+          "displayName": "Daemon",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "butsuma-senju",
+          "subjectId": "char-butsuma",
+          "displayName": "Butsuma Senju",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "kawarama-senju",
+          "subjectId": "char-kawarama",
+          "displayName": "Kawarama Senju",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "itama-senju",
+          "subjectId": "char-itama",
+          "displayName": "Itama Senju",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "hayate-gekko",
+          "subjectId": "char-hayate",
+          "displayName": "Hayate Gekkō",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "yugao-uzuki",
+          "subjectId": "char-yugao",
+          "displayName": "Yūgao Uzuki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "genma-shiranui",
+          "subjectId": "char-genma",
+          "displayName": "Genma Shiranui",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "raido-namiashi",
+          "subjectId": "char-raido",
+          "displayName": "Raidō Namiashi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "aoba-yamashiro",
+          "subjectId": "char-aoba",
+          "displayName": "Aoba Yamashiro",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "akamaru",
+          "subjectId": "char-akamaru",
+          "displayName": "Akamaru",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "pakkun",
+          "subjectId": "char-pakkun",
+          "displayName": "Pakkun",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "enma",
+          "subjectId": "char-enma",
+          "displayName": "Enma",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "aoda",
+          "subjectId": "char-aoda",
+          "displayName": "Aoda",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "gamamaru",
+          "subjectId": "char-gamamaru",
+          "displayName": "Gamamaru",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "denki-kaminarimon",
+          "subjectId": "char-denki",
+          "displayName": "Denki Kaminarimon",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "wasabi-izuno",
+          "subjectId": "char-wasabi",
+          "displayName": "Wasabi Izuno",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "namida-suzumeno",
+          "subjectId": "char-namida",
+          "displayName": "Namida Suzumeno",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "mirai-sarutobi",
+          "subjectId": "char-mirai",
+          "displayName": "Mirai Sarutobi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "shinki",
+          "subjectId": "char-shinki",
+          "displayName": "Shinki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "yodo",
+          "subjectId": "char-yodo",
+          "displayName": "Yodo",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "araya",
+          "subjectId": "char-araya",
+          "displayName": "Araya",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "yurui",
+          "subjectId": "char-yurui",
+          "displayName": "Yurui",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "kagura-karatachi",
+          "subjectId": "char-kagura",
+          "displayName": "Kagura Karatachi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "victor",
+          "subjectId": "char-victor",
+          "displayName": "Victor",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "deepa",
+          "subjectId": "char-deepa",
+          "displayName": "Deepa",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "ao-kara-outer",
+          "subjectId": "char-ao-kara",
+          "displayName": "Ao (Kara Outer)",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "araumi-funato",
+          "subjectId": "char-araumi",
+          "displayName": "Araumi Funato",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "isari-funato",
+          "subjectId": "char-isari",
+          "displayName": "Isari Funato",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "kobuna-funato",
+          "subjectId": "char-kobuna",
+          "displayName": "Kobuna Funato",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "katasuke-tono",
+          "subjectId": "char-katasuke",
+          "displayName": "Katasuke Tōno",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "hiruga",
+          "subjectId": "char-hiruga",
+          "displayName": "Hiruga",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "isobu",
+          "subjectId": "char-isobu",
+          "displayName": "Isobu",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "kokuo",
+          "subjectId": "char-kokuo",
+          "displayName": "Kokuō",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "saiken",
+          "subjectId": "char-saiken",
+          "displayName": "Saiken",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "chomei",
+          "subjectId": "char-chomei",
+          "displayName": "Chōmei",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "ten-tails-jubi",
+          "subjectId": "char-ten-tails",
+          "displayName": "Ten-Tails (Jūbi)",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "gedo-mazo",
+          "subjectId": "char-gedo-mazo",
+          "displayName": "Gedō Mazō",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "third-raikage",
+          "subjectId": "char-third-raikage",
+          "displayName": "Third Raikage",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "third-kazekage",
+          "subjectId": "char-third-kazekage",
+          "displayName": "Third Kazekage",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "ishikawa-first-tsuchikage",
+          "subjectId": "char-first-tsuchikage",
+          "displayName": "Ishikawa (First Tsuchikage)",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "byakuren-first-mizukage",
+          "subjectId": "char-first-mizukage",
+          "displayName": "Byakuren (First Mizukage)",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "reto-first-kazekage",
+          "subjectId": "char-first-kazekage",
+          "displayName": "Reto (First Kazekage)",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "juzo-biwa",
+          "subjectId": "char-juzo-biwa",
+          "displayName": "Jūzō Biwa",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "jinpachi-munashi",
+          "subjectId": "char-jinpachi-munashi",
+          "displayName": "Jinpachi Munashi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "sakumo-hatake",
+          "subjectId": "char-sakumo",
+          "displayName": "Sakumo Hatake",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "kitsuchi",
+          "subjectId": "char-kitsuchi",
+          "displayName": "Kitsuchi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "black-zetsu",
+          "subjectId": "char-black-zetsu",
+          "displayName": "Black Zetsu",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "ukon",
+          "subjectId": "char-ukon",
+          "displayName": "Ukon",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "chiriku",
+          "subjectId": "char-chiriku",
+          "displayName": "Chiriku",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "shin",
+          "subjectId": "char-shin-uchiha",
+          "displayName": "Shin",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "tonton",
+          "subjectId": "char-tonton",
+          "displayName": "Tonton",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "ibuse",
+          "subjectId": "char-ibuse",
+          "displayName": "Ibuse",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "gamaken",
+          "subjectId": "char-gamaken",
+          "displayName": "Gamaken",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "gamahiro",
+          "subjectId": "char-gamahiro",
+          "displayName": "Gamahiro",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "garaga",
+          "subjectId": "char-garaga",
+          "displayName": "Garaga",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "shamon-second-kazekage",
+          "subjectId": "char-second-kazekage",
+          "displayName": "Shamon (Second Kazekage)",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "first-raikage",
+          "subjectId": "char-first-raikage",
+          "displayName": "First Raikage",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "second-raikage",
+          "subjectId": "char-second-raikage",
+          "displayName": "Second Raikage",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "shion",
+          "subjectId": "char-shion",
+          "displayName": "Shion",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "koyuki-kazahana",
+          "subjectId": "char-koyuki",
+          "displayName": "Koyuki Kazahana",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "amaru",
+          "subjectId": "char-amaru",
+          "displayName": "Amaru",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "shinno",
+          "subjectId": "char-shinno",
+          "displayName": "Shinnō",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "hiruko",
+          "subjectId": "char-hiruko",
+          "displayName": "Hiruko",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "menma-uzumaki",
+          "subjectId": "char-menma",
+          "displayName": "Menma Uzumaki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "rin-nohara",
+          "subjectId": "char-rin",
+          "displayName": "Rin Nohara",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "tsunami",
+          "subjectId": "char-tsunami",
+          "displayName": "Tsunami",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "inari",
+          "subjectId": "char-inari",
+          "displayName": "Inari",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "kaiza",
+          "subjectId": "char-kaiza",
+          "displayName": "Kaiza",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "gato",
+          "subjectId": "char-gato",
+          "displayName": "Gatō",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "idate-morino",
+          "subjectId": "char-idate-morino",
+          "displayName": "Idate Morino",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "nekobaa",
+          "subjectId": "char-nekobaa",
+          "displayName": "Nekobaa",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "yota",
+          "subjectId": "char-yota",
+          "displayName": "Yota",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "tamaki",
+          "subjectId": "char-tamaki",
+          "displayName": "Tamaki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "hanare",
+          "subjectId": "char-hanare",
+          "displayName": "Hanare",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "isaac-netero",
+          "subjectId": "char-hxh-netero",
+          "displayName": "Isaac Netero",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "biscuit-krueger",
+          "subjectId": "char-hxh-biscuit",
+          "displayName": "Biscuit Krueger",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "kite",
+          "subjectId": "char-hxh-kite",
+          "displayName": "Kite",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "mito-freecss",
+          "subjectId": "char-hxh-mito",
+          "displayName": "Mito Freecss",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "kikyo-zoldyck",
+          "subjectId": "char-hxh-kikyo",
+          "displayName": "Kikyo Zoldyck",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "milluki-zoldyck",
+          "subjectId": "char-hxh-milluki",
+          "displayName": "Milluki Zoldyck",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "alluka-zoldyck",
+          "subjectId": "char-hxh-alluka",
+          "displayName": "Alluka Zoldyck",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "kalluto-zoldyck",
+          "subjectId": "char-hxh-kalluto",
+          "displayName": "Kalluto Zoldyck",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "maha-zoldyck",
+          "subjectId": "char-hxh-maha",
+          "displayName": "Maha Zoldyck",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "canary",
+          "subjectId": "char-hxh-canary",
+          "displayName": "Canary",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "uvogin",
+          "subjectId": "char-hxh-uvogin",
+          "displayName": "Uvogin",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "pakunoda",
+          "subjectId": "char-hxh-pakunoda",
+          "displayName": "Pakunoda",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "shalnark",
+          "subjectId": "char-hxh-shalnark",
+          "displayName": "Shalnark",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "shizuku-murasaki",
+          "subjectId": "char-hxh-shizuku",
+          "displayName": "Shizuku Murasaki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "franklin-bordeau",
+          "subjectId": "char-hxh-franklin",
+          "displayName": "Franklin Bordeau",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "bonolenov-ndongo",
+          "subjectId": "char-hxh-bonolenov",
+          "displayName": "Bonolenov Ndongo",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "kortopi",
+          "subjectId": "char-hxh-kortopi",
+          "displayName": "Kortopi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "komugi",
+          "subjectId": "char-hxh-komugi",
+          "displayName": "Komugi",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "wing",
+          "subjectId": "char-hxh-wing",
+          "displayName": "Wing",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "zushi",
+          "subjectId": "char-hxh-zushi",
+          "displayName": "Zushi",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "morel-mackernasey",
+          "subjectId": "char-hxh-morel",
+          "displayName": "Morel Mackernasey",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "knov",
+          "subjectId": "char-hxh-knov",
+          "displayName": "Knov",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "knuckle-bine",
+          "subjectId": "char-hxh-knuckle",
+          "displayName": "Knuckle Bine",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "shoot-mcmahon",
+          "subjectId": "char-hxh-shoot",
+          "displayName": "Shoot McMahon",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "palm-siberia",
+          "subjectId": "char-hxh-palm",
+          "displayName": "Palm Siberia",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "satotz",
+          "subjectId": "char-hxh-satotz",
+          "displayName": "Satotz",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "hanzo",
+          "subjectId": "char-hxh-hanzo",
+          "displayName": "Hanzo",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "genthru",
+          "subjectId": "char-hxh-genthru",
+          "displayName": "Genthru",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "razor",
+          "subjectId": "char-hxh-razor",
+          "displayName": "Razor",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "tsezguerra",
+          "subjectId": "char-hxh-tsezguerra",
+          "displayName": "Tsezguerra",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "colt",
+          "subjectId": "char-hxh-colt",
+          "displayName": "Colt",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "welfin",
+          "subjectId": "char-hxh-welfin",
+          "displayName": "Welfin",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "ikalgo",
+          "subjectId": "char-hxh-ikalgo",
+          "displayName": "Ikalgo",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "meleoron",
+          "subjectId": "char-hxh-meleoron",
+          "displayName": "Meleoron",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "gotoh",
+          "subjectId": "char-hxh-gotoh",
+          "displayName": "Gotoh",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "melody",
+          "subjectId": "char-hxh-melody",
+          "displayName": "Melody",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "neon-nostrade",
+          "subjectId": "char-hxh-neon",
+          "displayName": "Neon Nostrade",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "menchi",
+          "subjectId": "char-hxh-menchi",
+          "displayName": "Menchi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "buhara",
+          "subjectId": "char-hxh-buhara",
+          "displayName": "Buhara",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "beans",
+          "subjectId": "char-hxh-beans",
+          "displayName": "Beans",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "botobai-gigante",
+          "subjectId": "char-hxh-botobai",
+          "displayName": "Botobai Gigante",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "kanzai",
+          "subjectId": "char-hxh-kanzai",
+          "displayName": "Kanzai",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "cluck",
+          "subjectId": "char-hxh-cluck",
+          "displayName": "Cluck",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "saccho-kobayakawa",
+          "subjectId": "char-hxh-saccho",
+          "displayName": "Saccho Kobayakawa",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "saiyu",
+          "subjectId": "char-hxh-saiyu",
+          "displayName": "Saiyu",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "gel",
+          "subjectId": "char-hxh-gel",
+          "displayName": "Gel",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "piyon",
+          "subjectId": "char-hxh-piyon",
+          "displayName": "Piyon",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "ginta",
+          "subjectId": "char-hxh-ginta",
+          "displayName": "Ginta",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "nasubi-hui-guo-rou",
+          "subjectId": "char-hxh-nasubi",
+          "displayName": "Nasubi Hui Guo Rou",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "benjamin-hui-guo-rou",
+          "subjectId": "char-hxh-benjamin",
+          "displayName": "Benjamin Hui Guo Rou",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "camilla-hui-guo-rou",
+          "subjectId": "char-hxh-camilla",
+          "displayName": "Camilla Hui Guo Rou",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "zhang-lei-hui-guo-rou",
+          "subjectId": "char-hxh-zhang-lei",
+          "displayName": "Zhang Lei Hui Guo Rou",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "halkenburg-hui-guo-rou",
+          "subjectId": "char-hxh-halkenburg",
+          "displayName": "Halkenburg Hui Guo Rou",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "kacho-hui-guo-rou",
+          "subjectId": "char-hxh-kacho",
+          "displayName": "Kacho Hui Guo Rou",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "fugetsu-hui-guo-rou",
+          "subjectId": "char-hxh-fugetsu",
+          "displayName": "Fugetsu Hui Guo Rou",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "zazan",
+          "subjectId": "char-hxh-zazan",
+          "displayName": "Zazan",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "cheetu",
+          "subjectId": "char-hxh-cheetu",
+          "displayName": "Cheetu",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "leol",
+          "subjectId": "char-hxh-leol",
+          "displayName": "Leol",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "goreinu",
+          "subjectId": "char-hxh-goreinu",
+          "displayName": "Goreinu",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "light-nostrade",
+          "subjectId": "char-hxh-light-nostrade",
+          "displayName": "Light Nostrade",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "nanika",
+          "subjectId": "char-hxh-nanika",
+          "displayName": "Nanika",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "tsubone",
+          "subjectId": "char-hxh-tsubone",
+          "displayName": "Tsubone",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "amane",
+          "subjectId": "char-hxh-amane",
+          "displayName": "Amane",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "gido",
+          "subjectId": "char-hxh-gido",
+          "displayName": "Gido",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "sadaso",
+          "subjectId": "char-hxh-sadaso",
+          "displayName": "Sadaso",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "riehlvelt",
+          "subjectId": "char-hxh-riehlvelt",
+          "displayName": "Riehlvelt",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "squala",
+          "subjectId": "char-hxh-squala",
+          "displayName": "Squala",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "basho",
+          "subjectId": "char-hxh-basho",
+          "displayName": "Basho",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "abengane",
+          "subjectId": "char-hxh-abengane",
+          "displayName": "Abengane",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "sub",
+          "subjectId": "char-hxh-sub",
+          "displayName": "Sub",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "bara",
+          "subjectId": "char-hxh-bara",
+          "displayName": "Bara",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "gyro",
+          "subjectId": "char-hxh-gyro",
+          "displayName": "Gyro",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "bizeff",
+          "subjectId": "char-hxh-bizeff",
+          "displayName": "Bizeff",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "tubeppa-hui-guo-rou",
+          "subjectId": "char-hxh-tubeppa",
+          "displayName": "Tubeppa Hui Guo Rou",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "tyson-hui-guo-rou",
+          "subjectId": "char-hxh-tyson",
+          "displayName": "Tyson Hui Guo Rou",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "luzurus-hui-guo-rou",
+          "subjectId": "char-hxh-luzurus",
+          "displayName": "Luzurus Hui Guo Rou",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "sale-sale-hui-guo-rou",
+          "subjectId": "char-hxh-sale-sale",
+          "displayName": "Sale-sale Hui Guo Rou",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "momoze-hui-guo-rou",
+          "subjectId": "char-hxh-momoze",
+          "displayName": "Momoze Hui Guo Rou",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "marayam-hui-guo-rou",
+          "subjectId": "char-hxh-marayam",
+          "displayName": "Marayam Hui Guo Rou",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "bill",
+          "subjectId": "char-hxh-bill",
+          "displayName": "Bill",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "theta",
+          "subjectId": "char-hxh-theta",
+          "displayName": "Theta",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "bodoro",
+          "subjectId": "char-hxh-bodoro",
+          "displayName": "Bodoro",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "johness-the-dissector",
+          "subjectId": "char-hxh-johness",
+          "displayName": "Johness the Dissector",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "geretta",
+          "subjectId": "char-hxh-geretta",
+          "displayName": "Geretta",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "mike",
+          "subjectId": "char-hxh-mike",
+          "displayName": "Mike",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "pairo",
+          "subjectId": "char-hxh-pairo",
+          "displayName": "Pairo",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "dalzollene",
+          "subjectId": "char-hxh-dalzollene",
+          "displayName": "Dalzollene",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "baise",
+          "subjectId": "char-hxh-baise",
+          "displayName": "Baise",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "rammot",
+          "subjectId": "char-hxh-rammot",
+          "displayName": "Rammot",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "spinner-clow",
+          "subjectId": "char-hxh-spinner-clow",
+          "displayName": "Spinner Clow",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "unma-hui-guo-rou",
+          "subjectId": "char-hxh-unma",
+          "displayName": "Unma Hui Guo Rou",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "duazul-hui-guo-rou",
+          "subjectId": "char-hxh-duazul",
+          "displayName": "Duazul Hui Guo Rou",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "tang-zhao-li-hui-guo-rou",
+          "subjectId": "char-hxh-tangzhao",
+          "displayName": "Tang Zhao Li Hui Guo Rou",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "katrono-hui-guo-rou",
+          "subjectId": "char-hxh-katrono",
+          "displayName": "Katrono Hui Guo Rou",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "swinko-swinko-hui-guo-rou",
+          "subjectId": "char-hxh-swinkoswinko",
+          "displayName": "Swinko-Swinko Hui Guo Rou",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "seiko-hui-guo-rou",
+          "subjectId": "char-hxh-seiko",
+          "displayName": "Seiko Hui Guo Rou",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "sevanti-hui-guo-rou",
+          "subjectId": "char-hxh-sevanti",
+          "displayName": "Sevanti Hui Guo Rou",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "kastro",
+          "subjectId": "char-hxh-kastro",
+          "displayName": "Kastro",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "lippo",
+          "subjectId": "char-hxh-lippo",
+          "displayName": "Lippo",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "zepile",
+          "subjectId": "char-hxh-zepile",
+          "displayName": "Zepile",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "bushidora-ambitious",
+          "subjectId": "char-hxh-bushidora",
+          "displayName": "Bushidora Ambitious",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "battera",
+          "subjectId": "char-hxh-battera",
+          "displayName": "Battera",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "dwun",
+          "subjectId": "char-hxh-dwun",
+          "displayName": "Dwun",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "yunju",
+          "subjectId": "char-hxh-yunju",
+          "displayName": "Yunju",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "hina",
+          "subjectId": "char-hxh-hina",
+          "displayName": "Hina",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "bloster",
+          "subjectId": "char-hxh-bloster",
+          "displayName": "Bloster",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "eliza",
+          "subjectId": "char-hxh-eliza",
+          "displayName": "Eliza",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "hassam",
+          "subjectId": "char-hxh-hassam",
+          "displayName": "Hassam",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "masta",
+          "subjectId": "char-hxh-masta",
+          "displayName": "Masta",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "khara",
+          "subjectId": "char-hxh-khara",
+          "displayName": "Khara",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "linssen",
+          "subjectId": "char-hxh-linssen",
+          "displayName": "Linssen",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "flutter",
+          "subjectId": "char-hxh-flutter",
+          "displayName": "Flutter",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "bihorn",
+          "subjectId": "char-hxh-bihorn",
+          "displayName": "Bihorn",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "pell-cocco",
+          "subjectId": "char-hxh-pell",
+          "displayName": "Pell (Cocco)",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "pike",
+          "subjectId": "char-hxh-pike",
+          "displayName": "Pike",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "reina",
+          "subjectId": "char-hxh-reina",
+          "displayName": "Reina",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "sayird",
+          "subjectId": "char-hxh-sayird",
+          "displayName": "Sayird",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "babimyna",
+          "subjectId": "char-hxh-babimyna",
+          "displayName": "Babimyna",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "belerainte",
+          "subjectId": "char-hxh-belerainte",
+          "displayName": "Belerainte",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "salkov",
+          "subjectId": "char-hxh-salkov",
+          "displayName": "Salkov",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "list",
+          "subjectId": "char-hxh-list",
+          "displayName": "List",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "brion",
+          "subjectId": "char-hxh-brion",
+          "displayName": "Brion",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "ai",
+          "subjectId": "char-hxh-ai",
+          "displayName": "Ai",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "hellbell",
+          "subjectId": "char-hxh-hellbell",
+          "displayName": "Hellbell",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "pap",
+          "subjectId": "char-hxh-pap",
+          "displayName": "Pap",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "zobae-disease",
+          "subjectId": "char-hxh-zobae",
+          "displayName": "Zobae Disease",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "morgan",
+          "subjectId": "char-op-morgan",
+          "displayName": "Morgan",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "monkey-d-dragon",
+          "subjectId": "char-op-dragon",
+          "displayName": "Monkey D. Dragon",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "kuro",
+          "subjectId": "char-op-kuro",
+          "displayName": "Kuro",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "don-krieg",
+          "subjectId": "char-op-don-krieg",
+          "displayName": "Don Krieg",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "zeff",
+          "subjectId": "char-op-zeff",
+          "displayName": "Zeff",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "donquijote-rosinante",
+          "subjectId": "char-op-corazon",
+          "displayName": "Donquijote Rosinante",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "nico-olvia",
+          "subjectId": "char-op-olvia",
+          "displayName": "Nico Olvia",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "professor-clover",
+          "subjectId": "char-op-clover",
+          "displayName": "Professor Clover",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "jaguar-d-saul",
+          "subjectId": "char-op-saul",
+          "displayName": "Jaguar D. Saul",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "rocks-d-xebec",
+          "subjectId": "char-op-rocks",
+          "displayName": "Rocks D. Xebec",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "portgas-d-ace",
+          "subjectId": "char-op-ace",
+          "displayName": "Portgas D. Ace",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "sengoku",
+          "subjectId": "char-op-sengoku",
+          "displayName": "Sengoku",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "sakazuki",
+          "subjectId": "char-op-akainu",
+          "displayName": "Sakazuki",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "magellan",
+          "subjectId": "char-op-magellan",
+          "displayName": "Magellan",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "fisher-tiger",
+          "subjectId": "char-op-fisher-tiger",
+          "displayName": "Fisher Tiger",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "shirahoshi",
+          "subjectId": "char-op-shirahoshi",
+          "displayName": "Shirahoshi",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "hody-jones",
+          "subjectId": "char-op-hody",
+          "displayName": "Hody Jones",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "silvers-rayleigh",
+          "subjectId": "char-op-rayleigh",
+          "displayName": "Silvers Rayleigh",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "imu",
+          "subjectId": "char-op-imu",
+          "displayName": "Imu",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "dr-kureha",
+          "subjectId": "char-op-kureha",
+          "displayName": "Dr. Kureha",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "dr-hiluluk",
+          "subjectId": "char-op-hiluluk",
+          "displayName": "Dr. Hiluluk",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "wapol",
+          "subjectId": "char-op-wapol",
+          "displayName": "Wapol",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "dalton",
+          "subjectId": "char-op-dalton",
+          "displayName": "Dalton",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "koza",
+          "subjectId": "char-op-koza",
+          "displayName": "Koza",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "pell",
+          "subjectId": "char-op-pell",
+          "displayName": "Pell",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "gan-fall",
+          "subjectId": "char-op-gan-fall",
+          "displayName": "Gan Fall",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "wiper",
+          "subjectId": "char-op-wiper",
+          "displayName": "Wiper",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "conis",
+          "subjectId": "char-op-conis",
+          "displayName": "Conis",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "iceburg",
+          "subjectId": "char-op-iceburg",
+          "displayName": "Iceburg",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "spandam",
+          "subjectId": "char-op-spandam",
+          "displayName": "Spandam",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "gecko-moria",
+          "subjectId": "char-op-moria",
+          "displayName": "Gecko Moria",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "perona",
+          "subjectId": "char-op-perona",
+          "displayName": "Perona",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "caesar-clown",
+          "subjectId": "char-op-caesar",
+          "displayName": "Caesar Clown",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "rebecca",
+          "subjectId": "char-op-rebecca",
+          "displayName": "Rebecca",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "kyros",
+          "subjectId": "char-op-kyros",
+          "displayName": "Kyros",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "trebol",
+          "subjectId": "char-op-trebol",
+          "displayName": "Trebol",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "pica",
+          "subjectId": "char-op-pica",
+          "displayName": "Pica",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "diamante",
+          "subjectId": "char-op-diamante",
+          "displayName": "Diamante",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "charlotte-katakuri",
+          "subjectId": "char-op-katakuri",
+          "displayName": "Charlotte Katakuri",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "charlotte-pudding",
+          "subjectId": "char-op-pudding",
+          "displayName": "Charlotte Pudding",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "charlotte-brulee",
+          "subjectId": "char-op-brulee",
+          "displayName": "Charlotte Brûlée",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "vinsmoke-judge",
+          "subjectId": "char-op-judge",
+          "displayName": "Vinsmoke Judge",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "pedro",
+          "subjectId": "char-op-pedro",
+          "displayName": "Pedro",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "king",
+          "subjectId": "char-op-king",
+          "displayName": "King",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "kurozumi-orochi",
+          "subjectId": "char-op-orochi",
+          "displayName": "Kurozumi Orochi",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "kozuki-oden",
+          "subjectId": "char-op-oden",
+          "displayName": "Kozuki Oden",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "kozuki-momonosuke",
+          "subjectId": "char-op-momonosuke",
+          "displayName": "Kozuki Momonosuke",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "yamato",
+          "subjectId": "char-op-yamato",
+          "displayName": "Yamato",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "dr-vegapunk",
+          "subjectId": "char-op-vegapunk",
+          "displayName": "Dr. Vegapunk",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "vegapunk-york",
+          "subjectId": "char-op-york",
+          "displayName": "Vegapunk York",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "stussy",
+          "subjectId": "char-op-stussy",
+          "displayName": "Stussy",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "portgas-d-rouge",
+          "subjectId": "char-op-rouge",
+          "displayName": "Portgas D. Rouge",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "issho",
+          "subjectId": "char-op-fujitora",
+          "displayName": "Issho",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "aramaki",
+          "subjectId": "char-op-greenbull",
+          "displayName": "Aramaki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "tsuru",
+          "subjectId": "char-op-tsuru",
+          "displayName": "Tsuru",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "boa-sandersonia",
+          "subjectId": "char-op-sandersonia",
+          "displayName": "Boa Sandersonia",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "boa-marigold",
+          "subjectId": "char-op-marigold",
+          "displayName": "Boa Marigold",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "queen",
+          "subjectId": "char-op-queen",
+          "displayName": "Queen",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "jack",
+          "subjectId": "char-op-jack",
+          "displayName": "Jack",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "ulti",
+          "subjectId": "char-op-ulti",
+          "displayName": "Ulti",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "page-one",
+          "subjectId": "char-op-page-one",
+          "displayName": "Page One",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "sasaki",
+          "subjectId": "char-op-sasaki",
+          "displayName": "Sasaki",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "whos-who",
+          "subjectId": "char-op-whos-who",
+          "displayName": "Who's Who",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "black-maria",
+          "subjectId": "char-op-black-maria",
+          "displayName": "Black Maria",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "denjiro",
+          "subjectId": "char-op-denjiro",
+          "displayName": "Denjiro",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "kawamatsu",
+          "subjectId": "char-op-kawamatsu",
+          "displayName": "Kawamatsu",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "raizo",
+          "subjectId": "char-op-raizo",
+          "displayName": "Raizo",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "kanjuro",
+          "subjectId": "char-op-kanjuro",
+          "displayName": "Kanjuro",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "ashura-doji",
+          "subjectId": "char-op-ashura",
+          "displayName": "Ashura Doji",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "kozuki-hiyori",
+          "subjectId": "char-op-hiyori",
+          "displayName": "Kozuki Hiyori",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "inuarashi",
+          "subjectId": "char-op-inuarashi",
+          "displayName": "Inuarashi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "nekomamushi",
+          "subjectId": "char-op-nekomamushi",
+          "displayName": "Nekomamushi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "carrot",
+          "subjectId": "char-op-carrot",
+          "displayName": "Carrot",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "otama",
+          "subjectId": "char-op-tama",
+          "displayName": "Otama",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "bartolomeo",
+          "subjectId": "char-op-bartolomeo",
+          "displayName": "Bartolomeo",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "cavendish",
+          "subjectId": "char-op-cavendish",
+          "displayName": "Cavendish",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "bentham",
+          "subjectId": "char-op-bon-clay",
+          "displayName": "Bentham",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "van-augur",
+          "subjectId": "char-op-van-augur",
+          "displayName": "Van Augur",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "charlotte-cracker",
+          "subjectId": "char-op-cracker",
+          "displayName": "Charlotte Cracker",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "charlotte-smoothie",
+          "subjectId": "char-op-smoothie",
+          "displayName": "Charlotte Smoothie",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "charlotte-perospero",
+          "subjectId": "char-op-perospero",
+          "displayName": "Charlotte Perospero",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "charlotte-oven",
+          "subjectId": "char-op-oven",
+          "displayName": "Charlotte Oven",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "charlotte-daifuku",
+          "subjectId": "char-op-daifuku",
+          "displayName": "Charlotte Daifuku",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "pekoms",
+          "subjectId": "char-op-pekoms",
+          "displayName": "Pekoms",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "baron-tamago",
+          "subjectId": "char-op-tamago",
+          "displayName": "Baron Tamago",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "vergo",
+          "subjectId": "char-op-vergo",
+          "displayName": "Vergo",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "sugar",
+          "subjectId": "char-op-sugar",
+          "displayName": "Sugar",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "monet",
+          "subjectId": "char-op-monet",
+          "displayName": "Monet",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "senor-pink",
+          "subjectId": "char-op-senor-pink",
+          "displayName": "Señor Pink",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "bellamy",
+          "subjectId": "char-op-bellamy",
+          "displayName": "Bellamy",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "baby-5",
+          "subjectId": "char-op-baby-5",
+          "displayName": "Baby 5",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "gladius",
+          "subjectId": "char-op-gladius",
+          "displayName": "Gladius",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "machvise",
+          "subjectId": "char-op-machvise",
+          "displayName": "Machvise",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "jora",
+          "subjectId": "char-op-jora",
+          "displayName": "Jora",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "vista",
+          "subjectId": "char-op-vista",
+          "displayName": "Vista",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "izo",
+          "subjectId": "char-op-izo",
+          "displayName": "Izo",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "jozu",
+          "subjectId": "char-op-jozu",
+          "displayName": "Jozu",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "absalom",
+          "subjectId": "char-op-absalom",
+          "displayName": "Absalom",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "dr-hogback",
+          "subjectId": "char-op-hogback",
+          "displayName": "Dr. Hogback",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "ryuma",
+          "subjectId": "char-op-ryuma",
+          "displayName": "Ryuma",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "jabra",
+          "subjectId": "char-op-jabra",
+          "displayName": "Jabra",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "kumadori",
+          "subjectId": "char-op-kumadori",
+          "displayName": "Kumadori",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "fukuro",
+          "subjectId": "char-op-fukuro",
+          "displayName": "Fukuro",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "kalifa",
+          "subjectId": "char-op-kalifa",
+          "displayName": "Kalifa",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "holdem",
+          "subjectId": "char-op-holdem",
+          "displayName": "Holdem",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "foxy",
+          "subjectId": "char-op-foxy",
+          "displayName": "Foxy",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "hyogoro",
+          "subjectId": "char-op-hyogoro",
+          "displayName": "Hyogoro",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "kikunojo",
+          "subjectId": "char-op-kiku",
+          "displayName": "Kikunojo",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "koala",
+          "subjectId": "char-op-koala",
+          "displayName": "Koala",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "hack",
+          "subjectId": "char-op-hack",
+          "displayName": "Hack",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "caribou",
+          "subjectId": "char-op-caribou",
+          "displayName": "Caribou",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "hatchan",
+          "subjectId": "char-op-hatchan",
+          "displayName": "Hatchan",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "crocus",
+          "subjectId": "char-op-crocus",
+          "displayName": "Crocus",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "hina",
+          "subjectId": "char-op-hina",
+          "displayName": "Hina",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "helmeppo",
+          "subjectId": "char-op-helmeppo",
+          "displayName": "Helmeppo",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "marcus-mars",
+          "subjectId": "char-op-mars",
+          "displayName": "Marcus Mars",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "topman-warcury",
+          "subjectId": "char-op-warcury",
+          "displayName": "Topman Warcury",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "ethanbaron-v-nusjuro",
+          "subjectId": "char-op-nusjuro",
+          "displayName": "Ethanbaron V. Nusjuro",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "shepherd-ju-peter",
+          "subjectId": "char-op-jupeter",
+          "displayName": "Shepherd Ju Peter",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "vinsmoke-reiju",
+          "subjectId": "char-op-reiju",
+          "displayName": "Vinsmoke Reiju",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "vinsmoke-ichiji",
+          "subjectId": "char-op-ichiji",
+          "displayName": "Vinsmoke Ichiji",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "vinsmoke-niji",
+          "subjectId": "char-op-niji",
+          "displayName": "Vinsmoke Niji",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "vinsmoke-yonji",
+          "subjectId": "char-op-yonji",
+          "displayName": "Vinsmoke Yonji",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "thatch",
+          "subjectId": "char-op-thatch",
+          "displayName": "Thatch",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "jesus-burgess",
+          "subjectId": "char-op-burgess",
+          "displayName": "Jesus Burgess",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "shiryu",
+          "subjectId": "char-op-shiryu",
+          "displayName": "Shiryu",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "lafitte",
+          "subjectId": "char-op-lafitte",
+          "displayName": "Lafitte",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "doc-q",
+          "subjectId": "char-op-doc-q",
+          "displayName": "Doc Q",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "avalo-pizarro",
+          "subjectId": "char-op-pizarro",
+          "displayName": "Avalo Pizarro",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "catarina-devon",
+          "subjectId": "char-op-catarina-devon",
+          "displayName": "Catarina Devon",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "sanjuan-wolf",
+          "subjectId": "char-op-sanjuan-wolf",
+          "displayName": "Sanjuan Wolf",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "vasco-shot",
+          "subjectId": "char-op-vasco-shot",
+          "displayName": "Vasco Shot",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "scopper-gaban",
+          "subjectId": "char-op-scopper-gaban",
+          "displayName": "Scopper Gaban",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "belo-betty",
+          "subjectId": "char-op-betty",
+          "displayName": "Belo Betty",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "karasu",
+          "subjectId": "char-op-karasu",
+          "displayName": "Karasu",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "morley",
+          "subjectId": "char-op-morley",
+          "displayName": "Morley",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "lindbergh",
+          "subjectId": "char-op-lindbergh",
+          "displayName": "Lindbergh",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "inazuma",
+          "subjectId": "char-op-inazuma",
+          "displayName": "Inazuma",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "gloriosa",
+          "subjectId": "char-op-gloriosa",
+          "displayName": "Gloriosa",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "marguerite",
+          "subjectId": "char-op-marguerite",
+          "displayName": "Marguerite",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "mont-blanc-cricket",
+          "subjectId": "char-op-cricket",
+          "displayName": "Mont Blanc Cricket",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "mont-blanc-norland",
+          "subjectId": "char-op-norland",
+          "displayName": "Mont Blanc Norland",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "calgara",
+          "subjectId": "char-op-calgara",
+          "displayName": "Calgara",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "nettuno",
+          "subjectId": "char-op-neptune",
+          "displayName": "Nettuno",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "fukaboshi",
+          "subjectId": "char-op-fukaboshi",
+          "displayName": "Fukaboshi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "regina-otohime",
+          "subjectId": "char-op-otohime",
+          "displayName": "Regina Otohime",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "camie",
+          "subjectId": "char-op-camie",
+          "displayName": "Camie",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "aladine",
+          "subjectId": "char-op-aladine",
+          "displayName": "Aladine",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "yasuie",
+          "subjectId": "char-op-yasuie",
+          "displayName": "Yasuie",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "toko",
+          "subjectId": "char-op-toko",
+          "displayName": "Toko",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "shinobu",
+          "subjectId": "char-op-shinobu",
+          "displayName": "Shinobu",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "fukurokuju",
+          "subjectId": "char-op-fukurokuju",
+          "displayName": "Fukurokuju",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "kozuki-toki",
+          "subjectId": "char-op-toki",
+          "displayName": "Kozuki Toki",
+          "reason": "single_location"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "tenguyama-hitetsu",
+          "subjectId": "char-op-hitetsu",
+          "displayName": "Tenguyama Hitetsu",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "onimaru",
+          "subjectId": "char-op-onimaru",
+          "displayName": "Onimaru",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "punk-01-shaka",
+          "subjectId": "char-op-shaka",
+          "displayName": "Punk-01 Shaka",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "punk-02-lilith",
+          "subjectId": "char-op-lilith",
+          "displayName": "Punk-02 Lilith",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "punk-03-edison",
+          "subjectId": "char-op-edison",
+          "displayName": "Punk-03 Edison",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "punk-04-pythagoras",
+          "subjectId": "char-op-pythagoras",
+          "displayName": "Punk-04 Pythagoras",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "punk-05-atlas",
+          "subjectId": "char-op-atlas",
+          "displayName": "Punk-05 Atlas",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "sentomaru",
+          "subjectId": "char-op-sentomaru",
+          "displayName": "Sentomaru",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "riku-doldo-iii",
+          "subjectId": "char-op-riku",
+          "displayName": "Riku Doldo III",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "viola",
+          "subjectId": "char-op-viola",
+          "displayName": "Viola",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "mother-carmel",
+          "subjectId": "char-op-carmel",
+          "displayName": "Mother Carmel",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "charlotte-chiffon",
+          "subjectId": "char-op-chiffon",
+          "displayName": "Charlotte Chiffon",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "makino",
+          "subjectId": "char-op-makino",
+          "displayName": "Makino",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "woop-slap",
+          "subjectId": "char-op-woop-slap",
+          "displayName": "Woop Slap",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "higuma",
+          "subjectId": "char-op-higuma",
+          "displayName": "Higuma",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "curly-dadan",
+          "subjectId": "char-op-dadan",
+          "displayName": "Curly Dadan",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "bluejam",
+          "subjectId": "char-op-bluejam",
+          "displayName": "Bluejam",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "koushiro",
+          "subjectId": "char-op-koushiro",
+          "displayName": "Koushiro",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "kuina",
+          "subjectId": "char-op-kuina",
+          "displayName": "Kuina",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "kaya",
+          "subjectId": "char-op-kaya",
+          "displayName": "Kaya",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "merry",
+          "subjectId": "char-op-merry",
+          "displayName": "Merry",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "banchina",
+          "subjectId": "char-op-banchina",
+          "displayName": "Banchina",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "tamanegi",
+          "subjectId": "char-op-tamanegi",
+          "displayName": "Tamanegi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "piiman",
+          "subjectId": "char-op-piiman",
+          "displayName": "Piiman",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "ninjin",
+          "subjectId": "char-op-ninjin",
+          "displayName": "Ninjin",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "patty",
+          "subjectId": "char-op-patty",
+          "displayName": "Patty",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "carne",
+          "subjectId": "char-op-carne",
+          "displayName": "Carne",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "gin",
+          "subjectId": "char-op-gin",
+          "displayName": "Gin",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "pearl",
+          "subjectId": "char-op-pearl",
+          "displayName": "Pearl",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "fullbody",
+          "subjectId": "char-op-fullbody",
+          "displayName": "Fullbody",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "nojiko",
+          "subjectId": "char-op-nojiko",
+          "displayName": "Nojiko",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "genzo",
+          "subjectId": "char-op-genzo",
+          "displayName": "Genzo",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "kuroobi",
+          "subjectId": "char-op-kuroobi",
+          "displayName": "Kuroobi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "chew",
+          "subjectId": "char-op-chew",
+          "displayName": "Chew",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "nezumi",
+          "subjectId": "char-op-nezumi",
+          "displayName": "Nezumi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "ippon-matsu",
+          "subjectId": "char-op-ipponmatsu",
+          "displayName": "Ippon-Matsu",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "daddy-masterson",
+          "subjectId": "char-op-daddy-masterson",
+          "displayName": "Daddy Masterson",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "johnny",
+          "subjectId": "char-op-johnny",
+          "displayName": "Johnny",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "yosaku",
+          "subjectId": "char-op-yosaku",
+          "displayName": "Yosaku",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "dorry",
+          "subjectId": "char-op-dorry",
+          "displayName": "Dorry",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "brogy",
+          "subjectId": "char-op-brogy",
+          "displayName": "Brogy",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "chess",
+          "subjectId": "char-op-chess",
+          "displayName": "Chess",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "kuromarimo",
+          "subjectId": "char-op-kuromarimo",
+          "displayName": "Kuromarimo",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "igaram",
+          "subjectId": "char-op-igaram",
+          "displayName": "Igaram",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "chaka",
+          "subjectId": "char-op-chaka",
+          "displayName": "Chaka",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "toto",
+          "subjectId": "char-op-toto",
+          "displayName": "Toto",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "daz-bones",
+          "subjectId": "char-op-daz-bones",
+          "displayName": "Daz Bones",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "miss-doublefinger",
+          "subjectId": "char-op-miss-doublefinger",
+          "displayName": "Miss Doublefinger",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "mr-3",
+          "subjectId": "char-op-mr-3",
+          "displayName": "Mr. 3",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "miss-goldenweek",
+          "subjectId": "char-op-miss-goldenweek",
+          "displayName": "Miss Goldenweek",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "mr-5",
+          "subjectId": "char-op-mr-5",
+          "displayName": "Mr. 5",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "miss-valentine",
+          "subjectId": "char-op-miss-valentine",
+          "displayName": "Miss Valentine",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "mr-4",
+          "subjectId": "char-op-mr-4",
+          "displayName": "Mr. 4",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "miss-merry-christmas",
+          "subjectId": "char-op-miss-merry-christmas",
+          "displayName": "Miss Merry Christmas",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "masira",
+          "subjectId": "char-op-masira",
+          "displayName": "Masira",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "shoujou",
+          "subjectId": "char-op-shoujou",
+          "displayName": "Shoujou",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "pagaya",
+          "subjectId": "char-op-pagaya",
+          "displayName": "Pagaya",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "aisa",
+          "subjectId": "char-op-aisa",
+          "displayName": "Aisa",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "ohm",
+          "subjectId": "char-op-ohm",
+          "displayName": "Ohm",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "gedatsu",
+          "subjectId": "char-op-gedatsu",
+          "displayName": "Gedatsu",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "satori",
+          "subjectId": "char-op-satori",
+          "displayName": "Satori",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "shura",
+          "subjectId": "char-op-shura",
+          "displayName": "Shura",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "yama",
+          "subjectId": "char-op-yama",
+          "displayName": "Yama",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "tonjit",
+          "subjectId": "char-op-tonjit",
+          "displayName": "Tonjit",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "porche",
+          "subjectId": "char-op-porche",
+          "displayName": "Porche",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "paulie",
+          "subjectId": "char-op-paulie",
+          "displayName": "Paulie",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "kokoro",
+          "subjectId": "char-op-kokoro",
+          "displayName": "Kokoro",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "tom",
+          "subjectId": "char-op-tom",
+          "displayName": "Tom",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "spandine",
+          "subjectId": "char-op-spandine",
+          "displayName": "Spandine",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "oimo",
+          "subjectId": "char-op-oimo",
+          "displayName": "Oimo",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "kashii",
+          "subjectId": "char-op-kashii",
+          "displayName": "Kashii",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "lola",
+          "subjectId": "char-op-lola",
+          "displayName": "Lola",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "victoria-cindry",
+          "subjectId": "char-op-cindry",
+          "displayName": "Victoria Cindry",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "shakuyaku",
+          "subjectId": "char-op-shakky",
+          "displayName": "Shakuyaku",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "duval",
+          "subjectId": "char-op-duval",
+          "displayName": "Duval",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "saint-charloss",
+          "subjectId": "char-op-charloss",
+          "displayName": "Saint Charloss",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "pappag",
+          "subjectId": "char-op-pappag",
+          "displayName": "Pappag",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "kikyo",
+          "subjectId": "char-op-ran",
+          "displayName": "Kikyo",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "hannyabal",
+          "subjectId": "char-op-hannyabal",
+          "displayName": "Hannyabal",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "sadi",
+          "subjectId": "char-op-sadi",
+          "displayName": "Sadi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "saldeath",
+          "subjectId": "char-op-saldeath",
+          "displayName": "Saldeath",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "namur",
+          "subjectId": "char-op-namur",
+          "displayName": "Namur",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "blamenco",
+          "subjectId": "char-op-blamenco",
+          "displayName": "Blamenco",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "rakuyo",
+          "subjectId": "char-op-rakuyo",
+          "displayName": "Rakuyo",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "fossa",
+          "subjectId": "char-op-fossa",
+          "displayName": "Fossa",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "curiel",
+          "subjectId": "char-op-curiel",
+          "displayName": "Curiel",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "haruta",
+          "subjectId": "char-op-haruta",
+          "displayName": "Haruta",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "atmos",
+          "subjectId": "char-op-atmos",
+          "displayName": "Atmos",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "blenheim",
+          "subjectId": "char-op-blenheim",
+          "displayName": "Blenheim",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "speed-jiru",
+          "subjectId": "char-op-speed-jiru",
+          "displayName": "Speed Jiru",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "momonga",
+          "subjectId": "char-op-momonga",
+          "displayName": "Momonga",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "onigumo",
+          "subjectId": "char-op-onigumo",
+          "displayName": "Onigumo",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "ryuboshi",
+          "subjectId": "char-op-ryuboshi",
+          "displayName": "Ryuboshi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "manboshi",
+          "subjectId": "char-op-manboshi",
+          "displayName": "Manboshi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "vander-decken-ix",
+          "subjectId": "char-op-vander-decken",
+          "displayName": "Vander Decken IX",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "brownbeard",
+          "subjectId": "char-op-brownbeard",
+          "displayName": "Brownbeard",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "mocha",
+          "subjectId": "char-op-mocha",
+          "displayName": "Mocha",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "dellinger",
+          "subjectId": "char-op-dellinger",
+          "displayName": "Dellinger",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "lao-g",
+          "subjectId": "char-op-lao-g",
+          "displayName": "Lao G",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "buffalo",
+          "subjectId": "char-op-buffalo",
+          "displayName": "Buffalo",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "scarlett",
+          "subjectId": "char-op-scarlett",
+          "displayName": "Scarlett",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "leo",
+          "subjectId": "char-op-leo",
+          "displayName": "Leo",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "mansherry",
+          "subjectId": "char-op-mansherry",
+          "displayName": "Mansherry",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "wanda",
+          "subjectId": "char-op-wanda",
+          "displayName": "Wanda",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "shishilian",
+          "subjectId": "char-op-shishilian",
+          "displayName": "Shishilian",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "charlotte-mont-dor",
+          "subjectId": "char-op-mont-dor",
+          "displayName": "Charlotte Mont-d'Or",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "charlotte-opera",
+          "subjectId": "char-op-opera",
+          "displayName": "Charlotte Opera",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "charlotte-galette",
+          "subjectId": "char-op-galette",
+          "displayName": "Charlotte Galette",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "charlotte-amande",
+          "subjectId": "char-op-amande",
+          "displayName": "Charlotte Amande",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "charlotte-praline",
+          "subjectId": "char-op-praline",
+          "displayName": "Charlotte Praline",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "charlotte-flampe",
+          "subjectId": "char-op-flampe",
+          "displayName": "Charlotte Flampe",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "streusen",
+          "subjectId": "char-op-streusen",
+          "displayName": "Streusen",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "pound",
+          "subjectId": "char-op-pound",
+          "displayName": "Pound",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "vito",
+          "subjectId": "char-op-vito",
+          "displayName": "Vito",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "zeus",
+          "subjectId": "char-op-zeus",
+          "displayName": "Zeus",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "kozuki-sukiyaki",
+          "subjectId": "char-op-sukiyaki",
+          "displayName": "Kozuki Sukiyaki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "guernica",
+          "subjectId": "char-op-guernica",
+          "displayName": "Guernica",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "s-snake",
+          "subjectId": "char-op-s-snake",
+          "displayName": "S-Snake",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "s-shark",
+          "subjectId": "char-op-s-shark",
+          "displayName": "S-Shark",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "shimotsuki-ushimaru",
+          "subjectId": "char-op-shimotsuki-ushimaru",
+          "displayName": "Shimotsuki Ushimaru",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "benn-beckman",
+          "subjectId": "char-op-benn-beckman",
+          "displayName": "Benn Beckman",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "yasopp",
+          "subjectId": "char-op-yasopp",
+          "displayName": "Yasopp",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "lucky-roux",
+          "subjectId": "char-op-lucky-roux",
+          "displayName": "Lucky Roux",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "alvida",
+          "subjectId": "char-op-alvida",
+          "displayName": "Alvida",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "mohji",
+          "subjectId": "char-op-mohji",
+          "displayName": "Mohji",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "cabaji",
+          "subjectId": "char-op-cabaji",
+          "displayName": "Cabaji",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "bepo",
+          "subjectId": "char-op-bepo",
+          "displayName": "Bepo",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "shachi",
+          "subjectId": "char-op-shachi",
+          "displayName": "Shachi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "penguin",
+          "subjectId": "char-op-penguin",
+          "displayName": "Penguin",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "hajrudin",
+          "subjectId": "char-op-hajrudin",
+          "displayName": "Hajrudin",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "kamakiri",
+          "subjectId": "char-op-kamakiri",
+          "displayName": "Kamakiri",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "babanuki",
+          "subjectId": "char-op-babanuki",
+          "displayName": "Babanuki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "speed",
+          "subjectId": "char-op-speed",
+          "displayName": "Speed",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "bao-huang",
+          "subjectId": "char-op-bao-huang",
+          "displayName": "Bao Huang",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "hatcha",
+          "subjectId": "char-op-hatcha",
+          "displayName": "Hatcha",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "tsuru-otsuru",
+          "subjectId": "char-op-otsuru",
+          "displayName": "Tsuru",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "bastille",
+          "subjectId": "char-op-bastille",
+          "displayName": "Bastille",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "t-bone",
+          "subjectId": "char-op-t-bone",
+          "displayName": "T-Bone",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "jango",
+          "subjectId": "char-op-jango",
+          "displayName": "Jango",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "kong",
+          "subjectId": "char-op-kong",
+          "displayName": "Kong",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "zeo",
+          "subjectId": "char-op-zeo",
+          "displayName": "Zeo",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "ikaros-much",
+          "subjectId": "char-op-ikaros-much",
+          "displayName": "Ikaros Much",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "nero",
+          "subjectId": "char-op-nero",
+          "displayName": "Nero",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "zambai",
+          "subjectId": "char-op-zambai",
+          "displayName": "Zambai",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "chimney",
+          "subjectId": "char-op-chimney",
+          "displayName": "Chimney",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "karoo",
+          "subjectId": "char-op-karoo",
+          "displayName": "Karoo",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "sai",
+          "subjectId": "char-op-sai",
+          "displayName": "Sai",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "chinjao",
+          "subjectId": "char-op-chinjao",
+          "displayName": "Chinjao",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "ideo",
+          "subjectId": "char-op-ideo",
+          "displayName": "Ideo",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "blue-gilly",
+          "subjectId": "char-op-blue-gilly",
+          "displayName": "Blue Gilly",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "suleiman",
+          "subjectId": "char-op-suleiman",
+          "displayName": "Suleiman",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "gambia",
+          "subjectId": "char-op-gambia",
+          "displayName": "Gambia",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "orlumbus",
+          "subjectId": "char-op-orlumbus",
+          "displayName": "Orlumbus",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "uta",
+          "subjectId": "char-op-uta",
+          "displayName": "Uta",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "gild-tesoro",
+          "subjectId": "char-op-gild-tesoro",
+          "displayName": "Gild Tesoro",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "douglas-bullet",
+          "subjectId": "char-op-douglas-bullet",
+          "displayName": "Douglas Bullet",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "zephyr",
+          "subjectId": "char-op-zephyr",
+          "displayName": "Zephyr",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "shiki",
+          "subjectId": "char-op-shiki",
+          "displayName": "Shiki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "gasparde",
+          "subjectId": "char-op-gasparde",
+          "displayName": "Gasparde",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "saga",
+          "subjectId": "char-op-saga",
+          "displayName": "Saga",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "barone-omatsuri",
+          "subjectId": "char-op-baron-omatsuri",
+          "displayName": "Barone Omatsuri",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "ratchet",
+          "subjectId": "char-op-ratchet",
+          "displayName": "Ratchet",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "bear-king",
+          "subjectId": "char-op-bear-king",
+          "displayName": "Bear King",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "el-drago",
+          "subjectId": "char-op-el-drago",
+          "displayName": "El Drago",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "laboon",
+          "subjectId": "char-op-laboon",
+          "displayName": "Laboon",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "zunesha",
+          "subjectId": "char-op-zunesha",
+          "displayName": "Zunesha",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "oars",
+          "subjectId": "char-op-oars",
+          "displayName": "Oars",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "little-oars-jr",
+          "subjectId": "char-op-oars-jr",
+          "displayName": "Little Oars Jr.",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "surume",
+          "subjectId": "char-op-surume",
+          "displayName": "Surume",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "wadatsumi",
+          "subjectId": "char-op-wadatsumi",
+          "displayName": "Wadatsumi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "pierre",
+          "subjectId": "char-op-pierre",
+          "displayName": "Pierre",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "nola",
+          "subjectId": "char-op-nola",
+          "displayName": "Nola",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "yokozuna",
+          "subjectId": "char-op-yokozuna",
+          "displayName": "Yokozuna",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "madam-shyarly",
+          "subjectId": "char-op-shyarly",
+          "displayName": "Madam Shyarly",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "squard",
+          "subjectId": "char-op-squard",
+          "displayName": "Squard",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "edward-weevil",
+          "subjectId": "char-op-weevil",
+          "displayName": "Edward Weevil",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "ginny",
+          "subjectId": "char-op-ginny",
+          "displayName": "Ginny",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "vinsmoke-sora",
+          "subjectId": "char-op-sora",
+          "displayName": "Vinsmoke Sora",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "charlotte-compote",
+          "subjectId": "char-op-compote",
+          "displayName": "Charlotte Compote",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "charlotte-snack",
+          "subjectId": "char-op-snack",
+          "displayName": "Charlotte Snack",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "charlotte-mascarpone",
+          "subjectId": "char-op-mascarpone",
+          "displayName": "Charlotte Mascarpone",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "charlotte-counter",
+          "subjectId": "char-op-counter",
+          "displayName": "Charlotte Counter",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "prometheus",
+          "subjectId": "char-op-prometheus",
+          "displayName": "Prometheus",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "napoleon",
+          "subjectId": "char-op-napoleon",
+          "displayName": "Napoleon",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "saint-roswald",
+          "subjectId": "char-op-roswald",
+          "displayName": "Saint Roswald",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "saint-shalria",
+          "subjectId": "char-op-shalria",
+          "displayName": "Saint Shalria",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "s-hawk",
+          "subjectId": "char-op-s-hawk",
+          "displayName": "S-Hawk",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "s-bear",
+          "subjectId": "char-op-s-bear",
+          "displayName": "S-Bear",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "loki",
+          "subjectId": "char-op-loki",
+          "displayName": "Loki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "harald",
+          "subjectId": "char-op-harald",
+          "displayName": "Harald",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "figarland-garling",
+          "subjectId": "char-op-garling",
+          "displayName": "Figarland Garling",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "figarland-shamrock",
+          "subjectId": "char-op-shamrock",
+          "displayName": "Figarland Shamrock",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "gunko",
+          "subjectId": "char-op-gunko",
+          "displayName": "Gunko",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "calico-yorki",
+          "subjectId": "char-op-yorki",
+          "displayName": "Calico Yorki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "mr-9",
+          "subjectId": "char-op-mr-9",
+          "displayName": "Mr. 9",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "miss-monday",
+          "subjectId": "char-op-miss-monday",
+          "displayName": "Miss Monday",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "sodom-e-gomorra",
+          "subjectId": "char-op-sodom-gomorrah",
+          "displayName": "Sodom e Gomorra",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "hyouzou",
+          "subjectId": "char-op-hyouzou",
+          "displayName": "Hyouzou",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "dosun",
+          "subjectId": "char-op-dosun",
+          "displayName": "Dosun",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "daruma",
+          "subjectId": "char-op-daruma",
+          "displayName": "Daruma",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "hammond",
+          "subjectId": "char-op-hammond",
+          "displayName": "Hammond",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "gancho",
+          "subjectId": "char-op-gancho",
+          "displayName": "Gancho",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "wicca",
+          "subjectId": "char-op-wicca",
+          "displayName": "Wicca",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "bian",
+          "subjectId": "char-op-bian",
+          "displayName": "Bian",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "kabu",
+          "subjectId": "char-op-kabu",
+          "displayName": "Kabu",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "doberman",
+          "subjectId": "char-op-doberman",
+          "displayName": "Doberman",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "dalmatian",
+          "subjectId": "char-op-dalmatian",
+          "displayName": "Dalmatian",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "strawberry",
+          "subjectId": "char-op-strawberry",
+          "displayName": "Strawberry",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "yamakaji",
+          "subjectId": "char-op-yamakaji",
+          "displayName": "Yamakaji",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "dobon",
+          "subjectId": "char-op-dobon",
+          "displayName": "Dobon",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "gotti",
+          "subjectId": "char-op-gotti",
+          "displayName": "Gotti",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "sterry",
+          "subjectId": "char-op-stelly",
+          "displayName": "Sterry",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "sham-e-buchi",
+          "subjectId": "char-op-sham-buchi",
+          "displayName": "Sham e Buchi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "kiwi-e-mozu",
+          "subjectId": "char-op-kiwi-mozu",
+          "displayName": "Kiwi e Mozu",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "goten",
+          "subjectId": "char-dbz-goten",
+          "displayName": "Goten",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "trunks",
+          "subjectId": "char-dbz-trunks",
+          "displayName": "Trunks",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "yamcha",
+          "subjectId": "char-dbz-yamcha",
+          "displayName": "Yamcha",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "chichi",
+          "subjectId": "char-dbz-chichi",
+          "displayName": "Chichi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "kid-buu",
+          "subjectId": "char-dbz-kid-buu",
+          "displayName": "Kid Buu",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "gotenks",
+          "subjectId": "char-dbz-gotenks",
+          "displayName": "Gotenks",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "vegito",
+          "subjectId": "char-dbz-vegito",
+          "displayName": "Vegito",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "gogeta",
+          "subjectId": "char-dbz-gogeta",
+          "displayName": "Gogeta",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "broly",
+          "subjectId": "char-dbz-broly",
+          "displayName": "Broly",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "bardack",
+          "subjectId": "char-dbz-bardock",
+          "displayName": "Bardack",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "raditz",
+          "subjectId": "char-dbz-raditz",
+          "displayName": "Raditz",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "nappa",
+          "subjectId": "char-dbz-nappa",
+          "displayName": "Nappa",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "beerus",
+          "subjectId": "char-dbz-beerus",
+          "displayName": "Beerus",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "whis",
+          "subjectId": "char-dbz-whis",
+          "displayName": "Whis",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "champa",
+          "subjectId": "char-dbz-champa",
+          "displayName": "Champa",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "vados",
+          "subjectId": "char-dbz-vados",
+          "displayName": "Vados",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "zamasu",
+          "subjectId": "char-dbz-zamasu",
+          "displayName": "Zamasu",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "goku-black",
+          "subjectId": "char-dbz-goku-black",
+          "displayName": "Goku Black",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "jiren",
+          "subjectId": "char-dbz-jiren",
+          "displayName": "Jiren",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "hit",
+          "subjectId": "char-dbz-hit",
+          "displayName": "Hit",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "c-16",
+          "subjectId": "char-dbz-android-16",
+          "displayName": "C-16",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "gamma-1",
+          "subjectId": "char-dbz-gamma-1",
+          "displayName": "Gamma 1",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "gamma-2",
+          "subjectId": "char-dbz-gamma-2",
+          "displayName": "Gamma 2",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "cell-max",
+          "subjectId": "char-dbz-cell-max",
+          "displayName": "Cell Max",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "zarbon",
+          "subjectId": "char-dbz-zarbon",
+          "displayName": "Zarbon",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "dodoria",
+          "subjectId": "char-dbz-dodoria",
+          "displayName": "Dodoria",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "cui",
+          "subjectId": "char-dbz-cui",
+          "displayName": "Cui",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "captain-ginyu",
+          "subjectId": "char-dbz-captain-ginyu",
+          "displayName": "Captain Ginyu",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "recoome",
+          "subjectId": "char-dbz-recoome",
+          "displayName": "Recoome",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "burter",
+          "subjectId": "char-dbz-burter",
+          "displayName": "Burter",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "jeice",
+          "subjectId": "char-dbz-jeice",
+          "displayName": "Jeice",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "guldo",
+          "subjectId": "char-dbz-guldo",
+          "displayName": "Guldo",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "nail",
+          "subjectId": "char-dbz-nail",
+          "displayName": "Nail",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "dende",
+          "subjectId": "char-dbz-dende",
+          "displayName": "Dende",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "grand-elder-guru",
+          "subjectId": "char-dbz-guru",
+          "displayName": "Grand Elder Guru",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "king-cold",
+          "subjectId": "char-dbz-king-cold",
+          "displayName": "King Cold",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "giru",
+          "subjectId": "char-dbz-gt-giru",
+          "displayName": "Giru",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "don-kee",
+          "subjectId": "char-dbz-gt-don-kee",
+          "displayName": "Don Kee",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "ledgic",
+          "subjectId": "char-dbz-gt-ledgic",
+          "displayName": "Ledgic",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "general-rilldo",
+          "subjectId": "char-dbz-gt-general-rilldo",
+          "displayName": "General Rilldo",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "luud",
+          "subjectId": "char-dbz-gt-luud",
+          "displayName": "Luud",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "super-17",
+          "subjectId": "char-dbz-gt-super-17",
+          "displayName": "Super 17",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "syn-shenron",
+          "subjectId": "char-dbz-gt-syn-shenron",
+          "displayName": "Syn Shenron",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "omega-shenron",
+          "subjectId": "char-dbz-gt-omega-shenron",
+          "displayName": "Omega Shenron",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "nuova-shenron",
+          "subjectId": "char-dbz-gt-nuova-shenron",
+          "displayName": "Nuova Shenron",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "majuub",
+          "subjectId": "char-dbz-gt-majuub",
+          "displayName": "Majuub",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "haze-shenron",
+          "subjectId": "char-dbz-gt-haze-shenron",
+          "displayName": "Haze Shenron",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "rage-shenron",
+          "subjectId": "char-dbz-gt-rage-shenron",
+          "displayName": "Rage Shenron",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "oceanus-shenron",
+          "subjectId": "char-dbz-gt-oceanus-shenron",
+          "displayName": "Oceanus Shenron",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "naturon-shenron",
+          "subjectId": "char-dbz-gt-naturon-shenron",
+          "displayName": "Naturon Shenron",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "eis-shenron",
+          "subjectId": "char-dbz-gt-eis-shenron",
+          "displayName": "Eis Shenron",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "cooler",
+          "subjectId": "char-dbz-cooler",
+          "displayName": "Cooler",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "turles",
+          "subjectId": "char-dbz-turles",
+          "displayName": "Turles",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "lord-slug",
+          "subjectId": "char-dbz-lord-slug",
+          "displayName": "Lord Slug",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "android-13",
+          "subjectId": "char-dbz-android-13",
+          "displayName": "Android 13",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "bojack",
+          "subjectId": "char-dbz-bojack",
+          "displayName": "Bojack",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "janemba",
+          "subjectId": "char-dbz-janemba",
+          "displayName": "Janemba",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "tapion",
+          "subjectId": "char-dbz-tapion",
+          "displayName": "Tapion",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "hirudegarn",
+          "subjectId": "char-dbz-hirudegarn",
+          "displayName": "Hirudegarn",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "pikkon",
+          "subjectId": "char-dbz-pikkon",
+          "displayName": "Pikkon",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "frost",
+          "subjectId": "char-dbz-frost",
+          "displayName": "Frost",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "cabba",
+          "subjectId": "char-dbz-cabba",
+          "displayName": "Cabba",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "caulifla",
+          "subjectId": "char-dbz-caulifla",
+          "displayName": "Caulifla",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "kale",
+          "subjectId": "char-dbz-kale",
+          "displayName": "Kale",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "kefla",
+          "subjectId": "char-dbz-kefla",
+          "displayName": "Kefla",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "toppo",
+          "subjectId": "char-dbz-toppo",
+          "displayName": "Toppo",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "dyspo",
+          "subjectId": "char-dbz-dyspo",
+          "displayName": "Dyspo",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "grand-minister",
+          "subjectId": "char-dbz-grand-priest",
+          "displayName": "Grand Minister",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "zeno",
+          "subjectId": "char-dbz-zeno",
+          "displayName": "Zeno",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "fused-zamasu",
+          "subjectId": "char-dbz-fused-zamasu",
+          "displayName": "Fused Zamasu",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "merus",
+          "subjectId": "char-dbz-merus",
+          "displayName": "Merus",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "moro",
+          "subjectId": "char-dbz-moro",
+          "displayName": "Moro",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "granolah",
+          "subjectId": "char-dbz-granolah",
+          "displayName": "Granolah",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "gas",
+          "subjectId": "char-dbz-gas",
+          "displayName": "Gas",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "elec",
+          "subjectId": "char-dbz-elec",
+          "displayName": "Elec",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "black-frieza",
+          "subjectId": "char-dbz-black-frieza",
+          "displayName": "Black Frieza",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "mr-satan",
+          "subjectId": "char-dbz-mr-satan",
+          "displayName": "Mr. Satan",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "videl",
+          "subjectId": "char-dbz-videl",
+          "displayName": "Videl",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "supreme-kai",
+          "subjectId": "char-dbz-supreme-kai",
+          "displayName": "Supreme Kai",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "king-kai",
+          "subjectId": "char-dbz-king-kai",
+          "displayName": "King Kai",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "babidi",
+          "subjectId": "char-dbz-babidi",
+          "displayName": "Babidi",
+          "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "dabura",
+          "subjectId": "char-dbz-dabura",
+          "displayName": "Dabura",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "gauche-adlai",
+          "subjectId": "char-bc-gauche",
+          "displayName": "Gauche Adlai",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "grey",
+          "subjectId": "char-bc-grey",
+          "displayName": "Grey",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "gordon-agrippa",
+          "subjectId": "char-bc-gordon",
+          "displayName": "Gordon Agrippa",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "henry-legolant",
+          "subjectId": "char-bc-henry",
+          "displayName": "Henry Legolant",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "licita",
+          "subjectId": "char-bc-licita",
+          "displayName": "Licita",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "zara-ideale",
+          "subjectId": "char-bc-zara",
+          "displayName": "Zara Ideale",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "en-ringard",
+          "subjectId": "char-bc-en-ringard",
+          "displayName": "En Ringard",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "xerx-lugner",
+          "subjectId": "char-bc-xerx",
+          "displayName": "Xerx Lugner",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "puli-angel",
+          "subjectId": "char-bc-puli",
+          "displayName": "Puli Angel",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "ruben-chagar",
+          "subjectId": "char-bc-ruben",
+          "displayName": "Ruben Chagar",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "salim-hapshass",
+          "subjectId": "char-bc-salim",
+          "displayName": "Salim Hapshass",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "baro",
+          "subjectId": "char-bc-baro",
+          "displayName": "Baro",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "slotos",
+          "subjectId": "char-bc-slotos",
+          "displayName": "Slotos",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "plumede",
+          "subjectId": "char-bc-plumede",
+          "displayName": "Plumede",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "walgner",
+          "subjectId": "char-bc-walgner",
+          "displayName": "Walgner",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "sivoir-snyle",
+          "subjectId": "char-bc-sivoir",
+          "displayName": "Sivoir Snyle",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "conrad-leto",
+          "subjectId": "char-bc-conrad",
+          "displayName": "Conrad Leto",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "princia-funnybunny",
+          "subjectId": "char-bc-princia",
+          "displayName": "Princia Funnybunny",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "edward-avalache",
+          "subjectId": "char-bc-edward",
+          "displayName": "Edward Avalaché",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "jester-garandaros",
+          "subjectId": "char-bc-jester",
+          "displayName": "Jester Garandaros",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "alecdora-sandler",
+          "subjectId": "char-bc-alecdora",
+          "displayName": "Alecdora Sandler",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "hamon-caseus",
+          "subjectId": "char-bc-hamon",
+          "displayName": "Hamon Caseus",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "siren-tium",
+          "subjectId": "char-bc-siren",
+          "displayName": "Siren Tium",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "letoile-becquerel",
+          "subjectId": "char-bc-letoile",
+          "displayName": "Letoile Becquerel",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "solid-silva",
+          "subjectId": "char-bc-solid",
+          "displayName": "Solid Silva",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "nebra-silva",
+          "subjectId": "char-bc-nebra",
+          "displayName": "Nebra Silva",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "kirsch-vermillion",
+          "subjectId": "char-bc-kirsch",
+          "displayName": "Kirsch Vermillion",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "fuegoleon-vermillion",
+          "subjectId": "char-bc-fuegoleon",
+          "displayName": "Fuegoleon Vermillion",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "randall-luftair",
+          "subjectId": "char-bc-randall",
+          "displayName": "Randall Luftair",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "sol-marron",
+          "subjectId": "char-bc-sol",
+          "displayName": "Sol Marron",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "dorothy-unsworth",
+          "subjectId": "char-bc-dorothy",
+          "displayName": "Dorothy Unsworth",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "sekke-bronzazza",
+          "subjectId": "char-bc-sekke",
+          "displayName": "Sekke Bronzazza",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "rill-boismortier",
+          "subjectId": "char-bc-rill",
+          "displayName": "Rill Boismortier",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "kaiser-granvorka",
+          "subjectId": "char-bc-kaiser",
+          "displayName": "Kaiser Granvorka",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "gueldre-poizot",
+          "subjectId": "char-bc-gueldre",
+          "displayName": "Gueldre Poizot",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "marx-francois",
+          "subjectId": "char-bc-marx",
+          "displayName": "Marx François",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "owen",
+          "subjectId": "char-bc-owen",
+          "displayName": "Owen",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "damnatio-kira",
+          "subjectId": "char-bc-damnatio",
+          "displayName": "Damnatio Kira",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "augustus-kira-clover-xiii",
+          "subjectId": "char-bc-augustus",
+          "displayName": "Augustus Kira Clover XIII",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "acier-silva",
+          "subjectId": "char-bc-acier",
+          "displayName": "Acier Silva",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "morgen-faust",
+          "subjectId": "char-bc-morgen",
+          "displayName": "Morgen Faust",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "father-orsi",
+          "subjectId": "char-bc-orsi",
+          "displayName": "Father Orsi",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "recca",
+          "subjectId": "char-bc-recca",
+          "displayName": "Recca",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "nash",
+          "subjectId": "char-bc-nash",
+          "displayName": "Nash",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "hollo",
+          "subjectId": "char-bc-hollo",
+          "displayName": "Hollo",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "aruru",
+          "subjectId": "char-bc-aruru",
+          "displayName": "Aruru",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "revchi-salik",
+          "subjectId": "char-bc-revchi",
+          "displayName": "Revchi Salik",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "marie-adlai",
+          "subjectId": "char-bc-marie",
+          "displayName": "Marie Adlai",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "neige",
+          "subjectId": "char-bc-neige",
+          "displayName": "Neige",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "rebecca-scarlet",
+          "subjectId": "char-bc-rebecca",
+          "displayName": "Rebecca Scarlet",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "theresa-rapual",
+          "subjectId": "char-bc-theresa",
+          "displayName": "Theresa Rapual",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "tetia",
+          "subjectId": "char-bc-tetia",
+          "displayName": "Tetia",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "rhya-the-disloyal",
+          "subjectId": "char-bc-rhya",
+          "displayName": "Rhya the Disloyal",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "heath-grice",
+          "subjectId": "char-bc-heath",
+          "displayName": "Heath Grice",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "ratri",
+          "subjectId": "char-bc-ratri",
+          "displayName": "Ratri",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "lufulu",
+          "subjectId": "char-bc-lufulu",
+          "displayName": "Lufulu",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "charla",
+          "subjectId": "char-bc-charla",
+          "displayName": "Charla",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "drowa",
+          "subjectId": "char-bc-drowa",
+          "displayName": "Drowa",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "eclat",
+          "subjectId": "char-bc-eclat",
+          "displayName": "Eclat",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "rufel",
+          "subjectId": "char-bc-rufel",
+          "displayName": "Rufel",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "fragil-tormenta",
+          "subjectId": "char-bc-fragil",
+          "displayName": "Fragil Tormenta",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "moris-libardirt",
+          "subjectId": "char-bc-moris",
+          "displayName": "Moris Libardirt",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "gaderois-godroc",
+          "subjectId": "char-bc-gaderois",
+          "displayName": "Gaderois Godroc",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "svenkin-gatard",
+          "subjectId": "char-bc-svenkin",
+          "displayName": "Svenkin Gatard",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "halbet-chevour",
+          "subjectId": "char-bc-halbet",
+          "displayName": "Halbet Chevour",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "foyal-migliore",
+          "subjectId": "char-bc-foyal",
+          "displayName": "Foyal Migliore",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "ciel-grinberryall",
+          "subjectId": "char-bc-ciel",
+          "displayName": "Ciel Grinberryall",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "loyce-grinberryall",
+          "subjectId": "char-bc-loyce",
+          "displayName": "Loyce Grinberryall",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "astaroth",
+          "subjectId": "char-bc-astaroth",
+          "displayName": "Astaroth",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "gimodelo",
+          "subjectId": "char-bc-gimodelo",
+          "displayName": "Gimodelo",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "broccos",
+          "subjectId": "char-bc-broccos",
+          "displayName": "Broccos",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "yagos",
+          "subjectId": "char-bc-yagos",
+          "displayName": "Yagos",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "lotus-whomalt",
+          "subjectId": "char-bc-lotus",
+          "displayName": "Lotus Whomalt",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "fanzell-kruger",
+          "subjectId": "char-bc-fanzell",
+          "displayName": "Fanzell Kruger",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "mariella",
+          "subjectId": "char-bc-mariella",
+          "displayName": "Mariella",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "domina-ausat",
+          "subjectId": "char-bc-domina",
+          "displayName": "Domina Ausat",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "floga",
+          "subjectId": "char-bc-floga",
+          "displayName": "Floga",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "potrof",
+          "subjectId": "char-bc-potrof",
+          "displayName": "Potrof",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "salamander",
+          "subjectId": "char-bc-salamander",
+          "displayName": "Salamander",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "gnome",
+          "subjectId": "char-bc-gnome",
+          "displayName": "Gnome",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "yosuga",
+          "subjectId": "char-bc-yosuga",
+          "displayName": "Yosuga",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "fujio",
+          "subjectId": "char-bc-fujio",
+          "displayName": "Fujio",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "imari",
+          "subjectId": "char-bc-imari",
+          "displayName": "Imari",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "gifso",
+          "subjectId": "char-bc-gifso",
+          "displayName": "Gifso",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "kahono",
+          "subjectId": "char-bc-kahono",
+          "displayName": "Kahono",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "kiato",
+          "subjectId": "char-bc-kiato",
+          "displayName": "Kiato",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "witch-queen",
+          "subjectId": "char-bc-witch-queen",
+          "displayName": "Witch Queen",
+          "reason": "single_location"
+        }
+      ]
+    }
+  }
+}

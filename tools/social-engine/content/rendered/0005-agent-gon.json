@@ -1,0 +1,9 @@
+{
+  "template": "characterJourney",
+  "anime": "hunter-x-hunter",
+  "subject": "gon-freecss",
+  "locale": "en",
+  "hook": "Gon crossed the world to find one man.",
+  "durationSeconds": 23,
+  "notes": "Dropped directly in the queue, like a future agent would (with a typo, to test failure + retry)."
+}

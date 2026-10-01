@@ -37,3 +37,7 @@ tools/social-engine/.cache/
 *.mp4
 *.mov
 *.webm
+# Social engine pipeline: local soundtracks, atomic-write temp files
+tools/social-engine/audio/*
+!tools/social-engine/audio/README.md
+tools/social-engine/**/*.tmp

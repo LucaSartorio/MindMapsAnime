@@ -22,8 +22,14 @@
     "preview:static": "tsx --tsconfig scripts/tsconfig.json scripts/serve-static.ts",
     "seo:slugs": "tsx --tsconfig scripts/tsconfig.json scripts/sync-slugs.ts",
     "social:studio": "remotion studio tools/social-engine/index.ts --config=tools/social-engine/remotion.config.ts --public-dir=public",
-    "social:render": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/render/render.ts",
-    "social:validate": "tsc -p tools/social-engine/tsconfig.json && tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/render/validate.ts"
+    "social:render": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/render.ts",
+    "social:validate": "tsc -p tools/social-engine/tsconfig.json && tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/tests/run.ts",
+    "social:catalog": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/catalog.ts",
+    "social:schema": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/schema.ts",
+    "social:queue": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/queue.ts",
+    "social:validate:queue": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/validate-queue.ts",
+    "social:render:queue": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/render-queue.ts",
+    "social:retry:failed": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/render-queue.ts --retry-failed"
   },
   "dependencies": {
     "@fontsource/cinzel": "^5.2.8",

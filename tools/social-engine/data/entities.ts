@@ -5,8 +5,9 @@ import { getEntityDisplayName } from '@/utils/localization';
 
 /**
  * Finds an entity id from what a human would type in a config:
- * the public SEO slug (`itachi-uchiha`), the id (`char-itachi`) or the id
- * without its prefix (`itachi`). Same slug source as the site (`src/seo/slug.ts`).
+ * the public SEO slug (`itachi-uchiha`), the id (`char-itachi`), the id
+ * without its prefix (`itachi`) or a unique short form (`luffy`). Same slug
+ * source as the site (`src/seo/slug.ts`). Ambiguous short forms resolve to nothing.
  */
 export function resolveEntityId(
   dataset: WorldDataset,
@@ -16,11 +17,17 @@ export function resolveEntityId(
   const entities: { id: string }[] = category === 'characters' ? dataset.characters : dataset.locations;
   const prefix = category === 'characters' ? 'char-' : 'loc-';
   const q = query.trim().toLowerCase();
-  return (
+  const exact =
     entities.find((e) => e.id === q)?.id ??
     entityIdFromSlug(dataset, category, q) ??
-    entities.find((e) => e.id === `${prefix}${q}`)?.id
-  );
+    entities.find((e) => e.id === `${prefix}${q}`)?.id;
+  if (exact || !/^[a-z0-9-]+$/.test(q)) return exact;
+  // Short forms ("luffy" → char-op-luffy / monkey-d-luffy), only when UNIQUE.
+  const matches = entities.filter((e) => {
+    const slug = entitySlug(dataset, category, e.id) ?? '';
+    return e.id.endsWith(`-${q}`) || slug.endsWith(`-${q}`);
+  });
+  return matches.length === 1 ? matches[0].id : undefined;
 }
 
 /** Up to 5 "did you mean" suggestions (slug + name contain the query). */

@@ -38,8 +38,13 @@ npm run validate:i18n    # UI keys aligned in all 6 locales + every dataset Loca
 npm run seo:slugs        # freeze published SEO slugs into src/data/<world>/slugs.ts (`-- --check` = verify only)
 npm run extract:boundaries  # regenerate Naruto nation boundary SVG paths from the world PNG
 npm run find:dots        # detect the red village-marker dots in the Naruto PNG, print flow coords
-npm run social:validate  # INTERNAL social video engine: typecheck + checks (see "Social engine")
-npm run social:render -- --config tools/social-engine/examples/itachi-character-journey.json   # → MP4
+npm run social:validate  # INTERNAL social video engine: typecheck + engine/pipeline tests (see "Social engine")
+npm run social:catalog   # what can be produced → tools/social-engine/catalog/catalog.json
+npm run social:queue -- --template character-journey --anime naruto --character sasuke-uchiha --locale en
+npm run social:validate:queue          # check queued content, render nothing
+npm run social:render:queue -- --dry-run   # then without --dry-run: batch render → MP4 + manifest + history
+npm run social:retry:failed            # failed content → queue → render
+npm run social:render -- --config tools/social-engine/examples/itachi-character-journey.json   # ad-hoc preview
 npm run social:studio    # Remotion Studio (local preview of the video templates)
 ```
 
@@ -527,25 +532,43 @@ internal links (real anchors, breadcrumbs) · structured data (only if truthful)
 SSR-safety of the first render. Then `npm run build` must pass (`test:seo` + `seo:check` are
 blocking) and, for UI changes, `npm run smoke`.
 
-## Social engine — INTERNAL ONLY (read `docs/SOCIAL_ENGINE.md`)
+## Social engine — INTERNAL ONLY (read `docs/SOCIAL_ENGINE.md` + `docs/SOCIAL_AGENT_CONTRACT.md`)
 
-`tools/social-engine/` is a **private** Remotion tool that renders vertical videos (1080×1920 H.264,
-Shorts/TikTok/Reels) from the site's datasets. **SOCIAL ENGINE IS INTERNAL ONLY**:
+`tools/social-engine/` is a **private** Remotion tool + file-based content pipeline that renders vertical
+videos (1080×1920 H.264, Shorts/TikTok/Reels) from the site's datasets. **SOCIAL ENGINE IS INTERNAL ONLY.**
 
-- Never expose it in the product: **no public UI, no routes/pages, no endpoints/APIs, no links** to it,
-  and never import `tools/social-engine` or `remotion`/`@remotion/*` from `src/` (`social:validate` fails
-  if you do). Remotion stays in `devDependencies`, pinned to one exact version for all its packages.
-- The renderer stays separate from the public product: it **reads** the site's data/helpers through
-  the `@/` alias (registry, slugs, paths, `getEntityDisplayName`) and never duplicates data. If logic
-  must be shared, extract it into `src/` without changing site behaviour.
-- Templates live in `tools/social-engine/templates/<id>/` and are listed ONLY in `templates/registry.ts`.
-  A template resolves config → serializable localized data (throwing `RenderDataError` when data is
-  missing — never render an empty video) and its composition is a pure function of `(data, frame)`.
-- Deterministic and local: no AI/paid APIs, no network assets, no randomness; default copy comes from
-  `config/copy.ts` templates (it/en). No official artwork or copyrighted music (optional audio = a local
-  royalty-free file). Never commit renders: `tools/social-engine/output/`, `.cache/` and `*.mp4` are ignored.
-- No auto-publishing and no GitHub Actions for it yet. After changing it: `npm run social:validate`
-  (+ a `--dry-run`/`--still` render) and `npm run build` (the public build must stay unaffected).
+**SOCIAL ENGINE ARCHITECTURE** — `data` (site datasets, read-only) → `social:catalog` (`catalog/catalog.json`:
+what's really renderable + history status) → [future agent, not connected] → JSON requests in
+`content/queue/` (contract: `schemas/social-content.schema.json`) → `social:render:queue` (validate → one
+Remotion bundle → serial renders) → `output/<anime>_<subject>_<template>_<locale>.mp4` + `.manifest.json`,
+content moved to `content/rendered|failed/`, every step in `history/history.json`. Ids:
+`contentId = <template>:<anime>:<subject>`, `renderId = <contentId>@<locale>[+<variant>]`. Code: `templates/`
+(registry + per-template config/resolve/scan/schema), `pipeline/` (ids, content, queue, enqueue, duplicates,
+history, batch, catalog, manifest, lock, fs guards, schema), `render/` (Remotion session), `cli/`, `tests/`.
+
+Permanent rules:
+- **Internal only**: no public UI, routes/pages, endpoints/APIs or links; never import `tools/social-engine`
+  or `remotion`/`@remotion/*` from `src/` (`social:validate` fails if you do). Remotion stays in
+  `devDependencies`, one exact version for all its packages. No public bundle impact.
+- **Data-driven**: the engine reads the site's data/helpers through `@/` (registry, slugs, paths,
+  `getEntityDisplayName`) and never duplicates or hand-lists content; the catalog is derived from the data
+  with the same builder the renderer uses. If logic must be shared, extract it into `src/` without changing
+  site behaviour.
+- **Agent-ready JSON**: content requests follow `docs/SOCIAL_AGENT_CONTRACT.md` exactly; the JSON Schema is
+  generated from the TS constants (`npm run social:schema`) and must stay in sync. Unknown fields are errors.
+- **No external/paid APIs**: no OpenAI/Anthropic/other AI calls, no paid video/voice services, no social
+  publishing, no GitHub Actions for it (until explicitly requested). Default copy = deterministic templates.
+- **Deterministic rendering**: compositions are pure functions of `(data, frame)`; no randomness, no network
+  assets, no official artwork or copyrighted music (optional audio = local royalty-free file in `audio/`).
+- **History required**: every queued/rendered/failed video is recorded in `history/history.json` (versioned);
+  render status and publication status are separate state machines — never edit them around the pipeline.
+- **Duplicate prevention required**: the render id is unique; already queued/rendered → rejected, a new
+  edition needs a `variant` (`allowRerender` is a human-only override). Never bypass it.
+- **Filesystem safety**: paths are built only from validated slugs via `safeJoin`; content never picks a path.
+- Templates are listed ONLY in `templates/registry.ts`; a template that lacks data throws `RenderDataError`
+  (never renders an empty video). Never commit renders (`output/`, `.cache/`, `audio/*`, `*.mp4` are ignored).
+- After changing it: `npm run social:validate` (+ `social:catalog`/`social:schema` when data/limits change, and a
+  `--dry-run`/`--still` render) and `npm run build` (the public build must stay unaffected).
 
 ## Data & content conventions
 

@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://animapverse.com/schemas/social-content.schema.json",
+  "title": "AniMapVerse social content request",
+  "description": "One JSON object per file in tools/social-engine/content/queue/ (or an array of them passed to `npm run social:queue -- --from`). See docs/SOCIAL_AGENT_CONTRACT.md.",
+  "oneOf": [
+    {
+      "title": "characterJourney",
+      "description": "A character's journey across the world map: hook → map → animated route → key locations → CTA.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "template",
+        "anime",
+        "subject"
+      ],
+      "properties": {
+        "$schema": {
+          "type": "string",
+          "description": "Optional pointer to this schema (ignored)."
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*:[a-z0-9]+(?:-[a-z0-9]+)*:[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "description": "Optional content id \"<template>:<anime>:<subject>\" (from catalog.json). If present it must match the config."
+        },
+        "status": {
+          "const": "queued",
+          "description": "Optional. Only \"queued\" is allowed: the pipeline owns every other state."
+        },
+        "template": {
+          "enum": [
+            "characterJourney",
+            "character-journey"
+          ],
+          "description": "\"characterJourney\" (or \"character-journey\")"
+        },
+        "anime": {
+          "enum": [
+            "naruto",
+            "hunterxhunter",
+            "hunter-x-hunter",
+            "onepiece",
+            "one-piece",
+            "dragonball",
+            "dragon-ball",
+            "blackclover",
+            "black-clover"
+          ],
+          "description": "World: catalog `anime` (internal slug); public URL slugs are accepted too."
+        },
+        "locale": {
+          "enum": [
+            "en",
+            "it"
+          ],
+          "default": "en"
+        },
+        "variant": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "maxLength": 80,
+          "description": "Editorial variant. REQUIRED to produce a new edition of a video already rendered (same content + locale)."
+        },
+        "hook": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 90,
+          "description": "Opening line, ≤ 2 lines on a phone. Default: deterministic template."
+        },
+        "cta": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "description": "Closing call to action. Default: deterministic template."
+        },
+        "durationSeconds": {
+          "type": "number",
+          "minimum": 12,
+          "maximum": 60,
+          "default": 22,
+          "description": "Prefer the catalog `recommendedDurationSeconds`."
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 500,
+          "description": "Why this content was chosen. Stored, never rendered."
+        },
+        "allowRerender": {
+          "type": "boolean",
+          "description": "HUMAN OVERRIDE ONLY. Agents must not set it."
+        },
+        "audio": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "src"
+          ],
+          "description": "Optional local royalty-free soundtrack inside tools/social-engine/audio/. Agents should omit it.",
+          "properties": {
+            "src": {
+              "type": "string",
+              "pattern": "^(?!/)(?!.*\\.\\.)[A-Za-z0-9._/-]+\\.(mp3|wav|m4a|aac|ogg)$"
+            },
+            "volume": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        },
+        "subject": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Character: catalog `subject` (SEO slug, e.g. \"itachi-uchiha\"). Ids (\"char-itachi\") and unique short forms (\"luffy\") are accepted too."
+        },
+        "journey": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Optional journey tuning. Omit it unless there is a precise reason.",
+          "properties": {
+            "routeIds": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "maxItems": 20
+            },
+            "includeEvents": {
+              "type": "boolean"
+            },
+            "maxStops": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 8
+            }
+          }
+        },
+        "highlights": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "maxItems": 5,
+          "description": "Locations featured in the recap (ids or SEO slugs). Must be stops of the journey. Omit for automatic selection."
+        }
+      }
+    }
+  ]
+}

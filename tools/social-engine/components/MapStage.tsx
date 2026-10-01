@@ -3,6 +3,8 @@ import { AbsoluteFill, Img, staticFile, useVideoConfig } from 'remotion';
 import type { Camera } from '../lib/camera';
 import { COLORS } from '../lib/theme';
 
+const OVERLAY_MASK = 'linear-gradient(to bottom, transparent 0%, transparent 13%, black 21%, black 100%)';
+
 export type MapStageMap = { width: number; height: number; backgroundSrc?: string; boundaries: string[] };
 
 /**
@@ -70,7 +72,8 @@ export function MapStage({ map, camera, opacity = 1, blur = 0, children }: {
         }}
       />
       <AbsoluteFill style={{ background: 'radial-gradient(ellipse 85% 70% at 50% 46%, transparent 55%, rgba(0,0,0,0.55) 100%)' }} />
-      {children}
+      {/* Overlays (route, pins, labels) fade out under the header so a long leg never crosses the title. */}
+      <AbsoluteFill style={{ maskImage: OVERLAY_MASK, WebkitMaskImage: OVERLAY_MASK }}>{children}</AbsoluteFill>
     </AbsoluteFill>
   );
 }

@@ -1,0 +1,28 @@
+[
+  {
+    "template": "characterJourney",
+    "anime": "naruto",
+    "subject": "sasuke-uchiha",
+    "locale": "en",
+    "hook": "Sasuke never stopped running. Here's where.",
+    "durationSeconds": 23,
+    "notes": "Major character, 15 places, never rendered."
+  },
+  {
+    "template": "characterJourney",
+    "anime": "one-piece",
+    "subject": "luffy",
+    "locale": "it"
+  },
+  {
+    "id": "character-journey:hunterxhunter:gon-freecss",
+    "status": "queued",
+    "template": "characterJourney",
+    "anime": "hunterxhunter",
+    "subject": "gon-freecss",
+    "locale": "en",
+    "variant": "father-quest",
+    "hook": "Gon crossed the world to find one man.",
+    "cta": "Explore the full journey on AniMapVerse"
+  }
+]
