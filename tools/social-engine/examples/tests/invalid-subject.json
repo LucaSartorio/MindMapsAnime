@@ -1,0 +1,7 @@
+{
+  "template": "characterJourney",
+  "anime": "naruto",
+  "subject": "sasuke-uchia",
+  "locale": "it",
+  "notes": "Cloud render test: deliberately wrong subject (partial failure). Delete from content/failed/ after the test."
+}

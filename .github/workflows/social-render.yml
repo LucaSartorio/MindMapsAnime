@@ -1,0 +1,209 @@
+# AniMapVerse — INTERNAL social video cloud renderer.
+#
+#   queue JSON merged on main ─► validate ─► Remotion render (same social-engine as local)
+#   ─► MP4 artifact + render-summary.json ─► state (history/queue/catalog) committed back.
+#
+# Not part of the public site: no deploy, no secrets, no external API, no publishing.
+# Docs: docs/SOCIAL_ENGINE.md › Cloud rendering · contract: docs/SOCIAL_AGENT_CONTRACT.md
+name: Social render
+
+on:
+  push:
+    # The repository's default branch (verified: `main`). Rendering happens only
+    # AFTER a pull request is merged; PRs are validated by social-validate.yml.
+    branches: [main]
+    paths:
+      - 'tools/social-engine/content/queue/**'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run: validate and show the plan only (no video, no state change, no commit)'
+        type: boolean
+        default: false
+
+# One render at a time for the whole repository; a running render is never
+# cancelled (a newer run waits, then processes the queue as it is by then).
+concurrency:
+  group: animapverse-social-render
+  cancel-in-progress: false
+
+# Least privilege: read-only by default; only the render job may push its state commit.
+permissions:
+  contents: read
+
+env:
+  NODE_VERSION: '22'
+  # Videos rendered per run (≈ 1.5–3 min each); the rest stays queued for the next run.
+  SOCIAL_RENDER_LIMIT: '12'
+
+jobs:
+  render:
+    name: Render queued videos
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+    # Loop guard #3 (on top of GITHUB_TOKEN pushes never triggering workflows, and
+    # [skip ci] on the bot commit): never react to the bot's own state commits.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.actor != 'github-actions[bot]' &&
+       !contains(github.event.head_commit.message, '[skip social-render]'))
+    outputs:
+      rendered_count: ${{ steps.report.outputs.rendered_count }}
+      failed_count: ${{ steps.report.outputs.failed_count }}
+      artifact_name: ${{ steps.report.outputs.artifact_name }}
+    env:
+      SOCIAL_ARTIFACT_NAME: animapverse-social-render-${{ github.run_id }}-${{ github.run_attempt }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # The branch HEAD (not the triggering sha): a run that waited in the
+          # concurrency queue must see the state committed by the previous run.
+          ref: ${{ github.ref_name }}
+          fetch-depth: 20
+          # The token is only handed to the "Persist social history" step.
+          persist-credentials: false
+
+      - name: Decide run mode
+        id: mode
+        shell: bash
+        run: |
+          mode=render
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then mode=dry; fi
+          # Real renders (and state commits) only on the default branch.
+          if [ "${{ github.ref_name }}" != "${{ github.event.repository.default_branch }}" ]; then mode=dry; fi
+          count=$(find tools/social-engine/content/queue -maxdepth 1 -type f -name '*.json' | wc -l | tr -d ' ')
+          echo "mode=$mode" >> "$GITHUB_OUTPUT"
+          echo "queued=$count" >> "$GITHUB_OUTPUT"
+          echo "Mode: $mode · queued files: $count"
+          if [ "$count" = "0" ]; then
+            printf '# AniMapVerse Social Render\n\nThe queue is empty — nothing to do.\n' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Setup Node.js
+        if: steps.mode.outputs.queued != '0'
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Install dependencies
+        if: steps.mode.outputs.queued != '0'
+        run: npm ci --no-audit --no-fund
+
+      # Remotion downloads Chrome Headless Shell into node_modules/.remotion/
+      # (resolved from the nearest package.json; the version is pinned by the
+      # installed @remotion/renderer and re-checked by Remotion itself). It is
+      # restored AFTER `npm ci`, which wipes node_modules.
+      - name: Restore Chrome Headless Shell cache
+        id: chrome-cache
+        if: steps.mode.outputs.queued != '0' && steps.mode.outputs.mode == 'render'
+        uses: actions/cache/restore@v4
+        with:
+          path: node_modules/.remotion/chrome-headless-shell
+          key: remotion-chrome-headless-shell-${{ runner.os }}-${{ hashFiles('node_modules/@remotion/renderer/package.json') }}
+
+      - name: Install Chrome Headless Shell
+        if: steps.mode.outputs.queued != '0' && steps.mode.outputs.mode == 'render'
+        run: npx remotion browser ensure
+
+      # Saved right away (not in a post step): the cache survives runs that end
+      # red because of a failed video.
+      - name: Save Chrome Headless Shell cache
+        if: steps.mode.outputs.queued != '0' && steps.mode.outputs.mode == 'render' && steps.chrome-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: node_modules/.remotion/chrome-headless-shell
+          key: ${{ steps.chrome-cache.outputs.cache-primary-key }}
+
+      - name: Generate social catalog
+        if: steps.mode.outputs.queued != '0'
+        run: npm run social:catalog
+
+      - name: Validate social queue
+        id: validate
+        if: steps.mode.outputs.queued != '0'
+        # Informative here: invalid files don't block valid ones — the batch moves
+        # them to content/failed/ with the reason, and the last step turns the run
+        # red. (Pull requests are gated hard by social-validate.yml.)
+        continue-on-error: true
+        run: npm run social:validate:queue
+
+      - name: Dry run (plan only)
+        id: dry
+        if: steps.mode.outputs.queued != '0' && steps.mode.outputs.mode == 'dry'
+        run: npm run social:render:queue:dry
+
+      - name: Render queued videos
+        id: render
+        if: steps.mode.outputs.queued != '0' && steps.mode.outputs.mode == 'render'
+        continue-on-error: true
+        timeout-minutes: 45
+        run: npm run social:render:queue
+
+      - name: Prepare render artifact
+        id: report
+        if: always() && steps.mode.outputs.queued != '0'
+        env:
+          SOCIAL_RUN_MODE: ${{ steps.mode.outputs.mode }}
+        run: npm run social:ci:report
+
+      - name: Upload rendered videos
+        # Also on partial failure: successful videos + render-summary.json are kept.
+        if: always() && steps.mode.outputs.mode == 'render' && steps.report.outputs.has_summary == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.SOCIAL_ARTIFACT_NAME }}
+          path: tools/social-engine/.cache/artifact/
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 0
+
+      # The runner is ephemeral: history, moved queue files (→ rendered/ failed/)
+      # and the refreshed catalog are committed back, or the next run would
+      # render the same content again. Only these paths are ever staged.
+      - name: Persist social history
+        if: always() && steps.mode.outputs.mode == 'render' && steps.mode.outputs.queued != '0'
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- tools/social-engine/history tools/social-engine/content tools/social-engine/catalog
+          if git diff --cached --quiet; then
+            echo "No state change to persist."
+            exit 0
+          fi
+          git diff --cached --stat
+          # Loop guard: [skip ci] + [skip social-render] in the message, and the push
+          # uses GITHUB_TOKEN, whose pushes never start new workflow runs.
+          git commit -q -m "chore(social): record rendered content [skip social-render] [skip ci]" \
+                        -m "Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          remote="https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git"
+          for attempt in 1 2 3 4; do
+            if git push "$remote" "HEAD:refs/heads/${BRANCH}"; then
+              echo "State committed: $(git rev-parse --short HEAD)"
+              exit 0
+            fi
+            echo "Push rejected (branch moved?) — rebasing on the latest ${BRANCH} (attempt $attempt)"
+            sleep $((attempt * 5))
+            git pull --rebase "$remote" "${BRANCH}"
+          done
+          echo "::error::Could not persist the social history: the videos are in the artifact, but the queue/history change was not saved. Re-run this job."
+          exit 1
+
+      - name: Fail when a video failed
+        if: always() && steps.mode.outputs.queued != '0'
+        shell: bash
+        run: |
+          failed="${{ steps.report.outputs.failed_count }}"
+          if [ "${{ steps.render.outcome }}" = "failure" ] || [ "${{ steps.dry.outcome }}" = "failure" ] || { [ -n "$failed" ] && [ "$failed" != "0" ]; }; then
+            echo "::error::${failed:-?} item(s) failed — see the step summary; failed content is in tools/social-engine/content/failed/."
+            exit 1
+          fi
+          echo "All good: ${{ steps.report.outputs.rendered_count }} video(s)."

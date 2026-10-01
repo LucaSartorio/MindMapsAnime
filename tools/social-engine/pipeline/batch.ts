@@ -43,9 +43,9 @@ export type BatchOptions = {
 export type BatchResult = {
   dryRun: boolean;
   considered: number;
-  rendered: { renderId: string; file: string; outputFile: string }[];
+  rendered: { renderId: string; file: string; outputFile: string; manifestFile: string }[];
   failed: { name: string; renderId: string | null; error: string }[];
-  rejected: { name: string; kind: string; errors: string[] }[];
+  rejected: { name: string; kind: string; errors: string[]; raw: unknown }[];
   planned: { name: string; renderId: string; notes: string[]; summary: string[] }[];
 };
 
@@ -78,7 +78,7 @@ export async function runBatch(opts: BatchOptions): Promise<BatchResult> {
     const invalid = items.filter((i): i is Extract<QueueItem, { ok: false }> => !i.ok);
     result.considered = valid.length + invalid.length;
     for (const i of valid) result.planned.push({ name: i.name, renderId: i.plan.renderId, notes: i.notes, summary: i.plan.resolved.summary });
-    for (const i of invalid) result.rejected.push({ name: i.name, kind: i.kind, errors: i.errors });
+    for (const i of invalid) result.rejected.push({ name: i.name, kind: i.kind, errors: i.errors, raw: i.raw });
     if (dryRun) return result;
 
     // Rejected files: kept (never deleted), moved aside with the reason.
@@ -118,7 +118,7 @@ export async function runBatch(opts: BatchOptions): Promise<BatchResult> {
           sourceFile: path.basename(moved),
           lastError: null,
         });
-        result.rendered.push({ renderId: plan.renderId, file: path.basename(moved), outputFile: relToRepo(dirs, outputFile) });
+        result.rendered.push({ renderId: plan.renderId, file: path.basename(moved), outputFile: relToRepo(dirs, outputFile), manifestFile: relToRepo(dirs, manifestFile) });
         log(`  ✔ ${relToRepo(dirs, outputFile)}`);
       } catch (err) {
         const message = err instanceof Error ? err.message : String(err);

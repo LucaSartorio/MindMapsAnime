@@ -8,13 +8,19 @@
  *
  * Videos are rendered ONE AT A TIME (--concurrency = frames in parallel inside
  * a video). A lock prevents two batches at once. The catalog is refreshed at
- * the end so its history columns stay true.
+ * the end so its history columns stay true. Every run (dry or real) writes the
+ * machine-readable output/render-summary.json.
+ *
+ * Environment (CI-friendly, no npm argument forwarding needed):
+ *   SOCIAL_RENDER_LIMIT=<n>   same as --limit
  */
 import { buildCatalog, writeCatalog } from '../pipeline/catalog';
+import { buildRunSummary, writeRunSummary } from '../pipeline/runSummary';
 import { requeueFailed, runBatch } from '../pipeline/batch';
 import { pipelineDirs } from '../pipeline/dirs';
 import { loadHistory } from '../pipeline/history';
 import { LockError } from '../pipeline/lock';
+import path from 'node:path';
 import { parseArgs, type FlagSpec } from './args';
 import { fail, listFlag, numberFlag, remotionRendererFactory, stringFlag } from './common';
 
@@ -33,6 +39,14 @@ const HELP = `Usage: npm run social:render:queue -- [options]
   --requeue-only        with --retry-failed: requeue without rendering
   --no-catalog          don't refresh catalog/catalog.json at the end
 `;
+
+function envLimit(): number | undefined {
+  const raw = process.env.SOCIAL_RENDER_LIMIT;
+  if (!raw) return undefined;
+  const n = Number(raw);
+  if (!Number.isInteger(n) || n < 1) fail(`SOCIAL_RENDER_LIMIT must be a positive integer (got "${raw}")`, 2);
+  return n;
+}
 
 async function main() {
   const { flags, errors } = parseArgs(process.argv.slice(2), SPEC);
@@ -56,10 +70,12 @@ async function main() {
     dryRun,
     ids: flags['retry-failed'] ? undefined : ids,
     files,
-    limit: numberFlag(flags, 'limit'),
+    limit: numberFlag(flags, 'limit') ?? envLimit(),
     createRenderer: remotionRendererFactory(dirs, { browserExecutable: stringFlag(flags, 'browser-executable'), concurrency: numberFlag(flags, 'concurrency') ?? null }),
     log: (line) => console.log(line),
   });
+
+  const summaryFile = writeRunSummary(dirs, buildRunSummary(dirs, result, new Date().toISOString()));
 
   if (dryRun) {
     console.log(`\nDRY RUN — ${result.considered} file(s) in the queue, nothing rendered, nothing changed`);
@@ -69,17 +85,20 @@ async function main() {
       for (const line of p.summary) console.log(`    ${line}`);
     }
     for (const r of result.rejected) console.log(`\n  ✖ ${r.name}  [${r.kind}] → would move to content/failed/\n    ${r.errors.join('\n    ')}`);
-    console.log(`\n${result.planned.length} would render · ${result.rejected.length} would be rejected\n`);
+    console.log(`\n${result.planned.length} would render · ${result.rejected.length} would be rejected`);
+    console.log(`summary: ${path.relative(process.cwd(), summaryFile)}\n`);
+    if (result.rejected.length) process.exitCode = 1;
     return;
   }
 
-  const failedTotal = result.failed.length + result.rejected.filter((r) => r.kind !== 'unsafe_file').length;
+  const failedTotal = result.failed.length + result.rejected.length;
   console.log(`\n──────── batch summary ────────`);
   console.log(`${result.considered} queued · ${result.rendered.length} rendered · ${failedTotal} failed`);
   for (const r of result.rendered) console.log(`  ✔ ${r.renderId}  →  ${r.outputFile}`);
-  for (const f of result.failed) console.log(`  ✖ ${f.renderId ?? f.name}: ${f.error}`);
+  for (const f of result.failed) console.log(`  ✖ ${f.renderId ?? f.name} (${f.name}): ${f.error}`);
   for (const r of result.rejected) console.log(`  ✖ ${r.name} [${r.kind}]: ${r.errors.join('; ')}`);
   if (failedTotal) console.log(`  → retry: npm run social:retry:failed`);
+  console.log(`  summary: ${path.relative(process.cwd(), summaryFile)}`);
 
   if (!flags['no-catalog']) {
     writeCatalog(dirs, await buildCatalog(dirs, loadHistory(dirs), new Date().toISOString()));

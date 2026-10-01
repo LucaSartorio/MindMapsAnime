@@ -20,13 +20,28 @@ import { buildJourneyCamera } from './camera';
 import { planJourney } from './timeline';
 import type { CharacterJourneyProps } from './types';
 
+/** Every string the video can show (drives which font subsets must be loaded). */
+export function videoText(data: NonNullable<CharacterJourneyProps['data']>): string {
+  return [
+    data.hook,
+    data.cta,
+    data.siteLabel,
+    data.pageLabel,
+    data.map.name,
+    data.world.title,
+    ...Object.values(data.character).filter((v): v is string => typeof v === 'string'),
+    ...Object.values(data.copy),
+    ...data.stops.flatMap((s) => [s.title, s.placeName, s.shortName, s.regionName ?? '', s.arcName ?? '']),
+  ].join(' ');
+}
+
 /**
  * CharacterJourney — hook → establishing map → animated journey → key
  * locations → CTA. Generic: everything comes from `data` (any world, any
  * character with ≥ 2 places on the map). Pure function of the frame.
  */
 export function CharacterJourney({ data }: CharacterJourneyProps) {
-  useBrandFonts();
+  useBrandFonts(data ? videoText(data) : '');
   const frame = useCurrentFrame();
   const { fps, width } = useVideoConfig();
   if (!data) throw new Error('CharacterJourney: missing resolved data (calculateMetadata did not run).');

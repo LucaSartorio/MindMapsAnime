@@ -6,7 +6,25 @@
 > Machine-readable twin: [`tools/social-engine/schemas/social-content.schema.json`](../tools/social-engine/schemas/social-content.schema.json)
 > (JSON Schema 2020-12, generated from the TypeScript types — `npm run social:schema`).
 >
-> No agent is connected yet (phase 2 only prepares the contract and the infrastructure).
+> No agent is connected yet: this is the contract it will follow.
+
+## 0. The agent's whole job
+
+The agent **never renders, never runs the engine and never edits state**. It only:
+
+1. **reads** `tools/social-engine/catalog/catalog.json` + `tools/social-engine/history/history.json` (default branch);
+2. **creates** queue JSON — one file per video in `tools/social-engine/content/queue/`
+   (name `NNNN-<anime>_<subject>_<template>_<locale>.json`, next free number), following §2;
+3. **commits on a branch and opens a pull request** — the *Social validate* check must be green
+   (it rejects invalid, duplicated or unrenderable requests);
+4. after the merge, **waits for the *Social render* workflow run** on `main` triggered by that merge
+   (GitHub API: workflow `social-render.yml`, event `push`, `head_sha` = the merge commit);
+5. **reads `render-summary.json`** in the run's artifact `animapverse-social-render-<run_id>-<attempt>`
+   (also exposed as the job output `artifact_name`) — `rendered[]` / `failed[]`;
+6. **downloads** the artifact and takes `videos/<file>.mp4` (+ `manifests/<file>.manifest.json`
+   for title/hook/page URL). A red run = at least one failure: read `failed[]`.
+
+Publishing is a later phase. Never commit MP4s, never touch `history.json`, never set `allowRerender`.
 
 ## 1. What the agent reads
 
@@ -195,11 +213,11 @@ never deleted.
 ## 7. What happens next (engine side)
 
 ```
-queue/*.json ─► social:render:queue ─► output/<stem>.mp4 + <stem>.manifest.json
-                     │                    content/rendered/<file>.json
-                     │                    history: rendered
-                     └─ failure ────────► content/failed/<file>.json + .error.json
-                                          history: failed (lastError) ─► social:retry:failed
+PR (queue/*.json) ─► Social validate ─► merge ─► Social render (GitHub Actions, ubuntu)
+   social:render:queue ─► videos/<stem>.mp4 + manifests/<stem>.manifest.json + render-summary.json  (artifact)
+        │                 content/rendered/<file>.json · history: rendered        (bot commit [skip ci])
+        └─ failure ──────► content/failed/<file>.json + .error.json · history: failed
 ```
 
+The `render-summary.json` format is documented in docs/SOCIAL_ENGINE.md › Cloud rendering.
 The agent never renders, moves files, edits history or publishes.

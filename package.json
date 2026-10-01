@@ -29,7 +29,9 @@
     "social:queue": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/queue.ts",
     "social:validate:queue": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/validate-queue.ts",
     "social:render:queue": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/render-queue.ts",
-    "social:retry:failed": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/render-queue.ts --retry-failed"
+    "social:retry:failed": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/render-queue.ts --retry-failed",
+    "social:render:queue:dry": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/render-queue.ts --dry-run",
+    "social:ci:report": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/ci-report.ts"
   },
   "dependencies": {
     "@fontsource/cinzel": "^5.2.8",
