@@ -420,7 +420,7 @@ push to main ──► Social render
   Checkout repository          branch HEAD (sees the previous run's state commit)
   Decide run mode              render | dry (dispatch dry_run, or a non-default branch) · queue count
   Setup Node.js / Install      Node 22, npm cache, `npm ci`            (skipped when the queue is empty)
-  Restore Chrome Headless Shell cache · Install Chrome Headless Shell (`npx remotion browser ensure`)
+  Restore / Install / Save Chrome Headless Shell   `npx remotion browser ensure`, cached per Remotion version
   Generate social catalog      npm run social:catalog
   Validate social queue        npm run social:validate:queue          (informative: invalid → failed/)
   Render queued videos         npm run social:render:queue            (≤ 12 per run, one at a time)
@@ -429,6 +429,15 @@ push to main ──► Social render
   Persist social history       commit history/content/catalog back    ([skip ci], GITHUB_TOKEN)
   Fail when a video failed     red run if ≥ 1 item failed
 ```
+
+**Verified on GitHub** (temporarily enabled on the feature branch, then removed):
+[run #1](https://github.com/LucaSartorio/MindMapsAnime/actions/runs/36840522088) — Sasuke (en)
+rendered + a deliberately invalid item: red run, artifact with 1 video + manifest + summary
+uploaded, invalid item in `content/failed/`, state committed after an automatic rebase
+(the branch had moved during the render), no new run triggered;
+[run #2](https://github.com/LucaSartorio/MindMapsAnime/actions/runs/36840979141) — Sasuke (it):
+green, Chrome cache saved, state committed, no loop. `npm ci` ≈ 8 s, browser ≈ 3 s, ~2 min per
+22 s video on `ubuntu-latest`. Fixtures to replay it: `tools/social-engine/examples/tests/`.
 
 ### Artifact
 
@@ -536,6 +545,8 @@ fonts don't cover). Same Remotion version → same Chrome Headless Shell (149.0.
 - **Nothing happens after a merge** → the merge must change `tools/social-engine/content/queue/**`
   on `main`; use **Run workflow** to process the queue as it is.
 - **Job skipped** → the head commit was the bot's state commit (expected).
+- **"Node.js 20 is deprecated" warning** on `actions/*@v4` → harmless (GitHub runs them on
+  Node 24); bump the action majors when convenient.
 
 ## Troubleshooting
 
