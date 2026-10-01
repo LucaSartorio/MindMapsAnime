@@ -23,6 +23,9 @@ import { acquireLock, LockError } from '../pipeline/lock';
 import { buildContentSchema } from '../pipeline/schema';
 import { ENGINE_DIR, REPO_ROOT } from '../render/paths';
 import { resolveCharacterJourney } from '../templates/characterJourney/resolve';
+import { videoText } from '../templates/characterJourney/CharacterJourney';
+import { FONT_COVERAGE_RE } from '../lib/fonts';
+import { buildRunSummary } from '../pipeline/runSummary';
 import { section, test } from './harness';
 
 const sandboxes: string[] = [];
@@ -210,6 +213,27 @@ await test('batch renders in order, isolates failures, keeps everything, writes 
   assert.equal(manifest.contentId, 'character-journey:naruto:itachi-uchiha');
   assert.equal(manifest.resolution, '1080x1920');
   assert.equal((manifest.sourceConfig as { subject: string }).subject, 'itachi-uchiha');
+  // Machine-readable run summary (what the GitHub artifact carries).
+  const summary = buildRunSummary(dirs, r, fixedNow());
+  assert.deepEqual(summary.counts, { considered: 5, rendered: 2, failed: 3, planned: 3, remainingInQueue: 0 });
+  assert.deepEqual(summary.rendered[0], {
+    renderId: 'character-journey:naruto:itachi-uchiha@en',
+    contentId: 'character-journey:naruto:itachi-uchiha',
+    template: 'characterJourney',
+    anime: 'naruto',
+    subject: 'itachi-uchiha',
+    locale: 'en',
+    variant: null,
+    title: 'Itachi Uchiha · Character Journey',
+    durationSeconds: 22,
+    sha256: (manifest as { sha256: string }).sha256,
+    video: 'videos/naruto_itachi-uchiha_character-journey_en.mp4',
+    manifest: 'manifests/naruto_itachi-uchiha_character-journey_en.manifest.json',
+    sourceFile: '0001-naruto_itachi-uchiha_character-journey_en.json',
+  });
+  const crash = summary.failed.find((f) => f.kind === 'render');
+  assert.deepEqual([crash?.renderId, crash?.anime, crash?.subject, crash?.errors], ['character-journey:naruto:kakashi-hatake@en', 'naruto', 'kakashi-hatake', ['simulated render crash']]);
+  assert.deepEqual(summary.failed.filter((f) => f.kind !== 'render').map((f) => [f.kind, f.subject]).sort(), [['duplicate', 'char-itachi'], ['invalid', null]]);
   assert.equal(h['character-journey:naruto:kakashi-hatake@en'].renderStatus, 'failed');
   assert.equal(h['character-journey:naruto:kakashi-hatake@en'].lastError, 'simulated render crash');
   assert.ok(!existsSync(path.join(dirs.output, 'naruto_kakashi-hatake_character-journey_en.mp4')), 'no partial output');
@@ -279,10 +303,18 @@ await test('catalog lists only renderable content, per world, with reasons for t
   assert.ok(x && (x.byReason.no_journey_data ?? 0) > 0);
   assert.ok(x.items.every((i) => i.reason && i.subjectId));
 });
-await test('every catalog item really resolves in every declared locale', async () => {
+await test('every catalog item resolves in every declared locale, with text the bundled fonts cover', async () => {
   const t = sandboxCatalog?.templates.characterJourney;
   assert.ok(t);
-  for (const item of t.items) for (const locale of item.locales) await resolveCharacterJourney({ template: 'characterJourney', anime: item.anime, subject: item.subject, locale });
+  const uncovered = new Set<string>();
+  for (const item of t.items) {
+    for (const locale of item.locales) {
+      const data = await resolveCharacterJourney({ template: 'characterJourney', anime: item.anime, subject: item.subject, locale });
+      for (const ch of videoText(data)) if (!FONT_COVERAGE_RE.test(ch)) uncovered.add(`${ch} U+${ch.codePointAt(0)?.toString(16)} (${item.id}@${locale})`);
+    }
+  }
+  // A character outside the @fontsource subsets would be drawn with an OS font (different on Windows/Linux).
+  assert.deepEqual([...uncovered], []);
 });
 await test('catalog reflects history and queue (rendered / queued / published)', async () => {
   const dirs = sandbox();
@@ -315,11 +347,16 @@ await test('contract examples are valid requests and use only schema fields', ()
     for (const key of Object.keys(e as object)) assert.ok(allowed.has(key), key);
   }
 });
-await test('catalog/catalog.json is up to date with data + history (npm run social:catalog)', async () => {
+await test('catalog/catalog.json is up to date with the data (npm run social:catalog)', async () => {
+  // Status columns (rendered/queued/published) change with every queued PR and are
+  // refreshed by each batch run; what must never be stale is what's PRODUCIBLE.
+  const STATUS = ['renderedLocales', 'publishedLocales', 'queuedLocales', 'renderedBefore', 'publishedBefore'];
+  const strip = (c: Catalog) =>
+    JSON.parse(JSON.stringify(c, (key, value: unknown) => (STATUS.includes(key) || key === 'generatedAt' ? undefined : value))) as unknown;
   const dirs = pipelineDirs(ENGINE_DIR);
   const committed = JSON.parse(readFileSync(path.join(dirs.catalog, CATALOG_FILE), 'utf8')) as Catalog;
   const { catalog } = await buildCatalog(dirs, loadHistory(dirs), committed.generatedAt);
-  assert.deepEqual(committed, JSON.parse(JSON.stringify(catalog)));
+  assert.deepEqual(strip(committed), strip(catalog));
 });
 await test('source is versioned, runtime artifacts are ignored', () => {
   const ignored = (p: string) => {

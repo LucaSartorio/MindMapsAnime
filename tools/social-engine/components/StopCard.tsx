@@ -48,7 +48,11 @@ export function StopCard({ index, count, stopLabel, title, place, arc, appear, f
       </div>
       <div style={{ fontFamily: FONTS.sans, fontWeight: 700, fontSize: titleSize, lineHeight: 1.1, color: COLORS.white, letterSpacing: '-0.01em' }}>{title}</div>
       <div style={{ display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap' }}>
-        <span style={{ fontFamily: FONTS.sans, fontWeight: 500, fontSize: 32, color: COLORS.ink200 }}>◉ {place}</span>
+        <span style={{ display: 'inline-flex', alignItems: 'center', gap: 12, fontFamily: FONTS.sans, fontWeight: 500, fontSize: 32, color: COLORS.ink200 }}>
+          {/* Pin dot drawn in CSS: a glyph like ◉ isn't in the brand fonts and would come from the OS. */}
+          <span style={{ width: 16, height: 16, borderRadius: '50%', border: `3px solid ${COLORS.red500}`, boxSizing: 'border-box', flexShrink: 0 }} />
+          {place}
+        </span>
         {arc && (
           <span
             style={{
