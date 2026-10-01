@@ -30,7 +30,8 @@ no CI-specific logic. **No AI/API is called and nothing is published.**
 npm run social:catalog                 # scan the datasets → catalog/catalog.json + excluded.json (+ summary)
 
 # queue
-npm run social:queue -- --template character-journey --anime naruto --character sasuke-uchiha --locale en
+npm run social:queue -- --template character-journey --anime naruto --character itachi-uchiha --locale en
+npm run social:queue -- --template character-journey --anime dragonball --character goku --segment part-01 --locale en
 npm run social:queue -- --from proposal.json     # one request or an ARRAY (agent output)
 npm run social:queue -- --list                   # queue / failed / rendered / history counts
 npm run social:validate:queue                    # check every queued file, render nothing
@@ -68,11 +69,16 @@ tools/social-engine/output/
   preview/…                                   (ad-hoc renders and stills)
 ```
 
-- Name: `<anime>_<subject>_<template>_<locale>[_<variant>]` — built only from validated slugs.
+- Name: `<anime>_<subject>_<template>[_<segment>]_<locale>[_<variant>]` — built only from
+  validated slugs, e.g. `naruto_itachi-uchiha_character-journey_en.mp4` (single journey) and
+  `dragonball_goku_character-journey_part-02_en.mp4` (part 2 of a series).
 - 1080×1920 (9:16), 30 fps, H.264 High, `yuv420p`, CRF 18, no audio track unless configured.
-- Manifest: content/render ids, template, anime, subject, locale, variant, duration, frames,
-  resolution, `renderedAt`, file size + sha256, publication facts (title, hook, CTA, page URL,
-  stops) and the source config — what a future publisher/analytics step needs.
+- Manifest: content/render ids, template, anime, subject, locale, variant, **`segment`** (series
+  facts: `seriesId`, `segment`, `partNumber`, `partCount`, `arcIds`, `arcTitles`, `firstArc`,
+  `lastArc`, `segmentStopCount`, `fullJourneyStopCount`, `segmentationVersion`, `fingerprint`;
+  `null` for a single video), duration, frames, resolution, `renderedAt`, file size + sha256,
+  publication facts (title incl. "Part 2 of 5", hook, CTA, page URL, stops, arc range) and the
+  source config — what a future publisher/analytics step needs.
 - Same request + same data → same video (no randomness, no network, no AI; verified
   byte-identical across runs).
 
@@ -83,7 +89,7 @@ tools/social-engine/
   index.ts · Root.tsx · remotion.config.ts · tsconfig.json     Remotion entry / Studio
   config/        shared types, defaults, deterministic copy (en/it), schema helpers
   data/          read-only adapters over the site data (world registry, slugs, sub-map
-                 projection, journey builder + sampling)
+                 projection, journey builder, arc-based segmentation `segments.ts`)
   lib/ · components/    camera, easing, geometry, fonts, theme · shared video components
   templates/     registry.ts (THE list) · types.ts (contract) · characterJourney/
                  (config, resolve, catalog scan, timeline, camera, composition)
@@ -148,10 +154,10 @@ every problem is reported at once.
   "template": "characterJourney",
   "anime": "naruto",
   "subject": "itachi-uchiha",
+  "segment": "part-02",
   "locale": "en",
   "hook": "How far did Itachi actually travel?",
   "cta": "Explore the full journey on AniMapVerse",
-  "durationSeconds": 22,
   "journey": { "maxStops": 6, "includeEvents": true, "routeIds": ["route-itachi"] },
   "highlights": ["loc-akatsuki-hq", "orochimaru-hideout"],
   "audio": { "src": "path/to/royalty-free.mp3", "volume": 0.6 }
@@ -163,13 +169,14 @@ every problem is reported at once.
 | `template` | ✔ | `characterJourney` (CLI alias `character-journey`) |
 | `anime` | ✔ | internal slug (`hunterxhunter`) or URL slug (`hunter-x-hunter`); must be `available` |
 | `subject` | ✔ | SEO slug (`itachi-uchiha`), id (`char-itachi`), id without prefix (`itachi`) or a unique short form (`luffy`) — normalized to the slug |
+| `segment` | for series | `part-01`, `part-02`… as listed in the catalog (`series.segment`). Required when the journey is a series, rejected when it's a single video, rejected if the part doesn't exist |
 | `locale` | | `en` · also `it` (the datasets' source languages) |
-| `hook` | | `Follow {name}'s journey across the {anime} world.` / `Segui il viaggio di {name} nel mondo di {anime}.` (≤ 90 chars) |
-| `cta` | | `Explore the full journey on AniMapVerse` / `Esplora il percorso completo su AniMapVerse` (≤ 80 chars) |
-| `durationSeconds` | | `22` (12–60) |
+| `hook` | | single: `Follow {name}'s journey across the {anime} world.` / `Segui il viaggio di {name} nel mondo di {anime}.` · series: `{name}'s journey begins / continues — Part {n} of {total}.`, `The last stretch of {name}'s journey — Part {n} of {total}.` (IT: `Il viaggio di {name} comincia / continua — Parte {n} di {total}.`, `L'ultimo tratto del viaggio di {name} — …`) (≤ 90 chars) |
+| `cta` | | `Explore the full journey on AniMapVerse` / `Esplora il percorso completo su AniMapVerse`; parts before the last: `Continue the journey on AniMapVerse` / `Continua il viaggio su AniMapVerse` (≤ 80 chars) |
+| `durationSeconds` | | **automatic** from the stops (see Dynamic duration), 12–60 if explicit |
 | `journey.routeIds` | | the character's own routes |
 | `journey.includeEvents` | | `true` |
-| `journey.maxStops` | | `6` (2–8), further capped by the duration (~1.6 s per stop minimum) |
+| `journey.maxStops` | | expert cap (2–8) on the stops of this video; default: all stops of the part (≤ 8). Also capped when an explicit duration is too short (≥ 1.6 s per stop) |
 | `highlights` | | auto: the 3–5 most important stops (ids or SEO slugs; must be on the journey) |
 | `audio` | | none. A file inside `tools/social-engine/audio/` only (path-checked), never copyrighted OSTs |
 | `variant` | | none. Editorial edition (slug); needed to re-do a video already rendered |
@@ -179,17 +186,37 @@ Default texts are deterministic templates in `config/copy.ts` — no generated t
 
 ## CharacterJourney
 
-Scenes (22 s default; the plan in `templates/characterJourney/timeline.ts` scales with the duration):
+A short journey (≤ 8 places on the map) is **one video**. A long one becomes a
+**series**: chronological, arc-based parts — *Goku's journey · Part 1 of 5*, *Part 2 of 5*… —
+each an independent content with its own id, catalog item, render and history.
 
-| Time | Scene |
-| --- | --- |
-| 0–2.4 s | **Hook**: kicker (`Naruto · Character Journey`), big 1–2 line text, red underline; blurred map behind |
-| 2.4–5.1 s | **Establishing map**: map out of the blur, header (brand, monogram, name, factions), map name + stats |
-| 5.1–15.4 s | **Journey**: per stop, the camera flies, the route draws itself, the numbered pin pops and pulses, place label + stop card (title, place, arc, progress) |
-| 15.4–19.1 s | **Recap**: camera frames the whole route, 3–5 key locations listed and labelled |
-| 19.1–22 s | **CTA**: AniMapVerse mark, CTA, `animapverse.com` + the character's real page path |
+Scenes (the plan in `templates/characterJourney/timeline.ts` follows the stop count):
 
-**How the journey is built** (`data/journey.ts`, generic for every world):
+| Scene | Length | Content |
+| --- | --- | --- |
+| **Hook** | 2.6 s (fixed) | kicker (`Dragon Ball · Part 2 of 5` / `Naruto · Character Journey`), big 1–2 line text, red underline; blurred map behind |
+| **Establishing map** | 2.8 s (fixed) | map out of the blur, header (brand, monogram, name, `CHARACTER JOURNEY` + a discreet `PART 2 OF 5` pill), map name, **arc range of the part** (`Tenkaichi Budokai → Red Ribbon Army Saga`, one line, shrinks/ellipsizes), stats of this video |
+| **Journey** | ≈ 2.8 s **per stop** | camera flies (zoomed from the distance to the previous stop), the route of **this part only** draws itself (travel 42 %), the numbered pin pops and pulses, place label + stop card (title, place, arc, progress) during the dwell (58 %) |
+| **Recap** | 3.4 s + 0.15 s/stop | camera frames this part's route, 3–5 key locations **of this part** |
+| **CTA** | 3.2 s (fixed) | AniMapVerse mark, `Next: Part 3 of 5` (series, not on the last part), CTA, `animapverse.com` + the character's page |
+
+### Dynamic duration
+
+The engine owns the length: `recommendedDurationSeconds(stops) = clamp(round(13.5 + 2.75 × stops), 24, 38)`.
+
+| Animated stops | 2–3 | 4 | 5 | 6 | 7 | 8 |
+| --- | --- | --- | --- | --- | --- | --- |
+| Duration | 24 s | 25 s | 27 s | 30 s | 33 s | 36 s |
+
+Fixed scenes keep their length; everything else goes to the journey, so every stop
+gets ≈ 2.8–3 s (a stop never gets more than 3.4 s — spare time on very short journeys
+goes to intro/recap/CTA). More places never make a longer video: they make **more parts**.
+An explicit `durationSeconds` (12–60) is still honoured; if it's too short for the stops
+(< 1.6 s each) the part is sampled down (first/last kept).
+
+### How the journey is built
+
+`data/journey.ts`, generic for every world — unchanged by the segmentation:
 
 1. Routes: the character's `routeIds`, routes of `type: 'character'` featuring
    them, or routes whose only protagonist they are (group routes are skipped).
@@ -200,17 +227,74 @@ Scenes (22 s default; the plan in `templates/characterJourney/timeline.ts` scale
    into story arcs the routes don't cover.
 3. Everything is sorted by arc order, projected on the world map (sub-map
    places such as the Uchiha District → the Konoha pin) and consecutive stops on
-   the same pin are merged.
-4. Too many stops → first and last are kept and the middle is split into
-   chronological buckets, each keeping its most important stop (never the same
-   pin twice in a row). Few stops → each is capped at 2.8 s and the spare time
-   goes to the intro/recap/CTA.
+   the same pin are merged — stop counts are always counted AFTER this.
+
+### Segmentation (series)
+
+`data/segments.ts` takes that chronological journey and never re-orders it:
+
+1. **Arc grouping** — each stop gets an *effective arc* (its own; a stop without arc takes
+   the previous stop's; leading ones the first known arc) and consecutive stops of the same
+   arc form a group. Arcs without visible stops simply don't exist here.
+2. **≤ 8 stops → single video** (`SINGLE_MAX_STOPS`), never split artificially.
+3. **> 8 stops → optimal partition** by dynamic programming over all cut positions,
+   minimising a penalty (globally, not greedily — so no `6, 6, 2` tails):
+
+   | Part size | 1 | 2 | 3 | 4 | 5 | **6** | 7 | 8 | > 8 |
+   | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+   | Penalty | 1000 | 60 | 25 | 6 | 1 | **0** | 1 | 4 | impossible |
+
+   plus +15 when the **last** part has 1–3 stops, +200 for a cut **inside** an arc that
+   would fit in one part (only when nothing else works), +3 for a cut inside an arc
+   bigger than 8 (huge arcs are split evenly: `[14] → 7 + 7`). Cuts at arc boundaries
+   are free, so consecutive arcs are merged (`[1,2,3] → 6`), small arcs never stand
+   alone, and arcs are never mixed out of order. Ties resolve deterministically.
+
+   Examples: `[1,2,3,2,4,1,3,3] → 6 · 6 · 7` · `[6,6,2] → 6 · 8` · `[6,1,1] → 8` ·
+   `[3,3,3] → 3 · 6` · `[2,2,2,2,2] → 4 · 6` · `[20] → 6 · 7 · 7`.
+4. Each part knows its `partNumber/partCount`, key `part-NN`, stop range, ordered arc ids,
+   a **fingerprint** (hash of its stops + arcs) and the `segmentationVersion`.
+
+The route, camera, labels and recap of a part use **only that part's stops** — Part 1 never
+shows the road of Part 4. The header shows the series position, the intro the arc range.
+
+**Real data** (segmentation v1):
+
+| Character | Journey | Parts |
+| --- | --- | --- |
+| Goku | 32 places · 16 arcs | 1: Pilaf Saga · 4 stops · 25 s — 2: Tenkaichi Budokai → Red Ribbon Army · 6 · 30 s — 3: King Piccolo → Saiyan Saga · 7 · 33 s — 4: Namek/Frieza → Battle of Gods · 7 · 33 s — 5: Goku Black → Other World Tournament · 8 · 36 s |
+| Sasuke | 15 · 10 | 1: Pre-series → Sasuke Retrieval · 8 · 36 s — 2: Fated Battle Between Brothers → Momoshiki · 7 · 33 s |
+| Luffy | 29 · 22 | 5 parts: 5 · 6 · 6 · 5 · 7 stops |
+| Asta | 16 · 12 | 3 parts: 5 · 5 · 6 |
+| Gon / Killua | 9 · 7 / 9 · 6 | 2 parts: 4 · 5 |
+| Itachi / Gaara / Kushina | 5 / 8 / 2 | single video |
+
+### Series identity
+
+| | single journey | part of a series |
+| --- | --- | --- |
+| content id | `character-journey:naruto:itachi-uchiha` (unchanged) | `character-journey:dragonball:goku:part-02` |
+| series id | — | `character-journey:dragonball:goku` |
+| render id | `…:itachi-uchiha@en` | `…:goku:part-02@en`, `…:goku:part-02@it+teaser` |
+| file stem | `naruto_itachi-uchiha_character-journey_en` | `dragonball_goku_character-journey_part-02_en` |
+
+Duplicates are per part and locale: Part 1 EN twice ✗ · Part 2 EN ✓ · Part 1 IT ✓ ·
+Part 1 EN + `variant` ✓. History records carry `segment` and `segmentFingerprint`.
+
+**Stability.** `part-01` is defined by segmentation **version 1**. A future algorithm gets
+its own keys (`part-01-v2`), so an old `part-01` never silently changes meaning; the
+fingerprint additionally shows when the data behind a part changed since it was rendered.
+
+**Backward compatibility.** Short journeys keep their old ids (Itachi, Kushina history stays
+valid). A subject that is now a series (Luffy, Gon) keeps its old whole-journey record in
+history; its parts are new contents, and each catalog part reports the old render in
+`series.legacyRenderedLocales`.
 
 If there is no journey (no route, no located event) or only one place, the
 render fails with e.g.
 `Cannot render CharacterJourney: journey data missing for character "char-teuchi"` —
-an empty video is never produced. Today 180 characters across the 5 worlds have
-a renderable journey (Itachi, Sasuke, Kakashi, Naruto, Luffy, Zoro, Gon, Killua, Asta…).
+an empty video is never produced. Today 180 characters have a renderable journey,
+which makes **206 videos** (43 of them parts of 17 series).
 
 **Portraits.** Official artwork is never pulled in. The header uses a monogram
 (initials) in the brand style, so the template works for every character.
@@ -255,16 +339,45 @@ npm run social:catalog
 ```
 ```
 CharacterJourney:
-  Naruto               29 available   (221 excluded)
-  Hunter x Hunter      30 available   (126 excluded)
-  One Piece            50 available   (367 excluded)
-  Dragon Ball          21 available   (82 excluded)
-  Black Clover         50 available   (87 excluded)
-  total 180 available · 180 in en+it · 3 already rendered
+  world              characters  videos  series  excluded
+  Naruto                     29      33       4       221
+  Hunter x Hunter            30      32       2       126
+  One Piece                  50      60       5       367
+  Dragon Ball                21      26       2        82
+  Black Clover               50      55       4        87
+  total 180 characters → 206 videos (43 are parts of a series) · 206 in en+it · 2 already rendered
   excluded:
      632 no_journey_data
      251 single_location
 ```
+
+**Every part is an item.** A multi-part item (`series` is `null` for a single video):
+
+```json
+{
+  "id": "character-journey:dragonball:goku:part-02",
+  "anime": "dragonball", "animeTitle": "Dragon Ball", "subject": "goku",
+  "series": {
+    "id": "character-journey:dragonball:goku", "segment": "part-02",
+    "partNumber": 2, "partCount": 5,
+    "previousId": "character-journey:dragonball:goku:part-01",
+    "nextId": "character-journey:dragonball:goku:part-03",
+    "arcIds": ["arc-dbz-tenkaichi-tournament", "arc-dbz-red-ribbon"],
+    "arcTitles": { "en": ["Tenkaichi Budokai", "Red Ribbon Army Saga"], "it": ["Torneo Tenkaichi", "Saga del Red Ribbon"] },
+    "firstArc": "Tenkaichi Budokai", "lastArc": "Red Ribbon Army Saga",
+    "segmentationVersion": 1, "fingerprint": "de509287"
+  },
+  "displayName": { "en": "Goku", "it": "Son Goku" },
+  "locales": ["en", "it"],
+  "recommendedDurationSeconds": 30,
+  "facts": { "importance": "main", "places": 32, "animatedStops": 6, "arcs": 2, "journeyArcs": 16 },
+  "renderedLocales": [], "publishedLocales": [], "queuedLocales": [],
+  "renderedBefore": false, "publishedBefore": false
+}
+```
+
+`facts.places` / `journeyArcs` = the full journey; `animatedStops` / `arcs` = this video.
+Parts are listed in chronological order and linked with `previousId` / `nextId`.
 
 Each template scans every world with the **same builder the renderer uses** (`template.scan`),
 so "available" means renderable — `social:validate` resolves every catalog item in every
@@ -280,9 +393,9 @@ catalog is refreshed after every batch and `social:validate` fails if the commit
 `content/queue/*.json`, one request per file, rendered in **file-name order**. Two ways in:
 
 ```bash
-npm run social:queue -- --template character-journey --anime naruto --character sasuke-uchiha --locale en
-#   ✔ queued character-journey:naruto:sasuke-uchiha@en
-#     file: tools/social-engine/content/queue/0006-naruto_sasuke-uchiha_character-journey_en.json
+npm run social:queue -- --template character-journey --anime naruto --character sasuke-uchiha --segment part-01 --locale en
+#   ✔ queued character-journey:naruto:sasuke-uchiha:part-01@en
+#     file: tools/social-engine/content/queue/0009-naruto_sasuke-uchiha_character-journey_part-01_en.json
 npm run social:queue -- --from proposal.json        # array of requests (agent output)
 ```
 
@@ -318,7 +431,7 @@ npm run social:render:queue
    bundling) aborts it, leaving items queued;
 5. history saved after every step (a crash leaves `rendering`, recovered on the next run);
 6. summary + catalog refresh. `--id`, `--limit`, `--concurrency` (frames per video; videos
-   are never rendered in parallel — a 22 s video takes ~1.5 min on 4 cores), `--no-catalog`.
+   are never rendered in parallel — a 30 s video takes ~2 min on 4 cores), `--no-catalog`.
 
 `--dry-run` reads, validates and prints the full plan (stops, hooks, notes) and changes nothing
 (no lock, no history, no file moves).
@@ -339,6 +452,7 @@ render id, keys sorted:
   "outputFile": "tools/social-engine/output/naruto_itachi-uchiha_character-journey_en.mp4",
   "manifestFile": "tools/social-engine/output/naruto_itachi-uchiha_character-journey_en.manifest.json",
   "sourceFile": "0002-naruto_itachi-uchiha_character-journey_en.json",
+  "segment": null, "segmentFingerprint": null,
   "durationSeconds": 22, "attempts": 1, "lastError": null,
   "publicationStatus": "notPublished", "publishedAt": null, "platforms": []
 }
@@ -439,6 +553,12 @@ uploaded, invalid item in `content/failed/`, state committed after an automatic 
 green, Chrome cache saved, state committed, no loop. `npm ci` ≈ 8 s, browser ≈ 3 s, ~2 min per
 22 s video on `ubuntu-latest`. Fixtures to replay it: `tools/social-engine/examples/tests/`.
 
+> Those runs (and run #3, the first ChatGPT Work → PR → merge test: Goku EN) produced
+> **pre-series** test videos. Their history records and `content/rendered/` files were
+> removed when series were introduced, so Sasuke and Goku are renderable again; the old
+> artifacts only expire (30 days) or can be deleted by hand (run page → Artifacts → 🗑).
+> They never influence the catalog, history or duplicate detection.
+
 ### Artifact
 
 Name: **`animapverse-social-render-<run_id>-<run_attempt>`** (prefix stable; find it via
@@ -460,15 +580,19 @@ render-summary.json
   "github": { "runId": "…", "runNumber": "…", "runAttempt": "1", "sha": "…", "ref": "main",
               "workflow": "Social render", "artifactName": "animapverse-social-render-…-1" },
   "counts": { "considered": 2, "rendered": 1, "failed": 1, "planned": 1, "remainingInQueue": 0 },
-  "rendered": [{ "renderId": "character-journey:naruto:sasuke-uchiha@en", "contentId": "…",
+  "rendered": [{ "renderId": "character-journey:naruto:sasuke-uchiha:part-01@en", "contentId": "…",
                  "template": "characterJourney", "anime": "naruto", "subject": "sasuke-uchiha",
-                 "locale": "en", "variant": null, "title": "Sasuke Uchiha · Character Journey",
-                 "durationSeconds": 22, "sha256": "…",
-                 "video": "videos/naruto_sasuke-uchiha_character-journey_en.mp4",
-                 "manifest": "manifests/naruto_sasuke-uchiha_character-journey_en.manifest.json",
-                 "sourceFile": "0006-naruto_sasuke-uchiha_character-journey_en.json" }],
+                 "locale": "en", "variant": null,
+                 "seriesId": "character-journey:naruto:sasuke-uchiha", "segment": "part-01",
+                 "partNumber": 1, "partCount": 2,
+                 "title": "Sasuke Uchiha · Character Journey · Part 1 of 2",
+                 "durationSeconds": 36, "sha256": "…",
+                 "video": "videos/naruto_sasuke-uchiha_character-journey_part-01_en.mp4",
+                 "manifest": "manifests/naruto_sasuke-uchiha_character-journey_part-01_en.manifest.json",
+                 "sourceFile": "0006-naruto_sasuke-uchiha_character-journey_part-01_en.json" }],
   "failed": [{ "file": "0007-….json", "kind": "data", "renderId": null, "template": "characterJourney",
-               "anime": "naruto", "subject": "sasuke-uchia", "contentId": null, "errors": ["…Did you mean…"] }],
+               "anime": "naruto", "subject": "sasuke-uchia", "segment": "part-01", "contentId": null,
+               "errors": ["…Did you mean…"] }],
   "planned": []
 }
 ```

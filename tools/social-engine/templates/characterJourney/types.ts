@@ -32,6 +32,27 @@ export type MapView = {
   boundaries: string[];
 };
 
+/** Present when the journey is a series (long journeys split by arcs into parts). */
+export type JourneySeriesView = {
+  /** `part-01`… */
+  key: string;
+  partNumber: number;
+  partCount: number;
+  isLast: boolean;
+  /** Arcs covered by this part, in order (ids + localized names). */
+  arcIds: string[];
+  arcNames: string[];
+  /** "First arc → Last arc" (or the single arc's name). */
+  arcRange: string;
+  segmentationVersion: number;
+  /** Hash of the part's stops/arcs: changes if the data behind the part changes. */
+  fingerprint: string;
+  /** Localized "Part 2 of 5". */
+  label: string;
+  /** Localized "Next: Part 3 of 5" (absent on the last part). */
+  nextLabel?: string;
+};
+
 export type CharacterJourneyData = {
   locale: VideoLocale;
   copy: VideoCopy;
@@ -42,8 +63,12 @@ export type CharacterJourneyData = {
   /** Indices into `stops` featured in the recap (3–5). */
   highlights: number[];
   /** Whole journey (before sampling): distinct consecutive places and story arcs. */
-  /** Whole journey (before sampling): consecutive places visited and story arcs crossed. */
-  stats: { stops: number; arcs: number };
+  series: JourneySeriesView | null;
+  /**
+   * stops/arcs = what THIS video covers (the part, or the whole journey when
+   * single, before any expert sampling); journey* = the full journey.
+   */
+  stats: { stops: number; arcs: number; journeyStops: number; journeyArcs: number };
   hook: string;
   cta: string;
   /** "animapverse.com" */

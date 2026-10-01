@@ -57,7 +57,7 @@ section('content ids & naming');
 await test('ids are stable, readable and parse back', () => {
   const id = contentIdFor('character-journey', 'naruto', 'itachi-uchiha');
   assert.equal(id, 'character-journey:naruto:itachi-uchiha');
-  assert.deepEqual(parseContentId(id), { template: 'character-journey', anime: 'naruto', subject: 'itachi-uchiha' });
+  assert.deepEqual(parseContentId(id), { template: 'character-journey', anime: 'naruto', subject: 'itachi-uchiha', segment: null });
   const rid = renderIdFor({ contentId: id, locale: 'it', variant: 'teaser' });
   assert.equal(rid, 'character-journey:naruto:itachi-uchiha@it+teaser');
   assert.deepEqual(parseRenderId(rid), { contentId: id, locale: 'it', variant: 'teaser' });
@@ -81,9 +81,9 @@ await test('content id ignores hook, CTA, locale and the subject spelling', asyn
     ids.add((await planContent(dirs, parsed.request)).contentId);
   }
   assert.deepEqual([...ids], ['character-journey:naruto:itachi-uchiha']);
-  const parsed = parseContentRequest({ template: 'character-journey', anime: 'one-piece', subject: 'luffy' });
+  const parsed = parseContentRequest({ template: 'character-journey', anime: 'one-piece', subject: 'luffy', segment: 'part-02' });
   assert.ok(parsed.ok);
-  assert.equal((await planContent(dirs, parsed.request)).contentId, 'character-journey:onepiece:monkey-d-luffy');
+  assert.equal((await planContent(dirs, parsed.request)).contentId, 'character-journey:onepiece:monkey-d-luffy:part-02');
 });
 
 section('content request parsing');
@@ -133,7 +133,7 @@ await test('render status machine only allows legal moves', () => {
   const legal = new Set(['queued>rendering', 'queued>failed', 'rendering>rendered', 'rendering>failed', 'rendering>queued', 'rendered>queued', 'failed>queued', 'failed>rendering']);
   for (const a of RENDER_STATUSES) for (const b of RENDER_STATUSES) if (a !== b) assert.equal(canTransition(a, b), legal.has(`${a}>${b}`), `${a}>${b}`);
   const h = emptyHistory();
-  const r = ensureRecord(h, { renderId: 'character-journey:naruto:x@en', contentId: 'character-journey:naruto:x', template: 'characterJourney', anime: 'naruto', subject: 'x', locale: 'en', variant: null }, fixedNow(), null);
+  const r = ensureRecord(h, { renderId: 'character-journey:naruto:x@en', contentId: 'character-journey:naruto:x', template: 'characterJourney', anime: 'naruto', subject: 'x', locale: 'en', variant: null, segment: null, segmentFingerprint: null }, fixedNow(), null);
   assert.equal(ensureRecord(h, r, fixedNow(), null), r, 'idempotent');
   assert.equal(r.publicationStatus, 'notPublished');
   assert.deepEqual(r.platforms, []);
@@ -143,7 +143,7 @@ await test('render status machine only allows legal moves', () => {
 });
 await test('duplicate policy: queued/rendered blocked, failed = retry, variant/locale allowed', () => {
   const h = emptyHistory();
-  const base = { renderId: 'character-journey:naruto:x@en', contentId: 'character-journey:naruto:x', template: 'characterJourney', anime: 'naruto', subject: 'x', locale: 'en' as const, variant: null };
+  const base = { renderId: 'character-journey:naruto:x@en', contentId: 'character-journey:naruto:x', template: 'characterJourney', anime: 'naruto', subject: 'x', locale: 'en' as const, variant: null, segment: null, segmentFingerprint: null };
   const args = { renderId: base.renderId, contentId: base.contentId, history: h, queued: new Map<string, string>(), allowRerender: false };
   assert.ok(checkDuplicate(args).ok);
   assert.ok(!checkDuplicate({ ...args, queued: new Map([[base.renderId, '0001.json']]) }).ok);
@@ -170,7 +170,7 @@ await test('enqueue writes canonical, numbered entries and rejects duplicates', 
   assert.equal(entry.id, 'character-journey:naruto:itachi-uchiha');
   assert.equal(entry.subject, 'itachi-uchiha');
   assert.equal(entry.locale, 'en');
-  assert.equal(entry.durationSeconds, 22);
+  assert.equal(entry.durationSeconds, 27, 'automatic duration: 5 stops → 27 s');
   assert.equal(entry.hook, "Follow Itachi Uchiha's journey across the Naruto world.");
   assert.equal(entry.cta, 'Explore the full journey on AniMapVerse');
   assert.ok(parseContentRequest(entry).ok, 'canonical entry is itself a valid request');
@@ -180,7 +180,7 @@ await test('enqueue writes canonical, numbered entries and rejects duplicates', 
 });
 await test('dry run reads and plans but changes nothing', async () => {
   const dirs = sandbox();
-  await enqueueMany(dirs, [req('itachi'), req('kakashi-hatake')], { now: fixedNow });
+  await enqueueMany(dirs, [req('itachi'), req('jiraiya')], { now: fixedNow });
   const before = snapshot(dirs);
   const r = await run(dirs, { dryRun: true });
   assert.equal(r.planned.length, 2);
@@ -188,20 +188,20 @@ await test('dry run reads and plans but changes nothing', async () => {
 });
 await test('batch renders in order, isolates failures, keeps everything, writes manifests', async () => {
   const dirs = sandbox();
-  await enqueueMany(dirs, [req('itachi'), req('kakashi-hatake', { notes: 'FAIL' }), req('sasuke-uchiha')], { now: fixedNow });
+  await enqueueMany(dirs, [req('itachi'), req('jiraiya', { notes: 'FAIL' }), req('sasuke-uchiha', { segment: 'part-01' })], { now: fixedNow });
   writeFileSync(path.join(dirs.queue, '0004-agent.json'), '{ not json');
   writeFileSync(path.join(dirs.queue, '0005-agent.json'), JSON.stringify(req('char-itachi')));
   const r = await run(dirs);
-  assert.deepEqual(r.rendered.map((x) => x.renderId), ['character-journey:naruto:itachi-uchiha@en', 'character-journey:naruto:sasuke-uchiha@en']);
-  assert.deepEqual(r.failed.map((x) => x.renderId), ['character-journey:naruto:kakashi-hatake@en']);
+  assert.deepEqual(r.rendered.map((x) => x.renderId), ['character-journey:naruto:itachi-uchiha@en', 'character-journey:naruto:sasuke-uchiha:part-01@en']);
+  assert.deepEqual(r.failed.map((x) => x.renderId), ['character-journey:naruto:jiraiya@en']);
   assert.deepEqual(r.rejected.map((x) => x.kind).sort(), ['duplicate', 'invalid']);
   assert.deepEqual(listContentFiles(dirs.queue).entries, []);
   assert.equal(listContentFiles(dirs.rendered).entries.length, 2);
-  assert.deepEqual(listContentFiles(dirs.failed).entries, ['0002-naruto_kakashi-hatake_character-journey_en.json', '0004-agent.json', '0005-agent.json']);
-  const err = JSON.parse(readFileSync(path.join(dirs.failed, '0002-naruto_kakashi-hatake_character-journey_en.error.json'), 'utf8')) as Record<string, unknown>;
-  assert.equal(err.renderId, 'character-journey:naruto:kakashi-hatake@en');
+  assert.deepEqual(listContentFiles(dirs.failed).entries, ['0002-naruto_jiraiya_character-journey_en.json', '0004-agent.json', '0005-agent.json']);
+  const err = JSON.parse(readFileSync(path.join(dirs.failed, '0002-naruto_jiraiya_character-journey_en.error.json'), 'utf8')) as Record<string, unknown>;
+  assert.equal(err.renderId, 'character-journey:naruto:jiraiya@en');
   assert.deepEqual(err.errors, ['simulated render crash']);
-  assert.equal((err.config as { subject: string }).subject, 'kakashi-hatake');
+  assert.equal((err.config as { subject: string }).subject, 'jiraiya');
   assert.equal(err.failedAt, fixedNow());
   const h = loadHistory(dirs).records;
   const ok = h['character-journey:naruto:itachi-uchiha@en'];
@@ -224,26 +224,38 @@ await test('batch renders in order, isolates failures, keeps everything, writes 
     subject: 'itachi-uchiha',
     locale: 'en',
     variant: null,
+    seriesId: null,
+    segment: null,
+    partNumber: null,
+    partCount: null,
     title: 'Itachi Uchiha · Character Journey',
-    durationSeconds: 22,
+    durationSeconds: 27,
     sha256: (manifest as { sha256: string }).sha256,
     video: 'videos/naruto_itachi-uchiha_character-journey_en.mp4',
     manifest: 'manifests/naruto_itachi-uchiha_character-journey_en.manifest.json',
     sourceFile: '0001-naruto_itachi-uchiha_character-journey_en.json',
   });
+  const part = summary.rendered[1];
+  assert.deepEqual([part.seriesId, part.segment, part.partNumber, part.partCount], ['character-journey:naruto:sasuke-uchiha', 'part-01', 1, 2]);
+  assert.equal(part.video, 'videos/naruto_sasuke-uchiha_character-journey_part-01_en.mp4');
+  const partManifest = JSON.parse(readFileSync(path.join(dirs.output, 'naruto_sasuke-uchiha_character-journey_part-01_en.manifest.json'), 'utf8')) as { segment: Record<string, unknown> };
+  for (const key of ['seriesId', 'segment', 'partNumber', 'partCount', 'arcIds', 'arcTitles', 'firstArc', 'lastArc', 'fullJourneyStopCount', 'segmentStopCount', 'segmentationVersion', 'fingerprint']) {
+    assert.ok(key in partManifest.segment, `manifest.segment.${key}`);
+  }
+  assert.equal((manifest as { segment: unknown }).segment, null, 'single video → no segment');
   const crash = summary.failed.find((f) => f.kind === 'render');
-  assert.deepEqual([crash?.renderId, crash?.anime, crash?.subject, crash?.errors], ['character-journey:naruto:kakashi-hatake@en', 'naruto', 'kakashi-hatake', ['simulated render crash']]);
+  assert.deepEqual([crash?.renderId, crash?.anime, crash?.subject, crash?.errors], ['character-journey:naruto:jiraiya@en', 'naruto', 'jiraiya', ['simulated render crash']]);
   assert.deepEqual(summary.failed.filter((f) => f.kind !== 'render').map((f) => [f.kind, f.subject]).sort(), [['duplicate', 'char-itachi'], ['invalid', null]]);
-  assert.equal(h['character-journey:naruto:kakashi-hatake@en'].renderStatus, 'failed');
-  assert.equal(h['character-journey:naruto:kakashi-hatake@en'].lastError, 'simulated render crash');
-  assert.ok(!existsSync(path.join(dirs.output, 'naruto_kakashi-hatake_character-journey_en.mp4')), 'no partial output');
+  assert.equal(h['character-journey:naruto:jiraiya@en'].renderStatus, 'failed');
+  assert.equal(h['character-journey:naruto:jiraiya@en'].lastError, 'simulated render crash');
+  assert.ok(!existsSync(path.join(dirs.output, 'naruto_jiraiya_character-journey_en.mp4')), 'no partial output');
   // Rendered content can't be queued again; a variant or a human override can.
   const again = await enqueueMany(dirs, [req('itachi'), req('itachi', { variant: 'teaser', hook: 'Itachi, again?' }), req('itachi', { allowRerender: true })], { now: fixedNow });
   assert.deepEqual(again.map((x) => x.ok), [false, true, true]);
 });
 await test('retry: failed content goes back to the queue and renders', async () => {
   const dirs = sandbox();
-  await enqueueMany(dirs, [req('itachi', { notes: 'FAIL' }), req('kakashi-hatake', { notes: 'FAIL' })], { now: fixedNow });
+  await enqueueMany(dirs, [req('itachi', { notes: 'FAIL' }), req('jiraiya', { notes: 'FAIL' })], { now: fixedNow });
   await run(dirs);
   assert.equal(listContentFiles(dirs.failed).entries.length, 2);
   const { files } = await requeueFailed(dirs, { ids: ['character-journey:naruto:itachi-uchiha@en'] }, fixedNow);
@@ -293,7 +305,7 @@ await test('catalog lists only renderable content, per world, with reasons for t
   sandboxCatalog = catalog;
   const t = catalog.templates.characterJourney;
   assert.ok(t);
-  for (const anime of ['naruto', 'onepiece', 'hunterxhunter', 'dragonball', 'blackclover']) assert.ok((t.summary[anime]?.available ?? 0) > 0, anime);
+  for (const anime of ['naruto', 'onepiece', 'hunterxhunter', 'dragonball', 'blackclover']) assert.ok((t.summary[anime]?.characters ?? 0) > 0, anime);
   assert.equal(new Set(t.items.map((i) => i.id)).size, t.items.length, 'unique ids');
   const itachi = t.items.find((i) => i.id === 'character-journey:naruto:itachi-uchiha');
   assert.ok(itachi);
@@ -309,7 +321,9 @@ await test('every catalog item resolves in every declared locale, with text the 
   const uncovered = new Set<string>();
   for (const item of t.items) {
     for (const locale of item.locales) {
-      const data = await resolveCharacterJourney({ template: 'characterJourney', anime: item.anime, subject: item.subject, locale });
+      const data = await resolveCharacterJourney({ template: 'characterJourney', anime: item.anime, subject: item.subject, locale, ...(item.series ? { segment: item.series.segment } : {}) });
+      assert.equal(data.stops.length, item.facts.animatedStops, `${item.id}: catalog stops = rendered stops`);
+      assert.equal(data.durationSeconds, item.recommendedDurationSeconds, `${item.id}: catalog duration = rendered duration`);
       for (const ch of videoText(data)) if (!FONT_COVERAGE_RE.test(ch)) uncovered.add(`${ch} U+${ch.codePointAt(0)?.toString(16)} (${item.id}@${locale})`);
     }
   }
@@ -320,14 +334,14 @@ await test('catalog reflects history and queue (rendered / queued / published)',
   const dirs = sandbox();
   await enqueueMany(dirs, [req('itachi')], { now: fixedNow });
   await run(dirs);
-  await enqueueMany(dirs, [req('itachi', { locale: 'it' }), req('kakashi-hatake')], { now: fixedNow });
+  await enqueueMany(dirs, [req('itachi', { locale: 'it' }), req('jiraiya')], { now: fixedNow });
   const history = loadHistory(dirs);
   history.records['character-journey:naruto:itachi-uchiha@en'].publicationStatus = 'published';
   const { catalog } = await buildCatalog(dirs, history, fixedNow());
   const items = catalog.templates.characterJourney?.items ?? [];
   const itachi = items.find((i) => i.subject === 'itachi-uchiha');
   assert.deepEqual([itachi?.renderedLocales, itachi?.queuedLocales, itachi?.renderedBefore, itachi?.publishedBefore], [['en'], ['it'], true, true]);
-  const kakashi = items.find((i) => i.subject === 'kakashi-hatake');
+  const kakashi = items.find((i) => i.subject === 'jiraiya');
   assert.deepEqual([kakashi?.renderedBefore, kakashi?.queuedLocales], [false, ['en']]);
 });
 
@@ -335,6 +349,15 @@ section('versioned artifacts stay in sync');
 await test('schemas/social-content.schema.json matches the TypeScript constants (npm run social:schema)', () => {
   const committed = JSON.parse(readFileSync(path.join(ENGINE_DIR, 'schemas', 'social-content.schema.json'), 'utf8')) as unknown;
   assert.deepEqual(committed, buildContentSchema());
+});
+await test('contract examples resolve against the real data (segments exist)', async () => {
+  const dirs = sandbox();
+  const examples = JSON.parse(readFileSync(path.join(ENGINE_DIR, 'examples', 'agent-response.json'), 'utf8')) as unknown[];
+  for (const e of [...examples, JSON.parse(readFileSync(path.join(ENGINE_DIR, 'examples', 'tests', 'valid-sasuke-en.json'), 'utf8')) as unknown]) {
+    const r = parseContentRequest(e);
+    assert.ok(r.ok, r.ok ? '' : r.errors.join('; '));
+    await planContent(dirs, r.request);
+  }
 });
 await test('contract examples are valid requests and use only schema fields', () => {
   const schema = buildContentSchema() as { oneOf: { properties: Record<string, unknown> }[] };

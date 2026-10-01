@@ -6,7 +6,7 @@ import type { CharacterJourneyConfig } from '../../config/types';
 import type { TemplateDefinition } from '../types';
 import { scanCharacterJourney } from './catalog';
 import { CharacterJourney } from './CharacterJourney';
-import { parseCharacterJourneyConfig } from './config';
+import { SEGMENT_KEY_RE, parseCharacterJourneyConfig } from './config';
 import { resolveCharacterJourney } from './resolve';
 import type { CharacterJourneyProps } from './types';
 
@@ -46,9 +46,9 @@ export const characterJourneyTemplate: TemplateDefinition<CharacterJourneyConfig
   cliName: 'character-journey',
   description: "A character's journey across the world map: hook → map → animated route → key locations → CTA.",
   example,
-  configKeys: ['subject', 'journey', 'highlights'],
+  configKeys: ['subject', 'segment', 'journey', 'highlights'],
   parseConfig: parseCharacterJourneyConfig,
-  configFor: (anime, subject, locale) => ({ template: 'characterJourney', anime, subject, locale }),
+  configFor: (anime, subject, locale, segment) => ({ template: 'characterJourney', anime, subject, locale, ...(segment ? { segment } : {}) }),
   scan: scanCharacterJourney,
   schema: {
     required: ['subject'],
@@ -57,6 +57,11 @@ export const characterJourneyTemplate: TemplateDefinition<CharacterJourneyConfig
         type: 'string',
         minLength: 1,
         description: 'Character: catalog `subject` (SEO slug, e.g. "itachi-uchiha"). Ids ("char-itachi") and unique short forms ("luffy") are accepted too.',
+      },
+      segment: {
+        type: 'string',
+        pattern: SEGMENT_KEY_RE.source,
+        description: 'Part of a multi-part journey, copied from the catalog item (`segment`, e.g. "part-02"). Required for series, must be omitted for single journeys. Never invent it.',
       },
       journey: {
         type: 'object',
@@ -80,25 +85,51 @@ export const characterJourneyTemplate: TemplateDefinition<CharacterJourneyConfig
     const resolved = await resolveCharacterJourney(config);
     const data = options?.audio ? { ...resolved, audio: options.audio } : resolved;
     const props: CharacterJourneyProps = { config, data };
+    const series = data.series;
+    const title = `${data.character.name} · ${data.copy.templateLabel}${series ? ` · ${series.label}` : ''}`;
     return {
-      identity: { anime: data.world.slug, subject: data.character.slug, subjectName: data.character.name, locale: data.locale },
+      identity: {
+        anime: data.world.slug,
+        subject: data.character.slug,
+        subjectName: data.character.name,
+        locale: data.locale,
+        segment: series?.key ?? null,
+      },
+      segment: series
+        ? {
+            segment: series.key,
+            partNumber: series.partNumber,
+            partCount: series.partCount,
+            arcIds: series.arcIds,
+            arcTitles: series.arcNames,
+            firstArc: series.arcNames[0] ?? null,
+            lastArc: series.arcNames[series.arcNames.length - 1] ?? null,
+            segmentStopCount: data.stats.stops,
+            fullJourneyStopCount: data.stats.journeyStops,
+            segmentationVersion: series.segmentationVersion,
+            fingerprint: series.fingerprint,
+          }
+        : null,
       props,
       durationSeconds: data.durationSeconds,
       publicAssets: ['icon-512.png', ...(data.map.backgroundSrc ? [data.map.backgroundSrc] : [])],
       manifest: {
-        title: `${data.character.name} · ${data.copy.templateLabel}`,
+        title,
         hook: data.hook,
         cta: data.cta,
         pageUrl: `https://${data.pageLabel}`,
         stops: data.stops.map((s) => s.regionName ?? s.shortName),
-        journeyPlaces: data.stats.stops,
-        journeyArcs: data.stats.arcs,
+        journeyPlaces: data.stats.journeyStops,
+        journeyArcs: data.stats.journeyArcs,
+        ...(series ? { arcRange: series.arcRange } : {}),
       },
       summary: [
-        `${data.world.title} · ${data.character.name} (${data.character.id}) · ${data.locale}`,
+        `${data.world.title} · ${data.character.name} (${data.character.id}) · ${data.locale}` +
+          (series ? ` · ${series.label} (${series.key}) · ${series.arcRange}` : ''),
         `hook: "${data.hook}"`,
         `cta:  "${data.cta}"`,
-        `duration: ${data.durationSeconds}s · journey: ${data.stats.stops} places / ${data.stats.arcs} arcs → ${data.stops.length} animated stops`,
+        `duration: ${data.durationSeconds}s · ${series ? 'this part' : 'journey'}: ${data.stats.stops} places / ${data.stats.arcs} arcs → ${data.stops.length} animated stops` +
+          (series ? ` · full journey: ${data.stats.journeyStops} places / ${data.stats.journeyArcs} arcs` : ''),
         ...data.stops.map(
           (s, i) =>
             `  ${String(i + 1).padStart(2)}. ${s.title} — ${[s.placeName, s.regionName].filter(Boolean).join(' · ')}` +

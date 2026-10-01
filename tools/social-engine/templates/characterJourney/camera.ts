@@ -27,6 +27,9 @@ export function buildJourneyCamera(points: WorldPoint[], map: { width: number; h
   const b = boundsOf(points);
   const center = { x: (b.minX + b.maxX) / 2, y: (b.minY + b.maxY) / 2 };
   const overviewZoom = (screenWidth / map.width) * 1.1;
+  // Very long legs (parts can cross a whole map) may zoom out further than the
+  // usual 1.25 — never below ~the establishing shot — so the leg stays in frame.
+  const minStopZoom = Math.min(ZOOM_RANGE[0], Math.max(overviewZoom * 1.15, 0.6));
   const overview: Camera = { x: map.width / 2, y: map.height / 2, zoom: overviewZoom, fy: 900 };
   const establishing: Camera = {
     x: lerp(overview.x, center.x, 0.35),
@@ -40,7 +43,7 @@ export function buildJourneyCamera(points: WorldPoint[], map: { width: number; h
     const neighbour = i > 0 ? points[i - 1] : points[1] ?? here;
     const dx = Math.abs(here.x - neighbour.x) || 1;
     const dy = Math.abs(here.y - neighbour.y) || 1;
-    const zoom = clamp(Math.min(STOP_BOX.w / dx, STOP_BOX.h / dy), ZOOM_RANGE[0], ZOOM_RANGE[1]);
+    const zoom = clamp(Math.min(STOP_BOX.w / dx, STOP_BOX.h / dy), minStopZoom, ZOOM_RANGE[1]);
     // Lean towards where we came from so the drawn leg stays visible.
     const focus = i > 0 ? { x: lerp(here.x, neighbour.x, 0.3), y: lerp(here.y, neighbour.y, 0.3) } : here;
     const clamped = clampToMap({ x: focus.x, y: focus.y, zoom, fy: JOURNEY_FY }, map, { width: screenWidth, ...BAND });
@@ -56,7 +59,7 @@ export function buildJourneyCamera(points: WorldPoint[], map: { width: number; h
     keys.push({ frame: timing.arrive, cam, easing: easeInOut, lift: i > 0 ? 0.16 : 0 });
     keys.push({ frame: timing.leave, cam: { ...cam, zoom: cam.zoom * 1.05 }, easing: linear });
   });
-  const recap = recapCamera(points, b, map, screenWidth);
+  const recap = recapCamera(points, b, map, screenWidth, overviewZoom);
   const settle = Math.min(plan.recap.start + Math.round(plan.fps * 1.1), plan.recap.end);
   keys.push({ frame: settle, cam: recap, easing: easeInOut });
   keys.push({ frame: plan.total, cam: { ...recap, zoom: recap.zoom * 1.06 }, easing: linear });
@@ -68,10 +71,12 @@ export function buildJourneyCamera(points: WorldPoint[], map: { width: number; h
  * pin in RECAP_SAFE (stepping the zoom down 5% at a time — deterministic);
  * if none does, the best fit panned so the pins stay visible.
  */
-function recapCamera(points: WorldPoint[], b: ReturnType<typeof boundsOf>, map: { width: number; height: number }, screenWidth: number): Camera {
-  const fit = fitCamera(b, RECAP_BOX, [0.8, ZOOM_RANGE[1]]);
+function recapCamera(points: WorldPoint[], b: ReturnType<typeof boundsOf>, map: { width: number; height: number }, screenWidth: number, overviewZoom: number): Camera {
+  // Down to the whole-map framing when a part spans (almost) the entire world.
+  const minZoom = Math.min(0.8, overviewZoom * 0.82);
+  const fit = fitCamera(b, RECAP_BOX, [minZoom, ZOOM_RANGE[1]]);
   const band = { width: screenWidth, ...BAND };
-  for (let zoom = fit.zoom; zoom >= 0.8; zoom *= 0.95) {
+  for (let zoom = fit.zoom; zoom >= minZoom; zoom *= 0.95) {
     const cam = clampToMap({ ...fit, zoom }, map, band);
     if (allInView(cam, points, RECAP_SAFE, screenWidth)) return cam;
   }

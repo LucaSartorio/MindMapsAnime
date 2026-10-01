@@ -23,6 +23,11 @@ export type RunSummaryItem = {
   subject: string;
   locale: string;
   variant: string | null;
+  /** Series: id, part key and position (null for a single video). */
+  seriesId: string | null;
+  segment: string | null;
+  partNumber: number | null;
+  partCount: number | null;
   title: string;
   durationSeconds: number;
   sha256: string;
@@ -39,6 +44,7 @@ export type RunSummaryFailure = {
   template: string | null;
   anime: string | null;
   subject: string | null;
+  segment: string | null;
   errors: string[];
 };
 
@@ -66,6 +72,10 @@ export function buildRunSummary(dirs: PipelineDirs, result: BatchResult, now: st
       subject: manifest.subject,
       locale: manifest.locale,
       variant: manifest.variant,
+      seriesId: manifest.segment?.seriesId ?? null,
+      segment: manifest.segment?.segment ?? null,
+      partNumber: manifest.segment?.partNumber ?? null,
+      partCount: manifest.segment?.partCount ?? null,
       title: String(manifest.publication.title ?? manifest.subjectName),
       durationSeconds: manifest.durationSeconds,
       sha256: manifest.sha256,
@@ -75,16 +85,16 @@ export function buildRunSummary(dirs: PipelineDirs, result: BatchResult, now: st
     };
   });
   const fromRender = (renderId: string | null) => {
-    if (!renderId) return { contentId: null, template: null, anime: null, subject: null };
+    if (!renderId) return { contentId: null, template: null, anime: null, subject: null, segment: null };
     const { contentId } = parseRenderId(renderId);
-    const { template, anime, subject } = parseContentId(contentId);
-    return { contentId, template, anime, subject };
+    const { template, anime, subject, segment } = parseContentId(contentId);
+    return { contentId, template, anime, subject, segment };
   };
   const failed: RunSummaryFailure[] = [
     ...result.failed.map((f) => ({ file: f.name, kind: 'render', renderId: f.renderId, ...fromRender(f.renderId), errors: [f.error] })),
     ...result.rejected.map((r) => {
       const raw = (typeof r.raw === 'object' && r.raw !== null ? r.raw : {}) as Record<string, unknown>;
-      return { file: r.name, kind: r.kind, renderId: null, contentId: str(raw.id), template: str(raw.template), anime: str(raw.anime), subject: str(raw.subject), errors: r.errors };
+      return { file: r.name, kind: r.kind, renderId: null, contentId: str(raw.id), template: str(raw.template), anime: str(raw.anime), subject: str(raw.subject), segment: str(raw.segment), errors: r.errors };
     }),
   ];
   const env = process.env;

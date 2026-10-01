@@ -40,7 +40,7 @@ npm run extract:boundaries  # regenerate Naruto nation boundary SVG paths from t
 npm run find:dots        # detect the red village-marker dots in the Naruto PNG, print flow coords
 npm run social:validate  # INTERNAL social video engine: typecheck + engine/pipeline tests (see "Social engine")
 npm run social:catalog   # what can be produced → tools/social-engine/catalog/catalog.json
-npm run social:queue -- --template character-journey --anime naruto --character sasuke-uchiha --locale en
+npm run social:queue -- --template character-journey --anime dragonball --character goku --segment part-01 --locale en
 npm run social:validate:queue          # check queued content, render nothing
 npm run social:render:queue -- --dry-run   # then without --dry-run: batch render → MP4 + manifest + history
 npm run social:retry:failed            # failed content → queue → render
@@ -585,6 +585,16 @@ Permanent rules:
 - **No render loops**: the state commit is pushed with `GITHUB_TOKEN` (never triggers workflows), carries
   `[skip social-render] [skip ci]`, and the job skips `github-actions[bot]` commits. Keep all three guards.
 - Fonts come only from the bundled `@fontsource` packages (all subsets), never the OS: Windows and Linux renders match.
+- **CharacterJourney series**: a journey of ≤ 8 places (after projection + same-pin merge) is ONE video with the
+  3-segment id; a longer one is a **chronological, arc-based series** (`data/segments.ts`: effective arc per stop →
+  arc groups → global DP partition, target 6 stops, 5–7 ideal, 8 max, small arcs merged, no tiny tail, arcs > 8
+  split internally) → `Part 1 / Part 2 / …`, each its own content `…:<subject>:part-NN` (series id = the 3-segment id).
+  The catalog decides which parts exist; requests must name `segment` for a series. Never re-sample a whole journey,
+  never hand-pick parts. `part-NN` belongs to `SEGMENTATION_VERSION` 1 — a new algorithm must bump the version
+  (keys `part-NN-vN`) so old ids never change meaning. Route/camera/recap use only the part's stops.
+- **Dynamic duration**: the engine computes it (`recommendedDurationSeconds` = round(13.5 + 2.75 × stops), 24–38 s;
+  4→25 · 5→27 · 6→30 · 7→33 · 8→36); the timeline keeps hook/intro/CTA fixed and gives the rest to the stops
+  (~2.8 s each). More places → more parts, never longer videos. Agents omit `durationSeconds`.
 - After changing it: `npm run social:validate` (+ `social:catalog`/`social:schema` when data/limits change, and a
   `--dry-run`/`--still` render) and `npm run build` (the public build must stay unaffected).
 

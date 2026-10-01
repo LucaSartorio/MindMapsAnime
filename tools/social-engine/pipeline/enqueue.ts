@@ -1,10 +1,9 @@
 import { SocialEngineError } from '../lib/errors';
-import { canonicalQueueEntry, parseContentRequest, planContent, type PlannedContent } from './content';
+import { canonicalQueueEntry, parseContentRequest, planContent, recordIdentity, type PlannedContent } from './content';
 import type { PipelineDirs } from './dirs';
 import { checkDuplicate } from './duplicates';
 import { safeJoin, writeJsonAtomic } from './fs';
 import { ensureRecord, loadHistory, saveHistory, transition } from './history';
-import { parseRenderId } from './ids';
 import { acquireLock } from './lock';
 import { inspectQueue, nextSequence, queueFileName } from './queue';
 
@@ -50,13 +49,7 @@ export async function enqueueMany(dirs: PipelineDirs, raws: unknown[], opts: { d
       queued.set(plan.renderId, file);
       if (!opts.dryRun) {
         writeJsonAtomic(safeJoin(dirs.queue, file), entry);
-        const { contentId, locale, variant } = parseRenderId(plan.renderId);
-        const record = ensureRecord(
-          history,
-          { renderId: plan.renderId, contentId, template: plan.template.id, anime: plan.resolved.identity.anime, subject: plan.resolved.identity.subject, locale, variant },
-          now(),
-          file,
-        );
+        const record = ensureRecord(history, recordIdentity(plan), now(), file);
         if (record.renderStatus !== 'queued') transition(record, 'queued', now(), { sourceFile: file });
       }
       results.push({ ok: true, file, renderId: plan.renderId, notes: verdict.notes, plan, entry });

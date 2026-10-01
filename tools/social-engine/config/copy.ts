@@ -17,6 +17,13 @@ export type VideoCopy = {
   start: string;
   end: string;
   brandTagline: string;
+  /** Series (long journeys split in parts). `{n}` part number, `{total}` part count. */
+  partLabel: string;
+  hookPartFirst: string;
+  hookPartMiddle: string;
+  hookPartLast: string;
+  ctaContinue: string;
+  nextPart: string;
 };
 
 export const VIDEO_COPY: Record<VideoLocale, VideoCopy> = {
@@ -32,6 +39,12 @@ export const VIDEO_COPY: Record<VideoLocale, VideoCopy> = {
     start: 'Start',
     end: 'End',
     brandTagline: 'Interactive atlas · Anime & Manga',
+    partLabel: 'Part {n} of {total}',
+    hookPartFirst: "{name}'s journey begins — Part {n} of {total}.",
+    hookPartMiddle: "{name}'s journey continues — Part {n} of {total}.",
+    hookPartLast: "The last stretch of {name}'s journey — Part {n} of {total}.",
+    ctaContinue: 'Continue the journey on AniMapVerse',
+    nextPart: 'Next: Part {n} of {total}',
   },
   it: {
     templateLabel: 'Il viaggio del personaggio',
@@ -45,6 +58,12 @@ export const VIDEO_COPY: Record<VideoLocale, VideoCopy> = {
     start: 'Inizio',
     end: 'Fine',
     brandTagline: 'Atlante interattivo · Anime & Manga',
+    partLabel: 'Parte {n} di {total}',
+    hookPartFirst: 'Il viaggio di {name} comincia — Parte {n} di {total}.',
+    hookPartMiddle: 'Il viaggio di {name} continua — Parte {n} di {total}.',
+    hookPartLast: "L'ultimo tratto del viaggio di {name} — Parte {n} di {total}.",
+    ctaContinue: 'Continua il viaggio su AniMapVerse',
+    nextPart: 'Prossima: Parte {n} di {total}',
   },
 };
 

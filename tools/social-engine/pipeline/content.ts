@@ -6,6 +6,7 @@ import { DEFAULT_LOCALE } from '../config/defaults';
 import { findTemplate, parseSocialVideoConfig } from '../templates/registry';
 import type { ResolvedVideo, TemplateDefinition } from '../templates/types';
 import type { PipelineDirs } from './dirs';
+import type { RecordIdentity } from './history';
 import { isInside, isRegularFile } from './fs';
 import { contentIdFor, fileStemFor, isSafeSegment, renderIdFor } from './ids';
 
@@ -101,7 +102,7 @@ export async function planContent(dirs: PipelineDirs, request: ContentRequest): 
     audio = { from, to: `audio/${hash}${path.extname(from).toLowerCase()}`, volume: request.config.audio.volume ?? 0.8 };
   }
   const resolved = await template.resolve(request.config, audio ? { audio: { src: audio.to, volume: audio.volume } } : undefined);
-  const contentId = contentIdFor(template.cliName, resolved.identity.anime, resolved.identity.subject);
+  const contentId = contentIdFor(template.cliName, resolved.identity.anime, resolved.identity.subject, resolved.identity.segment);
   if (request.id !== undefined && request.id !== contentId) {
     throw new Error(`id mismatch: the config describes "${contentId}" but id says "${request.id}" (omit id, or fix it)`);
   }
@@ -119,6 +120,7 @@ export function canonicalQueueEntry(plan: PlannedContent): Obj {
   const data = (plan.resolved.props as { data?: { hook?: string; cta?: string } }).data;
   const { template, anime: _anime, locale: _locale, durationSeconds: _d, hook: _h, cta: _c, ...rest } = plan.request.config;
   const subject = 'subject' in rest ? { subject: plan.resolved.identity.subject } : {};
+  const segment = plan.resolved.identity.segment ? { segment: plan.resolved.identity.segment } : {};
   // Fixed, readable key order: identity → what to say → optional tuning.
   return {
     $schema: '../../schemas/social-content.schema.json',
@@ -127,6 +129,7 @@ export function canonicalQueueEntry(plan: PlannedContent): Obj {
     template,
     anime: plan.resolved.identity.anime,
     ...subject,
+    ...segment,
     locale: plan.locale,
     ...(plan.variant ? { variant: plan.variant } : {}),
     durationSeconds: plan.resolved.durationSeconds,
@@ -136,5 +139,20 @@ export function canonicalQueueEntry(plan: PlannedContent): Obj {
     ...subject,
     ...(plan.request.notes ? { notes: plan.request.notes } : {}),
     ...(plan.request.allowRerender ? { allowRerender: true } : {}),
+  };
+}
+
+/** History identity of a planned content (shared by the queue CLI and the batch). */
+export function recordIdentity(plan: PlannedContent): RecordIdentity {
+  return {
+    renderId: plan.renderId,
+    contentId: plan.contentId,
+    template: plan.template.id,
+    anime: plan.resolved.identity.anime,
+    subject: plan.resolved.identity.subject,
+    locale: plan.locale,
+    variant: plan.variant,
+    segment: plan.resolved.identity.segment,
+    segmentFingerprint: plan.resolved.segment?.fingerprint ?? null,
   };
 }

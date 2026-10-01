@@ -3,14 +3,15 @@ import { entityPath } from '@/seo/paths';
 import { entitySlug } from '@/seo/slug';
 import { getEntityDisplayName, getLocalizedText } from '@/utils/localization';
 import { VIDEO_COPY, fillTemplate } from '../../config/copy';
-import { DEFAULT_DURATION_SECONDS, DEFAULT_HIGHLIGHTS, DEFAULT_LOCALE, DEFAULT_MAX_STOPS } from '../../config/defaults';
+import { DEFAULT_HIGHLIGHTS, DEFAULT_LOCALE } from '../../config/defaults';
 import type { CharacterJourneyConfig } from '../../config/types';
 import { resolveEntityId, suggestCharacters } from '../../data/entities';
 import { buildCharacterJourney, pickHighlights, sampleStops } from '../../data/journey';
+import { SOFT_MAX_STOPS, effectiveArcs, fingerprint, segmentJourney } from '../../data/segments';
 import { getBaseMapLevel } from '../../data/projection';
 import { loadWorld } from '../../data/world';
 import { RenderDataError } from '../../lib/errors';
-import { maxStopsForDuration } from './timeline';
+import { maxStopsForDuration, recommendedDurationSeconds } from './timeline';
 import type { CharacterJourneyData, JourneyStopView } from './types';
 
 const TEMPLATE = 'CharacterJourney';
@@ -35,7 +36,6 @@ function initials(name: string): string {
 export async function resolveCharacterJourney(config: CharacterJourneyConfig): Promise<CharacterJourneyData> {
   const locale = config.locale ?? DEFAULT_LOCALE;
   const copy = VIDEO_COPY[locale];
-  const durationSeconds = config.durationSeconds ?? DEFAULT_DURATION_SECONDS;
   const { world, dataset } = await loadWorld(config.anime);
   const worldTitle = getLocalizedText(world.title, locale);
 
@@ -80,8 +80,31 @@ export async function resolveCharacterJourney(config: CharacterJourneyConfig): P
       `journey data too short for character "${config.subject}": only one place on the map (${getEntityDisplayName(only, locale)}). At least 2 are needed.`,
     );
   }
-  const maxStops = Math.min(config.journey?.maxStops ?? DEFAULT_MAX_STOPS, maxStopsForDuration(durationSeconds));
-  const sampled = sampleStops(journey.stops, maxStops);
+  // --- segmentation: long journeys are a series of arc-based parts ---------------
+  const segmentation = segmentJourney(journey.stops);
+  const keys = segmentation.segments.map((seg) => seg.key);
+  let segment = segmentation.segments[0];
+  if (segmentation.mode === 'series') {
+    if (!config.segment) {
+      throw new RenderDataError(
+        TEMPLATE,
+        `the journey of "${config.subject}" is a series of ${keys.length} parts: set "segment" to one of ${keys.join(', ')} (see the catalog).`,
+      );
+    }
+    const found = segmentation.segments.find((seg) => seg.key === config.segment);
+    if (!found) {
+      throw new RenderDataError(TEMPLATE, `segment "${config.segment}" does not exist for "${config.subject}" (parts: ${keys.join(', ')}).`);
+    }
+    segment = found;
+  } else if (config.segment) {
+    throw new RenderDataError(TEMPLATE, `the journey of "${config.subject}" is a single video: remove "segment" (got "${config.segment}").`);
+  }
+  // Only the stops (and therefore route, camera, recap) of THIS part.
+  const partStops = journey.stops.slice(segment.start, segment.end);
+  const partArcs = effectiveArcs(journey.stops).slice(segment.start, segment.end);
+  const durationSeconds = config.durationSeconds ?? recommendedDurationSeconds(partStops.length);
+  const maxStops = Math.min(config.journey?.maxStops ?? SOFT_MAX_STOPS, maxStopsForDuration(durationSeconds));
+  const sampled = sampleStops(partStops, maxStops);
 
   const locById = new Map(dataset.locations.map((l) => [l.id, l]));
   const arcById = new Map(dataset.arcs.map((a) => [a.id, a]));
@@ -128,8 +151,36 @@ export async function resolveCharacterJourney(config: CharacterJourneyConfig): P
   const tagline = factions.length ? factions.join(' · ') : character.rank;
   const site = SITE.origin.replace(/^https?:\/\//, '');
   const path = entityPath(locale, dataset, 'characters', character.id);
-  // Stats describe the WHOLE journey, even when the map shows a sample of it.
-  const arcs = new Set(journey.stops.map((s) => s.arcId).filter(Boolean));
+  const journeyArcs = new Set(effectiveArcs(journey.stops).filter(Boolean)).size;
+  const arcIds = segment.arcIds;
+  const arcNames = arcIds.map((id) => getEntityDisplayName(arcById.get(id), locale)).filter(Boolean);
+  const partVars = { name, anime: worldTitle, n: String(segment.partNumber), total: String(segment.partCount) };
+  const series =
+    segmentation.mode === 'series'
+      ? {
+          key: segment.key,
+          partNumber: segment.partNumber,
+          partCount: segment.partCount,
+          isLast: segment.partNumber === segment.partCount,
+          arcIds,
+          arcNames,
+          arcRange: arcNames.length > 1 ? `${arcNames[0]} → ${arcNames[arcNames.length - 1]}` : (arcNames[0] ?? ''),
+          segmentationVersion: segmentation.version,
+          fingerprint: fingerprint([...partStops.map((st) => st.anchorLocationId), ...arcIds]),
+          label: fillTemplate(copy.partLabel, partVars),
+          ...(segment.partNumber < segment.partCount
+            ? { nextLabel: fillTemplate(copy.nextPart, { n: String(segment.partNumber + 1), total: String(segment.partCount) }) }
+            : {}),
+        }
+      : null;
+  const defaultHook = !series
+    ? copy.hook
+    : series.partNumber === 1
+      ? copy.hookPartFirst
+      : series.isLast
+        ? copy.hookPartLast
+        : copy.hookPartMiddle;
+  const defaultCta = series && !series.isLast ? copy.ctaContinue : copy.cta;
 
   return {
     locale,
@@ -155,9 +206,15 @@ export async function resolveCharacterJourney(config: CharacterJourneyConfig): P
     },
     stops,
     highlights,
-    stats: { stops: journey.stops.length, arcs: arcs.size },
-    hook: config.hook ?? fillTemplate(copy.hook, { name, anime: worldTitle }),
-    cta: config.cta ?? copy.cta,
+    series,
+    stats: {
+      stops: partStops.length,
+      arcs: new Set(partArcs.filter(Boolean)).size,
+      journeyStops: journey.stops.length,
+      journeyArcs,
+    },
+    hook: config.hook ?? fillTemplate(defaultHook, partVars),
+    cta: config.cta ?? defaultCta,
     siteLabel: site,
     pageLabel: path ? `${site}${path}` : site,
     durationSeconds,

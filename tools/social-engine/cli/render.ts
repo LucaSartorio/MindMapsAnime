@@ -22,7 +22,7 @@ import { parseArgs, type FlagSpec } from './args';
 import { fail, numberFlag, stringFlag } from './common';
 
 const SPEC: FlagSpec = {
-  config: 'string', template: 'string', anime: 'string', character: 'string', subject: 'string', locale: 'string',
+  config: 'string', template: 'string', anime: 'string', character: 'string', subject: 'string', segment: 'string', locale: 'string',
   hook: 'string', cta: 'string', duration: 'string', 'max-stops': 'string', variant: 'string', audio: 'string',
   'audio-volume': 'string', out: 'string', 'browser-executable': 'string', concurrency: 'string', still: 'string',
   frames: 'string', 'dry-run': 'boolean', help: 'boolean',
@@ -34,6 +34,7 @@ const HELP = `Usage: npm run social:render -- [options]      (ad-hoc; use the qu
   --template <name>           ${templateNames()}
   --anime <slug>              naruto | hunterxhunter | onepiece | dragonball | blackclover (or URL slug)
   --character <slug|id>       e.g. itachi-uchiha, char-itachi, luffy (alias: --subject)
+  --segment <part-NN>         part of a multi-part journey (required for series)
   --locale <en|it>  --hook <text>  --cta <text>  --duration <12–60>  --max-stops <2–8>  --variant <slug>
   --audio <file>              royalty-free track inside tools/social-engine/audio/ (+ --audio-volume 0..1)
   --out <file.mp4>            default tools/social-engine/output/preview/<anime>_<subject>_<template>_<locale>.mp4
@@ -58,6 +59,7 @@ function rawFrom(flags: Record<string, string | boolean>): Record<string, unknow
   set('template', stringFlag(flags, 'template'));
   set('anime', stringFlag(flags, 'anime'));
   set('subject', stringFlag(flags, 'character') ?? stringFlag(flags, 'subject'));
+  set('segment', stringFlag(flags, 'segment'));
   set('locale', stringFlag(flags, 'locale'));
   set('hook', stringFlag(flags, 'hook'));
   set('cta', stringFlag(flags, 'cta'));

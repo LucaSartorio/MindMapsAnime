@@ -9,8 +9,7 @@ import { ensureRecord, loadHistory, saveHistory, transition, type History } from
 import { listContentFiles, inspectQueue, type QueueItem } from './queue';
 import { acquireLock } from './lock';
 import { writeManifest } from './manifest';
-import { parseContentRequest, planContent } from './content';
-import { parseRenderId } from './ids';
+import { parseContentRequest, planContent, recordIdentity } from './content';
 
 /**
  * Batch render of the file queue.
@@ -90,8 +89,8 @@ export async function runBatch(opts: BatchOptions): Promise<BatchResult> {
     if (!valid.length) return result;
 
     for (const i of valid) {
-      const { contentId, locale, variant } = parseRenderId(i.plan.renderId);
-      const r = ensureRecord(history, { renderId: i.plan.renderId, contentId, template: i.plan.template.id, anime: i.plan.resolved.identity.anime, subject: i.plan.resolved.identity.subject, locale, variant }, now(), i.name);
+      const r = ensureRecord(history, recordIdentity(i.plan), now(), i.name);
+      r.segmentFingerprint = recordIdentity(i.plan).segmentFingerprint;
       // Crash recovery (a previous run died mid-render) and explicit retries/re-renders go back to queued.
       if (r.renderStatus !== 'queued') transition(r, 'queued', now(), { sourceFile: i.name });
     }

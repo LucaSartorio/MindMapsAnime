@@ -19,7 +19,7 @@ import { parseArgs, type FlagSpec } from './args';
 import { fail, numberFlag, stringFlag } from './common';
 
 const SPEC: FlagSpec = {
-  template: 'string', anime: 'string', character: 'string', subject: 'string', locale: 'string', hook: 'string',
+  template: 'string', anime: 'string', character: 'string', subject: 'string', segment: 'string', locale: 'string', hook: 'string',
   cta: 'string', duration: 'string', variant: 'string', 'max-stops': 'string', notes: 'string', from: 'string',
   force: 'boolean', list: 'boolean', 'dry-run': 'boolean', help: 'boolean',
 };
@@ -27,6 +27,7 @@ const SPEC: FlagSpec = {
 const HELP = `Usage: npm run social:queue -- [options]
 
   --template <name> --anime <slug> --character <slug|id>   (${templateNames()})
+  --segment <part-NN>  the part of a multi-part journey (catalog item \`series.segment\`)
   --locale <en|it>  --hook <text>  --cta <text>  --duration <12–60>  --max-stops <2–8>
   --variant <slug>     new editorial edition of content already rendered
   --notes <text>       why this content (kept in the file, never rendered)
@@ -75,6 +76,7 @@ async function main() {
     set('template', stringFlag(flags, 'template'));
     set('anime', stringFlag(flags, 'anime'));
     set('subject', stringFlag(flags, 'character') ?? stringFlag(flags, 'subject'));
+    set('segment', stringFlag(flags, 'segment'));
     set('locale', stringFlag(flags, 'locale'));
     set('hook', stringFlag(flags, 'hook'));
     set('cta', stringFlag(flags, 'cta'));

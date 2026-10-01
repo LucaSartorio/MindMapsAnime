@@ -12,11 +12,30 @@ export type ContentIdentity = {
   /** Display name in the rendered locale (logs, manifests). */
   subjectName: string;
   locale: VideoLocale;
+  /** Part key (`part-01`) when the content is one part of a series; null for a single video. */
+  segment: string | null;
+};
+
+/** Series facts of a part (manifest, render summary, history, catalog). */
+export type SegmentInfo = {
+  segment: string;
+  partNumber: number;
+  partCount: number;
+  arcIds: string[];
+  arcTitles: string[];
+  firstArc: string | null;
+  lastArc: string | null;
+  segmentStopCount: number;
+  fullJourneyStopCount: number;
+  segmentationVersion: number;
+  fingerprint: string;
 };
 
 /** What a template returns once its data is resolved and validated. */
 export type ResolvedVideo = {
   identity: ContentIdentity;
+  /** Series facts when the content is a part, else null. */
+  segment: SegmentInfo | null;
   /** Serializable Remotion input props (config + resolved data). */
   props: Record<string, unknown>;
   durationSeconds: number;
@@ -44,6 +63,8 @@ export type ExclusionReason =
 /** One producible content, as listed in catalog.json (compact, agent-oriented). */
 export type CatalogCandidate = {
   subject: string;
+  /** Part of a series (null = single video). Parts of one subject are listed in order. */
+  segment: (SegmentInfo & { arcTitlesByLocale: Record<VideoLocale, string[]> }) | null;
   subjectId: string;
   displayName: Record<VideoLocale, string>;
   /** Locales whose text is really authored for this content (no fallback). */
@@ -80,7 +101,7 @@ export type TemplateDefinition<C extends SocialVideoConfig = SocialVideoConfig> 
   configKeys: readonly string[];
   parseConfig(input: Obj, collector: Collector): C;
   /** Builds a config for a catalog subject (queue CLI). */
-  configFor(anime: string, subject: string, locale: VideoLocale): C;
+  configFor(anime: string, subject: string, locale: VideoLocale, segment?: string): C;
   resolve(config: C, options?: ResolveOptions): Promise<ResolvedVideo>;
   /** Every subject of a world this template can (or can't, with a reason) produce. */
   scan(world: LoadedWorld): CatalogScan;
