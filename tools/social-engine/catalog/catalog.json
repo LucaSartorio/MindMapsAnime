@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-01T09:12:40.255Z",
+  "generatedAt": "2026-10-01T16:20:47.410Z",
   "locales": [
     "en",
     "it"
@@ -2904,10 +2904,12 @@
             "animatedStops": 6,
             "arcs": 16
           },
-          "renderedLocales": [],
+          "renderedLocales": [
+            "en"
+          ],
           "publishedLocales": [],
           "queuedLocales": [],
-          "renderedBefore": false,
+          "renderedBefore": true,
           "publishedBefore": false
         },
         {

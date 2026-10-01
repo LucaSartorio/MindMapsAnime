@@ -1,6 +1,28 @@
 {
   "schemaVersion": 1,
   "records": {
+    "character-journey:dragonball:goku@en": {
+      "renderId": "character-journey:dragonball:goku@en",
+      "contentId": "character-journey:dragonball:goku",
+      "template": "characterJourney",
+      "anime": "dragonball",
+      "subject": "goku",
+      "locale": "en",
+      "variant": null,
+      "createdAt": "2026-10-01T16:18:05.936Z",
+      "updatedAt": "2026-10-01T16:20:47.390Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-10-01T16:20:47.390Z",
+      "outputFile": "tools/social-engine/output/dragonball_goku_character-journey_en.mp4",
+      "manifestFile": "tools/social-engine/output/dragonball_goku_character-journey_en.manifest.json",
+      "sourceFile": "0008-dragonball_goku_character-journey_en.json",
+      "durationSeconds": 23,
+      "attempts": 1,
+      "lastError": null,
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-journey:hunterxhunter:gon-freecss@en": {
       "renderId": "character-journey:hunterxhunter:gon-freecss@en",
       "contentId": "character-journey:hunterxhunter:gon-freecss",
