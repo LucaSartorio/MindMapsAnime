@@ -31,7 +31,7 @@ export type BaseVideoConfig = {
   hook?: string;
   /** Closing call to action. Deterministic default per locale. */
   cta?: string;
-  /** Target length in seconds (12–60). Default 22. */
+  /** Length in seconds (12–60). Default: computed by the template (CharacterJourney: from its stop count). */
   durationSeconds?: number;
   /** Optional soundtrack (no audio when omitted). */
   audio?: AudioTrackConfig;
@@ -42,7 +42,7 @@ export type CharacterJourneyOptions = {
   routeIds?: string[];
   /** Enrich the route with the character's located timeline events (default true). */
   includeEvents?: boolean;
-  /** Max stops animated on the map (2–8, default 6). Extra stops are sampled out. */
+  /** Expert cap on the stops animated in THIS video (2–8; default: all stops of the part). */
   maxStops?: number;
 };
 
@@ -50,6 +50,11 @@ export type CharacterJourneyConfig = BaseVideoConfig & {
   template: 'characterJourney';
   /** Character: SEO slug (`itachi-uchiha`), id (`char-itachi`) or id without prefix (`itachi`). */
   subject: string;
+  /**
+   * Part of a long journey (`part-01`, `part-02`…), exactly as listed in the
+   * catalog. Required when the journey is a series, forbidden when it's a single video.
+   */
+  segment?: string;
   journey?: CharacterJourneyOptions;
   /** Locations to feature in the recap (ids or SEO slugs, max 5). Default: auto-selected. */
   highlights?: string[];

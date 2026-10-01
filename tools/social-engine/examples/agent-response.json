@@ -1,28 +1,36 @@
 [
   {
+    "id": "character-journey:dragonball:goku:part-01",
+    "template": "characterJourney",
+    "anime": "dragonball",
+    "subject": "goku",
+    "segment": "part-01",
+    "locale": "en",
+    "hook": "Before he was a legend, Goku was a kid on a mountain. Part 1.",
+    "notes": "Series start: Goku Part 1 of 5, never rendered."
+  },
+  {
     "template": "characterJourney",
     "anime": "naruto",
-    "subject": "sasuke-uchiha",
-    "locale": "en",
-    "hook": "Sasuke never stopped running. Here's where.",
-    "durationSeconds": 23,
-    "notes": "Major character, 15 places, never rendered."
+    "subject": "itachi-uchiha",
+    "locale": "it",
+    "notes": "Single journey (5 stops): no segment."
   },
   {
     "template": "characterJourney",
     "anime": "one-piece",
-    "subject": "luffy",
+    "subject": "monkey-d-luffy",
+    "segment": "part-02",
     "locale": "it"
   },
   {
-    "id": "character-journey:hunterxhunter:gon-freecss",
-    "status": "queued",
     "template": "characterJourney",
     "anime": "hunterxhunter",
     "subject": "gon-freecss",
+    "segment": "part-01",
     "locale": "en",
     "variant": "father-quest",
     "hook": "Gon crossed the world to find one man.",
-    "cta": "Explore the full journey on AniMapVerse"
+    "cta": "Continue the journey on AniMapVerse"
   }
 ]

@@ -2,6 +2,7 @@
   "template": "characterJourney",
   "anime": "naruto",
   "subject": "sasuke-uchiha",
+  "segment": "part-01",
   "locale": "en",
   "notes": "Cloud render test: valid item."
 }

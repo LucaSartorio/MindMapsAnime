@@ -29,6 +29,10 @@ export type HistoryRecord = {
   subject: string;
   locale: VideoLocale;
   variant: string | null;
+  /** Part key for a series (`part-02`), null for a single video. */
+  segment: string | null;
+  /** Fingerprint of the part's stops when it was queued/rendered (detects data drift). */
+  segmentFingerprint: string | null;
   createdAt: string;
   updatedAt: string;
   renderStatus: RenderStatus;
@@ -70,7 +74,10 @@ export function loadHistory(dirs: PipelineDirs): History {
   if (raw.schemaVersion !== 1 || typeof raw.records !== 'object' || raw.records === null) {
     throw new Error(`${dirs.historyFile}: unsupported history format`);
   }
-  return { schemaVersion: 1, records: raw.records };
+  // Records written before series existed have no segment fields: they are single videos.
+  const records: Record<string, HistoryRecord> = {};
+  for (const [key, r] of Object.entries(raw.records)) records[key] = { ...r, segment: r.segment ?? null, segmentFingerprint: r.segmentFingerprint ?? null };
+  return { schemaVersion: 1, records };
 }
 
 /** Saved with sorted keys: stable diffs, easy to read for people and agents. */
@@ -80,10 +87,10 @@ export function saveHistory(dirs: PipelineDirs, history: History): void {
   writeJsonAtomic(dirs.historyFile, { schemaVersion: 1, records });
 }
 
-type Identity = Pick<HistoryRecord, 'renderId' | 'contentId' | 'template' | 'anime' | 'subject' | 'locale' | 'variant'>;
+export type RecordIdentity = Pick<HistoryRecord, 'renderId' | 'contentId' | 'template' | 'anime' | 'subject' | 'locale' | 'variant' | 'segment' | 'segmentFingerprint'>;
 
 /** Creates the record (as `queued`) if missing; returns it. */
-export function ensureRecord(history: History, identity: Identity, now: string, sourceFile: string | null): HistoryRecord {
+export function ensureRecord(history: History, identity: RecordIdentity, now: string, sourceFile: string | null): HistoryRecord {
   const existing = history.records[identity.renderId];
   if (existing) return existing;
   const record: HistoryRecord = {

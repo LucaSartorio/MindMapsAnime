@@ -1,4 +1,4 @@
-import { DEFAULT_DURATION_SECONDS, MAX_CTA_CHARS, MAX_DURATION_SECONDS, MAX_HOOK_CHARS, MIN_DURATION_SECONDS } from '../config/defaults';
+import { MAX_CTA_CHARS, MAX_DURATION_SECONDS, MAX_HOOK_CHARS, MIN_DURATION_SECONDS } from '../config/defaults';
 import { VIDEO_LOCALES } from '../config/types';
 import { animeWorlds, getWorldUrlSlug } from '@/data/worlds';
 import { availableWorldSlugs } from '../data/world';
@@ -23,7 +23,11 @@ export function buildContentSchema(): Record<string, unknown> {
   });
   const shared: Record<string, unknown> = {
     $schema: { type: 'string', description: 'Optional pointer to this schema (ignored).' },
-    id: { type: 'string', pattern: `^${slug.slice(1, -1)}:${slug.slice(1, -1)}:${slug.slice(1, -1)}$`, description: 'Optional content id "<template>:<anime>:<subject>" (from catalog.json). If present it must match the config.' },
+    id: {
+      type: 'string',
+      pattern: `^${slug.slice(1, -1)}:${slug.slice(1, -1)}:${slug.slice(1, -1)}(?::${slug.slice(1, -1)})?$`,
+      description: 'Optional content id "<template>:<anime>:<subject>[:<segment>]" copied from catalog.json. If present it must match the config.',
+    },
     status: { const: 'queued', description: 'Optional. Only "queued" is allowed: the pipeline owns every other state.' },
     template: { type: 'string', description: 'Template id.' },
     anime: { enum: animeSlugs, description: 'World: catalog `anime` (internal slug); public URL slugs are accepted too.' },
@@ -31,7 +35,12 @@ export function buildContentSchema(): Record<string, unknown> {
     variant: { type: 'string', pattern: slug, maxLength: MAX_SEGMENT, description: 'Editorial variant. REQUIRED to produce a new edition of a video already rendered (same content + locale).' },
     hook: { type: 'string', minLength: 1, maxLength: MAX_HOOK_CHARS, description: 'Opening line, ≤ 2 lines on a phone. Default: deterministic template.' },
     cta: { type: 'string', minLength: 1, maxLength: MAX_CTA_CHARS, description: 'Closing call to action. Default: deterministic template.' },
-    durationSeconds: { type: 'number', minimum: MIN_DURATION_SECONDS, maximum: MAX_DURATION_SECONDS, default: DEFAULT_DURATION_SECONDS, description: 'Prefer the catalog `recommendedDurationSeconds`.' },
+    durationSeconds: {
+      type: 'number',
+      minimum: MIN_DURATION_SECONDS,
+      maximum: MAX_DURATION_SECONDS,
+      description: 'OMIT IT: the engine computes the length from the stops. If it must be explicit, copy the catalog `recommendedDurationSeconds` exactly; never invent it.',
+    },
     notes: { type: 'string', maxLength: MAX_NOTES, description: 'Why this content was chosen. Stored, never rendered.' },
     allowRerender: { type: 'boolean', description: 'HUMAN OVERRIDE ONLY. Agents must not set it.' },
     audio: {

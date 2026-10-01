@@ -119,8 +119,16 @@ await test('template is generic: Sasuke, Kakashi, Luffy, Zoro, Gon, Killua all r
     ['onepiece', 'roronoa-zoro'], ['hunter-x-hunter', 'gon-freecss'], ['hunterxhunter', 'killua-zoldyck'],
   ];
   for (const [anime, subject] of cases) {
-    const data = await resolveCharacterJourney({ template: 'characterJourney', anime, subject });
-    assert.ok(data.stops.length >= 2, `${anime}/${subject}`);
+    // Long journeys are series: a request without `segment` says which parts exist.
+    const parts = await resolveCharacterJourney({ template: 'characterJourney', anime, subject }).then(
+      () => ['single'],
+      (err: Error) => /series of (\d+) parts: set "segment" to one of ([\w, -]+) \(/.exec(err.message)?.[2].split(', ') ?? [],
+    );
+    assert.ok(parts.length >= 1, `${anime}/${subject}: no parts`);
+    for (const part of parts) {
+      const data = await resolveCharacterJourney({ template: 'characterJourney', anime, subject, ...(part === 'single' ? {} : { segment: part }) });
+      assert.ok(data.stops.length >= 2 && data.stops.length <= 8, `${anime}/${subject} ${part}: ${data.stops.length} stops`);
+    }
   }
 });
 
@@ -196,7 +204,8 @@ await test('resolution is deterministic and exposes a canonical identity', async
   assert.ok(t);
   const a = await t.resolve({ ...itachi, subject: 'char-itachi' });
   const b = await t.resolve(itachi);
-  assert.deepEqual(a.identity, { anime: 'naruto', subject: 'itachi-uchiha', subjectName: 'Itachi Uchiha', locale: 'en' });
+  assert.deepEqual(a.identity, { anime: 'naruto', subject: 'itachi-uchiha', subjectName: 'Itachi Uchiha', locale: 'en', segment: null });
+  assert.equal(a.segment, null, 'a short journey stays a single video');
   assert.deepEqual(a.props.data, b.props.data);
   assert.equal(fileStemFor({ contentId: 'character-journey:naruto:itachi-uchiha', locale: 'en', variant: null }), 'naruto_itachi-uchiha_character-journey_en');
 });

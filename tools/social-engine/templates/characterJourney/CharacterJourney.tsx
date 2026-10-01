@@ -13,7 +13,7 @@ import { RouteLayer } from '../../components/RouteLayer';
 import { StopCard } from '../../components/StopCard';
 import { cameraAt, toScreen } from '../../lib/camera';
 import { easeInOut, fadeWindow, lerp, progress } from '../../lib/easing';
-import { useBrandFonts } from '../../lib/fonts';
+import { fitFontSize, useBrandFonts } from '../../lib/fonts';
 import { buildLeg } from '../../lib/geometry';
 import { COLORS, FONTS, SAFE } from '../../lib/theme';
 import { buildJourneyCamera } from './camera';
@@ -29,6 +29,9 @@ export function videoText(data: NonNullable<CharacterJourneyProps['data']>): str
     data.pageLabel,
     data.map.name,
     data.world.title,
+    data.series?.label ?? '',
+    data.series?.nextLabel ?? '',
+    data.series?.arcRange ?? '',
     ...Object.values(data.character).filter((v): v is string => typeof v === 'string'),
     ...Object.values(data.copy),
     ...data.stops.flatMap((s) => [s.title, s.placeName, s.shortName, s.regionName ?? '', s.arcName ?? '']),
@@ -65,6 +68,21 @@ export function CharacterJourney({ data }: CharacterJourneyProps) {
   const introText = fadeWindow(frame, plan.intro.start + 6, plan.stops[0].arrive - 4, 12, 8);
   const recapAppear = progress(frame, plan.recap.start + Math.round(fps * 0.5), 12) * (1 - progress(frame, plan.cta.start, 8));
   const highlightSet = new Set(data.highlights);
+  // Recap labels: chosen once on the settled recap framing; a label that would
+  // overlap one already placed is skipped (its pin number + the list still name it).
+  const recapLabels = useMemo(() => {
+    const cam = cameraAt(cameraKeys, Math.min(plan.recap.start + Math.round(fps * 1.2), plan.recap.end));
+    const placed: { x0: number; x1: number; y0: number; y1: number }[] = [];
+    return data.highlights.filter((i) => {
+      const p = toScreen(cam, points[i], width);
+      const text = data.stops[i].regionName ?? data.stops[i].shortName;
+      const w = text.length * 26 * 0.58 + 48;
+      const box = { x0: p.x - w / 2 - 8, x1: p.x + w / 2 + 8, y0: p.y - 44 - 50, y1: p.y - 44 + 8 };
+      if (placed.some((b) => box.x0 < b.x1 && b.x0 < box.x1 && box.y0 < b.y1 && b.y0 < box.y1)) return false;
+      placed.push(box);
+      return true;
+    });
+  }, [cameraKeys, plan, fps, data.highlights, data.stops, points, width]);
   // "0 story arcs" says nothing: the arcs count only appears when the data has arcs.
   const statsLine = [`${data.stats.stops} ${copy.stops}`, ...(data.stats.arcs > 0 ? [`${data.stats.arcs} ${copy.arcs}`] : [])].join(' · ');
   const screen = points.map((p) => toScreen(camera, p, width));
@@ -103,7 +121,7 @@ export function CharacterJourney({ data }: CharacterJourneyProps) {
           />
         )}
         {inRecap &&
-          data.highlights.map((i) => (
+          recapLabels.map((i) => (
             <LocationLabel
               key={i}
               x={screen[i].x}
@@ -116,13 +134,14 @@ export function CharacterJourney({ data }: CharacterJourneyProps) {
           ))}
       </MapStage>
 
-      {frame < plan.hook.end + 2 && <Hook text={data.hook} kicker={`${data.world.title} · ${copy.templateLabel}`} end={plan.hook.end} />}
+      {frame < plan.hook.end + 2 && <Hook text={data.hook} kicker={`${data.world.title} · ${data.series ? data.series.label : copy.templateLabel}`} end={plan.hook.end} />}
 
       <CharacterHeader
         name={data.character.name}
         initials={data.character.initials}
         tagline={[data.world.title, data.character.tagline].filter(Boolean).join(' · ')}
         kicker={copy.templateLabel}
+        badge={data.series?.label}
         appear={headerAppear}
       />
 
@@ -130,6 +149,22 @@ export function CharacterJourney({ data }: CharacterJourneyProps) {
         <div style={{ position: 'absolute', left: SAFE.side, right: SAFE.side, bottom: SAFE.bottom + 40, opacity: introText, transform: `translateY(${(1 - introText) * 24}px)`, display: 'flex', flexDirection: 'column', gap: 14 }}>
           <Kicker>{copy.mapKicker}</Kicker>
           <div style={{ fontFamily: FONTS.display, fontWeight: 700, fontSize: 70, color: COLORS.white, lineHeight: 1.05, textShadow: '0 4px 24px rgba(0,0,0,0.8)' }}>{data.map.name}</div>
+          {data.series?.arcRange && (
+            // Narrative range of this part: one line, shrinks then ellipsizes on long arc names.
+            <div
+              style={{
+                fontFamily: FONTS.sans,
+                fontWeight: 600,
+                fontSize: fitFontSize(data.series.arcRange, { maxWidth: width - SAFE.side * 2, maxLines: 1, max: 38, min: 26, glyph: 0.52 }),
+                color: COLORS.ink100,
+                whiteSpace: 'nowrap',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+              }}
+            >
+              {data.series.arcRange}
+            </div>
+          )}
           <div style={{ fontFamily: FONTS.sans, fontWeight: 500, fontSize: 32, color: COLORS.ink200 }}>
             {statsLine}
           </div>
@@ -163,7 +198,7 @@ export function CharacterJourney({ data }: CharacterJourneyProps) {
       />
 
       {frame >= plan.cta.start && (
-        <CallToAction cta={data.cta} tagline={copy.brandTagline} siteLabel={data.siteLabel} pageLabel={data.pageLabel} start={plan.cta.start} />
+        <CallToAction cta={data.cta} kicker={data.series?.nextLabel} tagline={copy.brandTagline} siteLabel={data.siteLabel} pageLabel={data.pageLabel} start={plan.cta.start} />
       )}
 
       {data.audio && (

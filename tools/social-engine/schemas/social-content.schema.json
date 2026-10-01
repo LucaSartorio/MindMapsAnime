@@ -21,8 +21,8 @@
         },
         "id": {
           "type": "string",
-          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*:[a-z0-9]+(?:-[a-z0-9]+)*:[a-z0-9]+(?:-[a-z0-9]+)*$",
-          "description": "Optional content id \"<template>:<anime>:<subject>\" (from catalog.json). If present it must match the config."
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*:[a-z0-9]+(?:-[a-z0-9]+)*:[a-z0-9]+(?:-[a-z0-9]+)*(?::[a-z0-9]+(?:-[a-z0-9]+)*)?$",
+          "description": "Optional content id \"<template>:<anime>:<subject>[:<segment>]\" copied from catalog.json. If present it must match the config."
         },
         "status": {
           "const": "queued",
@@ -78,8 +78,7 @@
           "type": "number",
           "minimum": 12,
           "maximum": 60,
-          "default": 22,
-          "description": "Prefer the catalog `recommendedDurationSeconds`."
+          "description": "OMIT IT: the engine computes the length from the stops. If it must be explicit, copy the catalog `recommendedDurationSeconds` exactly; never invent it."
         },
         "notes": {
           "type": "string",
@@ -113,6 +112,11 @@
           "type": "string",
           "minLength": 1,
           "description": "Character: catalog `subject` (SEO slug, e.g. \"itachi-uchiha\"). Ids (\"char-itachi\") and unique short forms (\"luffy\") are accepted too."
+        },
+        "segment": {
+          "type": "string",
+          "pattern": "^part-\\d{2}(?:-v\\d+)?$",
+          "description": "Part of a multi-part journey, copied from the catalog item (`segment`, e.g. \"part-02\"). Required for series, must be omitted for single journeys. Never invent it."
         },
         "journey": {
           "type": "object",

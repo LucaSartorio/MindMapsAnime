@@ -5,6 +5,8 @@ import type { PlannedContent } from './content';
 import type { PipelineDirs } from './dirs';
 import { relToRepo } from './dirs';
 import { writeJsonAtomic } from './fs';
+import { seriesIdOf } from './ids';
+import type { SegmentInfo } from '../templates/types';
 
 /**
  * `<stem>.manifest.json` next to every MP4: what the video is, where it came
@@ -20,6 +22,8 @@ export type RenderManifest = {
   subjectName: string;
   locale: string;
   variant: string | null;
+  /** Series facts when the video is one part of a multi-part journey (null for a single video). */
+  segment: (SegmentInfo & { seriesId: string }) | null;
   renderedAt: string;
   durationSeconds: number;
   frames: number;
@@ -45,6 +49,7 @@ export function writeManifest(dirs: PipelineDirs, plan: PlannedContent, video: s
     subjectName: plan.resolved.identity.subjectName,
     locale: plan.locale,
     variant: plan.variant,
+    segment: plan.resolved.segment ? { seriesId: seriesIdOf(plan.contentId), ...plan.resolved.segment } : null,
     renderedAt,
     durationSeconds: info.durationInFrames / info.fps,
     frames: info.durationInFrames,

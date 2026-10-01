@@ -4,10 +4,15 @@ import type { VideoLocale } from '../config/types';
  * Identifiers of the content pipeline — stable, unique, readable, and
  * independent of the date, the hook text and (for `contentId`) the language.
  *
- *   contentId  character-journey:naruto:itachi-uchiha        WHAT  (template : world : subject)
+ *   contentId  character-journey:naruto:itachi-uchiha        WHAT  (template : world : subject [: segment])
+ *              character-journey:dragonball:goku:part-02     one PART of a series (long journeys)
  *   renderId   character-journey:naruto:itachi-uchiha@en     ONE VIDEO (+ locale)
  *              character-journey:naruto:itachi-uchiha@en+teaser   (+ editorial variant)
  *   fileStem   naruto_itachi-uchiha_character-journey_en[_teaser]  (files: .mp4, .manifest.json)
+ *              dragonball_goku_character-journey_part-02_en
+ *
+ * A single video keeps the 3-segment id (backward compatible); only parts carry
+ * the segment. The series id is the 3-segment id of the subject.
  *
  * Every segment is a lowercase slug (`[a-z0-9-]`), so ids are safe to embed
  * in file names and can never contain path separators.
@@ -26,11 +31,18 @@ function assertSegment(kind: string, value: string): void {
 
 export type RenderKey = { contentId: string; locale: VideoLocale; variant: string | null };
 
-export function contentIdFor(templateCliName: string, anime: string, subject: string): string {
+export function contentIdFor(templateCliName: string, anime: string, subject: string, segment: string | null = null): string {
   assertSegment('template', templateCliName);
   assertSegment('anime', anime);
   assertSegment('subject', subject);
-  return `${templateCliName}:${anime}:${subject}`;
+  if (segment !== null) assertSegment('segment', segment);
+  return `${templateCliName}:${anime}:${subject}${segment ? `:${segment}` : ''}`;
+}
+
+/** The series a content belongs to (= its id without the segment). */
+export function seriesIdOf(contentId: string): string {
+  const { template, anime, subject } = parseContentId(contentId);
+  return `${template}:${anime}:${subject}`;
 }
 
 export function renderIdFor({ contentId, locale, variant }: RenderKey): string {
@@ -39,11 +51,13 @@ export function renderIdFor({ contentId, locale, variant }: RenderKey): string {
   return `${contentId}@${locale}${variant ? `+${variant}` : ''}`;
 }
 
-export function parseContentId(contentId: string): { template: string; anime: string; subject: string } {
+export function parseContentId(contentId: string): { template: string; anime: string; subject: string; segment: string | null } {
   const parts = contentId.split(':');
-  if (parts.length !== 3 || !parts.every(isSafeSegment)) throw new Error(`Invalid content id "${contentId}" (expected template:anime:subject)`);
-  const [template, anime, subject] = parts;
-  return { template, anime, subject };
+  if ((parts.length !== 3 && parts.length !== 4) || !parts.every(isSafeSegment)) {
+    throw new Error(`Invalid content id "${contentId}" (expected template:anime:subject[:segment])`);
+  }
+  const [template, anime, subject, segment] = parts;
+  return { template, anime, subject, segment: segment ?? null };
 }
 
 export function parseRenderId(renderId: string): RenderKey {
@@ -56,6 +70,6 @@ export function parseRenderId(renderId: string): RenderKey {
 
 /** `naruto_itachi-uchiha_character-journey_en` — the name of every file of a render. */
 export function fileStemFor(key: RenderKey): string {
-  const { template, anime, subject } = parseContentId(key.contentId);
-  return [anime, subject, template, key.locale, ...(key.variant ? [key.variant] : [])].join('_');
+  const { template, anime, subject, segment } = parseContentId(key.contentId);
+  return [anime, subject, template, ...(segment ? [segment] : []), key.locale, ...(key.variant ? [key.variant] : [])].join('_');
 }

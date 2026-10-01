@@ -5,8 +5,10 @@ import { COLORS, FONTS, SAFE } from '../lib/theme';
 import { Kicker } from './Kicker';
 
 /** Closing card: AniMapVerse mark, a calm CTA, the domain and the exact page path. */
-export function CallToAction({ cta, tagline, siteLabel, pageLabel, start }: {
+export function CallToAction({ cta, kicker, tagline, siteLabel, pageLabel, start }: {
   cta: string;
+  /** Optional small line above the CTA (series: "Next: Part 3 of 5"). */
+  kicker?: string;
   tagline: string;
   siteLabel: string;
   pageLabel: string;
@@ -28,6 +30,11 @@ export function CallToAction({ cta, tagline, siteLabel, pageLabel, start }: {
           <div style={{ fontFamily: FONTS.display, fontWeight: 700, fontSize: 88, color: COLORS.white, lineHeight: 1 }}>AniMapVerse</div>
           <Kicker color={COLORS.ink300} size={24}>{tagline}</Kicker>
         </div>
+        {kicker && (
+          <Kicker color={COLORS.red500} size={26} style={{ opacity: text, marginTop: 14, marginBottom: -18 }}>
+            {kicker}
+          </Kicker>
+        )}
         <div style={{ opacity: text, fontFamily: FONTS.sans, fontWeight: 600, fontSize: ctaSize, lineHeight: 1.18, color: COLORS.ink100, maxWidth: width - SAFE.side * 2, marginTop: 20 }}>
           {cta}
         </div>
