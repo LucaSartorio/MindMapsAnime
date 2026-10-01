@@ -98,8 +98,9 @@ jobs:
       # installed @remotion/renderer and re-checked by Remotion itself). It is
       # restored AFTER `npm ci`, which wipes node_modules.
       - name: Restore Chrome Headless Shell cache
+        id: chrome-cache
         if: steps.mode.outputs.queued != '0' && steps.mode.outputs.mode == 'render'
-        uses: actions/cache@v4
+        uses: actions/cache/restore@v4
         with:
           path: node_modules/.remotion/chrome-headless-shell
           key: remotion-chrome-headless-shell-${{ runner.os }}-${{ hashFiles('node_modules/@remotion/renderer/package.json') }}
@@ -107,6 +108,15 @@ jobs:
       - name: Install Chrome Headless Shell
         if: steps.mode.outputs.queued != '0' && steps.mode.outputs.mode == 'render'
         run: npx remotion browser ensure
+
+      # Saved right away (not in a post step): the cache survives runs that end
+      # red because of a failed video.
+      - name: Save Chrome Headless Shell cache
+        if: steps.mode.outputs.queued != '0' && steps.mode.outputs.mode == 'render' && steps.chrome-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: node_modules/.remotion/chrome-headless-shell
+          key: ${{ steps.chrome-cache.outputs.cache-primary-key }}
 
       - name: Generate social catalog
         if: steps.mode.outputs.queued != '0'

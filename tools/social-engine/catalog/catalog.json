@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-01T09:08:45.503Z",
+  "generatedAt": "2026-10-01T09:10:14.464Z",
   "locales": [
     "en",
     "it"
@@ -88,7 +88,9 @@
             "en"
           ],
           "publishedLocales": [],
-          "queuedLocales": [],
+          "queuedLocales": [
+            "it"
+          ],
           "renderedBefore": true,
           "publishedBefore": false
         },

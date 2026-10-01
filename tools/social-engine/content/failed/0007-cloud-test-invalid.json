@@ -1,7 +1,0 @@
-{
-  "template": "characterJourney",
-  "anime": "naruto",
-  "subject": "sasuke-uchia",
-  "locale": "it",
-  "notes": "TEST FIXTURE: deliberately wrong subject to verify partial-failure handling in the cloud. Delete after the test."
-}

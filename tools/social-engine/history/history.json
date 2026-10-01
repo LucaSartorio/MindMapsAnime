@@ -111,6 +111,28 @@
       "publishedAt": null,
       "platforms": []
     },
+    "character-journey:naruto:sasuke-uchiha@it": {
+      "renderId": "character-journey:naruto:sasuke-uchiha@it",
+      "contentId": "character-journey:naruto:sasuke-uchiha",
+      "template": "characterJourney",
+      "anime": "naruto",
+      "subject": "sasuke-uchiha",
+      "locale": "it",
+      "variant": null,
+      "createdAt": "2026-10-01T09:10:13.249Z",
+      "updatedAt": "2026-10-01T09:10:13.249Z",
+      "renderStatus": "queued",
+      "renderedAt": null,
+      "outputFile": null,
+      "manifestFile": null,
+      "sourceFile": "0007-naruto_sasuke-uchiha_character-journey_it.json",
+      "durationSeconds": null,
+      "attempts": 0,
+      "lastError": null,
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-journey:onepiece:monkey-d-luffy@it": {
       "renderId": "character-journey:onepiece:monkey-d-luffy@it",
       "contentId": "character-journey:onepiece:monkey-d-luffy",
