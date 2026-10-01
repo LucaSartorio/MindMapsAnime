@@ -44,6 +44,8 @@ npm run social:queue -- --template character-journey --anime naruto --character 
 npm run social:validate:queue          # check queued content, render nothing
 npm run social:render:queue -- --dry-run   # then without --dry-run: batch render → MP4 + manifest + history
 npm run social:retry:failed            # failed content → queue → render
+npm run social:render:queue:dry        # dry run without npm argument forwarding (CI / npm 11 on Windows)
+npm run social:ci:report               # artifact folder + step summary from the last batch (used by GitHub Actions)
 npm run social:render -- --config tools/social-engine/examples/itachi-character-journey.json   # ad-hoc preview
 npm run social:studio    # Remotion Studio (local preview of the video templates)
 ```
@@ -537,6 +539,11 @@ blocking) and, for UI changes, `npm run smoke`.
 `tools/social-engine/` is a **private** Remotion tool + file-based content pipeline that renders vertical
 videos (1080×1920 H.264, Shorts/TikTok/Reels) from the site's datasets. **SOCIAL ENGINE IS INTERNAL ONLY.**
 
+**FINAL ARCHITECTURE** — ChatGPT agent (future, not connected) → PR with queue JSON (`Social validate`
+workflow, read-only) → merge → `Social render` workflow (GitHub Actions = the cloud renderer, `ubuntu-latest`,
+same npm scripts as local) → Remotion → MP4 **workflow artifact** `animapverse-social-render-<run_id>-<attempt>`
+(`videos/`, `manifests/`, `render-summary.json`) → state commit by `github-actions[bot]`.
+
 **SOCIAL ENGINE ARCHITECTURE** — `data` (site datasets, read-only) → `social:catalog` (`catalog/catalog.json`:
 what's really renderable + history status) → [future agent, not connected] → JSON requests in
 `content/queue/` (contract: `schemas/social-content.schema.json`) → `social:render:queue` (validate → one
@@ -567,6 +574,17 @@ Permanent rules:
 - **Filesystem safety**: paths are built only from validated slugs via `safeJoin`; content never picks a path.
 - Templates are listed ONLY in `templates/registry.ts`; a template that lacks data throws `RenderDataError`
   (never renders an empty video). Never commit renders (`output/`, `.cache/`, `audio/*`, `*.mp4` are ignored).
+- **GitHub workflows are the cloud renderer** (`.github/workflows/social-render.yml` on push to `main` touching
+  `content/queue/**` + manual dispatch with `dry_run`; `social-validate.yml` on PRs, never renders). They call the
+  existing npm scripts only — never put engine/validation logic in YAML, never add a second renderer. PRs never render;
+  no `pull_request_target`, no secrets, no PAT (`GITHUB_TOKEN`, `contents: write` only on the render job).
+- **MP4 never committed**: videos leave the runner only as workflow artifacts.
+- **Queue JSON are untrusted input**: always validated by the engine (schema, data, duplicates, path guards).
+- **History must persist**: the render job commits `history/`, `content/`, `catalog/` back (only those paths), also on
+  partial failure.
+- **No render loops**: the state commit is pushed with `GITHUB_TOKEN` (never triggers workflows), carries
+  `[skip social-render] [skip ci]`, and the job skips `github-actions[bot]` commits. Keep all three guards.
+- Fonts come only from the bundled `@fontsource` packages (all subsets), never the OS: Windows and Linux renders match.
 - After changing it: `npm run social:validate` (+ `social:catalog`/`social:schema` when data/limits change, and a
   `--dry-run`/`--still` render) and `npm run build` (the public build must stay unaffected).
 

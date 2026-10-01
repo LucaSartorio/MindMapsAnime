@@ -19,8 +19,9 @@ social:render:queue ──► template → Remotion ──► output/<stem>.mp4 
 history/history.json                               render status (+ reserved publication fields)
 ```
 
-Phase 2 (this pipeline) adds everything except the agent itself: **no AI/API is
-called, nothing is published, no GitHub Action exists.**
+The same engine runs locally (Windows/macOS/Linux) and in the cloud
+(**GitHub Actions**, see [Cloud rendering](#cloud-rendering)): no second renderer,
+no CI-specific logic. **No AI/API is called and nothing is published.**
 
 ## Commands
 
@@ -36,6 +37,7 @@ npm run social:validate:queue                    # check every queued file, rend
 
 # render
 npm run social:render:queue -- --dry-run         # plan only: nothing rendered, nothing changed
+npm run social:render:queue:dry                  # same, without npm argument forwarding (npm 11 / Windows-safe)
 npm run social:render:queue                      # render the whole queue, in order
 npm run social:render:queue -- --id character-journey:naruto:itachi-uchiha@en --limit 1
 npm run social:retry:failed                      # failed → queue → render (or --id <renderId>, --requeue-only)
@@ -46,6 +48,7 @@ npm run social:render -- --template character-journey --anime naruto --character
 npm run social:studio                            # Remotion Studio
 npm run social:schema                            # regenerate schemas/social-content.schema.json
 npm run social:validate                          # typecheck + 50 engine/pipeline tests
+npm run social:ci:report                         # artifact folder + report from the last batch (CI; works locally too)
 ```
 
 Ad-hoc `social:render` (flags: `--locale --hook --cta --duration --max-stops --variant --audio
@@ -398,6 +401,141 @@ only touches the files it validated at start; new files wait for the next run.
 | Versioned (source) | Git-ignored (runtime) |
 | --- | --- |
 | `catalog/*.json`, `history/history.json`, `content/**/*.json`, `schemas/`, `examples/`, docs | `output/` (MP4, manifests, previews), `.cache/` (bundle, staged assets, lock), `audio/*` (except README), `*.tmp`, every `*.mp4/*.mov/*.webm` |
+
+## Cloud rendering
+
+GitHub Actions is the cloud renderer — it runs **exactly the npm scripts above**
+on an `ubuntu-latest` runner. Two workflows:
+
+| Workflow | Trigger | Does | Permissions |
+| --- | --- | --- | --- |
+| [`social-validate.yml`](../.github/workflows/social-validate.yml) | pull request touching `tools/social-engine/**` (or these workflows / package files) | `npm ci` → `social:validate:queue` → `social:render:queue:dry` → `social:validate` (tests). **Never renders.** | `contents: read`, no secrets, `pull_request` (not `_target`) |
+| [`social-render.yml`](../.github/workflows/social-render.yml) | push to `main` changing `tools/social-engine/content/queue/**` (= a merged queue PR) · manual **Run workflow** (`dry_run` input) | validate → render → artifact → state commit | `contents: write` on the render job only |
+
+```
+PR with queue JSON ──► Social validate (red if invalid / duplicate / unrenderable)
+        │ merge
+        ▼
+push to main ──► Social render
+  Checkout repository          branch HEAD (sees the previous run's state commit)
+  Decide run mode              render | dry (dispatch dry_run, or a non-default branch) · queue count
+  Setup Node.js / Install      Node 22, npm cache, `npm ci`            (skipped when the queue is empty)
+  Restore Chrome Headless Shell cache · Install Chrome Headless Shell (`npx remotion browser ensure`)
+  Generate social catalog      npm run social:catalog
+  Validate social queue        npm run social:validate:queue          (informative: invalid → failed/)
+  Render queued videos         npm run social:render:queue            (≤ 12 per run, one at a time)
+  Prepare render artifact      npm run social:ci:report               (artifact dir + step summary + outputs)
+  Upload rendered videos       actions/upload-artifact                (also on partial failure)
+  Persist social history       commit history/content/catalog back    ([skip ci], GITHUB_TOKEN)
+  Fail when a video failed     red run if ≥ 1 item failed
+```
+
+### Artifact
+
+Name: **`animapverse-social-render-<run_id>-<run_attempt>`** (prefix stable; find it via
+the run's artifacts API). Retention 30 days. Content (nothing else — no source,
+`node_modules`, cache, bundle or browser):
+
+```
+videos/<anime>_<subject>_<template>_<locale>.mp4
+manifests/<anime>_<subject>_<template>_<locale>.manifest.json
+render-summary.json
+```
+
+`render-summary.json` (`pipeline/runSummary.ts`, also written locally to `output/`):
+
+```json
+{
+  "runVersion": 1,
+  "generatedAt": "…", "dryRun": false,
+  "github": { "runId": "…", "runNumber": "…", "runAttempt": "1", "sha": "…", "ref": "main",
+              "workflow": "Social render", "artifactName": "animapverse-social-render-…-1" },
+  "counts": { "considered": 2, "rendered": 1, "failed": 1, "planned": 1, "remainingInQueue": 0 },
+  "rendered": [{ "renderId": "character-journey:naruto:sasuke-uchiha@en", "contentId": "…",
+                 "template": "characterJourney", "anime": "naruto", "subject": "sasuke-uchiha",
+                 "locale": "en", "variant": null, "title": "Sasuke Uchiha · Character Journey",
+                 "durationSeconds": 22, "sha256": "…",
+                 "video": "videos/naruto_sasuke-uchiha_character-journey_en.mp4",
+                 "manifest": "manifests/naruto_sasuke-uchiha_character-journey_en.manifest.json",
+                 "sourceFile": "0006-naruto_sasuke-uchiha_character-journey_en.json" }],
+  "failed": [{ "file": "0007-….json", "kind": "data", "renderId": null, "template": "characterJourney",
+               "anime": "naruto", "subject": "sasuke-uchia", "contentId": null, "errors": ["…Did you mean…"] }],
+  "planned": []
+}
+```
+
+Job outputs: `rendered_count`, `failed_count`, `artifact_name`. The run page also shows
+a readable **step summary** (counts, videos, failures with the reason, artifact name).
+
+### History persistence (the runner is ephemeral)
+
+The batch updates the repository state (`history/history.json`, queue files moved to
+`content/rendered/` or `content/failed/` + `.error.json`, refreshed `catalog/`). The
+**Persist social history** step stages **only** those three paths and pushes one commit
+to the same branch: `chore(social): record rendered content [skip social-render] [skip ci]`
+(author `github-actions[bot]`), rebasing and retrying if the branch moved meanwhile. It runs
+also after a partial failure, a timeout or a cancellation (`always()`), so whatever was
+rendered is recorded and a crash mid-render is recovered by the next run. MP4s are never
+committed (git-ignored, and never staged).
+
+### Loop prevention
+
+The state commit modifies `content/queue/**`, which matches the trigger — three independent guards:
+
+1. it is pushed with `GITHUB_TOKEN`, and **pushes made with `GITHUB_TOKEN` never start workflow runs** (GitHub rule);
+2. its message carries **`[skip ci]`** (GitHub skips push-triggered workflows for it);
+3. the job condition skips commits by **`github-actions[bot]`** or containing **`[skip social-render]`**.
+
+### Failures
+
+One failed video never stops the others; the run ends **red** when ≥ 1 item failed, but the
+successful videos and `render-summary.json` are uploaded first and the state (including
+`content/failed/*.error.json`) is committed. The step summary and the "Render queued videos"
+log show the render id (template · anime · subject · locale) and the error. To retry: fix the
+file in `content/failed/` in a PR, then `npm run social:retry:failed` locally — or move it back
+to `content/queue/` in that PR; the merge triggers a new render.
+
+### Manual run
+
+GitHub → **Actions → Social render → Run workflow** (branch `main`):
+- `dry_run` unchecked → render the current queue (same as an automatic run);
+- `dry_run` checked → catalog + validation + plan in the step summary; no video, no state change, no commit.
+
+On any branch other than the default one, a manual run is always a dry run.
+
+### Cost control
+
+Public repository → standard runners are free. Runs only when queue files change on `main`
+(path filter) or on demand; PRs never render; no cron; no matrix; videos rendered serially;
+empty queue → the job stops after checkout (no install); npm cache; Chrome Headless Shell cached
+per Remotion version; ≤ 12 videos per run (`SOCIAL_RENDER_LIMIT`, the rest stays queued — the
+step summary says so); timeouts 45 min (render step) / 60 min (job). Measured: ~1.5 min per 22 s
+video on a 4-core machine. The state commit lands on `main`: if the site's Vercel project builds
+every push, it will redeploy an identical site (no harm); an *Ignored Build Step* such as
+`git diff --quiet HEAD^ HEAD -- . ':(exclude)tools/social-engine'` avoids that (optional, Vercel settings).
+
+### Cross-platform
+
+Everything is Node (`path.join/resolve`, `fileURLToPath`, no shell commands, no drive letters);
+YAML shell logic only uses the Linux runner. Fonts are the project's `@fontsource` packages
+bundled by webpack (all subsets — latin-ext covers ō/ū/ā), and frame capture waits for the
+glyphs each video uses; no glyph comes from the OS (a test fails if data ever needs one the
+fonts don't cover). Same Remotion version → same Chrome Headless Shell (149.0.7790.0 for
+4.0.530) on Windows and Linux. CLI flags are optional in CI: `social:render:queue:dry` and
+`SOCIAL_RENDER_LIMIT` avoid npm argument forwarding (npm 11 on Windows).
+
+### Troubleshooting (cloud)
+
+- **"Install Chrome Headless Shell" fails** → the runner needs `https://remotion.media`
+  (download host of Remotion 4.0.530). Re-run; the cache key is per Remotion version.
+- **Browser fails to launch** (missing shared libraries) → add an `apt-get install` step with the
+  libraries listed in Remotion's Linux docs (not needed on `ubuntu-latest` so far).
+- **Persist step: push rejected** (branch protection) → allow `github-actions[bot]` to push to
+  `main`, or switch the persist step to opening a PR. The videos are in the artifact either way;
+  the queue items will be rendered again by the next run until the state is saved.
+- **Nothing happens after a merge** → the merge must change `tools/social-engine/content/queue/**`
+  on `main`; use **Run workflow** to process the queue as it is.
+- **Job skipped** → the head commit was the bot's state commit (expected).
 
 ## Troubleshooting
 
