@@ -38,6 +38,9 @@ npm run validate:i18n    # UI keys aligned in all 6 locales + every dataset Loca
 npm run seo:slugs        # freeze published SEO slugs into src/data/<world>/slugs.ts (`-- --check` = verify only)
 npm run extract:boundaries  # regenerate Naruto nation boundary SVG paths from the world PNG
 npm run find:dots        # detect the red village-marker dots in the Naruto PNG, print flow coords
+npm run social:validate  # INTERNAL social video engine: typecheck + checks (see "Social engine")
+npm run social:render -- --config tools/social-engine/examples/itachi-character-journey.json   # → MP4
+npm run social:studio    # Remotion Studio (local preview of the video templates)
 ```
 
 - **There is no test framework** (the SEO tests use plain `node:assert` in `scripts/`) and
@@ -523,6 +526,26 @@ SEO URL · metadata (title + description, IT/EN) · canonical · hreflang · sit
 internal links (real anchors, breadcrumbs) · structured data (only if truthful) · index/noindex ·
 SSR-safety of the first render. Then `npm run build` must pass (`test:seo` + `seo:check` are
 blocking) and, for UI changes, `npm run smoke`.
+
+## Social engine — INTERNAL ONLY (read `docs/SOCIAL_ENGINE.md`)
+
+`tools/social-engine/` is a **private** Remotion tool that renders vertical videos (1080×1920 H.264,
+Shorts/TikTok/Reels) from the site's datasets. **SOCIAL ENGINE IS INTERNAL ONLY**:
+
+- Never expose it in the product: **no public UI, no routes/pages, no endpoints/APIs, no links** to it,
+  and never import `tools/social-engine` or `remotion`/`@remotion/*` from `src/` (`social:validate` fails
+  if you do). Remotion stays in `devDependencies`, pinned to one exact version for all its packages.
+- The renderer stays separate from the public product: it **reads** the site's data/helpers through
+  the `@/` alias (registry, slugs, paths, `getEntityDisplayName`) and never duplicates data. If logic
+  must be shared, extract it into `src/` without changing site behaviour.
+- Templates live in `tools/social-engine/templates/<id>/` and are listed ONLY in `templates/registry.ts`.
+  A template resolves config → serializable localized data (throwing `RenderDataError` when data is
+  missing — never render an empty video) and its composition is a pure function of `(data, frame)`.
+- Deterministic and local: no AI/paid APIs, no network assets, no randomness; default copy comes from
+  `config/copy.ts` templates (it/en). No official artwork or copyrighted music (optional audio = a local
+  royalty-free file). Never commit renders: `tools/social-engine/output/`, `.cache/` and `*.mp4` are ignored.
+- No auto-publishing and no GitHub Actions for it yet. After changing it: `npm run social:validate`
+  (+ a `--dry-run`/`--still` render) and `npm run build` (the public build must stay unaffected).
 
 ## Data & content conventions
 

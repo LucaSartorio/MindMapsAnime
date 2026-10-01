@@ -29,3 +29,11 @@ dist-ssr
 .eslintcache
 *.tsbuildinfo
 dist-server
+
+# Social engine (internal video renderer): renders, frames, caches, local audio
+tools/social-engine/output/*
+!tools/social-engine/output/.gitkeep
+tools/social-engine/.cache/
+*.mp4
+*.mov
+*.webm
