@@ -3,7 +3,8 @@
 #   queue JSON merged on main ─► validate ─► Remotion render (same social-engine as local)
 #   ─► MP4 artifact + render-summary.json ─► state (history/queue/catalog) committed back.
 #
-# Not part of the public site: no deploy, no secrets, no external API, no publishing.
+# Not part of the public site: no deploy, no secrets, no external API, no publishing
+# (publishing is external; its state comes back through social-publication-state.yml).
 # Docs: docs/SOCIAL_ENGINE.md › Cloud rendering · contract: docs/SOCIAL_AGENT_CONTRACT.md
 name: Social render
 
@@ -35,6 +36,8 @@ env:
   NODE_VERSION: '22'
   # Videos rendered per run (≈ 1.5–3 min each); the rest stays queued for the next run.
   SOCIAL_RENDER_LIMIT: '12'
+  # Artifact retention: also recorded in history (artifact.expiresAt) for the Publishing Agent.
+  SOCIAL_ARTIFACT_RETENTION_DAYS: '30'
 
 jobs:
   render:
@@ -158,7 +161,7 @@ jobs:
           name: ${{ env.SOCIAL_ARTIFACT_NAME }}
           path: tools/social-engine/.cache/artifact/
           if-no-files-found: error
-          retention-days: 30
+          retention-days: ${{ env.SOCIAL_ARTIFACT_RETENTION_DAYS }}
           compression-level: 0
 
       # The runner is ephemeral: history, moved queue files (→ rendered/ failed/)
@@ -166,36 +169,16 @@ jobs:
       # render the same content again. Only these paths are ever staged.
       - name: Persist social history
         if: always() && steps.mode.outputs.mode == 'render' && steps.mode.outputs.queued != '0'
-        shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: ${{ github.ref_name }}
-        run: |
-          set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A -- tools/social-engine/history tools/social-engine/content tools/social-engine/catalog
-          if git diff --cached --quiet; then
-            echo "No state change to persist."
-            exit 0
-          fi
-          git diff --cached --stat
-          # Loop guard: [skip ci] + [skip social-render] in the message, and the push
-          # uses GITHUB_TOKEN, whose pushes never start new workflow runs.
-          git commit -q -m "chore(social): record rendered content [skip social-render] [skip ci]" \
-                        -m "Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          remote="https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git"
-          for attempt in 1 2 3 4; do
-            if git push "$remote" "HEAD:refs/heads/${BRANCH}"; then
-              echo "State committed: $(git rev-parse --short HEAD)"
-              exit 0
-            fi
-            echo "Push rejected (branch moved?) — rebasing on the latest ${BRANCH} (attempt $attempt)"
-            sleep $((attempt * 5))
-            git pull --rebase "$remote" "${BRANCH}"
-          done
-          echo "::error::Could not persist the social history: the videos are in the artifact, but the queue/history change was not saved. Re-run this job."
-          exit 1
+        # Loop guard: [skip ci] + [skip social-render] in the message, and the push
+        # uses GITHUB_TOKEN, whose pushes never start new workflow runs. If Social
+        # publication state committed meanwhile, history.json is merged field by field.
+        run: >-
+          bash tools/social-engine/ci/commit-state.sh
+          "chore(social): record rendered content [skip social-render] [skip ci]"
+          tools/social-engine/history tools/social-engine/content tools/social-engine/catalog
 
       - name: Fail when a video failed
         if: always() && steps.mode.outputs.queued != '0'

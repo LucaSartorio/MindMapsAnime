@@ -4,4 +4,5 @@ import { report } from './harness';
 await import('./engine.test');
 await import('./pipeline.test');
 await import('./segments.test');
+await import('./publication.test');
 report();

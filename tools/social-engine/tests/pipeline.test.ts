@@ -17,7 +17,7 @@ import { checkDuplicate } from '../pipeline/duplicates';
 import { enqueueMany } from '../pipeline/enqueue';
 import { listContentFiles } from '../pipeline/queue';
 import { moveInto, safeJoin } from '../pipeline/fs';
-import { canTransition, emptyHistory, ensureRecord, loadHistory, RENDER_STATUSES, transition } from '../pipeline/history';
+import { canTransition, emptyHistory, emptyPlatform, ensureRecord, loadHistory, RENDER_STATUSES, transition, withDerivedPublication } from '../pipeline/history';
 import { contentIdFor, fileStemFor, parseContentId, parseRenderId, renderIdFor } from '../pipeline/ids';
 import { acquireLock, LockError } from '../pipeline/lock';
 import { buildContentSchema } from '../pipeline/schema';
@@ -336,7 +336,10 @@ await test('catalog reflects history and queue (rendered / queued / published)',
   await run(dirs);
   await enqueueMany(dirs, [req('itachi', { locale: 'it' }), req('jiraiya')], { now: fixedNow });
   const history = loadHistory(dirs);
-  history.records['character-journey:naruto:itachi-uchiha@en'].publicationStatus = 'published';
+  // Publication state lives per platform (set by receipts); the aggregate is derived.
+  const itachiEn = history.records['character-journey:naruto:itachi-uchiha@en'];
+  itachiEn.platforms = [{ ...emptyPlatform('instagram', 'metricool', fixedNow()), status: 'published', publishedAt: fixedNow() }];
+  withDerivedPublication(itachiEn);
   const { catalog } = await buildCatalog(dirs, history, fixedNow());
   const items = catalog.templates.characterJourney?.items ?? [];
   const itachi = items.find((i) => i.subject === 'itachi-uchiha');
@@ -373,7 +376,7 @@ await test('contract examples are valid requests and use only schema fields', ()
 await test('catalog/catalog.json is up to date with the data (npm run social:catalog)', async () => {
   // Status columns (rendered/queued/published) change with every queued PR and are
   // refreshed by each batch run; what must never be stale is what's PRODUCIBLE.
-  const STATUS = ['renderedLocales', 'publishedLocales', 'queuedLocales', 'renderedBefore', 'publishedBefore'];
+  const STATUS = ['renderedLocales', 'scheduledLocales', 'publishedLocales', 'queuedLocales', 'renderedBefore', 'publishedBefore', 'publication', 'publishing'];
   const strip = (c: Catalog) =>
     JSON.parse(JSON.stringify(c, (key, value: unknown) => (STATUS.includes(key) || key === 'generatedAt' ? undefined : value))) as unknown;
   const dirs = pipelineDirs(ENGINE_DIR);
@@ -392,7 +395,7 @@ await test('source is versioned, runtime artifacts are ignored', () => {
   };
   for (const p of ['output/x.mp4', 'output/x.manifest.json', 'output/preview/x.png', '.cache/queue.lock', 'audio/track.mp3', 'content/queue/0001-x.json.123.tmp'])
     assert.ok(ignored(`tools/social-engine/${p}`), `${p} should be ignored`);
-  for (const p of ['catalog/catalog.json', 'history/history.json', 'content/queue/0001-x.json', 'content/failed/0001-x.error.json', 'schemas/social-content.schema.json', 'audio/README.md'])
+  for (const p of ['catalog/catalog.json', 'history/history.json', 'content/queue/0001-x.json', 'content/failed/0001-x.error.json', 'schemas/social-content.schema.json', 'audio/README.md', 'publication/pending/r.json', 'publication/applied/x.instagram.scheduled.abc.json', 'publication/failed/r.error.json', 'publication/schemas/publication-receipt.schema.json', 'ci/commit-state.sh'])
     assert.ok(!ignored(`tools/social-engine/${p}`), `${p} should be versioned`);
 });
 

@@ -1,0 +1,54 @@
+# AniMapVerse — INTERNAL publication receipts: validation only.
+#
+# Runs on pull requests that add publication receipts (written by the external
+# Publishing Agent after scheduling/publishing through Metricool). Never
+# publishes, never writes state, no secrets. State is applied after merge by
+# social-publication-state.yml. Contract: docs/SOCIAL_PUBLISHING_CONTRACT.md
+name: Social publication validate
+
+on:
+  pull_request:
+    paths:
+      - 'tools/social-engine/publication/pending/**'
+
+concurrency:
+  group: social-publication-validate-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+# `pull_request` (never `pull_request_target`): untrusted PR content runs with a
+# read-only token and no secrets.
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate publication receipts
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # The PR merge commit + its parents: HEAD^1 is the base branch (scope check).
+          fetch-depth: 2
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      # A receipt PR may ONLY add publication/pending/*.json — never history,
+      # catalog, the audit trail, the engine or anything else.
+      - name: Receipt PR scope
+        run: npm run social:publication:check-scope
+
+      - name: Validate publication receipts
+        run: npm run social:publication:validate
+
+      - name: Publication state tests
+        run: npm run social:publication:test

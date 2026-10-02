@@ -41,7 +41,7 @@ export function acquireLock(file: string): () => void {
       }
       const sameHost = !owner.host || owner.host === hostname();
       if (owner.pid && sameHost && alive(owner.pid)) {
-        throw new LockError(`Another batch render is running (pid ${owner.pid}, since ${owner.startedAt}). Lock: ${file}`);
+        throw new LockError(`Another pipeline run (render or publication apply) is running (pid ${owner.pid}, since ${owner.startedAt}). Lock: ${file}`);
       }
       if (!sameHost) throw new LockError(`Queue locked by ${owner.host} (pid ${owner.pid}). Remove ${file} if that run is gone.`);
       rmSync(file, { force: true }); // stale lock

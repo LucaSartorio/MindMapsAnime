@@ -42,9 +42,12 @@ export function writeJsonAtomic(file: string, value: unknown): void {
   renameSync(tmp, file);
 }
 
-export function readJsonFile(file: string): unknown {
+/** Pipeline-owned state files (history) grow with every video; only agent input gets the tiny limit. */
+export const MAX_STATE_FILE_BYTES = 32 * 1024 * 1024;
+
+export function readJsonFile(file: string, maxBytes: number = MAX_CONTENT_FILE_BYTES): unknown {
   if (!isRegularFile(file)) throw new Error(`Not a regular file: ${path.basename(file)}`);
-  if (lstatSync(file).size > MAX_CONTENT_FILE_BYTES) throw new Error(`File too large (> ${MAX_CONTENT_FILE_BYTES} bytes)`);
+  if (lstatSync(file).size > maxBytes) throw new Error(`File too large (> ${maxBytes} bytes)`);
   try {
     return JSON.parse(readFileSync(file, 'utf8')) as unknown;
   } catch (err) {
