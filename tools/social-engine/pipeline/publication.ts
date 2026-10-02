@@ -49,13 +49,15 @@ export const MAX_ERROR_CHARS = 1000;
 export const MAX_RECEIPT_NOTES = 500;
 /** Provider post id / uuid: opaque, but never a path, a URL or free text. */
 export const PROVIDER_REF_RE = /^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$/;
+/** Provider post UUID: same token, plus ONE optional leading "-" (Metricool returns signed numeric ids, e.g. -2035779932044177791). */
+export const PROVIDER_UUID_RE = /^-?[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$/;
 export const RECORDED_BY_RE = /^[A-Za-z0-9][A-Za-z0-9 ._-]{0,79}$/;
 /** Full ISO 8601 date-time WITH seconds and an explicit offset (Z or ±hh:mm). The original string is kept. */
 export const ISO_TIMESTAMP_RE = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(?:\.\d{1,9})?(?:Z|([+-])(\d{2}):(\d{2}))$/;
 /** Render ids accepted in a receipt (same grammar as pipeline/ids.ts). */
 export const RENDER_ID_PATTERN = '^[a-z0-9]+(?:-[a-z0-9]+)*(?::[a-z0-9]+(?:-[a-z0-9]+)*){2,3}@(?:en|it)(?:\\+[a-z0-9]+(?:-[a-z0-9]+)*)?$';
 
-type FieldKind = 'const' | 'renderId' | 'platform' | 'provider' | 'status' | 'timestamp' | 'providerRef' | 'url' | 'error' | 'recordedBy' | 'notes' | 'schemaRef';
+type FieldKind = 'const' | 'renderId' | 'platform' | 'provider' | 'status' | 'timestamp' | 'providerRef' | 'providerUuid' | 'url' | 'error' | 'recordedBy' | 'notes' | 'schemaRef';
 /** Every field a receipt may carry — the ONE table the parser and the JSON Schema are built from. */
 export const RECEIPT_FIELDS = {
   $schema: { kind: 'schemaRef', description: 'Optional pointer to the schema (ignored).' },
@@ -68,7 +70,7 @@ export const RECEIPT_FIELDS = {
   scheduledFor: { kind: 'timestamp', description: 'Planned go-live time, with the ORIGINAL offset (e.g. 2026-10-05T10:00:00+02:00).' },
   publishedAt: { kind: 'timestamp', description: 'When the post went live (ISO 8601 with offset).' },
   providerPostId: { kind: 'providerRef', description: 'Provider post id (Metricool may change it after edits).' },
-  providerPostUuid: { kind: 'providerRef', description: 'Provider post UUID (stable in Metricool; preferred for matching).' },
+  providerPostUuid: { kind: 'providerUuid', description: 'Provider post UUID (stable in Metricool; preferred for matching).' },
   plannerUrl: { kind: 'url', description: 'Provider planner/back-office link (debug). NOT the public post.' },
   publicUrl: { kind: 'url', description: 'Public URL of the post on the platform.' },
   error: { kind: 'error', description: 'What went wrong (failed only).' },
@@ -197,6 +199,8 @@ function checkField(field: ReceiptField, value: unknown): string | null {
       return text !== null && isIsoTimestamp(text) ? null : 'must be a full ISO 8601 date-time with seconds and offset (e.g. 2026-10-05T10:00:00+02:00)';
     case 'providerRef':
       return text !== null && PROVIDER_REF_RE.test(text) ? null : 'must match [A-Za-z0-9][A-Za-z0-9._:-]{0,127}';
+    case 'providerUuid':
+      return text !== null && PROVIDER_UUID_RE.test(text) ? null : 'must match -?[A-Za-z0-9][A-Za-z0-9._:-]{0,127}';
     case 'url':
       return text !== null && isSafeHttpsUrl(text) ? null : `must be an https URL without credentials (≤ ${MAX_URL_CHARS} chars)`;
     case 'error':

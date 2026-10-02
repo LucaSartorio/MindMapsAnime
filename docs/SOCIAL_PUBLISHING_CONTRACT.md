@@ -15,7 +15,7 @@
 | **Content Agent** | chooses what to produce → queue JSON PR → videos rendered (GitHub artifact) | [`SOCIAL_AGENT_CONTRACT.md`](SOCIAL_AGENT_CONTRACT.md) |
 | **Publishing Agent** | publishes **already-rendered** videos through Metricool → reports with **publication receipts** | this document |
 
-The repository contains **no** Metricool / Instagram / TikTok / YouTube API call, SDK, token, brand id,
+The repository contains **no** Metricool / Instagram / Facebook / TikTok / YouTube API call, SDK, token, brand id,
 account name or timezone. All of that belongs to the Publishing Agent's own configuration and never
 enters the repository (not in receipts, not in PRs, not in notes).
 
@@ -57,7 +57,7 @@ A `ready[]` entry:
   "segment": "part-01", "partNumber": 1, "partCount": 5,
   "renderedAt": "2026-10-02T10:45:46.778Z", "durationSeconds": 25,
   "publicationStatus": "notPublished",
-  "platforms": { "instagram": "notScheduled", "tiktok": "notScheduled", "youtube": "notScheduled" },
+  "platforms": { "instagram": "notScheduled", "facebook": "notScheduled", "tiktok": "notScheduled", "youtube": "notScheduled" },
   "artifact": {
     "name": "animapverse-social-render-36996948068-1", "runId": "36996948068", "runAttempt": "1",
     "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/36996948068",
@@ -120,10 +120,12 @@ One JSON object per file in `tools/social-engine/publication/pending/`, **one ev
   `<yyyymmddThhmmssZ>-<stem>-<platform>-<status>.json`, e.g.
   `20261002T120000Z-dragonball_goku_character-journey_part-01_en-instagram-scheduled.json`;
 - ≤ 16 KB, UTF-8, no duplicate keys, **no unknown fields**;
-- `receiptVersion: 1`; `provider: "metricool"`; `platform`: `instagram` | `tiktok` | `youtube`;
+- `receiptVersion: 1`; `provider: "metricool"`; `platform`: `instagram` | `facebook` | `tiktok` | `youtube` (all handled through Metricool);
 - timestamps: full ISO 8601 **with seconds and an offset** (`2026-10-05T10:00:00+02:00` or `…Z`),
   stored exactly as written (keep the original offset of `scheduledFor`);
-- URLs: `https://` only, no credentials; ids: `[A-Za-z0-9][A-Za-z0-9._:-]{0,127}`.
+- URLs: `https://` only, no credentials; `providerPostId`: `[A-Za-z0-9][A-Za-z0-9._:-]{0,127}`;
+  `providerPostUuid`: the same plus ONE optional leading `-` (`^-?[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$` —
+  Metricool returns signed numeric UUIDs such as `-2035779932044177791`; copy them exactly, sign included).
 
 | Field | scheduled | published | failed |
 | --- | --- | --- | --- |

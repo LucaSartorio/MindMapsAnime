@@ -114,7 +114,7 @@ await test('scheduled / published / failed receipts parse; status-specific field
     [scheduled({ receiptVersion: 2 }), /receiptVersion: must be 1/],
     [scheduled({ token: 'secret' }), /token: unknown field/],
     [scheduled({ status: 'publishing' }), /status: must be one of/],
-    [scheduled({ platform: 'facebook' }), /platform: must be one of instagram, tiktok, youtube/],
+    [scheduled({ platform: 'myspace' }), /platform: must be one of instagram, facebook, tiktok, youtube/],
     [scheduled({ provider: 'buffer' }), /provider: must be one of metricool/],
     [scheduled({ recordedAt: undefined }), /recordedAt: required/],
     [scheduled({ providerPostId: null }), /providerPostId: must match/],
@@ -380,6 +380,91 @@ await test('dry run / validate writes nothing', () => {
   assert.equal(snapshot(), before);
 });
 
+await test('providerPostUuid: Metricool signed numeric UUIDs are accepted, nothing wider', () => {
+  for (const ok of ['123456', 'abc-123', '-2035779932044177791', '0b8e4c1a-5d7f-4a7e-9a52-3c1d2b9e8f00']) {
+    assert.ok(parseReceipt(scheduled({ providerPostUuid: ok })).ok, ok);
+  }
+  for (const bad of ['--123', '-', '-.x', '-/x', '../x', '-../x', 'a/b', '-a/b', 'a b', '', `-${'x'.repeat(129)}`]) {
+    const p = parseReceipt(scheduled({ providerPostUuid: bad }));
+    assert.ok(!p.ok, bad);
+    assert.match(p.errors.join(' '), /providerPostUuid: must match/);
+  }
+  // providerPostId keeps its stricter rule (no leading "-").
+  assert.ok(!parseReceipt(scheduled({ providerPostId: '-2035779932044177791' })).ok);
+  // The real Metricool UUID round-trips through the state machine (match on uuid).
+  const dirs = sandbox();
+  put(dirs, scheduled({ providerPostUuid: '-2035779932044177791' }));
+  apply(dirs);
+  put(dirs, published({ providerPostUuid: '-2035779932044177791' }));
+  assert.ok(apply(dirs).applied);
+  assert.deepEqual([platform(dirs, 'instagram')?.status, platform(dirs, 'instagram')?.providerPostUuid], ['published', '-2035779932044177791']);
+});
+
+section('publication: facebook');
+const fb = (r: Raw, over: Raw = {}): Raw => ({ ...r, platform: 'facebook', providerPostId: '5005', providerPostUuid: '-2035779932044177791', ...over });
+await test('facebook: notScheduled → scheduled → published (all four platforms listed, others untouched)', async () => {
+  const dirs = sandbox();
+  const { catalog } = await buildCatalog(dirs, loadHistory(dirs), NOW);
+  assert.deepEqual(catalog.publishing.platforms, ['instagram', 'facebook', 'tiktok', 'youtube']);
+  assert.deepEqual(catalog.publishing.ready[0].platforms, { instagram: 'notScheduled', facebook: 'notScheduled', tiktok: 'notScheduled', youtube: 'notScheduled' });
+  put(dirs, fb(scheduled()));
+  assert.ok(apply(dirs).applied);
+  assert.deepEqual([platform(dirs, 'facebook')?.status, platform(dirs, 'facebook')?.provider, record(dirs).publicationStatus], ['scheduled', 'metricool', 'scheduled']);
+  assert.equal(platform(dirs, 'instagram'), undefined);
+  put(dirs, fb(published()));
+  assert.ok(apply(dirs).applied);
+  assert.deepEqual([platform(dirs, 'facebook')?.status, record(dirs).publicationStatus], ['published', 'published']);
+  const after = await buildCatalog(dirs, loadHistory(dirs), NOW);
+  const entry = after.catalog.publishing.ready.find((e) => e.renderId === GOKU1)!;
+  assert.deepEqual(entry.platforms, { instagram: 'notScheduled', facebook: 'published', tiktok: 'notScheduled', youtube: 'notScheduled' });
+});
+await test('facebook: failed → scheduled is a retry', () => {
+  const dirs = sandbox();
+  put(dirs, fb(failed()));
+  apply(dirs);
+  assert.deepEqual([platform(dirs, 'facebook')?.status, record(dirs).publicationStatus], ['failed', 'failed']);
+  put(dirs, fb(scheduled({ recordedAt: '2026-10-05T09:00:00Z' }), { providerPostId: '6006', providerPostUuid: '-1' }));
+  assert.ok(apply(dirs).applied);
+  assert.deepEqual([platform(dirs, 'facebook')?.status, platform(dirs, 'facebook')?.attempts, platform(dirs, 'facebook')?.providerPostUuid], ['scheduled', 2, '-1']);
+});
+await test('facebook is independent from instagram and youtube; one render scheduled on 3 platforms without collisions', () => {
+  const dirs = sandbox();
+  put(dirs, scheduled());
+  put(dirs, fb(scheduled()));
+  put(dirs, scheduled({ platform: 'youtube', providerPostId: '9009', providerPostUuid: 'yt-uuid' }));
+  assert.ok(apply(dirs).applied);
+  const r = record(dirs);
+  assert.deepEqual(r.platforms.map((p) => [p.platform, p.status, p.providerPostUuid]), [
+    ['instagram', 'scheduled', 'uuid-aaa'], ['facebook', 'scheduled', '-2035779932044177791'], ['youtube', 'scheduled', 'yt-uuid'],
+  ]);
+  assert.equal(r.publicationStatus, 'scheduled');
+  // Publishing Instagram doesn't move Facebook or YouTube.
+  put(dirs, published());
+  apply(dirs);
+  assert.deepEqual(record(dirs).platforms.map((p) => p.status), ['published', 'scheduled', 'scheduled']);
+  assert.equal(record(dirs).publicationStatus, 'partiallyPublished');
+  // A Facebook failure doesn't touch YouTube.
+  put(dirs, fb(failed()));
+  apply(dirs);
+  assert.deepEqual(record(dirs).platforms.map((p) => [p.platform, p.status]), [['instagram', 'published'], ['facebook', 'failed'], ['youtube', 'scheduled']]);
+});
+await test('facebook duplicates: identical receipt = no-op, another post = rejected', () => {
+  const dirs = sandbox();
+  put(dirs, fb(scheduled()));
+  apply(dirs);
+  const before = historyText(dirs);
+  put(dirs, fb(scheduled()));
+  const same = apply(dirs);
+  assert.ok(same.applied);
+  assert.deepEqual(same.plan.items.map((i) => i.ok && i.outcome), ['unchanged']);
+  assert.equal(historyText(dirs), before);
+  put(dirs, fb(scheduled({ recordedAt: '2026-10-03T00:00:00Z' }), { providerPostId: '7777', providerPostUuid: '-999' }));
+  const other = apply(dirs);
+  assert.ok(!other.applied);
+  assert.match(other.plan.items.map((i) => (i.ok ? '' : i.errors.join(' '))).join(' '), /facebook is already scheduled/);
+  assert.equal(historyText(dirs), before);
+});
+
 section('publication: series, catalog, migration');
 await test('series: Goku Part 1 and Part 2 have independent publication states', () => {
   const dirs = sandbox();
@@ -414,7 +499,7 @@ await test('catalog: rendered / scheduled / published are distinct per locale an
   assert.deepEqual(view(1), [['en'], [], [], true, false], 'rendered ≠ published');
   assert.deepEqual(view(2), [['en'], ['en'], [], true, false]);
   assert.deepEqual(view(3), [['en'], [], ['en'], true, true]);
-  assert.deepEqual(item(2).publication, [{ renderId: GOKU2, locale: 'en', variant: null, status: 'scheduled', platforms: { instagram: 'scheduled', tiktok: 'notScheduled', youtube: 'notScheduled' } }]);
+  assert.deepEqual(item(2).publication, [{ renderId: GOKU2, locale: 'en', variant: null, status: 'scheduled', platforms: { instagram: 'scheduled', facebook: 'notScheduled', tiktok: 'notScheduled', youtube: 'notScheduled' } }]);
   const pub = catalog.publishing;
   assert.equal(pub.contract, 'docs/SOCIAL_PUBLISHING_CONTRACT.md');
   // Priority 1 for Instagram = ready entries where instagram is notScheduled/failed.

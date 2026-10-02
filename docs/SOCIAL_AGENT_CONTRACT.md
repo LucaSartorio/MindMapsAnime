@@ -26,7 +26,7 @@ Never commit MP4s, never touch `history.json`, never set `allowRerender`.
 
 > **Content Agent ≠ Publishing Agent.** This contract is the **Content Agent**: it decides what to
 > produce and gets videos **rendered**. Scheduling/publishing already-rendered videos (Metricool →
-> Instagram / TikTok / YouTube) and reporting it back with *publication receipts* is the job of the
+> Instagram / Facebook / TikTok / YouTube) and reporting it back with *publication receipts* is the job of the
 > **Publishing Agent**, under its own contract:
 > [`docs/SOCIAL_PUBLISHING_CONTRACT.md`](SOCIAL_PUBLISHING_CONTRACT.md). The Content Agent never
 > publishes and never writes receipts; `renderedLocales` / `renderedBefore` in the catalog mean
@@ -160,7 +160,7 @@ Any other field is an **error** (typos are never silently ignored).
 - `status` (input): `queued`
 - history `renderStatus`: `queued` → `rendering` → `rendered` | `failed` (`failed` → `queued` on retry)
 - history `publicationStatus` (derived, written by receipts only): `notPublished` | `scheduled` | `partiallyPublished` | `published` | `failed` — see the Publishing contract
-- platforms: `instagram`, `tiktok`, `youtube` (state per platform: `notScheduled` | `scheduled` | `published` | `failed`)
+- platforms: `instagram`, `facebook`, `tiktok`, `youtube` (state per platform: `notScheduled` | `scheduled` | `published` | `failed`)
 
 ## 3. Examples
 

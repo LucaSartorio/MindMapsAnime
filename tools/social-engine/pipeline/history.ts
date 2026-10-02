@@ -10,7 +10,7 @@ import { MAX_STATE_FILE_BYTES, readJsonFile, writeJsonAtomic } from './fs';
  *
  * Two independent state machines:
  *   renderStatus  queued → rendering → rendered | failed   (failed → queued = retry)
- *   publication   PER PLATFORM (instagram · tiktok · youtube), driven only by
+ *   publication   PER PLATFORM (instagram · facebook · tiktok · youtube), driven only by
  *                 publication receipts (pipeline/publication.ts):
  *                 notScheduled → scheduled → published,  scheduled → failed → scheduled …
  *                 `publicationStatus` is the deterministic aggregate of the platforms.
@@ -27,7 +27,7 @@ export type RenderStatus = (typeof RENDER_STATUSES)[number];
  */
 export const PUBLICATION_STATUSES = ['notPublished', 'scheduled', 'partiallyPublished', 'published', 'failed'] as const;
 export type PublicationStatus = (typeof PUBLICATION_STATUSES)[number];
-export const PLATFORMS = ['instagram', 'tiktok', 'youtube'] as const;
+export const PLATFORMS = ['instagram', 'facebook', 'tiktok', 'youtube'] as const;
 export type Platform = (typeof PLATFORMS)[number];
 /** Who scheduled/published the video for us. The repository never calls them: the external Publishing Agent does. */
 export const PUBLICATION_PROVIDERS = ['metricool'] as const;
