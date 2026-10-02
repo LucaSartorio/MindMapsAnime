@@ -1,6 +1,30 @@
 {
   "schemaVersion": 1,
   "records": {
+    "character-journey:dragonball:goku:part-01@en": {
+      "renderId": "character-journey:dragonball:goku:part-01@en",
+      "contentId": "character-journey:dragonball:goku:part-01",
+      "template": "characterJourney",
+      "anime": "dragonball",
+      "subject": "goku",
+      "locale": "en",
+      "variant": null,
+      "segment": "part-01",
+      "segmentFingerprint": "a87b14ed",
+      "createdAt": "2026-10-02T10:42:44.279Z",
+      "updatedAt": "2026-10-02T10:45:46.778Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-10-02T10:45:46.778Z",
+      "outputFile": "tools/social-engine/output/dragonball_goku_character-journey_part-01_en.mp4",
+      "manifestFile": "tools/social-engine/output/dragonball_goku_character-journey_part-01_en.manifest.json",
+      "sourceFile": "0006-dragonball_goku_character-journey_part-01_en.json",
+      "durationSeconds": 25,
+      "attempts": 1,
+      "lastError": null,
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-journey:hunterxhunter:gon-freecss@en": {
       "renderId": "character-journey:hunterxhunter:gon-freecss@en",
       "contentId": "character-journey:hunterxhunter:gon-freecss",
@@ -21,7 +45,9 @@
       "lastError": null,
       "publicationStatus": "notPublished",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [],
+      "segment": null,
+      "segmentFingerprint": null
     },
     "character-journey:naruto:itachi-uchiha@en": {
       "renderId": "character-journey:naruto:itachi-uchiha@en",
@@ -43,7 +69,9 @@
       "lastError": null,
       "publicationStatus": "notPublished",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [],
+      "segment": null,
+      "segmentFingerprint": null
     },
     "character-journey:naruto:itachi-uchiha@it": {
       "renderId": "character-journey:naruto:itachi-uchiha@it",
@@ -65,7 +93,9 @@
       "lastError": null,
       "publicationStatus": "notPublished",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [],
+      "segment": null,
+      "segmentFingerprint": null
     },
     "character-journey:naruto:kushina-uzumaki@en": {
       "renderId": "character-journey:naruto:kushina-uzumaki@en",
@@ -87,7 +117,9 @@
       "lastError": null,
       "publicationStatus": "notPublished",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [],
+      "segment": null,
+      "segmentFingerprint": null
     },
     "character-journey:onepiece:monkey-d-luffy@it": {
       "renderId": "character-journey:onepiece:monkey-d-luffy@it",
@@ -109,7 +141,9 @@
       "lastError": null,
       "publicationStatus": "notPublished",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [],
+      "segment": null,
+      "segmentFingerprint": null
     }
   }
 }
