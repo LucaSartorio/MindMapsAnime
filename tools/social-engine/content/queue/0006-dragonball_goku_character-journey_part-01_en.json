@@ -1,0 +1,13 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "id": "character-journey:dragonball:goku:part-01",
+  "status": "queued",
+  "template": "characterJourney",
+  "anime": "dragonball",
+  "subject": "goku",
+  "segment": "part-01",
+  "locale": "en",
+  "hook": "Goku's journey begins — Part 1 of 5.",
+  "cta": "Continue the journey on AniMapVerse",
+  "notes": "Series start: Goku Part 1 of 5. Selected from catalog; never queued, rendered or published in EN."
+}
