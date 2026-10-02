@@ -5,6 +5,12 @@ import {
   BLACKCLOVER_RANKS,
   BLACKCLOVER_ROLES,
 } from '@/data/blackclover/config';
+import {
+  BLEACH_POWER_CATEGORIES,
+  BLEACH_RANKS,
+  BLEACH_RELEASE_KINDS,
+  BLEACH_ROLES,
+} from '@/data/bleach/config';
 
 /**
  * Registro generico di tutti gli anime/manga supportati o pianificati.
@@ -428,21 +434,29 @@ export const animeWorlds: AnimeWorld[] = [
       es: 'Sociedad de Almas · Segadores de almas',
     },
     description: {
-      it: 'La mappa dei tre mondi di Bleach è in arrivo: Karakura e il Mondo dei Vivi, la Soul Society con il Seireitei e il Rukongai, Hueco Mundo e Las Noches. Ichigo, il Gotei 13, gli Espada e i Quincy.',
-      en: 'The map of Bleach\'s three worlds is coming: Karakura and the World of the Living, the Soul Society with the Seireitei and the Rukongai, Hueco Mundo and Las Noches. Ichigo, the Gotei 13, the Espada and the Quincy.',
-      ja: '『BLEACH』の三つの世界の地図が近日公開。空座町と現世、瀞霊廷と流魂街からなる尸魂界、そして虚圏と虚夜宮。一護、護廷十三隊、十刃、そして滅却師。',
-      fr: 'La carte des trois mondes de Bleach arrive bientôt : Karakura et le Monde des Vivants, la Soul Society avec le Seireitei et le Rukongai, le Hueco Mundo et Las Noches. Ichigo, le Gotei 13, les Espada et les Quincy.',
-      de: 'Die Karte der drei Welten von Bleach kommt bald: Karakura und die Welt der Lebenden, die Soul Society mit Seireitei und Rukongai, Hueco Mundo und Las Noches. Ichigo, die Gotei 13, die Espada und die Quincy.',
-      es: 'El mapa de los tres mundos de Bleach está en camino: Karakura y el Mundo de los Vivos, la Sociedad de Almas con el Seireitei y el Rukongai, Hueco Mundo y Las Noches. Ichigo, el Gotei 13, los Espada y los Quincy.',
+      it: 'I tre mondi di Bleach ricostruiti in una mappa originale: Karakura e il Mondo dei Vivi, la Soul Society con il Seireitei e i 320 distretti del Rukongai, Hueco Mundo e Las Noches, il Dangai, il Reiōkyū e il Jigoku. Ichigo e lo Shinigami sostituto, il Gotei 13 con tutte le Zanpakutō, Shikai e Bankai, gli Espada di Aizen e i Quincy del Wandenreich, fino alla Guerra dei Mille Anni.',
+      en: "Bleach's three worlds rebuilt as an original map: Karakura and the World of the Living, the Soul Society with the Seireitei and the Rukongai's 320 districts, Hueco Mundo and Las Noches, the Dangai, the Reiōkyū and Hell. Ichigo the Substitute Soul Reaper, the Gotei 13 with every Zanpakutō, Shikai and Bankai, Aizen's Espada and the Wandenreich's Quincy, all the way to the Thousand-Year Blood War.",
+      ja: '『BLEACH』の三界をオリジナル地図で再構成：空座町と現世、瀞霊廷と流魂街320地区からなる尸魂界、虚圏と虚夜宮、断界、霊王宮、そして地獄。死神代行・黒崎一護、全ての斬魄刀・始解・卍解を擁する護廷十三隊、藍染の十刃、見えざる帝国の滅却師、そして千年血戦篇まで。',
+      fr: 'Les trois mondes de Bleach reconstruits sur une carte originale : Karakura et le Monde des Vivants, la Soul Society avec le Seireitei et les 320 districts du Rukongai, le Hueco Mundo et Las Noches, le Dangai, le Reiōkyū et l’Enfer. Ichigo le Shinigami remplaçant, le Gotei 13 avec tous les Zanpakutō, Shikai et Bankai, les Espada d’Aizen et les Quincy du Wandenreich, jusqu’à la Guerre Sanglante de Mille Ans.',
+      de: 'Die drei Welten von Bleach als originale Karte rekonstruiert: Karakura und die Welt der Lebenden, die Soul Society mit Seireitei und den 320 Bezirken des Rukongai, Hueco Mundo und Las Noches, das Dangai, der Reiōkyū und die Hölle. Ichigo, der Ersatz-Shinigami, die Gotei 13 mit allen Zanpakutō, Shikai und Bankai, Aizens Espada und die Quincy des Wandenreich – bis zum Tausendjährigen Blutkrieg.',
+      es: 'Los tres mundos de Bleach reconstruidos en un mapa original: Karakura y el Mundo de los Vivos, la Sociedad de Almas con el Seireitei y los 320 distritos del Rukongai, Hueco Mundo y Las Noches, el Dangai, el Reiōkyū y el Infierno. Ichigo, el Shinigami sustituto, el Gotei 13 con todas las Zanpakutō, Shikai y Bankai, los Espada de Aizen y los Quincy del Wandenreich, hasta la Guerra Sangrienta de los Mil Años.',
     },
-    status: 'coming_soon',
+    status: 'available',
+    coverAssetId: 'bl-cover-placeholder',
     theme: {
       primary: '#e8552d',
       accent: '#4fb3d9',
       highlight: '#c9d1d9',
       background: '#0c0d11',
     },
-    availableMapLevelIds: [],
+    defaultMapLevelId: 'bl-map-world',
+    availableMapLevelIds: [
+      'bl-map-world',
+      'bl-map-karakura',
+      'bl-map-seireitei',
+      'bl-map-hueco-mundo',
+      'bl-map-reiokyu',
+    ],
     tags: ['shonen', 'shinigami', 'tite kubo', 'jump'],
     metadata: {
       author: 'Tite Kubo',
@@ -453,12 +467,42 @@ export const animeWorlds: AnimeWorld[] = [
     config: {
       ability: {
         term: { it: 'Zanpakutō & Poteri spirituali', en: 'Zanpakutō & Spiritual powers', ja: '斬魄刀と霊力', fr: 'Zanpakutō & Pouvoirs spirituels', de: 'Zanpakutō & Geistige Kräfte', es: 'Zanpakutō y poderes espirituales' },
-        categoryTerm: { it: 'Tipo', en: 'Type', ja: 'タイプ', fr: 'Type', de: 'Typ', es: 'Tipo' },
+        // La "categoria" è la FONTE del potere (Zanpakutō, Kidō, Hollow, Quincy,
+        // Fullbring…); il facet secondario è lo STADIO di rilascio (Shikai,
+        // Bankai, Resurrección, Vollständig, Schrift…).
+        categoryTerm: { it: 'Fonte del potere', en: 'Power source', ja: '力の源', fr: 'Source du pouvoir', de: 'Kraftquelle', es: 'Fuente del poder' },
+        categories: BLEACH_POWER_CATEGORIES,
+        attribute: {
+          term: { it: 'Rilascio / Classe', en: 'Release / Class', ja: '解放・分類', fr: 'Libération / Classe', de: 'Freisetzung / Klasse', es: 'Liberación / Clase' },
+          options: BLEACH_RELEASE_KINDS,
+        },
       },
-      characterRank: { term: { it: 'Grado', en: 'Rank', ja: '階級', fr: 'Rang', de: 'Rang', es: 'Rango' } },
+      characterRank: {
+        term: { it: 'Grado', en: 'Rank', ja: '階級', fr: 'Rang', de: 'Rang', es: 'Rango' },
+        options: BLEACH_RANKS,
+      },
+      characterRoles: BLEACH_ROLES,
       nationTerm: { it: 'Mondo / Dimensione', en: 'World / Dimension', ja: '世界 / 次元', fr: 'Monde / Dimension', de: 'Welt / Dimension', es: 'Mundo / Dimensión' },
       factionsTerm: { it: 'Divisioni & Fazioni', en: 'Divisions & Factions', ja: '隊と勢力', fr: 'Divisions & Factions', de: 'Divisionen & Fraktionen', es: 'Divisiones y facciones' },
       placesTerm: { it: 'luoghi', en: 'places', ja: '場所', fr: 'lieux', de: 'Orte', es: 'lugares' },
+      featured: {
+        abilities: [
+          'zan-bl-zangetsu',
+          'zan-bl-senbonzakura',
+          'zan-bl-ryujin-jakka',
+          'zan-bl-kyoka-suigetsu',
+          'zan-bl-hyorinmaru',
+          'zan-bl-sode-no-shirayuki',
+        ],
+        factions: [
+          'faction-bl-gotei-13',
+          'faction-bl-espada',
+          'faction-bl-wandenreich',
+          'faction-bl-visored',
+          'faction-bl-royal-guard',
+          'faction-bl-xcution',
+        ],
+      },
     },
   },
   {

@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-02T13:42:04.543Z",
+  "generatedAt": "2026-10-02T17:56:08.009Z",
   "templates": {
     "characterJourney": {
       "byReason": {
-        "single_location": 251,
-        "no_journey_data": 632
+        "single_location": 321,
+        "no_journey_data": 638
       },
       "items": [
         {
@@ -5578,6 +5578,538 @@
           "subject": "dabura",
           "subjectId": "char-dbz-dabura",
           "displayName": "Dabura",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "kon",
+          "subjectId": "char-bl-kon",
+          "displayName": "Kon",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "yuzu-kurosaki",
+          "subjectId": "char-bl-yuzu",
+          "displayName": "Yuzu Kurosaki",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "keigo-asano",
+          "subjectId": "char-bl-keigo",
+          "displayName": "Keigo Asano",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "mizuiro-kojima",
+          "subjectId": "char-bl-mizuiro",
+          "displayName": "Mizuiro Kojima",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "soken-ishida",
+          "subjectId": "char-bl-soken",
+          "displayName": "Sōken Ishida",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "kanae-katagiri",
+          "subjectId": "char-bl-katagiri",
+          "displayName": "Kanae Katagiri",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "bleach",
+          "subject": "sora-inoue",
+          "subjectId": "char-bl-sora",
+          "displayName": "Sora Inoue",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "jinta-hanakari",
+          "subjectId": "char-bl-jinta",
+          "displayName": "Jinta Hanakari",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "ururu-tsumugiya",
+          "subjectId": "char-bl-ururu",
+          "displayName": "Ururu Tsumugiya",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "chojiro-sasakibe",
+          "subjectId": "char-bl-sasakibe",
+          "displayName": "Chōjirō Sasakibe",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "isane-kotetsu",
+          "subjectId": "char-bl-isane",
+          "displayName": "Isane Kotetsu",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "hanataro-yamada",
+          "subjectId": "char-bl-hanataro",
+          "displayName": "Hanatarō Yamada",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "nanao-ise",
+          "subjectId": "char-bl-nanao",
+          "displayName": "Nanao Ise",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "shuhei-hisagi",
+          "subjectId": "char-bl-hisagi",
+          "displayName": "Shūhei Hisagi",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "akon",
+          "subjectId": "char-bl-akon",
+          "displayName": "Akon",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "kiyone-kotetsu",
+          "subjectId": "char-bl-kiyone",
+          "displayName": "Kiyone Kotetsu",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "bleach",
+          "subject": "sentaro-kotsubaki",
+          "subjectId": "char-bl-sentaro",
+          "displayName": "Sentarō Kotsubaki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "bleach",
+          "subject": "jidanbo-ikkanzaka",
+          "subjectId": "char-bl-jidanbo",
+          "displayName": "Jidanbō Ikkanzaka",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "ginrei-kuchiki",
+          "subjectId": "char-bl-ginrei",
+          "displayName": "Ginrei Kuchiki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "bleach",
+          "subject": "hisana-kuchiki",
+          "subjectId": "char-bl-hisana",
+          "displayName": "Hisana Kuchiki",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "riruka-dokugamine",
+          "subjectId": "char-bl-riruka",
+          "displayName": "Riruka Dokugamine",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "jackie-tristan",
+          "subjectId": "char-bl-jackie",
+          "displayName": "Jackie Tristan",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "yukio-hans-vorarlberna",
+          "subjectId": "char-bl-yukio",
+          "displayName": "Yukio Hans Vorarlberna",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "giriko-kutsuzawa",
+          "subjectId": "char-bl-giriko",
+          "displayName": "Giriko Kutsuzawa",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "moe-shishigawara",
+          "subjectId": "char-bl-moe",
+          "displayName": "Moe Shishigawara",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "bleach",
+          "subject": "kokuto",
+          "subjectId": "char-bl-kokuto",
+          "displayName": "Kokutō",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "jin-kariya",
+          "subjectId": "char-bl-kariya",
+          "displayName": "Jin Kariya",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "shusuke-amagai",
+          "subjectId": "char-bl-amagai",
+          "displayName": "Shūsuke Amagai",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "muramasa",
+          "subjectId": "char-bl-muramasa",
+          "displayName": "Muramasa",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "coyote-starrk",
+          "subjectId": "char-bl-starrk",
+          "displayName": "Coyote Starrk",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "lilynette-gingerbuck",
+          "subjectId": "char-bl-lilynette",
+          "displayName": "Lilynette Gingerbuck",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "barragan-louisenbairn",
+          "subjectId": "char-bl-barragan",
+          "displayName": "Barragan Louisenbairn",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "nnoitra-gilga",
+          "subjectId": "char-bl-nnoitra",
+          "displayName": "Nnoitra Gilga",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "zommari-rureaux",
+          "subjectId": "char-bl-zommari",
+          "displayName": "Zommari Rureaux",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "szayelaporro-granz",
+          "subjectId": "char-bl-szayelaporro",
+          "displayName": "Szayelaporro Granz",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "aaroniero-arruruerie",
+          "subjectId": "char-bl-aaroniero",
+          "displayName": "Aaroniero Arruruerie",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "pesche-guatiche",
+          "subjectId": "char-bl-pesche",
+          "displayName": "Pesche Guatiche",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "dondochakka-birstanne",
+          "subjectId": "char-bl-dondochakka",
+          "displayName": "Dondochakka Birstanne",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "wonderweiss-margela",
+          "subjectId": "char-bl-wonderweiss",
+          "displayName": "Wonderweiss Margela",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "tesra-lindocruz",
+          "subjectId": "char-bl-tesra",
+          "displayName": "Tesra Lindocruz",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "emilou-apacci",
+          "subjectId": "char-bl-apacci",
+          "displayName": "Emilou Apacci",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "franceska-mila-rose",
+          "subjectId": "char-bl-mila-rose",
+          "displayName": "Franceska Mila Rose",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "cyan-sung-sun",
+          "subjectId": "char-bl-sung-sun",
+          "displayName": "Cyan Sung-Sun",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "ggio-vega",
+          "subjectId": "char-bl-ggio",
+          "displayName": "Ggio Vega",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "choe-neng-poww",
+          "subjectId": "char-bl-poww",
+          "displayName": "Choe Neng Poww",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "charlotte-chuhlhourne",
+          "subjectId": "char-bl-charlotte",
+          "displayName": "Charlotte Chuhlhourne",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "abirama-redder",
+          "subjectId": "char-bl-abirama",
+          "displayName": "Abirama Redder",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "findorr-calius",
+          "subjectId": "char-bl-findorr",
+          "displayName": "Findorr Calius",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "shawlong-kufang",
+          "subjectId": "char-bl-shawlong",
+          "displayName": "Shawlong Kūfang",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "edrad-liones",
+          "subjectId": "char-bl-edrad",
+          "displayName": "Edrad Liones",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "di-roy-rinker",
+          "subjectId": "char-bl-di-roy",
+          "displayName": "Di Roy Rinker",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "yylfordt-granz",
+          "subjectId": "char-bl-yylfordt",
+          "displayName": "Yylfordt Granz",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "nakeem-grindina",
+          "subjectId": "char-bl-nakeem",
+          "displayName": "Nakeem Grindina",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "dordoni-alessandro-del-socaccio",
+          "subjectId": "char-bl-dordoni",
+          "displayName": "Dordoni Alessandro Del Socaccio",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "cirucci-sanderwicci",
+          "subjectId": "char-bl-cirucci",
+          "displayName": "Cirucci Sanderwicci",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "gantenbainne-mosqueda",
+          "subjectId": "char-bl-gantenbainne",
+          "displayName": "Gantenbainne Mosqueda",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "rudbornn-chelute",
+          "subjectId": "char-bl-rudbornn",
+          "displayName": "Rudbornn Chelute",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "bleach",
+          "subject": "loly-aivirrne",
+          "subjectId": "char-bl-loly",
+          "displayName": "Loly Aivirrne",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "menoly-mallia",
+          "subjectId": "char-bl-menoly",
+          "displayName": "Menoly Mallia",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "grand-fisher",
+          "subjectId": "char-bl-grand-fisher",
+          "displayName": "Grand Fisher",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "shrieker",
+          "subjectId": "char-bl-shrieker",
+          "displayName": "Shrieker",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "bambietta-basterbine",
+          "subjectId": "char-bl-bambietta",
+          "displayName": "Bambietta Basterbine",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "askin-nakk-le-vaar",
+          "subjectId": "char-bl-askin",
+          "displayName": "Askin Nakk Le Vaar",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "bazz-b",
+          "subjectId": "char-bl-bazz-b",
+          "displayName": "Bazz-B",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "as-nodt",
+          "subjectId": "char-bl-as-nodt",
+          "displayName": "Äs Nödt",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "quilge-opie",
+          "subjectId": "char-bl-quilge",
+          "displayName": "Quilge Opie",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "mask-de-masculine",
+          "subjectId": "char-bl-mask",
+          "displayName": "Mask De Masculine",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "cang-du",
+          "subjectId": "char-bl-cang-du",
+          "displayName": "Cang Du",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "bg9",
+          "subjectId": "char-bl-bg9",
+          "displayName": "BG9",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "driscoll-berci",
+          "subjectId": "char-bl-driscoll",
+          "displayName": "Driscoll Berci",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "royd-lloyd",
+          "subjectId": "char-bl-royd",
+          "displayName": "Royd Lloyd",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "gremmy-thoumeaux",
+          "subjectId": "char-bl-gremmy",
+          "displayName": "Gremmy Thoumeaux",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "candice-catnipp",
+          "subjectId": "char-bl-candice",
+          "displayName": "Candice Catnipp",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "liltotto-lamperd",
+          "subjectId": "char-bl-liltotto",
+          "displayName": "Liltotto Lamperd",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "giselle-gewelle",
+          "subjectId": "char-bl-giselle",
+          "displayName": "Giselle Gewelle",
+          "reason": "single_location"
+        },
+        {
+          "anime": "bleach",
+          "subject": "meninas-mcallon",
+          "subjectId": "char-bl-meninas",
+          "displayName": "Meninas McAllon",
           "reason": "single_location"
         },
         {

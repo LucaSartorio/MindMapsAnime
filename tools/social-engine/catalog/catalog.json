@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-02T13:42:04.543Z",
+  "generatedAt": "2026-10-02T17:56:08.009Z",
   "locales": [
     "en",
     "it"
@@ -39,6 +39,12 @@
           "videos": 26,
           "series": 2,
           "excluded": 82
+        },
+        "bleach": {
+          "characters": 71,
+          "videos": 80,
+          "series": 7,
+          "excluded": 76
         },
         "blackclover": {
           "characters": 50,
@@ -5713,6 +5719,2887 @@
             "animatedStops": 2,
             "arcs": 1,
             "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:ichigo-kurosaki:part-01",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "ichigo-kurosaki",
+          "series": {
+            "id": "character-journey:bleach:ichigo-kurosaki",
+            "segment": "part-01",
+            "partNumber": 1,
+            "partCount": 3,
+            "previousId": null,
+            "nextId": "character-journey:bleach:ichigo-kurosaki:part-02",
+            "arcIds": [
+              "arc-bl-agent",
+              "arc-bl-ss-entry",
+              "arc-bl-arrancar-arrival"
+            ],
+            "arcTitles": {
+              "en": [
+                "The Substitute",
+                "Soul Society: The Sneak Entry",
+                "Arrancar: The Arrival"
+              ],
+              "it": [
+                "Lo Shinigami sostituto",
+                "Soul Society: l'infiltrazione",
+                "Arrancar: l'arrivo"
+              ]
+            },
+            "firstArc": "The Substitute",
+            "lastArc": "Arrancar: The Arrival",
+            "segmentationVersion": 1,
+            "fingerprint": "6b062d44"
+          },
+          "displayName": {
+            "en": "Ichigo Kurosaki",
+            "it": "Ichigo Kurosaki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 30,
+          "facts": {
+            "importance": "main",
+            "places": 20,
+            "animatedStops": 6,
+            "arcs": 3,
+            "journeyArcs": 11
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:ichigo-kurosaki:part-02",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "ichigo-kurosaki",
+          "series": {
+            "id": "character-journey:bleach:ichigo-kurosaki",
+            "segment": "part-02",
+            "partNumber": 2,
+            "partCount": 3,
+            "previousId": "character-journey:bleach:ichigo-kurosaki:part-01",
+            "nextId": "character-journey:bleach:ichigo-kurosaki:part-03",
+            "arcIds": [
+              "arc-bl-hueco-mundo",
+              "arc-bl-amagai",
+              "arc-bl-fake-karakura",
+              "arc-bl-zanpakuto-rebellion"
+            ],
+            "arcTitles": {
+              "en": [
+                "Arrancar: Hueco Mundo",
+                "The New Captain Shūsuke Amagai",
+                "The Battle of Fake Karakura Town",
+                "Zanpakutō Unknown Tales"
+              ],
+              "it": [
+                "Arrancar: Hueco Mundo",
+                "Il nuovo capitano Shūsuke Amagai",
+                "La battaglia della Karakura replica",
+                "La ribellione delle Zanpakutō"
+              ]
+            },
+            "firstArc": "Arrancar: Hueco Mundo",
+            "lastArc": "Zanpakutō Unknown Tales",
+            "segmentationVersion": 1,
+            "fingerprint": "96253026"
+          },
+          "displayName": {
+            "en": "Ichigo Kurosaki",
+            "it": "Ichigo Kurosaki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 30,
+          "facts": {
+            "importance": "main",
+            "places": 20,
+            "animatedStops": 6,
+            "arcs": 4,
+            "journeyArcs": 11
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:ichigo-kurosaki:part-03",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "ichigo-kurosaki",
+          "series": {
+            "id": "character-journey:bleach:ichigo-kurosaki",
+            "segment": "part-03",
+            "partNumber": 3,
+            "partCount": 3,
+            "previousId": "character-journey:bleach:ichigo-kurosaki:part-02",
+            "nextId": null,
+            "arcIds": [
+              "arc-bl-lost-substitute",
+              "arc-bl-tybw-blood-warfare",
+              "arc-bl-tybw-separation",
+              "arc-bl-hell"
+            ],
+            "arcTitles": {
+              "en": [
+                "The Lost Substitute Shinigami",
+                "Thousand-Year Blood War: The Blood Warfare",
+                "Thousand-Year Blood War: The Separation",
+                "No Breaths From Hell"
+              ],
+              "it": [
+                "Lo Shinigami sostituto perduto",
+                "Guerra dei Mille Anni: la dichiarazione di guerra",
+                "Guerra dei Mille Anni: la separazione",
+                "Il one-shot dell'Inferno (No Breaths From Hell)"
+              ]
+            },
+            "firstArc": "The Lost Substitute Shinigami",
+            "lastArc": "No Breaths From Hell",
+            "segmentationVersion": 1,
+            "fingerprint": "01f1aa9e"
+          },
+          "displayName": {
+            "en": "Ichigo Kurosaki",
+            "it": "Ichigo Kurosaki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 36,
+          "facts": {
+            "importance": "main",
+            "places": 20,
+            "animatedStops": 8,
+            "arcs": 4,
+            "journeyArcs": 11
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:rukia-kuchiki:part-01",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "rukia-kuchiki",
+          "series": {
+            "id": "character-journey:bleach:rukia-kuchiki",
+            "segment": "part-01",
+            "partNumber": 1,
+            "partCount": 3,
+            "previousId": null,
+            "nextId": "character-journey:bleach:rukia-kuchiki:part-02",
+            "arcIds": [
+              "arc-bl-ss-entry"
+            ],
+            "arcTitles": {
+              "en": [
+                "Soul Society: The Sneak Entry"
+              ],
+              "it": [
+                "Soul Society: l'infiltrazione"
+              ]
+            },
+            "firstArc": "Soul Society: The Sneak Entry",
+            "lastArc": "Soul Society: The Sneak Entry",
+            "segmentationVersion": 1,
+            "fingerprint": "ae3e7e79"
+          },
+          "displayName": {
+            "en": "Rukia Kuchiki",
+            "it": "Rukia Kuchiki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 27,
+          "facts": {
+            "importance": "main",
+            "places": 19,
+            "animatedStops": 5,
+            "arcs": 1,
+            "journeyArcs": 12
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:rukia-kuchiki:part-02",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "rukia-kuchiki",
+          "series": {
+            "id": "character-journey:bleach:rukia-kuchiki",
+            "segment": "part-02",
+            "partNumber": 2,
+            "partCount": 3,
+            "previousId": "character-journey:bleach:rukia-kuchiki:part-01",
+            "nextId": "character-journey:bleach:rukia-kuchiki:part-03",
+            "arcIds": [
+              "arc-bl-ss-rescue",
+              "arc-bl-agent",
+              "arc-bl-arrancar-arrival",
+              "arc-bl-hueco-mundo"
+            ],
+            "arcTitles": {
+              "en": [
+                "Soul Society: The Rescue",
+                "The Substitute",
+                "Arrancar: The Arrival",
+                "Arrancar: Hueco Mundo"
+              ],
+              "it": [
+                "Soul Society: il salvataggio",
+                "Lo Shinigami sostituto",
+                "Arrancar: l'arrivo",
+                "Arrancar: Hueco Mundo"
+              ]
+            },
+            "firstArc": "Soul Society: The Rescue",
+            "lastArc": "Arrancar: Hueco Mundo",
+            "segmentationVersion": 1,
+            "fingerprint": "ff54382d"
+          },
+          "displayName": {
+            "en": "Rukia Kuchiki",
+            "it": "Rukia Kuchiki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 33,
+          "facts": {
+            "importance": "main",
+            "places": 19,
+            "animatedStops": 7,
+            "arcs": 4,
+            "journeyArcs": 12
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:rukia-kuchiki:part-03",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "rukia-kuchiki",
+          "series": {
+            "id": "character-journey:bleach:rukia-kuchiki",
+            "segment": "part-03",
+            "partNumber": 3,
+            "partCount": 3,
+            "previousId": "character-journey:bleach:rukia-kuchiki:part-02",
+            "nextId": null,
+            "arcIds": [
+              "arc-bl-amagai",
+              "arc-bl-fake-karakura",
+              "arc-bl-zanpakuto-rebellion",
+              "arc-bl-lost-substitute",
+              "arc-bl-tybw-separation",
+              "arc-bl-tybw-calamity",
+              "arc-bl-hell"
+            ],
+            "arcTitles": {
+              "en": [
+                "The New Captain Shūsuke Amagai",
+                "The Battle of Fake Karakura Town",
+                "Zanpakutō Unknown Tales",
+                "The Lost Substitute Shinigami",
+                "Thousand-Year Blood War: The Separation",
+                "Thousand-Year Blood War: The Calamity",
+                "No Breaths From Hell"
+              ],
+              "it": [
+                "Il nuovo capitano Shūsuke Amagai",
+                "La battaglia della Karakura replica",
+                "La ribellione delle Zanpakutō",
+                "Lo Shinigami sostituto perduto",
+                "Guerra dei Mille Anni: la separazione",
+                "Guerra dei Mille Anni: la calamità",
+                "Il one-shot dell'Inferno (No Breaths From Hell)"
+              ]
+            },
+            "firstArc": "The New Captain Shūsuke Amagai",
+            "lastArc": "No Breaths From Hell",
+            "segmentationVersion": 1,
+            "fingerprint": "81269d33"
+          },
+          "displayName": {
+            "en": "Rukia Kuchiki",
+            "it": "Rukia Kuchiki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 33,
+          "facts": {
+            "importance": "main",
+            "places": 19,
+            "animatedStops": 7,
+            "arcs": 7,
+            "journeyArcs": 12
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:orihime-inoue:part-01",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "orihime-inoue",
+          "series": {
+            "id": "character-journey:bleach:orihime-inoue",
+            "segment": "part-01",
+            "partNumber": 1,
+            "partCount": 2,
+            "previousId": null,
+            "nextId": "character-journey:bleach:orihime-inoue:part-02",
+            "arcIds": [
+              "arc-bl-agent",
+              "arc-bl-ss-entry",
+              "arc-bl-arrancar-arrival"
+            ],
+            "arcTitles": {
+              "en": [
+                "The Substitute",
+                "Soul Society: The Sneak Entry",
+                "Arrancar: The Arrival"
+              ],
+              "it": [
+                "Lo Shinigami sostituto",
+                "Soul Society: l'infiltrazione",
+                "Arrancar: l'arrivo"
+              ]
+            },
+            "firstArc": "The Substitute",
+            "lastArc": "Arrancar: The Arrival",
+            "segmentationVersion": 1,
+            "fingerprint": "2c881781"
+          },
+          "displayName": {
+            "en": "Orihime Inoue",
+            "it": "Orihime Inoue"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 27,
+          "facts": {
+            "importance": "main",
+            "places": 11,
+            "animatedStops": 5,
+            "arcs": 3,
+            "journeyArcs": 7
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:orihime-inoue:part-02",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "orihime-inoue",
+          "series": {
+            "id": "character-journey:bleach:orihime-inoue",
+            "segment": "part-02",
+            "partNumber": 2,
+            "partCount": 2,
+            "previousId": "character-journey:bleach:orihime-inoue:part-01",
+            "nextId": null,
+            "arcIds": [
+              "arc-bl-hueco-mundo",
+              "arc-bl-lost-substitute",
+              "arc-bl-tybw-blood-warfare",
+              "arc-bl-tybw-calamity"
+            ],
+            "arcTitles": {
+              "en": [
+                "Arrancar: Hueco Mundo",
+                "The Lost Substitute Shinigami",
+                "Thousand-Year Blood War: The Blood Warfare",
+                "Thousand-Year Blood War: The Calamity"
+              ],
+              "it": [
+                "Arrancar: Hueco Mundo",
+                "Lo Shinigami sostituto perduto",
+                "Guerra dei Mille Anni: la dichiarazione di guerra",
+                "Guerra dei Mille Anni: la calamità"
+              ]
+            },
+            "firstArc": "Arrancar: Hueco Mundo",
+            "lastArc": "Thousand-Year Blood War: The Calamity",
+            "segmentationVersion": 1,
+            "fingerprint": "ac7efc98"
+          },
+          "displayName": {
+            "en": "Orihime Inoue",
+            "it": "Orihime Inoue"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 30,
+          "facts": {
+            "importance": "main",
+            "places": 11,
+            "animatedStops": 6,
+            "arcs": 4,
+            "journeyArcs": 7
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:uryu-ishida:part-01",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "uryu-ishida",
+          "series": {
+            "id": "character-journey:bleach:uryu-ishida",
+            "segment": "part-01",
+            "partNumber": 1,
+            "partCount": 2,
+            "previousId": null,
+            "nextId": "character-journey:bleach:uryu-ishida:part-02",
+            "arcIds": [
+              "arc-bl-agent",
+              "arc-bl-ss-entry",
+              "arc-bl-bount",
+              "arc-bl-arrancar-arrival"
+            ],
+            "arcTitles": {
+              "en": [
+                "The Substitute",
+                "Soul Society: The Sneak Entry",
+                "The Bount",
+                "Arrancar: The Arrival"
+              ],
+              "it": [
+                "Lo Shinigami sostituto",
+                "Soul Society: l'infiltrazione",
+                "I Bount",
+                "Arrancar: l'arrivo"
+              ]
+            },
+            "firstArc": "The Substitute",
+            "lastArc": "Arrancar: The Arrival",
+            "segmentationVersion": 1,
+            "fingerprint": "29d5003f"
+          },
+          "displayName": {
+            "en": "Uryū Ishida",
+            "it": "Uryū Ishida"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 27,
+          "facts": {
+            "importance": "main",
+            "places": 11,
+            "animatedStops": 5,
+            "arcs": 4,
+            "journeyArcs": 7
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:uryu-ishida:part-02",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "uryu-ishida",
+          "series": {
+            "id": "character-journey:bleach:uryu-ishida",
+            "segment": "part-02",
+            "partNumber": 2,
+            "partCount": 2,
+            "previousId": "character-journey:bleach:uryu-ishida:part-01",
+            "nextId": null,
+            "arcIds": [
+              "arc-bl-hueco-mundo",
+              "arc-bl-tybw-blood-warfare",
+              "arc-bl-tybw-calamity"
+            ],
+            "arcTitles": {
+              "en": [
+                "Arrancar: Hueco Mundo",
+                "Thousand-Year Blood War: The Blood Warfare",
+                "Thousand-Year Blood War: The Calamity"
+              ],
+              "it": [
+                "Arrancar: Hueco Mundo",
+                "Guerra dei Mille Anni: la dichiarazione di guerra",
+                "Guerra dei Mille Anni: la calamità"
+              ]
+            },
+            "firstArc": "Arrancar: Hueco Mundo",
+            "lastArc": "Thousand-Year Blood War: The Calamity",
+            "segmentationVersion": 1,
+            "fingerprint": "1bd4115b"
+          },
+          "displayName": {
+            "en": "Uryū Ishida",
+            "it": "Uryū Ishida"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 30,
+          "facts": {
+            "importance": "main",
+            "places": 11,
+            "animatedStops": 6,
+            "arcs": 3,
+            "journeyArcs": 7
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:yasutora-chad-sado:part-01",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "yasutora-chad-sado",
+          "series": {
+            "id": "character-journey:bleach:yasutora-chad-sado",
+            "segment": "part-01",
+            "partNumber": 1,
+            "partCount": 2,
+            "previousId": null,
+            "nextId": "character-journey:bleach:yasutora-chad-sado:part-02",
+            "arcIds": [
+              "arc-bl-agent",
+              "arc-bl-ss-entry",
+              "arc-bl-arrancar-arrival"
+            ],
+            "arcTitles": {
+              "en": [
+                "The Substitute",
+                "Soul Society: The Sneak Entry",
+                "Arrancar: The Arrival"
+              ],
+              "it": [
+                "Lo Shinigami sostituto",
+                "Soul Society: l'infiltrazione",
+                "Arrancar: l'arrivo"
+              ]
+            },
+            "firstArc": "The Substitute",
+            "lastArc": "Arrancar: The Arrival",
+            "segmentationVersion": 1,
+            "fingerprint": "e0a99aa7"
+          },
+          "displayName": {
+            "en": "Yasutora \"Chad\" Sado",
+            "it": "Yasutora «Chad» Sado"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 30,
+          "facts": {
+            "importance": "main",
+            "places": 13,
+            "animatedStops": 6,
+            "arcs": 3,
+            "journeyArcs": 7
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:yasutora-chad-sado:part-02",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "yasutora-chad-sado",
+          "series": {
+            "id": "character-journey:bleach:yasutora-chad-sado",
+            "segment": "part-02",
+            "partNumber": 2,
+            "partCount": 2,
+            "previousId": "character-journey:bleach:yasutora-chad-sado:part-01",
+            "nextId": null,
+            "arcIds": [
+              "arc-bl-hueco-mundo",
+              "arc-bl-lost-substitute",
+              "arc-bl-tybw-blood-warfare",
+              "arc-bl-tybw-calamity"
+            ],
+            "arcTitles": {
+              "en": [
+                "Arrancar: Hueco Mundo",
+                "The Lost Substitute Shinigami",
+                "Thousand-Year Blood War: The Blood Warfare",
+                "Thousand-Year Blood War: The Calamity"
+              ],
+              "it": [
+                "Arrancar: Hueco Mundo",
+                "Lo Shinigami sostituto perduto",
+                "Guerra dei Mille Anni: la dichiarazione di guerra",
+                "Guerra dei Mille Anni: la calamità"
+              ]
+            },
+            "firstArc": "Arrancar: Hueco Mundo",
+            "lastArc": "Thousand-Year Blood War: The Calamity",
+            "segmentationVersion": 1,
+            "fingerprint": "1b838742"
+          },
+          "displayName": {
+            "en": "Yasutora \"Chad\" Sado",
+            "it": "Yasutora «Chad» Sado"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 33,
+          "facts": {
+            "importance": "main",
+            "places": 13,
+            "animatedStops": 7,
+            "arcs": 4,
+            "journeyArcs": 7
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:isshin-kurosaki",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "isshin-kurosaki",
+          "series": null,
+          "displayName": {
+            "en": "Isshin Kurosaki",
+            "it": "Isshin Kurosaki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 30,
+          "facts": {
+            "importance": "major",
+            "places": 6,
+            "animatedStops": 6,
+            "arcs": 4,
+            "journeyArcs": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:masaki-kurosaki",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "masaki-kurosaki",
+          "series": null,
+          "displayName": {
+            "en": "Masaki Kurosaki",
+            "it": "Masaki Kurosaki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:karin-kurosaki",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "karin-kurosaki",
+          "series": null,
+          "displayName": {
+            "en": "Karin Kurosaki",
+            "it": "Karin Kurosaki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:tatsuki-arisawa",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "tatsuki-arisawa",
+          "series": null,
+          "displayName": {
+            "en": "Tatsuki Arisawa",
+            "it": "Tatsuki Arisawa"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:ryuken-ishida",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "ryuken-ishida",
+          "series": null,
+          "displayName": {
+            "en": "Ryūken Ishida",
+            "it": "Ryūken Ishida"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:don-kanonji",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "don-kanonji",
+          "series": null,
+          "displayName": {
+            "en": "Don Kanonji",
+            "it": "Don Kanonji"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:kisuke-urahara",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "kisuke-urahara",
+          "series": null,
+          "displayName": {
+            "en": "Kisuke Urahara",
+            "it": "Kisuke Urahara"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 36,
+          "facts": {
+            "importance": "main",
+            "places": 8,
+            "animatedStops": 8,
+            "arcs": 7,
+            "journeyArcs": 7
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:yoruichi-shihoin",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "yoruichi-shihoin",
+          "series": null,
+          "displayName": {
+            "en": "Yoruichi Shihōin",
+            "it": "Yoruichi Shihōin"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 36,
+          "facts": {
+            "importance": "major",
+            "places": 8,
+            "animatedStops": 8,
+            "arcs": 7,
+            "journeyArcs": 7
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:tessai-tsukabishi",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "tessai-tsukabishi",
+          "series": null,
+          "displayName": {
+            "en": "Tessai Tsukabishi",
+            "it": "Tessai Tsukabishi"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:zangetsu-old-man",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "zangetsu-old-man",
+          "series": null,
+          "displayName": {
+            "en": "Zangetsu (\"old man\")",
+            "it": "Zangetsu (il «vecchio»)"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 25,
+          "facts": {
+            "importance": "major",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 4,
+            "journeyArcs": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:hollow-ichigo-white",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "hollow-ichigo-white",
+          "series": null,
+          "displayName": {
+            "en": "Hollow Ichigo (\"White\")",
+            "it": "Hollow Ichigo («Shiro»)"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 27,
+          "facts": {
+            "importance": "major",
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 4,
+            "journeyArcs": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:kazui-kurosaki",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "kazui-kurosaki",
+          "series": null,
+          "displayName": {
+            "en": "Kazui Kurosaki",
+            "it": "Kazui Kurosaki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:ichika-abarai",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "ichika-abarai",
+          "series": null,
+          "displayName": {
+            "en": "Ichika Abarai",
+            "it": "Ichika Abarai"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:genryusai-shigekuni-yamamoto",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "genryusai-shigekuni-yamamoto",
+          "series": null,
+          "displayName": {
+            "en": "Genryūsai Shigekuni Yamamoto",
+            "it": "Genryūsai Shigekuni Yamamoto"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:sui-feng-soi-fon",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "sui-feng-soi-fon",
+          "series": null,
+          "displayName": {
+            "en": "Suì-Fēng (Soi Fon)",
+            "it": "Soi Fon"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:marechiyo-omaeda",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "marechiyo-omaeda",
+          "series": null,
+          "displayName": {
+            "en": "Marechiyo Ōmaeda",
+            "it": "Marechiyo Ōmaeda"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:gin-ichimaru",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "gin-ichimaru",
+          "series": null,
+          "displayName": {
+            "en": "Gin Ichimaru",
+            "it": "Gin Ichimaru"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:izuru-kira",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "izuru-kira",
+          "series": null,
+          "displayName": {
+            "en": "Izuru Kira",
+            "it": "Izuru Kira"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:retsu-unohana-yachiru-unohana",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "retsu-unohana-yachiru-unohana",
+          "series": null,
+          "displayName": {
+            "en": "Retsu Unohana (Yachiru Unohana)",
+            "it": "Retsu Unohana (Yachiru Unohana)"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:sosuke-aizen:part-01",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "sosuke-aizen",
+          "series": {
+            "id": "character-journey:bleach:sosuke-aizen",
+            "segment": "part-01",
+            "partNumber": 1,
+            "partCount": 2,
+            "previousId": null,
+            "nextId": "character-journey:bleach:sosuke-aizen:part-02",
+            "arcIds": [
+              "arc-bl-arrancar-arrival",
+              "arc-bl-turn-back-pendulum",
+              "arc-bl-fake-karakura"
+            ],
+            "arcTitles": {
+              "en": [
+                "Arrancar: The Arrival",
+                "Turn Back the Pendulum",
+                "The Battle of Fake Karakura Town"
+              ],
+              "it": [
+                "Arrancar: l'arrivo",
+                "Turn Back the Pendulum (il passato)",
+                "La battaglia della Karakura replica"
+              ]
+            },
+            "firstArc": "Arrancar: The Arrival",
+            "lastArc": "The Battle of Fake Karakura Town",
+            "segmentationVersion": 1,
+            "fingerprint": "ca6d0083"
+          },
+          "displayName": {
+            "en": "Sōsuke Aizen",
+            "it": "Sōsuke Aizen"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 30,
+          "facts": {
+            "importance": "main",
+            "places": 9,
+            "animatedStops": 6,
+            "arcs": 3,
+            "journeyArcs": 6
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:sosuke-aizen:part-02",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "sosuke-aizen",
+          "series": {
+            "id": "character-journey:bleach:sosuke-aizen",
+            "segment": "part-02",
+            "partNumber": 2,
+            "partCount": 2,
+            "previousId": "character-journey:bleach:sosuke-aizen:part-01",
+            "nextId": null,
+            "arcIds": [
+              "arc-bl-tybw-separation",
+              "arc-bl-tybw-conflict",
+              "arc-bl-tybw-calamity"
+            ],
+            "arcTitles": {
+              "en": [
+                "Thousand-Year Blood War: The Separation",
+                "Thousand-Year Blood War: The Conflict",
+                "Thousand-Year Blood War: The Calamity"
+              ],
+              "it": [
+                "Guerra dei Mille Anni: la separazione",
+                "Guerra dei Mille Anni: il conflitto",
+                "Guerra dei Mille Anni: la calamità"
+              ]
+            },
+            "firstArc": "Thousand-Year Blood War: The Separation",
+            "lastArc": "Thousand-Year Blood War: The Calamity",
+            "segmentationVersion": 1,
+            "fingerprint": "bc5453c7"
+          },
+          "displayName": {
+            "en": "Sōsuke Aizen",
+            "it": "Sōsuke Aizen"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "main",
+            "places": 9,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 6
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:momo-hinamori",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "momo-hinamori",
+          "series": null,
+          "displayName": {
+            "en": "Momo Hinamori",
+            "it": "Momo Hinamori"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:byakuya-kuchiki",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "byakuya-kuchiki",
+          "series": null,
+          "displayName": {
+            "en": "Byakuya Kuchiki",
+            "it": "Byakuya Kuchiki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 36,
+          "facts": {
+            "importance": "main",
+            "places": 8,
+            "animatedStops": 8,
+            "arcs": 7,
+            "journeyArcs": 7
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:renji-abarai:part-01",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "renji-abarai",
+          "series": {
+            "id": "character-journey:bleach:renji-abarai",
+            "segment": "part-01",
+            "partNumber": 1,
+            "partCount": 2,
+            "previousId": null,
+            "nextId": "character-journey:bleach:renji-abarai:part-02",
+            "arcIds": [
+              "arc-bl-agent",
+              "arc-bl-ss-entry",
+              "arc-bl-ss-rescue",
+              "arc-bl-arrancar-arrival"
+            ],
+            "arcTitles": {
+              "en": [
+                "The Substitute",
+                "Soul Society: The Sneak Entry",
+                "Soul Society: The Rescue",
+                "Arrancar: The Arrival"
+              ],
+              "it": [
+                "Lo Shinigami sostituto",
+                "Soul Society: l'infiltrazione",
+                "Soul Society: il salvataggio",
+                "Arrancar: l'arrivo"
+              ]
+            },
+            "firstArc": "The Substitute",
+            "lastArc": "Arrancar: The Arrival",
+            "segmentationVersion": 1,
+            "fingerprint": "10c9bd55"
+          },
+          "displayName": {
+            "en": "Renji Abarai",
+            "it": "Renji Abarai"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 27,
+          "facts": {
+            "importance": "main",
+            "places": 12,
+            "animatedStops": 5,
+            "arcs": 4,
+            "journeyArcs": 9
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:renji-abarai:part-02",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "renji-abarai",
+          "series": {
+            "id": "character-journey:bleach:renji-abarai",
+            "segment": "part-02",
+            "partNumber": 2,
+            "partCount": 2,
+            "previousId": "character-journey:bleach:renji-abarai:part-01",
+            "nextId": null,
+            "arcIds": [
+              "arc-bl-hueco-mundo",
+              "arc-bl-lost-substitute",
+              "arc-bl-tybw-separation",
+              "arc-bl-tybw-calamity",
+              "arc-bl-hell"
+            ],
+            "arcTitles": {
+              "en": [
+                "Arrancar: Hueco Mundo",
+                "The Lost Substitute Shinigami",
+                "Thousand-Year Blood War: The Separation",
+                "Thousand-Year Blood War: The Calamity",
+                "No Breaths From Hell"
+              ],
+              "it": [
+                "Arrancar: Hueco Mundo",
+                "Lo Shinigami sostituto perduto",
+                "Guerra dei Mille Anni: la separazione",
+                "Guerra dei Mille Anni: la calamità",
+                "Il one-shot dell'Inferno (No Breaths From Hell)"
+              ]
+            },
+            "firstArc": "Arrancar: Hueco Mundo",
+            "lastArc": "No Breaths From Hell",
+            "segmentationVersion": 1,
+            "fingerprint": "d4fb46db"
+          },
+          "displayName": {
+            "en": "Renji Abarai",
+            "it": "Renji Abarai"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 33,
+          "facts": {
+            "importance": "main",
+            "places": 12,
+            "animatedStops": 7,
+            "arcs": 5,
+            "journeyArcs": 9
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:sajin-komamura",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "sajin-komamura",
+          "series": null,
+          "displayName": {
+            "en": "Sajin Komamura",
+            "it": "Sajin Komamura"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:tetsuzaemon-iba",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "tetsuzaemon-iba",
+          "series": null,
+          "displayName": {
+            "en": "Tetsuzaemon Iba",
+            "it": "Tetsuzaemon Iba"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:shunsui-kyoraku",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "shunsui-kyoraku",
+          "series": null,
+          "displayName": {
+            "en": "Shunsui Kyōraku",
+            "it": "Shunsui Kyōraku"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 25,
+          "facts": {
+            "importance": "major",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 4,
+            "journeyArcs": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:kaname-tosen",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "kaname-tosen",
+          "series": null,
+          "displayName": {
+            "en": "Kaname Tōsen",
+            "it": "Kaname Tōsen"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 25,
+          "facts": {
+            "importance": "major",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 4,
+            "journeyArcs": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:toshiro-hitsugaya",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "toshiro-hitsugaya",
+          "series": null,
+          "displayName": {
+            "en": "Tōshirō Hitsugaya",
+            "it": "Tōshirō Hitsugaya"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 25,
+          "facts": {
+            "importance": "major",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 4,
+            "journeyArcs": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:rangiku-matsumoto",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "rangiku-matsumoto",
+          "series": null,
+          "displayName": {
+            "en": "Rangiku Matsumoto",
+            "it": "Rangiku Matsumoto"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 25,
+          "facts": {
+            "importance": "supporting",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 4,
+            "journeyArcs": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:kenpachi-zaraki",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "kenpachi-zaraki",
+          "series": null,
+          "displayName": {
+            "en": "Kenpachi Zaraki",
+            "it": "Kenpachi Zaraki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 30,
+          "facts": {
+            "importance": "major",
+            "places": 6,
+            "animatedStops": 6,
+            "arcs": 4,
+            "journeyArcs": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:yachiru-kusajishi",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "yachiru-kusajishi",
+          "series": null,
+          "displayName": {
+            "en": "Yachiru Kusajishi",
+            "it": "Yachiru Kusajishi"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:ikkaku-madarame",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "ikkaku-madarame",
+          "series": null,
+          "displayName": {
+            "en": "Ikkaku Madarame",
+            "it": "Ikkaku Madarame"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:yumichika-ayasegawa",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "yumichika-ayasegawa",
+          "series": null,
+          "displayName": {
+            "en": "Yumichika Ayasegawa",
+            "it": "Yumichika Ayasegawa"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:mayuri-kurotsuchi",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "mayuri-kurotsuchi",
+          "series": null,
+          "displayName": {
+            "en": "Mayuri Kurotsuchi",
+            "it": "Mayuri Kurotsuchi"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 25,
+          "facts": {
+            "importance": "major",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 4,
+            "journeyArcs": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:nemu-kurotsuchi",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "nemu-kurotsuchi",
+          "series": null,
+          "displayName": {
+            "en": "Nemu Kurotsuchi",
+            "it": "Nemu Kurotsuchi"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:jushiro-ukitake",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "jushiro-ukitake",
+          "series": null,
+          "displayName": {
+            "en": "Jūshirō Ukitake",
+            "it": "Jūshirō Ukitake"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 30,
+          "facts": {
+            "importance": "major",
+            "places": 6,
+            "animatedStops": 6,
+            "arcs": 5,
+            "journeyArcs": 5
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:kaien-shiba",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "kaien-shiba",
+          "series": null,
+          "displayName": {
+            "en": "Kaien Shiba",
+            "it": "Kaien Shiba"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:kukaku-shiba",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "kukaku-shiba",
+          "series": null,
+          "displayName": {
+            "en": "Kūkaku Shiba",
+            "it": "Kūkaku Shiba"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:ganju-shiba",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "ganju-shiba",
+          "series": null,
+          "displayName": {
+            "en": "Ganju Shiba",
+            "it": "Ganju Shiba"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:shinji-hirako",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "shinji-hirako",
+          "series": null,
+          "displayName": {
+            "en": "Shinji Hirako",
+            "it": "Shinji Hirako"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:hiyori-sarugaki",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "hiyori-sarugaki",
+          "series": null,
+          "displayName": {
+            "en": "Hiyori Sarugaki",
+            "it": "Hiyori Sarugaki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:lisa-yadomaru",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "lisa-yadomaru",
+          "series": null,
+          "displayName": {
+            "en": "Lisa Yadōmaru",
+            "it": "Lisa Yadōmaru"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:love-aikawa",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "love-aikawa",
+          "series": null,
+          "displayName": {
+            "en": "Love Aikawa",
+            "it": "Love Aikawa"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:rojuro-rose-otoribashi",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "rojuro-rose-otoribashi",
+          "series": null,
+          "displayName": {
+            "en": "Rōjūrō \"Rose\" Ōtoribashi",
+            "it": "Rōjūrō «Rose» Ōtoribashi"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:kensei-muguruma",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "kensei-muguruma",
+          "series": null,
+          "displayName": {
+            "en": "Kensei Muguruma",
+            "it": "Kensei Muguruma"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:mashiro-kuna",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "mashiro-kuna",
+          "series": null,
+          "displayName": {
+            "en": "Mashiro Kuna",
+            "it": "Mashiro Kuna"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:hachigen-ushoda",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "hachigen-ushoda",
+          "series": null,
+          "displayName": {
+            "en": "Hachigen Ushōda",
+            "it": "Hachigen Ushōda"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:soul-king",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "soul-king",
+          "series": null,
+          "displayName": {
+            "en": "Soul King",
+            "it": "Re delle Anime"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:ichibe-hyosube",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "ichibe-hyosube",
+          "series": null,
+          "displayName": {
+            "en": "Ichibē Hyōsube",
+            "it": "Ichibē Hyōsube"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:oetsu-nimaiya",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "oetsu-nimaiya",
+          "series": null,
+          "displayName": {
+            "en": "Ōetsu Nimaiya",
+            "it": "Ōetsu Nimaiya"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:tenjiro-kirinji",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "tenjiro-kirinji",
+          "series": null,
+          "displayName": {
+            "en": "Tenjirō Kirinji",
+            "it": "Tenjirō Kirinji"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:kirio-hikifune",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "kirio-hikifune",
+          "series": null,
+          "displayName": {
+            "en": "Kirio Hikifune",
+            "it": "Kirio Hikifune"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:senjumaru-shutara",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "senjumaru-shutara",
+          "series": null,
+          "displayName": {
+            "en": "Senjumaru Shutara",
+            "it": "Senjumaru Shutara"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:kugo-ginjo",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "kugo-ginjo",
+          "series": null,
+          "displayName": {
+            "en": "Kūgo Ginjō",
+            "it": "Kūgo Ginjō"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 25,
+          "facts": {
+            "importance": "major",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 1,
+            "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:shukuro-tsukishima",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "shukuro-tsukishima",
+          "series": null,
+          "displayName": {
+            "en": "Shūkurō Tsukishima",
+            "it": "Shūkurō Tsukishima"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:tier-harribel",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "tier-harribel",
+          "series": null,
+          "displayName": {
+            "en": "Tier Harribel",
+            "it": "Tier Harribel"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:ulquiorra-cifer",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "ulquiorra-cifer",
+          "series": null,
+          "displayName": {
+            "en": "Ulquiorra Cifer",
+            "it": "Ulquiorra Cifer"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "main",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:grimmjow-jaegerjaquez",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "grimmjow-jaegerjaquez",
+          "series": null,
+          "displayName": {
+            "en": "Grimmjow Jaegerjaquez",
+            "it": "Grimmjow Jaegerjaquez"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:yammy-llargo",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "yammy-llargo",
+          "series": null,
+          "displayName": {
+            "en": "Yammy Llargo",
+            "it": "Yammy Llargo"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:nelliel-tu-odelschwanck-nel",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "nelliel-tu-odelschwanck-nel",
+          "series": null,
+          "displayName": {
+            "en": "Nelliel Tu Odelschwanck (Nel)",
+            "it": "Nelliel Tu Odelschwanck (Nel)"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:metastacia",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "metastacia",
+          "series": null,
+          "displayName": {
+            "en": "Metastacia",
+            "it": "Metastacia"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:yhwach",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "yhwach",
+          "series": null,
+          "displayName": {
+            "en": "Yhwach",
+            "it": "Yhwach"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 25,
+          "facts": {
+            "importance": "main",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:jugram-haschwalth",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "jugram-haschwalth",
+          "series": null,
+          "displayName": {
+            "en": "Jugram Haschwalth",
+            "it": "Jugram Haschwalth"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:lille-barro",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "lille-barro",
+          "series": null,
+          "displayName": {
+            "en": "Lille Barro",
+            "it": "Lille Barro"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:gerard-valkyrie",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "gerard-valkyrie",
+          "series": null,
+          "displayName": {
+            "en": "Gerard Valkyrie",
+            "it": "Gerard Valkyrie"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:pernida-parnkgjas",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "pernida-parnkgjas",
+          "series": null,
+          "displayName": {
+            "en": "Pernida Parnkgjas",
+            "it": "Pernida Parnkgjas"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
           },
           "renderedLocales": [],
           "scheduledLocales": [],
