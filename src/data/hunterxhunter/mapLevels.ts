@@ -34,7 +34,7 @@ export const hxhMapLevels: MapLevel[] = [
   },
 
   /* ===================== SOTTO-MAPPE (drill-down) ===================== */
-  // Schemi concettuali: posizioni indicative su un piano dedicato. Si aprono
+  // Mappe SVG originali (scripts/mapgen/hxh.py) su un piano dedicato. Si aprono
   // con doppio click sul pin "trigger" della world map (subMapLevelId).
   {
     id: 'hxh-map-heavens-arena',
@@ -48,6 +48,7 @@ export const hxhMapLevels: MapLevel[] = [
     },
     parentLevelId: 'hxh-map-world',
     triggerLocationId: 'loc-hxh-heavens-arena',
+    backgroundAssetId: 'hxh-heavens-arena-map',
     width: 1000,
     height: 1400,
   },
@@ -63,6 +64,7 @@ export const hxhMapLevels: MapLevel[] = [
     },
     parentLevelId: 'hxh-map-world',
     triggerLocationId: 'loc-hxh-zoldyck-estate',
+    backgroundAssetId: 'hxh-zoldyck-estate-map',
     width: 1200,
     height: 900,
   },
@@ -78,6 +80,7 @@ export const hxhMapLevels: MapLevel[] = [
     },
     parentLevelId: 'hxh-map-world',
     triggerLocationId: 'loc-hxh-greed-island',
+    backgroundAssetId: 'hxh-greed-island-map',
     width: 1300,
     height: 900,
   },
@@ -93,6 +96,7 @@ export const hxhMapLevels: MapLevel[] = [
     },
     parentLevelId: 'hxh-map-world',
     triggerLocationId: 'loc-hxh-east-gorteau',
+    backgroundAssetId: 'hxh-east-gorteau-palace-map',
     width: 1200,
     height: 900,
   },

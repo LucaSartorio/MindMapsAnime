@@ -1,5 +1,6 @@
 import type { AssetReference } from '@/types';
 import { NARUTO_WORLD_MAP_SRC } from './mapConstants';
+import { originalMapAsset } from '../originalMapAssets';
 
 /**
  * Asset Naruto.
@@ -61,28 +62,29 @@ export const narutoAssets: AssetReference[] = [
       en: 'SVG placeholder with viewBox 1500 x 882.2204. Used as fallback when the reference PNG is missing.',
     },
   },
-  {
-    id: 'naruto-konoha-background-placeholder',
-    worldId: 'world-naruto',
-    name: 'Konoha sub-map background (placeholder SVG)',
-    kind: 'placeholder',
-    license: 'placeholder/CC0',
-    notes: {
-      it: 'Schema concettuale del villaggio, non corrisponde alla mappa ufficiale.',
-      en: 'Conceptual village schema, does not match the official map.',
-    },
-  },
-  {
-    id: 'naruto-village-submap-placeholder',
-    worldId: 'world-naruto',
-    name: 'Generic village sub-map background (placeholder SVG)',
-    kind: 'placeholder',
-    license: 'placeholder/CC0',
-    notes: {
-      it: 'Sfondo concettuale generico per le sotto-mappe dei villaggi. Sostituibile con asset autorizzati.',
-      en: 'Generic conceptual background for village sub-maps. Replaceable with authorized assets.',
-    },
-  },
+  /* ---------- Sotto-mappe dei villaggi: SVG originali (scripts/mapgen/naruto.py) ---------- */
+  ...(
+    [
+      ['konoha', 'Konohagakure'],
+      ['suna', 'Sunagakure'],
+      ['kiri', 'Kirigakure'],
+      ['iwa', 'Iwagakure'],
+      ['kumo', 'Kumogakure'],
+      ['ame', 'Amegakure'],
+      ['oto', 'Otogakure'],
+      ['uzu', 'Uzushiogakure'],
+      ['taki', 'Takigakure'],
+    ] as const
+  ).map(([slug, name]) =>
+    originalMapAsset({
+      id: `naruto-${slug}-map`,
+      worldId: 'world-naruto',
+      name: `Naruto · ${name}`,
+      url: `/assets/worlds/naruto/maps/naruto-${slug}.svg`,
+      script: 'scripts/mapgen/naruto.py',
+      owner: 'Masashi Kishimoto / Shueisha',
+    }),
+  ),
 
   /* ---------- Immagini villaggio (placeholder SVG locali) ---------- */
   ...villageImagePlaceholders(),

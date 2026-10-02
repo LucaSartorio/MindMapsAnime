@@ -1,4 +1,5 @@
 import type { AssetReference } from '@/types';
+import { originalMapAsset } from '../originalMapAssets';
 
 /**
  * Asset Hunter x Hunter.
@@ -51,4 +52,22 @@ export const hxhAssets: AssetReference[] = [
       en: 'Neutral world-map placeholder, used as a fallback when the reference map is unavailable.',
     },
   },
+  /* Sotto-mappe: SVG originali (scripts/mapgen/hxh.py). */
+  ...(
+    [
+      ['heavens-arena', 'Heavens Arena'],
+      ['zoldyck-estate', 'Kukuroo Mountain (Zoldyck Estate)'],
+      ['greed-island', 'Greed Island'],
+      ['east-gorteau-palace', 'East Gorteau Royal Palace'],
+    ] as const
+  ).map(([slug, name]) =>
+    originalMapAsset({
+      id: `hxh-${slug}-map`,
+      worldId: 'world-hunterxhunter',
+      name: `Hunter x Hunter · ${name}`,
+      url: `/assets/worlds/hunterxhunter/maps/hxh-${slug}.svg`,
+      script: 'scripts/mapgen/hxh.py',
+      owner: 'Yoshihiro Togashi / Shueisha',
+    }),
+  ),
 ];

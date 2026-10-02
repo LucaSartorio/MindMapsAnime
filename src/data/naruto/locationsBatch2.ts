@@ -14,8 +14,8 @@ export const narutoLocationsBatch2: Location[] = [
     name: 'Senju Compound',
     localizedName: { it: 'Residenza Senju', en: 'Senju Compound' },
     type: 'region',
-    x: 320,
-    y: 340,
+    x: 316,
+    y: 330,
     nationId: 'nation-fire',
     shortDescription: {
       it: 'Quartiere storico del clan Senju, co-fondatore di Konoha insieme agli Uchiha. Casa di Hashirama, Tobirama e in seguito di Tsunade.',
@@ -35,8 +35,8 @@ export const narutoLocationsBatch2: Location[] = [
     name: 'Konoha Orphanage',
     localizedName: { it: 'Orfanotrofio di Konoha', en: 'Konoha Orphanage' },
     type: 'landmark',
-    x: 1080,
-    y: 640,
+    x: 730,
+    y: 660,
     nationId: 'nation-fire',
     shortDescription: {
       it: 'Istituto del villaggio per i bambini rimasti orfani — molti dalla guerra. Vi crebbero figure come Kabuto prima del reclutamento nella Radice.',
