@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-02T13:14:27.393Z",
+  "generatedAt": "2026-10-02T13:42:04.543Z",
   "locales": [
     "en",
     "it"
@@ -4767,7 +4767,9 @@
           "renderedLocales": [
             "en"
           ],
-          "scheduledLocales": [],
+          "scheduledLocales": [
+            "en"
+          ],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": true,
@@ -4777,12 +4779,12 @@
               "renderId": "character-journey:dragonball:goku:part-01@en",
               "locale": "en",
               "variant": null,
-              "status": "notPublished",
+              "status": "scheduled",
               "platforms": {
-                "instagram": "notScheduled",
-                "facebook": "notScheduled",
+                "instagram": "scheduled",
+                "facebook": "scheduled",
                 "tiktok": "notScheduled",
-                "youtube": "notScheduled"
+                "youtube": "scheduled"
               }
             }
           ]
@@ -7675,8 +7677,8 @@
     "summary": {
       "rendered": 6,
       "unavailable": 5,
-      "notPublished": 6,
-      "scheduled": 0,
+      "notPublished": 5,
+      "scheduled": 1,
       "partiallyPublished": 0,
       "published": 0,
       "failed": 0
@@ -7695,12 +7697,12 @@
         "partCount": 5,
         "renderedAt": "2026-10-02T10:45:46.778Z",
         "durationSeconds": 25,
-        "publicationStatus": "notPublished",
+        "publicationStatus": "scheduled",
         "platforms": {
-          "instagram": "notScheduled",
-          "facebook": "notScheduled",
+          "instagram": "scheduled",
+          "facebook": "scheduled",
           "tiktok": "notScheduled",
-          "youtube": "notScheduled"
+          "youtube": "scheduled"
         },
         "artifact": {
           "name": "animapverse-social-render-36996948068-1",
