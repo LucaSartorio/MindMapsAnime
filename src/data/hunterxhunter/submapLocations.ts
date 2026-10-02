@@ -17,7 +17,7 @@ export const hxhSubmapLocations: Location[] = [
     localizedName: { it: 'Ingresso e atrio', en: 'Ground Floor & Lobby' },
     type: 'landmark',
     x: 500,
-    y: 1280,
+    y: 1290,
     shortDescription: {
       it: "L'ingresso della Torre Celeste, da cui ogni sfidante inizia la scalata dei 251 piani.",
       en: 'The entrance of Heavens Arena, where every challenger begins the climb of its 251 floors.',
@@ -35,7 +35,7 @@ export const hxhSubmapLocations: Location[] = [
     localizedName: { it: '200° piano', en: '200th Floor' },
     type: 'battlefield',
     x: 500,
-    y: 760,
+    y: 420,
     shortDescription: {
       it: 'Soglia del Nen: dal 200° piano i combattenti devono saper usare l\'aura. Qui Gon e Killua affrontano Gido, Sadaso e Riehlvelt.',
       en: 'The Nen threshold: from the 200th floor fighters must wield aura. Here Gon and Killua face Gido, Sadaso and Riehlvelt.',
@@ -54,7 +54,7 @@ export const hxhSubmapLocations: Location[] = [
     localizedName: { it: 'Arena del 251° piano', en: '251st Floor Arena' },
     type: 'battlefield',
     x: 500,
-    y: 280,
+    y: 196,
     shortDescription: {
       it: "L'arena più alta, riservata ai migliori: qui Gon affronta finalmente Hisoka nel loro atteso scontro.",
       en: 'The topmost arena, reserved for the best: here Gon finally faces Hisoka in their awaited bout.',
@@ -74,8 +74,8 @@ export const hxhSubmapLocations: Location[] = [
     name: 'Testing Gate',
     localizedName: { it: 'Porta della Prova', en: 'Testing Gate' },
     type: 'landmark',
-    x: 240,
-    y: 600,
+    x: 210,
+    y: 690,
     shortDescription: {
       it: "L'enorme cancello d'ingresso della tenuta, le cui ante pesano tonnellate: il vero peso che si riesce ad aprire misura la forza.",
       en: 'The estate\'s massive entrance gate, whose doors weigh tons: how much one can open measures their strength.',
@@ -94,7 +94,7 @@ export const hxhSubmapLocations: Location[] = [
     localizedName: { it: 'Alloggi dei maggiordomi', en: "Butlers' Quarters" },
     type: 'landmark',
     x: 560,
-    y: 420,
+    y: 470,
     shortDescription: {
       it: 'La dimora della servitù degli Zoldyck, dove vivono Gotoh, Canary e gli altri maggiordomi.',
       en: 'The Zoldyck servants\' lodge, home to Gotoh, Canary and the other butlers.',
@@ -112,8 +112,8 @@ export const hxhSubmapLocations: Location[] = [
     name: 'Main Residence',
     localizedName: { it: 'Residenza principale', en: 'Main Residence' },
     type: 'landmark',
-    x: 860,
-    y: 380,
+    x: 900,
+    y: 250,
     shortDescription: {
       it: 'La dimora della famiglia in cima al monte, sorvegliata dal cane da guardia Mike.',
       en: 'The family residence atop the mountain, guarded by the watchdog Mike.',
@@ -131,8 +131,8 @@ export const hxhSubmapLocations: Location[] = [
     name: 'Torture Room',
     localizedName: { it: 'Stanza delle torture', en: 'Torture Room' },
     type: 'hideout',
-    x: 940,
-    y: 620,
+    x: 1010,
+    y: 330,
     shortDescription: {
       it: 'Le segrete dove Killua è imprigionato e dove la famiglia "tempra" i propri assassini.',
       en: 'The dungeon where Killua is held and where the family "tempers" its assassins.',
@@ -152,8 +152,8 @@ export const hxhSubmapLocations: Location[] = [
     name: 'Masadora',
     localizedName: { it: 'Masadora', en: 'Masadora' },
     type: 'city',
-    x: 400,
-    y: 360,
+    x: 420,
+    y: 320,
     shortDescription: {
       it: 'La città delle carte magiche, dove i giocatori acquistano le carte-incantesimo per giocare.',
       en: 'The town of magic cards, where players buy spell cards to play.',
@@ -171,8 +171,8 @@ export const hxhSubmapLocations: Location[] = [
     name: 'Antokiba',
     localizedName: { it: 'Antokiba', en: 'Antokiba' },
     type: 'city',
-    x: 780,
-    y: 280,
+    x: 770,
+    y: 400,
     shortDescription: {
       it: 'La "città degli inizi", dove gran parte dei giocatori entra nel gioco; sede di tornei e missioni.',
       en: 'The "town of beginnings", where most players enter the game; home to tournaments and quests.',
@@ -190,8 +190,8 @@ export const hxhSubmapLocations: Location[] = [
     name: 'Soufrabi',
     localizedName: { it: 'Soufrabi', en: 'Soufrabi' },
     type: 'city',
-    x: 520,
-    y: 700,
+    x: 560,
+    y: 760,
     shortDescription: {
       it: 'Città portuale del gioco, teatro dello scontro con i pirati per la carta-bottino.',
       en: 'A port town of the game, stage of the clash with pirates over a loot card.',
@@ -209,7 +209,7 @@ export const hxhSubmapLocations: Location[] = [
     name: 'Bomber Showdown',
     localizedName: { it: 'Resa dei conti coi Bomber', en: 'Bomber Showdown' },
     type: 'battlefield',
-    x: 950,
+    x: 900,
     y: 640,
     shortDescription: {
       it: 'Il luogo dello scontro decisivo tra Gon e Genthru "il Bomber" per il controllo del gioco.',
@@ -231,7 +231,7 @@ export const hxhSubmapLocations: Location[] = [
     localizedName: { it: 'Cancello del palazzo', en: 'Palace Gate' },
     type: 'landmark',
     x: 600,
-    y: 800,
+    y: 806,
     shortDescription: {
       it: 'Il punto di ingresso degli Hunter nel palazzo del Re, dove inizia l\'incursione finale.',
       en: 'The Hunters\' entry point into the King\'s palace, where the final incursion begins.',
@@ -250,7 +250,7 @@ export const hxhSubmapLocations: Location[] = [
     localizedName: { it: 'Cortile', en: 'Courtyard' },
     type: 'battlefield',
     x: 600,
-    y: 540,
+    y: 560,
     shortDescription: {
       it: 'L\'area dove Knuckle, Shoot e Morel affrontano Menthuthuyoupi durante l\'assalto.',
       en: 'The area where Knuckle, Shoot and Morel face Menthuthuyoupi during the assault.',
@@ -269,7 +269,7 @@ export const hxhSubmapLocations: Location[] = [
     localizedName: { it: 'Sala del trono', en: 'Throne Room' },
     type: 'battlefield',
     x: 600,
-    y: 280,
+    y: 240,
     shortDescription: {
       it: 'Il cuore del palazzo, dove Netero affronta il Re Meruem nello scontro decisivo.',
       en: 'The heart of the palace, where Netero faces King Meruem in the decisive battle.',
@@ -287,8 +287,8 @@ export const hxhSubmapLocations: Location[] = [
     name: 'Gungi Chamber',
     localizedName: { it: 'Sala del Gungi', en: 'Gungi Chamber' },
     type: 'landmark',
-    x: 940,
-    y: 360,
+    x: 930,
+    y: 330,
     shortDescription: {
       it: 'La stanza in cui il Re e la cieca Komugi giocano a Gungi, fino agli ultimi istanti insieme.',
       en: 'The room where the King and the blind Komugi play Gungi, to their final moments together.',

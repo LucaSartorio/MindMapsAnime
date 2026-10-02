@@ -1,4 +1,5 @@
 import type { AssetReference } from '@/types';
+import { originalMapAsset } from '../originalMapAssets';
 
 /**
  * Asset One Piece.
@@ -228,8 +229,49 @@ const onepieceBaseAssets: AssetReference[] = [
  * `kind: 'map'` con la `url` indicata (così `WorldMapBackground` la disegna come
  * <img> invece del placeholder SVG). Altrimenti resta il placeholder.
  */
+/**
+ * Sotto-mappe senza un'immagine di riferimento: SVG ORIGINALI disegnati da
+ * AniMapVerse (`scripts/mapgen/onepiece.py`). Chiave = parte centrale dell'id
+ * `op-<chiave>-submap-placeholder`, valore = [file, nome leggibile]. Un'immagine
+ * in `ONEPIECE_SUBMAP_IMAGE_URLS` ha comunque la precedenza.
+ */
+export const ONEPIECE_ORIGINAL_SUBMAPS: Record<string, [string, string]> = {
+  totland: ['onepiece-totland.svg', 'Totto Land'],
+  dressrosa: ['onepiece-dressrosa.svg', 'Dressrosa'],
+  sabaody: ['onepiece-sabaody.svg', 'Sabaody Archipelago'],
+  marineford: ['onepiece-marineford.svg', 'Marineford'],
+  egghead: ['onepiece-egghead.svg', 'Egghead'],
+  fishman: ['onepiece-fishman-island.svg', 'Fish-Man Island'],
+  'impel-down': ['onepiece-impel-down.svg', 'Impel Down'],
+  'water-seven': ['onepiece-water-seven.svg', 'Water 7'],
+  'thriller-bark': ['onepiece-thriller-bark.svg', 'Thriller Bark'],
+  zou: ['onepiece-zou.svg', 'Zou'],
+  'punk-hazard': ['onepiece-punk-hazard.svg', 'Punk Hazard'],
+  'amazon-lily': ['onepiece-amazon-lily.svg', 'Amazon Lily'],
+  'drum-island': ['onepiece-drum-island.svg', 'Drum Island'],
+  'mary-geoise': ['onepiece-mary-geoise.svg', 'Mary Geoise'],
+  'dawn-island': ['onepiece-dawn-island.svg', 'Dawn Island'],
+  loguetown: ['onepiece-loguetown.svg', 'Loguetown'],
+  ohara: ['onepiece-ohara.svg', 'Ohara'],
+  elbaf: ['onepiece-elbaf.svg', 'Elbaf'],
+  'god-valley': ['onepiece-god-valley.svg', 'God Valley'],
+  'germa-kingdom': ['onepiece-germa-kingdom.svg', 'Germa Kingdom'],
+  space: ['onepiece-space.svg', 'Space'],
+};
+
 export const onepieceAssets: AssetReference[] = onepieceBaseAssets.map((a) => {
   const m = /^op-(.+)-submap-placeholder$/.exec(a.id);
   const url = m ? ONEPIECE_SUBMAP_IMAGE_URLS[m[1]] : undefined;
-  return url ? { ...a, kind: 'map', url } : a;
+  if (url) return { ...a, kind: 'map', url };
+  const original = m ? ONEPIECE_ORIGINAL_SUBMAPS[m[1]] : undefined;
+  return original
+    ? originalMapAsset({
+        id: a.id,
+        worldId: a.worldId,
+        name: `One Piece · ${original[1]}`,
+        url: `/assets/worlds/onepiece/maps/${original[0]}`,
+        script: 'scripts/mapgen/onepiece.py',
+        owner: 'Eiichiro Oda / Shueisha',
+      })
+    : a;
 });

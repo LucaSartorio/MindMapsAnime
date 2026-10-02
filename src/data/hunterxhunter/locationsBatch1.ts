@@ -203,7 +203,7 @@ export const hxhLocationsBatch1: Location[] = [
     name: 'Starting Point (Shiso Tree)',
     localizedName: { it: 'Punto di Partenza (Albero Shiso)', en: 'Starting Point (Shiso Tree)' },
     type: 'landmark',
-    x: 660,
+    x: 650,
     y: 470,
     shortDescription: {
       it: 'La pianura erbosa con il grande Albero Shiso dove ogni nuovo giocatore viene teletrasportato all\'ingresso nel gioco.',
@@ -223,7 +223,7 @@ export const hxhLocationsBatch1: Location[] = [
     localizedName: { it: 'Limeiro', en: 'Limeiro' },
     type: 'city',
     x: 640,
-    y: 250,
+    y: 220,
     shortDescription: {
       it: 'Capitale di Greed Island, con il Castello dei Game Master Dwun e List; vi si tiene l\'evento finale del gioco.',
       en: 'Capital of Greed Island, with the Castle of Game Masters Dwun and List; the game\'s final event is held here.',
@@ -241,7 +241,7 @@ export const hxhLocationsBatch1: Location[] = [
     name: 'Aiai',
     localizedName: { it: 'Aiai', en: 'Aiai' },
     type: 'city',
-    x: 300,
+    x: 290,
     y: 520,
     shortDescription: {
       it: 'La "Città dell\'Amore" di Greed Island.',
@@ -260,8 +260,8 @@ export const hxhLocationsBatch1: Location[] = [
     name: 'Rubicuta',
     localizedName: { it: 'Rubicuta', en: 'Rubicuta' },
     type: 'city',
-    x: 690,
-    y: 600,
+    x: 720,
+    y: 610,
     shortDescription: {
       it: 'Cittadina vicina al centro dell\'isola, hub alternativo ad Antokiba nelle prime fasi del gioco.',
       en: 'Town near the island\'s center, an early-game hub alternative to Antokiba.',
@@ -279,8 +279,8 @@ export const hxhLocationsBatch1: Location[] = [
     name: 'Dorias',
     localizedName: { it: 'Dorias', en: 'Dorias' },
     type: 'city',
-    x: 980,
-    y: 360,
+    x: 960,
+    y: 330,
     shortDescription: {
       it: 'La "Città del Gioco d\'Azzardo", con casinò dove ottenere certe carte solo scommettendo.',
       en: 'The "Gambling City", with casinos where some cards can only be won by betting.',
@@ -298,8 +298,8 @@ export const hxhLocationsBatch1: Location[] = [
     name: 'Bunzen',
     localizedName: { it: 'Bunzen', en: 'Bunzen' },
     type: 'village',
-    x: 410,
-    y: 660,
+    x: 430,
+    y: 650,
     shortDescription: {
       it: 'Piccolo villaggio dove Abengane si ritira; usa la foresta vicina per il rituale di esorcismo del Nen.',
       en: 'Small village where Abengane retreats; he uses the nearby forest for his Nen exorcism ritual.',
@@ -317,8 +317,8 @@ export const hxhLocationsBatch1: Location[] = [
     name: 'Greed Island Port',
     localizedName: { it: 'Porto di Greed Island', en: 'Greed Island Port' },
     type: 'city',
-    x: 1080,
-    y: 760,
+    x: 1110,
+    y: 720,
     shortDescription: {
       it: 'L\'unico porto dell\'isola, dimora del Capitano del Porto che custodisce l\'accesso al mare di gioco.',
       en: 'The island\'s only port, home of the Harbormaster who guards access to the game\'s sea.',
@@ -336,8 +336,8 @@ export const hxhLocationsBatch1: Location[] = [
     name: 'Badlands',
     localizedName: { it: 'Calanchi (Badlands)', en: 'Badlands' },
     type: 'region',
-    x: 1090,
-    y: 470,
+    x: 1050,
+    y: 500,
     shortDescription: {
       it: 'Regione collinare arida di pilastri di roccia infestata da mostri.',
       en: 'Arid hill region of stone pillars infested with monsters.',

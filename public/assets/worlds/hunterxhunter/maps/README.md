@@ -22,3 +22,12 @@ La mappa fornita è amatoriale ("Made by Sharpsider"). Il mondo rappresentato è
 © Yoshihiro Togashi / Shueisha. È marcata `needs_verification` e attribuita
 all'autore in `assets.ts`. Sostituiscila con un asset chiaramente licenziato
 prima di qualunque pubblicazione.
+
+## Sotto-mappe (SVG originali)
+
+Torre Celeste (1000 × 1400), Monte Kukuroo (1200 × 900), Greed Island
+(1300 × 900) e Palazzo di East Gorteau (1200 × 900) sono **mappe SVG originali**
+disegnate da AniMapVerse (`hxh-<slug>.svg`), generate da
+`python3 scripts/mapgen/hxh.py` (deterministico; riscrive anche x/y dei pin delle
+sotto-mappe in `src/data/hunterxhunter/`). Licenza del disegno: CC0; il mondo
+resta © Yoshihiro Togashi / Shueisha.

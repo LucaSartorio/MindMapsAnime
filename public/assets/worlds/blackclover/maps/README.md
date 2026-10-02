@@ -33,11 +33,15 @@ public/assets/worlds/blackclover/maps/blackclover-world-map.jpg
   con il percorso atteso; i pin restano comunque cliccabili sopra il
   placeholder.
 
-## Sotto-mappa Inframondo
+## Sotto-mappe (SVG originali)
 
-Il map level `bc-map-underworld` (viewBox **1200 × 1400**) usa un placeholder
-SVG generato localmente: è uno schema dei sette livelli del regno dei diavoli,
-non una mappa geografica. Non è previsto un file immagine.
+Le cinque sotto-mappe — Capitale Reale, fortezza del Regno di Spade, Regno di
+Heart, Regno di Diamond (1200 × 900) e Inframondo (1200 × 1400, schema a livelli
+del regno dei demoni) — sono **mappe SVG originali** disegnate da AniMapVerse
+nello stile pergamena della world map: `blackclover-<slug>.svg`, generate da
+`python3 scripts/mapgen/blackclover.py` (deterministico; riscrive anche x/y dei
+pin delle sotto-mappe in `src/data/blackclover/`). Licenza del disegno: CC0;
+il mondo resta © Yūki Tabata / Shueisha.
 
 ## Copyright
 

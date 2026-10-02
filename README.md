@@ -61,11 +61,25 @@ componenti.
 - **One Piece** — Totland, Alabasta, Wano, Skypiea, Dressrosa, Sabaody,
   Marineford, Egghead, Fishman Island.
 - **Dragon Ball** — Terra (world map), Universo, Namecc, Spazio (GT).
+- **One Piece** (altre sotto-mappe) — Impel Down, Enies Lobby, Water 7, Thriller
+  Bark, Zou, Punk Hazard, Amazon Lily, Drum, Marijoa, Dawn, Loguetown, Jaya,
+  Ohara, Elbaf, God Valley, Germa, Spazio.
+- **Black Clover** — Capitale Reale, fortezza di Spade, Regno di Heart, Regno di
+  Diamond, Inframondo.
 - **Bleach** — I Tre Mondi (world map: Soul Society, Mondo dei Vivi, Hueco
   Mundo, Dangai, Reiōkyū, Inferno), Karakura, Seireitei, Hueco Mundo (Las
   Noches), Reiōkyū. Mappe **SVG originali** ricostruite da noi
   (`scripts/bleach-maps.py` → `public/assets/worlds/bleach/maps/`), nessuna
   immagine ufficiale.
+
+**Ogni livello ha una mappa.** Dove l'opera non offre una mappa utilizzabile,
+la sotto-mappa è un **SVG originale** disegnato da AniMapVerse (42 mappe:
+Naruto 9, Hunter x Hunter 4, One Piece 21, Dragon Ball 3, Black Clover 5),
+generato da `scripts/mapgen/<mondo>.py` su un toolkit comune
+(`scripts/mapgen/kit.py`: coste, foreste, montagne, edifici, cartigli). Gli script
+sono deterministici e riscrivono anche le coordinate dei pin, così pin e disegno
+restano allineati: `python3 scripts/mapgen/naruto.py` (idem `hxh`, `onepiece`,
+`dragonball`, `blackclover`).
 
 **Lingue UI:** italiano (default) e inglese — selezionabili dall'interfaccia.
 

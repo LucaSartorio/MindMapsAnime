@@ -1,0 +1,336 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<title>Impel Down · インペルダウン</title>
+<!-- Ricostruzione originale AniMapVerse · CC0 · non è materiale ufficiale di One Piece -->
+<rect width="1200" height="800" fill="#123a5a"/>
+<rect width="1200" height="70" fill="#62b6dc"/>
+<path d="M0,64 q22,-10 45,0 t45,0" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+<path d="M90,64 q22,-10 45,0 t45,0" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+<path d="M180,64 q22,-10 45,0 t45,0" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+<path d="M270,64 q22,-10 45,0 t45,0" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+<path d="M360,64 q22,-10 45,0 t45,0" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+<path d="M450,64 q22,-10 45,0 t45,0" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+<path d="M540,64 q22,-10 45,0 t45,0" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+<path d="M630,64 q22,-10 45,0 t45,0" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+<path d="M720,64 q22,-10 45,0 t45,0" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+<path d="M810,64 q22,-10 45,0 t45,0" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+<path d="M900,64 q22,-10 45,0 t45,0" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+<path d="M990,64 q22,-10 45,0 t45,0" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+<path d="M1080,64 q22,-10 45,0 t45,0" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+<path d="M1170,64 q22,-10 45,0 t45,0" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+<rect x="520" y="20" width="160" height="80" fill="#5a5a62" stroke="#2a1f14" stroke-width="2"/>
+<path d="M520,20 L600,0 L680,20 Z" fill="#3a3a42" stroke="#2a1f14" stroke-width="2"/>
+<path d="M585,100 v-30 a15,15 0 0,1 30,0 v30" fill="#1a1a1a"/>
+<rect x="900" y="0" width="22" height="64" fill="#8a8a92" stroke="#2a1f14" stroke-width="1.4"/><rect x="980" y="0" width="22" height="64" fill="#8a8a92" stroke="#2a1f14" stroke-width="1.4"/>
+<text x="951" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="normal" fill="#ffffff" text-anchor="middle" font-style="italic" stroke="#123a5a" stroke-width="3" stroke-linejoin="round" paint-order="stroke">Gates of Justice</text>
+<rect x="250" y="154" width="700" height="82" fill="#b03a2e" stroke="#2a1f14" stroke-width="2.4"/>
+<rect x="250" y="154" width="700" height="82" fill="url(#seaG)" opacity="0"/>
+<text x="270" y="180" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="bold" fill="#ffffff" text-anchor="start">LV1 · Crimson Hell</text>
+<text x="930" y="180" font-family="'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif CJK JP', 'Noto Serif JP', serif" font-size="17" font-weight="normal" fill="#ffffff" text-anchor="end">紅蓮地獄</text>
+<path d="M300,230.0 l6,-28 l6,28 Z" fill="#7a1a14"/>
+<path d="M340,230.0 l6,-28 l6,28 Z" fill="#7a1a14"/>
+<path d="M380,230.0 l6,-28 l6,28 Z" fill="#7a1a14"/>
+<path d="M420,230.0 l6,-28 l6,28 Z" fill="#7a1a14"/>
+<path d="M460,230.0 l6,-28 l6,28 Z" fill="#7a1a14"/>
+<path d="M500,230.0 l6,-28 l6,28 Z" fill="#7a1a14"/>
+<path d="M540,230.0 l6,-28 l6,28 Z" fill="#7a1a14"/>
+<path d="M580,230.0 l6,-28 l6,28 Z" fill="#7a1a14"/>
+<path d="M620,230.0 l6,-28 l6,28 Z" fill="#7a1a14"/>
+<path d="M660,230.0 l6,-28 l6,28 Z" fill="#7a1a14"/>
+<path d="M700,230.0 l6,-28 l6,28 Z" fill="#7a1a14"/>
+<path d="M740,230.0 l6,-28 l6,28 Z" fill="#7a1a14"/>
+<path d="M780,230.0 l6,-28 l6,28 Z" fill="#7a1a14"/>
+<path d="M820,230.0 l6,-28 l6,28 Z" fill="#7a1a14"/>
+<path d="M860,230.0 l6,-28 l6,28 Z" fill="#7a1a14"/>
+<path d="M900,230.0 l6,-28 l6,28 Z" fill="#7a1a14"/>
+<rect x="250" y="244" width="700" height="82" fill="#8a6a3a" stroke="#2a1f14" stroke-width="2.4"/>
+<rect x="250" y="244" width="700" height="82" fill="url(#seaG)" opacity="0"/>
+<text x="270" y="270" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="bold" fill="#ffffff" text-anchor="start">LV2 · Wild Beast Hell</text>
+<text x="930" y="270" font-family="'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif CJK JP', 'Noto Serif JP', serif" font-size="17" font-weight="normal" fill="#ffffff" text-anchor="end">猛獣地獄</text>
+<path d="M320,316.0 q10,-24 30,-16 q14,-8 22,6 q-8,14 -26,14 Z" fill="#4a3a2a"/>
+<path d="M440,316.0 q10,-24 30,-16 q14,-8 22,6 q-8,14 -26,14 Z" fill="#4a3a2a"/>
+<path d="M560,316.0 q10,-24 30,-16 q14,-8 22,6 q-8,14 -26,14 Z" fill="#4a3a2a"/>
+<path d="M680,316.0 q10,-24 30,-16 q14,-8 22,6 q-8,14 -26,14 Z" fill="#4a3a2a"/>
+<path d="M800,316.0 q10,-24 30,-16 q14,-8 22,6 q-8,14 -26,14 Z" fill="#4a3a2a"/>
+<rect x="250" y="334" width="700" height="82" fill="#d9b46a" stroke="#2a1f14" stroke-width="2.4"/>
+<rect x="250" y="334" width="700" height="82" fill="url(#seaG)" opacity="0"/>
+<text x="270" y="360" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="bold" fill="#1a2a3a" text-anchor="start">LV3 · Starvation Hell</text>
+<text x="930" y="360" font-family="'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif CJK JP', 'Noto Serif JP', serif" font-size="17" font-weight="normal" fill="#1a2a3a" text-anchor="end">飢餓地獄</text>
+<g fill="#8a6a2a">
+<circle cx="842" cy="402.4" r="1.2" opacity="0.20"/>
+<circle cx="663.8" cy="406.6" r="0.9" opacity="0.19"/>
+<circle cx="764.3" cy="402.9" r="1.5" opacity="0.35"/>
+<circle cx="412.8" cy="410.9" r="0.7" opacity="0.22"/>
+<circle cx="691.1" cy="390.8" r="1" opacity="0.29"/>
+<circle cx="563.5" cy="377.6" r="1.3" opacity="0.33"/>
+<circle cx="873.4" cy="365.6" r="0.8" opacity="0.25"/>
+<circle cx="556.7" cy="373" r="0.9" opacity="0.20"/>
+<circle cx="889" cy="407.3" r="1.3" opacity="0.16"/>
+<circle cx="342.3" cy="408" r="0.8" opacity="0.17"/>
+<circle cx="690.9" cy="406.8" r="1.4" opacity="0.37"/>
+<circle cx="901.1" cy="395.1" r="1.3" opacity="0.32"/>
+<circle cx="460.2" cy="374.9" r="0.9" opacity="0.34"/>
+<circle cx="278.2" cy="391.4" r="1.3" opacity="0.19"/>
+<circle cx="322.2" cy="410.7" r="1.2" opacity="0.24"/>
+<circle cx="293.4" cy="403.2" r="1.2" opacity="0.18"/>
+<circle cx="342.5" cy="382.9" r="1.5" opacity="0.35"/>
+<circle cx="777.7" cy="376.8" r="1.2" opacity="0.40"/>
+<circle cx="282" cy="377" r="1.1" opacity="0.36"/>
+<circle cx="852" cy="406.3" r="0.9" opacity="0.30"/>
+<circle cx="385.2" cy="373.7" r="1.1" opacity="0.39"/>
+<circle cx="611.2" cy="387.8" r="1.1" opacity="0.20"/>
+<circle cx="673.3" cy="407.2" r="1" opacity="0.23"/>
+<circle cx="793.2" cy="387.1" r="0.9" opacity="0.30"/>
+<circle cx="338" cy="367.4" r="1.3" opacity="0.36"/>
+<circle cx="476.7" cy="364.4" r="1.4" opacity="0.39"/>
+<circle cx="614" cy="394" r="1.1" opacity="0.25"/>
+<circle cx="430.4" cy="393.6" r="1.3" opacity="0.37"/>
+<circle cx="523.2" cy="374.5" r="0.6" opacity="0.21"/>
+<circle cx="854" cy="377.8" r="1.1" opacity="0.37"/>
+<circle cx="325.5" cy="400.2" r="1" opacity="0.19"/>
+<circle cx="725.9" cy="366.5" r="1" opacity="0.35"/>
+<circle cx="381.6" cy="393.2" r="0.7" opacity="0.26"/>
+<circle cx="429.9" cy="381.7" r="1.5" opacity="0.26"/>
+<circle cx="300" cy="369.9" r="0.8" opacity="0.25"/>
+<circle cx="572.2" cy="383.2" r="1.5" opacity="0.30"/>
+<circle cx="576.2" cy="374.2" r="1.4" opacity="0.24"/>
+<circle cx="684.8" cy="377.7" r="1.6" opacity="0.31"/>
+<circle cx="691.7" cy="403.9" r="1" opacity="0.27"/>
+<circle cx="830.9" cy="364.9" r="0.7" opacity="0.29"/>
+<circle cx="628.2" cy="377.1" r="1.1" opacity="0.23"/>
+<circle cx="564.8" cy="376.7" r="0.9" opacity="0.36"/>
+<circle cx="487.8" cy="388.8" r="0.6" opacity="0.36"/>
+<circle cx="726.9" cy="370" r="1.5" opacity="0.17"/>
+<circle cx="275.5" cy="399.1" r="0.7" opacity="0.29"/>
+<circle cx="417" cy="378.9" r="0.7" opacity="0.22"/>
+<circle cx="735" cy="398.5" r="1.6" opacity="0.19"/>
+<circle cx="559.8" cy="387.6" r="1.3" opacity="0.15"/>
+<circle cx="296.6" cy="382.8" r="1.6" opacity="0.29"/>
+<circle cx="718.9" cy="399.1" r="1.1" opacity="0.28"/>
+<circle cx="382.2" cy="397.2" r="1" opacity="0.38"/>
+<circle cx="347.7" cy="368" r="0.8" opacity="0.18"/>
+<circle cx="591.2" cy="406.8" r="1.3" opacity="0.24"/>
+<circle cx="636.9" cy="365" r="0.6" opacity="0.39"/>
+<circle cx="673.3" cy="391.2" r="1.2" opacity="0.18"/>
+<circle cx="600.7" cy="405.6" r="0.9" opacity="0.33"/>
+<circle cx="395.6" cy="388" r="0.7" opacity="0.20"/>
+<circle cx="519.3" cy="408.1" r="1.1" opacity="0.34"/>
+<circle cx="345.1" cy="375.6" r="1.4" opacity="0.22"/>
+<circle cx="492" cy="371.9" r="1.1" opacity="0.24"/>
+<circle cx="930.2" cy="389.2" r="1.4" opacity="0.40"/>
+<circle cx="269.5" cy="375.6" r="1" opacity="0.25"/>
+<circle cx="338.9" cy="374.3" r="1.1" opacity="0.21"/>
+<circle cx="389.9" cy="398.6" r="1.3" opacity="0.30"/>
+<circle cx="287.5" cy="373.8" r="0.7" opacity="0.23"/>
+<circle cx="300.2" cy="409.2" r="1.3" opacity="0.31"/>
+<circle cx="505.7" cy="370.2" r="1.1" opacity="0.27"/>
+<circle cx="298.7" cy="401.8" r="0.7" opacity="0.25"/>
+<circle cx="825.3" cy="400.8" r="1.2" opacity="0.31"/>
+<circle cx="880.7" cy="379.1" r="0.9" opacity="0.34"/>
+<circle cx="395.9" cy="378.5" r="0.7" opacity="0.21"/>
+<circle cx="339.1" cy="372.7" r="1.3" opacity="0.36"/>
+<circle cx="558.5" cy="366" r="1.2" opacity="0.35"/>
+<circle cx="567.6" cy="409.3" r="1.4" opacity="0.27"/>
+<circle cx="466" cy="380" r="1.6" opacity="0.37"/>
+<circle cx="440.2" cy="407.8" r="1.4" opacity="0.31"/>
+<circle cx="619.2" cy="401.5" r="1.5" opacity="0.25"/>
+<circle cx="375.7" cy="410.8" r="0.8" opacity="0.35"/>
+<circle cx="818.9" cy="399.7" r="1.4" opacity="0.16"/>
+<circle cx="702.6" cy="408.3" r="1.4" opacity="0.18"/>
+<circle cx="393.5" cy="399.5" r="1.5" opacity="0.31"/>
+<circle cx="608.9" cy="369.9" r="1.6" opacity="0.34"/>
+<circle cx="278.5" cy="380.5" r="1" opacity="0.16"/>
+<circle cx="733.5" cy="393.3" r="0.9" opacity="0.34"/>
+<circle cx="399.1" cy="365.9" r="1.1" opacity="0.17"/>
+<circle cx="802.6" cy="382.8" r="1.6" opacity="0.36"/>
+<circle cx="867.4" cy="383.1" r="1.3" opacity="0.34"/>
+<circle cx="676.3" cy="397.5" r="1" opacity="0.26"/>
+<circle cx="272.7" cy="384.4" r="1.3" opacity="0.23"/>
+<circle cx="373" cy="393.8" r="1.1" opacity="0.26"/>
+<circle cx="273.9" cy="373.3" r="1.6" opacity="0.21"/>
+<circle cx="681.1" cy="404.3" r="1.4" opacity="0.29"/>
+<circle cx="579.6" cy="375.5" r="0.9" opacity="0.31"/>
+<circle cx="567.1" cy="377.6" r="1.3" opacity="0.32"/>
+<circle cx="744.7" cy="395.5" r="0.9" opacity="0.32"/>
+<circle cx="661.2" cy="378.1" r="1.4" opacity="0.21"/>
+<circle cx="524.2" cy="393.3" r="1.2" opacity="0.24"/>
+<circle cx="826.7" cy="406.5" r="0.9" opacity="0.33"/>
+<circle cx="586.5" cy="395.6" r="1.1" opacity="0.30"/>
+<circle cx="828.3" cy="377" r="1.4" opacity="0.36"/>
+<circle cx="745.4" cy="400.8" r="1.1" opacity="0.31"/>
+<circle cx="342.8" cy="384.2" r="1.3" opacity="0.34"/>
+<circle cx="287.8" cy="403.5" r="1.5" opacity="0.19"/>
+<circle cx="486" cy="389.5" r="1.2" opacity="0.23"/>
+<circle cx="549.6" cy="401.9" r="1.6" opacity="0.39"/>
+<circle cx="545" cy="404.6" r="1.1" opacity="0.28"/>
+<circle cx="319.1" cy="374.9" r="1.2" opacity="0.34"/>
+<circle cx="486.9" cy="366.1" r="1" opacity="0.20"/>
+<circle cx="387.7" cy="393.8" r="1.5" opacity="0.15"/>
+<circle cx="330.9" cy="387.4" r="0.8" opacity="0.34"/>
+<circle cx="827.5" cy="404.7" r="1.2" opacity="0.37"/>
+<circle cx="932.5" cy="387.4" r="0.6" opacity="0.16"/>
+<circle cx="372.5" cy="374.9" r="1" opacity="0.38"/>
+<circle cx="805.9" cy="366.9" r="1.2" opacity="0.30"/>
+<circle cx="381.4" cy="380" r="1.6" opacity="0.27"/>
+<circle cx="598.1" cy="389.1" r="1.4" opacity="0.26"/>
+<circle cx="449" cy="405.6" r="1.6" opacity="0.27"/>
+<circle cx="645.8" cy="364.9" r="1.2" opacity="0.20"/>
+<circle cx="266.9" cy="385.1" r="1.5" opacity="0.29"/>
+<circle cx="463.5" cy="403.3" r="0.8" opacity="0.31"/>
+<circle cx="725.9" cy="381.6" r="1.5" opacity="0.39"/>
+<circle cx="309" cy="383.2" r="1.2" opacity="0.39"/>
+<circle cx="383.8" cy="377.8" r="0.9" opacity="0.28"/>
+<circle cx="505.1" cy="398.8" r="1" opacity="0.24"/>
+<circle cx="514.2" cy="389.8" r="1.4" opacity="0.30"/>
+<circle cx="508.6" cy="384.7" r="1.5" opacity="0.34"/>
+<circle cx="374.7" cy="398.2" r="1.2" opacity="0.38"/>
+<circle cx="683.8" cy="404.7" r="1.2" opacity="0.34"/>
+<circle cx="530.6" cy="370.2" r="1.1" opacity="0.23"/>
+<circle cx="397.5" cy="405.9" r="1" opacity="0.38"/>
+<circle cx="557.5" cy="409" r="0.7" opacity="0.25"/>
+<circle cx="420.2" cy="383.8" r="1" opacity="0.27"/>
+<circle cx="492.7" cy="397.7" r="1.4" opacity="0.19"/>
+<circle cx="656.3" cy="397.5" r="1.1" opacity="0.28"/>
+<circle cx="712.7" cy="372.8" r="1.1" opacity="0.26"/>
+<circle cx="935.4" cy="411.1" r="1.3" opacity="0.39"/>
+<circle cx="531.4" cy="397" r="1.5" opacity="0.32"/>
+<circle cx="498.6" cy="388.8" r="0.8" opacity="0.20"/>
+<circle cx="369.8" cy="402.4" r="1.5" opacity="0.23"/>
+<circle cx="656.2" cy="366.9" r="1.3" opacity="0.21"/>
+<circle cx="713.9" cy="389.3" r="1.3" opacity="0.37"/>
+<circle cx="664.5" cy="394.7" r="0.7" opacity="0.33"/>
+<circle cx="657.6" cy="370.1" r="0.7" opacity="0.22"/>
+<circle cx="808.1" cy="370.9" r="1.1" opacity="0.24"/>
+<circle cx="657.9" cy="375.8" r="0.6" opacity="0.18"/>
+<circle cx="800.1" cy="378.2" r="0.6" opacity="0.18"/>
+<circle cx="787" cy="411.9" r="0.8" opacity="0.33"/>
+<circle cx="635.4" cy="385.1" r="1.1" opacity="0.23"/>
+<circle cx="839.2" cy="394.9" r="1.2" opacity="0.38"/>
+<circle cx="278.5" cy="405.7" r="0.8" opacity="0.25"/>
+<circle cx="285.2" cy="404.8" r="1.4" opacity="0.24"/>
+<circle cx="578.8" cy="393.8" r="1.2" opacity="0.40"/>
+<circle cx="564.5" cy="371.2" r="0.8" opacity="0.33"/>
+<circle cx="462.6" cy="394.4" r="0.9" opacity="0.18"/>
+<circle cx="321.6" cy="387" r="1.6" opacity="0.27"/>
+<circle cx="338.5" cy="386.7" r="1.5" opacity="0.36"/>
+<circle cx="531" cy="384.5" r="0.7" opacity="0.31"/>
+<circle cx="756.3" cy="372.1" r="1.5" opacity="0.20"/>
+<circle cx="507.3" cy="400.3" r="1.3" opacity="0.21"/>
+<circle cx="399.8" cy="407.3" r="0.7" opacity="0.32"/>
+</g>
+<rect x="250" y="424" width="700" height="82" fill="#e8642a" stroke="#2a1f14" stroke-width="2.4"/>
+<rect x="250" y="424" width="700" height="82" fill="url(#seaG)" opacity="0"/>
+<text x="270" y="450" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="bold" fill="#ffffff" text-anchor="start">LV4 · Blazing Hell</text>
+<text x="930" y="450" font-family="'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif CJK JP', 'Noto Serif JP', serif" font-size="17" font-weight="normal" fill="#ffffff" text-anchor="end">焦熱地獄</text>
+<path d="M290,502.0 q8,-30 16,0 q-8,-14 -16,0 Z" fill="#ffd23a"/>
+<path d="M346,502.0 q8,-30 16,0 q-8,-14 -16,0 Z" fill="#ffd23a"/>
+<path d="M402,502.0 q8,-30 16,0 q-8,-14 -16,0 Z" fill="#ffd23a"/>
+<path d="M458,502.0 q8,-30 16,0 q-8,-14 -16,0 Z" fill="#ffd23a"/>
+<path d="M514,502.0 q8,-30 16,0 q-8,-14 -16,0 Z" fill="#ffd23a"/>
+<path d="M570,502.0 q8,-30 16,0 q-8,-14 -16,0 Z" fill="#ffd23a"/>
+<path d="M626,502.0 q8,-30 16,0 q-8,-14 -16,0 Z" fill="#ffd23a"/>
+<path d="M682,502.0 q8,-30 16,0 q-8,-14 -16,0 Z" fill="#ffd23a"/>
+<path d="M738,502.0 q8,-30 16,0 q-8,-14 -16,0 Z" fill="#ffd23a"/>
+<path d="M794,502.0 q8,-30 16,0 q-8,-14 -16,0 Z" fill="#ffd23a"/>
+<path d="M850,502.0 q8,-30 16,0 q-8,-14 -16,0 Z" fill="#ffd23a"/>
+<path d="M906,502.0 q8,-30 16,0 q-8,-14 -16,0 Z" fill="#ffd23a"/>
+<rect x="250" y="492" width="700" height="10" fill="#ff8a2a"/>
+<rect x="250" y="519" width="700" height="82" fill="#bfe0f0" stroke="#2a1f14" stroke-width="2.4"/>
+<rect x="250" y="519" width="700" height="82" fill="url(#seaG)" opacity="0"/>
+<text x="270" y="545" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="bold" fill="#1a2a3a" text-anchor="start">LV5 · Freezing Hell</text>
+<text x="930" y="545" font-family="'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif CJK JP', 'Noto Serif JP', serif" font-size="17" font-weight="normal" fill="#1a2a3a" text-anchor="end">極寒地獄</text>
+<path d="M290,553.0 l6,26 l6,-26" fill="#ffffff" stroke="#8ac8e0" stroke-width="1"/>
+<path d="M338,553.0 l6,26 l6,-26" fill="#ffffff" stroke="#8ac8e0" stroke-width="1"/>
+<path d="M386,553.0 l6,26 l6,-26" fill="#ffffff" stroke="#8ac8e0" stroke-width="1"/>
+<path d="M434,553.0 l6,26 l6,-26" fill="#ffffff" stroke="#8ac8e0" stroke-width="1"/>
+<path d="M482,553.0 l6,26 l6,-26" fill="#ffffff" stroke="#8ac8e0" stroke-width="1"/>
+<path d="M530,553.0 l6,26 l6,-26" fill="#ffffff" stroke="#8ac8e0" stroke-width="1"/>
+<path d="M578,553.0 l6,26 l6,-26" fill="#ffffff" stroke="#8ac8e0" stroke-width="1"/>
+<path d="M626,553.0 l6,26 l6,-26" fill="#ffffff" stroke="#8ac8e0" stroke-width="1"/>
+<path d="M674,553.0 l6,26 l6,-26" fill="#ffffff" stroke="#8ac8e0" stroke-width="1"/>
+<path d="M722,553.0 l6,26 l6,-26" fill="#ffffff" stroke="#8ac8e0" stroke-width="1"/>
+<path d="M770,553.0 l6,26 l6,-26" fill="#ffffff" stroke="#8ac8e0" stroke-width="1"/>
+<path d="M818,553.0 l6,26 l6,-26" fill="#ffffff" stroke="#8ac8e0" stroke-width="1"/>
+<path d="M866,553.0 l6,26 l6,-26" fill="#ffffff" stroke="#8ac8e0" stroke-width="1"/>
+<path d="M914,553.0 l6,26 l6,-26" fill="#ffffff" stroke="#8ac8e0" stroke-width="1"/>
+<rect x="250" y="645" width="700" height="120" fill="#2a2a33" stroke="#2a1f14" stroke-width="2.4"/>
+<rect x="250" y="645" width="700" height="120" fill="url(#seaG)" opacity="0"/>
+<text x="270" y="671" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="bold" fill="#ffffff" text-anchor="start">LV6 · Eternal Hell</text>
+<text x="930" y="671" font-family="'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif CJK JP', 'Noto Serif JP', serif" font-size="17" font-weight="normal" fill="#ffffff" text-anchor="end">無限地獄</text>
+<rect x="310" y="685" width="60" height="64" fill="none" stroke="#8a8a92" stroke-width="2"/>
+<path d="M322,685 v64" stroke="#8a8a92" stroke-width="1.4"/>
+<path d="M334,685 v64" stroke="#8a8a92" stroke-width="1.4"/>
+<path d="M346,685 v64" stroke="#8a8a92" stroke-width="1.4"/>
+<path d="M358,685 v64" stroke="#8a8a92" stroke-width="1.4"/>
+<rect x="406" y="685" width="60" height="64" fill="none" stroke="#8a8a92" stroke-width="2"/>
+<path d="M418,685 v64" stroke="#8a8a92" stroke-width="1.4"/>
+<path d="M430,685 v64" stroke="#8a8a92" stroke-width="1.4"/>
+<path d="M442,685 v64" stroke="#8a8a92" stroke-width="1.4"/>
+<path d="M454,685 v64" stroke="#8a8a92" stroke-width="1.4"/>
+<rect x="502" y="685" width="60" height="64" fill="none" stroke="#8a8a92" stroke-width="2"/>
+<path d="M514,685 v64" stroke="#8a8a92" stroke-width="1.4"/>
+<path d="M526,685 v64" stroke="#8a8a92" stroke-width="1.4"/>
+<path d="M538,685 v64" stroke="#8a8a92" stroke-width="1.4"/>
+<path d="M550,685 v64" stroke="#8a8a92" stroke-width="1.4"/>
+<rect x="598" y="685" width="60" height="64" fill="none" stroke="#8a8a92" stroke-width="2"/>
+<path d="M610,685 v64" stroke="#8a8a92" stroke-width="1.4"/>
+<path d="M622,685 v64" stroke="#8a8a92" stroke-width="1.4"/>
+<path d="M634,685 v64" stroke="#8a8a92" stroke-width="1.4"/>
+<path d="M646,685 v64" stroke="#8a8a92" stroke-width="1.4"/>
+<rect x="694" y="685" width="60" height="64" fill="none" stroke="#8a8a92" stroke-width="2"/>
+<path d="M706,685 v64" stroke="#8a8a92" stroke-width="1.4"/>
+<path d="M718,685 v64" stroke="#8a8a92" stroke-width="1.4"/>
+<path d="M730,685 v64" stroke="#8a8a92" stroke-width="1.4"/>
+<path d="M742,685 v64" stroke="#8a8a92" stroke-width="1.4"/>
+<rect x="790" y="685" width="60" height="64" fill="none" stroke="#8a8a92" stroke-width="2"/>
+<path d="M802,685 v64" stroke="#8a8a92" stroke-width="1.4"/>
+<path d="M814,685 v64" stroke="#8a8a92" stroke-width="1.4"/>
+<path d="M826,685 v64" stroke="#8a8a92" stroke-width="1.4"/>
+<path d="M838,685 v64" stroke="#8a8a92" stroke-width="1.4"/>
+<rect x="886" y="685" width="60" height="64" fill="none" stroke="#8a8a92" stroke-width="2"/>
+<path d="M898,685 v64" stroke="#8a8a92" stroke-width="1.4"/>
+<path d="M910,685 v64" stroke="#8a8a92" stroke-width="1.4"/>
+<path d="M922,685 v64" stroke="#8a8a92" stroke-width="1.4"/>
+<path d="M934,685 v64" stroke="#8a8a92" stroke-width="1.4"/>
+<rect x="586" y="100" width="28" height="660" fill="#1a1a22" opacity="0.35"/>
+<path d="M950,612 h40 a28,28 0 0,1 0,56 h-40" fill="#f2a6c0" stroke="#2a1f14" stroke-width="2"/>
+<ellipse cx="930" cy="640" rx="130" ry="36" fill="#f6c6e0" stroke="#2a1f14" stroke-width="2.2"/>
+<text x="960" y="668" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="bold" fill="#7a1a4a" text-anchor="middle" stroke="#f6c6e0" stroke-width="3" stroke-linejoin="round" paint-order="stroke">LV5.5 · Newkama Land</text>
+<circle cx="118.1" cy="169.6" r="2.8" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<circle cx="139" cy="343.9" r="4.9" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<circle cx="134.9" cy="563.9" r="4.7" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<circle cx="48.8" cy="528.3" r="2" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<circle cx="138.8" cy="355.4" r="2.9" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<circle cx="61.7" cy="197.3" r="2.2" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<circle cx="77.6" cy="377.8" r="3" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<circle cx="72.6" cy="220.8" r="2.5" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<circle cx="155.7" cy="332.4" r="2.3" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<circle cx="219.3" cy="324.1" r="3.8" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<circle cx="113.9" cy="329" r="4.3" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<circle cx="172.4" cy="189.9" r="4.4" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<circle cx="153.7" cy="318.6" r="2" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<circle cx="206.2" cy="624" r="2.1" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<circle cx="165.2" cy="706.2" r="2.2" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<circle cx="120.4" cy="487.5" r="4.5" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<circle cx="53.2" cy="279.5" r="3.9" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<circle cx="195.2" cy="235" r="3.1" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<circle cx="214.3" cy="419" r="4.8" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<circle cx="98.8" cy="318.4" r="2.8" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<circle cx="156" cy="475.4" r="3.8" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<circle cx="139.1" cy="561.5" r="2.2" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<circle cx="93.7" cy="350.6" r="2.3" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<circle cx="195.6" cy="727.2" r="3.6" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<circle cx="96.1" cy="237.3" r="2.8" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<circle cx="138.9" cy="316.1" r="4.4" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<circle cx="70" cy="161.4" r="4.3" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<circle cx="50.2" cy="397.9" r="4.9" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<circle cx="131.7" cy="209.2" r="4" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<circle cx="77.8" cy="576.8" r="4.6" fill="none" stroke="#bfe8ff" stroke-width="1" opacity="0.5"/>
+<text x="120" y="400" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="normal" fill="#bfe8ff" text-anchor="middle" font-style="italic" transform="rotate(-90 120 400)">Calm Belt</text>
+<g stroke="#5a3a1a" stroke-width="3" stroke-linejoin="round">
+<path d="M41.1,24.9 L8,24.9 L21.2,62.9 L8,85.1 L41.1,85.1 Z" fill="#c5b99a"/>
+<path d="M485.1,24.9 L518.2,24.9 L504.9,62.9 L518.2,85.1 L485.1,85.1 Z" fill="#c5b99a"/>
+<path d="M41.1,9.9 Q263.1,-0.9 485.1,9.9 L485.1,70.1 Q263.1,59.3 41.1,70.1 Z" fill="#f1e2bc"/>
+</g>
+<text x="263.1" y="37.8" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="bold" fill="#4a2a10" text-anchor="middle" letter-spacing="3">Impel Down</text>
+<text x="263.1" y="58" font-family="Georgia, 'Times New Roman', serif" font-size="12.6" font-weight="normal" fill="#4a2a10" text-anchor="middle" letter-spacing="2" font-style="italic" opacity="0.85">Grande prigione sottomarina · Great Underwater Prison</text>
+</svg>

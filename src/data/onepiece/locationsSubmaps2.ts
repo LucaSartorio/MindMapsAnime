@@ -14,8 +14,8 @@ export const onepieceLocationsSubmaps2: Location[] = [
     name: 'Human Auctioning House',
     localizedName: { it: "Casa d'Aste Umane", en: 'Human Auctioning House' },
     type: 'landmark',
-    x: 360,
-    y: 300,
+    x: 213,
+    y: 570,
     shortDescription: {
       it: "Il mercato di schiavi del Grove 1, gestito sotto la protezione dei Nobili Mondiali: qui Rufy colpisce il Drago Celeste Saint Charloss per salvare la sirena Camie.",
       en: "The slave market of Grove 1, run under the World Nobles' protection: here Luffy punches the Celestial Dragon Saint Charloss to save the mermaid Camie.",
@@ -34,8 +34,8 @@ export const onepieceLocationsSubmaps2: Location[] = [
     name: "Shakky's Rip-off Bar",
     localizedName: { it: 'Bar di Shakky', en: "Shakky's Rip-off Bar" },
     type: 'landmark',
-    x: 600,
-    y: 250,
+    x: 199,
+    y: 315,
     shortDescription: {
       it: "Il bar del Grove 13, nella zona senza legge, gestito da Shakky: qui la ciurma incontra Silvers Rayleigh, l'ex vicecapitano di Roger.",
       en: "The bar of Grove 13, in the lawless area, run by Shakky: here the crew meets Silvers Rayleigh, Roger's former first mate.",
@@ -54,8 +54,8 @@ export const onepieceLocationsSubmaps2: Location[] = [
     name: 'Sabaody Park',
     localizedName: { it: 'Sabaody Park', en: 'Sabaody Park' },
     type: 'landmark',
-    x: 470,
-    y: 470,
+    x: 798,
+    y: 164,
     shortDescription: {
       it: "Il grande parco di divertimenti dell'arcipelago, attrazione turistica costruita tra le radici delle mangrovie giganti.",
       en: "The archipelago's great amusement park, a tourist attraction built among the roots of the giant mangroves.",
@@ -73,8 +73,8 @@ export const onepieceLocationsSubmaps2: Location[] = [
     name: 'Grove 41 — coating dock',
     localizedName: { it: 'Grove 41 — molo del rivestimento', en: 'Grove 41 — coating dock' },
     type: 'landmark',
-    x: 760,
-    y: 430,
+    x: 1003,
+    y: 295,
     shortDescription: {
       it: "Il molo dove Rayleigh riveste la Thousand Sunny con la resina per la discesa sottomarina, e dove la ciurma viene dispersa da Kuma e dai Pacifista.",
       en: "The dock where Rayleigh coats the Thousand Sunny with resin for the underwater descent, and where the crew is scattered by Kuma and the Pacifistas.",
@@ -93,8 +93,8 @@ export const onepieceLocationsSubmaps2: Location[] = [
     name: 'Marine Base (lawful groves)',
     localizedName: { it: 'Base della Marina (boschi legali)', en: 'Marine Base (lawful groves)' },
     type: 'hideout',
-    x: 950,
-    y: 250,
+    x: 626,
+    y: 685,
     shortDescription: {
       it: "La metà 'legale' dell'arcipelago (Grove 30-69), sorvegliata dalla Marina, da cui piombano l'ammiraglio Kizaru e i cyborg Pacifista.",
       en: "The 'lawful' half of the archipelago (Groves 30-69), patrolled by the Marines, from which Admiral Kizaru and the Pacifista cyborgs descend.",
@@ -116,7 +116,7 @@ export const onepieceLocationsSubmaps2: Location[] = [
     localizedName: { it: "Patibolo dell'esecuzione", en: 'Execution Platform' },
     type: 'battlefield',
     x: 600,
-    y: 250,
+    y: 290,
     shortDescription: {
       it: "L'alto patibolo al centro di Marineford su cui è incatenato Portgas D. Ace, cuore della Guerra al Vertice e luogo della sua morte.",
       en: "The high platform at the center of Marineford where Portgas D. Ace is chained, the heart of the Summit War and the place of his death.",
@@ -136,7 +136,7 @@ export const onepieceLocationsSubmaps2: Location[] = [
     localizedName: { it: 'Piazza Oris', en: 'Oris Plaza' },
     type: 'battlefield',
     x: 600,
-    y: 470,
+    y: 400,
     shortDescription: {
       it: "L'ampia piazza tra il quartier generale e la baia, principale campo di battaglia dello scontro tra Marina e Pirati di Barbabianca.",
       en: "The wide plaza between the headquarters and the bay, the main battlefield of the clash between the Marines and the Whitebeard Pirates.",
@@ -156,7 +156,7 @@ export const onepieceLocationsSubmaps2: Location[] = [
     localizedName: { it: 'Quartier Generale della Marina', en: 'Marine Headquarters' },
     type: 'hideout',
     x: 600,
-    y: 110,
+    y: 136,
     shortDescription: {
       it: "L'imponente edificio del comando della Marina, da cui Sengoku, i Viceammiragli e i Corsari dirigono l'esecuzione e la difesa.",
       en: "The imposing Marine command building, from which Sengoku, the vice admirals and the Warlords direct the execution and the defense.",
@@ -175,8 +175,8 @@ export const onepieceLocationsSubmaps2: Location[] = [
     name: 'Marineford Bay',
     localizedName: { it: 'Baia di Marineford', en: 'Marineford Bay' },
     type: 'landmark',
-    x: 600,
-    y: 660,
+    x: 640,
+    y: 590,
     shortDescription: {
       it: "La baia ghiacciata da Aokiji dove approdano i Pirati di Barbabianca e dove Rufy precipita dal cielo con gli evasi di Impel Down.",
       en: "The bay frozen over by Aokiji where the Whitebeard Pirates land and where Luffy crashes from the sky with the Impel Down escapees.",
@@ -195,8 +195,8 @@ export const onepieceLocationsSubmaps2: Location[] = [
     name: 'Encircling Walls & Gates',
     localizedName: { it: 'Mura e Porte della Giustizia', en: 'Encircling Walls & Gates' },
     type: 'landmark',
-    x: 230,
-    y: 400,
+    x: 196,
+    y: 500,
     shortDescription: {
       it: "Le tre mura mobili che circondano Marineford e le Porte della Giustizia, congegno difensivo della roccaforte della Marina.",
       en: "The three movable walls encircling Marineford and the Gates of Justice, the defensive mechanism of the Marine stronghold.",

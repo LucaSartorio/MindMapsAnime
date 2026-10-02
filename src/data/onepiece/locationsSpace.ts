@@ -74,7 +74,7 @@ export const onepieceLocationsSpace: Location[] = [
     localizedName: { it: 'Terra', en: 'Earth' },
     type: 'landmark',
     x: 600,
-    y: 660,
+    y: 700,
     shortDescription: {
       it: "Il Pianeta Blu, il mondo di One Piece visto dallo spazio. Doppio clic per tornare alla mappa principale.",
       en: "The Blue Planet, the world of One Piece seen from space. Double-click to return to the main map.",
@@ -96,8 +96,8 @@ export const onepieceLocationsSpace: Location[] = [
     name: 'Moon',
     localizedName: { it: 'Luna', en: 'Moon' },
     type: 'sacred_place',
-    x: 500,
-    y: 400,
+    x: 470,
+    y: 380,
     shortDescription: {
       it: "La Luna. Enel vi giunse sull'arca Maxim dopo Skypiea, scoprendo sotto la sua crosta una città in rovina e antichi automi.",
       en: "The Moon. Enel reached it on the Maxim ark after Skypiea, finding a ruined city and ancient automata beneath its crust.",
@@ -121,7 +121,7 @@ export const onepieceLocationsSpace: Location[] = [
     name: 'Birka',
     localizedName: { it: 'Birka', en: 'Birka' },
     type: 'ruins',
-    x: 685,
+    x: 770,
     y: 400,
     shortDescription: {
       it: "L'antica città lunare da cui discendono Skypiani, Shandia e Birkani (gli antenati di Enel), che la lasciarono per il Pianeta Blu.",
@@ -146,8 +146,8 @@ export const onepieceLocationsSpace: Location[] = [
     name: 'Polar Star',
     localizedName: { it: 'Stella Polare', en: 'Polar Star' },
     type: 'landmark',
-    x: 490,
-    y: 165,
+    x: 440,
+    y: 150,
     shortDescription: {
       it: "La Stella Polare, eterno punto di riferimento dei naviganti del Pianeta Blu. Dà il nome alle Isole della Stella Polare del Nuovo Mondo, dove sorge Drum.",
       en: "The Polar Star, the eternal reference point of the Blue Planet's navigators. It lends its name to the New World's Polestar Islands, home of Drum.",
@@ -168,8 +168,8 @@ export const onepieceLocationsSpace: Location[] = [
     name: 'Space Pirates',
     localizedName: { it: 'Pirati Spaziali', en: 'Space Pirates' },
     type: 'hideout',
-    x: 880,
-    y: 160,
+    x: 900,
+    y: 180,
     shortDescription: {
       it: "Una spietata banda di Pirati Spaziali che minacciava gli automi della Luna: Enel li annientò con incredibile facilità.",
       en: "A vicious band of Space Pirates that threatened the Moon's automata: Enel wiped them out with incredible ease.",

@@ -19,8 +19,8 @@ export const narutoLocationsBatch1: Location[] = [
     name: 'Naka Shrine',
     localizedName: { it: 'Tempio Naka', en: 'Naka Shrine' },
     type: 'sacred_place',
-    x: 300,
-    y: 690,
+    x: 258,
+    y: 676,
     nationId: 'nation-fire',
     shortDescription: {
       it: 'Tempio nel Quartiere Uchiha. Sotto il settimo tatami si cela la Tavoletta di Pietra del clan, leggibile solo con lo Sharingan e il Rinnegan.',
@@ -40,8 +40,8 @@ export const narutoLocationsBatch1: Location[] = [
     name: 'Konoha Hot Springs',
     localizedName: { it: 'Terme di Konoha', en: 'Konoha Hot Springs' },
     type: 'landmark',
-    x: 160,
-    y: 560,
+    x: 110,
+    y: 628,
     nationId: 'nation-fire',
     shortDescription: {
       it: 'Bagni termali del villaggio, luogo di relax e — tristemente noto — dei "sopralluoghi" di Jiraiya per le sue ricerche.',
@@ -60,8 +60,8 @@ export const narutoLocationsBatch1: Location[] = [
     name: 'Root Headquarters',
     localizedName: { it: 'Quartier Generale della Radice', en: 'Root Headquarters' },
     type: 'hideout',
-    x: 1100,
-    y: 300,
+    x: 1090,
+    y: 262,
     nationId: 'nation-fire',
     shortDescription: {
       it: 'Base sotterranea segreta della Radice (Ne), l\'organizzazione ANBU dissolta di Danzō. Vi venivano addestrati agenti privati di emozioni.',

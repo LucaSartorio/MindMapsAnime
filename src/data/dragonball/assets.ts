@@ -1,4 +1,5 @@
 import type { AssetReference } from '@/types';
+import { originalMapAsset } from '../originalMapAssets';
 import { DRAGONBALL_WORLD_MAP_SRC } from './mapConstants';
 
 /**
@@ -43,43 +44,21 @@ export const dragonballAssets: AssetReference[] = [
       en: 'Fan-made map of the Dragon Ball Earth. Used as a geographic reference (viewBox 1800 × 1200); pin coordinates are conceptual positions estimated from the poster layout, to refine once the file is added. Not official material: the depicted world is © Akira Toriyama / Shueisha, the map artwork is © the listed author. The file must be copied manually into public/assets/worlds/dragonball/maps/dragonball-world-map.png.',
     },
   },
-  {
-    id: 'dbz-cosmic-map-placeholder',
-    worldId: 'world-dragonball',
-    name: 'Dragon Ball cosmic map (placeholder SVG)',
-    kind: 'placeholder',
-    source: 'local',
-    license: 'placeholder/CC0',
-    author: 'local',
-    notes: {
-      it: 'Placeholder neutro per la sotto-mappa "Universo" (pianeti, Aldilà, Torneo del Potere): schema concettuale, non una mappa in scala.',
-      en: 'Neutral placeholder for the "Universe" sub-map (planets, Other World, Tournament of Power): conceptual diagram, not a scale map.',
-    },
-  },
-  {
-    id: 'dbz-namek-map-placeholder',
-    worldId: 'world-dragonball',
-    name: 'Dragon Ball Namek map (placeholder SVG)',
-    kind: 'placeholder',
-    source: 'local',
-    license: 'placeholder/CC0',
-    author: 'local',
-    notes: {
-      it: 'Placeholder neutro per la sotto-mappa del Pianeta Namecc: schema concettuale, non una mappa in scala (la geografia di Namecc non è mai stata mostrata in scala nella serie).',
-      en: "Neutral placeholder for Planet Namek's sub-map: conceptual diagram, not a scale map (Namek's geography was never shown to scale in the series).",
-    },
-  },
-  {
-    id: 'dbz-gt-space-map-placeholder',
-    worldId: 'world-dragonball',
-    name: 'Dragon Ball GT space map (SVG star chart)',
-    kind: 'placeholder',
-    source: 'local',
-    license: 'placeholder/CC0',
-    author: 'local',
-    notes: {
-      it: 'Carta stellare SVG generata localmente per la sotto-mappa "Spazio (GT)" (pianeti della caccia alle Sfere del Drago Nere e Nuovo Pianeta Plant): schema concettuale, non una mappa in scala. Nessun asset ufficiale.',
-      en: 'Locally generated SVG star chart for the "Space (GT)" sub-map (Black Star Dragon Ball planets and New Planet Plant): conceptual diagram, not a scale map. No official assets.',
-    },
-  },
+  /* Sotto-mappe: SVG originali (scripts/mapgen/dragonball.py). */
+  ...(
+    [
+      ['cosmic', 'Universe 7'],
+      ['namek', 'Planet Namek'],
+      ['gt-space', 'Space (GT)'],
+    ] as const
+  ).map(([slug, name]) =>
+    originalMapAsset({
+      id: `dbz-${slug}-map`,
+      worldId: 'world-dragonball',
+      name: `Dragon Ball · ${name}`,
+      url: `/assets/worlds/dragonball/maps/dragonball-${slug}.svg`,
+      script: 'scripts/mapgen/dragonball.py',
+      owner: 'Akira Toriyama / Shueisha',
+    }),
+  ),
 ];

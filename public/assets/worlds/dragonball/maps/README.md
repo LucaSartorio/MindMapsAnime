@@ -33,3 +33,11 @@ Toriyama / Shueisha; il disegno della mappa è © dell'autore indicato.
 **Verifica di averne il diritto d'uso prima di pubblicare il sito con questo
 file** — in alternativa sostituiscila con una mappa generata localmente o
 un'illustrazione originale.
+
+## Sotto-mappe (SVG originali)
+
+Universo (1400 × 900), Namecc (1300 × 850) e Spazio GT (1600 × 1000) sono
+**mappe SVG originali** disegnate da AniMapVerse (`dragonball-<slug>.svg`),
+generate da `python3 scripts/mapgen/dragonball.py` (deterministico; riscrive
+anche x/y dei pin delle sotto-mappe in `src/data/dragonball/`). Licenza del
+disegno: CC0; il mondo resta © Akira Toriyama / Shueisha.
