@@ -23,7 +23,17 @@
       "lastError": null,
       "publicationStatus": "notPublished",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [],
+      "artifact": {
+        "name": "animapverse-social-render-36996948068-1",
+        "runId": "36996948068",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/36996948068",
+        "video": "videos/dragonball_goku_character-journey_part-01_en.mp4",
+        "manifest": "manifests/dragonball_goku_character-journey_part-01_en.manifest.json",
+        "sha256": null,
+        "expiresAt": "2026-11-01T10:45:48Z"
+      }
     },
     "character-journey:hunterxhunter:gon-freecss@en": {
       "renderId": "character-journey:hunterxhunter:gon-freecss@en",
@@ -47,7 +57,8 @@
       "publishedAt": null,
       "platforms": [],
       "segment": null,
-      "segmentFingerprint": null
+      "segmentFingerprint": null,
+      "artifact": null
     },
     "character-journey:naruto:itachi-uchiha@en": {
       "renderId": "character-journey:naruto:itachi-uchiha@en",
@@ -71,7 +82,8 @@
       "publishedAt": null,
       "platforms": [],
       "segment": null,
-      "segmentFingerprint": null
+      "segmentFingerprint": null,
+      "artifact": null
     },
     "character-journey:naruto:itachi-uchiha@it": {
       "renderId": "character-journey:naruto:itachi-uchiha@it",
@@ -95,7 +107,8 @@
       "publishedAt": null,
       "platforms": [],
       "segment": null,
-      "segmentFingerprint": null
+      "segmentFingerprint": null,
+      "artifact": null
     },
     "character-journey:naruto:kushina-uzumaki@en": {
       "renderId": "character-journey:naruto:kushina-uzumaki@en",
@@ -119,7 +132,8 @@
       "publishedAt": null,
       "platforms": [],
       "segment": null,
-      "segmentFingerprint": null
+      "segmentFingerprint": null,
+      "artifact": null
     },
     "character-journey:onepiece:monkey-d-luffy@it": {
       "renderId": "character-journey:onepiece:monkey-d-luffy@it",
@@ -143,7 +157,8 @@
       "publishedAt": null,
       "platforms": [],
       "segment": null,
-      "segmentFingerprint": null
+      "segmentFingerprint": null,
+      "artifact": null
     }
   }
 }

@@ -1,0 +1,7 @@
+# Social engine state files: when a workflow rebases its state commit on a branch
+# that moved (Social render vs Social publication state), history.json is merged
+# field by field and the generated catalog is kept then regenerated. The drivers
+# are configured ONLY inside those workflows (git config merge.<name>.driver);
+# elsewhere git falls back to its normal merge.
+tools/social-engine/history/history.json merge=social-history
+tools/social-engine/catalog/*.json merge=social-generated

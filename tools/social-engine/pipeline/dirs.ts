@@ -14,6 +14,10 @@ import { ENGINE_DIR, PUBLIC_DIR, REPO_ROOT } from '../render/paths';
  *   content/archive/ set aside
  *   history/history.json
  *   schemas/
+ *   publication/pending/  receipts to apply (written by the Publishing Agent)
+ *   publication/applied/  audit trail of applied receipts
+ *   publication/failed/   rejected receipts + .error.json
+ *   publication/schemas/  publication-receipt.schema.json
  */
 export type PipelineDirs = {
   root: string;
@@ -28,6 +32,9 @@ export type PipelineDirs = {
   cache: string;
   audio: string;
   lockFile: string;
+  publicationPending: string;
+  publicationApplied: string;
+  publicationFailed: string;
   publicDir: string;
   repoRoot: string;
 };
@@ -46,7 +53,11 @@ export function pipelineDirs(root: string = process.env.SOCIAL_PIPELINE_ROOT ? p
     output: path.join(root, 'output'),
     cache,
     audio: path.join(root, 'audio'),
+    // One lock for every writer of history.json (batch render, publication apply).
     lockFile: path.join(cache, 'queue.lock'),
+    publicationPending: path.join(root, 'publication', 'pending'),
+    publicationApplied: path.join(root, 'publication', 'applied'),
+    publicationFailed: path.join(root, 'publication', 'failed'),
     publicDir: PUBLIC_DIR,
     repoRoot: REPO_ROOT,
   };

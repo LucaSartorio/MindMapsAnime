@@ -1,0 +1,131 @@
+# AniMapVerse — INTERNAL publication state: applies publication receipts.
+#
+#   receipt PR merged on main ─► validate ─► apply ALL receipts or NONE
+#   ─► history.json + catalog updated, receipts → publication/applied/ (audit trail)
+#   ─► state committed back.
+#
+# The repository never publishes and never calls Metricool / Instagram / TikTok /
+# YouTube: the external Publishing Agent does, and reports with receipts.
+# No secrets besides GITHUB_TOKEN. Docs: docs/SOCIAL_ENGINE.md › Publication State
+# · contract: docs/SOCIAL_PUBLISHING_CONTRACT.md
+name: Social publication state
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/social-engine/publication/pending/**'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run: validate and show the transitions only (no state change, no commit)'
+        type: boolean
+        default: false
+
+# One application at a time (history.json has one writer); a running one is
+# never cancelled — a newer run waits, then applies whatever is pending by then.
+concurrency:
+  group: animapverse-social-publication-state
+  cancel-in-progress: false
+
+# Least privilege: read-only by default; only the apply job may push its state commit.
+permissions:
+  contents: read
+
+env:
+  NODE_VERSION: '22'
+
+jobs:
+  apply:
+    name: Apply publication receipts
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    # Loop guard #3 (on top of GITHUB_TOKEN pushes never triggering workflows, and
+    # [skip ci] on the bot commit): never react to the bot's own state commits.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.actor != 'github-actions[bot]' &&
+       !contains(github.event.head_commit.message, '[skip social-publication]'))
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # The branch HEAD (not the triggering sha): a run that waited in the
+          # concurrency queue must see the state committed by the previous run.
+          ref: ${{ github.ref_name }}
+          fetch-depth: 20
+          # The token is only handed to the "Persist publication state" step.
+          persist-credentials: false
+
+      - name: Decide run mode
+        id: mode
+        shell: bash
+        run: |
+          mode=apply
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then mode=dry; fi
+          # Real state changes (and commits) only on the default branch.
+          if [ "${{ github.ref_name }}" != "${{ github.event.repository.default_branch }}" ]; then mode=dry; fi
+          count=$(find tools/social-engine/publication/pending -maxdepth 1 -type f -name '*.json' | wc -l | tr -d ' ')
+          echo "mode=$mode" >> "$GITHUB_OUTPUT"
+          echo "pending=$count" >> "$GITHUB_OUTPUT"
+          echo "Mode: $mode · pending receipts: $count"
+          if [ "$count" = "0" ]; then
+            printf '# AniMapVerse Publication State\n\nNo pending receipts — nothing to do.\n' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Setup Node.js
+        if: steps.mode.outputs.pending != '0'
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Install dependencies
+        if: steps.mode.outputs.pending != '0'
+        run: npm ci --no-audit --no-fund
+
+      - name: Validate publication receipts
+        id: validate
+        if: steps.mode.outputs.pending != '0'
+        # Informative: apply re-validates and, if anything is invalid, applies
+        # nothing and quarantines the invalid receipts (committed below).
+        continue-on-error: true
+        run: npm run social:publication:validate
+
+      - name: Dry run (transitions only)
+        id: dry
+        if: steps.mode.outputs.pending != '0' && steps.mode.outputs.mode == 'dry'
+        run: npm run social:publication:apply:dry
+
+      - name: Apply publication receipts
+        id: apply
+        if: steps.mode.outputs.pending != '0' && steps.mode.outputs.mode == 'apply'
+        continue-on-error: true
+        run: npm run social:publication:apply
+
+      # The runner is ephemeral: history, the receipts moved out of pending/
+      # (→ applied/ or failed/) and the refreshed catalog are committed back.
+      # Only these paths are ever staged.
+      - name: Persist publication state
+        if: always() && steps.mode.outputs.mode == 'apply' && steps.mode.outputs.pending != '0'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: ${{ github.ref_name }}
+        # Loop guards: [skip social-publication] + [skip ci] in the message, the
+        # push uses GITHUB_TOKEN (never starts workflows), and the job's `if`.
+        run: >-
+          bash tools/social-engine/ci/commit-state.sh
+          "chore(social): record publication state [skip social-publication] [skip ci]"
+          tools/social-engine/history tools/social-engine/publication tools/social-engine/catalog
+
+      - name: Fail when a receipt was rejected
+        if: always() && steps.mode.outputs.pending != '0'
+        shell: bash
+        run: |
+          if [ "${{ steps.apply.outcome }}" = "failure" ] || [ "${{ steps.dry.outcome }}" = "failure" ]; then
+            echo "::error::Publication receipts rejected: NOTHING was applied. Invalid receipts are in tools/social-engine/publication/failed/ (+ .error.json); see the step summary."
+            exit 1
+          fi
+          echo "Publication state up to date."

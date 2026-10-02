@@ -10,6 +10,7 @@ import { listContentFiles, inspectQueue, type QueueItem } from './queue';
 import { acquireLock } from './lock';
 import { writeManifest } from './manifest';
 import { parseContentRequest, planContent, recordIdentity } from './content';
+import type { CiRun } from './ciRun';
 
 /**
  * Batch render of the file queue.
@@ -37,6 +38,11 @@ export type BatchOptions = {
   limit?: number;
   now?: () => string;
   log?: (line: string) => void;
+  /**
+   * The workflow artifact this run's videos will be uploaded to (CI only): recorded
+   * on each rendered record so the Publishing Agent can find the exact MP4 of a renderId.
+   */
+  artifact?: (CiRun & { name: string; retentionDays: number }) | null;
 };
 
 export type BatchResult = {
@@ -107,8 +113,9 @@ export async function runBatch(opts: BatchOptions): Promise<BatchResult> {
       try {
         const info = await renderer.render(plan, outputFile);
         const renderedAt = now();
-        const manifestFile = writeManifest(dirs, plan, outputFile, info, renderedAt, item.raw);
+        const { file: manifestFile, sha256 } = writeManifest(dirs, plan, outputFile, info, renderedAt, item.raw);
         const moved = moveInto(item.file, dirs.rendered);
+        const a = opts.artifact;
         transition(record, 'rendered', renderedAt, {
           renderedAt,
           outputFile: relToRepo(dirs, outputFile),
@@ -116,6 +123,18 @@ export async function runBatch(opts: BatchOptions): Promise<BatchResult> {
           durationSeconds: info.durationInFrames / info.fps,
           sourceFile: path.basename(moved),
           lastError: null,
+          artifact: a
+            ? {
+                name: a.name,
+                runId: a.runId,
+                runAttempt: a.runAttempt,
+                runUrl: a.runUrl,
+                video: `videos/${path.basename(outputFile)}`,
+                manifest: `manifests/${path.basename(manifestFile)}`,
+                sha256,
+                expiresAt: new Date(Date.parse(renderedAt) + a.retentionDays * 86_400_000).toISOString(),
+              }
+            : null,
         });
         result.rendered.push({ renderId: plan.renderId, file: path.basename(moved), outputFile: relToRepo(dirs, outputFile), manifestFile: relToRepo(dirs, manifestFile) });
         log(`  ✔ ${relToRepo(dirs, outputFile)}`);

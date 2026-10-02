@@ -18,6 +18,7 @@ import { buildCatalog, writeCatalog } from '../pipeline/catalog';
 import { buildRunSummary, writeRunSummary } from '../pipeline/runSummary';
 import { requeueFailed, runBatch } from '../pipeline/batch';
 import { pipelineDirs } from '../pipeline/dirs';
+import { ciArtifactFromEnv } from '../pipeline/ciRun';
 import { loadHistory } from '../pipeline/history';
 import { LockError } from '../pipeline/lock';
 import path from 'node:path';
@@ -73,6 +74,7 @@ async function main() {
     limit: numberFlag(flags, 'limit') ?? envLimit(),
     createRenderer: remotionRendererFactory(dirs, { browserExecutable: stringFlag(flags, 'browser-executable'), concurrency: numberFlag(flags, 'concurrency') ?? null }),
     log: (line) => console.log(line),
+    artifact: dryRun ? null : ciArtifactFromEnv(),
   });
 
   const summaryFile = writeRunSummary(dirs, buildRunSummary(dirs, result, new Date().toISOString()));

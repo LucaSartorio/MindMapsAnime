@@ -37,7 +37,7 @@ export type RenderManifest = {
   sourceConfig: unknown;
 };
 
-export function writeManifest(dirs: PipelineDirs, plan: PlannedContent, video: string, info: VideoInfo, renderedAt: string, sourceConfig: unknown): string {
+export function writeManifest(dirs: PipelineDirs, plan: PlannedContent, video: string, info: VideoInfo, renderedAt: string, sourceConfig: unknown): { file: string; sha256: string } {
   const manifestFile = video.replace(/\.mp4$/i, '.manifest.json');
   const manifest: RenderManifest = {
     schemaVersion: 1,
@@ -63,5 +63,5 @@ export function writeManifest(dirs: PipelineDirs, plan: PlannedContent, video: s
     sourceConfig,
   };
   writeJsonAtomic(manifestFile, manifest);
-  return manifestFile;
+  return { file: manifestFile, sha256: manifest.sha256 };
 }

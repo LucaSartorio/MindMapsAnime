@@ -6,8 +6,8 @@ import { TEMPLATE_LIST } from '../templates/registry';
 import type { CatalogExclusion } from '../templates/types';
 import type { PipelineDirs } from './dirs';
 import { writeJsonAtomic } from './fs';
-import type { History } from './history';
-import { contentIdFor, parseRenderId, seriesIdOf } from './ids';
+import { platformState, PLATFORMS, PUBLICATION_PROVIDERS, PUBLICATION_STATUSES, type History, type HistoryRecord, type Platform, type PlatformState, type PublicationStatus, type RenderArtifact } from './history';
+import { contentIdFor, parseContentId, parseRenderId, seriesIdOf } from './ids';
 import { inspectQueue } from './queue';
 
 /**
@@ -37,6 +37,15 @@ export type CatalogSeries = {
   legacyRenderedLocales?: VideoLocale[];
 };
 
+/** Publication state of one rendered video of an item (every platform listed; notScheduled = never touched). */
+export type CatalogRenderPublication = {
+  renderId: string;
+  locale: VideoLocale;
+  variant: string | null;
+  status: PublicationStatus;
+  platforms: Record<Platform, PlatformState>;
+};
+
 export type CatalogItem = {
   id: string;
   anime: string;
@@ -47,11 +56,54 @@ export type CatalogItem = {
   locales: VideoLocale[];
   recommendedDurationSeconds: number;
   facts: Record<string, string | number>;
+  /** Rendered = an MP4 exists. It does NOT mean scheduled or published. */
   renderedLocales: VideoLocale[];
+  /** ≥ 1 platform scheduled (and not yet published there). */
+  scheduledLocales: VideoLocale[];
+  /** ≥ 1 platform published. */
   publishedLocales: VideoLocale[];
   queuedLocales: VideoLocale[];
   renderedBefore: boolean;
   publishedBefore: boolean;
+  /** One entry per rendered video (locale/variant) of this item. */
+  publication: CatalogRenderPublication[];
+};
+
+/**
+ * A rendered video as the Publishing Agent sees it. `platforms` lists all
+ * platforms: notScheduled / failed = still to do there; scheduled / published = never again.
+ */
+export type PublishingEntry = {
+  renderId: string;
+  contentId: string;
+  anime: string;
+  subject: string;
+  subjectName: string | null;
+  locale: VideoLocale;
+  variant: string | null;
+  segment: string | null;
+  partNumber: number | null;
+  partCount: number | null;
+  renderedAt: string | null;
+  durationSeconds: number | null;
+  publicationStatus: PublicationStatus;
+  platforms: Record<Platform, PlatformState>;
+  artifact: RenderArtifact | null;
+};
+
+export type CatalogPublishing = {
+  contract: string;
+  platforms: readonly Platform[];
+  providers: readonly string[];
+  /** Rendered videos by aggregate publication status (+ how many have no downloadable MP4). */
+  summary: Record<PublicationStatus, number> & { rendered: number; unavailable: number };
+  /**
+   * PRIORITY 1 for the Publishing Agent: rendered, MP4 downloadable, and ≥ 1 platform
+   * notScheduled or failed. Oldest render first. Empty → generate new content instead.
+   */
+  ready: PublishingEntry[];
+  /** Rendered but the MP4 can't be downloaded (local render, or artifact expired): needs a re-render first. */
+  unavailable: (Pick<PublishingEntry, 'renderId' | 'publicationStatus' | 'platforms'> & { reason: 'no_artifact' | 'artifact_expired' })[];
 };
 
 export type CatalogTemplate = {
@@ -69,6 +121,7 @@ export type Catalog = {
   locales: readonly VideoLocale[];
   idFormat: string;
   templates: Partial<Record<TemplateId, CatalogTemplate>>;
+  publishing: CatalogPublishing;
 };
 
 export type ExcludedReport = {
@@ -79,11 +132,19 @@ export type ExcludedReport = {
 
 export async function buildCatalog(dirs: PipelineDirs, history: History, now: string): Promise<{ catalog: Catalog; excluded: ExcludedReport }> {
   const rendered = new Map<string, Set<VideoLocale>>();
+  const scheduled = new Map<string, Set<VideoLocale>>();
   const published = new Map<string, Set<VideoLocale>>();
+  const publication = new Map<string, CatalogRenderPublication[]>();
   const add = (map: Map<string, Set<VideoLocale>>, id: string, l: VideoLocale) => map.set(id, (map.get(id) ?? new Set()).add(l));
-  for (const r of Object.values(history.records)) {
-    if (r.renderStatus === 'rendered') add(rendered, r.contentId, r.locale);
-    if (r.publicationStatus !== 'notPublished') add(published, r.contentId, r.locale);
+  const renderedRecords = Object.values(history.records)
+    .filter((r) => r.renderStatus === 'rendered')
+    .sort((a, b) => (a.renderedAt ?? '').localeCompare(b.renderedAt ?? '') || a.renderId.localeCompare(b.renderId));
+  for (const r of renderedRecords) {
+    add(rendered, r.contentId, r.locale);
+    if (r.platforms.some((p) => p.status === 'scheduled')) add(scheduled, r.contentId, r.locale);
+    if (r.platforms.some((p) => p.status === 'published')) add(published, r.contentId, r.locale);
+    const entry = { renderId: r.renderId, locale: r.locale, variant: r.variant, status: r.publicationStatus, platforms: platformStates(r) };
+    publication.set(r.contentId, [...(publication.get(r.contentId) ?? []), entry]);
   }
   const queued = new Map<string, Set<VideoLocale>>();
   for (const item of await inspectQueue(dirs, history)) {
@@ -97,7 +158,10 @@ export async function buildCatalog(dirs: PipelineDirs, history: History, now: st
     locales: VIDEO_LOCALES,
     idFormat: '<template>:<anime>:<subject>  (one video = id@locale[+variant])',
     templates: {},
+    publishing: buildPublishing([], { subjectNames: new Map(), partCounts: new Map() }, now), // filled below
   };
+  const subjectNames = new Map<string, Record<VideoLocale, string>>();
+  const partCounts = new Map<string, number>();
   const excluded: ExcludedReport = { schemaVersion: 1, generatedAt: now, templates: {} };
 
   for (const template of TEMPLATE_LIST) {
@@ -123,6 +187,8 @@ export async function buildCatalog(dirs: PipelineDirs, history: History, now: st
         const id = ids[index];
         const r = sorted(rendered.get(id));
         const p = sorted(published.get(id));
+        subjectNames.set(seriesIdOf(id), c.displayName);
+        if (c.segment) partCounts.set(id, c.segment.partCount);
         let series: CatalogSeries | null = null;
         if (c.segment) {
           const seriesId = seriesIdOf(id);
@@ -159,10 +225,12 @@ export async function buildCatalog(dirs: PipelineDirs, history: History, now: st
           recommendedDurationSeconds: c.recommendedDurationSeconds,
           facts: c.facts,
           renderedLocales: r,
+          scheduledLocales: sorted(scheduled.get(id)),
           publishedLocales: p,
           queuedLocales: sorted(queued.get(id)),
           renderedBefore: r.length > 0,
           publishedBefore: p.length > 0,
+          publication: publication.get(id) ?? [],
         });
       });
       for (const x of scan.excluded) {
@@ -173,7 +241,56 @@ export async function buildCatalog(dirs: PipelineDirs, history: History, now: st
     catalog.templates[template.id] = entry;
     excluded.templates[template.id] = report;
   }
+  catalog.publishing = buildPublishing(renderedRecords, { subjectNames, partCounts }, now);
   return { catalog, excluded };
+}
+
+function emptySummary(): CatalogPublishing['summary'] {
+  return { rendered: 0, unavailable: 0, ...(Object.fromEntries(PUBLICATION_STATUSES.map((s) => [s, 0])) as Record<PublicationStatus, number>) };
+}
+
+function platformStates(r: HistoryRecord): Record<Platform, PlatformState> {
+  return Object.fromEntries(PLATFORMS.map((p) => [p, platformState(r, p)])) as Record<Platform, PlatformState>;
+}
+
+/** The Publishing Agent's view of history (records already sorted oldest render first). */
+export function buildPublishing(
+  records: HistoryRecord[],
+  info: { subjectNames: Map<string, Record<VideoLocale, string>>; partCounts: Map<string, number> },
+  now: string,
+): CatalogPublishing {
+  const publishing: CatalogPublishing = { contract: 'docs/SOCIAL_PUBLISHING_CONTRACT.md', platforms: PLATFORMS, providers: PUBLICATION_PROVIDERS, summary: emptySummary(), ready: [], unavailable: [] };
+  for (const r of records) {
+    publishing.summary.rendered++;
+    publishing.summary[r.publicationStatus]++;
+    const platforms = platformStates(r);
+    if (!PLATFORMS.some((p) => platforms[p] === 'notScheduled' || platforms[p] === 'failed')) continue;
+    if (!r.artifact || Date.parse(r.artifact.expiresAt) <= Date.parse(now)) {
+      publishing.summary.unavailable++;
+      publishing.unavailable.push({ renderId: r.renderId, publicationStatus: r.publicationStatus, platforms, reason: r.artifact ? 'artifact_expired' : 'no_artifact' });
+      continue;
+    }
+    const { segment } = parseContentId(r.contentId);
+    const part = segment ? /^part-(\d+)/.exec(segment) : null;
+    publishing.ready.push({
+      renderId: r.renderId,
+      contentId: r.contentId,
+      anime: r.anime,
+      subject: r.subject,
+      subjectName: info.subjectNames.get(seriesIdOf(r.contentId))?.[r.locale] ?? null,
+      locale: r.locale,
+      variant: r.variant,
+      segment,
+      partNumber: part ? Number(part[1]) : null,
+      partCount: info.partCounts.get(r.contentId) ?? null,
+      renderedAt: r.renderedAt,
+      durationSeconds: r.durationSeconds,
+      publicationStatus: r.publicationStatus,
+      platforms,
+      artifact: r.artifact,
+    });
+  }
+  return publishing;
 }
 
 export const CATALOG_FILE = 'catalog.json';
@@ -205,5 +322,8 @@ export function catalogSummary(built: { catalog: Catalog; excluded: ExcludedRepo
     lines.push('  excluded:');
     for (const [reason, n] of Object.entries(x.byReason).sort((a, b) => b[1] - a[1])) lines.push(`    ${String(n).padStart(4)} ${reason}`);
   }
+  const p = built.catalog.publishing;
+  const byStatus = PUBLICATION_STATUSES.filter((st) => p.summary[st]).map((st) => `${p.summary[st]} ${st}`).join(' · ');
+  lines.push(`publishing: ${p.summary.rendered} rendered (${byStatus || 'none'}) · ${p.ready.length} ready to publish (MP4 downloadable) · ${p.unavailable.length} without a downloadable MP4`);
   return lines;
 }

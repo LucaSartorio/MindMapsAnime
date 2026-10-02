@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-02T10:45:46.794Z",
+  "generatedAt": "2026-10-02T12:18:32.477Z",
   "locales": [
     "en",
     "it"
@@ -102,10 +102,12 @@
             "journeyArcs": 10
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:naruto-uzumaki:part-02",
@@ -167,10 +169,12 @@
             "journeyArcs": 10
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:sasuke-uchiha:part-01",
@@ -226,10 +230,12 @@
             "journeyArcs": 10
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:sasuke-uchiha:part-02",
@@ -291,10 +297,12 @@
             "journeyArcs": 10
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:sakura-haruno:part-01",
@@ -341,10 +349,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:sakura-haruno:part-02",
@@ -394,10 +404,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:kakashi-hatake:part-01",
@@ -447,10 +459,12 @@
             "journeyArcs": 6
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:kakashi-hatake:part-02",
@@ -506,10 +520,12 @@
             "journeyArcs": 6
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:jiraiya",
@@ -534,10 +550,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:tsunade-senju",
@@ -562,10 +580,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:orochimaru",
@@ -590,10 +610,12 @@
             "journeyArcs": 4
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:minato-namikaze",
@@ -618,10 +640,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:kushina-uzumaki",
@@ -648,10 +672,24 @@
           "renderedLocales": [
             "en"
           ],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": true,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": [
+            {
+              "renderId": "character-journey:naruto:kushina-uzumaki@en",
+              "locale": "en",
+              "variant": null,
+              "status": "notPublished",
+              "platforms": {
+                "instagram": "notScheduled",
+                "tiktok": "notScheduled",
+                "youtube": "notScheduled"
+              }
+            }
+          ]
         },
         {
           "id": "character-journey:naruto:hashirama-senju",
@@ -676,10 +714,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:shikamaru-nara",
@@ -704,10 +744,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:hinata-hyuga",
@@ -732,10 +774,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:rock-lee",
@@ -760,10 +804,12 @@
             "journeyArcs": 0
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:neji-hyuga",
@@ -788,10 +834,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:danzo-shimura",
@@ -816,10 +864,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:gaara",
@@ -844,10 +894,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:kisame-hoshigaki",
@@ -872,10 +924,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:killer-b",
@@ -900,10 +954,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:itachi-uchiha",
@@ -931,10 +987,35 @@
             "en",
             "it"
           ],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": true,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": [
+            {
+              "renderId": "character-journey:naruto:itachi-uchiha@it",
+              "locale": "it",
+              "variant": null,
+              "status": "notPublished",
+              "platforms": {
+                "instagram": "notScheduled",
+                "tiktok": "notScheduled",
+                "youtube": "notScheduled"
+              }
+            },
+            {
+              "renderId": "character-journey:naruto:itachi-uchiha@en",
+              "locale": "en",
+              "variant": null,
+              "status": "notPublished",
+              "platforms": {
+                "instagram": "notScheduled",
+                "tiktok": "notScheduled",
+                "youtube": "notScheduled"
+              }
+            }
+          ]
         },
         {
           "id": "character-journey:naruto:madara-uchiha",
@@ -959,10 +1040,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:obito-uchiha",
@@ -987,10 +1070,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:pain-nagato",
@@ -1015,10 +1100,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:konan",
@@ -1043,10 +1130,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:deidara",
@@ -1071,10 +1160,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:sasori",
@@ -1099,10 +1190,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:hidan",
@@ -1127,10 +1220,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:kakuzu",
@@ -1155,10 +1250,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:kabuto-yakushi",
@@ -1183,10 +1280,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:naruto:tazuna",
@@ -1211,10 +1310,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:gon-freecss:part-01",
@@ -1270,10 +1371,12 @@
             "journeyArcs": 7
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:gon-freecss:part-02",
@@ -1332,10 +1435,12 @@
             "journeyArcs": 7
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:killua-zoldyck:part-01",
@@ -1388,10 +1493,12 @@
             "journeyArcs": 6
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:killua-zoldyck:part-02",
@@ -1444,10 +1551,12 @@
             "journeyArcs": 6
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:kurapika",
@@ -1472,10 +1581,12 @@
             "journeyArcs": 4
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:leorio-paradinight",
@@ -1500,10 +1611,12 @@
             "journeyArcs": 4
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:hisoka-morow",
@@ -1528,10 +1641,12 @@
             "journeyArcs": 5
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:illumi-zoldyck",
@@ -1556,10 +1671,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:chrollo-lucilfer",
@@ -1584,10 +1701,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:ging-freecss",
@@ -1612,10 +1731,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:silva-zoldyck",
@@ -1640,10 +1761,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:zeno-zoldyck",
@@ -1668,10 +1791,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:machi-komacine",
@@ -1696,10 +1821,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:feitan-portor",
@@ -1724,10 +1851,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:phinks-magcub",
@@ -1752,10 +1881,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:nobunaga-hazama",
@@ -1780,10 +1911,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:meruem",
@@ -1808,10 +1941,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:neferpitou",
@@ -1836,10 +1971,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:shaiapouf",
@@ -1864,10 +2001,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:menthuthuyoupi",
@@ -1892,10 +2031,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:cheadle-yorkshire",
@@ -1920,10 +2061,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:pariston-hill",
@@ -1948,10 +2091,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:beyond-netero",
@@ -1976,10 +2121,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:tserriednich-hui-guo-rou",
@@ -2004,10 +2151,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:tonpa",
@@ -2032,10 +2181,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:pokkle",
@@ -2060,10 +2211,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:ponzu",
@@ -2088,10 +2241,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:mizaistom-nana",
@@ -2116,10 +2271,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:woble-hui-guo-rou",
@@ -2144,10 +2301,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:oito-hui-guo-rou",
@@ -2172,10 +2331,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:hinrigh-biganduffno",
@@ -2200,10 +2361,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:hunterxhunter:morena-prudo",
@@ -2228,10 +2391,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:monkey-d-luffy:part-01",
@@ -2290,10 +2455,12 @@
             "journeyArcs": 22
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:monkey-d-luffy:part-02",
@@ -2352,10 +2519,12 @@
             "journeyArcs": 22
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:monkey-d-luffy:part-03",
@@ -2414,10 +2583,12 @@
             "journeyArcs": 22
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:monkey-d-luffy:part-04",
@@ -2476,10 +2647,12 @@
             "journeyArcs": 22
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:monkey-d-luffy:part-05",
@@ -2544,10 +2717,12 @@
             "journeyArcs": 22
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:roronoa-zoro:part-01",
@@ -2603,10 +2778,12 @@
             "journeyArcs": 15
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:roronoa-zoro:part-02",
@@ -2665,10 +2842,12 @@
             "journeyArcs": 15
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:roronoa-zoro:part-03",
@@ -2730,10 +2909,12 @@
             "journeyArcs": 15
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:nami:part-01",
@@ -2792,10 +2973,12 @@
             "journeyArcs": 11
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:nami:part-02",
@@ -2857,10 +3040,12 @@
             "journeyArcs": 11
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:usopp:part-01",
@@ -2922,10 +3107,12 @@
             "journeyArcs": 12
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:usopp:part-02",
@@ -2987,10 +3174,12 @@
             "journeyArcs": 12
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:sanji:part-01",
@@ -3046,10 +3235,12 @@
             "journeyArcs": 13
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:sanji:part-02",
@@ -3105,10 +3296,12 @@
             "journeyArcs": 13
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:sanji:part-03",
@@ -3167,10 +3360,12 @@
             "journeyArcs": 13
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:shanks",
@@ -3195,10 +3390,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:coby",
@@ -3223,10 +3420,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:smoker",
@@ -3251,10 +3450,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:monkey-d-garp",
@@ -3279,10 +3480,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:bagy",
@@ -3307,10 +3510,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:dracule-mihawk",
@@ -3335,10 +3540,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:arlong",
@@ -3363,10 +3570,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:bell-mere",
@@ -3391,10 +3600,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:bartholomew-kuma",
@@ -3419,10 +3630,12 @@
             "journeyArcs": 5
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:jewelry-bonney",
@@ -3447,10 +3660,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:trafalgar-d-water-law",
@@ -3475,10 +3690,12 @@
             "journeyArcs": 4
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:donquijote-doflamingo",
@@ -3503,10 +3720,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:nico-robin",
@@ -3531,10 +3750,12 @@
             "journeyArcs": 6
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:edward-newgate",
@@ -3559,10 +3780,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:marshall-d-teach",
@@ -3587,10 +3810,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:boa-hancock",
@@ -3615,10 +3840,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:emporio-ivankov",
@@ -3643,10 +3870,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:jinbe",
@@ -3671,10 +3900,12 @@
             "journeyArcs": 5
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:tony-tony-chopper",
@@ -3699,10 +3930,12 @@
             "journeyArcs": 6
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:crocodile",
@@ -3727,10 +3960,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:nefertari-vivi",
@@ -3755,10 +3990,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:nefertari-cobra",
@@ -3783,10 +4020,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:enel",
@@ -3811,10 +4050,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:franky",
@@ -3839,10 +4080,12 @@
             "journeyArcs": 4
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:rob-lucci",
@@ -3867,10 +4110,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:kaku",
@@ -3895,10 +4140,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:blueno",
@@ -3923,10 +4170,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:brook",
@@ -3951,10 +4200,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:tashigi",
@@ -3979,10 +4230,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:sabo",
@@ -4007,10 +4260,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:charlotte-linlin",
@@ -4035,10 +4290,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:kaido",
@@ -4063,10 +4320,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:kinemon",
@@ -4091,10 +4350,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:jaygarcia-saturn",
@@ -4119,10 +4380,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:borsalino",
@@ -4147,10 +4410,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:eustass-kid",
@@ -4175,10 +4440,12 @@
             "journeyArcs": 0
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:killer",
@@ -4203,10 +4470,12 @@
             "journeyArcs": 0
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:basil-hawkins",
@@ -4231,10 +4500,12 @@
             "journeyArcs": 0
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:x-drake",
@@ -4259,10 +4530,12 @@
             "journeyArcs": 0
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:scratchmen-apoo",
@@ -4287,10 +4560,12 @@
             "journeyArcs": 0
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:capone-bege",
@@ -4315,10 +4590,12 @@
             "journeyArcs": 0
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:urouge",
@@ -4343,10 +4620,12 @@
             "journeyArcs": 0
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:gol-d-roger",
@@ -4371,10 +4650,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:kuzan",
@@ -4399,10 +4680,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:onepiece:marco",
@@ -4427,10 +4710,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:dragonball:goku:part-01",
@@ -4479,10 +4764,24 @@
           "renderedLocales": [
             "en"
           ],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": true,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": [
+            {
+              "renderId": "character-journey:dragonball:goku:part-01@en",
+              "locale": "en",
+              "variant": null,
+              "status": "notPublished",
+              "platforms": {
+                "instagram": "notScheduled",
+                "tiktok": "notScheduled",
+                "youtube": "notScheduled"
+              }
+            }
+          ]
         },
         {
           "id": "character-journey:dragonball:goku:part-02",
@@ -4532,10 +4831,12 @@
             "journeyArcs": 16
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:dragonball:goku:part-03",
@@ -4588,10 +4889,12 @@
             "journeyArcs": 16
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:dragonball:goku:part-04",
@@ -4650,10 +4953,12 @@
             "journeyArcs": 16
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:dragonball:goku:part-05",
@@ -4712,10 +5017,12 @@
             "journeyArcs": 16
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:dragonball:vegeta:part-01",
@@ -4771,10 +5078,12 @@
             "journeyArcs": 8
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:dragonball:vegeta:part-02",
@@ -4830,10 +5139,12 @@
             "journeyArcs": 8
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:dragonball:gohan",
@@ -4858,10 +5169,12 @@
             "journeyArcs": 4
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:dragonball:future-trunks",
@@ -4886,10 +5199,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:dragonball:piccolo",
@@ -4914,10 +5229,12 @@
             "journeyArcs": 5
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:dragonball:krillin",
@@ -4942,10 +5259,12 @@
             "journeyArcs": 5
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:dragonball:tien-shinhan",
@@ -4970,10 +5289,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:dragonball:chiaotzu",
@@ -4998,10 +5319,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:dragonball:bulma",
@@ -5026,10 +5349,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:dragonball:master-roshi",
@@ -5054,10 +5379,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:dragonball:frieza",
@@ -5082,10 +5409,12 @@
             "journeyArcs": 4
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:dragonball:cell",
@@ -5110,10 +5439,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:dragonball:majin-buu",
@@ -5138,10 +5469,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:dragonball:yajirobe",
@@ -5166,10 +5499,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:dragonball:android-17",
@@ -5194,10 +5529,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:dragonball:android-18",
@@ -5222,10 +5559,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:dragonball:dr-gero",
@@ -5250,10 +5589,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:dragonball:pan",
@@ -5278,10 +5619,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:dragonball:dr-myuu",
@@ -5306,10 +5649,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:dragonball:baby",
@@ -5334,10 +5679,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:dragonball:hell-fighter-17",
@@ -5362,10 +5709,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:asta:part-01",
@@ -5421,10 +5770,12 @@
             "journeyArcs": 12
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:asta:part-02",
@@ -5483,10 +5834,12 @@
             "journeyArcs": 12
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:asta:part-03",
@@ -5539,10 +5892,12 @@
             "journeyArcs": 12
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:yami-sukehiro:part-01",
@@ -5595,10 +5950,12 @@
             "journeyArcs": 8
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:yami-sukehiro:part-02",
@@ -5657,10 +6014,12 @@
             "journeyArcs": 8
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:noelle-silva:part-01",
@@ -5716,10 +6075,12 @@
             "journeyArcs": 9
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:noelle-silva:part-02",
@@ -5781,10 +6142,12 @@
             "journeyArcs": 9
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:magna-swing",
@@ -5809,10 +6172,12 @@
             "journeyArcs": 6
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:luck-voltia",
@@ -5837,10 +6202,12 @@
             "journeyArcs": 6
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:vanessa-enoteca",
@@ -5865,10 +6232,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:charmy-pappitson",
@@ -5893,10 +6262,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:finral-roulacase",
@@ -5921,10 +6292,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:zora-ideale",
@@ -5949,10 +6322,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:secre-swallowtail-nero",
@@ -5977,10 +6352,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:nacht-faust",
@@ -6005,10 +6382,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:liebe",
@@ -6033,10 +6412,12 @@
             "journeyArcs": 4
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:yuno-grinberryall:part-01",
@@ -6092,10 +6473,12 @@
             "journeyArcs": 9
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:yuno-grinberryall:part-02",
@@ -6154,10 +6537,12 @@
             "journeyArcs": 9
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:william-vangeance",
@@ -6182,10 +6567,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:langris-vaude",
@@ -6210,10 +6597,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:mimosa-vermillion",
@@ -6238,10 +6627,12 @@
             "journeyArcs": 6
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:klaus-lunettes",
@@ -6266,10 +6657,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:nozel-silva",
@@ -6294,10 +6687,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:mereoleona-vermillion",
@@ -6322,10 +6717,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:leopold-vermillion",
@@ -6350,10 +6747,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:charlotte-roselei",
@@ -6378,10 +6777,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:jack-the-ripper",
@@ -6406,10 +6807,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:julius-novachrono",
@@ -6434,10 +6837,12 @@
             "journeyArcs": 5
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:sister-lily",
@@ -6462,10 +6867,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:lumiere-silvamillion-clover",
@@ -6490,10 +6897,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:patry-patolli",
@@ -6518,10 +6927,12 @@
             "journeyArcs": 6
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:licht",
@@ -6546,10 +6957,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:vetto-the-despair",
@@ -6574,10 +6987,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:fana-the-loveless",
@@ -6602,10 +7017,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:valtos",
@@ -6630,10 +7047,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:sally",
@@ -6658,10 +7077,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:rades-spirito",
@@ -6686,10 +7107,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:lira",
@@ -6714,10 +7137,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:zagred",
@@ -6742,10 +7167,12 @@
             "journeyArcs": 1
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:dante-zogratis",
@@ -6770,10 +7197,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:vanica-zogratis",
@@ -6798,10 +7227,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:zenon-zogratis",
@@ -6826,10 +7257,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:lucius-zogratis",
@@ -6854,10 +7287,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:lucifero",
@@ -6882,10 +7317,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:beelzebub",
@@ -6910,10 +7347,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:megicula",
@@ -6938,10 +7377,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:mars",
@@ -6966,10 +7407,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:fana-diamond-kingdom",
@@ -6994,10 +7437,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:ladros",
@@ -7022,10 +7467,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:lolopechka",
@@ -7050,10 +7497,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:gaja",
@@ -7078,10 +7527,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:sylph-bell",
@@ -7106,10 +7557,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:undine",
@@ -7134,10 +7587,12 @@
             "journeyArcs": 3
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:ryuya-ryudo",
@@ -7162,10 +7617,12 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "character-journey:blackclover:ichika-yami",
@@ -7190,12 +7647,118 @@
             "journeyArcs": 2
           },
           "renderedLocales": [],
+          "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": false,
-          "publishedBefore": false
+          "publishedBefore": false,
+          "publication": []
         }
       ]
     }
+  },
+  "publishing": {
+    "contract": "docs/SOCIAL_PUBLISHING_CONTRACT.md",
+    "platforms": [
+      "instagram",
+      "tiktok",
+      "youtube"
+    ],
+    "providers": [
+      "metricool"
+    ],
+    "summary": {
+      "rendered": 6,
+      "unavailable": 5,
+      "notPublished": 6,
+      "scheduled": 0,
+      "partiallyPublished": 0,
+      "published": 0,
+      "failed": 0
+    },
+    "ready": [
+      {
+        "renderId": "character-journey:dragonball:goku:part-01@en",
+        "contentId": "character-journey:dragonball:goku:part-01",
+        "anime": "dragonball",
+        "subject": "goku",
+        "subjectName": "Goku",
+        "locale": "en",
+        "variant": null,
+        "segment": "part-01",
+        "partNumber": 1,
+        "partCount": 5,
+        "renderedAt": "2026-10-02T10:45:46.778Z",
+        "durationSeconds": 25,
+        "publicationStatus": "notPublished",
+        "platforms": {
+          "instagram": "notScheduled",
+          "tiktok": "notScheduled",
+          "youtube": "notScheduled"
+        },
+        "artifact": {
+          "name": "animapverse-social-render-36996948068-1",
+          "runId": "36996948068",
+          "runAttempt": "1",
+          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/36996948068",
+          "video": "videos/dragonball_goku_character-journey_part-01_en.mp4",
+          "manifest": "manifests/dragonball_goku_character-journey_part-01_en.manifest.json",
+          "sha256": null,
+          "expiresAt": "2026-11-01T10:45:48Z"
+        }
+      }
+    ],
+    "unavailable": [
+      {
+        "renderId": "character-journey:naruto:itachi-uchiha@it",
+        "publicationStatus": "notPublished",
+        "platforms": {
+          "instagram": "notScheduled",
+          "tiktok": "notScheduled",
+          "youtube": "notScheduled"
+        },
+        "reason": "no_artifact"
+      },
+      {
+        "renderId": "character-journey:naruto:itachi-uchiha@en",
+        "publicationStatus": "notPublished",
+        "platforms": {
+          "instagram": "notScheduled",
+          "tiktok": "notScheduled",
+          "youtube": "notScheduled"
+        },
+        "reason": "no_artifact"
+      },
+      {
+        "renderId": "character-journey:naruto:kushina-uzumaki@en",
+        "publicationStatus": "notPublished",
+        "platforms": {
+          "instagram": "notScheduled",
+          "tiktok": "notScheduled",
+          "youtube": "notScheduled"
+        },
+        "reason": "no_artifact"
+      },
+      {
+        "renderId": "character-journey:onepiece:monkey-d-luffy@it",
+        "publicationStatus": "notPublished",
+        "platforms": {
+          "instagram": "notScheduled",
+          "tiktok": "notScheduled",
+          "youtube": "notScheduled"
+        },
+        "reason": "no_artifact"
+      },
+      {
+        "renderId": "character-journey:hunterxhunter:gon-freecss@en",
+        "publicationStatus": "notPublished",
+        "platforms": {
+          "instagram": "notScheduled",
+          "tiktok": "notScheduled",
+          "youtube": "notScheduled"
+        },
+        "reason": "no_artifact"
+      }
+    ]
   }
 }

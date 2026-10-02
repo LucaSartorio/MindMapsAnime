@@ -48,6 +48,10 @@ npm run social:render:queue:dry        # dry run without npm argument forwarding
 npm run social:ci:report               # artifact folder + step summary from the last batch (used by GitHub Actions)
 npm run social:render -- --config tools/social-engine/examples/itachi-character-journey.json   # ad-hoc preview
 npm run social:studio    # Remotion Studio (local preview of the video templates)
+npm run social:publication:validate    # publication receipts in publication/pending/: check only (the repo never publishes)
+npm run social:publication:apply:dry   # renderId · platform · old → new
+npm run social:publication:apply       # all-or-nothing: history + catalog updated, pending → applied/ (audit trail)
+npm run social:publication:list        # rendered videos × instagram/tiktok/youtube state (+ artifact)
 ```
 
 - **There is no test framework** (the SEO tests use plain `node:assert` in `scripts/`) and
@@ -534,15 +538,20 @@ internal links (real anchors, breadcrumbs) · structured data (only if truthful)
 SSR-safety of the first render. Then `npm run build` must pass (`test:seo` + `seo:check` are
 blocking) and, for UI changes, `npm run smoke`.
 
-## Social engine — INTERNAL ONLY (read `docs/SOCIAL_ENGINE.md` + `docs/SOCIAL_AGENT_CONTRACT.md`)
+## Social engine — INTERNAL ONLY (read `docs/SOCIAL_ENGINE.md` + `docs/SOCIAL_AGENT_CONTRACT.md` + `docs/SOCIAL_PUBLISHING_CONTRACT.md`)
 
 `tools/social-engine/` is a **private** Remotion tool + file-based content pipeline that renders vertical
 videos (1080×1920 H.264, Shorts/TikTok/Reels) from the site's datasets. **SOCIAL ENGINE IS INTERNAL ONLY.**
 
-**FINAL ARCHITECTURE** — ChatGPT agent (future, not connected) → PR with queue JSON (`Social validate`
-workflow, read-only) → merge → `Social render` workflow (GitHub Actions = the cloud renderer, `ubuntu-latest`,
-same npm scripts as local) → Remotion → MP4 **workflow artifact** `animapverse-social-render-<run_id>-<attempt>`
-(`videos/`, `manifests/`, `render-summary.json`) → state commit by `github-actions[bot]`.
+**FINAL ARCHITECTURE** — two external ChatGPT Work agents, the repository is the source of truth:
+- **Social (Content) Agent** → PR with queue JSON (`Social validate` workflow, read-only) → merge → `Social render`
+  workflow (GitHub Actions = the cloud renderer, `ubuntu-latest`, same npm scripts as local) → Remotion → MP4
+  **workflow artifact** `animapverse-social-render-<run_id>-<attempt>` (`videos/`, `manifests/`, `render-summary.json`)
+  → state commit by `github-actions[bot]` (history record gets `artifact`: name, run, paths, sha256, expiresAt).
+- **Publishing Agent** (ChatGPT Work + Metricool plugin) → reads `catalog.publishing.ready` → downloads the artifact →
+  schedules/publishes via Metricool → PR adding a **publication receipt** in `publication/pending/` (`Social
+  publication validate`, read-only) → merge → `Social publication state` workflow applies it → history `platforms[]`
+  + catalog updated, receipt archived in `publication/applied/` → a render × platform is never scheduled twice.
 
 **SOCIAL ENGINE ARCHITECTURE** — `data` (site datasets, read-only) → `social:catalog` (`catalog/catalog.json`:
 what's really renderable + history status) → [future agent, not connected] → JSON requests in
@@ -551,7 +560,8 @@ Remotion bundle → serial renders) → `output/<anime>_<subject>_<template>_<lo
 content moved to `content/rendered|failed/`, every step in `history/history.json`. Ids:
 `contentId = <template>:<anime>:<subject>`, `renderId = <contentId>@<locale>[+<variant>]`. Code: `templates/`
 (registry + per-template config/resolve/scan/schema), `pipeline/` (ids, content, queue, enqueue, duplicates,
-history, batch, catalog, manifest, lock, fs guards, schema), `render/` (Remotion session), `cli/`, `tests/`.
+history, batch, catalog, manifest, lock, fs guards, schema, publication, historyMerge), `render/` (Remotion
+session), `cli/`, `ci/` (shared state-commit script), `publication/` (pending/applied/failed receipts + schema), `tests/`.
 
 Permanent rules:
 - **Internal only**: no public UI, routes/pages, endpoints/APIs or links; never import `tools/social-engine`
@@ -563,8 +573,19 @@ Permanent rules:
   site behaviour.
 - **Agent-ready JSON**: content requests follow `docs/SOCIAL_AGENT_CONTRACT.md` exactly; the JSON Schema is
   generated from the TS constants (`npm run social:schema`) and must stay in sync. Unknown fields are errors.
-- **No external/paid APIs**: no OpenAI/Anthropic/other AI calls, no paid video/voice services, no social
-  publishing, no GitHub Actions for it (until explicitly requested). Default copy = deterministic templates.
+- **No external/paid APIs**: no OpenAI/Anthropic/other AI calls, no paid video/voice services. **The repository
+  never publishes**: no Metricool/Instagram/TikTok/YouTube API, SDK, OAuth, token, brand id, account or timezone in
+  the repo — publishing is done outside by the Publishing Agent. Default copy = deterministic templates.
+- **Publication state** (`pipeline/publication.ts`, docs/SOCIAL_ENGINE.md › Publication State): changed ONLY by
+  publication receipts (one event × one platform; `scheduled | published | failed`; provider enum `metricool`;
+  schema generated by `social:schema` into `publication/schemas/`; unknown fields, duplicate keys, bad timestamps/
+  URLs are errors). Per-platform state machine: notScheduled → scheduled → published, scheduled → failed → scheduled
+  (retry); scheduled → scheduled only for the same provider post (UUID, else id); published → scheduled/failed
+  rejected; unknown renderId or renderStatus ≠ rendered rejected; an already-applied receipt id is a no-op.
+  `publicationStatus` (`notPublished | scheduled | partiallyPublished | published | failed`) is DERIVED from
+  `platforms[]`; scheduled is never published; series parts are independent render ids. Apply is all-or-nothing
+  (invalid → `publication/failed/` + `.error.json`, nothing applied). `publication/applied/` is a versioned audit
+  trail — never edit it. Old history formats (`platforms: [{platform, publishedAt, url}]`) are migrated on load.
 - **Deterministic rendering**: compositions are pure functions of `(data, frame)`; no randomness, no network
   assets, no official artwork or copyrighted music (optional audio = local royalty-free file in `audio/`).
 - **History required**: every queued/rendered/failed video is recorded in `history/history.json` (versioned);
@@ -581,9 +602,13 @@ Permanent rules:
 - **MP4 never committed**: videos leave the runner only as workflow artifacts.
 - **Queue JSON are untrusted input**: always validated by the engine (schema, data, duplicates, path guards).
 - **History must persist**: the render job commits `history/`, `content/`, `catalog/` back (only those paths), also on
-  partial failure.
-- **No render loops**: the state commit is pushed with `GITHUB_TOKEN` (never triggers workflows), carries
-  `[skip social-render] [skip ci]`, and the job skips `github-actions[bot]` commits. Keep all three guards.
+  partial failure; the publication-state job commits `history/`, `publication/`, `catalog/`. Both go through
+  `ci/commit-state.sh`, which rebases with the field-level `history.json` merge driver (`.gitattributes`,
+  `cli/merge-history.ts`) if the other workflow committed meanwhile — never hand-merge history.
+- **No workflow loops**: state commits are pushed with `GITHUB_TOKEN` (never triggers workflows), carry
+  `[skip social-render]` / `[skip social-publication]` + `[skip ci]`, and the jobs skip `github-actions[bot]` commits.
+  Keep all three guards. Publication: own concurrency group `animapverse-social-publication-state`, no cancel;
+  `social-publication-validate.yml` (PR, read-only) also enforces that a receipt PR only ADDS `publication/pending/*.json`.
 - Fonts come only from the bundled `@fontsource` packages (all subsets), never the OS: Windows and Linux renders match.
 - **CharacterJourney series**: a journey of ≤ 8 places (after projection + same-pin merge) is ONE video with the
   3-segment id; a longer one is a **chronological, arc-based series** (`data/segments.ts`: effective arc per stop →

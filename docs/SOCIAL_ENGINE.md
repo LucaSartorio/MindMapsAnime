@@ -16,12 +16,17 @@ social:queue / drop JSON ──► content/queue/*.json  validated, de-duplicate
         ↓
 social:render:queue ──► template → Remotion ──► output/<stem>.mp4 + <stem>.manifest.json
         ↓                                           (failures → content/failed/ + .error.json)
-history/history.json                               render status (+ reserved publication fields)
+history/history.json                               render status + publication state per platform
+        ↓
+[ Publishing Agent — external, ChatGPT Work + Metricool ]   downloads the artifact, schedules/publishes
+        ↓                                           contract: docs/SOCIAL_PUBLISHING_CONTRACT.md
+publication/pending/*.json (receipt PR) ──► social:publication:apply ──► history + catalog
 ```
 
 The same engine runs locally (Windows/macOS/Linux) and in the cloud
 (**GitHub Actions**, see [Cloud rendering](#cloud-rendering)): no second renderer,
-no CI-specific logic. **No AI/API is called and nothing is published.**
+no CI-specific logic. **No AI/API is called and the repository never publishes**: publishing is
+done outside by the Publishing Agent, which reports back with receipts ([Publication State](#publication-state)).
 
 ## Commands
 
@@ -47,9 +52,15 @@ npm run social:retry:failed                      # failed → queue → render (
 npm run social:render -- --config tools/social-engine/examples/itachi-character-journey.json   # ad-hoc preview
 npm run social:render -- --template character-journey --anime naruto --character itachi --still 40,200,520
 npm run social:studio                            # Remotion Studio
-npm run social:schema                            # regenerate schemas/social-content.schema.json
-npm run social:validate                          # typecheck + 50 engine/pipeline tests
+npm run social:schema                            # regenerate the content + publication-receipt JSON Schemas
+npm run social:validate                          # typecheck + engine/pipeline/publication tests
 npm run social:ci:report                         # artifact folder + report from the last batch (CI; works locally too)
+
+# publication state (the repo never publishes — see "Publication State")
+npm run social:publication:validate              # check publication/pending/*.json receipts, change nothing
+npm run social:publication:apply:dry             # renderId · platform · old → new
+npm run social:publication:apply                 # all-or-nothing: history + catalog, pending → applied/
+npm run social:publication:list                  # rendered videos × instagram/tiktok/youtube state
 ```
 
 Ad-hoc `social:render` (flags: `--locale --hook --cta --duration --max-stops --variant --audio
@@ -345,10 +356,11 @@ CharacterJourney:
   One Piece                  50      60       5       367
   Dragon Ball                21      26       2        82
   Black Clover               50      55       4        87
-  total 180 characters → 206 videos (43 are parts of a series) · 206 in en+it · 2 already rendered
+  total 180 characters → 206 videos (43 are parts of a series) · 206 in en+it · 3 already rendered
   excluded:
      632 no_journey_data
      251 single_location
+publishing: 6 rendered (6 notPublished) · 1 ready to publish (MP4 downloadable) · 5 without a downloadable MP4
 ```
 
 **Every part is an item.** A multi-part item (`series` is `null` for a single video):
@@ -371,10 +383,19 @@ CharacterJourney:
   "locales": ["en", "it"],
   "recommendedDurationSeconds": 30,
   "facts": { "importance": "main", "places": 32, "animatedStops": 6, "arcs": 2, "journeyArcs": 16 },
-  "renderedLocales": [], "publishedLocales": [], "queuedLocales": [],
-  "renderedBefore": false, "publishedBefore": false
+  "renderedLocales": ["en"], "scheduledLocales": ["en"], "publishedLocales": [], "queuedLocales": [],
+  "renderedBefore": true, "publishedBefore": false,
+  "publication": [
+    { "renderId": "character-journey:dragonball:goku:part-02@en", "locale": "en", "variant": null,
+      "status": "scheduled", "platforms": { "instagram": "scheduled", "tiktok": "notScheduled", "youtube": "notScheduled" } }
+  ]
 }
 ```
+
+`renderedBefore` / `renderedLocales` mean **an MP4 exists — never "published"**. Publication
+facts are separate: `scheduledLocales`, `publishedLocales`, and `publication` (one entry per
+rendered video, every platform listed). The catalog also has a top-level **`publishing`**
+section — the Publishing Agent's work list, see [Publication State](#publication-state).
 
 `facts.places` / `journeyArcs` = the full journey; `animatedStops` / `arcs` = this video.
 Parts are listed in chronological order and linked with `previousId` / `nextId`.
@@ -385,7 +406,8 @@ declared locale to prove it. Exclusion reasons: `no_journey_data`, `single_locat
 `missing_coordinates`, `missing_slug`, `missing_translation` (`catalog/excluded.json`).
 Locale availability is strict: a locale is listed only if every animated stop's text is
 authored in it (no fallback). History columns (`renderedLocales`, `queuedLocales`,
-`publishedLocales`, `renderedBefore`, `publishedBefore`) come from history + queue; the
+`scheduledLocales`, `publishedLocales`, `renderedBefore`, `publishedBefore`, `publication`,
+`publishing`) come from history + queue; the
 catalog is refreshed after every batch and `social:validate` fails if the committed one is stale.
 
 ### Queue
@@ -454,15 +476,24 @@ render id, keys sorted:
   "sourceFile": "0002-naruto_itachi-uchiha_character-journey_en.json",
   "segment": null, "segmentFingerprint": null,
   "durationSeconds": 22, "attempts": 1, "lastError": null,
+  "artifact": {
+    "name": "animapverse-social-render-36996948068-1", "runId": "36996948068", "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/36996948068",
+    "video": "videos/dragonball_goku_character-journey_part-01_en.mp4",
+    "manifest": "manifests/dragonball_goku_character-journey_part-01_en.manifest.json",
+    "sha256": "…", "expiresAt": "2026-11-01T10:45:48Z"
+  },
   "publicationStatus": "notPublished", "publishedAt": null, "platforms": []
 }
 ```
 
 Two separate state machines: `renderStatus` (`queued → rendering → rendered | failed`,
 `failed → queued` on retry, `rendering → queued` for crash recovery, `rendered → queued`
-only for a forced re-render) and `publicationStatus` (`notPublished | partiallyPublished |
-published` + `platforms[]` — reserved for the publishing phase; nothing publishes today).
-Illegal moves throw. The MP4 itself is not versioned: history says it was produced; the file
+only for a forced re-render) and the **publication state per platform** (`platforms[]`, changed
+only by publication receipts; `publicationStatus` / `publishedAt` are derived from it) — see
+[Publication State](#publication-state). Illegal moves throw. `artifact` (set by CI renders)
+says which workflow artifact holds the MP4 and until when (`expiresAt` = render time + the
+artifact retention); it is `null` for local renders and records older than this field. The MP4 itself is not versioned: history says it was produced; the file
 lives where it was rendered. To forget a test render, delete its record (and its
 `content/rendered/` file) — it's plain JSON.
 
@@ -525,6 +556,8 @@ on an `ubuntu-latest` runner. Two workflows:
 | --- | --- | --- | --- |
 | [`social-validate.yml`](../.github/workflows/social-validate.yml) | pull request touching `tools/social-engine/**` (or these workflows / package files) | `npm ci` → `social:validate:queue` → `social:render:queue:dry` → `social:validate` (tests). **Never renders.** | `contents: read`, no secrets, `pull_request` (not `_target`) |
 | [`social-render.yml`](../.github/workflows/social-render.yml) | push to `main` changing `tools/social-engine/content/queue/**` (= a merged queue PR) · manual **Run workflow** (`dry_run` input) | validate → render → artifact → state commit | `contents: write` on the render job only |
+| [`social-publication-validate.yml`](../.github/workflows/social-publication-validate.yml) | pull request touching `tools/social-engine/publication/pending/**` | receipt PR scope → `social:publication:validate` → publication tests. **Never writes.** | `contents: read`, no secrets |
+| [`social-publication-state.yml`](../.github/workflows/social-publication-state.yml) | push to `main` changing `publication/pending/**` (= a merged receipt PR) · manual (`dry_run`) | validate → apply all-or-nothing → state commit | `contents: write` on the apply job only |
 
 ```
 PR with queue JSON ──► Social validate (red if invalid / duplicate / unrenderable)
@@ -606,7 +639,12 @@ The batch updates the repository state (`history/history.json`, queue files move
 `content/rendered/` or `content/failed/` + `.error.json`, refreshed `catalog/`). The
 **Persist social history** step stages **only** those three paths and pushes one commit
 to the same branch: `chore(social): record rendered content [skip social-render] [skip ci]`
-(author `github-actions[bot]`), rebasing and retrying if the branch moved meanwhile. It runs
+(author `github-actions[bot]`), rebasing and retrying if the branch moved meanwhile. The commit
+is done by [`tools/social-engine/ci/commit-state.sh`](../tools/social-engine/ci/commit-state.sh),
+shared with Social publication state: if the other workflow committed in between, the rebase
+merges `history.json` **field by field** (`.gitattributes` → `merge=social-history`, driver
+`cli/merge-history.ts`: render fields from one side, `platforms` from the other; the same field
+changed on both sides fails instead of guessing) and regenerates the catalog. It runs
 also after a partial failure, a timeout or a cancellation (`always()`), so whatever was
 rendered is recorded and a crash mid-render is recovered by the next run. MP4s are never
 committed (git-ignored, and never staged).
@@ -671,6 +709,201 @@ fonts don't cover). Same Remotion version → same Chrome Headless Shell (149.0.
 - **Job skipped** → the head commit was the bot's state commit (expected).
 - **"Node.js 20 is deprecated" warning** on `actions/*@v4` → harmless (GitHub runs them on
   Node 24); bump the action majors when convenient.
+
+## Publication State
+
+The repository is the **source of truth for publication state** — but it never publishes, holds no
+provider token and makes no social/Metricool API call. Responsibilities are split:
+
+| Who | Does |
+| --- | --- |
+| Social engine (this repo) | knows a video exists (render, artifact, history) |
+| **Publishing Agent** (external: ChatGPT Work + Metricool plugin) | downloads the artifact, schedules/publishes through Metricool |
+| **Publication receipt** (JSON in a PR) | tells the repository what happened, one event · one platform |
+| Repository (`social:publication:apply`, CI) | validates the receipt and records the state in history + catalog |
+
+```
+catalog.publishing.ready ──► Publishing Agent ──► GitHub artifact (render-summary → manifest → MP4)
+                                    │
+                                    ▼ Metricool: schedule / publish → post id · UUID · planner URL · time
+             receipt JSON in publication/pending/ ──► PR ──► Social publication validate
+                                    ──► merge ──► Social publication state (apply all-or-nothing)
+                                    ──► history.json platforms[] + catalog ──► never scheduled twice
+```
+
+Contract for the agent: [`docs/SOCIAL_PUBLISHING_CONTRACT.md`](SOCIAL_PUBLISHING_CONTRACT.md) ·
+schema: `publication/schemas/publication-receipt.schema.json` (generated by `social:schema`) ·
+code: `pipeline/publication.ts` (receipts + state machine), `pipeline/history.ts` (model).
+
+### Receipts
+
+```
+tools/social-engine/publication/
+  pending/   receipts to apply (added ONLY by the agent's PR)
+  applied/   audit trail: <receiptId>.json = original receipt + transition + run (versioned, never edited)
+  failed/    rejected receipts + .error.json (renderId, platform, current/requested state, error)
+  schemas/   publication-receipt.schema.json
+```
+
+One JSON object per file (`[A-Za-z0-9][A-Za-z0-9._-]*.json`, ≤ 16 KB, regular file — no symlink):
+
+```json
+{
+  "receiptVersion": 1,
+  "renderId": "character-journey:dragonball:goku:part-01@en",
+  "platform": "instagram",
+  "provider": "metricool",
+  "status": "scheduled",
+  "scheduledFor": "2026-10-05T10:00:00+02:00",
+  "providerPostId": "123456",
+  "providerPostUuid": "0b8e4c1a-…",
+  "plannerUrl": "https://app.metricool.com/…",
+  "recordedAt": "2026-10-02T12:00:00Z",
+  "recordedBy": "chatgpt-work-publishing-agent"
+}
+```
+
+| status | required (besides `receiptVersion renderId platform provider status recordedAt`) | also allowed |
+| --- | --- | --- |
+| `scheduled` | `scheduledFor` | `providerPostId providerPostUuid plannerUrl recordedBy notes` |
+| `published` | `publishedAt` | the above + `scheduledFor publicUrl` |
+| `failed` | `error` | `providerPostId providerPostUuid plannerUrl scheduledFor recordedBy notes` |
+
+Rules (parser = schema + more): unknown fields and fields not allowed for the status are errors;
+duplicate JSON keys are errors; timestamps are full ISO 8601 **with seconds and offset** and real
+calendar dates — stored **exactly as given** (the original offset of `scheduledFor` is kept; comparisons
+use the absolute instant); URLs are `https`, no credentials, ≤ 2048 chars; provider ids are opaque tokens
+(`[A-Za-z0-9][A-Za-z0-9._:-]{0,127}`), never paths. `platform ∈ instagram | tiktok | youtube`,
+`provider ∈ metricool` (enum, extensible in `PUBLICATION_PROVIDERS`). `plannerUrl` (Metricool back office)
+and `publicUrl` (the live post) are different things and never mixed; `providerPostId` and
+`providerPostUuid` are kept apart (Metricool may change the id; the UUID is stable).
+
+**Receipt id** (idempotency key, derived — the agent doesn't compute it):
+`<fileStem>.<platform>.<status>.<sha256(event)[0..12]>`, e.g.
+`dragonball_goku_character-journey_part-01_en.instagram.scheduled.6498ac9125bb`. The hash covers every
+fact of the event (incl. `recordedAt`), not the file name, `recordedBy` or `notes`.
+
+### Model
+
+`history.json` records keep `platforms[]` — now one **complete entry per platform that has a state**:
+
+```json
+"platforms": [{
+  "platform": "instagram", "provider": "metricool", "status": "scheduled",
+  "scheduledFor": "2026-10-05T10:00:00+02:00", "scheduledAt": "2026-10-02T12:00:00Z",
+  "publishedAt": null, "failedAt": null,
+  "providerPostId": "123456", "providerPostUuid": "0b8e4c1a-…",
+  "plannerUrl": "https://app.metricool.com/…", "publicUrl": null,
+  "lastError": null, "attempts": 1,
+  "receipts": ["dragonball_goku_character-journey_part-01_en.instagram.scheduled.6498ac9125bb"],
+  "updatedAt": "2026-10-02T12:31:07.000Z"
+}]
+```
+
+A platform without an entry is **`notScheduled`**. `publicationStatus` is **derived** (never written by
+hand) from the platforms that have a state — platforms never touched don't count:
+
+| platforms | `publicationStatus` |
+| --- | --- |
+| none | `notPublished` |
+| ≥ 1 scheduled, none published (failures may exist) | `scheduled` |
+| all published | `published` (e.g. only Instagram, published) |
+| ≥ 1 published + ≥ 1 scheduled/failed | `partiallyPublished` (e.g. IG published + TikTok scheduled) |
+| only failed | `failed` |
+
+`publishedAt` = earliest platform `publishedAt`. **`scheduled` is never `published`.** Every part of a
+series is its own render id, so Goku Part 1 scheduled says nothing about Part 2.
+
+**Backward compatibility**: `loadHistory` accepts every older format — records without `segment*` or
+`artifact`, and the pre-receipt `platforms: [{ platform, publishedAt, url }]`, migrated in memory to a
+`published` entry (`provider: null`, `publicUrl: url`); the aggregate is always re-derived.
+
+### Lifecycle (state machine per render × platform)
+
+```
+notScheduled ──scheduled──► scheduled ──published──► published ──(same post: enrich / no-op)
+     │  └──published (immediate / import)──────────────▲
+     └──failed──► failed ◄──failed── scheduled
+                    └──scheduled (retry: new post, attempts + 1)──► scheduled
+```
+
+| from \ receipt | scheduled | published | failed |
+| --- | --- | --- | --- |
+| notScheduled | ✔ | ✔ (flagged "without a scheduled receipt") | ✔ |
+| scheduled | only the **same provider post** (UUID, else id, matches): identical = no-op, new `scheduledFor` = reschedule; a different / unprovable post = **rejected** | ✔ unless it names another post | ✔ unless it names another post |
+| failed | ✔ retry | ✔ | ✔ (new error) |
+| published | **rejected** | same post and no conflicting `publishedAt`/`publicUrl` = enrich / no-op; otherwise rejected | **rejected** |
+
+Also rejected: an unknown `renderId`, and any video whose `renderStatus` is not `rendered`
+(`queued`, `rendering`, `failed`) — nothing unrendered can be scheduled.
+
+### Duplicate prevention
+
+- **Same render + platform can't be scheduled twice**: once `scheduled` or `published`, a `scheduled`
+  receipt for another post (or one that can't be matched to the recorded post) is refused — two
+  identical Reels can never both be recorded. `failed` reopens it (retry).
+- **Same receipt twice = no-op**: an already-applied receipt id is ignored; a re-sent event with the
+  same values is detected as "already recorded". History is byte-identical (no timestamp bump, no
+  duplicate entry); the audit file is still written (`outcome: "unchanged"`).
+- The receipt PR is validated against the current history **before** merge, and the state workflow
+  runs one at a time (concurrency group), so two receipts can't race.
+- The agent must still check `catalog.publishing.ready` / history **before** calling Metricool — the
+  repository can refuse a duplicate record, but only the agent can avoid creating the duplicate post.
+
+### Commands
+
+```bash
+npm run social:publication:validate      # pending receipts: contract + history + transitions; writes nothing
+npm run social:publication:apply:dry     # the plan: renderId · platform · old → new
+npm run social:publication:apply         # ALL valid → history + catalog, pending → applied/ ; else NONE (invalid → failed/), exit 1
+npm run social:publication:list          # rendered videos × platform states (+ artifact)
+npm run social:publication:list -- --pending --platform instagram
+npm run social:publication:test          # publication-state tests only (also part of social:validate)
+```
+```
+✔ character-journey:dragonball:goku:part-01@en
+  instagram  notScheduled → scheduled
+  provider: metricool · uuid 0b8e4c1a-test · id 123456
+  scheduled: 2026-10-05T10:00:00+02:00
+  receipt: goku-p1-instagram.json → dragonball_goku_character-journey_part-01_en.instagram.scheduled.6498ac9125bb
+```
+
+**Atomic batch**: every pending receipt is validated and simulated (in event order: `recordedAt`, then
+scheduled → failed → published) on a copy of the history first. If one is invalid, **nothing** is
+applied, history is untouched, the invalid receipts move to `failed/` with a `.error.json`, the valid
+ones stay in `pending/` (applied by the next run) and the command exits 1. Writes are ordered audit →
+history → pending removal, so a crash mid-apply is harmless (a re-run sees the receipts as applied).
+The apply holds the same lock as the batch render (one writer of history.json at a time).
+
+### Workflows
+
+- **Social publication validate** (`social-publication-validate.yml`) — PRs touching
+  `publication/pending/**`: `npm ci` → `social:publication:check-scope` (a receipt PR may **only add**
+  `publication/pending/*.json`: no history, catalog, audit trail or code edits) →
+  `social:publication:validate` → `social:publication:test`. `contents: read`, `pull_request`, no secrets.
+- **Social publication state** (`social-publication-state.yml`) — push to `main` changing
+  `publication/pending/**` (+ manual run with `dry_run`): validate → apply → commit
+  `chore(social): record publication state [skip social-publication] [skip ci]` (history, publication/,
+  catalog only) via `ci/commit-state.sh`. Concurrency group `animapverse-social-publication-state`
+  (`cancel-in-progress: false`); `contents: write` on the job only, `GITHUB_TOKEN` only. The run goes red
+  if a receipt was rejected (after committing the quarantine).
+- **Loop prevention** (the bot commit deletes files in `pending/`, which matches the trigger): pushes
+  with `GITHUB_TOKEN` never start workflows; `[skip ci]` in the message; the job skips
+  `github-actions[bot]` and `[skip social-publication]`. The commit never touches `content/queue/**`,
+  so it can't trigger a render either.
+- **Render ↔ publication**: separate concurrency groups (a publication never waits for a 10-minute
+  render); if both commit state at the same time, `commit-state.sh` rebases with the field-level
+  `history.json` merge driver (see [History persistence](#history-persistence-the-runner-is-ephemeral)).
+
+### Artifacts → MP4 (for the agent)
+
+`history.records[renderId].artifact` (also in `catalog.publishing.ready[]`) names the workflow artifact
+(`animapverse-social-render-<runId>-<attempt>`, run URL, expiry) and the paths inside it. Inside:
+`render-summary.json` → `rendered[]` entry with that **renderId** → `video` + `manifest` (+ `sha256`)
+→ the MP4. The manifest has the title, hook, CTA, page URL and series facts for the caption; it is never
+updated with publication state (that lives only in history). Records with `artifact: null` (local
+renders, renders before this field) or an expired artifact are listed in `catalog.publishing.unavailable`:
+they need a new render before they can be published.
 
 ## Troubleshooting
 

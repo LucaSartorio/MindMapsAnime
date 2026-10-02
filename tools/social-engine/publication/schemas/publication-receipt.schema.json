@@ -1,0 +1,291 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://animapverse.com/schemas/publication-receipt.v1.schema.json",
+  "title": "AniMapVerse publication receipt",
+  "description": "ONE event (scheduled / published / failed) for ONE rendered video on ONE platform, written by the external Publishing Agent into tools/social-engine/publication/pending/. See docs/SOCIAL_PUBLISHING_CONTRACT.md.",
+  "oneOf": [
+    {
+      "title": "scheduled",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "receiptVersion",
+        "renderId",
+        "platform",
+        "provider",
+        "status",
+        "recordedAt",
+        "scheduledFor"
+      ],
+      "properties": {
+        "receiptVersion": {
+          "const": 1,
+          "description": "Contract version: always 1."
+        },
+        "renderId": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*(?::[a-z0-9]+(?:-[a-z0-9]+)*){2,3}@(?:en|it)(?:\\+[a-z0-9]+(?:-[a-z0-9]+)*)?$",
+          "maxLength": 400,
+          "description": "The video, exactly as in history.json / render-summary.json (e.g. character-journey:dragonball:goku:part-01@en)."
+        },
+        "platform": {
+          "enum": [
+            "instagram",
+            "tiktok",
+            "youtube"
+          ],
+          "description": "Where the video is scheduled/published."
+        },
+        "provider": {
+          "enum": [
+            "metricool"
+          ],
+          "description": "Scheduling tool used by the Publishing Agent."
+        },
+        "status": {
+          "const": "scheduled",
+          "description": "What happened: scheduled (queued in the provider), published (live), failed."
+        },
+        "recordedAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})(?:\\.\\d{1,9})?(?:Z|([+-])(\\d{2}):(\\d{2}))$",
+          "description": "When the agent recorded the event (ISO 8601 with offset)."
+        },
+        "scheduledFor": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})(?:\\.\\d{1,9})?(?:Z|([+-])(\\d{2}):(\\d{2}))$",
+          "description": "Planned go-live time, with the ORIGINAL offset (e.g. 2026-10-05T10:00:00+02:00)."
+        },
+        "$schema": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "Optional pointer to the schema (ignored)."
+        },
+        "providerPostId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+          "description": "Provider post id (Metricool may change it after edits)."
+        },
+        "providerPostUuid": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+          "description": "Provider post UUID (stable in Metricool; preferred for matching)."
+        },
+        "plannerUrl": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://[^\\s@/]+\\.[^\\s@/]+(?:/\\S*)?$",
+          "maxLength": 2048,
+          "description": "Provider planner/back-office link (debug). NOT the public post."
+        },
+        "recordedBy": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9 ._-]{0,79}$",
+          "description": "Who wrote the receipt (e.g. \"chatgpt-work-publishing-agent\")."
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 500,
+          "description": "Free notes for people. Stored in the audit trail, never interpreted."
+        }
+      }
+    },
+    {
+      "title": "published",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "receiptVersion",
+        "renderId",
+        "platform",
+        "provider",
+        "status",
+        "recordedAt",
+        "publishedAt"
+      ],
+      "properties": {
+        "receiptVersion": {
+          "const": 1,
+          "description": "Contract version: always 1."
+        },
+        "renderId": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*(?::[a-z0-9]+(?:-[a-z0-9]+)*){2,3}@(?:en|it)(?:\\+[a-z0-9]+(?:-[a-z0-9]+)*)?$",
+          "maxLength": 400,
+          "description": "The video, exactly as in history.json / render-summary.json (e.g. character-journey:dragonball:goku:part-01@en)."
+        },
+        "platform": {
+          "enum": [
+            "instagram",
+            "tiktok",
+            "youtube"
+          ],
+          "description": "Where the video is scheduled/published."
+        },
+        "provider": {
+          "enum": [
+            "metricool"
+          ],
+          "description": "Scheduling tool used by the Publishing Agent."
+        },
+        "status": {
+          "const": "published",
+          "description": "What happened: scheduled (queued in the provider), published (live), failed."
+        },
+        "recordedAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})(?:\\.\\d{1,9})?(?:Z|([+-])(\\d{2}):(\\d{2}))$",
+          "description": "When the agent recorded the event (ISO 8601 with offset)."
+        },
+        "publishedAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})(?:\\.\\d{1,9})?(?:Z|([+-])(\\d{2}):(\\d{2}))$",
+          "description": "When the post went live (ISO 8601 with offset)."
+        },
+        "$schema": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "Optional pointer to the schema (ignored)."
+        },
+        "providerPostId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+          "description": "Provider post id (Metricool may change it after edits)."
+        },
+        "providerPostUuid": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+          "description": "Provider post UUID (stable in Metricool; preferred for matching)."
+        },
+        "plannerUrl": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://[^\\s@/]+\\.[^\\s@/]+(?:/\\S*)?$",
+          "maxLength": 2048,
+          "description": "Provider planner/back-office link (debug). NOT the public post."
+        },
+        "recordedBy": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9 ._-]{0,79}$",
+          "description": "Who wrote the receipt (e.g. \"chatgpt-work-publishing-agent\")."
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 500,
+          "description": "Free notes for people. Stored in the audit trail, never interpreted."
+        },
+        "scheduledFor": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})(?:\\.\\d{1,9})?(?:Z|([+-])(\\d{2}):(\\d{2}))$",
+          "description": "Planned go-live time, with the ORIGINAL offset (e.g. 2026-10-05T10:00:00+02:00)."
+        },
+        "publicUrl": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://[^\\s@/]+\\.[^\\s@/]+(?:/\\S*)?$",
+          "maxLength": 2048,
+          "description": "Public URL of the post on the platform."
+        }
+      }
+    },
+    {
+      "title": "failed",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "receiptVersion",
+        "renderId",
+        "platform",
+        "provider",
+        "status",
+        "recordedAt",
+        "error"
+      ],
+      "properties": {
+        "receiptVersion": {
+          "const": 1,
+          "description": "Contract version: always 1."
+        },
+        "renderId": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*(?::[a-z0-9]+(?:-[a-z0-9]+)*){2,3}@(?:en|it)(?:\\+[a-z0-9]+(?:-[a-z0-9]+)*)?$",
+          "maxLength": 400,
+          "description": "The video, exactly as in history.json / render-summary.json (e.g. character-journey:dragonball:goku:part-01@en)."
+        },
+        "platform": {
+          "enum": [
+            "instagram",
+            "tiktok",
+            "youtube"
+          ],
+          "description": "Where the video is scheduled/published."
+        },
+        "provider": {
+          "enum": [
+            "metricool"
+          ],
+          "description": "Scheduling tool used by the Publishing Agent."
+        },
+        "status": {
+          "const": "failed",
+          "description": "What happened: scheduled (queued in the provider), published (live), failed."
+        },
+        "recordedAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})(?:\\.\\d{1,9})?(?:Z|([+-])(\\d{2}):(\\d{2}))$",
+          "description": "When the agent recorded the event (ISO 8601 with offset)."
+        },
+        "error": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "description": "What went wrong (failed only)."
+        },
+        "$schema": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "Optional pointer to the schema (ignored)."
+        },
+        "providerPostId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+          "description": "Provider post id (Metricool may change it after edits)."
+        },
+        "providerPostUuid": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+          "description": "Provider post UUID (stable in Metricool; preferred for matching)."
+        },
+        "plannerUrl": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://[^\\s@/]+\\.[^\\s@/]+(?:/\\S*)?$",
+          "maxLength": 2048,
+          "description": "Provider planner/back-office link (debug). NOT the public post."
+        },
+        "recordedBy": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9 ._-]{0,79}$",
+          "description": "Who wrote the receipt (e.g. \"chatgpt-work-publishing-agent\")."
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 500,
+          "description": "Free notes for people. Stored in the audit trail, never interpreted."
+        },
+        "scheduledFor": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})(?:\\.\\d{1,9})?(?:Z|([+-])(\\d{2}):(\\d{2}))$",
+          "description": "Planned go-live time, with the ORIGINAL offset (e.g. 2026-10-05T10:00:00+02:00)."
+        }
+      }
+    }
+  ]
+}
