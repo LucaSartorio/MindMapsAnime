@@ -5,6 +5,7 @@ import {
   MAX_RECEIPT_NOTES,
   MAX_URL_CHARS,
   PROVIDER_REF_RE,
+  PROVIDER_UUID_RE,
   RECEIPT_FIELDS,
   RECEIPT_STATUSES,
   RECEIPT_VERSION,
@@ -43,6 +44,8 @@ function propertySchema(field: ReceiptField): Record<string, unknown> {
       return { type: 'string', format: 'date-time', pattern: ISO_TIMESTAMP_RE.source, description };
     case 'providerRef':
       return { type: 'string', pattern: PROVIDER_REF_RE.source, description };
+    case 'providerUuid':
+      return { type: 'string', pattern: PROVIDER_UUID_RE.source, description };
     case 'url':
       return { type: 'string', format: 'uri', pattern: '^https://[^\\s@/]+\\.[^\\s@/]+(?:/\\S*)?$', maxLength: MAX_URL_CHARS, description };
     case 'error':

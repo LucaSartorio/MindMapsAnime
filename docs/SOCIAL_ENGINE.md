@@ -60,7 +60,7 @@ npm run social:ci:report                         # artifact folder + report from
 npm run social:publication:validate              # check publication/pending/*.json receipts, change nothing
 npm run social:publication:apply:dry             # renderId · platform · old → new
 npm run social:publication:apply                 # all-or-nothing: history + catalog, pending → applied/
-npm run social:publication:list                  # rendered videos × instagram/tiktok/youtube state
+npm run social:publication:list                  # rendered videos × instagram/facebook/tiktok/youtube state
 ```
 
 Ad-hoc `social:render` (flags: `--locale --hook --cta --duration --max-stops --variant --audio
@@ -387,7 +387,7 @@ publishing: 6 rendered (6 notPublished) · 1 ready to publish (MP4 downloadable)
   "renderedBefore": true, "publishedBefore": false,
   "publication": [
     { "renderId": "character-journey:dragonball:goku:part-02@en", "locale": "en", "variant": null,
-      "status": "scheduled", "platforms": { "instagram": "scheduled", "tiktok": "notScheduled", "youtube": "notScheduled" } }
+      "status": "scheduled", "platforms": { "instagram": "scheduled", "facebook": "notScheduled", "tiktok": "notScheduled", "youtube": "notScheduled" } }
   ]
 }
 ```
@@ -773,7 +773,9 @@ Rules (parser = schema + more): unknown fields and fields not allowed for the st
 duplicate JSON keys are errors; timestamps are full ISO 8601 **with seconds and offset** and real
 calendar dates — stored **exactly as given** (the original offset of `scheduledFor` is kept; comparisons
 use the absolute instant); URLs are `https`, no credentials, ≤ 2048 chars; provider ids are opaque tokens
-(`[A-Za-z0-9][A-Za-z0-9._:-]{0,127}`), never paths. `platform ∈ instagram | tiktok | youtube`,
+(`providerPostId`: `[A-Za-z0-9][A-Za-z0-9._:-]{0,127}`; `providerPostUuid`: the same with ONE optional
+leading `-`, `^-?[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$`, for Metricool's signed numeric UUIDs like
+`-2035779932044177791`), never paths. `platform ∈ instagram | facebook | tiktok | youtube`,
 `provider ∈ metricool` (enum, extensible in `PUBLICATION_PROVIDERS`). `plannerUrl` (Metricool back office)
 and `publicUrl` (the live post) are different things and never mixed; `providerPostId` and
 `providerPostUuid` are kept apart (Metricool may change the id; the UUID is stable).
