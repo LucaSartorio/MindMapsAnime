@@ -28,30 +28,30 @@ componenti.
 | One Piece           | `onepiece`           | ✓ Disponibile | Frutti del Diavolo           |
 | Dragon Ball         | `dragonball`         | ✓ Disponibile | Tecniche                     |
 | Attack on Titan     | `attackontitan`      | In arrivo     | Abilità                      |
-| Bleach              | `bleach`             | In arrivo     | Zanpakutō & Poteri spirituali |
+| Bleach              | `bleach`             | ✓ Disponibile | Zanpakutō & Poteri spirituali |
 | Fullmetal Alchemist | `fullmetalalchemist` | In arrivo     | Alchimia                     |
 | Frieren             | `frieren`            | In arrivo     | Magia                        |
 | Toriko              | `toriko`             | In arrivo     | Tecniche Gourmet             |
 | Fairy Tail          | `fairytail`          | In arrivo     | Magia                        |
 | Jujutsu Kaisen      | `jujutsukaisen`      | In arrivo     | Tecniche Malefiche           |
 | Demon Slayer        | `demonslayer`        | In arrivo     | Respirazioni & Arti Demoniache |
-| Black Clover        | `blackclover`        | In arrivo     | Magia & Grimori              |
+| Black Clover        | `blackclover`        | ✓ Disponibile | Magia & Grimori              |
 
 ### Dataset attuali
 
-| Entità             | Naruto | Hunter x Hunter | One Piece | Dragon Ball |
-| ------------------ | -----: | --------------: | --------: | ----------: |
-| Personaggi         |    250 |             156 |       417 |          75 |
-| Clan & fazioni     |     57 |              20 |        83 |          21 |
-| Team               |     14 |               0 |         0 |           0 |
-| Tecniche           |    153 |              73 |       125 |          23 |
-| Archi narrativi    |     32 |               8 |        31 |          36 |
-| Eventi timeline    |    118 |             103 |       202 |          90 |
-| Percorsi           |     41 |              16 |        22 |           9 |
-| Luoghi             |    108 |              60 |       331 |          81 |
-| Nazioni            |     27 |              17 |         8 |           6 |
-| Confini (boundary) |     26 |              12 |         0 |           0 |
-| Livelli mappa      |     10 |               5 |        10 |           4 |
+| Entità             | Naruto | Hunter x Hunter | One Piece | Dragon Ball | Bleach |
+| ------------------ | -----: | --------------: | --------: | ----------: | -----: |
+| Personaggi         |    250 |             156 |       417 |          75 |    147 |
+| Clan & fazioni     |     57 |              20 |        83 |          21 |     34 |
+| Team               |     14 |               0 |         0 |           0 |      0 |
+| Tecniche           |    153 |              73 |       125 |          23 |    102 |
+| Archi narrativi    |     32 |               8 |        31 |          36 |     17 |
+| Eventi timeline    |    118 |             103 |       202 |          90 |    115 |
+| Percorsi           |     41 |              16 |        22 |           9 |     10 |
+| Luoghi             |    108 |              60 |       331 |          81 |     77 |
+| Nazioni            |     27 |              17 |         8 |           6 |      7 |
+| Confini (boundary) |     26 |              12 |         0 |           0 |      0 |
+| Livelli mappa      |     10 |               5 |        10 |           4 |      5 |
 
 **Livelli mappa** = world map + sotto-mappe drill-down:
 
@@ -61,6 +61,11 @@ componenti.
 - **One Piece** — Totland, Alabasta, Wano, Skypiea, Dressrosa, Sabaody,
   Marineford, Egghead, Fishman Island.
 - **Dragon Ball** — Terra (world map), Universo, Namecc, Spazio (GT).
+- **Bleach** — I Tre Mondi (world map: Soul Society, Mondo dei Vivi, Hueco
+  Mundo, Dangai, Reiōkyū, Inferno), Karakura, Seireitei, Hueco Mundo (Las
+  Noches), Reiōkyū. Mappe **SVG originali** ricostruite da noi
+  (`scripts/bleach-maps.py` → `public/assets/worlds/bleach/maps/`), nessuna
+  immagine ufficiale.
 
 **Lingue UI:** italiano (default) e inglese — selezionabili dall'interfaccia.
 
@@ -351,6 +356,7 @@ src/assets/worlds/<slug>/{characters,jutsu,clans,locations,arcs}/<entityId>.<ext
 | Dragon Ball     | capigliatura a punte | sfera di ki         | sfera del drago     |
 | Hunter x Hunter | aura Nen             | esagramma Nen       | placca da Hunter    |
 | Black Clover    | grimorio + quadrifoglio | cerchio magico   | stendardo di compagnia |
+| Bleach          | lama (zanpakutō)     | fendente            | stemma a stella     |
 
 I colori di fondo derivano dal `theme` del mondo, con una variazione per entità
 volutamente stretta: schede diverse restano distinguibili senza uscire dalla
