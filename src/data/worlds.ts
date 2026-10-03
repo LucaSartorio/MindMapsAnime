@@ -11,6 +11,12 @@ import {
   BLEACH_RELEASE_KINDS,
   BLEACH_ROLES,
 } from '@/data/bleach/config';
+import {
+  AOT_ORIGINS,
+  AOT_POWER_CATEGORIES,
+  AOT_RANKS,
+  AOT_ROLES,
+} from '@/data/attackontitan/config';
 
 /**
  * Registro generico di tutti gli anime/manga supportati o pianificati.
@@ -383,21 +389,31 @@ export const animeWorlds: AnimeWorld[] = [
       es: 'Muros y Titanes',
     },
     description: {
-      it: 'Il mondo oltre le Mura è in arrivo. Seguiremo Eren e il Corpo di Ricerca tra i tre muri — Maria, Rose e Sina —, l’isola di Paradis e Marley.',
-      en: 'The world beyond the Walls is coming. We\'ll follow Eren and the Survey Corps across the three walls — Maria, Rose and Sina —, Paradis Island and Marley.',
-      ja: '壁の向こうの世界が近日公開。エレンと調査兵団を追って、ウォール・マリア、ローゼ、シーナの三重の壁、パラディ島、そしてマーレへ。',
-      fr: 'Le monde au-delà des Murs arrive bientôt. Nous suivrons Eren et le Bataillon d’exploration entre les trois murs — Maria, Rose et Sina —, l’île du Paradis et Marley.',
-      de: 'Die Welt jenseits der Mauern kommt bald. Wir folgen Eren und dem Aufklärungstrupp zwischen den drei Mauern – Maria, Rose und Sina –, der Insel Paradis und Marley.',
-      es: 'El mundo más allá de los Muros está en camino. Seguiremos a Eren y al Cuerpo de Exploración entre los tres muros — María, Rose y Sina —, la isla de Paradis y Marley.',
+      it: "Il mondo di Attack on Titan ricostruito in sette mappe originali: la Terra capovolta con Marley, il Medio Oriente e Hizuru, l'isola di Paradis, le tre Mura in scala con i dodici distretti, Shiganshina, Trost, Liberio e i Sentieri. Eren, Mikasa, Armin e il Corpo di Ricerca, i Nove Giganti e i loro detentori, i Guerrieri di Marley, gli Ackerman e la famiglia reale, dalla caduta di Wall Maria fino al Boato della Terra.",
+      en: "Attack on Titan's world rebuilt across seven original maps: the upside-down Earth with Marley, the Mid-East and Hizuru, Paradis Island, the three Walls to scale with their twelve districts, Shiganshina, Trost, Liberio and the Paths. Eren, Mikasa, Armin and the Survey Corps, the Nine Titans and their holders, Marley's Warriors, the Ackermans and the royal family, from the fall of Wall Maria to the Rumbling.",
+      ja: '『進撃の巨人』の世界を7枚のオリジナル地図で再構成：マーレ、中東連合、ヒィズルのある逆さまの地球、パラディ島、12の城壁都市を備えた縮尺通りの三重の壁、シガンシナ区、トロスト区、レベリオ、そして「道」。エレン、ミカサ、アルミンと調査兵団、九つの巨人とその継承者、マーレの戦士、アッカーマン家と王家——ウォール・マリア陥落から地鳴らしまで。',
+      fr: 'Le monde de L’Attaque des Titans reconstruit en sept cartes originales : la Terre renversée avec Marley, le Moyen-Orient et Hizuru, l’île du Paradis, les trois Murs à l’échelle avec leurs douze districts, Shiganshina, Trost, Liberio et les Chemins. Eren, Mikasa, Armin et le Bataillon d’exploration, les Neuf Titans et leurs détenteurs, les Guerriers de Mahr, les Ackerman et la famille royale, de la chute du Mur Maria au Grand Terrassement.',
+      de: 'Die Welt von Attack on Titan in sieben originalen Karten rekonstruiert: die auf den Kopf gestellte Erde mit Marley, dem Nahen Osten und Hizuru, die Insel Paradis, die drei Mauern maßstabsgetreu mit ihren zwölf Bezirken, Shiganshina, Trost, Liberio und die Pfade. Eren, Mikasa, Armin und der Aufklärungstrupp, die Neun Titanen und ihre Träger, Marleys Krieger, die Ackermans und die Königsfamilie – vom Fall der Mauer Maria bis zum Grollen der Erde.',
+      es: 'El mundo de Ataque a los Titanes reconstruido en siete mapas originales: la Tierra invertida con Marley, Oriente Medio y Hizuru, la isla de Paradis, los tres Muros a escala con sus doce distritos, Shiganshina, Trost, Liberio y los Caminos. Eren, Mikasa, Armin y el Cuerpo de Exploración, los Nueve Titanes y sus portadores, los Guerreros de Marley, los Ackerman y la familia real, desde la caída del Muro María hasta el Retumbar.',
     },
-    status: 'coming_soon',
+    status: 'available',
+    coverAssetId: 'aot-cover-placeholder',
     theme: {
       primary: '#6f7d4e',
       accent: '#b0823f',
       highlight: '#9e2b25',
       background: '#0c0d11',
     },
-    availableMapLevelIds: [],
+    defaultMapLevelId: 'aot-map-world',
+    availableMapLevelIds: [
+      'aot-map-world',
+      'aot-map-paradis',
+      'aot-map-walls',
+      'aot-map-shiganshina',
+      'aot-map-trost',
+      'aot-map-liberio',
+      'aot-map-paths',
+    ],
     tags: ['azione', 'titani', 'hajime isayama', 'kodansha'],
     metadata: {
       author: 'Hajime Isayama',
@@ -407,10 +423,42 @@ export const animeWorlds: AnimeWorld[] = [
     },
     config: {
       ability: {
-        term: { it: 'Abilità', en: 'Abilities', ja: '能力', fr: 'Capacités', de: 'Fähigkeiten', es: 'Habilidades' },
-        categoryTerm: { it: 'Tipo', en: 'Type', ja: 'タイプ', fr: 'Type', de: 'Typ', es: 'Tipo' },
+        term: { it: 'Giganti & Poteri', en: 'Titans & Powers', ja: '巨人と力', fr: 'Titans & Pouvoirs', de: 'Titanen & Kräfte', es: 'Titanes y poderes' },
+        // La "categoria" raggruppa i Nove Giganti, i poteri dei Giganti, il sangue
+        // reale, gli Ackerman e la tecnologia umana; il facet secondario è l'ORIGINE.
+        categoryTerm: { it: 'Categoria', en: 'Category', ja: '分類', fr: 'Catégorie', de: 'Kategorie', es: 'Categoría' },
+        categories: AOT_POWER_CATEGORIES,
+        attribute: {
+          term: { it: 'Origine', en: 'Origin', ja: '起源', fr: 'Origine', de: 'Ursprung', es: 'Origen' },
+          options: AOT_ORIGINS,
+        },
       },
+      characterRank: {
+        term: { it: 'Grado', en: 'Rank', ja: '階級', fr: 'Rang', de: 'Rang', es: 'Rango' },
+        options: AOT_RANKS,
+      },
+      characterRoles: AOT_ROLES,
       nationTerm: { it: 'Territorio', en: 'Territory', ja: '領土', fr: 'Territoire', de: 'Territorium', es: 'Territorio' },
+      factionsTerm: { it: 'Corpi & Fazioni', en: 'Branches & Factions', ja: '兵団と勢力', fr: 'Corps & Factions', de: 'Truppen & Fraktionen', es: 'Cuerpos y facciones' },
+      placesTerm: { it: 'luoghi', en: 'places', ja: '場所', fr: 'lieux', de: 'Orte', es: 'lugares' },
+      featured: {
+        abilities: [
+          'tit-aot-founding-titan',
+          'tit-aot-attack-titan',
+          'tit-aot-colossal-titan',
+          'tit-aot-armored-titan',
+          'tit-aot-female-titan',
+          'tit-aot-beast-titan',
+        ],
+        factions: [
+          'faction-aot-survey-corps',
+          'faction-aot-warriors',
+          'faction-aot-cadets-104',
+          'faction-aot-yeagerists',
+          'faction-aot-ackerman',
+          'faction-aot-alliance',
+        ],
+      },
     },
   },
   {

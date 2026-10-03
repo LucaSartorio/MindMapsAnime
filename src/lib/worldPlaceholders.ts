@@ -133,13 +133,13 @@ const WORLD_STYLES: Record<string, WorldPlaceholderStyle> = {
     // Cerchio magico dorato su viola; stendardo su verde.
     tint: { jutsu: 'highlight', clan: 'primary' },
   },
-  // -------------- In arrivo (pronti al lancio del dataset) --------------
   attackontitan: {
     character: 'hood',
     ability: 'slash',
     emblem: 'wings',
-    ink: '#c8a15a',
+    ink: '#c8a15a', // oro delle cinghie dell'attrezzatura / Ali della Libertà
   },
+  // -------------- In arrivo (pronti al lancio del dataset) --------------
   bleach: {
     character: 'blade',
     ability: 'slash',

@@ -32,7 +32,7 @@ const HELP = `Usage: npm run social:render -- [options]      (ad-hoc; use the qu
 
   --config <file.json>        Content/video config. Flags below override it.
   --template <name>           ${templateNames()}
-  --anime <slug>              naruto | hunterxhunter | onepiece | dragonball | blackclover (or URL slug)
+  --anime <slug>              naruto | hunterxhunter | onepiece | dragonball | blackclover | bleach | attackontitan (or URL slug)
   --character <slug|id>       e.g. itachi-uchiha, char-itachi, luffy (alias: --subject)
   --segment <part-NN>         part of a multi-part journey (required for series)
   --locale <en|it>  --hook <text>  --cta <text>  --duration <12–60>  --max-stops <2–8>  --variant <slug>

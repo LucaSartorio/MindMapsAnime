@@ -117,7 +117,7 @@ Part of a series (real catalog data):
 | Field | Type | Rule |
 | --- | --- | --- |
 | `template` | string | `"characterJourney"` (alias `"character-journey"`) |
-| `anime` | string | catalog `anime` (`naruto`, `onepiece`, `hunterxhunter`, `dragonball`, `blackclover`, `bleach`); URL slugs (`one-piece`, `hunter-x-hunter`, `dragon-ball`, `black-clover`) also accepted |
+| `anime` | string | catalog `anime` (`naruto`, `onepiece`, `hunterxhunter`, `dragonball`, `blackclover`, `bleach`, `attackontitan`); URL slugs (`one-piece`, `hunter-x-hunter`, `dragon-ball`, `black-clover`, `attack-on-titan`) also accepted |
 | `subject` | string | catalog `subject` (e.g. `itachi-uchiha`). Ids (`char-itachi`) and **unique** short forms (`luffy`) are accepted and normalized |
 | `segment` | string | **only for series, and then mandatory**: the item's `series.segment` (`part-01`, `part-02`…). Must be **omitted** for a single journey |
 
@@ -155,7 +155,7 @@ Any other field is an **error** (typos are never silently ignored).
 
 - `template`: `characterJourney`
 - `locale`: `en`, `it`
-- `anime`: `naruto`, `onepiece`, `hunterxhunter`, `dragonball`, `blackclover`, `bleach` (+ URL slugs)
+- `anime`: `naruto`, `onepiece`, `hunterxhunter`, `dragonball`, `blackclover`, `bleach`, `attackontitan` (+ URL slugs)
 - `segment`: `part-NN` (from the catalog; a future engine version may emit `part-NN-vN`)
 - `status` (input): `queued`
 - history `renderStatus`: `queued` → `rendering` → `rendered` | `failed` (`failed` → `queued` on retry)

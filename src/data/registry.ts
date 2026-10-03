@@ -23,6 +23,8 @@ const worldDatasetLoaders: Record<string, () => Promise<WorldDataset>> = {
   blackclover: () =>
     import('@/data/blackclover').then((m) => m.blackcloverDataset),
   bleach: () => import('@/data/bleach').then((m) => m.bleachDataset),
+  attackontitan: () =>
+    import('@/data/attackontitan').then((m) => m.aotDataset),
 };
 
 /** Cache dei dataset già caricati (gli oggetti sono singleton immutabili). */
