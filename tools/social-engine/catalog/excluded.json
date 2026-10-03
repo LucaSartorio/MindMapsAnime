@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T22:53:01.579Z",
+  "generatedAt": "2026-10-03T23:14:33.153Z",
   "templates": {
     "characterJourney": {
       "byReason": {
-        "single_location": 497,
+        "single_location": 501,
         "no_journey_data": 585
       },
       "items": [
@@ -5785,20 +5785,6 @@
         },
         {
           "anime": "attackontitan",
-          "subject": "historia-reiss",
-          "subjectId": "char-aot-historia",
-          "displayName": "Historia Reiss",
-          "reason": "single_location"
-        },
-        {
-          "anime": "attackontitan",
-          "subject": "ymir",
-          "subjectId": "char-aot-ymir",
-          "displayName": "Ymir",
-          "reason": "single_location"
-        },
-        {
-          "anime": "attackontitan",
           "subject": "marco-bott",
           "subjectId": "char-aot-marco",
           "displayName": "Marco Bott",
@@ -6971,6 +6957,48 @@
           "subject": "yorozu",
           "subjectId": "char-jjk-yorozu",
           "displayName": "Yorozu",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "jin-itadori",
+          "subjectId": "char-jjk-jin",
+          "displayName": "Jin Itadori",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "akari-nitta",
+          "subjectId": "char-jjk-akari-nitta",
+          "displayName": "Akari Nitta",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "arata-nitta",
+          "subjectId": "char-jjk-arata-nitta",
+          "displayName": "Arata Nitta",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "dhruv-lakdawalla",
+          "subjectId": "char-jjk-dhruv",
+          "displayName": "Dhruv Lakdawalla",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "kurourushi",
+          "subjectId": "char-jjk-kurourushi",
+          "displayName": "Kurourushi",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "kogane",
+          "subjectId": "char-jjk-kogane",
+          "displayName": "Kogane",
           "reason": "single_location"
         },
         {

@@ -9,9 +9,12 @@ import type { SeoSlugLock } from '@/types';
 export const jujutsukaisenSlugs: SeoSlugLock = {
   "slugs": {
     "characters": {
+      "char-jjk-akari-nitta": "akari-nitta",
+      "char-jjk-arata-nitta": "arata-nitta",
       "char-jjk-charles": "charles-bernard",
       "char-jjk-choso": "choso",
       "char-jjk-dagon": "dagon",
+      "char-jjk-dhruv": "dhruv-lakdawalla",
       "char-jjk-eso": "eso",
       "char-jjk-gakuganji": "yoshinobu-gakuganji",
       "char-jjk-geto": "suguru-geto",
@@ -24,6 +27,7 @@ export const jujutsukaisenSlugs: SeoSlugLock = {
       "char-jjk-higuruma": "hiromi-higuruma",
       "char-jjk-ijichi": "kiyotaka-ijichi",
       "char-jjk-ino": "takuma-ino",
+      "char-jjk-jin": "jin-itadori",
       "char-jjk-jogo": "jogo",
       "char-jjk-junpei": "junpei-yoshino",
       "char-jjk-kaori": "kaori-itadori",
@@ -31,7 +35,9 @@ export const jujutsukaisenSlugs: SeoSlugLock = {
       "char-jjk-kechizu": "kechizu",
       "char-jjk-kenjaku": "kenjaku",
       "char-jjk-kirara": "kirara-hoshi",
+      "char-jjk-kogane": "kogane",
       "char-jjk-kuroi": "misato-kuroi",
+      "char-jjk-kurourushi": "kurourushi",
       "char-jjk-kusakabe": "atsuya-kusakabe",
       "char-jjk-larue": "larue",
       "char-jjk-mahito": "mahito",

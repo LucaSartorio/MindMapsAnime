@@ -12,13 +12,14 @@ import { aotFactions } from './factions';
 import { aotArcs } from './arcs';
 import { aotEventsWalls } from './eventsWalls';
 import { aotEventsWorld } from './eventsWorld';
+import { aotEventsInheritance } from './eventsInheritance';
 import { aotRoutes } from './routes';
 import { aotAbilities } from './abilities';
 import { aotAssets } from './assets';
 
 const attackOnTitan = animeWorlds.find((w) => w.slug === 'attackontitan')!;
 
-const events: TimelineEvent[] = [...aotEventsWalls, ...aotEventsWorld].sort((a, b) => a.order - b.order);
+const events: TimelineEvent[] = [...aotEventsWalls, ...aotEventsWorld, ...aotEventsInheritance].sort((a, b) => a.order - b.order);
 
 /** Gli `eventIds` di ogni arco sono derivati dagli eventi (una sola fonte di verità). */
 const arcs: StoryArc[] = aotArcs.map((arc) => ({

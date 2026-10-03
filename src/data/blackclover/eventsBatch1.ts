@@ -98,7 +98,7 @@ export const blackcloverEventsBatch1: TimelineEvent[] = [
     canon: 'canon',
     canonStatus: 'canon',
     referenceStatus: 'verified',
-    tags: ['liebe', 'licita', 'lucifero', 'passato'],
+    tags: ['liebe', 'licita', 'lucifero', 'passato', 'diavolo'],
   },
   {
     id: 'evt-bc-asta-vs-sekke',
@@ -260,7 +260,7 @@ export const blackcloverEventsBatch1: TimelineEvent[] = [
     canon: 'canon',
     canonStatus: 'canon',
     referenceStatus: 'verified',
-    tags: ['zagred', 'asta', 'licht', 'duello'],
+    tags: ['zagred', 'asta', 'licht', 'duello', 'diavolo'],
   },
   {
     id: 'evt-bc-gaja-vs-vanica',
@@ -343,7 +343,7 @@ export const blackcloverEventsBatch1: TimelineEvent[] = [
     canon: 'canon',
     canonStatus: 'canon',
     referenceStatus: 'verified',
-    tags: ['lucifero', 'capitani', 'solo-manga'],
+    tags: ['lucifero', 'capitani', 'solo-manga', 'diavolo'],
   },
   {
     id: 'evt-bc-asta-vs-lily',

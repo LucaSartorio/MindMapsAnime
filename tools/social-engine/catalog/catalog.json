@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T22:53:01.579Z",
+  "generatedAt": "2026-10-03T23:14:33.153Z",
   "locales": [
     "en",
     "it"
@@ -41,10 +41,10 @@
           "excluded": 135
         },
         "attackontitan": {
-          "characters": 35,
-          "videos": 35,
+          "characters": 37,
+          "videos": 37,
           "series": 0,
-          "excluded": 47
+          "excluded": 45
         },
         "bleach": {
           "characters": 71,
@@ -56,7 +56,7 @@
           "characters": 19,
           "videos": 19,
           "series": 0,
-          "excluded": 47
+          "excluded": 53
         },
         "blackclover": {
           "characters": 50,
@@ -8870,6 +8870,66 @@
           "publication": []
         },
         {
+          "id": "character-journey:attackontitan:historia-reiss",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "historia-reiss",
+          "series": null,
+          "displayName": {
+            "en": "Historia Reiss",
+            "it": "Historia Reiss"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "main",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:ymir",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "ymir",
+          "series": null,
+          "displayName": {
+            "en": "Ymir",
+            "it": "Ymir"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
           "id": "character-journey:attackontitan:floch-forster",
           "anime": "attackontitan",
           "animeTitle": "Attack on Titan",
@@ -9183,13 +9243,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 33,
+          "recommendedDurationSeconds": 36,
           "facts": {
             "importance": "main",
-            "places": 7,
-            "animatedStops": 7,
-            "arcs": 4,
-            "journeyArcs": 4
+            "places": 8,
+            "animatedStops": 8,
+            "arcs": 5,
+            "journeyArcs": 5
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -9273,13 +9333,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "minor",
-            "places": 3,
-            "animatedStops": 3,
-            "arcs": 3,
-            "journeyArcs": 3
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 4,
+            "journeyArcs": 4
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -9303,13 +9363,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "major",
-            "places": 5,
-            "animatedStops": 5,
-            "arcs": 3,
-            "journeyArcs": 3
+            "places": 6,
+            "animatedStops": 6,
+            "arcs": 4,
+            "journeyArcs": 4
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -11042,26 +11102,26 @@
             "previousId": null,
             "nextId": "character-journey:bleach:sosuke-aizen:part-02",
             "arcIds": [
+              "arc-bl-agent",
               "arc-bl-arrancar-arrival",
-              "arc-bl-turn-back-pendulum",
-              "arc-bl-fake-karakura"
+              "arc-bl-turn-back-pendulum"
             ],
             "arcTitles": {
               "en": [
+                "The Substitute",
                 "Arrancar: The Arrival",
-                "Turn Back the Pendulum",
-                "The Battle of Fake Karakura Town"
+                "Turn Back the Pendulum"
               ],
               "it": [
+                "Lo Shinigami sostituto",
                 "Arrancar: l'arrivo",
-                "Turn Back the Pendulum (il passato)",
-                "La battaglia della Karakura replica"
+                "Turn Back the Pendulum (il passato)"
               ]
             },
-            "firstArc": "Arrancar: The Arrival",
-            "lastArc": "The Battle of Fake Karakura Town",
+            "firstArc": "The Substitute",
+            "lastArc": "Turn Back the Pendulum",
             "segmentationVersion": 1,
-            "fingerprint": "ca6d0083"
+            "fingerprint": "b251d301"
           },
           "displayName": {
             "en": "Sōsuke Aizen",
@@ -11071,13 +11131,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 30,
+          "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "main",
-            "places": 9,
-            "animatedStops": 6,
+            "places": 10,
+            "animatedStops": 3,
             "arcs": 3,
-            "journeyArcs": 6
+            "journeyArcs": 7
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -11100,26 +11160,29 @@
             "previousId": "character-journey:bleach:sosuke-aizen:part-01",
             "nextId": null,
             "arcIds": [
+              "arc-bl-fake-karakura",
               "arc-bl-tybw-separation",
               "arc-bl-tybw-conflict",
               "arc-bl-tybw-calamity"
             ],
             "arcTitles": {
               "en": [
+                "The Battle of Fake Karakura Town",
                 "Thousand-Year Blood War: The Separation",
                 "Thousand-Year Blood War: The Conflict",
                 "Thousand-Year Blood War: The Calamity"
               ],
               "it": [
+                "La battaglia della Karakura replica",
                 "Guerra dei Mille Anni: la separazione",
                 "Guerra dei Mille Anni: il conflitto",
                 "Guerra dei Mille Anni: la calamità"
               ]
             },
-            "firstArc": "Thousand-Year Blood War: The Separation",
+            "firstArc": "The Battle of Fake Karakura Town",
             "lastArc": "Thousand-Year Blood War: The Calamity",
             "segmentationVersion": 1,
-            "fingerprint": "bc5453c7"
+            "fingerprint": "47ff5d40"
           },
           "displayName": {
             "en": "Sōsuke Aizen",
@@ -11129,13 +11192,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "main",
-            "places": 9,
-            "animatedStops": 3,
-            "arcs": 3,
-            "journeyArcs": 6
+            "places": 10,
+            "animatedStops": 7,
+            "arcs": 4,
+            "journeyArcs": 7
           },
           "renderedLocales": [],
           "scheduledLocales": [],

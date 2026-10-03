@@ -11,6 +11,8 @@ import { jjkFactions } from './factions';
 import { jjkArcs } from './arcs';
 import { jjkEventsPast } from './eventsPast';
 import { jjkEventsWar } from './eventsWar';
+import { jjkEventsMore } from './eventsMore';
+import { jjkCharactersExtra } from './charactersExtra';
 import { jjkRoutes } from './routes';
 import { jjkAbilities } from './abilities';
 import { jjkAssets } from './assets';
@@ -18,7 +20,7 @@ import { jjkTournaments } from './tournaments';
 
 const jujutsuKaisen = animeWorlds.find((w) => w.slug === 'jujutsukaisen')!;
 
-const events: TimelineEvent[] = [...jjkEventsPast, ...jjkEventsWar].sort((a, b) => a.order - b.order);
+const events: TimelineEvent[] = [...jjkEventsPast, ...jjkEventsWar, ...jjkEventsMore].sort((a, b) => a.order - b.order);
 
 /** Gli `eventIds` di ogni arco sono derivati dagli eventi (una sola fonte di verità). */
 const arcs: StoryArc[] = jjkArcs.map((arc) => ({
@@ -30,7 +32,7 @@ const arcs: StoryArc[] = jjkArcs.map((arc) => ({
  * Le tecniche dichiarano i propri utilizzatori (`jutsu.characterIds`): la scheda del
  * personaggio le riceve in `jutsuIds`, così la relazione è sempre bidirezionale.
  */
-const characters: Character[] = [...jjkCharactersTokyo, ...jjkCharactersKyoto, ...jjkCharactersCurses].map((c) => {
+const characters: Character[] = [...jjkCharactersTokyo, ...jjkCharactersKyoto, ...jjkCharactersCurses, ...jjkCharactersExtra].map((c) => {
   const derived = jjkAbilities.filter((a) => a.characterIds?.includes(c.id)).map((a) => a.id);
   const jutsuIds = [...new Set([...(c.jutsuIds ?? []), ...derived])];
   return jutsuIds.length ? { ...c, jutsuIds } : c;

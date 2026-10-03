@@ -223,7 +223,7 @@ export const hxhEventsBatch2: TimelineEvent[] = [
     animeEpisodes: ['143-144'],
     canon: 'canon',
     referenceStatus: 'verified',
-    tags: ['elezione', 'leorio'],
+    tags: ['elezione', 'leorio', 'tracce-di-ging'],
   },
   {
     id: 'ev-hxh-gon-loses-nen',

@@ -1,7 +1,7 @@
 import type { TimelineEvent } from '@/types';
 import { P } from './periods';
 
-const ev = (e: Omit<TimelineEvent, 'worldId' | 'canonStatus' | 'referenceStatus' | 'canon'> & Partial<Pick<TimelineEvent, 'canon' | 'referenceStatus'>>): TimelineEvent => {
+export const ev = (e: Omit<TimelineEvent, 'worldId' | 'canonStatus' | 'referenceStatus' | 'canon'> & Partial<Pick<TimelineEvent, 'canon' | 'referenceStatus'>>): TimelineEvent => {
   const canon = e.canon ?? 'canon';
   return {
     worldId: 'world-bleach',
@@ -591,7 +591,7 @@ export const bleachEvents: TimelineEvent[] = [
     characterIds: ['char-bl-ichigo', 'char-bl-rukia', 'char-bl-ukitake', 'char-bl-kyoraku', 'char-bl-renji', 'char-bl-kukaku', 'char-bl-yamamoto'],
     animeEpisodes: ['~ep. 52-53'],
     order: 420,
-    tags: ['esecuzione', 'rukia'],
+    tags: ['esecuzione', 'rukia', 'hogyoku'],
   }),
   ev({
     id: 'evt-bl-yamamoto-vs-kyoraku-ukitake',
@@ -1209,7 +1209,7 @@ export const bleachEvents: TimelineEvent[] = [
     mangaChapters: ['~416-423'],
     animeEpisodes: ['~ep. 306-310'],
     order: 890,
-    tags: ['scontro', 'mugetsu', 'aizen'],
+    tags: ['scontro', 'mugetsu', 'aizen', 'hogyoku'],
   }),
   ev({
     id: 'evt-bl-aizen-imprisoned',

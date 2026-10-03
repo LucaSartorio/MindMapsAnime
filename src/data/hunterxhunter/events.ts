@@ -24,7 +24,7 @@ export const hxhEvents: TimelineEvent[] = [
     animeEpisodes: ['1'],
     canon: 'canon',
     referenceStatus: 'verified',
-    tags: ['partenza'],
+    tags: ['partenza', 'tracce-di-ging'],
   },
   {
     id: 'ev-hxh-exam-begins',
@@ -44,7 +44,7 @@ export const hxhEvents: TimelineEvent[] = [
     animeEpisodes: ['2-4'],
     canon: 'canon',
     referenceStatus: 'verified',
-    tags: ['esame'],
+    tags: ['esame', 'tracce-di-ging'],
   },
   {
     id: 'ev-hxh-final-phase',
@@ -294,7 +294,7 @@ export const hxhEvents: TimelineEvent[] = [
     animeEpisodes: ['59-60'],
     canon: 'canon',
     referenceStatus: 'verified',
-    tags: ['greed-island'],
+    tags: ['greed-island', 'tracce-di-ging'],
   },
   {
     id: 'ev-hxh-bisky-training',
@@ -352,7 +352,7 @@ export const hxhEvents: TimelineEvent[] = [
     animeEpisodes: ['74-75'],
     canon: 'canon',
     referenceStatus: 'verified',
-    tags: ['ging'],
+    tags: ['ging', 'tracce-di-ging'],
   },
 
   /* ===================== Formiche Chimera ===================== */
@@ -585,7 +585,7 @@ export const hxhEvents: TimelineEvent[] = [
     animeEpisodes: ['148'],
     canon: 'canon',
     referenceStatus: 'verified',
-    tags: ['gon', 'ging', 'incontro'],
+    tags: ['gon', 'ging', 'incontro', 'tracce-di-ging'],
   },
 
   /* ===================== Continente Oscuro / Successione ===================== */

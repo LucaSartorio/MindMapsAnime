@@ -45,7 +45,7 @@ export const aotEventsWalls: TimelineEvent[] = [
     factionIds: ['faction-aot-fritz-royal', 'faction-aot-eldian-empire'],
     mangaChapters: ['122'],
     order: 20,
-    tags: ['origini', 'nove-giganti', 'maledizione'],
+    tags: ['origini', 'nove-giganti', 'maledizione', 'eredita-gigante'],
   }),
   ev({
     id: 'evt-aot-eldian-empire',
@@ -197,7 +197,7 @@ export const aotEventsWalls: TimelineEvent[] = [
     factionIds: ['faction-aot-restorationists'],
     mangaChapters: ['88'],
     order: 100,
-    tags: ['attacco', 'gufo', 'eredita'],
+    tags: ['attacco', 'gufo', 'eredita', 'eredita-gigante'],
   }),
   ev({
     id: 'evt-aot-grisha-enters-walls',
@@ -231,7 +231,7 @@ export const aotEventsWalls: TimelineEvent[] = [
     factionIds: ['faction-aot-warriors'],
     mangaChapters: ['114'],
     order: 120,
-    tags: ['zeke', 'bestia', 'eutanasia'],
+    tags: ['zeke', 'bestia', 'eutanasia', 'eredita-gigante'],
   }),
   ev({
     id: 'evt-aot-warriors-chosen',
@@ -248,7 +248,7 @@ export const aotEventsWalls: TimelineEvent[] = [
     factionIds: ['faction-aot-warriors', 'faction-aot-marley-military'],
     mangaChapters: ['95'],
     order: 130,
-    tags: ['guerrieri', 'liberio'],
+    tags: ['guerrieri', 'liberio', 'eredita-gigante'],
   }),
   ev({
     id: 'evt-aot-uri-forgives-kenny',
@@ -362,7 +362,7 @@ export const aotEventsWalls: TimelineEvent[] = [
     characterIds: ['char-aot-ymir', 'char-aot-marcel'],
     mangaChapters: ['89'],
     order: 195,
-    tags: ['ymir', 'mascella'],
+    tags: ['ymir', 'mascella', 'eredita-gigante'],
   }),
   /* =========================== LA CADUTA DI SHIGANSHINA =========================== */
   ev({
@@ -456,7 +456,7 @@ export const aotEventsWalls: TimelineEvent[] = [
     factionIds: ['faction-aot-reiss-family'],
     mangaChapters: ['62-63', '120-121'],
     order: 240,
-    tags: ['fondatore', 'reiss', 'scontro'],
+    tags: ['fondatore', 'reiss', 'scontro', 'eredita-gigante'],
   }),
   ev({
     id: 'evt-aot-eren-devours-grisha',
@@ -471,7 +471,7 @@ export const aotEventsWalls: TimelineEvent[] = [
     characterIds: ['char-aot-eren', 'char-aot-grisha'],
     mangaChapters: ['63'],
     order: 250,
-    tags: ['eren', 'fondatore', 'eredita'],
+    tags: ['eren', 'fondatore', 'eredita', 'eredita-gigante'],
   }),
   ev({
     id: 'evt-aot-retake-846',
@@ -1239,7 +1239,7 @@ export const aotEventsWalls: TimelineEvent[] = [
     mangaChapters: ['83-84'],
     animeEpisodes: ['ep. 56'],
     order: 660,
-    tags: ['siero', 'erwin', 'armin'],
+    tags: ['siero', 'erwin', 'armin', 'eredita-gigante'],
   }),
   ev({
     id: 'evt-aot-basement',

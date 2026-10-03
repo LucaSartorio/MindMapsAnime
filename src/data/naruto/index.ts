@@ -28,6 +28,7 @@ import { narutoEvents } from './events';
 import { narutoEventsBatch1 } from './eventsBatch1';
 import { narutoEventsBatch2 } from './eventsBatch2';
 import { NARUTO_EVENT_CHRONOLOGY } from './eventsChronology';
+import { narutoEventsBijuu } from './eventsBijuu';
 import { narutoRoutes } from './routes';
 import { narutoCharacterRoutes } from './characterRoutes';
 import { narutoRoutesBatch2 } from './routesBatch2';
@@ -79,7 +80,7 @@ const characters = [
 
 /** Ordine cronologico: vedi `eventsChronology.ts` (posizione × 10). */
 const chronoIndex = new Map(NARUTO_EVENT_CHRONOLOGY.map((id, i) => [id, (i + 1) * 10]));
-const events: TimelineEvent[] = [...narutoEvents, ...narutoEventsBatch1, ...narutoEventsBatch2]
+const events: TimelineEvent[] = [...narutoEvents, ...narutoEventsBatch1, ...narutoEventsBatch2, ...narutoEventsBijuu]
   .map((e) => (chronoIndex.has(e.id) ? { ...e, order: chronoIndex.get(e.id)! } : e))
   .sort((a, b) => a.order - b.order);
 

@@ -257,7 +257,7 @@ export const aotEventsWorld: TimelineEvent[] = [
     mangaChapters: ['101-103'],
     animeEpisodes: ['ep. 65-66'],
     order: 870,
-    tags: ['martello', 'scontro'],
+    tags: ['martello', 'scontro', 'eredita-gigante'],
   }),
   ev({
     id: 'evt-aot-harbor-destroyed',
@@ -415,7 +415,7 @@ export const aotEventsWorld: TimelineEvent[] = [
     characterIds: ['char-aot-falco', 'char-aot-porco', 'char-aot-reiner', 'char-aot-gabi', 'char-aot-zeke'],
     mangaChapters: ['~116'],
     order: 955,
-    tags: ['falco', 'porco', 'mascella'],
+    tags: ['falco', 'porco', 'mascella', 'eredita-gigante'],
   }),
   ev({
     id: 'evt-aot-eren-shot',
