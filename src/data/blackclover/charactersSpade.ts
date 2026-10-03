@@ -27,7 +27,7 @@ export const blackcloverCharactersSpade: Character[] = [
     enemies: ['char-bc-asta', 'char-bc-yami', 'char-bc-nacht', 'char-bc-jack'],
     relationships: [
       { targetCharacterId: 'char-bc-lucifero', label: { it: 'Patto diabolico', en: 'Devil pact' }, notes: "Ospita il diavolo di rango più alto dell'Inframondo: al 50% di sincronizzazione piega la gravità." },
-      { targetCharacterId: 'char-bc-asta', label: { it: 'Prima sconfitta di Asta', en: "Asta's first defeat" }, notes: "Lo umilia nella base del Toro Nero; Asta tornerà dal Paese del Sole per pareggiare i conti." },
+      { targetCharacterId: 'char-bc-asta', label: { it: 'Prima sconfitta di Asta', en: "Asta's first defeat" }, notes: "Lo umilia nella base del Toro Nero; Asta lo affronterà di nuovo, dopo l'addestramento con Nacht, nell'assalto al Regno di Spade." },
     ],
     locationIds: ['loc-bc-spade-castle', 'loc-bc-black-bulls-base', 'loc-bc-qliphoth-tree'],
     eventIds: ['evt-bc-dante-black-bulls', 'evt-bc-asta-vs-dante', 'evt-bc-lucifero-descends'],

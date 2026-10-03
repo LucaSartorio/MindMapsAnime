@@ -492,10 +492,10 @@ export const blackcloverCharactersOtherLands: Character[] = [
     allies: ['char-bc-asta', 'char-bc-ichika', 'char-bc-yami'],
     locationIds: ['loc-bc-hino-country', 'loc-bc-ryuzen-shrine'],
     eventIds: ['evt-bc-asta-land-of-sun', 'evt-bc-asta-zetten'],
-    arcIds: ['arc-bc-three-fronts-training', 'arc-bc-final-arc'],
+    arcIds: ['arc-bc-lucius-paladins', 'arc-bc-final-arc'],
     shortDescription: {
-      it: "Lo shōgun del Paese del Sole: legge il ki di chiunque gli stia intorno e accoglie Asta quando arriva mezzo morto dal Regno di Spade.",
-      en: 'The Shogun of the Land of the Sun: he reads the ki of everyone around him and takes Asta in when he arrives half-dead from the Spade Kingdom.',
+      it: "Lo shōgun del Paese del Sole: legge il ki di chiunque gli stia intorno e accoglie Asta quando arriva mezzo morto dopo il primo scontro con Lucius Zogratis.",
+      en: 'The Shogun of the Land of the Sun: he reads the ki of everyone around him and takes Asta in when he arrives half-dead after his first clash with Lucius Zogratis.',
     },
     status: 'alive',
     canonStatus: 'canon',
@@ -524,7 +524,7 @@ export const blackcloverCharactersOtherLands: Character[] = [
     ],
     locationIds: ['loc-bc-hino-country', 'loc-bc-ryuzen-shrine'],
     eventIds: ['evt-bc-asta-zetten'],
-    arcIds: ['arc-bc-three-fronts-training', 'arc-bc-final-arc'],
+    arcIds: ['arc-bc-lucius-paladins', 'arc-bc-final-arc'],
     shortDescription: {
       it: "La sorella minore di Yami, spadaccina dei Sette Ryūzen: è lei a insegnare ad Asta lo Zetten, la tecnica che taglia la magia con il corpo.",
       en: "Yami's younger sister, a swordswoman of the Ryuzen Seven: she is the one who teaches Asta Zetten, the technique that cuts magic with the body.",
@@ -549,7 +549,7 @@ export const blackcloverCharactersOtherLands: Character[] = [
     jutsuIds: ['magic-bc-ki'],
     allies: ['char-bc-ryuya', 'char-bc-asta'],
     locationIds: ['loc-bc-hino-country', 'loc-bc-ryuzen-shrine'],
-    arcIds: ['arc-bc-three-fronts-training'],
+    arcIds: ['arc-bc-lucius-paladins'],
     shortDescription: {
       it: 'Uno dei Sette Ryūzen, i guerrieri più forti del Paese del Sole.',
       en: "One of the Ryuzen Seven, the strongest warriors of the Land of the Sun.",
@@ -574,7 +574,7 @@ export const blackcloverCharactersOtherLands: Character[] = [
     jutsuIds: ['magic-bc-ki'],
     allies: ['char-bc-ryuya', 'char-bc-asta'],
     locationIds: ['loc-bc-hino-country', 'loc-bc-ryuzen-shrine'],
-    arcIds: ['arc-bc-three-fronts-training'],
+    arcIds: ['arc-bc-lucius-paladins'],
     shortDescription: {
       it: 'Uno dei Sette Ryūzen del Paese del Sole, fra i guerrieri che mettono alla prova Asta.',
       en: 'One of the Land of the Sun\'s Ryuzen Seven, among the warriors who test Asta.',
@@ -599,7 +599,7 @@ export const blackcloverCharactersOtherLands: Character[] = [
     jutsuIds: ['magic-bc-ki'],
     allies: ['char-bc-ryuya', 'char-bc-asta'],
     locationIds: ['loc-bc-hino-country', 'loc-bc-ryuzen-shrine'],
-    arcIds: ['arc-bc-three-fronts-training'],
+    arcIds: ['arc-bc-lucius-paladins'],
     shortDescription: {
       it: 'Una dei Sette Ryūzen, il corpo di guerrieri che difende il Paese del Sole.',
       en: 'One of the Ryuzen Seven, the warrior corps that defends the Land of the Sun.',

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T15:54:41.646Z",
+  "generatedAt": "2026-10-03T16:01:19.593Z",
   "locales": [
     "en",
     "it"
@@ -13102,7 +13102,7 @@
             "places": 16,
             "animatedStops": 5,
             "arcs": 4,
-            "journeyArcs": 12
+            "journeyArcs": 14
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -13166,7 +13166,7 @@
             "places": 16,
             "animatedStops": 5,
             "arcs": 5,
-            "journeyArcs": 12
+            "journeyArcs": 14
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -13191,24 +13191,30 @@
             "arcIds": [
               "arc-bc-spade-invasion",
               "arc-bc-three-fronts-training",
-              "arc-bc-lucius-paladins"
+              "arc-bc-spade-raid",
+              "arc-bc-lucius-paladins",
+              "arc-bc-final-arc"
             ],
             "arcTitles": {
               "en": [
                 "Spade Kingdom invasion",
-                "Training on three fronts",
-                "Lucius Zogratis and the Paladins"
+                "Nacht's training",
+                "Spade Kingdom Raid",
+                "Lucius Zogratis and the Paladins",
+                "Judgement Day and the final arc"
               ],
               "it": [
                 "L'invasione della Triade Oscura",
-                "L'addestramento sui tre fronti",
-                "Lucius Zogratis e i Paladini"
+                "L'addestramento di Nacht",
+                "L'assalto al Regno di Spade",
+                "Lucius Zogratis e i Paladini",
+                "Il Giorno del Giudizio e la corsa finale"
               ]
             },
             "firstArc": "Spade Kingdom invasion",
-            "lastArc": "Lucius Zogratis and the Paladins",
+            "lastArc": "Judgement Day and the final arc",
             "segmentationVersion": 1,
-            "fingerprint": "c00974d7"
+            "fingerprint": "117592f9"
           },
           "displayName": {
             "en": "Asta",
@@ -13223,8 +13229,8 @@
             "importance": "main",
             "places": 16,
             "animatedStops": 6,
-            "arcs": 3,
-            "journeyArcs": 12
+            "arcs": 5,
+            "journeyArcs": 14
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -13743,8 +13749,8 @@
             "importance": "major",
             "places": 6,
             "animatedStops": 6,
-            "arcs": 4,
-            "journeyArcs": 4
+            "arcs": 5,
+            "journeyArcs": 5
           },
           "renderedLocales": [],
           "scheduledLocales": [],

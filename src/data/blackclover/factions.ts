@@ -416,7 +416,7 @@ export const blackcloverFactions: Faction[] = [
     leaderIds: ['char-bc-ryuya'],
     characterIds: ['char-bc-ryuya', 'char-bc-ichika', 'char-bc-yosuga', 'char-bc-fujio', 'char-bc-imari'],
     locationIds: ['loc-bc-hino-country', 'loc-bc-ryuzen-shrine'],
-    arcIds: ['arc-bc-three-fronts-training', 'arc-bc-final-arc'],
+    arcIds: ['arc-bc-lucius-paladins', 'arc-bc-final-arc'],
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',
     tags: ['paese-del-sole', 'ki', 'spada'],

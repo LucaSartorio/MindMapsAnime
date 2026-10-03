@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T15:54:41.646Z",
+  "generatedAt": "2026-10-03T16:01:19.593Z",
   "templates": {
     "characterJourney": {
       "byReason": {
-        "single_location": 499,
-        "no_journey_data": 559
+        "single_location": 498,
+        "no_journey_data": 560
       },
       "items": [
         {
@@ -7293,7 +7293,7 @@
           "subject": "gimodelo",
           "subjectId": "char-bc-gimodelo",
           "displayName": "Gimodelo",
-          "reason": "single_location"
+          "reason": "no_journey_data"
         },
         {
           "anime": "blackclover",

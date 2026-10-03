@@ -1119,8 +1119,8 @@ export const blackcloverMagic: Jutsu[] = [
       en: 'The Land of the Sun\'s ultimate technique: focusing all of one\'s ki into a single point for an instant. Taught to Asta by Ichika Yami.',
     },
     longDescription: {
-      it: "Lo Zetten non richiede mana: richiede un controllo assoluto del corpo. Per Asta, che di mana non ne ha, è la chiave che gli permette di tagliare la magia anche senza le spade — e di tornare dal Paese del Sole in grado di affrontare Dante alla pari.",
-      en: "Zetten requires no mana: it requires absolute control of the body. For Asta, who has no mana at all, it is the key that lets him cut magic even without his swords — and come back from the Land of the Sun able to face Dante as an equal.",
+      it: "Lo Zetten non richiede mana: richiede un controllo assoluto del corpo. Per Asta, che di mana non ne ha, è la chiave che gli permette di tagliare la magia anche senza le spade — e di tornare dal Paese del Sole pronto ad affrontare Lucius Zogratis e i suoi Paladini.",
+      en: "Zetten requires no mana: it requires absolute control of the body. For Asta, who has no mana at all, it is the key that lets him cut magic even without his swords — and come back from the Land of the Sun ready to face Lucius Zogratis and his Paladins.",
     },
     canonStatus: 'canon',
     referenceStatus: 'verified',
