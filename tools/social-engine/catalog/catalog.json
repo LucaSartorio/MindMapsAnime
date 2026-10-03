@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T22:41:23.246Z",
+  "generatedAt": "2026-10-03T22:53:01.579Z",
   "locales": [
     "en",
     "it"
@@ -38,7 +38,7 @@
           "characters": 49,
           "videos": 59,
           "series": 6,
-          "excluded": 118
+          "excluded": 135
         },
         "attackontitan": {
           "characters": 35,
@@ -7119,11 +7119,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 33,
+          "recommendedDurationSeconds": 36,
           "facts": {
             "importance": "major",
-            "places": 7,
-            "animatedStops": 7,
+            "places": 8,
+            "animatedStops": 8,
             "arcs": 3,
             "journeyArcs": 3
           },
@@ -7926,8 +7926,8 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "supporting",
-            "places": 2,
-            "animatedStops": 2,
+            "places": 3,
+            "animatedStops": 3,
             "arcs": 2,
             "journeyArcs": 2
           },

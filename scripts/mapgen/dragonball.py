@@ -86,6 +86,9 @@ def cosmic() -> dict:
         "loc-dbz-galactic-prison": (720, 120),
         "loc-dbz-demon-realm": (1240, 560),
         "loc-dbz-future-earth": (390, 470),
+        "loc-dbz-zeno-palace": (880, 60),
+        "loc-dbz-sadala": (1320, 360),
+        "loc-dbz-u10-sacred-world": (690, 830),
     }
     svg.add(f'<rect width="{W}" height="{H}" fill="#0b0e24"/>')
     nebula(svg, 300, 260, 320, 220, "#2a8a6a", "n1")
@@ -95,7 +98,7 @@ def cosmic() -> dict:
     starfield(svg, rng, 700)
     # le 4 Galassie (croce dei Kaioh) nel nostro universo
     svg.add(f'<path d="M640,40 V860 M40,450 H760" stroke="#ffffff" stroke-width="1.4" stroke-dasharray="4 10" opacity="0.35"/>')
-    for (x, y, lab) in ((780, 30, "Galassia del Nord · North Galaxy"), (330, 840, "Galassia del Sud · South Galaxy"),
+    for (x, y, lab) in ((660, 30, "Galassia del Nord · North Galaxy"), (330, 840, "Galassia del Sud · South Galaxy"),
                         (120, 470, "Ovest · West"), (700, 470, "Est · East")):
         svg.add(text(x, y, lab, size=15, fill="#cfe0ff", italic=True, opacity=0.8))
     # Terra
@@ -157,6 +160,14 @@ def cosmic() -> dict:
     for k in range(4):
         svg.add(f'<path d="M{1130 + k * 26},752 v-30" stroke="#c9ccd8" stroke-width="3"/>')
     svg.add(text(1170, 830, "Mondo del Nulla · World of Void", size=13, fill="#e6e8f0", italic=True))
+    # Palazzo di Zeno, sopra gli universi; Sadal (Universo 6); il pianeta dei Kaiohshin dell'Universo 10
+    svg.add(f'<ellipse cx="880" cy="66" rx="70" ry="16" fill="#f4f1ea" opacity="0.25" stroke="#cfe0ff" stroke-width="1.2"/>')
+    svg.add(f'<path d="M846,64 h68 v-16 h-10 v-12 h-14 v-10 h-20 v10 h-14 v12 h-10 Z" fill="#e8ecf6" stroke="{INK}" stroke-width="1.4"/>')
+    svg.add(f'<circle cx="880" cy="22" r="6" fill="#ffd86a" stroke="{INK}" stroke-width="1"/>')
+    svg.add(planet(1320, 360, 30, "#c86a3a", "#6a2a10", svg=svg, gid="sadala"))
+    svg.add(text(1320, 410, "Universo 6", size=11, fill="#cfe0ff", italic=True))
+    svg.add(planet(690, 830, 30, "#8ad08a", "#2a6a3a", svg=svg, gid="kai10"))
+    svg.add(f'<path d="M690,804 v-14" stroke="#6a4a2a" stroke-width="3"/><circle cx="690" cy="786" r="8" fill="#3a8a3a" stroke="{INK}" stroke-width="1"/>')
     # sfere del drago sparse
     for (x, y) in ((470, 380), (600, 560), (720, 300)):
         svg.add(f'<circle cx="{x}" cy="{y}" r="7" fill="#ffa82a" stroke="#c0601a" stroke-width="1.4"/>')

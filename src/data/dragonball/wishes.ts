@@ -203,6 +203,20 @@ export const dragonballWishes: TimelineEvent[] = [
     tags: ['super-shenron'],
   }),
   w({
+    id: 'evt-dbz-wish-cheelai',
+    title: { it: 'Cheelai salva Broly', en: 'Cheelai saves Broly' },
+    description: {
+      it: "Mentre Gogeta sta per finire Broly, Cheelai usa le Sfere del Drago raccolte dall'esercito di Freezer e chiede a Shenron di riportare l'amico sul pianeta Vampa, mettendolo in salvo.",
+      en: "As Gogeta is about to finish Broly off, Cheelai uses the Dragon Balls gathered by the Frieza Force and asks Shenron to send her friend back to planet Vampa, bringing him to safety.",
+    },
+    period: DBS,
+    arcId: 'arc-dbz-broly-movie',
+    characterIds: ['char-dbz-cheelai', 'char-dbz-broly', 'char-dbz-shenron', 'char-dbz-gogeta'],
+    canon: 'movie',
+    order: 73.05,
+    tags: ['shenron', 'broly'],
+  }),
+  w({
     id: 'evt-dbz-wish-moro',
     title: { it: 'I desideri di Moro', en: "Moro's wishes" },
     description: {

@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T22:41:23.246Z",
+  "generatedAt": "2026-10-03T22:53:01.579Z",
   "templates": {
     "characterJourney": {
       "byReason": {
         "single_location": 497,
-        "no_journey_data": 568
+        "no_journey_data": 585
       },
       "items": [
         {
@@ -5662,6 +5662,125 @@
           "subject": "monaka",
           "subjectId": "char-dbz-monaka",
           "displayName": "Monaka",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "colonel-silver",
+          "subjectId": "char-dbz-colonel-silver",
+          "displayName": "Colonel Silver",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "general-white",
+          "subjectId": "char-dbz-general-white",
+          "displayName": "General White",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "ninja-murasaki",
+          "subjectId": "char-dbz-murasaki",
+          "displayName": "Ninja Murasaki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "android-8-eighter",
+          "subjectId": "char-dbz-android-8",
+          "displayName": "Android 8 (Eighter)",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "staff-officer-black",
+          "subjectId": "char-dbz-staff-officer-black",
+          "displayName": "Staff Officer Black",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "tambourine",
+          "subjectId": "char-dbz-tambourine",
+          "displayName": "Tambourine",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "cymbal",
+          "subjectId": "char-dbz-cymbal",
+          "displayName": "Cymbal",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "drum",
+          "subjectId": "char-dbz-drum",
+          "displayName": "Drum",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "piano",
+          "subjectId": "char-dbz-piano",
+          "displayName": "Piano",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "fangs-the-vampire",
+          "subjectId": "char-dbz-fangs",
+          "displayName": "Fangs the Vampire",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "invisible-man",
+          "subjectId": "char-dbz-see-through",
+          "displayName": "Invisible Man",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "bandages-the-mummy",
+          "subjectId": "char-dbz-bandages",
+          "displayName": "Bandages the Mummy",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "spike-the-devil-man",
+          "subjectId": "char-dbz-spike",
+          "displayName": "Spike the Devil Man",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "sorbet",
+          "subjectId": "char-dbz-sorbet",
+          "displayName": "Sorbet",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "tagoma",
+          "subjectId": "char-dbz-tagoma",
+          "displayName": "Tagoma",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "cheelai",
+          "subjectId": "char-dbz-cheelai",
+          "displayName": "Cheelai",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "lemo",
+          "subjectId": "char-dbz-lemo",
+          "displayName": "Lemo",
           "reason": "no_journey_data"
         },
         {

@@ -835,7 +835,7 @@ export const dragonballEventsExtra: TimelineEvent[] = [
     },
     period: DBS,
     arcId: 'arc-dbz-goku-black',
-    locationId: 'loc-dbz-sacred-world-kais',
+    locationId: 'loc-dbz-u10-sacred-world',
     characterIds: ['char-dbz-zamasu', 'char-dbz-gowasu', 'char-dbz-goku-black', 'char-dbz-beerus'],
     animeEpisodes: ['~DBS ep. 54-58'],
     order: 63.5,

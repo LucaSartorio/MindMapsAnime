@@ -41,14 +41,15 @@ componenti.
 
 | Entità             | Naruto | Hunter x Hunter | One Piece | Dragon Ball | Bleach | Attack on Titan | Jujutsu Kaisen |
 | ------------------ | -----: | --------------: | --------: | ----------: | -----: | --------------: | -------------: |
-| Personaggi         |    253 |    165 |    418 |    157 |    147 |     82 |     66 |
+| Personaggi         |    253 |    165 |    418 |    184 |    147 |     82 |     66 |
 | Clan & fazioni     |     57 |     24 |     83 |     21 |     34 |     24 |     15 |
 | Team               |     14 |      0 |      0 |      0 |      0 |      0 |      0 |
-| Tecniche           |    153 |     73 |    125 |     77 |    102 |     40 |     68 |
+| Tecniche           |    153 |     73 |    125 |    110 |    102 |     40 |     68 |
 | Archi narrativi    |     32 |      8 |     37 |     37 |     17 |     14 |     13 |
-| Eventi timeline    |    148 |    112 |    214 |    170 |    116 |    109 |     70 |
+| Eventi timeline    |    148 |    112 |    214 |    188 |    116 |    109 |     70 |
+| Tornei             |      0 |      0 |      0 |      9 |      0 |      0 |      0 |
 | Percorsi           |     43 |     16 |     22 |     21 |     13 |     14 |     12 |
-| Luoghi             |    108 |     77 |    331 |    110 |     77 |     76 |     49 |
+| Luoghi             |    108 |     77 |    331 |    113 |     77 |     76 |     49 |
 | Nazioni            |     27 |     17 |      8 |      6 |      7 |      8 |     12 |
 | Confini (boundary) |     26 |     12 |      0 |      0 |      0 |      0 |      0 |
 | Livelli mappa      |     10 |      9 |     27 |      8 |      5 |      7 |      6 |
