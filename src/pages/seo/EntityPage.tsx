@@ -45,6 +45,9 @@ import { CATEGORY_ENTITY_TYPE, seoLocations, type SeoCategory } from '@/seo/cate
 import { getSeoEntity, seoEntityName, type ResolvedPage } from '@/seo/metadata';
 import { categoryPath, entityPath, mapDeepLink } from '@/seo/paths';
 import { eventPath, refPath, sortedEvents } from '@/seo/links';
+import { markerEventsAt, presentMapMarkers } from '@/lib/mapMarkers';
+import { TournamentView } from '@/components/tournaments/TournamentView';
+import { tournamentsAt } from '@/lib/tournaments';
 import { FactList, MapCta, PageShell, RefLinks, Section, SourceNote } from './parts';
 
 const MAP_KIND = {
@@ -279,6 +282,41 @@ export function EntityPage({
         { label: t('modals.manga'), value: l.mangaChapters?.join(', ') },
         { label: t('modals.anime'), value: l.animeEpisodes?.join(', ') },
       );
+      const hosted = tournamentsAt(dataset, l);
+      if (hosted.length > 0) {
+        sections.push(
+          <Section key="tournaments" id="tournaments" title={t('tournaments.sectionTitle')} count={hosted.length}>
+            <div className="space-y-6">
+              {hosted.map((tn) => (
+                <article key={tn.id} id={tn.id}>
+                  <h3 className="mb-2 font-display text-lg text-ink-100">{text(tn.localizedName) || tn.name}</h3>
+                  <TournamentView
+                    dataset={dataset}
+                    tournament={tn}
+                    renderName={(cid, label) => {
+                      const href = link('characters', cid);
+                      return href ? (
+                        <Link to={href} className="text-chakra-300 hover:underline">
+                          {label}
+                        </Link>
+                      ) : (
+                        label
+                      );
+                    }}
+                  />
+                </article>
+              ))}
+            </div>
+          </Section>,
+        );
+      }
+      for (const marker of presentMapMarkers(dataset)) {
+        eventsSection(
+          `marker-${marker.id}`,
+          text(marker.sectionTitle),
+          markerEventsAt(dataset, marker.id, l.id).map((ev) => ev.id),
+        );
+      }
       addRefs('characters', t('modals.relatedCharacters'), ctx.characters);
       addRefs('factions', factionsTerm, ctx.factions);
       addRefs('arcs', t('modals.relatedArcs'), ctx.arcs);

@@ -106,7 +106,13 @@ export function entityQuality(
   const relations = getConnectedEntities(graph, { type: CATEGORY_ENTITY_TYPE[category], id }).filter(
     (r) => r.type !== 'race' && r.type !== 'saga',
   ).length;
-  const textLength = textOf(entity, lang);
+  let textLength = textOf(entity, lang);
+  // Un luogo che ospita tornei mostra anche le loro descrizioni e i tabelloni.
+  if (category === 'locations') {
+    for (const tn of dataset.tournaments ?? []) {
+      if (tn.locationId === id) textLength += getLocalizedText(tn.description, lang).length;
+    }
+  }
   const indexable = RULES[category].some((r) => textLength >= r.text && relations >= r.relations);
   const q = { textLength, relations, indexable };
   perDataset.set(key, q);

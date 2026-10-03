@@ -33,6 +33,7 @@ import { MapEdge, type MapEdgeData } from './MapEdge';
 import { WorldMapBackground } from './WorldMapBackground';
 import { MapBoundaryOverlay } from './MapBoundaryOverlay';
 import { MapLabelsLayer } from './MapLabelsLayer';
+import { markedPlaceIds } from '@/lib/mapMarkers';
 
 const NODE_TYPES: NodeTypes = {
   'map-node': MapNode,
@@ -215,6 +216,17 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
     ];
   }, [activeLevel, dataset]);
 
+  // Luoghi con Poneglyph (One Piece): servono a colorare anche i cluster.
+  const poneglyphIds = useMemo(
+    () => new Set(dataset.locations.filter((l) => l.poneglyph).map((l) => l.id)),
+    [dataset.locations],
+  );
+  // Luoghi accesi dai marcatori di mondo attivi (es. desideri del Drago).
+  const markedIds = useMemo(
+    () => markedPlaceIds(dataset, filters.highlightMarkers),
+    [dataset, filters.highlightMarkers],
+  );
+
   // Pin location + cluster: derivati dalle voci clusterizzate. I singoli pin
   // dipendono da selezione/locale; i cluster dal solo zoom quantizzato.
   const pinNodes = useMemo<Node<MapNodeData | MapClusterNodeData>[]>(() => {
@@ -225,7 +237,13 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
           id: c.id,
           type: 'map-cluster',
           position: { x: c.x, y: c.y },
-          data: { count: c.count, bbox: c.bbox },
+          data: {
+            count: c.count,
+            bbox: c.bbox,
+            marked: c.memberIds.some(
+              (id) => markedIds.has(id) || (filters.highlightPoneglyphs && !!poneglyphIds?.has(id)),
+            ),
+          },
           draggable: false,
           selectable: false,
         };
@@ -241,7 +259,7 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
           importance: loc.importance,
           selected: loc.id === selectedLocationId,
           highlighted: highlightedLocationIds.has(loc.id),
-          poneglyph: filters.highlightPoneglyphs && !!loc.poneglyph,
+          marked: (filters.highlightPoneglyphs && !!loc.poneglyph) || markedIds.has(loc.id),
           hasSubMap: !!loc.subMapLevelId,
           dimmed: !!focusRelatedIds && !focusRelatedIds.has(loc.id),
         },
@@ -254,6 +272,7 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
     selectedLocationId,
     highlightedLocationIds,
     filters.highlightPoneglyphs,
+    markedIds,
     focusRelatedIds,
     locale,
   ]);

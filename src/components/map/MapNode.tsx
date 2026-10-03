@@ -11,8 +11,11 @@ export interface MapNodeData {
   importance: Importance;
   selected?: boolean;
   highlighted?: boolean;
-  /** Luogo con un Poneglyph, evidenziato in rosso quando il filtro è attivo. */
-  poneglyph?: boolean;
+  /**
+   * Luogo evidenziato in rosso da un filtro: un Poneglyph (One Piece) o un
+   * marcatore di mondo (`WorldConfig.mapMarkers`, es. desideri del Drago).
+   */
+  marked?: boolean;
   hasSubMap?: boolean;
   /** Focus mode: attenua i pin non collegati all'elemento selezionato. */
   dimmed?: boolean;
@@ -46,10 +49,10 @@ function MapNodeBase({ data }: NodeProps) {
   // con il puntino rosso della mappa — trasliamo la riga di mezza altezza e di
   // mezzo pallino in orizzontale.
   const dotRadius = IMPORTANCE_DOT_RADIUS[d.importance];
-  // Colore di categoria del marker. Gli stati speciali (poneglyph / selezionato
+  // Colore di categoria del marker. Gli stati speciali (marcato / selezionato
   // / evidenziato) hanno la precedenza e usano le classi dedicate qui sotto.
   const categoryColor = LOCATION_TYPE_COLOR[d.type];
-  const special = !!d.poneglyph || !!d.selected || !!d.highlighted;
+  const special = !!d.marked || !!d.selected || !!d.highlighted;
   // Dimensione COSTANTE a schermo: React Flow scala i nodi con lo zoom, quindi
   // le etichette crescevano insieme allo zoom e si sovrapponevano sempre
   // (avvicinarsi non le separava). Contro-scalando di 1/zoom il fattore si
@@ -67,7 +70,7 @@ function MapNodeBase({ data }: NodeProps) {
     <div
       className={cn(
         'group relative flex items-center gap-2 cursor-pointer select-none',
-        d.poneglyph
+        d.marked
           ? 'drop-shadow-[0_0_10px_rgba(239,68,68,0.9)]'
           : d.highlighted && 'drop-shadow-[0_0_8px_rgba(255,131,17,0.7)]',
         // Focus mode: i pin non collegati sfumano, ma tornano pieni al passaggio
@@ -93,7 +96,7 @@ function MapNodeBase({ data }: NodeProps) {
         className={cn(
           'rounded-full ring-2 transition',
           IMPORTANCE_SIZE[d.importance],
-          d.poneglyph
+          d.marked
             ? 'bg-red-500 ring-red-300 shadow-[0_0_6px_rgba(239,68,68,0.9)]'
             : d.selected
               ? 'bg-ember-400 ring-ember-200 shadow-ember'
@@ -108,7 +111,7 @@ function MapNodeBase({ data }: NodeProps) {
         className={cn(
           'whitespace-nowrap px-2 py-0.5 rounded-md backdrop-blur-sm border transition',
           IMPORTANCE_TEXT[d.importance],
-          d.poneglyph
+          d.marked
             ? 'bg-red-950/80 border-red-500/70 text-red-100'
             : d.selected
               ? 'bg-ember-900/80 border-ember-500/70 text-ember-100'

@@ -7,6 +7,8 @@ export interface PinCluster {
   x: number;
   y: number;
   count: number;
+  /** Id dei luoghi raggruppati (per sapere se il gruppo contiene un pin evidenziato). */
+  memberIds: string[];
   /** Bounding box dei membri: usato per lo zoom-to-fit al click. */
   bbox: { x: number; y: number; width: number; height: number };
 }
@@ -124,6 +126,7 @@ export function clusterLocations(
         x: sx / n,
         y: sy / n,
         count: n,
+        memberIds: members.map((m) => m.id),
         bbox: {
           x: minX,
           y: minY,

@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T16:07:47.344Z",
+  "generatedAt": "2026-10-03T22:41:23.246Z",
   "templates": {
     "characterJourney": {
       "byReason": {
-        "single_location": 498,
-        "no_journey_data": 560
+        "single_location": 497,
+        "no_journey_data": 568
       },
       "items": [
         {
@@ -4892,7 +4892,7 @@
           "subject": "vados",
           "subjectId": "char-dbz-vados",
           "displayName": "Vados",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "dragonball",
@@ -5386,20 +5386,6 @@
         },
         {
           "anime": "dragonball",
-          "subject": "upa",
-          "subjectId": "char-dbz-upa",
-          "displayName": "Upa",
-          "reason": "single_location"
-        },
-        {
-          "anime": "dragonball",
-          "subject": "bora",
-          "subjectId": "char-dbz-bora",
-          "displayName": "Bora",
-          "reason": "single_location"
-        },
-        {
-          "anime": "dragonball",
           "subject": "fortuneteller-baba",
           "subjectId": "char-dbz-fortuneteller-baba",
           "displayName": "Fortuneteller Baba",
@@ -5512,13 +5498,6 @@
         },
         {
           "anime": "dragonball",
-          "subject": "porunga",
-          "subjectId": "char-dbz-porunga",
-          "displayName": "Porunga",
-          "reason": "single_location"
-        },
-        {
-          "anime": "dragonball",
           "subject": "super-shenron",
           "subjectId": "char-dbz-super-shenron",
           "displayName": "Super Shenron",
@@ -5557,7 +5536,7 @@
           "subject": "monaito",
           "subjectId": "char-dbz-monaito",
           "displayName": "Monaito",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "dragonball",
@@ -5614,6 +5593,76 @@
           "subjectId": "char-dbz-kuu",
           "displayName": "Majin Kuu",
           "reason": "single_location"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "bacterian",
+          "subjectId": "char-dbz-bacterian",
+          "displayName": "Bacterian",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "ranfan",
+          "subjectId": "char-dbz-ranfan",
+          "displayName": "Ranfan",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "giran",
+          "subjectId": "char-dbz-giran",
+          "displayName": "Giran",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "nam",
+          "subjectId": "char-dbz-nam",
+          "displayName": "Nam",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "man-wolf",
+          "subjectId": "char-dbz-man-wolf",
+          "displayName": "Man-Wolf",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "pamput",
+          "subjectId": "char-dbz-pamput",
+          "displayName": "Pamput",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "pintar",
+          "subjectId": "char-dbz-pintar",
+          "displayName": "Pintar",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "botamo",
+          "subjectId": "char-dbz-botamo",
+          "displayName": "Botamo",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "magetta",
+          "subjectId": "char-dbz-magetta",
+          "displayName": "Magetta",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "monaka",
+          "subjectId": "char-dbz-monaka",
+          "displayName": "Monaka",
+          "reason": "no_journey_data"
         },
         {
           "anime": "attackontitan",

@@ -269,6 +269,22 @@ For Naruto the reference PNG is 990 × 579 px, so convert: `flowX = px_x / 990 *
 keep the same viewBox or all pins break. The PNG-reading scripts (`find-red-dots`, `extract-boundaries`,
 via `pngjs`) emit coordinates already converted to the flow plane — paste their output into the data.
 
+### Map markers & tournaments (world-agnostic)
+- **Map markers** (`WorldConfig.mapMarkers`, `src/lib/mapMarkers.ts`): a marker is a *view on events*,
+  not new data — a location is "marked" when it hosts an event tagged `eventTag` (Dragon Ball:
+  `desiderio-del-drago` = every wish to a dragon). `FiltersDrawer` gets one toggle per marker present in
+  the dataset (`filters.highlightMarkers`), marked pins turn red like One Piece's Poneglyphs
+  (`MapNode.marked`), clusters containing one turn red too, and so do the pins that drill into a sub-map
+  containing one. The location scheda/page lists the marker's events (`sectionTitle`). New world = add a
+  config entry + tag the events; no component edits.
+- **Tournaments** (`WorldDataset.tournaments`, `Tournament` in `src/types/index.ts`): rounds → matches →
+  sides (characters or a label, e.g. a pseudonym like "Jackie Chun" with the real character linked).
+  `format: 'bracket'` (each round has half the matches of the previous one — `validate:data` checks it)
+  is drawn as an SVG bracket by `TournamentView` (`src/components/tournaments/`); `'rounds'` is a list.
+  Shown in the **"Tornei" tab** of the hosting location's scheda (selector when several) and in the
+  location's SEO page; a pin that opens a sub-map also shows the tournaments held inside it
+  (`tournamentsAt`). Participants become graph relations of the location.
+
 ### Detail schede as a docked panel (tabbed)
 `src/components/common/Modal.tsx` is the single shell behind every detail scheda (dispatched by
 `ModalRoot` from `useUiStore.activeModal`). It defaults to `placement="docked"`: a right-anchored

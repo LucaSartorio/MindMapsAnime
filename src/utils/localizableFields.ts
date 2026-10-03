@@ -91,6 +91,14 @@ export const LOCALIZABLE_FIELDS: Record<string, FieldSpec[]> = {
     ['localizedName', 'name'],
     ['description', 'text'],
   ],
+  tournaments: [
+    ['localizedName', 'name'],
+    ['description', 'text', true],
+    ['outcome', 'text'],
+    ['rounds[].name', 'text', true],
+    ['rounds[].matches[].note', 'text'],
+    ['rounds[].matches[].sides[].label', 'name'],
+  ],
 };
 
 export type LocalizableIssueCode =

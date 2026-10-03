@@ -23,12 +23,17 @@ import { dragonballRoutesExtra } from './routesExtra';
 import { dragonballJutsu } from './jutsu';
 import { dragonballJutsuExtra } from './jutsuExtra';
 import { dragonballAssets } from './assets';
+import { TAGGED_WISH_EVENTS, WISH_TAG, dragonballWishes } from './wishes';
+import { dragonballTournamentFighters, dragonballTournaments } from './tournaments';
 
 const dragonball = animeWorlds.find((w) => w.slug === 'dragonball')!;
 
 const jutsu = [...dragonballJutsu, ...dragonballJutsuExtra];
 
-const events: TimelineEvent[] = [...dragonballEvents, ...dragonballEventsExtra].sort((a, b) => a.order - b.order);
+const events: TimelineEvent[] = [...dragonballEvents, ...dragonballEventsExtra, ...dragonballWishes]
+  // I desideri già raccontati da un evento ricevono il tag del marcatore mappa.
+  .map((e) => (TAGGED_WISH_EVENTS.includes(e.id) ? { ...e, tags: [...new Set([...(e.tags ?? []), WISH_TAG])] } : e))
+  .sort((a, b) => a.order - b.order);
 
 /** Gli `eventIds` di ogni arco includono tutti gli eventi che dichiarano quell'arco. */
 const arcs: StoryArc[] = dragonballArcs.map((arc) => ({
@@ -47,6 +52,7 @@ const characters: Character[] = [
   ...dragonballCharactersSuper,
   ...dragonballCharactersSupporting,
   ...dragonballCharactersExtra,
+  ...dragonballTournamentFighters,
 ].map((c) => {
   const derived = jutsu.filter((j) => j.characterIds?.includes(c.id)).map((j) => j.id);
   const jutsuIds = [...new Set([...(c.jutsuIds ?? []), ...derived])];
@@ -83,6 +89,7 @@ export const dragonballDataset: WorldDataset = {
   events,
   routes: [...dragonballRoutes, ...dragonballRoutesExtra],
   jutsu,
+  tournaments: dragonballTournaments,
   assets: dragonballAssets,
 };
 

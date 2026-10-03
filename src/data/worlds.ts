@@ -357,6 +357,29 @@ export const animeWorlds: AnimeWorld[] = [
       factionsTerm: { it: 'Razze & Fazioni', en: 'Races & Factions', ja: '種族と勢力', fr: 'Races & Factions', de: 'Rassen & Fraktionen', es: 'Razas y facciones' },
       placesTerm: { it: 'luoghi', en: 'places', ja: '場所', fr: 'lieux', de: 'Orte', es: 'lugares' },
       characterRoles: [],
+      mapMarkers: [
+        {
+          id: 'dragon-wishes',
+          eventTag: 'desiderio-del-drago',
+          icon: '★',
+          filterLabel: {
+            it: 'Evidenzia i desideri del Drago',
+            en: 'Highlight the Dragon wishes',
+            ja: '神龍への願いを強調',
+            fr: 'Mettre en évidence les vœux du Dragon',
+            de: 'Drachenwünsche hervorheben',
+            es: 'Resaltar los deseos del Dragón',
+          },
+          sectionTitle: {
+            it: 'Desideri espressi qui',
+            en: 'Wishes made here',
+            ja: 'ここで叶えられた願い',
+            fr: 'Vœux exaucés ici',
+            de: 'Hier erfüllte Wünsche',
+            es: 'Deseos pedidos aquí',
+          },
+        },
+      ],
       featured: {
         abilities: [
           'jutsu-dbz-kamehameha',
