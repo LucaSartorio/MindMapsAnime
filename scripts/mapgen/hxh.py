@@ -9,6 +9,10 @@ Ricostruzioni AniMapVerse (nessuna mappa ufficiale riprodotta):
     Masadora (città della magia), Dorias (azzardo), Limeiro (castello dei Game Master),
     Aiai, Soufrabi sul mare, Rubicuta, Bunzen, il porto (unica uscita), le Badlands.
   * Palazzo di East Gorteau (Peijin) — porta, cortile, torre del trono, sala del Gungi.
+  * Yorknew City — Cemetery Building (asta), centro, mercato, covo della Brigata, deserto, aeroporto di Lingon.
+  * Whale Island — porto, casa di Mito, foresta (Kite), lago del Signore del Lago.
+  * NGL — posto di confine, costa (approdo della Regina), nido, radura dello scontro di Kite.
+  * Black Whale 1 — sezione schematica dei Tier (1 · 2–3 · 4–5).
 
     python3 scripts/mapgen/hxh.py  → public/assets/worlds/hunterxhunter/maps/*.svg + pin
 """
@@ -312,7 +316,222 @@ def east_gorteau() -> dict:
     return P
 
 
-ALL = [heavens_arena, zoldyck, greed_island, east_gorteau]
+# =============================================================================
+# YORKNEW CITY — 1400 × 1000
+# =============================================================================
+def yorknew() -> dict:
+    W, H = 1400, 1000
+    rng = random.Random(55)
+    svg = Svg(W, H, "Yorknew City · ヨークシンシティ", CREDIT)
+    P = {
+        "loc-hxh-yk-cemetery-building": (560, 330),
+        "loc-hxh-yk-downtown": (720, 500),
+        "loc-hxh-yk-market": (850, 660),
+        "loc-hxh-yk-hideout": (1110, 250),
+        "loc-hxh-yk-wasteland": (1250, 720),
+        "loc-hxh-yk-airport": (250, 800),
+    }
+    pins = list(P.values())
+    svg.add(f'<rect width="{W}" height="{H}" fill="#c9b98e"/>')
+    # baia a ovest/sud-ovest
+    bay = [(-20, -20), (240, -20), (300, 140), (250, 330), (330, 520), (240, 640), (120, 660), (-20, 620)]
+    svg.add(f'<path d="{smooth(jagged(bay, rng, 0.05, 3))}" fill="#6f9fbf" stroke="#3e6f8c" stroke-width="3"/>')
+    svg.add(dots(rng, (0, 0, 300, 640), 140, "#d6ecf6", (0.6, 1.5), lambda x, y: pip(x, y, bay), (0.3, 0.6)))
+    # deserto roccioso a est (la "terra di nessuno" oltre la città)
+    waste = [(1080, 470), (1420, 420), (1420, 1020), (1020, 1020), (1000, 820)]
+    svg.add(patch(jagged(waste, rng, 0.06, 2), "#c49a64", stroke="#8a6a3a", sw=1.5))
+    svg.add(dots(rng, (1000, 420, W, H), 420, "#6a4a22", (0.6, 1.8), lambda x, y: pip(x, y, waste)))
+    for (x, y) in scatter(rng, 16, (1030, 480, 1390, 990), both(lambda x, y: pip(x, y, waste), far_from(pins, 46)), mind=60):
+        sx = rng.uniform(0.8, 1.4)
+        svg.add(f'<path d="M{f(x - 22 * sx)},{f(y)} l{f(8 * sx)},{f(-30 * sx)} l{f(14 * sx)},{f(6 * sx)} l{f(10 * sx)},{f(-16 * sx)} l{f(12 * sx)},{f(40 * sx)} Z" fill="#a8784a" stroke="{INK}" stroke-width="1.2"/>')
+    # rovine a nord-est (il covo della Brigata)
+    for (x, y) in scatter(rng, 14, (1000, 160, 1250, 360), far_from([P["loc-hxh-yk-hideout"]], 36), mind=36):
+        w, h = rng.uniform(26, 50), rng.uniform(24, 60)
+        svg.add(f'<path d="M{f(x - w / 2)},{f(y)} V{f(y - h)} l{f(w * 0.3)},{f(h * 0.25)} l{f(w * 0.3)},{f(-h * 0.2)} l{f(w * 0.4)},{f(h * 0.3)} V{f(y)} Z" fill="#8a8478" stroke="{INK}" stroke-width="1.2"/>')
+    svg.add(f'<rect x="1075" y="205" width="70" height="56" fill="#6c665c" stroke="{INK}" stroke-width="2"/>')
+    svg.add(f'<path d="M1075,205 l20,-14 l20,10 l30,-8 v12" fill="none" stroke="{INK}" stroke-width="2"/>')
+    # griglia urbana
+    city = [(330, 120), (980, 100), (1040, 420), (980, 900), (360, 900), (380, 640), (330, 420)]
+    svg.add(patch(city, "#b9b4a6", stroke="#6a6458", sw=2))
+    for x in range(360, 1040, 46):
+        svg.add(f'<path d="M{x},100 V910" stroke="#e6e0cc" stroke-width="5" opacity="0.8"/>')
+    for y in range(130, 910, 40):
+        svg.add(f'<path d="M320,{y} H1050" stroke="#e6e0cc" stroke-width="5" opacity="0.8"/>')
+    out = ["<g>"]
+    for (x, y) in sorted(scatter(rng, 260, (340, 120, 1030, 900), both(lambda x, y: pip(x, y, city), far_from(pins, 34)), mind=22), key=lambda p: p[1]):
+        h = rng.uniform(16, 70) * (1.5 if ((x - 720) ** 2 + (y - 480) ** 2) < 200 ** 2 else 0.8)
+        w = rng.uniform(12, 20)
+        c = rng.choice(["#7a889c", "#8995a8", "#6b7a8f", "#9aa3b2", "#a8a090"])
+        out.append(f'<rect x="{f(x - w / 2)}" y="{f(y - h)}" width="{f(w)}" height="{f(h)}" fill="{c}" stroke="{INK}" stroke-width="0.8"/>')
+        out.append(f'<rect x="{f(x - w / 2 + 2)}" y="{f(y - h + 3)}" width="{f(w - 4)}" height="{f(h * 0.12)}" fill="#f4e3a8" opacity="0.4"/>')
+    out.append("</g>")
+    svg.add(out)
+    # parco centrale
+    svg.add(patch([(590, 560), (660, 556), (664, 610), (594, 616)], "#8aa86a", stroke=INK, sw=1.2))
+    svg.add(trees([(604 + i * 16, 590) for i in range(4)], rng, r=7))
+    # Cemetery Building: grattacielo tra le lapidi
+    for (x, y) in scatter(rng, 26, (470, 340, 650, 400), far_from([P["loc-hxh-yk-cemetery-building"]], 18), mind=12):
+        svg.add(f'<path d="M{f(x - 3)},{f(y)} v-8 a3,3 0 0,1 6,0 v8 Z" fill="#d9d6cc" stroke="{INK}" stroke-width="0.7"/>')
+    svg.add(f'<rect x="536" y="200" width="48" height="120" fill="#4a4a5a" stroke="{INK}" stroke-width="2"/>')
+    for k in range(9):
+        svg.add(f'<rect x="542" y="{208 + k * 12}" width="36" height="5" fill="#f4e3a8" opacity="0.45"/>')
+    # viadotto verso l'aeroporto e l'aeroporto di Lingon
+    svg.add(road([(380, 700), (330, 760), (290, 800)], 12, "#d9d2bc", "#6a6458"))
+    svg.add(f'<path d="M120,760 L420,860 M150,860 L400,720" stroke="#4a4a4a" stroke-width="22"/>')
+    svg.add(f'<path d="M120,760 L420,860 M150,860 L400,720" stroke="#f1e6c6" stroke-width="2" stroke-dasharray="14 12"/>')
+    svg.add(f'<rect x="200" y="770" width="70" height="26" fill="#d9d2bc" stroke="{INK}" stroke-width="1.5"/>')
+    svg.add(f'<ellipse cx="380" cy="940" rx="60" ry="18" fill="#c9c2a8" stroke="{INK}" stroke-width="1.5"/>')  # dirigibile
+    svg.add(f'<path d="M360,958 h40 v8 h-40 Z" fill="#6a6458"/>')
+    # strada verso il deserto
+    svg.add(road([(1040, 640), (1140, 680), (1250, 720), (1400, 760)], 9, "#e6d2a8", "#8a6a3a"))
+    svg.add(compass(1330, 80, 36, INK, PAPER, "#b03a2e"))
+    svg.add(region_label(160, 400, "Baia", sub="Bay", size=16, color="#e6f2f8", halo="#3e6f8c"))
+    svg.add(region_label(1230, 900, "Deserto", sub="Wasteland", size=16, color="#4a2e10", halo="#e9d2a0"))
+    title(svg, 190, 60, "Yorknew City", "Asta del Mercato Nero · Southernpiece Auction", 320, jp="ヨークシンシティ")
+    save(svg, "hxh-yorknew.svg", P)
+    return P
+
+
+# =============================================================================
+# WHALE ISLAND (くじら島) — 1200 × 900
+# =============================================================================
+def whale_island() -> dict:
+    W, H = 1200, 900
+    rng = random.Random(66)
+    svg = Svg(W, H, "Whale Island · くじら島", CREDIT)
+    P = {
+        "loc-hxh-wi-port": (930, 650),
+        "loc-hxh-wi-mito-house": (760, 560),
+        "loc-hxh-wi-forest": (430, 360),
+        "loc-hxh-wi-lake": (300, 560),
+    }
+    pins = list(P.values())
+    # sagoma a balena: corpo, coda a ovest
+    land = jagged([(120, 470), (60, 360), (150, 380), (230, 300), (420, 210), (640, 190), (860, 240), (1020, 340),
+                   (1080, 470), (1040, 600), (900, 700), (700, 740), (480, 720), (300, 640), (190, 560), (70, 600)], rng, 0.05, 3)
+    sea(svg, "#4a8ab0", "#2b5a80", "#d6ecf6", rng, [land], n=170, wave_w=16, opacity=0.45)
+    island(svg, land, "#a8c47a", stroke=INK, shallow="#8fc9de", beach="#eadbb0")
+    svg.add(mountain_range(scatter(rng, 10, (520, 220, 860, 330), both(lambda x, y: pip(x, y, scale_pts(land, 0.9)), far_from(pins, 60)), mind=50),
+                           rng, 70, 60, fill="#8aa06a", dark="#5a7040", snow=None, stroke=INK))
+    svg.add(forest(svg, jagged([(240, 330), (420, 250), (600, 330), (560, 470), (380, 480), (230, 420)], rng, 0.08, 2), rng, 0.004, 10,
+                   avoid=far_from(pins, 30), fill="#3f7a3a", dark="#25502a", light="#6fa85a"))
+    lake = jagged(ellipse_pts(300, 570, 70, 42, 12), rng, 0.08, 2)
+    svg.add(patch(lake, "#6fa8c0", stroke="#3e7f9c", sw=2))
+    svg.add(patch(jagged(ellipse_pts(300, 570, 40, 20, 10), rng, 0.1, 2), "#5a8a7a", opacity=0.5))
+    svg.add(river([(640, 300), (520, 420), (380, 520), (330, 545)], 7))
+    # villaggio e casa-locanda di Mito, porto con il molo
+    svg.add(town(rng, 860, 600, 110, 50, 24, 16, ("#efe2c4", "#e6d6b0"), ("#b5523b", "#3d6a9a", "#8a6a4a"), far_from(pins, 26)))
+    svg.add(house(760, 566, 34, "#f4ead2", "#c0392b"))
+    svg.add(f'<rect x="752" y="534" width="8" height="10" fill="#6a4a2a"/>')
+    svg.add(f'<path d="M930,660 L1010,720" stroke="#6a4a2a" stroke-width="10"/>')
+    svg.add(f'<path d="M930,660 L1010,720" stroke="#a87a4a" stroke-width="6"/>')
+    svg.add(ship(1060, 760, 1.0))
+    svg.add(road([(760, 570), (840, 600), (930, 650)], 6, "#efe0b4", "#8a7550"))
+    svg.add(path_line([(760, 560), (620, 480), (500, 420), (430, 370)]))
+    svg.add(path_line([(430, 370), (360, 480), (310, 550)]))
+    # la volpe-orso (sagoma) nella foresta
+    svg.add(f'<path d="M500,300 q20,-26 50,-8 q16,-6 24,6 q-6,16 -30,18 q-30,4 -44,-16 Z" fill="#5a3a22" opacity="0.8"/>')
+    svg.add(compass(1130, 80, 34, INK, PAPER, "#b03a2e"))
+    svg.add(region_label(600, 860, "Mare / Sea", size=14, color="#e6f2f8", halo="#2b5a80"))
+    title(svg, 190, 66, "Whale Island", "Isola Balena · casa di Gon / Gon's home", 320, jp="くじら島")
+    save(svg, "hxh-whale-island.svg", P)
+    return P
+
+
+# =============================================================================
+# NGL — NEO-GREEN LIFE — 1300 × 900
+# =============================================================================
+def ngl() -> dict:
+    W, H = 1300, 900
+    rng = random.Random(77)
+    svg = Svg(W, H, "NGL · Neo-Green Life", CREDIT)
+    P = {
+        "loc-hxh-ngl-gate": (1080, 470),
+        "loc-hxh-ngl-coast": (240, 700),
+        "loc-hxh-ngl-nest": (560, 380),
+        "loc-hxh-ngl-forest": (780, 600),
+    }
+    pins = list(P.values())
+    land = [(160, -20), (1320, -20), (1320, 920), (420, 920), (330, 800), (180, 760), (110, 640), (150, 420), (100, 200)]
+    sea(svg, "#3f78a0", "#2b5a80", "#d6ecf6", rng, [land], n=60, wave_w=16, opacity=0.45)
+    island(svg, jagged(land, rng, 0.03, 3), "#6f9a52", stroke=INK, shallow="#8fc9de", beach="#e2d2a0")
+    # confine con East Gorteau/Rokario a est: muro e posto di blocco
+    svg.add(f'<path d="M1150,-10 L1120,300 L1140,600 L1110,910" fill="none" stroke="#8a8478" stroke-width="14"/>')
+    svg.add(f'<path d="M1150,-10 L1120,300 L1140,600 L1110,910" fill="none" stroke="#c9c2b0" stroke-width="7" stroke-dasharray="18 8"/>')
+    svg.add(f'<rect x="1050" y="430" width="80" height="50" fill="#d9d2bc" stroke="{INK}" stroke-width="2"/>')
+    svg.add(f'<path d="M1050,430 l40,-22 l40,22" fill="#5a6a4a" stroke="{INK}" stroke-width="1.6"/>')
+    svg.add(region_label(1220, 160, "East Gorteau", sub="confine · border", size=13, color="#2b2620", halo="#c9d6b0", rot=-90))
+    # giungla fittissima: niente tecnologia, solo natura
+    svg.add(wood(svg, scatter(rng, 1100, (110, 0, 1110, H), both(lambda x, y: pip(x, y, land), far_from(pins, 48),
+                 lambda x, y: not ((x - 560) ** 2 / 150 ** 2 + (y - 380) ** 2 / 100 ** 2 < 1)), mind=17), rng, r=11,
+                 fill="#3f7a3a", dark="#204a22", light="#68a050", stroke="#142a12", sw=0.8))
+    # fiume che sfocia sulla costa ovest
+    svg.add(river([(900, 60), (760, 220), (620, 300), (420, 520), (300, 660), (230, 720)], 10))
+    # il nido della Regina: termitaio gigante in una radura
+    svg.add(f'<ellipse cx="560" cy="400" rx="140" ry="80" fill="#a88a5a" stroke="{INK}" stroke-width="1.5" opacity="0.8"/>')
+    svg.add(f'<path d="M470,410 Q500,240 560,180 Q620,240 650,410 Z" fill="#7a5a3a" stroke="{INK}" stroke-width="2.4"/>')
+    for (x, y) in ((530, 300), (585, 260), (560, 350), (520, 380), (610, 370)):
+        svg.add(f'<ellipse cx="{x}" cy="{y}" rx="7" ry="10" fill="#2a1a10"/>')
+    # radura della battaglia di Kite
+    svg.add(f'<ellipse cx="780" cy="610" rx="60" ry="30" fill="#b9a874" stroke="{INK}" stroke-width="1" opacity="0.85"/>')
+    # relitto sulla costa (la Regina giunta dal mare)
+    svg.add(f'<path d="M210,716 q30,-10 60,0 q-10,14 -30,14 q-20,0 -30,-14 Z" fill="#5a4a3a" stroke="{INK}" stroke-width="1.2"/>')
+    svg.add(compass(1230, 820, 34, INK, PAPER, "#b03a2e"))
+    svg.add(region_label(140, 860, "Mare / Sea", size=14, color="#e6f2f8", halo="#2b5a80"))
+    title(svg, 330, 60, "NGL", "Neo-Green Life · regione autonoma / autonomous region", 420)
+    save(svg, "hxh-ngl.svg", P)
+    return P
+
+
+# =============================================================================
+# BLACK WHALE 1 — sezione della nave — 1400 × 900
+# =============================================================================
+def black_whale() -> dict:
+    W, H = 1400, 900
+    rng = random.Random(88)
+    svg = Svg(W, H, "Black Whale 1 · ブラックホエール1号", CREDIT)
+    P = {
+        "loc-hxh-bw-tier1": (700, 250),
+        "loc-hxh-bw-middle-tiers": (700, 450),
+        "loc-hxh-bw-lower-tiers": (700, 640),
+    }
+    sky = svg.gradient("sky", [(0, "#1d2a4a"), (0.55, "#3a5a80"), (0.56, "#2b4a6a"), (1, "#14283c")])
+    svg.add(f'<rect width="{W}" height="{H}" fill="{sky}"/>')
+    svg.add(dots(rng, (0, 0, W, 300), 120, "#ffffff", (0.5, 1.2), None, (0.3, 0.8)))
+    for y in range(520, H, 26):
+        svg.add(f'<path d="M0,{y} Q350,{y - 8} 700,{y} T1400,{y}" fill="none" stroke="#d6ecf6" stroke-width="1.2" opacity="0.25"/>')
+    # scafo a sezione (prua a destra)
+    hull = [(120, 300), (1180, 300), (1320, 360), (1260, 560), (1120, 760), (260, 760), (150, 620)]
+    svg.add(f'<path d="{poly(hull)}" fill="#2a2e38" stroke="{INK}" stroke-width="3"/>')
+    # ponti: Tier 1 (sovrastruttura di lusso), Tier 2-3, Tier 4-5
+    decks = [(300, 380, "#d9c48a", "Tier 1"), (380, 520, "#a8b4c4", "Tier 2–3"), (520, 740, "#7a7f8a", "Tier 4–5")]
+    for y0, y1, c, lab in decks:
+        svg.add(f'<rect x="170" y="{y0 + 8}" width="1070" height="{y1 - y0 - 16}" fill="{c}" stroke="{INK}" stroke-width="1.5" opacity="0.92"/>')
+        svg.add(text(200, y0 + 40, lab, size=22, fill="#1d1d1d", anchor="start", weight="bold", halo="#f1e6c6", halo_w=4))
+        for x in range(260, 1220, 34):
+            svg.add(f'<rect x="{x}" y="{y0 + 54}" width="16" height="10" rx="3" fill="#1d2a4a" opacity="0.5"/>')
+    # sovrastruttura reale con le torri dei principi
+    svg.add(f'<path d="M320,300 L340,170 L1060,170 L1080,300 Z" fill="#e6dcc4" stroke="{INK}" stroke-width="2.4"/>')
+    for i, x in enumerate(range(380, 1040, 48)):
+        h = 40 + (i % 3) * 18
+        svg.add(tower(x, 170, 22, h, "#efe4c8", "#b08a2a", cone=True))
+    svg.add(dome(700, 170, 46, "#d9a84a", INK))
+    # impianto di trattamento tra i ponti inferiori
+    svg.add(f'<rect x="900" y="640" width="200" height="40" fill="#4a5a4a" stroke="{INK}" stroke-width="1.4"/>')
+    for x in range(910, 1100, 24):
+        svg.add(f'<circle cx="{x}" cy="660" r="8" fill="#6a7a6a" stroke="{INK}" stroke-width="0.8"/>')
+    # ciminiere e scia
+    for x in (500, 900):
+        svg.add(f'<rect x="{x - 14}" y="110" width="28" height="60" fill="#3a3a4a" stroke="{INK}" stroke-width="1.6"/>')
+        svg.add(f'<ellipse cx="{x - 30}" cy="96" rx="40" ry="14" fill="#c9c2b0" opacity="0.4"/>')
+    svg.add(f'<path d="M120,600 Q60,620 0,600" stroke="#d6ecf6" stroke-width="3" opacity="0.5" fill="none"/>')
+    svg.add(region_label(700, 860, "Verso il Nuovo Continente · Towards the New Continent", size=15, color="#e6f2f8", halo="#14283c"))
+    title(svg, 200, 60, "Black Whale 1", "Nave reale di Kakin · Kakin royal ship", 330, jp="ブラックホエール1号")
+    save(svg, "hxh-black-whale.svg", P)
+    return P
+
+
+ALL = [heavens_arena, zoldyck, greed_island, east_gorteau, yorknew, whale_island, ngl, black_whale]
 
 if __name__ == "__main__":
     pins: dict = {}

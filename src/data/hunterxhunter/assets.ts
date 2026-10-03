@@ -59,6 +59,10 @@ export const hxhAssets: AssetReference[] = [
       ['zoldyck-estate', 'Kukuroo Mountain (Zoldyck Estate)'],
       ['greed-island', 'Greed Island'],
       ['east-gorteau-palace', 'East Gorteau Royal Palace'],
+      ['yorknew', 'Yorknew City'],
+      ['whale-island', 'Whale Island'],
+      ['ngl', 'NGL (Neo-Green Life)'],
+      ['black-whale', 'Black Whale 1'],
     ] as const
   ).map(([slug, name]) =>
     originalMapAsset({

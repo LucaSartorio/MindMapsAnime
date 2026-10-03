@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T15:34:25.926Z",
+  "generatedAt": "2026-10-03T15:54:41.646Z",
   "templates": {
     "characterJourney": {
       "byReason": {
-        "single_location": 492,
-        "no_journey_data": 557
+        "single_location": 499,
+        "no_journey_data": 559
       },
       "items": [
         {
@@ -1410,13 +1410,6 @@
         },
         {
           "anime": "hunterxhunter",
-          "subject": "kite",
-          "subjectId": "char-hxh-kite",
-          "displayName": "Kite",
-          "reason": "single_location"
-        },
-        {
-          "anime": "hunterxhunter",
           "subject": "mito-freecss",
           "subjectId": "char-hxh-mito",
           "displayName": "Mito Freecss",
@@ -1441,7 +1434,7 @@
           "subject": "alluka-zoldyck",
           "subjectId": "char-hxh-alluka",
           "displayName": "Alluka Zoldyck",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "hunterxhunter",
@@ -1466,27 +1459,6 @@
         },
         {
           "anime": "hunterxhunter",
-          "subject": "uvogin",
-          "subjectId": "char-hxh-uvogin",
-          "displayName": "Uvogin",
-          "reason": "single_location"
-        },
-        {
-          "anime": "hunterxhunter",
-          "subject": "pakunoda",
-          "subjectId": "char-hxh-pakunoda",
-          "displayName": "Pakunoda",
-          "reason": "single_location"
-        },
-        {
-          "anime": "hunterxhunter",
-          "subject": "shalnark",
-          "subjectId": "char-hxh-shalnark",
-          "displayName": "Shalnark",
-          "reason": "single_location"
-        },
-        {
-          "anime": "hunterxhunter",
           "subject": "shizuku-murasaki",
           "subjectId": "char-hxh-shizuku",
           "displayName": "Shizuku Murasaki",
@@ -1497,7 +1469,7 @@
           "subject": "franklin-bordeau",
           "subjectId": "char-hxh-franklin",
           "displayName": "Franklin Bordeau",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "hunterxhunter",
@@ -1511,7 +1483,7 @@
           "subject": "kortopi",
           "subjectId": "char-hxh-kortopi",
           "displayName": "Kortopi",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "hunterxhunter",
@@ -1571,6 +1543,13 @@
         },
         {
           "anime": "hunterxhunter",
+          "subject": "tserriednich-hui-guo-rou",
+          "subjectId": "char-hxh-tserriednich",
+          "displayName": "Tserriednich Hui Guo Rou",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
           "subject": "satotz",
           "subjectId": "char-hxh-satotz",
           "displayName": "Satotz",
@@ -1595,13 +1574,6 @@
           "subject": "razor",
           "subjectId": "char-hxh-razor",
           "displayName": "Razor",
-          "reason": "single_location"
-        },
-        {
-          "anime": "hunterxhunter",
-          "subject": "tsezguerra",
-          "subjectId": "char-hxh-tsezguerra",
-          "displayName": "Tsezguerra",
           "reason": "single_location"
         },
         {
@@ -1777,6 +1749,20 @@
           "subject": "fugetsu-hui-guo-rou",
           "subjectId": "char-hxh-fugetsu",
           "displayName": "Fugetsu Hui Guo Rou",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "woble-hui-guo-rou",
+          "subjectId": "char-hxh-woble",
+          "displayName": "Woble Hui Guo Rou",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "oito-hui-guo-rou",
+          "subjectId": "char-hxh-oito",
+          "displayName": "Oito Hui Guo Rou",
           "reason": "single_location"
         },
         {
@@ -1963,6 +1949,20 @@
         },
         {
           "anime": "hunterxhunter",
+          "subject": "hinrigh-biganduffno",
+          "subjectId": "char-hxh-hinrigh",
+          "displayName": "Hinrigh Biganduffno",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "morena-prudo",
+          "subjectId": "char-hxh-morena",
+          "displayName": "Morena Prudo",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
           "subject": "bodoro",
           "subjectId": "char-hxh-bodoro",
           "displayName": "Bodoro",
@@ -1973,7 +1973,7 @@
           "subject": "johness-the-dissector",
           "subjectId": "char-hxh-johness",
           "displayName": "Johness the Dissector",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "hunterxhunter",
@@ -2106,7 +2106,7 @@
           "subject": "battera",
           "subjectId": "char-hxh-battera",
           "displayName": "Battera",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "hunterxhunter",
@@ -2275,6 +2275,69 @@
           "subjectId": "char-hxh-zobae",
           "displayName": "Zobae Disease",
           "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "izunavi",
+          "subjectId": "char-hxh-izunavi",
+          "displayName": "Izunavi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "kiriko",
+          "subjectId": "char-hxh-kiriko",
+          "displayName": "Kiriko",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "sarasa",
+          "subjectId": "char-hxh-sarasa",
+          "displayName": "Sarasa",
+          "reason": "single_location"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "omokage",
+          "subjectId": "char-hxh-omokage",
+          "displayName": "Omokage",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "banana-kavaro",
+          "subjectId": "char-hxh-banana-kavaro",
+          "displayName": "Banana Kavaro",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "stick-dinner",
+          "subjectId": "char-hxh-stick-dinner",
+          "displayName": "Stick Dinner",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "lin-koshi",
+          "subjectId": "char-hxh-lin-koshi",
+          "displayName": "Lin Koshi",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "monta-yuras",
+          "subjectId": "char-hxh-monta-yuras",
+          "displayName": "Monta Yuras",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "podungo-lapoy",
+          "subjectId": "char-hxh-podungo-lapoy",
+          "displayName": "Podungo Lapoy",
+          "reason": "no_journey_data"
         },
         {
           "anime": "onepiece",
