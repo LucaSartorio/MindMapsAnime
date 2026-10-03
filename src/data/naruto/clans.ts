@@ -112,8 +112,8 @@ export const narutoClans: Faction[] = [
     name: 'Yamanaka Clan',
     villageLocationId: 'loc-konoha',
     description: {
-      it: 'Specialisti in tecniche di possessione mentale e telepatia.',
-      en: 'Specialists in mind possession and telepathy techniques.',
+      it: 'Specialisti in tecniche di possessione mentale e telepatia, parte del trio Ino-Shika-Chō con Nara e Akimichi. Inoichi guida la Divisione Intelligence di Konoha e collega le menti dell\'Alleanza nella Quarta Guerra; Ino gestisce il negozio di fiori di famiglia.',
+      en: 'Specialists in mind possession and telepathy, part of the Ino-Shika-Chō trio with the Nara and Akimichi. Inoichi leads Konoha\'s Intelligence Division and links the Alliance\'s minds in the Fourth War; Ino runs the family flower shop.',
     },
     signatureAbilities: ['Mind Body Switch Technique', 'Telepathy', 'Intelligence Division'],
     jutsuIds: ['jutsu-mind-body-switch', 'jutsu-mind-body-disturbance'],
@@ -130,8 +130,8 @@ export const narutoClans: Faction[] = [
     name: 'Aburame Clan',
     villageLocationId: 'loc-konoha',
     description: {
-      it: 'Clan che convive simbioticamente con gli insetti kikaichu.',
-      en: 'Clan that lives in symbiosis with kikaichu insects.',
+      it: 'Clan di Konoha che convive simbioticamente con gli insetti kikaichū, ospitati nel corpo dei suoi membri: li usano per seguire tracce, assorbire chakra e combattere. Shino e il padre Shibi ne sono i membri più noti.',
+      en: 'A Konoha clan that lives in symbiosis with kikaichū insects housed in its members\' bodies: they use them to follow trails, absorb chakra and fight. Shino and his father Shibi are its best-known members.',
     },
     signatureAbilities: ['Insect Manipulation', 'Bug Cloning'],
     jutsuIds: ['jutsu-insect-jamming'],
@@ -218,8 +218,8 @@ export const narutoClans: Faction[] = [
     type: 'clan',
     name: 'Kaguya Clan',
     description: {
-      it: 'Clan annientato di guerrieri ossei, noti per il Shikotsumyaku.',
-      en: 'Annihilated clan of bone warriors, known for the Shikotsumyaku.',
+      it: 'Clan bellicoso del Paese dell\'Acqua, noto per lo Shikotsumyaku, l\'abilità di manipolare le proprie ossa. Si estinse attaccando Kirigakure; l\'unico sopravvissuto, Kimimaro, divenne il più fedele servitore di Orochimaru.',
+      en: 'A warlike clan from the Land of Water, known for Shikotsumyaku, the ability to manipulate one\'s own bones. It died out attacking Kirigakure; the only survivor, Kimimaro, became Orochimaru\'s most loyal servant.',
     },
     signatureAbilities: ['Shikotsumyaku (Dead Bone Pulse)'],
     kekkeiGenkai: 'Shikotsumyaku',
@@ -254,8 +254,8 @@ export const narutoClans: Faction[] = [
     name: 'Hoshigaki Clan',
     villageLocationId: 'loc-kiri',
     description: {
-      it: 'Clan di Kirigakure con tratti squalo. Kisame è il membro più noto.',
-      en: 'Kirigakure clan with shark-like traits. Kisame is its best-known member.',
+      it: 'Clan di Kirigakure con tratti da squalo: pelle bluastra, branchie e denti affilati. Kisame, uno dei Sette Spadaccini della Nebbia e portatore di Samehada, ne è il membro più noto; disertò Kiri per unirsi all\'Akatsuki in coppia con Itachi.',
+      en: 'A Kirigakure clan with shark-like traits: bluish skin, gills and sharp teeth. Kisame, one of the Seven Swordsmen of the Mist and wielder of Samehada, is its best-known member; he deserted Kiri to join the Akatsuki partnered with Itachi.',
     },
     signatureAbilities: ['Water Release', 'Shark-like physiology'],
     characterIds: ['char-kisame'],

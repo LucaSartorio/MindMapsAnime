@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T11:40:20.839Z",
+  "generatedAt": "2026-10-03T11:57:37.179Z",
   "templates": {
     "characterJourney": {
       "byReason": {
-        "single_location": 447,
-        "no_journey_data": 635
+        "single_location": 477,
+        "no_journey_data": 582
       },
       "items": [
         {
@@ -20,21 +20,21 @@
           "subject": "tobirama-senju",
           "subjectId": "char-tobirama",
           "displayName": "Tobirama Senju",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
           "subject": "mito-uzumaki",
           "subjectId": "char-mito",
           "displayName": "Mito Uzumaki",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
           "subject": "choji-akimichi",
           "subjectId": "char-choji",
           "displayName": "Choji Akimichi",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
@@ -73,13 +73,6 @@
         },
         {
           "anime": "naruto",
-          "subject": "yamato",
-          "subjectId": "char-yamato",
-          "displayName": "Yamato",
-          "reason": "no_journey_data"
-        },
-        {
-          "anime": "naruto",
           "subject": "konohamaru-sarutobi",
           "subjectId": "char-konohamaru",
           "displayName": "Konohamaru Sarutobi",
@@ -94,24 +87,17 @@
         },
         {
           "anime": "naruto",
-          "subject": "might-guy",
-          "subjectId": "char-guy",
-          "displayName": "Might Guy",
-          "reason": "single_location"
-        },
-        {
-          "anime": "naruto",
           "subject": "asuma-sarutobi",
           "subjectId": "char-asuma",
           "displayName": "Asuma Sarutobi",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
           "subject": "kurenai-yuhi",
           "subjectId": "char-kurenai",
           "displayName": "Kurenai Yuhi",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
@@ -125,7 +111,7 @@
           "subject": "shizune",
           "subjectId": "char-shizune",
           "displayName": "Shizune",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
@@ -160,21 +146,21 @@
           "subject": "choza-akimichi",
           "subjectId": "char-choza",
           "displayName": "Choza Akimichi",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
           "subject": "hiashi-hyuga",
           "subjectId": "char-hiashi",
           "displayName": "Hiashi Hyuga",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
           "subject": "hizashi-hyuga",
           "subjectId": "char-hizashi",
           "displayName": "Hizashi Hyuga",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
@@ -202,7 +188,7 @@
           "subject": "rasa",
           "subjectId": "char-rasa",
           "displayName": "Rasa",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
@@ -234,13 +220,6 @@
         },
         {
           "anime": "naruto",
-          "subject": "mei-terumi",
-          "subjectId": "char-mei",
-          "displayName": "Mei Terumi",
-          "reason": "no_journey_data"
-        },
-        {
-          "anime": "naruto",
           "subject": "yagura-karatachi",
           "subjectId": "char-yagura",
           "displayName": "Yagura Karatachi",
@@ -251,14 +230,7 @@
           "subject": "chojuro",
           "subjectId": "char-chojuro",
           "displayName": "Chojuro",
-          "reason": "no_journey_data"
-        },
-        {
-          "anime": "naruto",
-          "subject": "suigetsu-hozuki",
-          "subjectId": "char-suigetsu",
-          "displayName": "Suigetsu Hozuki",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
@@ -276,13 +248,6 @@
         },
         {
           "anime": "naruto",
-          "subject": "a",
-          "subjectId": "char-a",
-          "displayName": "A",
-          "reason": "no_journey_data"
-        },
-        {
-          "anime": "naruto",
           "subject": "darui",
           "subjectId": "char-darui",
           "displayName": "Darui",
@@ -293,13 +258,6 @@
           "subject": "yugito-nii",
           "subjectId": "char-yugito",
           "displayName": "Yugito Nii",
-          "reason": "no_journey_data"
-        },
-        {
-          "anime": "naruto",
-          "subject": "onoki",
-          "subjectId": "char-onoki",
-          "displayName": "Onoki",
           "reason": "no_journey_data"
         },
         {
@@ -353,24 +311,17 @@
         },
         {
           "anime": "naruto",
-          "subject": "shisui-uchiha",
-          "subjectId": "char-shisui",
-          "displayName": "Shisui Uchiha",
-          "reason": "single_location"
-        },
-        {
-          "anime": "naruto",
           "subject": "fugaku-uchiha",
           "subjectId": "char-fugaku",
           "displayName": "Fugaku Uchiha",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
           "subject": "mikoto-uchiha",
           "subjectId": "char-mikoto",
           "displayName": "Mikoto Uchiha",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
@@ -381,27 +332,6 @@
         },
         {
           "anime": "naruto",
-          "subject": "zetsu",
-          "subjectId": "char-zetsu",
-          "displayName": "Zetsu",
-          "reason": "no_journey_data"
-        },
-        {
-          "anime": "naruto",
-          "subject": "karin-uzumaki",
-          "subjectId": "char-karin",
-          "displayName": "Karin Uzumaki",
-          "reason": "no_journey_data"
-        },
-        {
-          "anime": "naruto",
-          "subject": "jugo",
-          "subjectId": "char-jugo",
-          "displayName": "Jugo",
-          "reason": "no_journey_data"
-        },
-        {
-          "anime": "naruto",
           "subject": "kimimaro-kaguya",
           "subjectId": "char-kimimaro",
           "displayName": "Kimimaro Kaguya",
@@ -409,24 +339,10 @@
         },
         {
           "anime": "naruto",
-          "subject": "kaguya-otsutsuki",
-          "subjectId": "char-kaguya",
-          "displayName": "Kaguya Otsutsuki",
-          "reason": "no_journey_data"
-        },
-        {
-          "anime": "naruto",
-          "subject": "hagoromo-otsutsuki",
-          "subjectId": "char-hagoromo",
-          "displayName": "Hagoromo Otsutsuki",
-          "reason": "no_journey_data"
-        },
-        {
-          "anime": "naruto",
           "subject": "hamura-otsutsuki",
           "subjectId": "char-hamura",
           "displayName": "Hamura Otsutsuki",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
@@ -591,38 +507,17 @@
         },
         {
           "anime": "naruto",
-          "subject": "kurama",
-          "subjectId": "char-kurama",
-          "displayName": "Kurama",
-          "reason": "no_journey_data"
-        },
-        {
-          "anime": "naruto",
-          "subject": "shukaku",
-          "subjectId": "char-shukaku",
-          "displayName": "Shukaku",
-          "reason": "no_journey_data"
-        },
-        {
-          "anime": "naruto",
           "subject": "matatabi",
           "subjectId": "char-matatabi",
           "displayName": "Matatabi",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
           "subject": "son-goku",
           "subjectId": "char-son-goku",
           "displayName": "Son Gokū",
-          "reason": "no_journey_data"
-        },
-        {
-          "anime": "naruto",
-          "subject": "gyuki",
-          "subjectId": "char-gyuki",
-          "displayName": "Gyūki",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
@@ -794,20 +689,6 @@
         },
         {
           "anime": "naruto",
-          "subject": "nagato-uzumaki",
-          "subjectId": "char-nagato",
-          "displayName": "Nagato Uzumaki",
-          "reason": "no_journey_data"
-        },
-        {
-          "anime": "naruto",
-          "subject": "hanzo",
-          "subjectId": "char-hanzo",
-          "displayName": "Hanzō",
-          "reason": "no_journey_data"
-        },
-        {
-          "anime": "naruto",
           "subject": "monzaemon-chikamatsu",
           "subjectId": "char-monzaemon",
           "displayName": "Monzaemon Chikamatsu",
@@ -836,34 +717,6 @@
         },
         {
           "anime": "naruto",
-          "subject": "mifune",
-          "subjectId": "char-mifune",
-          "displayName": "Mifune",
-          "reason": "no_journey_data"
-        },
-        {
-          "anime": "naruto",
-          "subject": "fukasaku",
-          "subjectId": "char-fukasaku",
-          "displayName": "Fukasaku",
-          "reason": "no_journey_data"
-        },
-        {
-          "anime": "naruto",
-          "subject": "shima",
-          "subjectId": "char-shima",
-          "displayName": "Shima",
-          "reason": "no_journey_data"
-        },
-        {
-          "anime": "naruto",
-          "subject": "gamabunta",
-          "subjectId": "char-gamabunta",
-          "displayName": "Gamabunta",
-          "reason": "no_journey_data"
-        },
-        {
-          "anime": "naruto",
           "subject": "gamakichi",
           "subjectId": "char-gamakichi",
           "displayName": "Gamakichi",
@@ -874,20 +727,13 @@
           "subject": "manda",
           "subjectId": "char-manda",
           "displayName": "Manda",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
           "subject": "katsuyu",
           "subjectId": "char-katsuyu",
           "displayName": "Katsuyu",
-          "reason": "no_journey_data"
-        },
-        {
-          "anime": "naruto",
-          "subject": "boruto-uzumaki",
-          "subjectId": "char-boruto",
-          "displayName": "Boruto Uzumaki",
           "reason": "single_location"
         },
         {
@@ -895,20 +741,6 @@
           "subject": "himawari-uzumaki",
           "subjectId": "char-himawari",
           "displayName": "Himawari Uzumaki",
-          "reason": "no_journey_data"
-        },
-        {
-          "anime": "naruto",
-          "subject": "sarada-uchiha",
-          "subjectId": "char-sarada",
-          "displayName": "Sarada Uchiha",
-          "reason": "single_location"
-        },
-        {
-          "anime": "naruto",
-          "subject": "mitsuki",
-          "subjectId": "char-mitsuki",
-          "displayName": "Mitsuki",
           "reason": "single_location"
         },
         {
@@ -916,14 +748,14 @@
           "subject": "shikadai-nara",
           "subjectId": "char-shikadai",
           "displayName": "Shikadai Nara",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
           "subject": "inojin-yamanaka",
           "subjectId": "char-inojin",
           "displayName": "Inojin Yamanaka",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
@@ -951,7 +783,7 @@
           "subject": "sumire-kakei",
           "subjectId": "char-sumire",
           "displayName": "Sumire Kakei",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
@@ -1028,21 +860,21 @@
           "subject": "code",
           "subjectId": "char-code",
           "displayName": "Code",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
           "subject": "eida",
           "subjectId": "char-eida",
           "displayName": "Eida",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
           "subject": "daemon",
           "subjectId": "char-daemon",
           "displayName": "Daemon",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
@@ -1098,7 +930,7 @@
           "subject": "aoba-yamashiro",
           "subjectId": "char-aoba",
           "displayName": "Aoba Yamashiro",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
@@ -1196,7 +1028,7 @@
           "subject": "kagura-karatachi",
           "subjectId": "char-kagura",
           "displayName": "Kagura Karatachi",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
@@ -1259,49 +1091,42 @@
           "subject": "isobu",
           "subjectId": "char-isobu",
           "displayName": "Isobu",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
           "subject": "kokuo",
           "subjectId": "char-kokuo",
           "displayName": "Kokuō",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
           "subject": "saiken",
           "subjectId": "char-saiken",
           "displayName": "Saiken",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
           "subject": "chomei",
           "subjectId": "char-chomei",
           "displayName": "Chōmei",
-          "reason": "no_journey_data"
-        },
-        {
-          "anime": "naruto",
-          "subject": "ten-tails-jubi",
-          "subjectId": "char-ten-tails",
-          "displayName": "Ten-Tails (Jūbi)",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
           "subject": "gedo-mazo",
           "subjectId": "char-gedo-mazo",
           "displayName": "Gedō Mazō",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
           "subject": "third-raikage",
           "subjectId": "char-third-raikage",
           "displayName": "Third Raikage",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
@@ -1350,20 +1175,13 @@
           "subject": "sakumo-hatake",
           "subjectId": "char-sakumo",
           "displayName": "Sakumo Hatake",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
           "subject": "kitsuchi",
           "subjectId": "char-kitsuchi",
           "displayName": "Kitsuchi",
-          "reason": "no_journey_data"
-        },
-        {
-          "anime": "naruto",
-          "subject": "black-zetsu",
-          "subjectId": "char-black-zetsu",
-          "displayName": "Black Zetsu",
           "reason": "no_journey_data"
         },
         {
@@ -1553,6 +1371,27 @@
           "subject": "hanare",
           "subjectId": "char-hanare",
           "displayName": "Hanare",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "jura",
+          "subjectId": "char-jura",
+          "displayName": "Jura",
+          "reason": "single_location"
+        },
+        {
+          "anime": "naruto",
+          "subject": "hidari",
+          "subjectId": "char-hidari",
+          "displayName": "Hidari",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "naruto",
+          "subject": "matsuri",
+          "subjectId": "char-matsuri",
+          "displayName": "Matsuri",
           "reason": "no_journey_data"
         },
         {

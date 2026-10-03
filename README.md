@@ -41,13 +41,13 @@ componenti.
 
 | Entità             | Naruto | Hunter x Hunter | One Piece | Dragon Ball | Bleach | Attack on Titan | Jujutsu Kaisen |
 | ------------------ | -----: | --------------: | --------: | ----------: | -----: | --------------: | -------------: |
-| Personaggi         |    250 |    156 |    417 |    157 |    147 |     82 |     66 |
+| Personaggi         |    253 |    156 |    417 |    157 |    147 |     82 |     66 |
 | Clan & fazioni     |     57 |     20 |     83 |     21 |     34 |     24 |     15 |
 | Team               |     14 |      0 |      0 |      0 |      0 |      0 |      0 |
 | Tecniche           |    153 |     73 |    125 |     77 |    102 |     40 |     68 |
 | Archi narrativi    |     32 |      8 |     31 |     37 |     17 |     14 |     13 |
-| Eventi timeline    |    118 |    103 |    202 |    170 |    115 |    108 |     70 |
-| Percorsi           |     41 |     16 |     22 |     21 |     10 |     10 |      9 |
+| Eventi timeline    |    148 |    103 |    202 |    170 |    115 |    108 |     70 |
+| Percorsi           |     43 |     16 |     22 |     21 |     10 |     10 |      9 |
 | Luoghi             |    108 |     60 |    331 |    110 |     77 |     76 |     49 |
 | Nazioni            |     27 |     17 |      8 |      6 |      7 |      8 |     12 |
 | Confini (boundary) |     26 |     12 |      0 |      0 |      0 |      0 |      0 |

@@ -108,7 +108,7 @@ export const narutoEventsBatch1: TimelineEvent[] = [
     },
     period: { it: 'Era Boruto', en: 'Boruto Era' },
     arcId: 'arc-vessel',
-    characterIds: ['char-isshiki', 'char-naruto', 'char-sasuke'],
+    characterIds: ['char-isshiki', 'char-naruto', 'char-sasuke', 'char-kawaki'],
     mangaChapters: ['Boruto 38-40'],
     order: 116,
     canon: 'canon',

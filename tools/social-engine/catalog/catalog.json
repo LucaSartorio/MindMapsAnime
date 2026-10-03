@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T11:40:20.839Z",
+  "generatedAt": "2026-10-03T11:57:37.179Z",
   "locales": [
     "en",
     "it"
@@ -17,10 +17,10 @@
       },
       "summary": {
         "naruto": {
-          "characters": 29,
-          "videos": 33,
-          "series": 4,
-          "excluded": 221
+          "characters": 55,
+          "videos": 62,
+          "series": 7,
+          "excluded": 198
         },
         "hunterxhunter": {
           "characters": 30,
@@ -82,26 +82,29 @@
               "arc-prologue",
               "arc-search-tsunade",
               "arc-sasuke-retrieval",
-              "arc-kazekage-rescue"
+              "arc-kazekage-rescue",
+              "arc-akatsuki-suppression"
             ],
             "arcTitles": {
               "en": [
                 "Prologue · Land of Waves",
                 "Search for Tsunade",
                 "Sasuke Retrieval",
-                "Kazekage Rescue"
+                "Kazekage Rescue",
+                "Akatsuki Suppression Mission"
               ],
               "it": [
                 "Prologo · Paese delle Onde",
                 "La Ricerca di Tsunade",
                 "Il Recupero di Sasuke",
-                "Il Salvataggio del Kazekage"
+                "Il Salvataggio del Kazekage",
+                "Missione di Soppressione dell'Akatsuki"
               ]
             },
             "firstArc": "Prologue · Land of Waves",
-            "lastArc": "Kazekage Rescue",
+            "lastArc": "Akatsuki Suppression Mission",
             "segmentationVersion": 1,
-            "fingerprint": "fecdcd90"
+            "fingerprint": "f6eda39f"
           },
           "displayName": {
             "en": "Naruto Uzumaki",
@@ -111,13 +114,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 30,
+          "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "main",
             "places": 14,
-            "animatedStops": 6,
-            "arcs": 4,
-            "journeyArcs": 10
+            "animatedStops": 7,
+            "arcs": 5,
+            "journeyArcs": 11
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -168,7 +171,7 @@
             "firstArc": "Pain Assault on Konoha",
             "lastArc": "Kakashi Hokage / Blank Period",
             "segmentationVersion": 1,
-            "fingerprint": "0f2c69b0"
+            "fingerprint": "1c16420f"
           },
           "displayName": {
             "en": "Naruto Uzumaki",
@@ -178,13 +181,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 36,
+          "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "main",
             "places": 14,
-            "animatedStops": 8,
+            "animatedStops": 7,
             "arcs": 6,
-            "journeyArcs": 10
+            "journeyArcs": 11
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -210,26 +213,29 @@
               "arc-pre-series",
               "arc-prologue",
               "arc-chunin-exams",
-              "arc-sasuke-retrieval"
+              "arc-sasuke-retrieval",
+              "arc-fated-brothers"
             ],
             "arcTitles": {
               "en": [
                 "Pre-series",
                 "Prologue · Land of Waves",
                 "Chunin Exams",
-                "Sasuke Retrieval"
+                "Sasuke Retrieval",
+                "Fated Battle Between Brothers"
               ],
               "it": [
                 "Pre-serie",
                 "Prologo · Paese delle Onde",
                 "Esami Chūnin",
-                "Il Recupero di Sasuke"
+                "Il Recupero di Sasuke",
+                "Lo Scontro Fatale tra Fratelli"
               ]
             },
             "firstArc": "Pre-series",
-            "lastArc": "Sasuke Retrieval",
+            "lastArc": "Fated Battle Between Brothers",
             "segmentationVersion": 1,
-            "fingerprint": "c110b646"
+            "fingerprint": "4fdd4d5f"
           },
           "displayName": {
             "en": "Sasuke Uchiha",
@@ -239,12 +245,12 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 36,
+          "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "main",
-            "places": 15,
-            "animatedStops": 8,
-            "arcs": 4,
+            "places": 14,
+            "animatedStops": 7,
+            "arcs": 5,
             "journeyArcs": 10
           },
           "renderedLocales": [],
@@ -268,7 +274,6 @@
             "previousId": "character-journey:naruto:sasuke-uchiha:part-01",
             "nextId": null,
             "arcIds": [
-              "arc-fated-brothers",
               "arc-five-kage-summit",
               "arc-fourth-war-climax",
               "arc-kaguya-final",
@@ -277,7 +282,6 @@
             ],
             "arcTitles": {
               "en": [
-                "Fated Battle Between Brothers",
                 "Five Kage Summit",
                 "Fourth Shinobi World War · Climax",
                 "Kaguya Otsutsuki Strikes",
@@ -285,7 +289,6 @@
                 "Chūnin Exams & Momoshiki Attack"
               ],
               "it": [
-                "Lo Scontro Fatale tra Fratelli",
                 "Il Summit dei Cinque Kage",
                 "Quarta Grande Guerra Ninja · Apice",
                 "L'Attacco di Kaguya Ōtsutsuki",
@@ -293,10 +296,10 @@
                 "Esame Chūnin e Attacco di Momoshiki"
               ]
             },
-            "firstArc": "Fated Battle Between Brothers",
+            "firstArc": "Five Kage Summit",
             "lastArc": "Chūnin Exams & Momoshiki Attack",
             "segmentationVersion": 1,
-            "fingerprint": "4b309a50"
+            "fingerprint": "026db944"
           },
           "displayName": {
             "en": "Sasuke Uchiha",
@@ -309,9 +312,9 @@
           "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "main",
-            "places": 15,
+            "places": 14,
             "animatedStops": 7,
-            "arcs": 6,
+            "arcs": 5,
             "journeyArcs": 10
           },
           "renderedLocales": [],
@@ -443,22 +446,25 @@
             "nextId": "character-journey:naruto:kakashi-hatake:part-02",
             "arcIds": [
               "arc-pre-series",
-              "arc-prologue"
+              "arc-prologue",
+              "arc-kazekage-rescue"
             ],
             "arcTitles": {
               "en": [
                 "Pre-series",
-                "Prologue · Land of Waves"
+                "Prologue · Land of Waves",
+                "Kazekage Rescue"
               ],
               "it": [
                 "Pre-serie",
-                "Prologo · Paese delle Onde"
+                "Prologo · Paese delle Onde",
+                "Il Salvataggio del Kazekage"
               ]
             },
             "firstArc": "Pre-series",
-            "lastArc": "Prologue · Land of Waves",
+            "lastArc": "Kazekage Rescue",
             "segmentationVersion": 1,
-            "fingerprint": "ea812a94"
+            "fingerprint": "dbd4ceec"
           },
           "displayName": {
             "en": "Kakashi Hatake",
@@ -468,13 +474,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 25,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 9,
-            "animatedStops": 4,
-            "arcs": 2,
-            "journeyArcs": 6
+            "places": 12,
+            "animatedStops": 6,
+            "arcs": 3,
+            "journeyArcs": 9
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -497,29 +503,35 @@
             "previousId": "character-journey:naruto:kakashi-hatake:part-01",
             "nextId": null,
             "arcIds": [
-              "arc-kazekage-rescue",
+              "arc-pain-assault",
+              "arc-fourth-war",
+              "arc-fourth-war-climax",
               "arc-ten-tails-jinchuriki",
               "arc-kaguya-final",
               "arc-post-war"
             ],
             "arcTitles": {
               "en": [
-                "Kazekage Rescue",
+                "Pain Assault on Konoha",
+                "Fourth Shinobi World War · Confrontation",
+                "Fourth Shinobi World War · Climax",
                 "Birth of the Ten-Tails' Jinchuriki",
                 "Kaguya Otsutsuki Strikes",
                 "Kakashi Hokage / Blank Period"
               ],
               "it": [
-                "Il Salvataggio del Kazekage",
+                "L'Assalto di Pain a Konoha",
+                "Quarta Grande Guerra Ninja · Scontro",
+                "Quarta Grande Guerra Ninja · Apice",
                 "La Nascita del Jinchūriki delle Dieci Code",
                 "L'Attacco di Kaguya Ōtsutsuki",
                 "Kakashi Hokage / Periodo Vuoto"
               ]
             },
-            "firstArc": "Kazekage Rescue",
+            "firstArc": "Pain Assault on Konoha",
             "lastArc": "Kakashi Hokage / Blank Period",
             "segmentationVersion": 1,
-            "fingerprint": "9ade4cc5"
+            "fingerprint": "0fa23b86"
           },
           "displayName": {
             "en": "Kakashi Hatake",
@@ -529,13 +541,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 9,
-            "animatedStops": 5,
-            "arcs": 4,
-            "journeyArcs": 6
+            "places": 12,
+            "animatedStops": 6,
+            "arcs": 6,
+            "journeyArcs": 9
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -559,13 +571,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 25,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "major",
-            "places": 4,
-            "animatedStops": 4,
-            "arcs": 2,
-            "journeyArcs": 2
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 3,
+            "journeyArcs": 3
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -589,13 +601,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 36,
           "facts": {
             "importance": "major",
-            "places": 5,
-            "animatedStops": 5,
-            "arcs": 1,
-            "journeyArcs": 1
+            "places": 8,
+            "animatedStops": 8,
+            "arcs": 4,
+            "journeyArcs": 4
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -606,11 +618,36 @@
           "publication": []
         },
         {
-          "id": "character-journey:naruto:orochimaru",
+          "id": "character-journey:naruto:orochimaru:part-01",
           "anime": "naruto",
           "animeTitle": "Naruto",
           "subject": "orochimaru",
-          "series": null,
+          "series": {
+            "id": "character-journey:naruto:orochimaru",
+            "segment": "part-01",
+            "partNumber": 1,
+            "partCount": 2,
+            "previousId": null,
+            "nextId": "character-journey:naruto:orochimaru:part-02",
+            "arcIds": [
+              "arc-pre-series",
+              "arc-chunin-exams"
+            ],
+            "arcTitles": {
+              "en": [
+                "Pre-series",
+                "Chunin Exams"
+              ],
+              "it": [
+                "Pre-serie",
+                "Esami Chūnin"
+              ]
+            },
+            "firstArc": "Pre-series",
+            "lastArc": "Chunin Exams",
+            "segmentationVersion": 1,
+            "fingerprint": "7bf7ed27"
+          },
           "displayName": {
             "en": "Orochimaru",
             "it": "Orochimaru"
@@ -619,13 +656,77 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 33,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "major",
-            "places": 7,
-            "animatedStops": 7,
-            "arcs": 4,
-            "journeyArcs": 4
+            "places": 10,
+            "animatedStops": 5,
+            "arcs": 2,
+            "journeyArcs": 7
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:orochimaru:part-02",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "orochimaru",
+          "series": {
+            "id": "character-journey:naruto:orochimaru",
+            "segment": "part-02",
+            "partNumber": 2,
+            "partCount": 2,
+            "previousId": "character-journey:naruto:orochimaru:part-01",
+            "nextId": null,
+            "arcIds": [
+              "arc-konoha-crush",
+              "arc-search-tsunade",
+              "arc-akatsuki-suppression",
+              "arc-fourth-war-climax",
+              "arc-mitsuki-disappearance"
+            ],
+            "arcTitles": {
+              "en": [
+                "Konoha Crush",
+                "Search for Tsunade",
+                "Akatsuki Suppression Mission",
+                "Fourth Shinobi World War · Climax",
+                "Mitsuki's Disappearance"
+              ],
+              "it": [
+                "Distruzione di Konoha",
+                "La Ricerca di Tsunade",
+                "Missione di Soppressione dell'Akatsuki",
+                "Quarta Grande Guerra Ninja · Apice",
+                "La Scomparsa di Mitsuki"
+              ]
+            },
+            "firstArc": "Konoha Crush",
+            "lastArc": "Mitsuki's Disappearance",
+            "segmentationVersion": 1,
+            "fingerprint": "56c039d0"
+          },
+          "displayName": {
+            "en": "Orochimaru",
+            "it": "Orochimaru"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 27,
+          "facts": {
+            "importance": "major",
+            "places": 10,
+            "animatedStops": 5,
+            "arcs": 5,
+            "journeyArcs": 7
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -724,13 +825,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "major",
-            "places": 3,
-            "animatedStops": 3,
-            "arcs": 1,
-            "journeyArcs": 1
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 2,
+            "journeyArcs": 2
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -787,10 +888,10 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "supporting",
-            "places": 2,
-            "animatedStops": 2,
-            "arcs": 1,
-            "journeyArcs": 1
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 2,
+            "journeyArcs": 2
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -861,6 +962,66 @@
           "publication": []
         },
         {
+          "id": "character-journey:naruto:yamato",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "yamato",
+          "series": null,
+          "displayName": {
+            "en": "Yamato",
+            "it": "Yamato"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:might-guy",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "might-guy",
+          "series": null,
+          "displayName": {
+            "en": "Might Guy",
+            "it": "Might Guy"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 25,
+          "facts": {
+            "importance": "supporting",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 4,
+            "journeyArcs": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
           "id": "character-journey:naruto:danzo-shimura",
           "anime": "naruto",
           "animeTitle": "Naruto",
@@ -891,11 +1052,33 @@
           "publication": []
         },
         {
-          "id": "character-journey:naruto:gaara",
+          "id": "character-journey:naruto:gaara:part-01",
           "anime": "naruto",
           "animeTitle": "Naruto",
           "subject": "gaara",
-          "series": null,
+          "series": {
+            "id": "character-journey:naruto:gaara",
+            "segment": "part-01",
+            "partNumber": 1,
+            "partCount": 2,
+            "previousId": null,
+            "nextId": "character-journey:naruto:gaara:part-02",
+            "arcIds": [
+              "arc-kazekage-rescue"
+            ],
+            "arcTitles": {
+              "en": [
+                "Kazekage Rescue"
+              ],
+              "it": [
+                "Il Salvataggio del Kazekage"
+              ]
+            },
+            "firstArc": "Kazekage Rescue",
+            "lastArc": "Kazekage Rescue",
+            "segmentationVersion": 1,
+            "fingerprint": "049f0447"
+          },
           "displayName": {
             "en": "Gaara",
             "it": "Gaara"
@@ -904,13 +1087,68 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 36,
+          "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "major",
-            "places": 8,
-            "animatedStops": 8,
+            "places": 9,
+            "animatedStops": 7,
+            "arcs": 1,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:gaara:part-02",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "gaara",
+          "series": {
+            "id": "character-journey:naruto:gaara",
+            "segment": "part-02",
+            "partNumber": 2,
+            "partCount": 2,
+            "previousId": "character-journey:naruto:gaara:part-01",
+            "nextId": null,
+            "arcIds": [
+              "arc-five-kage-summit",
+              "arc-fourth-war"
+            ],
+            "arcTitles": {
+              "en": [
+                "Five Kage Summit",
+                "Fourth Shinobi World War · Confrontation"
+              ],
+              "it": [
+                "Il Summit dei Cinque Kage",
+                "Quarta Grande Guerra Ninja · Scontro"
+              ]
+            },
+            "firstArc": "Five Kage Summit",
+            "lastArc": "Fourth Shinobi World War · Confrontation",
+            "segmentationVersion": 1,
+            "fingerprint": "4518e836"
+          },
+          "displayName": {
+            "en": "Gaara",
+            "it": "Gaara"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 9,
+            "animatedStops": 2,
             "arcs": 2,
-            "journeyArcs": 2
+            "journeyArcs": 3
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -951,6 +1189,96 @@
           "publication": []
         },
         {
+          "id": "character-journey:naruto:mei-terumi",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "mei-terumi",
+          "series": null,
+          "displayName": {
+            "en": "Mei Terumi",
+            "it": "Mei Terumi"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:suigetsu-hozuki",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "suigetsu-hozuki",
+          "series": null,
+          "displayName": {
+            "en": "Suigetsu Hozuki",
+            "it": "Suigetsu Hozuki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 25,
+          "facts": {
+            "importance": "supporting",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 4,
+            "journeyArcs": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:a",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "a",
+          "series": null,
+          "displayName": {
+            "en": "A",
+            "it": "A"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
           "id": "character-journey:naruto:killer-b",
           "anime": "naruto",
           "animeTitle": "Naruto",
@@ -971,6 +1299,36 @@
             "animatedStops": 3,
             "arcs": 1,
             "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:onoki",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "onoki",
+          "series": null,
+          "displayName": {
+            "en": "Onoki",
+            "it": "Onoki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -1052,11 +1410,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "main",
-            "places": 2,
-            "animatedStops": 2,
+            "places": 4,
+            "animatedStops": 4,
             "arcs": 2,
             "journeyArcs": 2
           },
@@ -1069,11 +1427,36 @@
           "publication": []
         },
         {
-          "id": "character-journey:naruto:obito-uchiha",
+          "id": "character-journey:naruto:obito-uchiha:part-01",
           "anime": "naruto",
           "animeTitle": "Naruto",
           "subject": "obito-uchiha",
-          "series": null,
+          "series": {
+            "id": "character-journey:naruto:obito-uchiha",
+            "segment": "part-01",
+            "partNumber": 1,
+            "partCount": 2,
+            "previousId": null,
+            "nextId": "character-journey:naruto:obito-uchiha:part-02",
+            "arcIds": [
+              "arc-pre-series",
+              "arc-itachi-pursuit"
+            ],
+            "arcTitles": {
+              "en": [
+                "Pre-series",
+                "Itachi Pursuit Mission"
+              ],
+              "it": [
+                "Pre-serie",
+                "Missione di Inseguimento di Itachi"
+              ]
+            },
+            "firstArc": "Pre-series",
+            "lastArc": "Itachi Pursuit Mission",
+            "segmentationVersion": 1,
+            "fingerprint": "5a1aa025"
+          },
           "displayName": {
             "en": "Obito Uchiha",
             "it": "Obito Uchiha"
@@ -1082,13 +1465,107 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 30,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "main",
-            "places": 6,
-            "animatedStops": 6,
-            "arcs": 3,
-            "journeyArcs": 3
+            "places": 10,
+            "animatedStops": 5,
+            "arcs": 2,
+            "journeyArcs": 7
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:obito-uchiha:part-02",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "obito-uchiha",
+          "series": {
+            "id": "character-journey:naruto:obito-uchiha",
+            "segment": "part-02",
+            "partNumber": 2,
+            "partCount": 2,
+            "previousId": "character-journey:naruto:obito-uchiha:part-01",
+            "nextId": null,
+            "arcIds": [
+              "arc-fated-brothers",
+              "arc-fourth-war-countdown",
+              "arc-fourth-war",
+              "arc-fourth-war-climax",
+              "arc-ten-tails-jinchuriki"
+            ],
+            "arcTitles": {
+              "en": [
+                "Fated Battle Between Brothers",
+                "Fourth Shinobi World War · Countdown",
+                "Fourth Shinobi World War · Confrontation",
+                "Fourth Shinobi World War · Climax",
+                "Birth of the Ten-Tails' Jinchuriki"
+              ],
+              "it": [
+                "Lo Scontro Fatale tra Fratelli",
+                "Quarta Grande Guerra Ninja · Conto alla Rovescia",
+                "Quarta Grande Guerra Ninja · Scontro",
+                "Quarta Grande Guerra Ninja · Apice",
+                "La Nascita del Jinchūriki delle Dieci Code"
+              ]
+            },
+            "firstArc": "Fated Battle Between Brothers",
+            "lastArc": "Birth of the Ten-Tails' Jinchuriki",
+            "segmentationVersion": 1,
+            "fingerprint": "49fead99"
+          },
+          "displayName": {
+            "en": "Obito Uchiha",
+            "it": "Obito Uchiha"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 27,
+          "facts": {
+            "importance": "main",
+            "places": 10,
+            "animatedStops": 5,
+            "arcs": 5,
+            "journeyArcs": 7
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:shisui-uchiha",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "shisui-uchiha",
+          "series": null,
+          "displayName": {
+            "en": "Shisui Uchiha",
+            "it": "Shisui Uchiha"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -1142,13 +1619,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "supporting",
-            "places": 3,
-            "animatedStops": 3,
-            "arcs": 1,
-            "journeyArcs": 1
+            "places": 7,
+            "animatedStops": 7,
+            "arcs": 3,
+            "journeyArcs": 3
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -1279,6 +1756,96 @@
           "publication": []
         },
         {
+          "id": "character-journey:naruto:zetsu",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "zetsu",
+          "series": null,
+          "displayName": {
+            "en": "Zetsu",
+            "it": "Zetsu"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:karin-uzumaki",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "karin-uzumaki",
+          "series": null,
+          "displayName": {
+            "en": "Karin Uzumaki",
+            "it": "Karin Uzumaki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:jugo",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "jugo",
+          "series": null,
+          "displayName": {
+            "en": "Jugo",
+            "it": "Jugo"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 25,
+          "facts": {
+            "importance": "supporting",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 4,
+            "journeyArcs": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
           "id": "character-journey:naruto:kabuto-yakushi",
           "anime": "naruto",
           "animeTitle": "Naruto",
@@ -1292,13 +1859,493 @@
             "en",
             "it"
           ],
+          "recommendedDurationSeconds": 33,
+          "facts": {
+            "importance": "major",
+            "places": 7,
+            "animatedStops": 7,
+            "arcs": 4,
+            "journeyArcs": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:kaguya-otsutsuki",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "kaguya-otsutsuki",
+          "series": null,
+          "displayName": {
+            "en": "Kaguya Otsutsuki",
+            "it": "Kaguya Otsutsuki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:hagoromo-otsutsuki",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "hagoromo-otsutsuki",
+          "series": null,
+          "displayName": {
+            "en": "Hagoromo Otsutsuki",
+            "it": "Hagoromo Otsutsuki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:kurama",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "kurama",
+          "series": null,
+          "displayName": {
+            "en": "Kurama",
+            "it": "Kurama"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
           "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "major",
             "places": 4,
             "animatedStops": 4,
-            "arcs": 1,
-            "journeyArcs": 1
+            "arcs": 4,
+            "journeyArcs": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:shukaku",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "shukaku",
+          "series": null,
+          "displayName": {
+            "en": "Shukaku",
+            "it": "Shukaku"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:gyuki",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "gyuki",
+          "series": null,
+          "displayName": {
+            "en": "Gyūki",
+            "it": "Gyūki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:nagato-uzumaki",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "nagato-uzumaki",
+          "series": null,
+          "displayName": {
+            "en": "Nagato Uzumaki",
+            "it": "Nagato Uzumaki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 30,
+          "facts": {
+            "importance": "major",
+            "places": 6,
+            "animatedStops": 6,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:hanzo",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "hanzo",
+          "series": null,
+          "displayName": {
+            "en": "Hanzō",
+            "it": "Hanzō"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:mifune",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "mifune",
+          "series": null,
+          "displayName": {
+            "en": "Mifune",
+            "it": "Mifune"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:fukasaku",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "fukasaku",
+          "series": null,
+          "displayName": {
+            "en": "Fukasaku",
+            "it": "Fukasaku"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:shima",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "shima",
+          "series": null,
+          "displayName": {
+            "en": "Shima",
+            "it": "Shima"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:gamabunta",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "gamabunta",
+          "series": null,
+          "displayName": {
+            "en": "Gamabunta",
+            "it": "Gamabunta"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:boruto-uzumaki",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "boruto-uzumaki",
+          "series": null,
+          "displayName": {
+            "en": "Boruto Uzumaki",
+            "it": "Boruto Uzumaki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 25,
+          "facts": {
+            "importance": "major",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 4,
+            "journeyArcs": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:sarada-uchiha",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "sarada-uchiha",
+          "series": null,
+          "displayName": {
+            "en": "Sarada Uchiha",
+            "it": "Sarada Uchiha"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:mitsuki",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "mitsuki",
+          "series": null,
+          "displayName": {
+            "en": "Mitsuki",
+            "it": "Mitsuki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:ten-tails-jubi",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "ten-tails-jubi",
+          "series": null,
+          "displayName": {
+            "en": "Ten-Tails (Jūbi)",
+            "it": "Ten-Tails (Jūbi)"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:black-zetsu",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "black-zetsu",
+          "series": null,
+          "displayName": {
+            "en": "Black Zetsu",
+            "it": "Black Zetsu"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
           },
           "renderedLocales": [],
           "scheduledLocales": [],

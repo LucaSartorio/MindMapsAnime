@@ -126,8 +126,8 @@ export const narutoFactions: Faction[] = [
     type: 'group',
     name: 'Ninja Academy',
     description: {
-      it: 'Istituto di formazione dei genin di Konoha.',
-      en: "Konoha's training institute for genin.",
+      it: 'L\'istituto in cui i bambini di Konoha imparano le basi del ninjutsu prima di diventare genin. Iruka vi insegna a Naruto e alla sua generazione; nell\'era Boruto vi insegnano anche Shino e Anko.',
+      en: 'The institute where Konoha\'s children learn the basics of ninjutsu before becoming genin. Iruka teaches Naruto\'s generation there; in the Boruto era Shino and Anko teach there too.',
     },
     leaderIds: ['char-iruka'],
     characterIds: ['char-iruka', 'char-ebisu'],
@@ -142,8 +142,8 @@ export const narutoFactions: Faction[] = [
     type: 'group',
     name: 'Medical Corps',
     description: {
-      it: 'Corpo medico-ninja di Konoha. Coordinato da Tsunade, poi Sakura.',
-      en: "Konoha's medical-ninja corps. Led by Tsunade, then Sakura.",
+      it: 'Il corpo dei ninja medici di Konoha, riorganizzato da Tsunade che impone un ninja medico in ogni squadra. Shizune e Sakura ne sono le colonne; nell\'era Boruto Sakura e Ino ne curano il reparto per l\'infanzia.',
+      en: 'Konoha\'s medical-ninja corps, reorganised by Tsunade, who requires a medical ninja in every team. Shizune and Sakura are its pillars; in the Boruto era Sakura and Ino run its children\'s ward.',
     },
     leaderIds: ['char-tsunade'],
     characterIds: ['char-tsunade', 'char-shizune', 'char-sakura', 'char-ino'],
@@ -159,8 +159,8 @@ export const narutoFactions: Faction[] = [
     type: 'group',
     name: 'Sensor Division',
     description: {
-      it: 'Divisione sensoriale dell\'Alleanza Shinobi. Localizzazione e tracciamento del nemico.',
-      en: 'Sensor division of the Shinobi Alliance. Locates and tracks the enemy.',
+      it: 'La divisione sensoriale dell\'Alleanza Shinobi nella Quarta Guerra: i ninja capaci di percepire il chakra localizzano e tracciano il nemico, mentre Inoichi collega le menti dei comandanti al quartier generale.',
+      en: 'The Shinobi Alliance\'s sensor division in the Fourth War: ninja able to sense chakra locate and track the enemy, while Inoichi links the commanders\' minds to headquarters.',
     },
     characterIds: ['char-karin'],
     arcIds: ['arc-fourth-war'],
