@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T10:58:28.391Z",
+  "generatedAt": "2026-10-03T11:40:20.839Z",
   "locales": [
     "en",
     "it"
@@ -35,10 +35,10 @@
           "excluded": 367
         },
         "dragonball": {
-          "characters": 21,
-          "videos": 26,
-          "series": 2,
-          "excluded": 82
+          "characters": 46,
+          "videos": 54,
+          "series": 5,
+          "excluded": 111
         },
         "attackontitan": {
           "characters": 35,
@@ -4777,10 +4777,10 @@
           "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "main",
-            "places": 32,
+            "places": 31,
             "animatedStops": 4,
             "arcs": 1,
-            "journeyArcs": 16
+            "journeyArcs": 18
           },
           "renderedLocales": [
             "en"
@@ -4821,22 +4821,25 @@
             "nextId": "character-journey:dragonball:goku:part-03",
             "arcIds": [
               "arc-dbz-tenkaichi-tournament",
-              "arc-dbz-red-ribbon"
+              "arc-dbz-red-ribbon",
+              "arc-dbz-king-piccolo"
             ],
             "arcTitles": {
               "en": [
                 "Tenkaichi Budokai",
-                "Red Ribbon Army Saga"
+                "Red Ribbon Army Saga",
+                "King Piccolo Saga"
               ],
               "it": [
                 "Torneo Tenkaichi",
-                "Saga del Red Ribbon"
+                "Saga del Red Ribbon",
+                "Saga del Grande Mago Piccolo"
               ]
             },
             "firstArc": "Tenkaichi Budokai",
-            "lastArc": "Red Ribbon Army Saga",
+            "lastArc": "King Piccolo Saga",
             "segmentationVersion": 1,
-            "fingerprint": "de509287"
+            "fingerprint": "38f0cc54"
           },
           "displayName": {
             "en": "Goku",
@@ -4846,13 +4849,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 30,
+          "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "main",
-            "places": 32,
-            "animatedStops": 6,
-            "arcs": 2,
-            "journeyArcs": 16
+            "places": 31,
+            "animatedStops": 7,
+            "arcs": 3,
+            "journeyArcs": 18
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4875,26 +4878,35 @@
             "previousId": "character-journey:dragonball:goku:part-02",
             "nextId": "character-journey:dragonball:goku:part-04",
             "arcIds": [
-              "arc-dbz-king-piccolo",
-              "arc-dbz-piccolo-jr",
-              "arc-dbz-saiyan-saga"
+              "arc-dbz-saiyan-saga",
+              "arc-dbz-garlic-jr",
+              "arc-dbz-androids",
+              "arc-dbz-cell-saga",
+              "arc-dbz-majin-buu",
+              "arc-dbz-daima"
             ],
             "arcTitles": {
               "en": [
-                "King Piccolo Saga",
-                "Piccolo Jr. Saga",
-                "Saiyan Saga"
+                "Saiyan Saga",
+                "Garlic Jr. Saga",
+                "Android Saga",
+                "Cell Saga",
+                "Majin Buu Saga",
+                "Dragon Ball DAIMA"
               ],
               "it": [
-                "Saga del Grande Mago Piccolo",
-                "Saga di Piccolo Junior",
-                "Saga dei Saiyan"
+                "Saga dei Saiyan",
+                "Saga di Garlic Jr.",
+                "Saga degli Androidi",
+                "Saga di Cell",
+                "Saga di Majin Bu",
+                "Dragon Ball DAIMA"
               ]
             },
-            "firstArc": "King Piccolo Saga",
-            "lastArc": "Saiyan Saga",
+            "firstArc": "Saiyan Saga",
+            "lastArc": "Dragon Ball DAIMA",
             "segmentationVersion": 1,
-            "fingerprint": "4748ff4c"
+            "fingerprint": "add057ca"
           },
           "displayName": {
             "en": "Goku",
@@ -4907,10 +4919,10 @@
           "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "main",
-            "places": 32,
+            "places": 31,
             "animatedStops": 7,
-            "arcs": 3,
-            "journeyArcs": 16
+            "arcs": 6,
+            "journeyArcs": 18
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4933,32 +4945,29 @@
             "previousId": "character-journey:dragonball:goku:part-03",
             "nextId": "character-journey:dragonball:goku:part-05",
             "arcIds": [
-              "arc-dbz-namek-frieza",
-              "arc-dbz-androids",
-              "arc-dbz-cell-saga",
-              "arc-dbz-majin-buu",
-              "arc-dbz-battle-of-gods"
+              "arc-dbz-battle-of-gods",
+              "arc-dbz-resurrection-f",
+              "arc-dbz-universe-6",
+              "arc-dbz-goku-black"
             ],
             "arcTitles": {
               "en": [
-                "Namek / Frieza Saga",
-                "Android Saga",
-                "Cell Saga",
-                "Majin Buu Saga",
-                "Battle of Gods"
+                "Battle of Gods",
+                "Resurrection F",
+                "Universe 6 Saga (Tournament of Destroyers)",
+                "Goku Black / Future Trunks Saga"
               ],
               "it": [
-                "Saga di Namecc / Freezer",
-                "Saga degli Androidi",
-                "Saga di Cell",
-                "Saga di Majin Bu",
-                "Battle of Gods"
+                "Battle of Gods",
+                "Resurrection F",
+                "Saga dell'Universo 6 (Torneo della Distruzione)",
+                "Saga di Goku Black / Trunks del Futuro"
               ]
             },
-            "firstArc": "Namek / Frieza Saga",
-            "lastArc": "Battle of Gods",
+            "firstArc": "Battle of Gods",
+            "lastArc": "Goku Black / Future Trunks Saga",
             "segmentationVersion": 1,
-            "fingerprint": "c8185ed2"
+            "fingerprint": "f933d0f7"
           },
           "displayName": {
             "en": "Goku",
@@ -4968,13 +4977,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 33,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 32,
-            "animatedStops": 7,
-            "arcs": 5,
-            "journeyArcs": 16
+            "places": 31,
+            "animatedStops": 6,
+            "arcs": 4,
+            "journeyArcs": 18
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4997,7 +5006,6 @@
             "previousId": "character-journey:dragonball:goku:part-04",
             "nextId": null,
             "arcIds": [
-              "arc-dbz-goku-black",
               "arc-dbz-gt-black-star",
               "arc-dbz-gt-baby",
               "arc-dbz-gt-super-17",
@@ -5005,24 +5013,22 @@
             ],
             "arcTitles": {
               "en": [
-                "Goku Black / Future Trunks Saga",
                 "Black Star Dragon Ball Saga",
                 "Baby Saga",
                 "Super 17 Saga",
                 "Other World Tournament"
               ],
               "it": [
-                "Saga di Goku Black / Trunks del Futuro",
                 "Saga delle Sfere del Drago Nere",
                 "Saga di Baby",
                 "Saga di Super C-17",
                 "Il Torneo dell'Altro Mondo"
               ]
             },
-            "firstArc": "Goku Black / Future Trunks Saga",
+            "firstArc": "Black Star Dragon Ball Saga",
             "lastArc": "Other World Tournament",
             "segmentationVersion": 1,
-            "fingerprint": "dcf10f0e"
+            "fingerprint": "6c97c48c"
           },
           "displayName": {
             "en": "Goku",
@@ -5032,13 +5038,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 36,
+          "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "main",
-            "places": 32,
-            "animatedStops": 8,
-            "arcs": 5,
-            "journeyArcs": 16
+            "places": 31,
+            "animatedStops": 7,
+            "arcs": 4,
+            "journeyArcs": 18
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -5064,26 +5070,26 @@
               "arc-dbz-saiyan-saga",
               "arc-dbz-namek-frieza",
               "arc-dbz-androids",
-              "arc-dbz-majin-buu"
+              "arc-dbz-cell-saga"
             ],
             "arcTitles": {
               "en": [
                 "Saiyan Saga",
                 "Namek / Frieza Saga",
                 "Android Saga",
-                "Majin Buu Saga"
+                "Cell Saga"
               ],
               "it": [
                 "Saga dei Saiyan",
                 "Saga di Namecc / Freezer",
                 "Saga degli Androidi",
-                "Saga di Majin Bu"
+                "Saga di Cell"
               ]
             },
             "firstArc": "Saiyan Saga",
-            "lastArc": "Majin Buu Saga",
+            "lastArc": "Cell Saga",
             "segmentationVersion": 1,
-            "fingerprint": "ffc33c7e"
+            "fingerprint": "e8d76c56"
           },
           "displayName": {
             "en": "Vegeta",
@@ -5096,7 +5102,7 @@
           "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 11,
+            "places": 12,
             "animatedStops": 6,
             "arcs": 4,
             "journeyArcs": 8
@@ -5122,29 +5128,29 @@
             "previousId": "character-journey:dragonball:vegeta:part-01",
             "nextId": null,
             "arcIds": [
+              "arc-dbz-majin-buu",
               "arc-dbz-resurrection-f",
-              "arc-dbz-tournament-of-power",
               "arc-dbz-gt-baby",
               "arc-dbz-gt-shadow-dragons"
             ],
             "arcTitles": {
               "en": [
+                "Majin Buu Saga",
                 "Resurrection F",
-                "Tournament of Power",
                 "Baby Saga",
                 "Shadow Dragon Saga"
               ],
               "it": [
+                "Saga di Majin Bu",
                 "Resurrection F",
-                "Torneo del Potere",
                 "Saga di Baby",
                 "Saga dei Draghi Malvagi"
               ]
             },
-            "firstArc": "Resurrection F",
+            "firstArc": "Majin Buu Saga",
             "lastArc": "Shadow Dragon Saga",
             "segmentationVersion": 1,
-            "fingerprint": "ba0a7b54"
+            "fingerprint": "35a822cd"
           },
           "displayName": {
             "en": "Vegeta",
@@ -5154,11 +5160,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 11,
-            "animatedStops": 5,
+            "places": 12,
+            "animatedStops": 6,
             "arcs": 4,
             "journeyArcs": 8
           },
@@ -5171,11 +5177,39 @@
           "publication": []
         },
         {
-          "id": "character-journey:dragonball:gohan",
+          "id": "character-journey:dragonball:gohan:part-01",
           "anime": "dragonball",
           "animeTitle": "Dragon Ball",
           "subject": "gohan",
-          "series": null,
+          "series": {
+            "id": "character-journey:dragonball:gohan",
+            "segment": "part-01",
+            "partNumber": 1,
+            "partCount": 2,
+            "previousId": null,
+            "nextId": "character-journey:dragonball:gohan:part-02",
+            "arcIds": [
+              "arc-dbz-saiyan-saga",
+              "arc-dbz-namek-frieza",
+              "arc-dbz-cell-saga"
+            ],
+            "arcTitles": {
+              "en": [
+                "Saiyan Saga",
+                "Namek / Frieza Saga",
+                "Cell Saga"
+              ],
+              "it": [
+                "Saga dei Saiyan",
+                "Saga di Namecc / Freezer",
+                "Saga di Cell"
+              ]
+            },
+            "firstArc": "Saiyan Saga",
+            "lastArc": "Cell Saga",
+            "segmentationVersion": 1,
+            "fingerprint": "72cf64ec"
+          },
           "displayName": {
             "en": "Gohan",
             "it": "Son Gohan"
@@ -5184,13 +5218,128 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 30,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "main",
-            "places": 6,
-            "animatedStops": 6,
-            "arcs": 4,
-            "journeyArcs": 4
+            "places": 10,
+            "animatedStops": 5,
+            "arcs": 3,
+            "journeyArcs": 5
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:gohan:part-02",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "gohan",
+          "series": {
+            "id": "character-journey:dragonball:gohan",
+            "segment": "part-02",
+            "partNumber": 2,
+            "partCount": 2,
+            "previousId": "character-journey:dragonball:gohan:part-01",
+            "nextId": null,
+            "arcIds": [
+              "arc-dbz-majin-buu",
+              "arc-dbz-special-history-of-trunks"
+            ],
+            "arcTitles": {
+              "en": [
+                "Majin Buu Saga",
+                "The History of Trunks"
+              ],
+              "it": [
+                "Saga di Majin Bu",
+                "La storia di Trunks"
+              ]
+            },
+            "firstArc": "Majin Buu Saga",
+            "lastArc": "The History of Trunks",
+            "segmentationVersion": 1,
+            "fingerprint": "1bafe135"
+          },
+          "displayName": {
+            "en": "Gohan",
+            "it": "Son Gohan"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 27,
+          "facts": {
+            "importance": "main",
+            "places": 10,
+            "animatedStops": 5,
+            "arcs": 2,
+            "journeyArcs": 5
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:goten",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "goten",
+          "series": null,
+          "displayName": {
+            "en": "Goten",
+            "it": "Son Goten"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 27,
+          "facts": {
+            "importance": "supporting",
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:trunks",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "trunks",
+          "series": null,
+          "displayName": {
+            "en": "Trunks",
+            "it": "Trunks"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 25,
+          "facts": {
+            "importance": "supporting",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 2,
+            "journeyArcs": 2
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -5214,13 +5363,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "major",
-            "places": 3,
-            "animatedStops": 3,
-            "arcs": 2,
-            "journeyArcs": 2
+            "places": 7,
+            "animatedStops": 7,
+            "arcs": 3,
+            "journeyArcs": 3
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -5231,11 +5380,42 @@
           "publication": []
         },
         {
-          "id": "character-journey:dragonball:piccolo",
+          "id": "character-journey:dragonball:piccolo:part-01",
           "anime": "dragonball",
           "animeTitle": "Dragon Ball",
           "subject": "piccolo",
-          "series": null,
+          "series": {
+            "id": "character-journey:dragonball:piccolo",
+            "segment": "part-01",
+            "partNumber": 1,
+            "partCount": 2,
+            "previousId": null,
+            "nextId": "character-journey:dragonball:piccolo:part-02",
+            "arcIds": [
+              "arc-dbz-king-piccolo",
+              "arc-dbz-piccolo-jr",
+              "arc-dbz-saiyan-saga",
+              "arc-dbz-namek-frieza"
+            ],
+            "arcTitles": {
+              "en": [
+                "King Piccolo Saga",
+                "Piccolo Jr. Saga",
+                "Saiyan Saga",
+                "Namek / Frieza Saga"
+              ],
+              "it": [
+                "Saga del Grande Mago Piccolo",
+                "Saga di Piccolo Junior",
+                "Saga dei Saiyan",
+                "Saga di Namecc / Freezer"
+              ]
+            },
+            "firstArc": "King Piccolo Saga",
+            "lastArc": "Namek / Frieza Saga",
+            "segmentationVersion": 1,
+            "fingerprint": "eb3e08ee"
+          },
           "displayName": {
             "en": "Piccolo",
             "it": "Piccolo"
@@ -5247,10 +5427,10 @@
           "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "main",
-            "places": 7,
+            "places": 15,
             "animatedStops": 7,
-            "arcs": 5,
-            "journeyArcs": 5
+            "arcs": 4,
+            "journeyArcs": 9
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -5261,11 +5441,100 @@
           "publication": []
         },
         {
-          "id": "character-journey:dragonball:krillin",
+          "id": "character-journey:dragonball:piccolo:part-02",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "piccolo",
+          "series": {
+            "id": "character-journey:dragonball:piccolo",
+            "segment": "part-02",
+            "partNumber": 2,
+            "partCount": 2,
+            "previousId": "character-journey:dragonball:piccolo:part-01",
+            "nextId": null,
+            "arcIds": [
+              "arc-dbz-androids",
+              "arc-dbz-cell-saga",
+              "arc-dbz-majin-buu",
+              "arc-dbz-daima",
+              "arc-dbz-gt-baby"
+            ],
+            "arcTitles": {
+              "en": [
+                "Android Saga",
+                "Cell Saga",
+                "Majin Buu Saga",
+                "Dragon Ball DAIMA",
+                "Baby Saga"
+              ],
+              "it": [
+                "Saga degli Androidi",
+                "Saga di Cell",
+                "Saga di Majin Bu",
+                "Dragon Ball DAIMA",
+                "Saga di Baby"
+              ]
+            },
+            "firstArc": "Android Saga",
+            "lastArc": "Baby Saga",
+            "segmentationVersion": 1,
+            "fingerprint": "0ccb5af0"
+          },
+          "displayName": {
+            "en": "Piccolo",
+            "it": "Piccolo"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 36,
+          "facts": {
+            "importance": "main",
+            "places": 15,
+            "animatedStops": 8,
+            "arcs": 5,
+            "journeyArcs": 9
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:krillin:part-01",
           "anime": "dragonball",
           "animeTitle": "Dragon Ball",
           "subject": "krillin",
-          "series": null,
+          "series": {
+            "id": "character-journey:dragonball:krillin",
+            "segment": "part-01",
+            "partNumber": 1,
+            "partCount": 2,
+            "previousId": null,
+            "nextId": "character-journey:dragonball:krillin:part-02",
+            "arcIds": [
+              "arc-dbz-tenkaichi-tournament",
+              "arc-dbz-red-ribbon"
+            ],
+            "arcTitles": {
+              "en": [
+                "Tenkaichi Budokai",
+                "Red Ribbon Army Saga"
+              ],
+              "it": [
+                "Torneo Tenkaichi",
+                "Saga del Red Ribbon"
+              ]
+            },
+            "firstArc": "Tenkaichi Budokai",
+            "lastArc": "Red Ribbon Army Saga",
+            "segmentationVersion": 1,
+            "fingerprint": "b2223efe"
+          },
           "displayName": {
             "en": "Krillin",
             "it": "Crilin"
@@ -5274,13 +5543,104 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "major",
-            "places": 5,
-            "animatedStops": 5,
-            "arcs": 5,
-            "journeyArcs": 5
+            "places": 10,
+            "animatedStops": 4,
+            "arcs": 2,
+            "journeyArcs": 6
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:krillin:part-02",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "krillin",
+          "series": {
+            "id": "character-journey:dragonball:krillin",
+            "segment": "part-02",
+            "partNumber": 2,
+            "partCount": 2,
+            "previousId": "character-journey:dragonball:krillin:part-01",
+            "nextId": null,
+            "arcIds": [
+              "arc-dbz-king-piccolo",
+              "arc-dbz-saiyan-saga",
+              "arc-dbz-namek-frieza",
+              "arc-dbz-gt-super-17"
+            ],
+            "arcTitles": {
+              "en": [
+                "King Piccolo Saga",
+                "Saiyan Saga",
+                "Namek / Frieza Saga",
+                "Super 17 Saga"
+              ],
+              "it": [
+                "Saga del Grande Mago Piccolo",
+                "Saga dei Saiyan",
+                "Saga di Namecc / Freezer",
+                "Saga di Super C-17"
+              ]
+            },
+            "firstArc": "King Piccolo Saga",
+            "lastArc": "Super 17 Saga",
+            "segmentationVersion": 1,
+            "fingerprint": "703ef0f6"
+          },
+          "displayName": {
+            "en": "Krillin",
+            "it": "Crilin"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 30,
+          "facts": {
+            "importance": "major",
+            "places": 10,
+            "animatedStops": 6,
+            "arcs": 4,
+            "journeyArcs": 6
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:yamcha",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "yamcha",
+          "series": null,
+          "displayName": {
+            "en": "Yamcha",
+            "it": "Yamcha"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 25,
+          "facts": {
+            "importance": "supporting",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 3,
+            "journeyArcs": 3
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -5364,13 +5724,43 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 36,
           "facts": {
             "importance": "major",
-            "places": 2,
-            "animatedStops": 2,
-            "arcs": 1,
-            "journeyArcs": 1
+            "places": 8,
+            "animatedStops": 8,
+            "arcs": 4,
+            "journeyArcs": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:chichi",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "chichi",
+          "series": null,
+          "displayName": {
+            "en": "Chichi",
+            "it": "Chichi"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -5394,13 +5784,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "supporting",
-            "places": 2,
-            "animatedStops": 2,
-            "arcs": 2,
-            "journeyArcs": 2
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 3,
+            "journeyArcs": 3
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -5454,11 +5844,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 25,
+          "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "main",
-            "places": 4,
-            "animatedStops": 4,
+            "places": 7,
+            "animatedStops": 7,
             "arcs": 2,
             "journeyArcs": 2
           },
@@ -5484,13 +5874,73 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 3,
-            "animatedStops": 3,
+            "places": 6,
+            "animatedStops": 6,
             "arcs": 2,
             "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:kid-buu",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "kid-buu",
+          "series": null,
+          "displayName": {
+            "en": "Kid Buu",
+            "it": "Kid Bu"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:vegito",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "vegito",
+          "series": null,
+          "displayName": {
+            "en": "Vegito",
+            "it": "Vegeth"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -5517,10 +5967,130 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "minor",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:raditz",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "raditz",
+          "series": null,
+          "displayName": {
+            "en": "Raditz",
+            "it": "Raditz"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
             "places": 2,
             "animatedStops": 2,
             "arcs": 1,
             "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:beerus",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "beerus",
+          "series": null,
+          "displayName": {
+            "en": "Beerus",
+            "it": "Bills"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "main",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:goku-black",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "goku-black",
+          "series": null,
+          "displayName": {
+            "en": "Goku Black",
+            "it": "Goku Black"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 1,
+            "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:c-16",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "c-16",
+          "series": null,
+          "displayName": {
+            "en": "C-16",
+            "it": "C-16"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -5544,13 +6114,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "major",
-            "places": 3,
-            "animatedStops": 3,
-            "arcs": 3,
-            "journeyArcs": 3
+            "places": 6,
+            "animatedStops": 6,
+            "arcs": 5,
+            "journeyArcs": 5
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -5574,13 +6144,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "major",
-            "places": 3,
-            "animatedStops": 3,
-            "arcs": 3,
-            "journeyArcs": 3
+            "places": 6,
+            "animatedStops": 6,
+            "arcs": 4,
+            "journeyArcs": 4
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -5604,11 +6174,41 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 25,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "supporting",
-            "places": 4,
-            "animatedStops": 4,
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:dende",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "dende",
+          "series": null,
+          "displayName": {
+            "en": "Dende",
+            "it": "Dende"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
             "arcs": 2,
             "journeyArcs": 2
           },
@@ -5634,13 +6234,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "major",
-            "places": 5,
-            "animatedStops": 5,
-            "arcs": 3,
-            "journeyArcs": 3
+            "places": 6,
+            "animatedStops": 6,
+            "arcs": 4,
+            "journeyArcs": 4
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -5711,6 +6311,36 @@
           "publication": []
         },
         {
+          "id": "character-journey:dragonball:majuub",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "majuub",
+          "series": null,
+          "displayName": {
+            "en": "Majuub",
+            "it": "Majuub"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
           "id": "character-journey:dragonball:hell-fighter-17",
           "anime": "dragonball",
           "animeTitle": "Dragon Ball",
@@ -5727,6 +6357,396 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:mr-satan",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "mr-satan",
+          "series": null,
+          "displayName": {
+            "en": "Mr. Satan",
+            "it": "Mr. Satan"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 25,
+          "facts": {
+            "importance": "supporting",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 1,
+            "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:videl",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "videl",
+          "series": null,
+          "displayName": {
+            "en": "Videl",
+            "it": "Videl"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:supreme-kai",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "supreme-kai",
+          "series": null,
+          "displayName": {
+            "en": "Supreme Kai",
+            "it": "Supreme Kai"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 27,
+          "facts": {
+            "importance": "supporting",
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:oolong",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "oolong",
+          "series": null,
+          "displayName": {
+            "en": "Oolong",
+            "it": "Oolong"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:puar",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "puar",
+          "series": null,
+          "displayName": {
+            "en": "Puar",
+            "it": "Puar"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:ox-king",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "ox-king",
+          "series": null,
+          "displayName": {
+            "en": "Ox-King",
+            "it": "Re Gyumao"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:kami",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "kami",
+          "series": null,
+          "displayName": {
+            "en": "Kami",
+            "it": "Dio"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:mr-popo",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "mr-popo",
+          "series": null,
+          "displayName": {
+            "en": "Mr. Popo",
+            "it": "Mr. Popo"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:general-blue",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "general-blue",
+          "series": null,
+          "displayName": {
+            "en": "General Blue",
+            "it": "Il generale Blue"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:kibito",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "kibito",
+          "series": null,
+          "displayName": {
+            "en": "Kibito",
+            "it": "Kibith"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:shenron",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "shenron",
+          "series": null,
+          "displayName": {
+            "en": "Shenron",
+            "it": "Shenron"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 25,
+          "facts": {
+            "importance": "supporting",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 4,
+            "journeyArcs": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:glorio",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "glorio",
+          "series": null,
+          "displayName": {
+            "en": "Glorio",
+            "it": "Glorio"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:gomah",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "gomah",
+          "series": null,
+          "displayName": {
+            "en": "Gomah",
+            "it": "Gomah"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
             "places": 2,
             "animatedStops": 2,
             "arcs": 1,

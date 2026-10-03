@@ -41,17 +41,17 @@ componenti.
 
 | Entità             | Naruto | Hunter x Hunter | One Piece | Dragon Ball | Bleach | Attack on Titan | Jujutsu Kaisen |
 | ------------------ | -----: | --------------: | --------: | ----------: | -----: | --------------: | -------------: |
-| Personaggi         |    250 |             156 |       417 |          75 |    147 | 82 | 66 |
-| Clan & fazioni     |     57 |              20 |        83 |          21 |     34 | 24 | 15 |
-| Team               |     14 |               0 |         0 |           0 |      0 | 0 | 0 |
-| Tecniche           |    153 |              73 |       125 |          23 |    102 | 40 | 68 |
-| Archi narrativi    |     32 |               8 |        31 |          36 |     17 | 14 | 13 |
-| Eventi timeline    |    118 |             103 |       202 |          90 |    115 | 108 | 70 |
-| Percorsi           |     41 |              16 |        22 |           9 |     10 | 10 | 9 |
-| Luoghi             |    108 |              60 |       331 |          81 |     77 | 76 | 49 |
-| Nazioni            |     27 |              17 |         8 |           6 |      7 | 8 | 12 |
-| Confini (boundary) |     26 |              12 |         0 |           0 |      0 | 0 | 0 |
-| Livelli mappa      |     10 |               5 |        10 |           4 |      5 | 7 | 6 |
+| Personaggi         |    250 |    156 |    417 |    157 |    147 |     82 |     66 |
+| Clan & fazioni     |     57 |     20 |     83 |     21 |     34 |     24 |     15 |
+| Team               |     14 |      0 |      0 |      0 |      0 |      0 |      0 |
+| Tecniche           |    153 |     73 |    125 |     77 |    102 |     40 |     68 |
+| Archi narrativi    |     32 |      8 |     31 |     37 |     17 |     14 |     13 |
+| Eventi timeline    |    118 |    103 |    202 |    170 |    115 |    108 |     70 |
+| Percorsi           |     41 |     16 |     22 |     21 |     10 |     10 |      9 |
+| Luoghi             |    108 |     60 |    331 |    110 |     77 |     76 |     49 |
+| Nazioni            |     27 |     17 |      8 |      6 |      7 |      8 |     12 |
+| Confini (boundary) |     26 |     12 |      0 |      0 |      0 |      0 |      0 |
+| Livelli mappa      |     10 |      5 |     27 |      8 |      5 |      7 |      6 |
 
 **Livelli mappa** = world map + sotto-mappe drill-down:
 
@@ -60,7 +60,9 @@ componenti.
   Gorteau Palace.
 - **One Piece** — Totland, Alabasta, Wano, Skypiea, Dressrosa, Sabaody,
   Marineford, Egghead, Fishman Island.
-- **Dragon Ball** — Terra (world map), Universo, Namecc, Spazio (GT).
+- **Dragon Ball** — Terra (world map), Universo, Namecc, Spazio (GT), Aldilà (Via del
+  Serpente, Re Yama, Re Kaiō, Gran Kaiō, Inferno), Santuario di Dio e Torre di Karin,
+  Isola di Papaya (Torneo Tenkaichi), Città dell'Ovest (Capsule Corporation).
 - **One Piece** (altre sotto-mappe) — Impel Down, Enies Lobby, Water 7, Thriller
   Bark, Zou, Punk Hazard, Amazon Lily, Drum, Marijoa, Dawn, Loguetown, Jaya,
   Ohara, Elbaf, God Valley, Germa, Spazio.
@@ -84,8 +86,8 @@ componenti.
   `scripts/mapgen/jjk.py` → `public/assets/worlds/jujutsukaisen/maps/`.
 
 **Ogni livello ha una mappa.** Dove l'opera non offre una mappa utilizzabile,
-la sotto-mappa è un **SVG originale** disegnato da AniMapVerse (42 mappe:
-Naruto 9, Hunter x Hunter 4, One Piece 21, Dragon Ball 3, Black Clover 5),
+la sotto-mappa è un **SVG originale** disegnato da AniMapVerse (46 mappe:
+Naruto 9, Hunter x Hunter 4, One Piece 21, Dragon Ball 7, Black Clover 5),
 generato da `scripts/mapgen/<mondo>.py` su un toolkit comune
 (`scripts/mapgen/kit.py`: coste, foreste, montagne, edifici, cartigli). Gli script
 sono deterministici e riscrivono anche le coordinate dei pin, così pin e disegno
