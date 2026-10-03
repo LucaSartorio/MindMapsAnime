@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T11:57:37.179Z",
+  "generatedAt": "2026-10-03T15:34:25.926Z",
   "templates": {
     "characterJourney": {
       "byReason": {
-        "single_location": 477,
-        "no_journey_data": 582
+        "single_location": 492,
+        "no_journey_data": 557
       },
       "items": [
         {
@@ -2285,13 +2285,6 @@
         },
         {
           "anime": "onepiece",
-          "subject": "monkey-d-dragon",
-          "subjectId": "char-op-dragon",
-          "displayName": "Monkey D. Dragon",
-          "reason": "single_location"
-        },
-        {
-          "anime": "onepiece",
           "subject": "kuro",
           "subjectId": "char-op-kuro",
           "displayName": "Kuro",
@@ -2334,23 +2327,9 @@
         },
         {
           "anime": "onepiece",
-          "subject": "jaguar-d-saul",
-          "subjectId": "char-op-saul",
-          "displayName": "Jaguar D. Saul",
-          "reason": "single_location"
-        },
-        {
-          "anime": "onepiece",
           "subject": "rocks-d-xebec",
           "subjectId": "char-op-rocks",
           "displayName": "Rocks D. Xebec",
-          "reason": "single_location"
-        },
-        {
-          "anime": "onepiece",
-          "subject": "portgas-d-ace",
-          "subjectId": "char-op-ace",
-          "displayName": "Portgas D. Ace",
           "reason": "single_location"
         },
         {
@@ -2393,20 +2372,6 @@
           "subject": "hody-jones",
           "subjectId": "char-op-hody",
           "displayName": "Hody Jones",
-          "reason": "single_location"
-        },
-        {
-          "anime": "onepiece",
-          "subject": "silvers-rayleigh",
-          "subjectId": "char-op-rayleigh",
-          "displayName": "Silvers Rayleigh",
-          "reason": "single_location"
-        },
-        {
-          "anime": "onepiece",
-          "subject": "imu",
-          "subjectId": "char-op-imu",
-          "displayName": "Imu",
           "reason": "single_location"
         },
         {
@@ -2600,13 +2565,6 @@
         },
         {
           "anime": "onepiece",
-          "subject": "kozuki-momonosuke",
-          "subjectId": "char-op-momonosuke",
-          "displayName": "Kozuki Momonosuke",
-          "reason": "single_location"
-        },
-        {
-          "anime": "onepiece",
           "subject": "yamato",
           "subjectId": "char-op-yamato",
           "displayName": "Yamato",
@@ -2666,14 +2624,14 @@
           "subject": "boa-sandersonia",
           "subjectId": "char-op-sandersonia",
           "displayName": "Boa Sandersonia",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
           "subject": "boa-marigold",
           "subjectId": "char-op-marigold",
           "displayName": "Boa Marigold",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
@@ -2687,7 +2645,7 @@
           "subject": "jack",
           "subjectId": "char-op-jack",
           "displayName": "Jack",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
@@ -2740,13 +2698,6 @@
         },
         {
           "anime": "onepiece",
-          "subject": "raizo",
-          "subjectId": "char-op-raizo",
-          "displayName": "Raizo",
-          "reason": "single_location"
-        },
-        {
-          "anime": "onepiece",
           "subject": "kanjuro",
           "subjectId": "char-op-kanjuro",
           "displayName": "Kanjuro",
@@ -2771,14 +2722,14 @@
           "subject": "inuarashi",
           "subjectId": "char-op-inuarashi",
           "displayName": "Inuarashi",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
           "subject": "nekomamushi",
           "subjectId": "char-op-nekomamushi",
           "displayName": "Nekomamushi",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
@@ -2901,13 +2852,6 @@
         },
         {
           "anime": "onepiece",
-          "subject": "bellamy",
-          "subjectId": "char-op-bellamy",
-          "displayName": "Bellamy",
-          "reason": "single_location"
-        },
-        {
-          "anime": "onepiece",
           "subject": "baby-5",
           "subjectId": "char-op-baby-5",
           "displayName": "Baby 5",
@@ -3016,7 +2960,7 @@
           "subject": "foxy",
           "subjectId": "char-op-foxy",
           "displayName": "Foxy",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
@@ -3065,7 +3009,7 @@
           "subject": "crocus",
           "subjectId": "char-op-crocus",
           "displayName": "Crocus",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
@@ -3076,31 +3020,24 @@
         },
         {
           "anime": "onepiece",
-          "subject": "helmeppo",
-          "subjectId": "char-op-helmeppo",
-          "displayName": "Helmeppo",
-          "reason": "no_journey_data"
-        },
-        {
-          "anime": "onepiece",
           "subject": "marcus-mars",
           "subjectId": "char-op-mars",
           "displayName": "Marcus Mars",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
           "subject": "topman-warcury",
           "subjectId": "char-op-warcury",
           "displayName": "Topman Warcury",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
           "subject": "ethanbaron-v-nusjuro",
           "subjectId": "char-op-nusjuro",
           "displayName": "Ethanbaron V. Nusjuro",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
@@ -3261,7 +3198,7 @@
           "subject": "mont-blanc-cricket",
           "subjectId": "char-op-cricket",
           "displayName": "Mont Blanc Cricket",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
@@ -3373,7 +3310,7 @@
           "subject": "punk-02-lilith",
           "subjectId": "char-op-lilith",
           "displayName": "Punk-02 Lilith",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
@@ -3401,7 +3338,7 @@
           "subject": "sentomaru",
           "subjectId": "char-op-sentomaru",
           "displayName": "Sentomaru",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
@@ -3622,20 +3559,6 @@
         },
         {
           "anime": "onepiece",
-          "subject": "dorry",
-          "subjectId": "char-op-dorry",
-          "displayName": "Dorry",
-          "reason": "no_journey_data"
-        },
-        {
-          "anime": "onepiece",
-          "subject": "brogy",
-          "subjectId": "char-op-brogy",
-          "displayName": "Brogy",
-          "reason": "no_journey_data"
-        },
-        {
-          "anime": "onepiece",
           "subject": "chess",
           "subjectId": "char-op-chess",
           "displayName": "Chess",
@@ -3653,7 +3576,7 @@
           "subject": "igaram",
           "subjectId": "char-op-igaram",
           "displayName": "Igaram",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
@@ -3688,7 +3611,7 @@
           "subject": "mr-3",
           "subjectId": "char-op-mr-3",
           "displayName": "Mr. 3",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
@@ -3863,7 +3786,7 @@
           "subject": "shakuyaku",
           "subjectId": "char-op-shakky",
           "displayName": "Shakuyaku",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
@@ -4255,7 +4178,7 @@
           "subject": "hajrudin",
           "subjectId": "char-op-hajrudin",
           "displayName": "Hajrudin",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
@@ -4500,7 +4423,7 @@
           "subject": "laboon",
           "subjectId": "char-op-laboon",
           "displayName": "Laboon",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
@@ -4668,35 +4591,35 @@
           "subject": "loki",
           "subjectId": "char-op-loki",
           "displayName": "Loki",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
           "subject": "harald",
           "subjectId": "char-op-harald",
           "displayName": "Harald",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
           "subject": "figarland-garling",
           "subjectId": "char-op-garling",
           "displayName": "Figarland Garling",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
           "subject": "figarland-shamrock",
           "subjectId": "char-op-shamrock",
           "displayName": "Figarland Shamrock",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
           "subject": "gunko",
           "subjectId": "char-op-gunko",
           "displayName": "Gunko",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
@@ -4843,6 +4766,13 @@
           "subject": "kiwi-e-mozu",
           "subjectId": "char-op-kiwi-mozu",
           "displayName": "Kiwi e Mozu",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "morgans",
+          "subjectId": "char-op-morgans",
+          "displayName": "Morgans",
           "reason": "no_journey_data"
         },
         {

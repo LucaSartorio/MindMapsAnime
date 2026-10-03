@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T11:57:37.179Z",
+  "generatedAt": "2026-10-03T15:34:25.926Z",
   "locales": [
     "en",
     "it"
@@ -29,10 +29,10 @@
           "excluded": 126
         },
         "onepiece": {
-          "characters": 50,
-          "videos": 60,
-          "series": 5,
-          "excluded": 367
+          "characters": 61,
+          "videos": 75,
+          "series": 7,
+          "excluded": 357
         },
         "dragonball": {
           "characters": 46,
@@ -3482,26 +3482,29 @@
               "arc-op-romance-dawn",
               "arc-op-orange-town",
               "arc-op-syrup-village",
-              "arc-op-baratie"
+              "arc-op-baratie",
+              "arc-op-arlong-park"
             ],
             "arcTitles": {
               "en": [
                 "Romance Dawn",
                 "Orange Town",
                 "Syrup Village",
-                "Baratie"
+                "Baratie",
+                "Arlong Park"
               ],
               "it": [
                 "L'alba di un'avventura",
                 "Bagy il Clown",
                 "Il complotto di Kuro",
-                "Il ristorante in mare"
+                "Il ristorante in mare",
+                "Il passato di Nami"
               ]
             },
             "firstArc": "Romance Dawn",
-            "lastArc": "Baratie",
+            "lastArc": "Arlong Park",
             "segmentationVersion": 1,
-            "fingerprint": "f4291cff",
+            "fingerprint": "c751f97b",
             "legacyRenderedLocales": [
               "it"
             ]
@@ -3514,13 +3517,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 29,
-            "animatedStops": 5,
-            "arcs": 4,
-            "journeyArcs": 22
+            "places": 33,
+            "animatedStops": 6,
+            "arcs": 5,
+            "journeyArcs": 29
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -3543,29 +3546,35 @@
             "previousId": "character-journey:onepiece:monkey-d-luffy:part-01",
             "nextId": "character-journey:onepiece:monkey-d-luffy:part-03",
             "arcIds": [
-              "arc-op-arlong-park",
               "arc-op-loguetown",
+              "arc-op-reverse-mountain",
+              "arc-op-little-garden",
               "arc-op-drum",
-              "arc-op-alabasta"
+              "arc-op-alabasta",
+              "arc-op-jaya"
             ],
             "arcTitles": {
               "en": [
-                "Arlong Park",
                 "Loguetown",
+                "Reverse Mountain",
+                "Little Garden",
                 "Drum Island",
-                "Alabasta"
+                "Alabasta",
+                "Jaya"
               ],
               "it": [
-                "Il passato di Nami",
                 "La città dell'inizio e della fine",
+                "Reverse Mountain",
+                "Little Garden",
                 "Drum Island",
-                "Alabasta"
+                "Alabasta",
+                "Jaya"
               ]
             },
-            "firstArc": "Arlong Park",
-            "lastArc": "Alabasta",
+            "firstArc": "Loguetown",
+            "lastArc": "Jaya",
             "segmentationVersion": 1,
-            "fingerprint": "9b2c1d8f",
+            "fingerprint": "f7137a38",
             "legacyRenderedLocales": [
               "it"
             ]
@@ -3578,13 +3587,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 30,
+          "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "main",
-            "places": 29,
-            "animatedStops": 6,
-            "arcs": 4,
-            "journeyArcs": 22
+            "places": 33,
+            "animatedStops": 7,
+            "arcs": 6,
+            "journeyArcs": 29
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -3610,26 +3619,29 @@
               "arc-op-skypiea",
               "arc-op-long-ring",
               "arc-op-water-seven",
-              "arc-op-enies-lobby"
+              "arc-op-enies-lobby",
+              "arc-op-thriller-bark"
             ],
             "arcTitles": {
               "en": [
                 "Skypiea",
                 "Long Ring Long Land",
                 "Water Seven",
-                "Enies Lobby"
+                "Enies Lobby",
+                "Thriller Bark"
               ],
               "it": [
                 "Skypiea",
                 "Long Ring Long Land",
                 "Water Seven",
-                "Enies Lobby"
+                "Enies Lobby",
+                "Thriller Bark"
               ]
             },
             "firstArc": "Skypiea",
-            "lastArc": "Enies Lobby",
+            "lastArc": "Thriller Bark",
             "segmentationVersion": 1,
-            "fingerprint": "5cfe858e",
+            "fingerprint": "5d6fb69c",
             "legacyRenderedLocales": [
               "it"
             ]
@@ -3642,13 +3654,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 30,
+          "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "main",
-            "places": 29,
-            "animatedStops": 6,
-            "arcs": 4,
-            "journeyArcs": 22
+            "places": 33,
+            "animatedStops": 7,
+            "arcs": 5,
+            "journeyArcs": 29
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -3671,29 +3683,35 @@
             "previousId": "character-journey:onepiece:monkey-d-luffy:part-03",
             "nextId": "character-journey:onepiece:monkey-d-luffy:part-05",
             "arcIds": [
-              "arc-op-thriller-bark",
               "arc-op-amazon-lily",
               "arc-op-impel-down",
-              "arc-op-marineford"
+              "arc-op-marineford",
+              "arc-op-post-war",
+              "arc-op-return-to-sabaody",
+              "arc-op-fishman-island"
             ],
             "arcTitles": {
               "en": [
-                "Thriller Bark",
                 "Amazon Lily",
                 "Impel Down",
-                "Marineford / Summit War"
+                "Marineford / Summit War",
+                "Post-War",
+                "Return to Sabaody",
+                "Fish-Man Island"
               ],
               "it": [
-                "Thriller Bark",
                 "Amazon Lily",
                 "Impel Down",
-                "La Guerra al Vertice"
+                "La Guerra al Vertice",
+                "Il Dopo-Guerra",
+                "Ritorno a Sabaody",
+                "Isola degli Uomini-Pesce"
               ]
             },
-            "firstArc": "Thriller Bark",
-            "lastArc": "Marineford / Summit War",
+            "firstArc": "Amazon Lily",
+            "lastArc": "Fish-Man Island",
             "segmentationVersion": 1,
-            "fingerprint": "024195f7",
+            "fingerprint": "e8001068",
             "legacyRenderedLocales": [
               "it"
             ]
@@ -3706,13 +3724,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 29,
-            "animatedStops": 5,
-            "arcs": 4,
-            "journeyArcs": 22
+            "places": 33,
+            "animatedStops": 6,
+            "arcs": 6,
+            "journeyArcs": 29
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -3735,35 +3753,38 @@
             "previousId": "character-journey:onepiece:monkey-d-luffy:part-04",
             "nextId": null,
             "arcIds": [
-              "arc-op-fishman-island",
               "arc-op-punk-hazard",
               "arc-op-dressrosa",
+              "arc-op-zou",
               "arc-op-whole-cake",
               "arc-op-wano",
-              "arc-op-egghead"
+              "arc-op-egghead",
+              "arc-op-elbaf"
             ],
             "arcTitles": {
               "en": [
-                "Fish-Man Island",
                 "Punk Hazard",
                 "Dressrosa",
+                "Zou",
                 "Whole Cake Island",
                 "Wano Country",
-                "Egghead"
+                "Egghead",
+                "Elbaph"
               ],
               "it": [
-                "Isola degli Uomini-Pesce",
                 "Punk Hazard",
                 "Dressrosa",
+                "Zou",
                 "Whole Cake Island",
                 "Il Paese di Wano",
-                "Egghead"
+                "Egghead",
+                "Elbaf"
               ]
             },
-            "firstArc": "Fish-Man Island",
-            "lastArc": "Egghead",
+            "firstArc": "Punk Hazard",
+            "lastArc": "Elbaph",
             "segmentationVersion": 1,
-            "fingerprint": "5e477eef",
+            "fingerprint": "2e8bc93b",
             "legacyRenderedLocales": [
               "it"
             ]
@@ -3779,10 +3800,10 @@
           "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "main",
-            "places": 29,
+            "places": 33,
             "animatedStops": 7,
-            "arcs": 6,
-            "journeyArcs": 22
+            "arcs": 7,
+            "journeyArcs": 29
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -3804,198 +3825,6 @@
             "partCount": 3,
             "previousId": null,
             "nextId": "character-journey:onepiece:roronoa-zoro:part-02",
-            "arcIds": [
-              "arc-op-romance-dawn",
-              "arc-op-orange-town",
-              "arc-op-syrup-village",
-              "arc-op-baratie"
-            ],
-            "arcTitles": {
-              "en": [
-                "Romance Dawn",
-                "Orange Town",
-                "Syrup Village",
-                "Baratie"
-              ],
-              "it": [
-                "L'alba di un'avventura",
-                "Bagy il Clown",
-                "Il complotto di Kuro",
-                "Il ristorante in mare"
-              ]
-            },
-            "firstArc": "Romance Dawn",
-            "lastArc": "Baratie",
-            "segmentationVersion": 1,
-            "fingerprint": "f4291cff"
-          },
-          "displayName": {
-            "en": "Roronoa Zoro",
-            "it": "Roronoa Zoro"
-          },
-          "locales": [
-            "en",
-            "it"
-          ],
-          "recommendedDurationSeconds": 27,
-          "facts": {
-            "importance": "main",
-            "places": 17,
-            "animatedStops": 5,
-            "arcs": 4,
-            "journeyArcs": 15
-          },
-          "renderedLocales": [],
-          "scheduledLocales": [],
-          "publishedLocales": [],
-          "queuedLocales": [],
-          "renderedBefore": false,
-          "publishedBefore": false,
-          "publication": []
-        },
-        {
-          "id": "character-journey:onepiece:roronoa-zoro:part-02",
-          "anime": "onepiece",
-          "animeTitle": "One Piece",
-          "subject": "roronoa-zoro",
-          "series": {
-            "id": "character-journey:onepiece:roronoa-zoro",
-            "segment": "part-02",
-            "partNumber": 2,
-            "partCount": 3,
-            "previousId": "character-journey:onepiece:roronoa-zoro:part-01",
-            "nextId": "character-journey:onepiece:roronoa-zoro:part-03",
-            "arcIds": [
-              "arc-op-arlong-park",
-              "arc-op-loguetown",
-              "arc-op-alabasta",
-              "arc-op-skypiea",
-              "arc-op-enies-lobby"
-            ],
-            "arcTitles": {
-              "en": [
-                "Arlong Park",
-                "Loguetown",
-                "Alabasta",
-                "Skypiea",
-                "Enies Lobby"
-              ],
-              "it": [
-                "Il passato di Nami",
-                "La città dell'inizio e della fine",
-                "Alabasta",
-                "Skypiea",
-                "Enies Lobby"
-              ]
-            },
-            "firstArc": "Arlong Park",
-            "lastArc": "Enies Lobby",
-            "segmentationVersion": 1,
-            "fingerprint": "f1d81257"
-          },
-          "displayName": {
-            "en": "Roronoa Zoro",
-            "it": "Roronoa Zoro"
-          },
-          "locales": [
-            "en",
-            "it"
-          ],
-          "recommendedDurationSeconds": 30,
-          "facts": {
-            "importance": "main",
-            "places": 17,
-            "animatedStops": 6,
-            "arcs": 5,
-            "journeyArcs": 15
-          },
-          "renderedLocales": [],
-          "scheduledLocales": [],
-          "publishedLocales": [],
-          "queuedLocales": [],
-          "renderedBefore": false,
-          "publishedBefore": false,
-          "publication": []
-        },
-        {
-          "id": "character-journey:onepiece:roronoa-zoro:part-03",
-          "anime": "onepiece",
-          "animeTitle": "One Piece",
-          "subject": "roronoa-zoro",
-          "series": {
-            "id": "character-journey:onepiece:roronoa-zoro",
-            "segment": "part-03",
-            "partNumber": 3,
-            "partCount": 3,
-            "previousId": "character-journey:onepiece:roronoa-zoro:part-02",
-            "nextId": null,
-            "arcIds": [
-              "arc-op-thriller-bark",
-              "arc-op-fishman-island",
-              "arc-op-punk-hazard",
-              "arc-op-dressrosa",
-              "arc-op-wano",
-              "arc-op-egghead"
-            ],
-            "arcTitles": {
-              "en": [
-                "Thriller Bark",
-                "Fish-Man Island",
-                "Punk Hazard",
-                "Dressrosa",
-                "Wano Country",
-                "Egghead"
-              ],
-              "it": [
-                "Thriller Bark",
-                "Isola degli Uomini-Pesce",
-                "Punk Hazard",
-                "Dressrosa",
-                "Il Paese di Wano",
-                "Egghead"
-              ]
-            },
-            "firstArc": "Thriller Bark",
-            "lastArc": "Egghead",
-            "segmentationVersion": 1,
-            "fingerprint": "069f612c"
-          },
-          "displayName": {
-            "en": "Roronoa Zoro",
-            "it": "Roronoa Zoro"
-          },
-          "locales": [
-            "en",
-            "it"
-          ],
-          "recommendedDurationSeconds": 30,
-          "facts": {
-            "importance": "main",
-            "places": 17,
-            "animatedStops": 6,
-            "arcs": 6,
-            "journeyArcs": 15
-          },
-          "renderedLocales": [],
-          "scheduledLocales": [],
-          "publishedLocales": [],
-          "queuedLocales": [],
-          "renderedBefore": false,
-          "publishedBefore": false,
-          "publication": []
-        },
-        {
-          "id": "character-journey:onepiece:nami:part-01",
-          "anime": "onepiece",
-          "animeTitle": "One Piece",
-          "subject": "nami",
-          "series": {
-            "id": "character-journey:onepiece:nami",
-            "segment": "part-01",
-            "partNumber": 1,
-            "partCount": 2,
-            "previousId": null,
-            "nextId": "character-journey:onepiece:nami:part-02",
             "arcIds": [
               "arc-op-romance-dawn",
               "arc-op-orange-town",
@@ -4025,8 +3854,8 @@
             "fingerprint": "c751f97b"
           },
           "displayName": {
-            "en": "Nami",
-            "it": "Nami"
+            "en": "Roronoa Zoro",
+            "it": "Roronoa Zoro"
           },
           "locales": [
             "en",
@@ -4035,10 +3864,205 @@
           "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 13,
+            "places": 19,
             "animatedStops": 6,
             "arcs": 5,
-            "journeyArcs": 11
+            "journeyArcs": 17
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:onepiece:roronoa-zoro:part-02",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "roronoa-zoro",
+          "series": {
+            "id": "character-journey:onepiece:roronoa-zoro",
+            "segment": "part-02",
+            "partNumber": 2,
+            "partCount": 3,
+            "previousId": "character-journey:onepiece:roronoa-zoro:part-01",
+            "nextId": "character-journey:onepiece:roronoa-zoro:part-03",
+            "arcIds": [
+              "arc-op-loguetown",
+              "arc-op-whisky-peak",
+              "arc-op-little-garden",
+              "arc-op-jaya",
+              "arc-op-enies-lobby"
+            ],
+            "arcTitles": {
+              "en": [
+                "Loguetown",
+                "Whisky Peak",
+                "Little Garden",
+                "Jaya",
+                "Enies Lobby"
+              ],
+              "it": [
+                "La città dell'inizio e della fine",
+                "Whisky Peak",
+                "Little Garden",
+                "Jaya",
+                "Enies Lobby"
+              ]
+            },
+            "firstArc": "Loguetown",
+            "lastArc": "Enies Lobby",
+            "segmentationVersion": 1,
+            "fingerprint": "134eb3b8"
+          },
+          "displayName": {
+            "en": "Roronoa Zoro",
+            "it": "Roronoa Zoro"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 30,
+          "facts": {
+            "importance": "main",
+            "places": 19,
+            "animatedStops": 6,
+            "arcs": 5,
+            "journeyArcs": 17
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:onepiece:roronoa-zoro:part-03",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "roronoa-zoro",
+          "series": {
+            "id": "character-journey:onepiece:roronoa-zoro",
+            "segment": "part-03",
+            "partNumber": 3,
+            "partCount": 3,
+            "previousId": "character-journey:onepiece:roronoa-zoro:part-02",
+            "nextId": null,
+            "arcIds": [
+              "arc-op-post-enies-lobby",
+              "arc-op-thriller-bark",
+              "arc-op-return-to-sabaody",
+              "arc-op-punk-hazard",
+              "arc-op-dressrosa",
+              "arc-op-wano",
+              "arc-op-egghead"
+            ],
+            "arcTitles": {
+              "en": [
+                "Post-Enies Lobby",
+                "Thriller Bark",
+                "Return to Sabaody",
+                "Punk Hazard",
+                "Dressrosa",
+                "Wano Country",
+                "Egghead"
+              ],
+              "it": [
+                "Dopo Enies Lobby",
+                "Thriller Bark",
+                "Ritorno a Sabaody",
+                "Punk Hazard",
+                "Dressrosa",
+                "Il Paese di Wano",
+                "Egghead"
+              ]
+            },
+            "firstArc": "Post-Enies Lobby",
+            "lastArc": "Egghead",
+            "segmentationVersion": 1,
+            "fingerprint": "8789342d"
+          },
+          "displayName": {
+            "en": "Roronoa Zoro",
+            "it": "Roronoa Zoro"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 33,
+          "facts": {
+            "importance": "main",
+            "places": 19,
+            "animatedStops": 7,
+            "arcs": 7,
+            "journeyArcs": 17
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:onepiece:nami:part-01",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "nami",
+          "series": {
+            "id": "character-journey:onepiece:nami",
+            "segment": "part-01",
+            "partNumber": 1,
+            "partCount": 3,
+            "previousId": null,
+            "nextId": "character-journey:onepiece:nami:part-02",
+            "arcIds": [
+              "arc-op-romance-dawn",
+              "arc-op-orange-town",
+              "arc-op-syrup-village",
+              "arc-op-baratie"
+            ],
+            "arcTitles": {
+              "en": [
+                "Romance Dawn",
+                "Orange Town",
+                "Syrup Village",
+                "Baratie"
+              ],
+              "it": [
+                "L'alba di un'avventura",
+                "Bagy il Clown",
+                "Il complotto di Kuro",
+                "Il ristorante in mare"
+              ]
+            },
+            "firstArc": "Romance Dawn",
+            "lastArc": "Baratie",
+            "segmentationVersion": 1,
+            "fingerprint": "f4291cff"
+          },
+          "displayName": {
+            "en": "Nami",
+            "it": "Nami"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 27,
+          "facts": {
+            "importance": "main",
+            "places": 15,
+            "animatedStops": 5,
+            "arcs": 4,
+            "journeyArcs": 13
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4057,39 +4081,33 @@
             "id": "character-journey:onepiece:nami",
             "segment": "part-02",
             "partNumber": 2,
-            "partCount": 2,
+            "partCount": 3,
             "previousId": "character-journey:onepiece:nami:part-01",
-            "nextId": null,
+            "nextId": "character-journey:onepiece:nami:part-03",
             "arcIds": [
+              "arc-op-arlong-park",
               "arc-op-loguetown",
-              "arc-op-alabasta",
-              "arc-op-skypiea",
-              "arc-op-enies-lobby",
-              "arc-op-fishman-island",
-              "arc-op-wano"
+              "arc-op-whisky-peak",
+              "arc-op-little-garden"
             ],
             "arcTitles": {
               "en": [
+                "Arlong Park",
                 "Loguetown",
-                "Alabasta",
-                "Skypiea",
-                "Enies Lobby",
-                "Fish-Man Island",
-                "Wano Country"
+                "Whisky Peak",
+                "Little Garden"
               ],
               "it": [
+                "Il passato di Nami",
                 "La città dell'inizio e della fine",
-                "Alabasta",
-                "Skypiea",
-                "Enies Lobby",
-                "Isola degli Uomini-Pesce",
-                "Il Paese di Wano"
+                "Whisky Peak",
+                "Little Garden"
               ]
             },
-            "firstArc": "Loguetown",
-            "lastArc": "Wano Country",
+            "firstArc": "Arlong Park",
+            "lastArc": "Little Garden",
             "segmentationVersion": 1,
-            "fingerprint": "a0362c48"
+            "fingerprint": "b3031414"
           },
           "displayName": {
             "en": "Nami",
@@ -4099,13 +4117,77 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 33,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "main",
-            "places": 13,
-            "animatedStops": 7,
-            "arcs": 6,
-            "journeyArcs": 11
+            "places": 15,
+            "animatedStops": 5,
+            "arcs": 4,
+            "journeyArcs": 13
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:onepiece:nami:part-03",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "nami",
+          "series": {
+            "id": "character-journey:onepiece:nami",
+            "segment": "part-03",
+            "partNumber": 3,
+            "partCount": 3,
+            "previousId": "character-journey:onepiece:nami:part-02",
+            "nextId": null,
+            "arcIds": [
+              "arc-op-jaya",
+              "arc-op-enies-lobby",
+              "arc-op-post-enies-lobby",
+              "arc-op-return-to-sabaody",
+              "arc-op-wano"
+            ],
+            "arcTitles": {
+              "en": [
+                "Jaya",
+                "Enies Lobby",
+                "Post-Enies Lobby",
+                "Return to Sabaody",
+                "Wano Country"
+              ],
+              "it": [
+                "Jaya",
+                "Enies Lobby",
+                "Dopo Enies Lobby",
+                "Ritorno a Sabaody",
+                "Il Paese di Wano"
+              ]
+            },
+            "firstArc": "Jaya",
+            "lastArc": "Wano Country",
+            "segmentationVersion": 1,
+            "fingerprint": "d7d5c97d"
+          },
+          "displayName": {
+            "en": "Nami",
+            "it": "Nami"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 27,
+          "facts": {
+            "importance": "main",
+            "places": 15,
+            "animatedStops": 5,
+            "arcs": 5,
+            "journeyArcs": 13
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4124,39 +4206,33 @@
             "id": "character-journey:onepiece:usopp",
             "segment": "part-01",
             "partNumber": 1,
-            "partCount": 2,
+            "partCount": 3,
             "previousId": null,
             "nextId": "character-journey:onepiece:usopp:part-02",
             "arcIds": [
               "arc-op-romance-dawn",
               "arc-op-orange-town",
               "arc-op-syrup-village",
-              "arc-op-baratie",
-              "arc-op-arlong-park",
-              "arc-op-loguetown"
+              "arc-op-baratie"
             ],
             "arcTitles": {
               "en": [
                 "Romance Dawn",
                 "Orange Town",
                 "Syrup Village",
-                "Baratie",
-                "Arlong Park",
-                "Loguetown"
+                "Baratie"
               ],
               "it": [
                 "L'alba di un'avventura",
                 "Bagy il Clown",
                 "Il complotto di Kuro",
-                "Il ristorante in mare",
-                "Il passato di Nami",
-                "La città dell'inizio e della fine"
+                "Il ristorante in mare"
               ]
             },
             "firstArc": "Romance Dawn",
-            "lastArc": "Loguetown",
+            "lastArc": "Baratie",
             "segmentationVersion": 1,
-            "fingerprint": "fda6d30e"
+            "fingerprint": "f4291cff"
           },
           "displayName": {
             "en": "Usopp",
@@ -4166,13 +4242,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 36,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "main",
-            "places": 15,
-            "animatedStops": 8,
-            "arcs": 6,
-            "journeyArcs": 12
+            "places": 16,
+            "animatedStops": 5,
+            "arcs": 4,
+            "journeyArcs": 13
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4191,39 +4267,33 @@
             "id": "character-journey:onepiece:usopp",
             "segment": "part-02",
             "partNumber": 2,
-            "partCount": 2,
+            "partCount": 3,
             "previousId": "character-journey:onepiece:usopp:part-01",
-            "nextId": null,
+            "nextId": "character-journey:onepiece:usopp:part-03",
             "arcIds": [
-              "arc-op-water-seven",
-              "arc-op-enies-lobby",
-              "arc-op-thriller-bark",
-              "arc-op-fishman-island",
-              "arc-op-dressrosa",
-              "arc-op-wano"
+              "arc-op-arlong-park",
+              "arc-op-loguetown",
+              "arc-op-little-garden",
+              "arc-op-water-seven"
             ],
             "arcTitles": {
               "en": [
-                "Water Seven",
-                "Enies Lobby",
-                "Thriller Bark",
-                "Fish-Man Island",
-                "Dressrosa",
-                "Wano Country"
+                "Arlong Park",
+                "Loguetown",
+                "Little Garden",
+                "Water Seven"
               ],
               "it": [
-                "Water Seven",
-                "Enies Lobby",
-                "Thriller Bark",
-                "Isola degli Uomini-Pesce",
-                "Dressrosa",
-                "Il Paese di Wano"
+                "Il passato di Nami",
+                "La città dell'inizio e della fine",
+                "Little Garden",
+                "Water Seven"
               ]
             },
-            "firstArc": "Water Seven",
-            "lastArc": "Wano Country",
+            "firstArc": "Arlong Park",
+            "lastArc": "Water Seven",
             "segmentationVersion": 1,
-            "fingerprint": "591a6832"
+            "fingerprint": "c6ff439c"
           },
           "displayName": {
             "en": "Usopp",
@@ -4233,13 +4303,77 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 33,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "main",
-            "places": 15,
-            "animatedStops": 7,
-            "arcs": 6,
-            "journeyArcs": 12
+            "places": 16,
+            "animatedStops": 5,
+            "arcs": 4,
+            "journeyArcs": 13
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:onepiece:usopp:part-03",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "usopp",
+          "series": {
+            "id": "character-journey:onepiece:usopp",
+            "segment": "part-03",
+            "partNumber": 3,
+            "partCount": 3,
+            "previousId": "character-journey:onepiece:usopp:part-02",
+            "nextId": null,
+            "arcIds": [
+              "arc-op-enies-lobby",
+              "arc-op-thriller-bark",
+              "arc-op-return-to-sabaody",
+              "arc-op-dressrosa",
+              "arc-op-wano"
+            ],
+            "arcTitles": {
+              "en": [
+                "Enies Lobby",
+                "Thriller Bark",
+                "Return to Sabaody",
+                "Dressrosa",
+                "Wano Country"
+              ],
+              "it": [
+                "Enies Lobby",
+                "Thriller Bark",
+                "Ritorno a Sabaody",
+                "Dressrosa",
+                "Il Paese di Wano"
+              ]
+            },
+            "firstArc": "Enies Lobby",
+            "lastArc": "Wano Country",
+            "segmentationVersion": 1,
+            "fingerprint": "6ae9e2e8"
+          },
+          "displayName": {
+            "en": "Usopp",
+            "it": "Usop"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 30,
+          "facts": {
+            "importance": "main",
+            "places": 16,
+            "animatedStops": 6,
+            "arcs": 5,
+            "journeyArcs": 13
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4297,10 +4431,10 @@
           "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "main",
-            "places": 15,
+            "places": 16,
             "animatedStops": 5,
             "arcs": 4,
-            "journeyArcs": 13
+            "journeyArcs": 14
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4358,10 +4492,10 @@
           "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "main",
-            "places": 15,
+            "places": 16,
             "animatedStops": 5,
             "arcs": 4,
-            "journeyArcs": 13
+            "journeyArcs": 14
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4384,32 +4518,35 @@
             "previousId": "character-journey:onepiece:sanji:part-02",
             "nextId": null,
             "arcIds": [
+              "arc-op-post-enies-lobby",
               "arc-op-thriller-bark",
-              "arc-op-fishman-island",
+              "arc-op-return-to-sabaody",
               "arc-op-punk-hazard",
               "arc-op-whole-cake",
               "arc-op-wano"
             ],
             "arcTitles": {
               "en": [
+                "Post-Enies Lobby",
                 "Thriller Bark",
-                "Fish-Man Island",
+                "Return to Sabaody",
                 "Punk Hazard",
                 "Whole Cake Island",
                 "Wano Country"
               ],
               "it": [
+                "Dopo Enies Lobby",
                 "Thriller Bark",
-                "Isola degli Uomini-Pesce",
+                "Ritorno a Sabaody",
                 "Punk Hazard",
                 "Whole Cake Island",
                 "Il Paese di Wano"
               ]
             },
-            "firstArc": "Thriller Bark",
+            "firstArc": "Post-Enies Lobby",
             "lastArc": "Wano Country",
             "segmentationVersion": 1,
-            "fingerprint": "8369bf04"
+            "fingerprint": "739cc2e1"
           },
           "displayName": {
             "en": "Sanji",
@@ -4419,13 +4556,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 15,
-            "animatedStops": 5,
-            "arcs": 5,
-            "journeyArcs": 13
+            "places": 16,
+            "animatedStops": 6,
+            "arcs": 6,
+            "journeyArcs": 14
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4452,10 +4589,10 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "major",
-            "places": 2,
-            "animatedStops": 2,
-            "arcs": 2,
-            "journeyArcs": 2
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4479,13 +4616,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "supporting",
-            "places": 2,
-            "animatedStops": 2,
-            "arcs": 2,
-            "journeyArcs": 2
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 4,
+            "journeyArcs": 4
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4539,6 +4676,36 @@
             "en",
             "it"
           ],
+          "recommendedDurationSeconds": 27,
+          "facts": {
+            "importance": "major",
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 5,
+            "journeyArcs": 5
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:onepiece:monkey-d-dragon",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "monkey-d-dragon",
+          "series": null,
+          "displayName": {
+            "en": "Monkey D. Dragon",
+            "it": "Monkey D. Dragon"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "major",
@@ -4569,13 +4736,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "major",
-            "places": 3,
-            "animatedStops": 3,
-            "arcs": 3,
-            "journeyArcs": 3
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 4,
+            "journeyArcs": 4
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4602,10 +4769,10 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "major",
-            "places": 2,
-            "animatedStops": 2,
-            "arcs": 2,
-            "journeyArcs": 2
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4749,13 +4916,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 33,
+          "recommendedDurationSeconds": 36,
           "facts": {
             "importance": "major",
-            "places": 7,
-            "animatedStops": 7,
-            "arcs": 4,
-            "journeyArcs": 4
+            "places": 8,
+            "animatedStops": 8,
+            "arcs": 5,
+            "journeyArcs": 5
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4796,11 +4963,42 @@
           "publication": []
         },
         {
-          "id": "character-journey:onepiece:nico-robin",
+          "id": "character-journey:onepiece:nico-robin:part-01",
           "anime": "onepiece",
           "animeTitle": "One Piece",
           "subject": "nico-robin",
-          "series": null,
+          "series": {
+            "id": "character-journey:onepiece:nico-robin",
+            "segment": "part-01",
+            "partNumber": 1,
+            "partCount": 2,
+            "previousId": null,
+            "nextId": "character-journey:onepiece:nico-robin:part-02",
+            "arcIds": [
+              "arc-op-ohara",
+              "arc-op-alabasta",
+              "arc-op-jaya",
+              "arc-op-water-seven"
+            ],
+            "arcTitles": {
+              "en": [
+                "Ohara & the Buster Call",
+                "Alabasta",
+                "Jaya",
+                "Water Seven"
+              ],
+              "it": [
+                "Ohara e il Buster Call",
+                "Alabasta",
+                "Jaya",
+                "Water Seven"
+              ]
+            },
+            "firstArc": "Ohara & the Buster Call",
+            "lastArc": "Water Seven",
+            "segmentationVersion": 1,
+            "fingerprint": "24b1a248"
+          },
           "displayName": {
             "en": "Nico Robin",
             "it": "Nico Robin"
@@ -4809,13 +5007,140 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 36,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 8,
-            "animatedStops": 8,
+            "places": 12,
+            "animatedStops": 6,
+            "arcs": 4,
+            "journeyArcs": 10
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:onepiece:nico-robin:part-02",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "nico-robin",
+          "series": {
+            "id": "character-journey:onepiece:nico-robin",
+            "segment": "part-02",
+            "partNumber": 2,
+            "partCount": 2,
+            "previousId": "character-journey:onepiece:nico-robin:part-01",
+            "nextId": null,
+            "arcIds": [
+              "arc-op-enies-lobby",
+              "arc-op-post-enies-lobby",
+              "arc-op-return-to-sabaody",
+              "arc-op-zou",
+              "arc-op-wano",
+              "arc-op-elbaf"
+            ],
+            "arcTitles": {
+              "en": [
+                "Enies Lobby",
+                "Post-Enies Lobby",
+                "Return to Sabaody",
+                "Zou",
+                "Wano Country",
+                "Elbaph"
+              ],
+              "it": [
+                "Enies Lobby",
+                "Dopo Enies Lobby",
+                "Ritorno a Sabaody",
+                "Zou",
+                "Il Paese di Wano",
+                "Elbaf"
+              ]
+            },
+            "firstArc": "Enies Lobby",
+            "lastArc": "Elbaph",
+            "segmentationVersion": 1,
+            "fingerprint": "db3532bf"
+          },
+          "displayName": {
+            "en": "Nico Robin",
+            "it": "Nico Robin"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 30,
+          "facts": {
+            "importance": "main",
+            "places": 12,
+            "animatedStops": 6,
             "arcs": 6,
-            "journeyArcs": 6
+            "journeyArcs": 10
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:onepiece:jaguar-d-saul",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "jaguar-d-saul",
+          "series": null,
+          "displayName": {
+            "en": "Jaguar D. Saul",
+            "it": "Jaguar D. Saul"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:onepiece:portgas-d-ace",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "portgas-d-ace",
+          "series": null,
+          "displayName": {
+            "en": "Portgas D. Ace",
+            "it": "Portgas D. Ace"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4869,13 +5194,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "major",
-            "places": 3,
-            "animatedStops": 3,
-            "arcs": 3,
-            "journeyArcs": 3
+            "places": 6,
+            "animatedStops": 6,
+            "arcs": 5,
+            "journeyArcs": 5
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4959,13 +5284,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 30,
+          "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "main",
-            "places": 6,
-            "animatedStops": 6,
-            "arcs": 5,
-            "journeyArcs": 5
+            "places": 7,
+            "animatedStops": 7,
+            "arcs": 6,
+            "journeyArcs": 6
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4976,11 +5301,96 @@
           "publication": []
         },
         {
-          "id": "character-journey:onepiece:tony-tony-chopper",
+          "id": "character-journey:onepiece:silvers-rayleigh",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "silvers-rayleigh",
+          "series": null,
+          "displayName": {
+            "en": "Silvers Rayleigh",
+            "it": "Silvers Rayleigh"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:onepiece:imu",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "imu",
+          "series": null,
+          "displayName": {
+            "en": "Imu",
+            "it": "Imu"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:onepiece:tony-tony-chopper:part-01",
           "anime": "onepiece",
           "animeTitle": "One Piece",
           "subject": "tony-tony-chopper",
-          "series": null,
+          "series": {
+            "id": "character-journey:onepiece:tony-tony-chopper",
+            "segment": "part-01",
+            "partNumber": 1,
+            "partCount": 2,
+            "previousId": null,
+            "nextId": "character-journey:onepiece:tony-tony-chopper:part-02",
+            "arcIds": [
+              "arc-op-drum",
+              "arc-op-enies-lobby"
+            ],
+            "arcTitles": {
+              "en": [
+                "Drum Island",
+                "Enies Lobby"
+              ],
+              "it": [
+                "Drum Island",
+                "Enies Lobby"
+              ]
+            },
+            "firstArc": "Drum Island",
+            "lastArc": "Enies Lobby",
+            "segmentationVersion": 1,
+            "fingerprint": "d97d4815"
+          },
           "displayName": {
             "en": "Tony Tony Chopper",
             "it": "Tony Tony Chopper"
@@ -4989,13 +5399,77 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 36,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "main",
-            "places": 8,
-            "animatedStops": 8,
-            "arcs": 6,
-            "journeyArcs": 6
+            "places": 9,
+            "animatedStops": 4,
+            "arcs": 2,
+            "journeyArcs": 7
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:onepiece:tony-tony-chopper:part-02",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "tony-tony-chopper",
+          "series": {
+            "id": "character-journey:onepiece:tony-tony-chopper",
+            "segment": "part-02",
+            "partNumber": 2,
+            "partCount": 2,
+            "previousId": "character-journey:onepiece:tony-tony-chopper:part-01",
+            "nextId": null,
+            "arcIds": [
+              "arc-op-post-enies-lobby",
+              "arc-op-thriller-bark",
+              "arc-op-return-to-sabaody",
+              "arc-op-punk-hazard",
+              "arc-op-wano"
+            ],
+            "arcTitles": {
+              "en": [
+                "Post-Enies Lobby",
+                "Thriller Bark",
+                "Return to Sabaody",
+                "Punk Hazard",
+                "Wano Country"
+              ],
+              "it": [
+                "Dopo Enies Lobby",
+                "Thriller Bark",
+                "Ritorno a Sabaody",
+                "Punk Hazard",
+                "Il Paese di Wano"
+              ]
+            },
+            "firstArc": "Post-Enies Lobby",
+            "lastArc": "Wano Country",
+            "segmentationVersion": 1,
+            "fingerprint": "66ffabd7"
+          },
+          "displayName": {
+            "en": "Tony Tony Chopper",
+            "it": "Tony Tony Chopper"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 27,
+          "facts": {
+            "importance": "main",
+            "places": 9,
+            "animatedStops": 5,
+            "arcs": 5,
+            "journeyArcs": 7
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -5019,13 +5493,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "major",
-            "places": 3,
-            "animatedStops": 3,
-            "arcs": 3,
-            "journeyArcs": 3
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 4,
+            "journeyArcs": 4
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -5049,13 +5523,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 25,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "major",
-            "places": 4,
-            "animatedStops": 4,
-            "arcs": 2,
-            "journeyArcs": 2
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 5,
+            "journeyArcs": 5
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -5322,10 +5796,10 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "major",
-            "places": 2,
-            "animatedStops": 2,
-            "arcs": 2,
-            "journeyArcs": 2
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -5396,6 +5870,36 @@
           "publication": []
         },
         {
+          "id": "character-journey:onepiece:kozuki-momonosuke",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "kozuki-momonosuke",
+          "series": null,
+          "displayName": {
+            "en": "Kozuki Momonosuke",
+            "it": "Kozuki Momonosuke"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
           "id": "character-journey:onepiece:kinemon",
           "anime": "onepiece",
           "animeTitle": "One Piece",
@@ -5412,10 +5916,10 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "supporting",
-            "places": 2,
-            "animatedStops": 2,
-            "arcs": 2,
-            "journeyArcs": 2
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -5502,10 +6006,10 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "major",
-            "places": 2,
-            "animatedStops": 2,
-            "arcs": 0,
-            "journeyArcs": 0
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 1,
+            "journeyArcs": 1
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -5742,10 +6246,10 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "major",
-            "places": 2,
-            "animatedStops": 2,
-            "arcs": 2,
-            "journeyArcs": 2
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -5772,6 +6276,156 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:onepiece:raizo",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "raizo",
+          "series": null,
+          "displayName": {
+            "en": "Raizo",
+            "it": "Raizo"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:onepiece:bellamy",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "bellamy",
+          "series": null,
+          "displayName": {
+            "en": "Bellamy",
+            "it": "Bellamy"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:onepiece:helmeppo",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "helmeppo",
+          "series": null,
+          "displayName": {
+            "en": "Helmeppo",
+            "it": "Helmeppo"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:onepiece:dorry",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "dorry",
+          "series": null,
+          "displayName": {
+            "en": "Dorry",
+            "it": "Dorry"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:onepiece:brogy",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "brogy",
+          "series": null,
+          "displayName": {
+            "en": "Brogy",
+            "it": "Brogy"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
             "places": 2,
             "animatedStops": 2,
             "arcs": 2,
