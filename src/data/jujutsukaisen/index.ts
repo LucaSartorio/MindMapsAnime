@@ -14,6 +14,7 @@ import { jjkEventsWar } from './eventsWar';
 import { jjkRoutes } from './routes';
 import { jjkAbilities } from './abilities';
 import { jjkAssets } from './assets';
+import { jjkTournaments } from './tournaments';
 
 const jujutsuKaisen = animeWorlds.find((w) => w.slug === 'jujutsukaisen')!;
 
@@ -89,6 +90,7 @@ export const jjkDataset: WorldDataset = {
   events,
   routes: jjkRoutes,
   jutsu: jjkAbilities,
+  tournaments: jjkTournaments,
   assets: jjkAssets,
 };
 

@@ -43,6 +43,7 @@ import { narutoJutsuBatch3 } from './jutsuBatch3';
 import { narutoJutsuBatch4 } from './jutsuBatch4';
 import { densifyCrossLinks } from '@/lib/crossLinks';
 import { NARUTO_CHARACTER_LONG, NARUTO_JUTSU_LONG, NARUTO_LOCATION_LONG } from './contentEnrichment';
+import { narutoTournaments } from './tournaments';
 
 const naruto = animeWorlds.find((w) => w.slug === 'naruto')!;
 
@@ -110,6 +111,7 @@ export const narutoDataset: WorldDataset = densifyCrossLinks({
   jutsu: [...narutoJutsu, ...narutoJutsuBatch1, ...narutoJutsuBatch2, ...narutoJutsuBatch3, ...narutoJutsuBatch4].map((j) =>
     !j.longDescription && NARUTO_JUTSU_LONG[j.id] ? { ...j, longDescription: NARUTO_JUTSU_LONG[j.id] } : j,
   ),
+  tournaments: narutoTournaments,
   assets: narutoAssets,
 });
 
