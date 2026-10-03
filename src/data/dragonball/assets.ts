@@ -50,6 +50,10 @@ export const dragonballAssets: AssetReference[] = [
       ['cosmic', 'Universe 7'],
       ['namek', 'Planet Namek'],
       ['gt-space', 'Space (GT)'],
+      ['other-world', 'Other World'],
+      ['lookout', "Kami's Lookout & Korin Tower"],
+      ['papaya', 'Papaya Island'],
+      ['west-city', 'West City'],
     ] as const
   ).map(([slug, name]) =>
     originalMapAsset({

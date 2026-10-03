@@ -1,5 +1,5 @@
 import { narutoSlugs } from './slugs';
-import type { WorldDataset } from '@/types';
+import type { StoryArc, TimelineEvent, WorldDataset } from '@/types';
 import { animeWorlds } from '@/data/worlds';
 import { narutoLocations } from './locations';
 import { narutoLocationsBatch1 } from './locationsBatch1';
@@ -13,6 +13,7 @@ import { narutoCharactersBatch4 } from './charactersBatch4';
 import { narutoCharactersBatch5 } from './charactersBatch5';
 import { narutoCharactersBatch6 } from './charactersBatch6';
 import { narutoCharactersBatch7 } from './charactersBatch7';
+import { narutoCharactersBatch8 } from './charactersBatch8';
 import { NARUTO_CHAKRA_OVERRIDES } from './charactersChakraOverrides';
 import { NARUTO_RELATION_OVERRIDES } from './charactersRelationOverrides';
 import { narutoClans } from './clans';
@@ -25,8 +26,11 @@ import { narutoArcsBatch1 } from './arcsBatch1';
 import { narutoArcsBatch2 } from './arcsBatch2';
 import { narutoEvents } from './events';
 import { narutoEventsBatch1 } from './eventsBatch1';
+import { narutoEventsBatch2 } from './eventsBatch2';
+import { NARUTO_EVENT_CHRONOLOGY } from './eventsChronology';
 import { narutoRoutes } from './routes';
 import { narutoCharacterRoutes } from './characterRoutes';
+import { narutoRoutesBatch2 } from './routesBatch2';
 import { narutoAssets } from './assets';
 import { narutoNations } from './nations';
 import { narutoNationsBatch1 } from './nationsBatch1';
@@ -38,6 +42,7 @@ import { narutoJutsuBatch2 } from './jutsuBatch2';
 import { narutoJutsuBatch3 } from './jutsuBatch3';
 import { narutoJutsuBatch4 } from './jutsuBatch4';
 import { densifyCrossLinks } from '@/lib/crossLinks';
+import { NARUTO_CHARACTER_LONG, NARUTO_JUTSU_LONG, NARUTO_LOCATION_LONG } from './contentEnrichment';
 
 const naruto = animeWorlds.find((w) => w.slug === 'naruto')!;
 
@@ -51,10 +56,12 @@ const characters = [
   ...narutoCharactersBatch5,
   ...narutoCharactersBatch6,
   ...narutoCharactersBatch7,
+  ...narutoCharactersBatch8,
 ].map((c) => {
   const chakra = NARUTO_CHAKRA_OVERRIDES[c.id];
   const rel = NARUTO_RELATION_OVERRIDES[c.id];
   const next = { ...c };
+  if (!next.longDescription && NARUTO_CHARACTER_LONG[c.id]) next.longDescription = NARUTO_CHARACTER_LONG[c.id];
   // Chakra override vince sull'esplicito; [] significa "esplicitamente
   // niente nature ninja" (Lee, Guy, Mifune).
   if (chakra !== undefined) next.chakraNatures = chakra;
@@ -69,6 +76,18 @@ const characters = [
   return next;
 });
 
+/** Ordine cronologico: vedi `eventsChronology.ts` (posizione × 10). */
+const chronoIndex = new Map(NARUTO_EVENT_CHRONOLOGY.map((id, i) => [id, (i + 1) * 10]));
+const events: TimelineEvent[] = [...narutoEvents, ...narutoEventsBatch1, ...narutoEventsBatch2]
+  .map((e) => (chronoIndex.has(e.id) ? { ...e, order: chronoIndex.get(e.id)! } : e))
+  .sort((a, b) => a.order - b.order);
+
+/** Gli archi elencano anche tutti gli eventi che li dichiarano in `arcId`. */
+const arcs: StoryArc[] = [...narutoArcs, ...narutoArcsBatch1, ...narutoArcsBatch2].map((arc) => ({
+  ...arc,
+  eventIds: [...new Set([...(arc.eventIds ?? []), ...events.filter((e) => e.arcId === arc.id).map((e) => e.id)])],
+}));
+
 /** Dataset completo del mondo Naruto. */
 export const narutoDataset: WorldDataset = densifyCrossLinks({
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
@@ -77,16 +96,20 @@ export const narutoDataset: WorldDataset = densifyCrossLinks({
   mapLevels: narutoMapLevels,
   nations: [...narutoNations, ...narutoNationsBatch1],
   boundaries: narutoBoundaries,
-  locations: [...narutoLocations, ...narutoLocationsBatch1, ...narutoLocationsBatch2],
+  locations: [...narutoLocations, ...narutoLocationsBatch1, ...narutoLocationsBatch2].map((l) =>
+    !l.longDescription && NARUTO_LOCATION_LONG[l.id] ? { ...l, longDescription: NARUTO_LOCATION_LONG[l.id] } : l,
+  ),
   characters,
   // Per la pagina "Clans & Factions" uniamo clan + organizzazioni/eserciti/gruppi.
   factions: [...narutoClans, ...narutoClansExtra, ...narutoFactions, ...narutoFactionsExtra],
   teams: [...narutoTeams, ...narutoTeamsBatch1],
-  arcs: [...narutoArcs, ...narutoArcsBatch1, ...narutoArcsBatch2],
-  events: [...narutoEvents, ...narutoEventsBatch1],
+  arcs,
+  events,
   // Percorsi narrativi + percorsi specifici dei personaggi
-  routes: [...narutoRoutes, ...narutoCharacterRoutes],
-  jutsu: [...narutoJutsu, ...narutoJutsuBatch1, ...narutoJutsuBatch2, ...narutoJutsuBatch3, ...narutoJutsuBatch4],
+  routes: [...narutoRoutes, ...narutoCharacterRoutes, ...narutoRoutesBatch2],
+  jutsu: [...narutoJutsu, ...narutoJutsuBatch1, ...narutoJutsuBatch2, ...narutoJutsuBatch3, ...narutoJutsuBatch4].map((j) =>
+    !j.longDescription && NARUTO_JUTSU_LONG[j.id] ? { ...j, longDescription: NARUTO_JUTSU_LONG[j.id] } : j,
+  ),
   assets: narutoAssets,
 });
 

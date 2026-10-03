@@ -55,6 +55,7 @@ export const narutoJutsu: Jutsu[] = [
     chakraNature: ['yin'],
     handSeals: ['Ram', 'Serpent', 'Tiger'],
     rank: 'E',
+    characterIds: ['char-iruka', 'char-sasuke', 'char-sakura'],
     shortDescription: {
       it: 'Crea illusioni di se stessi prive di massa e chakra. Tecnica base dell\'Accademia.',
       en: 'Creates illusory copies of oneself with no mass or chakra. Basic Academy technique.',
@@ -1074,7 +1075,7 @@ export const narutoJutsu: Jutsu[] = [
     classification: ['offensive'],
     chakraNature: ['lightning'],
     rank: 'A',
-    characterIds: ['char-darui'],
+    characterIds: ['char-darui', 'char-kakuzu'],
     shortDescription: {
       it: 'Emette un raggio di fulmine di grande potenza dalla bocca o dalla mano.',
       en: 'Emits a powerful lightning beam from the mouth or hand.',
@@ -2069,8 +2070,8 @@ export const narutoJutsu: Jutsu[] = [
     rank: 'S',
     characterIds: ['char-sasuke'],
     shortDescription: {
-      it: 'La tecnica più potente di Sasuke. Assorbe il chakra di tutti i Susanoo delle Battaglie dei Sette Spadaccini per creare una freccia di fulmine devastante.',
-      en: 'Sasuke\'s most powerful technique. Absorbs the chakra of multiple Susanoo to create a devastating lightning arrow.',
+      it: 'La tecnica più potente di Sasuke alla Valle della Fine: il Susanoo Perfetto raccoglie il chakra dei nove cercoteri catturati con il Rinnegan e lo concentra in una freccia di fulmine, che si scontra con il Rasengan dei Sei Cammini di Naruto.',
+      en: 'Sasuke\'s most powerful technique at the Valley of the End: his Perfect Susanoo gathers the chakra of the nine Tailed Beasts he captured with the Rinnegan and focuses it into a lightning arrow, which clashes with Naruto\'s Six Paths Rasengan.',
     },
     canonStatus: 'canon',
     referenceStatus: 'verified',

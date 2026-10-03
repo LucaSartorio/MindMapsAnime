@@ -1,0 +1,62 @@
+import type { Route } from '@/types';
+
+/** Percorsi aggiunti nella revisione di completezza: Madara e Boruto. */
+export const narutoRoutesBatch2: Route[] = [
+  {
+    id: 'route-char-madara',
+    worldId: 'world-naruto',
+    type: 'character',
+    name: 'Madara · From founder to Ten-Tails jinchūriki',
+    localizedName: { it: 'Madara · Dal fondatore al jinchūriki delle Dieci Code', en: 'Madara · From founder to Ten-Tails jinchūriki' },
+    group: { it: 'Personaggi', en: 'Characters' },
+    description: {
+      it: "Madara Uchiha dalla fondazione di Konoha con Hashirama alla battaglia della Valle della Fine, dal piano dello Tsukuyomi Infinito affidato a Obito fino al ritorno nella Quarta Guerra e al tradimento di Black Zetsu.",
+      en: "Madara Uchiha from founding Konoha with Hashirama to the battle at the Valley of the End, from the Infinite Tsukuyomi plan entrusted to Obito to his return in the Fourth War and Black Zetsu's betrayal.",
+    },
+    protagonistCharacterIds: ['char-madara'],
+    relatedCharacterIds: ['char-hashirama', 'char-izuna', 'char-obito', 'char-black-zetsu', 'char-guy', 'char-kaguya'],
+    arcId: 'arc-pre-series',
+    relatedArcIds: ['arc-pre-series', 'arc-fourth-war', 'arc-fourth-war-climax', 'arc-kaguya-final'],
+    steps: [
+      { order: 1, locationId: 'loc-konoha', eventId: 'ev-foundation-konoha', label: { it: 'La fondazione di Konoha', en: "Konoha's founding" } },
+      { order: 2, locationId: 'loc-valley-of-end', eventId: 'ev-valley-end-hashirama-madara', label: { it: 'La Valle della Fine', en: 'The Valley of the End' } },
+      { order: 3, locationId: 'loc-akatsuki-hq', eventId: 'ev-tobi-founds-akatsuki', label: { it: 'Il piano affidato a Obito', en: 'The plan entrusted to Obito' } },
+      { order: 4, locationId: 'loc-fourth-war-battlefield', eventId: 'ev-gaara-onoki-vs-madara', label: { it: 'Contro i cinque Kage', en: 'Against the five Kage' } },
+      { order: 5, locationId: 'loc-fourth-war-battlefield', eventId: 'ev-madara-jinchuriki', label: { it: 'Jinchūriki delle Dieci Code', en: 'Ten-Tails jinchūriki' } },
+      { order: 6, locationId: 'loc-fourth-war-battlefield', eventId: 'ev-might-guy-eight-gates', label: { it: 'Contro Might Guy', en: 'Against Might Guy' } },
+      { order: 7, locationId: 'loc-fourth-war-battlefield', eventId: 'ev-infinite-tsukuyomi', label: { it: 'Lo Tsukuyomi Infinito', en: 'The Infinite Tsukuyomi' } },
+      { order: 8, locationId: 'loc-fourth-war-battlefield', eventId: 'ev-kaguya-resurrection', label: { it: 'Il tradimento di Black Zetsu', en: "Black Zetsu's betrayal" } },
+    ],
+    color: '#7a1f2b',
+    lineStyle: 'solid',
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+  },
+  {
+    id: 'route-char-boruto',
+    worldId: 'world-naruto',
+    type: 'character',
+    name: 'Boruto · From the Chūnin Exams to Two Blue Vortex',
+    localizedName: { it: 'Boruto · Dagli Esami Chūnin a Two Blue Vortex', en: 'Boruto · From the Chūnin Exams to Two Blue Vortex' },
+    group: { it: 'Personaggi', en: 'Characters' },
+    description: {
+      it: "Il figlio di Naruto dalla squalifica agli Esami Chūnin alla sconfitta di Momoshiki, dal Karma a Kawaki, fino all'Onnipotenza di Eida che lo trasforma in un fuggiasco e al ritorno a Konoha tre anni dopo.",
+      en: "Naruto's son from his disqualification at the Chūnin Exams to Momoshiki's defeat, from the Karma to Kawaki, up to Eida's Omnipotence that turns him into a fugitive and his return to Konoha three years later.",
+    },
+    protagonistCharacterIds: ['char-boruto'],
+    relatedCharacterIds: ['char-naruto', 'char-sasuke', 'char-sarada', 'char-mitsuki', 'char-kawaki', 'char-momoshiki', 'char-code'],
+    arcId: 'arc-momoshiki',
+    relatedArcIds: ['arc-momoshiki', 'arc-kara-actuation', 'arc-vessel', 'arc-code-omnipotence', 'arc-two-blue-vortex'],
+    steps: [
+      { order: 1, locationId: 'loc-konoha-exam-arena', eventId: 'ev-boruto-chunin-exams', label: { it: 'Gli Esami Chūnin', en: 'The Chūnin Exams' } },
+      { order: 2, locationId: 'loc-konoha', eventId: 'ev-momoshiki-defeat-karma', label: { it: 'Il Karma di Momoshiki', en: "Momoshiki's Karma" } },
+      { order: 3, locationId: 'loc-konoha', eventId: 'ev-kawaki-arrival', label: { it: 'Kawaki', en: 'Kawaki' } },
+      { order: 4, locationId: 'loc-konoha', eventId: 'ev-eida-omnipotence', label: { it: "L'Onnipotenza", en: 'The Omnipotence' } },
+      { order: 5, locationId: 'loc-konoha', eventId: 'ev-tbv-boruto-returns', label: { it: 'Il ritorno', en: 'The return' } },
+    ],
+    color: '#f2a03a',
+    lineStyle: 'dashed',
+    canonStatus: 'canon',
+    referenceStatus: 'verified',
+  },
+];

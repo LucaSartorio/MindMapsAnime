@@ -1,5 +1,5 @@
 import { onepieceSlugs } from './slugs';
-import type { Location, PoneglyphRef, WorldDataset } from '@/types';
+import type { Character, Faction, Jutsu, Location, PoneglyphRef, StoryArc, TimelineEvent, WorldDataset } from '@/types';
 import { animeWorlds } from '@/data/worlds';
 import { onepieceMapLevels } from './mapLevels';
 import { onepieceNations } from './nations';
@@ -58,6 +58,7 @@ import { onepieceCharactersGrandFleet } from './charactersGrandFleet';
 import { onepieceCharactersFilms } from './charactersFilms';
 import { onepieceCharactersExtra9 } from './charactersExtra9';
 import { onepieceCharactersExtra10 } from './charactersExtra10';
+import { onepieceCharactersCompletion } from './charactersCompletion';
 import { onepieceArcs } from './arcs';
 import { onepieceArcsSouthBlue } from './arcsSouthBlue';
 import { onepieceArcsNorthBlue } from './arcsNorthBlue';
@@ -69,6 +70,7 @@ import { onepieceArcsNewWorldSagas } from './arcsNewWorldSagas';
 import { onepieceArcsWholeCakeWano } from './arcsWholeCakeWano';
 import { onepieceArcsEgghead } from './arcsEgghead';
 import { onepieceArcsExtra } from './arcsExtra';
+import { onepieceArcsCompletion } from './arcsCompletion';
 import { onepieceEvents } from './events';
 import { onepieceEventsSouthBlue } from './eventsSouthBlue';
 import { onepieceEventsNorthBlue } from './eventsNorthBlue';
@@ -89,6 +91,7 @@ import { onepieceEventsSpace } from './eventsSpace';
 import { onepieceEventsThreeWorlds } from './eventsThreeWorlds';
 import { onepieceEventsCovers } from './eventsCovers';
 import { onepieceEventsExtra4 } from './eventsExtra4';
+import { onepieceEventsCompletion } from './eventsCompletion';
 import { onepieceRoutes } from './routes';
 import { onepieceRoutesGrandLine } from './routesGrandLine';
 import { onepieceRoutesExtra } from './routesExtra';
@@ -100,6 +103,7 @@ import { onepieceAssets } from './assets';
 import { onepieceBounties } from './bounties';
 import { onepieceTrivia } from './trivia';
 import { withCharacterLinks } from './characterLinks';
+import { ONEPIECE_FRUIT_LONG, ONEPIECE_LOCATION_LONG } from './fruitsEnrichment';
 
 const onepiece = animeWorlds.find((w) => w.slug === 'onepiece')!;
 
@@ -253,10 +257,207 @@ const onepiecePoneglyphs: Record<string, PoneglyphRef> = {
 
 /** Aggancia ai luoghi il riferimento al Poneglyph eventualmente presente. */
 function withPoneglyphs(locations: Location[]): Location[] {
-  return locations.map((l) =>
-    onepiecePoneglyphs[l.id] ? { ...l, poneglyph: onepiecePoneglyphs[l.id] } : l,
-  );
+  return locations.map((l) => {
+    const withText = !l.longDescription && ONEPIECE_LOCATION_LONG[l.id] ? { ...l, longDescription: ONEPIECE_LOCATION_LONG[l.id] } : l;
+    return onepiecePoneglyphs[l.id] ? { ...withText, poneglyph: onepiecePoneglyphs[l.id] } : withText;
+  });
 }
+
+
+/* ----------------------------- Revisione di completezza ----------------------------- */
+
+/** Archi corretti per eventi rimasti senza arco o assegnati all'arco sbagliato. */
+const EVENT_ARC_OVERRIDES: Record<string, string> = {
+  'evt-op-whisky-peak': 'arc-op-whisky-peak',
+  'evt-op-little-garden': 'arc-op-little-garden',
+  'evt-op-fight-luffy-foxy': 'arc-op-long-ring',
+  'evt-op-sabaody-reunion': 'arc-op-return-to-sabaody',
+  'evt-op-zou-alliance': 'arc-op-zou',
+  'evt-op-fight-jack-minks': 'arc-op-zou',
+  'evt-op-harley-texts': 'arc-op-elbaf',
+  'evt-op-elbaf-war': 'arc-op-elbaf',
+  'evt-op-cross-guild': 'arc-op-egghead',
+  'evt-op-lulusia-destruction': 'arc-op-egghead',
+};
+
+/**
+ * Doppioni: la stessa scena era registrata due volte (racconto + «scontro»).
+ * Resta la prima; della seconda si conservano tag e personaggi.
+ */
+const DUPLICATE_EVENTS: Record<string, string> = {
+  'evt-op-fight-zoro-mihawk': 'evt-op-zoro-vs-mihawk',
+  'evt-op-fight-luffy-usopp': 'evt-op-ws-usopp-duel',
+  'evt-op-fight-luffy-lucci': 'evt-op-el-lucci-fight',
+  'evt-op-fight-luffy-katakuri': 'evt-op-katakuri-duel',
+  'evt-op-lulusia-erased': 'evt-op-lulusia-destruction',
+};
+
+/** Utilizzatori dei Frutti del Diavolo che nel dataset risultavano senza personaggio. */
+const FRUIT_USERS: Record<string, string[]> = {
+  'fruit-op-bomu-bomu': ['char-op-mr-5'],
+  'fruit-op-kilo-kilo': ['char-op-miss-valentine'],
+  'fruit-op-doru-doru': ['char-op-mr-3'],
+  'fruit-op-supa-supa': ['char-op-daz-bones'],
+  'fruit-op-toge-toge': ['char-op-miss-doublefinger'],
+  'fruit-op-woshu-woshu': ['char-op-tsuru'],
+  'fruit-op-fuwa-fuwa': ['char-op-shiki'],
+  'fruit-op-nui-nui': ['char-op-leo'],
+  'fruit-op-giro-giro': ['char-op-viola'],
+  'fruit-op-kuri-kuri': ['char-op-opera'],
+  'fruit-op-buku-buku': ['char-op-mont-dor'],
+  'fruit-op-kuku-kuku': ['char-op-streusen'],
+  'fruit-op-juku-juku': ['char-op-shinobu'],
+  'fruit-op-inu-inu-jackal': ['char-op-chaka'],
+  'fruit-op-uma-uma': ['char-op-pierre'],
+  'fruit-op-mogu-mogu': ['char-op-miss-merry-christmas'],
+  'fruit-op-hito-hito-onyudo': ['char-op-onimaru'],
+  'fruit-op-mushi-mushi-kabuto': ['char-op-kabu'],
+  'fruit-op-mushi-mushi-suzumebachi': ['char-op-bian'],
+  'fruit-op-tori-tori-albatross': ['char-op-morgans'],
+  'fruit-op-guru-guru': ['char-op-buffalo'],
+};
+
+const rawEvents: TimelineEvent[] = [
+  ...onepieceEvents,
+  ...onepieceEventsSouthBlue,
+  ...onepieceEventsNorthBlue,
+  ...onepieceEventsWestBlue,
+  ...onepieceEventsRedLine,
+  ...onepieceEventsParadise,
+  ...onepieceEventsParadise2,
+  ...onepieceEventsNewWorldSagas,
+  ...onepieceEventsWholeCakeWano,
+  ...onepieceEventsEgghead,
+  ...onepieceEventsExtra,
+  ...onepieceEventsExtra2,
+  ...onepieceEventsBattles,
+  ...onepieceEventsBattles2,
+  ...onepieceEventsBattles3,
+  ...onepieceEventsExtra3,
+  ...onepieceEventsSpace,
+  ...onepieceEventsThreeWorlds,
+  ...onepieceEventsCovers,
+  ...onepieceEventsExtra4,
+  ...onepieceEventsCompletion,
+];
+
+const rawArcs: StoryArc[] = [
+  ...onepieceArcs,
+  ...onepieceArcsSouthBlue,
+  ...onepieceArcsNorthBlue,
+  ...onepieceArcsWestBlue,
+  ...onepieceArcsRedLine,
+  ...onepieceArcsParadise,
+  ...onepieceArcsParadise2,
+  ...onepieceArcsNewWorldSagas,
+  ...onepieceArcsWholeCakeWano,
+  ...onepieceArcsEgghead,
+  ...onepieceArcsExtra,
+  ...onepieceArcsCompletion,
+];
+
+/** Arco di un evento: override esplicito → `arcId` → l'arco che lo elenca in `eventIds`. */
+const arcListing = new Map<string, string>();
+for (const a of rawArcs) for (const id of a.eventIds ?? []) if (!arcListing.has(id)) arcListing.set(id, a.id);
+
+const merged = new Map<string, TimelineEvent>();
+for (const ev of rawEvents) {
+  const arcId = EVENT_ARC_OVERRIDES[ev.id] ?? ev.arcId ?? arcListing.get(ev.id);
+  merged.set(ev.id, arcId ? { ...ev, arcId } : ev);
+}
+for (const [dup, keep] of Object.entries(DUPLICATE_EVENTS)) {
+  const d = merged.get(dup);
+  const k = merged.get(keep);
+  if (!d || !k) continue;
+  merged.set(keep, {
+    ...k,
+    characterIds: [...new Set([...(k.characterIds ?? []), ...(d.characterIds ?? [])])],
+    tags: [...new Set([...(k.tags ?? []), ...(d.tags ?? [])])],
+  });
+  merged.delete(dup);
+}
+const events: TimelineEvent[] = [...merged.values()].sort((a, b) => a.order - b.order);
+
+/** Gli archi elencano tutti gli eventi che li dichiarano (e mai un doppione rimosso). */
+const arcs: StoryArc[] = rawArcs.map((a) => ({
+  ...a,
+  eventIds: [
+    ...new Set([...(a.eventIds ?? []), ...events.filter((e) => e.arcId === a.id).map((e) => e.id)].map((id) => DUPLICATE_EVENTS[id] ?? id)),
+  ].filter((id) => merged.has(id)),
+}));
+
+const jutsu: Jutsu[] = [...onepieceDevilFruits, ...onepieceDevilFruitsExtra, ...onepieceDevilFruitsExtra2, ...onepieceDevilFruitsExtra3].map(
+  (f) => {
+    const withUsers = FRUIT_USERS[f.id] && !(f.characterIds?.length) ? { ...f, characterIds: FRUIT_USERS[f.id] } : f;
+    return !withUsers.longDescription && ONEPIECE_FRUIT_LONG[f.id] ? { ...withUsers, longDescription: ONEPIECE_FRUIT_LONG[f.id] } : withUsers;
+  },
+);
+
+const characters: Character[] = withCharacterLinks(
+    [
+      ...onepieceCharactersEastBlue,
+      ...onepieceCharactersSouthBlue,
+      ...onepieceCharactersNorthBlue,
+      ...onepieceCharactersWestBlue,
+      ...onepieceCharactersRedLine,
+      ...onepieceCharactersParadise,
+      ...onepieceCharactersParadise2,
+      ...onepieceCharactersNewWorldSagas,
+      ...onepieceCharactersWholeCakeWano,
+      ...onepieceCharactersEgghead,
+      ...onepieceCharactersSupernovas,
+      ...onepieceCharactersExtra,
+      ...onepieceCharactersExtra2,
+      ...onepieceCharactersExtra3,
+      ...onepieceCharactersExtra4,
+      ...onepieceCharactersExtra5,
+      ...onepieceCharactersExtra6,
+      ...onepieceCharactersExtra7,
+      ...onepieceCharactersExtra8,
+      ...onepieceCharactersGrandFleet,
+      ...onepieceCharactersFilms,
+      ...onepieceCharactersExtra9,
+      ...onepieceCharactersExtra10,
+      ...onepieceCharactersCompletion,
+    ].map((c) => {
+      const b = onepieceBounties[c.id];
+      const t = onepieceTrivia[c.id];
+      // I frutti dichiarano i propri utilizzatori: il personaggio li riceve in `jutsuIds`.
+      const fruits = jutsu.filter((f) => f.characterIds?.includes(c.id)).map((f) => f.id);
+      const jutsuIds = [...new Set([...(c.jutsuIds ?? []), ...fruits])];
+      const next = jutsuIds.length ? { ...c, jutsuIds } : c;
+      return b || t ? { ...next, ...(b ? { bounties: b } : {}), ...(t ? { trivia: t } : {}) } : next;
+    }),
+);
+
+/**
+ * Le fazioni ricevono in `jutsuIds` i frutti dei propri membri (da `character.factionIds`
+ * o da `faction.characterIds`/`leaderIds`): così ogni frutto è collegato anche alla ciurma
+ * o all'organizzazione di chi lo usa.
+ */
+const factions: Faction[] = [
+    ...onepieceFactions,
+    ...onepieceFactionsSouthBlue,
+    ...onepieceFactionsNorthBlue,
+    ...onepieceFactionsWestBlue,
+    ...onepieceFactionsRedLine,
+    ...onepieceFactionsParadise,
+    ...onepieceFactionsParadise2,
+    ...onepieceFactionsWholeCakeWano,
+    ...onepieceFactionsEgghead,
+    ...onepieceFactionsSupernovas,
+    ...onepieceFactionsExtra,
+    ...onepieceFactionsWeapons,
+    ...onepieceFactionsExtra2,
+    ...onepieceFactionsConcepts,
+    ...onepieceFactionsShips,
+].map((f) => {
+  const members = new Set([...(f.characterIds ?? []), ...(f.leaderIds ?? [])]);
+  for (const c of characters) if (c.factionIds?.includes(f.id) || c.clanIds?.includes(f.id)) members.add(c.id);
+  const fruits = jutsu.filter((j) => j.characterIds?.some((id) => members.has(id))).map((j) => j.id);
+  const jutsuIds = [...new Set([...(f.jutsuIds ?? []), ...fruits])];
+  return jutsuIds.length ? { ...f, jutsuIds } : f;
+});
 
 export const onepieceDataset: WorldDataset = {
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
@@ -283,91 +484,12 @@ export const onepieceDataset: WorldDataset = {
     ...onepieceLocationsThreeWorlds,
     ...onepieceLocationsExtra3,
   ]))),
-  characters: withCharacterLinks(
-    [
-      ...onepieceCharactersEastBlue,
-      ...onepieceCharactersSouthBlue,
-      ...onepieceCharactersNorthBlue,
-      ...onepieceCharactersWestBlue,
-      ...onepieceCharactersRedLine,
-      ...onepieceCharactersParadise,
-      ...onepieceCharactersParadise2,
-      ...onepieceCharactersNewWorldSagas,
-      ...onepieceCharactersWholeCakeWano,
-      ...onepieceCharactersEgghead,
-      ...onepieceCharactersSupernovas,
-      ...onepieceCharactersExtra,
-      ...onepieceCharactersExtra2,
-      ...onepieceCharactersExtra3,
-      ...onepieceCharactersExtra4,
-      ...onepieceCharactersExtra5,
-      ...onepieceCharactersExtra6,
-      ...onepieceCharactersExtra7,
-      ...onepieceCharactersExtra8,
-      ...onepieceCharactersGrandFleet,
-      ...onepieceCharactersFilms,
-      ...onepieceCharactersExtra9,
-      ...onepieceCharactersExtra10,
-    ].map((c) => {
-      const b = onepieceBounties[c.id];
-      const t = onepieceTrivia[c.id];
-      return b || t ? { ...c, ...(b ? { bounties: b } : {}), ...(t ? { trivia: t } : {}) } : c;
-    }),
-  ),
-  factions: [
-    ...onepieceFactions,
-    ...onepieceFactionsSouthBlue,
-    ...onepieceFactionsNorthBlue,
-    ...onepieceFactionsWestBlue,
-    ...onepieceFactionsRedLine,
-    ...onepieceFactionsParadise,
-    ...onepieceFactionsParadise2,
-    ...onepieceFactionsWholeCakeWano,
-    ...onepieceFactionsEgghead,
-    ...onepieceFactionsSupernovas,
-    ...onepieceFactionsExtra,
-    ...onepieceFactionsWeapons,
-    ...onepieceFactionsExtra2,
-    ...onepieceFactionsConcepts,
-    ...onepieceFactionsShips,
-  ],
-  arcs: [
-    ...onepieceArcs,
-    ...onepieceArcsSouthBlue,
-    ...onepieceArcsNorthBlue,
-    ...onepieceArcsWestBlue,
-    ...onepieceArcsRedLine,
-    ...onepieceArcsParadise,
-    ...onepieceArcsParadise2,
-    ...onepieceArcsNewWorldSagas,
-    ...onepieceArcsWholeCakeWano,
-    ...onepieceArcsEgghead,
-    ...onepieceArcsExtra,
-  ],
-  events: [
-    ...onepieceEvents,
-    ...onepieceEventsSouthBlue,
-    ...onepieceEventsNorthBlue,
-    ...onepieceEventsWestBlue,
-    ...onepieceEventsRedLine,
-    ...onepieceEventsParadise,
-    ...onepieceEventsParadise2,
-    ...onepieceEventsNewWorldSagas,
-    ...onepieceEventsWholeCakeWano,
-    ...onepieceEventsEgghead,
-    ...onepieceEventsExtra,
-    ...onepieceEventsExtra2,
-    ...onepieceEventsBattles,
-    ...onepieceEventsBattles2,
-    ...onepieceEventsBattles3,
-    ...onepieceEventsExtra3,
-    ...onepieceEventsSpace,
-    ...onepieceEventsThreeWorlds,
-    ...onepieceEventsCovers,
-    ...onepieceEventsExtra4,
-  ],
+  characters,
+  factions,
+  arcs,
+  events,
   routes: [...onepieceRoutes, ...onepieceRoutesGrandLine, ...onepieceRoutesExtra],
-  jutsu: [...onepieceDevilFruits, ...onepieceDevilFruitsExtra, ...onepieceDevilFruitsExtra2, ...onepieceDevilFruitsExtra3],
+  jutsu,
   assets: onepieceAssets,
 };
 

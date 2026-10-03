@@ -32,6 +32,16 @@ import { hxhNenBatch2 } from './nenBatch2';
 import { hxhNenBatch3 } from './nenBatch3';
 import { enrichHxhCharacters, enrichHxhEvents, enrichHxhFactions } from './relations';
 import { hxhAssets } from './assets';
+import {
+  HXH_BASIC_NEN_USERS,
+  HXH_EVENT_LOCATIONS,
+  HXH_NEW_SUBMAP_TRIGGERS,
+  hxhCompletionCharacters,
+  hxhCompletionEvents,
+  hxhCompletionFactions,
+  hxhCompletionLocations,
+} from './completion';
+import { HXH_CHARACTER_LONG, HXH_JUTSU_LONG, HXH_LOCATION_LONG } from './contentEnrichment';
 
 const hunterxhunter = animeWorlds.find((w) => w.slug === 'hunterxhunter')!;
 
@@ -43,7 +53,21 @@ const hunterxhunter = animeWorlds.find((w) => w.slug === 'hunterxhunter')!;
  * continenti, confini cliccabili e luoghi iconici) su mappa di riferimento
  * fan-made.
  */
-const hxhAllJutsu = [...hxhNen, ...hxhNenBatch1, ...hxhNenBatch2, ...hxhNenBatch3];
+const hxhAllJutsu = [...hxhNen, ...hxhNenBatch1, ...hxhNenBatch2, ...hxhNenBatch3].map((j) => {
+  if (!j.longDescription && HXH_JUTSU_LONG[j.id]) j = { ...j, longDescription: HXH_JUTSU_LONG[j.id] };
+  const users = HXH_BASIC_NEN_USERS[j.id];
+  if (!users) return j;
+  const ids = users.map((u) => `char-hxh-${u}`);
+  return { ...j, characterIds: [...new Set([...(j.characterIds ?? []), ...ids])] };
+});
+
+const hxhAllFactions = enrichHxhFactions([...hxhFactions, ...hxhFactionsBatch1, ...hxhCompletionFactions]);
+
+/** Appartenenza alle fazioni nuove: la lista membri della fazione è la fonte. */
+const factionsOf = new Map<string, string[]>();
+for (const f of hxhCompletionFactions)
+  for (const c of f.characterIds ?? []) factionsOf.set(c, [...(factionsOf.get(c) ?? []), f.id]);
+
 
 const hxhAllCharacters = enrichHxhCharacters(
   [
@@ -55,7 +79,12 @@ const hxhAllCharacters = enrichHxhCharacters(
     ...hxhCharactersBatch5,
     ...hxhCharactersBatch6,
     ...hxhCharactersBatch7,
-  ],
+    ...hxhCompletionCharacters,
+  ].map((c) => {
+    if (!c.longDescription && HXH_CHARACTER_LONG[c.id]) c = { ...c, longDescription: HXH_CHARACTER_LONG[c.id] };
+    const extra = factionsOf.get(c.id);
+    return extra ? { ...c, factionIds: [...new Set([...(c.factionIds ?? []), ...extra])] } : c;
+  }),
   hxhAllJutsu,
 );
 
@@ -66,9 +95,15 @@ export const hunterxhunterDataset: WorldDataset = {
   mapLevels: hxhMapLevels,
   nations: hxhNations,
   boundaries: hxhBoundaries,
-  locations: [...hxhLocations, ...hxhLocationsBatch1, ...hxhSubmapLocations],
+  locations: [...hxhLocations, ...hxhLocationsBatch1, ...hxhSubmapLocations, ...hxhCompletionLocations].map((l) =>
+    ({
+      ...l,
+      ...(HXH_NEW_SUBMAP_TRIGGERS[l.id] ? { subMapLevelId: HXH_NEW_SUBMAP_TRIGGERS[l.id] } : {}),
+      ...(!l.longDescription && HXH_LOCATION_LONG[l.id] ? { longDescription: HXH_LOCATION_LONG[l.id] } : {}),
+    }),
+  ),
   characters: hxhAllCharacters,
-  factions: enrichHxhFactions([...hxhFactions, ...hxhFactionsBatch1]),
+  factions: hxhAllFactions,
   arcs: hxhArcs,
   events: enrichHxhEvents([
     ...hxhEvents,
@@ -76,7 +111,11 @@ export const hunterxhunterDataset: WorldDataset = {
     ...hxhEventsBatch2,
     ...hxhEventsBatch3,
     ...hxhEventsBatch4,
-  ]),
+    ...hxhCompletionEvents,
+  ].map((e) => {
+    const at = HXH_EVENT_LOCATIONS[e.id];
+    return at ? { ...e, locationId: at, locationIds: e.locationIds ? [at] : undefined } : e;
+  })),
   routes: [...hxhRoutes, ...hxhRoutesBatch1, ...hxhRoutesBatch2],
   jutsu: hxhAllJutsu,
   assets: hxhAssets,

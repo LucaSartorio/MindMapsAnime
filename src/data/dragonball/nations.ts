@@ -129,8 +129,8 @@ export const dragonballNations: Nation[] = [
     localizedName: { it: 'Pianeta Vegeta', en: 'Planet Vegeta' },
     type: 'neutral_land',
     description: {
-      it: 'Pianeta natale dei Saiyan, distrutto da Freezer. Sede del prologo della saga dei Saiyan (Bardack, la vecchia guardia dei Saiyan).',
-      en: "The Saiyans' homeworld, destroyed by Frieza. The setting of the Saiyan saga's prologue (Bardock and the old Saiyan guard).",
+      it: "Pianeta natale dei Saiyan, distrutto da Freezer. Sede del prologo della saga dei Saiyan (Bardack, la vecchia guardia dei Saiyan): qui Re Vegeta esilia il neonato Broly e Bardack e Gine mettono in salvo il piccolo Kakaroth, spedendolo sulla Terra.",
+      en: "The Saiyans' homeworld, destroyed by Frieza. The setting of the Saiyan saga's prologue (Bardock and the old Saiyan guard): here King Vegeta exiles the newborn Broly, and Bardock and Gine save little Kakarot by sending him to Earth.",
     },
     relatedLocationIds: ['loc-dbz-vegeta-planet'],
     relatedArcIds: ['arc-dbz-saiyan-saga'],
@@ -145,8 +145,8 @@ export const dragonballNations: Nation[] = [
     localizedName: { it: 'Pianeta di Beerus', en: "Beerus's Planet" },
     type: 'neutral_land',
     description: {
-      it: "Dimora del Dio della Distruzione dell'Universo 7 e del suo angelo Whis.",
-      en: "Home of Universe 7's God of Destruction and his angel Whis.",
+      it: "Dimora del Dio della Distruzione dell'Universo 7 e del suo angelo Whis: un piccolo pianeta dalla forma irregolare, con una piramide e alberi giganteschi. Dopo Battle of Gods Goku e Vegeta vi si allenano con Whis fino al Super Saiyan Blue.",
+      en: "Home of Universe 7's God of Destruction and his angel Whis: a small, irregularly shaped planet with a pyramid and giant trees. After Battle of Gods Goku and Vegeta train there with Whis up to Super Saiyan Blue.",
     },
     relatedLocationIds: ['loc-dbz-beerus-planet'],
     relatedArcIds: ['arc-dbz-battle-of-gods', 'arc-dbz-resurrection-f'],

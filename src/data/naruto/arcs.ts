@@ -424,8 +424,8 @@ export const narutoArcs: StoryArc[] = [
     saga: { it: 'Post-serie', en: 'Post-series' },
     order: 21,
     description: {
-      it: 'Movie. Toneri minaccia la Terra dalla Luna; Naruto e Hinata si avvicinano.',
-      en: 'Movie. Toneri threatens the Earth from the Moon; Naruto and Hinata grow closer.',
+      it: 'Film canonico ambientato due anni dopo la guerra. Toneri Ōtsutsuki, discendente di Hamura, rapisce Hanabi per prenderne il Byakugan e fa precipitare la luna verso la Terra; Naruto, Hinata, Sakura, Shikamaru e Sai la raggiungono, e Naruto e Hinata si dichiarano.',
+      en: 'A canon film set two years after the war. Toneri Ōtsutsuki, Hamura\'s descendant, kidnaps Hanabi to take her Byakugan and sends the moon falling towards Earth; Naruto, Hinata, Sakura, Shikamaru and Sai reach it, and Naruto and Hinata declare their love.',
     },
     animeEpisodes: ['Film 10'],
     canon: 'movie',
@@ -440,8 +440,8 @@ export const narutoArcs: StoryArc[] = [
     saga: { it: 'Post-serie', en: 'Post-series' },
     order: 22,
     description: {
-      it: 'Naruto Uzumaki realizza il sogno d\'infanzia diventando Settimo Hokage.',
-      en: 'Naruto Uzumaki fulfils his childhood dream by becoming the Seventh Hokage.',
+      it: 'Naruto Uzumaki realizza il sogno d\'infanzia diventando Settimo Hokage, sposato con Hinata e padre di Boruto e Himawari. Il villaggio è cambiato, fra treni e grattacieli, e una nuova generazione si prepara agli Esami Chūnin.',
+      en: 'Naruto Uzumaki fulfils his childhood dream by becoming the Seventh Hokage, married to Hinata and father of Boruto and Himawari. The village has changed, with trains and skyscrapers, and a new generation prepares for the Chūnin Exams.',
     },
     mangaChapters: ['700'],
     animeEpisodes: ['Shippuden ep. 479-500'],

@@ -42,6 +42,32 @@ const blackclover = animeWorlds.find((w) => w.slug === 'blackclover')!;
  * Entrambe le tassonomie vivono in `config.ts` e sono cablate nel `WorldConfig`
  * del mondo in `src/data/worlds.ts`.
  */
+const characters = [
+  ...blackcloverCharacters,
+  ...blackcloverCharactersBatch1,
+  ...blackcloverCharactersMagicKnights,
+  ...blackcloverCharactersCloverRealm,
+  ...blackcloverCharactersElves,
+  ...blackcloverCharactersSpade,
+  ...blackcloverCharactersOtherLands,
+];
+
+/**
+ * Le magie dei membri diventano anche magie della loro compagnia/fazione
+ * (`faction.jutsuIds`): la scheda del Toro Nero elenca le magie dei suoi
+ * membri e ogni magia rimanda alla squadra di chi la usa. Solo per i gruppi
+ * "a misura di squadra" (≤ 25 membri), non per le macro-categorie.
+ */
+const factions = [...blackcloverFactions, ...blackcloverFactionsBatch1].map((f) => {
+  const members = new Set([
+    ...(f.characterIds ?? []),
+    ...characters.filter((c) => c.factionIds?.includes(f.id)).map((c) => c.id),
+  ]);
+  if (members.size === 0 || members.size > 25) return f;
+  const magic = blackcloverMagic.filter((j) => j.characterIds?.some((id) => members.has(id))).map((j) => j.id);
+  return { ...f, jutsuIds: [...new Set([...(f.jutsuIds ?? []), ...magic])] };
+});
+
 export const blackcloverDataset: WorldDataset = {
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
   seoSlugs: blackcloverSlugs,
@@ -53,16 +79,8 @@ export const blackcloverDataset: WorldDataset = {
     ...blackcloverLocationsBatch1,
     ...blackcloverLocationsSubmaps,
   ],
-  characters: [
-    ...blackcloverCharacters,
-    ...blackcloverCharactersBatch1,
-    ...blackcloverCharactersMagicKnights,
-    ...blackcloverCharactersCloverRealm,
-    ...blackcloverCharactersElves,
-    ...blackcloverCharactersSpade,
-    ...blackcloverCharactersOtherLands,
-  ],
-  factions: [...blackcloverFactions, ...blackcloverFactionsBatch1],
+  characters,
+  factions,
   arcs: blackcloverArcs,
   events: [...blackcloverEvents, ...blackcloverEventsBatch1],
   routes: blackcloverRoutes,

@@ -121,8 +121,8 @@ export const hxhNenBatch2: Jutsu[] = [
     classification: ['supplementary'],
     characterIds: ['char-hxh-kurapika'],
     shortDescription: {
-      it: "Catena del mignolo di Kurapika: ruba e sigilla temporaneamente l'abilità Nen di un bersaglio.",
-      en: "Kurapika's little-finger chain: temporarily steals and seals a target's Nen ability.",
+      it: "Catena dell'anulare di Kurapika: ruba e sigilla temporaneamente l'abilità Nen di un bersaglio.",
+      en: "Kurapika's ring-finger chain: temporarily steals and seals a target's Nen ability.",
     },
     canonStatus: 'canon',
     referenceStatus: 'verified',

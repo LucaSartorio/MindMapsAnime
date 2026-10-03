@@ -171,8 +171,8 @@ export const blackcloverNations: Nation[] = [
       en: "An isolated country to the east, Yami Sukehiro's homeland: shielded by a barrier, it cultivates the art of ki and the sword instead of grimoire magic.",
     },
     descriptionLong: {
-      it: "Retto dallo shōgun Ryūya Ryūdō e difeso dai Sette Ryūzen, il Paese del Sole percepisce il ki degli avversari e combatte con tecniche di spada anziché con incantesimi. Asta vi arriva quasi morto dopo la sconfitta contro Dante e vi impara lo Zetten, la tecnica che gli permetterà di tagliare la magia con il proprio corpo.",
-      en: "Ruled by Shogun Ryuya Ryudo and defended by the Ryuzen Seven, the Land of the Sun reads its opponents' ki and fights with sword techniques rather than spells. Asta arrives there half-dead after his defeat by Dante and learns Zetten, the technique that will let him cut magic with his own body.",
+      it: "Retto dallo shōgun Ryūya Ryūdō e difeso dai Sette Ryūzen, il Paese del Sole percepisce il ki degli avversari e combatte con tecniche di spada anziché con incantesimi. Asta vi arriva quasi morto dopo il primo scontro con Lucius Zogratis e vi impara lo Zetten, la tecnica che gli permetterà di tagliare la magia con il proprio corpo.",
+      en: "Ruled by Shogun Ryuya Ryudo and defended by the Ryuzen Seven, the Land of the Sun reads its opponents' ki and fights with sword techniques rather than spells. Asta arrives there half-dead after his first clash with Lucius Zogratis and learns Zetten, the technique that will let him cut magic with his own body.",
     },
     capitalLocationId: 'loc-bc-hino-country',
     labelPosition: { x: 1120, y: 742 },

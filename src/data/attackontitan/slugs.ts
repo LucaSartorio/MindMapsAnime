@@ -209,14 +209,18 @@ export const attackontitanSlugs: SeoSlugLock = {
     "journeys": {
       "route-aot-57th": "the-57th-expedition",
       "route-aot-eren-journey": "eren-yeagers-journey",
+      "route-aot-gabi-falco": "gabi-and-falco",
       "route-aot-grisha": "grisha-yeagers-path",
       "route-aot-historia": "historias-path",
+      "route-aot-jean": "jeans-path",
       "route-aot-levi": "levis-path",
       "route-aot-liberio-raid": "the-raid-on-liberio",
       "route-aot-retake-maria": "operation-to-retake-wall-maria",
       "route-aot-rumbling": "stopping-the-rumbling",
       "route-aot-trost": "the-defence-of-trost",
-      "route-aot-warriors": "the-warriors-mission"
+      "route-aot-warriors": "the-warriors-mission",
+      "route-aot-ymir-fritz": "ymir-fritzs-path",
+      "route-aot-zeke": "zekes-path"
     },
     "abilities": {
       "tit-aot-ackerman-power": "ackerman-power",

@@ -1,5 +1,14 @@
 import type { MapLevel } from '@/types';
-import { DRAGONBALL_COSMIC_VIEWBOX, DRAGONBALL_GT_SPACE_VIEWBOX, DRAGONBALL_MAP_VIEWBOX, DRAGONBALL_NAMEK_VIEWBOX } from './mapConstants';
+import {
+  DRAGONBALL_COSMIC_VIEWBOX,
+  DRAGONBALL_GT_SPACE_VIEWBOX,
+  DRAGONBALL_LOOKOUT_VIEWBOX,
+  DRAGONBALL_MAP_VIEWBOX,
+  DRAGONBALL_NAMEK_VIEWBOX,
+  DRAGONBALL_OTHER_WORLD_VIEWBOX,
+  DRAGONBALL_PAPAYA_VIEWBOX,
+  DRAGONBALL_WEST_CITY_VIEWBOX,
+} from './mapConstants';
 
 /**
  * Map level Dragon Ball.
@@ -74,5 +83,69 @@ export const dbzMapLevels: MapLevel[] = [
     backgroundAssetId: 'dbz-gt-space-map',
     width: DRAGONBALL_GT_SPACE_VIEWBOX.width,
     height: DRAGONBALL_GT_SPACE_VIEWBOX.height,
+  },
+  {
+    id: 'dbz-map-other-world',
+    worldId: 'world-dragonball',
+    slug: 'other-world',
+    name: 'Other World',
+    localizedName: { it: 'Aldilà', en: 'Other World' },
+    description: {
+      it: "L'Aldilà di Dragon Ball: il palazzo di Re Yama dove le anime vengono giudicate, la Via del Serpente lunga un milione di chilometri, il palazzo della Principessa Serpente, il pianetino di Re Kaiō, il pianeta del Gran Kaiō con lo stadio del Torneo dell'Aldilà, il Paradiso e l'Inferno. Schema originale, posizioni indicative. Doppio clic su «Universo» per tornare alla mappa cosmica.",
+      en: "Dragon Ball's Other World: King Yemma's palace where souls are judged, the million-kilometre Snake Way, Princess Snake's palace, King Kai's tiny planet, Grand Kai's planet with the Other World Tournament stadium, Heaven and Hell. Original diagram, indicative positions. Double-click 'Universe' to return to the cosmic map.",
+    },
+    parentLevelId: 'dbz-map-cosmic',
+    triggerLocationId: 'loc-dbz-other-world',
+    backgroundAssetId: 'dbz-other-world-map',
+    width: DRAGONBALL_OTHER_WORLD_VIEWBOX.width,
+    height: DRAGONBALL_OTHER_WORLD_VIEWBOX.height,
+  },
+  {
+    id: 'dbz-map-lookout',
+    worldId: 'world-dragonball',
+    slug: 'lookout',
+    name: "Kami's Lookout",
+    localizedName: { it: 'Santuario di Dio e Torre di Karin', en: "Kami's Lookout & Korin Tower" },
+    description: {
+      it: "In verticale, dalla Terra Sacra di Karin al cielo: la foresta dove vivono Bora e Upa, la Torre di Karin con i fagioli di Balzar in cima, e sopra le nuvole il Santuario di Dio con il palazzo e la Stanza dello Spirito e del Tempo. Schema originale. Doppio clic su «Terra» per tornare alla mappa principale.",
+      en: "Vertically, from Korin's Holy Land to the sky: the forest where Bora and Upa live, Korin Tower with the Senzu beans at its top, and above the clouds Kami's Lookout with the palace and the Hyperbolic Time Chamber. Original diagram. Double-click 'Earth' to return to the main map.",
+    },
+    parentLevelId: 'dbz-map-world',
+    triggerLocationId: 'loc-dbz-lookout',
+    backgroundAssetId: 'dbz-lookout-map',
+    width: DRAGONBALL_LOOKOUT_VIEWBOX.width,
+    height: DRAGONBALL_LOOKOUT_VIEWBOX.height,
+  },
+  {
+    id: 'dbz-map-papaya',
+    worldId: 'world-dragonball',
+    slug: 'papaya-island',
+    name: 'Papaya Island',
+    localizedName: { it: 'Isola di Papaya · Torneo Tenkaichi', en: 'Papaya Island · World Martial Arts Tournament' },
+    description: {
+      it: "L'isola che ospita il Torneo Tenkaichi: il porto dei traghetti, la cittadina, il portale d'ingresso, la sala delle eliminatorie e il ring di pietra dove si sono affrontati Goku, Jackie Chun, Tenshinhan, Piccolo e, anni dopo, Gohan e Majin Vegeta. Schema originale. Doppio clic su «Terra» per tornare alla mappa principale.",
+      en: "The island that hosts the World Martial Arts Tournament: the ferry port, the town, the entrance gate, the preliminaries hall and the stone ring where Goku, Jackie Chun, Tien, Piccolo and, years later, Gohan and Majin Vegeta fought. Original diagram. Double-click 'Earth' to return to the main map.",
+    },
+    parentLevelId: 'dbz-map-world',
+    triggerLocationId: 'loc-dbz-tenkaichi-arena',
+    backgroundAssetId: 'dbz-papaya-map',
+    width: DRAGONBALL_PAPAYA_VIEWBOX.width,
+    height: DRAGONBALL_PAPAYA_VIEWBOX.height,
+  },
+  {
+    id: 'dbz-map-west-city',
+    worldId: 'world-dragonball',
+    slug: 'west-city',
+    name: 'West City',
+    localizedName: { it: "Città dell'Ovest · Capsule Corporation", en: 'West City · Capsule Corporation' },
+    description: {
+      it: "La metropoli della famiglia Brief: il complesso a cupola della Capsule Corporation, il laboratorio dove Bulma costruisce il radar del drago e la Macchina del Tempo, la stanza della gravità di Vegeta e il giardino di casa. Schema originale. Doppio clic su «Terra» per tornare alla mappa principale.",
+      en: "The Briefs family's metropolis: the domed Capsule Corporation compound, the lab where Bulma builds the Dragon Radar and the Time Machine, Vegeta's gravity room and the home garden. Original diagram. Double-click 'Earth' to return to the main map.",
+    },
+    parentLevelId: 'dbz-map-world',
+    triggerLocationId: 'loc-dbz-west-city',
+    backgroundAssetId: 'dbz-west-city-map',
+    width: DRAGONBALL_WEST_CITY_VIEWBOX.width,
+    height: DRAGONBALL_WEST_CITY_VIEWBOX.height,
   },
 ];

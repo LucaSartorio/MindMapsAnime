@@ -32,6 +32,10 @@ export const dragonballJutsu: Jutsu[] = [
       it: "Sfera energetica creata raccogliendo l'energia vitale ceduta volontariamente da altri esseri viventi; insegnata da Re Kaiō.",
       en: "An energy sphere created by gathering life energy willingly given by other living beings; taught by King Kai.",
     },
+    longDescription: {
+      it: "Goku la usa contro Vegeta, contro Freezer su Namecc e infine contro Kid Bu, quando gli abitanti della Terra — convinti da Mr. Satan — gli prestano la loro energia.",
+      en: "Goku uses it against Vegeta, against Frieza on Namek and finally against Kid Buu, when Earth's people — persuaded by Mr. Satan — lend him their energy.",
+    },
     canonStatus: 'canon',
     referenceStatus: 'verified',
     tags: ['re-kaio'],
@@ -45,6 +49,10 @@ export const dragonballJutsu: Jutsu[] = [
     shortDescription: {
       it: "Tecnica di Re Kaiō che moltiplica potenza e velocità di combattimento per un tempo limitato, con un forte stress sul corpo.",
       en: "King Kai's technique that multiplies combat power and speed for a limited time, straining the body heavily.",
+    },
+    longDescription: {
+      it: "Goku lo usa per la prima volta contro Vegeta, spingendosi fino a quattro volte; in Dragon Ball Super lo combina con il Super Saiyan Blue contro Hit.",
+      en: "Goku first uses it against Vegeta, pushing it up to four times; in Dragon Ball Super he combines it with Super Saiyan Blue against Hit.",
     },
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -75,6 +83,10 @@ export const dragonballJutsu: Jutsu[] = [
       it: "Devastante raggio energetico a due mani, la tecnica più potente di Vegeta nella saga degli Androidi/Cell.",
       en: "A devastating two-handed energy beam, Vegeta's most powerful technique in the Androids/Cell saga.",
     },
+    longDescription: {
+      it: "Vegeta la lancia contro Cell semi-perfetto, cancellandogli metà del corpo; Cell però si rigenera grazie alle cellule di Piccolo.",
+      en: "Vegeta fires it at semi-perfect Cell, blasting away half of his body; Cell, however, regenerates thanks to Piccolo's cells.",
+    },
     canonStatus: 'canon',
     referenceStatus: 'verified',
     tags: ['vegeta'],
@@ -89,6 +101,10 @@ export const dragonballJutsu: Jutsu[] = [
       it: "Sfera energetica concentrata lanciata con una mano, tecnica firma di Vegeta dalla saga di Majin Bu in poi.",
       en: "A concentrated energy sphere fired with one hand, Vegeta's signature technique from the Majin Buu saga onward.",
     },
+    longDescription: {
+      it: "Vegeta la usa contro C-18 e contro Majin Bu: una sola sfera di energia sparata con il palmo aperto, la sua firma negli anni della serie Z.",
+      en: "Vegeta uses it against Android 18 and Majin Buu: a single energy sphere fired from an open palm, his signature move throughout the Z series.",
+    },
     canonStatus: 'canon',
     referenceStatus: 'verified',
     tags: ['vegeta'],
@@ -102,6 +118,10 @@ export const dragonballJutsu: Jutsu[] = [
     shortDescription: {
       it: "Onda energetica a due mani, la prima grande tecnica firma di Vegeta, mostrata già nella Saga dei Saiyan.",
       en: "A two-handed energy wave, Vegeta's first great signature technique, already shown in the Saiyan Saga.",
+    },
+    longDescription: {
+      it: "È l'onda viola che Vegeta oppone alla Kamehameha di Goku nel loro primo scontro sulla Terra: le due tecniche si scontrano a mezz'aria.",
+      en: "It is the purple wave Vegeta pits against Goku's Kamehameha in their first fight on Earth: the two techniques collide in mid-air.",
     },
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -146,6 +166,10 @@ export const dragonballJutsu: Jutsu[] = [
     shortDescription: {
       it: "Disco di energia affilatissimo, capace di tagliare quasi ogni cosa: tecnica firma di Crilin.",
       en: "An extremely sharp energy disc able to cut through almost anything: Krillin's signature technique.",
+    },
+    longDescription: {
+      it: "Crilin lo usa contro Nappa e, su Namecc, contro Freezer, a cui taglia la coda; Freezer ne crea poi una versione tutta sua.",
+      en: "Krillin uses it against Nappa and, on Namek, against Frieza, slicing off his tail; Frieza later creates his own version of it.",
     },
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -236,6 +260,10 @@ export const dragonballJutsu: Jutsu[] = [
       it: 'Stato di combattimento angelico in cui corpo e riflessi si muovono in automatico, senza il filtro della mente cosciente.',
       en: "An angelic combat state where body and reflexes move automatically, without the filter of the conscious mind.",
     },
+    longDescription: {
+      it: "Goku lo raggiunge durante il Torneo del Potere contro Jiren e, nel manga, lo perfeziona con Merus contro Moro: il corpo si muove da solo, senza pensiero.",
+      en: "Goku reaches it during the Tournament of Power against Jiren and, in the manga, refines it with Merus against Moro: the body moves on its own, without thought.",
+    },
     canonStatus: 'canon',
     referenceStatus: 'verified',
     tags: ['angelo', 'stato'],
@@ -249,6 +277,10 @@ export const dragonballJutsu: Jutsu[] = [
     shortDescription: {
       it: "Forma divina insegnata da Bills, basata sull'orgoglio del guerriero: la potenza cresce quanto più danno viene incassato.",
       en: "A divine form taught by Beerus, based on a warrior's pride: power grows the more damage is taken.",
+    },
+    longDescription: {
+      it: "È la strada di Vegeta, opposta a quella di Goku: invece di svuotare la mente, si abbandona all'istinto distruttivo. La mostra contro Granolah.",
+      en: "It is Vegeta's path, opposite to Goku's: instead of emptying the mind, he gives in to the destructive instinct. He shows it against Granolah.",
     },
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -264,6 +296,10 @@ export const dragonballJutsu: Jutsu[] = [
       it: "Decine di sfere energetiche disposte a sfera attorno al bersaglio, fatte detonare simultaneamente per un attacco a tutto tondo.",
       en: 'Dozens of energy spheres arranged in a sphere around the target, detonated simultaneously for an all-round attack.',
     },
+    longDescription: {
+      it: "Piccolo la usa contro Cell e contro Super Bu: decine di colpi che restano sospesi attorno al bersaglio e poi si chiudono su di lui tutti insieme.",
+      en: "Piccolo uses it against Cell and Super Buu: dozens of blasts that hang around the target and then close in on it all at once.",
+    },
     canonStatus: 'canon',
     referenceStatus: 'verified',
     tags: ['cell'],
@@ -278,6 +314,10 @@ export const dragonballJutsu: Jutsu[] = [
       it: "Sottilissimo raggio energetico lanciato con un dito, in grado di perforare il corpo con precisione chirurgica.",
       en: 'An extremely thin energy beam fired with a single finger, able to pierce the body with surgical precision.',
     },
+    longDescription: {
+      it: "Freezer la usa per uccidere Vegeta su Namecc; è anche la tecnica preferita della sua famiglia e dei soldati del suo esercito.",
+      en: "Frieza uses it to kill Vegeta on Namek; it is also the favourite technique of his family and of his army's soldiers.",
+    },
     canonStatus: 'canon',
     referenceStatus: 'verified',
     tags: ['freezer'],
@@ -291,6 +331,10 @@ export const dragonballJutsu: Jutsu[] = [
     shortDescription: {
       it: "Enorme sfera di energia purpurea, potente abbastanza da distruggere un intero pianeta: usata da Freezer contro Namecc.",
       en: 'A huge sphere of purple energy, powerful enough to destroy an entire planet: used by Frieza against Namek.',
+    },
+    longDescription: {
+      it: "Con una Death Ball Freezer distrugge il pianeta Vegeta; su Namecc ne lancia una nel nucleo del pianeta, che comincia a collassare.",
+      en: "With a Death Ball Frieza destroys Planet Vegeta; on Namek he hurls one into the planet's core, which begins to collapse.",
     },
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -324,6 +368,10 @@ export const dragonballJutsu: Jutsu[] = [
       it: "Dragon Ball GT: colpo definitivo di Goku, che carica il pugno di ki trapassando il nemico mentre si manifesta un enorme drago dorato d'energia. Decisivo contro Super C-17 e Omega Shenron.",
       en: "Dragon Ball GT: Goku's ultimate blow, driving a ki-charged fist through the enemy while a huge golden energy dragon manifests. Decisive against Super 17 and Omega Shenron.",
     },
+    longDescription: {
+      it: "Goku la usa per la prima volta nel film L'irriducibile bio-combattente contro Hirudegarn, e la riprende in GT come colpo definitivo.",
+      en: "Goku first uses it in the film Wrath of the Dragon against Hirudegarn, and takes it up again in GT as his finishing blow.",
+    },
     canonStatus: 'anime_only',
     referenceStatus: 'verified',
     tags: ['gt', 'tecnica-firma'],
@@ -338,6 +386,10 @@ export const dragonballJutsu: Jutsu[] = [
     shortDescription: {
       it: 'Dragon Ball GT: versione decuplicata del Kamehameha, sferrata da Goku Super Saiyan 4 (e da Gogeta SS4) come attacco risolutivo contro i nemici più potenti.',
       en: 'Dragon Ball GT: a tenfold Kamehameha unleashed by Super Saiyan 4 Goku (and SS4 Gogeta) as a finishing attack against the strongest foes.',
+    },
+    longDescription: {
+      it: "Goku la lancia in Super Saiyan 4, moltiplicando per dieci la potenza della Kamehameha: la usa contro Baby gigante e contro Super C-17.",
+      en: "Goku fires it as a Super Saiyan 4, multiplying the Kamehameha's power tenfold: he uses it against giant Baby and Super 17.",
     },
     canonStatus: 'anime_only',
     referenceStatus: 'verified',
@@ -356,6 +408,10 @@ export const dragonballJutsu: Jutsu[] = [
       it: "Dragon Ball Super: tecnica firma di Hit che congela il tempo per una frazione di secondo, permettendogli di colpire il bersaglio prima che possa reagire.",
       en: "Dragon Ball Super: Hit's signature technique that freezes time for a split second, letting him strike the target before it can react.",
     },
+    longDescription: {
+      it: "Hit lo usa al torneo fra Universo 6 e 7 contro Goku e poi lo perfeziona fino a «saltare» più tempo; Goku lo contrasta con il Kaio-ken.",
+      en: "Hit uses it at the Universe 6 vs 7 tournament against Goku and then refines it to 'skip' more time; Goku counters it with the Kaio-ken.",
+    },
     canonStatus: 'canon',
     referenceStatus: 'verified',
     tags: ['universo-6', 'hit'],
@@ -370,6 +426,10 @@ export const dragonballJutsu: Jutsu[] = [
     shortDescription: {
       it: "Dragon Ball Super (manga): tecnica appresa da Vegeta sul Pianeta Yardrat, capace di separare e restituire l'energia vitale che Moro aveva assorbito dalle sue vittime.",
       en: "Dragon Ball Super (manga): a technique Vegeta learns on Planet Yardrat, able to split off and return the life energy Moro had absorbed from his victims.",
+    },
+    longDescription: {
+      it: "Vegeta impara la tecnica dagli Yardrat dopo la prima sconfitta contro Moro: è la sua risposta personale al Teletrasporto imparato da Goku sullo stesso pianeta.",
+      en: "Vegeta learns the technique from the Yardrats after the first defeat against Moro: it is his personal answer to the Instant Transmission Goku learned on the same planet.",
     },
     canonStatus: 'canon',
     referenceStatus: 'verified',

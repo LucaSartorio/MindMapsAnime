@@ -119,7 +119,7 @@ export const narutoJutsuBatch2: Jutsu[] = [
     japaneseName: '大黒天',
     type: 'ninjutsu',
     classification: ['space_time', 'kekkei_mora'],
-    characterIds: ['char-isshiki'],
+    characterIds: ['char-isshiki', 'char-kawaki'],
     clanIds: ['clan-otsutsuki'],
     series: ['boruto'],
     shortDescription: {
@@ -257,11 +257,11 @@ export const narutoJutsuBatch2: Jutsu[] = [
     type: 'ninjutsu',
     classification: ['kekkei_genkai', 'offensive'],
     chakraNature: ['lava'],
-    characterIds: ['char-mei'],
+    characterIds: ['char-kurotsuchi'],
     series: ['shippuden'],
     shortDescription: {
-      it: 'Variante meno nota del Yōton di Mei Terumi: sputa calce viva che indurisce a contatto, intrappolando o devastando il bersaglio.',
-      en: 'A lesser-known Yōton variant of Mei Terumi\'s: spits quicklime that hardens on contact, trapping or devastating the target.',
+      it: 'Lo Yōton di Kurotsuchi: sputa calce viva che si indurisce a contatto, intrappolando il bersaglio in un blocco di cemento. Lo usa nella Quarta Guerra Ninja.',
+      en: 'Kurotsuchi\'s Lava Release: she spits quicklime that hardens on contact, trapping the target in a block of cement. She uses it in the Fourth Great Ninja War.',
     },
     canonStatus: 'canon',
     referenceStatus: 'verified',

@@ -29,6 +29,12 @@ export const DRAGONBALL_NAMEK_VIEWBOX = { width: 1300, height: 850 } as const;
  */
 export const DRAGONBALL_GT_SPACE_VIEWBOX = { width: 1600, height: 1000 } as const;
 
+/** Sotto-mappe originali (scripts/mapgen/dragonball.py): Aldilà, Santuario di Dio, Isola di Papaya, Città dell'Ovest. */
+export const DRAGONBALL_OTHER_WORLD_VIEWBOX = { width: 1600, height: 1000 } as const;
+export const DRAGONBALL_LOOKOUT_VIEWBOX = { width: 1100, height: 1500 } as const;
+export const DRAGONBALL_PAPAYA_VIEWBOX = { width: 1400, height: 1000 } as const;
+export const DRAGONBALL_WEST_CITY_VIEWBOX = { width: 1400, height: 1000 } as const;
+
 /** Path locale dell'immagine di riferimento (vive in public/, servita alla root). */
 export const DRAGONBALL_WORLD_MAP_SRC =
   '/assets/worlds/dragonball/maps/dragonball-world-map.png';
