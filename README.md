@@ -27,7 +27,7 @@ componenti.
 | Hunter x Hunter     | `hunterxhunter`      | ✓ Disponibile | Nen                          |
 | One Piece           | `onepiece`           | ✓ Disponibile | Frutti del Diavolo           |
 | Dragon Ball         | `dragonball`         | ✓ Disponibile | Tecniche                     |
-| Attack on Titan     | `attackontitan`      | In arrivo     | Abilità                      |
+| Attack on Titan     | `attackontitan`      | ✓ Disponibile | Giganti & Poteri             |
 | Bleach              | `bleach`             | ✓ Disponibile | Zanpakutō & Poteri spirituali |
 | Fullmetal Alchemist | `fullmetalalchemist` | In arrivo     | Alchimia                     |
 | Frieren             | `frieren`            | In arrivo     | Magia                        |
@@ -39,19 +39,19 @@ componenti.
 
 ### Dataset attuali
 
-| Entità             | Naruto | Hunter x Hunter | One Piece | Dragon Ball | Bleach |
-| ------------------ | -----: | --------------: | --------: | ----------: | -----: |
-| Personaggi         |    250 |             156 |       417 |          75 |    147 |
-| Clan & fazioni     |     57 |              20 |        83 |          21 |     34 |
-| Team               |     14 |               0 |         0 |           0 |      0 |
-| Tecniche           |    153 |              73 |       125 |          23 |    102 |
-| Archi narrativi    |     32 |               8 |        31 |          36 |     17 |
-| Eventi timeline    |    118 |             103 |       202 |          90 |    115 |
-| Percorsi           |     41 |              16 |        22 |           9 |     10 |
-| Luoghi             |    108 |              60 |       331 |          81 |     77 |
-| Nazioni            |     27 |              17 |         8 |           6 |      7 |
-| Confini (boundary) |     26 |              12 |         0 |           0 |      0 |
-| Livelli mappa      |     10 |               5 |        10 |           4 |      5 |
+| Entità             | Naruto | Hunter x Hunter | One Piece | Dragon Ball | Bleach | Attack on Titan |
+| ------------------ | -----: | --------------: | --------: | ----------: | -----: | --------------: |
+| Personaggi         |    250 |             156 |       417 |          75 |    147 | 82 |
+| Clan & fazioni     |     57 |              20 |        83 |          21 |     34 | 24 |
+| Team               |     14 |               0 |         0 |           0 |      0 | 0 |
+| Tecniche           |    153 |              73 |       125 |          23 |    102 | 40 |
+| Archi narrativi    |     32 |               8 |        31 |          36 |     17 | 14 |
+| Eventi timeline    |    118 |             103 |       202 |          90 |    115 | 108 |
+| Percorsi           |     41 |              16 |        22 |           9 |     10 | 10 |
+| Luoghi             |    108 |              60 |       331 |          81 |     77 | 76 |
+| Nazioni            |     27 |              17 |         8 |           6 |      7 | 8 |
+| Confini (boundary) |     26 |              12 |         0 |           0 |      0 | 0 |
+| Livelli mappa      |     10 |               5 |        10 |           4 |      5 | 7 |
 
 **Livelli mappa** = world map + sotto-mappe drill-down:
 
@@ -71,6 +71,11 @@ componenti.
   Noches), Reiōkyū. Mappe **SVG originali** ricostruite da noi
   (`scripts/bleach-maps.py` → `public/assets/worlds/bleach/maps/`), nessuna
   immagine ufficiale.
+- **Attack on Titan** — Il Mondo (la Terra capovolta, come nella serie: Marley,
+  Medio Oriente, Hizuru, Paradis), l'isola di Paradis, Dentro le Mura (i tre
+  cerchi in scala con i dodici distretti), Shiganshina, Trost, Liberio, i
+  Sentieri. Mappe **SVG originali** generate da `scripts/mapgen/aot.py` sui
+  contorni Natural Earth (dominio pubblico) → `public/assets/worlds/attackontitan/maps/`.
 
 **Ogni livello ha una mappa.** Dove l'opera non offre una mappa utilizzabile,
 la sotto-mappa è un **SVG originale** disegnato da AniMapVerse (42 mappe:
@@ -371,6 +376,7 @@ src/assets/worlds/<slug>/{characters,jutsu,clans,locations,arcs}/<entityId>.<ext
 | Hunter x Hunter | aura Nen             | esagramma Nen       | placca da Hunter    |
 | Black Clover    | grimorio + quadrifoglio | cerchio magico   | stendardo di compagnia |
 | Bleach          | lama (zanpakutō)     | fendente            | stemma a stella     |
+| Attack on Titan | cappuccio (mantello) | fendente            | Ali della Libertà   |
 
 I colori di fondo derivano dal `theme` del mondo, con una variazione per entità
 volutamente stretta: schede diverse restano distinguibili senza uscire dalla

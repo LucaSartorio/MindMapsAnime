@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-02T17:56:08.009Z",
+  "generatedAt": "2026-10-03T06:35:20.234Z",
   "locales": [
     "en",
     "it"
@@ -39,6 +39,12 @@
           "videos": 26,
           "series": 2,
           "excluded": 82
+        },
+        "attackontitan": {
+          "characters": 35,
+          "videos": 36,
+          "series": 1,
+          "excluded": 47
         },
         "bleach": {
           "characters": 71,
@@ -5719,6 +5725,1142 @@
             "animatedStops": 2,
             "arcs": 1,
             "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:eren-yeager",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "eren-yeager",
+          "series": null,
+          "displayName": {
+            "en": "Eren Yeager",
+            "it": "Eren Jaeger"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 27,
+          "facts": {
+            "importance": "main",
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 4,
+            "journeyArcs": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:mikasa-ackerman",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "mikasa-ackerman",
+          "series": null,
+          "displayName": {
+            "en": "Mikasa Ackerman",
+            "it": "Mikasa Ackerman"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 33,
+          "facts": {
+            "importance": "main",
+            "places": 7,
+            "animatedStops": 7,
+            "arcs": 5,
+            "journeyArcs": 5
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:armin-arlert",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "armin-arlert",
+          "series": null,
+          "displayName": {
+            "en": "Armin Arlert",
+            "it": "Armin Arlert"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 33,
+          "facts": {
+            "importance": "main",
+            "places": 7,
+            "animatedStops": 7,
+            "arcs": 5,
+            "journeyArcs": 5
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:jean-kirstein",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "jean-kirstein",
+          "series": null,
+          "displayName": {
+            "en": "Jean Kirstein",
+            "it": "Jean Kirstein"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 30,
+          "facts": {
+            "importance": "main",
+            "places": 6,
+            "animatedStops": 6,
+            "arcs": 5,
+            "journeyArcs": 5
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:connie-springer",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "connie-springer",
+          "series": null,
+          "displayName": {
+            "en": "Connie Springer",
+            "it": "Connie Springer"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 30,
+          "facts": {
+            "importance": "major",
+            "places": 6,
+            "animatedStops": 6,
+            "arcs": 5,
+            "journeyArcs": 5
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:sasha-blouse",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "sasha-blouse",
+          "series": null,
+          "displayName": {
+            "en": "Sasha Blouse",
+            "it": "Sasha Blouse"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:floch-forster",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "floch-forster",
+          "series": null,
+          "displayName": {
+            "en": "Floch Forster",
+            "it": "Floch Forster"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:levi-ackerman",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "levi-ackerman",
+          "series": null,
+          "displayName": {
+            "en": "Levi Ackerman",
+            "it": "Levi Ackerman"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 27,
+          "facts": {
+            "importance": "main",
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 5,
+            "journeyArcs": 5
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:erwin-smith",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "erwin-smith",
+          "series": null,
+          "displayName": {
+            "en": "Erwin Smith",
+            "it": "Erwin Smith"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "main",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:hange-zoe",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "hange-zoe",
+          "series": null,
+          "displayName": {
+            "en": "Hange Zoë",
+            "it": "Hange Zoë"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 27,
+          "facts": {
+            "importance": "main",
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 5,
+            "journeyArcs": 5
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:grisha-yeager",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "grisha-yeager",
+          "series": null,
+          "displayName": {
+            "en": "Grisha Yeager",
+            "it": "Grisha Jaeger"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 25,
+          "facts": {
+            "importance": "main",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:dina-fritz",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "dina-fritz",
+          "series": null,
+          "displayName": {
+            "en": "Dina Fritz",
+            "it": "Dina Fritz"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:zeke-yeager:part-01",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "zeke-yeager",
+          "series": {
+            "id": "character-journey:attackontitan:zeke-yeager",
+            "segment": "part-01",
+            "partNumber": 1,
+            "partCount": 2,
+            "previousId": null,
+            "nextId": "character-journey:attackontitan:zeke-yeager:part-02",
+            "arcIds": [
+              "arc-aot-clash-of-titans",
+              "arc-aot-return-to-shiganshina",
+              "arc-aot-beyond-the-sea"
+            ],
+            "arcTitles": {
+              "en": [
+                "Clash of the Titans",
+                "Return to Shiganshina",
+                "To the Other Side of the Wall"
+              ],
+              "it": [
+                "Lo scontro dei Giganti",
+                "Ritorno a Shiganshina",
+                "Oltre il mare"
+              ]
+            },
+            "firstArc": "Clash of the Titans",
+            "lastArc": "To the Other Side of the Wall",
+            "segmentationVersion": 1,
+            "fingerprint": "003fb6fd"
+          },
+          "displayName": {
+            "en": "Zeke Yeager",
+            "it": "Zeke Jaeger"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 25,
+          "facts": {
+            "importance": "main",
+            "places": 10,
+            "animatedStops": 4,
+            "arcs": 3,
+            "journeyArcs": 6
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:zeke-yeager:part-02",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "zeke-yeager",
+          "series": {
+            "id": "character-journey:attackontitan:zeke-yeager",
+            "segment": "part-02",
+            "partNumber": 2,
+            "partCount": 2,
+            "previousId": "character-journey:attackontitan:zeke-yeager:part-01",
+            "nextId": null,
+            "arcIds": [
+              "arc-aot-marley",
+              "arc-aot-war-for-paradis",
+              "arc-aot-heaven-and-earth"
+            ],
+            "arcTitles": {
+              "en": [
+                "Marley",
+                "War for Paradis",
+                "The Rumbling"
+              ],
+              "it": [
+                "Marley",
+                "La guerra per Paradis",
+                "Il Boato della Terra"
+              ]
+            },
+            "firstArc": "Marley",
+            "lastArc": "The Rumbling",
+            "segmentationVersion": 1,
+            "fingerprint": "8931559e"
+          },
+          "displayName": {
+            "en": "Zeke Yeager",
+            "it": "Zeke Jaeger"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 30,
+          "facts": {
+            "importance": "main",
+            "places": 10,
+            "animatedStops": 6,
+            "arcs": 3,
+            "journeyArcs": 6
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:eren-kruger",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "eren-kruger",
+          "series": null,
+          "displayName": {
+            "en": "Eren Kruger",
+            "it": "Eren Kruger"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:tom-ksaver",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "tom-ksaver",
+          "series": null,
+          "displayName": {
+            "en": "Tom Ksaver",
+            "it": "Tom Ksaver"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:sergeant-major-gross",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "sergeant-major-gross",
+          "series": null,
+          "displayName": {
+            "en": "Sergeant Major Gross",
+            "it": "Il sergente maggiore Gross"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:reiner-braun",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "reiner-braun",
+          "series": null,
+          "displayName": {
+            "en": "Reiner Braun",
+            "it": "Reiner Braun"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 33,
+          "facts": {
+            "importance": "main",
+            "places": 7,
+            "animatedStops": 7,
+            "arcs": 4,
+            "journeyArcs": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:bertolt-hoover",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "bertolt-hoover",
+          "series": null,
+          "displayName": {
+            "en": "Bertolt Hoover",
+            "it": "Bertolt Hoover"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "main",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:annie-leonhart",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "annie-leonhart",
+          "series": null,
+          "displayName": {
+            "en": "Annie Leonhart",
+            "it": "Annie Leonhart"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 27,
+          "facts": {
+            "importance": "main",
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:marcel-galliard",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "marcel-galliard",
+          "series": null,
+          "displayName": {
+            "en": "Marcel Galliard",
+            "it": "Marcel Galliard"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:porco-galliard",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "porco-galliard",
+          "series": null,
+          "displayName": {
+            "en": "Porco Galliard",
+            "it": "Porco Galliard"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 27,
+          "facts": {
+            "importance": "major",
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:pieck-finger",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "pieck-finger",
+          "series": null,
+          "displayName": {
+            "en": "Pieck Finger",
+            "it": "Pieck Finger"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 33,
+          "facts": {
+            "importance": "major",
+            "places": 7,
+            "animatedStops": 7,
+            "arcs": 4,
+            "journeyArcs": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:gabi-braun",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "gabi-braun",
+          "series": null,
+          "displayName": {
+            "en": "Gabi Braun",
+            "it": "Gabi Braun"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 27,
+          "facts": {
+            "importance": "main",
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:falco-grice",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "falco-grice",
+          "series": null,
+          "displayName": {
+            "en": "Falco Grice",
+            "it": "Falco Grice"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 27,
+          "facts": {
+            "importance": "main",
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:colt-grice",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "colt-grice",
+          "series": null,
+          "displayName": {
+            "en": "Colt Grice",
+            "it": "Colt Grice"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:udo",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "udo",
+          "series": null,
+          "displayName": {
+            "en": "Udo",
+            "it": "Udo"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:zofia",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "zofia",
+          "series": null,
+          "displayName": {
+            "en": "Zofia",
+            "it": "Zofia"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:theo-magath",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "theo-magath",
+          "series": null,
+          "displayName": {
+            "en": "Theo Magath",
+            "it": "Theo Magath"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:willy-tybur",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "willy-tybur",
+          "series": null,
+          "displayName": {
+            "en": "Willy Tybur",
+            "it": "Willy Tybur"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:onyankopon",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "onyankopon",
+          "series": null,
+          "displayName": {
+            "en": "Onyankopon",
+            "it": "Onyankopon"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:kiyomi-azumabito",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "kiyomi-azumabito",
+          "series": null,
+          "displayName": {
+            "en": "Kiyomi Azumabito",
+            "it": "Kiyomi Azumabito"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 25,
+          "facts": {
+            "importance": "major",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:ymir-fritz",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "ymir-fritz",
+          "series": null,
+          "displayName": {
+            "en": "Ymir Fritz",
+            "it": "Ymir Fritz"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 27,
+          "facts": {
+            "importance": "main",
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:king-fritz",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "king-fritz",
+          "series": null,
+          "displayName": {
+            "en": "King Fritz",
+            "it": "Il re Fritz"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:karl-fritz",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "karl-fritz",
+          "series": null,
+          "displayName": {
+            "en": "Karl Fritz",
+            "it": "Karl Fritz"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:frieda-reiss",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "frieda-reiss",
+          "series": null,
+          "displayName": {
+            "en": "Frieda Reiss",
+            "it": "Frieda Reiss"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
           },
           "renderedLocales": [],
           "scheduledLocales": [],

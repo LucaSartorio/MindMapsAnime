@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-02T17:56:08.009Z",
+  "generatedAt": "2026-10-03T06:35:20.234Z",
   "templates": {
     "characterJourney": {
       "byReason": {
-        "single_location": 321,
-        "no_journey_data": 638
+        "single_location": 363,
+        "no_journey_data": 643
       },
       "items": [
         {
@@ -5578,6 +5578,335 @@
           "subject": "dabura",
           "subjectId": "char-dbz-dabura",
           "displayName": "Dabura",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "historia-reiss",
+          "subjectId": "char-aot-historia",
+          "displayName": "Historia Reiss",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "ymir",
+          "subjectId": "char-aot-ymir",
+          "displayName": "Ymir",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "marco-bott",
+          "subjectId": "char-aot-marco",
+          "displayName": "Marco Bott",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "thomas-wagner",
+          "subjectId": "char-aot-thomas",
+          "displayName": "Thomas Wagner",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "mina-carolina",
+          "subjectId": "char-aot-mina",
+          "displayName": "Mina Carolina",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "hitch-dreyse",
+          "subjectId": "char-aot-hitch",
+          "displayName": "Hitch Dreyse",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "marlowe-freudenberg",
+          "subjectId": "char-aot-marlowe",
+          "displayName": "Marlowe Freudenberg",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "mike-zacharius",
+          "subjectId": "char-aot-mike",
+          "displayName": "Mike Zacharius",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "nanaba",
+          "subjectId": "char-aot-nanaba",
+          "displayName": "Nanaba",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "gelgar",
+          "subjectId": "char-aot-gelgar",
+          "displayName": "Gelgar",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "moblit-berner",
+          "subjectId": "char-aot-moblit",
+          "displayName": "Moblit Berner",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "petra-ral",
+          "subjectId": "char-aot-petra",
+          "displayName": "Petra Ral",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "oluo-bozado",
+          "subjectId": "char-aot-oluo",
+          "displayName": "Oluo Bozado",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "eld-jinn",
+          "subjectId": "char-aot-eld",
+          "displayName": "Eld Jinn",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "gunther-schultz",
+          "subjectId": "char-aot-gunther",
+          "displayName": "Gunther Schultz",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "ilse-langnar",
+          "subjectId": "char-aot-ilse",
+          "displayName": "Ilse Langnar",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "nifa",
+          "subjectId": "char-aot-nifa",
+          "displayName": "Nifa",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "keith-shadis",
+          "subjectId": "char-aot-shadis",
+          "displayName": "Keith Shadis",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "hannes",
+          "subjectId": "char-aot-hannes",
+          "displayName": "Hannes",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "dot-pixis",
+          "subjectId": "char-aot-pixis",
+          "displayName": "Dot Pixis",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "rico-brzenska",
+          "subjectId": "char-aot-rico",
+          "displayName": "Rico Brzenska",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "ian-dietrich",
+          "subjectId": "char-aot-ian",
+          "displayName": "Ian Dietrich",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "mitabi-jarnach",
+          "subjectId": "char-aot-mitabi",
+          "displayName": "Mitabi Jarnach",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "kitz-woermann",
+          "subjectId": "char-aot-kitz",
+          "displayName": "Kitz Woermann",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "anka-rheinberger",
+          "subjectId": "char-aot-anka",
+          "displayName": "Anka Rheinberger",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "nile-dok",
+          "subjectId": "char-aot-nile",
+          "displayName": "Nile Dok",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "darius-zackly",
+          "subjectId": "char-aot-zackly",
+          "displayName": "Darius Zackly",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "pastor-nick",
+          "subjectId": "char-aot-nick",
+          "displayName": "Pastor Nick",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "dimo-reeves",
+          "subjectId": "char-aot-dimo-reeves",
+          "displayName": "Dimo Reeves",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "flegel-reeves",
+          "subjectId": "char-aot-flegel-reeves",
+          "displayName": "Flegel Reeves",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "carla-yeager",
+          "subjectId": "char-aot-carla",
+          "displayName": "Carla Yeager",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "faye-yeager",
+          "subjectId": "char-aot-faye",
+          "displayName": "Faye Yeager",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "karina-braun",
+          "subjectId": "char-aot-karina",
+          "displayName": "Karina Braun",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "lara-tybur",
+          "subjectId": "char-aot-lara-tybur",
+          "displayName": "Lara Tybur",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "yelena",
+          "subjectId": "char-aot-yelena",
+          "displayName": "Yelena",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "niccolo",
+          "subjectId": "char-aot-niccolo",
+          "displayName": "Niccolo",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "louise",
+          "subjectId": "char-aot-louise",
+          "displayName": "Louise",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "maria",
+          "subjectId": "char-aot-maria",
+          "displayName": "Maria",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "rose",
+          "subjectId": "char-aot-rose",
+          "displayName": "Rose",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "sina",
+          "subjectId": "char-aot-sina",
+          "displayName": "Sina",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "uri-reiss",
+          "subjectId": "char-aot-uri-reiss",
+          "displayName": "Uri Reiss",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "rod-reiss",
+          "subjectId": "char-aot-rod-reiss",
+          "displayName": "Rod Reiss",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "alma",
+          "subjectId": "char-aot-alma",
+          "displayName": "Alma",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "kenny-ackerman",
+          "subjectId": "char-aot-kenny",
+          "displayName": "Kenny Ackerman",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "kuchel-ackerman",
+          "subjectId": "char-aot-kuchel",
+          "displayName": "Kuchel Ackerman",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "isabel-magnolia",
+          "subjectId": "char-aot-isabel",
+          "displayName": "Isabel Magnolia",
+          "reason": "single_location"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "farlan-church",
+          "subjectId": "char-aot-farlan",
+          "displayName": "Farlan Church",
           "reason": "single_location"
         },
         {
