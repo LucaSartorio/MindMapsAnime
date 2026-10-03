@@ -403,6 +403,21 @@ export const aotEventsWorld: TimelineEvent[] = [
     tags: ['shiganshina', 'dirigibili', 'scontro'],
   }),
   ev({
+    id: 'evt-aot-falco-jaw',
+    title: { it: 'Porco si sacrifica: Falco eredita la Mascella', en: 'Porco sacrifices himself: Falco inherits the Jaw' },
+    description: {
+      it: "Trasformato in Gigante puro dall'urlo di Zeke, Falco vaga per Shiganshina. Porco Galliard, ferito e consapevole di non avere scampo, si offre alle sue fauci: Falco torna umano con il potere del Gigante Mascella.",
+      en: "Turned into a Pure Titan by Zeke's scream, Falco roams Shiganshina. Porco Galliard, wounded and aware there is no way out, offers himself to his jaws: Falco returns to human form with the power of the Jaw Titan.",
+    },
+    period: P.y854,
+    arcId: 'arc-aot-war-for-paradis',
+    locationId: 'loc-aot-shiganshina',
+    characterIds: ['char-aot-falco', 'char-aot-porco', 'char-aot-reiner', 'char-aot-gabi', 'char-aot-zeke'],
+    mangaChapters: ['~116'],
+    order: 955,
+    tags: ['falco', 'porco', 'mascella'],
+  }),
+  ev({
     id: 'evt-aot-eren-shot',
     title: { it: 'Gabi spara a Eren', en: 'Gabi shoots Eren' },
     description: {

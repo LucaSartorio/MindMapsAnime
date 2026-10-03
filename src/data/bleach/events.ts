@@ -1868,4 +1868,19 @@ export const bleachEvents: TimelineEvent[] = [
     order: 1600,
     tags: ['inferno', 'one-shot'],
   }),
+  ev({
+    id: 'evt-bl-urahara-isshin-vs-aizen',
+    title: { it: 'Urahara, Isshin e Yoruichi contro Aizen', en: 'Urahara, Isshin and Yoruichi vs Aizen' },
+    description: {
+      it: "Mentre Ichigo si allena nel Dangai, Urahara, Isshin e Yoruichi affrontano Aizen fuso con lo Hōgyoku. Non riescono a fermarlo, ma durante lo scontro Urahara gli impianta un sigillo di Kidō che si attiverà quando il suo potere comincerà a calare.",
+      en: "While Ichigo trains in the Dangai, Urahara, Isshin and Yoruichi take on Aizen, fused with the Hōgyoku. They cannot stop him, but during the fight Urahara plants a Kidō seal in him that will activate once his power begins to wane.",
+    },
+    period: P.arrancar,
+    arcId: 'arc-bl-fake-karakura',
+    locationId: 'loc-bl-replica-karakura',
+    characterIds: ['char-bl-urahara', 'char-bl-isshin', 'char-bl-yoruichi', 'char-bl-aizen'],
+    order: 865,
+    tags: ['scontro', 'aizen', 'urahara'],
+  }),
+
 ];

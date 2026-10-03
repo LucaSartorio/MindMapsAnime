@@ -290,6 +290,7 @@ export const bleachSlugs: SeoSlugLock = {
     "journeys": {
       "route-bl-aizen-plan": "aizens-plan",
       "route-bl-blood-war": "the-thousand-year-blood-war",
+      "route-bl-byakuya-path": "byakuyas-path",
       "route-bl-fullbring": "ichigos-lost-powers",
       "route-bl-hueco-mundo-rescue": "the-rescue-of-orihime",
       "route-bl-ichigo-journey": "ichigos-journey",
@@ -297,6 +298,8 @@ export const bleachSlugs: SeoSlugLock = {
       "route-bl-renji-path": "renjis-path",
       "route-bl-rukia-path": "rukias-path",
       "route-bl-rukia-rescue": "the-rescue-of-rukia",
+      "route-bl-ulquiorra-path": "ulquiorras-path",
+      "route-bl-urahara-path": "uraharas-path",
       "route-bl-uryu-path": "uryus-path"
     },
     "abilities": {

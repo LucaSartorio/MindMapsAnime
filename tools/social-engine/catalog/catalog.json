@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T16:01:19.593Z",
+  "generatedAt": "2026-10-03T16:07:47.344Z",
   "locales": [
     "en",
     "it"
@@ -42,14 +42,14 @@
         },
         "attackontitan": {
           "characters": 35,
-          "videos": 36,
-          "series": 1,
+          "videos": 35,
+          "series": 0,
           "excluded": 47
         },
         "bleach": {
           "characters": 71,
-          "videos": 80,
-          "series": 7,
+          "videos": 81,
+          "series": 8,
           "excluded": 76
         },
         "jujutsukaisen": {
@@ -8568,13 +8568,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 30,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "main",
-            "places": 6,
-            "animatedStops": 6,
-            "arcs": 5,
-            "journeyArcs": 5
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 4,
+            "journeyArcs": 4
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -8825,97 +8825,11 @@
           "publication": []
         },
         {
-          "id": "character-journey:attackontitan:zeke-yeager:part-01",
+          "id": "character-journey:attackontitan:zeke-yeager",
           "anime": "attackontitan",
           "animeTitle": "Attack on Titan",
           "subject": "zeke-yeager",
-          "series": {
-            "id": "character-journey:attackontitan:zeke-yeager",
-            "segment": "part-01",
-            "partNumber": 1,
-            "partCount": 2,
-            "previousId": null,
-            "nextId": "character-journey:attackontitan:zeke-yeager:part-02",
-            "arcIds": [
-              "arc-aot-clash-of-titans",
-              "arc-aot-return-to-shiganshina",
-              "arc-aot-beyond-the-sea"
-            ],
-            "arcTitles": {
-              "en": [
-                "Clash of the Titans",
-                "Return to Shiganshina",
-                "To the Other Side of the Wall"
-              ],
-              "it": [
-                "Lo scontro dei Giganti",
-                "Ritorno a Shiganshina",
-                "Oltre il mare"
-              ]
-            },
-            "firstArc": "Clash of the Titans",
-            "lastArc": "To the Other Side of the Wall",
-            "segmentationVersion": 1,
-            "fingerprint": "003fb6fd"
-          },
-          "displayName": {
-            "en": "Zeke Yeager",
-            "it": "Zeke Jaeger"
-          },
-          "locales": [
-            "en",
-            "it"
-          ],
-          "recommendedDurationSeconds": 25,
-          "facts": {
-            "importance": "main",
-            "places": 10,
-            "animatedStops": 4,
-            "arcs": 3,
-            "journeyArcs": 6
-          },
-          "renderedLocales": [],
-          "scheduledLocales": [],
-          "publishedLocales": [],
-          "queuedLocales": [],
-          "renderedBefore": false,
-          "publishedBefore": false,
-          "publication": []
-        },
-        {
-          "id": "character-journey:attackontitan:zeke-yeager:part-02",
-          "anime": "attackontitan",
-          "animeTitle": "Attack on Titan",
-          "subject": "zeke-yeager",
-          "series": {
-            "id": "character-journey:attackontitan:zeke-yeager",
-            "segment": "part-02",
-            "partNumber": 2,
-            "partCount": 2,
-            "previousId": "character-journey:attackontitan:zeke-yeager:part-01",
-            "nextId": null,
-            "arcIds": [
-              "arc-aot-marley",
-              "arc-aot-war-for-paradis",
-              "arc-aot-heaven-and-earth"
-            ],
-            "arcTitles": {
-              "en": [
-                "Marley",
-                "War for Paradis",
-                "The Rumbling"
-              ],
-              "it": [
-                "Marley",
-                "La guerra per Paradis",
-                "Il Boato della Terra"
-              ]
-            },
-            "firstArc": "Marley",
-            "lastArc": "The Rumbling",
-            "segmentationVersion": 1,
-            "fingerprint": "8931559e"
-          },
+          "series": null,
           "displayName": {
             "en": "Zeke Yeager",
             "it": "Zeke Jaeger"
@@ -8927,9 +8841,9 @@
           "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 10,
+            "places": 6,
             "animatedStops": 6,
-            "arcs": 3,
+            "arcs": 6,
             "journeyArcs": 6
           },
           "renderedLocales": [],
@@ -9224,11 +9138,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "main",
-            "places": 5,
-            "animatedStops": 5,
+            "places": 4,
+            "animatedStops": 4,
             "arcs": 3,
             "journeyArcs": 3
           },
@@ -9254,11 +9168,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "main",
-            "places": 5,
-            "animatedStops": 5,
+            "places": 4,
+            "animatedStops": 4,
             "arcs": 3,
             "journeyArcs": 3
           },
@@ -10514,11 +10428,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 36,
+          "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "main",
-            "places": 8,
-            "animatedStops": 8,
+            "places": 7,
+            "animatedStops": 7,
             "arcs": 7,
             "journeyArcs": 7
           },
@@ -11037,11 +10951,39 @@
           "publication": []
         },
         {
-          "id": "character-journey:bleach:byakuya-kuchiki",
+          "id": "character-journey:bleach:byakuya-kuchiki:part-01",
           "anime": "bleach",
           "animeTitle": "Bleach",
           "subject": "byakuya-kuchiki",
-          "series": null,
+          "series": {
+            "id": "character-journey:bleach:byakuya-kuchiki",
+            "segment": "part-01",
+            "partNumber": 1,
+            "partCount": 2,
+            "previousId": null,
+            "nextId": "character-journey:bleach:byakuya-kuchiki:part-02",
+            "arcIds": [
+              "arc-bl-ss-rescue",
+              "arc-bl-agent",
+              "arc-bl-hueco-mundo"
+            ],
+            "arcTitles": {
+              "en": [
+                "Soul Society: The Rescue",
+                "The Substitute",
+                "Arrancar: Hueco Mundo"
+              ],
+              "it": [
+                "Soul Society: il salvataggio",
+                "Lo Shinigami sostituto",
+                "Arrancar: Hueco Mundo"
+              ]
+            },
+            "firstArc": "Soul Society: The Rescue",
+            "lastArc": "Arrancar: Hueco Mundo",
+            "segmentationVersion": 1,
+            "fingerprint": "44b4d5f1"
+          },
           "displayName": {
             "en": "Byakuya Kuchiki",
             "it": "Byakuya Kuchiki"
@@ -11050,13 +10992,77 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 36,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "main",
-            "places": 8,
-            "animatedStops": 8,
-            "arcs": 7,
-            "journeyArcs": 7
+            "places": 9,
+            "animatedStops": 4,
+            "arcs": 3,
+            "journeyArcs": 8
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:byakuya-kuchiki:part-02",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "byakuya-kuchiki",
+          "series": {
+            "id": "character-journey:bleach:byakuya-kuchiki",
+            "segment": "part-02",
+            "partNumber": 2,
+            "partCount": 2,
+            "previousId": "character-journey:bleach:byakuya-kuchiki:part-01",
+            "nextId": null,
+            "arcIds": [
+              "arc-bl-zanpakuto-rebellion",
+              "arc-bl-lost-substitute",
+              "arc-bl-tybw-blood-warfare",
+              "arc-bl-tybw-separation",
+              "arc-bl-tybw-conflict"
+            ],
+            "arcTitles": {
+              "en": [
+                "Zanpakutō Unknown Tales",
+                "The Lost Substitute Shinigami",
+                "Thousand-Year Blood War: The Blood Warfare",
+                "Thousand-Year Blood War: The Separation",
+                "Thousand-Year Blood War: The Conflict"
+              ],
+              "it": [
+                "La ribellione delle Zanpakutō",
+                "Lo Shinigami sostituto perduto",
+                "Guerra dei Mille Anni: la dichiarazione di guerra",
+                "Guerra dei Mille Anni: la separazione",
+                "Guerra dei Mille Anni: il conflitto"
+              ]
+            },
+            "firstArc": "Zanpakutō Unknown Tales",
+            "lastArc": "Thousand-Year Blood War: The Conflict",
+            "segmentationVersion": 1,
+            "fingerprint": "5b5535a5"
+          },
+          "displayName": {
+            "en": "Byakuya Kuchiki",
+            "it": "Byakuya Kuchiki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 27,
+          "facts": {
+            "importance": "main",
+            "places": 9,
+            "animatedStops": 5,
+            "arcs": 5,
+            "journeyArcs": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -12855,11 +12861,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 30,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "main",
-            "places": 6,
-            "animatedStops": 6,
+            "places": 4,
+            "animatedStops": 4,
             "arcs": 4,
             "journeyArcs": 4
           },
