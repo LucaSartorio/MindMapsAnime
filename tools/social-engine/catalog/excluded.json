@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T06:35:20.234Z",
+  "generatedAt": "2026-10-03T10:58:28.391Z",
   "templates": {
     "characterJourney": {
       "byReason": {
-        "single_location": 363,
-        "no_journey_data": 643
+        "single_location": 409,
+        "no_journey_data": 644
       },
       "items": [
         {
@@ -6439,6 +6439,335 @@
           "subject": "meninas-mcallon",
           "subjectId": "char-bl-meninas",
           "displayName": "Meninas McAllon",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "nobara-kugisaki",
+          "subjectId": "char-jjk-nobara",
+          "displayName": "Nobara Kugisaki",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "toge-inumaki",
+          "subjectId": "char-jjk-toge",
+          "displayName": "Toge Inumaki",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "panda",
+          "subjectId": "char-jjk-panda",
+          "displayName": "Panda",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "kento-nanami",
+          "subjectId": "char-jjk-nanami",
+          "displayName": "Kento Nanami",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "shoko-ieiri",
+          "subjectId": "char-jjk-shoko",
+          "displayName": "Shoko Ieiri",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "masamichi-yaga",
+          "subjectId": "char-jjk-yaga",
+          "displayName": "Masamichi Yaga",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "kiyotaka-ijichi",
+          "subjectId": "char-jjk-ijichi",
+          "displayName": "Kiyotaka Ijichi",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "atsuya-kusakabe",
+          "subjectId": "char-jjk-kusakabe",
+          "displayName": "Atsuya Kusakabe",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "takuma-ino",
+          "subjectId": "char-jjk-ino",
+          "displayName": "Takuma Ino",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "mei-mei",
+          "subjectId": "char-jjk-mei-mei",
+          "displayName": "Mei Mei",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "ui-ui",
+          "subjectId": "char-jjk-ui-ui",
+          "displayName": "Ui Ui",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "yuki-tsukumo",
+          "subjectId": "char-jjk-yuki",
+          "displayName": "Yuki Tsukumo",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "kinji-hakari",
+          "subjectId": "char-jjk-hakari",
+          "displayName": "Kinji Hakari",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "kirara-hoshi",
+          "subjectId": "char-jjk-kirara",
+          "displayName": "Kirara Hoshi",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "tsumiki-fushiguro",
+          "subjectId": "char-jjk-tsumiki",
+          "displayName": "Tsumiki Fushiguro",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "wasuke-itadori",
+          "subjectId": "char-jjk-wasuke",
+          "displayName": "Wasuke Itadori",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "junpei-yoshino",
+          "subjectId": "char-jjk-junpei",
+          "displayName": "Junpei Yoshino",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "yu-haibara",
+          "subjectId": "char-jjk-haibara",
+          "displayName": "Yu Haibara",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "rika-orimoto",
+          "subjectId": "char-jjk-rika",
+          "displayName": "Rika Orimoto",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "fumihiko-takaba",
+          "subjectId": "char-jjk-takaba",
+          "displayName": "Fumihiko Takaba",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "hiromi-higuruma",
+          "subjectId": "char-jjk-higuruma",
+          "displayName": "Hiromi Higuruma",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "aoi-todo",
+          "subjectId": "char-jjk-todo",
+          "displayName": "Aoi Todo",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "momo-nishimiya",
+          "subjectId": "char-jjk-momo",
+          "displayName": "Momo Nishimiya",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "kokichi-muta",
+          "subjectId": "char-jjk-mechamaru",
+          "displayName": "Kokichi Muta",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "utahime-iori",
+          "subjectId": "char-jjk-utahime",
+          "displayName": "Utahime Iori",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "yoshinobu-gakuganji",
+          "subjectId": "char-jjk-gakuganji",
+          "displayName": "Yoshinobu Gakuganji",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "naobito-zenin",
+          "subjectId": "char-jjk-naobito",
+          "displayName": "Naobito Zen'in",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "ogi-zenin",
+          "subjectId": "char-jjk-ogi",
+          "displayName": "Ogi Zen'in",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "tengen",
+          "subjectId": "char-jjk-tengen",
+          "displayName": "Tengen",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "toji-fushiguro",
+          "subjectId": "char-jjk-toji",
+          "displayName": "Toji Fushiguro",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "jogo",
+          "subjectId": "char-jjk-jogo",
+          "displayName": "Jogo",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "hanami",
+          "subjectId": "char-jjk-hanami",
+          "displayName": "Hanami",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "dagon",
+          "subjectId": "char-jjk-dagon",
+          "displayName": "Dagon",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "mimiko-hasaba",
+          "subjectId": "char-jjk-mimiko",
+          "displayName": "Mimiko Hasaba",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "nanako-hasaba",
+          "subjectId": "char-jjk-nanako",
+          "displayName": "Nanako Hasaba",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "miguel",
+          "subjectId": "char-jjk-miguel",
+          "displayName": "Miguel",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "larue",
+          "subjectId": "char-jjk-larue",
+          "displayName": "Larue",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "haruta-shigemo",
+          "subjectId": "char-jjk-haruta",
+          "displayName": "Haruta Shigemo",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "granny-ogami",
+          "subjectId": "char-jjk-ogami",
+          "displayName": "Granny Ogami",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "kaori-itadori",
+          "subjectId": "char-jjk-kaori",
+          "displayName": "Kaori Itadori",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "hajime-kashimo",
+          "subjectId": "char-jjk-kashimo",
+          "displayName": "Hajime Kashimo",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "hana-kurusu",
+          "subjectId": "char-jjk-hana",
+          "displayName": "Hana Kurusu",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "ryu-ishigori",
+          "subjectId": "char-jjk-ryu",
+          "displayName": "Ryu Ishigori",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "takako-uro",
+          "subjectId": "char-jjk-uro",
+          "displayName": "Takako Uro",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "reggie-star",
+          "subjectId": "char-jjk-reggie",
+          "displayName": "Reggie Star",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "charles-bernard",
+          "subjectId": "char-jjk-charles",
+          "displayName": "Charles Bernard",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "yorozu",
+          "subjectId": "char-jjk-yorozu",
+          "displayName": "Yorozu",
           "reason": "single_location"
         },
         {

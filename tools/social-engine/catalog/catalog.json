@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T06:35:20.234Z",
+  "generatedAt": "2026-10-03T10:58:28.391Z",
   "locales": [
     "en",
     "it"
@@ -51,6 +51,12 @@
           "videos": 80,
           "series": 7,
           "excluded": 76
+        },
+        "jujutsukaisen": {
+          "characters": 19,
+          "videos": 19,
+          "series": 0,
+          "excluded": 47
         },
         "blackclover": {
           "characters": 50,
@@ -9730,6 +9736,576 @@
           "displayName": {
             "en": "Pernida Parnkgjas",
             "it": "Pernida Parnkgjas"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:jujutsukaisen:yuji-itadori",
+          "anime": "jujutsukaisen",
+          "animeTitle": "Jujutsu Kaisen",
+          "subject": "yuji-itadori",
+          "series": null,
+          "displayName": {
+            "en": "Yuji Itadori",
+            "it": "Yuji Itadori"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "main",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:jujutsukaisen:megumi-fushiguro",
+          "anime": "jujutsukaisen",
+          "animeTitle": "Jujutsu Kaisen",
+          "subject": "megumi-fushiguro",
+          "series": null,
+          "displayName": {
+            "en": "Megumi Fushiguro",
+            "it": "Megumi Fushiguro"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 25,
+          "facts": {
+            "importance": "main",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:jujutsukaisen:satoru-gojo",
+          "anime": "jujutsukaisen",
+          "animeTitle": "Jujutsu Kaisen",
+          "subject": "satoru-gojo",
+          "series": null,
+          "displayName": {
+            "en": "Satoru Gojo",
+            "it": "Satoru Gojo"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 27,
+          "facts": {
+            "importance": "main",
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:jujutsukaisen:maki-zenin",
+          "anime": "jujutsukaisen",
+          "animeTitle": "Jujutsu Kaisen",
+          "subject": "maki-zenin",
+          "series": null,
+          "displayName": {
+            "en": "Maki Zen'in",
+            "it": "Maki Zen'in"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 25,
+          "facts": {
+            "importance": "main",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 4,
+            "journeyArcs": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:jujutsukaisen:yuta-okkotsu",
+          "anime": "jujutsukaisen",
+          "animeTitle": "Jujutsu Kaisen",
+          "subject": "yuta-okkotsu",
+          "series": null,
+          "displayName": {
+            "en": "Yuta Okkotsu",
+            "it": "Yuta Okkotsu"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "main",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:jujutsukaisen:riko-amanai",
+          "anime": "jujutsukaisen",
+          "animeTitle": "Jujutsu Kaisen",
+          "subject": "riko-amanai",
+          "series": null,
+          "displayName": {
+            "en": "Riko Amanai",
+            "it": "Riko Amanai"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 1,
+            "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:jujutsukaisen:misato-kuroi",
+          "anime": "jujutsukaisen",
+          "animeTitle": "Jujutsu Kaisen",
+          "subject": "misato-kuroi",
+          "series": null,
+          "displayName": {
+            "en": "Misato Kuroi",
+            "it": "Misato Kuroi"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:jujutsukaisen:mai-zenin",
+          "anime": "jujutsukaisen",
+          "animeTitle": "Jujutsu Kaisen",
+          "subject": "mai-zenin",
+          "series": null,
+          "displayName": {
+            "en": "Mai Zen'in",
+            "it": "Mai Zen'in"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:jujutsukaisen:noritoshi-kamo",
+          "anime": "jujutsukaisen",
+          "animeTitle": "Jujutsu Kaisen",
+          "subject": "noritoshi-kamo",
+          "series": null,
+          "displayName": {
+            "en": "Noritoshi Kamo",
+            "it": "Noritoshi Kamo"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:jujutsukaisen:kasumi-miwa",
+          "anime": "jujutsukaisen",
+          "animeTitle": "Jujutsu Kaisen",
+          "subject": "kasumi-miwa",
+          "series": null,
+          "displayName": {
+            "en": "Kasumi Miwa",
+            "it": "Kasumi Miwa"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:jujutsukaisen:naoya-zenin",
+          "anime": "jujutsukaisen",
+          "animeTitle": "Jujutsu Kaisen",
+          "subject": "naoya-zenin",
+          "series": null,
+          "displayName": {
+            "en": "Naoya Zen'in",
+            "it": "Naoya Zen'in"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:jujutsukaisen:ryomen-sukuna",
+          "anime": "jujutsukaisen",
+          "animeTitle": "Jujutsu Kaisen",
+          "subject": "ryomen-sukuna",
+          "series": null,
+          "displayName": {
+            "en": "Ryomen Sukuna",
+            "it": "Ryomen Sukuna"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "main",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:jujutsukaisen:kenjaku",
+          "anime": "jujutsukaisen",
+          "animeTitle": "Jujutsu Kaisen",
+          "subject": "kenjaku",
+          "series": null,
+          "displayName": {
+            "en": "Kenjaku",
+            "it": "Kenjaku"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 30,
+          "facts": {
+            "importance": "main",
+            "places": 6,
+            "animatedStops": 6,
+            "arcs": 4,
+            "journeyArcs": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:jujutsukaisen:suguru-geto",
+          "anime": "jujutsukaisen",
+          "animeTitle": "Jujutsu Kaisen",
+          "subject": "suguru-geto",
+          "series": null,
+          "displayName": {
+            "en": "Suguru Geto",
+            "it": "Suguru Geto"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "main",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 1,
+            "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:jujutsukaisen:mahito",
+          "anime": "jujutsukaisen",
+          "animeTitle": "Jujutsu Kaisen",
+          "subject": "mahito",
+          "series": null,
+          "displayName": {
+            "en": "Mahito",
+            "it": "Mahito"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "main",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:jujutsukaisen:choso",
+          "anime": "jujutsukaisen",
+          "animeTitle": "Jujutsu Kaisen",
+          "subject": "choso",
+          "series": null,
+          "displayName": {
+            "en": "Choso",
+            "it": "Choso"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:jujutsukaisen:eso",
+          "anime": "jujutsukaisen",
+          "animeTitle": "Jujutsu Kaisen",
+          "subject": "eso",
+          "series": null,
+          "displayName": {
+            "en": "Eso",
+            "it": "Eso"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:jujutsukaisen:kechizu",
+          "anime": "jujutsukaisen",
+          "animeTitle": "Jujutsu Kaisen",
+          "subject": "kechizu",
+          "series": null,
+          "displayName": {
+            "en": "Kechizu",
+            "it": "Kechizu"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:jujutsukaisen:uraume",
+          "anime": "jujutsukaisen",
+          "animeTitle": "Jujutsu Kaisen",
+          "subject": "uraume",
+          "series": null,
+          "displayName": {
+            "en": "Uraume",
+            "it": "Uraume"
           },
           "locales": [
             "en",

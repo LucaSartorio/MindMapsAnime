@@ -17,6 +17,12 @@ import {
   AOT_RANKS,
   AOT_ROLES,
 } from '@/data/attackontitan/config';
+import {
+  JJK_LINEAGES,
+  JJK_RANKS,
+  JJK_ROLES,
+  JJK_TECHNIQUE_CATEGORIES,
+} from '@/data/jujutsukaisen/config';
 
 /**
  * Registro generico di tutti gli anime/manga supportati o pianificati.
@@ -789,21 +795,30 @@ export const animeWorlds: AnimeWorld[] = [
       es: 'Hechiceros y Espíritus Malditos',
     },
     description: {
-      it: 'Il Giappone degli stregoni è in arrivo: gli istituti di arti occulte di Tokyo e Kyoto, Shibuya e Shinjuku, il Culling Game e le dita di Sukuna.',
-      en: 'The sorcerers\' Japan is coming: the Tokyo and Kyoto jujutsu high schools, Shibuya and Shinjuku, the Culling Game and Sukuna\'s fingers.',
-      ja: '呪術師たちの日本が近日公開。東京と京都の呪術高専、渋谷と新宿、死滅回游、そして宿儺の指。',
-      fr: 'Le Japon des exorcistes arrive bientôt : les lycées d’exorcisme de Tokyo et Kyoto, Shibuya et Shinjuku, le Culling Game et les doigts de Sukuna.',
-      de: 'Das Japan der Jujutsu-Zauberer kommt bald: die Jujutsu-Oberschulen von Tokio und Kyoto, Shibuya und Shinjuku, das Culling Game und Sukunas Finger.',
-      es: 'El Japón de los hechiceros está en camino: los institutos de artes ocultas de Tokio y Kioto, Shibuya y Shinjuku, el Culling Game y los dedos de Sukuna.',
+      it: "Il Giappone degli stregoni ricostruito in sei mappe originali: l'arcipelago con le dieci colonie del Culling Game, Tokyo, Shibuya dentro il Velo, l'Istituto di arti occulte di Tokyo, Kyoto e Sendai. Yuji, Megumi, Nobara e Gojo, i clan Gojo, Zen'in e Kamo, gli spiriti calamità, Kenjaku e Sukuna, dall'era Heian e dal passato di Gojo e Geto fino all'Incidente di Shibuya, al Culling Game e allo Scontro di Shinjuku.",
+      en: "The sorcerers' Japan rebuilt across six original maps: the archipelago with the ten Culling Game colonies, Tokyo, Shibuya inside the Veil, Tokyo Jujutsu High, Kyoto and Sendai. Yuji, Megumi, Nobara and Gojo, the Gojo, Zen'in and Kamo clans, the disaster curses, Kenjaku and Sukuna, from the Heian era and Gojo and Geto's past to the Shibuya Incident, the Culling Game and the Shinjuku Showdown.",
+      ja: '呪術師たちの日本を6枚のオリジナル地図で再構成：死滅回游の10の結界（コロニー）を示した日本列島、東京、帳の下りた渋谷、東京都立呪術高等専門学校、京都、仙台。虎杖・伏黒・釘崎と五条、五条家・禪院家・加茂家、特級呪霊、羂索と宿儺——平安時代と五条・夏油の過去から、渋谷事変、死滅回游、新宿決戦まで。',
+      fr: 'Le Japon des exorcistes reconstruit en six cartes originales : l’archipel avec les dix colonies du Culling Game, Tokyo, Shibuya sous le Voile, le lycée d’exorcisme de Tokyo, Kyoto et Sendai. Yuji, Megumi, Nobara et Gojo, les clans Gojo, Zen’in et Kamo, les fléaux de calamité, Kenjaku et Sukuna, de l’ère Heian et du passé de Gojo et Geto jusqu’à l’incident de Shibuya, au Culling Game et à l’affrontement de Shinjuku.',
+      de: 'Das Japan der Jujutsu-Zauberer in sechs originalen Karten rekonstruiert: der Archipel mit den zehn Kolonien des Culling Game, Tokio, Shibuya unter dem Schleier, die Jujutsu-Oberschule Tokio, Kyoto und Sendai. Yuji, Megumi, Nobara und Gojo, die Clans Gojo, Zen’in und Kamo, die Katastrophenflüche, Kenjaku und Sukuna – von der Heian-Zeit und Gojos und Getos Vergangenheit bis zum Shibuya-Zwischenfall, dem Culling Game und dem Showdown in Shinjuku.',
+      es: 'El Japón de los hechiceros reconstruido en seis mapas originales: el archipiélago con las diez colonias del Culling Game, Tokio, Shibuya bajo el Velo, el instituto de artes ocultas de Tokio, Kioto y Sendai. Yuji, Megumi, Nobara y Gojo, los clanes Gojo, Zen’in y Kamo, las maldiciones de desastre, Kenjaku y Sukuna, desde la era Heian y el pasado de Gojo y Geto hasta el incidente de Shibuya, el Culling Game y el enfrentamiento de Shinjuku.',
     },
-    status: 'coming_soon',
+    status: 'available',
+    coverAssetId: 'jjk-cover-placeholder',
     theme: {
       primary: '#5a4b9c',
       accent: '#3f7fb5',
       highlight: '#c0392b',
       background: '#0c0d11',
     },
-    availableMapLevelIds: [],
+    defaultMapLevelId: 'jjk-map-japan',
+    availableMapLevelIds: [
+      'jjk-map-japan',
+      'jjk-map-tokyo',
+      'jjk-map-shibuya',
+      'jjk-map-campus',
+      'jjk-map-kyoto',
+      'jjk-map-sendai',
+    ],
     tags: ['shonen', 'stregoni', 'gege akutami', 'jump'],
     metadata: {
       author: 'Gege Akutami',
@@ -814,12 +829,41 @@ export const animeWorlds: AnimeWorld[] = [
     config: {
       ability: {
         term: { it: 'Tecniche Malefiche', en: 'Cursed techniques', ja: '呪術', fr: 'Techniques maudites', de: 'Fluchtechniken', es: 'Técnicas malditas' },
+        // La "categoria" distingue tecnica innata, estensioni, domini, fondamentali,
+        // barriere, restrizioni, shikigami e oggetti; il facet secondario è la STIRPE/FONTE.
         categoryTerm: { it: 'Tipo', en: 'Type', ja: 'タイプ', fr: 'Type', de: 'Typ', es: 'Tipo' },
+        categories: JJK_TECHNIQUE_CATEGORIES,
+        attribute: {
+          term: { it: 'Stirpe / Fonte', en: 'Lineage / Source', ja: '系譜 / 由来', fr: 'Lignée / Source', de: 'Abstammung / Quelle', es: 'Linaje / Fuente' },
+          options: JJK_LINEAGES,
+        },
       },
-      characterRank: { term: { it: 'Grado stregone', en: 'Sorcerer grade', ja: '術師の等級', fr: 'Grade d’exorciste', de: 'Zaubererrang', es: 'Grado de hechicero' } },
+      characterRank: {
+        term: { it: 'Grado stregone', en: 'Sorcerer grade', ja: '術師の等級', fr: 'Grade d’exorciste', de: 'Zaubererrang', es: 'Grado de hechicero' },
+        options: JJK_RANKS,
+      },
+      characterRoles: JJK_ROLES,
       nationTerm: { it: 'Regione / Prefettura', en: 'Region / Prefecture', ja: '地方 / 県', fr: 'Région / Préfecture', de: 'Region / Präfektur', es: 'Región / Prefectura' },
       factionsTerm: { it: 'Fazioni & Organizzazioni', en: 'Factions & Organizations', ja: '勢力と組織', fr: 'Factions & Organisations', de: 'Fraktionen & Organisationen', es: 'Facciones y organizaciones' },
       placesTerm: { it: 'luoghi', en: 'places', ja: '場所', fr: 'lieux', de: 'Orte', es: 'lugares' },
+      featured: {
+        abilities: [
+          'tec-jjk-limitless',
+          'tec-jjk-unlimited-void',
+          'tec-jjk-shrine',
+          'tec-jjk-malevolent-shrine',
+          'tec-jjk-ten-shadows',
+          'tec-jjk-black-flash',
+        ],
+        factions: [
+          'faction-jjk-tokyo-high',
+          'faction-jjk-kyoto-high',
+          'faction-jjk-zenin-clan',
+          'faction-jjk-disaster-curses',
+          'faction-jjk-culling-players',
+          'faction-jjk-death-paintings',
+        ],
+      },
     },
   },
   {
