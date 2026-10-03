@@ -139,13 +139,19 @@ const WORLD_STYLES: Record<string, WorldPlaceholderStyle> = {
     emblem: 'wings',
     ink: '#c8a15a', // oro delle cinghie dell'attrezzatura / Ali della Libertà
   },
-  // -------------- In arrivo (pronti al lancio del dataset) --------------
   bleach: {
     character: 'blade',
     ability: 'slash',
     emblem: 'crest_star',
-    ink: '#dfe6ee',
+    ink: '#dfe6ee', // lama dello zanpakutō
   },
+  jujutsukaisen: {
+    character: 'blindfold',
+    ability: 'curse',
+    emblem: 'crest_star',
+    ink: '#b39ddb', // energia malefica
+  },
+  // -------------- In arrivo (pronti al lancio del dataset) --------------
   fullmetalalchemist: {
     character: 'transmutation',
     ability: 'magic_circle',
@@ -169,12 +175,6 @@ const WORLD_STYLES: Record<string, WorldPlaceholderStyle> = {
     ability: 'magic_circle',
     emblem: 'flame',
     ink: '#f5b21a',
-  },
-  jujutsukaisen: {
-    character: 'blindfold',
-    ability: 'curse',
-    emblem: 'crest_star',
-    ink: '#b39ddb',
   },
   demonslayer: {
     character: 'haori',
