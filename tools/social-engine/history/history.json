@@ -226,7 +226,7 @@
       "segment": "part-01",
       "segmentFingerprint": "aadfdbe7",
       "createdAt": "2026-10-04T07:38:04.785Z",
-      "updatedAt": "2026-10-04T07:51:01.469Z",
+      "updatedAt": "2026-10-04T07:56:56.164Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-10-04T07:41:33.080Z",
       "outputFile": "tools/social-engine/output/naruto_naruto-uzumaki_character-journey_part-01_en.mp4",
@@ -256,16 +256,17 @@
           "scheduledAt": "2026-10-04T07:46:28Z",
           "publishedAt": null,
           "failedAt": null,
-          "providerPostId": "387676268",
+          "providerPostId": "387677125",
           "providerPostUuid": "-2338125002035671890",
           "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-2338125002035671890",
           "publicUrl": null,
           "lastError": null,
           "attempts": 1,
           "receipts": [
-            "naruto_naruto-uzumaki_character-journey_part-01_en.instagram.scheduled.ef38f3d57045"
+            "naruto_naruto-uzumaki_character-journey_part-01_en.instagram.scheduled.ef38f3d57045",
+            "naruto_naruto-uzumaki_character-journey_part-01_en.instagram.scheduled.8e70135b2cb1"
           ],
-          "updatedAt": "2026-10-04T07:51:01.469Z"
+          "updatedAt": "2026-10-04T07:56:56.164Z"
         },
         {
           "platform": "facebook",
@@ -275,16 +276,17 @@
           "scheduledAt": "2026-10-04T07:46:28Z",
           "publishedAt": null,
           "failedAt": null,
-          "providerPostId": "387676268",
+          "providerPostId": "387677125",
           "providerPostUuid": "-2338125002035671890",
           "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-2338125002035671890",
           "publicUrl": null,
           "lastError": null,
           "attempts": 1,
           "receipts": [
-            "naruto_naruto-uzumaki_character-journey_part-01_en.facebook.scheduled.9b6fc2bb601f"
+            "naruto_naruto-uzumaki_character-journey_part-01_en.facebook.scheduled.9b6fc2bb601f",
+            "naruto_naruto-uzumaki_character-journey_part-01_en.facebook.scheduled.2490fbe4791f"
           ],
-          "updatedAt": "2026-10-04T07:51:01.469Z"
+          "updatedAt": "2026-10-04T07:56:56.164Z"
         },
         {
           "platform": "tiktok",
@@ -294,16 +296,17 @@
           "scheduledAt": "2026-10-04T07:46:28Z",
           "publishedAt": null,
           "failedAt": null,
-          "providerPostId": "387676268",
+          "providerPostId": "387677125",
           "providerPostUuid": "-2338125002035671890",
           "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-2338125002035671890",
           "publicUrl": null,
           "lastError": null,
           "attempts": 1,
           "receipts": [
-            "naruto_naruto-uzumaki_character-journey_part-01_en.tiktok.scheduled.019a09af56ce"
+            "naruto_naruto-uzumaki_character-journey_part-01_en.tiktok.scheduled.019a09af56ce",
+            "naruto_naruto-uzumaki_character-journey_part-01_en.tiktok.scheduled.1a8c1bd47457"
           ],
-          "updatedAt": "2026-10-04T07:51:01.469Z"
+          "updatedAt": "2026-10-04T07:56:56.164Z"
         },
         {
           "platform": "youtube",
@@ -313,16 +316,17 @@
           "scheduledAt": "2026-10-04T07:46:28Z",
           "publishedAt": null,
           "failedAt": null,
-          "providerPostId": "387676268",
+          "providerPostId": "387677125",
           "providerPostUuid": "-2338125002035671890",
           "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-2338125002035671890",
           "publicUrl": null,
           "lastError": null,
           "attempts": 1,
           "receipts": [
-            "naruto_naruto-uzumaki_character-journey_part-01_en.youtube.scheduled.13ba2101e40c"
+            "naruto_naruto-uzumaki_character-journey_part-01_en.youtube.scheduled.13ba2101e40c",
+            "naruto_naruto-uzumaki_character-journey_part-01_en.youtube.scheduled.6d7c4b155eac"
           ],
-          "updatedAt": "2026-10-04T07:51:01.469Z"
+          "updatedAt": "2026-10-04T07:56:56.164Z"
         }
       ]
     },

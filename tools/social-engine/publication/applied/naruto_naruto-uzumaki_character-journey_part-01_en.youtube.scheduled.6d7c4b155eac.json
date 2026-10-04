@@ -1,0 +1,30 @@
+{
+  "receiptId": "naruto_naruto-uzumaki_character-journey_part-01_en.youtube.scheduled.6d7c4b155eac",
+  "outcome": "applied",
+  "transition": {
+    "from": "scheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-10-04T07:56:56.164Z",
+  "sourceFile": "20261004T075319Z-naruto_naruto-uzumaki_character-journey_part-01_en-youtube-scheduled.json",
+  "run": {
+    "runId": "37187322765",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/37187322765",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "character-journey:naruto:naruto-uzumaki:part-01@en",
+    "platform": "youtube",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-10-04T10:00:00+02:00",
+    "providerPostId": "387677125",
+    "providerPostUuid": "-2338125002035671890",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-2338125002035671890",
+    "recordedAt": "2026-10-04T07:53:19Z",
+    "recordedBy": "chatgpt-work-publishing-agent"
+  }
+}
