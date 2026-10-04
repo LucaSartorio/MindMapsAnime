@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-04T06:14:01.345Z",
+  "generatedAt": "2026-10-04T07:02:39.709Z",
   "locales": [
     "en",
     "it"
@@ -6612,24 +6612,24 @@
           "renderedLocales": [
             "en"
           ],
-          "scheduledLocales": [
+          "scheduledLocales": [],
+          "publishedLocales": [
             "en"
           ],
-          "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": true,
-          "publishedBefore": false,
+          "publishedBefore": true,
           "publication": [
             {
               "renderId": "character-journey:dragonball:goku:part-01@en",
               "locale": "en",
               "variant": null,
-              "status": "scheduled",
+              "status": "published",
               "platforms": {
-                "instagram": "scheduled",
-                "facebook": "scheduled",
-                "tiktok": "notScheduled",
-                "youtube": "scheduled"
+                "instagram": "published",
+                "facebook": "published",
+                "tiktok": "published",
+                "youtube": "published"
               }
             }
           ]
@@ -15460,44 +15460,12 @@
       "rendered": 6,
       "unavailable": 5,
       "notPublished": 5,
-      "scheduled": 1,
+      "scheduled": 0,
       "partiallyPublished": 0,
-      "published": 0,
+      "published": 1,
       "failed": 0
     },
-    "ready": [
-      {
-        "renderId": "character-journey:dragonball:goku:part-01@en",
-        "contentId": "character-journey:dragonball:goku:part-01",
-        "anime": "dragonball",
-        "subject": "goku",
-        "subjectName": "Goku",
-        "locale": "en",
-        "variant": null,
-        "segment": "part-01",
-        "partNumber": 1,
-        "partCount": 6,
-        "renderedAt": "2026-10-02T10:45:46.778Z",
-        "durationSeconds": 25,
-        "publicationStatus": "scheduled",
-        "platforms": {
-          "instagram": "scheduled",
-          "facebook": "scheduled",
-          "tiktok": "notScheduled",
-          "youtube": "scheduled"
-        },
-        "artifact": {
-          "name": "animapverse-social-render-36996948068-1",
-          "runId": "36996948068",
-          "runAttempt": "1",
-          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/36996948068",
-          "video": "videos/dragonball_goku_character-journey_part-01_en.mp4",
-          "manifest": "manifests/dragonball_goku_character-journey_part-01_en.manifest.json",
-          "sha256": null,
-          "expiresAt": "2026-11-01T10:45:48Z"
-        }
-      }
-    ],
+    "ready": [],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",
