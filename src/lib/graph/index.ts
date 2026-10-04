@@ -180,7 +180,7 @@ export function buildWorldGraph(dataset: WorldDataset): WorldGraph {
     for (const id of c.clanIds ?? []) link('character', c.id, 'faction', id, 'member_of');
     for (const id of c.arcIds ?? []) link('character', c.id, 'arc', id, 'in_arc');
     for (const id of c.jutsuIds ?? []) link('character', c.id, 'technique', id, 'uses');
-    for (const id of c.family ?? []) link('character', c.id, 'character', id, 'family');
+    for (const id of new Set([...(c.family ?? []), ...(c.parents ?? []), ...(c.spouses ?? [])])) link('character', c.id, 'character', id, 'family');
     // target è il MIO maestro → reverse: io sono il suo allievo
     for (const id of c.teachers ?? []) link('character', c.id, 'character', id, 'mentor');
     for (const id of c.students ?? []) link('character', c.id, 'character', id, 'student');

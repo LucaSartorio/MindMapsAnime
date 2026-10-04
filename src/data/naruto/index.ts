@@ -1,4 +1,6 @@
 import { narutoSlugs } from './slugs';
+import { narutoMarkerTags } from './markerTags';
+import { withEventTags } from '../shared/eventTagKit';
 import type { StoryArc, TimelineEvent, WorldDataset } from '@/types';
 import { animeWorlds } from '@/data/worlds';
 import { narutoLocations } from './locations';
@@ -29,6 +31,13 @@ import { narutoEventsBatch1 } from './eventsBatch1';
 import { narutoEventsBatch2 } from './eventsBatch2';
 import { NARUTO_EVENT_CHRONOLOGY } from './eventsChronology';
 import { narutoEventsBijuu } from './eventsBijuu';
+import { narutoEventsGaps } from './eventsGaps';
+import { narutoBattles } from './battles';
+import { narutoFamily } from './family';
+import { withFamily } from '../shared/familyKit';
+import { narutoStructure } from './structure';
+import { withFactionExtras } from '../shared/factionKit';
+import { applyBattles } from '../shared/battleKit';
 import { narutoRoutes } from './routes';
 import { narutoCharacterRoutes } from './characterRoutes';
 import { narutoRoutesBatch2 } from './routesBatch2';
@@ -80,7 +89,7 @@ const characters = [
 
 /** Ordine cronologico: vedi `eventsChronology.ts` (posizione × 10). */
 const chronoIndex = new Map(NARUTO_EVENT_CHRONOLOGY.map((id, i) => [id, (i + 1) * 10]));
-const events: TimelineEvent[] = [...narutoEvents, ...narutoEventsBatch1, ...narutoEventsBatch2, ...narutoEventsBijuu]
+const events: TimelineEvent[] = applyBattles([...narutoEvents, ...narutoEventsBatch1, ...narutoEventsBatch2, ...narutoEventsBijuu, ...narutoEventsGaps], narutoBattles)
   .map((e) => (chronoIndex.has(e.id) ? { ...e, order: chronoIndex.get(e.id)! } : e))
   .sort((a, b) => a.order - b.order);
 
@@ -91,7 +100,7 @@ const arcs: StoryArc[] = [...narutoArcs, ...narutoArcsBatch1, ...narutoArcsBatch
 }));
 
 /** Dataset completo del mondo Naruto. */
-export const narutoDataset: WorldDataset = densifyCrossLinks({
+export const narutoDataset: WorldDataset = withEventTags(withFactionExtras(withFamily(densifyCrossLinks({
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
   seoSlugs: narutoSlugs,
   world: naruto,
@@ -114,7 +123,7 @@ export const narutoDataset: WorldDataset = densifyCrossLinks({
   ),
   tournaments: narutoTournaments,
   assets: narutoAssets,
-});
+}), narutoFamily, 'char-'), narutoStructure), narutoMarkerTags);
 
 export { NARUTO_MAP_VIEWBOX, NARUTO_WORLD_MAP_SRC } from './mapConstants';
 export {

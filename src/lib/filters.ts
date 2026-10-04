@@ -1,3 +1,4 @@
+import { eventHappenedBy, locationAppearedBy } from './storyMoment';
 import type {
   Character,
   Faction,
@@ -46,6 +47,7 @@ export function filterLocations(
   dataset: WorldDataset,
 ): Location[] {
   return locations.filter((loc) => {
+    if (!locationAppearedBy(dataset, loc, filters.untilArcId)) return false;
     // Elementi "da verificare": nascosti di default, mostrabili dal filtro.
     if (!filters.showUnverified && loc.referenceStatus === 'needs_verification') {
       return false;
@@ -136,6 +138,7 @@ export function filterEvents(
   dataset?: WorldDataset,
 ): TimelineEvent[] {
   return events.filter((ev) => {
+    if (dataset && !eventHappenedBy(dataset, ev, filters.untilArcId)) return false;
     if (filters.arcIds.length > 0 && (!ev.arcId || !filters.arcIds.includes(ev.arcId))) {
       return false;
     }

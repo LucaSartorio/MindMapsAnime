@@ -258,6 +258,34 @@ export const dragonballEventsExtra: TimelineEvent[] = [
     tags: ['grande-mago-piccolo', 'lutto'],
   }),
   e({
+    id: 'evt-dbz-goku-vs-tambourine',
+    title: { it: 'Goku contro Tamburello', en: 'Goku vs. Tambourine' },
+    description: {
+      it: "Trovato il corpo di Crilin, ucciso dal demone Tamburello per conto del Grande Mago Piccolo, Goku si lancia all'inseguimento e lo uccide con una Kamehameha.",
+      en: "After finding Krillin's body, killed by the demon Tambourine on King Piccolo's behalf, Goku sets off in pursuit and kills him with a Kamehameha.",
+    },
+    period: DB,
+    arcId: 'arc-dbz-king-piccolo',
+    characterIds: ['char-dbz-goku', 'char-dbz-tambourine', 'char-dbz-krillin'],
+    mangaChapters: ['~138-140'],
+    order: 6.5,
+    tags: ['grande-mago-piccolo', 'scontro'],
+  }),
+  e({
+    id: 'evt-dbz-goku-first-vs-king-piccolo',
+    title: { it: 'Goku sconfitto dal Grande Mago Piccolo', en: 'Goku defeated by King Piccolo' },
+    description: {
+      it: "Nel primo scontro con il Grande Mago Piccolo, Goku viene battuto e lasciato per morto. Yajirobe lo porta alla Torre di Karin, dove si riprende con un Senzu.",
+      en: 'In his first fight with King Piccolo, Goku is beaten and left for dead. Yajirobe carries him to Korin Tower, where he recovers with a Senzu Bean.',
+    },
+    period: DB,
+    arcId: 'arc-dbz-king-piccolo',
+    characterIds: ['char-dbz-goku', 'char-dbz-king-piccolo', 'char-dbz-yajirobe'],
+    mangaChapters: ['~141-147'],
+    order: 7.08,
+    tags: ['grande-mago-piccolo', 'scontro'],
+  }),
+  e({
     id: 'evt-dbz-ultra-divine-water',
     title: { it: "L'Acqua Ultrasacra", en: 'The Ultra Divine Water' },
     description: {
@@ -399,7 +427,7 @@ export const dragonballEventsExtra: TimelineEvent[] = [
     arcId: 'arc-dbz-namek-frieza',
     locationId: 'loc-dbz-namek-spaceship',
     characterIds: ['char-dbz-bulma', 'char-dbz-krillin', 'char-dbz-gohan', 'char-dbz-mr-popo', 'char-dbz-dr-brief'],
-    mangaChapters: ['~242-245'],
+    mangaChapters: ['~236-245'],
     animeEpisodes: ['DBZ ep. 36-39'],
     order: 16.5,
     tags: ['namecc'],

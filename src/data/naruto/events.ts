@@ -585,7 +585,7 @@ export const narutoEvents: TimelineEvent[] = [
     },
     period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     arcId: 'arc-jiraiya-gallant',
-    mangaChapters: ['381-383'],
+    mangaChapters: ['~372-383'],
     animeEpisodes: ['Shippuden ep. 131-133'],
     battleVideoUrl: 'https://www.youtube.com/watch?v=raYD5O0xpZQ',
     locationId: 'loc-ame',

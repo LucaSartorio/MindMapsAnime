@@ -494,8 +494,8 @@ export const jjkEventsWar: TimelineEvent[] = [
     id: 'evt-jjk-sukuna-takes-megumi',
     title: { it: 'Sukuna si prende Megumi', en: 'Sukuna takes Megumi' },
     description: {
-      it: "Sukuna attiva il vincolo stretto con Yuji a Eishu e, nel minuto di controllo, separa la propria anima in un dito, se lo strappa e lo fa ingoiare a Megumi: passa così nel suo corpo. Tsumiki si rivela la stregona Yorozu; Sukuna la uccide con le mani di Megumi, e l'anima di Megumi sprofonda.",
-      en: "Sukuna activates the vow made with Yuji at Eishu and, in the minute of control, splits his soul into a finger, tears it off and makes Megumi swallow it: that is how he moves into his body. Tsumiki reveals herself as the sorceress Yorozu; Sukuna kills her with Megumi's hands, and Megumi's soul sinks.",
+      it: "Sukuna attiva il vincolo stretto con Yuji a Eishu e, nel minuto di controllo, separa la propria anima in un dito, se lo strappa e lo fa ingoiare a Megumi: passa così nel suo corpo. Uraume arriva a portarlo via.",
+      en: "Sukuna activates the vow made with Yuji at Eishu and, in the minute of control, splits his soul into a finger, tears it off and makes Megumi swallow it: that is how he moves into his body. Uraume arrives to carry him away.",
     },
     period: P.culling,
     arcId: 'arc-jjk-culling-game',

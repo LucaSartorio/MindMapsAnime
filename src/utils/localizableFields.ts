@@ -52,6 +52,13 @@ export const LOCALIZABLE_FIELDS: Record<string, FieldSpec[]> = {
     ['localizedName', 'name'],
     ['description', 'text', true],
     ['longDescription', 'text'],
+    ['structure[].name', 'text'],
+    ['structure[].note', 'text'],
+    ['structure[].members[].label', 'name'],
+    ['structure[].members[].role', 'text'],
+    ['succession[].title', 'text'],
+    ['succession[].holders[].label', 'name'],
+    ['succession[].holders[].role', 'text'],
   ],
   teams: [
     ['localizedName', 'name'],
@@ -70,6 +77,7 @@ export const LOCALIZABLE_FIELDS: Record<string, FieldSpec[]> = {
     ['description', 'text', true],
     ['longDescription', 'text'],
     ['period', 'text', true],
+    ['battle.note', 'text'],
   ],
   routes: [
     ['localizedName', 'name'],

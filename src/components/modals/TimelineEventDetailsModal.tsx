@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { BattleOutcomeLine } from '@/components/battles/BattleList';
 import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
 import { Modal } from '@/components/common/Modal';
@@ -173,6 +174,18 @@ export function TimelineEventDetailsModal({
             </p>
           ) : null}
         </section>
+      )}
+
+      {event.battle && (
+        <BattleOutcomeLine
+          dataset={dataset}
+          event={event}
+          renderName={(id, label) => (
+            <button type="button" onClick={() => openCharacter(id)} className="text-chakra-300 hover:underline">
+              {label}
+            </button>
+          )}
+        />
       )}
 
       {characters.length > 0 && (

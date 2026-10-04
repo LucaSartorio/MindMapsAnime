@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T23:14:33.153Z",
+  "generatedAt": "2026-10-04T06:14:01.345Z",
   "templates": {
     "characterJourney": {
       "byReason": {
-        "single_location": 501,
-        "no_journey_data": 585
+        "single_location": 506,
+        "no_journey_data": 576
       },
       "items": [
         {
@@ -69,7 +69,7 @@
           "subject": "sai",
           "subjectId": "char-sai",
           "displayName": "Sai",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
@@ -206,20 +206,6 @@
         },
         {
           "anime": "naruto",
-          "subject": "zabuza-momochi",
-          "subjectId": "char-zabuza",
-          "displayName": "Zabuza Momochi",
-          "reason": "single_location"
-        },
-        {
-          "anime": "naruto",
-          "subject": "haku",
-          "subjectId": "char-haku",
-          "displayName": "Haku",
-          "reason": "single_location"
-        },
-        {
-          "anime": "naruto",
           "subject": "yagura-karatachi",
           "subjectId": "char-yagura",
           "displayName": "Yagura Karatachi",
@@ -251,7 +237,7 @@
           "subject": "darui",
           "subjectId": "char-darui",
           "displayName": "Darui",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
@@ -615,14 +601,14 @@
           "subject": "kinkaku",
           "subjectId": "char-kinkaku",
           "displayName": "Kinkaku",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
           "subject": "ginkaku",
           "subjectId": "char-ginkaku",
           "displayName": "Ginkaku",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
@@ -2078,7 +2064,7 @@
           "subject": "kastro",
           "subjectId": "char-hxh-kastro",
           "displayName": "Kastro",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "hunterxhunter",
@@ -2617,13 +2603,6 @@
           "subject": "kurozumi-orochi",
           "subjectId": "char-op-orochi",
           "displayName": "Kurozumi Orochi",
-          "reason": "single_location"
-        },
-        {
-          "anime": "onepiece",
-          "subject": "kozuki-oden",
-          "subjectId": "char-op-oden",
-          "displayName": "Kozuki Oden",
           "reason": "single_location"
         },
         {
@@ -3660,14 +3639,14 @@
           "subject": "daz-bones",
           "subjectId": "char-op-daz-bones",
           "displayName": "Daz Bones",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
           "subject": "miss-doublefinger",
           "subjectId": "char-op-miss-doublefinger",
           "displayName": "Miss Doublefinger",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
@@ -3702,7 +3681,7 @@
           "subject": "mr-4",
           "subjectId": "char-op-mr-4",
           "displayName": "Mr. 4",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
@@ -3758,7 +3737,7 @@
           "subject": "satori",
           "subjectId": "char-op-satori",
           "displayName": "Satori",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
@@ -5347,13 +5326,6 @@
           "subject": "korin",
           "subjectId": "char-dbz-korin",
           "displayName": "Korin",
-          "reason": "single_location"
-        },
-        {
-          "anime": "dragonball",
-          "subject": "king-piccolo",
-          "subjectId": "char-dbz-king-piccolo",
-          "displayName": "King Piccolo",
           "reason": "single_location"
         },
         {

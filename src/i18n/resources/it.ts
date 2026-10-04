@@ -811,6 +811,33 @@ export const it = {
       },
     ],
   },
+  battles: {
+    title: 'Scontri',
+    record: '{{wins}} vittorie · {{losses}} sconfitte · {{draws}} pareggi o interrotti',
+    win: 'Vittoria',
+    loss: 'Sconfitta',
+    draw: 'Pareggio',
+    interrupted: 'Interrotto',
+    vs: 'contro',
+    with: 'con',
+    outcome: 'Esito',
+    wins: 'vince',
+  },
+  familyTree: {
+    title: 'Albero genealogico',
+    aria: 'Albero genealogico di {{name}}',
+  },
+  factionStructure: {
+    structure: 'Organigramma',
+    succession: 'Successioni',
+  },
+  storyMoment: {
+    title: 'Momento della storia',
+    hint: 'Mostra solo luoghi ed eventi apparsi fino all’arco scelto: niente spoiler oltre quel punto.',
+    all: 'Tutta la storia',
+    label: 'Fino all’arco',
+    token: 'Fino a: {{arc}}',
+  },
   tournaments: {
     tab: 'Tornei',
     sectionTitle: 'Tornei disputati qui',

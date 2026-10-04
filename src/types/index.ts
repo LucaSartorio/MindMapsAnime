@@ -604,6 +604,10 @@ export interface Character extends SeoSlugFields {
   students?: string[];
   /** Famiglia (parenti) */
   family?: string[];
+  /** Genitori (biologici o adottivi): alimentano l'albero genealogico, insieme a `spouses`. */
+  parents?: string[];
+  /** Coniugi / compagni con cui ha avuto figli. */
+  spouses?: string[];
   /** Alleati ricorrenti */
   allies?: string[];
   /** Nemici principali */
@@ -660,11 +664,35 @@ export interface Faction extends SeoSlugFields {
   arcIds?: string[];
   /** Route collegate (route di fazione, es. spostamenti dell'Akatsuki) */
   routeIds?: string[];
+  /** Organigramma: gruppi interni (divisioni, coppie, numeri, squadre). */
+  structure?: FactionGroup[];
+  /** Successioni di una carica (Hokage, capitani di una divisione…), in ordine. */
+  succession?: FactionSuccession[];
   canonStatus?: CanonStatus;
   referenceStatus?: ReferenceStatus;
   /** Macro-serie / blocchi narrativi in cui è attivo il clan/fazione. */
   series?: Series[];
   tags?: string[];
+}
+
+/** Un membro dell'organigramma: un personaggio del dataset o un'etichetta, con il suo ruolo. */
+export interface FactionMember {
+  characterId?: string;
+  label?: Localizable;
+  role?: Localizable;
+}
+
+export interface FactionGroup {
+  name: Localizable;
+  members: FactionMember[];
+  note?: Localizable;
+}
+
+export interface FactionSuccession {
+  /** La carica (es. "Hokage", "Capitano della Quinta Divisione"). */
+  title: Localizable;
+  /** I titolari in ordine cronologico (`role` = nota sul mandato). */
+  holders: FactionMember[];
 }
 
 /** Alias semantico: "clans" è solo una vista filtrata di Faction.type==='clan' */
@@ -727,6 +755,8 @@ export interface TimelineEvent {
   animeEpisodes?: string[];
   /** Link YouTube dello scontro (mostra un player nel modale evento). */
   battleVideoUrl?: string;
+  /** Esito dello scontro: chi combatte da che parte e chi vince (bilancio nella scheda personaggio). */
+  battle?: BattleOutcome;
   /** Ordine cronologico numerico (più basso = prima) */
   order: number;
   /** Alias legacy; preferire `canonStatus`. */
@@ -736,6 +766,18 @@ export interface TimelineEvent {
   /** Macro-serie / blocchi narrativi in cui rientra l'evento. */
   series?: Series[];
   tags?: string[];
+}
+
+/**
+ * Esito di uno scontro. `sides` = i personaggi di ogni schieramento (tutti
+ * presenti in `characterIds`); `winner` = indice dello schieramento vincitore.
+ * Senza vincitore: `result` dice se è finito in parità o è stato interrotto.
+ */
+export interface BattleOutcome {
+  sides: string[][];
+  winner?: number;
+  result?: 'draw' | 'interrupted';
+  note?: Localizable;
 }
 
 /* ------------------------------ Routes / Percorsi ------------------------------ */
@@ -1141,6 +1183,8 @@ export interface MapFilters {
   highlightPoneglyphs: boolean;
   /** Marcatori di mondo attivi (id di `WorldConfig.mapMarkers`), evidenziati in rosso. */
   highlightMarkers: string[];
+  /** Momento della storia: mostra solo ciò che è apparso fino a quest'arco (anti-spoiler). */
+  untilArcId: string | null;
 }
 
 /**
@@ -1177,6 +1221,7 @@ export const defaultFilters: MapFilters = {
   showFactions: true,
   highlightPoneglyphs: false,
   highlightMarkers: [],
+  untilArcId: null,
 };
 
 export const defaultLayers: VisibleLayers = {

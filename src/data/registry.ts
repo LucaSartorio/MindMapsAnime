@@ -1,4 +1,5 @@
 import type { WorldDataset } from '@/types';
+import { withCharacterJourneys } from '@/data/shared/autoJourneys';
 
 /**
  * Registro dei WorldDataset disponibili — caricamento LAZY per-mondo.
@@ -53,6 +54,8 @@ export function loadWorldDataset(
   const loader = worldDatasetLoaders[slug];
   if (!loader) return Promise.resolve(undefined);
   const promise = loader()
+    // I cammini dei personaggi derivati dagli eventi (src/data/shared/autoJourneys.ts).
+    .then(withCharacterJourneys)
     .then((dataset) => {
       loadedDatasets.set(slug, dataset);
       inflight.delete(slug);

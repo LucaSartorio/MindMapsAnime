@@ -96,6 +96,13 @@ export const animeWorlds: AnimeWorld[] = [
       ],
       mapMarkers: [
         {
+          id: 'life-and-death',
+          eventTag: 'vita-e-morte',
+          icon: '✝',
+          filterLabel: { it: 'Evidenzia morti e resurrezioni', en: 'Highlight deaths and resurrections', ja: '死と復活を強調', fr: 'Mettre en évidence les morts et résurrections', de: 'Tode und Wiederbelebungen hervorheben', es: 'Resaltar muertes y resurrecciones' },
+          sectionTitle: { it: 'Morti e resurrezioni in questo luogo', en: 'Deaths and resurrections at this place', ja: 'この場所での死と復活', fr: 'Morts et résurrections en ce lieu', de: 'Tode und Wiederbelebungen an diesem Ort', es: 'Muertes y resurrecciones en este lugar' },
+        },
+        {
           id: 'tailed-beasts',
           eventTag: 'cercoterio',
           icon: '◉',
@@ -185,6 +192,13 @@ export const animeWorlds: AnimeWorld[] = [
       },
       // Niente `characterRank`: gli Hunter non hanno i gradi ninja.
       mapMarkers: [
+        {
+          id: 'life-and-death',
+          eventTag: 'vita-e-morte',
+          icon: '✝',
+          filterLabel: { it: 'Evidenzia morti e resurrezioni', en: 'Highlight deaths and resurrections', ja: '死と復活を強調', fr: 'Mettre en évidence les morts et résurrections', de: 'Tode und Wiederbelebungen hervorheben', es: 'Resaltar muertes y resurrecciones' },
+          sectionTitle: { it: 'Morti e resurrezioni in questo luogo', en: 'Deaths and resurrections at this place', ja: 'この場所での死と復活', fr: 'Morts et résurrections en ce lieu', de: 'Tode und Wiederbelebungen an diesem Ort', es: 'Muertes y resurrecciones en este lugar' },
+        },
         {
           id: 'ging-trail',
           eventTag: 'tracce-di-ging',
@@ -298,6 +312,22 @@ export const animeWorlds: AnimeWorld[] = [
       nationTerm: { it: 'Mare / Isola', en: 'Sea / Island', ja: '海 / 島', fr: 'Mer / Île', de: 'Meer / Insel', es: 'Mar / Isla' },
       factionsTerm: { it: 'Ciurme & Fazioni', en: 'Crews & Factions', ja: '海賊団と勢力', fr: 'Équipages & Factions', de: 'Crews & Fraktionen', es: 'Tripulaciones y facciones' },
       placesTerm: { it: 'luoghi', en: 'places', ja: '場所', fr: 'lieux', de: 'Orte', es: 'lugares' },
+      mapMarkers: [
+        {
+          id: 'devil-fruits',
+          eventTag: 'frutto-del-diavolo',
+          icon: '🍇',
+          filterLabel: { it: 'Evidenzia dove sono stati mangiati i Frutti del Diavolo', en: 'Highlight where Devil Fruits were eaten', ja: '悪魔の実が食べられた場所を強調', fr: 'Mettre en évidence où les Fruits du Démon ont été mangés', de: 'Orte hervorheben, an denen Teufelsfrüchte gegessen wurden', es: 'Resaltar dónde se comieron las Frutas del Diablo' },
+          sectionTitle: { it: 'Frutti del Diavolo in questo luogo', en: 'Devil Fruits at this place', ja: 'この場所の悪魔の実', fr: 'Fruits du Démon en ce lieu', de: 'Teufelsfrüchte an diesem Ort', es: 'Frutas del Diablo en este lugar' },
+        },
+        {
+          id: 'life-and-death',
+          eventTag: 'vita-e-morte',
+          icon: '✝',
+          filterLabel: { it: 'Evidenzia morti e resurrezioni', en: 'Highlight deaths and resurrections', ja: '死と復活を強調', fr: 'Mettre en évidence les morts et résurrections', de: 'Tode und Wiederbelebungen hervorheben', es: 'Resaltar muertes y resurrecciones' },
+          sectionTitle: { it: 'Morti e resurrezioni in questo luogo', en: 'Deaths and resurrections at this place', ja: 'この場所での死と復活', fr: 'Morts et résurrections en ce lieu', de: 'Tode und Wiederbelebungen an diesem Ort', es: 'Muertes y resurrecciones en este lugar' },
+        },
+      ],
       featured: {
         abilities: [
           'fruit-op-hito-hito-nika',
@@ -376,6 +406,20 @@ export const animeWorlds: AnimeWorld[] = [
       placesTerm: { it: 'luoghi', en: 'places', ja: '場所', fr: 'lieux', de: 'Orte', es: 'lugares' },
       characterRoles: [],
       mapMarkers: [
+        {
+          id: 'dragon-ball-hunts',
+          eventTag: 'caccia-alle-sfere',
+          icon: '◎',
+          filterLabel: { it: 'Evidenzia la caccia alle Sfere del Drago', en: 'Highlight the Dragon Ball hunts', ja: 'ドラゴンボール探しを強調', fr: 'Mettre en évidence la chasse aux Dragon Balls', de: 'Die Suche nach den Dragon Balls hervorheben', es: 'Resaltar la búsqueda de las Bolas de Dragón' },
+          sectionTitle: { it: 'Sfere del Drago cercate qui', en: 'Dragon Balls sought here', ja: 'ここで探したドラゴンボール', fr: 'Dragon Balls recherchées ici', de: 'Hier gesuchte Dragon Balls', es: 'Bolas de Dragón buscadas aquí' },
+        },
+        {
+          id: 'life-and-death',
+          eventTag: 'vita-e-morte',
+          icon: '✝',
+          filterLabel: { it: 'Evidenzia morti e resurrezioni', en: 'Highlight deaths and resurrections', ja: '死と復活を強調', fr: 'Mettre en évidence les morts et résurrections', de: 'Tode und Wiederbelebungen hervorheben', es: 'Resaltar muertes y resurrecciones' },
+          sectionTitle: { it: 'Morti e resurrezioni in questo luogo', en: 'Deaths and resurrections at this place', ja: 'この場所での死と復活', fr: 'Morts et résurrections en ce lieu', de: 'Tode und Wiederbelebungen an diesem Ort', es: 'Muertes y resurrecciones en este lugar' },
+        },
         {
           id: 'dragon-wishes',
           eventTag: 'desiderio-del-drago',
@@ -493,6 +537,13 @@ export const animeWorlds: AnimeWorld[] = [
       placesTerm: { it: 'luoghi', en: 'places', ja: '場所', fr: 'lieux', de: 'Orte', es: 'lugares' },
       mapMarkers: [
         {
+          id: 'life-and-death',
+          eventTag: 'vita-e-morte',
+          icon: '✝',
+          filterLabel: { it: 'Evidenzia morti e resurrezioni', en: 'Highlight deaths and resurrections', ja: '死と復活を強調', fr: 'Mettre en évidence les morts et résurrections', de: 'Tode und Wiederbelebungen hervorheben', es: 'Resaltar muertes y resurrecciones' },
+          sectionTitle: { it: 'Morti e resurrezioni in questo luogo', en: 'Deaths and resurrections at this place', ja: 'この場所での死と復活', fr: 'Morts et résurrections en ce lieu', de: 'Tode und Wiederbelebungen an diesem Ort', es: 'Muertes y resurrecciones en este lugar' },
+        },
+        {
           id: 'titan-inheritance',
           eventTag: 'eredita-gigante',
           icon: '⚡',
@@ -593,6 +644,13 @@ export const animeWorlds: AnimeWorld[] = [
       factionsTerm: { it: 'Divisioni & Fazioni', en: 'Divisions & Factions', ja: '隊と勢力', fr: 'Divisions & Factions', de: 'Divisionen & Fraktionen', es: 'Divisiones y facciones' },
       placesTerm: { it: 'luoghi', en: 'places', ja: '場所', fr: 'lieux', de: 'Orte', es: 'lugares' },
       mapMarkers: [
+        {
+          id: 'life-and-death',
+          eventTag: 'vita-e-morte',
+          icon: '✝',
+          filterLabel: { it: 'Evidenzia morti e resurrezioni', en: 'Highlight deaths and resurrections', ja: '死と復活を強調', fr: 'Mettre en évidence les morts et résurrections', de: 'Tode und Wiederbelebungen hervorheben', es: 'Resaltar muertes y resurrecciones' },
+          sectionTitle: { it: 'Morti e resurrezioni in questo luogo', en: 'Deaths and resurrections at this place', ja: 'この場所での死と復活', fr: 'Morts et résurrections en ce lieu', de: 'Tode und Wiederbelebungen an diesem Ort', es: 'Muertes y resurrecciones en este lugar' },
+        },
         {
           id: 'hogyoku',
           eventTag: 'hogyoku',
@@ -907,6 +965,13 @@ export const animeWorlds: AnimeWorld[] = [
       characterRoles: JJK_ROLES,
       mapMarkers: [
         {
+          id: 'life-and-death',
+          eventTag: 'vita-e-morte',
+          icon: '✝',
+          filterLabel: { it: 'Evidenzia morti e resurrezioni', en: 'Highlight deaths and resurrections', ja: '死と復活を強調', fr: 'Mettre en évidence les morts et résurrections', de: 'Tode und Wiederbelebungen hervorheben', es: 'Resaltar muertes y resurrecciones' },
+          sectionTitle: { it: 'Morti e resurrezioni in questo luogo', en: 'Deaths and resurrections at this place', ja: 'この場所での死と復活', fr: 'Morts et résurrections en ce lieu', de: 'Tode und Wiederbelebungen an diesem Ort', es: 'Muertes y resurrecciones en este lugar' },
+        },
+        {
           id: 'sukuna-fingers',
           eventTag: 'dito-di-sukuna',
           icon: '☝',
@@ -1080,6 +1145,13 @@ export const animeWorlds: AnimeWorld[] = [
       factionsTerm: { it: 'Compagnie', en: 'Squads', ja: '騎士団', fr: 'Compagnies', de: 'Kompanien', es: 'Órdenes' },
       placesTerm: { it: 'luoghi', en: 'places', ja: '場所', fr: 'lieux', de: 'Orte', es: 'lugares' },
       mapMarkers: [
+        {
+          id: 'life-and-death',
+          eventTag: 'vita-e-morte',
+          icon: '✝',
+          filterLabel: { it: 'Evidenzia morti e resurrezioni', en: 'Highlight deaths and resurrections', ja: '死と復活を強調', fr: 'Mettre en évidence les morts et résurrections', de: 'Tode und Wiederbelebungen hervorheben', es: 'Resaltar muertes y resurrecciones' },
+          sectionTitle: { it: 'Morti e resurrezioni in questo luogo', en: 'Deaths and resurrections at this place', ja: 'この場所での死と復活', fr: 'Morts et résurrections en ce lieu', de: 'Tode und Wiederbelebungen an diesem Ort', es: 'Muertes y resurrecciones en este lugar' },
+        },
         {
           id: 'devils',
           eventTag: 'diavolo',

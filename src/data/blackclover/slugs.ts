@@ -311,7 +311,20 @@ export const blackcloverSlugs: SeoSlugLock = {
       "route-bc-spade-war": "the-spade-kingdom-war",
       "route-bc-three-fronts": "training-on-three-fronts",
       "route-bc-yami-path": "yamis-path",
-      "route-bc-yuno-rise": "yunos-rise"
+      "route-bc-yuno-rise": "yunos-rise",
+      "route-journey-charlotte": "charlotte-journey",
+      "route-journey-dante": "dante-journey",
+      "route-journey-julius": "julius-journey",
+      "route-journey-licht": "licht-journey",
+      "route-journey-liebe": "liebe-journey",
+      "route-journey-lucifero": "lucifero-journey",
+      "route-journey-lumiere": "lumiere-journey",
+      "route-journey-megicula": "megicula-journey",
+      "route-journey-mereoleona": "mereoleona-journey",
+      "route-journey-nozel": "nozel-journey",
+      "route-journey-vanica": "vanica-journey",
+      "route-journey-william": "william-journey",
+      "route-journey-zenon": "zenon-journey"
     },
     "abilities": {
       "magic-bc-anti-magic": "anti-magic",

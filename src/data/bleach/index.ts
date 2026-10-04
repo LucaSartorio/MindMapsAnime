@@ -1,4 +1,12 @@
 import { bleachSlugs } from './slugs';
+import { bleachMarkerTags } from './markerTags';
+import { withEventTags } from '../shared/eventTagKit';
+import { bleachBattles } from './battles';
+import { withBattles } from '../shared/battleKit';
+import { bleachFamily } from './family';
+import { withFamily } from '../shared/familyKit';
+import { bleachStructure } from './structure';
+import { withFactionExtras } from '../shared/factionKit';
 import type { WorldDataset } from '@/types';
 import { animeWorlds } from '@/data/worlds';
 import { bleachMapLevels } from './mapLevels';
@@ -46,7 +54,7 @@ const arcs = bleachArcs.map((arc) => ({
   eventIds: [...new Set([...(arc.eventIds ?? []), ...events.filter((e) => e.arcId === arc.id).map((e) => e.id)])],
 }));
 
-export const bleachDataset: WorldDataset = {
+export const bleachDataset: WorldDataset = withEventTags(withFactionExtras(withFamily(withBattles({
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
   seoSlugs: bleachSlugs,
   world: bleach,
@@ -66,6 +74,6 @@ export const bleachDataset: WorldDataset = {
   routes: bleachRoutes,
   jutsu: bleachAbilities,
   assets: bleachAssets,
-};
+}, bleachBattles), bleachFamily, 'char-bl-'), bleachStructure), bleachMarkerTags);
 
 export { BLEACH_WORLD_VIEWBOX } from './mapConstants';

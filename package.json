@@ -11,6 +11,7 @@
     "preview": "vite preview",
     "validate:data": "tsx --tsconfig scripts/tsconfig.json scripts/validate-data.ts",
     "validate:i18n": "tsx --tsconfig scripts/tsconfig.json scripts/validate-i18n.ts",
+    "coverage:chapters": "tsx --tsconfig scripts/tsconfig.json scripts/chapter-coverage.ts",
     "audit:a11y": "node scripts/a11y-audit.mjs",
     "smoke": "npm run build && tsx --tsconfig scripts/tsconfig.json scripts/smoke.ts",
     "extract:boundaries": "tsx --tsconfig scripts/tsconfig.json scripts/extract-boundaries.ts",

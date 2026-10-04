@@ -39,6 +39,11 @@ import { RelationsPanel } from '@/components/common/RelationsPanel';
 import { useOpenEntityRef } from '@/lib/useOpenEntityRef';
 import { mapPath } from '@/seo/paths';
 import { useSeoLang } from '@/seo/useSeoLang';
+import { refPath } from '@/seo/links';
+import { BattleList } from '@/components/battles/BattleList';
+import { FamilyTreeSvg } from '@/components/family/FamilyTreeSvg';
+import { characterBattles } from '@/lib/battles';
+import { familyIds, familyTree } from '@/lib/familyTree';
 
 interface CharacterDetailsModalProps {
   dataset: WorldDataset;
@@ -113,6 +118,8 @@ export function CharacterDetailsModal({
       (r.relatedCharacterIds ?? []).includes(character.id),
   );
 
+  const family = familyIds(dataset, character);
+  const battles = characterBattles(dataset, character.id);
   const rankSystem = getCharacterRankSystem(dataset.world, locale);
   const raceLabel = character.race
     ? getRaceLabel(character.race, locale) || humanizeId(character.race)
@@ -358,10 +365,21 @@ export function CharacterDetailsModal({
         </Section>
       )}
 
-      {(character.family ?? []).length > 0 && (
+      {familyTree(dataset, character.id) && (
+        <Section title={t('familyTree.title')}>
+          <FamilyTreeSvg
+            dataset={dataset}
+            characterId={character.id}
+            hrefFor={(id) => refPath(seoLang, dataset, { type: 'character', id })}
+            onSelect={openCharacter}
+          />
+        </Section>
+      )}
+
+      {family.length > 0 && (
         <Section title={t("modals.family")}>
           <div className="flex flex-wrap gap-1.5">
-            {character.family!.map((id) => {
+            {family.map((id) => {
               const f = findCharacter(dataset, id);
               if (!f) return null;
               return (
@@ -572,6 +590,25 @@ export function CharacterDetailsModal({
               </button>
             ))}
           </div>
+        </Section>
+      )}
+
+      {battles.length > 0 && (
+        <Section title={`${t('battles.title')} (${battles.length})`}>
+          <BattleList
+            dataset={dataset}
+            characterId={character.id}
+            renderName={(id, label) => (
+              <button type="button" onClick={() => openCharacter(id)} className="text-chakra-300 hover:underline">
+                {label}
+              </button>
+            )}
+            renderEvent={(ev, label) => (
+              <button type="button" onClick={() => openEvent(ev.id)} className="text-left text-ink-100 hover:text-chakra-200">
+                {label}
+              </button>
+            )}
+          />
         </Section>
       )}
 

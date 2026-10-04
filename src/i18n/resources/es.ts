@@ -805,6 +805,33 @@ export const es = {
       },
     ],
   },
+  battles: {
+    title: 'Combates',
+    record: '{{wins}} victorias · {{losses}} derrotas · {{draws}} empates o interrumpidos',
+    win: 'Victoria',
+    loss: 'Derrota',
+    draw: 'Empate',
+    interrupted: 'Interrumpido',
+    vs: 'contra',
+    with: 'con',
+    outcome: 'Resultado',
+    wins: 'gana',
+  },
+  familyTree: {
+    title: 'Árbol genealógico',
+    aria: 'Árbol genealógico de {{name}}',
+  },
+  factionStructure: {
+    structure: 'Organigrama',
+    succession: 'Sucesiones',
+  },
+  storyMoment: {
+    title: 'Momento de la historia',
+    hint: 'Muestra solo lugares y eventos aparecidos hasta el arco elegido: sin spoilers más allá.',
+    all: 'Toda la historia',
+    label: 'Hasta el arco',
+    token: 'Hasta: {{arc}}',
+  },
   tournaments: {
     tab: 'Torneos',
     sectionTitle: 'Torneos disputados aquí',

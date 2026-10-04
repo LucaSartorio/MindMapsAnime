@@ -277,6 +277,12 @@ via `pngjs`) emit coordinates already converted to the flow plane — paste thei
   (`MapNode.marked`), clusters containing one turn red too, and so do the pins that drill into a sub-map
   containing one. The location scheda/page lists the marker's events (`sectionTitle`). New world = add a
   config entry + tag the events; no component edits.
+  Tags for events that already exist live in `src/data/<world>/markerTags.ts` (`withEventTags`). Markers today:
+  `vita-e-morte` (deaths & resurrections, every world), dragon wishes + Dragon Ball hunts, Devil Fruits eaten (One
+  Piece, besides the Poneglyph toggle), Sukuna's fingers, Tailed Beasts, Nine Titans, Hōgyoku, Ging's trail, devils.
+- **Story moment** (`filters.untilArcId`, `src/lib/storyMoment.ts`): an anti-spoiler range slider in `FiltersDrawer`.
+  A place exists from the first arc it appears in (its `arcIds` + its events' arcs), an event from its arc; places/events
+  without arc info stay visible. Applied in `filterLocations`/`filterEvents`, so pins, count and timeline agree.
 - **Tournaments** (`WorldDataset.tournaments`, `Tournament` in `src/types/index.ts`): rounds → matches →
   sides (characters or a label, e.g. a pseudonym like "Jackie Chun" with the real character linked).
   `format: 'bracket'` (each round has half the matches of the previous one — `validate:data` checks it)
@@ -284,6 +290,27 @@ via `pngjs`) emit coordinates already converted to the flow plane — paste thei
   Shown in the **"Tornei" tab** of the hosting location's scheda (selector when several) and in the
   location's SEO page; a pin that opens a sub-map also shows the tournaments held inside it
   (`tournamentsAt`). Participants become graph relations of the location.
+
+### Battles, family trees, faction structure, chapter coverage
+- **Battles** (`TimelineEvent.battle`: `sides` of character ids + `winner` index, or `result: 'draw' | 'interrupted'`,
+  optional `note`): written per world in `src/data/<world>/battles.ts` (`battleKit(prefix)` → `win/draw/stop`) and
+  applied by the index (`applyBattles`/`withBattles`, which also adds fighters to `characterIds`). `src/lib/battles.ts`
+  indexes them per character → `BattleList` (record + list with a textual result badge) in the character scheda and
+  SEO page; `BattleOutcomeLine` in the event scheda. `validate:data` checks sides ⊂ `characterIds` and the winner range.
+- **Family trees**: `Character.parents` / `Character.spouses` (one side is enough: children, siblings and co-parents are
+  derived by `src/lib/familyTree.ts`), written in `src/data/<world>/family.ts` (`familyKit` → `withFamily`).
+  `FamilyTreeSvg` draws grandparents → parents → siblings·self·spouses → children → grandchildren (boxes are real
+  links; the scheda intercepts the click to open the modal). Shown only with ≥ 2 relatives.
+- **Faction structure / succession**: `Faction.structure` (groups of members with a role — divisions, pairs, numbers,
+  squads) and `Faction.succession` (holders of an office in order — Hokage, division captains, Nine Titans), written in
+  `src/data/<world>/structure.ts` (`factionKit`: `m(id, role)` character, `x(label)` person without a scheda) and applied
+  with `withFactionExtras`. Rendered by `FactionGroups`/`FactionSuccessions` in the faction scheda and SEO page.
+- **Derived character journeys** (`src/data/shared/autoJourneys.ts`, applied by `loadWorldDataset` in the registry):
+  every main/major character without a hand-written route gets `route-journey-<id>` (slug `<id>-journey`, group
+  "Cammini dei personaggi") built from the locations of their canon events in order (≥ 3 distinct stops). Write a
+  route by hand to replace it — a character who is a protagonist of any route is skipped.
+- **Chapter coverage**: `npm run coverage:chapters [-- <world> --gap N]` (informative) parses `event.mangaChapters` and
+  lists the uncovered chapter ranges per series — use it to find what's still missing in a world.
 
 ### Detail schede as a docked panel (tabbed)
 `src/components/common/Modal.tsx` is the single shell behind every detail scheda (dispatched by

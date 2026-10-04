@@ -48,6 +48,11 @@ import { eventPath, refPath, sortedEvents } from '@/seo/links';
 import { markerEventsAt, presentMapMarkers } from '@/lib/mapMarkers';
 import { TournamentView } from '@/components/tournaments/TournamentView';
 import { tournamentsAt } from '@/lib/tournaments';
+import { BattleList } from '@/components/battles/BattleList';
+import { FamilyTreeSvg } from '@/components/family/FamilyTreeSvg';
+import { FactionGroups, FactionSuccessions } from '@/components/factions/FactionStructure';
+import { characterBattles } from '@/lib/battles';
+import { familyTree } from '@/lib/familyTree';
 import { FactList, MapCta, PageShell, RefLinks, Section, SourceNote } from './parts';
 
 const MAP_KIND = {
@@ -102,6 +107,16 @@ export function EntityPage({
   const abilityTerm = getAbilityTerm(world, locale);
   const link = (cat: SeoCategory, targetId?: string) =>
     targetId ? entityPath(lang, dataset, cat, targetId) : undefined;
+  const charLink = (cid: string, label: string): ReactNode => {
+    const href = link('characters', cid);
+    return href ? (
+      <Link to={href} className="text-chakra-300 hover:underline">
+        {label}
+      </Link>
+    ) : (
+      label
+    );
+  };
   const named = (cat: SeoCategory, targetId?: string): ReactNode => {
     if (!targetId) return undefined;
     const href = link(cat, targetId);
@@ -222,6 +237,35 @@ export function EntityPage({
           </Section>,
         );
       }
+      if (familyTree(dataset, c.id)) {
+        sections.push(
+          <Section key="family-tree" id="family-tree" title={t('familyTree.title')}>
+            <FamilyTreeSvg dataset={dataset} characterId={c.id} hrefFor={(id) => link('characters', id)} />
+          </Section>,
+        );
+      }
+      const fights = characterBattles(dataset, c.id);
+      if (fights.length > 0) {
+        sections.push(
+          <Section key="battles" id="battles" title={t('battles.title')} count={fights.length}>
+            <BattleList
+              dataset={dataset}
+              characterId={c.id}
+              renderName={charLink}
+              renderEvent={(ev, label) => {
+                const href = eventPath(lang, dataset, ev.id);
+                return href ? (
+                  <Link to={href} className="text-ink-100 hover:underline">
+                    {label}
+                  </Link>
+                ) : (
+                  <span className="text-ink-100">{label}</span>
+                );
+              }}
+            />
+          </Section>,
+        );
+      }
       addRefs('factions', factionsTerm, ctx.factions);
       addRefs('places', t('modals.connectedPlaces'), ctx.places);
       addRefs('journeys', t('nav.journeys'), ctx.routes);
@@ -337,6 +381,20 @@ export function EntityPage({
         { label: t('seoPages.fact.home'), value: named('locations', f.villageLocationId) },
         { label: t('modals.kekkeiGenkai'), value: f.kekkeiGenkai },
       );
+      if (f.structure?.length) {
+        sections.push(
+          <Section key="structure" id="structure" title={t('factionStructure.structure')} count={f.structure.length}>
+            <FactionGroups dataset={dataset} faction={f} renderName={charLink} />
+          </Section>,
+        );
+      }
+      if (f.succession?.length) {
+        sections.push(
+          <Section key="succession" id="succession" title={t('factionStructure.succession')}>
+            <FactionSuccessions dataset={dataset} faction={f} renderName={charLink} />
+          </Section>,
+        );
+      }
       addRefs('leaders', t('seoPages.fact.leaders'), idRefs('character', f.leaderIds));
       addRefs('members', t('seoPages.fact.members'), ctx.characters.filter((r) => !f.leaderIds?.includes(r.id)));
       addRefs('places', t('modals.connectedPlaces'), ctx.places);

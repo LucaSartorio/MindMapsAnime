@@ -167,6 +167,10 @@ export function validateDataset(dataset: WorldDataset): ValidationReport {
     checkRef(c.teachers, cId, 'character', 'teachers', c.id, issues);
     checkRef(c.students, cId, 'character', 'students', c.id, issues);
     checkRef(c.family, cId, 'character', 'family', c.id, issues);
+    checkRef(c.parents, cId, 'character', 'parents', c.id, issues);
+    checkRef(c.spouses, cId, 'character', 'spouses', c.id, issues);
+    if (c.parents?.includes(c.id) || c.spouses?.includes(c.id))
+      addIssue(issues, 'error', 'broken_ref', 'character', `Character ${c.id} è genitore/coniuge di se stesso`, c.id);
     checkRef(c.allies, cId, 'character', 'allies', c.id, issues);
     checkRef(c.enemies, cId, 'character', 'enemies', c.id, issues);
     if (c.relationships) {
@@ -196,6 +200,15 @@ export function validateDataset(dataset: WorldDataset): ValidationReport {
     checkRef(f.eventIds, eId, 'faction', 'eventIds', f.id, issues);
     checkRef(f.routeIds, rId, 'faction', 'routeIds', f.id, issues);
     checkRef(f.jutsuIds, jutsuId, 'faction', 'jutsuIds', f.id, issues);
+    const members = [
+      ...(f.structure ?? []).flatMap((g, gi) => g.members.map((m) => [`structure[${gi}]`, m] as const)),
+      ...(f.succession ?? []).flatMap((sc, si) => sc.holders.map((m) => [`succession[${si}]`, m] as const)),
+    ];
+    for (const [where, m] of members) {
+      checkSingleRef(m.characterId, cId, 'faction', where, f.id, issues);
+      if (!m.characterId && !m.label)
+        addIssue(issues, 'error', 'missing_name', 'faction', `Faction ${f.id} ${where}: membro senza personaggio né etichetta`, f.id);
+    }
   }
 
   /* ---------- Teams ---------- */
@@ -247,6 +260,22 @@ export function validateDataset(dataset: WorldDataset): ValidationReport {
     checkRef(e.clanIds, fId, 'event', 'clanIds', e.id, issues);
     checkRef(e.factionIds, fId, 'event', 'factionIds', e.id, issues);
     checkRef(e.routeIds, rId, 'event', 'routeIds', e.id, issues);
+    if (e.battle) {
+      const b = e.battle;
+      const inEvent = new Set(e.characterIds ?? []);
+      if (b.sides.length < 2 || b.sides.some((side) => side.length === 0))
+        addIssue(issues, 'error', 'broken_ref', 'event', `Event ${e.id} battle: servono almeno due schieramenti non vuoti`, e.id);
+      b.sides.forEach((side, si) => {
+        checkRef(side, cId, 'event', `battle.sides[${si}]`, e.id, issues);
+        for (const id of side)
+          if (!inEvent.has(id))
+            addIssue(issues, 'error', 'broken_ref', 'event', `Event ${e.id} battle: ${id} non è fra i characterIds dell'evento`, e.id);
+      });
+      if (b.winner !== undefined && (b.winner < 0 || b.winner >= b.sides.length))
+        addIssue(issues, 'error', 'broken_ref', 'event', `Event ${e.id} battle.winner fuori intervallo`, e.id);
+      if (b.winner !== undefined && b.result)
+        addIssue(issues, 'error', 'broken_ref', 'event', `Event ${e.id} battle: winner e result sono alternativi`, e.id);
+    }
   }
 
   /* ---------- Locations ---------- */

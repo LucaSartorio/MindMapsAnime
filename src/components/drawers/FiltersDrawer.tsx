@@ -9,6 +9,7 @@ import {
 } from '@/lib/worldConfig';
 import { presentLocationTypes } from '@/lib/locationTypes';
 import { presentMapMarkers } from '@/lib/mapMarkers';
+import { storyArcs } from '@/lib/storyMoment';
 import { Drawer } from '@/components/common/Drawer';
 import { Button } from '@/components/common/Button';
 import { FilterSection } from '@/components/filters/FilterSection';
@@ -177,6 +178,10 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
     );
   }, [villages, placeQuery, locale]);
 
+  const momentArcs = useMemo(() => storyArcs(dataset), [dataset]);
+  const momentIndex = filters.untilArcId
+    ? Math.max(0, momentArcs.findIndex((a) => a.id === filters.untilArcId))
+    : momentArcs.length;
   const seriesOptions = worldSeriesOptions(dataset.world);
   const nationTerm = getNationTerm(dataset.world, locale, t('filters.nation'));
   const placesTerm = getPlacesTerm(dataset.world, locale, t('filters.placesDefault'));
@@ -226,6 +231,39 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
           </div>
 
           <div className="flex-1 space-y-1 overflow-auto px-4 py-2 text-sm">
+            {momentArcs.length > 1 && (
+              <FilterSection
+                title={t('storyMoment.title')}
+                activeCount={filters.untilArcId ? 1 : 0}
+                hint={t('storyMoment.hint')}
+              >
+                <label className="block space-y-1.5">
+                  <span className="text-xs text-ink-300">
+                    {momentIndex < momentArcs.length
+                      ? t('storyMoment.token', { arc: getEntityDisplayName(momentArcs[momentIndex], locale) })
+                      : t('storyMoment.all')}
+                  </span>
+                  <input
+                    type="range"
+                    min={0}
+                    max={momentArcs.length}
+                    step={1}
+                    value={momentIndex}
+                    aria-label={t('storyMoment.label')}
+                    aria-valuetext={
+                      momentIndex < momentArcs.length
+                        ? getEntityDisplayName(momentArcs[momentIndex], locale)
+                        : t('storyMoment.all')
+                    }
+                    onChange={(e) => {
+                      const i = Number(e.target.value);
+                      setFilters({ untilArcId: i < momentArcs.length ? momentArcs[i].id : null });
+                    }}
+                    className="w-full accent-chakra-400"
+                  />
+                </label>
+              </FilterSection>
+            )}
             {seriesOptions.length > 0 && (
               <FilterSection
                 title={t('filters.series')}

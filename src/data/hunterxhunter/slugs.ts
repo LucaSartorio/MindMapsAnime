@@ -306,7 +306,11 @@ export const hunterxhunterSlugs: SeoSlugLock = {
       "route-hxh-meruem-komugi": "meruem-and-komugi",
       "route-hxh-netero-last-mission": "neteros-last-mission",
       "route-hxh-succession-war": "the-kakin-succession-war",
-      "route-hxh-troupe-yorknew": "the-phantom-troupe-in-yorknew"
+      "route-hxh-troupe-yorknew": "the-phantom-troupe-in-yorknew",
+      "route-journey-kite": "kite-journey",
+      "route-journey-neferpitou": "neferpitou-journey",
+      "route-journey-silva": "silva-journey",
+      "route-journey-zeno": "zeno-journey"
     },
     "abilities": {
       "jutsu-hxh-100-type-guanyin": "hundred-type-guanyin-bodhisattva",

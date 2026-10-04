@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T23:14:33.153Z",
+  "generatedAt": "2026-10-04T06:14:01.345Z",
   "locales": [
     "en",
     "it"
@@ -17,10 +17,10 @@
       },
       "summary": {
         "naruto": {
-          "characters": 55,
-          "videos": 62,
+          "characters": 57,
+          "videos": 64,
           "series": 7,
-          "excluded": 198
+          "excluded": 196
         },
         "hunterxhunter": {
           "characters": 30,
@@ -29,16 +29,16 @@
           "excluded": 135
         },
         "onepiece": {
-          "characters": 61,
-          "videos": 75,
+          "characters": 62,
+          "videos": 76,
           "series": 7,
-          "excluded": 357
+          "excluded": 356
         },
         "dragonball": {
-          "characters": 49,
-          "videos": 59,
+          "characters": 50,
+          "videos": 60,
           "series": 6,
-          "excluded": 135
+          "excluded": 134
         },
         "attackontitan": {
           "characters": 37,
@@ -83,7 +83,7 @@
               "arc-search-tsunade",
               "arc-sasuke-retrieval",
               "arc-kazekage-rescue",
-              "arc-akatsuki-suppression"
+              "arc-tenchi-bridge"
             ],
             "arcTitles": {
               "en": [
@@ -91,20 +91,20 @@
                 "Search for Tsunade",
                 "Sasuke Retrieval",
                 "Kazekage Rescue",
-                "Akatsuki Suppression Mission"
+                "Tenchi Bridge Reconnaissance"
               ],
               "it": [
                 "Prologo · Paese delle Onde",
                 "La Ricerca di Tsunade",
                 "Il Recupero di Sasuke",
                 "Il Salvataggio del Kazekage",
-                "Missione di Soppressione dell'Akatsuki"
+                "Ricognizione al Ponte Tenchi"
               ]
             },
             "firstArc": "Prologue · Land of Waves",
-            "lastArc": "Akatsuki Suppression Mission",
+            "lastArc": "Tenchi Bridge Reconnaissance",
             "segmentationVersion": 1,
-            "fingerprint": "f6eda39f"
+            "fingerprint": "aadfdbe7"
           },
           "displayName": {
             "en": "Naruto Uzumaki",
@@ -117,10 +117,10 @@
           "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "main",
-            "places": 14,
+            "places": 15,
             "animatedStops": 7,
             "arcs": 5,
-            "journeyArcs": 11
+            "journeyArcs": 12
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -143,6 +143,7 @@
             "previousId": "character-journey:naruto:naruto-uzumaki:part-01",
             "nextId": null,
             "arcIds": [
+              "arc-akatsuki-suppression",
               "arc-pain-assault",
               "arc-fourth-war-countdown",
               "arc-fourth-war",
@@ -152,6 +153,7 @@
             ],
             "arcTitles": {
               "en": [
+                "Akatsuki Suppression Mission",
                 "Pain Assault on Konoha",
                 "Fourth Shinobi World War · Countdown",
                 "Fourth Shinobi World War · Confrontation",
@@ -160,6 +162,7 @@
                 "Kakashi Hokage / Blank Period"
               ],
               "it": [
+                "Missione di Soppressione dell'Akatsuki",
                 "L'Assalto di Pain a Konoha",
                 "Quarta Grande Guerra Ninja · Conto alla Rovescia",
                 "Quarta Grande Guerra Ninja · Scontro",
@@ -168,10 +171,10 @@
                 "Kakashi Hokage / Periodo Vuoto"
               ]
             },
-            "firstArc": "Pain Assault on Konoha",
+            "firstArc": "Akatsuki Suppression Mission",
             "lastArc": "Kakashi Hokage / Blank Period",
             "segmentationVersion": 1,
-            "fingerprint": "1c16420f"
+            "fingerprint": "be5a7e3e"
           },
           "displayName": {
             "en": "Naruto Uzumaki",
@@ -181,13 +184,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 33,
+          "recommendedDurationSeconds": 36,
           "facts": {
             "importance": "main",
-            "places": 14,
-            "animatedStops": 7,
-            "arcs": 6,
-            "journeyArcs": 11
+            "places": 15,
+            "animatedStops": 8,
+            "arcs": 7,
+            "journeyArcs": 12
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -338,20 +341,23 @@
             "previousId": null,
             "nextId": "character-journey:naruto:sakura-haruno:part-02",
             "arcIds": [
-              "arc-prologue"
+              "arc-prologue",
+              "arc-kazekage-rescue"
             ],
             "arcTitles": {
               "en": [
-                "Prologue · Land of Waves"
+                "Prologue · Land of Waves",
+                "Kazekage Rescue"
               ],
               "it": [
-                "Prologo · Paese delle Onde"
+                "Prologo · Paese delle Onde",
+                "Il Salvataggio del Kazekage"
               ]
             },
             "firstArc": "Prologue · Land of Waves",
-            "lastArc": "Prologue · Land of Waves",
+            "lastArc": "Kazekage Rescue",
             "segmentationVersion": 1,
-            "fingerprint": "dc82eb7a"
+            "fingerprint": "d9ff62cd"
           },
           "displayName": {
             "en": "Sakura Haruno",
@@ -361,13 +367,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 36,
           "facts": {
             "importance": "main",
-            "places": 9,
-            "animatedStops": 2,
-            "arcs": 1,
-            "journeyArcs": 3
+            "places": 11,
+            "animatedStops": 8,
+            "arcs": 2,
+            "journeyArcs": 5
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -390,23 +396,26 @@
             "previousId": "character-journey:naruto:sakura-haruno:part-01",
             "nextId": null,
             "arcIds": [
-              "arc-kazekage-rescue",
+              "arc-tenchi-bridge",
+              "arc-fourth-war-climax",
               "arc-kaguya-final"
             ],
             "arcTitles": {
               "en": [
-                "Kazekage Rescue",
+                "Tenchi Bridge Reconnaissance",
+                "Fourth Shinobi World War · Climax",
                 "Kaguya Otsutsuki Strikes"
               ],
               "it": [
-                "Il Salvataggio del Kazekage",
+                "Ricognizione al Ponte Tenchi",
+                "Quarta Grande Guerra Ninja · Apice",
                 "L'Attacco di Kaguya Ōtsutsuki"
               ]
             },
-            "firstArc": "Kazekage Rescue",
+            "firstArc": "Tenchi Bridge Reconnaissance",
             "lastArc": "Kaguya Otsutsuki Strikes",
             "segmentationVersion": 1,
-            "fingerprint": "1211a167"
+            "fingerprint": "dec0a38b"
           },
           "displayName": {
             "en": "Sakura Haruno",
@@ -416,13 +425,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 33,
+          "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "main",
-            "places": 9,
-            "animatedStops": 7,
-            "arcs": 2,
-            "journeyArcs": 3
+            "places": 11,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 5
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -687,7 +696,7 @@
             "arcIds": [
               "arc-konoha-crush",
               "arc-search-tsunade",
-              "arc-akatsuki-suppression",
+              "arc-tenchi-bridge",
               "arc-fourth-war-climax",
               "arc-mitsuki-disappearance"
             ],
@@ -695,14 +704,14 @@
               "en": [
                 "Konoha Crush",
                 "Search for Tsunade",
-                "Akatsuki Suppression Mission",
+                "Tenchi Bridge Reconnaissance",
                 "Fourth Shinobi World War · Climax",
                 "Mitsuki's Disappearance"
               ],
               "it": [
                 "Distruzione di Konoha",
                 "La Ricerca di Tsunade",
-                "Missione di Soppressione dell'Akatsuki",
+                "Ricognizione al Ponte Tenchi",
                 "Quarta Grande Guerra Ninja · Apice",
                 "La Scomparsa di Mitsuki"
               ]
@@ -710,7 +719,7 @@
             "firstArc": "Konoha Crush",
             "lastArc": "Mitsuki's Disappearance",
             "segmentationVersion": 1,
-            "fingerprint": "56c039d0"
+            "fingerprint": "1c13eaf4"
           },
           "displayName": {
             "en": "Orochimaru",
@@ -750,13 +759,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "major",
-            "places": 3,
-            "animatedStops": 3,
-            "arcs": 1,
-            "journeyArcs": 1
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 2,
+            "journeyArcs": 2
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -978,10 +987,10 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "supporting",
-            "places": 2,
-            "animatedStops": 2,
-            "arcs": 2,
-            "journeyArcs": 2
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -1149,6 +1158,66 @@
             "animatedStops": 2,
             "arcs": 2,
             "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:zabuza-momochi",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "zabuza-momochi",
+          "series": null,
+          "displayName": {
+            "en": "Zabuza Momochi",
+            "it": "Zabuza Momochi"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:haku",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "haku",
+          "series": null,
+          "displayName": {
+            "en": "Haku",
+            "it": "Haku"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -3867,10 +3936,10 @@
           "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 19,
+            "places": 20,
             "animatedStops": 6,
             "arcs": 5,
-            "journeyArcs": 17
+            "journeyArcs": 18
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -3896,6 +3965,7 @@
               "arc-op-loguetown",
               "arc-op-whisky-peak",
               "arc-op-little-garden",
+              "arc-op-alabasta",
               "arc-op-jaya",
               "arc-op-enies-lobby"
             ],
@@ -3904,6 +3974,7 @@
                 "Loguetown",
                 "Whisky Peak",
                 "Little Garden",
+                "Alabasta",
                 "Jaya",
                 "Enies Lobby"
               ],
@@ -3911,6 +3982,7 @@
                 "La città dell'inizio e della fine",
                 "Whisky Peak",
                 "Little Garden",
+                "Alabasta",
                 "Jaya",
                 "Enies Lobby"
               ]
@@ -3918,7 +3990,7 @@
             "firstArc": "Loguetown",
             "lastArc": "Enies Lobby",
             "segmentationVersion": 1,
-            "fingerprint": "134eb3b8"
+            "fingerprint": "bab703f2"
           },
           "displayName": {
             "en": "Roronoa Zoro",
@@ -3928,13 +4000,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 30,
+          "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "main",
-            "places": 19,
-            "animatedStops": 6,
-            "arcs": 5,
-            "journeyArcs": 17
+            "places": 20,
+            "animatedStops": 7,
+            "arcs": 6,
+            "journeyArcs": 18
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4001,10 +4073,10 @@
           "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "main",
-            "places": 19,
+            "places": 20,
             "animatedStops": 7,
             "arcs": 7,
-            "journeyArcs": 17
+            "journeyArcs": 18
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4062,10 +4134,10 @@
           "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "main",
-            "places": 15,
+            "places": 17,
             "animatedStops": 5,
             "arcs": 4,
-            "journeyArcs": 13
+            "journeyArcs": 15
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4091,26 +4163,29 @@
               "arc-op-arlong-park",
               "arc-op-loguetown",
               "arc-op-whisky-peak",
-              "arc-op-little-garden"
+              "arc-op-little-garden",
+              "arc-op-drum"
             ],
             "arcTitles": {
               "en": [
                 "Arlong Park",
                 "Loguetown",
                 "Whisky Peak",
-                "Little Garden"
+                "Little Garden",
+                "Drum Island"
               ],
               "it": [
                 "Il passato di Nami",
                 "La città dell'inizio e della fine",
                 "Whisky Peak",
-                "Little Garden"
+                "Little Garden",
+                "Drum Island"
               ]
             },
             "firstArc": "Arlong Park",
-            "lastArc": "Little Garden",
+            "lastArc": "Drum Island",
             "segmentationVersion": 1,
-            "fingerprint": "b3031414"
+            "fingerprint": "f7b568b4"
           },
           "displayName": {
             "en": "Nami",
@@ -4120,13 +4195,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 15,
-            "animatedStops": 5,
-            "arcs": 4,
-            "journeyArcs": 13
+            "places": 17,
+            "animatedStops": 6,
+            "arcs": 5,
+            "journeyArcs": 15
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4149,6 +4224,7 @@
             "previousId": "character-journey:onepiece:nami:part-02",
             "nextId": null,
             "arcIds": [
+              "arc-op-alabasta",
               "arc-op-jaya",
               "arc-op-enies-lobby",
               "arc-op-post-enies-lobby",
@@ -4157,6 +4233,7 @@
             ],
             "arcTitles": {
               "en": [
+                "Alabasta",
                 "Jaya",
                 "Enies Lobby",
                 "Post-Enies Lobby",
@@ -4164,6 +4241,7 @@
                 "Wano Country"
               ],
               "it": [
+                "Alabasta",
                 "Jaya",
                 "Enies Lobby",
                 "Dopo Enies Lobby",
@@ -4171,10 +4249,10 @@
                 "Il Paese di Wano"
               ]
             },
-            "firstArc": "Jaya",
+            "firstArc": "Alabasta",
             "lastArc": "Wano Country",
             "segmentationVersion": 1,
-            "fingerprint": "d7d5c97d"
+            "fingerprint": "0ede3b8f"
           },
           "displayName": {
             "en": "Nami",
@@ -4184,13 +4262,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 15,
-            "animatedStops": 5,
-            "arcs": 5,
-            "journeyArcs": 13
+            "places": 17,
+            "animatedStops": 6,
+            "arcs": 6,
+            "journeyArcs": 15
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4216,26 +4294,29 @@
               "arc-op-romance-dawn",
               "arc-op-orange-town",
               "arc-op-syrup-village",
-              "arc-op-baratie"
+              "arc-op-baratie",
+              "arc-op-arlong-park"
             ],
             "arcTitles": {
               "en": [
                 "Romance Dawn",
                 "Orange Town",
                 "Syrup Village",
-                "Baratie"
+                "Baratie",
+                "Arlong Park"
               ],
               "it": [
                 "L'alba di un'avventura",
                 "Bagy il Clown",
                 "Il complotto di Kuro",
-                "Il ristorante in mare"
+                "Il ristorante in mare",
+                "Il passato di Nami"
               ]
             },
             "firstArc": "Romance Dawn",
-            "lastArc": "Baratie",
+            "lastArc": "Arlong Park",
             "segmentationVersion": 1,
-            "fingerprint": "f4291cff"
+            "fingerprint": "c751f97b"
           },
           "displayName": {
             "en": "Usopp",
@@ -4245,13 +4326,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 16,
-            "animatedStops": 5,
-            "arcs": 4,
-            "journeyArcs": 13
+            "places": 18,
+            "animatedStops": 6,
+            "arcs": 5,
+            "journeyArcs": 15
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4274,29 +4355,32 @@
             "previousId": "character-journey:onepiece:usopp:part-01",
             "nextId": "character-journey:onepiece:usopp:part-03",
             "arcIds": [
-              "arc-op-arlong-park",
               "arc-op-loguetown",
               "arc-op-little-garden",
+              "arc-op-alabasta",
+              "arc-op-skypiea",
               "arc-op-water-seven"
             ],
             "arcTitles": {
               "en": [
-                "Arlong Park",
                 "Loguetown",
                 "Little Garden",
+                "Alabasta",
+                "Skypiea",
                 "Water Seven"
               ],
               "it": [
-                "Il passato di Nami",
                 "La città dell'inizio e della fine",
                 "Little Garden",
+                "Alabasta",
+                "Skypiea",
                 "Water Seven"
               ]
             },
-            "firstArc": "Arlong Park",
+            "firstArc": "Loguetown",
             "lastArc": "Water Seven",
             "segmentationVersion": 1,
-            "fingerprint": "c6ff439c"
+            "fingerprint": "c8a906d8"
           },
           "displayName": {
             "en": "Usopp",
@@ -4306,13 +4390,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 16,
-            "animatedStops": 5,
-            "arcs": 4,
-            "journeyArcs": 13
+            "places": 18,
+            "animatedStops": 6,
+            "arcs": 5,
+            "journeyArcs": 15
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4373,10 +4457,10 @@
           "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 16,
+            "places": 18,
             "animatedStops": 6,
             "arcs": 5,
-            "journeyArcs": 13
+            "journeyArcs": 15
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4402,26 +4486,29 @@
               "arc-op-romance-dawn",
               "arc-op-orange-town",
               "arc-op-syrup-village",
-              "arc-op-baratie"
+              "arc-op-baratie",
+              "arc-op-arlong-park"
             ],
             "arcTitles": {
               "en": [
                 "Romance Dawn",
                 "Orange Town",
                 "Syrup Village",
-                "Baratie"
+                "Baratie",
+                "Arlong Park"
               ],
               "it": [
                 "L'alba di un'avventura",
                 "Bagy il Clown",
                 "Il complotto di Kuro",
-                "Il ristorante in mare"
+                "Il ristorante in mare",
+                "Il passato di Nami"
               ]
             },
             "firstArc": "Romance Dawn",
-            "lastArc": "Baratie",
+            "lastArc": "Arlong Park",
             "segmentationVersion": 1,
-            "fingerprint": "f4291cff"
+            "fingerprint": "c751f97b"
           },
           "displayName": {
             "en": "Sanji",
@@ -4431,13 +4518,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 16,
-            "animatedStops": 5,
-            "arcs": 4,
-            "journeyArcs": 14
+            "places": 18,
+            "animatedStops": 6,
+            "arcs": 5,
+            "journeyArcs": 16
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4460,29 +4547,32 @@
             "previousId": "character-journey:onepiece:sanji:part-01",
             "nextId": "character-journey:onepiece:sanji:part-03",
             "arcIds": [
-              "arc-op-arlong-park",
               "arc-op-loguetown",
+              "arc-op-drum",
               "arc-op-alabasta",
+              "arc-op-skypiea",
               "arc-op-enies-lobby"
             ],
             "arcTitles": {
               "en": [
-                "Arlong Park",
                 "Loguetown",
+                "Drum Island",
                 "Alabasta",
+                "Skypiea",
                 "Enies Lobby"
               ],
               "it": [
-                "Il passato di Nami",
                 "La città dell'inizio e della fine",
+                "Drum Island",
                 "Alabasta",
+                "Skypiea",
                 "Enies Lobby"
               ]
             },
-            "firstArc": "Arlong Park",
+            "firstArc": "Loguetown",
             "lastArc": "Enies Lobby",
             "segmentationVersion": 1,
-            "fingerprint": "bf18bd34"
+            "fingerprint": "e3a8b800"
           },
           "displayName": {
             "en": "Sanji",
@@ -4492,13 +4582,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 16,
-            "animatedStops": 5,
-            "arcs": 4,
-            "journeyArcs": 14
+            "places": 18,
+            "animatedStops": 6,
+            "arcs": 5,
+            "journeyArcs": 16
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4562,10 +4652,10 @@
           "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 16,
+            "places": 18,
             "animatedStops": 6,
             "arcs": 6,
-            "journeyArcs": 14
+            "journeyArcs": 16
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4679,11 +4769,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 36,
           "facts": {
             "importance": "major",
-            "places": 5,
-            "animatedStops": 5,
+            "places": 8,
+            "animatedStops": 8,
             "arcs": 5,
             "journeyArcs": 5
           },
@@ -4709,11 +4799,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "major",
-            "places": 3,
-            "animatedStops": 3,
+            "places": 4,
+            "animatedStops": 4,
             "arcs": 3,
             "journeyArcs": 3
           },
@@ -4799,11 +4889,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "major",
-            "places": 3,
-            "animatedStops": 3,
+            "places": 4,
+            "animatedStops": 4,
             "arcs": 2,
             "journeyArcs": 2
           },
@@ -4859,11 +4949,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "major",
-            "places": 5,
-            "animatedStops": 5,
+            "places": 6,
+            "animatedStops": 6,
             "arcs": 5,
             "journeyArcs": 5
           },
@@ -5137,13 +5227,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "major",
-            "places": 2,
-            "animatedStops": 2,
-            "arcs": 2,
-            "journeyArcs": 2
+            "places": 7,
+            "animatedStops": 7,
+            "arcs": 3,
+            "journeyArcs": 3
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -5197,11 +5287,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 30,
+          "recommendedDurationSeconds": 36,
           "facts": {
             "importance": "major",
-            "places": 6,
-            "animatedStops": 6,
+            "places": 8,
+            "animatedStops": 8,
             "arcs": 5,
             "journeyArcs": 5
           },
@@ -5317,11 +5407,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "major",
-            "places": 3,
-            "animatedStops": 3,
+            "places": 4,
+            "animatedStops": 4,
             "arcs": 3,
             "journeyArcs": 3
           },
@@ -5377,22 +5467,25 @@
             "nextId": "character-journey:onepiece:tony-tony-chopper:part-02",
             "arcIds": [
               "arc-op-drum",
+              "arc-op-alabasta",
               "arc-op-enies-lobby"
             ],
             "arcTitles": {
               "en": [
                 "Drum Island",
+                "Alabasta",
                 "Enies Lobby"
               ],
               "it": [
                 "Drum Island",
+                "Alabasta",
                 "Enies Lobby"
               ]
             },
             "firstArc": "Drum Island",
             "lastArc": "Enies Lobby",
             "segmentationVersion": 1,
-            "fingerprint": "d97d4815"
+            "fingerprint": "7db59373"
           },
           "displayName": {
             "en": "Tony Tony Chopper",
@@ -5402,13 +5495,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 25,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "main",
-            "places": 9,
-            "animatedStops": 4,
-            "arcs": 2,
-            "journeyArcs": 7
+            "places": 10,
+            "animatedStops": 5,
+            "arcs": 3,
+            "journeyArcs": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -5469,10 +5562,10 @@
           "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "main",
-            "places": 9,
+            "places": 10,
             "animatedStops": 5,
             "arcs": 5,
-            "journeyArcs": 7
+            "journeyArcs": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -5531,8 +5624,8 @@
             "importance": "major",
             "places": 5,
             "animatedStops": 5,
-            "arcs": 5,
-            "journeyArcs": 5
+            "arcs": 4,
+            "journeyArcs": 4
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -5646,11 +5739,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "major",
-            "places": 3,
-            "animatedStops": 3,
+            "places": 4,
+            "animatedStops": 4,
             "arcs": 3,
             "journeyArcs": 3
           },
@@ -5796,13 +5889,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "major",
-            "places": 3,
-            "animatedStops": 3,
-            "arcs": 3,
-            "journeyArcs": 3
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 2,
+            "journeyArcs": 2
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -5863,6 +5956,36 @@
             "animatedStops": 2,
             "arcs": 2,
             "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:onepiece:kozuki-oden",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "kozuki-oden",
+          "series": null,
+          "displayName": {
+            "en": "Kozuki Oden",
+            "it": "Kozuki Oden"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -6219,8 +6342,8 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "major",
-            "places": 2,
-            "animatedStops": 2,
+            "places": 3,
+            "animatedStops": 3,
             "arcs": 2,
             "journeyArcs": 2
           },
@@ -6246,11 +6369,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "major",
-            "places": 3,
-            "animatedStops": 3,
+            "places": 4,
+            "animatedStops": 4,
             "arcs": 3,
             "journeyArcs": 3
           },
@@ -7305,7 +7428,7 @@
           "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "major",
-            "places": 12,
+            "places": 13,
             "animatedStops": 6,
             "arcs": 3,
             "journeyArcs": 7
@@ -7353,7 +7476,7 @@
             "firstArc": "Saiyan Saga",
             "lastArc": "Super 17 Saga",
             "segmentationVersion": 1,
-            "fingerprint": "1bd50a6e"
+            "fingerprint": "d216edb0"
           },
           "displayName": {
             "en": "Krillin",
@@ -7363,11 +7486,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 30,
+          "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "major",
-            "places": 12,
-            "animatedStops": 6,
+            "places": 13,
+            "animatedStops": 7,
             "arcs": 4,
             "journeyArcs": 7
           },
@@ -8450,6 +8573,36 @@
           "publication": []
         },
         {
+          "id": "character-journey:dragonball:king-piccolo",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "king-piccolo",
+          "series": null,
+          "displayName": {
+            "en": "King Piccolo",
+            "it": "Il Grande Mago Piccolo"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
           "id": "character-journey:dragonball:general-blue",
           "anime": "dragonball",
           "animeTitle": "Dragon Ball",
@@ -9096,10 +9249,10 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "major",
-            "places": 3,
-            "animatedStops": 3,
-            "arcs": 2,
-            "journeyArcs": 2
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -10533,13 +10686,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 30,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "major",
-            "places": 6,
-            "animatedStops": 6,
-            "arcs": 4,
-            "journeyArcs": 4
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 3,
+            "journeyArcs": 3
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -10568,8 +10721,8 @@
             "importance": "major",
             "places": 2,
             "animatedStops": 2,
-            "arcs": 2,
-            "journeyArcs": 2
+            "arcs": 1,
+            "journeyArcs": 1
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -10743,13 +10896,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 36,
+          "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "major",
-            "places": 8,
-            "animatedStops": 8,
-            "arcs": 7,
-            "journeyArcs": 7
+            "places": 7,
+            "animatedStops": 7,
+            "arcs": 6,
+            "journeyArcs": 6
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -10928,8 +11081,8 @@
             "importance": "major",
             "places": 3,
             "animatedStops": 3,
-            "arcs": 3,
-            "journeyArcs": 3
+            "arcs": 2,
+            "journeyArcs": 2
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -11078,8 +11231,8 @@
             "importance": "major",
             "places": 3,
             "animatedStops": 3,
-            "arcs": 2,
-            "journeyArcs": 2
+            "arcs": 3,
+            "journeyArcs": 3
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -11589,13 +11742,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 25,
+          "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "major",
-            "places": 4,
-            "animatedStops": 4,
-            "arcs": 4,
-            "journeyArcs": 4
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -11799,13 +11952,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 25,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "major",
-            "places": 4,
-            "animatedStops": 4,
-            "arcs": 4,
-            "journeyArcs": 4
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 5,
+            "journeyArcs": 5
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -11982,10 +12135,10 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "major",
-            "places": 3,
-            "animatedStops": 3,
-            "arcs": 3,
-            "journeyArcs": 3
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -14038,13 +14191,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 30,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "major",
-            "places": 6,
-            "animatedStops": 6,
-            "arcs": 5,
-            "journeyArcs": 5
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 4,
+            "journeyArcs": 4
           },
           "renderedLocales": [],
           "scheduledLocales": [],
