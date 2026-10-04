@@ -13,6 +13,12 @@ import { jjkEventsPast } from './eventsPast';
 import { jjkEventsWar } from './eventsWar';
 import { jjkEventsMore } from './eventsMore';
 import { jjkCharactersExtra } from './charactersExtra';
+import { jjkBattles } from './battles';
+import { applyBattles } from '../shared/battleKit';
+import { jjkFamily } from './family';
+import { withFamily } from '../shared/familyKit';
+import { jjkStructure } from './structure';
+import { withFactionExtras } from '../shared/factionKit';
 import { jjkRoutes } from './routes';
 import { jjkAbilities } from './abilities';
 import { jjkAssets } from './assets';
@@ -20,7 +26,7 @@ import { jjkTournaments } from './tournaments';
 
 const jujutsuKaisen = animeWorlds.find((w) => w.slug === 'jujutsukaisen')!;
 
-const events: TimelineEvent[] = [...jjkEventsPast, ...jjkEventsWar, ...jjkEventsMore].sort((a, b) => a.order - b.order);
+const events: TimelineEvent[] = applyBattles([...jjkEventsPast, ...jjkEventsWar, ...jjkEventsMore], jjkBattles).sort((a, b) => a.order - b.order);
 
 /** Gli `eventIds` di ogni arco sono derivati dagli eventi (una sola fonte di verità). */
 const arcs: StoryArc[] = jjkArcs.map((arc) => ({
@@ -79,7 +85,7 @@ const factions: Faction[] = jjkFactions.map((f) => {
  * `jutsu.chakraNature` = la stirpe/fonte (clan Gojo, Zen'in, Kamo, Sukuna, spiriti,
  * utilizzatori di maledizioni, reincarnati, stregoni).
  */
-export const jjkDataset: WorldDataset = {
+export const jjkDataset: WorldDataset = withFactionExtras(withFamily({
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
   seoSlugs: jujutsukaisenSlugs,
   world: jujutsuKaisen,
@@ -94,6 +100,6 @@ export const jjkDataset: WorldDataset = {
   jutsu: jjkAbilities,
   tournaments: jjkTournaments,
   assets: jjkAssets,
-};
+}, jjkFamily, 'char-jjk-'), jjkStructure);
 
 export { JJK_JAPAN_VIEWBOX } from './mapConstants';

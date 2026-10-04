@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T23:14:33.153Z",
+  "generatedAt": "2026-10-04T05:50:47.105Z",
   "locales": [
     "en",
     "it"
@@ -35,10 +35,10 @@
           "excluded": 357
         },
         "dragonball": {
-          "characters": 49,
-          "videos": 59,
+          "characters": 50,
+          "videos": 60,
           "series": 6,
-          "excluded": 135
+          "excluded": 134
         },
         "attackontitan": {
           "characters": 37,
@@ -7305,7 +7305,7 @@
           "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "major",
-            "places": 12,
+            "places": 13,
             "animatedStops": 6,
             "arcs": 3,
             "journeyArcs": 7
@@ -7353,7 +7353,7 @@
             "firstArc": "Saiyan Saga",
             "lastArc": "Super 17 Saga",
             "segmentationVersion": 1,
-            "fingerprint": "1bd50a6e"
+            "fingerprint": "d216edb0"
           },
           "displayName": {
             "en": "Krillin",
@@ -7363,11 +7363,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 30,
+          "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "major",
-            "places": 12,
-            "animatedStops": 6,
+            "places": 13,
+            "animatedStops": 7,
             "arcs": 4,
             "journeyArcs": 7
           },
@@ -8440,6 +8440,36 @@
             "animatedStops": 2,
             "arcs": 2,
             "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:king-piccolo",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "king-piccolo",
+          "series": null,
+          "displayName": {
+            "en": "King Piccolo",
+            "it": "Il Grande Mago Piccolo"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
           },
           "renderedLocales": [],
           "scheduledLocales": [],

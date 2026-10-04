@@ -806,6 +806,33 @@ export const en = {
       },
     ],
   },
+  battles: {
+    title: 'Battles',
+    record: '{{wins}} wins · {{losses}} losses · {{draws}} draws or interrupted',
+    win: 'Win',
+    loss: 'Loss',
+    draw: 'Draw',
+    interrupted: 'Interrupted',
+    vs: 'vs',
+    with: 'with',
+    outcome: 'Outcome',
+    wins: 'wins',
+  },
+  familyTree: {
+    title: 'Family tree',
+    aria: 'Family tree of {{name}}',
+  },
+  factionStructure: {
+    structure: 'Structure',
+    succession: 'Succession',
+  },
+  storyMoment: {
+    title: 'Story moment',
+    hint: 'Shows only places and events that have appeared up to the chosen arc: no spoilers past that point.',
+    all: 'Whole story',
+    label: 'Up to arc',
+    token: 'Up to: {{arc}}',
+  },
   tournaments: {
     tab: 'Tournaments',
     sectionTitle: 'Tournaments held here',

@@ -803,6 +803,33 @@ export const ja = {
       },
     ],
   },
+  battles: {
+    title: '戦い',
+    record: '{{wins}}勝 · {{losses}}敗 · {{draws}}引き分け・中断',
+    win: '勝利',
+    loss: '敗北',
+    draw: '引き分け',
+    interrupted: '中断',
+    vs: '対',
+    with: 'と共に',
+    outcome: '結果',
+    wins: '勝者',
+  },
+  familyTree: {
+    title: '家系図',
+    aria: '{{name}}の家系図',
+  },
+  factionStructure: {
+    structure: '組織図',
+    succession: '歴代',
+  },
+  storyMoment: {
+    title: '物語の時点',
+    hint: '選んだ編までに登場した場所と出来事だけを表示します（それ以降のネタバレなし）。',
+    all: '物語全体',
+    label: 'この編まで',
+    token: '{{arc}}まで',
+  },
   tournaments: {
     tab: '大会',
     sectionTitle: 'ここで開かれた大会',

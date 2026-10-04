@@ -1,4 +1,10 @@
 import { hunterxhunterSlugs } from './slugs';
+import { hxhBattles } from './battles';
+import { withBattles } from '../shared/battleKit';
+import { hxhFamily } from './family';
+import { withFamily } from '../shared/familyKit';
+import { hxhStructure } from './structure';
+import { withFactionExtras } from '../shared/factionKit';
 import type { WorldDataset } from '@/types';
 import { animeWorlds } from '@/data/worlds';
 import { hxhMapLevels } from './mapLevels';
@@ -89,7 +95,7 @@ const hxhAllCharacters = enrichHxhCharacters(
   hxhAllJutsu,
 );
 
-export const hunterxhunterDataset: WorldDataset = {
+export const hunterxhunterDataset: WorldDataset = withFactionExtras(withFamily(withBattles({
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
   seoSlugs: hunterxhunterSlugs,
   world: hunterxhunter,
@@ -121,6 +127,6 @@ export const hunterxhunterDataset: WorldDataset = {
   jutsu: hxhAllJutsu,
   tournaments: hxhTournaments,
   assets: hxhAssets,
-};
+}, hxhBattles), hxhFamily, 'char-hxh-'), hxhStructure);
 
 export { HXH_MAP_VIEWBOX } from './mapLevels';

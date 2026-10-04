@@ -805,6 +805,33 @@ export const de = {
       },
     ],
   },
+  battles: {
+    title: 'Kämpfe',
+    record: '{{wins}} Siege · {{losses}} Niederlagen · {{draws}} Unentschieden oder abgebrochen',
+    win: 'Sieg',
+    loss: 'Niederlage',
+    draw: 'Unentschieden',
+    interrupted: 'Abgebrochen',
+    vs: 'gegen',
+    with: 'mit',
+    outcome: 'Ausgang',
+    wins: 'Sieger',
+  },
+  familyTree: {
+    title: 'Stammbaum',
+    aria: 'Stammbaum von {{name}}',
+  },
+  factionStructure: {
+    structure: 'Organigramm',
+    succession: 'Nachfolge',
+  },
+  storyMoment: {
+    title: 'Zeitpunkt der Geschichte',
+    hint: 'Zeigt nur Orte und Ereignisse bis zum gewählten Arc – keine Spoiler darüber hinaus.',
+    all: 'Ganze Geschichte',
+    label: 'Bis zum Arc',
+    token: 'Bis: {{arc}}',
+  },
   tournaments: {
     tab: 'Turniere',
     sectionTitle: 'Hier ausgetragene Turniere',

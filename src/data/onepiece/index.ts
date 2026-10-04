@@ -1,4 +1,10 @@
 import { onepieceSlugs } from './slugs';
+import { onepieceBattles } from './battles';
+import { withBattles } from '../shared/battleKit';
+import { onepieceFamily } from './family';
+import { withFamily } from '../shared/familyKit';
+import { onepieceStructure } from './structure';
+import { withFactionExtras } from '../shared/factionKit';
 import type { Character, Faction, Jutsu, Location, PoneglyphRef, StoryArc, TimelineEvent, WorldDataset } from '@/types';
 import { animeWorlds } from '@/data/worlds';
 import { onepieceMapLevels } from './mapLevels';
@@ -460,7 +466,7 @@ const factions: Faction[] = [
   return jutsuIds.length ? { ...f, jutsuIds } : f;
 });
 
-export const onepieceDataset: WorldDataset = {
+export const onepieceDataset: WorldDataset = withFactionExtras(withFamily(withBattles({
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
   seoSlugs: onepieceSlugs,
   world: onepiece,
@@ -493,6 +499,6 @@ export const onepieceDataset: WorldDataset = {
   jutsu,
   tournaments: onepieceTournaments,
   assets: onepieceAssets,
-};
+}, onepieceBattles), onepieceFamily, 'char-op-'), onepieceStructure);
 
 export { ONEPIECE_MAP_VIEWBOX } from './mapLevels';

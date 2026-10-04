@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T23:14:33.153Z",
+  "generatedAt": "2026-10-04T05:50:47.105Z",
   "templates": {
     "characterJourney": {
       "byReason": {
         "single_location": 501,
-        "no_journey_data": 585
+        "no_journey_data": 584
       },
       "items": [
         {
@@ -2078,7 +2078,7 @@
           "subject": "kastro",
           "subjectId": "char-hxh-kastro",
           "displayName": "Kastro",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "hunterxhunter",
@@ -5347,13 +5347,6 @@
           "subject": "korin",
           "subjectId": "char-dbz-korin",
           "displayName": "Korin",
-          "reason": "single_location"
-        },
-        {
-          "anime": "dragonball",
-          "subject": "king-piccolo",
-          "subjectId": "char-dbz-king-piccolo",
-          "displayName": "King Piccolo",
           "reason": "single_location"
         },
         {

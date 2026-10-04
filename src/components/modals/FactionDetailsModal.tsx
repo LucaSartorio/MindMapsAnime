@@ -18,6 +18,7 @@ import {
 import { buildRelationGroups } from '@/lib/relationGroups';
 import { RelationsPanel } from '@/components/common/RelationsPanel';
 import { useOpenEntityRef } from '@/lib/useOpenEntityRef';
+import { FactionGroups, FactionSuccessions } from '@/components/factions/FactionStructure';
 
 interface FactionDetailsModalProps {
   dataset: WorldDataset;
@@ -119,6 +120,40 @@ export function FactionDetailsModal({
       <p className="leading-relaxed">
         {getLocalizedText(faction.description, locale)}
       </p>
+
+      {(faction.structure ?? []).length > 0 && (
+        <section>
+          <h3 className="font-display text-[11px] uppercase tracking-widest text-chakra-300 mb-2">
+            {t('factionStructure.structure')}
+          </h3>
+          <FactionGroups
+            dataset={dataset}
+            faction={faction}
+            renderName={(id, label) => (
+              <button type="button" onClick={() => openCharacter(id)} className="text-chakra-300 hover:underline">
+                {label}
+              </button>
+            )}
+          />
+        </section>
+      )}
+
+      {(faction.succession ?? []).length > 0 && (
+        <section>
+          <h3 className="font-display text-[11px] uppercase tracking-widest text-chakra-300 mb-2">
+            {t('factionStructure.succession')}
+          </h3>
+          <FactionSuccessions
+            dataset={dataset}
+            faction={faction}
+            renderName={(id, label) => (
+              <button type="button" onClick={() => openCharacter(id)} className="text-chakra-300 hover:underline">
+                {label}
+              </button>
+            )}
+          />
+        </section>
+      )}
 
       {(faction.signatureAbilities ?? []).length > 0 && (
         <section>

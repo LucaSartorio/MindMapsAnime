@@ -805,6 +805,33 @@ export const fr = {
       },
     ],
   },
+  battles: {
+    title: 'Combats',
+    record: '{{wins}} victoires · {{losses}} défaites · {{draws}} nuls ou interrompus',
+    win: 'Victoire',
+    loss: 'Défaite',
+    draw: 'Match nul',
+    interrupted: 'Interrompu',
+    vs: 'contre',
+    with: 'avec',
+    outcome: 'Issue',
+    wins: 'vainqueur',
+  },
+  familyTree: {
+    title: 'Arbre généalogique',
+    aria: 'Arbre généalogique de {{name}}',
+  },
+  factionStructure: {
+    structure: 'Organigramme',
+    succession: 'Successions',
+  },
+  storyMoment: {
+    title: 'Moment de l’histoire',
+    hint: 'N’affiche que les lieux et événements apparus jusqu’à l’arc choisi : aucun spoiler au-delà.',
+    all: 'Toute l’histoire',
+    label: 'Jusqu’à l’arc',
+    token: 'Jusqu’à : {{arc}}',
+  },
   tournaments: {
     tab: 'Tournois',
     sectionTitle: 'Tournois disputés ici',
