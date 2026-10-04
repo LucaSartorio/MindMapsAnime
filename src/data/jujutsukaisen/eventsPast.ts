@@ -296,8 +296,8 @@ export const jjkEventsPast: TimelineEvent[] = [
       en: "At Sugisawa High his occult club mates break the seal on one of Sukuna's fingers and draw in the spirits. Megumi, sent to retrieve it, is in trouble; to save everyone Yuji swallows the finger and Sukuna awakens.",
     },
     longDescription: {
-      it: "Yuji riesce a riprendere il controllo del proprio corpo: un contenitore come lui nasce una volta ogni mille anni. Gojo, arrivato da Tokyo, ottiene che la sua esecuzione sia rimandata finché non avrà mangiato tutte le dita.",
-      en: 'Yuji manages to regain control of his own body: a vessel like him is born once in a thousand years. Gojo, arriving from Tokyo, gets his execution postponed until he has eaten all the fingers.',
+      it: "Gojo gli fa ingoiare un secondo dito per metterlo alla prova, e Yuji riesce a riprendere il controllo del proprio corpo: un contenitore come lui nasce una volta ogni mille anni. Gojo, arrivato da Tokyo, ottiene che la sua esecuzione sia rimandata finché non avrà mangiato tutte le dita.",
+      en: 'Gojo has him swallow a second finger as a test, and Yuji manages to regain control of his own body: a vessel like him is born once in a thousand years. Gojo, arriving from Tokyo, gets his execution postponed until he has eaten all the fingers.',
     },
     period: P.y2018,
     arcId: 'arc-jjk-fearsome-womb',
@@ -346,8 +346,8 @@ export const jjkEventsPast: TimelineEvent[] = [
     id: 'evt-jjk-eishu',
     title: { it: 'Il riformatorio di Eishu', en: 'The Eishu detention centre' },
     description: {
-      it: "Un grembo maledetto compare nel riformatorio di Eishu e diventa uno spirito di grado speciale. Per salvare i compagni Yuji lascia il corpo a Sukuna, che uccide lo spirito, poi si strappa il cuore e affronta Megumi: Yuji muore.",
-      en: "A cursed womb appears at the Eishu detention centre and becomes a special-grade spirit. To save his friends Yuji lets Sukuna take his body; Sukuna kills the spirit, then tears out his own heart and faces Megumi: Yuji dies.",
+      it: "Un grembo maledetto compare nel riformatorio di Eishu e diventa uno spirito di grado speciale. Per salvare i compagni Yuji lascia il corpo a Sukuna, che uccide lo spirito, ne mangia il dito (il terzo), poi si strappa il cuore e affronta Megumi: Yuji muore.",
+      en: "A cursed womb appears at the Eishu detention centre and becomes a special-grade spirit. To save his friends Yuji lets Sukuna take his body; Sukuna kills the spirit, eats the finger it carried (the third), then tears out his own heart and faces Megumi: Yuji dies.",
     },
     longDescription: {
       it: "Nel mondo interiore Sukuna gli propone un vincolo per tornare in vita: un minuto di controllo totale al suo comando, e Yuji dovrà dimenticare l'accordo. Yuji accetta solo a patto che nessuno venga ucciso in quel minuto. Si risveglia sul tavolo dell'autopsia di Shoko.",
@@ -362,7 +362,7 @@ export const jjkEventsPast: TimelineEvent[] = [
     mangaChapters: ['6-9'],
     animeEpisodes: ['ep. 4-5'],
     order: 340,
-    tags: ['grembo-maledetto', 'morte-di-yuji', 'scontro'],
+    tags: ['grembo-maledetto', 'morte-di-yuji', 'scontro', 'dito-di-sukuna'],
   }),
   /* ============================== CONTRO MAHITO ============================== */
   ev({
@@ -484,7 +484,7 @@ export const jjkEventsPast: TimelineEvent[] = [
     mangaChapters: ['53'],
     animeEpisodes: ['ep. 20'],
     order: 530,
-    tags: ['scambio-kyoto', 'furto'],
+    tags: ['scambio-kyoto', 'furto', 'dito-di-sukuna'],
   }),
   ev({
     id: 'evt-jjk-baseball',
@@ -508,8 +508,8 @@ export const jjkEventsPast: TimelineEvent[] = [
     id: 'evt-jjk-yasohachi',
     title: { it: 'Il ponte Yasohachi', en: 'The Yasohachi Bridge' },
     description: {
-      it: "Una maledizione colpisce chi è stato di notte al ponte Yasohachi, a Saitama. Megumi affronta lo spirito che custodisce un dito di Sukuna; Yuji e Nobara affrontano Eso e Kechizu, appena incarnati, e li uccidono.",
-      en: "A curse strikes those who went to the Yasohachi Bridge, in Saitama, at night. Megumi faces the spirit guarding one of Sukuna's fingers; Yuji and Nobara face Eso and Kechizu, newly incarnated, and kill them.",
+      it: "Una maledizione colpisce chi è stato di notte al ponte Yasohachi, a Saitama. Megumi sconfigge lo spirito che custodisce un dito di Sukuna e lo consegna a Yuji: Sukuna lo mangia, è il quarto; Yuji e Nobara affrontano Eso e Kechizu, appena incarnati, e li uccidono.",
+      en: "A curse strikes those who went to the Yasohachi Bridge, in Saitama, at night. Megumi defeats the spirit guarding one of Sukuna's fingers and hands it to Yuji: Sukuna eats it, his fourth; Yuji and Nobara face Eso and Kechizu, newly incarnated, and kill them.",
     },
     longDescription: {
       it: "Per Yuji è la prima volta che toglie la vita a esseri che parlano e piangono come umani. Choso, il fratello maggiore, giura di vendicarli.",
@@ -518,12 +518,12 @@ export const jjkEventsPast: TimelineEvent[] = [
     period: P.y2018,
     arcId: 'arc-jjk-death-painting',
     locationId: 'loc-jjk-yasohachi-bridge',
-    characterIds: ['char-jjk-yuji', 'char-jjk-nobara', 'char-jjk-megumi', 'char-jjk-eso', 'char-jjk-kechizu', 'char-jjk-choso'],
+    characterIds: ['char-jjk-yuji', 'char-jjk-nobara', 'char-jjk-megumi', 'char-jjk-eso', 'char-jjk-kechizu', 'char-jjk-choso', 'char-jjk-akari-nitta'],
     factionIds: ['faction-jjk-first-years', 'faction-jjk-death-paintings'],
     mangaChapters: ['55-63'],
     animeEpisodes: ['ep. 22-24'],
     order: 600,
-    tags: ['dipinti-della-morte', 'scontro'],
+    tags: ['dipinti-della-morte', 'scontro', 'dito-di-sukuna'],
   }),
   ev({
     id: 'evt-jjk-mechamaru-betrayal',

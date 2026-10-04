@@ -601,7 +601,7 @@ export const hxhCompletionEvents: TimelineEvent[] = [
     mangaChapters: ['1'],
     animeEpisodes: ['1'],
     order: 0.5,
-    tags: ['gon', 'kite', 'origini'],
+    tags: ['gon', 'kite', 'origini', 'tracce-di-ging'],
   }),
   ev({
     id: 'ev-hxh-lord-of-the-lake',
@@ -647,7 +647,7 @@ export const hxhCompletionEvents: TimelineEvent[] = [
     locationId: 'loc-hxh-wi-mito-house',
     characterIds: ['char-hxh-gon', 'char-hxh-killua', 'char-hxh-mito', 'char-hxh-ging'],
     order: 8.3,
-    tags: ['gon', 'ging', 'greed-island'],
+    tags: ['gon', 'ging', 'greed-island', 'tracce-di-ging'],
   }),
   ev({
     id: 'ev-hxh-kurapika-izunavi',

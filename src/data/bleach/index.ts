@@ -13,6 +13,7 @@ import { bleachCharactersQuincy } from './charactersQuincy';
 import { bleachFactions } from './factions';
 import { bleachArcs } from './arcs';
 import { bleachEvents } from './events';
+import { bleachEventsHogyoku } from './eventsHogyoku';
 import { bleachRoutes } from './routes';
 import { bleachAbilities } from './abilities';
 import { bleachAssets } from './assets';
@@ -37,6 +38,14 @@ const bleach = animeWorlds.find((w) => w.slug === 'bleach')!;
  * Bankai, Resurrección, Vollständig, Schrift, Hadō, Bakudō…). Gli stadi di
  * rilascio di ogni personaggio sono anche in `character.transformations`.
  */
+const events = [...bleachEvents, ...bleachEventsHogyoku].sort((a, b) => a.order - b.order);
+
+/** Gli archi elencano anche gli eventi aggiunti che li dichiarano in `arcId`. */
+const arcs = bleachArcs.map((arc) => ({
+  ...arc,
+  eventIds: [...new Set([...(arc.eventIds ?? []), ...events.filter((e) => e.arcId === arc.id).map((e) => e.id)])],
+}));
+
 export const bleachDataset: WorldDataset = {
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
   seoSlugs: bleachSlugs,
@@ -52,8 +61,8 @@ export const bleachDataset: WorldDataset = {
     ...bleachCharactersQuincy,
   ],
   factions: bleachFactions,
-  arcs: bleachArcs,
-  events: bleachEvents,
+  arcs,
+  events,
   routes: bleachRoutes,
   jutsu: bleachAbilities,
   assets: bleachAssets,

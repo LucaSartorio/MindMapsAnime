@@ -21,6 +21,7 @@ import { blackcloverEventsBatch1 } from './eventsBatch1';
 import { blackcloverRoutes } from './routes';
 import { blackcloverMagic } from './magic';
 import { blackcloverAssets } from './assets';
+import { blackcloverTournaments } from './tournaments';
 
 const blackclover = animeWorlds.find((w) => w.slug === 'blackclover')!;
 
@@ -85,6 +86,7 @@ export const blackcloverDataset: WorldDataset = {
   events: [...blackcloverEvents, ...blackcloverEventsBatch1],
   routes: blackcloverRoutes,
   jutsu: blackcloverMagic,
+  tournaments: blackcloverTournaments,
   assets: blackcloverAssets,
 };
 

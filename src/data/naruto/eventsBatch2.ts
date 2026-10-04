@@ -40,7 +40,7 @@ export const narutoEventsBatch2: TimelineEvent[] = [
     arcId: 'arc-pre-series',
     locationId: 'loc-konoha',
     characterIds: ['char-hashirama', 'char-mito', 'char-madara', 'char-kurama'],
-    tags: ['cercoteri', 'jinchuriki'],
+    tags: ['cercoteri', 'jinchuriki', 'cercoterio'],
   }),
   ev({
     id: 'ev-tobirama-death',
@@ -195,7 +195,7 @@ export const narutoEventsBatch2: TimelineEvent[] = [
     characterIds: ['char-kisame', 'char-guy', 'char-killer-b', 'char-aoba', 'char-yamato'],
     mangaChapters: ['~506-508'],
     animeEpisodes: ['ep. 251-252'],
-    tags: ['akatsuki', 'scontro'],
+    tags: ['akatsuki', 'scontro', 'cercoterio'],
   }),
   /* ============================ QUARTA GUERRA ============================ */
   ev({
@@ -255,7 +255,7 @@ export const narutoEventsBatch2: TimelineEvent[] = [
     locationId: 'loc-fourth-war-battlefield',
     characterIds: ['char-obito', 'char-madara', 'char-ten-tails', 'char-gedo-mazo', 'char-naruto', 'char-killer-b'],
     mangaChapters: ['~597-600'],
-    tags: ['quarta-guerra', 'dieci-code'],
+    tags: ['quarta-guerra', 'dieci-code', 'cercoterio'],
   }),
   ev({
     id: 'ev-hq-destroyed',
@@ -298,7 +298,7 @@ export const narutoEventsBatch2: TimelineEvent[] = [
     locationId: 'loc-fourth-war-battlefield',
     characterIds: ['char-madara', 'char-obito', 'char-black-zetsu', 'char-ten-tails', 'char-guy'],
     mangaChapters: ['~656-664'],
-    tags: ['quarta-guerra', 'dieci-code'],
+    tags: ['quarta-guerra', 'dieci-code', 'cercoterio'],
   }),
   ev({
     id: 'ev-infinite-tsukuyomi',

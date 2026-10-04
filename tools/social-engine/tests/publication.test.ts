@@ -508,7 +508,9 @@ await test('catalog: rendered / scheduled / published are distinct per locale an
   // Parts 2/3 are still listed (TikTok/YouTube to do) but never for Instagram.
   assert.deepEqual(pub.ready.map((e) => e.renderId), [GOKU1, GOKU2, GOKU3]);
   const g1 = pub.ready[0];
-  assert.deepEqual([g1.subjectName, g1.segment, g1.partNumber, g1.partCount, g1.artifact?.name, g1.publicationStatus], ['Goku', 'part-01', 1, 5, ARTIFACT.name, 'notPublished']);
+  // partCount follows the real data (more of Goku's journey → more parts): read it from the catalog item.
+  assert.ok((item(1).series?.partCount ?? 0) >= 3, 'Goku is a multi-part series');
+  assert.deepEqual([g1.subjectName, g1.segment, g1.partNumber, g1.partCount, g1.artifact?.name, g1.publicationStatus], ['Goku', 'part-01', 1, item(1).series?.partCount, ARTIFACT.name, 'notPublished']);
   assert.deepEqual(pub.unavailable.map((u) => [u.renderId, u.reason]), [[LOCAL, 'no_artifact'], [OLD, 'artifact_expired']]);
   assert.deepEqual([pub.summary.rendered, pub.summary.notPublished, pub.summary.scheduled, pub.summary.published, pub.summary.unavailable], [5, 3, 1, 1, 2]);
 });

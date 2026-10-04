@@ -279,6 +279,33 @@ export function validateDataset(dataset: WorldDataset): ValidationReport {
       addIssue(issues, 'warning', 'broken_ref', 'mapLevel', `MapLevel ${ml.id} backgroundAssetId inesistente: ${ml.backgroundAssetId}`, ml.id);
   }
 
+  /* ---------- Tournaments ---------- */
+  checkUnique(dataset.tournaments, 'tournament', issues);
+  for (const tn of dataset.tournaments ?? []) {
+    checkSingleRef(tn.locationId, lId, 'tournament', 'locationId', tn.id, issues);
+    checkSingleRef(tn.arcId, aId, 'tournament', 'arcId', tn.id, issues);
+    checkRef(tn.winnerIds, cId, 'tournament', 'winnerIds', tn.id, issues);
+    tn.rounds.forEach((round, ri) => {
+      round.matches.forEach((m, mi) => {
+        const where = `rounds[${ri}].matches[${mi}]`;
+        checkSingleRef(m.eventId, eId, 'tournament', `${where}.eventId`, tn.id, issues);
+        m.sides.forEach((side, si) => {
+          checkRef(side.characterIds, cId, 'tournament', `${where}.sides[${si}]`, tn.id, issues);
+          if (!side.characterIds?.length && !side.label)
+            addIssue(issues, 'error', 'missing_name', 'tournament', `Tournament ${tn.id} ${where}.sides[${si}] senza partecipante`, tn.id);
+        });
+        if (m.winner !== undefined && (m.winner < 0 || m.winner >= m.sides.length))
+          addIssue(issues, 'error', 'broken_ref', 'tournament', `Tournament ${tn.id} ${where}.winner fuori intervallo`, tn.id);
+      });
+      // Eliminazione diretta: ogni turno ha la metà degli incontri del precedente.
+      if (tn.format === 'bracket' && ri > 0) {
+        const prev = tn.rounds[ri - 1].matches.length;
+        if (round.matches.length * 2 !== prev)
+          addIssue(issues, 'error', 'broken_ref', 'tournament', `Tournament ${tn.id}: il turno ${ri} ha ${round.matches.length} incontri, attesi ${prev / 2} (format bracket)`, tn.id);
+      }
+    });
+  }
+
   /* ---------- Routes ---------- */
   for (const r of dataset.routes) {
     if (!r.name)

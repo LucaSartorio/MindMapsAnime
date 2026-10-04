@@ -1,9 +1,12 @@
 import { memo } from 'react';
+import { cn } from '@/lib/cn';
 import { Handle, Position, useStore, type NodeProps } from '@xyflow/react';
 
 export interface MapClusterNodeData {
   count: number;
   bbox: { x: number; y: number; width: number; height: number };
+  /** Il gruppo contiene un luogo evidenziato da un filtro (Poneglyph, marcatore). */
+  marked?: boolean;
   [key: string]: unknown;
 }
 
@@ -23,7 +26,12 @@ function MapClusterNodeBase({ data }: NodeProps) {
       style={{ transform: `scale(${1 / zoom})` }}
     >
       <div
-        className="grid cursor-pointer select-none place-items-center rounded-full border border-chakra-300/70 bg-ink-900/85 font-semibold text-chakra-50 shadow-panel backdrop-blur-sm transition hover:border-chakra-200 hover:bg-chakra-600/50"
+        className={cn(
+          'grid cursor-pointer select-none place-items-center rounded-full border font-semibold shadow-panel backdrop-blur-sm transition',
+          d.marked
+            ? 'border-red-400 bg-red-950/85 text-red-50 shadow-[0_0_10px_rgba(239,68,68,0.9)] hover:bg-red-800/70'
+            : 'border-chakra-300/70 bg-ink-900/85 text-chakra-50 hover:border-chakra-200 hover:bg-chakra-600/50',
+        )}
         style={{
           width: size,
           height: size,

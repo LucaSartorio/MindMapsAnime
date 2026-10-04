@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T16:07:47.344Z",
+  "generatedAt": "2026-10-03T23:14:33.153Z",
   "locales": [
     "en",
     "it"
@@ -35,16 +35,16 @@
           "excluded": 357
         },
         "dragonball": {
-          "characters": 46,
-          "videos": 54,
-          "series": 5,
-          "excluded": 111
+          "characters": 49,
+          "videos": 59,
+          "series": 6,
+          "excluded": 135
         },
         "attackontitan": {
-          "characters": 35,
-          "videos": 35,
+          "characters": 37,
+          "videos": 37,
           "series": 0,
-          "excluded": 47
+          "excluded": 45
         },
         "bleach": {
           "characters": 71,
@@ -56,7 +56,7 @@
           "characters": 19,
           "videos": 19,
           "series": 0,
-          "excluded": 47
+          "excluded": 53
         },
         "blackclover": {
           "characters": 50,
@@ -6451,7 +6451,7 @@
             "id": "character-journey:dragonball:goku",
             "segment": "part-01",
             "partNumber": 1,
-            "partCount": 5,
+            "partCount": 6,
             "previousId": null,
             "nextId": "character-journey:dragonball:goku:part-02",
             "arcIds": [
@@ -6481,10 +6481,10 @@
           "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "main",
-            "places": 31,
+            "places": 32,
             "animatedStops": 4,
             "arcs": 1,
-            "journeyArcs": 18
+            "journeyArcs": 19
           },
           "renderedLocales": [
             "en"
@@ -6520,30 +6520,24 @@
             "id": "character-journey:dragonball:goku",
             "segment": "part-02",
             "partNumber": 2,
-            "partCount": 5,
+            "partCount": 6,
             "previousId": "character-journey:dragonball:goku:part-01",
             "nextId": "character-journey:dragonball:goku:part-03",
             "arcIds": [
-              "arc-dbz-tenkaichi-tournament",
-              "arc-dbz-red-ribbon",
-              "arc-dbz-king-piccolo"
+              "arc-dbz-tenkaichi-tournament"
             ],
             "arcTitles": {
               "en": [
-                "Tenkaichi Budokai",
-                "Red Ribbon Army Saga",
-                "King Piccolo Saga"
+                "Tenkaichi Budokai"
               ],
               "it": [
-                "Torneo Tenkaichi",
-                "Saga del Red Ribbon",
-                "Saga del Grande Mago Piccolo"
+                "Torneo Tenkaichi"
               ]
             },
             "firstArc": "Tenkaichi Budokai",
-            "lastArc": "King Piccolo Saga",
+            "lastArc": "Tenkaichi Budokai",
             "segmentationVersion": 1,
-            "fingerprint": "38f0cc54"
+            "fingerprint": "f73f4c83"
           },
           "displayName": {
             "en": "Goku",
@@ -6553,13 +6547,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 33,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "main",
-            "places": 31,
-            "animatedStops": 7,
-            "arcs": 3,
-            "journeyArcs": 18
+            "places": 32,
+            "animatedStops": 5,
+            "arcs": 1,
+            "journeyArcs": 19
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -6578,39 +6572,36 @@
             "id": "character-journey:dragonball:goku",
             "segment": "part-03",
             "partNumber": 3,
-            "partCount": 5,
+            "partCount": 6,
             "previousId": "character-journey:dragonball:goku:part-02",
             "nextId": "character-journey:dragonball:goku:part-04",
             "arcIds": [
+              "arc-dbz-red-ribbon",
+              "arc-dbz-king-piccolo",
               "arc-dbz-saiyan-saga",
-              "arc-dbz-garlic-jr",
-              "arc-dbz-androids",
-              "arc-dbz-cell-saga",
-              "arc-dbz-majin-buu",
-              "arc-dbz-daima"
+              "arc-dbz-namek-frieza",
+              "arc-dbz-garlic-jr"
             ],
             "arcTitles": {
               "en": [
+                "Red Ribbon Army Saga",
+                "King Piccolo Saga",
                 "Saiyan Saga",
-                "Garlic Jr. Saga",
-                "Android Saga",
-                "Cell Saga",
-                "Majin Buu Saga",
-                "Dragon Ball DAIMA"
+                "Namek / Frieza Saga",
+                "Garlic Jr. Saga"
               ],
               "it": [
+                "Saga del Red Ribbon",
+                "Saga del Grande Mago Piccolo",
                 "Saga dei Saiyan",
-                "Saga di Garlic Jr.",
-                "Saga degli Androidi",
-                "Saga di Cell",
-                "Saga di Majin Bu",
-                "Dragon Ball DAIMA"
+                "Saga di Namecc / Freezer",
+                "Saga di Garlic Jr."
               ]
             },
-            "firstArc": "Saiyan Saga",
-            "lastArc": "Dragon Ball DAIMA",
+            "firstArc": "Red Ribbon Army Saga",
+            "lastArc": "Garlic Jr. Saga",
             "segmentationVersion": 1,
-            "fingerprint": "add057ca"
+            "fingerprint": "913f8677"
           },
           "displayName": {
             "en": "Goku",
@@ -6620,13 +6611,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 33,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "main",
-            "places": 31,
-            "animatedStops": 7,
-            "arcs": 6,
-            "journeyArcs": 18
+            "places": 32,
+            "animatedStops": 5,
+            "arcs": 5,
+            "journeyArcs": 19
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -6645,33 +6636,36 @@
             "id": "character-journey:dragonball:goku",
             "segment": "part-04",
             "partNumber": 4,
-            "partCount": 5,
+            "partCount": 6,
             "previousId": "character-journey:dragonball:goku:part-03",
             "nextId": "character-journey:dragonball:goku:part-05",
             "arcIds": [
-              "arc-dbz-battle-of-gods",
-              "arc-dbz-resurrection-f",
-              "arc-dbz-universe-6",
-              "arc-dbz-goku-black"
+              "arc-dbz-androids",
+              "arc-dbz-cell-saga",
+              "arc-dbz-majin-buu",
+              "arc-dbz-daima",
+              "arc-dbz-battle-of-gods"
             ],
             "arcTitles": {
               "en": [
-                "Battle of Gods",
-                "Resurrection F",
-                "Universe 6 Saga (Tournament of Destroyers)",
-                "Goku Black / Future Trunks Saga"
+                "Android Saga",
+                "Cell Saga",
+                "Majin Buu Saga",
+                "Dragon Ball DAIMA",
+                "Battle of Gods"
               ],
               "it": [
-                "Battle of Gods",
-                "Resurrection F",
-                "Saga dell'Universo 6 (Torneo della Distruzione)",
-                "Saga di Goku Black / Trunks del Futuro"
+                "Saga degli Androidi",
+                "Saga di Cell",
+                "Saga di Majin Bu",
+                "Dragon Ball DAIMA",
+                "Battle of Gods"
               ]
             },
-            "firstArc": "Battle of Gods",
-            "lastArc": "Goku Black / Future Trunks Saga",
+            "firstArc": "Android Saga",
+            "lastArc": "Battle of Gods",
             "segmentationVersion": 1,
-            "fingerprint": "f933d0f7"
+            "fingerprint": "d8709fd9"
           },
           "displayName": {
             "en": "Goku",
@@ -6684,10 +6678,10 @@
           "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 31,
+            "places": 32,
             "animatedStops": 6,
-            "arcs": 4,
-            "journeyArcs": 18
+            "arcs": 5,
+            "journeyArcs": 19
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -6706,33 +6700,33 @@
             "id": "character-journey:dragonball:goku",
             "segment": "part-05",
             "partNumber": 5,
-            "partCount": 5,
+            "partCount": 6,
             "previousId": "character-journey:dragonball:goku:part-04",
-            "nextId": null,
+            "nextId": "character-journey:dragonball:goku:part-06",
             "arcIds": [
-              "arc-dbz-gt-black-star",
-              "arc-dbz-gt-baby",
-              "arc-dbz-gt-super-17",
-              "arc-dbz-filler-other-world-tournament"
+              "arc-dbz-resurrection-f",
+              "arc-dbz-universe-6",
+              "arc-dbz-goku-black",
+              "arc-dbz-gt-black-star"
             ],
             "arcTitles": {
               "en": [
-                "Black Star Dragon Ball Saga",
-                "Baby Saga",
-                "Super 17 Saga",
-                "Other World Tournament"
+                "Resurrection F",
+                "Universe 6 Saga (Tournament of Destroyers)",
+                "Goku Black / Future Trunks Saga",
+                "Black Star Dragon Ball Saga"
               ],
               "it": [
-                "Saga delle Sfere del Drago Nere",
-                "Saga di Baby",
-                "Saga di Super C-17",
-                "Il Torneo dell'Altro Mondo"
+                "Resurrection F",
+                "Saga dell'Universo 6 (Torneo della Distruzione)",
+                "Saga di Goku Black / Trunks del Futuro",
+                "Saga delle Sfere del Drago Nere"
               ]
             },
-            "firstArc": "Black Star Dragon Ball Saga",
-            "lastArc": "Other World Tournament",
+            "firstArc": "Resurrection F",
+            "lastArc": "Black Star Dragon Ball Saga",
             "segmentationVersion": 1,
-            "fingerprint": "6c97c48c"
+            "fingerprint": "1f032a52"
           },
           "displayName": {
             "en": "Goku",
@@ -6742,13 +6736,71 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 33,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 31,
-            "animatedStops": 7,
+            "places": 32,
+            "animatedStops": 6,
             "arcs": 4,
-            "journeyArcs": 18
+            "journeyArcs": 19
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:goku:part-06",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "goku",
+          "series": {
+            "id": "character-journey:dragonball:goku",
+            "segment": "part-06",
+            "partNumber": 6,
+            "partCount": 6,
+            "previousId": "character-journey:dragonball:goku:part-05",
+            "nextId": null,
+            "arcIds": [
+              "arc-dbz-gt-baby",
+              "arc-dbz-gt-super-17",
+              "arc-dbz-filler-other-world-tournament"
+            ],
+            "arcTitles": {
+              "en": [
+                "Baby Saga",
+                "Super 17 Saga",
+                "Other World Tournament"
+              ],
+              "it": [
+                "Saga di Baby",
+                "Saga di Super C-17",
+                "Il Torneo dell'Altro Mondo"
+              ]
+            },
+            "firstArc": "Baby Saga",
+            "lastArc": "Other World Tournament",
+            "segmentationVersion": 1,
+            "fingerprint": "b113f246"
+          },
+          "displayName": {
+            "en": "Goku",
+            "it": "Son Goku"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 30,
+          "facts": {
+            "importance": "main",
+            "places": 32,
+            "animatedStops": 6,
+            "arcs": 3,
+            "journeyArcs": 19
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -7067,11 +7119,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 33,
+          "recommendedDurationSeconds": 36,
           "facts": {
             "importance": "major",
-            "places": 7,
-            "animatedStops": 7,
+            "places": 8,
+            "animatedStops": 8,
             "arcs": 3,
             "journeyArcs": 3
           },
@@ -7222,22 +7274,25 @@
             "nextId": "character-journey:dragonball:krillin:part-02",
             "arcIds": [
               "arc-dbz-tenkaichi-tournament",
-              "arc-dbz-red-ribbon"
+              "arc-dbz-red-ribbon",
+              "arc-dbz-king-piccolo"
             ],
             "arcTitles": {
               "en": [
                 "Tenkaichi Budokai",
-                "Red Ribbon Army Saga"
+                "Red Ribbon Army Saga",
+                "King Piccolo Saga"
               ],
               "it": [
                 "Torneo Tenkaichi",
-                "Saga del Red Ribbon"
+                "Saga del Red Ribbon",
+                "Saga del Grande Mago Piccolo"
               ]
             },
             "firstArc": "Tenkaichi Budokai",
-            "lastArc": "Red Ribbon Army Saga",
+            "lastArc": "King Piccolo Saga",
             "segmentationVersion": 1,
-            "fingerprint": "b2223efe"
+            "fingerprint": "a5ff7b8b"
           },
           "displayName": {
             "en": "Krillin",
@@ -7247,13 +7302,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 25,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "major",
-            "places": 10,
-            "animatedStops": 4,
-            "arcs": 2,
-            "journeyArcs": 6
+            "places": 12,
+            "animatedStops": 6,
+            "arcs": 3,
+            "journeyArcs": 7
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -7276,29 +7331,29 @@
             "previousId": "character-journey:dragonball:krillin:part-01",
             "nextId": null,
             "arcIds": [
-              "arc-dbz-king-piccolo",
               "arc-dbz-saiyan-saga",
               "arc-dbz-namek-frieza",
+              "arc-dbz-cell-saga",
               "arc-dbz-gt-super-17"
             ],
             "arcTitles": {
               "en": [
-                "King Piccolo Saga",
                 "Saiyan Saga",
                 "Namek / Frieza Saga",
+                "Cell Saga",
                 "Super 17 Saga"
               ],
               "it": [
-                "Saga del Grande Mago Piccolo",
                 "Saga dei Saiyan",
                 "Saga di Namecc / Freezer",
+                "Saga di Cell",
                 "Saga di Super C-17"
               ]
             },
-            "firstArc": "King Piccolo Saga",
+            "firstArc": "Saiyan Saga",
             "lastArc": "Super 17 Saga",
             "segmentationVersion": 1,
-            "fingerprint": "703ef0f6"
+            "fingerprint": "1bd50a6e"
           },
           "displayName": {
             "en": "Krillin",
@@ -7311,10 +7366,10 @@
           "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "major",
-            "places": 10,
+            "places": 12,
             "animatedStops": 6,
             "arcs": 4,
-            "journeyArcs": 6
+            "journeyArcs": 7
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -7338,13 +7393,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 25,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "supporting",
-            "places": 4,
-            "animatedStops": 4,
-            "arcs": 3,
-            "journeyArcs": 3
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 4,
+            "journeyArcs": 4
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -7368,13 +7423,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "supporting",
-            "places": 3,
-            "animatedStops": 3,
-            "arcs": 3,
-            "journeyArcs": 3
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 4,
+            "journeyArcs": 4
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -7401,10 +7456,10 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "minor",
-            "places": 2,
-            "animatedStops": 2,
-            "arcs": 2,
-            "journeyArcs": 2
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -7415,11 +7470,33 @@
           "publication": []
         },
         {
-          "id": "character-journey:dragonball:bulma",
+          "id": "character-journey:dragonball:bulma:part-01",
           "anime": "dragonball",
           "animeTitle": "Dragon Ball",
           "subject": "bulma",
-          "series": null,
+          "series": {
+            "id": "character-journey:dragonball:bulma",
+            "segment": "part-01",
+            "partNumber": 1,
+            "partCount": 2,
+            "previousId": null,
+            "nextId": "character-journey:dragonball:bulma:part-02",
+            "arcIds": [
+              "arc-dbz-pilaf-saga"
+            ],
+            "arcTitles": {
+              "en": [
+                "Dragon Ball · Pilaf Saga"
+              ],
+              "it": [
+                "Dragon Ball · Saga di Pilaf"
+              ]
+            },
+            "firstArc": "Dragon Ball · Pilaf Saga",
+            "lastArc": "Dragon Ball · Pilaf Saga",
+            "segmentationVersion": 1,
+            "fingerprint": "57ee461b"
+          },
           "displayName": {
             "en": "Bulma",
             "it": "Bulma"
@@ -7428,12 +7505,70 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 36,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "major",
-            "places": 8,
-            "animatedStops": 8,
-            "arcs": 4,
+            "places": 9,
+            "animatedStops": 5,
+            "arcs": 1,
+            "journeyArcs": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:bulma:part-02",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "bulma",
+          "series": {
+            "id": "character-journey:dragonball:bulma",
+            "segment": "part-02",
+            "partNumber": 2,
+            "partCount": 2,
+            "previousId": "character-journey:dragonball:bulma:part-01",
+            "nextId": null,
+            "arcIds": [
+              "arc-dbz-red-ribbon",
+              "arc-dbz-namek-frieza",
+              "arc-dbz-special-history-of-trunks"
+            ],
+            "arcTitles": {
+              "en": [
+                "Red Ribbon Army Saga",
+                "Namek / Frieza Saga",
+                "The History of Trunks"
+              ],
+              "it": [
+                "Saga del Red Ribbon",
+                "Saga di Namecc / Freezer",
+                "La storia di Trunks"
+              ]
+            },
+            "firstArc": "Red Ribbon Army Saga",
+            "lastArc": "The History of Trunks",
+            "segmentationVersion": 1,
+            "fingerprint": "12e9c69f"
+          },
+          "displayName": {
+            "en": "Bulma",
+            "it": "Bulma"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 25,
+          "facts": {
+            "importance": "major",
+            "places": 9,
+            "animatedStops": 4,
+            "arcs": 3,
             "journeyArcs": 4
           },
           "renderedLocales": [],
@@ -7791,8 +7926,8 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "supporting",
-            "places": 2,
-            "animatedStops": 2,
+            "places": 3,
+            "animatedStops": 3,
             "arcs": 2,
             "journeyArcs": 2
           },
@@ -7818,11 +7953,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 30,
+          "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "major",
-            "places": 6,
-            "animatedStops": 6,
+            "places": 7,
+            "animatedStops": 7,
             "arcs": 5,
             "journeyArcs": 5
           },
@@ -7848,11 +7983,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 30,
+          "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "major",
-            "places": 6,
-            "animatedStops": 6,
+            "places": 7,
+            "animatedStops": 7,
             "arcs": 4,
             "journeyArcs": 4
           },
@@ -7908,13 +8043,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "supporting",
-            "places": 2,
-            "animatedStops": 2,
-            "arcs": 2,
-            "journeyArcs": 2
+            "places": 6,
+            "animatedStops": 6,
+            "arcs": 4,
+            "journeyArcs": 4
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -8345,6 +8480,66 @@
           "publication": []
         },
         {
+          "id": "character-journey:dragonball:upa",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "upa",
+          "series": null,
+          "displayName": {
+            "en": "Upa",
+            "it": "Upa"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:bora",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "bora",
+          "series": null,
+          "displayName": {
+            "en": "Bora",
+            "it": "Bora"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
           "id": "character-journey:dragonball:kibito",
           "anime": "dragonball",
           "animeTitle": "Dragon Ball",
@@ -8388,13 +8583,43 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 25,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "supporting",
-            "places": 4,
-            "animatedStops": 4,
-            "arcs": 4,
-            "journeyArcs": 4
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 5,
+            "journeyArcs": 5
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:dragonball:porunga",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "porunga",
+          "series": null,
+          "displayName": {
+            "en": "Porunga",
+            "it": "Porunga"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 1,
+            "journeyArcs": 1
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -8635,6 +8860,66 @@
             "animatedStops": 3,
             "arcs": 3,
             "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:historia-reiss",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "historia-reiss",
+          "series": null,
+          "displayName": {
+            "en": "Historia Reiss",
+            "it": "Historia Reiss"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "main",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:attackontitan:ymir",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "ymir",
+          "series": null,
+          "displayName": {
+            "en": "Ymir",
+            "it": "Ymir"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -8958,13 +9243,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 33,
+          "recommendedDurationSeconds": 36,
           "facts": {
             "importance": "main",
-            "places": 7,
-            "animatedStops": 7,
-            "arcs": 4,
-            "journeyArcs": 4
+            "places": 8,
+            "animatedStops": 8,
+            "arcs": 5,
+            "journeyArcs": 5
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -9048,13 +9333,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "minor",
-            "places": 3,
-            "animatedStops": 3,
-            "arcs": 3,
-            "journeyArcs": 3
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 4,
+            "journeyArcs": 4
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -9078,13 +9363,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "major",
-            "places": 5,
-            "animatedStops": 5,
-            "arcs": 3,
-            "journeyArcs": 3
+            "places": 6,
+            "animatedStops": 6,
+            "arcs": 4,
+            "journeyArcs": 4
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -10817,26 +11102,26 @@
             "previousId": null,
             "nextId": "character-journey:bleach:sosuke-aizen:part-02",
             "arcIds": [
+              "arc-bl-agent",
               "arc-bl-arrancar-arrival",
-              "arc-bl-turn-back-pendulum",
-              "arc-bl-fake-karakura"
+              "arc-bl-turn-back-pendulum"
             ],
             "arcTitles": {
               "en": [
+                "The Substitute",
                 "Arrancar: The Arrival",
-                "Turn Back the Pendulum",
-                "The Battle of Fake Karakura Town"
+                "Turn Back the Pendulum"
               ],
               "it": [
+                "Lo Shinigami sostituto",
                 "Arrancar: l'arrivo",
-                "Turn Back the Pendulum (il passato)",
-                "La battaglia della Karakura replica"
+                "Turn Back the Pendulum (il passato)"
               ]
             },
-            "firstArc": "Arrancar: The Arrival",
-            "lastArc": "The Battle of Fake Karakura Town",
+            "firstArc": "The Substitute",
+            "lastArc": "Turn Back the Pendulum",
             "segmentationVersion": 1,
-            "fingerprint": "ca6d0083"
+            "fingerprint": "b251d301"
           },
           "displayName": {
             "en": "Sōsuke Aizen",
@@ -10846,13 +11131,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 30,
+          "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "main",
-            "places": 9,
-            "animatedStops": 6,
+            "places": 10,
+            "animatedStops": 3,
             "arcs": 3,
-            "journeyArcs": 6
+            "journeyArcs": 7
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -10875,26 +11160,29 @@
             "previousId": "character-journey:bleach:sosuke-aizen:part-01",
             "nextId": null,
             "arcIds": [
+              "arc-bl-fake-karakura",
               "arc-bl-tybw-separation",
               "arc-bl-tybw-conflict",
               "arc-bl-tybw-calamity"
             ],
             "arcTitles": {
               "en": [
+                "The Battle of Fake Karakura Town",
                 "Thousand-Year Blood War: The Separation",
                 "Thousand-Year Blood War: The Conflict",
                 "Thousand-Year Blood War: The Calamity"
               ],
               "it": [
+                "La battaglia della Karakura replica",
                 "Guerra dei Mille Anni: la separazione",
                 "Guerra dei Mille Anni: il conflitto",
                 "Guerra dei Mille Anni: la calamità"
               ]
             },
-            "firstArc": "Thousand-Year Blood War: The Separation",
+            "firstArc": "The Battle of Fake Karakura Town",
             "lastArc": "Thousand-Year Blood War: The Calamity",
             "segmentationVersion": 1,
-            "fingerprint": "bc5453c7"
+            "fingerprint": "47ff5d40"
           },
           "displayName": {
             "en": "Sōsuke Aizen",
@@ -10904,13 +11192,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "main",
-            "places": 9,
-            "animatedStops": 3,
-            "arcs": 3,
-            "journeyArcs": 6
+            "places": 10,
+            "animatedStops": 7,
+            "arcs": 4,
+            "journeyArcs": 7
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -15035,7 +15323,7 @@
         "variant": null,
         "segment": "part-01",
         "partNumber": 1,
-        "partCount": 5,
+        "partCount": 6,
         "renderedAt": "2026-10-02T10:45:46.778Z",
         "durationSeconds": 25,
         "publicationStatus": "scheduled",

@@ -8,6 +8,7 @@ import {
   getPlacesTerm,
 } from '@/lib/worldConfig';
 import { presentLocationTypes } from '@/lib/locationTypes';
+import { presentMapMarkers } from '@/lib/mapMarkers';
 import { Drawer } from '@/components/common/Drawer';
 import { Button } from '@/components/common/Button';
 import { FilterSection } from '@/components/filters/FilterSection';
@@ -60,6 +61,12 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
     () => dataset.locations.some((l) => l.poneglyph),
     [dataset.locations],
   );
+  const markers = useMemo(() => presentMapMarkers(dataset), [dataset]);
+
+  function toggleMarker(id: string, on: boolean) {
+    const rest = filters.highlightMarkers.filter((x) => x !== id);
+    setFilters({ highlightMarkers: on ? [...rest, id] : rest });
+  }
 
   function toggleType(tp: LocationType) {
     setFilters({
@@ -452,6 +459,15 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
                     accent="ember"
                   />
                 )}
+                {markers.map((m) => (
+                  <ToggleRow
+                    key={m.id}
+                    checked={filters.highlightMarkers.includes(m.id)}
+                    onChange={(v) => toggleMarker(m.id, v)}
+                    label={getLocalizedText(m.filterLabel, locale)}
+                    accent="ember"
+                  />
+                ))}
               </div>
             </FilterSection>
           </div>

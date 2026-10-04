@@ -104,6 +104,7 @@ import { onepieceBounties } from './bounties';
 import { onepieceTrivia } from './trivia';
 import { withCharacterLinks } from './characterLinks';
 import { ONEPIECE_FRUIT_LONG, ONEPIECE_LOCATION_LONG } from './fruitsEnrichment';
+import { onepieceTournaments } from './tournaments';
 
 const onepiece = animeWorlds.find((w) => w.slug === 'onepiece')!;
 
@@ -490,6 +491,7 @@ export const onepieceDataset: WorldDataset = {
   events,
   routes: [...onepieceRoutes, ...onepieceRoutesGrandLine, ...onepieceRoutesExtra],
   jutsu,
+  tournaments: onepieceTournaments,
   assets: onepieceAssets,
 };
 

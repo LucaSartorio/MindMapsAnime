@@ -73,7 +73,7 @@ export const blackcloverEvents: TimelineEvent[] = [
     canon: 'canon',
     canonStatus: 'canon',
     referenceStatus: 'verified',
-    tags: ['hage', 'demone', 'lumiere'],
+    tags: ['hage', 'demone', 'lumiere', 'diavolo'],
   },
 
   /* ====================== PRIMA DELLA STORIA ====================== */
@@ -178,7 +178,7 @@ export const blackcloverEvents: TimelineEvent[] = [
     canon: 'canon',
     canonStatus: 'canon',
     referenceStatus: 'verified',
-    tags: ['asta', 'anti-magia', 'grimorio'],
+    tags: ['asta', 'anti-magia', 'grimorio', 'diavolo'],
   },
   {
     id: 'evt-bc-entrance-exam',
@@ -696,7 +696,7 @@ export const blackcloverEvents: TimelineEvent[] = [
     canon: 'canon',
     canonStatus: 'canon',
     referenceStatus: 'verified',
-    tags: ['elfi', 'reincarnazione'],
+    tags: ['elfi', 'reincarnazione', 'diavolo'],
   },
   {
     id: 'evt-bc-shadow-palace',
@@ -758,7 +758,7 @@ export const blackcloverEvents: TimelineEvent[] = [
     canon: 'canon',
     canonStatus: 'canon',
     referenceStatus: 'verified',
-    tags: ['zagred', 'rivelazione', 'elfi'],
+    tags: ['zagred', 'rivelazione', 'elfi', 'diavolo'],
   },
   {
     id: 'evt-bc-secre-frees-elves',
@@ -1007,7 +1007,7 @@ export const blackcloverEvents: TimelineEvent[] = [
     canon: 'canon',
     canonStatus: 'canon',
     referenceStatus: 'verified',
-    tags: ['nacht', 'asta', 'unione-diabolica'],
+    tags: ['nacht', 'asta', 'unione-diabolica', 'diavolo'],
   },
   {
     id: 'evt-bc-liebe-pact',
@@ -1026,7 +1026,7 @@ export const blackcloverEvents: TimelineEvent[] = [
     canon: 'canon',
     canonStatus: 'canon',
     referenceStatus: 'verified',
-    tags: ['asta', 'liebe', 'unione-diabolica'],
+    tags: ['asta', 'liebe', 'unione-diabolica', 'diavolo'],
   },
   {
     id: 'evt-bc-spade-raid',
@@ -1143,7 +1143,7 @@ export const blackcloverEvents: TimelineEvent[] = [
     canon: 'canon',
     canonStatus: 'canon',
     referenceStatus: 'verified',
-    tags: ['qliphoth', 'rituale', 'solo-manga'],
+    tags: ['qliphoth', 'rituale', 'solo-manga', 'diavolo'],
   },
   {
     id: 'evt-bc-lucifero-descends',
@@ -1163,7 +1163,7 @@ export const blackcloverEvents: TimelineEvent[] = [
     canon: 'canon',
     canonStatus: 'canon',
     referenceStatus: 'verified',
-    tags: ['lucifero', 'diavoli', 'solo-manga'],
+    tags: ['lucifero', 'diavoli', 'solo-manga', 'diavolo'],
   },
   {
     id: 'evt-bc-asta-devil-union',
@@ -1182,7 +1182,7 @@ export const blackcloverEvents: TimelineEvent[] = [
     canon: 'canon',
     canonStatus: 'canon',
     referenceStatus: 'verified',
-    tags: ['asta', 'liebe', 'unione-diabolica', 'solo-manga'],
+    tags: ['asta', 'liebe', 'unione-diabolica', 'solo-manga', 'diavolo'],
   },
   {
     id: 'evt-bc-lucifero-defeated',
@@ -1202,7 +1202,7 @@ export const blackcloverEvents: TimelineEvent[] = [
     canon: 'canon',
     canonStatus: 'canon',
     referenceStatus: 'verified',
-    tags: ['lucifero', 'vittoria', 'solo-manga'],
+    tags: ['lucifero', 'vittoria', 'solo-manga', 'diavolo'],
   },
 
   /* ====================== SAGA FINALE ====================== */

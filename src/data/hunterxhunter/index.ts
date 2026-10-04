@@ -42,6 +42,7 @@ import {
   hxhCompletionLocations,
 } from './completion';
 import { HXH_CHARACTER_LONG, HXH_JUTSU_LONG, HXH_LOCATION_LONG } from './contentEnrichment';
+import { hxhTournaments } from './tournaments';
 
 const hunterxhunter = animeWorlds.find((w) => w.slug === 'hunterxhunter')!;
 
@@ -118,6 +119,7 @@ export const hunterxhunterDataset: WorldDataset = {
   })),
   routes: [...hxhRoutes, ...hxhRoutesBatch1, ...hxhRoutesBatch2],
   jutsu: hxhAllJutsu,
+  tournaments: hxhTournaments,
   assets: hxhAssets,
 };
 

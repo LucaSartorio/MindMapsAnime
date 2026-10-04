@@ -156,6 +156,15 @@ export function buildWorldGraph(dataset: WorldDataset): WorldGraph {
     for (const id of l.eventIds ?? []) link('place', l.id, 'event', id, 'happened_at');
   }
 
+  // Tornei: chi vi partecipa è collegato al luogo che li ospita (e all'arco).
+  for (const tn of dataset.tournaments ?? []) {
+    link('place', tn.locationId, 'arc', tn.arcId, 'in_arc');
+    for (const round of tn.rounds)
+      for (const m of round.matches)
+        for (const side of m.sides)
+          for (const id of side.characterIds ?? []) link('place', tn.locationId, 'character', id, 'appears_at');
+  }
+
   for (const e of dataset.events) {
     link('event', e.id, 'place', e.locationId, 'happened_at');
     link('event', e.id, 'arc', e.arcId, 'in_arc');

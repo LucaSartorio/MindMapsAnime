@@ -6,6 +6,7 @@ import { useLocaleStore } from '@/store/useLocaleStore';
 import { buildIndexes } from '@/utils/buildIndexes';
 import {
   getEntityDisplayName,
+  getLocalizedText,
   getLocationTypeLabel,
 } from '@/utils/localization';
 
@@ -147,7 +148,17 @@ export function useActiveFilterTokens(dataset: WorldDataset): ActiveFilterToken[
         remove: () => setFilters({ highlightPoneglyphs: false }),
       });
     }
+    for (const markerId of filters.highlightMarkers) {
+      const marker = dataset.world.config?.mapMarkers?.find((m) => m.id === markerId);
+      if (!marker) continue;
+      tokens.push({
+        key: `marker:${markerId}`,
+        label: getLocalizedText(marker.filterLabel, locale),
+        remove: () =>
+          setFilters({ highlightMarkers: filters.highlightMarkers.filter((x) => x !== markerId) }),
+      });
+    }
 
     return tokens;
-  }, [filters, setFilters, locale, t, nationsById, arcsById, charactersById, factionsById]);
+  }, [filters, setFilters, locale, t, nationsById, arcsById, charactersById, factionsById, dataset.world]);
 }

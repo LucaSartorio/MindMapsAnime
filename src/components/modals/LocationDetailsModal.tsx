@@ -22,6 +22,10 @@ import { buildRelationGroups, relationGroupsCount } from '@/lib/relationGroups';
 import { RelationsPanel } from '@/components/common/RelationsPanel';
 import { useOpenEntityRef } from '@/lib/useOpenEntityRef';
 import type { LocalizedText, PoneglyphKind } from '@/types';
+import { markerEventsAt, presentMapMarkers } from '@/lib/mapMarkers';
+import { TournamentView } from '@/components/tournaments/TournamentView';
+import { tournamentsAt } from '@/lib/tournaments';
+import type { Tournament } from '@/types';
 import { mapPath } from '@/seo/paths';
 import { useSeoLang } from '@/seo/useSeoLang';
 
@@ -128,6 +132,9 @@ export function LocationDetailsModal({
     .filter((a): a is NonNullable<typeof a> => !!a);
 
   const isVerified = location.referenceStatus === 'verified';
+  const markerBlocks = presentMapMarkers(dataset)
+    .map((marker) => ({ marker, events: markerEventsAt(dataset, marker.id, location.id) }))
+    .filter((b) => b.events.length > 0);
   const locName = getLocalizedText(location.localizedName, locale) || location.name;
 
   const overviewTab = (
@@ -167,6 +174,35 @@ export function LocationDetailsModal({
           )}
         </div>
       )}
+
+      {markerBlocks.map(({ marker, events: markerEvents }) => (
+        <div
+          key={marker.id}
+          className="rounded-md border border-red-600/50 bg-red-950/30 px-3 py-2"
+        >
+          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-red-200">
+            <span aria-hidden>{marker.icon ?? '◈'}</span>
+            {getLocalizedText(marker.sectionTitle, locale)}
+            <span className="count-badge">{markerEvents.length}</span>
+          </div>
+          <ul className="mt-1.5 space-y-1.5">
+            {markerEvents.map((ev) => (
+              <li key={ev.id}>
+                <button
+                  type="button"
+                  onClick={() => openEvent(ev.id)}
+                  className="w-full text-left text-sm leading-relaxed text-red-100/90 hover:text-white"
+                >
+                  <span className="font-medium text-red-50">{getLocalizedText(ev.title, locale)}</span>
+                  <span className="block text-xs text-red-200/80">
+                    {getLocalizedText(ev.description, locale)}
+                  </span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
 
       {!isVerified && (
         <div className="rounded-md border border-yellow-700/40 bg-yellow-900/20 px-3 py-2 text-xs text-yellow-200">
@@ -266,6 +302,11 @@ export function LocationDetailsModal({
     </>
   );
 
+  const tournaments = tournamentsAt(dataset, location);
+  const tournamentsTab = (
+    <TournamentsTab dataset={dataset} tournaments={tournaments} onOpenCharacter={openCharacter} />
+  );
+
   const routesTab = (
     <div className="flex flex-wrap gap-1.5">
       {routes.map((r) => (
@@ -354,6 +395,14 @@ export function LocationDetailsModal({
           label: t('modals.tabCharacters'),
           badge: characters.length + factions.length,
           content: peopleTab,
+        }]
+      : []),
+    ...(tournaments.length > 0
+      ? [{
+          id: 'tournaments',
+          label: t('tournaments.tab'),
+          badge: tournaments.length,
+          content: tournamentsTab,
         }]
       : []),
     ...(routes.length > 0
@@ -493,5 +542,60 @@ function Section({
       </h3>
       {children}
     </section>
+  );
+}
+
+/**
+ * Tab "Tornei" della scheda: un selettore quando il luogo ne ospita più di uno
+ * (es. le edizioni del Torneo Tenkaichi) e il tabellone del torneo scelto.
+ */
+function TournamentsTab({
+  dataset,
+  tournaments,
+  onOpenCharacter,
+}: {
+  dataset: WorldDataset;
+  tournaments: Tournament[];
+  onOpenCharacter: (id: string) => void;
+}) {
+  const { t } = useTranslation();
+  const locale = useLocaleStore((s) => s.locale);
+  const [index, setIndex] = useState(0);
+  const current = tournaments[Math.min(index, tournaments.length - 1)];
+  if (!current) return null;
+  return (
+    <div className="space-y-3">
+      {tournaments.length > 1 && (
+        <label className="block text-xs text-ink-300">
+          <span className="mb-1 block font-semibold uppercase tracking-wide text-ink-400">
+            {t('tournaments.select')}
+          </span>
+          <select
+            className="field w-full"
+            value={index}
+            onChange={(e) => setIndex(Number(e.target.value))}
+          >
+            {tournaments.map((tn, i) => (
+              <option key={tn.id} value={i}>
+                {getLocalizedText(tn.localizedName, locale) || tn.name}
+              </option>
+            ))}
+          </select>
+        </label>
+      )}
+      <TournamentView
+        dataset={dataset}
+        tournament={current}
+        renderName={(id, label) => (
+          <button
+            type="button"
+            onClick={() => onOpenCharacter(id)}
+            className="text-chakra-200 hover:text-white hover:underline"
+          >
+            {label}
+          </button>
+        )}
+      />
+    </div>
   );
 }

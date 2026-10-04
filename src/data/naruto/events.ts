@@ -159,6 +159,7 @@ export const narutoEvents: TimelineEvent[] = [
     order: 8,
     canon: 'canon',
     referenceStatus: 'verified',
+    tags: ['cercoterio'],
   },
   {
     id: 'ev-uchiha-massacre',
@@ -519,6 +520,7 @@ export const narutoEvents: TimelineEvent[] = [
     order: 27,
     canon: 'canon',
     referenceStatus: 'verified',
+    tags: ['cercoterio'],
   },
   {
     id: 'ev-gaara-rescue',
@@ -537,6 +539,7 @@ export const narutoEvents: TimelineEvent[] = [
     order: 28,
     canon: 'canon',
     referenceStatus: 'verified',
+    tags: ['cercoterio'],
   },
   {
     id: 'ev-tenchi-bridge',
@@ -660,6 +663,7 @@ export const narutoEvents: TimelineEvent[] = [
     order: 35,
     canon: 'canon',
     referenceStatus: 'verified',
+    tags: ['cercoterio'],
   },
   {
     id: 'ev-nagato-redemption',
@@ -1214,6 +1218,7 @@ export const narutoEvents: TimelineEvent[] = [
     order: 65,
     canon: 'canon',
     referenceStatus: 'verified',
+    tags: ['cercoterio'],
   },
   {
     id: 'ev-shikamaru-vs-hidan',
@@ -1286,6 +1291,7 @@ export const narutoEvents: TimelineEvent[] = [
     order: 69,
     canon: 'canon',
     referenceStatus: 'verified',
+    tags: ['cercoterio'],
   },
   {
     id: 'ev-konoha-rebuilt',

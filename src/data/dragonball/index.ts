@@ -23,12 +23,23 @@ import { dragonballRoutesExtra } from './routesExtra';
 import { dragonballJutsu } from './jutsu';
 import { dragonballJutsuExtra } from './jutsuExtra';
 import { dragonballAssets } from './assets';
+import { TAGGED_WISH_EVENTS, WISH_TAG, dragonballWishes } from './wishes';
+import { dragonballTournamentFighters, dragonballTournaments } from './tournaments';
+import {
+  dragonballEncyclopediaCharacters,
+  dragonballEncyclopediaEvents,
+  dragonballEncyclopediaJutsu,
+  dragonballEncyclopediaLocations,
+} from './encyclopedia';
 
 const dragonball = animeWorlds.find((w) => w.slug === 'dragonball')!;
 
-const jutsu = [...dragonballJutsu, ...dragonballJutsuExtra];
+const jutsu = [...dragonballJutsu, ...dragonballJutsuExtra, ...dragonballEncyclopediaJutsu];
 
-const events: TimelineEvent[] = [...dragonballEvents, ...dragonballEventsExtra].sort((a, b) => a.order - b.order);
+const events: TimelineEvent[] = [...dragonballEvents, ...dragonballEventsExtra, ...dragonballWishes, ...dragonballEncyclopediaEvents]
+  // I desideri già raccontati da un evento ricevono il tag del marcatore mappa.
+  .map((e) => (TAGGED_WISH_EVENTS.includes(e.id) ? { ...e, tags: [...new Set([...(e.tags ?? []), WISH_TAG])] } : e))
+  .sort((a, b) => a.order - b.order);
 
 /** Gli `eventIds` di ogni arco includono tutti gli eventi che dichiarano quell'arco. */
 const arcs: StoryArc[] = dragonballArcs.map((arc) => ({
@@ -47,6 +58,8 @@ const characters: Character[] = [
   ...dragonballCharactersSuper,
   ...dragonballCharactersSupporting,
   ...dragonballCharactersExtra,
+  ...dragonballTournamentFighters,
+  ...dragonballEncyclopediaCharacters,
 ].map((c) => {
   const derived = jutsu.filter((j) => j.characterIds?.includes(c.id)).map((j) => j.id);
   const jutsuIds = [...new Set([...(c.jutsuIds ?? []), ...derived])];
@@ -76,13 +89,14 @@ export const dragonballDataset: WorldDataset = {
   world: dragonball,
   mapLevels: dbzMapLevels,
   nations: dragonballNations,
-  locations: [...dragonballLocations, ...dragonballLocationsExtra],
+  locations: [...dragonballLocations, ...dragonballLocationsExtra, ...dragonballEncyclopediaLocations],
   characters,
   factions,
   arcs,
   events,
   routes: [...dragonballRoutes, ...dragonballRoutesExtra],
   jutsu,
+  tournaments: dragonballTournaments,
   assets: dragonballAssets,
 };
 

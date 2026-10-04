@@ -94,6 +94,15 @@ export const animeWorlds: AnimeWorld[] = [
         { id: 'jinchuriki', label: 'Jinchūriki' },
         { id: 'akatsuki', label: 'Akatsuki' },
       ],
+      mapMarkers: [
+        {
+          id: 'tailed-beasts',
+          eventTag: 'cercoterio',
+          icon: '◉',
+          filterLabel: { it: 'Evidenzia catture e sigilli dei Cercoteri', en: 'Highlight Tailed Beast captures and sealings', ja: '尾獣の捕獲と封印を強調', fr: 'Mettre en évidence les captures et scellements des démons à queues', de: 'Fänge und Versiegelungen der Bijū hervorheben', es: 'Resaltar capturas y sellados de los Bijū' },
+          sectionTitle: { it: 'Cercoteri catturati o sigillati qui', en: 'Tailed Beasts captured or sealed here', ja: 'ここで捕獲・封印された尾獣', fr: 'Démons à queues capturés ou scellés ici', de: 'Hier gefangene oder versiegelte Bijū', es: 'Bijū capturados o sellados aquí' },
+        },
+      ],
       featured: {
         abilities: [
           'jutsu-rasengan',
@@ -175,6 +184,15 @@ export const animeWorlds: AnimeWorld[] = [
         // Niente sigilli delle mani né rango ufficiale E…S.
       },
       // Niente `characterRank`: gli Hunter non hanno i gradi ninja.
+      mapMarkers: [
+        {
+          id: 'ging-trail',
+          eventTag: 'tracce-di-ging',
+          icon: '✦',
+          filterLabel: { it: 'Evidenzia le tracce di Ging', en: 'Highlight Ging\'s trail', ja: 'ジンの手がかりを強調', fr: 'Mettre en évidence la piste de Ging', de: 'Gings Spur hervorheben', es: 'Resaltar el rastro de Ging' },
+          sectionTitle: { it: 'Sulle tracce di Ging, qui', en: 'On Ging\'s trail, here', ja: 'ここでのジンの手がかり', fr: 'Sur la piste de Ging, ici', de: 'Auf Gings Spur, hier', es: 'Tras el rastro de Ging, aquí' },
+        },
+      ],
       featured: {
         abilities: [
           'jutsu-hxh-jajanken',
@@ -357,6 +375,29 @@ export const animeWorlds: AnimeWorld[] = [
       factionsTerm: { it: 'Razze & Fazioni', en: 'Races & Factions', ja: '種族と勢力', fr: 'Races & Factions', de: 'Rassen & Fraktionen', es: 'Razas y facciones' },
       placesTerm: { it: 'luoghi', en: 'places', ja: '場所', fr: 'lieux', de: 'Orte', es: 'lugares' },
       characterRoles: [],
+      mapMarkers: [
+        {
+          id: 'dragon-wishes',
+          eventTag: 'desiderio-del-drago',
+          icon: '★',
+          filterLabel: {
+            it: 'Evidenzia i desideri del Drago',
+            en: 'Highlight the Dragon wishes',
+            ja: '神龍への願いを強調',
+            fr: 'Mettre en évidence les vœux du Dragon',
+            de: 'Drachenwünsche hervorheben',
+            es: 'Resaltar los deseos del Dragón',
+          },
+          sectionTitle: {
+            it: 'Desideri espressi qui',
+            en: 'Wishes made here',
+            ja: 'ここで叶えられた願い',
+            fr: 'Vœux exaucés ici',
+            de: 'Hier erfüllte Wünsche',
+            es: 'Deseos pedidos aquí',
+          },
+        },
+      ],
       featured: {
         abilities: [
           'jutsu-dbz-kamehameha',
@@ -450,6 +491,15 @@ export const animeWorlds: AnimeWorld[] = [
       nationTerm: { it: 'Territorio', en: 'Territory', ja: '領土', fr: 'Territoire', de: 'Territorium', es: 'Territorio' },
       factionsTerm: { it: 'Corpi & Fazioni', en: 'Branches & Factions', ja: '兵団と勢力', fr: 'Corps & Factions', de: 'Truppen & Fraktionen', es: 'Cuerpos y facciones' },
       placesTerm: { it: 'luoghi', en: 'places', ja: '場所', fr: 'lieux', de: 'Orte', es: 'lugares' },
+      mapMarkers: [
+        {
+          id: 'titan-inheritance',
+          eventTag: 'eredita-gigante',
+          icon: '⚡',
+          filterLabel: { it: 'Evidenzia le eredità dei Nove Giganti', en: 'Highlight the Nine Titans’ inheritances', ja: '九つの巨人の継承を強調', fr: 'Mettre en évidence les transmissions des Neuf Titans', de: 'Erbfolgen der Neun Titanen hervorheben', es: 'Resaltar las herencias de los Nueve Titanes' },
+          sectionTitle: { it: 'Poteri dei Giganti ereditati qui', en: 'Titan powers inherited here', ja: 'ここで継承された巨人の力', fr: 'Pouvoirs des Titans transmis ici', de: 'Hier vererbte Titanenkräfte', es: 'Poderes de Titán heredados aquí' },
+        },
+      ],
       featured: {
         abilities: [
           'tit-aot-founding-titan',
@@ -542,6 +592,15 @@ export const animeWorlds: AnimeWorld[] = [
       nationTerm: { it: 'Mondo / Dimensione', en: 'World / Dimension', ja: '世界 / 次元', fr: 'Monde / Dimension', de: 'Welt / Dimension', es: 'Mundo / Dimensión' },
       factionsTerm: { it: 'Divisioni & Fazioni', en: 'Divisions & Factions', ja: '隊と勢力', fr: 'Divisions & Factions', de: 'Divisionen & Fraktionen', es: 'Divisiones y facciones' },
       placesTerm: { it: 'luoghi', en: 'places', ja: '場所', fr: 'lieux', de: 'Orte', es: 'lugares' },
+      mapMarkers: [
+        {
+          id: 'hogyoku',
+          eventTag: 'hogyoku',
+          icon: '◆',
+          filterLabel: { it: 'Evidenzia il percorso dello Hōgyoku', en: 'Highlight the path of the Hōgyoku', ja: '崩玉の軌跡を強調', fr: 'Mettre en évidence le parcours du Hōgyoku', de: 'Den Weg des Hōgyoku hervorheben', es: 'Resaltar el recorrido del Hōgyoku' },
+          sectionTitle: { it: 'Lo Hōgyoku in questo luogo', en: 'The Hōgyoku at this place', ja: 'この場所の崩玉', fr: 'Le Hōgyoku en ce lieu', de: 'Das Hōgyoku an diesem Ort', es: 'El Hōgyoku en este lugar' },
+        },
+      ],
       featured: {
         abilities: [
           'zan-bl-zangetsu',
@@ -846,6 +905,29 @@ export const animeWorlds: AnimeWorld[] = [
         options: JJK_RANKS,
       },
       characterRoles: JJK_ROLES,
+      mapMarkers: [
+        {
+          id: 'sukuna-fingers',
+          eventTag: 'dito-di-sukuna',
+          icon: '☝',
+          filterLabel: {
+            it: 'Evidenzia le dita di Sukuna',
+            en: "Highlight Sukuna's fingers",
+            ja: '宿儺の指を強調',
+            fr: 'Mettre en évidence les doigts de Sukuna',
+            de: 'Sukunas Finger hervorheben',
+            es: 'Resaltar los dedos de Sukuna',
+          },
+          sectionTitle: {
+            it: 'Le dita di Sukuna in questo luogo',
+            en: "Sukuna's fingers at this place",
+            ja: 'この場所の宿儺の指',
+            fr: 'Les doigts de Sukuna en ce lieu',
+            de: 'Sukunas Finger an diesem Ort',
+            es: 'Los dedos de Sukuna en este lugar',
+          },
+        },
+      ],
       nationTerm: { it: 'Regione / Prefettura', en: 'Region / Prefecture', ja: '地方 / 県', fr: 'Région / Préfecture', de: 'Region / Präfektur', es: 'Región / Prefectura' },
       factionsTerm: { it: 'Fazioni & Organizzazioni', en: 'Factions & Organizations', ja: '勢力と組織', fr: 'Factions & Organisations', de: 'Fraktionen & Organisationen', es: 'Facciones y organizaciones' },
       placesTerm: { it: 'luoghi', en: 'places', ja: '場所', fr: 'lieux', de: 'Orte', es: 'lugares' },
@@ -997,6 +1079,15 @@ export const animeWorlds: AnimeWorld[] = [
       nationTerm: { it: 'Regno / Regione', en: 'Kingdom / Region', ja: '王国 / 地域', fr: 'Royaume / Région', de: 'Königreich / Region', es: 'Reino / Región' },
       factionsTerm: { it: 'Compagnie', en: 'Squads', ja: '騎士団', fr: 'Compagnies', de: 'Kompanien', es: 'Órdenes' },
       placesTerm: { it: 'luoghi', en: 'places', ja: '場所', fr: 'lieux', de: 'Orte', es: 'lugares' },
+      mapMarkers: [
+        {
+          id: 'devils',
+          eventTag: 'diavolo',
+          icon: '♠',
+          filterLabel: { it: 'Evidenzia i diavoli', en: 'Highlight the devils', ja: '悪魔を強調', fr: 'Mettre en évidence les démons', de: 'Die Teufel hervorheben', es: 'Resaltar los demonios' },
+          sectionTitle: { it: 'Diavoli in questo luogo', en: 'Devils at this place', ja: 'この場所の悪魔', fr: 'Démons en ce lieu', de: 'Teufel an diesem Ort', es: 'Demonios en este lugar' },
+        },
+      ],
       featured: {
         abilities: [
           'magic-bc-anti-magic',

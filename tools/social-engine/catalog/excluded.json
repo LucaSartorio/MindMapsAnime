@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T16:07:47.344Z",
+  "generatedAt": "2026-10-03T23:14:33.153Z",
   "templates": {
     "characterJourney": {
       "byReason": {
-        "single_location": 498,
-        "no_journey_data": 560
+        "single_location": 501,
+        "no_journey_data": 585
       },
       "items": [
         {
@@ -4892,7 +4892,7 @@
           "subject": "vados",
           "subjectId": "char-dbz-vados",
           "displayName": "Vados",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "dragonball",
@@ -5386,20 +5386,6 @@
         },
         {
           "anime": "dragonball",
-          "subject": "upa",
-          "subjectId": "char-dbz-upa",
-          "displayName": "Upa",
-          "reason": "single_location"
-        },
-        {
-          "anime": "dragonball",
-          "subject": "bora",
-          "subjectId": "char-dbz-bora",
-          "displayName": "Bora",
-          "reason": "single_location"
-        },
-        {
-          "anime": "dragonball",
           "subject": "fortuneteller-baba",
           "subjectId": "char-dbz-fortuneteller-baba",
           "displayName": "Fortuneteller Baba",
@@ -5512,13 +5498,6 @@
         },
         {
           "anime": "dragonball",
-          "subject": "porunga",
-          "subjectId": "char-dbz-porunga",
-          "displayName": "Porunga",
-          "reason": "single_location"
-        },
-        {
-          "anime": "dragonball",
           "subject": "super-shenron",
           "subjectId": "char-dbz-super-shenron",
           "displayName": "Super Shenron",
@@ -5557,7 +5536,7 @@
           "subject": "monaito",
           "subjectId": "char-dbz-monaito",
           "displayName": "Monaito",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "dragonball",
@@ -5616,18 +5595,193 @@
           "reason": "single_location"
         },
         {
-          "anime": "attackontitan",
-          "subject": "historia-reiss",
-          "subjectId": "char-aot-historia",
-          "displayName": "Historia Reiss",
-          "reason": "single_location"
+          "anime": "dragonball",
+          "subject": "bacterian",
+          "subjectId": "char-dbz-bacterian",
+          "displayName": "Bacterian",
+          "reason": "no_journey_data"
         },
         {
-          "anime": "attackontitan",
-          "subject": "ymir",
-          "subjectId": "char-aot-ymir",
-          "displayName": "Ymir",
-          "reason": "single_location"
+          "anime": "dragonball",
+          "subject": "ranfan",
+          "subjectId": "char-dbz-ranfan",
+          "displayName": "Ranfan",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "giran",
+          "subjectId": "char-dbz-giran",
+          "displayName": "Giran",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "nam",
+          "subjectId": "char-dbz-nam",
+          "displayName": "Nam",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "man-wolf",
+          "subjectId": "char-dbz-man-wolf",
+          "displayName": "Man-Wolf",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "pamput",
+          "subjectId": "char-dbz-pamput",
+          "displayName": "Pamput",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "pintar",
+          "subjectId": "char-dbz-pintar",
+          "displayName": "Pintar",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "botamo",
+          "subjectId": "char-dbz-botamo",
+          "displayName": "Botamo",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "magetta",
+          "subjectId": "char-dbz-magetta",
+          "displayName": "Magetta",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "monaka",
+          "subjectId": "char-dbz-monaka",
+          "displayName": "Monaka",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "colonel-silver",
+          "subjectId": "char-dbz-colonel-silver",
+          "displayName": "Colonel Silver",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "general-white",
+          "subjectId": "char-dbz-general-white",
+          "displayName": "General White",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "ninja-murasaki",
+          "subjectId": "char-dbz-murasaki",
+          "displayName": "Ninja Murasaki",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "android-8-eighter",
+          "subjectId": "char-dbz-android-8",
+          "displayName": "Android 8 (Eighter)",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "staff-officer-black",
+          "subjectId": "char-dbz-staff-officer-black",
+          "displayName": "Staff Officer Black",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "tambourine",
+          "subjectId": "char-dbz-tambourine",
+          "displayName": "Tambourine",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "cymbal",
+          "subjectId": "char-dbz-cymbal",
+          "displayName": "Cymbal",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "drum",
+          "subjectId": "char-dbz-drum",
+          "displayName": "Drum",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "piano",
+          "subjectId": "char-dbz-piano",
+          "displayName": "Piano",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "fangs-the-vampire",
+          "subjectId": "char-dbz-fangs",
+          "displayName": "Fangs the Vampire",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "invisible-man",
+          "subjectId": "char-dbz-see-through",
+          "displayName": "Invisible Man",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "bandages-the-mummy",
+          "subjectId": "char-dbz-bandages",
+          "displayName": "Bandages the Mummy",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "spike-the-devil-man",
+          "subjectId": "char-dbz-spike",
+          "displayName": "Spike the Devil Man",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "sorbet",
+          "subjectId": "char-dbz-sorbet",
+          "displayName": "Sorbet",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "tagoma",
+          "subjectId": "char-dbz-tagoma",
+          "displayName": "Tagoma",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "cheelai",
+          "subjectId": "char-dbz-cheelai",
+          "displayName": "Cheelai",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "lemo",
+          "subjectId": "char-dbz-lemo",
+          "displayName": "Lemo",
+          "reason": "no_journey_data"
         },
         {
           "anime": "attackontitan",
@@ -6803,6 +6957,48 @@
           "subject": "yorozu",
           "subjectId": "char-jjk-yorozu",
           "displayName": "Yorozu",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "jin-itadori",
+          "subjectId": "char-jjk-jin",
+          "displayName": "Jin Itadori",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "akari-nitta",
+          "subjectId": "char-jjk-akari-nitta",
+          "displayName": "Akari Nitta",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "arata-nitta",
+          "subjectId": "char-jjk-arata-nitta",
+          "displayName": "Arata Nitta",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "dhruv-lakdawalla",
+          "subjectId": "char-jjk-dhruv",
+          "displayName": "Dhruv Lakdawalla",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "kurourushi",
+          "subjectId": "char-jjk-kurourushi",
+          "displayName": "Kurourushi",
+          "reason": "single_location"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "kogane",
+          "subjectId": "char-jjk-kogane",
+          "displayName": "Kogane",
           "reason": "single_location"
         },
         {

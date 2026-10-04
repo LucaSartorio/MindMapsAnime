@@ -370,7 +370,7 @@ export const hxhEventsBatch1: TimelineEvent[] = [
     animeEpisodes: ['59'],
     canon: 'canon',
     referenceStatus: 'verified',
-    tags: ['greed-island', 'ging'],
+    tags: ['greed-island', 'ging', 'tracce-di-ging'],
   },
   {
     id: 'ev-hxh-ko-ken-training',

@@ -962,6 +962,86 @@ export interface WorldConfig {
   factionsTerm?: Localizable;
   /** Liste curate per le vetrine delle pagine archivio. */
   featured?: WorldFeaturedConfig;
+  /**
+   * Marcatori mappa derivati dagli eventi (es. Dragon Ball: i desideri del
+   * Drago). Un luogo che ospita almeno un evento con `eventTag` può essere
+   * evidenziato in rosso dal filtro dedicato, come i Poneglyph di One Piece.
+   */
+  mapMarkers?: MapMarkerConfig[];
+}
+
+/** Un tipo di marcatore mappa derivato dai tag degli eventi. */
+export interface MapMarkerConfig {
+  /** Id stabile del marcatore (chiave del filtro). */
+  id: string;
+  /** Tag degli eventi che "marcano" il loro luogo. */
+  eventTag: string;
+  /** Etichetta del toggle nei filtri (es. "Evidenzia i desideri del Drago"). */
+  filterLabel: Localizable;
+  /** Titolo della sezione nella scheda del luogo (es. "Desideri esauditi qui"). */
+  sectionTitle: Localizable;
+  /** Simbolo decorativo mostrato accanto al titolo. */
+  icon?: string;
+}
+
+/* ------------------------------ Tornei ------------------------------ */
+
+/**
+ * Un lato di un incontro: uno o più personaggi (coppie, squadre) oppure,
+ * quando il partecipante non ha una scheda, un'etichetta libera.
+ */
+export interface TournamentSide {
+  characterIds?: string[];
+  /** Nome mostrato quando non ci sono personaggi (o per dare un nome alla squadra). */
+  label?: Localizable;
+}
+
+/** Un incontro del tabellone. */
+export interface TournamentMatch {
+  /** I due (o più, nelle battaglie a più contendenti) lati che si affrontano. */
+  sides: TournamentSide[];
+  /** Indice in `sides` del vincitore; omesso se non c'è un vincitore (pareggio, interrotto…). */
+  winner?: number;
+  /** Evento della timeline che racconta l'incontro. */
+  eventId?: string;
+  /** Esito o dettaglio (es. "ring-out", "vince per abbandono"). */
+  note?: Localizable;
+}
+
+/** Un turno del torneo (quarti, semifinale, finale, blocco A…). */
+export interface TournamentRound {
+  name: Localizable;
+  matches: TournamentMatch[];
+}
+
+/**
+ * Torneo o competizione a incontri (Torneo Tenkaichi, esame Chūnin…).
+ * `format: 'bracket'` = eliminazione diretta (ogni turno ha la metà degli
+ * incontri del precedente) → disegnato come tabellone SVG; `'rounds'` = turni
+ * liberi (preliminari, gironi, prove a squadre) → elenco per turno.
+ */
+export interface Tournament {
+  id: string;
+  worldId: string;
+  name: string;
+  localizedName?: Localizable;
+  /** Luogo che ospita il torneo: la scheda di quel pin mostra il tabellone. */
+  locationId: string;
+  arcId?: string;
+  /** Ordine cronologico fra i tornei dello stesso luogo/mondo. */
+  order: number;
+  format: 'bracket' | 'rounds';
+  description: Localizable;
+  rounds: TournamentRound[];
+  /** Vincitore del torneo (personaggi), se esiste. */
+  winnerIds?: string[];
+  /** Esito testuale quando il vincitore non è un personaggio o il torneo non si conclude. */
+  outcome?: Localizable;
+  mangaChapters?: string[];
+  animeEpisodes?: string[];
+  canonStatus: CanonStatus;
+  referenceStatus: ReferenceStatus;
+  tags?: string[];
 }
 
 /* ------------------------------ WorldDataset ------------------------------ */
@@ -987,6 +1067,8 @@ export interface WorldDataset {
   routes: Route[];
   /** Tecniche ninja (ninjutsu, taijutsu, genjutsu, …). Opzionale. */
   jutsu?: Jutsu[];
+  /** Tornei/competizioni con il loro tabellone, mostrati nella scheda del luogo che li ospita. */
+  tournaments?: Tournament[];
   assets: AssetReference[];
   /** Slug pubblicati congelati (vedi `SeoSlugLock`). Obbligatorio per i mondi disponibili. */
   seoSlugs?: SeoSlugLock;
@@ -1057,6 +1139,8 @@ export interface MapFilters {
   showFactions: boolean;
   /** Evidenzia in rosso i luoghi che contengono un Poneglyph (One Piece). */
   highlightPoneglyphs: boolean;
+  /** Marcatori di mondo attivi (id di `WorldConfig.mapMarkers`), evidenziati in rosso. */
+  highlightMarkers: string[];
 }
 
 /**
@@ -1092,6 +1176,7 @@ export const defaultFilters: MapFilters = {
   showEvents: true,
   showFactions: true,
   highlightPoneglyphs: false,
+  highlightMarkers: [],
 };
 
 export const defaultLayers: VisibleLayers = {
