@@ -1,0 +1,13 @@
+{
+  "receiptVersion": 1,
+  "renderId": "character-journey:naruto:naruto-uzumaki:part-01@en",
+  "platform": "tiktok",
+  "provider": "metricool",
+  "status": "scheduled",
+  "scheduledFor": "2026-10-04T10:00:00+02:00",
+  "providerPostId": "387676268",
+  "providerPostUuid": "-2338125002035671890",
+  "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-2338125002035671890",
+  "recordedAt": "2026-10-04T07:46:28Z",
+  "recordedBy": "chatgpt-work-publishing-agent"
+}
