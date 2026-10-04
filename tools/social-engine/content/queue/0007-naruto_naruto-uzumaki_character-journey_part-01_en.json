@@ -1,0 +1,10 @@
+{
+  "id": "character-journey:naruto:naruto-uzumaki:part-01",
+  "template": "characterJourney",
+  "anime": "naruto",
+  "subject": "naruto-uzumaki",
+  "segment": "part-01",
+  "locale": "en",
+  "hook": "Naruto's journey begins — Part 1 of 2.",
+  "cta": "Continue the journey on AniMapVerse"
+}
