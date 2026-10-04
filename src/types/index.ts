@@ -1183,6 +1183,8 @@ export interface MapFilters {
   highlightPoneglyphs: boolean;
   /** Marcatori di mondo attivi (id di `WorldConfig.mapMarkers`), evidenziati in rosso. */
   highlightMarkers: string[];
+  /** Momento della storia: mostra solo ciò che è apparso fino a quest'arco (anti-spoiler). */
+  untilArcId: string | null;
 }
 
 /**
@@ -1219,6 +1221,7 @@ export const defaultFilters: MapFilters = {
   showFactions: true,
   highlightPoneglyphs: false,
   highlightMarkers: [],
+  untilArcId: null,
 };
 
 export const defaultLayers: VisibleLayers = {

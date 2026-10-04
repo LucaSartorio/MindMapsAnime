@@ -1,4 +1,6 @@
 import { blackcloverSlugs } from './slugs';
+import { bcMarkerTags } from './markerTags';
+import { withEventTags } from '../shared/eventTagKit';
 import { bcBattles } from './battles';
 import { withBattles } from '../shared/battleKit';
 import { bcFamily } from './family';
@@ -75,7 +77,7 @@ const factions = [...blackcloverFactions, ...blackcloverFactionsBatch1].map((f) 
   return { ...f, jutsuIds: [...new Set([...(f.jutsuIds ?? []), ...magic])] };
 });
 
-export const blackcloverDataset: WorldDataset = withFactionExtras(withFamily(withBattles({
+export const blackcloverDataset: WorldDataset = withEventTags(withFactionExtras(withFamily(withBattles({
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
   seoSlugs: blackcloverSlugs,
   world: blackclover,
@@ -94,6 +96,6 @@ export const blackcloverDataset: WorldDataset = withFactionExtras(withFamily(wit
   jutsu: blackcloverMagic,
   tournaments: blackcloverTournaments,
   assets: blackcloverAssets,
-}, bcBattles), bcFamily, 'char-bc-'), bcStructure);
+}, bcBattles), bcFamily, 'char-bc-'), bcStructure), bcMarkerTags);
 
 export { BLACKCLOVER_MAP_VIEWBOX, BLACKCLOVER_UNDERWORLD_VIEWBOX } from './mapConstants';

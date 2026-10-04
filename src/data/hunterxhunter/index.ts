@@ -1,4 +1,6 @@
 import { hunterxhunterSlugs } from './slugs';
+import { hxhMarkerTags } from './markerTags';
+import { withEventTags } from '../shared/eventTagKit';
 import { hxhBattles } from './battles';
 import { withBattles } from '../shared/battleKit';
 import { hxhFamily } from './family';
@@ -95,7 +97,7 @@ const hxhAllCharacters = enrichHxhCharacters(
   hxhAllJutsu,
 );
 
-export const hunterxhunterDataset: WorldDataset = withFactionExtras(withFamily(withBattles({
+export const hunterxhunterDataset: WorldDataset = withEventTags(withFactionExtras(withFamily(withBattles({
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
   seoSlugs: hunterxhunterSlugs,
   world: hunterxhunter,
@@ -127,6 +129,6 @@ export const hunterxhunterDataset: WorldDataset = withFactionExtras(withFamily(w
   jutsu: hxhAllJutsu,
   tournaments: hxhTournaments,
   assets: hxhAssets,
-}, hxhBattles), hxhFamily, 'char-hxh-'), hxhStructure);
+}, hxhBattles), hxhFamily, 'char-hxh-'), hxhStructure), hxhMarkerTags);
 
 export { HXH_MAP_VIEWBOX } from './mapLevels';

@@ -1,4 +1,6 @@
 import { onepieceSlugs } from './slugs';
+import { onepieceMarkerTags } from './markerTags';
+import { withEventTags } from '../shared/eventTagKit';
 import { onepieceBattles } from './battles';
 import { withBattles } from '../shared/battleKit';
 import { onepieceFamily } from './family';
@@ -98,6 +100,7 @@ import { onepieceEventsThreeWorlds } from './eventsThreeWorlds';
 import { onepieceEventsCovers } from './eventsCovers';
 import { onepieceEventsExtra4 } from './eventsExtra4';
 import { onepieceEventsCompletion } from './eventsCompletion';
+import { onepieceEventsFruits } from './eventsFruits';
 import { onepieceRoutes } from './routes';
 import { onepieceRoutesGrandLine } from './routesGrandLine';
 import { onepieceRoutesExtra } from './routesExtra';
@@ -346,6 +349,7 @@ const rawEvents: TimelineEvent[] = [
   ...onepieceEventsCovers,
   ...onepieceEventsExtra4,
   ...onepieceEventsCompletion,
+  ...onepieceEventsFruits,
 ];
 
 const rawArcs: StoryArc[] = [
@@ -466,7 +470,7 @@ const factions: Faction[] = [
   return jutsuIds.length ? { ...f, jutsuIds } : f;
 });
 
-export const onepieceDataset: WorldDataset = withFactionExtras(withFamily(withBattles({
+export const onepieceDataset: WorldDataset = withEventTags(withFactionExtras(withFamily(withBattles({
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
   seoSlugs: onepieceSlugs,
   world: onepiece,
@@ -499,6 +503,6 @@ export const onepieceDataset: WorldDataset = withFactionExtras(withFamily(withBa
   jutsu,
   tournaments: onepieceTournaments,
   assets: onepieceAssets,
-}, onepieceBattles), onepieceFamily, 'char-op-'), onepieceStructure);
+}, onepieceBattles), onepieceFamily, 'char-op-'), onepieceStructure), onepieceMarkerTags);
 
 export { ONEPIECE_MAP_VIEWBOX } from './mapLevels';

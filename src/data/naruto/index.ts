@@ -1,4 +1,6 @@
 import { narutoSlugs } from './slugs';
+import { narutoMarkerTags } from './markerTags';
+import { withEventTags } from '../shared/eventTagKit';
 import type { StoryArc, TimelineEvent, WorldDataset } from '@/types';
 import { animeWorlds } from '@/data/worlds';
 import { narutoLocations } from './locations';
@@ -97,7 +99,7 @@ const arcs: StoryArc[] = [...narutoArcs, ...narutoArcsBatch1, ...narutoArcsBatch
 }));
 
 /** Dataset completo del mondo Naruto. */
-export const narutoDataset: WorldDataset = withFactionExtras(withFamily(densifyCrossLinks({
+export const narutoDataset: WorldDataset = withEventTags(withFactionExtras(withFamily(densifyCrossLinks({
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
   seoSlugs: narutoSlugs,
   world: naruto,
@@ -120,7 +122,7 @@ export const narutoDataset: WorldDataset = withFactionExtras(withFamily(densifyC
   ),
   tournaments: narutoTournaments,
   assets: narutoAssets,
-}), narutoFamily, 'char-'), narutoStructure);
+}), narutoFamily, 'char-'), narutoStructure), narutoMarkerTags);
 
 export { NARUTO_MAP_VIEWBOX, NARUTO_WORLD_MAP_SRC } from './mapConstants';
 export {

@@ -148,6 +148,16 @@ export function useActiveFilterTokens(dataset: WorldDataset): ActiveFilterToken[
         remove: () => setFilters({ highlightPoneglyphs: false }),
       });
     }
+    if (filters.untilArcId) {
+      const arc = arcsById.get(filters.untilArcId);
+      if (arc) {
+        tokens.push({
+          key: 'moment',
+          label: t('storyMoment.token', { arc: getEntityDisplayName(arc, locale) }),
+          remove: () => setFilters({ untilArcId: null }),
+        });
+      }
+    }
     for (const markerId of filters.highlightMarkers) {
       const marker = dataset.world.config?.mapMarkers?.find((m) => m.id === markerId);
       if (!marker) continue;

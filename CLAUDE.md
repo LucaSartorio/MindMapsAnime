@@ -277,6 +277,12 @@ via `pngjs`) emit coordinates already converted to the flow plane — paste thei
   (`MapNode.marked`), clusters containing one turn red too, and so do the pins that drill into a sub-map
   containing one. The location scheda/page lists the marker's events (`sectionTitle`). New world = add a
   config entry + tag the events; no component edits.
+  Tags for events that already exist live in `src/data/<world>/markerTags.ts` (`withEventTags`). Markers today:
+  `vita-e-morte` (deaths & resurrections, every world), dragon wishes + Dragon Ball hunts, Devil Fruits eaten (One
+  Piece, besides the Poneglyph toggle), Sukuna's fingers, Tailed Beasts, Nine Titans, Hōgyoku, Ging's trail, devils.
+- **Story moment** (`filters.untilArcId`, `src/lib/storyMoment.ts`): an anti-spoiler range slider in `FiltersDrawer`.
+  A place exists from the first arc it appears in (its `arcIds` + its events' arcs), an event from its arc; places/events
+  without arc info stay visible. Applied in `filterLocations`/`filterEvents`, so pins, count and timeline agree.
 - **Tournaments** (`WorldDataset.tournaments`, `Tournament` in `src/types/index.ts`): rounds → matches →
   sides (characters or a label, e.g. a pseudonym like "Jackie Chun" with the real character linked).
   `format: 'bracket'` (each round has half the matches of the previous one — `validate:data` checks it)

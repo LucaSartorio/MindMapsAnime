@@ -1,4 +1,6 @@
 import { dragonballSlugs } from './slugs';
+import { dragonballMarkerTags } from './markerTags';
+import { withEventTags } from '../shared/eventTagKit';
 import { dragonballBattles } from './battles';
 import { withBattles } from '../shared/battleKit';
 import { dragonballFamily } from './family';
@@ -89,7 +91,7 @@ const factions: Faction[] = dragonballFactions.map((f) => {
  * rappresentabili su di essa (pianeti, Aldilà, Torneo del Potere).
  * Estendibile con nuovi personaggi/archi senza modifiche strutturali.
  */
-export const dragonballDataset: WorldDataset = withFactionExtras(withFamily(withBattles({
+export const dragonballDataset: WorldDataset = withEventTags(withFactionExtras(withFamily(withBattles({
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
   seoSlugs: dragonballSlugs,
   world: dragonball,
@@ -104,6 +106,6 @@ export const dragonballDataset: WorldDataset = withFactionExtras(withFamily(with
   jutsu,
   tournaments: dragonballTournaments,
   assets: dragonballAssets,
-}, dragonballBattles), dragonballFamily, 'char-dbz-'), dragonballStructure);
+}, dragonballBattles), dragonballFamily, 'char-dbz-'), dragonballStructure), dragonballMarkerTags);
 
 export { DRAGONBALL_MAP_VIEWBOX, DRAGONBALL_COSMIC_VIEWBOX } from './mapConstants';
