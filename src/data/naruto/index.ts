@@ -31,6 +31,7 @@ import { narutoEventsBatch1 } from './eventsBatch1';
 import { narutoEventsBatch2 } from './eventsBatch2';
 import { NARUTO_EVENT_CHRONOLOGY } from './eventsChronology';
 import { narutoEventsBijuu } from './eventsBijuu';
+import { narutoEventsGaps } from './eventsGaps';
 import { narutoBattles } from './battles';
 import { narutoFamily } from './family';
 import { withFamily } from '../shared/familyKit';
@@ -88,7 +89,7 @@ const characters = [
 
 /** Ordine cronologico: vedi `eventsChronology.ts` (posizione × 10). */
 const chronoIndex = new Map(NARUTO_EVENT_CHRONOLOGY.map((id, i) => [id, (i + 1) * 10]));
-const events: TimelineEvent[] = applyBattles([...narutoEvents, ...narutoEventsBatch1, ...narutoEventsBatch2, ...narutoEventsBijuu], narutoBattles)
+const events: TimelineEvent[] = applyBattles([...narutoEvents, ...narutoEventsBatch1, ...narutoEventsBatch2, ...narutoEventsBijuu, ...narutoEventsGaps], narutoBattles)
   .map((e) => (chronoIndex.has(e.id) ? { ...e, order: chronoIndex.get(e.id)! } : e))
   .sort((a, b) => a.order - b.order);
 

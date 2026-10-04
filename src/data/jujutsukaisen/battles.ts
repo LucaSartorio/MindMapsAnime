@@ -39,4 +39,8 @@ export const jjkBattles: Record<string, BattleOutcome> = {
   'evt-jjk-higuruma-shinjuku': win(['sukuna'], ['higuruma', 'yuji', 'kusakabe']),
   'evt-jjk-kenjaku-death': win(['yuta', 'takaba', 'todo'], ['kenjaku']),
   'evt-jjk-sukuna-defeated': win(['yuji', 'yuta', 'maki', 'todo'], ['sukuna']),
+  'evt-jjk-nobara-vs-haruta': win(['nanami', 'nobara'], ['haruta']),
+  'evt-jjk-uraume-rescues-sukuna': stop(['yuji', 'maki'], ['sukuna'], L('Uraume porta via Sukuna.', 'Uraume carries Sukuna away.')),
+  'evt-jjk-sukuna-vs-yorozu': win(['sukuna'], ['yorozu']),
+  'evt-jjk-yuta-vs-sukuna': win(['sukuna'], ['yuta']),
 };

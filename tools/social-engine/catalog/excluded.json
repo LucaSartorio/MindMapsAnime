@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-04T05:58:32.399Z",
+  "generatedAt": "2026-10-04T06:07:56.190Z",
   "templates": {
     "characterJourney": {
       "byReason": {
-        "single_location": 501,
-        "no_journey_data": 584
+        "single_location": 503,
+        "no_journey_data": 580
       },
       "items": [
         {
@@ -69,7 +69,7 @@
           "subject": "sai",
           "subjectId": "char-sai",
           "displayName": "Sai",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
@@ -206,20 +206,6 @@
         },
         {
           "anime": "naruto",
-          "subject": "zabuza-momochi",
-          "subjectId": "char-zabuza",
-          "displayName": "Zabuza Momochi",
-          "reason": "single_location"
-        },
-        {
-          "anime": "naruto",
-          "subject": "haku",
-          "subjectId": "char-haku",
-          "displayName": "Haku",
-          "reason": "single_location"
-        },
-        {
-          "anime": "naruto",
           "subject": "yagura-karatachi",
           "subjectId": "char-yagura",
           "displayName": "Yagura Karatachi",
@@ -251,7 +237,7 @@
           "subject": "darui",
           "subjectId": "char-darui",
           "displayName": "Darui",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
@@ -615,14 +601,14 @@
           "subject": "kinkaku",
           "subjectId": "char-kinkaku",
           "displayName": "Kinkaku",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",
           "subject": "ginkaku",
           "subjectId": "char-ginkaku",
           "displayName": "Ginkaku",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "naruto",

@@ -33,4 +33,8 @@ export const narutoBattles: Record<string, BattleOutcome> = {
   'ev-team-7-vs-kaguya': win(['naruto', 'sasuke', 'sakura', 'kakashi'], ['kaguya']),
   'ev-valley-end-2': draw(['naruto'], ['sasuke'], L('Entrambi perdono un braccio; Sasuke si dichiara sconfitto.', 'Both lose an arm; Sasuke admits defeat.')),
   'ev-boro-battle': win(['boruto', 'sarada', 'mitsuki', 'kawaki'], ['boro']),
+  'ev-hiruzen-vs-orochimaru': stop(['hiruzen'], ['orochimaru'], L('Hiruzen muore sigillando le braccia di Orochimaru.', "Hiruzen dies sealing Orochimaru's arms.")),
+  'ev-sasuke-reunion-hideout': stop(['naruto', 'sakura', 'sai', 'yamato'], ['sasuke']),
+  'ev-kakashi-vs-zabuza-haku-edo': win(['kakashi'], ['zabuza', 'haku']),
+  'ev-darui-vs-gold-silver': win(['darui'], ['kinkaku', 'ginkaku']),
 };

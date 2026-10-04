@@ -5,7 +5,7 @@ export const jjkMarkerTags: Record<string, string[]> = {
     'evt-jjk-junpei-death', 'evt-jjk-mechamaru-betrayal', 'evt-jjk-gojo-b5f', 'evt-jjk-dagon', 'evt-jjk-sukuna-awakens',
     'evt-jjk-sukuna-vs-jogo', 'evt-jjk-toji-vs-megumi', 'evt-jjk-nanami-death', 'evt-jjk-nobara-falls',
     'evt-jjk-yuji-todo-vs-mahito', 'evt-jjk-zenin-massacre', 'evt-jjk-megumi-vs-reggie', 'evt-jjk-tengen-battle',
-    'evt-jjk-sukuna-takes-megumi', 'evt-jjk-gojo-death', 'evt-jjk-kashimo-death', 'evt-jjk-higuruma-shinjuku',
+    'evt-jjk-sukuna-takes-megumi', 'evt-jjk-sukuna-vs-yorozu', 'evt-jjk-gojo-death', 'evt-jjk-kashimo-death', 'evt-jjk-higuruma-shinjuku',
     'evt-jjk-kenjaku-death', 'evt-jjk-choso-death', 'evt-jjk-nobara-returns', 'evt-jjk-sukuna-defeated',
   ],
 };

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-04T05:58:32.399Z",
+  "generatedAt": "2026-10-04T06:07:56.190Z",
   "locales": [
     "en",
     "it"
@@ -17,10 +17,10 @@
       },
       "summary": {
         "naruto": {
-          "characters": 55,
-          "videos": 62,
+          "characters": 57,
+          "videos": 64,
           "series": 7,
-          "excluded": 198
+          "excluded": 196
         },
         "hunterxhunter": {
           "characters": 30,
@@ -83,7 +83,7 @@
               "arc-search-tsunade",
               "arc-sasuke-retrieval",
               "arc-kazekage-rescue",
-              "arc-akatsuki-suppression"
+              "arc-tenchi-bridge"
             ],
             "arcTitles": {
               "en": [
@@ -91,20 +91,20 @@
                 "Search for Tsunade",
                 "Sasuke Retrieval",
                 "Kazekage Rescue",
-                "Akatsuki Suppression Mission"
+                "Tenchi Bridge Reconnaissance"
               ],
               "it": [
                 "Prologo · Paese delle Onde",
                 "La Ricerca di Tsunade",
                 "Il Recupero di Sasuke",
                 "Il Salvataggio del Kazekage",
-                "Missione di Soppressione dell'Akatsuki"
+                "Ricognizione al Ponte Tenchi"
               ]
             },
             "firstArc": "Prologue · Land of Waves",
-            "lastArc": "Akatsuki Suppression Mission",
+            "lastArc": "Tenchi Bridge Reconnaissance",
             "segmentationVersion": 1,
-            "fingerprint": "f6eda39f"
+            "fingerprint": "aadfdbe7"
           },
           "displayName": {
             "en": "Naruto Uzumaki",
@@ -117,10 +117,10 @@
           "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "main",
-            "places": 14,
+            "places": 15,
             "animatedStops": 7,
             "arcs": 5,
-            "journeyArcs": 11
+            "journeyArcs": 12
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -143,6 +143,7 @@
             "previousId": "character-journey:naruto:naruto-uzumaki:part-01",
             "nextId": null,
             "arcIds": [
+              "arc-akatsuki-suppression",
               "arc-pain-assault",
               "arc-fourth-war-countdown",
               "arc-fourth-war",
@@ -152,6 +153,7 @@
             ],
             "arcTitles": {
               "en": [
+                "Akatsuki Suppression Mission",
                 "Pain Assault on Konoha",
                 "Fourth Shinobi World War · Countdown",
                 "Fourth Shinobi World War · Confrontation",
@@ -160,6 +162,7 @@
                 "Kakashi Hokage / Blank Period"
               ],
               "it": [
+                "Missione di Soppressione dell'Akatsuki",
                 "L'Assalto di Pain a Konoha",
                 "Quarta Grande Guerra Ninja · Conto alla Rovescia",
                 "Quarta Grande Guerra Ninja · Scontro",
@@ -168,10 +171,10 @@
                 "Kakashi Hokage / Periodo Vuoto"
               ]
             },
-            "firstArc": "Pain Assault on Konoha",
+            "firstArc": "Akatsuki Suppression Mission",
             "lastArc": "Kakashi Hokage / Blank Period",
             "segmentationVersion": 1,
-            "fingerprint": "1c16420f"
+            "fingerprint": "be5a7e3e"
           },
           "displayName": {
             "en": "Naruto Uzumaki",
@@ -181,13 +184,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 33,
+          "recommendedDurationSeconds": 36,
           "facts": {
             "importance": "main",
-            "places": 14,
-            "animatedStops": 7,
-            "arcs": 6,
-            "journeyArcs": 11
+            "places": 15,
+            "animatedStops": 8,
+            "arcs": 7,
+            "journeyArcs": 12
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -338,20 +341,23 @@
             "previousId": null,
             "nextId": "character-journey:naruto:sakura-haruno:part-02",
             "arcIds": [
-              "arc-prologue"
+              "arc-prologue",
+              "arc-kazekage-rescue"
             ],
             "arcTitles": {
               "en": [
-                "Prologue · Land of Waves"
+                "Prologue · Land of Waves",
+                "Kazekage Rescue"
               ],
               "it": [
-                "Prologo · Paese delle Onde"
+                "Prologo · Paese delle Onde",
+                "Il Salvataggio del Kazekage"
               ]
             },
             "firstArc": "Prologue · Land of Waves",
-            "lastArc": "Prologue · Land of Waves",
+            "lastArc": "Kazekage Rescue",
             "segmentationVersion": 1,
-            "fingerprint": "dc82eb7a"
+            "fingerprint": "d9ff62cd"
           },
           "displayName": {
             "en": "Sakura Haruno",
@@ -361,13 +367,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 36,
           "facts": {
             "importance": "main",
-            "places": 9,
-            "animatedStops": 2,
-            "arcs": 1,
-            "journeyArcs": 3
+            "places": 11,
+            "animatedStops": 8,
+            "arcs": 2,
+            "journeyArcs": 5
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -390,23 +396,26 @@
             "previousId": "character-journey:naruto:sakura-haruno:part-01",
             "nextId": null,
             "arcIds": [
-              "arc-kazekage-rescue",
+              "arc-tenchi-bridge",
+              "arc-fourth-war-climax",
               "arc-kaguya-final"
             ],
             "arcTitles": {
               "en": [
-                "Kazekage Rescue",
+                "Tenchi Bridge Reconnaissance",
+                "Fourth Shinobi World War · Climax",
                 "Kaguya Otsutsuki Strikes"
               ],
               "it": [
-                "Il Salvataggio del Kazekage",
+                "Ricognizione al Ponte Tenchi",
+                "Quarta Grande Guerra Ninja · Apice",
                 "L'Attacco di Kaguya Ōtsutsuki"
               ]
             },
-            "firstArc": "Kazekage Rescue",
+            "firstArc": "Tenchi Bridge Reconnaissance",
             "lastArc": "Kaguya Otsutsuki Strikes",
             "segmentationVersion": 1,
-            "fingerprint": "1211a167"
+            "fingerprint": "dec0a38b"
           },
           "displayName": {
             "en": "Sakura Haruno",
@@ -416,13 +425,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 33,
+          "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "main",
-            "places": 9,
-            "animatedStops": 7,
-            "arcs": 2,
-            "journeyArcs": 3
+            "places": 11,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 5
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -687,7 +696,7 @@
             "arcIds": [
               "arc-konoha-crush",
               "arc-search-tsunade",
-              "arc-akatsuki-suppression",
+              "arc-tenchi-bridge",
               "arc-fourth-war-climax",
               "arc-mitsuki-disappearance"
             ],
@@ -695,14 +704,14 @@
               "en": [
                 "Konoha Crush",
                 "Search for Tsunade",
-                "Akatsuki Suppression Mission",
+                "Tenchi Bridge Reconnaissance",
                 "Fourth Shinobi World War · Climax",
                 "Mitsuki's Disappearance"
               ],
               "it": [
                 "Distruzione di Konoha",
                 "La Ricerca di Tsunade",
-                "Missione di Soppressione dell'Akatsuki",
+                "Ricognizione al Ponte Tenchi",
                 "Quarta Grande Guerra Ninja · Apice",
                 "La Scomparsa di Mitsuki"
               ]
@@ -710,7 +719,7 @@
             "firstArc": "Konoha Crush",
             "lastArc": "Mitsuki's Disappearance",
             "segmentationVersion": 1,
-            "fingerprint": "56c039d0"
+            "fingerprint": "1c13eaf4"
           },
           "displayName": {
             "en": "Orochimaru",
@@ -750,13 +759,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "major",
-            "places": 3,
-            "animatedStops": 3,
-            "arcs": 1,
-            "journeyArcs": 1
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 2,
+            "journeyArcs": 2
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -978,10 +987,10 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "supporting",
-            "places": 2,
-            "animatedStops": 2,
-            "arcs": 2,
-            "journeyArcs": 2
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -1149,6 +1158,66 @@
             "animatedStops": 2,
             "arcs": 2,
             "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:zabuza-momochi",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "zabuza-momochi",
+          "series": null,
+          "displayName": {
+            "en": "Zabuza Momochi",
+            "it": "Zabuza Momochi"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:naruto:haku",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "haku",
+          "series": null,
+          "displayName": {
+            "en": "Haku",
+            "it": "Haku"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
           },
           "renderedLocales": [],
           "scheduledLocales": [],
