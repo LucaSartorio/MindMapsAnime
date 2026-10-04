@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-04T06:07:56.190Z",
+  "generatedAt": "2026-10-04T06:14:01.345Z",
   "templates": {
     "characterJourney": {
       "byReason": {
-        "single_location": 503,
-        "no_journey_data": 580
+        "single_location": 506,
+        "no_journey_data": 576
       },
       "items": [
         {
@@ -2607,13 +2607,6 @@
         },
         {
           "anime": "onepiece",
-          "subject": "kozuki-oden",
-          "subjectId": "char-op-oden",
-          "displayName": "Kozuki Oden",
-          "reason": "single_location"
-        },
-        {
-          "anime": "onepiece",
           "subject": "yamato",
           "subjectId": "char-op-yamato",
           "displayName": "Yamato",
@@ -3646,14 +3639,14 @@
           "subject": "daz-bones",
           "subjectId": "char-op-daz-bones",
           "displayName": "Daz Bones",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
           "subject": "miss-doublefinger",
           "subjectId": "char-op-miss-doublefinger",
           "displayName": "Miss Doublefinger",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
@@ -3688,7 +3681,7 @@
           "subject": "mr-4",
           "subjectId": "char-op-mr-4",
           "displayName": "Mr. 4",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",
@@ -3744,7 +3737,7 @@
           "subject": "satori",
           "subjectId": "char-op-satori",
           "displayName": "Satori",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "onepiece",

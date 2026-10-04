@@ -385,7 +385,13 @@ export const dragonballSlugs: SeoSlugLock = {
       "route-dbz-saga-saiyan": "saiyan-saga",
       "route-dbz-tenkaichi-tournaments": "the-world-martial-arts-tournaments",
       "route-dbz-tournament-of-power-journey": "the-road-to-the-tournament-of-power",
-      "route-dbz-vegeta-path": "vegetas-path"
+      "route-dbz-vegeta-path": "vegetas-path",
+      "route-journey-android-17": "android-17-journey",
+      "route-journey-goku-black": "goku-black-journey",
+      "route-journey-gotenks": "gotenks-journey",
+      "route-journey-vegito": "vegito-journey",
+      "route-journey-whis": "whis-journey",
+      "route-journey-zamasu": "zamasu-journey"
     },
     "abilities": {
       "jutsu-dbz-absorption": "absorption",

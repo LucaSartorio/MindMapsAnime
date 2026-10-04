@@ -172,7 +172,19 @@ export const jujutsukaisenSlugs: SeoSlugLock = {
       "route-jjk-shibuya-incident": "the-shibuya-incident",
       "route-jjk-shinjuku-showdown": "the-shinjuku-showdown",
       "route-jjk-yuji-journey": "yuji-itadoris-journey",
-      "route-jjk-yuta-path": "yuta-okkotsus-path"
+      "route-jjk-yuta-path": "yuta-okkotsus-path",
+      "route-journey-choso": "choso-journey",
+      "route-journey-jogo": "jogo-journey",
+      "route-journey-mai": "mai-journey",
+      "route-journey-nanami": "nanami-journey",
+      "route-journey-naoya": "naoya-journey",
+      "route-journey-panda": "panda-journey",
+      "route-journey-rika": "rika-journey",
+      "route-journey-riko": "riko-journey",
+      "route-journey-shoko": "shoko-journey",
+      "route-journey-toge": "toge-journey",
+      "route-journey-toji": "toji-journey",
+      "route-journey-yuki": "yuki-journey"
     },
     "abilities": {
       "tec-jjk-anti-gravity": "anti-gravity-system",

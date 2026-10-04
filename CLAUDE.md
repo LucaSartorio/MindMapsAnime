@@ -305,6 +305,10 @@ via `pngjs`) emit coordinates already converted to the flow plane — paste thei
   squads) and `Faction.succession` (holders of an office in order — Hokage, division captains, Nine Titans), written in
   `src/data/<world>/structure.ts` (`factionKit`: `m(id, role)` character, `x(label)` person without a scheda) and applied
   with `withFactionExtras`. Rendered by `FactionGroups`/`FactionSuccessions` in the faction scheda and SEO page.
+- **Derived character journeys** (`src/data/shared/autoJourneys.ts`, applied by `loadWorldDataset` in the registry):
+  every main/major character without a hand-written route gets `route-journey-<id>` (slug `<id>-journey`, group
+  "Cammini dei personaggi") built from the locations of their canon events in order (≥ 3 distinct stops). Write a
+  route by hand to replace it — a character who is a protagonist of any route is skipped.
 - **Chapter coverage**: `npm run coverage:chapters [-- <world> --gap N]` (informative) parses `event.mangaChapters` and
   lists the uncovered chapter ranges per series — use it to find what's still missing in a world.
 

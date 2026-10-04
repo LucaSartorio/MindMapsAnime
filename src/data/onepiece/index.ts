@@ -101,6 +101,7 @@ import { onepieceEventsCovers } from './eventsCovers';
 import { onepieceEventsExtra4 } from './eventsExtra4';
 import { onepieceEventsCompletion } from './eventsCompletion';
 import { onepieceEventsFruits } from './eventsFruits';
+import { onepieceEventsGaps } from './eventsGaps';
 import { onepieceRoutes } from './routes';
 import { onepieceRoutesGrandLine } from './routesGrandLine';
 import { onepieceRoutesExtra } from './routesExtra';
@@ -350,6 +351,7 @@ const rawEvents: TimelineEvent[] = [
   ...onepieceEventsExtra4,
   ...onepieceEventsCompletion,
   ...onepieceEventsFruits,
+  ...onepieceEventsGaps,
 ];
 
 const rawArcs: StoryArc[] = [

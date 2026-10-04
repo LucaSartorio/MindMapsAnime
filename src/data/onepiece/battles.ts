@@ -79,4 +79,7 @@ export const onepieceBattles: Record<string, BattleOutcome> = {
   'evt-op-fight-zoro-lucci': win(['zoro'], ['lucci']),
   'evt-op-fight-luffy-kizaru': stop(['luffy'], ['kizaru']),
   'evt-op-fight-strawhats-saturn': stop(['luffy', 'bonney'], ['saturn']),
+  'evt-op-usopp-chopper-vs-mr4': win(['usopp', 'chopper'], ['mr-4']),
+  'evt-op-nami-vs-doublefinger': win(['nami'], ['miss-doublefinger']),
+  'evt-op-zoro-vs-mr1': win(['zoro'], ['daz-bones']),
 };

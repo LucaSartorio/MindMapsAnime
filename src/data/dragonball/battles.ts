@@ -79,4 +79,6 @@ export const dragonballBattles: Record<string, BattleOutcome> = {
   'evt-dbz-movie-wrath-of-dragon': win(['goku'], ['hirudegarn']),
   'evt-dbz-special-history-of-trunks': win(['android-17', 'android-18'], ['gohan']),
   'evt-dbz-filler-other-world-tournament': draw(['goku'], ['pikkon'], L('Entrambi toccano il soffitto e vengono squalificati.', 'Both touch the ceiling and are disqualified.')),
+  'evt-dbz-goku-vs-tambourine': win(['goku'], ['tambourine']),
+  'evt-dbz-goku-first-vs-king-piccolo': win(['king-piccolo'], ['goku']),
 };

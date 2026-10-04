@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-04T06:07:56.190Z",
+  "generatedAt": "2026-10-04T06:14:01.345Z",
   "locales": [
     "en",
     "it"
@@ -29,10 +29,10 @@
           "excluded": 135
         },
         "onepiece": {
-          "characters": 61,
-          "videos": 75,
+          "characters": 62,
+          "videos": 76,
           "series": 7,
-          "excluded": 357
+          "excluded": 356
         },
         "dragonball": {
           "characters": 50,
@@ -3936,10 +3936,10 @@
           "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 19,
+            "places": 20,
             "animatedStops": 6,
             "arcs": 5,
-            "journeyArcs": 17
+            "journeyArcs": 18
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -3965,6 +3965,7 @@
               "arc-op-loguetown",
               "arc-op-whisky-peak",
               "arc-op-little-garden",
+              "arc-op-alabasta",
               "arc-op-jaya",
               "arc-op-enies-lobby"
             ],
@@ -3973,6 +3974,7 @@
                 "Loguetown",
                 "Whisky Peak",
                 "Little Garden",
+                "Alabasta",
                 "Jaya",
                 "Enies Lobby"
               ],
@@ -3980,6 +3982,7 @@
                 "La città dell'inizio e della fine",
                 "Whisky Peak",
                 "Little Garden",
+                "Alabasta",
                 "Jaya",
                 "Enies Lobby"
               ]
@@ -3987,7 +3990,7 @@
             "firstArc": "Loguetown",
             "lastArc": "Enies Lobby",
             "segmentationVersion": 1,
-            "fingerprint": "134eb3b8"
+            "fingerprint": "bab703f2"
           },
           "displayName": {
             "en": "Roronoa Zoro",
@@ -3997,13 +4000,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 30,
+          "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "main",
-            "places": 19,
-            "animatedStops": 6,
-            "arcs": 5,
-            "journeyArcs": 17
+            "places": 20,
+            "animatedStops": 7,
+            "arcs": 6,
+            "journeyArcs": 18
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4070,10 +4073,10 @@
           "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "main",
-            "places": 19,
+            "places": 20,
             "animatedStops": 7,
             "arcs": 7,
-            "journeyArcs": 17
+            "journeyArcs": 18
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4131,10 +4134,10 @@
           "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "main",
-            "places": 15,
+            "places": 17,
             "animatedStops": 5,
             "arcs": 4,
-            "journeyArcs": 13
+            "journeyArcs": 15
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4160,26 +4163,29 @@
               "arc-op-arlong-park",
               "arc-op-loguetown",
               "arc-op-whisky-peak",
-              "arc-op-little-garden"
+              "arc-op-little-garden",
+              "arc-op-drum"
             ],
             "arcTitles": {
               "en": [
                 "Arlong Park",
                 "Loguetown",
                 "Whisky Peak",
-                "Little Garden"
+                "Little Garden",
+                "Drum Island"
               ],
               "it": [
                 "Il passato di Nami",
                 "La città dell'inizio e della fine",
                 "Whisky Peak",
-                "Little Garden"
+                "Little Garden",
+                "Drum Island"
               ]
             },
             "firstArc": "Arlong Park",
-            "lastArc": "Little Garden",
+            "lastArc": "Drum Island",
             "segmentationVersion": 1,
-            "fingerprint": "b3031414"
+            "fingerprint": "f7b568b4"
           },
           "displayName": {
             "en": "Nami",
@@ -4189,13 +4195,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 15,
-            "animatedStops": 5,
-            "arcs": 4,
-            "journeyArcs": 13
+            "places": 17,
+            "animatedStops": 6,
+            "arcs": 5,
+            "journeyArcs": 15
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4218,6 +4224,7 @@
             "previousId": "character-journey:onepiece:nami:part-02",
             "nextId": null,
             "arcIds": [
+              "arc-op-alabasta",
               "arc-op-jaya",
               "arc-op-enies-lobby",
               "arc-op-post-enies-lobby",
@@ -4226,6 +4233,7 @@
             ],
             "arcTitles": {
               "en": [
+                "Alabasta",
                 "Jaya",
                 "Enies Lobby",
                 "Post-Enies Lobby",
@@ -4233,6 +4241,7 @@
                 "Wano Country"
               ],
               "it": [
+                "Alabasta",
                 "Jaya",
                 "Enies Lobby",
                 "Dopo Enies Lobby",
@@ -4240,10 +4249,10 @@
                 "Il Paese di Wano"
               ]
             },
-            "firstArc": "Jaya",
+            "firstArc": "Alabasta",
             "lastArc": "Wano Country",
             "segmentationVersion": 1,
-            "fingerprint": "d7d5c97d"
+            "fingerprint": "0ede3b8f"
           },
           "displayName": {
             "en": "Nami",
@@ -4253,13 +4262,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 15,
-            "animatedStops": 5,
-            "arcs": 5,
-            "journeyArcs": 13
+            "places": 17,
+            "animatedStops": 6,
+            "arcs": 6,
+            "journeyArcs": 15
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4285,26 +4294,29 @@
               "arc-op-romance-dawn",
               "arc-op-orange-town",
               "arc-op-syrup-village",
-              "arc-op-baratie"
+              "arc-op-baratie",
+              "arc-op-arlong-park"
             ],
             "arcTitles": {
               "en": [
                 "Romance Dawn",
                 "Orange Town",
                 "Syrup Village",
-                "Baratie"
+                "Baratie",
+                "Arlong Park"
               ],
               "it": [
                 "L'alba di un'avventura",
                 "Bagy il Clown",
                 "Il complotto di Kuro",
-                "Il ristorante in mare"
+                "Il ristorante in mare",
+                "Il passato di Nami"
               ]
             },
             "firstArc": "Romance Dawn",
-            "lastArc": "Baratie",
+            "lastArc": "Arlong Park",
             "segmentationVersion": 1,
-            "fingerprint": "f4291cff"
+            "fingerprint": "c751f97b"
           },
           "displayName": {
             "en": "Usopp",
@@ -4314,13 +4326,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 16,
-            "animatedStops": 5,
-            "arcs": 4,
-            "journeyArcs": 13
+            "places": 18,
+            "animatedStops": 6,
+            "arcs": 5,
+            "journeyArcs": 15
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4343,29 +4355,32 @@
             "previousId": "character-journey:onepiece:usopp:part-01",
             "nextId": "character-journey:onepiece:usopp:part-03",
             "arcIds": [
-              "arc-op-arlong-park",
               "arc-op-loguetown",
               "arc-op-little-garden",
+              "arc-op-alabasta",
+              "arc-op-skypiea",
               "arc-op-water-seven"
             ],
             "arcTitles": {
               "en": [
-                "Arlong Park",
                 "Loguetown",
                 "Little Garden",
+                "Alabasta",
+                "Skypiea",
                 "Water Seven"
               ],
               "it": [
-                "Il passato di Nami",
                 "La città dell'inizio e della fine",
                 "Little Garden",
+                "Alabasta",
+                "Skypiea",
                 "Water Seven"
               ]
             },
-            "firstArc": "Arlong Park",
+            "firstArc": "Loguetown",
             "lastArc": "Water Seven",
             "segmentationVersion": 1,
-            "fingerprint": "c6ff439c"
+            "fingerprint": "c8a906d8"
           },
           "displayName": {
             "en": "Usopp",
@@ -4375,13 +4390,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 16,
-            "animatedStops": 5,
-            "arcs": 4,
-            "journeyArcs": 13
+            "places": 18,
+            "animatedStops": 6,
+            "arcs": 5,
+            "journeyArcs": 15
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4442,10 +4457,10 @@
           "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 16,
+            "places": 18,
             "animatedStops": 6,
             "arcs": 5,
-            "journeyArcs": 13
+            "journeyArcs": 15
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4471,26 +4486,29 @@
               "arc-op-romance-dawn",
               "arc-op-orange-town",
               "arc-op-syrup-village",
-              "arc-op-baratie"
+              "arc-op-baratie",
+              "arc-op-arlong-park"
             ],
             "arcTitles": {
               "en": [
                 "Romance Dawn",
                 "Orange Town",
                 "Syrup Village",
-                "Baratie"
+                "Baratie",
+                "Arlong Park"
               ],
               "it": [
                 "L'alba di un'avventura",
                 "Bagy il Clown",
                 "Il complotto di Kuro",
-                "Il ristorante in mare"
+                "Il ristorante in mare",
+                "Il passato di Nami"
               ]
             },
             "firstArc": "Romance Dawn",
-            "lastArc": "Baratie",
+            "lastArc": "Arlong Park",
             "segmentationVersion": 1,
-            "fingerprint": "f4291cff"
+            "fingerprint": "c751f97b"
           },
           "displayName": {
             "en": "Sanji",
@@ -4500,13 +4518,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 16,
-            "animatedStops": 5,
-            "arcs": 4,
-            "journeyArcs": 14
+            "places": 18,
+            "animatedStops": 6,
+            "arcs": 5,
+            "journeyArcs": 16
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4529,29 +4547,32 @@
             "previousId": "character-journey:onepiece:sanji:part-01",
             "nextId": "character-journey:onepiece:sanji:part-03",
             "arcIds": [
-              "arc-op-arlong-park",
               "arc-op-loguetown",
+              "arc-op-drum",
               "arc-op-alabasta",
+              "arc-op-skypiea",
               "arc-op-enies-lobby"
             ],
             "arcTitles": {
               "en": [
-                "Arlong Park",
                 "Loguetown",
+                "Drum Island",
                 "Alabasta",
+                "Skypiea",
                 "Enies Lobby"
               ],
               "it": [
-                "Il passato di Nami",
                 "La città dell'inizio e della fine",
+                "Drum Island",
                 "Alabasta",
+                "Skypiea",
                 "Enies Lobby"
               ]
             },
-            "firstArc": "Arlong Park",
+            "firstArc": "Loguetown",
             "lastArc": "Enies Lobby",
             "segmentationVersion": 1,
-            "fingerprint": "bf18bd34"
+            "fingerprint": "e3a8b800"
           },
           "displayName": {
             "en": "Sanji",
@@ -4561,13 +4582,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 16,
-            "animatedStops": 5,
-            "arcs": 4,
-            "journeyArcs": 14
+            "places": 18,
+            "animatedStops": 6,
+            "arcs": 5,
+            "journeyArcs": 16
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4631,10 +4652,10 @@
           "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 16,
+            "places": 18,
             "animatedStops": 6,
             "arcs": 6,
-            "journeyArcs": 14
+            "journeyArcs": 16
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -4748,11 +4769,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 36,
           "facts": {
             "importance": "major",
-            "places": 5,
-            "animatedStops": 5,
+            "places": 8,
+            "animatedStops": 8,
             "arcs": 5,
             "journeyArcs": 5
           },
@@ -4778,11 +4799,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "major",
-            "places": 3,
-            "animatedStops": 3,
+            "places": 4,
+            "animatedStops": 4,
             "arcs": 3,
             "journeyArcs": 3
           },
@@ -4868,11 +4889,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "major",
-            "places": 3,
-            "animatedStops": 3,
+            "places": 4,
+            "animatedStops": 4,
             "arcs": 2,
             "journeyArcs": 2
           },
@@ -4928,11 +4949,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "major",
-            "places": 5,
-            "animatedStops": 5,
+            "places": 6,
+            "animatedStops": 6,
             "arcs": 5,
             "journeyArcs": 5
           },
@@ -5206,13 +5227,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "major",
-            "places": 2,
-            "animatedStops": 2,
-            "arcs": 2,
-            "journeyArcs": 2
+            "places": 7,
+            "animatedStops": 7,
+            "arcs": 3,
+            "journeyArcs": 3
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -5266,11 +5287,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 30,
+          "recommendedDurationSeconds": 36,
           "facts": {
             "importance": "major",
-            "places": 6,
-            "animatedStops": 6,
+            "places": 8,
+            "animatedStops": 8,
             "arcs": 5,
             "journeyArcs": 5
           },
@@ -5386,11 +5407,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "major",
-            "places": 3,
-            "animatedStops": 3,
+            "places": 4,
+            "animatedStops": 4,
             "arcs": 3,
             "journeyArcs": 3
           },
@@ -5446,22 +5467,25 @@
             "nextId": "character-journey:onepiece:tony-tony-chopper:part-02",
             "arcIds": [
               "arc-op-drum",
+              "arc-op-alabasta",
               "arc-op-enies-lobby"
             ],
             "arcTitles": {
               "en": [
                 "Drum Island",
+                "Alabasta",
                 "Enies Lobby"
               ],
               "it": [
                 "Drum Island",
+                "Alabasta",
                 "Enies Lobby"
               ]
             },
             "firstArc": "Drum Island",
             "lastArc": "Enies Lobby",
             "segmentationVersion": 1,
-            "fingerprint": "d97d4815"
+            "fingerprint": "7db59373"
           },
           "displayName": {
             "en": "Tony Tony Chopper",
@@ -5471,13 +5495,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 25,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "main",
-            "places": 9,
-            "animatedStops": 4,
-            "arcs": 2,
-            "journeyArcs": 7
+            "places": 10,
+            "animatedStops": 5,
+            "arcs": 3,
+            "journeyArcs": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -5538,10 +5562,10 @@
           "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "main",
-            "places": 9,
+            "places": 10,
             "animatedStops": 5,
             "arcs": 5,
-            "journeyArcs": 7
+            "journeyArcs": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -5600,8 +5624,8 @@
             "importance": "major",
             "places": 5,
             "animatedStops": 5,
-            "arcs": 5,
-            "journeyArcs": 5
+            "arcs": 4,
+            "journeyArcs": 4
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -5715,11 +5739,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "major",
-            "places": 3,
-            "animatedStops": 3,
+            "places": 4,
+            "animatedStops": 4,
             "arcs": 3,
             "journeyArcs": 3
           },
@@ -5865,13 +5889,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "major",
-            "places": 3,
-            "animatedStops": 3,
-            "arcs": 3,
-            "journeyArcs": 3
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 2,
+            "journeyArcs": 2
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -5932,6 +5956,36 @@
             "animatedStops": 2,
             "arcs": 2,
             "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:onepiece:kozuki-oden",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "kozuki-oden",
+          "series": null,
+          "displayName": {
+            "en": "Kozuki Oden",
+            "it": "Kozuki Oden"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -6288,8 +6342,8 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "major",
-            "places": 2,
-            "animatedStops": 2,
+            "places": 3,
+            "animatedStops": 3,
             "arcs": 2,
             "journeyArcs": 2
           },
@@ -6315,11 +6369,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "major",
-            "places": 3,
-            "animatedStops": 3,
+            "places": 4,
+            "animatedStops": 4,
             "arcs": 3,
             "journeyArcs": 3
           },
@@ -9195,10 +9249,10 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "major",
-            "places": 3,
-            "animatedStops": 3,
-            "arcs": 2,
-            "journeyArcs": 2
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -10632,13 +10686,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 30,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "major",
-            "places": 6,
-            "animatedStops": 6,
-            "arcs": 4,
-            "journeyArcs": 4
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 3,
+            "journeyArcs": 3
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -10667,8 +10721,8 @@
             "importance": "major",
             "places": 2,
             "animatedStops": 2,
-            "arcs": 2,
-            "journeyArcs": 2
+            "arcs": 1,
+            "journeyArcs": 1
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -10842,13 +10896,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 36,
+          "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "major",
-            "places": 8,
-            "animatedStops": 8,
-            "arcs": 7,
-            "journeyArcs": 7
+            "places": 7,
+            "animatedStops": 7,
+            "arcs": 6,
+            "journeyArcs": 6
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -11027,8 +11081,8 @@
             "importance": "major",
             "places": 3,
             "animatedStops": 3,
-            "arcs": 3,
-            "journeyArcs": 3
+            "arcs": 2,
+            "journeyArcs": 2
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -11177,8 +11231,8 @@
             "importance": "major",
             "places": 3,
             "animatedStops": 3,
-            "arcs": 2,
-            "journeyArcs": 2
+            "arcs": 3,
+            "journeyArcs": 3
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -11688,13 +11742,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 25,
+          "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "major",
-            "places": 4,
-            "animatedStops": 4,
-            "arcs": 4,
-            "journeyArcs": 4
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -11898,13 +11952,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 25,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "major",
-            "places": 4,
-            "animatedStops": 4,
-            "arcs": 4,
-            "journeyArcs": 4
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 5,
+            "journeyArcs": 5
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -12081,10 +12135,10 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "major",
-            "places": 3,
-            "animatedStops": 3,
-            "arcs": 3,
-            "journeyArcs": 3
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -14137,13 +14191,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 30,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "major",
-            "places": 6,
-            "animatedStops": 6,
-            "arcs": 5,
-            "journeyArcs": 5
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 4,
+            "journeyArcs": 4
           },
           "renderedLocales": [],
           "scheduledLocales": [],
