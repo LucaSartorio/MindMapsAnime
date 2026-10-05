@@ -64,6 +64,8 @@ function isDerivedJourney(node: unknown): boolean {
  */
 const PLAIN_NAME_PATHS = new Set([
   'characters[].aliases[]',
+  'characters[].abilities[]',
+  'factions[].signatureAbilities[]',
   'characters[].kekkeiGenkai[]',
   'characters[].rank',
   'factions[].kekkeiGenkai',
@@ -72,7 +74,7 @@ const PLAIN_NAME_PATHS = new Set([
   'tournaments[].rounds[].matches[].sides[].label',
 ]);
 const normalizePath = (path: string) => path.replace(/\[[^\]]*\]/g, '[]');
-const isPlainNamePath = (path: string) => PLAIN_NAME_PATHS.has(normalizePath(path)) || /\.localizedName$/.test(path);
+const isPlainNamePath = (path: string) => PLAIN_NAME_PATHS.has(normalizePath(path)) || /\.(localizedName|nameLocal)$/.test(path);
 
 /** Stringa semplice traducibile: dove si trova, per sostituirla con `{ it, en, <lingua> }`. */
 interface PlainSlot {

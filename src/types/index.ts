@@ -433,7 +433,8 @@ export interface Nation extends SeoSlugFields {
   name: string;
   /** Nome localizzato visualizzato in UI (opzionale, fallback su `name`). */
   localizedName?: Localizable;
-  nameLocal?: string;
+  /** Nome locale/originale (romaji) o glossa: localizzabile se cambia con la lingua. */
+  nameLocal?: Localizable;
   japaneseName?: string;
   /** Classificazione canon per la nazione */
   type?:
@@ -474,7 +475,8 @@ export interface Location extends SeoSlugFields {
   name: string;
   /** Nome localizzato per UI. */
   localizedName?: Localizable;
-  nameLocal?: string;
+  /** Nome locale/originale (romaji) o glossa: localizzabile se cambia con la lingua. */
+  nameLocal?: Localizable;
   type: LocationType;
   /** Coordinate nella mappa (0..mapLevel.width) */
   x: number;
@@ -573,7 +575,8 @@ export interface Character extends SeoSlugFields {
    * tutte le lingue (è comunque traducibile dagli overlay: chiave `aliases[i]`).
    */
   aliases?: Localizable[];
-  nameLocal?: string;
+  /** Nome locale/originale (romaji) o glossa: localizzabile se cambia con la lingua. */
+  nameLocal?: Localizable;
   japaneseName?: string;
   /** Importanza narrativa (filtra archivio personaggi) */
   importance?: CharacterImportance;
@@ -622,8 +625,8 @@ export interface Character extends SeoSlugFields {
   bounties?: BountyEntry[];
   shortDescription: Localizable;
   longDescription?: Localizable;
-  /** Abilità o tecniche caratteristiche (free-text legacy) */
-  abilities?: string[];
+  /** Abilità o tecniche caratteristiche (testo libero, localizzabile) */
+  abilities?: Localizable[];
   /** Kekkei Genkai posseduti (nomi mostrati: localizzabili) */
   kekkeiGenkai?: Localizable[];
   /** Nature del chakra del personaggio. Se omesso, il selettore può
@@ -681,13 +684,14 @@ export interface Faction extends SeoSlugFields {
   type: FactionType | (string & {});
   name: string;
   localizedName?: Localizable;
-  nameLocal?: string;
+  /** Nome locale/originale (romaji) o glossa: localizzabile se cambia con la lingua. */
+  nameLocal?: Localizable;
   japaneseName?: string;
   nationId?: string;
   villageLocationId?: string;
   description: Localizable;
   longDescription?: Localizable;
-  signatureAbilities?: string[];
+  signatureAbilities?: Localizable[];
   kekkeiGenkai?: Localizable;
   /** Jutsu / tecniche firma del clan o fazione (riferimenti a Jutsu.id) */
   jutsuIds?: string[];

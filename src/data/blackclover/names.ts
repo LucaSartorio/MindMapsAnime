@@ -27,4 +27,5 @@ export const bcNames: SourceNames = {
   "factions[faction-bc-crimson-lion].localizedName": { it: "Leone Cremisi", en: "Crimson Lions" },
   "factions[faction-bc-coral-peacock].localizedName": { it: "Pavone di Corallo", en: "Coral Peacocks" },
   "factions[faction-bc-purple-orca].localizedName": { it: "Orca Viola", en: "Purple Orcas" },
+  "locations[loc-bc-royal-capital].nameLocal": { it: "Città castello di Clover", en: "Clover Castle Town" },
 };

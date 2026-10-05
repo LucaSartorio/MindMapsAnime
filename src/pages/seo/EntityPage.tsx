@@ -134,7 +134,7 @@ export function EntityPage({
     description?: Localizable;
     longDescription?: Localizable;
     japaneseName?: string;
-    nameLocal?: string;
+    nameLocal?: Localizable;
     referenceStatus?: string;
   };
   const summary = text(e.shortDescription ?? e.description);
@@ -540,7 +540,7 @@ export function EntityPage({
   }
 
   const imageKind = IMAGE_KIND[category];
-  const subtitle = [e.japaneseName, e.nameLocal].filter(Boolean).join(' · ');
+  const subtitle = [e.japaneseName, text(e.nameLocal)].filter(Boolean).join(' · ');
 
   return (
     <PageShell

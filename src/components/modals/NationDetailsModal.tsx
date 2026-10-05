@@ -109,7 +109,7 @@ export function NationDetailsModal({
       }
     >
       {nation.nameLocal && (
-        <p className="text-xs text-ink-300 italic -mt-2">{nation.nameLocal}</p>
+        <p className="text-xs text-ink-300 italic -mt-2">{getLocalizedText(nation.nameLocal, locale)}</p>
       )}
       <p className="leading-relaxed">
         {getLocalizedText(nation.description, locale)}

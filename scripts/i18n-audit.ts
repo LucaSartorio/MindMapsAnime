@@ -95,6 +95,7 @@ function usedIds(ds: WorldDataset): Array<[LabelKind, string]> {
   for (const c of ds.characters) {
     if (w.config?.characterRank) add('rank', c.ninjaRank);
     add('role', c.role);
+    add('abilityType', c.abilityCategory);
     add('race', c.race);
     for (const t of c.transformations ?? []) add('transformation', t.kind);
   }

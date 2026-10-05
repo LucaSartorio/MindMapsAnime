@@ -220,7 +220,7 @@ export function CharacterDetailsModal({
     >
       {character.nameLocal && (
         <p className="text-xs text-ink-300 italic -mt-2">
-          {character.nameLocal}
+          {getLocalizedText(character.nameLocal, locale)}
         </p>
       )}
       {getLocalizedAliases(character, locale).length > 0 && (
@@ -326,7 +326,7 @@ export function CharacterDetailsModal({
       {(character.abilities ?? []).length > 0 && (
         <Section title={t("modals.abilities")}>
           <div className="flex flex-wrap gap-1.5">
-            {character.abilities!.map((a) => (
+            {getLocalizedArray(character.abilities, locale).map((a) => (
               <Badge key={a} variant="ember">
                 {a}
               </Badge>

@@ -23,6 +23,7 @@ type FieldSpec = [path: string, cls: LocalizableFieldClass, required?: boolean];
 export const LOCALIZABLE_FIELDS: Record<string, FieldSpec[]> = {
   nations: [
     ['localizedName', 'name'],
+    ['nameLocal', 'name'],
     ['description', 'text', true],
     ['descriptionLong', 'text'],
   ],
@@ -33,6 +34,7 @@ export const LOCALIZABLE_FIELDS: Record<string, FieldSpec[]> = {
   ],
   locations: [
     ['localizedName', 'name'],
+    ['nameLocal', 'name'],
     ['shortDescription', 'text', true],
     ['longDescription', 'text'],
     ['poneglyph.note', 'text'],
@@ -40,6 +42,7 @@ export const LOCALIZABLE_FIELDS: Record<string, FieldSpec[]> = {
   ],
   characters: [
     ['localizedName', 'name'],
+    ['nameLocal', 'name'],
     ['shortDescription', 'text', true],
     ['longDescription', 'text'],
     ['trivia[]', 'text'],
@@ -48,14 +51,17 @@ export const LOCALIZABLE_FIELDS: Record<string, FieldSpec[]> = {
     ['transformations[].description', 'text'],
     ['relationships[].label', 'text'],
     ['aliases[]', 'name'],
+    ['abilities[]', 'name'],
     ['rank', 'name'],
     ['kekkeiGenkai[]', 'name'],
   ],
   factions: [
     ['localizedName', 'name'],
+    ['nameLocal', 'name'],
     ['description', 'text', true],
     ['longDescription', 'text'],
     ['kekkeiGenkai', 'name'],
+    ['signatureAbilities[]', 'name'],
     ['structure[].name', 'text'],
     ['structure[].note', 'text'],
     ['structure[].members[].label', 'name'],

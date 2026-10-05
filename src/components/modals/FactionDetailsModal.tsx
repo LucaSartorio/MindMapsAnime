@@ -7,7 +7,7 @@ import { EntityImage } from '@/components/common/EntityImage';
 import { ReferencePill } from '@/components/common/StatusPill';
 import { useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
-import { getLocalizedText, getEntityDisplayName, getFactionTypeLabel } from '@/utils/localization';
+import { getLocalizedArray, getLocalizedText, getEntityDisplayName, getFactionTypeLabel } from '@/utils/localization';
 import { getAbilityTerm, humanizeId } from '@/lib/worldConfig';
 import {
   findCharacter,
@@ -115,7 +115,7 @@ export function FactionDetailsModal({
       }
     >
       {faction.nameLocal && (
-        <p className="text-xs text-ink-300 italic -mt-2">{faction.nameLocal}</p>
+        <p className="text-xs text-ink-300 italic -mt-2">{getLocalizedText(faction.nameLocal, locale)}</p>
       )}
       <p className="leading-relaxed">
         {getLocalizedText(faction.description, locale)}
@@ -161,7 +161,7 @@ export function FactionDetailsModal({
             {t('modals.mainAbilities')}
           </h3>
           <div className="flex flex-wrap gap-1.5">
-            {faction.signatureAbilities!.map((a) => (
+            {getLocalizedArray(faction.signatureAbilities, locale).map((a) => (
               <Badge key={a} variant="ember">
                 {a}
               </Badge>

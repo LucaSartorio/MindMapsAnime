@@ -189,7 +189,7 @@ export function searchDataset(
           localized,
           getLocalizedText(l.localizedName, 'it'),
           getLocalizedText(l.localizedName, 'en'),
-          l.nameLocal,
+          getLocalizedText(l.nameLocal, locale),
         ],
         descriptionCandidates: [
           getLocalizedText(l.shortDescription, locale),
@@ -215,7 +215,7 @@ export function searchDataset(
         nameCandidates: [
           getEntityDisplayName(c, locale),
           c.name,
-          c.nameLocal,
+          getLocalizedText(c.nameLocal, locale),
           c.japaneseName,
           // Alias in tutte le lingue: si trova "Eremita porcellone" anche da /en.
           ...(c.aliases ?? []).flatMap((a) => (typeof a === 'string' ? [a] : Object.values(a).filter((v): v is string => !!v))),
@@ -238,7 +238,7 @@ export function searchDataset(
         subtitle: f.type,
       },
       {
-        nameCandidates: [f.name, localized, f.nameLocal, f.japaneseName],
+        nameCandidates: [f.name, localized, getLocalizedText(f.nameLocal, locale), f.japaneseName],
         descriptionCandidates: [getLocalizedText(f.description, locale)],
         tags: f.tags,
       },
@@ -295,10 +295,10 @@ export function searchDataset(
         kind: 'nation',
         worldId: n.worldId,
         title: localized || n.name,
-        subtitle: n.nameLocal,
+        subtitle: getLocalizedText(n.nameLocal, locale) || undefined,
       },
       {
-        nameCandidates: [n.name, localized, n.nameLocal, n.japaneseName],
+        nameCandidates: [n.name, localized, getLocalizedText(n.nameLocal, locale), n.japaneseName],
         descriptionCandidates: [getLocalizedText(n.description, locale)],
         tags: n.tags,
       },
