@@ -219,7 +219,7 @@ export function EntityPage({
           label: t('seoPages.fact.abilityCategory'),
           value: c.abilityCategory ? getAbilityCategoryLabel(world, c.abilityCategory, locale) : undefined,
         },
-        { label: t('seoPages.fact.aliases'), value: getLocalizedArray(c.aliases, locale).join(', ') },
+        { label: t('seoPages.fact.aliases'), value: [...new Set(getLocalizedArray(c.aliases, locale))].join(', ') },
         { label: t('seoPages.fact.firstManga'), value: c.firstMangaAppearance },
         { label: t('seoPages.fact.firstAnime'), value: c.firstAnimeAppearance },
       );

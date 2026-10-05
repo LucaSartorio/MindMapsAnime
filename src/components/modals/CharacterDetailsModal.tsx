@@ -224,7 +224,7 @@ export function CharacterDetailsModal({
       )}
       {character.aliases && character.aliases.length > 0 && (
         <p className="text-xs text-ink-400 italic">
-          {t('modals.aliases', { aliases: getLocalizedArray(character.aliases, locale).join(' · ') })}
+          {t('modals.aliases', { aliases: [...new Set(getLocalizedArray(character.aliases, locale))].join(' · ') })}
         </p>
       )}
       <p className="leading-relaxed">
