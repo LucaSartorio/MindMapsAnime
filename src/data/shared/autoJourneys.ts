@@ -1,4 +1,5 @@
 import type { Route, TimelineEvent, WorldDataset } from '@/types';
+import type { SupportedLocale } from '@/types/i18n';
 import { getEntityDisplayName, getLocalizedText } from '@/utils/localization';
 
 /**
@@ -10,6 +11,62 @@ import { getEntityDisplayName, getLocalizedText } from '@/utils/localization';
  */
 const COLORS = ['#f59e0b', '#38bdf8', '#a78bfa', '#34d399', '#f472b6', '#fb7185', '#facc15', '#60a5fa'];
 const MIN_STOPS = 3;
+/** Tag dei cammini derivati (esclusi dagli overlay di traduzione: si rigenerano). */
+export const DERIVED_JOURNEY_TAG = 'cammino-derivato';
+
+/**
+ * Testi dei cammini derivati per lingua. it/en sono generati con il dataset; le
+ * lingue degli overlay (`src/data/shared/translations.ts`) li ricevono da
+ * `localizeCharacterJourneys` dopo che nomi e titoli sono stati tradotti.
+ */
+interface JourneyText {
+  name: (who: string) => string;
+  group: string;
+  description: (who: string, stops: number, from: string, to: string) => string;
+}
+const JOURNEY_TEXT: Partial<Record<SupportedLocale, JourneyText>> = {
+  it: {
+    name: (w) => `Il cammino di ${w}`,
+    group: 'Cammini dei personaggi',
+    description: (w, n, a, b) => `I luoghi della storia di ${w} in ordine cronologico: ${n} tappe, da ${a} a ${b}.`,
+  },
+  en: {
+    name: (w) => `${w}'s journey`,
+    group: 'Character journeys',
+    description: (w, n, a, b) => `The places of ${w}'s story in chronological order: ${n} stops, from ${a} to ${b}.`,
+  },
+  es: {
+    name: (w) => `El camino de ${w}`,
+    group: 'Caminos de los personajes',
+    description: (w, n, a, b) => `Los lugares de la historia de ${w} en orden cronológico: ${n} etapas, de ${a} a ${b}.`,
+  },
+};
+
+/** Riempie in `locale` i testi di un cammino derivato (in place). */
+function fillJourney(route: Route, dataset: WorldDataset, locale: SupportedLocale): void {
+  const tx = JOURNEY_TEXT[locale];
+  if (!tx) return;
+  const who = getEntityDisplayName(dataset.characters.find((c) => c.id === route.protagonistCharacterIds[0]), locale);
+  const place = (id: string) => getEntityDisplayName(dataset.locations.find((l) => l.id === id), locale);
+  const events = new Map(dataset.events.map((e) => [e.id, e]));
+  const first = route.steps[0];
+  const last = route.steps[route.steps.length - 1];
+  const set = (v: unknown, text: string) => {
+    if (v && typeof v === 'object') (v as Partial<Record<SupportedLocale, string>>)[locale] = text;
+  };
+  set(route.localizedName, tx.name(who));
+  set(route.group, tx.group);
+  set(route.description, tx.description(who, route.steps.length, place(first.locationId), place(last.locationId)));
+  for (const step of route.steps) {
+    const ev = step.eventId ? events.get(step.eventId) : undefined;
+    if (ev) set(step.label, getLocalizedText(ev.title, locale));
+  }
+}
+
+/** Rigenera nella lingua di un overlay appena applicato i cammini derivati. */
+export function localizeCharacterJourneys(dataset: WorldDataset, locale: SupportedLocale): void {
+  for (const r of dataset.routes) if (r.tags?.includes(DERIVED_JOURNEY_TAG)) fillJourney(r, dataset, locale);
+}
 
 function hash(s: string): number {
   let h = 0;
@@ -30,23 +87,15 @@ export function withCharacterJourneys<T extends WorldDataset>(dataset: T): T {
     for (const e of mine) if (stops[stops.length - 1]?.locationId !== e.locationId) stops.push(e);
     if (new Set(stops.map((e) => e.locationId)).size < MIN_STOPS) continue;
     const short = c.id.replace(/^char-([a-z]+-)?/, '');
-    const nameIt = getEntityDisplayName(c, 'it');
-    const nameEn = getEntityDisplayName(c, 'en');
-    const place = (e: TimelineEvent, l: 'it' | 'en') => getEntityDisplayName(locById.get(e.locationId!)!, l);
-    const first = stops[0];
-    const last = stops[stops.length - 1];
-    extra.push({
+    const route: Route = {
       id: `route-journey-${short}`,
       slug: `${short}-journey`,
       worldId: dataset.world.id,
       type: 'character',
-      name: `${nameEn}'s journey`,
-      localizedName: { it: `Il cammino di ${nameIt}`, en: `${nameEn}'s journey` },
-      group: { it: 'Cammini dei personaggi', en: 'Character journeys' },
-      description: {
-        it: `I luoghi della storia di ${nameIt} in ordine cronologico: ${stops.length} tappe, da ${place(first, 'it')} a ${place(last, 'it')}.`,
-        en: `The places of ${nameEn}'s story in chronological order: ${stops.length} stops, from ${place(first, 'en')} to ${place(last, 'en')}.`,
-      },
+      name: `${getEntityDisplayName(c, 'en')}'s journey`,
+      localizedName: { it: '', en: '' },
+      group: { it: '', en: '' },
+      description: { it: '', en: '' },
       protagonistCharacterIds: [c.id],
       relatedEventIds: stops.map((e) => e.id),
       relatedArcIds: [...new Set(stops.map((e) => e.arcId).filter((a): a is string => !!a))],
@@ -55,14 +104,18 @@ export function withCharacterJourneys<T extends WorldDataset>(dataset: T): T {
         locationId: e.locationId!,
         eventId: e.id,
         ...(e.arcId ? { arcId: e.arcId } : {}),
-        label: { it: getLocalizedText(e.title, 'it'), en: getLocalizedText(e.title, 'en') },
+        label: { it: '', en: '' },
       })),
       color: COLORS[hash(c.id) % COLORS.length],
       lineStyle: 'dashed',
       canonStatus: 'canon',
       referenceStatus: 'verified',
-      tags: ['cammino-derivato'],
-    });
+      tags: [DERIVED_JOURNEY_TAG],
+    };
+    // Lingue sorgente subito; le altre quando arriva il loro overlay.
+    fillJourney(route, dataset, 'it');
+    fillJourney(route, dataset, 'en');
+    extra.push(route);
   }
   return { ...dataset, routes: [...dataset.routes, ...extra] };
 }

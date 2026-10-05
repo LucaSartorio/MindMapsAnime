@@ -3,7 +3,13 @@ import { Navigate, useLocation, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
 import { findWorldByUrlSlug } from '@/data/worlds';
-import { getLoadedWorldDataset, loadWorldDataset } from '@/data/registry';
+import {
+  ensureWorldTranslation,
+  getLoadedWorldDataset,
+  isWorldTranslationReady,
+  loadWorldDataset,
+} from '@/data/registry';
+import { useLocaleStore } from '@/store/useLocaleStore';
 import { WorldLayout } from '@/components/layout/WorldLayout';
 import { ComingSoonWorldPage } from '@/pages/ComingSoonWorldPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
@@ -55,6 +61,24 @@ export function WorldRoute() {
     slug ? getLoadedWorldDataset(slug) : undefined,
   );
   const [failed, setFailed] = useState(false);
+  // Overlay di traduzione della lingua attiva (es): applicato al dataset prima
+  // di renderizzarne i testi. In idratazione è già pronto (`preloadRoute`).
+  const locale = useLocaleStore((s) => s.locale);
+  const [, setTranslationTick] = useState(0);
+  const translationReady = !slug || isWorldTranslationReady(slug, locale);
+
+  useEffect(() => {
+    if (!slug || translationReady) return;
+    let cancelled = false;
+    ensureWorldTranslation(slug, locale)
+      .catch(() => undefined) // senza overlay i testi ricadono sull'inglese
+      .finally(() => {
+        if (!cancelled) setTranslationTick((n) => n + 1);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [slug, locale, translationReady]);
 
   useEffect(() => {
     if (!slug) return;
@@ -91,7 +115,7 @@ export function WorldRoute() {
     // I mondi "in arrivo" hanno solo la landing.
     return resolved?.page.kind === 'world' ? <ComingSoonWorldPage world={world} /> : <NotFoundPage />;
   }
-  if (!dataset) {
+  if (!dataset || !translationReady) {
     return (
       <div className="flex-1 grid place-items-center text-ink-300 text-sm">
         {t('common.loading')}

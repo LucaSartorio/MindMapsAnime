@@ -12,7 +12,7 @@ import { ErrorBoundary } from '@/components/common/ErrorBoundary';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { findWorldBySlug } from '@/data/worlds';
 import { isSeoLocale, seoLocaleFor } from '@/seo/config';
-import { worldPath } from '@/seo/paths';
+import { worldOfPath, worldPath } from '@/seo/paths';
 import { useIsomorphicLayoutEffect } from '@/lib/useHydrated';
 import { WorldRoute } from './lazyPages';
 
@@ -20,7 +20,7 @@ import { WorldRoute } from './lazyPages';
  * Albero delle rotte (condiviso da client e pre-rendering: il router lo
  * fornisce il chiamante — `BrowserRouter` qui, `StaticRouter` al build).
  *
- * Convenzione URL in docs/SEO.md: tutto vive sotto `/{lang}` (it | en). Le
+ * Convenzione URL in docs/SEO.md: tutto vive sotto `/{lang}` (it | en | es). Le
  * vecchie rotte (`/worlds/...`, `/about`, `/supporta`…) sono rediretti 308
  * da vercel.json; i `<Navigate>` qui sotto coprono dev server e link interni.
  */
@@ -100,17 +100,18 @@ function LazyBoundary({ children }: { children: ReactNode }) {
 /**
  * Rotte sotto `/{lang}`. Allinea la lingua dell'interfaccia a quella dell'URL
  * (senza toccare la preferenza salvata); le lingue UI senza URL propri
- * (ja/fr/de/es) restano attive sugli URL `/en`.
+ * (ja/fr/de, e es sui mondi non ancora tradotti) restano attive sugli URL `/en`.
  */
 function LangRoutes() {
   const { lang } = useParams();
+  const { pathname } = useLocation();
   const ui = useLocaleStore((s) => s.locale);
   const syncLocale = useLocaleStore((s) => s.syncLocale);
   const valid = isSeoLocale(lang);
 
   useIsomorphicLayoutEffect(() => {
-    if (valid && seoLocaleFor(ui) !== lang) syncLocale(lang);
-  }, [valid, lang, ui, syncLocale]);
+    if (valid && seoLocaleFor(ui, worldOfPath(pathname)) !== lang) syncLocale(lang);
+  }, [valid, lang, ui, pathname, syncLocale]);
 
   if (!valid) return <NotFoundPage />;
   return (

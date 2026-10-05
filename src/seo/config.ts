@@ -1,3 +1,4 @@
+import type { AnimeWorld } from '@/types';
 import { SOURCE_LOCALES, LOCALE_FALLBACKS, type SupportedLocale } from '@/types/i18n';
 
 /**
@@ -33,16 +34,20 @@ export const SITE = {
 } as const;
 
 /**
- * Lingue con URL indicizzabili (`/it/...`, `/en/...`).
+ * Lingue con URL propri (`/it/...`, `/en/...`, `/es/...`).
  *
- * Coincidono con le lingue SORGENTE dei dataset (`SOURCE_LOCALES`): solo lì il
- * contenuto narrativo è scritto davvero. Le altre lingue dell'interfaccia
- * (ja/fr/de/es) traducono la UI ma ricadono sull'inglese per i contenuti: dare
- * loro un URL creerebbe pagine quasi-duplicate della versione inglese. Restano
- * quindi una preferenza client-side applicata sugli URL `/en/...`.
+ * - `it`/`en` sono le lingue SORGENTE dei dataset (`SOURCE_LOCALES`): ogni
+ *   mondo esiste in entrambe.
+ * - Le lingue aggiuntive (oggi `es`) hanno home e pagine informative proprie
+ *   (l'interfaccia è tradotta), ma un MONDO esiste in quella lingua solo se il
+ *   suo dataset è tradotto (`AnimeWorld.translatedLocales` + overlay
+ *   `src/data/<slug>/i18n/<lingua>.ts`). Per gli altri mondi i link ricadono
+ *   sulla lingua sorgente della catena di fallback (`/en`): niente pagine
+ *   quasi-duplicate con contenuti solo inglesi sotto `/es`.
+ * - ja/fr/de restano lingue solo-UI applicate sugli URL `/en`.
  */
-export const SEO_LOCALES = SOURCE_LOCALES as readonly SeoLocale[];
-export type SeoLocale = 'it' | 'en';
+export const SEO_LOCALES = ['it', 'en', 'es'] as const satisfies readonly SupportedLocale[];
+export type SeoLocale = (typeof SEO_LOCALES)[number];
 
 /** Lingua `x-default` (fallback internazionale). */
 export const X_DEFAULT_LOCALE: SeoLocale = 'en';
@@ -50,20 +55,28 @@ export const X_DEFAULT_LOCALE: SeoLocale = 'en';
 export const SEO_LOCALE_META: Record<SeoLocale, { hreflang: string; ogLocale: string; htmlLang: string }> = {
   it: { hreflang: 'it', ogLocale: 'it_IT', htmlLang: 'it' },
   en: { hreflang: 'en', ogLocale: 'en_US', htmlLang: 'en' },
+  es: { hreflang: 'es', ogLocale: 'es_ES', htmlLang: 'es' },
 };
 
 export function isSeoLocale(value: string | undefined | null): value is SeoLocale {
   return !!value && (SEO_LOCALES as readonly string[]).includes(value);
 }
 
+/** Il mondo ha pagine in questa lingua URL? (sorgenti sempre, le altre se tradotto). */
+export function worldHasSeoLocale(world: Pick<AnimeWorld, 'translatedLocales'>, lang: SeoLocale): boolean {
+  return (SOURCE_LOCALES as readonly string[]).includes(lang) || !!world.translatedLocales?.includes(lang);
+}
+
 /**
  * Lingua URL corrispondente a una lingua UI: la lingua stessa se ha URL
- * propri, altrimenti la prima della sua catena di fallback che li ha
- * (ja/fr/de/es → en).
+ * propri (e, se è indicato un mondo, se quel mondo è tradotto), altrimenti la
+ * prima della sua catena di fallback che li ha (ja/fr/de → en; es su un
+ * mondo non tradotto → en).
  */
-export function seoLocaleFor(ui: SupportedLocale): SeoLocale {
-  if (isSeoLocale(ui)) return ui;
-  for (const l of LOCALE_FALLBACKS[ui]) if (isSeoLocale(l)) return l;
+export function seoLocaleFor(ui: SupportedLocale, world?: Pick<AnimeWorld, 'translatedLocales'>): SeoLocale {
+  const ok = (l: SupportedLocale): l is SeoLocale => isSeoLocale(l) && (!world || worldHasSeoLocale(world, l));
+  if (ok(ui)) return ui;
+  for (const l of LOCALE_FALLBACKS[ui]) if (ok(l)) return l;
   return X_DEFAULT_LOCALE;
 }
 

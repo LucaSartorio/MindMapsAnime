@@ -12,19 +12,21 @@
  *  - sitemap: nessun duplicato, niente noindex/route tecniche, copertura;
  *  - slug stabili: tutte le entità nel lock pubblicato (`npm run seo:slugs`),
  *    stesso slug in ogni lingua, redirect verso slug vivi;
- *  - localizzazione: nessun testo narrativo senza `{ it, en }`.
+ *  - localizzazione: nessun testo narrativo senza `{ it, en }`;
+ *  - lingue aggiuntive (es): pagine solo per i mondi tradotti, link che
+ *    ricadono su `/en` per gli altri.
  */
 import assert from 'node:assert/strict';
 import type { WorldDataset } from '../src/types';
 import { animeWorlds } from '../src/data/worlds';
-import { hasWorldDataset, loadWorldDataset } from '../src/data/registry';
+import { hasWorldDataset, loadWorldDatasetWithTranslations } from '../src/data/registry';
 import { SEO_CATEGORIES, categoryEntities } from '../src/seo/categories';
 import { getSlugIndex, slugify, RESERVED_SLUGS } from '../src/seo/slug';
-import { absoluteUrl, parseSeoPath, swapLangInPath } from '../src/seo/paths';
+import { absoluteUrl, parseSeoPath, swapLangInPath, worldPath } from '../src/seo/paths';
 import { buildPageMeta, resolveSeoPath, isIndexable } from '../src/seo/metadata';
 import { enumeratePages } from '../src/seo/routes';
 import { buildSitemaps } from '../src/seo/sitemap';
-import { SITE, isTechnicalPath, seoLocaleFor } from '../src/seo/config';
+import { SITE, isTechnicalPath, seoLocaleFor, worldHasSeoLocale } from '../src/seo/config';
 import { auditLocalizable } from '../src/utils/localizableFields';
 
 let passed = 0;
@@ -43,7 +45,7 @@ async function main() {
   const datasets = new Map<string, WorldDataset>();
   for (const w of animeWorlds) {
     if (w.status === 'available' && hasWorldDataset(w.slug)) {
-      const d = await loadWorldDataset(w.slug);
+      const d = await loadWorldDatasetWithTranslations(w.slug);
       if (d) datasets.set(w.slug, d);
     }
   }
@@ -61,12 +63,21 @@ async function main() {
     assert.ok(!RESERVED_SLUGS.has(slugify('Naruto')));
   });
 
-  test('lingua URL per lingua UI (ja/fr/de/es → en)', () => {
+  test('lingua URL per lingua UI (ja/fr/de → en; es → es solo sui mondi tradotti)', () => {
     assert.equal(seoLocaleFor('it'), 'it');
     assert.equal(seoLocaleFor('en'), 'en');
-    for (const l of ['ja', 'fr', 'de', 'es'] as const) assert.equal(seoLocaleFor(l), 'en');
+    assert.equal(seoLocaleFor('es'), 'es');
+    for (const l of ['ja', 'fr', 'de'] as const) assert.equal(seoLocaleFor(l), 'en');
     assert.equal(swapLangInPath('/it/naruto/map', 'en'), '/en/naruto/map');
+    assert.equal(swapLangInPath('/es/naruto/map', 'it'), '/it/naruto/map');
     assert.equal(swapLangInPath('/en', 'it'), '/it');
+    for (const w of animeWorlds) {
+      const es = worldHasSeoLocale(w, 'es');
+      assert.equal(seoLocaleFor('es', w), es ? 'es' : 'en', w.slug);
+      // I link costruiti da una pagina spagnola non puntano mai a un mondo non tradotto in /es.
+      assert.ok(worldPath('es', w).startsWith(es ? '/es/' : '/en/'), `${w.slug}: ${worldPath('es', w)}`);
+      if (!es) assert.equal(resolveSeoPath(`/es/${w.urlSlug ?? w.slug}`, (s) => datasets.get(s)), null, `${w.slug}: /es senza traduzione`);
+    }
   });
 
   test('parser: forme non canoniche e route sconosciute', () => {
@@ -112,11 +123,14 @@ async function main() {
     }
   });
 
-  test('slug indipendenti dalla lingua: la stessa entità ha lo stesso slug in /it e /en', () => {
+  test('slug indipendenti dalla lingua: la stessa entità ha lo stesso slug in /it, /en e /es', () => {
     for (const r of enumeratePages(datasets)) {
       if (r.page.kind !== 'entity' || r.lang !== 'it') continue;
-      const other = resolveSeoPath(swapLangInPath(r.path, 'en'), (s) => datasets.get(s));
-      assert.ok(other && other.page.kind === 'entity' && other.page.id === r.page.id, `${r.path}: controparte /en diversa`);
+      for (const lang of ['en', 'es'] as const) {
+        if (!worldHasSeoLocale(r.page.dataset.world, lang)) continue;
+        const other = resolveSeoPath(swapLangInPath(r.path, lang), (s) => datasets.get(s));
+        assert.ok(other && other.page.kind === 'entity' && other.page.id === r.page.id, `${r.path}: controparte /${lang} diversa`);
+      }
     }
   });
 
@@ -138,6 +152,7 @@ async function main() {
     const seen = new Set<string>();
     for (const r of pages) {
       assert.ok(!seen.has(r.path), `path duplicato ${r.path}`);
+      assert.ok(r.path === `/${r.lang}` || r.path.startsWith(`/${r.lang}/`), `lingua del path ≠ ${r.lang}: ${r.path}`);
       seen.add(r.path);
       assert.equal(r.path, r.path.toLowerCase(), `path non minuscolo ${r.path}`);
       assert.ok(!/\/$/.test(r.path) && !/[?#]/.test(r.path), `path non canonico ${r.path}`);

@@ -1,6 +1,6 @@
 import type { AnimeWorld, WorldDataset } from '@/types';
 import { findWorldByUrlSlug, getWorldUrlSlug } from '@/data/worlds';
-import { SITE, isSeoLocale, type SeoLocale } from './config';
+import { SEO_LOCALES, SITE, isSeoLocale, seoLocaleFor, type SeoLocale } from './config';
 import { isSeoCategory, type SeoCategory } from './categories';
 import { entitySlug } from './slug';
 
@@ -27,7 +27,14 @@ const worldOf = (w: WorldLike): AnimeWorld => ('world' in w ? w.world : w);
 
 export const homePath = (lang: SeoLocale) => `/${lang}`;
 export const staticPagePath = (lang: SeoLocale, page: StaticPage) => `/${lang}/${page}`;
-export const worldPath = (lang: SeoLocale, w: WorldLike) => `/${lang}/${getWorldUrlSlug(worldOf(w))}`;
+/**
+ * Lingua URL effettiva di un mondo: `lang` se il mondo esiste in quella lingua,
+ * altrimenti la sua lingua di fallback (`/es` su un mondo non tradotto → `/en`).
+ * Tutti i path di mondo passano di qui, quindi un link costruito da una pagina
+ * spagnola verso un mondo non tradotto non punta mai a una pagina inesistente.
+ */
+export const worldLang = (lang: SeoLocale, w: WorldLike): SeoLocale => seoLocaleFor(lang, worldOf(w));
+export const worldPath = (lang: SeoLocale, w: WorldLike) => `/${worldLang(lang, w)}/${getWorldUrlSlug(worldOf(w))}`;
 export const mapPath = (lang: SeoLocale, w: WorldLike) => `${worldPath(lang, w)}/map`;
 export const timelinePath = (lang: SeoLocale, w: WorldLike, page = 1) =>
   `${worldPath(lang, w)}/timeline${page > 1 ? `/page/${page}` : ''}`;
@@ -66,9 +73,11 @@ export function absoluteUrl(path: string): string {
   return `${SITE.origin}${clean}`;
 }
 
+const LANG_PREFIX = new RegExp(`^/(${SEO_LOCALES.join('|')})(?=/|$)`);
+
 /** Sostituisce il prefisso di lingua di un path (per il selettore lingua / hreflang). */
 export function swapLangInPath(path: string, lang: SeoLocale): string {
-  const m = /^\/(it|en)(?=\/|$)/.exec(path);
+  const m = LANG_PREFIX.exec(path);
   return m ? `/${lang}${path.slice(m[0].length)}` : `/${lang}`;
 }
 
@@ -76,6 +85,12 @@ export function swapLangInPath(path: string, lang: SeoLocale): string {
 export function langFromPath(path: string): SeoLocale | undefined {
   const seg = path.split('/')[1];
   return isSeoLocale(seg) ? seg : undefined;
+}
+
+/** Mondo dell'URL (qualunque sottopagina), se il path ne indica uno. */
+export function worldOfPath(pathname: string): AnimeWorld | undefined {
+  const p = parseSeoPath(pathname);
+  return 'world' in p ? p.world : undefined;
 }
 
 /* ----------------------------- Parsing ----------------------------- */

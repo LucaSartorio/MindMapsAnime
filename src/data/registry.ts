@@ -1,5 +1,7 @@
 import type { WorldDataset } from '@/types';
+import type { SupportedLocale } from '@/types/i18n';
 import { withCharacterJourneys } from '@/data/shared/autoJourneys';
+import { applyTranslations, type TranslationOverlay } from '@/data/shared/translations';
 
 /**
  * Registro dei WorldDataset disponibili — caricamento LAZY per-mondo.
@@ -72,4 +74,67 @@ export function loadWorldDataset(
 /** Accesso sincrono a un dataset GIÀ caricato (altrimenti `undefined`). */
 export function getLoadedWorldDataset(slug: string): WorldDataset | undefined {
   return loadedDatasets.get(slug);
+}
+
+/* ------------------------- Traduzioni (overlay) ------------------------- */
+
+/**
+ * Overlay di traduzione per mondo e lingua NON sorgente (vedi
+ * `src/data/shared/translations.ts`). Chunk lazy separati dal dataset: chi
+ * naviga in italiano o inglese non scarica le traduzioni. Un overlay può
+ * esistere prima che il mondo sia pubblicato in quella lingua
+ * (`AnimeWorld.translatedLocales`): intanto serve a chi usa l'interfaccia in
+ * quella lingua sugli URL `/en`.
+ */
+const worldTranslationLoaders: Record<string, Partial<Record<SupportedLocale, () => Promise<TranslationOverlay>>>> = {
+  naruto: { es: () => import('@/data/naruto/i18n/es').then((m) => m.default) },
+};
+
+const appliedTranslations = new Set<string>();
+/** Overlay che non è stato possibile caricare (rete): i testi ricadono sull'inglese. */
+const failedTranslations = new Set<string>();
+const inflightTranslations = new Map<string, Promise<void>>();
+const tKey = (slug: string, locale: SupportedLocale) => `${slug}:${locale}`;
+
+/** Lingue con un overlay registrato per il mondo. */
+export function worldTranslationLocales(slug: string): SupportedLocale[] {
+  return Object.keys(worldTranslationLoaders[slug] ?? {}) as SupportedLocale[];
+}
+
+/** Il dataset (già caricato) è pronto per `locale`? Vero se non serve alcun overlay. */
+export function isWorldTranslationReady(slug: string, locale: SupportedLocale): boolean {
+  const key = tKey(slug, locale);
+  return !worldTranslationLoaders[slug]?.[locale] || appliedTranslations.has(key) || failedTranslations.has(key);
+}
+
+/**
+ * Carica e applica (una volta) l'overlay `locale` al dataset del mondo,
+ * caricando il dataset se serve. No-op se l'overlay non esiste.
+ */
+export function ensureWorldTranslation(slug: string, locale: SupportedLocale): Promise<void> {
+  const loader = worldTranslationLoaders[slug]?.[locale];
+  const key = tKey(slug, locale);
+  if (!loader || appliedTranslations.has(key)) return Promise.resolve();
+  const pending = inflightTranslations.get(key);
+  if (pending) return pending;
+  const promise = Promise.all([loadWorldDataset(slug), loader()])
+    .then(([dataset, overlay]) => {
+      if (dataset) applyTranslations(dataset, locale, overlay);
+      appliedTranslations.add(key);
+      inflightTranslations.delete(key);
+    })
+    .catch((err) => {
+      inflightTranslations.delete(key);
+      failedTranslations.add(key);
+      throw err;
+    });
+  inflightTranslations.set(key, promise);
+  return promise;
+}
+
+/** Dataset con TUTTI i suoi overlay applicati (pre-rendering, script, test). */
+export async function loadWorldDatasetWithTranslations(slug: string): Promise<WorldDataset | undefined> {
+  const dataset = await loadWorldDataset(slug);
+  if (dataset) await Promise.all(worldTranslationLocales(slug).map((l) => ensureWorldTranslation(slug, l)));
+  return dataset;
 }

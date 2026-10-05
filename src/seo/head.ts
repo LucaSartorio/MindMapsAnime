@@ -37,8 +37,9 @@ export function buildHeadTags(meta: PageMeta): HeadTag[] {
   ];
   if (meta.canonical) og.splice(4, 0, ['og:url', meta.canonical]);
   for (const [property, content] of og) tags.push({ tag: 'meta', attrs: { property, content } });
+  // Solo le lingue in cui la pagina esiste davvero (le stesse dell'hreflang).
   for (const l of SEO_LOCALES) {
-    if (l !== meta.lang) {
+    if (l !== meta.lang && meta.alternates.some((a) => a.hreflang === SEO_LOCALE_META[l].hreflang)) {
       tags.push({ tag: 'meta', attrs: { property: 'og:locale:alternate', content: SEO_LOCALE_META[l].ogLocale } });
     }
   }

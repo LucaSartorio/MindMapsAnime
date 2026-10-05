@@ -107,6 +107,10 @@ const CHECKS: Check[] = [
   { path: '/it/one-piece/locations/page/2', anyOf: ['One Piece'], selector: 'main article a[href^="/it/one-piece/locations/"]', minCount: 20, hydrated: true },
   { path: '/en/naruto/timeline', anyOf: ['Naruto'], selector: 'li[id^="event-"]', minCount: 10, hydrated: true },
   { path: '/en/about', anyOf: ['AniMapVerse'] },
+  // Spagnolo: home e pagine dei mondi tradotti (overlay applicato prima dell'idratazione).
+  { path: '/es', anyOf: ['AniMapVerse'], selector: 'a[href^="/es/naruto"]', minCount: 1, hydrated: true },
+  { path: '/es/naruto/characters/itachi-uchiha', anyOf: ['Genio Uchiha'], selector: 'nav[aria-label] ol li', minCount: 3, hydrated: true },
+  { path: '/es/naruto/map', anyOf: ['Naruto'], selector: '.react-flow__node', minCount: 10 },
 ];
 
 async function main() {
@@ -223,6 +227,32 @@ async function main() {
       const ok = page.url().endsWith('/it/naruto/characters/itachi-uchiha');
       if (!ok) failures += 1;
       console.log(`${ok ? '✓' : '✗'} cambio lingua EN → IT: ${page.url().replace(BASE, '')}`);
+    }
+
+    // Spagnolo: su un mondo tradotto si passa a /es; su uno non tradotto si
+    // resta su /en con l'interfaccia in spagnolo (nessuna pagina /es inesistente).
+    {
+      await page.goto(`${BASE}/en/naruto/characters/itachi-uchiha`, { waitUntil: 'networkidle', timeout: 30_000 });
+      await page.getByRole('button', { name: /change language|cambia lingua/i }).first().click();
+      await page.getByRole('option', { name: /español/i }).first().click();
+      await page.waitForURL('**/es/naruto/characters/itachi-uchiha', { timeout: 8_000 }).catch(() => {});
+      await page.getByText('Genio Uchiha').first().waitFor({ timeout: 8_000 }).catch(() => {});
+      const okEs = page.url().endsWith('/es/naruto/characters/itachi-uchiha') && (await page.getByText('Genio Uchiha').count()) > 0;
+      if (!okEs) failures += 1;
+      console.log(`${okEs ? '✓' : '✗'} cambio lingua EN → ES (mondo tradotto): ${page.url().replace(BASE, '')}`);
+
+      // La preferenza ES è salvata: su /en/bleach l'interfaccia resta già in spagnolo.
+      await page.goto(`${BASE}/en/bleach`, { waitUntil: 'networkidle', timeout: 30_000 });
+      await page.getByRole('button', { name: /change language|cambia lingua|cambiar idioma/i }).first().click();
+      await page.getByRole('option', { name: /español/i }).first().click();
+      await page.waitForTimeout(800);
+      const lang = await page.evaluate(() => document.documentElement.lang);
+      const homeHref = await page.locator('header a[href="/es"]').count();
+      const okStay = new URL(page.url()).pathname === '/en/bleach' && homeHref > 0;
+      if (!okStay) failures += 1;
+      console.log(`${okStay ? '✓' : '✗'} ES su mondo non tradotto resta su ${new URL(page.url()).pathname} (html lang=${lang}, link home /es: ${homeHref})`);
+      // La scelta è persistita: torniamo all'inglese per non influenzare i check successivi.
+      await page.evaluate(() => localStorage.setItem('animeInteractiveMaps.locale', 'en'));
     }
 
     // Interazione: cliccare una card personaggio deve aprire il modale

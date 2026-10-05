@@ -1,6 +1,7 @@
 import { lazyWithPreload } from '@/lib/lazyWithPreload';
 import { parseSeoPath } from '@/seo/paths';
-import { loadWorldDataset } from '@/data/registry';
+import { ensureWorldTranslation, loadWorldDataset } from '@/data/registry';
+import type { SupportedLocale } from '@/types/i18n';
 import { useWorldStore } from '@/store/useWorldStore';
 
 /**
@@ -42,7 +43,7 @@ const WORLD_PAGE_CHUNKS = [CharactersPage, ClansAndFactionsPage, StoryArcsPage, 
  * Non precarica la mappa interattiva: sulla rotta /map il primo render mostra
  * l'anteprima statica pre-renderizzata e React Flow arriva subito dopo.
  */
-export async function preloadRoute(pathname: string): Promise<void> {
+export async function preloadRoute(pathname: string, locale?: SupportedLocale): Promise<void> {
   const parsed = parseSeoPath(pathname);
   if (parsed.kind === 'unknown' || parsed.kind === 'home' || parsed.kind === 'static') return;
   const tasks: Promise<unknown>[] = [WorldRoute.preload()];
@@ -55,6 +56,9 @@ export async function preloadRoute(pathname: string): Promise<void> {
         if (dataset) useWorldStore.setState({ worldSlug: world.slug, dataset });
       }),
     );
+    // Overlay di traduzione della lingua del primo render (es): il primo render
+    // client deve già mostrare i testi tradotti dell'HTML statico.
+    if (locale) tasks.push(ensureWorldTranslation(world.slug, locale));
     if (parsed.kind === 'category') {
       const archive: Record<string, { preload: () => Promise<void> }> = {
         characters: CharactersPage,

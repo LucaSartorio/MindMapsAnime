@@ -18,6 +18,7 @@
 import type { WorldDataset } from '@/types';
 import { DEFAULT_LOCALE, SUPPORTED_LOCALES, type SupportedLocale } from '@/types/i18n';
 import { auditLocalizable } from '@/utils/localizableFields';
+import { looksLocalizable } from '@/data/shared/translations';
 import { it as itResources } from '@/i18n/resources/it';
 import { en as enResources } from '@/i18n/resources/en';
 import { ja as jaResources } from '@/i18n/resources/ja';
@@ -178,14 +179,6 @@ function emptyRow(kind: string): CoverageRow {
   const translated = {} as Record<SupportedLocale, number>;
   for (const loc of SUPPORTED_LOCALES) translated[loc] = 0;
   return { kind, entities: 0, fields: 0, translated };
-}
-
-/** Vero se l'oggetto è un `Localizable` (solo chiavi lingua, valori stringa). */
-function looksLocalizable(value: object): boolean {
-  const entries = Object.entries(value);
-  if (entries.length === 0) return false;
-  if (!SUPPORTED_LOCALES.some((l) => l in value)) return false;
-  return entries.every(([, v]) => typeof v === 'string' || v === undefined);
 }
 
 /** Accumula in `row` tutti i `Localizable` raggiungibili da `node`. */
