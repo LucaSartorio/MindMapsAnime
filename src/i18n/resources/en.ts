@@ -443,6 +443,8 @@ export const en = {
       squad: 'Squads',
       race: 'Races',
       concept: 'Concepts',
+      division: 'Divisions',
+      school: 'Schools',
     },
     empty: 'No clan or faction',
     emptyDescription: 'No results for the current filters.',

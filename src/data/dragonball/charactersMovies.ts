@@ -91,7 +91,7 @@ export const dragonballCharactersMovies: Character[] = [
     enemies: ['char-dbz-goku'],
     arcIds: ['arc-dbz-movie-super-android-13'],
     shortDescription: {
-      it: "Film: androide creato dal computer del Dr. Gero con l'unico scopo di uccidere Goku; assorbendo C-14 e C-15 diventa Super Androide C-13.",
+      it: "Film: androide creato dal computer del Dottor Gelo con l'unico scopo di uccidere Goku; assorbendo C-14 e C-15 diventa Super Androide C-13.",
       en: "Movie: an android created by Dr. Gero's computer with the sole purpose of killing Goku; by absorbing 14 and 15 he becomes Super Android 13.",
     },
     status: 'deceased',
@@ -113,7 +113,7 @@ export const dragonballCharactersMovies: Character[] = [
     enemies: ['char-dbz-gohan'],
     arcIds: ['arc-dbz-movie-bojack'],
     shortDescription: {
-      it: "Film: pirata spaziale galattico sigillato dai Kaiō, liberatosi alla morte di Re Kaiō; affronta i Guerrieri Z in un torneo ed è fermato da Gohan Super Saiyan 2.",
+      it: "Film: pirata spaziale galattico sigillato dai Kaiō, liberatosi alla morte di Re Kaioh; affronta i Guerrieri Z in un torneo ed è fermato da Gohan Super Saiyan 2.",
       en: "Movie: a galactic space pirate sealed by the Kais, freed upon King Kai's death; he faces the Z Fighters at a tournament and is stopped by Super Saiyan 2 Gohan.",
     },
     status: 'deceased',

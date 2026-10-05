@@ -6,6 +6,8 @@ import {
   getChakraNatureLabel,
   getCharacterImportanceLabel,
   getCharacterStatusLabel,
+  getLocalizedAliases,
+  getLocalizedArray,
   getLocalizedText,
   getRaceLabel,
   getTransformationKindLabel,
@@ -159,7 +161,7 @@ export function CharacterDetailsModal({
             </Badge>
           )}
           {character.rank && (
-            <Badge className="capitalize">{character.rank}</Badge>
+            <Badge className="capitalize">{getLocalizedText(character.rank, locale)}</Badge>
           )}
           {character.importance && (
             <Badge>{getCharacterImportanceLabel(character.importance, locale)}</Badge>
@@ -218,12 +220,12 @@ export function CharacterDetailsModal({
     >
       {character.nameLocal && (
         <p className="text-xs text-ink-300 italic -mt-2">
-          {character.nameLocal}
+          {getLocalizedText(character.nameLocal, locale)}
         </p>
       )}
-      {character.aliases && character.aliases.length > 0 && (
+      {getLocalizedAliases(character, locale).length > 0 && (
         <p className="text-xs text-ink-400 italic">
-          {t('modals.aliases', { aliases: character.aliases.join(' · ') })}
+          {t('modals.aliases', { aliases: getLocalizedAliases(character, locale).join(' · ') })}
         </p>
       )}
       <p className="leading-relaxed">
@@ -324,7 +326,7 @@ export function CharacterDetailsModal({
       {(character.abilities ?? []).length > 0 && (
         <Section title={t("modals.abilities")}>
           <div className="flex flex-wrap gap-1.5">
-            {character.abilities!.map((a) => (
+            {getLocalizedArray(character.abilities, locale).map((a) => (
               <Badge key={a} variant="ember">
                 {a}
               </Badge>
@@ -336,7 +338,7 @@ export function CharacterDetailsModal({
       {(character.kekkeiGenkai ?? []).length > 0 && (
         <Section title={t("modals.kekkeiGenkai")}>
           <div className="flex flex-wrap gap-1.5">
-            {character.kekkeiGenkai!.map((k) => (
+            {getLocalizedArray(character.kekkeiGenkai, locale).map((k) => (
               <Badge key={k} variant="danger">
                 {k}
               </Badge>

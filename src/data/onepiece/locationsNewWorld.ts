@@ -210,7 +210,7 @@ export const onepieceLocationsNewWorld: Location[] = [
     x: 1740,
     y: 486,
     shortDescription: {
-      it: "Isola invernale del New World, terra natale del genio Vegapunk e luogo dove Franky si ricostruì il corpo durante i due anni di separazione.",
+      it: "Isola invernale del Nuovo Mondo, terra natale del genio Vegapunk e luogo dove Franky si ricostruì il corpo durante i due anni di separazione.",
       en: "A winter island of the New World, birthplace of the genius Vegapunk and the place where Franky rebuilt his body during the two-year separation.",
     },
     nationId: 'nation-op-grand-line-new-world',
@@ -267,7 +267,7 @@ export const onepieceLocationsNewWorld: Location[] = [
     x: 1683,
     y: 472,
     shortDescription: {
-      it: "Isola rosa del New World, sede della «Newkama Land», il regno sotterraneo degli okama fondato da Emporio Ivankov.",
+      it: "Isola rosa del Nuovo Mondo, sede della «Newkama Land», il regno sotterraneo degli okama fondato da Emporio Ivankov.",
       en: "A pink New World island, home of 'Newkama Land', the underground okama realm founded by Emporio Ivankov.",
     },
     nationId: 'nation-op-grand-line-new-world',
@@ -305,7 +305,7 @@ export const onepieceLocationsNewWorld: Location[] = [
     x: 193,
     y: 480,
     shortDescription: {
-      it: "Regno del New World presso il confine occidentale della mappa.",
+      it: "Regno del Nuovo Mondo presso il confine occidentale della mappa.",
       en: 'A New World kingdom near the western edge of the map.',
     },
     nationId: 'nation-op-grand-line-new-world',
@@ -324,7 +324,7 @@ export const onepieceLocationsNewWorld: Location[] = [
     x: 47,
     y: 472,
     shortDescription: {
-      it: "Il nuovo quartier generale della Marina nel New World, già base G-1, trasferito qui dopo la Guerra al Vertice per fronteggiare gli Imperatori.",
+      it: "Il nuovo quartier generale della Marina nel Nuovo Mondo, già base G-1, trasferito qui dopo la Guerra al Vertice per fronteggiare gli Imperatori.",
       en: 'The new Marine Headquarters in the New World, formerly base G-1, relocated here after the Summit War to face the Emperors.',
     },
     nationId: 'nation-op-grand-line-new-world',
@@ -343,7 +343,7 @@ export const onepieceLocationsNewWorld: Location[] = [
     x: 100,
     y: 503,
     shortDescription: {
-      it: "Isola del New World ai margini occidentali della mappa.",
+      it: "Isola del Nuovo Mondo ai margini occidentali della mappa.",
       en: 'A New World island at the western edge of the map.',
     },
     nationId: 'nation-op-grand-line-new-world',
@@ -362,7 +362,7 @@ export const onepieceLocationsNewWorld: Location[] = [
     x: 116,
     y: 508,
     shortDescription: {
-      it: "Isola del New World presso il confine occidentale della mappa.",
+      it: "Isola del Nuovo Mondo presso il confine occidentale della mappa.",
       en: 'A New World island near the western edge of the map.',
     },
     nationId: 'nation-op-grand-line-new-world',
@@ -381,7 +381,7 @@ export const onepieceLocationsNewWorld: Location[] = [
     x: 744,
     y: 489,
     shortDescription: {
-      it: "Isola del New World nei pressi di Wano ed Elbaf, lungo le rotte battute dagli equipaggi diretti verso la seconda metà della Rotta Maggiore.",
+      it: "Isola del Nuovo Mondo nei pressi di Wano ed Elbaf, lungo le rotte battute dagli equipaggi diretti verso la seconda metà della Rotta Maggiore.",
       en: 'A New World island near Wano and Elbaf, along the routes traveled by crews heading into the second half of the Grand Line.',
     },
     nationId: 'nation-op-grand-line-new-world',

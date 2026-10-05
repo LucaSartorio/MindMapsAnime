@@ -1,0 +1,52 @@
+import type { SourceNames } from '@/data/shared/translations';
+
+/**
+ * Nomi it/en che differiscono dal `name` dei dati o lo correggono (doppiaggi ed
+ * edizioni ufficiali): personaggi, epiteti, gradi, clan, tecniche, luoghi.
+ * Chiavi = quelle degli overlay (vedi `withSourceNames`, docs/I18N.md).
+ */
+export const bleachNames: SourceNames = {
+  "locations[loc-bl-aaroniero-palace].localizedName": { it: "Palazzo di Aaroniero (Noveno)", en: "Aaroniero's palace (Noveno)" },
+  "characters[char-bl-ichigo].aliases[0]": { it: "Sostituto Shinigami", en: "Substitute Soul Reaper" },
+  "characters[char-bl-ichigo].aliases[1]": { it: "Sostituto Shinigami", en: "Substitute Soul Reaper" },
+  "characters[char-bl-urahara].aliases[0]": { it: "Signor Cappello-e-Zoccoli", en: "Mr. Hat-and-Clogs" },
+  "characters[char-bl-urahara].aliases[1]": { it: "Signor Cappello-e-Zoccoli", en: "Mr. Hat-and-Clogs" },
+  "characters[char-bl-yoruichi].aliases[0]": { it: "La Dea della Velocità", en: "Flash Goddess" },
+  "characters[char-bl-yoruichi].aliases[1]": { it: "La Dea della Velocità", en: "Flash Goddess" },
+  "characters[char-bl-yamamoto].aliases[1]": { it: "Capitano generale", en: "Captain-Commander" },
+  "characters[char-bl-unohana].aliases[1]": { it: "Il primo Kenpachi", en: "The first Kenpachi" },
+  "characters[char-bl-barragan].aliases[1]": { it: "Re di Hueco Mundo", en: "King of Hueco Mundo" },
+  "characters[char-bl-harribel].aliases[1]": { it: "Regina di Hueco Mundo", en: "Queen of Hueco Mundo" },
+  "characters[char-bl-nelliel].aliases[1]": { it: "Ex Tercera Espada", en: "Former Tercera Espada" },
+  "characters[char-bl-yhwach].aliases[0]": { it: "Re dei Quincy", en: "King of the Quincy" },
+  "characters[char-bl-yhwach].aliases[1]": { it: "Il Padre dei Quincy", en: "The Father of the Quincy" },
+  "characters[char-bl-yhwach].aliases[2]": { it: "Imperatore del Wandenreich", en: "Emperor of the Wandenreich" },
+  "characters[char-bl-haschwalth].aliases[0]": { it: "Gran Maestro degli Sternritter", en: "Grand Master of the Sternritter" },
+  "characters[char-bl-haschwalth].aliases[1]": { it: "Sternritter «B»", en: "Sternritter \"B\"" },
+  "characters[char-bl-bambietta].aliases[0]": { it: "Sternritter «E»", en: "Sternritter \"E\"" },
+  "characters[char-bl-askin].aliases[0]": { it: "Sternritter «D»", en: "Sternritter \"D\"" },
+  "characters[char-bl-bazz-b].aliases[0]": { it: "Sternritter «H»", en: "Sternritter \"H\"" },
+  "characters[char-bl-lille-barro].aliases[0]": { it: "Sternritter «X»", en: "Sternritter \"X\"" },
+  "characters[char-bl-gerard].aliases[0]": { it: "Sternritter «M»", en: "Sternritter \"M\"" },
+  "characters[char-bl-pernida].aliases[0]": { it: "Sternritter «C»", en: "Sternritter \"C\"" },
+  "characters[char-bl-as-nodt].aliases[0]": { it: "Sternritter «F»", en: "Sternritter \"F\"" },
+  "characters[char-bl-quilge].aliases[0]": { it: "Sternritter «J»", en: "Sternritter \"J\"" },
+  "characters[char-bl-quilge].aliases[1]": { it: "Il Carceriere", en: "The Jailer" },
+  "characters[char-bl-mask].aliases[0]": { it: "Sternritter «S»", en: "Sternritter \"S\"" },
+  "characters[char-bl-cang-du].aliases[0]": { it: "Sternritter «I»", en: "Sternritter \"I\"" },
+  "characters[char-bl-bg9].aliases[0]": { it: "Sternritter «K»", en: "Sternritter \"K\"" },
+  "characters[char-bl-driscoll].aliases[0]": { it: "Sternritter «O»", en: "Sternritter \"O\"" },
+  "characters[char-bl-royd].aliases[0]": { it: "Sternritter «Y»", en: "Sternritter \"Y\"" },
+  "characters[char-bl-gremmy].aliases[0]": { it: "Sternritter «V»", en: "Sternritter \"V\"" },
+  "characters[char-bl-candice].aliases[0]": { it: "Sternritter «T»", en: "Sternritter \"T\"" },
+  "characters[char-bl-liltotto].aliases[0]": { it: "Sternritter «G»", en: "Sternritter \"G\"" },
+  "characters[char-bl-giselle].aliases[0]": { it: "Sternritter «Z»", en: "Sternritter \"Z\"" },
+  "characters[char-bl-meninas].aliases[0]": { it: "Sternritter «P»", en: "Sternritter \"P\"" },
+  "jutsu[zan-bl-mugetsu].name": { it: "Mugetsu (Ultimo Getsuga Tenshō)", en: "Mugetsu (Final Getsuga Tenshō)" },
+  "jutsu[zan-bl-hado].name": { it: "Hadō (Via della Distruzione)", en: "Hadō (Way of Destruction)" },
+  "jutsu[zan-bl-bakudo].name": { it: "Bakudō (Via del Vincolo)", en: "Bakudō (Way of Binding)" },
+  "jutsu[zan-bl-kaido].name": { it: "Kaidō (guarigione)", en: "Kaidō (healing)" },
+  "jutsu[zan-bl-shunpo].name": { it: "Shunpo (Passo Lampo)", en: "Shunpo (Flash Step)" },
+  "jutsu[zan-bl-hollowfication].name": { it: "Hollowificazione (maschera Hollow)", en: "Hollowfication (Hollow mask)" },
+  "jutsu[zan-bl-ichigo-fullbring].name": { it: "Il Fullbring di Ichigo", en: "Ichigo's Fullbring" },
+};

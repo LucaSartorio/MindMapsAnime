@@ -295,8 +295,8 @@ export const blackcloverFactions: Faction[] = [
     localizedName: { it: 'Il Terzo Occhio', en: 'The Third Eye' },
     japaneseName: '三つ目',
     description: {
-      it: "I tre elfi più forti dell'Occhio Magico della Notte Bianca: Rhya lo Sleale, Vetto della Disperazione e Fana la Senza Amore.",
-      en: 'The three strongest elves of the Eye of the Midnight Sun: Rhya the Disloyal, Vetto the Despair and Fana the Loveless.',
+      it: "I tre elfi più forti dell'Occhio Magico della Notte Bianca: Rhya lo Sleale, Vetto della Disperazione e Fana la Rancorosa.",
+      en: 'The three strongest elves of the Eye of the Midnight Sun: Rhya the Disloyal, Vetto the Despair and Fana the Hateful.',
     },
     characterIds: ['char-bc-rhya', 'char-bc-vetto', 'char-bc-fana-elf'],
     arcIds: ['arc-bc-eye-midnight-sun', 'arc-bc-seabed-temple', 'arc-bc-witches-forest', 'arc-bc-elf-reincarnation'],

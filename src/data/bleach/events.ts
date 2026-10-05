@@ -176,9 +176,9 @@ export const bleachEvents: TimelineEvent[] = [
   }),
   ev({
     id: 'evt-bl-ginjo-first-substitute',
-    title: { it: 'Il primo Shinigami sostituto', en: 'The first Substitute Soul Reaper' },
+    title: { it: 'Il primo Sostituto Shinigami', en: 'The first Substitute Soul Reaper' },
     description: {
-      it: "Anni prima di Ichigo, Kūgo Ginjō riceve da Ukitake il distintivo di Shinigami sostituto. Scoperto che serve anche a sorvegliarlo, si ribella, uccide alcuni Shinigami e scompare.",
+      it: "Anni prima di Ichigo, Kūgo Ginjō riceve da Ukitake il distintivo di Sostituto Shinigami. Scoperto che serve anche a sorvegliarlo, si ribella, uccide alcuni Shinigami e scompare.",
       en: 'Years before Ichigo, Kūgo Ginjō receives the Substitute Soul Reaper badge from Ukitake. On discovering it also serves to watch him, he rebels, kills some Soul Reapers and disappears.',
     },
     period: P.decades,
@@ -685,9 +685,9 @@ export const bleachEvents: TimelineEvent[] = [
   }),
   ev({
     id: 'evt-bl-substitute-badge',
-    title: { it: 'Il distintivo di Shinigami sostituto', en: 'The Substitute Soul Reaper badge' },
+    title: { it: 'Il distintivo di Sostituto Shinigami', en: 'The Substitute Soul Reaper badge' },
     description: {
-      it: "Prima che Ichigo torni a casa, Ukitake gli consegna il distintivo di Shinigami sostituto, riconoscendolo ufficialmente. Rukia sceglie di restare nella Soul Society.",
+      it: "Prima che Ichigo torni a casa, Ukitake gli consegna il distintivo di Sostituto Shinigami, riconoscendolo ufficialmente. Rukia sceglie di restare nella Soul Society.",
       en: 'Before Ichigo heads home, Ukitake hands him the Substitute Soul Reaper badge, officially recognising him. Rukia chooses to stay in the Soul Society.',
     },
     period: P.soulSociety,
@@ -1310,7 +1310,7 @@ export const bleachEvents: TimelineEvent[] = [
     id: 'evt-bl-fullbring-stolen',
     title: { it: 'Ginjō ruba il Fullbring', en: 'Ginjō steals the Fullbring' },
     description: {
-      it: "Quando Ichigo completa il suo Fullbring, Ginjō e Tsukishima glielo strappano e lo distribuiscono ai Fullbringer. Ginjō rivela di essere il primo Shinigami sostituto.",
+      it: "Quando Ichigo completa il suo Fullbring, Ginjō e Tsukishima glielo strappano e lo distribuiscono ai Fullbringer. Ginjō rivela di essere il primo Sostituto Shinigami.",
       en: "Once Ichigo completes his Fullbring, Ginjō and Tsukishima tear it from him and share it among the Fullbringers. Ginjō reveals he is the first Substitute Soul Reaper.",
     },
     period: P.fullbring,

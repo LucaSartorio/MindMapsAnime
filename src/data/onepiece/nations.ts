@@ -82,10 +82,10 @@ export const onepieceNations: Nation[] = [
     id: 'nation-op-grand-line-paradise',
     worldId: 'world-onepiece',
     name: 'Grand Line — Paradise',
-    localizedName: { it: 'Grand Line — Paradise', en: 'Grand Line — Paradise' },
+    localizedName: { it: 'Grand Line — Paradiso', en: 'Grand Line — Paradise' },
     type: 'neutral_land',
     description: {
-      it: 'La prima metà della Grand Line, da Reverse Mountain fino alla Red Line. Soprannominata "Paradise" con ironia dagli abitanti del New World: comprende Whisky Peak, Little Garden, Drum Island, Alabasta, Jaya, Skypiea, Water Seven, Enies Lobby, Thriller Bark e l\'Arcipelago Sabaody.',
+      it: 'La prima metà della Grand Line, da Reverse Mountain fino alla Red Line. Soprannominata "Paradiso" con ironia dagli abitanti del Nuovo Mondo: comprende Whisky Peak, Little Garden, Isola di Drum, Alabasta, Jaya, Skypiea, Water Seven, Enies Lobby, Thriller Bark e l\'Arcipelago Sabaody.',
       en: 'The first half of the Grand Line, from Reverse Mountain to the Red Line. Ironically nicknamed "Paradise" by New World dwellers: it includes Whisky Peak, Little Garden, Drum Island, Alabasta, Jaya, Skypiea, Water Seven, Enies Lobby, Thriller Bark and the Sabaody Archipelago.',
     },
     canonStatus: 'canon',
@@ -98,7 +98,7 @@ export const onepieceNations: Nation[] = [
     id: 'nation-op-grand-line-new-world',
     worldId: 'world-onepiece',
     name: 'Grand Line — New World',
-    localizedName: { it: 'Grand Line — New World', en: 'Grand Line — New World' },
+    localizedName: { it: 'Grand Line — Nuovo Mondo', en: 'Grand Line — New World' },
     type: 'neutral_land',
     description: {
       it: 'La seconda e più letale metà della Grand Line, oltre la Red Line, dove regnano gli Imperatori. Comprende Fish-Man Island (sotto la Red Line), Punk Hazard, Dressrosa, Zou, Whole Cake Island, Wano e il leggendario traguardo finale: Laugh Tale.',

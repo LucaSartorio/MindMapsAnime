@@ -8,7 +8,7 @@ const arc = (a: Omit<StoryArc, 'worldId' | 'canonStatus' | 'referenceStatus'> & 
 });
 
 const SAGA = {
-  agent: { it: 'Saga dello Shinigami sostituto', en: 'Substitute Soul Reaper Saga' },
+  agent: { it: 'Saga dello Sostituto Shinigami', en: 'Substitute Soul Reaper Saga' },
   soulSociety: { it: 'Saga della Soul Society', en: 'Soul Society Saga' },
   arrancar: { it: 'Saga degli Arrancar', en: 'Arrancar Saga' },
   fullbring: { it: 'Saga del Fullbring', en: 'Fullbring Saga' },
@@ -29,7 +29,7 @@ export const bleachArcs: StoryArc[] = [
   arc({
     id: 'arc-bl-agent',
     name: 'The Substitute',
-    localizedName: { it: 'Lo Shinigami sostituto', en: 'The Substitute' },
+    localizedName: { it: 'Lo Sostituto Shinigami', en: 'The Substitute' },
     saga: SAGA.agent,
     order: 1,
     description: {
@@ -288,7 +288,7 @@ export const bleachArcs: StoryArc[] = [
   arc({
     id: 'arc-bl-lost-substitute',
     name: 'The Lost Substitute Shinigami',
-    localizedName: { it: 'Lo Shinigami sostituto perduto', en: 'The Lost Substitute Shinigami' },
+    localizedName: { it: 'Lo Sostituto Shinigami perduto', en: 'The Lost Substitute Shinigami' },
     saga: SAGA.fullbring,
     order: 12,
     description: {
@@ -296,7 +296,7 @@ export const bleachArcs: StoryArc[] = [
       en: "Seventeen months after Aizen, Ichigo lives without powers. Kūgo Ginjō's Xcution promises to give them back to him through Fullbring — but it is a trap to steal it.",
     },
     longDescription: {
-      it: "Tsukishima riscrive i ricordi della famiglia e degli amici di Ichigo, Ginjō si rivela il primo Shinigami sostituto e gli ruba il Fullbring. Rukia arriva con una spada che porta l'energia spirituale di tutti i capitani e restituisce a Ichigo i poteri di Shinigami; nello scontro finale Ichigo sconfigge Ginjō.",
+      it: "Tsukishima riscrive i ricordi della famiglia e degli amici di Ichigo, Ginjō si rivela il primo Sostituto Shinigami e gli ruba il Fullbring. Rukia arriva con una spada che porta l'energia spirituale di tutti i capitani e restituisce a Ichigo i poteri di Shinigami; nello scontro finale Ichigo sconfigge Ginjō.",
       en: "Tsukishima rewrites the memories of Ichigo's family and friends, Ginjō is revealed as the first Substitute Soul Reaper and steals his Fullbring. Rukia arrives with a sword carrying the spiritual pressure of all the captains and gives Ichigo back his Soul Reaper powers; in the final fight Ichigo defeats Ginjō.",
     },
     locationIds: ['loc-bl-naruki', 'loc-bl-kurosaki-clinic', 'loc-bl-karakura-high'],

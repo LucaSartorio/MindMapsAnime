@@ -130,7 +130,7 @@ export const onepieceCharactersExtra9: Character[] = [
     family: ['char-op-bonney'], allies: ['char-op-kuma', 'char-op-dragon'],
     relationships: [{ targetCharacterId: 'char-op-kuma', label: { it: 'Amore d’infanzia', en: 'Childhood love' } }, { targetCharacterId: 'char-op-bonney', label: { it: 'Figlia', en: 'Daughter' } }],
     fm: '1100', fa: '1126',
-    it: "Amica d’infanzia e amata di Bartholomew Kuma nel Regno di Sorbet; rivoluzionaria, fu rapita da un Drago Celeste e morì lasciandogli la piccola Bonney.",
+    it: "Amica d’infanzia e amata di Bartholomew Orso nel Regno di Sorbet; rivoluzionaria, fu rapita da un Drago Celeste e morì lasciandogli la piccola Bonney.",
     en: "Bartholomew Kuma's childhood friend and love in the Sorbet Kingdom; a revolutionary, she was taken by a Celestial Dragon and died, leaving him little Bonney.",
     tags: ['rivoluzionari', 'sorbet', 'kuma', 'bonney'] }),
   C({ id: 'char-op-sora', name: 'Vinsmoke Sora', importance: 'background', role: ['neutral'], gender: 'female', status: 'deceased',
@@ -206,7 +206,7 @@ export const onepieceCharactersExtra9: Character[] = [
     factionIds: ['faction-op-world-government'], locationIds: ['loc-op-egghead'], arcIds: ['arc-op-egghead'],
     enemies: ['char-op-luffy'], relationships: [{ targetCharacterId: 'char-op-kuma', label: { it: 'Modello genetico', en: 'Genetic template' } }, { targetCharacterId: 'char-op-vegapunk', label: { it: 'Creatore', en: 'Creator' } }],
     fm: '1066', fa: '1093',
-    it: "Serafino modellato su Bartholomew Kuma: riproduce i cuscinetti del Frutto Zampa, capaci di respingere qualsiasi cosa.",
+    it: "Serafino modellato su Bartholomew Orso: riproduce i cuscinetti del Frutto Zampa, capaci di respingere qualsiasi cosa.",
     en: "A Seraphim modeled on Bartholomew Kuma: it reproduces the Paw-Paw Fruit's pads, able to repel anything.",
     tags: ['egghead', 'serafino', 'vegapunk'] }),
 

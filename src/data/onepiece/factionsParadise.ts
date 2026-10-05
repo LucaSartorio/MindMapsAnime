@@ -26,7 +26,7 @@ export const onepieceFactionsParadise: Faction[] = [
     name: 'Wapol Pirates',
     localizedName: { it: 'Pirati di Wapol', en: 'Wapol Pirates' },
     description: {
-      it: "La ciurma dell'ex re Wapol, che tornò a Drum Island per riprendersi con la forza il regno e opprimerne gli abitanti.",
+      it: "La ciurma dell'ex re Wapol, che tornò sull'Isola di Drum per riprendersi con la forza il regno e opprimerne gli abitanti.",
       en: "The crew of the former king Wapol, who returned to Drum Island to seize the kingdom by force and oppress its people.",
     },
     leaderIds: ['char-op-wapol'],

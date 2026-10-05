@@ -1,4 +1,5 @@
 import { useEffect, type ReactNode } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface ImageLightboxProps {
   open: boolean;
@@ -18,6 +19,7 @@ export function ImageLightbox({
   label,
   children,
 }: ImageLightboxProps) {
+  const { t } = useTranslation();
   useEffect(() => {
     if (!open) return;
     function onKey(e: KeyboardEvent) {
@@ -51,7 +53,7 @@ export function ImageLightbox({
         <button
           type="button"
           onClick={onClose}
-          aria-label="Chiudi"
+          aria-label={t('modals.close')}
           className="absolute -top-3 -right-3 h-8 w-8 grid place-items-center rounded-full bg-ink-800 text-ink-100 border border-ink-600/60 hover:bg-ink-700"
         >
           ×

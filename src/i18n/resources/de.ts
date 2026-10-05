@@ -441,6 +441,8 @@ export const de = {
       squad: 'Kompanien',
       race: 'Rassen',
       concept: 'Konzepte',
+      division: 'Divisionen',
+      school: 'Schulen',
     },
     empty: 'Kein Klan und keine Fraktion',
     emptyDescription: 'Keine Ergebnisse für die aktuellen Filter.',

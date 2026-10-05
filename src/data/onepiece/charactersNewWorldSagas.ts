@@ -81,7 +81,7 @@ export const onepieceCharactersNewWorldSagas: Character[] = [
     ],
     arcIds: ['arc-op-dressrosa'],
     shortDescription: {
-      it: "Fratello giurato di Rufy e Ace, creduto morto da bambino e divenuto Capo di Stato Maggiore dell'Armata Rivoluzionaria. A Dressrosa eredita il Frutto Mera Mera del fuoco di Ace.",
+      it: "Fratello giurato di Rufy e Ace, creduto morto da bambino e divenuto Capo di Stato Maggiore dell'Armata Rivoluzionaria. A Dressrosa eredita il Frutto Foco Foco del fuoco di Ace.",
       en: "Sworn brother of Luffy and Ace, believed dead as a child and now Chief of Staff of the Revolutionary Army. At Dressrosa he inherits Ace's Flame-Flame Fruit.",
     },
     status: 'alive',
@@ -184,7 +184,7 @@ export const onepieceCharactersNewWorldSagas: Character[] = [
     enemies: ['char-op-zoro'],
     arcIds: ['arc-op-dressrosa'],
     shortDescription: {
-      it: "Ufficiale della famiglia Donquijote, utente del Frutto Roccia Roccia: può fondersi con la pietra e muovere intere montagne. Affronta Zoro a Dressrosa.",
+      it: "Ufficiale della famiglia Donquijote, utente del Frutto Pietra Pietra: può fondersi con la pietra e muovere intere montagne. Affronta Zoro a Dressrosa.",
       en: "A Donquixote family officer, user of the Stone-Stone Fruit: he can merge with rock and move entire mountains. He faces Zoro at Dressrosa.",
     },
     status: 'alive',

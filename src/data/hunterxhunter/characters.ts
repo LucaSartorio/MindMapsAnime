@@ -288,7 +288,7 @@ export const hxhCharacters: Character[] = [
     importance: 'major',
     role: ['mentor'],
     factionIds: ['faction-hxh-hunter-association', 'faction-hxh-zodiacs'],
-    rank: 'Double-Star Hunter / Zodiac (Topo)',
+    rank: 'Double-Star Hunter / Zodiac (Cinghiale)',
     gender: 'M',
     longDescription: {
       it: 'Padre di Gon e Hunter di rango leggendario, dotato di abilità versatili e di un\'intelligenza fuori scala. Riluttante alla paternità, lascia indizi anziché risposte, spingendo Gon a crescere da solo. È tra i pionieri della spedizione verso il Continente Oscuro.',

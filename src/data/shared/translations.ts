@@ -55,15 +55,46 @@ function isDerivedJourney(node: unknown): boolean {
 }
 
 /**
+ * Campi "nome" che i dati possono scrivere come STRINGA semplice (identica in
+ * tutte le lingue) ma che una lingua può comunque voler rendere diversamente:
+ * alias ed epiteti, kekkei genkai, gradi descrittivi, etichette di membri e
+ * partecipanti senza scheda, `localizedName` semplici. Il percorso è
+ * normalizzato (`[id]`/`[0]` → `[]`). Una stringa in questi campi diventa una
+ * voce traducibile con la stessa chiave che avrebbe come `{ it, en }`.
+ */
+const PLAIN_NAME_PATHS = new Set([
+  'characters[].aliases[]',
+  'characters[].abilities[]',
+  'factions[].signatureAbilities[]',
+  'characters[].kekkeiGenkai[]',
+  'characters[].rank',
+  'factions[].kekkeiGenkai',
+  'factions[].structure[].members[].label',
+  'factions[].succession[].holders[].label',
+  'tournaments[].rounds[].matches[].sides[].label',
+]);
+const normalizePath = (path: string) => path.replace(/\[[^\]]*\]/g, '[]');
+const isPlainNamePath = (path: string) => PLAIN_NAME_PATHS.has(normalizePath(path)) || /\.(localizedName|nameLocal)$/.test(path);
+
+/** Stringa semplice traducibile: dove si trova, per sostituirla con `{ it, en, <lingua> }`. */
+interface PlainSlot {
+  parent: Record<string | number, unknown>;
+  prop: string | number;
+}
+
+/**
  * Visita ogni `Localizable` (oggetto) raggiungibile da `node`, con il suo
  * percorso. Lo stesso oggetto raggiunto due volte viene visitato una sola
  * volta (il primo percorso in ordine di visita vince): ordine deterministico.
+ * Le stringhe semplici nei campi "nome" (`PLAIN_NAME_PATHS`) sono passate a
+ * `visitPlain`, se fornito.
  */
 function walk(
   node: unknown,
   path: string,
   seen: Set<object>,
   visit: (path: string, value: LocalizableObject) => void,
+  visitPlain?: (path: string, value: string, slot: PlainSlot) => void,
 ): void {
   if (node === null || typeof node !== 'object') return;
   if (seen.has(node)) return;
@@ -71,7 +102,12 @@ function walk(
   if (Array.isArray(node)) {
     node.forEach((item, i) => {
       const id = item && typeof item === 'object' && typeof (item as { id?: unknown }).id === 'string' ? (item as { id: string }).id : String(i);
-      walk(item, `${path}[${id}]`, seen, visit);
+      const itemPath = `${path}[${id}]`;
+      if (typeof item === 'string') {
+        if (visitPlain && item.trim() && isPlainNamePath(itemPath)) visitPlain(itemPath, item, { parent: node as unknown as PlainSlot['parent'], prop: i });
+        return;
+      }
+      walk(item, itemPath, seen, visit, visitPlain);
     });
     return;
   }
@@ -79,22 +115,31 @@ function walk(
     visit(path, node as LocalizableObject);
     return;
   }
-  for (const [k, v] of Object.entries(node)) walk(v, path ? `${path}.${k}` : k, seen, visit);
+  for (const [k, v] of Object.entries(node)) {
+    const childPath = path ? `${path}.${k}` : k;
+    if (typeof v === 'string') {
+      if (visitPlain && v.trim() && isPlainNamePath(childPath)) visitPlain(childPath, v, { parent: node as PlainSlot['parent'], prop: k });
+      continue;
+    }
+    walk(v, childPath, seen, visit, visitPlain);
+  }
 }
 
 /**
- * Collezioni i cui NOMI descrittivi possono cambiare lingua ("Uchiha Clan" →
- * "Clan Uchiha", "Team 7" → "Equipo 7"). Un `name` stringa semplice senza
- * `localizedName` diventa una voce traducibile con chiave `<entità>.name`;
- * applicarla crea `localizedName: { it: name, en: name, <lingua>: testo }`,
- * così it/en restano identici. I personaggi sono esclusi: nomi propri.
+ * Collezioni i cui NOMI possono cambiare lingua ("Uchiha Clan" → "Clan
+ * Uchiha", "Team 7" → "Equipo 7", "Krillin" → "Krilin"). Un `name` stringa
+ * semplice senza `localizedName` diventa una voce traducibile con chiave
+ * `<entità>.name`; applicarla crea `localizedName: { it: name, en: name,
+ * <lingua>: testo }`, così it/en restano identici. Anche i personaggi: i
+ * doppiaggi rinominano spesso (e i nomi propri si copiano invariati).
  */
-const NAMED_ROOTS = new Set(['factions', 'teams', 'locations', 'jutsu', 'arcs', 'routes', 'nations', 'boundaries', 'mapLevels', 'tournaments']);
+const NAMED_ROOTS = new Set(['characters', 'factions', 'teams', 'locations', 'jutsu', 'arcs', 'routes', 'nations', 'boundaries', 'mapLevels', 'tournaments']);
 
 /**
- * `localizedName` creati da un overlay a partire da un `name` semplice: restano
- * voci `<entità>.name` anche dopo l'applicazione, così un secondo overlay (altra
- * lingua) le ritrova con la stessa chiave.
+ * `localizedName` creati da un overlay a partire da un `name` semplice (e gli
+ * oggetti creati da una stringa semplice in `PLAIN_NAME_PATHS`): restano voci
+ * con la chiave originale anche dopo l'applicazione, così un secondo overlay
+ * (altra lingua) le ritrova con la stessa chiave.
  */
 const derivedNames = new WeakSet<object>();
 
@@ -104,6 +149,8 @@ export interface TranslatableEntry {
   value: LocalizableObject;
   /** Solo per i nomi semplici: l'entità a cui aggiungere `localizedName`. */
   nameOwner?: { name: string; localizedName?: unknown };
+  /** Solo per le stringhe semplici in un campo "nome": dove sostituirla. */
+  plainSlot?: PlainSlot;
 }
 
 /** Tutte le voci traducibili di un dataset (testi `Localizable` + nomi semplici), con la loro chiave. */
@@ -118,19 +165,31 @@ export function datasetTranslatables(dataset: WorldDataset): TranslatableEntry[]
         const ln = e?.localizedName;
         const derived = !!ln && typeof ln === 'object' && derivedNames.has(ln);
         if (typeof e?.id === 'string' && typeof e.name === 'string' && (ln === undefined || derived)) {
-          out.push({ key: `${root}[${e.id}].name`, value: { it: e.name, en: e.name }, nameOwner: e as { name: string } });
+          // Già derivato (da names.ts o da un overlay): la voce È quel localizedName.
+          const value = derived ? (ln as LocalizableObject) : { it: e.name, en: e.name };
+          out.push({ key: `${root}[${e.id}].name`, value, nameOwner: e as { name: string } });
           if (derived) seen.add(ln as object); // non è un testo autonomo del dataset
         }
       }
     }
-    walk(list, root, seen, (key, v) => out.push({ key, value: v }));
+    walk(
+      list,
+      root,
+      seen,
+      (key, v) => {
+        // Oggetto creato da un overlay a partire da una stringa: resta una voce "semplice".
+        if (derivedNames.has(v)) out.push({ key, value: v, plainSlot: { parent: {}, prop: '' } });
+        else out.push({ key, value: v });
+      },
+      (key, s, slot) => out.push({ key, value: { it: s, en: s }, plainSlot: slot }),
+    );
   }
   return out;
 }
 
 /** Solo i `Localizable` (senza i nomi semplici): compatibilità con i consumer esistenti. */
 export function datasetLocalizables(dataset: WorldDataset): Array<[key: string, value: LocalizableObject]> {
-  return datasetTranslatables(dataset).filter((e) => !e.nameOwner).map((e) => [e.key, e.value]);
+  return datasetTranslatables(dataset).filter((e) => !e.nameOwner && !e.plainSlot).map((e) => [e.key, e.value]);
 }
 
 /** Tutti i `Localizable` di un'entità (o di qualsiasi sotto-albero). */
@@ -175,7 +234,7 @@ export function applyTranslations(dataset: WorldDataset, locale: SupportedLocale
   const used = new Set<string>();
   let total = 0;
   let applied = 0;
-  for (const { key, value, nameOwner } of datasetTranslatables(dataset)) {
+  for (const { key, value, nameOwner, plainSlot } of datasetTranslatables(dataset)) {
     total++;
     const text = overlay[key];
     if (text === undefined || !text.trim()) continue;
@@ -189,6 +248,11 @@ export function applyTranslations(dataset: WorldDataset, locale: SupportedLocale
         derivedNames.add(created);
         nameOwner.localizedName = created;
       }
+    } else if (plainSlot && !derivedNames.has(value)) {
+      // Stringa semplice: diventa `{ it, en, <lingua> }` (it/en restano la stringa).
+      const created: LocalizableObject = { ...value, [locale]: text };
+      derivedNames.add(created);
+      plainSlot.parent[plainSlot.prop] = created;
     } else {
       value[locale] = text;
     }
@@ -197,4 +261,57 @@ export function applyTranslations(dataset: WorldDataset, locale: SupportedLocale
   }
   localizeCharacterJourneys(dataset, locale);
   return { total, applied, orphans: Object.keys(overlay).filter((k) => !used.has(k)) };
+}
+
+/* ------------------------- Nomi nelle lingue sorgente ------------------------- */
+
+/**
+ * Nomi it/en di un mondo che differiscono dal `name` scritto nei dati (o lo
+ * correggono): doppiaggi ed edizioni rinominano personaggi, titoli, epiteti,
+ * clan e tecniche ("Krillin" → "Crilin", "Third Raikage" → "Terzo Raikage",
+ * "Uzumaki Clan" → "Clan Uzumaki"). Vivono in `src/data/<mondo>/names.ts` con
+ * le STESSE chiavi degli overlay (`characters[char-krillin].name`,
+ * `characters[char-kakashi].aliases[0]`, `factions[clan-uzumaki].name`…), così
+ * ogni lingua — sorgente o overlay — parla dello stesso campo.
+ */
+export type SourceNames = Readonly<Record<string, { it: string; en: string }>>;
+
+/** Chiavi di `names.ts` che non corrispondono a nessun campo (refusi, entità rimosse). */
+const unknownSourceNames = new WeakMap<WorldDataset, string[]>();
+
+/**
+ * Applica i nomi it/en al dataset (in place) e lo restituisce. Un `name`
+ * semplice riceve un `localizedName` derivato (la chiave resta `<entità>.name`),
+ * una stringa in un campo "nome" diventa `{ it, en }` (stessa chiave), un
+ * `Localizable` esistente riceve i nuovi it/en.
+ */
+export function withSourceNames<T extends WorldDataset>(dataset: T, names: SourceNames): T {
+  const entries = new Map(datasetTranslatables(dataset).map((e) => [e.key, e]));
+  const unknown: string[] = [];
+  for (const [key, v] of Object.entries(names)) {
+    const e = entries.get(key);
+    if (!e) {
+      unknown.push(key);
+      continue;
+    }
+    if (e.nameOwner && !(e.nameOwner.localizedName && derivedNames.has(e.nameOwner.localizedName as object))) {
+      const created: LocalizableObject = { it: v.it, en: v.en };
+      derivedNames.add(created);
+      e.nameOwner.localizedName = created;
+    } else if (e.plainSlot && !derivedNames.has(e.value)) {
+      const created: LocalizableObject = { it: v.it, en: v.en };
+      derivedNames.add(created);
+      e.plainSlot.parent[e.plainSlot.prop] = created;
+    } else {
+      e.value.it = v.it;
+      e.value.en = v.en;
+    }
+  }
+  unknownSourceNames.set(dataset, unknown);
+  return dataset;
+}
+
+/** Chiavi di `names.ts` rimaste senza campo (per `i18n:audit`). */
+export function sourceNameProblems(dataset: WorldDataset): string[] {
+  return unknownSourceNames.get(dataset) ?? [];
 }

@@ -140,7 +140,7 @@ export function LocationDetailsModal({
   const overviewTab = (
     <>
       {location.nameLocal && (
-        <p className="-mt-1 text-xs italic text-ink-300">{location.nameLocal}</p>
+        <p className="-mt-1 text-xs italic text-ink-300">{getLocalizedText(location.nameLocal, locale)}</p>
       )}
       <p className="leading-relaxed">
         {getLocalizedText(location.shortDescription, locale)}

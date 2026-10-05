@@ -8,7 +8,7 @@ export const onepieceArcsExtra: StoryArc[] = [
     name: 'Jaya',
     localizedName: { it: 'Jaya', en: 'Jaya' },
     saga: { it: 'Saga di Skypiea', en: 'Skypiea Saga' },
-    period: { it: 'Paradise · isola dei sogni', en: 'Paradise · island of dreams' },
+    period: { it: 'Paradiso · isola dei sogni', en: 'Paradise · island of dreams' },
     order: 15.5,
     description: {
       it: "A Jaya, tra Mock Town e Bellamy, la ciurma scopre l'esistenza di un'isola del cielo e si fa aiutare da Mont Blanc Cricket a cavalcare la Knock-Up Stream verso Skypiea.",
@@ -33,7 +33,7 @@ export const onepieceArcsExtra: StoryArc[] = [
     name: 'Long Ring Long Land',
     localizedName: { it: 'Long Ring Long Land', en: 'Long Ring Long Land' },
     saga: { it: 'Saga di Water Seven', en: 'Water Seven Saga' },
-    period: { it: 'Paradise · isola lunga', en: 'Paradise · long island' },
+    period: { it: 'Paradiso · isola lunga', en: 'Paradise · long island' },
     order: 18.5,
     description: {
       it: "Sull'isola lunga e stretta di Long Ring Long Land la ciurma affronta il Davy Back Fight contro Foxy il Volpe Argentata e incontra l'ammiraglio Aokiji.",
@@ -58,7 +58,7 @@ export const onepieceArcsExtra: StoryArc[] = [
     name: 'Zou',
     localizedName: { it: 'Zou', en: 'Zou' },
     saga: { it: 'Saga dei Quattro Imperatori', en: 'Yonko Saga' },
-    period: { it: 'New World · sul dorso di Zunesha', en: "New World · on Zunesha's back" },
+    period: { it: 'Nuovo Mondo · sul dorso di Zunesha', en: "New World · on Zunesha's back" },
     order: 65,
     description: {
       it: "Sul dorso dell'elefante Zunesha la ciurma scopre Zou, rifugio dei mink devastato da Jack, e sigla l'alleanza con i mink e i samurai Kozuki diretta a Wano.",

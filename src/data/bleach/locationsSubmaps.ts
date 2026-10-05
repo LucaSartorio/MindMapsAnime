@@ -423,7 +423,7 @@ export const bleachLocationsSubmaps: Location[] = [
     x: 1190,
     y: 640,
     shortDescription: {
-      it: "Il portale ufficiale fra la Soul Society e il Mondo dei Vivi, attraverso il Dangai. Da qui Ichigo riparte a casa con il distintivo da Shinigami sostituto, e da qui partono le spedizioni del Gotei 13.",
+      it: "Il portale ufficiale fra la Soul Society e il Mondo dei Vivi, attraverso il Dangai. Da qui Ichigo riparte a casa con il distintivo da Sostituto Shinigami, e da qui partono le spedizioni del Gotei 13.",
       en: 'The official gateway between the Soul Society and the World of the Living, through the Dangai. Ichigo heads home from here with his Substitute Soul Reaper badge, and the Gotei 13\'s expeditions leave from here.',
     },
     longDescription: {

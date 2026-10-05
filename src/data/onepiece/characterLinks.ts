@@ -281,24 +281,24 @@ export const onepieceCharacterLinks: Record<string, LinkPatch> = {
     ['arc-op-dressrosa'], ['evt-op-dr-colosseum', 'evt-op-doflamingo-defeat'],
     ['char-op-luffy', 'char-op-cavendish', 'char-op-sai', 'char-op-leo', 'char-op-ideo', 'char-op-hajrudin', 'char-op-orlumbus', 'char-op-gambia'],
     ['char-op-doflamingo'], undefined,
-    [{ targetCharacterId: 'char-op-luffy', label: { it: 'Idolo e capo della Grand Fleet', en: 'Idol and leader of the Grand Fleet' } }],
+    [{ targetCharacterId: 'char-op-luffy', label: { it: 'Idolo e capo della Grande Flotta', en: 'Idol and leader of the Grand Fleet' } }],
   ),
   'char-op-cavendish': L(
     ['arc-op-dressrosa'], ['evt-op-dr-colosseum', 'evt-op-doflamingo-defeat'],
     ['char-op-luffy', 'char-op-bartolomeo', 'char-op-sai', 'char-op-leo', 'char-op-ideo', 'char-op-hajrudin', 'char-op-orlumbus'],
     ['char-op-doflamingo'], undefined,
-    [{ targetCharacterId: 'char-op-luffy', label: { it: 'Capo della Grand Fleet', en: 'Leader of the Grand Fleet' } }],
+    [{ targetCharacterId: 'char-op-luffy', label: { it: 'Capo della Grande Flotta', en: 'Leader of the Grand Fleet' } }],
   ),
   'char-op-leo': L(
     ['arc-op-dressrosa'], ['evt-op-dr-tontatta', 'evt-op-doflamingo-defeat'],
     ['char-op-luffy', 'char-op-cavendish', 'char-op-bartolomeo', 'char-op-sai', 'char-op-ideo', 'char-op-hajrudin', 'char-op-orlumbus', 'char-op-mansherry'],
     ['char-op-doflamingo'], undefined,
-    [{ targetCharacterId: 'char-op-luffy', label: { it: 'Capo della Grand Fleet', en: 'Leader of the Grand Fleet' } }],
+    [{ targetCharacterId: 'char-op-luffy', label: { it: 'Capo della Grande Flotta', en: 'Leader of the Grand Fleet' } }],
   ),
   'char-op-hajrudin': L(
     undefined, undefined, ['char-op-cavendish', 'char-op-bartolomeo', 'char-op-sai', 'char-op-leo', 'char-op-ideo', 'char-op-orlumbus'],
     undefined, undefined,
-    [{ targetCharacterId: 'char-op-luffy', label: { it: 'Capo della Grand Fleet', en: 'Leader of the Grand Fleet' } }],
+    [{ targetCharacterId: 'char-op-luffy', label: { it: 'Capo della Grande Flotta', en: 'Leader of the Grand Fleet' } }],
   ),
 
   /* ===================== East Blue ===================== */

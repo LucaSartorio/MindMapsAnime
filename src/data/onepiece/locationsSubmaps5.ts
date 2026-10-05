@@ -29,7 +29,7 @@ const NW = 'nation-op-grand-line-new-world';
 
 export const onepieceLocationsSubmaps5: Location[] = [
   /* ============================== Mary Geoise ============================== */
-  L('op-map-mary-geoise', 'loc-op-mg-pangea', 'Pangea Castle', 'Pangaea Castle', 'city', 600, 270,
+  L('op-map-mary-geoise', 'loc-op-mg-pangea', 'Castello di Pangea', 'Pangaea Castle', 'city', 600, 270,
     "Il castello al centro della Terra Santa, sede dei Cinque Astri di Saggezza e cuore del potere del Governo Mondiale.",
     "The castle at the center of the Holy Land, seat of the Five Elders and the heart of the World Government's power.",
     RL, 'secondary', ['mary-geoise', 'governo-mondiale'], ['char-op-saturn']),

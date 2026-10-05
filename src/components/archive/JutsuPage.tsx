@@ -121,7 +121,7 @@ export function JutsuPage({ dataset, resolved }: JutsuPageProps) {
         id: j.id,
         title: n,
         subtitle: nature,
-        caption: j.rank ? `RANK ${j.rank}` : undefined,
+        caption: j.rank ? t('jutsu.rankLabel', { rank: j.rank }) : undefined,
         image: (
           <EntityImage
             kind="jutsu"

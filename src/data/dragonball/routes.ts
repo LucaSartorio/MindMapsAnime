@@ -101,14 +101,14 @@ export const dragonballRoutes: Route[] = [
     localizedName: { it: 'Saga dei Saiyan', en: 'Saiyan Saga' },
     group: { it: 'Sagas · poster', en: 'Sagas · poster' },
     description: {
-      it: "Dall'atterraggio di Raditz all'arrivo di Vegeta e Nappa, fino al durissimo duello finale tra Goku e Vegeta. Colorata in azzurro chiaro sulla legenda del poster.",
+      it: "Dall'atterraggio di Radish all'arrivo di Vegeta e Nappa, fino al durissimo duello finale tra Goku e Vegeta. Colorata in azzurro chiaro sulla legenda del poster.",
       en: "From Raditz's landing to Vegeta and Nappa's arrival, up to the grueling final duel between Goku and Vegeta. Colored light blue on the poster's legend.",
     },
     protagonistCharacterIds: ['char-dbz-goku', 'char-dbz-vegeta'],
     relatedArcIds: ['arc-dbz-saiyan-saga'],
     relatedLocationIds: ['loc-dbz-raditz-landing', 'loc-dbz-battle-5-gohan-training', 'loc-dbz-battle-6-vegeta', 'loc-dbz-battle-12-goku-vegeta'],
     steps: [
-      { order: 1, locationId: 'loc-dbz-raditz-landing', eventId: 'evt-dbz-raditz-arrival', label: { it: 'Atterraggio di Raditz', en: "Raditz's Landing" } },
+      { order: 1, locationId: 'loc-dbz-raditz-landing', eventId: 'evt-dbz-raditz-arrival', label: { it: 'Atterraggio di Radish', en: "Raditz's Landing" } },
       { order: 2, locationId: 'loc-dbz-battle-5-gohan-training', eventId: 'evt-dbz-gohan-survival-training', label: { it: 'Addestramento di Gohan', en: "Gohan's Training" } },
       { order: 3, locationId: 'loc-dbz-battle-6-vegeta', eventId: 'evt-dbz-vegeta-nappa-battle', label: { it: 'Battaglia con Vegeta e Nappa', en: 'Battle with Vegeta and Nappa' } },
       { order: 4, locationId: 'loc-dbz-battle-12-goku-vegeta', eventId: 'evt-dbz-goku-vegeta-final', label: { it: 'Duello finale Goku-Vegeta', en: 'Final Goku-Vegeta duel' } },
@@ -157,7 +157,7 @@ export const dragonballRoutes: Route[] = [
       // — Sotto-mappa di Namecc —
       { order: 5, locationId: 'loc-dbz-namek-moori-village', label: { it: 'Villaggio di Moori', en: "Moori's Village" }, description: { it: 'Crilin e Gohan salvano Dende dalla strage degli uomini di Freezer.', en: "Krillin and Gohan save Dende from the massacre by Frieza's men." } },
       { order: 6, locationId: 'loc-dbz-namek-guru-house', label: { it: 'Casa del Capo Anziano', en: "Grand Elder's House" }, description: { it: 'Potenziale sbloccato e ricerca delle Sfere del Drago namecciane.', en: 'Potential unlocked and the hunt for the Namekian Dragon Balls.' } },
-      { order: 7, locationId: 'loc-dbz-namek-battlefield-plains', label: { it: 'Scontro con la Squadra Ginyu', en: 'Clash with the Ginyu Force' } },
+      { order: 7, locationId: 'loc-dbz-namek-battlefield-plains', label: { it: 'Scontro con la Forze Speciali Ginew', en: 'Clash with the Ginyu Force' } },
       { order: 8, locationId: 'loc-dbz-namek-final-battlefield', eventId: 'evt-dbz-frieza-defeated-namek', label: { it: 'Sconfitta di Freezer su Namecc', en: 'Frieza defeated on Namek' }, description: { it: 'Goku diventa Super Saiyan e sconfigge Freezer prima della distruzione del pianeta.', en: 'Goku becomes a Super Saiyan and defeats Frieza before the planet is destroyed.' } },
     ],
     color: DRAGONBALL_SAGA_COLORS.frieza,
@@ -174,7 +174,7 @@ export const dragonballRoutes: Route[] = [
     localizedName: { it: 'Saga degli Androidi', en: "Androids' Saga" },
     group: { it: 'Sagas · poster', en: 'Sagas · poster' },
     description: {
-      it: "Dall'arrivo di Trunks del Futuro all'attivazione degli Androidi nel laboratorio del Dr. Gero, fino ai Cell Games. Colorata in verde chiaro sulla legenda del poster.",
+      it: "Dall'arrivo di Trunks del Futuro all'attivazione degli Androidi nel laboratorio del Dottor Gelo, fino ai Cell Games. Colorata in verde chiaro sulla legenda del poster.",
       en: "From Future Trunks' arrival to the Androids' activation in Dr. Gero's lab, up to the Cell Games. Colored light green on the poster's legend.",
     },
     protagonistCharacterIds: ['char-dbz-future-trunks', 'char-dbz-goku', 'char-dbz-gohan'],
@@ -346,7 +346,7 @@ export const dragonballRoutes: Route[] = [
     localizedName: { it: 'Dragon Ball GT · Saga di Super C-17', en: 'Dragon Ball GT · Super 17 Saga' },
     group: { it: 'Dragon Ball GT', en: 'Dragon Ball GT' },
     description: {
-      it: "Dragon Ball GT: dall'Inferno il Dr. Gero e il Dr. Myuu aprono un varco che libera i nemici defunti e intrappola Goku; sulla Terra nasce Super C-17, che devasta Satan City finché Goku, con l'aiuto di C-18, non lo ferma. Attraversa la sotto-mappa cosmica (Inferno) e la mappa della Terra.",
+      it: "Dragon Ball GT: dall'Inferno il Dottor Gelo e il Dr. Myuu aprono un varco che libera i nemici defunti e intrappola Goku; sulla Terra nasce Super C-17, che devasta Satan City finché Goku, con l'aiuto di C-18, non lo ferma. Attraversa la sotto-mappa cosmica (Inferno) e la mappa della Terra.",
       en: "Dragon Ball GT: from Hell, Dr. Gero and Dr. Myuu open a portal that unleashes dead foes and traps Goku; on Earth Super 17 is born and ravages Satan City until Goku, with Android 18's help, stops him. Spans the cosmic sub-map (Hell) and the Earth map.",
     },
     protagonistCharacterIds: ['char-dbz-goku', 'char-dbz-android-18'],

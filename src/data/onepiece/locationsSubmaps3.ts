@@ -76,7 +76,7 @@ export const onepieceLocationsSubmaps3: Location[] = [
     x: 296,
     y: 520,
     shortDescription: {
-      it: "Le strutture originarie dove Vegapunk crebbe e iniziò i suoi esperimenti, legate alla storia di Kuma e Bonney.",
+      it: "Le strutture originarie dove Vegapunk crebbe e iniziò i suoi esperimenti, legate alla storia di Orso e Bonney.",
       en: "The original facilities where Vegapunk grew up and began his experiments, tied to the story of Kuma and Bonney.",
     },
     nationId: 'nation-op-grand-line-new-world',

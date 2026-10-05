@@ -104,7 +104,7 @@ export const onepieceCharactersExtra10: Character[] = [
     factionIds: ['faction-op-marines'], locationIds: ['loc-op-marineford'], arcIds: ['arc-op-marineford'],
     allies: ['char-op-sengoku'],
     fm: '552', fa: '461',
-    it: "Viceammiraglio utente di uno Zoan del cane dalmata, combattente di prim’ordine a Marineford.",
+    it: "Viceammiraglio utente di uno Zoo Zoo del cane dalmata, combattente di prim’ordine a Marineford.",
     en: "A vice admiral with a dalmatian-dog Zoan, a top-tier fighter at Marineford.",
     tags: ['marina', 'marineford'] }),
   C({ id: 'char-op-strawberry', name: 'Strawberry', importance: 'background', role: ['neutral'], gender: 'male', status: 'alive',

@@ -69,7 +69,7 @@ export const dragonballCharactersExtra: Character[] = [
     locationIds: ['loc-dbz-kame-house'],
     arcIds: ['arc-dbz-tenkaichi-tournament', 'arc-dbz-red-ribbon'],
     shortDescription: {
-      it: "Una ragazza dalla doppia personalità che cambia a ogni starnuto: dolce e gentile con i capelli blu, criminale armata e impulsiva con i capelli biondi. Vive alla Kame House con il Maestro Muten e si innamora di Tenshinhan.",
+      it: "Una ragazza dalla doppia personalità che cambia a ogni starnuto: dolce e gentile con i capelli blu, criminale armata e impulsiva con i capelli biondi. Vive alla Kame House con il Maestro Muten e si innamora di Tensing.",
       en: "A girl with a split personality that switches with every sneeze: sweet and kind with blue hair, an armed, hot-headed criminal with blonde hair. She lives at Kame House with Master Roshi and falls for Tien.",
     },
     tags: ['dragon-ball', 'kame-house'],
@@ -292,7 +292,7 @@ export const dragonballCharactersExtra: Character[] = [
     locationIds: ['loc-dbz-tenkaichi-arena'],
     arcIds: ['arc-dbz-king-piccolo'],
     shortDescription: {
-      it: "Il rivale del Maestro Muten e maestro di Tenshinhan e Chaozu nella Scuola della Gru. Al 22° Torneo Tenshinhan lo abbandona per seguire la via del Maestro Muten, dopo aver capito che il maestro gli chiede di uccidere.",
+      it: "Il rivale del Maestro Muten e maestro di Tensing e Chaozu nella Scuola della Gru. Al 22° Torneo Tensing lo abbandona per seguire la via del Maestro Muten, dopo aver capito che il maestro gli chiede di uccidere.",
       en: "Master Roshi's rival and the teacher of Tien and Chiaotzu at the Crane School. At the 22nd Tournament Tien leaves him to follow Master Roshi's way, after realising his master wants him to kill.",
     },
     tags: ['dragon-ball', 'scuola-della-gru'],
@@ -429,7 +429,7 @@ export const dragonballCharactersExtra: Character[] = [
     locationIds: ['loc-dbz-battle-7-android1920-appear', 'loc-dbz-battle-8-android19'],
     arcIds: ['arc-dbz-androids'],
     shortDescription: {
-      it: "L'androide bianco e tozzo del Dr. Gero, che assorbe l'energia degli avversari dai palmi delle mani. Affronta Goku mentre il virus cardiaco lo indebolisce; Vegeta, appena diventato Super Saiyan, lo distrugge.",
+      it: "L'androide bianco e tozzo del Dottor Gelo, che assorbe l'energia degli avversari dai palmi delle mani. Affronta Goku mentre il virus cardiaco lo indebolisce; Vegeta, appena diventato Super Saiyan, lo distrugge.",
       en: "Dr. Gero's stout white android, who absorbs his opponents' energy through his palms. He fights Goku while the heart virus weakens him; Vegeta, freshly turned Super Saiyan, destroys him.",
     },
     status: 'deceased',
@@ -523,7 +523,7 @@ export const dragonballCharactersExtra: Character[] = [
     locationIds: ['loc-dbz-vegeta-planet'],
     arcIds: ['arc-dbz-special-bardock', 'arc-dbz-broly-movie'],
     shortDescription: {
-      it: "La madre di Goku e Raditz, una Saiyan dolce e poco adatta alla guerra. Con Bardack mette il piccolo Kakaroth su una navicella diretta alla Terra poco prima che Freezer distrugga il pianeta Vegeta.",
+      it: "La madre di Goku e Radish, una Saiyan dolce e poco adatta alla guerra. Con Bardack mette il piccolo Kakaroth su una navicella diretta alla Terra poco prima che Freezer distrugga il pianeta Vegeta.",
       en: "Goku and Raditz's mother, a gentle Saiyan ill-suited to war. With Bardock she puts little Kakarot in a pod headed for Earth shortly before Frieza destroys Planet Vegeta.",
     },
     status: 'deceased',
@@ -680,7 +680,7 @@ export const dragonballCharactersExtra: Character[] = [
     locationIds: ['loc-dbz-ow-yemma', 'loc-dbz-gt-hell'],
     arcIds: ['arc-dbz-saiyan-saga', 'arc-dbz-majin-buu'],
     shortDescription: {
-      it: "Il gigantesco giudice dell'Aldilà che smista le anime dei morti fra Paradiso e Inferno. Concede a Goku di percorrere la Via del Serpente per allenarsi da Re Kaiō, e ad alcuni grandi guerrieri di conservare il corpo.",
+      it: "Il gigantesco giudice dell'Aldilà che smista le anime dei morti fra Paradiso e Inferno. Concede a Goku di percorrere la Via del Serpente per allenarsi da Re Kaioh, e ad alcuni grandi guerrieri di conservare il corpo.",
       en: "Other World's giant judge who sorts the souls of the dead between Heaven and Hell. He allows Goku to run Snake Way to train with King Kai, and some great warriors to keep their bodies.",
     },
     tags: ['aldila'],
@@ -698,7 +698,7 @@ export const dragonballCharactersExtra: Character[] = [
     locationIds: ['loc-dbz-ow-grand-kai'],
     arcIds: ['arc-dbz-filler-other-world-tournament', 'arc-dbz-majin-buu'],
     shortDescription: {
-      it: "Il superiore dei quattro Re Kaiō, che governa dal suo pianeta l'Aldilà dei grandi guerrieri. Appassionato di musica e di arti marziali, vi organizza il Torneo dell'Aldilà; è lì che Goku si allena dopo la morte contro Cell.",
+      it: "Il superiore dei quattro Re Kaioh, che governa dal suo pianeta l'Aldilà dei grandi guerrieri. Appassionato di musica e di arti marziali, vi organizza il Torneo dell'Aldilà; è lì che Goku si allena dopo la morte contro Cell.",
       en: "The superior of the four Kais, ruling from his planet the part of Other World where great warriors live. A lover of music and martial arts, he hosts the Other World Tournament there; that is where Goku trains after his death against Cell.",
     },
     tags: ['aldila'],
@@ -898,7 +898,7 @@ export const dragonballCharactersExtra: Character[] = [
     allies: ['char-dbz-gamma-1', 'char-dbz-gamma-2', 'char-dbz-gohan', 'char-dbz-piccolo'],
     arcIds: ['arc-dbz-super-hero'],
     shortDescription: {
-      it: "Il nipote del Dr. Gero, genio fissato con i supereroi, che costruisce Gamma 1, Gamma 2 e Cell Max per il nuovo Red Ribbon credendo di servire il bene. Quando scopre l'inganno di Magenta si schiera con Gohan e Piccolo.",
+      it: "Il nipote del Dottor Gelo, genio fissato con i supereroi, che costruisce Gamma 1, Gamma 2 e Cell Max per il nuovo Red Ribbon credendo di servire il bene. Quando scopre l'inganno di Magenta si schiera con Gohan e Piccolo.",
       en: "Dr. Gero's grandson, a genius obsessed with superheroes, who builds Gamma 1, Gamma 2 and Cell Max for the new Red Ribbon believing he serves good. When he discovers Magenta's deceit he sides with Gohan and Piccolo.",
     },
     canonStatus: 'movie',

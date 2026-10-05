@@ -471,18 +471,18 @@ export const bleachCharactersOthers: Character[] = [
     allies: ['char-bl-tsukishima', 'char-bl-riruka', 'char-bl-giriko', 'char-bl-jackie', 'char-bl-yukio', 'char-bl-moe'],
     enemies: ['char-bl-ichigo', 'char-bl-ukitake'],
     relationships: [
-      { targetCharacterId: 'char-bl-ichigo', label: { it: 'Il suo successore come Shinigami sostituto', en: 'His successor as Substitute Soul Reaper' } },
+      { targetCharacterId: 'char-bl-ichigo', label: { it: 'Il suo successore come Sostituto Shinigami', en: 'His successor as Substitute Soul Reaper' } },
     ],
     locationIds: ['loc-bl-naruki'],
     eventIds: ['evt-bl-ginjo-first-substitute', 'evt-bl-ichigo-joins-xcution', 'evt-bl-fullbring-stolen', 'evt-bl-ichigo-vs-ginjo'],
     arcIds: ['arc-bl-lost-substitute'],
     routeIds: ['route-bl-fullbring'],
     shortDescription: {
-      it: "Il leader dell'Xcution, che promette a Ichigo di restituirgli i poteri attraverso il Fullbring. In realtà è il primo Shinigami sostituto della storia, e odia la Soul Society.",
+      it: "Il leader dell'Xcution, che promette a Ichigo di restituirgli i poteri attraverso il Fullbring. In realtà è il primo Sostituto Shinigami della storia, e odia la Soul Society.",
       en: "The leader of Xcution, who promises to give Ichigo his powers back through Fullbring. In truth he is the first Substitute Soul Reaper in history, and he hates the Soul Society.",
     },
     longDescription: {
-      it: "Scoprì che il distintivo dato ai sostituti serve anche a sorvegliarli e a limitarne il potere: si ribellò, uccise degli Shinigami e sparì. Addestra Ichigo al Fullbring solo per rubarglielo e aggiungerlo al proprio. Muore nello scontro finale con Ichigo, che chiede di dargli sepoltura come a uno Shinigami sostituto.",
+      it: "Scoprì che il distintivo dato ai sostituti serve anche a sorvegliarli e a limitarne il potere: si ribellò, uccise degli Shinigami e sparì. Addestra Ichigo al Fullbring solo per rubarglielo e aggiungerlo al proprio. Muore nello scontro finale con Ichigo, che chiede di dargli sepoltura come a uno Sostituto Shinigami.",
       en: "He discovered that the badge given to substitutes also serves to watch them and limit their power: he rebelled, killed Soul Reapers and vanished. He trains Ichigo in Fullbring only to steal it and add it to his own. He dies in his final fight with Ichigo, who asks that he be buried as a Substitute Soul Reaper.",
     },
     transformations: [

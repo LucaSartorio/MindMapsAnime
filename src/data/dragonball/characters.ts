@@ -29,7 +29,7 @@ export const dragonballCharacters: Character[] = [
     race: 'saiyan',
     transformations: [
       { id: 'tr-goku-oozaru', name: 'Ōzaru', localizedName: { it: 'Oozaru', en: 'Great Ape' }, order: 1, kind: 'transformation', description: { it: 'Trasformazione in scimmione gigante causata dalla luce lunare captata dalla coda di Saiyan.', en: 'Giant-ape transformation triggered by moonlight through a Saiyan tail.' }, arcId: 'arc-dbz-pilaf-saga' },
-      { id: 'tr-goku-kaioken', name: 'Kaio-ken', order: 2, kind: 'power_up', description: { it: 'Tecnica di Re Kaiō che moltiplica temporaneamente potenza e velocità, a costo del corpo.', en: "King Kai's technique that temporarily multiplies power and speed at the body's expense." }, arcId: 'arc-dbz-saiyan-saga' },
+      { id: 'tr-goku-kaioken', name: 'Kaio-ken', order: 2, kind: 'power_up', description: { it: 'Tecnica di Re Kaioh che moltiplica temporaneamente potenza e velocità, a costo del corpo.', en: "King Kai's technique that temporarily multiplies power and speed at the body's expense." }, arcId: 'arc-dbz-saiyan-saga' },
       { id: 'tr-goku-ssj', name: 'Super Saiyan', order: 3, kind: 'transformation', description: { it: 'La leggendaria trasformazione Saiyan, sbloccata sul Pianeta Namecc dopo la morte di Krillin.', en: 'The legendary Saiyan transformation, unlocked on Namek after Krillin’s death.' }, arcId: 'arc-dbz-namek-frieza' },
       { id: 'tr-goku-ssj2', name: 'Super Saiyan 2', order: 4, kind: 'transformation', description: { it: 'Evoluzione della forma base, capelli più rigidi e aura elettrica.', en: 'An evolution of the base form, with spikier hair and a crackling aura.' }, arcId: 'arc-dbz-cell-saga' },
       { id: 'tr-goku-ssj3', name: 'Super Saiyan 3', order: 5, kind: 'transformation', description: { it: "Forma dai capelli lunghissimi e sopracciglia scomparse, mostrata per la prima volta nell'Aldilà contro Kid Bu.", en: 'A form with very long hair and no eyebrows, first shown in the Other World against Kid Buu.' }, arcId: 'arc-dbz-majin-buu' },
@@ -351,7 +351,7 @@ export const dragonballCharacters: Character[] = [
     worldId: 'world-dragonball',
     name: 'Tenshinhan',
     localizedName: {
-      it: 'Tenshinhan',
+      it: 'Tensing',
       en: 'Tien Shinhan',
       fr: 'Tenshinhan',
       de: 'Tenshinhan',
@@ -400,7 +400,7 @@ export const dragonballCharacters: Character[] = [
     allies: ['char-dbz-tenshinhan'],
     arcIds: ['arc-dbz-tenkaichi-tournament', 'arc-dbz-saiyan-saga'],
     shortDescription: {
-      it: 'Piccolo guerriero psichico, inseparabile compagno di Tenshinhan fin dai tempi della Gru Assassina.',
+      it: 'Piccolo guerriero psichico, inseparabile compagno di Tensing fin dai tempi della Gru Assassina.',
       en: "A small psychic fighter, Tenshinhan's inseparable companion since their days in the Crane School.",
     },
     status: 'alive',
@@ -555,7 +555,7 @@ export const dragonballCharacters: Character[] = [
     eventIds: ['evt-dbz-cell-games', 'evt-dbz-gohan-defeats-cell'],
     arcIds: ['arc-dbz-cell-saga'],
     shortDescription: {
-      it: 'Bio-androide creato dal Dr. Gero con le cellule dei più grandi guerrieri della serie, ossessionato dal raggiungere la "perfezione".',
+      it: 'Bio-androide creato dal Dottor Gelo con le cellule dei più grandi guerrieri della serie, ossessionato dal raggiungere la "perfezione".',
       en: "A bio-android created by Dr. Gero from the cells of the series' greatest fighters, obsessed with achieving 'perfection'.",
     },
     status: 'deceased',

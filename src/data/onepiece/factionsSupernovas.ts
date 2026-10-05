@@ -11,7 +11,7 @@ export const onepieceFactionsSupernovas: Faction[] = [
     name: 'Kid Pirates',
     localizedName: { it: 'Pirati di Kid', en: 'Kid Pirates' },
     description: {
-      it: "La ciurma di Eustass Kid, una delle più temute Supernove di Sabaody. Con il luogotenente Killer raggiunse il New World e Wano, dove si alleò con Rufy e Law contro gli Imperatori.",
+      it: "La ciurma di Eustass Kid, una delle più temute Supernove di Sabaody. Con il luogotenente Killer raggiunse il Nuovo Mondo e Wano, dove si alleò con Rufy e Law contro gli Imperatori.",
       en: "Eustass Kid's crew, one of the most feared Supernovas of Sabaody. With his lieutenant Killer it reached the New World and Wano, allying with Luffy and Law against the Emperors.",
     },
     leaderIds: ['char-op-kid'],
@@ -27,7 +27,7 @@ export const onepieceFactionsSupernovas: Faction[] = [
     name: 'Hawkins Pirates',
     localizedName: { it: 'Pirati di Hawkins', en: 'Hawkins Pirates' },
     description: {
-      it: "La ciurma del «Mago» Basil Hawkins, Supernova di North Blue. Nel New World passò sotto la bandiera dei Pirati delle Cento Bestie di Kaido.",
+      it: "La ciurma del «Mago» Basil Hawkins, Supernova di North Blue. Nel Nuovo Mondo passò sotto la bandiera dei Pirati delle Cento Bestie di Kaido.",
       en: "The crew of the 'Magician' Basil Hawkins, a North Blue Supernova. In the New World it came under the flag of Kaido's Beasts Pirates.",
     },
     leaderIds: ['char-op-hawkins'],
@@ -59,7 +59,7 @@ export const onepieceFactionsSupernovas: Faction[] = [
     name: 'On-Air Pirates',
     localizedName: { it: 'Pirati On-Air', en: 'On-Air Pirates' },
     description: {
-      it: "La ciurma di Scratchmen Apoo, Supernova-strumento musicale. Doppiogiochista nel New World, finì al servizio di Kaido.",
+      it: "La ciurma di Scratchmen Apoo, Supernova-strumento musicale. Doppiogiochista nel Nuovo Mondo, finì al servizio di Kaido.",
       en: "Scratchmen Apoo's crew, the musical-instrument Supernova. A double-dealer in the New World, he ended up serving Kaido.",
     },
     leaderIds: ['char-op-apoo'],
@@ -91,7 +91,7 @@ export const onepieceFactionsSupernovas: Faction[] = [
     name: 'Fallen Monk Pirates',
     localizedName: { it: 'Pirati del Monaco Caduto', en: 'Fallen Monk Pirates' },
     description: {
-      it: "La ciurma di Urouge, il «Monaco Folle» disceso da un'Isola del Cielo. Una delle poche Supernove a prosperare nel New World.",
+      it: "La ciurma di Urouge, il «Monaco Folle» disceso da un'Isola del Cielo. Una delle poche Supernove a prosperare nel Nuovo Mondo.",
       en: "The crew of Urouge, the 'Mad Monk' descended from a Sky Island. One of the few Supernovas to thrive in the New World.",
     },
     leaderIds: ['char-op-urouge'],

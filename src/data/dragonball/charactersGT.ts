@@ -121,7 +121,7 @@ export const dragonballCharactersGT: Character[] = [
     eventIds: ['evt-dbz-gt-baby-created'],
     arcIds: ['arc-dbz-gt-black-star', 'arc-dbz-gt-super-17'],
     shortDescription: {
-      it: "Dragon Ball GT: scienziato Mutante Macchina, creatore del Generale Rilldo, di Luud e del parassita Tsufuru Baby. Torna nella Saga di Super C-17 alleandosi con il Dr. Gero.",
+      it: "Dragon Ball GT: scienziato Mutante Macchina, creatore del Generale Rilldo, di Luud e del parassita Tsufuru Baby. Torna nella Saga di Super C-17 alleandosi con il Dottor Gelo.",
       en: "Dragon Ball GT: a Machine Mutant scientist, creator of General Rilldo, Luud and the Tuffle parasite Baby. He returns in the Super 17 Saga, allying with Dr. Gero.",
     },
     status: 'deceased',
@@ -232,7 +232,7 @@ export const dragonballCharactersGT: Character[] = [
     eventIds: ['evt-dbz-gt-super-17'],
     arcIds: ['arc-dbz-gt-super-17'],
     shortDescription: {
-      it: "Dragon Ball GT: fusione tra l'Androide C-17 e Hell Fighter 17 (creato da Dr. Gero e Dr. Myuu nell'Inferno), capace di assorbire ogni attacco di energia. Sconfitto da Goku con l'aiuto di C-18.",
+      it: "Dragon Ball GT: fusione tra l'Androide C-17 e Hell Fighter 17 (creato da Dottor Gelo e Dr. Myuu nell'Inferno), capace di assorbire ogni attacco di energia. Sconfitto da Goku con l'aiuto di C-18.",
       en: "Dragon Ball GT: a fusion of Android 17 and Hell Fighter 17 (built by Dr. Gero and Dr. Myuu in Hell), able to absorb any energy attack. Defeated by Goku with Android 18's help.",
     },
     status: 'deceased',
@@ -349,7 +349,7 @@ export const dragonballCharactersGT: Character[] = [
     eventIds: ['evt-dbz-gt-hell-portal', 'evt-dbz-gt-super-17-fusion'],
     arcIds: ['arc-dbz-gt-super-17'],
     shortDescription: {
-      it: "Dragon Ball GT: copia dell'Androide C-17 costruita da Dr. Gero e Dr. Myuu nell'Inferno. In sintonia mentale con il C-17 vivo, lo convince a fondersi con lui per formare Super C-17.",
+      it: "Dragon Ball GT: copia dell'Androide C-17 costruita da Dottor Gelo e Dr. Myuu nell'Inferno. In sintonia mentale con il C-17 vivo, lo convince a fondersi con lui per formare Super C-17.",
       en: "Dragon Ball GT: a copy of Android 17 built by Dr. Gero and Dr. Myuu in Hell. Mentally linked to the living Android 17, he convinces him to merge and form Super 17.",
     },
     status: 'deceased',

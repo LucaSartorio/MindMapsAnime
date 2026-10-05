@@ -24,11 +24,11 @@ export const onepieceLocationsSpace: Location[] = [
     x: 30,
     y: 80,
     shortDescription: {
-      it: "Oltre il cielo del Pianeta Blu si apre lo spazio. Doppio clic per esplorare la Luna, l'antica città di Birka e le rotte percorse da Enel dopo Skypiea.",
+      it: "Oltre il cielo del Pianeta Blu si apre lo spazio. Doppio clic per esplorare la Luna, l'antica città di Birka e le rotte percorse da Ener dopo Skypiea.",
       en: "Beyond the Blue Planet's sky lies space. Double-click to explore the Moon, the ancient city of Birka and the routes Enel took after Skypiea.",
     },
     longDescription: {
-      it: "Nelle «Grandi Operazioni Spaziali di Enel» (la cover story successiva a Skypiea), il «Dio» Enel raggiunge la Luna a bordo dell'arca Maxim e vi scopre le proprie radici. Questa sotto-mappa raccoglie quei luoghi: la Luna, Birka, i Pirati Spaziali e la Stella Polare.",
+      it: "Nelle «Grandi Operazioni Spaziali di Ener» (la cover story successiva a Skypiea), il «Dio» Ener raggiunge la Luna a bordo dell'arca Maxim e vi scopre le proprie radici. Questa sotto-mappa raccoglie quei luoghi: la Luna, Birka, i Pirati Spaziali e la Stella Polare.",
       en: "In 'Enel's Great Space Operations' (the cover story following Skypiea), the self-proclaimed 'God' Enel reaches the Moon aboard the Maxim ark and discovers his own roots. This sub-map gathers those places: the Moon, Birka, the Space Pirates and the Polar Star.",
     },
     subMapLevelId: 'op-map-space',
@@ -99,11 +99,11 @@ export const onepieceLocationsSpace: Location[] = [
     x: 470,
     y: 380,
     shortDescription: {
-      it: "La Luna. Enel vi giunse sull'arca Maxim dopo Skypiea, scoprendo sotto la sua crosta una città in rovina e antichi automi.",
+      it: "La Luna. Ener vi giunse sull'arca Maxim dopo Skypiea, scoprendo sotto la sua crosta una città in rovina e antichi automi.",
       en: "The Moon. Enel reached it on the Maxim ark after Skypiea, finding a ruined city and ancient automata beneath its crust.",
     },
     longDescription: {
-      it: "Inseguendo il sogno della «Fairy Vearth», la terra infinita, Enel volò sulla Luna. Lì le sue scariche del Frutto Gomu… del Frutto Fulmine risvegliarono gli automi e l'intera città lunare, rivelandogli le sue vere origini.",
+      it: "Inseguendo il sogno della «Fairy Vearth», la terra infinita, Ener volò sulla Luna. Lì le sue scariche del Frutto Gomu… del Frutto Fulmine risvegliarono gli automi e l'intera città lunare, rivelandogli le sue vere origini.",
       en: "Chasing the dream of the 'Fairy Vearth', the endless land, Enel flew to the Moon. There the discharges of his Rumble-Rumble Fruit reawakened the automata and the whole lunar city, revealing his true origins.",
     },
     characterIds: ['char-op-enel'],
@@ -124,11 +124,11 @@ export const onepieceLocationsSpace: Location[] = [
     x: 770,
     y: 400,
     shortDescription: {
-      it: "L'antica città lunare da cui discendono Skypiani, Shandia e Birkani (gli antenati di Enel), che la lasciarono per il Pianeta Blu.",
+      it: "L'antica città lunare da cui discendono Skypiani, Shandia e Birkani (gli antenati di Ener), che la lasciarono per il Pianeta Blu.",
       en: "The ancient lunar city from which the Skypieans, Shandia and Birkans (Enel's ancestors) descend, who left it for the Blue Planet.",
     },
     longDescription: {
-      it: "Birka è il nome della città sepolta sotto la crosta lunare e, insieme, dell'isola del cielo natale di Enel — che egli stesso distrusse. Un murale lunare raffigura i popoli alati che, esaurite le risorse, scesero verso il mare e i cieli del Pianeta Blu.",
+      it: "Birka è il nome della città sepolta sotto la crosta lunare e, insieme, dell'isola del cielo natale di Ener — che egli stesso distrusse. Un murale lunare raffigura i popoli alati che, esaurite le risorse, scesero verso il mare e i cieli del Pianeta Blu.",
       en: "Birka is the name of the city buried beneath the Moon's crust and, at the same time, of Enel's home sky island — which he himself destroyed. A lunar mural depicts the winged peoples who, their resources depleted, descended toward the sea and skies of the Blue Planet.",
     },
     characterIds: ['char-op-enel'],
@@ -171,11 +171,11 @@ export const onepieceLocationsSpace: Location[] = [
     x: 900,
     y: 180,
     shortDescription: {
-      it: "Una spietata banda di Pirati Spaziali che minacciava gli automi della Luna: Enel li annientò con incredibile facilità.",
+      it: "Una spietata banda di Pirati Spaziali che minacciava gli automi della Luna: Ener li annientò con incredibile facilità.",
       en: "A vicious band of Space Pirates that threatened the Moon's automata: Enel wiped them out with incredible ease.",
     },
     longDescription: {
-      it: "Nelle Operazioni Spaziali di Enel, i Pirati Spaziali scavano sulla Luna per depredarne i tesori, minacciando gli automi appena risvegliati. Enel li sbaraglia e accetta la fedeltà degli automi, diventando il signore del suo nuovo esercito lunare.",
+      it: "Nelle Operazioni Spaziali di Ener, i Pirati Spaziali scavano sulla Luna per depredarne i tesori, minacciando gli automi appena risvegliati. Ener li sbaraglia e accetta la fedeltà degli automi, diventando il signore del suo nuovo esercito lunare.",
       en: "In Enel's Space Operations, the Space Pirates dig on the Moon to plunder its treasures, threatening the newly awakened automata. Enel routs them and accepts the automata's loyalty, becoming lord of his new lunar army.",
     },
     characterIds: ['char-op-enel'],

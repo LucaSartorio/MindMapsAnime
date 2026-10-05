@@ -236,7 +236,7 @@ export const onepieceCharactersEastBlue: Character[] = [
     firstMangaAppearance: "2",
     firstAnimeAppearance: "1",
     longDescription: {
-      it: "Da timido mozzo prigioniero di Alvida a promettente ufficiale della Marina. Amico-rivale di Rufy, incarna l'ideale di una «Giustizia» giusta; a Marineford implorò la fine della guerra. Membro dell'unità segreta SWORD.",
+      it: "Da timido mozzo prigioniero di Albida a promettente ufficiale della Marina. Amico-rivale di Rufy, incarna l'ideale di una «Giustizia» giusta; a Marineford implorò la fine della guerra. Membro dell'unità segreta SWORD.",
       en: "From a timid cabin boy held by Alvida to a promising Marine officer. A friend-rival of Luffy, he embodies the ideal of a just 'Justice'; at Marineford he begged for the war to end. A member of the secret SWORD unit.",
     },
     name: 'Coby',
@@ -249,7 +249,7 @@ export const onepieceCharactersEastBlue: Character[] = [
     allies: ['char-op-luffy'],
     arcIds: ['arc-op-romance-dawn'],
     shortDescription: {
-      it: "Timido ragazzo liberato da Rufy dalla ciurma di Alvida, decide di arruolarsi nella Marina per diventare un ufficiale giusto.",
+      it: "Timido ragazzo liberato da Rufy dalla ciurma di Albida, decide di arruolarsi nella Marina per diventare un ufficiale giusto.",
       en: "A timid boy freed by Luffy from Alvida's crew, who decides to enlist in the Marines to become a righteous officer.",
     },
     status: 'alive',
@@ -290,7 +290,7 @@ export const onepieceCharactersEastBlue: Character[] = [
     firstMangaAppearance: "98",
     firstAnimeAppearance: "48",
     longDescription: {
-      it: "«il Cacciatore Bianco», marine integerrimo utente del frutto Fumo Fumo. Inseguì Rufy da Loguetown a Punk Hazard prima di lasciarlo andare, e milita nella segreta unità SWORD opponendosi alla «Giustizia Assoluta».",
+      it: "«il Cacciatore Bianco», marine integerrimo utente del frutto Fum Fum. Inseguì Rufy da Loguetown a Punk Hazard prima di lasciarlo andare, e milita nella segreta unità SWORD opponendosi alla «Giustizia Assoluta».",
       en: "'White Hunter', an upright Marine and user of the Smoke-Smoke Fruit. He pursued Luffy from Loguetown to Punk Hazard before letting him go, and serves in the secret SWORD unit, opposing 'Absolute Justice'.",
     },
     name: 'Smoker',
@@ -304,7 +304,7 @@ export const onepieceCharactersEastBlue: Character[] = [
     enemies: ['char-op-luffy'],
     arcIds: ['arc-op-loguetown'],
     shortDescription: {
-      it: "Capitano della Marina a Loguetown, utente del Frutto Fumo Fumo. Insegue ostinatamente Rufy fin dentro la Grand Line, mosso da un rigido senso di giustizia.",
+      it: "Capitano della Marina a Loguetown, utente del Frutto Fum Fum. Insegue ostinatamente Rufy fin dentro la Grand Line, mosso da un rigido senso di giustizia.",
       en: "Marine captain at Loguetown and user of the Smoke-Smoke Fruit. He doggedly pursues Luffy into the Grand Line, driven by a rigid sense of justice.",
     },
     status: 'alive',
@@ -374,7 +374,7 @@ export const onepieceCharactersEastBlue: Character[] = [
     firstMangaAppearance: "9",
     firstAnimeAppearance: "5",
     longDescription: {
-      it: "«il Clown» Buggy, ex mozzo della ciurma di Roger e utente del frutto Smembra Smembra. Da nemico di East Blue, una catena di fortunati equivoci lo porta fino al rango di Imperatore e leader della Cross Guild.",
+      it: "«il Clown» Bagy, ex mozzo della ciurma di Roger e utente del frutto Puzzle Puzzle. Da nemico di East Blue, una catena di fortunati equivoci lo porta fino al rango di Imperatore e leader della Cross Guild.",
       en: "Buggy 'the Clown', a former cabin boy of Roger's crew and user of the Chop-Chop Fruit. From an East Blue enemy, a chain of lucky misunderstandings carries him to the rank of Emperor and leader of the Cross Guild.",
     },
     name: 'Bagy',

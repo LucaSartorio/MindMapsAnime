@@ -28,7 +28,7 @@ export const onepieceFactionsExtra: Faction[] = [
     worldId: 'world-onepiece',
     type: 'organization',
     name: 'Straw Hat Grand Fleet',
-    localizedName: { it: 'Cappello di Paglia Grand Fleet', en: 'Straw Hat Grand Fleet' },
+    localizedName: { it: 'Grande Flotta di Cappello di Paglia', en: 'Straw Hat Grand Fleet' },
     description: {
       it: "La grande flotta di sette ciurme alleate nata a Dressrosa, che ha giurato fedeltà a Rufy. Riunisce migliaia di pirati pronti ad accorrere al suo fianco, pur conservando la propria indipendenza.",
       en: "The grand fleet of seven allied crews born at Dressrosa, sworn to Luffy. It gathers thousands of pirates ready to rush to his side, while keeping their own independence.",

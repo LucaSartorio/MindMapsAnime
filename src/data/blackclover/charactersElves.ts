@@ -143,7 +143,7 @@ export const blackcloverCharactersElves: Character[] = [
     id: 'char-bc-fana-elf',
     worldId: 'world-blackclover',
     name: 'Fana',
-    localizedName: { it: 'Fana la Senza Amore', en: 'Fana the Loveless' },
+    localizedName: { it: 'Fana la Rancorosa', en: 'Fana the Hateful' },
     japaneseName: 'ファナ',
     importance: 'supporting',
     role: ['antagonist', 'elf', 'third_eye'],

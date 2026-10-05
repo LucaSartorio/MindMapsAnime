@@ -441,6 +441,8 @@ export const es = {
       squad: 'Órdenes',
       race: 'Razas',
       concept: 'Conceptos',
+      division: 'Divisiones',
+      school: 'Escuelas',
     },
     empty: 'No hay clanes ni facciones',
     emptyDescription: 'No hay resultados para los filtros actuales.',

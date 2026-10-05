@@ -30,6 +30,8 @@ import { blackcloverRoutes } from './routes';
 import { blackcloverMagic } from './magic';
 import { blackcloverAssets } from './assets';
 import { blackcloverTournaments } from './tournaments';
+import { withSourceNames } from '@/data/shared/translations';
+import { bcNames } from './names';
 
 const blackclover = animeWorlds.find((w) => w.slug === 'blackclover')!;
 
@@ -77,7 +79,7 @@ const factions = [...blackcloverFactions, ...blackcloverFactionsBatch1].map((f) 
   return { ...f, jutsuIds: [...new Set([...(f.jutsuIds ?? []), ...magic])] };
 });
 
-export const blackcloverDataset: WorldDataset = withEventTags(withFactionExtras(withFamily(withBattles({
+export const blackcloverDataset: WorldDataset = withSourceNames(withEventTags(withFactionExtras(withFamily(withBattles({
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
   seoSlugs: blackcloverSlugs,
   world: blackclover,
@@ -96,6 +98,6 @@ export const blackcloverDataset: WorldDataset = withEventTags(withFactionExtras(
   jutsu: blackcloverMagic,
   tournaments: blackcloverTournaments,
   assets: blackcloverAssets,
-}, bcBattles), bcFamily, 'char-bc-'), bcStructure), bcMarkerTags);
+}, bcBattles), bcFamily, 'char-bc-'), bcStructure), bcMarkerTags), bcNames);
 
 export { BLACKCLOVER_MAP_VIEWBOX, BLACKCLOVER_UNDERWORLD_VIEWBOX } from './mapConstants';

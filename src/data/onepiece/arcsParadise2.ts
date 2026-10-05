@@ -14,7 +14,7 @@ export const onepieceArcsParadise2: StoryArc[] = [
     name: 'Water Seven',
     localizedName: { it: 'Water Seven', en: 'Water Seven' },
     saga: { it: 'Saga di Water Seven', en: 'Water Seven Saga' },
-    period: { it: 'Paradise · città dell\'acqua', en: 'Paradise · city of water' },
+    period: { it: 'Paradiso · città dell\'acqua', en: 'Paradise · city of water' },
     order: 20,
     description: {
       it: "Nella città dei carpentieri la ciurma si spacca per la Going Merry ormai logora, Nico Robin sparisce con la CP9 e la Galley-La è scossa da un tradimento. Sullo sfondo, i progetti dell'arma Pluton.",
@@ -42,7 +42,7 @@ export const onepieceArcsParadise2: StoryArc[] = [
     name: 'Enies Lobby',
     localizedName: { it: 'Enies Lobby', en: 'Enies Lobby' },
     saga: { it: 'Saga di Water Seven', en: 'Water Seven Saga' },
-    period: { it: 'Paradise · isola giudiziaria', en: 'Paradise · judicial island' },
+    period: { it: 'Paradiso · isola giudiziaria', en: 'Paradise · judicial island' },
     order: 22,
     description: {
       it: "Per salvare Nico Robin la ciurma assalta l'isola giudiziaria del Governo Mondiale e ne brucia la bandiera, dichiarando guerra al mondo. Dopo lo scontro con la CP9 e un Buster Call, Franky entra in ciurma con la nuova Thousand Sunny.",
@@ -64,16 +64,16 @@ export const onepieceArcsParadise2: StoryArc[] = [
     mangaChapters: ["442-489"],
     animeEpisodes: ["337-381"],
     longDescription: {
-      it: "Nella nebbia del Triangolo Florian la ciurma approda sull'enorme isola-galeone Thriller Bark, regno del Corsaro Gekko Moria, che ruba le ombre per animare un esercito di zombie. Rubata l'ombra di Rufy per il gigante Oars, e tra la fantasma Perona e il cavaliere Absalom, i Cappello di Paglia liberano lo scheletro Brook, prigioniero da cinquant'anni. Rufy sconfigge Moria; poi il Corsaro Bartholomew Kuma mette alla prova la ciurma esausta e Zoro si carica in segreto di tutto il dolore di Rufy. Brook si unisce come musicista.",
+      it: "Nella nebbia del Triangolo Florian la ciurma approda sull'enorme isola-galeone Thriller Bark, regno del Corsaro Gekko Moria, che ruba le ombre per animare un esercito di zombie. Rubata l'ombra di Rufy per il gigante Oars, e tra la fantasma Perona e il cavaliere Absalom, i Cappello di Paglia liberano lo scheletro Brook, prigioniero da cinquant'anni. Rufy sconfigge Moria; poi il Corsaro Bartholomew Orso mette alla prova la ciurma esausta e Zoro si carica in segreto di tutto il dolore di Rufy. Brook si unisce come musicista.",
       en: "In the Florian Triangle fog the crew lands on the vast galleon-island Thriller Bark, realm of the Warlord Gecko Moria, who steals shadows to animate an army of zombies. With Luffy's shadow stolen for the giant Oars, and amid the ghost Perona and the knight Absalom, the Straw Hats free the skeleton Brook, a prisoner for fifty years. Luffy defeats Moria; then the Warlord Bartholomew Kuma tests the exhausted crew and Zoro secretly takes on all of Luffy's pain. Brook joins as musician.",
     },
     name: 'Thriller Bark',
     localizedName: { it: 'Thriller Bark', en: 'Thriller Bark' },
     saga: { it: 'Saga di Thriller Bark', en: 'Thriller Bark Saga' },
-    period: { it: 'Paradise · Triangolo Florian', en: 'Paradise · Florian Triangle' },
+    period: { it: 'Paradiso · Triangolo Florian', en: 'Paradise · Florian Triangle' },
     order: 26,
     description: {
-      it: "Nella nebbia del Triangolo Florian la ciurma affronta il Corsaro Gekko Moria, ladro di ombre, sull'isola-galeone Thriller Bark. Liberato lo scheletro Brook, questi si unisce come musicista; poi Bartholomew Kuma mette alla prova la ciurma esausta.",
+      it: "Nella nebbia del Triangolo Florian la ciurma affronta il Corsaro Gekko Moria, ladro di ombre, sull'isola-galeone Thriller Bark. Liberato lo scheletro Brook, questi si unisce come musicista; poi Bartholomew Orso mette alla prova la ciurma esausta.",
       en: "In the Florian Triangle fog the crew faces the Warlord Gecko Moria, a stealer of shadows, on the galleon-island Thriller Bark. Freeing the skeleton Brook, he joins as musician; then Bartholomew Kuma tests the exhausted crew.",
     },
     locationIds: ['loc-op-thriller-bark'],

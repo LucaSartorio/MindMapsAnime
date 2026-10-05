@@ -336,9 +336,9 @@ export const dragonballEventsExtra: TimelineEvent[] = [
   /* ================================ SAGA DEI SAIYAN ================================ */
   e({
     id: 'evt-dbz-raditz-death',
-    title: { it: 'La fine di Raditz', en: "Raditz's end" },
+    title: { it: 'La fine di Radish', en: "Raditz's end" },
     description: {
-      it: "Raditz rapisce Gohan e rivela a Goku che è un Saiyan di nome Kakaroth. Goku e Piccolo si alleano: Goku immobilizza il fratello e Piccolo li trafigge entrambi con il Makankosappo. Goku muore.",
+      it: "Radish rapisce Gohan e rivela a Goku che è un Saiyan di nome Kakaroth. Goku e Piccolo si alleano: Goku immobilizza il fratello e Piccolo li trafigge entrambi con il Makankosappo. Goku muore.",
       en: "Raditz kidnaps Gohan and reveals to Goku that he is a Saiyan named Kakarot. Goku and Piccolo team up: Goku pins his brother down and Piccolo pierces them both with the Special Beam Cannon. Goku dies.",
     },
     period: DBZ,
@@ -354,7 +354,7 @@ export const dragonballEventsExtra: TimelineEvent[] = [
     id: 'evt-dbz-snake-way',
     title: { it: 'La corsa sulla Via del Serpente', en: 'Running Snake Way' },
     description: {
-      it: "Morto, Goku ottiene da Re Yama di allenarsi da Re Kaiō. Percorre di corsa il milione di chilometri della Via del Serpente, si ferma al palazzo della Principessa Serpente e cade perfino all'Inferno prima di arrivare.",
+      it: "Morto, Goku ottiene da Re Yama di allenarsi da Re Kaioh. Percorre di corsa il milione di chilometri della Via del Serpente, si ferma al palazzo della Principessa Serpente e cade perfino all'Inferno prima di arrivare.",
       en: "Dead, Goku gets King Yemma's permission to train with King Kai. He runs the million kilometres of Snake Way, stops at Princess Snake's palace and even falls into Hell before he arrives.",
     },
     period: DBZ,
@@ -369,7 +369,7 @@ export const dragonballEventsExtra: TimelineEvent[] = [
   }),
   e({
     id: 'evt-dbz-king-kai-training',
-    title: { it: "L'allenamento da Re Kaiō", en: "Training with King Kai" },
+    title: { it: "L'allenamento da Re Kaioh", en: "Training with King Kai" },
     description: {
       it: "Sul pianetino con gravità dieci volte quella terrestre Goku insegue la scimmia Bubbles e colpisce il grillo Gregory, poi impara il Kaio-ken e la Genkidama. Torna in vita appena in tempo per affrontare Vegeta e Nappa.",
       en: "On the tiny planet with ten times Earth's gravity Goku chases the monkey Bubbles and hits the cricket Gregory, then learns the Kaio-ken and the Spirit Bomb. He comes back to life just in time to face Vegeta and Nappa.",
@@ -401,9 +401,9 @@ export const dragonballEventsExtra: TimelineEvent[] = [
   }),
   e({
     id: 'evt-dbz-chaozu-tien-sacrifice',
-    title: { it: 'Il sacrificio di Chaozu e Tenshinhan', en: 'Chiaotzu and Tien sacrifice themselves' },
+    title: { it: 'Il sacrificio di Chaozu e Tensing', en: 'Chiaotzu and Tien sacrifice themselves' },
     description: {
-      it: "Chaozu si aggrappa alla schiena di Nappa e si fa esplodere, ma il Saiyan sopravvive. Tenshinhan, con un braccio solo, lancia un ultimo Kikoho che lo uccide: Nappa resta in piedi.",
+      it: "Chaozu si aggrappa alla schiena di Nappa e si fa esplodere, ma il Saiyan sopravvive. Tensing, con un braccio solo, lancia un ultimo Kikoho che lo uccide: Nappa resta in piedi.",
       en: "Chiaotzu clings to Nappa's back and self-destructs, but the Saiyan survives. Tien, with one arm, fires a final Tri-Beam that kills him: Nappa is still standing.",
     },
     period: DBZ,
@@ -485,7 +485,7 @@ export const dragonballEventsExtra: TimelineEvent[] = [
     id: 'evt-dbz-androids-beat-z',
     title: { it: 'C-17 e C-18 travolgono i Guerrieri Z', en: 'Androids 17 and 18 overwhelm the Z Fighters' },
     description: {
-      it: "Risvegliati dal Dr. Gero, C-17 e C-18 lo uccidono e attivano C-16. C-18 batte Vegeta Super Saiyan e gli spezza un braccio, poi gli Androidi se ne vanno senza uccidere nessuno: cercano Goku.",
+      it: "Risvegliati dal Dottor Gelo, C-17 e C-18 lo uccidono e attivano C-16. C-18 batte Vegeta Super Saiyan e gli spezza un braccio, poi gli Androidi se ne vanno senza uccidere nessuno: cercano Goku.",
       en: "Woken by Dr. Gero, Androids 17 and 18 kill him and activate Android 16. Android 18 beats Super Saiyan Vegeta and breaks his arm, then the Androids leave without killing anyone: they are looking for Goku.",
     },
     period: DBZ,
@@ -502,7 +502,7 @@ export const dragonballEventsExtra: TimelineEvent[] = [
     id: 'evt-dbz-cell-gingertown',
     title: { it: 'Cell a Gingertown', en: 'Cell at Gingertown' },
     description: {
-      it: "A Gingertown gli abitanti spariscono, lasciando solo i vestiti: è Cell, una creatura del Dr. Gero arrivata dal futuro con una Macchina del Tempo rubata, che assorbe le persone. Piccolo lo affronta e scopre che ha le sue cellule.",
+      it: "A Gingertown gli abitanti spariscono, lasciando solo i vestiti: è Cell, una creatura del Dottor Gelo arrivata dal futuro con una Macchina del Tempo rubata, che assorbe le persone. Piccolo lo affronta e scopre che ha le sue cellule.",
       en: "In Gingertown the inhabitants vanish, leaving only their clothes: it is Cell, a creature of Dr. Gero's arrived from the future in a stolen Time Machine, absorbing people. Piccolo fights him and finds out he carries his cells.",
     },
     period: DBZ,
@@ -518,7 +518,7 @@ export const dragonballEventsExtra: TimelineEvent[] = [
     id: 'evt-dbz-cell-absorbs-17',
     title: { it: 'Cell assorbe C-17', en: 'Cell absorbs Android 17' },
     description: {
-      it: "Mentre C-16 è fuori combattimento e Piccolo è sconfitto, Cell inghiotte con la coda C-17 e raggiunge la forma semi-perfetta. C-18 scappa con l'aiuto di Tenshinhan, che lo blocca con il Kikoho.",
+      it: "Mentre C-16 è fuori combattimento e Piccolo è sconfitto, Cell inghiotte con la coda C-17 e raggiunge la forma semi-perfetta. C-18 scappa con l'aiuto di Tensing, che lo blocca con il Kikoho.",
       en: "With Android 16 down and Piccolo beaten, Cell swallows Android 17 with his tail and reaches his semi-perfect form. Android 18 escapes thanks to Tien, who holds him back with the Tri-Beam.",
     },
     period: DBZ,
@@ -566,7 +566,7 @@ export const dragonballEventsExtra: TimelineEvent[] = [
     id: 'evt-dbz-goku-sacrifice-cell',
     title: { it: 'Il sacrificio di Goku', en: "Goku's sacrifice" },
     description: {
-      it: "Cell, sconfitto da Gohan, si gonfia per autodistruggersi e far saltare la Terra. Goku lo afferra e si teletrasporta sul pianeta di Re Kaiō: Cell esplode lì, uccidendo Goku, Re Kaiō, Bubbles e Gregory.",
+      it: "Cell, sconfitto da Gohan, si gonfia per autodistruggersi e far saltare la Terra. Goku lo afferra e si teletrasporta sul pianeta di Re Kaioh: Cell esplode lì, uccidendo Goku, Re Kaioh, Bubbles e Gregory.",
       en: "Cell, beaten by Gohan, swells up to self-destruct and blow up the Earth. Goku grabs him and teleports to King Kai's planet: Cell explodes there, killing Goku, King Kai, Bubbles and Gregory.",
     },
     period: DBZ,
@@ -827,7 +827,7 @@ export const dragonballEventsExtra: TimelineEvent[] = [
     id: 'evt-dbz-beerus-awakens',
     title: { it: 'Il risveglio di Bills', en: 'Beerus awakens' },
     description: {
-      it: "Dopo 39 anni di sonno il Dio della Distruzione Bills si sveglia con il ricordo di un sogno: un Super Saiyan God. Con Whis va sul pianeta di Re Kaiō e mette fuori combattimento Goku in Super Saiyan 3 con due colpi.",
+      it: "Dopo 39 anni di sonno il Dio della Distruzione Bills si sveglia con il ricordo di un sogno: un Super Saiyan God. Con Whis va sul pianeta di Re Kaioh e mette fuori combattimento Goku in Super Saiyan 3 con due colpi.",
       en: "After 39 years of sleep the God of Destruction Beerus wakes up remembering a dream: a Super Saiyan God. With Whis he goes to King Kai's planet and knocks out Super Saiyan 3 Goku with two blows.",
     },
     period: DBS,
@@ -843,7 +843,7 @@ export const dragonballEventsExtra: TimelineEvent[] = [
     id: 'evt-dbz-whis-training',
     title: { it: "L'allenamento con Whis", en: 'Training with Whis' },
     description: {
-      it: "Dopo Battle of Gods Goku e Vegeta si fanno allenare da Whis sul pianeta di Bills, imparando a padroneggiare l'aura divina e a muoversi senza pensare. Ne esce il Super Saiyan Blue.",
+      it: "Dopo La battaglia degli dei Goku e Vegeta si fanno allenare da Whis sul pianeta di Bills, imparando a padroneggiare l'aura divina e a muoversi senza pensare. Ne esce il Super Saiyan Blue.",
       en: "After Battle of Gods, Goku and Vegeta get Whis to train them on Beerus's planet, learning to master divine ki and to move without thinking. Super Saiyan Blue comes out of it.",
     },
     period: DBS,
@@ -949,7 +949,7 @@ export const dragonballEventsExtra: TimelineEvent[] = [
     id: 'evt-dbz-red-ribbon-reborn',
     title: { it: 'Il Red Ribbon rinasce', en: 'The Red Ribbon reborn' },
     description: {
-      it: "Magenta, figlio del comandante Red, rifonda il Red Ribbon e ingaggia il Dr. Hedo, nipote di Gero, facendogli credere che i Guerrieri Z siano alieni malvagi. Gamma 2 attacca Piccolo, che finge di morire e si infiltra nella base.",
+      it: "Magenta, figlio del comandante Red, rifonda il Red Ribbon e ingaggia il Dr. Hedo, nipote di Gelo, facendogli credere che i Guerrieri Z siano alieni malvagi. Gamma 2 attacca Piccolo, che finge di morire e si infiltra nella base.",
       en: "Magenta, Commander Red's son, rebuilds the Red Ribbon and hires Dr. Hedo, Gero's grandson, leading him to believe the Z Fighters are evil aliens. Gamma 2 attacks Piccolo, who fakes his death and infiltrates the base.",
     },
     period: { it: 'Dragon Ball Super: Super Hero', en: 'Dragon Ball Super: Super Hero' },

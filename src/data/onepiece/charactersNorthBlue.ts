@@ -12,7 +12,7 @@ export const onepieceCharactersNorthBlue: Character[] = [
     firstMangaAppearance: "498",
     firstAnimeAppearance: "392",
     longDescription: {
-      it: "Trafalgar D. Water Law «il Chirurgo della Morte», capitano degli Heart Pirates ed ex Corsaro, utente del leggendario frutto Op Op. Salvato da bambino da Corazon, si alleò con Rufy per abbattere gli Imperatori.",
+      it: "Trafalgar D. Water Law «il Chirurgo della Morte», capitano degli Heart Pirates ed ex Corsaro, utente del leggendario frutto Ope Ope. Salvato da bambino da Corazon, si alleò con Rufy per abbattere gli Imperatori.",
       en: "Trafalgar D. Water Law 'the Surgeon of Death', captain of the Heart Pirates and a former Warlord, user of the legendary Op-Op Fruit. Saved as a child by Corazon, he allied with Luffy to topple the Emperors.",
     },
     name: 'Trafalgar D. Water Law',

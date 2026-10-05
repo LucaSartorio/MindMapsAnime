@@ -441,6 +441,8 @@ export const fr = {
       squad: 'Compagnies',
       race: 'Races',
       concept: 'Concepts',
+      division: 'Divisions',
+      school: 'Écoles',
     },
     empty: 'Aucun clan ni faction',
     emptyDescription: 'Aucun résultat pour les filtres actuels.',

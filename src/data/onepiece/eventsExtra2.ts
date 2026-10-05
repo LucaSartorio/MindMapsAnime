@@ -85,11 +85,11 @@ export const onepieceEventsExtra2: TimelineEvent[] = [
     id: 'evt-op-sabaody-reunion', worldId: W,
     title: { it: 'La riunione dopo due anni', en: 'The reunion after two years' },
     description: {
-      it: "Compiuto l'allenamento, i nove Cappello di Paglia si ritrovano all'Arcipelago Sabaody, più forti che mai, pronti a ripartire verso il New World a bordo della Thousand Sunny.",
+      it: "Compiuto l'allenamento, i nove Cappello di Paglia si ritrovano all'Arcipelago Sabaody, più forti che mai, pronti a ripartire verso il Nuovo Mondo a bordo della Thousand Sunny.",
       en: "Their training complete, the nine Straw Hats reunite at the Sabaody Archipelago, stronger than ever, ready to set off for the New World aboard the Thousand Sunny.",
     },
     longDescription: {
-      it: "Due anni dopo la dispersione, la ciurma torna a Sabaody uno a uno. Tra falsi Cappello di Paglia, l'agguato dei Pacifista e l'aiuto di Rayleigh che ricopre la Thousand Sunny per la discesa, i nove compagni si riabbracciano trasformati dall'addestramento e salpano insieme verso l'Isola degli Uomini-Pesce e il New World.",
+      it: "Due anni dopo la dispersione, la ciurma torna a Sabaody uno a uno. Tra falsi Cappello di Paglia, l'agguato dei Pacifista e l'aiuto di Rayleigh che ricopre la Thousand Sunny per la discesa, i nove compagni si riabbracciano trasformati dall'addestramento e salpano insieme verso l'Isola degli Uomini-Pesce e il Nuovo Mondo.",
       en: "Two years after the scattering, the crew returns to Sabaody one by one. Amid fake Straw Hats, a Pacifista ambush and Rayleigh's help coating the Thousand Sunny for the descent, the nine comrades reunite, transformed by their training, and set off together for Fish-Man Island and the New World.",
     },
     period: { it: 'Saga di Fish-Man Island', en: 'Fish-Man Island Saga' },
@@ -110,7 +110,7 @@ export const onepieceEventsExtra2: TimelineEvent[] = [
       it: "Devastata da Jack a caccia del ninja Raizo, Zou rivela ai Cappello di Paglia la tribù dei mink e il legame antico tra i loro sovrani Inuarashi e Nekomamushi e Kozuki Oden. Quando si scopre che «Raizo è salvo», nascosto da sempre dai mink, samurai, pirati e mink stringono il patto che porterà al raid di Onigashima; emerge inoltre il vero erede dei Kozuki, Momonosuke.",
       en: "Ravaged by Jack hunting the ninja Raizo, Zou reveals to the Straw Hats the mink tribe and the ancient bond between their rulers Inuarashi and Nekomamushi and Kozuki Oden. When it turns out 'Raizo is safe', long hidden by the minks, samurai, pirates and minks forge the pact that will lead to the Onigashima raid; the true Kozuki heir, Momonosuke, also emerges.",
     },
-    period: { it: 'New World · Zou', en: 'New World · Zou' },
+    period: { it: 'Nuovo Mondo · Zou', en: 'New World · Zou' },
     locationId: 'loc-op-zou',
     characterIds: ['char-op-luffy', 'char-op-law', 'char-op-inuarashi', 'char-op-nekomamushi', 'char-op-kinemon', 'char-op-raizo', 'char-op-momonosuke'],
     factionIds: ['faction-op-kozuki', 'faction-op-heart-pirates', 'faction-op-straw-hat-pirates'],
@@ -125,7 +125,7 @@ export const onepieceEventsExtra2: TimelineEvent[] = [
       en: "At the Mary Geoise Reverie, after learning a secret of the Empty Throne, King Cobra of Alabasta is killed and Vivi vanishes; Sabo clashes with the admirals.",
     },
     longDescription: {
-      it: "Durante il consiglio mondiale, Re Cobra Nefertari pone agli Astri di Saggezza una domanda proibita sul nome «D.» e sul potere che siede sul Trono Vuoto, Imu: pochi istanti dopo viene ucciso, e sua figlia Vivi scompare. Negli stessi giorni Sabo e i rivoluzionari liberano lo schiavo Kuma e affrontano gli ammiragli, mentre il mondo riceve la notizia (falsa) della morte di Sabo.",
+      it: "Durante il consiglio mondiale, Re Cobra Nefertari pone agli Astri di Saggezza una domanda proibita sul nome «D.» e sul potere che siede sul Trono Vuoto, Imu: pochi istanti dopo viene ucciso, e sua figlia Vivi scompare. Negli stessi giorni Sabo e i rivoluzionari liberano lo schiavo Orso e affrontano gli ammiragli, mentre il mondo riceve la notizia (falsa) della morte di Sabo.",
       en: "During the world council, King Cobra Nefertari asks the Five Elders a forbidden question about the name 'D.' and the power on the Empty Throne, Imu: moments later he is killed, and his daughter Vivi disappears. In the same days Sabo and the revolutionaries free the slave Kuma and clash with the admirals, while the world receives the (false) news of Sabo's death.",
     },
     period: { it: 'Mary Geoise · Reverie', en: 'Mary Geoise · Reverie' },
@@ -137,16 +137,16 @@ export const onepieceEventsExtra2: TimelineEvent[] = [
   },
   {
     id: 'evt-op-kuma-final-ride', worldId: W,
-    title: { it: "L'ultima marcia di Kuma", en: "Kuma's final ride" },
+    title: { it: "L'ultima marcia di Orso", en: "Kuma's final ride" },
     description: {
-      it: "Mosso da un ultimo barlume di volontà, il Pacifista Bartholomew Kuma attraversa mezzo mondo per raggiungere la figlia Bonney a Egghead.",
+      it: "Mosso da un ultimo barlume di volontà, il Pacifista Bartholomew Orso attraversa mezzo mondo per raggiungere la figlia Bonney a Egghead.",
       en: "Moved by a last flicker of will, the Pacifista Bartholomew Kuma travels half the world to reach his daughter Bonney on Egghead.",
     },
     longDescription: {
-      it: "Ormai privo di volontà e dato per perso, Kuma riattiva un ultimo, miracoloso impulso del proprio cuore di padre: fugge dalla Marina e percorre in moto e in volo distanze enormi per raggiungere Bonney sull'isola di Egghead, riaccendendo il filo del suo destino proprio mentre il Governo Mondiale stringe l'assedio.",
+      it: "Ormai privo di volontà e dato per perso, Orso riattiva un ultimo, miracoloso impulso del proprio cuore di padre: fugge dalla Marina e percorre in moto e in volo distanze enormi per raggiungere Bonney sull'isola di Egghead, riaccendendo il filo del suo destino proprio mentre il Governo Mondiale stringe l'assedio.",
       en: "Now will-less and given up for lost, Kuma reignites one last, miraculous impulse of his father's heart: he escapes the Marines and crosses immense distances by bike and by flight to reach Bonney on Egghead island, rekindling the thread of his fate just as the World Government closes its siege.",
     },
-    period: { it: 'New World · Egghead', en: 'New World · Egghead' },
+    period: { it: 'Nuovo Mondo · Egghead', en: 'New World · Egghead' },
     arcId: 'arc-op-egghead', locationId: 'loc-op-egghead',
     characterIds: ['char-op-kuma', 'char-op-bonney'],
     factionIds: ['faction-op-revolutionary-army'],

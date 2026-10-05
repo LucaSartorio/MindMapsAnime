@@ -29,11 +29,11 @@ const t = (
 export const dragonballJutsuExtra: Jutsu[] = [
   /* ============================== ONDE ENERGETICHE ============================== */
   t('kikoho', 'Tri-Beam', 'energy_blast', ['tenshinhan'], {
-    it: "Il colpo di Tenshinhan: le mani formano un triangolo attraverso cui viene sparata un'onda devastante che consuma la vita stessa di chi la usa. Contro Cell, Tenshinhan la lancia senza sosta per guadagnare tempo a C-18 e C-17, fino a crollare stremato.",
+    it: "Il colpo di Tensing: le mani formano un triangolo attraverso cui viene sparata un'onda devastante che consuma la vita stessa di chi la usa. Contro Cell, Tensing la lancia senza sosta per guadagnare tempo a C-18 e C-17, fino a crollare stremato.",
     en: "Tien's blow: his hands form a triangle through which a devastating wave is fired, consuming the user's very life. Against Cell, Tien fires it again and again to buy time for Androids 18 and 17, until he collapses exhausted.",
   }, { localizedName: { it: 'Kikoho', en: 'Tri-Beam' }, japaneseName: '気功砲', tags: ['scuola-della-gru'] }),
   t('dodonpa', 'Dodon Ray', 'energy_blast', ['tao-pai-pai', 'tenshinhan', 'crane-hermit'], {
-    it: "Il raggio sottile e letale della Scuola della Gru, sparato dalla punta del dito. Tao Pai Pai lo usa per battere Goku la prima volta; Tenshinhan lo impara dal suo maestro.",
+    it: "Il raggio sottile e letale della Scuola della Gru, sparato dalla punta del dito. Tao Pai Pai lo usa per battere Goku la prima volta; Tensing lo impara dal suo maestro.",
     en: "The Crane School's thin, deadly ray, fired from the fingertip. Tao Pai Pai uses it to beat Goku the first time; Tien learns it from his master.",
   }, { localizedName: { it: 'Dodonpa', en: 'Dodon Ray' }, japaneseName: 'どどん波', tags: ['scuola-della-gru'] }),
   t('sokidan', 'Spirit Ball', 'energy_blast', ['yamcha'], {
@@ -77,13 +77,13 @@ export const dragonballJutsuExtra: Jutsu[] = [
     en: "The beam fired from the antenna on Majin Buu's head that turns anything into a sweet — chocolate, cookies, candy — which Buu then eats. This is how Evil Buu turns much of Earth's population into chocolate.",
   }, { localizedName: { it: 'Raggio trasformante', en: 'Transfiguration Beam' }, japaneseName: 'お菓子光線', tags: ['majin-bu'] }),
   t('recoome-eraser-gun', 'Recoome Eraser Gun', 'energy_blast', ['recoome'], {
-    it: "La fiammata d'energia che Recoome spara dalla bocca dopo una lunga e ridicola posa. La sfoggia su Namecc nello scontro con Vegeta, Gohan e Crilin, prima dell'arrivo di Goku.",
+    it: "La fiammata d'energia che Recoom spara dalla bocca dopo una lunga e ridicola posa. La sfoggia su Namecc nello scontro con Vegeta, Gohan e Crilin, prima dell'arrivo di Goku.",
     en: "The energy blast Recoome fires from his mouth after a long, ridiculous pose. He shows it off on Namek in the fight with Vegeta, Gohan and Krillin, before Goku arrives.",
-  }, { longDescription: { it: "Recoome è il colosso della Squadra Ginyu, famoso per le pose da supereroe che precedono ogni attacco.", en: "Recoome is the Ginyu Force's giant, famous for the superhero poses that precede every attack." }, localizedName: { it: 'Recoome Eraser Gun', en: 'Recoome Eraser Gun' }, japaneseName: 'リクームイレイザーガン', tags: ['squadra-ginyu'] }),
+  }, { longDescription: { it: "Recoom è il colosso della Forze Speciali Ginew, famoso per le pose da supereroe che precedono ogni attacco.", en: "Recoome is the Ginyu Force's giant, famous for the superhero poses that precede every attack." }, localizedName: { it: 'Recoom Eraser Gun', en: 'Recoome Eraser Gun' }, japaneseName: 'リクームイレイザーガン', tags: ['squadra-ginyu'] }),
   t('crusher-ball', 'Crusher Ball', 'energy_blast', ['jeice'], {
-    it: "Una sfera di energia rossa che Jeice della Squadra Ginyu lancia contro gli avversari. La usa su Namecc combattendo al fianco di Burter contro i Guerrieri Z.",
+    it: "Una sfera di energia rossa che Jeeth della Forze Speciali Ginew lancia contro gli avversari. La usa su Namecc combattendo al fianco di Butter contro i Guerrieri Z.",
     en: "A red energy sphere that the Ginyu Force's Jeice hurls at his opponents. He uses it on Namek fighting alongside Burter against the Z Fighters.",
-  }, { longDescription: { it: "Jeice, il membro dalla pelle rossa della Squadra Ginyu, combatte quasi sempre in coppia con Burter.", en: "Jeice, the Ginyu Force's red-skinned member, almost always fights in tandem with Burter." }, localizedName: { it: 'Crusher Ball', en: 'Crusher Ball' }, japaneseName: 'クラッシャーボール', tags: ['squadra-ginyu'] }),
+  }, { longDescription: { it: "Jeeth, il membro dalla pelle rossa della Forze Speciali Ginew, combatte quasi sempre in coppia con Butter.", en: "Jeice, the Ginyu Force's red-skinned member, almost always fights in tandem with Burter." }, localizedName: { it: 'Crusher Ball', en: 'Crusher Ball' }, japaneseName: 'クラッシャーボール', tags: ['squadra-ginyu'] }),
   t('death-saucer', 'Death Saucer', 'energy_blast', ['frieza'], {
     it: "La versione di Freezer del Kienzan di Crilin: dischi d'energia taglienti che inseguono il bersaglio. Nello scontro finale su Namecc il disco torna indietro e taglia in due Freezer stesso.",
     en: "Frieza's version of Krillin's Destructo Disc: cutting energy discs that home in on the target. In the final fight on Namek the disc comes back and cuts Frieza himself in two.",
@@ -106,7 +106,7 @@ export const dragonballJutsuExtra: Jutsu[] = [
     en: "An electric shock Jackie Chun sends through the opponent by grabbing them: he uses it at the 21st Tournament against Goku, who holds out: it is one of the secret techniques with which Master Roshi tests his pupils without being recognised.",
   }, { localizedName: { it: 'Bankoku Bikkuri Shō', en: 'Thunder Shock Surprise' }, japaneseName: '萬國驚天掌', referenceStatus: 'needs_verification', tags: ['torneo', 'jackie-chun'] }),
   t('shishin-no-ken', 'Multi-Form', 'martial_art', ['tenshinhan'], {
-    it: "La tecnica con cui Tenshinhan si divide in quattro copie identiche — ciascuna con un quarto della sua forza. La mostra al 23° Torneo contro Goku; più tardi usa anche la variante delle quattro braccia.",
+    it: "La tecnica con cui Tensing si divide in quattro copie identiche — ciascuna con un quarto della sua forza. La mostra al 23° Torneo contro Goku; più tardi usa anche la variante delle quattro braccia.",
     en: "The technique with which Tien splits into four identical copies — each with a quarter of his strength. He shows it at the 23rd Tournament against Goku; later he also uses the four-armed variant.",
   }, { longDescription: { it: "Goku la contrasta osservando le ombre delle copie, che si muovono come un'unica persona.", en: "Goku counters it by watching the copies' shadows, which move as one person." }, localizedName: { it: 'Shishin no Ken', en: 'Multi-Form' }, japaneseName: '四身の拳', tags: ['scuola-della-gru'] }),
   t('afterimage', 'Afterimage Technique', 'movement', ['goku', 'master-roshi', 'krillin', 'tenshinhan', 'vegeta', 'frieza'], {
@@ -114,7 +114,7 @@ export const dragonballJutsuExtra: Jutsu[] = [
     en: "Moving so fast that you leave an afterimage behind for the opponent to strike at. Master Roshi uses it at the 21st Tournament and Goku copies it at once; it becomes common among the fastest fighters.",
   }, { localizedName: { it: 'Zanzoken', en: 'Afterimage Technique' }, japaneseName: '残像拳' }),
   t('bukujutsu', 'Flight', 'movement', ['goku', 'krillin', 'gohan', 'videl', 'tenshinhan', 'piccolo', 'goten'], {
-    it: "Il Bukujutsu, la tecnica del volo con l'energia: Tenshinhan e Chaozu la usano già al 22° Torneo, Goku la impara al Santuario di Dio. Gohan la insegna a Videl prima del 25° Torneo, e lei la passa a Goten.",
+    it: "Il Bukujutsu, la tecnica del volo con l'energia: Tensing e Chaozu la usano già al 22° Torneo, Goku la impara al Santuario di Dio. Gohan la insegna a Videl prima del 25° Torneo, e lei la passa a Goten.",
     en: "Bukujutsu, the technique of flying with energy: Tien and Chiaotzu already use it at the 22nd Tournament, Goku learns it on Kami's Lookout. Gohan teaches it to Videl before the 25th Tournament, and Goten picks it up too.",
   }, { localizedName: { it: 'Volo (Bukujutsu)', en: 'Flight' }, japaneseName: '舞空術' }),
   t('ki-sense', 'Ki Sense', 'support', ['goku', 'krillin', 'piccolo', 'vegeta', 'gohan', 'tenshinhan'], {
@@ -130,7 +130,7 @@ export const dragonballJutsuExtra: Jutsu[] = [
     en: "The ability to rebuild limbs or whole bodies: Namekians regrow arms and legs, Cell inherits it from Piccolo's cells, Majin Buu reassembles even from vapour. To destroy Buu every fragment must be erased.",
   }, { localizedName: { it: 'Rigenerazione', en: 'Regeneration' }, japaneseName: '再生' }),
   t('absorption', 'Absorption', 'support', ['cell', 'majin-buu', 'android-19', 'dr-gero'], {
-    it: "Assorbire gli altri per diventare più forti: C-19 e il Dr. Gero rubano l'energia dai palmi, Cell assorbe C-17 e C-18 per diventare Perfetto, Majin Bu ingloba Gotenks, Piccolo e Gohan nel proprio corpo.",
+    it: "Assorbire gli altri per diventare più forti: C-19 e il Dottor Gelo rubano l'energia dai palmi, Cell assorbe C-17 e C-18 per diventare Perfetto, Majin Bu ingloba Gotenks, Piccolo e Gohan nel proprio corpo.",
     en: "Absorbing others to grow stronger: Android 19 and Dr. Gero steal energy through their palms, Cell absorbs Androids 17 and 18 to become Perfect, Majin Buu engulfs Gotenks, Piccolo and Gohan into his body.",
   }, { localizedName: { it: 'Assorbimento', en: 'Absorption' }, japaneseName: '吸収' }),
   t('materialization', 'Magic Materialization', 'support', ['piccolo', 'kami'], {
@@ -142,7 +142,7 @@ export const dragonballJutsuExtra: Jutsu[] = [
     en: "The ultimate sacrifice: blowing yourself up while clinging to the enemy. Chiaotzu does it on Nappa's back, who survives anyway; Android 16 tries it on Cell, but Bulma had removed his bomb during repairs.",
   }, { localizedName: { it: 'Autodistruzione', en: 'Self-Destruct' }, japaneseName: '自爆' }),
   t('time-rewind', 'Temporal Do-Over', 'divine', ['whis'], {
-    it: "Il potere di Whis di riavvolgere il tempo di tre minuti. Lo usa quando Freezer fa esplodere la Terra in Resurrection F: torna indietro quel tanto che basta perché Goku lo elimini prima che possa farlo.",
+    it: "Il potere di Whis di riavvolgere il tempo di tre minuti. Lo usa quando Freezer fa esplodere la Terra ne La resurrezione di F: torna indietro quel tanto che basta perché Goku lo elimini prima che possa farlo.",
     en: "Whis's power to rewind time by three minutes. He uses it when Frieza blows up the Earth in Resurrection F: he goes back just enough for Goku to finish Frieza before he can do it.",
   }, { longDescription: { it: "È uno dei pochissimi momenti in cui Whis interviene direttamente nelle vicende dei mortali.", en: "It is one of the very few times Whis intervenes directly in mortals' affairs." }, localizedName: { it: 'Riavvolgimento del tempo', en: 'Temporal Do-Over' }, tags: ['angeli', 'resurrection-f'] }),
   t('erasure', 'Erasure', 'divine', ['zeno'], {
@@ -171,11 +171,11 @@ export const dragonballJutsuExtra: Jutsu[] = [
     en: "The transformation with extremely long hair and no eyebrows, hugely powerful but exhausting. Goku first shows it against Majin Buu to buy time; Gotenks reaches it in the Hyperbolic Time Chamber, Vegeta in Dragon Ball DAIMA.",
   }, { localizedName: { it: 'Super Saiyan 3', en: 'Super Saiyan 3' }, japaneseName: '超サイヤ人3', tags: ['saiyan', 'trasformazione', 'majin-bu', 'daima'] }),
   t('super-saiyan-god', 'Super Saiyan God', 'transformation', ['goku', 'vegeta'], {
-    it: "La forma divina dai capelli rossi, ottenuta con un rituale in cui cinque Saiyan dal cuore puro infondono la loro energia in un sesto. Goku la raggiunge in Battle of Gods per affrontare Bills, grazie a Vegeta, Gohan, Goten, Trunks e Pan non ancora nata.",
+    it: "La forma divina dai capelli rossi, ottenuta con un rituale in cui cinque Saiyan dal cuore puro infondono la loro energia in un sesto. Goku la raggiunge ne La battaglia degli dei per affrontare Bills, grazie a Vegeta, Gohan, Goten, Trunks e Pan non ancora nata.",
     en: "The red-haired divine form, obtained through a ritual in which five pure-hearted Saiyans pour their energy into a sixth. Goku reaches it in Battle of Gods to face Beerus, thanks to Vegeta, Gohan, Goten, Trunks and the unborn Pan.",
   }, { localizedName: { it: 'Super Saiyan God', en: 'Super Saiyan God' }, japaneseName: '超サイヤ人ゴッド', tags: ['saiyan', 'trasformazione', 'battle-of-gods'] }),
   t('super-saiyan-blue', 'Super Saiyan Blue', 'transformation', ['goku', 'vegeta', 'vegito'], {
-    it: "Il Super Saiyan God Super Saiyan: un Super Saiyan con l'aura divina, dai capelli azzurri. Goku e Vegeta lo raggiungono allenandosi con Whis e lo mostrano contro Freezer d'oro in Resurrection F; Vegeth lo usa contro Zamasu fuso.",
+    it: "Il Super Saiyan God Super Saiyan: un Super Saiyan con l'aura divina, dai capelli azzurri. Goku e Vegeta lo raggiungono allenandosi con Whis e lo mostrano contro Freezer d'oro ne La resurrezione di F; Vegeth lo usa contro Zamasu fuso.",
     en: "Super Saiyan God Super Saiyan: a Super Saiyan with divine ki, with blue hair. Goku and Vegeta reach it training with Whis and show it against Golden Frieza in Resurrection F; Vegito uses it against Fused Zamasu.",
   }, { localizedName: { it: 'Super Saiyan Blue', en: 'Super Saiyan Blue' }, japaneseName: '超サイヤ人ゴッド超サイヤ人', tags: ['saiyan', 'trasformazione', 'super'] }),
   t('super-saiyan-4', 'Super Saiyan 4', 'transformation', ['goku', 'vegeta', 'gogeta'], {
@@ -187,7 +187,7 @@ export const dragonballJutsuExtra: Jutsu[] = [
     en: "Goku Black's version of the divine Super Saiyan, with pink hair: Zamasu, in Goku's body, obtains it because he is already a god. It is the symbol of Trunks's timeline ravaged by the 'Zero Mortals Plan'.",
   }, { localizedName: { it: 'Super Saiyan Rosé', en: 'Super Saiyan Rosé' }, japaneseName: '超サイヤ人ロゼ', tags: ['trasformazione', 'goku-black'] }),
   t('golden-frieza', 'Golden Frieza', 'transformation', ['frieza'], {
-    it: "La forma dorata che Freezer raggiunge allenandosi per la prima volta in vita sua, quattro mesi soli, dopo essere stato riportato in vita in Resurrection F. Potentissima, ma consuma energia in fretta: Goku lo batte per questo.",
+    it: "La forma dorata che Freezer raggiunge allenandosi per la prima volta in vita sua, quattro mesi soli, dopo essere stato riportato in vita ne La resurrezione di F. Potentissima, ma consuma energia in fretta: Goku lo batte per questo.",
     en: "The golden form Frieza reaches by training for the first time in his life, just four months, after being brought back in Resurrection F. Immensely powerful, but it burns energy fast: that is how Goku beats him.",
   }, { localizedName: { it: "Freezer d'oro", en: 'Golden Frieza' }, japaneseName: 'ゴールデンフリーザ', tags: ['trasformazione', 'resurrection-f'] }),
   t('gohan-beast', 'Beast', 'transformation', ['gohan'], {

@@ -25,6 +25,8 @@ import { bleachEventsHogyoku } from './eventsHogyoku';
 import { bleachRoutes } from './routes';
 import { bleachAbilities } from './abilities';
 import { bleachAssets } from './assets';
+import { withSourceNames } from '@/data/shared/translations';
+import { bleachNames } from './names';
 
 const bleach = animeWorlds.find((w) => w.slug === 'bleach')!;
 
@@ -54,7 +56,7 @@ const arcs = bleachArcs.map((arc) => ({
   eventIds: [...new Set([...(arc.eventIds ?? []), ...events.filter((e) => e.arcId === arc.id).map((e) => e.id)])],
 }));
 
-export const bleachDataset: WorldDataset = withEventTags(withFactionExtras(withFamily(withBattles({
+export const bleachDataset: WorldDataset = withSourceNames(withEventTags(withFactionExtras(withFamily(withBattles({
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
   seoSlugs: bleachSlugs,
   world: bleach,
@@ -74,6 +76,6 @@ export const bleachDataset: WorldDataset = withEventTags(withFactionExtras(withF
   routes: bleachRoutes,
   jutsu: bleachAbilities,
   assets: bleachAssets,
-}, bleachBattles), bleachFamily, 'char-bl-'), bleachStructure), bleachMarkerTags);
+}, bleachBattles), bleachFamily, 'char-bl-'), bleachStructure), bleachMarkerTags), bleachNames);
 
 export { BLEACH_WORLD_VIEWBOX } from './mapConstants';

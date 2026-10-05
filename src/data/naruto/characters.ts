@@ -2193,7 +2193,7 @@ export const narutoCharacters: Character[] = [
     ninjaRank: 'other',
     generation: 'Otsutsuki',
     shortDescription: {
-      it: 'Madre del Saggio dei Sei Cammini, principio della chakra sulla Terra.',
+      it: 'Madre del Eremita delle Sei Vie, principio della chakra sulla Terra.',
       en: 'Mother of the Sage of Six Paths, the origin of chakra on Earth.',
     },
     abilities: ['Kekkei Mōra', 'Rinne Sharingan', 'Dimension Travel'],
@@ -2218,7 +2218,7 @@ export const narutoCharacters: Character[] = [
     ninjaRank: 'other',
     generation: 'Otsutsuki',
     shortDescription: {
-      it: 'Saggio dei Sei Cammini. Padre del ninshu e fondatore della dottrina shinobi.',
+      it: 'Eremita delle Sei Vie. Padre del ninshu e fondatore della dottrina shinobi.',
       en: 'Sage of Six Paths. Father of ninshū and founder of the shinobi doctrine.',
     },
     abilities: ['Six Paths Sage Mode', 'Rinnegan', 'Creation of All Things'],

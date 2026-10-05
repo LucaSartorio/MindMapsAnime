@@ -99,7 +99,7 @@ export const onepieceCharactersRedLine: Character[] = [
     firstMangaAppearance: "233",
     firstAnimeAppearance: "151",
     longDescription: {
-      it: "«il Buddha», ex Grande Ammiraglio della Marina al comando durante la Guerra al Vertice. Utente di uno Zoan mitologico, dopo Marineford si dimise diventando Ispettore Generale.",
+      it: "«il Buddha», ex Grande Ammiraglio della Marina al comando durante la Guerra al Vertice. Utente di uno Zoo Zoo mitologico, dopo Marineford si dimise diventando Ispettore Generale.",
       en: "'The Buddha', former Fleet Admiral of the Marines in command during the Summit War. A user of a mythical Zoan, he resigned after Marineford to become Inspector General.",
     },
     name: 'Sengoku',
@@ -111,7 +111,7 @@ export const onepieceCharactersRedLine: Character[] = [
     factionIds: ['faction-op-marines', 'faction-op-world-government'],
     arcIds: ['arc-op-marineford'],
     shortDescription: {
-      it: "Grand'Ammiraglio della Marina durante la Guerra al Vertice, utente di un Frutto Zoan mitologico. Custode di molti segreti del Governo Mondiale, fra cui le origini di Ace.",
+      it: "Grand'Ammiraglio della Marina durante la Guerra al Vertice, utente di un Frutto Zoo Zoo mitologico. Custode di molti segreti del Governo Mondiale, fra cui le origini di Ace.",
       en: "Fleet Admiral of the Marines during the Summit War, user of a mythical Zoan Fruit. Keeper of many World Government secrets, including Ace's origins.",
     },
     status: 'alive',

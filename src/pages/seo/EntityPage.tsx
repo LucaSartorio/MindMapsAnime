@@ -17,6 +17,7 @@ import {
   getCanonStatusLabel,
   getCharacterStatusLabel,
   getEntityDisplayName,
+  getLocalizedAliases,
   getLocalizedText,
   getLocationTypeLabel,
   getRaceLabel,
@@ -133,7 +134,7 @@ export function EntityPage({
     description?: Localizable;
     longDescription?: Localizable;
     japaneseName?: string;
-    nameLocal?: string;
+    nameLocal?: Localizable;
     referenceStatus?: string;
   };
   const summary = text(e.shortDescription ?? e.description);
@@ -209,7 +210,7 @@ export function EntityPage({
         { label: t('modals.race'), value: c.race ? getRaceLabel(c.race, locale) || humanizeId(c.race) : undefined },
         {
           label: rankSystem?.term ?? t('seoPages.fact.rank'),
-          value: c.ninjaRank && rankSystem ? rankSystem.label(c.ninjaRank) : c.rank,
+          value: c.ninjaRank && rankSystem ? rankSystem.label(c.ninjaRank) : getLocalizedText(c.rank, locale),
         },
         { label: t('seoPages.fact.roles'), value: c.role?.map((r) => getRoleLabel(world, r, locale)).join(', ') },
         { label: t('seoPages.fact.home'), value: named('locations', c.villageLocationId) },
@@ -218,7 +219,7 @@ export function EntityPage({
           label: t('seoPages.fact.abilityCategory'),
           value: c.abilityCategory ? getAbilityCategoryLabel(world, c.abilityCategory, locale) : undefined,
         },
-        { label: t('seoPages.fact.aliases'), value: c.aliases?.join(', ') },
+        { label: t('seoPages.fact.aliases'), value: getLocalizedAliases(c, locale).join(', ') || undefined },
         { label: t('seoPages.fact.firstManga'), value: c.firstMangaAppearance },
         { label: t('seoPages.fact.firstAnime'), value: c.firstAnimeAppearance },
       );
@@ -394,7 +395,7 @@ export function EntityPage({
         { label: t('seoPages.fact.type'), value: humanizeId(String(f.type)) },
         { label: t('nav.regions'), value: named('regions', f.nationId) },
         { label: t('seoPages.fact.home'), value: named('locations', f.villageLocationId) },
-        { label: t('modals.kekkeiGenkai'), value: f.kekkeiGenkai },
+        { label: t('modals.kekkeiGenkai'), value: getLocalizedText(f.kekkeiGenkai, locale) },
       );
       if (f.structure?.length) {
         sections.push(
@@ -539,7 +540,7 @@ export function EntityPage({
   }
 
   const imageKind = IMAGE_KIND[category];
-  const subtitle = [e.japaneseName, e.nameLocal].filter(Boolean).join(' · ');
+  const subtitle = [e.japaneseName, text(e.nameLocal)].filter(Boolean).join(' · ');
 
   return (
     <PageShell

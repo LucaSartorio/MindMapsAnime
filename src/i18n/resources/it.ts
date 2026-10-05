@@ -446,6 +446,8 @@ export const it = {
       squad: 'Compagnie',
       race: 'Razze',
       concept: 'Concetti',
+      division: 'Divisioni',
+      school: 'Scuole',
     },
     empty: 'Nessun clan o fazione',
     emptyDescription: 'Nessun risultato per i filtri attuali.',

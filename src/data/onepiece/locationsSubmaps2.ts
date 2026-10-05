@@ -76,7 +76,7 @@ export const onepieceLocationsSubmaps2: Location[] = [
     x: 1003,
     y: 295,
     shortDescription: {
-      it: "Il molo dove Rayleigh riveste la Thousand Sunny con la resina per la discesa sottomarina, e dove la ciurma viene dispersa da Kuma e dai Pacifista.",
+      it: "Il molo dove Rayleigh riveste la Thousand Sunny con la resina per la discesa sottomarina, e dove la ciurma viene dispersa da Orso e dai Pacifista.",
       en: "The dock where Rayleigh coats the Thousand Sunny with resin for the underwater descent, and where the crew is scattered by Kuma and the Pacifistas.",
     },
     nationId: 'nation-op-red-line',

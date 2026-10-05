@@ -64,7 +64,7 @@ export const onepieceCharactersParadise2: Character[] = [
     firstMangaAppearance: "347",
     firstAnimeAppearance: "252",
     longDescription: {
-      it: "Rob Lucci, agente più letale della CP9 (poi CP0), utente dello Zoan del leopardo e maestro del Rokushiki. Avversario che spinse Rufy a sbloccare il Gear Second a Enies Lobby.",
+      it: "Rob Lucci, agente più letale della CP9 (poi CP0), utente dello Zoo Zoo del leopardo e maestro del Rokushiki. Avversario che spinse Rufy a sbloccare il Gear Second a Enies Lobby.",
       en: "Rob Lucci, the deadliest agent of CP9 (later CP0), user of the leopard Zoan and master of Rokushiki. The opponent who pushed Luffy to unlock Gear Second at Enies Lobby.",
     },
     name: 'Rob Lucci',
@@ -75,7 +75,7 @@ export const onepieceCharactersParadise2: Character[] = [
     enemies: ['char-op-luffy'],
     arcIds: ['arc-op-water-seven', 'arc-op-enies-lobby', 'arc-op-egghead'],
     shortDescription: {
-      it: "Il più letale agente della CP9, infiltrato a Water Seven come carpentiere. Utente di uno Zoan del leopardo e maestro del Rokushiki, incarna la «Giustizia Oscura» del Governo Mondiale.",
+      it: "Il più letale agente della CP9, infiltrato a Water Seven come carpentiere. Utente di uno Zoo Zoo del leopardo e maestro del Rokushiki, incarna la «Giustizia Oscura» del Governo Mondiale.",
       en: "The deadliest CP9 agent, infiltrated into Water Seven as a shipwright. A leopard Zoan user and master of Rokushiki, he embodies the World Government's 'Dark Justice'.",
     },
     status: 'alive',
@@ -89,7 +89,7 @@ export const onepieceCharactersParadise2: Character[] = [
     firstMangaAppearance: "329",
     firstAnimeAppearance: "233",
     longDescription: {
-      it: "Agente della CP9 e abile spadaccino, valutatore navale a Water Seven sotto copertura. Utente dello Zoan ancestrale della giraffa, affrontò Zoro a Enies Lobby.",
+      it: "Agente della CP9 e abile spadaccino, valutatore navale a Water Seven sotto copertura. Utente dello Zoo Zoo ancestrale della giraffa, affrontò Zoro a Enies Lobby.",
       en: "A CP9 agent and skilled swordsman, an undercover ship inspector at Water Seven. User of the ancient giraffe Zoan, he faced Zoro at Enies Lobby.",
     },
     name: 'Kaku',
@@ -100,7 +100,7 @@ export const onepieceCharactersParadise2: Character[] = [
     enemies: ['char-op-zoro'],
     arcIds: ['arc-op-water-seven', 'arc-op-enies-lobby'],
     shortDescription: {
-      it: "Agente della CP9 infiltrato come ispettore navale della Galley-La. Utente di uno Zoan della giraffa e maestro del Rokushiki, affronta Zoro a Enies Lobby.",
+      it: "Agente della CP9 infiltrato come ispettore navale della Galley-La. Utente di uno Zoo Zoo della giraffa e maestro del Rokushiki, affronta Zoro a Enies Lobby.",
       en: "A CP9 agent infiltrated as a Galley-La ship inspector. A giraffe Zoan user and Rokushiki master, he faces Zoro at Enies Lobby.",
     },
     status: 'alive',
@@ -203,7 +203,7 @@ export const onepieceCharactersParadise2: Character[] = [
     enemies: ['char-op-luffy'],
     arcIds: ['arc-op-thriller-bark'],
     shortDescription: {
-      it: "Corsaro padrone di Thriller Bark, utente del Frutto delle Ombre: ruba le ombre altrui per animare un esercito di zombie. Vuole costruirsi una ciurma immortale per conquistare il New World.",
+      it: "Corsaro padrone di Thriller Bark, utente del Frutto delle Ombre: ruba le ombre altrui per animare un esercito di zombie. Vuole costruirsi una ciurma immortale per conquistare il Nuovo Mondo.",
       en: "The Warlord master of Thriller Bark, user of the Shadow-Shadow Fruit: he steals others' shadows to animate a zombie army. He seeks an immortal crew to conquer the New World.",
     },
     status: 'alive',

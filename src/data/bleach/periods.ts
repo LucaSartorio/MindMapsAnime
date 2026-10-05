@@ -13,7 +13,7 @@ export const P = {
   decades: { it: 'Decenni prima', en: 'Decades earlier' },
   twenty: { it: 'Circa vent’anni prima', en: 'About twenty years earlier' },
   childhood: { it: 'Infanzia di Ichigo', en: "Ichigo's childhood" },
-  agent: { it: 'Shinigami sostituto', en: 'Substitute Soul Reaper' },
+  agent: { it: 'Sostituto Shinigami', en: 'Substitute Soul Reaper' },
   soulSociety: { it: 'Soul Society', en: 'Soul Society' },
   arrancar: { it: 'Arrancar', en: 'Arrancar' },
   fullbring: { it: 'Fullbring', en: 'Fullbring' },

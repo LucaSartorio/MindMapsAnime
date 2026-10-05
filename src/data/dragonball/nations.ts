@@ -145,7 +145,7 @@ export const dragonballNations: Nation[] = [
     localizedName: { it: 'Pianeta di Beerus', en: "Beerus's Planet" },
     type: 'neutral_land',
     description: {
-      it: "Dimora del Dio della Distruzione dell'Universo 7 e del suo angelo Whis: un piccolo pianeta dalla forma irregolare, con una piramide e alberi giganteschi. Dopo Battle of Gods Goku e Vegeta vi si allenano con Whis fino al Super Saiyan Blue.",
+      it: "Dimora del Dio della Distruzione dell'Universo 7 e del suo angelo Whis: un piccolo pianeta dalla forma irregolare, con una piramide e alberi giganteschi. Dopo La battaglia degli dei Goku e Vegeta vi si allenano con Whis fino al Super Saiyan Blue.",
       en: "Home of Universe 7's God of Destruction and his angel Whis: a small, irregularly shaped planet with a pyramid and giant trees. After Battle of Gods Goku and Vegeta train there with Whis up to Super Saiyan Blue.",
     },
     relatedLocationIds: ['loc-dbz-beerus-planet'],
@@ -161,7 +161,7 @@ export const dragonballNations: Nation[] = [
     localizedName: { it: 'Aldilà / Regno Celeste', en: 'Other World / Celestial Realm' },
     type: 'neutral_land',
     description: {
-      it: "La dimensione dell'aldilà e i regni celesti a essa collegati: il Pianeta di Re Kaiō, raggiunto tramite la Via del Serpente, e il Mondo Sacro dei Kaiōshin.",
+      it: "La dimensione dell'aldilà e i regni celesti a essa collegati: il Pianeta di Re Kaioh, raggiunto tramite la Via del Serpente, e il Mondo Sacro dei Kaiōshin.",
       en: "The realm of the afterlife and the celestial realms connected to it: King Kai's planet, reached via Snake Way, and the Sacred World of the Kais.",
     },
     relatedLocationIds: ['loc-dbz-other-world', 'loc-dbz-kaio-planet', 'loc-dbz-sacred-world-kais'],

@@ -168,7 +168,7 @@ export const dragonballLocationsExtra: Location[] = [
     x: 300,
     y: 520,
     shortDescription: {
-      it: "Il palazzo dove Re Yama giudica le anime dei morti e le manda in Paradiso o all'Inferno. Da qui parte la Via del Serpente: Goku la percorre dopo la morte contro Raditz per raggiungere Re Kaiō.",
+      it: "Il palazzo dove Re Yama giudica le anime dei morti e le manda in Paradiso o all'Inferno. Da qui parte la Via del Serpente: Goku la percorre dopo la morte contro Radish per raggiungere Re Kaioh.",
       en: "The palace where King Yemma judges the souls of the dead and sends them to Heaven or Hell. Snake Way starts here: Goku runs it after his death against Raditz to reach King Kai.",
     },
     nationId: 'nation-dbz-other-world',
@@ -187,7 +187,7 @@ export const dragonballLocationsExtra: Location[] = [
     x: 880,
     y: 410,
     shortDescription: {
-      it: "Una strada a forma di serpente lunga un milione di chilometri, sospesa sulle nuvole gialle dell'Aldilà: porta dal palazzo di Re Yama al pianeta di Re Kaiō. Chi cade finisce all'Inferno. Goku la percorre di corsa in sei mesi.",
+      it: "Una strada a forma di serpente lunga un milione di chilometri, sospesa sulle nuvole gialle dell'Aldilà: porta dal palazzo di Re Yama al pianeta di Re Kaioh. Chi cade finisce all'Inferno. Goku la percorre di corsa in sei mesi.",
       en: "A million-kilometre road shaped like a snake, suspended over Other World's yellow clouds: it leads from King Yemma's palace to King Kai's planet. Whoever falls ends up in Hell. Goku runs it in six months.",
     },
     nationId: 'nation-dbz-other-world',
@@ -206,7 +206,7 @@ export const dragonballLocationsExtra: Location[] = [
     x: 760,
     y: 630,
     shortDescription: {
-      it: "Il palazzo a metà della Via del Serpente dove la Principessa Serpente accoglie Goku con un banchetto per trattenerlo. Goku scappa e riprende la corsa verso Re Kaiō.",
+      it: "Il palazzo a metà della Via del Serpente dove la Principessa Serpente accoglie Goku con un banchetto per trattenerlo. Goku scappa e riprende la corsa verso Re Kaioh.",
       en: "The palace halfway along Snake Way where Princess Snake welcomes Goku with a banquet to keep him there. Goku escapes and resumes his run to King Kai.",
     },
     nationId: 'nation-dbz-other-world',
@@ -358,7 +358,7 @@ export const dragonballLocationsExtra: Location[] = [
     x: 700,
     y: 360,
     shortDescription: {
-      it: "Il ring di pietra quadrato del Torneo Tenkaichi. Qui Goku perde in finale contro Jackie Chun (21°) e contro Tenshinhan (22°), batte Piccolo Junior (23°); al 25° torneo vi si consumano la rivelazione di Gohan e il patto di Babidi con Vegeta.",
+      it: "Il ring di pietra quadrato del Torneo Tenkaichi. Qui Goku perde in finale contro Jackie Chun (21°) e contro Tensing (22°), batte Piccolo Junior (23°); al 25° torneo vi si consumano la rivelazione di Gohan e il patto di Babidi con Vegeta.",
       en: "The square stone ring of the World Martial Arts Tournament. Here Goku loses the final to Jackie Chun (21st) and to Tien (22nd), beats Piccolo Jr. (23rd); at the 25th tournament it sees Gohan's reveal and Babidi's pact with Vegeta.",
     },
     nationId: 'nation-dbz-earth',

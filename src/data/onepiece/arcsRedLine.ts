@@ -12,16 +12,16 @@ export const onepieceArcsRedLine: StoryArc[] = [
     mangaChapters: ["490-513"],
     animeEpisodes: ["385-405"],
     longDescription: {
-      it: "All'Arcipelago Sabaody, ultima tappa di Paradise, si radunano le undici Supernove. La ciurma scopre il mercato di schiavi dei Draghi Celesti; per salvare la sirena Camie, Rufy abbatte con un pugno il Drago Celeste Saint Charloss, scatenando la reazione del Governo. Mentre la Marina e l'ammiraglio Kizaru circondano l'isola, Silvers Rayleigh rivela il proprio passato di vicecapitano di Roger, e Bartholomew Kuma scaraventa i nove Cappello di Paglia ai quattro angoli del mondo: comincia la separazione di due anni.",
+      it: "All'Arcipelago Sabaody, ultima tappa del Paradiso, si radunano le undici Supernove. La ciurma scopre il mercato di schiavi dei Draghi Celesti; per salvare la sirena Camie, Rufy abbatte con un pugno il Drago Celeste Saint Charloss, scatenando la reazione del Governo. Mentre la Marina e l'ammiraglio Kizaru circondano l'isola, Silvers Rayleigh rivela il proprio passato di vicecapitano di Roger, e Bartholomew Orso scaraventa i nove Cappello di Paglia ai quattro angoli del mondo: comincia la separazione di due anni.",
       en: "At the Sabaody Archipelago, the last stop of Paradise, the eleven Supernovas gather. The crew discovers the Celestial Dragons' slave market; to save the mermaid Camie, Luffy punches down the Celestial Dragon Saint Charloss, triggering the Government's wrath. As the Marines and Admiral Kizaru surround the island, Silvers Rayleigh reveals his past as Roger's first mate, and Bartholomew Kuma flings the nine Straw Hats to the four corners of the world: the two-year separation begins.",
     },
     name: 'Sabaody Archipelago',
     localizedName: { it: 'Arcipelago Sabaody', en: 'Sabaody Archipelago' },
     saga: { it: 'Saga di Sabaody', en: 'Sabaody Saga' },
-    period: { it: 'Fine di Paradise', en: 'End of Paradise' },
+    period: { it: 'Fine del Paradiso', en: 'End of Paradise' },
     order: 30,
     description: {
-      it: "Alla fine di Paradise la ciurma incrocia le altre Supernove, urta un Drago Celeste e viene dispersa ai quattro angoli del mondo da Bartholomew Kuma. Inizia la separazione di due anni.",
+      it: "Alla fine del Paradiso la ciurma incrocia le altre Supernove, urta un Drago Celeste e viene dispersa ai quattro angoli del mondo da Bartholomew Orso. Inizia la separazione di due anni.",
       en: "At the end of Paradise the crew crosses the other Supernovas, strikes a Celestial Dragon and is scattered to the four corners of the world by Bartholomew Kuma. The two-year separation begins.",
     },
     locationIds: ['loc-op-sabaody'],
@@ -40,7 +40,7 @@ export const onepieceArcsRedLine: StoryArc[] = [
     mangaChapters: ["514-524"],
     animeEpisodes: ["408-417"],
     longDescription: {
-      it: "Kuma scaraventa Rufy su Amazon Lily, l'isola delle sole guerriere Kuja nella Calm Belt. Condannato a morte come maschio intruso, Rufy conquista invece il cuore dell'Imperatrice Boa Hancock svelando, senza giudicarlo, il marchio della schiavitù che lei nasconde con vergogna. Appresa la notizia che il fratello Ace sarà giustiziato, Rufy convince Hancock ad accompagnarlo: l'Imperatrice lo introduce di nascosto a Impel Down sfruttando il proprio status di Corsaro.",
+      it: "Orso scaraventa Rufy su Amazon Lily, l'isola delle sole guerriere Kuja nella Calm Belt. Condannato a morte come maschio intruso, Rufy conquista invece il cuore dell'Imperatrice Boa Hancock svelando, senza giudicarlo, il marchio della schiavitù che lei nasconde con vergogna. Appresa la notizia che il fratello Ace sarà giustiziato, Rufy convince Hancock ad accompagnarlo: l'Imperatrice lo introduce di nascosto a Impel Down sfruttando il proprio status di Corsaro.",
       en: "Kuma flings Luffy onto Amazon Lily, the island of the all-female Kuja warriors in the Calm Belt. Sentenced to death as a male intruder, Luffy instead wins Empress Boa Hancock's heart by seeing, without judging, the slave brand she hides in shame. On learning his brother Ace will be executed, Luffy convinces Hancock to come with him: the Empress smuggles him into Impel Down using her Warlord status.",
     },
     name: 'Amazon Lily',
@@ -146,13 +146,13 @@ export const onepieceArcsRedLine: StoryArc[] = [
     mangaChapters: ["603-653"],
     animeEpisodes: ["523-574"],
     longDescription: {
-      it: "Riunita dopo due anni, la ciurma discende a 10.000 metri fino all'Isola degli Uomini-Pesce, sotto la Red Line. Tra il backstory di Fisher Tiger, della regina Otohime e di Arlong, i Cappello di Paglia sventano il colpo di stato dei Nuovi Pirati Uomini-Pesce di Hody Jones, che vuole sterminare la famiglia reale Ryugu e dichiarare guerra agli umani. Rufy protegge la principessa sirena Shirahoshi — l'arma ancestrale Poseidon — sconfigge Hody, e raccoglie il sogno di pace di Otohime e Jinbe prima di salpare verso il New World.",
+      it: "Riunita dopo due anni, la ciurma discende a 10.000 metri fino all'Isola degli Uomini-Pesce, sotto la Red Line. Tra il backstory di Fisher Tiger, della regina Otohime e di Arlong, i Cappello di Paglia sventano il colpo di stato dei Nuovi Pirati Uomini-Pesce di Hody Jones, che vuole sterminare la famiglia reale Ryugu e dichiarare guerra agli umani. Rufy protegge la principessa sirena Shirahoshi — l'arma ancestrale Poseidon — sconfigge Hody, e raccoglie il sogno di pace di Otohime e Jinbe prima di salpare verso il Nuovo Mondo.",
       en: "Reunited after two years, the crew descends 10,000 metres to Fish-Man Island beneath the Red Line. Amid the backstory of Fisher Tiger, Queen Otohime and Arlong, the Straw Hats foil the coup of Hody Jones's New Fish-Man Pirates, who seek to wipe out the Ryugu royal family and declare war on humans. Luffy protects the mermaid princess Shirahoshi — the ancient weapon Poseidon — defeats Hody, and carries forward Otohime and Jinbe's dream of peace before sailing for the New World.",
     },
     name: 'Fish-Man Island',
     localizedName: { it: 'Isola degli Uomini-Pesce', en: 'Fish-Man Island' },
     saga: { it: 'Saga di Fish-Man Island', en: 'Fish-Man Island Saga' },
-    period: { it: 'Soglia del New World', en: 'Threshold of the New World' },
+    period: { it: 'Soglia del Nuovo Mondo', en: 'Threshold of the New World' },
     order: 60,
     description: {
       it: "Primo approdo dopo i due anni: sotto la Red Line la ciurma sventa il golpe di Hody Jones, protegge la principessa Shirahoshi (Poseidon) e ne esce il sogno di Jinbe e Otohime di unire i popoli.",
@@ -189,7 +189,7 @@ export const onepieceArcsRedLine: StoryArc[] = [
     },
     name: 'Reverie',
     localizedName: { it: 'La Reverie (Levely)', en: 'Reverie' },
-    saga: { it: 'Saga del New World', en: 'New World Saga' },
+    saga: { it: 'Saga del Nuovo Mondo', en: 'New World Saga' },
     period: { it: 'Mary Geoise', en: 'Mary Geoise' },
     order: 70,
     description: {

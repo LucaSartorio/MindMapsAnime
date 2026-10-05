@@ -51,6 +51,8 @@ import {
 } from './completion';
 import { HXH_CHARACTER_LONG, HXH_JUTSU_LONG, HXH_LOCATION_LONG } from './contentEnrichment';
 import { hxhTournaments } from './tournaments';
+import { withSourceNames } from '@/data/shared/translations';
+import { hxhNames } from './names';
 
 const hunterxhunter = animeWorlds.find((w) => w.slug === 'hunterxhunter')!;
 
@@ -97,7 +99,7 @@ const hxhAllCharacters = enrichHxhCharacters(
   hxhAllJutsu,
 );
 
-export const hunterxhunterDataset: WorldDataset = withEventTags(withFactionExtras(withFamily(withBattles({
+export const hunterxhunterDataset: WorldDataset = withSourceNames(withEventTags(withFactionExtras(withFamily(withBattles({
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
   seoSlugs: hunterxhunterSlugs,
   world: hunterxhunter,
@@ -129,6 +131,6 @@ export const hunterxhunterDataset: WorldDataset = withEventTags(withFactionExtra
   jutsu: hxhAllJutsu,
   tournaments: hxhTournaments,
   assets: hxhAssets,
-}, hxhBattles), hxhFamily, 'char-hxh-'), hxhStructure), hxhMarkerTags);
+}, hxhBattles), hxhFamily, 'char-hxh-'), hxhStructure), hxhMarkerTags), hxhNames);
 
 export { HXH_MAP_VIEWBOX } from './mapLevels';

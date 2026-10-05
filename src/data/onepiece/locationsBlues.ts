@@ -416,7 +416,7 @@ export const onepieceLocationsBlues: Location[] = [
     x: 1710,
     y: 791,
     shortDescription: {
-      it: "Regno di South Blue, patria di Bartholomew Kuma e Jewelry Bonney, segnato dall'oppressione di un Nobile Mondiale e dalla ribellione dei suoi abitanti.",
+      it: "Regno di South Blue, patria di Bartholomew Orso e Jewelry Bonney, segnato dall'oppressione di un Nobile Mondiale e dalla ribellione dei suoi abitanti.",
       en: "A South Blue kingdom, home of Bartholomew Kuma and Jewelry Bonney, scarred by a World Noble's oppression and its people's revolt.",
     },
     nationId: 'nation-op-south-blue',

@@ -33,6 +33,8 @@ import { dragonballJutsuExtra } from './jutsuExtra';
 import { dragonballAssets } from './assets';
 import { TAGGED_WISH_EVENTS, WISH_TAG, dragonballWishes } from './wishes';
 import { dragonballTournamentFighters, dragonballTournaments } from './tournaments';
+import { withSourceNames } from '@/data/shared/translations';
+import { dragonballNames } from './names';
 import {
   dragonballEncyclopediaCharacters,
   dragonballEncyclopediaEvents,
@@ -91,7 +93,7 @@ const factions: Faction[] = dragonballFactions.map((f) => {
  * rappresentabili su di essa (pianeti, Aldilà, Torneo del Potere).
  * Estendibile con nuovi personaggi/archi senza modifiche strutturali.
  */
-export const dragonballDataset: WorldDataset = withEventTags(withFactionExtras(withFamily(withBattles({
+export const dragonballDataset: WorldDataset = withSourceNames(withEventTags(withFactionExtras(withFamily(withBattles({
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
   seoSlugs: dragonballSlugs,
   world: dragonball,
@@ -106,6 +108,6 @@ export const dragonballDataset: WorldDataset = withEventTags(withFactionExtras(w
   jutsu,
   tournaments: dragonballTournaments,
   assets: dragonballAssets,
-}, dragonballBattles), dragonballFamily, 'char-dbz-'), dragonballStructure), dragonballMarkerTags);
+}, dragonballBattles), dragonballFamily, 'char-dbz-'), dragonballStructure), dragonballMarkerTags), dragonballNames);
 
 export { DRAGONBALL_MAP_VIEWBOX, DRAGONBALL_COSMIC_VIEWBOX } from './mapConstants';

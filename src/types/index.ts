@@ -129,6 +129,29 @@ export type Race =
   | 'tuffle'
   | 'machine_mutant'
   | 'cerealian'
+  | 'animal'
+  | 'monster'
+  | 'eldian'
+  | 'ackerman'
+  | 'marleyan'
+  | 'hizurian'
+  | 'shinigami'
+  | 'quincy'
+  | 'fullbringer'
+  | 'mod_soul'
+  | 'hollow'
+  | 'visored'
+  | 'bount'
+  | 'arrancar'
+  | 'cursed_corpse'
+  | 'cursed_spirit'
+  | 'incarnated'
+  | 'cursed_womb'
+  | 'shikigami'
+  | 'dwarf_hybrid'
+  | 'devil'
+  | 'elf'
+  | 'spirit'
   | 'unknown';
 
 /* ------------------------------ Jutsu ------------------------------ */
@@ -410,7 +433,8 @@ export interface Nation extends SeoSlugFields {
   name: string;
   /** Nome localizzato visualizzato in UI (opzionale, fallback su `name`). */
   localizedName?: Localizable;
-  nameLocal?: string;
+  /** Nome locale/originale (romaji) o glossa: localizzabile se cambia con la lingua. */
+  nameLocal?: Localizable;
   japaneseName?: string;
   /** Classificazione canon per la nazione */
   type?:
@@ -451,7 +475,8 @@ export interface Location extends SeoSlugFields {
   name: string;
   /** Nome localizzato per UI. */
   localizedName?: Localizable;
-  nameLocal?: string;
+  /** Nome locale/originale (romaji) o glossa: localizzabile se cambia con la lingua. */
+  nameLocal?: Localizable;
   type: LocationType;
   /** Coordinate nella mappa (0..mapLevel.width) */
   x: number;
@@ -544,9 +569,14 @@ export interface Character extends SeoSlugFields {
    * si ricade su `japaneseName` (per il giapponese) e infine su `name`.
    */
   localizedName?: Localizable;
-  /** Soprannomi/varianti (es. "Yellow Flash", "Kyuubi no Naruto") */
-  aliases?: string[];
-  nameLocal?: string;
+  /**
+   * Soprannomi/varianti (es. "Yellow Flash", "Kyuubi no Naruto"). Un epiteto che
+   * cambia da lingua a lingua è un `{ it, en }`; una stringa semplice vale per
+   * tutte le lingue (è comunque traducibile dagli overlay: chiave `aliases[i]`).
+   */
+  aliases?: Localizable[];
+  /** Nome locale/originale (romaji) o glossa: localizzabile se cambia con la lingua. */
+  nameLocal?: Localizable;
   japaneseName?: string;
   /** Importanza narrativa (filtra archivio personaggi) */
   importance?: CharacterImportance;
@@ -568,7 +598,8 @@ export interface Character extends SeoSlugFields {
   factionIds?: string[];
   /** Team specifici (Team 7, Team Guy, Sound Four, ...) */
   teamIds?: string[];
-  rank?: string;
+  /** Grado/titolo descrittivo libero (es. "Hokage (Settimo)"), mostrato se manca `ninjaRank`. */
+  rank?: Localizable;
   /**
    * Id del grado del personaggio (Naruto: grado ninja). String libera: ogni
    * mondo definisce i propri gradi e le etichette via `WorldConfig.characterRank`.
@@ -594,10 +625,10 @@ export interface Character extends SeoSlugFields {
   bounties?: BountyEntry[];
   shortDescription: Localizable;
   longDescription?: Localizable;
-  /** Abilità o tecniche caratteristiche (free-text legacy) */
-  abilities?: string[];
-  /** Kekkei Genkai posseduti */
-  kekkeiGenkai?: string[];
+  /** Abilità o tecniche caratteristiche (testo libero, localizzabile) */
+  abilities?: Localizable[];
+  /** Kekkei Genkai posseduti (nomi mostrati: localizzabili) */
+  kekkeiGenkai?: Localizable[];
   /** Nature del chakra del personaggio. Se omesso, il selettore può
    * dedurlo dai jutsu collegati. Vedi `getCharacterChakraNatures`. */
   chakraNatures?: ChakraNature[];
@@ -653,14 +684,15 @@ export interface Faction extends SeoSlugFields {
   type: FactionType | (string & {});
   name: string;
   localizedName?: Localizable;
-  nameLocal?: string;
+  /** Nome locale/originale (romaji) o glossa: localizzabile se cambia con la lingua. */
+  nameLocal?: Localizable;
   japaneseName?: string;
   nationId?: string;
   villageLocationId?: string;
   description: Localizable;
   longDescription?: Localizable;
-  signatureAbilities?: string[];
-  kekkeiGenkai?: string;
+  signatureAbilities?: Localizable[];
+  kekkeiGenkai?: Localizable;
   /** Jutsu / tecniche firma del clan o fazione (riferimenti a Jutsu.id) */
   jutsuIds?: string[];
   /** Leader / capi noti */

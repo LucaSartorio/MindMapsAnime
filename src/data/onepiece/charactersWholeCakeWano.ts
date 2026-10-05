@@ -27,7 +27,7 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
     jutsuIds: ['fruit-op-soru-soru'],
     arcIds: ['arc-op-whole-cake', 'arc-op-wano'],
     shortDescription: {
-      it: "Imperatrice e regina di Totland, utente del Frutto Anima Anima: ruba gli anni di vita altrui e infonde anima negli oggetti. Brama un mondo in cui tutte le razze convivano sotto il suo dominio.",
+      it: "Imperatrice e regina di Totland, utente del Frutto Soul Soul: ruba gli anni di vita altrui e infonde anima negli oggetti. Brama un mondo in cui tutte le razze convivano sotto il suo dominio.",
       en: "Empress and queen of Totland, user of the Soul-Soul Fruit: she steals others' lifespan and breathes soul into objects. She craves a world where all races coexist under her rule.",
     },
     status: 'alive',
@@ -174,7 +174,7 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
     firstMangaAppearance: "795",
     firstAnimeAppearance: "739",
     longDescription: {
-      it: "Kaido «delle Cento Bestie», uno dei Quattro Imperatori e «la creatura più forte del mondo», utente dello Zoan del drago azzurro. Tiranno di Wano, fu abbattuto da Rufy in Gear 5 a Onigashima.",
+      it: "Kaido «delle Cento Bestie», uno dei Quattro Imperatori e «la creatura più forte del mondo», utente dello Zoo Zoo del drago azzurro. Tiranno di Wano, fu abbattuto da Rufy in Gear 5 a Onigashima.",
       en: "Kaido 'of the Beasts', one of the Four Emperors and 'the strongest creature in the world', user of the azure dragon Zoan. Tyrant of Wano, he was felled by Luffy in Gear 5 at Onigashima.",
     },
     name: 'Kaido',
@@ -188,7 +188,7 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
     jutsuIds: ['fruit-op-uo-uo'],
     arcIds: ['arc-op-wano'],
     shortDescription: {
-      it: "Imperatore e «creatura più forte del mondo», utente di uno Zoan mitologico del dragone. Da Onigashima opprime Wano e mira a scatenare una nuova grande guerra con un esercito di SMILE.",
+      it: "Imperatore e «creatura più forte del mondo», utente di uno Zoo Zoo mitologico del dragone. Da Onigashima opprime Wano e mira a scatenare una nuova grande guerra con un esercito di SMILE.",
       en: "Emperor and 'strongest creature in the world', user of a mythical dragon Zoan. From Onigashima he oppresses Wano and seeks to ignite a new great war with a SMILE army.",
     },
     status: 'alive',
@@ -202,7 +202,7 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
     firstMangaAppearance: "921",
     firstAnimeAppearance: "952",
     longDescription: {
-      it: "King «l'Incendio», braccio destro di Kaido e Calamità delle Cento Bestie, utente dello Zoan dello pteranodonte e ultimo della razza Lunaria. Fu sconfitto da Zoro a Onigashima.",
+      it: "King «l'Incendio», braccio destro di Kaido e Calamità delle Cento Bestie, utente dello Zoo Zoo dello pteranodonte e ultimo della razza Lunaria. Fu sconfitto da Zoro a Onigashima.",
       en: "King 'the Wildfire', Kaido's right hand and a Calamity of the Beasts, user of the pteranodon Zoan and the last of the Lunarian race. He was beaten by Zoro at Onigashima.",
     },
     name: 'King',
@@ -215,7 +215,7 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
     enemies: ['char-op-zoro'],
     arcIds: ['arc-op-wano'],
     shortDescription: {
-      it: "Il braccio destro di Kaido e il più forte dei Tobiroppo, utente di uno Zoan antico dello pteranodonte. Ultimo superstite della rara stirpe dei Lunariani.",
+      it: "Il braccio destro di Kaido e il più forte dei Tobiroppo, utente di uno Zoo Zoo antico dello pteranodonte. Ultimo superstite della rara stirpe dei Lunariani.",
       en: "Kaido's right hand and the strongest of the Tobiroppo, user of an ancient pteranodon Zoan. The last survivor of the rare Lunarian race.",
     },
     status: 'alive',
@@ -229,7 +229,7 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
     firstMangaAppearance: "739",
     firstAnimeAppearance: "672",
     longDescription: {
-      it: "Kurozumi Orochi, infido shogun di Wano alleato di Kaido, utente dello Zoan del serpente a otto teste che gli dona otto vite. Tiranno che ridusse il Paese alla miseria.",
+      it: "Kurozumi Orochi, infido shogun di Wano alleato di Kaido, utente dello Zoo Zoo del serpente a otto teste che gli dona otto vite. Tiranno che ridusse il Paese alla miseria.",
       en: "Kurozumi Orochi, the treacherous shogun of Wano allied with Kaido, user of the eight-headed serpent Zoan that grants him eight lives. A tyrant who reduced the country to misery.",
     },
     name: 'Kurozumi Orochi',
@@ -240,7 +240,7 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
     enemies: ['char-op-momonosuke'],
     arcIds: ['arc-op-wano'],
     shortDescription: {
-      it: "Lo shogun usurpatore di Wano, alleato di Kaido, utente di uno Zoan dell'orochi a otto teste. Tiranno crudele che ridusse il Paese alla miseria e all'inquinamento.",
+      it: "Lo shogun usurpatore di Wano, alleato di Kaido, utente di uno Zoo Zoo dell'orochi a otto teste. Tiranno crudele che ridusse il Paese alla miseria e all'inquinamento.",
       en: "The usurper shogun of Wano, Kaido's ally, user of an eight-headed serpent Zoan. A cruel tyrant who reduced the country to poverty and pollution.",
     },
     status: 'deceased',
@@ -280,7 +280,7 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
     firstMangaAppearance: "690",
     firstAnimeAppearance: "611",
     longDescription: {
-      it: "Kozuki Momonosuke, figlio di Oden ed erede del clan, sbalzato nel futuro dal potere della madre Toki. Utente di uno Zoan artificiale del drago, da adulto diventa shogun della Wano libera.",
+      it: "Kozuki Momonosuke, figlio di Oden ed erede del clan, sbalzato nel futuro dal potere della madre Toki. Utente di uno Zoo Zoo artificiale del drago, da adulto diventa shogun della Wano libera.",
       en: "Kozuki Momonosuke, son of Oden and heir of the clan, hurled into the future by his mother Toki's power. User of an artificial dragon Zoan, as an adult he becomes shogun of a free Wano.",
     },
     name: 'Kozuki Momonosuke',
@@ -306,7 +306,7 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
     firstMangaAppearance: "983",
     firstAnimeAppearance: "1015",
     longDescription: {
-      it: "Yamato, figlia di Kaido che si proclama erede di Oden, utente dello Zoan mitologico del lupo divino Okuchi no Makami. Combatté contro il padre per liberare Wano.",
+      it: "Yamato, figlia di Kaido che si proclama erede di Oden, utente dello Zoo Zoo mitologico del lupo divino Okuchi no Makami. Combatté contro il padre per liberare Wano.",
       en: "Yamato, Kaido's child who claims to be Oden's heir, user of the mythical Zoan of the divine wolf Okuchi no Makami. She fought against her father to free Wano.",
     },
     name: 'Yamato',

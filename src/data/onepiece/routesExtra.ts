@@ -113,7 +113,7 @@ export const onepieceRoutesExtra: Route[] = [
     localizedName: { it: "Law — la rotta dell'alleanza", en: "Law — the alliance route" },
     group: GROUP_SUPERNOVA,
     description: {
-      it: "La rotta di Trafalgar Law nel New World: dopo i due anni torna in scena come Corsaro, si allea con Rufy e percorre Punk Hazard, Dressrosa, Zou e Wano per detronizzare gli Imperatori.",
+      it: "La rotta di Trafalgar Law nel Nuovo Mondo: dopo i due anni torna in scena come Corsaro, si allea con Rufy e percorre Punk Hazard, Dressrosa, Zou e Wano per detronizzare gli Imperatori.",
       en: "Trafalgar Law's route in the New World: after the two years he returns as a Warlord, allies with Luffy and travels Punk Hazard, Dressrosa, Zou and Wano to dethrone the Emperors.",
     },
     protagonistCharacterIds: ['char-op-law'],
@@ -166,7 +166,7 @@ export const onepieceRoutesExtra: Route[] = [
   trip('route-op-sn-bonney', 'Bonney → Egghead', 'Bonney → Egghead',
     "La rotta di Jewelry Bonney: cerca il padre Bartholomew Kuma e arriva fino all'isola del futuro Egghead, dove riscopre la verità sul suo passato.",
     "Jewelry Bonney's route: searching for her father Bartholomew Kuma, she reaches the island of the future, Egghead, where she rediscovers the truth of her past.",
-    'char-op-bonney', 'loc-op-egghead', { it: 'Egghead — Kuma e Vegapunk', en: 'Egghead — Kuma and Vegapunk' },
+    'char-op-bonney', 'loc-op-egghead', { it: 'Egghead — Orso e Vegapunk', en: 'Egghead — Kuma and Vegapunk' },
     '#d56aa0', 'dashed', ['1058-1125'], ['1086-1122'], ['char-op-kuma'], ['supernova', 'bonney', 'egghead']),
   trip('route-op-sn-urouge', 'Urouge → New World', 'Urouge → New World',
     "Il «Monaco Folle» Urouge prospera nel New World e si spinge fino al territorio di Big Mom, dove batté a sorpresa uno dei suoi comandanti prima di ritirarsi.",

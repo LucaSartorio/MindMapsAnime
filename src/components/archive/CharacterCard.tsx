@@ -75,7 +75,7 @@ function CharacterCardComponent({
             </div>
             {character.nameLocal && (
               <p className="text-xs text-ink-300 italic truncate mt-0.5">
-                {character.nameLocal}
+                {getLocalizedText(character.nameLocal, locale)}
               </p>
             )}
             {natures.length > 0 && (
@@ -112,7 +112,7 @@ function CharacterCardComponent({
               {rankSystem.label(character.ninjaRank)}
             </Badge>
           ) : character.rank ? (
-            <Badge variant="accent">{character.rank}</Badge>
+            <Badge variant="accent">{getLocalizedText(character.rank, locale)}</Badge>
           ) : null}
           {character.abilityCategory && (
             <Badge variant="default">

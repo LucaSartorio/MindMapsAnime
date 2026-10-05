@@ -46,7 +46,7 @@ export const bleachCharactersKarakura: Character[] = [
     firstMangaAppearance: 'Ch. 1',
     firstAnimeAppearance: 'Ep. 1',
     shortDescription: {
-      it: "Un liceale di Karakura che vede i fantasmi da sempre. Quando la Shinigami Rukia gli cede i suoi poteri per salvare la sua famiglia, diventa uno Shinigami sostituto — e scopre, una guerra dopo l'altra, di essere molto più di questo.",
+      it: "Un liceale di Karakura che vede i fantasmi da sempre. Quando la Shinigami Rukia gli cede i suoi poteri per salvare la sua famiglia, diventa uno Sostituto Shinigami — e scopre, una guerra dopo l'altra, di essere molto più di questo.",
       en: 'A Karakura high-schooler who has always been able to see ghosts. When the Soul Reaper Rukia hands him her powers to save his family, he becomes a Substitute Soul Reaper — and discovers, one war after another, that he is far more than that.',
     },
     longDescription: {

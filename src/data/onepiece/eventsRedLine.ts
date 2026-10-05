@@ -34,14 +34,14 @@ export const onepieceEventsRedLine: TimelineEvent[] = [
     id: 'evt-op-sabaody-scatter',
     worldId: 'world-onepiece',
     longDescription: {
-      it: "Dopo aver colpito un Drago Celeste e affrontato la Marina e l'ammiraglio Kizaru, la ciurma è circondata. Bartholomew Kuma appare e, uno a uno, scaraventa i nove Cappello di Paglia ai quattro angoli del mondo: comincia la separazione di due anni che li renderà più forti.",
+      it: "Dopo aver colpito un Drago Celeste e affrontato la Marina e l'ammiraglio Kizaru, la ciurma è circondata. Bartholomew Orso appare e, uno a uno, scaraventa i nove Cappello di Paglia ai quattro angoli del mondo: comincia la separazione di due anni che li renderà più forti.",
       en: "After striking a Celestial Dragon and facing the Marines and Admiral Kizaru, the crew is surrounded. Bartholomew Kuma appears and, one by one, flings the nine Straw Hats to the four corners of the world: the two-year separation that will make them stronger begins.",
     },
     mangaChapters: ["510-513"],
     animeEpisodes: ["400-405"],
     title: { it: 'La dispersione di Sabaody', en: 'The Sabaody scattering' },
     description: {
-      it: "Dopo lo scontro con la Marina e un Drago Celeste, Bartholomew Kuma scaraventa i Cappello di Paglia ai quattro angoli del mondo. Rayleigh appare e la ciurma si separa per due anni.",
+      it: "Dopo lo scontro con la Marina e un Drago Celeste, Bartholomew Orso scaraventa i Cappello di Paglia ai quattro angoli del mondo. Rayleigh appare e la ciurma si separa per due anni.",
       en: "After clashing with the Marines and a Celestial Dragon, Bartholomew Kuma flings the Straw Hats to the four corners of the world. Rayleigh appears and the crew splits for two years.",
     },
     period: { it: 'Saga di Sabaody', en: 'Sabaody Saga' },

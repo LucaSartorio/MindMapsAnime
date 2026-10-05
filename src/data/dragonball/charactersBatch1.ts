@@ -74,7 +74,7 @@ export const dragonballCharactersBatch1: Character[] = [
     locationIds: ['loc-dbz-vegeta-planet'],
     arcIds: ['arc-dbz-saiyan-saga'],
     shortDescription: {
-      it: 'Padre di Goku e Raditz, guerriero Saiyan che intuisce il piano di Freezer di distruggere il Pianeta Vegeta e gli si oppone da solo.',
+      it: 'Padre di Goku e Radish, guerriero Saiyan che intuisce il piano di Freezer di distruggere il Pianeta Vegeta e gli si oppone da solo.',
       en: "Goku and Raditz's father, a Saiyan warrior who senses Frieza's plan to destroy Planet Vegeta and stands against him alone.",
     },
     status: 'deceased',
@@ -307,7 +307,7 @@ export const dragonballCharactersBatch1: Character[] = [
     eventIds: ['evt-dbz-tournament-of-power'],
     arcIds: ['arc-dbz-tournament-of-power'],
     shortDescription: {
-      it: "Il più forte guerriero dell'Universo 11 e dei Pride Troopers: taciturno, disciplinato, ritenuto il rivale più duro mai affrontato da Goku.",
+      it: "Il più forte guerriero dell'Universo 11 e delle Truppe dell'Orgoglio: taciturno, disciplinato, ritenuto il rivale più duro mai affrontato da Goku.",
       en: 'The strongest fighter of Universe 11 and the Pride Troopers: taciturn, disciplined, considered the toughest rival Goku has ever faced.',
     },
     status: 'alive',
@@ -355,7 +355,7 @@ export const dragonballCharactersBatch1: Character[] = [
     locationIds: ['loc-dbz-gero-lab'],
     arcIds: ['arc-dbz-androids', 'arc-dbz-cell-saga'],
     shortDescription: {
-      it: "Androide interamente robotico costruito dal Dr. Gero, programmato per uccidere Goku ma dal temperamento pacifico e amante della natura.",
+      it: "Androide interamente robotico costruito dal Dottor Gelo, programmato per uccidere Goku ma dal temperamento pacifico e amante della natura.",
       en: "A fully robotic android built by Dr. Gero, programmed to kill Goku but gentle-natured and a lover of nature.",
     },
     status: 'deceased',
@@ -387,7 +387,7 @@ export const dragonballCharactersBatch1: Character[] = [
     locationIds: ['loc-dbz-gero-lab'],
     arcIds: ['arc-dbz-androids', 'arc-dbz-cell-saga', 'arc-dbz-tournament-of-power'],
     shortDescription: {
-      it: "Umano rapito e trasformato in cyborg dal Dr. Gero, fratello gemello di C-18: da antagonista spavaldo a custode di una riserva naturale.",
+      it: "Umano rapito e trasformato in cyborg dal Dottor Gelo, fratello gemello di C-18: da antagonista spavaldo a custode di una riserva naturale.",
       en: "A human kidnapped and turned into a cyborg by Dr. Gero, Android 18's twin brother: from a cocky antagonist to the keeper of a wildlife reserve.",
     },
     status: 'alive',
@@ -419,7 +419,7 @@ export const dragonballCharactersBatch1: Character[] = [
     locationIds: ['loc-dbz-gero-lab'],
     arcIds: ['arc-dbz-androids', 'arc-dbz-cell-saga', 'arc-dbz-tournament-of-power'],
     shortDescription: {
-      it: "Umana rapita e trasformata in cyborg dal Dr. Gero: sposa Crilin e diventa una guerriera part-time, madre di Marron.",
+      it: "Umana rapita e trasformata in cyborg dal Dottor Gelo: sposa Crilin e diventa una guerriera part-time, madre di Marron.",
       en: "A human kidnapped and turned into a cyborg by Dr. Gero: she marries Krillin and becomes a part-time fighter and mother to Marron.",
     },
     status: 'alive',

@@ -437,6 +437,8 @@ export const ja = {
       squad: '騎士団',
       race: '種族',
       concept: '概念',
+      division: '番隊',
+      school: '学校',
     },
     empty: '一族・勢力がありません',
     emptyDescription: '現在のフィルターに該当する結果はありません。',

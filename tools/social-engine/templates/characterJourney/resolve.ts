@@ -148,7 +148,7 @@ export async function resolveCharacterJourney(config: CharacterJourneyConfig): P
     .filter((f): f is NonNullable<typeof f> => Boolean(f))
     .slice(0, 2)
     .map((f) => getEntityDisplayName(f, locale));
-  const tagline = factions.length ? factions.join(' · ') : character.rank;
+  const tagline = factions.length ? factions.join(' · ') : getLocalizedText(character.rank, locale);
   const site = SITE.origin.replace(/^https?:\/\//, '');
   const path = entityPath(locale, dataset, 'characters', character.id);
   const journeyArcs = new Set(effectiveArcs(journey.stops).filter(Boolean)).size;

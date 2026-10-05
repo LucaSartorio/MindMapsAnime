@@ -25,6 +25,8 @@ import { jjkRoutes } from './routes';
 import { jjkAbilities } from './abilities';
 import { jjkAssets } from './assets';
 import { jjkTournaments } from './tournaments';
+import { withSourceNames } from '@/data/shared/translations';
+import { jjkNames } from './names';
 
 const jujutsuKaisen = animeWorlds.find((w) => w.slug === 'jujutsukaisen')!;
 
@@ -87,7 +89,7 @@ const factions: Faction[] = jjkFactions.map((f) => {
  * `jutsu.chakraNature` = la stirpe/fonte (clan Gojo, Zen'in, Kamo, Sukuna, spiriti,
  * utilizzatori di maledizioni, reincarnati, stregoni).
  */
-export const jjkDataset: WorldDataset = withEventTags(withFactionExtras(withFamily({
+export const jjkDataset: WorldDataset = withSourceNames(withEventTags(withFactionExtras(withFamily({
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
   seoSlugs: jujutsukaisenSlugs,
   world: jujutsuKaisen,
@@ -102,6 +104,6 @@ export const jjkDataset: WorldDataset = withEventTags(withFactionExtras(withFami
   jutsu: jjkAbilities,
   tournaments: jjkTournaments,
   assets: jjkAssets,
-}, jjkFamily, 'char-jjk-'), jjkStructure), jjkMarkerTags);
+}, jjkFamily, 'char-jjk-'), jjkStructure), jjkMarkerTags), jjkNames);
 
 export { JJK_JAPAN_VIEWBOX } from './mapConstants';

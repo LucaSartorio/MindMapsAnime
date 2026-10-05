@@ -7,8 +7,8 @@ import { EntityImage } from '@/components/common/EntityImage';
 import { ReferencePill } from '@/components/common/StatusPill';
 import { useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
-import { getLocalizedText, getEntityDisplayName } from '@/utils/localization';
-import { getAbilityTerm } from '@/lib/worldConfig';
+import { getLocalizedArray, getLocalizedText, getEntityDisplayName, getFactionTypeLabel } from '@/utils/localization';
+import { getAbilityTerm, humanizeId } from '@/lib/worldConfig';
 import {
   findCharacter,
   findFaction,
@@ -83,7 +83,7 @@ export function FactionDetailsModal({
           fit="cover"
         />
       }
-      eyebrow={`${faction.type.replace('_', ' ')}`}
+      eyebrow={getFactionTypeLabel(faction.type, locale) || humanizeId(faction.type)}
       title={getLocalizedText(faction.localizedName, locale) || faction.name}
       badges={
         <>
@@ -97,11 +97,11 @@ export function FactionDetailsModal({
             }
             className="capitalize"
           >
-            {faction.type}
+            {getFactionTypeLabel(faction.type, locale) || humanizeId(faction.type)}
           </Badge>
           {village && <Badge>{getLocalizedText(village.localizedName, locale) || village.name}</Badge>}
           {faction.kekkeiGenkai && (
-            <Badge variant="danger">{faction.kekkeiGenkai}</Badge>
+            <Badge variant="danger">{getLocalizedText(faction.kekkeiGenkai, locale)}</Badge>
           )}
           {faction.referenceStatus && (
             <ReferencePill status={faction.referenceStatus} />
@@ -115,7 +115,7 @@ export function FactionDetailsModal({
       }
     >
       {faction.nameLocal && (
-        <p className="text-xs text-ink-300 italic -mt-2">{faction.nameLocal}</p>
+        <p className="text-xs text-ink-300 italic -mt-2">{getLocalizedText(faction.nameLocal, locale)}</p>
       )}
       <p className="leading-relaxed">
         {getLocalizedText(faction.description, locale)}
@@ -161,7 +161,7 @@ export function FactionDetailsModal({
             {t('modals.mainAbilities')}
           </h3>
           <div className="flex flex-wrap gap-1.5">
-            {faction.signatureAbilities!.map((a) => (
+            {getLocalizedArray(faction.signatureAbilities, locale).map((a) => (
               <Badge key={a} variant="ember">
                 {a}
               </Badge>

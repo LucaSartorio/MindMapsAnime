@@ -41,7 +41,7 @@ export const onepieceMapLevels: MapLevel[] = [
     name: 'World Map',
     localizedName: { it: 'Mappa del Mondo', en: 'World Map' },
     description: {
-      it: 'Mappa del mondo di One Piece: i quattro Mari (North, East, West, South Blue), la Red Line con Mary Geoise e Reverse Mountain, la Grand Line divisa tra Paradise e New World, e le due fasce di Calm Belt.',
+      it: 'Mappa del mondo di One Piece: i quattro Mari (North, East, West, South Blue), la Red Line con Mary Geoise e Reverse Mountain, la Grand Line divisa tra il Paradiso e Nuovo Mondo, e le due fasce di Calm Belt.',
       en: "Map of the One Piece world: the four Seas (North, East, West, South Blue), the Red Line with Mary Geoise and Reverse Mountain, the Grand Line split between Paradise and the New World, and the two Calm Belt bands.",
     },
     backgroundAssetId: 'op-world-map-reference',

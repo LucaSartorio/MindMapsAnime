@@ -63,7 +63,7 @@ export const onepieceCharactersSupernovas: Character[] = [
     id: 'char-op-hawkins',
     worldId: 'world-onepiece',
     longDescription: {
-      it: "Basil Hawkins «il Mago», Supernova di North Blue che combina il frutto Paglia con i tarocchi per leggere le probabilità. Nel New World servì Kaido come Headliner.",
+      it: "Basil Hawkins «il Mago», Supernova di North Blue che combina il frutto Paglia con i tarocchi per leggere le probabilità. Nel Nuovo Mondo servì Kaido come Headliner.",
       en: "Basil Hawkins 'the Magician', a North Blue Supernova combining the Straw-Straw Fruit with tarot to read odds. In the New World he served Kaido as a Headliner.",
     },
     name: 'Basil Hawkins',
@@ -76,7 +76,7 @@ export const onepieceCharactersSupernovas: Character[] = [
     firstMangaAppearance: SN_DEBUT.manga,
     firstAnimeAppearance: SN_DEBUT.anime,
     shortDescription: {
-      it: "Supernova «Mago» di North Blue, che combina un Frutto della paglia con i tarocchi per predire le probabilità di sopravvivenza. Nel New World si pose al servizio di Kaido come Headliner.",
+      it: "Supernova «Mago» di North Blue, che combina un Frutto della paglia con i tarocchi per predire le probabilità di sopravvivenza. Nel Nuovo Mondo si pose al servizio di Kaido come Headliner.",
       en: "The 'Magician' Supernova from North Blue, combining a straw fruit with tarot to read survival odds. In the New World he served Kaido as a Headliner.",
     },
     status: 'alive',
@@ -88,7 +88,7 @@ export const onepieceCharactersSupernovas: Character[] = [
     id: 'char-op-drake',
     worldId: 'world-onepiece',
     longDescription: {
-      it: "X Drake, ex viceammiraglio diventato Supernova, utente dello Zoan ancestrale dell'allosauro. A Wano militò tra i Tobiroppo di Kaido pur essendo un agente segreto dell'unità SWORD.",
+      it: "X Drake, ex viceammiraglio diventato Supernova, utente dello Zoo Zoo ancestrale dell'allosauro. A Wano militò tra i Tobiroppo di Kaido pur essendo un agente segreto dell'unità SWORD.",
       en: "X Drake, a former rear admiral turned Supernova, user of the ancient allosaurus Zoan. At Wano he served among Kaido's Tobiroppo while secretly an agent of the SWORD unit.",
     },
     name: 'X Drake',
@@ -101,7 +101,7 @@ export const onepieceCharactersSupernovas: Character[] = [
     firstMangaAppearance: SN_DEBUT.manga,
     firstAnimeAppearance: SN_DEBUT.anime,
     shortDescription: {
-      it: "Ex viceammiraglio della Marina diventato Supernova, utente di uno Zoan ancestrale dell'allosauro. A Wano militò tra i Tobiroppo di Kaido pur essendo un agente segreto dell'unità SWORD.",
+      it: "Ex viceammiraglio della Marina diventato Supernova, utente di uno Zoo Zoo ancestrale dell'allosauro. A Wano militò tra i Tobiroppo di Kaido pur essendo un agente segreto dell'unità SWORD.",
       en: "A former Marine rear admiral turned Supernova, user of an ancient allosaurus Zoan. At Wano he served among Kaido's Tobiroppo while secretly being an agent of the SWORD unit.",
     },
     status: 'alive',
@@ -113,7 +113,7 @@ export const onepieceCharactersSupernovas: Character[] = [
     id: 'char-op-apoo',
     worldId: 'world-onepiece',
     longDescription: {
-      it: "Scratchmen Apoo, capitano dei Pirati On-Air e Supernova il cui corpo è uno strumento musicale. Doppiogiochista, finì alleato di Kaido nel New World.",
+      it: "Scratchmen Apoo, capitano dei Pirati On-Air e Supernova il cui corpo è uno strumento musicale. Doppiogiochista, finì alleato di Kaido nel Nuovo Mondo.",
       en: "Scratchmen Apoo, captain of the On-Air Pirates and a Supernova whose body is a musical instrument. A double-dealer, he ended up allied with Kaido in the New World.",
     },
     name: 'Scratchmen Apoo',
@@ -125,7 +125,7 @@ export const onepieceCharactersSupernovas: Character[] = [
     firstMangaAppearance: SN_DEBUT.manga,
     firstAnimeAppearance: SN_DEBUT.anime,
     shortDescription: {
-      it: "Capitano dei Pirati On-Air e Supernova, il cui corpo è uno strumento musicale: i suoni che produce diventano attacchi. Doppiogiochista, finì alleato di Kaido nel New World.",
+      it: "Capitano dei Pirati On-Air e Supernova, il cui corpo è uno strumento musicale: i suoni che produce diventano attacchi. Doppiogiochista, finì alleato di Kaido nel Nuovo Mondo.",
       en: "Captain of the On-Air Pirates and a Supernova whose body is a musical instrument: the sounds he makes become attacks. A double-dealer, he ended up allied with Kaido in the New World.",
     },
     status: 'alive',
@@ -162,7 +162,7 @@ export const onepieceCharactersSupernovas: Character[] = [
     id: 'char-op-urouge',
     worldId: 'world-onepiece',
     longDescription: {
-      it: "Urouge «il Monaco Folle», Supernova proveniente da un'Isola del Cielo, il cui frutto converte il danno subito in forza. Sopravvissuto al New World, vi si fece un nome.",
+      it: "Urouge «il Monaco Folle», Supernova proveniente da un'Isola del Cielo, il cui frutto converte il danno subito in forza. Sopravvissuto al Nuovo Mondo, vi si fece un nome.",
       en: "Urouge 'the Mad Monk', a Supernova from a Sky Island whose fruit converts damage taken into strength. A survivor of the New World, he made a name there.",
     },
     name: 'Urouge',
@@ -174,7 +174,7 @@ export const onepieceCharactersSupernovas: Character[] = [
     firstMangaAppearance: SN_DEBUT.manga,
     firstAnimeAppearance: SN_DEBUT.anime,
     shortDescription: {
-      it: "Supernova proveniente da un'Isola del Cielo, monaco gigantesco il cui Frutto converte il danno subito in forza. Sopravvissuto al New World, vi si fece un nome battendo un comandante di Big Mom.",
+      it: "Supernova proveniente da un'Isola del Cielo, monaco gigantesco il cui Frutto converte il danno subito in forza. Sopravvissuto al Nuovo Mondo, vi si fece un nome battendo un comandante di Big Mom.",
       en: "A Supernova from a Sky Island, a giant monk whose fruit converts damage taken into strength. A survivor of the New World, he made a name there by beating one of Big Mom's commanders.",
     },
     status: 'alive',

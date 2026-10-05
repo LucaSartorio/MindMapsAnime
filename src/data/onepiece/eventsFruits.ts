@@ -30,7 +30,7 @@ export const onepieceEventsFruits: TimelineEvent[] = [
       it: "Sull'isola di Drum una giovane renna dal naso blu, scacciata dal branco, mangia il Frutto Homo Homo e acquista intelligenza e forma umana. Né renne né uomini lo accettano, finché non lo accoglie il dottor Hiluluk.",
       en: 'On Drum Island a young blue-nosed reindeer, cast out by its herd, eats the Human-Human Fruit and gains intelligence and a human form. Neither reindeer nor humans accept him, until Dr. Hiluluk takes him in.',
     },
-    period: { it: 'Paradise · Drum Island', en: 'Paradise · Drum Island' },
+    period: { it: 'Paradiso · Isola di Drum', en: 'Paradise · Drum Island' },
     arcId: 'arc-op-drum', locationId: 'loc-op-drum-island',
     characterIds: ['char-op-chopper'],
     mangaChapters: ['142'],

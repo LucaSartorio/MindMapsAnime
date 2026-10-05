@@ -243,7 +243,7 @@ export const onepieceEventsCompletion: TimelineEvent[] = [
     id: 'evt-op-egg-escape',
     title: { it: 'La fuga da Egghead', en: 'Escape from Egghead' },
     description: {
-      it: "Dorry e Brogy, tornati alla guida dei Pirati Giganti Guerrieri, mettono in pausa il loro duello e aprono un varco nell'assedio della Marina. I Cappello di Paglia, con Bonney, Kuma e Lilith, lasciano Egghead diretti a Elbaf.",
+      it: "Dorry e Brogy, tornati alla guida dei Pirati Giganti Guerrieri, mettono in pausa il loro duello e aprono un varco nell'assedio della Marina. I Cappello di Paglia, con Bonney, Orso e Lilith, lasciano Egghead diretti a Elbaf.",
       en: "Dorry and Brogy, back at the head of the Giant Warrior Pirates, put their duel on hold and open a path through the Navy's siege. The Straw Hats, with Bonney, Kuma and Lilith, leave Egghead bound for Elbaph.",
     },
     period: FINAL,

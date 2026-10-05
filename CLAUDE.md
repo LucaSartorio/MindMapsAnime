@@ -25,7 +25,7 @@ components (see "Per-world dynamic config").
 
 ```bash
 npm run dev              # Vite dev server → http://localhost:5173
-npm run build            # tsc -b && test:seo && vite build && build:ssr && prerender && seo:check (ALL blocking)
+npm run build            # tsc -b && test:seo && i18n:audit && vite build && build:ssr && prerender && seo:check (ALL blocking)
 npm run build:ssr        # vite build --ssr src/entry-server.tsx → dist-server/ (build-only, gitignored)
 npm run prerender        # SSG: one static HTML per public page + 404.html + sitemap*.xml + robots.txt + llms.txt
 npm run test:seo         # SEO invariants on sources (slugs, URL round-trip, metadata, hreflang, sitemap)
@@ -37,6 +37,7 @@ npm run validate:data    # validate ALL registered datasets; exits 1 on integrit
 npm run validate:i18n    # UI keys aligned in all 6 locales + every dataset Localizable field is { it, en } (blocking)
 npm run seo:slugs        # freeze published SEO slugs into src/data/<world>/slugs.ts (`-- --check` = verify only)
 npm run i18n:status      # dataset translation overlays (es): coverage, missing, stale, orphan keys (docs/I18N.md)
+npm run i18n:audit       # BLOCKING: every shown label/name exists in it/en/es (`-- --locale fr` = what a new language needs)
 npm run i18n:extract -- --world naruto --locale es --out tmp/todo.json   # texts to translate (missing + stale)
 npm run i18n:merge -- --world naruto --locale es --from tmp/es.json      # write src/data/<world>/i18n/es.ts + es.meta.json
 npm run extract:boundaries  # regenerate Naruto nation boundary SVG paths from the world PNG
@@ -505,8 +506,17 @@ to an entity automatically gives it a real Japanese display name.
 
 **Tags are keys, not text.** `series.ts` filters on `'boruto-era'` and search scores over tags, so
 tag *values* are never translated. `getTagLabel(tag, locale)` (`src/lib/tagLabels.ts`) resolves the
-displayed label: known-tag map → `humanizeId`. Proper nouns (`akatsuki`, `zoldyck`) fall through
-unchanged, which is the intended behaviour — adding a tag to a dataset needs no change there.
+displayed label: known-tag map → `humanizeId`. Tags that are SHOWN (nations, boundaries, worlds) must be in
+`TAG_LABELS` (`i18n:audit` checks it); a proper noun is a plain string there (`akatsuki: 'Akatsuki'`), the same
+in every language on purpose. Tags used only for search/filters need no label.
+
+**Names per language.** Every displayed name is translatable in every language: character names, aliases/epithets,
+descriptive ranks, kekkei genkai and member labels are `Localizable` (a plain string = same everywhere) and are
+overlay keys too (`characters[id].name`, `.aliases[N]`, `.rank`…). Source-language (it/en) names that differ from
+`name` — official dub/edition names (Crilin/Krillin, Terzo Raikage, Clan Uzumaki) — live in
+`src/data/<world>/names.ts` with the same keys, applied by `withSourceNames` in the world's `index.ts`; Spanish
+names go in the es overlay. Data-derived labels (types, races, roles, ranks, faction types, seals, classifications)
+come from the world config or the exported `*_LABELS` maps in `src/utils/localization.ts`.
 
 **Measuring coverage.** `npm run validate:i18n` prints, per world and per entity kind, how many
 `Localizable` fields are translated in each language, plus how many entities carry a `japaneseName`.
