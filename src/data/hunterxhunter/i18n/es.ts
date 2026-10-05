@@ -461,7 +461,7 @@ const es: TranslationOverlay = {
   "characters[char-hxh-netero].shortDescription": "Presidente de la Asociación de Cazadores y uno de los luchadores más poderosos, forjado por toda una vida de disciplina marcial y oración.",
   "characters[char-hxh-netero].longDescription": "Un Intensificador de velocidad sobrehumana que empuña el Bodhisattva Guanyin de los Cien Tipos. Se enfrenta al Rey de las Hormigas Quimera, Meruem, en un duelo histórico y recurre a la Rosa en Miniatura como último recurso.",
   "characters[char-hxh-netero].relationships[0].label": "Rival final",
-  "characters[char-hxh-ging].rank": "Cazador de dos estrellas / Zodiaco (Rata)",
+  "characters[char-hxh-ging].rank": "Cazador de dos estrellas / Zodiaco (Jabalí)",
   "characters[char-hxh-ging].longDescription": "El padre de Gon y un Cazador de rango legendario, de habilidades versátiles y una inteligencia fuera de lo común. Reacio a ejercer de padre, deja pistas en lugar de respuestas para que Gon crezca por sí mismo. Es uno de los pioneros de la expedición al Continente Oscuro.",
   "characters[char-hxh-ging].shortDescription": "El padre de Gon y uno de los Cazadores más capaces del mundo. Cocreador de Greed Island.",
   "characters[char-hxh-ging].relationships[0].label": "Hijo",

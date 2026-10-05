@@ -18,7 +18,7 @@ export const hxhNames: SourceNames = {
   "characters[char-hxh-illumi].rank": { it: "Assassino professionista", en: "Professional assassin" },
   "characters[char-hxh-chrollo].rank": { it: "Capo (#0) della Brigata Fantasma", en: "Leader (#0) of the Phantom Troupe" },
   "characters[char-hxh-netero].rank": { it: "Presidente dell'Associazione Hunter", en: "Chairman of the Hunter Association" },
-  "characters[char-hxh-ging].rank": { it: "Hunter a Doppia Stella / Zodiac (Topo)", en: "Double-Star Hunter / Zodiac (Rat)" },
+  "characters[char-hxh-ging].rank": { it: "Hunter a Doppia Stella / Zodiac (Cinghiale)", en: "Double-Star Hunter / Zodiac (Boar)" },
   "characters[char-hxh-biscuit].rank": { it: "Stone Hunter a Doppia Stella", en: "Double-Star Stone Hunter" },
   "characters[char-hxh-kite].rank": { it: "Hunter professionista (allievo di Ging)", en: "Pro Hunter (Ging's pupil)" },
   "characters[char-hxh-silva].rank": { it: "Capofamiglia / Assassino", en: "Family head / Assassin" },
