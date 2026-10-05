@@ -1,0 +1,13 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "id": "character-journey:onepiece:monkey-d-luffy:part-01",
+  "status": "queued",
+  "template": "characterJourney",
+  "anime": "onepiece",
+  "subject": "monkey-d-luffy",
+  "segment": "part-01",
+  "locale": "en",
+  "hook": "Luffy's journey begins — Part 1 of 5.",
+  "cta": "Continue the journey on AniMapVerse",
+  "notes": "Daily release 5 October 2026: a different character and anime after Naruto Part 1. First EN part, selected from the current catalog."
+}
