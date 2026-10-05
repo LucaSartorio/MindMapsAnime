@@ -1,7 +1,7 @@
 // Tipi generici per Mappe Interattive
 // Pensati per essere riutilizzabili da qualsiasi opera (Naruto, One Piece, HxH, ...)
 
-import type { Localizable } from './i18n';
+import type { Localizable, SupportedLocale } from './i18n';
 
 export type { Localizable } from './i18n';
 export type { LocalizedText, SupportedLocale } from './i18n';
@@ -372,6 +372,13 @@ export interface AnimeWorld {
    * Rende la UI adattabile a ogni anime senza hardcoding di Naruto.
    */
   config?: WorldConfig;
+  /**
+   * Lingue AGGIUNTIVE (oltre alle sorgenti it/en) in cui il dataset del mondo
+   * è tradotto con un overlay `src/data/<slug>/i18n/<lingua>.ts`. Solo per
+   * queste lingue il mondo ha URL propri (`/es/naruto/...`): altrove i link
+   * ricadono su `/en`. Vedi `src/data/shared/translations.ts` e docs/SEO.md.
+   */
+  translatedLocales?: readonly SupportedLocale[];
 }
 
 /* ------------------------------ Map Level ------------------------------ */

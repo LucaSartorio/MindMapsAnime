@@ -1,6 +1,6 @@
 import type { WorldDataset } from '@/types';
 import { animeWorlds } from '@/data/worlds';
-import { SEO_LOCALES, type SeoLocale } from './config';
+import { SEO_LOCALES, worldHasSeoLocale, type SeoLocale } from './config';
 import { SEO_CATEGORIES, categoryEntities, type SeoCategory } from './categories';
 import { STATIC_PAGES, categoryPath } from './paths';
 import { pageCountFor, pathOf, worldHasCategory, type ResolvedPage, type SeoPage } from './metadata';
@@ -22,6 +22,8 @@ export function enumeratePages(datasets: Map<string, WorldDataset>): ResolvedPag
 
     for (const world of animeWorlds) {
       if (world.status === 'hidden') continue;
+      // Lingue aggiuntive (es): solo i mondi tradotti hanno pagine.
+      if (!worldHasSeoLocale(world, lang)) continue;
       const dataset = world.status === 'available' ? datasets.get(world.slug) : undefined;
       add({ kind: 'world', world, dataset });
       if (!dataset) continue;
@@ -51,6 +53,7 @@ export function enumerateSlugRedirects(
     for (const category of SEO_CATEGORIES as readonly SeoCategory[]) {
       for (const [prev, current] of idx.redirects[category]) {
         for (const lang of SEO_LOCALES) {
+          if (!worldHasSeoLocale(dataset.world, lang)) continue;
           const base = categoryPath(lang, dataset, category);
           out.push({ from: `${base}/${prev}`, to: `${base}/${current}`, lang });
         }
