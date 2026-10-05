@@ -226,7 +226,7 @@
       "segment": "part-01",
       "segmentFingerprint": "aadfdbe7",
       "createdAt": "2026-10-04T07:38:04.785Z",
-      "updatedAt": "2026-10-04T07:56:56.164Z",
+      "updatedAt": "2026-10-05T06:08:36.701Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-10-04T07:41:33.080Z",
       "outputFile": "tools/social-engine/output/naruto_naruto-uzumaki_character-journey_part-01_en.mp4",
@@ -245,8 +245,8 @@
         "sha256": "bc15219f9b845d760e386e2a2e64dfa84c277bf335192e92508d94be29c9cd8e",
         "expiresAt": "2026-11-03T07:41:33.080Z"
       },
-      "publicationStatus": "scheduled",
-      "publishedAt": null,
+      "publicationStatus": "partiallyPublished",
+      "publishedAt": "2026-10-04T08:05:39Z",
       "platforms": [
         {
           "platform": "instagram",
@@ -291,42 +291,44 @@
         {
           "platform": "tiktok",
           "provider": "metricool",
-          "status": "scheduled",
+          "status": "published",
           "scheduledFor": "2026-10-04T10:00:00+02:00",
           "scheduledAt": "2026-10-04T07:46:28Z",
-          "publishedAt": null,
+          "publishedAt": "2026-10-04T08:05:39Z",
           "failedAt": null,
           "providerPostId": "387677125",
           "providerPostUuid": "-2338125002035671890",
           "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-2338125002035671890",
-          "publicUrl": null,
+          "publicUrl": "https://www.tiktok.com/@interactiveanimeworlds/video/7692720859277987094",
           "lastError": null,
           "attempts": 1,
           "receipts": [
             "naruto_naruto-uzumaki_character-journey_part-01_en.tiktok.scheduled.019a09af56ce",
-            "naruto_naruto-uzumaki_character-journey_part-01_en.tiktok.scheduled.1a8c1bd47457"
+            "naruto_naruto-uzumaki_character-journey_part-01_en.tiktok.scheduled.1a8c1bd47457",
+            "naruto_naruto-uzumaki_character-journey_part-01_en.tiktok.published.0f34ad32bdca"
           ],
-          "updatedAt": "2026-10-04T07:56:56.164Z"
+          "updatedAt": "2026-10-05T06:08:36.701Z"
         },
         {
           "platform": "youtube",
           "provider": "metricool",
-          "status": "scheduled",
+          "status": "published",
           "scheduledFor": "2026-10-04T10:00:00+02:00",
           "scheduledAt": "2026-10-04T07:46:28Z",
-          "publishedAt": null,
+          "publishedAt": "2026-10-04T08:06:16Z",
           "failedAt": null,
           "providerPostId": "387677125",
           "providerPostUuid": "-2338125002035671890",
           "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-2338125002035671890",
-          "publicUrl": null,
+          "publicUrl": "https://www.youtube.com/shorts/nAwJOOocu7s",
           "lastError": null,
           "attempts": 1,
           "receipts": [
             "naruto_naruto-uzumaki_character-journey_part-01_en.youtube.scheduled.13ba2101e40c",
-            "naruto_naruto-uzumaki_character-journey_part-01_en.youtube.scheduled.6d7c4b155eac"
+            "naruto_naruto-uzumaki_character-journey_part-01_en.youtube.scheduled.6d7c4b155eac",
+            "naruto_naruto-uzumaki_character-journey_part-01_en.youtube.published.4ea90ca2d9e8"
           ],
-          "updatedAt": "2026-10-04T07:56:56.164Z"
+          "updatedAt": "2026-10-05T06:08:36.701Z"
         }
       ]
     },

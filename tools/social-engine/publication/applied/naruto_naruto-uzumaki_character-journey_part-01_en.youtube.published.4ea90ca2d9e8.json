@@ -1,0 +1,33 @@
+{
+  "receiptId": "naruto_naruto-uzumaki_character-journey_part-01_en.youtube.published.4ea90ca2d9e8",
+  "outcome": "applied",
+  "transition": {
+    "from": "scheduled",
+    "to": "published"
+  },
+  "note": null,
+  "appliedAt": "2026-10-05T06:08:36.701Z",
+  "sourceFile": "20261005T060549Z-naruto_naruto-uzumaki_character-journey_part-01_en-youtube-published.json",
+  "run": {
+    "runId": "37270910940",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/37270910940",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "character-journey:naruto:naruto-uzumaki:part-01@en",
+    "platform": "youtube",
+    "provider": "metricool",
+    "status": "published",
+    "publishedAt": "2026-10-04T08:06:16Z",
+    "scheduledFor": "2026-10-04T10:00:00+02:00",
+    "providerPostId": "387677125",
+    "providerPostUuid": "-2338125002035671890",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-2338125002035671890",
+    "publicUrl": "https://www.youtube.com/shorts/nAwJOOocu7s",
+    "recordedAt": "2026-10-05T06:05:49Z",
+    "recordedBy": "chatgpt-work-publishing-agent",
+    "notes": "Reconciliation of existing published post; exact publication timestamp from Metricool analytics (UTC). No new upload or scheduling."
+  }
+}

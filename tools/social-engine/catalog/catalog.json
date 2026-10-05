@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-04T07:56:56.178Z",
+  "generatedAt": "2026-10-05T06:08:36.711Z",
   "locales": [
     "en",
     "it"
@@ -128,21 +128,23 @@
           "scheduledLocales": [
             "en"
           ],
-          "publishedLocales": [],
+          "publishedLocales": [
+            "en"
+          ],
           "queuedLocales": [],
           "renderedBefore": true,
-          "publishedBefore": false,
+          "publishedBefore": true,
           "publication": [
             {
               "renderId": "character-journey:naruto:naruto-uzumaki:part-01@en",
               "locale": "en",
               "variant": null,
-              "status": "scheduled",
+              "status": "partiallyPublished",
               "platforms": {
                 "instagram": "scheduled",
                 "facebook": "scheduled",
-                "tiktok": "scheduled",
-                "youtube": "scheduled"
+                "tiktok": "published",
+                "youtube": "published"
               }
             }
           ]
@@ -15477,8 +15479,8 @@
       "rendered": 7,
       "unavailable": 5,
       "notPublished": 5,
-      "scheduled": 1,
-      "partiallyPublished": 0,
+      "scheduled": 0,
+      "partiallyPublished": 1,
       "published": 1,
       "failed": 0
     },
