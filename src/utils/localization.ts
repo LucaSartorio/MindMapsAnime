@@ -1108,3 +1108,16 @@ export function getAbilityClassificationLabel(id: string, locale: SupportedLocal
   const entry = ABILITY_CLASSIFICATION_LABELS[id];
   return entry ? getLocalizedText(entry, locale) : '';
 }
+
+/**
+ * Alias di un personaggio nella lingua, senza doppioni né ripetizioni del nome
+ * mostrato: dati con la stessa forma in due lingue ("Shinigami sostituto" /
+ * "Substitute Soul Reaper") localizzati diventano identici.
+ */
+export function getLocalizedAliases(
+  character: { aliases?: Localizable[]; name: string; localizedName?: Localizable; japaneseName?: string },
+  locale: SupportedLocale,
+): string[] {
+  const shown = getEntityDisplayName(character, locale);
+  return [...new Set(getLocalizedArray(character.aliases, locale))].filter((a) => a && a !== shown);
+}

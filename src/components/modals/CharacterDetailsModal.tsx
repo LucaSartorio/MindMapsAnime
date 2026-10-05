@@ -6,6 +6,7 @@ import {
   getChakraNatureLabel,
   getCharacterImportanceLabel,
   getCharacterStatusLabel,
+  getLocalizedAliases,
   getLocalizedArray,
   getLocalizedText,
   getRaceLabel,
@@ -222,9 +223,9 @@ export function CharacterDetailsModal({
           {character.nameLocal}
         </p>
       )}
-      {character.aliases && character.aliases.length > 0 && (
+      {getLocalizedAliases(character, locale).length > 0 && (
         <p className="text-xs text-ink-400 italic">
-          {t('modals.aliases', { aliases: [...new Set(getLocalizedArray(character.aliases, locale))].join(' · ') })}
+          {t('modals.aliases', { aliases: getLocalizedAliases(character, locale).join(' · ') })}
         </p>
       )}
       <p className="leading-relaxed">
