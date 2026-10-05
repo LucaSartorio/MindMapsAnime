@@ -28,4 +28,7 @@ export const bcNames: SourceNames = {
   "factions[faction-bc-coral-peacock].localizedName": { it: "Pavone di Corallo", en: "Coral Peacocks" },
   "factions[faction-bc-purple-orca].localizedName": { it: "Orca Viola", en: "Purple Orcas" },
   "locations[loc-bc-royal-capital].nameLocal": { it: "Città castello di Clover", en: "Clover Castle Town" },
+  "characters[char-bc-asta].abilities[0]": { it: "Anti-magia", en: "Anti-Magic" },
+  "characters[char-bc-asta].abilities[1]": { it: "Forza fisica fuori scala", en: "Off-the-Charts Physical Strength" },
+  "characters[char-bc-asta].abilities[3]": { it: "Unione Diabolica", en: "Devil Union" },
 };
