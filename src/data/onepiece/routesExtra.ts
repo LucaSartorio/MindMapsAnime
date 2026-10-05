@@ -113,7 +113,7 @@ export const onepieceRoutesExtra: Route[] = [
     localizedName: { it: "Law — la rotta dell'alleanza", en: "Law — the alliance route" },
     group: GROUP_SUPERNOVA,
     description: {
-      it: "La rotta di Trafalgar Law nel New World: dopo i due anni torna in scena come Corsaro, si allea con Rufy e percorre Punk Hazard, Dressrosa, Zou e Wano per detronizzare gli Imperatori.",
+      it: "La rotta di Trafalgar Law nel Nuovo Mondo: dopo i due anni torna in scena come Corsaro, si allea con Rufy e percorre Punk Hazard, Dressrosa, Zou e Wano per detronizzare gli Imperatori.",
       en: "Trafalgar Law's route in the New World: after the two years he returns as a Warlord, allies with Luffy and travels Punk Hazard, Dressrosa, Zou and Wano to dethrone the Emperors.",
     },
     protagonistCharacterIds: ['char-op-law'],

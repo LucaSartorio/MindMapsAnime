@@ -123,7 +123,7 @@ export const dbzMapLevels: MapLevel[] = [
     name: 'Papaya Island',
     localizedName: { it: 'Isola di Papaya · Torneo Tenkaichi', en: 'Papaya Island · World Martial Arts Tournament' },
     description: {
-      it: "L'isola che ospita il Torneo Tenkaichi: il porto dei traghetti, la cittadina, il portale d'ingresso, la sala delle eliminatorie e il ring di pietra dove si sono affrontati Goku, Jackie Chun, Tenshinhan, Piccolo e, anni dopo, Gohan e Majin Vegeta. Schema originale. Doppio clic su «Terra» per tornare alla mappa principale.",
+      it: "L'isola che ospita il Torneo Tenkaichi: il porto dei traghetti, la cittadina, il portale d'ingresso, la sala delle eliminatorie e il ring di pietra dove si sono affrontati Goku, Jackie Chun, Tensing, Piccolo e, anni dopo, Gohan e Majin Vegeta. Schema originale. Doppio clic su «Terra» per tornare alla mappa principale.",
       en: "The island that hosts the World Martial Arts Tournament: the ferry port, the town, the entrance gate, the preliminaries hall and the stone ring where Goku, Jackie Chun, Tien, Piccolo and, years later, Gohan and Majin Vegeta fought. Original diagram. Double-click 'Earth' to return to the main map.",
     },
     parentLevelId: 'dbz-map-world',

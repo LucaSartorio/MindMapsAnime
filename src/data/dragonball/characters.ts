@@ -351,7 +351,7 @@ export const dragonballCharacters: Character[] = [
     worldId: 'world-dragonball',
     name: 'Tenshinhan',
     localizedName: {
-      it: 'Tenshinhan',
+      it: 'Tensing',
       en: 'Tien Shinhan',
       fr: 'Tenshinhan',
       de: 'Tenshinhan',
@@ -400,7 +400,7 @@ export const dragonballCharacters: Character[] = [
     allies: ['char-dbz-tenshinhan'],
     arcIds: ['arc-dbz-tenkaichi-tournament', 'arc-dbz-saiyan-saga'],
     shortDescription: {
-      it: 'Piccolo guerriero psichico, inseparabile compagno di Tenshinhan fin dai tempi della Gru Assassina.',
+      it: 'Piccolo guerriero psichico, inseparabile compagno di Tensing fin dai tempi della Gru Assassina.',
       en: "A small psychic fighter, Tenshinhan's inseparable companion since their days in the Crane School.",
     },
     status: 'alive',
@@ -555,7 +555,7 @@ export const dragonballCharacters: Character[] = [
     eventIds: ['evt-dbz-cell-games', 'evt-dbz-gohan-defeats-cell'],
     arcIds: ['arc-dbz-cell-saga'],
     shortDescription: {
-      it: 'Bio-androide creato dal Dr. Gero con le cellule dei più grandi guerrieri della serie, ossessionato dal raggiungere la "perfezione".',
+      it: 'Bio-androide creato dal Dottor Gelo con le cellule dei più grandi guerrieri della serie, ossessionato dal raggiungere la "perfezione".',
       en: "A bio-android created by Dr. Gero from the cells of the series' greatest fighters, obsessed with achieving 'perfection'.",
     },
     status: 'deceased',

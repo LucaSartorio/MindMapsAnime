@@ -12,9 +12,9 @@ export const onepieceArcsParadise: StoryArc[] = [
       en: "Leaving Whisky Peak and Little Garden, with Nami gravely ill the crew seeks a doctor and lands on the winter island of Drum. The country has been abandoned by the vile king Wapol, who fled at Whitebeard's arrival; the only doctor is the eccentric centenarian Kureha, helped by the talking reindeer Tony Tony Chopper. Amid the memory of Dr. Hiluluk — who died believing one truly dies only when forgotten — Luffy scales the castle, repels Wapol's return and convinces Chopper, shunned as a 'monster', to set sail as ship's doctor.",
     },
     name: 'Drum Island',
-    localizedName: { it: 'Drum Island', en: 'Drum Island' },
+    localizedName: { it: 'Isola di Drum', en: 'Drum Island' },
     saga: { it: 'Saga di Alabasta', en: 'Alabasta Saga' },
-    period: { it: 'Paradise · isola invernale', en: 'Paradise · winter island' },
+    period: { it: 'Paradiso · isola invernale', en: 'Paradise · winter island' },
     order: 13,
     description: {
       it: "Sull'isola invernale di Drum la ciurma cerca un medico per Nami malata. Tra la tirannia di Wapol e l'eredità del Dr. Hiluluk, Rufy convince la renna-medico Tony Tony Chopper a salpare con loro.",
@@ -42,7 +42,7 @@ export const onepieceArcsParadise: StoryArc[] = [
     name: 'Alabasta',
     localizedName: { it: 'Alabasta', en: 'Alabasta' },
     saga: { it: 'Saga di Alabasta', en: 'Alabasta Saga' },
-    period: { it: 'Paradise · regno del deserto', en: 'Paradise · desert kingdom' },
+    period: { it: 'Paradiso · regno del deserto', en: 'Paradise · desert kingdom' },
     order: 14,
     description: {
       it: "La ciurma affianca la principessa Vivi per salvare Alabasta dalla guerra civile orchestrata da Crocodile e dalla Baroque Works. Rufy abbatte il Corsaro e impedisce all'esercito reale e ai ribelli di sterminarsi.",
@@ -70,7 +70,7 @@ export const onepieceArcsParadise: StoryArc[] = [
     name: 'Skypiea',
     localizedName: { it: 'Skypiea', en: 'Skypiea' },
     saga: { it: 'Saga di Skypiea', en: 'Skypiea Saga' },
-    period: { it: 'Paradise · isola del cielo', en: 'Paradise · sky island' },
+    period: { it: 'Paradiso · isola del cielo', en: 'Paradise · sky island' },
     order: 16,
     description: {
       it: "Catapultata in cielo dalla Knock-Up Stream, la ciurma raggiunge Skypiea e si scontra con il «Dio» Enel. Tra Shandia e abitanti del cielo, Rufy mette fine alla sua tirannia e fa risuonare la campana d'oro di Shandora.",

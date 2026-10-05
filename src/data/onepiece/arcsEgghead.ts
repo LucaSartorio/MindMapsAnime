@@ -14,7 +14,7 @@ export const onepieceArcsEgghead: StoryArc[] = [
     name: 'Egghead',
     localizedName: { it: 'Egghead', en: 'Egghead' },
     saga: { it: 'Saga del Mondo Finale', en: 'Final Sea (Egghead) Saga' },
-    period: { it: "New World · isola del futuro", en: 'New World · island of the future' },
+    period: { it: "Nuovo Mondo · isola del futuro", en: 'New World · island of the future' },
     order: 72,
     description: {
       it: "Sull'isola-laboratorio di Vegapunk la ciurma scopre verità sconvolgenti sul Secolo Vuoto e su Joy Boy. Il Governo Mondiale scatena un attacco con i Cinque Astri, l'ammiraglio Kizaru e i Seraphim; tra tradimenti e sacrifici, il mondo si avvia verso il suo capitolo finale.",

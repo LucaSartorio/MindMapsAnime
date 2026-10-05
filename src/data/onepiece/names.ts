@@ -6,7 +6,7 @@ import type { SourceNames } from '@/data/shared/translations';
  * Chiavi = quelle degli overlay (vedi `withSourceNames`, docs/I18N.md).
  */
 export const onepieceNames: SourceNames = {
-  "mapLevels[op-map-drum-island].localizedName": { it: "Drum Island (Regno di Sakura)", en: "Drum Island (Sakura Kingdom)" },
+  "mapLevels[op-map-drum-island].localizedName": { it: "Isola di Drum (Regno di Sakura)", en: "Drum Island (Sakura Kingdom)" },
   "mapLevels[op-map-dawn-island].localizedName": { it: "Isola di Dawn", en: "Dawn Island" },
   "mapLevels[op-map-germa-kingdom].localizedName": { it: "Regno del Germa", en: "Germa Kingdom" },
   "locations[loc-op-mirror-ball-island].localizedName": { it: "Isola di Mirror Ball", en: "Mirror Ball Island" },

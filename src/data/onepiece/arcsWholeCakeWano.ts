@@ -14,7 +14,7 @@ export const onepieceArcsWholeCakeWano: StoryArc[] = [
     name: 'Whole Cake Island',
     localizedName: { it: 'Whole Cake Island', en: 'Whole Cake Island' },
     saga: { it: 'Saga di Whole Cake Island', en: 'Whole Cake Island Saga' },
-    period: { it: 'New World · Totland', en: 'New World · Totland' },
+    period: { it: 'Nuovo Mondo · Totland', en: 'New World · Totland' },
     order: 66,
     description: {
       it: "Una squadra della ciurma entra nel territorio dell'Imperatrice Big Mom per riportare a casa Sanji, prigioniero di un matrimonio combinato con i Charlotte. Tra il tradimento del Germa, il duello con Katakuri e la fuga da Totland, Rufy sfida apertamente un Imperatore.",
@@ -42,7 +42,7 @@ export const onepieceArcsWholeCakeWano: StoryArc[] = [
     name: 'Wano Country',
     localizedName: { it: 'Il Paese di Wano', en: 'Wano Country' },
     saga: { it: 'Saga di Wano', en: 'Wano Saga' },
-    period: { it: 'New World · Wano', en: 'New World · Wano' },
+    period: { it: 'Nuovo Mondo · Wano', en: 'New World · Wano' },
     order: 68,
     description: {
       it: "Nel Paese chiuso di Wano la grande alleanza — ciurma, samurai Kozuki, mink e Heart Pirates — assalta Onigashima per rovesciare lo shogun Orochi e l'Imperatore Kaido. Tra l'eredità di Oden e i Nove Foderi Rossi, Rufy abbatte Kaido e diventa uno dei nuovi Imperatori.",

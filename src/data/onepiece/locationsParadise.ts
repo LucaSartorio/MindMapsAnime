@@ -92,7 +92,7 @@ export const onepieceLocationsParadise: Location[] = [
     mapLevelId: 'op-map-world',
     subMapLevelId: 'op-map-drum-island',
     name: 'Drum Island (Sakura Kingdom)',
-    localizedName: { it: 'Drum Island (Regno di Sakura)', en: 'Drum Island (Sakura Kingdom)' },
+    localizedName: { it: 'Isola di Drum (Regno di Sakura)', en: 'Drum Island (Sakura Kingdom)' },
     type: 'city',
     x: 1186,
     y: 461,
@@ -444,7 +444,7 @@ export const onepieceLocationsParadise: Location[] = [
     x: 1855,
     y: 476,
     shortDescription: {
-      it: "Piccolo regno di Paradise vicino alla Calm Belt, cancellato dall'esistenza dal potere segreto di Imu attraverso un'arma ancestrale.",
+      it: "Piccolo regno del Paradiso vicino alla Calm Belt, cancellato dall'esistenza dal potere segreto di Imu attraverso un'arma ancestrale.",
       en: "A small Paradise kingdom near the Calm Belt, wiped from existence by Imu's secret power through an ancient weapon.",
     },
     nationId: 'nation-op-grand-line-paradise',

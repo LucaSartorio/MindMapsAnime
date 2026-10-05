@@ -8,13 +8,13 @@ export const onepieceArcsNewWorldSagas: StoryArc[] = [
     mangaChapters: ["654-699"],
     animeEpisodes: ["579-625"],
     longDescription: {
-      it: "Primo vero approdo nel New World: un'isola spaccata tra fuoco e ghiaccio, teatro degli esperimenti del folle scienziato Caesar Clown al servizio di Doflamingo e di Kaido. La ciurma libera i bambini giganti drogati, sfugge al gas mortale Shinokuni e si unisce ai samurai Kinemon e Kanjuro in cerca del piccolo Momonosuke. Catturato Caesar, Rufy e Trafalgar Law siglano ufficialmente un'alleanza con un unico obiettivo: detronizzare un Imperatore. Smoker e la Marina G-5 lasciano partire la ciurma verso Dressrosa.",
+      it: "Primo vero approdo nel Nuovo Mondo: un'isola spaccata tra fuoco e ghiaccio, teatro degli esperimenti del folle scienziato Caesar Clown al servizio di Doflamingo e di Kaido. La ciurma libera i bambini giganti drogati, sfugge al gas mortale Shinokuni e si unisce ai samurai Kinemon e Kanjuro in cerca del piccolo Momonosuke. Catturato Caesar, Rufy e Trafalgar Law siglano ufficialmente un'alleanza con un unico obiettivo: detronizzare un Imperatore. Smoker e la Marina G-5 lasciano partire la ciurma verso Dressrosa.",
       en: "The first real landfall in the New World: an island split between fire and ice, stage of the experiments of the mad scientist Caesar Clown serving Doflamingo and Kaido. The crew frees the drugged giant children, escapes the deadly Shinokuni gas and joins the samurai Kinemon and Kanjuro searching for little Momonosuke. With Caesar captured, Luffy and Trafalgar Law officially seal an alliance with one goal: to dethrone an Emperor. Smoker and the G-5 Marines let the crew leave for Dressrosa.",
     },
     name: 'Punk Hazard',
     localizedName: { it: 'Punk Hazard', en: 'Punk Hazard' },
     saga: { it: 'Saga di Dressrosa', en: 'Dressrosa Saga' },
-    period: { it: 'New World · isola di fuoco e ghiaccio', en: 'New World · fire-and-ice island' },
+    period: { it: 'Nuovo Mondo · isola di fuoco e ghiaccio', en: 'New World · fire-and-ice island' },
     order: 62,
     description: {
       it: "Sull'isola spaccata tra fuoco e ghiaccio la ciurma scopre gli esperimenti di Caesar Clown e stringe un'alleanza con Trafalgar Law per abbattere l'Imperatore Kaido. Catturato Caesar, si punta a Dressrosa per colpire Joker.",
@@ -42,7 +42,7 @@ export const onepieceArcsNewWorldSagas: StoryArc[] = [
     name: 'Dressrosa',
     localizedName: { it: 'Dressrosa', en: 'Dressrosa' },
     saga: { it: 'Saga di Dressrosa', en: 'Dressrosa Saga' },
-    period: { it: 'New World · regno dei giocattoli', en: 'New World · kingdom of toys' },
+    period: { it: 'Nuovo Mondo · regno dei giocattoli', en: 'New World · kingdom of toys' },
     order: 64,
     description: {
       it: "L'alleanza affronta il Corsaro Donquijote Doflamingo nel suo regno di giocattoli e gladiatori. Tra la famiglia Riku, i nani Tontatta e l'arrivo di Sabo, Rufy abbatte Doflamingo, libera Dressrosa e scuote l'equilibrio del Nuovo Mondo.",

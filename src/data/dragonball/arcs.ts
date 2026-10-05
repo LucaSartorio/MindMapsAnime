@@ -106,7 +106,7 @@ export const dragonballArcs: StoryArc[] = [
     saga: { it: 'Dragon Ball Z', en: 'Dragon Ball Z' },
     order: 6,
     description: {
-      it: "Raditz rivela a Goku le sue origini Saiyan; la sua morte apre la strada all'arrivo di Vegeta e Nappa, decisi a reclamare la Terra e le Sfere del Drago.",
+      it: "Radish rivela a Goku le sue origini Saiyan; la sua morte apre la strada all'arrivo di Vegeta e Nappa, decisi a reclamare la Terra e le Sfere del Drago.",
       en: "Raditz reveals Goku's Saiyan origins; his death opens the way for Vegeta and Nappa's arrival, determined to claim Earth and its Dragon Balls.",
     },
     locationIds: [
@@ -216,7 +216,7 @@ export const dragonballArcs: StoryArc[] = [
     saga: { it: 'Dragon Ball Z', en: 'Dragon Ball Z' },
     order: 9,
     description: {
-      it: "Trunks del Futuro avverte i Guerrieri Z dell'arrivo degli Androidi del Dr. Gero. Emerge anche la minaccia, ancora acerba, di Cell.",
+      it: "Trunks del Futuro avverte i Guerrieri Z dell'arrivo degli Androidi del Dottor Gelo. Emerge anche la minaccia, ancora acerba, di Cell.",
       en: "Future Trunks warns the Z Fighters about the arrival of Dr. Gero's Androids. The still-nascent threat of Cell also emerges.",
     },
     locationIds: [
@@ -325,7 +325,7 @@ export const dragonballArcs: StoryArc[] = [
     id: 'arc-dbz-battle-of-gods',
     worldId: 'world-dragonball',
     name: 'Battle of Gods',
-    localizedName: { it: 'Battle of Gods', en: 'Battle of Gods' },
+    localizedName: { it: 'La battaglia degli dei', en: 'Battle of Gods' },
     saga: { it: 'Dragon Ball Super', en: 'Dragon Ball Super' },
     order: 12,
     description: {
@@ -344,7 +344,7 @@ export const dragonballArcs: StoryArc[] = [
     id: 'arc-dbz-resurrection-f',
     worldId: 'world-dragonball',
     name: 'Resurrection F',
-    localizedName: { it: 'Resurrection F', en: 'Resurrection F' },
+    localizedName: { it: 'La resurrezione di F', en: 'Resurrection F' },
     saga: { it: 'Dragon Ball Super', en: 'Dragon Ball Super' },
     order: 13,
     description: {
@@ -539,7 +539,7 @@ export const dragonballArcs: StoryArc[] = [
     saga: { it: 'Dragon Ball GT', en: 'Dragon Ball GT' },
     order: 23,
     description: {
-      it: "Dragon Ball GT: il Dr. Gero e il Dr. Myuu, dall'Inferno, aprono un varco che libera i nemici defunti sulla Terra e fondono l'Androide C-17 con Hell Fighter 17 nel potentissimo Super C-17. Goku lo sconfigge con l'aiuto di C-18.",
+      it: "Dragon Ball GT: il Dottor Gelo e il Dr. Myuu, dall'Inferno, aprono un varco che libera i nemici defunti sulla Terra e fondono l'Androide C-17 con Hell Fighter 17 nel potentissimo Super C-17. Goku lo sconfigge con l'aiuto di C-18.",
       en: "Dragon Ball GT: from Hell, Dr. Gero and Dr. Myuu open a portal that unleashes dead foes onto Earth and fuse Android 17 with Hell Fighter 17 into the mighty Super 17. Goku defeats him with Android 18's help.",
     },
     locationIds: ['loc-dbz-satan-city', 'loc-dbz-gero-lab', 'loc-dbz-gt-hell'],
@@ -653,7 +653,7 @@ export const dragonballArcs: StoryArc[] = [
     saga: { it: 'Film', en: 'Movie' },
     order: 29,
     description: {
-      it: "Film DBZ (1992): il computer del Dr. Gero attiva gli Androidi C-13, C-14 e C-15 per uccidere Goku. Assorbendo i compagni, C-13 diventa Super Androide C-13, fermato da Goku Super Saiyan con la Genkidama.",
+      it: "Film DBZ (1992): il computer del Dottor Gelo attiva gli Androidi C-13, C-14 e C-15 per uccidere Goku. Assorbendo i compagni, C-13 diventa Super Androide C-13, fermato da Goku Super Saiyan con la Genkidama.",
       en: "DBZ movie (1992): Dr. Gero's computer activates Androids 13, 14 and 15 to kill Goku. By absorbing his teammates, 13 becomes Super Android 13, stopped by Super Saiyan Goku with the Spirit Bomb.",
     },
     characterIds: ['char-dbz-android-13', 'char-dbz-goku', 'char-dbz-dr-gero'],

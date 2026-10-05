@@ -79,8 +79,8 @@ export const hxhCharactersBatch6: Character[] = [
     rank: '4ª Regina di Kakin',
     gender: 'F',
     shortDescription: {
-      it: 'Quarta regina di Kakin, madre del principe Tyson.',
-      en: 'Fourth queen of Kakin, mother of Prince Tyson.',
+      it: 'Quarta regina di Kakin, madre della principessa Tyson.',
+      en: 'Fourth queen of Kakin, mother of Princess Tyson.',
     },
     arcIds: ['arc-hxh-succession-contest'],
     status: 'alive',

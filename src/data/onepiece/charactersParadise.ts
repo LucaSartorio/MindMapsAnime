@@ -25,7 +25,7 @@ export const onepieceCharactersParadise: Character[] = [
       en: "The crew's doctor: a reindeer who ate the Human-Human Fruit and can speak and transform. He dreams of becoming a doctor able to cure any illness.",
     },
     longDescription: {
-      it: "Allevato dal ciarlatano dal cuore d'oro Hiluluk e poi dalla dottoressa Kureha su Drum Island, si unisce ai Cappello di Paglia dopo la caduta del tiranno Wapol.",
+      it: "Allevato dal ciarlatano dal cuore d'oro Hiluluk e poi dalla dottoressa Kureha su Isola di Drum, si unisce ai Cappello di Paglia dopo la caduta del tiranno Wapol.",
       en: "Raised by the golden-hearted quack Hiluluk and then by Dr. Kureha on Drum Island, he joins the Straw Hats after the fall of the tyrant Wapol.",
     },
     status: 'alive',
@@ -50,7 +50,7 @@ export const onepieceCharactersParadise: Character[] = [
     students: ['char-op-chopper'],
     arcIds: ['arc-op-drum'],
     shortDescription: {
-      it: "Anziana e geniale dottoressa di Drum Island, soprannominata «la strega». Raccolse ed educò Chopper alla medicina dopo la morte di Hiluluk.",
+      it: "Anziana e geniale dottoressa dell'Isola di Drum, soprannominata «la strega». Raccolse ed educò Chopper alla medicina dopo la morte di Hiluluk.",
       en: "The brilliant elderly doctor of Drum Island, nicknamed 'the witch'. She took in and trained Chopper in medicine after Hiluluk's death.",
     },
     status: 'alive',

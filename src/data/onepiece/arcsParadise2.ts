@@ -14,7 +14,7 @@ export const onepieceArcsParadise2: StoryArc[] = [
     name: 'Water Seven',
     localizedName: { it: 'Water Seven', en: 'Water Seven' },
     saga: { it: 'Saga di Water Seven', en: 'Water Seven Saga' },
-    period: { it: 'Paradise · città dell\'acqua', en: 'Paradise · city of water' },
+    period: { it: 'Paradiso · città dell\'acqua', en: 'Paradise · city of water' },
     order: 20,
     description: {
       it: "Nella città dei carpentieri la ciurma si spacca per la Going Merry ormai logora, Nico Robin sparisce con la CP9 e la Galley-La è scossa da un tradimento. Sullo sfondo, i progetti dell'arma Pluton.",
@@ -42,7 +42,7 @@ export const onepieceArcsParadise2: StoryArc[] = [
     name: 'Enies Lobby',
     localizedName: { it: 'Enies Lobby', en: 'Enies Lobby' },
     saga: { it: 'Saga di Water Seven', en: 'Water Seven Saga' },
-    period: { it: 'Paradise · isola giudiziaria', en: 'Paradise · judicial island' },
+    period: { it: 'Paradiso · isola giudiziaria', en: 'Paradise · judicial island' },
     order: 22,
     description: {
       it: "Per salvare Nico Robin la ciurma assalta l'isola giudiziaria del Governo Mondiale e ne brucia la bandiera, dichiarando guerra al mondo. Dopo lo scontro con la CP9 e un Buster Call, Franky entra in ciurma con la nuova Thousand Sunny.",
@@ -70,7 +70,7 @@ export const onepieceArcsParadise2: StoryArc[] = [
     name: 'Thriller Bark',
     localizedName: { it: 'Thriller Bark', en: 'Thriller Bark' },
     saga: { it: 'Saga di Thriller Bark', en: 'Thriller Bark Saga' },
-    period: { it: 'Paradise · Triangolo Florian', en: 'Paradise · Florian Triangle' },
+    period: { it: 'Paradiso · Triangolo Florian', en: 'Paradise · Florian Triangle' },
     order: 26,
     description: {
       it: "Nella nebbia del Triangolo Florian la ciurma affronta il Corsaro Gekko Moria, ladro di ombre, sull'isola-galeone Thriller Bark. Liberato lo scheletro Brook, questi si unisce come musicista; poi Bartholomew Kuma mette alla prova la ciurma esausta.",

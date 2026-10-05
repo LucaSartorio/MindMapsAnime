@@ -30,7 +30,7 @@ export const dragonballRoutesExtra: Route[] = [
     localizedName: { it: 'Il percorso di Gohan', en: "Gohan's path" },
     group: CHARACTERS,
     description: {
-      it: "Dal bambino rapito da Raditz al vincitore dei Cell Games, dal Grande Saiyaman alla Spada Z, fino a Gohan Beast: il figlio di Goku che non ama combattere ma diventa, quando serve, il più forte.",
+      it: "Dal bambino rapito da Radish al vincitore dei Cell Games, dal Grande Saiyaman alla Spada Z, fino a Gohan Beast: il figlio di Goku che non ama combattere ma diventa, quando serve, il più forte.",
       en: "From the child kidnapped by Raditz to the winner of the Cell Games, from the Great Saiyaman to the Z Sword, up to Gohan Beast: Goku's son who does not love fighting but becomes, when it matters, the strongest.",
     },
     protagonistCharacterIds: ['char-dbz-gohan'],
@@ -38,7 +38,7 @@ export const dragonballRoutesExtra: Route[] = [
     arcId: 'arc-dbz-cell-saga',
     relatedArcIds: ['arc-dbz-saiyan-saga', 'arc-dbz-namek-frieza', 'arc-dbz-cell-saga', 'arc-dbz-majin-buu', 'arc-dbz-super-hero'],
     steps: [
-      s(1, 'loc-dbz-battle-4-piccolo-raditz', 'evt-dbz-raditz-death', { it: 'Rapito da Raditz', en: 'Kidnapped by Raditz' }),
+      s(1, 'loc-dbz-battle-4-piccolo-raditz', 'evt-dbz-raditz-death', { it: 'Rapito da Radish', en: 'Kidnapped by Raditz' }),
       s(2, 'loc-dbz-battle-5-gohan-training', 'evt-dbz-gohan-survival-training', { it: "L'allenamento di Piccolo", en: "Piccolo's training" }),
       s(3, 'loc-dbz-namek-guru-house', 'evt-dbz-gohan-potential-unlocked', { it: 'Dal Grande Anziano', en: 'With the Grand Elder' }),
       s(4, 'loc-dbz-lk-time-chamber', 'evt-dbz-time-chamber-goku-gohan', { it: 'La Stanza del Tempo', en: 'The Time Chamber' }),
@@ -159,7 +159,7 @@ export const dragonballRoutesExtra: Route[] = [
     localizedName: { it: 'I Tornei Tenkaichi', en: 'The World Martial Arts Tournaments' },
     group: SAGAS,
     description: {
-      it: "Tutti i Tornei Tenkaichi della serie sull'Isola di Papaya: il 21° contro Jackie Chun, il 22° contro Tenshinhan, il 23° contro Piccolo Junior, il 25° con l'arrivo di Babidi e il 28° in cui Goku incontra Ub.",
+      it: "Tutti i Tornei Tenkaichi della serie sull'Isola di Papaya: il 21° contro Jackie Chun, il 22° contro Tensing, il 23° contro Piccolo Junior, il 25° con l'arrivo di Babidi e il 28° in cui Goku incontra Ub.",
       en: "Every World Martial Arts Tournament in the series on Papaya Island: the 21st against Jackie Chun, the 22nd against Tien, the 23rd against Piccolo Jr., the 25th with Babidi's arrival and the 28th, where Goku meets Uub.",
     },
     protagonistCharacterIds: ['char-dbz-goku'],
@@ -169,7 +169,7 @@ export const dragonballRoutesExtra: Route[] = [
     steps: [
       s(1, 'loc-dbz-pp-port', undefined, { it: "L'arrivo a Papaya", en: 'Arriving at Papaya' }),
       s(2, 'loc-dbz-pp-ring', 'evt-dbz-goku-vs-jackie-chun', { it: '21°: Jackie Chun', en: '21st: Jackie Chun' }),
-      s(3, 'loc-dbz-pp-ring', 'evt-dbz-goku-vs-tenshinhan', { it: '22°: Tenshinhan', en: '22nd: Tien' }),
+      s(3, 'loc-dbz-pp-ring', 'evt-dbz-goku-vs-tenshinhan', { it: '22°: Tensing', en: '22nd: Tien' }),
       s(4, 'loc-dbz-pp-ring', 'evt-dbz-goku-marries-chichi', { it: '23°: Chichi e Piccolo', en: '23rd: Chichi and Piccolo' }),
       s(5, 'loc-dbz-pp-ring', 'evt-dbz-25th-tournament', { it: '25°: Babidi', en: '25th: Babidi' }),
       s(6, 'loc-dbz-pp-ring', 'evt-dbz-28th-tournament', { it: '28°: Ub', en: '28th: Uub' }),
@@ -239,7 +239,7 @@ export const dragonballRoutesExtra: Route[] = [
     relatedArcIds: ['arc-dbz-battle-of-gods', 'arc-dbz-resurrection-f', 'arc-dbz-universe-6', 'arc-dbz-goku-black', 'arc-dbz-tournament-of-power'],
     steps: [
       s(1, 'loc-dbz-kaio-planet', 'evt-dbz-beerus-awakens', { it: 'Il risveglio', en: 'The awakening' }),
-      s(2, 'loc-dbz-satan-city', 'evt-dbz-battle-of-gods', { it: 'Battle of Gods', en: 'Battle of Gods' }),
+      s(2, 'loc-dbz-satan-city', 'evt-dbz-battle-of-gods', { it: 'La battaglia degli dei', en: 'Battle of Gods' }),
       s(3, 'loc-dbz-beerus-planet', 'evt-dbz-whis-training', { it: 'Il suo pianeta', en: 'His planet' }),
       s(4, 'loc-dbz-nameless-planet', 'evt-dbz-universe-6-tournament-end', { it: 'Contro Champa', en: 'Against Champa' }),
       s(5, 'loc-dbz-sacred-world-kais', 'evt-dbz-zamasu-crime', { it: 'Zamasu', en: 'Zamasu' }),

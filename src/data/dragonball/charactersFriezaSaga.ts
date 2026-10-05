@@ -100,7 +100,7 @@ export const dragonballCharactersFriezaSaga: Character[] = [
     eventIds: ['evt-dbz-goku-vs-captain-ginyu'],
     arcIds: ['arc-dbz-namek-frieza'],
     shortDescription: {
-      it: "Leader della Squadra Ginyu, il membro più forte del gruppo: sfida Goku a duello e usa la tecnica Body Change per scambiare corpo con lui, prima di restare bloccato nel corpo di una rana.",
+      it: "Leader della Forze Speciali Ginew, il membro più forte del gruppo: sfida Goku a duello e usa la tecnica Body Change per scambiare corpo con lui, prima di restare bloccato nel corpo di una rana.",
       en: "Leader of the Ginyu Force and its strongest member: he challenges Goku to a duel and uses the Body Change technique to swap bodies with him, before getting stuck in the body of a frog.",
     },
     status: 'unknown',
@@ -124,7 +124,7 @@ export const dragonballCharactersFriezaSaga: Character[] = [
     eventIds: ['evt-dbz-vegeta-vs-recoome'],
     arcIds: ['arc-dbz-namek-frieza'],
     shortDescription: {
-      it: "Membro della Squadra Ginyu dalla forza brutale e dalle pose melodrammatiche: atterra quasi senza sforzo Vegeta, Krillin e Gohan, prima che Goku intervenga.",
+      it: "Membro della Forze Speciali Ginew dalla forza brutale e dalle pose melodrammatiche: atterra quasi senza sforzo Vegeta, Krillin e Gohan, prima che Goku intervenga.",
       en: "A Ginyu Force member with brutal strength and melodramatic poses: he takes down Vegeta, Krillin and Gohan with little effort, before Goku steps in.",
     },
     status: 'unknown',
@@ -148,7 +148,7 @@ export const dragonballCharactersFriezaSaga: Character[] = [
     eventIds: ['evt-dbz-goku-vs-ginyu-force'],
     arcIds: ['arc-dbz-namek-frieza'],
     shortDescription: {
-      it: "Membro della Squadra Ginyu, si vanta di essere la creatura più veloce dell'universo: lui e Jeice affrontano Goku appena arrivato su Namecc.",
+      it: "Membro della Forze Speciali Ginew, si vanta di essere la creatura più veloce dell'universo: lui e Jeeth affrontano Goku appena arrivato su Namecc.",
       en: "A Ginyu Force member who boasts of being the fastest creature in the universe: he and Jeice confront Goku right after his arrival on Namek.",
     },
     status: 'unknown',
@@ -172,7 +172,7 @@ export const dragonballCharactersFriezaSaga: Character[] = [
     eventIds: ['evt-dbz-goku-vs-ginyu-force'],
     arcIds: ['arc-dbz-namek-frieza'],
     shortDescription: {
-      it: "Membro della Squadra Ginyu specializzato in attacchi energetici, celebre per la Crusher Ball: affronta Goku insieme a Burter, poi fugge quando la potenza dell'avversario si rivela troppo alta.",
+      it: "Membro della Forze Speciali Ginew specializzato in attacchi energetici, celebre per la Crusher Ball: affronta Goku insieme a Butter, poi fugge quando la potenza dell'avversario si rivela troppo alta.",
       en: 'A Ginyu Force member specializing in energy attacks, known for the Crusher Ball: he fights Goku alongside Burter, then flees once his power proves too great.',
     },
     status: 'unknown',
@@ -196,7 +196,7 @@ export const dragonballCharactersFriezaSaga: Character[] = [
     eventIds: ['evt-dbz-ginyu-force-arrives'],
     arcIds: ['arc-dbz-namek-frieza'],
     shortDescription: {
-      it: "Membro della Squadra Ginyu dai poteri psichici, capace di fermare il tempo trattenendo il respiro: immobilizza Vegeta, Krillin e Gohan prima di essere decapitato da Vegeta.",
+      it: "Membro della Forze Speciali Ginew dai poteri psichici, capace di fermare il tempo trattenendo il respiro: immobilizza Vegeta, Krillin e Gohan prima di essere decapitato da Vegeta.",
       en: 'A psychic Ginyu Force member able to stop time by holding his breath: he freezes Vegeta, Krillin and Gohan before being beheaded by Vegeta.',
     },
     status: 'deceased',

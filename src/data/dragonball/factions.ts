@@ -84,7 +84,7 @@ export const dragonballFactions: Faction[] = [
     name: 'Android',
     localizedName: { it: 'Androide / Cyborg', en: 'Android / Cyborg' },
     description: {
-      it: "Esseri artificiali o umani cyborgizzati, creati dal Dr. Gero e dal Red Ribbon: dagli Androidi C-16/17/18 al bio-androide Cell, fino ai Gamma del film Super Hero.",
+      it: "Esseri artificiali o umani cyborgizzati, creati dal Dottor Gelo e dal Red Ribbon: dagli Androidi C-16/17/18 al bio-androide Cell, fino ai Gamma del film Super Hero.",
       en: 'Artificial beings or cyborgized humans, created by Dr. Gero and Red Ribbon: from Androids 16/17/18 to the bio-android Cell, up to the Gammas of the Super Hero movie.',
     },
     characterIds: ['char-dbz-cell', 'char-dbz-android-16', 'char-dbz-android-17', 'char-dbz-android-18', 'char-dbz-dr-gero', 'char-dbz-gamma-1', 'char-dbz-gamma-2', 'char-dbz-cell-max'],
@@ -199,7 +199,7 @@ export const dragonballFactions: Faction[] = [
     name: 'Red Ribbon Army',
     localizedName: { it: 'Esercito Red Ribbon', en: 'Red Ribbon Army' },
     description: {
-      it: "Organizzazione criminale paramilitare che dà la caccia alle Sfere del Drago per conto del Commander Red; distrutta da Goku, viene ricostruita in segreto dal Dr. Gero e, decenni dopo, da un nuovo gruppo nel film Super Hero.",
+      it: "Organizzazione criminale paramilitare che dà la caccia alle Sfere del Drago per conto del Commander Red; distrutta da Goku, viene ricostruita in segreto dal Dottor Gelo e, decenni dopo, da un nuovo gruppo nel film Super Hero.",
       en: "A paramilitary criminal organization hunting the Dragon Balls for Commander Red; destroyed by Goku, it is secretly rebuilt by Dr. Gero and, decades later, by a new group in the Super Hero movie.",
     },
     leaderIds: ['char-dbz-dr-gero'],
@@ -320,9 +320,9 @@ export const dragonballFactions: Faction[] = [
     worldId: 'world-dragonball',
     type: 'group',
     name: 'Ginyu Force',
-    localizedName: { it: 'Squadra Ginyu', en: 'Ginyu Force' },
+    localizedName: { it: 'Forze Speciali Ginew', en: 'Ginyu Force' },
     description: {
-      it: "Squadra di cinque mercenari d'elite al servizio di Freezer — Capitan Ginyu, Recoome, Burter, Jeice e Guldo — tra i combattenti più potenti dell'universo, noti per pose melodrammatiche e un forte spirito di squadra.",
+      it: "Squadra di cinque mercenari d'elite al servizio di Freezer — Capitano Ginew, Recoom, Butter, Jeeth e Guldo — tra i combattenti più potenti dell'universo, noti per pose melodrammatiche e un forte spirito di squadra.",
       en: "A squad of five elite mercenaries in Frieza's service — Captain Ginyu, Recoome, Burter, Jeice and Guldo — among the universe's most powerful fighters, known for melodramatic poses and a strong team spirit.",
     },
     leaderIds: ['char-dbz-captain-ginyu'],
@@ -343,7 +343,7 @@ export const dragonballFactions: Faction[] = [
     name: 'Machine Mutants',
     localizedName: { it: 'Mutanti Macchina', en: 'Machine Mutants' },
     description: {
-      it: "Dragon Ball GT: gli esseri bio-meccanici creati dal Dr. Myuu sul Pianeta M-2 — tra cui il Generale Rilldo, Luud, il parassita Baby e (con il Dr. Gero) Super C-17.",
+      it: "Dragon Ball GT: gli esseri bio-meccanici creati dal Dr. Myuu sul Pianeta M-2 — tra cui il Generale Rilldo, Luud, il parassita Baby e (con il Dottor Gelo) Super C-17.",
       en: "Dragon Ball GT: the bio-mechanical beings created by Dr. Myuu on Planet M-2 — including General Rilldo, Luud, the parasite Baby and (with Dr. Gero) Super 17.",
     },
     leaderIds: ['char-dbz-gt-dr-myuu'],

@@ -180,7 +180,7 @@ export const onepieceCharactersExtra8: Character[] = [
     id: 'char-op-hajrudin', name: 'Hajrudin', importance: 'minor', role: ['ally'], gender: 'male', status: 'alive',
     factionIds: ['faction-op-straw-hat-grand-fleet'], locationIds: ['loc-op-dressrosa', 'loc-op-elbaf'],
     arcIds: ['arc-op-dressrosa'], eventIds: ['evt-op-dr-colosseum', 'evt-op-doflamingo-defeat'],
-    allies: ['char-op-luffy', 'char-op-dorry', 'char-op-brogy'], relationships: [{ targetCharacterId: 'char-op-luffy', label: { it: 'Ammiraglio della Grand Fleet', en: 'Admiral of the Grand Fleet' } }],
+    allies: ['char-op-luffy', 'char-op-dorry', 'char-op-brogy'], relationships: [{ targetCharacterId: 'char-op-luffy', label: { it: 'Ammiraglio della Grande Flotta', en: 'Admiral of the Grand Fleet' } }],
     fm: '713', fa: '649',
     it: "Giovane mercenario gigante di Elbaf che, ispirato da Rufy, divenne capitano della Flotta dei Sette.",
     en: "A young giant mercenary of Elbaf who, inspired by Luffy, became a captain of the Grand Fleet.",

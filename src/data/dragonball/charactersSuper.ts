@@ -156,7 +156,7 @@ export const dragonballCharactersSuper: Character[] = [
     eventIds: ['evt-dbz-vegeta-vs-toppo'],
     arcIds: ['arc-dbz-tournament-of-power'],
     shortDescription: {
-      it: "Dragon Ball Super: leader dei Pride Troopers dell'Universo 11 e candidato Dio della Distruzione. Al Torneo del Potere sfodera il potere della Distruzione contro Vegeta.",
+      it: "Dragon Ball Super: leader delle Truppe dell'Orgoglio dell'Universo 11 e candidato Dio della Distruzione. Al Torneo del Potere sfodera il potere della Distruzione contro Vegeta.",
       en: "Dragon Ball Super: leader of Universe 11's Pride Troopers and God of Destruction candidate. At the Tournament of Power he unleashes the power of Destruction against Vegeta.",
     },
     status: 'alive',

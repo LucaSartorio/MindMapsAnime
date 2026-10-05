@@ -62,7 +62,7 @@ export const onepieceFactions: Faction[] = [
     name: 'Marines',
     localizedName: { it: 'Marina', en: 'Marines' },
     description: {
-      it: "Le forze armate marittime del Governo Mondiale, garanti dell'ordine e nemiche dei pirati. Onnipresenti dai quartieri di East Blue fino al New World.",
+      it: "Le forze armate marittime del Governo Mondiale, garanti dell'ordine e nemiche dei pirati. Onnipresenti dai quartieri di East Blue fino al Nuovo Mondo.",
       en: "The maritime armed forces of the World Government, guarantors of order and enemies of pirates. Ever-present from the East Blue bases to the New World.",
     },
     characterIds: ['char-op-coby', 'char-op-morgan', 'char-op-smoker', 'char-op-garp'],

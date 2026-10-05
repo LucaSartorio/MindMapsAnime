@@ -91,7 +91,7 @@ export const dragonballCharactersMovies: Character[] = [
     enemies: ['char-dbz-goku'],
     arcIds: ['arc-dbz-movie-super-android-13'],
     shortDescription: {
-      it: "Film: androide creato dal computer del Dr. Gero con l'unico scopo di uccidere Goku; assorbendo C-14 e C-15 diventa Super Androide C-13.",
+      it: "Film: androide creato dal computer del Dottor Gelo con l'unico scopo di uccidere Goku; assorbendo C-14 e C-15 diventa Super Androide C-13.",
       en: "Movie: an android created by Dr. Gero's computer with the sole purpose of killing Goku; by absorbing 14 and 15 he becomes Super Android 13.",
     },
     status: 'deceased',

@@ -33,7 +33,7 @@ export const onepieceFactionsNorthBlue: Faction[] = [
     name: 'Heart Pirates',
     localizedName: { it: 'Pirati di Heart', en: 'Heart Pirates' },
     description: {
-      it: "La ciurma di Trafalgar Law, una delle Undici Supernove apparse a Sabaody. Riconoscibile dal sommergibile giallo, diventa alleata dei Cappello di Paglia nel New World.",
+      it: "La ciurma di Trafalgar Law, una delle Undici Supernove apparse a Sabaody. Riconoscibile dal sommergibile giallo, diventa alleata dei Cappello di Paglia nel Nuovo Mondo.",
       en: "Trafalgar Law's crew, one of the Eleven Supernovas who appeared at Sabaody. Recognisable by its yellow submarine, it becomes an ally of the Straw Hats in the New World.",
     },
     leaderIds: ['char-op-law'],

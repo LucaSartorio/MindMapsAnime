@@ -77,7 +77,7 @@ export const onepieceFactionsWholeCakeWano: Faction[] = [
     name: 'Four Emperors',
     localizedName: { it: 'I Quattro Imperatori', en: 'The Four Emperors' },
     description: {
-      it: "I quattro pirati più potenti del mondo, che dominano il New World da pari del Governo Mondiale. Le loro fila cambiano nel tempo: Barbabianca, Big Mom e Kaido cadono, mentre Barbanera e Rufy si affermano accanto a Shanks.",
+      it: "I quattro pirati più potenti del mondo, che dominano il Nuovo Mondo da pari del Governo Mondiale. Le loro fila cambiano nel tempo: Barbabianca, Big Mom e Kaido cadono, mentre Barbanera e Rufy si affermano accanto a Shanks.",
       en: "The four most powerful pirates in the world, ruling the New World as equals of the World Government. Their ranks shift over time: Whitebeard, Big Mom and Kaido fall, while Blackbeard and Luffy rise alongside Shanks.",
     },
     characterIds: [

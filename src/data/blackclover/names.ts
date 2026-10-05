@@ -22,7 +22,7 @@ export const bcNames: SourceNames = {
   "characters[char-bc-julius].aliases[0]": { it: "28° Imperatore Magico", en: "28th Wizard King" },
   "characters[char-bc-lumiere].aliases[0]": { it: "Primo Imperatore Magico", en: "First Wizard King" },
   "characters[char-bc-patry].aliases[1]": { it: "Licht (falso)", en: "Licht (fake)" },
-  "characters[char-bc-fana-elf].localizedName": { it: "Fana la Senza Amore", en: "Fana the Hateful" },
+  "characters[char-bc-fana-elf].localizedName": { it: "Fana la Rancorosa", en: "Fana the Hateful" },
   "factions[faction-bc-silver-eagle].localizedName": { it: "Aquila d'Argento", en: "Silver Eagles" },
   "factions[faction-bc-crimson-lion].localizedName": { it: "Leone Cremisi", en: "Crimson Lions" },
   "factions[faction-bc-coral-peacock].localizedName": { it: "Pavone di Corallo", en: "Coral Peacocks" },

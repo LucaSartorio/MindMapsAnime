@@ -56,7 +56,7 @@ export const onepieceFactionsExtra2: Faction[] = [
   F({ id: 'faction-op-race-giants', type: 'race', name: 'Giants', nit: 'Giganti', nen: 'Giants',
     it: "Il popolo gigante, alto oltre dieci metri, originario di Elbaf, terra di guerrieri.",
     en: "The giant people, over ten meters tall, hailing from Elbaf, the land of warriors.",
-    lit: "I Giganti venerano il dio guerriero di Elbaf e vivono per secoli. Onore e duello ne regolano la cultura: da Dorry e Brogy ai mercenari della Grand Fleet, fino alla famiglia reale di Loki.",
+    lit: "I Giganti venerano il dio guerriero di Elbaf e vivono per secoli. Onore e duello ne regolano la cultura: da Dorry e Brogy ai mercenari della Grande Flotta, fino alla famiglia reale di Loki.",
     len: "Giants worship the warrior god of Elbaf and live for centuries. Honor and the duel rule their culture: from Dorry and Brogy to the Grand Fleet mercenaries, up to Loki's royal family.",
     characterIds: ['char-op-dorry', 'char-op-brogy', 'char-op-hajrudin', 'char-op-oimo', 'char-op-kashii', 'char-op-loki', 'char-op-harald'], locationIds: ['loc-op-elbaf', 'loc-op-little-garden'], tags: ['razza', 'giganti', 'elbaf'] }),
   F({ id: 'faction-op-race-fishmen', type: 'race', name: 'Fish-Men & Merfolk', nit: 'Uomini-pesce e Tritoni', nen: 'Fish-Men & Merfolk',

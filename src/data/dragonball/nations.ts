@@ -145,7 +145,7 @@ export const dragonballNations: Nation[] = [
     localizedName: { it: 'Pianeta di Beerus', en: "Beerus's Planet" },
     type: 'neutral_land',
     description: {
-      it: "Dimora del Dio della Distruzione dell'Universo 7 e del suo angelo Whis: un piccolo pianeta dalla forma irregolare, con una piramide e alberi giganteschi. Dopo Battle of Gods Goku e Vegeta vi si allenano con Whis fino al Super Saiyan Blue.",
+      it: "Dimora del Dio della Distruzione dell'Universo 7 e del suo angelo Whis: un piccolo pianeta dalla forma irregolare, con una piramide e alberi giganteschi. Dopo La battaglia degli dei Goku e Vegeta vi si allenano con Whis fino al Super Saiyan Blue.",
       en: "Home of Universe 7's God of Destruction and his angel Whis: a small, irregularly shaped planet with a pyramid and giant trees. After Battle of Gods Goku and Vegeta train there with Whis up to Super Saiyan Blue.",
     },
     relatedLocationIds: ['loc-dbz-beerus-planet'],

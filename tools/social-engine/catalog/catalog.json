@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-05T16:46:02.168Z",
+  "generatedAt": "2026-10-05T17:08:14.448Z",
   "locales": [
     "en",
     "it"
@@ -3674,7 +3674,7 @@
                 "La città dell'inizio e della fine",
                 "Reverse Mountain",
                 "Little Garden",
-                "Drum Island",
+                "Isola di Drum",
                 "Alabasta",
                 "Jaya"
               ]
@@ -4215,7 +4215,7 @@
                 "La città dell'inizio e della fine",
                 "Whisky Peak",
                 "Little Garden",
-                "Drum Island"
+                "Isola di Drum"
               ]
             },
             "firstArc": "Arlong Park",
@@ -4599,7 +4599,7 @@
               ],
               "it": [
                 "La città dell'inizio e della fine",
-                "Drum Island",
+                "Isola di Drum",
                 "Alabasta",
                 "Skypiea",
                 "Enies Lobby"
@@ -5513,7 +5513,7 @@
                 "Enies Lobby"
               ],
               "it": [
-                "Drum Island",
+                "Isola di Drum",
                 "Alabasta",
                 "Enies Lobby"
               ]
@@ -6818,7 +6818,7 @@
                 "Saga di Cell",
                 "Saga di Majin Bu",
                 "Dragon Ball DAIMA",
-                "Battle of Gods"
+                "La battaglia degli dei"
               ]
             },
             "firstArc": "Android Saga",
@@ -6876,7 +6876,7 @@
                 "Black Star Dragon Ball Saga"
               ],
               "it": [
-                "Resurrection F",
+                "La resurrezione di F",
                 "Saga dell'Universo 6 (Torneo della Distruzione)",
                 "Saga di Goku Black / Trunks del Futuro",
                 "Saga delle Sfere del Drago Nere"
@@ -7057,7 +7057,7 @@
               ],
               "it": [
                 "Saga di Majin Bu",
-                "Resurrection F",
+                "La resurrezione di F",
                 "Saga di Baby",
                 "Saga dei Draghi Malvagi"
               ]
@@ -7576,7 +7576,7 @@
           "series": null,
           "displayName": {
             "en": "Tien Shinhan",
-            "it": "Tenshinhan"
+            "it": "Tensing"
           },
           "locales": [
             "en",
@@ -7986,7 +7986,7 @@
           "series": null,
           "displayName": {
             "en": "Raditz",
-            "it": "Raditz"
+            "it": "Radish"
           },
           "locales": [
             "en",
@@ -8166,7 +8166,7 @@
           "series": null,
           "displayName": {
             "en": "Dr. Gero",
-            "it": "Dr. Gero"
+            "it": "Dottor Gelo"
           },
           "locales": [
             "en",
@@ -14826,7 +14826,7 @@
           "series": null,
           "displayName": {
             "en": "Fana the Hateful",
-            "it": "Fana la Senza Amore"
+            "it": "Fana la Rancorosa"
           },
           "locales": [
             "en",

@@ -221,7 +221,7 @@ export const narutoNames: SourceNames = {
   "characters[char-kagura].rank": { it: "Allievo dell'Accademia di Kiri", en: "Kiri Academy student" },
   "characters[char-victor].rank": { it: "Outer di Kara", en: "Kara Outer" },
   "characters[char-deepa].rank": { it: "Inner di Kara", en: "Kara Inner" },
-  "characters[char-ao-kara].aliases[0]": { it: "Ao, aiutante del Quarto Mizukage", en: "Ao the Fourth Mizukage's aide" },
+  "characters[char-ao-kara].aliases[0]": { it: "Ao, aiutante della Quinta Mizukage", en: "Ao the Fifth Mizukage's aide" },
   "characters[char-ao-kara].rank": { it: "Outer di Kara · ex Kiri", en: "Kara Outer · former Kiri" },
   "characters[char-araumi].rank": { it: "Capo del clan pirata Funato", en: "Head of the Funato pirate clan" },
   "characters[char-isari].rank": { it: "Funato · figlio di Araumi", en: "Funato · Araumi's son" },

@@ -203,7 +203,7 @@ export const onepieceCharactersParadise2: Character[] = [
     enemies: ['char-op-luffy'],
     arcIds: ['arc-op-thriller-bark'],
     shortDescription: {
-      it: "Corsaro padrone di Thriller Bark, utente del Frutto delle Ombre: ruba le ombre altrui per animare un esercito di zombie. Vuole costruirsi una ciurma immortale per conquistare il New World.",
+      it: "Corsaro padrone di Thriller Bark, utente del Frutto delle Ombre: ruba le ombre altrui per animare un esercito di zombie. Vuole costruirsi una ciurma immortale per conquistare il Nuovo Mondo.",
       en: "The Warlord master of Thriller Bark, user of the Shadow-Shadow Fruit: he steals others' shadows to animate a zombie army. He seeks an immortal crew to conquer the New World.",
     },
     status: 'alive',

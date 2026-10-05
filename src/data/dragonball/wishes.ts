@@ -132,9 +132,9 @@ export const dragonballWishes: TimelineEvent[] = [
   }),
   w({
     id: 'evt-dbz-wish-tien-chiaotzu',
-    title: { it: 'Tenshinhan e Jiaozi tornano in vita', en: 'Tien and Chiaotzu return to life' },
+    title: { it: 'Tensing e Jiaozi tornano in vita', en: 'Tien and Chiaotzu return to life' },
     description: {
-      it: "Dopo altri centotrenta giorni le Sfere di Namecc sono di nuovo pronte: i primi due desideri riportano in vita Tenshinhan e Jiaozi, caduti contro Nappa.",
+      it: "Dopo altri centotrenta giorni le Sfere di Namecc sono di nuovo pronte: i primi due desideri riportano in vita Tensing e Jiaozi, caduti contro Nappa.",
       en: "After another hundred and thirty days Namek's Dragon Balls are ready again: the first two wishes bring back Tien and Chiaotzu, who fell against Nappa.",
     },
     period: DBZ,

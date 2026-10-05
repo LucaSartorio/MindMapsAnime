@@ -1646,7 +1646,7 @@ const es: TranslationOverlay = {
   "characters[char-deepa].shortDescription": "Interno de Kara con un cuerpo cibernético duro como el diamante. Manipula el carbono para crear cuchillas, esferas y armaduras impenetrables.",
   "characters[char-deepa].abilities[0]": "Manipulación del Carbono",
   "characters[char-deepa].abilities[1]": "Cuerpo de Diamante",
-  "characters[char-ao-kara].aliases[0]": "Ao, ayudante del Cuarto Mizukage",
+  "characters[char-ao-kara].aliases[0]": "Ao, ayudante de la Quinta Mizukage",
   "characters[char-ao-kara].rank": "Outer de Kara · ex Kiri",
   "characters[char-ao-kara].shortDescription": "Superviviente de la Cuarta Gran Guerra Ninja, el antiguo jōnin de Kiri Ao es reconstruido como cíborg y reclutado como Externo de Kara.",
   "characters[char-ao-kara].abilities[0]": "Herramientas Ninja Científicas",

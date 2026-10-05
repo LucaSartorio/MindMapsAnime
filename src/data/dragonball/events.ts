@@ -123,9 +123,9 @@ export const dragonballEvents: TimelineEvent[] = [
   {
     id: 'evt-dbz-goku-vs-tenshinhan',
     worldId: 'world-dragonball',
-    title: { it: 'Goku contro Tenshinhan', en: 'Goku vs. Tien Shinhan' },
+    title: { it: 'Goku contro Tensing', en: 'Goku vs. Tien Shinhan' },
     description: {
-      it: "Nella finale del 22° Torneo Tenkaichi, Goku affronta Tenshinhan, allievo del malvagio Eremita della Gru: un duello serratissimo che Goku perde per un soffio, ponendo le basi per la redenzione di Tenshinhan.",
+      it: "Nella finale del 22° Torneo Tenkaichi, Goku affronta Tensing, allievo del malvagio Eremita della Gru: un duello serratissimo che Goku perde per un soffio, ponendo le basi per la redenzione di Tensing.",
       en: "In the final of the 22nd Tenkaichi Budokai, Goku faces Tien Shinhan, disciple of the wicked Crane Hermit: a razor-close duel Goku loses by a hair, setting the stage for Tien's redemption.",
     },
     period: { it: 'Dragon Ball · 22° Torneo Tenkaichi', en: 'Dragon Ball · 22nd Tenkaichi Budokai' },
@@ -203,9 +203,9 @@ export const dragonballEvents: TimelineEvent[] = [
   {
     id: 'evt-dbz-raditz-arrival',
     worldId: 'world-dragonball',
-    title: { it: 'Arrivo di Raditz', en: "Raditz's arrival" },
+    title: { it: 'Arrivo di Radish', en: "Raditz's arrival" },
     description: {
-      it: "Raditz atterra sulla Terra e rivela a Goku le sue vere origini Saiyan; Goku e Piccolo si alleano per fermarlo, a costo della vita di entrambi i fratelli.",
+      it: "Radish atterra sulla Terra e rivela a Goku le sue vere origini Saiyan; Goku e Piccolo si alleano per fermarlo, a costo della vita di entrambi i fratelli.",
       en: "Raditz lands on Earth and reveals Goku's true Saiyan origins; Goku and Piccolo team up to stop him, at the cost of both brothers' lives.",
     },
     period: { it: 'Dragon Ball Z · Saga dei Saiyan', en: 'Dragon Ball Z · Saiyan Saga' },
@@ -265,7 +265,7 @@ export const dragonballEvents: TimelineEvent[] = [
     worldId: 'world-dragonball',
     title: { it: 'I Guerrieri Z contro i Saibaman e Nappa', en: 'The Z Fighters vs. the Saibamen and Nappa' },
     description: {
-      it: "In attesa del ritorno di Goku, Crilin, Piccolo, Gohan, Yamcha, Tenshinhan e Chaozu affrontano i Saibaman e il gigantesco Nappa: Yamcha muore per l'autodistruzione di un Saibaman, mentre Chaozu e poi Tenshinhan si sacrificano invano contro Nappa.",
+      it: "In attesa del ritorno di Goku, Crilin, Piccolo, Gohan, Yamcha, Tensing e Chaozu affrontano i Saibaman e il gigantesco Nappa: Yamcha muore per l'autodistruzione di un Saibaman, mentre Chaozu e poi Tensing si sacrificano invano contro Nappa.",
       en: "Awaiting Goku's return, Krillin, Piccolo, Gohan, Yamcha, Tien and Chiaotzu face the Saibamen and the towering Nappa: Yamcha dies to a Saibaman's self-destruct, while Chiaotzu and then Tien sacrifice themselves in vain against Nappa.",
     },
     period: { it: 'Dragon Ball Z · Saga dei Saiyan', en: 'Dragon Ball Z · Saiyan Saga' },
@@ -305,7 +305,7 @@ export const dragonballEvents: TimelineEvent[] = [
     worldId: 'world-dragonball',
     title: { it: 'Battaglia contro Vegeta e Nappa', en: 'Battle against Vegeta and Nappa' },
     description: {
-      it: "Vegeta e Nappa affrontano i Guerrieri Z sulla Terra: Yamcha, Chaozu, Tenshinhan e Piccolo cadono in battaglia prima che Goku arrivi a fermare Vegeta. Marker #6 della legenda del poster.",
+      it: "Vegeta e Nappa affrontano i Guerrieri Z sulla Terra: Yamcha, Chaozu, Tensing e Piccolo cadono in battaglia prima che Goku arrivi a fermare Vegeta. Marker #6 della legenda del poster.",
       en: "Vegeta and Nappa face the Z Fighters on Earth: Yamcha, Chaozu, Tien and Piccolo fall in battle before Goku arrives to stop Vegeta. Marker #6 on the poster's legend.",
     },
     period: { it: 'Dragon Ball Z · Saga dei Saiyan', en: 'Dragon Ball Z · Saiyan Saga' },
@@ -465,12 +465,12 @@ export const dragonballEvents: TimelineEvent[] = [
   {
     id: 'evt-dbz-ginyu-force-arrives',
     worldId: 'world-dragonball',
-    title: { it: 'Arrivo della Squadra Ginyu', en: 'The Ginyu Force arrives' },
+    title: { it: 'Arrivo della Forze Speciali Ginew', en: 'The Ginyu Force arrives' },
     description: {
-      it: "Freezer richiama su Namecc la Squadra Ginyu, i suoi mercenari d'elite: Guldo immobilizza Vegeta, Krillin e Gohan con i suoi poteri psichici, fermando il tempo, prima di essere decapitato da Vegeta.",
+      it: "Freezer richiama su Namecc la Forze Speciali Ginew, i suoi mercenari d'elite: Guldo immobilizza Vegeta, Krillin e Gohan con i suoi poteri psichici, fermando il tempo, prima di essere decapitato da Vegeta.",
       en: "Frieza summons the Ginyu Force, his elite mercenaries, to Namek: Guldo freezes Vegeta, Krillin and Gohan with his time-stopping psychic powers, before being beheaded by Vegeta.",
     },
-    period: { it: 'Dragon Ball Z · Saga della Squadra Ginyu', en: 'Dragon Ball Z · Ginyu Force Saga' },
+    period: { it: 'Dragon Ball Z · Saga della Forze Speciali Ginew', en: 'Dragon Ball Z · Ginyu Force Saga' },
     arcId: 'arc-dbz-namek-frieza',
     locationId: 'loc-dbz-namek-battlefield-plains',
     characterIds: ['char-dbz-guldo', 'char-dbz-captain-ginyu', 'char-dbz-vegeta', 'char-dbz-krillin', 'char-dbz-gohan'],
@@ -485,12 +485,12 @@ export const dragonballEvents: TimelineEvent[] = [
   {
     id: 'evt-dbz-vegeta-vs-recoome',
     worldId: 'world-dragonball',
-    title: { it: 'Vegeta, Krillin e Gohan contro Recoome', en: 'Vegeta, Krillin and Gohan vs. Recoome' },
+    title: { it: 'Vegeta, Krillin e Gohan contro Recoom', en: 'Vegeta, Krillin and Gohan vs. Recoome' },
     description: {
-      it: "Recoome atterra quasi senza sforzo Vegeta, Krillin e Gohan, prima che l'arrivo improvviso di Goku, appena giunto su Namecc, cambi gli equilibri della battaglia.",
+      it: "Recoom atterra quasi senza sforzo Vegeta, Krillin e Gohan, prima che l'arrivo improvviso di Goku, appena giunto su Namecc, cambi gli equilibri della battaglia.",
       en: "Recoome takes down Vegeta, Krillin and Gohan with little effort, before Goku's sudden arrival on Namek shifts the battle's balance.",
     },
-    period: { it: 'Dragon Ball Z · Saga della Squadra Ginyu', en: 'Dragon Ball Z · Ginyu Force Saga' },
+    period: { it: 'Dragon Ball Z · Saga della Forze Speciali Ginew', en: 'Dragon Ball Z · Ginyu Force Saga' },
     arcId: 'arc-dbz-namek-frieza',
     locationId: 'loc-dbz-namek-battlefield-plains',
     characterIds: ['char-dbz-recoome', 'char-dbz-vegeta', 'char-dbz-krillin', 'char-dbz-gohan', 'char-dbz-goku'],
@@ -505,12 +505,12 @@ export const dragonballEvents: TimelineEvent[] = [
   {
     id: 'evt-dbz-goku-vs-ginyu-force',
     worldId: 'world-dragonball',
-    title: { it: 'Goku contro Burter e Jeice', en: 'Goku vs. Burter and Jeice' },
+    title: { it: 'Goku contro Butter e Jeeth', en: 'Goku vs. Burter and Jeice' },
     description: {
-      it: "Goku, appena arrivato su Namecc con la sua nuova forza, affronta Burter e Jeice: li supera con facilità, spingendo Jeice alla fuga.",
+      it: "Goku, appena arrivato su Namecc con la sua nuova forza, affronta Butter e Jeeth: li supera con facilità, spingendo Jeeth alla fuga.",
       en: "Goku, freshly arrived on Namek with his newfound strength, faces Burter and Jeice: he easily outclasses them, sending Jeice fleeing.",
     },
-    period: { it: 'Dragon Ball Z · Saga della Squadra Ginyu', en: 'Dragon Ball Z · Ginyu Force Saga' },
+    period: { it: 'Dragon Ball Z · Saga della Forze Speciali Ginew', en: 'Dragon Ball Z · Ginyu Force Saga' },
     arcId: 'arc-dbz-namek-frieza',
     locationId: 'loc-dbz-namek-battlefield-plains',
     characterIds: ['char-dbz-goku', 'char-dbz-burter', 'char-dbz-jeice'],
@@ -525,12 +525,12 @@ export const dragonballEvents: TimelineEvent[] = [
   {
     id: 'evt-dbz-goku-vs-captain-ginyu',
     worldId: 'world-dragonball',
-    title: { it: 'Goku contro Capitan Ginyu', en: 'Goku vs. Captain Ginyu' },
+    title: { it: 'Goku contro Capitano Ginew', en: 'Goku vs. Captain Ginyu' },
     description: {
-      it: "Capitan Ginyu sfida Goku a duello e, quando capisce di non poterlo battere in combattimento, usa il Body Change per scambiare corpo con lui — ma finisce bloccato nel corpo di una rana dopo un ultimo scambio.",
+      it: "Capitano Ginew sfida Goku a duello e, quando capisce di non poterlo battere in combattimento, usa il Body Change per scambiare corpo con lui — ma finisce bloccato nel corpo di una rana dopo un ultimo scambio.",
       en: "Captain Ginyu challenges Goku to a duel and, realizing he can't beat him in a straight fight, uses Body Change to swap bodies with him — but ends up trapped in the body of a frog after one final swap.",
     },
-    period: { it: 'Dragon Ball Z · Saga della Squadra Ginyu', en: 'Dragon Ball Z · Ginyu Force Saga' },
+    period: { it: 'Dragon Ball Z · Saga della Forze Speciali Ginew', en: 'Dragon Ball Z · Ginyu Force Saga' },
     arcId: 'arc-dbz-namek-frieza',
     locationId: 'loc-dbz-namek-battlefield-plains',
     characterIds: ['char-dbz-goku', 'char-dbz-captain-ginyu'],
@@ -727,7 +727,7 @@ export const dragonballEvents: TimelineEvent[] = [
     worldId: 'world-dragonball',
     title: { it: 'Apparizione degli Androidi C-19 e C-20', en: 'Appearance of Androids 19 & 20' },
     description: {
-      it: "Il Dr. Gero (C-20) e l'Androide C-19 emergono per dare la caccia ai Guerrieri Z e assorbirne l'energia vitale. Marker #7 della legenda del poster.",
+      it: "Il Dottor Gelo (C-20) e l'Androide C-19 emergono per dare la caccia ai Guerrieri Z e assorbirne l'energia vitale. Marker #7 della legenda del poster.",
       en: "Dr. Gero (Android 20) and Android 19 emerge to hunt the Z Fighters and drain their life energy. Marker #7 on the poster's legend.",
     },
     period: { it: 'Dragon Ball Z · Saga degli Androidi', en: 'Dragon Ball Z · Android Saga' },
@@ -747,7 +747,7 @@ export const dragonballEvents: TimelineEvent[] = [
     worldId: 'world-dragonball',
     title: { it: 'Attivazione degli Androidi', en: 'The Androids are activated' },
     description: {
-      it: "Il Dr. Gero attiva C-19 e C-20 (sé stesso); C-17 e C-18, già attivi, si ribellano e lo uccidono prima di partire alla ricerca di Goku.",
+      it: "Il Dottor Gelo attiva C-19 e C-20 (sé stesso); C-17 e C-18, già attivi, si ribellano e lo uccidono prima di partire alla ricerca di Goku.",
       en: 'Dr. Gero activates Androids 19 and 20 (himself); Androids 17 and 18, already active, turn on him and kill him before setting out to find Goku.',
     },
     period: { it: 'Dragon Ball Z · Saga degli Androidi', en: 'Dragon Ball Z · Android Saga' },
@@ -825,9 +825,9 @@ export const dragonballEvents: TimelineEvent[] = [
   {
     id: 'evt-dbz-tenshinhan-vs-cell',
     worldId: 'world-dragonball',
-    title: { it: 'Tenshinhan contro Cell', en: 'Tien Shinhan vs. Cell' },
+    title: { it: 'Tensing contro Cell', en: 'Tien Shinhan vs. Cell' },
     description: {
-      it: "Per impedire a Cell semi-perfetto di assorbire l'Androide C-18, Tenshinhan lo inchioda scaricandogli addosso ripetuti Kikoho fino allo sfinimento: un gesto quasi suicida che guadagna tempo prezioso, ma non basta a fermare Cell.",
+      it: "Per impedire a Cell semi-perfetto di assorbire l'Androide C-18, Tensing lo inchioda scaricandogli addosso ripetuti Kikoho fino allo sfinimento: un gesto quasi suicida che guadagna tempo prezioso, ma non basta a fermare Cell.",
       en: "To stop Semi-Perfect Cell from absorbing Android 18, Tien Shinhan pins him down with repeated Neo Tri-Beams to the point of collapse: an almost suicidal stand that buys precious time, but isn't enough to stop Cell.",
     },
     period: { it: 'Dragon Ball Z · Saga di Cell', en: 'Dragon Ball Z · Cell Saga' },
@@ -1172,7 +1172,7 @@ export const dragonballEvents: TimelineEvent[] = [
       it: "Cinque Saiyan dal cuore puro donano la propria energia a Goku, che ottiene la forma Super Saiyan God per affrontare Bills.",
       en: 'Five pure-hearted Saiyans lend Goku their energy, granting him the Super Saiyan God form to face Beerus.',
     },
-    period: { it: 'Dragon Ball Super · Battle of Gods', en: 'Dragon Ball Super · Battle of Gods' },
+    period: { it: 'Dragon Ball Super · La battaglia degli dei', en: 'Dragon Ball Super · Battle of Gods' },
     arcId: 'arc-dbz-battle-of-gods',
     locationId: 'loc-dbz-satan-city',
     characterIds: ['char-dbz-goku', 'char-dbz-beerus'],
@@ -1192,7 +1192,7 @@ export const dragonballEvents: TimelineEvent[] = [
       it: "Freezer, resuscitato e allenato per quattro mesi, torna sulla Terra come Golden Freezer, ma viene sconfitto da Goku Super Saiyan Blue.",
       en: 'Frieza, resurrected and trained for four months, returns to Earth as Golden Frieza, but is defeated by Super Saiyan Blue Goku.',
     },
-    period: { it: 'Dragon Ball Super · Resurrection F', en: 'Dragon Ball Super · Resurrection F' },
+    period: { it: 'Dragon Ball Super · La resurrezione di F', en: 'Dragon Ball Super · Resurrection F' },
     arcId: 'arc-dbz-resurrection-f',
     locationId: 'loc-dbz-satan-city',
     characterIds: ['char-dbz-frieza', 'char-dbz-goku', 'char-dbz-vegeta'],
@@ -1821,7 +1821,7 @@ export const dragonballEvents: TimelineEvent[] = [
     worldId: 'world-dragonball',
     title: { it: "Il varco dell'Inferno", en: 'The portal from Hell' },
     description: {
-      it: "Dragon Ball GT: il Dr. Gero e il Dr. Myuu, dall'Inferno, aprono un varco che libera sulla Terra i nemici defunti (Freezer, Cell e molti altri) e intrappola Goku nell'Aldilà, mentre nasce Hell Fighter 17.",
+      it: "Dragon Ball GT: il Dottor Gelo e il Dr. Myuu, dall'Inferno, aprono un varco che libera sulla Terra i nemici defunti (Freezer, Cell e molti altri) e intrappola Goku nell'Aldilà, mentre nasce Hell Fighter 17.",
       en: "Dragon Ball GT: from Hell, Dr. Gero and Dr. Myuu open a portal that unleashes dead foes onto Earth (Frieza, Cell and many others) and traps Goku in the afterlife, while Hell Fighter 17 is created.",
     },
     period: { it: 'Dragon Ball GT · Saga di Super C-17', en: 'Dragon Ball GT · Super 17 Saga' },
@@ -1840,7 +1840,7 @@ export const dragonballEvents: TimelineEvent[] = [
     worldId: 'world-dragonball',
     title: { it: 'La fusione: nasce Super C-17', en: 'The fusion: Super 17 is born' },
     description: {
-      it: "Dragon Ball GT: Hell Fighter 17 convince l'Androide C-17 vivo a fondersi con lui: nasce Super C-17, che uccide i suoi stessi creatori Dr. Gero e Dr. Myuu e semina il terrore sulla Terra assorbendo ogni attacco di energia.",
+      it: "Dragon Ball GT: Hell Fighter 17 convince l'Androide C-17 vivo a fondersi con lui: nasce Super C-17, che uccide i suoi stessi creatori Dottor Gelo e Dr. Myuu e semina il terrore sulla Terra assorbendo ogni attacco di energia.",
       en: "Dragon Ball GT: Hell Fighter 17 convinces the living Android 17 to merge with him: Super 17 is born, kills his own creators Dr. Gero and Dr. Myuu, and rampages across Earth absorbing every energy attack.",
     },
     period: { it: 'Dragon Ball GT · Saga di Super C-17', en: 'Dragon Ball GT · Super 17 Saga' },
@@ -1878,7 +1878,7 @@ export const dragonballEvents: TimelineEvent[] = [
     worldId: 'world-dragonball',
     title: { it: 'Goku e C-18 contro Super C-17', en: 'Goku and Android 18 vs. Super 17' },
     description: {
-      it: "Dragon Ball GT: il Dr. Gero e il Dr. Myuu fondono l'Androide C-17 con Hell Fighter 17 nel potentissimo Super C-17, che assorbe ogni attacco di energia. Goku lo sconfigge con l'aiuto di C-18 e il Pugno del Drago.",
+      it: "Dragon Ball GT: il Dottor Gelo e il Dr. Myuu fondono l'Androide C-17 con Hell Fighter 17 nel potentissimo Super C-17, che assorbe ogni attacco di energia. Goku lo sconfigge con l'aiuto di C-18 e il Pugno del Drago.",
       en: "Dragon Ball GT: Dr. Gero and Dr. Myuu fuse Android 17 with Hell Fighter 17 into the mighty Super 17, who absorbs any energy attack. Goku defeats him with Android 18's help and the Dragon Fist.",
     },
     period: { it: 'Dragon Ball GT · Saga di Super C-17', en: 'Dragon Ball GT · Super 17 Saga' },
@@ -2082,7 +2082,7 @@ export const dragonballEvents: TimelineEvent[] = [
     worldId: 'world-dragonball',
     title: { it: 'Goku contro Super Androide C-13', en: 'Goku vs. Super Android 13' },
     description: {
-      it: "Film: gli Androidi C-13, C-14 e C-15 del computer del Dr. Gero attaccano Goku; C-13 assorbe i compagni diventando Super Androide C-13, distrutto da una Genkidama.",
+      it: "Film: gli Androidi C-13, C-14 e C-15 del computer del Dottor Gelo attaccano Goku; C-13 assorbe i compagni diventando Super Androide C-13, distrutto da una Genkidama.",
       en: "Movie: Androids 13, 14 and 15 from Dr. Gero's computer attack Goku; 13 absorbs his teammates to become Super Android 13, destroyed by a Spirit Bomb.",
     },
     period: { it: 'Film · Super Androide C-13', en: 'Movie · Super Android 13' },

@@ -213,15 +213,15 @@ export const HXH_JUTSU_LONG: Record<string, Localizable> = {
 };
 
 /** I Dodici dello Zodiaco e il rispettivo segno (nome in codice). */
-const ZODIAC: Record<string, { it: string; en: string }> = {
+const ZODIAC: Record<string, { it: string; en: string; del?: string }> = {
   botobai: { it: 'Drago', en: 'Dragon' },
-  kanzai: { it: 'Tigre', en: 'Tiger' },
+  kanzai: { it: 'Tigre', en: 'Tiger', del: 'della' },
   cluck: { it: 'Gallo', en: 'Rooster' },
   saccho: { it: 'Cavallo', en: 'Horse' },
-  saiyu: { it: 'Scimmia', en: 'Monkey' },
+  saiyu: { it: 'Scimmia', en: 'Monkey', del: 'della' },
   gel: { it: 'Serpente', en: 'Snake' },
   piyon: { it: 'Coniglio', en: 'Rabbit' },
-  ginta: { it: 'Pecora', en: 'Sheep' },
+  ginta: { it: 'Pecora', en: 'Sheep', del: 'della' },
 };
 
 export const HXH_CHARACTER_LONG: Record<string, Localizable> = {
@@ -229,7 +229,7 @@ export const HXH_CHARACTER_LONG: Record<string, Localizable> = {
     Object.entries(ZODIAC).map(([id, sign]) => [
       `char-hxh-${id}`,
       {
-        it: `Membro dei Dodici dello Zodiaco, il consiglio di Hunter scelto da Netero, con il nome in codice del ${sign.it}. Alla morte del presidente partecipa all'organizzazione dell'elezione del suo successore, divisa tra la fazione di Cheadle e quella di Pariston.`,
+        it: `Membro dei Dodici dello Zodiaco, il consiglio di Hunter scelto da Netero, con il nome in codice ${sign.del ?? 'del'} ${sign.it}. Alla morte del presidente partecipa all'organizzazione dell'elezione del suo successore, divisa tra la fazione di Cheadle e quella di Pariston.`,
         en: `A member of the Zodiacs, the council of Hunters chosen by Netero, codenamed the ${sign.en}. After the chairman's death they take part in organising the election of his successor, split between Cheadle's faction and Pariston's.`,
       },
     ]),
