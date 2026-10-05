@@ -131,14 +131,14 @@ export const onepieceEventsParadise2: TimelineEvent[] = [
     id: 'evt-op-brook-joins',
     worldId: 'world-onepiece',
     longDescription: {
-      it: "Riavuta la sua ombra, lo scheletro musicista Brook — vivo da cinquant'anni grazie al Frutto Rinascita — si unisce ai Cappello di Paglia. Subito dopo il Corsaro Bartholomew Kuma mette alla prova la ciurma esausta, e Zoro si carica in segreto di tutto il dolore di Rufy pur di salvarlo.",
+      it: "Riavuta la sua ombra, lo scheletro musicista Brook — vivo da cinquant'anni grazie al Frutto Rinascita — si unisce ai Cappello di Paglia. Subito dopo il Corsaro Bartholomew Orso mette alla prova la ciurma esausta, e Zoro si carica in segreto di tutto il dolore di Rufy pur di salvarlo.",
       en: "With his shadow returned, the skeleton musician Brook — alive for fifty years thanks to the Revive-Revive Fruit — joins the Straw Hats. Right after, the Warlord Bartholomew Kuma tests the exhausted crew, and Zoro secretly takes on all of Luffy's pain to save him.",
     },
     mangaChapters: ["485-489"],
     animeEpisodes: ["378-381"],
     title: { it: 'Brook si unisce alla ciurma', en: 'Brook joins the crew' },
     description: {
-      it: "Riavuta la sua ombra, lo scheletro musicista Brook si unisce ai Cappello di Paglia. Poco dopo Bartholomew Kuma mette alla prova la ciurma esausta e Zoro si carica in segreto di tutto il dolore di Rufy.",
+      it: "Riavuta la sua ombra, lo scheletro musicista Brook si unisce ai Cappello di Paglia. Poco dopo Bartholomew Orso mette alla prova la ciurma esausta e Zoro si carica in segreto di tutto il dolore di Rufy.",
       en: "With his shadow returned, the skeleton musician Brook joins the Straw Hats. Soon after, Bartholomew Kuma tests the exhausted crew and Zoro secretly takes on all of Luffy's pain.",
     },
     period: { it: 'Paradiso · Thriller Bark', en: 'Paradise · Thriller Bark' },

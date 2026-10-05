@@ -105,14 +105,14 @@ export const onepieceEventsParadise: TimelineEvent[] = [
     id: 'evt-op-skypiea-enel',
     worldId: 'world-onepiece',
     longDescription: {
-      it: "Enel, utente del Frutto Fulmine, è di fatto invincibile sull'isola del cielo — ma Rufy, immune all'elettricità per la sua natura di gomma, è l'unico che possa toccarlo. In un lungo scontro Rufy lo abbatte e ne ferma il piano di sterminio, ponendo fine al suo regno di terrore.",
+      it: "Ener, utente del Frutto Fulmine, è di fatto invincibile sull'isola del cielo — ma Rufy, immune all'elettricità per la sua natura di gomma, è l'unico che possa toccarlo. In un lungo scontro Rufy lo abbatte e ne ferma il piano di sterminio, ponendo fine al suo regno di terrore.",
       en: "Enel, user of the Rumble-Rumble Fruit, is effectively invincible on the sky island — but Luffy, immune to electricity thanks to his rubber body, is the only one who can touch him. In a long clash Luffy beats him and stops his plan of extermination, ending his reign of terror.",
     },
     mangaChapters: ["293-298"],
     animeEpisodes: ["188-191"],
-    title: { it: 'La caduta di «Dio» Enel', en: "The fall of 'God' Enel" },
+    title: { it: 'La caduta di «Dio» Ener', en: "The fall of 'God' Enel" },
     description: {
-      it: "Sull'isola del cielo, Rufy — immune ai fulmini grazie alla sua natura di gomma — è l'unico capace di sconfiggere il «Dio» Enel, ponendo fine al suo regno di terrore su Skypiea.",
+      it: "Sull'isola del cielo, Rufy — immune ai fulmini grazie alla sua natura di gomma — è l'unico capace di sconfiggere il «Dio» Ener, ponendo fine al suo regno di terrore su Skypiea.",
       en: "On the sky island, Luffy — immune to lightning thanks to his rubber body — is the only one able to defeat 'God' Enel, ending his reign of terror over Skypiea.",
     },
     period: { it: 'Paradiso · Skypiea', en: 'Paradise · Skypiea' },

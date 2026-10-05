@@ -113,7 +113,7 @@ export const dragonballCharactersMovies: Character[] = [
     enemies: ['char-dbz-gohan'],
     arcIds: ['arc-dbz-movie-bojack'],
     shortDescription: {
-      it: "Film: pirata spaziale galattico sigillato dai Kaiō, liberatosi alla morte di Re Kaiō; affronta i Guerrieri Z in un torneo ed è fermato da Gohan Super Saiyan 2.",
+      it: "Film: pirata spaziale galattico sigillato dai Kaiō, liberatosi alla morte di Re Kaioh; affronta i Guerrieri Z in un torneo ed è fermato da Gohan Super Saiyan 2.",
       en: "Movie: a galactic space pirate sealed by the Kais, freed upon King Kai's death; he faces the Z Fighters at a tournament and is stopped by Super Saiyan 2 Gohan.",
     },
     status: 'deceased',

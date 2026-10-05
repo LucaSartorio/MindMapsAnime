@@ -12,7 +12,7 @@ export const onepieceCharactersSouthBlue: Character[] = [
     firstMangaAppearance: "234",
     firstAnimeAppearance: "151",
     longDescription: {
-      it: "Bartholomew Kuma «il Tiranno», ex Corsaro e comandante rivoluzionario, ridotto a Pacifista senza volontà dal Governo Mondiale. Disperse i Cappello di Paglia a Sabaody per proteggerli; padre adottivo di Bonney.",
+      it: "Bartholomew Orso «il Tiranno», ex Corsaro e comandante rivoluzionario, ridotto a Pacifista senza volontà dal Governo Mondiale. Disperse i Cappello di Paglia a Sabaody per proteggerli; padre adottivo di Bonney.",
       en: "Bartholomew Kuma 'the Tyrant', a former Warlord and Revolutionary commander, reduced to a will-less Pacifista by the World Government. He scattered the Straw Hats at Sabaody to protect them; Bonney's adoptive father.",
     },
     name: 'Bartholomew Kuma',
@@ -40,7 +40,7 @@ export const onepieceCharactersSouthBlue: Character[] = [
     firstMangaAppearance: "498",
     firstAnimeAppearance: "392",
     longDescription: {
-      it: "Jewelry Bonney, giovane capitana pirata della Peggiore Generazione e figlia adottiva di Kuma, utente del frutto Età. Ad Egghead scoprì la verità sul sacrificio del padre.",
+      it: "Jewelry Bonney, giovane capitana pirata della Peggiore Generazione e figlia adottiva di Orso, utente del frutto Età. Ad Egghead scoprì la verità sul sacrificio del padre.",
       en: "Jewelry Bonney, a young pirate captain of the Worst Generation and Kuma's adoptive daughter, user of the Age-Age Fruit. On Egghead she learned the truth of her father's sacrifice.",
     },
     name: 'Jewelry Bonney',
@@ -54,7 +54,7 @@ export const onepieceCharactersSouthBlue: Character[] = [
     family: ['char-op-kuma'],
     arcIds: ['arc-op-sorbet', 'arc-op-egghead'],
     shortDescription: {
-      it: "Giovane capitana pirata della Peggiore Generazione, originaria del Regno di Sorbet e figlia adottiva di Kuma. Utente di un Frutto del Diavolo che le permette di alterare l'età, propria e altrui.",
+      it: "Giovane capitana pirata della Peggiore Generazione, originaria del Regno di Sorbet e figlia adottiva di Orso. Utente di un Frutto del Diavolo che le permette di alterare l'età, propria e altrui.",
       en: "A young pirate captain of the Worst Generation, from the Sorbet Kingdom and Kuma's adoptive daughter. User of a Devil Fruit that lets her alter age, her own and others'.",
     },
     status: 'alive',

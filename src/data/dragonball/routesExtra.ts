@@ -112,7 +112,7 @@ export const dragonballRoutesExtra: Route[] = [
     localizedName: { it: "Goku nell'Aldilà", en: 'Goku in Other World' },
     group: SAGAS,
     description: {
-      it: "Goku muore due volte nella serie Z e passa nell'Aldilà più tempo di quanto si pensi: la Via del Serpente, il pianeta di Re Kaiō, il sacrificio contro Cell, i sette anni sul pianeta del Gran Kaiō.",
+      it: "Goku muore due volte nella serie Z e passa nell'Aldilà più tempo di quanto si pensi: la Via del Serpente, il pianeta di Re Kaioh, il sacrificio contro Cell, i sette anni sul pianeta del Gran Kaiō.",
       en: "Goku dies twice in the Z series and spends more time in Other World than you might think: Snake Way, King Kai's planet, the sacrifice against Cell, the seven years on Grand Kai's planet.",
     },
     protagonistCharacterIds: ['char-dbz-goku'],
@@ -122,7 +122,7 @@ export const dragonballRoutesExtra: Route[] = [
     steps: [
       s(1, 'loc-dbz-ow-yemma', 'evt-dbz-snake-way', { it: 'Da Re Yama', en: 'With King Yemma' }),
       s(2, 'loc-dbz-ow-princess-snake', undefined, { it: 'La Principessa Serpente', en: 'Princess Snake' }),
-      s(3, 'loc-dbz-kaio-planet', 'evt-dbz-king-kai-training', { it: 'Re Kaiō', en: 'King Kai' }),
+      s(3, 'loc-dbz-kaio-planet', 'evt-dbz-king-kai-training', { it: 'Re Kaioh', en: 'King Kai' }),
       s(4, 'loc-dbz-kaio-planet', 'evt-dbz-goku-sacrifice-cell', { it: 'Il sacrificio contro Cell', en: 'The sacrifice against Cell' }),
       s(5, 'loc-dbz-ow-grand-kai', 'evt-dbz-goku-stays-dead', { it: 'Dal Gran Kaiō', en: 'With Grand Kai' }),
       s(6, 'loc-dbz-ow-grand-kai', 'evt-dbz-filler-other-world-tournament', { it: "Il Torneo dell'Aldilà", en: 'The Other World Tournament' }),

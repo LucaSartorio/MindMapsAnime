@@ -307,9 +307,9 @@ export const animeWorlds: AnimeWorld[] = [
         term: { it: 'Frutti del Diavolo', en: 'Devil Fruits', ja: '悪魔の実', fr: 'Fruits du Démon', de: 'Teufelsfrüchte', es: 'Frutas del Diablo' },
         categoryTerm: { it: 'Tipo di frutto', en: 'Fruit type', ja: '実のタイプ', fr: 'Type de fruit', de: 'Fruchttyp', es: 'Tipo de fruta' },
         categories: [
-          { id: 'paramecia', label: 'Paramecia' },
-          { id: 'zoan', label: 'Zoan' },
-          { id: 'logia', label: 'Logia' },
+          { id: 'paramecia', label: { it: 'Paramisha', en: 'Paramecia' } },
+          { id: 'zoan', label: { it: 'Zoo Zoo', en: 'Zoan' } },
+          { id: 'logia', label: { it: 'Rogia', en: 'Logia' } },
           { id: 'haki', label: 'Ambizione (Haki)' },
         ],
       },

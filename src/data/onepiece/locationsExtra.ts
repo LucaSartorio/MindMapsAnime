@@ -606,7 +606,7 @@ export const onepieceLocationsExtra: Location[] = [
     x: 1108,
     y: 553,
     shortDescription: {
-      it: "Vorace arcipelago-foresta all'inizio del Paradiso, presso Twin Cape, dove Bartholomew Kuma scaraventò Usop durante la dispersione: una trappola di abbondanza che ingrassa le prede prima di divorarle. Qui Usop si allenò per due anni.",
+      it: "Vorace arcipelago-foresta all'inizio del Paradiso, presso Twin Cape, dove Bartholomew Orso scaraventò Usop durante la dispersione: una trappola di abbondanza che ingrassa le prede prima di divorarle. Qui Usop si allenò per due anni.",
       en: "A voracious forest-archipelago at the start of Paradise, near Twin Cape, where Bartholomew Kuma flung Usopp during the scattering: a trap of plenty that fattens its prey before devouring it. Here Usopp trained for two years.",
     },
     nationId: 'nation-op-grand-line-paradise',

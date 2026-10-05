@@ -74,7 +74,7 @@ export const onepieceLocationsRedLine: Location[] = [
     x: 1919,
     y: 501,
     shortDescription: {
-      it: "Arcipelago di 79 boschi di mangrovie alla fine del Paradiso, ultima tappa prima della Red Line. Mercato di schiavi, covo di Nobili Mondiali e luogo dove la ciurma viene dispersa da Bartholomew Kuma.",
+      it: "Arcipelago di 79 boschi di mangrovie alla fine del Paradiso, ultima tappa prima della Red Line. Mercato di schiavi, covo di Nobili Mondiali e luogo dove la ciurma viene dispersa da Bartholomew Orso.",
       en: 'An archipelago of 79 mangrove groves at the end of Paradise, the last stop before the Red Line. A slave market, a haunt of World Nobles, and the place where the crew is scattered by Bartholomew Kuma.',
     },
     nationId: 'nation-op-red-line',

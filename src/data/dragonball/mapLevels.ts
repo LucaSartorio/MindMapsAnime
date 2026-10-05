@@ -43,7 +43,7 @@ export const dbzMapLevels: MapLevel[] = [
     name: 'Universe',
     localizedName: { it: 'Universo', en: 'Universe' },
     description: {
-      it: "Sotto-mappa concettuale dei luoghi cosmici: Pianeta Namecc, Pianeta Vegeta (distrutto), il Pianeta di Re Kaiō, l'Aldilà, il Pianeta di Beerus, il Mondo Sacro dei Kaiōshin e il Mondo del Nulla del Torneo del Potere. Posizioni indicative, non una mappa in scala. Doppio clic su «Terra» per tornare alla mappa principale.",
+      it: "Sotto-mappa concettuale dei luoghi cosmici: Pianeta Namecc, Pianeta Vegeta (distrutto), il Pianeta di Re Kaioh, l'Aldilà, il Pianeta di Beerus, il Mondo Sacro dei Kaiōshin e il Mondo del Nulla del Torneo del Potere. Posizioni indicative, non una mappa in scala. Doppio clic su «Terra» per tornare alla mappa principale.",
       en: "Conceptual sub-map of the cosmic locations: Planet Namek, Planet Vegeta (destroyed), King Kai's planet, the Other World, Beerus's planet, the Sacred World of the Kais and the Tournament of Power's Null Realm. Indicative positions, not a scale map. Double-click 'Earth' to return to the main map.",
     },
     parentLevelId: 'dbz-map-world',
@@ -91,7 +91,7 @@ export const dbzMapLevels: MapLevel[] = [
     name: 'Other World',
     localizedName: { it: 'Aldilà', en: 'Other World' },
     description: {
-      it: "L'Aldilà di Dragon Ball: il palazzo di Re Yama dove le anime vengono giudicate, la Via del Serpente lunga un milione di chilometri, il palazzo della Principessa Serpente, il pianetino di Re Kaiō, il pianeta del Gran Kaiō con lo stadio del Torneo dell'Aldilà, il Paradiso e l'Inferno. Schema originale, posizioni indicative. Doppio clic su «Universo» per tornare alla mappa cosmica.",
+      it: "L'Aldilà di Dragon Ball: il palazzo di Re Yama dove le anime vengono giudicate, la Via del Serpente lunga un milione di chilometri, il palazzo della Principessa Serpente, il pianetino di Re Kaioh, il pianeta del Gran Kaiō con lo stadio del Torneo dell'Aldilà, il Paradiso e l'Inferno. Schema originale, posizioni indicative. Doppio clic su «Universo» per tornare alla mappa cosmica.",
       en: "Dragon Ball's Other World: King Yemma's palace where souls are judged, the million-kilometre Snake Way, Princess Snake's palace, King Kai's tiny planet, Grand Kai's planet with the Other World Tournament stadium, Heaven and Hell. Original diagram, indicative positions. Double-click 'Universe' to return to the cosmic map.",
     },
     parentLevelId: 'dbz-map-cosmic',

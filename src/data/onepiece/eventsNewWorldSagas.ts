@@ -56,14 +56,14 @@ export const onepieceEventsNewWorldSagas: TimelineEvent[] = [
     id: 'evt-op-sabo-mera-mera',
     worldId: 'world-onepiece',
     longDescription: {
-      it: "Nel Colosseo Corrida, Sabo — fratello giurato di Rufy e Ace e numero due dei rivoluzionari — conquista il Frutto Mera Mera, ereditando la volontà di fuoco del fratello defunto. La liberazione di Dressrosa accende mille alleanze sotto la bandiera di Rufy.",
+      it: "Nel Colosseo Corrida, Sabo — fratello giurato di Rufy e Ace e numero due dei rivoluzionari — conquista il Frutto Foco Foco, ereditando la volontà di fuoco del fratello defunto. La liberazione di Dressrosa accende mille alleanze sotto la bandiera di Rufy.",
       en: "In the Corrida Colosseum, Sabo — sworn brother of Luffy and Ace and the Revolutionaries' number two — wins the Flame-Flame Fruit, inheriting his late brother's will of fire. The liberation of Dressrosa kindles a thousand alliances under Luffy's flag.",
     },
     mangaChapters: ["730-744"],
     animeEpisodes: ["672-694"],
     title: { it: 'Sabo eredita il fuoco di Ace', en: "Sabo inherits Ace's flame" },
     description: {
-      it: "Nel torneo del Colosseo Corrida, Sabo — fratello giurato di Rufy e Ace — conquista il Frutto Mera Mera, ereditando la volontà di fuoco del fratello defunto. La liberazione di Dressrosa accende mille nuove alleanze.",
+      it: "Nel torneo del Colosseo Corrida, Sabo — fratello giurato di Rufy e Ace — conquista il Frutto Foco Foco, ereditando la volontà di fuoco del fratello defunto. La liberazione di Dressrosa accende mille nuove alleanze.",
       en: "In the Corrida Colosseum tournament, Sabo — sworn brother of Luffy and Ace — wins the Flame-Flame Fruit, inheriting his late brother's will of fire. The liberation of Dressrosa kindles a thousand new alliances.",
     },
     period: { it: 'Nuovo Mondo · Dressrosa', en: 'New World · Dressrosa' },

@@ -149,7 +149,7 @@ export const bleachRoutes: Route[] = [
     relatedCharacterIds: ['char-bl-rukia', 'char-bl-zangetsu', 'char-bl-white', 'char-bl-isshin', 'char-bl-aizen', 'char-bl-yhwach'],
     relatedArcIds: ['arc-bl-agent', 'arc-bl-ss-rescue', 'arc-bl-arrancar-arrival', 'arc-bl-hueco-mundo', 'arc-bl-fake-karakura', 'arc-bl-lost-substitute', 'arc-bl-tybw-separation', 'arc-bl-tybw-calamity'],
     steps: [
-      { order: 1, locationId: 'loc-bl-kurosaki-clinic', arcId: 'arc-bl-agent', eventId: 'evt-bl-rukia-gives-powers', label: { it: 'Clinica Kurosaki', en: 'Kurosaki Clinic' }, description: { it: 'Diventa Shinigami sostituto.', en: 'He becomes a Substitute Soul Reaper.' } },
+      { order: 1, locationId: 'loc-bl-kurosaki-clinic', arcId: 'arc-bl-agent', eventId: 'evt-bl-rukia-gives-powers', label: { it: 'Clinica Kurosaki', en: 'Kurosaki Clinic' }, description: { it: 'Diventa Sostituto Shinigami.', en: 'He becomes a Substitute Soul Reaper.' } },
       { order: 2, locationId: 'loc-bl-karakura-cemetery', eventId: 'evt-bl-ichigo-vs-grand-fisher', label: { it: 'Cimitero', en: 'Cemetery' }, description: { it: "Faccia a faccia con l'assassino della madre.", en: "Face to face with his mother's killer." } },
       { order: 3, locationId: 'loc-bl-urahara-basement', eventId: 'evt-bl-shattered-shaft', label: { it: 'Pozzo Frantumato', en: 'Shattered Shaft' }, description: { it: 'Trova Zangetsu.', en: 'He finds Zangetsu.' } },
       { order: 4, locationId: 'loc-bl-sokyoku-hill', arcId: 'arc-bl-ss-rescue', eventId: 'evt-bl-ichigo-vs-byakuya', label: { it: 'Sōkyoku', en: 'Sōkyoku' }, description: { it: 'Tensa Zangetsu contro Byakuya.', en: 'Tensa Zangetsu against Byakuya.' } },

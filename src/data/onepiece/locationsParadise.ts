@@ -276,7 +276,7 @@ export const onepieceLocationsParadise: Location[] = [
     x: 1389,
     y: 498,
     shortDescription: {
-      it: "Isola del cielo a 10.000 metri d'altitudine, fatta di nuvole. Regno di «Dio» Enel, custode dell'oro della città perduta di Shandora.",
+      it: "Isola del cielo a 10.000 metri d'altitudine, fatta di nuvole. Regno di «Dio» Ener, custode dell'oro della città perduta di Shandora.",
       en: "A sky island at 10,000 metres, made of clouds. The realm of 'God' Enel, keeper of the gold of the lost city of Shandora.",
     },
     nationId: 'nation-op-grand-line-paradise',

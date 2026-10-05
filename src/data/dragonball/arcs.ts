@@ -671,7 +671,7 @@ export const dragonballArcs: StoryArc[] = [
     saga: { it: 'Film', en: 'Movie' },
     order: 30,
     description: {
-      it: "Film DBZ (1993): alla morte di Re Kaiō si spezzano i sigilli che imprigionavano il pirata spaziale Bojack e la sua banda. Gohan Super Saiyan 2 lo ferma durante un torneo mondiale.",
+      it: "Film DBZ (1993): alla morte di Re Kaioh si spezzano i sigilli che imprigionavano il pirata spaziale Bojack e la sua banda. Gohan Super Saiyan 2 lo ferma durante un torneo mondiale.",
       en: "DBZ movie (1993): King Kai's death breaks the seals imprisoning the space pirate Bojack and his gang. Super Saiyan 2 Gohan stops him during a world tournament.",
     },
     characterIds: ['char-dbz-bojack', 'char-dbz-gohan'],

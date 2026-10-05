@@ -29,7 +29,7 @@ export const dragonballJutsu: Jutsu[] = [
     type: 'energy_blast',
     characterIds: ['char-dbz-goku'],
     shortDescription: {
-      it: "Sfera energetica creata raccogliendo l'energia vitale ceduta volontariamente da altri esseri viventi; insegnata da Re Kaiō.",
+      it: "Sfera energetica creata raccogliendo l'energia vitale ceduta volontariamente da altri esseri viventi; insegnata da Re Kaioh.",
       en: "An energy sphere created by gathering life energy willingly given by other living beings; taught by King Kai.",
     },
     longDescription: {
@@ -47,7 +47,7 @@ export const dragonballJutsu: Jutsu[] = [
     type: 'power_up',
     characterIds: ['char-dbz-goku'],
     shortDescription: {
-      it: "Tecnica di Re Kaiō che moltiplica potenza e velocità di combattimento per un tempo limitato, con un forte stress sul corpo.",
+      it: "Tecnica di Re Kaioh che moltiplica potenza e velocità di combattimento per un tempo limitato, con un forte stress sul corpo.",
       en: "King Kai's technique that multiplies combat power and speed for a limited time, straining the body heavily.",
     },
     longDescription: {

@@ -443,7 +443,7 @@ export const bleachAbilities: Jutsu[] = [
     en: "Chad's power: the giant's right arm to defend, the devil's left arm to attack (with the 'La Muerte' strike). Only later is it revealed to be a Fullbring.",
   }, { localizedName: { it: 'Brazo Derecha de Gigante / Brazo Izquierda del Diablo', en: 'Brazo Derecha de Gigante / Brazo Izquierda del Diablo' } }),
   ab('ichigo-fullbring', "Ichigo's Fullbring", 'fullbring', ['technique'], ['ichigo', 'ginjo'], {
-    it: "Attivato attraverso il distintivo di Shinigami sostituto con l'aiuto dell'Xcution: un'armatura di energia che ricorda il Bankai. Ginjō glielo ruba; Ichigo lo riassorbe tornando Shinigami.",
+    it: "Attivato attraverso il distintivo di Sostituto Shinigami con l'aiuto dell'Xcution: un'armatura di energia che ricorda il Bankai. Ginjō glielo ruba; Ichigo lo riassorbe tornando Shinigami.",
     en: "Awakened through the Substitute Soul Reaper badge with Xcution's help: an armour of energy reminiscent of Bankai. Ginjō steals it; Ichigo absorbs it back when he becomes a Soul Reaper again.",
   }),
   ab('cross-of-scaffold', 'Cross of Scaffold', 'fullbring', ['technique'], ['ginjo'], {

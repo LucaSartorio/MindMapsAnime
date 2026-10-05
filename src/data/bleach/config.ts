@@ -58,7 +58,7 @@ export const BLEACH_RANKS: LabeledOption[] = [
   { id: 'lieutenant', label: { it: 'Vicecapitano', en: 'Lieutenant', ja: '副隊長' } },
   { id: 'seated_officer', label: { it: 'Ufficiale con seggio', en: 'Seated officer', ja: '席官' } },
   { id: 'shinigami', label: { it: 'Shinigami', en: 'Soul Reaper', ja: '死神' } },
-  { id: 'substitute_shinigami', label: { it: 'Shinigami sostituto', en: 'Substitute Soul Reaper', ja: '死神代行' } },
+  { id: 'substitute_shinigami', label: { it: 'Sostituto Shinigami', en: 'Substitute Soul Reaper', ja: '死神代行' } },
   { id: 'visored', label: { it: 'Visored', en: 'Visored', ja: '仮面の軍勢' } },
   { id: 'quincy_emperor', label: { it: 'Imperatore dei Quincy', en: 'Quincy Emperor', ja: '滅却師の始祖' } },
   { id: 'sternritter', label: { it: 'Sternritter', en: 'Sternritter', ja: '星十字騎士団' } },
@@ -75,7 +75,7 @@ export const BLEACH_RANKS: LabeledOption[] = [
 
 /** RUOLI specifici di Bleach (i ruoli universali sono già localizzati di default). */
 export const BLEACH_ROLES: LabeledOption[] = [
-  { id: 'substitute_shinigami', label: { it: 'Shinigami sostituto', en: 'Substitute Soul Reaper', ja: '死神代行' } },
+  { id: 'substitute_shinigami', label: { it: 'Sostituto Shinigami', en: 'Substitute Soul Reaper', ja: '死神代行' } },
   { id: 'shinigami', label: { it: 'Shinigami', en: 'Soul Reaper', ja: '死神' } },
   { id: 'captain', label: { it: 'Capitano', en: 'Captain', ja: '隊長' } },
   { id: 'lieutenant', label: { it: 'Vicecapitano', en: 'Lieutenant', ja: '副隊長' } },

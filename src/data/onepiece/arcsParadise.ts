@@ -64,7 +64,7 @@ export const onepieceArcsParadise: StoryArc[] = [
     mangaChapters: ["218-302"],
     animeEpisodes: ["144-195"],
     longDescription: {
-      it: "A Jaya, tra Mock Town e Bellamy, Mont Blanc Cricket aiuta la ciurma a farsi catapultare in cielo dalla Knock-Up Stream. A Skypiea, isola di nuvole a 10.000 metri, i Cappello di Paglia finiscono nel conflitto secolare tra abitanti del cielo e Shandia, e nel «gioco» mortale del tiranno «Dio» Enel, utente del Frutto Goro Goro. Esplorando l'Upper Yard, l'antica Shandora e l'arca volante Maxim, Rufy — immune ai fulmini per la sua natura di gomma — è l'unico capace di battere Enel, e fa risuonare la grande campana d'oro perduta da 400 anni.",
+      it: "A Jaya, tra Mock Town e Bellamy, Mont Blanc Cricket aiuta la ciurma a farsi catapultare in cielo dalla Knock-Up Stream. A Skypiea, isola di nuvole a 10.000 metri, i Cappello di Paglia finiscono nel conflitto secolare tra abitanti del cielo e Shandia, e nel «gioco» mortale del tiranno «Dio» Ener, utente del Frutto Rombo Rombo. Esplorando l'Upper Yard, l'antica Shandora e l'arca volante Maxim, Rufy — immune ai fulmini per la sua natura di gomma — è l'unico capace di battere Ener, e fa risuonare la grande campana d'oro perduta da 400 anni.",
       en: "At Jaya, amid Mock Town and Bellamy, Mont Blanc Cricket helps the crew get launched skyward by the Knock-Up Stream. On Skypiea, a cloud island at 10,000 metres, the Straw Hats are caught in the age-old conflict between sky dwellers and Shandia, and in the deadly 'game' of the tyrant 'God' Enel, user of the Rumble-Rumble Fruit. Exploring the Upper Yard, ancient Shandora and the flying ark Maxim, Luffy — immune to lightning thanks to his rubber body — is the only one able to beat Enel, and rings the great golden bell lost for 400 years.",
     },
     name: 'Skypiea',
@@ -73,7 +73,7 @@ export const onepieceArcsParadise: StoryArc[] = [
     period: { it: 'Paradiso · isola del cielo', en: 'Paradise · sky island' },
     order: 16,
     description: {
-      it: "Catapultata in cielo dalla Knock-Up Stream, la ciurma raggiunge Skypiea e si scontra con il «Dio» Enel. Tra Shandia e abitanti del cielo, Rufy mette fine alla sua tirannia e fa risuonare la campana d'oro di Shandora.",
+      it: "Catapultata in cielo dalla Knock-Up Stream, la ciurma raggiunge Skypiea e si scontra con il «Dio» Ener. Tra Shandia e abitanti del cielo, Rufy mette fine alla sua tirannia e fa risuonare la campana d'oro di Shandora.",
       en: "Blasted into the sky by the Knock-Up Stream, the crew reaches Skypiea and clashes with 'God' Enel. Among Shandia and sky dwellers, Luffy ends his tyranny and makes the golden bell of Shandora ring out.",
     },
     locationIds: ['loc-op-skypiea', 'loc-op-upper-yard', 'loc-op-jaya'],

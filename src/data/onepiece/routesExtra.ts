@@ -166,7 +166,7 @@ export const onepieceRoutesExtra: Route[] = [
   trip('route-op-sn-bonney', 'Bonney → Egghead', 'Bonney → Egghead',
     "La rotta di Jewelry Bonney: cerca il padre Bartholomew Kuma e arriva fino all'isola del futuro Egghead, dove riscopre la verità sul suo passato.",
     "Jewelry Bonney's route: searching for her father Bartholomew Kuma, she reaches the island of the future, Egghead, where she rediscovers the truth of her past.",
-    'char-op-bonney', 'loc-op-egghead', { it: 'Egghead — Kuma e Vegapunk', en: 'Egghead — Kuma and Vegapunk' },
+    'char-op-bonney', 'loc-op-egghead', { it: 'Egghead — Orso e Vegapunk', en: 'Egghead — Kuma and Vegapunk' },
     '#d56aa0', 'dashed', ['1058-1125'], ['1086-1122'], ['char-op-kuma'], ['supernova', 'bonney', 'egghead']),
   trip('route-op-sn-urouge', 'Urouge → New World', 'Urouge → New World',
     "Il «Monaco Folle» Urouge prospera nel New World e si spinge fino al territorio di Big Mom, dove batté a sorpresa uno dei suoi comandanti prima di ritirarsi.",

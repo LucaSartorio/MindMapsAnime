@@ -919,12 +919,12 @@ export const dragonballLocations: Location[] = [
     worldId: 'world-dragonball',
     mapLevelId: 'dbz-map-other-world',
     name: "King Kai's Planet",
-    localizedName: { it: 'Pianeta di Re Kaiō', en: "King Kai's Planet" },
+    localizedName: { it: 'Pianeta di Re Kaioh', en: "King Kai's Planet" },
     type: 'planet',
     x: 1380,
     y: 210,
     shortDescription: {
-      it: 'Minuscolo pianeta in fondo alla Via del Serpente, dove Re Kaiō addestra Goku e altri guerrieri deceduti e insegna tecniche come il Kaio-ken e la Genkidama.',
+      it: 'Minuscolo pianeta in fondo alla Via del Serpente, dove Re Kaioh addestra Goku e altri guerrieri deceduti e insegna tecniche come il Kaio-ken e la Genkidama.',
       en: "A tiny planet at the end of Snake Way, where King Kai trains Goku and other deceased warriors and teaches techniques like the Kaio-ken and the Spirit Bomb.",
     },
     longDescription: {
@@ -953,7 +953,7 @@ export const dragonballLocations: Location[] = [
       en: "Beyond Earth's sky lies space. Double-click to explore Namek, Beerus's planet, the Other World and the series' other cosmic locations.",
     },
     longDescription: {
-      it: 'Pin concettuale che rappresenta le rotte spaziali percorse con la nave di Capsule Corporation, la teletrasportazione di Re Kaiō o Whis e i viaggi verso i mondi al di fuori della Terra.',
+      it: 'Pin concettuale che rappresenta le rotte spaziali percorse con la nave di Capsule Corporation, la teletrasportazione di Re Kaioh o Whis e i viaggi verso i mondi al di fuori della Terra.',
       en: "Conceptual pin representing the space routes traveled with Capsule Corporation's ship, King Kai's or Whis's teleportation, and journeys to worlds beyond Earth.",
     },
     subMapLevelId: 'dbz-map-cosmic',

@@ -7,12 +7,12 @@ import type { SourceNames } from '@/data/shared/translations';
  */
 export const bleachNames: SourceNames = {
   "locations[loc-bl-aaroniero-palace].localizedName": { it: "Palazzo di Aaroniero (Noveno)", en: "Aaroniero's palace (Noveno)" },
-  "characters[char-bl-ichigo].aliases[0]": { it: "Shinigami sostituto", en: "Substitute Soul Reaper" },
-  "characters[char-bl-ichigo].aliases[1]": { it: "Shinigami sostituto", en: "Substitute Soul Reaper" },
+  "characters[char-bl-ichigo].aliases[0]": { it: "Sostituto Shinigami", en: "Substitute Soul Reaper" },
+  "characters[char-bl-ichigo].aliases[1]": { it: "Sostituto Shinigami", en: "Substitute Soul Reaper" },
   "characters[char-bl-urahara].aliases[0]": { it: "Signor Cappello-e-Zoccoli", en: "Mr. Hat-and-Clogs" },
   "characters[char-bl-urahara].aliases[1]": { it: "Signor Cappello-e-Zoccoli", en: "Mr. Hat-and-Clogs" },
-  "characters[char-bl-yoruichi].aliases[0]": { it: "La Dea del Lampo", en: "Flash Goddess" },
-  "characters[char-bl-yoruichi].aliases[1]": { it: "La Dea del Lampo", en: "Flash Goddess" },
+  "characters[char-bl-yoruichi].aliases[0]": { it: "La Dea della Velocità", en: "Flash Goddess" },
+  "characters[char-bl-yoruichi].aliases[1]": { it: "La Dea della Velocità", en: "Flash Goddess" },
   "characters[char-bl-yamamoto].aliases[1]": { it: "Capitano generale", en: "Captain-Commander" },
   "characters[char-bl-unohana].aliases[1]": { it: "Il primo Kenpachi", en: "The first Kenpachi" },
   "characters[char-bl-barragan].aliases[1]": { it: "Re di Hueco Mundo", en: "King of Hueco Mundo" },

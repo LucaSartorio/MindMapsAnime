@@ -1062,7 +1062,7 @@ export const bleachCharactersGotei: Character[] = [
     eventIds: ['evt-bl-ginjo-first-substitute', 'evt-bl-sokyoku-stopped', 'evt-bl-yamamoto-vs-kyoraku-ukitake', 'evt-bl-substitute-badge', 'evt-bl-kyoraku-vs-starrk', 'evt-bl-ukitake-mimihagi', 'evt-bl-konso-reisai'],
     arcIds: ['arc-bl-ss-rescue', 'arc-bl-fake-karakura', 'arc-bl-lost-substitute', 'arc-bl-tybw-calamity', 'arc-bl-hell'],
     shortDescription: {
-      it: "Il capitano della Tredicesima Divisione, gentile e gravemente malato ai polmoni da sempre. Amico inseparabile di Kyōraku, è lui a dare a Ichigo il distintivo di Shinigami sostituto.",
+      it: "Il capitano della Tredicesima Divisione, gentile e gravemente malato ai polmoni da sempre. Amico inseparabile di Kyōraku, è lui a dare a Ichigo il distintivo di Sostituto Shinigami.",
       en: 'The Thirteenth Division captain, kind and gravely ill in the lungs since forever. Kyōraku\'s inseparable friend, he is the one who gives Ichigo his Substitute Soul Reaper badge.',
     },
     longDescription: {

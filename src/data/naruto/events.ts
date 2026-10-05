@@ -13,7 +13,7 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-sage-six-paths',
     worldId: 'world-naruto',
-    title: { it: 'Era del Saggio dei Sei Cammini', en: 'Era of the Sage of Six Paths' },
+    title: { it: 'Era del Eremita delle Sei Vie', en: 'Era of the Sage of Six Paths' },
     description: {
       it: 'Hagoromo Otsutsuki sigilla la madre Kaguya e fonda la dottrina ninja, lasciando l\'eredità ai figli Asura e Indra.',
       en: 'Hagoromo Otsutsuki seals his mother Kaguya and founds the ninja doctrine, leaving his legacy to his sons Asura and Indra.',

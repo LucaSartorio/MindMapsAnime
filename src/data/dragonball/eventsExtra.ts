@@ -354,7 +354,7 @@ export const dragonballEventsExtra: TimelineEvent[] = [
     id: 'evt-dbz-snake-way',
     title: { it: 'La corsa sulla Via del Serpente', en: 'Running Snake Way' },
     description: {
-      it: "Morto, Goku ottiene da Re Yama di allenarsi da Re Kaiō. Percorre di corsa il milione di chilometri della Via del Serpente, si ferma al palazzo della Principessa Serpente e cade perfino all'Inferno prima di arrivare.",
+      it: "Morto, Goku ottiene da Re Yama di allenarsi da Re Kaioh. Percorre di corsa il milione di chilometri della Via del Serpente, si ferma al palazzo della Principessa Serpente e cade perfino all'Inferno prima di arrivare.",
       en: "Dead, Goku gets King Yemma's permission to train with King Kai. He runs the million kilometres of Snake Way, stops at Princess Snake's palace and even falls into Hell before he arrives.",
     },
     period: DBZ,
@@ -369,7 +369,7 @@ export const dragonballEventsExtra: TimelineEvent[] = [
   }),
   e({
     id: 'evt-dbz-king-kai-training',
-    title: { it: "L'allenamento da Re Kaiō", en: "Training with King Kai" },
+    title: { it: "L'allenamento da Re Kaioh", en: "Training with King Kai" },
     description: {
       it: "Sul pianetino con gravità dieci volte quella terrestre Goku insegue la scimmia Bubbles e colpisce il grillo Gregory, poi impara il Kaio-ken e la Genkidama. Torna in vita appena in tempo per affrontare Vegeta e Nappa.",
       en: "On the tiny planet with ten times Earth's gravity Goku chases the monkey Bubbles and hits the cricket Gregory, then learns the Kaio-ken and the Spirit Bomb. He comes back to life just in time to face Vegeta and Nappa.",
@@ -566,7 +566,7 @@ export const dragonballEventsExtra: TimelineEvent[] = [
     id: 'evt-dbz-goku-sacrifice-cell',
     title: { it: 'Il sacrificio di Goku', en: "Goku's sacrifice" },
     description: {
-      it: "Cell, sconfitto da Gohan, si gonfia per autodistruggersi e far saltare la Terra. Goku lo afferra e si teletrasporta sul pianeta di Re Kaiō: Cell esplode lì, uccidendo Goku, Re Kaiō, Bubbles e Gregory.",
+      it: "Cell, sconfitto da Gohan, si gonfia per autodistruggersi e far saltare la Terra. Goku lo afferra e si teletrasporta sul pianeta di Re Kaioh: Cell esplode lì, uccidendo Goku, Re Kaioh, Bubbles e Gregory.",
       en: "Cell, beaten by Gohan, swells up to self-destruct and blow up the Earth. Goku grabs him and teleports to King Kai's planet: Cell explodes there, killing Goku, King Kai, Bubbles and Gregory.",
     },
     period: DBZ,
@@ -827,7 +827,7 @@ export const dragonballEventsExtra: TimelineEvent[] = [
     id: 'evt-dbz-beerus-awakens',
     title: { it: 'Il risveglio di Bills', en: 'Beerus awakens' },
     description: {
-      it: "Dopo 39 anni di sonno il Dio della Distruzione Bills si sveglia con il ricordo di un sogno: un Super Saiyan God. Con Whis va sul pianeta di Re Kaiō e mette fuori combattimento Goku in Super Saiyan 3 con due colpi.",
+      it: "Dopo 39 anni di sonno il Dio della Distruzione Bills si sveglia con il ricordo di un sogno: un Super Saiyan God. Con Whis va sul pianeta di Re Kaioh e mette fuori combattimento Goku in Super Saiyan 3 con due colpi.",
       en: "After 39 years of sleep the God of Destruction Beerus wakes up remembering a dream: a Super Saiyan God. With Whis he goes to King Kai's planet and knocks out Super Saiyan 3 Goku with two blows.",
     },
     period: DBS,

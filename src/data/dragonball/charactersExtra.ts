@@ -680,7 +680,7 @@ export const dragonballCharactersExtra: Character[] = [
     locationIds: ['loc-dbz-ow-yemma', 'loc-dbz-gt-hell'],
     arcIds: ['arc-dbz-saiyan-saga', 'arc-dbz-majin-buu'],
     shortDescription: {
-      it: "Il gigantesco giudice dell'Aldilà che smista le anime dei morti fra Paradiso e Inferno. Concede a Goku di percorrere la Via del Serpente per allenarsi da Re Kaiō, e ad alcuni grandi guerrieri di conservare il corpo.",
+      it: "Il gigantesco giudice dell'Aldilà che smista le anime dei morti fra Paradiso e Inferno. Concede a Goku di percorrere la Via del Serpente per allenarsi da Re Kaioh, e ad alcuni grandi guerrieri di conservare il corpo.",
       en: "Other World's giant judge who sorts the souls of the dead between Heaven and Hell. He allows Goku to run Snake Way to train with King Kai, and some great warriors to keep their bodies.",
     },
     tags: ['aldila'],
@@ -698,7 +698,7 @@ export const dragonballCharactersExtra: Character[] = [
     locationIds: ['loc-dbz-ow-grand-kai'],
     arcIds: ['arc-dbz-filler-other-world-tournament', 'arc-dbz-majin-buu'],
     shortDescription: {
-      it: "Il superiore dei quattro Re Kaiō, che governa dal suo pianeta l'Aldilà dei grandi guerrieri. Appassionato di musica e di arti marziali, vi organizza il Torneo dell'Aldilà; è lì che Goku si allena dopo la morte contro Cell.",
+      it: "Il superiore dei quattro Re Kaioh, che governa dal suo pianeta l'Aldilà dei grandi guerrieri. Appassionato di musica e di arti marziali, vi organizza il Torneo dell'Aldilà; è lì che Goku si allena dopo la morte contro Cell.",
       en: "The superior of the four Kais, ruling from his planet the part of Other World where great warriors live. A lover of music and martial arts, he hosts the Other World Tournament there; that is where Goku trains after his death against Cell.",
     },
     tags: ['aldila'],

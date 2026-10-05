@@ -6,6 +6,9 @@ import type { TranslationOverlay } from '@/data/shared/translations';
  * il merge successivo riscrive il file ordinato senza perderle.
  */
 const es: TranslationOverlay = {
+  "world.config.ability.categories[paramecia].label": "Paramecia",
+  "world.config.ability.categories[zoan].label": "Zoan",
+  "world.config.ability.categories[logia].label": "Logia",
   "mapLevels[op-map-world].localizedName": "Mapa del mundo",
   "mapLevels[op-map-world].description": "Mapa del mundo de One Piece: los cuatro mares (North, East, West y South Blue), la Red Line con Mary Geoise y Reverse Mountain, el Grand Line dividido entre el Paraíso y el Nuevo Mundo, y las dos franjas del Calm Belt.",
   "mapLevels[op-map-totland].localizedName": "Totland (Whole Cake Island)",

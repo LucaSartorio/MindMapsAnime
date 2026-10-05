@@ -278,7 +278,7 @@ export const bleachLocations: Location[] = [
       en: "The town next to Karakura where Xcution is based: a run-down building in Chōbara that hides, on its third floor, the hideout of Kūgo Ginjō and the Fullbringers.",
     },
     longDescription: {
-      it: "Diciassette mesi dopo la sconfitta di Aizen, un Ichigo senza poteri viene attirato qui con la promessa di riaverli. Nel covo l'Xcution gli insegna il Fullbring, per poi rubarglielo: è Ginjō, il primo Shinigami sostituto, a rivelarsi il vero nemico. Qui Rukia restituisce a Ichigo i suoi poteri di Shinigami e qui si consuma lo scontro finale dell'arco.",
+      it: "Diciassette mesi dopo la sconfitta di Aizen, un Ichigo senza poteri viene attirato qui con la promessa di riaverli. Nel covo l'Xcution gli insegna il Fullbring, per poi rubarglielo: è Ginjō, il primo Sostituto Shinigami, a rivelarsi il vero nemico. Qui Rukia restituisce a Ichigo i suoi poteri di Shinigami e qui si consuma lo scontro finale dell'arco.",
       en: "Seventeen months after Aizen's defeat, a powerless Ichigo is lured here with the promise of getting his powers back. In the hideout Xcution teaches him Fullbring, only to steal it: Ginjō, the first Substitute Soul Reaper, turns out to be the real enemy. Here Rukia gives Ichigo back his Soul Reaper powers, and here the arc's final fight plays out.",
     },
     nationId: 'nation-bl-living-world',
@@ -436,7 +436,7 @@ export const bleachLocations: Location[] = [
       en: 'The high school of Ichigo, Orihime, Uryū, Chad, Tatsuki, Keigo and Mizuiro. Rukia enrols here too, and later Shinji Hirako and the members of Hitsugaya\'s advance team.',
     },
     longDescription: {
-      it: "La classe 1-3 è il punto in cui le due vite di Ichigo si scontrano: lezioni, compagni ignari e il distintivo da Shinigami sostituto che suona all'improvviso. È a scuola che Uryū lancia la sua sfida, che Shinji si presenta come «nuovo studente» per reclutare Ichigo fra i Visored, e che Ichigo, senza poteri, cerca di tornare a una vita normale prima dell'arrivo dell'Xcution.",
+      it: "La classe 1-3 è il punto in cui le due vite di Ichigo si scontrano: lezioni, compagni ignari e il distintivo da Sostituto Shinigami che suona all'improvviso. È a scuola che Uryū lancia la sua sfida, che Shinji si presenta come «nuovo studente» per reclutare Ichigo fra i Visored, e che Ichigo, senza poteri, cerca di tornare a una vita normale prima dell'arrivo dell'Xcution.",
       en: "Class 1-3 is where Ichigo's two lives collide: lessons, oblivious classmates and the Substitute Soul Reaper badge going off without warning. It is at school that Uryū issues his challenge, that Shinji turns up as a 'new student' to recruit Ichigo into the Visored, and that a powerless Ichigo tries to go back to a normal life before Xcution shows up.",
     },
     nationId: 'nation-bl-living-world',
@@ -640,7 +640,7 @@ export const bleachLocations: Location[] = [
     x: 822,
     y: 445,
     shortDescription: {
-      it: "Le strade e i cieli attorno alla stazione, dove si combattono molti degli scontri di Ichigo da Shinigami sostituto: dalla sfida dei Hollow di Uryū all'arresto di Rukia, fino alle incursioni di Grimmjow.",
+      it: "Le strade e i cieli attorno alla stazione, dove si combattono molti degli scontri di Ichigo da Sostituto Shinigami: dalla sfida dei Hollow di Uryū all'arresto di Rukia, fino alle incursioni di Grimmjow.",
       en: "The streets and skies around the station, where many of Ichigo's Substitute Soul Reaper fights take place: from Uryū's Hollow challenge to Rukia's arrest, up to Grimmjow's raids.",
     },
     longDescription: {

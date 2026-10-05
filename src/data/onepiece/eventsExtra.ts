@@ -32,12 +32,12 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-rd-coby-alvida', worldId: W,
     longDescription: {
-      it: "Salpato da solo, Rufy finisce sulla nave della crudele piratessa Alvida, dove il timido mozzo Coby sogna di entrare in Marina. Rufy lo incoraggia, abbatte Alvida con un pugno e i due fuggono: Coby muove così il primo passo verso la sua carriera di marine.",
+      it: "Salpato da solo, Rufy finisce sulla nave della crudele piratessa Albida, dove il timido mozzo Coby sogna di entrare in Marina. Rufy lo incoraggia, abbatte Albida con un pugno e i due fuggono: Coby muove così il primo passo verso la sua carriera di marine.",
       en: "Setting off alone, Luffy ends up on the cruel pirate Alvida's ship, where the timid cabin boy Coby dreams of joining the Marines. Luffy encourages him, knocks Alvida down with a punch, and the two flee: Coby takes his first step toward a Marine career.",
     },
-    title: { it: 'Coby e la caduta di Alvida', en: "Coby and Alvida's fall" },
+    title: { it: 'Coby e la caduta di Albida', en: "Coby and Alvida's fall" },
     description: {
-      it: "Salpato da solo, Rufy finisce sulla nave della piratessa Alvida e fa amicizia con il timido mozzo Coby, che sogna di entrare in Marina. Rufy abbatte Alvida e i due fuggono verso Shells Town.",
+      it: "Salpato da solo, Rufy finisce sulla nave della piratessa Albida e fa amicizia con il timido mozzo Coby, che sogna di entrare in Marina. Rufy abbatte Albida e i due fuggono verso Shells Town.",
       en: "Setting off alone, Luffy ends up on the pirate Alvida's ship and befriends the timid cabin boy Coby, who dreams of joining the Marines. Luffy beats Alvida and the two flee toward Shells Town.",
     },
     period: { it: 'East Blue', en: 'East Blue' },
@@ -244,12 +244,12 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-sky-survival', worldId: W,
     longDescription: {
-      it: "Su Skypiea, il tiranno «Dio» Enel impone una mortale «Ordalia»: chi sopravvive è innocente. Mentre i Shandia di Wiper e l'ex Dio Gan Fall combattono per la propria terra, i superstiti calano di ora in ora sotto i fulmini di Enel, che progetta di distruggere l'isola con l'arca Maxim.",
+      it: "Su Skypiea, il tiranno «Dio» Ener impone una mortale «Ordalia»: chi sopravvive è innocente. Mentre i Shandia di Wiper e l'ex Dio Gan Fall combattono per la propria terra, i superstiti calano di ora in ora sotto i fulmini di Ener, che progetta di distruggere l'isola con l'arca Maxim.",
       en: "On Skypiea, the tyrant 'God' Enel imposes a deadly 'Survival Game': whoever lives is innocent. As Wiper's Shandia and the former God Gan Fall fight for their land, the survivors dwindle hour by hour under Enel's lightning, as he plans to destroy the island with the ark Maxim.",
     },
     title: { it: 'Il gioco mortale di «Dio»', en: "God's deadly survival game" },
     description: {
-      it: "Nell'Upper Yard, Enel impone la sua Ordalia: chi sopravvive è «innocente». Tra i Shandia di Wiper e il cavaliere del cielo Gan Fall, i superstiti si riducono di ora in ora.",
+      it: "Nell'Upper Yard, Ener impone la sua Ordalia: chi sopravvive è «innocente». Tra i Shandia di Wiper e il cavaliere del cielo Gan Fall, i superstiti si riducono di ora in ora.",
       en: "In the Upper Yard, Enel imposes his Survival Game: whoever lives is 'innocent'. Among Wiper's Shandia and the sky knight Gan Fall, the survivors dwindle hour by hour.",
     },
     period: { it: 'Paradiso · Skypiea', en: 'Paradise · Skypiea' },
@@ -369,12 +369,12 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-tb-nothing-happened', worldId: W,
     longDescription: {
-      it: "Dopo la caduta di Moria, il Corsaro Bartholomew Kuma offre di risparmiare la ciurma in cambio della testa di Rufy. Zoro si offre al suo posto e accetta di assorbire tutto il dolore e la stanchezza del capitano: quando Sanji lo ritrova in un lago di sangue, dice solo «Non è successo nulla».",
+      it: "Dopo la caduta di Moria, il Corsaro Bartholomew Orso offre di risparmiare la ciurma in cambio della testa di Rufy. Zoro si offre al suo posto e accetta di assorbire tutto il dolore e la stanchezza del capitano: quando Sanji lo ritrova in un lago di sangue, dice solo «Non è successo nulla».",
       en: "After Moria's fall, the Warlord Bartholomew Kuma offers to spare the crew in exchange for Luffy's head. Zoro offers himself instead and agrees to absorb all of the captain's pain and exhaustion: when Sanji finds him in a pool of blood, he says only 'Nothing happened'.",
     },
-    title: { it: 'Zoro e Kuma: «Non è successo nulla»', en: "Zoro and Kuma: 'Nothing happened'" },
+    title: { it: 'Zoro e Orso: «Non è successo nulla»', en: "Zoro and Kuma: 'Nothing happened'" },
     description: {
-      it: "Il Corsaro Bartholomew Kuma offre di risparmiare la ciurma in cambio della testa di Rufy. Zoro si offre al suo posto e si carica in segreto di tutto il dolore del capitano, sopravvivendo a stento.",
+      it: "Il Corsaro Bartholomew Orso offre di risparmiare la ciurma in cambio della testa di Rufy. Zoro si offre al suo posto e si carica in segreto di tutto il dolore del capitano, sopravvivendo a stento.",
       en: "The Warlord Bartholomew Kuma offers to spare the crew in exchange for Luffy's head. Zoro offers himself instead and secretly takes on all of the captain's pain, barely surviving.",
     },
     period: { it: 'Paradiso · Thriller Bark', en: 'Paradise · Thriller Bark' },
@@ -405,12 +405,12 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-sab-kizaru', worldId: W,
     longDescription: {
-      it: "L'ammiraglio Kizaru, i Pacifista cyborg e il Corsaro Kuma piombano su Sabaody. Persino l'apparizione di Silvers Rayleigh non basta a salvare la situazione: per la ciurma, di fronte a una potenza schiacciante, la dispersione diventa l'unica via.",
+      it: "L'ammiraglio Kizaru, i Pacifista cyborg e il Corsaro Orso piombano su Sabaody. Persino l'apparizione di Silvers Rayleigh non basta a salvare la situazione: per la ciurma, di fronte a una potenza schiacciante, la dispersione diventa l'unica via.",
       en: "Admiral Kizaru, the cyborg Pacifistas and the Warlord Kuma descend on Sabaody. Even Silvers Rayleigh's appearance is not enough to save the day: for the crew, facing overwhelming power, scattering becomes the only way out.",
     },
     title: { it: 'Kizaru e i Pacifista attaccano', en: 'Kizaru and the Pacifistas attack' },
     description: {
-      it: "L'ammiraglio Kizaru, i Pacifista e il Corsaro Bartholomew Kuma piombano su Sabaody. Rayleigh appare per coprire la ciurma, ma è impossibile vincere: la separazione è inevitabile.",
+      it: "L'ammiraglio Kizaru, i Pacifista e il Corsaro Bartholomew Orso piombano su Sabaody. Rayleigh appare per coprire la ciurma, ma è impossibile vincere: la separazione è inevitabile.",
       en: "Admiral Kizaru, the Pacifistas and the Warlord Bartholomew Kuma descend on Sabaody. Rayleigh appears to cover the crew, but victory is impossible: the separation is inevitable.",
     },
     period: { it: 'Saga di Sabaody', en: 'Sabaody Saga' },
@@ -636,12 +636,12 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-dr-colosseum', worldId: W,
     longDescription: {
-      it: "Travestito da gladiatore «Lucy», Rufy entra nel torneo del Colosseo Corrida per vincere il Frutto Mera Mera del fratello Ace. Tra alleanze con Bartolomeo e Cavendish, ritrova vivo il fratello giurato Sabo, che combatte al suo posto.",
+      it: "Travestito da gladiatore «Lucy», Rufy entra nel torneo del Colosseo Corrida per vincere il Frutto Foco Foco del fratello Ace. Tra alleanze con Bartolomeo e Cavendish, ritrova vivo il fratello giurato Sabo, che combatte al suo posto.",
       en: "Disguised as the gladiator 'Lucy', Luffy enters the Corrida Colosseum tournament to win his brother Ace's Flame-Flame Fruit. Amid alliances with Bartolomeo and Cavendish, he finds his sworn brother Sabo alive, who fights in his stead.",
     },
     title: { it: 'Il torneo del Colosseo Corrida', en: 'The Corrida Colosseum tournament' },
     description: {
-      it: "Travestito da gladiatore «Lucy», Rufy entra nel torneo per il Frutto Mera Mera e stringe alleanze con Bartolomeo, Cavendish e i guerrieri dell'arena, fino a ritrovarvi il fratello Sabo.",
+      it: "Travestito da gladiatore «Lucy», Rufy entra nel torneo per il Frutto Foco Foco e stringe alleanze con Bartolomeo, Cavendish e i guerrieri dell'arena, fino a ritrovarvi il fratello Sabo.",
       en: "Disguised as the gladiator 'Lucy', Luffy enters the tournament for the Flame-Flame Fruit and forges alliances with Bartolomeo, Cavendish and the arena's warriors, until he finds his brother Sabo there.",
     },
     period: { it: 'Nuovo Mondo · Dressrosa', en: 'New World · Dressrosa' },
@@ -812,12 +812,12 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-egg-kuma-bonney', worldId: W,
     longDescription: {
-      it: "Toccando i ricordi del padre, Bonney rivive l'intera storia di Bartholomew Kuma: l'amore per Ginny, la propria nascita e il lungo sacrificio che ridusse Kuma a un Pacifista senza volontà. Una verità che spezza il cuore e rovescia il giudizio sul «Tiranno».",
+      it: "Toccando i ricordi del padre, Bonney rivive l'intera storia di Bartholomew Orso: l'amore per Ginny, la propria nascita e il lungo sacrificio che ridusse Orso a un Pacifista senza volontà. Una verità che spezza il cuore e rovescia il giudizio sul «Tiranno».",
       en: "Touching her father's memories, Bonney relives the whole story of Bartholomew Kuma: his love for Ginny, her own birth and the long sacrifice that reduced Kuma to a will-less Pacifista. A truth that breaks the heart and overturns the verdict on the 'Tyrant'.",
     },
-    title: { it: 'Il passato di Kuma e Bonney', en: "Kuma and Bonney's past" },
+    title: { it: 'Il passato di Orso e Bonney', en: "Kuma and Bonney's past" },
     description: {
-      it: "Toccando i ricordi del padre, Bonney rivive l'intera storia di Bartholomew Kuma: l'amore per Ginny, la nascita di lei e il sacrificio che ridusse Kuma a un Pacifista senza volontà.",
+      it: "Toccando i ricordi del padre, Bonney rivive l'intera storia di Bartholomew Orso: l'amore per Ginny, la nascita di lei e il sacrificio che ridusse Orso a un Pacifista senza volontà.",
       en: "Touching her father's memories, Bonney relives the whole story of Bartholomew Kuma: his love for Ginny, her own birth and the sacrifice that reduced Kuma to a will-less Pacifista.",
     },
     period: { it: 'Nuovo Mondo · Egghead', en: 'New World · Egghead' },

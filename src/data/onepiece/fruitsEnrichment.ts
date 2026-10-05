@@ -35,7 +35,7 @@ export const ONEPIECE_FRUIT_LONG: Record<string, Localizable> = {
     en: "Miss Doublefinger, Mr. 1's partner, fights Nami in Alabasta: Nami beats her with the Clima-Tact she has just received from Usopp.",
   },
   'fruit-op-mane-mane': {
-    it: "Bon Clay copia il volto di Cobra per mettere Alabasta nel caos, poi diventa amico della ciurma; a Impel Down si sacrifica per lasciare fuggire Rufy.",
+    it: "Von Clay copia il volto di Cobra per mettere Alabasta nel caos, poi diventa amico della ciurma; a Impel Down si sacrifica per lasciare fuggire Rufy.",
     en: "Bon Clay copies Cobra's face to throw Alabasta into chaos, then befriends the crew; in Impel Down he sacrifices himself so that Luffy can escape.",
   },
   'fruit-op-bane-bane': {
@@ -139,7 +139,7 @@ export const ONEPIECE_FRUIT_LONG: Record<string, Localizable> = {
     en: "Jabra fights Sanji at Enies Lobby with Rokushiki and his wolf form; Sanji defeats him with Diable Jambe and takes the key to Robin's cuffs.",
   },
   'fruit-op-uma-uma': {
-    it: "Pierre diventa un cavallo alato su cui Gan Fall, l'ex Dio di Skypiea, combatte contro i sacerdoti di Enel.",
+    it: "Pierre diventa un cavallo alato su cui Gan Fall, l'ex Dio di Skypiea, combatte contro i sacerdoti di Ener.",
     en: "Pierre becomes a winged horse on which Gan Fall, Skypiea's former God, fights Enel's priests.",
   },
   'fruit-op-mogu-mogu': {
@@ -211,7 +211,7 @@ export const ONEPIECE_LOCATION_LONG: Record<string, Localizable> = {
     en: "Here Usopp lives with the lies he tells the village every morning, and here Kuro, Kaya's fake butler, plots to kill her; with Kuro defeated, Kaya gives the crew the Going Merry and Usopp sets sail with Luffy.",
   },
   'loc-op-tequila-wolf': {
-    it: "Robin vi viene spedita dalla Zampa di Kuma: rimane schiava finché l'Armata Rivoluzionaria non libera l'isola e la porta con sé, ed è con i rivoluzionari che passa i due anni prima del ritorno a Sabaody.",
+    it: "Robin vi viene spedita dalla Zampa di Orso: rimane schiava finché l'Armata Rivoluzionaria non libera l'isola e la porta con sé, ed è con i rivoluzionari che passa i due anni prima del ritorno a Sabaody.",
     en: "Robin is sent here by Kuma's Paw: she is enslaved until the Revolutionary Army frees the island and takes her with them, and it is with the revolutionaries that she spends the two years before returning to Sabaody.",
   },
   'loc-op-polestar-islands': {

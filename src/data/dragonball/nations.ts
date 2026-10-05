@@ -161,7 +161,7 @@ export const dragonballNations: Nation[] = [
     localizedName: { it: 'Aldilà / Regno Celeste', en: 'Other World / Celestial Realm' },
     type: 'neutral_land',
     description: {
-      it: "La dimensione dell'aldilà e i regni celesti a essa collegati: il Pianeta di Re Kaiō, raggiunto tramite la Via del Serpente, e il Mondo Sacro dei Kaiōshin.",
+      it: "La dimensione dell'aldilà e i regni celesti a essa collegati: il Pianeta di Re Kaioh, raggiunto tramite la Via del Serpente, e il Mondo Sacro dei Kaiōshin.",
       en: "The realm of the afterlife and the celestial realms connected to it: King Kai's planet, reached via Snake Way, and the Sacred World of the Kais.",
     },
     relatedLocationIds: ['loc-dbz-other-world', 'loc-dbz-kaio-planet', 'loc-dbz-sacred-world-kais'],

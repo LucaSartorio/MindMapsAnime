@@ -125,7 +125,7 @@ export const onepieceEventsExtra2: TimelineEvent[] = [
       en: "At the Mary Geoise Reverie, after learning a secret of the Empty Throne, King Cobra of Alabasta is killed and Vivi vanishes; Sabo clashes with the admirals.",
     },
     longDescription: {
-      it: "Durante il consiglio mondiale, Re Cobra Nefertari pone agli Astri di Saggezza una domanda proibita sul nome «D.» e sul potere che siede sul Trono Vuoto, Imu: pochi istanti dopo viene ucciso, e sua figlia Vivi scompare. Negli stessi giorni Sabo e i rivoluzionari liberano lo schiavo Kuma e affrontano gli ammiragli, mentre il mondo riceve la notizia (falsa) della morte di Sabo.",
+      it: "Durante il consiglio mondiale, Re Cobra Nefertari pone agli Astri di Saggezza una domanda proibita sul nome «D.» e sul potere che siede sul Trono Vuoto, Imu: pochi istanti dopo viene ucciso, e sua figlia Vivi scompare. Negli stessi giorni Sabo e i rivoluzionari liberano lo schiavo Orso e affrontano gli ammiragli, mentre il mondo riceve la notizia (falsa) della morte di Sabo.",
       en: "During the world council, King Cobra Nefertari asks the Five Elders a forbidden question about the name 'D.' and the power on the Empty Throne, Imu: moments later he is killed, and his daughter Vivi disappears. In the same days Sabo and the revolutionaries free the slave Kuma and clash with the admirals, while the world receives the (false) news of Sabo's death.",
     },
     period: { it: 'Mary Geoise · Reverie', en: 'Mary Geoise · Reverie' },
@@ -137,13 +137,13 @@ export const onepieceEventsExtra2: TimelineEvent[] = [
   },
   {
     id: 'evt-op-kuma-final-ride', worldId: W,
-    title: { it: "L'ultima marcia di Kuma", en: "Kuma's final ride" },
+    title: { it: "L'ultima marcia di Orso", en: "Kuma's final ride" },
     description: {
-      it: "Mosso da un ultimo barlume di volontà, il Pacifista Bartholomew Kuma attraversa mezzo mondo per raggiungere la figlia Bonney a Egghead.",
+      it: "Mosso da un ultimo barlume di volontà, il Pacifista Bartholomew Orso attraversa mezzo mondo per raggiungere la figlia Bonney a Egghead.",
       en: "Moved by a last flicker of will, the Pacifista Bartholomew Kuma travels half the world to reach his daughter Bonney on Egghead.",
     },
     longDescription: {
-      it: "Ormai privo di volontà e dato per perso, Kuma riattiva un ultimo, miracoloso impulso del proprio cuore di padre: fugge dalla Marina e percorre in moto e in volo distanze enormi per raggiungere Bonney sull'isola di Egghead, riaccendendo il filo del suo destino proprio mentre il Governo Mondiale stringe l'assedio.",
+      it: "Ormai privo di volontà e dato per perso, Orso riattiva un ultimo, miracoloso impulso del proprio cuore di padre: fugge dalla Marina e percorre in moto e in volo distanze enormi per raggiungere Bonney sull'isola di Egghead, riaccendendo il filo del suo destino proprio mentre il Governo Mondiale stringe l'assedio.",
       en: "Now will-less and given up for lost, Kuma reignites one last, miraculous impulse of his father's heart: he escapes the Marines and crosses immense distances by bike and by flight to reach Bonney on Egghead island, rekindling the thread of his fate just as the World Government closes its siege.",
     },
     period: { it: 'Nuovo Mondo · Egghead', en: 'New World · Egghead' },

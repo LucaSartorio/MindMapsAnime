@@ -99,7 +99,7 @@ export const dragonballCharactersSupporting: Character[] = [
     locationIds: ['loc-dbz-kaio-planet', 'loc-dbz-other-world'],
     arcIds: ['arc-dbz-saiyan-saga', 'arc-dbz-cell-saga', 'arc-dbz-majin-buu'],
     shortDescription: {
-      it: "Il Re Kaiō del Nord, divinità che vive su un minuscolo pianeta in fondo alla Via del Serpente. Addestra Goku dopo la sua morte, insegnandogli il Kaio-ken e la Genkidama.",
+      it: "Il Re Kaioh del Nord, divinità che vive su un minuscolo pianeta in fondo alla Via del Serpente. Addestra Goku dopo la sua morte, insegnandogli il Kaio-ken e la Genkidama.",
       en: "The North King Kai, a deity living on a tiny planet at the end of Snake Way. He trains Goku after his death, teaching him the Kaio-ken and the Spirit Bomb.",
     },
     status: 'deceased',

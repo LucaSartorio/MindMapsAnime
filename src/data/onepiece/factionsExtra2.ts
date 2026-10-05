@@ -88,7 +88,7 @@ export const onepieceFactionsExtra2: Faction[] = [
     en: "Tiny dwarves of surprising strength and absolute naivety, native to Green Bit near Dressrosa.",
     characterIds: ['char-op-leo', 'char-op-mansherry'], locationIds: ['loc-op-green-bit', 'loc-op-dressrosa'], tags: ['razza', 'tontatta', 'dressrosa'] }),
   F({ id: 'faction-op-race-buccaneers', type: 'race', name: 'Buccaneers', nit: 'Buccaneer', nen: 'Buccaneers',
-    it: "Antica razza di stazza gigantesca, «nemica del Governo» e quasi sterminata, da cui discendono Kuma e Bonney.",
+    it: "Antica razza di stazza gigantesca, «nemica del Governo» e quasi sterminata, da cui discendono Orso e Bonney.",
     en: "An ancient race of giant build, 'enemies of the Government' and nearly wiped out, from whom Kuma and Bonney descend.",
     characterIds: ['char-op-kuma', 'char-op-bonney'], tags: ['razza', 'buccaneer', 'kuma'] }),
   F({ id: 'faction-op-sea-kings', type: 'race', name: 'Sea Kings', nit: 'Re del Mare', nen: 'Sea Kings',

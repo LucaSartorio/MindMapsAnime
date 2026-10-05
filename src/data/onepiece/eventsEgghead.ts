@@ -6,14 +6,14 @@ export const onepieceEventsEgghead: TimelineEvent[] = [
     id: 'evt-op-egghead-attack',
     worldId: 'world-onepiece',
     longDescription: {
-      it: "Per zittire Vegapunk e i suoi segreti, il Governo Mondiale invia a Egghead l'ammiraglio Kizaru, la CP0 e l'Astro Saturn con le armi Seraphim. La ciurma e gli alleati resistono in una battaglia che intreccia scienza, tradimenti e i destini di Kuma e Bonney.",
+      it: "Per zittire Vegapunk e i suoi segreti, il Governo Mondiale invia a Egghead l'ammiraglio Kizaru, la CP0 e l'Astro Saturn con le armi Seraphim. La ciurma e gli alleati resistono in una battaglia che intreccia scienza, tradimenti e i destini di Orso e Bonney.",
       en: "To silence Vegapunk and his secrets, the World Government sends Admiral Kizaru, CP0 and the Elder Saturn with the Seraphim weapons to Egghead. The crew and allies hold out in a battle weaving science, betrayals and the fates of Kuma and Bonney.",
     },
     mangaChapters: ["1093-1110"],
     animeEpisodes: ["1110-1122"],
     title: { it: "L'assalto a Egghead", en: 'The assault on Egghead' },
     description: {
-      it: "Per zittire Vegapunk e i suoi segreti, il Governo Mondiale invia a Egghead l'ammiraglio Kizaru, la CP0 e l'Astro Saturn con le armi Seraphim. La ciurma e gli alleati resistono in una battaglia che intreccia scienza, tradimenti e i destini di Kuma e Bonney.",
+      it: "Per zittire Vegapunk e i suoi segreti, il Governo Mondiale invia a Egghead l'ammiraglio Kizaru, la CP0 e l'Astro Saturn con le armi Seraphim. La ciurma e gli alleati resistono in una battaglia che intreccia scienza, tradimenti e i destini di Orso e Bonney.",
       en: "To silence Vegapunk and his secrets, the World Government sends Admiral Kizaru, CP0 and the Elder Saturn with the Seraphim weapons to Egghead. The crew and allies hold out in a battle weaving science, betrayals and the fates of Kuma and Bonney.",
     },
     period: { it: 'Nuovo Mondo · Egghead', en: 'New World · Egghead' },

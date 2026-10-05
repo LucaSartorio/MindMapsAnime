@@ -15,7 +15,7 @@ export const onepieceArcs: StoryArc[] = [
     mangaChapters: ["1-7"],
     animeEpisodes: ["1-3"],
     longDescription: {
-      it: "Foosha: il piccolo Rufy idolatra Shanks e i Pirati del Rosso; mangia per errore il Frutto Gom Gom e Shanks perde un braccio salvandolo da un Re del Mare, affidandogli il cappello di paglia da restituire una volta diventato un grande pirata. Dieci anni dopo Rufy salpa, sfugge a un altro Re del Mare e raggiunge la nave di Alvida, dove fa amicizia con il timido mozzo Coby. A Shells Town smaschera la tirannia del capitano della Marina Morgan e libera dal patibolo lo spadaccino Roronoa Zoro, che diventa il suo primo compagno.",
+      it: "Foosha: il piccolo Rufy idolatra Shanks e i Pirati del Rosso; mangia per errore il Frutto Gom Gom e Shanks perde un braccio salvandolo da un Re del Mare, affidandogli il cappello di paglia da restituire una volta diventato un grande pirata. Dieci anni dopo Rufy salpa, sfugge a un altro Re del Mare e raggiunge la nave di Albida, dove fa amicizia con il timido mozzo Coby. A Shells Town smaschera la tirannia del capitano della Marina Morgan e libera dal patibolo lo spadaccino Roronoa Zoro, che diventa il suo primo compagno.",
       en: "Foosha: young Luffy idolises Shanks and the Red-Hair Pirates; he accidentally eats the Gum-Gum Fruit and Shanks loses an arm saving him from a Sea King, entrusting him the straw hat to be returned once he becomes a great pirate. Ten years later Luffy sets sail, escapes another Sea King and reaches Alvida's ship, befriending the timid cabin boy Coby. At Shells Town he exposes the tyranny of Marine captain Morgan and frees the swordsman Roronoa Zoro from the scaffold; Zoro becomes his first companion.",
     },
     name: 'Romance Dawn',
@@ -24,7 +24,7 @@ export const onepieceArcs: StoryArc[] = [
     period: { it: 'East Blue', en: 'East Blue' },
     order: 1,
     description: {
-      it: "Rufy salpa da Foosha all'inseguimento del sogno acceso da Shanks, libera Coby da Alvida e recluta a Shells Town il suo primo compagno: lo spadaccino Roronoa Zoro.",
+      it: "Rufy salpa da Foosha all'inseguimento del sogno acceso da Shanks, libera Coby da Albida e recluta a Shells Town il suo primo compagno: lo spadaccino Roronoa Zoro.",
       en: "Luffy sets sail from Foosha chasing the dream Shanks lit, frees Coby from Alvida and recruits his first companion at Shells Town: the swordsman Roronoa Zoro.",
     },
     locationIds: ['loc-op-dawn-island', 'loc-op-foosha-village', 'loc-op-shells-town'],
@@ -193,7 +193,7 @@ export const onepieceArcs: StoryArc[] = [
     mangaChapters: ["96-105"],
     animeEpisodes: ["45-53", "61-63"],
     longDescription: {
-      it: "A Loguetown, «la città dell'inizio e della fine» dove fu giustiziato Gol D. Roger, la ciurma fa provviste: Zoro compra due nuove spade da Ipponmatsu, Sanji affronta il mercato, Rufy sale sul patibolo di Roger. Lì Bagy, alleato con Alvida, sta per decapitarlo, ma un fulmine lo salva. Il rivoluzionario Dragon copre di nascosto la fuga del figlio dal capitano Smoker. Sotto la tempesta la ciurma risale Reverse Mountain ed entra nella Grand Line, lasciandosi East Blue alle spalle.",
+      it: "A Loguetown, «la città dell'inizio e della fine» dove fu giustiziato Gol D. Roger, la ciurma fa provviste: Zoro compra due nuove spade da Ipponmatsu, Sanji affronta il mercato, Rufy sale sul patibolo di Roger. Lì Bagy, alleato con Albida, sta per decapitarlo, ma un fulmine lo salva. Il rivoluzionario Dragon copre di nascosto la fuga del figlio dal capitano Smoker. Sotto la tempesta la ciurma risale Reverse Mountain ed entra nella Grand Line, lasciandosi East Blue alle spalle.",
       en: "At Loguetown, 'the town of the beginning and the end' where Gol D. Roger was executed, the crew stocks up: Zoro buys two new swords from Ipponmatsu, Sanji works the market, Luffy climbs Roger's scaffold. There Buggy, allied with Alvida, is about to behead him, but a lightning bolt saves him. The revolutionary Dragon quietly covers his son's escape from captain Smoker. Through the storm the crew climbs Reverse Mountain and enters the Grand Line, leaving East Blue behind.",
     },
     name: 'Loguetown',

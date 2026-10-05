@@ -105,7 +105,7 @@ export const onepieceCharactersParadise: Character[] = [
     enemies: ['char-op-luffy', 'char-op-dalton'],
     arcIds: ['arc-op-drum'],
     shortDescription: {
-      it: "Tirannico ex re di Drum, utente del Frutto Baku Baku che gli permette di mangiare e assimilare qualunque cosa. Fuggì all'arrivo di Barbabianca e tornò per opprimere l'isola.",
+      it: "Tirannico ex re di Drum, utente del Frutto Gnam Gnam che gli permette di mangiare e assimilare qualunque cosa. Fuggì all'arrivo di Barbabianca e tornò per opprimere l'isola.",
       en: "The tyrannical former king of Drum, user of the Munch-Munch Fruit that lets him eat and assimilate anything. He fled before Whitebeard and returned to oppress the island.",
     },
     status: 'alive',
@@ -119,7 +119,7 @@ export const onepieceCharactersParadise: Character[] = [
     firstMangaAppearance: "135",
     firstAnimeAppearance: "82",
     longDescription: {
-      it: "Dalton, capitano della guardia di Drum e utente dello Zoan del bisonte, che difese il popolo dalla tirannia di Wapol e divenne re del rinato Regno di Sakura.",
+      it: "Dalton, capitano della guardia di Drum e utente dello Zoo Zoo del bisonte, che difese il popolo dalla tirannia di Wapol e divenne re del rinato Regno di Sakura.",
       en: "Dalton, captain of Drum's guard and user of the bison Zoan, who defended the people from Wapol's tyranny and became king of the reborn Sakura Kingdom.",
     },
     name: 'Dalton',
@@ -130,7 +130,7 @@ export const onepieceCharactersParadise: Character[] = [
     enemies: ['char-op-wapol'],
     arcIds: ['arc-op-drum'],
     shortDescription: {
-      it: "Guardiano e protettore del popolo di Drum, utente di uno Zoan del bisonte. Dopo la caduta di Wapol diventa re e rinomina l'isola Regno di Sakura.",
+      it: "Guardiano e protettore del popolo di Drum, utente di uno Zoo Zoo del bisonte. Dopo la caduta di Wapol diventa re e rinomina l'isola Regno di Sakura.",
       en: "Guardian and protector of Drum's people, a bison Zoan user. After Wapol's fall he becomes king and renames the island the Sakura Kingdom.",
     },
     status: 'alive',
@@ -146,7 +146,7 @@ export const onepieceCharactersParadise: Character[] = [
     firstMangaAppearance: "155",
     firstAnimeAppearance: "92",
     longDescription: {
-      it: "Ex Corsaro «Mr. 0», boss della Baroque Works che tentò di rovesciare Alabasta. Utente del frutto Sabbia Sabbia, sconfitto da Rufy, evase da Impel Down e oggi co-guida la Cross Guild con Mihawk.",
+      it: "Ex Corsaro «Mr. 0», boss della Baroque Works che tentò di rovesciare Alabasta. Utente del frutto Sand Sand, sconfitto da Rufy, evase da Impel Down e oggi co-guida la Cross Guild con Mihawk.",
       en: "Former Warlord 'Mr. 0', boss of Baroque Works who tried to topple Alabasta. User of the Sand-Sand Fruit, defeated by Luffy, he broke out of Impel Down and now co-leads the Cross Guild with Mihawk.",
     },
     name: 'Crocodile',
@@ -252,7 +252,7 @@ export const onepieceCharactersParadise: Character[] = [
     firstMangaAppearance: "197",
     firstAnimeAppearance: "120",
     longDescription: {
-      it: "Pell «il Falco», capo della guardia reale di Alabasta e utente dello Zoan del falcone. Si sacrificò portando in cielo la bomba della Baroque Works, sopravvivendo per miracolo.",
+      it: "Pell «il Falco», capo della guardia reale di Alabasta e utente dello Zoo Zoo del falcone. Si sacrificò portando in cielo la bomba della Baroque Works, sopravvivendo per miracolo.",
       en: "Pell 'the Falcon', head of Alabasta's royal guard and user of the falcon Zoan. He sacrificed himself carrying Baroque Works' bomb skyward, surviving by a miracle.",
     },
     name: 'Pell',
@@ -262,7 +262,7 @@ export const onepieceCharactersParadise: Character[] = [
     locationIds: ['loc-op-alabasta'],
     arcIds: ['arc-op-alabasta'],
     shortDescription: {
-      it: "Guardia reale di Alabasta, utente di uno Zoan del falco. Si sacrificò per salvare la capitale Alubarna da una bomba.",
+      it: "Guardia reale di Alabasta, utente di uno Zoo Zoo del falco. Si sacrificò per salvare la capitale Alubarna da una bomba.",
       en: "A royal guard of Alabasta, a falcon Zoan user. He sacrificed himself to save the capital Alubarna from a bomb.",
     },
     status: 'alive',
@@ -278,7 +278,7 @@ export const onepieceCharactersParadise: Character[] = [
     firstMangaAppearance: "237",
     firstAnimeAppearance: "153",
     longDescription: {
-      it: "«Dio» Enel, tiranno di Skypiea e utente del frutto Fulmine, che si credeva onnipotente. Sconfitto da Rufy, immune all'elettricità, lasciò l'isola del cielo per la luna.",
+      it: "«Dio» Ener, tiranno di Skypiea e utente del frutto Fulmine, che si credeva onnipotente. Sconfitto da Rufy, immune all'elettricità, lasciò l'isola del cielo per la luna.",
       en: "'God' Enel, tyrant of Skypiea and user of the Rumble-Rumble Fruit, who believed himself omnipotent. Beaten by Luffy, immune to electricity, he left the sky island for the moon.",
     },
     name: 'Enel',
@@ -304,7 +304,7 @@ export const onepieceCharactersParadise: Character[] = [
     firstMangaAppearance: "238",
     firstAnimeAppearance: "154",
     longDescription: {
-      it: "Il «Cavaliere del Cielo» Gan Fall, ex Dio di Skypiea giusto e benevolo, che a cavallo di Pierre difende i deboli. Aiutò la ciurma contro Enel.",
+      it: "Il «Cavaliere del Cielo» Gan Fall, ex Dio di Skypiea giusto e benevolo, che a cavallo di Pierre difende i deboli. Aiutò la ciurma contro Ener.",
       en: "The 'Sky Knight' Gan Fall, the former, just and benevolent God of Skypiea, who defends the weak astride Pierre. He helped the crew against Enel.",
     },
     name: 'Gan Fall',
@@ -315,7 +315,7 @@ export const onepieceCharactersParadise: Character[] = [
     locationIds: ['loc-op-skypiea', 'loc-op-upper-yard'],
     arcIds: ['arc-op-skypiea'],
     shortDescription: {
-      it: "Ex «Dio» di Skypiea e nobile guerriero a cavallo del pegaso Pierre, alleato della ciurma contro la tirannia di Enel.",
+      it: "Ex «Dio» di Skypiea e nobile guerriero a cavallo del pegaso Pierre, alleato della ciurma contro la tirannia di Ener.",
       en: "Former 'God' of Skypiea and a noble warrior riding the pegasus Pierre, an ally of the crew against Enel's tyranny.",
     },
     status: 'alive',
@@ -329,7 +329,7 @@ export const onepieceCharactersParadise: Character[] = [
     firstMangaAppearance: "237",
     firstAnimeAppearance: "156",
     longDescription: {
-      it: "Guerriero Shandia discendente di Calgara, deciso a riprendere la terra ancestrale dell'Upper Yard. Combatté con coraggio suicida contro Enel.",
+      it: "Guerriero Shandia discendente di Calgara, deciso a riprendere la terra ancestrale dell'Upper Yard. Combatté con coraggio suicida contro Ener.",
       en: "A Shandia warrior descended from Calgara, determined to reclaim the ancestral land of the Upper Yard. He fought Enel with suicidal courage.",
     },
     name: 'Wiper',
@@ -354,7 +354,7 @@ export const onepieceCharactersParadise: Character[] = [
     firstMangaAppearance: "238",
     firstAnimeAppearance: "154",
     longDescription: {
-      it: "Gentile abitante di Angel Island che aiuta la ciurma a orientarsi a Skypiea, ribellandosi infine alla tirannia di Enel insieme al padre Pagaya.",
+      it: "Gentile abitante di Angel Island che aiuta la ciurma a orientarsi a Skypiea, ribellandosi infine alla tirannia di Ener insieme al padre Pagaya.",
       en: "A kind resident of Angel Island who helps the crew find their way on Skypiea, finally rebelling against Enel's tyranny alongside her father Pagaya.",
     },
     name: 'Conis',
@@ -364,7 +364,7 @@ export const onepieceCharactersParadise: Character[] = [
     locationIds: ['loc-op-skypiea'],
     arcIds: ['arc-op-skypiea'],
     shortDescription: {
-      it: "Gentile abitante di Skypiea che guida e aiuta la ciurma sull'isola del cielo, ribellandosi al dominio di Enel.",
+      it: "Gentile abitante di Skypiea che guida e aiuta la ciurma sull'isola del cielo, ribellandosi al dominio di Ener.",
       en: "A kind Skypiea native who guides and helps the crew on the sky island, rebelling against Enel's rule.",
     },
     status: 'alive',

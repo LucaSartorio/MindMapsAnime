@@ -7,7 +7,7 @@ import type { Localizable } from '@/types';
  */
 export const NARUTO_CHARACTER_LONG: Record<string, Localizable> = {
   'char-tenten': {
-    it: "Specialista di armi del Team Guy, con Neji e Rock Lee. Combatte evocando da pergamene decine di armi ninja e, nella Quarta Guerra, maneggia alcuni degli strumenti del Saggio dei Sei Cammini. Nell'era Boruto gestisce un negozio di armi a Konoha.",
+    it: "Specialista di armi del Team Guy, con Neji e Rock Lee. Combatte evocando da pergamene decine di armi ninja e, nella Quarta Guerra, maneggia alcuni degli strumenti del Eremita delle Sei Vie. Nell'era Boruto gestisce un negozio di armi a Konoha.",
     en: "The Team Guy weapons specialist, alongside Neji and Rock Lee. She fights by summoning dozens of ninja weapons from scrolls and, in the Fourth War, wields some of the Sage of Six Paths' tools. In the Boruto era she runs a weapons shop in Konoha.",
   },
   'char-iruka': {
@@ -35,7 +35,7 @@ export const NARUTO_CHARACTER_LONG: Record<string, Localizable> = {
     en: "The Fourth Kazekage, father of Gaara, Temari and Kankurō, master of Gold Dust. He has Shukaku sealed in his unborn son; Orochimaru kills him and takes his place to invade Konoha. In the Fourth War he reconciles with Gaara.",
   },
   'char-haku': {
-    it: "Il compagno di Zabuza, ultimo del suo clan con l'arte dell'Hyōton: specchi di ghiaccio da cui colpisce con gli aghi. Considera la propria vita uno strumento al servizio di Zabuza e muore facendogli da scudo contro il Raikiri di Kakashi.",
+    it: "Il compagno di Zabuza, ultimo del suo clan con l'arte dell'Hyōton: specchi di ghiaccio da cui colpisce con gli aghi. Considera la propria vita uno strumento al servizio di Zabuza e muore facendogli da scudo contro il Taglio del Fulmine di Kakashi.",
     en: "Zabuza's companion, the last of his clan with the Ice Release: ice mirrors from which he strikes with needles. He sees his own life as a tool in Zabuza's service and dies shielding him from Kakashi's Lightning Blade.",
   },
   'char-chojuro': {

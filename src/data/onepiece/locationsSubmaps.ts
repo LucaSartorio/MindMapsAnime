@@ -41,7 +41,7 @@ export const onepieceLocationsSubmaps: Location[] = [
     x: 870,
     y: 290,
     shortDescription: {
-      it: "La dimora di «Dio» Enel nell'Upper Yard, in cima al gigantesco fagiolo Giant Jack. Sede dell'Ordalia divina (Survival Game).",
+      it: "La dimora di «Dio» Ener nell'Upper Yard, in cima al gigantesco fagiolo Giant Jack. Sede dell'Ordalia divina (Survival Game).",
       en: "The abode of 'God' Enel in the Upper Yard, atop the giant beanstalk Giant Jack. Seat of the divine trial (the Survival Game).",
     },
     nationId: 'nation-op-grand-line-paradise',
@@ -141,7 +141,7 @@ export const onepieceLocationsSubmaps: Location[] = [
     x: 884,
     y: 470,
     shortDescription: {
-      it: "L'arena di Dressrosa dove i gladiatori si contendono il Frutto Mera Mera. Qui Rufy combatte sotto le mentite spoglie di «Lucy».",
+      it: "L'arena di Dressrosa dove i gladiatori si contendono il Frutto Foco Foco. Qui Rufy combatte sotto le mentite spoglie di «Lucy».",
       en: "Dressrosa's arena where gladiators fight over the Mera Mera Fruit. Here Luffy battles disguised as 'Lucy'.",
     },
     nationId: 'nation-op-grand-line-new-world',

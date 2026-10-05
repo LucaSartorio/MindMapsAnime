@@ -261,7 +261,7 @@ export const onepieceEvents: TimelineEvent[] = [
     id: 'evt-op-loguetown-execution',
     worldId: 'world-onepiece',
     longDescription: {
-      it: "A Loguetown, dove fu giustiziato Gol D. Roger, Rufy sale per curiosità sul patibolo del Re dei Pirati. Bagy, alleato con Alvida, sta per decapitarlo quando un fulmine lo salva; il rivoluzionario Dragon, padre di Rufy, copre di nascosto la fuga del figlio dal capitano Smoker.",
+      it: "A Loguetown, dove fu giustiziato Gol D. Roger, Rufy sale per curiosità sul patibolo del Re dei Pirati. Bagy, alleato con Albida, sta per decapitarlo quando un fulmine lo salva; il rivoluzionario Dragon, padre di Rufy, copre di nascosto la fuga del figlio dal capitano Smoker.",
       en: "At Loguetown, where Gol D. Roger was executed, Luffy climbs the Pirate King's scaffold out of curiosity. Buggy, allied with Alvida, is about to behead him when a lightning bolt saves him; the revolutionary Dragon, Luffy's father, secretly covers his son's escape from captain Smoker.",
     },
     mangaChapters: ["98-99"],

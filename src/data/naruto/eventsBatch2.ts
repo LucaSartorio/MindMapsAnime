@@ -58,7 +58,7 @@ export const narutoEventsBatch2: TimelineEvent[] = [
     id: 'ev-rin-death',
     title: { it: 'La morte di Rin', en: "Rin's death" },
     description: {
-      it: "Kirigakure sigilla il Tre Code dentro Rin perché esploda a Konoha. Rin si getta sul Chidori di Kakashi per impedirlo. Obito, testimone della scena, risveglia il Mangekyō, stermina i ninja della Nebbia e si consegna a Madara.",
+      it: "Kirigakure sigilla il Tre Code dentro Rin perché esploda a Konoha. Rin si getta sul Mille Falchi di Kakashi per impedirlo. Obito, testimone della scena, risveglia il Mangekyō, stermina i ninja della Nebbia e si consegna a Madara.",
       en: "Kirigakure seals the Three-Tails inside Rin so that she will unleash it on Konoha. Rin throws herself onto Kakashi's Chidori to prevent it. Obito, witnessing the scene, awakens his Mangekyō, slaughters the Mist ninja and gives himself to Madara.",
     },
     period: PRE,
@@ -127,7 +127,7 @@ export const narutoEventsBatch2: TimelineEvent[] = [
     id: 'ev-kakuzu-defeated',
     title: { it: 'Il Rasenshuriken contro Kakuzu', en: 'The Rasenshuriken against Kakuzu' },
     description: {
-      it: "Naruto arriva sul campo con il Futon: Rasenshuriken appena completato e lo scaglia contro Kakuzu, distruggendone i cuori di riserva. Kakashi finisce l'immortale dell'Akatsuki con il Raikiri.",
+      it: "Naruto arriva sul campo con il Futon: Rasenshuriken appena completato e lo scaglia contro Kakuzu, distruggendone i cuori di riserva. Kakashi finisce l'immortale dell'Akatsuki con il Taglio del Fulmine.",
       en: "Naruto arrives on the battlefield with the freshly completed Wind Release: Rasenshuriken and hurls it at Kakuzu, destroying his spare hearts. Kakashi finishes off the Akatsuki immortal with the Lightning Blade.",
     },
     period: P2,
@@ -290,7 +290,7 @@ export const narutoEventsBatch2: TimelineEvent[] = [
     id: 'ev-madara-jinchuriki',
     title: { it: 'Madara jinchūriki delle Dieci Code', en: 'Madara becomes the Ten-Tails jinchūriki' },
     description: {
-      it: "Madara torna in vita con il Rinne Tensei, riprende il Rinnegan, estrae le Dieci Code da Obito e ne diventa il jinchūriki, raggiungendo la Modalità del Saggio dei Sei Cammini. I cinque Kage vengono travolti.",
+      it: "Madara torna in vita con il Rinne Tensei, riprende il Rinnegan, estrae le Dieci Code da Obito e ne diventa il jinchūriki, raggiungendo la Modalità del Eremita delle Sei Vie. I cinque Kage vengono travolti.",
       en: "Madara comes back to life through Samsara of Heavenly Life, retrieves the Rinnegan, extracts the Ten-Tails from Obito and becomes its jinchūriki, reaching the Sage of Six Paths Mode. The five Kage are overwhelmed.",
     },
     period: WAR,
