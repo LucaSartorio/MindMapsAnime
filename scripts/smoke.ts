@@ -229,8 +229,9 @@ async function main() {
       console.log(`${ok ? '✓' : '✗'} cambio lingua EN → IT: ${page.url().replace(BASE, '')}`);
     }
 
-    // Spagnolo: su un mondo tradotto si passa a /es; su uno non tradotto si
-    // resta su /en con l'interfaccia in spagnolo (nessuna pagina /es inesistente).
+    // Spagnolo: su un mondo tradotto si passa a /es; su uno non tradotto (oggi
+    // solo i mondi "in arrivo") si resta su /en con l'interfaccia in spagnolo
+    // (nessuna pagina /es inesistente).
     {
       await page.goto(`${BASE}/en/naruto/characters/itachi-uchiha`, { waitUntil: 'networkidle', timeout: 30_000 });
       await page.getByRole('button', { name: /change language|cambia lingua/i }).first().click();
@@ -241,14 +242,14 @@ async function main() {
       if (!okEs) failures += 1;
       console.log(`${okEs ? '✓' : '✗'} cambio lingua EN → ES (mondo tradotto): ${page.url().replace(BASE, '')}`);
 
-      // La preferenza ES è salvata: su /en/bleach l'interfaccia resta già in spagnolo.
-      await page.goto(`${BASE}/en/bleach`, { waitUntil: 'networkidle', timeout: 30_000 });
+      // La preferenza ES è salvata: su /en/frieren l'interfaccia resta già in spagnolo.
+      await page.goto(`${BASE}/en/frieren`, { waitUntil: 'networkidle', timeout: 30_000 });
       await page.getByRole('button', { name: /change language|cambia lingua|cambiar idioma/i }).first().click();
       await page.getByRole('option', { name: /español/i }).first().click();
       await page.waitForTimeout(800);
       const lang = await page.evaluate(() => document.documentElement.lang);
       const homeHref = await page.locator('header a[href="/es"]').count();
-      const okStay = new URL(page.url()).pathname === '/en/bleach' && homeHref > 0;
+      const okStay = new URL(page.url()).pathname === '/en/frieren' && homeHref > 0;
       if (!okStay) failures += 1;
       console.log(`${okStay ? '✓' : '✗'} ES su mondo non tradotto resta su ${new URL(page.url()).pathname} (html lang=${lang}, link home /es: ${homeHref})`);
       // La scelta è persistita: torniamo all'inglese per non influenzare i check successivi.

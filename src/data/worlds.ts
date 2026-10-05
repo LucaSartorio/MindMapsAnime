@@ -234,6 +234,7 @@ export const animeWorlds: AnimeWorld[] = [
     id: 'world-onepiece',
     slug: 'onepiece',
     urlSlug: 'one-piece',
+    translatedLocales: ['es'],
     title: {
       it: 'One Piece',
       en: 'One Piece',
