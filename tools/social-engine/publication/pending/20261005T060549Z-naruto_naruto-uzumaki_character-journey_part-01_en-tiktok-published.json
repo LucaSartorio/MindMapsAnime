@@ -1,0 +1,16 @@
+{
+  "receiptVersion": 1,
+  "renderId": "character-journey:naruto:naruto-uzumaki:part-01@en",
+  "platform": "tiktok",
+  "provider": "metricool",
+  "status": "published",
+  "publishedAt": "2026-10-04T08:05:39Z",
+  "scheduledFor": "2026-10-04T10:00:00+02:00",
+  "providerPostId": "387677125",
+  "providerPostUuid": "-2338125002035671890",
+  "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-2338125002035671890",
+  "publicUrl": "https://www.tiktok.com/@interactiveanimeworlds/video/7692720859277987094",
+  "recordedAt": "2026-10-05T06:05:49Z",
+  "recordedBy": "chatgpt-work-publishing-agent",
+  "notes": "Reconciliation of existing published post; exact publication timestamp from Metricool analytics (UTC). No new upload or scheduling."
+}
