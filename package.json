@@ -23,6 +23,7 @@
     "preview:static": "tsx --tsconfig scripts/tsconfig.json scripts/serve-static.ts",
     "seo:slugs": "tsx --tsconfig scripts/tsconfig.json scripts/sync-slugs.ts",
     "i18n:status": "tsx --tsconfig scripts/tsconfig.json scripts/i18n-overlay.ts status",
+    "i18n:audit": "tsx --tsconfig scripts/tsconfig.json scripts/i18n-audit.ts",
     "i18n:extract": "tsx --tsconfig scripts/tsconfig.json scripts/i18n-overlay.ts extract",
     "i18n:merge": "tsx --tsconfig scripts/tsconfig.json scripts/i18n-overlay.ts merge",
     "social:studio": "remotion studio tools/social-engine/index.ts --config=tools/social-engine/remotion.config.ts --public-dir=public",

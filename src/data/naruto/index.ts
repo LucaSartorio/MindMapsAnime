@@ -54,6 +54,8 @@ import { narutoJutsuBatch4 } from './jutsuBatch4';
 import { densifyCrossLinks } from '@/lib/crossLinks';
 import { NARUTO_CHARACTER_LONG, NARUTO_JUTSU_LONG, NARUTO_LOCATION_LONG } from './contentEnrichment';
 import { narutoTournaments } from './tournaments';
+import { withSourceNames } from '@/data/shared/translations';
+import { narutoNames } from './names';
 
 const naruto = animeWorlds.find((w) => w.slug === 'naruto')!;
 
@@ -100,7 +102,7 @@ const arcs: StoryArc[] = [...narutoArcs, ...narutoArcsBatch1, ...narutoArcsBatch
 }));
 
 /** Dataset completo del mondo Naruto. */
-export const narutoDataset: WorldDataset = withEventTags(withFactionExtras(withFamily(densifyCrossLinks({
+export const narutoDataset: WorldDataset = withSourceNames(withEventTags(withFactionExtras(withFamily(densifyCrossLinks({
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
   seoSlugs: narutoSlugs,
   world: naruto,
@@ -123,7 +125,7 @@ export const narutoDataset: WorldDataset = withEventTags(withFactionExtras(withF
   ),
   tournaments: narutoTournaments,
   assets: narutoAssets,
-}), narutoFamily, 'char-'), narutoStructure), narutoMarkerTags);
+}), narutoFamily, 'char-'), narutoStructure), narutoMarkerTags), narutoNames);
 
 export { NARUTO_MAP_VIEWBOX, NARUTO_WORLD_MAP_SRC } from './mapConstants';
 export {

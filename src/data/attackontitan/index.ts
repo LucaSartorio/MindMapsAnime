@@ -24,6 +24,8 @@ import { aotEventsInheritance } from './eventsInheritance';
 import { aotRoutes } from './routes';
 import { aotAbilities } from './abilities';
 import { aotAssets } from './assets';
+import { withSourceNames } from '@/data/shared/translations';
+import { aotNames } from './names';
 
 const attackOnTitan = animeWorlds.find((w) => w.slug === 'attackontitan')!;
 
@@ -61,7 +63,7 @@ const characters: Character[] = [...aotCharactersParadis, ...aotCharactersMarley
  * l'origine (Ymir, Impero eldiano, Paradis, Marley, Hizuru). Le forme di Gigante di
  * ogni personaggio sono anche in `character.transformations`.
  */
-export const aotDataset: WorldDataset = withEventTags(withFactionExtras(withFamily(withBattles({
+export const aotDataset: WorldDataset = withSourceNames(withEventTags(withFactionExtras(withFamily(withBattles({
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
   seoSlugs: attackontitanSlugs,
   world: attackOnTitan,
@@ -75,6 +77,6 @@ export const aotDataset: WorldDataset = withEventTags(withFactionExtras(withFami
   routes: aotRoutes,
   jutsu: aotAbilities,
   assets: aotAssets,
-}, aotBattles), aotFamily, 'char-aot-'), aotStructure), aotMarkerTags);
+}, aotBattles), aotFamily, 'char-aot-'), aotStructure), aotMarkerTags), aotNames);
 
 export { AOT_WORLD_VIEWBOX } from './mapConstants';

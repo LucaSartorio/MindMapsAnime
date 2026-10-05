@@ -115,6 +115,8 @@ import { onepieceTrivia } from './trivia';
 import { withCharacterLinks } from './characterLinks';
 import { ONEPIECE_FRUIT_LONG, ONEPIECE_LOCATION_LONG } from './fruitsEnrichment';
 import { onepieceTournaments } from './tournaments';
+import { withSourceNames } from '@/data/shared/translations';
+import { onepieceNames } from './names';
 
 const onepiece = animeWorlds.find((w) => w.slug === 'onepiece')!;
 
@@ -472,7 +474,7 @@ const factions: Faction[] = [
   return jutsuIds.length ? { ...f, jutsuIds } : f;
 });
 
-export const onepieceDataset: WorldDataset = withEventTags(withFactionExtras(withFamily(withBattles({
+export const onepieceDataset: WorldDataset = withSourceNames(withEventTags(withFactionExtras(withFamily(withBattles({
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
   seoSlugs: onepieceSlugs,
   world: onepiece,
@@ -505,6 +507,6 @@ export const onepieceDataset: WorldDataset = withEventTags(withFactionExtras(wit
   jutsu,
   tournaments: onepieceTournaments,
   assets: onepieceAssets,
-}, onepieceBattles), onepieceFamily, 'char-op-'), onepieceStructure), onepieceMarkerTags);
+}, onepieceBattles), onepieceFamily, 'char-op-'), onepieceStructure), onepieceMarkerTags), onepieceNames);
 
 export { ONEPIECE_MAP_VIEWBOX } from './mapLevels';

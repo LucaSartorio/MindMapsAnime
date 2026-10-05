@@ -21,7 +21,7 @@
  */
 import { animeWorlds } from '../src/data/worlds';
 import { hasWorldDataset, loadWorldDatasetWithTranslations, worldTranslationLocales } from '../src/data/registry';
-import { datasetTranslatables } from '../src/data/shared/translations';
+import { datasetTranslatables, sourceNameProblems } from '../src/data/shared/translations';
 import { SEO_LOCALES } from '../src/seo/config';
 import { SOURCE_LOCALES, SUPPORTED_LOCALES, type SupportedLocale } from '../src/types/i18n';
 import type { AnimeWorld, LabeledOption, Localizable, WorldDataset } from '../src/types';
@@ -119,6 +119,10 @@ for (const world of worlds) {
   const lines: string[] = [];
   const blockingFor = (locale: SupportedLocale) =>
     !onlyLocale && (SOURCE_LOCALES.includes(locale) || (world.translatedLocales ?? []).includes(locale));
+
+  // 0. Chiavi di names.ts senza campo corrispondente.
+  const orphanNames = sourceNameProblems(ds);
+  if (orphanNames.length) lines.push(`![names.ts] chiavi senza campo (${orphanNames.length}): ${orphanNames.slice(0, 10).join(', ')}`);
 
   // 1. Etichette.
   for (const locale of LOCALES) {

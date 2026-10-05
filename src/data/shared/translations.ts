@@ -163,7 +163,9 @@ export function datasetTranslatables(dataset: WorldDataset): TranslatableEntry[]
         const ln = e?.localizedName;
         const derived = !!ln && typeof ln === 'object' && derivedNames.has(ln);
         if (typeof e?.id === 'string' && typeof e.name === 'string' && (ln === undefined || derived)) {
-          out.push({ key: `${root}[${e.id}].name`, value: { it: e.name, en: e.name }, nameOwner: e as { name: string } });
+          // Già derivato (da names.ts o da un overlay): la voce È quel localizedName.
+          const value = derived ? (ln as LocalizableObject) : { it: e.name, en: e.name };
+          out.push({ key: `${root}[${e.id}].name`, value, nameOwner: e as { name: string } });
           if (derived) seen.add(ln as object); // non è un testo autonomo del dataset
         }
       }
@@ -257,4 +259,57 @@ export function applyTranslations(dataset: WorldDataset, locale: SupportedLocale
   }
   localizeCharacterJourneys(dataset, locale);
   return { total, applied, orphans: Object.keys(overlay).filter((k) => !used.has(k)) };
+}
+
+/* ------------------------- Nomi nelle lingue sorgente ------------------------- */
+
+/**
+ * Nomi it/en di un mondo che differiscono dal `name` scritto nei dati (o lo
+ * correggono): doppiaggi ed edizioni rinominano personaggi, titoli, epiteti,
+ * clan e tecniche ("Krillin" → "Crilin", "Third Raikage" → "Terzo Raikage",
+ * "Uzumaki Clan" → "Clan Uzumaki"). Vivono in `src/data/<mondo>/names.ts` con
+ * le STESSE chiavi degli overlay (`characters[char-krillin].name`,
+ * `characters[char-kakashi].aliases[0]`, `factions[clan-uzumaki].name`…), così
+ * ogni lingua — sorgente o overlay — parla dello stesso campo.
+ */
+export type SourceNames = Readonly<Record<string, { it: string; en: string }>>;
+
+/** Chiavi di `names.ts` che non corrispondono a nessun campo (refusi, entità rimosse). */
+const unknownSourceNames = new WeakMap<WorldDataset, string[]>();
+
+/**
+ * Applica i nomi it/en al dataset (in place) e lo restituisce. Un `name`
+ * semplice riceve un `localizedName` derivato (la chiave resta `<entità>.name`),
+ * una stringa in un campo "nome" diventa `{ it, en }` (stessa chiave), un
+ * `Localizable` esistente riceve i nuovi it/en.
+ */
+export function withSourceNames<T extends WorldDataset>(dataset: T, names: SourceNames): T {
+  const entries = new Map(datasetTranslatables(dataset).map((e) => [e.key, e]));
+  const unknown: string[] = [];
+  for (const [key, v] of Object.entries(names)) {
+    const e = entries.get(key);
+    if (!e) {
+      unknown.push(key);
+      continue;
+    }
+    if (e.nameOwner && !(e.nameOwner.localizedName && derivedNames.has(e.nameOwner.localizedName as object))) {
+      const created: LocalizableObject = { it: v.it, en: v.en };
+      derivedNames.add(created);
+      e.nameOwner.localizedName = created;
+    } else if (e.plainSlot && !derivedNames.has(e.value)) {
+      const created: LocalizableObject = { it: v.it, en: v.en };
+      derivedNames.add(created);
+      e.plainSlot.parent[e.plainSlot.prop] = created;
+    } else {
+      e.value.it = v.it;
+      e.value.en = v.en;
+    }
+  }
+  unknownSourceNames.set(dataset, unknown);
+  return dataset;
+}
+
+/** Chiavi di `names.ts` rimaste senza campo (per `i18n:audit`). */
+export function sourceNameProblems(dataset: WorldDataset): string[] {
+  return unknownSourceNames.get(dataset) ?? [];
 }
