@@ -23,9 +23,11 @@ import { DERIVED_JOURNEY_TAG, localizeCharacterJourneys } from './autoJourneys';
  * Anche i NOMI descrittivi scritti come stringa semplice (fazioni, team,
  * luoghi, …) sono traducibili: chiave `factions[clan-uchiha].name`.
  *
- * Restano fuori: `world` (titolo e config del mondo sono tradotti in linea in
- * `src/data/worlds.ts`, servono anche alla home), `seoSlugs` e i cammini
- * DERIVATI dagli eventi (rigenerati da `localizeCharacterJourneys`).
+ * Il ramo `world` è incluso (etichette di `config`: sistema di poteri, gradi,
+ * marcatori…): titolo, sottotitolo e descrizione hanno già la lingua in linea
+ * in `src/data/worlds.ts` (servono alla home prima che l'overlay sia caricato)
+ * e una traduzione in linea vince sempre sull'overlay. Restano fuori `seoSlugs`
+ * e i cammini DERIVATI dagli eventi (rigenerati da `localizeCharacterJourneys`).
  *
  * Il file `<lingua>.meta.json` accanto all'overlay conserva l'impronta del
  * testo inglese tradotto: `npm run i18n:status` segnala le traduzioni
@@ -45,7 +47,7 @@ export function looksLocalizable(value: object): boolean {
 type LocalizableObject = Partial<Record<SupportedLocale, string>>;
 
 /** Collezioni del dataset escluse dall'overlay (vedi sopra). */
-const SKIPPED_ROOTS = new Set(['world', 'seoSlugs']);
+const SKIPPED_ROOTS = new Set(['seoSlugs']);
 
 function isDerivedJourney(node: unknown): boolean {
   const tags = (node as { tags?: unknown }).tags;
@@ -89,6 +91,13 @@ function walk(
  */
 const NAMED_ROOTS = new Set(['factions', 'teams', 'locations', 'jutsu', 'arcs', 'routes', 'nations', 'boundaries', 'mapLevels', 'tournaments']);
 
+/**
+ * `localizedName` creati da un overlay a partire da un `name` semplice: restano
+ * voci `<entità>.name` anche dopo l'applicazione, così un secondo overlay (altra
+ * lingua) le ritrova con la stessa chiave.
+ */
+const derivedNames = new WeakSet<object>();
+
 export interface TranslatableEntry {
   key: string;
   /** Testo sorgente (`{ it, en, … }`); per i nomi è un oggetto derivato da `name`. */
@@ -106,8 +115,11 @@ export function datasetTranslatables(dataset: WorldDataset): TranslatableEntry[]
     const list = root === 'routes' && Array.isArray(value) ? value.filter((r) => !isDerivedJourney(r)) : value;
     if (NAMED_ROOTS.has(root) && Array.isArray(list)) {
       for (const e of list as Array<{ id?: unknown; name?: unknown; localizedName?: unknown }>) {
-        if (typeof e?.id === 'string' && typeof e.name === 'string' && e.localizedName === undefined) {
+        const ln = e?.localizedName;
+        const derived = !!ln && typeof ln === 'object' && derivedNames.has(ln);
+        if (typeof e?.id === 'string' && typeof e.name === 'string' && (ln === undefined || derived)) {
           out.push({ key: `${root}[${e.id}].name`, value: { it: e.name, en: e.name }, nameOwner: e as { name: string } });
+          if (derived) seen.add(ln as object); // non è un testo autonomo del dataset
         }
       }
     }
@@ -169,7 +181,14 @@ export function applyTranslations(dataset: WorldDataset, locale: SupportedLocale
     if (text === undefined || !text.trim()) continue;
     if (nameOwner) {
       // Il nome resta identico in it/en; la lingua dell'overlay riceve il suo.
-      nameOwner.localizedName = { it: nameOwner.name, en: nameOwner.name, [locale]: text };
+      const ln = nameOwner.localizedName;
+      if (ln && typeof ln === 'object' && derivedNames.has(ln)) {
+        (ln as LocalizableObject)[locale] = text;
+      } else {
+        const created: LocalizableObject = { it: nameOwner.name, en: nameOwner.name, [locale]: text };
+        derivedNames.add(created);
+        nameOwner.localizedName = created;
+      }
     } else {
       value[locale] = text;
     }
