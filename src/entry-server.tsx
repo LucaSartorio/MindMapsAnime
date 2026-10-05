@@ -23,7 +23,7 @@ import { SEO_LOCALES as LOCALES, type SeoLocale } from '@/seo/config';
 import type { ResolvedPage } from '@/seo/metadata';
 
 export { SITE, SEO_LOCALES, TECHNICAL_PATH_PREFIXES, X_DEFAULT_LOCALE } from '@/seo/config';
-export { buildPageMeta, notFoundMeta, isIndexable, noindexReason, resolveSeoPath } from '@/seo/metadata';
+export { buildPageMeta, canonicalTargetPath, notFoundMeta, isIndexable, noindexReason, resolveSeoPath } from '@/seo/metadata';
 export { renderHeadHtml } from '@/seo/head';
 export { enumeratePages, enumerateSlugRedirects } from '@/seo/routes';
 export { buildSitemaps } from '@/seo/sitemap';

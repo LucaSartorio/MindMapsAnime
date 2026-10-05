@@ -44,6 +44,7 @@ import {
   worldPath,
   type StaticPage,
 } from './paths';
+import { isDerivedJourney } from '@/data/shared/autoJourneys';
 import { entityIdFromSlug, getSlugIndex } from './slug';
 import { entityQuality } from './quality';
 import { SEO_STRINGS } from './strings';
@@ -389,7 +390,32 @@ export function pageExistsIn(resolved: ResolvedPage, lang: SeoLocale): boolean {
  * finti duplicati "tradotti") finché il dataset non riceve la traduzione.
  */
 export function isIndexable(resolved: ResolvedPage): boolean {
-  return noindexReason(resolved) === null;
+  return noindexReason(resolved) === null && canonicalTargetPath(resolved) === null;
+}
+
+/**
+ * Pagine che sono una proiezione di un'altra risorsa: restano raggiungibili e
+ * `index, follow` (niente segnali contraddittori noindex + canonical), ma la
+ * loro `rel=canonical` punta alla risorsa principale e sono escluse da sitemap
+ * e hreflang. Oggi: i percorsi DERIVATI (`isDerivedJourney`) → la pagina del
+ * loro protagonista, che mostra gli stessi eventi e luoghi in ordine — solo se
+ * quella pagina è a sua volta indicizzabile nella stessa lingua (una canonical
+ * verso una pagina noindex è un errore). `null` = la pagina è canonica di sé.
+ */
+export function canonicalTargetPath(resolved: ResolvedPage): string | null {
+  const { page, lang } = resolved;
+  if (page.kind !== 'entity' || page.category !== 'journeys') return null;
+  const route = page.dataset.routes.find((r) => r.id === page.id);
+  if (!route || !isDerivedJourney(route)) return null;
+  const characterId = route.protagonistCharacterIds[0];
+  const target = characterId ? entityPath(lang, page.dataset, 'characters', characterId) : undefined;
+  if (!target) return null;
+  const targetPage: ResolvedPage = {
+    lang,
+    path: target,
+    page: { kind: 'entity', dataset: page.dataset, category: 'characters', id: characterId },
+  };
+  return noindexReason(targetPage) === null ? target : null;
 }
 
 /** Perché una pagina è `noindex` (per report e test); `null` = indicizzabile. */
@@ -584,8 +610,10 @@ export function buildPageMeta(resolved: ResolvedPage): PageMeta {
     path,
     title: withBrand(title),
     description,
-    canonical: absoluteUrl(path),
-    robots: indexable ? ROBOTS_INDEX : ROBOTS_NOINDEX,
+    canonical: absoluteUrl(canonicalTargetPath(resolved) ?? path),
+    // Una pagina canonicalizzata altrove resta `index`: è la canonical a
+    // consolidare i segnali, non un noindex (vedi `canonicalTargetPath`).
+    robots: noindexReason(resolved) === null ? ROBOTS_INDEX : ROBOTS_NOINDEX,
     indexable,
     alternates: alternatesFor(resolved, indexable),
     ogType,

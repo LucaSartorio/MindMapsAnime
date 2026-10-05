@@ -593,6 +593,14 @@ metadata, and every indexable entity has a stable URL. The whole layer lives in 
   Blocking checks: `validate:i18n` (plain_string / missing_it / missing_en / empty), `test:seo`,
   `seo:check` (no indexable `/en` page with an Italian description). `noindexReason()` explains every
   exclusion (`legal_page`, `coming_soon`, `thin_content`, `not_translated`); prerender prints the per-language summary.
+- **Canonical to another resource** (`canonicalTargetPath`, `src/seo/metadata.ts`): a page that is a projection of
+  another indexable page keeps `index, follow` but its `rel=canonical` points to that page and it is excluded from
+  sitemap + hreflang (never combine noindex with a cross-page canonical). Today: **derived journeys**
+  (`isDerivedJourney`) → their protagonist's character page, which renders the same events in order. Hand-written
+  journeys stay self-canonical. `seo:check` verifies the target exists, is indexable and self-canonical.
+- **Sitemaps carry no `lastmod`**: there is no verifiable per-URL modification date (the old per-world git date
+  marked every page of a world as changed, and in shallow CI clones became an unrelated commit's date). Only add
+  it back with a per-URL source; `seo:check` fails on a sitemap whose URLs all share one `lastmod`.
 - **Existence = `resolveSeoPath`** (`src/seo/metadata.ts`): the router, the pre-renderer and the
   sitemap all use it. Unknown paths must render `NotFoundPage` (real 404 via `404.html`) — never a
   silent `<Navigate>` to the map (soft-404).

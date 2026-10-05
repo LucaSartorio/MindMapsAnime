@@ -15,6 +15,16 @@ const MIN_STOPS = 3;
 export const DERIVED_JOURNEY_TAG = 'cammino-derivato';
 
 /**
+ * Un percorso derivato è una PROIEZIONE della pagina del suo protagonista
+ * (stessi eventi e luoghi, in ordine): la pagina resta utile per seguire il
+ * cammino sulla mappa, ma per Search la risorsa canonica è il personaggio
+ * (`canonicalTargetPath` in `src/seo/metadata.ts`).
+ */
+export function isDerivedJourney(route: Route): boolean {
+  return route.tags?.includes(DERIVED_JOURNEY_TAG) ?? false;
+}
+
+/**
  * Testi dei cammini derivati per lingua. it/en sono generati con il dataset; le
  * lingue degli overlay (`src/data/shared/translations.ts`) li ricevono da
  * `localizeCharacterJourneys` dopo che nomi e titoli sono stati tradotti.
@@ -65,7 +75,7 @@ function fillJourney(route: Route, dataset: WorldDataset, locale: SupportedLocal
 
 /** Rigenera nella lingua di un overlay appena applicato i cammini derivati. */
 export function localizeCharacterJourneys(dataset: WorldDataset, locale: SupportedLocale): void {
-  for (const r of dataset.routes) if (r.tags?.includes(DERIVED_JOURNEY_TAG)) fillJourney(r, dataset, locale);
+  for (const r of dataset.routes) if (isDerivedJourney(r)) fillJourney(r, dataset, locale);
 }
 
 function hash(s: string): number {

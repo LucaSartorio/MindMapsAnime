@@ -13,6 +13,8 @@
  *  - slug stabili: tutte le entità nel lock pubblicato (`npm run seo:slugs`),
  *    stesso slug in ogni lingua, redirect verso slug vivi;
  *  - localizzazione: nessun testo narrativo senza `{ it, en }`;
+ *  - canonical verso altra risorsa (percorsi derivati): destinazione
+ *    indicizzabile, niente noindex/hreflang/sitemap sulla pagina;
  *  - lingue aggiuntive (es): pagine solo per i mondi tradotti, link che
  *    ricadono su `/en` per gli altri.
  */
@@ -23,7 +25,7 @@ import { hasWorldDataset, loadWorldDatasetWithTranslations } from '../src/data/r
 import { SEO_CATEGORIES, categoryEntities } from '../src/seo/categories';
 import { getSlugIndex, slugify, RESERVED_SLUGS } from '../src/seo/slug';
 import { absoluteUrl, parseSeoPath, swapLangInPath, worldPath } from '../src/seo/paths';
-import { buildPageMeta, resolveSeoPath, isIndexable } from '../src/seo/metadata';
+import { buildPageMeta, canonicalTargetPath, resolveSeoPath, isIndexable } from '../src/seo/metadata';
 import { enumeratePages } from '../src/seo/routes';
 import { buildSitemaps } from '../src/seo/sitemap';
 import { SITE, isTechnicalPath, seoLocaleFor, worldHasSeoLocale } from '../src/seo/config';
@@ -148,6 +150,24 @@ async function main() {
   const pages = enumeratePages(datasets);
   const getDs = (slug: string) => datasets.get(slug);
 
+  test('canonical verso altra risorsa: destinazione indicizzabile e auto-canonica, mai in sitemap/hreflang', () => {
+    const sitemapUrls = new Set(buildSitemaps(pages).flatMap((s) => s.urls));
+    let n = 0;
+    for (const r of pages) {
+      const target = canonicalTargetPath(r);
+      if (!target) continue;
+      n++;
+      const meta = buildPageMeta(r);
+      assert.equal(meta.canonical, absoluteUrl(target));
+      assert.ok(!/noindex/.test(meta.robots), `${r.path}: noindex + canonical altrove (segnali contraddittori)`);
+      assert.equal(meta.alternates.length, 0, `${r.path}: hreflang su pagina canonicalizzata`);
+      assert.ok(!sitemapUrls.has(absoluteUrl(r.path)), `${r.path}: canonicalizzata ma in sitemap`);
+      const t = resolveSeoPath(target, getDs);
+      assert.ok(t && isIndexable(t) && buildPageMeta(t).canonical === absoluteUrl(target), `${r.path}: destinazione ${target} non indicizzabile`);
+    }
+    assert.ok(n > 0, 'nessuna pagina canonicalizzata: i percorsi derivati dovrebbero esserlo');
+  });
+
   test(`round-trip URL: ${pages.length} pagine si risolvono in se stesse`, () => {
     const seen = new Set<string>();
     for (const r of pages) {
@@ -169,7 +189,7 @@ async function main() {
       assert.ok(m.title.trim().length > SITE.name.length, `title vuoto ${r.path}`);
       assert.ok(m.title.includes(SITE.name), `title senza brand ${r.path}`);
       assert.ok(m.description.trim().length >= 40, `description troppo corta ${r.path}: "${m.description}"`);
-      assert.equal(m.canonical, absoluteUrl(r.path));
+      assert.equal(m.canonical, absoluteUrl(canonicalTargetPath(r) ?? r.path));
       assert.ok(m.canonical.startsWith('https://animapverse.com/'));
       assert.ok(m.jsonLd.every((j) => j['@context'] === 'https://schema.org'));
       if (m.indexable) {

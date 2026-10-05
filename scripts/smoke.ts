@@ -333,7 +333,7 @@ async function main() {
               hscroll: document.documentElement.scrollWidth > innerWidth,
               heights: [...heights],
               centerSpread: Math.max(...centers) - Math.min(...centers),
-              divider: shown(divider) && R(divider).left >= R(left).right && R(divider).right <= R(nav).left,
+              divider: !!divider && shown(divider) && R(divider).left >= R(left).right && R(divider).right <= R(nav).left,
             };
           });
           const problems = [
