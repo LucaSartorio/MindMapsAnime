@@ -154,6 +154,7 @@ validi), `npm run seo:slugs -- --check` (lock aggiornato).
 | Landing mondo, mappa, indici, directory, timeline (anche `/page/N`) | ✅ | ogni pagina paginata è auto-canonica |
 | Mondo "in arrivo" | ❌ | solo landing segnaposto, finché non ha dati |
 | Pagina entità | ✅ se supera la soglia **e** il testo è davvero in quella lingua | altrimenti `noindex, follow` |
+| Percorso **derivato** (`isDerivedJourney`, `route-journey-*`) | ↪ `index, follow` + **canonical → pagina del protagonista** | proiezione degli eventi/luoghi già mostrati sulla pagina personaggio: fuori da sitemap e hreflang (`canonicalTargetPath`); i percorsi scritti a mano restano canonici di sé |
 | 404, redirect di slug | ❌ | |
 | Query (`?character=…`), `/og/*`, `/share/*`, `/social/*`, `/render/*` | ❌ | robots.txt + X-Robots-Tag |
 
@@ -239,8 +240,14 @@ Solo tipi pertinenti, niente dati inventati:
 
 - `sitemap.xml` = **indice** → `sitemap-pages.xml` + `sitemap-<world>.xml`
   (una per mondo, entrambe le lingue, hreflang inclusi). Solo URL canonici
-  indicizzabili. `lastmod` = data dell'ultimo commit su `src/data/<world>`
-  (reale, mai la data del build; omesso se git non è disponibile).
+  indicizzabili e **canonici di sé**. **Nessun `lastmod`**: Google lo usa solo
+  se è "consistently and verifiably accurate" per la pagina. La data
+  dell'ultimo commit su `src/data/<world>` (usata fino a ottobre 2026) era
+  condivisa da tutte le URL di un mondo e, nei clone shallow delle build CI,
+  diventava la data di un commit qualsiasi (anche estraneo ai dati) → migliaia
+  di pagine invariate "modificate oggi". Reintrodurlo solo con una data per URL
+  verificabile (es. impronta del contenuto per pagina); `seo:check` fallisce se
+  una sitemap ha la stessa data su tutte le URL.
 - `robots.txt` (generato): `Allow: /`, `Disallow: /*?` e i prefissi tecnici,
   `Sitemap:`. **JS/CSS non sono bloccati** (prima `/assets/` era in Disallow
   e impediva a Google di renderizzare la SPA).
@@ -360,7 +367,7 @@ sottoposta a scansione") e il [Rich Results Test](https://search.google.com/test
 Vantaggi: notifica immediata a Bing/Yandex degli URL cambiati. Costi: una
 chiave da pubblicare, un passo post-deploy che invii solo gli URL **modificati**
 (inviarli tutti a ogni deploy sarebbe spam) e quindi un confronto fra sitemap
-vecchia e nuova. Con aggiornamenti settimanali e sitemap con `lastmod` reale il
+vecchia e nuova. Con aggiornamenti settimanali il
 beneficio è marginale: da riconsiderare se il ritmo di pubblicazione aumenta.
 
 ### `llms.txt`

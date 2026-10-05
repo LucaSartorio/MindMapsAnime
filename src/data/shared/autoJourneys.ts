@@ -8,6 +8,19 @@ import { getEntityDisplayName, getLocalizedText } from '@/utils/localization';
  * consecutive nello stesso luogo si fondono). Servono almeno 3 tappe diverse.
  * Nessun dato duplicato: tappe, archi ed eventi restano quelli del dataset.
  */
+/** Tag che marca un percorso derivato (vedi `isDerivedJourney`). */
+export const DERIVED_JOURNEY_TAG = 'cammino-derivato';
+
+/**
+ * Un percorso derivato è una PROIEZIONE della pagina del suo protagonista
+ * (stessi eventi e luoghi, in ordine): la pagina resta utile per seguire il
+ * cammino sulla mappa, ma per Search la risorsa canonica è il personaggio
+ * (`canonicalTargetPath` in `src/seo/metadata.ts`).
+ */
+export function isDerivedJourney(route: Route): boolean {
+  return route.tags?.includes(DERIVED_JOURNEY_TAG) ?? false;
+}
+
 const COLORS = ['#f59e0b', '#38bdf8', '#a78bfa', '#34d399', '#f472b6', '#fb7185', '#facc15', '#60a5fa'];
 const MIN_STOPS = 3;
 
@@ -61,7 +74,7 @@ export function withCharacterJourneys<T extends WorldDataset>(dataset: T): T {
       lineStyle: 'dashed',
       canonStatus: 'canon',
       referenceStatus: 'verified',
-      tags: ['cammino-derivato'],
+      tags: [DERIVED_JOURNEY_TAG],
     });
   }
   return { ...dataset, routes: [...dataset.routes, ...extra] };

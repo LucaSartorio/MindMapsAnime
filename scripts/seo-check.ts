@@ -11,6 +11,9 @@
  *  - duplicati: nessun title duplicato fra pagine indicizzabili, nessuna
  *    description duplicata nella stessa lingua;
  *  - lingua: nessuna pagina /en indicizzabile con description italiana;
+ *  - canonical verso altra pagina: destinazione esistente, indicizzabile e
+ *    auto-canonica; la pagina non ha hreflang e non è in sitemap;
+ *  - lastmod: mai una data unica condivisa da un'intera sitemap;
  *  - link interni: ogni `<a href="/...">` punta a un file esistente o a un
  *    redirect dichiarato (niente 404 interni);
  *  - sitemap: XML ben formato, URL unici, canonici, indicizzabili, nessuna
@@ -74,7 +77,10 @@ interface PageInfo {
   robots: string;
   canonical?: string;
   alternates: Map<string, string>;
+  /** robots `index` E canonical auto-referenziale: risorsa indicizzabile in proprio. */
   indexable: boolean;
+  /** robots `index` ma canonical verso un'altra pagina (proiezione di quella risorsa). */
+  canonicalized: boolean;
   redirectPage: boolean;
   links: string[];
 }
@@ -113,7 +119,9 @@ function parsePage(file: string): PageInfo {
   for (const l of links.filter((x) => attr(x, 'rel') === 'alternate' && attr(x, 'hreflang'))) {
     alternates.set(attr(l, 'hreflang')!, attr(l, 'href')!);
   }
-  const indexable = /(^|,)\s*index\b/.test(robots) && !/noindex/.test(robots);
+  const robotsIndex = /(^|,)\s*index\b/.test(robots) && !/noindex/.test(robots);
+  const canonicalized = robotsIndex && canonical !== undefined && canonical !== ORIGIN + url;
+  const indexable = robotsIndex && !canonicalized;
 
   if (!redirectPage) {
     if (!lang) err(`${where}: <html lang> mancante`);
@@ -129,7 +137,7 @@ function parsePage(file: string): PageInfo {
         err(`${where}: JSON-LD non valido`);
       }
     }
-    if (indexable) {
+    if (robotsIndex) {
       const og = ['og:title', 'og:description', 'og:url', 'og:type', 'og:image'];
       for (const p of og) if (metaBy('property', p).length !== 1) err(`${where}: ${p} mancante/duplicato`);
       if (title.length > 110) warn(`${where}: title lungo (${title.length})`);
@@ -138,7 +146,7 @@ function parsePage(file: string): PageInfo {
   }
 
   const hrefs = [...body.matchAll(/<a\s[^>]*href="([^"]+)"/g)].map((m) => decode(m[1]));
-  return { url, lang, title, description, robots, canonical, alternates, indexable, redirectPage, links: hrefs };
+  return { url, lang, title, description, robots, canonical, alternates, indexable, canonicalized, redirectPage, links: hrefs };
 }
 
 const htmlFiles = allFiles.filter((f) => f.endsWith('.html'));
@@ -160,8 +168,14 @@ for (const p of pages.values()) {
     if (/[?#]/.test(p.canonical)) err(`${p.url}: canonical con query/hash`);
     if (/\/$/.test(p.canonical)) err(`${p.url}: canonical con slash finale`);
   }
-  if (p.indexable) {
-    if (p.canonical !== ORIGIN + p.url) err(`${p.url}: pagina indicizzabile non auto-canonica (${p.canonical})`);
+  if (p.canonicalized) {
+    // Canonical verso un'altra risorsa: la destinazione deve esistere, essere
+    // indicizzabile e canonica di sé; la pagina non dichiara hreflang.
+    const target = pages.get(p.canonical!.replace(ORIGIN, ''));
+    if (!target) err(`${p.url}: canonical verso pagina inesistente ${p.canonical}`);
+    else if (!target.indexable) err(`${p.url}: canonical verso pagina non indicizzabile/non canonica ${p.canonical}`);
+    if (p.alternates.size > 0) err(`${p.url}: pagina canonicalizzata altrove con hreflang`);
+  } else if (p.indexable) {
     // hreflang
     const self = p.alternates.get(p.lang);
     if (self !== ORIGIN + p.url) err(`${p.url}: hreflang self mancante (${p.lang})`);
@@ -262,6 +276,13 @@ else {
     if (!sx.startsWith('<?xml') || !sx.includes('<urlset') || opened !== closed) err(`${loc}: XML non valido`);
     const locs = [...sx.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => decode(m[1]));
     if (locs.length > 50000) err(`${loc}: oltre 50.000 URL`);
+    // `lastmod` deve essere la data di modifica di QUELLA pagina (Google lo usa
+    // solo se "consistently and verifiably accurate"): la stessa data su tutte
+    // le URL di una sitemap grande è una data di build/commit, non di pagina.
+    const mods = [...sx.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map((m) => m[1]);
+    if (mods.length >= 50 && new Set(mods).size === 1) {
+      err(`${loc}: tutte le ${mods.length} URL hanno lo stesso lastmod (${mods[0]}): non è una data per pagina`);
+    }
     for (const u of locs) {
       if (inSitemap.has(u)) err(`sitemap: URL duplicato ${u}`);
       inSitemap.add(u);
@@ -271,7 +292,8 @@ else {
       const page = pages.get(path);
       if (!page) err(`sitemap: URL senza pagina ${u}`);
       else {
-        if (!page.indexable) err(`sitemap: URL noindex ${u}`);
+        if (page.canonicalized) err(`sitemap: URL canonicalizzato altrove ${u}`);
+        else if (!page.indexable) err(`sitemap: URL noindex ${u}`);
         if (page.canonical !== u) err(`sitemap: ${u} ha canonical diversa (${page.canonical})`);
       }
     }
@@ -303,10 +325,11 @@ else {
 /* ------------------------------- report ------------------------------- */
 
 const indexable = [...pages.values()].filter((p) => p.indexable && !p.redirectPage);
+const canonicalizedCount = [...pages.values()].filter((p) => p.canonicalized && !p.redirectPage).length;
 const byLang = new Map<string, number>();
 for (const p of indexable) byLang.set(p.lang, (byLang.get(p.lang) ?? 0) + 1);
 console.log(
-  `[seo:check] ${pages.size} pagine · ${indexable.length} indicizzabili (${[...byLang].map(([l, n]) => `${l}: ${n}`).join(', ')}) · ${inSitemap.size} URL in sitemap · ${linkCount} link interni verificati`,
+  `[seo:check] ${pages.size} pagine · ${indexable.length} indicizzabili (${[...byLang].map(([l, n]) => `${l}: ${n}`).join(', ')}) · ${canonicalizedCount} canonicalizzate altrove · ${inSitemap.size} URL in sitemap · ${linkCount} link interni verificati`,
 );
 if (warnings.length) {
   console.log(`[seo:check] ${warnings.length} avvisi (primi 10):`);

@@ -185,7 +185,13 @@ export function EntityPage({
               <Link to={eventPath(lang, dataset, ev.id)!} className="font-medium text-ink-100 hover:text-chakra-300 hover:underline">
                 {text(ev.title)}
               </Link>
-              <span className="block text-xs text-ink-400 mt-0.5">{text(ev.period)}</span>
+              <span className="block text-xs text-ink-400 mt-0.5">
+                {text(ev.period)}
+                {/* Dove accade (se non è la pagina stessa del luogo). */}
+                {ev.locationId && !(category === 'locations' && ev.locationId === id) && named('locations', ev.locationId) && (
+                  <> · {named('locations', ev.locationId)}</>
+                )}
+              </span>
               <span className="block text-ink-300 mt-1 leading-relaxed">{text(ev.description)}</span>
             </li>
           ))}
@@ -266,6 +272,15 @@ export function EntityPage({
           </Section>,
         );
       }
+      // Partecipazione alla timeline: gli eventi del dataset che coinvolgono il
+      // personaggio (gli stessi della scheda interattiva), in ordine cronologico.
+      // Gli scontri sono già elencati in "Battaglie": non si ripetono.
+      const fought = new Set(fights.map((f) => f.event.id));
+      eventsSection(
+        'events',
+        t('modals.relatedEvents'),
+        ctx.events.map((r) => r.id).filter((x) => !fought.has(x)),
+      );
       addRefs('factions', factionsTerm, ctx.factions);
       addRefs('places', t('modals.connectedPlaces'), ctx.places);
       addRefs('journeys', t('nav.journeys'), ctx.routes);
@@ -397,6 +412,7 @@ export function EntityPage({
       }
       addRefs('leaders', t('seoPages.fact.leaders'), idRefs('character', f.leaderIds));
       addRefs('members', t('seoPages.fact.members'), ctx.characters.filter((r) => !f.leaderIds?.includes(r.id)));
+      eventsSection('events', t('modals.relatedEvents'), ctx.events.map((r) => r.id));
       addRefs('places', t('modals.connectedPlaces'), ctx.places);
       addRefs('arcs', t('modals.relatedArcs'), ctx.arcs);
       addRefs('journeys', t('nav.journeys'), ctx.routes);

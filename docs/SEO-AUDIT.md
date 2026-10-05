@@ -57,3 +57,50 @@ headless (`npm run smoke`) e axe (`npm run audit:a11y`). Architettura in
   Appena tradotte diventano indicizzabili senza modifiche al codice.
 - Arricchire le entità sotto soglia (soprattutto luoghi minori e tecniche HxH).
 - Verificare in Search Console dopo il deploy (checklist in `SEO.md` §14).
+
+---
+
+## Audit di indicizzabilità — ottobre 2026
+
+Audit dell'architettura con ~7.000 URL indicizzabili (8 mondi disponibili, IT+EN), eseguito sull'HTML di build reale
+(`dist/`), con il server che emula Vercel e confrontato con la documentazione ufficiale di Google Search Central.
+Esito: **HEALTHY WITH MINOR FIXES**.
+
+### Inventario URL (dopo le correzioni)
+
+| Famiglia di route | URL | Indicizzabili | In sitemap | Decisione |
+| --- | --- | --- | --- | --- |
+| `/{lang}`, `/about`, `/support` | 6 | 6 | 6 | A · KEEP |
+| `/privacy`, `/cookie-policy` | 4 | 0 | 0 | C · KEEP (`noindex, follow`) |
+| `/{lang}/{world}` (disponibili / in arrivo) | 16 / 10 | 16 / 0 | 16 / 0 | A / C · KEEP |
+| `/map`, `/timeline`, indici di categoria | 144 | 144 | 144 | A · KEEP |
+| `/timeline/page/N`, `/locations/page/N` | 6 | 6 | 6 | A · KEEP (auto-canoniche, link sequenziali) |
+| `/characters/{slug}` | 2916 | 2712 | 2712 | A (204 sotto soglia → C) |
+| `/locations/{slug}` | 1786 | 1230 | 1230 | A (556 → C) |
+| `/abilities/{slug}` | 1524 | 1450 | 1450 | A (74 → C) · G per la coda sottile |
+| `/factions/{slug}` | 602 | 580 | 580 | A (22 → C) |
+| `/arcs/{slug}` | 354 | 354 | 354 | A |
+| `/regions/{slug}` | 186 | 116 | 116 | A (70 → C) |
+| `/journeys/{slug}` scritti a mano | 304 | 294 | 294 | A (10 → C) |
+| `/journeys/{slug}` **derivati** | 200 | — | 0 | **D** · canonical → pagina del protagonista |
+| Query (`?…`), slash finale, maiuscole, slug inesistenti, `/page/1` | — | — | — | robots `Disallow: /*?` · 308 · 404 · 404 |
+
+### Correzioni applicate
+
+1. **`lastmod` rimosso dalle sitemap** (HIGH): era la data dell'ultimo commit su `src/data/<world>`, uguale per
+   tutte le URL di un mondo; nei clone shallow delle build CI diventava la data di un commit qualsiasi (verificato:
+   depth 1 → il commit `chore(social)` del deploy). Google usa `lastmod` solo se accurato per la pagina.
+2. **Eventi sulle pagine personaggio e fazione** (MEDIUM): 950/1458 personaggi e 147/301 fazioni partecipano a eventi
+   della timeline che la scheda interattiva mostrava ma la pagina SEO no (e che il gate di qualità contava già). Ora
+   la pagina li elenca (periodo, luogo, descrizione, link alla timeline), esclusi gli scontri già in "Battaglie".
+   Contenuto specifico mediano dei personaggi: 380 → 608 caratteri.
+3. **Percorsi derivati canonicalizzati** (MEDIUM): i 100 cammini generati da `autoJourneys` (200 URL) sono la stessa
+   sequenza di eventi/luoghi della pagina del protagonista, con descrizione da template; ora `rel=canonical` →
+   personaggio, fuori da sitemap e hreflang, pagina invariata per gli utenti.
+
+### Non applicato (di proposito)
+
+- Nessun noindex di massa né soglie più severe: le pagine sotto soglia sono già `noindex, follow` e fuori sitemap;
+  la coda sottile indicizzata (es. tecniche con una frase e 1–2 utilizzatori) va **arricchita nei dati**, non
+  nascosta o allungata con testo di riempimento.
+- Nessun `rel=prev/next`, nessun noindex sulla paginazione, nessuno structured data aggiuntivo.

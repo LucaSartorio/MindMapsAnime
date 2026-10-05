@@ -13,7 +13,6 @@
  * redirect per gli slug rinominati, `sitemap*.xml`, `robots.txt`, `llms.txt`.
  * Nessun file è scritto a mano: tutto deriva da dataset + `src/seo/`.
  */
-import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -79,16 +78,6 @@ function criticalFonts(): string[] {
     .map((f) => `/assets/${f}`);
 }
 
-/** Data (YYYY-MM-DD) dell'ultimo commit che ha toccato un path: `lastmod` reale. */
-function gitDate(path: string): string | undefined {
-  try {
-    const out = execFileSync('git', ['log', '-1', '--format=%cs', '--', path], { cwd: ROOT, encoding: 'utf8' }).trim();
-    return /^\d{4}-\d{2}-\d{2}$/.test(out) ? out : undefined;
-  } catch {
-    return undefined;
-  }
-}
-
 /* --------------------------------- main ---------------------------------- */
 
 async function main() {
@@ -146,12 +135,13 @@ async function main() {
   let written = 0;
   const t0 = Date.now();
   // Riepilogo di indicizzazione per lingua (report di build): indicizzabili /
-  // esclusi con motivo (legal_page, coming_soon, thin_content, not_translated).
+  // esclusi con motivo (legal_page, coming_soon, thin_content, not_translated,
+  // canonicalized = `index` ma canonical verso la risorsa principale).
   const summary = new Map<string, { indexable: number; excluded: Map<string, number> }>();
   for (const r of pages) {
     const s = summary.get(r.lang) ?? { indexable: 0, excluded: new Map<string, number>() };
     summary.set(r.lang, s);
-    const reason = entry.noindexReason(r);
+    const reason = entry.noindexReason(r) ?? (entry.canonicalTargetPath(r) ? 'canonicalized' : null);
     if (reason === null) s.indexable++;
     else s.excluded.set(reason, (s.excluded.get(reason) ?? 0) + 1);
   }
@@ -196,16 +186,14 @@ async function main() {
     writeFileSync(file, html, 'utf8');
   }
 
-  // Sitemap (index + una per gruppo) con lastmod REALE dei dati del mondo.
-  const worldDates = new Map<string, string | undefined>();
-  const lastmodFor = (r: ResolvedPage) => {
-    const p = r.page;
-    const slug = p.kind === 'world' ? p.world.slug : 'dataset' in p && p.dataset ? p.dataset.world.slug : undefined;
-    if (!slug || !datasets.has(slug)) return undefined;
-    if (!worldDates.has(slug)) worldDates.set(slug, gitDate(`src/data/${slug}`));
-    return worldDates.get(slug);
-  };
-  const sitemaps = entry.buildSitemaps(pages, lastmodFor);
+  // Sitemap (index + una per gruppo) SENZA `lastmod`: non esiste una data di
+  // modifica verificabile PER URL. La data dell'ultimo commit di
+  // `src/data/<world>` marcava come modificate tutte le pagine di un mondo a
+  // ogni ritocco di una sola entità, e nei clone shallow delle build CI
+  // diventava la data di un commit qualsiasi (anche estraneo ai dati). Google
+  // usa `lastmod` solo se "consistently and verifiably accurate": meglio
+  // ometterlo che fornirne uno impreciso (vedi docs/SEO.md §8).
+  const sitemaps = entry.buildSitemaps(pages);
   for (const s of sitemaps) writeFileSync(join(DIST, s.file), s.xml, 'utf8');
 
   // robots.txt — generato dalla stessa config (prefissi tecnici, sitemap).
@@ -250,7 +238,7 @@ async function main() {
   );
   for (const [lang, s] of summary) {
     const ex = [...s.excluded].map(([k, n]) => `${k} ${n}`).join(', ') || 'nessuno';
-    console.log(`[prerender]   /${lang}: ${s.indexable} indicizzabili · noindex: ${ex}`);
+    console.log(`[prerender]   /${lang}: ${s.indexable} indicizzabili · fuori sitemap: ${ex}`);
   }
 }
 

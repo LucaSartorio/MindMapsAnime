@@ -12,8 +12,10 @@ import { buildPageMeta, type ResolvedPage } from './metadata';
  *
  * Contengono SOLO URL canonici, indicizzabili (niente noindex, niente route
  * tecniche, niente query), con le alternative hreflang (`xhtml:link`).
- * `lastmod` è incluso solo se il chiamante fornisce una data REALE (es. ultimo
- * commit dei dati del mondo): mai la data della build.
+ * `lastmod` è incluso solo se il chiamante fornisce una data REALE e
+ * VERIFICABILE PER URL (ultima modifica significativa di QUELLA pagina): mai la
+ * data della build né una data condivisa da un intero mondo. Oggi il
+ * pre-rendering non ne passa (nessuna fonte per-URL affidabile).
  */
 export interface SitemapFile {
   file: string;
