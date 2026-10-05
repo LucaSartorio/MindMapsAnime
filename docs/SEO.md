@@ -102,11 +102,17 @@ scripts/prerender.ts · scripts/seo-check.ts · scripts/test-seo.ts · scripts/s
 
 ### Lingue
 
-`SEO_LOCALES = ['it', 'en']` = le lingue in cui i dataset sono **scritti**
-(`SOURCE_LOCALES`). Giapponese, francese, tedesco e spagnolo traducono
-l'interfaccia ma ricadono sull'inglese per i contenuti: dare loro URL propri
-creerebbe quasi-duplicati. Restano una preferenza client applicata sugli URL
-`/en` (il selettore lingua porta alla stessa pagina nella lingua URL corretta).
+`SEO_LOCALES = ['it', 'en', 'es']`. Italiano e inglese sono le lingue in cui i
+dataset sono **scritti** (`SOURCE_LOCALES`): ogni mondo esiste in entrambe.
+Lo **spagnolo** ha home e pagine informative proprie (l'interfaccia è tradotta),
+ma un **mondo** esiste in `/es` solo se il suo dataset è tradotto
+(`AnimeWorld.translatedLocales` + overlay `src/data/<slug>/i18n/es.ts`, vedi
+docs/I18N.md); per gli altri mondi i link costruiti in spagnolo ricadono su
+`/en` (`worldPath` → `seoLocaleFor`) e `/es/<mondo>` è un 404. Una pagina entità
+`/es` è indicizzabile solo se OGNI suo testo è tradotto. Giapponese, francese e
+tedesco restano lingue solo-UI applicate sugli URL `/en`: dare loro URL propri
+senza contenuti tradotti creerebbe quasi-duplicati. Il selettore lingua porta
+alla stessa pagina nella lingua URL corretta per quella pagina.
 
 ---
 

@@ -14,7 +14,7 @@
  * euristici (testo EN che sembra italiano e simili).
  */
 import { animeWorlds } from '../src/data/worlds';
-import { hasWorldDataset, loadWorldDataset } from '../src/data/registry';
+import { hasWorldDataset, loadWorldDatasetWithTranslations, worldTranslationLocales } from '../src/data/registry';
 import { getLocalizedText } from '../src/utils/localization';
 import { validateUiKeys, validateDatasetI18n, datasetCoverage } from '../src/utils/validateI18n';
 import { SUPPORTED_LOCALES, type SupportedLocale } from '../src/types/i18n';
@@ -26,7 +26,7 @@ const strict = process.argv.includes('--strict');
 const datasets: Array<[string, WorldDataset]> = [];
 for (const w of animeWorlds) {
   if (w.status !== 'available' || !hasWorldDataset(w.slug)) continue;
-  const d = await loadWorldDataset(w.slug);
+  const d = await loadWorldDatasetWithTranslations(w.slug); // con gli overlay (es)
   if (d) datasets.push([getLocalizedText(w.title, 'en'), d]);
 }
 
@@ -53,6 +53,17 @@ for (const [label, ds] of datasets) {
   for (const w of r.warnings.slice(0, 15)) lines.push(`  [WARN] ${w.code} · ${w.message}`);
   if (r.warnings.length > 15) lines.push(`  … altri ${r.warnings.length - 15} warning`);
 }
+lines.push('');
+// Lingue pubblicate con URL propri (es): il mondo deve avere l'overlay registrato.
+lines.push('--- Lingue aggiuntive pubblicate (bloccante: overlay registrato) ---');
+for (const w of animeWorlds) {
+  for (const l of w.translatedLocales ?? []) {
+    const ok = worldTranslationLocales(w.slug).includes(l);
+    if (!ok) blocking++;
+    lines.push(`${ok ? '[ OK ]' : '[ERR ]'} ${w.slug} · ${l}${ok ? '' : ` · manca src/data/${w.slug}/i18n/${l}.ts in worldTranslationLoaders (src/data/registry.ts)`}`);
+  }
+}
+lines.push('Stato dettagliato (mancanti, obsolete, orfane): npm run i18n:status');
 lines.push('');
 lines.push('Nuovo contenuto? Ogni campo narrativo va scritto come { it: "…", en: "…" }');
 lines.push('(schema: src/utils/localizableFields.ts). Una stringa semplice = solo italiano.');

@@ -58,7 +58,7 @@ export function initialLocale(): SupportedLocale {
 }
 
 /**
- * Risorse UI: IT/EN (lingue con URL indicizzabili, servono anche al
+ * Risorse UI: IT/EN (lingue sorgente dei dati, servono anche al
  * pre-rendering) sono nel bundle iniziale; le altre lingue sono chunk separati
  * caricati on-demand da `ensureLocaleResources` — chi naviga in italiano o
  * inglese non scarica ~150 KB di traduzioni che non usa.

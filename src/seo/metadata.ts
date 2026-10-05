@@ -10,7 +10,8 @@ import type {
   StoryArc,
   WorldDataset,
 } from '@/types';
-import type { SupportedLocale } from '@/types/i18n';
+import { SOURCE_LOCALES, type SupportedLocale } from '@/types/i18n';
+import { isFullyTranslated } from '@/data/shared/translations';
 import { findWorldByUrlSlug, getWorldUrlSlug } from '@/data/worlds';
 import { getEntityDisplayName, getLocalizedText, getLocationTypeLabel } from '@/utils/localization';
 import { getAbilityTerm, getFactionsTerm, humanizeId } from '@/lib/worldConfig';
@@ -22,6 +23,7 @@ import {
   SEO_LOCALE_META,
   SITE,
   X_DEFAULT_LOCALE,
+  worldHasSeoLocale,
   type SeoLocale,
 } from './config';
 import {
@@ -125,6 +127,8 @@ export function resolveSeoPath(
   if (parsed.kind === 'static') return wrap({ kind: 'static', page: parsed.page });
 
   const world = parsed.world;
+  // Un mondo non tradotto non ha pagine nelle lingue aggiuntive (`/es/...`).
+  if (!worldHasSeoLocale(world, lang)) return null;
   const dataset = world.status === 'available' ? getDataset(world.slug) : undefined;
   if (parsed.kind === 'world') return wrap({ kind: 'world', world, dataset });
   // Le sottopagine esistono solo per i mondi con dataset.
@@ -350,16 +354,32 @@ function ogImageFor(): { image: string; alt: string } {
  */
 const PLAIN_STRING_LOCALE: SeoLocale = 'it';
 
-/** Il testo principale dell'entità esiste DAVVERO in questa lingua (non per fallback)? */
+/**
+ * Il testo dell'entità esiste DAVVERO in questa lingua (non per fallback)?
+ *
+ * - Lingue sorgente (it/en): basta il testo principale (descrizione breve).
+ * - Lingue aggiuntive (es): OGNI campo `Localizable` dell'entità deve essere
+ *   tradotto — una pagina spagnola con metà dei testi in inglese non è una
+ *   pagina spagnola. Un'entità aggiunta ai dati senza traduzione resta quindi
+ *   `noindex` in `/es` finché l'overlay non la copre (nessuna build rotta).
+ */
 export function isTranslatedIn(dataset: WorldDataset, category: SeoCategory, id: string, lang: SeoLocale): boolean {
   const e = getSeoEntity(dataset, category, id) as
     | { shortDescription?: Localizable; description?: Localizable }
     | undefined;
+  if (!(SOURCE_LOCALES as readonly string[]).includes(lang)) return !!e && isFullyTranslated(e, lang);
   const v = e?.shortDescription ?? e?.description;
   if (v == null) return lang === PLAIN_STRING_LOCALE;
   if (typeof v === 'string') return lang === PLAIN_STRING_LOCALE;
   const exact = (v as Partial<Record<SeoLocale, string>>)[lang];
   return !!exact && exact.trim() !== '';
+}
+
+/** La pagina esiste in questa lingua URL? (pagine di mondo: solo se il mondo è tradotto). */
+export function pageExistsIn(resolved: ResolvedPage, lang: SeoLocale): boolean {
+  const p = resolved.page;
+  if (p.kind === 'home' || p.kind === 'static') return true;
+  return worldHasSeoLocale(p.kind === 'world' ? p.world : p.dataset.world, lang);
 }
 
 /**
@@ -409,7 +429,9 @@ export function noindexReason(resolved: ResolvedPage): NoindexReason | null {
     case 'world':
       return page.dataset ? null : 'coming_soon'; // i mondi "in arrivo" non hanno ancora contenuto
     case 'entity':
-      if (!SEO_LOCALES.some((l) => entityQuality(page.dataset, page.category, page.id, l).indexable)) {
+      // Soglia sul testo SORGENTE (it/en): una traduzione più lunga non deve
+      // rendere indicizzabile una pagina povera di contenuto.
+      if (!SOURCE_LOCALES.some((l) => entityQuality(page.dataset, page.category, page.id, l as SeoLocale).indexable)) {
         return 'thin_content';
       }
       return isTranslatedIn(page.dataset, page.category, page.id, lang) ? null : 'not_translated';
@@ -426,7 +448,7 @@ export function noindexReason(resolved: ResolvedPage): NoindexReason | null {
  */
 function alternatesFor(resolved: ResolvedPage, indexable: boolean): HreflangAlternate[] {
   if (!indexable) return [];
-  const langs = SEO_LOCALES.filter((l) => isIndexable({ ...resolved, lang: l }));
+  const langs = SEO_LOCALES.filter((l) => pageExistsIn(resolved, l) && isIndexable({ ...resolved, lang: l }));
   const xDefault = langs.includes(X_DEFAULT_LOCALE) ? X_DEFAULT_LOCALE : langs[0];
   return [
     ...langs.map((l) => ({ hreflang: SEO_LOCALE_META[l].hreflang, href: absoluteUrl(swapLangInPath(resolved.path, l)) })),

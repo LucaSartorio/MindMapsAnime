@@ -2,7 +2,7 @@ import type { SeoLocale } from './config';
 
 /**
  * Testi dei METADATI SEO (title, description, breadcrumb JSON-LD) nelle lingue
- * con URL indicizzabili. Sono una mappa locale `LocalizedText` (consentita da
+ * con URL indicizzabili (`SEO_LOCALES`: it, en, es). Sono una mappa locale `LocalizedText` (consentita da
  * CLAUDE.md): i metadati seguono la lingua dell'URL, non quella dell'interfaccia,
  * così `<title>`, canonical e hreflang dicono sempre la stessa cosa.
  *
@@ -244,5 +244,93 @@ export const SEO_STRINGS: Record<SeoLocale, SeoStrings> = {
     abilityTail: (name, w) => `Who uses ${name} and which ${w} characters and factions it is connected to.`,
     region: (name, w) => `${name} — ${w} Region: Locations & Map`,
     regionTail: (name, w) => `Locations, factions and story arcs of ${name} on the interactive ${w} map.`,
+  },
+  es: {
+    home: {
+      title: 'AniMapVerse — Mapas interactivos de mundos de anime y manga',
+      description:
+        'AniMapVerse es un atlas interactivo del anime y el manga: mapas, lugares, personajes, arcos, facciones y recorridos de Naruto, One Piece, Hunter x Hunter y más.',
+    },
+    about: {
+      title: 'Qué es AniMapVerse',
+      description:
+        'AniMapVerse es un proyecto independiente que convierte los mundos de anime y manga en mapas interactivos y conectados: arquitectura, fuentes y objetivos del proyecto.',
+    },
+    support: {
+      title: 'Apoya AniMapVerse',
+      description:
+        'AniMapVerse es gratuito y sin publicidad. Descubre cómo apoyar el proyecto y ayudar a añadir nuevos mundos, mapas y funciones.',
+    },
+    privacy: {
+      title: 'Política de privacidad',
+      description: 'Política de privacidad de AniMapVerse conforme al RGPD (Reglamento UE 2016/679).',
+    },
+    cookies: {
+      title: 'Política de cookies',
+      description: 'Política de cookies de AniMapVerse: cookies técnicas y de análisis, gestión del consentimiento.',
+    },
+    notFound: {
+      title: 'Página no encontrada',
+      description: 'La página que buscas no existe o se ha movido.',
+    },
+    crumbHome: 'Inicio',
+    cat: {
+      characters: 'Personajes',
+      locations: 'Lugares',
+      factions: 'Facciones',
+      arcs: 'Arcos argumentales',
+      journeys: 'Recorridos',
+      regions: 'Regiones',
+      timeline: 'Cronología',
+      map: 'Mapa interactivo',
+    },
+    page: (n) => `Página ${n}`,
+    world: (w) => `Mapa interactivo de ${w}: lugares, personajes y recorridos`,
+    worldDesc: (w, s) => `${s} Explora el mapa interactivo de ${w} en AniMapVerse.`,
+    worldSoon: (w) => `${w} — mapa interactivo próximamente`,
+    worldSoonDesc: (w) => `El mapa interactivo de ${w} está en preparación en AniMapVerse.`,
+    map: (w) => `Mapa del mundo de ${w} — explora el mapa interactivo`,
+    mapDesc: (w, p, j) =>
+      `Explora el mapa interactivo del mundo de ${w}: ${p} lugares, ${j} recorridos de personajes, una cronología de eventos y filtros por arco argumental y facción.`,
+    characters: (w) => `Personajes de ${w}: fichas, lugares y arcos argumentales`,
+    charactersDesc: (w, n) =>
+      `Los ${n} personajes de ${w} en AniMapVerse: roles, afiliaciones, lugares relacionados, arcos argumentales y recorridos en el mapa interactivo.`,
+    locations: (w) => `Lugares de ${w} en el mapa interactivo`,
+    locationsDesc: (w, n) =>
+      `Los ${n} lugares de ${w} — aldeas, ciudades, regiones y lugares emblemáticos — con su historia y su posición en el mapa interactivo.`,
+    factions: (w, t) => `${t} de ${w}: miembros, lugares y arcos`,
+    factionsDesc: (w, t, n) =>
+      `${n} ${t.toLowerCase()} de ${w}: líderes, miembros, territorios y los arcos argumentales en los que aparecen, conectados al mapa interactivo.`,
+    arcs: (w) => `Arcos argumentales de ${w}: eventos y lugares`,
+    arcsDesc: (w, n) =>
+      `Los ${n} arcos argumentales de ${w} en orden cronológico, con los eventos, personajes y lugares de cada arco en el mapa interactivo.`,
+    journeys: (w) => `Recorridos de los personajes de ${w} en el mapa`,
+    journeysDesc: (w, n) =>
+      `${n} recorridos de ${w} etapa por etapa: sigue los viajes de los protagonistas por los lugares del mundo en el mapa interactivo.`,
+    abilities: (w, t) => `${t} de ${w}: lista y usuarios`,
+    abilitiesDesc: (w, t, n) => `${n} entradas de ${t} en ${w}: descripciones, categorías y los personajes que las usan.`,
+    regions: (w) => `Regiones y territorios de ${w}`,
+    regionsDesc: (w, n) =>
+      `Las ${n} regiones y territorios del mundo de ${w}, con los lugares que contienen y su posición en el mapa interactivo.`,
+    timeline: (w) => `Cronología de ${w}: los eventos en orden`,
+    timelineDesc: (w, n) =>
+      `La cronología de ${w} en ${n} eventos: dónde y cuándo ocurren, con los arcos argumentales y los lugares relacionados en el mapa interactivo.`,
+    character: (name, w, j) =>
+      j ? `${name}: recorrido y lugares — mapa de ${w}` : `${name} — personaje de ${w}, lugares y arcos`,
+    characterTail: (name, w) =>
+      `Descubre los lugares, los arcos argumentales y las conexiones de ${name} en el mapa interactivo de ${w}.`,
+    location: (name, type, w) => `${name} (${type}) — mapa interactivo de ${w}`,
+    locationTail: (name, w) =>
+      `Personajes, eventos y arcos ligados a ${name} y su posición en el mapa interactivo de ${w}.`,
+    faction: (name, type, w) => `${name} (${type}) — ${w}: miembros y lugares`,
+    factionTail: (name, w) => `Miembros, lugares y arcos argumentales de ${name} en el mundo de ${w}.`,
+    arc: (name, w) => `${name} — arco argumental de ${w}: eventos y lugares`,
+    arcTail: (name, w) => `Eventos, personajes y lugares del arco ${name} en el mapa interactivo de ${w}.`,
+    journey: (name, w) => `${name} — recorrido en el mapa de ${w}`,
+    journeyTail: (steps, w) => `Sigue el recorrido etapa por etapa (${steps} etapas) en el mapa interactivo de ${w}.`,
+    ability: (name, term, w) => `${name} — ${term} de ${w}`,
+    abilityTail: (name, w) => `Quién usa ${name} y con qué personajes y facciones de ${w} está conectada.`,
+    region: (name, w) => `${name} — región de ${w}: lugares y mapa`,
+    regionTail: (name, w) => `Lugares, facciones y arcos de ${name} en el mapa interactivo de ${w}.`,
   },
 };

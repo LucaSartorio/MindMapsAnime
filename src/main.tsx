@@ -4,7 +4,7 @@ import App from './App';
 import { ensureLocaleResources, initialLocale } from './i18n'; // inizializza i18next
 import { setLocaleNow } from './store/useLocaleStore';
 import { preloadRoute } from './routes/lazyPages';
-import { langFromPath } from './seo/paths';
+import { langFromPath, worldOfPath } from './seo/paths';
 import { seoLocaleFor } from './seo/config';
 import type { SupportedLocale } from './types/i18n';
 // Font self-hosted (privacy: nessuna richiesta a Google Fonts CDN → nessun IP
@@ -24,14 +24,18 @@ import './styles/globals.css';
  * Lingua del primo render:
  *  - l'URL (`/it`, `/en`) decide la lingua dei CONTENUTI;
  *  - la preferenza salvata (o del browser) vale se è compatibile con l'URL
- *    (es. giapponese su `/en/...`, perché ja ricade sull'inglese);
+ *    (es. giapponese su `/en/...`, perché ja ricade sull'inglese; spagnolo su
+ *    `/en/...` solo per i mondi non tradotti in spagnolo);
  *  - altrimenti si usa la lingua dell'URL, senza sovrascrivere la preferenza.
  */
 function initialUiLocale(): SupportedLocale {
-  const urlLang = langFromPath(window.location.pathname);
+  const { pathname } = window.location;
+  const urlLang = langFromPath(pathname);
   const preferred = initialLocale();
   if (!urlLang) return preferred;
-  return seoLocaleFor(preferred) === urlLang ? preferred : urlLang;
+  // Compatibilità valutata sul mondo dell'URL: lo spagnolo su `/en/bleach`
+  // (mondo non tradotto) è compatibile, su `/en/naruto` (che ha `/es`) no.
+  return seoLocaleFor(preferred, worldOfPath(pathname)) === urlLang ? preferred : urlLang;
 }
 
 async function boot() {
@@ -40,7 +44,7 @@ async function boot() {
   // primo render client coincide con l'HTML pre-renderizzato (idratazione).
   await Promise.all([
     ensureLocaleResources(locale).catch(() => undefined),
-    preloadRoute(window.location.pathname),
+    preloadRoute(window.location.pathname, locale),
   ]);
   setLocaleNow(locale);
 

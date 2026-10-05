@@ -36,6 +36,9 @@ npm run preview          # Vite preview (NB: answers 200 to ANY path — use pre
 npm run validate:data    # validate ALL registered datasets; exits 1 on integrity errors
 npm run validate:i18n    # UI keys aligned in all 6 locales + every dataset Localizable field is { it, en } (blocking)
 npm run seo:slugs        # freeze published SEO slugs into src/data/<world>/slugs.ts (`-- --check` = verify only)
+npm run i18n:status      # dataset translation overlays (es): coverage, missing, stale, orphan keys (docs/I18N.md)
+npm run i18n:extract -- --world naruto --locale es --out tmp/todo.json   # texts to translate (missing + stale)
+npm run i18n:merge -- --world naruto --locale es --from tmp/es.json      # write src/data/<world>/i18n/es.ts + es.meta.json
 npm run extract:boundaries  # regenerate Naruto nation boundary SVG paths from the world PNG
 npm run find:dots        # detect the red village-marker dots in the Naruto PNG, print flow coords
 npm run social:validate  # INTERNAL social video engine: typecheck + engine/pipeline tests (see "Social engine")
@@ -476,7 +479,7 @@ needs them); `ja/fr/de/es` are lazy chunks loaded by `ensureLocaleResources` (`L
 UI preference is applied only when compatible (e.g. `ja` on `/en`), see `src/main.tsx`.
 
 **Source vs UI languages.** Datasets are authored only in the `SOURCE_LOCALES` (`it`/`en`); the four
-newer languages translate the *interface*. `LOCALE_FALLBACKS` defines the per-language cascade
+newer languages translate the *interface* (Spanish also has dataset overlays for the worlds published in `/es`). `LOCALE_FALLBACKS` defines the per-language cascade
 (`ja|fr|de|es` → `en` → `it`), so an untranslated dataset field renders in English rather than
 Italian. The i18n validator therefore only requires `it`/`en` on `Localizable` fields.
 
@@ -509,6 +512,17 @@ unchanged, which is the intended behaviour — adding a tag to a dataset needs n
 `Localizable` fields are translated in each language, plus how many entities carry a `japaneseName`.
 Dataset coverage is *informative*, not blocking: narrative content is authored in IT/EN and the other
 languages fall back to English. The UI-key check is the blocking part.
+
+**Dataset translation overlays (es).** A non-source language with its own URLs gets its dataset text from
+`src/data/<slug>/i18n/<locale>.ts` (key = path of the `Localizable`, array items addressed by `id`, e.g.
+`characters[char-naruto].shortDescription`; plain descriptive names via `factions[clan-uchiha].name`), a lazy chunk
+applied in place by `ensureWorldTranslation` (`src/data/registry.ts`, engine in `src/data/shared/translations.ts`) —
+pre-render and scripts use `loadWorldDatasetWithTranslations`, the client applies it in `preloadRoute`/`WorldRoute`
+before rendering. Never edit dataset files to add `es`; use `npm run i18n:extract` → translate → `npm run i18n:merge`
+(`.meta.json` fingerprints the English source so `i18n:status` flags stale translations). An `/es` entity page is
+indexable only if EVERY text of the entity is translated; thin-content is measured on the source text. Publishing a
+world = 100% overlay + loader in `worldTranslationLoaders` + `translatedLocales: ['es']` in `worlds.ts`. Full guide:
+`docs/I18N.md`.
 
 **Adding a language:** add the code to `SUPPORTED_LOCALES` + its `LOCALE_META`/`LOCALE_FALLBACKS`
 entries (`src/types/i18n.ts`), create `src/i18n/resources/<code>.ts`, register it in
@@ -557,8 +571,11 @@ AniMapVerse is **SEO-first**: every public page is pre-rendered (SSG) into real 
 metadata, and every indexable entity has a stable URL. The whole layer lives in `src/seo/` and is
 **data-driven**: never hand-write SEO for a single world/entity/page.
 
-- **URLs** (`src/seo/paths.ts`): `/{lang}/{world}/{category}/{slug}` with `lang ∈ it|en`
-  (`SEO_LOCALES` = dataset source languages; ja/fr/de/es are UI-only and live on `/en`), English
+- **URLs** (`src/seo/paths.ts`): `/{lang}/{world}/{category}/{slug}` with `lang ∈ it|en|es`
+  (`SEO_LOCALES`; it/en = dataset source languages, every world exists in both; **es** has its own home/
+  static pages but a world exists in `/es` only if listed in `AnimeWorld.translatedLocales` with a
+  translation overlay — otherwise `worldPath('es', w)` falls back to `/en` and `/es/<world>` is a 404;
+  ja/fr/de are UI-only and live on `/en`. See docs/I18N.md), English
   segments for both languages, lowercase, no trailing slash, no query. Build every internal link
   with the path helpers (`worldPath`, `mapPath`, `categoryPath`, `entityPath`, `refPath` for graph
   refs) + `useSeoLang()`. Never concatenate `/worlds/...` or use `world.slug` in a URL.

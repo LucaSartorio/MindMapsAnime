@@ -28,6 +28,18 @@
     },
     {
       "source": "/",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^es.*"
+        }
+      ],
+      "destination": "/es",
+      "permanent": false
+    },
+    {
+      "source": "/",
       "destination": "/en",
       "permanent": false
     },
