@@ -6,6 +6,7 @@ import {
   getChakraNatureLabel,
   getCharacterImportanceLabel,
   getCharacterStatusLabel,
+  getLocalizedArray,
   getLocalizedText,
   getRaceLabel,
   getTransformationKindLabel,
@@ -159,7 +160,7 @@ export function CharacterDetailsModal({
             </Badge>
           )}
           {character.rank && (
-            <Badge className="capitalize">{character.rank}</Badge>
+            <Badge className="capitalize">{getLocalizedText(character.rank, locale)}</Badge>
           )}
           {character.importance && (
             <Badge>{getCharacterImportanceLabel(character.importance, locale)}</Badge>
@@ -223,7 +224,7 @@ export function CharacterDetailsModal({
       )}
       {character.aliases && character.aliases.length > 0 && (
         <p className="text-xs text-ink-400 italic">
-          {t('modals.aliases', { aliases: character.aliases.join(' · ') })}
+          {t('modals.aliases', { aliases: getLocalizedArray(character.aliases, locale).join(' · ') })}
         </p>
       )}
       <p className="leading-relaxed">
@@ -336,7 +337,7 @@ export function CharacterDetailsModal({
       {(character.kekkeiGenkai ?? []).length > 0 && (
         <Section title={t("modals.kekkeiGenkai")}>
           <div className="flex flex-wrap gap-1.5">
-            {character.kekkeiGenkai!.map((k) => (
+            {getLocalizedArray(character.kekkeiGenkai, locale).map((k) => (
               <Badge key={k} variant="danger">
                 {k}
               </Badge>

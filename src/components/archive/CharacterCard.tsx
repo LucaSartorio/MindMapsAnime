@@ -112,7 +112,7 @@ function CharacterCardComponent({
               {rankSystem.label(character.ninjaRank)}
             </Badge>
           ) : character.rank ? (
-            <Badge variant="accent">{character.rank}</Badge>
+            <Badge variant="accent">{getLocalizedText(character.rank, locale)}</Badge>
           ) : null}
           {character.abilityCategory && (
             <Badge variant="default">

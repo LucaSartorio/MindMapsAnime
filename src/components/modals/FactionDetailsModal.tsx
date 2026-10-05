@@ -7,8 +7,8 @@ import { EntityImage } from '@/components/common/EntityImage';
 import { ReferencePill } from '@/components/common/StatusPill';
 import { useUiStore } from '@/store';
 import { useLocaleStore } from '@/store/useLocaleStore';
-import { getLocalizedText, getEntityDisplayName } from '@/utils/localization';
-import { getAbilityTerm } from '@/lib/worldConfig';
+import { getLocalizedText, getEntityDisplayName, getFactionTypeLabel } from '@/utils/localization';
+import { getAbilityTerm, humanizeId } from '@/lib/worldConfig';
 import {
   findCharacter,
   findFaction,
@@ -83,7 +83,7 @@ export function FactionDetailsModal({
           fit="cover"
         />
       }
-      eyebrow={`${faction.type.replace('_', ' ')}`}
+      eyebrow={getFactionTypeLabel(faction.type, locale) || humanizeId(faction.type)}
       title={getLocalizedText(faction.localizedName, locale) || faction.name}
       badges={
         <>
@@ -97,11 +97,11 @@ export function FactionDetailsModal({
             }
             className="capitalize"
           >
-            {faction.type}
+            {getFactionTypeLabel(faction.type, locale) || humanizeId(faction.type)}
           </Badge>
           {village && <Badge>{getLocalizedText(village.localizedName, locale) || village.name}</Badge>}
           {faction.kekkeiGenkai && (
-            <Badge variant="danger">{faction.kekkeiGenkai}</Badge>
+            <Badge variant="danger">{getLocalizedText(faction.kekkeiGenkai, locale)}</Badge>
           )}
           {faction.referenceStatus && (
             <ReferencePill status={faction.referenceStatus} />

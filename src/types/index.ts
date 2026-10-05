@@ -129,6 +129,29 @@ export type Race =
   | 'tuffle'
   | 'machine_mutant'
   | 'cerealian'
+  | 'animal'
+  | 'monster'
+  | 'eldian'
+  | 'ackerman'
+  | 'marleyan'
+  | 'hizurian'
+  | 'shinigami'
+  | 'quincy'
+  | 'fullbringer'
+  | 'mod_soul'
+  | 'hollow'
+  | 'visored'
+  | 'bount'
+  | 'arrancar'
+  | 'cursed_corpse'
+  | 'cursed_spirit'
+  | 'incarnated'
+  | 'cursed_womb'
+  | 'shikigami'
+  | 'dwarf_hybrid'
+  | 'devil'
+  | 'elf'
+  | 'spirit'
   | 'unknown';
 
 /* ------------------------------ Jutsu ------------------------------ */
@@ -544,8 +567,12 @@ export interface Character extends SeoSlugFields {
    * si ricade su `japaneseName` (per il giapponese) e infine su `name`.
    */
   localizedName?: Localizable;
-  /** Soprannomi/varianti (es. "Yellow Flash", "Kyuubi no Naruto") */
-  aliases?: string[];
+  /**
+   * Soprannomi/varianti (es. "Yellow Flash", "Kyuubi no Naruto"). Un epiteto che
+   * cambia da lingua a lingua è un `{ it, en }`; una stringa semplice vale per
+   * tutte le lingue (è comunque traducibile dagli overlay: chiave `aliases[i]`).
+   */
+  aliases?: Localizable[];
   nameLocal?: string;
   japaneseName?: string;
   /** Importanza narrativa (filtra archivio personaggi) */
@@ -568,7 +595,8 @@ export interface Character extends SeoSlugFields {
   factionIds?: string[];
   /** Team specifici (Team 7, Team Guy, Sound Four, ...) */
   teamIds?: string[];
-  rank?: string;
+  /** Grado/titolo descrittivo libero (es. "Hokage (Settimo)"), mostrato se manca `ninjaRank`. */
+  rank?: Localizable;
   /**
    * Id del grado del personaggio (Naruto: grado ninja). String libera: ogni
    * mondo definisce i propri gradi e le etichette via `WorldConfig.characterRank`.
@@ -596,8 +624,8 @@ export interface Character extends SeoSlugFields {
   longDescription?: Localizable;
   /** Abilità o tecniche caratteristiche (free-text legacy) */
   abilities?: string[];
-  /** Kekkei Genkai posseduti */
-  kekkeiGenkai?: string[];
+  /** Kekkei Genkai posseduti (nomi mostrati: localizzabili) */
+  kekkeiGenkai?: Localizable[];
   /** Nature del chakra del personaggio. Se omesso, il selettore può
    * dedurlo dai jutsu collegati. Vedi `getCharacterChakraNatures`. */
   chakraNatures?: ChakraNature[];
@@ -660,7 +688,7 @@ export interface Faction extends SeoSlugFields {
   description: Localizable;
   longDescription?: Localizable;
   signatureAbilities?: string[];
-  kekkeiGenkai?: string;
+  kekkeiGenkai?: Localizable;
   /** Jutsu / tecniche firma del clan o fazione (riferimenti a Jutsu.id) */
   jutsuIds?: string[];
   /** Leader / capi noti */

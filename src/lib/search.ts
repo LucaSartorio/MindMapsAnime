@@ -207,7 +207,7 @@ export function searchDataset(
         kind: 'character',
         worldId: c.worldId,
         title: getEntityDisplayName(c, locale),
-        subtitle: c.rank,
+        subtitle: getLocalizedText(c.rank, locale) || undefined,
       },
       {
         // Il nome è cercabile in ogni sua forma: localizzata, originale,
@@ -217,7 +217,8 @@ export function searchDataset(
           c.name,
           c.nameLocal,
           c.japaneseName,
-          ...(c.aliases ?? []),
+          // Alias in tutte le lingue: si trova "Eremita porcellone" anche da /en.
+          ...(c.aliases ?? []).flatMap((a) => (typeof a === 'string' ? [a] : Object.values(a).filter((v): v is string => !!v))),
         ],
         descriptionCandidates: [getLocalizedText(c.shortDescription, locale)],
         tags: c.tags,

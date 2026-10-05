@@ -8,7 +8,8 @@ import { CardLink } from '@/components/seo/CardLink';
 import { entityPath } from '@/seo/paths';
 import { useSeoLang } from '@/seo/useSeoLang';
 import { useLocaleStore } from '@/store/useLocaleStore';
-import { getLocalizedText } from '@/utils/localization';
+import { getFactionTypeLabel, getLocalizedText } from '@/utils/localization';
+import { humanizeId } from '@/lib/worldConfig';
 
 interface ClanFactionCardProps {
   faction: Faction;
@@ -69,7 +70,7 @@ function ClanFactionCardComponent({
                 }
                 className="capitalize shrink-0"
               >
-                {faction.type}
+                {getFactionTypeLabel(faction.type, locale) || humanizeId(faction.type)}
               </Badge>
             </div>
             {faction.nameLocal && (
@@ -91,7 +92,7 @@ function ClanFactionCardComponent({
             </Badge>
           )}
           {faction.kekkeiGenkai && (
-            <Badge variant="danger">{faction.kekkeiGenkai}</Badge>
+            <Badge variant="danger">{getLocalizedText(faction.kekkeiGenkai, locale)}</Badge>
           )}
           {(faction.signatureAbilities ?? []).slice(0, 3).map((a) => (
             <Badge key={a} variant="ember">

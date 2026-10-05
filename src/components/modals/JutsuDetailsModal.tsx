@@ -1,11 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
 import { useLocaleStore } from '@/store/useLocaleStore';
-import { getLocalizedText, getEntityDisplayName } from '@/utils/localization';
+import { getAbilityClassificationLabel, getEntityDisplayName, getHandSealLabel, getLocalizedText } from '@/utils/localization';
 import {
   getAbilityAttribute,
   getAbilityCategoryLabel,
   getAbilityTerm,
+  humanizeId,
   worldShowsAbilityRank,
   worldShowsHandSeals,
 } from '@/lib/worldConfig';
@@ -117,7 +118,7 @@ export function JutsuDetailsModal({ dataset, jutsuId }: JutsuDetailsModalProps) 
             {jutsu.handSeals!.map((seal, i) => (
               <span key={`${seal}-${i}`} className="inline-flex items-center gap-1.5">
                 {i > 0 && <span aria-hidden className="text-ink-500">→</span>}
-                <span className="chip text-xs">{seal}</span>
+                <span className="chip text-xs">{getHandSealLabel(seal, locale)}</span>
               </span>
             ))}
           </div>
@@ -129,7 +130,7 @@ export function JutsuDetailsModal({ dataset, jutsuId }: JutsuDetailsModalProps) 
           <div className="flex flex-wrap gap-1.5">
             {jutsu.classification!.map((c) => (
               <Badge key={c} className="capitalize">
-                {c.replace(/_/g, ' ')}
+                {getAbilityClassificationLabel(c, locale) || humanizeId(c)}
               </Badge>
             ))}
           </div>

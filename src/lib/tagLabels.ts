@@ -19,7 +19,7 @@ import { humanizeId } from '@/lib/worldConfig';
  * a un dataset non richiede quindi di toccare questo file.
  */
 
-const TAG_LABELS: Record<string, Localizable> = {
+export const TAG_LABELS: Record<string, Localizable> = {
   /* --- Generi e temi (tag dei mondi) --- */
   shonen: { it: 'Shōnen', en: 'Shōnen', ja: '少年', fr: 'Shōnen', de: 'Shōnen', es: 'Shōnen' },
   azione: { it: 'Azione', en: 'Action', ja: 'アクション', fr: 'Action', de: 'Action', es: 'Acción' },
