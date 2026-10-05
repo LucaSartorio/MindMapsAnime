@@ -332,6 +332,40 @@
         }
       ]
     },
+    "character-journey:onepiece:monkey-d-luffy:part-01@en": {
+      "renderId": "character-journey:onepiece:monkey-d-luffy:part-01@en",
+      "contentId": "character-journey:onepiece:monkey-d-luffy:part-01",
+      "template": "characterJourney",
+      "anime": "onepiece",
+      "subject": "monkey-d-luffy",
+      "locale": "en",
+      "variant": null,
+      "segment": "part-01",
+      "segmentFingerprint": "c751f97b",
+      "createdAt": "2026-10-05T06:32:11.399Z",
+      "updatedAt": "2026-10-05T06:35:09.806Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-10-05T06:35:09.806Z",
+      "outputFile": "tools/social-engine/output/onepiece_monkey-d-luffy_character-journey_part-01_en.mp4",
+      "manifestFile": "tools/social-engine/output/onepiece_monkey-d-luffy_character-journey_part-01_en.manifest.json",
+      "sourceFile": "0008-onepiece_monkey-d-luffy_character-journey_part-01_en.json",
+      "durationSeconds": 30,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-37272886912-1",
+        "runId": "37272886912",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/37272886912",
+        "video": "videos/onepiece_monkey-d-luffy_character-journey_part-01_en.mp4",
+        "manifest": "manifests/onepiece_monkey-d-luffy_character-journey_part-01_en.manifest.json",
+        "sha256": "7692b66385a54366fc178c2d03776c13650e795b3cea5316be10b72763f228e3",
+        "expiresAt": "2026-11-04T06:35:09.806Z"
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-journey:onepiece:monkey-d-luffy@it": {
       "renderId": "character-journey:onepiece:monkey-d-luffy@it",
       "contentId": "character-journey:onepiece:monkey-d-luffy",

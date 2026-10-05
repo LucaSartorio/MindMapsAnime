@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-05T06:08:36.711Z",
+  "generatedAt": "2026-10-05T06:35:09.820Z",
   "locales": [
     "en",
     "it"
@@ -3616,13 +3616,28 @@
             "arcs": 5,
             "journeyArcs": 29
           },
-          "renderedLocales": [],
+          "renderedLocales": [
+            "en"
+          ],
           "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
-          "renderedBefore": false,
+          "renderedBefore": true,
           "publishedBefore": false,
-          "publication": []
+          "publication": [
+            {
+              "renderId": "character-journey:onepiece:monkey-d-luffy:part-01@en",
+              "locale": "en",
+              "variant": null,
+              "status": "notPublished",
+              "platforms": {
+                "instagram": "notScheduled",
+                "facebook": "notScheduled",
+                "tiktok": "notScheduled",
+                "youtube": "notScheduled"
+              }
+            }
+          ]
         },
         {
           "id": "character-journey:onepiece:monkey-d-luffy:part-02",
@@ -15476,15 +15491,47 @@
       "metricool"
     ],
     "summary": {
-      "rendered": 7,
+      "rendered": 8,
       "unavailable": 5,
-      "notPublished": 5,
+      "notPublished": 6,
       "scheduled": 0,
       "partiallyPublished": 1,
       "published": 1,
       "failed": 0
     },
-    "ready": [],
+    "ready": [
+      {
+        "renderId": "character-journey:onepiece:monkey-d-luffy:part-01@en",
+        "contentId": "character-journey:onepiece:monkey-d-luffy:part-01",
+        "anime": "onepiece",
+        "subject": "monkey-d-luffy",
+        "subjectName": "Monkey D. Luffy",
+        "locale": "en",
+        "variant": null,
+        "segment": "part-01",
+        "partNumber": 1,
+        "partCount": 5,
+        "renderedAt": "2026-10-05T06:35:09.806Z",
+        "durationSeconds": 30,
+        "publicationStatus": "notPublished",
+        "platforms": {
+          "instagram": "notScheduled",
+          "facebook": "notScheduled",
+          "tiktok": "notScheduled",
+          "youtube": "notScheduled"
+        },
+        "artifact": {
+          "name": "animapverse-social-render-37272886912-1",
+          "runId": "37272886912",
+          "runAttempt": "1",
+          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/37272886912",
+          "video": "videos/onepiece_monkey-d-luffy_character-journey_part-01_en.mp4",
+          "manifest": "manifests/onepiece_monkey-d-luffy_character-journey_part-01_en.manifest.json",
+          "sha256": "7692b66385a54366fc178c2d03776c13650e795b3cea5316be10b72763f228e3",
+          "expiresAt": "2026-11-04T06:35:09.806Z"
+        }
+      }
+    ],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",
