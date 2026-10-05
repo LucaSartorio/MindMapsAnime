@@ -88,6 +88,12 @@ export function getLoadedWorldDataset(slug: string): WorldDataset | undefined {
  */
 const worldTranslationLoaders: Record<string, Partial<Record<SupportedLocale, () => Promise<TranslationOverlay>>>> = {
   naruto: { es: () => import('@/data/naruto/i18n/es').then((m) => m.default) },
+  hunterxhunter: { es: () => import('@/data/hunterxhunter/i18n/es').then((m) => m.default) },
+  dragonball: { es: () => import('@/data/dragonball/i18n/es').then((m) => m.default) },
+  blackclover: { es: () => import('@/data/blackclover/i18n/es').then((m) => m.default) },
+  bleach: { es: () => import('@/data/bleach/i18n/es').then((m) => m.default) },
+  attackontitan: { es: () => import('@/data/attackontitan/i18n/es').then((m) => m.default) },
+  jujutsukaisen: { es: () => import('@/data/jujutsukaisen/i18n/es').then((m) => m.default) },
 };
 
 const appliedTranslations = new Set<string>();

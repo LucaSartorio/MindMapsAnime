@@ -140,6 +140,7 @@ export const animeWorlds: AnimeWorld[] = [
     id: 'world-hunterxhunter',
     slug: 'hunterxhunter',
     urlSlug: 'hunter-x-hunter',
+    translatedLocales: ['es'],
     title: {
       it: 'Hunter x Hunter',
       en: 'Hunter x Hunter',
@@ -346,6 +347,7 @@ export const animeWorlds: AnimeWorld[] = [
     id: 'world-dragonball',
     slug: 'dragonball',
     urlSlug: 'dragon-ball',
+    translatedLocales: ['es'],
     title: {
       it: 'Dragon Ball',
       en: 'Dragon Ball',
@@ -468,6 +470,7 @@ export const animeWorlds: AnimeWorld[] = [
     id: 'world-attackontitan',
     slug: 'attackontitan',
     urlSlug: 'attack-on-titan',
+    translatedLocales: ['es'],
     title: {
       it: 'L’Attacco dei Giganti',
       en: 'Attack on Titan',
@@ -577,6 +580,7 @@ export const animeWorlds: AnimeWorld[] = [
     id: 'world-bleach',
     slug: 'bleach',
     urlSlug: 'bleach',
+    translatedLocales: ['es'],
     title: {
       it: 'Bleach',
       en: 'Bleach',
@@ -900,6 +904,7 @@ export const animeWorlds: AnimeWorld[] = [
     id: 'world-jujutsukaisen',
     slug: 'jujutsukaisen',
     urlSlug: 'jujutsu-kaisen',
+    translatedLocales: ['es'],
     title: {
       it: 'Jujutsu Kaisen',
       en: 'Jujutsu Kaisen',
@@ -1076,6 +1081,7 @@ export const animeWorlds: AnimeWorld[] = [
     id: 'world-blackclover',
     slug: 'blackclover',
     urlSlug: 'black-clover',
+    translatedLocales: ['es'],
     title: {
       it: 'Black Clover',
       en: 'Black Clover',
