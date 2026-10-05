@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-05T06:48:23.848Z",
+  "generatedAt": "2026-10-05T16:32:03.358Z",
   "templates": {
     "characterJourney": {
       "byReason": {
@@ -2357,7 +2357,7 @@
           "anime": "onepiece",
           "subject": "donquijote-rosinante",
           "subjectId": "char-op-corazon",
-          "displayName": "Donquijote Rosinante",
+          "displayName": "Donquixote Rosinante",
           "reason": "single_location"
         },
         {
@@ -3260,7 +3260,7 @@
           "anime": "onepiece",
           "subject": "nettuno",
           "subjectId": "char-op-neptune",
-          "displayName": "Nettuno",
+          "displayName": "Neptune",
           "reason": "no_journey_data"
         },
         {
@@ -3274,7 +3274,7 @@
           "anime": "onepiece",
           "subject": "regina-otohime",
           "subjectId": "char-op-otohime",
-          "displayName": "Regina Otohime",
+          "displayName": "Queen Otohime",
           "reason": "no_journey_data"
         },
         {
@@ -4436,7 +4436,7 @@
           "anime": "onepiece",
           "subject": "barone-omatsuri",
           "subjectId": "char-op-baron-omatsuri",
-          "displayName": "Barone Omatsuri",
+          "displayName": "Baron Omatsuri",
           "reason": "no_journey_data"
         },
         {
@@ -4688,7 +4688,7 @@
           "anime": "onepiece",
           "subject": "sodom-e-gomorra",
           "subjectId": "char-op-sodom-gomorrah",
-          "displayName": "Sodom e Gomorra",
+          "displayName": "Sodom and Gomorrah",
           "reason": "no_journey_data"
         },
         {
@@ -4800,14 +4800,14 @@
           "anime": "onepiece",
           "subject": "sham-e-buchi",
           "subjectId": "char-op-sham-buchi",
-          "displayName": "Sham e Buchi",
+          "displayName": "Sham and Buchi",
           "reason": "no_journey_data"
         },
         {
           "anime": "onepiece",
           "subject": "kiwi-e-mozu",
           "subjectId": "char-op-kiwi-mozu",
-          "displayName": "Kiwi e Mozu",
+          "displayName": "Kiwi and Mozu",
           "reason": "no_journey_data"
         },
         {
@@ -4842,7 +4842,7 @@
           "anime": "dragonball",
           "subject": "bardack",
           "subjectId": "char-dbz-bardock",
-          "displayName": "Bardack",
+          "displayName": "Bardock",
           "reason": "single_location"
         },
         {

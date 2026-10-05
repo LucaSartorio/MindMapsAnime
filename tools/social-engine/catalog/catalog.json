@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-05T06:48:23.848Z",
+  "generatedAt": "2026-10-05T16:32:03.358Z",
   "locales": [
     "en",
     "it"
@@ -2391,7 +2391,7 @@
           "series": null,
           "displayName": {
             "en": "Ten-Tails (Jūbi)",
-            "it": "Ten-Tails (Jūbi)"
+            "it": "Dieci Code (Jūbi)"
           },
           "locales": [
             "en",
@@ -2421,7 +2421,7 @@
           "series": null,
           "displayName": {
             "en": "Black Zetsu",
-            "it": "Black Zetsu"
+            "it": "Zetsu Nero"
           },
           "locales": [
             "en",
@@ -4858,7 +4858,7 @@
           "subject": "bagy",
           "series": null,
           "displayName": {
-            "en": "Bagy",
+            "en": "Buggy",
             "it": "Bagy"
           },
           "locales": [
@@ -5068,7 +5068,7 @@
           "subject": "donquijote-doflamingo",
           "series": null,
           "displayName": {
-            "en": "Donquijote Doflamingo",
+            "en": "Donquixote Doflamingo",
             "it": "Donquijote Doflamingo"
           },
           "locales": [
@@ -8075,7 +8075,7 @@
           "subject": "c-16",
           "series": null,
           "displayName": {
-            "en": "C-16",
+            "en": "Android 16",
             "it": "C-16"
           },
           "locales": [
@@ -8436,7 +8436,7 @@
           "series": null,
           "displayName": {
             "en": "Supreme Kai",
-            "it": "Supreme Kai"
+            "it": "Kaiōshin"
           },
           "locales": [
             "en",
@@ -14825,7 +14825,7 @@
           "subject": "fana-the-loveless",
           "series": null,
           "displayName": {
-            "en": "Fana the Loveless",
+            "en": "Fana the Hateful",
             "it": "Fana la Senza Amore"
           },
           "locales": [

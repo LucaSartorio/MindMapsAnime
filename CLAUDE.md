@@ -25,7 +25,7 @@ components (see "Per-world dynamic config").
 
 ```bash
 npm run dev              # Vite dev server → http://localhost:5173
-npm run build            # tsc -b && test:seo && vite build && build:ssr && prerender && seo:check (ALL blocking)
+npm run build            # tsc -b && test:seo && i18n:audit && vite build && build:ssr && prerender && seo:check (ALL blocking)
 npm run build:ssr        # vite build --ssr src/entry-server.tsx → dist-server/ (build-only, gitignored)
 npm run prerender        # SSG: one static HTML per public page + 404.html + sitemap*.xml + robots.txt + llms.txt
 npm run test:seo         # SEO invariants on sources (slugs, URL round-trip, metadata, hreflang, sitemap)

@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && npm run test:seo && vite build && npm run build:ssr && npm run prerender && npm run seo:check",
+    "build": "tsc -b && npm run test:seo && npm run i18n:audit && vite build && npm run build:ssr && npm run prerender && npm run seo:check",
     "prerender": "tsx --tsconfig scripts/tsconfig.json scripts/prerender.ts",
     "lint": "eslint .",
     "preview": "vite preview",

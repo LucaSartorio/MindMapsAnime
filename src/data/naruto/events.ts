@@ -527,7 +527,7 @@ export const narutoEvents: TimelineEvent[] = [
     worldId: 'world-naruto',
     title: { it: 'Salvataggio di Gaara', en: "Gaara's rescue" },
     description: {
-      it: 'Team 7 e Team Guy salvano Gaara. Sacrificio di Lady Chiyo per riportarlo in vita.',
+      it: 'Team 7 e Team Guy salvano Gaara. Sacrificio di Nonna Chiyo per riportarlo in vita.',
       en: 'Team 7 and Team Guy rescue Gaara. Lady Chiyo sacrifices herself to bring him back to life.',
     },
     period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
@@ -1812,7 +1812,7 @@ export const narutoEvents: TimelineEvent[] = [
     worldId: 'world-naruto',
     title: { it: 'Sconfitta di Sasori', en: 'Defeat of Sasori' },
     description: {
-      it: 'Sakura e Lady Chiyo sconfiggono Sasori. Lady Chiyo cede la vita per riportare Gaara.',
+      it: 'Sakura e Nonna Chiyo sconfiggono Sasori. Nonna Chiyo cede la vita per riportare Gaara.',
       en: 'Sakura and Lady Chiyo defeat Sasori. Lady Chiyo gives her life to bring Gaara back.',
     },
     period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },

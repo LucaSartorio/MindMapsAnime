@@ -242,7 +242,7 @@ export const narutoCharactersBatch5: Character[] = [
     gender: 'male',
     series: ['shippuden'],
     shortDescription: {
-      it: 'Figlio di Ōnoki e padre di Kurotsuchi. Utente del Rilascio Terra, comanda la Seconda Divisione dell\'Alleanza Shinobi nella Quarta Guerra.',
+      it: 'Figlio di Ōnoki e padre di Kurotsuchi. Utente del Arte della Terra, comanda la Seconda Divisione dell\'Alleanza Shinobi nella Quarta Guerra.',
       en: 'Ōnoki\'s son and Kurotsuchi\'s father. An Earth Release user who commands the Second Division of the Shinobi Alliance in the Fourth War.',
     },
     abilities: ['Earth Release', 'Rock Pillar Technique'],

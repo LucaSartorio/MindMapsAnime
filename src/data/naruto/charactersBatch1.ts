@@ -320,7 +320,7 @@ export const narutoCharactersBatch1: Character[] = [
     generation: 'Founders era',
     gender: 'male',
     shortDescription: {
-      it: 'Maestro storico dell\'arte delle marionette di Suna, creatore dei famosi "Dieci Capolavori di Chikamatsu" usati da Lady Chiyo.',
+      it: 'Maestro storico dell\'arte delle marionette di Suna, creatore dei famosi "Dieci Capolavori di Chikamatsu" usati da Nonna Chiyo.',
       en: 'Historical master of Suna\'s puppet arts, creator of the famed "Ten Puppets of Chikamatsu" wielded by Lady Chiyo.',
     },
     students: ['char-chiyo'],
