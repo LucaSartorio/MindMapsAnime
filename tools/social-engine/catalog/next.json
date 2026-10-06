@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T06:08:42.306Z",
+  "generatedAt": "2026-10-06T06:42:19.348Z",
   "mode": "coldstart",
-  "seed": "feed3:character-journey:onepiece:monkey-d-luffy:part-01@en:samples0",
+  "seed": "feed4:character-journey:hunterxhunter:killua-zoldyck:part-01@en:samples0",
   "feedTail": [
     {
       "renderId": "character-journey:dragonball:goku:part-01@en",
@@ -36,6 +36,17 @@
         "onepiece:monkey-d-luffy"
       ],
       "part": 1
+    },
+    {
+      "renderId": "character-journey:hunterxhunter:killua-zoldyck:part-01@en",
+      "contentType": "character-journey",
+      "animes": [
+        "hunterxhunter"
+      ],
+      "characters": [
+        "hunterxhunter:killua-zoldyck"
+      ],
+      "part": 1
     }
   ],
   "rules": {
@@ -51,79 +62,79 @@
     "coldStart": true
   },
   "rejected": {
+    "sequence": 44,
     "journey spacing": 2,
-    "sequence": 45,
-    "character streak": 23
+    "character streak": 20
   },
-  "considered": 696,
+  "considered": 695,
   "status": "ready",
   "pick": {
-    "contentId": "character-versus:hunterxhunter:gon-freecss-vs-blackclover-noelle-silva",
-    "renderId": "character-versus:hunterxhunter:gon-freecss-vs-blackclover-noelle-silva@en",
+    "contentId": "character-versus:attackontitan:mikasa-ackerman-vs-blackclover-noelle-silva",
+    "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-blackclover-noelle-silva@en",
     "contentType": "character-versus",
     "animes": [
-      "hunterxhunter",
+      "attackontitan",
       "blackclover"
     ],
     "characters": [
-      "hunterxhunter:gon-freecss",
+      "attackontitan:mikasa-ackerman",
       "blackclover:noelle-silva"
     ],
     "part": null,
     "partCount": null,
-    "score": 117.97,
+    "score": 117.88,
     "reasons": [
-      "coldstart: novelty +30.0, jitter +6.0",
+      "coldstart: novelty +30.0, jitter +5.9",
       "+12 main character",
       "+20 format below its target share (0% < 25%)"
     ]
   },
   "request": {
     "template": "characterVersus",
-    "anime": "hunterxhunter",
-    "subject": "gon-freecss",
+    "anime": "attackontitan",
+    "subject": "mikasa-ackerman",
     "opponent": {
       "anime": "blackclover",
       "subject": "noelle-silva"
     },
     "locale": "en",
-    "hook": "Gon Freecss vs Noelle Silva: whose journey is bigger?",
+    "hook": "Who travelled more: Mikasa Ackerman or Noelle Silva?",
     "hookType": "versus",
-    "hookId": "cv-versus-2",
-    "cta": "Gon Freecss or Noelle Silva? Tell us.",
+    "hookId": "cv-versus-1",
+    "cta": "Mikasa Ackerman or Noelle Silva? Tell us.",
     "ctaType": "comment-pick-side",
     "selection": {
       "mode": "coldstart",
-      "score": 117.97,
-      "seed": "feed3:character-journey:onepiece:monkey-d-luffy:part-01@en:samples0"
+      "score": 117.88,
+      "seed": "feed4:character-journey:hunterxhunter:killua-zoldyck:part-01@en:samples0"
     },
-    "notes": "growth selector (coldstart): coldstart: novelty +30.0, jitter +6.0; +12 main character; +20 format below its target share (0% < 25%)"
+    "notes": "growth selector (coldstart): coldstart: novelty +30.0, jitter +5.9; +12 main character; +20 format below its target share (0% < 25%)"
   },
   "alternatives": [
     {
+      "renderId": "guess-character:attackontitan:reiner-braun@en",
+      "contentType": "guess-character",
+      "score": 117.81
+    },
+    {
+      "renderId": "guess-character:bleach:renji-abarai@en",
+      "contentType": "guess-character",
+      "score": 117.78
+    },
+    {
+      "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-bleach-rukia-kuchiki@en",
+      "contentType": "character-versus",
+      "score": 117.69
+    },
+    {
       "renderId": "character-versus:attackontitan:armin-arlert-vs-blackclover-asta@en",
       "contentType": "character-versus",
-      "score": 117.94
+      "score": 117.57
     },
     {
-      "renderId": "guess-character:attackontitan:levi-ackerman@en",
+      "renderId": "guess-character:bleach:rukia-kuchiki@en",
       "contentType": "guess-character",
-      "score": 117.87
-    },
-    {
-      "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-blackclover-noelle-silva@en",
-      "contentType": "character-versus",
-      "score": 117.8
-    },
-    {
-      "renderId": "character-versus:hunterxhunter:gon-freecss-vs-bleach-rukia-kuchiki@en",
-      "contentType": "character-versus",
-      "score": 117.55
-    },
-    {
-      "renderId": "character-versus:attackontitan:armin-arlert-vs-blackclover-noelle-silva@en",
-      "contentType": "character-versus",
-      "score": 117.46
+      "score": 117.23
     }
   ],
   "eligible": 630

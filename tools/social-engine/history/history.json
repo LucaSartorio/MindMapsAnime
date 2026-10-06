@@ -142,6 +142,81 @@
       "artifact": null,
       "social": null
     },
+    "character-journey:hunterxhunter:killua-zoldyck:part-01@en": {
+      "renderId": "character-journey:hunterxhunter:killua-zoldyck:part-01@en",
+      "contentId": "character-journey:hunterxhunter:killua-zoldyck:part-01",
+      "template": "characterJourney",
+      "anime": "hunterxhunter",
+      "subject": "killua-zoldyck",
+      "locale": "en",
+      "variant": null,
+      "segment": "part-01",
+      "segmentFingerprint": "ad9c8c6e",
+      "createdAt": "2026-10-06T06:39:11.192Z",
+      "updatedAt": "2026-10-06T06:42:18.291Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-10-06T06:42:18.291Z",
+      "outputFile": "tools/social-engine/output/hunterxhunter_killua-zoldyck_character-journey_part-01_en.mp4",
+      "manifestFile": "tools/social-engine/output/hunterxhunter_killua-zoldyck_character-journey_part-01_en.manifest.json",
+      "sourceFile": "0009-hunterxhunter_killua-zoldyck_character-journey_part-01_en.json",
+      "durationSeconds": 27,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-37424904091-1",
+        "runId": "37424904091",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/37424904091",
+        "video": "videos/hunterxhunter_killua-zoldyck_character-journey_part-01_en.mp4",
+        "manifest": "manifests/hunterxhunter_killua-zoldyck_character-journey_part-01_en.manifest.json",
+        "sha256": "eed8df8d0ebbc8c5a4b505b3d2065efa1072adefeb0cd4b1863930f51668aaef",
+        "cover": "covers/hunterxhunter_killua-zoldyck_character-journey_part-01_en.cover.png",
+        "expiresAt": "2026-11-05T06:42:18.291Z"
+      },
+      "social": {
+        "contentType": "character-journey",
+        "animes": [
+          "hunterxhunter"
+        ],
+        "characters": [
+          "hunterxhunter:killua-zoldyck"
+        ],
+        "characterNames": [
+          "Killua Zoldyck"
+        ],
+        "part": 1,
+        "partCount": 2,
+        "hookType": "question",
+        "hookId": null,
+        "hook": "How far does Killua's journey go? Part 1 of 2.",
+        "ctaType": "follow-next-part",
+        "cta": "Follow for Part 2 and explore the journey on AniMapVerse",
+        "durationSeconds": 27,
+        "selection": null,
+        "platformMetadata": {
+          "instagramCaption": "How far does Killua's journey go? Part 1 of 2.\n\nKillua Zoldyck's journey across Hunter x Hunter — Part 1/2: 10 places on the world map.\n\nFollow for Part 2.\n\nSave it for your next rewatch.\n\n#hunterxhunter #hxh #killuazoldyck #anime #animemap #AniMapVerse",
+          "tiktokCaption": "How far does Killua's journey go? Part 1 of 2. Follow for Part 2. #hunterxhunter #hxh #killuazoldyck #anime #animemap",
+          "youtubeTitle": "Every Place Killua Zoldyck Visited 🎣 | Hunter x Hunter Journey Part 1 of 2",
+          "youtubeDescription": "How far does Killua's journey go? Part 1 of 2.\n\nKillua Zoldyck's journey across Hunter x Hunter — Part 1/2: 10 places on the world map.\n\nSubscribe for Part 2.\n\nInteractive map: https://animapverse.com/en/hunter-x-hunter/characters/killua-zoldyck\n\n#hunterxhunter #hxh #killuazoldyck",
+          "facebookCaption": "How far does Killua's journey go? Part 1 of 2.\n\nKillua Zoldyck's journey across Hunter x Hunter — Part 1/2: 10 places on the world map.\n\nFollow for Part 2.\n\nInteractive map: https://animapverse.com/en/hunter-x-hunter/characters/killua-zoldyck",
+          "hashtags": [
+            "#hunterxhunter",
+            "#hxh",
+            "#killuazoldyck",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-journey:naruto:itachi-uchiha@en": {
       "renderId": "character-journey:naruto:itachi-uchiha@en",
       "contentId": "character-journey:naruto:itachi-uchiha",
