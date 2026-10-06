@@ -68,7 +68,16 @@ A `ready[]` entry:
 }
 ```
 
-To do on platform P ⇔ `platforms[P]` is `notScheduled` or `failed`. **`scheduled` or `published` on P
+Also in every entry: `contentType` (`character-journey` | `guess-character` | `character-versus`),
+**`platformMetadata`** (ready-made `instagramCaption`, `tiktokCaption`, `youtubeTitle`,
+`youtubeDescription`, `facebookCaption`, `hashtags`, `madeForKids: false` — use them as they are; guess
+captions never contain the answer, versus captions never the winner), `artifact.cover`
+(`covers/<stem>.cover.png`, the thumbnail) and **`waitFor`** (platform → previous part's renderId that must
+be scheduled/published there FIRST: never publish Part N before Part N − 1). Keep the AI-disclosure flags you
+already set per network. Publish in `ready[]` order (oldest render first) — the feed order the editorial
+rules were computed on.
+
+To do on platform P ⇔ `platforms[P]` is `notScheduled` or `failed` **and** `waitFor[P]` is absent. **`scheduled` or `published` on P
 = never again on P** (another platform is independent). `renderedBefore` / `renderedLocales` in the
 catalog only mean "an MP4 exists" — never "published".
 
@@ -240,8 +249,9 @@ To fix a rejected receipt, submit a **new** file — never edit `failed/` or `ap
 - put tokens, brand ids, account names, cookies or API keys anywhere in the repository;
 - report `published` for a post that is only scheduled.
 
-## 10. Later: analytics
+## 10. Analytics
 
-Not implemented. The keys to correlate metrics (views, watch time, likes, comments, shares) are
-already recorded per platform: `renderId` + `platform` + `providerPostUuid` (+ `providerPostId`) +
-`publicUrl`, with the receipt trail in `publication/applied/`.
+Metrics of published posts are reported by the **Analyst Agent** as *analytics snapshots*
+(same PR flow, folder `tools/social-engine/analytics/pending/`):
+[`docs/SOCIAL_ANALYTICS_CONTRACT.md`](SOCIAL_ANALYTICS_CONTRACT.md). They are keyed by `renderId` +
+`platform` (+ `providerPostUuid`), the same keys your receipts record.
