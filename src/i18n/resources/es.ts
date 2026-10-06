@@ -8,7 +8,7 @@ export const es = {
     tagline:
       'Explora los mundos de tus animes y mangas favoritos a través de mapas interactivos, cronologías, personajes, arcos narrativos y recorridos.',
     eyebrow: 'atlas interactivo · anime y manga',
-    /** Titolo della scheda del browser in homepage: "AniMapVerse — …". */
+    /** Titolo della scheda del browser in homepage. */
     tabTagline: 'Mapas interactivos',
   },
   nav: {

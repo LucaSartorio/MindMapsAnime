@@ -36,7 +36,7 @@ function sectionLabel(world: AnimeWorld, section: SeoCategory | 'map' | 'timelin
  * dell'interfaccia scelta dall'utente (anche ja/fr/de, che non hanno URL).
  *
  * È volutamente generico per sezione — "Naruto — Mappa", "Naruto — Personaggi",
- * "AniMapVerse — Mappe interattive" — e non cambia con la scheda aperta sulla
+ * "Mappe interattive" in homepage — e non cambia con la scheda aperta sulla
  * mappa. Le pagine ENTITÀ (e la 404) restituiscono `null` e tengono il title SEO
  * di `buildPageMeta`: Google legge il title anche dopo il JS, e un titolo
  * generico ripetuto su centinaia di pagine distinte sarebbe un duplicato.
@@ -49,7 +49,7 @@ export function buildTabTitle(resolved: ResolvedPage, locale: SupportedLocale, t
   const worldName = (w: AnimeWorld) => getLocalizedText(w.title, locale);
   switch (page.kind) {
     case 'home':
-      return `${SITE.name}${SEP}${t('app.tabTagline')}`;
+      return t('app.tabTagline');
     case 'static':
       return `${SITE.name}${SEP}${t(STATIC_LABEL_KEY[page.page])}`;
     case 'world':

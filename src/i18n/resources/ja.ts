@@ -8,7 +8,7 @@ export const ja = {
     tagline:
       'お気に入りのアニメ・マンガの世界を、インタラクティブマップ、年表、キャラクター、物語の章、旅路から探索しよう。',
     eyebrow: 'インタラクティブ地図帳 · アニメ & マンガ',
-    /** Titolo della scheda del browser in homepage: "AniMapVerse — …". */
+    /** Titolo della scheda del browser in homepage. */
     tabTagline: 'インタラクティブマップ',
   },
   nav: {
