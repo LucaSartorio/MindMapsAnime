@@ -56,8 +56,10 @@ npm run social:publication:validate    # publication receipts in publication/pen
 npm run social:publication:apply:dry   # renderId · platform · old → new
 npm run social:publication:apply       # all-or-nothing: history + catalog updated, pending → applied/ (audit trail)
 npm run social:publication:list        # rendered videos × instagram/facebook/tiktok/youtube state (+ artifact)
-npm run social:next                    # growth engine: the next video (rotation-safe) = catalog/next.json
-npm run social:editorial:check         # queue vs the HARD editorial rules (CI gate)
+npm run social:agent -- --dry-run      # the daily cycle (12 steps) on the real state: selector + SelectionTrace, writes nothing
+npm run social:next                    # growth engine: the next video (rotation-safe) = catalog/next.json + trace report
+npm run social:editorial:check         # queue vs the HARD editorial rules (render gate)
+npm run social:editorial:check:selection   # + a queued video must BE the growth engine selection (PR gate)
 npm run social:analytics:apply         # analytics snapshots → metrics.json → performance.json + next.json
 npm run social:performance             # scores per anime / character / format / hook / duration / platform
 ```
@@ -708,7 +710,15 @@ Permanent rules:
   in order with ≥ 2 videos between parts. Filters run BEFORE scoring (`growth/rules.ts` → `growth/selector.ts`); soft
   cooldowns (anime/format/character/hook/CTA) + exploration (30 %, seeded) / exploitation (shrunk performance
   estimates) only rank valid candidates; cold start below `minimumSamples`. All knobs in `growth/config.ts` — no
-  magic numbers elsewhere. `social:editorial:check` gates queue PRs (Social validate) and renders (Social render).
+  magic numbers elsewhere. `social:editorial:check` gates renders (Social render); Social validate runs
+  `social:editorial:check:selection`: a queued EN video must equal `catalog/next.json` `request` (else red PR).
+- **The growth engine is the ONLY selector** (`planNext` in `growth/plan.ts`): no agent, CLI or workflow picks a
+  format/character itself (no "today a CharacterJourney"); the daily automation executes `next.json`, whatever the
+  content type, routed to its composition by `templateForContentType`. `next.json` statuses: `ready` (queue exactly
+  `request`) · `backlog` (an EN render never published / a render in progress → publish it, no new content) ·
+  `blocked` (fail-safe). Every decision carries a `SelectionTrace` (`trace`: mode, score, constraints, hard-rule codes,
+  excluded candidates + reasons, explanation) — keep it secret-free. Analytics are optional: unreadable/missing
+  `metrics.json` → cold start, never a blocker. Never add a second selector or hardcode a format in the agent flow.
 - **Hooks / CTAs / captions**: deterministic banks (`growth/hooks.ts`, `growth/ctas.ts`, `growth/metadata.ts`), no AI
   text; engagement-first CTAs (next part always promised; site ≤ 1 in 5); per-network captions + `madeForKids: false`
   stored in history `social` (records older than it have `social: null` and are derived from their content id).

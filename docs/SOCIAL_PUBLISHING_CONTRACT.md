@@ -33,9 +33,13 @@ read catalog.publishing.ready (default branch)
   → later, when the post is live: a "published" receipt (publishedAt + public URL)
 ```
 
-**Priority rule.** PRIORITY 1: rendered videos not yet scheduled/published on the target platform
-(`catalog.publishing.ready`) — publish those first. PRIORITY 2: only when that list is empty for the
-platform, ask the Content Agent for new content.
+**Priority rule (backlog first).** PRIORITY 1: rendered videos not yet scheduled/published on the
+target platform (`catalog.publishing.ready`) — publish those first. A video rendered and **never**
+published anywhere *is today's video*: `catalog/next.json` then says `status: "backlog"` (with
+`backlog.unpublished[]`) and the Content Agent queues nothing. PRIORITY 2: only when nothing is waiting
+does the growth engine select new content (`status: "ready"`). Completing a publication already started
+(other platforms scheduled) or correcting receipts of published videos does not replace the day's new
+video (`backlog.unfinished[]` doesn't block it).
 
 ## 2. What to read (never edit)
 
@@ -71,11 +75,32 @@ A `ready[]` entry:
 Also in every entry: `contentType` (`character-journey` | `guess-character` | `character-versus`),
 **`platformMetadata`** (ready-made `instagramCaption`, `tiktokCaption`, `youtubeTitle`,
 `youtubeDescription`, `facebookCaption`, `hashtags`, `madeForKids: false` — use them as they are; guess
-captions never contain the answer, versus captions never the winner), `artifact.cover`
+captions never contain the answer, versus captions never the winner — see *Captions* below), `artifact.cover`
 (`covers/<stem>.cover.png`, the thumbnail) and **`waitFor`** (platform → previous part's renderId that must
 be scheduled/published there FIRST: never publish Part N before Part N − 1). Keep the AI-disclosure flags you
 already set per network. Publish in `ready[]` order (oldest render first) — the feed order the editorial
 rules were computed on.
+
+**Captions — use the growth metadata, never regenerate it.** For every video rendered by the growth
+engine, publish with `platformMetadata` exactly: Instagram ← `instagramCaption`, TikTok ←
+`tiktokCaption`, YouTube ← `youtubeTitle` + `youtubeDescription`, Facebook ← `facebookCaption`. Don't
+rewrite them at the last minute and never replace or append a CTA: the growth CTA ("Follow for Part 2.",
+"Did you get it right?", "Who should compete next?", "Which journey should we map next?"…) is the main
+one; the site appears only where the metadata already puts it. The old generic CTA "See / Explore the full
+journey on AniMapVerse" must not come back. **Fallback** (only when `platformMetadata` is `null` = a
+legacy video rendered before the growth engine): build a caption from the manifest (`publication.title`,
+hook, CTA, page URL).
+
+**Platform settings** (unchanged, the ones already used; the repository never sends them — it never calls Metricool):
+
+| network | how |
+| --- | --- |
+| Instagram | Reel: `REEL`, `showReelOnFeed = true`, `isAiGenerated = true` |
+| TikTok | public video, `isAigc = true` |
+| YouTube | Short (`short`), `public`, category `FILM_ANIMATION`, `madeForKids = false`, `isAiGeneratedContent = true` |
+| Facebook | Reel: `REEL` |
+
+Don't add fields Metricool doesn't document; don't change these per video.
 
 To do on platform P ⇔ `platforms[P]` is `notScheduled` or `failed` **and** `waitFor[P]` is absent. **`scheduled` or `published` on P
 = never again on P** (another platform is independent). `renderedBefore` / `renderedLocales` in the
@@ -110,7 +135,15 @@ post. Before scheduling `renderId` on platform P:
    history;
 3. check Metricool itself (the planner) for a post already created for this video, e.g. after a crash
    between "scheduled in Metricool" and "receipt written": if it exists, **don't create a new post** —
-   write the receipt for the existing one.
+   write the receipt for the existing one;
+4. **ambiguous Metricool error** (timeout, 5xx, a response without id/UUID, an unclear error after the
+   request was sent): **re-read the Metricool planner before any retry**. The post may exist already —
+   then write the receipt for it; create a new one only when the planner proves it doesn't.
+
+The same `renderId` is never queued twice (queue + history duplicate checks), never rendered twice by
+accident (render id unique; a re-render needs a human `variant`/`allowRerender`), never scheduled or
+published twice on a platform (state machine + these checks), and each receipt is applied once
+(deterministic receipt id).
 
 ## 5. Metricool data to keep
 

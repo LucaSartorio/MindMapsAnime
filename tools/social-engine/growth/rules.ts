@@ -33,33 +33,78 @@ function lastIndex(feed: readonly FeedItem[], pred: (item: FeedItem) => boolean)
   return -1;
 }
 
-export function hardRuleViolations(c: EditorialFacts, feed: readonly FeedItem[], config: GrowthConfig = GROWTH_CONFIG): string[] {
-  const v: string[] = [];
+/** Machine-readable codes of the HARD rules (selection trace, reports, tests). */
+export const RULE_CODES = ['DUPLICATE', 'JOURNEY_PART_ORDER', 'JOURNEY_PART_SPACING', 'MAX_SAME_ANIME_STREAK', 'MAX_SAME_CHARACTER_STREAK'] as const;
+export type RuleCode = (typeof RULE_CODES)[number];
+export type RuleViolation = { code: RuleCode; message: string };
+
+/** Every HARD rule a candidate breaks against the feed (empty = editorially valid). */
+export function ruleViolations(c: EditorialFacts, feed: readonly FeedItem[], config: GrowthConfig = GROWTH_CONFIG): RuleViolation[] {
+  const v: RuleViolation[] = [];
+  const add = (code: RuleCode, message: string) => v.push({ code, message });
   // 1. validity & sequence ------------------------------------------------------
-  if (feed.some((f) => f.renderId === c.renderId)) v.push(`duplicate: ${c.renderId} is already in the feed`);
+  if (feed.some((f) => f.renderId === c.renderId)) add('DUPLICATE', `duplicate: ${c.renderId} is already in the feed`);
   const part = c.part;
   if (c.seriesId && part !== null) {
     if (feed.some((f) => f.seriesId === c.seriesId && f.part !== null && f.part >= part)) {
-      v.push(`sequence: a later or equal part of ${c.seriesId} is already in the feed`);
+      add('JOURNEY_PART_ORDER', `sequence: a later or equal part of ${c.seriesId} is already in the feed`);
     }
     if (part > 1) {
       const prev = lastIndex(feed, (f) => f.seriesId === c.seriesId && f.part === part - 1);
-      if (prev < 0) v.push(`sequence: Part ${part} before Part ${part - 1} (never publish parts out of order)`);
+      if (prev < 0) add('JOURNEY_PART_ORDER', `sequence: Part ${part} before Part ${part - 1} (never publish parts out of order)`);
       else if (itemsAfter(feed, prev) < config.minItemsBetweenJourneyParts) {
-        v.push(`journey spacing: only ${itemsAfter(feed, prev)} item(s) since Part ${part - 1} (min ${config.minItemsBetweenJourneyParts})`);
+        add('JOURNEY_PART_SPACING', `journey spacing: only ${itemsAfter(feed, prev)} item(s) since Part ${part - 1} (min ${config.minItemsBetweenJourneyParts})`);
       }
     }
   }
-  // 2. rotation (anime / character streaks) -------------------------------------
+  // 2. rotation (anime / character streaks) — content-type agnostic -------------
   for (const anime of c.animes) {
     const streak = trailingStreak(feed, (f) => f.animes.includes(anime));
-    if (streak >= config.maxSameAnimeStreak) v.push(`anime streak: the last ${streak} items are ${anime} (max ${config.maxSameAnimeStreak}) — a different anime is required`);
+    if (streak >= config.maxSameAnimeStreak) add('MAX_SAME_ANIME_STREAK', `anime streak: the last ${streak} items are ${anime} (max ${config.maxSameAnimeStreak}) — a different anime is required`);
   }
   for (const character of c.characters) {
     const streak = trailingStreak(feed, (f) => f.characters.includes(character));
-    if (streak >= config.maxSameCharacterStreak) v.push(`character streak: ${character} is in the last ${streak} item(s) (max ${config.maxSameCharacterStreak})`);
+    if (streak >= config.maxSameCharacterStreak) add('MAX_SAME_CHARACTER_STREAK', `character streak: ${character} is in the last ${streak} item(s) (max ${config.maxSameCharacterStreak})`);
   }
   return v;
+}
+
+/** Same rules as messages (kept for callers that only print them). */
+export function hardRuleViolations(c: EditorialFacts, feed: readonly FeedItem[], config: GrowthConfig = GROWTH_CONFIG): string[] {
+  return ruleViolations(c, feed, config).map((x) => x.message);
+}
+
+/** The editorial constraints the feed imposes right now (selection trace). */
+export type EditorialConstraints = {
+  /** Current trailing anime streak (the anime of the last item and how many items in a row). */
+  sameAnimeStreak: { animes: string[]; length: number };
+  /** true = the streak reached maxSameAnimeStreak: every candidate of those anime is excluded. */
+  forcedAnimeRotation: boolean;
+  blockedAnimes: string[];
+  /** Characters that can't appear now (maxSameCharacterStreak). */
+  blockedCharacters: string[];
+  /** Characters penalised by the soft character cooldown. */
+  characterCooldown: string[];
+  /** Format of the last item and its streak (soft content-type cooldown). */
+  contentTypeStreak: { contentType: string | null; length: number };
+};
+
+export function editorialConstraints(feed: readonly FeedItem[], config: GrowthConfig = GROWTH_CONFIG): EditorialConstraints {
+  const last = feed[feed.length - 1];
+  const animes = last?.animes ?? [];
+  const streakOf = (anime: string) => trailingStreak(feed, (f) => f.animes.includes(anime));
+  const length = animes.length ? Math.max(...animes.map(streakOf)) : 0;
+  const blockedAnimes = animes.filter((a) => streakOf(a) >= config.maxSameAnimeStreak);
+  const blockedCharacters = (last?.characters ?? []).filter((ch) => trailingStreak(feed, (f) => f.characters.includes(ch)) >= config.maxSameCharacterStreak);
+  const characterCooldown = [...new Set(feed.slice(Math.max(0, feed.length - config.characterCooldown)).flatMap((f) => f.characters))];
+  return {
+    sameAnimeStreak: { animes: animes.filter((a) => streakOf(a) === length), length },
+    forcedAnimeRotation: blockedAnimes.length > 0,
+    blockedAnimes,
+    blockedCharacters,
+    characterCooldown,
+    contentTypeStreak: { contentType: last?.contentType ?? null, length: last ? trailingStreak(feed, (f) => f.contentType === last.contentType) : 0 },
+  };
 }
 
 export type SoftScore = { adjustment: number; reasons: string[] };
@@ -77,7 +122,11 @@ export function softAdjustment(c: EditorialFacts, feed: readonly FeedItem[], con
   const last = feed[feed.length - 1];
   if (last) {
     if (c.animes.some((a) => last.animes.includes(a))) add(-p.sameAnimeAsLast, 'same anime as the previous item');
-    if (c.contentType === last.contentType) add(-p.sameContentTypeAsLast, 'same format as the previous item');
+    if (c.contentType === last.contentType) {
+      // Content-type cooldown (soft): the longer the same-format streak, the stronger the push to another format.
+      const streak = trailingStreak(feed, (f) => f.contentType === c.contentType);
+      add(-(p.sameContentTypeAsLast + p.contentTypeStreak * (streak - 1)), `format cooldown: ${streak} ${c.contentType} item(s) in a row`);
+    }
   }
   const recent = (n: number) => feed.slice(Math.max(0, feed.length - n));
   if (config.animeCooldown > 1 && recent(config.animeCooldown).slice(0, -1).some((f) => c.animes.some((a) => f.animes.includes(a)))) {

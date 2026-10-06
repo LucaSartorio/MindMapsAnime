@@ -28,3 +28,8 @@ const BY_TEMPLATE = new Map(
 export function contentTypeOfTemplate(templateId: string): ContentType | string {
   return BY_TEMPLATE.get(templateId) ?? templateId;
 }
+
+/** `character-journey` → `characterJourney`: the template (and so the Remotion composition) that renders a content type. */
+export function templateForContentType(contentType: string): TemplateId | null {
+  return CONTENT_TYPES[contentType as ContentType]?.templateId ?? null;
+}

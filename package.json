@@ -50,6 +50,9 @@
     "social:next": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/growth.ts next",
     "social:performance": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/growth.ts performance",
     "social:editorial:check": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/growth.ts editorial-check",
+    "social:editorial:check:selection": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/growth.ts editorial-check --require-selection",
+    "social:agent": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/agent.ts",
+    "social:agent:dry": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/agent.ts --dry-run",
     "social:growth:test": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/tests/run-growth.ts"
   },
   "dependencies": {

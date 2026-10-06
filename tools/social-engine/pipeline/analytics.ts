@@ -136,6 +136,20 @@ export function loadMetrics(dirs: PipelineDirs): MetricsStore {
   return { schemaVersion: 1, posts: raw.posts };
 }
 
+/** Analytics as an OPTIONAL input of the growth engine: missing or unreadable metrics never block a run. */
+export type AnalyticsStatus = { status: 'ok' | 'empty' | 'unavailable'; posts: number; error: string | null };
+
+/** loadMetrics for the selector: an unreadable metrics.json degrades to "no analytics" (cold start), never throws. */
+export function loadMetricsSafe(dirs: PipelineDirs): { store: MetricsStore; analytics: AnalyticsStatus } {
+  try {
+    const store = loadMetrics(dirs);
+    const posts = Object.keys(store.posts).length;
+    return { store, analytics: { status: posts ? 'ok' : 'empty', posts, error: null } };
+  } catch (err) {
+    return { store: emptyMetrics(), analytics: { status: 'unavailable', posts: 0, error: err instanceof Error ? err.message : String(err) } };
+  }
+}
+
 export function saveMetrics(dirs: PipelineDirs, store: MetricsStore): void {
   writeJsonAtomic(dirs.metricsFile, { schemaVersion: 1, posts: Object.fromEntries(Object.keys(store.posts).sort().map((k) => [k, store.posts[k]])) });
 }

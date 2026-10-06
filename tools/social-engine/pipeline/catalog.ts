@@ -8,8 +8,8 @@ import type { PipelineDirs } from './dirs';
 import { writeJsonAtomic } from './fs';
 import { platformState, PLATFORMS, PUBLICATION_PROVIDERS, PUBLICATION_STATUSES, type History, type HistoryRecord, type Platform, type PlatformState, type PublicationStatus, type RenderArtifact } from './history';
 import { contentIdFor, parseContentId, parseRenderId, renderIdFor, seriesIdOf } from './ids';
-import { inspectQueue } from './queue';
-import { loadMetrics } from './analytics';
+import { inspectQueue, listContentFiles } from './queue';
+import { loadMetricsSafe, type AnalyticsStatus, type MetricsStore } from './analytics';
 import { growthOutputs, type NextPlan } from '../growth/plan';
 import type { PerformanceReport } from '../growth/performance';
 import type { PlatformMetadata } from '../growth/metadata';
@@ -147,7 +147,18 @@ export type ExcludedReport = {
 
 export type BuiltCatalog = { catalog: Catalog; excluded: ExcludedReport; performance: PerformanceReport & { generatedAt: string }; plan: NextPlan };
 
-export async function buildCatalog(dirs: PipelineDirs, history: History, now: string): Promise<BuiltCatalog> {
+/**
+ * `ignoreQueue`: build the catalog + plan from the committed STATE only (as if
+ * content/queue/ were empty) — what the plan was before a queue PR added its
+ * file. Used by the editorial gate to check that a queued request IS the
+ * growth engine's selection.
+ */
+export async function buildCatalog(
+  dirs: PipelineDirs,
+  history: History,
+  now: string,
+  opts: { ignoreQueue?: boolean; metrics?: { store: MetricsStore; analytics: AnalyticsStatus } } = {},
+): Promise<BuiltCatalog> {
   const rendered = new Map<string, Set<VideoLocale>>();
   const scheduled = new Map<string, Set<VideoLocale>>();
   const published = new Map<string, Set<VideoLocale>>();
@@ -164,7 +175,7 @@ export async function buildCatalog(dirs: PipelineDirs, history: History, now: st
     publication.set(r.contentId, [...(publication.get(r.contentId) ?? []), entry]);
   }
   const queued = new Map<string, Set<VideoLocale>>();
-  for (const item of await inspectQueue(dirs, history)) {
+  for (const item of opts.ignoreQueue ? [] : await inspectQueue(dirs, history)) {
     if (item.ok) add(queued, item.plan.contentId, parseRenderId(item.plan.renderId).locale);
   }
   const sorted = (s?: Set<VideoLocale>) => VIDEO_LOCALES.filter((l) => s?.has(l));
@@ -261,7 +272,8 @@ export async function buildCatalog(dirs: PipelineDirs, history: History, now: st
     excluded.templates[template.id] = report;
   }
   catalog.publishing = buildPublishing(renderedRecords, { subjectNames, partCounts }, now);
-  const { performance, plan } = growthOutputs({ catalog, history, metrics: loadMetrics(dirs), now });
+  const { store: metrics, analytics } = opts.metrics ?? loadMetricsSafe(dirs);
+  const { performance, plan } = growthOutputs({ catalog, history, metrics, analytics, queueFiles: opts.ignoreQueue ? [] : listContentFiles(dirs.queue).entries, now });
   return { catalog, excluded, performance, plan };
 }
 
