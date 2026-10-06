@@ -1,0 +1,16 @@
+{
+  "receiptVersion": 1,
+  "renderId": "character-journey:onepiece:monkey-d-luffy:part-01@en",
+  "platform": "facebook",
+  "provider": "metricool",
+  "status": "published",
+  "publishedAt": "2026-10-05T08:04:13Z",
+  "publicUrl": "https://facebook.com/reel/972287401900505",
+  "providerPostId": "388238135",
+  "providerPostUuid": "664871948699779368",
+  "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=664871948699779368",
+  "scheduledFor": "2026-10-05T10:00:00+02:00",
+  "recordedAt": "2026-10-06T06:04:57Z",
+  "recordedBy": "chatgpt-work-publishing-agent",
+  "notes": "Pubblicazione confermata nel planner; publishedAt dagli analytics, in UTC."
+}
