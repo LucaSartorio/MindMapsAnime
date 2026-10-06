@@ -5,7 +5,7 @@
  * temporary sandbox (the real history is only READ).
  */
 import assert from 'node:assert/strict';
-import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { buildCatalog, NEXT_FILE, type Catalog, type CatalogItem } from '../pipeline/catalog';
@@ -295,8 +295,17 @@ await test('next plan on the real catalog: a complete, valid queue request (hook
   assert.ok(req.ok, req.ok ? '' : req.errors.join('; '));
   assert.ok(plan.request && HOOK_TYPES.includes(plan.request.hookType as never) && typeof plan.request.cta === 'string' && plan.request.locale === 'en');
 });
-await test('catalog/next.json is in sync with the committed state (npm run social:catalog)', async () => {
+await test('catalog/next.json is in sync with the committed stable state (npm run social:catalog)', async () => {
   const real = pipelineDirs();
+  const queued = readdirSync(real.queue, { withFileTypes: true })
+    .some((entry) => entry.isFile() && entry.name.endsWith('.json'));
+
+  // Queue PRs intentionally add transient state without regenerating next.json.
+  // After merge, the render/state workflow consumes the queue and regenerates
+  // catalog artifacts. Enforcing next.json sync while a queue item is present
+  // makes every valid queue-only PR fail solely because its candidate set changed.
+  if (queued) return;
+
   const committed = JSON.parse(readFileSync(path.join(real.catalog, NEXT_FILE), 'utf8')) as { generatedAt: string; pick?: unknown; request?: unknown; status: string };
   const built = await buildCatalog(real, loadHistory(real), committed.generatedAt);
   assert.deepEqual([committed.status, committed.pick, committed.request], [built.plan.status, built.plan.pick, built.plan.request], 'stale next.json: run `npm run social:catalog`');
