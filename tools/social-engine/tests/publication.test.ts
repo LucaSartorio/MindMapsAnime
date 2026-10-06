@@ -31,6 +31,7 @@ import {
   parseStrictJson,
   planReceipts,
   receiptIdOf,
+  receiptScope,
   type PublicationReceipt,
 } from '../pipeline/publication';
 import { buildReceiptSchema } from '../pipeline/publicationSchema';
@@ -629,6 +630,23 @@ await test('git rebase with the merge driver (as the workflows run it) merges co
 });
 
 section('publication workflows');
+await test('PR scope: receipt PRs may only ADD inbox *.json; engine PRs touching an inbox README are not receipt PRs', () => {
+  const inboxes = ['tools/social-engine/publication/pending/', 'tools/social-engine/analytics/pending/'];
+  const engine = [
+    { status: 'A', file: 'tools/social-engine/analytics/pending/README.md' },
+    { status: 'M', file: 'tools/social-engine/pipeline/catalog.ts' },
+  ];
+  assert.deepEqual(receiptScope(engine, inboxes), { receipts: 0, violations: [] });
+  const receipts = [
+    { status: 'A', file: 'tools/social-engine/publication/pending/r1.json' },
+    { status: 'A', file: 'tools/social-engine/analytics/pending/s1.json' },
+  ];
+  assert.deepEqual(receiptScope(receipts, inboxes), { receipts: 2, violations: [] });
+  const mixed = [...receipts, { status: 'M', file: 'tools/social-engine/history/history.json' }, { status: 'A', file: 'tools/social-engine/analytics/pending/README.md' }];
+  assert.deepEqual(receiptScope(mixed, inboxes).violations.map((v) => v.file), ['tools/social-engine/history/history.json', 'tools/social-engine/analytics/pending/README.md']);
+  assert.equal(receiptScope([{ status: 'M', file: 'tools/social-engine/publication/pending/r1.json' }], inboxes).violations.length, 1, 'editing a receipt is not allowed');
+  assert.equal(receiptScope([{ status: 'A', file: 'tools/social-engine/publication/pending/sub/x.json' }], inboxes).receipts, 0, 'nested files are not receipts');
+});
 const workflow = (name: string) => readFileSync(path.join(REPO_ROOT, '.github', 'workflows', name), 'utf8');
 await test('social-publication-validate.yml: PRs only, read-only, no secrets, validation + scope + tests', () => {
   const y = workflow('social-publication-validate.yml');

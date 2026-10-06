@@ -18,7 +18,7 @@ import { ciRunFromEnv } from '../pipeline/ciRun';
 import { pipelineDirs, relToRepo, type PipelineDirs } from '../pipeline/dirs';
 import { loadHistory, platformState, PLATFORMS, type Platform } from '../pipeline/history';
 import { LockError } from '../pipeline/lock';
-import { applyPendingReceipts, planReceipts, type ReceiptPlan, type ReceiptPlanItem } from '../pipeline/publication';
+import { applyPendingReceipts, planReceipts, receiptScope, type ReceiptPlan, type ReceiptPlanItem } from '../pipeline/publication';
 import { parseArgs, type FlagSpec } from './args';
 import { fail, stringFlag } from './common';
 
@@ -134,16 +134,14 @@ function checkScope(dirs: PipelineDirs): void {
   });
   // Agent input folders: publication receipts (Publishing Agent) and analytics snapshots (Analyst Agent).
   const inboxes = [dirs.publicationPending, dirs.analyticsPending].map((d) => `${relToRepo(dirs, d)}/`);
-  const inInbox = (file: string) => inboxes.some((dir) => file.startsWith(dir));
-  const touched = changes.filter((c) => inInbox(c.file));
-  if (!touched.length) return console.log('✔ no publication receipt / analytics snapshot in this change — scope check not needed');
-  const bad = changes.filter((c) => !(c.status === 'A' && inboxes.some((dir) => c.file.startsWith(dir) && /^[^/]+\.json$/.test(c.file.slice(dir.length)))));
-  if (bad.length) {
-    console.error(`\n✖ a change that adds receipts/snapshots may ONLY add new ${inboxes.map((d) => `${d}*.json`).join(' or ')} files.\n  Not allowed here:\n${bad.map((c) => `    ${c.status} ${c.file}`).join('\n')}\n`);
+  const { receipts, violations } = receiptScope(changes, inboxes);
+  if (!receipts) return console.log('✔ no publication receipt / analytics snapshot in this change — scope check not needed');
+  if (violations.length) {
+    console.error(`\n✖ a change that adds receipts/snapshots may ONLY add new ${inboxes.map((d) => `${d}*.json`).join(' or ')} files.\n  Not allowed here:\n${violations.map((c) => `    ${c.status} ${c.file}`).join('\n')}\n`);
     process.exitCode = 1;
     return;
   }
-  console.log(`✔ scope ok: ${touched.length} new receipt/snapshot file(s), nothing else`);
+  console.log(`✔ scope ok: ${receipts} new receipt/snapshot file(s), nothing else`);
 }
 
 async function main() {

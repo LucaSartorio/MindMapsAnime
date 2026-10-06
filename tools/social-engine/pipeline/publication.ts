@@ -560,3 +560,16 @@ export function applyPendingReceipts(opts: { dirs: PipelineDirs; dryRun?: boolea
     release();
   }
 }
+
+/**
+ * Scope of an agent PR. A change is a "receipt PR" when it touches a receipt /
+ * snapshot FILE (`*.json` directly in an inbox folder); such a change may only
+ * ADD those files. Anything else in the inbox folders (README.md…) is engine
+ * content: it doesn't make a PR a receipt PR (an engine PR is not checked here).
+ */
+export function receiptScope(changes: { status: string; file: string }[], inboxes: string[]): { receipts: number; violations: { status: string; file: string }[] } {
+  const isReceiptFile = (file: string) => inboxes.some((dir) => file.startsWith(dir) && /^[^/]+\.json$/.test(file.slice(dir.length)));
+  const receipts = changes.filter((c) => isReceiptFile(c.file));
+  if (!receipts.length) return { receipts: 0, violations: [] };
+  return { receipts: receipts.length, violations: changes.filter((c) => !(c.status === 'A' && isReceiptFile(c.file))) };
+}
