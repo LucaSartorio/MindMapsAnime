@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-05T21:31:25.105Z",
+  "generatedAt": "2026-10-06T05:22:53.607Z",
   "templates": {
     "characterJourney": {
       "byReason": {
@@ -7583,6 +7583,1642 @@
           "reason": "single_location"
         }
       ]
+    },
+    "guessCharacter": {
+      "byReason": {
+        "not_guessable": 194,
+        "no_journey_data": 9
+      },
+      "items": [
+        {
+          "anime": "naruto",
+          "subject": "hiruzen-sarutobi",
+          "subjectId": "char-hiruzen",
+          "displayName": "Hiruzen Sarutobi",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "minato-namikaze",
+          "subjectId": "char-minato",
+          "displayName": "Minato Namikaze",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "kushina-uzumaki",
+          "subjectId": "char-kushina",
+          "displayName": "Kushina Uzumaki",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "hashirama-senju",
+          "subjectId": "char-hashirama",
+          "displayName": "Hashirama Senju",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "tobirama-senju",
+          "subjectId": "char-tobirama",
+          "displayName": "Tobirama Senju",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "mito-uzumaki",
+          "subjectId": "char-mito",
+          "displayName": "Mito Uzumaki",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "danzo-shimura",
+          "subjectId": "char-danzo",
+          "displayName": "Danzo Shimura",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "zabuza-momochi",
+          "subjectId": "char-zabuza",
+          "displayName": "Zabuza Momochi",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "mei-terumi",
+          "subjectId": "char-mei",
+          "displayName": "Mei Terumi",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "a",
+          "subjectId": "char-a",
+          "displayName": "A",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "killer-b",
+          "subjectId": "char-killer-b",
+          "displayName": "Killer B",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "onoki",
+          "subjectId": "char-onoki",
+          "displayName": "Onoki",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "itachi-uchiha",
+          "subjectId": "char-itachi",
+          "displayName": "Itachi Uchiha",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "pain-nagato",
+          "subjectId": "char-pain",
+          "displayName": "Pain / Nagato",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "sasori",
+          "subjectId": "char-sasori",
+          "displayName": "Sasori",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "hidan",
+          "subjectId": "char-hidan",
+          "displayName": "Hidan",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "kakuzu",
+          "subjectId": "char-kakuzu",
+          "displayName": "Kakuzu",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "zetsu",
+          "subjectId": "char-zetsu",
+          "displayName": "Zetsu",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "kaguya-otsutsuki",
+          "subjectId": "char-kaguya",
+          "displayName": "Kaguya Otsutsuki",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "hagoromo-otsutsuki",
+          "subjectId": "char-hagoromo",
+          "displayName": "Hagoromo Otsutsuki",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "kurama",
+          "subjectId": "char-kurama",
+          "displayName": "Kurama",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "shukaku",
+          "subjectId": "char-shukaku",
+          "displayName": "Shukaku",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "matatabi",
+          "subjectId": "char-matatabi",
+          "displayName": "Matatabi",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "son-goku",
+          "subjectId": "char-son-goku",
+          "displayName": "Son Gokū",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "gyuki",
+          "subjectId": "char-gyuki",
+          "displayName": "Gyūki",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "hanzo",
+          "subjectId": "char-hanzo",
+          "displayName": "Hanzō",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "mifune",
+          "subjectId": "char-mifune",
+          "displayName": "Mifune",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "boruto-uzumaki",
+          "subjectId": "char-boruto",
+          "displayName": "Boruto Uzumaki",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "sarada-uchiha",
+          "subjectId": "char-sarada",
+          "displayName": "Sarada Uchiha",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "mitsuki",
+          "subjectId": "char-mitsuki",
+          "displayName": "Mitsuki",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "toneri-otsutsuki",
+          "subjectId": "char-toneri",
+          "displayName": "Toneri Otsutsuki",
+          "reason": "no_journey_data",
+          "detail": "0 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "momoshiki-otsutsuki",
+          "subjectId": "char-momoshiki",
+          "displayName": "Momoshiki Ōtsutsuki",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "isshiki-otsutsuki",
+          "subjectId": "char-isshiki",
+          "displayName": "Isshiki Ōtsutsuki",
+          "reason": "no_journey_data",
+          "detail": "0 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "kawaki",
+          "subjectId": "char-kawaki",
+          "displayName": "Kawaki",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "ten-tails-jubi",
+          "subjectId": "char-ten-tails",
+          "displayName": "Ten-Tails (Jūbi)",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "black-zetsu",
+          "subjectId": "char-black-zetsu",
+          "displayName": "Black Zetsu",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "naruto",
+          "subject": "jura",
+          "subjectId": "char-jura",
+          "displayName": "Jura",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "illumi-zoldyck",
+          "subjectId": "char-hxh-illumi",
+          "displayName": "Illumi Zoldyck",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "isaac-netero",
+          "subjectId": "char-hxh-netero",
+          "displayName": "Isaac Netero",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "biscuit-krueger",
+          "subjectId": "char-hxh-biscuit",
+          "displayName": "Biscuit Krueger",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "kite",
+          "subjectId": "char-hxh-kite",
+          "displayName": "Kite",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "silva-zoldyck",
+          "subjectId": "char-hxh-silva",
+          "displayName": "Silva Zoldyck",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "zeno-zoldyck",
+          "subjectId": "char-hxh-zeno",
+          "displayName": "Zeno Zoldyck",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "meruem",
+          "subjectId": "char-hxh-meruem",
+          "displayName": "Meruem",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "neferpitou",
+          "subjectId": "char-hxh-neferpitou",
+          "displayName": "Neferpitou",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "shaiapouf",
+          "subjectId": "char-hxh-shaiapouf",
+          "displayName": "Shaiapouf",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "hunterxhunter",
+          "subject": "menthuthuyoupi",
+          "subjectId": "char-hxh-menthuthuyoupi",
+          "displayName": "Menthuthuyoupi",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "shanks",
+          "subjectId": "char-op-shanks",
+          "displayName": "Shanks",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "dracule-mihawk",
+          "subjectId": "char-op-mihawk",
+          "displayName": "Dracule Mihawk",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "arlong",
+          "subjectId": "char-op-arlong",
+          "displayName": "Arlong",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "jewelry-bonney",
+          "subjectId": "char-op-bonney",
+          "displayName": "Jewelry Bonney",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "donquijote-doflamingo",
+          "subjectId": "char-op-doflamingo",
+          "displayName": "Donquixote Doflamingo",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "donquijote-rosinante",
+          "subjectId": "char-op-corazon",
+          "displayName": "Donquixote Rosinante",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "rocks-d-xebec",
+          "subjectId": "char-op-rocks",
+          "displayName": "Rocks D. Xebec",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "edward-newgate",
+          "subjectId": "char-op-whitebeard",
+          "displayName": "Edward Newgate",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "sakazuki",
+          "subjectId": "char-op-akainu",
+          "displayName": "Sakazuki",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "boa-hancock",
+          "subjectId": "char-op-hancock",
+          "displayName": "Boa Hancock",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "silvers-rayleigh",
+          "subjectId": "char-op-rayleigh",
+          "displayName": "Silvers Rayleigh",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "imu",
+          "subjectId": "char-op-imu",
+          "displayName": "Imu",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "enel",
+          "subjectId": "char-op-enel",
+          "displayName": "Enel",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "rob-lucci",
+          "subjectId": "char-op-lucci",
+          "displayName": "Rob Lucci",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "brook",
+          "subjectId": "char-op-brook",
+          "displayName": "Brook",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "gecko-moria",
+          "subjectId": "char-op-moria",
+          "displayName": "Gecko Moria",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "caesar-clown",
+          "subjectId": "char-op-caesar",
+          "displayName": "Caesar Clown",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "charlotte-linlin",
+          "subjectId": "char-op-big-mom",
+          "displayName": "Charlotte Linlin",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "charlotte-katakuri",
+          "subjectId": "char-op-katakuri",
+          "displayName": "Charlotte Katakuri",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "kaido",
+          "subjectId": "char-op-kaido",
+          "displayName": "Kaido",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "kozuki-oden",
+          "subjectId": "char-op-oden",
+          "displayName": "Kozuki Oden",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "yamato",
+          "subjectId": "char-op-yamato",
+          "displayName": "Yamato",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "dr-vegapunk",
+          "subjectId": "char-op-vegapunk",
+          "displayName": "Dr. Vegapunk",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "jaygarcia-saturn",
+          "subjectId": "char-op-saturn",
+          "displayName": "Jaygarcia Saturn",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "borsalino",
+          "subjectId": "char-op-kizaru",
+          "displayName": "Borsalino",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "eustass-kid",
+          "subjectId": "char-op-kid",
+          "displayName": "Eustass Kid",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "gol-d-roger",
+          "subjectId": "char-op-roger",
+          "displayName": "Gol D. Roger",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "issho",
+          "subjectId": "char-op-fujitora",
+          "displayName": "Issho",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "marco",
+          "subjectId": "char-op-marco",
+          "displayName": "Marco",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "queen",
+          "subjectId": "char-op-queen",
+          "displayName": "Queen",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "uta",
+          "subjectId": "char-op-uta",
+          "displayName": "Uta",
+          "reason": "no_journey_data",
+          "detail": "0 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "gild-tesoro",
+          "subjectId": "char-op-gild-tesoro",
+          "displayName": "Gild Tesoro",
+          "reason": "no_journey_data",
+          "detail": "0 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "douglas-bullet",
+          "subjectId": "char-op-douglas-bullet",
+          "displayName": "Douglas Bullet",
+          "reason": "no_journey_data",
+          "detail": "0 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "zephyr",
+          "subjectId": "char-op-zephyr",
+          "displayName": "Zephyr",
+          "reason": "no_journey_data",
+          "detail": "0 spoiler-free places"
+        },
+        {
+          "anime": "onepiece",
+          "subject": "shiki",
+          "subjectId": "char-op-shiki",
+          "displayName": "Shiki",
+          "reason": "no_journey_data",
+          "detail": "0 spoiler-free places"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "frieza",
+          "subjectId": "char-dbz-frieza",
+          "displayName": "Frieza",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "cell",
+          "subjectId": "char-dbz-cell",
+          "displayName": "Cell",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "kid-buu",
+          "subjectId": "char-dbz-kid-buu",
+          "displayName": "Kid Buu",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "gotenks",
+          "subjectId": "char-dbz-gotenks",
+          "displayName": "Gotenks",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "vegito",
+          "subjectId": "char-dbz-vegito",
+          "displayName": "Vegito",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "gogeta",
+          "subjectId": "char-dbz-gogeta",
+          "displayName": "Gogeta",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "broly",
+          "subjectId": "char-dbz-broly",
+          "displayName": "Broly",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "beerus",
+          "subjectId": "char-dbz-beerus",
+          "displayName": "Beerus",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "whis",
+          "subjectId": "char-dbz-whis",
+          "displayName": "Whis",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "zamasu",
+          "subjectId": "char-dbz-zamasu",
+          "displayName": "Zamasu",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "goku-black",
+          "subjectId": "char-dbz-goku-black",
+          "displayName": "Goku Black",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "jiren",
+          "subjectId": "char-dbz-jiren",
+          "displayName": "Jiren",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "baby",
+          "subjectId": "char-dbz-gt-baby",
+          "displayName": "Baby",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "super-17",
+          "subjectId": "char-dbz-gt-super-17",
+          "displayName": "Super 17",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "omega-shenron",
+          "subjectId": "char-dbz-gt-omega-shenron",
+          "displayName": "Omega Shenron",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "cooler",
+          "subjectId": "char-dbz-cooler",
+          "displayName": "Cooler",
+          "reason": "no_journey_data",
+          "detail": "0 spoiler-free places"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "janemba",
+          "subjectId": "char-dbz-janemba",
+          "displayName": "Janemba",
+          "reason": "no_journey_data",
+          "detail": "0 spoiler-free places"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "kefla",
+          "subjectId": "char-dbz-kefla",
+          "displayName": "Kefla",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "fused-zamasu",
+          "subjectId": "char-dbz-fused-zamasu",
+          "displayName": "Fused Zamasu",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "moro",
+          "subjectId": "char-dbz-moro",
+          "displayName": "Moro",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "granolah",
+          "subjectId": "char-dbz-granolah",
+          "displayName": "Granolah",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "kami",
+          "subjectId": "char-dbz-kami",
+          "displayName": "Kami",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "king-piccolo",
+          "subjectId": "char-dbz-king-piccolo",
+          "displayName": "King Piccolo",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "dragonball",
+          "subject": "gomah",
+          "subjectId": "char-dbz-gomah",
+          "displayName": "Gomah",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "eren-yeager",
+          "subjectId": "char-aot-eren",
+          "displayName": "Eren Yeager",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "sasha-blouse",
+          "subjectId": "char-aot-sasha",
+          "displayName": "Sasha Blouse",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "historia-reiss",
+          "subjectId": "char-aot-historia",
+          "displayName": "Historia Reiss",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "ymir",
+          "subjectId": "char-aot-ymir",
+          "displayName": "Ymir",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "marco-bott",
+          "subjectId": "char-aot-marco",
+          "displayName": "Marco Bott",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "floch-forster",
+          "subjectId": "char-aot-floch",
+          "displayName": "Floch Forster",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "erwin-smith",
+          "subjectId": "char-aot-erwin",
+          "displayName": "Erwin Smith",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "mike-zacharius",
+          "subjectId": "char-aot-mike",
+          "displayName": "Mike Zacharius",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "petra-ral",
+          "subjectId": "char-aot-petra",
+          "displayName": "Petra Ral",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "keith-shadis",
+          "subjectId": "char-aot-shadis",
+          "displayName": "Keith Shadis",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "hannes",
+          "subjectId": "char-aot-hannes",
+          "displayName": "Hannes",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "dot-pixis",
+          "subjectId": "char-aot-pixis",
+          "displayName": "Dot Pixis",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "nile-dok",
+          "subjectId": "char-aot-nile",
+          "displayName": "Nile Dok",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "darius-zackly",
+          "subjectId": "char-aot-zackly",
+          "displayName": "Darius Zackly",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "grisha-yeager",
+          "subjectId": "char-aot-grisha",
+          "displayName": "Grisha Yeager",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "carla-yeager",
+          "subjectId": "char-aot-carla",
+          "displayName": "Carla Yeager",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "dina-fritz",
+          "subjectId": "char-aot-dina",
+          "displayName": "Dina Fritz",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "eren-kruger",
+          "subjectId": "char-aot-kruger",
+          "displayName": "Eren Kruger",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "bertolt-hoover",
+          "subjectId": "char-aot-bertolt",
+          "displayName": "Bertolt Hoover",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "annie-leonhart",
+          "subjectId": "char-aot-annie",
+          "displayName": "Annie Leonhart",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "theo-magath",
+          "subjectId": "char-aot-magath",
+          "displayName": "Theo Magath",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "willy-tybur",
+          "subjectId": "char-aot-willy-tybur",
+          "displayName": "Willy Tybur",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "lara-tybur",
+          "subjectId": "char-aot-lara-tybur",
+          "displayName": "Lara Tybur",
+          "reason": "not_guessable",
+          "detail": "0 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "yelena",
+          "subjectId": "char-aot-yelena",
+          "displayName": "Yelena",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "onyankopon",
+          "subjectId": "char-aot-onyankopon",
+          "displayName": "Onyankopon",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "kiyomi-azumabito",
+          "subjectId": "char-aot-kiyomi",
+          "displayName": "Kiyomi Azumabito",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "king-fritz",
+          "subjectId": "char-aot-king-fritz",
+          "displayName": "King Fritz",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "karl-fritz",
+          "subjectId": "char-aot-karl-fritz",
+          "displayName": "Karl Fritz",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "rod-reiss",
+          "subjectId": "char-aot-rod-reiss",
+          "displayName": "Rod Reiss",
+          "reason": "not_guessable",
+          "detail": "0 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "frieda-reiss",
+          "subjectId": "char-aot-frieda-reiss",
+          "displayName": "Frieda Reiss",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "attackontitan",
+          "subject": "kenny-ackerman",
+          "subjectId": "char-aot-kenny",
+          "displayName": "Kenny Ackerman",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "bleach",
+          "subject": "masaki-kurosaki",
+          "subjectId": "char-bl-masaki",
+          "displayName": "Masaki Kurosaki",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "bleach",
+          "subject": "genryusai-shigekuni-yamamoto",
+          "subjectId": "char-bl-yamamoto",
+          "displayName": "Genryūsai Shigekuni Yamamoto",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "bleach",
+          "subject": "sui-feng-soi-fon",
+          "subjectId": "char-bl-soi-fon",
+          "displayName": "Suì-Fēng (Soi Fon)",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "bleach",
+          "subject": "gin-ichimaru",
+          "subjectId": "char-bl-gin",
+          "displayName": "Gin Ichimaru",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "bleach",
+          "subject": "retsu-unohana-yachiru-unohana",
+          "subjectId": "char-bl-unohana",
+          "displayName": "Retsu Unohana (Yachiru Unohana)",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "bleach",
+          "subject": "shunsui-kyoraku",
+          "subjectId": "char-bl-kyoraku",
+          "displayName": "Shunsui Kyōraku",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "bleach",
+          "subject": "kaname-tosen",
+          "subjectId": "char-bl-tosen",
+          "displayName": "Kaname Tōsen",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "bleach",
+          "subject": "toshiro-hitsugaya",
+          "subjectId": "char-bl-hitsugaya",
+          "displayName": "Tōshirō Hitsugaya",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "bleach",
+          "subject": "kenpachi-zaraki",
+          "subjectId": "char-bl-kenpachi",
+          "displayName": "Kenpachi Zaraki",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "bleach",
+          "subject": "mayuri-kurotsuchi",
+          "subjectId": "char-bl-mayuri",
+          "displayName": "Mayuri Kurotsuchi",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "bleach",
+          "subject": "shinji-hirako",
+          "subjectId": "char-bl-shinji",
+          "displayName": "Shinji Hirako",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "bleach",
+          "subject": "soul-king",
+          "subjectId": "char-bl-soul-king",
+          "displayName": "Soul King",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "bleach",
+          "subject": "kugo-ginjo",
+          "subjectId": "char-bl-ginjo",
+          "displayName": "Kūgo Ginjō",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "bleach",
+          "subject": "coyote-starrk",
+          "subjectId": "char-bl-starrk",
+          "displayName": "Coyote Starrk",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "bleach",
+          "subject": "barragan-louisenbairn",
+          "subjectId": "char-bl-barragan",
+          "displayName": "Barragan Louisenbairn",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "bleach",
+          "subject": "tier-harribel",
+          "subjectId": "char-bl-harribel",
+          "displayName": "Tier Harribel",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "bleach",
+          "subject": "ulquiorra-cifer",
+          "subjectId": "char-bl-ulquiorra",
+          "displayName": "Ulquiorra Cifer",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "bleach",
+          "subject": "grimmjow-jaegerjaquez",
+          "subjectId": "char-bl-grimmjow",
+          "displayName": "Grimmjow Jaegerjaquez",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "bleach",
+          "subject": "nelliel-tu-odelschwanck-nel",
+          "subjectId": "char-bl-nelliel",
+          "displayName": "Nelliel Tu Odelschwanck (Nel)",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "bleach",
+          "subject": "jugram-haschwalth",
+          "subjectId": "char-bl-haschwalth",
+          "displayName": "Jugram Haschwalth",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "yuji-itadori",
+          "subjectId": "char-jjk-yuji",
+          "displayName": "Yuji Itadori",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "megumi-fushiguro",
+          "subjectId": "char-jjk-megumi",
+          "displayName": "Megumi Fushiguro",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "nobara-kugisaki",
+          "subjectId": "char-jjk-nobara",
+          "displayName": "Nobara Kugisaki",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "satoru-gojo",
+          "subjectId": "char-jjk-gojo",
+          "displayName": "Satoru Gojo",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "maki-zenin",
+          "subjectId": "char-jjk-maki",
+          "displayName": "Maki Zen'in",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "toge-inumaki",
+          "subjectId": "char-jjk-toge",
+          "displayName": "Toge Inumaki",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "panda",
+          "subjectId": "char-jjk-panda",
+          "displayName": "Panda",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "yuta-okkotsu",
+          "subjectId": "char-jjk-yuta",
+          "displayName": "Yuta Okkotsu",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "kento-nanami",
+          "subjectId": "char-jjk-nanami",
+          "displayName": "Kento Nanami",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "shoko-ieiri",
+          "subjectId": "char-jjk-shoko",
+          "displayName": "Shoko Ieiri",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "masamichi-yaga",
+          "subjectId": "char-jjk-yaga",
+          "displayName": "Masamichi Yaga",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "yuki-tsukumo",
+          "subjectId": "char-jjk-yuki",
+          "displayName": "Yuki Tsukumo",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "kinji-hakari",
+          "subjectId": "char-jjk-hakari",
+          "displayName": "Kinji Hakari",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "junpei-yoshino",
+          "subjectId": "char-jjk-junpei",
+          "displayName": "Junpei Yoshino",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "riko-amanai",
+          "subjectId": "char-jjk-riko",
+          "displayName": "Riko Amanai",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "rika-orimoto",
+          "subjectId": "char-jjk-rika",
+          "displayName": "Rika Orimoto",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "hiromi-higuruma",
+          "subjectId": "char-jjk-higuruma",
+          "displayName": "Hiromi Higuruma",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "aoi-todo",
+          "subjectId": "char-jjk-todo",
+          "displayName": "Aoi Todo",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "mai-zenin",
+          "subjectId": "char-jjk-mai",
+          "displayName": "Mai Zen'in",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "noritoshi-kamo",
+          "subjectId": "char-jjk-noritoshi",
+          "displayName": "Noritoshi Kamo",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "kokichi-muta",
+          "subjectId": "char-jjk-mechamaru",
+          "displayName": "Kokichi Muta",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "naoya-zenin",
+          "subjectId": "char-jjk-naoya",
+          "displayName": "Naoya Zen'in",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "tengen",
+          "subjectId": "char-jjk-tengen",
+          "displayName": "Tengen",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "ryomen-sukuna",
+          "subjectId": "char-jjk-sukuna",
+          "displayName": "Ryomen Sukuna",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "kenjaku",
+          "subjectId": "char-jjk-kenjaku",
+          "displayName": "Kenjaku",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "suguru-geto",
+          "subjectId": "char-jjk-geto",
+          "displayName": "Suguru Geto",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "toji-fushiguro",
+          "subjectId": "char-jjk-toji",
+          "displayName": "Toji Fushiguro",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "mahito",
+          "subjectId": "char-jjk-mahito",
+          "displayName": "Mahito",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "jogo",
+          "subjectId": "char-jjk-jogo",
+          "displayName": "Jogo",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "choso",
+          "subjectId": "char-jjk-choso",
+          "displayName": "Choso",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "jujutsukaisen",
+          "subject": "hajime-kashimo",
+          "subjectId": "char-jjk-kashimo",
+          "displayName": "Hajime Kashimo",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "nacht-faust",
+          "subjectId": "char-bc-nacht",
+          "displayName": "Nacht Faust",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "conrad-leto",
+          "subjectId": "char-bc-conrad",
+          "displayName": "Conrad Leto",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "nozel-silva",
+          "subjectId": "char-bc-nozel",
+          "displayName": "Nozel Silva",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "fuegoleon-vermillion",
+          "subjectId": "char-bc-fuegoleon",
+          "displayName": "Fuegoleon Vermillion",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "mereoleona-vermillion",
+          "subjectId": "char-bc-mereoleona",
+          "displayName": "Mereoleona Vermillion",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "charlotte-roselei",
+          "subjectId": "char-bc-charlotte",
+          "displayName": "Charlotte Roselei",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "julius-novachrono",
+          "subjectId": "char-bc-julius",
+          "displayName": "Julius Novachrono",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "lumiere-silvamillion-clover",
+          "subjectId": "char-bc-lumiere",
+          "displayName": "Lumiere Silvamillion Clover",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "licht",
+          "subjectId": "char-bc-licht",
+          "displayName": "Licht",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "zagred",
+          "subjectId": "char-bc-zagred",
+          "displayName": "Zagred",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "dante-zogratis",
+          "subjectId": "char-bc-dante",
+          "displayName": "Dante Zogratis",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "vanica-zogratis",
+          "subjectId": "char-bc-vanica",
+          "displayName": "Vanica Zogratis",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "lucius-zogratis",
+          "subjectId": "char-bc-lucius",
+          "displayName": "Lucius Zogratis",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "lucifero",
+          "subjectId": "char-bc-lucifero",
+          "displayName": "Lucifero",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "blackclover",
+          "subject": "megicula",
+          "subjectId": "char-bc-megicula",
+          "displayName": "Megicula",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        }
+      ]
+    },
+    "characterVersus": {
+      "byReason": {},
+      "items": []
     }
   }
 }

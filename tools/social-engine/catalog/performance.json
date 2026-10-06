@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "samples": 0,
+  "contents": 0,
+  "coldStart": true,
+  "globalMean": 50,
+  "weights": {
+    "retention": 0.35,
+    "shares": 0.2,
+    "comments": 0.15,
+    "follows": 0.15,
+    "saves": 0.1,
+    "likes": 0.05
+  },
+  "posts": [],
+  "dimensions": {
+    "content": {},
+    "character": {},
+    "anime": {},
+    "contentType": {},
+    "hookType": {},
+    "durationBucket": {},
+    "platform": {}
+  },
+  "generatedAt": "2026-10-06T05:22:53.607Z"
+}
