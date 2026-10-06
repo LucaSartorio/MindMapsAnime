@@ -1,5 +1,6 @@
 import { useEffect, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLoadedWorldDataset } from '@/data/registry';
 import { LOCALE_META } from '@/types/i18n';
@@ -10,6 +11,7 @@ import {
   type ResolvedPage,
 } from '@/seo/metadata';
 import { applyHead } from '@/seo/head';
+import { buildTabTitle } from '@/seo/tabTitle';
 import { useSeoLang } from '@/seo/useSeoLang';
 
 interface SeoProps {
@@ -31,17 +33,20 @@ export function Seo({ resolved, notFound }: SeoProps) {
   const { pathname } = useLocation();
   const lang = useSeoLang();
   const uiLocale = useLocaleStore((s) => s.locale);
+  const { t } = useTranslation();
 
-  const meta = useMemo(() => {
-    if (notFound) return notFoundMeta(lang);
-    const r = resolved === undefined ? resolveSeoPath(pathname, getLoadedWorldDataset) : resolved;
-    return r ? buildPageMeta(r) : notFoundMeta(lang);
-  }, [notFound, resolved, pathname, lang]);
+  const page = useMemo(() => {
+    if (notFound) return null;
+    return resolved === undefined ? resolveSeoPath(pathname, getLoadedWorldDataset) : resolved;
+  }, [notFound, resolved, pathname]);
+  const meta = useMemo(() => (page ? buildPageMeta(page) : notFoundMeta(lang)), [page, lang]);
+  // Titolo della scheda del browser: breve, per sezione, nella lingua UI.
+  const tabTitle = useMemo(() => (page ? buildTabTitle(page, uiLocale, t) : null), [page, uiLocale, t]);
 
   useEffect(() => {
     // `lang` dell'<html>: la lingua in cui l'utente legge l'interfaccia.
-    applyHead(meta, LOCALE_META[uiLocale].htmlLang);
-  }, [meta, uiLocale]);
+    applyHead(meta, LOCALE_META[uiLocale].htmlLang, tabTitle);
+  }, [meta, uiLocale, tabTitle]);
 
   return null;
 }

@@ -10,6 +10,8 @@ export const it = {
     tagline:
       'Esplora i mondi dei tuoi anime e manga preferiti attraverso mappe interattive, timeline, personaggi, archi narrativi e percorsi.',
     eyebrow: 'atlante interattivo · anime & manga',
+    /** Titolo della scheda del browser in homepage: "AniMapVerse — …". */
+    tabTagline: 'Mappe interattive',
   },
   nav: {
     map: 'Mappa',

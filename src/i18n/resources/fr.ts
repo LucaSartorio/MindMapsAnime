@@ -8,6 +8,8 @@ export const fr = {
     tagline:
       'Explorez les mondes de vos animes et mangas préférés à travers des cartes interactives, des chronologies, des personnages, des arcs narratifs et des trajets.',
     eyebrow: 'atlas interactif · anime & manga',
+    /** Titolo della scheda del browser in homepage: "AniMapVerse — …". */
+    tabTagline: 'Cartes interactives',
   },
   nav: {
     map: 'Carte',
