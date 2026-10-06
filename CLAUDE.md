@@ -623,6 +623,11 @@ metadata, and every indexable entity has a stable URL. The whole layer lives in 
 - **Metadata** come only from `buildPageMeta` (title/description in `src/seo/strings.ts`, IT/EN),
   applied by `<Seo resolved=… />` on the client and `renderHeadHtml` at build. Do not add
   `<title>`/meta/canonical tags anywhere else (managed tags carry `data-seo`).
+  **Browser-tab title** (`buildTabTitle`, `src/seo/tabTitle.ts`): after hydration `<Seo>` sets `document.title`
+  to a short, per-section label in the UI language ("AniMapVerse — Mappe interattive", "Naruto — Mappa",
+  "Naruto — Personaggi", same labels as the header tabs). Entity pages and 404 return `null` and keep the SEO
+  title (a generic title repeated on hundreds of pages would be a duplicate for Google, which reads the JS title).
+  The pre-rendered `<title>`, Open Graph and JSON-LD stay the descriptive `buildPageMeta` ones.
 - **Index/noindex** (`isIndexable`, `src/seo/quality.ts`): entity pages are indexable only above a
   content threshold AND when their text truly exists in that language (a plain-string
   `Localizable` counts as Italian). hreflang lists only indexable versions (reciprocal); noindex

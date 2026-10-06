@@ -77,10 +77,14 @@ export function renderHeadHtml(meta: PageMeta): string {
   return lines.join('\n    ');
 }
 
-/** Applicazione client (navigazione SPA). Idempotente. */
-export function applyHead(meta: PageMeta, htmlLang: string): void {
+/**
+ * Applicazione client (navigazione SPA). Idempotente. `tabTitle` (vedi
+ * `buildTabTitle`) sostituisce il title SEO nella scheda del browser.
+ */
+export function applyHead(meta: PageMeta, htmlLang: string, tabTitle?: string | null): void {
   if (typeof document === 'undefined') return;
-  if (document.title !== meta.title) document.title = meta.title;
+  const title = tabTitle || meta.title;
+  if (document.title !== title) document.title = title;
   document.documentElement.lang = htmlLang;
   const head = document.head;
   const next = buildHeadTags(meta);
