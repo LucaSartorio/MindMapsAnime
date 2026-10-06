@@ -113,7 +113,8 @@
         "manifest": "manifests/dragonball_goku_character-journey_part-01_en.manifest.json",
         "sha256": null,
         "expiresAt": "2026-11-01T10:45:48Z"
-      }
+      },
+      "social": null
     },
     "character-journey:hunterxhunter:gon-freecss@en": {
       "renderId": "character-journey:hunterxhunter:gon-freecss@en",
@@ -138,7 +139,8 @@
       "platforms": [],
       "segment": null,
       "segmentFingerprint": null,
-      "artifact": null
+      "artifact": null,
+      "social": null
     },
     "character-journey:naruto:itachi-uchiha@en": {
       "renderId": "character-journey:naruto:itachi-uchiha@en",
@@ -163,7 +165,8 @@
       "platforms": [],
       "segment": null,
       "segmentFingerprint": null,
-      "artifact": null
+      "artifact": null,
+      "social": null
     },
     "character-journey:naruto:itachi-uchiha@it": {
       "renderId": "character-journey:naruto:itachi-uchiha@it",
@@ -188,7 +191,8 @@
       "platforms": [],
       "segment": null,
       "segmentFingerprint": null,
-      "artifact": null
+      "artifact": null,
+      "social": null
     },
     "character-journey:naruto:kushina-uzumaki@en": {
       "renderId": "character-journey:naruto:kushina-uzumaki@en",
@@ -213,7 +217,8 @@
       "platforms": [],
       "segment": null,
       "segmentFingerprint": null,
-      "artifact": null
+      "artifact": null,
+      "social": null
     },
     "character-journey:naruto:naruto-uzumaki:part-01@en": {
       "renderId": "character-journey:naruto:naruto-uzumaki:part-01@en",
@@ -226,7 +231,7 @@
       "segment": "part-01",
       "segmentFingerprint": "aadfdbe7",
       "createdAt": "2026-10-04T07:38:04.785Z",
-      "updatedAt": "2026-10-05T06:08:36.701Z",
+      "updatedAt": "2026-10-06T06:08:42.290Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-10-04T07:41:33.080Z",
       "outputFile": "tools/social-engine/output/naruto_naruto-uzumaki_character-journey_part-01_en.mp4",
@@ -245,48 +250,50 @@
         "sha256": "bc15219f9b845d760e386e2a2e64dfa84c277bf335192e92508d94be29c9cd8e",
         "expiresAt": "2026-11-03T07:41:33.080Z"
       },
-      "publicationStatus": "partiallyPublished",
-      "publishedAt": "2026-10-04T08:05:39Z",
+      "publicationStatus": "published",
+      "publishedAt": "2026-10-04T08:04:13Z",
       "platforms": [
         {
           "platform": "instagram",
           "provider": "metricool",
-          "status": "scheduled",
+          "status": "published",
           "scheduledFor": "2026-10-04T10:00:00+02:00",
           "scheduledAt": "2026-10-04T07:46:28Z",
-          "publishedAt": null,
+          "publishedAt": "2026-10-04T08:05:23Z",
           "failedAt": null,
           "providerPostId": "387677125",
           "providerPostUuid": "-2338125002035671890",
           "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-2338125002035671890",
-          "publicUrl": null,
+          "publicUrl": "https://www.instagram.com/reel/DeEKdTClIiP/",
           "lastError": null,
           "attempts": 1,
           "receipts": [
             "naruto_naruto-uzumaki_character-journey_part-01_en.instagram.scheduled.ef38f3d57045",
-            "naruto_naruto-uzumaki_character-journey_part-01_en.instagram.scheduled.8e70135b2cb1"
+            "naruto_naruto-uzumaki_character-journey_part-01_en.instagram.scheduled.8e70135b2cb1",
+            "naruto_naruto-uzumaki_character-journey_part-01_en.instagram.published.d67571846b34"
           ],
-          "updatedAt": "2026-10-04T07:56:56.164Z"
+          "updatedAt": "2026-10-06T06:08:42.290Z"
         },
         {
           "platform": "facebook",
           "provider": "metricool",
-          "status": "scheduled",
+          "status": "published",
           "scheduledFor": "2026-10-04T10:00:00+02:00",
           "scheduledAt": "2026-10-04T07:46:28Z",
-          "publishedAt": null,
+          "publishedAt": "2026-10-04T08:04:13Z",
           "failedAt": null,
           "providerPostId": "387677125",
           "providerPostUuid": "-2338125002035671890",
           "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-2338125002035671890",
-          "publicUrl": null,
+          "publicUrl": "https://facebook.com/reel/1113582491562187",
           "lastError": null,
           "attempts": 1,
           "receipts": [
             "naruto_naruto-uzumaki_character-journey_part-01_en.facebook.scheduled.9b6fc2bb601f",
-            "naruto_naruto-uzumaki_character-journey_part-01_en.facebook.scheduled.2490fbe4791f"
+            "naruto_naruto-uzumaki_character-journey_part-01_en.facebook.scheduled.2490fbe4791f",
+            "naruto_naruto-uzumaki_character-journey_part-01_en.facebook.published.ca3eeef69393"
           ],
-          "updatedAt": "2026-10-04T07:56:56.164Z"
+          "updatedAt": "2026-10-06T06:08:42.290Z"
         },
         {
           "platform": "tiktok",
@@ -330,7 +337,8 @@
           ],
           "updatedAt": "2026-10-05T06:08:36.701Z"
         }
-      ]
+      ],
+      "social": null
     },
     "character-journey:onepiece:monkey-d-luffy:part-01@en": {
       "renderId": "character-journey:onepiece:monkey-d-luffy:part-01@en",
@@ -343,7 +351,7 @@
       "segment": "part-01",
       "segmentFingerprint": "c751f97b",
       "createdAt": "2026-10-05T06:32:11.399Z",
-      "updatedAt": "2026-10-05T06:48:23.835Z",
+      "updatedAt": "2026-10-06T06:08:42.290Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-10-05T06:35:09.806Z",
       "outputFile": "tools/social-engine/output/onepiece_monkey-d-luffy_character-journey_part-01_en.mp4",
@@ -362,68 +370,71 @@
         "sha256": "7692b66385a54366fc178c2d03776c13650e795b3cea5316be10b72763f228e3",
         "expiresAt": "2026-11-04T06:35:09.806Z"
       },
-      "publicationStatus": "scheduled",
-      "publishedAt": null,
+      "publicationStatus": "partiallyPublished",
+      "publishedAt": "2026-10-05T08:04:13Z",
       "platforms": [
         {
           "platform": "instagram",
           "provider": "metricool",
-          "status": "scheduled",
+          "status": "published",
           "scheduledFor": "2026-10-05T10:00:00+02:00",
           "scheduledAt": "2026-10-05T06:39:00Z",
-          "publishedAt": null,
+          "publishedAt": "2026-10-05T08:05:26Z",
           "failedAt": null,
           "providerPostId": "388238135",
           "providerPostUuid": "664871948699779368",
           "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=664871948699779368",
-          "publicUrl": null,
+          "publicUrl": "https://www.instagram.com/reel/DeGvQg5FdWx/",
           "lastError": null,
           "attempts": 1,
           "receipts": [
             "onepiece_monkey-d-luffy_character-journey_part-01_en.instagram.scheduled.cb401c38abec",
-            "onepiece_monkey-d-luffy_character-journey_part-01_en.instagram.scheduled.ba23d2acbaaa"
+            "onepiece_monkey-d-luffy_character-journey_part-01_en.instagram.scheduled.ba23d2acbaaa",
+            "onepiece_monkey-d-luffy_character-journey_part-01_en.instagram.published.ee20d9bd2c49"
           ],
-          "updatedAt": "2026-10-05T06:48:23.835Z"
+          "updatedAt": "2026-10-06T06:08:42.290Z"
         },
         {
           "platform": "facebook",
           "provider": "metricool",
-          "status": "scheduled",
+          "status": "published",
           "scheduledFor": "2026-10-05T10:00:00+02:00",
           "scheduledAt": "2026-10-05T06:39:00Z",
-          "publishedAt": null,
+          "publishedAt": "2026-10-05T08:04:13Z",
           "failedAt": null,
           "providerPostId": "388238135",
           "providerPostUuid": "664871948699779368",
           "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=664871948699779368",
-          "publicUrl": null,
+          "publicUrl": "https://facebook.com/reel/972287401900505",
           "lastError": null,
           "attempts": 1,
           "receipts": [
             "onepiece_monkey-d-luffy_character-journey_part-01_en.facebook.scheduled.c21c9821e3a2",
-            "onepiece_monkey-d-luffy_character-journey_part-01_en.facebook.scheduled.4152e1c6e409"
+            "onepiece_monkey-d-luffy_character-journey_part-01_en.facebook.scheduled.4152e1c6e409",
+            "onepiece_monkey-d-luffy_character-journey_part-01_en.facebook.published.d01ca53b30fb"
           ],
-          "updatedAt": "2026-10-05T06:48:23.835Z"
+          "updatedAt": "2026-10-06T06:08:42.290Z"
         },
         {
           "platform": "tiktok",
           "provider": "metricool",
-          "status": "scheduled",
+          "status": "published",
           "scheduledFor": "2026-10-05T10:00:00+02:00",
           "scheduledAt": "2026-10-05T06:39:00Z",
-          "publishedAt": null,
+          "publishedAt": "2026-10-05T08:05:40Z",
           "failedAt": null,
           "providerPostId": "388238135",
           "providerPostUuid": "664871948699779368",
           "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=664871948699779368",
-          "publicUrl": null,
+          "publicUrl": "https://www.tiktok.com/@interactiveanimeworlds/video/7693091938425113878",
           "lastError": null,
           "attempts": 1,
           "receipts": [
             "onepiece_monkey-d-luffy_character-journey_part-01_en.tiktok.scheduled.2406cd228cda",
-            "onepiece_monkey-d-luffy_character-journey_part-01_en.tiktok.scheduled.f12fd7681272"
+            "onepiece_monkey-d-luffy_character-journey_part-01_en.tiktok.scheduled.f12fd7681272",
+            "onepiece_monkey-d-luffy_character-journey_part-01_en.tiktok.published.1890f735c1a7"
           ],
-          "updatedAt": "2026-10-05T06:48:23.835Z"
+          "updatedAt": "2026-10-06T06:08:42.290Z"
         },
         {
           "platform": "youtube",
@@ -445,7 +456,8 @@
           ],
           "updatedAt": "2026-10-05T06:48:23.835Z"
         }
-      ]
+      ],
+      "social": null
     },
     "character-journey:onepiece:monkey-d-luffy@it": {
       "renderId": "character-journey:onepiece:monkey-d-luffy@it",
@@ -470,7 +482,8 @@
       "platforms": [],
       "segment": null,
       "segmentFingerprint": null,
-      "artifact": null
+      "artifact": null,
+      "social": null
     }
   }
 }

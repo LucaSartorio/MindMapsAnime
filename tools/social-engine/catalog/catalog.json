@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T05:22:53.607Z",
+  "generatedAt": "2026-10-06T06:08:42.306Z",
   "locales": [
     "en",
     "it"
@@ -125,9 +125,7 @@
           "renderedLocales": [
             "en"
           ],
-          "scheduledLocales": [
-            "en"
-          ],
+          "scheduledLocales": [],
           "publishedLocales": [
             "en"
           ],
@@ -139,10 +137,10 @@
               "renderId": "character-journey:naruto:naruto-uzumaki:part-01@en",
               "locale": "en",
               "variant": null,
-              "status": "partiallyPublished",
+              "status": "published",
               "platforms": {
-                "instagram": "scheduled",
-                "facebook": "scheduled",
+                "instagram": "published",
+                "facebook": "published",
                 "tiktok": "published",
                 "youtube": "published"
               }
@@ -3622,20 +3620,22 @@
           "scheduledLocales": [
             "en"
           ],
-          "publishedLocales": [],
+          "publishedLocales": [
+            "en"
+          ],
           "queuedLocales": [],
           "renderedBefore": true,
-          "publishedBefore": false,
+          "publishedBefore": true,
           "publication": [
             {
               "renderId": "character-journey:onepiece:monkey-d-luffy:part-01@en",
               "locale": "en",
               "variant": null,
-              "status": "scheduled",
+              "status": "partiallyPublished",
               "platforms": {
-                "instagram": "scheduled",
-                "facebook": "scheduled",
-                "tiktok": "scheduled",
+                "instagram": "published",
+                "facebook": "published",
+                "tiktok": "published",
                 "youtube": "scheduled"
               }
             }
@@ -25264,9 +25264,9 @@
       "rendered": 8,
       "unavailable": 5,
       "notPublished": 5,
-      "scheduled": 1,
+      "scheduled": 0,
       "partiallyPublished": 1,
-      "published": 1,
+      "published": 2,
       "failed": 0
     },
     "ready": [],

@@ -1,0 +1,33 @@
+{
+  "receiptId": "onepiece_monkey-d-luffy_character-journey_part-01_en.instagram.published.ee20d9bd2c49",
+  "outcome": "applied",
+  "transition": {
+    "from": "scheduled",
+    "to": "published"
+  },
+  "note": null,
+  "appliedAt": "2026-10-06T06:08:42.290Z",
+  "sourceFile": "20261006T060457Z-onepiece_monkey-d-luffy_character-journey_part-01_en-instagram-published.json",
+  "run": {
+    "runId": "37422109363",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/37422109363",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "character-journey:onepiece:monkey-d-luffy:part-01@en",
+    "platform": "instagram",
+    "provider": "metricool",
+    "status": "published",
+    "publishedAt": "2026-10-05T08:05:26Z",
+    "publicUrl": "https://www.instagram.com/reel/DeGvQg5FdWx/",
+    "providerPostId": "388238135",
+    "providerPostUuid": "664871948699779368",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=664871948699779368",
+    "scheduledFor": "2026-10-05T10:00:00+02:00",
+    "recordedAt": "2026-10-06T06:04:57Z",
+    "recordedBy": "chatgpt-work-publishing-agent",
+    "notes": "Pubblicazione confermata nel planner; publishedAt dagli analytics, in UTC."
+  }
+}
