@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T06:42:19.348Z",
+  "generatedAt": "2026-10-06T07:00:34.735Z",
   "locales": [
     "en",
     "it"
@@ -2652,7 +2652,9 @@
           "renderedLocales": [
             "en"
           ],
-          "scheduledLocales": [],
+          "scheduledLocales": [
+            "en"
+          ],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": true,
@@ -2662,12 +2664,12 @@
               "renderId": "character-journey:hunterxhunter:killua-zoldyck:part-01@en",
               "locale": "en",
               "variant": null,
-              "status": "notPublished",
+              "status": "scheduled",
               "platforms": {
-                "instagram": "notScheduled",
-                "facebook": "notScheduled",
-                "tiktok": "notScheduled",
-                "youtube": "notScheduled"
+                "instagram": "scheduled",
+                "facebook": "scheduled",
+                "tiktok": "scheduled",
+                "youtube": "scheduled"
               }
             }
           ]
@@ -25278,67 +25280,13 @@
     "summary": {
       "rendered": 9,
       "unavailable": 5,
-      "notPublished": 6,
-      "scheduled": 0,
+      "notPublished": 5,
+      "scheduled": 1,
       "partiallyPublished": 1,
       "published": 2,
       "failed": 0
     },
-    "ready": [
-      {
-        "renderId": "character-journey:hunterxhunter:killua-zoldyck:part-01@en",
-        "contentId": "character-journey:hunterxhunter:killua-zoldyck:part-01",
-        "anime": "hunterxhunter",
-        "subject": "killua-zoldyck",
-        "subjectName": "Killua Zoldyck",
-        "locale": "en",
-        "variant": null,
-        "segment": "part-01",
-        "partNumber": 1,
-        "partCount": 2,
-        "renderedAt": "2026-10-06T06:42:18.291Z",
-        "durationSeconds": 27,
-        "publicationStatus": "notPublished",
-        "platforms": {
-          "instagram": "notScheduled",
-          "facebook": "notScheduled",
-          "tiktok": "notScheduled",
-          "youtube": "notScheduled"
-        },
-        "artifact": {
-          "name": "animapverse-social-render-37424904091-1",
-          "runId": "37424904091",
-          "runAttempt": "1",
-          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/37424904091",
-          "video": "videos/hunterxhunter_killua-zoldyck_character-journey_part-01_en.mp4",
-          "manifest": "manifests/hunterxhunter_killua-zoldyck_character-journey_part-01_en.manifest.json",
-          "sha256": "eed8df8d0ebbc8c5a4b505b3d2065efa1072adefeb0cd4b1863930f51668aaef",
-          "cover": "covers/hunterxhunter_killua-zoldyck_character-journey_part-01_en.cover.png",
-          "expiresAt": "2026-11-05T06:42:18.291Z"
-        },
-        "contentType": "character-journey",
-        "platformMetadata": {
-          "instagramCaption": "How far does Killua's journey go? Part 1 of 2.\n\nKillua Zoldyck's journey across Hunter x Hunter — Part 1/2: 10 places on the world map.\n\nFollow for Part 2.\n\nSave it for your next rewatch.\n\n#hunterxhunter #hxh #killuazoldyck #anime #animemap #AniMapVerse",
-          "tiktokCaption": "How far does Killua's journey go? Part 1 of 2. Follow for Part 2. #hunterxhunter #hxh #killuazoldyck #anime #animemap",
-          "youtubeTitle": "Every Place Killua Zoldyck Visited 🎣 | Hunter x Hunter Journey Part 1 of 2",
-          "youtubeDescription": "How far does Killua's journey go? Part 1 of 2.\n\nKillua Zoldyck's journey across Hunter x Hunter — Part 1/2: 10 places on the world map.\n\nSubscribe for Part 2.\n\nInteractive map: https://animapverse.com/en/hunter-x-hunter/characters/killua-zoldyck\n\n#hunterxhunter #hxh #killuazoldyck",
-          "facebookCaption": "How far does Killua's journey go? Part 1 of 2.\n\nKillua Zoldyck's journey across Hunter x Hunter — Part 1/2: 10 places on the world map.\n\nFollow for Part 2.\n\nInteractive map: https://animapverse.com/en/hunter-x-hunter/characters/killua-zoldyck",
-          "hashtags": [
-            "#hunterxhunter",
-            "#hxh",
-            "#killuazoldyck",
-            "#anime",
-            "#animemap",
-            "#AniMapVerse"
-          ],
-          "youtube": {
-            "madeForKids": false
-          },
-          "madeForKids": false
-        },
-        "waitFor": {}
-      }
-    ],
+    "ready": [],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",

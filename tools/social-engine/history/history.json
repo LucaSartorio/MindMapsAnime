@@ -153,7 +153,7 @@
       "segment": "part-01",
       "segmentFingerprint": "ad9c8c6e",
       "createdAt": "2026-10-06T06:39:11.192Z",
-      "updatedAt": "2026-10-06T06:42:18.291Z",
+      "updatedAt": "2026-10-06T07:00:34.720Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-10-06T06:42:18.291Z",
       "outputFile": "tools/social-engine/output/hunterxhunter_killua-zoldyck_character-journey_part-01_en.mp4",
@@ -213,9 +213,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-06T09:00:00+02:00",
+          "scheduledAt": "2026-10-06T06:58:30Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "389179712",
+          "providerPostUuid": "2611636878853754757",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=2611636878853754757",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "hunterxhunter_killua-zoldyck_character-journey_part-01_en.instagram.scheduled.e3414fd67b46"
+          ],
+          "updatedAt": "2026-10-06T07:00:34.720Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-06T09:00:00+02:00",
+          "scheduledAt": "2026-10-06T06:58:30Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "389179712",
+          "providerPostUuid": "2611636878853754757",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=2611636878853754757",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "hunterxhunter_killua-zoldyck_character-journey_part-01_en.facebook.scheduled.2cc840ba7a4e"
+          ],
+          "updatedAt": "2026-10-06T07:00:34.720Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-06T09:00:00+02:00",
+          "scheduledAt": "2026-10-06T06:58:30Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "389179712",
+          "providerPostUuid": "2611636878853754757",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=2611636878853754757",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "hunterxhunter_killua-zoldyck_character-journey_part-01_en.tiktok.scheduled.5a1781e07219"
+          ],
+          "updatedAt": "2026-10-06T07:00:34.720Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-06T09:00:00+02:00",
+          "scheduledAt": "2026-10-06T06:58:30Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "389179712",
+          "providerPostUuid": "2611636878853754757",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=2611636878853754757",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "hunterxhunter_killua-zoldyck_character-journey_part-01_en.youtube.scheduled.548c8a0028dc"
+          ],
+          "updatedAt": "2026-10-06T07:00:34.720Z"
+        }
+      ]
     },
     "character-journey:naruto:itachi-uchiha@en": {
       "renderId": "character-journey:naruto:itachi-uchiha@en",
