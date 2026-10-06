@@ -1,0 +1,15 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "id": "character-journey:hunterxhunter:killua-zoldyck:part-01",
+  "status": "queued",
+  "template": "characterJourney",
+  "anime": "hunterxhunter",
+  "subject": "killua-zoldyck",
+  "segment": "part-01",
+  "locale": "en",
+  "hook": "How far does Killua's journey go? Part 1 of 2.",
+  "hookType": "question",
+  "cta": "Follow for Part 2 and explore the journey on AniMapVerse",
+  "ctaType": "follow-next-part",
+  "notes": "Nuova serie EN di un protagonista: cambia anime e personaggio dopo Luffy; terzo personaggio distinto dopo Goku Part 1."
+}
