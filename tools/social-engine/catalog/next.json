@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-06T05:22:53.607Z",
+  "mode": "coldstart",
+  "seed": "feed3:character-journey:onepiece:monkey-d-luffy:part-01@en:samples0",
+  "feedTail": [
+    {
+      "renderId": "character-journey:dragonball:goku:part-01@en",
+      "contentType": "character-journey",
+      "animes": [
+        "dragonball"
+      ],
+      "characters": [
+        "dragonball:goku"
+      ],
+      "part": 1
+    },
+    {
+      "renderId": "character-journey:naruto:naruto-uzumaki:part-01@en",
+      "contentType": "character-journey",
+      "animes": [
+        "naruto"
+      ],
+      "characters": [
+        "naruto:naruto-uzumaki"
+      ],
+      "part": 1
+    },
+    {
+      "renderId": "character-journey:onepiece:monkey-d-luffy:part-01@en",
+      "contentType": "character-journey",
+      "animes": [
+        "onepiece"
+      ],
+      "characters": [
+        "onepiece:monkey-d-luffy"
+      ],
+      "part": 1
+    }
+  ],
+  "rules": {
+    "maxSameAnimeStreak": 2,
+    "maxSameCharacterStreak": 1,
+    "minItemsBetweenJourneyParts": 2,
+    "explorationRate": 0.3,
+    "minimumSamples": 8
+  },
+  "performance": {
+    "samples": 0,
+    "contents": 0,
+    "coldStart": true
+  },
+  "rejected": {
+    "journey spacing": 2,
+    "sequence": 45,
+    "character streak": 23
+  },
+  "considered": 696,
+  "status": "ready",
+  "pick": {
+    "contentId": "character-versus:hunterxhunter:gon-freecss-vs-blackclover-noelle-silva",
+    "renderId": "character-versus:hunterxhunter:gon-freecss-vs-blackclover-noelle-silva@en",
+    "contentType": "character-versus",
+    "animes": [
+      "hunterxhunter",
+      "blackclover"
+    ],
+    "characters": [
+      "hunterxhunter:gon-freecss",
+      "blackclover:noelle-silva"
+    ],
+    "part": null,
+    "partCount": null,
+    "score": 117.97,
+    "reasons": [
+      "coldstart: novelty +30.0, jitter +6.0",
+      "+12 main character",
+      "+20 format below its target share (0% < 25%)"
+    ]
+  },
+  "request": {
+    "template": "characterVersus",
+    "anime": "hunterxhunter",
+    "subject": "gon-freecss",
+    "opponent": {
+      "anime": "blackclover",
+      "subject": "noelle-silva"
+    },
+    "locale": "en",
+    "hook": "Gon Freecss vs Noelle Silva: whose journey is bigger?",
+    "hookType": "versus",
+    "hookId": "cv-versus-2",
+    "cta": "Gon Freecss or Noelle Silva? Tell us.",
+    "ctaType": "comment-pick-side",
+    "selection": {
+      "mode": "coldstart",
+      "score": 117.97,
+      "seed": "feed3:character-journey:onepiece:monkey-d-luffy:part-01@en:samples0"
+    },
+    "notes": "growth selector (coldstart): coldstart: novelty +30.0, jitter +6.0; +12 main character; +20 format below its target share (0% < 25%)"
+  },
+  "alternatives": [
+    {
+      "renderId": "character-versus:attackontitan:armin-arlert-vs-blackclover-asta@en",
+      "contentType": "character-versus",
+      "score": 117.94
+    },
+    {
+      "renderId": "guess-character:attackontitan:levi-ackerman@en",
+      "contentType": "guess-character",
+      "score": 117.87
+    },
+    {
+      "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-blackclover-noelle-silva@en",
+      "contentType": "character-versus",
+      "score": 117.8
+    },
+    {
+      "renderId": "character-versus:hunterxhunter:gon-freecss-vs-bleach-rukia-kuchiki@en",
+      "contentType": "character-versus",
+      "score": 117.55
+    },
+    {
+      "renderId": "character-versus:attackontitan:armin-arlert-vs-blackclover-noelle-silva@en",
+      "contentType": "character-versus",
+      "score": 117.46
+    }
+  ],
+  "eligible": 630
+}

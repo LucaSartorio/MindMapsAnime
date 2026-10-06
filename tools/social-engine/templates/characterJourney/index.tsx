@@ -4,6 +4,8 @@ import { MAX_HIGHLIGHTS, MAX_STOPS, MIN_STOPS, VERTICAL_FORMAT } from '../../con
 import { Collector, compact, isObj } from '../../config/schema';
 import type { CharacterJourneyConfig } from '../../config/types';
 import type { TemplateDefinition } from '../types';
+import { fillTemplate } from '../../config/copy';
+import { COLORS } from '../../lib/theme';
 import { scanCharacterJourney } from './catalog';
 import { CharacterJourney } from './CharacterJourney';
 import { SEGMENT_KEY_RE, parseCharacterJourneyConfig } from './config';
@@ -122,6 +124,26 @@ export const characterJourneyTemplate: TemplateDefinition<CharacterJourneyConfig
         journeyPlaces: data.stats.journeyStops,
         journeyArcs: data.stats.journeyArcs,
         ...(series ? { arcRange: series.arcRange } : {}),
+      },
+      social: {
+        contentType: 'character-journey',
+        animes: [data.world.slug],
+        animeTitles: [data.world.title],
+        characterNames: [data.character.name],
+        part: series?.partNumber ?? null,
+        partCount: series?.partCount ?? null,
+        places: data.stats.journeyStops,
+        pageUrl: `https://${data.pageLabel}`,
+        spoilerFree: false,
+      },
+      cover: {
+        format: 'journey',
+        title: fillTemplate(data.copy.coverTitle, { name: data.character.name }),
+        kicker: data.world.title,
+        formatLabel: data.copy.coverFormat,
+        ...(series ? { badge: series.label, subtitle: series.arcRange } : {}),
+        accents: [data.world.accent ?? COLORS.red500],
+        backgrounds: data.map.backgroundSrc ? [data.map.backgroundSrc] : [],
       },
       summary: [
         `${data.world.title} · ${data.character.name} (${data.character.id}) · ${data.locale}` +

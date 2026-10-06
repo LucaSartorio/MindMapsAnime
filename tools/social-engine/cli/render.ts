@@ -18,6 +18,7 @@ import { writeManifest } from '../pipeline/manifest';
 import { ENTRY_POINT, detectBrowserExecutable } from '../render/paths';
 import { createRenderSession } from '../render/session';
 import { templateNames } from '../templates/registry';
+import { COVER_COMPOSITION_ID } from '../components/Cover';
 import { parseArgs, type FlagSpec } from './args';
 import { fail, numberFlag, stringFlag } from './common';
 
@@ -25,7 +26,7 @@ const SPEC: FlagSpec = {
   config: 'string', template: 'string', anime: 'string', character: 'string', subject: 'string', segment: 'string', locale: 'string',
   hook: 'string', cta: 'string', duration: 'string', 'max-stops': 'string', variant: 'string', audio: 'string',
   'audio-volume': 'string', out: 'string', 'browser-executable': 'string', concurrency: 'string', still: 'string',
-  frames: 'string', 'dry-run': 'boolean', help: 'boolean',
+  frames: 'string', cover: 'boolean', 'dry-run': 'boolean', help: 'boolean',
 };
 
 const HELP = `Usage: npm run social:render -- [options]      (ad-hoc; use the queue for real content)
@@ -39,6 +40,7 @@ const HELP = `Usage: npm run social:render -- [options]      (ad-hoc; use the qu
   --audio <file>              royalty-free track inside tools/social-engine/audio/ (+ --audio-volume 0..1)
   --out <file.mp4>            default tools/social-engine/output/preview/<anime>_<subject>_<template>_<locale>.mp4
   --still <f1,f2,…>           PNG stills instead of the MP4      --frames <from-to>  partial MP4
+  --cover                     also render the cover still (<stem>.cover.png)
   --browser-executable <path> headless Chromium (auto-detected from PLAYWRIGHT_BROWSERS_PATH)
   --concurrency <n>           frames rendered in parallel      --dry-run  validate + print the plan
 `;
@@ -108,6 +110,11 @@ async function main() {
   });
   const job = { compositionId: plan.template.compositionId, props: plan.resolved.props, durationSeconds: plan.resolved.durationSeconds };
 
+  if (flags.cover) {
+    const output = outputLocation.replace(/\.mp4$/i, '.cover.png');
+    await session.renderStill({ compositionId: COVER_COMPOSITION_ID, props: plan.resolved.cover as unknown as Record<string, unknown>, durationSeconds: 1 }, 0, output).catch((err: Error) => fail(err.message));
+    console.log(`  ✔ ${path.relative(process.cwd(), output)}`);
+  }
   const still = stringFlag(flags, 'still');
   if (still) {
     for (const frame of still.split(',').map((f) => Number(f.trim()))) {

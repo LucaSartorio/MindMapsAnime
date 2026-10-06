@@ -10,7 +10,7 @@ export type VideoLocale = 'it' | 'en';
 export const VIDEO_LOCALES: readonly VideoLocale[] = ['en', 'it'];
 
 /** Template ids (camelCase, as written in JSON configs). */
-export type TemplateId = 'characterJourney';
+export type TemplateId = 'characterJourney' | 'guessCharacter' | 'characterVersus';
 
 /** Optional local, royalty-free soundtrack. Never bundled automatically. */
 export type AudioTrackConfig = {
@@ -60,8 +60,24 @@ export type CharacterJourneyConfig = BaseVideoConfig & {
   highlights?: string[];
 };
 
+export type GuessCharacterConfig = BaseVideoConfig & {
+  template: 'guessCharacter';
+  /** The character to guess (catalog `subject`). */
+  subject: string;
+  /** Places shown before the reveal (4–6; default: the template's choice). */
+  places?: number;
+};
+
+export type CharacterVersusConfig = BaseVideoConfig & {
+  template: 'characterVersus';
+  /** First character (in `anime`). */
+  subject: string;
+  /** Second character, possibly from another world. */
+  opponent: { anime: string; subject: string };
+};
+
 /** Union of every template config (extend when a template is added). */
-export type SocialVideoConfig = CharacterJourneyConfig;
+export type SocialVideoConfig = CharacterJourneyConfig | GuessCharacterConfig | CharacterVersusConfig;
 
 /** Output format (shared by all templates for now: vertical 9:16). */
 export type VideoFormat = {

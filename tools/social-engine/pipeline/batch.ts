@@ -9,7 +9,7 @@ import { ensureRecord, loadHistory, saveHistory, transition, type History } from
 import { listContentFiles, inspectQueue, type QueueItem } from './queue';
 import { acquireLock } from './lock';
 import { writeManifest } from './manifest';
-import { parseContentRequest, planContent, recordIdentity } from './content';
+import { parseContentRequest, planContent, recordIdentity, socialMetaFor } from './content';
 import type { CiRun } from './ciRun';
 
 /**
@@ -24,7 +24,11 @@ import type { CiRun } from './ciRun';
  * One bad item never stops the batch; only a critical error (lock, renderer
  * setup) aborts it, leaving every item queued. History is saved after each step.
  */
-export type ItemRenderer = { render(plan: PlannedContent, outputFile: string): Promise<VideoInfo> };
+export type ItemRenderer = {
+  render(plan: PlannedContent, outputFile: string): Promise<VideoInfo>;
+  /** Cover still (PNG) of the video; optional (a failed cover never fails the video). */
+  renderCover?(plan: PlannedContent, outputFile: string): Promise<void>;
+};
 export type RendererFactory = (plans: PlannedContent[]) => Promise<ItemRenderer>;
 
 export type BatchOptions = {
@@ -97,6 +101,7 @@ export async function runBatch(opts: BatchOptions): Promise<BatchResult> {
     for (const i of valid) {
       const r = ensureRecord(history, recordIdentity(i.plan), now(), i.name);
       r.segmentFingerprint = recordIdentity(i.plan).segmentFingerprint;
+      r.social = socialMetaFor(i.plan);
       // Crash recovery (a previous run died mid-render) and explicit retries/re-renders go back to queued.
       if (r.renderStatus !== 'queued') transition(r, 'queued', now(), { sourceFile: i.name });
     }
@@ -113,7 +118,18 @@ export async function runBatch(opts: BatchOptions): Promise<BatchResult> {
       try {
         const info = await renderer.render(plan, outputFile);
         const renderedAt = now();
-        const { file: manifestFile, sha256 } = writeManifest(dirs, plan, outputFile, info, renderedAt, item.raw);
+        let coverFile: string | null = null;
+        if (renderer.renderCover) {
+          const target = safeJoin(dirs.output, `${plan.fileStem}.cover.png`);
+          try {
+            await renderer.renderCover(plan, target);
+            coverFile = target;
+          } catch (err) {
+            log(`  ⚠ cover not rendered: ${err instanceof Error ? err.message : String(err)}`);
+          }
+        }
+        const social = record.social;
+        const { file: manifestFile, sha256 } = writeManifest(dirs, plan, outputFile, info, renderedAt, item.raw, { cover: coverFile, social });
         const moved = moveInto(item.file, dirs.rendered);
         const a = opts.artifact;
         transition(record, 'rendered', renderedAt, {
@@ -132,6 +148,7 @@ export async function runBatch(opts: BatchOptions): Promise<BatchResult> {
                 video: `videos/${path.basename(outputFile)}`,
                 manifest: `manifests/${path.basename(manifestFile)}`,
                 sha256,
+                cover: coverFile ? `covers/${path.basename(coverFile)}` : null,
                 expiresAt: new Date(Date.parse(renderedAt) + a.retentionDays * 86_400_000).toISOString(),
               }
             : null,

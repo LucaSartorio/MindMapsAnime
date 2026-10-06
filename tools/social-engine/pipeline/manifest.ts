@@ -7,6 +7,7 @@ import { relToRepo } from './dirs';
 import { writeJsonAtomic } from './fs';
 import { seriesIdOf } from './ids';
 import type { SegmentInfo } from '../templates/types';
+import type { SocialMeta } from './history';
 
 /**
  * `<stem>.manifest.json` next to every MP4: what the video is, where it came
@@ -34,10 +35,14 @@ export type RenderManifest = {
   fileBytes: number;
   sha256: string;
   publication: Record<string, string | number | string[]>;
+  /** Cover still next to the MP4 (repo-relative), null when it could not be rendered. */
+  cover?: string | null;
+  /** Growth-engine facts incl. per-network captions (never publication STATE: that lives in history). */
+  social?: SocialMeta | null;
   sourceConfig: unknown;
 };
 
-export function writeManifest(dirs: PipelineDirs, plan: PlannedContent, video: string, info: VideoInfo, renderedAt: string, sourceConfig: unknown): { file: string; sha256: string } {
+export function writeManifest(dirs: PipelineDirs, plan: PlannedContent, video: string, info: VideoInfo, renderedAt: string, sourceConfig: unknown, extra: { cover?: string | null; social?: SocialMeta | null } = {}): { file: string; sha256: string } {
   const manifestFile = video.replace(/\.mp4$/i, '.manifest.json');
   const manifest: RenderManifest = {
     schemaVersion: 1,
@@ -60,6 +65,8 @@ export function writeManifest(dirs: PipelineDirs, plan: PlannedContent, video: s
     fileBytes: statSync(video).size,
     sha256: createHash('sha256').update(readFileSync(video)).digest('hex'),
     publication: plan.resolved.manifest,
+    ...(extra.cover !== undefined ? { cover: extra.cover ? relToRepo(dirs, extra.cover) : null } : {}),
+    ...(extra.social !== undefined ? { social: extra.social } : {}),
     sourceConfig,
   };
   writeJsonAtomic(manifestFile, manifest);

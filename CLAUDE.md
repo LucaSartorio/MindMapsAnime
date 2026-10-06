@@ -56,6 +56,10 @@ npm run social:publication:validate    # publication receipts in publication/pen
 npm run social:publication:apply:dry   # renderId · platform · old → new
 npm run social:publication:apply       # all-or-nothing: history + catalog updated, pending → applied/ (audit trail)
 npm run social:publication:list        # rendered videos × instagram/facebook/tiktok/youtube state (+ artifact)
+npm run social:next                    # growth engine: the next video (rotation-safe) = catalog/next.json
+npm run social:editorial:check         # queue vs the HARD editorial rules (CI gate)
+npm run social:analytics:apply         # analytics snapshots → metrics.json → performance.json + next.json
+npm run social:performance             # scores per anime / character / format / hook / duration / platform
 ```
 
 - **There is no test framework** (the SEO tests use plain `node:assert` in `scripts/`) and
@@ -641,7 +645,7 @@ internal links (real anchors, breadcrumbs) · structured data (only if truthful)
 SSR-safety of the first render. Then `npm run build` must pass (`test:seo` + `seo:check` are
 blocking) and, for UI changes, `npm run smoke`.
 
-## Social engine — INTERNAL ONLY (read `docs/SOCIAL_ENGINE.md` + `docs/SOCIAL_AGENT_CONTRACT.md` + `docs/SOCIAL_PUBLISHING_CONTRACT.md`)
+## Social engine — INTERNAL ONLY (read `docs/SOCIAL_ENGINE.md` + `docs/SOCIAL_AGENT_CONTRACT.md` + `docs/SOCIAL_PUBLISHING_CONTRACT.md` + `docs/SOCIAL_ANALYTICS_CONTRACT.md`)
 
 `tools/social-engine/` is a **private** Remotion tool + file-based content pipeline that renders vertical
 videos (1080×1920 H.264, Shorts/TikTok/Reels) from the site's datasets. **SOCIAL ENGINE IS INTERNAL ONLY.**
@@ -655,6 +659,15 @@ videos (1080×1920 H.264, Shorts/TikTok/Reels) from the site's datasets. **SOCIA
   schedules/publishes via Metricool → PR adding a **publication receipt** in `publication/pending/` (`Social
   publication validate`, read-only) → merge → `Social publication state` workflow applies it → history `platforms[]`
   + catalog updated, receipt archived in `publication/applied/` → a render × platform is never scheduled twice.
+- **Analyst Agent** (ChatGPT Work + Metricool) → PR adding **analytics snapshots** in `analytics/pending/` → same
+  validate/state workflows → `analytics/metrics.json` → `catalog/performance.json` + `catalog/next.json`.
+
+**GROWTH ENGINE** (`growth/`, docs/SOCIAL_ENGINE.md › Growth Engine) — the repo decides WHAT comes next, deterministically:
+CONTENT → PUBLISH → ANALYTICS → PERFORMANCE → SELECTION + DIVERSITY RULES → NEXT CONTENT. The daily Content Agent copies
+`catalog/next.json` `request` into ONE queue file (status `blocked` = queue nothing). Formats: `character-journey`,
+`guess-character` (clues = journey places, never a place naming the answer; main/major only), `character-versus`
+(real counts only: distinct world-map places, arcs break ties; no cross-map distances); `guess-location` /
+`journey-comparison` declared, not implemented. Every render also gets a cover (`SocialCover` still).
 
 **SOCIAL ENGINE ARCHITECTURE** — `data` (site datasets, read-only) → `social:catalog` (`catalog/catalog.json`:
 what's really renderable + history status) → [future agent, not connected] → JSON requests in
@@ -690,6 +703,15 @@ Permanent rules:
   `platforms[]`; scheduled is never published; series parts are independent render ids. Apply is all-or-nothing
   (invalid → `publication/failed/` + `.error.json`, nothing applied). `publication/applied/` is a versioned audit
   trail — never edit it. Old history formats (`platforms: [{platform, publishedAt, url}]`) are migrated on load.
+- **Editorial rotation (HARD, never overridden by performance)**: one video per run, EN feed; max 2 consecutive videos
+  of the same anime (a cross-world versus counts for both), never the same character twice in a row, journey parts
+  in order with ≥ 2 videos between parts. Filters run BEFORE scoring (`growth/rules.ts` → `growth/selector.ts`); soft
+  cooldowns (anime/format/character/hook/CTA) + exploration (30 %, seeded) / exploitation (shrunk performance
+  estimates) only rank valid candidates; cold start below `minimumSamples`. All knobs in `growth/config.ts` — no
+  magic numbers elsewhere. `social:editorial:check` gates queue PRs (Social validate) and renders (Social render).
+- **Hooks / CTAs / captions**: deterministic banks (`growth/hooks.ts`, `growth/ctas.ts`, `growth/metadata.ts`), no AI
+  text; engagement-first CTAs (next part always promised; site ≤ 1 in 5); per-network captions + `madeForKids: false`
+  stored in history `social` (records older than it have `social: null` and are derived from their content id).
 - **Deterministic rendering**: compositions are pure functions of `(data, frame)`; no randomness, no network
   assets, no official artwork or copyrighted music (optional audio = local royalty-free file in `audio/`).
 - **History required**: every queued/rendered/failed video is recorded in `history/history.json` (versioned);

@@ -1,0 +1,485 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://animapverse.com/schemas/analytics-snapshot.v1.schema.json",
+  "title": "AniMapVerse analytics snapshot",
+  "description": "Latest metrics of ONE published video on ONE platform, written by the external Analyst Agent (Metricool) into tools/social-engine/analytics/pending/. Values: number ≥ 0, or null when the network does not provide it (yet). See docs/SOCIAL_ANALYTICS_CONTRACT.md.",
+  "oneOf": [
+    {
+      "title": "instagram",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "snapshotVersion",
+        "renderId",
+        "platform",
+        "provider",
+        "collectedAt",
+        "metrics"
+      ],
+      "properties": {
+        "$schema": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "snapshotVersion": {
+          "const": 1
+        },
+        "renderId": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*(?::[a-z0-9]+(?:-[a-z0-9]+)*){2,3}@(?:en|it)(?:\\+[a-z0-9]+(?:-[a-z0-9]+)*)?$",
+          "maxLength": 400
+        },
+        "platform": {
+          "const": "instagram"
+        },
+        "provider": {
+          "enum": [
+            "metricool"
+          ]
+        },
+        "collectedAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})(?:\\.\\d{1,9})?(?:Z|([+-])(\\d{2}):(\\d{2}))$",
+          "description": "When the metrics were read in Metricool (ISO 8601 with offset)."
+        },
+        "providerPostUuid": {
+          "type": "string",
+          "pattern": "^-?[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "metrics": {
+          "type": "object",
+          "additionalProperties": false,
+          "minProperties": 1,
+          "properties": {
+            "views": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "reach": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "likes": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "comments": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "shares": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "saves": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "interactions": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "averageWatchTime": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "retention": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Rate 0..1"
+            },
+            "viewRate": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Rate 0..1"
+            },
+            "followersGained": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            }
+          }
+        },
+        "recordedBy": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9 ._-]{0,79}$"
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 500
+        }
+      }
+    },
+    {
+      "title": "facebook",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "snapshotVersion",
+        "renderId",
+        "platform",
+        "provider",
+        "collectedAt",
+        "metrics"
+      ],
+      "properties": {
+        "$schema": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "snapshotVersion": {
+          "const": 1
+        },
+        "renderId": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*(?::[a-z0-9]+(?:-[a-z0-9]+)*){2,3}@(?:en|it)(?:\\+[a-z0-9]+(?:-[a-z0-9]+)*)?$",
+          "maxLength": 400
+        },
+        "platform": {
+          "const": "facebook"
+        },
+        "provider": {
+          "enum": [
+            "metricool"
+          ]
+        },
+        "collectedAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})(?:\\.\\d{1,9})?(?:Z|([+-])(\\d{2}):(\\d{2}))$",
+          "description": "When the metrics were read in Metricool (ISO 8601 with offset)."
+        },
+        "providerPostUuid": {
+          "type": "string",
+          "pattern": "^-?[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "metrics": {
+          "type": "object",
+          "additionalProperties": false,
+          "minProperties": 1,
+          "properties": {
+            "views": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "reach": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "likes": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "comments": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "shares": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "interactions": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            }
+          }
+        },
+        "recordedBy": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9 ._-]{0,79}$"
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 500
+        }
+      }
+    },
+    {
+      "title": "tiktok",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "snapshotVersion",
+        "renderId",
+        "platform",
+        "provider",
+        "collectedAt",
+        "metrics"
+      ],
+      "properties": {
+        "$schema": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "snapshotVersion": {
+          "const": 1
+        },
+        "renderId": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*(?::[a-z0-9]+(?:-[a-z0-9]+)*){2,3}@(?:en|it)(?:\\+[a-z0-9]+(?:-[a-z0-9]+)*)?$",
+          "maxLength": 400
+        },
+        "platform": {
+          "const": "tiktok"
+        },
+        "provider": {
+          "enum": [
+            "metricool"
+          ]
+        },
+        "collectedAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})(?:\\.\\d{1,9})?(?:Z|([+-])(\\d{2}):(\\d{2}))$",
+          "description": "When the metrics were read in Metricool (ISO 8601 with offset)."
+        },
+        "providerPostUuid": {
+          "type": "string",
+          "pattern": "^-?[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "metrics": {
+          "type": "object",
+          "additionalProperties": false,
+          "minProperties": 1,
+          "properties": {
+            "views": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "reach": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "likes": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "comments": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "shares": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "averageWatchTime": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "fullVideoWatchedRate": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Rate 0..1"
+            },
+            "profileViews": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "followersGained": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            }
+          }
+        },
+        "recordedBy": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9 ._-]{0,79}$"
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 500
+        }
+      }
+    },
+    {
+      "title": "youtube",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "snapshotVersion",
+        "renderId",
+        "platform",
+        "provider",
+        "collectedAt",
+        "metrics"
+      ],
+      "properties": {
+        "$schema": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "snapshotVersion": {
+          "const": 1
+        },
+        "renderId": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*(?::[a-z0-9]+(?:-[a-z0-9]+)*){2,3}@(?:en|it)(?:\\+[a-z0-9]+(?:-[a-z0-9]+)*)?$",
+          "maxLength": 400
+        },
+        "platform": {
+          "const": "youtube"
+        },
+        "provider": {
+          "enum": [
+            "metricool"
+          ]
+        },
+        "collectedAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})(?:\\.\\d{1,9})?(?:Z|([+-])(\\d{2}):(\\d{2}))$",
+          "description": "When the metrics were read in Metricool (ISO 8601 with offset)."
+        },
+        "providerPostUuid": {
+          "type": "string",
+          "pattern": "^-?[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "metrics": {
+          "type": "object",
+          "additionalProperties": false,
+          "minProperties": 1,
+          "properties": {
+            "views": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "likes": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "comments": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "shares": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "watchMinutes": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "averageViewDuration": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "subscribersGained": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            }
+          }
+        },
+        "recordedBy": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9 ._-]{0,79}$"
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 500
+        }
+      }
+    }
+  ]
+}

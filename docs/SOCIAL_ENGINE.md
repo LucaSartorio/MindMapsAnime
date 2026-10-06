@@ -10,7 +10,9 @@ AniMapVerse data (src/data, src/seo, src/utils)   read-only, same registry/helpe
         ↓
 social:catalog ──► catalog/catalog.json            what can REALLY be produced (+ history status)
         ↓
-[ future content agent — not connected ]           reads catalog + history, writes JSON requests
+growth engine ──► catalog/next.json                 next video: rotation rules + analytics (see Growth Engine)
+        ↓
+[ Content Agent — ChatGPT Work ]                   copies next.request into ONE queue file per run
         ↓                                           contract: docs/SOCIAL_AGENT_CONTRACT.md
 social:queue / drop JSON ──► content/queue/*.json  validated, de-duplicated, canonical
         ↓
@@ -55,6 +57,11 @@ npm run social:studio                            # Remotion Studio
 npm run social:schema                            # regenerate the content + publication-receipt JSON Schemas
 npm run social:validate                          # typecheck + engine/pipeline/publication tests
 npm run social:ci:report                         # artifact folder + report from the last batch (CI; works locally too)
+
+# growth engine (see "Growth Engine")
+npm run social:next                              # the next video to queue (rotation-safe, hook + CTA + captions)
+npm run social:performance                       # performance report · social:analytics:* = metric snapshots
+npm run social:editorial:check                   # queue vs the hard editorial rules (CI gate)
 
 # publication state (the repo never publishes — see "Publication State")
 npm run social:publication:validate              # check publication/pending/*.json receipts, change nothing
@@ -906,6 +913,217 @@ The apply holds the same lock as the batch render (one writer of history.json at
 updated with publication state (that lives only in history). Records with `artifact: null` (local
 renders, renders before this field) or an expired artifact are listed in `catalog.publishing.unavailable`:
 they need a new render before they can be published.
+
+## Growth Engine
+
+The engine evolved from an automatic publisher into an **autonomous content + growth loop**:
+
+```
+CONTENT ──► PUBLISH ──► ANALYTICS ──► PERFORMANCE ──► SELECTION + DIVERSITY RULES ──► NEXT CONTENT ─┐
+   ▲                                                                                               │
+   └───────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+**PERFORMANCE OPTIMIZES THE EDITORIAL PLAN. PERFORMANCE DOES NOT CONTROL IT.** A format, anime or
+character that performs gets more room over the week — never a monotonous feed.
+
+Everything is **in the repository, deterministic and file-based** (no AI text, no API call); the
+external agents only read files and open PRs:
+
+| Role | Reads | Writes (via PR) | Contract |
+| --- | --- | --- | --- |
+| Content Agent (publisher side) | `catalog/next.json` | one queue file = `next.request` | [SOCIAL_AGENT_CONTRACT](SOCIAL_AGENT_CONTRACT.md) |
+| Publishing Agent | `catalog.publishing.ready` (captions, cover, `waitFor`) | publication receipts | [SOCIAL_PUBLISHING_CONTRACT](SOCIAL_PUBLISHING_CONTRACT.md) |
+| Analyst Agent | history (published posts) | analytics snapshots | [SOCIAL_ANALYTICS_CONTRACT](SOCIAL_ANALYTICS_CONTRACT.md) |
+
+Code: `growth/` (`config.ts` — every knob · `feed.ts` · `rules.ts` · `selector.ts` · `plan.ts` ·
+`hooks.ts` · `ctas.ts` · `metadata.ts` · `performance.ts` · `contentTypes.ts` · `rng.ts`),
+`pipeline/analytics.ts`, templates `guessCharacter/`, `characterVersus/`, `components/Cover.tsx`.
+Outputs regenerated with the catalog (after every render, publication or analytics commit):
+`catalog/next.json` (the next video) and `catalog/performance.json` (scores).
+
+### Content Types
+
+| type (= content id prefix) | template | status | what |
+| --- | --- | --- | --- |
+| `character-journey` | CharacterJourney | ✅ | the journey on the world map, multi-part when long (unchanged) |
+| `guess-character` | GuessCharacter | ✅ | hook → places revealed one by one (clue cards, route) → countdown → **reveal** → CTA (19–24 s) |
+| `character-versus` | CharacterVersus | ✅ | "Who travelled more?" — side A on its map, side B on its map, bars, **winner reveal** → CTA (22 s) |
+| `guess-location` | — | declared | planned (`growth/contentTypes.ts`, `implemented: false`) |
+| `journey-comparison` | — | declared | planned |
+
+- **GuessCharacter** uses the SAME journey builder as CharacterJourney: distinct world-map places in
+  journey order, sampled to 4–6 clues; a place whose name (EN or IT) contains a name token of the
+  character is **never** a clue (no spoiler); only `main` / `major` characters are offered (guessable).
+  Captions link the world map, not the character page, and never name the answer.
+- **CharacterVersus** compares only real numbers: **distinct places on the world map** (story arcs
+  break ties; equal arcs = tie). Distances are NOT compared: maps of different worlds have different
+  scales. The catalog lists cross-world match-ups between the best journeys of each world
+  (`VERSUS_TOP_PER_WORLD` = 3, main characters first) — they also help the anime rotation. Content id:
+  `character-versus:<animeA>:<slugA>-vs-<animeB>-<slugB>`; the queue request keeps both characters
+  (`subject` + `opponent: { anime, subject }`, copied from the catalog item `request`).
+- Shared components: `Hook`, `CallToAction` (now **engagement first**: the CTA is the headline, the
+  site a small signature), `Reveal`, `Progress` (`StepDots`, `Countdown`), `Versus` (`CountUp`,
+  `VersusBars`), `Cover`, plus the existing map stack (`MapStage`, `RouteLayer`, `LocationMarker`…).
+
+### Covers
+
+Every queued render also produces a **cover** still (`<stem>.cover.png`, 1080×1920) through the
+`SocialCover` composition: AniMapVerse identity (ink, grid, Cinzel, brand mark) + the world's theme
+colour as accent + a format pill (JOURNEY red · GUESS amber · VERSUS blue) and layout (versus = split
+map). Journeys keep the naming "Goku's Journey" + "Part 2 of 6" badge + arc range. The cover travels in
+the artifact (`covers/`), its path is in the manifest, the history `artifact.cover` and the run summary.
+A cover failure never fails the video (logged; `cover: null`). Preview: `npm run social:render -- … --cover`.
+
+### Content Selection
+
+`selectNext` (growth/selector.ts) — one video per run, English feed. Candidates = every producible
+EN catalog item (all implemented formats) not already queued/rendered. Order of priorities:
+
+1. **validity & sequence** — renderable, parts in order (Part N only after N − 1), spacing between parts
+2. **anti-duplication** — a renderId already in the feed / history is never proposed again
+3. **rotation** — anime and character streaks (HARD)
+4. **cooldowns** — soft penalties (same anime / format as the previous video, character seen recently…)
+5. **exploration / exploitation** — seeded per run
+6. **performance** — shrunk estimates per format, anime, character, duration bucket
+
+Steps 1–3 **filter**, steps 4–6 only **rank** what survived: the selector never picks "the best" and
+then tries to fix it. If nothing survives the filters, the plan is `blocked` and nothing is queued.
+
+The **feed** (growth/feed.ts) = English videos that are queued/rendering, scheduled or published
+somewhere, or rendered with a downloadable MP4 — in creation order. Old local renders that can never be
+published and other locales are not in the feed.
+
+### Editorial Rotation & Anti-Repetition Rules
+
+| rule | value | kind |
+| --- | --- | --- |
+| one new video per run · locale EN | `videosPerRun` 1 · `feedLocale` en | hard |
+| same anime consecutively | **`maxSameAnimeStreak` = 2** → the 3rd MUST be another anime | **hard (beats any score)** |
+| same character consecutively | `maxSameCharacterStreak` = 1 (never twice in a row, any format) | hard |
+| journey parts | Part N never before N − 1; `minItemsBetweenJourneyParts` = 2 | hard |
+| preferred spacing between parts | `preferredItemsBetweenJourneyParts` = 3 (penalty below) | soft |
+| same anime as the previous video | penalty `sameAnimeAsLast` (avoided when alternatives exist) | soft |
+| character seen recently | `characterCooldown` = 6 items | soft |
+| same format as the previous video | `contentTypeCooldown` + format mix 50 % journey / 25 % guess / 25 % versus | soft |
+| hook template / hook type | `hookCooldown` = 4 items (template), previous type avoided | soft |
+| CTA type | `ctaCooldown` = 2; site CTA at most once every 5 videos | soft |
+| started series | `journeyPartCooldown` = 3 → continuation bonus (the CTA promised the next part) | soft |
+| main characters preferred | `importanceBonus` (main 12, major 7, supporting 2) | soft |
+
+A cross-world versus counts for **both** anime (Naruto → Naruto → Naruto-vs-Luffy is a 3rd Naruto).
+Example: Naruto → Naruto → **One Piece** is allowed and chosen even if a 3rd Naruto would score
+higher; Naruto → Naruto → Naruto can never happen.
+
+The same hard rules gate the pipeline: `npm run social:editorial:check` runs in **Social validate**
+(a queue PR breaking them is red) and before rendering in **Social render** (fail-safe).
+
+### Hook Engine
+
+`growth/hooks.ts` — a typed bank of deterministic templates per format and role (single / Part 1 /
+continuation / last part): `question` · `challenge` · `curiosity` · `fact` · `versus`, e.g.
+"Can you name every place {character} visited?", "Only real {anime} fans know all these places.",
+"{character} visited {places} places across {anime}.", "Who travelled more: {characterA} or {characterB}?".
+A template is used only if every placeholder is known and the text fits the video (≤ 90 chars); guess
+hooks never contain the answer. Rotation: templates used in the last `hookCooldown` videos are skipped,
+the previous hook type is avoided; exploit = best hook type by performance, explore / cold start = least
+recently used type. History stores `hookType`, `hookId`, `hook`.
+
+### CTA Engine
+
+`growth/ctas.ts` — engagement first. A non-final part ALWAYS ends with "Follow for Part N." (the
+strongest follow reason); otherwise rotate: guess → "Did you get it right?" / "How many places did you
+recognize?"; versus → "Who should compete next?" / "{A} or {B}? Tell us."; journey → "Which location did
+we miss?" / "Which journey should we map next?" / "Follow for the next journey." / rarely "See every place
+on AniMapVerse." (≥ 5 videos apart). The video CTA is network-neutral; captions adapt it per network
+("Subscribe for Part 2." on YouTube). History stores `ctaType` + `cta`.
+
+### Platform Metadata
+
+`growth/metadata.ts` builds, at render time, `instagramCaption` (question + CTA + save prompt + ≤ 8
+hashtags), `tiktokCaption` (short, ≤ 5 hashtags), `youtubeTitle` (searchable, ≤ 100 chars, e.g.
+"Every Place Naruto Uzumaki Visited 🍥 | Naruto Journey Part 1 of 2"), `youtubeDescription`,
+`facebookCaption`, `hashtags`, `madeForKids: false`. Per-world emoji/hashtags live in `WORLD_SOCIAL`
+(config, not components). Stored in history `social.platformMetadata`, the manifest (`social`), and
+exposed in `catalog.publishing.ready[]`. AI-disclosure flags stay those the Publishing Agent sets.
+
+### History (social block)
+
+Every record created from now on carries `social`: `contentType`, `animes`, `characters`
+(`anime:slug`), `characterNames`, `part`, `partCount`, `hookType`, `hookId`, `hook`, `ctaType`, `cta`,
+`durationSeconds`, `selection` (`mode`, `score`, `seed`) and `platformMetadata`. **Migration**: none
+needed — older records load with `social: null` and the feed derives the same facts from their content
+id (format, anime, character, part); receipts, artifacts and publication state are untouched.
+
+### Analytics
+
+`pipeline/analytics.ts` — **analytics snapshots** (Analyst Agent → `analytics/pending/` → PR), applied
+all-or-nothing by the *Social publication state* workflow (`npm run social:analytics:apply`) into
+`analytics/metrics.json` (latest values per render × platform; audit in `analytics/applied/`). Only
+published posts are accepted. Values: number ≥ 0 or `null` = not available; a missing key keeps the
+previous value (delayed metrics); older snapshots are no-ops. Schema:
+`analytics/schemas/analytics-snapshot.schema.json`. Contract: [SOCIAL_ANALYTICS_CONTRACT](SOCIAL_ANALYTICS_CONTRACT.md).
+
+### Performance Scoring
+
+`growth/performance.ts`:
+
+- per post: normalized rates — shares/views, comments/views, likes/views, saves/views,
+  (followers|subscribers)/views, retention (direct rate, else average watch time / duration); each
+  divided by a reference "very good" rate (`referenceRates`), capped (`ratioCap`), weighted by
+  `performanceWeights` = retention 35 % · shares 20 % · comments 15 % · follows 15 % · saves 10 % ·
+  likes 5 %; missing metrics drop out and the weights re-normalize; < `minViewsForScore` views → unscored;
+- per content: weighted mean over platforms (`platformWeights`: Instagram/TikTok/YouTube 1, **Facebook 0**),
+  metrics younger than `matureAfterHours` (48 h) weigh `immatureWeight` (0.5);
+- per content / character / anime / contentType / hookType / durationBucket / platform: mean, n and a
+  **shrunk estimate** `(n·mean + k·globalMean)/(n + k)` with k = `minimumSamples`.
+
+### Exploration vs Exploitation
+
+Each run draws a seeded number: `explorationRate` (30 %) of runs **explore** (novelty: anime and formats
+the recent feed showed least, + jitter), the others **exploit** (predicted performance from the shrunk
+estimates). Same state → same seed → same decision (auditable, testable). Variety rules apply in both modes.
+
+### Cold Start
+
+Until `minimumSamples` (8) videos are scored, the mode is `coldstart`: no optimisation on 1–2 videos —
+strong variety, main characters favoured, formats and hooks distributed (least recently used).
+Shrinkage keeps one lucky video from dominating even after.
+
+### Failure Handling
+
+Prefer **not publishing** to publishing something wrong:
+
+- plan `blocked` (no valid candidate) → nothing queued;
+- invalid request / duplicate / rotation violation → red PR (Social validate + Editorial rules); the
+  render workflow re-checks the rules before rendering;
+- render failure / missing video → the item fails, nothing is in `publishing.ready`;
+- series order: `publishing.ready[].waitFor` blocks Part N on a platform until Part N − 1 is
+  scheduled/published there;
+- receipts and snapshots are validated against history and applied all-or-nothing (idempotent ids);
+- Metricool validation errors are the Publishing Agent's `failed` receipts (retry = new scheduled receipt).
+
+### Commands
+
+```bash
+npm run social:next                 # the next video: mode, rules, rejected counts, request to queue
+npm run social:performance          # scores per anime / character / format / hook / duration / platform
+npm run social:editorial:check      # queue files vs the hard rules (CI gate)
+npm run social:analytics:validate   # analytics/pending snapshots (contract + history), change nothing
+npm run social:analytics:apply      # all-or-nothing → metrics.json + performance.json + next.json
+npm run social:analytics:list       # latest metrics per published post
+npm run social:growth:test          # growth engine tests
+```
+
+### Config
+
+`growth/config.ts` (`GROWTH_CONFIG`) centralizes `explorationRate`, `minimumSamples`,
+`maxSameAnimeStreak`, `maxSameCharacterStreak`, `characterCooldown`, `animeCooldown`,
+`journeyPartCooldown`, `minItemsBetweenJourneyParts`, `preferredItemsBetweenJourneyParts`,
+`contentTypeCooldown`, `hookCooldown`, `ctaCooldown`, `contentTypeMix`, `importanceBonus`, `penalties`,
+`performanceWeights`, `referenceRates`, `ratioCap`, `platformWeights`, `matureAfterHours`,
+`immatureWeight`, `minViewsForScore`, `durationBuckets`. Template limits stay in `config/defaults.ts`
+(`GUESS_MIN/MAX_PLACES`, `VERSUS_MIN_PLACES`, `VERSUS_TOP_PER_WORLD`).
 
 ## Troubleshooting
 

@@ -2,6 +2,7 @@ import { ENTRY_POINT, detectBrowserExecutable } from '../render/paths';
 import { createRenderSession } from '../render/session';
 import type { RendererFactory } from '../pipeline/batch';
 import type { PipelineDirs } from '../pipeline/dirs';
+import { COVER_COMPOSITION_ID } from '../components/Cover';
 
 /** Prints a clean error and exits (1 = invalid content/data/render, 2 = usage). */
 export function fail(message: string, code = 1): never {
@@ -57,6 +58,8 @@ export function remotionRendererFactory(dirs: PipelineDirs, opts: { browserExecu
           },
         );
       },
+      renderCover: (plan, outputFile) =>
+        session.renderStill({ compositionId: COVER_COMPOSITION_ID, props: plan.resolved.cover as unknown as Record<string, unknown>, durationSeconds: 1 }, 0, outputFile),
     };
   };
 }

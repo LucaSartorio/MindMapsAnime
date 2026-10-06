@@ -2,6 +2,8 @@ import type { ComponentType } from 'react';
 import type { Collector, Obj } from '../config/schema';
 import type { SocialVideoConfig, TemplateId, VideoLocale } from '../config/types';
 import type { LoadedWorld } from '../data/world';
+import type { SocialFacts } from '../growth/metadata';
+import type { CoverProps } from '../components/Cover';
 
 /** Who/what a video is about, in canonical (permanent) slugs — the basis of content ids. */
 export type ContentIdentity = {
@@ -45,6 +47,12 @@ export type ResolvedVideo = {
   summary: string[];
   /** Small, publication-friendly facts copied into the render manifest. */
   manifest: Record<string, string | number | string[]>;
+  /** Normalized config fields written back to the queue entry (e.g. a versus' subject + opponent). Default: `{ subject }`. */
+  canonicalConfig?: Record<string, unknown>;
+  /** Editorial facts for the growth engine (feed rules, captions). */
+  social: SocialFacts;
+  /** Cover still, rendered next to the MP4. */
+  cover: CoverProps;
 };
 
 export type ResolveOptions = {
@@ -58,7 +66,9 @@ export type ExclusionReason =
   | 'no_journey_data'
   | 'missing_coordinates'
   | 'single_location'
-  | 'missing_translation';
+  | 'missing_translation'
+  | 'not_guessable'
+  | 'not_in_versus_roster';
 
 /** One producible content, as listed in catalog.json (compact, agent-oriented). */
 export type CatalogCandidate = {
@@ -72,6 +82,8 @@ export type CatalogCandidate = {
   recommendedDurationSeconds: number;
   /** Template-specific, flat, small facts that help choosing (importance, places…). */
   facts: Record<string, string | number>;
+  /** Extra fields of the queue request (e.g. a versus' `opponent`). */
+  request?: Record<string, unknown>;
 };
 
 export type CatalogExclusion = { subject: string | null; subjectId: string; displayName: string; reason: ExclusionReason; detail?: string };
@@ -103,8 +115,11 @@ export type TemplateDefinition<C extends SocialVideoConfig = SocialVideoConfig> 
   /** Builds a config for a catalog subject (queue CLI). */
   configFor(anime: string, subject: string, locale: VideoLocale, segment?: string): C;
   resolve(config: C, options?: ResolveOptions): Promise<ResolvedVideo>;
-  /** Every subject of a world this template can (or can't, with a reason) produce. */
-  scan(world: LoadedWorld): CatalogScan;
+  /**
+   * Every subject of a world this template can (or can't, with a reason) produce.
+   * `context.worlds` = every available world (cross-world templates like versus).
+   */
+  scan(world: LoadedWorld, context: { worlds: LoadedWorld[] }): CatalogScan;
   schema: TemplateSchemaFragment;
   /** Registers the `<Composition>` (rendered by `Root.tsx`). */
   Composition: ComponentType;

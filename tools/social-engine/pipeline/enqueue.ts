@@ -1,5 +1,5 @@
 import { SocialEngineError } from '../lib/errors';
-import { canonicalQueueEntry, parseContentRequest, planContent, recordIdentity, type PlannedContent } from './content';
+import { canonicalQueueEntry, parseContentRequest, planContent, recordIdentity, socialMetaFor, type PlannedContent } from './content';
 import type { PipelineDirs } from './dirs';
 import { checkDuplicate } from './duplicates';
 import { safeJoin, writeJsonAtomic } from './fs';
@@ -50,6 +50,7 @@ export async function enqueueMany(dirs: PipelineDirs, raws: unknown[], opts: { d
       if (!opts.dryRun) {
         writeJsonAtomic(safeJoin(dirs.queue, file), entry);
         const record = ensureRecord(history, recordIdentity(plan), now(), file);
+        record.social = socialMetaFor(plan);
         if (record.renderStatus !== 'queued') transition(record, 'queued', now(), { sourceFile: file });
       }
       results.push({ ok: true, file, renderId: plan.renderId, notes: verdict.notes, plan, entry });

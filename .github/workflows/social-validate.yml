@@ -45,6 +45,11 @@ jobs:
       - name: Validate social queue
         run: npm run social:validate:queue
 
+      # Hard editorial rules (max 2 same anime in a row, never the same character
+      # twice, journey parts in order with spacing): a queue PR that breaks them is red.
+      - name: Editorial rules
+        run: npm run social:editorial:check
+
       - name: Dry run (plan only)
         run: npm run social:render:queue:dry
 

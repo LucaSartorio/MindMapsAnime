@@ -3,7 +3,8 @@ import { VIDEO_LOCALES } from '../config/types';
 import { animeWorlds, getWorldUrlSlug } from '@/data/worlds';
 import { availableWorldSlugs } from '../data/world';
 import { TEMPLATE_LIST } from '../templates/registry';
-import { MAX_NOTES } from './content';
+import { MAX_NOTES, SELECTION_MODES } from './content';
+import { CTA_TYPES, HOOK_TYPES } from '../growth/config';
 import { MAX_SEGMENT, SEGMENT_RE } from './ids';
 
 /**
@@ -43,6 +44,16 @@ export function buildContentSchema(): Record<string, unknown> {
     },
     notes: { type: 'string', maxLength: MAX_NOTES, description: 'Why this content was chosen. Stored, never rendered.' },
     allowRerender: { type: 'boolean', description: 'HUMAN OVERRIDE ONLY. Agents must not set it.' },
+    hookType: { enum: [...HOOK_TYPES], description: 'Hook category (copy it from catalog/next.json). Recorded in history for performance analysis.' },
+    hookId: { type: 'string', pattern: '^[a-z0-9]+(?:-[a-z0-9]+)*$', maxLength: 60, description: 'Hook template id (copy it from catalog/next.json).' },
+    ctaType: { enum: [...CTA_TYPES], description: 'CTA category (copy it from catalog/next.json); drives the per-network caption wording.' },
+    selection: {
+      type: 'object',
+      additionalProperties: false,
+      required: ['mode', 'score', 'seed'],
+      description: 'How the growth selector picked this content (copy it from catalog/next.json). Omit for hand-written requests.',
+      properties: { mode: { enum: [...SELECTION_MODES] }, score: { type: 'number' }, seed: { type: 'string', maxLength: 80 } },
+    },
     audio: {
       type: 'object',
       additionalProperties: false,

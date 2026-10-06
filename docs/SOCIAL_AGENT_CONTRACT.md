@@ -33,6 +33,27 @@ Never commit MP4s, never touch `history.json`, never set `allowRerender`.
 > "an MP4 exists", **not** "published". Before generating new content, the Publishing Agent's work
 > list `catalog.publishing.ready` comes first (rendered videos still waiting to be scheduled).
 
+## 0b. The daily run: follow the editorial plan (`catalog/next.json`)
+
+The repository's **growth engine** decides WHAT comes next (see
+[`docs/SOCIAL_ENGINE.md` › Growth Engine](SOCIAL_ENGINE.md#growth-engine)). The agent does not pick
+content by itself anymore:
+
+1. read `tools/social-engine/catalog/next.json` (default branch);
+2. `status: "ready"` → write **one** queue file whose content is exactly `request` (you may add
+   `"$schema": "../../schemas/social-content.schema.json"`; nothing else changes — hook, CTA,
+   `hookType`, `hookId`, `ctaType`, `selection` included);
+   `status: "blocked"` → **queue nothing** (fail-safe: no valid content respects the rotation);
+3. **one new video per run**, English feed (`locale: "en"`);
+4. PR → *Social validate* (it also runs **Editorial rules**: a request that breaks the rotation is red)
+   → merge → *Social render* (renders it, with a cover) → the plan is regenerated for the next run.
+
+The plan already applies every rule: max **2 consecutive videos of the same anime** (then a
+different anime is forced), never the **same character twice in a row**, journey **parts in order**
+with **≥ 2 videos in between**, format rotation (journey / guess / versus), hook and CTA rotation,
+exploration vs exploitation from the analytics. Hand-written requests are still accepted (the
+contract below), but they must pass the same Editorial rules check.
+
 ## 1. What the agent reads
 
 | File | What it is |
@@ -153,7 +174,13 @@ Any other field is an **error** (typos are never silently ignored).
 
 ### Enums
 
-- `template`: `characterJourney`
+- `template`: `characterJourney` · `guessCharacter` (`subject`, optional `places` 4–6) ·
+  `characterVersus` (`subject` + `opponent: { anime, subject }`, copied from the catalog item `request`)
+- growth fields (copy them from `catalog/next.json`, optional otherwise): `hookType`
+  (`question` | `challenge` | `curiosity` | `fact` | `versus`), `hookId`, `ctaType`
+  (`follow-next-part` | `comment-guess` | `comment-next-matchup` | `comment-pick-side` |
+  `comment-missed-location` | `comment-next-journey` | `follow-for-more` | `site-visit` | `subscribe-next-part`),
+  `selection` (`{ mode, score, seed }`)
 - `locale`: `en`, `it`
 - `anime`: `naruto`, `onepiece`, `hunterxhunter`, `dragonball`, `blackclover`, `bleach`, `attackontitan`, `jujutsukaisen` (+ URL slugs)
 - `segment`: `part-NN` (from the catalog; a future engine version may emit `part-NN-vN`)
