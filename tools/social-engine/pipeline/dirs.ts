@@ -18,6 +18,8 @@ import { ENGINE_DIR, PUBLIC_DIR, REPO_ROOT } from '../render/paths';
  *   publication/applied/  audit trail of applied receipts
  *   publication/failed/   rejected receipts + .error.json
  *   publication/schemas/  publication-receipt.schema.json
+ *   analytics/pending/    metric snapshots to apply (Analyst Agent) · applied/ · failed/
+ *   analytics/metrics.json latest metrics per renderId × platform
  */
 export type PipelineDirs = {
   root: string;
@@ -35,6 +37,11 @@ export type PipelineDirs = {
   publicationPending: string;
   publicationApplied: string;
   publicationFailed: string;
+  analyticsPending: string;
+  analyticsApplied: string;
+  analyticsFailed: string;
+  /** Latest metrics per renderId × platform (written only by social:analytics:apply). */
+  metricsFile: string;
   publicDir: string;
   repoRoot: string;
 };
@@ -58,6 +65,10 @@ export function pipelineDirs(root: string = process.env.SOCIAL_PIPELINE_ROOT ? p
     publicationPending: path.join(root, 'publication', 'pending'),
     publicationApplied: path.join(root, 'publication', 'applied'),
     publicationFailed: path.join(root, 'publication', 'failed'),
+    analyticsPending: path.join(root, 'analytics', 'pending'),
+    analyticsApplied: path.join(root, 'analytics', 'applied'),
+    analyticsFailed: path.join(root, 'analytics', 'failed'),
+    metricsFile: path.join(root, 'analytics', 'metrics.json'),
     publicDir: PUBLIC_DIR,
     repoRoot: REPO_ROOT,
   };

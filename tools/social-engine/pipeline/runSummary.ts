@@ -33,6 +33,8 @@ export type RunSummaryItem = {
   sha256: string;
   video: string;
   manifest: string;
+  /** Cover still inside the artifact, null when none. */
+  cover: string | null;
   sourceFile: string;
 };
 
@@ -81,6 +83,7 @@ export function buildRunSummary(dirs: PipelineDirs, result: BatchResult, now: st
       sha256: manifest.sha256,
       video: `videos/${path.basename(r.outputFile)}`,
       manifest: `manifests/${path.basename(r.manifestFile)}`,
+      cover: manifest.cover ? `covers/${path.basename(manifest.cover)}` : null,
       sourceFile: r.file,
     };
   });

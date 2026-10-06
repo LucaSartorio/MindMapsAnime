@@ -185,7 +185,7 @@ export async function resolveCharacterJourney(config: CharacterJourneyConfig): P
   return {
     locale,
     copy,
-    world: { slug: world.slug, urlSlug: world.urlSlug ?? world.slug, title: worldTitle },
+    world: { slug: world.slug, urlSlug: world.urlSlug ?? world.slug, title: worldTitle, ...(world.theme?.primary ? { accent: world.theme.primary } : {}) },
     character: {
       id: character.id,
       slug: entitySlug(dataset, 'characters', character.id) ?? character.id,

@@ -494,7 +494,7 @@ export type ApplyResult = {
 };
 
 /** `<base>.json`, or `<base>-2.json`, `-3`… when taken (an audit file is never overwritten). */
-function freeAuditPath(dir: string, base: string): string {
+export function freeAuditPath(dir: string, base: string): string {
   let target = safeJoin(dir, `${base}.json`);
   for (let n = 2; existsSync(target); n++) target = safeJoin(dir, `${base}-${n}.json`);
   return target;

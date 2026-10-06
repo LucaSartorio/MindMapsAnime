@@ -7,8 +7,13 @@ import type { CatalogExclusion } from '../templates/types';
 import type { PipelineDirs } from './dirs';
 import { writeJsonAtomic } from './fs';
 import { platformState, PLATFORMS, PUBLICATION_PROVIDERS, PUBLICATION_STATUSES, type History, type HistoryRecord, type Platform, type PlatformState, type PublicationStatus, type RenderArtifact } from './history';
-import { contentIdFor, parseContentId, parseRenderId, seriesIdOf } from './ids';
+import { contentIdFor, parseContentId, parseRenderId, renderIdFor, seriesIdOf } from './ids';
 import { inspectQueue } from './queue';
+import { loadMetrics } from './analytics';
+import { growthOutputs, type NextPlan } from '../growth/plan';
+import type { PerformanceReport } from '../growth/performance';
+import type { PlatformMetadata } from '../growth/metadata';
+import { contentTypeOfTemplate } from '../growth/contentTypes';
 
 /**
  * The catalog: every content the engine can REALLY produce, derived from the
@@ -67,6 +72,8 @@ export type CatalogItem = {
   publishedBefore: boolean;
   /** One entry per rendered video (locale/variant) of this item. */
   publication: CatalogRenderPublication[];
+  /** Queue fields beyond `subject` (a versus: `{ subject, opponent }`); absent = `{ subject }`. */
+  request?: Record<string, unknown>;
 };
 
 /**
@@ -89,6 +96,14 @@ export type PublishingEntry = {
   publicationStatus: PublicationStatus;
   platforms: Record<Platform, PlatformState>;
   artifact: RenderArtifact | null;
+  contentType: string;
+  /** Captions / titles per network (growth engine; null on videos rendered before it). */
+  platformMetadata: PlatformMetadata | null;
+  /**
+   * Series order guard: platform → previous part's renderId that must be
+   * scheduled/published on that platform FIRST. Never publish Part N before N-1.
+   */
+  waitFor: Partial<Record<Platform, string>>;
 };
 
 export type CatalogPublishing = {
@@ -130,7 +145,9 @@ export type ExcludedReport = {
   templates: Partial<Record<TemplateId, { byReason: Record<string, number>; items: (CatalogExclusion & { anime: string })[] }>>;
 };
 
-export async function buildCatalog(dirs: PipelineDirs, history: History, now: string): Promise<{ catalog: Catalog; excluded: ExcludedReport }> {
+export type BuiltCatalog = { catalog: Catalog; excluded: ExcludedReport; performance: PerformanceReport & { generatedAt: string }; plan: NextPlan };
+
+export async function buildCatalog(dirs: PipelineDirs, history: History, now: string): Promise<BuiltCatalog> {
   const rendered = new Map<string, Set<VideoLocale>>();
   const scheduled = new Map<string, Set<VideoLocale>>();
   const published = new Map<string, Set<VideoLocale>>();
@@ -164,6 +181,7 @@ export async function buildCatalog(dirs: PipelineDirs, history: History, now: st
   const partCounts = new Map<string, number>();
   const excluded: ExcludedReport = { schemaVersion: 1, generatedAt: now, templates: {} };
 
+  const worlds = await Promise.all(availableWorldSlugs().map((slug) => loadWorld(slug)));
   for (const template of TEMPLATE_LIST) {
     const entry: CatalogTemplate = {
       cliName: template.cliName,
@@ -173,9 +191,9 @@ export async function buildCatalog(dirs: PipelineDirs, history: History, now: st
       items: [],
     };
     const report = { byReason: {} as Record<string, number>, items: [] as (CatalogExclusion & { anime: string })[] };
-    for (const slug of availableWorldSlugs()) {
-      const loaded = await loadWorld(slug);
-      const scan = template.scan(loaded);
+    for (const loaded of worlds) {
+      const slug = loaded.world.slug;
+      const scan = template.scan(loaded, { worlds });
       const ids = scan.candidates.map((c) => contentIdFor(template.cliName, slug, c.subject, c.segment?.segment ?? null));
       entry.summary[slug] = {
         characters: new Set(scan.candidates.map((c) => c.subject)).size,
@@ -231,6 +249,7 @@ export async function buildCatalog(dirs: PipelineDirs, history: History, now: st
           renderedBefore: r.length > 0,
           publishedBefore: p.length > 0,
           publication: publication.get(id) ?? [],
+          ...(c.request ? { request: c.request } : {}),
         });
       });
       for (const x of scan.excluded) {
@@ -242,7 +261,8 @@ export async function buildCatalog(dirs: PipelineDirs, history: History, now: st
     excluded.templates[template.id] = report;
   }
   catalog.publishing = buildPublishing(renderedRecords, { subjectNames, partCounts }, now);
-  return { catalog, excluded };
+  const { performance, plan } = growthOutputs({ catalog, history, metrics: loadMetrics(dirs), now });
+  return { catalog, excluded, performance, plan };
 }
 
 function emptySummary(): CatalogPublishing['summary'] {
@@ -260,6 +280,7 @@ export function buildPublishing(
   now: string,
 ): CatalogPublishing {
   const publishing: CatalogPublishing = { contract: 'docs/SOCIAL_PUBLISHING_CONTRACT.md', platforms: PLATFORMS, providers: PUBLICATION_PROVIDERS, summary: emptySummary(), ready: [], unavailable: [] };
+  const byRenderId = new Map(records.map((r) => [r.renderId, r]));
   for (const r of records) {
     publishing.summary.rendered++;
     publishing.summary[r.publicationStatus]++;
@@ -272,6 +293,18 @@ export function buildPublishing(
     }
     const { segment } = parseContentId(r.contentId);
     const part = segment ? /^part-(\d+)/.exec(segment) : null;
+    const waitFor: Partial<Record<Platform, string>> = {};
+    if (part && Number(part[1]) > 1) {
+      // part-03 → part-02 (a versioned key part-03-v2 → part-02-v2), same locale/variant.
+      const prevSegment = segment!.replace(/^part-\d+/, `part-${String(Number(part[1]) - 1).padStart(2, '0')}`);
+      const prevId = renderIdFor({ contentId: `${seriesIdOf(r.contentId)}:${prevSegment}`, locale: r.locale, variant: r.variant });
+      const prev = byRenderId.get(prevId);
+      for (const p of PLATFORMS) {
+        if (platforms[p] !== 'notScheduled' && platforms[p] !== 'failed') continue;
+        const state = prev ? platformState(prev, p) : 'notScheduled';
+        if (state !== 'scheduled' && state !== 'published') waitFor[p] = prevId;
+      }
+    }
     publishing.ready.push({
       renderId: r.renderId,
       contentId: r.contentId,
@@ -288,6 +321,9 @@ export function buildPublishing(
       publicationStatus: r.publicationStatus,
       platforms,
       artifact: r.artifact,
+      contentType: r.social?.contentType ?? contentTypeOfTemplate(r.template),
+      platformMetadata: r.social?.platformMetadata ?? null,
+      waitFor,
     });
   }
   return publishing;
@@ -295,14 +331,19 @@ export function buildPublishing(
 
 export const CATALOG_FILE = 'catalog.json';
 export const EXCLUDED_FILE = 'excluded.json';
+/** Growth engine outputs, regenerated with the catalog. */
+export const PERFORMANCE_FILE = 'performance.json';
+export const NEXT_FILE = 'next.json';
 
-export function writeCatalog(dirs: PipelineDirs, built: { catalog: Catalog; excluded: ExcludedReport }): void {
+export function writeCatalog(dirs: PipelineDirs, built: BuiltCatalog): void {
   writeJsonAtomic(`${dirs.catalog}/${CATALOG_FILE}`, built.catalog);
   writeJsonAtomic(`${dirs.catalog}/${EXCLUDED_FILE}`, built.excluded);
+  writeJsonAtomic(`${dirs.catalog}/${PERFORMANCE_FILE}`, built.performance);
+  writeJsonAtomic(`${dirs.catalog}/${NEXT_FILE}`, built.plan);
 }
 
 /** Human summary printed by `social:catalog` (and after a batch). */
-export function catalogSummary(built: { catalog: Catalog; excluded: ExcludedReport }): string[] {
+export function catalogSummary(built: BuiltCatalog): string[] {
   const lines: string[] = [];
   for (const template of TEMPLATE_LIST) {
     const t = built.catalog.templates[template.id];
@@ -324,6 +365,13 @@ export function catalogSummary(built: { catalog: Catalog; excluded: ExcludedRepo
   }
   const p = built.catalog.publishing;
   const byStatus = PUBLICATION_STATUSES.filter((st) => p.summary[st]).map((st) => `${p.summary[st]} ${st}`).join(' · ');
+  const n = built.plan;
+  lines.push(`performance: ${built.performance.contents} scored video(s) · ${built.performance.coldStart ? 'cold start' : 'optimising'}`);
+  lines.push(
+    n.status === 'ready' && n.pick
+      ? `next: ${n.pick.renderId} (${n.pick.contentType}, ${n.mode}, score ${n.pick.score}) — ${String(n.request?.hook ?? '')}`
+      : `next: BLOCKED — ${n.reason ?? 'no valid candidate'}`,
+  );
   lines.push(`publishing: ${p.summary.rendered} rendered (${byStatus || 'none'}) · ${p.ready.length} ready to publish (MP4 downloadable) · ${p.unavailable.length} without a downloadable MP4`);
   return lines;
 }

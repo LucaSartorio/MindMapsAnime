@@ -5,4 +5,5 @@ await import('./engine.test');
 await import('./pipeline.test');
 await import('./segments.test');
 await import('./publication.test');
+await import('./growth.test');
 report();

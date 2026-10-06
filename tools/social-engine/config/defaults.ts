@@ -21,3 +21,11 @@ export const MIN_SECONDS_PER_STOP = 1.6;
 /** Hook length above which the text no longer fits two lines on mobile. */
 export const MAX_HOOK_CHARS = 90;
 export const MAX_CTA_CHARS = 80;
+
+/** GuessCharacter: places shown before the reveal. */
+export const GUESS_MIN_PLACES = 4;
+export const GUESS_MAX_PLACES = 6;
+/** CharacterVersus: places a character needs to enter a match-up (a real journey). */
+export const VERSUS_MIN_PLACES = 4;
+/** CharacterVersus catalog: best journeys per world entering cross-world match-ups. */
+export const VERSUS_TOP_PER_WORLD = 3;

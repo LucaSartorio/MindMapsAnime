@@ -132,16 +132,18 @@ function checkScope(dirs: PipelineDirs): void {
     const [status, file] = line.split('\t');
     return { status, file };
   });
-  const pendingDir = `${relToRepo(dirs, dirs.publicationPending)}/`;
-  const receipts = changes.filter((c) => c.file.startsWith(pendingDir));
-  if (!receipts.length) return console.log('✔ no publication receipt in this change — scope check not needed');
-  const bad = changes.filter((c) => !(c.status === 'A' && c.file.startsWith(pendingDir) && /^[^/]+\.json$/.test(c.file.slice(pendingDir.length))));
+  // Agent input folders: publication receipts (Publishing Agent) and analytics snapshots (Analyst Agent).
+  const inboxes = [dirs.publicationPending, dirs.analyticsPending].map((d) => `${relToRepo(dirs, d)}/`);
+  const inInbox = (file: string) => inboxes.some((dir) => file.startsWith(dir));
+  const touched = changes.filter((c) => inInbox(c.file));
+  if (!touched.length) return console.log('✔ no publication receipt / analytics snapshot in this change — scope check not needed');
+  const bad = changes.filter((c) => !(c.status === 'A' && inboxes.some((dir) => c.file.startsWith(dir) && /^[^/]+\.json$/.test(c.file.slice(dir.length)))));
   if (bad.length) {
-    console.error(`\n✖ a change that adds publication receipts may ONLY add new ${pendingDir}*.json files.\n  Not allowed here:\n${bad.map((c) => `    ${c.status} ${c.file}`).join('\n')}\n`);
+    console.error(`\n✖ a change that adds receipts/snapshots may ONLY add new ${inboxes.map((d) => `${d}*.json`).join(' or ')} files.\n  Not allowed here:\n${bad.map((c) => `    ${c.status} ${c.file}`).join('\n')}\n`);
     process.exitCode = 1;
     return;
   }
-  console.log(`✔ scope ok: ${receipts.length} new receipt file(s), nothing else`);
+  console.log(`✔ scope ok: ${touched.length} new receipt/snapshot file(s), nothing else`);
 }
 
 async function main() {

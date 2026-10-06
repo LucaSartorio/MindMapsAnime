@@ -6,7 +6,9 @@ import { DEFAULT_LOCALE } from '../config/defaults';
 import { findTemplate, parseSocialVideoConfig } from '../templates/registry';
 import type { ResolvedVideo, TemplateDefinition } from '../templates/types';
 import type { PipelineDirs } from './dirs';
-import type { RecordIdentity } from './history';
+import type { RecordIdentity, SocialMeta } from './history';
+import { CTA_TYPES, HOOK_TYPES, type CtaType, type HookType, type SelectionMode } from '../growth/config';
+import { buildPlatformMetadata } from '../growth/metadata';
 import { isInside, isRegularFile } from './fs';
 import { contentIdFor, fileStemFor, isSafeSegment, renderIdFor } from './ids';
 
@@ -15,7 +17,10 @@ import { contentIdFor, fileStemFor, isSafeSegment, renderIdFor } from './ids';
  * a video config (`SocialVideoConfig`) + a few pipeline fields. The contract is
  * documented in docs/SOCIAL_AGENT_CONTRACT.md and schemas/social-content.schema.json.
  */
-export const PIPELINE_KEYS = ['id', 'variant', 'status', 'notes', 'allowRerender'] as const;
+export const PIPELINE_KEYS = ['id', 'variant', 'status', 'notes', 'allowRerender', 'hookType', 'hookId', 'ctaType', 'selection'] as const;
+/** Growth-engine provenance of a request (copied from catalog/next.json; optional for hand-written requests). */
+export const SELECTION_MODES: readonly SelectionMode[] = ['exploit', 'explore', 'coldstart'];
+const HOOK_ID_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 export const MAX_NOTES = 500;
 
 export type ContentRequest = {
@@ -28,6 +33,11 @@ export type ContentRequest = {
   notes?: string;
   /** Human override to re-render an already rendered video (agents must not set it). */
   allowRerender: boolean;
+  /** Hook/CTA engine facts (growth plan). */
+  hookType?: HookType;
+  hookId?: string;
+  ctaType?: CtaType;
+  selection?: { mode: SelectionMode; score: number; seed: string };
 };
 
 export type RequestParseResult = { ok: true; request: ContentRequest } | { ok: false; errors: string[] };
@@ -48,6 +58,17 @@ export function parseContentRequest(input: unknown): RequestParseResult {
   if (pipeline.status !== undefined && pipeline.status !== 'queued') c.push('status', 'when present must be "queued" (the pipeline owns every other state)');
   if (pipeline.notes !== undefined && (typeof pipeline.notes !== 'string' || pipeline.notes.length > MAX_NOTES)) c.push('notes', `must be a string of at most ${MAX_NOTES} characters`);
   if (pipeline.allowRerender !== undefined && typeof pipeline.allowRerender !== 'boolean') c.push('allowRerender', 'must be a boolean');
+  if (pipeline.hookType !== undefined && !HOOK_TYPES.includes(pipeline.hookType as HookType)) c.push('hookType', `must be one of ${HOOK_TYPES.join(', ')}`);
+  if (pipeline.hookId !== undefined && (typeof pipeline.hookId !== 'string' || !HOOK_ID_RE.test(pipeline.hookId) || pipeline.hookId.length > 60)) c.push('hookId', 'must be a hook template id (lowercase slug)');
+  if (pipeline.ctaType !== undefined && !CTA_TYPES.includes(pipeline.ctaType as CtaType)) c.push('ctaType', `must be one of ${CTA_TYPES.join(', ')}`);
+  let selection: ContentRequest['selection'];
+  if (pipeline.selection !== undefined) {
+    const sel = pipeline.selection;
+    if (!isObj(sel) || Object.keys(sel).some((k) => !['mode', 'score', 'seed'].includes(k))) c.push('selection', 'must be { mode, score, seed } (copied from catalog/next.json)');
+    else if (!SELECTION_MODES.includes(sel.mode as SelectionMode) || typeof sel.score !== 'number' || !Number.isFinite(sel.score) || typeof sel.seed !== 'string' || sel.seed.length > 80) {
+      c.push('selection', 'mode must be exploit|explore|coldstart, score a number, seed a string (≤ 80)');
+    } else selection = { mode: sel.mode as SelectionMode, score: sel.score, seed: sel.seed };
+  }
 
   const parsed = parseSocialVideoConfig(video);
   const errors = [...c.errors, ...(parsed.ok ? [] : parsed.errors)];
@@ -60,6 +81,10 @@ export function parseContentRequest(input: unknown): RequestParseResult {
       variant,
       ...(typeof pipeline.notes === 'string' ? { notes: pipeline.notes } : {}),
       allowRerender: pipeline.allowRerender === true,
+      ...(typeof pipeline.hookType === 'string' ? { hookType: pipeline.hookType as HookType } : {}),
+      ...(typeof pipeline.hookId === 'string' ? { hookId: pipeline.hookId } : {}),
+      ...(typeof pipeline.ctaType === 'string' ? { ctaType: pipeline.ctaType as CtaType } : {}),
+      ...(selection ? { selection } : {}),
     },
   };
 }
@@ -119,7 +144,8 @@ export async function planContent(dirs: PipelineDirs, request: ContentRequest): 
 export function canonicalQueueEntry(plan: PlannedContent): Obj {
   const data = (plan.resolved.props as { data?: { hook?: string; cta?: string } }).data;
   const { template, anime: _anime, locale: _locale, durationSeconds: _d, hook: _h, cta: _c, ...rest } = plan.request.config;
-  const subject = 'subject' in rest ? { subject: plan.resolved.identity.subject } : {};
+  // Template-normalized identity fields (a versus keeps its two characters; others: the catalog slug).
+  const subject = plan.resolved.canonicalConfig ?? ('subject' in rest ? { subject: plan.resolved.identity.subject } : {});
   const segment = plan.resolved.identity.segment ? { segment: plan.resolved.identity.segment } : {};
   // Fixed, readable key order: identity → what to say → optional tuning.
   return {
@@ -137,8 +163,44 @@ export function canonicalQueueEntry(plan: PlannedContent): Obj {
     ...(data?.cta ? { cta: data.cta } : {}),
     ...rest,
     ...subject,
+    ...(plan.request.hookType ? { hookType: plan.request.hookType } : {}),
+    ...(plan.request.hookId ? { hookId: plan.request.hookId } : {}),
+    ...(plan.request.ctaType ? { ctaType: plan.request.ctaType } : {}),
+    ...(plan.request.selection ? { selection: plan.request.selection } : {}),
     ...(plan.request.notes ? { notes: plan.request.notes } : {}),
     ...(plan.request.allowRerender ? { allowRerender: true } : {}),
+  };
+}
+
+/** Growth-engine facts of a planned content (history `social`, manifest, captions). */
+export function socialMetaFor(plan: PlannedContent): SocialMeta {
+  const facts = plan.resolved.social;
+  const data = (plan.resolved.props as { data?: { hook?: string; cta?: string } }).data;
+  const hook = data?.hook ?? null;
+  const ctaType = plan.request.ctaType ?? null;
+  const id = plan.resolved.identity;
+  const characters =
+    facts.contentType === 'character-versus' && plan.resolved.canonicalConfig
+      ? [
+          `${id.anime}:${String(plan.resolved.canonicalConfig.subject)}`,
+          `${(plan.resolved.canonicalConfig.opponent as { anime: string }).anime}:${(plan.resolved.canonicalConfig.opponent as { subject: string }).subject}`,
+        ]
+      : [`${id.anime}:${id.subject}`];
+  return {
+    contentType: facts.contentType,
+    animes: facts.animes,
+    characters,
+    characterNames: facts.characterNames,
+    part: facts.part,
+    partCount: facts.partCount,
+    hookType: plan.request.hookType ?? null,
+    hookId: plan.request.hookId ?? null,
+    hook,
+    ctaType,
+    cta: data?.cta ?? null,
+    durationSeconds: plan.resolved.durationSeconds,
+    selection: plan.request.selection ?? null,
+    platformMetadata: plan.locale === 'en' && hook ? buildPlatformMetadata(facts, hook, ctaType) : null,
   };
 }
 

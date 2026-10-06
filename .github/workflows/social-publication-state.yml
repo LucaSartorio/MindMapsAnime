@@ -15,6 +15,7 @@ on:
     branches: [main]
     paths:
       - 'tools/social-engine/publication/pending/**'
+      - 'tools/social-engine/analytics/pending/**'
   workflow_dispatch:
     inputs:
       dry_run:
@@ -67,7 +68,7 @@ jobs:
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then mode=dry; fi
           # Real state changes (and commits) only on the default branch.
           if [ "${{ github.ref_name }}" != "${{ github.event.repository.default_branch }}" ]; then mode=dry; fi
-          count=$(find tools/social-engine/publication/pending -maxdepth 1 -type f -name '*.json' | wc -l | tr -d ' ')
+          count=$(find tools/social-engine/publication/pending tools/social-engine/analytics/pending -maxdepth 1 -type f -name '*.json' 2>/dev/null | wc -l | tr -d ' ')
           echo "mode=$mode" >> "$GITHUB_OUTPUT"
           echo "pending=$count" >> "$GITHUB_OUTPUT"
           echo "Mode: $mode · pending receipts: $count"
@@ -105,6 +106,19 @@ jobs:
         continue-on-error: true
         run: npm run social:publication:apply
 
+      # Analytics snapshots (Analyst Agent): same all-or-nothing contract; refreshes
+      # performance.json + next.json (the next editorial plan).
+      - name: Validate analytics snapshots
+        if: steps.mode.outputs.pending != '0'
+        continue-on-error: true
+        run: npm run social:analytics:validate
+
+      - name: Apply analytics snapshots
+        id: analytics
+        if: steps.mode.outputs.pending != '0' && steps.mode.outputs.mode == 'apply'
+        continue-on-error: true
+        run: npm run social:analytics:apply
+
       # The runner is ephemeral: history, the receipts moved out of pending/
       # (→ applied/ or failed/) and the refreshed catalog are committed back.
       # Only these paths are ever staged.
@@ -118,13 +132,13 @@ jobs:
         run: >-
           bash tools/social-engine/ci/commit-state.sh
           "chore(social): record publication state [skip social-publication] [skip ci]"
-          tools/social-engine/history tools/social-engine/publication tools/social-engine/catalog
+          tools/social-engine/history tools/social-engine/publication tools/social-engine/analytics tools/social-engine/catalog
 
       - name: Fail when a receipt was rejected
         if: always() && steps.mode.outputs.pending != '0'
         shell: bash
         run: |
-          if [ "${{ steps.apply.outcome }}" = "failure" ] || [ "${{ steps.dry.outcome }}" = "failure" ]; then
+          if [ "${{ steps.apply.outcome }}" = "failure" ] || [ "${{ steps.analytics.outcome }}" = "failure" ] || [ "${{ steps.dry.outcome }}" = "failure" ]; then
             echo "::error::Publication receipts rejected: NOTHING was applied. Invalid receipts are in tools/social-engine/publication/failed/ (+ .error.json); see the step summary."
             exit 1
           fi

@@ -1,5 +1,6 @@
 import { existsSync } from 'node:fs';
 import type { VideoLocale } from '../config/types';
+import type { PlatformMetadata } from '../growth/metadata';
 import type { PipelineDirs } from './dirs';
 import { MAX_STATE_FILE_BYTES, readJsonFile, writeJsonAtomic } from './fs';
 
@@ -80,8 +81,39 @@ export type RenderArtifact = {
   manifest: string;
   /** sha256 of the MP4 (also in the manifest); null when unknown. */
   sha256: string | null;
+  /** Cover still inside the artifact (`covers/<stem>.cover.png`); absent on older records. */
+  cover?: string | null;
   /** The artifact is deleted by GitHub after this (retention). */
   expiresAt: string;
+};
+
+/**
+ * Editorial facts of a feed video (growth engine). Absent (null) on records
+ * older than the growth engine: the feed derives the same facts from the
+ * content id (see growth/feed.ts), so old history needs no rewrite.
+ */
+export type SocialMeta = {
+  /** `character-journey` | `guess-character` | `character-versus` … */
+  contentType: string;
+  /** World slugs the video is about (a cross-world versus has two). */
+  animes: string[];
+  /** `anime:slug` of every character in the video. */
+  characters: string[];
+  characterNames: string[];
+  /** Journey part (1-based) and part count, null for single videos. */
+  part: number | null;
+  partCount: number | null;
+  hookType: string | null;
+  /** Hook template id (hook engine), null for a hand-written hook. */
+  hookId: string | null;
+  hook: string | null;
+  ctaType: string | null;
+  cta: string | null;
+  durationSeconds: number | null;
+  /** How the growth selector picked it (null = queued by hand). */
+  selection: { mode: string; score: number; seed: string } | null;
+  /** Per-network captions/titles (computed at render, used by the Publishing Agent). */
+  platformMetadata: PlatformMetadata | null;
 };
 
 export type HistoryRecord = {
@@ -110,6 +142,8 @@ export type HistoryRecord = {
   lastError: string | null;
   /** CI artifact holding the MP4 (null: rendered locally / before artifacts were recorded). */
   artifact: RenderArtifact | null;
+  /** Growth-engine facts (content type, characters, hook/CTA, captions); null on older records. */
+  social: SocialMeta | null;
   /** Derived from `platforms` (never set by hand). */
   publicationStatus: PublicationStatus;
   /** Earliest publishedAt over the platforms (derived). */
@@ -157,7 +191,7 @@ export function normalizeHistory(raw: unknown, source = 'history'): History {
   const records: Record<string, HistoryRecord> = {};
   for (const [key, r] of Object.entries(h.records)) {
     const platforms = (Array.isArray(r.platforms) ? r.platforms : []).map((p) => normalizePlatform(p, `${source}: ${key}`));
-    const record: HistoryRecord = { ...r, segment: r.segment ?? null, segmentFingerprint: r.segmentFingerprint ?? null, artifact: r.artifact ?? null, platforms: sortPlatforms(platforms) };
+    const record: HistoryRecord = { ...r, segment: r.segment ?? null, segmentFingerprint: r.segmentFingerprint ?? null, artifact: r.artifact ?? null, social: r.social ?? null, platforms: sortPlatforms(platforms) };
     records[key] = withDerivedPublication(record);
   }
   return { schemaVersion: 1, records };
@@ -253,6 +287,7 @@ export function ensureRecord(history: History, identity: RecordIdentity, now: st
     attempts: 0,
     lastError: null,
     artifact: null,
+    social: null,
     publicationStatus: 'notPublished',
     publishedAt: null,
     platforms: [],

@@ -24,6 +24,9 @@ export type VideoCopy = {
   hookPartLast: string;
   ctaContinue: string;
   nextPart: string;
+  /** Cover: "{name}'s Journey" and the format pill. */
+  coverTitle: string;
+  coverFormat: string;
 };
 
 export const VIDEO_COPY: Record<VideoLocale, VideoCopy> = {
@@ -45,6 +48,8 @@ export const VIDEO_COPY: Record<VideoLocale, VideoCopy> = {
     hookPartLast: "The last stretch of {name}'s journey — Part {n} of {total}.",
     ctaContinue: 'Continue the journey on AniMapVerse',
     nextPart: 'Next: Part {n} of {total}',
+    coverTitle: "{name}'s Journey",
+    coverFormat: 'JOURNEY',
   },
   it: {
     templateLabel: 'Il viaggio del personaggio',
@@ -64,6 +69,8 @@ export const VIDEO_COPY: Record<VideoLocale, VideoCopy> = {
     hookPartLast: "L'ultimo tratto del viaggio di {name} — Parte {n} di {total}.",
     ctaContinue: 'Continua il viaggio su AniMapVerse',
     nextPart: 'Prossima: Parte {n} di {total}',
+    coverTitle: 'Il viaggio di {name}',
+    coverFormat: 'VIAGGIO',
   },
 };
 

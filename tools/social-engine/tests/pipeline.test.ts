@@ -24,6 +24,10 @@ import { buildContentSchema } from '../pipeline/schema';
 import { ENGINE_DIR, REPO_ROOT } from '../render/paths';
 import { resolveCharacterJourney } from '../templates/characterJourney/resolve';
 import { videoText } from '../templates/characterJourney/CharacterJourney';
+import { resolveGuessCharacter } from '../templates/guessCharacter/resolve';
+import { guessVideoText } from '../templates/guessCharacter/GuessCharacter';
+import { resolveCharacterVersus } from '../templates/characterVersus/resolve';
+import { versusVideoText } from '../templates/characterVersus/CharacterVersus';
 import { FONT_COVERAGE_RE } from '../lib/fonts';
 import { buildRunSummary } from '../pipeline/runSummary';
 import { section, test } from './harness';
@@ -233,6 +237,7 @@ await test('batch renders in order, isolates failures, keeps everything, writes 
     sha256: (manifest as { sha256: string }).sha256,
     video: 'videos/naruto_itachi-uchiha_character-journey_en.mp4',
     manifest: 'manifests/naruto_itachi-uchiha_character-journey_en.manifest.json',
+    cover: null,
     sourceFile: '0001-naruto_itachi-uchiha_character-journey_en.json',
   });
   const part = summary.rendered[1];
@@ -328,6 +333,29 @@ await test('every catalog item resolves in every declared locale, with text the 
     }
   }
   // A character outside the @fontsource subsets would be drawn with an OS font (different on Windows/Linux).
+  assert.deepEqual([...uncovered], []);
+});
+await test('every GuessCharacter / CharacterVersus catalog item resolves (EN), spoiler-free, with covered fonts', async () => {
+  const guess = sandboxCatalog?.templates.guessCharacter;
+  const versus = sandboxCatalog?.templates.characterVersus;
+  assert.ok(guess && guess.items.length > 20, 'guess items');
+  assert.ok(versus && versus.items.length > 50, 'versus items');
+  const uncovered = new Set<string>();
+  for (const item of guess.items) {
+    const data = await resolveGuessCharacter({ template: 'guessCharacter', anime: item.anime, subject: item.subject, locale: 'en' });
+    assert.equal(data.durationSeconds, item.recommendedDurationSeconds, `${item.id}: duration`);
+    assert.equal(data.places.length, item.facts.clues, `${item.id}: clues`);
+    const tokens = data.answer.name.toLowerCase().split(/\s+/).filter((t) => t.length >= 4);
+    for (const p of data.places) assert.ok(!tokens.some((t) => p.name.toLowerCase().split(/[^\p{L}\p{N}]+/u).includes(t)), `${item.id}: clue "${p.name}" gives the answer away`);
+    for (const ch of guessVideoText(data)) if (!FONT_COVERAGE_RE.test(ch)) uncovered.add(`${ch} (${item.id})`);
+  }
+  for (const item of versus.items) {
+    const req = item.request as { subject: string; opponent: { anime: string; subject: string } };
+    const data = await resolveCharacterVersus({ template: 'characterVersus', anime: item.anime, subject: req.subject, opponent: req.opponent, locale: 'en' });
+    assert.deepEqual([data.a.places, data.b.places], [item.facts.placesA, item.facts.placesB], `${item.id}: places`);
+    assert.ok(data.a.anime !== data.b.anime, `${item.id}: catalog match-ups are cross-world`);
+    for (const ch of versusVideoText(data)) if (!FONT_COVERAGE_RE.test(ch)) uncovered.add(`${ch} (${item.id})`);
+  }
   assert.deepEqual([...uncovered], []);
 });
 await test('catalog reflects history and queue (rendered / queued / published)', async () => {

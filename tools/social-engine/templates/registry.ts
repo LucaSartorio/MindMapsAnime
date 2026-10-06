@@ -2,6 +2,8 @@ import { Collector, isObj, type ConfigParseResult } from '../config/schema';
 import type { TemplateId } from '../config/types';
 import { compact } from '../config/schema';
 import { characterJourneyTemplate } from './characterJourney';
+import { characterVersusTemplate } from './characterVersus';
+import { guessCharacterTemplate } from './guessCharacter';
 import type { TemplateDefinition } from './types';
 
 /**
@@ -11,6 +13,8 @@ import type { TemplateDefinition } from './types';
  */
 export const TEMPLATES: Record<TemplateId, TemplateDefinition> = {
   characterJourney: characterJourneyTemplate,
+  guessCharacter: guessCharacterTemplate,
+  characterVersus: characterVersusTemplate,
 };
 
 export const TEMPLATE_LIST: TemplateDefinition[] = Object.values(TEMPLATES);

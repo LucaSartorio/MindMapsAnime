@@ -134,6 +134,12 @@ jobs:
         continue-on-error: true
         run: npm run social:validate:queue
 
+      # Fail-safe: never render content that breaks the hard editorial rules
+      # (blocking — the render below is skipped and the run goes red).
+      - name: Editorial rules
+        if: steps.mode.outputs.queued != '0'
+        run: npm run social:editorial:check
+
       - name: Dry run (plan only)
         id: dry
         if: steps.mode.outputs.queued != '0' && steps.mode.outputs.mode == 'dry'

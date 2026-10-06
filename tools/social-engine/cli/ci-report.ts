@@ -41,6 +41,7 @@ if (!existsSync(summaryFile)) {
 const summary = JSON.parse(readFileSync(summaryFile, 'utf8')) as RunSummary;
 mkdirSync(path.join(artifactDir, 'videos'), { recursive: true });
 mkdirSync(path.join(artifactDir, 'manifests'), { recursive: true });
+mkdirSync(path.join(artifactDir, 'covers'), { recursive: true });
 const missing: string[] = [];
 for (const item of summary.rendered) {
   const stem = path.basename(item.video, '.mp4');
@@ -49,6 +50,8 @@ for (const item of summary.rendered) {
   if (existsSync(video)) copyFileSync(video, path.join(artifactDir, item.video));
   else missing.push(relToRepo(dirs, video));
   if (existsSync(manifest)) copyFileSync(manifest, path.join(artifactDir, item.manifest));
+  const cover = item.cover ? path.join(dirs.output, path.basename(item.cover)) : null;
+  if (cover && item.cover && existsSync(cover)) copyFileSync(cover, path.join(artifactDir, item.cover));
 }
 writeJsonAtomic(path.join(artifactDir, RUN_SUMMARY_FILE), summary);
 

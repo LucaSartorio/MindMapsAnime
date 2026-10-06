@@ -42,7 +42,15 @@
     "social:publication:apply:dry": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/publication.ts apply --dry-run",
     "social:publication:list": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/publication.ts list",
     "social:publication:check-scope": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/publication.ts check-scope",
-    "social:publication:test": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/tests/run-publication.ts"
+    "social:publication:test": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/tests/run-publication.ts",
+    "social:analytics:validate": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/analytics.ts validate",
+    "social:analytics:apply": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/analytics.ts apply",
+    "social:analytics:apply:dry": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/analytics.ts apply --dry-run",
+    "social:analytics:list": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/analytics.ts list",
+    "social:next": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/growth.ts next",
+    "social:performance": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/growth.ts performance",
+    "social:editorial:check": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/cli/growth.ts editorial-check",
+    "social:growth:test": "tsx --tsconfig tools/social-engine/tsconfig.json tools/social-engine/tests/run-growth.ts"
   },
   "dependencies": {
     "@fontsource/cinzel": "^5.2.8",

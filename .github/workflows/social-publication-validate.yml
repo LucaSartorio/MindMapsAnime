@@ -1,4 +1,4 @@
-# AniMapVerse — INTERNAL publication receipts: validation only.
+# AniMapVerse — INTERNAL publication receipts + analytics snapshots: validation only.
 #
 # Runs on pull requests that add publication receipts (written by the external
 # Publishing Agent after scheduling/publishing through Metricool). Never
@@ -10,6 +10,7 @@ on:
   pull_request:
     paths:
       - 'tools/social-engine/publication/pending/**'
+      - 'tools/social-engine/analytics/pending/**'
 
 concurrency:
   group: social-publication-validate-${{ github.event.pull_request.number }}
@@ -50,5 +51,8 @@ jobs:
       - name: Validate publication receipts
         run: npm run social:publication:validate
 
-      - name: Publication state tests
-        run: npm run social:publication:test
+      - name: Validate analytics snapshots
+        run: npm run social:analytics:validate
+
+      - name: Publication / analytics / growth tests
+        run: npm run social:publication:test && npm run social:growth:test

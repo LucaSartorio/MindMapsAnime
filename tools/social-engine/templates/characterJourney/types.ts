@@ -56,7 +56,7 @@ export type JourneySeriesView = {
 export type CharacterJourneyData = {
   locale: VideoLocale;
   copy: VideoCopy;
-  world: { slug: string; urlSlug: string; title: string };
+  world: { slug: string; urlSlug: string; title: string; accent?: string };
   character: { id: string; slug: string; name: string; initials: string; tagline?: string };
   map: MapView;
   stops: JourneyStopView[];

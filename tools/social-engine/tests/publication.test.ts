@@ -648,7 +648,7 @@ await test('social-publication-state.yml: main only, own concurrency group, writ
   assert.match(y, /\[skip ci\]/);
   assert.doesNotMatch(y, /^\s*pull_request_target:|metricool\.com\/api|secrets\.(?!GITHUB_TOKEN)/im);
   // Only state paths are committed, through the shared script (also used by Social render).
-  assert.match(y, /ci\/commit-state\.sh\s*\n\s*"chore\(social\): record publication state \[skip social-publication\] \[skip ci\]"\s*\n\s*tools\/social-engine\/history tools\/social-engine\/publication tools\/social-engine\/catalog\n/);
+  assert.match(y, /ci\/commit-state\.sh\s*\n\s*"chore\(social\): record publication state \[skip social-publication\] \[skip ci\]"\s*\n\s*tools\/social-engine\/history tools\/social-engine\/publication tools\/social-engine\/analytics tools\/social-engine\/catalog\n/);
   assert.match(readFileSync(path.join(ENGINE_DIR, 'ci', 'commit-state.sh'), 'utf8'), /git add -A -- "\$@"/);
   for (const step of ['social:publication:validate', 'social:publication:apply']) assert.ok(y.includes(`npm run ${step}`), step);
 });
