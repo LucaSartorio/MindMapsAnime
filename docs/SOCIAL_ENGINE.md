@@ -59,9 +59,11 @@ npm run social:validate                          # typecheck + engine/pipeline/p
 npm run social:ci:report                         # artifact folder + report from the last batch (CI; works locally too)
 
 # growth engine (see "Growth Engine")
-npm run social:next                              # the next video to queue (rotation-safe, hook + CTA + captions)
+npm run social:agent -- --dry-run                # the daily cycle in 12 steps on the real state (selector + trace), writes nothing
+npm run social:next                              # the next video to queue (rotation-safe, hook + CTA + captions) + SelectionTrace report
 npm run social:performance                       # performance report · social:analytics:* = metric snapshots
-npm run social:editorial:check                   # queue vs the hard editorial rules (CI gate)
+npm run social:editorial:check                   # queue vs the hard editorial rules (render gate)
+npm run social:editorial:check:selection         # + the queued video must be the growth engine selection (PR gate)
 
 # publication state (the repo never publishes — see "Publication State")
 npm run social:publication:validate              # check publication/pending/*.json receipts, change nothing
@@ -932,12 +934,13 @@ external agents only read files and open PRs:
 
 | Role | Reads | Writes (via PR) | Contract |
 | --- | --- | --- | --- |
-| Content Agent (publisher side) | `catalog/next.json` | one queue file = `next.request` | [SOCIAL_AGENT_CONTRACT](SOCIAL_AGENT_CONTRACT.md) |
+| Content Agent (publisher side) | `catalog/next.json` | one queue file = `next.request` (never its own pick) | [SOCIAL_AGENT_CONTRACT](SOCIAL_AGENT_CONTRACT.md) |
 | Publishing Agent | `catalog.publishing.ready` (captions, cover, `waitFor`) | publication receipts | [SOCIAL_PUBLISHING_CONTRACT](SOCIAL_PUBLISHING_CONTRACT.md) |
 | Analyst Agent | history (published posts) | analytics snapshots | [SOCIAL_ANALYTICS_CONTRACT](SOCIAL_ANALYTICS_CONTRACT.md) |
 
 Code: `growth/` (`config.ts` — every knob · `feed.ts` · `rules.ts` · `selector.ts` · `plan.ts` ·
-`hooks.ts` · `ctas.ts` · `metadata.ts` · `performance.ts` · `contentTypes.ts` · `rng.ts`),
+`report.ts` · `hooks.ts` · `ctas.ts` · `metadata.ts` · `performance.ts` · `contentTypes.ts` · `rng.ts`),
+`cli/agent.ts` (the daily cycle, `social:agent`),
 `pipeline/analytics.ts`, templates `guessCharacter/`, `characterVersus/`, `components/Cover.tsx`.
 Outputs regenerated with the catalog (after every render, publication or analytics commit):
 `catalog/next.json` (the next video) and `catalog/performance.json` (scores).
@@ -990,6 +993,57 @@ EN catalog item (all implemented formats) not already queued/rendered. Order of 
 Steps 1–3 **filter**, steps 4–6 only **rank** what survived: the selector never picks "the best" and
 then tries to fix it. If nothing survives the filters, the plan is `blocked` and nothing is queued.
 
+**One source of truth.** `planNext` (growth/plan.ts) is the ONLY place that decides what comes next.
+`catalog/next.json`, `social:next`, `social:agent` and the CI gate all call it; nobody else chooses a
+format. The daily automation does not know in advance whether today is a CharacterJourney, a
+GuessCharacter or a CharacterVersus: it executes the returned `request`, whatever its `template`.
+
+### The Daily Cycle
+
+```
+LOAD STATE → RECONCILE BACKLOG → GROWTH SELECTOR → GENERATE CONTENT → VALIDATE → RENDER → PUBLISH → RECEIPTS → ANALYTICS / HISTORY
+```
+
+`npm run social:agent -- --dry-run` runs it on the REAL state and prints one line block per step
+(where a run stopped is obvious); `--json` prints the machine-readable result. Without `--dry-run` it
+also writes the ONE queue file of the day (no git, no history: commit + PR are the agent's job).
+
+| step | what | stops the run when |
+| --- | --- | --- |
+| 1 Reconciliation | pending receipts + analytics snapshots applied **in memory** (the state workflow applies them on `main`) | — (invalid ones are reported and ignored) |
+| 2 Catalog/History Load | catalog, history, feed, **backlog** | — |
+| 3 Analytics Load | `metrics.json` → performance; unavailable/corrupt → **cold-start/editorial selection** | never (analytics optimise, they don't gate) |
+| 4 Candidate Generation | every producible EN item of every implemented format | — |
+| 5 Editorial Filtering | HARD rules → `hardRulesTriggered`, `constraints` | — |
+| 6 Performance Scoring | soft cooldowns + exploration/exploitation, valid candidates only | — |
+| 7 Content Selection | the pick + SelectionTrace — or **BACKLOG** / **BLOCKED** | backlog / blocked = nothing new today |
+| 8 Queue | generic queue item (`enqueueMany`, any format): schema, data, duplicates, rules | invalid → FAILED STEP |
+| 9 Render | content type → template → composition (`templateForContentType`); the *Social render* workflow renders | no composition |
+| 10 Publish | the growth `platformMetadata` the Publishing Agent uses verbatim (the repo never publishes) | no metadata |
+| 11 Receipts | 4/4 receipts expected (instagram, facebook, tiktok, youtube) | — |
+| 12 Final State | dry run: unchanged · otherwise: queued file | — |
+
+A failure prints `FAILED STEP` / `REASON` / `RECOVERY STATE` and exits 1 (nothing written).
+
+**Backlog first** (`planBacklog`): before any new selection, `next.json` checks the feed —
+an EN render with a downloadable MP4 and **no** platform scheduled/published (`backlog.unpublished`),
+or a render in progress (history `queued`/`rendering`, files in `content/queue/` →
+`backlog.inProgress`) → `status: "backlog"`, no `request`: publish that video, it is today's output.
+Publications already started (≥ 1 platform scheduled/published, others `notScheduled`/`failed`) are
+`backlog.unfinished`: the Publishing Agent completes them, but they don't block new content (correcting
+receipts of published videos is not "today's video").
+
+**SelectionTrace** (`next.json` → `trace`, `selector.ts`): `selectedId`, `renderId`, `contentType`,
+`animes`, `characters`, `mode`, `seed`, `score`, `base`, `reasons`, `analytics` (samples, cold start),
+`recent` (last 6 feed items), `constraints` (`sameAnimeStreak`, **`forcedAnimeRotation`**,
+`blockedAnimes`, `blockedCharacters`, `characterCooldown`, `contentTypeStreak`),
+`hardRulesTriggered` (counts per code: `MAX_SAME_ANIME_STREAK`, `MAX_SAME_CHARACTER_STREAK`,
+`JOURNEY_PART_SPACING`, `JOURNEY_PART_ORDER`, `DUPLICATE`), `candidates` (per format considered /
+eligible), `excluded` (≤ 10, rotation rules first, each with `reasons` + the `potentialScore` it would
+have had — e.g. Kakashi 100 excluded by `MAX_SAME_ANIME_STREAK`), `ranked` (best valid ones) and
+`explanation` (one sentence per fact). Ids, rules and numbers only — no secret. `growth/report.ts`
+turns it into the human "SOCIAL CONTENT SELECTION" report (`social:next`, `social:agent`).
+
 The **feed** (growth/feed.ts) = English videos that are queued/rendering, scheduled or published
 somewhere, or rendered with a downloadable MP4 — in creation order. Old local renders that can never be
 published and other locales are not in the feed.
@@ -1005,7 +1059,7 @@ published and other locales are not in the feed.
 | preferred spacing between parts | `preferredItemsBetweenJourneyParts` = 3 (penalty below) | soft |
 | same anime as the previous video | penalty `sameAnimeAsLast` (avoided when alternatives exist) | soft |
 | character seen recently | `characterCooldown` = 6 items | soft |
-| same format as the previous video | `contentTypeCooldown` + format mix 50 % journey / 25 % guess / 25 % versus | soft |
+| same format as the previous video | content-type cooldown: `sameContentTypeAsLast` (12) + `contentTypeStreak` (8) per extra item of the streak (Journey × 4 → −36) + format mix 50 % journey / 25 % guess / 25 % versus | soft (a preference: a lone valid format is still selectable) |
 | hook template / hook type | `hookCooldown` = 4 items (template), previous type avoided | soft |
 | CTA type | `ctaCooldown` = 2; site CTA at most once every 5 videos | soft |
 | started series | `journeyPartCooldown` = 3 → continuation bonus (the CTA promised the next part) | soft |
@@ -1015,8 +1069,13 @@ A cross-world versus counts for **both** anime (Naruto → Naruto → Naruto-vs-
 Example: Naruto → Naruto → **One Piece** is allowed and chosen even if a 3rd Naruto would score
 higher; Naruto → Naruto → Naruto can never happen.
 
-The same hard rules gate the pipeline: `npm run social:editorial:check` runs in **Social validate**
-(a queue PR breaking them is red) and before rendering in **Social render** (fail-safe).
+The same hard rules gate the pipeline: `npm run social:editorial:check` runs before rendering in
+**Social render** (fail-safe), and **Social validate** runs `social:editorial:check:selection`
+(`--require-selection`): a queue PR is red when it breaks a rule **or** when its new feed video is not
+the growth engine's selection — identity (renderId), `locale`, `hook`, `hookType`, `hookId`, `cta`,
+`ctaType` and `selection.seed` must equal `catalog/next.json` `request` (or the plan recomputed from the
+committed state, queue ignored). Also red: a 2nd new feed video in the same PR, and any new video
+while the plan is `backlog`. Retries of a failed render and non-EN items are exempt.
 
 ### Hook Engine
 
@@ -1095,6 +1154,10 @@ Shrinkage keeps one lucky video from dominating even after.
 Prefer **not publishing** to publishing something wrong:
 
 - plan `blocked` (no valid candidate) → nothing queued;
+- plan `backlog` (unpublished render / render in progress) → nothing new queued, the existing video is published;
+- analytics missing or unreadable → `analytics.status: "unavailable"`, cold-start/editorial selection
+  (never a blocker);
+- a queue PR that is not the growth engine's selection → red (Editorial rules);
 - invalid request / duplicate / rotation violation → red PR (Social validate + Editorial rules); the
   render workflow re-checks the rules before rendering;
 - render failure / missing video → the item fails, nothing is in `publishing.ready`;
@@ -1106,9 +1169,12 @@ Prefer **not publishing** to publishing something wrong:
 ### Commands
 
 ```bash
-npm run social:next                 # the next video: mode, rules, rejected counts, request to queue
+npm run social:agent -- --dry-run   # the daily cycle, 12 steps, on the real state — writes nothing
+npm run social:agent                # same + writes the ONE queue file of the day (no git)
+npm run social:next                 # SOCIAL CONTENT SELECTION report (trace) + request to queue
 npm run social:performance          # scores per anime / character / format / hook / duration / platform
-npm run social:editorial:check      # queue files vs the hard rules (CI gate)
+npm run social:editorial:check      # queue files vs the hard rules (render gate)
+npm run social:editorial:check:selection  # + must be the growth engine selection (PR gate)
 npm run social:analytics:validate   # analytics/pending snapshots (contract + history), change nothing
 npm run social:analytics:apply      # all-or-nothing → metrics.json + performance.json + next.json
 npm run social:analytics:list       # latest metrics per published post
@@ -1120,7 +1186,7 @@ npm run social:growth:test          # growth engine tests
 `growth/config.ts` (`GROWTH_CONFIG`) centralizes `explorationRate`, `minimumSamples`,
 `maxSameAnimeStreak`, `maxSameCharacterStreak`, `characterCooldown`, `animeCooldown`,
 `journeyPartCooldown`, `minItemsBetweenJourneyParts`, `preferredItemsBetweenJourneyParts`,
-`contentTypeCooldown`, `hookCooldown`, `ctaCooldown`, `contentTypeMix`, `importanceBonus`, `penalties`,
+`contentTypeCooldown`, `hookCooldown`, `ctaCooldown`, `videosPerRun`, `feedLocale`, `contentTypeMix`, `importanceBonus`, `penalties`,
 `performanceWeights`, `referenceRates`, `ratioCap`, `platformWeights`, `matureAfterHours`,
 `immatureWeight`, `minViewsForScore`, `durationBuckets`. Template limits stay in `config/defaults.ts`
 (`GUESS_MIN/MAX_PLACES`, `VERSUS_MIN_PLACES`, `VERSUS_TOP_PER_WORLD`).

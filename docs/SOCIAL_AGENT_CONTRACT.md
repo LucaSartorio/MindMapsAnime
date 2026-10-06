@@ -1,7 +1,7 @@
 # Social Agent Contract
 
 > The contract between a **content agent** (e.g. a ChatGPT agent) and the AniMapVerse
-> **social-engine**. The agent chooses WHAT to produce; the engine validates, renders,
+> **social-engine**. The **growth engine** chooses WHAT to produce (`catalog/next.json`), the agent queues it; the engine validates, renders,
 > records and refuses anything unsafe or duplicated.
 > Machine-readable twin: [`tools/social-engine/schemas/social-content.schema.json`](../tools/social-engine/schemas/social-content.schema.json)
 > (JSON Schema 2020-12, generated from the TypeScript types — `npm run social:schema`).
@@ -10,8 +10,9 @@
 
 The agent **never renders, never runs the engine, never builds journeys and never edits state**. It only:
 
-1. **reads** `tools/social-engine/catalog/catalog.json` + `tools/social-engine/history/history.json` (default branch);
-2. **creates** queue JSON — one file per video in `tools/social-engine/content/queue/`
+1. **reads** `tools/social-engine/catalog/next.json` (the growth engine's decision, §0b) — plus
+   `catalog.json` / `history.json` for context (default branch);
+2. **creates** ONE queue JSON = `next.json` `request` in `tools/social-engine/content/queue/`
    (name `NNNN-<anime>_<subject>_<template>[_<segment>]_<locale>.json`, next free number), following §2;
 3. **commits on a branch and opens a pull request** — the *Social validate* check must be green
    (it rejects invalid, duplicated or unrenderable requests);
@@ -33,26 +34,88 @@ Never commit MP4s, never touch `history.json`, never set `allowRerender`.
 > "an MP4 exists", **not** "published". Before generating new content, the Publishing Agent's work
 > list `catalog.publishing.ready` comes first (rendered videos still waiting to be scheduled).
 
-## 0b. The daily run: follow the editorial plan (`catalog/next.json`)
+## 0b. The daily run: the growth engine decides, the agent executes
 
-The repository's **growth engine** decides WHAT comes next (see
-[`docs/SOCIAL_ENGINE.md` › Growth Engine](SOCIAL_ENGINE.md#growth-engine)). The agent does not pick
-content by itself anymore:
+**The agent NEVER chooses content.** Not "today a CharacterJourney", not a character, not a
+format: the repository's **Social Growth Engine** (`growth/`, see
+[`docs/SOCIAL_ENGINE.md` › Growth Engine](SOCIAL_ENGINE.md#growth-engine)) selects the next video
+and writes it to `tools/social-engine/catalog/next.json`. The agent starts the day without knowing
+what it will publish — a `character-journey`, a `guess-character` or a `character-versus` — and
+executes what `next.json` returns.
 
-1. read `tools/social-engine/catalog/next.json` (default branch);
-2. `status: "ready"` → write **one** queue file whose content is exactly `request` (you may add
-   `"$schema": "../../schemas/social-content.schema.json"`; nothing else changes — hook, CTA,
-   `hookType`, `hookId`, `ctaType`, `selection` included);
-   `status: "blocked"` → **queue nothing** (fail-safe: no valid content respects the rotation);
+1. **reconcile**: pending receipts / analytics PRs merged, `catalog.publishing.ready` checked
+   (see the [publishing contract](SOCIAL_PUBLISHING_CONTRACT.md));
+2. read `tools/social-engine/catalog/next.json` (default branch) and act on `status`:
+   - `"backlog"` → **queue nothing**. `backlog.unpublished[]` is a rendered video never published:
+     publish it (it is today's video). `backlog.inProgress[]` = a render is pending: wait for it.
+   - `"blocked"` → **queue nothing** (fail-safe: no content respects the rotation today).
+   - `"ready"` → write **one** queue file whose content is exactly `request` (you may add
+     `"$schema": "../../schemas/social-content.schema.json"`; nothing else changes — template,
+     subject/opponent/segment, hook, CTA, `hookType`, `hookId`, `ctaType`, `selection` included);
 3. **one new video per run**, English feed (`locale: "en"`);
-4. PR → *Social validate* (it also runs **Editorial rules**: a request that breaks the rotation is red)
-   → merge → *Social render* (renders it, with a cover) → the plan is regenerated for the next run.
+4. PR → *Social validate* → merge → *Social render* (renders it with the composition of its content
+   type, plus a cover) → publish (Publishing Agent) → receipts → the plan is regenerated.
 
-The plan already applies every rule: max **2 consecutive videos of the same anime** (then a
-different anime is forced), never the **same character twice in a row**, journey **parts in order**
-with **≥ 2 videos in between**, format rotation (journey / guess / versus), hook and CTA rotation,
-exploration vs exploitation from the analytics. Hand-written requests are still accepted (the
-contract below), but they must pass the same Editorial rules check.
+*Social validate* enforces this (**Editorial rules**, `social:editorial:check:selection`): a queued
+EN video that is not `next.json`'s `request` (different video, or a rewritten hook / CTA / seed), a
+second new video in the same PR, or any new video while the plan is `backlog` → **red PR**. If `main`
+moved meanwhile (a render, receipts or analytics regenerated `next.json`) and the check says "not the
+growth engine selection", re-read `next.json` and replace the queue file with the new `request`. Every
+hard rule comes from `growth/config.ts` (the single source): **MAX SAME ANIME STREAK = 2** (after two
+videos of an anime, a different anime is forced — whatever the scores), never the **same character
+twice in a row** (any format), journey **parts in order** with **≥ 2 videos in between**. Format,
+hook and CTA rotation and exploration/exploitation are applied by the selector. **Performance may
+optimise the selection; it never overrides an editorial hard rule.** Analytics missing → the plan is
+still `ready` (cold-start/editorial selection): never skip a day because metrics are unavailable.
+
+`next.json` → `trace` (SelectionTrace) explains the decision: mode, score, recent anime/characters,
+forced rotation, hard rules triggered, main excluded candidates with their reason. Use it for the
+report. Local equivalent of the whole cycle (humans / CI): `npm run social:agent -- --dry-run`.
+
+### Daily automation instructions (paste into the agent prompt)
+
+```
+Do not manually choose a CharacterJourney (or any content).
+Run the Social Growth Engine selection: read tools/social-engine/catalog/next.json on main and
+execute the returned valid content.
+
+- status "backlog": queue nothing; publish backlog.unpublished[0] (it is today's video).
+- status "blocked": queue nothing; report it.
+- status "ready": create ONE queue file whose content is exactly `request` (+ "$schema"), open a PR.
+
+Supported production content types:
+- character-journey
+- guess-character
+- character-versus
+
+Respect all hard editorial constraints from configuration and contracts (maxSameAnimeStreak = 2,
+maxSameCharacterStreak = 1, journey parts in order with spacing). Performance may optimize
+selection but may never override editorial hard rules. Never rewrite hook, CTA or captions:
+publish with catalog.publishing.ready[].platformMetadata.
+```
+
+### Daily report
+
+```
+ANIMAPVERSE SOCIAL AGENT
+
+Selected:      <trace.renderId> — <trace.contentType>      (or BACKLOG: <renderId> / BLOCKED)
+Anime:         <titles of trace.animes>
+Selection:     <trace.mode> · score <trace.score>
+Why:           <trace.explanation, e.g. "Forced anime rotation: the last 2 items are naruto …">
+Hook:          <request.hook>
+CTA:           <request.cta>
+Platforms:     Instagram · TikTok · YouTube · Facebook
+Publication:   <scheduled time, Europe/Rome>
+PR:            <queue PR url>
+Render:        <Social render run url>
+Artifact:      <artifact name>
+Receipts:      <n>/4
+Final state:   scheduled | published | backlog | blocked
+```
+
+On failure: `FAILED STEP` (queue / PR / render / publish / receipts), `REASON`, `RECOVERY STATE`
+(what exists now: queued file, rendered artifact, which platforms are scheduled) — never retry blindly.
 
 ## 1. What the agent reads
 

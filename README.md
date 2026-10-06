@@ -534,19 +534,26 @@ dataset → catalogo + piano editoriale → JSON in content/queue/
         → ricevute di pubblicazione / metriche → storico, catalogo e nuovo piano
 ```
 
-Il growth engine sceglie contenuti validi rispettando rotazione degli anime,
-personaggi e ordine delle parti; le metriche disponibili aiutano a ordinare
-i candidati. La pubblicazione è affidata a un agente esterno tramite
+Il growth engine è l'**unica fonte della selezione**: l'automazione
+giornaliera non sceglie mai un formato (niente "oggi un Character Journey"),
+esegue `catalog/next.json`. Il selettore rispetta le regole rigide (massimo 2
+contenuti consecutivi dello stesso anime, mai lo stesso personaggio due volte
+di fila, parti in ordine con spaziatura), pubblica prima i video già
+renderizzati e mai pubblicati (backlog) e spiega ogni scelta con una
+`SelectionTrace`; le metriche, quando disponibili, ordinano solo i candidati
+validi (senza metriche: cold start). La pubblicazione è affidata a un agente esterno tramite
 Metricool: il repository valida e applica le ricevute, **non chiama le API
 dei social per pubblicare**. Il codice non chiama modelli AI.
 
 ```bash
 npm run social:validate              # typecheck + test di engine, pipeline, segmenti, pubblicazione e growth
 npm run social:catalog               # rigenera catalogo, performance e piano editoriale dai dati/storico
-npm run social:next                  # prossimo contenuto nel piano editoriale
+npm run social:agent -- --dry-run    # ciclo giornaliero in 12 step sullo stato reale, non scrive nulla
+npm run social:next                  # prossimo contenuto nel piano editoriale + spiegazione (trace)
 npm run social:queue -- --from proposta.json
 npm run social:validate:queue        # valida la coda senza renderizzare
 npm run social:editorial:check        # controlla le regole editoriali della coda
+npm run social:editorial:check:selection # + il contenuto in coda deve essere la selezione del growth engine
 npm run social:render:queue:dry      # pianifica senza modificare lo stato
 npm run social:render:queue          # rendering della coda + manifest + storico
 npm run social:retry:failed          # riprova i contenuti falliti
@@ -576,7 +583,7 @@ I quattro workflow versionati in `.github/workflows/` gestiscono il motore socia
 
 | Workflow | Quando parte | Responsabilità |
 | -------- | ------------ | -------------- |
-| `social-validate.yml` | PR che toccano engine/coda, workflow social o dipendenze | Validazione coda, regole editoriali, dry run e test |
+| `social-validate.yml` | PR che toccano engine/coda, workflow social o dipendenze | Validazione coda, regole editoriali + selezione del growth engine, dry run e test |
 | `social-render.yml` | Push su `main` della coda o avvio manuale | Rendering, artifact e commit dello stato |
 | `social-publication-validate.yml` | PR con ricevute/snapshot in `pending/` | Controllo dello scope, validazione e test |
 | `social-publication-state.yml` | Push su `main` di ricevute/snapshot o avvio manuale | Applicazione e commit dello stato aggiornato |

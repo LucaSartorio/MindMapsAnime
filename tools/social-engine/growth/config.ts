@@ -66,6 +66,8 @@ export type GrowthConfig = {
     animeInCooldown: number;
     characterInCooldown: number;
     sameContentTypeAsLast: number;
+    /** Extra penalty per additional item of a same-format streak (Journey, Journey, Journey… → push another format). */
+    contentTypeStreak: number;
     contentTypeInCooldown: number;
     partBeforePreferredGap: number;
     formatDeficit: number;
@@ -110,7 +112,8 @@ export const GROWTH_CONFIG: GrowthConfig = {
     sameAnimeAsLast: 18,
     animeInCooldown: 6,
     characterInCooldown: 25,
-    sameContentTypeAsLast: 8,
+    sameContentTypeAsLast: 12,
+    contentTypeStreak: 8,
     contentTypeInCooldown: 3,
     partBeforePreferredGap: 10,
     formatDeficit: 20,

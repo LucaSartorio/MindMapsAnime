@@ -13,7 +13,7 @@ import { pipelineDirs, type PipelineDirs } from '../pipeline/dirs';
 import { emptyHistory, ensureRecord, loadHistory, normalizeHistory, saveHistory, transition, type History, type HistoryRecord } from '../pipeline/history';
 import { parseContentId, parseRenderId } from '../pipeline/ids';
 import { applyPendingReceipts } from '../pipeline/publication';
-import { applyPendingSnapshots, emptyMetrics, loadMetrics, parseSnapshot, postKey } from '../pipeline/analytics';
+import { applyPendingSnapshots, emptyMetrics, loadMetrics, loadMetricsSafe, parseSnapshot, postKey } from '../pipeline/analytics';
 import { buildSnapshotSchema } from '../pipeline/analyticsSchema';
 import { SNAPSHOT_SCHEMA_FILE } from '../pipeline/schemaFiles';
 import { parseContentRequest } from '../pipeline/content';
@@ -21,15 +21,17 @@ import { enqueueMany } from '../pipeline/enqueue';
 import { feedItemFromSocial } from '../growth/feed';
 import { GROWTH_CONFIG, HOOK_TYPES, type GrowthConfig } from '../growth/config';
 import { buildFeed, characterKey, feedItemOf, type FeedItem } from '../growth/feed';
-import { hardRuleViolations, softAdjustment, trailingStreak } from '../growth/rules';
+import { editorialConstraints, hardRuleViolations, ruleViolations, softAdjustment, trailingStreak } from '../growth/rules';
 import { chooseHook, HOOK_BANK, hookOptions } from '../growth/hooks';
-import { chooseCta, ctaOptions } from '../growth/ctas';
+import { chooseCta, ctaOptions, CTA_BANK } from '../growth/ctas';
 import { buildPlatformMetadata, type SocialFacts } from '../growth/metadata';
 import { buildPerformance, ratesOf, scoreRates, type PerformanceReport } from '../growth/performance';
 import { candidatesFromCatalog, selectNext, type Candidate } from '../growth/selector';
-import { planNext } from '../growth/plan';
+import { planBacklog, planMismatch, planNext, type NextPlan } from '../growth/plan';
+import { selectionReport } from '../growth/report';
 import { createRng } from '../growth/rng';
-import { CONTENT_TYPES, IMPLEMENTED_CONTENT_TYPES } from '../growth/contentTypes';
+import { CONTENT_TYPES, IMPLEMENTED_CONTENT_TYPES, templateForContentType } from '../growth/contentTypes';
+import { TEMPLATE_LIST, findTemplate } from '../templates/registry';
 import { ENGINE_DIR } from '../render/paths';
 import { section, test } from './harness';
 
@@ -198,7 +200,7 @@ await test('MANDATORY: Naruto 100 / Sasuke 95 / Kakashi 90 / Luffy 70, last two 
   const exploit = selectNext({ candidates, feed, performance: report, config: exploitOnly, seed: 'x' });
   assert.ok(exploit.ok);
   assert.equal(exploit.pick.candidate.characters[0], 'onepiece:monkey-d-luffy', 'the best NON-Naruto content');
-  assert.equal(exploit.rejected['anime streak'], 4);
+  assert.equal(exploit.rejected.MAX_SAME_ANIME_STREAK, 4);
 });
 await test('performance wins among VALID candidates: the best anime gets more space, never a 3-in-a-row', () => {
   const report = perf({ anime: { naruto: 95, onepiece: 50, dragonball: 50, bleach: 50 } });
@@ -309,6 +311,170 @@ await test('catalog/next.json is in sync with the committed stable state (npm ru
   const committed = JSON.parse(readFileSync(path.join(real.catalog, NEXT_FILE), 'utf8')) as { generatedAt: string; pick?: unknown; request?: unknown; status: string };
   const built = await buildCatalog(real, loadHistory(real), committed.generatedAt);
   assert.deepEqual([committed.status, committed.pick, committed.request], [built.plan.status, built.plan.pick, built.plan.request], 'stale next.json: run `npm run social:catalog`');
+});
+
+section('growth engine = the ONLY source of truth for the daily run (tests A–G)');
+await test('TEST A: Naruto Journey → Sasuke Guess; Kakashi 100 / Naruto 95 / Luffy 70 / Goku 60 → Kakashi & Naruto EXCLUDED (MAX_SAME_ANIME_STREAK), Luffy or Goku selected', () => {
+  const feed = [feedItem('naruto', 'naruto-uzumaki', 'character-journey'), feedItem('naruto', 'sasuke-uchiha', 'guess-character')];
+  const candidates = [
+    candidate('naruto', 'kakashi-hatake', 'character-journey'),
+    candidate('naruto', 'naruto-uzumaki', 'guess-character'),
+    candidate('onepiece', 'monkey-d-luffy', 'character-journey'),
+    candidate('dragonball', 'goku', 'character-journey'),
+  ];
+  const report = perf({ character: { 'naruto:kakashi-hatake': 100, 'naruto:naruto-uzumaki': 95, 'onepiece:monkey-d-luffy': 70, 'dragonball:goku': 60 }, anime: { naruto: 100, onepiece: 70, dragonball: 60 } });
+  for (const [config, coldStart] of [[exploitOnly, false], [exploreOnly, false], [GROWTH_CONFIG, true]] as const) {
+    for (let i = 0; i < 20; i++) {
+      const s = selectNext({ candidates, feed, performance: coldStart ? perf({}, true) : report, config, seed: `a${i}` });
+      assert.ok(s.ok);
+      assert.ok(['onepiece:monkey-d-luffy', 'dragonball:goku'].includes(s.pick.candidate.characters[0]), `picked ${s.pick.candidate.renderId}`);
+      const excluded = Object.fromEntries(s.trace.excluded.map((e) => [e.characters[0], e.reasons]));
+      assert.deepEqual(excluded['naruto:kakashi-hatake'], ['MAX_SAME_ANIME_STREAK']);
+      assert.deepEqual(excluded['naruto:naruto-uzumaki'], ['MAX_SAME_ANIME_STREAK']);
+      assert.equal(s.trace.constraints.forcedAnimeRotation, true);
+      assert.deepEqual(s.trace.constraints.blockedAnimes, ['naruto']);
+    }
+  }
+  // The excluded Naruto candidates had the higher potential: performance never overrides the rotation.
+  const s = selectNext({ candidates, feed, performance: report, config: exploitOnly });
+  assert.ok(s.ok && s.pick.candidate.characters[0] === 'onepiece:monkey-d-luffy');
+  assert.ok(s.trace.excluded[0].potentialScore > s.trace.score!, 'Kakashi would have scored more, still excluded');
+  assert.ok(s.trace.explanation.some((e) => /Forced anime rotation/.test(e)));
+});
+await test('TEST B: Naruto Journey → Luffy Journey: Naruto (highest score) is eligible again and wins in exploitation', () => {
+  const feed = [feedItem('naruto', 'naruto-uzumaki'), feedItem('onepiece', 'monkey-d-luffy')];
+  const kakashi = candidate('naruto', 'kakashi-hatake', 'guess-character');
+  assert.deepEqual(ruleViolations(kakashi, feed), []);
+  const s = selectNext({ candidates: [kakashi, candidate('dragonball', 'goku'), candidate('bleach', 'ichigo-kurosaki')], feed, performance: perf({ anime: { naruto: 95, dragonball: 60, bleach: 55 } }), config: exploitOnly });
+  assert.ok(s.ok && s.pick.candidate.renderId === kakashi.renderId, s.ok ? s.pick.candidate.renderId : 'blocked');
+  assert.equal(s.trace.constraints.forcedAnimeRotation, false);
+});
+await test('TEST C: Goku Part 1 → Luffy: Goku Part 2 is NOT eligible yet (JOURNEY_PART_SPACING); after 2 items it is', () => {
+  const series = 'character-journey:dragonball:goku';
+  const p1 = feedItem('dragonball', 'goku', 'character-journey', { part: 1, partCount: 6, seriesId: series });
+  const p2 = candidate('dragonball', 'goku', 'character-journey', { part: 2, partCount: 6, seriesId: series });
+  const feed = [p1, feedItem('onepiece', 'monkey-d-luffy')];
+  assert.deepEqual(ruleViolations(p2, feed).map((v) => v.code), ['JOURNEY_PART_SPACING']);
+  const s = selectNext({ candidates: [p2, candidate('bleach', 'ichigo-kurosaki')], feed, performance: perf({ anime: { dragonball: 100 } }), config: exploitOnly });
+  assert.ok(s.ok && s.pick.candidate.anime === 'bleach');
+  assert.deepEqual(s.trace.hardRulesTriggered, { JOURNEY_PART_SPACING: 1 });
+  assert.deepEqual(ruleViolations(p2, [...feed, feedItem('naruto', 'kakashi-hatake')]), []);
+  // Never Part 3 before Part 2.
+  const p3 = candidate('dragonball', 'goku', 'character-journey', { part: 3, partCount: 6, seriesId: series });
+  assert.deepEqual(ruleViolations(p3, [...feed, feedItem('naruto', 'a'), feedItem('bleach', 'b')]).map((v) => v.code), ['JOURNEY_PART_ORDER']);
+});
+await test('TEST D: analytics missing or unreadable → the publisher continues, cold-start/editorial selection', async () => {
+  const dirs = sandbox();
+  mkdirSync(path.dirname(dirs.metricsFile), { recursive: true });
+  writeFileSync(dirs.metricsFile, '{ "schemaVersion": 99, "posts": "broken" ');
+  assert.throws(() => loadMetrics(dirs));
+  assert.equal(loadMetricsSafe(dirs).analytics.status, 'unavailable');
+  const built = await buildCatalog(dirs, emptyHistory(), NOW);
+  assert.deepEqual([built.plan.status, built.plan.mode, built.plan.analytics.status, built.performance.coldStart], ['ready', 'coldstart', 'unavailable', true]);
+  assert.ok(built.plan.request && built.plan.trace?.status === 'selected');
+  assert.match(built.plan.trace!.explanation[0], /Cold start/);
+});
+await test('TEST E: Journey 90 vs Guess 80, Journey in content-type cooldown → GuessCharacter is selected (soft, not hard)', () => {
+  const feed = [feedItem('bleach', 'ichigo-kurosaki', 'character-journey')];
+  const journey = candidate('naruto', 'kakashi-hatake', 'character-journey', { durationSeconds: 33 });
+  const guess = candidate('onepiece', 'roronoa-zoro', 'guess-character', { durationSeconds: 27 });
+  const report = perf({ contentType: { 'character-journey': 90, 'guess-character': 80 }, anime: { naruto: 90, onepiece: 80 }, character: { 'naruto:kakashi-hatake': 90, 'onepiece:roronoa-zoro': 80 } });
+  report.dimensions.durationBucket = { long: { mean: 90, n: 10, estimate: 90 }, medium: { mean: 80, n: 10, estimate: 80 } };
+  const noMix: GrowthConfig = { ...exploitOnly, penalties: { ...exploitOnly.penalties, formatDeficit: 0 } };
+  const s = selectNext({ candidates: [journey, guess], feed, performance: report, config: noMix });
+  assert.ok(s.ok);
+  assert.equal(Math.round(s.ranked.find((r) => r.candidate === journey)!.base), 90);
+  assert.equal(Math.round(s.ranked.find((r) => r.candidate === guess)!.base), 80);
+  assert.equal(s.pick.candidate.contentType, 'guess-character', 'the format cooldown outweighs a 10-point edge');
+  assert.ok(s.ranked.find((r) => r.candidate === journey)!.reasons.some((r) => /format cooldown/.test(r)));
+  // Soft only: with the journey alone it is still selectable.
+  assert.ok(selectNext({ candidates: [journey], feed, performance: report, config: noMix }).ok);
+  // A long Journey streak pushes harder (Journey × 4 → other formats).
+  const streak = [1, 2, 3, 4].map((i) => feedItem(['bleach', 'naruto', 'onepiece', 'hunterxhunter'][i - 1], `s${i}`));
+  const adj = (n: number) => softAdjustment(candidate('dragonball', 'goku'), streak.slice(0, n)).adjustment;
+  assert.ok(adj(4) < adj(2) && adj(2) < 0, `${adj(2)} → ${adj(4)}`);
+});
+await test('TEST F: after a Naruto content, Naruto Journey AND Naruto GuessCharacter are both excluded (character cooldown is format-agnostic)', () => {
+  const feed = [feedItem('onepiece', 'monkey-d-luffy'), feedItem('naruto', 'naruto-uzumaki', 'character-versus', { characters: ['naruto:naruto-uzumaki', 'bleach:ichigo-kurosaki'], animes: ['naruto', 'bleach'] })];
+  const journey = candidate('naruto', 'naruto-uzumaki', 'character-journey');
+  const guess = candidate('naruto', 'naruto-uzumaki', 'guess-character');
+  for (const c of [journey, guess]) assert.deepEqual(ruleViolations(c, feed).map((v) => v.code), ['MAX_SAME_CHARACTER_STREAK'], c.renderId);
+  // The opponent of a versus counts as a character of that video too.
+  assert.deepEqual(ruleViolations(candidate('bleach', 'ichigo-kurosaki', 'guess-character'), feed).map((v) => v.code), ['MAX_SAME_CHARACTER_STREAK']);
+  const s = selectNext({ candidates: [journey, guess, candidate('dragonball', 'goku')], feed, performance: perf({ character: { 'naruto:naruto-uzumaki': 100 } }), config: exploitOnly });
+  assert.ok(s.ok && s.pick.candidate.anime === 'dragonball');
+  assert.deepEqual(editorialConstraints(feed).blockedCharacters, ['naruto:naruto-uzumaki', 'bleach:ichigo-kurosaki']);
+});
+await test('TEST G: a rendered video never published → NO new selection, publish the existing render (backlog first)', () => {
+  const h = emptyHistory();
+  const add = (renderId: string, at: string) => {
+    const { contentId, locale, variant } = parseRenderId(renderId);
+    const { anime, subject, segment } = parseContentId(contentId);
+    const r = ensureRecord(h, { renderId, contentId, template: 'characterJourney', anime, subject, locale, variant, segment, segmentFingerprint: null }, at, 'x.json');
+    transition(r, 'rendering', at);
+    transition(r, 'rendered', at, { renderedAt: at, durationSeconds: 27, artifact: { name: 'a', runId: '1', runAttempt: '1', runUrl: 'u', video: 'v.mp4', manifest: 'm.json', sha256: null, expiresAt: '2026-12-31T00:00:00Z' } });
+    return r;
+  };
+  const r = add('character-journey:naruto:kakashi-hatake@en', '2026-10-05T08:00:00Z');
+  const catalog = { templates: {} } as unknown as Catalog;
+  const { plan, selection } = planNext({ catalog, history: h, performance: perf({}, true), now: NOW });
+  assert.equal(plan.status, 'backlog');
+  assert.equal(selection, null, 'the selector does not even run');
+  assert.equal(plan.request, undefined);
+  assert.deepEqual(plan.backlog.unpublished.map((b) => b.renderId), [r.renderId]);
+  assert.match(plan.reason!, /publish the existing render first/);
+  // Once scheduled somewhere it is an UNFINISHED publication: it no longer blocks new content.
+  r.platforms = [{ platform: 'instagram', status: 'scheduled', provider: 'metricool', scheduledFor: '2026-10-07T08:00:00Z', publishedAt: null, providerPostId: null, providerPostUuid: null, plannerUrl: null, publicUrl: null, error: null, updatedAt: NOW, receiptIds: [] } as never];
+  const b = planBacklog(h, NOW);
+  assert.deepEqual([b.unpublished.length, b.unfinished.map((u) => u.missing.length)], [0, [3]]);
+  assert.notEqual(planNext({ catalog, history: h, performance: perf({}, true), now: NOW }).plan.status, 'backlog');
+  // A queue file waiting for the render workflow is also backlog (no second video).
+  assert.equal(planNext({ catalog, history: h, performance: perf({}, true), now: NOW, queueFiles: ['0012-x.json'] }).plan.status, 'backlog');
+});
+await test('gate: a queued feed video must BE the plan request (identity, hook, CTA, selection seed); backlog → nothing may be queued', () => {
+  const plan = { status: 'ready', pick: { renderId: 'guess-character:bleach:renji-abarai@en' }, request: { template: 'guessCharacter', anime: 'bleach', subject: 'renji-abarai', locale: 'en', hook: 'H', hookType: 'question', hookId: 'gc-q-1', cta: 'C', ctaType: 'comment-guess', selection: { mode: 'coldstart', score: 1, seed: 'S' } } } as unknown as NextPlan;
+  const raw = { $schema: 'x', ...plan.request! };
+  assert.equal(planMismatch(plan, 'guess-character:bleach:renji-abarai@en', raw), null);
+  assert.match(planMismatch(plan, 'character-journey:hunterxhunter:killua-zoldyck:part-01@en', raw)!, /growth engine selected/);
+  assert.match(planMismatch(plan, 'guess-character:bleach:renji-abarai@en', { ...raw, cta: 'Follow for Part 2 and explore the journey on AniMapVerse' })!, /cta/);
+  assert.match(planMismatch(plan, 'guess-character:bleach:renji-abarai@en', { ...raw, selection: { seed: 'other' } })!, /seed/);
+  assert.match(planMismatch({ ...plan, status: 'backlog', reason: 'publish X' } as NextPlan, 'guess-character:bleach:renji-abarai@en', raw)!, /backlog/);
+});
+await test('SelectionTrace: machine-readable, explains the decision, no secret; the report shows pick, mode, recent feed, rules, exclusions', () => {
+  const feed = [feedItem('naruto', 'naruto-uzumaki'), feedItem('naruto', 'sasuke-uchiha', 'guess-character')];
+  const s = selectNext({ candidates: [candidate('naruto', 'kakashi-hatake'), candidate('onepiece', 'monkey-d-luffy', 'guess-character')], feed, performance: perf({}, true) });
+  assert.ok(s.ok);
+  const t = s.trace;
+  assert.deepEqual([t.traceVersion, t.status, t.contentType, t.mode, t.candidates.considered, t.candidates.eligible], [1, 'selected', 'guess-character', 'coldstart', 2, 1]);
+  assert.deepEqual(t.recent.map((r) => r.animes[0]), ['naruto', 'naruto']);
+  assert.deepEqual(t.excluded.map((e) => [e.characters[0], e.reasons]), [['naruto:kakashi-hatake', ['MAX_SAME_ANIME_STREAK']]]);
+  assert.doesNotMatch(JSON.stringify(t), /token|secret|password|api[_-]?key/i);
+  const report = selectionReport({ status: 'ready', trace: t, analytics: { status: 'empty', posts: 0, error: null }, backlog: { unpublished: [], unfinished: [], inProgress: [] } } as unknown as NextPlan).join('\n');
+  for (const needle of ['SOCIAL CONTENT SELECTION', 'Selected: guess-character:onepiece:monkey-d-luffy@en', 'Selection mode: coldstart', 'Recent anime: naruto → naruto', 'Forced anime rotation: YES', 'reason: maxSameAnimeStreak']) {
+    assert.ok(report.includes(needle), `report misses "${needle}"\n${report}`);
+  }
+});
+await test('content type → template → Remotion composition (no workflow edit per format); legacy journey CTA never generated', () => {
+  const ids = new Set<string>();
+  for (const type of IMPLEMENTED_CONTENT_TYPES) {
+    const templateId = templateForContentType(type);
+    const template = templateId ? findTemplate(templateId) : undefined;
+    assert.ok(template && TEMPLATE_LIST.includes(template), `${type} has a registered template`);
+    ids.add(template!.compositionId);
+  }
+  assert.equal(ids.size, IMPLEMENTED_CONTENT_TYPES.length, 'one composition per content type');
+  assert.equal(templateForContentType('guess-location'), null, 'declared types are not rendered');
+  assert.ok(!CTA_BANK.some((c) => /full journey/i.test(c.video)), 'the old "full journey on AniMapVerse" CTA is not a growth CTA');
+});
+await test('every implemented format can be planned with a growth hook + CTA (the template default CTA is never needed)', async () => {
+  for (const type of IMPLEMENTED_CONTENT_TYPES) {
+    const only = { ...realCatalog, templates: Object.fromEntries(Object.entries(realCatalog.templates).filter(([id]) => templateForContentType(type) === id)) } as Catalog;
+    const { plan } = planNext({ catalog: only, history: emptyHistory(), performance: perf({}, true), now: NOW });
+    assert.equal(plan.status, 'ready', type);
+    assert.equal(plan.pick!.contentType, type);
+    assert.ok(typeof plan.request!.cta === 'string' && typeof plan.request!.ctaType === 'string' && typeof plan.request!.hook === 'string', type);
+    assert.doesNotMatch(String(plan.request!.cta), /full journey/i);
+  }
 });
 
 section('hook & CTA engines');

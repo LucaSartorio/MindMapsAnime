@@ -42,6 +42,18 @@ export type PlatformMetadata = {
   madeForKids: false;
 };
 
+/**
+ * How each network receives the video — the Publishing Agent's existing,
+ * correct Metricool settings (docs/SOCIAL_PUBLISHING_CONTRACT.md › Platform
+ * settings). Labels for reports only: the repository never calls Metricool.
+ */
+export const PLATFORM_TARGETS: Record<'instagram' | 'facebook' | 'tiktok' | 'youtube', string> = {
+  instagram: 'Instagram Reel — REEL · showReelOnFeed = true · isAiGenerated = true',
+  tiktok: 'TikTok — public video · isAigc = true',
+  youtube: 'YouTube Short — short · public · FILM_ANIMATION · madeForKids = false · isAiGeneratedContent = true',
+  facebook: 'Facebook Reel — REEL',
+};
+
 /** Per-world emoji + hashtags (world-specific config, not hard-coded in components). */
 export const WORLD_SOCIAL: Record<string, { emoji: string; tags: string[] }> = {
   naruto: { emoji: '🍥', tags: ['naruto', 'narutoshippuden'] },
