@@ -153,7 +153,7 @@
       "segment": "part-01",
       "segmentFingerprint": "ad9c8c6e",
       "createdAt": "2026-10-06T06:39:11.192Z",
-      "updatedAt": "2026-10-06T07:00:34.720Z",
+      "updatedAt": "2026-10-06T07:09:59.885Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-10-06T06:42:18.291Z",
       "outputFile": "tools/social-engine/output/hunterxhunter_killua-zoldyck_character-journey_part-01_en.mp4",
@@ -213,84 +213,88 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "scheduled",
-      "publishedAt": null,
+      "publicationStatus": "published",
+      "publishedAt": "2026-10-06T09:00:00+02:00",
       "platforms": [
         {
           "platform": "instagram",
           "provider": "metricool",
-          "status": "scheduled",
+          "status": "published",
           "scheduledFor": "2026-10-06T09:00:00+02:00",
           "scheduledAt": "2026-10-06T06:58:30Z",
-          "publishedAt": null,
+          "publishedAt": "2026-10-06T09:00:00+02:00",
           "failedAt": null,
           "providerPostId": "389179712",
           "providerPostUuid": "2611636878853754757",
           "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=2611636878853754757",
-          "publicUrl": null,
+          "publicUrl": "https://www.instagram.com/reel/DeJNAtPk4jO/",
           "lastError": null,
           "attempts": 1,
           "receipts": [
-            "hunterxhunter_killua-zoldyck_character-journey_part-01_en.instagram.scheduled.e3414fd67b46"
+            "hunterxhunter_killua-zoldyck_character-journey_part-01_en.instagram.scheduled.e3414fd67b46",
+            "hunterxhunter_killua-zoldyck_character-journey_part-01_en.instagram.published.41ad16e00efc"
           ],
-          "updatedAt": "2026-10-06T07:00:34.720Z"
+          "updatedAt": "2026-10-06T07:09:59.885Z"
         },
         {
           "platform": "facebook",
           "provider": "metricool",
-          "status": "scheduled",
+          "status": "published",
           "scheduledFor": "2026-10-06T09:00:00+02:00",
           "scheduledAt": "2026-10-06T06:58:30Z",
-          "publishedAt": null,
+          "publishedAt": "2026-10-06T09:00:00+02:00",
           "failedAt": null,
           "providerPostId": "389179712",
           "providerPostUuid": "2611636878853754757",
           "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=2611636878853754757",
-          "publicUrl": null,
+          "publicUrl": "https://facebook.com/reel/1081914264729293",
           "lastError": null,
           "attempts": 1,
           "receipts": [
-            "hunterxhunter_killua-zoldyck_character-journey_part-01_en.facebook.scheduled.2cc840ba7a4e"
+            "hunterxhunter_killua-zoldyck_character-journey_part-01_en.facebook.scheduled.2cc840ba7a4e",
+            "hunterxhunter_killua-zoldyck_character-journey_part-01_en.facebook.published.443777742694"
           ],
-          "updatedAt": "2026-10-06T07:00:34.720Z"
+          "updatedAt": "2026-10-06T07:09:59.885Z"
         },
         {
           "platform": "tiktok",
           "provider": "metricool",
-          "status": "scheduled",
+          "status": "published",
           "scheduledFor": "2026-10-06T09:00:00+02:00",
           "scheduledAt": "2026-10-06T06:58:30Z",
-          "publishedAt": null,
+          "publishedAt": "2026-10-06T09:00:00+02:00",
           "failedAt": null,
           "providerPostId": "389179712",
           "providerPostUuid": "2611636878853754757",
           "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=2611636878853754757",
-          "publicUrl": null,
+          "publicUrl": "https://www.tiktok.com/@interactiveanimeworlds/video/7693447136632917270",
           "lastError": null,
           "attempts": 1,
           "receipts": [
-            "hunterxhunter_killua-zoldyck_character-journey_part-01_en.tiktok.scheduled.5a1781e07219"
+            "hunterxhunter_killua-zoldyck_character-journey_part-01_en.tiktok.scheduled.5a1781e07219",
+            "hunterxhunter_killua-zoldyck_character-journey_part-01_en.tiktok.published.ec98deb2c8d6"
           ],
-          "updatedAt": "2026-10-06T07:00:34.720Z"
+          "updatedAt": "2026-10-06T07:09:59.885Z"
         },
         {
           "platform": "youtube",
           "provider": "metricool",
-          "status": "scheduled",
+          "status": "published",
           "scheduledFor": "2026-10-06T09:00:00+02:00",
           "scheduledAt": "2026-10-06T06:58:30Z",
-          "publishedAt": null,
+          "publishedAt": "2026-10-06T09:00:00+02:00",
           "failedAt": null,
           "providerPostId": "389179712",
           "providerPostUuid": "2611636878853754757",
           "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=2611636878853754757",
-          "publicUrl": null,
+          "publicUrl": "https://www.youtube.com/shorts/G121rp6a36g",
           "lastError": null,
           "attempts": 1,
           "receipts": [
-            "hunterxhunter_killua-zoldyck_character-journey_part-01_en.youtube.scheduled.548c8a0028dc"
+            "hunterxhunter_killua-zoldyck_character-journey_part-01_en.youtube.scheduled.548c8a0028dc",
+            "hunterxhunter_killua-zoldyck_character-journey_part-01_en.youtube.published.b82d9bd33ac7"
           ],
-          "updatedAt": "2026-10-06T07:00:34.720Z"
+          "updatedAt": "2026-10-06T07:09:59.885Z"
         }
       ]
     },

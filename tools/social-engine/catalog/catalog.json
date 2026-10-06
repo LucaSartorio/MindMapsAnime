@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T07:00:34.735Z",
+  "generatedAt": "2026-10-06T07:09:59.949Z",
   "locales": [
     "en",
     "it"
@@ -2652,24 +2652,24 @@
           "renderedLocales": [
             "en"
           ],
-          "scheduledLocales": [
+          "scheduledLocales": [],
+          "publishedLocales": [
             "en"
           ],
-          "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": true,
-          "publishedBefore": false,
+          "publishedBefore": true,
           "publication": [
             {
               "renderId": "character-journey:hunterxhunter:killua-zoldyck:part-01@en",
               "locale": "en",
               "variant": null,
-              "status": "scheduled",
+              "status": "published",
               "platforms": {
-                "instagram": "scheduled",
-                "facebook": "scheduled",
-                "tiktok": "scheduled",
-                "youtube": "scheduled"
+                "instagram": "published",
+                "facebook": "published",
+                "tiktok": "published",
+                "youtube": "published"
               }
             }
           ]
@@ -25281,9 +25281,9 @@
       "rendered": 9,
       "unavailable": 5,
       "notPublished": 5,
-      "scheduled": 1,
+      "scheduled": 0,
       "partiallyPublished": 1,
-      "published": 2,
+      "published": 3,
       "failed": 0
     },
     "ready": [],
