@@ -1,0 +1,22 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterVersus",
+  "anime": "attackontitan",
+  "subject": "mikasa-ackerman",
+  "opponent": {
+    "anime": "blackclover",
+    "subject": "noelle-silva"
+  },
+  "locale": "en",
+  "hook": "Who travelled more: Mikasa Ackerman or Noelle Silva?",
+  "hookType": "versus",
+  "hookId": "cv-versus-1",
+  "cta": "Mikasa Ackerman or Noelle Silva? Tell us.",
+  "ctaType": "comment-pick-side",
+  "selection": {
+    "mode": "coldstart",
+    "score": 117.88,
+    "seed": "feed4:character-journey:hunterxhunter:killua-zoldyck:part-01@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +30.0, jitter +5.9; +12 main character; +20 format below its target share (0% < 25%)"
+}
