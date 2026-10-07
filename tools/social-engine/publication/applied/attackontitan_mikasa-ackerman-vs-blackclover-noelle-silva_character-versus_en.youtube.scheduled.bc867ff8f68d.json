@@ -1,0 +1,30 @@
+{
+  "receiptId": "attackontitan_mikasa-ackerman-vs-blackclover-noelle-silva_character-versus_en.youtube.scheduled.bc867ff8f68d",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-10-07T05:19:50.883Z",
+  "sourceFile": "20261007T051035Z-attackontitan_mikasa-ackerman-vs-blackclover-noelle-silva_character-versus_en-youtube-scheduled.json",
+  "run": {
+    "runId": "37575743996",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/37575743996",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-blackclover-noelle-silva@en",
+    "platform": "youtube",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-10-07T12:00:00+02:00",
+    "providerPostId": "390028729",
+    "providerPostUuid": "-4600904613824346793",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-4600904613824346793",
+    "recordedAt": "2026-10-07T05:10:35Z",
+    "recordedBy": "chatgpt-work-publishing-agent"
+  }
+}

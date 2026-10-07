@@ -652,7 +652,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-10-07T05:04:07.011Z",
-      "updatedAt": "2026-10-07T05:06:11.745Z",
+      "updatedAt": "2026-10-07T05:19:50.883Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-10-07T05:06:11.745Z",
       "outputFile": "tools/social-engine/output/attackontitan_mikasa-ackerman-vs-blackclover-noelle-silva_character-versus_en.mp4",
@@ -721,9 +721,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-07T12:00:00+02:00",
+          "scheduledAt": "2026-10-07T05:10:35Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "390028543",
+          "providerPostUuid": "-4409985862028210284",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-4409985862028210284",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_mikasa-ackerman-vs-blackclover-noelle-silva_character-versus_en.instagram.scheduled.0e338c3bf57f"
+          ],
+          "updatedAt": "2026-10-07T05:19:50.883Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-07T12:00:00+02:00",
+          "scheduledAt": "2026-10-07T05:10:35Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "390028654",
+          "providerPostUuid": "5848507773380149661",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=5848507773380149661",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_mikasa-ackerman-vs-blackclover-noelle-silva_character-versus_en.facebook.scheduled.f48f185027f9"
+          ],
+          "updatedAt": "2026-10-07T05:19:50.883Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-07T12:00:00+02:00",
+          "scheduledAt": "2026-10-07T05:10:35Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "390028835",
+          "providerPostUuid": "6541029687587389784",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=6541029687587389784",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_mikasa-ackerman-vs-blackclover-noelle-silva_character-versus_en.tiktok.scheduled.ab6d2f3c7a56"
+          ],
+          "updatedAt": "2026-10-07T05:19:50.883Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-07T12:00:00+02:00",
+          "scheduledAt": "2026-10-07T05:10:35Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "390028729",
+          "providerPostUuid": "-4600904613824346793",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-4600904613824346793",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_mikasa-ackerman-vs-blackclover-noelle-silva_character-versus_en.youtube.scheduled.bc867ff8f68d"
+          ],
+          "updatedAt": "2026-10-07T05:19:50.883Z"
+        }
+      ]
     }
   }
 }

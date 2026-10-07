@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-07T05:06:12.852Z",
-  "status": "backlog",
+  "generatedAt": "2026-10-07T05:19:50.900Z",
+  "status": "ready",
   "feedTail": [
     {
       "renderId": "character-journey:dragonball:goku:part-01@en",
@@ -79,28 +79,486 @@
     "error": null
   },
   "backlog": {
-    "unpublished": [
-      {
-        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-blackclover-noelle-silva@en",
-        "contentType": "character-versus",
-        "renderedAt": "2026-10-07T05:06:11.745Z",
-        "missing": [
-          "instagram",
-          "facebook",
-          "tiktok",
-          "youtube"
-        ]
-      }
-    ],
+    "unpublished": [],
     "unfinished": [],
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "",
-  "reason": "publish the existing render first: character-versus:attackontitan:mikasa-ackerman-vs-blackclover-noelle-silva@en (it counts as today's video; no new content)",
-  "alternatives": [],
-  "rejected": {},
-  "considered": 0,
-  "eligible": 0,
-  "trace": null
+  "seed": "feed5:character-versus:attackontitan:mikasa-ackerman-vs-blackclover-noelle-silva@en:samples0",
+  "rejected": {
+    "JOURNEY_PART_ORDER": 44,
+    "JOURNEY_PART_SPACING": 1,
+    "MAX_SAME_CHARACTER_STREAK": 39
+  },
+  "considered": 694,
+  "trace": {
+    "traceVersion": 1,
+    "mode": "coldstart",
+    "seed": "feed5:character-versus:attackontitan:mikasa-ackerman-vs-blackclover-noelle-silva@en:samples0",
+    "analytics": {
+      "coldStart": true,
+      "samples": 0,
+      "contents": 0,
+      "minimumSamples": 8
+    },
+    "recent": [
+      {
+        "renderId": "character-journey:dragonball:goku:part-01@en",
+        "contentType": "character-journey",
+        "animes": [
+          "dragonball"
+        ],
+        "characters": [
+          "dragonball:goku"
+        ]
+      },
+      {
+        "renderId": "character-journey:naruto:naruto-uzumaki:part-01@en",
+        "contentType": "character-journey",
+        "animes": [
+          "naruto"
+        ],
+        "characters": [
+          "naruto:naruto-uzumaki"
+        ]
+      },
+      {
+        "renderId": "character-journey:onepiece:monkey-d-luffy:part-01@en",
+        "contentType": "character-journey",
+        "animes": [
+          "onepiece"
+        ],
+        "characters": [
+          "onepiece:monkey-d-luffy"
+        ]
+      },
+      {
+        "renderId": "character-journey:hunterxhunter:killua-zoldyck:part-01@en",
+        "contentType": "character-journey",
+        "animes": [
+          "hunterxhunter"
+        ],
+        "characters": [
+          "hunterxhunter:killua-zoldyck"
+        ]
+      },
+      {
+        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-blackclover-noelle-silva@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "blackclover"
+        ],
+        "characters": [
+          "attackontitan:mikasa-ackerman",
+          "blackclover:noelle-silva"
+        ]
+      }
+    ],
+    "constraints": {
+      "sameAnimeStreak": {
+        "animes": [
+          "attackontitan",
+          "blackclover"
+        ],
+        "length": 1
+      },
+      "forcedAnimeRotation": false,
+      "blockedAnimes": [],
+      "blockedCharacters": [
+        "attackontitan:mikasa-ackerman",
+        "blackclover:noelle-silva"
+      ],
+      "characterCooldown": [
+        "dragonball:goku",
+        "naruto:naruto-uzumaki",
+        "onepiece:monkey-d-luffy",
+        "hunterxhunter:killua-zoldyck",
+        "attackontitan:mikasa-ackerman",
+        "blackclover:noelle-silva"
+      ],
+      "contentTypeStreak": {
+        "contentType": "character-versus",
+        "length": 1
+      }
+    },
+    "hardRulesTriggered": {
+      "JOURNEY_PART_ORDER": 44,
+      "JOURNEY_PART_SPACING": 1,
+      "MAX_SAME_CHARACTER_STREAK": 39
+    },
+    "candidates": {
+      "considered": 694,
+      "eligible": 611,
+      "byContentType": {
+        "character-journey": {
+          "considered": 418,
+          "eligible": 371
+        },
+        "guess-character": {
+          "considered": 88,
+          "eligible": 86
+        },
+        "character-versus": {
+          "considered": 188,
+          "eligible": 154
+        }
+      }
+    },
+    "excluded": [
+      {
+        "renderId": "character-journey:attackontitan:mikasa-ackerman@en",
+        "contentType": "character-journey",
+        "animes": [
+          "attackontitan"
+        ],
+        "characters": [
+          "attackontitan:mikasa-ackerman"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: attackontitan:mikasa-ackerman is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:blackclover:noelle-silva:part-01@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:noelle-silva"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: blackclover:noelle-silva is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:blackclover:noelle-silva:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:noelle-silva"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER",
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)",
+          "character streak: blackclover:noelle-silva is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:attackontitan:armin-arlert-vs-blackclover-noelle-silva@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "blackclover"
+        ],
+        "characters": [
+          "attackontitan:armin-arlert",
+          "blackclover:noelle-silva"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: blackclover:noelle-silva is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-blackclover-asta@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "blackclover"
+        ],
+        "characters": [
+          "attackontitan:mikasa-ackerman",
+          "blackclover:asta"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: attackontitan:mikasa-ackerman is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-blackclover-yami-sukehiro@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "blackclover"
+        ],
+        "characters": [
+          "attackontitan:mikasa-ackerman",
+          "blackclover:yami-sukehiro"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: attackontitan:mikasa-ackerman is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-bleach-ichigo-kurosaki@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "bleach"
+        ],
+        "characters": [
+          "attackontitan:mikasa-ackerman",
+          "bleach:ichigo-kurosaki"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: attackontitan:mikasa-ackerman is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-bleach-rukia-kuchiki@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "bleach"
+        ],
+        "characters": [
+          "attackontitan:mikasa-ackerman",
+          "bleach:rukia-kuchiki"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: attackontitan:mikasa-ackerman is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-bleach-yasutora-chad-sado@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "bleach"
+        ],
+        "characters": [
+          "attackontitan:mikasa-ackerman",
+          "bleach:yasutora-chad-sado"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: attackontitan:mikasa-ackerman is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:attackontitan:reiner-braun-vs-blackclover-noelle-silva@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "blackclover"
+        ],
+        "characters": [
+          "attackontitan:reiner-braun",
+          "blackclover:noelle-silva"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: blackclover:noelle-silva is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      }
+    ],
+    "status": "selected",
+    "selectedId": "guess-character:bleach:orihime-inoue",
+    "renderId": "guess-character:bleach:orihime-inoue@en",
+    "contentType": "guess-character",
+    "animes": [
+      "bleach"
+    ],
+    "characters": [
+      "bleach:orihime-inoue"
+    ],
+    "score": 117.9,
+    "base": 85.9,
+    "reasons": [
+      "coldstart: novelty +30.0, jitter +5.9",
+      "+12 main character",
+      "+20 format below its target share (0% < 25%)"
+    ],
+    "ranked": [
+      {
+        "renderId": "guess-character:bleach:orihime-inoue@en",
+        "contentType": "guess-character",
+        "animes": [
+          "bleach"
+        ],
+        "score": 117.9,
+        "reasons": [
+          "coldstart: novelty +30.0, jitter +5.9",
+          "+12 main character",
+          "+20 format below its target share (0% < 25%)"
+        ]
+      },
+      {
+        "renderId": "guess-character:bleach:uryu-ishida@en",
+        "contentType": "guess-character",
+        "animes": [
+          "bleach"
+        ],
+        "score": 117.09,
+        "reasons": [
+          "coldstart: novelty +30.0, jitter +5.1",
+          "+12 main character",
+          "+20 format below its target share (0% < 25%)"
+        ]
+      },
+      {
+        "renderId": "guess-character:bleach:kisuke-urahara@en",
+        "contentType": "guess-character",
+        "animes": [
+          "bleach"
+        ],
+        "score": 116.89,
+        "reasons": [
+          "coldstart: novelty +30.0, jitter +4.9",
+          "+12 main character",
+          "+20 format below its target share (0% < 25%)"
+        ]
+      },
+      {
+        "renderId": "guess-character:bleach:yhwach@en",
+        "contentType": "guess-character",
+        "animes": [
+          "bleach"
+        ],
+        "score": 115.77,
+        "reasons": [
+          "coldstart: novelty +30.0, jitter +3.8",
+          "+12 main character",
+          "+20 format below its target share (0% < 25%)"
+        ]
+      },
+      {
+        "renderId": "guess-character:dragonball:majin-buu@en",
+        "contentType": "guess-character",
+        "animes": [
+          "dragonball"
+        ],
+        "score": 114.82,
+        "reasons": [
+          "coldstart: novelty +27.0, jitter +5.8",
+          "+12 main character",
+          "+20 format below its target share (0% < 25%)"
+        ]
+      },
+      {
+        "renderId": "guess-character:onepiece:usopp@en",
+        "contentType": "guess-character",
+        "animes": [
+          "onepiece"
+        ],
+        "score": 114.5,
+        "reasons": [
+          "coldstart: novelty +27.0, jitter +5.5",
+          "+12 main character",
+          "+20 format below its target share (0% < 25%)"
+        ]
+      }
+    ],
+    "explanation": [
+      "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
+      "attackontitan:mikasa-ackerman, blackclover:noelle-silva excluded in every format (maxSameCharacterStreak 1).",
+      "1 series part(s) wait for spacing (≥ 2 items between parts).",
+      "Selected guess-character:bleach:orihime-inoue@en (guess-character, bleach) — coldstart, score 117.9 among 611 valid candidate(s)."
+    ]
+  },
+  "pick": {
+    "contentId": "guess-character:bleach:orihime-inoue",
+    "renderId": "guess-character:bleach:orihime-inoue@en",
+    "contentType": "guess-character",
+    "animes": [
+      "bleach"
+    ],
+    "characters": [
+      "bleach:orihime-inoue"
+    ],
+    "part": null,
+    "partCount": null,
+    "score": 117.9,
+    "reasons": [
+      "coldstart: novelty +30.0, jitter +5.9",
+      "+12 main character",
+      "+20 format below its target share (0% < 25%)"
+    ]
+  },
+  "request": {
+    "template": "guessCharacter",
+    "anime": "bleach",
+    "subject": "orihime-inoue",
+    "locale": "en",
+    "hook": "These 6 places belong to one Bleach character.",
+    "hookType": "fact",
+    "hookId": "gc-fact-1",
+    "cta": "How many places did you recognize?",
+    "ctaType": "comment-guess",
+    "selection": {
+      "mode": "coldstart",
+      "score": 117.9,
+      "seed": "feed5:character-versus:attackontitan:mikasa-ackerman-vs-blackclover-noelle-silva@en:samples0"
+    },
+    "notes": "growth selector (coldstart): coldstart: novelty +30.0, jitter +5.9; +12 main character; +20 format below its target share (0% < 25%)"
+  },
+  "alternatives": [
+    {
+      "renderId": "guess-character:bleach:uryu-ishida@en",
+      "contentType": "guess-character",
+      "score": 117.09
+    },
+    {
+      "renderId": "guess-character:bleach:kisuke-urahara@en",
+      "contentType": "guess-character",
+      "score": 116.89
+    },
+    {
+      "renderId": "guess-character:bleach:yhwach@en",
+      "contentType": "guess-character",
+      "score": 115.77
+    },
+    {
+      "renderId": "guess-character:dragonball:majin-buu@en",
+      "contentType": "guess-character",
+      "score": 114.82
+    },
+    {
+      "renderId": "guess-character:onepiece:usopp@en",
+      "contentType": "guess-character",
+      "score": 114.5
+    }
+  ],
+  "eligible": 611
 }

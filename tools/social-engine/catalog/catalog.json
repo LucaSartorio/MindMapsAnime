@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-07T05:06:12.852Z",
+  "generatedAt": "2026-10-07T05:19:50.900Z",
   "locales": [
     "en",
     "it"
@@ -24643,7 +24643,9 @@
           "renderedLocales": [
             "en"
           ],
-          "scheduledLocales": [],
+          "scheduledLocales": [
+            "en"
+          ],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": true,
@@ -24653,12 +24655,12 @@
               "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-blackclover-noelle-silva@en",
               "locale": "en",
               "variant": null,
-              "status": "notPublished",
+              "status": "scheduled",
               "platforms": {
-                "instagram": "notScheduled",
-                "facebook": "notScheduled",
-                "tiktok": "notScheduled",
-                "youtube": "notScheduled"
+                "instagram": "scheduled",
+                "facebook": "scheduled",
+                "tiktok": "scheduled",
+                "youtube": "scheduled"
               }
             }
           ],
@@ -25295,69 +25297,13 @@
     "summary": {
       "rendered": 10,
       "unavailable": 5,
-      "notPublished": 6,
-      "scheduled": 0,
+      "notPublished": 5,
+      "scheduled": 1,
       "partiallyPublished": 1,
       "published": 3,
       "failed": 0
     },
-    "ready": [
-      {
-        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-blackclover-noelle-silva@en",
-        "contentId": "character-versus:attackontitan:mikasa-ackerman-vs-blackclover-noelle-silva",
-        "anime": "attackontitan",
-        "subject": "mikasa-ackerman-vs-blackclover-noelle-silva",
-        "subjectName": "Mikasa Ackerman vs Noelle Silva",
-        "locale": "en",
-        "variant": null,
-        "segment": null,
-        "partNumber": null,
-        "partCount": null,
-        "renderedAt": "2026-10-07T05:06:11.745Z",
-        "durationSeconds": 22,
-        "publicationStatus": "notPublished",
-        "platforms": {
-          "instagram": "notScheduled",
-          "facebook": "notScheduled",
-          "tiktok": "notScheduled",
-          "youtube": "notScheduled"
-        },
-        "artifact": {
-          "name": "animapverse-social-render-37574458341-1",
-          "runId": "37574458341",
-          "runAttempt": "1",
-          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/37574458341",
-          "video": "videos/attackontitan_mikasa-ackerman-vs-blackclover-noelle-silva_character-versus_en.mp4",
-          "manifest": "manifests/attackontitan_mikasa-ackerman-vs-blackclover-noelle-silva_character-versus_en.manifest.json",
-          "sha256": "6bcc07538f21fb4c6218f77f52c6756489fc57ce8864ea569d7498c89dfa0459",
-          "cover": "covers/attackontitan_mikasa-ackerman-vs-blackclover-noelle-silva_character-versus_en.cover.png",
-          "expiresAt": "2026-11-06T05:06:11.745Z"
-        },
-        "contentType": "character-versus",
-        "platformMetadata": {
-          "instagramCaption": "Who travelled more: Mikasa Ackerman or Noelle Silva?\n\nMikasa Ackerman (Attack on Titan) vs Noelle Silva (Black Clover): every place on the map, one winner.\n\nMikasa Ackerman or Noelle Silva? Pick a side 👇\n\nSave it for your next rewatch.\n\n#attackontitan #aot #blackclover #mikasaackerman #noellesilva #anime #animemap #AniMapVerse",
-          "tiktokCaption": "Who travelled more: Mikasa Ackerman or Noelle Silva? Mikasa Ackerman or Noelle Silva? Pick a side 👇 #attackontitan #aot #blackclover #mikasaackerman #noellesilva",
-          "youtubeTitle": "Mikasa Ackerman vs Noelle Silva: Who Travelled More? 🧱",
-          "youtubeDescription": "Who travelled more: Mikasa Ackerman or Noelle Silva?\n\nMikasa Ackerman (Attack on Titan) vs Noelle Silva (Black Clover): every place on the map, one winner.\n\nMikasa Ackerman or Noelle Silva? Pick a side 👇\n\nInteractive map: https://animapverse.com\n\n#attackontitan #aot #blackclover",
-          "facebookCaption": "Who travelled more: Mikasa Ackerman or Noelle Silva?\n\nMikasa Ackerman (Attack on Titan) vs Noelle Silva (Black Clover): every place on the map, one winner.\n\nMikasa Ackerman or Noelle Silva? Pick a side 👇\n\nInteractive map: https://animapverse.com",
-          "hashtags": [
-            "#attackontitan",
-            "#aot",
-            "#blackclover",
-            "#mikasaackerman",
-            "#noellesilva",
-            "#anime",
-            "#animemap",
-            "#AniMapVerse"
-          ],
-          "youtube": {
-            "madeForKids": false
-          },
-          "madeForKids": false
-        },
-        "waitFor": {}
-      }
-    ],
+    "ready": [],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",
