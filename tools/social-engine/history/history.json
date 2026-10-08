@@ -815,7 +815,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-10-08T05:29:04.478Z",
-      "updatedAt": "2026-10-08T05:32:11.128Z",
+      "updatedAt": "2026-10-08T05:40:34.275Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-10-08T05:32:11.128Z",
       "outputFile": "tools/social-engine/output/bleach_orihime-inoue_guess-character_en.mp4",
@@ -877,9 +877,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-08T18:00:00+02:00",
+          "scheduledAt": "2026-10-08T05:38:45Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "390886655",
+          "providerPostUuid": "-1837624531702231661",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-1837624531702231661",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "bleach_orihime-inoue_guess-character_en.instagram.scheduled.6f7cb106e3b6"
+          ],
+          "updatedAt": "2026-10-08T05:40:34.275Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-08T18:00:00+02:00",
+          "scheduledAt": "2026-10-08T05:38:45Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "390886737",
+          "providerPostUuid": "-2979678891738513299",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-2979678891738513299",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "bleach_orihime-inoue_guess-character_en.facebook.scheduled.3a6411656c46"
+          ],
+          "updatedAt": "2026-10-08T05:40:34.275Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-08T18:00:00+02:00",
+          "scheduledAt": "2026-10-08T05:38:45Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "390886762",
+          "providerPostUuid": "7919897851483080045",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=7919897851483080045",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "bleach_orihime-inoue_guess-character_en.tiktok.scheduled.040da5d72cd4"
+          ],
+          "updatedAt": "2026-10-08T05:40:34.275Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-08T18:00:00+02:00",
+          "scheduledAt": "2026-10-08T05:38:45Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "390886751",
+          "providerPostUuid": "-8061898129126702576",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-8061898129126702576",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "bleach_orihime-inoue_guess-character_en.youtube.scheduled.7f6f5c3a8680"
+          ],
+          "updatedAt": "2026-10-08T05:40:34.275Z"
+        }
+      ]
     }
   }
 }

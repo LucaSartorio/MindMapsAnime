@@ -1,0 +1,30 @@
+{
+  "receiptId": "bleach_orihime-inoue_guess-character_en.tiktok.scheduled.040da5d72cd4",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-10-08T05:40:34.275Z",
+  "sourceFile": "20261008T053845Z-bleach_orihime-inoue_guess-character_en-tiktok-scheduled.json",
+  "run": {
+    "runId": "37733547564",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/37733547564",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "guess-character:bleach:orihime-inoue@en",
+    "platform": "tiktok",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-10-08T18:00:00+02:00",
+    "providerPostId": "390886762",
+    "providerPostUuid": "7919897851483080045",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=7919897851483080045",
+    "recordedAt": "2026-10-08T05:38:45Z",
+    "recordedBy": "chatgpt-work-publishing-agent"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T05:32:12.205Z",
+  "generatedAt": "2026-10-08T05:40:34.301Z",
   "locales": [
     "en",
     "it"
@@ -17455,7 +17455,9 @@
           "renderedLocales": [
             "en"
           ],
-          "scheduledLocales": [],
+          "scheduledLocales": [
+            "en"
+          ],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": true,
@@ -17465,12 +17467,12 @@
               "renderId": "guess-character:bleach:orihime-inoue@en",
               "locale": "en",
               "variant": null,
-              "status": "notPublished",
+              "status": "scheduled",
               "platforms": {
-                "instagram": "notScheduled",
-                "facebook": "notScheduled",
-                "tiktok": "notScheduled",
-                "youtube": "notScheduled"
+                "instagram": "scheduled",
+                "facebook": "scheduled",
+                "tiktok": "scheduled",
+                "youtube": "scheduled"
               }
             }
           ]
@@ -25314,65 +25316,13 @@
     "summary": {
       "rendered": 11,
       "unavailable": 5,
-      "notPublished": 6,
-      "scheduled": 0,
+      "notPublished": 5,
+      "scheduled": 1,
       "partiallyPublished": 2,
       "published": 3,
       "failed": 0
     },
-    "ready": [
-      {
-        "renderId": "guess-character:bleach:orihime-inoue@en",
-        "contentId": "guess-character:bleach:orihime-inoue",
-        "anime": "bleach",
-        "subject": "orihime-inoue",
-        "subjectName": "Orihime Inoue",
-        "locale": "en",
-        "variant": null,
-        "segment": null,
-        "partNumber": null,
-        "partCount": null,
-        "renderedAt": "2026-10-08T05:32:11.128Z",
-        "durationSeconds": 26,
-        "publicationStatus": "notPublished",
-        "platforms": {
-          "instagram": "notScheduled",
-          "facebook": "notScheduled",
-          "tiktok": "notScheduled",
-          "youtube": "notScheduled"
-        },
-        "artifact": {
-          "name": "animapverse-social-render-37732560695-1",
-          "runId": "37732560695",
-          "runAttempt": "1",
-          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/37732560695",
-          "video": "videos/bleach_orihime-inoue_guess-character_en.mp4",
-          "manifest": "manifests/bleach_orihime-inoue_guess-character_en.manifest.json",
-          "sha256": "d0e1cf2432b1f25e810d4ded6311a6d3a96331ff194849e65c6236e3cd0b8bb1",
-          "cover": "covers/bleach_orihime-inoue_guess-character_en.cover.png",
-          "expiresAt": "2026-11-07T05:32:11.128Z"
-        },
-        "contentType": "guess-character",
-        "platformMetadata": {
-          "instagramCaption": "These 6 places belong to one Bleach character.\n\n6 places, one Bleach character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nSave it for your next rewatch.\n\n#bleach #anime #animemap #AniMapVerse",
-          "tiktokCaption": "These 6 places belong to one Bleach character. Did you get it right? Tell us how many places it took you 👇 #bleach #anime #animemap #AniMapVerse",
-          "youtubeTitle": "Guess the Bleach Character From the Places They Visited ⚔️",
-          "youtubeDescription": "These 6 places belong to one Bleach character.\n\n6 places, one Bleach character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/bleach/map\n\n#bleach #anime #animemap",
-          "facebookCaption": "These 6 places belong to one Bleach character.\n\n6 places, one Bleach character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/bleach/map",
-          "hashtags": [
-            "#bleach",
-            "#anime",
-            "#animemap",
-            "#AniMapVerse"
-          ],
-          "youtube": {
-            "madeForKids": false
-          },
-          "madeForKids": false
-        },
-        "waitFor": {}
-      }
-    ],
+    "ready": [],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",
