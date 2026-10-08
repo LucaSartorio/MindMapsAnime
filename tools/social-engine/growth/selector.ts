@@ -5,7 +5,7 @@ import { IMPLEMENTED_CONTENT_TYPES, contentTypeOfTemplate } from './contentTypes
 import { characterKey, type FeedItem } from './feed';
 import { estimate, type PerformanceReport } from './performance';
 import { durationBucket } from './config';
-import { createRng, type Rng } from './rng';
+import { createRng, hashSeed, type Rng } from './rng';
 import { editorialConstraints, ruleViolations, softAdjustment, type EditorialConstraints, type EditorialFacts, type RuleCode } from './rules';
 
 /**
@@ -137,9 +137,17 @@ export function candidatesFromCatalog(catalog: Catalog, taken: ReadonlySet<strin
   return out;
 }
 
-/** Deterministic seed of a decision: the feed state (+ the analytics state). Same state → same pick. */
-export function selectionSeed(feed: readonly FeedItem[], performance: PerformanceReport): string {
+/** Full deterministic state used by the PRNG. Keep this stable so compacting the persisted seed does not change the pick. */
+function selectionStateSeed(feed: readonly FeedItem[], performance: PerformanceReport): string {
   return `feed${feed.length}:${feed[feed.length - 1]?.renderId ?? 'empty'}:samples${performance.samples}`;
+}
+
+/** Deterministic, queue-schema-safe seed persisted in next.json / queue requests (max 80 chars). */
+export function selectionSeed(feed: readonly FeedItem[], performance: PerformanceReport): string {
+  const raw = selectionStateSeed(feed, performance);
+  if (raw.length <= 80) return raw;
+  const digest = hashSeed(raw).toString(16).padStart(8, '0');
+  return `feed${feed.length}:h${digest}:samples${performance.samples}`;
 }
 
 function exposure(feed: readonly FeedItem[], pred: (f: FeedItem) => boolean, window = 30): number {
@@ -172,7 +180,10 @@ export function selectNext(args: {
   const config = args.config ?? GROWTH_CONFIG;
   const { feed, performance } = args;
   const seed = args.seed ?? selectionSeed(feed, performance);
-  const rng: Rng = createRng(seed);
+  // The persisted seed is compacted for schema safety; keep the full state as PRNG input
+  // so this fix does not change an already planned content selection.
+  const rngSeed = args.seed ?? selectionStateSeed(feed, performance);
+  const rng: Rng = createRng(rngSeed);
   const mode: SelectionMode = performance.coldStart ? 'coldstart' : rng() < config.explorationRate ? 'explore' : 'exploit';
 
   // 1–3. FILTER — hard rules first, on every candidate (performance is not even looked at yet).

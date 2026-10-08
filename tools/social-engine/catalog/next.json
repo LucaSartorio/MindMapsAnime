@@ -84,7 +84,7 @@
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "feed5:character-versus:attackontitan:mikasa-ackerman-vs-blackclover-noelle-silva@en:samples0",
+  "seed": "feed5:h9eea536d:samples0",
   "rejected": {
     "JOURNEY_PART_ORDER": 44,
     "JOURNEY_PART_SPACING": 1,
@@ -94,7 +94,7 @@
   "trace": {
     "traceVersion": 1,
     "mode": "coldstart",
-    "seed": "feed5:character-versus:attackontitan:mikasa-ackerman-vs-blackclover-noelle-silva@en:samples0",
+    "seed": "feed5:h9eea536d:samples0",
     "analytics": {
       "coldStart": true,
       "samples": 0,
@@ -529,7 +529,7 @@
     "selection": {
       "mode": "coldstart",
       "score": 117.9,
-      "seed": "feed5:character-versus:attackontitan:mikasa-ackerman-vs-blackclover-noelle-silva@en:samples0"
+      "seed": "feed5:h9eea536d:samples0"
     },
     "notes": "growth selector (coldstart): coldstart: novelty +30.0, jitter +5.9; +12 main character; +20 format below its target share (0% < 25%)"
   },
