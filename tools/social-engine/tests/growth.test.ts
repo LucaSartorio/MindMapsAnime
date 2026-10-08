@@ -26,7 +26,7 @@ import { chooseHook, HOOK_BANK, hookOptions } from '../growth/hooks';
 import { chooseCta, ctaOptions, CTA_BANK } from '../growth/ctas';
 import { buildPlatformMetadata, type SocialFacts } from '../growth/metadata';
 import { buildPerformance, ratesOf, scoreRates, type PerformanceReport } from '../growth/performance';
-import { candidatesFromCatalog, selectNext, type Candidate } from '../growth/selector';
+import { candidatesFromCatalog, selectNext, selectionSeed, type Candidate } from '../growth/selector';
 import { planBacklog, planMismatch, planNext, type NextPlan } from '../growth/plan';
 import { selectionReport } from '../growth/report';
 import { createRng } from '../growth/rng';
@@ -174,6 +174,23 @@ await test('journey spacing: at least 2 items between parts (hard), 3 preferred 
   const three = [...two, feedItem('bleach', 'c')];
   assert.doesNotMatch(softAdjustment(p2, three).reasons.join(), /preferred/);
   assert.match(softAdjustment(p2, three).reasons.join(), /continues a started series/);
+});
+
+section('selection seed contract');
+await test('auto-generated selection seed never exceeds the queue schema limit even with long render ids', () => {
+  const longFeed = [feedItem('attackontitan', 'mikasa-ackerman', 'character-versus', {
+    renderId: 'character-versus:attackontitan:mikasa-ackerman-vs-blackclover-noelle-silva@en',
+    animes: ['attackontitan', 'blackclover'],
+    characters: ['attackontitan:mikasa-ackerman', 'blackclover:noelle-silva'],
+  })];
+  const report = perf({}, true);
+  const seed = selectionSeed(longFeed, report);
+  assert.ok(seed.length <= 80, `selection seed must fit schema, got ${seed.length}: ${seed}`);
+  assert.match(seed, /^feed1:h[0-9a-f]{8}:samples0$/);
+  const candidates = [candidate('bleach', 'orihime-inoue', 'guess-character'), candidate('dragonball', 'majin-buu', 'guess-character')];
+  const selected = selectNext({ candidates, feed: longFeed, performance: report });
+  assert.ok(selected.ok);
+  assert.equal(selected.seed, seed);
 });
 
 section('selector: performance optimizes, rotation decides');
