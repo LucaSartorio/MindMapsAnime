@@ -46,7 +46,7 @@ export const SITE = {
  *   quasi-duplicate con contenuti solo inglesi sotto `/es`.
  * - ja/fr/de restano lingue solo-UI applicate sugli URL `/en`.
  */
-export const SEO_LOCALES = ['it', 'en', 'es'] as const satisfies readonly SupportedLocale[];
+export const SEO_LOCALES = ['it', 'en', 'es', 'fr'] as const satisfies readonly SupportedLocale[];
 export type SeoLocale = (typeof SEO_LOCALES)[number];
 
 /** Lingua `x-default` (fallback internazionale). */
@@ -56,6 +56,7 @@ export const SEO_LOCALE_META: Record<SeoLocale, { hreflang: string; ogLocale: st
   it: { hreflang: 'it', ogLocale: 'it_IT', htmlLang: 'it' },
   en: { hreflang: 'en', ogLocale: 'en_US', htmlLang: 'en' },
   es: { hreflang: 'es', ogLocale: 'es_ES', htmlLang: 'es' },
+  fr: { hreflang: 'fr', ogLocale: 'fr_FR', htmlLang: 'fr' },
 };
 
 export function isSeoLocale(value: string | undefined | null): value is SeoLocale {

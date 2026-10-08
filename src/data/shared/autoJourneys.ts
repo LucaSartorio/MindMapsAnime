@@ -50,6 +50,11 @@ const JOURNEY_TEXT: Partial<Record<SupportedLocale, JourneyText>> = {
     group: 'Caminos de los personajes',
     description: (w, n, a, b) => `Los lugares de la historia de ${w} en orden cronológico: ${n} etapas, de ${a} a ${b}.`,
   },
+  fr: {
+    name: (w) => `Le parcours de ${w}`,
+    group: 'Parcours des personnages',
+    description: (w, n, a, b) => `Les lieux de l'histoire de ${w} dans l'ordre chronologique : ${n} étapes, de ${a} à ${b}.`,
+  },
 };
 
 /** Riempie in `locale` i testi di un cammino derivato (in place). */
