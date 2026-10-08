@@ -217,7 +217,7 @@ export const narutoArcs: StoryArc[] = [
     id: 'arc-jiraiya-gallant',
     worldId: 'world-naruto',
     name: 'Tale of Jiraiya the Gallant',
-    localizedName: { it: 'La Leggenda di Jiraiya il Galante', en: 'Tale of Jiraiya the Gallant' },
+    localizedName: { it: 'La Leggenda di Jiraiya il Coraggioso', en: 'Tale of Jiraiya the Gallant' },
     saga: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     order: 10,
     description: {

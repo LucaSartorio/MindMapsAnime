@@ -98,11 +98,11 @@ export const narutoClansExtra: Faction[] = [
     type: 'clan',
     name: "Jūgo's Clan",
     description: {
-      it: 'Clan senza nome ufficiale i cui membri nascono con la capacità innata di assorbire passivamente la Natura di Chakra Saggio dall\'ambiente. Questo provoca trasformazioni fisiche incontrollabili e accessi di violenza. I Sigilli Maledetti di Orochimaru sono derivati da questo kekkei genkai.',
+      it: 'Clan senza nome ufficiale i cui membri nascono con la capacità innata di assorbire passivamente la Natura di Chakra Saggio dall\'ambiente. Questo provoca trasformazioni fisiche incontrollabili e accessi di violenza. I Segni Maledetti di Orochimaru sono derivati da questo kekkei genkai.',
       en: "Unnamed clan whose members are born with the innate ability to passively absorb Sage Chakra Nature from the environment. This triggers uncontrollable physical transformations and violent rages. Orochimaru's Cursed Seals are derived from this kekkei genkai.",
     },
     longDescription: {
-      it: 'Jūgo è l\'unico membro sopravvissuto noto. La sua condizione è quella tipica del clan: assorbimento involontario di energia saggio naturale che porta a trasformazioni aggressive. Orochimaru sfruttò il corpo di Jūgo per isolare e replicare questa capacità nei Sigilli Maledetti distribuiti ai suoi seguaci.',
+      it: 'Jūgo è l\'unico membro sopravvissuto noto. La sua condizione è quella tipica del clan: assorbimento involontario di energia saggio naturale che porta a trasformazioni aggressive. Orochimaru sfruttò il corpo di Jūgo per isolare e replicare questa capacità nei Segni Maledetti distribuiti ai suoi seguaci.',
       en: "Jūgo is the only known surviving member. His condition is typical of the clan: involuntary absorption of natural sage energy leading to aggressive transformations. Orochimaru exploited Jūgo's body to isolate and replicate this ability in the Cursed Seals distributed to his followers.",
     },
     signatureAbilities: ['Passivo Assorbimento Energia Saggio', 'Trasformazione Cursed Seal', 'Potenziamento fisico innato'],

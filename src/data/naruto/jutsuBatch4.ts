@@ -38,7 +38,7 @@ export const narutoJutsuBatch4: Jutsu[] = [
     id: 'jutsu-tsuga',
     worldId: 'world-naruto',
     name: 'Passing Fang (Tsūga)',
-    localizedName: { it: 'Zanna su Zanna (Tsūga)', en: 'Passing Fang (Tsūga)' },
+    localizedName: { it: 'Attacco Perforante (Tsūga)', en: 'Passing Fang (Tsūga)' },
     japaneseName: '通牙',
     type: 'taijutsu',
     classification: ['kekkei_genkai', 'offensive'],
@@ -106,7 +106,7 @@ export const narutoJutsuBatch4: Jutsu[] = [
     worldId: 'world-naruto',
     name: 'Complete Body — Susanoo',
     localizedName: {
-      it: 'Susanoo Perfetto (Corpo Completo)',
+      it: 'Susanoo Perfetto',
       en: 'Complete Body — Susanoo',
     },
     japaneseName: '完成体須佐能乎',

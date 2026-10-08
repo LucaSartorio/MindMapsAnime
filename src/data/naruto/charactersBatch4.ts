@@ -166,7 +166,7 @@ export const narutoCharactersBatch4: Character[] = [
     gender: 'unknown',
     series: ['shippuden'],
     shortDescription: {
-      it: 'Il guscio svuotato del Dieci Code, usato dall\'Akatsuki per sigillare le Bestie con Coda catturate. Evocato tramite il Sentiero Esterno del Rinnegan.',
+      it: 'Il guscio svuotato del Dieci Code, usato dall\'Akatsuki per sigillare le Bestie con Coda catturate. Evocato tramite il Mondo Esteriore del Rinnegan.',
       en: 'The hollow husk of the Ten-Tails, used by the Akatsuki to seal the captured Tailed Beasts. Summoned via the Rinnegan\'s Outer Path.',
     },
     abilities: ['Tailed Beast Sealing', 'Chakra Chains', 'Outer Path Summon'],

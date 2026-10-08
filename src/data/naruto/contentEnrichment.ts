@@ -19,7 +19,7 @@ export const NARUTO_CHARACTER_LONG: Record<string, Localizable> = {
     en: "Team 8's jōnin (Hinata, Kiba, Shino), a genjutsu expert. She is Asuma Sarutobi's partner: after his death at Hidan's hands she gives birth to their daughter Mirai, whom Shikamaru promises to protect.",
   },
   'char-anko': {
-    it: "Ex allieva di Orochimaru, che le ha lasciato un Sigillo Maledetto, e proctor della seconda prova degli Esami Chūnin nella Foresta della Morte. In Shippuden dà la caccia a Kabuto; nell'era Boruto insegna all'Accademia.",
+    it: "Ex allieva di Orochimaru, che le ha lasciato un Segno Maledetto, e proctor della seconda prova degli Esami Chūnin nella Foresta della Morte. In Shippuden dà la caccia a Kabuto; nell'era Boruto insegna all'Accademia.",
     en: "A former student of Orochimaru, who left her a Curse Mark, and proctor of the Chūnin Exams' second stage in the Forest of Death. In Shippuden she hunts Kabuto; in the Boruto era she teaches at the Academy.",
   },
   'char-shizune': {
@@ -314,7 +314,7 @@ export const NARUTO_JUTSU_LONG: Record<string, Localizable> = {
     en: "Kushina uses them to hold Kurama back on the night of Naruto's birth while Minato completes the seal; Naruto shows similar chains in the Fourth War.",
   },
   'jutsu-evil-sealing-method': {
-    it: "Kakashi la applica al Sigillo Maledetto di Sasuke dopo l'incontro con Orochimaru nella Foresta della Morte: funziona finché Sasuke stesso non decide di cedere al sigillo.",
+    it: "Kakashi la applica al Segno Maledetto di Sasuke dopo l'incontro con Orochimaru nella Foresta della Morte: funziona finché Sasuke stesso non decide di cedere al sigillo.",
     en: "Kakashi applies it to Sasuke's Curse Mark after the encounter with Orochimaru in the Forest of Death: it works until Sasuke himself chooses to give in to the mark.",
   },
   'jutsu-mystical-palm': {

@@ -1744,7 +1744,7 @@ export const narutoCharacters: Character[] = [
       en: "Uchiha genius who wiped out his own clan on Konoha's secret orders.",
     },
     longDescription: {
-      it: 'Doppio agente. Membro Akatsuki per proteggere Konoha. Maestro del Mangekyō Sharingan: Tsukuyomi, Amaterasu, Susanoo.',
+      it: 'Doppio agente. Membro Akatsuki per proteggere Konoha. Maestro dello Sharingan Ipnotico: Tsukuyomi, Amaterasu, Susanoo.',
       en: 'Double agent. Joined the Akatsuki to protect Konoha. Master of the Mangekyō Sharingan: Tsukuyomi, Amaterasu, Susanoo.',
     },
     abilities: ['Sharingan', 'Mangekyō Sharingan', 'Tsukuyomi', 'Amaterasu', 'Susanoo', 'Edo Tensei (resistance)'],
@@ -2126,7 +2126,7 @@ export const narutoCharacters: Character[] = [
     ninjaRank: 'other',
     teamIds: ['team-taka'],
     shortDescription: {
-      it: 'Membro di Taka, fonte del Sigillo Maledetto di Orochimaru.',
+      it: 'Membro di Taka, fonte del Segno Maledetto di Orochimaru.',
       en: "Member of Taka, the source of Orochimaru's Curse Mark.",
     },
     abilities: ['Sage Transformation', 'Body Modification'],

@@ -83,7 +83,7 @@ export const narutoEventsBatch2: TimelineEvent[] = [
     id: 'ev-pain-kills-hanzo',
     title: { it: 'Pain conquista Amegakure', en: 'Pain takes over Amegakure' },
     description: {
-      it: "Dopo la morte di Yahiko, Nagato — con i Sei Cammini di Pain — si vendica di Hanzo della Salamandra e ne stermina il clan. Ame passa sotto il controllo di Pain e Konan, che la governano come un dio e il suo angelo.",
+      it: "Dopo la morte di Yahiko, Nagato — con le Sei Vie di Pain — si vendica di Hanzo della Salamandra e ne stermina il clan. Ame passa sotto il controllo di Pain e Konan, che la governano come un dio e il suo angelo.",
       en: "After Yahiko's death, Nagato — with the Six Paths of Pain — takes revenge on Hanzo of the Salamander and wipes out his clan. Ame falls under the control of Pain and Konan, who rule it as a god and his angel.",
     },
     period: PRE,
@@ -125,9 +125,9 @@ export const narutoEventsBatch2: TimelineEvent[] = [
   /* =============================== SHIPPUDEN =============================== */
   ev({
     id: 'ev-kakuzu-defeated',
-    title: { it: 'Il Rasenshuriken contro Kakuzu', en: 'The Rasenshuriken against Kakuzu' },
+    title: { it: 'Il Rasen Shuriken contro Kakuzu', en: 'The Rasenshuriken against Kakuzu' },
     description: {
-      it: "Naruto arriva sul campo con il Futon: Rasenshuriken appena completato e lo scaglia contro Kakuzu, distruggendone i cuori di riserva. Kakashi finisce l'immortale dell'Akatsuki con il Taglio del Fulmine.",
+      it: "Naruto arriva sul campo con il Futon: Rasen Shuriken appena completato e lo scaglia contro Kakuzu, distruggendone i cuori di riserva. Kakashi finisce l'immortale dell'Akatsuki con il Taglio del Fulmine.",
       en: "Naruto arrives on the battlefield with the freshly completed Wind Release: Rasenshuriken and hurls it at Kakuzu, destroying his spare hearts. Kakashi finishes off the Akatsuki immortal with the Lightning Blade.",
     },
     period: P2,
@@ -290,7 +290,7 @@ export const narutoEventsBatch2: TimelineEvent[] = [
     id: 'ev-madara-jinchuriki',
     title: { it: 'Madara jinchūriki delle Dieci Code', en: 'Madara becomes the Ten-Tails jinchūriki' },
     description: {
-      it: "Madara torna in vita con il Rinne Tensei, riprende il Rinnegan, estrae le Dieci Code da Obito e ne diventa il jinchūriki, raggiungendo la Modalità del Eremita delle Sei Vie. I cinque Kage vengono travolti.",
+      it: "Madara torna in vita con il Rinne Tensei, riprende il Rinnegan, estrae le Dieci Code da Obito e ne diventa il jinchūriki, raggiungendo la Modalità dell'Eremita delle Sei Vie. I cinque Kage vengono travolti.",
       en: "Madara comes back to life through Samsara of Heavenly Life, retrieves the Rinnegan, extracts the Ten-Tails from Obito and becomes its jinchūriki, reaching the Sage of Six Paths Mode. The five Kage are overwhelmed.",
     },
     period: WAR,

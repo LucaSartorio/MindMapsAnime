@@ -114,7 +114,7 @@ export const onepieceCharactersParadise2: Character[] = [
     firstMangaAppearance: "344",
     firstAnimeAppearance: "243",
     longDescription: {
-      it: "Agente della CP9 e barista a Water Seven sotto copertura, utente del frutto Porta Porta con cui apre varchi nello spazio. Primo avversario contro cui Rufy mostrò il Gear Second.",
+      it: "Agente della CP9 e barista a Water Seven sotto copertura, utente del frutto Door Door con cui apre varchi nello spazio. Primo avversario contro cui Rufy mostrò il Gear Second.",
       en: "A CP9 agent and undercover bartender at Water Seven, user of the Door-Door Fruit, opening passages in space. The first opponent against whom Luffy showed the Gear Second.",
     },
     name: 'Blueno',
@@ -124,7 +124,7 @@ export const onepieceCharactersParadise2: Character[] = [
     factionIds: ['faction-op-cp9'],
     arcIds: ['arc-op-water-seven', 'arc-op-enies-lobby'],
     shortDescription: {
-      it: "Agente della CP9, già barista a Water Seven. Utente del Frutto Porta Porta, apre passaggi nell'aria; maestro del Rokushiki.",
+      it: "Agente della CP9, già barista a Water Seven. Utente del Frutto Door Door, apre passaggi nell'aria; maestro del Rokushiki.",
       en: "A CP9 agent, formerly a Water Seven bartender. User of the Door-Door Fruit, he opens passages in the air; a Rokushiki master.",
     },
     status: 'alive',

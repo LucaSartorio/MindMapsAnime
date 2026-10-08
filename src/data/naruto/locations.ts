@@ -701,7 +701,7 @@ export const narutoLocations: Location[] = [
       en: 'Separate dimensions (lava, desert, ice, heart). An off-map pseudo-location.',
     },
     longDescription: {
-      it: 'Le dimensioni accessibili tramite Kekkei Mōra di Kaguya: lava, ghiaccio, sabbia, acida e dimensione del cuore. Non mappabili geograficamente.',
+      it: 'Le dimensioni accessibili tramite Abilità Maggiore di Kaguya: lava, ghiaccio, sabbia, acida e dimensione del cuore. Non mappabili geograficamente.',
       en: "The dimensions reachable through Kaguya's Kekkei Mōra: lava, ice, sand, acid and the heart dimension. They cannot be mapped geographically.",
     },
     arcIds: ['arc-kaguya-final'],

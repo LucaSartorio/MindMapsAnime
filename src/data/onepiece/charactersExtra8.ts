@@ -108,7 +108,7 @@ export const onepieceCharactersExtra8: Character[] = [
     fm: '2', fa: '1',
     it: "Prima nemica di Rufy, piratessa che dopo il Frutto Sdrucciola divenne bellissima e si alleò con Bagy.",
     en: "Luffy's first foe, a pirate who, after the Slip-Slip Fruit, became beautiful and allied with Buggy.",
-    lit: "Albida «la Mazza Chiodata», crudele capitano che teneva Coby in schiavitù, fu il primo avversario di Rufy; mangiato il Frutto Sube Sube divenne liscia e affascinante, unendosi a Bagy nella caccia ai Cappello di Paglia.",
+    lit: "Albida «la Mazza Chiodata», crudele capitano che teneva Coby in schiavitù, fu il primo avversario di Rufy; mangiato il Frutto Swish Swish divenne liscia e affascinante, unendosi a Bagy nella caccia ai Cappello di Paglia.",
     len: "Alvida 'the Iron Mace', the cruel captain who kept Coby enslaved, was Luffy's first opponent; after eating the Slip-Slip Fruit she became smooth and alluring, joining Buggy in the hunt for the Straw Hats.",
     tags: ['east-blue', 'buggy'],
   }),

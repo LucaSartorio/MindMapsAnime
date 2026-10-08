@@ -257,7 +257,7 @@ export const narutoEvents: TimelineEvent[] = [
     worldId: 'world-naruto',
     title: { it: 'Seconda fase: Foresta della Morte', en: 'Second stage: the Forest of Death' },
     description: {
-      it: 'Orochimaru incontra Sasuke e gli imprime il Sigillo Maledetto.',
+      it: 'Orochimaru incontra Sasuke e gli imprime il Segno Maledetto.',
       en: 'Orochimaru meets Sasuke and gives him the Curse Mark.',
     },
     period: { it: 'Naruto Parte I', en: 'Naruto Part I' },
@@ -706,7 +706,7 @@ export const narutoEvents: TimelineEvent[] = [
     worldId: 'world-naruto',
     title: { it: 'Sasuke ottiene il Mangekyō Eterno', en: 'Sasuke obtains the Eternal Mangekyō' },
     description: {
-      it: 'Sasuke trapianta gli occhi di Itachi ottenendo il Mangekyō Sharingan Eterno.',
+      it: 'Sasuke trapianta gli occhi di Itachi ottenendo lo Sharingan Ipnotico Eterno.',
       en: "Sasuke transplants Itachi's eyes and obtains the Eternal Mangekyō Sharingan.",
     },
     period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
@@ -1152,9 +1152,9 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-curse-mark-mastery',
     worldId: 'world-naruto',
-    title: { it: 'Sasuke padroneggia il Sigillo Maledetto', en: 'Sasuke masters the Curse Mark' },
+    title: { it: 'Sasuke padroneggia il Segno Maledetto', en: 'Sasuke masters the Curse Mark' },
     description: {
-      it: 'Sasuke supera la prima fase del Sigillo Maledetto in vista del recupero.',
+      it: 'Sasuke supera la prima fase del Segno Maledetto in vista del recupero.',
       en: 'Sasuke overcomes the first stage of the Curse Mark ahead of the recovery mission.',
     },
     period: { it: 'Naruto Parte I', en: 'Naruto Part I' },
@@ -1739,9 +1739,9 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-curse-mark-given',
     worldId: 'world-naruto',
-    title: { it: 'Sasuke riceve il Sigillo Maledetto', en: 'Sasuke receives the Curse Mark' },
+    title: { it: 'Sasuke riceve il Segno Maledetto', en: 'Sasuke receives the Curse Mark' },
     description: {
-      it: 'Orochimaru morde Sasuke nella Foresta della Morte imprimendogli il Sigillo Maledetto del Cielo.',
+      it: 'Orochimaru morde Sasuke nella Foresta della Morte imprimendogli il Segno Maledetto del Cielo.',
       en: 'Orochimaru bites Sasuke in the Forest of Death, branding him with the Curse Mark of Heaven.',
     },
     period: { it: 'Naruto Parte I', en: 'Naruto Part I' },
@@ -1828,9 +1828,9 @@ export const narutoEvents: TimelineEvent[] = [
   {
     id: 'ev-naruto-rasenshuriken',
     worldId: 'world-naruto',
-    title: { it: 'Naruto padroneggia il Rasenshuriken', en: 'Naruto masters the Rasenshuriken' },
+    title: { it: 'Naruto padroneggia il Rasen Shuriken', en: 'Naruto masters the Rasenshuriken' },
     description: {
-      it: 'Allenamento di Naruto e Yamato. Sviluppo del Wind Release: Rasenshuriken.',
+      it: 'Allenamento di Naruto e Yamato. Sviluppo del Wind Release: Rasen Shuriken.',
       en: 'Naruto trains with Yamato. Development of Wind Release: Rasenshuriken.',
     },
     period: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
@@ -1959,7 +1959,7 @@ export const narutoEvents: TimelineEvent[] = [
     worldId: 'world-naruto',
     title: { it: 'Kakashi riceve il doppio Mangekyō', en: 'Kakashi receives the double Mangekyō' },
     description: {
-      it: 'Obito trasferisce a Kakashi gli occhi col Mangekyō Sharingan completo. Susanoo "Perfect" temporaneo.',
+      it: 'Obito trasferisce a Kakashi gli occhi con lo Sharingan Ipnotico completo. Susanoo "Perfect" temporaneo.',
       en: 'Obito transfers his eyes with the complete Mangekyō Sharingan to Kakashi. A temporary "Perfect" Susanoo.',
     },
     period: { it: 'Quarta Guerra Ninja', en: 'Fourth Shinobi World War' },
