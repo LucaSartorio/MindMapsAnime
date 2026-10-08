@@ -803,6 +803,83 @@
           "updatedAt": "2026-10-07T05:19:50.883Z"
         }
       ]
+    },
+    "guess-character:bleach:orihime-inoue@en": {
+      "renderId": "guess-character:bleach:orihime-inoue@en",
+      "contentId": "guess-character:bleach:orihime-inoue",
+      "template": "guessCharacter",
+      "anime": "bleach",
+      "subject": "orihime-inoue",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-10-08T05:29:04.478Z",
+      "updatedAt": "2026-10-08T05:32:11.128Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-10-08T05:32:11.128Z",
+      "outputFile": "tools/social-engine/output/bleach_orihime-inoue_guess-character_en.mp4",
+      "manifestFile": "tools/social-engine/output/bleach_orihime-inoue_guess-character_en.manifest.json",
+      "sourceFile": "0011-bleach_orihime-inoue_guess-character_en.json",
+      "durationSeconds": 26,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-37732560695-1",
+        "runId": "37732560695",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/37732560695",
+        "video": "videos/bleach_orihime-inoue_guess-character_en.mp4",
+        "manifest": "manifests/bleach_orihime-inoue_guess-character_en.manifest.json",
+        "sha256": "d0e1cf2432b1f25e810d4ded6311a6d3a96331ff194849e65c6236e3cd0b8bb1",
+        "cover": "covers/bleach_orihime-inoue_guess-character_en.cover.png",
+        "expiresAt": "2026-11-07T05:32:11.128Z"
+      },
+      "social": {
+        "contentType": "guess-character",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:orihime-inoue"
+        ],
+        "characterNames": [
+          "Orihime Inoue"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "fact",
+        "hookId": "gc-fact-1",
+        "hook": "These 6 places belong to one Bleach character.",
+        "ctaType": "comment-guess",
+        "cta": "How many places did you recognize?",
+        "durationSeconds": 26,
+        "selection": {
+          "mode": "coldstart",
+          "score": 117.9,
+          "seed": "feed5:h9eea536d:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "These 6 places belong to one Bleach character.\n\n6 places, one Bleach character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nSave it for your next rewatch.\n\n#bleach #anime #animemap #AniMapVerse",
+          "tiktokCaption": "These 6 places belong to one Bleach character. Did you get it right? Tell us how many places it took you 👇 #bleach #anime #animemap #AniMapVerse",
+          "youtubeTitle": "Guess the Bleach Character From the Places They Visited ⚔️",
+          "youtubeDescription": "These 6 places belong to one Bleach character.\n\n6 places, one Bleach character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/bleach/map\n\n#bleach #anime #animemap",
+          "facebookCaption": "These 6 places belong to one Bleach character.\n\n6 places, one Bleach character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/bleach/map",
+          "hashtags": [
+            "#bleach",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
     }
   }
 }
