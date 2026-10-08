@@ -1,0 +1,18 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "guessCharacter",
+  "anime": "bleach",
+  "subject": "orihime-inoue",
+  "locale": "en",
+  "hook": "These 6 places belong to one Bleach character.",
+  "hookType": "fact",
+  "hookId": "gc-fact-1",
+  "cta": "How many places did you recognize?",
+  "ctaType": "comment-guess",
+  "selection": {
+    "mode": "coldstart",
+    "score": 117.9,
+    "seed": "feed5:character-versus:attackontitan:mikasa-ackerman-vs-blackclover-noelle-silva@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +30.0, jitter +5.9; +12 main character; +20 format below its target share (0% < 25%)"
+}
