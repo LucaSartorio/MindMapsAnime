@@ -1,4 +1,4 @@
-name: Temporary Orihime media release
+name: Cleanup temporary Orihime media release
 
 on:
   push:
@@ -8,34 +8,15 @@ on:
 
 permissions:
   contents: write
-  actions: read
 
 jobs:
-  release:
+  cleanup:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Download rendered Orihime artifact
+      - name: Remove temporary public release asset
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          mkdir -p /tmp/orihime-artifact
-          gh run download 37732560695 \
+          gh release delete temp-orihime-20261008 \
             --repo "$GITHUB_REPOSITORY" \
-            --name animapverse-social-render-37732560695-1 \
-            --dir /tmp/orihime-artifact
-          VIDEO="$(find /tmp/orihime-artifact -type f -name 'bleach_orihime-inoue_guess-character_en.mp4' -print -quit)"
-          test -n "$VIDEO"
-          cp "$VIDEO" /tmp/orihime-guess-character.mp4
-
-      - name: Create temporary public release asset
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh release delete temp-orihime-20261008 --repo "$GITHUB_REPOSITORY" -y --cleanup-tag || true
-          gh release create temp-orihime-20261008 \
-            /tmp/orihime-guess-character.mp4#orihime-guess-character.mp4 \
-            --repo "$GITHUB_REPOSITORY" \
-            --title "Temporary Orihime publishing asset" \
-            --notes "Temporary media handoff for AniMapVerse publishing."
+            -y --cleanup-tag
