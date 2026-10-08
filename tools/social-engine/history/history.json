@@ -652,7 +652,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-10-07T05:04:07.011Z",
-      "updatedAt": "2026-10-07T05:19:50.883Z",
+      "updatedAt": "2026-10-08T05:13:10.675Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-10-07T05:06:11.745Z",
       "outputFile": "tools/social-engine/output/attackontitan_mikasa-ackerman-vs-blackclover-noelle-silva_character-versus_en.mp4",
@@ -721,27 +721,28 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "scheduled",
-      "publishedAt": null,
+      "publicationStatus": "partiallyPublished",
+      "publishedAt": "2026-10-07T12:04:09+02:00",
       "platforms": [
         {
           "platform": "instagram",
           "provider": "metricool",
-          "status": "scheduled",
+          "status": "published",
           "scheduledFor": "2026-10-07T12:00:00+02:00",
           "scheduledAt": "2026-10-07T05:10:35Z",
-          "publishedAt": null,
+          "publishedAt": "2026-10-07T12:04:47+02:00",
           "failedAt": null,
-          "providerPostId": "390028543",
+          "providerPostId": "390049109",
           "providerPostUuid": "-4409985862028210284",
           "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-4409985862028210284",
-          "publicUrl": null,
+          "publicUrl": "https://www.instagram.com/reel/DeMGgbADtP_/",
           "lastError": null,
           "attempts": 1,
           "receipts": [
-            "attackontitan_mikasa-ackerman-vs-blackclover-noelle-silva_character-versus_en.instagram.scheduled.0e338c3bf57f"
+            "attackontitan_mikasa-ackerman-vs-blackclover-noelle-silva_character-versus_en.instagram.scheduled.0e338c3bf57f",
+            "attackontitan_mikasa-ackerman-vs-blackclover-noelle-silva_character-versus_en.instagram.published.c2e1b41d91fd"
           ],
-          "updatedAt": "2026-10-07T05:19:50.883Z"
+          "updatedAt": "2026-10-08T05:13:10.675Z"
         },
         {
           "platform": "facebook",
@@ -765,21 +766,22 @@
         {
           "platform": "tiktok",
           "provider": "metricool",
-          "status": "scheduled",
+          "status": "published",
           "scheduledFor": "2026-10-07T12:00:00+02:00",
           "scheduledAt": "2026-10-07T05:10:35Z",
-          "publishedAt": null,
+          "publishedAt": "2026-10-07T12:04:09+02:00",
           "failedAt": null,
           "providerPostId": "390028835",
           "providerPostUuid": "6541029687587389784",
           "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=6541029687587389784",
-          "publicUrl": null,
+          "publicUrl": "https://www.tiktok.com/@interactiveanimeworlds/video/7693864641012829462",
           "lastError": null,
           "attempts": 1,
           "receipts": [
-            "attackontitan_mikasa-ackerman-vs-blackclover-noelle-silva_character-versus_en.tiktok.scheduled.ab6d2f3c7a56"
+            "attackontitan_mikasa-ackerman-vs-blackclover-noelle-silva_character-versus_en.tiktok.scheduled.ab6d2f3c7a56",
+            "attackontitan_mikasa-ackerman-vs-blackclover-noelle-silva_character-versus_en.tiktok.published.a20ed00f1a89"
           ],
-          "updatedAt": "2026-10-07T05:19:50.883Z"
+          "updatedAt": "2026-10-08T05:13:10.675Z"
         },
         {
           "platform": "youtube",
