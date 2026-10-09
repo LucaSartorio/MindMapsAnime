@@ -57,8 +57,8 @@ export const jjkNations: Nation[] = [
     en: "The old capital, home to the sister school of Tokyo's jujutsu high and a stronghold of tradition: the great clans and the conservative leadership of the jujutsu world look on from here. One of the Culling Game colonies.",
   }, { type: 'great_nation', capitalLocationId: 'loc-jjk-kyoto', color: '#3f7fb5' }),
   pref('kagoshima', 'Kagoshima', '鹿児島県', { x: 393, y: 1470 }, {
-    it: "La prefettura più meridionale di Kyushu, con il vulcano Sakurajima: la colonia di Sakurajima è quella in cui entrano Maki e gli studenti di Kyoto, e dove Maki distrugge lo spirito di Naoya.",
-    en: 'The southernmost prefecture of Kyushu, with the Sakurajima volcano: the Sakurajima colony is the one Maki and the Kyoto students enter, and where Maki destroys Naoya\'s spirit.',
+    it: "La prefettura più meridionale di Kyushu, con il vulcano Sakurajima: la colonia di Sakurajima è quella in cui Maki ritrova Noritoshi Kamo e distrugge lo spirito di Naoya.",
+    en: 'The southernmost prefecture of Kyushu, with the Sakurajima volcano: the Sakurajima colony is where Maki meets up with Noritoshi Kamo and destroys Naoya\'s spirit.',
   }),
   pref('okinawa', 'Okinawa', '沖縄県', { x: 1540, y: 1400 }, {
     it: "L'arcipelago a sud-ovest del Giappone. Nel 2006 Gojo e Geto vi portano Riko Amanai per salvare la sua governante Kuroi, e le regalano un giorno di vacanza al mare.",

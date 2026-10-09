@@ -53,7 +53,7 @@ export const jjkRoutes: Route[] = [
       s(6, 'loc-jjk-jh-forest', 'evt-jjk-todo-vs-yuji', { it: 'La foresta del Goodwill', en: 'The Goodwill forest' }, { it: 'Todo e il primo Black Flash.', en: 'Todo and the first Black Flash.' }),
       s(7, 'loc-jjk-yasohachi-bridge', 'evt-jjk-yasohachi', { it: 'Il ponte Yasohachi', en: 'Yasohachi Bridge' }, { it: 'Contro Eso e Kechizu.', en: 'Against Eso and Kechizu.' }),
       s(8, 'loc-jjk-meiji-jingumae', 'evt-jjk-meiji-jingumae', { it: 'Meiji-jingumae', en: 'Meiji-jingumae' }, { it: 'Dentro il Velo di Shibuya.', en: 'Inside the Shibuya Veil.' }),
-      s(9, 'loc-jjk-shibuya-station', 'evt-jjk-yuji-vs-choso', { it: 'La stazione di Shibuya', en: 'Shibuya Station' }, { it: 'Choso e i dieci dita.', en: 'Choso and the ten fingers.' }),
+      s(9, 'loc-jjk-shibuya-station', 'evt-jjk-yuji-vs-choso', { it: 'La stazione di Shibuya', en: 'Shibuya Station' }, { it: 'Choso e le dieci dita.', en: 'Choso and the ten fingers.' }),
       s(10, 'loc-jjk-dogenzaka', 'evt-jjk-yuji-todo-vs-mahito', { it: 'Fra le macerie', en: 'Among the ruins' }, { it: 'Con Todo contro Mahito.', en: 'With Todo against Mahito.' }),
       s(11, 'loc-jjk-shibuya', 'evt-jjk-yuta-vs-yuji', { it: "L'esecutore", en: 'The executioner' }, { it: 'Yuta finge di ucciderlo.', en: 'Yuta pretends to kill him.' }),
       s(12, 'loc-jjk-tombs-of-the-star', 'evt-jjk-tengen-meeting', { it: 'Da Tengen', en: 'With Tengen' }),
@@ -124,7 +124,7 @@ export const jjkRoutes: Route[] = [
     id: 'route-jjk-hidden-inventory',
     type: 'mission',
     name: 'Hidden Inventory: the Star Plasma Vessel',
-    localizedName: { it: 'Hidden Inventory: il Recipiente del Plasma Stellare', en: 'Hidden Inventory: the Star Plasma Vessel' },
+    localizedName: { it: 'Hidden Inventory: il Contenitore del Plasma Stellare', en: 'Hidden Inventory: the Star Plasma Vessel' },
     group: GROUP.story,
     description: {
       it: "2006: Gojo e Geto, studenti al secondo anno, scortano Riko Amanai fino alla Tomba delle Stelle. Okinawa, il rientro a Tokyo, l'agguato di Toji e la fine di un'amicizia.",
