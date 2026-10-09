@@ -908,8 +908,8 @@ export const bleachEvents: TimelineEvent[] = [
     id: 'evt-bl-ichigo-vs-ulquiorra-first',
     title: { it: 'Primo scontro con Ulquiorra a Las Noches', en: 'First clash with Ulquiorra in Las Noches' },
     description: {
-      it: "Ichigo trova Ulquiorra e lo affronta con Bankai e maschera. Ulquiorra non libera nemmeno la spada: gli trapassa il petto con un Cero e lo lascia morente.",
-      en: "Ichigo finds Ulquiorra and faces him with Bankai and mask. Ulquiorra doesn't even release his sword: he pierces his chest with a Cero and leaves him dying.",
+      it: "Ichigo trova Ulquiorra e lo affronta con Bankai e maschera. Ulquiorra non libera nemmeno la spada: gli trapassa il petto con la mano e lo lascia morente.",
+      en: "Ichigo finds Ulquiorra and faces him with Bankai and mask. Ulquiorra doesn't even release his sword: he pierces his chest with his hand and leaves him dying.",
     },
     period: P.arrancar,
     arcId: 'arc-bl-hueco-mundo',
@@ -953,8 +953,8 @@ export const bleachEvents: TimelineEvent[] = [
     id: 'evt-bl-ichigo-vs-grimmjow',
     title: { it: 'Ichigo contro Grimmjow: la rivincita', en: 'Ichigo vs Grimmjow: the rematch' },
     description: {
-      it: "Grimmjow costringe Orihime a curare Ichigo per affrontarlo al massimo, poi libera Pantera. Ichigo ferma a mani nude la Desgarrón e vince; Nnoitra abbatte Grimmjow alle spalle.",
-      en: 'Grimmjow forces Orihime to heal Ichigo so he can face him at full strength, then unleashes Pantera. Ichigo stops Desgarrón bare-handed and wins; Nnoitra strikes Grimmjow down from behind.',
+      it: "Grimmjow costringe Orihime a curare Ichigo per affrontarlo al massimo, poi libera Pantera. Ichigo spezza la Desgarrón con la spada e vince; Nnoitra abbatte Grimmjow alle spalle.",
+      en: 'Grimmjow forces Orihime to heal Ichigo so he can face him at full strength, then unleashes Pantera. Ichigo cuts through Desgarrón with his sword and wins; Nnoitra strikes Grimmjow down from behind.',
     },
     period: P.arrancar,
     arcId: 'arc-bl-hueco-mundo',
@@ -1071,8 +1071,8 @@ export const bleachEvents: TimelineEvent[] = [
       en: "The Tenteikūra pillars hold the replica in Karakura's place. Barragan sends his Fracción to bring them down: Ikkaku against Poww, Yumichika against Charlotte, Kira against Abirama, Hisagi against Findorr.",
     },
     longDescription: {
-      it: "Un pilastro crolla quando Ikkaku viene sconfitto; Komamura interviene con il Bankai e lo rimette in sesto la Divisione Kidō. Gli altri tre difensori vincono. L'assegnazione di ciascun duello a un pilastro preciso, sulla mappa, è indicativa.",
-      en: "One pillar falls when Ikkaku is defeated; Komamura steps in with his Bankai and the Kidō Corps restores it. The other three defenders win. Assigning each duel to a specific pillar on the map is indicative.",
+      it: "Un pilastro crolla quando Ikkaku viene sconfitto; Iba trattiene il ritorno della città vera mentre Komamura sconfigge Poww con il Bankai. Gli altri tre difensori vincono. L'assegnazione di ciascun duello a un pilastro preciso, sulla mappa, è indicativa.",
+      en: "One pillar falls when Ikkaku is defeated; Iba holds back the real town's return while Komamura defeats Poww with his Bankai. The other three defenders win. Assigning each duel to a specific pillar on the map is indicative.",
     },
     period: P.arrancar,
     arcId: 'arc-bl-fake-karakura',
@@ -1560,8 +1560,8 @@ export const bleachEvents: TimelineEvent[] = [
     id: 'evt-bl-zangetsu-reforged',
     title: { it: 'Zangetsu rinasce', en: 'Zangetsu reborn' },
     description: {
-      it: "Al Hōōden Nimaiya respinge Ichigo; Isshin gli racconta di Masaki e della sua natura. Ichigo capisce che il «vecchio Zangetsu» è il suo potere Quincy e il vero Zangetsu è il Hollow, e ottiene le due nuove lame.",
-      en: "At the Hōōden Nimaiya turns Ichigo away; Isshin tells him about Masaki and his own nature. Ichigo realises that 'old Zangetsu' is his Quincy power and the true Zangetsu is the Hollow, and receives his two new blades.",
+      it: "Al Hōōden Nimaiya respinge Ichigo e lo rimanda a Karakura, dove Isshin gli racconta di Masaki e della sua natura. Ichigo capisce che il «vecchio Zangetsu» è il suo potere Quincy e il vero Zangetsu è il Hollow, e ottiene le due nuove lame.",
+      en: "At the Hōōden Nimaiya turns Ichigo away and sends him back to Karakura, where Isshin tells him about Masaki and his own nature. Ichigo realises that 'old Zangetsu' is his Quincy power and the true Zangetsu is the Hollow, and receives his two new blades.",
     },
     longDescription: {
       it: "È il cuore emotivo della guerra di mille anni: il «vecchio» che aveva sempre frenato Ichigo lo aveva fatto per amore, per non vederlo diventare uno Shinigami e combattere. Si congeda, e Ichigo accetta per intero chi è.",

@@ -485,8 +485,8 @@ export const bleachCharactersKarakura: Character[] = [
       en: "Uryū's father, director of the Karakura hospital: an extremely powerful Quincy who scorns the Quincy and keeps saying 'you can't make a living' with that power.",
     },
     longDescription: {
-      it: "Dietro la freddezza c'è un lutto: sua moglie Kanae Katagiri morì per l'Auswählen di Yhwach, lo stesso giorno di Masaki. Ryūken restituisce i poteri al figlio, gli insegna a combattere e, alla fine, gli consegna la freccia d'argento capace di bloccare per un istante l'Almighty di Yhwach.",
-      en: "Behind the coldness lies grief: his wife Kanae Katagiri died of Yhwach's Auswählen, on the same day as Masaki. Ryūken gives his son his powers back, teaches him to fight and, in the end, hands him the silver arrow able to freeze Yhwach's Almighty for an instant.",
+      it: "Dietro la freddezza c'è un lutto: sua moglie Kanae Katagiri morì per l'Auswählen di Yhwach: colpita lo stesso giorno di Masaki, si spense tre mesi dopo. Ryūken restituisce i poteri al figlio, gli insegna a combattere e, alla fine, gli consegna la freccia d'argento capace di bloccare per un istante l'Almighty di Yhwach.",
+      en: "Behind the coldness lies grief: his wife Kanae Katagiri died of Yhwach's Auswählen: struck on the same day as Masaki, she passed away three months later. Ryūken gives his son his powers back, teaches him to fight and, in the end, hands him the silver arrow able to freeze Yhwach's Almighty for an instant.",
     },
     status: 'alive',
     tags: ['quincy', 'ishida', 'medico'],
@@ -629,8 +629,8 @@ export const bleachCharactersKarakura: Character[] = [
       en: "The scatterbrained shopkeeper in a hat and clogs who sells sweets in Karakura. In truth he is the former captain of the Twelfth Division, founder of the Research Institute and inventor of the Hōgyoku.",
     },
     longDescription: {
-      it: "Centodieci anni fa Urahara capì troppo tardi cosa stava facendo Aizen ai suoi compagni, tentò di salvarli e fu condannato al suo posto. Da allora prepara la rivincita dal Mondo dei Vivi: allena Ichigo, gli apre la strada per la Soul Society e per Hueco Mundo, e sigilla Aizen con un Kidō innestato nel corpo durante lo scontro. Nella guerra contro il Wandenreich rivela finalmente il suo Bankai, Kannonbiraki Benihime Aratame.",
-      en: "A hundred and ten years ago Urahara realised too late what Aizen was doing to his comrades, tried to save them and was condemned in his stead. Since then he has been preparing his comeback from the World of the Living: he trains Ichigo, opens the way to the Soul Society and to Hueco Mundo for him, and seals Aizen with a Kidō planted in his body during the fight. In the war against the Wandenreich he finally reveals his Bankai, Kannonbiraki Benihime Aratame.",
+      it: "Cento anni fa Urahara capì troppo tardi cosa stava facendo Aizen ai suoi compagni, tentò di salvarli e fu condannato al suo posto. Da allora prepara la rivincita dal Mondo dei Vivi: allena Ichigo, gli apre la strada per la Soul Society e per Hueco Mundo, e sigilla Aizen con un Kidō innestato nel corpo durante lo scontro. Nella guerra contro il Wandenreich rivela finalmente il suo Bankai, Kannonbiraki Benihime Aratame.",
+      en: "A hundred years ago Urahara realised too late what Aizen was doing to his comrades, tried to save them and was condemned in his stead. Since then he has been preparing his comeback from the World of the Living: he trains Ichigo, opens the way to the Soul Society and to Hueco Mundo for him, and seals Aizen with a Kidō planted in his body during the fight. In the war against the Wandenreich he finally reveals his Bankai, Kannonbiraki Benihime Aratame.",
     },
     transformations: [
       stage('urahara-shikai', 1, 'Benihime (Shikai)', 'state', { it: "«Okiro, Benihime»: la spada nascosta nel bastone da passeggio, che lancia lame di energia scarlatta e crea scudi.", en: '"Awaken, Benihime": the sword hidden in his walking cane, which fires blades of crimson energy and creates shields.' }, 'arc-bl-agent'),

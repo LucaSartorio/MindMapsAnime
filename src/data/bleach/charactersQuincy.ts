@@ -314,8 +314,8 @@ export const bleachCharactersQuincy: Character[] = [
     eventIds: ['evt-bl-ichigo-vs-quilge'],
     arcIds: ['arc-bl-tybw-blood-warfare'],
     shortDescription: {
-      it: "Il comandante della campagna del Wandenreich a Hueco Mundo, lettera «J», The Jail: imprigiona chiunque in una gabbia da cui si esce solo dall'interno.",
-      en: "Commander of the Wandenreich's Hueco Mundo campaign, letter 'J', The Jail: he imprisons anyone in a cage that can only be broken from the inside.",
+      it: "Il comandante della campagna del Wandenreich a Hueco Mundo, lettera «J», The Jail: imprigiona chiunque in una gabbia che si può spezzare solo dall'esterno.",
+      en: "Commander of the Wandenreich's Hueco Mundo campaign, letter 'J', The Jail: he imprisons anyone in a cage that can only be broken from the outside.",
     },
     longDescription: {
       it: "Formale e spietato, «caccia» gli Arrancar per arruolarli. Ichigo lo batte, ma la sua prigione lo trattiene abbastanza a lungo da impedirgli di salvare Yamamoto.",

@@ -691,8 +691,8 @@ export const bleachCharactersOthers: Character[] = [
       en: "A damned soul of Hell, wearing Hell's chains, who appears in the one-shot 'No Breaths From Hell'. He manages to get out through the gates and drags Ichigo towards Hell.",
     },
     longDescription: {
-      it: "Il one-shot di Tite Kubo per i vent'anni della serie lascia aperta la sua storia, e con essa quella dei capitani defunti finiti nel Jigoku. Le notizie su un possibile adattamento animato dell'«arco dell'Inferno» sono ancora da confermare.",
-      en: "Tite Kubo's one-shot for the series' twentieth anniversary leaves his story open, and with it that of the dead captains who ended up in Hell. News of a possible anime adaptation of the 'Hell arc' remains to be confirmed.",
+      it: "Il one-shot di Tite Kubo per i vent'anni della serie lascia aperta la sua storia, e con essa quella dei capitani defunti finiti nel Jigoku.",
+      en: "Tite Kubo's one-shot for the series' twentieth anniversary leaves his story open, and with it that of the dead captains who ended up in Hell.",
     },
     status: 'unknown',
     tags: ['inferno', 'one-shot'],

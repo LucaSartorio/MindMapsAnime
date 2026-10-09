@@ -65,8 +65,8 @@ export const bleachAbilities: Jutsu[] = [
     en: '"Chire, Senbonzakura" — "Scatter": the blade dissolves into a thousand cherry-blossom fragments. Bankai: Senbonzakura Kageyoshi, a hundred million blades; the Senkei and Shūkei: Hakuteiken forms. Äs Nödt steals it in the Quincy war.',
   }, { japaneseName: '千本桜' }),
   ab('hyorinmaru', 'Hyōrinmaru', 'zanpakuto', SB, ['hitsugaya', 'cang-du'], {
-    it: "«Sōten ni zase, Hyōrinmaru» — «Siedi sui cieli gelati»: la più potente Zanpakutō di ghiaccio, che controlla anche il meteo. Bankai: Daiguren Hyōrinmaru, ali di ghiaccio e tredici fiori; nella forma completa Hitsugaya appare adulto.",
-    en: '"Sōten ni zase, Hyōrinmaru" — "Sit upon the frozen heavens": the most powerful ice Zanpakutō, which also controls the weather. Bankai: Daiguren Hyōrinmaru, ice wings and thirteen flowers; in its complete form Hitsugaya appears adult.',
+    it: "«Sōten ni zase, Hyōrinmaru» — «Siedi sui cieli gelati»: la più potente Zanpakutō di ghiaccio, che controlla anche il meteo. Bankai: Daiguren Hyōrinmaru, ali di ghiaccio e tre fiori; nella forma completa Hitsugaya appare adulto.",
+    en: '"Sōten ni zase, Hyōrinmaru" — "Sit upon the frozen heavens": the most powerful ice Zanpakutō, which also controls the weather. Bankai: Daiguren Hyōrinmaru, ice wings and three flowers; in its complete form Hitsugaya appears adult.',
   }, { japaneseName: '氷輪丸' }),
   ab('haineko', 'Haineko', 'zanpakuto', S, ['rangiku'], {
     it: "«Unare, Haineko» — «Ringhia»: la lama si dissolve in una nube di cenere tagliente che Rangiku dirige agitando l'elsa. Avvolge e lacera l'avversario da ogni lato.",
@@ -393,8 +393,8 @@ export const bleachAbilities: Jutsu[] = [
     en: "Äs Nödt's Schrift 'F': thorns that inject pure fear into the enemy's body. It is not enough against Rukia's Bankai, which freezes even fear.",
   }),
   ab('jail', 'The Jail', 'quincy', SCHRIFT, ['quilge'], {
-    it: "Lo Schrift «J» di Quilge Opie: una prigione di reishi che si può spezzare solo dall'interno. Trattiene Ichigo a Hueco Mundo mentre Yamamoto muore.",
-    en: "Quilge Opie's Schrift 'J': a prison of reishi that can only be broken from the inside. It holds Ichigo in Hueco Mundo while Yamamoto dies.",
+    it: "Lo Schrift «J» di Quilge Opie: una prigione di reishi che si può spezzare solo dall'esterno. Trattiene Ichigo a Hueco Mundo mentre Yamamoto muore.",
+    en: "Quilge Opie's Schrift 'J': a prison of reishi that can only be broken from the outside. It holds Ichigo in Hueco Mundo while Yamamoto dies.",
   }),
   ab('superstar', 'The Superstar', 'quincy', SCHRIFT, ['mask'], {
     it: "Lo Schrift «S» di Mask De Masculine: diventa più forte quanto più il suo assistente lo acclama, come un eroe del wrestling.",

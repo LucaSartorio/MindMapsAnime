@@ -450,8 +450,8 @@ export const bleachFactions: Faction[] = [
     nationId: 'nation-bl-living-world',
     villageLocationId: 'loc-bl-visored-warehouse',
     description: {
-      it: "Otto Shinigami che centodieci anni fa furono hollowificati da Aizen e condannati dalla Central 46. Esiliati nel Mondo dei Vivi, hanno imparato a dominare il Hollow con una maschera.",
-      en: 'Eight Soul Reapers who a hundred and ten years ago were Hollowfied by Aizen and condemned by Central 46. Exiled to the World of the Living, they learned to master the Hollow with a mask.',
+      it: "Otto Shinigami che cento anni fa furono hollowificati da Aizen e condannati dalla Central 46. Esiliati nel Mondo dei Vivi, hanno imparato a dominare il Hollow con una maschera.",
+      en: 'Eight Soul Reapers who a hundred years ago were Hollowfied by Aizen and condemned by Central 46. Exiled to the World of the Living, they learned to master the Hollow with a mask.',
     },
     longDescription: {
       it: "Shinji, Hiyori, Lisa, Love, Rose, Kensei, Mashiro e Hachigen addestrano Ichigo a controllare il proprio Hollow e scendono in campo contro Aizen alla Karakura replica. Dopo la sua sconfitta, quattro di loro tornano capitani o vicecapitani del Gotei 13.",

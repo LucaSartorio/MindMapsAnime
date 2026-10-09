@@ -758,7 +758,7 @@ export const bleachCharactersGotei: Character[] = [
     },
     transformations: [
       stage('hitsugaya-shikai', 1, 'Hyōrinmaru (Shikai)', 'state', { it: "«Sōten ni zase, Hyōrinmaru» — «Siedi sui cieli gelati»: un drago di ghiaccio che sgorga dalla lama.", en: '"Sōten ni zase, Hyōrinmaru" — "Sit upon the frozen heavens": an ice dragon pouring from the blade.' }, 'arc-bl-ss-rescue'),
-      stage('hitsugaya-bankai', 2, 'Daiguren Hyōrinmaru (Bankai)', 'state', { it: 'Ali e coda di ghiaccio e tredici fiori di ghiaccio alle spalle che scandiscono il tempo rimasto.', en: 'Wings and a tail of ice, and thirteen ice flowers behind him counting down the time left.' }, 'arc-bl-ss-rescue'),
+      stage('hitsugaya-bankai', 2, 'Daiguren Hyōrinmaru (Bankai)', 'state', { it: 'Ali e coda di ghiaccio e tre fiori di ghiaccio alle spalle che scandiscono il tempo rimasto.', en: 'Wings and a tail of ice, and three ice flowers behind him counting down the time left.' }, 'arc-bl-ss-rescue'),
       stage('hitsugaya-adult', 3, 'Daiguren Hyōrinmaru (completo)', 'state', { it: "Il Bankai completato, che lo fa apparire adulto: la sua vera forma una volta raggiunta la maturità.", en: 'The completed Bankai, which makes him appear adult: his true form once he reaches maturity.' }, 'arc-bl-tybw-conflict'),
     ],
     status: 'alive',

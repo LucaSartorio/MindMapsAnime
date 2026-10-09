@@ -709,8 +709,8 @@ export const bleachLocations: Location[] = [
     x: 140,
     y: 120,
     shortDescription: {
-      it: "Uno dei quattro pilastri che tengono al suo posto la Karakura replica: se cadessero, la città vera tornerebbe. Lo difende Ikkaku Madarame, che lo vede abbattere dal gigantesco Poww prima di fermarlo con il suo Bankai.",
-      en: "One of the four pillars that hold the replica Karakura in place: should they fall, the real town would come back. Ikkaku Madarame guards it, sees it toppled by the giant Poww and then stops him with his Bankai.",
+      it: "Uno dei quattro pilastri che tengono al suo posto la Karakura replica: se cadessero, la città vera tornerebbe. Lo difende Ikkaku Madarame, sconfitto dal gigantesco Poww che lo abbatte; è poi Komamura a battere Poww con il suo Bankai.",
+      en: "One of the four pillars that hold the replica Karakura in place: should they fall, the real town would come back. Ikkaku Madarame guards it and is beaten by the giant Poww, who topples it; Komamura then defeats Poww with his Bankai.",
     },
     nationId: 'nation-bl-living-world',
     characterIds: ['char-bl-ikkaku', 'char-bl-poww'],
