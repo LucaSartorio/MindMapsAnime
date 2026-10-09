@@ -1,19 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-09T05:01:57.092Z",
-  "status": "ready",
+  "generatedAt": "2026-10-09T05:10:30.674Z",
+  "status": "backlog",
   "feedTail": [
-    {
-      "renderId": "character-journey:dragonball:goku:part-01@en",
-      "contentType": "character-journey",
-      "animes": [
-        "dragonball"
-      ],
-      "characters": [
-        "dragonball:goku"
-      ],
-      "part": 1
-    },
     {
       "renderId": "character-journey:naruto:naruto-uzumaki:part-01@en",
       "contentType": "character-journey",
@@ -70,6 +59,19 @@
         "bleach:orihime-inoue"
       ],
       "part": null
+    },
+    {
+      "renderId": "character-versus:onepiece:sanji-vs-blackclover-yami-sukehiro@en",
+      "contentType": "character-versus",
+      "animes": [
+        "onepiece",
+        "blackclover"
+      ],
+      "characters": [
+        "onepiece:sanji",
+        "blackclover:yami-sukehiro"
+      ],
+      "part": null
     }
   ],
   "rules": {
@@ -90,492 +92,28 @@
     "error": null
   },
   "backlog": {
-    "unpublished": [],
+    "unpublished": [
+      {
+        "renderId": "character-versus:onepiece:sanji-vs-blackclover-yami-sukehiro@en",
+        "contentType": "character-versus",
+        "renderedAt": "2026-10-09T05:10:29.715Z",
+        "missing": [
+          "instagram",
+          "facebook",
+          "tiktok",
+          "youtube"
+        ]
+      }
+    ],
     "unfinished": [],
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "feed6:guess-character:bleach:orihime-inoue@en:samples0",
-  "rejected": {
-    "JOURNEY_PART_ORDER": 44,
-    "MAX_SAME_CHARACTER_STREAK": 2
-  },
-  "considered": 693,
-  "trace": {
-    "traceVersion": 1,
-    "mode": "coldstart",
-    "seed": "feed6:guess-character:bleach:orihime-inoue@en:samples0",
-    "analytics": {
-      "coldStart": true,
-      "samples": 0,
-      "contents": 0,
-      "minimumSamples": 8
-    },
-    "recent": [
-      {
-        "renderId": "character-journey:dragonball:goku:part-01@en",
-        "contentType": "character-journey",
-        "animes": [
-          "dragonball"
-        ],
-        "characters": [
-          "dragonball:goku"
-        ]
-      },
-      {
-        "renderId": "character-journey:naruto:naruto-uzumaki:part-01@en",
-        "contentType": "character-journey",
-        "animes": [
-          "naruto"
-        ],
-        "characters": [
-          "naruto:naruto-uzumaki"
-        ]
-      },
-      {
-        "renderId": "character-journey:onepiece:monkey-d-luffy:part-01@en",
-        "contentType": "character-journey",
-        "animes": [
-          "onepiece"
-        ],
-        "characters": [
-          "onepiece:monkey-d-luffy"
-        ]
-      },
-      {
-        "renderId": "character-journey:hunterxhunter:killua-zoldyck:part-01@en",
-        "contentType": "character-journey",
-        "animes": [
-          "hunterxhunter"
-        ],
-        "characters": [
-          "hunterxhunter:killua-zoldyck"
-        ]
-      },
-      {
-        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-blackclover-noelle-silva@en",
-        "contentType": "character-versus",
-        "animes": [
-          "attackontitan",
-          "blackclover"
-        ],
-        "characters": [
-          "attackontitan:mikasa-ackerman",
-          "blackclover:noelle-silva"
-        ]
-      },
-      {
-        "renderId": "guess-character:bleach:orihime-inoue@en",
-        "contentType": "guess-character",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:orihime-inoue"
-        ]
-      }
-    ],
-    "constraints": {
-      "sameAnimeStreak": {
-        "animes": [
-          "bleach"
-        ],
-        "length": 1
-      },
-      "forcedAnimeRotation": false,
-      "blockedAnimes": [],
-      "blockedCharacters": [
-        "bleach:orihime-inoue"
-      ],
-      "characterCooldown": [
-        "dragonball:goku",
-        "naruto:naruto-uzumaki",
-        "onepiece:monkey-d-luffy",
-        "hunterxhunter:killua-zoldyck",
-        "attackontitan:mikasa-ackerman",
-        "blackclover:noelle-silva",
-        "bleach:orihime-inoue"
-      ],
-      "contentTypeStreak": {
-        "contentType": "guess-character",
-        "length": 1
-      }
-    },
-    "hardRulesTriggered": {
-      "JOURNEY_PART_ORDER": 44,
-      "MAX_SAME_CHARACTER_STREAK": 2
-    },
-    "candidates": {
-      "considered": 693,
-      "eligible": 648,
-      "byContentType": {
-        "character-journey": {
-          "considered": 418,
-          "eligible": 373
-        },
-        "guess-character": {
-          "considered": 87,
-          "eligible": 87
-        },
-        "character-versus": {
-          "considered": 188,
-          "eligible": 188
-        }
-      }
-    },
-    "excluded": [
-      {
-        "renderId": "character-journey:bleach:orihime-inoue:part-01@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:orihime-inoue"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: bleach:orihime-inoue is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:bleach:orihime-inoue:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:orihime-inoue"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER",
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)",
-          "character streak: bleach:orihime-inoue is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:blackclover:asta:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:asta"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:blackclover:asta:part-03@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:asta"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 3 before Part 2 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:blackclover:noelle-silva:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:noelle-silva"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:blackclover:yami-sukehiro:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:yami-sukehiro"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:blackclover:yuno-grinberryall:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:yuno-grinberryall"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:bleach:byakuya-kuchiki:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:byakuya-kuchiki"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:bleach:ichigo-kurosaki:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:ichigo-kurosaki"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:bleach:ichigo-kurosaki:part-03@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:ichigo-kurosaki"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 3 before Part 2 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      }
-    ],
-    "status": "selected",
-    "selectedId": "character-versus:onepiece:sanji-vs-blackclover-yami-sukehiro",
-    "renderId": "character-versus:onepiece:sanji-vs-blackclover-yami-sukehiro@en",
-    "contentType": "character-versus",
-    "animes": [
-      "onepiece",
-      "blackclover"
-    ],
-    "characters": [
-      "onepiece:sanji",
-      "blackclover:yami-sukehiro"
-    ],
-    "score": 99.5,
-    "base": 80.83,
-    "reasons": [
-      "coldstart: novelty +25.0, jitter +5.8",
-      "+12 main character",
-      "+6.7 format below its target share (17% < 25%)"
-    ],
-    "ranked": [
-      {
-        "renderId": "character-versus:onepiece:sanji-vs-blackclover-yami-sukehiro@en",
-        "contentType": "character-versus",
-        "animes": [
-          "onepiece",
-          "blackclover"
-        ],
-        "score": 99.5,
-        "reasons": [
-          "coldstart: novelty +25.0, jitter +5.8",
-          "+12 main character",
-          "+6.7 format below its target share (17% < 25%)"
-        ]
-      },
-      {
-        "renderId": "character-versus:attackontitan:armin-arlert-vs-blackclover-asta@en",
-        "contentType": "character-versus",
-        "animes": [
-          "attackontitan",
-          "blackclover"
-        ],
-        "score": 99.42,
-        "reasons": [
-          "coldstart: novelty +25.0, jitter +5.8",
-          "+12 main character",
-          "+6.7 format below its target share (17% < 25%)"
-        ]
-      },
-      {
-        "renderId": "character-versus:naruto:sasuke-uchiha-vs-hunterxhunter-gon-freecss@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "hunterxhunter"
-        ],
-        "score": 99.41,
-        "reasons": [
-          "coldstart: novelty +25.0, jitter +5.7",
-          "+12 main character",
-          "+6.7 format below its target share (17% < 25%)"
-        ]
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:kurapika-vs-dragonball-vegeta@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "dragonball"
-        ],
-        "score": 99.3,
-        "reasons": [
-          "coldstart: novelty +25.0, jitter +5.6",
-          "+12 main character",
-          "+6.7 format below its target share (17% < 25%)"
-        ]
-      },
-      {
-        "renderId": "character-versus:dragonball:vegeta-vs-blackclover-asta@en",
-        "contentType": "character-versus",
-        "animes": [
-          "dragonball",
-          "blackclover"
-        ],
-        "score": 99.23,
-        "reasons": [
-          "coldstart: novelty +25.0, jitter +5.6",
-          "+12 main character",
-          "+6.7 format below its target share (17% < 25%)"
-        ]
-      },
-      {
-        "renderId": "character-versus:naruto:obito-uchiha-vs-blackclover-asta@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "blackclover"
-        ],
-        "score": 99.17,
-        "reasons": [
-          "coldstart: novelty +25.0, jitter +5.5",
-          "+12 main character",
-          "+6.7 format below its target share (17% < 25%)"
-        ]
-      }
-    ],
-    "explanation": [
-      "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
-      "bleach:orihime-inoue excluded in every format (maxSameCharacterStreak 1).",
-      "Selected character-versus:onepiece:sanji-vs-blackclover-yami-sukehiro@en (character-versus, onepiece + blackclover) — coldstart, score 99.5 among 648 valid candidate(s)."
-    ]
-  },
-  "pick": {
-    "contentId": "character-versus:onepiece:sanji-vs-blackclover-yami-sukehiro",
-    "renderId": "character-versus:onepiece:sanji-vs-blackclover-yami-sukehiro@en",
-    "contentType": "character-versus",
-    "animes": [
-      "onepiece",
-      "blackclover"
-    ],
-    "characters": [
-      "onepiece:sanji",
-      "blackclover:yami-sukehiro"
-    ],
-    "part": null,
-    "partCount": null,
-    "score": 99.5,
-    "reasons": [
-      "coldstart: novelty +25.0, jitter +5.8",
-      "+12 main character",
-      "+6.7 format below its target share (17% < 25%)"
-    ]
-  },
-  "request": {
-    "template": "characterVersus",
-    "anime": "onepiece",
-    "subject": "sanji",
-    "opponent": {
-      "anime": "blackclover",
-      "subject": "yami-sukehiro"
-    },
-    "locale": "en",
-    "hook": "Sanji or Yami Sukehiro: who explored more of their world?",
-    "hookType": "curiosity",
-    "hookId": "cv-curiosity-1",
-    "cta": "Follow for the next match-up.",
-    "ctaType": "follow-for-more",
-    "selection": {
-      "mode": "coldstart",
-      "score": 99.5,
-      "seed": "feed6:guess-character:bleach:orihime-inoue@en:samples0"
-    },
-    "notes": "growth selector (coldstart): coldstart: novelty +25.0, jitter +5.8; +12 main character; +6.7 format below its target share (17% < 25%)"
-  },
-  "alternatives": [
-    {
-      "renderId": "character-versus:attackontitan:armin-arlert-vs-blackclover-asta@en",
-      "contentType": "character-versus",
-      "score": 99.42
-    },
-    {
-      "renderId": "character-versus:naruto:sasuke-uchiha-vs-hunterxhunter-gon-freecss@en",
-      "contentType": "character-versus",
-      "score": 99.41
-    },
-    {
-      "renderId": "character-versus:hunterxhunter:kurapika-vs-dragonball-vegeta@en",
-      "contentType": "character-versus",
-      "score": 99.3
-    },
-    {
-      "renderId": "character-versus:dragonball:vegeta-vs-blackclover-asta@en",
-      "contentType": "character-versus",
-      "score": 99.23
-    },
-    {
-      "renderId": "character-versus:naruto:obito-uchiha-vs-blackclover-asta@en",
-      "contentType": "character-versus",
-      "score": 99.17
-    }
-  ],
-  "eligible": 648
+  "seed": "",
+  "reason": "publish the existing render first: character-versus:onepiece:sanji-vs-blackclover-yami-sukehiro@en (it counts as today's video; no new content)",
+  "alternatives": [],
+  "rejected": {},
+  "considered": 0,
+  "eligible": 0,
+  "trace": null
 }

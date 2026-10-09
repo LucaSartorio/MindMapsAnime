@@ -804,6 +804,89 @@
         }
       ]
     },
+    "character-versus:onepiece:sanji-vs-blackclover-yami-sukehiro@en": {
+      "renderId": "character-versus:onepiece:sanji-vs-blackclover-yami-sukehiro@en",
+      "contentId": "character-versus:onepiece:sanji-vs-blackclover-yami-sukehiro",
+      "template": "characterVersus",
+      "anime": "onepiece",
+      "subject": "sanji-vs-blackclover-yami-sukehiro",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-10-09T05:09:04.268Z",
+      "updatedAt": "2026-10-09T05:10:29.715Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-10-09T05:10:29.715Z",
+      "outputFile": "tools/social-engine/output/onepiece_sanji-vs-blackclover-yami-sukehiro_character-versus_en.mp4",
+      "manifestFile": "tools/social-engine/output/onepiece_sanji-vs-blackclover-yami-sukehiro_character-versus_en.manifest.json",
+      "sourceFile": "0012-onepiece_sanji_character-versus_blackclover_yami-sukehiro_en.json",
+      "durationSeconds": 22,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-37887162666-1",
+        "runId": "37887162666",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/37887162666",
+        "video": "videos/onepiece_sanji-vs-blackclover-yami-sukehiro_character-versus_en.mp4",
+        "manifest": "manifests/onepiece_sanji-vs-blackclover-yami-sukehiro_character-versus_en.manifest.json",
+        "sha256": "92bd5863a5de631ea1430cf1febbf1f9566a3d1cfa087166539679e43afe82be",
+        "cover": "covers/onepiece_sanji-vs-blackclover-yami-sukehiro_character-versus_en.cover.png",
+        "expiresAt": "2026-11-08T05:10:29.715Z"
+      },
+      "social": {
+        "contentType": "character-versus",
+        "animes": [
+          "onepiece",
+          "blackclover"
+        ],
+        "characters": [
+          "onepiece:sanji",
+          "blackclover:yami-sukehiro"
+        ],
+        "characterNames": [
+          "Sanji",
+          "Yami Sukehiro"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "curiosity",
+        "hookId": "cv-curiosity-1",
+        "hook": "Sanji or Yami Sukehiro: who explored more of their world?",
+        "ctaType": "follow-for-more",
+        "cta": "Follow for the next match-up.",
+        "durationSeconds": 22,
+        "selection": {
+          "mode": "coldstart",
+          "score": 99.5,
+          "seed": "feed6:guess-character:bleach:orihime-inoue@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Sanji or Yami Sukehiro: who explored more of their world?\n\nSanji (One Piece) vs Yami Sukehiro (Black Clover): every place on the map, one winner.\n\nFollow for more anime journeys.\n\nSave it for your next rewatch.\n\n#onepiece #blackclover #sanji #yamisukehiro #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Sanji or Yami Sukehiro: who explored more of their world? Follow for more anime journeys. #onepiece #blackclover #sanji #yamisukehiro #anime",
+          "youtubeTitle": "Sanji vs Yami Sukehiro: Who Travelled More? 🏴‍☠️",
+          "youtubeDescription": "Sanji or Yami Sukehiro: who explored more of their world?\n\nSanji (One Piece) vs Yami Sukehiro (Black Clover): every place on the map, one winner.\n\nSubscribe for more anime journeys.\n\nInteractive map: https://animapverse.com\n\n#onepiece #blackclover #sanji",
+          "facebookCaption": "Sanji or Yami Sukehiro: who explored more of their world?\n\nSanji (One Piece) vs Yami Sukehiro (Black Clover): every place on the map, one winner.\n\nFollow for more anime journeys.\n\nInteractive map: https://animapverse.com",
+          "hashtags": [
+            "#onepiece",
+            "#blackclover",
+            "#sanji",
+            "#yamisukehiro",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "guess-character:bleach:orihime-inoue@en": {
       "renderId": "guess-character:bleach:orihime-inoue@en",
       "contentId": "guess-character:bleach:orihime-inoue",
