@@ -58,8 +58,8 @@ export const blackcloverNations: Nation[] = [
     japaneseName: 'ダイヤモンド王国',
     type: 'great_nation',
     description: {
-      it: 'Stato militarista a est di Clover, retto da un re assente e dai suoi otto Maghi Guerrieri: cresce i propri maghi come armi e attacca ciclicamente la città di confine di Kiten.',
-      en: 'A militarist state east of Clover, ruled by an absent king and his eight Mage Warriors: it raises its mages as weapons and periodically attacks the border city of Kiten.',
+      it: 'Stato militarista confinante con Clover, retto da un re assente e dai suoi otto Maghi Guerrieri: cresce i propri maghi come armi e attacca ciclicamente la città di confine di Kiten.',
+      en: 'A militarist state bordering Clover, ruled by an absent king and his eight Mage Warriors: it raises its mages as weapons and periodically attacks the border city of Kiten.',
     },
     descriptionLong: {
       it: "Il Regno di Diamond costruisce la propria forza su un programma di potenziamento spietato: bambini strappati alle famiglie, addestrati in accademie militari e modificati nei laboratori del ricercatore Moris Libardirt. Da qui vengono Mars e Fana, Ladros e i Maghi Guerrieri; da qui è fuggito Fanzell Kruger, ex istruttore capo che ha disertato dopo aver capito che stava fabbricando armi, non maghi.",
@@ -87,8 +87,8 @@ export const blackcloverNations: Nation[] = [
     japaneseName: 'スペード王国',
     type: 'great_nation',
     description: {
-      it: 'Il regno più a nord, caduto nelle mani della Triade Oscura: i fratelli Zogratis, ognuno legato per patto a uno dei diavoli di rango più alto dell\'Inframondo.',
-      en: 'The northernmost kingdom, fallen into the hands of the Dark Triad: the Zogratis siblings, each bound by pact to one of the Underworld\'s highest-ranking devils.',
+      it: 'Il regno oltre la zona neutrale, caduto nelle mani della Triade Oscura: i fratelli Zogratis, ognuno legato per patto a uno dei diavoli di rango più alto dell\'Inframondo.',
+      en: 'The kingdom beyond the neutral zone, fallen into the hands of the Dark Triad: the Zogratis siblings, each bound by pact to one of the Underworld\'s highest-ranking devils.',
     },
     descriptionLong: {
       it: "Un tempo monarchia come le altre, Spade è stata rovesciata dal colpo di stato dei fratelli Zogratis — Dante, Vanica e Zenon — che ne hanno ucciso il re, Loyce Grinberryall, padre di Yuno, e trasformato il paese in un cantiere per l'Albero di Qliphoth, il rituale che deve aprire la porta dell'Inframondo. La popolazione è ridotta in miseria e i prigionieri vengono usati come carburante magico.",
@@ -116,8 +116,8 @@ export const blackcloverNations: Nation[] = [
     japaneseName: 'ハート王国',
     type: 'great_nation',
     description: {
-      it: "Regno a ovest immerso in una Zona Magica Suprema che moltiplica il mana: governato dalla principessa Lolopechka e difeso dai suoi Spirit Guardian, ciascuno legato a uno spirito elementale.",
-      en: 'A western kingdom immersed in a Grand Magic Zone that multiplies mana: ruled by Princess Lolopechka and defended by her Spirit Guardians, each bound to an elemental spirit.',
+      it: "Regno immerso in una Zona Magica Suprema che moltiplica il mana: governato dalla principessa Lolopechka e difeso dai suoi Spirit Guardian, ciascuno legato a uno spirito elementale.",
+      en: 'A kingdom immersed in a Grand Magic Zone that multiplies mana: ruled by Princess Lolopechka and defended by her Spirit Guardians, each bound to an elemental spirit.',
     },
     descriptionLong: {
       it: "L'enorme concentrazione di mana del suo territorio rende Heart il posto ideale per allenarsi, e per questo Lolopechka stringe alleanza con il Regno di Clover in funzione anti-Spade. La principessa porta addosso la maledizione di Megicula, il diavolo che le ha già ucciso la madre e le lascia pochi anni di vita: liberarsene è il vero motore della sua alleanza.",

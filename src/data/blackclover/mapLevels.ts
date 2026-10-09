@@ -32,8 +32,8 @@ export const blackcloverMapLevels: MapLevel[] = [
     name: 'World of Black Clover',
     localizedName: { it: 'Mondo di Black Clover', en: 'World of Black Clover' },
     description: {
-      it: 'Il continente dei quattro regni: Clover a sud con la Capitale Reale e il villaggio di Hage, Diamond a est, Spade a nord, Heart a ovest, più i territori neutrali, i dungeon e il villaggio elfico di Elysia.',
-      en: 'The continent of the four kingdoms: Clover to the south with the Royal Capital and the village of Hage, Diamond to the east, Spade to the north, Heart to the west, plus the neutral territories, the dungeons and the elf village of Elysia.',
+      it: 'Il continente dei quattro regni — Clover con la Capitale Reale e il villaggio di Hage, il militarista Diamond, Spade della Triade Oscura e Heart degli Spirit Guardian — più i territori neutrali, i dungeon e il villaggio elfico di Elysia.',
+      en: 'The continent of the four kingdoms — Clover with the Royal Capital and the village of Hage, militarist Diamond, the Dark Triad\'s Spade and the Spirit Guardians\' Heart — plus the neutral territories, the dungeons and the elf village of Elysia.',
     },
     backgroundAssetId: 'bc-world-map-reference',
     width: BLACKCLOVER_MAP_VIEWBOX.width,

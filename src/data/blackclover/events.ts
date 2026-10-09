@@ -1031,8 +1031,8 @@ export const blackcloverEvents: TimelineEvent[] = [
     worldId: 'world-blackclover',
     title: { it: "L'assalto al Regno di Spade", en: 'The Spade Kingdom Raid' },
     description: {
-      it: "Clover e Heart invadono insieme il regno del nord per fermare l'Albero di Qliphoth. L'attacco si spezza in tre battaglie parallele contro i tre Zogratis.",
-      en: 'Clover and Heart invade the northern kingdom together to stop the Tree of Qliphoth. The attack splits into three parallel battles against the three Zogratis.',
+      it: "Clover e Heart invadono insieme il regno della Triade Oscura per fermare l'Albero di Qliphoth. L'attacco si spezza in tre battaglie parallele contro i tre Zogratis.",
+      en: 'Clover and Heart invade the Dark Triad\'s kingdom together to stop the Tree of Qliphoth. The attack splits into three parallel battles against the three Zogratis.',
     },
     period: { it: 'Saga del Regno di Spade', en: 'Spade Kingdom Saga' },
     arcId: 'arc-bc-spade-raid',

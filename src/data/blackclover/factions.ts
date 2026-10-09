@@ -354,8 +354,8 @@ export const blackcloverFactions: Faction[] = [
     localizedName: { it: 'Esercito del Regno di Spade', en: 'Spade Kingdom army' },
     nationId: 'nation-bc-spade',
     description: {
-      it: "Le forze del regno del nord sotto la Triade Oscura: un esercito che tratta la propria popolazione come materiale per il rituale.",
-      en: 'The northern kingdom\'s forces under the Dark Triad: an army that treats its own population as material for the ritual.',
+      it: "Le forze del Regno di Spade sotto la Triade Oscura: un esercito che tratta la propria popolazione come materiale per il rituale.",
+      en: 'The Spade Kingdom\'s forces under the Dark Triad: an army that treats its own population as material for the ritual.',
     },
     characterIds: ['char-bc-dante', 'char-bc-vanica', 'char-bc-zenon', 'char-bc-moris', 'char-bc-gaderois', 'char-bc-svenkin', 'char-bc-halbet', 'char-bc-foyal'],
     locationIds: ['loc-bc-spade-castle', 'loc-bc-spade-slums', 'loc-bc-spade-front'],
