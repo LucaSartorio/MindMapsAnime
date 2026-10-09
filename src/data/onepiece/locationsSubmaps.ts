@@ -142,7 +142,7 @@ export const onepieceLocationsSubmaps: Location[] = [
     y: 470,
     shortDescription: {
       it: "L'arena di Dressrosa dove i gladiatori si contendono il Frutto Foco Foco. Qui Rufy combatte sotto le mentite spoglie di «Lucy».",
-      en: "Dressrosa's arena where gladiators fight over the Mera Mera Fruit. Here Luffy battles disguised as 'Lucy'.",
+      en: "Dressrosa's arena where gladiators fight over the Flame-Flame Fruit. Here Luffy battles disguised as 'Lucy'.",
     },
     nationId: 'nation-op-grand-line-new-world',
     characterIds: ['char-op-sabo', 'char-op-rebecca', 'char-op-luffy'],

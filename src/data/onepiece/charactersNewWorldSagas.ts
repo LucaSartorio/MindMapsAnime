@@ -121,8 +121,8 @@ export const onepieceCharactersNewWorldSagas: Character[] = [
     firstMangaAppearance: "743",
     firstAnimeAppearance: "693",
     longDescription: {
-      it: "Leggendario gladiatore di Dressrosa e marito della principessa Scarlett, trasformato in soldatino di legno dal potere di Sugar. Decapitò personalmente Doflamingo dal trono, liberando il regno.",
-      en: "A legendary gladiator of Dressrosa and husband of Princess Scarlett, turned into a toy soldier by Sugar's power. He personally cut Doflamingo down from the throne, freeing the kingdom.",
+      it: "Leggendario gladiatore di Dressrosa e marito della principessa Scarlett, trasformato in soldatino di legno dal potere di Sugar. Tornato umano, decapita quello che si rivela un clone di fili di Doflamingo e sconfigge Diamante, contribuendo a liberare il regno.",
+      en: "A legendary gladiator of Dressrosa and husband of Princess Scarlett, turned into a toy soldier by Sugar's power. Back in human form, he beheads what proves to be a string clone of Doflamingo and defeats Diamante, helping free the kingdom.",
     },
     name: 'Kyros',
     importance: 'supporting',
@@ -133,8 +133,8 @@ export const onepieceCharactersNewWorldSagas: Character[] = [
     enemies: ['char-op-doflamingo'],
     arcIds: ['arc-op-dressrosa'],
     shortDescription: {
-      it: "Leggendario gladiatore di Dressrosa e padre di Rebecca, trasformato in soldatino di legno dal potere di Doflamingo. Decapitò il sovrano usurpatore per liberare il regno.",
-      en: "A legendary Dressrosa gladiator and Rebecca's father, turned into a toy soldier by Doflamingo's power. He beheads the usurper king to free the kingdom.",
+      it: "Leggendario gladiatore di Dressrosa e padre di Rebecca, trasformato in soldatino di legno dal potere di Sugar. Tornato umano, sconfigge Diamante per contribuire a liberare il regno.",
+      en: "A legendary Dressrosa gladiator and Rebecca's father, turned into a toy soldier by Sugar's power. Back in human form, he defeats Diamante to help free the kingdom.",
     },
     status: 'alive',
     canonStatus: 'canon',

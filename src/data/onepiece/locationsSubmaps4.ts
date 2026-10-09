@@ -28,8 +28,8 @@ const NW = 'nation-op-grand-line-new-world';
 export const onepieceLocationsSubmaps4: Location[] = [
   /* ============================== Impel Down ============================== */
   L('op-map-impel-down', 'loc-op-id-entrance', "Ingresso e Cancello d'Ingresso", 'Entrance & Gate', 'landmark', 600, 86,
-    "L'accesso sorvegliato alla prigione, sotto la guardia di Hannyabal e Sadi, da cui Rufy si infiltra con i Corsari.",
-    "The guarded access to the prison, watched by Hannyabal and Sadi, through which Luffy infiltrates with the Warlords.",
+    "L'accesso sorvegliato alla prigione, sotto la guardia di Hannyabal e Sadi, da cui Rufy si infiltra, nascosto dalla Corsara Hancock.",
+    "The guarded access to the prison, watched by Hannyabal and Sadi, through which Luffy slips in, hidden by the Warlord Hancock.",
     CB, 'minor', ['impel-down', 'prigione'], ['char-op-magellan']),
   L('op-map-impel-down', 'loc-op-id-l1', "Livello 1 — Inferno Cremisi", 'Level 1 — Crimson Hell', 'battlefield', 600, 195,
     "Il primo livello, una foresta di alberi-lama scarlatti che dilaniano i prigionieri in fuga.",
@@ -100,8 +100,8 @@ export const onepieceLocationsSubmaps4: Location[] = [
     "The mayor's residence, raided at night by CP9 hunting the Pluton blueprints (Iceburg held only a decoy copy).",
     PAR, 'secondary', ['water-seven', 'pluton'], ['char-op-iceburg']),
   L('op-map-water-seven', 'loc-op-ws-franky-house', 'Scrap Island (Franky House)', 'Scrap Island (Franky House)', 'hideout', 900, 640,
-    "L'isola dei rottami, covo di Franky e degli Smettighoul, demolita dalla Marina durante il caos.",
-    "The scrap island, lair of Franky and the Franky Family, demolished by the Marines amid the chaos.",
+    "L'isola dei rottami, covo di Franky e degli Smettighoul, devastata da Rufy e Zoro quando la assaltano per recuperare il denaro rubato a Usop.",
+    "The scrap island, lair of Franky and the Franky Family, wrecked by Luffy and Zoro when they stormed it to recover Usopp's stolen money.",
     PAR, 'minor', ['water-seven', 'franky'], ['char-op-franky']),
   L('op-map-water-seven', 'loc-op-ws-blue-station', 'Stazione Blu (Sea Train)', 'Blue Station (Sea Train)', 'landmark', 960, 380,
     "La stazione del Puffing Tom, il Sea Train che attraversa il mare fino a Enies Lobby su rotaie scommerciali.",
@@ -134,8 +134,8 @@ export const onepieceLocationsSubmaps4: Location[] = [
     "The hall atop the galleon where Gecko Moria commands his zombie army and keeps the stolen shadows.",
     PAR, 'secondary', ['thriller-bark', 'moria'], ['char-op-moria']),
   L('op-map-thriller-bark', 'loc-op-tb-brook-room', 'Salone di Brook', "Brook's Hall", 'landmark', 856, 300,
-    "Il salone dove lo scheletro musicista Brook, privo della propria ombra, attende cinquant'anni la liberazione.",
-    "The hall where the skeleton musician Brook, robbed of his shadow, waits fifty years for liberation.",
+    "Il salone dove lo scheletro musicista Brook, privato dell'ombra da Moria, lotta per riprenderla dopo cinquant'anni alla deriva.",
+    "The hall where the skeleton musician Brook, robbed of his shadow by Moria, fights to win it back after fifty years adrift.",
     PAR, 'minor', ['thriller-bark', 'brook'], ['char-op-brook']),
 
   /* ================================== Zou ================================== */

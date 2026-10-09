@@ -11,8 +11,8 @@ export const ONEPIECE_FRUIT_LONG: Record<string, Localizable> = {
     en: "Caribou swallows men and treasure into his own body, storing them as in a bottomless swamp; after the two years he uses it on Fish-Man Island, in Wano and across the New World.",
   },
   'fruit-op-yuki-yuki': {
-    it: "A Punk Hazard Monet combatte Zoro e Tashigi trasformandosi in una tempesta di neve; Zoro la sconfigge e Doflamingo la fa uccidere da Caesar perché non riveli i suoi segreti.",
-    en: "On Punk Hazard Monet fights Zoro and Tashigi by turning into a snowstorm; Zoro defeats her and Caesar kills her on Doflamingo's orders so that she cannot reveal his secrets.",
+    it: "A Punk Hazard Monet combatte Zoro e Tashigi trasformandosi in una tempesta di neve; Zoro la sconfigge; poi Caesar, pugnalando quello che crede il cuore di Smoker — scambiato da Law —, la uccide senza saperlo prima che possa far saltare la base.",
+    en: "On Punk Hazard Monet fights Zoro and Tashigi by turning into a snowstorm; Zoro defeats her; then Caesar, stabbing what he believes is Smoker's heart — swapped by Law — kills her unknowingly before she can blow up the base.",
   },
   'fruit-op-bomu-bomu': {
     it: "Mr. 5 e la compagna Miss Valentine danno la caccia a Vivi a Whisky Peak e la seguono fino a Little Garden; Rufy e Zoro li sconfiggono.",
@@ -83,8 +83,8 @@ export const ONEPIECE_FRUIT_LONG: Record<string, Localizable> = {
     en: "Viola, princess of Dressrosa, uses it to spy on Doflamingo and guide the allies during the battle to free the kingdom.",
   },
   'fruit-op-ato-ato': {
-    it: "A Dressrosa Jora trasforma in opere d'arte Robin e altri prigionieri; il suo potere svanisce quando viene sconfitta durante la battaglia per il palazzo reale.",
-    en: "In Dressrosa Jora turns Robin and other prisoners into works of art; her power fades when she is defeated during the battle for the royal palace.",
+    it: "A Dressrosa Jora trasforma in opere d'arte la Thousand Sunny e i compagni a bordo; l'incantesimo si spezza quando Brook la inganna e la mette fuori combattimento.",
+    en: "At Dressrosa Jora turns the Thousand Sunny and the crewmates aboard into works of art; the spell breaks when Brook tricks her and knocks her out.",
   },
   'fruit-op-sui-sui': {
     it: "Señor Pink lo usa contro Franky a Dressrosa: il suo stile da «hardboiled» nasconde il dolore per la moglie e il figlio, una storia che commuove perfino Franky.",

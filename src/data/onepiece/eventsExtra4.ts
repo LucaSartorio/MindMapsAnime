@@ -19,10 +19,10 @@ const E = (
 });
 
 export const onepieceEventsExtra4: TimelineEvent[] = [
-  E('evt-op-rocks-rise', 'I Pirati di Rocks', 'The Rocks Pirates', 'Backstory · ~40 anni fa', 'Backstory · ~40 years ago',
+  E('evt-op-rocks-rise', 'I Pirati di Rocks', 'The Rocks Pirates', 'Backstory · 38 anni fa', 'Backstory · 38 years ago',
     "La ciurma più temibile prima di Roger, che riuniva futuri Imperatori sotto Rocks D. Xebec.",
     "The most fearsome crew before Roger, gathering future Emperors under Rocks D. Xebec.",
-    "Sull’isola di God Valley, 38 anni fa, i Pirati di Rocks — con un giovane Barbabianca, Big Mom, Kaido e Shiki — sfidarono il mondo. Furono annientati dall’alleanza tra il vice-ammiraglio Garp e il «Re dei Pirati» Roger; la morte di Rocks restò un segreto di Stato.",
+    "Sull’isola di God Valley, 38 anni fa, i Pirati di Rocks — con un giovane Barbabianca, Big Mom, Kaido e Shiki — sfidarono il mondo. Furono annientati dall’alleanza tra il vice-ammiraglio Garp e il futuro «Re dei Pirati» Roger; la morte di Rocks restò un segreto di Stato.",
     "On God Valley island, 38 years ago, the Rocks Pirates — including a young Whitebeard, Big Mom, Kaido and Shiki — challenged the world. They were annihilated by the alliance of Vice Admiral Garp and the future 'Pirate King' Roger; Rocks's death became a state secret.",
     'loc-op-god-valley', ['char-op-rocks', 'char-op-whitebeard', 'char-op-big-mom', 'char-op-kaido', 'char-op-garp', 'char-op-roger'], '1096', -26, ['rocks', 'god-valley', 'backstory'], 'arc-op-god-valley'),
 

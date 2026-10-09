@@ -133,8 +133,8 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
     ],
     arcIds: ['arc-op-whole-cake'],
     shortDescription: {
-      it: "Re del Germa e comandante dell'esercito clonato Germa 66, scienziato spietato e padre di Sanji. Pattuì con Big Mom il matrimonio per tradire e annientare i Charlotte.",
-      en: "King of Germa and commander of the cloned Germa 66 army, a ruthless scientist and Sanji's father. He brokered the wedding with Big Mom to betray and wipe out the Charlotte.",
+      it: "Re del Germa e comandante dell'esercito clonato Germa 66, scienziato spietato e padre di Sanji. Accettò il matrimonio con Big Mom per ottenerne la potenza, ignaro che lei progettava di sterminare i Vinsmoke.",
+      en: "King of Germa and commander of the cloned Germa 66 army, a ruthless scientist and Sanji's father. He agreed to the wedding with Big Mom to gain her power, unaware that she planned to wipe out the Vinsmoke.",
     },
     status: 'alive',
     canonStatus: 'canon',
@@ -266,8 +266,8 @@ export const onepieceCharactersWholeCakeWano: Character[] = [
     family: ['char-op-momonosuke'],
     arcIds: ['arc-op-wano'],
     shortDescription: {
-      it: "Leggendario daimyo di Kuri, l'unico samurai capace di ferire Kaido. Navigò con Barbabianca e poi con Roger fino a Laugh Tale; la sua esecuzione e il suo diario muovono l'intera saga di Wano.",
-      en: "The legendary daimyo of Kuri, the only samurai able to wound Kaido. He sailed with Whitebeard and then Roger to Laugh Tale; his execution and journal drive the entire Wano saga.",
+      it: "Leggendario daimyo di Kuri, che lasciò a Kaido la cicatrice che portò per sempre. Navigò con Barbabianca e poi con Roger fino a Laugh Tale; la sua esecuzione e il suo diario muovono l'intera saga di Wano.",
+      en: "The legendary daimyo of Kuri, who left Kaido the scar he bore ever after. He sailed with Whitebeard and then Roger to Laugh Tale; his execution and journal drive the entire Wano saga.",
     },
     status: 'deceased',
     canonStatus: 'canon',

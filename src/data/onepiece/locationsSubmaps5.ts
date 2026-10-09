@@ -100,7 +100,7 @@ export const onepieceLocationsSubmaps5: Location[] = [
 
   /* ================================= Jaya ================================= */
   L('op-map-jaya', 'loc-op-jy-mock-town', 'Mock Town', 'Mock Town', 'city', 420, 320,
-    "La città-covo di pirati di Jaya, dove la ciurma incassa le risate di Bellamy e dove Blackbeard pronuncia la sua filosofia.",
+    "La città-covo di pirati di Jaya, dove la ciurma incassa le risate di Bellamy e dove Barbanera pronuncia la sua filosofia.",
     "Jaya's pirate-den town, where the crew takes Bellamy's mockery and where Blackbeard voices his philosophy of dreams.",
     PAR, 'secondary', ['jaya', 'bellamy', 'blackbeard'], ['char-op-bellamy', 'char-op-blackbeard']),
   L('op-map-jaya', 'loc-op-jy-cricket-house', 'Casa di Mont Blanc Cricket', "Mont Blanc Cricket's House", 'hideout', 700, 460,
@@ -152,8 +152,8 @@ export const onepieceLocationsSubmaps5: Location[] = [
     "The colossal tree revered by the giants as the home of their warrior god, the spiritual heart of the realm.",
     NW, 'minor', ['elbaf', 'giganti']),
   L('op-map-elbaf', 'loc-op-eb-dueling-ground', 'Campo dei Duelli', 'Dueling Ground', 'battlefield', 780, 500,
-    "L'arena dove i giganti si sfidano: qui Dorry e Brogy si batterono per un secolo prima dell'esilio a Little Garden.",
-    "The arena where giants duel: here Dorry and Brogy fought for a century before their exile to Little Garden.",
+    "L'arena dove i giganti risolvono le contese in duello: la stessa usanza che da un secolo tiene Dorry e Brogy a battersi su Little Garden.",
+    "The arena where giants settle their disputes by duel: the same custom that has kept Dorry and Brogy fighting for a century on Little Garden.",
     NW, 'minor', ['elbaf', 'giganti']),
   L('op-map-elbaf', 'loc-op-eb-forge', 'Fucina dei Giganti', 'Giants\' Forge', 'landmark', 470, 560,
     "La fucina dove i giganti forgiano armi colossali, ammirata in tutto il mondo per la qualità del suo acciaio.",

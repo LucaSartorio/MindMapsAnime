@@ -97,8 +97,8 @@ export const onepieceLocationsBlues: Location[] = [
     x: 397,
     y: 166,
     shortDescription: {
-      it: "Isola di North Blue dove la ciurma di Donquijote Doflamingo prese il controllo e dove il giovane Law ricevette il Frutto Ope Ope.",
-      en: "A North Blue island where Donquixote Doflamingo's crew seized control and where the young Law received the Ope Ope Fruit.",
+      it: "Isola di North Blue dove i Pirati Donquijote tentarono di impadronirsi del Frutto Ope Ope: Corazon lo rubò per il giovane Law e lo pagò con la vita.",
+      en: "A North Blue island where the Donquixote Pirates tried to seize the Ope Ope Fruit: Corazon stole it for the young Law and paid with his life.",
     },
     nationId: 'nation-op-north-blue',
     characterIds: ['char-op-doflamingo', 'char-op-corazon', 'char-op-law'],

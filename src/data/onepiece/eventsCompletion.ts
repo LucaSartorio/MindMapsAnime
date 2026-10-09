@@ -68,10 +68,10 @@ export const onepieceEventsCompletion: TimelineEvent[] = [
   }),
   e({
     id: 'evt-op-jaya-cricket',
-    title: { it: 'Montblanc Cricket e la città dell’oro', en: 'Montblanc Cricket and the city of gold' },
+    title: { it: 'Mont Blanc Cricket e la città dell’oro', en: 'Mont Blanc Cricket and the city of gold' },
     description: {
-      it: "Nella metà di Jaya rimasta a terra la ciurma conosce Montblanc Cricket, discendente di Norland, deriso per aver cercato la città d'oro. Cricket e la Lega Saruyama preparano la Going Merry per cavalcare la Knock-Up Stream verso le isole nel cielo.",
-      en: "On the half of Jaya that remains on the ground the crew meets Montblanc Cricket, Norland's descendant, mocked for searching for the city of gold. Cricket and the Saruyama Alliance prepare the Going Merry to ride the Knock-Up Stream to the islands in the sky.",
+      it: "Nella metà di Jaya rimasta a terra la ciurma conosce Mont Blanc Cricket, discendente di Norland, deriso per aver cercato la città d'oro. Cricket e la Lega Saruyama preparano la Going Merry per cavalcare la Knock-Up Stream verso le isole nel cielo.",
+      en: "On the half of Jaya that remains on the ground the crew meets Mont Blanc Cricket, Norland's descendant, mocked for searching for the city of gold. Cricket and the Saruyama Alliance prepare the Going Merry to ride the Knock-Up Stream to the islands in the sky.",
     },
     period: PARADISE,
     arcId: 'arc-op-jaya',

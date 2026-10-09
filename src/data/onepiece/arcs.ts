@@ -50,8 +50,8 @@ export const onepieceArcs: StoryArc[] = [
     mangaChapters: ["8-21"],
     animeEpisodes: ["4-8"],
     longDescription: {
-      it: "Diretti a Orange Town, Rufy e Zoro incrociano la ladra Nami. La cittadina è terrorizzata dai Pirati di Bagy il Clown, utente del Frutto Frammento. Tra il cane fedele Chouchou, il sindaco Boodle e i numeri da circo di Bagy, Rufy distrugge la banda e fa saltare in aria il pirata con un colpo di cannone, mentre Nami decide di seguire interessatamente la ciurma.",
-      en: "Heading to Orange Town, Luffy and Zoro cross paths with the thief Nami. The town is terrorised by Buggy the Clown's pirates, user of the Chop-Chop Fruit. Amid the loyal dog Chouchou, mayor Boodle and Buggy's circus tricks, Luffy wrecks the gang and blasts the pirate away with a cannon shot, while Nami decides to follow the crew out of self-interest.",
+      it: "Diretti a Orange Town, Rufy e Zoro incrociano la ladra Nami. La cittadina è terrorizzata dai Pirati di Bagy il Clown, utente del Frutto Frammento. Tra il cane fedele Chouchou, il sindaco Boodle e i numeri da circo di Bagy, Rufy distrugge la banda e spedisce in cielo il pirata con un colpo, mentre Nami decide di seguire interessatamente la ciurma.",
+      en: "Heading to Orange Town, Luffy and Zoro cross paths with the thief Nami. The town is terrorised by Buggy the Clown's pirates, user of the Chop-Chop Fruit. Amid the loyal dog Chouchou, mayor Boodle and Buggy's circus tricks, Luffy wrecks the gang and sends the pirate flying with one blow, while Nami decides to follow the crew out of self-interest.",
     },
     name: 'Orange Town',
     localizedName: { it: 'Bagy il Clown', en: 'Orange Town' },
@@ -193,8 +193,8 @@ export const onepieceArcs: StoryArc[] = [
     mangaChapters: ["96-105"],
     animeEpisodes: ["45-53", "61-63"],
     longDescription: {
-      it: "A Loguetown, «la città dell'inizio e della fine» dove fu giustiziato Gol D. Roger, la ciurma fa provviste: Zoro compra due nuove spade da Ipponmatsu, Sanji affronta il mercato, Rufy sale sul patibolo di Roger. Lì Bagy, alleato con Albida, sta per decapitarlo, ma un fulmine lo salva. Il rivoluzionario Dragon copre di nascosto la fuga del figlio dal capitano Smoker. Sotto la tempesta la ciurma risale Reverse Mountain ed entra nella Grand Line, lasciandosi East Blue alle spalle.",
-      en: "At Loguetown, 'the town of the beginning and the end' where Gol D. Roger was executed, the crew stocks up: Zoro buys two new swords from Ipponmatsu, Sanji works the market, Luffy climbs Roger's scaffold. There Buggy, allied with Alvida, is about to behead him, but a lightning bolt saves him. The revolutionary Dragon quietly covers his son's escape from captain Smoker. Through the storm the crew climbs Reverse Mountain and enters the Grand Line, leaving East Blue behind.",
+      it: "A Loguetown, «la città dell'inizio e della fine» dove fu giustiziato Gol D. Roger, la ciurma fa provviste: Zoro ottiene due nuove spade da Ipponmatsu, Sanji affronta il mercato, Rufy sale sul patibolo di Roger. Lì Bagy, alleato con Albida, sta per decapitarlo, ma un fulmine lo salva. Il rivoluzionario Dragon copre di nascosto la fuga del figlio dal capitano Smoker. Sotto la tempesta la ciurma risale Reverse Mountain ed entra nella Grand Line, lasciandosi East Blue alle spalle.",
+      en: "At Loguetown, 'the town of the beginning and the end' where Gol D. Roger was executed, the crew stocks up: Zoro gets two new swords from Ipponmatsu, Sanji works the market, Luffy climbs Roger's scaffold. There Buggy, allied with Alvida, is about to behead him, but a lightning bolt saves him. The revolutionary Dragon quietly covers his son's escape from captain Smoker. Through the storm the crew climbs Reverse Mountain and enters the Grand Line, leaving East Blue behind.",
     },
     name: 'Loguetown',
     localizedName: { it: "La città dell'inizio e della fine", en: 'Loguetown' },

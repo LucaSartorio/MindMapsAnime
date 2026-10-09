@@ -23,9 +23,9 @@ const S = (
 
 export const onepieceFactionsShips: Faction[] = [
   S('faction-op-ship-striker', 'Striker', 'Striker (moto d’acqua di Ace)', "Ace's Striker",
-    "La piccola imbarcazione personale di Portgas D. Ace, spinta dalle fiamme del suo Frutto Mera Mera.",
-    "Portgas D. Ace's small personal craft, propelled by the flames of his Mera Mera Fruit.",
-    "Una zattera-moto d’acqua su cui Ace navigava in solitaria, alimentata dal calore del Frutto Fiamma: gli permetteva di muoversi velocissimo anche senza una ciurma al seguito.",
+    "La piccola imbarcazione personale di Portgas D. Ace, spinta dalle fiamme del suo Frutto Foco Foco.",
+    "Portgas D. Ace's small personal craft, propelled by the flames of his Flame-Flame Fruit.",
+    "Una zattera-moto d’acqua su cui Ace navigava in solitaria, alimentata dal calore del Frutto Foco Foco: gli permetteva di muoversi velocissimo anche senza una ciurma al seguito.",
     "A raft-jet-ski Ace sailed solo, powered by the heat of the Flame-Flame Fruit: it let him move at great speed even without a crew.",
     ['char-op-ace'], ['char-op-ace'], ['loc-op-banaro-island'], ['ace', 'spade']),
   S('faction-op-ship-queen-mama-chanter', 'Queen Mama Chanter', 'Queen Mama Chanter', 'Queen Mama Chanter',
@@ -54,7 +54,7 @@ export const onepieceFactionsShips: Faction[] = [
   S('faction-op-ship-going-luffy-senpai', 'Going Luffy-senpai', 'Going Luffy-senpai', 'Going Luffy-senpai',
     "La nave del Barto Club, modellata in onore dell’idolo Rufy.",
     "The Barto Club's ship, modeled in honor of their idol Luffy.",
-    "Con la polena ispirata a Rufy, riflette l’ammirazione fanatica di Bartolomeo per i Cappello di Paglia; è una delle navi della Flotta dei Sette.",
+    "Con la polena ispirata a Rufy, riflette l’ammirazione fanatica di Bartolomeo per i Cappello di Paglia; è una delle navi della Grande Flotta.",
     "With a figurehead modeled on Luffy, it reflects Bartolomeo's fanatical admiration for the Straw Hats; it is one of the Grand Fleet's ships.",
     ['char-op-bartolomeo'], ['char-op-bartolomeo', 'char-op-gambia'], ['loc-op-dressrosa'], ['barto-club', 'grand-fleet']),
   S('faction-op-ship-nostra-castello', 'Nostra Castello', 'Nostra Castello', 'Nostra Castello',

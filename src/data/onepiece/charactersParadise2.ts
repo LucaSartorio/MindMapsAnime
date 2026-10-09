@@ -13,8 +13,8 @@ export const onepieceCharactersParadise2: Character[] = [
     firstMangaAppearance: "329",
     firstAnimeAppearance: "233",
     longDescription: {
-      it: "Carpentiere cyborg della ciurma, costruttore della Thousand Sunny con il legno sacro dell'Albero Adam. Allievo del leggendario Tom, custodisce parte dei progetti dell'arma Pluton. Sogna di costruire una nave che faccia il giro del mondo.",
-      en: "The crew's cyborg shipwright, builder of the Thousand Sunny from the sacred Adam Wood. A pupil of the legendary Tom, he safeguards part of the blueprints of the weapon Pluton. He dreams of building a ship that sails around the world.",
+      it: "Carpentiere cyborg della ciurma, costruttore della Thousand Sunny con il legno sacro dell'Albero Adam. Allievo del leggendario Tom, custodì i progetti dell'arma Pluton finché non li bruciò a Enies Lobby. Sogna di costruire una nave che faccia il giro del mondo.",
+      en: "The crew's cyborg shipwright, builder of the Thousand Sunny from the sacred Adam Wood. A pupil of the legendary Tom, he guarded the blueprints of the weapon Pluton until he burned them at Enies Lobby. He dreams of building a ship that sails around the world.",
     },
     name: 'Franky',
     aliases: ['Cutty Flam'],
@@ -64,8 +64,8 @@ export const onepieceCharactersParadise2: Character[] = [
     firstMangaAppearance: "347",
     firstAnimeAppearance: "252",
     longDescription: {
-      it: "Rob Lucci, agente più letale della CP9 (poi CP0), utente dello Zoo Zoo del leopardo e maestro del Rokushiki. Avversario che spinse Rufy a sbloccare il Gear Second a Enies Lobby.",
-      en: "Rob Lucci, the deadliest agent of CP9 (later CP0), user of the leopard Zoan and master of Rokushiki. The opponent who pushed Luffy to unlock Gear Second at Enies Lobby.",
+      it: "Rob Lucci, agente più letale della CP9 (poi CP0), utente dello Zoo Zoo del leopardo e maestro del Rokushiki. Avversario che spinse Rufy a portare al limite Gear Second e Gear Third a Enies Lobby.",
+      en: "Rob Lucci, the deadliest agent of CP9 (later CP0), user of the leopard Zoan and master of Rokushiki. The opponent who pushed Luffy to drive Gear Second and Third to the limit at Enies Lobby.",
     },
     name: 'Rob Lucci',
     importance: 'major',

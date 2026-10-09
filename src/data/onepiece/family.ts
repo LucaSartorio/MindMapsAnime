@@ -11,6 +11,9 @@ export const onepieceFamily: Record<string, FamilyLinks> = {
   // Monkey D.
   dragon: p(['garp']),
   luffy: p(['dragon']),
+  // Figarland (cap. 1138: gemelli figli di Garling)
+  shanks: p(['garling']),
+  shamrock: p(['garling']),
   ace: p(['roger', 'rouge']),
   // Charlotte (figli di Big Mom)
   perospero: charlotte,

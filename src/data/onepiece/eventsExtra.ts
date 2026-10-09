@@ -83,13 +83,13 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-loguetown-zoro-swords', worldId: W,
     longDescription: {
-      it: "Mentre la ciurma fa provviste a Loguetown, Zoro acquista dal fabbro Ipponmatsu due nuove lame, tra cui la maledetta Sandai Kitetsu, e conosce il sergente Tashigi, identica alla sua amica d'infanzia Kuina, morta da bambina. L'incontro lo turba alla vigilia della Grand Line.",
-      en: "While the crew stocks up at Loguetown, Zoro buys two new blades from the smith Ipponmatsu, including the cursed Sandai Kitetsu, and meets Sergeant Tashigi, identical to his late childhood friend Kuina. The encounter unsettles him on the eve of the Grand Line.",
+      it: "Mentre la ciurma fa provviste a Loguetown, Zoro riceve dal fabbro Ipponmatsu due nuove lame, tra cui la maledetta Sandai Kitetsu, e conosce il sergente Tashigi, identica alla sua amica d'infanzia Kuina, morta da bambina. L'incontro lo turba alla vigilia della Grand Line.",
+      en: "While the crew stocks up at Loguetown, Zoro receives two new blades from the smith Ipponmatsu, including the cursed Sandai Kitetsu, and meets Sergeant Tashigi, identical to his late childhood friend Kuina. The encounter unsettles him on the eve of the Grand Line.",
     },
     title: { it: 'Le nuove spade di Zoro e Tashigi', en: "Zoro's new swords and Tashigi" },
     description: {
-      it: "A Loguetown Zoro acquista due nuove lame, tra cui la maledetta Sandai Kitetsu, e incontra il sergente Tashigi, sosia della sua amica d'infanzia Kuina, prima dell'arrivo di Smoker.",
-      en: "At Loguetown Zoro buys two new blades, including the cursed Sandai Kitetsu, and meets Sergeant Tashigi, the spitting image of his childhood friend Kuina, before Smoker arrives.",
+      it: "A Loguetown Zoro ottiene due nuove lame, tra cui la maledetta Sandai Kitetsu, e incontra il sergente Tashigi, sosia della sua amica d'infanzia Kuina, prima dell'arrivo di Smoker.",
+      en: "At Loguetown Zoro gets two new blades, including the cursed Sandai Kitetsu, and meets Sergeant Tashigi, the spitting image of his childhood friend Kuina, before Smoker arrives.",
     },
     period: { it: 'East Blue', en: 'East Blue' },
     arcId: 'arc-op-loguetown', locationId: 'loc-op-loguetown',
@@ -227,13 +227,13 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-sky-knock-up', worldId: W,
     longDescription: {
-      it: "Per raggiungere il cielo la ciurma deve farsi scagliare in alto dalla Knock-Up Stream, una colonna d'acqua che erutta verso l'alto una volta sola. Cavalcando l'esplosione a bordo della Going Merry, i Cappello di Paglia sfondano il Mare Bianco e approdano sull'isola di nuvole di Skypiea.",
-      en: "To reach the sky the crew must be hurled upward by the Knock-Up Stream, a column of water that erupts skyward only once. Riding the blast aboard the Going Merry, the Straw Hats break through the White Sea and land on the cloud island of Skypiea.",
+      it: "Per raggiungere il cielo la ciurma deve farsi scagliare in alto dalla Knock-Up Stream, una colonna d'acqua che periodicamente erutta dal mare verso l'alto. Cavalcando l'esplosione a bordo della Going Merry, i Cappello di Paglia sfondano il Mare Bianco e approdano sull'isola di nuvole di Skypiea.",
+      en: "To reach the sky the crew must be hurled upward by the Knock-Up Stream, a column of water that periodically erupts skyward from the sea. Riding the blast aboard the Going Merry, the Straw Hats break through the White Sea and land on the cloud island of Skypiea.",
     },
     title: { it: 'La Knock-Up Stream verso il cielo', en: 'The Knock-Up Stream to the sky' },
     description: {
-      it: "Cavalcando la colonna d'acqua della Knock-Up Stream, la Going Merry è scagliata a 10.000 metri d'altitudine fino al «Mare Bianco», raggiungendo l'isola del cielo di Skypiea.",
-      en: "Riding the column of water of the Knock-Up Stream, the Going Merry is launched 10,000 metres up to the 'White Sea', reaching the sky island of Skypiea.",
+      it: "Cavalcando la colonna d'acqua della Knock-Up Stream, la Going Merry è scagliata a 7.000 metri d'altitudine fino al «Mare Bianco», sulla rotta per l'isola del cielo di Skypiea.",
+      en: "Riding the column of water of the Knock-Up Stream, the Going Merry is launched 7,000 metres up to the 'White Sea', on its way to the sky island of Skypiea.",
     },
     period: { it: 'Paradiso · Skypiea', en: 'Paradise · Skypiea' },
     arcId: 'arc-op-skypiea', locationId: 'loc-op-jaya',
@@ -299,13 +299,13 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-el-gates-justice', worldId: W,
     longDescription: {
-      it: "Per riprendersi Robin la ciurma — con Franky, i Galley-La, la Sodi e Usop mascherato da Sogeking — assalta l'isola giudiziaria di Enies Lobby. Sfondate le Porte della Giustizia e superati i giganti guardiani, raggiungono la torre dove la loro compagna è prigioniera.",
-      en: "To take Robin back the crew — with Franky, the Galley-La, the Franky Family and Usopp disguised as Sogeking — storms the judicial island of Enies Lobby. Breaking the Gates of Justice and passing the giant guards, they reach the tower where their friend is held.",
+      it: "Per riprendersi Robin la ciurma — con Franky, i Galley-La, la Sodi e Usop mascherato da Sogeking — assalta l'isola giudiziaria di Enies Lobby. Sfondato il portone principale e superati i giganti guardiani, raggiungono la torre dove la loro compagna è prigioniera.",
+      en: "To take Robin back the crew — with Franky, the Galley-La, the Franky Family and Usopp disguised as Sogeking — storms the judicial island of Enies Lobby. Breaking through the main gate and past the giant guards, they reach the tower where their friend is held.",
     },
-    title: { it: 'Lo sfondamento delle Porte della Giustizia', en: 'Breaking the Gates of Justice' },
+    title: { it: 'Lo sfondamento del portone principale di Enies Lobby', en: 'Breaking through the main gate of Enies Lobby' },
     description: {
-      it: "La ciurma e i loro alleati irrompono a Enies Lobby attraversando le Porte della Giustizia e superano la fila dei giganti guardiani per raggiungere la torre dove è tenuta Robin.",
-      en: "The crew and their allies storm Enies Lobby through the Gates of Justice and break past the line of giant guards to reach the tower where Robin is held.",
+      it: "La ciurma e i loro alleati irrompono a Enies Lobby attraverso il portone principale e superano i giganti guardiani per raggiungere la torre dove è tenuta Robin.",
+      en: "The crew and their allies storm Enies Lobby through its main gate and break past the giant guards to reach the tower where Robin is held.",
     },
     period: { it: 'Paradiso · Enies Lobby', en: 'Paradise · Enies Lobby' },
     arcId: 'arc-op-enies-lobby', locationId: 'loc-op-enies-lobby',
@@ -316,13 +316,13 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-el-lucci-fight', worldId: W,
     longDescription: {
-      it: "Nel cuore di Enies Lobby Rufy affronta il letale Rob Lucci, capo segreto della CP9. Spinto oltre il limite, sblocca il Gear Second, che ne accelera il corpo, e il Gear Third, che lo ingigantisce, e abbatte Lucci, riprendendosi finalmente Robin.",
-      en: "In the heart of Enies Lobby Luffy faces the lethal Rob Lucci, CP9's secret leader. Pushed past his limit, he unlocks Gear Second, which speeds up his body, and Gear Third, which enlarges it, and beats Lucci, finally taking Robin back.",
+      it: "Nel cuore di Enies Lobby Rufy affronta il letale Rob Lucci, capo segreto della CP9. Spinto oltre il limite, porta all'estremo il Gear Second, che ne accelera il corpo, e il Gear Third, che lo ingigantisce, e abbatte Lucci, riprendendosi finalmente Robin.",
+      en: "In the heart of Enies Lobby Luffy faces the lethal Rob Lucci, CP9's secret leader. Pushed past his limit, he drives Gear Second, which speeds up his body, and Gear Third, which enlarges it, to the extreme and beats Lucci, finally taking Robin back.",
     },
     title: { it: 'Rufy contro Rob Lucci: Gear Second e Third', en: 'Luffy vs Rob Lucci: Gear Second and Third' },
     description: {
-      it: "Nel cuore della torre Rufy affronta Rob Lucci, l'uomo-leopardo più letale della CP9. Spinto all'estremo, sblocca il Gear Second e il Gear Third e lo abbatte per riprendersi Robin.",
-      en: "In the heart of the tower Luffy faces Rob Lucci, CP9's deadliest leopard-man. Pushed to the limit, he unlocks Gear Second and Gear Third and beats him to take Robin back.",
+      it: "Nel cuore della torre Rufy affronta Rob Lucci, l'uomo-leopardo più letale della CP9. Spinto all'estremo, porta al limite il Gear Second e il Gear Third e lo abbatte per riprendersi Robin.",
+      en: "In the heart of the tower Luffy faces Rob Lucci, CP9's deadliest leopard-man. Pushed to the limit, he drives Gear Second and Gear Third to the extreme and beats him to take Robin back.",
     },
     period: { it: 'Paradiso · Enies Lobby', en: 'Paradise · Enies Lobby' },
     arcId: 'arc-op-enies-lobby', locationId: 'loc-op-enies-lobby',
@@ -424,13 +424,13 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-id-descent', worldId: W,
     longDescription: {
-      it: "Introdotto di nascosto da Hancock, Rufy scende tra i livelli di Impel Down e ritrova vecchi nemici diventati alleati: Bagy, Mr. 3 e l'ex Corsaro Crocodile, rinchiuso nel gelido Livello 6. Ognuno ha le sue ragioni per cercare l'uscita o seguirlo.",
-      en: "Smuggled in by Hancock, Luffy descends Impel Down's levels and reunites with old enemies turned allies: Buggy, Mr. 3 and the former Warlord Crocodile, locked in the freezing Level 6. Each has reasons to seek the exit or follow him.",
+      it: "Introdotto di nascosto da Hancock, Rufy scende tra i livelli di Impel Down e ritrova vecchi nemici diventati alleati: Bagy, Mr. 3 e l'ex Corsaro Crocodile, rinchiuso nel Livello 6, l'«Inferno Eterno». Ognuno ha le sue ragioni per cercare l'uscita o seguirlo.",
+      en: "Smuggled in by Hancock, Luffy descends Impel Down's levels and reunites with old enemies turned allies: Buggy, Mr. 3 and the former Warlord Crocodile, locked in Level 6, the 'Eternal Hell'. Each has reasons to seek the exit or follow him.",
     },
     title: { it: 'La discesa nei livelli infernali', en: 'The descent into the infernal levels' },
     description: {
-      it: "Introdotto di nascosto da Hancock, Rufy scende tra i sei livelli di Impel Down e ritrova vecchi nemici diventati alleati: Bagy, Mr. 3 e l'ex Corsaro Crocodile, rinchiuso nel gelido Livello 6.",
-      en: "Smuggled in by Hancock, Luffy descends Impel Down's six levels and reunites with old enemies turned allies: Buggy, Mr. 3 and the former Warlord Crocodile, locked in the freezing Level 6.",
+      it: "Introdotto di nascosto da Hancock, Rufy scende tra i sei livelli di Impel Down e ritrova vecchi nemici diventati alleati: Bagy, Mr. 3 e l'ex Corsaro Crocodile, rinchiuso nel Livello 6, l'«Inferno Eterno».",
+      en: "Smuggled in by Hancock, Luffy descends Impel Down's six levels and reunites with old enemies turned allies: Buggy, Mr. 3 and the former Warlord Crocodile, locked in Level 6, the 'Eternal Hell'.",
     },
     period: { it: 'Saga di Marineford', en: 'Marineford Saga' },
     arcId: 'arc-op-impel-down', locationId: 'loc-op-impel-down',
@@ -581,13 +581,13 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-fmi-noah', worldId: W,
     longDescription: {
-      it: "Quando Hody tenta di scagliare l'antica Arca Noah sull'isola per annientarla, si rivela che la principessa Shirahoshi è Poseidon, una delle tre armi ancestrali, capace di comandare i Re del Mare. Rufy ferma Hody e l'arca, e salva il regno sottomarino dalla distruzione.",
-      en: "When Hody tries to hurl the ancient Ark Noah onto the island to annihilate it, it is revealed that Princess Shirahoshi is Poseidon, one of the three ancient weapons, able to command the Sea Kings. Luffy stops Hody and the ark, saving the underwater kingdom from destruction.",
+      it: "Quando Hody tenta di scagliare l'antica Arca Noah sull'isola per annientarla, si rivela che la principessa Shirahoshi è Poseidon, una delle tre armi ancestrali, capace di comandare i Re del Mare. Rufy sconfigge Hody e, al richiamo di Shirahoshi, i Re del Mare fermano l'arca, salvando il regno sottomarino dalla distruzione.",
+      en: "When Hody tries to hurl the ancient Ark Noah onto the island to annihilate it, it is revealed that Princess Shirahoshi is Poseidon, one of the three ancient weapons, able to command the Sea Kings. Luffy defeats Hody and, at Shirahoshi's call, the Sea Kings halt the ark, saving the underwater kingdom from destruction.",
     },
     title: { it: "Shirahoshi, Poseidon e l'Arca Noah", en: "Shirahoshi, Poseidon and the Ark Noah" },
     description: {
-      it: "Quando Hody tenta di scagliare l'Arca Noah sull'isola, si rivela che la principessa Shirahoshi è Poseidon, una delle armi ancestrali. Rufy ferma Hody e protegge l'isola dalla distruzione.",
-      en: "When Hody tries to hurl the Ark Noah onto the island, it is revealed that Princess Shirahoshi is Poseidon, one of the ancient weapons. Luffy stops Hody and protects the island from destruction.",
+      it: "Quando Hody tenta di scagliare l'Arca Noah sull'isola, si rivela che la principessa Shirahoshi è Poseidon, una delle armi ancestrali. Rufy sconfigge Hody mentre i Re del Mare, richiamati da Shirahoshi, fermano l'arca.",
+      en: "When Hody tries to hurl the Ark Noah onto the island, it is revealed that Princess Shirahoshi is Poseidon, one of the ancient weapons. Luffy defeats Hody while the Sea Kings, summoned by Shirahoshi, halt the ark.",
     },
     period: { it: 'Saga di Fish-Man Island', en: 'Fish-Man Island Saga' },
     arcId: 'arc-op-fishman-island', locationId: 'loc-op-fishman-island',
@@ -830,12 +830,12 @@ export const onepieceEventsExtra: TimelineEvent[] = [
     id: 'evt-op-egg-kizaru-saturn', worldId: W,
     longDescription: {
       it: "Il Governo Mondiale ordina di cancellare Vegapunk: sbarcano l'ammiraglio Kizaru, la CP0 e, in persona, l'Astro di Saggezza Saturn, una creatura quasi divina. Sull'isola del futuro divampa una battaglia disperata mentre la verità rischia di sfuggire al loro controllo.",
-      en: "The World Government orders Vegapunk erased: Admiral Kizaru, CP0 and, in person, the Elder of Wisdom Saturn — a near-divine creature — land. A desperate battle erupts on the island of the future as the truth threatens to slip beyond their control.",
+      en: "The World Government orders Vegapunk erased: Admiral Kizaru, CP0 and, in person, Saturn, one of the Five Elders — a near-divine creature — land. A desperate battle erupts on the island of the future as the truth threatens to slip beyond their control.",
     },
     title: { it: "Kizaru e l'Astro Saturn sbarcano", en: 'Kizaru and Elder Saturn land' },
     description: {
       it: "Il Governo Mondiale ordina di cancellare Vegapunk: arrivano l'ammiraglio Kizaru, la CP0 e l'Astro di Saggezza Saturn in persona con le armi Seraphim. Sull'isola del futuro divampa una battaglia disperata.",
-      en: "The World Government orders Vegapunk erased: Admiral Kizaru, CP0 and the Elder of Wisdom Saturn himself arrive with the Seraphim weapons. A desperate battle erupts on the island of the future.",
+      en: "The World Government orders Vegapunk erased: Admiral Kizaru, CP0 and Saturn of the Five Elders himself arrive with the Seraphim weapons. A desperate battle erupts on the island of the future.",
     },
     period: { it: 'Nuovo Mondo · Egghead', en: 'New World · Egghead' },
     arcId: 'arc-op-egghead', locationId: 'loc-op-egghead',

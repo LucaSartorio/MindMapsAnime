@@ -94,8 +94,8 @@ export const onepieceCharactersNorthBlue: Character[] = [
     ],
     arcIds: ['arc-op-flevance'],
     shortDescription: {
-      it: "Fratello minore di Doflamingo e ufficiale segreto della Marina, infiltrato nella ciurma Donquijote. Si sacrificò per donare a Law il Frutto Ope Ope, curandolo e liberandolo dall'odio del fratello.",
-      en: "Doflamingo's younger brother and a secret Marine officer, infiltrated into the Donquixote crew. He sacrificed himself to give Law the Ope Ope Fruit, curing him and freeing him from his brother's hatred.",
+      it: "Fratello minore di Doflamingo e ufficiale segreto della Marina, infiltrato nella ciurma Donquijote. Si sacrificò per donare a Law il Frutto Ope Ope, con cui il ragazzo poté guarirsi, liberandolo dall'odio del fratello.",
+      en: "Doflamingo's younger brother and a secret Marine officer, infiltrated into the Donquixote crew. He sacrificed himself to give Law the Ope Ope Fruit, with which the boy could cure himself, freeing him from his brother's hatred.",
     },
     status: 'deceased',
     canonStatus: 'canon',

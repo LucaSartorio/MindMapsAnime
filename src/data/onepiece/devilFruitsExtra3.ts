@@ -45,10 +45,10 @@ export const onepieceDevilFruitsExtra3: Jutsu[] = [
     "An example of a Zoan fruit fed to an object: the gun Lassoo became a living dachshund able to fire explosive shells, used by Baroque Works' agent Mr. 4.",
     ['baroque-works', 'arma-vivente']),
   J('fruit-op-smile', 'SMILE', 'SMILE (frutto artificiale)', 'SMILE (artificial fruit)', 'zoan', ['char-op-holdem', 'char-op-page-one', 'char-op-ulti', 'char-op-sasaki'],
-    "Frutti Zoan artificiali prodotti da Caesar e Kaido: danno poteri animali ma cancellano ogni emozione tranne il riso.",
-    "Artificial Zoan fruits produced by Caesar and Kaido: they grant animal powers but erase every emotion except laughter.",
-    "Sintetizzati dai frutti Sara Sara e prodotti in serie nella fabbrica di Dressrosa, gli SMILE funzionano solo per una persona su dieci; chi fallisce non ride mai più. Sono la base dell’esercito di «gifter» dei Pirati delle Cento Bestie.",
-    "Synthesized from Sara Sara fruits and mass-produced in the Dressrosa factory, SMILEs work for only one person in ten; those who fail can never laugh again. They are the basis of the Beasts Pirates' 'gifter' army.",
+    "Frutti Zoan artificiali prodotti con il SAD di Caesar nella fabbrica di Doflamingo per Kaido: danno poteri animali a un utente su dieci, mentre gli altri non ottengono nulla e perdono ogni espressione tranne il riso.",
+    "Artificial Zoan fruits made from Caesar's SAD in Doflamingo's factory for Kaido: they grant animal powers to one user in ten, while the others gain nothing and lose every expression except laughter.",
+    "Ottenuti dal SAD sintetizzato da Caesar e prodotti in serie nella fabbrica di Dressrosa, gli SMILE funzionano solo per una persona su dieci; chi fallisce non ottiene poteri e può soltanto ridere, perdendo ogni altra espressione. Sono la base dell’esercito di «gifter» dei Pirati delle Cento Bestie.",
+    "Made from the SAD synthesized by Caesar and mass-produced in the Dressrosa factory, SMILEs work for only one person in ten; those who fail gain no power and can only laugh, losing every other expression. They are the basis of the Beasts Pirates' 'gifter' army.",
     ['cento-bestie', 'artificiale', 'dressrosa']),
 
   /* ---------------------- Ambizione (Haki) ---------------------- */

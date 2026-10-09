@@ -40,7 +40,7 @@ export const onepieceLocationsParadise: Location[] = [
     y: 514,
     shortDescription: {
       it: "Il faro all'imbocco della Grand Line, casa del guardiano Crocus e della balena Laboon, che da 50 anni attende il ritorno dei suoi pirati.",
-      en: 'The lighthouse at the mouth of the Grand Line, home of the keeper Crocus and the whale Laboon, who has awaited her pirates for 50 years.',
+      en: 'The lighthouse at the mouth of the Grand Line, home of the keeper Crocus and the whale Laboon, who has awaited his pirates for 50 years.',
     },
     nationId: 'nation-op-grand-line-paradise',
     importance: 'secondary',

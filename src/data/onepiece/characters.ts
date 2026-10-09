@@ -290,8 +290,8 @@ export const onepieceCharactersEastBlue: Character[] = [
     firstMangaAppearance: "98",
     firstAnimeAppearance: "48",
     longDescription: {
-      it: "«il Cacciatore Bianco», marine integerrimo utente del frutto Fum Fum. Inseguì Rufy da Loguetown a Punk Hazard prima di lasciarlo andare, e milita nella segreta unità SWORD opponendosi alla «Giustizia Assoluta».",
-      en: "'White Hunter', an upright Marine and user of the Smoke-Smoke Fruit. He pursued Luffy from Loguetown to Punk Hazard before letting him go, and serves in the secret SWORD unit, opposing 'Absolute Justice'.",
+      it: "«il Cacciatore Bianco», marine integerrimo utente del frutto Fum Fum. Inseguì Rufy da Loguetown a Punk Hazard prima di lasciarlo andare; oggi viceammiraglio a capo della base G-5, si oppone alla «Giustizia Assoluta».",
+      en: "'White Hunter', an upright Marine and user of the Smoke-Smoke Fruit. He pursued Luffy from Loguetown to Punk Hazard before letting him go; now a vice admiral at the head of the G-5 base, he opposes 'Absolute Justice'.",
     },
     name: 'Smoker',
     aliases: ['Cacciatore Bianco'],

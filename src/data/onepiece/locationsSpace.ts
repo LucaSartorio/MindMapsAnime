@@ -149,12 +149,12 @@ export const onepieceLocationsSpace: Location[] = [
     x: 440,
     y: 150,
     shortDescription: {
-      it: "La Stella Polare, eterno punto di riferimento dei naviganti del Pianeta Blu. Dà il nome alle Isole della Stella Polare del Nuovo Mondo, dove sorge Drum.",
-      en: "The Polar Star, the eternal reference point of the Blue Planet's navigators. It lends its name to the New World's Polestar Islands, home of Drum.",
+      it: "La Stella Polare, eterno punto di riferimento dei naviganti del Pianeta Blu. Dà il nome alle Isole della Stella Polare di East Blue, dove sorge Loguetown.",
+      en: "The Polar Star, the eternal reference point of the Blue Planet's navigators. It lends its name to East Blue's Polestar Islands, home of Loguetown.",
     },
     longDescription: {
-      it: "Mentre il Log Pose segue il magnetismo delle isole, la Stella Polare resta il riferimento celeste immutabile dei marinai. Le «Polestar Islands» del Nuovo Mondo — tra cui Drum/Sakura — prendono il nome da essa.",
-      en: "While the Log Pose follows the islands' magnetism, the Polar Star remains the sailors' unchanging celestial reference. The New World's 'Polestar Islands' — among them Drum/Sakura — are named after it.",
+      it: "Mentre il Log Pose segue il magnetismo delle isole, la Stella Polare resta il riferimento celeste immutabile dei marinai. Le «Polestar Islands» di East Blue — dove sorge Loguetown — prendono il nome da essa.",
+      en: "While the Log Pose follows the islands' magnetism, the Polar Star remains the sailors' unchanging celestial reference. East Blue's 'Polestar Islands' — where Loguetown stands — are named after it.",
     },
     importance: 'minor',
     canonStatus: 'canon',
