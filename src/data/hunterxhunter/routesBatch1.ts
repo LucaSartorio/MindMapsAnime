@@ -153,8 +153,8 @@ export const hxhRoutesBatch1: Route[] = [
     name: 'La spedizione verso il Continente Oscuro',
     localizedName: { it: 'La spedizione verso il Continente Oscuro', en: 'The Dark Continent expedition' },
     description: {
-      it: "Dal Regno di Kakin la nave Black Whale salpa oltre il Lago Mobius verso il Continente Oscuro, dimora delle Cinque Calamità.",
-      en: 'From the Kingdom of Kakin the Black Whale sails beyond Lake Mobius toward the Dark Continent, home of the Five Calamities.',
+      it: "Dall'Impero di Kakin la nave Black Whale salpa oltre il Lago Mobius verso il Continente Oscuro, dimora delle Cinque Calamità.",
+      en: 'From the Kakin Empire the Black Whale sails beyond Lake Mobius toward the Dark Continent, home of the Five Calamities.',
     },
     protagonistCharacterIds: ['char-hxh-kurapika', 'char-hxh-ging', 'char-hxh-beyond'],
     relatedCharacterIds: ['char-hxh-pariston', 'char-hxh-cheadle'],

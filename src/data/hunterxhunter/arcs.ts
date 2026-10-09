@@ -150,8 +150,8 @@ export const hxhArcs: StoryArc[] = [
     saga: { it: 'Saga dell\'Elezione', en: 'Election Saga' },
     order: 7,
     description: {
-      it: 'Dopo la morte di Netero, l\'Associazione Hunter elegge un nuovo presidente mentre Gon, in fin di vita, incontra finalmente Ging.',
-      en: 'After Netero\'s death, the Hunter Association elects a new chairman while a dying Gon finally meets Ging.',
+      it: 'Dopo la morte di Netero, l\'Associazione Hunter elegge un nuovo presidente mentre Gon, guarito grazie ad Alluka, incontra finalmente Ging.',
+      en: 'After Netero\'s death, the Hunter Association elects a new chairman while Gon, healed thanks to Alluka, finally meets Ging.',
     },
     mangaChapters: ['319-339'],
     animeEpisodes: ['ep. 137-148 (2011)'],

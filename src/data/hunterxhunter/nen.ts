@@ -246,7 +246,7 @@ export const hxhNen: Jutsu[] = [
     id: 'jutsu-hxh-narukami',
     worldId: 'world-hunterxhunter',
     name: 'Lightning Palm',
-    localizedName: { it: 'Palmo Fulmine (Narukami)', en: 'Lightning Palm (Narukami)' },
+    localizedName: { it: 'Palmo Fulmine', en: 'Lightning Palm' },
     type: 'transmutation',
     classification: ['offensive'],
     characterIds: ['char-hxh-killua'],

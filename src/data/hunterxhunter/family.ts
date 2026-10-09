@@ -2,7 +2,6 @@ import { familyKit, type FamilyLinks } from '../shared/familyKit';
 
 const { p } = familyKit('char-hxh-');
 const zoldyck = p(['silva', 'kikyo']);
-const kakin = p(['nasubi']);
 
 /** Genitori e coniugi (albero genealogico nella scheda personaggio). */
 export const hxhFamily: Record<string, FamilyLinks> = {
@@ -24,7 +23,7 @@ export const hxhFamily: Record<string, FamilyLinks> = {
   tyson: p(['nasubi', 'katrono']),
   luzurus: p(['nasubi', 'duazul']),
   'sale-sale': p(['nasubi', 'swinkoswinko']),
-  halkenburg: kakin,
+  halkenburg: p(['nasubi', 'unma']),
   kacho: p(['nasubi', 'seiko']),
   fugetsu: p(['nasubi', 'seiko']),
   momoze: p(['nasubi', 'sevanti']),

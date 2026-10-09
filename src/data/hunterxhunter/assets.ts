@@ -35,8 +35,8 @@ export const hxhAssets: AssetReference[] = [
     license: 'fan-art / da verificare',
     author: 'Sharpsider',
     notes: {
-      it: 'Mappa amatoriale del mondo conosciuto di Hunter x Hunter ("Made by Sharpsider"). Usata come riferimento geografico (viewBox 2000 × 1180). Non è materiale ufficiale: il mondo rappresentato è © Yoshihiro Togashi / Shueisha. Il file PNG va copiato manualmente in public/assets/worlds/hunterxhunter/maps/hxh-world-map.png.',
-      en: 'Fan-made map of the Hunter x Hunter known world ("Made by Sharpsider"). Used as a geographic reference (viewBox 2000 × 1180). Not official material: the depicted world is © Yoshihiro Togashi / Shueisha. The PNG must be copied manually into public/assets/worlds/hunterxhunter/maps/hxh-world-map.png.',
+      it: 'Mappa amatoriale del mondo conosciuto di Hunter x Hunter ("Made by Sharpsider"). Usata come riferimento geografico (viewBox 2000 × 1187). Non è materiale ufficiale: il mondo rappresentato è © Yoshihiro Togashi / Shueisha. Il file PNG va copiato manualmente in public/assets/worlds/hunterxhunter/maps/hxh-world-map.png.',
+      en: 'Fan-made map of the Hunter x Hunter known world ("Made by Sharpsider"). Used as a geographic reference (viewBox 2000 × 1187). Not official material: the depicted world is © Yoshihiro Togashi / Shueisha. The PNG must be copied manually into public/assets/worlds/hunterxhunter/maps/hxh-world-map.png.',
     },
   },
   {

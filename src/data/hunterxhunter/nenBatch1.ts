@@ -259,7 +259,7 @@ export const hxhNenBatch1: Jutsu[] = [
     classification: ['offensive'],
     characterIds: ['char-hxh-genthru'],
     shortDescription: {
-      it: 'Genthru "il Bombarolo" concentra l\'aura nel palmo e la rilascia in un\'esplosione devastante al contatto.',
+      it: 'Genthru "il Bomber" concentra l\'aura nel palmo e la rilascia in un\'esplosione devastante al contatto.',
       en: 'Genthru "the Bomber" gathers aura in his palm and releases it as a devastating explosion on contact.',
     },
     canonStatus: 'canon',

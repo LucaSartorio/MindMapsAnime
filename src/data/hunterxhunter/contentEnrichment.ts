@@ -7,7 +7,7 @@ import type { Localizable } from '@/types';
  */
 export const HXH_JUTSU_LONG: Record<string, Localizable> = {
   'jutsu-hxh-gyo': {
-    it: "Variante dello Shu applicata agli occhi: permette di vedere l'aura nascosta con l'In e di leggere le abilità avversarie. Su Greed Island Biscuit costringe Gon e Killua a usarlo di continuo, finché diventa un riflesso.",
+    it: "Forma di concentrazione dell'aura negli occhi: permette di vedere l'aura nascosta con l'In e di leggere le abilità avversarie. Su Greed Island Biscuit costringe Gon e Killua a usarlo di continuo, finché diventa un riflesso.",
     en: "A form of focusing aura in the eyes: it reveals aura hidden with In and lets the user read an opponent's abilities. On Greed Island Biscuit forces Gon and Killua to use it constantly until it becomes a reflex.",
   },
   'jutsu-hxh-in': {
