@@ -37,7 +37,7 @@ export const animeWorlds: AnimeWorld[] = [
     slug: 'naruto',
     urlSlug: 'naruto',
     // Dataset tradotto in spagnolo (overlay src/data/naruto/i18n/es.ts) → URL /es/naruto/...
-    translatedLocales: ['es'],
+    translatedLocales: ['es', 'fr'],
     title: {
       it: 'Naruto',
       en: 'Naruto',

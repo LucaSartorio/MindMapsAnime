@@ -87,7 +87,10 @@ export function getLoadedWorldDataset(slug: string): WorldDataset | undefined {
  * quella lingua sugli URL `/en`.
  */
 const worldTranslationLoaders: Record<string, Partial<Record<SupportedLocale, () => Promise<TranslationOverlay>>>> = {
-  naruto: { es: () => import('@/data/naruto/i18n/es').then((m) => m.default) },
+  naruto: {
+    es: () => import('@/data/naruto/i18n/es').then((m) => m.default),
+    fr: () => import('@/data/naruto/i18n/fr').then((m) => m.default),
+  },
   hunterxhunter: {
     es: () => import('@/data/hunterxhunter/i18n/es').then((m) => m.default),
     fr: () => import('@/data/hunterxhunter/i18n/fr').then((m) => m.default),
