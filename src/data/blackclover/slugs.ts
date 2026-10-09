@@ -32,7 +32,7 @@ export const blackcloverSlugs: SeoSlugLock = {
       "char-bc-edward": "edward-avalache",
       "char-bc-en-ringard": "en-ringard",
       "char-bc-fana-diamond": "fana-diamond-kingdom",
-      "char-bc-fana-elf": "fana-the-loveless",
+      "char-bc-fana-elf": "fana-the-hateful",
       "char-bc-fanzell": "fanzell-kruger",
       "char-bc-finral": "finral-roulacase",
       "char-bc-floga": "floga",
@@ -430,5 +430,9 @@ export const blackcloverSlugs: SeoSlugLock = {
       "nation-bc-underworld": "underworld"
     }
   },
-  "redirects": {}
+  "redirects": {
+    "characters": {
+      "fana-the-loveless": "char-bc-fana-elf"
+    }
+  }
 };

@@ -119,9 +119,8 @@ async function main() {
       const idx = getSlugIndex(d);
       assert.equal(idx.unlocked.length, 0, `${d.world.slug}: slug non congelati ${idx.unlocked.slice(0, 5).join(', ')} → npm run seo:slugs`);
       for (const c of SEO_CATEGORIES) {
-        for (const [from, id] of idx.redirects[c]) {
-          const to = idx.byId[c].get(id);
-          assert.ok(to, `${d.world.slug}/${c}: redirect ${from} → id ${id} inesistente`);
+        for (const [from, to] of idx.redirects[c]) {
+          assert.ok(idx.bySlug[c].has(to), `${d.world.slug}/${c}: redirect ${from} → ${to} non è uno slug vivo`);
           assert.notEqual(from, to, `${d.world.slug}/${c}: redirect su se stesso ${from}`);
           assert.ok(!idx.bySlug[c].has(from), `${d.world.slug}/${c}: ${from} è sia slug vivo sia redirect`);
         }

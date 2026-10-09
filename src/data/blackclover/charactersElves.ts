@@ -141,6 +141,7 @@ export const blackcloverCharactersElves: Character[] = [
   },
   {
     id: 'char-bc-fana-elf',
+    slug: 'fana-the-hateful',
     worldId: 'world-blackclover',
     name: 'Fana',
     localizedName: { it: 'Fana la Rancorosa', en: 'Fana the Hateful' },
