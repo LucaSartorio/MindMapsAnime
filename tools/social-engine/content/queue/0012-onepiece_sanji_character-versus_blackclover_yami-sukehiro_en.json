@@ -1,0 +1,22 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterVersus",
+  "anime": "onepiece",
+  "subject": "sanji",
+  "opponent": {
+    "anime": "blackclover",
+    "subject": "yami-sukehiro"
+  },
+  "locale": "en",
+  "hook": "Sanji or Yami Sukehiro: who explored more of their world?",
+  "hookType": "curiosity",
+  "hookId": "cv-curiosity-1",
+  "cta": "Follow for the next match-up.",
+  "ctaType": "follow-for-more",
+  "selection": {
+    "mode": "coldstart",
+    "score": 99.5,
+    "seed": "feed6:guess-character:bleach:orihime-inoue@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +25.0, jitter +5.8; +12 main character; +6.7 format below its target share (17% < 25%)"
+}
