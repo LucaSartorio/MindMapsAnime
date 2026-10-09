@@ -20,10 +20,10 @@ const ev = (
   return { worldId: 'world-naruto', referenceStatus: 'verified', order: 0, ...e, canon, canonStatus: canon };
 };
 
-const PRE: Localizable = { it: 'Prima della serie', en: 'Before the series' };
+const PRE: Localizable = { it: 'Pre-serie', en: 'Pre-series' };
 const P1: Localizable = { it: 'Naruto Parte I', en: 'Naruto Part I' };
 const P2: Localizable = { it: 'Naruto Shippuden', en: 'Naruto Shippuden' };
-const WAR: Localizable = { it: 'Quarta Grande Guerra Ninja', en: 'Fourth Great Ninja War' };
+const WAR: Localizable = { it: 'Quarta Guerra Ninja', en: 'Fourth Shinobi World War' };
 const BORUTO: Localizable = { it: 'Era Boruto', en: 'Boruto Era' };
 const TBV: Localizable = { it: 'Boruto: Two Blue Vortex', en: 'Boruto: Two Blue Vortex' };
 
@@ -83,7 +83,7 @@ export const narutoEventsBatch2: TimelineEvent[] = [
     id: 'ev-pain-kills-hanzo',
     title: { it: 'Pain conquista Amegakure', en: 'Pain takes over Amegakure' },
     description: {
-      it: "Dopo la morte di Yahiko, Nagato — con i Sei Cammini di Pain — si vendica di Hanzo della Salamandra e ne stermina il clan. Ame passa sotto il controllo di Pain e Konan, che la governano come un dio e il suo angelo.",
+      it: "Dopo la morte di Yahiko, Nagato — con le Sei Vie di Pain — si vendica di Hanzo della Salamandra e ne stermina il clan. Ame passa sotto il controllo di Pain e Konan, che la governano come un dio e il suo angelo.",
       en: "After Yahiko's death, Nagato — with the Six Paths of Pain — takes revenge on Hanzo of the Salamander and wipes out his clan. Ame falls under the control of Pain and Konan, who rule it as a god and his angel.",
     },
     period: PRE,
@@ -125,9 +125,9 @@ export const narutoEventsBatch2: TimelineEvent[] = [
   /* =============================== SHIPPUDEN =============================== */
   ev({
     id: 'ev-kakuzu-defeated',
-    title: { it: 'Il Rasenshuriken contro Kakuzu', en: 'The Rasenshuriken against Kakuzu' },
+    title: { it: 'Il Rasen Shuriken contro Kakuzu', en: 'The Rasenshuriken against Kakuzu' },
     description: {
-      it: "Naruto arriva sul campo con il Futon: Rasenshuriken appena completato e lo scaglia contro Kakuzu, distruggendone i cuori di riserva. Kakashi finisce l'immortale dell'Akatsuki con il Taglio del Fulmine.",
+      it: "Naruto arriva sul campo con il Futon: Rasen Shuriken appena completato e lo scaglia contro Kakuzu, distruggendone i cuori di riserva. Kakashi finisce l'immortale dell'Akatsuki con il Taglio del Fulmine.",
       en: "Naruto arrives on the battlefield with the freshly completed Wind Release: Rasenshuriken and hurls it at Kakuzu, destroying his spare hearts. Kakashi finishes off the Akatsuki immortal with the Lightning Blade.",
     },
     period: P2,
@@ -202,8 +202,8 @@ export const narutoEventsBatch2: TimelineEvent[] = [
     id: 'ev-mifune-vs-hanzo',
     title: { it: 'Mifune contro Hanzo', en: 'Mifune vs Hanzo' },
     description: {
-      it: "Sul fronte della Quarta Divisione il generale samurai Mifune duella con Hanzo della Salamandra, riportato in vita da Kabuto. Le parole di Mifune risvegliano l'onore del vecchio ninja di Ame, che si lascia sconfiggere.",
-      en: "On the Fourth Division's front the samurai general Mifune duels Hanzo of the Salamander, reanimated by Kabuto. Mifune's words reawaken the old Ame ninja's honour, and he allows himself to be defeated.",
+      it: "Sul fronte della Quinta Divisione il generale samurai Mifune duella con Hanzo della Salamandra, riportato in vita da Kabuto. Le parole di Mifune risvegliano l'onore del vecchio ninja di Ame, che si lascia sconfiggere.",
+      en: "On the Fifth Division's front the samurai general Mifune duels Hanzo of the Salamander, reanimated by Kabuto. Mifune's words reawaken the old Ame ninja's honour, and he allows himself to be defeated.",
     },
     period: WAR,
     arcId: 'arc-fourth-war',
@@ -290,7 +290,7 @@ export const narutoEventsBatch2: TimelineEvent[] = [
     id: 'ev-madara-jinchuriki',
     title: { it: 'Madara jinchūriki delle Dieci Code', en: 'Madara becomes the Ten-Tails jinchūriki' },
     description: {
-      it: "Madara torna in vita con il Rinne Tensei, riprende il Rinnegan, estrae le Dieci Code da Obito e ne diventa il jinchūriki, raggiungendo la Modalità del Eremita delle Sei Vie. I cinque Kage vengono travolti.",
+      it: "Madara torna in vita con il Rinne Tensei, riprende il Rinnegan, estrae le Dieci Code da Obito e ne diventa il jinchūriki, raggiungendo la Modalità dell'Eremita delle Sei Vie. I cinque Kage vengono travolti.",
       en: "Madara comes back to life through Samsara of Heavenly Life, retrieves the Rinnegan, extracts the Ten-Tails from Obito and becomes its jinchūriki, reaching the Sage of Six Paths Mode. The five Kage are overwhelmed.",
     },
     period: WAR,
@@ -349,12 +349,12 @@ export const narutoEventsBatch2: TimelineEvent[] = [
     id: 'ev-academy-mission-kae',
     title: { it: 'La scorta della principessa', en: "The princess's escort" },
     description: {
-      it: "La squadra di Boruto, appena diplomata, riceve una missione di scorta: proteggere la giovane principessa Kae durante il viaggio di ritorno nel suo paese, minacciato da complotti di corte.",
-      en: "Boruto's freshly graduated team receives an escort mission: protecting the young princess Kae on her journey home to her country, threatened by court intrigue.",
+      it: "Minacciata da un complotto di corte, la giovane principessa Kae del Paese del Bambù viene mandata all'Accademia di Konoha come studentessa di scambio: Kawaki, iscritto come allievo, la protegge in incognito con Boruto finché lei può tornare a casa.",
+      en: "Threatened by a court plot, young Princess Kae of the Land of Bamboo is sent to Konoha Academy as an exchange student: Kawaki, enrolled as a pupil, protects her undercover with Boruto until she can return home.",
     },
     period: BORUTO,
     arcId: 'arc-academy-mission',
-    characterIds: ['char-boruto', 'char-sarada', 'char-mitsuki', 'char-konohamaru'],
+    characterIds: ['char-boruto', 'char-kawaki'],
     canon: 'anime_only',
     referenceStatus: 'needs_verification',
     tags: ['boruto-era', 'anime'],

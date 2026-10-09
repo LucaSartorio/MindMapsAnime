@@ -66,8 +66,8 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-arlong-nami-past', worldId: W,
     longDescription: {
-      it: "Il passato di Nami: la marine Bell-mère adottò lei e la sorella Nojiko crescendole nella povertà ma nell'amore, finché Arlong non la uccise davanti alle bambine. Per ricomprare il villaggio, Nami accettò di disegnare mappe per la banda, accumulando in segreto ottanta milioni.",
-      en: "Nami's past: the Marine Bell-mère adopted her and her sister Nojiko, raising them poor but loved, until Arlong killed her before the girls. To buy back the village, Nami agreed to draw maps for the gang, secretly amassing eighty million.",
+      it: "Il passato di Nami: la marine Bell-mère adottò lei e la sorella Nojiko crescendole nella povertà ma nell'amore, finché Arlong non la uccise davanti alle bambine. Per ricomprare il villaggio, Nami accettò di disegnare mappe per la banda, accumulando in segreto novantatré milioni.",
+      en: "Nami's past: the Marine Bell-mère adopted her and her sister Nojiko, raising them poor but loved, until Arlong killed her before the girls. To buy back the village, Nami agreed to draw maps for the gang, secretly amassing ninety-three million.",
     },
     title: { it: 'Il passato di Nami e Bell-mère', en: "Nami and Bell-mère's past" },
     description: {
@@ -83,13 +83,13 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-loguetown-zoro-swords', worldId: W,
     longDescription: {
-      it: "Mentre la ciurma fa provviste a Loguetown, Zoro acquista dal fabbro Ipponmatsu due nuove lame, tra cui la maledetta Sandai Kitetsu, e conosce il sergente Tashigi, identica alla sua amica d'infanzia Kuina, morta da bambina. L'incontro lo turba alla vigilia della Grand Line.",
-      en: "While the crew stocks up at Loguetown, Zoro buys two new blades from the smith Ipponmatsu, including the cursed Sandai Kitetsu, and meets Sergeant Tashigi, identical to his late childhood friend Kuina. The encounter unsettles him on the eve of the Grand Line.",
+      it: "Mentre la ciurma fa provviste a Loguetown, Zoro riceve dal fabbro Ipponmatsu due nuove lame, tra cui la maledetta Sandai Kitetsu, e conosce il sergente Tashigi, identica alla sua amica d'infanzia Kuina, morta da bambina. L'incontro lo turba alla vigilia della Grand Line.",
+      en: "While the crew stocks up at Loguetown, Zoro receives two new blades from the smith Ipponmatsu, including the cursed Sandai Kitetsu, and meets Sergeant Tashigi, identical to his late childhood friend Kuina. The encounter unsettles him on the eve of the Grand Line.",
     },
     title: { it: 'Le nuove spade di Zoro e Tashigi', en: "Zoro's new swords and Tashigi" },
     description: {
-      it: "A Loguetown Zoro acquista due nuove lame, tra cui la maledetta Sandai Kitetsu, e incontra il sergente Tashigi, sosia della sua amica d'infanzia Kuina, prima dell'arrivo di Smoker.",
-      en: "At Loguetown Zoro buys two new blades, including the cursed Sandai Kitetsu, and meets Sergeant Tashigi, the spitting image of his childhood friend Kuina, before Smoker arrives.",
+      it: "A Loguetown Zoro ottiene due nuove lame, tra cui la maledetta Sandai Kitetsu, e incontra il sergente Tashigi, sosia della sua amica d'infanzia Kuina, prima dell'arrivo di Smoker.",
+      en: "At Loguetown Zoro gets two new blades, including the cursed Sandai Kitetsu, and meets Sergeant Tashigi, the spitting image of his childhood friend Kuina, before Smoker arrives.",
     },
     period: { it: 'East Blue', en: 'East Blue' },
     arcId: 'arc-op-loguetown', locationId: 'loc-op-loguetown',
@@ -138,8 +138,8 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-drum-wapol', worldId: W,
     longDescription: {
-      it: "Il vile re Wapol, fuggito all'arrivo di Barbabianca, torna a Drum per riprendersi il regno. Rufy lo umilia e lo spazza via con il «Gom Gom Bazooka»: il paese si libera e, in onore dell'illusione di fiori di ciliegio creata per Hiluluk, viene ribattezzato Regno di Sakura.",
-      en: "The cowardly king Wapol, who fled at Whitebeard's arrival, returns to Drum to reclaim it. Luffy humiliates and blasts him away with the 'Gum-Gum Bazooka': the country is freed and, in honour of the cherry-blossom illusion made for Hiluluk, is renamed the Sakura Kingdom.",
+      it: "Il vile re Wapol, fuggito all'arrivo di Barbanera, torna a Drum per riprendersi il regno. Rufy lo umilia e lo spazza via con il «Gom Gom Bazooka»: il paese si libera e, in onore dell'illusione di fiori di ciliegio creata per Hiluluk, viene ribattezzato Regno di Sakura.",
+      en: "The cowardly king Wapol, who fled at Blackbeard's arrival, returns to Drum to reclaim it. Luffy humiliates and blasts him away with the 'Gum-Gum Bazooka': the country is freed and, in honour of the cherry-blossom illusion made for Hiluluk, is renamed the Sakura Kingdom.",
     },
     title: { it: 'La caduta del tiranno Wapol', en: "The fall of the tyrant Wapol" },
     description: {
@@ -157,13 +157,13 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-al-rainbase', worldId: W,
     longDescription: {
-      it: "A Rainbase Crocodile attira la ciurma e Smoker nella gabbia del suo casinò Rain Dinners. Sopraffatto e mostrato impotente contro la sabbia, Rufy è salvato in extremis da Vivi e dall'acqua: la corsa per fermare la guerra civile riparte verso la capitale Alubarna.",
-      en: "At Rainbase Crocodile lures the crew and Smoker into the cage of his Rain Dinners casino. Overpowered and shown helpless against sand, Luffy is saved at the last moment by Vivi and by water: the race to stop the civil war resumes toward the capital Alubarna.",
+      it: "A Rainbase Crocodile attira la ciurma e Smoker in una gabbia di agalmatolite del suo casinò Rain Dinners e allaga la sala. Liberati in extremis grazie a Vivi e Sanji, sfuggono all'acqua portando con sé anche Smoker: la corsa per fermare la guerra civile riparte verso la capitale Alubarna.",
+      en: "At Rainbase Crocodile lures the crew and Smoker into a Seastone cage in his Rain Dinners casino and floods the room. Freed at the last moment thanks to Vivi and Sanji, they escape the water, dragging Smoker out too: the race to stop the civil war resumes toward the capital Alubarna.",
     },
     title: { it: 'La trappola di Rain Dinners', en: 'The Rain Dinners trap' },
     description: {
-      it: "A Rainbase, Crocodile intrappola la ciurma nella gabbia del suo casinò Rain Dinners insieme a Smoker. Sopraffatto, Rufy è salvato dalla sabbia e da Vivi, mentre comincia la corsa verso Alubarna.",
-      en: "At Rainbase, Crocodile traps the crew in the cage of his Rain Dinners casino along with Smoker. Overpowered, Luffy is saved by the sand and by Vivi as the race to Alubarna begins.",
+      it: "A Rainbase, Crocodile intrappola la ciurma e Smoker nella gabbia del suo casinò Rain Dinners e allaga la sala. Liberati in extremis grazie a Vivi e Sanji, sfuggono all'acqua mentre comincia la corsa verso Alubarna.",
+      en: "At Rainbase, Crocodile traps the crew and Smoker in the cage of his Rain Dinners casino and floods the room. Freed at the last moment thanks to Vivi and Sanji, they escape the water as the race to Alubarna begins.",
     },
     period: { it: 'Paradiso · Alabasta', en: 'Paradise · Alabasta' },
     arcId: 'arc-op-alabasta', locationId: 'loc-op-rainbase',
@@ -227,13 +227,13 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-sky-knock-up', worldId: W,
     longDescription: {
-      it: "Per raggiungere il cielo la ciurma deve farsi scagliare in alto dalla Knock-Up Stream, una colonna d'acqua che erutta verso l'alto una volta sola. Cavalcando l'esplosione a bordo della Going Merry, i Cappello di Paglia sfondano il Mare Bianco e approdano sull'isola di nuvole di Skypiea.",
-      en: "To reach the sky the crew must be hurled upward by the Knock-Up Stream, a column of water that erupts skyward only once. Riding the blast aboard the Going Merry, the Straw Hats break through the White Sea and land on the cloud island of Skypiea.",
+      it: "Per raggiungere il cielo la ciurma deve farsi scagliare in alto dalla Knock-Up Stream, una colonna d'acqua che periodicamente erutta dal mare verso l'alto. Cavalcando l'esplosione a bordo della Going Merry, i Cappello di Paglia sfondano il Mare Bianco e approdano sull'isola di nuvole di Skypiea.",
+      en: "To reach the sky the crew must be hurled upward by the Knock-Up Stream, a column of water that periodically erupts skyward from the sea. Riding the blast aboard the Going Merry, the Straw Hats break through the White Sea and land on the cloud island of Skypiea.",
     },
     title: { it: 'La Knock-Up Stream verso il cielo', en: 'The Knock-Up Stream to the sky' },
     description: {
-      it: "Cavalcando la colonna d'acqua della Knock-Up Stream, la Going Merry è scagliata a 10.000 metri d'altitudine fino al «Mare Bianco», raggiungendo l'isola del cielo di Skypiea.",
-      en: "Riding the column of water of the Knock-Up Stream, the Going Merry is launched 10,000 metres up to the 'White Sea', reaching the sky island of Skypiea.",
+      it: "Cavalcando la colonna d'acqua della Knock-Up Stream, la Going Merry è scagliata a 7.000 metri d'altitudine fino al «Mare Bianco», sulla rotta per l'isola del cielo di Skypiea.",
+      en: "Riding the column of water of the Knock-Up Stream, the Going Merry is launched 7,000 metres up to the 'White Sea', on its way to the sky island of Skypiea.",
     },
     period: { it: 'Paradiso · Skypiea', en: 'Paradise · Skypiea' },
     arcId: 'arc-op-skypiea', locationId: 'loc-op-jaya',
@@ -299,13 +299,13 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-el-gates-justice', worldId: W,
     longDescription: {
-      it: "Per riprendersi Robin la ciurma — con Franky, i Galley-La, la Sodi e Usop mascherato da Sogeking — assalta l'isola giudiziaria di Enies Lobby. Sfondate le Porte della Giustizia e superati i giganti guardiani, raggiungono la torre dove la loro compagna è prigioniera.",
-      en: "To take Robin back the crew — with Franky, the Galley-La, the Franky Family and Usopp disguised as Sogeking — storms the judicial island of Enies Lobby. Breaking the Gates of Justice and passing the giant guards, they reach the tower where their friend is held.",
+      it: "Per riprendersi Robin la ciurma — con Franky, i Galley-La, la Sodi e Usop mascherato da Sogeking — assalta l'isola giudiziaria di Enies Lobby. Sfondato il portone principale e superati i giganti guardiani, raggiungono la torre dove la loro compagna è prigioniera.",
+      en: "To take Robin back the crew — with Franky, the Galley-La, the Franky Family and Usopp disguised as Sogeking — storms the judicial island of Enies Lobby. Breaking through the main gate and past the giant guards, they reach the tower where their friend is held.",
     },
-    title: { it: 'Lo sfondamento delle Porte della Giustizia', en: 'Breaking the Gates of Justice' },
+    title: { it: 'Lo sfondamento del portone principale di Enies Lobby', en: 'Breaking through the main gate of Enies Lobby' },
     description: {
-      it: "La ciurma e i loro alleati irrompono a Enies Lobby attraversando le Porte della Giustizia e superano la fila dei giganti guardiani per raggiungere la torre dove è tenuta Robin.",
-      en: "The crew and their allies storm Enies Lobby through the Gates of Justice and break past the line of giant guards to reach the tower where Robin is held.",
+      it: "La ciurma e i loro alleati irrompono a Enies Lobby attraverso il portone principale e superano i giganti guardiani per raggiungere la torre dove è tenuta Robin.",
+      en: "The crew and their allies storm Enies Lobby through its main gate and break past the giant guards to reach the tower where Robin is held.",
     },
     period: { it: 'Paradiso · Enies Lobby', en: 'Paradise · Enies Lobby' },
     arcId: 'arc-op-enies-lobby', locationId: 'loc-op-enies-lobby',
@@ -316,13 +316,13 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-el-lucci-fight', worldId: W,
     longDescription: {
-      it: "Nel cuore di Enies Lobby Rufy affronta il letale Rob Lucci, capo segreto della CP9. Spinto oltre il limite, sblocca il Gear Second, che ne accelera il corpo, e il Gear Third, che lo ingigantisce, e abbatte Lucci, riprendendosi finalmente Robin.",
-      en: "In the heart of Enies Lobby Luffy faces the lethal Rob Lucci, CP9's secret leader. Pushed past his limit, he unlocks Gear Second, which speeds up his body, and Gear Third, which enlarges it, and beats Lucci, finally taking Robin back.",
+      it: "Nel cuore di Enies Lobby Rufy affronta il letale Rob Lucci, capo segreto della CP9. Spinto oltre il limite, porta all'estremo il Gear Second, che ne accelera il corpo, e il Gear Third, che lo ingigantisce, e abbatte Lucci, riprendendosi finalmente Robin.",
+      en: "In the heart of Enies Lobby Luffy faces the lethal Rob Lucci, CP9's secret leader. Pushed past his limit, he drives Gear Second, which speeds up his body, and Gear Third, which enlarges it, to the extreme and beats Lucci, finally taking Robin back.",
     },
     title: { it: 'Rufy contro Rob Lucci: Gear Second e Third', en: 'Luffy vs Rob Lucci: Gear Second and Third' },
     description: {
-      it: "Nel cuore della torre Rufy affronta Rob Lucci, l'uomo-leopardo più letale della CP9. Spinto all'estremo, sblocca il Gear Second e il Gear Third e lo abbatte per riprendersi Robin.",
-      en: "In the heart of the tower Luffy faces Rob Lucci, CP9's deadliest leopard-man. Pushed to the limit, he unlocks Gear Second and Gear Third and beats him to take Robin back.",
+      it: "Nel cuore della torre Rufy affronta Rob Lucci, l'uomo-leopardo più letale della CP9. Spinto all'estremo, porta al limite il Gear Second e il Gear Third e lo abbatte per riprendersi Robin.",
+      en: "In the heart of the tower Luffy faces Rob Lucci, CP9's deadliest leopard-man. Pushed to the limit, he drives Gear Second and Gear Third to the extreme and beats him to take Robin back.",
     },
     period: { it: 'Paradiso · Enies Lobby', en: 'Paradise · Enies Lobby' },
     arcId: 'arc-op-enies-lobby', locationId: 'loc-op-enies-lobby',
@@ -424,13 +424,13 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-id-descent', worldId: W,
     longDescription: {
-      it: "Introdotto di nascosto da Hancock, Rufy scende tra i livelli di Impel Down e ritrova vecchi nemici diventati alleati: Bagy, Mr. 3 e l'ex Corsaro Crocodile, rinchiuso nel gelido Livello 6. Ognuno ha le sue ragioni per cercare l'uscita o seguirlo.",
-      en: "Smuggled in by Hancock, Luffy descends Impel Down's levels and reunites with old enemies turned allies: Buggy, Mr. 3 and the former Warlord Crocodile, locked in the freezing Level 6. Each has reasons to seek the exit or follow him.",
+      it: "Introdotto di nascosto da Hancock, Rufy scende tra i livelli di Impel Down e ritrova vecchi nemici diventati alleati: Bagy, Mr. 3 e l'ex Corsaro Crocodile, rinchiuso nel Livello 6, l'«Inferno Eterno». Ognuno ha le sue ragioni per cercare l'uscita o seguirlo.",
+      en: "Smuggled in by Hancock, Luffy descends Impel Down's levels and reunites with old enemies turned allies: Buggy, Mr. 3 and the former Warlord Crocodile, locked in Level 6, the 'Eternal Hell'. Each has reasons to seek the exit or follow him.",
     },
     title: { it: 'La discesa nei livelli infernali', en: 'The descent into the infernal levels' },
     description: {
-      it: "Introdotto di nascosto da Hancock, Rufy scende tra i sei livelli di Impel Down e ritrova vecchi nemici diventati alleati: Bagy, Mr. 3 e l'ex Corsaro Crocodile, rinchiuso nel gelido Livello 6.",
-      en: "Smuggled in by Hancock, Luffy descends Impel Down's six levels and reunites with old enemies turned allies: Buggy, Mr. 3 and the former Warlord Crocodile, locked in the freezing Level 6.",
+      it: "Introdotto di nascosto da Hancock, Rufy scende tra i sei livelli di Impel Down e ritrova vecchi nemici diventati alleati: Bagy, Mr. 3 e l'ex Corsaro Crocodile, rinchiuso nel Livello 6, l'«Inferno Eterno».",
+      en: "Smuggled in by Hancock, Luffy descends Impel Down's six levels and reunites with old enemies turned allies: Buggy, Mr. 3 and the former Warlord Crocodile, locked in Level 6, the 'Eternal Hell'.",
     },
     period: { it: 'Saga di Marineford', en: 'Marineford Saga' },
     arcId: 'arc-op-impel-down', locationId: 'loc-op-impel-down',
@@ -581,13 +581,13 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-fmi-noah', worldId: W,
     longDescription: {
-      it: "Quando Hody tenta di scagliare l'antica Arca Noah sull'isola per annientarla, si rivela che la principessa Shirahoshi è Poseidon, una delle tre armi ancestrali, capace di comandare i Re del Mare. Rufy ferma Hody e l'arca, e salva il regno sottomarino dalla distruzione.",
-      en: "When Hody tries to hurl the ancient Ark Noah onto the island to annihilate it, it is revealed that Princess Shirahoshi is Poseidon, one of the three ancient weapons, able to command the Sea Kings. Luffy stops Hody and the ark, saving the underwater kingdom from destruction.",
+      it: "Quando Hody tenta di scagliare l'antica Arca Noah sull'isola per annientarla, si rivela che la principessa Shirahoshi è Poseidon, una delle tre armi ancestrali, capace di comandare i Re del Mare. Rufy sconfigge Hody e, al richiamo di Shirahoshi, i Re del Mare fermano l'arca, salvando il regno sottomarino dalla distruzione.",
+      en: "When Hody tries to hurl the ancient Ark Noah onto the island to annihilate it, it is revealed that Princess Shirahoshi is Poseidon, one of the three ancient weapons, able to command the Sea Kings. Luffy defeats Hody and, at Shirahoshi's call, the Sea Kings halt the ark, saving the underwater kingdom from destruction.",
     },
     title: { it: "Shirahoshi, Poseidon e l'Arca Noah", en: "Shirahoshi, Poseidon and the Ark Noah" },
     description: {
-      it: "Quando Hody tenta di scagliare l'Arca Noah sull'isola, si rivela che la principessa Shirahoshi è Poseidon, una delle armi ancestrali. Rufy ferma Hody e protegge l'isola dalla distruzione.",
-      en: "When Hody tries to hurl the Ark Noah onto the island, it is revealed that Princess Shirahoshi is Poseidon, one of the ancient weapons. Luffy stops Hody and protects the island from destruction.",
+      it: "Quando Hody tenta di scagliare l'Arca Noah sull'isola, si rivela che la principessa Shirahoshi è Poseidon, una delle armi ancestrali. Rufy sconfigge Hody mentre i Re del Mare, richiamati da Shirahoshi, fermano l'arca.",
+      en: "When Hody tries to hurl the Ark Noah onto the island, it is revealed that Princess Shirahoshi is Poseidon, one of the ancient weapons. Luffy defeats Hody while the Sea Kings, summoned by Shirahoshi, halt the ark.",
     },
     period: { it: 'Saga di Fish-Man Island', en: 'Fish-Man Island Saga' },
     arcId: 'arc-op-fishman-island', locationId: 'loc-op-fishman-island',
@@ -600,13 +600,13 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-ph-dragon', worldId: W,
     longDescription: {
-      it: "Sull'isola spaccata tra fuoco e ghiaccio la ciurma trova un dragone, soldati-centauro e il samurai a pezzi Kinemon, in cerca del figlio. Tra scambi di corpi causati da Trafalgar Law e i misteri di Punk Hazard nasce una fragile, decisiva collaborazione tra Rufy e Law.",
-      en: "On the island split between fire and ice the crew finds a dragon, centaur soldiers and the dismembered samurai Kinemon, searching for his son. Amid body-swaps caused by Trafalgar Law and the mysteries of Punk Hazard, a fragile, decisive cooperation between Luffy and Law is born.",
+      it: "Sull'isola spaccata tra fuoco e ghiaccio la ciurma trova un dragone, soldati-centauro e il samurai a pezzi Kin'emon, in cerca del figlio. Tra scambi di corpi causati da Trafalgar Law e i misteri di Punk Hazard nasce una fragile, decisiva collaborazione tra Rufy e Law.",
+      en: "On the island split between fire and ice the crew finds a dragon, centaur soldiers and the dismembered samurai Kin'emon, searching for his son. Amid body-swaps caused by Trafalgar Law and the mysteries of Punk Hazard, a fragile, decisive cooperation between Luffy and Law is born.",
     },
     title: { it: 'Il dragone, i centauri e i samurai', en: 'The dragon, the centaurs and the samurai' },
     description: {
-      it: "Sbarcata sull'isola di fuoco e ghiaccio, la ciurma trova un dragone, soldati-centauro e il samurai a pezzi Kinemon in cerca del figlio. Iniziano scambi di corpi e una fragile collaborazione con Law.",
-      en: "Landing on the fire-and-ice island, the crew finds a dragon, centaur soldiers and the dismembered samurai Kinemon searching for his son. Body-swaps begin, and a fragile cooperation with Law.",
+      it: "Sbarcata sull'isola di fuoco e ghiaccio, la ciurma trova un dragone, soldati-centauro e il samurai a pezzi Kin'emon in cerca del figlio. Iniziano scambi di corpi e una fragile collaborazione con Law.",
+      en: "Landing on the fire-and-ice island, the crew finds a dragon, centaur soldiers and the dismembered samurai Kin'emon searching for his son. Body-swaps begin, and a fragile cooperation with Law.",
     },
     period: { it: 'Nuovo Mondo · Punk Hazard', en: 'New World · Punk Hazard' },
     arcId: 'arc-op-punk-hazard', locationId: 'loc-op-punk-hazard',
@@ -723,16 +723,16 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-wci-pedro', worldId: W,
     longDescription: {
-      it: "Per garantire la fuga della ciurma da Cacao Island, il mink Pedro si fa esplodere contro Charlotte Perospero. Sacrifica la vita scommettendo sulla nuova generazione e su Rufy, sicuro che siano loro a poter cambiare il mondo che lui non vedrà.",
-      en: "To secure the crew's escape from Cacao Island, the mink Pedro blows himself up against Charlotte Perospero. He gives his life betting on the new generation and on Luffy, certain that they are the ones who can change the world he will not see.",
+      it: "Per garantire la fuga della ciurma da Whole Cake Island, il mink Pedro si fa esplodere contro Charlotte Perospero. Sacrifica la vita scommettendo sulla nuova generazione e su Rufy, sicuro che siano loro a poter cambiare il mondo che lui non vedrà.",
+      en: "To secure the crew's escape from Whole Cake Island, the mink Pedro blows himself up against Charlotte Perospero. He gives his life betting on the new generation and on Luffy, certain that they are the ones who can change the world he will not see.",
     },
     title: { it: 'Il sacrificio di Pedro', en: "Pedro's sacrifice" },
     description: {
-      it: "Per garantire la fuga della ciurma da Cacao Island, il mink Pedro si fa esplodere contro Charlotte Perospero, scommettendo la vita sulla nuova generazione e su Rufy.",
-      en: "To secure the crew's escape from Cacao Island, the mink Pedro blows himself up against Charlotte Perospero, betting his life on the new generation and on Luffy.",
+      it: "Per garantire la fuga della ciurma da Whole Cake Island, il mink Pedro si fa esplodere contro Charlotte Perospero, scommettendo la vita sulla nuova generazione e su Rufy.",
+      en: "To secure the crew's escape from Whole Cake Island, the mink Pedro blows himself up against Charlotte Perospero, betting his life on the new generation and on Luffy.",
     },
     period: { it: 'Nuovo Mondo · Whole Cake Island', en: 'New World · Whole Cake Island' },
-    arcId: 'arc-op-whole-cake', locationId: 'loc-op-tl-cacao',
+    arcId: 'arc-op-whole-cake', locationId: 'loc-op-tl-sweet-city',
     characterIds: ['char-op-pedro', 'char-op-luffy', 'char-op-katakuri'], factionIds: ['faction-op-big-mom-pirates'],
     mangaChapters: ['878-880'], animeEpisodes: ['846-848'],
     order: 66.5, canon: c, canonStatus: c, referenceStatus: v, tags: ['whole-cake', 'pedro', 'mink'],
@@ -742,13 +742,13 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-wano-act1', worldId: W,
     longDescription: {
-      it: "Sbarcata a Wano sotto mentite spoglie, la ciurma ritrova Kinemon e i samurai Kozuki e scopre la miseria del Paese sotto Orochi e Kaido. Tra la regione di Kuri e l'eredità di Oden, l'alleanza tesse in segreto il complotto per assaltare Onigashima.",
-      en: "Landing in Wano in disguise, the crew reunites with Kinemon and the Kozuki samurai and sees the country's misery under Orochi and Kaido. Across the Kuri region and Oden's legacy, the alliance secretly weaves the plot to storm Onigashima.",
+      it: "Sbarcata a Wano sotto mentite spoglie, la ciurma ritrova Kin'emon e i samurai Kozuki e scopre la miseria del Paese sotto Orochi e Kaido. Tra la regione di Kuri e l'eredità di Oden, l'alleanza tesse in segreto il complotto per assaltare Onigashima.",
+      en: "Landing in Wano in disguise, the crew reunites with Kin'emon and the Kozuki samurai and sees the country's misery under Orochi and Kaido. Across the Kuri region and Oden's legacy, the alliance secretly weaves the plot to storm Onigashima.",
     },
     title: { it: 'Atto 1: i samurai e la rivolta di Kuri', en: 'Act 1: the samurai and the Kuri uprising' },
     description: {
-      it: "Sbarcata a Wano sotto mentite spoglie, la ciurma ritrova Kinemon e i samurai Kozuki, scopre la miseria sotto Orochi e Kaido e raccoglie l'eredità del clan per preparare il complotto di Onigashima.",
-      en: "Landing in Wano in disguise, the crew reunites with Kinemon and the Kozuki samurai, sees the misery under Orochi and Kaido, and takes up the clan's legacy to prepare the Onigashima plot.",
+      it: "Sbarcata a Wano sotto mentite spoglie, la ciurma ritrova Kin'emon e i samurai Kozuki, scopre la miseria sotto Orochi e Kaido e raccoglie l'eredità del clan per preparare il complotto di Onigashima.",
+      en: "Landing in Wano in disguise, the crew reunites with Kin'emon and the Kozuki samurai, sees the misery under Orochi and Kaido, and takes up the clan's legacy to prepare the Onigashima plot.",
     },
     period: { it: 'Nuovo Mondo · Wano', en: 'New World · Wano' },
     arcId: 'arc-op-wano', locationId: 'loc-op-kuri',
@@ -830,12 +830,12 @@ export const onepieceEventsExtra: TimelineEvent[] = [
     id: 'evt-op-egg-kizaru-saturn', worldId: W,
     longDescription: {
       it: "Il Governo Mondiale ordina di cancellare Vegapunk: sbarcano l'ammiraglio Kizaru, la CP0 e, in persona, l'Astro di Saggezza Saturn, una creatura quasi divina. Sull'isola del futuro divampa una battaglia disperata mentre la verità rischia di sfuggire al loro controllo.",
-      en: "The World Government orders Vegapunk erased: Admiral Kizaru, CP0 and, in person, the Elder of Wisdom Saturn — a near-divine creature — land. A desperate battle erupts on the island of the future as the truth threatens to slip beyond their control.",
+      en: "The World Government orders Vegapunk erased: Admiral Kizaru, CP0 and, in person, Saturn, one of the Five Elders — a near-divine creature — land. A desperate battle erupts on the island of the future as the truth threatens to slip beyond their control.",
     },
     title: { it: "Kizaru e l'Astro Saturn sbarcano", en: 'Kizaru and Elder Saturn land' },
     description: {
       it: "Il Governo Mondiale ordina di cancellare Vegapunk: arrivano l'ammiraglio Kizaru, la CP0 e l'Astro di Saggezza Saturn in persona con le armi Seraphim. Sull'isola del futuro divampa una battaglia disperata.",
-      en: "The World Government orders Vegapunk erased: Admiral Kizaru, CP0 and the Elder of Wisdom Saturn himself arrive with the Seraphim weapons. A desperate battle erupts on the island of the future.",
+      en: "The World Government orders Vegapunk erased: Admiral Kizaru, CP0 and Saturn of the Five Elders himself arrive with the Seraphim weapons. A desperate battle erupts on the island of the future.",
     },
     period: { it: 'Nuovo Mondo · Egghead', en: 'New World · Egghead' },
     arcId: 'arc-op-egghead', locationId: 'loc-op-egghead',

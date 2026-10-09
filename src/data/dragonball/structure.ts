@@ -11,7 +11,7 @@ export const dragonballStructure: Record<string, FactionExtras> = {
     structure: [
       g(L('Comandante', 'Commander'), [m('frieza')]),
       g(L('Guardie scelte', 'Elite guards'), [m('zarbon'), m('dodoria')]),
-      g(L('Forze Speciali Ginyu', 'Ginyu Force'), [m('captain-ginyu'), m('jeice'), m('burter'), m('recoome'), m('guldo')]),
+      g(L('Forze Speciali Ginew', 'Ginyu Force'), [m('captain-ginyu'), m('jeice'), m('burter'), m('recoome'), m('guldo')]),
     ],
   },
   'faction-dbz-red-ribbon-army': {

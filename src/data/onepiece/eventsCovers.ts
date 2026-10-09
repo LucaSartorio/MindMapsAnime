@@ -33,8 +33,8 @@ export const onepieceEventsCovers: TimelineEvent[] = [
   V('evt-op-cover-kobymeppo', 'Diario di Koby e Helmeppo', 'The Diary of Koby-Meppo',
     "Coby e Helmeppo si addestrano nella Marina sotto il duro Garp, crescendo da mozzi a soldati.",
     "Coby and Helmeppo train in the Marines under the harsh Garp, growing from chore-boys to soldiers.",
-    "Arruolati come mozzi, Coby e Helmeppo subiscono l'addestramento brutale di Garp; entrano nell'unità d'élite Sword e maturano fino a meritarsi un posto in prima linea — fino a Marineford.",
-    "Enlisted as chore-boys, Coby and Helmeppo endure Garp's brutal training; they join the elite Sword unit and grow until they earn a frontline place — all the way to Marineford.",
+    "Arruolati come mozzi, Coby e Helmeppo subiscono l'addestramento brutale di Garp; maturano fino a meritarsi un posto in prima linea a Marineford — e, anni dopo, nell'unità d'élite SWORD.",
+    "Enlisted as chore-boys, Coby and Helmeppo endure Garp's brutal training; they grow until they earn a frontline place at Marineford — and, years later, in the elite SWORD unit.",
     'loc-op-marineford', ['char-op-coby', 'char-op-helmeppo', 'char-op-garp'], 'copertine 133-185', 13.1, ['coby', 'marina']),
 
   V('evt-op-cover-wapol', 'L’Onnivoro Hurrà di Wapol', "Wapol's Omnivorous Hurrah",

@@ -245,7 +245,7 @@ export const jjkAbilities: Jutsu[] = [
     en: 'Kenjaku\'s domain, which he expands against Yuki: a place populated by foetuses, a mirror of his experiments.',
   }, { longDescription: { it: "Kenjaku usa anche la gravità ereditata dal corpo di Kaori e, dopo averlo assorbito, la Trasfigurazione inerte di Mahito.", en: "Kenjaku also uses the gravity inherited from Kaori's body and, after absorbing him, Mahito's Idle Transfiguration." }, localizedName: { it: 'Profusione del grembo', en: 'Womb Profusion', ja: '胎蔵遍野' }, japaneseName: '胎蔵遍野', tags: ['kenjaku', 'domini'] }),
   ab('idle-transfiguration', 'Idle Transfiguration', 'innate', SPIRIT, ['mahito', 'kenjaku'], {
-    it: "Mahito tocca l'anima e rimodella il corpo a piacere: trasforma le persone in mostri, cura sé stesso, assume qualunque forma. Funziona su chiunque tranne su Yuji, che sente Sukuna dentro di sé.",
+    it: "Mahito tocca l'anima e rimodella il corpo a piacere: trasforma le persone in mostri, cura sé stesso, assume qualunque forma. Funziona su chiunque tranne su Yuji, che ha Sukuna dentro di sé.",
     en: 'Mahito touches the soul and reshapes the body at will: he turns people into monsters, heals himself, takes any shape. It works on anyone except Yuji, who has Sukuna inside him.',
   }, { localizedName: { it: 'Trasfigurazione inerte', en: 'Idle Transfiguration', ja: '無為転変' }, japaneseName: '無為転変', tags: ['mahito'] }),
   ab('self-embodiment-of-perfection', 'Self-Embodiment of Perfection', 'domain', SPIRIT, ['mahito'], {

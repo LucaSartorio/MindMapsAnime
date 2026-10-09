@@ -217,7 +217,7 @@ export const narutoArcs: StoryArc[] = [
     id: 'arc-jiraiya-gallant',
     worldId: 'world-naruto',
     name: 'Tale of Jiraiya the Gallant',
-    localizedName: { it: 'La Leggenda di Jiraiya il Galante', en: 'Tale of Jiraiya the Gallant' },
+    localizedName: { it: 'La Leggenda di Jiraiya il Coraggioso', en: 'Tale of Jiraiya the Gallant' },
     saga: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     order: 10,
     description: {
@@ -335,7 +335,7 @@ export const narutoArcs: StoryArc[] = [
     saga: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     order: 16,
     description: {
-      it: 'Madara recupera il Rinnegan, sblocca le Dieci Code, Guy apre l\'Ottavo Cancello.',
+      it: 'Madara recupera il Rinnegan, sblocca le Dieci Code, Guy apre l\'Ottava Porta.',
       en: 'Madara recovers the Rinnegan and unleashes the Ten-Tails; Guy opens the Eighth Gate.',
     },
     mangaChapters: ['534-568'],

@@ -108,14 +108,14 @@ export const onepieceArcsCompletion: StoryArc[] = [
   }),
   arc({
     id: 'arc-op-elbaf',
-    name: 'Elbaph',
-    localizedName: { it: 'Elbaf', en: 'Elbaph' },
+    name: 'Elbaf',
+    localizedName: { it: 'Elbaf', en: 'Elbaf' },
     saga: { it: 'Saga del Mondo Finale', en: 'Final Sea (Egghead) Saga' },
     period: { it: 'Saga finale · la terra dei giganti', en: 'Final saga · the land of the giants' },
     order: 74,
     description: {
       it: "Fuggiti da Egghead con i Pirati Giganti Guerrieri, i Cappello di Paglia raggiungono Elbaf, la terra dei giganti. Robin ritrova Jaguar D. Saul, Rufy incontra il principe incatenato Loki, ritenuto l'assassino del padre Re Harald, e i Cavalieri Sacri del Governo Mondiale arrivano per sottomettere il regno.",
-      en: "Having fled Egghead with the Giant Warrior Pirates, the Straw Hats reach Elbaph, the land of the giants. Robin reunites with Jaguar D. Saul, Luffy meets the chained prince Loki, believed to have murdered his father King Harald, and the World Government's Holy Knights arrive to subjugate the kingdom.",
+      en: "Having fled Egghead with the Giant Warrior Pirates, the Straw Hats reach Elbaf, the land of the giants. Robin reunites with Jaguar D. Saul, Luffy meets the chained prince Loki, believed to have murdered his father King Harald, and the World Government's Holy Knights arrive to subjugate the kingdom.",
     },
     locationIds: ['loc-op-elbaf', 'loc-op-eb-sacred-tree', 'loc-op-eb-village'],
     characterIds: ['char-op-luffy', 'char-op-robin', 'char-op-saul', 'char-op-loki', 'char-op-harald', 'char-op-hajrudin', 'char-op-shamrock', 'char-op-gunko', 'char-op-dorry', 'char-op-brogy'],

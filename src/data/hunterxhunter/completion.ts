@@ -56,8 +56,8 @@ export const hxhCompletionLocations: Location[] = [
     x: 720,
     y: 500,
     shortDescription: {
-      it: "Il cuore di grattacieli della metropoli. Durante un blackout sotto la pioggia, Kurapika sfrutta il diversivo di Gon e Killua e cattura Chrollo con la Catena del Giudizio.",
-      en: 'The skyscraper heart of the metropolis. During a blackout in the rain, Kurapika uses Gon and Killua\'s diversion and captures Chrollo with his Judgment Chain.',
+      it: "Il cuore di grattacieli della metropoli. Durante un blackout sotto la pioggia, Kurapika sfrutta il diversivo di Gon e Killua e cattura Chrollo con la Catena Prigione.",
+      en: 'The skyscraper heart of the metropolis. During a blackout in the rain, Kurapika uses Gon and Killua\'s diversion and captures Chrollo with his Chain Jail.',
     },
     nationId: 'nation-hxh-saherta',
     importance: 'secondary',
@@ -395,8 +395,8 @@ export const hxhCompletionCharacters: Character[] = [
     rank: 'Hunter',
     gender: 'M',
     shortDescription: {
-      it: "L'Hunter che insegna il Nen a Kurapika dopo l'Esame. Lo vede creare le sue catene e lo mette in guardia dal prezzo del Giuramento e Limitazione che lega la Catena del Giudizio alla Brigata.",
-      en: 'The Hunter who teaches Kurapika Nen after the Exam. He watches him create his chains and warns him about the price of the Vow and Limitation binding the Judgment Chain to the Troupe.',
+      it: "L'Hunter che insegna il Nen a Kurapika dopo l'Esame. Lo vede creare le sue catene e lo mette in guardia dal prezzo del Giuramento e Limitazione che lega la Catena Prigione alla Brigata.",
+      en: 'The Hunter who teaches Kurapika Nen after the Exam. He watches him create his chains and warns him about the price of the Vow and Limitation binding the Chain Jail to the Troupe.',
     },
     longDescription: {
       it: "Izunavi compare nei ricordi di Kurapika all'inizio dell'arco di Yorknew: l'addestramento è rapido e durissimo, e il maestro capisce subito che l'abilità del ragazzo, nata dall'odio per la Brigata Fantasma, rischia di consumarlo. Kurapika gli chiede come diventare più forte senza limiti; Izunavi gli spiega che ogni promessa del Nen ha un costo.",
@@ -653,8 +653,8 @@ export const hxhCompletionEvents: TimelineEvent[] = [
     id: 'ev-hxh-kurapika-izunavi',
     title: { it: "L'apprendistato di Kurapika", en: "Kurapika's apprenticeship" },
     description: {
-      it: "Dopo l'Esame Kurapika impara il Nen dall'Hunter Izunavi. Materializza le sue catene e lega la Catena del Giudizio a un Giuramento: userà quel potere solo contro la Brigata Fantasma, pena la morte.",
-      en: 'After the Exam Kurapika learns Nen from the Hunter Izunavi. He materialises his chains and binds the Judgment Chain to a Vow: he will use that power only against the Phantom Troupe, on pain of death.',
+      it: "Dopo l'Esame Kurapika impara il Nen dall'Hunter Izunavi. Materializza le sue catene e lega la Catena Prigione a un Giuramento: userà quel potere solo contro la Brigata Fantasma, pena la morte.",
+      en: 'After the Exam Kurapika learns Nen from the Hunter Izunavi. He materialises his chains and binds the Chain Jail to a Vow: he will use that power only against the Phantom Troupe, on pain of death.',
     },
     period: P.yorknew,
     arcId: 'arc-hxh-yorknew-city',

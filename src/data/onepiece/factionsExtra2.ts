@@ -36,8 +36,8 @@ export const onepieceFactionsExtra2: Faction[] = [
   F({ id: 'faction-op-rumbar-pirates', type: 'organization', name: 'Rumbar Pirates', nit: 'Pirati Rumbar', nen: 'Rumbar Pirates',
     it: "La ciurma musicale di Brook, che lasciò la balena Laboon al Capo Gemello.",
     en: "Brook's musical crew, who left the whale Laboon at Twin Cape.",
-    lit: "Allegra ciurma di musicisti guidata da Calico Yorki, percorse la Rotta Maggiore portando con sé la piccola Laboon. Decimata da nemici e malattia, lasciò in eredità la canzone «Bink's Sake» e il suo unico superstite: Brook, tornato in vita col Frutto Rivivi.",
-    len: "A merry crew of musicians led by Calico Yorki, it sailed the Grand Line with little Laboon. Wiped out by foes and disease, it left behind the song 'Bink's Sake' and its sole survivor: Brook, revived by the Revive-Revive Fruit.",
+    lit: "Allegra ciurma di musicisti guidata da Calico Yorki, percorse la Rotta Maggiore portando con sé la piccola Laboon. Sterminata dalle armi avvelenate dei nemici dopo la partenza di Yorki, lasciò in eredità la canzone «Bink's Sake» e il suo unico superstite: Brook, tornato in vita col Frutto Rivivi.",
+    len: "A merry crew of musicians led by Calico Yorki, it sailed the Grand Line with little Laboon. Wiped out by enemies' poisoned weapons after Yorki's departure, it left behind the song 'Bink's Sake' and its sole survivor: Brook, revived by the Revive-Revive Fruit.",
     leaderIds: ['char-op-yorki'], characterIds: ['char-op-brook', 'char-op-yorki', 'char-op-laboon'], locationIds: ['loc-op-twin-cape'], tags: ['ciurma', 'brook', 'laboon', 'musica'] }),
   F({ id: 'faction-op-god-knights', type: 'organization', name: "God's Knights", nit: 'Cavalieri di Dio', nen: "God's Knights",
     it: "Ordine cavalleresco d’élite al diretto servizio di Imu e dei Draghi Celesti.",
@@ -98,8 +98,8 @@ export const onepieceFactionsExtra2: Faction[] = [
 
   /* ---------------------- Concetti-chiave della lore ---------------------- */
   F({ id: 'faction-op-celestial-dragons', type: 'organization', name: 'Celestial Dragons', nit: 'Draghi Celesti (Nobili Mondiali)', nen: 'Celestial Dragons',
-    it: "I discendenti dei diciannove re fondatori del Governo Mondiale, che si credono dèi al di sopra dell’umanità.",
-    en: "The descendants of the nineteen founding kings of the World Government, who believe themselves gods above humanity.",
+    it: "I discendenti dei re fondatori del Governo Mondiale (le diciannove famiglie, su venti, che si stabilirono a Mary Geoise), che si credono dèi al di sopra dell’umanità.",
+    en: "The descendants of the founding kings of the World Government (the nineteen of the twenty families who settled in Mary Geoise), who believe themselves gods above humanity.",
     lit: "Vivono a Mary Geoise respirando con caschi per non «condividere l’aria» dei comuni mortali, che comprano come schiavi. Colpirne uno scatena un Ammiraglio. Al loro vertice, sul Trono Vuoto, siede il sovrano segreto Imu.",
     len: "They live in Mary Geoise breathing through helmets so as not to 'share the air' of commoners, whom they buy as slaves. To strike one summons an Admiral. Above them all, on the Empty Throne, sits the secret ruler Imu.",
     leaderIds: ['char-op-imu'], characterIds: ['char-op-imu', 'char-op-charloss', 'char-op-roswald', 'char-op-shalria', 'char-op-garling'], locationIds: ['loc-op-mary-geoise'], tags: ['governo', 'draghi-celesti'] }),

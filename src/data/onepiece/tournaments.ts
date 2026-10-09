@@ -4,7 +4,7 @@ import { L, tournamentKit } from '../shared/tournamentKit';
 /**
  * Competizioni di One Piece: il Davy Back Fight contro i Pirati di Foxy a
  * Long Ring Long Land e il torneo del Colosseo Corrida di Dressrosa, il cui
- * premio è il Frutto Mera Mera appartenuto ad Ace.
+ * premio è il Frutto Foco Foco appartenuto ad Ace.
  */
 const { side, group, match } = tournamentKit('char-op-');
 
@@ -47,8 +47,8 @@ export const onepieceTournaments: Tournament[] = [
     order: 2,
     format: 'rounds',
     description: L(
-      "Doflamingo mette in palio il Frutto Mera Mera di Ace. Quattro battaglie reali, i blocchi A, B, C e D, scelgono i finalisti che affronteranno il campione del colosseo, Diamante. Rufy partecipa sotto il nome di «Lucy»; quando lascia il colosseo per affrontare Doflamingo, è Sabo a prendere il suo posto con lo stesso travestimento.",
-      "Doflamingo puts Ace's Mera Mera Fruit up as the prize. Four battle royales, blocks A, B, C and D, pick the finalists who will face the colosseum's champion, Diamante. Luffy enters under the name 'Lucy'; when he leaves the colosseum to go after Doflamingo, Sabo takes his place in the same disguise.",
+      "Doflamingo mette in palio il Frutto Foco Foco di Ace. Quattro battaglie reali, i blocchi A, B, C e D, scelgono i finalisti che affronteranno il campione del colosseo, Diamante. Rufy partecipa sotto il nome di «Lucy»; quando lascia il colosseo per affrontare Doflamingo, è Sabo a prendere il suo posto con lo stesso travestimento.",
+      "Doflamingo puts Ace's Flame-Flame Fruit up as the prize. Four battle royales, blocks A, B, C and D, pick the finalists who will face the colosseum's champion, Diamante. Luffy enters under the name 'Lucy'; when he leaves the colosseum to go after Doflamingo, Sabo takes his place in the same disguise.",
     ),
     rounds: [
       {
@@ -67,7 +67,7 @@ export const onepieceTournaments: Tournament[] = [
             sides: [side('sabo', L('Lucy')), side('burgess'), side('rebecca'), side('diamante')],
             winner: 0,
             eventId: 'evt-op-sabo-mera-mera',
-            note: L('Sabo mangia il Frutto Mera Mera e ne ottiene i poteri.', 'Sabo eats the Mera Mera Fruit and gains its powers.'),
+            note: L('Sabo mangia il Frutto Foco Foco e ne ottiene i poteri.', 'Sabo eats the Flame-Flame Fruit and gains its powers.'),
           },
         ],
       },

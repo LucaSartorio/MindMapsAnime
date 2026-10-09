@@ -7,7 +7,7 @@ import type { Localizable } from '@/types';
  */
 export const NARUTO_CHARACTER_LONG: Record<string, Localizable> = {
   'char-tenten': {
-    it: "Specialista di armi del Team Guy, con Neji e Rock Lee. Combatte evocando da pergamene decine di armi ninja e, nella Quarta Guerra, maneggia alcuni degli strumenti del Eremita delle Sei Vie. Nell'era Boruto gestisce un negozio di armi a Konoha.",
+    it: "Specialista di armi del Team Guy, con Neji e Rock Lee. Combatte evocando da pergamene decine di armi ninja e, nella Quarta Guerra, maneggia alcuni degli strumenti dell'Eremita delle Sei Vie. Nell'era Boruto gestisce un negozio di armi a Konoha.",
     en: "The Team Guy weapons specialist, alongside Neji and Rock Lee. She fights by summoning dozens of ninja weapons from scrolls and, in the Fourth War, wields some of the Sage of Six Paths' tools. In the Boruto era she runs a weapons shop in Konoha.",
   },
   'char-iruka': {
@@ -19,7 +19,7 @@ export const NARUTO_CHARACTER_LONG: Record<string, Localizable> = {
     en: "Team 8's jōnin (Hinata, Kiba, Shino), a genjutsu expert. She is Asuma Sarutobi's partner: after his death at Hidan's hands she gives birth to their daughter Mirai, whom Shikamaru promises to protect.",
   },
   'char-anko': {
-    it: "Ex allieva di Orochimaru, che le ha lasciato un Sigillo Maledetto, e proctor della seconda prova degli Esami Chūnin nella Foresta della Morte. In Shippuden dà la caccia a Kabuto; nell'era Boruto insegna all'Accademia.",
+    it: "Ex allieva di Orochimaru, che le ha lasciato un Segno Maledetto, e proctor della seconda prova degli Esami Chūnin nella Foresta della Morte. In Shippuden dà la caccia a Kabuto; nell'era Boruto insegna all'Accademia.",
     en: "A former student of Orochimaru, who left her a Curse Mark, and proctor of the Chūnin Exams' second stage in the Forest of Death. In Shippuden she hunts Kabuto; in the Boruto era she teaches at the Academy.",
   },
   'char-shizune': {
@@ -51,8 +51,8 @@ export const NARUTO_CHARACTER_LONG: Record<string, Localizable> = {
     en: "The Two-Tails Matatabi's jinchūriki, a Kumo kunoichi. Hidan and Kakuzu capture her for the Akatsuki, which extracts the beast and kills her; in the Fourth War she is reanimated among Obito's jinchūriki.",
   },
   'char-roshi': {
-    it: "Il jinchūriki del Quattro Code Son Gokū, ninja di Iwa capace di usare lo Yōton. Catturato da Kisame, muore all'estrazione del cercoterio; Obito lo rianima nella Quarta Guerra come uno dei Sei Cammini.",
-    en: "The Four-Tails Son Gokū's jinchūriki, an Iwa ninja able to use Lava Release. Captured by Kisame, he dies when the beast is extracted; Obito reanimates him in the Fourth War as one of his Six Paths.",
+    it: "Il jinchūriki del Quattro Code Son Gokū, ninja di Iwa capace di usare lo Yōton. Catturato da Kisame, muore all'estrazione del cercoterio; nella Quarta Guerra Kabuto lo rianima e lo mette al servizio di Obito come uno dei Sei Cammini.",
+    en: "The Four-Tails Son Gokū's jinchūriki, an Iwa ninja able to use Lava Release. Captured by Kisame, he dies when the beast is extracted; in the Fourth War Kabuto reanimates him and hands him to Obito as one of his Six Paths.",
   },
   'char-han': {
     it: "Il jinchūriki del Cinque Code Kokuō, ninja di Iwa in armatura capace di usare il Futton. Catturato dall'Akatsuki e ucciso dall'estrazione, torna nella Quarta Guerra come Cammino di Obito.",
@@ -63,8 +63,8 @@ export const NARUTO_CHARACTER_LONG: Record<string, Localizable> = {
     en: "The Six-Tails Saiken's jinchūriki, a Mist deserter who fights with soap bubbles. Pain captures him; in the Fourth War he is reanimated among Obito's jinchūriki.",
   },
   'char-fu': {
-    it: "La jinchūriki del Sette Code Chōmei, kunoichi di Takigakure allegra e solitaria. Kakuzu la cattura per l'Akatsuki; nella Quarta Guerra torna fra i jinchūriki rianimati da Obito.",
-    en: "The Seven-Tails Chōmei's jinchūriki, a cheerful, lonely Takigakure kunoichi. Kakuzu captures her for the Akatsuki; in the Fourth War she returns among the jinchūriki reanimated by Obito.",
+    it: "La jinchūriki del Sette Code Chōmei, kunoichi di Takigakure allegra e solitaria. Kakuzu la cattura per l'Akatsuki; nella Quarta Guerra torna fra i jinchūriki rianimati da Kabuto e controllati da Obito.",
+    en: "The Seven-Tails Chōmei's jinchūriki, a cheerful, lonely Takigakure kunoichi. Kakuzu captures her for the Akatsuki; in the Fourth War she returns among the jinchūriki reanimated by Kabuto and controlled by Obito.",
   },
   'char-mikoto': {
     it: "La madre di Itachi e Sasuke, moglie di Fugaku. Nella notte del massacro accetta il destino insieme al marito, chiedendo solo a Itachi di risparmiare il fratello: Itachi la uccide piangendo.",
@@ -91,8 +91,8 @@ export const NARUTO_CHARACTER_LONG: Record<string, Localizable> = {
     en: "Madara's younger brother, who shares his Sharingan. Mortally wounded by Tobirama, he leaves his eyes to Madara, who uses them to obtain the Eternal Mangekyō.",
   },
   'char-ebisu': {
-    it: "Il tutore d'élite di Konohamaru, rigido e un po' vanitoso. Per qualche giorno allena anche Naruto al controllo del chakra prima che Jiraiya lo sostituisca; nell'era Boruto è ancora un jōnin di Konoha.",
-    en: "Konohamaru's elite tutor, strict and a little vain. For a few days he also trains Naruto in chakra control before Jiraiya replaces him; in the Boruto era he is still a Konoha jōnin.",
+    it: "Il tutore d'élite di Konohamaru, rigido e un po' vanitoso. Per qualche giorno allena anche Naruto al controllo del chakra prima che Jiraiya lo sostituisca; nell'era Boruto è ancora un jōnin speciale di Konoha.",
+    en: "Konohamaru's elite tutor, strict and a little vain. For a few days he also trains Naruto in chakra control before Jiraiya replaces him; in the Boruto era he is still a Konoha special jōnin.",
   },
   'char-ibiki': {
     it: "Il capo della Squadra Torture e Interrogatori di Konoha, segnato da cicatrici in volto. È il proctor della prova scritta degli Esami Chūnin, che usa per mettere alla prova i nervi dei candidati più che le loro conoscenze.",
@@ -314,7 +314,7 @@ export const NARUTO_JUTSU_LONG: Record<string, Localizable> = {
     en: "Kushina uses them to hold Kurama back on the night of Naruto's birth while Minato completes the seal; Naruto shows similar chains in the Fourth War.",
   },
   'jutsu-evil-sealing-method': {
-    it: "Kakashi la applica al Sigillo Maledetto di Sasuke dopo l'incontro con Orochimaru nella Foresta della Morte: funziona finché Sasuke stesso non decide di cedere al sigillo.",
+    it: "Kakashi la applica al Segno Maledetto di Sasuke dopo l'incontro con Orochimaru nella Foresta della Morte: funziona finché Sasuke stesso non decide di cedere al sigillo.",
     en: "Kakashi applies it to Sasuke's Curse Mark after the encounter with Orochimaru in the Forest of Death: it works until Sasuke himself chooses to give in to the mark.",
   },
   'jutsu-mystical-palm': {
@@ -326,8 +326,8 @@ export const NARUTO_JUTSU_LONG: Record<string, Localizable> = {
     en: "It is why Orochimaru wants Sasuke's body and his Sharingan; when he tries to take it, Sasuke turns the technique around and absorbs him.",
   },
   'jutsu-twin-lion-fists': {
-    it: "Hinata la sviluppa da sola, senza il ramo principale degli Hyūga: la usa contro Pain per difendere Naruto e nella Quarta Guerra.",
-    en: "Hinata develops it on her own, apart from the Hyūga main family: she uses it against Pain to defend Naruto and in the Fourth War.",
+    it: "Tecnica segreta del ramo principale degli Hyūga: Hinata la usa contro Pain per difendere Naruto e nella Quarta Guerra.",
+    en: "A secret technique of the Hyūga main family: Hinata uses it against Pain to defend Naruto and in the Fourth War.",
   },
   'jutsu-tenseigan': {
     it: "Toneri lo ottiene trapiantando gli occhi di Hanabi rapita: è il motore del suo piano per far cadere la luna sulla Terra in The Last.",
@@ -362,8 +362,8 @@ export const NARUTO_JUTSU_LONG: Record<string, Localizable> = {
     en: "Kawaki inherits it from Isshiki's Karma and uses it to seal Naruto and Hinata in a separate dimension where time does not flow.",
   },
   'jutsu-claw-marks': {
-    it: "Code, l'ultimo vaso con il Karma Bianco, la usa per muoversi fra i luoghi più lontani; dai suoi segni nascono anche i Claw Grime, creature che obbediscono ai suoi ordini.",
-    en: "Code, the last vessel with the White Karma, uses it to travel between distant places; his marks also give rise to the Claw Grimes, creatures that obey his orders.",
+    it: "Code, ultimo Inner di Kara e portatore del Karma Bianco, la usa per muoversi fra i luoghi più lontani; dai suoi segni nascono anche i Claw Grime, creature che obbediscono ai suoi ordini.",
+    en: "Code, the last Kara Inner and bearer of the White Karma, uses it to travel between distant places; his marks also give rise to the Claw Grimes, creatures that obey his orders.",
   },
   'jutsu-amenotejikara': {
     it: "Sasuke la usa nella battaglia contro Madara e contro Kaguya, scambiando di posto sé stesso, gli alleati e i nemici per aprire varchi nelle loro difese.",

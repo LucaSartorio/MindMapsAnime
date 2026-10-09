@@ -60,7 +60,7 @@ export const onepieceCharactersExtra7: Character[] = [
     ['faction-op-straw-hat-grand-fleet'], ['loc-op-green-bit'], '712', '648',
     "Capo dei guerrieri nani Tontatta di Green Bit, abile con ago e filo grazie al Frutto Cuci Cuci.",
     "Leader of the Tontatta dwarf warriors of Green Bit, deft with needle and thread thanks to the Stitch-Stitch Fruit.",
-    "Leo, comandante dell'Esercito di Liberazione Tontatta, guidò i nani nella rivolta contro Doflamingo; cuce a sé qualunque cosa con il suo Frutto e divenne capitano della Flotta dei Sette dei Cappello di Paglia.",
+    "Leo, comandante dell'Esercito di Liberazione Tontatta, guidò i nani nella rivolta contro Doflamingo; cuce a sé qualunque cosa con il suo Frutto e divenne capitano della Grande Flotta di Cappello di Paglia.",
     "Leo, commander of the Tontatta Liberation Army, led the dwarves in the revolt against Doflamingo; he stitches anything to himself with his fruit and became a captain of the Straw Hat Grand Fleet.",
     'alive', ['dressrosa', 'tontatta']),
   C('char-op-mansherry', 'Mansherry', undefined, 'minor', ['ally'], 'female',
@@ -162,10 +162,10 @@ export const onepieceCharactersExtra7: Character[] = [
   /* ---------------------- Wano ---------------------- */
   C('char-op-sukiyaki', 'Kozuki Sukiyaki', undefined, 'minor', ['neutral'], 'male',
     ['faction-op-kozuki'], ['loc-op-wano'], '1052', '1084',
-    "Padre di Oden e legittimo shogun dei Kozuki, creduto morto e nascostosi come fabbro Tenkai.",
-    "Oden's father and the rightful Kozuki shogun, believed dead and hidden as the smith Tenkai.",
-    "Kozuki Sukiyaki, anziano shogun spodestato da Orochi, sopravvisse in incognito sotto l'isola di Onigashima; custode dei segreti dei Poignee Griffe e degli antichi Kozuki, riemerse dopo la liberazione di Wano.",
-    "Kozuki Sukiyaki, the elderly shogun ousted by Orochi, survived incognito beneath Onigashima; keeper of the Poneglyph secrets and the ancient Kozuki lore, he resurfaced after Wano's liberation.",
+    "Padre di Oden ed ex shogun dei Kozuki, creduto morto e nascostosi come lo spadaio Tenguyama Hitetsu.",
+    "Oden's father and the former Kozuki shogun, believed dead and hidden as the swordsmith Tenguyama Hitetsu.",
+    "Kozuki Sukiyaki, anziano shogun spodestato da Orochi, sopravvisse in incognito come lo spadaio Tenguyama Hitetsu; custode dei segreti dei Poneglyph e degli antichi Kozuki, si rivelò dopo la liberazione di Wano.",
+    "Kozuki Sukiyaki, the elderly shogun ousted by Orochi, survived incognito as the swordsmith Tenguyama Hitetsu; keeper of the Poneglyph secrets and the ancient Kozuki lore, he revealed himself after Wano's liberation.",
     'alive', ['wano', 'kozuki']),
 
   /* ---------------------- Egghead / CP0 / Seraphim ---------------------- */
@@ -194,8 +194,8 @@ export const onepieceCharactersExtra7: Character[] = [
   /* ---------------------- Era di Roger ---------------------- */
   C('char-op-shimotsuki-ushimaru', 'Shimotsuki Ushimaru', undefined, 'background', ['neutral'], 'male',
     ['faction-op-kozuki'], ['loc-op-shimotsuki-village'], '1023', '1071',
-    "Daimyo di Ringo a Wano, antenato della linea Shimotsuki legata al maestro di Zoro.",
-    "The daimyo of Ringo in Wano, an ancestor of the Shimotsuki line tied to Zoro's master.",
+    "Daimyo di Ringo a Wano, membro del clan Shimotsuki, la famiglia del maestro di Zoro, Koushiro.",
+    "The daimyo of Ringo in Wano, a member of the Shimotsuki clan, the family of Zoro's master Koushiro.",
     "Shimotsuki Ushimaru, fiero daimyo di Ringo e vassallo degli Kozuki, cadde combattendo l'invasione di Kaido e Orochi; la sua stirpe si collega ai Shimotsuki emigrati nel Mare Orientale.",
     "Shimotsuki Ushimaru, the proud daimyo of Ringo and a Kozuki vassal, fell fighting the invasion of Kaido and Orochi; his lineage connects to the Shimotsuki who emigrated to the East Blue.",
     'deceased', ['wano', 'kozuki', 'shimotsuki']),

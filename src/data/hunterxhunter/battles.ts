@@ -17,7 +17,7 @@ export const hxhBattles: Record<string, BattleOutcome> = {
   'ev-hxh-gon-vs-genthru': win(['gon'], ['genthru']),
   'ev-hxh-cheetu-vs-morel': win(['morel'], ['cheetu']),
   'ev-hxh-knuckle-vs-youpi': stop(['knuckle'], ['menthuthuyoupi']),
-  'ev-hxh-netero-vs-meruem': win(['meruem'], ['netero'], L('Netero si fa esplodere con la Rosa dei Poveri, che avvelena il Re.', 'Netero blows himself up with the Poor Man’s Rose, which poisons the King.')),
+  'ev-hxh-netero-vs-meruem': win(['meruem'], ['netero'], L('Netero si fa esplodere con la Rosa del Povero, che avvelena il Re.', 'Netero blows himself up with the Poor Man’s Rose, which poisons the King.')),
   'ev-hxh-gon-vs-pitou': win(['gon'], ['neferpitou']),
   'ev-hxh-hisoka-vs-chrollo': win(['chrollo'], ['hisoka'], L('Hisoka muore e torna in vita grazie al suo Nen.', 'Hisoka dies and comes back to life through his own Nen.')),
 };

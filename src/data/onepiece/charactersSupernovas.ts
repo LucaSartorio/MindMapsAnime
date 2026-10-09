@@ -88,7 +88,7 @@ export const onepieceCharactersSupernovas: Character[] = [
     id: 'char-op-drake',
     worldId: 'world-onepiece',
     longDescription: {
-      it: "X Drake, ex viceammiraglio diventato Supernova, utente dello Zoo Zoo ancestrale dell'allosauro. A Wano militò tra i Tobiroppo di Kaido pur essendo un agente segreto dell'unità SWORD.",
+      it: "X Drake, ex contrammiraglio diventato Supernova, utente dello Zoo Zoo ancestrale dell'allosauro. A Wano militò tra i Tobiroppo di Kaido pur essendo un agente segreto dell'unità SWORD.",
       en: "X Drake, a former rear admiral turned Supernova, user of the ancient allosaurus Zoan. At Wano he served among Kaido's Tobiroppo while secretly an agent of the SWORD unit.",
     },
     name: 'X Drake',
@@ -101,7 +101,7 @@ export const onepieceCharactersSupernovas: Character[] = [
     firstMangaAppearance: SN_DEBUT.manga,
     firstAnimeAppearance: SN_DEBUT.anime,
     shortDescription: {
-      it: "Ex viceammiraglio della Marina diventato Supernova, utente di uno Zoo Zoo ancestrale dell'allosauro. A Wano militò tra i Tobiroppo di Kaido pur essendo un agente segreto dell'unità SWORD.",
+      it: "Ex contrammiraglio della Marina diventato Supernova, utente di uno Zoo Zoo ancestrale dell'allosauro. A Wano militò tra i Tobiroppo di Kaido pur essendo un agente segreto dell'unità SWORD.",
       en: "A former Marine rear admiral turned Supernova, user of an ancient allosaurus Zoan. At Wano he served among Kaido's Tobiroppo while secretly being an agent of the SWORD unit.",
     },
     status: 'alive',

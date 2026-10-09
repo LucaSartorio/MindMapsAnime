@@ -492,7 +492,7 @@ export const onepieceLocationsExtra: Location[] = [
     type: 'hideout',
     x: 507,
     y: 510,
-    shortDescription: { it: "Isola del Nuovo Mondo che ospitò il quartier generale dell'Armata Rivoluzionaria dopo Baltigo.", en: "A New World island that hosted the Revolutionary Army headquarters after Baltigo." },
+    shortDescription: { it: "Isola del Nuovo Mondo, base della Buggy's Delivery e poi quartier generale della Cross Guild, l'organizzazione di Bagy, Crocodile e Mihawk.", en: "A New World island, base of Buggy's Delivery and then headquarters of Cross Guild, the organization of Buggy, Crocodile and Mihawk." },
     nationId: 'nation-op-grand-line-new-world',
     importance: 'secondary',
     canonStatus: 'canon',

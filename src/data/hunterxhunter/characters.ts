@@ -102,8 +102,8 @@ export const hxhCharacters: Character[] = [
       en: 'Last survivor of the Kurta clan, seeking revenge against the Phantom Troupe and to recover his people\'s Scarlet Eyes.',
     },
     longDescription: {
-      it: 'Specialista del Nen, materializza catene dalle dita. In stato di Emperor Time (occhi scarlatti) raggiunge il 100% in ogni categoria, ma a costo della propria vita se usa Judgment Chain sui non-Ragno.',
-      en: 'A Nen Specialist who conjures chains from his fingers. In Emperor Time (scarlet eyes) he reaches 100% in every category, but at the cost of his life if he uses Judgment Chain on non-Spiders.',
+      it: 'Specialista del Nen, materializza catene dalle dita. In stato di Emperor Time (occhi scarlatti) raggiunge il 100% in ogni categoria, a costo della propria durata di vita; la Catena Prigione, per un Giuramento, può usarla solo sui Ragni, pena la morte.',
+      en: 'A Nen Specialist who conjures chains from his fingers. In Emperor Time (scarlet eyes) he reaches 100% in every category, at the cost of his lifespan; by a Vow, he may use the Chain Jail only on the Spiders, on pain of death.',
     },
     jutsuIds: ['jutsu-hxh-chain-jail', 'jutsu-hxh-judgment-chain', 'jutsu-hxh-emperor-time', 'jutsu-hxh-dowsing-chain', 'jutsu-hxh-holy-chain', 'jutsu-hxh-nen'],
     allies: ['char-hxh-gon', 'char-hxh-killua', 'char-hxh-leorio'],
@@ -265,8 +265,8 @@ export const hxhCharacters: Character[] = [
       en: 'Chairman of the Hunter Association and one of the most powerful fighters, forged by a lifetime of martial discipline and prayer.',
     },
     longDescription: {
-      it: 'Potenziatore di velocità sovrumana, usa il Bodhisattva dalle Cento Forme. Affronta il Re delle Formiche Chimera Meruem in un duello epocale, ricorrendo alla Rosa Miniatura come ultima risorsa.',
-      en: 'An Enhancer of superhuman speed, he wields the Hundred-Type Guanyin Bodhisattva. He faces the Chimera Ant King Meruem in an epochal duel, resorting to the Miniature Rose as a last resort.',
+      it: 'Potenziatore di velocità sovrumana, usa il Bodhisattva dalle Cento Forme. Affronta il Re delle Formiche Chimera Meruem in un duello epocale, ricorrendo alla Rosa del Povero come ultima risorsa.',
+      en: 'An Enhancer of superhuman speed, he wields the Hundred-Type Guanyin Bodhisattva. He faces the Chimera Ant King Meruem in an epochal duel, resorting to the Poor Man\'s Rose as a last resort.',
     },
     jutsuIds: ['jutsu-hxh-100-type-guanyin', 'jutsu-hxh-zero-hand'],
     enemies: ['char-hxh-meruem'],
@@ -322,12 +322,12 @@ export const hxhCharacters: Character[] = [
     rank: 'Double-Star Stone Hunter',
     gender: 'F',
     longDescription: {
-      it: 'Maestra di Nen secolare che cela il proprio vero aspetto dietro le sembianze di una ragazzina. Trasmutatrice, con la sua Magical Esthetician cura e modella i corpi. Forgia Gon e Killua negli usi avanzati dell\'aura durante Greed Island.',
-      en: 'A centuries-old Nen master who hides her true form behind the appearance of a little girl. A Transmuter, her Magical Esthetician heals and reshapes bodies. She forges Gon and Killua in advanced aura usage during Greed Island.',
+      it: 'Maestra di Nen di 57 anni che cela il proprio vero aspetto, massiccio e muscoloso, dietro le sembianze di una ragazzina. Trasmutatrice, con la sua Magical Esthetician cura e modella i corpi. Forgia Gon e Killua negli usi avanzati dell\'aura durante Greed Island.',
+      en: 'A 57-year-old Nen master who hides her true, hulking and muscular form behind the appearance of a little girl. A Transmuter, her Magical Esthetician heals and reshapes bodies. She forges Gon and Killua in advanced aura usage during Greed Island.',
     },
     shortDescription: {
-      it: 'Hunter ultracentenaria dall\'aspetto di ragazzina, maestra di Nen di Gon e Killua su Greed Island. Trasmutatrice.',
-      en: 'A centuries-old Hunter who looks like a young girl, Nen master of Gon and Killua on Greed Island. A Transmuter.',
+      it: 'Hunter di 57 anni dall\'aspetto di ragazzina, maestra di Nen di Gon e Killua su Greed Island. Trasmutatrice.',
+      en: 'A 57-year-old Hunter who looks like a young girl, Nen master of Gon and Killua on Greed Island. A Transmuter.',
     },
     jutsuIds: ['jutsu-hxh-magical-esthetician'],
     students: ['char-hxh-gon', 'char-hxh-killua'],

@@ -4,7 +4,7 @@ import type { Character, CharacterImportance, CharacterStatus } from '@/types';
  * Quinta ondata di personaggi: figure minori, comprimari e «comparse» canoniche
  * della prima metà della Rotta Maggiore (da East Blue a Long Ring Long Land),
  * inclusi i volti apparsi una sola volta — come Ippon-Matsu, l'armaiolo di
- * Loguetown che vendette a Zoro la spada maledetta Sandai Kitetsu.
+ * Loguetown che regalò a Zoro la spada maledetta Sandai Kitetsu.
  */
 const C = (
   id: string, name: string, aliases: string[] | undefined,
@@ -30,8 +30,8 @@ export const onepieceCharactersExtra5: Character[] = [
   /* ---------------------- Foosha / Dawn Island ---------------------- */
   C('char-op-makino', 'Makino', undefined, 'minor', ['ally'], 'female',
     undefined, ['loc-op-foosha-village'], '1', '4',
-    "Gentile barista del villaggio di Foosha che vide crescere Rufy e Shanks.",
-    "The kind barmaid of Foosha Village who watched Luffy and Shanks grow up.",
+    "Gentile barista del villaggio di Foosha che vide crescere Rufy e ospitò la ciurma di Shanks.",
+    "The kind barmaid of Foosha Village who watched Luffy grow up and hosted Shanks's crew.",
     "Makino, dolce proprietaria della taverna di Foosha, fu una figura materna per il piccolo Rufy negli anni in cui Shanks e la sua ciurma stazionavano al villaggio.",
     "Makino, the sweet owner of Foosha's tavern, was a motherly figure to little Luffy in the years when Shanks and his crew were docked at the village.",
     'alive', ['east-blue', 'foosha']),
@@ -90,8 +90,8 @@ export const onepieceCharactersExtra5: Character[] = [
     'alive', ['east-blue', 'syrup']),
   C('char-op-merry', 'Merry', undefined, 'minor', ['neutral'], 'male',
     ['faction-op-black-cat-pirates'], ['loc-op-syrup-village'], '27', '10',
-    "Maggiordomo capra di Kaya da cui prende nome la Going Merry, ferito nel tradimento di Kuro.",
-    "Kaya's goat-like butler, the namesake of the Going Merry, wounded in Kuro's betrayal.",
+    "Maggiordomo dall'aspetto di pecora di Kaya da cui prende nome la Going Merry, ferito nel tradimento di Kuro.",
+    "Kaya's sheep-like butler, the namesake of the Going Merry, wounded in Kuro's betrayal.",
     "Merry, fedele maggiordomo della famiglia di Kaya esperto di navi, sopravvisse all'aggressione di Klahadore (Kuro) e ispirò il nome della prima nave dei Cappello di Paglia.",
     "Merry, the loyal ship-savvy butler of Kaya's household, survived Klahadore's (Kuro's) assault and inspired the name of the Straw Hats' first ship.",
     'alive', ['east-blue', 'syrup']),
@@ -201,10 +201,10 @@ export const onepieceCharactersExtra5: Character[] = [
   /* ---------------------- Loguetown ---------------------- */
   C('char-op-ipponmatsu', 'Ippon-Matsu', undefined, 'minor', ['neutral'], 'male',
     undefined, ['loc-op-loguetown'], '97', '48',
-    "Armaiolo di Loguetown che vendette a Zoro la spada maledetta Sandai Kitetsu e gli donò la Yubashiri.",
-    "The Loguetown weapons dealer who sold Zoro the cursed sword Sandai Kitetsu and gifted him the Yubashiri.",
-    "Ippon-Matsu, burbero proprietario del negozio di spade di Loguetown, tentò di rifilare a Zoro la maledetta Sandai Kitetsu; colpito dal sangue freddo con cui Zoro ne sfidò la sorte, gli regalò la pregiata Yubashiri.",
-    "Ippon-Matsu, the gruff owner of the Loguetown sword shop, tried to pawn off the cursed Sandai Kitetsu on Zoro; struck by the cool nerve with which Zoro dared its curse, he gifted him the prized Yubashiri.",
+    "Armaiolo di Loguetown che regalò a Zoro la spada maledetta Sandai Kitetsu e la Yubashiri.",
+    "The Loguetown weapons dealer who gave Zoro the cursed sword Sandai Kitetsu and the Yubashiri for free.",
+    "Ippon-Matsu, burbero proprietario del negozio di spade di Loguetown, mise in guardia Zoro dalla maledetta Sandai Kitetsu; colpito dal sangue freddo con cui Zoro ne sfidò la sorte, gliela regalò insieme alla pregiata Yubashiri.",
+    "Ippon-Matsu, the gruff owner of the Loguetown sword shop, warned Zoro about the cursed Sandai Kitetsu; struck by the cool nerve with which Zoro dared its curse, he gave it to him for free along with the prized Yubashiri.",
     'alive', ['east-blue', 'loguetown', 'spade']),
   C('char-op-daddy-masterson', 'Daddy Masterson', ['Daddy il Padre'], 'minor', ['neutral'], 'male',
     undefined, ['loc-op-loguetown'], '98', '49',
@@ -281,8 +281,8 @@ export const onepieceCharactersExtra5: Character[] = [
     undefined, ['loc-op-yuba'], '163', '99',
     "Anziano di Yuba e padre di Koza, che ostinatamente scava in cerca d'acqua nell'oasi inghiottita dalla sabbia.",
     "An elder of Yuba and Koza's father, who stubbornly digs for water in the sand-choked oasis.",
-    "Toto, tenace fondatore dell'oasi ribelle di Yuba, continua a scavare pozzi nonostante le tempeste di sabbia; credette sempre nel ritorno della pioggia e nella pace ad Alabasta.",
-    "Toto, the tenacious founder of the rebel oasis of Yuba, keeps digging wells despite the sandstorms; he never stopped believing in the return of rain and peace to Alabasta.",
+    "Toto, tenace padre di Koza e ultimo abitante dell'oasi di Yuba, continua a scavare pozzi nonostante le tempeste di sabbia; credette sempre nel ritorno della pioggia e nella pace ad Alabasta.",
+    "Toto, Koza's tenacious father and the last resident of the oasis of Yuba, keeps digging wells despite the sandstorms; he never stopped believing in the return of rain and peace to Alabasta.",
     'alive', ['paradise', 'alabasta', 'yuba']),
   C('char-op-daz-bones', 'Daz Bones', ['Mr. 1'], 'minor', ['antagonist'], 'male',
     ['faction-op-baroque-works'], ['loc-op-alabasta'], '160', '95',
@@ -300,9 +300,9 @@ export const onepieceCharactersExtra5: Character[] = [
     'alive', ['paradise', 'alabasta', 'baroque-works']),
   C('char-op-mr-3', 'Mr. 3', ['Galdino'], 'minor', ['antagonist'], 'male',
     ['faction-op-baroque-works'], ['loc-op-alabasta'], '111', '66',
-    "Agente di Baroque Works utente del Frutto Cera, in seguito alleato di Buggy a Impel Down e Marineford.",
+    "Agente di Baroque Works utente del Frutto Cera, in seguito alleato di Bagy a Impel Down e Marineford.",
     "A Baroque Works agent with the Wax-Wax Fruit, later Buggy's ally at Impel Down and Marineford.",
-    "Galdino «Mr. 3» plasma la cera per intrappolare e uccidere; scampato ad Alabasta, fu rinchiuso a Impel Down e si unì a Buggy nell'evasione, finendo poi nella Cross Guild.",
+    "Galdino «Mr. 3» plasma la cera per intrappolare e uccidere; scampato ad Alabasta, fu rinchiuso a Impel Down e si unì a Bagy nell'evasione, finendo poi nella Cross Guild.",
     "Galdino 'Mr. 3' molds wax to trap and kill; surviving Alabasta, he was jailed in Impel Down and joined Buggy in the breakout, later ending up in the Cross Guild.",
     'alive', ['paradise', 'alabasta', 'baroque-works']),
   C('char-op-miss-goldenweek', 'Miss Goldenweek', ['Marianne'], 'minor', ['antagonist'], 'female',
@@ -404,8 +404,8 @@ export const onepieceCharactersExtra5: Character[] = [
     undefined, ['loc-op-upper-yard'], '278', '185',
     "Capo delle guardie di Enel, gigantesco bruto che difende l'arca Maxim sull'isola del cielo.",
     "Chief of Enel's guards, a giant brute defending the ark Maxim on the sky island.",
-    "Yama, imponente comandante delle forze di Enel, sorveglia Birka e l'arca Maxim; combatté i Cappello di Paglia durante la fuga finale da Skypiea.",
-    "Yama, the imposing commander of Enel's forces, guards Birka and the ark Maxim; he fought the Straw Hats during the final escape from Skypiea.",
+    "Yama, imponente comandante delle forze di Enel, sorveglia l'arca Maxim sull'Upper Yard e prende parte al gioco di sopravvivenza contro i Cappello di Paglia e gli Shandia.",
+    "Yama, the imposing commander of Enel's forces, guards the ark Maxim on Upper Yard and takes part in the survival game against the Straw Hats and the Shandia.",
     'alive', ['paradise', 'skypiea']),
 
   /* ---------------------- Long Ring Long Land ---------------------- */

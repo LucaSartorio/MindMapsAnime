@@ -15,7 +15,7 @@ export const blackcloverTournaments: Tournament[] = [
     order: 1,
     format: 'rounds',
     description: L(
-      "Julius Novachrono forma una squadra d'élite contro l'Occhio Magico della Notte Bianca: i Cavalieri Magici si sfidano in squadre da tre estratte a sorte, e vince chi distrugge il cristallo avversario. Il Re Mago sceglie i Royal Knights guardando come hanno combattuto, non solo chi ha vinto.",
+      "Julius Novachrono forma una squadra d'élite contro l'Occhio Magico della Notte Bianca: i Cavalieri Magici si sfidano in squadre da tre estratte a sorte, e vince chi distrugge il cristallo avversario. L'Imperatore Magico sceglie i Royal Knights guardando come hanno combattuto, non solo chi ha vinto.",
       "Julius Novachrono forms an elite squad against the Eye of the Midnight Sun: the Magic Knights compete in randomly drawn teams of three, and the winner is whoever breaks the opposing crystal. The Wizard King picks the Royal Knights by how they fought, not just by who won.",
     ),
     rounds: [
@@ -31,7 +31,7 @@ export const blackcloverTournaments: Tournament[] = [
         ],
       },
     ],
-    outcome: L('Il Re Mago annuncia i membri dei Royal Knights.', 'The Wizard King announces the members of the Royal Knights.'),
+    outcome: L("L'Imperatore Magico annuncia i membri dei Royal Knights.", 'The Wizard King announces the members of the Royal Knights.'),
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',
     tags: ['royal-knights'],

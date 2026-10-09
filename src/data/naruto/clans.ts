@@ -186,8 +186,8 @@ export const narutoClans: Faction[] = [
     name: 'Sarutobi Clan',
     villageLocationId: 'loc-konoha',
     description: {
-      it: 'Famiglia che ha dato vari Hokage e jonin. Contratto con le scimmie.',
-      en: 'Family that produced several Hokage and jonin. Contract with the monkeys.',
+      it: 'Famiglia del Terzo Hokage Hiruzen e di jonin come Asuma e Konohamaru. Contratto con le scimmie.',
+      en: 'Family of the Third Hokage Hiruzen and of jonin such as Asuma and Konohamaru. Contract with the monkeys.',
     },
     signatureAbilities: ['Monkey Summon (Enma)', 'Wind Release'],
     characterIds: ['char-hiruzen', 'char-asuma', 'char-konohamaru'],

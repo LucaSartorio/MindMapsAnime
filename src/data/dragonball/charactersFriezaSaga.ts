@@ -28,8 +28,8 @@ export const dragonballCharactersFriezaSaga: Character[] = [
     eventIds: ['evt-dbz-vegeta-vs-zarbon-1', 'evt-dbz-vegeta-vs-zarbon-2'],
     arcIds: ['arc-dbz-namek-frieza'],
     shortDescription: {
-      it: "Luogotenente di Freezer dall'aspetto androgino e vanitoso: sconfigge Vegeta gravemente ferito, ma nella rivincita rivela la sua vera forma mostruosa.",
-      en: "One of Frieza's lieutenants, androgynous and vain: he defeats a badly wounded Vegeta, but reveals his true monstrous form in their rematch.",
+      it: "Luogotenente di Freezer dall'aspetto androgino e vanitoso: sconfigge Vegeta rivelando la sua vera forma mostruosa, ma il Saiyan lo uccide nella rivincita.",
+      en: "One of Frieza's lieutenants, androgynous and vain: he defeats Vegeta by revealing his true monstrous form, but the Saiyan kills him in their rematch.",
     },
     status: 'deceased',
     canonStatus: 'canon',
@@ -75,8 +75,8 @@ export const dragonballCharactersFriezaSaga: Character[] = [
     eventIds: ['evt-dbz-vegeta-vs-cui'],
     arcIds: ['arc-dbz-namek-frieza'],
     shortDescription: {
-      it: "Soldato della stessa razza di Freezer, rivale di Vegeta all'interno dell'esercito: lo sfida su Namecc e viene ucciso con facilità dal principe Saiyan, ormai molto più forte.",
-      en: "A soldier of Frieza's own race and Vegeta's rival within the army: he challenges him on Namek and is easily killed by the now much stronger Saiyan prince.",
+      it: "Soldato dell'esercito di Freezer, rivale di Vegeta all'interno delle truppe: lo sfida su Namecc e viene ucciso con facilità dal principe Saiyan, ormai molto più forte.",
+      en: "A Frieza Force soldier and Vegeta's rival within the army: he challenges him on Namek and is easily killed by the now much stronger Saiyan prince.",
     },
     status: 'deceased',
     canonStatus: 'canon',
@@ -100,7 +100,7 @@ export const dragonballCharactersFriezaSaga: Character[] = [
     eventIds: ['evt-dbz-goku-vs-captain-ginyu'],
     arcIds: ['arc-dbz-namek-frieza'],
     shortDescription: {
-      it: "Leader della Forze Speciali Ginew, il membro più forte del gruppo: sfida Goku a duello e usa la tecnica Body Change per scambiare corpo con lui, prima di restare bloccato nel corpo di una rana.",
+      it: "Leader delle Forze Speciali Ginew, il membro più forte del gruppo: sfida Goku a duello e usa la tecnica Body Change per scambiare corpo con lui, prima di restare bloccato nel corpo di una rana.",
       en: "Leader of the Ginyu Force and its strongest member: he challenges Goku to a duel and uses the Body Change technique to swap bodies with him, before getting stuck in the body of a frog.",
     },
     status: 'unknown',
@@ -124,7 +124,7 @@ export const dragonballCharactersFriezaSaga: Character[] = [
     eventIds: ['evt-dbz-vegeta-vs-recoome'],
     arcIds: ['arc-dbz-namek-frieza'],
     shortDescription: {
-      it: "Membro della Forze Speciali Ginew dalla forza brutale e dalle pose melodrammatiche: atterra quasi senza sforzo Vegeta, Krillin e Gohan, prima che Goku intervenga.",
+      it: "Membro delle Forze Speciali Ginew dalla forza brutale e dalle pose melodrammatiche: atterra quasi senza sforzo Vegeta, Krillin e Gohan, prima che Goku intervenga.",
       en: "A Ginyu Force member with brutal strength and melodramatic poses: he takes down Vegeta, Krillin and Gohan with little effort, before Goku steps in.",
     },
     status: 'unknown',
@@ -148,7 +148,7 @@ export const dragonballCharactersFriezaSaga: Character[] = [
     eventIds: ['evt-dbz-goku-vs-ginyu-force'],
     arcIds: ['arc-dbz-namek-frieza'],
     shortDescription: {
-      it: "Membro della Forze Speciali Ginew, si vanta di essere la creatura più veloce dell'universo: lui e Jeeth affrontano Goku appena arrivato su Namecc.",
+      it: "Membro delle Forze Speciali Ginew, si vanta di essere la creatura più veloce dell'universo: lui e Jeeth affrontano Goku appena arrivato su Namecc.",
       en: "A Ginyu Force member who boasts of being the fastest creature in the universe: he and Jeice confront Goku right after his arrival on Namek.",
     },
     status: 'unknown',
@@ -172,7 +172,7 @@ export const dragonballCharactersFriezaSaga: Character[] = [
     eventIds: ['evt-dbz-goku-vs-ginyu-force'],
     arcIds: ['arc-dbz-namek-frieza'],
     shortDescription: {
-      it: "Membro della Forze Speciali Ginew specializzato in attacchi energetici, celebre per la Crusher Ball: affronta Goku insieme a Butter, poi fugge quando la potenza dell'avversario si rivela troppo alta.",
+      it: "Membro delle Forze Speciali Ginew specializzato in attacchi energetici, celebre per la Crusher Ball: affronta Goku insieme a Butter, poi fugge quando la potenza dell'avversario si rivela troppo alta.",
       en: 'A Ginyu Force member specializing in energy attacks, known for the Crusher Ball: he fights Goku alongside Burter, then flees once his power proves too great.',
     },
     status: 'unknown',
@@ -196,8 +196,8 @@ export const dragonballCharactersFriezaSaga: Character[] = [
     eventIds: ['evt-dbz-ginyu-force-arrives'],
     arcIds: ['arc-dbz-namek-frieza'],
     shortDescription: {
-      it: "Membro della Forze Speciali Ginew dai poteri psichici, capace di fermare il tempo trattenendo il respiro: immobilizza Vegeta, Krillin e Gohan prima di essere decapitato da Vegeta.",
-      en: 'A psychic Ginyu Force member able to stop time by holding his breath: he freezes Vegeta, Krillin and Gohan before being beheaded by Vegeta.',
+      it: "Membro delle Forze Speciali Ginew dai poteri psichici, capace di fermare il tempo trattenendo il respiro: immobilizza Crilin e Gohan prima di essere decapitato da Vegeta.",
+      en: 'A psychic Ginyu Force member able to stop time by holding his breath: he freezes Krillin and Gohan before being beheaded by Vegeta.',
     },
     status: 'deceased',
     canonStatus: 'canon',
@@ -280,8 +280,8 @@ export const dragonballCharactersFriezaSaga: Character[] = [
     eventIds: ['evt-dbz-gohan-potential-unlocked'],
     arcIds: ['arc-dbz-namek-frieza'],
     shortDescription: {
-      it: "Il namecciano più anziano, padre spirituale di tutti i namecciani (incluso Piccolo, generato da un suo uovo) e custode del segreto per evocare Porunga: nel finale della sua lunghissima vita sblocca il potenziale nascosto di Gohan, Krillin e Piccolo.",
-      en: "The oldest Namekian, spiritual father of all Namekians (including Piccolo, born from one of his eggs) and keeper of the secret to summoning Porunga: near the end of his very long life, he unlocks the hidden potential of Gohan, Krillin and Piccolo.",
+      it: "Il namecciano più anziano, padre dei namecciani che vivono sul pianeta (tutti nati da un suo uovo) e custode del segreto per evocare Porunga: nel finale della sua lunghissima vita sblocca il potenziale nascosto di Gohan e Crilin.",
+      en: "The oldest Namekian, father of the Namekians living on the planet (all born from his eggs) and keeper of the secret to summoning Porunga: near the end of his very long life, he unlocks the hidden potential of Gohan and Krillin.",
     },
     status: 'deceased',
     canonStatus: 'canon',

@@ -35,8 +35,8 @@ export const hxhCharactersBatch5: Character[] = [
     role: ['antagonist'],
     gender: 'M',
     shortDescription: {
-      it: "Serial killer e candidato dell'Esame; Killua lo neutralizza estraendogli il cuore con la sua tecnica ad artiglio.",
-      en: "A serial killer and Exam candidate; Killua dispatches him by ripping out his heart with his claw technique.",
+      it: "Pluriomicida detenuto nella Torre del Tranello e messo a sbarrare la strada ai candidati; Killua lo neutralizza estraendogli il cuore con la sua tecnica ad artiglio.",
+      en: "A mass murderer held in Trick Tower and set to block the candidates; Killua dispatches him by ripping out his heart with his claw technique.",
     },
     arcIds: ['arc-hxh-hunter-exam'],
     status: 'deceased',

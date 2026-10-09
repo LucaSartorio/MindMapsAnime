@@ -333,7 +333,7 @@ export const onepieceCharacterLinks: Record<string, LinkPatch> = {
   'char-op-chew': L(['arc-op-arlong-park'], ['evt-op-arlong-liberation'], ['char-op-arlong', 'char-op-kuroobi', 'char-op-hatchan'], ['char-op-usopp']),
   'char-op-nezumi': L(['arc-op-arlong-park'], undefined, ['char-op-arlong'], ['char-op-nami', 'char-op-luffy']),
   'char-op-ipponmatsu': L(['arc-op-loguetown'], ['evt-op-loguetown-zoro-swords'], undefined, undefined, undefined,
-    [{ targetCharacterId: 'char-op-zoro', label: { it: 'Gli vendette la Sandai Kitetsu', en: 'Sold him the Sandai Kitetsu' } }]),
+    [{ targetCharacterId: 'char-op-zoro', label: { it: 'Gli regalò la Sandai Kitetsu', en: 'Gave him the Sandai Kitetsu' } }]),
   'char-op-daddy-masterson': L(['arc-op-loguetown'], undefined, undefined, undefined, undefined,
     [{ targetCharacterId: 'char-op-usopp', label: { it: 'Sfida di tiro', en: 'Sharpshooting challenge' } }]),
   'char-op-johnny': L(['arc-op-baratie', 'arc-op-arlong-park'], undefined, ['char-op-zoro', 'char-op-luffy', 'char-op-yosaku'], ['char-op-arlong']),
@@ -390,7 +390,7 @@ export const onepieceCharacterLinks: Record<string, LinkPatch> = {
   'char-op-lola': L(['arc-op-thriller-bark'], undefined, ['char-op-nami'], undefined, ['char-op-big-mom', 'char-op-chiffon'],
     [{ targetCharacterId: 'char-op-nami', label: { it: 'Le donò la Vivre Card', en: 'Gave her the Vivre Card' } }, { targetCharacterId: 'char-op-big-mom', label: { it: 'Madre', en: 'Mother' } }]),
   'char-op-cindry': L(['arc-op-thriller-bark'], undefined, ['char-op-hogback'], undefined, undefined,
-    [{ targetCharacterId: 'char-op-hogback', label: { it: 'La resuscitò come zombie', en: 'Revived him as a zombie' } }]),
+    [{ targetCharacterId: 'char-op-hogback', label: { it: 'La resuscitò come zombie', en: 'Revived her as a zombie' } }]),
 
   /* ===================== Sabaody / Amazon Lily ===================== */
   'char-op-shakky': L(['arc-op-sabaody'], undefined, ['char-op-rayleigh', 'char-op-luffy'], undefined, undefined,

@@ -19,8 +19,8 @@ export const narutoTournaments: Tournament[] = [
     order: 1,
     format: 'rounds',
     description: L(
-      "Troppi candidati superano la Foresta della Morte: per sfoltirli si combattono duelli uno contro uno, sorteggiati da un tabellone elettronico. Kabuto si ritira prima di cominciare. Passano al torneo finale dieci ninja (nove dopo il doppio K.O. fra Sakura e Ino).",
-      'Too many candidates make it through the Forest of Death: to thin them out, one-on-one duels are drawn by an electronic board. Kabuto withdraws before they begin. Ten ninja advance to the final tournament (nine after Sakura and Ino knock each other out).',
+      "Troppi candidati superano la Foresta della Morte: per sfoltirli si combattono duelli uno contro uno, sorteggiati da un tabellone elettronico. Kabuto si ritira prima di cominciare. Si disputano dieci incontri: i nove vincitori passano al torneo finale (Sakura e Ino si mettono K.O. a vicenda).",
+      'Too many candidates make it through the Forest of Death: to thin them out, one-on-one duels are drawn by an electronic board. Kabuto withdraws before they begin. Ten bouts are fought: the nine winners advance to the final tournament (Sakura and Ino knock each other out).',
     ),
     rounds: [
       {

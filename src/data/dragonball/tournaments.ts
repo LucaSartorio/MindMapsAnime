@@ -87,14 +87,14 @@ export const dragonballTournaments: Tournament[] = [
     order: 22,
     format: 'bracket',
     description: L(
-      "Tre anni dopo, la Scuola della Gru di Tenshinhan e Jiaozi sfida quella della Tartaruga. Tenshinhan spezza una gamba a Yamcha e batte Jackie Chun; in finale lui e Goku escono dal ring quasi insieme, ma Goku tocca terra per primo.",
+      "Tre anni dopo, la Scuola della Gru di Tensing e Jiaozi sfida quella della Tartaruga. Tensing spezza una gamba a Yamcha e batte Jackie Chun; in finale lui e Goku escono dal ring quasi insieme, ma Goku tocca terra per primo.",
       "Three years later, Tien and Chiaotzu's Crane School challenges the Turtle School. Tien breaks Yamcha's leg and beats Jackie Chun; in the final he and Goku fall out of the ring almost together, but Goku lands first.",
     ),
     rounds: [
       {
         name: QF,
         matches: [
-          m(s('tenshinhan'), s('yamcha'), 0, { note: L('Tenshinhan spezza una gamba a Yamcha.', "Tien breaks Yamcha's leg.") }),
+          m(s('tenshinhan'), s('yamcha'), 0, { note: L('Tensing spezza una gamba a Yamcha.', "Tien breaks Yamcha's leg.") }),
           m(s('master-roshi', JACKIE), s('man-wolf'), 0),
           m(s('krillin'), s('chaozu'), 0),
           m(s('goku'), s('pamput'), 0),
@@ -258,16 +258,16 @@ export const dragonballTournaments: Tournament[] = [
     order: 28,
     format: 'rounds',
     description: L(
-      "Dieci anni dopo la sconfitta di Kid Bu, Goku si iscrive per incontrare Ub, la reincarnazione buona di Majin Bu. Lo provoca finché il ragazzo non mostra il suo vero potenziale, poi lascia il torneo per portarlo con sé ad allenarsi.",
+      "Dieci anni dopo la sconfitta di Kid Bu, Goku si iscrive per incontrare Uub, la reincarnazione buona di Majin Bu. Lo provoca finché il ragazzo non mostra il suo vero potenziale, poi lascia il torneo per portarlo con sé ad allenarsi.",
       "Ten years after Kid Buu's defeat, Goku enters to meet Uub, Majin Buu's good reincarnation. He goads him until the boy shows his true potential, then leaves the tournament to take him away for training.",
     ),
     rounds: [
       {
         name: L('Primo turno', 'First round'),
-        matches: [m(s('goku'), s('gt-majuub'), undefined, { eventId: 'evt-dbz-28th-tournament', note: L('Goku abbandona il torneo con Ub.', 'Goku leaves the tournament with Uub.') })],
+        matches: [m(s('goku'), s('gt-majuub'), undefined, { eventId: 'evt-dbz-28th-tournament', note: L('Goku abbandona il torneo con Uub.', 'Goku leaves the tournament with Uub.') })],
       },
     ],
-    outcome: L('Il torneo prosegue senza di loro: la serie si chiude con la partenza di Goku e Ub.', 'The tournament goes on without them: the series ends with Goku and Uub leaving.'),
+    outcome: L('Il torneo prosegue senza di loro: la serie si chiude con la partenza di Goku e Uub.', 'The tournament goes on without them: the series ends with Goku and Uub leaving.'),
     mangaChapters: ['517-519'],
     animeEpisodes: ['DBZ ep. 288-291'],
     tags: ['tenkaichi'],

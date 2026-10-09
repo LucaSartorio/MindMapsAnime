@@ -37,8 +37,8 @@ export const onepieceNations: Nation[] = [
     localizedName: { it: 'North Blue', en: 'North Blue' },
     type: 'neutral_land',
     description: {
-      it: 'Il Mare settentrionale, nel quadrante nord-ovest. Mare natale di numerosi personaggi (Law, Bellamy, Hawkins) e teatro della tragedia di Flevance, il Regno Bianco distrutto dal Saturnismo ambrato.',
-      en: 'The northern Sea, in the north-west quadrant. Birthplace of many characters (Law, Bellamy, Hawkins) and stage of the Flevance tragedy, the White Kingdom destroyed by Amber Lead Syndrome.',
+      it: 'Il Mare settentrionale, nel quadrante nord-ovest. Mare natale di numerosi personaggi (Law, Bellamy, Hawkins) e teatro della tragedia di Flevance, la «Città Bianca» distrutta dal Saturnismo ambrato.',
+      en: 'The northern Sea, in the north-west quadrant. Birthplace of many characters (Law, Bellamy, Hawkins) and stage of the Flevance tragedy, the \'White City\' destroyed by Amber Lead Syndrome.',
     },
     canonStatus: 'canon',
     referenceStatus: 'needs_verification',

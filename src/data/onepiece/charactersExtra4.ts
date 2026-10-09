@@ -40,7 +40,7 @@ export const onepieceCharactersExtra4: Character[] = [
     ['faction-op-blackbeard-pirates'], ['loc-op-dressrosa'], '225', '146',
     "Timoniere e «Campione» dei Pirati di Barbanera, lottatore di forza erculea, comandante della 1ª nave.",
     "Helmsman and 'Champion' of the Blackbeard Pirates, a wrestler of herculean strength, captain of the 1st ship.",
-    "Jesus Burgess, gigantesco lottatore e timoniere di Barbanera, partecipò al torneo di Dressrosa per il Frutto Mera Mera per conto del suo capitano. Comanda una delle dieci flotte della ciurma.",
+    "Jesus Burgess, gigantesco lottatore e timoniere di Barbanera, partecipò al torneo di Dressrosa per il Frutto Foco Foco per conto del suo capitano. Comanda una delle dieci flotte della ciurma.",
     "Jesus Burgess, the giant wrestler and helmsman of Blackbeard, entered the Dressrosa tournament for the Flame-Flame Fruit on his captain's behalf. He leads one of the crew's ten fleets.",
     'alive', ['barbanera']),
   C('char-op-shiryu', 'Shiryu', ['della Pioggia'], 'minor', ['antagonist'], 'male',
@@ -260,10 +260,10 @@ export const onepieceCharactersExtra4: Character[] = [
     'alive', ['wano', 'kozuki']),
   C('char-op-onimaru', 'Onimaru', undefined, 'minor', ['neutral'], 'male',
     ['faction-op-kozuki'], ['loc-op-wano'], '953', '972',
-    "Antica volpe guardiana della tomba di Oden a Ringo, utente di uno Zoan mitologico che la rese un guerriero.",
-    "An ancient fox guardian of Oden's grave in Ringo, user of a mythical Zoan that turned it into a warrior.",
-    "Onimaru, fedele volpe che per vent'anni custodì la spada e la memoria di Oden a Ringo, mangiò uno Zoan mitologico assumendo forma umanoide e combattendo per i Kozuki.",
-    "Onimaru, a faithful fox that for twenty years guarded Oden's sword and memory in Ringo, ate a mythical Zoan, taking on a humanoid form and fighting for the Kozuki.",
+    "Volpe guardiana delle tombe di Ringo, un tempo compagna di Shimotsuki Ushimaru; uno Zoan mitologico la rese un guerriero.",
+    "A fox spirit guarding the graves of Ringo, once the companion of Shimotsuki Ushimaru; a mythical Zoan turned it into a warrior.",
+    "Onimaru, fedele volpe che per vent'anni custodì le spade sulle tombe dei samurai caduti di Ringo in memoria del suo padrone Ushimaru, mangiò uno Zoan mitologico assumendo forma umanoide e combattendo per i Kozuki.",
+    "Onimaru, a faithful fox that for twenty years guarded the swords on the graves of Ringo's fallen samurai in memory of his master Ushimaru, ate a mythical Zoan, taking on a humanoid form and fighting for the Kozuki.",
     'alive', ['wano', 'kozuki', 'mitologico']),
 
   /* ---------------------- Egghead (satelliti di Vegapunk) ---------------------- */

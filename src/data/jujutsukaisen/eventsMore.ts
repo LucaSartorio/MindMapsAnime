@@ -29,7 +29,7 @@ export const jjkEventsMore: TimelineEvent[] = [
     id: 'evt-jjk-nanami-vs-mahito',
     title: { it: 'Nanami contro Mahito', en: 'Nanami vs Mahito' },
     description: {
-      it: "Seguendo le tracce dei cadaveri deformati del caso del cinema, Nanami raggiunge Mahito nelle gallerie fognarie sotto la città. Scopre la Trasfigurazione inattiva, la tecnica che rimodella l'anima, ed è Mahito a ritirarsi.",
+      it: "Seguendo le tracce dei cadaveri deformati del caso del cinema, Nanami raggiunge Mahito nelle gallerie fognarie sotto la città. Scopre la Trasfigurazione inerte, la tecnica che rimodella l'anima, ed è Mahito a ritirarsi.",
       en: "Following the trail of the deformed corpses from the cinema case, Nanami reaches Mahito in the sewer tunnels under the city. He discovers Idle Transfiguration, the technique that reshapes the soul, and it is Mahito who withdraws.",
     },
     period: P.y2018,

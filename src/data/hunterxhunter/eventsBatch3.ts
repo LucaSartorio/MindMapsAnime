@@ -8,7 +8,7 @@ import type { TimelineEvent } from '@/types';
 const P = {
   exam: { it: 'Esame per Hunter', en: 'Hunter Exam' },
   heavens: { it: 'Torre Celeste', en: 'Heavens Arena' },
-  yorknew: { it: 'Yorknew City', en: 'Yorknew City' },
+  yorknew: { it: 'Città di Yorknew', en: 'Yorknew City' },
   greed: { it: 'Greed Island', en: 'Greed Island' },
   ant: { it: 'Formiche Chimera', en: 'Chimera Ant' },
   election: { it: 'Elezione del 13° Presidente', en: '13th Chairman Election' },
@@ -59,8 +59,8 @@ export const hxhEventsBatch3: TimelineEvent[] = [
     worldId: 'world-hunterxhunter',
     title: { it: 'Gittarackur è Illumi', en: 'Gittarackur is Illumi' },
     description: {
-      it: "Il candidato Gittarackur si toglie gli aghi e rivela il proprio volto: è Illumi Zoldyck, fratello maggiore di Killua, venuto a vegliare su di lui.",
-      en: "The candidate Gittarackur removes his needles and reveals his face: he is Illumi Zoldyck, Killua's elder brother, come to watch over him.",
+      it: "Il candidato Gittarackur si toglie gli aghi e rivela il proprio volto: è Illumi Zoldyck, fratello maggiore di Killua, che partecipa all'Esame perché un suo incarico richiede la licenza.",
+      en: "The candidate Gittarackur removes his needles and reveals his face: he is Illumi Zoldyck, Killua's elder brother, taking the Exam because one of his jobs requires a license.",
     },
     period: P.exam,
     arcId: 'arc-hxh-hunter-exam',
@@ -143,8 +143,8 @@ export const hxhEventsBatch3: TimelineEvent[] = [
     worldId: 'world-hunterxhunter',
     title: { it: 'Tsezguerra e la sfida del gioco', en: "Tsezguerra and the game's test" },
     description: {
-      it: "Entrati nel gioco, Gon e Killua incontrano il Hunter professionista Tsezguerra, che li mette alla prova prima di accettarli come degni giocatori.",
-      en: 'Having entered the game, Gon and Killua meet the professional Hunter Tsezguerra, who tests them before accepting them as worthy players.',
+      it: "Per entrare nel gioco, Gon e Killua affrontano la selezione di Battera: l'Hunter professionista Tsezguerra esamina il loro Ren prima di accettarli come degni giocatori.",
+      en: "To enter the game, Gon and Killua face Battera's selection: the professional Hunter Tsezguerra examines their Ren before accepting them as worthy players.",
     },
     period: P.greed,
     arcId: 'arc-hxh-greed-island',
@@ -223,10 +223,10 @@ export const hxhEventsBatch3: TimelineEvent[] = [
   {
     id: 'ev-hxh-gon-demands-healing',
     worldId: 'world-hunterxhunter',
-    title: { it: 'Gon impone la guarigione di Komugi', en: 'Gon demands Komugi be healed' },
+    title: { it: 'Gon attende la guarigione di Komugi', en: 'Gon waits for Komugi to be healed' },
     description: {
-      it: "Raggiunta Neferpitou, Gon esige che curi Komugi prima di affrontarlo; la tensione del confronto precede la sua trasformazione.",
-      en: 'Reaching Neferpitou, Gon demands she heal Komugi before facing him; the tension of the standoff precedes his transformation.',
+      it: "Gon raggiunge Neferpitou mentre cura Komugi: Pitou lo implora di lasciarla finire e Gon, a stento, acconsente; la tensione dell'attesa precede la sua trasformazione.",
+      en: 'Gon finds Neferpitou healing Komugi: Pitou begs him to let her finish and Gon, barely, agrees; the tension of the wait precedes his transformation.',
     },
     period: P.ant,
     arcId: 'arc-hxh-chimera-ant',

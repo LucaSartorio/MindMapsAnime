@@ -38,8 +38,8 @@ export const dragonballLocationsExtra: Location[] = [
     x: 110,
     y: 340,
     shortDescription: {
-      it: "Il pianeta su cui i Namecciani si trasferiscono dopo la distruzione di Namecc, grazie a un desiderio esaudito dalle Sfere del Drago della Terra. Anni dopo lo stregone Moro lo prosciuga della sua energia vitale.",
-      en: "The planet the Namekians move to after the destruction of Namek, thanks to a wish granted by Earth's Dragon Balls. Years later the sorcerer Moro drains it of its life energy.",
+      it: "Il pianeta su cui i Namecciani si trasferiscono dopo la distruzione di Namecc, grazie a un desiderio esaudito da Porunga con le loro Sfere del Drago. Anni dopo lo stregone Moro lo prosciuga della sua energia vitale.",
+      en: "The planet the Namekians move to after the destruction of Namek, thanks to a wish granted by Porunga with their own Dragon Balls. Years later the sorcerer Moro drains it of its life energy.",
     },
     nationId: 'nation-dbz-namek',
     characterIds: ['char-dbz-dende', 'char-dbz-moro'],
@@ -396,7 +396,7 @@ export const dragonballLocationsExtra: Location[] = [
     x: 700,
     y: 600,
     shortDescription: {
-      it: "Il grande portale a pagoda da cui si entra nel recinto del torneo. Al 25° Torneo, Spopovich e Yamu sottraggono qui l'energia a Gohan e fuggono verso la navicella di Babidi, seguiti da Goku, Kaiōshin e gli altri.",
+      it: "Il grande portale a pagoda da cui si entra nel recinto del torneo. Al 25° Torneo, Spopovich e Yamu sottraggono l'energia a Gohan e fuggono verso la navicella di Babidi, seguiti da Goku, Kaiōshin e gli altri.",
       en: "The great pagoda gate leading into the tournament grounds. At the 25th Tournament, Spopovich and Yamu drain Gohan's energy and flee towards Babidi's spaceship, followed by Goku, Supreme Kai and the others.",
     },
     nationId: 'nation-dbz-earth',

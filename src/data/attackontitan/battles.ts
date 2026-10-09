@@ -6,13 +6,13 @@ const L = (it: string, en: string) => ({ it, en });
 
 /** Esiti degli scontri di Attack on Titan (bilancio nella scheda personaggio). */
 export const aotBattles: Record<string, BattleOutcome> = {
-  'evt-aot-female-trapped': stop(['erwin', 'levi', 'mikasa'], ['annie'], L('Annie chiama i Giganti a divorare la sua nuca e fugge.', 'Annie calls the Titans to devour her nape and escapes.')),
+  'evt-aot-female-trapped': stop(['erwin', 'levi', 'mikasa'], ['annie'], L('Annie chiama i Giganti a divorare il suo corpo e fugge.', 'Annie calls the Titans to devour her body and escapes.')),
   'evt-aot-levi-squad-dies': win(['annie'], ['petra', 'oluo', 'eld', 'gunther', 'eren']),
   'evt-aot-battle-stohess': win(['eren', 'mikasa', 'armin'], ['annie'], L('Sconfitta, Annie si chiude in un cristallo.', 'Defeated, Annie encases herself in crystal.')),
   'evt-aot-mike-death': win(['zeke'], ['mike']),
   'evt-aot-reiner-reveal': win(['reiner', 'bertolt'], ['eren', 'mikasa'], L('Reiner e Bertolt rapiscono Eren e Ymir.', 'Reiner and Bertolt abduct Eren and Ymir.')),
   'evt-aot-eren-rescue': win(['erwin', 'armin', 'mikasa', 'jean'], ['reiner', 'bertolt']),
-  'evt-aot-coordinate-awakens': win(['eren', 'mikasa'], ['reiner', 'bertolt'], L('Il Coordinamento scaglia i Giganti puri contro i Guerrieri, che si ritirano.', 'The Coordinate hurls the pure Titans at the Warriors, who retreat.')),
+  'evt-aot-coordinate-awakens': win(['eren', 'mikasa'], ['reiner', 'bertolt'], L('La Coordinata scaglia i Giganti puri contro i Guerrieri, che si ritirano.', 'The Coordinate hurls the pure Titans at the Warriors, who retreat.')),
   'evt-aot-kenny-ambush': stop(['levi'], ['kenny']),
   'evt-aot-orvud': win(['historia', 'levi', 'eren', 'erwin', 'mikasa'], ['rod-reiss']),
   'evt-aot-armored-thunder-spears': stop(['hange', 'mikasa', 'jean', 'connie', 'sasha', 'armin'], ['reiner'], L('Reiner cade, ma Bertolt arriva dal cielo.', 'Reiner falls, but Bertolt arrives from the sky.')),

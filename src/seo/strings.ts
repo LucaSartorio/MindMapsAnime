@@ -2,7 +2,7 @@ import type { SeoLocale } from './config';
 
 /**
  * Testi dei METADATI SEO (title, description, breadcrumb JSON-LD) nelle lingue
- * con URL indicizzabili (`SEO_LOCALES`: it, en, es). Sono una mappa locale `LocalizedText` (consentita da
+ * con URL indicizzabili (`SEO_LOCALES`: it, en, es, fr). Sono una mappa locale `LocalizedText` (consentita da
  * CLAUDE.md): i metadati seguono la lingua dell'URL, non quella dell'interfaccia,
  * così `<title>`, canonical e hreflang dicono sempre la stessa cosa.
  *
@@ -332,5 +332,93 @@ export const SEO_STRINGS: Record<SeoLocale, SeoStrings> = {
     abilityTail: (name, w) => `Quién usa ${name} y con qué personajes y facciones de ${w} está conectada.`,
     region: (name, w) => `${name} — región de ${w}: lugares y mapa`,
     regionTail: (name, w) => `Lugares, facciones y arcos de ${name} en el mapa interactivo de ${w}.`,
+  },
+  fr: {
+    home: {
+      title: 'AniMapVerse — Cartes interactives des mondes d\'anime et de manga',
+      description:
+        'AniMapVerse est un atlas interactif de l\'anime et du manga : cartes, lieux, personnages, arcs, factions et parcours de Naruto, One Piece, Hunter x Hunter et bien d\'autres.',
+    },
+    about: {
+      title: 'Qu\'est-ce qu\'AniMapVerse',
+      description:
+        'AniMapVerse est un projet indépendant qui transforme les mondes d\'anime et de manga en cartes interactives et connectées : architecture, sources et objectifs du projet.',
+    },
+    support: {
+      title: 'Soutenir AniMapVerse',
+      description:
+        'AniMapVerse est gratuit et sans publicité. Découvrez comment soutenir le projet et aider à ajouter de nouveaux mondes, cartes et fonctionnalités.',
+    },
+    privacy: {
+      title: 'Politique de confidentialité',
+      description: 'Politique de confidentialité d\'AniMapVerse conforme au RGPD (règlement UE 2016/679).',
+    },
+    cookies: {
+      title: 'Politique relative aux cookies',
+      description: 'Politique relative aux cookies d\'AniMapVerse : cookies techniques et de mesure d\'audience, gestion du consentement.',
+    },
+    notFound: {
+      title: 'Page introuvable',
+      description: 'La page que vous cherchez n\'existe pas ou a été déplacée.',
+    },
+    crumbHome: 'Accueil',
+    cat: {
+      characters: 'Personnages',
+      locations: 'Lieux',
+      factions: 'Factions',
+      arcs: 'Arcs narratifs',
+      journeys: 'Parcours',
+      regions: 'Régions',
+      timeline: 'Chronologie',
+      map: 'Carte interactive',
+    },
+    page: (n) => `Page ${n}`,
+    world: (w) => `Carte interactive de ${w} : lieux, personnages et parcours`,
+    worldDesc: (w, s) => `${s} Explorez la carte interactive de ${w} sur AniMapVerse.`,
+    worldSoon: (w) => `${w} — carte interactive bientôt disponible`,
+    worldSoonDesc: (w) => `La carte interactive de ${w} est en préparation sur AniMapVerse.`,
+    map: (w) => `Carte du monde de ${w} — explorez la carte interactive`,
+    mapDesc: (w, p, j) =>
+      `Explorez la carte interactive du monde de ${w} : ${p} lieux, ${j} parcours de personnages, une chronologie des événements et des filtres par arc narratif et par faction.`,
+    characters: (w) => `Personnages de ${w} : fiches, lieux et arcs narratifs`,
+    charactersDesc: (w, n) =>
+      `Les ${n} personnages de ${w} sur AniMapVerse : rôles, affiliations, lieux liés, arcs narratifs et parcours sur la carte interactive.`,
+    locations: (w) => `Lieux de ${w} sur la carte interactive`,
+    locationsDesc: (w, n) =>
+      `Les ${n} lieux de ${w} — villages, villes, régions et lieux emblématiques — avec leur histoire et leur position sur la carte interactive.`,
+    factions: (w, t) => `${t} de ${w} : membres, lieux et arcs`,
+    factionsDesc: (w, t, n) =>
+      `${n} ${t.toLowerCase()} de ${w} : chefs, membres, territoires et arcs narratifs où ils apparaissent, reliés à la carte interactive.`,
+    arcs: (w) => `Arcs narratifs de ${w} : événements et lieux`,
+    arcsDesc: (w, n) =>
+      `Les ${n} arcs narratifs de ${w} dans l\'ordre chronologique, avec les événements, les personnages et les lieux de chaque arc sur la carte interactive.`,
+    journeys: (w) => `Parcours des personnages de ${w} sur la carte`,
+    journeysDesc: (w, n) =>
+      `${n} parcours de ${w} étape par étape : suivez les voyages des protagonistes à travers les lieux du monde sur la carte interactive.`,
+    abilities: (w, t) => `${t} de ${w} : liste et utilisateurs`,
+    abilitiesDesc: (w, t, n) => `${n} entrées de ${t} dans ${w} : descriptions, catégories et personnages qui les utilisent.`,
+    regions: (w) => `Régions et territoires de ${w}`,
+    regionsDesc: (w, n) =>
+      `Les ${n} régions et territoires du monde de ${w}, avec les lieux qu\'ils contiennent et leur position sur la carte interactive.`,
+    timeline: (w) => `Chronologie de ${w} : les événements dans l\'ordre`,
+    timelineDesc: (w, n) =>
+      `La chronologie de ${w} en ${n} événements : où et quand ils se déroulent, avec les arcs narratifs et les lieux liés sur la carte interactive.`,
+    character: (name, w, j) =>
+      j ? `${name} : parcours et lieux — carte de ${w}` : `${name} — personnage de ${w}, lieux et arcs`,
+    characterTail: (name, w) =>
+      `Découvrez les lieux, les arcs narratifs et les liens de ${name} sur la carte interactive de ${w}.`,
+    location: (name, type, w) => `${name} (${type}) — carte interactive de ${w}`,
+    locationTail: (name, w) =>
+      `Personnages, événements et arcs liés à ${name} et sa position sur la carte interactive de ${w}.`,
+    faction: (name, type, w) => `${name} (${type}) — ${w} : membres et lieux`,
+    factionTail: (name, w) => `Membres, lieux et arcs narratifs de ${name} dans le monde de ${w}.`,
+    arc: (name, w) => `${name} — arc narratif de ${w} : événements et lieux`,
+    arcTail: (name, w) => `Événements, personnages et lieux de l\'arc ${name} sur la carte interactive de ${w}.`,
+    journey: (name, w) => `${name} — parcours sur la carte de ${w}`,
+    journeyTail: (steps, w) => `Suivez le parcours étape par étape (${steps} étapes) sur la carte interactive de ${w}.`,
+    ability: (name, term, w) => `${name} — ${term} dans l'univers de ${w}`,
+    abilityTail: (name, w) => `Qui utilise ${name} et à quels personnages et factions de ${w} cette technique est liée.`,
+    region: (name, w) => `${name} — région de ${w} : lieux et carte`,
+    regionTail: (name, w) => `Lieux, factions et arcs de ${name} sur la carte interactive de ${w}.`,
   },
 };

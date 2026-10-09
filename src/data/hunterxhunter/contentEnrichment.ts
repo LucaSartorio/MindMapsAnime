@@ -7,7 +7,7 @@ import type { Localizable } from '@/types';
  */
 export const HXH_JUTSU_LONG: Record<string, Localizable> = {
   'jutsu-hxh-gyo': {
-    it: "Variante dello Shu applicata agli occhi: permette di vedere l'aura nascosta con l'In e di leggere le abilità avversarie. Su Greed Island Biscuit costringe Gon e Killua a usarlo di continuo, finché diventa un riflesso.",
+    it: "Forma di concentrazione dell'aura negli occhi: permette di vedere l'aura nascosta con l'In e di leggere le abilità avversarie. Su Greed Island Biscuit costringe Gon e Killua a usarlo di continuo, finché diventa un riflesso.",
     en: "A form of focusing aura in the eyes: it reveals aura hidden with In and lets the user read an opponent's abilities. On Greed Island Biscuit forces Gon and Killua to use it constantly until it becomes a reflex.",
   },
   'jutsu-hxh-in': {
@@ -159,12 +159,12 @@ export const HXH_JUTSU_LONG: Record<string, Localizable> = {
     en: "Genthru grabs the opponent's face and makes it explode, shielding his own hand with aura. Gon beats him on Greed Island by sacrificing his left arm to get close enough.",
   },
   'jutsu-hxh-dowsing-chain': {
-    it: "La catena del pollice termina con un peso che Kurapika usa come pendolo: oscilla quando qualcuno mente o indica una direzione. In battaglia diventa una frusta per deviare e colpire.",
-    en: "The thumb chain ends in a weight Kurapika uses as a pendulum: it swings when someone lies or points out a direction. In battle it becomes a whip to deflect and strike.",
+    it: "La catena dell'anulare termina con un peso che Kurapika usa come pendolo: oscilla quando qualcuno mente o indica una direzione. In battaglia diventa una frusta per deviare e colpire.",
+    en: "The ring-finger chain ends in a weight Kurapika uses as a pendulum: it swings when someone lies or points out a direction. In battle it becomes a whip to deflect and strike.",
   },
   'jutsu-hxh-holy-chain': {
-    it: "La catena dell'indice cura ferite e fatica di chi tocca. Kurapika, Materializzatore, ne sfrutta il pieno potere solo grazie all'Emperor Time degli Occhi Scarlatti.",
-    en: "The index-finger chain heals the wounds and fatigue of whoever it touches. Kurapika, a Conjurer, draws its full power only through the Scarlet Eyes' Emperor Time.",
+    it: "La catena del pollice cura ferite e fatica di chi tocca. Kurapika, Materializzatore, ne sfrutta il pieno potere solo grazie all'Emperor Time degli Occhi Scarlatti.",
+    en: "The thumb chain heals the wounds and fatigue of whoever it touches. Kurapika, a Conjurer, draws its full power only through the Scarlet Eyes' Emperor Time.",
   },
   'jutsu-hxh-dragon-dive': {
     it: "Zeno Zoldyck plasma l'aura in draghi: uno lo trasporta in volo, una pioggia di draghi d'aura si abbatte sul bersaglio. All'assalto di East Gorteau trasporta Netero sul palazzo e usa il Dragon Dive per distrarre le Guardie Reali.",
@@ -184,8 +184,8 @@ export const HXH_JUTSU_LONG: Record<string, Localizable> = {
     en: "Kalluto, Killua's younger brother, uses his fan to control a swarm of razor-sharp paper confetti. Having joined the Troupe as Hisoka's replacement, he uses them against the Chimera Ants in Meteor City.",
   },
   'jutsu-hxh-steal-chain': {
-    it: "Funziona solo con l'Emperor Time attivo: la catena dell'anulare sottrae al bersaglio la sua abilità, che Kurapika può poi usare a sua volta. È uno dei vincoli più costosi per la sua aspettativa di vita.",
-    en: "It only works with Emperor Time active: the ring-finger chain takes the target's ability away, which Kurapika can then use himself. It is one of the costliest powers for his life expectancy.",
+    it: "Funziona solo con l'Emperor Time attivo: la catena dell'indice sottrae al bersaglio la sua abilità, che Kurapika può poi usare a sua volta. È uno dei vincoli più costosi per la sua aspettativa di vita.",
+    en: "It only works with Emperor Time active: the index-finger chain takes the target's ability away, which Kurapika can then use himself. It is one of the costliest powers for his life expectancy.",
   },
   'jutsu-hxh-black-white-goreinu': {
     it: 'I due gorilla permettono scambi di posizione istantanei con Goreinu e con i bersagli che toccano. Su Greed Island Goreinu si unisce alla squadra di Gon nella sfida a dodgeball contro Razor per la carta di Soufrabi.',

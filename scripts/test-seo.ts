@@ -65,26 +65,30 @@ async function main() {
     assert.ok(!RESERVED_SLUGS.has(slugify('Naruto')));
   });
 
-  test('lingua URL per lingua UI (ja/fr/de → en; es → es solo sui mondi tradotti)', () => {
+  test('lingua URL per lingua UI (ja/de → en; es/fr → se stesse solo sui mondi tradotti)', () => {
     assert.equal(seoLocaleFor('it'), 'it');
     assert.equal(seoLocaleFor('en'), 'en');
     assert.equal(seoLocaleFor('es'), 'es');
-    for (const l of ['ja', 'fr', 'de'] as const) assert.equal(seoLocaleFor(l), 'en');
+    assert.equal(seoLocaleFor('fr'), 'fr');
+    for (const l of ['ja', 'de'] as const) assert.equal(seoLocaleFor(l), 'en');
     assert.equal(swapLangInPath('/it/naruto/map', 'en'), '/en/naruto/map');
     assert.equal(swapLangInPath('/es/naruto/map', 'it'), '/it/naruto/map');
+    assert.equal(swapLangInPath('/fr/naruto/map', 'es'), '/es/naruto/map');
     assert.equal(swapLangInPath('/en', 'it'), '/it');
     for (const w of animeWorlds) {
-      const es = worldHasSeoLocale(w, 'es');
-      assert.equal(seoLocaleFor('es', w), es ? 'es' : 'en', w.slug);
-      // I link costruiti da una pagina spagnola non puntano mai a un mondo non tradotto in /es.
-      assert.ok(worldPath('es', w).startsWith(es ? '/es/' : '/en/'), `${w.slug}: ${worldPath('es', w)}`);
-      if (!es) assert.equal(resolveSeoPath(`/es/${w.urlSlug ?? w.slug}`, (s) => datasets.get(s)), null, `${w.slug}: /es senza traduzione`);
+      for (const lang of ['es', 'fr'] as const) {
+        const has = worldHasSeoLocale(w, lang);
+        assert.equal(seoLocaleFor(lang, w), has ? lang : 'en', `${w.slug} ${lang}`);
+        // I link costruiti da una pagina /es o /fr non puntano mai a un mondo non tradotto in quella lingua.
+        assert.ok(worldPath(lang, w).startsWith(has ? `/${lang}/` : '/en/'), `${w.slug}: ${worldPath(lang, w)}`);
+        if (!has) assert.equal(resolveSeoPath(`/${lang}/${w.urlSlug ?? w.slug}`, (s) => datasets.get(s)), null, `${w.slug}: /${lang} senza traduzione`);
+      }
     }
   });
 
   test('parser: forme non canoniche e route sconosciute', () => {
     assert.equal(parseSeoPath('/').kind, 'unknown');
-    assert.equal(parseSeoPath('/fr/naruto').kind, 'unknown');
+    assert.equal(parseSeoPath('/de/naruto').kind, 'unknown');
     assert.equal(parseSeoPath('/en/naruto/unknown-section').kind, 'unknown');
     assert.equal(parseSeoPath('/en/naruto/locations/page/1').kind, 'unknown');
     assert.equal(parseSeoPath('/en/naruto/locations/page/abc').kind, 'unknown');
@@ -115,9 +119,8 @@ async function main() {
       const idx = getSlugIndex(d);
       assert.equal(idx.unlocked.length, 0, `${d.world.slug}: slug non congelati ${idx.unlocked.slice(0, 5).join(', ')} → npm run seo:slugs`);
       for (const c of SEO_CATEGORIES) {
-        for (const [from, id] of idx.redirects[c]) {
-          const to = idx.byId[c].get(id);
-          assert.ok(to, `${d.world.slug}/${c}: redirect ${from} → id ${id} inesistente`);
+        for (const [from, to] of idx.redirects[c]) {
+          assert.ok(idx.bySlug[c].has(to), `${d.world.slug}/${c}: redirect ${from} → ${to} non è uno slug vivo`);
           assert.notEqual(from, to, `${d.world.slug}/${c}: redirect su se stesso ${from}`);
           assert.ok(!idx.bySlug[c].has(from), `${d.world.slug}/${c}: ${from} è sia slug vivo sia redirect`);
         }
@@ -125,10 +128,10 @@ async function main() {
     }
   });
 
-  test('slug indipendenti dalla lingua: la stessa entità ha lo stesso slug in /it, /en e /es', () => {
+  test('slug indipendenti dalla lingua: la stessa entità ha lo stesso slug in ogni lingua URL', () => {
     for (const r of enumeratePages(datasets)) {
       if (r.page.kind !== 'entity' || r.lang !== 'it') continue;
-      for (const lang of ['en', 'es'] as const) {
+      for (const lang of ['en', 'es', 'fr'] as const) {
         if (!worldHasSeoLocale(r.page.dataset.world, lang)) continue;
         const other = resolveSeoPath(swapLangInPath(r.path, lang), (s) => datasets.get(s));
         assert.ok(other && other.page.kind === 'entity' && other.page.id === r.page.id, `${r.path}: controparte /${lang} diversa`);

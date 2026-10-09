@@ -36,8 +36,8 @@ export const hxhNations: Nation[] = [
     localizedName: { it: 'Continente di Azian', en: 'Azian Continent' },
     type: 'neutral_land',
     description: {
-      it: 'Vasto continente orientale del Mondo Conosciuto, che comprende il Regno di Kakin e la Federazione di Ochima.',
-      en: 'Large eastern continent of the Known World, comprising the Kingdom of Kakin and the Federation of Ochima.',
+      it: 'Vasto continente orientale del Mondo Conosciuto, che comprende l\'Impero di Kakin e la Federazione di Ochima.',
+      en: 'Large eastern continent of the Known World, comprising the Kakin Empire and the Federation of Ochima.',
     },
     boundaryId: 'boundary-hxh-azian',
     relatedLocationIds: ['loc-hxh-kakin'],
@@ -116,8 +116,8 @@ export const hxhNations: Nation[] = [
     localizedName: { it: "Regno di Kukan'yu", en: "Kukan'yu Kingdom" },
     type: 'minor_nation',
     description: {
-      it: "Regno nord-occidentale del Mondo Conosciuto che ospita la Città di Zaban, sede della fase finale dell'Esame per Hunter.",
-      en: "North-western kingdom of the Known World, home to Zaban City, site of the Hunter Exam's final phase.",
+      it: "Regno nord-occidentale del Mondo Conosciuto che ospita la Città di Zaban, dove ha inizio l'Esame per Hunter.",
+      en: "North-western kingdom of the Known World, home to Zaban City, where the Hunter Exam begins.",
     },
     boundaryId: 'boundary-hxh-kukanyu',
     relatedLocationIds: ['loc-hxh-zaban-city'],
@@ -178,8 +178,8 @@ export const hxhNations: Nation[] = [
   {
     id: 'nation-hxh-kakin',
     worldId: 'world-hunterxhunter',
-    name: 'Kingdom of Kakin',
-    localizedName: { it: 'Regno di Kakin', en: 'Kingdom of Kakin' },
+    name: 'Kakin Empire',
+    localizedName: { it: 'Impero di Kakin', en: 'Kakin Empire' },
     type: 'great_nation',
     description: {
       it: 'Monarchia emergente del continente di Azian, guidata da Re Nasubi Hui Guo Rou. Promuove la spedizione verso il Continente Oscuro.',

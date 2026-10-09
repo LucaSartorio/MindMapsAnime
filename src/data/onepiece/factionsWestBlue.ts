@@ -26,8 +26,8 @@ export const onepieceFactionsWestBlue: Faction[] = [
     name: 'Rocks Pirates',
     localizedName: { it: 'Pirati di Rocks', en: 'Rocks Pirates' },
     description: {
-      it: "La ciurma di Rocks D. Xebec, attiva 40 anni prima della storia: un equipaggio che riuniva futuri leggendari (Barbabianca, Kaido, Big Mom, Shiki) e che ambiva a dominare il mondo. Si dissolse a God Valley.",
-      en: "Rocks D. Xebec's crew, active 40 years before the story: a band that gathered future legends (Whitebeard, Kaido, Big Mom, Shiki) and sought to rule the world. It dissolved at God Valley.",
+      it: "La ciurma di Rocks D. Xebec, attiva fino a 38 anni prima della storia: un equipaggio che riuniva futuri leggendari (Barbabianca, Kaido, Big Mom, Shiki) e che ambiva a dominare il mondo. Si dissolse a God Valley.",
+      en: "Rocks D. Xebec's crew, active until 38 years before the story: a band that gathered future legends (Whitebeard, Kaido, Big Mom, Shiki) and sought to rule the world. It dissolved at God Valley.",
     },
     leaderIds: ['char-op-rocks'],
     characterIds: ['char-op-rocks'],

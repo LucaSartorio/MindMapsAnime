@@ -125,8 +125,8 @@ export const onepieceCharactersEgghead: Character[] = [
     factionIds: ['faction-op-cp0'],
     arcIds: ['arc-op-egghead'],
     shortDescription: {
-      it: "Agente della CP0 ed «Imperatrice del Sottomondo», in realtà un clone creato da Vegapunk. A Egghead volge le spalle al Governo per proteggere la sua origine e gli alleati.",
-      en: "A CP0 agent and 'Empress of the Underworld', in truth a clone created by Vegapunk. At Egghead she turns against the Government to protect her origin and her allies.",
+      it: "Agente della CP0 e «Regina del Piacere», in realtà un clone creato da Vegapunk. A Egghead volge le spalle al Governo per proteggere la sua origine e gli alleati.",
+      en: "A CP0 agent and 'Queen of the Pleasure District', in truth a clone created by Vegapunk. At Egghead she turns against the Government to protect her origin and her allies.",
     },
     status: 'alive',
     canonStatus: 'canon',

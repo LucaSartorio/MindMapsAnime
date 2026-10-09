@@ -67,8 +67,8 @@ export const onepieceFactionsExtra: Faction[] = [
     name: 'SWORD',
     localizedName: { it: 'SWORD', en: 'SWORD' },
     description: {
-      it: "Unità speciale e segreta della Marina, i cui membri agiscono ufficiosamente (anche dimettendosi sulla carta) per combattere i pirati con maggiore libertà. Vi militano Coby, X Drake e Smoker.",
-      en: "A secret special Marine unit whose members operate unofficially (even resigning on paper) to fight pirates with greater freedom. Coby, X Drake and Smoker serve in it.",
+      it: "Unità speciale e segreta della Marina, i cui membri agiscono ufficiosamente (anche dimettendosi sulla carta) per combattere i pirati con maggiore libertà. Vi militano Coby, Helmeppo e X Drake.",
+      en: "A secret special Marine unit whose members operate unofficially (even resigning on paper) to fight pirates with greater freedom. Coby, Helmeppo and X Drake serve in it.",
     },
     characterIds: ['char-op-coby', 'char-op-drake', 'char-op-smoker'],
     canonStatus: 'canon',

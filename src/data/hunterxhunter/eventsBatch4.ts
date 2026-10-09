@@ -152,10 +152,10 @@ export const hxhEventsBatch4: TimelineEvent[] = [
   {
     id: 'ev-hxh-kurapika-little-eye',
     worldId: 'world-hunterxhunter',
-    title: { it: "L'«Occhietto Rubato» di Kurapika", en: "Kurapika's Stealing Eye" },
+    title: { it: 'La Catena del Furto di Kurapika', en: "Kurapika's Steal Chain" },
     description: {
-      it: "Per indagare sulle Bestie Guardiane senza esaurirsi, Kurapika usa la catena del mignolo che gli permette di rubare e usare temporaneamente le abilità altrui.",
-      en: 'To investigate the Guardian Beasts without burning out, Kurapika uses his little-finger chain that lets him temporarily steal and use others\' abilities.',
+      it: "Per indagare sulle Bestie Guardiane senza esaurirsi, Kurapika usa la catena dell'indice (Steal Chain) che gli permette di rubare e usare temporaneamente le abilità altrui.",
+      en: 'To investigate the Guardian Beasts without burning out, Kurapika uses his index-finger chain (Steal Chain) that lets him temporarily steal and use others\' abilities.',
     },
     period: P.succession,
     arcId: 'arc-hxh-succession-contest',
@@ -179,7 +179,7 @@ export const hxhEventsBatch4: TimelineEvent[] = [
     period: P.succession,
     arcId: 'arc-hxh-succession-contest',
     locationId: 'loc-hxh-black-whale',
-    characterIds: ['char-hxh-tserriednich'],
+    characterIds: ['char-hxh-tserriednich', 'char-hxh-theta'],
     factionIds: ['faction-hxh-kakin-royal'],
     order: 31.5,
     mangaChapters: ['377-390'],
@@ -192,8 +192,8 @@ export const hxhEventsBatch4: TimelineEvent[] = [
     worldId: 'world-hunterxhunter',
     title: { it: 'Verso il Nuovo Continente', en: 'Toward the New Continent' },
     description: {
-      it: "Mentre la guerra di successione infuria, la Black Whale prosegue oltre il Lago Mobius verso il Nuovo Continente, soglia ufficiale del Continente Oscuro.",
-      en: 'As the succession war rages, the Black Whale presses on past Lake Mobius toward the New Continent, the official threshold of the Dark Continent.',
+      it: "Mentre la guerra di successione infuria, la Black Whale attraversa il Lago Mobius diretta al «Nuovo Continente», il nome con cui Kakin chiama il Continente Oscuro.",
+      en: 'As the succession war rages, the Black Whale crosses Lake Mobius bound for the "New Continent", the name Kakin gives the Dark Continent.',
     },
     period: P.succession,
     arcId: 'arc-hxh-succession-contest',

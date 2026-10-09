@@ -439,8 +439,8 @@ export const hxhCharactersBatch1: Character[] = [
       en: 'The Chimera Ant King, born to rule. A being of absolute power who evolves through the game of Gungi and his bond with Komugi.',
     },
     longDescription: {
-      it: 'Capace di assorbire abilità divorando avversari potenti, Meruem matura un\'inattesa umanità grazie alla campionessa cieca di Gungi, Komugi. Cade dopo lo scontro con Netero e la Rosa Miniatura.',
-      en: 'Able to absorb abilities by devouring strong foes, Meruem develops unexpected humanity through the blind Gungi champion Komugi. He falls after his clash with Netero and the Miniature Rose.',
+      it: 'Capace di assorbire abilità divorando avversari potenti, Meruem matura un\'inattesa umanità grazie alla campionessa cieca di Gungi, Komugi. Cade dopo lo scontro con Netero e la Rosa del Povero.',
+      en: 'Able to absorb abilities by devouring strong foes, Meruem develops unexpected humanity through the blind Gungi champion Komugi. He falls after his clash with Netero and the Poor Man\'s Rose.',
     },
     enemies: ['char-hxh-netero'],
     locationIds: ['loc-hxh-east-gorteau'],

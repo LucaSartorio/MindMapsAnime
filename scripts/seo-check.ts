@@ -29,6 +29,7 @@ import { looksEnglish, looksItalian } from '../src/utils/localizableFields';
 // Parole funzionali spagnole: un testo che le contiene non è inglese anche se
 // cita un titolo inglese (es. il film "The Last").
 const ES_WORDS = /(?<!\p{L})(el|la|los|las|de|del|en|con|que|una|por|para|como|sus)(?!\p{L})/iu;
+const FR_WORDS = /(?<!\p{L})(le|la|les|des|du|de|et|est|un|une|dans|pour|sur|avec|qui|que|au|aux|son|sa|ses)(?!\p{L})/iu;
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = join(ROOT, 'dist');
@@ -210,6 +211,9 @@ for (const p of pages.values()) {
     // parole funzionali con l'italiano, quindi niente controllo "sembra italiano").
     if (p.lang === 'es' && looksEnglish(p.description) && !ES_WORDS.test(p.description)) {
       err(`${p.url}: description /es in inglese: "${p.description}"`);
+    }
+    if (p.lang === 'fr' && looksEnglish(p.description) && !FR_WORDS.test(p.description)) {
+      err(`${p.url}: description /fr in inglese: "${p.description}"`);
     }
     const dk = `${p.lang}|${p.description}`;
     const d = descSeen.get(dk);

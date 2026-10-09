@@ -65,8 +65,8 @@ export const onepieceCharactersExtra: Character[] = [
     ['faction-op-marines'], undefined, '303', '225',
     "Ex ammiraglio del ghiaccio dai modi indolenti, lasciò la Marina dopo lo scontro con Akainu e si avvicinò a Barbanera.",
     "The lackadaisical former ice admiral who left the Marines after his clash with Akainu and drew close to Blackbeard.",
-    "Kuzan «Aokiji», ex ammiraglio utente del frutto Gelo, di indole pigra ma di immensa potenza. Concesse una via di fuga a Robin a Water Seven; perso il duello con Akainu per il posto di Grande Ammiraglio, si dimise e si infiltrò tra i Pirati di Barbanera.",
-    "Kuzan 'Aokiji', a former admiral and user of the Ice-Ice Fruit, lazy in manner but immensely powerful. He gave Robin an escape at Water Seven; having lost the duel with Akainu for Fleet Admiral, he resigned and infiltrated the Blackbeard Pirates.",
+    "Kuzan «Aokiji», ex ammiraglio utente del frutto Gelo, di indole pigra ma di immensa potenza. Lasciò fuggire la piccola Robin da Ohara; perso il duello con Akainu per il posto di Grande Ammiraglio, si dimise e si infiltrò tra i Pirati di Barbanera.",
+    "Kuzan 'Aokiji', a former admiral and user of the Ice-Ice Fruit, lazy in manner but immensely powerful. He let the young Robin escape from Ohara; having lost the duel with Akainu for Fleet Admiral, he resigned and infiltrated the Blackbeard Pirates.",
     'alive', ['marina', 'ammiraglio', 'ghiaccio']),
   C('char-op-fujitora', 'Issho', ['Fujitora'], 'major', ['neutral'], 'male',
     ['faction-op-marines'], ['loc-op-dressrosa'], '700', '631',
@@ -162,8 +162,8 @@ export const onepieceCharactersExtra: Character[] = [
     ['faction-op-beasts-pirates'], ['loc-op-onigashima'], '978', '1015',
     "Una dei Tobiroppo di Kaido, utente dello Zoan ancestrale di un ragno preistorico; affrontò Robin a Onigashima.",
     "One of Kaido's Tobiroppo, user of an ancient prehistoric-spider Zoan; she fought Robin at Onigashima.",
-    "Black Maria, una dei Sei Volanti dei Pirati delle Cento Bestie, gigantesca cortigiana-ragno utente dello Zoan ancestrale del Rosamygale. Tese una trappola a Robin a Onigashima, che la sconfisse con l'aiuto di Brook e Sanji.",
-    "Black Maria, one of the Beasts Pirates' Flying Six, a giant spider-courtesan and user of the ancient Rosamygale Zoan. She trapped Robin at Onigashima, who beat her with the help of Brook and Sanji.",
+    "Black Maria, una dei Sei Volanti dei Pirati delle Cento Bestie, gigantesca cortigiana-ragno utente dello Zoan ancestrale del Rosamygale. A Onigashima intrappolò Sanji e fu poi sconfitta da Robin con l'aiuto di Brook.",
+    "Black Maria, one of the Beasts Pirates' Flying Six, a giant spider-courtesan and user of the ancient Rosamygale Zoan. At Onigashima she trapped Sanji and was then beaten by Robin with Brook's help.",
     'alive', ['cento-bestie', 'tobiroppo', 'wano']),
 
   /* ------------------- Foderi Rossi / Wano ------------------- */

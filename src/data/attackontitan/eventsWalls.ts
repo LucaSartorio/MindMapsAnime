@@ -109,14 +109,14 @@ export const aotEventsWalls: TimelineEvent[] = [
   /* ====================== IL PASSATO DI GRISHA E DEI GUERRIERI ====================== */
   ev({
     id: 'evt-aot-faye-death',
-    title: { it: 'La morte di Faye Yeager', en: "Faye Yeager's death" },
+    title: { it: 'La morte di Faye Jaeger', en: "Faye Yeager's death" },
     description: {
-      it: "Il piccolo Grisha porta la sorella Faye fuori dalla zona d'internamento per vedere un dirigibile. Li scopre il capitano Gross: Grisha viene pestato, Faye accompagnata a casa. Il giorno dopo il suo corpo viene trovato sbranato dai cani nel fiume.",
+      it: "Il piccolo Grisha porta la sorella Faye fuori dalla zona d'internamento per vedere un dirigibile. Li scopre l'ufficiale Gross: Grisha viene pestato, Faye accompagnata a casa. Il giorno dopo il suo corpo viene trovato sbranato dai cani nel fiume.",
       en: "Young Grisha takes his sister Faye out of the internment zone to see an airship. Officer Gross catches them: Grisha is beaten, Faye 'escorted' home. The next day her body is found in the river, mauled by dogs.",
     },
     longDescription: {
-      it: "Le autorità non indagano. Anni dopo Grisha scopre dal Gufo che fu Gross a darla in pasto ai suoi cani: è l'origine del suo odio verso Marley.",
-      en: 'The authorities do not investigate. Years later Grisha learns from the Owl that Gross fed her to his dogs: it is the root of his hatred for Marley.',
+      it: "Le autorità non indagano. Anni dopo, sulla rupe dell'esilio, è Gross stesso a vantarsi con Grisha di averla data in pasto ai suoi cani: è l'origine del suo odio verso Marley.",
+      en: 'The authorities do not investigate. Years later, on the clifftop of the exile, Gross himself boasts to Grisha that he fed her to his dogs: it is the root of his hatred for Marley.',
     },
     period: P.grisha,
     arcId: 'arc-aot-return-to-shiganshina',
@@ -319,7 +319,7 @@ export const aotEventsWalls: TimelineEvent[] = [
     id: 'evt-aot-mikasa-rescued',
     title: { it: 'Eren salva Mikasa', en: 'Eren saves Mikasa' },
     description: {
-      it: "Nell'844 tre trafficanti uccidono i genitori di Mikasa per venderla, perché discende da Hizuru. Eren, nove anni, ne uccide due; Mikasa, al suo grido «Combatti!», si risveglia e uccide il terzo. Eren le avvolge al collo la sua sciarpa; gli Yeager la accolgono.",
+      it: "Nell'844 tre trafficanti uccidono i genitori di Mikasa per venderla, perché discende da Hizuru. Eren, nove anni, ne uccide due; Mikasa, al suo grido «Combatti!», si risveglia e uccide il terzo. Eren le avvolge al collo la sua sciarpa; gli Jaeger la accolgono.",
       en: 'In 844 three traffickers kill Mikasa\'s parents to sell her, because she descends from Hizuru. Nine-year-old Eren kills two of them; Mikasa, at his cry of "Fight!", awakens and kills the third. Eren wraps his scarf around her neck; the Yeagers take her in.',
     },
     period: P.before845,
@@ -387,7 +387,7 @@ export const aotEventsWalls: TimelineEvent[] = [
     id: 'evt-aot-carla-devoured',
     title: { it: 'Carla viene divorata', en: 'Carla is devoured' },
     description: {
-      it: "Un masso del cancello schiaccia la casa degli Yeager, intrappolando Carla. Hannes arriva, ma davanti al Gigante sorridente sceglie di portare via i bambini: Eren vede sua madre divorata.",
+      it: "Un masso del cancello schiaccia la casa degli Jaeger, intrappolando Carla. Hannes arriva, ma davanti al Gigante sorridente sceglie di portare via i bambini: Eren vede sua madre divorata.",
       en: "A boulder from the gate crushes the Yeager house, trapping Carla. Hannes arrives, but faced with the Smiling Titan he chooses to carry the children away: Eren watches his mother being devoured.",
     },
     longDescription: {

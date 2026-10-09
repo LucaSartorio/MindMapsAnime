@@ -29,8 +29,8 @@ export const narutoCharactersBatch7: Character[] = [
     gender: 'female',
     series: ['shippuden'],
     shortDescription: {
-      it: 'Compagna di team di Kakashi e Obito sotto la guida di Minato. Ninja medico. La sua morte, in cui Kakashi è costretto ad ucciderla per impedire al Sanbi di distruggere Konoha, è il trauma fondante della discesa di Obito.',
-      en: 'Teammate of Kakashi and Obito under Minato\'s lead. A medical-nin. Her death — Kakashi forced to kill her to stop the Sanbi from devastating Konoha — is the founding trauma of Obito\'s descent.',
+      it: 'Compagna di team di Kakashi e Obito sotto la guida di Minato. Ninja medico. La sua morte, quando si getta sul Mille Falchi di Kakashi per impedire che il Tre Code sigillato in lei venga liberato su Konoha, è il trauma fondante della discesa di Obito.',
+      en: 'Teammate of Kakashi and Obito under Minato\'s lead. A medical-nin. Her death — she throws herself onto Kakashi\'s Chidori so the Three-Tails sealed inside her cannot be unleashed on Konoha — is the founding trauma of Obito\'s descent.',
     },
     abilities: ['Medical Ninjutsu'],
     teachers: ['char-minato'],

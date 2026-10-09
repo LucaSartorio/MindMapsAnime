@@ -24,8 +24,8 @@ export const hxhLocationsBatch1: Location[] = [
     x: 600,
     y: 360,
     shortDescription: {
-      it: "Cittadina portuale dove i candidati sbarcano dal traghetto per raggiungere la sede dell'Esame; nei pressi si erge il Pino Solitario.",
-      en: 'Port town where applicants disembark to reach the Exam site; the Lone Pine Tree stands nearby.',
+      it: "Cittadina portuale dove i candidati sbarcano dal traghetto per raggiungere la sede dell'Esame; su una collina vicina si erge un grande cedro solitario.",
+      en: 'Port town where applicants disembark to reach the Exam site; a great lone cedar stands on a nearby hill.',
     },
     nationId: 'nation-hxh-kukanyu',
     importance: 'minor',

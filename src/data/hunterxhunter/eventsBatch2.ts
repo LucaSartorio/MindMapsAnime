@@ -11,7 +11,7 @@ import type { TimelineEvent } from '@/types';
  */
 const P = {
   exam: { it: 'Esame per Hunter', en: 'Hunter Exam' },
-  yorknew: { it: 'Yorknew City', en: 'Yorknew City' },
+  yorknew: { it: 'Città di Yorknew', en: 'Yorknew City' },
   ant: { it: 'Formiche Chimera', en: 'Chimera Ant' },
   election: { it: 'Elezione del 13° Presidente', en: '13th Chairman Election' },
   succession: { it: 'Guerra di Successione di Kakin', en: 'Kakin Succession War' },

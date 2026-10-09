@@ -2,7 +2,6 @@ import { familyKit, type FamilyLinks } from '../shared/familyKit';
 
 const { p } = familyKit('char-hxh-');
 const zoldyck = p(['silva', 'kikyo']);
-const kakin = p(['nasubi']);
 
 /** Genitori e coniugi (albero genealogico nella scheda personaggio). */
 export const hxhFamily: Record<string, FamilyLinks> = {
@@ -16,17 +15,18 @@ export const hxhFamily: Record<string, FamilyLinks> = {
   alluka: zoldyck,
   kalluto: zoldyck,
   // I principi di Kakin, figli del re Nasubi
-  benjamin: kakin,
-  camilla: kakin,
-  'zhang-lei': kakin,
-  tserriednich: kakin,
-  tubeppa: kakin,
-  tyson: kakin,
-  luzurus: kakin,
-  sevanti: kakin,
-  halkenburg: kakin,
-  kacho: kakin,
-  fugetsu: kakin,
-  momoze: kakin,
+  benjamin: p(['nasubi', 'unma']),
+  camilla: p(['nasubi', 'duazul']),
+  'zhang-lei': p(['nasubi', 'tangzhao']),
+  tserriednich: p(['nasubi', 'unma']),
+  tubeppa: p(['nasubi', 'duazul']),
+  tyson: p(['nasubi', 'katrono']),
+  luzurus: p(['nasubi', 'duazul']),
+  'sale-sale': p(['nasubi', 'swinkoswinko']),
+  halkenburg: p(['nasubi', 'unma']),
+  kacho: p(['nasubi', 'seiko']),
+  fugetsu: p(['nasubi', 'seiko']),
+  momoze: p(['nasubi', 'sevanti']),
+  marayam: p(['nasubi', 'sevanti']),
   woble: p(['nasubi', 'oito']),
 };

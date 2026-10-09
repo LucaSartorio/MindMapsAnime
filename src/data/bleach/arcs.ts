@@ -81,8 +81,8 @@ export const bleachArcs: StoryArc[] = [
     saga: SAGA.soulSociety,
     order: 3,
     description: {
-      it: "Ichigo ottiene il Bankai in tre giorni, ferma il Sōkyoku a mani nude e sconfigge Byakuya. Poi Aizen rivela di essere vivo, di aver orchestrato tutto per lo Hōgyoku nascosto in Rukia, e fugge a Hueco Mundo con Gin e Tōsen.",
-      en: "Ichigo achieves Bankai in three days, stops the Sōkyoku bare-handed and defeats Byakuya. Then Aizen reveals he is alive, that he orchestrated everything for the Hōgyoku hidden in Rukia, and flees to Hueco Mundo with Gin and Tōsen.",
+      it: "Ichigo ottiene il Bankai in tre giorni, ferma il Sōkyoku con la spada e sconfigge Byakuya. Poi Aizen rivela di essere vivo, di aver orchestrato tutto per lo Hōgyoku nascosto in Rukia, e fugge a Hueco Mundo con Gin e Tōsen.",
+      en: "Ichigo achieves Bankai in three days, stops the Sōkyoku with his sword and defeats Byakuya. Then Aizen reveals he is alive, that he orchestrated everything for the Hōgyoku hidden in Rukia, and flees to Hueco Mundo with Gin and Tōsen.",
     },
     longDescription: {
       it: "È l'arco dei grandi scontri fra capitani: Ichigo contro Kenpachi, Renji contro Byakuya, Yamamoto contro Kyōraku e Ukitake, Soi Fon contro Yoruichi, Komamura e Tōsen contro Kenpachi. Hitsugaya scopre la Central 46 sterminata e capisce troppo tardi. Il colpo di scena finale ribalta tutto quello che si credeva di sapere sulla Soul Society.",
@@ -344,8 +344,8 @@ export const bleachArcs: StoryArc[] = [
       en: "At the Reiōkyū Ichigo learns the truth about his origins and his sword, while in the Soul Society Unohana dies to unleash Kenpachi's strength. The Wandenreich returns, replaces the Seireitei with Silbern and invades the Reiōkyū.",
     },
     longDescription: {
-      it: "Ichigo passa per i palazzi della Divisione Zero e, al Hōōden, ascolta da Isshin la storia di Masaki: il «vecchio Zangetsu» è il suo potere Quincy. Kyōraku diventa Capitano generale. Alla seconda invasione Rukia rivela il Bankai, Renji il vero Bankai insegnatogli da Ichibē, Kenpachi annienta Gremmy. Uryū si schiera con Yhwach, che usa il pilastro della Divisione Zero per salire al Reiōkyū; Ichibē lo affronta, la Schutzstaffel abbatte gli altri.",
-      en: "Ichigo passes through the Royal Guard's palaces and, at the Hōōden, hears Masaki's story from Isshin: 'old Zangetsu' is his Quincy power. Kyōraku becomes Captain-Commander. In the second invasion Rukia reveals her Bankai, Renji the true Bankai taught to him by Ichibē, Kenpachi annihilates Gremmy. Uryū sides with Yhwach, who uses the Royal Guard's pillar to climb to the Reiōkyū; Ichibē faces him, the Schutzstaffel cuts down the others.",
+      it: "Ichigo passa per i palazzi della Divisione Zero e, rimandato dal Hōōden a Karakura, ascolta da Isshin la storia di Masaki: il «vecchio Zangetsu» è il suo potere Quincy. Kyōraku diventa Capitano generale. Alla seconda invasione Rukia rivela il Bankai, Renji il vero Bankai insegnatogli da Ichibē, Kenpachi annienta Gremmy. Uryū si schiera con Yhwach, che usa il pilastro della Divisione Zero per salire al Reiōkyū; Ichibē lo affronta, la Schutzstaffel abbatte gli altri.",
+      en: "Ichigo passes through the Royal Guard's palaces and, sent back from the Hōōden to Karakura, hears Masaki's story from Isshin: 'old Zangetsu' is his Quincy power. Kyōraku becomes Captain-Commander. In the second invasion Rukia reveals her Bankai, Renji the true Bankai taught to him by Ichibē, Kenpachi annihilates Gremmy. Uryū sides with Yhwach, who uses the Royal Guard's pillar to climb to the Reiōkyū; Ichibē faces him, the Schutzstaffel cuts down the others.",
     },
     locationIds: ['loc-bl-kirinden', 'loc-bl-gatonden', 'loc-bl-hooden', 'loc-bl-ichibe-palace', 'loc-bl-senjumaru-palace', 'loc-bl-muken', 'loc-bl-silbern', 'loc-bl-masaki-riverbank', 'loc-bl-karakura-hospital', 'loc-bl-zaraki'],
     nationIds: ['nation-bl-reiokyu', 'nation-bl-soul-society', 'nation-bl-wandenreich'],
@@ -418,8 +418,8 @@ export const bleachArcs: StoryArc[] = [
       en: "Tite Kubo's one-shot for the series' twentieth anniversary (2021): during the Konsō Reisai for Ukitake the gates of Hell open, and a damned soul named Kokutō drags Ichigo towards Hell.",
     },
     longDescription: {
-      it: "Rivela che i capitani defunti, la cui energia spirituale è troppo grande per tornare al ciclo delle anime, finiscono nel Jigoku. È il prologo di un possibile «arco dell'Inferno» che l'autore non ha ancora sviluppato.",
-      en: "It reveals that dead captains, whose spiritual pressure is too great to return to the cycle of souls, end up in Hell. It is the prologue to a possible 'Hell arc' the author has yet to develop.",
+      it: "Rivela che i capitani defunti, la cui energia spirituale è troppo grande per tornare al ciclo delle anime, finiscono nel Jigoku. Fa da prologo a un possibile «arco dell'Inferno».",
+      en: "It reveals that dead captains, whose spiritual pressure is too great to return to the cycle of souls, end up in Hell. It serves as the prologue to a possible 'Hell arc'.",
     },
     locationIds: ['loc-bl-gates-of-hell'],
     nationIds: ['nation-bl-hell', 'nation-bl-soul-society'],

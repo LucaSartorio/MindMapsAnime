@@ -202,8 +202,8 @@ export const narutoJutsuBatch2: Jutsu[] = [
     characterIds: ['char-shinki'],
     series: ['boruto'],
     shortDescription: {
-      it: 'Shinki magnetizza la sabbia ferrosa formando armature, lame e proiettili. Erede dell\'arte di Rasa e Gaara.',
-      en: 'Shinki magnetizes iron sand into armor, blades and projectiles. Heir to the art of Rasa and Gaara.',
+      it: 'Shinki magnetizza la sabbia ferrosa formando armature, lame e proiettili. Figlio adottivo di Gaara, eredita la sabbia ferrosa del Terzo Kazekage.',
+      en: 'Shinki magnetizes iron sand into armor, blades and projectiles. Gaara\'s adopted son, heir to the Third Kazekage\'s iron sand.',
     },
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -261,7 +261,7 @@ export const narutoJutsuBatch2: Jutsu[] = [
     series: ['shippuden'],
     shortDescription: {
       it: 'Lo Yōton di Kurotsuchi: sputa calce viva che si indurisce a contatto, intrappolando il bersaglio in un blocco di cemento. Lo usa nella Quarta Guerra Ninja.',
-      en: 'Kurotsuchi\'s Lava Release: she spits quicklime that hardens on contact, trapping the target in a block of cement. She uses it in the Fourth Great Ninja War.',
+      en: 'Kurotsuchi\'s Lava Release: she spits quicklime that hardens on contact, trapping the target in a block of cement. She uses it in the Fourth Shinobi World War.',
     },
     canonStatus: 'canon',
     referenceStatus: 'verified',

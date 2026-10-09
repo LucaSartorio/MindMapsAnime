@@ -15,7 +15,7 @@ export const onepieceArcsExtra: StoryArc[] = [
       en: "On Jaya, amid Mock Town and Bellamy, the crew learns of a sky island and gets Mont Blanc Cricket's help to ride the Knock-Up Stream to Skypiea.",
     },
     longDescription: {
-      it: "Sull'isola dei sogni di Jaya, Rufy e Zoro incassano in silenzio le umiliazioni del pirata Bellamy, mentre Blackbeard pronuncia la sua filosofia sui sogni. Mont Blanc Cricket, discendente del «bugiardo» Norland giustiziato per aver parlato di una città d'oro, aiuta la ciurma a prepararsi: l'altra metà di Jaya, con la sua Shandora, era stata scagliata in cielo dalla Knock-Up Stream, e lì la ciurma si fa catapultare.",
+      it: "Sull'isola dei sogni di Jaya, Rufy e Zoro incassano in silenzio le umiliazioni del pirata Bellamy, mentre Barbanera pronuncia la sua filosofia sui sogni. Mont Blanc Cricket, discendente del «bugiardo» Norland giustiziato per aver parlato di una città d'oro, aiuta la ciurma a prepararsi: l'altra metà di Jaya, con la sua Shandora, era stata scagliata in cielo dalla Knock-Up Stream, e lì la ciurma si fa catapultare.",
       en: "On the island of dreams Jaya, Luffy and Zoro silently take the pirate Bellamy's humiliations, while Blackbeard voices his philosophy of dreams. Mont Blanc Cricket, descendant of the 'liar' Norland executed for speaking of a city of gold, helps the crew prepare: the other half of Jaya, with its Shandora, had been blasted skyward by the Knock-Up Stream, and there the crew gets launched.",
     },
     locationIds: ['loc-op-jaya', 'loc-op-jy-mock-town'],

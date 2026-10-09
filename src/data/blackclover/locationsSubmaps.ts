@@ -253,8 +253,8 @@ export const blackcloverLocationsSubmaps: Location[] = [
     x: 940,
     y: 620,
     shortDescription: {
-      it: "Dove il ricercatore fuggito da Diamond costruisce i Discepoli Oscuri innestando potere diabolico su soldati umani.",
-      en: 'Where the researcher who fled Diamond builds the Dark Disciples by grafting devil power onto human soldiers.',
+      it: "Dove il ricercatore cacciato da Diamond prosegue i suoi esperimenti per la Triade Oscura — e modifica l'Albero di Qliphoth perché il rituale vada avanti anche senza di loro.",
+      en: "Where the researcher driven out of Diamond carries on his experiments for the Dark Triad — and alters the Tree of Qliphoth so the ritual can run even without them.",
     },
     nationId: 'nation-bc-spade',
     clanIds: ['faction-bc-dark-disciples'],

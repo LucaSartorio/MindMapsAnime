@@ -60,7 +60,7 @@ export const onepieceLocationsBlues: Location[] = [
     y: 205,
     shortDescription: {
       it: "Regno di North Blue da cui salpò l'esploratore Mont Blanc Norland, la cui storia di Skypiea fu creduta una menzogna per generazioni.",
-      en: "A North Blue kingdom from which the explorer Mont Blanc Noland set sail, whose tale of Skypiea was believed a lie for generations.",
+      en: "A North Blue kingdom from which the explorer Mont Blanc Norland set sail, whose tale of Skypiea was believed a lie for generations.",
     },
     nationId: 'nation-op-north-blue',
     importance: 'secondary',
@@ -97,8 +97,8 @@ export const onepieceLocationsBlues: Location[] = [
     x: 397,
     y: 166,
     shortDescription: {
-      it: "Isola di North Blue dove la ciurma di Donquijote Doflamingo prese il controllo e dove il giovane Law ricevette il Frutto Ope Ope.",
-      en: "A North Blue island where Donquixote Doflamingo's crew seized control and where the young Law received the Ope Ope Fruit.",
+      it: "Isola di North Blue dove i Pirati Donquijote tentarono di impadronirsi del Frutto Ope Ope: Corazon lo rubò per il giovane Law e lo pagò con la vita.",
+      en: "A North Blue island where the Donquixote Pirates tried to seize the Ope Ope Fruit: Corazon stole it for the young Law and paid with his life.",
     },
     nationId: 'nation-op-north-blue',
     characterIds: ['char-op-doflamingo', 'char-op-corazon', 'char-op-law'],

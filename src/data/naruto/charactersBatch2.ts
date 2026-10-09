@@ -31,8 +31,8 @@ export const narutoCharactersBatch2: Character[] = [
     generation: 'Otsutsuki',
     gender: 'male',
     shortDescription: {
-      it: 'Ōtsutsuki che, assieme a Kinshiki, attacca il Summit dei Cinque Kage per consumare il chakra di Naruto. Imprime il Karma su Boruto prima di cadere.',
-      en: 'Ōtsutsuki who, with Kinshiki, attacks the Five Kage Summit to consume Naruto\'s chakra. Brands Boruto with Karma before falling.',
+      it: 'Ōtsutsuki che, assieme a Kinshiki, attacca la finale degli Esami Chūnin per consumare il chakra di Naruto. Imprime il Karma su Boruto prima di cadere.',
+      en: 'Ōtsutsuki who, with Kinshiki, attacks the Chūnin Exam finals to consume Naruto\'s chakra. Brands Boruto with Karma before falling.',
     },
     abilities: ['Rinnegan', 'Byakugan', 'Chakra Absorption', 'Jutsu Replication'],
     kekkeiGenkai: ['Byakugan', 'Rinnegan'],
@@ -254,8 +254,8 @@ export const narutoCharactersBatch2: Character[] = [
     generation: 'New Era',
     gender: 'male',
     shortDescription: {
-      it: 'Unico vaso di Isshiki rimasto, marchiato dal Karma Bianco. Dopo la morte di Isshiki giura vendetta contro Konoha e i suoi alleati.',
-      en: 'The last remaining vessel of Isshiki, branded with White Karma. After Isshiki\'s death he vows revenge against Konoha and its allies.',
+      it: 'Ultimo Inner di Kara, discepolo di Isshiki marchiato dal Karma Bianco ma non adatto a fargli da vaso. Dopo la morte di Isshiki giura vendetta contro Konoha e i suoi alleati.',
+      en: 'The last Kara Inner, Isshiki\'s disciple, branded with White Karma but unfit to be his vessel. After Isshiki\'s death he vows revenge against Konoha and its allies.',
     },
     abilities: ['White Karma', 'Claw Marks (space-time)', 'Enhanced Strength'],
     enemies: ['char-boruto', 'char-naruto', 'char-kawaki'],

@@ -24,8 +24,8 @@ export const onepieceEventsBattles2: TimelineEvent[] = [
     'loc-op-arlong-park', ['char-op-zoro', 'char-op-hatchan'], ['85-89'], ['40-42'], 8.8,
     "Ad Arlong Park Zoro affronta, già ferito, l'uomo-pesce polpo a sei spade Hatchan.",
     "At Arlong Park, already wounded, Zoro faces the six-sword octopus fish-man Hatchan.",
-    "Nonostante una grave ferita inflittagli dallo stesso Arlong, Zoro batte l'ufficiale Hatchan e le sue sei lame, in uno scontro che anni dopo darà vita a una sorprendente amicizia.",
-    "Despite a grave wound dealt by Arlong himself, Zoro beats the officer Hatchan and his six blades, in a clash that years later will turn into an unlikely friendship.",
+    "Nonostante la grave ferita inflittagli da Mihawk al Baratie, Zoro batte l'ufficiale Hatchan e le sue sei lame, in uno scontro che anni dopo darà vita a una sorprendente amicizia.",
+    "Despite the grave wound dealt by Mihawk at the Baratie, Zoro beats the officer Hatchan and his six blades, in a clash that years later will turn into an unlikely friendship.",
     ['east-blue', 'uomini-pesce'], 'arc-op-arlong-park'),
 
   /* ----------------------- Long Ring Long Land ----------------------- */
@@ -86,8 +86,8 @@ export const onepieceEventsBattles2: TimelineEvent[] = [
     'loc-op-thriller-bark', ['char-op-sanji', 'char-op-absalom'], ['463-466'], ['358-360'], 25.8,
     "Furioso per il rapimento di Nami, Sanji affronta l'invisibile Absalom a Thriller Bark.",
     "Enraged by Nami's abduction, Sanji faces the invisible Absalom at Thriller Bark.",
-    "Sanji insegue l'invisibile Absalom, che vuole sposare Nami con la forza, e lo abbatte con i suoi calci, geloso e indignato dal potere «da vigliacco» del Frutto Invisibile.",
-    "Sanji chases the invisible Absalom, who wants to forcibly marry Nami, and downs him with his kicks, jealous and outraged at the 'cowardly' power of the Clear Fruit.",
+    "Sanji insegue l'invisibile Absalom, che vuole sposare Nami con la forza, geloso e indignato dal potere «da vigliacco» del Frutto Invisibile; il duello si interrompe, e sarà Nami a mettere al tappeto Absalom.",
+    "Sanji chases the invisible Absalom, who wants to forcibly marry Nami, jealous and outraged at the 'cowardly' power of the Clear Fruit; the duel is cut short, and it is Nami who finally knocks Absalom out.",
     ['thriller-bark', 'sanji', 'absalom'], 'arc-op-thriller-bark'),
 
   /* --------------------------- Marineford --------------------------- */

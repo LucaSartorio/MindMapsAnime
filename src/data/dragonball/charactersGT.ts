@@ -441,8 +441,8 @@ export const dragonballCharactersGT: Character[] = [
     eventIds: ['evt-dbz-gt-oceanus-naturon'],
     arcIds: ['arc-dbz-gt-shadow-dragons'],
     shortDescription: {
-      it: "Dragon Ball GT: il Drago Malvagio della Sfera a sei stelle, nato dai terremoti. Assorbe gli esseri viventi per accrescersi e inghiotte persino Nuova Shenron per rubarne il potere.",
-      en: "Dragon Ball GT: the Shadow Dragon of the six-star ball, born from earthquakes. He absorbs living beings to grow, and even swallows Nuova Shenron to steal his power.",
+      it: "Dragon Ball GT: il Drago Malvagio della Sfera a sei stelle, nato dai terremoti. Assorbe gli esseri viventi per accrescersi e assorbe persino Pan per sfruttarne il potere.",
+      en: "Dragon Ball GT: the Shadow Dragon of the six-star ball, born from earthquakes. He absorbs living beings to grow, and even absorbs Pan to use her power.",
     },
     status: 'deceased',
     canonStatus: 'anime_only',

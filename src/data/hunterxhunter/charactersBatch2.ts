@@ -56,8 +56,8 @@ export const hxhCharactersBatch2: Character[] = [
     rank: 'Pro Hunter / Ninja',
     gender: 'M',
     shortDescription: {
-      it: 'Ninja del Paese del Vento, candidato dell\'Esame; affronta Gon nella fase finale senza riuscire a piegarne la volontà.',
-      en: 'A ninja from the Land of Wind and Exam candidate; he faces Gon in the final phase but cannot break his will.',
+      it: 'Ninja di Jappon, candidato dell\'Esame; affronta Gon nella fase finale senza riuscire a piegarne la volontà.',
+      en: 'A ninja from Jappon and Exam candidate; he faces Gon in the final phase but cannot break his will.',
     },
     arcIds: ['arc-hxh-hunter-exam'],
     status: 'alive',

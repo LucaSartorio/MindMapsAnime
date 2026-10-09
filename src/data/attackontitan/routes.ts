@@ -44,7 +44,7 @@ export const aotRoutes: Route[] = [
     arcId: 'arc-aot-fall-of-shiganshina',
     relatedArcIds: ['arc-aot-fall-of-shiganshina', 'arc-aot-trost', 'arc-aot-female-titan', 'arc-aot-uprising', 'arc-aot-return-to-shiganshina', 'arc-aot-marley', 'arc-aot-war-for-paradis', 'arc-aot-heaven-and-earth'],
     steps: [
-      s(1, 'loc-aot-yeager-house', 'evt-aot-carla-devoured', { it: 'Casa Yeager', en: 'The Yeager house' }, { it: 'Carla divorata sotto i suoi occhi.', en: 'Carla devoured before his eyes.' }),
+      s(1, 'loc-aot-yeager-house', 'evt-aot-carla-devoured', { it: 'Casa Jaeger', en: 'The Yeager house' }, { it: 'Carla divorata sotto i suoi occhi.', en: 'Carla devoured before his eyes.' }),
       s(2, 'loc-aot-shig-boats', 'evt-aot-eren-oath', { it: 'Le barche', en: 'The boats' }, { it: '«Li sterminerò tutti».', en: '"I\'ll wipe them all out".' }),
       s(3, 'loc-aot-training-camp', 'evt-aot-enlistment', { it: 'Il campo di addestramento', en: 'The training camp' }, { it: 'Tre anni nel 104° corso.', en: 'Three years in the 104th class.' }),
       s(4, 'loc-aot-trost-vanguard', 'evt-aot-eren-devoured', { it: 'Trost: divorato', en: 'Trost: devoured' }, { it: 'Muore e rinasce come Gigante.', en: 'He dies and is reborn as a Titan.' }),
@@ -228,8 +228,8 @@ export const aotRoutes: Route[] = [
     localizedName: { it: 'La missione dei Guerrieri', en: "The Warriors' mission" },
     group: GROUP.characters,
     description: {
-      it: "Reiner, Bertolt e Annie: dallo sbarco a Paradis alla caduta di Shiganshina, cinque anni fra le reclute del 104°, fino al ritorno di Reiner a Liberio.",
-      en: "Reiner, Bertolt and Annie: from landing on Paradis to the fall of Shiganshina, five years among the 104th's recruits, until Reiner's return to Liberio.",
+      it: "Reiner, Bertolt e Annie: dallo sbarco a Paradis e dalla caduta di Shiganshina alla battaglia per Wall Maria, cinque anni sull'isola, tre dei quali fra le reclute del 104°, fino al ritorno di Reiner a Liberio.",
+      en: "Reiner, Bertolt and Annie: from landing on Paradis and the fall of Shiganshina to the battle for Wall Maria, five years on the island, three of them among the 104th's recruits, until Reiner's return to Liberio.",
     },
     protagonistCharacterIds: ['char-aot-reiner', 'char-aot-bertolt', 'char-aot-annie'],
     relatedCharacterIds: ['char-aot-marcel', 'char-aot-ymir', 'char-aot-zeke', 'char-aot-eren'],

@@ -13,8 +13,8 @@ export const onepieceCharactersParadise2: Character[] = [
     firstMangaAppearance: "329",
     firstAnimeAppearance: "233",
     longDescription: {
-      it: "Carpentiere cyborg della ciurma, costruttore della Thousand Sunny con il legno sacro dell'Albero Adam. Allievo del leggendario Tom, custodisce parte dei progetti dell'arma Pluton. Sogna di costruire una nave che faccia il giro del mondo.",
-      en: "The crew's cyborg shipwright, builder of the Thousand Sunny from the sacred Adam Wood. A pupil of the legendary Tom, he safeguards part of the blueprints of the weapon Pluton. He dreams of building a ship that sails around the world.",
+      it: "Carpentiere cyborg della ciurma, costruttore della Thousand Sunny con il legno sacro dell'Albero Adam. Allievo del leggendario Tom, custodì i progetti dell'arma Pluton finché non li bruciò a Enies Lobby. Sogna di costruire una nave che faccia il giro del mondo.",
+      en: "The crew's cyborg shipwright, builder of the Thousand Sunny from the sacred Adam Wood. A pupil of the legendary Tom, he guarded the blueprints of the weapon Pluton until he burned them at Enies Lobby. He dreams of building a ship that sails around the world.",
     },
     name: 'Franky',
     aliases: ['Cutty Flam'],
@@ -39,8 +39,8 @@ export const onepieceCharactersParadise2: Character[] = [
     firstMangaAppearance: "323",
     firstAnimeAppearance: "230",
     longDescription: {
-      it: "Sindaco di Water Seven e geniale capomastro della Galley-La, allievo di Tom insieme a Franky. Custode di metà dei progetti dell'arma Pluton, sopravvisse all'agguato della CP9.",
-      en: "Mayor of Water Seven and the brilliant master shipwright of Galley-La, a pupil of Tom alongside Franky. Keeper of half the blueprints of the weapon Pluton, he survived CP9's ambush.",
+      it: "Sindaco di Water Seven e geniale capomastro della Galley-La, allievo di Tom insieme a Franky. Bersaglio della CP9 come presunto custode dei progetti di Pluton (ne aveva solo una copia falsa: gli originali erano di Franky), sopravvisse all'agguato.",
+      en: "Mayor of Water Seven and the brilliant master shipwright of Galley-La, a pupil of Tom alongside Franky. Targeted by CP9 as the supposed keeper of the Pluton blueprints (he held only a decoy copy: the real ones were Franky's), he survived the ambush.",
     },
     name: 'Iceburg',
     importance: 'supporting',
@@ -50,8 +50,8 @@ export const onepieceCharactersParadise2: Character[] = [
     factionIds: ['faction-op-galley-la'],
     arcIds: ['arc-op-water-seven'],
     shortDescription: {
-      it: "Sindaco di Water Seven e presidente della compagnia navale Galley-La, allievo di Tom insieme a Franky. Custode dei progetti dell'arma ancestrale Pluton.",
-      en: "Mayor of Water Seven and president of the Galley-La shipbuilding company, Tom's apprentice alongside Franky. Keeper of the blueprints of the Ancient Weapon Pluton.",
+      it: "Sindaco di Water Seven e presidente della compagnia navale Galley-La, allievo di Tom insieme a Franky. La CP9 lo credeva custode dei progetti dell'arma ancestrale Pluton, ma la sua era una copia falsa.",
+      en: "Mayor of Water Seven and president of the Galley-La shipbuilding company, Tom's apprentice alongside Franky. CP9 believed he held the blueprints of the Ancient Weapon Pluton, but his copy was a decoy.",
     },
     status: 'alive',
     canonStatus: 'canon',
@@ -64,8 +64,8 @@ export const onepieceCharactersParadise2: Character[] = [
     firstMangaAppearance: "347",
     firstAnimeAppearance: "252",
     longDescription: {
-      it: "Rob Lucci, agente più letale della CP9 (poi CP0), utente dello Zoo Zoo del leopardo e maestro del Rokushiki. Avversario che spinse Rufy a sbloccare il Gear Second a Enies Lobby.",
-      en: "Rob Lucci, the deadliest agent of CP9 (later CP0), user of the leopard Zoan and master of Rokushiki. The opponent who pushed Luffy to unlock Gear Second at Enies Lobby.",
+      it: "Rob Lucci, agente più letale della CP9 (poi CP0), utente dello Zoo Zoo del leopardo e maestro del Rokushiki. Avversario che spinse Rufy a portare al limite Gear Second e Gear Third a Enies Lobby.",
+      en: "Rob Lucci, the deadliest agent of CP9 (later CP0), user of the leopard Zoan and master of Rokushiki. The opponent who pushed Luffy to drive Gear Second and Third to the limit at Enies Lobby.",
     },
     name: 'Rob Lucci',
     importance: 'major',
@@ -89,8 +89,8 @@ export const onepieceCharactersParadise2: Character[] = [
     firstMangaAppearance: "329",
     firstAnimeAppearance: "233",
     longDescription: {
-      it: "Agente della CP9 e abile spadaccino, valutatore navale a Water Seven sotto copertura. Utente dello Zoo Zoo ancestrale della giraffa, affrontò Zoro a Enies Lobby.",
-      en: "A CP9 agent and skilled swordsman, an undercover ship inspector at Water Seven. User of the ancient giraffe Zoan, he faced Zoro at Enies Lobby.",
+      it: "Agente della CP9 e abile spadaccino, valutatore navale a Water Seven sotto copertura. Utente dello Zoo Zoo della giraffa, affrontò Zoro a Enies Lobby.",
+      en: "A CP9 agent and skilled swordsman, an undercover ship inspector at Water Seven. User of the giraffe Zoan, he faced Zoro at Enies Lobby.",
     },
     name: 'Kaku',
     importance: 'supporting',
@@ -114,7 +114,7 @@ export const onepieceCharactersParadise2: Character[] = [
     firstMangaAppearance: "344",
     firstAnimeAppearance: "243",
     longDescription: {
-      it: "Agente della CP9 e barista a Water Seven sotto copertura, utente del frutto Porta Porta con cui apre varchi nello spazio. Primo avversario contro cui Rufy mostrò il Gear Second.",
+      it: "Agente della CP9 e barista a Water Seven sotto copertura, utente del frutto Door Door con cui apre varchi nello spazio. Primo avversario contro cui Rufy mostrò il Gear Second.",
       en: "A CP9 agent and undercover bartender at Water Seven, user of the Door-Door Fruit, opening passages in space. The first opponent against whom Luffy showed the Gear Second.",
     },
     name: 'Blueno',
@@ -124,7 +124,7 @@ export const onepieceCharactersParadise2: Character[] = [
     factionIds: ['faction-op-cp9'],
     arcIds: ['arc-op-water-seven', 'arc-op-enies-lobby'],
     shortDescription: {
-      it: "Agente della CP9, già barista a Water Seven. Utente del Frutto Porta Porta, apre passaggi nell'aria; maestro del Rokushiki.",
+      it: "Agente della CP9, già barista a Water Seven. Utente del Frutto Door Door, apre passaggi nell'aria; maestro del Rokushiki.",
       en: "A CP9 agent, formerly a Water Seven bartender. User of the Door-Door Fruit, he opens passages in the air; a Rokushiki master.",
     },
     status: 'alive',

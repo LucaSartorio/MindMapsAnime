@@ -172,7 +172,7 @@ export const narutoCharactersBatch6: Character[] = [
     gender: 'male',
     series: ['movies'],
     shortDescription: {
-      it: 'Falso medico e antagonista di "Legami": brama il potere della Pietra di Zero Tails e dell\'energia oscura. Maestro tradito di Amaru.',
+      it: 'Falso medico e antagonista di "Legami": brama il potere dello Zero Code e del chakra oscuro. Maestro tradito di Amaru.',
       en: 'A false doctor and antagonist of "Bonds": he covets the power of the Zero-Tails and dark chakra. Amaru\'s betrayed master.',
     },
     enemies: ['char-naruto'],
@@ -194,8 +194,8 @@ export const narutoCharactersBatch6: Character[] = [
     gender: 'male',
     series: ['movies'],
     shortDescription: {
-      it: 'Ex compagno di squadra di Kakashi e antagonista del film "La Volontà del Fuoco". Usa il Chimera Jutsu per rubare kekkei genkai e tenta di scatenare una guerra.',
-      en: 'Former teammate of Kakashi and antagonist of the film "The Will of Fire". Uses the Chimera Jutsu to steal kekkei genkai and tries to ignite a war.',
+      it: 'Ex compagno dei Sannin e antagonista del film "La Volontà del Fuoco". Usa il Chimera Jutsu per rubare kekkei genkai e tenta di scatenare una guerra.',
+      en: 'Former comrade of the Legendary Sannin and antagonist of the film "The Will of Fire". Uses the Chimera Jutsu to steal kekkei genkai and tries to ignite a war.',
     },
     abilities: ['Chimera Technique', 'Stolen Kekkei Genkai'],
     enemies: ['char-kakashi', 'char-naruto'],

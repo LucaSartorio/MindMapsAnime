@@ -108,7 +108,7 @@ export const narutoCharactersBatch1: Character[] = [
     ninjaRank: 'chunin',
     gender: 'female',
     shortDescription: {
-      it: 'Sorella maggiore di Kiba e veterinaria del villaggio. Combatte con i Tre Fratelli Aburame (Haimaru) suoi compagni canini.',
+      it: 'Sorella maggiore di Kiba e veterinaria del villaggio. Combatte con i suoi tre ninken, i Tre Fratelli Haimaru.',
       en: 'Kiba\'s older sister and the village veterinarian. Fights alongside her three ninken known as the Three Haimaru Brothers.',
     },
     family: ['char-kiba', 'char-tsume'],
@@ -862,8 +862,8 @@ export const narutoCharactersBatch1: Character[] = [
     generation: 'New Era',
     gender: 'female',
     shortDescription: {
-      it: 'Figlia dell\'ex membro del clan Kara Tanuki Shigaraki. Capoclasse all\'Accademia di Konoha, in seguito ricercatrice scientifica.',
-      en: 'Daughter of former Kara member Tanuki Shigaraki. Class representative at Konoha Academy, later a scientific researcher.',
+      it: 'Figlia di Tanuki Shigaraki, ex membro della Radice. Capoclasse all\'Accademia di Konoha, in seguito ricercatrice scientifica.',
+      en: 'Daughter of Tanuki Shigaraki, a former Root member. Class representative at Konoha Academy, later a scientific researcher.',
     },
     locationIds: ['loc-konoha', 'loc-konoha-academy'],
     status: 'alive',
