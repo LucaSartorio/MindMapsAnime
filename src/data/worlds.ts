@@ -581,7 +581,7 @@ export const animeWorlds: AnimeWorld[] = [
     id: 'world-bleach',
     slug: 'bleach',
     urlSlug: 'bleach',
-    translatedLocales: ['es'],
+    translatedLocales: ['es', 'fr'],
     title: {
       it: 'Bleach',
       en: 'Bleach',
@@ -905,7 +905,7 @@ export const animeWorlds: AnimeWorld[] = [
     id: 'world-jujutsukaisen',
     slug: 'jujutsukaisen',
     urlSlug: 'jujutsu-kaisen',
-    translatedLocales: ['es'],
+    translatedLocales: ['es', 'fr'],
     title: {
       it: 'Jujutsu Kaisen',
       en: 'Jujutsu Kaisen',
@@ -1082,7 +1082,7 @@ export const animeWorlds: AnimeWorld[] = [
     id: 'world-blackclover',
     slug: 'blackclover',
     urlSlug: 'black-clover',
-    translatedLocales: ['es'],
+    translatedLocales: ['es', 'fr'],
     title: {
       it: 'Black Clover',
       en: 'Black Clover',

@@ -142,6 +142,8 @@ const NAMED_ROOTS = new Set(['characters', 'factions', 'teams', 'locations', 'ju
  * (altra lingua) le ritrova con la stessa chiave.
  */
 const derivedNames = new WeakSet<object>();
+/** Sottoinsieme di `derivedNames`: i `localizedName` creati da un `name` semplice (chiave `<entità>.name`). */
+const ownerNames = new WeakSet<object>();
 
 export interface TranslatableEntry {
   key: string;
@@ -163,7 +165,7 @@ export function datasetTranslatables(dataset: WorldDataset): TranslatableEntry[]
     if (NAMED_ROOTS.has(root) && Array.isArray(list)) {
       for (const e of list as Array<{ id?: unknown; name?: unknown; localizedName?: unknown }>) {
         const ln = e?.localizedName;
-        const derived = !!ln && typeof ln === 'object' && derivedNames.has(ln);
+        const derived = !!ln && typeof ln === 'object' && ownerNames.has(ln);
         if (typeof e?.id === 'string' && typeof e.name === 'string' && (ln === undefined || derived)) {
           // Già derivato (da names.ts o da un overlay): la voce È quel localizedName.
           const value = derived ? (ln as LocalizableObject) : { it: e.name, en: e.name };
@@ -241,11 +243,12 @@ export function applyTranslations(dataset: WorldDataset, locale: SupportedLocale
     if (nameOwner) {
       // Il nome resta identico in it/en; la lingua dell'overlay riceve il suo.
       const ln = nameOwner.localizedName;
-      if (ln && typeof ln === 'object' && derivedNames.has(ln)) {
+      if (ln && typeof ln === 'object' && ownerNames.has(ln)) {
         (ln as LocalizableObject)[locale] = text;
       } else {
         const created: LocalizableObject = { it: nameOwner.name, en: nameOwner.name, [locale]: text };
         derivedNames.add(created);
+        ownerNames.add(created);
         nameOwner.localizedName = created;
       }
     } else if (plainSlot && !derivedNames.has(value)) {
@@ -294,9 +297,10 @@ export function withSourceNames<T extends WorldDataset>(dataset: T, names: Sourc
       unknown.push(key);
       continue;
     }
-    if (e.nameOwner && !(e.nameOwner.localizedName && derivedNames.has(e.nameOwner.localizedName as object))) {
+    if (e.nameOwner && !(e.nameOwner.localizedName && ownerNames.has(e.nameOwner.localizedName as object))) {
       const created: LocalizableObject = { it: v.it, en: v.en };
       derivedNames.add(created);
+      ownerNames.add(created);
       e.nameOwner.localizedName = created;
     } else if (e.plainSlot && !derivedNames.has(e.value)) {
       const created: LocalizableObject = { it: v.it, en: v.en };
