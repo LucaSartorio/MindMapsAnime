@@ -936,8 +936,8 @@ export const narutoLocations: Location[] = [
     x: 600,
     y: 238,
     shortDescription: {
-      it: 'Sede dell\'Hokage, sopra la Roccia degli Hokage.',
-      en: 'Seat of the Hokage, above the Hokage Rock.',
+      it: 'Sede dell\'Hokage, ai piedi della Roccia degli Hokage.',
+      en: 'Seat of the Hokage, at the foot of the Hokage Rock.',
     },
     characterIds: ['char-hiruzen', 'char-tsunade', 'char-minato'],
     importance: 'main',

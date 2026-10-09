@@ -268,7 +268,7 @@ export const narutoJutsuBatch3: Jutsu[] = [
     id: 'jutsu-yin-yang-release',
     worldId: 'world-naruto',
     name: 'Yin–Yang Release',
-    localizedName: { it: 'Arte dell\'Ombra-Yang', en: 'Yin–Yang Release' },
+    localizedName: { it: 'Arte dell\'Ombra e della Luce', en: 'Yin–Yang Release' },
     japaneseName: '陰陽遁 (Onmyōton)',
     type: 'ninjutsu',
     classification: ['kekkei_genkai', 'supplementary'],
@@ -276,7 +276,7 @@ export const narutoJutsuBatch3: Jutsu[] = [
     characterIds: ['char-hagoromo', 'char-obito'],
     series: ['shippuden'],
     shortDescription: {
-      it: 'Combinazione di Yin e Yang: può creare la vita dal nulla, annullare il ninjutsu e plasmare la realtà. Potere del Saggio dei Sei Sentieri (es. Izanagi).',
+      it: 'Combinazione di Yin e Yang: può creare la vita dal nulla, annullare il ninjutsu e plasmare la realtà. Potere dell\'Eremita delle Sei Vie (es. Izanagi).',
       en: 'The combination of Yin and Yang: can create life from nothing, negate ninjutsu and shape reality. A power of the Sage of Six Paths (e.g. Izanagi).',
     },
     canonStatus: 'canon',

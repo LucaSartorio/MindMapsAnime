@@ -33,8 +33,8 @@ export const narutoJutsu: Jutsu[] = [
     rank: 'B',
     characterIds: ['char-naruto', 'char-kakashi', 'char-minato', 'char-tobirama', 'char-hiruzen', 'char-jiraiya', 'char-konohamaru'],
     shortDescription: {
-      it: 'Crea copie fisiche del ninja che possiedono chakra reale e possono combattere autonomamente. Vietata agli ordini di base.',
-      en: 'Creates solid clones with real chakra that can fight independently. Forbidden as a basic technique.',
+      it: 'Crea copie fisiche del ninja che possiedono chakra reale e possono combattere autonomamente. Tecnica proibita della Pergamena dei Sigilli.',
+      en: 'Creates solid clones with real chakra that can fight independently. A forbidden technique from the Scroll of Seals.',
     },
     longDescription: {
       it: 'A differenza del normale Clone Technique, il Kage Bunshin crea copie corporee con chakra reale. Quando un clone viene distrutto, i ricordi e le esperienze vengono restituite all\'originale: meccanismo sfruttato da Naruto per accelerare l\'addestramento.',
@@ -193,7 +193,7 @@ export const narutoJutsu: Jutsu[] = [
     rank: 'S',
     characterIds: ['char-kakashi', 'char-sasuke'],
     shortDescription: {
-      it: 'Concentra il chakra fulminie nella mano producendo un suono di mille uccelli. Tecnica firma di Kakashi, poi di Sasuke.',
+      it: 'Concentra il chakra del fulmine nella mano producendo un suono di mille uccelli. Tecnica firma di Kakashi, poi di Sasuke.',
       en: 'Concentrates lightning chakra in the hand producing a sound of a thousand birds. Kakashi\'s signature technique, later Sasuke\'s.',
     },
     canonStatus: 'canon',
@@ -211,11 +211,11 @@ export const narutoJutsu: Jutsu[] = [
     characterIds: ['char-guy', 'char-rock-lee'],
     clanIds: ['clan-maito'],
     shortDescription: {
-      it: 'Tecnica che rimuove i limitatori del chakra del corpo aprendo sequenzialmente otto "cancelli" interni, potenziando in modo devastante ma autodistruttivo.',
+      it: 'Tecnica che rimuove i limitatori del chakra del corpo aprendo sequenzialmente otto "porte" interne, potenziando in modo devastante ma autodistruttivo.',
       en: 'Technique that removes the body\'s chakra limiters by sequentially opening eight internal "gates", granting devastating power at great physical cost.',
     },
     longDescription: {
-      it: 'Aprire tutti e otto i cancelli permette di accedere all\'Hachimon Tonkō No Jin (Night Guy), capace di danneggiare persino Madara. Il prezzo è la morte o la disabilità permanente.',
+      it: 'Aprire tutte e otto le porte permette di accedere all\'Hachimon Tonkō No Jin (Night Guy), capace di danneggiare persino Madara. Il prezzo è la morte o la disabilità permanente.',
       en: 'Opening all eight gates grants access to Hachimon Tonkō No Jin (Night Guy), powerful enough to damage even Madara. The price is death or permanent disability.',
     },
     canonStatus: 'canon',
@@ -234,7 +234,7 @@ export const narutoJutsu: Jutsu[] = [
     characterIds: ['char-rock-lee', 'char-guy'],
     clanIds: ['clan-maito'],
     shortDescription: {
-      it: 'Versione potenziata del Loto Primario che richiede l\'apertura degli Otto Cancelli. Lancio seguito da serie devastante di colpi.',
+      it: 'Versione potenziata del Loto Primario che richiede l\'apertura delle Otto Porte. Lancio seguito da serie devastante di colpi.',
       en: 'Enhanced version of the Primary Lotus requiring the Eight Gates to be opened. Launch followed by devastating combo strike.',
     },
     canonStatus: 'canon',
@@ -575,7 +575,7 @@ export const narutoJutsu: Jutsu[] = [
     rank: 'S',
     characterIds: ['char-pain', 'char-madara', 'char-sasuke', 'char-hagoromo'],
     shortDescription: {
-      it: 'Il dōjutsu più potente, risvegliato da coloro con poteri simili al Eremita delle Sei Vie. Controlla tutte le sei tecniche dei Sentieri.',
+      it: 'Il dōjutsu più potente, risvegliato da coloro con poteri simili a quelli dell\'Eremita delle Sei Vie. Controlla tutte le sei tecniche dei Sentieri.',
       en: 'The most powerful dōjutsu, awakened by those with powers akin to the Sage of the Six Paths. Controls all six path techniques.',
     },
     canonStatus: 'canon',
@@ -719,7 +719,7 @@ export const narutoJutsu: Jutsu[] = [
     rank: 'S',
     characterIds: ['char-pain', 'char-hagoromo'],
     shortDescription: {
-      it: 'Il Mondo Esteriore può resuscitare i morti al costo della vita del lancitore. Crea anche i ricevitori neri per trasmettere il chakra.',
+      it: 'Il Mondo Esteriore può resuscitare i morti al costo della vita di chi la usa. Crea anche i ricevitori neri per trasmettere il chakra.',
       en: 'The Outer Path can resurrect the dead at the cost of the user\'s life. Also creates black receivers for chakra transmission.',
     },
     canonStatus: 'canon',
@@ -807,7 +807,7 @@ export const narutoJutsu: Jutsu[] = [
     characterIds: ['char-madara'],
     clanIds: ['clan-uchiha'],
     shortDescription: {
-      it: 'Copertura d\'incendio colossale che copre un\'area enormi. Richiede più utenti per essere contrastata.',
+      it: 'Copertura d\'incendio colossale che copre un\'area enorme. Richiede più utenti per essere contrastata.',
       en: 'Colossal fire coverage that blankets an enormous area. Requires multiple users to counter.',
     },
     canonStatus: 'canon',
@@ -912,7 +912,7 @@ export const narutoJutsu: Jutsu[] = [
     rank: 'D',
     characterIds: ['char-zabuza', 'char-kisame'],
     shortDescription: {
-      it: 'Riempie l\'area di una nebbia densa che impedisce la visione. Tecnica base di Kirigakure per lo "Uccisione Silenziosa".',
+      it: 'Riempie l\'area di una nebbia densa che impedisce la visione. Tecnica base di Kirigakure per l\'"Uccisione Silenziosa".',
       en: 'Fills the area with thick mist that blocks vision. Base technique of Kirigakure used for "Silent Killing".',
     },
     canonStatus: 'canon',
@@ -1270,7 +1270,7 @@ export const narutoJutsu: Jutsu[] = [
     clanIds: ['clan-yuki'],
     characterIds: ['char-haku'],
     shortDescription: {
-      it: 'Crea specchi di ghiaccio attorno al bersaglio. L\'utente si muove tra i specchi a velocità impossibile da seguire.',
+      it: 'Crea specchi di ghiaccio attorno al bersaglio. L\'utente si muove tra gli specchi a velocità impossibile da seguire.',
       en: 'Creates ice mirrors around the target. The user moves between mirrors at impossible speeds to follow.',
     },
     canonStatus: 'canon',
@@ -1622,7 +1622,7 @@ export const narutoJutsu: Jutsu[] = [
     clanIds: ['clan-aburame'],
     characterIds: ['char-shino'],
     shortDescription: {
-      it: 'Tecnica hiden del clan Aburame. Usano i kikaichu (insetti mangiachakra) per creare cloni, intercettare chakra nemico, e disturbare i sensori.',
+      it: 'Tecnica hiden del clan Aburame. Usa i kikaichu (insetti mangiachakra) per creare cloni, intercettare chakra nemico, e disturbare i sensori.',
       en: 'Hiden technique of the Aburame clan. Uses kikaichu (chakra-eating insects) to create clones, intercept enemy chakra, and disrupt sensors.',
     },
     canonStatus: 'canon',
@@ -1872,7 +1872,7 @@ export const narutoJutsu: Jutsu[] = [
     rank: 'S',
     characterIds: ['char-naruto', 'char-jiraiya', 'char-minato'],
     shortDescription: {
-      it: 'Assorbe la Natura Energy dell\'ambiente fondendola con chakra e forza fisica. Potenzia tutti i ninjutsu e consente il Frog Kata.',
+      it: 'Assorbe l\'energia naturale dell\'ambiente fondendola con chakra e forza fisica. Potenzia tutti i ninjutsu e consente il Frog Kata.',
       en: 'Absorbs Natural Energy from the environment, merging it with chakra and physical strength. Enhances all ninjutsu and enables Frog Kata.',
     },
     canonStatus: 'canon',
@@ -1890,7 +1890,7 @@ export const narutoJutsu: Jutsu[] = [
     rank: 'S',
     characterIds: ['char-orochimaru', 'char-kabuto'],
     shortDescription: {
-      it: 'Arti Eremitiche appreso alla Grotta di Ryuchi. Kabuto nella sua forma più potente la usa integrandosi con le cellule di Orochimaru.',
+      it: 'Arte eremitica appresa alla Grotta di Ryuchi. Kabuto nella sua forma più potente la usa integrandosi con le cellule di Orochimaru.',
       en: 'Senjutsu learned at Ryuchi Cave. Kabuto in his most powerful form uses it by integrating with Orochimaru\'s cells.',
     },
     canonStatus: 'canon',
@@ -1951,8 +1951,8 @@ export const narutoJutsu: Jutsu[] = [
     rank: 'S',
     characterIds: ['char-naruto', 'char-killer-b', 'char-gaara', 'char-pain'],
     shortDescription: {
-      it: 'La tecnica fondamentale delle Bestie dalla Coda. Comprimi Yin e Yang in pari misura per creare una sfera di distruzione assoluta.',
-      en: 'The fundamental technique of the Tailed Beasts. Compress equal parts Yin and Yang to create a sphere of absolute destruction.',
+      it: 'La tecnica fondamentale delle Bestie dalla Coda. Comprime chakra nero e bianco in proporzione 8:2 per creare una sfera di distruzione assoluta.',
+      en: 'The fundamental technique of the Tailed Beasts. Compresses black and white chakra in an 8:2 ratio to create a sphere of absolute destruction.',
     },
     canonStatus: 'canon',
     referenceStatus: 'verified',

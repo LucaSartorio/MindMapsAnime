@@ -335,7 +335,7 @@ export const narutoArcs: StoryArc[] = [
     saga: { it: 'Naruto Shippuden', en: 'Naruto Shippuden' },
     order: 16,
     description: {
-      it: 'Madara recupera il Rinnegan, sblocca le Dieci Code, Guy apre l\'Ottavo Cancello.',
+      it: 'Madara recupera il Rinnegan, sblocca le Dieci Code, Guy apre l\'Ottava Porta.',
       en: 'Madara recovers the Rinnegan and unleashes the Ten-Tails; Guy opens the Eighth Gate.',
     },
     mangaChapters: ['534-568'],

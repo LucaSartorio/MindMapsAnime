@@ -156,8 +156,8 @@ export const narutoTeams: Team[] = [
     worldId: 'world-naruto',
     name: 'Sound Four',
     description: {
-      it: 'Scorta d\'élite di Orochimaru: Tayuya, Sakon/Ukon, Jirobo, Kidomaru. Più tardi Kimimaro.',
-      en: "Orochimaru's elite escort: Tayuya, Sakon/Ukon, Jirobo, Kidomaru. Later Kimimaro.",
+      it: 'Scorta d\'élite di Orochimaru: Tayuya, Sakon/Ukon, Jirobo, Kidomaru. In origine guidati da Kimimaro, ammalatosi.',
+      en: "Orochimaru's elite escort: Tayuya, Sakon/Ukon, Jirobo, Kidomaru. Originally led by Kimimaro, until his illness.",
     },
     memberIds: [],
     arcIds: ['arc-sasuke-retrieval'],

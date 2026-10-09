@@ -453,8 +453,8 @@ export const narutoNations: Nation[] = [
     referenceStatus: 'needs_verification',
     boundaryId: 'boundary-sea',
     description: {
-      it: 'Filler arc ad est della Land of Lightning.',
-      en: 'Filler arc east of the Land of Lightning.',
+      it: 'Arco filler in un arcipelago nei mari di sud-est.',
+      en: 'Filler arc set in an archipelago in the southeastern seas.',
     },
     color: '#46a8c8',
     tags: ['anime-only', 'filler'],

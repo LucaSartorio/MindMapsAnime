@@ -173,12 +173,12 @@ export const narutoClansExtra: Faction[] = [
     japaneseName: 'マイト一族',
     villageLocationId: 'loc-konoha',
     description: {
-      it: 'Famiglia di Konoha cui appartiene Maito Gai. Privi di capacità particolari di natura chakra, i Maito si distinguono per un\'eccezionale dedizione al Taijutsu puro, portata ai limiti assoluti con i Gate of Opening.',
+      it: 'Famiglia di Konoha cui appartiene Maito Gai. Privi di capacità particolari di natura chakra, i Maito si distinguono per un\'eccezionale dedizione al Taijutsu puro, portata ai limiti assoluti con le Otto Porte.',
       en: 'Konoha family to which Maito Gai belongs. Lacking notable chakra nature abilities, the Maito distinguish themselves through extraordinary devotion to pure Taijutsu, pushed to absolute limits with the Eight Gates.',
     },
     longDescription: {
-      it: 'Maito Gai, jonin di Konoha e istruttore del Team Guy, ha affinato il Taijutsu al massimo livello possibile per un essere umano. Con l\'apertura dell\'Ottava Porta (Hachimon Tonkō), Gai è riuscito a danneggiare Madara Uchiha nella sua forma di Jinchūriki del Dieci Code. Rock Lee, il suo allievo, segue la stessa via. Il padre di Gai, Maito Dai, eterno genin, gli trasmise la sua filosofia della giovinezza e la via delle Otto Porte.',
-      en: "Maito Gai, Konoha jonin and Team Guy instructor, refined Taijutsu to the highest level possible for a human. By opening the Eighth Gate (Hachimon Tonkō), Gai managed to wound Madara Uchiha in his Ten-Tails Jinchūriki form. Rock Lee, his student, follows the same path. Gai's father, Maito Dai, an eternal genin, passed on to him his philosophy of youth and the way of the Eight Gates.",
+      it: 'Maito Gai, jonin di Konoha e istruttore del Team Guy, ha affinato il Taijutsu al massimo livello possibile per un essere umano. Con l\'apertura dell\'Ottava Porta, la Porta della Morte, Gai è riuscito a danneggiare Madara Uchiha nella sua forma di Jinchūriki delle Dieci Code. Rock Lee, il suo allievo, segue la stessa via. Il padre di Gai, Maito Dai, eterno genin, gli trasmise la sua filosofia della giovinezza e la via delle Otto Porte.',
+      en: "Maito Gai, Konoha jonin and Team Guy instructor, refined Taijutsu to the highest level possible for a human. By opening the Eighth Gate, the Gate of Death, Gai managed to wound Madara Uchiha in his Ten-Tails Jinchūriki form. Rock Lee, his student, follows the same path. Gai's father, Maito Dai, an eternal genin, passed on to him his philosophy of youth and the way of the Eight Gates.",
     },
     signatureAbilities: ['Taijutsu massimale', 'Eight Gates (Hachimon Tonkō)', 'Dynamic Entry', 'Morning Peacock'],
     leaderIds: ['char-guy'],
@@ -376,7 +376,7 @@ export const narutoFactionsExtra: Faction[] = [
     name: "Pain's Six Paths",
     japaneseName: '六道の Pain',
     description: {
-      it: 'I sei corpi animati da Nagato attraverso il Rinnegan: Deva Path, Asura Path, Human Path, Animal Path, Hungry Ghost Path e Hell Path. Ogni corpo controllava uno degli Śṣaḍ-riga poteri del Rinnegan.',
+      it: 'I sei corpi animati da Nagato attraverso il Rinnegan: Deva Path, Asura Path, Human Path, Animal Path, Hungry Ghost Path e Hell Path. Ogni corpo controllava uno dei sei poteri del Rinnegan.',
       en: "The six bodies animated by Nagato through the Rinnegan: Deva Path, Asura Path, Human Path, Animal Path, Hungry Ghost Path and Hell Path. Each body controlled one of the six powers of the Rinnegan.",
     },
     longDescription: {
@@ -484,8 +484,8 @@ export const narutoFactionsExtra: Faction[] = [
     type: 'group',
     name: 'Team Samui',
     description: {
-      it: 'Squadra inviata da Kumogakure al Summit dei Cinque Kage: Samui (capoteam), Karui e Atsui. Successivamente coinvolta nelle ricerche di Killer B.',
-      en: "Team dispatched by Kumogakure to the Five Kage Summit: Samui (team leader), Karui and Atsui. Later involved in the search for Killer B.",
+      it: 'Squadra inviata da Kumogakure a Konoha, dopo la scomparsa di Killer B, per ottenere informazioni su Sasuke: Samui (capoteam), Karui e Atsui.',
+      en: "Team dispatched by Kumogakure to Konoha after Killer B's disappearance, to obtain information on Sasuke: Samui (team leader), Karui and Atsui.",
     },
     leaderIds: ['char-samui'],
     characterIds: ['char-samui', 'char-karui', 'char-atsui'],
@@ -505,14 +505,14 @@ export const narutoFactionsExtra: Faction[] = [
     type: 'group',
     name: 'Six Paths Sage Disciples',
     description: {
-      it: 'Naruto Uzumaki e Sasuke Uchiha come eredi del potere di Hagoromo Ōtsutsuki. Ricevono rispettivamente il Yang e lo Yin Chakra del Saggio dei Sei Percorsi per affrontare Kaguya.',
+      it: 'Naruto Uzumaki e Sasuke Uchiha come eredi del potere di Hagoromo Ōtsutsuki. Ricevono rispettivamente il Yang e lo Yin Chakra dell\'Eremita delle Sei Vie per affrontare Kaguya.',
       en: "Naruto Uzumaki and Sasuke Uchiha as heirs to Hagoromo Ōtsutsuki's power. They receive the Sage of Six Paths' Yang and Yin Chakra respectively to face Kaguya.",
     },
     longDescription: {
-      it: 'Hagoromo appare nello spirito durante la Quarta Guerra e conferisce a Naruto il Yang Chakra (Verità del Cerchio) e a Sasuke lo Yin Chakra (Rinne Sharingan). Questa investitura li rende i nuovi reincarnati di Asura e Indra, rispettivamente, e consente loro di sigillare Kaguya.',
-      en: "Hagoromo appears in spirit during the Fourth War and confers upon Naruto the Yang Chakra (Truth-Seeking Orbs) and upon Sasuke the Yin Chakra (Rinne Sharingan). This investiture makes them the new reincarnations of Asura and Indra respectively, enabling them to seal Kaguya.",
+      it: 'Hagoromo appare nello spirito durante la Quarta Guerra e conferisce a Naruto il Yang Chakra (Sfere dei Desideri) e a Sasuke lo Yin Chakra (Rinnegan). Questa investitura li rende i nuovi reincarnati di Asura e Indra, rispettivamente, e consente loro di sigillare Kaguya.',
+      en: "Hagoromo appears in spirit during the Fourth War and confers upon Naruto the Yang Chakra (Truth-Seeking Orbs) and upon Sasuke the Yin Chakra (Rinnegan). This investiture makes them the new reincarnations of Asura and Indra respectively, enabling them to seal Kaguya.",
     },
-    signatureAbilities: ['Truth-Seeking Orbs', 'Rinne Sharingan', 'Saggio dei Sei Percorsi'],
+    signatureAbilities: ['Truth-Seeking Orbs', 'Rinnegan', 'Saggio dei Sei Percorsi'],
     jutsuIds: ['jutsu-truth-seeker-orbs', 'jutsu-rinnegan'],
     leaderIds: ['char-hagoromo'],
     characterIds: ['char-naruto', 'char-sasuke', 'char-hagoromo'],
@@ -533,7 +533,7 @@ export const narutoFactionsExtra: Faction[] = [
     nameLocal: 'Otogakure no Sato',
     japaneseName: '音隠れの里',
     description: {
-      it: 'Villaggio della nebbia fondato da Orochimaru come base sperimentale e laboratorio per le sue ricerche sui corpi e sulle tecniche proibite. Non riconosciuto ufficialmente come Grande Villaggio Nascosto.',
+      it: 'Villaggio fondato da Orochimaru come base sperimentale e laboratorio per le sue ricerche sui corpi e sulle tecniche proibite. Non riconosciuto ufficialmente come Grande Villaggio Nascosto.',
       en: "Village founded by Orochimaru as an experimental base and laboratory for his research into bodies and forbidden techniques. Not officially recognised as a Great Hidden Village.",
     },
     longDescription: {
@@ -680,7 +680,7 @@ export const narutoFactionsExtra: Faction[] = [
       en: 'A religion worshipping the evil god Jashin, preaching total death as the only true completion. The Akatsuki\'s Hidan is its most notorious devotee.',
     },
     longDescription: {
-      it: 'I seguaci più devoti, come Hidan, ottengono una pseudo-immortalità tramite rituali di sangue che legano la propria vita a quella della vittima. Diffuso nel Paese degli Acquazzoni.',
+      it: 'I seguaci più devoti, come Hidan, ottengono una pseudo-immortalità tramite rituali di sangue che legano la propria vita a quella della vittima. Diffuso nel Paese dell\'Acqua Calda.',
       en: 'Its most devoted followers, like Hidan, gain a pseudo-immortality through blood rituals that bind their life to the victim\'s. Rooted in the Land of Hot Water.',
     },
     leaderIds: ['char-hidan'],
@@ -703,7 +703,7 @@ export const narutoFactionsExtra: Faction[] = [
     nationId: 'nation-fire',
     villageLocationId: 'loc-konoha',
     description: {
-      it: 'Grande conglomerato tecnologico di Konoha nell\'era Boruto, simbolo dell\'industrializzazione del villaggio. Famiglia di Denki Kaminarimon.',
+      it: 'Grande conglomerato tecnologico di Konoha nell\'era Boruto, simbolo dell\'industrializzazione del villaggio. Azienda di famiglia di Denki Kaminarimon.',
       en: 'A major technology conglomerate of Konoha in the Boruto era, a symbol of the village\'s industrialization. The family business of Denki Kaminarimon.',
     },
     characterIds: ['char-denki'],

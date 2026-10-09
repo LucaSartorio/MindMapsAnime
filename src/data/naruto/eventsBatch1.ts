@@ -145,8 +145,8 @@ export const narutoEventsBatch1: TimelineEvent[] = [
       en: 'Isshiki\'s end, Code\'s rise',
     },
     description: {
-      it: 'Isshiki perisce esaurendo la sua durata vitale. Prima di morire designa Code, ultimo vaso col Karma Bianco, come proprio erede vendicatore.',
-      en: 'Isshiki perishes as his lifespan runs out. Before dying he designates Code, the last vessel bearing White Karma, as his avenging heir.',
+      it: 'Isshiki perisce esaurendo la sua durata vitale. Prima di morire designa Code, ultimo Inner di Kara e portatore del Karma Bianco, come proprio erede vendicatore.',
+      en: 'Isshiki perishes as his lifespan runs out. Before dying he designates Code, the last Kara Inner and bearer of White Karma, as his avenging heir.',
     },
     period: { it: 'Era Boruto', en: 'Boruto Era' },
     arcId: 'arc-code-omnipotence',

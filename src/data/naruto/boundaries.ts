@@ -533,8 +533,8 @@ export const narutoBoundaries: MapBoundary[] = [
     color: '#90a890',
     localizedName: { it: 'Paese delle Valli', en: 'Land of Valleys' },
     descriptionShort: {
-      it: 'Regione fra il Paese del Ferro e quello del Fuoco, principalmente valli e fiumi.',
-      en: 'A region between the Land of Iron and the Land of Fire, mostly valleys and rivers.',
+      it: 'Regione a sud-ovest del Paese del Fuoco, principalmente valli e fiumi.',
+      en: 'A region southwest of the Land of Fire, mostly valleys and rivers.',
     },
     tags: ['valli'],
   },
@@ -554,8 +554,8 @@ export const narutoBoundaries: MapBoundary[] = [
     color: '#46a8c8',
     localizedName: { it: 'Paese del Mare', en: 'Land of the Sea' },
     descriptionShort: {
-      it: "Filler esclusivo dell'anime, a est del Paese del Fulmine.",
-      en: 'Anime-only filler, east of the Land of Lightning.',
+      it: "Filler esclusivo dell'anime: un arcipelago nei mari di sud-est.",
+      en: 'Anime-only filler: an archipelago in the southeastern seas.',
     },
     tags: ['anime-only', 'filler'],
   },

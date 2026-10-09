@@ -282,7 +282,7 @@ export const narutoJutsuBatch1: Jutsu[] = [
     characterIds: ['char-toneri'],
     clanIds: ['clan-otsutsuki'],
     shortDescription: {
-      it: 'Doujutsu nato dalla fusione del chakra Hyūga e Ōtsutsuki. Concede enormi riserve di chakra, controllo della gravità e una modalità di Chakra dei Sei Percorsi.',
+      it: 'Doujutsu nato dalla fusione del chakra Hyūga e Ōtsutsuki. Concede enormi riserve di chakra, controllo della gravità e una modalità di Chakra delle Sei Vie.',
       en: 'A dōjutsu born from merging Hyūga and Ōtsutsuki chakra. Grants vast chakra reserves, gravity control and a Six Paths-style chakra mode.',
     },
     canonStatus: 'movie',

@@ -594,7 +594,7 @@ export const narutoCharacters: Character[] = [
     villageLocationId: 'loc-konoha',
     clanIds: ['clan-inuzuka'],
     teamIds: ['team-8'],
-    rank: 'Jonin',
+    rank: 'Chunin',
     ninjaRank: 'chunin',
     generation: 'Konoha 11',
     shortDescription: {
@@ -620,8 +620,8 @@ export const narutoCharacters: Character[] = [
     nationId: 'nation-fire',
     clanIds: ['clan-hyuga'],
     teamIds: ['team-8'],
-    rank: 'Chunin / Jonin',
-    ninjaRank: 'jonin',
+    rank: 'Chunin',
+    ninjaRank: 'chunin',
     generation: 'Konoha 11',
     shortDescription: {
       it: 'Erede del clan Hyuga. Innamorata di Naruto fin dall\'infanzia.',
@@ -649,7 +649,7 @@ export const narutoCharacters: Character[] = [
     clanIds: ['clan-aburame'],
     teamIds: ['team-8'],
     rank: 'Jonin',
-    ninjaRank: 'chunin',
+    ninjaRank: 'jonin',
     generation: 'Konoha 11',
     shortDescription: {
       it: 'Specialista di insetti kikaichu, sensore e tracker.',
@@ -725,8 +725,8 @@ export const narutoCharacters: Character[] = [
     role: ['supporting'],
     villageLocationId: 'loc-konoha',
     teamIds: ['team-guy'],
-    rank: 'Jonin',
-    ninjaRank: 'jonin',
+    rank: 'Chunin',
+    ninjaRank: 'chunin',
     generation: 'Konoha 11',
     shortDescription: {
       it: 'Specialista di armi del Team Guy.',
@@ -910,7 +910,7 @@ export const narutoCharacters: Character[] = [
     importance: 'supporting',
     role: ['supporting'],
     villageLocationId: 'loc-konoha',
-    rank: 'Jonin / Tokubetsu',
+    rank: { it: 'Jonin speciale', en: 'Special Jonin' },
     ninjaRank: 'tokubetsu_jonin',
     shortDescription: {
       it: 'Ex allieva di Orochimaru, esaminatrice della seconda prova Chunin.',
@@ -952,7 +952,7 @@ export const narutoCharacters: Character[] = [
     importance: 'minor',
     role: ['supporting'],
     villageLocationId: 'loc-konoha',
-    rank: 'Jonin',
+    rank: { it: 'Jonin speciale', en: 'Special Jonin' },
     ninjaRank: 'tokubetsu_jonin',
     shortDescription: {
       it: 'Tutor d\'élite, insegnante di Konohamaru.',
@@ -973,7 +973,7 @@ export const narutoCharacters: Character[] = [
     role: ['supporting'],
     villageLocationId: 'loc-konoha',
     rank: 'Tokubetsu Jonin',
-    ninjaRank: 'jonin',
+    ninjaRank: 'tokubetsu_jonin',
     shortDescription: {
       it: 'Capo della Squadra di Tortura e Interrogatorio. Esaminatore della prima prova Chunin.',
       en: 'Head of the Torture and Interrogation Force. Examiner of the first Chunin Exam stage.',
@@ -1101,7 +1101,7 @@ export const narutoCharacters: Character[] = [
     role: ['antagonist', 'villain'],
     villageLocationId: 'loc-konoha',
     factionIds: ['faction-root'],
-    rank: 'Kage candidate / Shadow Hokage',
+    rank: 'Root leader / Sixth Hokage candidate',
     ninjaRank: 'jonin',
     shortDescription: {
       it: 'Capo della divisione segreta Root. Antagonista politico chiave.',
@@ -1548,7 +1548,7 @@ export const narutoCharacters: Character[] = [
     role: ['kage', 'supporting'],
     villageLocationId: 'loc-kumo',
     rank: 'Raikage (Quinto, post-war)',
-    ninjaRank: 'jonin',
+    ninjaRank: 'kage',
     shortDescription: {
       it: 'Guardia di A, futuro Quinto Raikage. Specialista Storm Release.',
       en: "A's bodyguard and future Fifth Raikage. Storm Release specialist.",
@@ -1618,7 +1618,7 @@ export const narutoCharacters: Character[] = [
     rank: 'Tsuchikage (Quarto)',
     ninjaRank: 'kage',
     shortDescription: {
-      it: 'Nipote di Onoki, futuro Quarto Tsuchikage.',
+      it: 'Nipote di Onoki, futura Quarta Tsuchikage.',
       en: "Onoki's granddaughter and future Fourth Tsuchikage.",
     },
     abilities: ['Lava Release'],
@@ -1683,7 +1683,7 @@ export const narutoCharacters: Character[] = [
       it: 'Jinchūriki del Five-Tails Kokuo.',
       en: 'Jinchūriki of the Five-Tails Kokuo.',
     },
-    abilities: ['Steam Release'],
+    abilities: ['Boil Release'],
     locationIds: ['loc-iwa'],
     status: 'deceased',
     canonStatus: 'canon',
@@ -2193,7 +2193,7 @@ export const narutoCharacters: Character[] = [
     ninjaRank: 'other',
     generation: 'Otsutsuki',
     shortDescription: {
-      it: 'Madre del Eremita delle Sei Vie, principio della chakra sulla Terra.',
+      it: 'Madre dell\'Eremita delle Sei Vie, principio del chakra sulla Terra.',
       en: 'Mother of the Sage of Six Paths, the origin of chakra on Earth.',
     },
     abilities: ['Kekkei Mōra', 'Rinne Sharingan', 'Dimension Travel'],

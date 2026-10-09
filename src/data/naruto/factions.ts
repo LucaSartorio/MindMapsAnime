@@ -110,8 +110,8 @@ export const narutoFactions: Faction[] = [
     name: 'Konoha Military Police Force',
     japaneseName: 'うちは警務部隊',
     description: {
-      it: 'Polizia militare di Konoha, fondata dal clan Uchiha. Sciolta dopo il massacro.',
-      en: "Konoha's military police, founded by the Uchiha clan. Disbanded after the massacre.",
+      it: 'Polizia militare di Konoha, creata dal Secondo Hokage e affidata al clan Uchiha. Sciolta dopo il massacro.',
+      en: "Konoha's military police, created by the Second Hokage and entrusted to the Uchiha clan. Disbanded after the massacre.",
     },
     leaderIds: ['char-fugaku'],
     characterIds: ['char-fugaku'],
@@ -224,8 +224,8 @@ export const narutoFactions: Faction[] = [
     type: 'group',
     name: 'Sound Four',
     description: {
-      it: 'Scorta d\'élite di Orochimaru: Tayuya, Sakon/Ukon, Jirobo, Kidomaru. Più tardi Kimimaro.',
-      en: "Orochimaru's elite escort: Tayuya, Sakon/Ukon, Jirobo, Kidomaru. Later Kimimaro.",
+      it: 'Scorta d\'élite di Orochimaru: Tayuya, Sakon/Ukon, Jirobo, Kidomaru. In origine guidati da Kimimaro, ammalatosi.',
+      en: "Orochimaru's elite escort: Tayuya, Sakon/Ukon, Jirobo, Kidomaru. Originally led by Kimimaro, until his illness.",
     },
     leaderIds: ['char-orochimaru'],
     characterIds: ['char-kimimaro', 'char-tayuya', 'char-sakon', 'char-jirobo', 'char-kidomaru'],

@@ -82,7 +82,7 @@ export const narutoJutsuBatch4: Jutsu[] = [
     worldId: 'world-naruto',
     name: 'Mind Body Switch Reversal',
     localizedName: {
-      it: 'Inversione dello Capovolgimento Spirituale',
+      it: 'Inversione del Capovolgimento Spirituale',
       en: 'Mind Body Switch Reversal',
     },
     japaneseName: '心転身の術返し',

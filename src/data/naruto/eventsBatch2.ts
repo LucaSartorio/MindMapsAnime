@@ -20,10 +20,10 @@ const ev = (
   return { worldId: 'world-naruto', referenceStatus: 'verified', order: 0, ...e, canon, canonStatus: canon };
 };
 
-const PRE: Localizable = { it: 'Prima della serie', en: 'Before the series' };
+const PRE: Localizable = { it: 'Pre-serie', en: 'Pre-series' };
 const P1: Localizable = { it: 'Naruto Parte I', en: 'Naruto Part I' };
 const P2: Localizable = { it: 'Naruto Shippuden', en: 'Naruto Shippuden' };
-const WAR: Localizable = { it: 'Quarta Grande Guerra Ninja', en: 'Fourth Great Ninja War' };
+const WAR: Localizable = { it: 'Quarta Guerra Ninja', en: 'Fourth Shinobi World War' };
 const BORUTO: Localizable = { it: 'Era Boruto', en: 'Boruto Era' };
 const TBV: Localizable = { it: 'Boruto: Two Blue Vortex', en: 'Boruto: Two Blue Vortex' };
 
@@ -202,8 +202,8 @@ export const narutoEventsBatch2: TimelineEvent[] = [
     id: 'ev-mifune-vs-hanzo',
     title: { it: 'Mifune contro Hanzo', en: 'Mifune vs Hanzo' },
     description: {
-      it: "Sul fronte della Quarta Divisione il generale samurai Mifune duella con Hanzo della Salamandra, riportato in vita da Kabuto. Le parole di Mifune risvegliano l'onore del vecchio ninja di Ame, che si lascia sconfiggere.",
-      en: "On the Fourth Division's front the samurai general Mifune duels Hanzo of the Salamander, reanimated by Kabuto. Mifune's words reawaken the old Ame ninja's honour, and he allows himself to be defeated.",
+      it: "Sul fronte della Quinta Divisione il generale samurai Mifune duella con Hanzo della Salamandra, riportato in vita da Kabuto. Le parole di Mifune risvegliano l'onore del vecchio ninja di Ame, che si lascia sconfiggere.",
+      en: "On the Fifth Division's front the samurai general Mifune duels Hanzo of the Salamander, reanimated by Kabuto. Mifune's words reawaken the old Ame ninja's honour, and he allows himself to be defeated.",
     },
     period: WAR,
     arcId: 'arc-fourth-war',
@@ -349,12 +349,12 @@ export const narutoEventsBatch2: TimelineEvent[] = [
     id: 'ev-academy-mission-kae',
     title: { it: 'La scorta della principessa', en: "The princess's escort" },
     description: {
-      it: "La squadra di Boruto, appena diplomata, riceve una missione di scorta: proteggere la giovane principessa Kae durante il viaggio di ritorno nel suo paese, minacciato da complotti di corte.",
-      en: "Boruto's freshly graduated team receives an escort mission: protecting the young princess Kae on her journey home to her country, threatened by court intrigue.",
+      it: "Minacciata da un complotto di corte, la giovane principessa Kae del Paese del Bambù viene mandata all'Accademia di Konoha come studentessa di scambio: Kawaki, iscritto come allievo, la protegge in incognito con Boruto finché lei può tornare a casa.",
+      en: "Threatened by a court plot, young Princess Kae of the Land of Bamboo is sent to Konoha Academy as an exchange student: Kawaki, enrolled as a pupil, protects her undercover with Boruto until she can return home.",
     },
     period: BORUTO,
     arcId: 'arc-academy-mission',
-    characterIds: ['char-boruto', 'char-sarada', 'char-mitsuki', 'char-konohamaru'],
+    characterIds: ['char-boruto', 'char-kawaki'],
     canon: 'anime_only',
     referenceStatus: 'needs_verification',
     tags: ['boruto-era', 'anime'],

@@ -121,8 +121,8 @@ export const narutoArcsBatch1: StoryArc[] = [
     order: 26,
     period: { it: 'Era Boruto', en: 'Boruto Era' },
     description: {
-      it: 'Dopo la caduta di Isshiki, l\'ultimo vaso Code giura vendetta. La cyborg onnisciente Eida e il fratello Daemon alterano gli equilibri, mentre il legame tra Boruto e Kawaki si incrina.',
-      en: 'After Isshiki\'s fall, the last vessel Code vows revenge. The omniscient cyborg Eida and her brother Daemon shift the balance, while the bond between Boruto and Kawaki fractures.',
+      it: 'Dopo la caduta di Isshiki, l\'ultimo Inner Code giura vendetta. La cyborg onnisciente Eida e il fratello Daemon alterano gli equilibri, mentre il legame tra Boruto e Kawaki si incrina.',
+      en: 'After Isshiki\'s fall, the last Inner, Code, vows revenge. The omniscient cyborg Eida and her brother Daemon shift the balance, while the bond between Boruto and Kawaki fractures.',
     },
     locationIds: ['loc-konoha'],
     characterIds: [

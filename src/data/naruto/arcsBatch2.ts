@@ -5,14 +5,13 @@ import type { StoryArc } from '@/types';
  *
  * Continuano la cronologia dopo `arc-code-omnipotence` (order 26):
  *  - arc-mujina-bandits      (order 27, anime-only Boruto saga 4)
- *  - arc-mitsuki-disappearance (order 28, anime canon)
- *  - arc-academy-mission      (order 29, manga Boruto: Kae & Hiruga brothers)
+ *  - arc-mitsuki-disappearance (order 28, anime-only)
+ *  - arc-academy-mission      (order 29, anime-only: Princess Kae at the Academy)
  *  - arc-funato-war           (order 30, anime-only big saga)
  *  - arc-two-blue-vortex      (order 31, manga sequel "Boruto: Two Blue Vortex")
  *
- * Tutti con `series: ['boruto']`. Solo `arc-mitsuki-disappearance` e
- * `arc-academy-mission` sono dichiarati canon. Gli archi anime-only
- * lasciano `canonStatus: 'anime_only'` come da convenzione del dataset.
+ * Tutti con `series: ['boruto']`. Solo `arc-two-blue-vortex` è canon (manga);
+ * gli archi anime-only hanno `canonStatus: 'anime_only'` come da convenzione del dataset.
  */
 export const narutoArcsBatch2: StoryArc[] = [
   {
@@ -50,13 +49,13 @@ export const narutoArcsBatch2: StoryArc[] = [
     period: { it: 'Era Boruto', en: 'Boruto Era' },
     series: ['boruto'],
     description: {
-      it: 'Mitsuki scompare da Konoha. Boruto e Sarada lo inseguono fino al Paese della Terra, scoprendo gli intrighi tra Iwa, Orochimaru e i resti dei Tsuchikage.',
+      it: 'Mitsuki scompare da Konoha. Boruto e Sarada lo inseguono fino al Paese della Terra, scoprendo gli intrighi tra Iwa, Orochimaru e l\'ex Tsuchikage.',
       en: 'Mitsuki disappears from Konoha. Boruto and Sarada chase him to the Land of Earth, uncovering intrigues among Iwa, Orochimaru and the former Tsuchikage.',
     },
     nationIds: ['nation-earth'],
     characterIds: ['char-boruto', 'char-sarada', 'char-mitsuki', 'char-orochimaru'],
-    canon: 'canon',
-    canonStatus: 'canon',
+    canon: 'anime_only',
+    canonStatus: 'anime_only',
     referenceStatus: 'verified',
     tags: ['boruto-era', 'mitsuki'],
   },
@@ -73,17 +72,17 @@ export const narutoArcsBatch2: StoryArc[] = [
     period: { it: 'Era Boruto', en: 'Boruto Era' },
     series: ['boruto'],
     description: {
-      it: 'La squadra di Boruto scorta la principessa Kae del Paese del Bambù all\'Accademia di Konoha, contrastando le incursioni dei fratelli Hiruga.',
-      en: 'Boruto\'s team escorts Princess Kae of the Land of Bamboo to Konoha Academy, fending off raids by the Hiruga brothers.',
+      it: 'La principessa Kae del Paese del Bambù, minacciata da un complotto, frequenta l\'Accademia di Konoha come studentessa di scambio: Kawaki vi si iscrive per proteggerla in incognito, con l\'aiuto di Boruto.',
+      en: 'Princess Kae of the Land of Bamboo, threatened by a plot, attends Konoha Academy as an exchange student: Kawaki enrols there to protect her undercover, with Boruto\'s help.',
     },
     locationIds: ['loc-konoha', 'loc-konoha-academy'],
     nationIds: ['nation-fire'],
-    characterIds: ['char-boruto', 'char-sarada', 'char-mitsuki', 'char-hiruga'],
-    mangaChapters: ['Boruto 60-69'],
-    canon: 'canon',
-    canonStatus: 'canon',
+    characterIds: ['char-boruto', 'char-kawaki'],
+    animeEpisodes: ['Boruto: NNG ep. 261-273'],
+    canon: 'anime_only',
+    canonStatus: 'anime_only',
     referenceStatus: 'verified',
-    tags: ['boruto-era', 'manga', 'academy'],
+    tags: ['boruto-era', 'anime-only', 'academy'],
   },
   {
     id: 'arc-funato-war',
