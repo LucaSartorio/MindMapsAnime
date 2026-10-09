@@ -84,8 +84,8 @@ export const dragonballJutsu: Jutsu[] = [
       en: "A devastating two-handed energy beam, Vegeta's most powerful technique in the Androids/Cell saga.",
     },
     longDescription: {
-      it: "Vegeta la lancia contro Cell semi-perfetto, cancellandogli metà del corpo; Cell però si rigenera grazie alle cellule di Piccolo.",
-      en: "Vegeta fires it at semi-perfect Cell, blasting away half of his body; Cell, however, regenerates thanks to Piccolo's cells.",
+      it: "Vegeta la lancia contro Cell perfetto, cancellandogli metà del corpo; Cell però si rigenera grazie alle cellule di Piccolo.",
+      en: "Vegeta fires it at Perfect Cell, blasting away half of his body; Cell, however, regenerates thanks to Piccolo's cells.",
     },
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -98,12 +98,12 @@ export const dragonballJutsu: Jutsu[] = [
     type: 'energy_blast',
     characterIds: ['char-dbz-vegeta'],
     shortDescription: {
-      it: "Sfera energetica concentrata lanciata con una mano, tecnica firma di Vegeta dalla saga di Majin Bu in poi.",
-      en: "A concentrated energy sphere fired with one hand, Vegeta's signature technique from the Majin Buu saga onward.",
+      it: "Sfera energetica concentrata lanciata con una mano, tecnica firma di Vegeta dalla saga degli Androidi in poi.",
+      en: "A concentrated energy sphere fired with one hand, Vegeta's signature technique from the Androids saga onward.",
     },
     longDescription: {
-      it: "Vegeta la usa contro C-18 e contro Majin Bu: una sola sfera di energia sparata con il palmo aperto, la sua firma negli anni della serie Z.",
-      en: "Vegeta uses it against Android 18 and Majin Buu: a single energy sphere fired from an open palm, his signature move throughout the Z series.",
+      it: "Vegeta la sfoggia per la prima volta contro C-19, distruggendolo, e la usa di nuovo contro Majin Bu: una sola sfera di energia sparata con il palmo aperto, la sua firma negli anni della serie Z.",
+      en: "Vegeta debuts it against Android 19, destroying him, and uses it again against Majin Buu: a single energy sphere fired from an open palm, his signature move throughout the Z series.",
     },
     canonStatus: 'canon',
     referenceStatus: 'verified',

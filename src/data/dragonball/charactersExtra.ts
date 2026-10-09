@@ -211,7 +211,7 @@ export const dragonballCharactersExtra: Character[] = [
     locationIds: ['loc-dbz-lookout', 'loc-dbz-lk-palace', 'loc-dbz-lk-time-chamber'],
     arcIds: ['arc-dbz-piccolo-jr', 'arc-dbz-saiyan-saga', 'arc-dbz-cell-saga', 'arc-dbz-majin-buu'],
     shortDescription: {
-      it: "L'antico custode del Santuario di Dio, che serve tutti i Dei della Terra. Trasporta Goku sul suo tappeto volante, lo allena prima del 23° Torneo e accompagna i guerrieri nella Stanza dello Spirito e del Tempo.",
+      it: "L'antico custode del Santuario di Dio, che serve tutti gli Dei della Terra. Trasporta Goku sul suo tappeto volante, lo allena prima del 23° Torneo e accompagna i guerrieri nella Stanza dello Spirito e del Tempo.",
       en: "The ancient keeper of Kami's Lookout, who serves every guardian of Earth. He carries Goku on his flying carpet, trains him before the 23rd Tournament and escorts fighters to the Hyperbolic Time Chamber.",
     },
     tags: ['santuario'],
@@ -250,8 +250,8 @@ export const dragonballCharactersExtra: Character[] = [
     locationIds: ['loc-dbz-battle-3-roshi-piccolo', 'loc-dbz-lookout'],
     arcIds: ['arc-dbz-king-piccolo'],
     shortDescription: {
-      it: "La metà malvagia di Dio, imprigionata secoli prima dal Mafuba del maestro di Muten e liberata da Pilaf. I suoi demoni uccidono Crilin, lui uccide il Maestro Muten, Chaozu e Shenron; Goku lo trapassa con un pugno, ma prima di morire depone un uovo: suo figlio, Piccolo Junior.",
-      en: "Kami's evil half, sealed centuries earlier by the Evil Containment Wave of Roshi's master and freed by Pilaf. His demons kill Krillin, and he kills Master Roshi, Chiaotzu and Shenron; Goku punches straight through him, but before dying he lays an egg: his son, Piccolo Jr.",
+      it: "La metà malvagia di Dio, imprigionata secoli prima dal Mafuba del maestro di Muten e liberata da Pilaf. I suoi demoni uccidono Crilin, il Maestro Muten muore tentando di sigillarlo di nuovo e lui uccide Jiaozi e Shenron; Goku lo trapassa con un pugno, ma prima di morire depone un uovo: suo figlio, Piccolo Junior.",
+      en: "Kami's evil half, sealed centuries earlier by the Evil Containment Wave of Roshi's master and freed by Pilaf. His demons kill Krillin, Master Roshi dies trying to seal him again, and he kills Chiaotzu and Shenron; Goku punches straight through him, but before dying he lays an egg: his son, Piccolo Jr.",
     },
     status: 'deceased',
     tags: ['dragon-ball', 'demone'],
@@ -292,7 +292,7 @@ export const dragonballCharactersExtra: Character[] = [
     locationIds: ['loc-dbz-tenkaichi-arena'],
     arcIds: ['arc-dbz-king-piccolo'],
     shortDescription: {
-      it: "Il rivale del Maestro Muten e maestro di Tensing e Chaozu nella Scuola della Gru. Al 22° Torneo Tensing lo abbandona per seguire la via del Maestro Muten, dopo aver capito che il maestro gli chiede di uccidere.",
+      it: "Il rivale del Maestro Muten e maestro di Tensing e Jiaozi nella Scuola della Gru. Al 22° Torneo Tensing lo abbandona per seguire la via del Maestro Muten, dopo aver capito che il maestro gli chiede di uccidere.",
       en: "Master Roshi's rival and the teacher of Tien and Chiaotzu at the Crane School. At the 22nd Tournament Tien leaves him to follow Master Roshi's way, after realising his master wants him to kill.",
     },
     tags: ['dragon-ball', 'scuola-della-gru'],

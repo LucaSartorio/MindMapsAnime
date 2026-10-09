@@ -57,7 +57,7 @@ export const dragonballRoutes: Route[] = [
     relatedLocationIds: ['loc-dbz-korin-tower', 'loc-dbz-muscle-tower', 'loc-dbz-red-ribbon-hq', 'loc-dbz-silver-platoon-base', 'loc-dbz-town-tao'],
     steps: [
       { order: 1, locationId: 'loc-dbz-korin-tower', label: { it: 'Torre di Karin', en: "Korin's Tower" }, description: { it: 'Goku raggiunge la cima della torre in allenamento.', en: 'Goku reaches the top of the tower in training.' } },
-      { order: 2, locationId: 'loc-dbz-muscle-tower', label: { it: 'Muscle Tower', en: 'Muscle Tower' }, description: { it: 'Goku abbatte la White Corp.', en: 'Goku takes down the White Corp.' } },
+      { order: 2, locationId: 'loc-dbz-muscle-tower', label: { it: 'Muscle Tower', en: 'Muscle Tower' }, description: { it: 'Goku abbatte la guarnigione del Generale White.', en: 'Goku takes down General White\'s garrison.' } },
       { order: 3, locationId: 'loc-dbz-silver-platoon-base', label: { it: 'Base del Plotone Argento', en: "Silver Platoon's Base" } },
       { order: 4, locationId: 'loc-dbz-town-tao', label: { it: 'Mercenary Tao ruba i vestiti', en: 'Mercenary Tao steals clothes' } },
       { order: 5, locationId: 'loc-dbz-red-ribbon-hq', eventId: 'evt-dbz-red-ribbon-defeated', label: { it: 'Quartier Generale Red Ribbon', en: 'Red Ribbon Headquarters' }, description: { it: "Distruzione dell'intero esercito Red Ribbon.", en: 'The entire Red Ribbon Army is destroyed.' } },
@@ -76,8 +76,8 @@ export const dragonballRoutes: Route[] = [
     localizedName: { it: 'Saga di Piccolo', en: "Piccolo's Saga" },
     group: { it: 'Sagas · poster', en: 'Sagas · poster' },
     description: {
-      it: "Dalla morte di Muten Roshi per mano del Grande Mago Piccolo alla rivincita di Goku al 23° Torneo Tenkaichi contro Piccolo Junior. Colorata in verde scuro sulla legenda del poster.",
-      en: "From Master Roshi's death at King Piccolo's hands to Goku's rematch against Piccolo Jr. at the 23rd Tenkaichi Budokai. Colored dark green on the poster's legend.",
+      it: "Dal sacrificio di Muten Roshi contro il Grande Mago Piccolo alla rivincita di Goku al 23° Torneo Tenkaichi contro Piccolo Junior. Colorata in verde scuro sulla legenda del poster.",
+      en: "From Master Roshi's sacrifice against King Piccolo to Goku's rematch against Piccolo Jr. at the 23rd Tenkaichi Budokai. Colored dark green on the poster's legend.",
     },
     protagonistCharacterIds: ['char-dbz-goku', 'char-dbz-piccolo'],
     relatedArcIds: ['arc-dbz-king-piccolo', 'arc-dbz-piccolo-jr'],
@@ -157,7 +157,7 @@ export const dragonballRoutes: Route[] = [
       // — Sotto-mappa di Namecc —
       { order: 5, locationId: 'loc-dbz-namek-moori-village', label: { it: 'Villaggio di Moori', en: "Moori's Village" }, description: { it: 'Crilin e Gohan salvano Dende dalla strage degli uomini di Freezer.', en: "Krillin and Gohan save Dende from the massacre by Frieza's men." } },
       { order: 6, locationId: 'loc-dbz-namek-guru-house', label: { it: 'Casa del Capo Anziano', en: "Grand Elder's House" }, description: { it: 'Potenziale sbloccato e ricerca delle Sfere del Drago namecciane.', en: 'Potential unlocked and the hunt for the Namekian Dragon Balls.' } },
-      { order: 7, locationId: 'loc-dbz-namek-battlefield-plains', label: { it: 'Scontro con la Forze Speciali Ginew', en: 'Clash with the Ginyu Force' } },
+      { order: 7, locationId: 'loc-dbz-namek-battlefield-plains', label: { it: 'Scontro con le Forze Speciali Ginew', en: 'Clash with the Ginyu Force' } },
       { order: 8, locationId: 'loc-dbz-namek-final-battlefield', eventId: 'evt-dbz-frieza-defeated-namek', label: { it: 'Sconfitta di Freezer su Namecc', en: 'Frieza defeated on Namek' }, description: { it: 'Goku diventa Super Saiyan e sconfigge Freezer prima della distruzione del pianeta.', en: 'Goku becomes a Super Saiyan and defeats Frieza before the planet is destroyed.' } },
     ],
     color: DRAGONBALL_SAGA_COLORS.frieza,

@@ -401,9 +401,9 @@ export const dragonballEventsExtra: TimelineEvent[] = [
   }),
   e({
     id: 'evt-dbz-chaozu-tien-sacrifice',
-    title: { it: 'Il sacrificio di Chaozu e Tensing', en: 'Chiaotzu and Tien sacrifice themselves' },
+    title: { it: 'Il sacrificio di Jiaozi e Tensing', en: 'Chiaotzu and Tien sacrifice themselves' },
     description: {
-      it: "Chaozu si aggrappa alla schiena di Nappa e si fa esplodere, ma il Saiyan sopravvive. Tensing, con un braccio solo, lancia un ultimo Kikoho che lo uccide: Nappa resta in piedi.",
+      it: "Jiaozi si aggrappa alla schiena di Nappa e si fa esplodere, ma il Saiyan sopravvive. Tensing, con un braccio solo, lancia un ultimo Kikoho che lo uccide: Nappa resta in piedi.",
       en: "Chiaotzu clings to Nappa's back and self-destructs, but the Saiyan survives. Tien, with one arm, fires a final Tri-Beam that kills him: Nappa is still standing.",
     },
     period: DBZ,
@@ -436,7 +436,7 @@ export const dragonballEventsExtra: TimelineEvent[] = [
     id: 'evt-dbz-porunga-wishes',
     title: { it: 'I desideri di Porunga', en: "Porunga's wishes" },
     description: {
-      it: "Mentre Vegeta dorme, Gohan, Crilin e Dende evocano Porunga: con i primi due desideri Piccolo torna in vita e viene trasportato su Namecc. Il Grande Anziano Guru muore prima del terzo, e le sfere tornano pietra.",
+      it: "Mentre Vegeta dorme, Gohan, Crilin e Dende evocano Porunga: con i primi due desideri Piccolo torna in vita e viene trasportato su Namecc. Il Capo Anziano Guru muore prima del terzo, e le sfere tornano pietra.",
       en: "While Vegeta sleeps, Gohan, Krillin and Dende summon Porunga: with the first two wishes Piccolo is revived and transported to Namek. Grand Elder Guru dies before the third, and the balls turn to stone.",
     },
     period: DBZ,
@@ -468,8 +468,8 @@ export const dragonballEventsExtra: TimelineEvent[] = [
     id: 'evt-dbz-new-namek',
     title: { it: 'I Namecciani sul Nuovo Namecc', en: 'The Namekians move to New Namek' },
     description: {
-      it: "Ospitati sulla Terra dopo l'esplosione di Namecc, i Namecciani ricreano le loro Sfere e chiedono un nuovo pianeta. Con le Sfere della Terra riportano in vita Dio e i morti di Freezer, poi partono per il Nuovo Namecc.",
-      en: "Taken in on Earth after Namek's explosion, the Namekians recreate their Balls and wish for a new planet. With Earth's Balls they bring back Kami and Frieza's victims, then leave for New Namek.",
+      it: "Ospitati sulla Terra dopo l'esplosione di Namecc, i Namecciani attendono che le loro Sfere si ricarichino: dopo la resurrezione di Tensing e Jiaozi, il terzo desiderio a Porunga li trasferisce su un lontano pianeta trovato da Re Kaioh, il Nuovo Namecc.",
+      en: "Taken in on Earth after Namek's explosion, the Namekians wait for their Dragon Balls to recharge: after reviving Tien and Chiaotzu, Porunga's third wish moves them to a distant planet found by King Kai, New Namek.",
     },
     period: DBZ,
     arcId: 'arc-dbz-namek-frieza',
@@ -745,10 +745,10 @@ export const dragonballEventsExtra: TimelineEvent[] = [
   }),
   e({
     id: 'evt-dbz-28th-tournament',
-    title: { it: 'Il 28° Torneo e Ub', en: 'The 28th Tournament and Uub' },
+    title: { it: 'Il 28° Torneo e Uub', en: 'The 28th Tournament and Uub' },
     description: {
-      it: "Dieci anni dopo la fine di Bu, Goku incontra al 28° Torneo Tenkaichi il piccolo Ub, reincarnazione di Bu Malvagio. Riconosce in lui un talento enorme e parte con lui per allenarlo: si chiude così Dragon Ball.",
-      en: "Ten years after Buu's end, at the 28th World Martial Arts Tournament Goku meets little Uub, Evil Buu's reincarnation. He sees enormous talent in him and leaves with him to train him: thus Dragon Ball ends.",
+      it: "Dieci anni dopo la fine di Bu, Goku incontra al 28° Torneo Tenkaichi il piccolo Uub, reincarnazione di Kid Bu. Riconosce in lui un talento enorme e parte con lui per allenarlo: si chiude così Dragon Ball.",
+      en: "Ten years after Buu's end, at the 28th World Martial Arts Tournament Goku meets little Uub, Kid Buu's reincarnation. He sees enormous talent in him and leaves with him to train him: thus Dragon Ball ends.",
     },
     period: DBZ,
     arcId: 'arc-dbz-majin-buu',

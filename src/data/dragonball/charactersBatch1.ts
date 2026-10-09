@@ -41,7 +41,7 @@ export const dragonballCharactersBatch1: Character[] = [
     role: ['antagonist', 'villain'],
     race: 'saiyan',
     transformations: [
-      { id: 'tr-broly-wrathful', name: 'Wrathful state', localizedName: { it: 'Stato Ikari (Wrathful)', en: 'Wrathful State' }, order: 1, kind: 'state', description: { it: "Furia latente scatenata dal pianto di Goku neonato, presente fin dalla nascita.", en: "A latent fury triggered by baby Goku's crying, present since birth." }, arcId: 'arc-dbz-broly-movie' },
+      { id: 'tr-broly-wrathful', name: 'Wrathful state', localizedName: { it: 'Stato Ikari (Wrathful)', en: 'Wrathful State' }, order: 1, kind: 'state', description: { it: "Furia latente presente fin dalla nascita, che esplode quando Broly perde il controllo nello scontro con Vegeta.", en: "A latent fury present since birth, which erupts when Broly loses control in the fight against Vegeta." }, arcId: 'arc-dbz-broly-movie' },
       { id: 'tr-broly-ssj', name: 'Super Saiyan', order: 2, kind: 'transformation', arcId: 'arc-dbz-broly-movie' },
       { id: 'tr-broly-lssj', name: 'Super Saiyan Full Power', localizedName: { it: 'Super Saiyan Leggendario (Full Power)', en: 'Legendary Super Saiyan (Full Power)' }, order: 3, kind: 'transformation', description: { it: "La forma leggendaria dai capelli verdi e massa muscolare enorme, temuta in tutto l'universo.", en: "The legendary form with green hair and enormous muscle mass, feared throughout the universe." }, arcId: 'arc-dbz-broly-movie' },
     ],
@@ -67,7 +67,7 @@ export const dragonballCharactersBatch1: Character[] = [
     nationId: 'nation-dbz-planet-vegeta',
     race: 'saiyan',
     transformations: [
-      { id: 'tr-bardock-ssj', name: 'Super Saiyan', order: 1, kind: 'transformation', description: { it: 'Trasformazione lampo mostrata nello speciale TV che lo vede opporsi a Freezer.', en: 'A brief transformation shown in the TV special where he stands against Frieza.' }, canonStatus: 'anime_only' },
+      { id: 'tr-bardock-ssj', name: 'Super Saiyan', order: 1, kind: 'transformation', description: { it: 'Trasformazione lampo mostrata nell\'OAV dedicato a Bardack (Episode of Bardock), che lo vede contro Chilled, antenato di Freezer.', en: 'A brief transformation shown in Episode of Bardock, where he faces Chilled, Frieza\'s ancestor.' }, canonStatus: 'anime_only' },
     ],
     family: ['char-dbz-goku', 'char-dbz-raditz'],
     enemies: ['char-dbz-frieza'],

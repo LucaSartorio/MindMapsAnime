@@ -29,8 +29,8 @@ const t = (
 export const dragonballJutsuExtra: Jutsu[] = [
   /* ============================== ONDE ENERGETICHE ============================== */
   t('kikoho', 'Tri-Beam', 'energy_blast', ['tenshinhan'], {
-    it: "Il colpo di Tensing: le mani formano un triangolo attraverso cui viene sparata un'onda devastante che consuma la vita stessa di chi la usa. Contro Cell, Tensing la lancia senza sosta per guadagnare tempo a C-18 e C-17, fino a crollare stremato.",
-    en: "Tien's blow: his hands form a triangle through which a devastating wave is fired, consuming the user's very life. Against Cell, Tien fires it again and again to buy time for Androids 18 and 17, until he collapses exhausted.",
+    it: "Il colpo di Tensing: le mani formano un triangolo attraverso cui viene sparata un'onda devastante che consuma la vita stessa di chi la usa. Contro Cell, Tensing la lancia senza sosta per dare a C-18 il tempo di fuggire, fino a crollare stremato.",
+    en: "Tien's blow: his hands form a triangle through which a devastating wave is fired, consuming the user's very life. Against Cell, Tien fires it again and again to buy time for Android 18 to flee, until he collapses exhausted.",
   }, { localizedName: { it: 'Kikoho', en: 'Tri-Beam' }, japaneseName: '気功砲', tags: ['scuola-della-gru'] }),
   t('dodonpa', 'Dodon Ray', 'energy_blast', ['tao-pai-pai', 'tenshinhan', 'crane-hermit'], {
     it: "Il raggio sottile e letale della Scuola della Gru, sparato dalla punta del dito. Tao Pai Pai lo usa per battere Goku la prima volta; Tensing lo impara dal suo maestro.",
@@ -73,17 +73,17 @@ export const dragonballJutsuExtra: Jutsu[] = [
     en: "Gotenks blows small ghosts that look like him out of his mouth: they explode on contact with the target. Against Super Buu he creates a whole army of them, which mocks the enemy before blowing itself up.",
   }, { localizedName: { it: 'Super attacco kamikaze dei fantasmi', en: 'Super Ghost Kamikaze Attack' }, japaneseName: 'スーパーゴーストカミカゼアタック', tags: ['majin-bu'] }),
   t('chocolate-beam', 'Transfiguration Beam', 'energy_blast', ['majin-buu', 'kid-buu'], {
-    it: "Il raggio che parte dall'antenna sulla testa di Majin Bu e trasforma qualsiasi cosa in un dolce — cioccolata, biscotti, caramelle — che poi Bu mangia. Così Bu Malvagio trasforma in cioccolato gran parte degli abitanti della Terra.",
-    en: "The beam fired from the antenna on Majin Buu's head that turns anything into a sweet — chocolate, cookies, candy — which Buu then eats. This is how Evil Buu turns much of Earth's population into chocolate.",
+    it: "Il raggio che parte dall'antenna sulla testa di Majin Bu e trasforma qualsiasi cosa in un dolce — cioccolata, biscotti, caramelle — che poi Bu mangia. Così Bu Malvagio trasforma il Bu buono in cioccolato e lo mangia, diventando Super Bu.",
+    en: "The beam fired from the antenna on Majin Buu's head that turns anything into a sweet — chocolate, cookies, candy — which Buu then eats. This is how Evil Buu turns the good Buu into a chocolate and eats him, becoming Super Buu.",
   }, { localizedName: { it: 'Raggio trasformante', en: 'Transfiguration Beam' }, japaneseName: 'お菓子光線', tags: ['majin-bu'] }),
   t('recoome-eraser-gun', 'Recoome Eraser Gun', 'energy_blast', ['recoome'], {
     it: "La fiammata d'energia che Recoom spara dalla bocca dopo una lunga e ridicola posa. La sfoggia su Namecc nello scontro con Vegeta, Gohan e Crilin, prima dell'arrivo di Goku.",
     en: "The energy blast Recoome fires from his mouth after a long, ridiculous pose. He shows it off on Namek in the fight with Vegeta, Gohan and Krillin, before Goku arrives.",
-  }, { longDescription: { it: "Recoom è il colosso della Forze Speciali Ginew, famoso per le pose da supereroe che precedono ogni attacco.", en: "Recoome is the Ginyu Force's giant, famous for the superhero poses that precede every attack." }, localizedName: { it: 'Recoom Eraser Gun', en: 'Recoome Eraser Gun' }, japaneseName: 'リクームイレイザーガン', tags: ['squadra-ginyu'] }),
+  }, { longDescription: { it: "Recoom è il colosso delle Forze Speciali Ginew, famoso per le pose da supereroe che precedono ogni attacco.", en: "Recoome is the Ginyu Force's giant, famous for the superhero poses that precede every attack." }, localizedName: { it: 'Recoom Eraser Gun', en: 'Recoome Eraser Gun' }, japaneseName: 'リクームイレイザーガン', tags: ['squadra-ginyu'] }),
   t('crusher-ball', 'Crusher Ball', 'energy_blast', ['jeice'], {
-    it: "Una sfera di energia rossa che Jeeth della Forze Speciali Ginew lancia contro gli avversari. La usa su Namecc combattendo al fianco di Butter contro i Guerrieri Z.",
+    it: "Una sfera di energia rossa che Jeeth delle Forze Speciali Ginew lancia contro gli avversari. La usa su Namecc combattendo al fianco di Butter contro i Guerrieri Z.",
     en: "A red energy sphere that the Ginyu Force's Jeice hurls at his opponents. He uses it on Namek fighting alongside Burter against the Z Fighters.",
-  }, { longDescription: { it: "Jeeth, il membro dalla pelle rossa della Forze Speciali Ginew, combatte quasi sempre in coppia con Butter.", en: "Jeice, the Ginyu Force's red-skinned member, almost always fights in tandem with Burter." }, localizedName: { it: 'Crusher Ball', en: 'Crusher Ball' }, japaneseName: 'クラッシャーボール', tags: ['squadra-ginyu'] }),
+  }, { longDescription: { it: "Jeeth, il membro dalla pelle rossa delle Forze Speciali Ginew, combatte quasi sempre in coppia con Butter.", en: "Jeice, the Ginyu Force's red-skinned member, almost always fights in tandem with Burter." }, localizedName: { it: 'Crusher Ball', en: 'Crusher Ball' }, japaneseName: 'クラッシャーボール', tags: ['squadra-ginyu'] }),
   t('death-saucer', 'Death Saucer', 'energy_blast', ['frieza'], {
     it: "La versione di Freezer del Kienzan di Crilin: dischi d'energia taglienti che inseguono il bersaglio. Nello scontro finale su Namecc il disco torna indietro e taglia in due Freezer stesso.",
     en: "Frieza's version of Krillin's Destructo Disc: cutting energy discs that home in on the target. In the final fight on Namek the disc comes back and cuts Frieza himself in two.",
@@ -114,7 +114,7 @@ export const dragonballJutsuExtra: Jutsu[] = [
     en: "Moving so fast that you leave an afterimage behind for the opponent to strike at. Master Roshi uses it at the 21st Tournament and Goku copies it at once; it becomes common among the fastest fighters.",
   }, { localizedName: { it: 'Zanzoken', en: 'Afterimage Technique' }, japaneseName: '残像拳' }),
   t('bukujutsu', 'Flight', 'movement', ['goku', 'krillin', 'gohan', 'videl', 'tenshinhan', 'piccolo', 'goten'], {
-    it: "Il Bukujutsu, la tecnica del volo con l'energia: Tensing e Chaozu la usano già al 22° Torneo, Goku la impara al Santuario di Dio. Gohan la insegna a Videl prima del 25° Torneo, e lei la passa a Goten.",
+    it: "Il Bukujutsu, la tecnica del volo con l'energia: Tensing e Jiaozi la usano già al 22° Torneo, Goku la impara al Santuario di Dio. Gohan la insegna a Videl prima del 25° Torneo, e lei la passa a Goten.",
     en: "Bukujutsu, the technique of flying with energy: Tien and Chiaotzu already use it at the 22nd Tournament, Goku learns it on Kami's Lookout. Gohan teaches it to Videl before the 25th Tournament, and Goten picks it up too.",
   }, { localizedName: { it: 'Volo (Bukujutsu)', en: 'Flight' }, japaneseName: '舞空術' }),
   t('ki-sense', 'Ki Sense', 'support', ['goku', 'krillin', 'piccolo', 'vegeta', 'gohan', 'tenshinhan'], {
@@ -122,7 +122,7 @@ export const dragonballJutsuExtra: Jutsu[] = [
     en: "The ability to sense others' energy without a scouter. The Z Fighters use it to hide from the Saiyans, who rely on the devices; Vegeta learns it on Namek.",
   }, { localizedName: { it: "Percezione dell'aura", en: 'Ki Sense' } }),
   t('telekinesis', 'Telekinesis', 'support', ['chaozu'], {
-    it: "Il potere psichico di Chaozu, che può immobilizzare gli avversari o interferire con i loro movimenti. Al 22° Torneo lo usa contro Crilin; contro Nappa sceglie invece di sacrificarsi facendosi esplodere sulla sua schiena.",
+    it: "Il potere psichico di Jiaozi, che può immobilizzare gli avversari o interferire con i loro movimenti. Al 22° Torneo lo usa contro Crilin; contro Nappa sceglie invece di sacrificarsi facendosi esplodere sulla sua schiena.",
     en: "Chiaotzu's psychic power, able to immobilise opponents or interfere with their movements. At the 22nd Tournament he uses it on Krillin; against Nappa he instead sacrifices himself by exploding on his back.",
   }, { localizedName: { it: 'Telecinesi', en: 'Telekinesis' }, japaneseName: '超能力', tags: ['scuola-della-gru'] }),
   t('regeneration', 'Regeneration', 'support', ['piccolo', 'cell', 'majin-buu', 'kid-buu', 'nail'], {
@@ -138,7 +138,7 @@ export const dragonballJutsuExtra: Jutsu[] = [
     en: "The Namekian magic that creates objects out of nothing: Piccolo uses it to dress Gohan in his own fighting outfit and to make the weighted cape and turban he trains in.",
   }, { localizedName: { it: 'Materializzazione', en: 'Magic Materialization' }, japaneseName: '魔術' }),
   t('self-destruct', 'Self-Destruct', 'support', ['chaozu', 'android-16'], {
-    it: "Il sacrificio estremo: farsi esplodere aggrappati al nemico. Chaozu lo fa sulla schiena di Nappa, che però sopravvive; C-16 vorrebbe farlo su Cell, ma Bulma gli ha rimosso la bomba durante la riparazione.",
+    it: "Il sacrificio estremo: farsi esplodere aggrappati al nemico. Jiaozi lo fa sulla schiena di Nappa, che però sopravvive; C-16 vorrebbe farlo su Cell, ma Bulma gli ha rimosso la bomba durante la riparazione.",
     en: "The ultimate sacrifice: blowing yourself up while clinging to the enemy. Chiaotzu does it on Nappa's back, who survives anyway; Android 16 tries it on Cell, but Bulma had removed his bomb during repairs.",
   }, { localizedName: { it: 'Autodistruzione', en: 'Self-Destruct' }, japaneseName: '自爆' }),
   t('time-rewind', 'Temporal Do-Over', 'divine', ['whis'], {
@@ -152,7 +152,7 @@ export const dragonballJutsuExtra: Jutsu[] = [
   t('energy-drain-magic', 'Energy Absorption Magic', 'divine', ['moro'], {
     it: "La magia di Moro, il Divoratore di pianeti: prosciuga l'energia vitale di interi mondi e quella dei suoi avversari per accrescere la propria forza. Prosciuga così il Nuovo Namecc e indebolisce Goku e Vegeta.",
     en: "The magic of Moro, the Planet Eater: he drains the life energy of entire worlds and of his opponents to increase his own strength. This is how he drains New Namek and weakens Goku and Vegeta.",
-  }, { longDescription: { it: "Moro, sigillato milioni di anni prima dal Gran Sacerdote, aveva perso la magia: torna a usarla dopo l'evasione.", en: "Moro, sealed long ago by the Grand Minister, had lost his magic: he uses it again after his escape." }, localizedName: { it: "Magia dell'assorbimento", en: 'Energy Absorption Magic' }, tags: ['moro'] }),
+  }, { longDescription: { it: "La magia di Moro era stata sigillata molto tempo prima dal Vecchio Kaiōshin: la recupera con il primo desiderio a Porunga dopo l'evasione.", en: "Moro's magic had been sealed long ago by the Elder Kai: he gets it back with his first wish to Porunga after his escape." }, localizedName: { it: "Magia dell'assorbimento", en: 'Energy Absorption Magic' }, tags: ['moro'] }),
   /* ============================== TRASFORMAZIONI ============================== */
   t('great-ape', 'Great Ape', 'transformation', ['goku', 'vegeta', 'gohan', 'raditz', 'nappa', 'bardock'], {
     it: "La trasformazione in scimmione gigante (Ōzaru) che i Saiyan con la coda subiscono guardando la luna piena e moltiplica per dieci la loro forza. Goku bambino uccide così il nonno Gohan senza saperlo; Vegeta crea una luna artificiale contro Goku.",
@@ -199,7 +199,7 @@ export const dragonballJutsuExtra: Jutsu[] = [
     en: "The orange, giant form Piccolo gains in Super Hero by asking Shenron, through Dende, to unlock his potential. With it he holds his own against the Gammas and can grow to enormous size.",
   }, { longDescription: { it: "È la prima vera trasformazione di Piccolo in tutta la serie.", en: "It is Piccolo's first true transformation in the entire series." }, localizedName: { it: 'Piccolo arancione', en: 'Orange Piccolo' }, japaneseName: 'オレンジピッコロ', canonStatus: 'movie', tags: ['trasformazione', 'super-hero'] }),
   t('potential-unleashed', 'Potential Unleashed', 'power_up', ['gohan', 'krillin'], {
-    it: "Lo sblocco del potenziale latente: il Grande Anziano Guru lo fa a Gohan e Crilin su Namecc imponendo le mani sulla testa; il Kaiōshin anziano, con un rituale di molte ore, risveglia in Gohan il potere che lo rende «Ultimate Gohan».",
+    it: "Lo sblocco del potenziale latente: il Capo Anziano Guru lo fa a Gohan e Crilin su Namecc imponendo le mani sulla testa; il Kaiōshin anziano, con un rituale di molte ore, risveglia in Gohan il potere che lo rende «Ultimate Gohan».",
     en: "Unlocking latent potential: Grand Elder Guru does it for Gohan and Krillin on Namek by laying hands on their heads; Elder Kai, with a ritual lasting many hours, awakens in Gohan the power that makes him 'Ultimate Gohan'.",
   }, { localizedName: { it: 'Sblocco del potenziale', en: 'Potential Unleashed' }, japaneseName: '潜在能力解放', tags: ['namecc', 'majin-bu'] }),
   /* ================================== OGGETTI ================================== */

@@ -132,7 +132,7 @@ export const dragonballFactions: Faction[] = [
     name: 'Angel',
     localizedName: { it: 'Angelo', en: 'Angel' },
     description: {
-      it: 'Assistenti e maestri dei Dei della Distruzione, al servizio del Gran Sacerdote: neutrali per giuramento, di gran lunga i più forti di ogni universo.',
+      it: 'Assistenti e maestri degli Dei della Distruzione, al servizio del Gran Sacerdote: neutrali per giuramento, di gran lunga i più forti di ogni universo.',
       en: "Attendants and teachers of the Gods of Destruction, serving the Grand Priest: sworn to neutrality, and by far the strongest beings of any universe.",
     },
     characterIds: ['char-dbz-whis', 'char-dbz-vados'],
@@ -148,7 +148,7 @@ export const dragonballFactions: Faction[] = [
     name: 'Kaiōshin',
     localizedName: { it: 'Kaiōshin', en: 'Supreme Kai' },
     description: {
-      it: "Dei della creazione, custodi dell'universo e contrappeso dei Dei della Distruzione: vivono nel Mondo Sacro dei Kaiōshin.",
+      it: "Dei della creazione, custodi dell'universo e contrappeso degli Dei della Distruzione: vivono nel Mondo Sacro dei Kaiōshin.",
       en: 'Gods of creation, guardians of the universe and counterweight to the Gods of Destruction: they live in the Sacred World of the Kais.',
     },
     characterIds: ['char-dbz-zamasu', 'char-dbz-goku-black'],

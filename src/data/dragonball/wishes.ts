@@ -92,7 +92,7 @@ export const dragonballWishes: TimelineEvent[] = [
     id: 'evt-dbz-wish-frieza-victims',
     title: { it: 'Shenron riporta in vita le vittime di Freezer', en: "Shenron revives Frieza's victims" },
     description: {
-      it: "Con il Supremo di nuovo in vita grazie a Porunga, le Sfere della Terra tornano attive. Mentre Goku combatte Freezer su Namecc, Shenron riporta in vita tutti coloro che Freezer e i suoi uomini avevano ucciso: anche Vegeta, Dende e il Grande Anziano Guru, e con lui le Sfere di Namecc.",
+      it: "Con il Supremo di nuovo in vita grazie a Porunga, le Sfere della Terra tornano attive. Mentre Goku combatte Freezer su Namecc, Shenron riporta in vita tutti coloro che Freezer e i suoi uomini avevano ucciso: anche Vegeta, Dende e il Capo Anziano Guru, e con lui le Sfere di Namecc.",
       en: "With Kami alive again thanks to Porunga, Earth's Dragon Balls are active once more. While Goku fights Frieza on Namek, Shenron brings back everyone Frieza and his men had killed: Vegeta, Dende and Grand Elder Guru too, and with him Namek's Dragon Balls.",
     },
     period: DBZ,

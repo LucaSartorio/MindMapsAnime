@@ -47,7 +47,7 @@ export const dragonballEncyclopediaJutsu: Jutsu[] = [
     "The original balls, as big as planets and scattered across Universes 6 and 7: they summon Super Shenron, who can grant any wish. They are the prize of the tournament between the two universes and of the Tournament of Power, where Android 17 uses them to bring back the erased universes.",
   ), { localizedName: L('Super Sfere del Drago', 'Super Dragon Balls'), japaneseName: '超ドラゴンボール', tags: ['oggetto', 'sfere-del-drago'] }),
   j('namekian-dragon-balls', 'Namekian Dragon Balls', 'item', ['porunga', 'guru', 'dende'], L(
-    "Le Sfere del Drago di Namecc, grandi come palloni, create dal Grande Anziano Guru: evocano Porunga, che esaudisce tre desideri ma va chiamato nella lingua di Namecc. Possono riportare in vita la stessa persona più volte, e per questo diventano decisive dopo Freezer e contro Majin Bu.",
+    "Le Sfere del Drago di Namecc, grandi come palloni, create dal Capo Anziano Guru: evocano Porunga, che esaudisce tre desideri ma va chiamato nella lingua di Namecc. Possono riportare in vita la stessa persona più volte, e per questo diventano decisive dopo Freezer e contro Majin Bu.",
     "Namek's Dragon Balls, as big as footballs, created by Grand Elder Guru: they summon Porunga, who grants three wishes but must be addressed in the Namekian language. They can revive the same person more than once, which makes them decisive after Frieza and against Majin Buu.",
   ), { localizedName: L('Sfere del Drago di Namecc', 'Namekian Dragon Balls'), japaneseName: 'ナメック星のドラゴンボール', tags: ['oggetto', 'sfere-del-drago', 'namecc'] }),
   j('black-star-dragon-balls', 'Black Star Dragon Balls', 'item', ['pilaf', 'goku', 'gt-pan', 'trunks'], L(
@@ -117,8 +117,8 @@ export const dragonballEncyclopediaJutsu: Jutsu[] = [
     "Cell grows by absorbing: first a larva, then the imperfect form that drains humans with its tail; absorbing Android 17 makes him semi-perfect and, with Android 18, perfect. Regenerated from his core after self-destructing, he returns as Super Perfect Cell, stronger and able to use Instant Transmission.",
   ), { localizedName: L('Stadi di Cell', "Cell's Forms"), japaneseName: 'セルの形態', tags: ['cell'] }),
   j('buu-forms', "Buu's Forms", 'transformation', ['majin-buu', 'kid-buu'], L(
-    "Majin Bu cambia forma in base a ciò che assorbe e alla sua parte malvagia: dal Bu grasso e infantile si separa il Bu malvagio, che assorbe il grasso e diventa Super Bu; assorbendo Gotenks, Piccolo e Gohan cambia ancora, finché, perse le persone assorbite, torna alla forma originale, Kid Bu.",
-    "Majin Buu changes form depending on what he absorbs and on his evil side: from the fat, childish Buu splits off Evil Buu, who absorbs the fat one and becomes Super Buu; absorbing Gotenks, Piccolo and Gohan changes him again, until, having lost those he absorbed, he returns to his original form, Kid Buu.",
+    "Majin Bu cambia forma in base a ciò che assorbe e alla sua parte malvagia: dal Bu grasso e infantile si separa il Bu malvagio, che assorbe il grasso e diventa Super Bu; assorbendo Gotenks, Piccolo e Gohan cambia ancora, finché, quando gli viene strappato il Bu buono, torna alla forma originale, Kid Bu.",
+    "Majin Buu changes form depending on what he absorbs and on his evil side: from the fat, childish Buu splits off Evil Buu, who absorbs the fat one and becomes Super Buu; absorbing Gotenks, Piccolo and Gohan changes him again, until, once the good Buu is pulled out of him, he reverts to his original form, Kid Buu.",
   ), { localizedName: L('Forme di Majin Bu', "Buu's Forms"), japaneseName: '魔人ブウの形態', tags: ['majin-bu'] }),
   j('namekian-giant-form', 'Giant Form', 'transformation', ['piccolo', 'lord-slug', 'king-piccolo'], L(
     "La capacità dei Namecciani di ingrandire il proprio corpo fino a dimensioni colossali. Il Grande Mago Piccolo la usa contro Goku; Piccolo la sfrutta più volte, e la riprende in Super Hero, dove diventa anche Piccolo Arancione gigante contro Cell Max.",
@@ -155,15 +155,15 @@ export const dragonballEncyclopediaJutsu: Jutsu[] = [
     "The spherical energy barrier Android 17 uses to repel any blow: he uses it against Piccolo and, years later, in the Tournament of Power, where he expands it to protect his teammates and holds out to the end. Cell inherits it from Android 17's cells.",
   ), { localizedName: L('Barriera', 'Barrier'), japaneseName: 'バリアー', tags: ['cyborg', 'torneo-del-potere'] }),
   j('hells-flash', "Hell's Flash", 'energy_blast', ['android-16'], L(
-    "L'attacco di C-16: si stacca gli avambracci e spara dai cannoni nascosti nelle braccia un'enorme onda di energia. Lo usa contro Cell ai Cell Games, senza riuscire a fermarlo.",
-    "Android 16's attack: he detaches his forearms and fires a huge energy wave from the cannons hidden in his arms. He uses it against Cell at the Cell Games, without managing to stop him.",
+    "L'attacco di C-16: si stacca gli avambracci e spara dai cannoni nascosti nelle braccia un'enorme onda di energia. Lo usa contro Cell semi-perfetto, senza riuscire a fermarlo.",
+    "Android 16's attack: he detaches his forearms and fires a huge energy wave from the cannons hidden in his arms. He uses it against Semi-Perfect Cell, without managing to stop him.",
   ), { localizedName: L('Hell Flash', "Hell's Flash"), japaneseName: 'ヘルズフラッシュ', tags: ['cyborg', 'cell-games'] }),
   j('eraser-cannon', 'Eraser Cannon', 'energy_blast', ['broly'], L(
     "La sfera di energia verde che Broly lancia a una mano, capace di distruggere tutto ciò che incontra. È uno dei suoi colpi caratteristici, sia nei film degli anni Novanta sia in Dragon Ball Super: Broly.",
     "The green energy sphere Broly throws one-handed, able to destroy everything in its path. It is one of his signature blows, both in the 1990s films and in Dragon Ball Super: Broly.",
   ), { localizedName: L('Eraser Cannon', 'Eraser Cannon'), japaneseName: 'イレイザーキャノン', tags: ['broly'] }),
   j('petrifying-spit', 'Petrifying Spit', 'support', ['dabura'], L(
-    "Lo sputo di Darbula, re del Regno dei Demoni: chi ne viene colpito si trasforma in pietra. Così Darbula pietrifica Piccolo e Crilin a bordo dell'astronave di Babidi; tornano normali solo quando Darbula muore.",
+    "Lo sputo di Dabura, re del Regno dei Demoni: chi ne viene colpito si trasforma in pietra. Così Dabura pietrifica Piccolo e Crilin a bordo dell'astronave di Babidi; tornano normali solo quando Dabura muore.",
     "The spit of Dabura, king of the Demon Realm: whoever it hits turns to stone. That is how Dabura petrifies Piccolo and Krillin aboard Babidi's spaceship; they return to normal only when Dabura dies.",
   ), { localizedName: L('Sputo pietrificante', 'Petrifying Spit'), japaneseName: '石化の唾', tags: ['majin-bu', 'darbula'] }),
 ];
@@ -246,7 +246,7 @@ export const dragonballEncyclopediaCharacters: Character[] = [
     arcIds: ['arc-dbz-red-ribbon'],
     locationIds: ['loc-dbz-muscle-tower', 'loc-dbz-jingle-village'],
     shortDescription: L(
-      "Il gigantesco cyborg Frankenstein del Dr. Gero, tenuto all'ultimo piano della Torre Muscolo. È buono e non vuole combattere: Goku lo libera dal ricatto del Generale White e i due diventano amici; Hatchan resta poi a vivere nel villaggio di Jingle.",
+      "Il gigantesco cyborg Frankenstein del Dottor Gelo, tenuto all'ultimo piano della Torre Muscolo. È buono e non vuole combattere: Goku lo libera dal ricatto del Generale White e i due diventano amici; Hatchan resta poi a vivere nel villaggio di Jingle.",
       "Dr. Gero's giant Frankenstein-like cyborg, kept on the top floor of Muscle Tower. He is kind and doesn't want to fight: Goku frees him from General White's blackmail and the two become friends; Eighter then stays to live in Jingle Village.",
     ),
     tags: ['red-ribbon', 'torre-muscolo', 'cyborg'],
@@ -311,7 +311,7 @@ export const dragonballEncyclopediaCharacters: Character[] = [
     race: 'demon',
     arcIds: ['arc-dbz-king-piccolo'],
     shortDescription: L(
-      "Il figlio demone più massiccio del Grande Mago Piccolo, generato per affrontare Goku e Tenshinhan nella battaglia finale. Goku, potenziato dall'acqua divina, lo uccide con un solo colpo.",
+      "Il figlio demone più massiccio del Grande Mago Piccolo, generato per affrontare Goku e Tensing nella battaglia finale. Goku, potenziato dall'acqua divina, lo uccide con un solo colpo.",
       "King Piccolo's most massive demon son, spawned to face Goku and Tien in the final battle. Goku, empowered by the divine water, kills him with a single blow.",
     ),
     status: 'deceased',
@@ -507,9 +507,9 @@ export const dragonballEncyclopediaEvents: TimelineEvent[] = [
   }),
   e({
     id: 'evt-dbz-dabura-killed',
-    title: L('Majin Bu trasforma Darbula in un biscotto', 'Majin Buu turns Dabura into a cookie'),
+    title: L('Majin Bu trasforma Dabura in un biscotto', 'Majin Buu turns Dabura into a cookie'),
     description: L(
-      "Appena risvegliato, Majin Bu non obbedisce a nessuno. Quando Darbula lo attacca, Bu lo trasforma in un biscotto con il suo raggio e lo mangia: con la sua morte Piccolo e Crilin, pietrificati dal suo sputo, tornano normali.",
+      "Appena risvegliato, Majin Bu non obbedisce a nessuno. Quando Dabura lo attacca, Bu lo trasforma in un biscotto con il suo raggio e lo mangia: con la sua morte Piccolo e Crilin, pietrificati dal suo sputo, tornano normali.",
       "Freshly awakened, Majin Buu obeys no one. When Dabura attacks him, Buu turns him into a cookie with his beam and eats him: with his death Piccolo and Krillin, petrified by his spit, return to normal.",
     ),
     period: DBZ,
