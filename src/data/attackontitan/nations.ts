@@ -91,7 +91,7 @@ export const aotNations: Nation[] = [
       en: 'The power that overthrew the Eldian Empire in the Great Titan War and now dominates the mainland thanks to the Titans it controls: seven of the Nine, entrusted to Eldian Warriors raised in its internment zones.',
     },
     descriptionLong: {
-      it: "Marley si racconta come la vittima di duemila anni di oppressione eldiana, salvata dall'eroe Helos — un mito costruito dalla famiglia Tybur, che in realtà aveva tradito l'Impero insieme a Karl Fritz. Gli Eldiani del continente vivono in zone d'internamento con fasce al braccio; i dissidenti vengono trasformati in Giganti puri sull'isola di Paradis. La sconfitta di Fort Slava e l'arrivo delle armi anti-Gigante convincono Marley che il tempo dei Giganti sta finendo: per questo vuole il Fondatore e le risorse di Paradis.",
+      it: "Marley si racconta come la vittima di duemila anni di oppressione eldiana, salvata dall'eroe Helos — un mito costruito dalla famiglia Tybur, che in realtà aveva tradito l'Impero insieme a Karl Fritz. Gli Eldiani del continente vivono in zone d'internamento con fasce al braccio; i dissidenti vengono trasformati in Giganti puri sull'isola di Paradis. La costosa battaglia di Fort Slava e l'arrivo delle armi anti-Gigante convincono Marley che il tempo dei Giganti sta finendo: per questo vuole il Fondatore e le risorse di Paradis.",
       en: "Marley tells itself it is the victim of two thousand years of Eldian oppression, saved by the hero Helos — a myth built by the Tybur family, who had in fact betrayed the Empire together with Karl Fritz. Mainland Eldians live in internment zones wearing armbands; dissidents are turned into pure Titans on Paradis Island. The costly battle of Fort Slava and the arrival of anti-Titan weapons convince Marley that the age of Titans is ending: that is why it wants the Founder and Paradis's resources.",
     },
     capitalLocationId: 'loc-aot-liberio',
@@ -120,8 +120,8 @@ export const aotNations: Nation[] = [
     japaneseName: 'ヒィズル国',
     type: 'minor_nation',
     description: {
-      it: "La nazione dell'Oriente un tempo alleata dell'Impero eldiano, dove si rifugiò la famiglia Azumabito: la loro discendente Mikasa porta il loro stemma. Dopo l'850 Hizuru offre a Paradis un'alleanza per mettere le mani sulle sue risorse.",
-      en: 'The Eastern nation once allied with the Eldian Empire, where the Azumabito family took refuge: their descendant Mikasa bears their crest. After 850 Hizuru offers Paradis an alliance to get its hands on the island\'s resources.',
+      it: "La nazione dell'Oriente un tempo alleata dell'Impero eldiano, patria della famiglia Azumabito: la loro discendente Mikasa porta il loro stemma. Dopo l'850 Hizuru offre a Paradis un'alleanza per mettere le mani sulle sue risorse.",
+      en: 'The Eastern nation once allied with the Eldian Empire, home of the Azumabito family: their descendant Mikasa bears their crest. After 850 Hizuru offers Paradis an alliance to get its hands on the island\'s resources.',
     },
     labelPosition: { x: 1770, y: 680 },
     color: AOT_COLORS.hizuru,

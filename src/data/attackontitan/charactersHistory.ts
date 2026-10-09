@@ -162,7 +162,7 @@ export const aotCharactersHistory: Character[] = [
     tags: ['reiss', 'fondatore'],
   }),
   ch({ id: 'char-aot-alma', name: 'Alma', japaneseName: 'アルマ', importance: 'minor', role: ['civilian'], ninjaRank: 'civilian', race: 'eldian', gender: 'female', family: ['char-aot-historia', 'char-aot-rod-reiss'], enemies: ['char-aot-kenny'],
-    shortDescription: { it: "La madre di Historia, una serva del feudo Reiss che non ha mai amato la figlia: viene uccisa dagli uomini di Kenny quando la relazione con Rod rischia di diventare pubblica.", en: "Historia's mother, a servant on the Reiss estate who never loved her daughter: she is killed by Kenny's men when her affair with Rod threatens to become public." }, status: 'deceased', tags: ['reiss', 'historia'] }),
+    shortDescription: { it: "La madre di Historia, una serva del feudo Reiss che non ha mai amato la figlia: viene uccisa da Kenny quando la relazione con Rod rischia di diventare pubblica.", en: "Historia's mother, a servant on the Reiss estate who never loved her daughter: she is killed by Kenny when her affair with Rod threatens to become public." }, status: 'deceased', tags: ['reiss', 'historia'] }),
   ch({
     id: 'char-aot-kenny',
     name: 'Kenny Ackerman',
@@ -187,8 +187,8 @@ export const aotCharactersHistory: Character[] = [
       { targetCharacterId: 'char-aot-levi', label: { it: 'Il nipote che ha cresciuto e abbandonato', en: 'The nephew he raised and abandoned' } },
     ],
     shortDescription: {
-      it: "Lo «Squartatore» che uccise decine di gendarmi, poi capo della squadra anti-uomo della Gendarmeria al servizio dei Reiss: cresce Levi e lo abbandona. Ferito a morte, gli lascia il siero invece di usarlo.",
-      en: "The 'Ripper' who killed dozens of military policemen, later head of the Military Police's anti-personnel squad serving the Reiss family: he raises Levi and abandons him. Mortally wounded, he leaves him the serum instead of using it.",
+      it: "Lo «Squartatore» che uccise più di cento gendarmi, poi capo della squadra anti-uomo della Gendarmeria al servizio dei Reiss: cresce Levi e lo abbandona. Ferito a morte, gli lascia il siero invece di usarlo.",
+      en: "The 'Ripper' who killed over a hundred military policemen, later head of the Military Police's anti-personnel squad serving the Reiss family: he raises Levi and abandons him. Mortally wounded, he leaves him the serum instead of using it.",
     },
     longDescription: {
       it: "Gli Ackerman erano perseguitati dalla corona perché la loro mente sfuggiva al potere del Fondatore. Kenny vuole vendicarsi e cerca di uccidere Uri Reiss, ma Uri lo perdona e Kenny gli giura fedeltà. Morto Uri, vuole capire che cosa avesse visto lui nel potere del Fondatore e progetta di prenderlo per sé. Nella cappella dei Reiss il suo sogno crolla; tra le macerie, dice a Levi che tutti sono «schiavi di qualcosa».",

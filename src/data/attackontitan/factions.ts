@@ -30,8 +30,8 @@ export const aotFactions: Faction[] = [
       en: 'The military branch that ventures beyond the Walls to explore and reclaim the outside world: its emblem is the Wings of Freedom. For decades it is seen as a waste of lives and taxes; it becomes the heart of humanity\'s fight.',
     },
     longDescription: {
-      it: "Guidato in successione da Keith Shadis (12° comandante), Erwin Smith (13°), Hange Zoë (14°) e Armin Arlert (15°). Erwin trasforma il corpo con la Formazione a lungo raggio, riduce le perdite e lo porta a riprendere Wall Maria al prezzo della propria vita. Quattro anni dopo, i pochi superstiti raggiungono il mare, sbarcano in Marley e finiscono per combattere contro Eren stesso per salvare il mondo.",
-      en: 'Led in turn by Keith Shadis (12th commander), Erwin Smith (13th), Hange Zoë (14th) and Armin Arlert (15th). Erwin transforms the corps with the Long-Distance Scouting Formation, reduces losses and leads it to retake Wall Maria at the cost of his own life. Four years later the few survivors reach the sea, land in Marley and end up fighting Eren himself to save the world.',
+      it: "Guidato in successione da Keith Shadis (12° comandante), Erwin Smith (13°), Hange Zoë (14°) e Armin Arlert (15°). Erwin trasforma il corpo con la Formazione a lungo raggio, riduce le perdite e lo porta a riprendere Wall Maria al prezzo della propria vita. Un anno dopo i pochi superstiti raggiungono il mare; poi sbarcano in Marley e finiscono per combattere contro Eren stesso per salvare il mondo.",
+      en: 'Led in turn by Keith Shadis (12th commander), Erwin Smith (13th), Hange Zoë (14th) and Armin Arlert (15th). Erwin transforms the corps with the Long-Distance Scouting Formation, reduces losses and leads it to retake Wall Maria at the cost of his own life. A year later the few survivors reach the sea; they then land in Marley and end up fighting Eren himself to save the world.',
     },
     jutsuIds: ['tit-aot-odm-gear', 'tit-aot-ultrahard-blades', 'tit-aot-long-range-formation', 'tit-aot-flare-signals', 'tit-aot-thunder-spear'],
     leaderIds: ['char-aot-shadis', 'char-aot-erwin', 'char-aot-hange', 'char-aot-armin'],

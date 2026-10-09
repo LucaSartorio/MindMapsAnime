@@ -12,7 +12,7 @@ export const aotBattles: Record<string, BattleOutcome> = {
   'evt-aot-mike-death': win(['zeke'], ['mike']),
   'evt-aot-reiner-reveal': win(['reiner', 'bertolt'], ['eren', 'mikasa'], L('Reiner e Bertolt rapiscono Eren e Ymir.', 'Reiner and Bertolt abduct Eren and Ymir.')),
   'evt-aot-eren-rescue': win(['erwin', 'armin', 'mikasa', 'jean'], ['reiner', 'bertolt']),
-  'evt-aot-coordinate-awakens': win(['eren', 'mikasa'], ['reiner', 'bertolt'], L('Il Coordinamento scaglia i Giganti puri contro i Guerrieri, che si ritirano.', 'The Coordinate hurls the pure Titans at the Warriors, who retreat.')),
+  'evt-aot-coordinate-awakens': win(['eren', 'mikasa'], ['reiner', 'bertolt'], L('La Coordinata scaglia i Giganti puri contro i Guerrieri, che si ritirano.', 'The Coordinate hurls the pure Titans at the Warriors, who retreat.')),
   'evt-aot-kenny-ambush': stop(['levi'], ['kenny']),
   'evt-aot-orvud': win(['historia', 'levi', 'eren', 'erwin', 'mikasa'], ['rod-reiss']),
   'evt-aot-armored-thunder-spears': stop(['hange', 'mikasa', 'jean', 'connie', 'sasha', 'armin'], ['reiner'], L('Reiner cade, ma Bertolt arriva dal cielo.', 'Reiner falls, but Bertolt arrives from the sky.')),

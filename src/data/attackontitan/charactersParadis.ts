@@ -500,7 +500,7 @@ export const aotCharactersParadis: Character[] = [
   }),
   ch({
     id: 'char-aot-mike',
-    name: 'Mike Zacharius',
+    name: 'Mike Zacharias',
     japaneseName: 'ミケ・ザカリアス',
     importance: 'major',
     role: ['survey_corps'],

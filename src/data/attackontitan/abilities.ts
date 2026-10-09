@@ -45,13 +45,13 @@ export const aotAbilities: Jutsu[] = [
   }, {
     japaneseName: '始祖の巨人',
     longDescription: {
-      it: "Dal 145° re in poi chi lo eredita di sangue reale subisce il «voto di rinuncia alla guerra» di Karl Fritz. Detentori noti: Karl Fritz e i suoi successori, Uri Reiss, Frieda Reiss, Grisha Yeager (che non è di sangue reale), Eren Yeager. Eren lo usa insieme a Zeke per scatenare il Boato della Terra; la sua forma finale è uno scheletro colossale alto come una montagna.",
+      it: "Dal 145° re in poi chi lo eredita di sangue reale subisce il «voto di rinuncia alla guerra» di Karl Fritz. Detentori noti: Karl Fritz e i suoi successori, Uri Reiss, Frieda Reiss, Grisha Jaeger (che non è di sangue reale), Eren Jaeger. Eren lo usa insieme a Zeke per scatenare il Boato della Terra; la sua forma finale è uno scheletro colossale alto come una montagna.",
       en: "From the 145th king onwards, whoever inherits it with royal blood is bound by Karl Fritz's 'vow renouncing war'. Known holders: Karl Fritz and his successors, Uri Reiss, Frieda Reiss, Grisha Yeager (who is not of royal blood), Eren Yeager. Eren uses it with Zeke to unleash the Rumbling; its final form is a colossal skeleton as tall as a mountain.",
     },
     tags: ['nove-giganti', 'fondatore'],
   }),
   ab('attack-titan', 'Attack Titan', 'nine_titans', PARADIS_NINE, ['kruger', 'grisha', 'eren'], {
-    it: "Il Gigante che «ha sempre lottato per la libertà»: vede i ricordi dei detentori futuri, oltre a quelli dei passati. Detentori noti: Eren Kruger, Grisha Yeager, Eren Yeager.",
+    it: "Il Gigante che «ha sempre lottato per la libertà»: vede i ricordi dei detentori futuri, oltre a quelli dei passati. Detentori noti: Eren Kruger, Grisha Jaeger, Eren Jaeger.",
     en: "The Titan that 'has always fought for freedom': it sees the memories of future holders, as well as past ones. Known holders: Eren Kruger, Grisha Yeager, Eren Yeager.",
   }, {
     japaneseName: '進撃の巨人',
@@ -95,7 +95,7 @@ export const aotAbilities: Jutsu[] = [
     tags: ['nove-giganti', 'femmina'],
   }),
   ab('beast-titan', 'Beast Titan', 'nine_titans', MARLEY_NINE, ['ksaver', 'zeke'], {
-    it: "Un Gigante dall'aspetto animale, diverso a ogni detentore: quello di Zeke è una scimmia di 17 metri dalle braccia lunghissime che lancia massi come proiettili. Detentori: Tom Ksaver, Zeke Yeager.",
+    it: "Un Gigante dall'aspetto animale, diverso a ogni detentore: quello di Zeke è una scimmia di 17 metri dalle braccia lunghissime che lancia massi come proiettili. Detentori: Tom Ksaver, Zeke Jaeger.",
     en: "A Titan of animal appearance, different with each holder: Zeke's is a 17-metre ape with very long arms that hurls boulders like shells. Holders: Tom Ksaver, Zeke Yeager.",
   }, {
     japaneseName: '獣の巨人',
@@ -165,8 +165,8 @@ export const aotAbilities: Jutsu[] = [
   }, {
     japaneseName: 'ジークの叫び',
     longDescription: {
-      it: "Lo usa a Ragako e Utgard nell'850, a Shiganshina sui soldati che avevano bevuto il vino, e a Fort Salta sulle truppe di Marley.",
-      en: 'He uses it at Ragako and Utgard in 850, at Shiganshina on the soldiers who had drunk the wine, and at Fort Salta on the Marleyan troops.',
+      it: "Lo usa a Ragako nell'850 (gli abitanti diventano i Giganti che assediano Utgard), a Shiganshina sui soldati che avevano bevuto il vino, e a Fort Salta sulle truppe di Marley.",
+      en: 'He uses it at Ragako in 850 (the villagers become the Titans that besiege Utgard), at Shiganshina on the soldiers who had drunk the wine, and at Fort Salta on the Marleyan troops.',
     },
     tags: ['bestia', 'sangue-reale'],
   }),
