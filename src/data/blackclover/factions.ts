@@ -281,7 +281,7 @@ export const blackcloverFactions: Faction[] = [
     },
     leaderIds: ['char-bc-patry'],
     characterIds: ['char-bc-patry', 'char-bc-rhya', 'char-bc-vetto', 'char-bc-fana-elf', 'char-bc-valtos', 'char-bc-sally', 'char-bc-rades', 'char-bc-heath', 'char-bc-william'],
-    locationIds: ['loc-bc-nean', 'loc-bc-royal-capital', 'loc-bc-shadow-palace'],
+    locationIds: ['loc-bc-saussy', 'loc-bc-nean', 'loc-bc-royal-capital', 'loc-bc-shadow-palace'],
     arcIds: ['arc-bc-eye-midnight-sun', 'arc-bc-seabed-temple', 'arc-bc-witches-forest', 'arc-bc-royal-capital-assault', 'arc-bc-elf-reincarnation'],
     canonStatus: 'canon',
     referenceStatus: 'verified',

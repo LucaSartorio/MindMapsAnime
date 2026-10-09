@@ -148,8 +148,8 @@ export const blackcloverMagic: Jutsu[] = [
     chakraNature: ['composite_magic'],
     characterIds: ['char-bc-heath'],
     shortDescription: {
-      it: "Attributo composito che congela persone e villaggi interi: è la magia con cui Heath Grice mette in ginocchio Nean.",
-      en: 'A composite attribute that freezes people and whole villages: the magic with which Heath Grice brings Nean to its knees.',
+      it: "Attributo composito che congela persone e villaggi interi: è la magia con cui Heath Grice mette in ginocchio Saussy.",
+      en: 'A composite attribute that freezes people and whole villages: the magic with which Heath Grice brings Saussy to its knees.',
     },
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -1360,8 +1360,8 @@ export const blackcloverMagic: Jutsu[] = [
     chakraNature: ['attribute_magic', 'ultimate_magic'],
     characterIds: ['char-bc-magna'],
     shortDescription: {
-      it: "L'incantesimo che Magna si costruisce da zero a Elysia: lega la propria vita a quella dell'avversario in un duello a colpi alternati.",
-      en: 'The spell Magna builds from nothing in Elysia: it binds his own life to his opponent\'s in a duel of alternating blows.',
+      it: "L'incantesimo che Magna si costruisce da zero a Elysia: una catena lo lega all'avversario e divide in parti uguali il mana di entrambi, trasformando lo scontro in una rissa ad armi pari.",
+      en: 'The spell Magna builds from nothing in Elysia: a chain binds him to his opponent and splits their combined mana evenly, turning the fight into a brawl on equal terms.',
     },
     canonStatus: 'canon',
     referenceStatus: 'verified',

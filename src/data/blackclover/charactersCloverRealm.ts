@@ -27,7 +27,7 @@ export const blackcloverCharactersCloverRealm: Character[] = [
     enemies: ['char-bc-patry', 'char-bc-lucius'],
     relationships: [
       { targetCharacterId: 'char-bc-lucius', label: { it: 'Seconda personalità', en: 'Second personality' }, notes: "Lucius Zogratis vive dentro di lui da sempre: alla morte di Julius prende il controllo del corpo." },
-      { targetCharacterId: 'char-bc-yami', label: { it: "L'uomo che ha reclutato", en: 'The man who recruited him' }, notes: 'Ha visto in uno straniero senza nome un futuro capitano.' },
+      { targetCharacterId: 'char-bc-yami', label: { it: "L'uomo che ha reclutato", en: 'The man he recruited' }, notes: 'Ha visto in uno straniero senza nome un futuro capitano.' },
       { targetCharacterId: 'char-bc-asta', label: { it: 'Protetto', en: 'Protégé' } },
     ],
     locationIds: ['loc-bc-royal-capital', 'loc-bc-magic-knights-hq'],
@@ -394,7 +394,7 @@ export const blackcloverCharactersCloverRealm: Character[] = [
     clanIds: ['faction-bc-race-human'],
     family: ['char-bc-gauche'],
     allies: ['char-bc-neige'],
-    locationIds: ['loc-bc-royal-capital'],
+    locationIds: ['loc-bc-royal-capital', 'loc-bc-nean'],
     arcIds: ['arc-bc-eye-midnight-sun', 'arc-bc-elf-reincarnation'],
     shortDescription: {
       it: 'La sorellina di Gauche, unica ragione di vita del fratello — e molto più equilibrata di lui.',
@@ -419,7 +419,7 @@ export const blackcloverCharactersCloverRealm: Character[] = [
     clanIds: ['faction-bc-race-human'],
     jutsuIds: ['magic-bc-snow'],
     allies: ['char-bc-marie', 'char-bc-asta'],
-    locationIds: ['loc-bc-royal-capital'],
+    locationIds: ['loc-bc-royal-capital', 'loc-bc-nean'],
     arcIds: ['arc-bc-eye-midnight-sun'],
     shortDescription: {
       it: 'Ex membro di una banda di criminali, redento e diventato amico di Marie: la sua Magia della Neve serve più a far giocare i bambini che a combattere.',
@@ -468,8 +468,8 @@ export const blackcloverCharactersCloverRealm: Character[] = [
     jutsuIds: ['magic-bc-fire'],
     students: ['char-bc-fana-diamond'],
     allies: ['char-bc-asta', 'char-bc-mereoleona'],
-    locationIds: ['loc-bc-royal-capital'],
-    arcIds: ['arc-bc-witches-forest'],
+    locationIds: ['loc-bc-royal-capital', 'loc-bc-nean'],
+    arcIds: ['arc-bc-eye-midnight-sun', 'arc-bc-witches-forest'],
     shortDescription: {
       it: "Suora ed ex Cavaliere Magico con la Magia del Fuoco: ha cresciuto la Fana del Regno di Diamond e non ha mai smesso di cercarla.",
       en: 'A nun and former Magic Knight with Fire Magic: she raised the Diamond Kingdom\'s Fana and never stopped looking for her.',
