@@ -95,7 +95,10 @@ const worldTranslationLoaders: Record<string, Partial<Record<SupportedLocale, ()
     es: () => import('@/data/hunterxhunter/i18n/es').then((m) => m.default),
     fr: () => import('@/data/hunterxhunter/i18n/fr').then((m) => m.default),
   },
-  onepiece: { es: () => import('@/data/onepiece/i18n/es').then((m) => m.default) },
+  onepiece: {
+    es: () => import('@/data/onepiece/i18n/es').then((m) => m.default),
+    fr: () => import('@/data/onepiece/i18n/fr').then((m) => m.default),
+  },
   dragonball: {
     es: () => import('@/data/dragonball/i18n/es').then((m) => m.default),
     fr: () => import('@/data/dragonball/i18n/fr').then((m) => m.default),

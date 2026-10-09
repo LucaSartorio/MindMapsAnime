@@ -256,6 +256,19 @@ async function main() {
       await page.evaluate(() => localStorage.setItem('animeInteractiveMaps.locale', 'en'));
     }
 
+    // Francese: mondo tradotto → /fr con i nomi dell'edizione francese (Uchiwa).
+    {
+      await page.goto(`${BASE}/en/naruto/characters/itachi-uchiha`, { waitUntil: 'networkidle', timeout: 30_000 });
+      await page.getByRole('button', { name: /change language|cambia lingua/i }).first().click();
+      await page.getByRole('option', { name: /français/i }).first().click();
+      await page.waitForURL('**/fr/naruto/characters/itachi-uchiha', { timeout: 8_000 }).catch(() => {});
+      await page.getByText('Itachi Uchiwa').first().waitFor({ timeout: 8_000 }).catch(() => {});
+      const okFr = page.url().endsWith('/fr/naruto/characters/itachi-uchiha') && (await page.getByText('Itachi Uchiwa').count()) > 0;
+      if (!okFr) failures += 1;
+      console.log(`${okFr ? '✓' : '✗'} cambio lingua EN → FR (mondo tradotto): ${page.url().replace(BASE, '')}`);
+      await page.evaluate(() => localStorage.setItem('animeInteractiveMaps.locale', 'en'));
+    }
+
     // Interazione: cliccare una card personaggio deve aprire il modale
     // (valida il wiring onSelect dopo la memoizzazione).
     {
