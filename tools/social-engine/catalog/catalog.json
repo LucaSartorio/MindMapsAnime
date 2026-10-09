@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-09T05:10:30.674Z",
+  "generatedAt": "2026-10-09T05:19:52.109Z",
   "locales": [
     "en",
     "it"
@@ -23218,7 +23218,9 @@
           "renderedLocales": [
             "en"
           ],
-          "scheduledLocales": [],
+          "scheduledLocales": [
+            "en"
+          ],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": true,
@@ -23228,12 +23230,12 @@
               "renderId": "character-versus:onepiece:sanji-vs-blackclover-yami-sukehiro@en",
               "locale": "en",
               "variant": null,
-              "status": "notPublished",
+              "status": "scheduled",
               "platforms": {
-                "instagram": "notScheduled",
-                "facebook": "notScheduled",
-                "tiktok": "notScheduled",
-                "youtube": "notScheduled"
+                "instagram": "scheduled",
+                "facebook": "scheduled",
+                "tiktok": "scheduled",
+                "youtube": "scheduled"
               }
             }
           ],
@@ -25333,68 +25335,13 @@
     "summary": {
       "rendered": 12,
       "unavailable": 5,
-      "notPublished": 6,
-      "scheduled": 0,
+      "notPublished": 5,
+      "scheduled": 1,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0
     },
-    "ready": [
-      {
-        "renderId": "character-versus:onepiece:sanji-vs-blackclover-yami-sukehiro@en",
-        "contentId": "character-versus:onepiece:sanji-vs-blackclover-yami-sukehiro",
-        "anime": "onepiece",
-        "subject": "sanji-vs-blackclover-yami-sukehiro",
-        "subjectName": "Sanji vs Yami Sukehiro",
-        "locale": "en",
-        "variant": null,
-        "segment": null,
-        "partNumber": null,
-        "partCount": null,
-        "renderedAt": "2026-10-09T05:10:29.715Z",
-        "durationSeconds": 22,
-        "publicationStatus": "notPublished",
-        "platforms": {
-          "instagram": "notScheduled",
-          "facebook": "notScheduled",
-          "tiktok": "notScheduled",
-          "youtube": "notScheduled"
-        },
-        "artifact": {
-          "name": "animapverse-social-render-37887162666-1",
-          "runId": "37887162666",
-          "runAttempt": "1",
-          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/37887162666",
-          "video": "videos/onepiece_sanji-vs-blackclover-yami-sukehiro_character-versus_en.mp4",
-          "manifest": "manifests/onepiece_sanji-vs-blackclover-yami-sukehiro_character-versus_en.manifest.json",
-          "sha256": "92bd5863a5de631ea1430cf1febbf1f9566a3d1cfa087166539679e43afe82be",
-          "cover": "covers/onepiece_sanji-vs-blackclover-yami-sukehiro_character-versus_en.cover.png",
-          "expiresAt": "2026-11-08T05:10:29.715Z"
-        },
-        "contentType": "character-versus",
-        "platformMetadata": {
-          "instagramCaption": "Sanji or Yami Sukehiro: who explored more of their world?\n\nSanji (One Piece) vs Yami Sukehiro (Black Clover): every place on the map, one winner.\n\nFollow for more anime journeys.\n\nSave it for your next rewatch.\n\n#onepiece #blackclover #sanji #yamisukehiro #anime #animemap #AniMapVerse",
-          "tiktokCaption": "Sanji or Yami Sukehiro: who explored more of their world? Follow for more anime journeys. #onepiece #blackclover #sanji #yamisukehiro #anime",
-          "youtubeTitle": "Sanji vs Yami Sukehiro: Who Travelled More? 🏴‍☠️",
-          "youtubeDescription": "Sanji or Yami Sukehiro: who explored more of their world?\n\nSanji (One Piece) vs Yami Sukehiro (Black Clover): every place on the map, one winner.\n\nSubscribe for more anime journeys.\n\nInteractive map: https://animapverse.com\n\n#onepiece #blackclover #sanji",
-          "facebookCaption": "Sanji or Yami Sukehiro: who explored more of their world?\n\nSanji (One Piece) vs Yami Sukehiro (Black Clover): every place on the map, one winner.\n\nFollow for more anime journeys.\n\nInteractive map: https://animapverse.com",
-          "hashtags": [
-            "#onepiece",
-            "#blackclover",
-            "#sanji",
-            "#yamisukehiro",
-            "#anime",
-            "#animemap",
-            "#AniMapVerse"
-          ],
-          "youtube": {
-            "madeForKids": false
-          },
-          "madeForKids": false
-        },
-        "waitFor": {}
-      }
-    ],
+    "ready": [],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",

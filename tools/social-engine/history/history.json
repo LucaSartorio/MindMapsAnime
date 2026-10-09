@@ -815,7 +815,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-10-09T05:09:04.268Z",
-      "updatedAt": "2026-10-09T05:10:29.715Z",
+      "updatedAt": "2026-10-09T05:19:52.096Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-10-09T05:10:29.715Z",
       "outputFile": "tools/social-engine/output/onepiece_sanji-vs-blackclover-yami-sukehiro_character-versus_en.mp4",
@@ -883,9 +883,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-09T10:00:00+02:00",
+          "scheduledAt": "2026-10-09T05:16:00Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "391755381",
+          "providerPostUuid": "-9044855032063311315",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-9044855032063311315",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "onepiece_sanji-vs-blackclover-yami-sukehiro_character-versus_en.instagram.scheduled.3b1e4955e910"
+          ],
+          "updatedAt": "2026-10-09T05:19:52.096Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-09T10:00:00+02:00",
+          "scheduledAt": "2026-10-09T05:16:00Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "391755548",
+          "providerPostUuid": "-2000004140137692311",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-2000004140137692311",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "onepiece_sanji-vs-blackclover-yami-sukehiro_character-versus_en.facebook.scheduled.d8bb4faaa280"
+          ],
+          "updatedAt": "2026-10-09T05:19:52.096Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-09T10:00:00+02:00",
+          "scheduledAt": "2026-10-09T05:16:00Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "391755784",
+          "providerPostUuid": "2566787874315980004",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=2566787874315980004",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "onepiece_sanji-vs-blackclover-yami-sukehiro_character-versus_en.tiktok.scheduled.c035ba84bada"
+          ],
+          "updatedAt": "2026-10-09T05:19:52.096Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-09T10:00:00+02:00",
+          "scheduledAt": "2026-10-09T05:16:00Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "391755703",
+          "providerPostUuid": "-8345766578047398396",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-8345766578047398396",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "onepiece_sanji-vs-blackclover-yami-sukehiro_character-versus_en.youtube.scheduled.8ef20a1e699b"
+          ],
+          "updatedAt": "2026-10-09T05:19:52.096Z"
+        }
+      ]
     },
     "guess-character:bleach:orihime-inoue@en": {
       "renderId": "guess-character:bleach:orihime-inoue@en",

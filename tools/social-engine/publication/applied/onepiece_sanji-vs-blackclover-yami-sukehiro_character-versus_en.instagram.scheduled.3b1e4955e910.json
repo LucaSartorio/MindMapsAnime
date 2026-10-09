@@ -1,0 +1,30 @@
+{
+  "receiptId": "onepiece_sanji-vs-blackclover-yami-sukehiro_character-versus_en.instagram.scheduled.3b1e4955e910",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-10-09T05:19:52.096Z",
+  "sourceFile": "20261009T051600Z-onepiece_sanji-vs-blackclover-yami-sukehiro_character-versus_en-instagram-scheduled.json",
+  "run": {
+    "runId": "37888031524",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/37888031524",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "character-versus:onepiece:sanji-vs-blackclover-yami-sukehiro@en",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-10-09T10:00:00+02:00",
+    "recordedAt": "2026-10-09T05:16:00Z",
+    "recordedBy": "chatgpt-work-publishing-agent",
+    "platform": "instagram",
+    "providerPostId": "391755381",
+    "providerPostUuid": "-9044855032063311315",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-9044855032063311315"
+  }
+}
