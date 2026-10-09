@@ -167,8 +167,8 @@ export const blackcloverCharacters: Character[] = [
       en: "The Black Bulls' golden-hearted delinquent: fire magic, a baseball bat and the stubbornness of someone who knows he is no genius.",
     },
     longDescription: {
-      it: "Magna è il membro «normale» della compagnia, e lo sa: mentre gli altri saltano di livello, lui resta indietro. È per questo che il suo addestramento a Elysia è uno dei momenti più belli della serie — si costruisce da zero la Catena dell'Anima, un incantesimo che divide in parti uguali il mana fra lui e l'avversario, e con quella batte Dante Zogratis della Triade Oscura.",
-      en: "Magna is the squad's 'ordinary' member, and he knows it: while the others leap ahead, he lags behind. That is why his training in Elysia is one of the series' best stretches — he builds the Soul Chain from nothing, a spell that splits the mana evenly between him and his opponent, and with it he beats Dante Zogratis of the Dark Triad.",
+      it: "Magna è il membro «normale» della compagnia, e lo sa: mentre gli altri saltano di livello, lui resta indietro. È per questo che il suo addestramento con Zora è uno dei momenti più belli della serie — studiando gli array runici si costruisce un incantesimo tutto suo, la Catena dell'Anima, che divide in parti uguali il potere magico fra lui e l'avversario, e con quella batte Dante Zogratis della Triade Oscura.",
+      en: "Magna is the squad's 'ordinary' member, and he knows it: while the others leap ahead, he lags behind. That is why his training with Zora is one of the series' best stretches — studying rune arrays he builds a spell of his own, the Soul Chain, which splits the combined magic power evenly between him and his opponent, and with it he beats Dante Zogratis of the Dark Triad.",
     },
     status: 'alive',
     canonStatus: 'canon',
@@ -476,8 +476,8 @@ export const blackcloverCharacters: Character[] = [
       en: "The little bird that has followed Asta since the dungeon is in fact Secre, the first Wizard King's sealing mage, alive for five hundred years.",
     },
     longDescription: {
-      it: "Accusata di magia proibita per aver salvato Lumiere, Secre si è auto-trasformata in anti-bird e ha atteso mezzo millennio. Il suo Sigillo può fermare, riaprire e riordinare qualunque magia — è lei a liberare le anime degli elfi dai corpi dei Cavalieri Magici e a spezzare la manipolazione di Zagred.",
-      en: "Accused of forbidden magic for saving Lumiere, Secre turned herself into an anti-bird and waited half a millennium. Her Sealing Magic can stop, reopen and rearrange any spell — she is the one who frees the elves' souls from the Magic Knights' bodies and breaks Zagred's manipulation.",
+      it: "Per tenere in vita Lumiere, Secre lo ha sigillato nella pietra con la magia proibita — e l'ha pagata venendo trasformata in anti-bird, in attesa per mezzo millennio. Il suo Sigillo può fermare, riaprire e riordinare qualunque magia — è lei a liberare le anime degli elfi dai corpi dei Cavalieri Magici e a spezzare la manipolazione di Zagred.",
+      en: "To keep Lumiere alive, Secre sealed him in stone with forbidden magic — and paid for it by being turned into an anti-bird, waiting half a millennium. Her Sealing Magic can stop, reopen and rearrange any spell — she is the one who frees the elves' souls from the Magic Knights' bodies and breaks Zagred's manipulation.",
     },
     status: 'alive',
     canonStatus: 'canon',

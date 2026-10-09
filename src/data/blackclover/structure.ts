@@ -40,6 +40,6 @@ export const bcStructure: Record<string, FactionExtras> = {
     ],
   },
   'faction-bc-wizard-kings': {
-    succession: [succ(L('Re Mago', 'Wizard King'), [m('lumiere', L('il primo', 'the first')), m('julius', L('il 28°', 'the 28th'))])],
+    succession: [succ(L("Imperatore Magico", 'Wizard King'), [m('lumiere', L('il primo', 'the first')), m('julius', L('il 28°', 'the 28th'))])],
   },
 };

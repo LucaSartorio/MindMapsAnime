@@ -25,7 +25,7 @@ export const blackcloverSlugs: SeoSlugLock = {
       "char-bc-conrad": "conrad-leto",
       "char-bc-damnatio": "damnatio-kira",
       "char-bc-dante": "dante-zogratis",
-      "char-bc-domina": "domina-ausat",
+      "char-bc-domina": "dominante-code",
       "char-bc-dorothy": "dorothy-unsworth",
       "char-bc-drowa": "drowa",
       "char-bc-eclat": "eclat",
@@ -36,7 +36,7 @@ export const blackcloverSlugs: SeoSlugLock = {
       "char-bc-fanzell": "fanzell-kruger",
       "char-bc-finral": "finral-roulacase",
       "char-bc-floga": "floga",
-      "char-bc-foyal": "foyal-migliore",
+      "char-bc-foyal": "foyal-migusteau",
       "char-bc-fragil": "fragil-tormenta",
       "char-bc-fuegoleon": "fuegoleon-vermillion",
       "char-bc-fujio": "fujio",
@@ -432,7 +432,9 @@ export const blackcloverSlugs: SeoSlugLock = {
   },
   "redirects": {
     "characters": {
-      "fana-the-loveless": "char-bc-fana-elf"
+      "domina-ausat": "char-bc-domina",
+      "fana-the-loveless": "char-bc-fana-elf",
+      "foyal-migliore": "char-bc-foyal"
     }
   }
 };

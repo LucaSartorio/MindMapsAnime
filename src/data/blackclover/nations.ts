@@ -91,8 +91,8 @@ export const blackcloverNations: Nation[] = [
       en: 'The northernmost kingdom, fallen into the hands of the Dark Triad: the Zogratis siblings, each bound by pact to one of the Underworld\'s highest-ranking devils.',
     },
     descriptionLong: {
-      it: "Un tempo monarchia come le altre, Spade è stata rovesciata dal colpo di stato dei fratelli Zogratis — Dante, Vanica e Zenon — che ne hanno sterminato la casa reale (compresa la famiglia Grinberryall, da cui proviene Yuno) e trasformato il paese in un cantiere per l'Albero di Qliphoth, il rituale che deve aprire la porta dell'Inframondo. La popolazione è ridotta in miseria e i prigionieri vengono usati come carburante magico.",
-      en: "Once a monarchy like the others, Spade was overthrown in the Zogratis siblings' coup — Dante, Vanica and Zenon — who wiped out its royal house (including the Grinberryall family Yuno comes from) and turned the country into a worksite for the Tree of Qliphoth, the ritual meant to open the gate to the Underworld. The population is left in destitution and prisoners are used as magical fuel.",
+      it: "Un tempo monarchia come le altre, Spade è stata rovesciata dal colpo di stato dei fratelli Zogratis — Dante, Vanica e Zenon — che ne hanno ucciso il re, Loyce Grinberryall, padre di Yuno, e trasformato il paese in un cantiere per l'Albero di Qliphoth, il rituale che deve aprire la porta dell'Inframondo. La popolazione è ridotta in miseria e i prigionieri vengono usati come carburante magico.",
+      en: "Once a monarchy like the others, Spade was overthrown in the Zogratis siblings' coup — Dante, Vanica and Zenon — who killed its king, Loyce Grinberryall, Yuno's father, and turned the country into a worksite for the Tree of Qliphoth, the ritual meant to open the gate to the Underworld. The population is left in destitution and prisoners are used as magical fuel.",
     },
     capitalLocationId: 'loc-bc-spade-castle',
     labelPosition: { x: 655, y: 210 },
@@ -142,8 +142,8 @@ export const blackcloverNations: Nation[] = [
       en: 'The hidden village where the elves live after coming back to life following the Reincarnation: a neutral refuge, outside the borders of the four kingdoms.',
     },
     descriptionLong: {
-      it: "Fondato da Licht e Patry con i bambini elfici riportati in vita da Secre e dal Chiaro di Luna, Elysia è insieme casa e campo di prova: chi vuole allenarsi lì deve prima superare i giochi degli elfi. È qui che Magna Swing passa il proprio addestramento prima dell'invasione del Regno di Spade.",
-      en: "Founded by Licht and Patry with the elf children brought back to life by Secre and the Moonlight, Elysia is both a home and a proving ground: whoever wants to train there must first get through the elves' games. It is here that Magna Swing spends his training before the invasion of the Spade Kingdom.",
+      it: "Villaggio appartato nei territori neutrali, dentro una Zona Magica Suprema e vegliato dalla sua divinità protettrice, lo spirito Dryad: Elysia è la casa dei discendenti di Licht e Tetia, e dopo la Reincarnazione vi si stabiliscono Patry e l'ex Terzo Occhio. Prima dell'assalto al Regno di Spade gli elfi insegnano la loro Magia Suprema ai sei Cavalieri Magici tornati dal Regno di Heart — Noelle, Mimosa, Secre, Leopold, Luck e Charmy.",
+      en: "A secluded village in the neutral area, inside a Grand Magic Zone and watched over by its guardian deity, the spirit Dryad: Elysia is home to the descendants of Licht and Tetia, and after the Reincarnation Patry and the former Third Eye settle there. Before the Spade Kingdom raid the elves teach their Ultimate Magic to the six Magic Knights back from the Heart Kingdom — Noelle, Mimosa, Secre, Leopold, Luck and Charmy.",
     },
     capitalLocationId: 'loc-bc-elysia',
     labelPosition: { x: 200, y: 302 },
