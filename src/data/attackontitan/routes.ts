@@ -228,8 +228,8 @@ export const aotRoutes: Route[] = [
     localizedName: { it: 'La missione dei Guerrieri', en: "The Warriors' mission" },
     group: GROUP.characters,
     description: {
-      it: "Reiner, Bertolt e Annie: dallo sbarco a Paradis alla caduta di Shiganshina, cinque anni fra le reclute del 104°, fino al ritorno di Reiner a Liberio.",
-      en: "Reiner, Bertolt and Annie: from landing on Paradis to the fall of Shiganshina, five years among the 104th's recruits, until Reiner's return to Liberio.",
+      it: "Reiner, Bertolt e Annie: dallo sbarco a Paradis e dalla caduta di Shiganshina alla battaglia per Wall Maria, cinque anni sull'isola, tre dei quali fra le reclute del 104°, fino al ritorno di Reiner a Liberio.",
+      en: "Reiner, Bertolt and Annie: from landing on Paradis and the fall of Shiganshina to the battle for Wall Maria, five years on the island, three of them among the 104th's recruits, until Reiner's return to Liberio.",
     },
     protagonistCharacterIds: ['char-aot-reiner', 'char-aot-bertolt', 'char-aot-annie'],
     relatedCharacterIds: ['char-aot-marcel', 'char-aot-ymir', 'char-aot-zeke', 'char-aot-eren'],

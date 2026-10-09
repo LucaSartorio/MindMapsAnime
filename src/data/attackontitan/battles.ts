@@ -6,7 +6,7 @@ const L = (it: string, en: string) => ({ it, en });
 
 /** Esiti degli scontri di Attack on Titan (bilancio nella scheda personaggio). */
 export const aotBattles: Record<string, BattleOutcome> = {
-  'evt-aot-female-trapped': stop(['erwin', 'levi', 'mikasa'], ['annie'], L('Annie chiama i Giganti a divorare la sua nuca e fugge.', 'Annie calls the Titans to devour her nape and escapes.')),
+  'evt-aot-female-trapped': stop(['erwin', 'levi', 'mikasa'], ['annie'], L('Annie chiama i Giganti a divorare il suo corpo e fugge.', 'Annie calls the Titans to devour her body and escapes.')),
   'evt-aot-levi-squad-dies': win(['annie'], ['petra', 'oluo', 'eld', 'gunther', 'eren']),
   'evt-aot-battle-stohess': win(['eren', 'mikasa', 'armin'], ['annie'], L('Sconfitta, Annie si chiude in un cristallo.', 'Defeated, Annie encases herself in crystal.')),
   'evt-aot-mike-death': win(['zeke'], ['mike']),

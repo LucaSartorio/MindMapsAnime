@@ -253,8 +253,8 @@ export const aotCharactersMarley: Character[] = [
     firstMangaAppearance: 'Ch. 3',
     firstAnimeAppearance: 'Ep. 3',
     shortDescription: {
-      it: "Il Gigante Corazzato: Guerriero di Marley che sfonda il cancello interno di Shiganshina e poi vive cinque anni fra le reclute del 104° come il «fratello maggiore» del gruppo, finché la sua mente si spezza in due.",
-      en: "The Armored Titan: a Marleyan Warrior who smashes Shiganshina's inner gate and then lives five years among the 104th recruits as the group's 'big brother', until his mind splits in two.",
+      it: "Il Gigante Corazzato: Guerriero di Marley che sfonda il cancello interno di Shiganshina e poi vive cinque anni a Paradis, tre dei quali fra le reclute del 104° come il «fratello maggiore» del gruppo, finché la sua mente si spezza in due.",
+      en: "The Armored Titan: a Marleyan Warrior who smashes Shiganshina's inner gate and then lives five years on Paradis, three of them among the 104th recruits as the group's 'big brother', until his mind splits in two.",
     },
     longDescription: {
       it: "Figlio di una madre eldiana e di un padre marleyano che lo rinnega, diventa Guerriero per essere accettato. Dopo la morte di Marcel si mette a interpretarlo, e nelle Mura comincia a credere di essere davvero un soldato dell'umanità. Rivela la sua identità a Eren sulla cima di Wall Rose. Tornato a Marley come eroe, desidera solo morire; nella cantina sotto il palco di Liberio chiede a Eren di ucciderlo. Nella battaglia finale combatte al fianco del Corpo di Ricerca, e dopo la guerra fa parte della delegazione di pace.",

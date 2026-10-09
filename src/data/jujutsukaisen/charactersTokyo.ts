@@ -237,8 +237,8 @@ export const jjkCharactersTokyo: Character[] = [
       en: 'The protagonist of Jujutsu Kaisen 0: a boy haunted by Rika, his late childhood friend, who becomes one of the four special-grade sorcerers. His technique copies those of others.',
     },
     longDescription: {
-      it: "Scopre di essere stato lui a maledire Rika rifiutandone la morte, e alla fine del 2017 sconfigge Geto. Nominato esecutore di Yuji dopo Shibuya, finge di ucciderlo per salvarlo. Nella colonia di Sendai rompe lo stallo fra quattro giocatori fortissimi. A Shinjuku, usando la tecnica copiata a Kenjaku, entra nel corpo di Gojo e uccide Kenjaku.",
-      en: 'He discovers that he himself cursed Rika by refusing her death, and at the end of 2017 he defeats Geto. Named Yuji\'s executioner after Shibuya, he fakes his death to save him. In the Sendai colony he breaks the deadlock between four very strong players. In Shinjuku, using the technique he copied from Kenjaku, he enters Gojo\'s body and kills Kenjaku.',
+      it: "Scopre di essere stato lui a maledire Rika rifiutandone la morte, e alla fine del 2017 sconfigge Geto. Nominato esecutore di Yuji dopo Shibuya, finge di ucciderlo per salvarlo. Nella colonia di Sendai rompe lo stallo fra quattro giocatori fortissimi. A Shinjuku decapita Kenjaku, ne copia la tecnica tramite Rika e la usa per entrare nel corpo di Gojo e tornare a combattere Sukuna.",
+      en: 'He discovers that he himself cursed Rika by refusing her death, and at the end of 2017 he defeats Geto. Named Yuji\'s executioner after Shibuya, he fakes his death to save him. In the Sendai colony he breaks the deadlock between four very strong players. In Shinjuku he beheads Kenjaku, copies his technique through Rika and uses it to enter Gojo\'s body and go back to fight Sukuna.',
     },
     status: 'alive',
     tags: ['jjk-0', 'grado-speciale', 'rika'],

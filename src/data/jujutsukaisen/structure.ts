@@ -15,7 +15,7 @@ export const jjkStructure: Record<string, FactionExtras> = {
   'faction-jjk-kyoto-high': {
     structure: [
       g(L('Direzione e insegnanti', 'Staff and teachers'), [m('gakuganji', L('preside', 'principal')), m('utahime', L('insegnante', 'teacher'))]),
-      g(L('Studenti', 'Students'), [m('todo', L('terzo anno', 'third year')), m('noritoshi', L('terzo anno', 'third year')), m('mai', L('secondo anno', 'second year')), m('momo', L('secondo anno', 'second year')), m('mechamaru', L('secondo anno', 'second year')), m('miwa', L('secondo anno', 'second year')), m('arata-nitta', L('primo anno', 'first year'))]),
+      g(L('Studenti', 'Students'), [m('todo', L('terzo anno', 'third year')), m('noritoshi', L('terzo anno', 'third year')), m('mai', L('secondo anno', 'second year')), m('momo', L('terzo anno', 'third year')), m('mechamaru', L('secondo anno', 'second year')), m('miwa', L('secondo anno', 'second year')), m('arata-nitta', L('primo anno', 'first year'))]),
     ],
   },
   'faction-jjk-disaster-curses': {

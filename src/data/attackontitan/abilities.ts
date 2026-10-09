@@ -67,8 +67,8 @@ export const aotAbilities: Jutsu[] = [
   }, {
     japaneseName: '超大型巨人',
     longDescription: {
-      it: "È il Gigante che nell'845 apre la breccia nel cancello di Shiganshina e nell'850 quello di Trost. Il suo corpo si consuma rapidamente: lento e vulnerabile, è un'arma di distruzione più che di combattimento. Armin lo usa per distruggere la flotta di Marley a Liberio e, con un'esplosione, il porto di Paradis.",
-      en: "It is the Titan that breaches the Shiganshina gate in 845 and the Trost gate in 850. Its body burns away quickly: slow and vulnerable, it is a weapon of destruction rather than of combat. Armin uses it to destroy Marley's fleet at Liberio and, with an explosion, Paradis's port.",
+      it: "È il Gigante che nell'845 apre la breccia nel cancello di Shiganshina e nell'850 quello di Trost. Il suo corpo si consuma rapidamente: lento e vulnerabile, è un'arma di distruzione più che di combattimento. Armin lo usa per distruggere la flotta di Marley nel porto di Liberio e, nella battaglia finale, lo fa esplodere contro l'ultimo Gigante di Eren.",
+      en: "It is the Titan that breaches the Shiganshina gate in 845 and the Trost gate in 850. Its body burns away quickly: slow and vulnerable, it is a weapon of destruction rather than of combat. Armin uses it to destroy Marley's fleet in Liberio's harbour and, in the final battle, detonates it against Eren's last Titan.",
     },
     tags: ['nove-giganti', 'colossale'],
   }),

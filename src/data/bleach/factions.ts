@@ -572,8 +572,8 @@ export const bleachFactions: Faction[] = [
       en: "Humans who absorb the surrounding reishi to make weapons, Yhwach's spiritual descendants. Unlike Soul Reapers they destroy Hollows instead of purifying them.",
     },
     longDescription: {
-      it: "Duecento anni fa gli Shinigami li sterminarono per proteggere l'equilibrio delle anime; i sopravvissuti nel Mondo dei Vivi, come gli Ishida, vivono nascosti. I Quincy «puri» (Echt) come Masaki e quelli «misti» (Gemischt) come Uryū si distinguono per il sangue: l'Auswählen di Yhwach uccide i secondi e risparmia i primi solo per rubarne il potere.",
-      en: "Two hundred years ago the Soul Reapers wiped them out to protect the balance of souls; the survivors in the World of the Living, like the Ishida, live in hiding. 'Pure' (Echt) Quincy like Masaki and 'mixed' (Gemischt) ones like Uryū are distinguished by blood: Yhwach's Auswählen kills the latter and spares the former only to steal their power.",
+      it: "Duecento anni fa gli Shinigami li sterminarono per proteggere l'equilibrio delle anime; i sopravvissuti nel Mondo dei Vivi, come gli Ishida, vivono nascosti. I Quincy «puri» (Echt) come Masaki e Ryūken e quelli «misti» (Gemischt) come Uryū si distinguono per il sangue: l'Auswählen di Yhwach strappa potere e vita ai Quincy «impuri» — i Gemischt come Kanae, la madre di Uryū, e Masaki, contaminata dal Hollow White — e risparmia gli Echt.",
+      en: "Two hundred years ago the Soul Reapers wiped them out to protect the balance of souls; the survivors in the World of the Living, like the Ishida, live in hiding. 'Pure' (Echt) Quincy like Masaki and Ryūken and 'mixed' (Gemischt) ones like Uryū are distinguished by blood: Yhwach's Auswählen tears power and life from the 'impure' Quincy — the Gemischt like Uryū's mother Kanae, and Masaki, tainted by the Hollow White — and spares the Echt.",
     },
     jutsuIds: ['zan-bl-heilig-pfeil', 'zan-bl-hirenkyaku', 'zan-bl-blut', 'zan-bl-letzt-stil', 'zan-bl-auswahlen'],
     leaderIds: ['char-bl-yhwach'],
