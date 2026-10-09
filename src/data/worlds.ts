@@ -140,7 +140,7 @@ export const animeWorlds: AnimeWorld[] = [
     id: 'world-hunterxhunter',
     slug: 'hunterxhunter',
     urlSlug: 'hunter-x-hunter',
-    translatedLocales: ['es'],
+    translatedLocales: ['es', 'fr'],
     title: {
       it: 'Hunter x Hunter',
       en: 'Hunter x Hunter',
@@ -348,7 +348,7 @@ export const animeWorlds: AnimeWorld[] = [
     id: 'world-dragonball',
     slug: 'dragonball',
     urlSlug: 'dragon-ball',
-    translatedLocales: ['es'],
+    translatedLocales: ['es', 'fr'],
     title: {
       it: 'Dragon Ball',
       en: 'Dragon Ball',
@@ -471,7 +471,7 @@ export const animeWorlds: AnimeWorld[] = [
     id: 'world-attackontitan',
     slug: 'attackontitan',
     urlSlug: 'attack-on-titan',
-    translatedLocales: ['es'],
+    translatedLocales: ['es', 'fr'],
     title: {
       it: 'L’Attacco dei Giganti',
       en: 'Attack on Titan',
