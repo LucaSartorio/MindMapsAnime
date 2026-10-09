@@ -1,0 +1,30 @@
+{
+  "receiptId": "bleach_orihime-inoue_guess-character_en.facebook.published.5c76f9953f36",
+  "outcome": "applied",
+  "transition": {
+    "from": "scheduled",
+    "to": "published"
+  },
+  "note": null,
+  "appliedAt": "2026-10-09T05:01:57.076Z",
+  "sourceFile": "20261009T045800Z-bleach_orihime-inoue_guess-character_en-facebook-published.json",
+  "run": {
+    "runId": "37886617643",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/37886617643",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "guess-character:bleach:orihime-inoue@en",
+    "platform": "facebook",
+    "provider": "metricool",
+    "status": "published",
+    "publishedAt": "2026-10-08T16:09:05Z",
+    "providerPostId": "390886737",
+    "providerPostUuid": "-2979678891738513299",
+    "publicUrl": "https://www.facebook.com/reel/1422272953452482/",
+    "recordedAt": "2026-10-09T04:58:00Z",
+    "recordedBy": "chatgpt-work-publishing-agent"
+  }
+}

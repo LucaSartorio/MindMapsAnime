@@ -815,7 +815,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-10-08T05:29:04.478Z",
-      "updatedAt": "2026-10-08T05:40:34.275Z",
+      "updatedAt": "2026-10-09T05:01:57.076Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-10-08T05:32:11.128Z",
       "outputFile": "tools/social-engine/output/bleach_orihime-inoue_guess-character_en.mp4",
@@ -877,65 +877,68 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "scheduled",
-      "publishedAt": null,
+      "publicationStatus": "partiallyPublished",
+      "publishedAt": "2026-10-08T16:06:16Z",
       "platforms": [
         {
           "platform": "instagram",
           "provider": "metricool",
-          "status": "scheduled",
+          "status": "published",
           "scheduledFor": "2026-10-08T18:00:00+02:00",
           "scheduledAt": "2026-10-08T05:38:45Z",
-          "publishedAt": null,
+          "publishedAt": "2026-10-08T16:06:16Z",
           "failedAt": null,
-          "providerPostId": "390886655",
+          "providerPostId": "390889133",
           "providerPostUuid": "-1837624531702231661",
           "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-1837624531702231661",
-          "publicUrl": null,
+          "publicUrl": "https://www.instagram.com/reel/DePUrSAkwgk/",
           "lastError": null,
           "attempts": 1,
           "receipts": [
-            "bleach_orihime-inoue_guess-character_en.instagram.scheduled.6f7cb106e3b6"
+            "bleach_orihime-inoue_guess-character_en.instagram.scheduled.6f7cb106e3b6",
+            "bleach_orihime-inoue_guess-character_en.instagram.published.95aca56de3bb"
           ],
-          "updatedAt": "2026-10-08T05:40:34.275Z"
+          "updatedAt": "2026-10-09T05:01:57.076Z"
         },
         {
           "platform": "facebook",
           "provider": "metricool",
-          "status": "scheduled",
+          "status": "published",
           "scheduledFor": "2026-10-08T18:00:00+02:00",
           "scheduledAt": "2026-10-08T05:38:45Z",
-          "publishedAt": null,
+          "publishedAt": "2026-10-08T16:09:05Z",
           "failedAt": null,
           "providerPostId": "390886737",
           "providerPostUuid": "-2979678891738513299",
           "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-2979678891738513299",
-          "publicUrl": null,
+          "publicUrl": "https://www.facebook.com/reel/1422272953452482/",
           "lastError": null,
           "attempts": 1,
           "receipts": [
-            "bleach_orihime-inoue_guess-character_en.facebook.scheduled.3a6411656c46"
+            "bleach_orihime-inoue_guess-character_en.facebook.scheduled.3a6411656c46",
+            "bleach_orihime-inoue_guess-character_en.facebook.published.5c76f9953f36"
           ],
-          "updatedAt": "2026-10-08T05:40:34.275Z"
+          "updatedAt": "2026-10-09T05:01:57.076Z"
         },
         {
           "platform": "tiktok",
           "provider": "metricool",
-          "status": "scheduled",
+          "status": "published",
           "scheduledFor": "2026-10-08T18:00:00+02:00",
           "scheduledAt": "2026-10-08T05:38:45Z",
-          "publishedAt": null,
+          "publishedAt": "2026-10-08T16:07:07Z",
           "failedAt": null,
           "providerPostId": "390886762",
           "providerPostUuid": "7919897851483080045",
           "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=7919897851483080045",
-          "publicUrl": null,
+          "publicUrl": "https://www.tiktok.com/@interactiveanimeworlds/video/7694329286341201174?utm_campaign=tt4d_open_api&utm_source=awwuexz91plpu87c",
           "lastError": null,
           "attempts": 1,
           "receipts": [
-            "bleach_orihime-inoue_guess-character_en.tiktok.scheduled.040da5d72cd4"
+            "bleach_orihime-inoue_guess-character_en.tiktok.scheduled.040da5d72cd4",
+            "bleach_orihime-inoue_guess-character_en.tiktok.published.bd4afafb8f81"
           ],
-          "updatedAt": "2026-10-08T05:40:34.275Z"
+          "updatedAt": "2026-10-09T05:01:57.076Z"
         },
         {
           "platform": "youtube",
