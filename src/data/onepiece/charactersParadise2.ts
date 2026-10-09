@@ -39,8 +39,8 @@ export const onepieceCharactersParadise2: Character[] = [
     firstMangaAppearance: "323",
     firstAnimeAppearance: "230",
     longDescription: {
-      it: "Sindaco di Water Seven e geniale capomastro della Galley-La, allievo di Tom insieme a Franky. Custode di metà dei progetti dell'arma Pluton, sopravvisse all'agguato della CP9.",
-      en: "Mayor of Water Seven and the brilliant master shipwright of Galley-La, a pupil of Tom alongside Franky. Keeper of half the blueprints of the weapon Pluton, he survived CP9's ambush.",
+      it: "Sindaco di Water Seven e geniale capomastro della Galley-La, allievo di Tom insieme a Franky. Bersaglio della CP9 come presunto custode dei progetti di Pluton (ne aveva solo una copia falsa: gli originali erano di Franky), sopravvisse all'agguato.",
+      en: "Mayor of Water Seven and the brilliant master shipwright of Galley-La, a pupil of Tom alongside Franky. Targeted by CP9 as the supposed keeper of the Pluton blueprints (he held only a decoy copy: the real ones were Franky's), he survived the ambush.",
     },
     name: 'Iceburg',
     importance: 'supporting',
@@ -50,8 +50,8 @@ export const onepieceCharactersParadise2: Character[] = [
     factionIds: ['faction-op-galley-la'],
     arcIds: ['arc-op-water-seven'],
     shortDescription: {
-      it: "Sindaco di Water Seven e presidente della compagnia navale Galley-La, allievo di Tom insieme a Franky. Custode dei progetti dell'arma ancestrale Pluton.",
-      en: "Mayor of Water Seven and president of the Galley-La shipbuilding company, Tom's apprentice alongside Franky. Keeper of the blueprints of the Ancient Weapon Pluton.",
+      it: "Sindaco di Water Seven e presidente della compagnia navale Galley-La, allievo di Tom insieme a Franky. La CP9 lo credeva custode dei progetti dell'arma ancestrale Pluton, ma la sua era una copia falsa.",
+      en: "Mayor of Water Seven and president of the Galley-La shipbuilding company, Tom's apprentice alongside Franky. CP9 believed he held the blueprints of the Ancient Weapon Pluton, but his copy was a decoy.",
     },
     status: 'alive',
     canonStatus: 'canon',
@@ -89,8 +89,8 @@ export const onepieceCharactersParadise2: Character[] = [
     firstMangaAppearance: "329",
     firstAnimeAppearance: "233",
     longDescription: {
-      it: "Agente della CP9 e abile spadaccino, valutatore navale a Water Seven sotto copertura. Utente dello Zoo Zoo ancestrale della giraffa, affrontò Zoro a Enies Lobby.",
-      en: "A CP9 agent and skilled swordsman, an undercover ship inspector at Water Seven. User of the ancient giraffe Zoan, he faced Zoro at Enies Lobby.",
+      it: "Agente della CP9 e abile spadaccino, valutatore navale a Water Seven sotto copertura. Utente dello Zoo Zoo della giraffa, affrontò Zoro a Enies Lobby.",
+      en: "A CP9 agent and skilled swordsman, an undercover ship inspector at Water Seven. User of the giraffe Zoan, he faced Zoro at Enies Lobby.",
     },
     name: 'Kaku',
     importance: 'supporting',

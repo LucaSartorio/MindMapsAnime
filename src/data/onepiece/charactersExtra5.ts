@@ -4,7 +4,7 @@ import type { Character, CharacterImportance, CharacterStatus } from '@/types';
  * Quinta ondata di personaggi: figure minori, comprimari e «comparse» canoniche
  * della prima metà della Rotta Maggiore (da East Blue a Long Ring Long Land),
  * inclusi i volti apparsi una sola volta — come Ippon-Matsu, l'armaiolo di
- * Loguetown che vendette a Zoro la spada maledetta Sandai Kitetsu.
+ * Loguetown che regalò a Zoro la spada maledetta Sandai Kitetsu.
  */
 const C = (
   id: string, name: string, aliases: string[] | undefined,
@@ -30,8 +30,8 @@ export const onepieceCharactersExtra5: Character[] = [
   /* ---------------------- Foosha / Dawn Island ---------------------- */
   C('char-op-makino', 'Makino', undefined, 'minor', ['ally'], 'female',
     undefined, ['loc-op-foosha-village'], '1', '4',
-    "Gentile barista del villaggio di Foosha che vide crescere Rufy e Shanks.",
-    "The kind barmaid of Foosha Village who watched Luffy and Shanks grow up.",
+    "Gentile barista del villaggio di Foosha che vide crescere Rufy e ospitò la ciurma di Shanks.",
+    "The kind barmaid of Foosha Village who watched Luffy grow up and hosted Shanks's crew.",
     "Makino, dolce proprietaria della taverna di Foosha, fu una figura materna per il piccolo Rufy negli anni in cui Shanks e la sua ciurma stazionavano al villaggio.",
     "Makino, the sweet owner of Foosha's tavern, was a motherly figure to little Luffy in the years when Shanks and his crew were docked at the village.",
     'alive', ['east-blue', 'foosha']),
@@ -201,10 +201,10 @@ export const onepieceCharactersExtra5: Character[] = [
   /* ---------------------- Loguetown ---------------------- */
   C('char-op-ipponmatsu', 'Ippon-Matsu', undefined, 'minor', ['neutral'], 'male',
     undefined, ['loc-op-loguetown'], '97', '48',
-    "Armaiolo di Loguetown che vendette a Zoro la spada maledetta Sandai Kitetsu e gli donò la Yubashiri.",
-    "The Loguetown weapons dealer who sold Zoro the cursed sword Sandai Kitetsu and gifted him the Yubashiri.",
-    "Ippon-Matsu, burbero proprietario del negozio di spade di Loguetown, tentò di rifilare a Zoro la maledetta Sandai Kitetsu; colpito dal sangue freddo con cui Zoro ne sfidò la sorte, gli regalò la pregiata Yubashiri.",
-    "Ippon-Matsu, the gruff owner of the Loguetown sword shop, tried to pawn off the cursed Sandai Kitetsu on Zoro; struck by the cool nerve with which Zoro dared its curse, he gifted him the prized Yubashiri.",
+    "Armaiolo di Loguetown che regalò a Zoro la spada maledetta Sandai Kitetsu e la Yubashiri.",
+    "The Loguetown weapons dealer who gave Zoro the cursed sword Sandai Kitetsu and the Yubashiri for free.",
+    "Ippon-Matsu, burbero proprietario del negozio di spade di Loguetown, mise in guardia Zoro dalla maledetta Sandai Kitetsu; colpito dal sangue freddo con cui Zoro ne sfidò la sorte, gliela regalò insieme alla pregiata Yubashiri.",
+    "Ippon-Matsu, the gruff owner of the Loguetown sword shop, warned Zoro about the cursed Sandai Kitetsu; struck by the cool nerve with which Zoro dared its curse, he gave it to him for free along with the prized Yubashiri.",
     'alive', ['east-blue', 'loguetown', 'spade']),
   C('char-op-daddy-masterson', 'Daddy Masterson', ['Daddy il Padre'], 'minor', ['neutral'], 'male',
     undefined, ['loc-op-loguetown'], '98', '49',

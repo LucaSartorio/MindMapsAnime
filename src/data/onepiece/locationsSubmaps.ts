@@ -61,7 +61,7 @@ export const onepieceLocationsSubmaps: Location[] = [
     x: 640,
     y: 540,
     shortDescription: {
-      it: "Le rovine della «città dell'oro» di Shandora, sepolte nell'Upper Yard, dove riposa la grande Campana d'Oro e un Poignee Griffe.",
+      it: "Le rovine della «città dell'oro» di Shandora, sepolte nell'Upper Yard, dove riposa la grande Campana d'Oro e un Poneglyph.",
       en: "The ruins of the 'city of gold' Shandora, buried in the Upper Yard, where the great Golden Bell and a Poneglyph rest.",
     },
     nationId: 'nation-op-grand-line-paradise',

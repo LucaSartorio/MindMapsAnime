@@ -83,7 +83,7 @@ export const ONEPIECE_FRUIT_LONG: Record<string, Localizable> = {
     en: "Viola, princess of Dressrosa, uses it to spy on Doflamingo and guide the allies during the battle to free the kingdom.",
   },
   'fruit-op-ato-ato': {
-    it: "A Dressrosa Giolla trasforma in opere d'arte Robin e altri prigionieri; il suo potere svanisce quando viene sconfitta durante la battaglia per il palazzo reale.",
+    it: "A Dressrosa Jora trasforma in opere d'arte Robin e altri prigionieri; il suo potere svanisce quando viene sconfitta durante la battaglia per il palazzo reale.",
     en: "In Dressrosa Jora turns Robin and other prisoners into works of art; her power fades when she is defeated during the battle for the royal palace.",
   },
   'fruit-op-sui-sui': {
@@ -147,8 +147,8 @@ export const ONEPIECE_FRUIT_LONG: Record<string, Localizable> = {
     en: "Miss Merry Christmas digs tunnels under Alubarna to ambush Usopp and Chopper; the two defeat her with a combined blow.",
   },
   'fruit-op-ryu-ryu-allosaurus': {
-    it: "X Drake, ex viceammiraglio, è in realtà un agente infiltrato della SWORD della Marina; a Wano tradisce Kaido e combatte contro i suoi ex compagni.",
-    en: "X Drake, a former vice admiral, is in fact an undercover agent of the Navy's SWORD; in Wano he betrays Kaido and fights his former comrades.",
+    it: "X Drake, ex contrammiraglio, è in realtà un agente infiltrato della SWORD della Marina; a Wano tradisce Kaido e combatte contro i suoi ex compagni.",
+    en: "X Drake, a former rear admiral, is in fact an undercover agent of the Navy's SWORD; in Wano he betrays Kaido and fights his former comrades.",
   },
   'fruit-op-ryu-ryu-spinosaurus': {
     it: "Page One combatte Sanji a Wano e poi, con la sorella Ulti, Usop e Nami a Onigashima.",

@@ -236,8 +236,8 @@ export const onepieceEvents: TimelineEvent[] = [
     id: 'evt-op-nami-joins',
     worldId: 'world-onepiece',
     longDescription: {
-      it: "Liberata dal giogo di Arlong e riabbracciato il villaggio, Nami sceglie finalmente di unirsi ai Cappello di Paglia come navigatrice. Tra le lacrime e i saluti di Cocoyashi, ruba un cappello per gioco e salpa: la ciurma ha la sua timoniera delle rotte.",
-      en: "Freed from Arlong's yoke and reunited with her village, Nami finally chooses to join the Straw Hats as navigator. Amid Cocoyashi's tears and farewells, she playfully snatches a hat and sails off: the crew has its chart-reader.",
+      it: "Liberata dal giogo di Arlong e riabbracciato il villaggio, Nami sceglie finalmente di unirsi ai Cappello di Paglia come navigatrice. Tra le lacrime e i saluti di Cocoyashi, sfila per scherzo i portafogli agli abitanti e salpa: la ciurma ha la sua timoniera delle rotte.",
+      en: "Freed from Arlong's yoke and reunited with her village, Nami finally chooses to join the Straw Hats as navigator. Amid Cocoyashi's tears and farewells, she pickpockets the villagers' wallets as a parting prank and sails off: the crew has its chart-reader.",
     },
     mangaChapters: ["94-95"],
     animeEpisodes: ["43-44"],

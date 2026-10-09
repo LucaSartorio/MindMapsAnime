@@ -24,8 +24,8 @@ export const onepieceEventsBattles2: TimelineEvent[] = [
     'loc-op-arlong-park', ['char-op-zoro', 'char-op-hatchan'], ['85-89'], ['40-42'], 8.8,
     "Ad Arlong Park Zoro affronta, già ferito, l'uomo-pesce polpo a sei spade Hatchan.",
     "At Arlong Park, already wounded, Zoro faces the six-sword octopus fish-man Hatchan.",
-    "Nonostante una grave ferita inflittagli dallo stesso Arlong, Zoro batte l'ufficiale Hatchan e le sue sei lame, in uno scontro che anni dopo darà vita a una sorprendente amicizia.",
-    "Despite a grave wound dealt by Arlong himself, Zoro beats the officer Hatchan and his six blades, in a clash that years later will turn into an unlikely friendship.",
+    "Nonostante la grave ferita inflittagli da Mihawk al Baratie, Zoro batte l'ufficiale Hatchan e le sue sei lame, in uno scontro che anni dopo darà vita a una sorprendente amicizia.",
+    "Despite the grave wound dealt by Mihawk at the Baratie, Zoro beats the officer Hatchan and his six blades, in a clash that years later will turn into an unlikely friendship.",
     ['east-blue', 'uomini-pesce'], 'arc-op-arlong-park'),
 
   /* ----------------------- Long Ring Long Land ----------------------- */

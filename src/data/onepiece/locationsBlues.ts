@@ -60,7 +60,7 @@ export const onepieceLocationsBlues: Location[] = [
     y: 205,
     shortDescription: {
       it: "Regno di North Blue da cui salpò l'esploratore Mont Blanc Norland, la cui storia di Skypiea fu creduta una menzogna per generazioni.",
-      en: "A North Blue kingdom from which the explorer Mont Blanc Noland set sail, whose tale of Skypiea was believed a lie for generations.",
+      en: "A North Blue kingdom from which the explorer Mont Blanc Norland set sail, whose tale of Skypiea was believed a lie for generations.",
     },
     nationId: 'nation-op-north-blue',
     importance: 'secondary',

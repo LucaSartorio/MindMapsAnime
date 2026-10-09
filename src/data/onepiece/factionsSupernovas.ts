@@ -43,7 +43,7 @@ export const onepieceFactionsSupernovas: Faction[] = [
     name: 'Drake Pirates',
     localizedName: { it: 'Pirati di Drake', en: 'Drake Pirates' },
     description: {
-      it: "La ciurma dell'ex viceammiraglio X Drake, Supernova e segreto agente dell'unità SWORD della Marina, infiltrato tra i Tobiroppo di Kaido a Wano.",
+      it: "La ciurma dell'ex contrammiraglio X Drake, Supernova e segreto agente dell'unità SWORD della Marina, infiltrato tra i Tobiroppo di Kaido a Wano.",
       en: "The crew of the former rear admiral X Drake, a Supernova and secret agent of the Marines' SWORD unit, infiltrated among Kaido's Tobiroppo at Wano.",
     },
     leaderIds: ['char-op-drake'],

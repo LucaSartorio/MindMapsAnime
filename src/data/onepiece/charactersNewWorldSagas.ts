@@ -198,7 +198,7 @@ export const onepieceCharactersNewWorldSagas: Character[] = [
     firstMangaAppearance: "703",
     firstAnimeAppearance: "633",
     longDescription: {
-      it: "Ufficiale combattente della famiglia Donquijote ed esuberante campione del Colosseo Corrida, utente del frutto Bandiera. Tra i tre capi dell'esercito di Doflamingo a Dressrosa.",
+      it: "Ufficiale combattente della famiglia Donquijote ed esuberante campione del Colosseo Corrida, utente del Frutto Flap Flap. Tra i tre capi dell'esercito di Doflamingo a Dressrosa.",
       en: "A combat officer of the Donquixote family and flamboyant champion of the Corrida Colosseum, user of the Flag-Flag Fruit. One of the three heads of Doflamingo's army at Dressrosa.",
     },
     name: 'Diamante',
@@ -209,8 +209,8 @@ export const onepieceCharactersNewWorldSagas: Character[] = [
     factionIds: ['faction-op-donquixote-pirates'],
     arcIds: ['arc-op-dressrosa'],
     shortDescription: {
-      it: "Ufficiale della famiglia Donquijote e direttore del Colosseo Corrida, utente del Frutto Sventolio. Responsabile della tragedia della famiglia Riku.",
-      en: "A Donquixote family officer and director of the Corrida Colosseum, user of the Flutter-Flutter Fruit. Responsible for the tragedy of the Riku family.",
+      it: "Ufficiale della famiglia Donquijote e direttore del Colosseo Corrida, utente del Frutto Flap Flap. Responsabile della tragedia della famiglia Riku.",
+      en: "A Donquixote family officer and director of the Corrida Colosseum, user of the Flag-Flag Fruit. Responsible for the tragedy of the Riku family.",
     },
     status: 'alive',
     canonStatus: 'canon',

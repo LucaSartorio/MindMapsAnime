@@ -66,8 +66,8 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-arlong-nami-past', worldId: W,
     longDescription: {
-      it: "Il passato di Nami: la marine Bell-mère adottò lei e la sorella Nojiko crescendole nella povertà ma nell'amore, finché Arlong non la uccise davanti alle bambine. Per ricomprare il villaggio, Nami accettò di disegnare mappe per la banda, accumulando in segreto ottanta milioni.",
-      en: "Nami's past: the Marine Bell-mère adopted her and her sister Nojiko, raising them poor but loved, until Arlong killed her before the girls. To buy back the village, Nami agreed to draw maps for the gang, secretly amassing eighty million.",
+      it: "Il passato di Nami: la marine Bell-mère adottò lei e la sorella Nojiko crescendole nella povertà ma nell'amore, finché Arlong non la uccise davanti alle bambine. Per ricomprare il villaggio, Nami accettò di disegnare mappe per la banda, accumulando in segreto novantatré milioni.",
+      en: "Nami's past: the Marine Bell-mère adopted her and her sister Nojiko, raising them poor but loved, until Arlong killed her before the girls. To buy back the village, Nami agreed to draw maps for the gang, secretly amassing ninety-three million.",
     },
     title: { it: 'Il passato di Nami e Bell-mère', en: "Nami and Bell-mère's past" },
     description: {
@@ -138,8 +138,8 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-drum-wapol', worldId: W,
     longDescription: {
-      it: "Il vile re Wapol, fuggito all'arrivo di Barbabianca, torna a Drum per riprendersi il regno. Rufy lo umilia e lo spazza via con il «Gom Gom Bazooka»: il paese si libera e, in onore dell'illusione di fiori di ciliegio creata per Hiluluk, viene ribattezzato Regno di Sakura.",
-      en: "The cowardly king Wapol, who fled at Whitebeard's arrival, returns to Drum to reclaim it. Luffy humiliates and blasts him away with the 'Gum-Gum Bazooka': the country is freed and, in honour of the cherry-blossom illusion made for Hiluluk, is renamed the Sakura Kingdom.",
+      it: "Il vile re Wapol, fuggito all'arrivo di Barbanera, torna a Drum per riprendersi il regno. Rufy lo umilia e lo spazza via con il «Gom Gom Bazooka»: il paese si libera e, in onore dell'illusione di fiori di ciliegio creata per Hiluluk, viene ribattezzato Regno di Sakura.",
+      en: "The cowardly king Wapol, who fled at Blackbeard's arrival, returns to Drum to reclaim it. Luffy humiliates and blasts him away with the 'Gum-Gum Bazooka': the country is freed and, in honour of the cherry-blossom illusion made for Hiluluk, is renamed the Sakura Kingdom.",
     },
     title: { it: 'La caduta del tiranno Wapol', en: "The fall of the tyrant Wapol" },
     description: {
@@ -157,13 +157,13 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-al-rainbase', worldId: W,
     longDescription: {
-      it: "A Rainbase Crocodile attira la ciurma e Smoker nella gabbia del suo casinò Rain Dinners. Sopraffatto e mostrato impotente contro la sabbia, Rufy è salvato in extremis da Vivi e dall'acqua: la corsa per fermare la guerra civile riparte verso la capitale Alubarna.",
-      en: "At Rainbase Crocodile lures the crew and Smoker into the cage of his Rain Dinners casino. Overpowered and shown helpless against sand, Luffy is saved at the last moment by Vivi and by water: the race to stop the civil war resumes toward the capital Alubarna.",
+      it: "A Rainbase Crocodile attira la ciurma e Smoker in una gabbia di agalmatolite del suo casinò Rain Dinners e allaga la sala. Liberati in extremis grazie a Vivi e Sanji, sfuggono all'acqua portando con sé anche Smoker: la corsa per fermare la guerra civile riparte verso la capitale Alubarna.",
+      en: "At Rainbase Crocodile lures the crew and Smoker into a Seastone cage in his Rain Dinners casino and floods the room. Freed at the last moment thanks to Vivi and Sanji, they escape the water, dragging Smoker out too: the race to stop the civil war resumes toward the capital Alubarna.",
     },
     title: { it: 'La trappola di Rain Dinners', en: 'The Rain Dinners trap' },
     description: {
-      it: "A Rainbase, Crocodile intrappola la ciurma nella gabbia del suo casinò Rain Dinners insieme a Smoker. Sopraffatto, Rufy è salvato dalla sabbia e da Vivi, mentre comincia la corsa verso Alubarna.",
-      en: "At Rainbase, Crocodile traps the crew in the cage of his Rain Dinners casino along with Smoker. Overpowered, Luffy is saved by the sand and by Vivi as the race to Alubarna begins.",
+      it: "A Rainbase, Crocodile intrappola la ciurma e Smoker nella gabbia del suo casinò Rain Dinners e allaga la sala. Liberati in extremis grazie a Vivi e Sanji, sfuggono all'acqua mentre comincia la corsa verso Alubarna.",
+      en: "At Rainbase, Crocodile traps the crew and Smoker in the cage of his Rain Dinners casino and floods the room. Freed at the last moment thanks to Vivi and Sanji, they escape the water as the race to Alubarna begins.",
     },
     period: { it: 'Paradiso · Alabasta', en: 'Paradise · Alabasta' },
     arcId: 'arc-op-alabasta', locationId: 'loc-op-rainbase',
@@ -600,13 +600,13 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-ph-dragon', worldId: W,
     longDescription: {
-      it: "Sull'isola spaccata tra fuoco e ghiaccio la ciurma trova un dragone, soldati-centauro e il samurai a pezzi Kinemon, in cerca del figlio. Tra scambi di corpi causati da Trafalgar Law e i misteri di Punk Hazard nasce una fragile, decisiva collaborazione tra Rufy e Law.",
-      en: "On the island split between fire and ice the crew finds a dragon, centaur soldiers and the dismembered samurai Kinemon, searching for his son. Amid body-swaps caused by Trafalgar Law and the mysteries of Punk Hazard, a fragile, decisive cooperation between Luffy and Law is born.",
+      it: "Sull'isola spaccata tra fuoco e ghiaccio la ciurma trova un dragone, soldati-centauro e il samurai a pezzi Kin'emon, in cerca del figlio. Tra scambi di corpi causati da Trafalgar Law e i misteri di Punk Hazard nasce una fragile, decisiva collaborazione tra Rufy e Law.",
+      en: "On the island split between fire and ice the crew finds a dragon, centaur soldiers and the dismembered samurai Kin'emon, searching for his son. Amid body-swaps caused by Trafalgar Law and the mysteries of Punk Hazard, a fragile, decisive cooperation between Luffy and Law is born.",
     },
     title: { it: 'Il dragone, i centauri e i samurai', en: 'The dragon, the centaurs and the samurai' },
     description: {
-      it: "Sbarcata sull'isola di fuoco e ghiaccio, la ciurma trova un dragone, soldati-centauro e il samurai a pezzi Kinemon in cerca del figlio. Iniziano scambi di corpi e una fragile collaborazione con Law.",
-      en: "Landing on the fire-and-ice island, the crew finds a dragon, centaur soldiers and the dismembered samurai Kinemon searching for his son. Body-swaps begin, and a fragile cooperation with Law.",
+      it: "Sbarcata sull'isola di fuoco e ghiaccio, la ciurma trova un dragone, soldati-centauro e il samurai a pezzi Kin'emon in cerca del figlio. Iniziano scambi di corpi e una fragile collaborazione con Law.",
+      en: "Landing on the fire-and-ice island, the crew finds a dragon, centaur soldiers and the dismembered samurai Kin'emon searching for his son. Body-swaps begin, and a fragile cooperation with Law.",
     },
     period: { it: 'Nuovo Mondo · Punk Hazard', en: 'New World · Punk Hazard' },
     arcId: 'arc-op-punk-hazard', locationId: 'loc-op-punk-hazard',
@@ -723,16 +723,16 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-wci-pedro', worldId: W,
     longDescription: {
-      it: "Per garantire la fuga della ciurma da Cacao Island, il mink Pedro si fa esplodere contro Charlotte Perospero. Sacrifica la vita scommettendo sulla nuova generazione e su Rufy, sicuro che siano loro a poter cambiare il mondo che lui non vedrà.",
-      en: "To secure the crew's escape from Cacao Island, the mink Pedro blows himself up against Charlotte Perospero. He gives his life betting on the new generation and on Luffy, certain that they are the ones who can change the world he will not see.",
+      it: "Per garantire la fuga della ciurma da Whole Cake Island, il mink Pedro si fa esplodere contro Charlotte Perospero. Sacrifica la vita scommettendo sulla nuova generazione e su Rufy, sicuro che siano loro a poter cambiare il mondo che lui non vedrà.",
+      en: "To secure the crew's escape from Whole Cake Island, the mink Pedro blows himself up against Charlotte Perospero. He gives his life betting on the new generation and on Luffy, certain that they are the ones who can change the world he will not see.",
     },
     title: { it: 'Il sacrificio di Pedro', en: "Pedro's sacrifice" },
     description: {
-      it: "Per garantire la fuga della ciurma da Cacao Island, il mink Pedro si fa esplodere contro Charlotte Perospero, scommettendo la vita sulla nuova generazione e su Rufy.",
-      en: "To secure the crew's escape from Cacao Island, the mink Pedro blows himself up against Charlotte Perospero, betting his life on the new generation and on Luffy.",
+      it: "Per garantire la fuga della ciurma da Whole Cake Island, il mink Pedro si fa esplodere contro Charlotte Perospero, scommettendo la vita sulla nuova generazione e su Rufy.",
+      en: "To secure the crew's escape from Whole Cake Island, the mink Pedro blows himself up against Charlotte Perospero, betting his life on the new generation and on Luffy.",
     },
     period: { it: 'Nuovo Mondo · Whole Cake Island', en: 'New World · Whole Cake Island' },
-    arcId: 'arc-op-whole-cake', locationId: 'loc-op-tl-cacao',
+    arcId: 'arc-op-whole-cake', locationId: 'loc-op-tl-sweet-city',
     characterIds: ['char-op-pedro', 'char-op-luffy', 'char-op-katakuri'], factionIds: ['faction-op-big-mom-pirates'],
     mangaChapters: ['878-880'], animeEpisodes: ['846-848'],
     order: 66.5, canon: c, canonStatus: c, referenceStatus: v, tags: ['whole-cake', 'pedro', 'mink'],
@@ -742,13 +742,13 @@ export const onepieceEventsExtra: TimelineEvent[] = [
   {
     id: 'evt-op-wano-act1', worldId: W,
     longDescription: {
-      it: "Sbarcata a Wano sotto mentite spoglie, la ciurma ritrova Kinemon e i samurai Kozuki e scopre la miseria del Paese sotto Orochi e Kaido. Tra la regione di Kuri e l'eredità di Oden, l'alleanza tesse in segreto il complotto per assaltare Onigashima.",
-      en: "Landing in Wano in disguise, the crew reunites with Kinemon and the Kozuki samurai and sees the country's misery under Orochi and Kaido. Across the Kuri region and Oden's legacy, the alliance secretly weaves the plot to storm Onigashima.",
+      it: "Sbarcata a Wano sotto mentite spoglie, la ciurma ritrova Kin'emon e i samurai Kozuki e scopre la miseria del Paese sotto Orochi e Kaido. Tra la regione di Kuri e l'eredità di Oden, l'alleanza tesse in segreto il complotto per assaltare Onigashima.",
+      en: "Landing in Wano in disguise, the crew reunites with Kin'emon and the Kozuki samurai and sees the country's misery under Orochi and Kaido. Across the Kuri region and Oden's legacy, the alliance secretly weaves the plot to storm Onigashima.",
     },
     title: { it: 'Atto 1: i samurai e la rivolta di Kuri', en: 'Act 1: the samurai and the Kuri uprising' },
     description: {
-      it: "Sbarcata a Wano sotto mentite spoglie, la ciurma ritrova Kinemon e i samurai Kozuki, scopre la miseria sotto Orochi e Kaido e raccoglie l'eredità del clan per preparare il complotto di Onigashima.",
-      en: "Landing in Wano in disguise, the crew reunites with Kinemon and the Kozuki samurai, sees the misery under Orochi and Kaido, and takes up the clan's legacy to prepare the Onigashima plot.",
+      it: "Sbarcata a Wano sotto mentite spoglie, la ciurma ritrova Kin'emon e i samurai Kozuki, scopre la miseria sotto Orochi e Kaido e raccoglie l'eredità del clan per preparare il complotto di Onigashima.",
+      en: "Landing in Wano in disguise, the crew reunites with Kin'emon and the Kozuki samurai, sees the misery under Orochi and Kaido, and takes up the clan's legacy to prepare the Onigashima plot.",
     },
     period: { it: 'Nuovo Mondo · Wano', en: 'New World · Wano' },
     arcId: 'arc-op-wano', locationId: 'loc-op-kuri',

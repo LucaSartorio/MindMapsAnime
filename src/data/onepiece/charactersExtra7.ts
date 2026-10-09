@@ -162,10 +162,10 @@ export const onepieceCharactersExtra7: Character[] = [
   /* ---------------------- Wano ---------------------- */
   C('char-op-sukiyaki', 'Kozuki Sukiyaki', undefined, 'minor', ['neutral'], 'male',
     ['faction-op-kozuki'], ['loc-op-wano'], '1052', '1084',
-    "Padre di Oden e legittimo shogun dei Kozuki, creduto morto e nascostosi come fabbro Tenkai.",
-    "Oden's father and the rightful Kozuki shogun, believed dead and hidden as the smith Tenkai.",
-    "Kozuki Sukiyaki, anziano shogun spodestato da Orochi, sopravvisse in incognito sotto l'isola di Onigashima; custode dei segreti dei Poignee Griffe e degli antichi Kozuki, riemerse dopo la liberazione di Wano.",
-    "Kozuki Sukiyaki, the elderly shogun ousted by Orochi, survived incognito beneath Onigashima; keeper of the Poneglyph secrets and the ancient Kozuki lore, he resurfaced after Wano's liberation.",
+    "Padre di Oden ed ex shogun dei Kozuki, creduto morto e nascostosi come lo spadaio Tenguyama Hitetsu.",
+    "Oden's father and the former Kozuki shogun, believed dead and hidden as the swordsmith Tenguyama Hitetsu.",
+    "Kozuki Sukiyaki, anziano shogun spodestato da Orochi, sopravvisse in incognito come lo spadaio Tenguyama Hitetsu; custode dei segreti dei Poneglyph e degli antichi Kozuki, si rivelò dopo la liberazione di Wano.",
+    "Kozuki Sukiyaki, the elderly shogun ousted by Orochi, survived incognito as the swordsmith Tenguyama Hitetsu; keeper of the Poneglyph secrets and the ancient Kozuki lore, he revealed himself after Wano's liberation.",
     'alive', ['wano', 'kozuki']),
 
   /* ---------------------- Egghead / CP0 / Seraphim ---------------------- */

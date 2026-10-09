@@ -154,7 +154,7 @@ export const onepieceEventsCompletion: TimelineEvent[] = [
       it: "A Sabaody un impostore che si spaccia per Rufy raduna una ciurma di pirati. Arrivano Sentomaru e i Pacifista; i veri Cappello di Paglia li spazzano via mostrando i nuovi poteri e salpano con la Sunny rivestita verso l'Isola degli Uomini-Pesce.",
       en: "At Sabaody an impostor posing as Luffy gathers a pirate crew. Sentomaru and the Pacifistas arrive; the real Straw Hats sweep them away showing their new powers and set sail with the coated Sunny for Fish-Man Island.",
     },
-    period: NEW_WORLD,
+    period: { it: 'Saga di Fish-Man Island', en: 'Fish-Man Island Saga' },
     arcId: 'arc-op-return-to-sabaody',
     locationId: 'loc-op-sabaody',
     characterIds: ['char-op-luffy', 'char-op-zoro', 'char-op-sanji', 'char-op-sentomaru', 'char-op-rayleigh', 'char-op-shakky'],
@@ -199,7 +199,7 @@ export const onepieceEventsCompletion: TimelineEvent[] = [
     title: { it: 'Kid contro Shanks', en: 'Kid vs Shanks' },
     description: {
       it: "Diretto a Elbaf, Eustass Kid sfida Shanks per vendicarsi del braccio perduto. Shanks, prevedendo il colpo con la sua Ambizione dell'Osservazione, lo abbatte con un solo fendente: la nave di Kid viene distrutta.",
-      en: "Bound for Elbaph, Eustass Kid challenges Shanks to avenge his lost arm. Shanks, foreseeing the blow with his Observation Haki, strikes him down with a single slash: Kid's ship is destroyed.",
+      en: "Bound for Elbaf, Eustass Kid challenges Shanks to avenge his lost arm. Shanks, foreseeing the blow with his Observation Haki, strikes him down with a single slash: Kid's ship is destroyed.",
     },
     period: FINAL,
     arcId: 'arc-op-egghead',
@@ -244,7 +244,7 @@ export const onepieceEventsCompletion: TimelineEvent[] = [
     title: { it: 'La fuga da Egghead', en: 'Escape from Egghead' },
     description: {
       it: "Dorry e Brogy, tornati alla guida dei Pirati Giganti Guerrieri, mettono in pausa il loro duello e aprono un varco nell'assedio della Marina. I Cappello di Paglia, con Bonney, Orso e Lilith, lasciano Egghead diretti a Elbaf.",
-      en: "Dorry and Brogy, back at the head of the Giant Warrior Pirates, put their duel on hold and open a path through the Navy's siege. The Straw Hats, with Bonney, Kuma and Lilith, leave Egghead bound for Elbaph.",
+      en: "Dorry and Brogy, back at the head of the Giant Warrior Pirates, put their duel on hold and open a path through the Navy's siege. The Straw Hats, with Bonney, Kuma and Lilith, leave Egghead bound for Elbaf.",
     },
     period: FINAL,
     arcId: 'arc-op-egghead',
@@ -256,7 +256,7 @@ export const onepieceEventsCompletion: TimelineEvent[] = [
   }),
   e({
     id: 'evt-op-elbaf-arrival',
-    title: { it: 'Arrivo a Elbaf', en: 'Arrival at Elbaph' },
+    title: { it: 'Arrivo a Elbaf', en: 'Arrival at Elbaf' },
     description: {
       it: "Sull'isola dei giganti Robin ritrova Jaguar D. Saul, il gigante che la salvò a Ohara, e Rufy incontra il principe Loki, incatenato perché ritenuto l'assassino del padre, Re Harald. Il fratello Hajrudin lo odia; Loki chiede a Rufy di liberarlo.",
       en: "On the giants' island Robin reunites with Jaguar D. Saul, the giant who saved her at Ohara, and Luffy meets Prince Loki, chained because he is believed to have murdered his father, King Harald. His brother Hajrudin hates him; Loki asks Luffy to free him.",
@@ -271,10 +271,10 @@ export const onepieceEventsCompletion: TimelineEvent[] = [
   }),
   e({
     id: 'evt-op-elbaf-holy-knights',
-    title: { it: 'I Cavalieri Sacri a Elbaf', en: 'The Holy Knights in Elbaph' },
+    title: { it: 'I Cavalieri Sacri a Elbaf', en: 'The Holy Knights in Elbaf' },
     description: {
       it: "I Cavalieri Sacri guidati da Figarland Shamrock, figlio di Garling e somigliante a Shanks, arrivano per sottomettere Elbaf al Governo Mondiale e prendono in ostaggio i bambini. Gunko attacca Loki, che rifiuta di cedere.",
-      en: "The Holy Knights led by Figarland Shamrock, Garling's son and a Shanks lookalike, arrive to bring Elbaph under the World Government and take the children hostage. Gunko attacks Loki, who refuses to yield.",
+      en: "The Holy Knights led by Figarland Shamrock, Garling's son and a Shanks lookalike, arrive to bring Elbaf under the World Government and take the children hostage. Gunko attacks Loki, who refuses to yield.",
     },
     period: FINAL,
     arcId: 'arc-op-elbaf',

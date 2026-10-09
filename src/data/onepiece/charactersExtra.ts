@@ -162,8 +162,8 @@ export const onepieceCharactersExtra: Character[] = [
     ['faction-op-beasts-pirates'], ['loc-op-onigashima'], '978', '1015',
     "Una dei Tobiroppo di Kaido, utente dello Zoan ancestrale di un ragno preistorico; affrontò Robin a Onigashima.",
     "One of Kaido's Tobiroppo, user of an ancient prehistoric-spider Zoan; she fought Robin at Onigashima.",
-    "Black Maria, una dei Sei Volanti dei Pirati delle Cento Bestie, gigantesca cortigiana-ragno utente dello Zoan ancestrale del Rosamygale. Tese una trappola a Robin a Onigashima, che la sconfisse con l'aiuto di Brook e Sanji.",
-    "Black Maria, one of the Beasts Pirates' Flying Six, a giant spider-courtesan and user of the ancient Rosamygale Zoan. She trapped Robin at Onigashima, who beat her with the help of Brook and Sanji.",
+    "Black Maria, una dei Sei Volanti dei Pirati delle Cento Bestie, gigantesca cortigiana-ragno utente dello Zoan ancestrale del Rosamygale. A Onigashima intrappolò Sanji e fu poi sconfitta da Robin con l'aiuto di Brook.",
+    "Black Maria, one of the Beasts Pirates' Flying Six, a giant spider-courtesan and user of the ancient Rosamygale Zoan. At Onigashima she trapped Sanji and was then beaten by Robin with Brook's help.",
     'alive', ['cento-bestie', 'tobiroppo', 'wano']),
 
   /* ------------------- Foderi Rossi / Wano ------------------- */

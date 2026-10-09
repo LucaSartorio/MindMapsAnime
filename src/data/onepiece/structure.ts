@@ -1,7 +1,8 @@
 import { factionKit, L, type FactionExtras } from '../shared/factionKit';
 
 const { m, x, g, succ } = factionKit('char-op-');
-const div = (k: number) => L(`comandante della ${k}ª flotta`, `commander of the ${k}th division`);
+const ord = (k: number) => `${k}${k % 100 >= 11 && k % 100 <= 13 ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' } as Record<number, string>)[k % 10] ?? 'th'}`;
+const div = (k: number) => L(`comandante della ${k}ª flotta`, `commander of the ${ord(k)} division`);
 
 /** Organigrammi e successioni (scheda e pagina della fazione). */
 export const onepieceStructure: Record<string, FactionExtras> = {

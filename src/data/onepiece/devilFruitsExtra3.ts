@@ -20,7 +20,7 @@ const J = (
 
 export const onepieceDevilFruitsExtra3: Jutsu[] = [
   /* ---------------------- Frutti mancanti ---------------------- */
-  J('fruit-op-kira-kira', 'Kira Kira no Mi', 'Frutto Splendore Splendore', 'Glint-Glint Fruit', 'paramecia', ['char-op-jozu'],
+  J('fruit-op-kira-kira', 'Kira Kira no Mi', 'Frutto Splendore Splendore', 'Sparkle-Sparkle Fruit', 'paramecia', ['char-op-jozu'],
     "Permette di trasformare il corpo — o parti di esso — in diamante indistruttibile.",
     "Lets the user turn their body — or parts of it — into indestructible diamond.",
     "Paramecia di Jozu «Diamante», terzo comandante di Barbabianca: il diamante è la sostanza naturale più dura, e ne fa al tempo stesso una corazza impenetrabile e un’arma da urto devastante.",

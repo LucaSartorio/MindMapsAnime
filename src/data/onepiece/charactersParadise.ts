@@ -92,8 +92,8 @@ export const onepieceCharactersParadise: Character[] = [
     firstMangaAppearance: "134",
     firstAnimeAppearance: "78",
     longDescription: {
-      it: "Wapol «dalle Fauci d'Acciaio», vile re-tiranno di Drum fuggito all'arrivo di Barbabianca, utente del frutto Mangia. Sconfitto da Rufy, finì paradossalmente per arricchirsi con i giocattoli.",
-      en: "Wapol 'of the Steel Jaws', the cowardly tyrant-king of Drum who fled at Whitebeard's arrival, user of the Munch-Munch Fruit. Beaten by Luffy, he paradoxically grew rich making toys.",
+      it: "Wapol «dalle Fauci d'Acciaio», vile re-tiranno di Drum fuggito all'arrivo di Barbanera, utente del frutto Mangia. Sconfitto da Rufy, finì paradossalmente per arricchirsi con i giocattoli.",
+      en: "Wapol 'of the Steel Jaws', the cowardly tyrant-king of Drum who fled at Blackbeard's arrival, user of the Munch-Munch Fruit. Beaten by Luffy, he paradoxically grew rich making toys.",
     },
     name: 'Wapol',
     aliases: ['Re Wapol'],
@@ -105,8 +105,8 @@ export const onepieceCharactersParadise: Character[] = [
     enemies: ['char-op-luffy', 'char-op-dalton'],
     arcIds: ['arc-op-drum'],
     shortDescription: {
-      it: "Tirannico ex re di Drum, utente del Frutto Gnam Gnam che gli permette di mangiare e assimilare qualunque cosa. Fuggì all'arrivo di Barbabianca e tornò per opprimere l'isola.",
-      en: "The tyrannical former king of Drum, user of the Munch-Munch Fruit that lets him eat and assimilate anything. He fled before Whitebeard and returned to oppress the island.",
+      it: "Tirannico ex re di Drum, utente del Frutto Gnam Gnam che gli permette di mangiare e assimilare qualunque cosa. Fuggì all'arrivo di Barbanera e tornò per opprimere l'isola.",
+      en: "The tyrannical former king of Drum, user of the Munch-Munch Fruit that lets him eat and assimilate anything. He fled before Blackbeard and returned to oppress the island.",
     },
     status: 'alive',
     canonStatus: 'canon',
@@ -162,8 +162,8 @@ export const onepieceCharactersParadise: Character[] = [
     ],
     arcIds: ['arc-op-alabasta'],
     shortDescription: {
-      it: "Corsaro ed ex membro della Flotta dei Sette, utente del Frutto Rogia della Sabbia. Sotto il nome «Mr. 0» guidò la Baroque Works per impadronirsi di Alabasta scatenando una guerra civile.",
-      en: "A Warlord and former member of the Seven Warlords, user of the Sand Logia. As 'Mr. 0' he led Baroque Works to seize Alabasta by igniting a civil war.",
+      it: "Ex membro della Flotta dei Sette, utente del Frutto Rogia della Sabbia. Sotto il nome «Mr. 0» guidò la Baroque Works per impadronirsi di Alabasta scatenando una guerra civile.",
+      en: "A former member of the Seven Warlords, user of the Sand Logia. As 'Mr. 0' he led Baroque Works to seize Alabasta by igniting a civil war.",
     },
     status: 'alive',
     canonStatus: 'canon',
