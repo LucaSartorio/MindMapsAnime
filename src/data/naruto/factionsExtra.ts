@@ -177,8 +177,8 @@ export const narutoClansExtra: Faction[] = [
       en: 'Konoha family to which Maito Gai belongs. Lacking notable chakra nature abilities, the Maito distinguish themselves through extraordinary devotion to pure Taijutsu, pushed to absolute limits with the Eight Gates.',
     },
     longDescription: {
-      it: 'Maito Gai, jonin di Konoha e istruttore del Team Guy, ha affinato il Taijutsu al massimo livello possibile per un essere umano. Con l\'apertura dell\'Ottava Porta (Hachimon Tonkō), Gai è riuscito a danneggiare Madara Uchiha nella sua forma di Jinchūriki del Sei-tails. Rock Lee, il suo allievo, segue la stessa via. Il padre di Gai, Maito Dai, introdusse la tecnica "Youthful Spring".',
-      en: "Maito Gai, Konoha jonin and Team Guy instructor, refined Taijutsu to the highest level possible for a human. By opening the Eighth Gate (Hachimon Tonkō), Gai managed to wound Madara Uchiha in his Six-tails Jinchūriki form. Rock Lee, his student, follows the same path. Gai's father, Maito Dai, pioneered the 'Youthful Spring' technique.",
+      it: 'Maito Gai, jonin di Konoha e istruttore del Team Guy, ha affinato il Taijutsu al massimo livello possibile per un essere umano. Con l\'apertura dell\'Ottava Porta (Hachimon Tonkō), Gai è riuscito a danneggiare Madara Uchiha nella sua forma di Jinchūriki del Dieci Code. Rock Lee, il suo allievo, segue la stessa via. Il padre di Gai, Maito Dai, eterno genin, gli trasmise la sua filosofia della giovinezza e la via delle Otto Porte.',
+      en: "Maito Gai, Konoha jonin and Team Guy instructor, refined Taijutsu to the highest level possible for a human. By opening the Eighth Gate (Hachimon Tonkō), Gai managed to wound Madara Uchiha in his Ten-Tails Jinchūriki form. Rock Lee, his student, follows the same path. Gai's father, Maito Dai, an eternal genin, passed on to him his philosophy of youth and the way of the Eight Gates.",
     },
     signatureAbilities: ['Taijutsu massimale', 'Eight Gates (Hachimon Tonkō)', 'Dynamic Entry', 'Morning Peacock'],
     leaderIds: ['char-guy'],
@@ -202,8 +202,8 @@ export const narutoClansExtra: Faction[] = [
     japaneseName: '加藤一族',
     villageLocationId: 'loc-konoha',
     description: {
-      it: 'Clan minore di Konoha a cui appartiene Dan Katō, jonin noto per la tecnica Spirit Transformation, e sua sorella Nawaki. Tsunade era legata sentimentalmente a Dan, la cui morte influenzò profondamente il suo futuro.',
-      en: "Minor Konoha clan to which Dan Katō belongs — a jonin known for the Spirit Transformation Technique — and his sister Nawaki. Tsunade was romantically linked to Dan, whose death profoundly influenced her future.",
+      it: 'Clan minore di Konoha a cui appartiene Dan Katō, jonin noto per la tecnica Spirit Transformation e zio di Shizune. Tsunade era legata sentimentalmente a Dan, la cui morte influenzò profondamente il suo futuro.',
+      en: "Minor Konoha clan to which Dan Katō belongs — a jonin known for the Spirit Transformation Technique and Shizune's uncle. Tsunade was romantically linked to Dan, whose death profoundly influenced her future.",
     },
     signatureAbilities: ['Spirit Transformation Technique'],
     characterIds: ['char-dan-kato'],

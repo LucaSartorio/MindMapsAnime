@@ -1722,8 +1722,8 @@ export const narutoJutsu: Jutsu[] = [
     rank: 'B',
     characterIds: ['char-kakashi'],
     shortDescription: {
-      it: 'Sigillo che sopprime il Segno Maledetto. Kakashi lo usa su Sasuke dopo gli esami chunin.',
-      en: 'Seal that suppresses the Cursed Seal. Kakashi uses it on Sasuke after the chunin exams.',
+      it: 'Sigillo che sopprime il Segno Maledetto. Kakashi lo usa su Sasuke durante gli esami chunin, dopo la Foresta della Morte.',
+      en: 'Seal that suppresses the Cursed Seal. Kakashi uses it on Sasuke during the chunin exams, after the Forest of Death.',
     },
     canonStatus: 'canon',
     referenceStatus: 'verified',
