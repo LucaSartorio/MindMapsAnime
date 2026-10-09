@@ -63,8 +63,8 @@ export const hxhEventsBatch1: TimelineEvent[] = [
     worldId: 'world-hunterxhunter',
     title: { it: 'La Palude degli Ingannatori', en: "Swindler's Swamp" },
     description: {
-      it: 'Attraversando la palude piena di bestie-truffatrici, Hisoka "esamina" i candidati mutilando alcuni esaminatori; Gon salva Leorio e attira la sua attenzione.',
-      en: 'Crossing the trickster-beast swamp, Hisoka "examines" candidates by maiming some examiners; Gon saves Leorio and draws Hisoka\'s interest.',
+      it: 'Attraversando la palude piena di bestie-truffatrici, Hisoka, squalificato l\'anno prima per aver ridotto in fin di vita un esaminatore, "gioca all\'esaminatore" e uccide diversi candidati; Gon salva Leorio e attira la sua attenzione.',
+      en: 'Crossing the trickster-beast swamp, Hisoka, disqualified the year before for nearly killing an examiner, "plays examiner" and kills several candidates; Gon saves Leorio and draws Hisoka\'s interest.',
     },
     period: P.exam,
     arcId: 'arc-hxh-hunter-exam',

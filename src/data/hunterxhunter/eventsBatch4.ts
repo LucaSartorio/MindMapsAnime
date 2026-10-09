@@ -152,10 +152,10 @@ export const hxhEventsBatch4: TimelineEvent[] = [
   {
     id: 'ev-hxh-kurapika-little-eye',
     worldId: 'world-hunterxhunter',
-    title: { it: "L'«Occhietto Rubato» di Kurapika", en: "Kurapika's Stealing Eye" },
+    title: { it: 'La Catena del Furto di Kurapika', en: "Kurapika's Steal Chain" },
     description: {
-      it: "Per indagare sulle Bestie Guardiane senza esaurirsi, Kurapika usa la catena del mignolo che gli permette di rubare e usare temporaneamente le abilità altrui.",
-      en: 'To investigate the Guardian Beasts without burning out, Kurapika uses his little-finger chain that lets him temporarily steal and use others\' abilities.',
+      it: "Per indagare sulle Bestie Guardiane senza esaurirsi, Kurapika usa la catena dell'indice (Steal Chain) che gli permette di rubare e usare temporaneamente le abilità altrui.",
+      en: 'To investigate the Guardian Beasts without burning out, Kurapika uses his index-finger chain (Steal Chain) that lets him temporarily steal and use others\' abilities.',
     },
     period: P.succession,
     arcId: 'arc-hxh-succession-contest',

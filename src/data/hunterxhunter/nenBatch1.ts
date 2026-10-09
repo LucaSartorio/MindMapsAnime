@@ -277,8 +277,8 @@ export const hxhNenBatch1: Jutsu[] = [
     classification: ['supplementary'],
     characterIds: ['char-hxh-kurapika'],
     shortDescription: {
-      it: 'Catena sul pollice di Kurapika, usata come pendolo per individuare bugie, oggetti e direzioni o come frusta.',
-      en: 'A chain on Kurapika\'s thumb, used as a pendulum to detect lies, objects and directions, or as a whip.',
+      it: 'Catena sull\'anulare di Kurapika, usata come pendolo per individuare bugie, oggetti e direzioni o come frusta.',
+      en: 'A chain on Kurapika\'s ring finger, used as a pendulum to detect lies, objects and directions, or as a whip.',
     },
     canonStatus: 'canon',
     referenceStatus: 'verified',
@@ -293,8 +293,8 @@ export const hxhNenBatch1: Jutsu[] = [
     classification: ['supplementary'],
     characterIds: ['char-hxh-kurapika'],
     shortDescription: {
-      it: 'Catena sull\'indice di Kurapika che cura le ferite: una capacità rara per un Materializzatore.',
-      en: "A chain on Kurapika's index finger that heals wounds: a rare ability for a Conjurer.",
+      it: 'Catena sul pollice di Kurapika che cura le ferite: una capacità rara per un Materializzatore.',
+      en: "A chain on Kurapika's thumb that heals wounds: a rare ability for a Conjurer.",
     },
     canonStatus: 'canon',
     referenceStatus: 'verified',

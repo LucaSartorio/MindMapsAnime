@@ -322,12 +322,12 @@ export const hxhCharacters: Character[] = [
     rank: 'Double-Star Stone Hunter',
     gender: 'F',
     longDescription: {
-      it: 'Maestra di Nen secolare che cela il proprio vero aspetto dietro le sembianze di una ragazzina. Trasmutatrice, con la sua Magical Esthetician cura e modella i corpi. Forgia Gon e Killua negli usi avanzati dell\'aura durante Greed Island.',
-      en: 'A centuries-old Nen master who hides her true form behind the appearance of a little girl. A Transmuter, her Magical Esthetician heals and reshapes bodies. She forges Gon and Killua in advanced aura usage during Greed Island.',
+      it: 'Maestra di Nen di 57 anni che cela il proprio vero aspetto, massiccio e muscoloso, dietro le sembianze di una ragazzina. Trasmutatrice, con la sua Magical Esthetician cura e modella i corpi. Forgia Gon e Killua negli usi avanzati dell\'aura durante Greed Island.',
+      en: 'A 57-year-old Nen master who hides her true, hulking and muscular form behind the appearance of a little girl. A Transmuter, her Magical Esthetician heals and reshapes bodies. She forges Gon and Killua in advanced aura usage during Greed Island.',
     },
     shortDescription: {
-      it: 'Hunter ultracentenaria dall\'aspetto di ragazzina, maestra di Nen di Gon e Killua su Greed Island. Trasmutatrice.',
-      en: 'A centuries-old Hunter who looks like a young girl, Nen master of Gon and Killua on Greed Island. A Transmuter.',
+      it: 'Hunter di 57 anni dall\'aspetto di ragazzina, maestra di Nen di Gon e Killua su Greed Island. Trasmutatrice.',
+      en: 'A 57-year-old Hunter who looks like a young girl, Nen master of Gon and Killua on Greed Island. A Transmuter.',
     },
     jutsuIds: ['jutsu-hxh-magical-esthetician'],
     students: ['char-hxh-gon', 'char-hxh-killua'],

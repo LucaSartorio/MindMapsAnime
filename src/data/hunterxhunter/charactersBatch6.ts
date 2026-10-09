@@ -39,8 +39,8 @@ export const hxhCharactersBatch6: Character[] = [
     rank: '2ª Regina di Kakin',
     gender: 'F',
     shortDescription: {
-      it: 'Seconda regina di Kakin, madre dei principi Camilla e Tubeppa.',
-      en: 'Second queen of Kakin, mother of princes Camilla and Tubeppa.',
+      it: 'Seconda regina di Kakin, madre dei principi Camilla, Tubeppa, Luzurus e Halkenburg.',
+      en: 'Second queen of Kakin, mother of princes Camilla, Tubeppa, Luzurus and Halkenburg.',
     },
     arcIds: ['arc-hxh-succession-contest'],
     status: 'alive',
@@ -99,8 +99,8 @@ export const hxhCharactersBatch6: Character[] = [
     rank: '5ª Regina di Kakin',
     gender: 'F',
     shortDescription: {
-      it: 'Quinta regina di Kakin, madre del principe Luzurus.',
-      en: 'Fifth queen of Kakin, mother of Prince Luzurus.',
+      it: 'Quinta regina di Kakin, madre del principe Sale-sale.',
+      en: 'Fifth queen of Kakin, mother of Prince Sale-sale.',
     },
     arcIds: ['arc-hxh-succession-contest'],
     status: 'alive',
@@ -139,8 +139,8 @@ export const hxhCharactersBatch6: Character[] = [
     rank: '7ª Regina di Kakin',
     gender: 'F',
     shortDescription: {
-      it: 'Settima regina di Kakin, madre dei principi Momoze, Marayam e Sale-sale.',
-      en: 'Seventh queen of Kakin, mother of princes Momoze, Marayam and Sale-sale.',
+      it: 'Settima regina di Kakin, madre dei principi Momoze e Marayam.',
+      en: 'Seventh queen of Kakin, mother of princes Momoze and Marayam.',
     },
     arcIds: ['arc-hxh-succession-contest'],
     status: 'alive',

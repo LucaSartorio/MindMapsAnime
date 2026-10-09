@@ -270,7 +270,7 @@ export const hxhCharactersBatch4: Character[] = [
     role: ['supporting'],
     factionIds: ['faction-hxh-kakin-royal'],
     rank: '5º principe di Kakin',
-    gender: 'F',
+    gender: 'M',
     shortDescription: {
       it: "Quinto in linea di successione al trono di Kakin, studioso e razionale.",
       en: 'Fifth in line to the Kakin throne, a scholarly and rational prince.',

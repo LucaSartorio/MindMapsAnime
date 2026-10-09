@@ -1,6 +1,6 @@
 import { factionKit, L, type FactionExtras } from '../shared/factionKit';
 
-const { m, x, g, succ } = factionKit('char-hxh-');
+const { m, g, succ } = factionKit('char-hxh-');
 const n = (k: number) => L(`n. ${k}`, `no. ${k}`);
 
 /** Organigrammi e successioni (scheda e pagina della fazione). */
@@ -35,7 +35,7 @@ export const hxhStructure: Record<string, FactionExtras> = {
         m('botobai', L('Drago', 'Dragon')),
         m('gel', L('Serpente', 'Snake')),
         m('saccho', L('Cavallo', 'Horse')),
-        x('Ginta', L('Pecora', 'Sheep')),
+        m('ginta', L('Pecora', 'Sheep')),
         m('saiyu', L('Scimmia', 'Monkey')),
         m('cluck', L('Gallo', 'Rooster')),
         m('cheadle', L('Cane', 'Dog')),
