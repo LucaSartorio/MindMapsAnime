@@ -1,0 +1,18 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "guessCharacter",
+  "anime": "dragonball",
+  "subject": "goku",
+  "locale": "en",
+  "hook": "Only real Dragon Ball fans get this before the last place.",
+  "hookType": "challenge",
+  "hookId": "gc-challenge-2",
+  "cta": "Did you get it right?",
+  "ctaType": "comment-guess",
+  "selection": {
+    "mode": "coldstart",
+    "score": 102.23,
+    "seed": "feed7:character-versus:onepiece:sanji-vs-blackclover:yami-sukehiro@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +25.7, jitter +5.9; +12 main character; +8.6 format below its target share (14% < 25%)"
+}
