@@ -975,7 +975,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-10-10T05:27:49.065Z",
-      "updatedAt": "2026-10-10T05:30:24.339Z",
+      "updatedAt": "2026-10-10T05:43:53.849Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-10-10T05:30:24.339Z",
       "outputFile": "tools/social-engine/output/bleach_kisuke-urahara_guess-character_en.mp4",
@@ -1037,9 +1037,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-10T10:00:00+02:00",
+          "scheduledAt": "2026-10-10T05:36:20Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "392566558",
+          "providerPostUuid": "-1216003034116043302",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-1216003034116043302",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "bleach_kisuke-urahara_guess-character_en.instagram.scheduled.99bb227e434d"
+          ],
+          "updatedAt": "2026-10-10T05:43:53.849Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-10T10:00:00+02:00",
+          "scheduledAt": "2026-10-10T05:36:20Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "392566645",
+          "providerPostUuid": "-2704898138636334777",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-2704898138636334777",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "bleach_kisuke-urahara_guess-character_en.facebook.scheduled.248607841df1"
+          ],
+          "updatedAt": "2026-10-10T05:43:53.849Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-10T10:00:00+02:00",
+          "scheduledAt": "2026-10-10T05:36:20Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "392566874",
+          "providerPostUuid": "1497966938199051924",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=1497966938199051924",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "bleach_kisuke-urahara_guess-character_en.tiktok.scheduled.aedc94c34a35"
+          ],
+          "updatedAt": "2026-10-10T05:43:53.849Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-10T10:00:00+02:00",
+          "scheduledAt": "2026-10-10T05:36:20Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "392566751",
+          "providerPostUuid": "-8339245031552825483",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-8339245031552825483",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "bleach_kisuke-urahara_guess-character_en.youtube.scheduled.81f9d5c8aeb0"
+          ],
+          "updatedAt": "2026-10-10T05:43:53.849Z"
+        }
+      ]
     },
     "guess-character:bleach:orihime-inoue@en": {
       "renderId": "guess-character:bleach:orihime-inoue@en",

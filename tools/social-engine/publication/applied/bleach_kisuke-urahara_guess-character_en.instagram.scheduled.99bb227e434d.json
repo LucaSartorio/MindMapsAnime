@@ -1,0 +1,30 @@
+{
+  "receiptId": "bleach_kisuke-urahara_guess-character_en.instagram.scheduled.99bb227e434d",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-10-10T05:43:53.849Z",
+  "sourceFile": "20261010T053620Z-bleach_kisuke-urahara_guess-character_en-instagram-scheduled.json",
+  "run": {
+    "runId": "38028478803",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/38028478803",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "guess-character:bleach:kisuke-urahara@en",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-10-10T10:00:00+02:00",
+    "recordedAt": "2026-10-10T05:36:20Z",
+    "recordedBy": "chatgpt-work-publishing-agent",
+    "platform": "instagram",
+    "providerPostId": "392566558",
+    "providerPostUuid": "-1216003034116043302",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-1216003034116043302"
+  }
+}

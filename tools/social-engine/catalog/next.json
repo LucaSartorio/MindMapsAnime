@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-10T05:30:25.374Z",
-  "status": "backlog",
+  "generatedAt": "2026-10-10T05:43:53.865Z",
+  "status": "ready",
   "feedTail": [
     {
       "renderId": "character-journey:onepiece:monkey-d-luffy:part-01@en",
@@ -92,28 +92,480 @@
     "error": null
   },
   "backlog": {
-    "unpublished": [
-      {
-        "renderId": "guess-character:bleach:kisuke-urahara@en",
-        "contentType": "guess-character",
-        "renderedAt": "2026-10-10T05:30:24.339Z",
-        "missing": [
-          "instagram",
-          "facebook",
-          "tiktok",
-          "youtube"
-        ]
-      }
-    ],
+    "unpublished": [],
     "unfinished": [],
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "",
-  "reason": "publish the existing render first: guess-character:bleach:kisuke-urahara@en (it counts as today's video; no new content)",
-  "alternatives": [],
-  "rejected": {},
-  "considered": 0,
-  "eligible": 0,
-  "trace": null
+  "seed": "feed8:guess-character:bleach:kisuke-urahara@en:samples0",
+  "rejected": {
+    "JOURNEY_PART_ORDER": 44,
+    "MAX_SAME_CHARACTER_STREAK": 1
+  },
+  "considered": 693,
+  "trace": {
+    "traceVersion": 1,
+    "mode": "coldstart",
+    "seed": "feed8:guess-character:bleach:kisuke-urahara@en:samples0",
+    "analytics": {
+      "coldStart": true,
+      "samples": 0,
+      "contents": 0,
+      "minimumSamples": 8
+    },
+    "recent": [
+      {
+        "renderId": "character-journey:onepiece:monkey-d-luffy:part-01@en",
+        "contentType": "character-journey",
+        "animes": [
+          "onepiece"
+        ],
+        "characters": [
+          "onepiece:monkey-d-luffy"
+        ]
+      },
+      {
+        "renderId": "character-journey:hunterxhunter:killua-zoldyck:part-01@en",
+        "contentType": "character-journey",
+        "animes": [
+          "hunterxhunter"
+        ],
+        "characters": [
+          "hunterxhunter:killua-zoldyck"
+        ]
+      },
+      {
+        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-blackclover-noelle-silva@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "blackclover"
+        ],
+        "characters": [
+          "attackontitan:mikasa-ackerman",
+          "blackclover:noelle-silva"
+        ]
+      },
+      {
+        "renderId": "guess-character:bleach:orihime-inoue@en",
+        "contentType": "guess-character",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:orihime-inoue"
+        ]
+      },
+      {
+        "renderId": "character-versus:onepiece:sanji-vs-blackclover-yami-sukehiro@en",
+        "contentType": "character-versus",
+        "animes": [
+          "onepiece",
+          "blackclover"
+        ],
+        "characters": [
+          "onepiece:sanji",
+          "blackclover:yami-sukehiro"
+        ]
+      },
+      {
+        "renderId": "guess-character:bleach:kisuke-urahara@en",
+        "contentType": "guess-character",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:kisuke-urahara"
+        ]
+      }
+    ],
+    "constraints": {
+      "sameAnimeStreak": {
+        "animes": [
+          "bleach"
+        ],
+        "length": 1
+      },
+      "forcedAnimeRotation": false,
+      "blockedAnimes": [],
+      "blockedCharacters": [
+        "bleach:kisuke-urahara"
+      ],
+      "characterCooldown": [
+        "onepiece:monkey-d-luffy",
+        "hunterxhunter:killua-zoldyck",
+        "attackontitan:mikasa-ackerman",
+        "blackclover:noelle-silva",
+        "bleach:orihime-inoue",
+        "onepiece:sanji",
+        "blackclover:yami-sukehiro",
+        "bleach:kisuke-urahara"
+      ],
+      "contentTypeStreak": {
+        "contentType": "guess-character",
+        "length": 1
+      }
+    },
+    "hardRulesTriggered": {
+      "JOURNEY_PART_ORDER": 44,
+      "MAX_SAME_CHARACTER_STREAK": 1
+    },
+    "candidates": {
+      "considered": 693,
+      "eligible": 648,
+      "byContentType": {
+        "character-journey": {
+          "considered": 419,
+          "eligible": 374
+        },
+        "guess-character": {
+          "considered": 87,
+          "eligible": 87
+        },
+        "character-versus": {
+          "considered": 187,
+          "eligible": 187
+        }
+      }
+    },
+    "excluded": [
+      {
+        "renderId": "character-journey:bleach:kisuke-urahara@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:kisuke-urahara"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: bleach:kisuke-urahara is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:blackclover:asta:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:asta"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:blackclover:asta:part-03@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:asta"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 3 before Part 2 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:blackclover:noelle-silva:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:noelle-silva"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:blackclover:yami-sukehiro:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:yami-sukehiro"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:blackclover:yuno-grinberryall:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:yuno-grinberryall"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:bleach:byakuya-kuchiki:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:byakuya-kuchiki"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:bleach:ichigo-kurosaki:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:ichigo-kurosaki"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:bleach:ichigo-kurosaki:part-03@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:ichigo-kurosaki"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 3 before Part 2 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:bleach:orihime-inoue:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:orihime-inoue"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      }
+    ],
+    "status": "selected",
+    "selectedId": "character-journey:naruto:naruto-uzumaki:part-02",
+    "renderId": "character-journey:naruto:naruto-uzumaki:part-02@en",
+    "contentType": "character-journey",
+    "animes": [
+      "naruto"
+    ],
+    "characters": [
+      "naruto:naruto-uzumaki"
+    ],
+    "score": 102.35,
+    "base": 76.35,
+    "reasons": [
+      "coldstart: novelty +20.6, jitter +5.7",
+      "+12 main character",
+      "+14 continues a started series (Part 2 promised)"
+    ],
+    "ranked": [
+      {
+        "renderId": "character-journey:naruto:naruto-uzumaki:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "naruto"
+        ],
+        "score": 102.35,
+        "reasons": [
+          "coldstart: novelty +20.6, jitter +5.7",
+          "+12 main character",
+          "+14 continues a started series (Part 2 promised)"
+        ]
+      },
+      {
+        "renderId": "character-journey:dragonball:goku:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "dragonball"
+        ],
+        "score": 100.02,
+        "reasons": [
+          "coldstart: novelty +20.6, jitter +3.4",
+          "+12 main character",
+          "+14 continues a started series (Part 2 promised)"
+        ]
+      },
+      {
+        "renderId": "character-versus:naruto:sasuke-uchiha-vs-hunterxhunter-kurapika@en",
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "hunterxhunter"
+        ],
+        "score": 92.21,
+        "reasons": [
+          "coldstart: novelty +24.4, jitter +5.8",
+          "+12 main character"
+        ]
+      },
+      {
+        "renderId": "character-versus:naruto:naruto-uzumaki-vs-hunterxhunter-kurapika@en",
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "hunterxhunter"
+        ],
+        "score": 92.03,
+        "reasons": [
+          "coldstart: novelty +24.4, jitter +5.7",
+          "+12 main character"
+        ]
+      },
+      {
+        "renderId": "character-versus:naruto:naruto-uzumaki-vs-attackontitan-reiner-braun@en",
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "attackontitan"
+        ],
+        "score": 91.92,
+        "reasons": [
+          "coldstart: novelty +24.4, jitter +5.5",
+          "+12 main character"
+        ]
+      },
+      {
+        "renderId": "character-versus:naruto:naruto-uzumaki-vs-hunterxhunter-gon-freecss@en",
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "hunterxhunter"
+        ],
+        "score": 91.91,
+        "reasons": [
+          "coldstart: novelty +24.4, jitter +5.5",
+          "+12 main character"
+        ]
+      }
+    ],
+    "explanation": [
+      "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
+      "bleach:kisuke-urahara excluded in every format (maxSameCharacterStreak 1).",
+      "Selected character-journey:naruto:naruto-uzumaki:part-02@en (character-journey, naruto) — coldstart, score 102.35 among 648 valid candidate(s)."
+    ]
+  },
+  "pick": {
+    "contentId": "character-journey:naruto:naruto-uzumaki:part-02",
+    "renderId": "character-journey:naruto:naruto-uzumaki:part-02@en",
+    "contentType": "character-journey",
+    "animes": [
+      "naruto"
+    ],
+    "characters": [
+      "naruto:naruto-uzumaki"
+    ],
+    "part": 2,
+    "partCount": 2,
+    "score": 102.35,
+    "reasons": [
+      "coldstart: novelty +20.6, jitter +5.7",
+      "+12 main character",
+      "+14 continues a started series (Part 2 promised)"
+    ]
+  },
+  "request": {
+    "template": "characterJourney",
+    "anime": "naruto",
+    "subject": "naruto-uzumaki",
+    "segment": "part-02",
+    "locale": "en",
+    "hook": "Where did Naruto Uzumaki go next? Part 2 of 2.",
+    "hookType": "question",
+    "hookId": "cj-cont-question-1",
+    "cta": "Which journey should we map next?",
+    "ctaType": "comment-next-journey",
+    "selection": {
+      "mode": "coldstart",
+      "score": 102.35,
+      "seed": "feed8:guess-character:bleach:kisuke-urahara@en:samples0"
+    },
+    "notes": "growth selector (coldstart): coldstart: novelty +20.6, jitter +5.7; +12 main character; +14 continues a started series (Part 2 promised)"
+  },
+  "alternatives": [
+    {
+      "renderId": "character-journey:dragonball:goku:part-02@en",
+      "contentType": "character-journey",
+      "score": 100.02
+    },
+    {
+      "renderId": "character-versus:naruto:sasuke-uchiha-vs-hunterxhunter-kurapika@en",
+      "contentType": "character-versus",
+      "score": 92.21
+    },
+    {
+      "renderId": "character-versus:naruto:naruto-uzumaki-vs-hunterxhunter-kurapika@en",
+      "contentType": "character-versus",
+      "score": 92.03
+    },
+    {
+      "renderId": "character-versus:naruto:naruto-uzumaki-vs-attackontitan-reiner-braun@en",
+      "contentType": "character-versus",
+      "score": 91.92
+    },
+    {
+      "renderId": "character-versus:naruto:naruto-uzumaki-vs-hunterxhunter-gon-freecss@en",
+      "contentType": "character-versus",
+      "score": 91.91
+    }
+  ],
+  "eligible": 648
 }
