@@ -1,0 +1,19 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "guessCharacter",
+  "anime": "bleach",
+  "subject": "kisuke-urahara",
+  "locale": "en",
+  "hook": "Only real Bleach fans get this before the last place.",
+  "hookType": "challenge",
+  "hookId": "gc-challenge-2",
+  "cta": "Did you get it right?",
+  "ctaType": "comment-guess",
+  "selection": {
+    "mode": "coldstart",
+    "score": 101.29,
+    "seed": "feed7:character-versus:onepiece:sanji-vs-blackclover-yami-sukehiro@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +25.7, jitter +5.0; +12 main character; +8.6 format below its target share (14% < 25%)"
+}
+
