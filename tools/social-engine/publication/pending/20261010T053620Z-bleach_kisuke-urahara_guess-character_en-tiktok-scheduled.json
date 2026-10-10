@@ -1,0 +1,13 @@
+{
+  "receiptVersion": 1,
+  "renderId": "guess-character:bleach:kisuke-urahara@en",
+  "provider": "metricool",
+  "status": "scheduled",
+  "scheduledFor": "2026-10-10T10:00:00+02:00",
+  "recordedAt": "2026-10-10T05:36:20Z",
+  "recordedBy": "chatgpt-work-publishing-agent",
+  "platform": "tiktok",
+  "providerPostId": "392566874",
+  "providerPostUuid": "1497966938199051924",
+  "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=1497966938199051924"
+}
