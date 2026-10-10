@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-09T05:19:52.109Z",
+  "generatedAt": "2026-10-10T05:15:53.233Z",
   "locales": [
     "en",
     "it"
@@ -59,10 +59,10 @@
           "excluded": 53
         },
         "blackclover": {
-          "characters": 50,
-          "videos": 55,
+          "characters": 51,
+          "videos": 56,
           "series": 4,
-          "excluded": 87
+          "excluded": 86
         }
       },
       "items": [
@@ -2929,10 +2929,10 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "major",
-            "places": 2,
-            "animatedStops": 2,
-            "arcs": 2,
-            "journeyArcs": 2
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -3894,7 +3894,7 @@
                 "Whole Cake Island",
                 "Wano Country",
                 "Egghead",
-                "Elbaph"
+                "Elbaf"
               ],
               "it": [
                 "Punk Hazard",
@@ -3907,7 +3907,7 @@
               ]
             },
             "firstArc": "Punk Hazard",
-            "lastArc": "Elbaph",
+            "lastArc": "Elbaf",
             "segmentationVersion": 1,
             "fingerprint": "2e8bc93b",
             "legacyRenderedLocales": [
@@ -5196,7 +5196,7 @@
                 "Return to Sabaody",
                 "Zou",
                 "Wano Country",
-                "Elbaph"
+                "Elbaf"
               ],
               "it": [
                 "Enies Lobby",
@@ -5208,7 +5208,7 @@
               ]
             },
             "firstArc": "Enies Lobby",
-            "lastArc": "Elbaph",
+            "lastArc": "Elbaf",
             "segmentationVersion": 1,
             "fingerprint": "db3532bf"
           },
@@ -9842,8 +9842,8 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "major",
-            "places": 3,
-            "animatedStops": 3,
+            "places": 2,
+            "animatedStops": 2,
             "arcs": 2,
             "journeyArcs": 2
           },
@@ -13268,10 +13268,10 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "minor",
-            "places": 3,
-            "animatedStops": 3,
-            "arcs": 3,
-            "journeyArcs": 3
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -13625,32 +13625,32 @@
             "previousId": "character-journey:blackclover:asta:part-01",
             "nextId": "character-journey:blackclover:asta:part-03",
             "arcIds": [
-              "arc-bc-star-awards",
               "arc-bc-seabed-temple",
+              "arc-bc-kiten-diamond",
               "arc-bc-witches-forest",
               "arc-bc-royal-knights-exam",
               "arc-bc-heart-kingdom"
             ],
             "arcTitles": {
               "en": [
-                "Star Awards Festival",
                 "Undersea Temple",
+                "Diamond Kingdom invasion of Kiten",
                 "Witches' Forest",
                 "Royal Knights Selection Exam",
                 "Heart Kingdom"
               ],
               "it": [
-                "Il Festival dei Premi Stellari",
                 "Il Tempio Sottomarino",
+                "L'invasione di Diamond a Kiten",
                 "La Foresta delle Streghe",
                 "La selezione dei Royal Knights",
                 "Il Regno di Heart"
               ]
             },
-            "firstArc": "Star Awards Festival",
+            "firstArc": "Undersea Temple",
             "lastArc": "Heart Kingdom",
             "segmentationVersion": 1,
-            "fingerprint": "73f36864"
+            "fingerprint": "aba33262"
           },
           "displayName": {
             "en": "Asta",
@@ -13754,25 +13754,22 @@
             "nextId": "character-journey:blackclover:yami-sukehiro:part-02",
             "arcIds": [
               "arc-bc-entrance-exam",
-              "arc-bc-eye-midnight-sun",
-              "arc-bc-star-awards"
+              "arc-bc-eye-midnight-sun"
             ],
             "arcTitles": {
               "en": [
                 "Magic Knights Entrance Exam",
-                "Eye of the Midnight Sun",
-                "Star Awards Festival"
+                "Eye of the Midnight Sun"
               ],
               "it": [
                 "L'esame d'ingresso dei Cavalieri Magici",
-                "Occhio Magico della Notte Bianca",
-                "Il Festival dei Premi Stellari"
+                "Occhio Magico della Notte Bianca"
               ]
             },
             "firstArc": "Magic Knights Entrance Exam",
-            "lastArc": "Star Awards Festival",
+            "lastArc": "Eye of the Midnight Sun",
             "segmentationVersion": 1,
-            "fingerprint": "6807244c"
+            "fingerprint": "6bd32852"
           },
           "displayName": {
             "en": "Yami Sukehiro",
@@ -13785,9 +13782,9 @@
           "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "main",
-            "places": 10,
+            "places": 11,
             "animatedStops": 5,
-            "arcs": 3,
+            "arcs": 2,
             "journeyArcs": 8
           },
           "renderedLocales": [],
@@ -13812,7 +13809,8 @@
             "nextId": null,
             "arcIds": [
               "arc-bc-seabed-temple",
-              "arc-bc-royal-capital-assault",
+              "arc-bc-kiten-diamond",
+              "arc-bc-star-awards",
               "arc-bc-spade-invasion",
               "arc-bc-spade-raid",
               "arc-bc-lucius-paladins"
@@ -13820,14 +13818,16 @@
             "arcTitles": {
               "en": [
                 "Undersea Temple",
-                "Royal Capital Assault",
+                "Diamond Kingdom invasion of Kiten",
+                "Star Awards Festival",
                 "Spade Kingdom invasion",
                 "Spade Kingdom Raid",
                 "Lucius Zogratis and the Paladins"
               ],
               "it": [
                 "Il Tempio Sottomarino",
-                "Assalto alla Capitale Reale",
+                "L'invasione di Diamond a Kiten",
+                "Il Festival dei Premi Stellari",
                 "L'invasione della Triade Oscura",
                 "L'assalto al Regno di Spade",
                 "Lucius Zogratis e i Paladini"
@@ -13836,7 +13836,7 @@
             "firstArc": "Undersea Temple",
             "lastArc": "Lucius Zogratis and the Paladins",
             "segmentationVersion": 1,
-            "fingerprint": "40eae22e"
+            "fingerprint": "8ab15643"
           },
           "displayName": {
             "en": "Yami Sukehiro",
@@ -13846,12 +13846,12 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 10,
-            "animatedStops": 5,
-            "arcs": 5,
+            "places": 11,
+            "animatedStops": 6,
+            "arcs": 6,
             "journeyArcs": 8
           },
           "renderedLocales": [],
@@ -13875,29 +13875,29 @@
             "previousId": null,
             "nextId": "character-journey:blackclover:noelle-silva:part-02",
             "arcIds": [
-              "arc-bc-entrance-exam",
               "arc-bc-dungeon",
+              "arc-bc-eye-midnight-sun",
               "arc-bc-witches-forest",
-              "arc-bc-heart-kingdom"
+              "arc-bc-reincarnation-aftermath"
             ],
             "arcTitles": {
               "en": [
-                "Magic Knights Entrance Exam",
                 "Dungeon Exploration",
+                "Eye of the Midnight Sun",
                 "Witches' Forest",
-                "Heart Kingdom"
+                "Reincarnation aftermath"
               ],
               "it": [
-                "L'esame d'ingresso dei Cavalieri Magici",
                 "Esplorazione del Dungeon",
+                "Occhio Magico della Notte Bianca",
                 "La Foresta delle Streghe",
-                "Il Regno di Heart"
+                "Dopo la Reincarnazione"
               ]
             },
-            "firstArc": "Magic Knights Entrance Exam",
-            "lastArc": "Heart Kingdom",
+            "firstArc": "Dungeon Exploration",
+            "lastArc": "Reincarnation aftermath",
             "segmentationVersion": 1,
-            "fingerprint": "95dc7f60"
+            "fingerprint": "1984d6b7"
           },
           "displayName": {
             "en": "Noelle Silva",
@@ -13913,7 +13913,7 @@
             "places": 11,
             "animatedStops": 5,
             "arcs": 4,
-            "journeyArcs": 9
+            "journeyArcs": 10
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -13936,35 +13936,35 @@
             "previousId": "character-journey:blackclover:noelle-silva:part-01",
             "nextId": null,
             "arcIds": [
-              "arc-bc-eye-midnight-sun",
+              "arc-bc-entrance-exam",
               "arc-bc-seabed-temple",
               "arc-bc-royal-knights-exam",
               "arc-bc-heart-kingdom",
               "arc-bc-spade-raid",
-              "arc-bc-final-arc"
+              "arc-bc-lucius-paladins"
             ],
             "arcTitles": {
               "en": [
-                "Eye of the Midnight Sun",
+                "Magic Knights Entrance Exam",
                 "Undersea Temple",
                 "Royal Knights Selection Exam",
                 "Heart Kingdom",
                 "Spade Kingdom Raid",
-                "Judgement Day and the final arc"
+                "Lucius Zogratis and the Paladins"
               ],
               "it": [
-                "Occhio Magico della Notte Bianca",
+                "L'esame d'ingresso dei Cavalieri Magici",
                 "Il Tempio Sottomarino",
                 "La selezione dei Royal Knights",
                 "Il Regno di Heart",
                 "L'assalto al Regno di Spade",
-                "Il Giorno del Giudizio e la corsa finale"
+                "Lucius Zogratis e i Paladini"
               ]
             },
-            "firstArc": "Eye of the Midnight Sun",
-            "lastArc": "Judgement Day and the final arc",
+            "firstArc": "Magic Knights Entrance Exam",
+            "lastArc": "Lucius Zogratis and the Paladins",
             "segmentationVersion": 1,
-            "fingerprint": "5a1f45b0"
+            "fingerprint": "5132a610"
           },
           "displayName": {
             "en": "Noelle Silva",
@@ -13980,7 +13980,7 @@
             "places": 11,
             "animatedStops": 6,
             "arcs": 6,
-            "journeyArcs": 9
+            "journeyArcs": 10
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -14004,13 +14004,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 30,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "supporting",
-            "places": 6,
-            "animatedStops": 6,
-            "arcs": 6,
-            "journeyArcs": 6
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 4,
+            "journeyArcs": 4
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -14034,13 +14034,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 30,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "supporting",
-            "places": 6,
-            "animatedStops": 6,
-            "arcs": 6,
-            "journeyArcs": 6
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 5,
+            "journeyArcs": 5
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -14094,13 +14094,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "supporting",
-            "places": 3,
-            "animatedStops": 3,
-            "arcs": 3,
-            "journeyArcs": 3
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 5,
+            "journeyArcs": 5
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -14124,13 +14124,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "supporting",
-            "places": 3,
-            "animatedStops": 3,
-            "arcs": 3,
-            "journeyArcs": 3
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 5,
+            "journeyArcs": 5
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -14154,13 +14154,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "supporting",
-            "places": 2,
-            "animatedStops": 2,
-            "arcs": 2,
-            "journeyArcs": 2
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 3,
+            "journeyArcs": 3
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -14184,13 +14184,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 25,
+          "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "supporting",
-            "places": 4,
-            "animatedStops": 4,
-            "arcs": 3,
-            "journeyArcs": 3
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 2,
+            "journeyArcs": 2
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -14219,8 +14219,8 @@
             "importance": "major",
             "places": 3,
             "animatedStops": 3,
-            "arcs": 3,
-            "journeyArcs": 3
+            "arcs": 2,
+            "journeyArcs": 2
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -14249,8 +14249,8 @@
             "importance": "major",
             "places": 5,
             "animatedStops": 5,
-            "arcs": 4,
-            "journeyArcs": 4
+            "arcs": 5,
+            "journeyArcs": 5
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -14275,27 +14275,24 @@
             "arcIds": [
               "arc-bc-grimoire-ceremony",
               "arc-bc-entrance-exam",
-              "arc-bc-dungeon",
-              "arc-bc-star-awards"
+              "arc-bc-dungeon"
             ],
             "arcTitles": {
               "en": [
                 "Grimoire Acceptance Ceremony",
                 "Magic Knights Entrance Exam",
-                "Dungeon Exploration",
-                "Star Awards Festival"
+                "Dungeon Exploration"
               ],
               "it": [
                 "La Cerimonia dei Grimori",
                 "L'esame d'ingresso dei Cavalieri Magici",
-                "Esplorazione del Dungeon",
-                "Il Festival dei Premi Stellari"
+                "Esplorazione del Dungeon"
               ]
             },
             "firstArc": "Grimoire Acceptance Ceremony",
-            "lastArc": "Star Awards Festival",
+            "lastArc": "Dungeon Exploration",
             "segmentationVersion": 1,
-            "fingerprint": "b978f69a"
+            "fingerprint": "45b4806f"
           },
           "displayName": {
             "en": "Yuno Grinberryall",
@@ -14305,13 +14302,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 30,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "main",
-            "places": 12,
-            "animatedStops": 6,
-            "arcs": 4,
-            "journeyArcs": 9
+            "places": 11,
+            "animatedStops": 5,
+            "arcs": 3,
+            "journeyArcs": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -14372,10 +14369,10 @@
           "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 12,
+            "places": 11,
             "animatedStops": 6,
             "arcs": 5,
-            "journeyArcs": 9
+            "journeyArcs": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -14399,13 +14396,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 25,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "major",
-            "places": 4,
-            "animatedStops": 4,
-            "arcs": 3,
-            "journeyArcs": 3
+            "places": 6,
+            "animatedStops": 6,
+            "arcs": 5,
+            "journeyArcs": 5
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -14429,13 +14426,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "supporting",
-            "places": 3,
-            "animatedStops": 3,
-            "arcs": 3,
-            "journeyArcs": 3
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 4,
+            "journeyArcs": 4
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -14459,13 +14456,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 33,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "supporting",
-            "places": 7,
-            "animatedStops": 7,
-            "arcs": 6,
-            "journeyArcs": 6
+            "places": 6,
+            "animatedStops": 6,
+            "arcs": 5,
+            "journeyArcs": 5
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -14492,10 +14489,10 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "supporting",
-            "places": 3,
-            "animatedStops": 3,
-            "arcs": 3,
-            "journeyArcs": 3
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -14549,13 +14546,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "major",
-            "places": 3,
-            "animatedStops": 3,
-            "arcs": 2,
-            "journeyArcs": 2
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 4,
+            "journeyArcs": 4
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -14656,6 +14653,36 @@
           "publication": []
         },
         {
+          "id": "character-journey:blackclover:rill-boismortier",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "rill-boismortier",
+          "series": null,
+          "displayName": {
+            "en": "Rill Boismortier",
+            "it": "Rill Boismortier"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
           "id": "character-journey:blackclover:julius-novachrono",
           "anime": "blackclover",
           "animeTitle": "Black Clover",
@@ -14674,8 +14701,8 @@
             "importance": "major",
             "places": 5,
             "animatedStops": 5,
-            "arcs": 5,
-            "journeyArcs": 5
+            "arcs": 4,
+            "journeyArcs": 4
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -14699,11 +14726,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 25,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "supporting",
-            "places": 4,
-            "animatedStops": 4,
+            "places": 5,
+            "animatedStops": 5,
             "arcs": 3,
             "journeyArcs": 3
           },
@@ -14792,10 +14819,40 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "major",
-            "places": 3,
-            "animatedStops": 3,
-            "arcs": 2,
-            "journeyArcs": 2
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:blackclover:rhya-the-disloyal",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "rhya-the-disloyal",
+          "series": null,
+          "displayName": {
+            "en": "Rhya the Disloyal",
+            "it": "Rhya lo Sleale"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 27,
+          "facts": {
+            "importance": "supporting",
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 3,
+            "journeyArcs": 3
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -14819,13 +14876,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "supporting",
-            "places": 2,
-            "animatedStops": 2,
-            "arcs": 2,
-            "journeyArcs": 2
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 4,
+            "journeyArcs": 4
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -14836,10 +14893,10 @@
           "publication": []
         },
         {
-          "id": "character-journey:blackclover:fana-the-loveless",
+          "id": "character-journey:blackclover:fana-the-hateful",
           "anime": "blackclover",
           "animeTitle": "Black Clover",
-          "subject": "fana-the-loveless",
+          "subject": "fana-the-hateful",
           "series": null,
           "displayName": {
             "en": "Fana the Hateful",
@@ -14849,13 +14906,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "supporting",
-            "places": 2,
-            "animatedStops": 2,
-            "arcs": 2,
-            "journeyArcs": 2
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 4,
+            "journeyArcs": 4
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -14879,11 +14936,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "minor",
-            "places": 2,
-            "animatedStops": 2,
+            "places": 4,
+            "animatedStops": 4,
             "arcs": 2,
             "journeyArcs": 2
           },
@@ -14914,8 +14971,8 @@
             "importance": "minor",
             "places": 2,
             "animatedStops": 2,
-            "arcs": 2,
-            "journeyArcs": 2
+            "arcs": 1,
+            "journeyArcs": 1
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -14942,8 +14999,8 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "minor",
-            "places": 2,
-            "animatedStops": 2,
+            "places": 3,
+            "animatedStops": 3,
             "arcs": 2,
             "journeyArcs": 2
           },
@@ -14974,8 +15031,8 @@
             "importance": "minor",
             "places": 2,
             "animatedStops": 2,
-            "arcs": 2,
-            "journeyArcs": 2
+            "arcs": 1,
+            "journeyArcs": 1
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -15119,11 +15176,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "major",
-            "places": 5,
-            "animatedStops": 5,
+            "places": 4,
+            "animatedStops": 4,
             "arcs": 2,
             "journeyArcs": 2
           },
@@ -15239,13 +15296,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 25,
+          "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "supporting",
-            "places": 4,
-            "animatedStops": 4,
-            "arcs": 3,
-            "journeyArcs": 3
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 2,
+            "journeyArcs": 2
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -15269,41 +15326,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 25,
-          "facts": {
-            "importance": "supporting",
-            "places": 4,
-            "animatedStops": 4,
-            "arcs": 3,
-            "journeyArcs": 3
-          },
-          "renderedLocales": [],
-          "scheduledLocales": [],
-          "publishedLocales": [],
-          "queuedLocales": [],
-          "renderedBefore": false,
-          "publishedBefore": false,
-          "publication": []
-        },
-        {
-          "id": "character-journey:blackclover:ladros",
-          "anime": "blackclover",
-          "animeTitle": "Black Clover",
-          "subject": "ladros",
-          "series": null,
-          "displayName": {
-            "en": "Ladros",
-            "it": "Ladros"
-          },
-          "locales": [
-            "en",
-            "it"
-          ],
           "recommendedDurationSeconds": 24,
           "facts": {
-            "importance": "minor",
-            "places": 2,
-            "animatedStops": 2,
+            "importance": "supporting",
+            "places": 3,
+            "animatedStops": 3,
             "arcs": 2,
             "journeyArcs": 2
           },
@@ -15549,10 +15576,10 @@
           "excluded": 31
         },
         "blackclover": {
-          "characters": 8,
-          "videos": 8,
+          "characters": 9,
+          "videos": 9,
           "series": 0,
-          "excluded": 15
+          "excluded": 14
         }
       },
       "items": [
@@ -17832,7 +17859,7 @@
           "recommendedDurationSeconds": 26,
           "facts": {
             "importance": "main",
-            "places": 12,
+            "places": 13,
             "clues": 6
           },
           "renderedLocales": [],
@@ -17860,7 +17887,7 @@
           "recommendedDurationSeconds": 26,
           "facts": {
             "importance": "main",
-            "places": 7,
+            "places": 8,
             "clues": 6
           },
           "renderedLocales": [],
@@ -17888,7 +17915,7 @@
           "recommendedDurationSeconds": 26,
           "facts": {
             "importance": "main",
-            "places": 10,
+            "places": 9,
             "clues": 6
           },
           "renderedLocales": [],
@@ -17964,6 +17991,34 @@
           "displayName": {
             "en": "William Vangeance",
             "it": "William Vangeance"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 5,
+            "clues": 5
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "guess-character:blackclover:mereoleona-vermillion",
+          "anime": "blackclover",
+          "animeTitle": "Black Clover",
+          "subject": "mereoleona-vermillion",
+          "series": null,
+          "displayName": {
+            "en": "Mereoleona Vermillion",
+            "it": "Mereoleona Vermillion"
           },
           "locales": [
             "en",
@@ -18691,7 +18746,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "asta",
             "placesA": 10,
-            "placesB": 12
+            "placesB": 13
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -18729,7 +18784,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "noelle-silva",
             "placesA": 10,
-            "placesB": 10
+            "placesB": 9
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -18767,7 +18822,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "yami-sukehiro",
             "placesA": 10,
-            "placesB": 7
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -19375,7 +19430,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "asta",
             "placesA": 9,
-            "placesB": 12
+            "placesB": 13
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -19413,7 +19468,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "noelle-silva",
             "placesA": 9,
-            "placesB": 10
+            "placesB": 9
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -19451,7 +19506,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "yami-sukehiro",
             "placesA": 9,
-            "placesB": 7
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -20059,7 +20114,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "asta",
             "placesA": 9,
-            "placesB": 12
+            "placesB": 13
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -20097,7 +20152,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "noelle-silva",
             "placesA": 9,
-            "placesB": 10
+            "placesB": 9
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -20135,7 +20190,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "yami-sukehiro",
             "placesA": 9,
-            "placesB": 7
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -20629,7 +20684,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "asta",
             "placesA": 9,
-            "placesB": 12
+            "placesB": 13
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -20667,7 +20722,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "noelle-silva",
             "placesA": 9,
-            "placesB": 10
+            "placesB": 9
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -20705,7 +20760,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "yami-sukehiro",
             "placesA": 9,
-            "placesB": 7
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -21199,7 +21254,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "asta",
             "placesA": 8,
-            "placesB": 12
+            "placesB": 13
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -21237,7 +21292,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "noelle-silva",
             "placesA": 8,
-            "placesB": 10
+            "placesB": 9
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -21275,7 +21330,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "yami-sukehiro",
             "placesA": 8,
-            "placesB": 7
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -21769,7 +21824,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "asta",
             "placesA": 4,
-            "placesB": 12
+            "placesB": 13
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -21807,7 +21862,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "noelle-silva",
             "placesA": 4,
-            "placesB": 10
+            "placesB": 9
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -21845,7 +21900,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "yami-sukehiro",
             "placesA": 4,
-            "placesB": 7
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -22225,7 +22280,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "asta",
             "placesA": 31,
-            "placesB": 12
+            "placesB": 13
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -22263,7 +22318,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "noelle-silva",
             "placesA": 31,
-            "placesB": 10
+            "placesB": 9
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -22301,7 +22356,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "yami-sukehiro",
             "placesA": 31,
-            "placesB": 7
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -22681,7 +22736,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "asta",
             "placesA": 20,
-            "placesB": 12
+            "placesB": 13
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -22719,7 +22774,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "noelle-silva",
             "placesA": 20,
-            "placesB": 10
+            "placesB": 9
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -22757,7 +22812,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "yami-sukehiro",
             "placesA": 20,
-            "placesB": 7
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -23137,7 +23192,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "asta",
             "placesA": 18,
-            "placesB": 12
+            "placesB": 13
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -23175,7 +23230,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "noelle-silva",
             "placesA": 18,
-            "placesB": 10
+            "placesB": 9
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -23213,7 +23268,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "yami-sukehiro",
             "placesA": 18,
-            "placesB": 7
+            "placesB": 8
           },
           "renderedLocales": [
             "en"
@@ -23496,7 +23551,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "asta",
             "placesA": 17,
-            "placesB": 12
+            "placesB": 13
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -23534,7 +23589,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "noelle-silva",
             "placesA": 17,
-            "placesB": 10
+            "placesB": 9
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -23572,7 +23627,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "yami-sukehiro",
             "placesA": 17,
-            "placesB": 7
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -23838,7 +23893,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "asta",
             "placesA": 11,
-            "placesB": 12
+            "placesB": 13
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -23876,7 +23931,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "noelle-silva",
             "placesA": 11,
-            "placesB": 10
+            "placesB": 9
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -23914,7 +23969,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "yami-sukehiro",
             "placesA": 11,
-            "placesB": 7
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -24180,7 +24235,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "asta",
             "placesA": 10,
-            "placesB": 12
+            "placesB": 13
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -24218,7 +24273,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "noelle-silva",
             "placesA": 10,
-            "placesB": 10
+            "placesB": 9
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -24256,7 +24311,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "yami-sukehiro",
             "placesA": 10,
-            "placesB": 7
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -24408,7 +24463,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "asta",
             "placesA": 5,
-            "placesB": 12
+            "placesB": 13
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -24446,7 +24501,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "noelle-silva",
             "placesA": 5,
-            "placesB": 10
+            "placesB": 9
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -24484,7 +24539,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "yami-sukehiro",
             "placesA": 5,
-            "placesB": 7
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -24636,7 +24691,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "asta",
             "placesA": 5,
-            "placesB": 12
+            "placesB": 13
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -24674,7 +24729,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "noelle-silva",
             "placesA": 5,
-            "placesB": 10
+            "placesB": 9
           },
           "renderedLocales": [
             "en"
@@ -24731,7 +24786,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "yami-sukehiro",
             "placesA": 5,
-            "placesB": 7
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -24883,7 +24938,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "asta",
             "placesA": 5,
-            "placesB": 12
+            "placesB": 13
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -24921,7 +24976,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "noelle-silva",
             "placesA": 5,
-            "placesB": 10
+            "placesB": 9
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -24959,7 +25014,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "yami-sukehiro",
             "placesA": 5,
-            "placesB": 7
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -24997,7 +25052,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "asta",
             "placesA": 10,
-            "placesB": 12
+            "placesB": 13
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -25035,7 +25090,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "noelle-silva",
             "placesA": 10,
-            "placesB": 10
+            "placesB": 9
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -25073,7 +25128,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "yami-sukehiro",
             "placesA": 10,
-            "placesB": 7
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -25111,7 +25166,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "asta",
             "placesA": 10,
-            "placesB": 12
+            "placesB": 13
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -25149,7 +25204,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "noelle-silva",
             "placesA": 10,
-            "placesB": 10
+            "placesB": 9
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -25187,7 +25242,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "yami-sukehiro",
             "placesA": 10,
-            "placesB": 7
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -25225,7 +25280,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "asta",
             "placesA": 9,
-            "placesB": 12
+            "placesB": 13
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -25263,7 +25318,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "noelle-silva",
             "placesA": 9,
-            "placesB": 10
+            "placesB": 9
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -25301,7 +25356,7 @@
             "opponentAnime": "blackclover",
             "opponentSubject": "yami-sukehiro",
             "placesA": 9,
-            "placesB": 7
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],

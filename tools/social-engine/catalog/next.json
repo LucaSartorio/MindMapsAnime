@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-09T05:19:52.109Z",
+  "generatedAt": "2026-10-10T05:15:53.233Z",
   "status": "ready",
   "feedTail": [
     {
@@ -102,7 +102,7 @@
     "JOURNEY_PART_ORDER": 44,
     "MAX_SAME_CHARACTER_STREAK": 41
   },
-  "considered": 692,
+  "considered": 694,
   "trace": {
     "traceVersion": 1,
     "mode": "coldstart",
@@ -213,16 +213,16 @@
       "MAX_SAME_CHARACTER_STREAK": 41
     },
     "candidates": {
-      "considered": 692,
-      "eligible": 610,
+      "considered": 694,
+      "eligible": 612,
       "byContentType": {
         "character-journey": {
-          "considered": 418,
-          "eligible": 372
+          "considered": 419,
+          "eligible": 373
         },
         "guess-character": {
-          "considered": 87,
-          "eligible": 85
+          "considered": 88,
+          "eligible": 86
         },
         "character-versus": {
           "considered": 187,
@@ -419,71 +419,84 @@
       }
     ],
     "status": "selected",
-    "selectedId": "guess-character:dragonball:goku",
-    "renderId": "guess-character:dragonball:goku@en",
+    "selectedId": "guess-character:bleach:kisuke-urahara",
+    "renderId": "guess-character:bleach:kisuke-urahara@en",
     "contentType": "guess-character",
     "animes": [
-      "dragonball"
+      "bleach"
     ],
     "characters": [
-      "dragonball:goku"
+      "bleach:kisuke-urahara"
     ],
-    "score": 102.23,
-    "base": 81.66,
+    "score": 101.29,
+    "base": 80.72,
     "reasons": [
-      "coldstart: novelty +25.7, jitter +5.9",
+      "coldstart: novelty +25.7, jitter +5.0",
       "+12 main character",
       "+8.6 format below its target share (14% < 25%)"
     ],
     "ranked": [
       {
-        "renderId": "guess-character:dragonball:goku@en",
+        "renderId": "guess-character:bleach:kisuke-urahara@en",
         "contentType": "guess-character",
         "animes": [
-          "dragonball"
+          "bleach"
         ],
-        "score": 102.23,
+        "score": 101.29,
         "reasons": [
-          "coldstart: novelty +25.7, jitter +5.9",
+          "coldstart: novelty +25.7, jitter +5.0",
           "+12 main character",
           "+8.6 format below its target share (14% < 25%)"
         ]
       },
       {
-        "renderId": "guess-character:hunterxhunter:kurapika@en",
+        "renderId": "guess-character:bleach:ichigo-kurosaki@en",
+        "contentType": "guess-character",
+        "animes": [
+          "bleach"
+        ],
+        "score": 101.1,
+        "reasons": [
+          "coldstart: novelty +25.7, jitter +4.8",
+          "+12 main character",
+          "+8.6 format below its target share (14% < 25%)"
+        ]
+      },
+      {
+        "renderId": "guess-character:attackontitan:reiner-braun@en",
+        "contentType": "guess-character",
+        "animes": [
+          "attackontitan"
+        ],
+        "score": 100.87,
+        "reasons": [
+          "coldstart: novelty +25.7, jitter +4.6",
+          "+12 main character",
+          "+8.6 format below its target share (14% < 25%)"
+        ]
+      },
+      {
+        "renderId": "guess-character:hunterxhunter:leorio-paradinight@en",
         "contentType": "guess-character",
         "animes": [
           "hunterxhunter"
         ],
-        "score": 102.1,
+        "score": 100.73,
         "reasons": [
-          "coldstart: novelty +25.7, jitter +5.8",
+          "coldstart: novelty +25.7, jitter +4.4",
           "+12 main character",
           "+8.6 format below its target share (14% < 25%)"
         ]
       },
       {
-        "renderId": "guess-character:bleach:sosuke-aizen@en",
+        "renderId": "guess-character:dragonball:piccolo@en",
         "contentType": "guess-character",
         "animes": [
-          "bleach"
+          "dragonball"
         ],
-        "score": 101.92,
+        "score": 100.7,
         "reasons": [
-          "coldstart: novelty +25.7, jitter +5.6",
-          "+12 main character",
-          "+8.6 format below its target share (14% < 25%)"
-        ]
-      },
-      {
-        "renderId": "guess-character:bleach:yhwach@en",
-        "contentType": "guess-character",
-        "animes": [
-          "bleach"
-        ],
-        "score": 101.91,
-        "reasons": [
-          "coldstart: novelty +25.7, jitter +5.6",
+          "coldstart: novelty +25.7, jitter +4.4",
           "+12 main character",
           "+8.6 format below its target share (14% < 25%)"
         ]
@@ -494,22 +507,9 @@
         "animes": [
           "hunterxhunter"
         ],
-        "score": 101.84,
+        "score": 100.46,
         "reasons": [
-          "coldstart: novelty +25.7, jitter +5.6",
-          "+12 main character",
-          "+8.6 format below its target share (14% < 25%)"
-        ]
-      },
-      {
-        "renderId": "guess-character:bleach:kisuke-urahara@en",
-        "contentType": "guess-character",
-        "animes": [
-          "bleach"
-        ],
-        "score": 101.77,
-        "reasons": [
-          "coldstart: novelty +25.7, jitter +5.5",
+          "coldstart: novelty +25.7, jitter +4.2",
           "+12 main character",
           "+8.6 format below its target share (14% < 25%)"
         ]
@@ -518,71 +518,71 @@
     "explanation": [
       "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
       "onepiece:sanji, blackclover:yami-sukehiro excluded in every format (maxSameCharacterStreak 1).",
-      "Selected guess-character:dragonball:goku@en (guess-character, dragonball) — coldstart, score 102.23 among 610 valid candidate(s)."
+      "Selected guess-character:bleach:kisuke-urahara@en (guess-character, bleach) — coldstart, score 101.29 among 612 valid candidate(s)."
     ]
   },
   "pick": {
-    "contentId": "guess-character:dragonball:goku",
-    "renderId": "guess-character:dragonball:goku@en",
+    "contentId": "guess-character:bleach:kisuke-urahara",
+    "renderId": "guess-character:bleach:kisuke-urahara@en",
     "contentType": "guess-character",
     "animes": [
-      "dragonball"
+      "bleach"
     ],
     "characters": [
-      "dragonball:goku"
+      "bleach:kisuke-urahara"
     ],
     "part": null,
     "partCount": null,
-    "score": 102.23,
+    "score": 101.29,
     "reasons": [
-      "coldstart: novelty +25.7, jitter +5.9",
+      "coldstart: novelty +25.7, jitter +5.0",
       "+12 main character",
       "+8.6 format below its target share (14% < 25%)"
     ]
   },
   "request": {
     "template": "guessCharacter",
-    "anime": "dragonball",
-    "subject": "goku",
+    "anime": "bleach",
+    "subject": "kisuke-urahara",
     "locale": "en",
-    "hook": "Only real Dragon Ball fans get this before the last place.",
+    "hook": "Only real Bleach fans get this before the last place.",
     "hookType": "challenge",
     "hookId": "gc-challenge-2",
     "cta": "Did you get it right?",
     "ctaType": "comment-guess",
     "selection": {
       "mode": "coldstart",
-      "score": 102.23,
+      "score": 101.29,
       "seed": "feed7:character-versus:onepiece:sanji-vs-blackclover-yami-sukehiro@en:samples0"
     },
-    "notes": "growth selector (coldstart): coldstart: novelty +25.7, jitter +5.9; +12 main character; +8.6 format below its target share (14% < 25%)"
+    "notes": "growth selector (coldstart): coldstart: novelty +25.7, jitter +5.0; +12 main character; +8.6 format below its target share (14% < 25%)"
   },
   "alternatives": [
     {
-      "renderId": "guess-character:hunterxhunter:kurapika@en",
+      "renderId": "guess-character:bleach:ichigo-kurosaki@en",
       "contentType": "guess-character",
-      "score": 102.1
+      "score": 101.1
     },
     {
-      "renderId": "guess-character:bleach:sosuke-aizen@en",
+      "renderId": "guess-character:attackontitan:reiner-braun@en",
       "contentType": "guess-character",
-      "score": 101.92
+      "score": 100.87
     },
     {
-      "renderId": "guess-character:bleach:yhwach@en",
+      "renderId": "guess-character:hunterxhunter:leorio-paradinight@en",
       "contentType": "guess-character",
-      "score": 101.91
+      "score": 100.73
+    },
+    {
+      "renderId": "guess-character:dragonball:piccolo@en",
+      "contentType": "guess-character",
+      "score": 100.7
     },
     {
       "renderId": "guess-character:hunterxhunter:gon-freecss@en",
       "contentType": "guess-character",
-      "score": 101.84
-    },
-    {
-      "renderId": "guess-character:bleach:kisuke-urahara@en",
-      "contentType": "guess-character",
-      "score": 101.77
+      "score": 100.46
     }
   ],
-  "eligible": 610
+  "eligible": 612
 }

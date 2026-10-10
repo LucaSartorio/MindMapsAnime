@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-09T05:19:52.109Z",
+  "generatedAt": "2026-10-10T05:15:53.233Z",
   "templates": {
     "characterJourney": {
       "byReason": {
-        "single_location": 506,
-        "no_journey_data": 576
+        "single_location": 511,
+        "no_journey_data": 570
       },
       "items": [
         {
@@ -5794,7 +5794,7 @@
           "anime": "attackontitan",
           "subject": "mike-zacharius",
           "subjectId": "char-aot-mike",
-          "displayName": "Mike Zacharius",
+          "displayName": "Mike Zacharias",
           "reason": "single_location"
         },
         {
@@ -6761,7 +6761,7 @@
           "subject": "momo-nishimiya",
           "subjectId": "char-jjk-momo",
           "displayName": "Momo Nishimiya",
-          "reason": "single_location"
+          "reason": "no_journey_data"
         },
         {
           "anime": "jujutsukaisen",
@@ -6978,7 +6978,7 @@
           "subject": "gauche-adlai",
           "subjectId": "char-bc-gauche",
           "displayName": "Gauche Adlai",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "blackclover",
@@ -7034,7 +7034,7 @@
           "subject": "puli-angel",
           "subjectId": "char-bc-puli",
           "displayName": "Puli Angel",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "blackclover",
@@ -7139,7 +7139,7 @@
           "subject": "letoile-becquerel",
           "subjectId": "char-bc-letoile",
           "displayName": "Letoile Becquerel",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "blackclover",
@@ -7196,13 +7196,6 @@
           "subjectId": "char-bc-sekke",
           "displayName": "Sekke Bronzazza",
           "reason": "single_location"
-        },
-        {
-          "anime": "blackclover",
-          "subject": "rill-boismortier",
-          "subjectId": "char-bc-rill",
-          "displayName": "Rill Boismortier",
-          "reason": "no_journey_data"
         },
         {
           "anime": "blackclover",
@@ -7307,14 +7300,14 @@
           "subject": "marie-adlai",
           "subjectId": "char-bc-marie",
           "displayName": "Marie Adlai",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "blackclover",
           "subject": "neige",
           "subjectId": "char-bc-neige",
           "displayName": "Neige",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "blackclover",
@@ -7339,13 +7332,6 @@
         },
         {
           "anime": "blackclover",
-          "subject": "rhya-the-disloyal",
-          "subjectId": "char-bc-rhya",
-          "displayName": "Rhya the Disloyal",
-          "reason": "single_location"
-        },
-        {
-          "anime": "blackclover",
           "subject": "heath-grice",
           "subjectId": "char-bc-heath",
           "displayName": "Heath Grice",
@@ -7356,7 +7342,7 @@
           "subject": "ratri",
           "subjectId": "char-bc-ratri",
           "displayName": "Ratri",
-          "reason": "single_location"
+          "reason": "no_journey_data"
         },
         {
           "anime": "blackclover",
@@ -7405,7 +7391,7 @@
           "subject": "moris-libardirt",
           "subjectId": "char-bc-moris",
           "displayName": "Moris Libardirt",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "blackclover",
@@ -7430,10 +7416,10 @@
         },
         {
           "anime": "blackclover",
-          "subject": "foyal-migliore",
+          "subject": "foyal-migusteau",
           "subjectId": "char-bc-foyal",
-          "displayName": "Foyal Migliore",
-          "reason": "no_journey_data"
+          "displayName": "Foyal Migusteau",
+          "reason": "single_location"
         },
         {
           "anime": "blackclover",
@@ -7465,6 +7451,13 @@
         },
         {
           "anime": "blackclover",
+          "subject": "ladros",
+          "subjectId": "char-bc-ladros",
+          "displayName": "Ladros",
+          "reason": "single_location"
+        },
+        {
+          "anime": "blackclover",
           "subject": "broccos",
           "subjectId": "char-bc-broccos",
           "displayName": "Broccos",
@@ -7482,14 +7475,14 @@
           "subject": "lotus-whomalt",
           "subjectId": "char-bc-lotus",
           "displayName": "Lotus Whomalt",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "blackclover",
           "subject": "fanzell-kruger",
           "subjectId": "char-bc-fanzell",
           "displayName": "Fanzell Kruger",
-          "reason": "single_location"
+          "reason": "no_journey_data"
         },
         {
           "anime": "blackclover",
@@ -7500,9 +7493,9 @@
         },
         {
           "anime": "blackclover",
-          "subject": "domina-ausat",
+          "subject": "dominante-code",
           "subjectId": "char-bc-domina",
-          "displayName": "Domina Ausat",
+          "displayName": "Dominante Code",
           "reason": "no_journey_data"
         },
         {
@@ -7586,7 +7579,7 @@
     },
     "guessCharacter": {
       "byReason": {
-        "not_guessable": 194,
+        "not_guessable": 193,
         "no_journey_data": 9
       },
       "items": [
@@ -7916,7 +7909,7 @@
           "subjectId": "char-hxh-kite",
           "displayName": "Kite",
           "reason": "not_guessable",
-          "detail": "2 spoiler-free places"
+          "detail": "3 spoiler-free places"
         },
         {
           "anime": "hunterxhunter",
@@ -8498,7 +8491,7 @@
           "anime": "attackontitan",
           "subject": "mike-zacharius",
           "subjectId": "char-aot-mike",
-          "displayName": "Mike Zacharius",
+          "displayName": "Mike Zacharias",
           "reason": "not_guessable",
           "detail": "1 spoiler-free places"
         },
@@ -9128,14 +9121,6 @@
         },
         {
           "anime": "blackclover",
-          "subject": "mereoleona-vermillion",
-          "subjectId": "char-bc-mereoleona",
-          "displayName": "Mereoleona Vermillion",
-          "reason": "not_guessable",
-          "detail": "3 spoiler-free places"
-        },
-        {
-          "anime": "blackclover",
           "subject": "charlotte-roselei",
           "subjectId": "char-bc-charlotte",
           "displayName": "Charlotte Roselei",
@@ -9164,7 +9149,7 @@
           "subjectId": "char-bc-licht",
           "displayName": "Licht",
           "reason": "not_guessable",
-          "detail": "3 spoiler-free places"
+          "detail": "2 spoiler-free places"
         },
         {
           "anime": "blackclover",
