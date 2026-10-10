@@ -1,19 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-10T05:15:53.233Z",
-  "status": "ready",
+  "generatedAt": "2026-10-10T05:30:25.374Z",
+  "status": "backlog",
   "feedTail": [
-    {
-      "renderId": "character-journey:naruto:naruto-uzumaki:part-01@en",
-      "contentType": "character-journey",
-      "animes": [
-        "naruto"
-      ],
-      "characters": [
-        "naruto:naruto-uzumaki"
-      ],
-      "part": 1
-    },
     {
       "renderId": "character-journey:onepiece:monkey-d-luffy:part-01@en",
       "contentType": "character-journey",
@@ -72,6 +61,17 @@
         "blackclover:yami-sukehiro"
       ],
       "part": null
+    },
+    {
+      "renderId": "guess-character:bleach:kisuke-urahara@en",
+      "contentType": "guess-character",
+      "animes": [
+        "bleach"
+      ],
+      "characters": [
+        "bleach:kisuke-urahara"
+      ],
+      "part": null
     }
   ],
   "rules": {
@@ -92,497 +92,28 @@
     "error": null
   },
   "backlog": {
-    "unpublished": [],
+    "unpublished": [
+      {
+        "renderId": "guess-character:bleach:kisuke-urahara@en",
+        "contentType": "guess-character",
+        "renderedAt": "2026-10-10T05:30:24.339Z",
+        "missing": [
+          "instagram",
+          "facebook",
+          "tiktok",
+          "youtube"
+        ]
+      }
+    ],
     "unfinished": [],
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "feed7:character-versus:onepiece:sanji-vs-blackclover-yami-sukehiro@en:samples0",
-  "rejected": {
-    "JOURNEY_PART_ORDER": 44,
-    "MAX_SAME_CHARACTER_STREAK": 41
-  },
-  "considered": 694,
-  "trace": {
-    "traceVersion": 1,
-    "mode": "coldstart",
-    "seed": "feed7:character-versus:onepiece:sanji-vs-blackclover-yami-sukehiro@en:samples0",
-    "analytics": {
-      "coldStart": true,
-      "samples": 0,
-      "contents": 0,
-      "minimumSamples": 8
-    },
-    "recent": [
-      {
-        "renderId": "character-journey:naruto:naruto-uzumaki:part-01@en",
-        "contentType": "character-journey",
-        "animes": [
-          "naruto"
-        ],
-        "characters": [
-          "naruto:naruto-uzumaki"
-        ]
-      },
-      {
-        "renderId": "character-journey:onepiece:monkey-d-luffy:part-01@en",
-        "contentType": "character-journey",
-        "animes": [
-          "onepiece"
-        ],
-        "characters": [
-          "onepiece:monkey-d-luffy"
-        ]
-      },
-      {
-        "renderId": "character-journey:hunterxhunter:killua-zoldyck:part-01@en",
-        "contentType": "character-journey",
-        "animes": [
-          "hunterxhunter"
-        ],
-        "characters": [
-          "hunterxhunter:killua-zoldyck"
-        ]
-      },
-      {
-        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-blackclover-noelle-silva@en",
-        "contentType": "character-versus",
-        "animes": [
-          "attackontitan",
-          "blackclover"
-        ],
-        "characters": [
-          "attackontitan:mikasa-ackerman",
-          "blackclover:noelle-silva"
-        ]
-      },
-      {
-        "renderId": "guess-character:bleach:orihime-inoue@en",
-        "contentType": "guess-character",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:orihime-inoue"
-        ]
-      },
-      {
-        "renderId": "character-versus:onepiece:sanji-vs-blackclover-yami-sukehiro@en",
-        "contentType": "character-versus",
-        "animes": [
-          "onepiece",
-          "blackclover"
-        ],
-        "characters": [
-          "onepiece:sanji",
-          "blackclover:yami-sukehiro"
-        ]
-      }
-    ],
-    "constraints": {
-      "sameAnimeStreak": {
-        "animes": [
-          "onepiece",
-          "blackclover"
-        ],
-        "length": 1
-      },
-      "forcedAnimeRotation": false,
-      "blockedAnimes": [],
-      "blockedCharacters": [
-        "onepiece:sanji",
-        "blackclover:yami-sukehiro"
-      ],
-      "characterCooldown": [
-        "naruto:naruto-uzumaki",
-        "onepiece:monkey-d-luffy",
-        "hunterxhunter:killua-zoldyck",
-        "attackontitan:mikasa-ackerman",
-        "blackclover:noelle-silva",
-        "bleach:orihime-inoue",
-        "onepiece:sanji",
-        "blackclover:yami-sukehiro"
-      ],
-      "contentTypeStreak": {
-        "contentType": "character-versus",
-        "length": 1
-      }
-    },
-    "hardRulesTriggered": {
-      "JOURNEY_PART_ORDER": 44,
-      "MAX_SAME_CHARACTER_STREAK": 41
-    },
-    "candidates": {
-      "considered": 694,
-      "eligible": 612,
-      "byContentType": {
-        "character-journey": {
-          "considered": 419,
-          "eligible": 373
-        },
-        "guess-character": {
-          "considered": 88,
-          "eligible": 86
-        },
-        "character-versus": {
-          "considered": 187,
-          "eligible": 153
-        }
-      }
-    },
-    "excluded": [
-      {
-        "renderId": "character-journey:blackclover:yami-sukehiro:part-01@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:yami-sukehiro"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: blackclover:yami-sukehiro is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:blackclover:yami-sukehiro:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:yami-sukehiro"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER",
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)",
-          "character streak: blackclover:yami-sukehiro is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:onepiece:sanji:part-01@en",
-        "contentType": "character-journey",
-        "animes": [
-          "onepiece"
-        ],
-        "characters": [
-          "onepiece:sanji"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: onepiece:sanji is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:onepiece:sanji:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "onepiece"
-        ],
-        "characters": [
-          "onepiece:sanji"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER",
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)",
-          "character streak: onepiece:sanji is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:onepiece:sanji:part-03@en",
-        "contentType": "character-journey",
-        "animes": [
-          "onepiece"
-        ],
-        "characters": [
-          "onepiece:sanji"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER",
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "sequence: Part 3 before Part 2 (never publish parts out of order)",
-          "character streak: onepiece:sanji is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:attackontitan:armin-arlert-vs-blackclover-yami-sukehiro@en",
-        "contentType": "character-versus",
-        "animes": [
-          "attackontitan",
-          "blackclover"
-        ],
-        "characters": [
-          "attackontitan:armin-arlert",
-          "blackclover:yami-sukehiro"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: blackclover:yami-sukehiro is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-blackclover-yami-sukehiro@en",
-        "contentType": "character-versus",
-        "animes": [
-          "attackontitan",
-          "blackclover"
-        ],
-        "characters": [
-          "attackontitan:mikasa-ackerman",
-          "blackclover:yami-sukehiro"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: blackclover:yami-sukehiro is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:attackontitan:reiner-braun-vs-blackclover-yami-sukehiro@en",
-        "contentType": "character-versus",
-        "animes": [
-          "attackontitan",
-          "blackclover"
-        ],
-        "characters": [
-          "attackontitan:reiner-braun",
-          "blackclover:yami-sukehiro"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: blackclover:yami-sukehiro is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:bleach:ichigo-kurosaki-vs-blackclover-yami-sukehiro@en",
-        "contentType": "character-versus",
-        "animes": [
-          "bleach",
-          "blackclover"
-        ],
-        "characters": [
-          "bleach:ichigo-kurosaki",
-          "blackclover:yami-sukehiro"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: blackclover:yami-sukehiro is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro@en",
-        "contentType": "character-versus",
-        "animes": [
-          "bleach",
-          "blackclover"
-        ],
-        "characters": [
-          "bleach:rukia-kuchiki",
-          "blackclover:yami-sukehiro"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: blackclover:yami-sukehiro is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      }
-    ],
-    "status": "selected",
-    "selectedId": "guess-character:bleach:kisuke-urahara",
-    "renderId": "guess-character:bleach:kisuke-urahara@en",
-    "contentType": "guess-character",
-    "animes": [
-      "bleach"
-    ],
-    "characters": [
-      "bleach:kisuke-urahara"
-    ],
-    "score": 101.29,
-    "base": 80.72,
-    "reasons": [
-      "coldstart: novelty +25.7, jitter +5.0",
-      "+12 main character",
-      "+8.6 format below its target share (14% < 25%)"
-    ],
-    "ranked": [
-      {
-        "renderId": "guess-character:bleach:kisuke-urahara@en",
-        "contentType": "guess-character",
-        "animes": [
-          "bleach"
-        ],
-        "score": 101.29,
-        "reasons": [
-          "coldstart: novelty +25.7, jitter +5.0",
-          "+12 main character",
-          "+8.6 format below its target share (14% < 25%)"
-        ]
-      },
-      {
-        "renderId": "guess-character:bleach:ichigo-kurosaki@en",
-        "contentType": "guess-character",
-        "animes": [
-          "bleach"
-        ],
-        "score": 101.1,
-        "reasons": [
-          "coldstart: novelty +25.7, jitter +4.8",
-          "+12 main character",
-          "+8.6 format below its target share (14% < 25%)"
-        ]
-      },
-      {
-        "renderId": "guess-character:attackontitan:reiner-braun@en",
-        "contentType": "guess-character",
-        "animes": [
-          "attackontitan"
-        ],
-        "score": 100.87,
-        "reasons": [
-          "coldstart: novelty +25.7, jitter +4.6",
-          "+12 main character",
-          "+8.6 format below its target share (14% < 25%)"
-        ]
-      },
-      {
-        "renderId": "guess-character:hunterxhunter:leorio-paradinight@en",
-        "contentType": "guess-character",
-        "animes": [
-          "hunterxhunter"
-        ],
-        "score": 100.73,
-        "reasons": [
-          "coldstart: novelty +25.7, jitter +4.4",
-          "+12 main character",
-          "+8.6 format below its target share (14% < 25%)"
-        ]
-      },
-      {
-        "renderId": "guess-character:dragonball:piccolo@en",
-        "contentType": "guess-character",
-        "animes": [
-          "dragonball"
-        ],
-        "score": 100.7,
-        "reasons": [
-          "coldstart: novelty +25.7, jitter +4.4",
-          "+12 main character",
-          "+8.6 format below its target share (14% < 25%)"
-        ]
-      },
-      {
-        "renderId": "guess-character:hunterxhunter:gon-freecss@en",
-        "contentType": "guess-character",
-        "animes": [
-          "hunterxhunter"
-        ],
-        "score": 100.46,
-        "reasons": [
-          "coldstart: novelty +25.7, jitter +4.2",
-          "+12 main character",
-          "+8.6 format below its target share (14% < 25%)"
-        ]
-      }
-    ],
-    "explanation": [
-      "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
-      "onepiece:sanji, blackclover:yami-sukehiro excluded in every format (maxSameCharacterStreak 1).",
-      "Selected guess-character:bleach:kisuke-urahara@en (guess-character, bleach) — coldstart, score 101.29 among 612 valid candidate(s)."
-    ]
-  },
-  "pick": {
-    "contentId": "guess-character:bleach:kisuke-urahara",
-    "renderId": "guess-character:bleach:kisuke-urahara@en",
-    "contentType": "guess-character",
-    "animes": [
-      "bleach"
-    ],
-    "characters": [
-      "bleach:kisuke-urahara"
-    ],
-    "part": null,
-    "partCount": null,
-    "score": 101.29,
-    "reasons": [
-      "coldstart: novelty +25.7, jitter +5.0",
-      "+12 main character",
-      "+8.6 format below its target share (14% < 25%)"
-    ]
-  },
-  "request": {
-    "template": "guessCharacter",
-    "anime": "bleach",
-    "subject": "kisuke-urahara",
-    "locale": "en",
-    "hook": "Only real Bleach fans get this before the last place.",
-    "hookType": "challenge",
-    "hookId": "gc-challenge-2",
-    "cta": "Did you get it right?",
-    "ctaType": "comment-guess",
-    "selection": {
-      "mode": "coldstart",
-      "score": 101.29,
-      "seed": "feed7:character-versus:onepiece:sanji-vs-blackclover-yami-sukehiro@en:samples0"
-    },
-    "notes": "growth selector (coldstart): coldstart: novelty +25.7, jitter +5.0; +12 main character; +8.6 format below its target share (14% < 25%)"
-  },
-  "alternatives": [
-    {
-      "renderId": "guess-character:bleach:ichigo-kurosaki@en",
-      "contentType": "guess-character",
-      "score": 101.1
-    },
-    {
-      "renderId": "guess-character:attackontitan:reiner-braun@en",
-      "contentType": "guess-character",
-      "score": 100.87
-    },
-    {
-      "renderId": "guess-character:hunterxhunter:leorio-paradinight@en",
-      "contentType": "guess-character",
-      "score": 100.73
-    },
-    {
-      "renderId": "guess-character:dragonball:piccolo@en",
-      "contentType": "guess-character",
-      "score": 100.7
-    },
-    {
-      "renderId": "guess-character:hunterxhunter:gon-freecss@en",
-      "contentType": "guess-character",
-      "score": 100.46
-    }
-  ],
-  "eligible": 612
+  "seed": "",
+  "reason": "publish the existing render first: guess-character:bleach:kisuke-urahara@en (it counts as today's video; no new content)",
+  "alternatives": [],
+  "rejected": {},
+  "considered": 0,
+  "eligible": 0,
+  "trace": null
 }

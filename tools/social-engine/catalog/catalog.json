@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-10T05:15:53.233Z",
+  "generatedAt": "2026-10-10T05:30:25.374Z",
   "locales": [
     "en",
     "it"
@@ -17610,13 +17610,28 @@
             "places": 5,
             "clues": 4
           },
-          "renderedLocales": [],
+          "renderedLocales": [
+            "en"
+          ],
           "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
-          "renderedBefore": false,
+          "renderedBefore": true,
           "publishedBefore": false,
-          "publication": []
+          "publication": [
+            {
+              "renderId": "guess-character:bleach:kisuke-urahara@en",
+              "locale": "en",
+              "variant": null,
+              "status": "notPublished",
+              "platforms": {
+                "instagram": "notScheduled",
+                "facebook": "notScheduled",
+                "tiktok": "notScheduled",
+                "youtube": "notScheduled"
+              }
+            }
+          ]
         },
         {
           "id": "guess-character:bleach:yoruichi-shihoin",
@@ -25388,15 +25403,67 @@
       "metricool"
     ],
     "summary": {
-      "rendered": 12,
+      "rendered": 13,
       "unavailable": 5,
-      "notPublished": 5,
+      "notPublished": 6,
       "scheduled": 1,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0
     },
-    "ready": [],
+    "ready": [
+      {
+        "renderId": "guess-character:bleach:kisuke-urahara@en",
+        "contentId": "guess-character:bleach:kisuke-urahara",
+        "anime": "bleach",
+        "subject": "kisuke-urahara",
+        "subjectName": "Kisuke Urahara",
+        "locale": "en",
+        "variant": null,
+        "segment": null,
+        "partNumber": null,
+        "partCount": null,
+        "renderedAt": "2026-10-10T05:30:24.339Z",
+        "durationSeconds": 21,
+        "publicationStatus": "notPublished",
+        "platforms": {
+          "instagram": "notScheduled",
+          "facebook": "notScheduled",
+          "tiktok": "notScheduled",
+          "youtube": "notScheduled"
+        },
+        "artifact": {
+          "name": "animapverse-social-render-38027561240-1",
+          "runId": "38027561240",
+          "runAttempt": "1",
+          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/38027561240",
+          "video": "videos/bleach_kisuke-urahara_guess-character_en.mp4",
+          "manifest": "manifests/bleach_kisuke-urahara_guess-character_en.manifest.json",
+          "sha256": "b3fe8b77c0f92a83c802d48f659a466e2b5ce1376a817ac4d6a2ab64962708ba",
+          "cover": "covers/bleach_kisuke-urahara_guess-character_en.cover.png",
+          "expiresAt": "2026-11-09T05:30:24.339Z"
+        },
+        "contentType": "guess-character",
+        "platformMetadata": {
+          "instagramCaption": "Only real Bleach fans get this before the last place.\n\n4 places, one Bleach character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nSave it for your next rewatch.\n\n#bleach #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Only real Bleach fans get this before the last place. Did you get it right? Tell us how many places it took you 👇 #bleach #anime #animemap #AniMapVerse",
+          "youtubeTitle": "Guess the Bleach Character From the Places They Visited ⚔️",
+          "youtubeDescription": "Only real Bleach fans get this before the last place.\n\n4 places, one Bleach character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/bleach/map\n\n#bleach #anime #animemap",
+          "facebookCaption": "Only real Bleach fans get this before the last place.\n\n4 places, one Bleach character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/bleach/map",
+          "hashtags": [
+            "#bleach",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        },
+        "waitFor": {}
+      }
+    ],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",
