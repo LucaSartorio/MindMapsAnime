@@ -507,7 +507,7 @@
       "segment": "part-02",
       "segmentFingerprint": "be5a7e3e",
       "createdAt": "2026-10-11T05:02:09.720Z",
-      "updatedAt": "2026-10-11T05:05:25.479Z",
+      "updatedAt": "2026-10-11T05:18:45.534Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-10-11T05:05:25.479Z",
       "outputFile": "tools/social-engine/output/naruto_naruto-uzumaki_character-journey_part-02_en.mp4",
@@ -571,9 +571,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-11T10:00:00+02:00",
+          "scheduledAt": "2026-10-11T05:13:08Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "393100312",
+          "providerPostUuid": "7281637050316179327",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=7281637050316179327",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "naruto_naruto-uzumaki_character-journey_part-02_en.instagram.scheduled.4b00fbf7c70d"
+          ],
+          "updatedAt": "2026-10-11T05:18:45.534Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-11T10:00:00+02:00",
+          "scheduledAt": "2026-10-11T05:13:08Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "393100425",
+          "providerPostUuid": "6347161256308195475",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=6347161256308195475",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "naruto_naruto-uzumaki_character-journey_part-02_en.facebook.scheduled.0bc4f6b5b95d"
+          ],
+          "updatedAt": "2026-10-11T05:18:45.534Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-11T10:00:00+02:00",
+          "scheduledAt": "2026-10-11T05:13:08Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "393100571",
+          "providerPostUuid": "-8979550120678895767",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-8979550120678895767",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "naruto_naruto-uzumaki_character-journey_part-02_en.tiktok.scheduled.c82c693fe9d0"
+          ],
+          "updatedAt": "2026-10-11T05:18:45.534Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-11T10:00:00+02:00",
+          "scheduledAt": "2026-10-11T05:13:08Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "393100499",
+          "providerPostUuid": "4059614742333768948",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=4059614742333768948",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "naruto_naruto-uzumaki_character-journey_part-02_en.youtube.scheduled.3f52f2f22ad3"
+          ],
+          "updatedAt": "2026-10-11T05:18:45.534Z"
+        }
+      ]
     },
     "character-journey:onepiece:monkey-d-luffy:part-01@en": {
       "renderId": "character-journey:onepiece:monkey-d-luffy:part-01@en",
