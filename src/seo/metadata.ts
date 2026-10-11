@@ -13,7 +13,7 @@ import type {
 import { SOURCE_LOCALES, type SupportedLocale } from '@/types/i18n';
 import { isFullyTranslated } from '@/data/shared/translations';
 import { findWorldByUrlSlug, getWorldUrlSlug } from '@/data/worlds';
-import { getEntityDisplayName, getLocalizedText, getLocationTypeLabel } from '@/utils/localization';
+import { getEntityDisplayName, getFactionTypeLabel, getLocalizedText, getLocationTypeLabel } from '@/utils/localization';
 import { getAbilityTerm, getFactionsTerm, humanizeId } from '@/lib/worldConfig';
 import {
   DIRECTORY_PAGE_SIZE,
@@ -568,7 +568,7 @@ export function buildPageMeta(resolved: ResolvedPage): PageMeta {
         }
         case 'factions': {
           const f = e as Faction;
-          title = S.faction(name, humanizeId(String(f.type)), w);
+          title = S.faction(name, getFactionTypeLabel(String(f.type), lang) || humanizeId(String(f.type)), w);
           description = describe(summary, S.factionTail(name, w));
           break;
         }
