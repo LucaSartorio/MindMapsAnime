@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-10T05:43:53.865Z",
+  "generatedAt": "2026-10-11T05:05:26.406Z",
   "locales": [
     "en",
     "it"
@@ -209,13 +209,28 @@
             "arcs": 7,
             "journeyArcs": 12
           },
-          "renderedLocales": [],
+          "renderedLocales": [
+            "en"
+          ],
           "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
-          "renderedBefore": false,
+          "renderedBefore": true,
           "publishedBefore": false,
-          "publication": []
+          "publication": [
+            {
+              "renderId": "character-journey:naruto:naruto-uzumaki:part-02@en",
+              "locale": "en",
+              "variant": null,
+              "status": "notPublished",
+              "platforms": {
+                "instagram": "notScheduled",
+                "facebook": "notScheduled",
+                "tiktok": "notScheduled",
+                "youtube": "notScheduled"
+              }
+            }
+          ]
         },
         {
           "id": "character-journey:naruto:sasuke-uchiha:part-01",
@@ -25405,15 +25420,69 @@
       "metricool"
     ],
     "summary": {
-      "rendered": 13,
+      "rendered": 14,
       "unavailable": 5,
-      "notPublished": 5,
+      "notPublished": 6,
       "scheduled": 2,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0
     },
-    "ready": [],
+    "ready": [
+      {
+        "renderId": "character-journey:naruto:naruto-uzumaki:part-02@en",
+        "contentId": "character-journey:naruto:naruto-uzumaki:part-02",
+        "anime": "naruto",
+        "subject": "naruto-uzumaki",
+        "subjectName": "Naruto Uzumaki",
+        "locale": "en",
+        "variant": null,
+        "segment": "part-02",
+        "partNumber": 2,
+        "partCount": 2,
+        "renderedAt": "2026-10-11T05:05:25.479Z",
+        "durationSeconds": 36,
+        "publicationStatus": "notPublished",
+        "platforms": {
+          "instagram": "notScheduled",
+          "facebook": "notScheduled",
+          "tiktok": "notScheduled",
+          "youtube": "notScheduled"
+        },
+        "artifact": {
+          "name": "animapverse-social-render-38113464368-1",
+          "runId": "38113464368",
+          "runAttempt": "1",
+          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/38113464368",
+          "video": "videos/naruto_naruto-uzumaki_character-journey_part-02_en.mp4",
+          "manifest": "manifests/naruto_naruto-uzumaki_character-journey_part-02_en.manifest.json",
+          "sha256": "9b6b457b0b0906cb05d1e9dffa538f72f8bff2d54b1a283866b97efa571d9197",
+          "cover": "covers/naruto_naruto-uzumaki_character-journey_part-02_en.cover.png",
+          "expiresAt": "2026-11-10T05:05:25.479Z"
+        },
+        "contentType": "character-journey",
+        "platformMetadata": {
+          "instagramCaption": "Where did Naruto Uzumaki go next? Part 2 of 2.\n\nNaruto Uzumaki's journey across Naruto — Part 2/2: 15 places on the world map.\n\nWhich journey should we map next? 👇\n\nSave it for your next rewatch.\n\n#naruto #narutoshippuden #narutouzumaki #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Where did Naruto Uzumaki go next? Part 2 of 2. Which journey should we map next? 👇 #naruto #narutoshippuden #narutouzumaki #anime #animemap",
+          "youtubeTitle": "Every Place Naruto Uzumaki Visited 🍥 | Naruto Journey Part 2 of 2",
+          "youtubeDescription": "Where did Naruto Uzumaki go next? Part 2 of 2.\n\nNaruto Uzumaki's journey across Naruto — Part 2/2: 15 places on the world map.\n\nWhich journey should we map next? 👇\n\nInteractive map: https://animapverse.com/en/naruto/characters/naruto-uzumaki\n\n#naruto #narutoshippuden #narutouzumaki",
+          "facebookCaption": "Where did Naruto Uzumaki go next? Part 2 of 2.\n\nNaruto Uzumaki's journey across Naruto — Part 2/2: 15 places on the world map.\n\nWhich journey should we map next? 👇\n\nInteractive map: https://animapverse.com/en/naruto/characters/naruto-uzumaki",
+          "hashtags": [
+            "#naruto",
+            "#narutoshippuden",
+            "#narutouzumaki",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        },
+        "waitFor": {}
+      }
+    ],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",

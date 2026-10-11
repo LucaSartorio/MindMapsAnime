@@ -496,6 +496,85 @@
       ],
       "social": null
     },
+    "character-journey:naruto:naruto-uzumaki:part-02@en": {
+      "renderId": "character-journey:naruto:naruto-uzumaki:part-02@en",
+      "contentId": "character-journey:naruto:naruto-uzumaki:part-02",
+      "template": "characterJourney",
+      "anime": "naruto",
+      "subject": "naruto-uzumaki",
+      "locale": "en",
+      "variant": null,
+      "segment": "part-02",
+      "segmentFingerprint": "be5a7e3e",
+      "createdAt": "2026-10-11T05:02:09.720Z",
+      "updatedAt": "2026-10-11T05:05:25.479Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-10-11T05:05:25.479Z",
+      "outputFile": "tools/social-engine/output/naruto_naruto-uzumaki_character-journey_part-02_en.mp4",
+      "manifestFile": "tools/social-engine/output/naruto_naruto-uzumaki_character-journey_part-02_en.manifest.json",
+      "sourceFile": "0014-naruto_naruto-uzumaki_character-journey_part-02_en.json",
+      "durationSeconds": 36,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-38113464368-1",
+        "runId": "38113464368",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/38113464368",
+        "video": "videos/naruto_naruto-uzumaki_character-journey_part-02_en.mp4",
+        "manifest": "manifests/naruto_naruto-uzumaki_character-journey_part-02_en.manifest.json",
+        "sha256": "9b6b457b0b0906cb05d1e9dffa538f72f8bff2d54b1a283866b97efa571d9197",
+        "cover": "covers/naruto_naruto-uzumaki_character-journey_part-02_en.cover.png",
+        "expiresAt": "2026-11-10T05:05:25.479Z"
+      },
+      "social": {
+        "contentType": "character-journey",
+        "animes": [
+          "naruto"
+        ],
+        "characters": [
+          "naruto:naruto-uzumaki"
+        ],
+        "characterNames": [
+          "Naruto Uzumaki"
+        ],
+        "part": 2,
+        "partCount": 2,
+        "hookType": "question",
+        "hookId": "cj-cont-question-1",
+        "hook": "Where did Naruto Uzumaki go next? Part 2 of 2.",
+        "ctaType": "comment-next-journey",
+        "cta": "Which journey should we map next?",
+        "durationSeconds": 36,
+        "selection": {
+          "mode": "coldstart",
+          "score": 102.35,
+          "seed": "feed8:guess-character:bleach:kisuke-urahara@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Where did Naruto Uzumaki go next? Part 2 of 2.\n\nNaruto Uzumaki's journey across Naruto — Part 2/2: 15 places on the world map.\n\nWhich journey should we map next? 👇\n\nSave it for your next rewatch.\n\n#naruto #narutoshippuden #narutouzumaki #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Where did Naruto Uzumaki go next? Part 2 of 2. Which journey should we map next? 👇 #naruto #narutoshippuden #narutouzumaki #anime #animemap",
+          "youtubeTitle": "Every Place Naruto Uzumaki Visited 🍥 | Naruto Journey Part 2 of 2",
+          "youtubeDescription": "Where did Naruto Uzumaki go next? Part 2 of 2.\n\nNaruto Uzumaki's journey across Naruto — Part 2/2: 15 places on the world map.\n\nWhich journey should we map next? 👇\n\nInteractive map: https://animapverse.com/en/naruto/characters/naruto-uzumaki\n\n#naruto #narutoshippuden #narutouzumaki",
+          "facebookCaption": "Where did Naruto Uzumaki go next? Part 2 of 2.\n\nNaruto Uzumaki's journey across Naruto — Part 2/2: 15 places on the world map.\n\nWhich journey should we map next? 👇\n\nInteractive map: https://animapverse.com/en/naruto/characters/naruto-uzumaki",
+          "hashtags": [
+            "#naruto",
+            "#narutoshippuden",
+            "#narutouzumaki",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-journey:onepiece:monkey-d-luffy:part-01@en": {
       "renderId": "character-journey:onepiece:monkey-d-luffy:part-01@en",
       "contentId": "character-journey:onepiece:monkey-d-luffy:part-01",
