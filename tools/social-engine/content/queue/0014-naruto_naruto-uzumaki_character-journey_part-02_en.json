@@ -1,0 +1,19 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterJourney",
+  "anime": "naruto",
+  "subject": "naruto-uzumaki",
+  "segment": "part-02",
+  "locale": "en",
+  "hook": "Where did Naruto Uzumaki go next? Part 2 of 2.",
+  "hookType": "question",
+  "hookId": "cj-cont-question-1",
+  "cta": "Which journey should we map next?",
+  "ctaType": "comment-next-journey",
+  "selection": {
+    "mode": "coldstart",
+    "score": 102.35,
+    "seed": "feed8:guess-character:bleach:kisuke-urahara@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +20.6, jitter +5.7; +12 main character; +14 continues a started series (Part 2 promised)"
+}
