@@ -14,9 +14,11 @@ import type {
 } from '@/types';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import {
+  getAbilityClassificationLabel,
   getCanonStatusLabel,
   getCharacterStatusLabel,
   getEntityDisplayName,
+  getFactionTypeLabel,
   getLocalizedAliases,
   getLocalizedText,
   getLocationTypeLabel,
@@ -392,7 +394,7 @@ export function EntityPage({
     case 'factions': {
       const f = entity as Faction;
       facts.push(
-        { label: t('seoPages.fact.type'), value: humanizeId(String(f.type)) },
+        { label: t('seoPages.fact.type'), value: getFactionTypeLabel(String(f.type), locale) || humanizeId(String(f.type)) },
         { label: t('nav.regions'), value: named('regions', f.nationId) },
         { label: t('seoPages.fact.home'), value: named('locations', f.villageLocationId) },
         { label: t('modals.kekkeiGenkai'), value: getLocalizedText(f.kekkeiGenkai, locale) },
@@ -515,7 +517,7 @@ export function EntityPage({
           value: attribute && j.chakraNature?.length ? j.chakraNature.map((n) => attribute.label(n)).join(', ') : undefined,
         },
         { label: t('seoPages.fact.rank'), value: j.rank },
-        { label: t('modals.classification'), value: j.classification?.map((c) => humanizeId(String(c))).join(', ') },
+        { label: t('modals.classification'), value: j.classification?.map((c) => getAbilityClassificationLabel(String(c), locale) || humanizeId(String(c))).join(', ') },
       );
       addRefs('users', t('modals.usedBy'), ctx.characters);
       addRefs('factions', factionsTerm, ctx.factions);

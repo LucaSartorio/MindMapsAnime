@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
 import { useLocaleStore } from '@/store/useLocaleStore';
-import { getEntityDisplayName, getLocalizedText, getLocationTypeLabel } from '@/utils/localization';
+import { getEntityDisplayName, getFactionTypeLabel, getLocalizedText, getLocationTypeLabel } from '@/utils/localization';
 import { getAbilityTerm, getFactionsTerm, getFeaturedIds, humanizeId } from '@/lib/worldConfig';
 import type { ResolvedPage } from '@/seo/metadata';
 import { worldHasCategory } from '@/seo/metadata';
@@ -162,7 +162,7 @@ export function WorldLandingPage({ resolved, dataset }: { resolved: ResolvedPage
               key: f.id,
               href: href('factions', f.id),
               title: getEntityDisplayName(f, locale),
-              meta: humanizeId(String(f.type)),
+              meta: getFactionTypeLabel(String(f.type), locale) || humanizeId(String(f.type)),
               description: short(f.description),
             }))}
           />

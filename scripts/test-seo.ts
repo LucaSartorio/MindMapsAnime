@@ -30,6 +30,7 @@ import { enumeratePages } from '../src/seo/routes';
 import { buildSitemaps } from '../src/seo/sitemap';
 import { SITE, isTechnicalPath, seoLocaleFor, worldHasSeoLocale } from '../src/seo/config';
 import { auditLocalizable } from '../src/utils/localizableFields';
+import { getFactionTypeLabel } from '../src/utils/localization';
 
 let passed = 0;
 function test(name: string, fn: () => void) {
@@ -200,6 +201,16 @@ async function main() {
         assert.ok(!dup, `title duplicato "${m.title}": ${dup} / ${r.path}`);
         titles.set(m.title, r.path);
       }
+    }
+  });
+
+  test('title delle fazioni: tipo nella lingua dell\'URL (mai l\'id inglese umanizzato)', () => {
+    for (const r of pages) {
+      const p = r.page;
+      if (p.kind !== 'entity' || p.category !== 'factions') continue;
+      const f = p.dataset.factions.find((x) => x.id === p.id)!;
+      const label = getFactionTypeLabel(String(f.type), r.lang);
+      if (label) assert.ok(buildPageMeta(r).title.includes(`(${label})`), `${r.path}: tipo "${f.type}" non localizzato nel title`);
     }
   });
 

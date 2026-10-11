@@ -104,3 +104,65 @@ Esito: **HEALTHY WITH MINOR FIXES**.
   la coda sottile indicizzata (es. tecniche con una frase e 1–2 utilizzatori) va **arricchita nei dati**, non
   nascosta o allungata con testo di riempimento.
 - Nessun `rel=prev/next`, nessun noindex sulla paginazione, nessuno structured data aggiuntivo.
+
+---
+
+## Audit di indicizzabilità — ottobre 2026 (2ª passata, dopo `/es` e `/fr`)
+
+Rifatto da zero sull'HTML di build (`dist/`, identico alla produzione: stesse 13.812 URL in sitemap) e confrontato
+con la documentazione Google Search Central aggiornata. I ~4.218 URL "rilevati" in Search Console sono solo una
+parte delle 13.812 inviate: Google non le ha ancora scansionate tutte, non è un rifiuto.
+Esito: **HEALTHY WITH MINOR FIXES**.
+
+### Inventario (per lingua × 4: it, en, es, fr)
+
+| Famiglia | Per lingua | Indicizzabili | Sitemap | Decisione |
+| --- | --- | --- | --- | --- |
+| `/{lang}`, `/about`, `/support` | 3 | 3 | ✅ | A · KEEP |
+| `/privacy`, `/cookie-policy` | 2 | 0 | — | C · KEEP |
+| `/{world}` disponibili / in arrivo (solo it/en) | 8 / 5 | 8 / 0 | ✅ / — | A / C · KEEP |
+| `/map`, `/timeline`, 7 indici di categoria | 72 | 72 | ✅ | A · KEEP |
+| `/timeline/page/N`, `/locations/page/N` | 3 | 3 | ✅ | A · KEEP (auto-canoniche, `<a href>` in sequenza) |
+| `/characters/{slug}` | 1458 | 1356 | ✅ | A · 102 → C (thin) |
+| `/locations/{slug}` | 893 | 614 | ✅ | A · 279 → C (thin) |
+| `/abilities/{slug}` | 762 | 725 | ✅ | A · 37 → C · coda corta = G |
+| `/factions/{slug}` | 301 | 290 | ✅ | A · 11 → C |
+| `/arcs/{slug}` | 177 | 177 | ✅ | A |
+| `/regions/{slug}` | 93 | 58 | ✅ | A · 35 → C |
+| `/journeys/{slug}` scritti a mano / derivati | 152 / 99 | 147 / — | ✅ / — | A / D (canonical → personaggio) |
+| Slug rinominati | 3 | — | — | E (meta refresh 0 = permanente) · KEEP |
+| Query, slash finale, maiuscole, `/page/1`, pagine fuori range, slug ignoti | — | — | — | robots `/*?` · 308 · 404 |
+
+Verifiche: 0 disaccordi fra sitemap, robots e canonical su 16.102 pagine; nessun `lastmod`; nessun duplicato;
+ogni target hreflang è in sitemap; sitemap max 3.268 URL / 2,2 MB; ogni entità indicizzabile è linkata da una pagina
+hub (mediana 9 link contestuali in entrata); `/es` e `/fr` tradotti davvero (testo identico all'inglese < 0,2 %,
+solo nomi giapponesi e numeri di episodio); coppie con lo stesso nome in categorie diverse (luogo/arco, luogo/regione)
+con somiglianza ≤ 0,44 (Jaccard): risorse distinte.
+
+### Correzione applicata
+
+- **Tipo di fazione e classificazione delle tecniche non tradotti** (MEDIUM): title, scheda "Tipo" e card della
+  landing usavano `humanizeId(f.type)` → "Pirati di Cappello di Paglia (Crew)", "Clan Uchiwa (Group)" su ~870 title
+  `/it`, `/es`, `/fr`. Ora `getFactionTypeLabel` / `getAbilityClassificationLabel` (le stesse mappe delle schede
+  interattive). Test di regressione in `test:seo`.
+
+### Revisione dei contenuti (G, nei dati — non nel codice)
+
+Le pagine indicizzate con meno testo proprio non sono comparse oscure ma **entità principali di Naruto** con
+descrizioni di una riga (mediana 75 caratteri per i personaggi main/major contro 211–538 degli altri mondi; 30 su
+51 sotto 120): Sakura, Madara, Obito, Minato, Tsunade, Jiraiya, Orochimaru, Gaara, Hashirama, Kaguya, gli Akatsuki Deidara, Sasori, Hidan, Kakuzu, Kisame… Le pagine
+restano utili (relazioni, battaglie, eventi, fazioni, luoghi) e vanno **arricchite** con testo verificato it/en (poi
+`i18n:extract`/`merge` per es/fr), non nascoste. Stessa cosa, in misura minore, per Dragon Ball (8) e HxH (5) e per
+la coda delle tecniche con una frase e un utilizzatore.
+
+### Non applicato (di proposito)
+
+- Soglie più severe per le tecniche: la regola "testo + collegamenti" escluderebbe Six Eyes, Infinity, Zabimaru,
+  Hie Hie no Mi (entità note, cercate). Le relazioni "ereditate" (fazioni dell'utilizzatore) gonfiano il conteggio,
+  ma il rimedio è il testo nei dati, non un noindex.
+- Redirect server-side per i 3 slug rinominati: `vercel.json` è statico; il meta refresh 0 è trattato da Google come
+  permanente. Da rivalutare se i rinomini aumentano.
+- Link `?character=…` verso la mappa (bloccati da robots): sono stati UI, la canonical è `/map`; spostarli su `#`
+  cambierebbe il deep-link senza un beneficio misurato. Da monitorare ("Indicizzata ma bloccata da robots.txt").
+- Link interni verso i percorsi derivati (canonical → personaggio): sono navigazione utile; la canonical basta.
+- `lastmod`, `rel=prev/next`, noindex sulla paginazione, structured data aggiuntivi: nessuna base nelle linee guida.
