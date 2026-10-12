@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-12T05:08:10.849Z",
-  "status": "backlog",
+  "generatedAt": "2026-10-12T05:20:37.069Z",
+  "status": "ready",
   "feedTail": [
     {
       "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-blackclover-noelle-silva@en",
@@ -94,28 +94,501 @@
     "error": null
   },
   "backlog": {
-    "unpublished": [
-      {
-        "renderId": "character-versus:hunterxhunter:kurapika-vs-dragonball-goku@en",
-        "contentType": "character-versus",
-        "renderedAt": "2026-10-12T05:08:09.750Z",
-        "missing": [
-          "instagram",
-          "facebook",
-          "tiktok",
-          "youtube"
-        ]
-      }
-    ],
+    "unpublished": [],
     "unfinished": [],
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "",
-  "reason": "publish the existing render first: character-versus:hunterxhunter:kurapika-vs-dragonball-goku@en (it counts as today's video; no new content)",
-  "alternatives": [],
-  "rejected": {},
-  "considered": 0,
-  "eligible": 0,
-  "trace": null
+  "seed": "feed10:character-versus:hunterxhunter:kurapika-vs-dragonball-goku@en:samples0",
+  "rejected": {
+    "JOURNEY_PART_ORDER": 44,
+    "MAX_SAME_CHARACTER_STREAK": 42
+  },
+  "considered": 691,
+  "trace": {
+    "traceVersion": 1,
+    "mode": "coldstart",
+    "seed": "feed10:character-versus:hunterxhunter:kurapika-vs-dragonball-goku@en:samples0",
+    "analytics": {
+      "coldStart": true,
+      "samples": 0,
+      "contents": 0,
+      "minimumSamples": 8
+    },
+    "recent": [
+      {
+        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-blackclover-noelle-silva@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "blackclover"
+        ],
+        "characters": [
+          "attackontitan:mikasa-ackerman",
+          "blackclover:noelle-silva"
+        ]
+      },
+      {
+        "renderId": "guess-character:bleach:orihime-inoue@en",
+        "contentType": "guess-character",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:orihime-inoue"
+        ]
+      },
+      {
+        "renderId": "character-versus:onepiece:sanji-vs-blackclover-yami-sukehiro@en",
+        "contentType": "character-versus",
+        "animes": [
+          "onepiece",
+          "blackclover"
+        ],
+        "characters": [
+          "onepiece:sanji",
+          "blackclover:yami-sukehiro"
+        ]
+      },
+      {
+        "renderId": "guess-character:bleach:kisuke-urahara@en",
+        "contentType": "guess-character",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:kisuke-urahara"
+        ]
+      },
+      {
+        "renderId": "character-journey:naruto:naruto-uzumaki:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "naruto"
+        ],
+        "characters": [
+          "naruto:naruto-uzumaki"
+        ]
+      },
+      {
+        "renderId": "character-versus:hunterxhunter:kurapika-vs-dragonball-goku@en",
+        "contentType": "character-versus",
+        "animes": [
+          "hunterxhunter",
+          "dragonball"
+        ],
+        "characters": [
+          "hunterxhunter:kurapika",
+          "dragonball:goku"
+        ]
+      }
+    ],
+    "constraints": {
+      "sameAnimeStreak": {
+        "animes": [
+          "hunterxhunter",
+          "dragonball"
+        ],
+        "length": 1
+      },
+      "forcedAnimeRotation": false,
+      "blockedAnimes": [],
+      "blockedCharacters": [
+        "hunterxhunter:kurapika",
+        "dragonball:goku"
+      ],
+      "characterCooldown": [
+        "attackontitan:mikasa-ackerman",
+        "blackclover:noelle-silva",
+        "bleach:orihime-inoue",
+        "onepiece:sanji",
+        "blackclover:yami-sukehiro",
+        "bleach:kisuke-urahara",
+        "naruto:naruto-uzumaki",
+        "hunterxhunter:kurapika",
+        "dragonball:goku"
+      ],
+      "contentTypeStreak": {
+        "contentType": "character-versus",
+        "length": 1
+      }
+    },
+    "hardRulesTriggered": {
+      "JOURNEY_PART_ORDER": 44,
+      "MAX_SAME_CHARACTER_STREAK": 42
+    },
+    "candidates": {
+      "considered": 691,
+      "eligible": 609,
+      "byContentType": {
+        "character-journey": {
+          "considered": 418,
+          "eligible": 372
+        },
+        "guess-character": {
+          "considered": 87,
+          "eligible": 85
+        },
+        "character-versus": {
+          "considered": 186,
+          "eligible": 152
+        }
+      }
+    },
+    "excluded": [
+      {
+        "renderId": "character-journey:dragonball:goku:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "dragonball"
+        ],
+        "characters": [
+          "dragonball:goku"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:dragonball:goku:part-03@en",
+        "contentType": "character-journey",
+        "animes": [
+          "dragonball"
+        ],
+        "characters": [
+          "dragonball:goku"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER",
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "sequence: Part 3 before Part 2 (never publish parts out of order)",
+          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:dragonball:goku:part-04@en",
+        "contentType": "character-journey",
+        "animes": [
+          "dragonball"
+        ],
+        "characters": [
+          "dragonball:goku"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER",
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "sequence: Part 4 before Part 3 (never publish parts out of order)",
+          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:dragonball:goku:part-05@en",
+        "contentType": "character-journey",
+        "animes": [
+          "dragonball"
+        ],
+        "characters": [
+          "dragonball:goku"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER",
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "sequence: Part 5 before Part 4 (never publish parts out of order)",
+          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:dragonball:goku:part-06@en",
+        "contentType": "character-journey",
+        "animes": [
+          "dragonball"
+        ],
+        "characters": [
+          "dragonball:goku"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER",
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "sequence: Part 6 before Part 5 (never publish parts out of order)",
+          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:hunterxhunter:kurapika@en",
+        "contentType": "character-journey",
+        "animes": [
+          "hunterxhunter"
+        ],
+        "characters": [
+          "hunterxhunter:kurapika"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: hunterxhunter:kurapika is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:dragonball:goku-vs-attackontitan-armin-arlert@en",
+        "contentType": "character-versus",
+        "animes": [
+          "dragonball",
+          "attackontitan"
+        ],
+        "characters": [
+          "dragonball:goku",
+          "attackontitan:armin-arlert"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:dragonball:goku-vs-attackontitan-mikasa-ackerman@en",
+        "contentType": "character-versus",
+        "animes": [
+          "dragonball",
+          "attackontitan"
+        ],
+        "characters": [
+          "dragonball:goku",
+          "attackontitan:mikasa-ackerman"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:dragonball:goku-vs-attackontitan-reiner-braun@en",
+        "contentType": "character-versus",
+        "animes": [
+          "dragonball",
+          "attackontitan"
+        ],
+        "characters": [
+          "dragonball:goku",
+          "attackontitan:reiner-braun"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:dragonball:goku-vs-blackclover-asta@en",
+        "contentType": "character-versus",
+        "animes": [
+          "dragonball",
+          "blackclover"
+        ],
+        "characters": [
+          "dragonball:goku",
+          "blackclover:asta"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      }
+    ],
+    "status": "selected",
+    "selectedId": "character-journey:onepiece:monkey-d-luffy:part-02",
+    "renderId": "character-journey:onepiece:monkey-d-luffy:part-02@en",
+    "contentType": "character-journey",
+    "animes": [
+      "onepiece"
+    ],
+    "characters": [
+      "onepiece:monkey-d-luffy"
+    ],
+    "score": 98.19,
+    "base": 72.19,
+    "reasons": [
+      "coldstart: novelty +19.5, jitter +2.7",
+      "+12 main character",
+      "+14 continues a started series (Part 2 promised)"
+    ],
+    "ranked": [
+      {
+        "renderId": "character-journey:onepiece:monkey-d-luffy:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "onepiece"
+        ],
+        "score": 98.19,
+        "reasons": [
+          "coldstart: novelty +19.5, jitter +2.7",
+          "+12 main character",
+          "+14 continues a started series (Part 2 promised)"
+        ]
+      },
+      {
+        "renderId": "guess-character:attackontitan:armin-arlert@en",
+        "contentType": "guess-character",
+        "animes": [
+          "attackontitan"
+        ],
+        "score": 97.42,
+        "reasons": [
+          "coldstart: novelty +25.5, jitter +5.9",
+          "+12 main character",
+          "+4 format below its target share (20% < 25%)"
+        ]
+      },
+      {
+        "renderId": "guess-character:attackontitan:levi-ackerman@en",
+        "contentType": "guess-character",
+        "animes": [
+          "attackontitan"
+        ],
+        "score": 96.13,
+        "reasons": [
+          "coldstart: novelty +25.5, jitter +4.6",
+          "+12 main character",
+          "+4 format below its target share (20% < 25%)"
+        ]
+      },
+      {
+        "renderId": "guess-character:attackontitan:gabi-braun@en",
+        "contentType": "guess-character",
+        "animes": [
+          "attackontitan"
+        ],
+        "score": 95.78,
+        "reasons": [
+          "coldstart: novelty +25.5, jitter +4.3",
+          "+12 main character",
+          "+4 format below its target share (20% < 25%)"
+        ]
+      },
+      {
+        "renderId": "guess-character:attackontitan:hange-zoe@en",
+        "contentType": "guess-character",
+        "animes": [
+          "attackontitan"
+        ],
+        "score": 95.2,
+        "reasons": [
+          "coldstart: novelty +25.5, jitter +3.7",
+          "+12 main character",
+          "+4 format below its target share (20% < 25%)"
+        ]
+      },
+      {
+        "renderId": "guess-character:bleach:sosuke-aizen@en",
+        "contentType": "guess-character",
+        "animes": [
+          "bleach"
+        ],
+        "score": 94.97,
+        "reasons": [
+          "coldstart: novelty +24.0, jitter +5.0",
+          "+12 main character",
+          "+4 format below its target share (20% < 25%)"
+        ]
+      }
+    ],
+    "explanation": [
+      "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
+      "hunterxhunter:kurapika, dragonball:goku excluded in every format (maxSameCharacterStreak 1).",
+      "Selected character-journey:onepiece:monkey-d-luffy:part-02@en (character-journey, onepiece) — coldstart, score 98.19 among 609 valid candidate(s)."
+    ]
+  },
+  "pick": {
+    "contentId": "character-journey:onepiece:monkey-d-luffy:part-02",
+    "renderId": "character-journey:onepiece:monkey-d-luffy:part-02@en",
+    "contentType": "character-journey",
+    "animes": [
+      "onepiece"
+    ],
+    "characters": [
+      "onepiece:monkey-d-luffy"
+    ],
+    "part": 2,
+    "partCount": 5,
+    "score": 98.19,
+    "reasons": [
+      "coldstart: novelty +19.5, jitter +2.7",
+      "+12 main character",
+      "+14 continues a started series (Part 2 promised)"
+    ]
+  },
+  "request": {
+    "template": "characterJourney",
+    "anime": "onepiece",
+    "subject": "monkey-d-luffy",
+    "segment": "part-02",
+    "locale": "en",
+    "hook": "Monkey D. Luffy's journey continues — Part 2 of 5.",
+    "hookType": "fact",
+    "hookId": "cj-cont-fact-1",
+    "cta": "Follow for Part 3.",
+    "ctaType": "follow-next-part",
+    "selection": {
+      "mode": "coldstart",
+      "score": 98.19,
+      "seed": "feed10:character-versus:hunterxhunter:kurapika-vs-dragonball-goku@en:samples0"
+    },
+    "notes": "growth selector (coldstart): coldstart: novelty +19.5, jitter +2.7; +12 main character; +14 continues a started series (Part 2 promised)"
+  },
+  "alternatives": [
+    {
+      "renderId": "guess-character:attackontitan:armin-arlert@en",
+      "contentType": "guess-character",
+      "score": 97.42
+    },
+    {
+      "renderId": "guess-character:attackontitan:levi-ackerman@en",
+      "contentType": "guess-character",
+      "score": 96.13
+    },
+    {
+      "renderId": "guess-character:attackontitan:gabi-braun@en",
+      "contentType": "guess-character",
+      "score": 95.78
+    },
+    {
+      "renderId": "guess-character:attackontitan:hange-zoe@en",
+      "contentType": "guess-character",
+      "score": 95.2
+    },
+    {
+      "renderId": "guess-character:bleach:sosuke-aizen@en",
+      "contentType": "guess-character",
+      "score": 94.97
+    }
+  ],
+  "eligible": 609
 }
