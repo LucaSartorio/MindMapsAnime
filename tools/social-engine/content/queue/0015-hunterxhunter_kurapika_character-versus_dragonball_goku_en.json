@@ -1,0 +1,22 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterVersus",
+  "anime": "hunterxhunter",
+  "subject": "kurapika",
+  "opponent": {
+    "anime": "dragonball",
+    "subject": "goku"
+  },
+  "locale": "en",
+  "hook": "Who travelled more: Kurapika or Goku?",
+  "hookType": "versus",
+  "hookId": "cv-versus-1",
+  "cta": "Follow for the next match-up.",
+  "ctaType": "follow-for-more",
+  "selection": {
+    "mode": "coldstart",
+    "score": 94.65,
+    "seed": "feed9:character-journey:naruto:naruto-uzumaki:part-02@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +25.0, jitter +5.4; +12 main character; +2.2 format below its target share (22% < 25%)"
+}
