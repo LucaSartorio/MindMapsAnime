@@ -131,6 +131,7 @@ export function CharactersPage({ dataset, resolved }: CharactersPageProps) {
             id={c.id}
             name={getEntityDisplayName(c, locale)}
             villageId={c.villageLocationId}
+            appearance={c.appearance}
             fit="cover"
           />
         ),

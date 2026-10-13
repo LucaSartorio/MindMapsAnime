@@ -19,6 +19,8 @@ import { jjkBattles } from './battles';
 import { applyBattles } from '../shared/battleKit';
 import { jjkFamily } from './family';
 import { withFamily } from '../shared/familyKit';
+import { withAppearance } from '../shared/appearanceKit';
+import { jjkAppearance } from './appearance';
 import { jjkStructure } from './structure';
 import { withFactionExtras } from '../shared/factionKit';
 import { jjkRoutes } from './routes';
@@ -89,7 +91,7 @@ const factions: Faction[] = jjkFactions.map((f) => {
  * `jutsu.chakraNature` = la stirpe/fonte (clan Gojo, Zen'in, Kamo, Sukuna, spiriti,
  * utilizzatori di maledizioni, reincarnati, stregoni).
  */
-export const jjkDataset: WorldDataset = withSourceNames(withEventTags(withFactionExtras(withFamily({
+const jjkBaseDataset: WorldDataset = withSourceNames(withEventTags(withFactionExtras(withFamily({
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
   seoSlugs: jujutsukaisenSlugs,
   world: jujutsuKaisen,
@@ -107,3 +109,6 @@ export const jjkDataset: WorldDataset = withSourceNames(withEventTags(withFactio
 }, jjkFamily, 'char-jjk-'), jjkStructure), jjkMarkerTags), jjkNames);
 
 export { JJK_JAPAN_VIEWBOX } from './mapConstants';
+
+/** Aspetto dei personaggi principali per i ritratti SVG generati (`appearance.ts`). */
+export const jjkDataset: WorldDataset = withAppearance(jjkBaseDataset, jjkAppearance, 'char-jjk-');

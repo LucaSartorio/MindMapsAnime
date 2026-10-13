@@ -5,6 +5,8 @@ import { bcBattles } from './battles';
 import { withBattles } from '../shared/battleKit';
 import { bcFamily } from './family';
 import { withFamily } from '../shared/familyKit';
+import { withAppearance } from '../shared/appearanceKit';
+import { blackcloverAppearance } from './appearance';
 import { bcStructure } from './structure';
 import { withFactionExtras } from '../shared/factionKit';
 import type { WorldDataset } from '@/types';
@@ -79,7 +81,7 @@ const factions = [...blackcloverFactions, ...blackcloverFactionsBatch1].map((f) 
   return { ...f, jutsuIds: [...new Set([...(f.jutsuIds ?? []), ...magic])] };
 });
 
-export const blackcloverDataset: WorldDataset = withSourceNames(withEventTags(withFactionExtras(withFamily(withBattles({
+const blackcloverBaseDataset: WorldDataset = withSourceNames(withEventTags(withFactionExtras(withFamily(withBattles({
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
   seoSlugs: blackcloverSlugs,
   world: blackclover,
@@ -101,3 +103,6 @@ export const blackcloverDataset: WorldDataset = withSourceNames(withEventTags(wi
 }, bcBattles), bcFamily, 'char-bc-'), bcStructure), bcMarkerTags), bcNames);
 
 export { BLACKCLOVER_MAP_VIEWBOX, BLACKCLOVER_UNDERWORLD_VIEWBOX } from './mapConstants';
+
+/** Aspetto dei personaggi principali per i ritratti SVG generati (`appearance.ts`). */
+export const blackcloverDataset: WorldDataset = withAppearance(blackcloverBaseDataset, blackcloverAppearance, 'char-bc-');

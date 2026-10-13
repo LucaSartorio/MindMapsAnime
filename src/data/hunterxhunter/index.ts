@@ -5,6 +5,8 @@ import { hxhBattles } from './battles';
 import { withBattles } from '../shared/battleKit';
 import { hxhFamily } from './family';
 import { withFamily } from '../shared/familyKit';
+import { withAppearance } from '../shared/appearanceKit';
+import { hxhAppearance } from './appearance';
 import { hxhStructure } from './structure';
 import { withFactionExtras } from '../shared/factionKit';
 import type { WorldDataset } from '@/types';
@@ -99,7 +101,7 @@ const hxhAllCharacters = enrichHxhCharacters(
   hxhAllJutsu,
 );
 
-export const hunterxhunterDataset: WorldDataset = withSourceNames(withEventTags(withFactionExtras(withFamily(withBattles({
+const hunterxhunterBaseDataset: WorldDataset = withSourceNames(withEventTags(withFactionExtras(withFamily(withBattles({
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
   seoSlugs: hunterxhunterSlugs,
   world: hunterxhunter,
@@ -134,3 +136,6 @@ export const hunterxhunterDataset: WorldDataset = withSourceNames(withEventTags(
 }, hxhBattles), hxhFamily, 'char-hxh-'), hxhStructure), hxhMarkerTags), hxhNames);
 
 export { HXH_MAP_VIEWBOX } from './mapLevels';
+
+/** Aspetto dei personaggi principali per i ritratti SVG generati (`appearance.ts`). */
+export const hunterxhunterDataset: WorldDataset = withAppearance(hunterxhunterBaseDataset, hxhAppearance, 'char-hxh-');

@@ -147,6 +147,7 @@ export function CharacterDetailsModal({
           id={character.id}
           name={getEntityDisplayName(character, locale)}
           villageId={character.villageLocationId}
+          appearance={character.appearance}
           fit="cover"
         />
       }
