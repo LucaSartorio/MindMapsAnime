@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-13T05:13:42.878Z",
+  "generatedAt": "2026-10-13T05:22:50.289Z",
   "locales": [
     "en",
     "it"
@@ -3740,7 +3740,9 @@
           "renderedLocales": [
             "en"
           ],
-          "scheduledLocales": [],
+          "scheduledLocales": [
+            "en"
+          ],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": true,
@@ -3750,12 +3752,12 @@
               "renderId": "character-journey:onepiece:monkey-d-luffy:part-02@en",
               "locale": "en",
               "variant": null,
-              "status": "notPublished",
+              "status": "scheduled",
               "platforms": {
-                "instagram": "notScheduled",
-                "facebook": "notScheduled",
-                "tiktok": "notScheduled",
-                "youtube": "notScheduled"
+                "instagram": "scheduled",
+                "facebook": "scheduled",
+                "tiktok": "scheduled",
+                "youtube": "scheduled"
               }
             }
           ]
@@ -25456,66 +25458,13 @@
     "summary": {
       "rendered": 16,
       "unavailable": 5,
-      "notPublished": 6,
-      "scheduled": 4,
+      "notPublished": 5,
+      "scheduled": 5,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0
     },
-    "ready": [
-      {
-        "renderId": "character-journey:onepiece:monkey-d-luffy:part-02@en",
-        "contentId": "character-journey:onepiece:monkey-d-luffy:part-02",
-        "anime": "onepiece",
-        "subject": "monkey-d-luffy",
-        "subjectName": "Monkey D. Luffy",
-        "locale": "en",
-        "variant": null,
-        "segment": "part-02",
-        "partNumber": 2,
-        "partCount": 5,
-        "renderedAt": "2026-10-13T05:13:41.646Z",
-        "durationSeconds": 33,
-        "publicationStatus": "notPublished",
-        "platforms": {
-          "instagram": "notScheduled",
-          "facebook": "notScheduled",
-          "tiktok": "notScheduled",
-          "youtube": "notScheduled"
-        },
-        "artifact": {
-          "name": "animapverse-social-render-38349934463-1",
-          "runId": "38349934463",
-          "runAttempt": "1",
-          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/38349934463",
-          "video": "videos/onepiece_monkey-d-luffy_character-journey_part-02_en.mp4",
-          "manifest": "manifests/onepiece_monkey-d-luffy_character-journey_part-02_en.manifest.json",
-          "sha256": "0ead3d8e74c66b691c4d1bdfa453f43f92d58347ec06f7827df5c2f1bda5b508",
-          "cover": "covers/onepiece_monkey-d-luffy_character-journey_part-02_en.cover.png",
-          "expiresAt": "2026-11-12T05:13:41.646Z"
-        },
-        "contentType": "character-journey",
-        "platformMetadata": {
-          "instagramCaption": "Monkey D. Luffy's journey continues — Part 2 of 5.\n\nMonkey D. Luffy's journey across One Piece — Part 2/5: 33 places on the world map.\n\nFollow for Part 3.\n\nSave it for your next rewatch.\n\n#onepiece #monkeydluffy #anime #animemap #AniMapVerse",
-          "tiktokCaption": "Monkey D. Luffy's journey continues — Part 2 of 5. Follow for Part 3. #onepiece #monkeydluffy #anime #animemap #AniMapVerse",
-          "youtubeTitle": "Every Place Monkey D. Luffy Visited 🏴‍☠️ | One Piece Journey Part 2 of 5",
-          "youtubeDescription": "Monkey D. Luffy's journey continues — Part 2 of 5.\n\nMonkey D. Luffy's journey across One Piece — Part 2/5: 33 places on the world map.\n\nSubscribe for Part 3.\n\nInteractive map: https://animapverse.com/en/one-piece/characters/monkey-d-luffy\n\n#onepiece #monkeydluffy #anime",
-          "facebookCaption": "Monkey D. Luffy's journey continues — Part 2 of 5.\n\nMonkey D. Luffy's journey across One Piece — Part 2/5: 33 places on the world map.\n\nFollow for Part 3.\n\nInteractive map: https://animapverse.com/en/one-piece/characters/monkey-d-luffy",
-          "hashtags": [
-            "#onepiece",
-            "#monkeydluffy",
-            "#anime",
-            "#animemap",
-            "#AniMapVerse"
-          ],
-          "youtube": {
-            "madeForKids": false
-          },
-          "madeForKids": false
-        },
-        "waitFor": {}
-      }
-    ],
+    "ready": [],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",
