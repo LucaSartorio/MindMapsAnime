@@ -771,6 +771,84 @@
       ],
       "social": null
     },
+    "character-journey:onepiece:monkey-d-luffy:part-02@en": {
+      "renderId": "character-journey:onepiece:monkey-d-luffy:part-02@en",
+      "contentId": "character-journey:onepiece:monkey-d-luffy:part-02",
+      "template": "characterJourney",
+      "anime": "onepiece",
+      "subject": "monkey-d-luffy",
+      "locale": "en",
+      "variant": null,
+      "segment": "part-02",
+      "segmentFingerprint": "f7137a38",
+      "createdAt": "2026-10-13T05:09:32.968Z",
+      "updatedAt": "2026-10-13T05:13:41.646Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-10-13T05:13:41.646Z",
+      "outputFile": "tools/social-engine/output/onepiece_monkey-d-luffy_character-journey_part-02_en.mp4",
+      "manifestFile": "tools/social-engine/output/onepiece_monkey-d-luffy_character-journey_part-02_en.manifest.json",
+      "sourceFile": "0016-onepiece_monkey-d-luffy_character-journey_part-02_en.json",
+      "durationSeconds": 33,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-38349934463-1",
+        "runId": "38349934463",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/38349934463",
+        "video": "videos/onepiece_monkey-d-luffy_character-journey_part-02_en.mp4",
+        "manifest": "manifests/onepiece_monkey-d-luffy_character-journey_part-02_en.manifest.json",
+        "sha256": "0ead3d8e74c66b691c4d1bdfa453f43f92d58347ec06f7827df5c2f1bda5b508",
+        "cover": "covers/onepiece_monkey-d-luffy_character-journey_part-02_en.cover.png",
+        "expiresAt": "2026-11-12T05:13:41.646Z"
+      },
+      "social": {
+        "contentType": "character-journey",
+        "animes": [
+          "onepiece"
+        ],
+        "characters": [
+          "onepiece:monkey-d-luffy"
+        ],
+        "characterNames": [
+          "Monkey D. Luffy"
+        ],
+        "part": 2,
+        "partCount": 5,
+        "hookType": "fact",
+        "hookId": "cj-cont-fact-1",
+        "hook": "Monkey D. Luffy's journey continues — Part 2 of 5.",
+        "ctaType": "follow-next-part",
+        "cta": "Follow for Part 3.",
+        "durationSeconds": 33,
+        "selection": {
+          "mode": "coldstart",
+          "score": 98.19,
+          "seed": "feed10:character-versus:hunterxhunter:kurapika-vs-dragonball-goku@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Monkey D. Luffy's journey continues — Part 2 of 5.\n\nMonkey D. Luffy's journey across One Piece — Part 2/5: 33 places on the world map.\n\nFollow for Part 3.\n\nSave it for your next rewatch.\n\n#onepiece #monkeydluffy #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Monkey D. Luffy's journey continues — Part 2 of 5. Follow for Part 3. #onepiece #monkeydluffy #anime #animemap #AniMapVerse",
+          "youtubeTitle": "Every Place Monkey D. Luffy Visited 🏴‍☠️ | One Piece Journey Part 2 of 5",
+          "youtubeDescription": "Monkey D. Luffy's journey continues — Part 2 of 5.\n\nMonkey D. Luffy's journey across One Piece — Part 2/5: 33 places on the world map.\n\nSubscribe for Part 3.\n\nInteractive map: https://animapverse.com/en/one-piece/characters/monkey-d-luffy\n\n#onepiece #monkeydluffy #anime",
+          "facebookCaption": "Monkey D. Luffy's journey continues — Part 2 of 5.\n\nMonkey D. Luffy's journey across One Piece — Part 2/5: 33 places on the world map.\n\nFollow for Part 3.\n\nInteractive map: https://animapverse.com/en/one-piece/characters/monkey-d-luffy",
+          "hashtags": [
+            "#onepiece",
+            "#monkeydluffy",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-journey:onepiece:monkey-d-luffy@it": {
       "renderId": "character-journey:onepiece:monkey-d-luffy@it",
       "contentId": "character-journey:onepiece:monkey-d-luffy",
