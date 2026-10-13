@@ -35,6 +35,8 @@ import { narutoEventsGaps } from './eventsGaps';
 import { narutoBattles } from './battles';
 import { narutoFamily } from './family';
 import { withFamily } from '../shared/familyKit';
+import { withAppearance } from '../shared/appearanceKit';
+import { narutoAppearance } from './appearance';
 import { narutoStructure } from './structure';
 import { withFactionExtras } from '../shared/factionKit';
 import { applyBattles } from '../shared/battleKit';
@@ -102,7 +104,7 @@ const arcs: StoryArc[] = [...narutoArcs, ...narutoArcsBatch1, ...narutoArcsBatch
 }));
 
 /** Dataset completo del mondo Naruto. */
-export const narutoDataset: WorldDataset = withSourceNames(withEventTags(withFactionExtras(withFamily(densifyCrossLinks({
+const narutoBaseDataset: WorldDataset = withSourceNames(withEventTags(withFactionExtras(withFamily(densifyCrossLinks({
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
   seoSlugs: narutoSlugs,
   world: naruto,
@@ -133,3 +135,6 @@ export {
   narutoDataQualitySummary,
   narutoTranslationTodos,
 } from './dataQuality';
+
+/** Aspetto dei personaggi principali per i ritratti SVG generati (`appearance.ts`). */
+export const narutoDataset: WorldDataset = withAppearance(narutoBaseDataset, narutoAppearance, 'char-');

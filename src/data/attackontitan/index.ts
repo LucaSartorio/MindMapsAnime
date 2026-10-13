@@ -5,6 +5,8 @@ import { aotBattles } from './battles';
 import { withBattles } from '../shared/battleKit';
 import { aotFamily } from './family';
 import { withFamily } from '../shared/familyKit';
+import { withAppearance } from '../shared/appearanceKit';
+import { aotAppearance } from './appearance';
 import { aotStructure } from './structure';
 import { withFactionExtras } from '../shared/factionKit';
 import type { Character, StoryArc, TimelineEvent, WorldDataset } from '@/types';
@@ -63,7 +65,7 @@ const characters: Character[] = [...aotCharactersParadis, ...aotCharactersMarley
  * l'origine (Ymir, Impero eldiano, Paradis, Marley, Hizuru). Le forme di Gigante di
  * ogni personaggio sono anche in `character.transformations`.
  */
-export const aotDataset: WorldDataset = withSourceNames(withEventTags(withFactionExtras(withFamily(withBattles({
+const aotBaseDataset: WorldDataset = withSourceNames(withEventTags(withFactionExtras(withFamily(withBattles({
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
   seoSlugs: attackontitanSlugs,
   world: attackOnTitan,
@@ -80,3 +82,6 @@ export const aotDataset: WorldDataset = withSourceNames(withEventTags(withFactio
 }, aotBattles), aotFamily, 'char-aot-'), aotStructure), aotMarkerTags), aotNames);
 
 export { AOT_WORLD_VIEWBOX } from './mapConstants';
+
+/** Aspetto dei personaggi principali per i ritratti SVG generati (`appearance.ts`). */
+export const aotDataset: WorldDataset = withAppearance(aotBaseDataset, aotAppearance, 'char-aot-');

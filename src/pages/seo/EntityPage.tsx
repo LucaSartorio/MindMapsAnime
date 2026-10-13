@@ -575,6 +575,7 @@ export function EntityPage({
               id={id}
               name={name}
               villageId={category === 'characters' ? (entity as Character).villageLocationId : undefined}
+              appearance={category === 'characters' ? (entity as Character).appearance : undefined}
               locationType={category === 'locations' ? (entity as Location).type : undefined}
               chakraNature={category === 'abilities' ? (entity as Jutsu).chakraNature?.[0] : undefined}
               ability={category === 'abilities' ? (entity as Jutsu) : undefined}

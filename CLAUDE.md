@@ -583,6 +583,15 @@ Quincy bow, Hollow mask…) and an **element** glyph (`ELEMENT_KEYWORDS`: nature
 match) that also tints the background (`ELEMENT_COLORS`, after the world's own colours like Naruto's chakra
 natures). Unknown ids fall back to the world motif — a new world needs no edits; add ids to the maps to enrich it.
 
+**Character portraits are data-driven too**: `Character.appearance` (`CharacterAppearance`: `hair`, `hairStyle`, `eyes`,
+`skin`, `outfit`, `accent`, `marks[]`, `species: 'beast'`) is written per world in `src/data/<world>/appearance.ts`
+(`appearanceKit` → `withAppearance`, applied last in the world's `index.ts`; unknown ids throw) and drawn by
+`PortraitArt` (`src/components/common/portraitArt.tsx`) when passed as `appearance={character.appearance}` to
+`EntityImage`. Colours are palette names (`PORTRAIT_COLORS`, `src/lib/portrait.ts`) or hex; hair styles and marks
+(headband, straw hat, scar, glasses, horns, animal ears…) are known ids, an unknown one is ignored. Symbolic style
+only — colours and simple shapes, never a copy of the official design. Today all main/major characters have one;
+others keep the world motif. Accessories with their own colour (horns, mask, forehead mark) use `accent` only when set.
+
 `EntityImage` resolves the world from `useWorldStore` (optional `worldSlug` prop overrides it for
 cross-world cards), so call sites don't change. A world absent from the registry falls back to neutral
 motifs but still gets its own palette — **adding an anime needs no component edits**; add an entry only

@@ -558,6 +558,81 @@ export interface CharacterTransformation {
   canonStatus?: CanonStatus;
 }
 
+/** Capigliature note del ritratto (stringa libera: un id ignoto ricade su `short`). */
+export type HairStyle =
+  | 'short'
+  | 'spiky'
+  | 'saiyan'
+  | 'messy'
+  | 'swept'
+  | 'long'
+  | 'long_spiky'
+  | 'hime'
+  | 'bob'
+  | 'ponytail'
+  | 'bun'
+  | 'twin_tails'
+  | 'slick'
+  | 'buzz'
+  | 'mohawk'
+  | 'afro'
+  | 'bald'
+  | 'dome'
+  | 'crest';
+
+/** Segni distintivi / accessori del ritratto (stringa libera: un id ignoto è ignorato). */
+export type PortraitMark =
+  | 'headband'
+  | 'strawhat'
+  | 'hat'
+  | 'bandana'
+  | 'goggles'
+  | 'glasses'
+  | 'sunglasses'
+  | 'eyepatch'
+  | 'blindfold'
+  | 'mask_lower'
+  | 'scar_eye'
+  | 'scar_cheek'
+  | 'scar_nose'
+  | 'stitches'
+  | 'whiskers'
+  | 'cheek_marks'
+  | 'eye_lines'
+  | 'forehead_mark'
+  | 'forehead_tattoo'
+  | 'third_eye'
+  | 'horns'
+  | 'antennae'
+  | 'animal_ears'
+  | 'halo'
+  | 'crown'
+  | 'earrings'
+  | 'beard'
+  | 'mustache'
+  | 'fur_collar'
+  | 'bone_fragment'
+  | 'split_face'
+  | 'cyclops';
+
+/**
+ * Aspetto simbolico di un personaggio, da cui si compone il ritratto SVG.
+ * I colori sono nomi della palette (`PORTRAIT_COLORS` in `src/lib/portrait.ts`,
+ * es. `black`, `blond`, `tan`) o hex. Tutto facoltativo.
+ */
+export interface CharacterAppearance {
+  hair?: string;
+  hairStyle?: HairStyle | (string & {});
+  eyes?: string;
+  skin?: string;
+  outfit?: string;
+  /** Colore di cappelli, fasce, segni sul viso… */
+  accent?: string;
+  marks?: (PortraitMark | (string & {}))[];
+  /** `beast`: testa animale (pelo = `hair`); default umanoide. */
+  species?: 'humanoid' | 'beast';
+}
+
 export interface Character extends SeoSlugFields {
   id: string;
   worldId: string;
@@ -646,6 +721,11 @@ export interface Character extends SeoSlugFields {
   parents?: string[];
   /** Coniugi / compagni con cui ha avuto figli. */
   spouses?: string[];
+  /**
+   * Aspetto per il ritratto SVG generato (nessuna immagine reale): colori e
+   * capigliatura simbolici, scritti in `src/data/<world>/appearance.ts`.
+   */
+  appearance?: CharacterAppearance;
   /** Alleati ricorrenti */
   allies?: string[];
   /** Nemici principali */

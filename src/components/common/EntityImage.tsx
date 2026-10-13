@@ -1,5 +1,5 @@
 import { useId } from 'react';
-import type { Jutsu, LocationType } from '@/types';
+import type { CharacterAppearance, Jutsu, LocationType } from '@/types';
 import { cn } from '@/lib/cn';
 import { useWorldStore } from '@/store/useWorldStore';
 import {
@@ -8,6 +8,7 @@ import {
 } from '@/lib/worldPlaceholders';
 import { ELEMENT_COLORS, resolveAbilityArt } from '@/lib/abilityArt';
 import { AbilityArtSvg } from '@/components/common/abilityFormArt';
+import { PortraitArt } from '@/components/common/portraitArt';
 import {
   ArcArt,
   CharacterMotifArt,
@@ -34,6 +35,12 @@ interface EntityImageProps {
    * motivo generico del mondo.
    */
   ability?: Pick<Jutsu, 'type' | 'chakraNature' | 'classification' | 'tags'>;
+  /**
+   * Aspetto del personaggio (`kind="character"`): se presente il placeholder è
+   * un ritratto composto (capelli, occhi, segni distintivi) invece del motivo
+   * generico del mondo.
+   */
+  appearance?: CharacterAppearance;
   /** Id della location del villaggio (personaggi/clan). */
   villageId?: string;
   /** Tipo di luogo (location). */
@@ -67,6 +74,7 @@ export function EntityImage({
   className,
   chakraNature,
   ability,
+  appearance,
   villageId,
   locationType,
   worldSlug,
@@ -172,7 +180,8 @@ export function EntityImage({
         <rect width="100" height="100" fill={`url(#g-${uid})`} />
       )}
 
-      {kind === 'character' && (
+      {kind === 'character' && appearance && <PortraitArt appearance={appearance} ink={style.ink} />}
+      {kind === 'character' && !appearance && (
         <CharacterMotifArt
           motif={style.character}
           initials={initials}

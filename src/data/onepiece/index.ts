@@ -5,6 +5,8 @@ import { onepieceBattles } from './battles';
 import { withBattles } from '../shared/battleKit';
 import { onepieceFamily } from './family';
 import { withFamily } from '../shared/familyKit';
+import { withAppearance } from '../shared/appearanceKit';
+import { onepieceAppearance } from './appearance';
 import { onepieceStructure } from './structure';
 import { withFactionExtras } from '../shared/factionKit';
 import type { Character, Faction, Jutsu, Location, PoneglyphRef, StoryArc, TimelineEvent, WorldDataset } from '@/types';
@@ -474,7 +476,7 @@ const factions: Faction[] = [
   return jutsuIds.length ? { ...f, jutsuIds } : f;
 });
 
-export const onepieceDataset: WorldDataset = withSourceNames(withEventTags(withFactionExtras(withFamily(withBattles({
+const onepieceBaseDataset: WorldDataset = withSourceNames(withEventTags(withFactionExtras(withFamily(withBattles({
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
   seoSlugs: onepieceSlugs,
   world: onepiece,
@@ -510,3 +512,6 @@ export const onepieceDataset: WorldDataset = withSourceNames(withEventTags(withF
 }, onepieceBattles), onepieceFamily, 'char-op-'), onepieceStructure), onepieceMarkerTags), onepieceNames);
 
 export { ONEPIECE_MAP_VIEWBOX } from './mapLevels';
+
+/** Aspetto dei personaggi principali per i ritratti SVG generati (`appearance.ts`). */
+export const onepieceDataset: WorldDataset = withAppearance(onepieceBaseDataset, onepieceAppearance, 'char-op-');

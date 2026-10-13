@@ -5,6 +5,8 @@ import { dragonballBattles } from './battles';
 import { withBattles } from '../shared/battleKit';
 import { dragonballFamily } from './family';
 import { withFamily } from '../shared/familyKit';
+import { withAppearance } from '../shared/appearanceKit';
+import { dragonballAppearance } from './appearance';
 import { dragonballStructure } from './structure';
 import { withFactionExtras } from '../shared/factionKit';
 import type { Character, Faction, StoryArc, TimelineEvent, WorldDataset } from '@/types';
@@ -93,7 +95,7 @@ const factions: Faction[] = dragonballFactions.map((f) => {
  * rappresentabili su di essa (pianeti, Aldilà, Torneo del Potere).
  * Estendibile con nuovi personaggi/archi senza modifiche strutturali.
  */
-export const dragonballDataset: WorldDataset = withSourceNames(withEventTags(withFactionExtras(withFamily(withBattles({
+const dragonballBaseDataset: WorldDataset = withSourceNames(withEventTags(withFactionExtras(withFamily(withBattles({
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
   seoSlugs: dragonballSlugs,
   world: dragonball,
@@ -111,3 +113,6 @@ export const dragonballDataset: WorldDataset = withSourceNames(withEventTags(wit
 }, dragonballBattles), dragonballFamily, 'char-dbz-'), dragonballStructure), dragonballMarkerTags), dragonballNames);
 
 export { DRAGONBALL_MAP_VIEWBOX, DRAGONBALL_COSMIC_VIEWBOX } from './mapConstants';
+
+/** Aspetto dei personaggi principali per i ritratti SVG generati (`appearance.ts`). */
+export const dragonballDataset: WorldDataset = withAppearance(dragonballBaseDataset, dragonballAppearance, 'char-');

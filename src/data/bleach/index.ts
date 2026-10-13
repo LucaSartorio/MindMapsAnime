@@ -5,6 +5,8 @@ import { bleachBattles } from './battles';
 import { withBattles } from '../shared/battleKit';
 import { bleachFamily } from './family';
 import { withFamily } from '../shared/familyKit';
+import { withAppearance } from '../shared/appearanceKit';
+import { bleachAppearance } from './appearance';
 import { bleachStructure } from './structure';
 import { withFactionExtras } from '../shared/factionKit';
 import type { WorldDataset } from '@/types';
@@ -56,7 +58,7 @@ const arcs = bleachArcs.map((arc) => ({
   eventIds: [...new Set([...(arc.eventIds ?? []), ...events.filter((e) => e.arcId === arc.id).map((e) => e.id)])],
 }));
 
-export const bleachDataset: WorldDataset = withSourceNames(withEventTags(withFactionExtras(withFamily(withBattles({
+const bleachBaseDataset: WorldDataset = withSourceNames(withEventTags(withFactionExtras(withFamily(withBattles({
   // Slug SEO pubblicati (congelati): vedi src/seo/slug.ts e `npm run seo:slugs`.
   seoSlugs: bleachSlugs,
   world: bleach,
@@ -79,3 +81,6 @@ export const bleachDataset: WorldDataset = withSourceNames(withEventTags(withFac
 }, bleachBattles), bleachFamily, 'char-bl-'), bleachStructure), bleachMarkerTags), bleachNames);
 
 export { BLEACH_WORLD_VIEWBOX } from './mapConstants';
+
+/** Aspetto dei personaggi principali per i ritratti SVG generati (`appearance.ts`). */
+export const bleachDataset: WorldDataset = withAppearance(bleachBaseDataset, bleachAppearance, 'char-bl-');
