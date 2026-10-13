@@ -215,16 +215,21 @@ const WORLD_ENTITY_COLORS: Record<string, Record<string, string>> = {
  *
  * `hint` è l'attributo che il mondo usa per colorare (natura del chakra per una
  * tecnica, villaggio per un personaggio): vale solo se quel mondo lo dichiara.
+ * `semanticAnchor` è una tinta che vale per ogni mondo (l'elemento di una
+ * tecnica: fuoco arancio, ghiaccio azzurro): sostituisce lo slot del tema, ma
+ * cede il passo ai colori che il mondo dichiara per sé.
  */
 export function getWorldEntityColor(
   slug: string | null | undefined,
   kind: EntityImageKind,
   id: string,
   hint?: string,
+  semanticAnchor?: string,
 ): string {
   const overrides = (slug && WORLD_ENTITY_COLORS[slug]) || undefined;
   const known = overrides?.[id] || (hint ? overrides?.[hint] : undefined);
   if (known) return known;
+  if (semanticAnchor) return jitterColor(semanticAnchor, id);
 
   const theme = (slug && findWorldBySlug(slug)?.theme) || NEUTRAL_THEME;
   const slot = getWorldPlaceholderStyle(slug).tint?.[kind] ?? DEFAULT_TINT[kind];

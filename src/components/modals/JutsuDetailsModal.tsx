@@ -58,6 +58,7 @@ export function JutsuDetailsModal({ dataset, jutsuId }: JutsuDetailsModalProps) 
           id={jutsu.id}
           name={getLocalizedText(jutsu.localizedName, locale) || jutsu.name}
           chakraNature={jutsu.chakraNature?.[0]}
+          ability={jutsu}
           fit="cover"
         />
       }
