@@ -631,6 +631,37 @@ export interface CharacterAppearance {
   marks?: (PortraitMark | (string & {}))[];
   /** `beast`: testa animale (pelo = `hair`); default umanoide. */
   species?: 'humanoid' | 'beast';
+  /**
+   * Ritratto DETTAGLIATO (se presente): volto anime con occhi/sopracciglia/naso/
+   * bocca propri del personaggio, abiti veri e capigliatura disegnata a mano.
+   * Destra/sinistra (`eyeL`/`eyeR`) sono dal punto di vista di chi guarda.
+   */
+  face?: PortraitFace;
+  /** Abito: vest_open, robe, tank, overalls, suit, tshirt, coat, cloak, haori, jacket… */
+  clothes?: string;
+  /** Colori secondari dell'abito (camicia, cravatta, fodera…). */
+  outfit2?: string;
+  outfit3?: string;
+  /** Sagome dei capelli disegnate a mano (path SVG nel viewBox 100×100): davanti e dietro la testa. */
+  hairFront?: string;
+  hairBack?: string;
+  /** Ciocche: linee interne dei capelli (path SVG, solo tratto). */
+  hairDetail?: string;
+}
+
+export interface PortraitFace {
+  /** male (default) · female · round · square · long */
+  shape?: string;
+  /** round · sharp · big · small · narrow · closed · hidden */
+  eyes?: string;
+  eyeL?: string;
+  eyeR?: string;
+  /** normal · thick · angry · thin · raised · spiral · none */
+  brows?: string;
+  /** small · long · flat · none */
+  nose?: string;
+  /** grin · smile · neutral · smirk · lips · open */
+  mouth?: string;
 }
 
 export interface Character extends SeoSlugFields {
