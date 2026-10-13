@@ -722,6 +722,20 @@ function skinMarks(m: Set<string>, p: ResolvedPortrait): ReactNode[] {
   );
   // Sfera sulla fronte (colore = accent; Omega Shenron).
   add('forehead_orb', <circle cx="50" cy="33" r="3" fill={acc('#f08a2a')} stroke={INK} strokeWidth="0.7" />);
+  // Stella a sei punte sul lato destro della fronte (Julius).
+  add('forehead_star', <path d="M58 30 L59.2 32.6 L62 32.6 L60 34.6 L61 37.4 L58 36 L55 37.4 L56 34.6 L54 32.6 L56.8 32.6 Z" fill={acc('#3a6ad8')} />);
+  // Croce nera sul lato destro della fronte che scende sull'occhio (Zenon).
+  add('cross_mark', <path d="M56 30 H58.6 V36 H63 V38.4 H58.6 V52 H56 V38.4 H52 V36 H56 Z" fill={acc('#16151c')} />);
+  // Segno scuro lungo tutta la fronte (Dante).
+  add('forehead_band_mark', <path d="M36 33 C42 30.4 58 30.4 64 33 L63 36.4 C57 34.4 43 34.4 37 36.4 Z" fill={acc('#16151c')} />);
+  // Segno a sole sul lato sinistro della fronte (Lucius).
+  add(
+    'sun_mark',
+    <g fill={acc('#16151c')}>
+      <circle cx="42" cy="33" r="2" />
+      <path d="M42 28.4 V29.8 M42 36.2 V37.6 M37.4 33 H38.8 M45.2 33 H46.6 M38.8 29.8 L39.8 30.8 M45.2 29.8 L44.2 30.8 M38.8 36.2 L39.8 35.2 M45.2 36.2 L44.2 35.2" stroke={acc('#16151c')} strokeWidth="0.9" strokeLinecap="round" />
+    </g>,
+  );
   add('gills', <path d="M36.6 51 Q38.4 53 36.8 55 M38.2 50.4 Q40.2 52.6 38.6 55.2 M63.4 51 Q61.6 53 63.2 55 M61.8 50.4 Q59.8 52.6 61.4 55.2" fill="none" stroke={shade(p.skin, -0.4)} strokeWidth="0.8" strokeLinecap="round" />);
   add('scar_chin_x', <path d="M47.4 60.4 L52.6 64.6 M52.6 60.4 L47.4 64.6" stroke={SCAR} strokeWidth="0.9" strokeLinecap="round" />);
   // Cicatrici rugose sul lato sinistro del volto (Obito).
@@ -929,6 +943,23 @@ function overMarks(m: Set<string>, p: ResolvedPortrait, ink: string, fur?: strin
     <g>
       <path d="M33 40 L66 37" stroke="#5a3a24" strokeWidth="1.6" />
       <circle cx={EYE_L} cy={EYE_Y} r="5.6" fill="#8fc6f0" fillOpacity="0.45" stroke={GOLD} strokeWidth="1.6" />
+    </g>,
+  );
+  // Maschera/elmo che copre la metà superiore del volto (William).
+  add(
+    'mask_upper',
+    <g>
+      <path d="M32 46 C31 30 39 20 50 20 C61 20 69 30 68 46 C62 51 56 52 50 50 C44 52 38 51 32 46 Z" fill={acc('#e8e0c8')} stroke={INK} strokeWidth="1" />
+      <path d="M38.6 44 C40 41.4 45.6 41.4 47 44 C45 46 40.6 46 38.6 44 Z M53 44 C54.4 41.4 60 41.4 61.4 44 C59.4 46 55 46 53 44 Z" fill={INK} />
+      <path d="M50 21 V38 M38 30 C44 27 56 27 62 30" fill="none" stroke={GOLD} strokeWidth="1" />
+    </g>,
+  );
+  // Treccia che pende tra gli occhi fino al naso (Nozel).
+  add(
+    'braid_center',
+    <g fill={p.hair} stroke={INK} strokeWidth="0.7">
+      {[34, 38, 42, 46, 50].map((y) => <ellipse key={y} cx="50" cy={y} rx="1.7" ry="2.3" />)}
+      <circle cx="50" cy="53" r="1.2" fill={GOLD} />
     </g>,
   );
   add(
