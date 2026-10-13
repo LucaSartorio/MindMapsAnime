@@ -649,6 +649,10 @@ export interface CharacterAppearance {
   hairDetail?: string;
   /** Secondo colore dei capelli, sulla metà destra (capelli bicolore). */
   hair2?: string;
+  /** Colore dell'occhio di destra quando differisce dal sinistro (es. Sharingan + Rinnegan). */
+  eyes2?: string;
+  /** Colore del collo di pelliccia (`fur_collar`), se diverso da `accent`. */
+  fur?: string;
 }
 
 export interface PortraitFace {

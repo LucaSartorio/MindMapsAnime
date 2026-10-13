@@ -699,12 +699,28 @@ function skinMarks(m: Set<string>, p: ResolvedPortrait): ReactNode[] {
     </g>,
   );
   add('forehead_mark', <path d="M50 33.5 L52.2 36.5 L50 39.5 L47.8 36.5 Z" fill={acc('#8e5ad0')} />);
-  add('forehead_tattoo', <path d="M38 34.5 L42.6 33 M40 32 L40.6 36.6 M38.5 36.4 L42.6 35.4" stroke="#c0303a" strokeWidth="1.1" strokeLinecap="round" />);
+  // Tatuaggio sulla fronte, lato destro (Gaara).
+  add('forehead_tattoo', <path d="M57.4 33.2 L62 34.6 M59.6 31.8 L59 36.6 M57.4 35.6 L61.6 36.8" stroke="#c0303a" strokeWidth="1.1" strokeLinecap="round" />);
+  // Sopracciglia tatuate (Renji).
+  add('brow_tattoo', <path d="M38 37 L41 35 L43 36.6 L46 34.6 M62 37 L59 35 L57 36.6 L54 34.6" fill="none" stroke={INK} strokeWidth="0.9" strokeLinecap="round" />);
+  add('gills', <path d="M36.6 51 Q38.4 53 36.8 55 M38.2 50.4 Q40.2 52.6 38.6 55.2 M63.4 51 Q61.6 53 63.2 55 M61.8 50.4 Q59.8 52.6 61.4 55.2" fill="none" stroke={shade(p.skin, -0.4)} strokeWidth="0.8" strokeLinecap="round" />);
+  add('scar_chin_x', <path d="M47.4 60.4 L52.6 64.6 M52.6 60.4 L47.4 64.6" stroke={SCAR} strokeWidth="0.9" strokeLinecap="round" />);
+  // Cicatrici rugose sul lato sinistro del volto (Obito).
+  add('scar_lines_left', <path d="M35 34 C38 36 37 40 40 42 M34.6 44 C37.6 45 37 49 40 51 M35.4 54 C38 54.6 38.4 57.6 41 59 M38 30 C40 31.6 41 33 44 33" fill="none" stroke={shade(p.skin, -0.35)} strokeWidth="0.9" strokeLinecap="round" />);
+  // Piercing (Pain): borchie sul setto, sotto il labbro e sulle orecchie.
+  add(
+    'piercings',
+    <g fill="#9aa0aa" stroke={INK} strokeWidth="0.4">
+      {[[50, 50.4], [50, 52.6], [46.4, 60.8], [53.6, 60.8], [33, 43], [33.4, 46.4], [33.2, 49.8], [67, 43], [66.6, 46.4], [66.8, 49.8]].map(([x, y]) => (
+        <circle key={`${x}-${y}`} cx={x} cy={y} r="0.9" />
+      ))}
+    </g>,
+  );
   add(
     'third_eye',
     <g>
       <ellipse cx="50" cy="35.5" rx="2.8" ry="2" fill={WHITE} stroke={INK} strokeWidth="0.6" />
-      <circle cx="50" cy="35.6" r="1.3" fill={p.eyes} />
+      <circle cx="50" cy="35.6" r="1.3" fill={p.hasAccent ? p.accent : '#c8202a'} />
     </g>,
   );
   add('stitches', <path d="M38 38 L62 58 M41 37.6 L40 40.6 M45 40.6 L44 43.6 M53 47.6 L52 50.6 M57 50.6 L56 53.6 M61 54 L60 57" stroke={INK} strokeWidth="0.8" strokeLinecap="round" />);
@@ -756,9 +772,10 @@ function skinMarks(m: Set<string>, p: ResolvedPortrait): ReactNode[] {
 }
 
 /** Accessori sopra tutto (cappelli, fasce, occhiali, corna…); `ink` = colore firma del mondo. */
-function overMarks(m: Set<string>, p: ResolvedPortrait, ink: string): ReactNode[] {
+function overMarks(m: Set<string>, p: ResolvedPortrait, ink: string, fur?: string): ReactNode[] {
   const out: ReactNode[] = [];
   const acc = (fallback: string) => (p.hasAccent ? p.accent : fallback);
+  const furColor = fur ? portraitColor(fur, fur) : acc('#f1f1f1');
   const add = (k: string, node: ReactNode) => {
     if (m.has(k)) out.push(<g key={k}>{node}</g>);
   };
@@ -836,6 +853,36 @@ function overMarks(m: Set<string>, p: ResolvedPortrait, ink: string): ReactNode[
       <path d="M32 31.6 C40 30 60 30 68 31.6 L68 38.2 C60 36.6 40 36.6 32 38.2 Z" fill={acc('#25304a')} stroke={INK} strokeWidth="0.9" />
       <rect x="43" y="31" width="14" height="6.2" rx="1" fill={ink} stroke={INK} strokeWidth="0.8" />
       <path d="M46 34.6 C47 32.6 49 32.6 50 34 C51 35.4 53.4 35 54 33" fill="none" stroke={INK} strokeWidth="0.6" />
+    </g>,
+  );
+  // Coprifronte inclinato che copre l'occhio di destra (Kakashi).
+  add(
+    'headband_tilt',
+    <g>
+      <path d="M32 30 C42 30 58 34 68 40 L67 50 C58 43 42 38 32 37 Z" fill={acc('#25304a')} stroke={INK} strokeWidth="0.9" />
+      <path d="M50 32.4 L63 37.6 L61.6 44.8 L48.6 39.4 Z" fill={ink} stroke={INK} strokeWidth="0.8" />
+      <path d="M52.6 37 C54 35.4 56 35.8 56.6 37.4 C57.2 39 59.4 39.4 60.4 38.2" fill="none" stroke={INK} strokeWidth="0.6" />
+    </g>,
+  );
+  // Benda sull'occhio di sinistra (Danzō).
+  add('bandage_left', <path d="M32.6 36 C38 37.4 44 39 50 41.6 L48.6 52 C43 50 38 49 33 48.4 Z" fill="#ece8dc" stroke={INK} strokeWidth="0.8" />);
+  // Cappello da Kage: ampio cono con la fascia frontale (colore = accent).
+  add(
+    'kage_hat',
+    <g>
+      <path d="M14 34 L50 8 L86 34 C74 38 26 38 14 34 Z" fill="#f1f1f1" stroke={INK} strokeWidth="1.1" strokeLinejoin="round" />
+      <path d="M40 15.6 L50 8 L60 15.6 C56 17 44 17 40 15.6 Z M30 26 C40 30 60 30 70 26 L74 29.6 C62 33.6 38 33.6 26 29.6 Z" fill={acc('#c8303a')} stroke={INK} strokeWidth="0.8" />
+      <rect x="44" y="20" width="12" height="8" fill="#f1f1f1" stroke={INK} strokeWidth="0.7" />
+      <path d="M47 22 H53 M50 22 V27 M47 25 H53" stroke={acc('#c8303a')} strokeWidth="0.9" />
+    </g>,
+  );
+  // Foglie di dionea attorno alla testa (Zetsu).
+  add(
+    'flytrap',
+    <g fill="#3f8a4a" stroke={INK} strokeWidth="1">
+      <path d="M50 4 C30 4 18 22 20 48 L28 46 C26 26 36 14 50 13 Z" />
+      <path d="M50 4 C70 4 82 22 80 48 L72 46 C74 26 64 14 50 13 Z" />
+      <path d="M24 44 l-4 3 M23 36 l-5 1 M25 27 l-4 -2 M76 44 l4 3 M77 36 l5 1 M75 27 l4 -2" stroke={INK} strokeWidth="1.2" />
     </g>,
   );
   add(
@@ -953,14 +1000,14 @@ function overMarks(m: Set<string>, p: ResolvedPortrait, ink: string): ReactNode[
   // Collo di pelliccia/piume: tanti batuffoli sovrapposti lungo le spalle.
   add(
     'fur_collar',
-    <g fill={acc('#f1f1f1')} stroke={INK} strokeWidth="0.7">
+    <g fill={furColor} stroke={INK} strokeWidth="0.7">
       {[
         [12, 93, 6], [16, 87, 6.5], [21, 82, 6.5], [27, 78, 6.5], [33, 75.5, 6], [39, 74, 5.5],
         [88, 93, 6], [84, 87, 6.5], [79, 82, 6.5], [73, 78, 6.5], [67, 75.5, 6], [61, 74, 5.5],
       ].map(([x, y, r]) => (
         <circle key={`${x}-${y}`} cx={x} cy={y} r={r} />
       ))}
-      <path d="M14 90 C20 82 28 76 40 74 M86 90 C80 82 72 76 60 74" fill="none" stroke={shade(acc('#f1f1f1'), -0.25)} strokeWidth="1" />
+      <path d="M14 90 C20 82 28 76 40 74 M86 90 C80 82 72 76 60 74" fill="none" stroke={shade(furColor, -0.25)} strokeWidth="1" />
     </g>,
   );
   add('scarf', <path d="M36 68 C42 74 58 74 64 68 L66 76 C58 81 42 81 34 76 Z M56 76 L60 92 L66 90 L62 75 Z" fill={acc('#c8303a')} stroke={INK} strokeWidth="0.9" />);
@@ -1068,7 +1115,7 @@ export function DetailedPortrait({ appearance: a, uid, ink }: { appearance: Char
       ) : (
         <>
           <Eye cx={EYE_L} style={eyeL} color={a.eyes ?? 'darkbrown'} side="l" />
-          <Eye cx={EYE_R} style={eyeR} color={a.eyes ?? 'darkbrown'} side="r" />
+          <Eye cx={EYE_R} style={eyeR} color={a.eyes2 ?? a.eyes ?? 'darkbrown'} side="r" />
           <Brows style={f.brows ?? 'normal'} color={browColor} eyeL={eyeL} eyeR={eyeR} />
         </>
       )}
@@ -1093,7 +1140,7 @@ export function DetailedPortrait({ appearance: a, uid, ink }: { appearance: Char
         </g>
       )}
       {p.hairStyle === 'bald' && <ellipse cx="43" cy="27" rx="5" ry="2.2" fill={WHITE} opacity="0.3" />}
-      {overMarks(m, p, ink)}
+      {overMarks(m, p, ink, a.fur)}
     </g>
   );
 }
