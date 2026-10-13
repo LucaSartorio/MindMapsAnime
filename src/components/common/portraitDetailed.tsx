@@ -465,6 +465,15 @@ function Eye({ cx, style, color, side }: { cx: number; style: string; color: str
   switch (style) {
     case 'hidden':
       return null;
+    // Sclera nera con iride colorata (Hollow, demoni).
+    case 'dark':
+      return (
+        <g>
+          <path d={`M${cx - 4.6} ${cy + 0.6} C${cx - 4.4} ${cy - 3.8} ${cx + 4.4} ${cy - 3.8} ${cx + 4.6} ${cy + 0.6} C${cx + 3.8} ${cy + 3.4} ${cx - 3.8} ${cy + 3.4} ${cx - 4.6} ${cy + 0.6} Z`} fill={INK} />
+          <circle cx={cx} cy={cy} r="2.3" fill={portraitColor(color, color)} />
+          <circle cx={cx} cy={cy} r="0.9" fill={INK} />
+        </g>
+      );
     // Orbite vuote (Brook).
     case 'hollow':
       return <ellipse cx={cx} cy={cy} rx="4.6" ry="4.8" fill={INK} />;
@@ -630,6 +639,9 @@ function Mouth({ style, skin }: { style: string; skin: string }) {
       return <path d="M46 59 Q50.5 59.4 54.8 57" fill="none" stroke={lip} strokeWidth="1.1" strokeLinecap="round" />;
     case 'open':
       return <path d="M46.5 57.4 Q50 62.4 53.5 57.4 Z" fill="#7a2a2e" stroke={INK} strokeWidth="0.9" />;
+    // Sorriso largo a labbra chiuse (Gin).
+    case 'wide':
+      return <path d="M40 55.6 Q50 62.6 60 55.6" fill="none" stroke={lip} strokeWidth="1.2" strokeLinecap="round" />;
     case 'frown':
       return <path d="M46.4 59.4 Q50 57.4 53.6 59.4" fill="none" stroke={lip} strokeWidth="1.1" strokeLinecap="round" />;
     // Ghigno a denti scoperti (antagonisti).
@@ -736,6 +748,8 @@ function skinMarks(m: Set<string>, p: ResolvedPortrait): ReactNode[] {
       <path d="M42 28.4 V29.8 M42 36.2 V37.6 M37.4 33 H38.8 M45.2 33 H46.6 M38.8 29.8 L39.8 30.8 M45.2 29.8 L44.2 30.8 M38.8 36.2 L39.8 35.2 M45.2 36.2 L44.2 35.2" stroke={acc('#16151c')} strokeWidth="0.9" strokeLinecap="round" />
     </g>,
   );
+  // Trucco a teschio: interno del volto nero tranne il naso (Mayuri).
+  add('face_paint', <path d="M38 40 C42 37 46 39 48 44 L50 48 L52 44 C54 39 58 37 62 40 C63 50 60 58 54 62 L50 63 L46 62 C40 58 37 50 38 40 Z" fill={INK} opacity="0.92" />);
   add('gills', <path d="M36.6 51 Q38.4 53 36.8 55 M38.2 50.4 Q40.2 52.6 38.6 55.2 M63.4 51 Q61.6 53 63.2 55 M61.8 50.4 Q59.8 52.6 61.4 55.2" fill="none" stroke={shade(p.skin, -0.4)} strokeWidth="0.8" strokeLinecap="round" />);
   add('scar_chin_x', <path d="M47.4 60.4 L52.6 64.6 M52.6 60.4 L47.4 64.6" stroke={SCAR} strokeWidth="0.9" strokeLinecap="round" />);
   // Cicatrici rugose sul lato sinistro del volto (Obito).
@@ -952,6 +966,15 @@ function overMarks(m: Set<string>, p: ResolvedPortrait, ink: string, fur?: strin
       <path d="M32 46 C31 30 39 20 50 20 C61 20 69 30 68 46 C62 51 56 52 50 50 C44 52 38 51 32 46 Z" fill={acc('#e8e0c8')} stroke={INK} strokeWidth="1" />
       <path d="M38.6 44 C40 41.4 45.6 41.4 47 44 C45 46 40.6 46 38.6 44 Z M53 44 C54.4 41.4 60 41.4 61.4 44 C59.4 46 55 46 53 44 Z" fill={INK} />
       <path d="M50 21 V38 M38 30 C44 27 56 27 62 30" fill="none" stroke={GOLD} strokeWidth="1" />
+    </g>,
+  );
+  // Ciocca che cade tra gli occhi (Rukia, Ulquiorra).
+  add('center_strand', <path d="M50 30 C48 36 48.6 42 50.6 48 C51.4 42 52 36 51.6 31 Z" fill={p.hair} stroke={INK} strokeWidth="0.8" strokeLinejoin="round" />);
+  // Treccia lunga portata sul davanti (Unohana).
+  add(
+    'braid_front',
+    <g fill={p.hair} stroke={INK} strokeWidth="0.7">
+      {[70, 75, 80, 85, 90, 95].map((y, i) => <ellipse key={y} cx={50 + (i % 2 ? 0.6 : -0.6)} cy={y} rx="3" ry="3.2" />)}
     </g>,
   );
   // Treccia che pende tra gli occhi fino al naso (Nozel).
