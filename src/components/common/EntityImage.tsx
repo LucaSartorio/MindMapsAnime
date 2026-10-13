@@ -186,7 +186,7 @@ export function EntityImage({
         <rect width="100" height="100" fill={`url(#g-${uid})`} />
       )}
 
-      {kind === 'character' && appearance && <PortraitArt appearance={appearance} ink={style.ink} />}
+      {kind === 'character' && appearance && <PortraitArt appearance={appearance} ink={style.ink} uid={uid} />}
       {kind === 'character' && !appearance && (
         <CharacterMotifArt
           motif={style.character}

@@ -647,6 +647,8 @@ export interface CharacterAppearance {
   hairBack?: string;
   /** Ciocche: linee interne dei capelli (path SVG, solo tratto). */
   hairDetail?: string;
+  /** Secondo colore dei capelli, sulla metà destra (capelli bicolore). */
+  hair2?: string;
 }
 
 export interface PortraitFace {
