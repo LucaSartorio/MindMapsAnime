@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import type { CharacterAppearance } from '@/types';
 import { resolvePortrait, type ResolvedPortrait } from '@/lib/portrait';
 import { shade } from '@/utils/entityImage';
+import { DetailedPortrait } from '@/components/common/portraitDetailed';
 
 /**
  * Ritratto SVG composto dai dati (`Character.appearance`): busto con l'abito,
@@ -418,7 +419,9 @@ function FurCollar({ color }: { color: string }) {
 }
 
 /** Ritratto completo; `ink` è il colore firma del mondo (placca della fascia…). */
-export function PortraitArt({ appearance, ink }: { appearance: CharacterAppearance; ink: string }) {
+export function PortraitArt({ appearance, ink, uid = 'p' }: { appearance: CharacterAppearance; ink: string; uid?: string }) {
+  // Ritratto dettagliato (volto, abito e capelli disegnati per il personaggio).
+  if (appearance.face) return <DetailedPortrait appearance={appearance} uid={uid} ink={ink} />;
   const p = resolvePortrait(appearance);
   const m = p.marks;
   const outfit = appearance.outfit ? p.outfit : p.beast ? shade(p.hair, -0.2) : p.outfit;

@@ -591,14 +591,18 @@ outlined silhouette covered by the Devil Fruit swirls. One Piece fills it in `sr
 wiki's textual "Appearance" description (no image downloaded or traced). The fruits never shown keep the symbolic
 type+element art: never invent a canonical-looking design for them.
 
-**Character portraits are data-driven too**: `Character.appearance` (`CharacterAppearance`: `hair`, `hairStyle`, `eyes`,
-`skin`, `outfit`, `accent`, `marks[]`, `species: 'beast'`) is written per world in `src/data/<world>/appearance.ts`
-(`appearanceKit` → `withAppearance`, applied last in the world's `index.ts`; unknown ids throw) and drawn by
-`PortraitArt` (`src/components/common/portraitArt.tsx`) when passed as `appearance={character.appearance}` to
-`EntityImage`. Colours are palette names (`PORTRAIT_COLORS`, `src/lib/portrait.ts`) or hex; hair styles and marks
-(headband, straw hat, scar, glasses, horns, animal ears…) are known ids, an unknown one is ignored. Symbolic style
-only — colours and simple shapes, never a copy of the official design. Today all main/major characters have one;
-others keep the world motif. Accessories with their own colour (horns, mask, forehead mark) use `accent` only when set.
+**Character portraits are data-driven too**: `Character.appearance` (`CharacterAppearance`) is written per world in
+`src/data/<world>/appearance.ts` (`appearanceKit` → `withAppearance`, applied last in the world's `index.ts`; unknown ids
+throw) and passed as `appearance={character.appearance}` to `EntityImage`. With `face` set it is drawn by the **manga-style
+`DetailedPortrait`** (`src/components/common/portraitDetailed.tsx`): face shape + eyes/brows/mouth/nose styles (`fc('male
+sharp angry smirk')` shorthand, `d(hair, hairStyle, clothes, outfit, face, rest)` one-liner), cel shading, a library of hair
+styles (`HAIR`, or hand-drawn `hairFront`/`hairBack`/`hairDetail` paths), outfits (`clothes`: gi, flak_vest, akatsuki,
+haori, survey, uniform, saiyan_armor…), special irises (`sharingan`, `ripple`, `byakugan`), two-tone hair (`hair2`), per-eye
+colour (`eyes2`) and many `marks` (headbands, hats, scars, tattoos, masks, horns…). Animals use the same style through
+`species: 'beast'` + `face.shape` = `fox · tanuki · cat · ape · ox · panda` (`BeastPortrait`: tailed beasts, Panda). Without
+`face` the old symbolic `PortraitArt` is the fallback. Every main/major character of the 8 worlds has a detailed portrait
+(no drop-in photo overrides them any more), each built from the wiki's textual appearance description — own drawing, no image downloaded or traced.
+Colours are palette names (`PORTRAIT_COLORS`, `src/lib/portrait.ts`) or hex; an unknown id (style, mark) is ignored.
 
 `EntityImage` resolves the world from `useWorldStore` (optional `worldSlug` prop overrides it for
 cross-world cards), so call sites don't change. A world absent from the registry falls back to neutral
