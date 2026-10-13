@@ -991,6 +991,28 @@ export interface Team {
 
 /* ------------------------------ Jutsu ------------------------------ */
 
+/**
+ * Illustrazione di un'abilità a forma di frutto/oggetto (One Piece: i Frutti del
+ * Diavolo), disegnata da `FruitArt`. Forme e dettagli sono id noti al renderer
+ * (stringa libera: un id ignoto ricade su `round` / viene ignorato).
+ */
+export interface FruitLook {
+  /** Sagoma: round, melon, pear, heart, apple, peach, flames, cloud, cactus, paw, flower, … */
+  body: string;
+  /** Colore principale (hex). */
+  color: string;
+  /** Colori secondari (interno, gambo del fungo, seconda metà…). */
+  color2?: string;
+  color3?: string;
+  /** Colore delle spirali (default: tono scuro del colore principale). */
+  swirl?: string;
+  /** Stelo: curl, T, leaves, crown, fuse, zigzag, needle, drip, heart, twin, bush, seven, double, eight, none. */
+  stem?: string;
+  stemColor?: string;
+  /** Dettagli sovrapposti: cracks, sparks, ears, spots, horns, collar, ribs, … */
+  features?: string[];
+}
+
 export interface Jutsu extends SeoSlugFields {
   id: string;
   worldId: string;
@@ -1026,6 +1048,8 @@ export interface Jutsu extends SeoSlugFields {
   /** Macro-serie / blocchi narrativi in cui appare la tecnica. */
   series?: Series[];
   tags?: string[];
+  /** Aspetto illustrato (frutto) per l'immagine generata, quando è noto. */
+  fruit?: FruitLook;
 }
 
 /* ------------------------------ World Config ------------------------------ */

@@ -6,6 +6,8 @@ import { withBattles } from '../shared/battleKit';
 import { onepieceFamily } from './family';
 import { withFamily } from '../shared/familyKit';
 import { withAppearance } from '../shared/appearanceKit';
+import { withFruitLooks } from '../shared/fruitKit';
+import { onepieceFruitLooks } from './fruitLooks';
 import { onepieceAppearance } from './appearance';
 import { onepieceStructure } from './structure';
 import { withFactionExtras } from '../shared/factionKit';
@@ -513,5 +515,8 @@ const onepieceBaseDataset: WorldDataset = withSourceNames(withEventTags(withFact
 
 export { ONEPIECE_MAP_VIEWBOX } from './mapLevels';
 
-/** Aspetto dei personaggi principali per i ritratti SVG generati (`appearance.ts`). */
-export const onepieceDataset: WorldDataset = withAppearance(onepieceBaseDataset, onepieceAppearance, 'char-op-');
+/** Aspetto dei personaggi (`appearance.ts`) e dei Frutti mostrati (`fruitLooks.ts`) per le immagini generate. */
+export const onepieceDataset: WorldDataset = withFruitLooks(
+  withAppearance(onepieceBaseDataset, onepieceAppearance, 'char-op-'),
+  onepieceFruitLooks,
+);
