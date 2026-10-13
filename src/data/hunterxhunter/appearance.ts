@@ -1,25 +1,29 @@
 import type { CharacterAppearance } from '@/types';
 import { appearanceKit } from '../shared/appearanceKit';
 
-const { a } = appearanceKit();
+const { d } = appearanceKit();
 
-/** Aspetto dei personaggi principali per i ritratti SVG generati (chiave = id senza `char-hxh-`). */
+/**
+ * Aspetto dei personaggi principali per i ritratti SVG generati: disegni propri
+ * ricostruiti dalle descrizioni testuali (Hunterpedia), nessuna immagine.
+ * Chiave = id senza `char-hxh-`.
+ */
 export const hxhAppearance: Record<string, CharacterAppearance> = {
-  gon: a('black', 'spiky', { eyes: 'brown', outfit: '#3f8a4a' }),
-  killua: a('white', 'messy', { eyes: 'blue', outfit: '#5a6a8a' }),
-  kurapika: a('blond', 'bob', { eyes: 'red', outfit: '#3a6ad8', marks: ['earrings'] }),
-  leorio: a('black', 'buzz', { outfit: '#2b3a6b', marks: ['sunglasses'] }),
-  hisoka: a('red', 'slick', { eyes: 'amber', outfit: '#f1f1f1', accent: '#4a7ad8', marks: ['cheek_marks'] }),
-  illumi: a('black', 'hime', { eyes: 'black', outfit: '#4a3a6a' }),
-  chrollo: a('black', 'slick', { eyes: 'gray', outfit: '#22232b', accent: '#2b2f3d', marks: ['forehead_mark', 'earrings'] }),
-  netero: a('white', 'bald', { eyes: 'black', outfit: '#f1f1f1', marks: ['beard', 'mustache'] }),
-  ging: a('black', 'spiky', { eyes: 'brown', outfit: '#6b5a3a', accent: '#e9e4d6', marks: ['bandana'] }),
-  biscuit: a('blond', 'twin_tails', { eyes: 'blue', outfit: '#d84a8a' }),
-  kite: a('white', 'long', { eyes: 'black', outfit: '#3a3a46', accent: '#e9e4d6', marks: ['hat'] }),
-  silva: a('white', 'long', { eyes: 'blue', outfit: '#4a5a6a' }),
-  zeno: a('white', 'bun', { eyes: 'black', outfit: '#8a8a9a', marks: ['mustache'] }),
-  meruem: a('#2f6a3a', 'crest', { eyes: 'gray', skin: '#bcd8a8', outfit: '#3a3a46' }),
-  neferpitou: a('white', 'short', { eyes: 'red', outfit: '#f1f1f1', marks: ['animal_ears'] }),
-  shaiapouf: a('platinum', 'bob', { eyes: 'violet', outfit: '#3a3a46' }),
-  menthuthuyoupi: a(undefined, 'bald', { eyes: 'black', skin: '#7a5a4a', outfit: '#5a3a2a' }),
+  gon: d('black', 'saiyan', 'jacket', '#3f8a4a', 'round round normal grin', { eyes: 'hazel', outfit2: '#22232b' }),
+  killua: d('white', 'messy', 'tshirt', '#3a4a6a', 'male round normal smirk', { eyes: 'blue', skin: 'pale' }),
+  kurapika: d('blond', 'bob', 'cloak', '#3a5ad8', 'female sharp thin neutral', { eyes: 'red', outfit2: '#f1f1f1', marks: ['earrings'] }),
+  leorio: d('black', 'buzz', 'suit', '#2b3a6b', 'square small thick grin', { outfit2: '#f1f1f1', outfit3: '#22232b', marks: ['sunglasses'] }),
+  hisoka: d('#d8406a', 'slick', 'tshirt', '#f1f1f1', 'long sharp thin smirk', { eyes: 'amber', marks: ['star_tear'] }),
+  illumi: d('black', 'hime', 'high_collar', '#3a4a3a', 'long round thin neutral', { eyes: 'black', skin: 'pale' }),
+  chrollo: d('#2e2440', 'slick', 'coat', '#3a2a4a', 'male round thin neutral', { eyes: 'gray', outfit2: '#f1f1f1', fur: '#f1f1f1', marks: ['forehead_cross', 'earrings', 'fur_collar'] }),
+  netero: d('white', 'bald', 'kimono', '#f1f1f1', 'long narrow thick smile', { eyes: 'black', marks: ['long_beard', 'big_mustache', 'earrings', 'wrinkles'] }),
+  ging: d('black', 'spiky', 'robe', '#f1f1f1', 'male round thick smirk', { eyes: 'hazel', accent: '#e9e4d6', marks: ['bandana', 'goatee'] }),
+  biscuit: d('blond', 'twin_tails', 'dress', '#d84a8a', 'round big thin smile', { eyes: 'blue', skin: 'fair' }),
+  kite: d('white', 'long', 'high_collar', '#f1f1f1', 'long round thin neutral big', { eyes: 'hazel', accent: '#8fc6f0', marks: ['cap'] }),
+  silva: d('platinum', 'long', 'robe', '#4a5a6a', 'square sharp thick neutral', { eyes: 'blue' }),
+  zeno: d('white', 'spiky', 'robe', '#8a8a9a', 'long narrow thick neutral', { eyes: 'black', marks: ['big_mustache', 'wrinkles'] }),
+  meruem: d('#2f5a3a', 'dome', 'shirtless', '#bcd0a8', 'long sharp none neutral', { eyes: 'gray', skin: '#c4d4b0' }),
+  neferpitou: d('white', 'messy', 'coat', '#3a5aa8', 'female big thin smile', { eyes: 'red', outfit2: '#f1f1f1', marks: ['animal_ears'] }),
+  shaiapouf: d('#c8a050', 'bob', 'tshirt', '#f1f1f1', 'long narrow thin smile', { eyes: 'violet', skin: '#d8bfd8', marks: ['antennae'] }),
+  menthuthuyoupi: d('black', 'slick', 'shirtless', '#8a3a2e', 'square narrow thick teeth', { skin: '#9a4030' }),
 };

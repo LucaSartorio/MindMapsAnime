@@ -703,6 +703,16 @@ function skinMarks(m: Set<string>, p: ResolvedPortrait): ReactNode[] {
   add('forehead_tattoo', <path d="M57.4 33.2 L62 34.6 M59.6 31.8 L59 36.6 M57.4 35.6 L61.6 36.8" stroke="#c0303a" strokeWidth="1.1" strokeLinecap="round" />);
   // Sopracciglia tatuate (Renji).
   add('brow_tattoo', <path d="M38 37 L41 35 L43 36.6 L46 34.6 M62 37 L59 35 L57 36.6 L54 34.6" fill="none" stroke={INK} strokeWidth="0.9" strokeLinecap="round" />);
+  // Stella sulla guancia destra e goccia sulla sinistra (Hisoka).
+  add(
+    'star_tear',
+    <g>
+      <path d="M40 50.6 L40.9 52.6 L43 52.8 L41.4 54.2 L41.9 56.2 L40 55.1 L38.1 56.2 L38.6 54.2 L37 52.8 L39.1 52.6 Z" fill={acc('#c8303a')} />
+      <path d="M60 50.8 C61.4 53 62 54.4 60 56 C58 54.4 58.6 53 60 50.8 Z" fill="#3a6ad8" />
+    </g>,
+  );
+  // Croce tatuata al centro della fronte (Chrollo).
+  add('forehead_cross', <path d="M49 30.6 H51 V33 H53.4 V35 H51 V39.4 H49 V35 H46.6 V33 H49 Z" fill={acc('#4a2a6a')} />);
   add('gills', <path d="M36.6 51 Q38.4 53 36.8 55 M38.2 50.4 Q40.2 52.6 38.6 55.2 M63.4 51 Q61.6 53 63.2 55 M61.8 50.4 Q59.8 52.6 61.4 55.2" fill="none" stroke={shade(p.skin, -0.4)} strokeWidth="0.8" strokeLinecap="round" />);
   add('scar_chin_x', <path d="M47.4 60.4 L52.6 64.6 M52.6 60.4 L47.4 64.6" stroke={SCAR} strokeWidth="0.9" strokeLinecap="round" />);
   // Cicatrici rugose sul lato sinistro del volto (Obito).
