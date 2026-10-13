@@ -51,6 +51,7 @@ function JutsuCardComponent({ jutsu, dataset, active, onSelect }: JutsuCardProps
               id={jutsu.id}
               name={name}
               chakraNature={jutsu.chakraNature?.[0]}
+              ability={jutsu}
               fit="cover"
             />
           </div>

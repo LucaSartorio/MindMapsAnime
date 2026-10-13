@@ -575,6 +575,14 @@ pirate got a forehead protector. Now each world declares its own symbols in the 
   natures / villages / clans tint only Naruto (Dragon Ball reuses attribute ids like `wind` with a
   different meaning, and used to inherit Naruto's greens).
 
+**Technique images are data-driven** (`src/lib/abilityArt.ts` → `src/components/common/abilityFormArt.tsx`):
+pass `ability={jutsu}` to `EntityImage` and `resolveAbilityArt(slug, jutsu)` picks a **form** from the category
+(`type` → `chakraNature` → `classification`; `COMMON_FORMS` for shared ids like `transformation`/`item`/`taijutsu`,
+`WORLD_FORMS` for world-only ones: Paramecia/Zoan/Logia fruits, the Nen hexagon with the category's vertex lit,
+Quincy bow, Hollow mask…) and an **element** glyph (`ELEMENT_KEYWORDS`: natures, types and tags, IT/EN, exact
+match) that also tints the background (`ELEMENT_COLORS`, after the world's own colours like Naruto's chakra
+natures). Unknown ids fall back to the world motif — a new world needs no edits; add ids to the maps to enrich it.
+
 `EntityImage` resolves the world from `useWorldStore` (optional `worldSlug` prop overrides it for
 cross-world cards), so call sites don't change. A world absent from the registry falls back to neutral
 motifs but still gets its own palette — **adding an anime needs no component edits**; add an entry only

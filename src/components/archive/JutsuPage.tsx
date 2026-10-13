@@ -128,6 +128,7 @@ export function JutsuPage({ dataset, resolved }: JutsuPageProps) {
             id={j.id}
             name={n}
             chakraNature={j.chakraNature?.[0]}
+            ability={j}
             fit="cover"
           />
         ),
