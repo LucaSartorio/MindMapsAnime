@@ -598,9 +598,10 @@ throw) and passed as `appearance={character.appearance}` to `EntityImage`. With 
 sharp angry smirk')` shorthand, `d(hair, hairStyle, clothes, outfit, face, rest)` one-liner), cel shading, a library of hair
 styles (`HAIR`, or hand-drawn `hairFront`/`hairBack`/`hairDetail` paths), outfits (`clothes`: gi, flak_vest, akatsuki,
 haori, survey, uniform, saiyan_armor…), special irises (`sharingan`, `ripple`, `byakugan`), two-tone hair (`hair2`), per-eye
-colour (`eyes2`) and many `marks` (headbands, hats, scars, tattoos, masks, horns…). Without `face` the old symbolic
-`PortraitArt` is used (today only the beasts: tailed beasts, Panda). Every main/major character of the 8 worlds has a
-detailed portrait, each built from the wiki's textual appearance description — own drawing, no image downloaded or traced.
+colour (`eyes2`) and many `marks` (headbands, hats, scars, tattoos, masks, horns…). Animals use the same style through
+`species: 'beast'` + `face.shape` = `fox · tanuki · cat · ape · ox · panda` (`BeastPortrait`: tailed beasts, Panda). Without
+`face` the old symbolic `PortraitArt` is the fallback. Every main/major character of the 8 worlds has a detailed portrait
+(no drop-in photo overrides them any more), each built from the wiki's textual appearance description — own drawing, no image downloaded or traced.
 Colours are palette names (`PORTRAIT_COLORS`, `src/lib/portrait.ts`) or hex; an unknown id (style, mark) is ignored.
 
 `EntityImage` resolves the world from `useWorldStore` (optional `worldSlug` prop overrides it for

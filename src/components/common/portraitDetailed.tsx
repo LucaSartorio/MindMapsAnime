@@ -1185,6 +1185,7 @@ function overMarks(m: Set<string>, p: ResolvedPortrait, ink: string, fur?: strin
 
 /** Ritratto dettagliato; usato da `PortraitArt` quando l'aspetto ha `face`. */
 export function DetailedPortrait({ appearance: a, uid, ink }: { appearance: CharacterAppearance; uid: string; ink: string }) {
+  if (a.species === 'beast') return <BeastPortrait appearance={a} uid={uid} />;
   const p = resolvePortrait(a);
   const f = a.face ?? {};
   const m = p.marks;
@@ -1286,6 +1287,198 @@ export function DetailedPortrait({ appearance: a, uid, ink }: { appearance: Char
       {p.hairStyle === 'bald' && <ellipse cx="43" cy="27" rx="5" ry="2.2" fill={WHITE} opacity="0.3" />}
       {skinMarks(m, p, 'forehead')}
       {overMarks(m, p, ink, a.fur)}
+    </g>
+  );
+}
+
+/* ------------------------------ Animali ------------------------------ */
+
+interface BeastShape {
+  /** Testa (comprese guance/criniera) e orecchie, disegnate come un'unica sagoma. */
+  head: string;
+  ears: string;
+  /** Interno delle orecchie (tinta più chiara/scura). */
+  earsInner?: string;
+  /** Orecchie nel colore dei segni invece che del pelo (panda). */
+  earsMarked?: boolean;
+  /** Muso più chiaro (facoltativo). */
+  muzzle?: string;
+  /** Segni sul pelo (colore = accent). */
+  marks?: string;
+  /** Contorno di fiamme/criniera attorno alla testa (colore = pelo schiarito). */
+  aura?: string;
+  eyeY: number;
+  eyeDx: number;
+  eye: 'slit' | 'star' | 'blank' | 'round' | 'patch';
+  mouth: string;
+  nose: string;
+  horns?: string;
+}
+
+/** Teste animali in stile manga (forma scelta da `face.shape`). Disegni propri, geometrici. */
+const BEASTS: Record<string, BeastShape> = {
+  // Volpe a nove code (Kurama): orecchie altissime, guance a ciuffi, ghigno con le zanne.
+  fox: {
+    head: 'M50 26 C62 26 71 33 75 42 L85 48 L77 53 L80 59 L70 62 L62 70 L50 76 L38 70 L30 62 L20 59 L23 53 L15 48 L25 42 C29 33 38 26 50 26 Z',
+    ears: 'M31 38 L22 6 L46 29 Z M69 38 L78 6 L54 29 Z',
+    earsInner: 'M32 33 L27 14 L41 29 Z M68 33 L73 14 L59 29 Z',
+    marks: 'M36 44 C33 38 30 30 27 20 L33 30 C36 36 40 40 44 42 Z M64 44 C67 38 70 30 73 20 L67 30 C64 36 60 40 56 42 Z',
+    eyeY: 46,
+    eyeDx: 9,
+    eye: 'slit',
+    mouth: 'M38 60 Q50 68 62 60 Q50 64 38 60 Z',
+    nose: 'M47.6 56 L52.4 56 L50 59 Z',
+  },
+  // Tanuki (Shukaku): testa tonda, orecchie tonde, segni del sigillo.
+  tanuki: {
+    head: 'M50 24 C66 24 76 36 76 50 C76 64 64 74 50 74 C36 74 24 64 24 50 C24 36 34 24 50 24 Z',
+    ears: 'M27 36 C22 26 26 18 34 20 C38 22 40 26 39 30 Z M73 36 C78 26 74 18 66 20 C62 22 60 26 61 30 Z',
+    earsInner: 'M29 32 C27 26 29 23 33 24 C35 25 36 27 35.6 29 Z M71 32 C73 26 71 23 67 24 C65 25 64 27 64.4 29 Z',
+    muzzle: 'M40 56 C40 50 60 50 60 56 C60 64 54 68 50 68 C46 68 40 64 40 56 Z',
+    marks:
+      'M30 44 C34 40 38 40 40 44 M60 44 C62 40 66 40 70 44 M50 28 V36 M44 30 L46 36 M56 30 L54 36 M28 56 C30 60 33 62 36 62 M72 56 C70 60 67 62 64 62',
+    eyeY: 47,
+    eyeDx: 10,
+    eye: 'star',
+    mouth: 'M42 63 L45 61 L47.6 63.6 L50 61 L52.4 63.6 L55 61 L58 63',
+    nose: 'M47.4 57 L52.6 57 L50 60 Z',
+  },
+  // Gatto a due code avvolto nelle fiamme (Matatabi).
+  cat: {
+    head: 'M50 28 C64 28 74 38 74 52 C74 64 64 72 50 72 C36 72 26 64 26 52 C26 38 36 28 50 28 Z',
+    ears: 'M30 40 L26 12 L46 30 Z M70 40 L74 12 L54 30 Z',
+    earsInner: 'M31 35 L29 18 L41 30 Z M69 35 L71 18 L59 30 Z',
+    aura: 'M50 10 L56 20 L64 12 L66 24 L76 18 L74 30 L86 30 L80 42 L90 48 L80 54 L86 64 L74 64 L76 76 L64 70 L58 80 L50 72 L42 80 L36 70 L24 76 L26 64 L14 64 L20 54 L10 48 L20 42 L14 30 L26 30 L24 18 L34 24 L36 12 L44 20 Z',
+    muzzle: 'M42 58 C42 53 58 53 58 58 C58 64 54 67 50 67 C46 67 42 64 42 58 Z',
+    eyeY: 48,
+    eyeDx: 10,
+    eye: 'blank',
+    mouth: 'M45 63 Q47.6 65.4 50 63 Q52.4 65.4 55 63',
+    nose: 'M47.8 59 L52.2 59 L50 61.6 Z',
+  },
+  // Scimmia dal pelo rosso e volto verde (Son Gokū), con corna a corona.
+  ape: {
+    head: 'M50 22 C68 22 80 34 80 50 C80 66 68 78 50 78 C32 78 20 66 20 50 C20 34 32 22 50 22 Z',
+    ears: 'M21 46 C14 44 13 54 21 56 Z M79 46 C86 44 87 54 79 56 Z',
+    muzzle: 'M50 34 C60 34 66 41 66 50 C66 62 60 70 50 70 C40 70 34 62 34 50 C34 41 40 34 50 34 Z',
+    horns: 'M40 30 C36 22 37 14 41 8 C42 16 44 22 46 28 Z M60 30 C64 22 63 14 59 8 C58 16 56 22 54 28 Z',
+    eyeY: 46,
+    eyeDx: 8,
+    eye: 'round',
+    mouth: 'M42 61 Q50 66 58 61 M44 61 L45.6 65 L47 61.6 M56 61 L54.4 65 L53 61.6',
+    nose: 'M47 54 C48 56 52 56 53 54',
+  },
+  // Bue con quattro corna ricurve (Gyūki).
+  ox: {
+    head: 'M50 28 C64 28 72 38 72 50 C72 62 66 74 50 76 C34 74 28 62 28 50 C28 38 36 28 50 28 Z',
+    ears: 'M28 46 L14 40 L20 50 L29 52 Z M72 46 L86 40 L80 50 L71 52 Z',
+    muzzle: 'M38 60 C38 54 62 54 62 60 C62 70 56 75 50 75 C44 75 38 70 38 60 Z',
+    horns:
+      'M34 32 C24 30 14 20 16 8 C20 16 26 22 36 26 Z M66 32 C76 30 86 20 84 8 C80 16 74 22 64 26 Z ' +
+      'M38 30 C34 22 34 16 38 10 C39 16 41 22 44 27 Z M62 30 C66 22 66 16 62 10 C61 16 59 22 56 27 Z',
+    eyeY: 46,
+    eyeDx: 9,
+    eye: 'slit',
+    mouth: 'M44 68 Q50 70 56 68',
+    nose: 'M44 62 C45 60 47 60 47.4 62 M56 62 C55 60 53 60 52.6 62',
+  },
+  // Panda: muso bianco, orecchie e macchie degli occhi nere.
+  panda: {
+    head: 'M50 24 C66 24 76 36 76 50 C76 64 64 74 50 74 C36 74 24 64 24 50 C24 36 34 24 50 24 Z',
+    ears: 'M24 36 a8 8 0 1 1 13 -10 Z M76 36 a8 8 0 1 0 -13 -10 Z',
+    earsMarked: true,
+    marks: 'M36 44 C36 38 44 38 46 44 C47 50 42 54 38 52 C36 50 36 47 36 44 Z M64 44 C64 38 56 38 54 44 C53 50 58 54 62 52 C64 50 64 47 64 44 Z',
+    eyeY: 46,
+    eyeDx: 9,
+    eye: 'patch',
+    mouth: 'M45 62 Q47.6 64.4 50 62 Q52.4 64.4 55 62',
+    nose: 'M46.6 57 C46.6 55 53.4 55 53.4 57 C53.4 59 51 60 50 60 C49 60 46.6 59 46.6 57 Z',
+  },
+};
+
+function BeastEye({ cx, cy, kind, color }: { cx: number; cy: number; kind: BeastShape['eye']; color: string }) {
+  const c = portraitColor(color, color);
+  switch (kind) {
+    // Occhio affilato con pupilla a fessura (volpe, bue).
+    case 'slit':
+      return (
+        <g>
+          <path d={`M${cx - 5} ${cy + 1.6} L${cx + 5} ${cy - 2} C${cx + 3} ${cy + 2.4} ${cx - 1} ${cy + 3.4} ${cx - 5} ${cy + 1.6} Z`} fill={c} stroke={INK} strokeWidth="1.3" strokeLinejoin="round" />
+          <path d={`M${cx} ${cy - 0.8} V${cy + 2.4}`} stroke={INK} strokeWidth="1.2" strokeLinecap="round" />
+        </g>
+      );
+    // Sclera nera, iride gialla, pupilla a stella con quattro punti (Shukaku).
+    case 'star':
+      return (
+        <g>
+          <ellipse cx={cx} cy={cy} rx="5" ry="4.6" fill={INK} />
+          <circle cx={cx} cy={cy} r="3" fill={c} />
+          <path d={`M${cx} ${cy - 2.2} L${cx + 0.6} ${cy - 0.6} L${cx + 2.2} ${cy} L${cx + 0.6} ${cy + 0.6} L${cx} ${cy + 2.2} L${cx - 0.6} ${cy + 0.6} L${cx - 2.2} ${cy} L${cx - 0.6} ${cy - 0.6} Z`} fill={INK} />
+        </g>
+      );
+    // Occhio senza pupilla (Matatabi): solo il colore.
+    case 'blank':
+      return <path d={`M${cx - 4.6} ${cy + 1} C${cx - 3} ${cy - 3.6} ${cx + 3} ${cy - 3.6} ${cx + 4.6} ${cy + 1} C${cx + 3} ${cy + 3} ${cx - 3} ${cy + 3} ${cx - 4.6} ${cy + 1} Z`} fill={c} stroke={INK} strokeWidth="1.2" />;
+    // Occhietto nero dentro la macchia (panda).
+    case 'patch':
+      return (
+        <g>
+          <circle cx={cx} cy={cy} r="2.2" fill={WHITE} />
+          <circle cx={cx} cy={cy} r="1.4" fill={INK} />
+          <circle cx={cx + 0.6} cy={cy - 0.6} r="0.5" fill={WHITE} />
+        </g>
+      );
+    case 'round':
+    default:
+      return (
+        <g>
+          <ellipse cx={cx} cy={cy} rx="4" ry="4.2" fill={c} stroke={INK} strokeWidth="1.2" />
+          <circle cx={cx} cy={cy} r="1.6" fill={WHITE} />
+        </g>
+      );
+  }
+}
+
+/** Ritratto manga di un animale/creatura: `face.shape` = fox · tanuki · cat · ape · ox · panda. */
+export function BeastPortrait({ appearance: a, uid }: { appearance: CharacterAppearance; uid: string }) {
+  const kind = BEASTS[a.face?.shape ?? 'fox'] ?? BEASTS.fox;
+  const p = resolvePortrait(a);
+  const fur = p.hair;
+  const furDark = shade(fur, -0.32);
+  const furLight = shade(fur, 0.32);
+  const face = a.skin ? p.skin : furLight;
+  const markColor = p.hasAccent ? p.accent : INK;
+  const headId = `bh-${uid}`;
+  const clip = `bc-${uid}`;
+  const eyeR = a.eyes2 ?? a.eyes ?? 'yellow';
+  return (
+    <g>
+      <defs>
+        <path id={headId} d={kind.head} />
+        <clipPath id={clip}>
+          <use href={`#${headId}`} />
+        </clipPath>
+      </defs>
+      {kind.aura && <path d={kind.aura} fill={furLight} stroke={INK} strokeWidth="1" strokeLinejoin="round" opacity="0.9" />}
+      {/* Spalle/petto col pelo, con un ciuffo chiaro al centro. */}
+      <path d={TORSO} fill={a.outfit ? p.outfit : fur} {...LINE} />
+      <path d="M40 74 L44 86 L48 78 L50 90 L52 78 L56 86 L60 74 Z" fill={a.outfit ? shade(p.outfit, 0.2) : furLight} stroke={INK} strokeWidth="0.8" strokeLinejoin="round" />
+      {kind.horns && <path d={kind.horns} fill={BONE} stroke={INK} strokeWidth="1" strokeLinejoin="round" />}
+      <path d={kind.ears} fill={kind.earsMarked ? markColor : fur} stroke={INK} strokeWidth="1.2" strokeLinejoin="round" />
+      {kind.earsInner && <path d={kind.earsInner} fill={furDark} />}
+      {/* Cel shading: testa scura, poi la stessa sagoma alzata in tinta piena. */}
+      <use href={`#${headId}`} fill={furDark} />
+      <g clipPath={`url(#${clip})`}>
+        <use href={`#${headId}`} transform="translate(0 -3)" fill={fur} />
+        {kind.muzzle && <path d={kind.muzzle} fill={face} />}
+        {kind.marks && <path d={kind.marks} fill={kind.marks.includes('Z') ? markColor : 'none'} stroke={markColor} strokeWidth="1.4" strokeLinecap="round" />}
+        <path d="M38 34 C43 30 50 29 56 30" fill="none" stroke={furLight} strokeWidth="1.6" strokeLinecap="round" opacity="0.8" />
+      </g>
+      <use href={`#${headId}`} fill="none" stroke={INK} strokeWidth="1.4" strokeLinejoin="round" />
+      <BeastEye cx={50 - kind.eyeDx} cy={kind.eyeY} kind={kind.eye} color={a.eyes ?? 'yellow'} />
+      <BeastEye cx={50 + kind.eyeDx} cy={kind.eyeY} kind={kind.eye} color={eyeR} />
+      <path d={kind.nose} fill={INK} stroke={INK} strokeWidth="0.8" strokeLinejoin="round" strokeLinecap="round" />
+      <path d={kind.mouth} fill={kind.mouth.includes('Z') ? WHITE : 'none'} stroke={INK} strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
     </g>
   );
 }

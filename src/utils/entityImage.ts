@@ -19,7 +19,7 @@ const KIND_FOLDER: Record<EntityImageKind, string> = {
  * Drop-in images, per QUALSIASI mondo. Per mostrare un'immagine reale
  * (licenziata) di un'entità, aggiungi un file `<entityId>.<ext>` sotto
  * `src/assets/worlds/<slug>/<folder>/`, es.
- * `src/assets/worlds/naruto/characters/char-naruto.jpg` o
+ * `src/assets/worlds/<slug>/characters/<id>.jpg` o
  * `src/assets/worlds/hunterxhunter/clans/faction-hxh-zoldyck.png`.
  * Viene scoperto a build time e sostituisce il placeholder SVG generato.
  * Gli id sono prefissati per mondo, quindi non collidono tra anime.

@@ -1,7 +1,7 @@
 import type { CharacterAppearance } from '@/types';
 import { appearanceKit } from '../shared/appearanceKit';
 
-const { a, d } = appearanceKit();
+const { d } = appearanceKit();
 const JONIN = '#4f6a3a';
 const NAVY = '#2b3a6b';
 const AKA = '#1a1a22';
@@ -9,7 +9,7 @@ const AKA = '#1a1a22';
 /**
  * Aspetto dei personaggi principali per i ritratti SVG generati: disegni propri
  * ricostruiti dalle descrizioni testuali (Naruto Wiki), nessuna immagine.
- * Chiave = id senza `char-`. I cercoteri restano col ritratto animale semplice.
+ * Chiave = id senza `char-`. I cercoteri usano il ritratto animale (`species: 'beast'`).
  */
 export const narutoAppearance: Record<string, CharacterAppearance> = {
   naruto: d('blond', 'spiky', 'tracksuit', '#f08a2c', 'male round normal grin', { eyes: 'blue', outfit2: '#22232b', marks: ['headband', 'whiskers'] }),
@@ -49,11 +49,11 @@ export const narutoAppearance: Record<string, CharacterAppearance> = {
   kabuto: d('silver', 'ponytail', 'high_collar', '#6b4a8a', 'male round thin smile', { eyes: 'black', marks: ['round_glasses'] }),
   kaguya: d('white', 'hime', 'kimono', '#f1f1f1', 'female big thin neutral', { eyes: 'byakugan', skin: 'pale', outfit2: '#c8c0d8', marks: ['horns', 'third_eye'] }),
   hagoromo: d('#b8a88a', 'long_spiky', 'robe', '#f1f1f1', 'long narrow thick neutral', { eyes: 'ripple', skin: '#d8ccb8', marks: ['horns', 'long_beard', 'wrinkles'] }),
-  kurama: a('orange', undefined, { eyes: 'red', species: 'beast' }),
-  shukaku: a('#c8a46a', undefined, { eyes: 'yellow', species: 'beast' }),
-  matatabi: a('#3a7ad8', undefined, { eyes: 'lime', species: 'beast' }),
-  'son-goku': a('#b03030', undefined, { eyes: 'green', species: 'beast' }),
-  gyuki: a('#7a4a8a', undefined, { eyes: 'yellow', species: 'beast', marks: ['horns'] }),
+  kurama: d('#e8702a', undefined, 'shirtless', '#e8702a', 'fox slit none grin', { eyes: 'red', species: 'beast', accent: '#16151c' }),
+  shukaku: d('#c8a46a', undefined, 'shirtless', '#c8a46a', 'tanuki star none teeth', { eyes: 'yellow', species: 'beast', accent: '#2b4a8a', skin: '#e6d0a0' }),
+  matatabi: d('#2b5ad8', undefined, 'shirtless', '#2b5ad8', 'cat blank none neutral', { eyes: 'yellow', eyes2: 'green', species: 'beast', skin: '#6a8ae8' }),
+  'son-goku': d('#b03030', undefined, 'shirtless', '#b03030', 'ape round none teeth', { eyes: 'yellow', species: 'beast', skin: '#5aa04a' }),
+  gyuki: d('#6a4a7a', undefined, 'shirtless', '#6a4a7a', 'ox slit none neutral', { eyes: 'yellow', species: 'beast', skin: '#8a6a9a' }),
   nagato: d('red', 'hime', 'akatsuki', AKA, 'long sharp thin neutral', { eyes: 'ripple', skin: 'pale', faceExtra: { eyeL: 'hidden' } }),
   hanzo: d('blond', 'long', 'cloak', '#3a3a46', 'male sharp thick neutral', { eyes: 'byakugan', outfit2: '#2b2f3d', accent: '#3a3a46', marks: ['mask_lower'] }),
   mifune: d('gray', 'long', 'armor', '#5a4a8a', 'long narrow thick neutral', { eyes: 'black', outfit2: '#3a3a46', accent: '#ece8dc', marks: ['bandana', 'mustache', 'goatee', 'wrinkles'] }),

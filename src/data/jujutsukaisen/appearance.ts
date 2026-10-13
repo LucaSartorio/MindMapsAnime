@@ -1,7 +1,7 @@
 import type { CharacterAppearance } from '@/types';
 import { appearanceKit } from '../shared/appearanceKit';
 
-const { a, d } = appearanceKit();
+const { d } = appearanceKit();
 const UNIFORM = '#1f2233';
 const MAKI = '#2f5a3a';
 
@@ -17,7 +17,7 @@ export const jjkAppearance: Record<string, CharacterAppearance> = {
   gojo: d('white', 'messy', 'uniform', UNIFORM, 'male round normal smile', { eyes: 'lightblue', marks: ['blindfold'] }),
   maki: d(MAKI, 'ponytail', 'uniform', UNIFORM, 'female sharp thin smirk', { eyes: 'amber', marks: ['glasses'] }),
   toge: d('#e8e4d8', 'bob', 'uniform', UNIFORM, 'male narrow thin neutral', { eyes: 'violet', skin: 'fair', accent: UNIFORM, marks: ['mask_lower'] }),
-  panda: a('#f0f0f0', undefined, { eyes: 'black', species: 'beast' }),
+  panda: d('#f4f4f4', undefined, 'shirtless', '#22232b', 'panda patch none smile', { eyes: 'black', species: 'beast', accent: '#22232b' }),
   yuta: d('black', 'messy', 'uniform', '#f1f1f1', 'male round normal neutral', { eyes: 'navy', marks: ['eye_bags'] }),
   nanami: d('blond', 'slick', 'suit', '#d8c8a0', 'square narrow thin neutral', { outfit2: '#5a7ad8', outfit3: '#c8a050', marks: ['sunglasses'] }),
   shoko: d('#5a3a24', 'long', 'coat', '#f1f1f1', 'female narrow thick neutral', { eyes: 'brown', outfit2: '#2b3a6b', marks: ['eye_bags', 'mole'] }),
