@@ -9,6 +9,7 @@ import {
 import { ELEMENT_COLORS, resolveAbilityArt } from '@/lib/abilityArt';
 import { AbilityArtSvg } from '@/components/common/abilityFormArt';
 import { PortraitArt } from '@/components/common/portraitArt';
+import { FruitArt } from '@/components/common/fruitArt';
 import {
   ArcArt,
   CharacterMotifArt,
@@ -34,7 +35,7 @@ interface EntityImageProps {
    * forma (frutto Zoan, pugno, occhio…) e l'elemento disegnati. Senza, resta il
    * motivo generico del mondo.
    */
-  ability?: Pick<Jutsu, 'type' | 'chakraNature' | 'classification' | 'tags'>;
+  ability?: Pick<Jutsu, 'type' | 'chakraNature' | 'classification' | 'tags' | 'fruit'>;
   /**
    * Aspetto del personaggio (`kind="character"`): se presente il placeholder è
    * un ritratto composto (capelli, occhi, segni distintivi) invece del motivo
@@ -102,7 +103,8 @@ export function EntityImage({
     kind,
     id,
     kind === 'jutsu' ? (chakraNature ?? ability?.chakraNature?.[0]) : villageId,
-    abilityArt?.element ? ELEMENT_COLORS[abilityArt.element] : undefined,
+    // Un frutto illustrato ha già i suoi colori: lo sfondo resta quello del mondo.
+    abilityArt?.element && !ability?.fruit ? ELEMENT_COLORS[abilityArt.element] : undefined,
   );
 
   const light = shade(base, 0.28);
@@ -169,12 +171,16 @@ export function EntityImage({
       {abilityArt ? (
         <>
           <rect width="100" height="100" fill={`url(#r-${uid})`} />
-          <AbilityArtSvg
-            art={abilityArt}
-            initials={initials}
-            dark={dark}
-            ink={style.ink}
-          />
+          {ability?.fruit ? (
+            <FruitArt look={ability.fruit} uid={uid} />
+          ) : (
+            <AbilityArtSvg
+              art={abilityArt}
+              initials={initials}
+              dark={dark}
+              ink={style.ink}
+            />
+          )}
         </>
       ) : (
         <rect width="100" height="100" fill={`url(#g-${uid})`} />

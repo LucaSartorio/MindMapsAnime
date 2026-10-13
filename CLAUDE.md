@@ -583,6 +583,14 @@ Quincy bow, Hollow mask…) and an **element** glyph (`ELEMENT_KEYWORDS`: nature
 match) that also tints the background (`ELEMENT_COLORS`, after the world's own colours like Naruto's chakra
 natures). Unknown ids fall back to the world motif — a new world needs no edits; add ids to the maps to enrich it.
 
+**Fruit illustrations** (`Jutsu.fruit: FruitLook`, drawn by `FruitArt` in `src/components/common/fruitArt.tsx`): a
+declarative spec — `body` (round, melon, pear, heart, flames, cloud, cactus, paw, flower, mushroom, berry, grapes,
+scales, bananas/ghosts/blades, twin, jaws, segments, wheel…), colours, `stem` and `features` — rendered as one
+outlined silhouette covered by the Devil Fruit swirls. One Piece fills it in `src/data/onepiece/fruitLooks.ts`
+(`withFruitLooks`, unknown ids throw) ONLY for the 38 fruits the series actually shows, each translated from the
+wiki's textual "Appearance" description (no image downloaded or traced). The fruits never shown keep the symbolic
+type+element art: never invent a canonical-looking design for them.
+
 **Character portraits are data-driven too**: `Character.appearance` (`CharacterAppearance`: `hair`, `hairStyle`, `eyes`,
 `skin`, `outfit`, `accent`, `marks[]`, `species: 'beast'`) is written per world in `src/data/<world>/appearance.ts`
 (`appearanceKit` → `withAppearance`, applied last in the world's `index.ts`; unknown ids throw) and drawn by
