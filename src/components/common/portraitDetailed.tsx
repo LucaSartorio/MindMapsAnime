@@ -678,12 +678,31 @@ function Mouth({ style, skin }: { style: string; skin: string }) {
 
 /* ------------------------- Segni e accessori ------------------------- */
 
-/** Segni sulla pelle (sotto i capelli). */
-function skinMarks(m: Set<string>, p: ResolvedPortrait): ReactNode[] {
+/**
+ * Segni sulla fronte: disegnati SOPRA la frangia, perché per chi li porta sono il
+ * tratto distintivo (il tatuaggio di Gaara, il rombo di Tsunade, il terzo occhio).
+ */
+const FOREHEAD_MARKS = new Set([
+  'forehead_mark',
+  'forehead_tattoo',
+  'forehead_cross',
+  'forehead_star',
+  'forehead_dots',
+  'forehead_orb',
+  'forehead_band_mark',
+  'forehead_stitches',
+  'cross_mark',
+  'sun_mark',
+  'third_eye',
+  'brow_tattoo',
+]);
+
+/** Segni sulla pelle: `layer` sceglie quelli sotto i capelli o quelli della fronte (sopra). */
+function skinMarks(m: Set<string>, p: ResolvedPortrait, layer: 'skin' | 'forehead' = 'skin'): ReactNode[] {
   const out: ReactNode[] = [];
   const acc = (fallback: string) => (p.hasAccent ? p.accent : fallback);
   const add = (k: string, node: ReactNode) => {
-    if (m.has(k)) out.push(<g key={k}>{node}</g>);
+    if (m.has(k) && FOREHEAD_MARKS.has(k) === (layer === 'forehead')) out.push(<g key={k}>{node}</g>);
   };
   add('scar_cheek', <path d="M54.3 52.4 Q57 53.6 59.8 52.4 M55.8 51.2 L55.6 54 M58.2 51.2 L58.4 53.8" fill="none" stroke={SCAR} strokeWidth="0.8" strokeLinecap="round" />);
   add('scar_eye', <path d="M56.6 38.5 L57.8 54.5" fill="none" stroke={SCAR} strokeWidth="1.2" strokeLinecap="round" />);
@@ -750,6 +769,26 @@ function skinMarks(m: Set<string>, p: ResolvedPortrait): ReactNode[] {
   );
   // Trucco a teschio: interno del volto nero tranne il naso (Mayuri).
   add('face_paint', <path d="M38 40 C42 37 46 39 48 44 L50 48 L52 44 C54 39 58 37 62 40 C63 50 60 58 54 62 L50 63 L46 62 C40 58 37 50 38 40 Z" fill={INK} opacity="0.92" />);
+  // Neo sotto l'occhio di sinistra (Shoko).
+  add('mole', <circle cx="40" cy="51.6" r="0.7" fill={shade(p.skin, -0.6)} />);
+  // Cicatrice all'angolo destro delle labbra (Toji).
+  add('scar_lip', <path d="M44.4 56 L46.6 60.4" stroke={SCAR} strokeWidth="0.9" strokeLinecap="round" />);
+  // Cuciture che girano attorno alla fronte (Kenjaku).
+  add('forehead_stitches', <path d="M34.6 36.4 C42 34 58 34 65.4 36.4 M37.4 34.4 L37.8 38 M42.4 33.6 L42.6 37.2 M47.4 33.2 L47.4 36.8 M52.6 33.2 L52.6 36.8 M57.6 33.6 L57.4 37.2 M62.6 34.4 L62.2 38" fill="none" stroke="#6a2a2a" strokeWidth="0.85" strokeLinecap="round" />);
+  // Segni neri sul volto (Sukuna): bande sulle guance e sotto gli occhi.
+  add('face_lines', <path d="M35.4 49.6 L41 50.6 M36 52.4 L40.4 53 M64.6 49.6 L59 50.6 M64 52.4 L59.6 53 M47.4 31 L52.6 31" stroke={INK} strokeWidth="1.2" strokeLinecap="round" />);
+  // Secondi occhi sotto i primi (Sukuna, Tengen).
+  add(
+    'extra_eyes',
+    <g>
+      {[EYE_L, EYE_R].map((x) => (
+        <g key={x}>
+          <path d={`M${x - 2.6} 53.4 Q${x} 51.4 ${x + 2.6} 53.4 Q${x} 54.8 ${x - 2.6} 53.4 Z`} fill={WHITE} stroke={INK} strokeWidth="0.6" />
+          <circle cx={x} cy="53.3" r="0.9" fill={p.hasAccent ? p.accent : '#c8202a'} />
+        </g>
+      ))}
+    </g>,
+  );
   add('gills', <path d="M36.6 51 Q38.4 53 36.8 55 M38.2 50.4 Q40.2 52.6 38.6 55.2 M63.4 51 Q61.6 53 63.2 55 M61.8 50.4 Q59.8 52.6 61.4 55.2" fill="none" stroke={shade(p.skin, -0.4)} strokeWidth="0.8" strokeLinecap="round" />);
   add('scar_chin_x', <path d="M47.4 60.4 L52.6 64.6 M52.6 60.4 L47.4 64.6" stroke={SCAR} strokeWidth="0.9" strokeLinecap="round" />);
   // Cicatrici rugose sul lato sinistro del volto (Obito).
@@ -1163,13 +1202,18 @@ export function DetailedPortrait({ appearance: a, uid, ink }: { appearance: Char
   const hairClip = `ph-${uid}`;
   const neckClip = `pn-${uid}`;
   const splitClip = `ps-${uid}`;
+  const faceId = `pfs-${uid}`;
+  const frontId = `phs-${uid}`;
   const browColor = p.hairStyle === 'bald' || p.hairStyle === 'dome' ? INK : hairDark;
 
   return (
     <g>
       <defs>
+        {/* Sagome definite una volta sola e riusate con <use> (clip, ombre, riempimenti, contorni). */}
+        <path id={faceId} d={face} />
+        {front && <path id={frontId} d={front} />}
         <clipPath id={faceClip}>
-          <path d={face} />
+          <use href={`#${faceId}`} />
         </clipPath>
         <clipPath id={splitClip}>
           <rect x="50" y="0" width="50" height="100" />
@@ -1179,7 +1223,7 @@ export function DetailedPortrait({ appearance: a, uid, ink }: { appearance: Char
         </clipPath>
         {front && (
           <clipPath id={hairClip}>
-            <path d={front} />
+            <use href={`#${frontId}`} />
           </clipPath>
         )}
       </defs>
@@ -1193,18 +1237,18 @@ export function DetailedPortrait({ appearance: a, uid, ink }: { appearance: Char
       {/* Collo con l'ombra netta del mento. */}
       <path d="M43.5 58 L43.5 73 C46 76 54 76 56.5 73 L56.5 58 Z" fill={p.skin} stroke={INK} strokeWidth="0.9" />
       <g clipPath={`url(#${neckClip})`}>
-        <path d={face} transform="translate(0 4.5)" fill={skinShadow} />
+        <use href={`#${faceId}`} transform="translate(0 4.5)" fill={skinShadow} />
       </g>
 
       <ellipse cx="33.8" cy="46.5" rx="2.8" ry="4.4" fill={p.skin} stroke={INK} strokeWidth="0.9" />
       <ellipse cx="66.2" cy="46.5" rx="2.8" ry="4.4" fill={p.skin} stroke={INK} strokeWidth="0.9" />
-      <path d={face} fill={p.skin} />
+      <use href={`#${faceId}`} fill={p.skin} />
       <g clipPath={`url(#${faceClip})`}>
         {/* Ombra laterale netta e ombra dei capelli sulla fronte. */}
         <path d="M61 26 C67 34 68 50 62 60 C59 64 55.5 66 52 67.5 C59.5 58 62.6 44 61 26 Z" fill={skinShadow} opacity="0.55" />
-        {front && <path d={front} transform="translate(1.2 3)" fill={skinShadow} />}
+        {front && <use href={`#${frontId}`} transform="translate(1.2 3)" fill={skinShadow} />}
       </g>
-      <path d={face} fill="none" stroke={INK} strokeWidth="1.3" strokeLinejoin="round" />
+      <use href={`#${faceId}`} fill="none" stroke={INK} strokeWidth="1.3" strokeLinejoin="round" />
       {skinMarks(m, p)}
 
       {m.has('cyclops') ? (
@@ -1225,9 +1269,9 @@ export function DetailedPortrait({ appearance: a, uid, ink }: { appearance: Char
       {front && (
         <g>
           {/* Cel shading: base scura, poi la stessa sagoma alzata in tinta piena → punte delle ciocche in ombra. */}
-          <path d={front} fill={hairDark} />
+          <use href={`#${frontId}`} fill={hairDark} />
           <g clipPath={`url(#${hairClip})`}>
-            <path d={front} transform="translate(0 -2.4)" fill={p.hair} />
+            <use href={`#${frontId}`} transform="translate(0 -2.4)" fill={p.hair} />
             <path d="M38 27 C42 23 48 22 54 22.6 M40 30.4 C43 28 46 27.4 49 27.4" fill="none" stroke={hairHi} strokeWidth="1.5" strokeLinecap="round" opacity="0.85" />
           </g>
           {a.hair2 && (
@@ -1236,10 +1280,11 @@ export function DetailedPortrait({ appearance: a, uid, ink }: { appearance: Char
             </g>
           )}
           {a.hairDetail && <path d={a.hairDetail} fill="none" stroke={hairDark} strokeWidth="0.85" strokeLinecap="round" />}
-          <path d={front} fill="none" stroke={INK} strokeWidth="1.25" strokeLinejoin="round" />
+          <use href={`#${frontId}`} fill="none" stroke={INK} strokeWidth="1.25" strokeLinejoin="round" />
         </g>
       )}
       {p.hairStyle === 'bald' && <ellipse cx="43" cy="27" rx="5" ry="2.2" fill={WHITE} opacity="0.3" />}
+      {skinMarks(m, p, 'forehead')}
       {overMarks(m, p, ink, a.fur)}
     </g>
   );
