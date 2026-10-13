@@ -713,6 +713,15 @@ function skinMarks(m: Set<string>, p: ResolvedPortrait): ReactNode[] {
   );
   // Croce tatuata al centro della fronte (Chrollo).
   add('forehead_cross', <path d="M49 30.6 H51 V33 H53.4 V35 H51 V39.4 H49 V35 H46.6 V33 H49 Z" fill={acc('#4a2a6a')} />);
+  // Sei punti sulla fronte (Crilin).
+  add(
+    'forehead_dots',
+    <g fill={shade(p.skin, -0.45)}>
+      {[[46, 30], [50, 29], [54, 30], [46, 33.6], [50, 32.6], [54, 33.6]].map(([x, y]) => <circle key={`${x}-${y}`} cx={x} cy={y} r="0.75" />)}
+    </g>,
+  );
+  // Sfera sulla fronte (colore = accent; Omega Shenron).
+  add('forehead_orb', <circle cx="50" cy="33" r="3" fill={acc('#f08a2a')} stroke={INK} strokeWidth="0.7" />);
   add('gills', <path d="M36.6 51 Q38.4 53 36.8 55 M38.2 50.4 Q40.2 52.6 38.6 55.2 M63.4 51 Q61.6 53 63.2 55 M61.8 50.4 Q59.8 52.6 61.4 55.2" fill="none" stroke={shade(p.skin, -0.4)} strokeWidth="0.8" strokeLinecap="round" />);
   add('scar_chin_x', <path d="M47.4 60.4 L52.6 64.6 M52.6 60.4 L47.4 64.6" stroke={SCAR} strokeWidth="0.9" strokeLinecap="round" />);
   // Cicatrici rugose sul lato sinistro del volto (Obito).
@@ -893,6 +902,33 @@ function overMarks(m: Set<string>, p: ResolvedPortrait, ink: string, fur?: strin
       <path d="M50 4 C30 4 18 22 20 48 L28 46 C26 26 36 14 50 13 Z" />
       <path d="M50 4 C70 4 82 22 80 48 L72 46 C74 26 64 14 50 13 Z" />
       <path d="M24 44 l-4 3 M23 36 l-5 1 M25 27 l-4 -2 M76 44 l4 3 M77 36 l5 1 M75 27 l4 -2" stroke={INK} strokeWidth="1.2" />
+    </g>,
+  );
+  // Orecchie a punta (Namecciani, demoni): coprono quelle tonde.
+  add(
+    'pointy_ears',
+    <g fill={p.skin} stroke={INK} strokeWidth="0.9" strokeLinejoin="round">
+      <path d="M35 42 L24 34 L30 46 L34.6 51 Z" />
+      <path d="M65 42 L76 34 L70 46 L65.4 51 Z" />
+    </g>,
+  );
+  // Turbante bianco col bordo viola (Piccolo).
+  add(
+    'turban',
+    <g>
+      <path d="M32 38 C30 22 39 13 50 13 C61 13 70 22 68 38 C62 34 38 34 32 38 Z" fill="#f4f2ec" stroke={INK} strokeWidth="1.1" />
+      <path d="M32 38 C38 34 62 34 68 38 L68 41 C62 37.4 38 37.4 32 41 Z" fill={acc('#6b3a9a')} stroke={INK} strokeWidth="0.9" />
+      <path d="M40 18 C44 22 46 28 46 34 M58 17 C56 22 55 28 55 34" fill="none" stroke="#c8c4b8" strokeWidth="0.9" />
+    </g>,
+  );
+  // Antenna/tentacolo sulla testa (Majin Bu).
+  add('tentacle', <path d="M48 22 C44 14 46 6 54 4 C60 3 62 9 58 11 C55 12 53 9 55 8 C51 9 50 15 53 21 Z" fill={p.skin} stroke={INK} strokeWidth="1" />);
+  // Lente-mirino sull'occhio di sinistra (Granolah).
+  add(
+    'scope_eye',
+    <g>
+      <path d="M33 40 L66 37" stroke="#5a3a24" strokeWidth="1.6" />
+      <circle cx={EYE_L} cy={EYE_Y} r="5.6" fill="#8fc6f0" fillOpacity="0.45" stroke={GOLD} strokeWidth="1.6" />
     </g>,
   );
   add(
