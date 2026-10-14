@@ -1,0 +1,30 @@
+{
+  "receiptId": "attackontitan_levi-ackerman_guess-character_en.tiktok.scheduled.7cdc017922c5",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-10-14T05:18:05.727Z",
+  "sourceFile": "20261014T051051Z-attackontitan_levi-ackerman_guess-character_en-tiktok-scheduled.json",
+  "run": {
+    "runId": "38515870822",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/38515870822",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "guess-character:attackontitan:levi-ackerman@en",
+    "platform": "tiktok",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-10-14T12:00:00+02:00",
+    "providerPostId": "395553355",
+    "providerPostUuid": "-9221392836927141682",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-9221392836927141682",
+    "recordedAt": "2026-10-14T05:10:51Z",
+    "recordedBy": "chatgpt-work-publishing-agent"
+  }
+}

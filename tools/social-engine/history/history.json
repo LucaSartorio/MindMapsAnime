@@ -1448,7 +1448,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-10-14T05:03:35.674Z",
-      "updatedAt": "2026-10-14T05:06:47.435Z",
+      "updatedAt": "2026-10-14T05:18:05.727Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-10-14T05:06:47.435Z",
       "outputFile": "tools/social-engine/output/attackontitan_levi-ackerman_guess-character_en.mp4",
@@ -1511,9 +1511,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-14T12:00:00+02:00",
+          "scheduledAt": "2026-10-14T05:10:51Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "395553143",
+          "providerPostUuid": "-4803805652330133065",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-4803805652330133065",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_levi-ackerman_guess-character_en.instagram.scheduled.d0a82099a3c4"
+          ],
+          "updatedAt": "2026-10-14T05:18:05.727Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-14T12:00:00+02:00",
+          "scheduledAt": "2026-10-14T05:10:51Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "395553229",
+          "providerPostUuid": "-7290703714851011948",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-7290703714851011948",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_levi-ackerman_guess-character_en.facebook.scheduled.682aeda3d97e"
+          ],
+          "updatedAt": "2026-10-14T05:18:05.727Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-14T12:00:00+02:00",
+          "scheduledAt": "2026-10-14T05:10:51Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "395553355",
+          "providerPostUuid": "-9221392836927141682",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-9221392836927141682",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_levi-ackerman_guess-character_en.tiktok.scheduled.7cdc017922c5"
+          ],
+          "updatedAt": "2026-10-14T05:18:05.727Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-14T12:00:00+02:00",
+          "scheduledAt": "2026-10-14T05:10:51Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "395553280",
+          "providerPostUuid": "1683769318222152563",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=1683769318222152563",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_levi-ackerman_guess-character_en.youtube.scheduled.0d8206d19f81"
+          ],
+          "updatedAt": "2026-10-14T05:18:05.727Z"
+        }
+      ]
     },
     "guess-character:bleach:kisuke-urahara@en": {
       "renderId": "guess-character:bleach:kisuke-urahara@en",
