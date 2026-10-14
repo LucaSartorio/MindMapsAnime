@@ -1437,6 +1437,84 @@
         }
       ]
     },
+    "guess-character:attackontitan:levi-ackerman@en": {
+      "renderId": "guess-character:attackontitan:levi-ackerman@en",
+      "contentId": "guess-character:attackontitan:levi-ackerman",
+      "template": "guessCharacter",
+      "anime": "attackontitan",
+      "subject": "levi-ackerman",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-10-14T05:03:35.674Z",
+      "updatedAt": "2026-10-14T05:06:47.435Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-10-14T05:06:47.435Z",
+      "outputFile": "tools/social-engine/output/attackontitan_levi-ackerman_guess-character_en.mp4",
+      "manifestFile": "tools/social-engine/output/attackontitan_levi-ackerman_guess-character_en.manifest.json",
+      "sourceFile": "0017-attackontitan_levi-ackerman_guess-character_en.json",
+      "durationSeconds": 21,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-38514584124-1",
+        "runId": "38514584124",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/38514584124",
+        "video": "videos/attackontitan_levi-ackerman_guess-character_en.mp4",
+        "manifest": "manifests/attackontitan_levi-ackerman_guess-character_en.manifest.json",
+        "sha256": "f03d791790d378be07e5c4463959a925eca5c9e64c51713e515e56211981e2e7",
+        "cover": "covers/attackontitan_levi-ackerman_guess-character_en.cover.png",
+        "expiresAt": "2026-11-13T05:06:47.435Z"
+      },
+      "social": {
+        "contentType": "guess-character",
+        "animes": [
+          "attackontitan"
+        ],
+        "characters": [
+          "attackontitan:levi-ackerman"
+        ],
+        "characterNames": [
+          "Levi Ackerman"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "curiosity",
+        "hookId": "gc-curiosity-1",
+        "hook": "4 places. One Attack on Titan character. Who is it?",
+        "ctaType": "comment-guess",
+        "cta": "Did you get it right?",
+        "durationSeconds": 21,
+        "selection": {
+          "mode": "coldstart",
+          "score": 98.31,
+          "seed": "feed11:character-journey:onepiece:monkey-d-luffy:part-02@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "4 places. One Attack on Titan character. Who is it?\n\n4 places, one Attack on Titan character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nSave it for your next rewatch.\n\n#attackontitan #aot #anime #animemap #AniMapVerse",
+          "tiktokCaption": "4 places. One Attack on Titan character. Who is it? Did you get it right? Tell us how many places it took you 👇 #attackontitan #aot #anime #animemap #AniMapVerse",
+          "youtubeTitle": "Guess the Attack on Titan Character From the Places They Visited 🧱",
+          "youtubeDescription": "4 places. One Attack on Titan character. Who is it?\n\n4 places, one Attack on Titan character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/attack-on-titan/map\n\n#attackontitan #aot #anime",
+          "facebookCaption": "4 places. One Attack on Titan character. Who is it?\n\n4 places, one Attack on Titan character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/attack-on-titan/map",
+          "hashtags": [
+            "#attackontitan",
+            "#aot",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "guess-character:bleach:kisuke-urahara@en": {
       "renderId": "guess-character:bleach:kisuke-urahara@en",
       "contentId": "guess-character:bleach:kisuke-urahara",
