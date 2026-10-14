@@ -1,0 +1,18 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "guessCharacter",
+  "anime": "attackontitan",
+  "subject": "levi-ackerman",
+  "locale": "en",
+  "hook": "4 places. One Attack on Titan character. Who is it?",
+  "hookType": "curiosity",
+  "hookId": "gc-curiosity-1",
+  "cta": "Did you get it right?",
+  "ctaType": "comment-guess",
+  "selection": {
+    "mode": "coldstart",
+    "score": 98.31,
+    "seed": "feed11:character-journey:onepiece:monkey-d-luffy:part-02@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +25.9, jitter +4.9; +12 main character; +5.5 format below its target share (18% < 25%)"
+}
