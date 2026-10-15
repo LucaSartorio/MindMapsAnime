@@ -1,0 +1,19 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterJourney",
+  "anime": "hunterxhunter",
+  "subject": "killua-zoldyck",
+  "segment": "part-02",
+  "locale": "en",
+  "hook": "Name every stop before Killua Zoldyck gets there.",
+  "hookType": "challenge",
+  "hookId": "cj-challenge-2",
+  "cta": "Follow for the next journey.",
+  "ctaType": "follow-for-more",
+  "selection": {
+    "mode": "coldstart",
+    "score": 99.66,
+    "seed": "feed12:guess-character:attackontitan:levi-ackerman@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +20.0, jitter +3.7; +12 main character; +14 continues a started series (Part 2 promised)"
+}
