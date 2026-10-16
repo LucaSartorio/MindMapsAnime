@@ -1,0 +1,22 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterVersus",
+  "anime": "bleach",
+  "subject": "rukia-kuchiki",
+  "opponent": {
+    "anime": "blackclover",
+    "subject": "yami-sukehiro"
+  },
+  "locale": "en",
+  "hook": "Who covered more ground, Rukia Kuchiki or Yami Sukehiro?",
+  "hookType": "question",
+  "hookId": "cv-question-1",
+  "cta": "Rukia Kuchiki or Yami Sukehiro? Tell us.",
+  "ctaType": "comment-pick-side",
+  "selection": {
+    "mode": "coldstart",
+    "score": 93.7,
+    "seed": "feed13:character-journey:hunterxhunter:killua-zoldyck:part-02@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +24.2, jitter +5.9; +12 main character; +1.5 format below its target share (23% < 25%)"
+}
