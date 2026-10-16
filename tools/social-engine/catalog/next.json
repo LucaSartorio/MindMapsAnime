@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-16T05:02:58.818Z",
-  "status": "backlog",
+  "generatedAt": "2026-10-16T05:10:18.804Z",
+  "status": "ready",
   "feedTail": [
     {
       "renderId": "character-journey:naruto:naruto-uzumaki:part-02@en",
@@ -92,28 +92,497 @@
     "error": null
   },
   "backlog": {
-    "unpublished": [
-      {
-        "renderId": "character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro@en",
-        "contentType": "character-versus",
-        "renderedAt": "2026-10-16T05:02:57.737Z",
-        "missing": [
-          "instagram",
-          "facebook",
-          "tiktok",
-          "youtube"
-        ]
-      }
-    ],
+    "unpublished": [],
     "unfinished": [],
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "",
-  "reason": "publish the existing render first: character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro@en (it counts as today's video; no new content)",
-  "alternatives": [],
-  "rejected": {},
-  "considered": 0,
-  "eligible": 0,
-  "trace": null
+  "seed": "feed14:h8b9084a9:samples0",
+  "rejected": {
+    "JOURNEY_PART_ORDER": 43,
+    "MAX_SAME_CHARACTER_STREAK": 40
+  },
+  "considered": 687,
+  "trace": {
+    "traceVersion": 1,
+    "mode": "coldstart",
+    "seed": "feed14:h8b9084a9:samples0",
+    "analytics": {
+      "coldStart": true,
+      "samples": 0,
+      "contents": 0,
+      "minimumSamples": 8
+    },
+    "recent": [
+      {
+        "renderId": "character-journey:naruto:naruto-uzumaki:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "naruto"
+        ],
+        "characters": [
+          "naruto:naruto-uzumaki"
+        ]
+      },
+      {
+        "renderId": "character-versus:hunterxhunter:kurapika-vs-dragonball-goku@en",
+        "contentType": "character-versus",
+        "animes": [
+          "hunterxhunter",
+          "dragonball"
+        ],
+        "characters": [
+          "hunterxhunter:kurapika",
+          "dragonball:goku"
+        ]
+      },
+      {
+        "renderId": "character-journey:onepiece:monkey-d-luffy:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "onepiece"
+        ],
+        "characters": [
+          "onepiece:monkey-d-luffy"
+        ]
+      },
+      {
+        "renderId": "guess-character:attackontitan:levi-ackerman@en",
+        "contentType": "guess-character",
+        "animes": [
+          "attackontitan"
+        ],
+        "characters": [
+          "attackontitan:levi-ackerman"
+        ]
+      },
+      {
+        "renderId": "character-journey:hunterxhunter:killua-zoldyck:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "hunterxhunter"
+        ],
+        "characters": [
+          "hunterxhunter:killua-zoldyck"
+        ]
+      },
+      {
+        "renderId": "character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro@en",
+        "contentType": "character-versus",
+        "animes": [
+          "bleach",
+          "blackclover"
+        ],
+        "characters": [
+          "bleach:rukia-kuchiki",
+          "blackclover:yami-sukehiro"
+        ]
+      }
+    ],
+    "constraints": {
+      "sameAnimeStreak": {
+        "animes": [
+          "bleach",
+          "blackclover"
+        ],
+        "length": 1
+      },
+      "forcedAnimeRotation": false,
+      "blockedAnimes": [],
+      "blockedCharacters": [
+        "bleach:rukia-kuchiki",
+        "blackclover:yami-sukehiro"
+      ],
+      "characterCooldown": [
+        "naruto:naruto-uzumaki",
+        "hunterxhunter:kurapika",
+        "dragonball:goku",
+        "onepiece:monkey-d-luffy",
+        "attackontitan:levi-ackerman",
+        "hunterxhunter:killua-zoldyck",
+        "bleach:rukia-kuchiki",
+        "blackclover:yami-sukehiro"
+      ],
+      "contentTypeStreak": {
+        "contentType": "character-versus",
+        "length": 1
+      }
+    },
+    "hardRulesTriggered": {
+      "JOURNEY_PART_ORDER": 43,
+      "MAX_SAME_CHARACTER_STREAK": 40
+    },
+    "candidates": {
+      "considered": 687,
+      "eligible": 607,
+      "byContentType": {
+        "character-journey": {
+          "considered": 416,
+          "eligible": 371
+        },
+        "guess-character": {
+          "considered": 86,
+          "eligible": 84
+        },
+        "character-versus": {
+          "considered": 185,
+          "eligible": 152
+        }
+      }
+    },
+    "excluded": [
+      {
+        "renderId": "character-journey:blackclover:yami-sukehiro:part-01@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:yami-sukehiro"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: blackclover:yami-sukehiro is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:blackclover:yami-sukehiro:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:yami-sukehiro"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER",
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)",
+          "character streak: blackclover:yami-sukehiro is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:bleach:rukia-kuchiki:part-01@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:rukia-kuchiki"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: bleach:rukia-kuchiki is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:bleach:rukia-kuchiki:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:rukia-kuchiki"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER",
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)",
+          "character streak: bleach:rukia-kuchiki is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:bleach:rukia-kuchiki:part-03@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:rukia-kuchiki"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER",
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "sequence: Part 3 before Part 2 (never publish parts out of order)",
+          "character streak: bleach:rukia-kuchiki is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:attackontitan:armin-arlert-vs-blackclover-yami-sukehiro@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "blackclover"
+        ],
+        "characters": [
+          "attackontitan:armin-arlert",
+          "blackclover:yami-sukehiro"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: blackclover:yami-sukehiro is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:attackontitan:armin-arlert-vs-bleach-rukia-kuchiki@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "bleach"
+        ],
+        "characters": [
+          "attackontitan:armin-arlert",
+          "bleach:rukia-kuchiki"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: bleach:rukia-kuchiki is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-blackclover-yami-sukehiro@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "blackclover"
+        ],
+        "characters": [
+          "attackontitan:mikasa-ackerman",
+          "blackclover:yami-sukehiro"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: blackclover:yami-sukehiro is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-bleach-rukia-kuchiki@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "bleach"
+        ],
+        "characters": [
+          "attackontitan:mikasa-ackerman",
+          "bleach:rukia-kuchiki"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: bleach:rukia-kuchiki is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:attackontitan:reiner-braun-vs-blackclover-yami-sukehiro@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "blackclover"
+        ],
+        "characters": [
+          "attackontitan:reiner-braun",
+          "blackclover:yami-sukehiro"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: blackclover:yami-sukehiro is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      }
+    ],
+    "status": "selected",
+    "selectedId": "guess-character:attackontitan:zeke-yeager",
+    "renderId": "guess-character:attackontitan:zeke-yeager@en",
+    "contentType": "guess-character",
+    "animes": [
+      "attackontitan"
+    ],
+    "characters": [
+      "attackontitan:zeke-yeager"
+    ],
+    "score": 95.4,
+    "base": 80.54,
+    "reasons": [
+      "coldstart: novelty +24.6, jitter +5.9",
+      "+12 main character",
+      "+2.9 format below its target share (21% < 25%)"
+    ],
+    "ranked": [
+      {
+        "renderId": "guess-character:attackontitan:zeke-yeager@en",
+        "contentType": "guess-character",
+        "animes": [
+          "attackontitan"
+        ],
+        "score": 95.4,
+        "reasons": [
+          "coldstart: novelty +24.6, jitter +5.9",
+          "+12 main character",
+          "+2.9 format below its target share (21% < 25%)"
+        ]
+      },
+      {
+        "renderId": "guess-character:attackontitan:falco-grice@en",
+        "contentType": "guess-character",
+        "animes": [
+          "attackontitan"
+        ],
+        "score": 94.64,
+        "reasons": [
+          "coldstart: novelty +24.6, jitter +5.1",
+          "+12 main character",
+          "+2.9 format below its target share (21% < 25%)"
+        ]
+      },
+      {
+        "renderId": "guess-character:attackontitan:mikasa-ackerman@en",
+        "contentType": "guess-character",
+        "animes": [
+          "attackontitan"
+        ],
+        "score": 93.96,
+        "reasons": [
+          "coldstart: novelty +24.6, jitter +4.5",
+          "+12 main character",
+          "+2.9 format below its target share (21% < 25%)"
+        ]
+      },
+      {
+        "renderId": "guess-character:naruto:obito-uchiha@en",
+        "contentType": "guess-character",
+        "animes": [
+          "naruto"
+        ],
+        "score": 93.94,
+        "reasons": [
+          "coldstart: novelty +24.6, jitter +4.4",
+          "+12 main character",
+          "+2.9 format below its target share (21% < 25%)"
+        ]
+      },
+      {
+        "renderId": "guess-character:onepiece:usopp@en",
+        "contentType": "guess-character",
+        "animes": [
+          "onepiece"
+        ],
+        "score": 93.81,
+        "reasons": [
+          "coldstart: novelty +23.6, jitter +5.4",
+          "+12 main character",
+          "+2.9 format below its target share (21% < 25%)"
+        ]
+      },
+      {
+        "renderId": "guess-character:onepiece:nico-robin@en",
+        "contentType": "guess-character",
+        "animes": [
+          "onepiece"
+        ],
+        "score": 93.79,
+        "reasons": [
+          "coldstart: novelty +23.6, jitter +5.4",
+          "+12 main character",
+          "+2.9 format below its target share (21% < 25%)"
+        ]
+      }
+    ],
+    "explanation": [
+      "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
+      "bleach:rukia-kuchiki, blackclover:yami-sukehiro excluded in every format (maxSameCharacterStreak 1).",
+      "Selected guess-character:attackontitan:zeke-yeager@en (guess-character, attackontitan) — coldstart, score 95.4 among 607 valid candidate(s)."
+    ]
+  },
+  "pick": {
+    "contentId": "guess-character:attackontitan:zeke-yeager",
+    "renderId": "guess-character:attackontitan:zeke-yeager@en",
+    "contentType": "guess-character",
+    "animes": [
+      "attackontitan"
+    ],
+    "characters": [
+      "attackontitan:zeke-yeager"
+    ],
+    "part": null,
+    "partCount": null,
+    "score": 95.4,
+    "reasons": [
+      "coldstart: novelty +24.6, jitter +5.9",
+      "+12 main character",
+      "+2.9 format below its target share (21% < 25%)"
+    ]
+  },
+  "request": {
+    "template": "guessCharacter",
+    "anime": "attackontitan",
+    "subject": "zeke-yeager",
+    "locale": "en",
+    "hook": "These 5 places belong to one Attack on Titan character.",
+    "hookType": "fact",
+    "hookId": "gc-fact-1",
+    "cta": "How many places did you recognize?",
+    "ctaType": "comment-guess",
+    "selection": {
+      "mode": "coldstart",
+      "score": 95.4,
+      "seed": "feed14:h8b9084a9:samples0"
+    },
+    "notes": "growth selector (coldstart): coldstart: novelty +24.6, jitter +5.9; +12 main character; +2.9 format below its target share (21% < 25%)"
+  },
+  "alternatives": [
+    {
+      "renderId": "guess-character:attackontitan:falco-grice@en",
+      "contentType": "guess-character",
+      "score": 94.64
+    },
+    {
+      "renderId": "guess-character:attackontitan:mikasa-ackerman@en",
+      "contentType": "guess-character",
+      "score": 93.96
+    },
+    {
+      "renderId": "guess-character:naruto:obito-uchiha@en",
+      "contentType": "guess-character",
+      "score": 93.94
+    },
+    {
+      "renderId": "guess-character:onepiece:usopp@en",
+      "contentType": "guess-character",
+      "score": 93.81
+    },
+    {
+      "renderId": "guess-character:onepiece:nico-robin@en",
+      "contentType": "guess-character",
+      "score": 93.79
+    }
+  ],
+  "eligible": 607
 }

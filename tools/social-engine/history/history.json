@@ -1282,7 +1282,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-10-16T05:00:59.589Z",
-      "updatedAt": "2026-10-16T05:02:57.737Z",
+      "updatedAt": "2026-10-16T05:10:18.789Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-10-16T05:02:57.737Z",
       "outputFile": "tools/social-engine/output/bleach_rukia-kuchiki-vs-blackclover-yami-sukehiro_character-versus_en.mp4",
@@ -1350,9 +1350,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-16T10:00:00+02:00",
+          "scheduledAt": "2026-10-16T05:05:45Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "397421483",
+          "providerPostUuid": "-7636129043792967886",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-7636129043792967886",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "bleach_rukia-kuchiki-vs-blackclover-yami-sukehiro_character-versus_en.instagram.scheduled.a0267111dfd3"
+          ],
+          "updatedAt": "2026-10-16T05:10:18.789Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-16T10:00:00+02:00",
+          "scheduledAt": "2026-10-16T05:05:45Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "397421547",
+          "providerPostUuid": "-5536944874930354278",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-5536944874930354278",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "bleach_rukia-kuchiki-vs-blackclover-yami-sukehiro_character-versus_en.facebook.scheduled.f2fb53573da3"
+          ],
+          "updatedAt": "2026-10-16T05:10:18.789Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-16T10:00:00+02:00",
+          "scheduledAt": "2026-10-16T05:05:45Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "397421729",
+          "providerPostUuid": "8094057136264923939",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=8094057136264923939",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "bleach_rukia-kuchiki-vs-blackclover-yami-sukehiro_character-versus_en.tiktok.scheduled.0d09d69756fa"
+          ],
+          "updatedAt": "2026-10-16T05:10:18.789Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-16T10:00:00+02:00",
+          "scheduledAt": "2026-10-16T05:05:45Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "397421659",
+          "providerPostUuid": "-2345397441411922966",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-2345397441411922966",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "bleach_rukia-kuchiki-vs-blackclover-yami-sukehiro_character-versus_en.youtube.scheduled.5cf34826d6e7"
+          ],
+          "updatedAt": "2026-10-16T05:10:18.789Z"
+        }
+      ]
     },
     "character-versus:hunterxhunter:kurapika-vs-dragonball-goku@en": {
       "renderId": "character-versus:hunterxhunter:kurapika-vs-dragonball-goku@en",
