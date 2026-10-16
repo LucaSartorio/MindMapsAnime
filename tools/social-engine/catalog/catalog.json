@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-15T05:21:01.452Z",
+  "generatedAt": "2026-10-16T05:02:58.818Z",
   "locales": [
     "en",
     "it"
@@ -25346,13 +25346,28 @@
             "placesA": 10,
             "placesB": 8
           },
-          "renderedLocales": [],
+          "renderedLocales": [
+            "en"
+          ],
           "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
-          "renderedBefore": false,
+          "renderedBefore": true,
           "publishedBefore": false,
-          "publication": [],
+          "publication": [
+            {
+              "renderId": "character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro@en",
+              "locale": "en",
+              "variant": null,
+              "status": "notPublished",
+              "platforms": {
+                "instagram": "notScheduled",
+                "facebook": "notScheduled",
+                "tiktok": "notScheduled",
+                "youtube": "notScheduled"
+              }
+            }
+          ],
           "request": {
             "subject": "rukia-kuchiki",
             "opponent": {
@@ -25490,15 +25505,70 @@
       "metricool"
     ],
     "summary": {
-      "rendered": 18,
+      "rendered": 19,
       "unavailable": 5,
-      "notPublished": 5,
+      "notPublished": 6,
       "scheduled": 7,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0
     },
-    "ready": [],
+    "ready": [
+      {
+        "renderId": "character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro@en",
+        "contentId": "character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro",
+        "anime": "bleach",
+        "subject": "rukia-kuchiki-vs-blackclover-yami-sukehiro",
+        "subjectName": "Rukia Kuchiki vs Yami Sukehiro",
+        "locale": "en",
+        "variant": null,
+        "segment": null,
+        "partNumber": null,
+        "partCount": null,
+        "renderedAt": "2026-10-16T05:02:57.737Z",
+        "durationSeconds": 22,
+        "publicationStatus": "notPublished",
+        "platforms": {
+          "instagram": "notScheduled",
+          "facebook": "notScheduled",
+          "tiktok": "notScheduled",
+          "youtube": "notScheduled"
+        },
+        "artifact": {
+          "name": "animapverse-social-render-38853534950-1",
+          "runId": "38853534950",
+          "runAttempt": "1",
+          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/38853534950",
+          "video": "videos/bleach_rukia-kuchiki-vs-blackclover-yami-sukehiro_character-versus_en.mp4",
+          "manifest": "manifests/bleach_rukia-kuchiki-vs-blackclover-yami-sukehiro_character-versus_en.manifest.json",
+          "sha256": "c5c676ac4c5dc7166db1767cde7e64197ccc20d2a20235d4d4d01b9036e22a6a",
+          "cover": "covers/bleach_rukia-kuchiki-vs-blackclover-yami-sukehiro_character-versus_en.cover.png",
+          "expiresAt": "2026-11-15T05:02:57.737Z"
+        },
+        "contentType": "character-versus",
+        "platformMetadata": {
+          "instagramCaption": "Who covered more ground, Rukia Kuchiki or Yami Sukehiro?\n\nRukia Kuchiki (Bleach) vs Yami Sukehiro (Black Clover): every place on the map, one winner.\n\nRukia Kuchiki or Yami Sukehiro? Pick a side 👇\n\nSave it for your next rewatch.\n\n#bleach #blackclover #rukiakuchiki #yamisukehiro #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Who covered more ground, Rukia Kuchiki or Yami Sukehiro? Rukia Kuchiki or Yami Sukehiro? Pick a side 👇 #bleach #blackclover #rukiakuchiki #yamisukehiro #anime",
+          "youtubeTitle": "Rukia Kuchiki vs Yami Sukehiro: Who Travelled More? ⚔️",
+          "youtubeDescription": "Who covered more ground, Rukia Kuchiki or Yami Sukehiro?\n\nRukia Kuchiki (Bleach) vs Yami Sukehiro (Black Clover): every place on the map, one winner.\n\nRukia Kuchiki or Yami Sukehiro? Pick a side 👇\n\nInteractive map: https://animapverse.com\n\n#bleach #blackclover #rukiakuchiki",
+          "facebookCaption": "Who covered more ground, Rukia Kuchiki or Yami Sukehiro?\n\nRukia Kuchiki (Bleach) vs Yami Sukehiro (Black Clover): every place on the map, one winner.\n\nRukia Kuchiki or Yami Sukehiro? Pick a side 👇\n\nInteractive map: https://animapverse.com",
+          "hashtags": [
+            "#bleach",
+            "#blackclover",
+            "#rukiakuchiki",
+            "#yamisukehiro",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        },
+        "waitFor": {}
+      }
+    ],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",

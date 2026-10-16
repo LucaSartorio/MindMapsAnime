@@ -1271,6 +1271,89 @@
         }
       ]
     },
+    "character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro@en": {
+      "renderId": "character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro@en",
+      "contentId": "character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro",
+      "template": "characterVersus",
+      "anime": "bleach",
+      "subject": "rukia-kuchiki-vs-blackclover-yami-sukehiro",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-10-16T05:00:59.589Z",
+      "updatedAt": "2026-10-16T05:02:57.737Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-10-16T05:02:57.737Z",
+      "outputFile": "tools/social-engine/output/bleach_rukia-kuchiki-vs-blackclover-yami-sukehiro_character-versus_en.mp4",
+      "manifestFile": "tools/social-engine/output/bleach_rukia-kuchiki-vs-blackclover-yami-sukehiro_character-versus_en.manifest.json",
+      "sourceFile": "0019-bleach_rukia-kuchiki_character-versus_blackclover_yami-sukehiro_en.json",
+      "durationSeconds": 22,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-38853534950-1",
+        "runId": "38853534950",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/38853534950",
+        "video": "videos/bleach_rukia-kuchiki-vs-blackclover-yami-sukehiro_character-versus_en.mp4",
+        "manifest": "manifests/bleach_rukia-kuchiki-vs-blackclover-yami-sukehiro_character-versus_en.manifest.json",
+        "sha256": "c5c676ac4c5dc7166db1767cde7e64197ccc20d2a20235d4d4d01b9036e22a6a",
+        "cover": "covers/bleach_rukia-kuchiki-vs-blackclover-yami-sukehiro_character-versus_en.cover.png",
+        "expiresAt": "2026-11-15T05:02:57.737Z"
+      },
+      "social": {
+        "contentType": "character-versus",
+        "animes": [
+          "bleach",
+          "blackclover"
+        ],
+        "characters": [
+          "bleach:rukia-kuchiki",
+          "blackclover:yami-sukehiro"
+        ],
+        "characterNames": [
+          "Rukia Kuchiki",
+          "Yami Sukehiro"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "question",
+        "hookId": "cv-question-1",
+        "hook": "Who covered more ground, Rukia Kuchiki or Yami Sukehiro?",
+        "ctaType": "comment-pick-side",
+        "cta": "Rukia Kuchiki or Yami Sukehiro? Tell us.",
+        "durationSeconds": 22,
+        "selection": {
+          "mode": "coldstart",
+          "score": 93.7,
+          "seed": "feed13:character-journey:hunterxhunter:killua-zoldyck:part-02@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Who covered more ground, Rukia Kuchiki or Yami Sukehiro?\n\nRukia Kuchiki (Bleach) vs Yami Sukehiro (Black Clover): every place on the map, one winner.\n\nRukia Kuchiki or Yami Sukehiro? Pick a side 👇\n\nSave it for your next rewatch.\n\n#bleach #blackclover #rukiakuchiki #yamisukehiro #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Who covered more ground, Rukia Kuchiki or Yami Sukehiro? Rukia Kuchiki or Yami Sukehiro? Pick a side 👇 #bleach #blackclover #rukiakuchiki #yamisukehiro #anime",
+          "youtubeTitle": "Rukia Kuchiki vs Yami Sukehiro: Who Travelled More? ⚔️",
+          "youtubeDescription": "Who covered more ground, Rukia Kuchiki or Yami Sukehiro?\n\nRukia Kuchiki (Bleach) vs Yami Sukehiro (Black Clover): every place on the map, one winner.\n\nRukia Kuchiki or Yami Sukehiro? Pick a side 👇\n\nInteractive map: https://animapverse.com\n\n#bleach #blackclover #rukiakuchiki",
+          "facebookCaption": "Who covered more ground, Rukia Kuchiki or Yami Sukehiro?\n\nRukia Kuchiki (Bleach) vs Yami Sukehiro (Black Clover): every place on the map, one winner.\n\nRukia Kuchiki or Yami Sukehiro? Pick a side 👇\n\nInteractive map: https://animapverse.com",
+          "hashtags": [
+            "#bleach",
+            "#blackclover",
+            "#rukiakuchiki",
+            "#yamisukehiro",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-versus:hunterxhunter:kurapika-vs-dragonball-goku@en": {
       "renderId": "character-versus:hunterxhunter:kurapika-vs-dragonball-goku@en",
       "contentId": "character-versus:hunterxhunter:kurapika-vs-dragonball-goku",

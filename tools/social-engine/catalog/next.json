@@ -1,19 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-15T05:21:01.452Z",
-  "status": "ready",
+  "generatedAt": "2026-10-16T05:02:58.818Z",
+  "status": "backlog",
   "feedTail": [
-    {
-      "renderId": "guess-character:bleach:kisuke-urahara@en",
-      "contentType": "guess-character",
-      "animes": [
-        "bleach"
-      ],
-      "characters": [
-        "bleach:kisuke-urahara"
-      ],
-      "part": null
-    },
     {
       "renderId": "character-journey:naruto:naruto-uzumaki:part-02@en",
       "contentType": "character-journey",
@@ -70,6 +59,19 @@
         "hunterxhunter:killua-zoldyck"
       ],
       "part": 2
+    },
+    {
+      "renderId": "character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro@en",
+      "contentType": "character-versus",
+      "animes": [
+        "bleach",
+        "blackclover"
+      ],
+      "characters": [
+        "bleach:rukia-kuchiki",
+        "blackclover:yami-sukehiro"
+      ],
+      "part": null
     }
   ],
   "rules": {
@@ -90,508 +92,28 @@
     "error": null
   },
   "backlog": {
-    "unpublished": [],
+    "unpublished": [
+      {
+        "renderId": "character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro@en",
+        "contentType": "character-versus",
+        "renderedAt": "2026-10-16T05:02:57.737Z",
+        "missing": [
+          "instagram",
+          "facebook",
+          "tiktok",
+          "youtube"
+        ]
+      }
+    ],
     "unfinished": [],
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "feed13:character-journey:hunterxhunter:killua-zoldyck:part-02@en:samples0",
-  "rejected": {
-    "JOURNEY_PART_ORDER": 43,
-    "MAX_SAME_CHARACTER_STREAK": 19
-  },
-  "considered": 688,
-  "trace": {
-    "traceVersion": 1,
-    "mode": "coldstart",
-    "seed": "feed13:character-journey:hunterxhunter:killua-zoldyck:part-02@en:samples0",
-    "analytics": {
-      "coldStart": true,
-      "samples": 0,
-      "contents": 0,
-      "minimumSamples": 8
-    },
-    "recent": [
-      {
-        "renderId": "guess-character:bleach:kisuke-urahara@en",
-        "contentType": "guess-character",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:kisuke-urahara"
-        ]
-      },
-      {
-        "renderId": "character-journey:naruto:naruto-uzumaki:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "naruto"
-        ],
-        "characters": [
-          "naruto:naruto-uzumaki"
-        ]
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:kurapika-vs-dragonball-goku@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "dragonball"
-        ],
-        "characters": [
-          "hunterxhunter:kurapika",
-          "dragonball:goku"
-        ]
-      },
-      {
-        "renderId": "character-journey:onepiece:monkey-d-luffy:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "onepiece"
-        ],
-        "characters": [
-          "onepiece:monkey-d-luffy"
-        ]
-      },
-      {
-        "renderId": "guess-character:attackontitan:levi-ackerman@en",
-        "contentType": "guess-character",
-        "animes": [
-          "attackontitan"
-        ],
-        "characters": [
-          "attackontitan:levi-ackerman"
-        ]
-      },
-      {
-        "renderId": "character-journey:hunterxhunter:killua-zoldyck:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "hunterxhunter"
-        ],
-        "characters": [
-          "hunterxhunter:killua-zoldyck"
-        ]
-      }
-    ],
-    "constraints": {
-      "sameAnimeStreak": {
-        "animes": [
-          "hunterxhunter"
-        ],
-        "length": 1
-      },
-      "forcedAnimeRotation": false,
-      "blockedAnimes": [],
-      "blockedCharacters": [
-        "hunterxhunter:killua-zoldyck"
-      ],
-      "characterCooldown": [
-        "bleach:kisuke-urahara",
-        "naruto:naruto-uzumaki",
-        "hunterxhunter:kurapika",
-        "dragonball:goku",
-        "onepiece:monkey-d-luffy",
-        "attackontitan:levi-ackerman",
-        "hunterxhunter:killua-zoldyck"
-      ],
-      "contentTypeStreak": {
-        "contentType": "character-journey",
-        "length": 1
-      }
-    },
-    "hardRulesTriggered": {
-      "JOURNEY_PART_ORDER": 43,
-      "MAX_SAME_CHARACTER_STREAK": 19
-    },
-    "candidates": {
-      "considered": 688,
-      "eligible": 626,
-      "byContentType": {
-        "character-journey": {
-          "considered": 416,
-          "eligible": 373
-        },
-        "guess-character": {
-          "considered": 86,
-          "eligible": 85
-        },
-        "character-versus": {
-          "considered": 186,
-          "eligible": 168
-        }
-      }
-    },
-    "excluded": [
-      {
-        "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-attackontitan-armin-arlert@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "attackontitan"
-        ],
-        "characters": [
-          "hunterxhunter:killua-zoldyck",
-          "attackontitan:armin-arlert"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: hunterxhunter:killua-zoldyck is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-attackontitan-mikasa-ackerman@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "attackontitan"
-        ],
-        "characters": [
-          "hunterxhunter:killua-zoldyck",
-          "attackontitan:mikasa-ackerman"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: hunterxhunter:killua-zoldyck is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-attackontitan-reiner-braun@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "attackontitan"
-        ],
-        "characters": [
-          "hunterxhunter:killua-zoldyck",
-          "attackontitan:reiner-braun"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: hunterxhunter:killua-zoldyck is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-blackclover-asta@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "blackclover"
-        ],
-        "characters": [
-          "hunterxhunter:killua-zoldyck",
-          "blackclover:asta"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: hunterxhunter:killua-zoldyck is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-blackclover-noelle-silva@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "blackclover"
-        ],
-        "characters": [
-          "hunterxhunter:killua-zoldyck",
-          "blackclover:noelle-silva"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: hunterxhunter:killua-zoldyck is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-blackclover-yami-sukehiro@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "blackclover"
-        ],
-        "characters": [
-          "hunterxhunter:killua-zoldyck",
-          "blackclover:yami-sukehiro"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: hunterxhunter:killua-zoldyck is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-bleach-ichigo-kurosaki@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "bleach"
-        ],
-        "characters": [
-          "hunterxhunter:killua-zoldyck",
-          "bleach:ichigo-kurosaki"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: hunterxhunter:killua-zoldyck is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-bleach-rukia-kuchiki@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "bleach"
-        ],
-        "characters": [
-          "hunterxhunter:killua-zoldyck",
-          "bleach:rukia-kuchiki"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: hunterxhunter:killua-zoldyck is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-bleach-yasutora-chad-sado@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "bleach"
-        ],
-        "characters": [
-          "hunterxhunter:killua-zoldyck",
-          "bleach:yasutora-chad-sado"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: hunterxhunter:killua-zoldyck is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-dragonball-goku@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "dragonball"
-        ],
-        "characters": [
-          "hunterxhunter:killua-zoldyck",
-          "dragonball:goku"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: hunterxhunter:killua-zoldyck is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      }
-    ],
-    "status": "selected",
-    "selectedId": "character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro",
-    "renderId": "character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro@en",
-    "contentType": "character-versus",
-    "animes": [
-      "bleach",
-      "blackclover"
-    ],
-    "characters": [
-      "bleach:rukia-kuchiki",
-      "blackclover:yami-sukehiro"
-    ],
-    "score": 93.7,
-    "base": 80.16,
-    "reasons": [
-      "coldstart: novelty +24.2, jitter +5.9",
-      "+12 main character",
-      "+1.5 format below its target share (23% < 25%)"
-    ],
-    "ranked": [
-      {
-        "renderId": "character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro@en",
-        "contentType": "character-versus",
-        "animes": [
-          "bleach",
-          "blackclover"
-        ],
-        "score": 93.7,
-        "reasons": [
-          "coldstart: novelty +24.2, jitter +5.9",
-          "+12 main character",
-          "+1.5 format below its target share (23% < 25%)"
-        ]
-      },
-      {
-        "renderId": "guess-character:naruto:madara-uchiha@en",
-        "contentType": "guess-character",
-        "animes": [
-          "naruto"
-        ],
-        "score": 93.57,
-        "reasons": [
-          "coldstart: novelty +24.2, jitter +5.8",
-          "+12 main character",
-          "+1.5 format below its target share (23% < 25%)"
-        ]
-      },
-      {
-        "renderId": "guess-character:attackontitan:reiner-braun@en",
-        "contentType": "guess-character",
-        "animes": [
-          "attackontitan"
-        ],
-        "score": 93.55,
-        "reasons": [
-          "coldstart: novelty +24.2, jitter +5.8",
-          "+12 main character",
-          "+1.5 format below its target share (23% < 25%)"
-        ]
-      },
-      {
-        "renderId": "character-versus:naruto:sasuke-uchiha-vs-attackontitan-armin-arlert@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "attackontitan"
-        ],
-        "score": 93.54,
-        "reasons": [
-          "coldstart: novelty +24.2, jitter +5.8",
-          "+12 main character",
-          "+1.5 format below its target share (23% < 25%)"
-        ]
-      },
-      {
-        "renderId": "character-versus:naruto:obito-uchiha-vs-attackontitan-mikasa-ackerman@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "attackontitan"
-        ],
-        "score": 93.5,
-        "reasons": [
-          "coldstart: novelty +24.2, jitter +5.7",
-          "+12 main character",
-          "+1.5 format below its target share (23% < 25%)"
-        ]
-      },
-      {
-        "renderId": "character-versus:naruto:sasuke-uchiha-vs-blackclover-noelle-silva@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "blackclover"
-        ],
-        "score": 93.46,
-        "reasons": [
-          "coldstart: novelty +24.2, jitter +5.7",
-          "+12 main character",
-          "+1.5 format below its target share (23% < 25%)"
-        ]
-      }
-    ],
-    "explanation": [
-      "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
-      "hunterxhunter:killua-zoldyck excluded in every format (maxSameCharacterStreak 1).",
-      "Selected character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro@en (character-versus, bleach + blackclover) — coldstart, score 93.7 among 626 valid candidate(s)."
-    ]
-  },
-  "pick": {
-    "contentId": "character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro",
-    "renderId": "character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro@en",
-    "contentType": "character-versus",
-    "animes": [
-      "bleach",
-      "blackclover"
-    ],
-    "characters": [
-      "bleach:rukia-kuchiki",
-      "blackclover:yami-sukehiro"
-    ],
-    "part": null,
-    "partCount": null,
-    "score": 93.7,
-    "reasons": [
-      "coldstart: novelty +24.2, jitter +5.9",
-      "+12 main character",
-      "+1.5 format below its target share (23% < 25%)"
-    ]
-  },
-  "request": {
-    "template": "characterVersus",
-    "anime": "bleach",
-    "subject": "rukia-kuchiki",
-    "opponent": {
-      "anime": "blackclover",
-      "subject": "yami-sukehiro"
-    },
-    "locale": "en",
-    "hook": "Who covered more ground, Rukia Kuchiki or Yami Sukehiro?",
-    "hookType": "question",
-    "hookId": "cv-question-1",
-    "cta": "Rukia Kuchiki or Yami Sukehiro? Tell us.",
-    "ctaType": "comment-pick-side",
-    "selection": {
-      "mode": "coldstart",
-      "score": 93.7,
-      "seed": "feed13:character-journey:hunterxhunter:killua-zoldyck:part-02@en:samples0"
-    },
-    "notes": "growth selector (coldstart): coldstart: novelty +24.2, jitter +5.9; +12 main character; +1.5 format below its target share (23% < 25%)"
-  },
-  "alternatives": [
-    {
-      "renderId": "guess-character:naruto:madara-uchiha@en",
-      "contentType": "guess-character",
-      "score": 93.57
-    },
-    {
-      "renderId": "guess-character:attackontitan:reiner-braun@en",
-      "contentType": "guess-character",
-      "score": 93.55
-    },
-    {
-      "renderId": "character-versus:naruto:sasuke-uchiha-vs-attackontitan-armin-arlert@en",
-      "contentType": "character-versus",
-      "score": 93.54
-    },
-    {
-      "renderId": "character-versus:naruto:obito-uchiha-vs-attackontitan-mikasa-ackerman@en",
-      "contentType": "character-versus",
-      "score": 93.5
-    },
-    {
-      "renderId": "character-versus:naruto:sasuke-uchiha-vs-blackclover-noelle-silva@en",
-      "contentType": "character-versus",
-      "score": 93.46
-    }
-  ],
-  "eligible": 626
+  "seed": "",
+  "reason": "publish the existing render first: character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro@en (it counts as today's video; no new content)",
+  "alternatives": [],
+  "rejected": {},
+  "considered": 0,
+  "eligible": 0,
+  "trace": null
 }
