@@ -1,0 +1,18 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "guessCharacter",
+  "anime": "attackontitan",
+  "subject": "zeke-yeager",
+  "locale": "en",
+  "hook": "These 5 places belong to one Attack on Titan character.",
+  "hookType": "fact",
+  "hookId": "gc-fact-1",
+  "cta": "How many places did you recognize?",
+  "ctaType": "comment-guess",
+  "selection": {
+    "mode": "coldstart",
+    "score": 95.4,
+    "seed": "feed14:h8b9084a9:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +24.6, jitter +5.9; +12 main character; +2.9 format below its target share (21% < 25%)"
+}
