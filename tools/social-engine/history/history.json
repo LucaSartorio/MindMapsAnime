@@ -1919,7 +1919,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-10-17T05:08:51.247Z",
-      "updatedAt": "2026-10-17T05:11:48.839Z",
+      "updatedAt": "2026-10-17T05:19:00.259Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-10-17T05:11:48.839Z",
       "outputFile": "tools/social-engine/output/attackontitan_zeke-yeager_guess-character_en.mp4",
@@ -1982,9 +1982,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-17T10:00:00+02:00",
+          "scheduledAt": "2026-10-17T05:13:28Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "398315943",
+          "providerPostUuid": "6669507498338438237",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=6669507498338438237",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_zeke-yeager_guess-character_en.instagram.scheduled.154d9f211cfd"
+          ],
+          "updatedAt": "2026-10-17T05:19:00.259Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-17T10:00:00+02:00",
+          "scheduledAt": "2026-10-17T05:13:28Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "398315980",
+          "providerPostUuid": "-7268801707427541812",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-7268801707427541812",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_zeke-yeager_guess-character_en.facebook.scheduled.60d577f9d205"
+          ],
+          "updatedAt": "2026-10-17T05:19:00.259Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-17T10:00:00+02:00",
+          "scheduledAt": "2026-10-17T05:13:28Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "398316068",
+          "providerPostUuid": "5114086873222171094",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=5114086873222171094",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_zeke-yeager_guess-character_en.tiktok.scheduled.085b3bd59818"
+          ],
+          "updatedAt": "2026-10-17T05:19:00.259Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-17T10:00:00+02:00",
+          "scheduledAt": "2026-10-17T05:13:28Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "398316007",
+          "providerPostUuid": "-4583695550298111895",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-4583695550298111895",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_zeke-yeager_guess-character_en.youtube.scheduled.2afd21089cf3"
+          ],
+          "updatedAt": "2026-10-17T05:19:00.259Z"
+        }
+      ]
     },
     "guess-character:bleach:kisuke-urahara@en": {
       "renderId": "guess-character:bleach:kisuke-urahara@en",

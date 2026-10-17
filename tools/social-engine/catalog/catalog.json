@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-17T05:11:49.822Z",
+  "generatedAt": "2026-10-17T05:19:00.277Z",
   "locales": [
     "en",
     "it"
@@ -17298,7 +17298,9 @@
           "renderedLocales": [
             "en"
           ],
-          "scheduledLocales": [],
+          "scheduledLocales": [
+            "en"
+          ],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": true,
@@ -17308,12 +17310,12 @@
               "renderId": "guess-character:attackontitan:zeke-yeager@en",
               "locale": "en",
               "variant": null,
-              "status": "notPublished",
+              "status": "scheduled",
               "platforms": {
-                "instagram": "notScheduled",
-                "facebook": "notScheduled",
-                "tiktok": "notScheduled",
-                "youtube": "notScheduled"
+                "instagram": "scheduled",
+                "facebook": "scheduled",
+                "tiktok": "scheduled",
+                "youtube": "scheduled"
               }
             }
           ]
@@ -25524,66 +25526,13 @@
     "summary": {
       "rendered": 20,
       "unavailable": 5,
-      "notPublished": 6,
-      "scheduled": 8,
+      "notPublished": 5,
+      "scheduled": 9,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0
     },
-    "ready": [
-      {
-        "renderId": "guess-character:attackontitan:zeke-yeager@en",
-        "contentId": "guess-character:attackontitan:zeke-yeager",
-        "anime": "attackontitan",
-        "subject": "zeke-yeager",
-        "subjectName": "Zeke Yeager",
-        "locale": "en",
-        "variant": null,
-        "segment": null,
-        "partNumber": null,
-        "partCount": null,
-        "renderedAt": "2026-10-17T05:11:48.839Z",
-        "durationSeconds": 24,
-        "publicationStatus": "notPublished",
-        "platforms": {
-          "instagram": "notScheduled",
-          "facebook": "notScheduled",
-          "tiktok": "notScheduled",
-          "youtube": "notScheduled"
-        },
-        "artifact": {
-          "name": "animapverse-social-render-39005160631-1",
-          "runId": "39005160631",
-          "runAttempt": "1",
-          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/39005160631",
-          "video": "videos/attackontitan_zeke-yeager_guess-character_en.mp4",
-          "manifest": "manifests/attackontitan_zeke-yeager_guess-character_en.manifest.json",
-          "sha256": "fd2669ddd71874b2c73e8ee5cd502655a09b3d07027493e800f1c31a5a571339",
-          "cover": "covers/attackontitan_zeke-yeager_guess-character_en.cover.png",
-          "expiresAt": "2026-11-16T05:11:48.839Z"
-        },
-        "contentType": "guess-character",
-        "platformMetadata": {
-          "instagramCaption": "These 5 places belong to one Attack on Titan character.\n\n5 places, one Attack on Titan character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nSave it for your next rewatch.\n\n#attackontitan #aot #anime #animemap #AniMapVerse",
-          "tiktokCaption": "These 5 places belong to one Attack on Titan character. Did you get it right? Tell us how many places it took you 👇 #attackontitan #aot #anime #animemap #AniMapVerse",
-          "youtubeTitle": "Guess the Attack on Titan Character From the Places They Visited 🧱",
-          "youtubeDescription": "These 5 places belong to one Attack on Titan character.\n\n5 places, one Attack on Titan character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/attack-on-titan/map\n\n#attackontitan #aot #anime",
-          "facebookCaption": "These 5 places belong to one Attack on Titan character.\n\n5 places, one Attack on Titan character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/attack-on-titan/map",
-          "hashtags": [
-            "#attackontitan",
-            "#aot",
-            "#anime",
-            "#animemap",
-            "#AniMapVerse"
-          ],
-          "youtube": {
-            "madeForKids": false
-          },
-          "madeForKids": false
-        },
-        "waitFor": {}
-      }
-    ],
+    "ready": [],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",
