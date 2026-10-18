@@ -1593,6 +1593,91 @@
         }
       ]
     },
+    "character-versus:naruto:sasuke-uchiha-vs-dragonball-piccolo@en": {
+      "renderId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-piccolo@en",
+      "contentId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-piccolo",
+      "template": "characterVersus",
+      "anime": "naruto",
+      "subject": "sasuke-uchiha-vs-dragonball-piccolo",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-10-18T05:05:24.022Z",
+      "updatedAt": "2026-10-18T05:07:07.217Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-10-18T05:07:07.217Z",
+      "outputFile": "tools/social-engine/output/naruto_sasuke-uchiha-vs-dragonball-piccolo_character-versus_en.mp4",
+      "manifestFile": "tools/social-engine/output/naruto_sasuke-uchiha-vs-dragonball-piccolo_character-versus_en.manifest.json",
+      "sourceFile": "0021-naruto_sasuke-uchiha_character-versus_dragonball_piccolo_en.json",
+      "durationSeconds": 22,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-39099314154-1",
+        "runId": "39099314154",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/39099314154",
+        "video": "videos/naruto_sasuke-uchiha-vs-dragonball-piccolo_character-versus_en.mp4",
+        "manifest": "manifests/naruto_sasuke-uchiha-vs-dragonball-piccolo_character-versus_en.manifest.json",
+        "sha256": "c8a58617d0282010e0f4333163b534217b04e63ee7c956627b982c9dc2f4acc5",
+        "cover": "covers/naruto_sasuke-uchiha-vs-dragonball-piccolo_character-versus_en.cover.png",
+        "expiresAt": "2026-11-17T05:07:07.217Z"
+      },
+      "social": {
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "dragonball"
+        ],
+        "characters": [
+          "naruto:sasuke-uchiha",
+          "dragonball:piccolo"
+        ],
+        "characterNames": [
+          "Sasuke Uchiha",
+          "Piccolo"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "versus",
+        "hookId": "cv-versus-2",
+        "hook": "Sasuke Uchiha vs Piccolo: whose journey is bigger?",
+        "ctaType": "comment-next-matchup",
+        "cta": "Who should compete next?",
+        "durationSeconds": 22,
+        "selection": {
+          "mode": "coldstart",
+          "score": 91.96,
+          "seed": "feed15:guess-character:attackontitan:zeke-yeager@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Sasuke Uchiha vs Piccolo: whose journey is bigger?\n\nSasuke Uchiha (Naruto) vs Piccolo (Dragon Ball): every place on the map, one winner.\n\nWho should compete next? Drop a match-up 👇\n\nSave it for your next rewatch.\n\n#naruto #narutoshippuden #dragonball #dbz #sasukeuchiha #piccolo #anime #animemap",
+          "tiktokCaption": "Sasuke Uchiha vs Piccolo: whose journey is bigger? Who should compete next? Drop a match-up 👇 #naruto #narutoshippuden #dragonball #dbz #sasukeuchiha",
+          "youtubeTitle": "Sasuke Uchiha vs Piccolo: Who Travelled More? 🍥",
+          "youtubeDescription": "Sasuke Uchiha vs Piccolo: whose journey is bigger?\n\nSasuke Uchiha (Naruto) vs Piccolo (Dragon Ball): every place on the map, one winner.\n\nWho should compete next? Drop a match-up 👇\n\nInteractive map: https://animapverse.com\n\n#naruto #narutoshippuden #dragonball",
+          "facebookCaption": "Sasuke Uchiha vs Piccolo: whose journey is bigger?\n\nSasuke Uchiha (Naruto) vs Piccolo (Dragon Ball): every place on the map, one winner.\n\nWho should compete next? Drop a match-up 👇\n\nInteractive map: https://animapverse.com",
+          "hashtags": [
+            "#naruto",
+            "#narutoshippuden",
+            "#dragonball",
+            "#dbz",
+            "#sasukeuchiha",
+            "#piccolo",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-versus:onepiece:sanji-vs-blackclover-yami-sukehiro@en": {
       "renderId": "character-versus:onepiece:sanji-vs-blackclover-yami-sukehiro@en",
       "contentId": "character-versus:onepiece:sanji-vs-blackclover-yami-sukehiro",
