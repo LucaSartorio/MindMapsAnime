@@ -1604,7 +1604,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-10-18T05:05:24.022Z",
-      "updatedAt": "2026-10-18T05:07:07.217Z",
+      "updatedAt": "2026-10-18T05:15:43.772Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-10-18T05:07:07.217Z",
       "outputFile": "tools/social-engine/output/naruto_sasuke-uchiha-vs-dragonball-piccolo_character-versus_en.mp4",
@@ -1674,9 +1674,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-18T10:00:00+02:00",
+          "scheduledAt": "2026-10-18T05:11:12Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "398927462",
+          "providerPostUuid": "-8773108578190341404",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-8773108578190341404",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "naruto_sasuke-uchiha-vs-dragonball-piccolo_character-versus_en.instagram.scheduled.548737f1be9b"
+          ],
+          "updatedAt": "2026-10-18T05:15:43.772Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-18T10:00:00+02:00",
+          "scheduledAt": "2026-10-18T05:11:12Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "398927517",
+          "providerPostUuid": "-6423023364625186248",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-6423023364625186248",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "naruto_sasuke-uchiha-vs-dragonball-piccolo_character-versus_en.facebook.scheduled.7a564c88c31e"
+          ],
+          "updatedAt": "2026-10-18T05:15:43.772Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-18T10:00:00+02:00",
+          "scheduledAt": "2026-10-18T05:11:12Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "398927642",
+          "providerPostUuid": "7568504432794026165",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=7568504432794026165",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "naruto_sasuke-uchiha-vs-dragonball-piccolo_character-versus_en.tiktok.scheduled.2335947f6858"
+          ],
+          "updatedAt": "2026-10-18T05:15:43.772Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-18T10:00:00+02:00",
+          "scheduledAt": "2026-10-18T05:11:12Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "398927585",
+          "providerPostUuid": "4577868619524753591",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=4577868619524753591",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "naruto_sasuke-uchiha-vs-dragonball-piccolo_character-versus_en.youtube.scheduled.4834a38b19fe"
+          ],
+          "updatedAt": "2026-10-18T05:15:43.772Z"
+        }
+      ]
     },
     "character-versus:onepiece:sanji-vs-blackclover-yami-sukehiro@en": {
       "renderId": "character-versus:onepiece:sanji-vs-blackclover-yami-sukehiro@en",

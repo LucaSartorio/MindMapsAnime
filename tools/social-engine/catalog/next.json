@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-18T05:07:08.250Z",
-  "status": "backlog",
+  "generatedAt": "2026-10-18T05:15:43.792Z",
+  "status": "ready",
   "feedTail": [
     {
       "renderId": "character-journey:onepiece:monkey-d-luffy:part-02@en",
@@ -92,28 +92,495 @@
     "error": null
   },
   "backlog": {
-    "unpublished": [
-      {
-        "renderId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-piccolo@en",
-        "contentType": "character-versus",
-        "renderedAt": "2026-10-18T05:07:07.217Z",
-        "missing": [
-          "instagram",
-          "facebook",
-          "tiktok",
-          "youtube"
-        ]
-      }
-    ],
+    "unpublished": [],
     "unfinished": [],
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "",
-  "reason": "publish the existing render first: character-versus:naruto:sasuke-uchiha-vs-dragonball-piccolo@en (it counts as today's video; no new content)",
-  "alternatives": [],
-  "rejected": {},
-  "considered": 0,
-  "eligible": 0,
-  "trace": null
+  "seed": "feed16:character-versus:naruto:sasuke-uchiha-vs-dragonball-piccolo@en:samples0",
+  "rejected": {
+    "MAX_SAME_CHARACTER_STREAK": 40,
+    "JOURNEY_PART_ORDER": 43
+  },
+  "considered": 685,
+  "trace": {
+    "traceVersion": 1,
+    "mode": "coldstart",
+    "seed": "feed16:character-versus:naruto:sasuke-uchiha-vs-dragonball-piccolo@en:samples0",
+    "analytics": {
+      "coldStart": true,
+      "samples": 0,
+      "contents": 0,
+      "minimumSamples": 8
+    },
+    "recent": [
+      {
+        "renderId": "character-journey:onepiece:monkey-d-luffy:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "onepiece"
+        ],
+        "characters": [
+          "onepiece:monkey-d-luffy"
+        ]
+      },
+      {
+        "renderId": "guess-character:attackontitan:levi-ackerman@en",
+        "contentType": "guess-character",
+        "animes": [
+          "attackontitan"
+        ],
+        "characters": [
+          "attackontitan:levi-ackerman"
+        ]
+      },
+      {
+        "renderId": "character-journey:hunterxhunter:killua-zoldyck:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "hunterxhunter"
+        ],
+        "characters": [
+          "hunterxhunter:killua-zoldyck"
+        ]
+      },
+      {
+        "renderId": "character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro@en",
+        "contentType": "character-versus",
+        "animes": [
+          "bleach",
+          "blackclover"
+        ],
+        "characters": [
+          "bleach:rukia-kuchiki",
+          "blackclover:yami-sukehiro"
+        ]
+      },
+      {
+        "renderId": "guess-character:attackontitan:zeke-yeager@en",
+        "contentType": "guess-character",
+        "animes": [
+          "attackontitan"
+        ],
+        "characters": [
+          "attackontitan:zeke-yeager"
+        ]
+      },
+      {
+        "renderId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-piccolo@en",
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "dragonball"
+        ],
+        "characters": [
+          "naruto:sasuke-uchiha",
+          "dragonball:piccolo"
+        ]
+      }
+    ],
+    "constraints": {
+      "sameAnimeStreak": {
+        "animes": [
+          "naruto",
+          "dragonball"
+        ],
+        "length": 1
+      },
+      "forcedAnimeRotation": false,
+      "blockedAnimes": [],
+      "blockedCharacters": [
+        "naruto:sasuke-uchiha",
+        "dragonball:piccolo"
+      ],
+      "characterCooldown": [
+        "onepiece:monkey-d-luffy",
+        "attackontitan:levi-ackerman",
+        "hunterxhunter:killua-zoldyck",
+        "bleach:rukia-kuchiki",
+        "blackclover:yami-sukehiro",
+        "attackontitan:zeke-yeager",
+        "naruto:sasuke-uchiha",
+        "dragonball:piccolo"
+      ],
+      "contentTypeStreak": {
+        "contentType": "character-versus",
+        "length": 1
+      }
+    },
+    "hardRulesTriggered": {
+      "MAX_SAME_CHARACTER_STREAK": 40,
+      "JOURNEY_PART_ORDER": 43
+    },
+    "candidates": {
+      "considered": 685,
+      "eligible": 604,
+      "byContentType": {
+        "character-journey": {
+          "considered": 416,
+          "eligible": 371
+        },
+        "guess-character": {
+          "considered": 85,
+          "eligible": 83
+        },
+        "character-versus": {
+          "considered": 184,
+          "eligible": 150
+        }
+      }
+    },
+    "excluded": [
+      {
+        "renderId": "character-journey:dragonball:piccolo:part-01@en",
+        "contentType": "character-journey",
+        "animes": [
+          "dragonball"
+        ],
+        "characters": [
+          "dragonball:piccolo"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: dragonball:piccolo is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:dragonball:piccolo:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "dragonball"
+        ],
+        "characters": [
+          "dragonball:piccolo"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER",
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)",
+          "character streak: dragonball:piccolo is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:naruto:sasuke-uchiha:part-01@en",
+        "contentType": "character-journey",
+        "animes": [
+          "naruto"
+        ],
+        "characters": [
+          "naruto:sasuke-uchiha"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: naruto:sasuke-uchiha is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:naruto:sasuke-uchiha:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "naruto"
+        ],
+        "characters": [
+          "naruto:sasuke-uchiha"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER",
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)",
+          "character streak: naruto:sasuke-uchiha is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:dragonball:piccolo-vs-attackontitan-armin-arlert@en",
+        "contentType": "character-versus",
+        "animes": [
+          "dragonball",
+          "attackontitan"
+        ],
+        "characters": [
+          "dragonball:piccolo",
+          "attackontitan:armin-arlert"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: dragonball:piccolo is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:dragonball:piccolo-vs-attackontitan-mikasa-ackerman@en",
+        "contentType": "character-versus",
+        "animes": [
+          "dragonball",
+          "attackontitan"
+        ],
+        "characters": [
+          "dragonball:piccolo",
+          "attackontitan:mikasa-ackerman"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: dragonball:piccolo is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:dragonball:piccolo-vs-attackontitan-reiner-braun@en",
+        "contentType": "character-versus",
+        "animes": [
+          "dragonball",
+          "attackontitan"
+        ],
+        "characters": [
+          "dragonball:piccolo",
+          "attackontitan:reiner-braun"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: dragonball:piccolo is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:dragonball:piccolo-vs-blackclover-asta@en",
+        "contentType": "character-versus",
+        "animes": [
+          "dragonball",
+          "blackclover"
+        ],
+        "characters": [
+          "dragonball:piccolo",
+          "blackclover:asta"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: dragonball:piccolo is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:dragonball:piccolo-vs-blackclover-noelle-silva@en",
+        "contentType": "character-versus",
+        "animes": [
+          "dragonball",
+          "blackclover"
+        ],
+        "characters": [
+          "dragonball:piccolo",
+          "blackclover:noelle-silva"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: dragonball:piccolo is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:dragonball:piccolo-vs-blackclover-yami-sukehiro@en",
+        "contentType": "character-versus",
+        "animes": [
+          "dragonball",
+          "blackclover"
+        ],
+        "characters": [
+          "dragonball:piccolo",
+          "blackclover:yami-sukehiro"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: dragonball:piccolo is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      }
+    ],
+    "status": "selected",
+    "selectedId": "character-journey:jujutsukaisen:satoru-gojo",
+    "renderId": "character-journey:jujutsukaisen:satoru-gojo@en",
+    "contentType": "character-journey",
+    "animes": [
+      "jujutsukaisen"
+    ],
+    "characters": [
+      "jujutsukaisen:satoru-gojo"
+    ],
+    "score": 93.56,
+    "base": 79.06,
+    "reasons": [
+      "coldstart: novelty +23.4, jitter +5.6",
+      "+12 main character",
+      "+2.5 format below its target share (44% < 50%)"
+    ],
+    "ranked": [
+      {
+        "renderId": "character-journey:jujutsukaisen:satoru-gojo@en",
+        "contentType": "character-journey",
+        "animes": [
+          "jujutsukaisen"
+        ],
+        "score": 93.56,
+        "reasons": [
+          "coldstart: novelty +23.4, jitter +5.6",
+          "+12 main character",
+          "+2.5 format below its target share (44% < 50%)"
+        ]
+      },
+      {
+        "renderId": "character-journey:jujutsukaisen:yuta-okkotsu@en",
+        "contentType": "character-journey",
+        "animes": [
+          "jujutsukaisen"
+        ],
+        "score": 92.63,
+        "reasons": [
+          "coldstart: novelty +23.4, jitter +4.7",
+          "+12 main character",
+          "+2.5 format below its target share (44% < 50%)"
+        ]
+      },
+      {
+        "renderId": "character-journey:jujutsukaisen:suguru-geto@en",
+        "contentType": "character-journey",
+        "animes": [
+          "jujutsukaisen"
+        ],
+        "score": 92.61,
+        "reasons": [
+          "coldstart: novelty +23.4, jitter +4.7",
+          "+12 main character",
+          "+2.5 format below its target share (44% < 50%)"
+        ]
+      },
+      {
+        "renderId": "character-journey:jujutsukaisen:yuji-itadori@en",
+        "contentType": "character-journey",
+        "animes": [
+          "jujutsukaisen"
+        ],
+        "score": 92.22,
+        "reasons": [
+          "coldstart: novelty +23.4, jitter +4.3",
+          "+12 main character",
+          "+2.5 format below its target share (44% < 50%)"
+        ]
+      },
+      {
+        "renderId": "guess-character:bleach:yasutora-chad-sado@en",
+        "contentType": "guess-character",
+        "animes": [
+          "bleach"
+        ],
+        "score": 91.33,
+        "reasons": [
+          "coldstart: novelty +23.4, jitter +5.9",
+          "+12 main character"
+        ]
+      },
+      {
+        "renderId": "guess-character:onepiece:nami@en",
+        "contentType": "guess-character",
+        "animes": [
+          "onepiece"
+        ],
+        "score": 91.22,
+        "reasons": [
+          "coldstart: novelty +23.4, jitter +5.8",
+          "+12 main character"
+        ]
+      }
+    ],
+    "explanation": [
+      "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
+      "naruto:sasuke-uchiha, dragonball:piccolo excluded in every format (maxSameCharacterStreak 1).",
+      "Selected character-journey:jujutsukaisen:satoru-gojo@en (character-journey, jujutsukaisen) — coldstart, score 93.56 among 604 valid candidate(s)."
+    ]
+  },
+  "pick": {
+    "contentId": "character-journey:jujutsukaisen:satoru-gojo",
+    "renderId": "character-journey:jujutsukaisen:satoru-gojo@en",
+    "contentType": "character-journey",
+    "animes": [
+      "jujutsukaisen"
+    ],
+    "characters": [
+      "jujutsukaisen:satoru-gojo"
+    ],
+    "part": null,
+    "partCount": null,
+    "score": 93.56,
+    "reasons": [
+      "coldstart: novelty +23.4, jitter +5.6",
+      "+12 main character",
+      "+2.5 format below its target share (44% < 50%)"
+    ]
+  },
+  "request": {
+    "template": "characterJourney",
+    "anime": "jujutsukaisen",
+    "subject": "satoru-gojo",
+    "locale": "en",
+    "hook": "Satoru Gojo's journey is bigger than you remember.",
+    "hookType": "curiosity",
+    "hookId": "cj-curiosity-1",
+    "cta": "Follow for the next journey.",
+    "ctaType": "follow-for-more",
+    "selection": {
+      "mode": "coldstart",
+      "score": 93.56,
+      "seed": "feed16:character-versus:naruto:sasuke-uchiha-vs-dragonball-piccolo@en:samples0"
+    },
+    "notes": "growth selector (coldstart): coldstart: novelty +23.4, jitter +5.6; +12 main character; +2.5 format below its target share (44% < 50%)"
+  },
+  "alternatives": [
+    {
+      "renderId": "character-journey:jujutsukaisen:yuta-okkotsu@en",
+      "contentType": "character-journey",
+      "score": 92.63
+    },
+    {
+      "renderId": "character-journey:jujutsukaisen:suguru-geto@en",
+      "contentType": "character-journey",
+      "score": 92.61
+    },
+    {
+      "renderId": "character-journey:jujutsukaisen:yuji-itadori@en",
+      "contentType": "character-journey",
+      "score": 92.22
+    },
+    {
+      "renderId": "guess-character:bleach:yasutora-chad-sado@en",
+      "contentType": "guess-character",
+      "score": 91.33
+    },
+    {
+      "renderId": "guess-character:onepiece:nami@en",
+      "contentType": "guess-character",
+      "score": 91.22
+    }
+  ],
+  "eligible": 604
 }
