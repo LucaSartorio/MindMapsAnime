@@ -1,0 +1,22 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterVersus",
+  "anime": "naruto",
+  "subject": "sasuke-uchiha",
+  "opponent": {
+    "anime": "dragonball",
+    "subject": "piccolo"
+  },
+  "locale": "en",
+  "hook": "Sasuke Uchiha vs Piccolo: whose journey is bigger?",
+  "hookType": "versus",
+  "hookId": "cv-versus-2",
+  "cta": "Who should compete next?",
+  "ctaType": "comment-next-matchup",
+  "selection": {
+    "mode": "coldstart",
+    "score": 91.96,
+    "seed": "feed15:guess-character:attackontitan:zeke-yeager@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +24.0, jitter +6.0; +12 main character"
+}
