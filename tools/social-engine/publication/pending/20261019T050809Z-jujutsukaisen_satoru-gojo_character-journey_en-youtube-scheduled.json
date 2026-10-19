@@ -1,0 +1,13 @@
+{
+  "receiptVersion": 1,
+  "renderId": "character-journey:jujutsukaisen:satoru-gojo@en",
+  "provider": "metricool",
+  "status": "scheduled",
+  "scheduledFor": "2026-10-19T16:00:00+02:00",
+  "recordedAt": "2026-10-19T05:08:10Z",
+  "recordedBy": "chatgpt-work-publishing-agent",
+  "platform": "youtube",
+  "providerPostId": "399638430",
+  "providerPostUuid": "4071286437219288498",
+  "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=4071286437219288498"
+}
