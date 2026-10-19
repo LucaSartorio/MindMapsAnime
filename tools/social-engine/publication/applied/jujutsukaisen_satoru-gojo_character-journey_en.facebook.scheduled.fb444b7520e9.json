@@ -1,0 +1,30 @@
+{
+  "receiptId": "jujutsukaisen_satoru-gojo_character-journey_en.facebook.scheduled.fb444b7520e9",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-10-19T05:16:07.755Z",
+  "sourceFile": "20261019T050809Z-jujutsukaisen_satoru-gojo_character-journey_en-facebook-scheduled.json",
+  "run": {
+    "runId": "39203632540",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/39203632540",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "character-journey:jujutsukaisen:satoru-gojo@en",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-10-19T16:00:00+02:00",
+    "recordedAt": "2026-10-19T05:08:10Z",
+    "recordedBy": "chatgpt-work-publishing-agent",
+    "platform": "facebook",
+    "providerPostId": "399638322",
+    "providerPostUuid": "-8207072865318452207",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-8207072865318452207"
+  }
+}

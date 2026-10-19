@@ -465,7 +465,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-10-19T05:01:44.184Z",
-      "updatedAt": "2026-10-19T05:04:02.224Z",
+      "updatedAt": "2026-10-19T05:16:07.755Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-10-19T05:04:02.224Z",
       "outputFile": "tools/social-engine/output/jujutsukaisen_satoru-gojo_character-journey_en.mp4",
@@ -529,9 +529,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-19T16:00:00+02:00",
+          "scheduledAt": "2026-10-19T05:08:10Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "399638217",
+          "providerPostUuid": "3930411821118275978",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=3930411821118275978",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "jujutsukaisen_satoru-gojo_character-journey_en.instagram.scheduled.d2a4f31e9db3"
+          ],
+          "updatedAt": "2026-10-19T05:16:07.755Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-19T16:00:00+02:00",
+          "scheduledAt": "2026-10-19T05:08:10Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "399638322",
+          "providerPostUuid": "-8207072865318452207",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-8207072865318452207",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "jujutsukaisen_satoru-gojo_character-journey_en.facebook.scheduled.fb444b7520e9"
+          ],
+          "updatedAt": "2026-10-19T05:16:07.755Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-19T16:00:00+02:00",
+          "scheduledAt": "2026-10-19T05:08:10Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "399638522",
+          "providerPostUuid": "5329350614044984317",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=5329350614044984317",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "jujutsukaisen_satoru-gojo_character-journey_en.tiktok.scheduled.cde207965c67"
+          ],
+          "updatedAt": "2026-10-19T05:16:07.755Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-19T16:00:00+02:00",
+          "scheduledAt": "2026-10-19T05:08:10Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "399638430",
+          "providerPostUuid": "4071286437219288498",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=4071286437219288498",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "jujutsukaisen_satoru-gojo_character-journey_en.youtube.scheduled.9656f8b871f6"
+          ],
+          "updatedAt": "2026-10-19T05:16:07.755Z"
+        }
+      ]
     },
     "character-journey:naruto:itachi-uchiha@en": {
       "renderId": "character-journey:naruto:itachi-uchiha@en",

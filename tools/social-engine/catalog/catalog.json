@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-19T05:04:03.029Z",
+  "generatedAt": "2026-10-19T05:16:07.773Z",
   "locales": [
     "en",
     "it"
@@ -13117,7 +13117,9 @@
           "renderedLocales": [
             "en"
           ],
-          "scheduledLocales": [],
+          "scheduledLocales": [
+            "en"
+          ],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": true,
@@ -13127,12 +13129,12 @@
               "renderId": "character-journey:jujutsukaisen:satoru-gojo@en",
               "locale": "en",
               "variant": null,
-              "status": "notPublished",
+              "status": "scheduled",
               "platforms": {
-                "instagram": "notScheduled",
-                "facebook": "notScheduled",
-                "tiktok": "notScheduled",
-                "youtube": "notScheduled"
+                "instagram": "scheduled",
+                "facebook": "scheduled",
+                "tiktok": "scheduled",
+                "youtube": "scheduled"
               }
             }
           ]
@@ -25558,67 +25560,13 @@
     "summary": {
       "rendered": 22,
       "unavailable": 5,
-      "notPublished": 6,
-      "scheduled": 10,
+      "notPublished": 5,
+      "scheduled": 11,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0
     },
-    "ready": [
-      {
-        "renderId": "character-journey:jujutsukaisen:satoru-gojo@en",
-        "contentId": "character-journey:jujutsukaisen:satoru-gojo",
-        "anime": "jujutsukaisen",
-        "subject": "satoru-gojo",
-        "subjectName": "Satoru Gojo",
-        "locale": "en",
-        "variant": null,
-        "segment": null,
-        "partNumber": null,
-        "partCount": null,
-        "renderedAt": "2026-10-19T05:04:02.224Z",
-        "durationSeconds": 27,
-        "publicationStatus": "notPublished",
-        "platforms": {
-          "instagram": "notScheduled",
-          "facebook": "notScheduled",
-          "tiktok": "notScheduled",
-          "youtube": "notScheduled"
-        },
-        "artifact": {
-          "name": "animapverse-social-render-39202397081-1",
-          "runId": "39202397081",
-          "runAttempt": "1",
-          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/39202397081",
-          "video": "videos/jujutsukaisen_satoru-gojo_character-journey_en.mp4",
-          "manifest": "manifests/jujutsukaisen_satoru-gojo_character-journey_en.manifest.json",
-          "sha256": "958734bb13df12df861c65f11569b58c2c61e9225ff776ada9066c3036893db9",
-          "cover": "covers/jujutsukaisen_satoru-gojo_character-journey_en.cover.png",
-          "expiresAt": "2026-11-18T05:04:02.224Z"
-        },
-        "contentType": "character-journey",
-        "platformMetadata": {
-          "instagramCaption": "Satoru Gojo's journey is bigger than you remember.\n\nSatoru Gojo's journey across Jujutsu Kaisen: 5 places on the world map.\n\nFollow for more anime journeys.\n\nSave it for your next rewatch.\n\n#jujutsukaisen #jjk #satorugojo #anime #animemap #AniMapVerse",
-          "tiktokCaption": "Satoru Gojo's journey is bigger than you remember. Follow for more anime journeys. #jujutsukaisen #jjk #satorugojo #anime #animemap",
-          "youtubeTitle": "Every Place Satoru Gojo Visited 🌀 | Jujutsu Kaisen Journey",
-          "youtubeDescription": "Satoru Gojo's journey is bigger than you remember.\n\nSatoru Gojo's journey across Jujutsu Kaisen: 5 places on the world map.\n\nSubscribe for more anime journeys.\n\nInteractive map: https://animapverse.com/en/jujutsu-kaisen/characters/satoru-gojo\n\n#jujutsukaisen #jjk #satorugojo",
-          "facebookCaption": "Satoru Gojo's journey is bigger than you remember.\n\nSatoru Gojo's journey across Jujutsu Kaisen: 5 places on the world map.\n\nFollow for more anime journeys.\n\nInteractive map: https://animapverse.com/en/jujutsu-kaisen/characters/satoru-gojo",
-          "hashtags": [
-            "#jujutsukaisen",
-            "#jjk",
-            "#satorugojo",
-            "#anime",
-            "#animemap",
-            "#AniMapVerse"
-          ],
-          "youtube": {
-            "madeForKids": false
-          },
-          "madeForKids": false
-        },
-        "waitFor": {}
-      }
-    ],
+    "ready": [],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",
