@@ -30,19 +30,19 @@ export interface SeoStrings {
   };
   page: (n: number) => string;
   world: (w: string) => string;
-  worldDesc: (w: string, summary: string) => string;
+  worldDesc: (w: string, f: WorldFacts) => string;
   worldSoon: (w: string) => string;
   worldSoonDesc: (w: string) => string;
-  map: (w: string) => string;
-  mapDesc: (w: string, places: number, journeys: number) => string;
+  map: (w: string, places: number) => string;
+  mapDesc: (w: string, f: MapFacts) => string;
   characters: (w: string) => string;
   charactersDesc: (w: string, n: number) => string;
   locations: (w: string) => string;
   locationsDesc: (w: string, n: number) => string;
   factions: (w: string, term: string) => string;
   factionsDesc: (w: string, term: string, n: number) => string;
-  arcs: (w: string) => string;
-  arcsDesc: (w: string, n: number) => string;
+  arcs: (w: string, n: number) => string;
+  arcsDesc: (w: string, n: number, media: ArcMedia) => string;
   journeys: (w: string) => string;
   journeysDesc: (w: string, n: number) => string;
   abilities: (w: string, term: string) => string;
@@ -66,6 +66,46 @@ export interface SeoStrings {
   region: (name: string, w: string) => string;
   regionTail: (name: string, w: string) => string;
 }
+
+/** Fatti del dataset usati dalla description della landing di un mondo (tutti derivati dai dati). */
+export interface WorldFacts {
+  /** Regioni con più luoghi (max 3), già nella lingua dell'URL. */
+  regions: string[];
+  /** Ci sono altre regioni oltre a quelle elencate. */
+  moreRegions: boolean;
+  places: number;
+  characters: number;
+  arcs: number;
+  journeys: number;
+}
+
+/** Fatti della pagina mappa: sottomappe (nomi nella lingua dell'URL), luoghi e percorsi. */
+export interface MapFacts {
+  subMaps: string[];
+  places: number;
+  journeys: number;
+}
+
+/** Riferimenti a manga/anime presenti sugli archi (≥ metà degli archi del mondo). */
+export interface ArcMedia {
+  chapters: boolean;
+  episodes: boolean;
+}
+
+/** "A, B e C" nella lingua data (niente Intl: output identico su server e client). */
+function joinList(items: string[], and: string): string {
+  if (items.length <= 1) return items.join('');
+  return `${items.slice(0, -1).join(', ')} ${and} ${items[items.length - 1]}`;
+}
+
+/** Elenco di (fino a 2) sottomappe tra parentesi, con "…" se ce ne sono altre. */
+function subMapList(names: string[]): string {
+  if (names.length === 0) return '';
+  return ` (${names.slice(0, 2).join(', ')}${names.length > 2 ? '…' : ''})`;
+}
+
+/** Elementi non vuoti (i conteggi a zero spariscono dalla frase). */
+const parts = (...xs: (string | false | 0)[]) => xs.filter((x): x is string => !!x);
 
 export const SEO_STRINGS: Record<SeoLocale, SeoStrings> = {
   it: {
@@ -109,12 +149,16 @@ export const SEO_STRINGS: Record<SeoLocale, SeoStrings> = {
     },
     page: (n) => `Pagina ${n}`,
     world: (w) => `Mappa interattiva di ${w}: luoghi, personaggi e percorsi`,
-    worldDesc: (w, s) => `${s} Esplora la mappa interattiva di ${w} su AniMapVerse.`,
+    worldDesc: (w, f) =>
+      `Esplora la mappa interattiva di ${w}${f.regions.length ? ` — ${f.regions.join(', ')}${f.moreRegions ? ' e altro' : ''}` : ''}: ${joinList(
+        parts(`${f.places} luoghi`, `${f.characters} personaggi`, f.arcs > 0 && `${f.arcs} archi narrativi`, f.journeys > 0 && `${f.journeys} percorsi`),
+        'e',
+      )}.`,
     worldSoon: (w) => `${w} — mappa interattiva in arrivo`,
     worldSoonDesc: (w) => `La mappa interattiva di ${w} è in preparazione su AniMapVerse.`,
-    map: (w) => `Mappa del mondo di ${w} — esplora la mappa interattiva`,
-    mapDesc: (w, p, j) =>
-      `Esplora la mappa interattiva del mondo di ${w}: ${p} luoghi, ${j} percorsi dei personaggi, timeline degli eventi e filtri per archi narrativi e fazioni.`,
+    map: (w, p) => `Mappa di ${w}: mappa interattiva del mondo con ${p} luoghi`,
+    mapDesc: (w, f) =>
+      `Mappa interattiva del mondo di ${w}${f.subMaps.length ? ` con ${f.subMaps.length === 1 ? '1 sottomappa' : `${f.subMaps.length} sottomappe`}${subMapList(f.subMaps)}` : ''}: ${f.places} luoghi e ${f.journeys} percorsi dei personaggi da seguire.`,
     characters: (w) => `Personaggi di ${w}: schede, luoghi e archi narrativi`,
     charactersDesc: (w, n) =>
       `I ${n} personaggi di ${w} su AniMapVerse: ruoli, affiliazioni, luoghi collegati, archi narrativi e percorsi sulla mappa interattiva.`,
@@ -124,9 +168,9 @@ export const SEO_STRINGS: Record<SeoLocale, SeoStrings> = {
     factions: (w, t) => `${t} di ${w}: membri, luoghi e archi`,
     factionsDesc: (w, t, n) =>
       `${n} ${t.toLowerCase()} di ${w}: leader, membri, territori e archi narrativi in cui compaiono, collegati alla mappa interattiva.`,
-    arcs: (w) => `Archi narrativi di ${w}: eventi e luoghi`,
-    arcsDesc: (w, n) =>
-      `I ${n} archi narrativi di ${w} in ordine cronologico, con eventi, personaggi e luoghi di ogni arco sulla mappa interattiva.`,
+    arcs: (w, n) => `Archi narrativi di ${w} in ordine: tutti i ${n} archi`,
+    arcsDesc: (w, n, m) =>
+      `I ${n} archi narrativi di ${w} in ordine cronologico${m.chapters || m.episodes ? `, con ${joinList(parts(m.chapters && 'capitoli del manga', m.episodes && 'episodi dell’anime'), 'ed')}` : ''}: eventi, personaggi e luoghi di ogni arco.`,
     journeys: (w) => `Percorsi dei personaggi di ${w} sulla mappa`,
     journeysDesc: (w, n) =>
       `${n} percorsi di ${w} tappa per tappa: segui i viaggi dei protagonisti attraverso i luoghi del mondo sulla mappa interattiva.`,
@@ -198,12 +242,16 @@ export const SEO_STRINGS: Record<SeoLocale, SeoStrings> = {
     },
     page: (n) => `Page ${n}`,
     world: (w) => `${w} Interactive Map: Locations, Characters & Journeys`,
-    worldDesc: (w, s) => `${s} Explore the interactive ${w} map on AniMapVerse.`,
+    worldDesc: (w, f) =>
+      `Explore the interactive ${w} map${f.regions.length ? ` — ${f.regions.join(', ')}${f.moreRegions ? ' and more' : ''}` : ''}: ${joinList(
+        parts(`${f.places} locations`, `${f.characters} characters`, f.arcs > 0 && `${f.arcs} story arcs`, f.journeys > 0 && `${f.journeys} journeys`),
+        'and',
+      )}.`,
     worldSoon: (w) => `${w} — Interactive Map Coming Soon`,
     worldSoonDesc: (w) => `The interactive ${w} map is in the works on AniMapVerse.`,
-    map: (w) => `${w} World Map — Explore the Interactive Map`,
-    mapDesc: (w, p, j) =>
-      `Explore the interactive ${w} world map: ${p} locations, ${j} character journeys, an event timeline and filters by story arc and faction.`,
+    map: (w, p) => `${w} Map: Interactive World Map with ${p} Locations`,
+    mapDesc: (w, f) =>
+      `Interactive ${w} world map${f.subMaps.length ? ` with ${f.subMaps.length === 1 ? '1 sub-map' : `${f.subMaps.length} sub-maps`}${subMapList(f.subMaps)}` : ''}: ${f.places} locations and ${f.journeys} character journeys to follow.`,
     characters: (w) => `${w} Characters: Profiles, Locations & Story Arcs`,
     charactersDesc: (w, n) =>
       `All ${n} ${w} characters on AniMapVerse: roles, affiliations, connected locations, story arcs and journeys on the interactive map.`,
@@ -213,9 +261,9 @@ export const SEO_STRINGS: Record<SeoLocale, SeoStrings> = {
     factions: (w, t) => `${w} ${t}: Members, Locations & Arcs`,
     factionsDesc: (w, t, n) =>
       `${n} ${w} ${t.toLowerCase()}: leaders, members, territories and the story arcs they appear in, linked to the interactive map.`,
-    arcs: (w) => `${w} Story Arcs: Events & Locations`,
-    arcsDesc: (w, n) =>
-      `All ${n} ${w} story arcs in chronological order, with the events, characters and locations of each arc on the interactive map.`,
+    arcs: (w, n) => `${w} Arcs in Order: All ${n} Story Arcs`,
+    arcsDesc: (w, n, m) =>
+      `All ${n} ${w} story arcs in chronological order${m.chapters || m.episodes ? `, with ${joinList(parts(m.chapters && 'manga chapters', m.episodes && 'anime episodes'), 'and')}` : ''}: the events, characters and locations of each arc.`,
     journeys: (w) => `${w} Character Journeys on the Map`,
     journeysDesc: (w, n) =>
       `${n} ${w} journeys step by step: follow the main characters' travels across the world on the interactive map.`,
@@ -286,12 +334,16 @@ export const SEO_STRINGS: Record<SeoLocale, SeoStrings> = {
     },
     page: (n) => `Página ${n}`,
     world: (w) => `Mapa interactivo de ${w}: lugares, personajes y recorridos`,
-    worldDesc: (w, s) => `${s} Explora el mapa interactivo de ${w} en AniMapVerse.`,
+    worldDesc: (w, f) =>
+      `Explora el mapa interactivo de ${w}${f.regions.length ? ` — ${f.regions.join(', ')}${f.moreRegions ? ' y más' : ''}` : ''}: ${joinList(
+        parts(`${f.places} lugares`, `${f.characters} personajes`, f.arcs > 0 && `${f.arcs} arcos argumentales`, f.journeys > 0 && `${f.journeys} recorridos`),
+        'y',
+      )}.`,
     worldSoon: (w) => `${w} — mapa interactivo próximamente`,
     worldSoonDesc: (w) => `El mapa interactivo de ${w} está en preparación en AniMapVerse.`,
-    map: (w) => `Mapa del mundo de ${w} — explora el mapa interactivo`,
-    mapDesc: (w, p, j) =>
-      `Explora el mapa interactivo del mundo de ${w}: ${p} lugares, ${j} recorridos de personajes, una cronología de eventos y filtros por arco argumental y facción.`,
+    map: (w, p) => `Mapa de ${w}: mapa interactivo del mundo con ${p} lugares`,
+    mapDesc: (w, f) =>
+      `Mapa interactivo del mundo de ${w}${f.subMaps.length ? ` con ${f.subMaps.length === 1 ? '1 submapa' : `${f.subMaps.length} submapas`}${subMapList(f.subMaps)}` : ''}: ${f.places} lugares y ${f.journeys} recorridos de personajes para seguir.`,
     characters: (w) => `Personajes de ${w}: fichas, lugares y arcos argumentales`,
     charactersDesc: (w, n) =>
       `Los ${n} personajes de ${w} en AniMapVerse: roles, afiliaciones, lugares relacionados, arcos argumentales y recorridos en el mapa interactivo.`,
@@ -301,9 +353,9 @@ export const SEO_STRINGS: Record<SeoLocale, SeoStrings> = {
     factions: (w, t) => `${t} de ${w}: miembros, lugares y arcos`,
     factionsDesc: (w, t, n) =>
       `${n} ${t.toLowerCase()} de ${w}: líderes, miembros, territorios y los arcos argumentales en los que aparecen, conectados al mapa interactivo.`,
-    arcs: (w) => `Arcos argumentales de ${w}: eventos y lugares`,
-    arcsDesc: (w, n) =>
-      `Los ${n} arcos argumentales de ${w} en orden cronológico, con los eventos, personajes y lugares de cada arco en el mapa interactivo.`,
+    arcs: (w, n) => `Arcos de ${w} en orden: los ${n} arcos argumentales`,
+    arcsDesc: (w, n, m) =>
+      `Los ${n} arcos argumentales de ${w} en orden cronológico${m.chapters || m.episodes ? `, con ${joinList(parts(m.chapters && 'capítulos del manga', m.episodes && 'episodios del anime'), 'y')}` : ''}: eventos, personajes y lugares de cada arco.`,
     journeys: (w) => `Recorridos de los personajes de ${w} en el mapa`,
     journeysDesc: (w, n) =>
       `${n} recorridos de ${w} etapa por etapa: sigue los viajes de los protagonistas por los lugares del mundo en el mapa interactivo.`,
@@ -374,12 +426,16 @@ export const SEO_STRINGS: Record<SeoLocale, SeoStrings> = {
     },
     page: (n) => `Page ${n}`,
     world: (w) => `Carte interactive de ${w} : lieux, personnages et parcours`,
-    worldDesc: (w, s) => `${s} Explorez la carte interactive de ${w} sur AniMapVerse.`,
+    worldDesc: (w, f) =>
+      `Explorez la carte interactive de ${w}${f.regions.length ? ` — ${f.regions.join(', ')}${f.moreRegions ? ' et plus' : ''}` : ''} : ${joinList(
+        parts(`${f.places} lieux`, `${f.characters} personnages`, f.arcs > 0 && `${f.arcs} arcs narratifs`, f.journeys > 0 && `${f.journeys} parcours`),
+        'et',
+      )}.`,
     worldSoon: (w) => `${w} — carte interactive bientôt disponible`,
     worldSoonDesc: (w) => `La carte interactive de ${w} est en préparation sur AniMapVerse.`,
-    map: (w) => `Carte du monde de ${w} — explorez la carte interactive`,
-    mapDesc: (w, p, j) =>
-      `Explorez la carte interactive du monde de ${w} : ${p} lieux, ${j} parcours de personnages, une chronologie des événements et des filtres par arc narratif et par faction.`,
+    map: (w, p) => `Carte de ${w} : carte interactive du monde avec ${p} lieux`,
+    mapDesc: (w, f) =>
+      `Carte interactive du monde de ${w}${f.subMaps.length ? ` avec ${f.subMaps.length === 1 ? '1 sous-carte' : `${f.subMaps.length} sous-cartes`}${subMapList(f.subMaps)}` : ''} : ${f.places} lieux et ${f.journeys} parcours de personnages à suivre.`,
     characters: (w) => `Personnages de ${w} : fiches, lieux et arcs narratifs`,
     charactersDesc: (w, n) =>
       `Les ${n} personnages de ${w} sur AniMapVerse : rôles, affiliations, lieux liés, arcs narratifs et parcours sur la carte interactive.`,
@@ -389,9 +445,9 @@ export const SEO_STRINGS: Record<SeoLocale, SeoStrings> = {
     factions: (w, t) => `${t} de ${w} : membres, lieux et arcs`,
     factionsDesc: (w, t, n) =>
       `${n} ${t.toLowerCase()} de ${w} : chefs, membres, territoires et arcs narratifs où ils apparaissent, reliés à la carte interactive.`,
-    arcs: (w) => `Arcs narratifs de ${w} : événements et lieux`,
-    arcsDesc: (w, n) =>
-      `Les ${n} arcs narratifs de ${w} dans l\'ordre chronologique, avec les événements, les personnages et les lieux de chaque arc sur la carte interactive.`,
+    arcs: (w, n) => `Arcs de ${w} dans l\'ordre : les ${n} arcs narratifs`,
+    arcsDesc: (w, n, m) =>
+      `Les ${n} arcs narratifs de ${w} dans l\'ordre chronologique${m.chapters || m.episodes ? `, avec ${joinList(parts(m.chapters && 'les chapitres du manga', m.episodes && 'les épisodes de l’anime'), 'et')}` : ''} : événements, personnages et lieux de chaque arc.`,
     journeys: (w) => `Parcours des personnages de ${w} sur la carte`,
     journeysDesc: (w, n) =>
       `${n} parcours de ${w} étape par étape : suivez les voyages des protagonistes à travers les lieux du monde sur la carte interactive.`,

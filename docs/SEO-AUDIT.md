@@ -166,3 +166,87 @@ la coda delle tecniche con una frase e un utilizzatore.
   cambierebbe il deep-link senza un beneficio misurato. Da monitorare ("Indicizzata ma bloccata da robots.txt").
 - Link interni verso i percorsi derivati (canonical → personaggio): sono navigazione utile; la canonical basta.
 - `lastmod`, `rel=prev/next`, noindex sulla paginazione, structured data aggiuntivi: nessuna base nelle linee guida.
+
+---
+
+## SEO Growth Sprint 1 — Black Clover e Attack on Titan (ottobre 2026)
+
+Primo sprint di crescita guidato dai dati di Google Search Console (18/07–17/10/2026: 69.708 impressioni,
+221 clic, CTR 0,32 %, posizione media 11,85; forte crescita dal 6 ottobre). Obiettivo: trasformare in clic le
+impressioni già ottenute, partendo dalle pagine hub di Black Clover (30.355 impressioni, CTR 0,36 %) e
+Attack on Titan (6.093, CTR 0,74 %). Le query esplicitamente "mappa" hanno un CTR molto più alto della media
+("attack on titan interactive map" 34 %, "aot interactive map" 40 %), mentre "black clover map" (253 impr.,
+pos. 7,2, CTR 0,4 %), "black clover world map" (100, pos. 7,0, 1 %) e "attack on titan map" (86, pos. 13,6,
+0 %) quasi non cliccano. Ipotesi: il vantaggio di AniMapVerse è l'atlante interattivo, e la pagina `/map` —
+la destinazione naturale di queste query — era la più debole.
+
+### Problemi riscontrati (sull'HTML di build reale)
+
+| # | Problema | Pagine | Severity |
+| --- | --- | --- | --- |
+| 1 | `/map` dopo l'idratazione: H1 e lead `sr-only`, l'indice di link pre-renderizzato **spariva** quando React Flow sostituiva l'anteprima. Nel DOM renderizzato da Google: nessun testo visibile né link contestuali. | 32 pagine mappa (8 mondi × 4 lingue) | HIGH |
+| 2 | Cannibalizzazione: landing "<W> Interactive Map: …" e mappa "<W> World Map — Explore the Interactive Map" sulla stessa query; la mappa non possedeva "<W> map". | landing + mappa | MEDIUM |
+| 3 | Description della landing = lore tagliata a metà frase ("…the Dark Triad's Spade…") + coda generica: snippet poco chiaro, nessun valore esplicito (quanti luoghi, quali regni). | 32 landing | MEDIUM |
+| 4 | Indici archivio con H1 generico senza mondo ("Story arcs", "Characters archive"); indice archi con salto H1 → H3. | 32 indici × 4 lingue | MEDIUM |
+| 5 | Indice archi: title "Story Arcs: Events & Locations" non allineato all'intento "arcs in order"; capitoli/episodi presenti nei dati ma non sulle card. | 32 pagine | MEDIUM |
+| 6 | Description delle entità tagliate a metà frase prima della coda (es. Lolopechka, The four elemental spirits). | migliaia | LOW · rinviato (sprint 2) |
+
+### Interventi
+
+1. **Metadati per intento** (`src/seo/strings.ts`, `src/seo/metadata.ts`): helper dai dati `worldFacts`,
+   `mapFacts`, `arcMedia`, `regionsByPlaceCount`, `subMapLevels`.
+   - Landing: title **invariato** (è la pagina che già converte sulle query "interactive map");
+     description dai dati. Prima/dopo `/en/black-clover`:
+     "The continent of the four suits: Asta and Yuno’s Clover Kingdom, militarist Diamond, the Dark Triad’s Spade…
+     Explore the interactive Black Clover map on AniMapVerse." → "Explore the interactive Black Clover map — Clover
+     Kingdom, Spade Kingdom, Heart Kingdom and more: 85 locations, 137 characters, 19 story arcs and 23 journeys."
+   - Mappa: "Black Clover World Map — Explore the Interactive Map" → **"Black Clover Map: Interactive World Map
+     with 85 Locations"**; description con le sottomappe reali (Royal Capital, Spade Kingdom fortress…).
+     AoT: "Attack on Titan Map: Interactive World Map with 70 Locations" (sottomappe Paradis Island, Within the Walls…).
+   - Archi: "Black Clover Story Arcs: Events & Locations" → **"Black Clover Arcs in Order: All 19 Story Arcs"**.
+   - IT/ES/FR con gli stessi dati nella lingua dell'URL (nomi di regioni e sottomappe dagli overlay es/fr).
+2. **Guida alla mappa** (`src/pages/seo/MapGuide.tsx`): `<details>` nativo in alto a destra, presente prima e
+   dopo l'idratazione. Per ogni livello mappa: nome, descrizione (testo dei dati, finora non mostrato in nessuna
+   pagina), luoghi come link reali; poi regioni, percorsi, link agli indici. Click semplice = apre il luogo sulla
+   mappa (cambia livello, scheda, focus) e chiude la guida; Ctrl/⌘-click e crawler → pagina del luogo. Nessuna
+   dipendenza nuova, nessuno stato React su `open` (markup SSR identico).
+3. **Landing**: sezione "Maps of the <W> world" (livelli mappa + numero di luoghi; la sottomappa linka il luogo
+   da cui si apre), CTA con anchor descrittivi ("Explore the Black Clover map", "Black Clover timeline").
+4. **Indici archivio**: H1 con il mondo in tutte le lingue UI; archi con riepilogo delle saghe dai dati, H2
+   "Arcs in chronological order", capitoli manga / episodi anime su ogni card.
+5. **Test**: `test:seo` — title landing ≠ mappa, conteggi nei title, description della landing mai troncata e
+   ≤ 200 caratteri. `audit:a11y` — scenari "map guide (open)" e "arcs archive".
+
+Ambito: 64 pagine hub (landing + mappa, 8 mondi × 4 lingue) e 32 indici archi cambiano title/description;
+nessuna pagina entità, canonical, hreflang, sitemap, robots o redirect modificati. I template sono gli stessi per
+tutti i mondi (nessun testo scritto a mano per Black Clover o AoT): un nuovo anime li eredita.
+
+### Verifiche
+
+| Controllo | Esito |
+| --- | --- |
+| `tsc -b` · `test:seo` (15 test) · `i18n:audit` · `vite build` · SSR · prerender · `seo:check` (via `npm run build`) | ✅ 16.102 pagine, 13.812 indicizzabili (invariate), 739.852 link interni verificati (+3.156), 53 avvisi (gli stessi di prima: title lunghi di entità `/es`) |
+| `validate:data` · `validate:i18n` | ✅ |
+| `npm run smoke` (rotte, idratazione conservata, cambio lingua, 404, header 5 route × 6 viewport) | ✅ SMOKE OK |
+| `audit:a11y` (axe, WCAG 2.2 AA) con i nuovi scenari "map guide (open)" e "arcs archive" | ✅ nessuna violazione |
+| Browser (Chromium, build statica): H1 su 10 pagine in 4 lingue, guida chiusa/aperta desktop 1440 e mobile 390, click su un luogo di una sottomappa (livello → Royal Capital, scheda Grimoire Tower aperta, guida chiusa) | ✅ nessun errore console / hydration |
+| Peso HTML `/map` (gzip) | BC 7,1 → 9,6 KB, AoT 7,0 → 9,4 KB, One Piece 7,0 → 13,2 KB (max 40 luoghi per livello); landing BC 12,0 → 12,3 KB. Nessuna libreria nuova; LCP invariato (l’immagine della mappa resta la candidata, con preload) |
+
+### Monitoraggio (Search Console → Prestazioni, confronto con il periodo precedente di pari durata)
+
+Deploy = giorno 0; controlli a 7, 14 e 28 giorni. Le variazioni a 7 giorni sono indicative (riscansione,
+riscrittura dei title da parte di Google); le decisioni si prendono a 28 giorni. Obiettivi, non garanzie.
+
+| Pagina | Keyword principale | Baseline | Metrica | Obiettivo a 28 gg |
+| --- | --- | --- | --- | --- |
+| `/en/black-clover/map` | black clover map · black clover world map | query: 253 impr. CTR 0,40 % pos. 7,22 · 100 impr. CTR 1 % pos. 7,0 (pagina di atterraggio non nota) | pagina che riceve le query (filtro query → scheda Pagine), CTR, posizione | le query "map" atterrano su `/map`; CTR ≥ 2 % |
+| `/en/black-clover` | black clover interactive map · black clover | 1.310 impr., 23 clic, pos. 6,67 | clic e CTR della pagina; nessun calo sulle query "interactive map" | CTR ≥ 2,5 % senza perdita di posizione |
+| `/en/black-clover/arcs` | black clover arcs (in order) | 638 impr., 1 clic, pos. 10,21 | CTR, posizione, nuove query "in order"/"episodes" | CTR ≥ 1 % |
+| `/en/attack-on-titan/map` | attack on titan map · aot map | query "attack on titan map": 86 impr., 0 %, pos. 13,64 | posizione e pagina di atterraggio | posizione < 10, primi clic |
+| `/en/attack-on-titan` | attack on titan interactive map · aot interactive map | 434 impr., 20 clic, pos. 11,86; query 34,4 % / 40 % CTR | mantenere il CTR delle query "interactive map" | CTR delle query invariato o in crescita |
+| `/en/black-clover/factions/black-bulls`, `/the-paladins`, `/the-four-elemental-spirits`, `/characters/lolopechka` | nome dell'entità | 522 / 684 / 822 / 839 impr., 0–1 clic, pos. 8–10 | solo osservazione (pagine non modificate): base di confronto per lo sprint 2 | — |
+
+Segnali d'allarme: calo di clic su `/en/attack-on-titan` o sulle query "interactive map" (title della landing
+invariato, quindi non atteso); pagine `/map` in "Indicizzata, ma bloccata" o "Duplicata" in *Pagine*.
+Controllare anche *Controllo URL → Visualizza pagina sottoposta a scansione* su `/en/black-clover/map`: la
+guida (h2 "Guide to the Black Clover map" e i link ai luoghi) deve comparire nell'HTML renderizzato.

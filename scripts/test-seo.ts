@@ -16,7 +16,9 @@
  *  - canonical verso altra risorsa (percorsi derivati): destinazione
  *    indicizzabile, niente noindex/hreflang/sitemap sulla pagina;
  *  - lingue aggiuntive (es): pagine solo per i mondi tradotti, link che
- *    ricadono su `/en` per gli altri.
+ *    ricadono su `/en` per gli altri;
+ *  - landing / mappa / indice archi: title distinti (niente cannibalizzazione),
+ *    description della landing dai dati (mai lore troncata).
  */
 import assert from 'node:assert/strict';
 import type { WorldDataset } from '../src/types';
@@ -211,6 +213,31 @@ async function main() {
       const f = p.dataset.factions.find((x) => x.id === p.id)!;
       const label = getFactionTypeLabel(String(f.type), r.lang);
       if (label) assert.ok(buildPageMeta(r).title.includes(`(${label})`), `${r.path}: tipo "${f.type}" non localizzato nel title`);
+    }
+  });
+
+  test('landing, mappa e indice archi: intenti distinti, metadati derivati dai dati', () => {
+    for (const r of pages) {
+      const p = r.page;
+      if (p.kind === 'world' && p.dataset) {
+        const m = buildPageMeta(r);
+        const places = categoryEntities(p.dataset, 'locations').length;
+        // Niente lore tagliata a metà: la description è costruita dai conteggi e dalle regioni reali.
+        assert.ok(!m.description.includes('…'), `${r.path}: description della landing troncata "${m.description}"`);
+        assert.ok(m.description.includes(String(places)), `${r.path}: description senza il numero di luoghi`);
+        assert.ok(m.description.length <= 200, `${r.path}: description della landing troppo lunga (${m.description.length})`);
+      }
+      if (p.kind === 'map') {
+        const m = buildPageMeta(r);
+        const landing = buildPageMeta({ ...r, path: worldPath(r.lang, p.dataset.world), page: { kind: 'world', world: p.dataset.world, dataset: p.dataset } });
+        // La mappa possiede "<mondo> map": title diverso dalla landing e con il numero reale di luoghi.
+        assert.notEqual(m.title, landing.title, `${r.path}: title uguale alla landing`);
+        assert.ok(m.title.includes(String(categoryEntities(p.dataset, 'locations').length)), `${r.path}: title della mappa senza conteggio luoghi`);
+        assert.ok(m.description.length <= 200, `${r.path}: description della mappa troppo lunga (${m.description.length})`);
+      }
+      if (p.kind === 'category' && p.category === 'arcs') {
+        assert.ok(buildPageMeta(r).title.includes(String(p.dataset.arcs.length)), `${r.path}: title degli archi senza conteggio`);
+      }
     }
   });
 

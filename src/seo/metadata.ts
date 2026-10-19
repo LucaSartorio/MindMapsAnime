@@ -29,6 +29,7 @@ import {
 import {
   PAGINATED_CATEGORIES,
   categoryEntities,
+  seoLocations,
   type SeoCategory,
 } from './categories';
 import {
@@ -47,7 +48,7 @@ import {
 import { isDerivedJourney } from '@/data/shared/autoJourneys';
 import { entityIdFromSlug, getSlugIndex } from './slug';
 import { entityQuality } from './quality';
-import { SEO_STRINGS } from './strings';
+import { SEO_STRINGS, type ArcMedia, type MapFacts, type WorldFacts } from './strings';
 import {
   breadcrumbLd,
   creativeWorkLd,
@@ -290,6 +291,60 @@ export function breadcrumbTrail(
 }
 
 /* ------------------------------------------------------------------ */
+/* Fatti dei mondi (landing, mappa, archi)                               */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Regioni (nazioni) ordinate per numero di luoghi con pagina, poi ordine del
+ * dataset. Condiviso da description della landing e sezioni delle pagine, così
+ * metadati e contenuto visibile citano le stesse regioni.
+ */
+export function regionsByPlaceCount(dataset: WorldDataset): Nation[] {
+  const count = new Map<string, number>();
+  for (const l of seoLocations(dataset)) if (l.nationId) count.set(l.nationId, (count.get(l.nationId) ?? 0) + 1);
+  return dataset.nations
+    .map((n, i) => ({ n, i, c: count.get(n.id) ?? 0 }))
+    .filter((x) => x.c > 0)
+    .sort((a, b) => b.c - a.c || a.i - b.i)
+    .map((x) => x.n);
+}
+
+/** Sottomappe del mondo (ogni livello tranne la mappa principale), in ordine di dataset. */
+export function subMapLevels(dataset: WorldDataset) {
+  const main = dataset.world.defaultMapLevelId ?? dataset.mapLevels[0]?.id;
+  return dataset.mapLevels.filter((l) => l.id !== main);
+}
+
+export function worldFacts(dataset: WorldDataset, locale: SupportedLocale): WorldFacts {
+  const regions = regionsByPlaceCount(dataset);
+  return {
+    regions: regions.slice(0, 3).map((n) => getEntityDisplayName(n, locale)),
+    moreRegions: regions.length > 3,
+    places: seoLocations(dataset).length,
+    characters: dataset.characters.length,
+    arcs: dataset.arcs.length,
+    journeys: dataset.routes.length,
+  };
+}
+
+export function mapFacts(dataset: WorldDataset, locale: SupportedLocale): MapFacts {
+  return {
+    subMaps: subMapLevels(dataset).map((l) => getLocalizedText(l.localizedName, locale) || l.name),
+    places: seoLocations(dataset).length,
+    journeys: dataset.routes.length,
+  };
+}
+
+/** Capitoli/episodi citati solo se presenti su almeno metà degli archi (niente promesse vuote). */
+export function arcMedia(dataset: WorldDataset): ArcMedia {
+  const half = dataset.arcs.length / 2;
+  return {
+    chapters: dataset.arcs.length > 0 && dataset.arcs.filter((a) => a.mangaChapters?.length).length >= half,
+    episodes: dataset.arcs.length > 0 && dataset.arcs.filter((a) => a.animeEpisodes?.length).length >= half,
+  };
+}
+
+/* ------------------------------------------------------------------ */
 /* Metadati                                                              */
 /* ------------------------------------------------------------------ */
 
@@ -494,7 +549,7 @@ export function buildPageMeta(resolved: ResolvedPage): PageMeta {
       const w = worldName(page.world);
       if (page.dataset) {
         title = S.world(w);
-        description = S.worldDesc(w, clip(getLocalizedText(page.world.description, lang), 110));
+        description = S.worldDesc(w, worldFacts(page.dataset, lang));
       } else {
         title = S.worldSoon(w);
         description = S.worldSoonDesc(w);
@@ -506,8 +561,9 @@ export function buildPageMeta(resolved: ResolvedPage): PageMeta {
     }
     case 'map': {
       const w = worldName(page.dataset.world);
-      title = S.map(w);
-      description = S.mapDesc(w, categoryEntities(page.dataset, 'locations').length, page.dataset.routes.length);
+      const facts = mapFacts(page.dataset, lang);
+      title = S.map(w, facts.places);
+      description = S.mapDesc(w, facts);
       jsonLd.push(
         webPageLd({ type: 'WebPage', path, name: title, description, lang, about: creativeWorkLd(page.dataset.world, lang) }),
       );
@@ -529,7 +585,7 @@ export function buildPageMeta(resolved: ResolvedPage): PageMeta {
         characters: [S.characters(w), S.charactersDesc(w, n)],
         locations: [S.locations(w), S.locationsDesc(w, n)],
         factions: [S.factions(w, term), S.factionsDesc(w, term, n)],
-        arcs: [S.arcs(w), S.arcsDesc(w, n)],
+        arcs: [S.arcs(w, n), S.arcsDesc(w, n, arcMedia(dataset))],
         journeys: [S.journeys(w), S.journeysDesc(w, n)],
         abilities: [S.abilities(w, term), S.abilitiesDesc(w, term, n)],
         regions: [S.regions(w), S.regionsDesc(w, n)],
