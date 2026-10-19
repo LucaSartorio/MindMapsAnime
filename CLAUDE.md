@@ -657,6 +657,12 @@ metadata, and every indexable entity has a stable URL. The whole layer lives in 
   "Naruto — Personaggi", same labels as the header tabs). Entity pages and 404 return `null` and keep the SEO
   title (a generic title repeated on hundreds of pages would be a duplicate for Google, which reads the JS title).
   The pre-rendered `<title>`, Open Graph and JSON-LD stay the descriptive `buildPageMeta` ones.
+- **One intent per hub page** (docs/SEO.md §6b): landing = "<anime> interactive map" + world guide (description
+  from `worldFacts`: top regions + counts, never cropped lore), `/map` = "<anime> map / world map" (`mapFacts`:
+  sub-maps + counts), arcs index = "arcs in order" (`arcMedia`). Templates are world-agnostic and data-derived —
+  never hand-write per-world SEO copy. The map page's `MapGuide` (`src/pages/seo/MapGuide.tsx`, native `<details>`)
+  must stay rendered **after hydration** too (map levels + descriptions, places, regions, journeys as real
+  `<a href>`, click = open on map via `CardLink`): it is the only text/link context of `/map` once React Flow mounts.
 - **Index/noindex** (`isIndexable`, `src/seo/quality.ts`): entity pages are indexable only above a
   content threshold AND when their text truly exists in that language (a plain-string
   `Localizable` counts as Italian). hreflang lists only indexable versions (reciprocal); noindex

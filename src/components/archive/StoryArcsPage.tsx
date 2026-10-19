@@ -72,9 +72,13 @@ export function StoryArcsPage({ dataset, resolved }: StoryArcsPageProps) {
           {getLocalizedText(dataset.world.title, locale)}
         </p>
         <h1 className="font-display text-3xl text-ink-100">
-          {t('arcs.archiveTitle')}
+          {t('seoPages.arcsH1', { world: getLocalizedText(dataset.world.title, locale) })}
         </h1>
-        <p className="text-sm text-ink-300 max-w-2xl">{t('arcs.archiveLead')}</p>
+        <p className="text-sm text-ink-300 max-w-2xl">
+          {t('arcs.archiveLead')}
+          {sagas.length > 1 &&
+            ` ${t('seoPages.arcsSagas', { count: dataset.arcs.length, sagas: sagas.length, list: sagas.join(', ') })}`}
+        </p>
       </header>
 
       <div className="flex flex-wrap items-center gap-3">
@@ -101,6 +105,8 @@ export function StoryArcsPage({ dataset, resolved }: StoryArcsPageProps) {
       </div>
 
       <SourceNotice compact />
+
+      <h2 className="font-display text-xl text-ink-100">{t('seoPages.arcsListTitle')}</h2>
 
       {items.length === 0 ? (
         <EmptyState

@@ -32,6 +32,11 @@ function StoryArcCardComponent({
   const charCount = (arc.characterIds ?? []).length;
   const name = getLocalizedText(arc.localizedName, locale) || arc.name;
   const saga = getLocalizedText(arc.saga, locale);
+  // Capitoli/episodi dai dati (gli stessi della pagina dell'arco): utili a chi cerca "archi in ordine".
+  const media = [
+    arc.mangaChapters?.length && `${t('modals.manga')}: ${arc.mangaChapters.join(', ')}`,
+    arc.animeEpisodes?.length && `${t('modals.anime')}: ${arc.animeEpisodes.join(', ')}`,
+  ].filter((x): x is string => !!x);
 
   return (
     <Card
@@ -54,6 +59,7 @@ function StoryArcCardComponent({
         <p className="text-sm text-ink-300 leading-relaxed line-clamp-3">
           {getLocalizedText(arc.description, locale)}
         </p>
+        {media.length > 0 && <p className="text-xs text-ink-400">{media.join(' · ')}</p>}
         <div className="flex flex-wrap items-center gap-1.5 mt-1">
           <CanonPill canon={arc.canon} />
           {arc.referenceStatus && (

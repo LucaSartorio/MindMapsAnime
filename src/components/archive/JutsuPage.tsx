@@ -145,7 +145,7 @@ export function JutsuPage({ dataset, resolved }: JutsuPageProps) {
           {getLocalizedText(dataset.world.title, locale)}
         </p>
         <h1 className="font-display text-3xl text-ink-100">
-          {t('jutsu.archiveTitle', { term })}
+          {t('seoPages.abilitiesH1', { world: getLocalizedText(dataset.world.title, locale), term })}
         </h1>
         <p className="text-sm text-ink-300 max-w-2xl">{t('jutsu.archiveLead')}</p>
       </header>

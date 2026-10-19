@@ -139,7 +139,10 @@ export function ClansAndFactionsPage({ dataset, resolved }: ClansAndFactionsPage
           {getLocalizedText(dataset.world.title, locale)}
         </p>
         <h1 className="font-display text-3xl text-ink-100">
-          {getFactionsTerm(dataset.world, locale, t('clans.archiveTitle'))}
+          {t('seoPages.factionsH1', {
+            world: getLocalizedText(dataset.world.title, locale),
+            term: getFactionsTerm(dataset.world, locale, t('clans.archiveTitle')),
+          })}
         </h1>
         <p className="text-sm text-ink-300 max-w-2xl">{t('clans.archiveLead')}</p>
       </header>

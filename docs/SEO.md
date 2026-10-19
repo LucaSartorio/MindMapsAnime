@@ -225,6 +225,28 @@ Controlli (bloccanti): `npm run validate:i18n` (errori `plain_string`,
   `/og-image.png`. Punto di estensione per card per-entità: `ogImageFor()` in
   `metadata.ts` (le future card vivranno sotto `/og/`, già escluso da robots).
 
+### 6b. Search intent di landing, mappa e indici (Growth Sprint 1, ottobre 2026)
+
+Ogni pagina hub ha un intento diverso, così landing e `/map` non si contendono
+la stessa query (dati GSC 18/07–17/10/2026: le query "<anime> interactive map"
+convertono già bene sulla landing; "<anime> map" / "world map" avevano CTR
+quasi nullo):
+
+| Pagina | Keyword principale | Title (EN) | Description |
+| --- | --- | --- | --- |
+| Landing `/{world}` | `<anime> interactive map` + guida al mondo | invariato: `<W> Interactive Map: Locations, Characters & Journeys` | **dai dati** (`worldFacts`): 3 regioni con più luoghi + conteggi luoghi/personaggi/archi/percorsi. Non più la lore tagliata a metà con "…" |
+| Mappa `/{world}/map` | `<anime> map`, `<anime> world map` | `<W> Map: Interactive World Map with N Locations` | sottomappe (`mapFacts`: numero + prime due) + luoghi e percorsi |
+| Archi `/{world}/arcs` | `<anime> arcs (in order)` | `<W> Arcs in Order: All N Story Arcs` | "in ordine cronologico", + capitoli/episodi **solo** se presenti su ≥ metà degli archi (`arcMedia`) |
+
+Regole: niente testo per-mondo scritto a mano (i template valgono per ogni
+mondo, nuovi inclusi); le stesse funzioni (`regionsByPlaceCount`,
+`subMapLevels`) alimentano metadati e contenuto visibile, così title,
+description e pagina dicono la stessa cosa. `test:seo` verifica title distinti
+landing/mappa, conteggi nei title e nessuna description troncata sulla landing.
+Gli indici archivio (personaggi, fazioni, tecniche, archi) hanno un H1 con il
+nome del mondo (`seoPages.*H1`), non più "Story arcs" generico; l'indice archi
+ha un H2 sopra la griglia (prima H1 → H3) e mostra capitoli/episodi su ogni card.
+
 ---
 
 ## 7. Structured data
@@ -276,8 +298,15 @@ Solo tipi pertinenti, niente dati inventati:
   collegata; archi con precedente/successivo; eventi → ancora in timeline.
 - Card degli archivi = veri link (`CardLink`): il click apre comunque la scheda.
 - Schede modali sulla mappa → link "Apri la pagina completa" (↗).
-- Mappa: l'HTML statico contiene un indice di link (regioni, luoghi principali,
-  percorsi); dopo l'idratazione subentra React Flow.
+- Mappa: la **guida alla mappa** (`MapGuide`, `<details>` nativo in alto a destra)
+  è presente nell'HTML statico **e dopo l'idratazione**: per ogni livello mappa
+  nome, descrizione e luoghi, poi regioni e percorsi, con `<a href>` reali (il
+  click semplice apre il luogo sulla mappa, cambiando livello se serve). Prima
+  l'indice spariva quando React Flow sostituiva l'anteprima: la pagina
+  renderizzata da Google restava senza testo né link.
+- Landing: sezione "Mappe del mondo" (livelli mappa con numero di luoghi; ogni
+  sottomappa linka il luogo da cui si apre) e CTA con anchor descrittivo
+  ("Esplora la mappa di <mondo>", "Cronologia di <mondo>").
 - `seo:check` verifica ~170.000 link interni a ogni build (nessun 404 ammesso).
 
 ---

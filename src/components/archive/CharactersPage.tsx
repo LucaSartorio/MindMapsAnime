@@ -148,7 +148,7 @@ export function CharactersPage({ dataset, resolved }: CharactersPageProps) {
           {getLocalizedText(dataset.world.title, locale)}
         </p>
         <h1 className="font-display text-3xl text-ink-100">
-          {t('characters.archiveTitle')}
+          {t('seoPages.charactersH1', { world: getLocalizedText(dataset.world.title, locale) })}
         </h1>
         <p className="text-sm text-ink-300 max-w-2xl">
           {t('characters.archiveLead')}

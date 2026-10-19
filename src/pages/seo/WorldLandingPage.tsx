@@ -5,7 +5,7 @@ import { useLocaleStore } from '@/store/useLocaleStore';
 import { getEntityDisplayName, getFactionTypeLabel, getLocalizedText, getLocationTypeLabel } from '@/utils/localization';
 import { getAbilityTerm, getFactionsTerm, getFeaturedIds, humanizeId } from '@/lib/worldConfig';
 import type { ResolvedPage } from '@/seo/metadata';
-import { worldHasCategory } from '@/seo/metadata';
+import { subMapLevels, worldHasCategory } from '@/seo/metadata';
 import { categoryEntities, seoLocations } from '@/seo/categories';
 import { categoryPath, entityPath, mapPath, timelinePath } from '@/seo/paths';
 import { worldMapImage } from '@/seo/images';
@@ -45,6 +45,12 @@ export function WorldLandingPage({ resolved, dataset }: { resolved: ResolvedPage
   const abilities = pickFeatured(dataset.jutsu ?? [], getFeaturedIds(world, 'abilities'), (j) => j.characterIds?.length ?? 0);
 
   const href = (cat: Parameters<typeof entityPath>[2], id: string) => entityPath(lang, dataset, cat, id)!;
+  const mapCta = t('seoPages.exploreWorldMap', { world: title });
+  // Livelli mappa: la mappa principale, poi le sottomappe (ognuna si apre da un luogo).
+  const placeById = new Map(places.map((l) => [l.id, l]));
+  const subLevels = subMapLevels(dataset);
+  const mapLevels = [...dataset.mapLevels.filter((l) => !subLevels.includes(l)), ...subLevels];
+  const placesPerLevel = (id: string) => places.filter((l) => l.mapLevelId === id).length;
   const short = (v: Parameters<typeof getLocalizedText>[0]) => getLocalizedText(v, locale);
 
   return (
@@ -55,17 +61,17 @@ export function WorldLandingPage({ resolved, dataset }: { resolved: ResolvedPage
       lead={<p>{getLocalizedText(world.description, locale)}</p>}
       actions={
         <>
-          <MapCta to={mapPath(lang, dataset)} label={t('seoPages.openMap')} />
+          <MapCta to={mapPath(lang, dataset)} label={mapCta} />
           {dataset.events.length > 0 && (
             <Link to={timelinePath(lang, dataset)} className="btn-ghost inline-flex">
-              {t('nav.timeline')}
+              {t('seoPages.worldTimeline', { world: title })}
             </Link>
           )}
         </>
       }
       media={
         image ? (
-          <Link to={mapPath(lang, dataset)} className="block panel-soft overflow-hidden rounded-xl" aria-label={t('seoPages.openMap')}>
+          <Link to={mapPath(lang, dataset)} className="block panel-soft overflow-hidden rounded-xl" aria-label={mapCta}>
             <img
               src={image.url}
               width={image.width}
@@ -89,6 +95,48 @@ export function WorldLandingPage({ resolved, dataset }: { resolved: ResolvedPage
           { label: t('nav.timeline'), value: dataset.events.length ? t('modals.eventCount', { count: dataset.events.length }) : undefined },
         ]}
       />
+
+      {mapLevels.length > 1 && (
+        <Section
+          id="maps"
+          title={t('seoPages.mapsTitle', { world: title })}
+          count={mapLevels.length}
+          more={<SeeAll to={mapPath(lang, dataset)} label={mapCta} />}
+        >
+          <p className="text-sm text-ink-300 max-w-3xl">
+            {t('seoPages.mapsLead', { count: mapLevels.length, world: title })}
+          </p>
+          <ul className="grid gap-x-6 gap-y-1.5 sm:grid-cols-2 lg:grid-cols-3 text-sm text-ink-300">
+            {mapLevels.map((level) => {
+              const name = getLocalizedText(level.localizedName, locale) || level.name;
+              const trigger = level.triggerLocationId ? placeById.get(level.triggerLocationId) : undefined;
+              const triggerName = trigger ? getEntityDisplayName(trigger, locale) : '';
+              const sameName = triggerName.toLowerCase() === name.toLowerCase();
+              return (
+                <li key={level.id}>
+                  {trigger && sameName ? (
+                    <Link to={href('locations', trigger.id)} className="text-ink-100 hover:text-chakra-300 hover:underline">
+                      {name}
+                    </Link>
+                  ) : (
+                    <span className="text-ink-100">{name}</span>
+                  )}
+                  <span className="text-ink-400"> · {t('modals.locationCount', { count: placesPerLevel(level.id) })}</span>
+                  {trigger && !sameName && (
+                    <span className="text-ink-400">
+                      {' · '}
+                      {t('seoPages.mapsOpensFrom')}{' '}
+                      <Link to={href('locations', trigger.id)} className="text-ink-200 hover:text-chakra-300 hover:underline">
+                        {triggerName}
+                      </Link>
+                    </span>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        </Section>
+      )}
 
       {worldHasCategory(dataset, 'regions') && (
         <Section id="regions" title={t('nav.regions')} count={dataset.nations.length} more={<SeeAll to={categoryPath(lang, dataset, 'regions')} label={t('seoPages.seeAll')} />}>
