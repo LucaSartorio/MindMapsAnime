@@ -454,6 +454,85 @@
         }
       ]
     },
+    "character-journey:jujutsukaisen:satoru-gojo@en": {
+      "renderId": "character-journey:jujutsukaisen:satoru-gojo@en",
+      "contentId": "character-journey:jujutsukaisen:satoru-gojo",
+      "template": "characterJourney",
+      "anime": "jujutsukaisen",
+      "subject": "satoru-gojo",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-10-19T05:01:44.184Z",
+      "updatedAt": "2026-10-19T05:04:02.224Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-10-19T05:04:02.224Z",
+      "outputFile": "tools/social-engine/output/jujutsukaisen_satoru-gojo_character-journey_en.mp4",
+      "manifestFile": "tools/social-engine/output/jujutsukaisen_satoru-gojo_character-journey_en.manifest.json",
+      "sourceFile": "0022-jujutsukaisen_satoru-gojo_character-journey_en.json",
+      "durationSeconds": 27,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-39202397081-1",
+        "runId": "39202397081",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/39202397081",
+        "video": "videos/jujutsukaisen_satoru-gojo_character-journey_en.mp4",
+        "manifest": "manifests/jujutsukaisen_satoru-gojo_character-journey_en.manifest.json",
+        "sha256": "958734bb13df12df861c65f11569b58c2c61e9225ff776ada9066c3036893db9",
+        "cover": "covers/jujutsukaisen_satoru-gojo_character-journey_en.cover.png",
+        "expiresAt": "2026-11-18T05:04:02.224Z"
+      },
+      "social": {
+        "contentType": "character-journey",
+        "animes": [
+          "jujutsukaisen"
+        ],
+        "characters": [
+          "jujutsukaisen:satoru-gojo"
+        ],
+        "characterNames": [
+          "Satoru Gojo"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "curiosity",
+        "hookId": "cj-curiosity-1",
+        "hook": "Satoru Gojo's journey is bigger than you remember.",
+        "ctaType": "follow-for-more",
+        "cta": "Follow for the next journey.",
+        "durationSeconds": 27,
+        "selection": {
+          "mode": "coldstart",
+          "score": 93.56,
+          "seed": "feed16:character-versus:naruto:sasuke-uchiha-vs-dragonball-piccolo@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Satoru Gojo's journey is bigger than you remember.\n\nSatoru Gojo's journey across Jujutsu Kaisen: 5 places on the world map.\n\nFollow for more anime journeys.\n\nSave it for your next rewatch.\n\n#jujutsukaisen #jjk #satorugojo #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Satoru Gojo's journey is bigger than you remember. Follow for more anime journeys. #jujutsukaisen #jjk #satorugojo #anime #animemap",
+          "youtubeTitle": "Every Place Satoru Gojo Visited 🌀 | Jujutsu Kaisen Journey",
+          "youtubeDescription": "Satoru Gojo's journey is bigger than you remember.\n\nSatoru Gojo's journey across Jujutsu Kaisen: 5 places on the world map.\n\nSubscribe for more anime journeys.\n\nInteractive map: https://animapverse.com/en/jujutsu-kaisen/characters/satoru-gojo\n\n#jujutsukaisen #jjk #satorugojo",
+          "facebookCaption": "Satoru Gojo's journey is bigger than you remember.\n\nSatoru Gojo's journey across Jujutsu Kaisen: 5 places on the world map.\n\nFollow for more anime journeys.\n\nInteractive map: https://animapverse.com/en/jujutsu-kaisen/characters/satoru-gojo",
+          "hashtags": [
+            "#jujutsukaisen",
+            "#jjk",
+            "#satorugojo",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-journey:naruto:itachi-uchiha@en": {
       "renderId": "character-journey:naruto:itachi-uchiha@en",
       "contentId": "character-journey:naruto:itachi-uchiha",
