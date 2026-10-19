@@ -1,0 +1,18 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterJourney",
+  "anime": "jujutsukaisen",
+  "subject": "satoru-gojo",
+  "locale": "en",
+  "hook": "Satoru Gojo's journey is bigger than you remember.",
+  "hookType": "curiosity",
+  "hookId": "cj-curiosity-1",
+  "cta": "Follow for the next journey.",
+  "ctaType": "follow-for-more",
+  "selection": {
+    "mode": "coldstart",
+    "score": 93.56,
+    "seed": "feed16:character-versus:naruto:sasuke-uchiha-vs-dragonball-piccolo@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +23.4, jitter +5.6; +12 main character; +2.5 format below its target share (44% < 50%)"
+}
