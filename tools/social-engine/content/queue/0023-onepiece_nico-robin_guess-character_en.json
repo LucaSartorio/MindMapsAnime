@@ -1,0 +1,18 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "guessCharacter",
+  "anime": "onepiece",
+  "subject": "nico-robin",
+  "locale": "en",
+  "hook": "Only real One Piece fans get this before the last place.",
+  "hookType": "challenge",
+  "hookId": "gc-challenge-2",
+  "cta": "Did you get it right?",
+  "ctaType": "comment-guess",
+  "selection": {
+    "mode": "coldstart",
+    "score": 92.84,
+    "seed": "feed17:character-journey:jujutsukaisen:satoru-gojo@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +23.8, jitter +5.8; +12 main character; +1.2 format below its target share (24% < 25%)"
+}
