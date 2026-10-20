@@ -1,0 +1,13 @@
+{
+  "receiptVersion": 1,
+  "renderId": "guess-character:onepiece:nico-robin@en",
+  "provider": "metricool",
+  "status": "scheduled",
+  "scheduledFor": "2026-10-20T12:00:00+02:00",
+  "recordedAt": "2026-10-20T05:13:43Z",
+  "recordedBy": "chatgpt-work-publishing-agent",
+  "platform": "tiktok",
+  "providerPostId": "400734968",
+  "providerPostUuid": "-8378186272107639093",
+  "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-8378186272107639093"
+}
