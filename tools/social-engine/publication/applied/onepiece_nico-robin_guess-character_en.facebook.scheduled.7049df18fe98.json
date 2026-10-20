@@ -1,0 +1,30 @@
+{
+  "receiptId": "onepiece_nico-robin_guess-character_en.facebook.scheduled.7049df18fe98",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-10-20T05:19:18.786Z",
+  "sourceFile": "20261020T051342Z-onepiece_nico-robin_guess-character_en-facebook-scheduled.json",
+  "run": {
+    "runId": "39374241709",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/39374241709",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "guess-character:onepiece:nico-robin@en",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-10-20T12:00:00+02:00",
+    "recordedAt": "2026-10-20T05:13:43Z",
+    "recordedBy": "chatgpt-work-publishing-agent",
+    "platform": "facebook",
+    "providerPostId": "400734607",
+    "providerPostUuid": "-3081499296663518548",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-3081499296663518548"
+  }
+}

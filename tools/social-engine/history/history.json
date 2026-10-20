@@ -2703,7 +2703,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-10-20T05:07:45.703Z",
-      "updatedAt": "2026-10-20T05:09:57.101Z",
+      "updatedAt": "2026-10-20T05:19:18.786Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-10-20T05:09:57.101Z",
       "outputFile": "tools/social-engine/output/onepiece_nico-robin_guess-character_en.mp4",
@@ -2765,9 +2765,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-20T12:00:00+02:00",
+          "scheduledAt": "2026-10-20T05:13:43Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "400734439",
+          "providerPostUuid": "8866587267453046602",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=8866587267453046602",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "onepiece_nico-robin_guess-character_en.instagram.scheduled.efbb1a07056f"
+          ],
+          "updatedAt": "2026-10-20T05:19:18.786Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-20T12:00:00+02:00",
+          "scheduledAt": "2026-10-20T05:13:43Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "400734607",
+          "providerPostUuid": "-3081499296663518548",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-3081499296663518548",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "onepiece_nico-robin_guess-character_en.facebook.scheduled.7049df18fe98"
+          ],
+          "updatedAt": "2026-10-20T05:19:18.786Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-20T12:00:00+02:00",
+          "scheduledAt": "2026-10-20T05:13:43Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "400734968",
+          "providerPostUuid": "-8378186272107639093",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-8378186272107639093",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "onepiece_nico-robin_guess-character_en.tiktok.scheduled.fd29d91a674f"
+          ],
+          "updatedAt": "2026-10-20T05:19:18.786Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-20T12:00:00+02:00",
+          "scheduledAt": "2026-10-20T05:13:43Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "400734811",
+          "providerPostUuid": "594884767173201878",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=594884767173201878",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "onepiece_nico-robin_guess-character_en.youtube.scheduled.0fb32e966c64"
+          ],
+          "updatedAt": "2026-10-20T05:19:18.786Z"
+        }
+      ]
     }
   }
 }

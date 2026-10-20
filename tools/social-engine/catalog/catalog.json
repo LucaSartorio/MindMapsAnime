@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-20T05:09:58.156Z",
+  "generatedAt": "2026-10-20T05:19:18.797Z",
   "locales": [
     "en",
     "it"
@@ -16542,7 +16542,9 @@
           "renderedLocales": [
             "en"
           ],
-          "scheduledLocales": [],
+          "scheduledLocales": [
+            "en"
+          ],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": true,
@@ -16552,12 +16554,12 @@
               "renderId": "guess-character:onepiece:nico-robin@en",
               "locale": "en",
               "variant": null,
-              "status": "notPublished",
+              "status": "scheduled",
               "platforms": {
-                "instagram": "notScheduled",
-                "facebook": "notScheduled",
-                "tiktok": "notScheduled",
-                "youtube": "notScheduled"
+                "instagram": "scheduled",
+                "facebook": "scheduled",
+                "tiktok": "scheduled",
+                "youtube": "scheduled"
               }
             }
           ]
@@ -25575,65 +25577,13 @@
     "summary": {
       "rendered": 23,
       "unavailable": 5,
-      "notPublished": 6,
-      "scheduled": 11,
+      "notPublished": 5,
+      "scheduled": 12,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0
     },
-    "ready": [
-      {
-        "renderId": "guess-character:onepiece:nico-robin@en",
-        "contentId": "guess-character:onepiece:nico-robin",
-        "anime": "onepiece",
-        "subject": "nico-robin",
-        "subjectName": "Nico Robin",
-        "locale": "en",
-        "variant": null,
-        "segment": null,
-        "partNumber": null,
-        "partCount": null,
-        "renderedAt": "2026-10-20T05:09:57.101Z",
-        "durationSeconds": 26,
-        "publicationStatus": "notPublished",
-        "platforms": {
-          "instagram": "notScheduled",
-          "facebook": "notScheduled",
-          "tiktok": "notScheduled",
-          "youtube": "notScheduled"
-        },
-        "artifact": {
-          "name": "animapverse-social-render-39373187932-1",
-          "runId": "39373187932",
-          "runAttempt": "1",
-          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/39373187932",
-          "video": "videos/onepiece_nico-robin_guess-character_en.mp4",
-          "manifest": "manifests/onepiece_nico-robin_guess-character_en.manifest.json",
-          "sha256": "b13e7b7f7cde9e2637b25d11965dae92d6db13a57f1a6eef15d3b652ec97ed1f",
-          "cover": "covers/onepiece_nico-robin_guess-character_en.cover.png",
-          "expiresAt": "2026-11-19T05:09:57.101Z"
-        },
-        "contentType": "guess-character",
-        "platformMetadata": {
-          "instagramCaption": "Only real One Piece fans get this before the last place.\n\n6 places, one One Piece character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nSave it for your next rewatch.\n\n#onepiece #anime #animemap #AniMapVerse",
-          "tiktokCaption": "Only real One Piece fans get this before the last place. Did you get it right? Tell us how many places it took you 👇 #onepiece #anime #animemap #AniMapVerse",
-          "youtubeTitle": "Guess the One Piece Character From the Places They Visited 🏴‍☠️",
-          "youtubeDescription": "Only real One Piece fans get this before the last place.\n\n6 places, one One Piece character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/one-piece/map\n\n#onepiece #anime #animemap",
-          "facebookCaption": "Only real One Piece fans get this before the last place.\n\n6 places, one One Piece character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/one-piece/map",
-          "hashtags": [
-            "#onepiece",
-            "#anime",
-            "#animemap",
-            "#AniMapVerse"
-          ],
-          "youtube": {
-            "madeForKids": false
-          },
-          "madeForKids": false
-        },
-        "waitFor": {}
-      }
-    ],
+    "ready": [],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",
