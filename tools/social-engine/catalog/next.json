@@ -1,19 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-19T05:16:07.773Z",
-  "status": "ready",
+  "generatedAt": "2026-10-20T05:09:58.156Z",
+  "status": "backlog",
   "feedTail": [
-    {
-      "renderId": "guess-character:attackontitan:levi-ackerman@en",
-      "contentType": "guess-character",
-      "animes": [
-        "attackontitan"
-      ],
-      "characters": [
-        "attackontitan:levi-ackerman"
-      ],
-      "part": null
-    },
     {
       "renderId": "character-journey:hunterxhunter:killua-zoldyck:part-02@en",
       "contentType": "character-journey",
@@ -72,6 +61,17 @@
         "jujutsukaisen:satoru-gojo"
       ],
       "part": null
+    },
+    {
+      "renderId": "guess-character:onepiece:nico-robin@en",
+      "contentType": "guess-character",
+      "animes": [
+        "onepiece"
+      ],
+      "characters": [
+        "onepiece:nico-robin"
+      ],
+      "part": null
     }
   ],
   "rules": {
@@ -92,477 +92,28 @@
     "error": null
   },
   "backlog": {
-    "unpublished": [],
+    "unpublished": [
+      {
+        "renderId": "guess-character:onepiece:nico-robin@en",
+        "contentType": "guess-character",
+        "renderedAt": "2026-10-20T05:09:57.101Z",
+        "missing": [
+          "instagram",
+          "facebook",
+          "tiktok",
+          "youtube"
+        ]
+      }
+    ],
     "unfinished": [],
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "feed17:character-journey:jujutsukaisen:satoru-gojo@en:samples0",
-  "rejected": {
-    "JOURNEY_PART_ORDER": 43
-  },
-  "considered": 684,
-  "trace": {
-    "traceVersion": 1,
-    "mode": "coldstart",
-    "seed": "feed17:character-journey:jujutsukaisen:satoru-gojo@en:samples0",
-    "analytics": {
-      "coldStart": true,
-      "samples": 0,
-      "contents": 0,
-      "minimumSamples": 8
-    },
-    "recent": [
-      {
-        "renderId": "guess-character:attackontitan:levi-ackerman@en",
-        "contentType": "guess-character",
-        "animes": [
-          "attackontitan"
-        ],
-        "characters": [
-          "attackontitan:levi-ackerman"
-        ]
-      },
-      {
-        "renderId": "character-journey:hunterxhunter:killua-zoldyck:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "hunterxhunter"
-        ],
-        "characters": [
-          "hunterxhunter:killua-zoldyck"
-        ]
-      },
-      {
-        "renderId": "character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro@en",
-        "contentType": "character-versus",
-        "animes": [
-          "bleach",
-          "blackclover"
-        ],
-        "characters": [
-          "bleach:rukia-kuchiki",
-          "blackclover:yami-sukehiro"
-        ]
-      },
-      {
-        "renderId": "guess-character:attackontitan:zeke-yeager@en",
-        "contentType": "guess-character",
-        "animes": [
-          "attackontitan"
-        ],
-        "characters": [
-          "attackontitan:zeke-yeager"
-        ]
-      },
-      {
-        "renderId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-piccolo@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "dragonball"
-        ],
-        "characters": [
-          "naruto:sasuke-uchiha",
-          "dragonball:piccolo"
-        ]
-      },
-      {
-        "renderId": "character-journey:jujutsukaisen:satoru-gojo@en",
-        "contentType": "character-journey",
-        "animes": [
-          "jujutsukaisen"
-        ],
-        "characters": [
-          "jujutsukaisen:satoru-gojo"
-        ]
-      }
-    ],
-    "constraints": {
-      "sameAnimeStreak": {
-        "animes": [
-          "jujutsukaisen"
-        ],
-        "length": 1
-      },
-      "forcedAnimeRotation": false,
-      "blockedAnimes": [],
-      "blockedCharacters": [
-        "jujutsukaisen:satoru-gojo"
-      ],
-      "characterCooldown": [
-        "attackontitan:levi-ackerman",
-        "hunterxhunter:killua-zoldyck",
-        "bleach:rukia-kuchiki",
-        "blackclover:yami-sukehiro",
-        "attackontitan:zeke-yeager",
-        "naruto:sasuke-uchiha",
-        "dragonball:piccolo",
-        "jujutsukaisen:satoru-gojo"
-      ],
-      "contentTypeStreak": {
-        "contentType": "character-journey",
-        "length": 1
-      }
-    },
-    "hardRulesTriggered": {
-      "JOURNEY_PART_ORDER": 43
-    },
-    "candidates": {
-      "considered": 684,
-      "eligible": 641,
-      "byContentType": {
-        "character-journey": {
-          "considered": 415,
-          "eligible": 372
-        },
-        "guess-character": {
-          "considered": 85,
-          "eligible": 85
-        },
-        "character-versus": {
-          "considered": 184,
-          "eligible": 184
-        }
-      }
-    },
-    "excluded": [
-      {
-        "renderId": "character-journey:blackclover:asta:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:asta"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:blackclover:asta:part-03@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:asta"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 3 before Part 2 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:blackclover:noelle-silva:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:noelle-silva"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:blackclover:yami-sukehiro:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:yami-sukehiro"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:blackclover:yuno-grinberryall:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:yuno-grinberryall"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:bleach:byakuya-kuchiki:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:byakuya-kuchiki"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:bleach:ichigo-kurosaki:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:ichigo-kurosaki"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:bleach:ichigo-kurosaki:part-03@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:ichigo-kurosaki"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 3 before Part 2 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:bleach:orihime-inoue:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:orihime-inoue"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:bleach:renji-abarai:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:renji-abarai"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      }
-    ],
-    "status": "selected",
-    "selectedId": "guess-character:onepiece:nico-robin",
-    "renderId": "guess-character:onepiece:nico-robin@en",
-    "contentType": "guess-character",
-    "animes": [
-      "onepiece"
-    ],
-    "characters": [
-      "onepiece:nico-robin"
-    ],
-    "score": 92.84,
-    "base": 79.67,
-    "reasons": [
-      "coldstart: novelty +23.8, jitter +5.8",
-      "+12 main character",
-      "+1.2 format below its target share (24% < 25%)"
-    ],
-    "ranked": [
-      {
-        "renderId": "guess-character:onepiece:nico-robin@en",
-        "contentType": "guess-character",
-        "animes": [
-          "onepiece"
-        ],
-        "score": 92.84,
-        "reasons": [
-          "coldstart: novelty +23.8, jitter +5.8",
-          "+12 main character",
-          "+1.2 format below its target share (24% < 25%)"
-        ]
-      },
-      {
-        "renderId": "guess-character:naruto:kakashi-hatake@en",
-        "contentType": "guess-character",
-        "animes": [
-          "naruto"
-        ],
-        "score": 92.73,
-        "reasons": [
-          "coldstart: novelty +23.8, jitter +5.7",
-          "+12 main character",
-          "+1.2 format below its target share (24% < 25%)"
-        ]
-      },
-      {
-        "renderId": "guess-character:naruto:sakura-haruno@en",
-        "contentType": "guess-character",
-        "animes": [
-          "naruto"
-        ],
-        "score": 92.5,
-        "reasons": [
-          "coldstart: novelty +23.8, jitter +5.5",
-          "+12 main character",
-          "+1.2 format below its target share (24% < 25%)"
-        ]
-      },
-      {
-        "renderId": "guess-character:blackclover:asta@en",
-        "contentType": "guess-character",
-        "animes": [
-          "blackclover"
-        ],
-        "score": 92.33,
-        "reasons": [
-          "coldstart: novelty +23.8, jitter +5.3",
-          "+12 main character",
-          "+1.2 format below its target share (24% < 25%)"
-        ]
-      },
-      {
-        "renderId": "guess-character:attackontitan:mikasa-ackerman@en",
-        "contentType": "guess-character",
-        "animes": [
-          "attackontitan"
-        ],
-        "score": 92.3,
-        "reasons": [
-          "coldstart: novelty +23.8, jitter +5.3",
-          "+12 main character",
-          "+1.2 format below its target share (24% < 25%)"
-        ]
-      },
-      {
-        "renderId": "guess-character:bleach:sosuke-aizen@en",
-        "contentType": "guess-character",
-        "animes": [
-          "bleach"
-        ],
-        "score": 92.25,
-        "reasons": [
-          "coldstart: novelty +23.8, jitter +5.3",
-          "+12 main character",
-          "+1.2 format below its target share (24% < 25%)"
-        ]
-      }
-    ],
-    "explanation": [
-      "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
-      "jujutsukaisen:satoru-gojo excluded in every format (maxSameCharacterStreak 1).",
-      "Selected guess-character:onepiece:nico-robin@en (guess-character, onepiece) — coldstart, score 92.84 among 641 valid candidate(s)."
-    ]
-  },
-  "pick": {
-    "contentId": "guess-character:onepiece:nico-robin",
-    "renderId": "guess-character:onepiece:nico-robin@en",
-    "contentType": "guess-character",
-    "animes": [
-      "onepiece"
-    ],
-    "characters": [
-      "onepiece:nico-robin"
-    ],
-    "part": null,
-    "partCount": null,
-    "score": 92.84,
-    "reasons": [
-      "coldstart: novelty +23.8, jitter +5.8",
-      "+12 main character",
-      "+1.2 format below its target share (24% < 25%)"
-    ]
-  },
-  "request": {
-    "template": "guessCharacter",
-    "anime": "onepiece",
-    "subject": "nico-robin",
-    "locale": "en",
-    "hook": "Only real One Piece fans get this before the last place.",
-    "hookType": "challenge",
-    "hookId": "gc-challenge-2",
-    "cta": "Did you get it right?",
-    "ctaType": "comment-guess",
-    "selection": {
-      "mode": "coldstart",
-      "score": 92.84,
-      "seed": "feed17:character-journey:jujutsukaisen:satoru-gojo@en:samples0"
-    },
-    "notes": "growth selector (coldstart): coldstart: novelty +23.8, jitter +5.8; +12 main character; +1.2 format below its target share (24% < 25%)"
-  },
-  "alternatives": [
-    {
-      "renderId": "guess-character:naruto:kakashi-hatake@en",
-      "contentType": "guess-character",
-      "score": 92.73
-    },
-    {
-      "renderId": "guess-character:naruto:sakura-haruno@en",
-      "contentType": "guess-character",
-      "score": 92.5
-    },
-    {
-      "renderId": "guess-character:blackclover:asta@en",
-      "contentType": "guess-character",
-      "score": 92.33
-    },
-    {
-      "renderId": "guess-character:attackontitan:mikasa-ackerman@en",
-      "contentType": "guess-character",
-      "score": 92.3
-    },
-    {
-      "renderId": "guess-character:bleach:sosuke-aizen@en",
-      "contentType": "guess-character",
-      "score": 92.25
-    }
-  ],
-  "eligible": 641
+  "seed": "",
+  "reason": "publish the existing render first: guess-character:onepiece:nico-robin@en (it counts as today's video; no new content)",
+  "alternatives": [],
+  "rejected": {},
+  "considered": 0,
+  "eligible": 0,
+  "trace": null
 }

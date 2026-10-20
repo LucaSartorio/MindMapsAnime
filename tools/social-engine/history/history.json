@@ -2691,6 +2691,83 @@
           "updatedAt": "2026-10-08T05:40:34.275Z"
         }
       ]
+    },
+    "guess-character:onepiece:nico-robin@en": {
+      "renderId": "guess-character:onepiece:nico-robin@en",
+      "contentId": "guess-character:onepiece:nico-robin",
+      "template": "guessCharacter",
+      "anime": "onepiece",
+      "subject": "nico-robin",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-10-20T05:07:45.703Z",
+      "updatedAt": "2026-10-20T05:09:57.101Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-10-20T05:09:57.101Z",
+      "outputFile": "tools/social-engine/output/onepiece_nico-robin_guess-character_en.mp4",
+      "manifestFile": "tools/social-engine/output/onepiece_nico-robin_guess-character_en.manifest.json",
+      "sourceFile": "0023-onepiece_nico-robin_guess-character_en.json",
+      "durationSeconds": 26,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-39373187932-1",
+        "runId": "39373187932",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/39373187932",
+        "video": "videos/onepiece_nico-robin_guess-character_en.mp4",
+        "manifest": "manifests/onepiece_nico-robin_guess-character_en.manifest.json",
+        "sha256": "b13e7b7f7cde9e2637b25d11965dae92d6db13a57f1a6eef15d3b652ec97ed1f",
+        "cover": "covers/onepiece_nico-robin_guess-character_en.cover.png",
+        "expiresAt": "2026-11-19T05:09:57.101Z"
+      },
+      "social": {
+        "contentType": "guess-character",
+        "animes": [
+          "onepiece"
+        ],
+        "characters": [
+          "onepiece:nico-robin"
+        ],
+        "characterNames": [
+          "Nico Robin"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "challenge",
+        "hookId": "gc-challenge-2",
+        "hook": "Only real One Piece fans get this before the last place.",
+        "ctaType": "comment-guess",
+        "cta": "Did you get it right?",
+        "durationSeconds": 26,
+        "selection": {
+          "mode": "coldstart",
+          "score": 92.84,
+          "seed": "feed17:character-journey:jujutsukaisen:satoru-gojo@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Only real One Piece fans get this before the last place.\n\n6 places, one One Piece character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nSave it for your next rewatch.\n\n#onepiece #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Only real One Piece fans get this before the last place. Did you get it right? Tell us how many places it took you 👇 #onepiece #anime #animemap #AniMapVerse",
+          "youtubeTitle": "Guess the One Piece Character From the Places They Visited 🏴‍☠️",
+          "youtubeDescription": "Only real One Piece fans get this before the last place.\n\n6 places, one One Piece character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/one-piece/map\n\n#onepiece #anime #animemap",
+          "facebookCaption": "Only real One Piece fans get this before the last place.\n\n6 places, one One Piece character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/one-piece/map",
+          "hashtags": [
+            "#onepiece",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
     }
   }
 }
