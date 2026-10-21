@@ -1,0 +1,13 @@
+{
+  "receiptVersion": 1,
+  "renderId": "character-journey:dragonball:goku:part-02@en",
+  "provider": "metricool",
+  "status": "scheduled",
+  "scheduledFor": "2026-10-21T12:00:00+02:00",
+  "recordedAt": "2026-10-21T05:12:39Z",
+  "recordedBy": "chatgpt-work-publishing-agent",
+  "platform": "youtube",
+  "providerPostId": "401785164",
+  "providerPostUuid": "-7079550258440550806",
+  "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-7079550258440550806"
+}
