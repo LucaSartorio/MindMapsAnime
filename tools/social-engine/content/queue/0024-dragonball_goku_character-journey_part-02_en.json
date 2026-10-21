@@ -1,0 +1,19 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterJourney",
+  "anime": "dragonball",
+  "subject": "goku",
+  "segment": "part-02",
+  "locale": "en",
+  "hook": "Where did Goku go next? Part 2 of 6.",
+  "hookType": "question",
+  "hookId": "cj-cont-question-1",
+  "cta": "Follow for Part 3.",
+  "ctaType": "follow-next-part",
+  "selection": {
+    "mode": "coldstart",
+    "score": 104.72,
+    "seed": "feed18:guess-character:onepiece:nico-robin@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +20.8, jitter +5.7; +12 main character; +14 continues a started series (Part 2 promised)"
+}
