@@ -1,0 +1,22 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterVersus",
+  "anime": "bleach",
+  "subject": "yasutora-chad-sado",
+  "opponent": {
+    "anime": "blackclover",
+    "subject": "asta"
+  },
+  "locale": "en",
+  "hook": "Who travelled more: Yasutora \"Chad\" Sado or Asta?",
+  "hookType": "versus",
+  "hookId": "cv-versus-1",
+  "cta": "Who should compete next?",
+  "ctaType": "comment-next-matchup",
+  "selection": {
+    "mode": "coldstart",
+    "score": 91.68,
+    "seed": "feed19:character-journey:dragonball:goku:part-02@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +23.7, jitter +6.0; +12 main character"
+}
