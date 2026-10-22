@@ -1743,6 +1743,89 @@
         }
       ]
     },
+    "character-versus:bleach:yasutora-chad-sado-vs-blackclover-asta@en": {
+      "renderId": "character-versus:bleach:yasutora-chad-sado-vs-blackclover-asta@en",
+      "contentId": "character-versus:bleach:yasutora-chad-sado-vs-blackclover-asta",
+      "template": "characterVersus",
+      "anime": "bleach",
+      "subject": "yasutora-chad-sado-vs-blackclover-asta",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-10-22T05:08:05.590Z",
+      "updatedAt": "2026-10-22T05:09:15.784Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-10-22T05:09:15.784Z",
+      "outputFile": "tools/social-engine/output/bleach_yasutora-chad-sado-vs-blackclover-asta_character-versus_en.mp4",
+      "manifestFile": "tools/social-engine/output/bleach_yasutora-chad-sado-vs-blackclover-asta_character-versus_en.manifest.json",
+      "sourceFile": "0025-bleach_yasutora-chad-sado_character-versus_blackclover_asta_en.json",
+      "durationSeconds": 22,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-39726250564-1",
+        "runId": "39726250564",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/39726250564",
+        "video": "videos/bleach_yasutora-chad-sado-vs-blackclover-asta_character-versus_en.mp4",
+        "manifest": "manifests/bleach_yasutora-chad-sado-vs-blackclover-asta_character-versus_en.manifest.json",
+        "sha256": "c4d62946bc12df64ffc977b5cc04786d43855b6043d340a4ff3bc31225cc3a27",
+        "cover": "covers/bleach_yasutora-chad-sado-vs-blackclover-asta_character-versus_en.cover.png",
+        "expiresAt": "2026-11-21T05:09:15.784Z"
+      },
+      "social": {
+        "contentType": "character-versus",
+        "animes": [
+          "bleach",
+          "blackclover"
+        ],
+        "characters": [
+          "bleach:yasutora-chad-sado",
+          "blackclover:asta"
+        ],
+        "characterNames": [
+          "Yasutora \"Chad\" Sado",
+          "Asta"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "versus",
+        "hookId": "cv-versus-1",
+        "hook": "Who travelled more: Yasutora \"Chad\" Sado or Asta?",
+        "ctaType": "comment-next-matchup",
+        "cta": "Who should compete next?",
+        "durationSeconds": 22,
+        "selection": {
+          "mode": "coldstart",
+          "score": 91.68,
+          "seed": "feed19:character-journey:dragonball:goku:part-02@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Who travelled more: Yasutora \"Chad\" Sado or Asta?\n\nYasutora \"Chad\" Sado (Bleach) vs Asta (Black Clover): every place on the map, one winner.\n\nWho should compete next? Drop a match-up 👇\n\nSave it for your next rewatch.\n\n#bleach #blackclover #yasutorachadsado #asta #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Who travelled more: Yasutora \"Chad\" Sado or Asta? Who should compete next? Drop a match-up 👇 #bleach #blackclover #yasutorachadsado #asta #anime",
+          "youtubeTitle": "Yasutora \"Chad\" Sado vs Asta: Who Travelled More? ⚔️",
+          "youtubeDescription": "Who travelled more: Yasutora \"Chad\" Sado or Asta?\n\nYasutora \"Chad\" Sado (Bleach) vs Asta (Black Clover): every place on the map, one winner.\n\nWho should compete next? Drop a match-up 👇\n\nInteractive map: https://animapverse.com\n\n#bleach #blackclover #yasutorachadsado",
+          "facebookCaption": "Who travelled more: Yasutora \"Chad\" Sado or Asta?\n\nYasutora \"Chad\" Sado (Bleach) vs Asta (Black Clover): every place on the map, one winner.\n\nWho should compete next? Drop a match-up 👇\n\nInteractive map: https://animapverse.com",
+          "hashtags": [
+            "#bleach",
+            "#blackclover",
+            "#yasutorachadsado",
+            "#asta",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-versus:hunterxhunter:kurapika-vs-dragonball-goku@en": {
       "renderId": "character-versus:hunterxhunter:kurapika-vs-dragonball-goku@en",
       "contentId": "character-versus:hunterxhunter:kurapika-vs-dragonball-goku",
