@@ -1754,7 +1754,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-10-22T05:08:05.590Z",
-      "updatedAt": "2026-10-22T05:09:15.784Z",
+      "updatedAt": "2026-10-22T05:18:10.660Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-10-22T05:09:15.784Z",
       "outputFile": "tools/social-engine/output/bleach_yasutora-chad-sado-vs-blackclover-asta_character-versus_en.mp4",
@@ -1822,9 +1822,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-22T10:00:00+02:00",
+          "scheduledAt": "2026-10-22T05:11:14Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "402796984",
+          "providerPostUuid": "-8063458033002723172",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-8063458033002723172",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "bleach_yasutora-chad-sado-vs-blackclover-asta_character-versus_en.instagram.scheduled.7d871033124f"
+          ],
+          "updatedAt": "2026-10-22T05:18:10.660Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-22T10:00:00+02:00",
+          "scheduledAt": "2026-10-22T05:11:14Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "402796869",
+          "providerPostUuid": "4059688919414293549",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=4059688919414293549",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "bleach_yasutora-chad-sado-vs-blackclover-asta_character-versus_en.facebook.scheduled.8b8bd9b2a270"
+          ],
+          "updatedAt": "2026-10-22T05:18:10.660Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-22T10:00:00+02:00",
+          "scheduledAt": "2026-10-22T05:11:14Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "402797139",
+          "providerPostUuid": "-8989121979018230354",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-8989121979018230354",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "bleach_yasutora-chad-sado-vs-blackclover-asta_character-versus_en.tiktok.scheduled.d8e577f32e26"
+          ],
+          "updatedAt": "2026-10-22T05:18:10.660Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-22T10:00:00+02:00",
+          "scheduledAt": "2026-10-22T05:11:14Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "402797078",
+          "providerPostUuid": "5362101841807949952",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=5362101841807949952",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "bleach_yasutora-chad-sado-vs-blackclover-asta_character-versus_en.youtube.scheduled.1362811057e6"
+          ],
+          "updatedAt": "2026-10-22T05:18:10.660Z"
+        }
+      ]
     },
     "character-versus:hunterxhunter:kurapika-vs-dragonball-goku@en": {
       "renderId": "character-versus:hunterxhunter:kurapika-vs-dragonball-goku@en",

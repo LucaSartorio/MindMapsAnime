@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-22T05:09:16.523Z",
+  "generatedAt": "2026-10-22T05:18:10.679Z",
   "locales": [
     "en",
     "it"
@@ -25489,7 +25489,9 @@
           "renderedLocales": [
             "en"
           ],
-          "scheduledLocales": [],
+          "scheduledLocales": [
+            "en"
+          ],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": true,
@@ -25499,12 +25501,12 @@
               "renderId": "character-versus:bleach:yasutora-chad-sado-vs-blackclover-asta@en",
               "locale": "en",
               "variant": null,
-              "status": "notPublished",
+              "status": "scheduled",
               "platforms": {
-                "instagram": "notScheduled",
-                "facebook": "notScheduled",
-                "tiktok": "notScheduled",
-                "youtube": "notScheduled"
+                "instagram": "scheduled",
+                "facebook": "scheduled",
+                "tiktok": "scheduled",
+                "youtube": "scheduled"
               }
             }
           ],
@@ -25609,68 +25611,13 @@
     "summary": {
       "rendered": 25,
       "unavailable": 5,
-      "notPublished": 6,
-      "scheduled": 13,
+      "notPublished": 5,
+      "scheduled": 14,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0
     },
-    "ready": [
-      {
-        "renderId": "character-versus:bleach:yasutora-chad-sado-vs-blackclover-asta@en",
-        "contentId": "character-versus:bleach:yasutora-chad-sado-vs-blackclover-asta",
-        "anime": "bleach",
-        "subject": "yasutora-chad-sado-vs-blackclover-asta",
-        "subjectName": "Yasutora \"Chad\" Sado vs Asta",
-        "locale": "en",
-        "variant": null,
-        "segment": null,
-        "partNumber": null,
-        "partCount": null,
-        "renderedAt": "2026-10-22T05:09:15.784Z",
-        "durationSeconds": 22,
-        "publicationStatus": "notPublished",
-        "platforms": {
-          "instagram": "notScheduled",
-          "facebook": "notScheduled",
-          "tiktok": "notScheduled",
-          "youtube": "notScheduled"
-        },
-        "artifact": {
-          "name": "animapverse-social-render-39726250564-1",
-          "runId": "39726250564",
-          "runAttempt": "1",
-          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/39726250564",
-          "video": "videos/bleach_yasutora-chad-sado-vs-blackclover-asta_character-versus_en.mp4",
-          "manifest": "manifests/bleach_yasutora-chad-sado-vs-blackclover-asta_character-versus_en.manifest.json",
-          "sha256": "c4d62946bc12df64ffc977b5cc04786d43855b6043d340a4ff3bc31225cc3a27",
-          "cover": "covers/bleach_yasutora-chad-sado-vs-blackclover-asta_character-versus_en.cover.png",
-          "expiresAt": "2026-11-21T05:09:15.784Z"
-        },
-        "contentType": "character-versus",
-        "platformMetadata": {
-          "instagramCaption": "Who travelled more: Yasutora \"Chad\" Sado or Asta?\n\nYasutora \"Chad\" Sado (Bleach) vs Asta (Black Clover): every place on the map, one winner.\n\nWho should compete next? Drop a match-up 👇\n\nSave it for your next rewatch.\n\n#bleach #blackclover #yasutorachadsado #asta #anime #animemap #AniMapVerse",
-          "tiktokCaption": "Who travelled more: Yasutora \"Chad\" Sado or Asta? Who should compete next? Drop a match-up 👇 #bleach #blackclover #yasutorachadsado #asta #anime",
-          "youtubeTitle": "Yasutora \"Chad\" Sado vs Asta: Who Travelled More? ⚔️",
-          "youtubeDescription": "Who travelled more: Yasutora \"Chad\" Sado or Asta?\n\nYasutora \"Chad\" Sado (Bleach) vs Asta (Black Clover): every place on the map, one winner.\n\nWho should compete next? Drop a match-up 👇\n\nInteractive map: https://animapverse.com\n\n#bleach #blackclover #yasutorachadsado",
-          "facebookCaption": "Who travelled more: Yasutora \"Chad\" Sado or Asta?\n\nYasutora \"Chad\" Sado (Bleach) vs Asta (Black Clover): every place on the map, one winner.\n\nWho should compete next? Drop a match-up 👇\n\nInteractive map: https://animapverse.com",
-          "hashtags": [
-            "#bleach",
-            "#blackclover",
-            "#yasutorachadsado",
-            "#asta",
-            "#anime",
-            "#animemap",
-            "#AniMapVerse"
-          ],
-          "youtube": {
-            "madeForKids": false
-          },
-          "madeForKids": false
-        },
-        "waitFor": {}
-      }
-    ],
+    "ready": [],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",

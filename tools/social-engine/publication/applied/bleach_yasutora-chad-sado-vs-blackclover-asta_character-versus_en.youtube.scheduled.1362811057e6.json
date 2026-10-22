@@ -1,0 +1,30 @@
+{
+  "receiptId": "bleach_yasutora-chad-sado-vs-blackclover-asta_character-versus_en.youtube.scheduled.1362811057e6",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-10-22T05:18:10.660Z",
+  "sourceFile": "20261022T051114Z-bleach_yasutora-chad-sado-vs-blackclover-asta_character-versus_en-youtube-scheduled.json",
+  "run": {
+    "runId": "39727207112",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/39727207112",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "character-versus:bleach:yasutora-chad-sado-vs-blackclover-asta@en",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-10-22T10:00:00+02:00",
+    "recordedAt": "2026-10-22T05:11:14Z",
+    "recordedBy": "chatgpt-work-publishing-agent",
+    "platform": "youtube",
+    "providerPostId": "402797078",
+    "providerPostUuid": "5362101841807949952",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=5362101841807949952"
+  }
+}
