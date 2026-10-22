@@ -2,13 +2,12 @@ import type { ComponentType, SVGProps } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useCookieConsent } from '@/store/useCookieConsent';
-import { DiscordIcon, InstagramIcon, XIcon } from './SocialIcons';
+import { DiscordIcon, InstagramIcon, XIcon, YouTubeIcon } from './SocialIcons';
 import { staticPagePath } from '@/seo/paths';
 import { useSeoLang } from '@/seo/useSeoLang';
 
 /**
- * Link social. Lo spazio è predisposto per Instagram, Discord e X: le icone
- * sono sempre visibili. Imposta l'URL reale in `href` per renderle cliccabili;
+ * Link social (Instagram, YouTube, Discord, X): le icone sono sempre visibili. Imposta l'URL reale in `href` per renderle cliccabili;
  * finché resta vuoto l'icona è un placeholder inerte (niente link morto).
  */
 interface SocialLink {
@@ -25,7 +24,18 @@ const SOCIAL_LINKS: SocialLink[] = [
     href: 'https://www.instagram.com/ani_map_verse',
     Icon: InstagramIcon,
   },
-  { key: 'discord', label: 'Discord', href: '', Icon: DiscordIcon },
+  {
+    key: 'youtube',
+    label: 'YouTube',
+    href: 'https://www.youtube.com/@AnimeInteractiveWorlds',
+    Icon: YouTubeIcon,
+  },
+  {
+    key: 'discord',
+    label: 'Discord',
+    href: 'https://discord.gg/qS2bz9f5Tx',
+    Icon: DiscordIcon,
+  },
   {
     key: 'x',
     label: 'X',

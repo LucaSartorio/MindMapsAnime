@@ -24,6 +24,24 @@ export function InstagramIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
+export function YouTubeIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.8}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+      {...props}
+    >
+      <rect x="2" y="5" width="20" height="14" rx="4" />
+      <path d="M10 9.2v5.6l4.8-2.8Z" fill="currentColor" />
+    </svg>
+  );
+}
+
 export function DiscordIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden {...props}>

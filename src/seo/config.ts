@@ -30,7 +30,11 @@ export const SITE = {
    * Profili ufficiali REALI del progetto (gli stessi linkati nel footer).
    * Finiscono in `Organization.sameAs`: non aggiungere profili inesistenti.
    */
-  sameAs: ['https://www.instagram.com/ani_map_verse', 'https://x.com/animapverse'],
+  sameAs: [
+    'https://www.instagram.com/ani_map_verse',
+    'https://www.youtube.com/@AnimeInteractiveWorlds',
+    'https://x.com/animapverse',
+  ],
 } as const;
 
 /**
