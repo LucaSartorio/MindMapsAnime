@@ -1,0 +1,13 @@
+{
+  "receiptVersion": 1,
+  "renderId": "character-journey:onepiece:monkey-d-luffy:part-03@en",
+  "provider": "metricool",
+  "status": "scheduled",
+  "scheduledFor": "2026-10-23T10:00:00+02:00",
+  "recordedAt": "2026-10-23T05:15:16Z",
+  "recordedBy": "chatgpt-work-publishing-agent",
+  "platform": "instagram",
+  "providerPostId": "403813545",
+  "providerPostUuid": "-4234287249331566086",
+  "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-4234287249331566086"
+}
