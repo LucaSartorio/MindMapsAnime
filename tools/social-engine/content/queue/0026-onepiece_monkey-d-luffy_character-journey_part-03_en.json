@@ -1,0 +1,19 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterJourney",
+  "anime": "onepiece",
+  "subject": "monkey-d-luffy",
+  "segment": "part-03",
+  "locale": "en",
+  "hook": "Monkey D. Luffy's journey continues — Part 3 of 5.",
+  "hookType": "fact",
+  "hookId": "cj-cont-fact-1",
+  "cta": "Follow for Part 4.",
+  "ctaType": "follow-next-part",
+  "selection": {
+    "mode": "coldstart",
+    "score": 102.18,
+    "seed": "feed20:hb6a70a0a:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +20.3, jitter +3.9; +12 main character; +14 continues a started series (Part 3 promised)"
+}
