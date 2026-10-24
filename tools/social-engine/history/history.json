@@ -2553,7 +2553,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-10-24T05:10:37.673Z",
-      "updatedAt": "2026-10-24T05:13:47.685Z",
+      "updatedAt": "2026-10-24T05:22:16.501Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-10-24T05:13:47.685Z",
       "outputFile": "tools/social-engine/output/attackontitan_jean-kirstein_guess-character_en.mp4",
@@ -2616,9 +2616,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-24T10:00:00+02:00",
+          "scheduledAt": "2026-10-24T05:15:29Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "404775518",
+          "providerPostUuid": "7054443499450483968",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=7054443499450483968",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_jean-kirstein_guess-character_en.instagram.scheduled.a3aab3d35e31"
+          ],
+          "updatedAt": "2026-10-24T05:22:16.501Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-24T10:00:00+02:00",
+          "scheduledAt": "2026-10-24T05:15:29Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "404775549",
+          "providerPostUuid": "4687929714685659305",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=4687929714685659305",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_jean-kirstein_guess-character_en.facebook.scheduled.25082df4a332"
+          ],
+          "updatedAt": "2026-10-24T05:22:16.501Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-24T10:00:00+02:00",
+          "scheduledAt": "2026-10-24T05:15:29Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "404775579",
+          "providerPostUuid": "5271483971004549609",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=5271483971004549609",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_jean-kirstein_guess-character_en.tiktok.scheduled.597382173686"
+          ],
+          "updatedAt": "2026-10-24T05:22:16.501Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-24T10:00:00+02:00",
+          "scheduledAt": "2026-10-24T05:15:29Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "404775668",
+          "providerPostUuid": "8565835117389891470",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=8565835117389891470",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_jean-kirstein_guess-character_en.youtube.scheduled.9761273fc267"
+          ],
+          "updatedAt": "2026-10-24T05:22:16.501Z"
+        }
+      ]
     },
     "guess-character:attackontitan:levi-ackerman@en": {
       "renderId": "guess-character:attackontitan:levi-ackerman@en",

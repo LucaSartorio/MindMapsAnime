@@ -1,0 +1,30 @@
+{
+  "receiptId": "attackontitan_jean-kirstein_guess-character_en.tiktok.scheduled.597382173686",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-10-24T05:22:16.501Z",
+  "sourceFile": "20261024T051529Z-attackontitan_jean-kirstein_guess-character_en-tiktok-scheduled.json",
+  "run": {
+    "runId": "40065973283",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/40065973283",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "guess-character:attackontitan:jean-kirstein@en",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-10-24T10:00:00+02:00",
+    "recordedAt": "2026-10-24T05:15:29Z",
+    "recordedBy": "chatgpt-work-publishing-agent",
+    "platform": "tiktok",
+    "providerPostId": "404775579",
+    "providerPostUuid": "5271483971004549609",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=5271483971004549609"
+  }
+}
