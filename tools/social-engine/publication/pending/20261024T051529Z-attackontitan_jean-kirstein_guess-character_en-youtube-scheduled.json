@@ -1,0 +1,13 @@
+{
+  "receiptVersion": 1,
+  "renderId": "guess-character:attackontitan:jean-kirstein@en",
+  "provider": "metricool",
+  "status": "scheduled",
+  "scheduledFor": "2026-10-24T10:00:00+02:00",
+  "recordedAt": "2026-10-24T05:15:29Z",
+  "recordedBy": "chatgpt-work-publishing-agent",
+  "platform": "youtube",
+  "providerPostId": "404775668",
+  "providerPostUuid": "8565835117389891470",
+  "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=8565835117389891470"
+}
