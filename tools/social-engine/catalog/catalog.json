@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-23T05:21:05.873Z",
+  "generatedAt": "2026-10-24T05:13:48.696Z",
   "locales": [
     "en",
     "it"
@@ -17234,13 +17234,28 @@
             "places": 4,
             "clues": 4
           },
-          "renderedLocales": [],
+          "renderedLocales": [
+            "en"
+          ],
           "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
-          "renderedBefore": false,
+          "renderedBefore": true,
           "publishedBefore": false,
-          "publication": []
+          "publication": [
+            {
+              "renderId": "guess-character:attackontitan:jean-kirstein@en",
+              "locale": "en",
+              "variant": null,
+              "status": "notPublished",
+              "platforms": {
+                "instagram": "notScheduled",
+                "facebook": "notScheduled",
+                "tiktok": "notScheduled",
+                "youtube": "notScheduled"
+              }
+            }
+          ]
         },
         {
           "id": "guess-character:attackontitan:connie-springer",
@@ -25626,15 +25641,68 @@
       "metricool"
     ],
     "summary": {
-      "rendered": 26,
+      "rendered": 27,
       "unavailable": 5,
-      "notPublished": 5,
+      "notPublished": 6,
       "scheduled": 15,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0
     },
-    "ready": [],
+    "ready": [
+      {
+        "renderId": "guess-character:attackontitan:jean-kirstein@en",
+        "contentId": "guess-character:attackontitan:jean-kirstein",
+        "anime": "attackontitan",
+        "subject": "jean-kirstein",
+        "subjectName": "Jean Kirstein",
+        "locale": "en",
+        "variant": null,
+        "segment": null,
+        "partNumber": null,
+        "partCount": null,
+        "renderedAt": "2026-10-24T05:13:47.685Z",
+        "durationSeconds": 21,
+        "publicationStatus": "notPublished",
+        "platforms": {
+          "instagram": "notScheduled",
+          "facebook": "notScheduled",
+          "tiktok": "notScheduled",
+          "youtube": "notScheduled"
+        },
+        "artifact": {
+          "name": "animapverse-social-render-40065204229-1",
+          "runId": "40065204229",
+          "runAttempt": "1",
+          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/40065204229",
+          "video": "videos/attackontitan_jean-kirstein_guess-character_en.mp4",
+          "manifest": "manifests/attackontitan_jean-kirstein_guess-character_en.manifest.json",
+          "sha256": "8e75be81188edbf8cc615efc004ea8ec1a7a1cdfb3f90624baa9e0325d29bc00",
+          "cover": "covers/attackontitan_jean-kirstein_guess-character_en.cover.png",
+          "expiresAt": "2026-11-23T05:13:47.685Z"
+        },
+        "contentType": "guess-character",
+        "platformMetadata": {
+          "instagramCaption": "4 places. One Attack on Titan character. Who is it?\n\n4 places, one Attack on Titan character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nSave it for your next rewatch.\n\n#attackontitan #aot #anime #animemap #AniMapVerse",
+          "tiktokCaption": "4 places. One Attack on Titan character. Who is it? Did you get it right? Tell us how many places it took you 👇 #attackontitan #aot #anime #animemap #AniMapVerse",
+          "youtubeTitle": "Guess the Attack on Titan Character From the Places They Visited 🧱",
+          "youtubeDescription": "4 places. One Attack on Titan character. Who is it?\n\n4 places, one Attack on Titan character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/attack-on-titan/map\n\n#attackontitan #aot #anime",
+          "facebookCaption": "4 places. One Attack on Titan character. Who is it?\n\n4 places, one Attack on Titan character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/attack-on-titan/map",
+          "hashtags": [
+            "#attackontitan",
+            "#aot",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        },
+        "waitFor": {}
+      }
+    ],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",

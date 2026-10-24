@@ -1,21 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-23T05:21:05.873Z",
-  "status": "ready",
+  "generatedAt": "2026-10-24T05:13:48.696Z",
+  "status": "backlog",
   "feedTail": [
-    {
-      "renderId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-piccolo@en",
-      "contentType": "character-versus",
-      "animes": [
-        "naruto",
-        "dragonball"
-      ],
-      "characters": [
-        "naruto:sasuke-uchiha",
-        "dragonball:piccolo"
-      ],
-      "part": null
-    },
     {
       "renderId": "character-journey:jujutsukaisen:satoru-gojo@en",
       "contentType": "character-journey",
@@ -72,6 +59,17 @@
         "onepiece:monkey-d-luffy"
       ],
       "part": 3
+    },
+    {
+      "renderId": "guess-character:attackontitan:jean-kirstein@en",
+      "contentType": "guess-character",
+      "animes": [
+        "attackontitan"
+      ],
+      "characters": [
+        "attackontitan:jean-kirstein"
+      ],
+      "part": null
     }
   ],
   "rules": {
@@ -92,497 +90,28 @@
     "error": null
   },
   "backlog": {
-    "unpublished": [],
+    "unpublished": [
+      {
+        "renderId": "guess-character:attackontitan:jean-kirstein@en",
+        "contentType": "guess-character",
+        "renderedAt": "2026-10-24T05:13:47.685Z",
+        "missing": [
+          "instagram",
+          "facebook",
+          "tiktok",
+          "youtube"
+        ]
+      }
+    ],
     "unfinished": [],
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "feed21:character-journey:onepiece:monkey-d-luffy:part-03@en:samples0",
-  "rejected": {
-    "JOURNEY_PART_ORDER": 41,
-    "JOURNEY_PART_SPACING": 1,
-    "MAX_SAME_CHARACTER_STREAK": 21
-  },
-  "considered": 680,
-  "trace": {
-    "traceVersion": 1,
-    "mode": "coldstart",
-    "seed": "feed21:character-journey:onepiece:monkey-d-luffy:part-03@en:samples0",
-    "analytics": {
-      "coldStart": true,
-      "samples": 0,
-      "contents": 0,
-      "minimumSamples": 8
-    },
-    "recent": [
-      {
-        "renderId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-piccolo@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "dragonball"
-        ],
-        "characters": [
-          "naruto:sasuke-uchiha",
-          "dragonball:piccolo"
-        ]
-      },
-      {
-        "renderId": "character-journey:jujutsukaisen:satoru-gojo@en",
-        "contentType": "character-journey",
-        "animes": [
-          "jujutsukaisen"
-        ],
-        "characters": [
-          "jujutsukaisen:satoru-gojo"
-        ]
-      },
-      {
-        "renderId": "guess-character:onepiece:nico-robin@en",
-        "contentType": "guess-character",
-        "animes": [
-          "onepiece"
-        ],
-        "characters": [
-          "onepiece:nico-robin"
-        ]
-      },
-      {
-        "renderId": "character-journey:dragonball:goku:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "dragonball"
-        ],
-        "characters": [
-          "dragonball:goku"
-        ]
-      },
-      {
-        "renderId": "character-versus:bleach:yasutora-chad-sado-vs-blackclover-asta@en",
-        "contentType": "character-versus",
-        "animes": [
-          "bleach",
-          "blackclover"
-        ],
-        "characters": [
-          "bleach:yasutora-chad-sado",
-          "blackclover:asta"
-        ]
-      },
-      {
-        "renderId": "character-journey:onepiece:monkey-d-luffy:part-03@en",
-        "contentType": "character-journey",
-        "animes": [
-          "onepiece"
-        ],
-        "characters": [
-          "onepiece:monkey-d-luffy"
-        ]
-      }
-    ],
-    "constraints": {
-      "sameAnimeStreak": {
-        "animes": [
-          "onepiece"
-        ],
-        "length": 1
-      },
-      "forcedAnimeRotation": false,
-      "blockedAnimes": [],
-      "blockedCharacters": [
-        "onepiece:monkey-d-luffy"
-      ],
-      "characterCooldown": [
-        "naruto:sasuke-uchiha",
-        "dragonball:piccolo",
-        "jujutsukaisen:satoru-gojo",
-        "onepiece:nico-robin",
-        "dragonball:goku",
-        "bleach:yasutora-chad-sado",
-        "blackclover:asta",
-        "onepiece:monkey-d-luffy"
-      ],
-      "contentTypeStreak": {
-        "contentType": "character-journey",
-        "length": 1
-      }
-    },
-    "hardRulesTriggered": {
-      "JOURNEY_PART_ORDER": 41,
-      "JOURNEY_PART_SPACING": 1,
-      "MAX_SAME_CHARACTER_STREAK": 21
-    },
-    "candidates": {
-      "considered": 680,
-      "eligible": 619,
-      "byContentType": {
-        "character-journey": {
-          "considered": 413,
-          "eligible": 371
-        },
-        "guess-character": {
-          "considered": 84,
-          "eligible": 83
-        },
-        "character-versus": {
-          "considered": 183,
-          "eligible": 165
-        }
-      }
-    },
-    "excluded": [
-      {
-        "renderId": "character-journey:onepiece:monkey-d-luffy:part-04@en",
-        "contentType": "character-journey",
-        "animes": [
-          "onepiece"
-        ],
-        "characters": [
-          "onepiece:monkey-d-luffy"
-        ],
-        "reasons": [
-          "JOURNEY_PART_SPACING",
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "journey spacing: only 0 item(s) since Part 3 (min 2)",
-          "character streak: onepiece:monkey-d-luffy is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:onepiece:monkey-d-luffy:part-05@en",
-        "contentType": "character-journey",
-        "animes": [
-          "onepiece"
-        ],
-        "characters": [
-          "onepiece:monkey-d-luffy"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER",
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "sequence: Part 5 before Part 4 (never publish parts out of order)",
-          "character streak: onepiece:monkey-d-luffy is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:gon-freecss-vs-onepiece-monkey-d-luffy@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "onepiece"
-        ],
-        "characters": [
-          "hunterxhunter:gon-freecss",
-          "onepiece:monkey-d-luffy"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: onepiece:monkey-d-luffy is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-onepiece-monkey-d-luffy@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "onepiece"
-        ],
-        "characters": [
-          "hunterxhunter:killua-zoldyck",
-          "onepiece:monkey-d-luffy"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: onepiece:monkey-d-luffy is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:kurapika-vs-onepiece-monkey-d-luffy@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "onepiece"
-        ],
-        "characters": [
-          "hunterxhunter:kurapika",
-          "onepiece:monkey-d-luffy"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: onepiece:monkey-d-luffy is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:naruto:naruto-uzumaki-vs-onepiece-monkey-d-luffy@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "onepiece"
-        ],
-        "characters": [
-          "naruto:naruto-uzumaki",
-          "onepiece:monkey-d-luffy"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: onepiece:monkey-d-luffy is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:naruto:obito-uchiha-vs-onepiece-monkey-d-luffy@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "onepiece"
-        ],
-        "characters": [
-          "naruto:obito-uchiha",
-          "onepiece:monkey-d-luffy"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: onepiece:monkey-d-luffy is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:naruto:sasuke-uchiha-vs-onepiece-monkey-d-luffy@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "onepiece"
-        ],
-        "characters": [
-          "naruto:sasuke-uchiha",
-          "onepiece:monkey-d-luffy"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: onepiece:monkey-d-luffy is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:onepiece:monkey-d-luffy-vs-attackontitan-armin-arlert@en",
-        "contentType": "character-versus",
-        "animes": [
-          "onepiece",
-          "attackontitan"
-        ],
-        "characters": [
-          "onepiece:monkey-d-luffy",
-          "attackontitan:armin-arlert"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: onepiece:monkey-d-luffy is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:onepiece:monkey-d-luffy-vs-attackontitan-mikasa-ackerman@en",
-        "contentType": "character-versus",
-        "animes": [
-          "onepiece",
-          "attackontitan"
-        ],
-        "characters": [
-          "onepiece:monkey-d-luffy",
-          "attackontitan:mikasa-ackerman"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: onepiece:monkey-d-luffy is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      }
-    ],
-    "status": "selected",
-    "selectedId": "guess-character:attackontitan:jean-kirstein",
-    "renderId": "guess-character:attackontitan:jean-kirstein@en",
-    "contentType": "guess-character",
-    "animes": [
-      "attackontitan"
-    ],
-    "characters": [
-      "attackontitan:jean-kirstein"
-    ],
-    "score": 92.19,
-    "base": 80.19,
-    "reasons": [
-      "coldstart: novelty +24.3, jitter +5.9",
-      "+12 main character"
-    ],
-    "ranked": [
-      {
-        "renderId": "guess-character:attackontitan:jean-kirstein@en",
-        "contentType": "guess-character",
-        "animes": [
-          "attackontitan"
-        ],
-        "score": 92.19,
-        "reasons": [
-          "coldstart: novelty +24.3, jitter +5.9",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "guess-character:naruto:kakashi-hatake@en",
-        "contentType": "guess-character",
-        "animes": [
-          "naruto"
-        ],
-        "score": 91.82,
-        "reasons": [
-          "coldstart: novelty +24.3, jitter +5.5",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "guess-character:hunterxhunter:killua-zoldyck@en",
-        "contentType": "guess-character",
-        "animes": [
-          "hunterxhunter"
-        ],
-        "score": 91.6,
-        "reasons": [
-          "coldstart: novelty +24.3, jitter +5.3",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-attackontitan-mikasa-ackerman@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "attackontitan"
-        ],
-        "score": 91.25,
-        "reasons": [
-          "coldstart: novelty +23.6, jitter +5.7",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-attackontitan-reiner-braun@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "attackontitan"
-        ],
-        "score": 91.14,
-        "reasons": [
-          "coldstart: novelty +23.6, jitter +5.6",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "character-versus:naruto:naruto-uzumaki-vs-hunterxhunter-gon-freecss@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "hunterxhunter"
-        ],
-        "score": 91.12,
-        "reasons": [
-          "coldstart: novelty +23.6, jitter +5.5",
-          "+12 main character"
-        ]
-      }
-    ],
-    "explanation": [
-      "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
-      "onepiece:monkey-d-luffy excluded in every format (maxSameCharacterStreak 1).",
-      "1 series part(s) wait for spacing (≥ 2 items between parts).",
-      "Selected guess-character:attackontitan:jean-kirstein@en (guess-character, attackontitan) — coldstart, score 92.19 among 619 valid candidate(s)."
-    ]
-  },
-  "pick": {
-    "contentId": "guess-character:attackontitan:jean-kirstein",
-    "renderId": "guess-character:attackontitan:jean-kirstein@en",
-    "contentType": "guess-character",
-    "animes": [
-      "attackontitan"
-    ],
-    "characters": [
-      "attackontitan:jean-kirstein"
-    ],
-    "part": null,
-    "partCount": null,
-    "score": 92.19,
-    "reasons": [
-      "coldstart: novelty +24.3, jitter +5.9",
-      "+12 main character"
-    ]
-  },
-  "request": {
-    "template": "guessCharacter",
-    "anime": "attackontitan",
-    "subject": "jean-kirstein",
-    "locale": "en",
-    "hook": "4 places. One Attack on Titan character. Who is it?",
-    "hookType": "curiosity",
-    "hookId": "gc-curiosity-1",
-    "cta": "Did you get it right?",
-    "ctaType": "comment-guess",
-    "selection": {
-      "mode": "coldstart",
-      "score": 92.19,
-      "seed": "feed21:character-journey:onepiece:monkey-d-luffy:part-03@en:samples0"
-    },
-    "notes": "growth selector (coldstart): coldstart: novelty +24.3, jitter +5.9; +12 main character"
-  },
-  "alternatives": [
-    {
-      "renderId": "guess-character:naruto:kakashi-hatake@en",
-      "contentType": "guess-character",
-      "score": 91.82
-    },
-    {
-      "renderId": "guess-character:hunterxhunter:killua-zoldyck@en",
-      "contentType": "guess-character",
-      "score": 91.6
-    },
-    {
-      "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-attackontitan-mikasa-ackerman@en",
-      "contentType": "character-versus",
-      "score": 91.25
-    },
-    {
-      "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-attackontitan-reiner-braun@en",
-      "contentType": "character-versus",
-      "score": 91.14
-    },
-    {
-      "renderId": "character-versus:naruto:naruto-uzumaki-vs-hunterxhunter-gon-freecss@en",
-      "contentType": "character-versus",
-      "score": 91.12
-    }
-  ],
-  "eligible": 619
+  "seed": "",
+  "reason": "publish the existing render first: guess-character:attackontitan:jean-kirstein@en (it counts as today's video; no new content)",
+  "alternatives": [],
+  "rejected": {},
+  "considered": 0,
+  "eligible": 0,
+  "trace": null
 }

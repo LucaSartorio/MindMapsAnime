@@ -2542,6 +2542,84 @@
         }
       ]
     },
+    "guess-character:attackontitan:jean-kirstein@en": {
+      "renderId": "guess-character:attackontitan:jean-kirstein@en",
+      "contentId": "guess-character:attackontitan:jean-kirstein",
+      "template": "guessCharacter",
+      "anime": "attackontitan",
+      "subject": "jean-kirstein",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-10-24T05:10:37.673Z",
+      "updatedAt": "2026-10-24T05:13:47.685Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-10-24T05:13:47.685Z",
+      "outputFile": "tools/social-engine/output/attackontitan_jean-kirstein_guess-character_en.mp4",
+      "manifestFile": "tools/social-engine/output/attackontitan_jean-kirstein_guess-character_en.manifest.json",
+      "sourceFile": "0027-attackontitan_jean-kirstein_guess-character_en.json",
+      "durationSeconds": 21,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-40065204229-1",
+        "runId": "40065204229",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/40065204229",
+        "video": "videos/attackontitan_jean-kirstein_guess-character_en.mp4",
+        "manifest": "manifests/attackontitan_jean-kirstein_guess-character_en.manifest.json",
+        "sha256": "8e75be81188edbf8cc615efc004ea8ec1a7a1cdfb3f90624baa9e0325d29bc00",
+        "cover": "covers/attackontitan_jean-kirstein_guess-character_en.cover.png",
+        "expiresAt": "2026-11-23T05:13:47.685Z"
+      },
+      "social": {
+        "contentType": "guess-character",
+        "animes": [
+          "attackontitan"
+        ],
+        "characters": [
+          "attackontitan:jean-kirstein"
+        ],
+        "characterNames": [
+          "Jean Kirstein"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "curiosity",
+        "hookId": "gc-curiosity-1",
+        "hook": "4 places. One Attack on Titan character. Who is it?",
+        "ctaType": "comment-guess",
+        "cta": "Did you get it right?",
+        "durationSeconds": 21,
+        "selection": {
+          "mode": "coldstart",
+          "score": 92.19,
+          "seed": "feed21:character-journey:onepiece:monkey-d-luffy:part-03@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "4 places. One Attack on Titan character. Who is it?\n\n4 places, one Attack on Titan character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nSave it for your next rewatch.\n\n#attackontitan #aot #anime #animemap #AniMapVerse",
+          "tiktokCaption": "4 places. One Attack on Titan character. Who is it? Did you get it right? Tell us how many places it took you 👇 #attackontitan #aot #anime #animemap #AniMapVerse",
+          "youtubeTitle": "Guess the Attack on Titan Character From the Places They Visited 🧱",
+          "youtubeDescription": "4 places. One Attack on Titan character. Who is it?\n\n4 places, one Attack on Titan character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/attack-on-titan/map\n\n#attackontitan #aot #anime",
+          "facebookCaption": "4 places. One Attack on Titan character. Who is it?\n\n4 places, one Attack on Titan character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/attack-on-titan/map",
+          "hashtags": [
+            "#attackontitan",
+            "#aot",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "guess-character:attackontitan:levi-ackerman@en": {
       "renderId": "guess-character:attackontitan:levi-ackerman@en",
       "contentId": "guess-character:attackontitan:levi-ackerman",
