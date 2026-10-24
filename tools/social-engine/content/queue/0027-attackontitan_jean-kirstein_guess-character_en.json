@@ -1,0 +1,18 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "guessCharacter",
+  "anime": "attackontitan",
+  "subject": "jean-kirstein",
+  "locale": "en",
+  "hook": "4 places. One Attack on Titan character. Who is it?",
+  "hookType": "curiosity",
+  "hookId": "gc-curiosity-1",
+  "cta": "Did you get it right?",
+  "ctaType": "comment-guess",
+  "selection": {
+    "mode": "coldstart",
+    "score": 92.19,
+    "seed": "feed21:character-journey:onepiece:monkey-d-luffy:part-03@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +24.3, jitter +5.9; +12 main character"
+}
