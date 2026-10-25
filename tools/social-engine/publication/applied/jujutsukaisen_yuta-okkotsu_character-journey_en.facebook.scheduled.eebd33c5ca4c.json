@@ -1,0 +1,30 @@
+{
+  "receiptId": "jujutsukaisen_yuta-okkotsu_character-journey_en.facebook.scheduled.eebd33c5ca4c",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-10-25T06:15:41.556Z",
+  "sourceFile": "20261025T060943Z-jujutsukaisen_yuta-okkotsu_character-journey_en-facebook-scheduled.json",
+  "run": {
+    "runId": "40168458179",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/40168458179",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "character-journey:jujutsukaisen:yuta-okkotsu@en",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-10-25T18:00:00+01:00",
+    "recordedAt": "2026-10-25T06:09:43Z",
+    "recordedBy": "chatgpt-work-publishing-agent",
+    "platform": "facebook",
+    "providerPostId": "405469168",
+    "providerPostUuid": "8967925665862010940",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=8967925665862010940"
+  }
+}

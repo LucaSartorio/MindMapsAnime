@@ -777,7 +777,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-10-25T06:02:50.239Z",
-      "updatedAt": "2026-10-25T06:06:49.929Z",
+      "updatedAt": "2026-10-25T06:15:41.556Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-10-25T06:06:49.929Z",
       "outputFile": "tools/social-engine/output/jujutsukaisen_yuta-okkotsu_character-journey_en.mp4",
@@ -841,9 +841,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-25T18:00:00+01:00",
+          "scheduledAt": "2026-10-25T06:09:43Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "405468993",
+          "providerPostUuid": "-1576561725393909561",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-1576561725393909561",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "jujutsukaisen_yuta-okkotsu_character-journey_en.instagram.scheduled.5fe55bffadaa"
+          ],
+          "updatedAt": "2026-10-25T06:15:41.556Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-25T18:00:00+01:00",
+          "scheduledAt": "2026-10-25T06:09:43Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "405469168",
+          "providerPostUuid": "8967925665862010940",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=8967925665862010940",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "jujutsukaisen_yuta-okkotsu_character-journey_en.facebook.scheduled.eebd33c5ca4c"
+          ],
+          "updatedAt": "2026-10-25T06:15:41.556Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-25T18:00:00+01:00",
+          "scheduledAt": "2026-10-25T06:09:43Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "405469281",
+          "providerPostUuid": "6278223829112472476",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=6278223829112472476",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "jujutsukaisen_yuta-okkotsu_character-journey_en.tiktok.scheduled.145bb093de73"
+          ],
+          "updatedAt": "2026-10-25T06:15:41.556Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-25T18:00:00+01:00",
+          "scheduledAt": "2026-10-25T06:09:43Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "405469213",
+          "providerPostUuid": "1667333214308552615",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=1667333214308552615",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "jujutsukaisen_yuta-okkotsu_character-journey_en.youtube.scheduled.8649dc52d22c"
+          ],
+          "updatedAt": "2026-10-25T06:15:41.556Z"
+        }
+      ]
     },
     "character-journey:naruto:itachi-uchiha@en": {
       "renderId": "character-journey:naruto:itachi-uchiha@en",
