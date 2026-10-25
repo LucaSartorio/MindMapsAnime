@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-24T05:22:16.513Z",
+  "generatedAt": "2026-10-25T06:06:51.103Z",
   "locales": [
     "en",
     "it"
@@ -13225,13 +13225,28 @@
             "arcs": 3,
             "journeyArcs": 3
           },
-          "renderedLocales": [],
+          "renderedLocales": [
+            "en"
+          ],
           "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
-          "renderedBefore": false,
+          "renderedBefore": true,
           "publishedBefore": false,
-          "publication": []
+          "publication": [
+            {
+              "renderId": "character-journey:jujutsukaisen:yuta-okkotsu@en",
+              "locale": "en",
+              "variant": null,
+              "status": "notPublished",
+              "platforms": {
+                "instagram": "notScheduled",
+                "facebook": "notScheduled",
+                "tiktok": "notScheduled",
+                "youtube": "notScheduled"
+              }
+            }
+          ]
         },
         {
           "id": "character-journey:jujutsukaisen:riko-amanai",
@@ -25643,15 +25658,69 @@
       "metricool"
     ],
     "summary": {
-      "rendered": 27,
+      "rendered": 28,
       "unavailable": 5,
-      "notPublished": 5,
+      "notPublished": 6,
       "scheduled": 16,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0
     },
-    "ready": [],
+    "ready": [
+      {
+        "renderId": "character-journey:jujutsukaisen:yuta-okkotsu@en",
+        "contentId": "character-journey:jujutsukaisen:yuta-okkotsu",
+        "anime": "jujutsukaisen",
+        "subject": "yuta-okkotsu",
+        "subjectName": "Yuta Okkotsu",
+        "locale": "en",
+        "variant": null,
+        "segment": null,
+        "partNumber": null,
+        "partCount": null,
+        "renderedAt": "2026-10-25T06:06:49.929Z",
+        "durationSeconds": 24,
+        "publicationStatus": "notPublished",
+        "platforms": {
+          "instagram": "notScheduled",
+          "facebook": "notScheduled",
+          "tiktok": "notScheduled",
+          "youtube": "notScheduled"
+        },
+        "artifact": {
+          "name": "animapverse-social-render-40167676888-1",
+          "runId": "40167676888",
+          "runAttempt": "1",
+          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/40167676888",
+          "video": "videos/jujutsukaisen_yuta-okkotsu_character-journey_en.mp4",
+          "manifest": "manifests/jujutsukaisen_yuta-okkotsu_character-journey_en.manifest.json",
+          "sha256": "8ac8442749ea439cc13c160a19df3acd7b65fcf03b2c2a3c02451878e73dcfd3",
+          "cover": "covers/jujutsukaisen_yuta-okkotsu_character-journey_en.cover.png",
+          "expiresAt": "2026-11-24T06:06:49.929Z"
+        },
+        "contentType": "character-journey",
+        "platformMetadata": {
+          "instagramCaption": "Only real Jujutsu Kaisen fans know all these places.\n\nYuta Okkotsu's journey across Jujutsu Kaisen: 3 places on the world map.\n\nFollow for more anime journeys.\n\nSave it for your next rewatch.\n\n#jujutsukaisen #jjk #yutaokkotsu #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Only real Jujutsu Kaisen fans know all these places. Follow for more anime journeys. #jujutsukaisen #jjk #yutaokkotsu #anime #animemap",
+          "youtubeTitle": "Every Place Yuta Okkotsu Visited 🌀 | Jujutsu Kaisen Journey",
+          "youtubeDescription": "Only real Jujutsu Kaisen fans know all these places.\n\nYuta Okkotsu's journey across Jujutsu Kaisen: 3 places on the world map.\n\nSubscribe for more anime journeys.\n\nInteractive map: https://animapverse.com/en/jujutsu-kaisen/characters/yuta-okkotsu\n\n#jujutsukaisen #jjk #yutaokkotsu",
+          "facebookCaption": "Only real Jujutsu Kaisen fans know all these places.\n\nYuta Okkotsu's journey across Jujutsu Kaisen: 3 places on the world map.\n\nFollow for more anime journeys.\n\nInteractive map: https://animapverse.com/en/jujutsu-kaisen/characters/yuta-okkotsu",
+          "hashtags": [
+            "#jujutsukaisen",
+            "#jjk",
+            "#yutaokkotsu",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        },
+        "waitFor": {}
+      }
+    ],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",

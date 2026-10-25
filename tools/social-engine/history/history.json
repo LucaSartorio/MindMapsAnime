@@ -766,6 +766,85 @@
         }
       ]
     },
+    "character-journey:jujutsukaisen:yuta-okkotsu@en": {
+      "renderId": "character-journey:jujutsukaisen:yuta-okkotsu@en",
+      "contentId": "character-journey:jujutsukaisen:yuta-okkotsu",
+      "template": "characterJourney",
+      "anime": "jujutsukaisen",
+      "subject": "yuta-okkotsu",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-10-25T06:02:50.239Z",
+      "updatedAt": "2026-10-25T06:06:49.929Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-10-25T06:06:49.929Z",
+      "outputFile": "tools/social-engine/output/jujutsukaisen_yuta-okkotsu_character-journey_en.mp4",
+      "manifestFile": "tools/social-engine/output/jujutsukaisen_yuta-okkotsu_character-journey_en.manifest.json",
+      "sourceFile": "0028-jujutsukaisen_yuta-okkotsu_character-journey_en.json",
+      "durationSeconds": 24,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-40167676888-1",
+        "runId": "40167676888",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/40167676888",
+        "video": "videos/jujutsukaisen_yuta-okkotsu_character-journey_en.mp4",
+        "manifest": "manifests/jujutsukaisen_yuta-okkotsu_character-journey_en.manifest.json",
+        "sha256": "8ac8442749ea439cc13c160a19df3acd7b65fcf03b2c2a3c02451878e73dcfd3",
+        "cover": "covers/jujutsukaisen_yuta-okkotsu_character-journey_en.cover.png",
+        "expiresAt": "2026-11-24T06:06:49.929Z"
+      },
+      "social": {
+        "contentType": "character-journey",
+        "animes": [
+          "jujutsukaisen"
+        ],
+        "characters": [
+          "jujutsukaisen:yuta-okkotsu"
+        ],
+        "characterNames": [
+          "Yuta Okkotsu"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "challenge",
+        "hookId": "cj-challenge-1",
+        "hook": "Only real Jujutsu Kaisen fans know all these places.",
+        "ctaType": "follow-for-more",
+        "cta": "Follow for the next journey.",
+        "durationSeconds": 24,
+        "selection": {
+          "mode": "coldstart",
+          "score": 94.28,
+          "seed": "feed22:guess-character:attackontitan:jean-kirstein@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Only real Jujutsu Kaisen fans know all these places.\n\nYuta Okkotsu's journey across Jujutsu Kaisen: 3 places on the world map.\n\nFollow for more anime journeys.\n\nSave it for your next rewatch.\n\n#jujutsukaisen #jjk #yutaokkotsu #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Only real Jujutsu Kaisen fans know all these places. Follow for more anime journeys. #jujutsukaisen #jjk #yutaokkotsu #anime #animemap",
+          "youtubeTitle": "Every Place Yuta Okkotsu Visited 🌀 | Jujutsu Kaisen Journey",
+          "youtubeDescription": "Only real Jujutsu Kaisen fans know all these places.\n\nYuta Okkotsu's journey across Jujutsu Kaisen: 3 places on the world map.\n\nSubscribe for more anime journeys.\n\nInteractive map: https://animapverse.com/en/jujutsu-kaisen/characters/yuta-okkotsu\n\n#jujutsukaisen #jjk #yutaokkotsu",
+          "facebookCaption": "Only real Jujutsu Kaisen fans know all these places.\n\nYuta Okkotsu's journey across Jujutsu Kaisen: 3 places on the world map.\n\nFollow for more anime journeys.\n\nInteractive map: https://animapverse.com/en/jujutsu-kaisen/characters/yuta-okkotsu",
+          "hashtags": [
+            "#jujutsukaisen",
+            "#jjk",
+            "#yutaokkotsu",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-journey:naruto:itachi-uchiha@en": {
       "renderId": "character-journey:naruto:itachi-uchiha@en",
       "contentId": "character-journey:naruto:itachi-uchiha",
