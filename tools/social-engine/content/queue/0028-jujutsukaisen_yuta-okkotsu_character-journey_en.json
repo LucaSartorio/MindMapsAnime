@@ -1,0 +1,18 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterJourney",
+  "anime": "jujutsukaisen",
+  "subject": "yuta-okkotsu",
+  "locale": "en",
+  "hook": "Only real Jujutsu Kaisen fans know all these places.",
+  "hookType": "challenge",
+  "hookId": "cj-challenge-1",
+  "cta": "Follow for the next journey.",
+  "ctaType": "follow-for-more",
+  "selection": {
+    "mode": "coldstart",
+    "score": 94.28,
+    "seed": "feed22:guess-character:attackontitan:jean-kirstein@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +22.5, jitter +5.8; +12 main character; +4 format below its target share (40% < 50%)"
+}
