@@ -1,0 +1,30 @@
+{
+  "receiptId": "naruto_obito-uchiha-vs-hunterxhunter-killua-zoldyck_character-versus_en.youtube.scheduled.ecad5fd43aee",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-10-26T06:17:07.672Z",
+  "sourceFile": "20261026T060847Z-naruto_obito-uchiha-vs-hunterxhunter-killua-zoldyck_character-versus_en-youtube-scheduled.json",
+  "run": {
+    "runId": "40278891899",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/40278891899",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "character-versus:naruto:obito-uchiha-vs-hunterxhunter-killua-zoldyck@en",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-10-26T16:00:00+01:00",
+    "recordedAt": "2026-10-26T06:08:47Z",
+    "recordedBy": "chatgpt-work-publishing-agent",
+    "platform": "youtube",
+    "providerPostId": "406257333",
+    "providerPostUuid": "-7094091661401240740",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-7094091661401240740"
+  }
+}

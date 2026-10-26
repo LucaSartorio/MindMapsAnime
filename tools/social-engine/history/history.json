@@ -2387,7 +2387,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-10-26T06:04:15.345Z",
-      "updatedAt": "2026-10-26T06:05:59.874Z",
+      "updatedAt": "2026-10-26T06:17:07.672Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-10-26T06:05:59.874Z",
       "outputFile": "tools/social-engine/output/naruto_obito-uchiha-vs-hunterxhunter-killua-zoldyck_character-versus_en.mp4",
@@ -2457,9 +2457,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-26T16:00:00+01:00",
+          "scheduledAt": "2026-10-26T06:08:47Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "406257201",
+          "providerPostUuid": "-2594515428585028116",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-2594515428585028116",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "naruto_obito-uchiha-vs-hunterxhunter-killua-zoldyck_character-versus_en.instagram.scheduled.2e4386001511"
+          ],
+          "updatedAt": "2026-10-26T06:17:07.672Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-26T16:00:00+01:00",
+          "scheduledAt": "2026-10-26T06:08:47Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "406257250",
+          "providerPostUuid": "5877885351001801103",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=5877885351001801103",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "naruto_obito-uchiha-vs-hunterxhunter-killua-zoldyck_character-versus_en.facebook.scheduled.c2dc6176d1f5"
+          ],
+          "updatedAt": "2026-10-26T06:17:07.672Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-26T16:00:00+01:00",
+          "scheduledAt": "2026-10-26T06:08:47Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "406257375",
+          "providerPostUuid": "-5640610614545134162",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-5640610614545134162",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "naruto_obito-uchiha-vs-hunterxhunter-killua-zoldyck_character-versus_en.tiktok.scheduled.431011c32611"
+          ],
+          "updatedAt": "2026-10-26T06:17:07.672Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-26T16:00:00+01:00",
+          "scheduledAt": "2026-10-26T06:08:47Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "406257333",
+          "providerPostUuid": "-7094091661401240740",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-7094091661401240740",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "naruto_obito-uchiha-vs-hunterxhunter-killua-zoldyck_character-versus_en.youtube.scheduled.ecad5fd43aee"
+          ],
+          "updatedAt": "2026-10-26T06:17:07.672Z"
+        }
+      ]
     },
     "character-versus:naruto:sasuke-uchiha-vs-dragonball-piccolo@en": {
       "renderId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-piccolo@en",
