@@ -1,0 +1,22 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterVersus",
+  "anime": "naruto",
+  "subject": "obito-uchiha",
+  "opponent": {
+    "anime": "hunterxhunter",
+    "subject": "killua-zoldyck"
+  },
+  "locale": "en",
+  "hook": "Who covered more ground, Obito Uchiha or Killua Zoldyck?",
+  "hookType": "question",
+  "hookId": "cv-question-1",
+  "cta": "Who should compete next?",
+  "ctaType": "comment-next-matchup",
+  "selection": {
+    "mode": "coldstart",
+    "score": 91.97,
+    "seed": "feed23:character-journey:jujutsukaisen:yuta-okkotsu@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +24.1, jitter +5.8; +12 main character"
+}
