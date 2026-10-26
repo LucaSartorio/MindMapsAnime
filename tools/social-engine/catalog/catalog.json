@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-25T06:15:41.567Z",
+  "generatedAt": "2026-10-26T06:06:00.922Z",
   "locales": [
     "en",
     "it"
@@ -19104,13 +19104,28 @@
             "placesA": 9,
             "placesB": 8
           },
-          "renderedLocales": [],
+          "renderedLocales": [
+            "en"
+          ],
           "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
-          "renderedBefore": false,
+          "renderedBefore": true,
           "publishedBefore": false,
-          "publication": [],
+          "publication": [
+            {
+              "renderId": "character-versus:naruto:obito-uchiha-vs-hunterxhunter-killua-zoldyck@en",
+              "locale": "en",
+              "variant": null,
+              "status": "notPublished",
+              "platforms": {
+                "instagram": "notScheduled",
+                "facebook": "notScheduled",
+                "tiktok": "notScheduled",
+                "youtube": "notScheduled"
+              }
+            }
+          ],
           "request": {
             "subject": "obito-uchiha",
             "opponent": {
@@ -25660,15 +25675,72 @@
       "metricool"
     ],
     "summary": {
-      "rendered": 28,
+      "rendered": 29,
       "unavailable": 5,
-      "notPublished": 5,
+      "notPublished": 6,
       "scheduled": 17,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0
     },
-    "ready": [],
+    "ready": [
+      {
+        "renderId": "character-versus:naruto:obito-uchiha-vs-hunterxhunter-killua-zoldyck@en",
+        "contentId": "character-versus:naruto:obito-uchiha-vs-hunterxhunter-killua-zoldyck",
+        "anime": "naruto",
+        "subject": "obito-uchiha-vs-hunterxhunter-killua-zoldyck",
+        "subjectName": "Obito Uchiha vs Killua Zoldyck",
+        "locale": "en",
+        "variant": null,
+        "segment": null,
+        "partNumber": null,
+        "partCount": null,
+        "renderedAt": "2026-10-26T06:05:59.874Z",
+        "durationSeconds": 22,
+        "publicationStatus": "notPublished",
+        "platforms": {
+          "instagram": "notScheduled",
+          "facebook": "notScheduled",
+          "tiktok": "notScheduled",
+          "youtube": "notScheduled"
+        },
+        "artifact": {
+          "name": "animapverse-social-render-40277654991-1",
+          "runId": "40277654991",
+          "runAttempt": "1",
+          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/40277654991",
+          "video": "videos/naruto_obito-uchiha-vs-hunterxhunter-killua-zoldyck_character-versus_en.mp4",
+          "manifest": "manifests/naruto_obito-uchiha-vs-hunterxhunter-killua-zoldyck_character-versus_en.manifest.json",
+          "sha256": "b85070e209c013da3d9385b61d4c73e04e9684ec4647f000d3218e20c8ff050c",
+          "cover": "covers/naruto_obito-uchiha-vs-hunterxhunter-killua-zoldyck_character-versus_en.cover.png",
+          "expiresAt": "2026-11-25T06:05:59.874Z"
+        },
+        "contentType": "character-versus",
+        "platformMetadata": {
+          "instagramCaption": "Who covered more ground, Obito Uchiha or Killua Zoldyck?\n\nObito Uchiha (Naruto) vs Killua Zoldyck (Hunter x Hunter): every place on the map, one winner.\n\nWho should compete next? Drop a match-up 👇\n\nSave it for your next rewatch.\n\n#naruto #narutoshippuden #hunterxhunter #hxh #obitouchiha #killuazoldyck #anime #animemap",
+          "tiktokCaption": "Who covered more ground, Obito Uchiha or Killua Zoldyck? Who should compete next? Drop a match-up 👇 #naruto #narutoshippuden #hunterxhunter #hxh #obitouchiha",
+          "youtubeTitle": "Obito Uchiha vs Killua Zoldyck: Who Travelled More? 🍥",
+          "youtubeDescription": "Who covered more ground, Obito Uchiha or Killua Zoldyck?\n\nObito Uchiha (Naruto) vs Killua Zoldyck (Hunter x Hunter): every place on the map, one winner.\n\nWho should compete next? Drop a match-up 👇\n\nInteractive map: https://animapverse.com\n\n#naruto #narutoshippuden #hunterxhunter",
+          "facebookCaption": "Who covered more ground, Obito Uchiha or Killua Zoldyck?\n\nObito Uchiha (Naruto) vs Killua Zoldyck (Hunter x Hunter): every place on the map, one winner.\n\nWho should compete next? Drop a match-up 👇\n\nInteractive map: https://animapverse.com",
+          "hashtags": [
+            "#naruto",
+            "#narutoshippuden",
+            "#hunterxhunter",
+            "#hxh",
+            "#obitouchiha",
+            "#killuazoldyck",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        },
+        "waitFor": {}
+      }
+    ],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",

@@ -2376,6 +2376,91 @@
         }
       ]
     },
+    "character-versus:naruto:obito-uchiha-vs-hunterxhunter-killua-zoldyck@en": {
+      "renderId": "character-versus:naruto:obito-uchiha-vs-hunterxhunter-killua-zoldyck@en",
+      "contentId": "character-versus:naruto:obito-uchiha-vs-hunterxhunter-killua-zoldyck",
+      "template": "characterVersus",
+      "anime": "naruto",
+      "subject": "obito-uchiha-vs-hunterxhunter-killua-zoldyck",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-10-26T06:04:15.345Z",
+      "updatedAt": "2026-10-26T06:05:59.874Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-10-26T06:05:59.874Z",
+      "outputFile": "tools/social-engine/output/naruto_obito-uchiha-vs-hunterxhunter-killua-zoldyck_character-versus_en.mp4",
+      "manifestFile": "tools/social-engine/output/naruto_obito-uchiha-vs-hunterxhunter-killua-zoldyck_character-versus_en.manifest.json",
+      "sourceFile": "0029-naruto_obito-uchiha_character-versus_hunterxhunter_killua-zoldyck_en.json",
+      "durationSeconds": 22,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-40277654991-1",
+        "runId": "40277654991",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/40277654991",
+        "video": "videos/naruto_obito-uchiha-vs-hunterxhunter-killua-zoldyck_character-versus_en.mp4",
+        "manifest": "manifests/naruto_obito-uchiha-vs-hunterxhunter-killua-zoldyck_character-versus_en.manifest.json",
+        "sha256": "b85070e209c013da3d9385b61d4c73e04e9684ec4647f000d3218e20c8ff050c",
+        "cover": "covers/naruto_obito-uchiha-vs-hunterxhunter-killua-zoldyck_character-versus_en.cover.png",
+        "expiresAt": "2026-11-25T06:05:59.874Z"
+      },
+      "social": {
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "hunterxhunter"
+        ],
+        "characters": [
+          "naruto:obito-uchiha",
+          "hunterxhunter:killua-zoldyck"
+        ],
+        "characterNames": [
+          "Obito Uchiha",
+          "Killua Zoldyck"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "question",
+        "hookId": "cv-question-1",
+        "hook": "Who covered more ground, Obito Uchiha or Killua Zoldyck?",
+        "ctaType": "comment-next-matchup",
+        "cta": "Who should compete next?",
+        "durationSeconds": 22,
+        "selection": {
+          "mode": "coldstart",
+          "score": 91.97,
+          "seed": "feed23:character-journey:jujutsukaisen:yuta-okkotsu@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Who covered more ground, Obito Uchiha or Killua Zoldyck?\n\nObito Uchiha (Naruto) vs Killua Zoldyck (Hunter x Hunter): every place on the map, one winner.\n\nWho should compete next? Drop a match-up 👇\n\nSave it for your next rewatch.\n\n#naruto #narutoshippuden #hunterxhunter #hxh #obitouchiha #killuazoldyck #anime #animemap",
+          "tiktokCaption": "Who covered more ground, Obito Uchiha or Killua Zoldyck? Who should compete next? Drop a match-up 👇 #naruto #narutoshippuden #hunterxhunter #hxh #obitouchiha",
+          "youtubeTitle": "Obito Uchiha vs Killua Zoldyck: Who Travelled More? 🍥",
+          "youtubeDescription": "Who covered more ground, Obito Uchiha or Killua Zoldyck?\n\nObito Uchiha (Naruto) vs Killua Zoldyck (Hunter x Hunter): every place on the map, one winner.\n\nWho should compete next? Drop a match-up 👇\n\nInteractive map: https://animapverse.com\n\n#naruto #narutoshippuden #hunterxhunter",
+          "facebookCaption": "Who covered more ground, Obito Uchiha or Killua Zoldyck?\n\nObito Uchiha (Naruto) vs Killua Zoldyck (Hunter x Hunter): every place on the map, one winner.\n\nWho should compete next? Drop a match-up 👇\n\nInteractive map: https://animapverse.com",
+          "hashtags": [
+            "#naruto",
+            "#narutoshippuden",
+            "#hunterxhunter",
+            "#hxh",
+            "#obitouchiha",
+            "#killuazoldyck",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-versus:naruto:sasuke-uchiha-vs-dragonball-piccolo@en": {
       "renderId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-piccolo@en",
       "contentId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-piccolo",
