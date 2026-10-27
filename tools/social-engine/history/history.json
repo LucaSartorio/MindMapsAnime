@@ -766,6 +766,85 @@
         }
       ]
     },
+    "character-journey:jujutsukaisen:yuji-itadori@en": {
+      "renderId": "character-journey:jujutsukaisen:yuji-itadori@en",
+      "contentId": "character-journey:jujutsukaisen:yuji-itadori",
+      "template": "characterJourney",
+      "anime": "jujutsukaisen",
+      "subject": "yuji-itadori",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-10-27T06:02:33.801Z",
+      "updatedAt": "2026-10-27T06:06:32.064Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-10-27T06:06:32.064Z",
+      "outputFile": "tools/social-engine/output/jujutsukaisen_yuji-itadori_character-journey_en.mp4",
+      "manifestFile": "tools/social-engine/output/jujutsukaisen_yuji-itadori_character-journey_en.manifest.json",
+      "sourceFile": "0030-jujutsukaisen_yuji-itadori_character-journey_en.json",
+      "durationSeconds": 24,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-40458703507-1",
+        "runId": "40458703507",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/40458703507",
+        "video": "videos/jujutsukaisen_yuji-itadori_character-journey_en.mp4",
+        "manifest": "manifests/jujutsukaisen_yuji-itadori_character-journey_en.manifest.json",
+        "sha256": "4046de2fe0ee45035422fef838314200586114e1d8504fc6c8d067f0f60e3775",
+        "cover": "covers/jujutsukaisen_yuji-itadori_character-journey_en.cover.png",
+        "expiresAt": "2026-11-26T06:06:32.064Z"
+      },
+      "social": {
+        "contentType": "character-journey",
+        "animes": [
+          "jujutsukaisen"
+        ],
+        "characters": [
+          "jujutsukaisen:yuji-itadori"
+        ],
+        "characterNames": [
+          "Yuji Itadori"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "fact",
+        "hookId": "cj-fact-2",
+        "hook": "2 places. 1 story arcs. One journey: Yuji Itadori.",
+        "ctaType": "site-visit",
+        "cta": "See every place on AniMapVerse.",
+        "durationSeconds": 24,
+        "selection": {
+          "mode": "coldstart",
+          "score": 95.46,
+          "seed": "feed24:h0d6314f1:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "2 places. 1 story arcs. One journey: Yuji Itadori.\n\nYuji Itadori's journey across Jujutsu Kaisen: 2 places on the world map.\n\nEvery place, on the interactive map: https://animapverse.com/en/jujutsu-kaisen/characters/yuji-itadori\n\nSave it for your next rewatch.\n\n#jujutsukaisen #jjk #yujiitadori #anime #animemap #AniMapVerse",
+          "tiktokCaption": "2 places. 1 story arcs. One journey: Yuji Itadori. Every place, on the interactive map: https://animapverse.com/en/jujutsu-kaisen/characters/yuji-itadori #jujutsukaisen #jjk #yujiitadori #anime #animemap",
+          "youtubeTitle": "Every Place Yuji Itadori Visited 🌀 | Jujutsu Kaisen Journey",
+          "youtubeDescription": "2 places. 1 story arcs. One journey: Yuji Itadori.\n\nYuji Itadori's journey across Jujutsu Kaisen: 2 places on the world map.\n\nEvery place, on the interactive map: https://animapverse.com/en/jujutsu-kaisen/characters/yuji-itadori\n\nInteractive map: https://animapverse.com/en/jujutsu-kaisen/characters/yuji-itadori\n\n#jujutsukaisen #jjk #yujiitadori",
+          "facebookCaption": "2 places. 1 story arcs. One journey: Yuji Itadori.\n\nYuji Itadori's journey across Jujutsu Kaisen: 2 places on the world map.\n\nEvery place, on the interactive map: https://animapverse.com/en/jujutsu-kaisen/characters/yuji-itadori\n\nInteractive map: https://animapverse.com/en/jujutsu-kaisen/characters/yuji-itadori",
+          "hashtags": [
+            "#jujutsukaisen",
+            "#jjk",
+            "#yujiitadori",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-journey:jujutsukaisen:yuta-okkotsu@en": {
       "renderId": "character-journey:jujutsukaisen:yuta-okkotsu@en",
       "contentId": "character-journey:jujutsukaisen:yuta-okkotsu",

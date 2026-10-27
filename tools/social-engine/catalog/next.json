@@ -1,19 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-26T06:17:07.683Z",
-  "status": "ready",
+  "generatedAt": "2026-10-27T06:06:33.219Z",
+  "status": "backlog",
   "feedTail": [
-    {
-      "renderId": "character-journey:dragonball:goku:part-02@en",
-      "contentType": "character-journey",
-      "animes": [
-        "dragonball"
-      ],
-      "characters": [
-        "dragonball:goku"
-      ],
-      "part": 2
-    },
     {
       "renderId": "character-versus:bleach:yasutora-chad-sado-vs-blackclover-asta@en",
       "contentType": "character-versus",
@@ -72,6 +61,17 @@
         "hunterxhunter:killua-zoldyck"
       ],
       "part": null
+    },
+    {
+      "renderId": "character-journey:jujutsukaisen:yuji-itadori@en",
+      "contentType": "character-journey",
+      "animes": [
+        "jujutsukaisen"
+      ],
+      "characters": [
+        "jujutsukaisen:yuji-itadori"
+      ],
+      "part": null
     }
   ],
   "rules": {
@@ -92,499 +92,28 @@
     "error": null
   },
   "backlog": {
-    "unpublished": [],
+    "unpublished": [
+      {
+        "renderId": "character-journey:jujutsukaisen:yuji-itadori@en",
+        "contentType": "character-journey",
+        "renderedAt": "2026-10-27T06:06:32.064Z",
+        "missing": [
+          "instagram",
+          "facebook",
+          "tiktok",
+          "youtube"
+        ]
+      }
+    ],
     "unfinished": [],
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "feed24:h0d6314f1:samples0",
-  "rejected": {
-    "JOURNEY_PART_ORDER": 41,
-    "MAX_SAME_CHARACTER_STREAK": 38
-  },
-  "considered": 677,
-  "trace": {
-    "traceVersion": 1,
-    "mode": "coldstart",
-    "seed": "feed24:h0d6314f1:samples0",
-    "analytics": {
-      "coldStart": true,
-      "samples": 0,
-      "contents": 0,
-      "minimumSamples": 8
-    },
-    "recent": [
-      {
-        "renderId": "character-journey:dragonball:goku:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "dragonball"
-        ],
-        "characters": [
-          "dragonball:goku"
-        ]
-      },
-      {
-        "renderId": "character-versus:bleach:yasutora-chad-sado-vs-blackclover-asta@en",
-        "contentType": "character-versus",
-        "animes": [
-          "bleach",
-          "blackclover"
-        ],
-        "characters": [
-          "bleach:yasutora-chad-sado",
-          "blackclover:asta"
-        ]
-      },
-      {
-        "renderId": "character-journey:onepiece:monkey-d-luffy:part-03@en",
-        "contentType": "character-journey",
-        "animes": [
-          "onepiece"
-        ],
-        "characters": [
-          "onepiece:monkey-d-luffy"
-        ]
-      },
-      {
-        "renderId": "guess-character:attackontitan:jean-kirstein@en",
-        "contentType": "guess-character",
-        "animes": [
-          "attackontitan"
-        ],
-        "characters": [
-          "attackontitan:jean-kirstein"
-        ]
-      },
-      {
-        "renderId": "character-journey:jujutsukaisen:yuta-okkotsu@en",
-        "contentType": "character-journey",
-        "animes": [
-          "jujutsukaisen"
-        ],
-        "characters": [
-          "jujutsukaisen:yuta-okkotsu"
-        ]
-      },
-      {
-        "renderId": "character-versus:naruto:obito-uchiha-vs-hunterxhunter-killua-zoldyck@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "hunterxhunter"
-        ],
-        "characters": [
-          "naruto:obito-uchiha",
-          "hunterxhunter:killua-zoldyck"
-        ]
-      }
-    ],
-    "constraints": {
-      "sameAnimeStreak": {
-        "animes": [
-          "naruto",
-          "hunterxhunter"
-        ],
-        "length": 1
-      },
-      "forcedAnimeRotation": false,
-      "blockedAnimes": [],
-      "blockedCharacters": [
-        "naruto:obito-uchiha",
-        "hunterxhunter:killua-zoldyck"
-      ],
-      "characterCooldown": [
-        "dragonball:goku",
-        "bleach:yasutora-chad-sado",
-        "blackclover:asta",
-        "onepiece:monkey-d-luffy",
-        "attackontitan:jean-kirstein",
-        "jujutsukaisen:yuta-okkotsu",
-        "naruto:obito-uchiha",
-        "hunterxhunter:killua-zoldyck"
-      ],
-      "contentTypeStreak": {
-        "contentType": "character-versus",
-        "length": 1
-      }
-    },
-    "hardRulesTriggered": {
-      "JOURNEY_PART_ORDER": 41,
-      "MAX_SAME_CHARACTER_STREAK": 38
-    },
-    "candidates": {
-      "considered": 677,
-      "eligible": 599,
-      "byContentType": {
-        "character-journey": {
-          "considered": 412,
-          "eligible": 370
-        },
-        "guess-character": {
-          "considered": 83,
-          "eligible": 81
-        },
-        "character-versus": {
-          "considered": 182,
-          "eligible": 148
-        }
-      }
-    },
-    "excluded": [
-      {
-        "renderId": "character-journey:naruto:obito-uchiha:part-01@en",
-        "contentType": "character-journey",
-        "animes": [
-          "naruto"
-        ],
-        "characters": [
-          "naruto:obito-uchiha"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: naruto:obito-uchiha is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:naruto:obito-uchiha:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "naruto"
-        ],
-        "characters": [
-          "naruto:obito-uchiha"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER",
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)",
-          "character streak: naruto:obito-uchiha is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-attackontitan-armin-arlert@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "attackontitan"
-        ],
-        "characters": [
-          "hunterxhunter:killua-zoldyck",
-          "attackontitan:armin-arlert"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: hunterxhunter:killua-zoldyck is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-attackontitan-mikasa-ackerman@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "attackontitan"
-        ],
-        "characters": [
-          "hunterxhunter:killua-zoldyck",
-          "attackontitan:mikasa-ackerman"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: hunterxhunter:killua-zoldyck is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-attackontitan-reiner-braun@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "attackontitan"
-        ],
-        "characters": [
-          "hunterxhunter:killua-zoldyck",
-          "attackontitan:reiner-braun"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: hunterxhunter:killua-zoldyck is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-blackclover-asta@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "blackclover"
-        ],
-        "characters": [
-          "hunterxhunter:killua-zoldyck",
-          "blackclover:asta"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: hunterxhunter:killua-zoldyck is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-blackclover-noelle-silva@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "blackclover"
-        ],
-        "characters": [
-          "hunterxhunter:killua-zoldyck",
-          "blackclover:noelle-silva"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: hunterxhunter:killua-zoldyck is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-blackclover-yami-sukehiro@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "blackclover"
-        ],
-        "characters": [
-          "hunterxhunter:killua-zoldyck",
-          "blackclover:yami-sukehiro"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: hunterxhunter:killua-zoldyck is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-bleach-ichigo-kurosaki@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "bleach"
-        ],
-        "characters": [
-          "hunterxhunter:killua-zoldyck",
-          "bleach:ichigo-kurosaki"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: hunterxhunter:killua-zoldyck is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-bleach-rukia-kuchiki@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "bleach"
-        ],
-        "characters": [
-          "hunterxhunter:killua-zoldyck",
-          "bleach:rukia-kuchiki"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: hunterxhunter:killua-zoldyck is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      }
-    ],
-    "status": "selected",
-    "selectedId": "character-journey:jujutsukaisen:yuji-itadori",
-    "renderId": "character-journey:jujutsukaisen:yuji-itadori@en",
-    "contentType": "character-journey",
-    "animes": [
-      "jujutsukaisen"
-    ],
-    "characters": [
-      "jujutsukaisen:yuji-itadori"
-    ],
-    "score": 95.46,
-    "base": 77.46,
-    "reasons": [
-      "coldstart: novelty +21.9, jitter +5.6",
-      "+12 main character",
-      "+6 format below its target share (35% < 50%)"
-    ],
-    "ranked": [
-      {
-        "renderId": "character-journey:jujutsukaisen:yuji-itadori@en",
-        "contentType": "character-journey",
-        "animes": [
-          "jujutsukaisen"
-        ],
-        "score": 95.46,
-        "reasons": [
-          "coldstart: novelty +21.9, jitter +5.6",
-          "+12 main character",
-          "+6 format below its target share (35% < 50%)"
-        ]
-      },
-      {
-        "renderId": "character-journey:jujutsukaisen:megumi-fushiguro@en",
-        "contentType": "character-journey",
-        "animes": [
-          "jujutsukaisen"
-        ],
-        "score": 95.38,
-        "reasons": [
-          "coldstart: novelty +21.9, jitter +5.5",
-          "+12 main character",
-          "+6 format below its target share (35% < 50%)"
-        ]
-      },
-      {
-        "renderId": "character-journey:jujutsukaisen:ryomen-sukuna@en",
-        "contentType": "character-journey",
-        "animes": [
-          "jujutsukaisen"
-        ],
-        "score": 95.35,
-        "reasons": [
-          "coldstart: novelty +21.9, jitter +5.5",
-          "+12 main character",
-          "+6 format below its target share (35% < 50%)"
-        ]
-      },
-      {
-        "renderId": "character-journey:jujutsukaisen:mahito@en",
-        "contentType": "character-journey",
-        "animes": [
-          "jujutsukaisen"
-        ],
-        "score": 94.3,
-        "reasons": [
-          "coldstart: novelty +21.9, jitter +4.4",
-          "+12 main character",
-          "+6 format below its target share (35% < 50%)"
-        ]
-      },
-      {
-        "renderId": "character-journey:dragonball:piccolo:part-01@en",
-        "contentType": "character-journey",
-        "animes": [
-          "dragonball"
-        ],
-        "score": 94.28,
-        "reasons": [
-          "coldstart: novelty +20.6, jitter +5.7",
-          "+12 main character",
-          "+6 format below its target share (35% < 50%)"
-        ]
-      },
-      {
-        "renderId": "character-journey:jujutsukaisen:kenjaku@en",
-        "contentType": "character-journey",
-        "animes": [
-          "jujutsukaisen"
-        ],
-        "score": 94.12,
-        "reasons": [
-          "coldstart: novelty +21.9, jitter +4.2",
-          "+12 main character",
-          "+6 format below its target share (35% < 50%)"
-        ]
-      }
-    ],
-    "explanation": [
-      "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
-      "naruto:obito-uchiha, hunterxhunter:killua-zoldyck excluded in every format (maxSameCharacterStreak 1).",
-      "Selected character-journey:jujutsukaisen:yuji-itadori@en (character-journey, jujutsukaisen) — coldstart, score 95.46 among 599 valid candidate(s)."
-    ]
-  },
-  "pick": {
-    "contentId": "character-journey:jujutsukaisen:yuji-itadori",
-    "renderId": "character-journey:jujutsukaisen:yuji-itadori@en",
-    "contentType": "character-journey",
-    "animes": [
-      "jujutsukaisen"
-    ],
-    "characters": [
-      "jujutsukaisen:yuji-itadori"
-    ],
-    "part": null,
-    "partCount": null,
-    "score": 95.46,
-    "reasons": [
-      "coldstart: novelty +21.9, jitter +5.6",
-      "+12 main character",
-      "+6 format below its target share (35% < 50%)"
-    ]
-  },
-  "request": {
-    "template": "characterJourney",
-    "anime": "jujutsukaisen",
-    "subject": "yuji-itadori",
-    "locale": "en",
-    "hook": "2 places. 1 story arcs. One journey: Yuji Itadori.",
-    "hookType": "fact",
-    "hookId": "cj-fact-2",
-    "cta": "See every place on AniMapVerse.",
-    "ctaType": "site-visit",
-    "selection": {
-      "mode": "coldstart",
-      "score": 95.46,
-      "seed": "feed24:h0d6314f1:samples0"
-    },
-    "notes": "growth selector (coldstart): coldstart: novelty +21.9, jitter +5.6; +12 main character; +6 format below its target share (35% < 50%)"
-  },
-  "alternatives": [
-    {
-      "renderId": "character-journey:jujutsukaisen:megumi-fushiguro@en",
-      "contentType": "character-journey",
-      "score": 95.38
-    },
-    {
-      "renderId": "character-journey:jujutsukaisen:ryomen-sukuna@en",
-      "contentType": "character-journey",
-      "score": 95.35
-    },
-    {
-      "renderId": "character-journey:jujutsukaisen:mahito@en",
-      "contentType": "character-journey",
-      "score": 94.3
-    },
-    {
-      "renderId": "character-journey:dragonball:piccolo:part-01@en",
-      "contentType": "character-journey",
-      "score": 94.28
-    },
-    {
-      "renderId": "character-journey:jujutsukaisen:kenjaku@en",
-      "contentType": "character-journey",
-      "score": 94.12
-    }
-  ],
-  "eligible": 599
+  "seed": "",
+  "reason": "publish the existing render first: character-journey:jujutsukaisen:yuji-itadori@en (it counts as today's video; no new content)",
+  "alternatives": [],
+  "rejected": {},
+  "considered": 0,
+  "eligible": 0,
+  "trace": null
 }
