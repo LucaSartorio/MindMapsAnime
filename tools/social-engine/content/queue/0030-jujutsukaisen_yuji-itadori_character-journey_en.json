@@ -1,0 +1,18 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterJourney",
+  "anime": "jujutsukaisen",
+  "subject": "yuji-itadori",
+  "locale": "en",
+  "hook": "2 places. 1 story arcs. One journey: Yuji Itadori.",
+  "hookType": "fact",
+  "hookId": "cj-fact-2",
+  "cta": "See every place on AniMapVerse.",
+  "ctaType": "site-visit",
+  "selection": {
+    "mode": "coldstart",
+    "score": 95.46,
+    "seed": "feed24:h0d6314f1:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +21.9, jitter +5.6; +12 main character; +6 format below its target share (35% < 50%)"
+}
