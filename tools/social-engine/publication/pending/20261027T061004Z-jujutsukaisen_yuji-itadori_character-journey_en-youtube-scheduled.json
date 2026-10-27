@@ -1,0 +1,13 @@
+{
+  "receiptVersion": 1,
+  "renderId": "character-journey:jujutsukaisen:yuji-itadori@en",
+  "provider": "metricool",
+  "status": "scheduled",
+  "scheduledFor": "2026-10-27T12:00:00+01:00",
+  "recordedAt": "2026-10-27T06:10:04Z",
+  "recordedBy": "chatgpt-work-publishing-agent",
+  "platform": "youtube",
+  "providerPostId": "407465779",
+  "providerPostUuid": "4390671090461262509",
+  "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=4390671090461262509"
+}
