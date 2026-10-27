@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T06:06:33.219Z",
-  "status": "backlog",
+  "generatedAt": "2026-10-27T06:18:26.049Z",
+  "status": "ready",
   "feedTail": [
     {
       "renderId": "character-versus:bleach:yasutora-chad-sado-vs-blackclover-asta@en",
@@ -92,28 +92,472 @@
     "error": null
   },
   "backlog": {
-    "unpublished": [
-      {
-        "renderId": "character-journey:jujutsukaisen:yuji-itadori@en",
-        "contentType": "character-journey",
-        "renderedAt": "2026-10-27T06:06:32.064Z",
-        "missing": [
-          "instagram",
-          "facebook",
-          "tiktok",
-          "youtube"
-        ]
-      }
-    ],
+    "unpublished": [],
     "unfinished": [],
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "",
-  "reason": "publish the existing render first: character-journey:jujutsukaisen:yuji-itadori@en (it counts as today's video; no new content)",
-  "alternatives": [],
-  "rejected": {},
-  "considered": 0,
-  "eligible": 0,
-  "trace": null
+  "seed": "feed25:character-journey:jujutsukaisen:yuji-itadori@en:samples0",
+  "rejected": {
+    "JOURNEY_PART_ORDER": 41
+  },
+  "considered": 676,
+  "trace": {
+    "traceVersion": 1,
+    "mode": "coldstart",
+    "seed": "feed25:character-journey:jujutsukaisen:yuji-itadori@en:samples0",
+    "analytics": {
+      "coldStart": true,
+      "samples": 0,
+      "contents": 0,
+      "minimumSamples": 8
+    },
+    "recent": [
+      {
+        "renderId": "character-versus:bleach:yasutora-chad-sado-vs-blackclover-asta@en",
+        "contentType": "character-versus",
+        "animes": [
+          "bleach",
+          "blackclover"
+        ],
+        "characters": [
+          "bleach:yasutora-chad-sado",
+          "blackclover:asta"
+        ]
+      },
+      {
+        "renderId": "character-journey:onepiece:monkey-d-luffy:part-03@en",
+        "contentType": "character-journey",
+        "animes": [
+          "onepiece"
+        ],
+        "characters": [
+          "onepiece:monkey-d-luffy"
+        ]
+      },
+      {
+        "renderId": "guess-character:attackontitan:jean-kirstein@en",
+        "contentType": "guess-character",
+        "animes": [
+          "attackontitan"
+        ],
+        "characters": [
+          "attackontitan:jean-kirstein"
+        ]
+      },
+      {
+        "renderId": "character-journey:jujutsukaisen:yuta-okkotsu@en",
+        "contentType": "character-journey",
+        "animes": [
+          "jujutsukaisen"
+        ],
+        "characters": [
+          "jujutsukaisen:yuta-okkotsu"
+        ]
+      },
+      {
+        "renderId": "character-versus:naruto:obito-uchiha-vs-hunterxhunter-killua-zoldyck@en",
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "hunterxhunter"
+        ],
+        "characters": [
+          "naruto:obito-uchiha",
+          "hunterxhunter:killua-zoldyck"
+        ]
+      },
+      {
+        "renderId": "character-journey:jujutsukaisen:yuji-itadori@en",
+        "contentType": "character-journey",
+        "animes": [
+          "jujutsukaisen"
+        ],
+        "characters": [
+          "jujutsukaisen:yuji-itadori"
+        ]
+      }
+    ],
+    "constraints": {
+      "sameAnimeStreak": {
+        "animes": [
+          "jujutsukaisen"
+        ],
+        "length": 1
+      },
+      "forcedAnimeRotation": false,
+      "blockedAnimes": [],
+      "blockedCharacters": [
+        "jujutsukaisen:yuji-itadori"
+      ],
+      "characterCooldown": [
+        "bleach:yasutora-chad-sado",
+        "blackclover:asta",
+        "onepiece:monkey-d-luffy",
+        "attackontitan:jean-kirstein",
+        "jujutsukaisen:yuta-okkotsu",
+        "naruto:obito-uchiha",
+        "hunterxhunter:killua-zoldyck",
+        "jujutsukaisen:yuji-itadori"
+      ],
+      "contentTypeStreak": {
+        "contentType": "character-journey",
+        "length": 1
+      }
+    },
+    "hardRulesTriggered": {
+      "JOURNEY_PART_ORDER": 41
+    },
+    "candidates": {
+      "considered": 676,
+      "eligible": 635,
+      "byContentType": {
+        "character-journey": {
+          "considered": 411,
+          "eligible": 370
+        },
+        "guess-character": {
+          "considered": 83,
+          "eligible": 83
+        },
+        "character-versus": {
+          "considered": 182,
+          "eligible": 182
+        }
+      }
+    },
+    "excluded": [
+      {
+        "renderId": "character-journey:blackclover:asta:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:asta"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:blackclover:asta:part-03@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:asta"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 3 before Part 2 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:blackclover:noelle-silva:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:noelle-silva"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:blackclover:yami-sukehiro:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:yami-sukehiro"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:blackclover:yuno-grinberryall:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:yuno-grinberryall"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:bleach:byakuya-kuchiki:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:byakuya-kuchiki"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:bleach:ichigo-kurosaki:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:ichigo-kurosaki"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:bleach:ichigo-kurosaki:part-03@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:ichigo-kurosaki"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 3 before Part 2 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:bleach:orihime-inoue:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:orihime-inoue"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:bleach:renji-abarai:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:renji-abarai"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      }
+    ],
+    "status": "selected",
+    "selectedId": "guess-character:bleach:yhwach",
+    "renderId": "guess-character:bleach:yhwach@en",
+    "contentType": "guess-character",
+    "animes": [
+      "bleach"
+    ],
+    "characters": [
+      "bleach:yhwach"
+    ],
+    "score": 91.59,
+    "base": 79.59,
+    "reasons": [
+      "coldstart: novelty +24.0, jitter +5.6",
+      "+12 main character"
+    ],
+    "ranked": [
+      {
+        "renderId": "guess-character:bleach:yhwach@en",
+        "contentType": "guess-character",
+        "animes": [
+          "bleach"
+        ],
+        "score": 91.59,
+        "reasons": [
+          "coldstart: novelty +24.0, jitter +5.6",
+          "+12 main character"
+        ]
+      },
+      {
+        "renderId": "guess-character:dragonball:gohan@en",
+        "contentType": "guess-character",
+        "animes": [
+          "dragonball"
+        ],
+        "score": 91.3,
+        "reasons": [
+          "coldstart: novelty +24.0, jitter +5.3",
+          "+12 main character"
+        ]
+      },
+      {
+        "renderId": "character-versus:naruto:naruto-uzumaki-vs-blackclover-yami-sukehiro@en",
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "blackclover"
+        ],
+        "score": 91.19,
+        "reasons": [
+          "coldstart: novelty +23.4, jitter +5.8",
+          "+12 main character"
+        ]
+      },
+      {
+        "renderId": "character-versus:bleach:ichigo-kurosaki-vs-blackclover-yami-sukehiro@en",
+        "contentType": "character-versus",
+        "animes": [
+          "bleach",
+          "blackclover"
+        ],
+        "score": 91.08,
+        "reasons": [
+          "coldstart: novelty +23.4, jitter +5.7",
+          "+12 main character"
+        ]
+      },
+      {
+        "renderId": "guess-character:onepiece:franky@en",
+        "contentType": "guess-character",
+        "animes": [
+          "onepiece"
+        ],
+        "score": 91.04,
+        "reasons": [
+          "coldstart: novelty +23.4, jitter +5.6",
+          "+12 main character"
+        ]
+      },
+      {
+        "renderId": "character-versus:naruto:naruto-uzumaki-vs-attackontitan-mikasa-ackerman@en",
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "attackontitan"
+        ],
+        "score": 90.96,
+        "reasons": [
+          "coldstart: novelty +23.4, jitter +5.6",
+          "+12 main character"
+        ]
+      }
+    ],
+    "explanation": [
+      "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
+      "jujutsukaisen:yuji-itadori excluded in every format (maxSameCharacterStreak 1).",
+      "Selected guess-character:bleach:yhwach@en (guess-character, bleach) — coldstart, score 91.59 among 635 valid candidate(s)."
+    ]
+  },
+  "pick": {
+    "contentId": "guess-character:bleach:yhwach",
+    "renderId": "guess-character:bleach:yhwach@en",
+    "contentType": "guess-character",
+    "animes": [
+      "bleach"
+    ],
+    "characters": [
+      "bleach:yhwach"
+    ],
+    "part": null,
+    "partCount": null,
+    "score": 91.59,
+    "reasons": [
+      "coldstart: novelty +24.0, jitter +5.6",
+      "+12 main character"
+    ]
+  },
+  "request": {
+    "template": "guessCharacter",
+    "anime": "bleach",
+    "subject": "yhwach",
+    "locale": "en",
+    "hook": "Only real Bleach fans get this before the last place.",
+    "hookType": "challenge",
+    "hookId": "gc-challenge-2",
+    "cta": "How many places did you recognize?",
+    "ctaType": "comment-guess",
+    "selection": {
+      "mode": "coldstart",
+      "score": 91.59,
+      "seed": "feed25:character-journey:jujutsukaisen:yuji-itadori@en:samples0"
+    },
+    "notes": "growth selector (coldstart): coldstart: novelty +24.0, jitter +5.6; +12 main character"
+  },
+  "alternatives": [
+    {
+      "renderId": "guess-character:dragonball:gohan@en",
+      "contentType": "guess-character",
+      "score": 91.3
+    },
+    {
+      "renderId": "character-versus:naruto:naruto-uzumaki-vs-blackclover-yami-sukehiro@en",
+      "contentType": "character-versus",
+      "score": 91.19
+    },
+    {
+      "renderId": "character-versus:bleach:ichigo-kurosaki-vs-blackclover-yami-sukehiro@en",
+      "contentType": "character-versus",
+      "score": 91.08
+    },
+    {
+      "renderId": "guess-character:onepiece:franky@en",
+      "contentType": "guess-character",
+      "score": 91.04
+    },
+    {
+      "renderId": "character-versus:naruto:naruto-uzumaki-vs-attackontitan-mikasa-ackerman@en",
+      "contentType": "character-versus",
+      "score": 90.96
+    }
+  ],
+  "eligible": 635
 }

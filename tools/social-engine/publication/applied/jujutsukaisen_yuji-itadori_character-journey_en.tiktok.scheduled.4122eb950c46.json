@@ -1,0 +1,30 @@
+{
+  "receiptId": "jujutsukaisen_yuji-itadori_character-journey_en.tiktok.scheduled.4122eb950c46",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-10-27T06:18:26.024Z",
+  "sourceFile": "20261027T061004Z-jujutsukaisen_yuji-itadori_character-journey_en-tiktok-scheduled.json",
+  "run": {
+    "runId": "40460281861",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/40460281861",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "character-journey:jujutsukaisen:yuji-itadori@en",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-10-27T12:00:00+01:00",
+    "recordedAt": "2026-10-27T06:10:04Z",
+    "recordedBy": "chatgpt-work-publishing-agent",
+    "platform": "tiktok",
+    "providerPostId": "407465894",
+    "providerPostUuid": "6717115583708679991",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=6717115583708679991"
+  }
+}
