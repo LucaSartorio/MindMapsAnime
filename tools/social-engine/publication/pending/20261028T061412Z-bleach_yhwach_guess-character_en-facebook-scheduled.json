@@ -1,0 +1,13 @@
+{
+  "receiptVersion": 1,
+  "renderId": "guess-character:bleach:yhwach@en",
+  "provider": "metricool",
+  "status": "scheduled",
+  "scheduledFor": "2026-10-28T12:00:00+01:00",
+  "recordedAt": "2026-10-28T06:14:12Z",
+  "recordedBy": "chatgpt-work-publishing-agent",
+  "platform": "facebook",
+  "providerPostId": "408598017",
+  "providerPostUuid": "2754590995854673723",
+  "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=2754590995854673723"
+}
