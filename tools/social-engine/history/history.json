@@ -3792,6 +3792,83 @@
         }
       ]
     },
+    "guess-character:bleach:yhwach@en": {
+      "renderId": "guess-character:bleach:yhwach@en",
+      "contentId": "guess-character:bleach:yhwach",
+      "template": "guessCharacter",
+      "anime": "bleach",
+      "subject": "yhwach",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-10-28T06:09:20.920Z",
+      "updatedAt": "2026-10-28T06:11:52.894Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-10-28T06:11:52.894Z",
+      "outputFile": "tools/social-engine/output/bleach_yhwach_guess-character_en.mp4",
+      "manifestFile": "tools/social-engine/output/bleach_yhwach_guess-character_en.manifest.json",
+      "sourceFile": "0031-bleach_yhwach_guess-character_en.json",
+      "durationSeconds": 21,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-40642096356-1",
+        "runId": "40642096356",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/40642096356",
+        "video": "videos/bleach_yhwach_guess-character_en.mp4",
+        "manifest": "manifests/bleach_yhwach_guess-character_en.manifest.json",
+        "sha256": "170acdd543b8cb44bcbe9eea0e70415849f6dc23f5c28e5859aa31ea62b13fde",
+        "cover": "covers/bleach_yhwach_guess-character_en.cover.png",
+        "expiresAt": "2026-11-27T06:11:52.894Z"
+      },
+      "social": {
+        "contentType": "guess-character",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:yhwach"
+        ],
+        "characterNames": [
+          "Yhwach"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "challenge",
+        "hookId": "gc-challenge-2",
+        "hook": "Only real Bleach fans get this before the last place.",
+        "ctaType": "comment-guess",
+        "cta": "How many places did you recognize?",
+        "durationSeconds": 21,
+        "selection": {
+          "mode": "coldstart",
+          "score": 91.59,
+          "seed": "feed25:character-journey:jujutsukaisen:yuji-itadori@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Only real Bleach fans get this before the last place.\n\n4 places, one Bleach character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nSave it for your next rewatch.\n\n#bleach #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Only real Bleach fans get this before the last place. Did you get it right? Tell us how many places it took you 👇 #bleach #anime #animemap #AniMapVerse",
+          "youtubeTitle": "Guess the Bleach Character From the Places They Visited ⚔️",
+          "youtubeDescription": "Only real Bleach fans get this before the last place.\n\n4 places, one Bleach character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/bleach/map\n\n#bleach #anime #animemap",
+          "facebookCaption": "Only real Bleach fans get this before the last place.\n\n4 places, one Bleach character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/bleach/map",
+          "hashtags": [
+            "#bleach",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "guess-character:onepiece:nico-robin@en": {
       "renderId": "guess-character:onepiece:nico-robin@en",
       "contentId": "guess-character:onepiece:nico-robin",
