@@ -1,0 +1,18 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "guessCharacter",
+  "anime": "bleach",
+  "subject": "yhwach",
+  "locale": "en",
+  "hook": "Only real Bleach fans get this before the last place.",
+  "hookType": "challenge",
+  "hookId": "gc-challenge-2",
+  "cta": "How many places did you recognize?",
+  "ctaType": "comment-guess",
+  "selection": {
+    "mode": "coldstart",
+    "score": 91.59,
+    "seed": "feed25:character-journey:jujutsukaisen:yuji-itadori@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +24.0, jitter +5.6; +12 main character"
+}
