@@ -1,0 +1,30 @@
+{
+  "receiptId": "bleach_yhwach_guess-character_en.tiktok.scheduled.f20ae2f8d94e",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-10-28T06:21:28.331Z",
+  "sourceFile": "20261028T061412Z-bleach_yhwach_guess-character_en-tiktok-scheduled.json",
+  "run": {
+    "runId": "40643322451",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/40643322451",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "guess-character:bleach:yhwach@en",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-10-28T12:00:00+01:00",
+    "recordedAt": "2026-10-28T06:14:12Z",
+    "recordedBy": "chatgpt-work-publishing-agent",
+    "platform": "tiktok",
+    "providerPostId": "408598121",
+    "providerPostUuid": "8284573466205375555",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=8284573466205375555"
+  }
+}

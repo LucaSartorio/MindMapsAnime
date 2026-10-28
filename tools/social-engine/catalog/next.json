@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-28T06:11:53.947Z",
-  "status": "backlog",
+  "generatedAt": "2026-10-28T06:21:28.351Z",
+  "status": "ready",
   "feedTail": [
     {
       "renderId": "character-journey:onepiece:monkey-d-luffy:part-03@en",
@@ -90,28 +90,480 @@
     "error": null
   },
   "backlog": {
-    "unpublished": [
-      {
-        "renderId": "guess-character:bleach:yhwach@en",
-        "contentType": "guess-character",
-        "renderedAt": "2026-10-28T06:11:52.894Z",
-        "missing": [
-          "instagram",
-          "facebook",
-          "tiktok",
-          "youtube"
-        ]
-      }
-    ],
+    "unpublished": [],
     "unfinished": [],
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "",
-  "reason": "publish the existing render first: guess-character:bleach:yhwach@en (it counts as today's video; no new content)",
-  "alternatives": [],
-  "rejected": {},
-  "considered": 0,
-  "eligible": 0,
-  "trace": null
+  "seed": "feed26:guess-character:bleach:yhwach@en:samples0",
+  "rejected": {
+    "JOURNEY_PART_ORDER": 41,
+    "MAX_SAME_CHARACTER_STREAK": 1
+  },
+  "considered": 675,
+  "trace": {
+    "traceVersion": 1,
+    "mode": "coldstart",
+    "seed": "feed26:guess-character:bleach:yhwach@en:samples0",
+    "analytics": {
+      "coldStart": true,
+      "samples": 0,
+      "contents": 0,
+      "minimumSamples": 8
+    },
+    "recent": [
+      {
+        "renderId": "character-journey:onepiece:monkey-d-luffy:part-03@en",
+        "contentType": "character-journey",
+        "animes": [
+          "onepiece"
+        ],
+        "characters": [
+          "onepiece:monkey-d-luffy"
+        ]
+      },
+      {
+        "renderId": "guess-character:attackontitan:jean-kirstein@en",
+        "contentType": "guess-character",
+        "animes": [
+          "attackontitan"
+        ],
+        "characters": [
+          "attackontitan:jean-kirstein"
+        ]
+      },
+      {
+        "renderId": "character-journey:jujutsukaisen:yuta-okkotsu@en",
+        "contentType": "character-journey",
+        "animes": [
+          "jujutsukaisen"
+        ],
+        "characters": [
+          "jujutsukaisen:yuta-okkotsu"
+        ]
+      },
+      {
+        "renderId": "character-versus:naruto:obito-uchiha-vs-hunterxhunter-killua-zoldyck@en",
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "hunterxhunter"
+        ],
+        "characters": [
+          "naruto:obito-uchiha",
+          "hunterxhunter:killua-zoldyck"
+        ]
+      },
+      {
+        "renderId": "character-journey:jujutsukaisen:yuji-itadori@en",
+        "contentType": "character-journey",
+        "animes": [
+          "jujutsukaisen"
+        ],
+        "characters": [
+          "jujutsukaisen:yuji-itadori"
+        ]
+      },
+      {
+        "renderId": "guess-character:bleach:yhwach@en",
+        "contentType": "guess-character",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:yhwach"
+        ]
+      }
+    ],
+    "constraints": {
+      "sameAnimeStreak": {
+        "animes": [
+          "bleach"
+        ],
+        "length": 1
+      },
+      "forcedAnimeRotation": false,
+      "blockedAnimes": [],
+      "blockedCharacters": [
+        "bleach:yhwach"
+      ],
+      "characterCooldown": [
+        "onepiece:monkey-d-luffy",
+        "attackontitan:jean-kirstein",
+        "jujutsukaisen:yuta-okkotsu",
+        "naruto:obito-uchiha",
+        "hunterxhunter:killua-zoldyck",
+        "jujutsukaisen:yuji-itadori",
+        "bleach:yhwach"
+      ],
+      "contentTypeStreak": {
+        "contentType": "guess-character",
+        "length": 1
+      }
+    },
+    "hardRulesTriggered": {
+      "JOURNEY_PART_ORDER": 41,
+      "MAX_SAME_CHARACTER_STREAK": 1
+    },
+    "candidates": {
+      "considered": 675,
+      "eligible": 633,
+      "byContentType": {
+        "character-journey": {
+          "considered": 411,
+          "eligible": 369
+        },
+        "guess-character": {
+          "considered": 82,
+          "eligible": 82
+        },
+        "character-versus": {
+          "considered": 182,
+          "eligible": 182
+        }
+      }
+    },
+    "excluded": [
+      {
+        "renderId": "character-journey:bleach:yhwach@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:yhwach"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: bleach:yhwach is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:blackclover:asta:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:asta"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:blackclover:asta:part-03@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:asta"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 3 before Part 2 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:blackclover:noelle-silva:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:noelle-silva"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:blackclover:yami-sukehiro:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:yami-sukehiro"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:blackclover:yuno-grinberryall:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:yuno-grinberryall"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:bleach:byakuya-kuchiki:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:byakuya-kuchiki"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:bleach:ichigo-kurosaki:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:ichigo-kurosaki"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:bleach:ichigo-kurosaki:part-03@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:ichigo-kurosaki"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 3 before Part 2 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:bleach:orihime-inoue:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:orihime-inoue"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      }
+    ],
+    "status": "selected",
+    "selectedId": "character-journey:dragonball:goku:part-03",
+    "renderId": "character-journey:dragonball:goku:part-03@en",
+    "contentType": "character-journey",
+    "animes": [
+      "dragonball"
+    ],
+    "characters": [
+      "dragonball:goku"
+    ],
+    "score": 103,
+    "base": 73,
+    "reasons": [
+      "coldstart: novelty +20.8, jitter +2.2",
+      "+12 main character",
+      "+14 continues a started series (Part 3 promised)",
+      "+4 format below its target share (40% < 50%)"
+    ],
+    "ranked": [
+      {
+        "renderId": "character-journey:dragonball:goku:part-03@en",
+        "contentType": "character-journey",
+        "animes": [
+          "dragonball"
+        ],
+        "score": 103,
+        "reasons": [
+          "coldstart: novelty +20.8, jitter +2.2",
+          "+12 main character",
+          "+14 continues a started series (Part 3 promised)",
+          "+4 format below its target share (40% < 50%)"
+        ]
+      },
+      {
+        "renderId": "character-journey:jujutsukaisen:maki-zenin@en",
+        "contentType": "character-journey",
+        "animes": [
+          "jujutsukaisen"
+        ],
+        "score": 92.8,
+        "reasons": [
+          "coldstart: novelty +21.3, jitter +5.5",
+          "+12 main character",
+          "+4 format below its target share (40% < 50%)"
+        ]
+      },
+      {
+        "renderId": "character-journey:dragonball:frieza@en",
+        "contentType": "character-journey",
+        "animes": [
+          "dragonball"
+        ],
+        "score": 92.57,
+        "reasons": [
+          "coldstart: novelty +20.8, jitter +5.8",
+          "+12 main character",
+          "+4 format below its target share (40% < 50%)"
+        ]
+      },
+      {
+        "renderId": "character-journey:hunterxhunter:gon-freecss:part-01@en",
+        "contentType": "character-journey",
+        "animes": [
+          "hunterxhunter"
+        ],
+        "score": 92.3,
+        "reasons": [
+          "coldstart: novelty +20.8, jitter +5.5",
+          "+12 main character",
+          "+4 format below its target share (40% < 50%)"
+        ]
+      },
+      {
+        "renderId": "character-journey:naruto:sakura-haruno:part-01@en",
+        "contentType": "character-journey",
+        "animes": [
+          "naruto"
+        ],
+        "score": 92.22,
+        "reasons": [
+          "coldstart: novelty +20.8, jitter +5.5",
+          "+12 main character",
+          "+4 format below its target share (40% < 50%)"
+        ]
+      },
+      {
+        "renderId": "character-journey:hunterxhunter:leorio-paradinight@en",
+        "contentType": "character-journey",
+        "animes": [
+          "hunterxhunter"
+        ],
+        "score": 92.08,
+        "reasons": [
+          "coldstart: novelty +20.8, jitter +5.3",
+          "+12 main character",
+          "+4 format below its target share (40% < 50%)"
+        ]
+      }
+    ],
+    "explanation": [
+      "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
+      "bleach:yhwach excluded in every format (maxSameCharacterStreak 1).",
+      "Selected character-journey:dragonball:goku:part-03@en (character-journey, dragonball) — coldstart, score 103 among 633 valid candidate(s)."
+    ]
+  },
+  "pick": {
+    "contentId": "character-journey:dragonball:goku:part-03",
+    "renderId": "character-journey:dragonball:goku:part-03@en",
+    "contentType": "character-journey",
+    "animes": [
+      "dragonball"
+    ],
+    "characters": [
+      "dragonball:goku"
+    ],
+    "part": 3,
+    "partCount": 6,
+    "score": 103,
+    "reasons": [
+      "coldstart: novelty +20.8, jitter +2.2",
+      "+12 main character",
+      "+14 continues a started series (Part 3 promised)",
+      "+4 format below its target share (40% < 50%)"
+    ]
+  },
+  "request": {
+    "template": "characterJourney",
+    "anime": "dragonball",
+    "subject": "goku",
+    "segment": "part-03",
+    "locale": "en",
+    "hook": "Part 3 of 6: Goku's journey keeps growing.",
+    "hookType": "curiosity",
+    "hookId": "cj-cont-curiosity-1",
+    "cta": "Follow for Part 4.",
+    "ctaType": "follow-next-part",
+    "selection": {
+      "mode": "coldstart",
+      "score": 103,
+      "seed": "feed26:guess-character:bleach:yhwach@en:samples0"
+    },
+    "notes": "growth selector (coldstart): coldstart: novelty +20.8, jitter +2.2; +12 main character; +14 continues a started series (Part 3 promised)"
+  },
+  "alternatives": [
+    {
+      "renderId": "character-journey:jujutsukaisen:maki-zenin@en",
+      "contentType": "character-journey",
+      "score": 92.8
+    },
+    {
+      "renderId": "character-journey:dragonball:frieza@en",
+      "contentType": "character-journey",
+      "score": 92.57
+    },
+    {
+      "renderId": "character-journey:hunterxhunter:gon-freecss:part-01@en",
+      "contentType": "character-journey",
+      "score": 92.3
+    },
+    {
+      "renderId": "character-journey:naruto:sakura-haruno:part-01@en",
+      "contentType": "character-journey",
+      "score": 92.22
+    },
+    {
+      "renderId": "character-journey:hunterxhunter:leorio-paradinight@en",
+      "contentType": "character-journey",
+      "score": 92.08
+    }
+  ],
+  "eligible": 633
 }
