@@ -1,0 +1,19 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterJourney",
+  "anime": "dragonball",
+  "subject": "goku",
+  "segment": "part-03",
+  "locale": "en",
+  "hook": "Part 3 of 6: Goku's journey keeps growing.",
+  "hookType": "curiosity",
+  "hookId": "cj-cont-curiosity-1",
+  "cta": "Follow for Part 4.",
+  "ctaType": "follow-next-part",
+  "selection": {
+    "mode": "coldstart",
+    "score": 103,
+    "seed": "feed26:guess-character:bleach:yhwach@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +20.8, jitter +2.2; +12 main character; +14 continues a started series (Part 3 promised)"
+}
