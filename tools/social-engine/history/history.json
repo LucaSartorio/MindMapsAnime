@@ -283,7 +283,7 @@
       "segment": "part-03",
       "segmentFingerprint": "913f8677",
       "createdAt": "2026-10-29T06:05:29.766Z",
-      "updatedAt": "2026-10-29T06:08:31.956Z",
+      "updatedAt": "2026-10-29T06:18:22.363Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-10-29T06:08:31.956Z",
       "outputFile": "tools/social-engine/output/dragonball_goku_character-journey_part-03_en.mp4",
@@ -347,9 +347,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-29T16:00:00+01:00",
+          "scheduledAt": "2026-10-29T06:12:09Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "409720167",
+          "providerPostUuid": "-8141848648248440667",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-8141848648248440667",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "dragonball_goku_character-journey_part-03_en.instagram.scheduled.9a2f3fe8ba94"
+          ],
+          "updatedAt": "2026-10-29T06:18:22.363Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-29T16:00:00+01:00",
+          "scheduledAt": "2026-10-29T06:12:09Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "409720334",
+          "providerPostUuid": "-2950696199279393733",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-2950696199279393733",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "dragonball_goku_character-journey_part-03_en.facebook.scheduled.3dcde088d95d"
+          ],
+          "updatedAt": "2026-10-29T06:18:22.363Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-29T16:00:00+01:00",
+          "scheduledAt": "2026-10-29T06:12:09Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "409720725",
+          "providerPostUuid": "7592845593988711726",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=7592845593988711726",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "dragonball_goku_character-journey_part-03_en.tiktok.scheduled.ad7d61a5649f"
+          ],
+          "updatedAt": "2026-10-29T06:18:22.363Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-29T16:00:00+01:00",
+          "scheduledAt": "2026-10-29T06:12:09Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "409720551",
+          "providerPostUuid": "-1643317832519958505",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-1643317832519958505",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "dragonball_goku_character-journey_part-03_en.youtube.scheduled.73155e92eab9"
+          ],
+          "updatedAt": "2026-10-29T06:18:22.363Z"
+        }
+      ]
     },
     "character-journey:hunterxhunter:gon-freecss@en": {
       "renderId": "character-journey:hunterxhunter:gon-freecss@en",

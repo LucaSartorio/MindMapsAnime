@@ -1,0 +1,30 @@
+{
+  "receiptId": "dragonball_goku_character-journey_part-03_en.tiktok.scheduled.ad7d61a5649f",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-10-29T06:18:22.363Z",
+  "sourceFile": "20261029T061209Z-dragonball_goku_character-journey_part-03_en-tiktok-scheduled.json",
+  "run": {
+    "runId": "40828375772",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/40828375772",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "character-journey:dragonball:goku:part-03@en",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-10-29T16:00:00+01:00",
+    "recordedAt": "2026-10-29T06:12:09Z",
+    "recordedBy": "chatgpt-work-publishing-agent",
+    "platform": "tiktok",
+    "providerPostId": "409720725",
+    "providerPostUuid": "7592845593988711726",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=7592845593988711726"
+  }
+}

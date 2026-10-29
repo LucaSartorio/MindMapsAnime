@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-29T06:08:33.006Z",
+  "generatedAt": "2026-10-29T06:18:22.384Z",
   "locales": [
     "en",
     "it"
@@ -6883,7 +6883,9 @@
           "renderedLocales": [
             "en"
           ],
-          "scheduledLocales": [],
+          "scheduledLocales": [
+            "en"
+          ],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": true,
@@ -6893,12 +6895,12 @@
               "renderId": "character-journey:dragonball:goku:part-03@en",
               "locale": "en",
               "variant": null,
-              "status": "notPublished",
+              "status": "scheduled",
               "platforms": {
-                "instagram": "notScheduled",
-                "facebook": "notScheduled",
-                "tiktok": "notScheduled",
-                "youtube": "notScheduled"
+                "instagram": "scheduled",
+                "facebook": "scheduled",
+                "tiktok": "scheduled",
+                "youtube": "scheduled"
               }
             }
           ]
@@ -25728,67 +25730,13 @@
     "summary": {
       "rendered": 32,
       "unavailable": 5,
-      "notPublished": 6,
-      "scheduled": 20,
+      "notPublished": 5,
+      "scheduled": 21,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0
     },
-    "ready": [
-      {
-        "renderId": "character-journey:dragonball:goku:part-03@en",
-        "contentId": "character-journey:dragonball:goku:part-03",
-        "anime": "dragonball",
-        "subject": "goku",
-        "subjectName": "Goku",
-        "locale": "en",
-        "variant": null,
-        "segment": "part-03",
-        "partNumber": 3,
-        "partCount": 6,
-        "renderedAt": "2026-10-29T06:08:31.956Z",
-        "durationSeconds": 27,
-        "publicationStatus": "notPublished",
-        "platforms": {
-          "instagram": "notScheduled",
-          "facebook": "notScheduled",
-          "tiktok": "notScheduled",
-          "youtube": "notScheduled"
-        },
-        "artifact": {
-          "name": "animapverse-social-render-40827087847-1",
-          "runId": "40827087847",
-          "runAttempt": "1",
-          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/40827087847",
-          "video": "videos/dragonball_goku_character-journey_part-03_en.mp4",
-          "manifest": "manifests/dragonball_goku_character-journey_part-03_en.manifest.json",
-          "sha256": "152950c60cbb8b0612da2b4b85ca386c9f7598b1c0809347827433818125f9f8",
-          "cover": "covers/dragonball_goku_character-journey_part-03_en.cover.png",
-          "expiresAt": "2026-11-28T06:08:31.956Z"
-        },
-        "contentType": "character-journey",
-        "platformMetadata": {
-          "instagramCaption": "Part 3 of 6: Goku's journey keeps growing.\n\nGoku's journey across Dragon Ball — Part 3/6: 32 places on the world map.\n\nFollow for Part 4.\n\nSave it for your next rewatch.\n\n#dragonball #dbz #goku #anime #animemap #AniMapVerse",
-          "tiktokCaption": "Part 3 of 6: Goku's journey keeps growing. Follow for Part 4. #dragonball #dbz #goku #anime #animemap",
-          "youtubeTitle": "Every Place Goku Visited 🐉 | Dragon Ball Journey Part 3 of 6",
-          "youtubeDescription": "Part 3 of 6: Goku's journey keeps growing.\n\nGoku's journey across Dragon Ball — Part 3/6: 32 places on the world map.\n\nSubscribe for Part 4.\n\nInteractive map: https://animapverse.com/en/dragon-ball/characters/goku\n\n#dragonball #dbz #goku",
-          "facebookCaption": "Part 3 of 6: Goku's journey keeps growing.\n\nGoku's journey across Dragon Ball — Part 3/6: 32 places on the world map.\n\nFollow for Part 4.\n\nInteractive map: https://animapverse.com/en/dragon-ball/characters/goku",
-          "hashtags": [
-            "#dragonball",
-            "#dbz",
-            "#goku",
-            "#anime",
-            "#animemap",
-            "#AniMapVerse"
-          ],
-          "youtube": {
-            "madeForKids": false
-          },
-          "madeForKids": false
-        },
-        "waitFor": {}
-      }
-    ],
+    "ready": [],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",
