@@ -1,19 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-29T06:18:22.384Z",
-  "status": "ready",
+  "generatedAt": "2026-10-30T06:17:57.814Z",
+  "status": "backlog",
   "feedTail": [
-    {
-      "renderId": "guess-character:attackontitan:jean-kirstein@en",
-      "contentType": "guess-character",
-      "animes": [
-        "attackontitan"
-      ],
-      "characters": [
-        "attackontitan:jean-kirstein"
-      ],
-      "part": null
-    },
     {
       "renderId": "character-journey:jujutsukaisen:yuta-okkotsu@en",
       "contentType": "character-journey",
@@ -70,6 +59,17 @@
         "dragonball:goku"
       ],
       "part": 3
+    },
+    {
+      "renderId": "guess-character:blackclover:noelle-silva@en",
+      "contentType": "guess-character",
+      "animes": [
+        "blackclover"
+      ],
+      "characters": [
+        "blackclover:noelle-silva"
+      ],
+      "part": null
     }
   ],
   "rules": {
@@ -90,494 +90,28 @@
     "error": null
   },
   "backlog": {
-    "unpublished": [],
+    "unpublished": [
+      {
+        "renderId": "guess-character:blackclover:noelle-silva@en",
+        "contentType": "guess-character",
+        "renderedAt": "2026-10-30T06:17:56.704Z",
+        "missing": [
+          "instagram",
+          "facebook",
+          "tiktok",
+          "youtube"
+        ]
+      }
+    ],
     "unfinished": [],
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "feed27:character-journey:dragonball:goku:part-03@en:samples0",
-  "rejected": {
-    "JOURNEY_PART_ORDER": 40,
-    "JOURNEY_PART_SPACING": 1,
-    "MAX_SAME_CHARACTER_STREAK": 21
-  },
-  "considered": 674,
-  "trace": {
-    "traceVersion": 1,
-    "mode": "coldstart",
-    "seed": "feed27:character-journey:dragonball:goku:part-03@en:samples0",
-    "analytics": {
-      "coldStart": true,
-      "samples": 0,
-      "contents": 0,
-      "minimumSamples": 8
-    },
-    "recent": [
-      {
-        "renderId": "guess-character:attackontitan:jean-kirstein@en",
-        "contentType": "guess-character",
-        "animes": [
-          "attackontitan"
-        ],
-        "characters": [
-          "attackontitan:jean-kirstein"
-        ]
-      },
-      {
-        "renderId": "character-journey:jujutsukaisen:yuta-okkotsu@en",
-        "contentType": "character-journey",
-        "animes": [
-          "jujutsukaisen"
-        ],
-        "characters": [
-          "jujutsukaisen:yuta-okkotsu"
-        ]
-      },
-      {
-        "renderId": "character-versus:naruto:obito-uchiha-vs-hunterxhunter-killua-zoldyck@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "hunterxhunter"
-        ],
-        "characters": [
-          "naruto:obito-uchiha",
-          "hunterxhunter:killua-zoldyck"
-        ]
-      },
-      {
-        "renderId": "character-journey:jujutsukaisen:yuji-itadori@en",
-        "contentType": "character-journey",
-        "animes": [
-          "jujutsukaisen"
-        ],
-        "characters": [
-          "jujutsukaisen:yuji-itadori"
-        ]
-      },
-      {
-        "renderId": "guess-character:bleach:yhwach@en",
-        "contentType": "guess-character",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:yhwach"
-        ]
-      },
-      {
-        "renderId": "character-journey:dragonball:goku:part-03@en",
-        "contentType": "character-journey",
-        "animes": [
-          "dragonball"
-        ],
-        "characters": [
-          "dragonball:goku"
-        ]
-      }
-    ],
-    "constraints": {
-      "sameAnimeStreak": {
-        "animes": [
-          "dragonball"
-        ],
-        "length": 1
-      },
-      "forcedAnimeRotation": false,
-      "blockedAnimes": [],
-      "blockedCharacters": [
-        "dragonball:goku"
-      ],
-      "characterCooldown": [
-        "attackontitan:jean-kirstein",
-        "jujutsukaisen:yuta-okkotsu",
-        "naruto:obito-uchiha",
-        "hunterxhunter:killua-zoldyck",
-        "jujutsukaisen:yuji-itadori",
-        "bleach:yhwach",
-        "dragonball:goku"
-      ],
-      "contentTypeStreak": {
-        "contentType": "character-journey",
-        "length": 1
-      }
-    },
-    "hardRulesTriggered": {
-      "JOURNEY_PART_ORDER": 40,
-      "JOURNEY_PART_SPACING": 1,
-      "MAX_SAME_CHARACTER_STREAK": 21
-    },
-    "candidates": {
-      "considered": 674,
-      "eligible": 615,
-      "byContentType": {
-        "character-journey": {
-          "considered": 410,
-          "eligible": 369
-        },
-        "guess-character": {
-          "considered": 82,
-          "eligible": 81
-        },
-        "character-versus": {
-          "considered": 182,
-          "eligible": 165
-        }
-      }
-    },
-    "excluded": [
-      {
-        "renderId": "character-journey:dragonball:goku:part-04@en",
-        "contentType": "character-journey",
-        "animes": [
-          "dragonball"
-        ],
-        "characters": [
-          "dragonball:goku"
-        ],
-        "reasons": [
-          "JOURNEY_PART_SPACING",
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "journey spacing: only 0 item(s) since Part 3 (min 2)",
-          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:dragonball:goku:part-05@en",
-        "contentType": "character-journey",
-        "animes": [
-          "dragonball"
-        ],
-        "characters": [
-          "dragonball:goku"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER",
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "sequence: Part 5 before Part 4 (never publish parts out of order)",
-          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:dragonball:goku:part-06@en",
-        "contentType": "character-journey",
-        "animes": [
-          "dragonball"
-        ],
-        "characters": [
-          "dragonball:goku"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER",
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "sequence: Part 6 before Part 5 (never publish parts out of order)",
-          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:dragonball:goku-vs-attackontitan-armin-arlert@en",
-        "contentType": "character-versus",
-        "animes": [
-          "dragonball",
-          "attackontitan"
-        ],
-        "characters": [
-          "dragonball:goku",
-          "attackontitan:armin-arlert"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:dragonball:goku-vs-attackontitan-mikasa-ackerman@en",
-        "contentType": "character-versus",
-        "animes": [
-          "dragonball",
-          "attackontitan"
-        ],
-        "characters": [
-          "dragonball:goku",
-          "attackontitan:mikasa-ackerman"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:dragonball:goku-vs-attackontitan-reiner-braun@en",
-        "contentType": "character-versus",
-        "animes": [
-          "dragonball",
-          "attackontitan"
-        ],
-        "characters": [
-          "dragonball:goku",
-          "attackontitan:reiner-braun"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:dragonball:goku-vs-blackclover-asta@en",
-        "contentType": "character-versus",
-        "animes": [
-          "dragonball",
-          "blackclover"
-        ],
-        "characters": [
-          "dragonball:goku",
-          "blackclover:asta"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:dragonball:goku-vs-blackclover-noelle-silva@en",
-        "contentType": "character-versus",
-        "animes": [
-          "dragonball",
-          "blackclover"
-        ],
-        "characters": [
-          "dragonball:goku",
-          "blackclover:noelle-silva"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:dragonball:goku-vs-blackclover-yami-sukehiro@en",
-        "contentType": "character-versus",
-        "animes": [
-          "dragonball",
-          "blackclover"
-        ],
-        "characters": [
-          "dragonball:goku",
-          "blackclover:yami-sukehiro"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:dragonball:goku-vs-bleach-ichigo-kurosaki@en",
-        "contentType": "character-versus",
-        "animes": [
-          "dragonball",
-          "bleach"
-        ],
-        "characters": [
-          "dragonball:goku",
-          "bleach:ichigo-kurosaki"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      }
-    ],
-    "status": "selected",
-    "selectedId": "guess-character:blackclover:noelle-silva",
-    "renderId": "guess-character:blackclover:noelle-silva@en",
-    "contentType": "guess-character",
-    "animes": [
-      "blackclover"
-    ],
-    "characters": [
-      "blackclover:noelle-silva"
-    ],
-    "score": 91.83,
-    "base": 79.83,
-    "reasons": [
-      "coldstart: novelty +23.9, jitter +5.9",
-      "+12 main character"
-    ],
-    "ranked": [
-      {
-        "renderId": "guess-character:blackclover:noelle-silva@en",
-        "contentType": "guess-character",
-        "animes": [
-          "blackclover"
-        ],
-        "score": 91.83,
-        "reasons": [
-          "coldstart: novelty +23.9, jitter +5.9",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "character-versus:naruto:naruto-uzumaki-vs-hunterxhunter-kurapika@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "hunterxhunter"
-        ],
-        "score": 91.75,
-        "reasons": [
-          "coldstart: novelty +23.9, jitter +5.9",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "character-versus:attackontitan:reiner-braun-vs-blackclover-asta@en",
-        "contentType": "character-versus",
-        "animes": [
-          "attackontitan",
-          "blackclover"
-        ],
-        "score": 91.7,
-        "reasons": [
-          "coldstart: novelty +23.9, jitter +5.8",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "guess-character:blackclover:asta@en",
-        "contentType": "guess-character",
-        "animes": [
-          "blackclover"
-        ],
-        "score": 91.68,
-        "reasons": [
-          "coldstart: novelty +23.9, jitter +5.8",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "character-versus:attackontitan:reiner-braun-vs-blackclover-noelle-silva@en",
-        "contentType": "character-versus",
-        "animes": [
-          "attackontitan",
-          "blackclover"
-        ],
-        "score": 91.53,
-        "reasons": [
-          "coldstart: novelty +23.9, jitter +5.6",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "guess-character:attackontitan:falco-grice@en",
-        "contentType": "guess-character",
-        "animes": [
-          "attackontitan"
-        ],
-        "score": 91.51,
-        "reasons": [
-          "coldstart: novelty +23.9, jitter +5.6",
-          "+12 main character"
-        ]
-      }
-    ],
-    "explanation": [
-      "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
-      "dragonball:goku excluded in every format (maxSameCharacterStreak 1).",
-      "1 series part(s) wait for spacing (≥ 2 items between parts).",
-      "Selected guess-character:blackclover:noelle-silva@en (guess-character, blackclover) — coldstart, score 91.83 among 615 valid candidate(s)."
-    ]
-  },
-  "pick": {
-    "contentId": "guess-character:blackclover:noelle-silva",
-    "renderId": "guess-character:blackclover:noelle-silva@en",
-    "contentType": "guess-character",
-    "animes": [
-      "blackclover"
-    ],
-    "characters": [
-      "blackclover:noelle-silva"
-    ],
-    "part": null,
-    "partCount": null,
-    "score": 91.83,
-    "reasons": [
-      "coldstart: novelty +23.9, jitter +5.9",
-      "+12 main character"
-    ]
-  },
-  "request": {
-    "template": "guessCharacter",
-    "anime": "blackclover",
-    "subject": "noelle-silva",
-    "locale": "en",
-    "hook": "Who visited all these places?",
-    "hookType": "question",
-    "hookId": "gc-question-1",
-    "cta": "Follow for the next one.",
-    "ctaType": "follow-for-more",
-    "selection": {
-      "mode": "coldstart",
-      "score": 91.83,
-      "seed": "feed27:character-journey:dragonball:goku:part-03@en:samples0"
-    },
-    "notes": "growth selector (coldstart): coldstart: novelty +23.9, jitter +5.9; +12 main character"
-  },
-  "alternatives": [
-    {
-      "renderId": "character-versus:naruto:naruto-uzumaki-vs-hunterxhunter-kurapika@en",
-      "contentType": "character-versus",
-      "score": 91.75
-    },
-    {
-      "renderId": "character-versus:attackontitan:reiner-braun-vs-blackclover-asta@en",
-      "contentType": "character-versus",
-      "score": 91.7
-    },
-    {
-      "renderId": "guess-character:blackclover:asta@en",
-      "contentType": "guess-character",
-      "score": 91.68
-    },
-    {
-      "renderId": "character-versus:attackontitan:reiner-braun-vs-blackclover-noelle-silva@en",
-      "contentType": "character-versus",
-      "score": 91.53
-    },
-    {
-      "renderId": "guess-character:attackontitan:falco-grice@en",
-      "contentType": "guess-character",
-      "score": 91.51
-    }
-  ],
-  "eligible": 615
+  "seed": "",
+  "reason": "publish the existing render first: guess-character:blackclover:noelle-silva@en (it counts as today's video; no new content)",
+  "alternatives": [],
+  "rejected": {},
+  "considered": 0,
+  "eligible": 0,
+  "trace": null
 }

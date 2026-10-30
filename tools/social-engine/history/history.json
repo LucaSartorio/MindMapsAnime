@@ -3637,6 +3637,83 @@
         }
       ]
     },
+    "guess-character:blackclover:noelle-silva@en": {
+      "renderId": "guess-character:blackclover:noelle-silva@en",
+      "contentId": "guess-character:blackclover:noelle-silva",
+      "template": "guessCharacter",
+      "anime": "blackclover",
+      "subject": "noelle-silva",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-10-30T06:14:42.620Z",
+      "updatedAt": "2026-10-30T06:17:56.704Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-10-30T06:17:56.704Z",
+      "outputFile": "tools/social-engine/output/blackclover_noelle-silva_guess-character_en.mp4",
+      "manifestFile": "tools/social-engine/output/blackclover_noelle-silva_guess-character_en.manifest.json",
+      "sourceFile": "0033-guess-character-blackclover-noelle-silva.json",
+      "durationSeconds": 26,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-41012901687-1",
+        "runId": "41012901687",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/41012901687",
+        "video": "videos/blackclover_noelle-silva_guess-character_en.mp4",
+        "manifest": "manifests/blackclover_noelle-silva_guess-character_en.manifest.json",
+        "sha256": "2e077418b25406e45bc6ca928c9712968c768d6390fd6d1ad41358c10ce7768f",
+        "cover": "covers/blackclover_noelle-silva_guess-character_en.cover.png",
+        "expiresAt": "2026-11-29T06:17:56.704Z"
+      },
+      "social": {
+        "contentType": "guess-character",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:noelle-silva"
+        ],
+        "characterNames": [
+          "Noelle Silva"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "question",
+        "hookId": "gc-question-1",
+        "hook": "Who visited all these places?",
+        "ctaType": "follow-for-more",
+        "cta": "Follow for the next one.",
+        "durationSeconds": 26,
+        "selection": {
+          "mode": "coldstart",
+          "score": 91.83,
+          "seed": "feed27:character-journey:dragonball:goku:part-03@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Who visited all these places?\n\n6 places, one Black Clover character. Guess before the reveal!\n\nFollow for more anime journeys.\n\nSave it for your next rewatch.\n\n#blackclover #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Who visited all these places? Follow for more anime journeys. #blackclover #anime #animemap #AniMapVerse",
+          "youtubeTitle": "Guess the Black Clover Character From the Places They Visited 📖",
+          "youtubeDescription": "Who visited all these places?\n\n6 places, one Black Clover character. Guess before the reveal!\n\nSubscribe for more anime journeys.\n\nInteractive map: https://animapverse.com/en/black-clover/map\n\n#blackclover #anime #animemap",
+          "facebookCaption": "Who visited all these places?\n\n6 places, one Black Clover character. Guess before the reveal!\n\nFollow for more anime journeys.\n\nInteractive map: https://animapverse.com/en/black-clover/map",
+          "hashtags": [
+            "#blackclover",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "guess-character:bleach:kisuke-urahara@en": {
       "renderId": "guess-character:bleach:kisuke-urahara@en",
       "contentId": "guess-character:bleach:kisuke-urahara",
