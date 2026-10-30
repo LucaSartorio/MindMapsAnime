@@ -3648,7 +3648,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-10-30T06:14:42.620Z",
-      "updatedAt": "2026-10-30T06:17:56.704Z",
+      "updatedAt": "2026-10-30T06:32:04.351Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-10-30T06:17:56.704Z",
       "outputFile": "tools/social-engine/output/blackclover_noelle-silva_guess-character_en.mp4",
@@ -3710,9 +3710,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-30T10:00:00+01:00",
+          "scheduledAt": "2026-10-30T06:23:58Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "410859789",
+          "providerPostUuid": "4805992860784803912",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=4805992860784803912",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "blackclover_noelle-silva_guess-character_en.instagram.scheduled.2bc1d38939cf"
+          ],
+          "updatedAt": "2026-10-30T06:32:04.351Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-30T10:00:00+01:00",
+          "scheduledAt": "2026-10-30T06:23:58Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "410859958",
+          "providerPostUuid": "-6885960277370649491",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-6885960277370649491",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "blackclover_noelle-silva_guess-character_en.facebook.scheduled.06622cd4d260"
+          ],
+          "updatedAt": "2026-10-30T06:32:04.351Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-30T10:00:00+01:00",
+          "scheduledAt": "2026-10-30T06:23:58Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "410860625",
+          "providerPostUuid": "2025504510451469486",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=2025504510451469486",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "blackclover_noelle-silva_guess-character_en.tiktok.scheduled.8d618d1c156b"
+          ],
+          "updatedAt": "2026-10-30T06:32:04.351Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-10-30T10:00:00+01:00",
+          "scheduledAt": "2026-10-30T06:23:58Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "410860135",
+          "providerPostUuid": "7723723421245457915",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=7723723421245457915",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "blackclover_noelle-silva_guess-character_en.youtube.scheduled.99671b35631d"
+          ],
+          "updatedAt": "2026-10-30T06:32:04.351Z"
+        }
+      ]
     },
     "guess-character:bleach:kisuke-urahara@en": {
       "renderId": "guess-character:bleach:kisuke-urahara@en",

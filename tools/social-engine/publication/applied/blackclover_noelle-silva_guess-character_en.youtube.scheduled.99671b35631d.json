@@ -1,0 +1,30 @@
+{
+  "receiptId": "blackclover_noelle-silva_guess-character_en.youtube.scheduled.99671b35631d",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-10-30T06:32:04.351Z",
+  "sourceFile": "20261030T062358Z-blackclover_noelle-silva_guess-character_en-youtube-scheduled.json",
+  "run": {
+    "runId": "41014605529",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/41014605529",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "guess-character:blackclover:noelle-silva@en",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-10-30T10:00:00+01:00",
+    "recordedAt": "2026-10-30T06:23:58Z",
+    "recordedBy": "chatgpt-work-publishing-agent",
+    "platform": "youtube",
+    "providerPostId": "410860135",
+    "providerPostUuid": "7723723421245457915",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=7723723421245457915"
+  }
+}
