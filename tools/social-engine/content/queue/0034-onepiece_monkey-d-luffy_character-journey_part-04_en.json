@@ -1,0 +1,19 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterJourney",
+  "anime": "onepiece",
+  "subject": "monkey-d-luffy",
+  "segment": "part-04",
+  "locale": "en",
+  "hook": "Monkey D. Luffy's journey continues — Part 4 of 5.",
+  "hookType": "fact",
+  "hookId": "cj-cont-fact-1",
+  "cta": "Follow for Part 5.",
+  "ctaType": "follow-next-part",
+  "selection": {
+    "mode": "coldstart",
+    "score": 100.37,
+    "seed": "feed28:guess-character:blackclover:noelle-silva@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +20.4, jitter +2.0; +12 main character; +14 continues a started series (Part 4 promised)"
+}
