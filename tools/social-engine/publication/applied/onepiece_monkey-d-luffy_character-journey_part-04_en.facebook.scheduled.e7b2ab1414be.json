@@ -1,0 +1,30 @@
+{
+  "receiptId": "onepiece_monkey-d-luffy_character-journey_part-04_en.facebook.scheduled.e7b2ab1414be",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-10-31T06:20:47.265Z",
+  "sourceFile": "20261031T061455Z-onepiece_monkey-d-luffy_character-journey_part-04_en-facebook-scheduled.json",
+  "run": {
+    "runId": "41176193339",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/41176193339",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "character-journey:onepiece:monkey-d-luffy:part-04@en",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-10-31T10:00:00+01:00",
+    "recordedAt": "2026-10-31T06:14:55Z",
+    "recordedBy": "chatgpt-work-publishing-agent",
+    "platform": "facebook",
+    "providerPostId": "411945266",
+    "providerPostUuid": "2649723347970705700",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=2649723347970705700"
+  }
+}
