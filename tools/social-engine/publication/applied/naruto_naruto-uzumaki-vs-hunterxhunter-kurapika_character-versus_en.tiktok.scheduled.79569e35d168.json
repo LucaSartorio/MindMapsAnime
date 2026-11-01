@@ -1,0 +1,30 @@
+{
+  "receiptId": "naruto_naruto-uzumaki-vs-hunterxhunter-kurapika_character-versus_en.tiktok.scheduled.79569e35d168",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-11-01T06:20:31.662Z",
+  "sourceFile": "20261101T061403Z-naruto_naruto-uzumaki-vs-hunterxhunter-kurapika_character-versus_en-tiktok-scheduled.json",
+  "run": {
+    "runId": "41280410597",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/41280410597",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "character-versus:naruto:naruto-uzumaki-vs-hunterxhunter-kurapika@en",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-11-01T10:00:00+01:00",
+    "recordedAt": "2026-11-01T06:14:03Z",
+    "recordedBy": "chatgpt-work-publishing-agent",
+    "platform": "tiktok",
+    "providerPostId": "412692924",
+    "providerPostUuid": "-9013023320149440044",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-9013023320149440044"
+  }
+}
