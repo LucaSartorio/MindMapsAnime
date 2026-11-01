@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-31T06:20:47.286Z",
+  "generatedAt": "2026-11-01T06:12:00.182Z",
   "locales": [
     "en",
     "it"
@@ -18543,13 +18543,28 @@
             "placesA": 10,
             "placesB": 4
           },
-          "renderedLocales": [],
+          "renderedLocales": [
+            "en"
+          ],
           "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
-          "renderedBefore": false,
+          "renderedBefore": true,
           "publishedBefore": false,
-          "publication": [],
+          "publication": [
+            {
+              "renderId": "character-versus:naruto:naruto-uzumaki-vs-hunterxhunter-kurapika@en",
+              "locale": "en",
+              "variant": null,
+              "status": "notPublished",
+              "platforms": {
+                "instagram": "notScheduled",
+                "facebook": "notScheduled",
+                "tiktok": "notScheduled",
+                "youtube": "notScheduled"
+              }
+            }
+          ],
           "request": {
             "subject": "naruto-uzumaki",
             "opponent": {
@@ -25762,15 +25777,72 @@
       "metricool"
     ],
     "summary": {
-      "rendered": 34,
+      "rendered": 35,
       "unavailable": 5,
-      "notPublished": 5,
+      "notPublished": 6,
       "scheduled": 23,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0
     },
-    "ready": [],
+    "ready": [
+      {
+        "renderId": "character-versus:naruto:naruto-uzumaki-vs-hunterxhunter-kurapika@en",
+        "contentId": "character-versus:naruto:naruto-uzumaki-vs-hunterxhunter-kurapika",
+        "anime": "naruto",
+        "subject": "naruto-uzumaki-vs-hunterxhunter-kurapika",
+        "subjectName": "Naruto Uzumaki vs Kurapika",
+        "locale": "en",
+        "variant": null,
+        "segment": null,
+        "partNumber": null,
+        "partCount": null,
+        "renderedAt": "2026-11-01T06:11:59.103Z",
+        "durationSeconds": 22,
+        "publicationStatus": "notPublished",
+        "platforms": {
+          "instagram": "notScheduled",
+          "facebook": "notScheduled",
+          "tiktok": "notScheduled",
+          "youtube": "notScheduled"
+        },
+        "artifact": {
+          "name": "animapverse-social-render-41279692512-1",
+          "runId": "41279692512",
+          "runAttempt": "1",
+          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/41279692512",
+          "video": "videos/naruto_naruto-uzumaki-vs-hunterxhunter-kurapika_character-versus_en.mp4",
+          "manifest": "manifests/naruto_naruto-uzumaki-vs-hunterxhunter-kurapika_character-versus_en.manifest.json",
+          "sha256": "c798a38563b75e7a32b020c74192f0454b20e7df20953e55017a97806ab656eb",
+          "cover": "covers/naruto_naruto-uzumaki-vs-hunterxhunter-kurapika_character-versus_en.cover.png",
+          "expiresAt": "2026-12-01T06:11:59.103Z"
+        },
+        "contentType": "character-versus",
+        "platformMetadata": {
+          "instagramCaption": "Naruto Uzumaki vs Kurapika: whose journey is bigger?\n\nNaruto Uzumaki (Naruto) vs Kurapika (Hunter x Hunter): every place on the map, one winner.\n\nNaruto Uzumaki or Kurapika? Pick a side 👇\n\nSave it for your next rewatch.\n\n#naruto #narutoshippuden #hunterxhunter #hxh #narutouzumaki #kurapika #anime #animemap",
+          "tiktokCaption": "Naruto Uzumaki vs Kurapika: whose journey is bigger? Naruto Uzumaki or Kurapika? Pick a side 👇 #naruto #narutoshippuden #hunterxhunter #hxh #narutouzumaki",
+          "youtubeTitle": "Naruto Uzumaki vs Kurapika: Who Travelled More? 🍥",
+          "youtubeDescription": "Naruto Uzumaki vs Kurapika: whose journey is bigger?\n\nNaruto Uzumaki (Naruto) vs Kurapika (Hunter x Hunter): every place on the map, one winner.\n\nNaruto Uzumaki or Kurapika? Pick a side 👇\n\nInteractive map: https://animapverse.com\n\n#naruto #narutoshippuden #hunterxhunter",
+          "facebookCaption": "Naruto Uzumaki vs Kurapika: whose journey is bigger?\n\nNaruto Uzumaki (Naruto) vs Kurapika (Hunter x Hunter): every place on the map, one winner.\n\nNaruto Uzumaki or Kurapika? Pick a side 👇\n\nInteractive map: https://animapverse.com",
+          "hashtags": [
+            "#naruto",
+            "#narutoshippuden",
+            "#hunterxhunter",
+            "#hxh",
+            "#narutouzumaki",
+            "#kurapika",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        },
+        "waitFor": {}
+      }
+    ],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",

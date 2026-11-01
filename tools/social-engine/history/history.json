@@ -2843,6 +2843,91 @@
         }
       ]
     },
+    "character-versus:naruto:naruto-uzumaki-vs-hunterxhunter-kurapika@en": {
+      "renderId": "character-versus:naruto:naruto-uzumaki-vs-hunterxhunter-kurapika@en",
+      "contentId": "character-versus:naruto:naruto-uzumaki-vs-hunterxhunter-kurapika",
+      "template": "characterVersus",
+      "anime": "naruto",
+      "subject": "naruto-uzumaki-vs-hunterxhunter-kurapika",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-11-01T06:10:14.136Z",
+      "updatedAt": "2026-11-01T06:11:59.103Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-11-01T06:11:59.103Z",
+      "outputFile": "tools/social-engine/output/naruto_naruto-uzumaki-vs-hunterxhunter-kurapika_character-versus_en.mp4",
+      "manifestFile": "tools/social-engine/output/naruto_naruto-uzumaki-vs-hunterxhunter-kurapika_character-versus_en.manifest.json",
+      "sourceFile": "0035-naruto_naruto-uzumaki_character-versus_hunterxhunter_kurapika_en.json",
+      "durationSeconds": 22,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-41279692512-1",
+        "runId": "41279692512",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/41279692512",
+        "video": "videos/naruto_naruto-uzumaki-vs-hunterxhunter-kurapika_character-versus_en.mp4",
+        "manifest": "manifests/naruto_naruto-uzumaki-vs-hunterxhunter-kurapika_character-versus_en.manifest.json",
+        "sha256": "c798a38563b75e7a32b020c74192f0454b20e7df20953e55017a97806ab656eb",
+        "cover": "covers/naruto_naruto-uzumaki-vs-hunterxhunter-kurapika_character-versus_en.cover.png",
+        "expiresAt": "2026-12-01T06:11:59.103Z"
+      },
+      "social": {
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "hunterxhunter"
+        ],
+        "characters": [
+          "naruto:naruto-uzumaki",
+          "hunterxhunter:kurapika"
+        ],
+        "characterNames": [
+          "Naruto Uzumaki",
+          "Kurapika"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "versus",
+        "hookId": "cv-versus-2",
+        "hook": "Naruto Uzumaki vs Kurapika: whose journey is bigger?",
+        "ctaType": "comment-pick-side",
+        "cta": "Naruto Uzumaki or Kurapika? Tell us.",
+        "durationSeconds": 22,
+        "selection": {
+          "mode": "coldstart",
+          "score": 92,
+          "seed": "feed29:character-journey:onepiece:monkey-d-luffy:part-04@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Naruto Uzumaki vs Kurapika: whose journey is bigger?\n\nNaruto Uzumaki (Naruto) vs Kurapika (Hunter x Hunter): every place on the map, one winner.\n\nNaruto Uzumaki or Kurapika? Pick a side 👇\n\nSave it for your next rewatch.\n\n#naruto #narutoshippuden #hunterxhunter #hxh #narutouzumaki #kurapika #anime #animemap",
+          "tiktokCaption": "Naruto Uzumaki vs Kurapika: whose journey is bigger? Naruto Uzumaki or Kurapika? Pick a side 👇 #naruto #narutoshippuden #hunterxhunter #hxh #narutouzumaki",
+          "youtubeTitle": "Naruto Uzumaki vs Kurapika: Who Travelled More? 🍥",
+          "youtubeDescription": "Naruto Uzumaki vs Kurapika: whose journey is bigger?\n\nNaruto Uzumaki (Naruto) vs Kurapika (Hunter x Hunter): every place on the map, one winner.\n\nNaruto Uzumaki or Kurapika? Pick a side 👇\n\nInteractive map: https://animapverse.com\n\n#naruto #narutoshippuden #hunterxhunter",
+          "facebookCaption": "Naruto Uzumaki vs Kurapika: whose journey is bigger?\n\nNaruto Uzumaki (Naruto) vs Kurapika (Hunter x Hunter): every place on the map, one winner.\n\nNaruto Uzumaki or Kurapika? Pick a side 👇\n\nInteractive map: https://animapverse.com",
+          "hashtags": [
+            "#naruto",
+            "#narutoshippuden",
+            "#hunterxhunter",
+            "#hxh",
+            "#narutouzumaki",
+            "#kurapika",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-versus:naruto:obito-uchiha-vs-hunterxhunter-killua-zoldyck@en": {
       "renderId": "character-versus:naruto:obito-uchiha-vs-hunterxhunter-killua-zoldyck@en",
       "contentId": "character-versus:naruto:obito-uchiha-vs-hunterxhunter-killua-zoldyck",
