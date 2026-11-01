@@ -1,0 +1,22 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterVersus",
+  "anime": "naruto",
+  "subject": "naruto-uzumaki",
+  "opponent": {
+    "anime": "hunterxhunter",
+    "subject": "kurapika"
+  },
+  "locale": "en",
+  "hook": "Naruto Uzumaki vs Kurapika: whose journey is bigger?",
+  "hookType": "versus",
+  "hookId": "cv-versus-2",
+  "cta": "Naruto Uzumaki or Kurapika? Tell us.",
+  "ctaType": "comment-pick-side",
+  "selection": {
+    "mode": "coldstart",
+    "score": 92,
+    "seed": "feed29:character-journey:onepiece:monkey-d-luffy:part-04@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +24.3, jitter +5.7; +12 main character"
+}
