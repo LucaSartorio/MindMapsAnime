@@ -3500,7 +3500,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-11-02T06:01:49.640Z",
-      "updatedAt": "2026-11-02T06:04:59.851Z",
+      "updatedAt": "2026-11-02T06:12:50.273Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-11-02T06:04:59.851Z",
       "outputFile": "tools/social-engine/output/attackontitan_gabi-braun_guess-character_en.mp4",
@@ -3563,9 +3563,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-02T10:00:00+01:00",
+          "scheduledAt": "2026-11-02T06:07:06Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "413587072",
+          "providerPostUuid": "3860937791119114842",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=3860937791119114842",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_gabi-braun_guess-character_en.instagram.scheduled.298236f0d4f1"
+          ],
+          "updatedAt": "2026-11-02T06:12:50.273Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-02T10:00:00+01:00",
+          "scheduledAt": "2026-11-02T06:07:06Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "413587188",
+          "providerPostUuid": "-9103707188172011404",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-9103707188172011404",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_gabi-braun_guess-character_en.facebook.scheduled.0273ecb569eb"
+          ],
+          "updatedAt": "2026-11-02T06:12:50.273Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-02T10:00:00+01:00",
+          "scheduledAt": "2026-11-02T06:07:06Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "413587412",
+          "providerPostUuid": "2920292601117624672",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=2920292601117624672",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_gabi-braun_guess-character_en.tiktok.scheduled.92b32501bf22"
+          ],
+          "updatedAt": "2026-11-02T06:12:50.273Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-02T10:00:00+01:00",
+          "scheduledAt": "2026-11-02T06:07:06Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "413587282",
+          "providerPostUuid": "-5328956245512206190",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-5328956245512206190",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_gabi-braun_guess-character_en.youtube.scheduled.52f445bdf779"
+          ],
+          "updatedAt": "2026-11-02T06:12:50.273Z"
+        }
+      ]
     },
     "guess-character:attackontitan:jean-kirstein@en": {
       "renderId": "guess-character:attackontitan:jean-kirstein@en",

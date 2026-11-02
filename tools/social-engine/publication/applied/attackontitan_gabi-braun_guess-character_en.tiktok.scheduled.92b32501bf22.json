@@ -1,0 +1,30 @@
+{
+  "receiptId": "attackontitan_gabi-braun_guess-character_en.tiktok.scheduled.92b32501bf22",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-11-02T06:12:50.273Z",
+  "sourceFile": "20261102T060706Z-attackontitan_gabi-braun_guess-character_en-tiktok-scheduled.json",
+  "run": {
+    "runId": "41398471918",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/41398471918",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "guess-character:attackontitan:gabi-braun@en",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-11-02T10:00:00+01:00",
+    "recordedAt": "2026-11-02T06:07:06Z",
+    "recordedBy": "chatgpt-work-publishing-agent",
+    "platform": "tiktok",
+    "providerPostId": "413587412",
+    "providerPostUuid": "2920292601117624672",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=2920292601117624672"
+  }
+}
