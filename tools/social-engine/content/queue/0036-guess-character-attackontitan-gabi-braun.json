@@ -1,0 +1,18 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "guessCharacter",
+  "anime": "attackontitan",
+  "subject": "gabi-braun",
+  "locale": "en",
+  "hook": "Guess the Attack on Titan character from the places they visited.",
+  "hookType": "challenge",
+  "hookId": "gc-challenge-1",
+  "cta": "How many places did you recognize?",
+  "ctaType": "comment-guess",
+  "selection": {
+    "mode": "coldstart",
+    "score": 91.87,
+    "seed": "feed30:h6bd187fb:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +24.0, jitter +5.9; +12 main character"
+}
