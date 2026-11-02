@@ -3489,6 +3489,84 @@
         }
       ]
     },
+    "guess-character:attackontitan:gabi-braun@en": {
+      "renderId": "guess-character:attackontitan:gabi-braun@en",
+      "contentId": "guess-character:attackontitan:gabi-braun",
+      "template": "guessCharacter",
+      "anime": "attackontitan",
+      "subject": "gabi-braun",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-11-02T06:01:49.640Z",
+      "updatedAt": "2026-11-02T06:04:59.851Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-11-02T06:04:59.851Z",
+      "outputFile": "tools/social-engine/output/attackontitan_gabi-braun_guess-character_en.mp4",
+      "manifestFile": "tools/social-engine/output/attackontitan_gabi-braun_guess-character_en.manifest.json",
+      "sourceFile": "0036-guess-character-attackontitan-gabi-braun.json",
+      "durationSeconds": 21,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-41397375970-1",
+        "runId": "41397375970",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/41397375970",
+        "video": "videos/attackontitan_gabi-braun_guess-character_en.mp4",
+        "manifest": "manifests/attackontitan_gabi-braun_guess-character_en.manifest.json",
+        "sha256": "da76711d1a38b35fe6e061b3749c6a4d54decea51bf2e41b35383337564319ee",
+        "cover": "covers/attackontitan_gabi-braun_guess-character_en.cover.png",
+        "expiresAt": "2026-12-02T06:04:59.851Z"
+      },
+      "social": {
+        "contentType": "guess-character",
+        "animes": [
+          "attackontitan"
+        ],
+        "characters": [
+          "attackontitan:gabi-braun"
+        ],
+        "characterNames": [
+          "Gabi Braun"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "challenge",
+        "hookId": "gc-challenge-1",
+        "hook": "Guess the Attack on Titan character from the places they visited.",
+        "ctaType": "comment-guess",
+        "cta": "How many places did you recognize?",
+        "durationSeconds": 21,
+        "selection": {
+          "mode": "coldstart",
+          "score": 91.87,
+          "seed": "feed30:h6bd187fb:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Guess the Attack on Titan character from the places they visited.\n\n4 places, one Attack on Titan character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nSave it for your next rewatch.\n\n#attackontitan #aot #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Guess the Attack on Titan character from the places they visited. Did you get it right? Tell us how many places it took you 👇 #attackontitan #aot #anime #animemap #AniMapVerse",
+          "youtubeTitle": "Guess the Attack on Titan Character From the Places They Visited 🧱",
+          "youtubeDescription": "Guess the Attack on Titan character from the places they visited.\n\n4 places, one Attack on Titan character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/attack-on-titan/map\n\n#attackontitan #aot #anime",
+          "facebookCaption": "Guess the Attack on Titan character from the places they visited.\n\n4 places, one Attack on Titan character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/attack-on-titan/map",
+          "hashtags": [
+            "#attackontitan",
+            "#aot",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "guess-character:attackontitan:jean-kirstein@en": {
       "renderId": "guess-character:attackontitan:jean-kirstein@en",
       "contentId": "guess-character:attackontitan:jean-kirstein",

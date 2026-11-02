@@ -1,19 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-01T06:20:31.683Z",
-  "status": "ready",
+  "generatedAt": "2026-11-02T06:05:00.948Z",
+  "status": "backlog",
   "feedTail": [
-    {
-      "renderId": "character-journey:jujutsukaisen:yuji-itadori@en",
-      "contentType": "character-journey",
-      "animes": [
-        "jujutsukaisen"
-      ],
-      "characters": [
-        "jujutsukaisen:yuji-itadori"
-      ],
-      "part": null
-    },
     {
       "renderId": "guess-character:bleach:yhwach@en",
       "contentType": "guess-character",
@@ -70,6 +59,17 @@
         "hunterxhunter:kurapika"
       ],
       "part": null
+    },
+    {
+      "renderId": "guess-character:attackontitan:gabi-braun@en",
+      "contentType": "guess-character",
+      "animes": [
+        "attackontitan"
+      ],
+      "characters": [
+        "attackontitan:gabi-braun"
+      ],
+      "part": null
     }
   ],
   "rules": {
@@ -90,491 +90,28 @@
     "error": null
   },
   "backlog": {
-    "unpublished": [],
+    "unpublished": [
+      {
+        "renderId": "guess-character:attackontitan:gabi-braun@en",
+        "contentType": "guess-character",
+        "renderedAt": "2026-11-02T06:04:59.851Z",
+        "missing": [
+          "instagram",
+          "facebook",
+          "tiktok",
+          "youtube"
+        ]
+      }
+    ],
     "unfinished": [],
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "feed30:h6bd187fb:samples0",
-  "rejected": {
-    "JOURNEY_PART_ORDER": 39,
-    "MAX_SAME_CHARACTER_STREAK": 36,
-    "JOURNEY_PART_SPACING": 1
-  },
-  "considered": 671,
-  "trace": {
-    "traceVersion": 1,
-    "mode": "coldstart",
-    "seed": "feed30:h6bd187fb:samples0",
-    "analytics": {
-      "coldStart": true,
-      "samples": 0,
-      "contents": 0,
-      "minimumSamples": 8
-    },
-    "recent": [
-      {
-        "renderId": "character-journey:jujutsukaisen:yuji-itadori@en",
-        "contentType": "character-journey",
-        "animes": [
-          "jujutsukaisen"
-        ],
-        "characters": [
-          "jujutsukaisen:yuji-itadori"
-        ]
-      },
-      {
-        "renderId": "guess-character:bleach:yhwach@en",
-        "contentType": "guess-character",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:yhwach"
-        ]
-      },
-      {
-        "renderId": "character-journey:dragonball:goku:part-03@en",
-        "contentType": "character-journey",
-        "animes": [
-          "dragonball"
-        ],
-        "characters": [
-          "dragonball:goku"
-        ]
-      },
-      {
-        "renderId": "guess-character:blackclover:noelle-silva@en",
-        "contentType": "guess-character",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:noelle-silva"
-        ]
-      },
-      {
-        "renderId": "character-journey:onepiece:monkey-d-luffy:part-04@en",
-        "contentType": "character-journey",
-        "animes": [
-          "onepiece"
-        ],
-        "characters": [
-          "onepiece:monkey-d-luffy"
-        ]
-      },
-      {
-        "renderId": "character-versus:naruto:naruto-uzumaki-vs-hunterxhunter-kurapika@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "hunterxhunter"
-        ],
-        "characters": [
-          "naruto:naruto-uzumaki",
-          "hunterxhunter:kurapika"
-        ]
-      }
-    ],
-    "constraints": {
-      "sameAnimeStreak": {
-        "animes": [
-          "naruto",
-          "hunterxhunter"
-        ],
-        "length": 1
-      },
-      "forcedAnimeRotation": false,
-      "blockedAnimes": [],
-      "blockedCharacters": [
-        "naruto:naruto-uzumaki",
-        "hunterxhunter:kurapika"
-      ],
-      "characterCooldown": [
-        "jujutsukaisen:yuji-itadori",
-        "bleach:yhwach",
-        "dragonball:goku",
-        "blackclover:noelle-silva",
-        "onepiece:monkey-d-luffy",
-        "naruto:naruto-uzumaki",
-        "hunterxhunter:kurapika"
-      ],
-      "contentTypeStreak": {
-        "contentType": "character-versus",
-        "length": 1
-      }
-    },
-    "hardRulesTriggered": {
-      "JOURNEY_PART_ORDER": 39,
-      "MAX_SAME_CHARACTER_STREAK": 36,
-      "JOURNEY_PART_SPACING": 1
-    },
-    "candidates": {
-      "considered": 671,
-      "eligible": 595,
-      "byContentType": {
-        "character-journey": {
-          "considered": 409,
-          "eligible": 368
-        },
-        "guess-character": {
-          "considered": 81,
-          "eligible": 79
-        },
-        "character-versus": {
-          "considered": 181,
-          "eligible": 148
-        }
-      }
-    },
-    "excluded": [
-      {
-        "renderId": "character-journey:hunterxhunter:kurapika@en",
-        "contentType": "character-journey",
-        "animes": [
-          "hunterxhunter"
-        ],
-        "characters": [
-          "hunterxhunter:kurapika"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: hunterxhunter:kurapika is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:kurapika-vs-attackontitan-armin-arlert@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "attackontitan"
-        ],
-        "characters": [
-          "hunterxhunter:kurapika",
-          "attackontitan:armin-arlert"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: hunterxhunter:kurapika is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:kurapika-vs-attackontitan-mikasa-ackerman@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "attackontitan"
-        ],
-        "characters": [
-          "hunterxhunter:kurapika",
-          "attackontitan:mikasa-ackerman"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: hunterxhunter:kurapika is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:kurapika-vs-attackontitan-reiner-braun@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "attackontitan"
-        ],
-        "characters": [
-          "hunterxhunter:kurapika",
-          "attackontitan:reiner-braun"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: hunterxhunter:kurapika is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:kurapika-vs-blackclover-asta@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "blackclover"
-        ],
-        "characters": [
-          "hunterxhunter:kurapika",
-          "blackclover:asta"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: hunterxhunter:kurapika is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:kurapika-vs-blackclover-noelle-silva@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "blackclover"
-        ],
-        "characters": [
-          "hunterxhunter:kurapika",
-          "blackclover:noelle-silva"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: hunterxhunter:kurapika is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:kurapika-vs-blackclover-yami-sukehiro@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "blackclover"
-        ],
-        "characters": [
-          "hunterxhunter:kurapika",
-          "blackclover:yami-sukehiro"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: hunterxhunter:kurapika is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:kurapika-vs-bleach-ichigo-kurosaki@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "bleach"
-        ],
-        "characters": [
-          "hunterxhunter:kurapika",
-          "bleach:ichigo-kurosaki"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: hunterxhunter:kurapika is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:kurapika-vs-bleach-rukia-kuchiki@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "bleach"
-        ],
-        "characters": [
-          "hunterxhunter:kurapika",
-          "bleach:rukia-kuchiki"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: hunterxhunter:kurapika is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:kurapika-vs-bleach-yasutora-chad-sado@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "bleach"
-        ],
-        "characters": [
-          "hunterxhunter:kurapika",
-          "bleach:yasutora-chad-sado"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: hunterxhunter:kurapika is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      }
-    ],
-    "status": "selected",
-    "selectedId": "guess-character:attackontitan:gabi-braun",
-    "renderId": "guess-character:attackontitan:gabi-braun@en",
-    "contentType": "guess-character",
-    "animes": [
-      "attackontitan"
-    ],
-    "characters": [
-      "attackontitan:gabi-braun"
-    ],
-    "score": 91.87,
-    "base": 79.87,
-    "reasons": [
-      "coldstart: novelty +24.0, jitter +5.9",
-      "+12 main character"
-    ],
-    "ranked": [
-      {
-        "renderId": "guess-character:attackontitan:gabi-braun@en",
-        "contentType": "guess-character",
-        "animes": [
-          "attackontitan"
-        ],
-        "score": 91.87,
-        "reasons": [
-          "coldstart: novelty +24.0, jitter +5.9",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "guess-character:attackontitan:mikasa-ackerman@en",
-        "contentType": "guess-character",
-        "animes": [
-          "attackontitan"
-        ],
-        "score": 91.61,
-        "reasons": [
-          "coldstart: novelty +24.0, jitter +5.6",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "guess-character:attackontitan:falco-grice@en",
-        "contentType": "guess-character",
-        "animes": [
-          "attackontitan"
-        ],
-        "score": 91.3,
-        "reasons": [
-          "coldstart: novelty +24.0, jitter +5.3",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "guess-character:blackclover:yuno-grinberryall@en",
-        "contentType": "guess-character",
-        "animes": [
-          "blackclover"
-        ],
-        "score": 91.2,
-        "reasons": [
-          "coldstart: novelty +23.5, jitter +5.7",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "guess-character:bleach:uryu-ishida@en",
-        "contentType": "guess-character",
-        "animes": [
-          "bleach"
-        ],
-        "score": 91.15,
-        "reasons": [
-          "coldstart: novelty +23.5, jitter +5.7",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "guess-character:onepiece:nami@en",
-        "contentType": "guess-character",
-        "animes": [
-          "onepiece"
-        ],
-        "score": 90.85,
-        "reasons": [
-          "coldstart: novelty +23.0, jitter +5.8",
-          "+12 main character"
-        ]
-      }
-    ],
-    "explanation": [
-      "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
-      "naruto:naruto-uzumaki, hunterxhunter:kurapika excluded in every format (maxSameCharacterStreak 1).",
-      "1 series part(s) wait for spacing (≥ 2 items between parts).",
-      "Selected guess-character:attackontitan:gabi-braun@en (guess-character, attackontitan) — coldstart, score 91.87 among 595 valid candidate(s)."
-    ]
-  },
-  "pick": {
-    "contentId": "guess-character:attackontitan:gabi-braun",
-    "renderId": "guess-character:attackontitan:gabi-braun@en",
-    "contentType": "guess-character",
-    "animes": [
-      "attackontitan"
-    ],
-    "characters": [
-      "attackontitan:gabi-braun"
-    ],
-    "part": null,
-    "partCount": null,
-    "score": 91.87,
-    "reasons": [
-      "coldstart: novelty +24.0, jitter +5.9",
-      "+12 main character"
-    ]
-  },
-  "request": {
-    "template": "guessCharacter",
-    "anime": "attackontitan",
-    "subject": "gabi-braun",
-    "locale": "en",
-    "hook": "Guess the Attack on Titan character from the places they visited.",
-    "hookType": "challenge",
-    "hookId": "gc-challenge-1",
-    "cta": "How many places did you recognize?",
-    "ctaType": "comment-guess",
-    "selection": {
-      "mode": "coldstart",
-      "score": 91.87,
-      "seed": "feed30:h6bd187fb:samples0"
-    },
-    "notes": "growth selector (coldstart): coldstart: novelty +24.0, jitter +5.9; +12 main character"
-  },
-  "alternatives": [
-    {
-      "renderId": "guess-character:attackontitan:mikasa-ackerman@en",
-      "contentType": "guess-character",
-      "score": 91.61
-    },
-    {
-      "renderId": "guess-character:attackontitan:falco-grice@en",
-      "contentType": "guess-character",
-      "score": 91.3
-    },
-    {
-      "renderId": "guess-character:blackclover:yuno-grinberryall@en",
-      "contentType": "guess-character",
-      "score": 91.2
-    },
-    {
-      "renderId": "guess-character:bleach:uryu-ishida@en",
-      "contentType": "guess-character",
-      "score": 91.15
-    },
-    {
-      "renderId": "guess-character:onepiece:nami@en",
-      "contentType": "guess-character",
-      "score": 90.85
-    }
-  ],
-  "eligible": 595
+  "seed": "",
+  "reason": "publish the existing render first: guess-character:attackontitan:gabi-braun@en (it counts as today's video; no new content)",
+  "alternatives": [],
+  "rejected": {},
+  "considered": 0,
+  "eligible": 0,
+  "trace": null
 }
