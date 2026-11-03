@@ -1,0 +1,13 @@
+{
+  "receiptVersion": 1,
+  "renderId": "character-journey:jujutsukaisen:maki-zenin@en",
+  "provider": "metricool",
+  "status": "scheduled",
+  "scheduledFor": "2026-11-03T10:00:00+01:00",
+  "recordedAt": "2026-11-03T06:13:20Z",
+  "recordedBy": "chatgpt-work-publishing-agent",
+  "platform": "youtube",
+  "providerPostId": "414879096",
+  "providerPostUuid": "-5766852396855179505",
+  "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-5766852396855179505"
+}
