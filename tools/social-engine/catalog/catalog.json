@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-02T06:12:50.291Z",
+  "generatedAt": "2026-11-03T06:11:04.425Z",
   "locales": [
     "en",
     "it"
@@ -13246,13 +13246,28 @@
             "arcs": 4,
             "journeyArcs": 4
           },
-          "renderedLocales": [],
+          "renderedLocales": [
+            "en"
+          ],
           "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
-          "renderedBefore": false,
+          "renderedBefore": true,
           "publishedBefore": false,
-          "publication": []
+          "publication": [
+            {
+              "renderId": "character-journey:jujutsukaisen:maki-zenin@en",
+              "locale": "en",
+              "variant": null,
+              "status": "notPublished",
+              "platforms": {
+                "instagram": "notScheduled",
+                "facebook": "notScheduled",
+                "tiktok": "notScheduled",
+                "youtube": "notScheduled"
+              }
+            }
+          ]
         },
         {
           "id": "character-journey:jujutsukaisen:yuta-okkotsu",
@@ -25796,15 +25811,69 @@
       "metricool"
     ],
     "summary": {
-      "rendered": 36,
+      "rendered": 37,
       "unavailable": 5,
-      "notPublished": 5,
+      "notPublished": 6,
       "scheduled": 25,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0
     },
-    "ready": [],
+    "ready": [
+      {
+        "renderId": "character-journey:jujutsukaisen:maki-zenin@en",
+        "contentId": "character-journey:jujutsukaisen:maki-zenin",
+        "anime": "jujutsukaisen",
+        "subject": "maki-zenin",
+        "subjectName": "Maki Zen'in",
+        "locale": "en",
+        "variant": null,
+        "segment": null,
+        "partNumber": null,
+        "partCount": null,
+        "renderedAt": "2026-11-03T06:11:03.492Z",
+        "durationSeconds": 25,
+        "publicationStatus": "notPublished",
+        "platforms": {
+          "instagram": "notScheduled",
+          "facebook": "notScheduled",
+          "tiktok": "notScheduled",
+          "youtube": "notScheduled"
+        },
+        "artifact": {
+          "name": "animapverse-social-render-41587885478-1",
+          "runId": "41587885478",
+          "runAttempt": "1",
+          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/41587885478",
+          "video": "videos/jujutsukaisen_maki-zenin_character-journey_en.mp4",
+          "manifest": "manifests/jujutsukaisen_maki-zenin_character-journey_en.manifest.json",
+          "sha256": "3bcdac1dcbefd41df5e95845a8a4df3df8d36f1074e8186824d6860ab96618cd",
+          "cover": "covers/jujutsukaisen_maki-zenin_character-journey_en.cover.png",
+          "expiresAt": "2026-12-03T06:11:03.492Z"
+        },
+        "contentType": "character-journey",
+        "platformMetadata": {
+          "instagramCaption": "Maki Zen'in's journey is bigger than you remember.\n\nMaki Zen'in's journey across Jujutsu Kaisen: 4 places on the world map.\n\nFollow for more anime journeys.\n\nSave it for your next rewatch.\n\n#jujutsukaisen #jjk #makizenin #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Maki Zen'in's journey is bigger than you remember. Follow for more anime journeys. #jujutsukaisen #jjk #makizenin #anime #animemap",
+          "youtubeTitle": "Every Place Maki Zen'in Visited 🌀 | Jujutsu Kaisen Journey",
+          "youtubeDescription": "Maki Zen'in's journey is bigger than you remember.\n\nMaki Zen'in's journey across Jujutsu Kaisen: 4 places on the world map.\n\nSubscribe for more anime journeys.\n\nInteractive map: https://animapverse.com/en/jujutsu-kaisen/characters/maki-zenin\n\n#jujutsukaisen #jjk #makizenin",
+          "facebookCaption": "Maki Zen'in's journey is bigger than you remember.\n\nMaki Zen'in's journey across Jujutsu Kaisen: 4 places on the world map.\n\nFollow for more anime journeys.\n\nInteractive map: https://animapverse.com/en/jujutsu-kaisen/characters/maki-zenin",
+          "hashtags": [
+            "#jujutsukaisen",
+            "#jjk",
+            "#makizenin",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        },
+        "waitFor": {}
+      }
+    ],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",

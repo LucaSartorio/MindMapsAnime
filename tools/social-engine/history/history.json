@@ -766,6 +766,85 @@
         }
       ]
     },
+    "character-journey:jujutsukaisen:maki-zenin@en": {
+      "renderId": "character-journey:jujutsukaisen:maki-zenin@en",
+      "contentId": "character-journey:jujutsukaisen:maki-zenin",
+      "template": "characterJourney",
+      "anime": "jujutsukaisen",
+      "subject": "maki-zenin",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-11-03T06:07:40.771Z",
+      "updatedAt": "2026-11-03T06:11:03.492Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-11-03T06:11:03.492Z",
+      "outputFile": "tools/social-engine/output/jujutsukaisen_maki-zenin_character-journey_en.mp4",
+      "manifestFile": "tools/social-engine/output/jujutsukaisen_maki-zenin_character-journey_en.manifest.json",
+      "sourceFile": "0037-jujutsukaisen_maki-zenin_character-journey_en.json",
+      "durationSeconds": 25,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-41587885478-1",
+        "runId": "41587885478",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/41587885478",
+        "video": "videos/jujutsukaisen_maki-zenin_character-journey_en.mp4",
+        "manifest": "manifests/jujutsukaisen_maki-zenin_character-journey_en.manifest.json",
+        "sha256": "3bcdac1dcbefd41df5e95845a8a4df3df8d36f1074e8186824d6860ab96618cd",
+        "cover": "covers/jujutsukaisen_maki-zenin_character-journey_en.cover.png",
+        "expiresAt": "2026-12-03T06:11:03.492Z"
+      },
+      "social": {
+        "contentType": "character-journey",
+        "animes": [
+          "jujutsukaisen"
+        ],
+        "characters": [
+          "jujutsukaisen:maki-zenin"
+        ],
+        "characterNames": [
+          "Maki Zen'in"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "curiosity",
+        "hookId": "cj-curiosity-1",
+        "hook": "Maki Zen'in's journey is bigger than you remember.",
+        "ctaType": "follow-for-more",
+        "cta": "Follow for the next journey.",
+        "durationSeconds": 25,
+        "selection": {
+          "mode": "coldstart",
+          "score": 93.84,
+          "seed": "feed31:guess-character:attackontitan:gabi-braun@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Maki Zen'in's journey is bigger than you remember.\n\nMaki Zen'in's journey across Jujutsu Kaisen: 4 places on the world map.\n\nFollow for more anime journeys.\n\nSave it for your next rewatch.\n\n#jujutsukaisen #jjk #makizenin #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Maki Zen'in's journey is bigger than you remember. Follow for more anime journeys. #jujutsukaisen #jjk #makizenin #anime #animemap",
+          "youtubeTitle": "Every Place Maki Zen'in Visited 🌀 | Jujutsu Kaisen Journey",
+          "youtubeDescription": "Maki Zen'in's journey is bigger than you remember.\n\nMaki Zen'in's journey across Jujutsu Kaisen: 4 places on the world map.\n\nSubscribe for more anime journeys.\n\nInteractive map: https://animapverse.com/en/jujutsu-kaisen/characters/maki-zenin\n\n#jujutsukaisen #jjk #makizenin",
+          "facebookCaption": "Maki Zen'in's journey is bigger than you remember.\n\nMaki Zen'in's journey across Jujutsu Kaisen: 4 places on the world map.\n\nFollow for more anime journeys.\n\nInteractive map: https://animapverse.com/en/jujutsu-kaisen/characters/maki-zenin",
+          "hashtags": [
+            "#jujutsukaisen",
+            "#jjk",
+            "#makizenin",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-journey:jujutsukaisen:satoru-gojo@en": {
       "renderId": "character-journey:jujutsukaisen:satoru-gojo@en",
       "contentId": "character-journey:jujutsukaisen:satoru-gojo",
