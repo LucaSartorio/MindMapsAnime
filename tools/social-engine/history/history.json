@@ -777,7 +777,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-11-03T06:07:40.771Z",
-      "updatedAt": "2026-11-03T06:11:03.492Z",
+      "updatedAt": "2026-11-03T06:19:49.377Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-11-03T06:11:03.492Z",
       "outputFile": "tools/social-engine/output/jujutsukaisen_maki-zenin_character-journey_en.mp4",
@@ -841,9 +841,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-03T10:00:00+01:00",
+          "scheduledAt": "2026-11-03T06:13:20Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "414878844",
+          "providerPostUuid": "-1037346352975688402",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-1037346352975688402",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "jujutsukaisen_maki-zenin_character-journey_en.instagram.scheduled.4eb7f0490312"
+          ],
+          "updatedAt": "2026-11-03T06:19:49.377Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-03T10:00:00+01:00",
+          "scheduledAt": "2026-11-03T06:13:20Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "414878954",
+          "providerPostUuid": "5881157443854484054",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=5881157443854484054",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "jujutsukaisen_maki-zenin_character-journey_en.facebook.scheduled.9b1f52318e76"
+          ],
+          "updatedAt": "2026-11-03T06:19:49.377Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-03T10:00:00+01:00",
+          "scheduledAt": "2026-11-03T06:13:20Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "414879223",
+          "providerPostUuid": "7734320635844642806",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=7734320635844642806",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "jujutsukaisen_maki-zenin_character-journey_en.tiktok.scheduled.4f7e68d5ed98"
+          ],
+          "updatedAt": "2026-11-03T06:19:49.377Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-03T10:00:00+01:00",
+          "scheduledAt": "2026-11-03T06:13:20Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "414879096",
+          "providerPostUuid": "-5766852396855179505",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-5766852396855179505",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "jujutsukaisen_maki-zenin_character-journey_en.youtube.scheduled.ee912d3c463f"
+          ],
+          "updatedAt": "2026-11-03T06:19:49.377Z"
+        }
+      ]
     },
     "character-journey:jujutsukaisen:satoru-gojo@en": {
       "renderId": "character-journey:jujutsukaisen:satoru-gojo@en",
