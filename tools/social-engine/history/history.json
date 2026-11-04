@@ -2837,6 +2837,90 @@
         }
       ]
     },
+    "character-versus:dragonball:piccolo-vs-bleach-ichigo-kurosaki@en": {
+      "renderId": "character-versus:dragonball:piccolo-vs-bleach-ichigo-kurosaki@en",
+      "contentId": "character-versus:dragonball:piccolo-vs-bleach-ichigo-kurosaki",
+      "template": "characterVersus",
+      "anime": "dragonball",
+      "subject": "piccolo-vs-bleach-ichigo-kurosaki",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-11-04T06:06:49.626Z",
+      "updatedAt": "2026-11-04T06:08:40.671Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-11-04T06:08:40.671Z",
+      "outputFile": "tools/social-engine/output/dragonball_piccolo-vs-bleach-ichigo-kurosaki_character-versus_en.mp4",
+      "manifestFile": "tools/social-engine/output/dragonball_piccolo-vs-bleach-ichigo-kurosaki_character-versus_en.manifest.json",
+      "sourceFile": "0038-dragonball_piccolo_character-versus_bleach_ichigo-kurosaki_en.json",
+      "durationSeconds": 22,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-41783340762-1",
+        "runId": "41783340762",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/41783340762",
+        "video": "videos/dragonball_piccolo-vs-bleach-ichigo-kurosaki_character-versus_en.mp4",
+        "manifest": "manifests/dragonball_piccolo-vs-bleach-ichigo-kurosaki_character-versus_en.manifest.json",
+        "sha256": "9dd3b093d94e0592fcfa2b75972c9546888e93e558b00ae88c876c5eb6bf0069",
+        "cover": "covers/dragonball_piccolo-vs-bleach-ichigo-kurosaki_character-versus_en.cover.png",
+        "expiresAt": "2026-12-04T06:08:40.671Z"
+      },
+      "social": {
+        "contentType": "character-versus",
+        "animes": [
+          "dragonball",
+          "bleach"
+        ],
+        "characters": [
+          "dragonball:piccolo",
+          "bleach:ichigo-kurosaki"
+        ],
+        "characterNames": [
+          "Piccolo",
+          "Ichigo Kurosaki"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "question",
+        "hookId": "cv-question-1",
+        "hook": "Who covered more ground, Piccolo or Ichigo Kurosaki?",
+        "ctaType": "comment-pick-side",
+        "cta": "Piccolo or Ichigo Kurosaki? Tell us.",
+        "durationSeconds": 22,
+        "selection": {
+          "mode": "coldstart",
+          "score": 91.49,
+          "seed": "feed32:character-journey:jujutsukaisen:maki-zenin@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Who covered more ground, Piccolo or Ichigo Kurosaki?\n\nPiccolo (Dragon Ball) vs Ichigo Kurosaki (Bleach): every place on the map, one winner.\n\nPiccolo or Ichigo Kurosaki? Pick a side 👇\n\nSave it for your next rewatch.\n\n#dragonball #dbz #bleach #piccolo #ichigokurosaki #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Who covered more ground, Piccolo or Ichigo Kurosaki? Piccolo or Ichigo Kurosaki? Pick a side 👇 #dragonball #dbz #bleach #piccolo #ichigokurosaki",
+          "youtubeTitle": "Piccolo vs Ichigo Kurosaki: Who Travelled More? 🐉",
+          "youtubeDescription": "Who covered more ground, Piccolo or Ichigo Kurosaki?\n\nPiccolo (Dragon Ball) vs Ichigo Kurosaki (Bleach): every place on the map, one winner.\n\nPiccolo or Ichigo Kurosaki? Pick a side 👇\n\nInteractive map: https://animapverse.com\n\n#dragonball #dbz #bleach",
+          "facebookCaption": "Who covered more ground, Piccolo or Ichigo Kurosaki?\n\nPiccolo (Dragon Ball) vs Ichigo Kurosaki (Bleach): every place on the map, one winner.\n\nPiccolo or Ichigo Kurosaki? Pick a side 👇\n\nInteractive map: https://animapverse.com",
+          "hashtags": [
+            "#dragonball",
+            "#dbz",
+            "#bleach",
+            "#piccolo",
+            "#ichigokurosaki",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-versus:hunterxhunter:kurapika-vs-dragonball-goku@en": {
       "renderId": "character-versus:hunterxhunter:kurapika-vs-dragonball-goku@en",
       "contentId": "character-versus:hunterxhunter:kurapika-vs-dragonball-goku",

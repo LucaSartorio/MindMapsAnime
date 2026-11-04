@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-03T06:19:49.397Z",
+  "generatedAt": "2026-11-04T06:08:41.845Z",
   "locales": [
     "en",
     "it"
@@ -24172,13 +24172,28 @@
             "placesA": 11,
             "placesB": 10
           },
-          "renderedLocales": [],
+          "renderedLocales": [
+            "en"
+          ],
           "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
-          "renderedBefore": false,
+          "renderedBefore": true,
           "publishedBefore": false,
-          "publication": [],
+          "publication": [
+            {
+              "renderId": "character-versus:dragonball:piccolo-vs-bleach-ichigo-kurosaki@en",
+              "locale": "en",
+              "variant": null,
+              "status": "notPublished",
+              "platforms": {
+                "instagram": "notScheduled",
+                "facebook": "notScheduled",
+                "tiktok": "notScheduled",
+                "youtube": "notScheduled"
+              }
+            }
+          ],
           "request": {
             "subject": "piccolo",
             "opponent": {
@@ -25813,15 +25828,71 @@
       "metricool"
     ],
     "summary": {
-      "rendered": 37,
+      "rendered": 38,
       "unavailable": 5,
-      "notPublished": 5,
+      "notPublished": 6,
       "scheduled": 26,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0
     },
-    "ready": [],
+    "ready": [
+      {
+        "renderId": "character-versus:dragonball:piccolo-vs-bleach-ichigo-kurosaki@en",
+        "contentId": "character-versus:dragonball:piccolo-vs-bleach-ichigo-kurosaki",
+        "anime": "dragonball",
+        "subject": "piccolo-vs-bleach-ichigo-kurosaki",
+        "subjectName": "Piccolo vs Ichigo Kurosaki",
+        "locale": "en",
+        "variant": null,
+        "segment": null,
+        "partNumber": null,
+        "partCount": null,
+        "renderedAt": "2026-11-04T06:08:40.671Z",
+        "durationSeconds": 22,
+        "publicationStatus": "notPublished",
+        "platforms": {
+          "instagram": "notScheduled",
+          "facebook": "notScheduled",
+          "tiktok": "notScheduled",
+          "youtube": "notScheduled"
+        },
+        "artifact": {
+          "name": "animapverse-social-render-41783340762-1",
+          "runId": "41783340762",
+          "runAttempt": "1",
+          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/41783340762",
+          "video": "videos/dragonball_piccolo-vs-bleach-ichigo-kurosaki_character-versus_en.mp4",
+          "manifest": "manifests/dragonball_piccolo-vs-bleach-ichigo-kurosaki_character-versus_en.manifest.json",
+          "sha256": "9dd3b093d94e0592fcfa2b75972c9546888e93e558b00ae88c876c5eb6bf0069",
+          "cover": "covers/dragonball_piccolo-vs-bleach-ichigo-kurosaki_character-versus_en.cover.png",
+          "expiresAt": "2026-12-04T06:08:40.671Z"
+        },
+        "contentType": "character-versus",
+        "platformMetadata": {
+          "instagramCaption": "Who covered more ground, Piccolo or Ichigo Kurosaki?\n\nPiccolo (Dragon Ball) vs Ichigo Kurosaki (Bleach): every place on the map, one winner.\n\nPiccolo or Ichigo Kurosaki? Pick a side 👇\n\nSave it for your next rewatch.\n\n#dragonball #dbz #bleach #piccolo #ichigokurosaki #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Who covered more ground, Piccolo or Ichigo Kurosaki? Piccolo or Ichigo Kurosaki? Pick a side 👇 #dragonball #dbz #bleach #piccolo #ichigokurosaki",
+          "youtubeTitle": "Piccolo vs Ichigo Kurosaki: Who Travelled More? 🐉",
+          "youtubeDescription": "Who covered more ground, Piccolo or Ichigo Kurosaki?\n\nPiccolo (Dragon Ball) vs Ichigo Kurosaki (Bleach): every place on the map, one winner.\n\nPiccolo or Ichigo Kurosaki? Pick a side 👇\n\nInteractive map: https://animapverse.com\n\n#dragonball #dbz #bleach",
+          "facebookCaption": "Who covered more ground, Piccolo or Ichigo Kurosaki?\n\nPiccolo (Dragon Ball) vs Ichigo Kurosaki (Bleach): every place on the map, one winner.\n\nPiccolo or Ichigo Kurosaki? Pick a side 👇\n\nInteractive map: https://animapverse.com",
+          "hashtags": [
+            "#dragonball",
+            "#dbz",
+            "#bleach",
+            "#piccolo",
+            "#ichigokurosaki",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        },
+        "waitFor": {}
+      }
+    ],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",
