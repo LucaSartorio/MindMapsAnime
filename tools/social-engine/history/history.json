@@ -2848,7 +2848,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-11-04T06:06:49.626Z",
-      "updatedAt": "2026-11-04T06:08:40.671Z",
+      "updatedAt": "2026-11-04T06:17:31.757Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-11-04T06:08:40.671Z",
       "outputFile": "tools/social-engine/output/dragonball_piccolo-vs-bleach-ichigo-kurosaki_character-versus_en.mp4",
@@ -2917,9 +2917,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-04T12:00:00+01:00",
+          "scheduledAt": "2026-11-04T06:11:26Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "416126843",
+          "providerPostUuid": "8073365628717844211",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=8073365628717844211",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "dragonball_piccolo-vs-bleach-ichigo-kurosaki_character-versus_en.instagram.scheduled.0a2c5f865337"
+          ],
+          "updatedAt": "2026-11-04T06:17:31.757Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-04T12:00:00+01:00",
+          "scheduledAt": "2026-11-04T06:11:26Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "416126966",
+          "providerPostUuid": "2717752077045353092",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=2717752077045353092",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "dragonball_piccolo-vs-bleach-ichigo-kurosaki_character-versus_en.facebook.scheduled.570ada7634c9"
+          ],
+          "updatedAt": "2026-11-04T06:17:31.757Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-04T12:00:00+01:00",
+          "scheduledAt": "2026-11-04T06:11:26Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "416127217",
+          "providerPostUuid": "8001523817521630631",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=8001523817521630631",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "dragonball_piccolo-vs-bleach-ichigo-kurosaki_character-versus_en.tiktok.scheduled.d43d89983a5b"
+          ],
+          "updatedAt": "2026-11-04T06:17:31.757Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-04T12:00:00+01:00",
+          "scheduledAt": "2026-11-04T06:11:26Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "416127072",
+          "providerPostUuid": "-5681503327056672746",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-5681503327056672746",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "dragonball_piccolo-vs-bleach-ichigo-kurosaki_character-versus_en.youtube.scheduled.43ccc1e51f0a"
+          ],
+          "updatedAt": "2026-11-04T06:17:31.757Z"
+        }
+      ]
     },
     "character-versus:hunterxhunter:kurapika-vs-dragonball-goku@en": {
       "renderId": "character-versus:hunterxhunter:kurapika-vs-dragonball-goku@en",

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-04T06:08:41.845Z",
-  "status": "backlog",
+  "generatedAt": "2026-11-04T06:17:31.794Z",
+  "status": "ready",
   "feedTail": [
     {
       "renderId": "guess-character:blackclover:noelle-silva@en",
@@ -92,28 +92,498 @@
     "error": null
   },
   "backlog": {
-    "unpublished": [
-      {
-        "renderId": "character-versus:dragonball:piccolo-vs-bleach-ichigo-kurosaki@en",
-        "contentType": "character-versus",
-        "renderedAt": "2026-11-04T06:08:40.671Z",
-        "missing": [
-          "instagram",
-          "facebook",
-          "tiktok",
-          "youtube"
-        ]
-      }
-    ],
+    "unpublished": [],
     "unfinished": [],
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "",
-  "reason": "publish the existing render first: character-versus:dragonball:piccolo-vs-bleach-ichigo-kurosaki@en (it counts as today's video; no new content)",
-  "alternatives": [],
-  "rejected": {},
-  "considered": 0,
-  "eligible": 0,
-  "trace": null
+  "seed": "feed33:character-versus:dragonball:piccolo-vs-bleach-ichigo-kurosaki@en:samples0",
+  "rejected": {
+    "JOURNEY_PART_ORDER": 39,
+    "MAX_SAME_CHARACTER_STREAK": 40
+  },
+  "considered": 668,
+  "trace": {
+    "traceVersion": 1,
+    "mode": "coldstart",
+    "seed": "feed33:character-versus:dragonball:piccolo-vs-bleach-ichigo-kurosaki@en:samples0",
+    "analytics": {
+      "coldStart": true,
+      "samples": 0,
+      "contents": 0,
+      "minimumSamples": 8
+    },
+    "recent": [
+      {
+        "renderId": "guess-character:blackclover:noelle-silva@en",
+        "contentType": "guess-character",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:noelle-silva"
+        ]
+      },
+      {
+        "renderId": "character-journey:onepiece:monkey-d-luffy:part-04@en",
+        "contentType": "character-journey",
+        "animes": [
+          "onepiece"
+        ],
+        "characters": [
+          "onepiece:monkey-d-luffy"
+        ]
+      },
+      {
+        "renderId": "character-versus:naruto:naruto-uzumaki-vs-hunterxhunter-kurapika@en",
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "hunterxhunter"
+        ],
+        "characters": [
+          "naruto:naruto-uzumaki",
+          "hunterxhunter:kurapika"
+        ]
+      },
+      {
+        "renderId": "guess-character:attackontitan:gabi-braun@en",
+        "contentType": "guess-character",
+        "animes": [
+          "attackontitan"
+        ],
+        "characters": [
+          "attackontitan:gabi-braun"
+        ]
+      },
+      {
+        "renderId": "character-journey:jujutsukaisen:maki-zenin@en",
+        "contentType": "character-journey",
+        "animes": [
+          "jujutsukaisen"
+        ],
+        "characters": [
+          "jujutsukaisen:maki-zenin"
+        ]
+      },
+      {
+        "renderId": "character-versus:dragonball:piccolo-vs-bleach-ichigo-kurosaki@en",
+        "contentType": "character-versus",
+        "animes": [
+          "dragonball",
+          "bleach"
+        ],
+        "characters": [
+          "dragonball:piccolo",
+          "bleach:ichigo-kurosaki"
+        ]
+      }
+    ],
+    "constraints": {
+      "sameAnimeStreak": {
+        "animes": [
+          "dragonball",
+          "bleach"
+        ],
+        "length": 1
+      },
+      "forcedAnimeRotation": false,
+      "blockedAnimes": [],
+      "blockedCharacters": [
+        "dragonball:piccolo",
+        "bleach:ichigo-kurosaki"
+      ],
+      "characterCooldown": [
+        "blackclover:noelle-silva",
+        "onepiece:monkey-d-luffy",
+        "naruto:naruto-uzumaki",
+        "hunterxhunter:kurapika",
+        "attackontitan:gabi-braun",
+        "jujutsukaisen:maki-zenin",
+        "dragonball:piccolo",
+        "bleach:ichigo-kurosaki"
+      ],
+      "contentTypeStreak": {
+        "contentType": "character-versus",
+        "length": 1
+      }
+    },
+    "hardRulesTriggered": {
+      "JOURNEY_PART_ORDER": 39,
+      "MAX_SAME_CHARACTER_STREAK": 40
+    },
+    "candidates": {
+      "considered": 668,
+      "eligible": 592,
+      "byContentType": {
+        "character-journey": {
+          "considered": 408,
+          "eligible": 367
+        },
+        "guess-character": {
+          "considered": 80,
+          "eligible": 78
+        },
+        "character-versus": {
+          "considered": 180,
+          "eligible": 147
+        }
+      }
+    },
+    "excluded": [
+      {
+        "renderId": "character-journey:bleach:ichigo-kurosaki:part-01@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:ichigo-kurosaki"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: bleach:ichigo-kurosaki is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:bleach:ichigo-kurosaki:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:ichigo-kurosaki"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER",
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)",
+          "character streak: bleach:ichigo-kurosaki is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:bleach:ichigo-kurosaki:part-03@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:ichigo-kurosaki"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER",
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "sequence: Part 3 before Part 2 (never publish parts out of order)",
+          "character streak: bleach:ichigo-kurosaki is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:dragonball:piccolo:part-01@en",
+        "contentType": "character-journey",
+        "animes": [
+          "dragonball"
+        ],
+        "characters": [
+          "dragonball:piccolo"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: dragonball:piccolo is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:dragonball:piccolo:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "dragonball"
+        ],
+        "characters": [
+          "dragonball:piccolo"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER",
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)",
+          "character streak: dragonball:piccolo is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:attackontitan:armin-arlert-vs-bleach-ichigo-kurosaki@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "bleach"
+        ],
+        "characters": [
+          "attackontitan:armin-arlert",
+          "bleach:ichigo-kurosaki"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: bleach:ichigo-kurosaki is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-bleach-ichigo-kurosaki@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "bleach"
+        ],
+        "characters": [
+          "attackontitan:mikasa-ackerman",
+          "bleach:ichigo-kurosaki"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: bleach:ichigo-kurosaki is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:attackontitan:reiner-braun-vs-bleach-ichigo-kurosaki@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "bleach"
+        ],
+        "characters": [
+          "attackontitan:reiner-braun",
+          "bleach:ichigo-kurosaki"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: bleach:ichigo-kurosaki is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:bleach:ichigo-kurosaki-vs-blackclover-asta@en",
+        "contentType": "character-versus",
+        "animes": [
+          "bleach",
+          "blackclover"
+        ],
+        "characters": [
+          "bleach:ichigo-kurosaki",
+          "blackclover:asta"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: bleach:ichigo-kurosaki is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:bleach:ichigo-kurosaki-vs-blackclover-noelle-silva@en",
+        "contentType": "character-versus",
+        "animes": [
+          "bleach",
+          "blackclover"
+        ],
+        "characters": [
+          "bleach:ichigo-kurosaki",
+          "blackclover:noelle-silva"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: bleach:ichigo-kurosaki is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      }
+    ],
+    "status": "selected",
+    "selectedId": "character-journey:onepiece:nami:part-01",
+    "renderId": "character-journey:onepiece:nami:part-01@en",
+    "contentType": "character-journey",
+    "animes": [
+      "onepiece"
+    ],
+    "characters": [
+      "onepiece:nami"
+    ],
+    "score": 93.48,
+    "base": 77.48,
+    "reasons": [
+      "coldstart: novelty +21.5, jitter +6.0",
+      "+12 main character",
+      "+4 format below its target share (40% < 50%)"
+    ],
+    "ranked": [
+      {
+        "renderId": "character-journey:onepiece:nami:part-01@en",
+        "contentType": "character-journey",
+        "animes": [
+          "onepiece"
+        ],
+        "score": 93.48,
+        "reasons": [
+          "coldstart: novelty +21.5, jitter +6.0",
+          "+12 main character",
+          "+4 format below its target share (40% < 50%)"
+        ]
+      },
+      {
+        "renderId": "character-journey:attackontitan:ymir-fritz@en",
+        "contentType": "character-journey",
+        "animes": [
+          "attackontitan"
+        ],
+        "score": 93.04,
+        "reasons": [
+          "coldstart: novelty +21.5, jitter +5.5",
+          "+12 main character",
+          "+4 format below its target share (40% < 50%)"
+        ]
+      },
+      {
+        "renderId": "character-journey:onepiece:franky@en",
+        "contentType": "character-journey",
+        "animes": [
+          "onepiece"
+        ],
+        "score": 92.72,
+        "reasons": [
+          "coldstart: novelty +21.5, jitter +5.2",
+          "+12 main character",
+          "+4 format below its target share (40% < 50%)"
+        ]
+      },
+      {
+        "renderId": "character-journey:onepiece:roronoa-zoro:part-01@en",
+        "contentType": "character-journey",
+        "animes": [
+          "onepiece"
+        ],
+        "score": 92.63,
+        "reasons": [
+          "coldstart: novelty +21.5, jitter +5.1",
+          "+12 main character",
+          "+4 format below its target share (40% < 50%)"
+        ]
+      },
+      {
+        "renderId": "character-journey:jujutsukaisen:megumi-fushiguro@en",
+        "contentType": "character-journey",
+        "animes": [
+          "jujutsukaisen"
+        ],
+        "score": 92.54,
+        "reasons": [
+          "coldstart: novelty +22.0, jitter +4.5",
+          "+12 main character",
+          "+4 format below its target share (40% < 50%)"
+        ]
+      },
+      {
+        "renderId": "character-journey:blackclover:yami-sukehiro:part-01@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "score": 92.46,
+        "reasons": [
+          "coldstart: novelty +21.5, jitter +5.0",
+          "+12 main character",
+          "+4 format below its target share (40% < 50%)"
+        ]
+      }
+    ],
+    "explanation": [
+      "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
+      "dragonball:piccolo, bleach:ichigo-kurosaki excluded in every format (maxSameCharacterStreak 1).",
+      "Selected character-journey:onepiece:nami:part-01@en (character-journey, onepiece) — coldstart, score 93.48 among 592 valid candidate(s)."
+    ]
+  },
+  "pick": {
+    "contentId": "character-journey:onepiece:nami:part-01",
+    "renderId": "character-journey:onepiece:nami:part-01@en",
+    "contentType": "character-journey",
+    "animes": [
+      "onepiece"
+    ],
+    "characters": [
+      "onepiece:nami"
+    ],
+    "part": 1,
+    "partCount": 3,
+    "score": 93.48,
+    "reasons": [
+      "coldstart: novelty +21.5, jitter +6.0",
+      "+12 main character",
+      "+4 format below its target share (40% < 50%)"
+    ]
+  },
+  "request": {
+    "template": "characterJourney",
+    "anime": "onepiece",
+    "subject": "nami",
+    "segment": "part-01",
+    "locale": "en",
+    "hook": "Nami visited 17 places across One Piece.",
+    "hookType": "fact",
+    "hookId": "cj-fact-1",
+    "cta": "Follow for Part 2.",
+    "ctaType": "follow-next-part",
+    "selection": {
+      "mode": "coldstart",
+      "score": 93.48,
+      "seed": "feed33:character-versus:dragonball:piccolo-vs-bleach-ichigo-kurosaki@en:samples0"
+    },
+    "notes": "growth selector (coldstart): coldstart: novelty +21.5, jitter +6.0; +12 main character; +4 format below its target share (40% < 50%)"
+  },
+  "alternatives": [
+    {
+      "renderId": "character-journey:attackontitan:ymir-fritz@en",
+      "contentType": "character-journey",
+      "score": 93.04
+    },
+    {
+      "renderId": "character-journey:onepiece:franky@en",
+      "contentType": "character-journey",
+      "score": 92.72
+    },
+    {
+      "renderId": "character-journey:onepiece:roronoa-zoro:part-01@en",
+      "contentType": "character-journey",
+      "score": 92.63
+    },
+    {
+      "renderId": "character-journey:jujutsukaisen:megumi-fushiguro@en",
+      "contentType": "character-journey",
+      "score": 92.54
+    },
+    {
+      "renderId": "character-journey:blackclover:yami-sukehiro:part-01@en",
+      "contentType": "character-journey",
+      "score": 92.46
+    }
+  ],
+  "eligible": 592
 }

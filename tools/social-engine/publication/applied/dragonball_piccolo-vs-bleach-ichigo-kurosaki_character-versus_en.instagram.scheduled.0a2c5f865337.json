@@ -1,0 +1,30 @@
+{
+  "receiptId": "dragonball_piccolo-vs-bleach-ichigo-kurosaki_character-versus_en.instagram.scheduled.0a2c5f865337",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-11-04T06:17:31.757Z",
+  "sourceFile": "20261104T061126Z-dragonball_piccolo-vs-bleach-ichigo-kurosaki_character-versus_en-instagram-scheduled.json",
+  "run": {
+    "runId": "41784527390",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/41784527390",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "character-versus:dragonball:piccolo-vs-bleach-ichigo-kurosaki@en",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-11-04T12:00:00+01:00",
+    "recordedAt": "2026-11-04T06:11:26Z",
+    "recordedBy": "chatgpt-work-publishing-agent",
+    "platform": "instagram",
+    "providerPostId": "416126843",
+    "providerPostUuid": "8073365628717844211",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=8073365628717844211"
+  }
+}
