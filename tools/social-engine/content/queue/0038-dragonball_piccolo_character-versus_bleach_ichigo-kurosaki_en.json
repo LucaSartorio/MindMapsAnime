@@ -1,0 +1,22 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterVersus",
+  "anime": "dragonball",
+  "subject": "piccolo",
+  "opponent": {
+    "anime": "bleach",
+    "subject": "ichigo-kurosaki"
+  },
+  "locale": "en",
+  "hook": "Who covered more ground, Piccolo or Ichigo Kurosaki?",
+  "hookType": "question",
+  "hookId": "cv-question-1",
+  "cta": "Piccolo or Ichigo Kurosaki? Tell us.",
+  "ctaType": "comment-pick-side",
+  "selection": {
+    "mode": "coldstart",
+    "score": 91.49,
+    "seed": "feed32:character-journey:jujutsukaisen:maki-zenin@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +23.5, jitter +6.0; +12 main character"
+}
