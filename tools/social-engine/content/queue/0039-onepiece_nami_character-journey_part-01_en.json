@@ -1,0 +1,19 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterJourney",
+  "anime": "onepiece",
+  "subject": "nami",
+  "segment": "part-01",
+  "locale": "en",
+  "hook": "Nami visited 17 places across One Piece.",
+  "hookType": "fact",
+  "hookId": "cj-fact-1",
+  "cta": "Follow for Part 2.",
+  "ctaType": "follow-next-part",
+  "selection": {
+    "mode": "coldstart",
+    "score": 93.48,
+    "seed": "feed33:character-versus:dragonball:piccolo-vs-bleach-ichigo-kurosaki@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +21.5, jitter +6.0; +12 main character; +4 format below its target share (40% < 50%)"
+}
