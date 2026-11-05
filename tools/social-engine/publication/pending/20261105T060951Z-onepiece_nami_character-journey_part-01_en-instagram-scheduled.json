@@ -1,0 +1,13 @@
+{
+  "receiptVersion": 1,
+  "renderId": "character-journey:onepiece:nami:part-01@en",
+  "provider": "metricool",
+  "status": "scheduled",
+  "scheduledFor": "2026-11-05T10:00:00+01:00",
+  "recordedAt": "2026-11-05T06:09:51Z",
+  "recordedBy": "chatgpt-work-publishing-agent",
+  "platform": "instagram",
+  "providerPostId": "417362905",
+  "providerPostUuid": "8363804260554655245",
+  "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=8363804260554655245"
+}
