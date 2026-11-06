@@ -1,19 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T06:16:07.161Z",
-  "status": "ready",
+  "generatedAt": "2026-11-06T06:07:54.107Z",
+  "status": "backlog",
   "feedTail": [
-    {
-      "renderId": "character-journey:onepiece:monkey-d-luffy:part-04@en",
-      "contentType": "character-journey",
-      "animes": [
-        "onepiece"
-      ],
-      "characters": [
-        "onepiece:monkey-d-luffy"
-      ],
-      "part": 4
-    },
     {
       "renderId": "character-versus:naruto:naruto-uzumaki-vs-hunterxhunter-kurapika@en",
       "contentType": "character-versus",
@@ -72,6 +61,19 @@
         "onepiece:nami"
       ],
       "part": 1
+    },
+    {
+      "renderId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-goku@en",
+      "contentType": "character-versus",
+      "animes": [
+        "naruto",
+        "dragonball"
+      ],
+      "characters": [
+        "naruto:sasuke-uchiha",
+        "dragonball:goku"
+      ],
+      "part": null
     }
   ],
   "rules": {
@@ -92,490 +94,28 @@
     "error": null
   },
   "backlog": {
-    "unpublished": [],
+    "unpublished": [
+      {
+        "renderId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-goku@en",
+        "contentType": "character-versus",
+        "renderedAt": "2026-11-06T06:07:53.224Z",
+        "missing": [
+          "instagram",
+          "facebook",
+          "tiktok",
+          "youtube"
+        ]
+      }
+    ],
     "unfinished": [],
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "feed34:character-journey:onepiece:nami:part-01@en:samples0",
-  "rejected": {
-    "JOURNEY_PART_ORDER": 38,
-    "JOURNEY_PART_SPACING": 1,
-    "MAX_SAME_CHARACTER_STREAK": 3
-  },
-  "considered": 667,
-  "trace": {
-    "traceVersion": 1,
-    "mode": "coldstart",
-    "seed": "feed34:character-journey:onepiece:nami:part-01@en:samples0",
-    "analytics": {
-      "coldStart": true,
-      "samples": 0,
-      "contents": 0,
-      "minimumSamples": 8
-    },
-    "recent": [
-      {
-        "renderId": "character-journey:onepiece:monkey-d-luffy:part-04@en",
-        "contentType": "character-journey",
-        "animes": [
-          "onepiece"
-        ],
-        "characters": [
-          "onepiece:monkey-d-luffy"
-        ]
-      },
-      {
-        "renderId": "character-versus:naruto:naruto-uzumaki-vs-hunterxhunter-kurapika@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "hunterxhunter"
-        ],
-        "characters": [
-          "naruto:naruto-uzumaki",
-          "hunterxhunter:kurapika"
-        ]
-      },
-      {
-        "renderId": "guess-character:attackontitan:gabi-braun@en",
-        "contentType": "guess-character",
-        "animes": [
-          "attackontitan"
-        ],
-        "characters": [
-          "attackontitan:gabi-braun"
-        ]
-      },
-      {
-        "renderId": "character-journey:jujutsukaisen:maki-zenin@en",
-        "contentType": "character-journey",
-        "animes": [
-          "jujutsukaisen"
-        ],
-        "characters": [
-          "jujutsukaisen:maki-zenin"
-        ]
-      },
-      {
-        "renderId": "character-versus:dragonball:piccolo-vs-bleach-ichigo-kurosaki@en",
-        "contentType": "character-versus",
-        "animes": [
-          "dragonball",
-          "bleach"
-        ],
-        "characters": [
-          "dragonball:piccolo",
-          "bleach:ichigo-kurosaki"
-        ]
-      },
-      {
-        "renderId": "character-journey:onepiece:nami:part-01@en",
-        "contentType": "character-journey",
-        "animes": [
-          "onepiece"
-        ],
-        "characters": [
-          "onepiece:nami"
-        ]
-      }
-    ],
-    "constraints": {
-      "sameAnimeStreak": {
-        "animes": [
-          "onepiece"
-        ],
-        "length": 1
-      },
-      "forcedAnimeRotation": false,
-      "blockedAnimes": [],
-      "blockedCharacters": [
-        "onepiece:nami"
-      ],
-      "characterCooldown": [
-        "onepiece:monkey-d-luffy",
-        "naruto:naruto-uzumaki",
-        "hunterxhunter:kurapika",
-        "attackontitan:gabi-braun",
-        "jujutsukaisen:maki-zenin",
-        "dragonball:piccolo",
-        "bleach:ichigo-kurosaki",
-        "onepiece:nami"
-      ],
-      "contentTypeStreak": {
-        "contentType": "character-journey",
-        "length": 1
-      }
-    },
-    "hardRulesTriggered": {
-      "JOURNEY_PART_ORDER": 38,
-      "JOURNEY_PART_SPACING": 1,
-      "MAX_SAME_CHARACTER_STREAK": 3
-    },
-    "candidates": {
-      "considered": 667,
-      "eligible": 627,
-      "byContentType": {
-        "character-journey": {
-          "considered": 407,
-          "eligible": 368
-        },
-        "guess-character": {
-          "considered": 80,
-          "eligible": 79
-        },
-        "character-versus": {
-          "considered": 180,
-          "eligible": 180
-        }
-      }
-    },
-    "excluded": [
-      {
-        "renderId": "character-journey:onepiece:nami:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "onepiece"
-        ],
-        "characters": [
-          "onepiece:nami"
-        ],
-        "reasons": [
-          "JOURNEY_PART_SPACING",
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "journey spacing: only 0 item(s) since Part 1 (min 2)",
-          "character streak: onepiece:nami is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:onepiece:nami:part-03@en",
-        "contentType": "character-journey",
-        "animes": [
-          "onepiece"
-        ],
-        "characters": [
-          "onepiece:nami"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER",
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "sequence: Part 3 before Part 2 (never publish parts out of order)",
-          "character streak: onepiece:nami is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "guess-character:onepiece:nami@en",
-        "contentType": "guess-character",
-        "animes": [
-          "onepiece"
-        ],
-        "characters": [
-          "onepiece:nami"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: onepiece:nami is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:blackclover:asta:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:asta"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:blackclover:asta:part-03@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:asta"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 3 before Part 2 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:blackclover:noelle-silva:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:noelle-silva"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:blackclover:yami-sukehiro:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:yami-sukehiro"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:blackclover:yuno-grinberryall:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:yuno-grinberryall"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:bleach:byakuya-kuchiki:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:byakuya-kuchiki"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:bleach:ichigo-kurosaki:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:ichigo-kurosaki"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      }
-    ],
-    "status": "selected",
-    "selectedId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-goku",
-    "renderId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-goku@en",
-    "contentType": "character-versus",
-    "animes": [
-      "naruto",
-      "dragonball"
-    ],
-    "characters": [
-      "naruto:sasuke-uchiha",
-      "dragonball:goku"
-    ],
-    "score": 90.96,
-    "base": 78.96,
-    "reasons": [
-      "coldstart: novelty +23.0, jitter +6.0",
-      "+12 main character"
-    ],
-    "ranked": [
-      {
-        "renderId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-goku@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "dragonball"
-        ],
-        "score": 90.96,
-        "reasons": [
-          "coldstart: novelty +23.0, jitter +6.0",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:gon-freecss-vs-blackclover-yami-sukehiro@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "blackclover"
-        ],
-        "score": 90.82,
-        "reasons": [
-          "coldstart: novelty +23.0, jitter +5.8",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "guess-character:hunterxhunter:gon-freecss@en",
-        "contentType": "guess-character",
-        "animes": [
-          "hunterxhunter"
-        ],
-        "score": 90.74,
-        "reasons": [
-          "coldstart: novelty +23.5, jitter +5.2",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "character-versus:attackontitan:armin-arlert-vs-blackclover-yami-sukehiro@en",
-        "contentType": "character-versus",
-        "animes": [
-          "attackontitan",
-          "blackclover"
-        ],
-        "score": 90.62,
-        "reasons": [
-          "coldstart: novelty +23.0, jitter +5.6",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "character-versus:naruto:obito-uchiha-vs-attackontitan-mikasa-ackerman@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "attackontitan"
-        ],
-        "score": 90.59,
-        "reasons": [
-          "coldstart: novelty +23.0, jitter +5.6",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "guess-character:dragonball:vegeta@en",
-        "contentType": "guess-character",
-        "animes": [
-          "dragonball"
-        ],
-        "score": 90.55,
-        "reasons": [
-          "coldstart: novelty +23.0, jitter +5.5",
-          "+12 main character"
-        ]
-      }
-    ],
-    "explanation": [
-      "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
-      "onepiece:nami excluded in every format (maxSameCharacterStreak 1).",
-      "1 series part(s) wait for spacing (≥ 2 items between parts).",
-      "Selected character-versus:naruto:sasuke-uchiha-vs-dragonball-goku@en (character-versus, naruto + dragonball) — coldstart, score 90.96 among 627 valid candidate(s)."
-    ]
-  },
-  "pick": {
-    "contentId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-goku",
-    "renderId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-goku@en",
-    "contentType": "character-versus",
-    "animes": [
-      "naruto",
-      "dragonball"
-    ],
-    "characters": [
-      "naruto:sasuke-uchiha",
-      "dragonball:goku"
-    ],
-    "part": null,
-    "partCount": null,
-    "score": 90.96,
-    "reasons": [
-      "coldstart: novelty +23.0, jitter +6.0",
-      "+12 main character"
-    ]
-  },
-  "request": {
-    "template": "characterVersus",
-    "anime": "naruto",
-    "subject": "sasuke-uchiha",
-    "opponent": {
-      "anime": "dragonball",
-      "subject": "goku"
-    },
-    "locale": "en",
-    "hook": "Sasuke Uchiha vs Goku: whose journey is bigger?",
-    "hookType": "versus",
-    "hookId": "cv-versus-2",
-    "cta": "Follow for the next match-up.",
-    "ctaType": "follow-for-more",
-    "selection": {
-      "mode": "coldstart",
-      "score": 90.96,
-      "seed": "feed34:character-journey:onepiece:nami:part-01@en:samples0"
-    },
-    "notes": "growth selector (coldstart): coldstart: novelty +23.0, jitter +6.0; +12 main character"
-  },
-  "alternatives": [
-    {
-      "renderId": "character-versus:hunterxhunter:gon-freecss-vs-blackclover-yami-sukehiro@en",
-      "contentType": "character-versus",
-      "score": 90.82
-    },
-    {
-      "renderId": "guess-character:hunterxhunter:gon-freecss@en",
-      "contentType": "guess-character",
-      "score": 90.74
-    },
-    {
-      "renderId": "character-versus:attackontitan:armin-arlert-vs-blackclover-yami-sukehiro@en",
-      "contentType": "character-versus",
-      "score": 90.62
-    },
-    {
-      "renderId": "character-versus:naruto:obito-uchiha-vs-attackontitan-mikasa-ackerman@en",
-      "contentType": "character-versus",
-      "score": 90.59
-    },
-    {
-      "renderId": "guess-character:dragonball:vegeta@en",
-      "contentType": "guess-character",
-      "score": 90.55
-    }
-  ],
-  "eligible": 627
+  "seed": "",
+  "reason": "publish the existing render first: character-versus:naruto:sasuke-uchiha-vs-dragonball-goku@en (it counts as today's video; no new content)",
+  "alternatives": [],
+  "rejected": {},
+  "considered": 0,
+  "eligible": 0,
+  "trace": null
 }

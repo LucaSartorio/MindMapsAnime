@@ -3639,6 +3639,91 @@
         }
       ]
     },
+    "character-versus:naruto:sasuke-uchiha-vs-dragonball-goku@en": {
+      "renderId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-goku@en",
+      "contentId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-goku",
+      "template": "characterVersus",
+      "anime": "naruto",
+      "subject": "sasuke-uchiha-vs-dragonball-goku",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-11-06T06:06:29.225Z",
+      "updatedAt": "2026-11-06T06:07:53.224Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-11-06T06:07:53.224Z",
+      "outputFile": "tools/social-engine/output/naruto_sasuke-uchiha-vs-dragonball-goku_character-versus_en.mp4",
+      "manifestFile": "tools/social-engine/output/naruto_sasuke-uchiha-vs-dragonball-goku_character-versus_en.manifest.json",
+      "sourceFile": "0040-naruto_sasuke-uchiha-vs-dragonball-goku_character-versus_en.json",
+      "durationSeconds": 22,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-42172325573-1",
+        "runId": "42172325573",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/42172325573",
+        "video": "videos/naruto_sasuke-uchiha-vs-dragonball-goku_character-versus_en.mp4",
+        "manifest": "manifests/naruto_sasuke-uchiha-vs-dragonball-goku_character-versus_en.manifest.json",
+        "sha256": "e90763bfe898493fd16a7b9e7ecc71a4db23f7ca7182e3995e22358c5a624c09",
+        "cover": "covers/naruto_sasuke-uchiha-vs-dragonball-goku_character-versus_en.cover.png",
+        "expiresAt": "2026-12-06T06:07:53.224Z"
+      },
+      "social": {
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "dragonball"
+        ],
+        "characters": [
+          "naruto:sasuke-uchiha",
+          "dragonball:goku"
+        ],
+        "characterNames": [
+          "Sasuke Uchiha",
+          "Goku"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "versus",
+        "hookId": "cv-versus-2",
+        "hook": "Sasuke Uchiha vs Goku: whose journey is bigger?",
+        "ctaType": "follow-for-more",
+        "cta": "Follow for the next match-up.",
+        "durationSeconds": 22,
+        "selection": {
+          "mode": "coldstart",
+          "score": 90.96,
+          "seed": "feed34:character-journey:onepiece:nami:part-01@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Sasuke Uchiha vs Goku: whose journey is bigger?\n\nSasuke Uchiha (Naruto) vs Goku (Dragon Ball): every place on the map, one winner.\n\nFollow for more anime journeys.\n\nSave it for your next rewatch.\n\n#naruto #narutoshippuden #dragonball #dbz #sasukeuchiha #goku #anime #animemap",
+          "tiktokCaption": "Sasuke Uchiha vs Goku: whose journey is bigger? Follow for more anime journeys. #naruto #narutoshippuden #dragonball #dbz #sasukeuchiha",
+          "youtubeTitle": "Sasuke Uchiha vs Goku: Who Travelled More? 🍥",
+          "youtubeDescription": "Sasuke Uchiha vs Goku: whose journey is bigger?\n\nSasuke Uchiha (Naruto) vs Goku (Dragon Ball): every place on the map, one winner.\n\nSubscribe for more anime journeys.\n\nInteractive map: https://animapverse.com\n\n#naruto #narutoshippuden #dragonball",
+          "facebookCaption": "Sasuke Uchiha vs Goku: whose journey is bigger?\n\nSasuke Uchiha (Naruto) vs Goku (Dragon Ball): every place on the map, one winner.\n\nFollow for more anime journeys.\n\nInteractive map: https://animapverse.com",
+          "hashtags": [
+            "#naruto",
+            "#narutoshippuden",
+            "#dragonball",
+            "#dbz",
+            "#sasukeuchiha",
+            "#goku",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-versus:naruto:sasuke-uchiha-vs-dragonball-piccolo@en": {
       "renderId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-piccolo@en",
       "contentId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-piccolo",
