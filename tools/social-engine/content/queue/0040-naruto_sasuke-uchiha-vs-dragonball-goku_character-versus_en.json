@@ -1,0 +1,22 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterVersus",
+  "anime": "naruto",
+  "subject": "sasuke-uchiha",
+  "opponent": {
+    "anime": "dragonball",
+    "subject": "goku"
+  },
+  "locale": "en",
+  "hook": "Sasuke Uchiha vs Goku: whose journey is bigger?",
+  "hookType": "versus",
+  "hookId": "cv-versus-2",
+  "cta": "Follow for the next match-up.",
+  "ctaType": "follow-for-more",
+  "selection": {
+    "mode": "coldstart",
+    "score": 90.96,
+    "seed": "feed34:character-journey:onepiece:nami:part-01@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +23.0, jitter +6.0; +12 main character"
+}
