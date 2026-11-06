@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T06:07:54.107Z",
-  "status": "backlog",
+  "generatedAt": "2026-11-06T06:18:54.607Z",
+  "status": "ready",
   "feedTail": [
     {
       "renderId": "character-versus:naruto:naruto-uzumaki-vs-hunterxhunter-kurapika@en",
@@ -94,28 +94,507 @@
     "error": null
   },
   "backlog": {
-    "unpublished": [
-      {
-        "renderId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-goku@en",
-        "contentType": "character-versus",
-        "renderedAt": "2026-11-06T06:07:53.224Z",
-        "missing": [
-          "instagram",
-          "facebook",
-          "tiktok",
-          "youtube"
-        ]
-      }
-    ],
+    "unpublished": [],
     "unfinished": [],
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "",
-  "reason": "publish the existing render first: character-versus:naruto:sasuke-uchiha-vs-dragonball-goku@en (it counts as today's video; no new content)",
-  "alternatives": [],
-  "rejected": {},
-  "considered": 0,
-  "eligible": 0,
-  "trace": null
+  "seed": "feed35:character-versus:naruto:sasuke-uchiha-vs-dragonball-goku@en:samples0",
+  "rejected": {
+    "MAX_SAME_CHARACTER_STREAK": 39,
+    "JOURNEY_PART_ORDER": 38,
+    "JOURNEY_PART_SPACING": 1
+  },
+  "considered": 666,
+  "trace": {
+    "traceVersion": 1,
+    "mode": "coldstart",
+    "seed": "feed35:character-versus:naruto:sasuke-uchiha-vs-dragonball-goku@en:samples0",
+    "analytics": {
+      "coldStart": true,
+      "samples": 0,
+      "contents": 0,
+      "minimumSamples": 8
+    },
+    "recent": [
+      {
+        "renderId": "character-versus:naruto:naruto-uzumaki-vs-hunterxhunter-kurapika@en",
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "hunterxhunter"
+        ],
+        "characters": [
+          "naruto:naruto-uzumaki",
+          "hunterxhunter:kurapika"
+        ]
+      },
+      {
+        "renderId": "guess-character:attackontitan:gabi-braun@en",
+        "contentType": "guess-character",
+        "animes": [
+          "attackontitan"
+        ],
+        "characters": [
+          "attackontitan:gabi-braun"
+        ]
+      },
+      {
+        "renderId": "character-journey:jujutsukaisen:maki-zenin@en",
+        "contentType": "character-journey",
+        "animes": [
+          "jujutsukaisen"
+        ],
+        "characters": [
+          "jujutsukaisen:maki-zenin"
+        ]
+      },
+      {
+        "renderId": "character-versus:dragonball:piccolo-vs-bleach-ichigo-kurosaki@en",
+        "contentType": "character-versus",
+        "animes": [
+          "dragonball",
+          "bleach"
+        ],
+        "characters": [
+          "dragonball:piccolo",
+          "bleach:ichigo-kurosaki"
+        ]
+      },
+      {
+        "renderId": "character-journey:onepiece:nami:part-01@en",
+        "contentType": "character-journey",
+        "animes": [
+          "onepiece"
+        ],
+        "characters": [
+          "onepiece:nami"
+        ]
+      },
+      {
+        "renderId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-goku@en",
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "dragonball"
+        ],
+        "characters": [
+          "naruto:sasuke-uchiha",
+          "dragonball:goku"
+        ]
+      }
+    ],
+    "constraints": {
+      "sameAnimeStreak": {
+        "animes": [
+          "naruto",
+          "dragonball"
+        ],
+        "length": 1
+      },
+      "forcedAnimeRotation": false,
+      "blockedAnimes": [],
+      "blockedCharacters": [
+        "naruto:sasuke-uchiha",
+        "dragonball:goku"
+      ],
+      "characterCooldown": [
+        "naruto:naruto-uzumaki",
+        "hunterxhunter:kurapika",
+        "attackontitan:gabi-braun",
+        "jujutsukaisen:maki-zenin",
+        "dragonball:piccolo",
+        "bleach:ichigo-kurosaki",
+        "onepiece:nami",
+        "naruto:sasuke-uchiha",
+        "dragonball:goku"
+      ],
+      "contentTypeStreak": {
+        "contentType": "character-versus",
+        "length": 1
+      }
+    },
+    "hardRulesTriggered": {
+      "MAX_SAME_CHARACTER_STREAK": 39,
+      "JOURNEY_PART_ORDER": 38,
+      "JOURNEY_PART_SPACING": 1
+    },
+    "candidates": {
+      "considered": 666,
+      "eligible": 591,
+      "byContentType": {
+        "character-journey": {
+          "considered": 407,
+          "eligible": 366
+        },
+        "guess-character": {
+          "considered": 80,
+          "eligible": 78
+        },
+        "character-versus": {
+          "considered": 179,
+          "eligible": 147
+        }
+      }
+    },
+    "excluded": [
+      {
+        "renderId": "character-journey:dragonball:goku:part-04@en",
+        "contentType": "character-journey",
+        "animes": [
+          "dragonball"
+        ],
+        "characters": [
+          "dragonball:goku"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:dragonball:goku:part-05@en",
+        "contentType": "character-journey",
+        "animes": [
+          "dragonball"
+        ],
+        "characters": [
+          "dragonball:goku"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER",
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "sequence: Part 5 before Part 4 (never publish parts out of order)",
+          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:dragonball:goku:part-06@en",
+        "contentType": "character-journey",
+        "animes": [
+          "dragonball"
+        ],
+        "characters": [
+          "dragonball:goku"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER",
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "sequence: Part 6 before Part 5 (never publish parts out of order)",
+          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:naruto:sasuke-uchiha:part-01@en",
+        "contentType": "character-journey",
+        "animes": [
+          "naruto"
+        ],
+        "characters": [
+          "naruto:sasuke-uchiha"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: naruto:sasuke-uchiha is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:naruto:sasuke-uchiha:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "naruto"
+        ],
+        "characters": [
+          "naruto:sasuke-uchiha"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER",
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)",
+          "character streak: naruto:sasuke-uchiha is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:dragonball:goku-vs-attackontitan-armin-arlert@en",
+        "contentType": "character-versus",
+        "animes": [
+          "dragonball",
+          "attackontitan"
+        ],
+        "characters": [
+          "dragonball:goku",
+          "attackontitan:armin-arlert"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:dragonball:goku-vs-attackontitan-mikasa-ackerman@en",
+        "contentType": "character-versus",
+        "animes": [
+          "dragonball",
+          "attackontitan"
+        ],
+        "characters": [
+          "dragonball:goku",
+          "attackontitan:mikasa-ackerman"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:dragonball:goku-vs-attackontitan-reiner-braun@en",
+        "contentType": "character-versus",
+        "animes": [
+          "dragonball",
+          "attackontitan"
+        ],
+        "characters": [
+          "dragonball:goku",
+          "attackontitan:reiner-braun"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:dragonball:goku-vs-blackclover-asta@en",
+        "contentType": "character-versus",
+        "animes": [
+          "dragonball",
+          "blackclover"
+        ],
+        "characters": [
+          "dragonball:goku",
+          "blackclover:asta"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:dragonball:goku-vs-blackclover-noelle-silva@en",
+        "contentType": "character-versus",
+        "animes": [
+          "dragonball",
+          "blackclover"
+        ],
+        "characters": [
+          "dragonball:goku",
+          "blackclover:noelle-silva"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      }
+    ],
+    "status": "selected",
+    "selectedId": "character-journey:onepiece:monkey-d-luffy:part-05",
+    "renderId": "character-journey:onepiece:monkey-d-luffy:part-05@en",
+    "contentType": "character-journey",
+    "animes": [
+      "onepiece"
+    ],
+    "characters": [
+      "onepiece:monkey-d-luffy"
+    ],
+    "score": 102.21,
+    "base": 74.21,
+    "reasons": [
+      "coldstart: novelty +21.0, jitter +3.2",
+      "+12 main character",
+      "+14 continues a started series (Part 5 promised)",
+      "+2 format below its target share (45% < 50%)"
+    ],
+    "ranked": [
+      {
+        "renderId": "character-journey:onepiece:monkey-d-luffy:part-05@en",
+        "contentType": "character-journey",
+        "animes": [
+          "onepiece"
+        ],
+        "score": 102.21,
+        "reasons": [
+          "coldstart: novelty +21.0, jitter +3.2",
+          "+12 main character",
+          "+14 continues a started series (Part 5 promised)",
+          "+2 format below its target share (45% < 50%)"
+        ]
+      },
+      {
+        "renderId": "character-journey:blackclover:noelle-silva:part-01@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "score": 92,
+        "reasons": [
+          "coldstart: novelty +22.0, jitter +6.0",
+          "+12 main character",
+          "+2 format below its target share (45% < 50%)"
+        ]
+      },
+      {
+        "renderId": "character-journey:jujutsukaisen:mahito@en",
+        "contentType": "character-journey",
+        "animes": [
+          "jujutsukaisen"
+        ],
+        "score": 91.75,
+        "reasons": [
+          "coldstart: novelty +22.0, jitter +5.8",
+          "+12 main character",
+          "+2 format below its target share (45% < 50%)"
+        ]
+      },
+      {
+        "renderId": "character-journey:blackclover:yuno-grinberryall:part-01@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "score": 91.65,
+        "reasons": [
+          "coldstart: novelty +22.0, jitter +5.6",
+          "+12 main character",
+          "+2 format below its target share (45% < 50%)"
+        ]
+      },
+      {
+        "renderId": "character-journey:jujutsukaisen:suguru-geto@en",
+        "contentType": "character-journey",
+        "animes": [
+          "jujutsukaisen"
+        ],
+        "score": 91.57,
+        "reasons": [
+          "coldstart: novelty +22.0, jitter +5.6",
+          "+12 main character",
+          "+2 format below its target share (45% < 50%)"
+        ]
+      },
+      {
+        "renderId": "character-journey:attackontitan:hange-zoe@en",
+        "contentType": "character-journey",
+        "animes": [
+          "attackontitan"
+        ],
+        "score": 91.45,
+        "reasons": [
+          "coldstart: novelty +22.0, jitter +5.4",
+          "+12 main character",
+          "+2 format below its target share (45% < 50%)"
+        ]
+      }
+    ],
+    "explanation": [
+      "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
+      "naruto:sasuke-uchiha, dragonball:goku excluded in every format (maxSameCharacterStreak 1).",
+      "1 series part(s) wait for spacing (≥ 2 items between parts).",
+      "Selected character-journey:onepiece:monkey-d-luffy:part-05@en (character-journey, onepiece) — coldstart, score 102.21 among 591 valid candidate(s)."
+    ]
+  },
+  "pick": {
+    "contentId": "character-journey:onepiece:monkey-d-luffy:part-05",
+    "renderId": "character-journey:onepiece:monkey-d-luffy:part-05@en",
+    "contentType": "character-journey",
+    "animes": [
+      "onepiece"
+    ],
+    "characters": [
+      "onepiece:monkey-d-luffy"
+    ],
+    "part": 5,
+    "partCount": 5,
+    "score": 102.21,
+    "reasons": [
+      "coldstart: novelty +21.0, jitter +3.2",
+      "+12 main character",
+      "+14 continues a started series (Part 5 promised)",
+      "+2 format below its target share (45% < 50%)"
+    ]
+  },
+  "request": {
+    "template": "characterJourney",
+    "anime": "onepiece",
+    "subject": "monkey-d-luffy",
+    "segment": "part-05",
+    "locale": "en",
+    "hook": "Remember where Part 4 ended? Part 5 starts now.",
+    "hookType": "challenge",
+    "hookId": "cj-cont-challenge-1",
+    "cta": "See every place on AniMapVerse.",
+    "ctaType": "site-visit",
+    "selection": {
+      "mode": "coldstart",
+      "score": 102.21,
+      "seed": "feed35:character-versus:naruto:sasuke-uchiha-vs-dragonball-goku@en:samples0"
+    },
+    "notes": "growth selector (coldstart): coldstart: novelty +21.0, jitter +3.2; +12 main character; +14 continues a started series (Part 5 promised)"
+  },
+  "alternatives": [
+    {
+      "renderId": "character-journey:blackclover:noelle-silva:part-01@en",
+      "contentType": "character-journey",
+      "score": 92
+    },
+    {
+      "renderId": "character-journey:jujutsukaisen:mahito@en",
+      "contentType": "character-journey",
+      "score": 91.75
+    },
+    {
+      "renderId": "character-journey:blackclover:yuno-grinberryall:part-01@en",
+      "contentType": "character-journey",
+      "score": 91.65
+    },
+    {
+      "renderId": "character-journey:jujutsukaisen:suguru-geto@en",
+      "contentType": "character-journey",
+      "score": 91.57
+    },
+    {
+      "renderId": "character-journey:attackontitan:hange-zoe@en",
+      "contentType": "character-journey",
+      "score": 91.45
+    }
+  ],
+  "eligible": 591
 }

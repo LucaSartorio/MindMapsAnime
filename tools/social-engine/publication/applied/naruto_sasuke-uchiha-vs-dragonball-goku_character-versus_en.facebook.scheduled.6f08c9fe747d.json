@@ -1,0 +1,30 @@
+{
+  "receiptId": "naruto_sasuke-uchiha-vs-dragonball-goku_character-versus_en.facebook.scheduled.6f08c9fe747d",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-11-06T06:18:54.587Z",
+  "sourceFile": "20261106T061054Z-naruto_sasuke-uchiha-vs-dragonball-goku_character-versus_en-facebook-scheduled.json",
+  "run": {
+    "runId": "42173610257",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/42173610257",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-goku@en",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-11-06T10:00:00+01:00",
+    "recordedAt": "2026-11-06T06:10:54Z",
+    "recordedBy": "chatgpt-work-publishing-agent",
+    "platform": "facebook",
+    "providerPostId": "418567074",
+    "providerPostUuid": "-7125948862515559951",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-7125948862515559951"
+  }
+}
