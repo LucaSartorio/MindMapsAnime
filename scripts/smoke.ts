@@ -113,6 +113,82 @@ const CHECKS: Check[] = [
   { path: '/es/naruto/map', anyOf: ['Naruto'], selector: '.react-flow__node', minCount: 10 },
 ];
 
+/**
+ * Pagine su cui la head SEO dopo l'idratazione deve coincidere con l'HTML
+ * statico: personaggi di Naruto e One Piece nelle 4 lingue URL + due landing.
+ */
+const HEAD_PARITY_PAGES = [
+  ...['it', 'en', 'es', 'fr'].flatMap((l) => [
+    `/${l}/naruto/characters/itachi-uchiha`,
+    `/${l}/one-piece/characters/monkey-d-luffy`,
+  ]),
+  '/it/naruto',
+  '/fr/one-piece',
+];
+
+/** Navigazioni SPA (click su un link delle relazioni) dopo cui la head deve essere quella della pagina di arrivo. */
+const SPA_NAVIGATIONS: [from: string, to: string][] = [
+  ['/en/naruto/characters/itachi-uchiha', '/en/naruto/characters/sasuke-uchiha'],
+  ['/it/one-piece/characters/monkey-d-luffy', '/it/one-piece/characters/monkey-d-garp'],
+  ['/fr/naruto/characters/itachi-uchiha', '/fr/naruto/characters/sasuke-uchiha'],
+  ['/es/one-piece/characters/monkey-d-luffy', '/es/one-piece/characters/roronoa-zoro'],
+];
+
+interface SeoHead {
+  canonical: string | null;
+  robots: string | null;
+  description: string | null;
+  ogLocale: string | null;
+  ogLocaleAlternates: string[];
+  hreflang: [string, string][];
+}
+
+const decodeEntities = (s: string) =>
+  s
+    .replace(/&quot;/g, '"')
+    .replace(/&#x27;|&#39;/g, "'")
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&amp;/g, '&');
+
+/** Head SEO dell'HTML pre-renderizzato (tag `data-seo` scritti da `renderHeadHtml`). */
+function headFromHtml(html: string): SeoHead {
+  const head = html.split('</head>')[0];
+  const one = (re: RegExp) => {
+    const m = head.match(re);
+    return m ? decodeEntities(m[1]) : null;
+  };
+  return {
+    canonical: one(/<link rel="canonical" href="([^"]*)"/),
+    robots: one(/<meta name="robots" content="([^"]*)"/),
+    description: one(/<meta name="description" content="([^"]*)"/),
+    ogLocale: one(/<meta property="og:locale" content="([^"]*)"/),
+    ogLocaleAlternates: [...head.matchAll(/<meta property="og:locale:alternate" content="([^"]*)"/g)].map((m) => m[1]).sort(),
+    hreflang: [...head.matchAll(/<link rel="alternate" hreflang="([^"]*)" href="([^"]*)"/g)]
+      .map((m): [string, string] => [m[1], decodeEntities(m[2])])
+      .sort(),
+  };
+}
+
+/** Stessa head letta dal DOM vivo (eseguita nel browser: niente riferimenti esterni). */
+function headFromDom(): SeoHead {
+  const h = document.head;
+  return {
+    canonical: h.querySelector('link[rel="canonical"]')?.getAttribute('href') ?? null,
+    robots: h.querySelector('meta[name="robots"]')?.getAttribute('content') ?? null,
+    description: h.querySelector('meta[name="description"]')?.getAttribute('content') ?? null,
+    ogLocale: h.querySelector('meta[property="og:locale"]')?.getAttribute('content') ?? null,
+    ogLocaleAlternates: Array.from(h.querySelectorAll('meta[property="og:locale:alternate"]'))
+      .map((m) => m.getAttribute('content') ?? '')
+      .sort(),
+    hreflang: Array.from(h.querySelectorAll('link[rel="alternate"][hreflang]'))
+      .map((l) => [l.getAttribute('hreflang') ?? '', l.getAttribute('href') ?? ''] as [string, string])
+      .sort(),
+  };
+}
+
+const sameHead = (a: SeoHead, b: SeoHead) => JSON.stringify(a) === JSON.stringify(b);
+
 async function main() {
   // Server con semantica Vercel (redirect, 404 veri): `vite preview` servirebbe
   // index.html con 200 per qualsiasi path.
@@ -190,6 +266,35 @@ async function main() {
       }
       if (!ok) failures += 1;
       console.log(`${ok ? '✓' : '✗'} ${check.path}${detail}`);
+    }
+
+    // Head SEO dopo l'idratazione e dopo una navigazione SPA = HTML statico della
+    // stessa pagina (regressione SEO-01: il client perdeva gli hreflang es/fr).
+    {
+      const html = async (path: string) => (await fetch(`${BASE}${path}`)).text();
+      for (const path of HEAD_PARITY_PAGES) {
+        const expected = headFromHtml(await html(path));
+        await page.goto(`${BASE}${path}`, { waitUntil: 'networkidle', timeout: 30_000 });
+        await page.waitForTimeout(300);
+        const actual = await page.evaluate(headFromDom);
+        const ok = sameHead(expected, actual) && expected.hreflang.length > 0;
+        if (!ok) failures += 1;
+        console.log(`${ok ? '✓' : '✗'} head SEO idratata = HTML ${path} · hreflang ${actual.hreflang.map((h) => h[0]).join(',')}`);
+        if (!ok) console.log(`    atteso ${JSON.stringify(expected)}\n    trovato ${JSON.stringify(actual)}`);
+      }
+      for (const [from, to] of SPA_NAVIGATIONS) {
+        await page.goto(`${BASE}${from}`, { waitUntil: 'networkidle', timeout: 30_000 });
+        await page.locator(`main a[href="${to}"]`).first().click();
+        await page.waitForURL(`**${to}`, { timeout: 8_000 }).catch(() => {});
+        await page.waitForLoadState('networkidle');
+        await page.waitForTimeout(300);
+        const expected = headFromHtml(await html(to));
+        const actual = await page.evaluate(headFromDom);
+        const ok = page.url() === `${BASE}${to}` && sameHead(expected, actual);
+        if (!ok) failures += 1;
+        console.log(`${ok ? '✓' : '✗'} head SEO dopo navigazione SPA ${from} → ${to}`);
+        if (!ok) console.log(`    url ${page.url()}\n    atteso ${JSON.stringify(expected)}\n    trovato ${JSON.stringify(actual)}`);
+      }
     }
 
     // HTTP: 404 reale (niente soft-404) e redirect legacy.

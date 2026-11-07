@@ -40,6 +40,7 @@ npm run i18n:status      # dataset translation overlays (es, fr): coverage, miss
 npm run i18n:audit       # BLOCKING: every shown label/name exists in every URL language (`-- --locale de` = what a new language needs)
 npm run i18n:extract -- --world naruto --locale es --out tmp/todo.json   # texts to translate (missing + stale)
 npm run i18n:merge -- --world naruto --locale es --from tmp/es.json      # write src/data/<world>/i18n/es.ts + es.meta.json
+npm run i18n:index       # regenerate src/data/translationIndex.ts after every i18n:merge (`-- --check` = verify only)
 npm run extract:boundaries  # regenerate Naruto nation boundary SVG paths from the world PNG
 npm run find:dots        # detect the red village-marker dots in the Naruto PNG, print flow coords
 npm run social:validate  # INTERNAL social video engine: typecheck + engine/pipeline tests (see "Social engine")
@@ -536,8 +537,12 @@ applied in place by `ensureWorldTranslation` (`src/data/registry.ts`, engine in 
 pre-render and scripts use `loadWorldDatasetWithTranslations`, the client applies it in `preloadRoute`/`WorldRoute`
 before rendering. Never edit dataset files to add `es`; use `npm run i18n:extract` → translate → `npm run i18n:merge`
 (`.meta.json` fingerprints the English source so `i18n:status` flags stale translations). An `/es` entity page is
-indexable only if EVERY text of the entity is translated; thin-content is measured on the source text. Publishing a
-world = 100% overlay + loader in `worldTranslationLoaders` + the locale in `translatedLocales` (e.g. `['es', 'fr']`) in `worlds.ts`. Full guide:
+indexable only if EVERY text of the entity is translated; thin-content is measured on the source text. That check reads
+the generated index `src/data/translationIndex.ts` (`npm run i18n:index`, `src/seo/translationIndex.ts`), never the
+overlays loaded at runtime: the browser has only the URL language's overlay, so computing it on the dataset made `/it`
+and `/en` drop their es/fr hreflang after hydration. `test:seo` fails if the index is stale. Publishing a
+world = 100% overlay + loader in `worldTranslationLoaders` + the locale in `translatedLocales` (e.g. `['es', 'fr']`) in `worlds.ts`
++ `npm run i18n:index`. Full guide:
 `docs/I18N.md`.
 
 **Adding a language:** add the code to `SUPPORTED_LOCALES` + its `LOCALE_META`/`LOCALE_FALLBACKS`

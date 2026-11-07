@@ -18,21 +18,32 @@
  *  - lingue aggiuntive (es): pagine solo per i mondi tradotti, link che
  *    ricadono su `/en` per gli altri;
  *  - landing / mappa / indice archi: title distinti (niente cannibalizzazione),
- *    description della landing dai dati (mai lore troncata).
+ *    description della landing dai dati (mai lore troncata);
+ *  - indice delle traduzioni (`npm run i18n:index`) allineato ai dati;
+ *  - parità prerender ↔ idratazione: con il solo overlay della lingua URL (come
+ *    nel browser) title, description, canonical, robots e hreflang non cambiano.
  */
 import assert from 'node:assert/strict';
 import type { WorldDataset } from '../src/types';
 import { animeWorlds } from '../src/data/worlds';
-import { hasWorldDataset, loadWorldDatasetWithTranslations } from '../src/data/registry';
+import {
+  ensureWorldTranslation,
+  hasWorldDataset,
+  loadWorldDataset,
+  loadWorldDatasetWithTranslations,
+  worldTranslationLocales,
+} from '../src/data/registry';
 import { SEO_CATEGORIES, categoryEntities } from '../src/seo/categories';
 import { getSlugIndex, slugify, RESERVED_SLUGS } from '../src/seo/slug';
 import { absoluteUrl, parseSeoPath, swapLangInPath, worldPath } from '../src/seo/paths';
 import { buildPageMeta, canonicalTargetPath, resolveSeoPath, isIndexable } from '../src/seo/metadata';
 import { enumeratePages } from '../src/seo/routes';
 import { buildSitemaps } from '../src/seo/sitemap';
-import { SITE, isTechnicalPath, seoLocaleFor, worldHasSeoLocale } from '../src/seo/config';
+import { SITE, isTechnicalPath, seoLocaleFor, worldHasSeoLocale, type SeoLocale } from '../src/seo/config';
 import { auditLocalizable } from '../src/utils/localizableFields';
 import { getFactionTypeLabel } from '../src/utils/localization';
+import { TRANSLATION_GAPS } from '../src/data/translationIndex';
+import { computeTranslationGaps } from '../src/seo/translationIndexBuild';
 
 let passed = 0;
 function test(name: string, fn: () => void) {
@@ -46,7 +57,52 @@ function test(name: string, fn: () => void) {
   }
 }
 
+/**
+ * Mondi su cui si simula il client (parità prerender ↔ idratazione): i più
+ * grandi, pubblicati in tutte le lingue URL.
+ */
+const CLIENT_PARITY_WORLDS = ['naruto', 'onepiece'];
+
+/** I campi della head che l'idratazione riscrive (vedi `src/seo/head.ts`). */
+const headFields = (m: ReturnType<typeof buildPageMeta>) =>
+  JSON.stringify([m.title, m.description, m.canonical, m.robots, m.indexable, m.alternates]);
+
+/**
+ * Metadati come li calcola il BROWSER dopo `hydrateRoot`: il client applica
+ * solo l'overlay della lingua dell'URL (`preloadRoute` / `WorldRoute` →
+ * `ensureWorldTranslation`), il prerender tutti. Gli overlay si applicano IN
+ * PLACE sugli stessi oggetti del registry (i nomi tradotti dipendono da
+ * WeakSet di modulo: un `structuredClone` non sarebbe fedele), quindi i
+ * metadati si fotografano in sequenza: /it e /en senza overlay, /es con il
+ * solo overlay es, /fr con es+fr (unica approssimazione: l'overlay es non
+ * influisce sui testi e sui nomi francesi).
+ */
+async function captureClientHeads(): Promise<Map<string, string>> {
+  const raw = new Map<string, WorldDataset>();
+  for (const slug of CLIENT_PARITY_WORLDS) {
+    const d = await loadWorldDataset(slug);
+    if (d) raw.set(slug, d);
+  }
+  const out = new Map<string, string>();
+  const snap = (langs: readonly SeoLocale[]) => {
+    for (const r of enumeratePages(raw)) {
+      if (!langs.includes(r.lang) || !('dataset' in r.page) || !r.page.dataset) continue;
+      if (!CLIENT_PARITY_WORLDS.includes(r.page.dataset.world.slug)) continue;
+      out.set(r.path, headFields(buildPageMeta(r)));
+    }
+  };
+  snap(['it', 'en']);
+  for (const lang of ['es', 'fr'] as const) {
+    for (const slug of raw.keys()) await ensureWorldTranslation(slug, lang);
+    snap([lang]);
+  }
+  return out;
+}
+
 async function main() {
+  // Prima che `loadWorldDatasetWithTranslations` applichi tutti gli overlay.
+  const clientHeads = await captureClientHeads();
+
   const datasets = new Map<string, WorldDataset>();
   for (const w of animeWorlds) {
     if (w.status === 'available' && hasWorldDataset(w.slug)) {
@@ -261,6 +317,49 @@ async function main() {
         }
       }
     }
+  });
+
+  test('indice delle traduzioni (es/fr) allineato ai dati con tutti gli overlay', () => {
+    // Da questo indice dipendono hreflang e noindex `not_translated` in prerender
+    // E nel browser: se non corrisponde ai dati, una pagina /es con testi in
+    // inglese verrebbe dichiarata indicizzabile (o viceversa).
+    const expected: Record<string, unknown> = {};
+    for (const [slug, d] of datasets) {
+      const locales = worldTranslationLocales(slug);
+      if (locales.length) expected[slug] = computeTranslationGaps(d, locales);
+    }
+    assert.deepEqual(
+      JSON.parse(JSON.stringify(TRANSLATION_GAPS)),
+      JSON.parse(JSON.stringify(expected)),
+      'src/data/translationIndex.ts obsoleto → npm run i18n:index',
+    );
+  });
+
+  test('idratazione: il client (solo l\'overlay della lingua URL) produce gli stessi metadati del prerender', () => {
+    // Regressione SEO-01: dopo `hydrateRoot`, <Seo> riapplica buildPageMeta con il
+    // dataset del browser. Title, description, canonical, robots, hreflang (e
+    // og:locale:alternate, derivato dagli hreflang) devono coincidere con
+    // l'HTML statico, altrimenti Google, che legge il DOM renderizzato, vede
+    // cluster linguistici diversi e non reciproci.
+    const mismatches: string[] = [];
+    let compared = 0;
+    for (const r of pages) {
+      const onClient = clientHeads.get(r.path);
+      if (onClient === undefined) continue;
+      compared++;
+      const prerender = buildPageMeta(r);
+      if (onClient !== headFields(prerender)) {
+        const alts = (j: string) => (JSON.parse(j)[5] as { hreflang: string }[]).map((x) => x.hreflang).join(',');
+        mismatches.push(`${r.path} (prerender: ${alts(headFields(prerender))} · client: ${alts(onClient)})`);
+      }
+    }
+    assert.equal(compared, clientHeads.size, 'pagine del client senza corrispettivo nel prerender');
+    assert.ok(compared > 6000, `troppe poche pagine confrontate (${compared})`);
+    assert.equal(
+      mismatches.length,
+      0,
+      `${mismatches.length}/${compared} pagine con metadati diversi dopo l'idratazione, es.:\n    ${mismatches.slice(0, 5).join('\n    ')}`,
+    );
   });
 
   test('sitemap: niente duplicati/noindex/route tecniche, copertura completa', () => {
