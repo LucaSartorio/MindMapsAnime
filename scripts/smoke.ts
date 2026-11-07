@@ -284,16 +284,29 @@ async function main() {
       }
       for (const [from, to] of SPA_NAVIGATIONS) {
         await page.goto(`${BASE}${from}`, { waitUntil: 'networkidle', timeout: 30_000 });
-        await page.locator(`main a[href="${to}"]`).first().click();
+        // Marcatore sulla window: sopravvive solo a una navigazione CLIENT-side
+        // (un caricamento completo della pagina lo azzererebbe).
+        await page.evaluate(() => ((window as unknown as { __spa?: number }).__spa = 1));
+        const link = page.locator(`main a[href="${to}"]`).first();
+        const clicked = await link
+          .click({ timeout: 8_000 })
+          .then(() => true)
+          .catch(() => false);
         await page.waitForURL(`**${to}`, { timeout: 8_000 }).catch(() => {});
         await page.waitForLoadState('networkidle');
         await page.waitForTimeout(300);
         const expected = headFromHtml(await html(to));
         const actual = await page.evaluate(headFromDom);
-        const ok = page.url() === `${BASE}${to}` && sameHead(expected, actual);
+        const spa = await page.evaluate(() => (window as unknown as { __spa?: number }).__spa === 1);
+        const ok =
+          clicked &&
+          spa &&
+          page.url() === `${BASE}${to}` &&
+          expected.hreflang.length > 0 &&
+          sameHead(expected, actual);
         if (!ok) failures += 1;
         console.log(`${ok ? '✓' : '✗'} head SEO dopo navigazione SPA ${from} → ${to}`);
-        if (!ok) console.log(`    url ${page.url()}\n    atteso ${JSON.stringify(expected)}\n    trovato ${JSON.stringify(actual)}`);
+        if (!ok) console.log(`    click ${clicked} · spa ${spa} · url ${page.url()}\n    atteso ${JSON.stringify(expected)}\n    trovato ${JSON.stringify(actual)}`);
       }
     }
 

@@ -43,7 +43,7 @@ import { SITE, isTechnicalPath, seoLocaleFor, worldHasSeoLocale, type SeoLocale 
 import { auditLocalizable } from '../src/utils/localizableFields';
 import { getFactionTypeLabel } from '../src/utils/localization';
 import { TRANSLATION_GAPS } from '../src/data/translationIndex';
-import { computeTranslationGaps } from '../src/seo/translationIndexBuild';
+import { computeTranslationGaps, publishedTranslationLocales } from '../src/seo/translationIndexBuild';
 
 let passed = 0;
 function test(name: string, fn: () => void) {
@@ -325,7 +325,7 @@ async function main() {
     // inglese verrebbe dichiarata indicizzabile (o viceversa).
     const expected: Record<string, unknown> = {};
     for (const [slug, d] of datasets) {
-      const locales = worldTranslationLocales(slug);
+      const locales = publishedTranslationLocales(d.world);
       if (locales.length) expected[slug] = computeTranslationGaps(d, locales);
     }
     assert.deepEqual(

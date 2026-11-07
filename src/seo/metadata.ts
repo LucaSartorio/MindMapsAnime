@@ -415,9 +415,10 @@ const PLAIN_STRING_LOCALE: SeoLocale = 'it';
  * - Lingue sorgente (it/en): basta il testo principale (descrizione breve).
  * - Lingue aggiuntive (es): OGNI campo `Localizable` dell'entità deve essere
  *   tradotto — una pagina spagnola con metà dei testi in inglese non è una
- *   pagina spagnola. Un'entità aggiunta ai dati senza traduzione resta quindi
- *   `noindex` in `/es` finché l'overlay non la copre (nessuna build rotta).
- *   La disponibilità è letta dall'indice condiviso prerender/client.
+ *   pagina spagnola. La disponibilità è letta dall'indice condiviso
+ *   prerender/client (`npm run i18n:index`): un'entità aggiunta senza
+ *   traduzione resta `noindex` in `/es` finché l'overlay non la copre e
+ *   l'indice non viene rigenerato (`test:seo` fallisce se è obsoleto).
  */
 export function isTranslatedIn(dataset: WorldDataset, category: SeoCategory, id: string, lang: SeoLocale): boolean {
   const e = getSeoEntity(dataset, category, id) as
@@ -428,7 +429,7 @@ export function isTranslatedIn(dataset: WorldDataset, category: SeoCategory, id:
   // prerender tutti: calcolarlo sul dataset darebbe hreflang diversi prima e
   // dopo l'idratazione (SEO-01). Vedi `src/seo/translationIndex.ts`.
   if (!(SOURCE_LOCALES as readonly string[]).includes(lang)) {
-    return !!e && isEntityFullyTranslated(dataset.world.slug, category, id, lang);
+    return !!e && isEntityFullyTranslated(dataset, category, id, lang);
   }
   const v = e?.shortDescription ?? e?.description;
   if (v == null) return lang === PLAIN_STRING_LOCALE;

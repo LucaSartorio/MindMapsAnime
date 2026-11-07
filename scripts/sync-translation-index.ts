@@ -1,7 +1,9 @@
 /**
  * `npm run i18n:index` — rigenera `src/data/translationIndex.ts`: per ogni
- * mondo disponibile e ogni lingua con un overlay registrato, le entità con
- * pagina SEO che NON hanno ogni testo tradotto.
+ * mondo disponibile e ogni lingua PUBBLICATA (`translatedLocales`, con overlay
+ * registrato), il numero di entità con pagina SEO e quelle che NON hanno ogni
+ * testo tradotto. Le lingue con overlay ancora in lavorazione restano fuori:
+ * l'indice (nel bundle iniziale) resta minimo e quelle pagine non esistono.
  *
  * L'indice rende la disponibilità delle traduzioni identica in prerender e nel
  * browser (che carica solo l'overlay della lingua dell'URL): da esso dipendono
@@ -14,8 +16,8 @@ import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { animeWorlds } from '../src/data/worlds';
-import { hasWorldDataset, loadWorldDatasetWithTranslations, worldTranslationLocales } from '../src/data/registry';
-import { computeTranslationGaps, renderTranslationIndex } from '../src/seo/translationIndexBuild';
+import { hasWorldDataset, loadWorldDatasetWithTranslations } from '../src/data/registry';
+import { computeTranslationGaps, publishedTranslationLocales, renderTranslationIndex } from '../src/seo/translationIndexBuild';
 import type { TranslationGapIndex } from '../src/seo/translationIndex';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -25,7 +27,7 @@ const check = process.argv.includes('--check');
 const index: Record<string, ReturnType<typeof computeTranslationGaps>> = {};
 for (const world of animeWorlds) {
   if (world.status !== 'available' || !hasWorldDataset(world.slug)) continue;
-  const locales = worldTranslationLocales(world.slug);
+  const locales = publishedTranslationLocales(world);
   if (!locales.length) continue;
   const dataset = await loadWorldDatasetWithTranslations(world.slug);
   if (!dataset) continue;
@@ -36,12 +38,12 @@ const next = renderTranslationIndex(index as TranslationGapIndex);
 const prev = existsSync(FILE) ? readFileSync(FILE, 'utf8') : '';
 for (const [slug, perLocale] of Object.entries(index)) {
   const summary = Object.entries(perLocale)
-    .map(([l, gaps]) => `${l}: ${gaps?.length ?? 0} non tradotte`)
+    .map(([l, e]) => `${l}: ${e?.gaps.length ?? 0}/${e?.entities ?? 0} non tradotte`)
     .join(' · ');
   console.log(`[i18n:index] ${slug} — ${summary}`);
 }
 if (prev === next) {
-  console.log('[i18n:index] indice aggiornato');
+  console.log('[i18n:index] indice già allineato ai dati');
 } else if (check) {
   console.error('[i18n:index] ✗ src/data/translationIndex.ts non corrisponde ai dati → npm run i18n:index');
   process.exit(1);

@@ -7,35 +7,83 @@ import type { TranslationGapIndex } from '@/seo/translationIndex';
 
 export const TRANSLATION_GAPS: TranslationGapIndex = {
   "attackontitan": {
-    "es": [],
-    "fr": []
+    "es": {
+      "entities": 271,
+      "gaps": []
+    },
+    "fr": {
+      "entities": 271,
+      "gaps": []
+    }
   },
   "blackclover": {
-    "es": [],
-    "fr": []
+    "es": {
+      "entities": 406,
+      "gaps": []
+    },
+    "fr": {
+      "entities": 406,
+      "gaps": []
+    }
   },
   "bleach": {
-    "es": [],
-    "fr": []
+    "es": {
+      "entities": 411,
+      "gaps": []
+    },
+    "fr": {
+      "entities": 411,
+      "gaps": []
+    }
   },
   "dragonball": {
-    "es": [],
-    "fr": []
+    "es": {
+      "entities": 491,
+      "gaps": []
+    },
+    "fr": {
+      "entities": 491,
+      "gaps": []
+    }
   },
   "hunterxhunter": {
-    "es": [],
-    "fr": []
+    "es": {
+      "entities": 384,
+      "gaps": []
+    },
+    "fr": {
+      "entities": 384,
+      "gaps": []
+    }
   },
   "jujutsukaisen": {
-    "es": [],
-    "fr": []
+    "es": {
+      "entities": 248,
+      "gaps": []
+    },
+    "fr": {
+      "entities": 248,
+      "gaps": []
+    }
   },
   "naruto": {
-    "es": [],
-    "fr": []
+    "es": {
+      "entities": 677,
+      "gaps": []
+    },
+    "fr": {
+      "entities": 677,
+      "gaps": []
+    }
   },
   "onepiece": {
-    "es": [],
-    "fr": []
+    "es": {
+      "entities": 1047,
+      "gaps": []
+    },
+    "fr": {
+      "entities": 1047,
+      "gaps": []
+    }
   }
 };
