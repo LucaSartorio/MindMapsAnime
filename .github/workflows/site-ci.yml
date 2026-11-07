@@ -1,0 +1,157 @@
+# AniMapVerse — Site CI: quality gates for the public site on every pull request.
+#
+# What it runs (all real npm scripts, see package.json):
+#   npm run build = validate:data → validate:i18n → tsc -b → test:seo (incl. the
+#   translation-index and prerender↔hydration parity tests) → i18n:audit →
+#   vite build → SSR build → prerender (~16,000 pages) → seo:check
+# Every step is blocking (`&&`); nothing is masked with `|| true`.
+#
+# Social engine separation: the daily agent PRs only touch tools/social-engine/**
+# (queue, publication receipts, analytics snapshots), which the site never
+# imports. For those PRs the `scope` job decides "social-only" and the heavy
+# job is skipped, but the final `Site CI` job ALWAYS concludes (success), so it
+# can later become a required status check without ever staying "Pending".
+# Social workflows (social-*.yml) are untouched and keep validating the queue.
+#
+# Security: `pull_request` (never `pull_request_target`): PR code runs with a
+# read-only token, no secrets, no write permissions, no credentials persisted.
+# Nothing is pushed, so this workflow cannot trigger other workflows (no loops).
+name: Site CI
+
+on:
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: site-ci-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  scope:
+    name: Scope (site vs social-only)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      site: ${{ steps.classify.outputs.site }}
+    steps:
+      # The pull_request checkout is the merge commit: HEAD^1 is the base tip,
+      # so `HEAD^1..HEAD` is exactly what the PR changes.
+      - name: Checkout (merge commit + base)
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          fetch-depth: 2
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+
+      - name: Test the selection rules
+        run: node --test scripts/ci-site-scope.test.mjs
+
+      # The classifier is taken from the BASE branch when it exists there, so a
+      # PR cannot edit the rules to skip its own validation. On the PR that
+      # introduces it, the base has no classifier → full validation.
+      - name: Classify changed files
+        id: classify
+        run: |
+          set -euo pipefail
+          git diff --name-only --no-renames HEAD^1 HEAD > "$RUNNER_TEMP/changed.txt"
+          if git cat-file -e HEAD^1:scripts/ci-site-scope.mjs 2>/dev/null; then
+            git show HEAD^1:scripts/ci-site-scope.mjs > "$RUNNER_TEMP/ci-site-scope.mjs"
+            node "$RUNNER_TEMP/ci-site-scope.mjs" < "$RUNNER_TEMP/changed.txt"
+          else
+            echo "[site-ci] classifier not on the base branch yet: full validation"
+            echo "site=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  validate:
+    name: Validate & build site
+    needs: scope
+    if: needs.scope.outputs.site == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+        env:
+          # The build needs no browser; never download one in CI.
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+
+      - name: Build with quality gates
+        id: build
+        run: |
+          set -o pipefail
+          npm run build 2>&1 | tee "$RUNNER_TEMP/build.log"
+
+      - name: Summary
+        if: always() && steps.build.outcome != 'skipped'
+        env:
+          OUTCOME: ${{ steps.build.outcome }}
+        run: |
+          log="$RUNNER_TEMP/build.log"
+          {
+            if [ "$OUTCOME" = "success" ]; then
+              echo "### ✅ Site build and quality gates passed"
+            else
+              echo "### ❌ Site build or a quality gate failed"
+              echo
+              echo "Failing checks (from the build log):"
+              echo '```'
+              grep -E '\[ERR \]|✗|error TS[0-9]+|npm (ERR!|error)|error during build|\[seo:check\] [0-9]+ ERRORI' "$log" | head -40 || echo "(no known error pattern: see the 'Build with quality gates' step log)"
+              echo '```'
+            fi
+            echo
+            echo '```'
+            grep -E 'test superati|\[prerender\] +/|\[seo:check\] [0-9]+ pagine|\[seo:check\] OK' "$log" | head -30 || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  # Single, always-concluding status for the PR (the one to mark as required
+  # later). Success = scope ran AND (site PR → build passed; social-only PR →
+  # build correctly skipped).
+  result:
+    name: Site CI
+    needs: [scope, validate]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Conclude
+        env:
+          SCOPE: ${{ needs.scope.result }}
+          SITE: ${{ needs.scope.outputs.site }}
+          VALIDATE: ${{ needs.validate.result }}
+        run: |
+          echo "scope=$SCOPE site=$SITE validate=$VALIDATE"
+          if [ "$SCOPE" != "success" ]; then
+            echo "::error::Scope job did not succeed ($SCOPE)"; exit 1
+          fi
+          if [ "$SITE" = "true" ]; then
+            if [ "$VALIDATE" != "success" ]; then
+              echo "::error::Site validation $VALIDATE"; exit 1
+            fi
+            echo "Site PR: full validation passed."
+          elif [ "$SITE" = "false" ]; then
+            if [ "$VALIDATE" != "skipped" ]; then
+              echo "::error::Unexpected validate result for a social-only PR: $VALIDATE"; exit 1
+            fi
+            echo "Social-only PR: site validation not needed (social workflows validate it)."
+          else
+            echo "::error::Scope produced no decision"; exit 1
+          fi
