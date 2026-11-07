@@ -27,8 +27,8 @@
 
 /** Lunghezza massima accettata (la stessa tolleranza del comportamento precedente: 165 + 30). */
 export const DESCRIPTION_SOFT_MAX = 195;
-/** Lunghezza obiettivo per l'ultima risorsa (taglio dentro una frase troppo lunga). */
-export const DESCRIPTION_TARGET = 160;
+/** Lunghezza massima del taglio di ultima risorsa (dentro una frase troppo lunga). */
+export const DESCRIPTION_TARGET = DESCRIPTION_SOFT_MAX - 1;
 
 /**
  * Parole che terminano con un punto senza chiudere la frase (minuscolo, senza
@@ -37,15 +37,17 @@ export const DESCRIPTION_TARGET = 160;
 const ABBREVIATIONS = new Set([
   // en
   'mr', 'mrs', 'ms', 'dr', 'st', 'sr', 'jr', 'vs', 'etc', 'no', 'nos', 'vol', 'ch', 'ep', 'eps', 'pp', 'approx', 'lt', 'col', 'gen', 'capt', 'sgt', 'mt', 'ft', 'e.g', 'i.e', 'inc',
-  // it
-  'ecc', 'cap', 'sig', 'sigg', 'prof', 'dott', 'ca', 'cfr', 'pag', 'n',
-  // es
-  'sra', 'srta', 'pág', 'aprox', 'núm', 'cía', 'etc',
-  // fr
-  'mme', 'mlle', 'm', 'env', 'chap', 'cf', 'p',
+  // it ("es." = per esempio)
+  'ecc', 'cap', 'sig', 'sigg', 'prof', 'dott', 'ca', 'cfr', 'pag', 'n', 'es', 'art',
+  // es ("p. ej.", "av." = avenida)
+  'sra', 'srta', 'pág', 'aprox', 'núm', 'cía', 'ej', 'av',
+  // fr ("par ex.")
+  'mme', 'mlle', 'm', 'env', 'chap', 'cf', 'p', 'ex',
 ]);
 
 const SENTENCE_PUNCT = /[.!?…。！？]/;
+const OPENERS = ['(', '[', '«', '“'];
+const BRACKET_CLOSERS = [')', ']', '»', '”'];
 /** Chiusure ammesse subito dopo la punteggiatura finale (virgolette, parentesi). */
 const CLOSERS = /["'»”’)\]]/;
 
@@ -55,7 +57,9 @@ const clean = (text: string) => text.replace(/\s+/g, ' ').trim();
 function isSentenceDot(text: string, i: number): boolean {
   const before = text.slice(0, i);
   const word = before.match(/([\p{L}.]+)$/u)?.[1] ?? '';
-  if (/^\p{L}$/u.test(word)) return false; // iniziale: "Monkey D. Luffy"
+  // Iniziale ("Monkey D. Luffy"): una sola lettera preceduta da spazio o inizio
+  // testo (non "people's." né "11e.").
+  if (/(^|\s)\p{L}$/u.test(before)) return false;
   if (ABBREVIATIONS.has(word.toLowerCase())) return false;
   if (/\p{L}\.\p{L}$/u.test(word)) return false; // "e.g", "U.S"
   return true;
@@ -72,17 +76,35 @@ export function splitSentences(text: string): string[] {
   const s = clean(text);
   const out: string[] = [];
   let start = 0;
+  // Profondità di virgolette/parentesi aperte: dentro una citazione o una
+  // parentesi non si spezza mai (un prefisso lascerebbe « o ( aperti).
+  let depth = 0;
+  let inStraight = false;
+  const track = (c: string) => {
+    if (c === '"') inStraight = !inStraight;
+    else if (OPENERS.includes(c)) depth++;
+    else if (BRACKET_CLOSERS.includes(c)) depth = Math.max(0, depth - 1);
+  };
   for (let i = 0; i < s.length; i++) {
+    track(s[i]);
     if (!SENTENCE_PUNCT.test(s[i])) continue;
+    const punct = i;
     let j = i + 1;
-    while (j < s.length && (SENTENCE_PUNCT.test(s[j]) || CLOSERS.test(s[j]) || (s[j] === ' ' && s[j + 1] === '»'))) j++;
-    if (j >= s.length) break;
-    if (s[j] !== ' ') continue;
-    const next = s[j + 1] ?? '';
+    while (j < s.length && (SENTENCE_PUNCT.test(s[j]) || CLOSERS.test(s[j]) || (s[j] === ' ' && s[j + 1] === '»'))) {
+      track(s[j]);
+      j++;
+    }
+    const k = j;
+    i = j - 1;
+    if (k >= s.length) break;
+    if (depth > 0 || inStraight) continue;
+    if (s[k] !== ' ') continue;
+    const next = s[k + 1] ?? '';
     if (!/[\p{Lu}\p{N}«"“(¿¡'‘]/u.test(next)) continue;
-    if (s[i] === '.' && !isSentenceDot(s, i)) continue;
-    out.push(s.slice(start, j).trim());
-    start = j + 1;
+    // Un punto seguito solo da chiusure: abbreviazione/iniziale/decimale? Allora non è fine frase.
+    if (s[punct] === '.' && /^[.\s"'»”’)\]]*$/.test(s.slice(punct, k)) && !isSentenceDot(s, punct)) continue;
+    out.push(s.slice(start, k).trim());
+    start = k + 1;
   }
   const rest = s.slice(start).trim();
   if (rest) out.push(rest);
@@ -91,28 +113,40 @@ export function splitSentences(text: string): string[] {
 
 /** Chiude il testo con un punto se non termina già con una punteggiatura di fine frase. */
 export function endSentence(text: string): string {
-  const t = text.trim();
+  const t = text.trim().replace(/\s*[,;:–—-]+$/u, '');
   return /[.!?…。！？]["'»”’)\]]*$/.test(t) ? t : `${t}.`;
 }
 
 /**
  * Ultima risorsa per un testo troppo lungo senza fine frase utile: taglia al
- * confine di proposizione (; : , — – ) più vicino al limite, altrimenti al
- * confine di parola; mai a metà parola. Aggiunge "…".
+ * confine di proposizione (; : , — – ) ) più avanzato oltre metà del limite,
+ * altrimenti al confine di parola; mai a metà parola, mai dentro una parentesi
+ * o citazione aperta. Aggiunge "…" (una sola volta).
  */
 export function clipAtBoundary(text: string, max: number): string {
   const s = clean(text);
   if (s.length <= max) return s;
   const cut = s.slice(0, max - 1);
   const clause = Math.max(
-    ...[';', ':', ',', ' —', ' –', ')'].map((c) => {
-      const at = cut.lastIndexOf(c);
-      return at > max * 0.55 ? at + (c === ')' ? 1 : 0) : -1;
+    ...[';', ':', ',', ' —', ' –', ')'].map((m) => {
+      const at = cut.lastIndexOf(m);
+      return at >= max * 0.5 ? at + (m === ')' ? 1 : 0) : -1;
     }),
   );
   const word = cut.lastIndexOf(' ');
   const at = clause > 0 ? clause : word > max * 0.6 ? word : cut.length;
-  return `${cut.slice(0, at).replace(/[\s,;:.–—-]+$/u, '')}…`;
+  let body = cut.slice(0, at);
+  // Mai lasciare aperta una parentesi o una citazione: se il taglio cade dentro,
+  // si arretra a prima dell'apertura (se resta abbastanza testo).
+  for (const [o, c] of [['(', ')'], ['«', '»'], ['“', '”'], ['[', ']']]) {
+    if (body.split(o).length > body.split(c).length) {
+      const open = body.lastIndexOf(o);
+      if (open > max * 0.4) body = body.slice(0, open);
+    }
+  }
+  body = body.replace(/[\s,;:.–—-]+$/u, '');
+  // Il taglio cade già su un'ellissi del testo ("Puercoespín…)"): non aggiungerne un'altra.
+  return /…["'»”’)\]]*$/.test(body) ? body : `${body}…`;
 }
 
 export interface DescriptionTails {

@@ -44,6 +44,7 @@ import {
   DESCRIPTION_SOFT_MAX,
   clipAtBoundary,
   composeDescription,
+  endSentence,
   splitSentences,
 } from '../src/seo/description';
 import { getLocalizedText } from '../src/utils/localization';
@@ -420,6 +421,15 @@ async function main() {
     assert.deepEqual(splitSentences('Il dit : « Dépasse tes limites. » Puis il part.'), ['Il dit : « Dépasse tes limites. »', 'Puis il part.']);
     assert.deepEqual(splitSentences('¿Quién es? ¡Es Luffy!'), ['¿Quién es?', '¡Es Luffy!']);
     assert.deepEqual(splitSentences('nessuna punteggiatura finale qui'), ['nessuna punteggiatura finale qui']);
+    // Mai dentro una citazione o una parentesi aperta (il prefisso lascerebbe « o ( aperti).
+    assert.deepEqual(splitSentences('Gli dice: «Tu sei forte. Aiuta gli altri.» Poi muore.'), [
+      'Gli dice: «Tu sei forte. Aiuta gli altri.»',
+      'Poi muore.',
+    ]);
+    assert.deepEqual(splitSentences('Rare (par ex. Izanagi). Puis la suite.'), ['Rare (par ex. Izanagi).', 'Puis la suite.']);
+    assert.deepEqual(splitSentences('Tecniche rare (es. Izanagi). Altro testo.'), ['Tecniche rare (es. Izanagi).', 'Altro testo.']);
+    assert.deepEqual(splitSentences("Il tesoro della gente. In seguito parte."), ['Il tesoro della gente.', 'In seguito parte.']);
+    assert.equal(endSentence('Elenco:'), 'Elenco.');
     assert.deepEqual(splitSentences('una frase. minuscola dopo il punto'), ['una frase. minuscola dopo il punto']);
     // Ultima risorsa: confine di proposizione o di parola, mai a metà parola, sempre entro il limite.
     const long = 'Una frase lunghissima senza alcun punto che continua, con molte proposizioni e dettagli, e ancora dettagli che non finiscono mai davvero';
@@ -430,6 +440,10 @@ async function main() {
       assert.ok(long.startsWith(c.slice(0, -1)), `clip non è un prefisso: ${c}`);
       assert.match(long[c.length - 1] ?? ' ', /[\s,;:—–)]/u, `clip a metà parola: ${c}`);
     }
+    // Confine di proposizione più avanzato oltre metà del limite; mai doppia ellissi.
+    assert.equal(clipAtBoundary('Prima parte lunga del testo; seconda parte, con una virgola e altro ancora qui', 60), 'Prima parte lunga del testo; seconda parte…');
+    assert.equal(clipAtBoundary('Le bestie (Pecora, Gallo, Porcospino…) servono il principe e continuano a lungo', 40), 'Le bestie (Pecora, Gallo, Porcospino…)');
+    assert.equal(clipAtBoundary('Goku affronta il capitano Ginyu sulle piane rocciose (compreso lo scambio dei corpi tra i due)', 70), 'Goku affronta il capitano Ginyu sulle piane rocciose…');
   });
 
   test('description (SEO-04): composizione — frasi intere, coda solo se ci sta', () => {
@@ -465,16 +479,28 @@ async function main() {
       checked++;
       if (!d.trim()) problems.push(`vuota ${r.path}`);
       if (d.length > DESCRIPTION_SOFT_MAX) problems.push(`troppo lunga (${d.length}) ${r.path}`);
-      if (/([.!?,;:])\s*\1|[.,;:]\s*…|…\s*[.,;:]|\s,/.test(d)) problems.push(`punteggiatura ${r.path}: ${d}`);
+      if (/([.!?,;:])\s*\1|[.,;:]\s*…|…\s*[.,;:]|…["'»”’)\]]*…|\s,/.test(d)) problems.push(`punteggiatura ${r.path}: ${d}`);
       if (!summary) continue;
-      // Lingua e fonte: la description parte dal testo dell'entità nella lingua della pagina.
-      if (!d.startsWith(summary.slice(0, 30))) problems.push(`non parte dal testo dell'entità (${r.lang}) ${r.path}: ${d}`);
-      const introducedEllipsis = d.includes('…') && !summary.includes('…');
-      if (introducedEllipsis) {
+      // Bilanciamento: un taglio non lascia mai aperte parentesi o virgolette.
+      for (const [o, c] of [['(', ')'], ['«', '»'], ['“', '”']]) {
+        const balance = (x: string) => x.split(o).length - x.split(c).length;
+        if (balance(d) !== balance(summary) && balance(d) !== 0) problems.push(`${o}${c} sbilanciate ${r.path}: ${d}`);
+      }
+      // La description deve iniziare con il testo intero o con frasi intere del
+      // testo dell'entità (nella lingua della pagina), seguite da niente o da una
+      // coda; altrimenti è un taglio di ultima risorsa, ammesso solo se la PRIMA
+      // frase da sola supera il limite. Così anche un taglio a metà frase SENZA
+      // ellissi viene rilevato.
+      const sentences = splitSentences(summary);
+      const allowed = [endSentence(summary), ...sentences.slice(0, -1).map((_, i) => endSentence(sentences.slice(0, i + 1).join(' ')))];
+      const whole = allowed.some((p) => d === p || d.startsWith(`${p} `));
+      if (!whole) {
         lastResort++;
-        if ((splitSentences(summary)[0] ?? summary).length <= DESCRIPTION_SOFT_MAX) {
-          problems.push(`tagliata a metà frase pur avendo una frase intera che ci sta ${r.path}: ${d}`);
-        }
+        const first = sentences[0] ?? summary;
+        const body = d.replace(/…["'»”’)\]]*$/, '');
+        if (first.length <= DESCRIPTION_SOFT_MAX) problems.push(`tagliata a metà frase pur avendo una frase intera che ci sta ${r.path}: ${d}`);
+        else if (!d.endsWith('…') && !/…["'»”’)\]]*$/.test(d)) problems.push(`taglio di ultima risorsa senza ellissi ${r.path}: ${d}`);
+        else if (!first.startsWith(body.replace(/…$/, ''))) problems.push(`taglio che non è un prefisso della prima frase ${r.path}: ${d}`);
       }
     }
     assert.ok(checked > 13000, `troppe poche pagine entità (${checked})`);
