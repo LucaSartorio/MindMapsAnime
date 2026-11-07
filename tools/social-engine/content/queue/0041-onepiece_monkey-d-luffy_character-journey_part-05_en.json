@@ -1,0 +1,19 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterJourney",
+  "anime": "onepiece",
+  "subject": "monkey-d-luffy",
+  "segment": "part-05",
+  "locale": "en",
+  "hook": "Remember where Part 4 ended? Part 5 starts now.",
+  "hookType": "challenge",
+  "hookId": "cj-cont-challenge-1",
+  "cta": "See every place on AniMapVerse.",
+  "ctaType": "site-visit",
+  "selection": {
+    "mode": "coldstart",
+    "score": 102.21,
+    "seed": "feed35:character-versus:naruto:sasuke-uchiha-vs-dragonball-goku@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +21.0, jitter +3.2; +12 main character; +14 continues a started series (Part 5 promised)"
+}
