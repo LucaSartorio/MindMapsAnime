@@ -863,6 +863,8 @@ export const ja = {
     mapLead: '{{world}}の世界のインタラクティブマップ：場所、地域、キャラクターの旅路、出来事の年表。検索（Ctrl+K）でキーボードからどの場所にも移動できます。',
     mapLoading: 'インタラクティブマップを読み込み中…',
     exploreWorldMap: '{{world}}のマップを探索',
+    otherWorldsTitle: '他のアニメ世界を探索',
+    worldMapLink: '{{world}}のインタラクティブマップ',
     worldTimeline: '{{world}}の年表',
     mapsTitle: '{{world}}の世界の地図',
     mapsLead: '{{world}}のインタラクティブ地図帳は{{count}}枚の地図で構成：世界地図と、その場所から開くサブマップ。',

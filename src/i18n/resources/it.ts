@@ -871,6 +871,8 @@ export const it = {
     mapLead: 'Mappa interattiva del mondo di {{world}}: luoghi, regioni, percorsi dei personaggi e timeline degli eventi. Con la ricerca (Ctrl+K) raggiungi qualsiasi luogo da tastiera.',
     mapLoading: 'Caricamento della mappa interattiva…',
     exploreWorldMap: 'Esplora la mappa di {{world}}',
+    otherWorldsTitle: 'Esplora gli altri mondi anime',
+    worldMapLink: 'Mappa interattiva di {{world}}',
     worldTimeline: 'Cronologia di {{world}}',
     mapsTitle: 'Le mappe del mondo di {{world}}',
     mapsLead: 'L’atlante interattivo di {{world}} è composto da {{count}} mappe: la mappa del mondo e le sottomappe che si aprono dai suoi luoghi.',

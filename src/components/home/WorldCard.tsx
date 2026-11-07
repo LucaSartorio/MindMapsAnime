@@ -9,7 +9,7 @@ import { resolveWorldLogo } from '@/utils/entityImage';
 import { loadWorldDataset } from '@/data/registry';
 import { getTagLabel } from '@/lib/tagLabels';
 import { getWorldUrlSlug } from '@/data/worlds';
-import { worldPath } from '@/seo/paths';
+import { mapPath, worldPath } from '@/seo/paths';
 import { useSeoLang } from '@/seo/useSeoLang';
 import { WorldRoute } from '@/routes/lazyPages';
 
@@ -78,8 +78,30 @@ export function WorldCard({ world, eager }: WorldCardProps) {
   const isAvailable = world.status === 'available';
   const title = getLocalizedText(world.title, locale);
   const description = getLocalizedText(world.description, locale);
+  // Prefetch del chunk dataset al primo hover/touch: al click la mappa
+  // apre senza attesa (il loader ha cache + dedup, chiamarlo più volte è ok).
+  const prefetch = () => {
+    void loadWorldDataset(world.slug).catch(() => {});
+    void WorldRoute.preload().catch(() => {});
+  };
   const inner = (
     <Card interactive className="relative overflow-hidden flex flex-1 flex-col">
+      {isAvailable && (
+        // Mondo disponibile: DUE link reali, mai annidati (SEO-05). Questo copre
+        // l'intera card e porta alla landing (testo = nome del mondo); la CTA
+        // "Esplora la mappa" in basso porta direttamente a `/map` e sta sopra
+        // (z-[2]). Dentro la Card, così l'hover della card resta attivo; anello
+        // di focus interno perché `overflow-hidden` taglierebbe quello esterno.
+        <Link
+          to={href}
+          className="absolute inset-0 z-[1] rounded-xl focus-visible:ring-inset focus-visible:ring-offset-0"
+          onMouseEnter={prefetch}
+          onTouchStart={prefetch}
+          onFocus={prefetch}
+        >
+          <span className="sr-only">{title}</span>
+        </Link>
+      )}
       <div className="relative aspect-[16/9] overflow-hidden rounded-t-xl shrink-0">
         <WorldCover world={world} eager={eager} />
         {world.status === 'coming_soon' && <ComingSoonBadge />}
@@ -107,9 +129,17 @@ export function WorldCard({ world, eager }: WorldCardProps) {
         </div>
         <div className="mt-auto flex items-center justify-between">
           {isAvailable ? (
-            <span className="btn-primary px-4 py-2 text-sm">
+            // Link diretto alla mappa (SEO-05): sopra il link-copertura della card.
+            <Link
+              to={mapPath(lang, world)}
+              className="btn-primary relative z-[2] px-4 py-2 text-sm"
+              onMouseEnter={prefetch}
+              onTouchStart={prefetch}
+              onFocus={prefetch}
+            >
               {t('worldCard.explore')}
-            </span>
+              <span className="sr-only"> — {title}</span>
+            </Link>
           ) : (
             <span className="btn-disabled px-4 py-2 text-sm">
               {t('worldCard.inArrivo')}
@@ -135,23 +165,5 @@ export function WorldCard({ world, eager }: WorldCardProps) {
     );
   }
 
-  // Prefetch del chunk dataset al primo hover/touch: al click la mappa
-  // apre senza attesa (il loader ha cache + dedup, chiamarlo più volte è ok).
-  const prefetch = () => {
-    void loadWorldDataset(world.slug).catch(() => {});
-    void WorldRoute.preload().catch(() => {});
-  };
-
-  return (
-    <Link
-      to={href}
-      aria-label={`${t('worldCard.explore')} · ${title}`}
-      className="flex flex-1 flex-col focus:outline-none"
-      onMouseEnter={prefetch}
-      onTouchStart={prefetch}
-      onFocus={prefetch}
-    >
-      {inner}
-    </Link>
-  );
+  return <div className="flex flex-1 flex-col">{inner}</div>;
 }

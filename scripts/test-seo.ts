@@ -21,7 +21,9 @@
  *    description della landing dai dati (mai lore troncata);
  *  - indice delle traduzioni (`npm run i18n:index`) allineato ai dati;
  *  - parità prerender ↔ idratazione: con il solo overlay della lingua URL (come
- *    nel browser) title, description, canonical, robots e hreflang non cambiano.
+ *    nel browser) title, description, canonical, robots e hreflang non cambiano;
+ *  - link fra mondi (SEO-05): solo mappe pubblicate, indicizzabili, nella lingua
+ *    della pagina, mai la pagina stessa.
  */
 import assert from 'node:assert/strict';
 import type { WorldDataset } from '../src/types';
@@ -35,11 +37,12 @@ import {
 } from '../src/data/registry';
 import { SEO_CATEGORIES, categoryEntities } from '../src/seo/categories';
 import { getSlugIndex, slugify, RESERVED_SLUGS } from '../src/seo/slug';
-import { absoluteUrl, parseSeoPath, swapLangInPath, worldPath } from '../src/seo/paths';
+import { absoluteUrl, langFromPath, mapPath, parseSeoPath, swapLangInPath, worldPath } from '../src/seo/paths';
+import { otherWorldMaps, worldsWithMap } from '../src/seo/worldLinks';
 import { buildPageMeta, canonicalTargetPath, resolveSeoPath, isIndexable } from '../src/seo/metadata';
 import { enumeratePages } from '../src/seo/routes';
 import { buildSitemaps } from '../src/seo/sitemap';
-import { SITE, isTechnicalPath, seoLocaleFor, worldHasSeoLocale, type SeoLocale } from '../src/seo/config';
+import { SEO_LOCALES, SITE, isTechnicalPath, seoLocaleFor, worldHasSeoLocale, type SeoLocale } from '../src/seo/config';
 import { auditLocalizable } from '../src/utils/localizableFields';
 import { getFactionTypeLabel } from '../src/utils/localization';
 import { TRANSLATION_GAPS } from '../src/data/translationIndex';
@@ -360,6 +363,40 @@ async function main() {
       0,
       `${mismatches.length}/${compared} pagine con metadati diversi dopo l'idratazione, es.:\n    ${mismatches.slice(0, 5).join('\n    ')}`,
     );
+  });
+
+  test('link fra mondi (SEO-05): solo mappe pubblicate e indicizzabili, nella lingua della pagina, mai se stessa', () => {
+    const published = worldsWithMap();
+    assert.ok(published.length >= 2, 'servono almeno 2 mondi con mappa');
+    // Pubblicato = disponibile E con dataset: i mondi "in arrivo" non compaiono mai.
+    for (const w of animeWorlds) {
+      assert.equal(
+        published.some((p) => p.id === w.id),
+        w.status === 'available' && datasets.has(w.slug),
+        `worldsWithMap() incoerente per ${w.slug} (${w.status})`,
+      );
+    }
+    const byPath = new Map(pages.map((r) => [r.path, r]));
+    for (const lang of SEO_LOCALES) {
+      for (const w of published) {
+        const others = otherWorldMaps(w.id);
+        assert.equal(others.length, published.length - 1, `mappe proposte da ${w.slug}`);
+        assert.ok(!others.some((o) => o.id === w.id), `${w.slug} linka se stesso`);
+        for (const o of others) {
+          const path = mapPath(lang, o);
+          assert.ok(!path.includes('?') && !path.endsWith('/'), `URL non canonico ${path}`);
+          const target = byPath.get(path);
+          assert.ok(target, `link a pagina inesistente ${path}`);
+          assert.equal(target!.page.kind, 'map', `${path} non è una mappa`);
+          assert.ok(isIndexable(target!), `link a mappa noindex ${path}`);
+          // Stessa lingua della pagina; altrimenti la lingua di fallback del mondo.
+          assert.equal(langFromPath(path), worldHasSeoLocale(o, lang) ? lang : seoLocaleFor(lang, o), `lingua di ${path}`);
+        }
+        // CTA della home: mappa del mondo stesso, nella lingua della home.
+        const home = mapPath(lang, w);
+        assert.ok(byPath.get(home)?.page.kind === 'map' && isIndexable(byPath.get(home)!), `CTA home rotta ${home}`);
+      }
+    }
   });
 
   test('sitemap: niente duplicati/noindex/route tecniche, copertura completa', () => {

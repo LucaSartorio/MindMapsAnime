@@ -865,6 +865,8 @@ export const de = {
     mapLead: 'Interaktive Karte der Welt von {{world}}: Orte, Regionen, Reisen der Figuren und eine Zeitleiste der Ereignisse. Mit der Suche (Strg+K) erreichst du jeden Ort per Tastatur.',
     mapLoading: 'Interaktive Karte wird geladen…',
     exploreWorldMap: 'Karte von {{world}} erkunden',
+    otherWorldsTitle: 'Weitere Anime-Welten entdecken',
+    worldMapLink: 'Interaktive Karte von {{world}}',
     worldTimeline: 'Zeitleiste von {{world}}',
     mapsTitle: 'Die Karten der Welt von {{world}}',
     mapsLead: 'Der interaktive Atlas von {{world}} besteht aus {{count}} Karten: der Weltkarte und den Unterkarten, die sich von ihren Orten aus öffnen.',

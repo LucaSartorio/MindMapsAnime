@@ -12,6 +12,7 @@
 import { spawn, type ChildProcess } from 'node:child_process';
 import { existsSync, readdirSync } from 'node:fs';
 import { chromium, type ConsoleMessage } from 'playwright';
+import { worldsWithMap } from '../src/seo/worldLinks';
 
 const PORT = 4188;
 const BASE = `http://localhost:${PORT}`;
@@ -133,6 +134,11 @@ const SPA_NAVIGATIONS: [from: string, to: string][] = [
   ['/fr/naruto/characters/itachi-uchiha', '/fr/naruto/characters/sasuke-uchiha'],
   ['/es/one-piece/characters/monkey-d-luffy', '/es/one-piece/characters/roronoa-zoro'],
 ];
+
+/** Mondi pubblicati con mappa (SEO-05): le CTA della home e le liste "altri mondi" ne dipendono. */
+const SEO05_PUBLISHED_MAPS = worldsWithMap().length;
+/** Landing e mappe in tutte le lingue URL su cui controllare il blocco "altri mondi". */
+const SEO05_PAGES = ['/en/naruto', '/it/one-piece', '/es/naruto/map', '/fr/one-piece/map', '/en/naruto/map', '/it/one-piece/map'];
 
 interface SeoHead {
   canonical: string | null;
@@ -308,6 +314,61 @@ async function main() {
         console.log(`${ok ? '✓' : '✗'} head SEO dopo navigazione SPA ${from} → ${to}`);
         if (!ok) console.log(`    click ${clicked} · spa ${spa} · url ${page.url()}\n    atteso ${JSON.stringify(expected)}\n    trovato ${JSON.stringify(actual)}`);
       }
+    }
+
+    // Link interni fra mondi (SEO-05): nell'HTML statico, uguali dopo
+    // l'idratazione, verso mappe esistenti, nella lingua della pagina.
+    {
+      const mapLinks = (html: string, lang: string) =>
+        [...html.matchAll(/<a[^>]*\shref="(\/[a-z]{2}\/[a-z0-9-]+\/map)"/g)].map((m) => m[1]).filter((h) => h.startsWith(`/${lang}/`));
+      const otherWorldsSection = (html: string) => html.match(/<section aria-labelledby="other-worlds-[^"]+"[\s\S]*?<\/section>/)?.[0] ?? '';
+      const status = async (path: string) => (await fetch(`${BASE}${path}`, { redirect: 'manual' })).status;
+      // Home: una CTA "mappa" per ogni mondo pubblicato.
+      for (const lang of ['en', 'it', 'es', 'fr']) {
+        const html = await (await fetch(`${BASE}/${lang}`)).text();
+        const links = [...new Set(mapLinks(html, lang))];
+        const statuses = await Promise.all(links.map(status));
+        await page.goto(`${BASE}/${lang}`, { waitUntil: 'networkidle', timeout: 30_000 });
+        const dom = await page.evaluate((l) => [...new Set([...document.querySelectorAll(`main a[href^="/${l}/"][href$="/map"]`)].map((a) => a.getAttribute('href')))].sort(), lang);
+        const ok = links.length === SEO05_PUBLISHED_MAPS && statuses.every((s) => s === 200) && JSON.stringify(dom) === JSON.stringify([...links].sort());
+        if (!ok) failures += 1;
+        console.log(`${ok ? '✓' : '✗'} home /${lang}: ${links.length} link diretti alle mappe (HTML statico = DOM idratato, tutti 200)`);
+      }
+      // Landing e mappe: "altri mondi" senza la pagina corrente.
+      for (const path of SEO05_PAGES) {
+        const [, lang, world] = path.split('/');
+        const html = await (await fetch(`${BASE}${path}`)).text();
+        const links = mapLinks(otherWorldsSection(html), lang);
+        const statuses = await Promise.all(links.map(status));
+        await page.goto(`${BASE}${path}`, { waitUntil: 'networkidle', timeout: 30_000 });
+        const dom = await page.evaluate(
+          () => [...document.querySelectorAll('section[aria-labelledby^="other-worlds-"] a')].map((a) => a.getAttribute('href')),
+        );
+        const ok =
+          links.length === SEO05_PUBLISHED_MAPS - 1 &&
+          new Set(links).size === links.length &&
+          !links.some((h) => h.startsWith(`/${lang}/${world}/`)) &&
+          statuses.every((s) => s === 200) &&
+          JSON.stringify(dom) === JSON.stringify(links);
+        if (!ok) failures += 1;
+        console.log(`${ok ? '✓' : '✗'} altri mondi su ${path}: ${links.length} mappe, nessun link a sé, HTML statico = DOM idratato`);
+        if (!ok) console.log(`    statico ${JSON.stringify(links)}\n    DOM ${JSON.stringify(dom)}`);
+      }
+      // Navigazione reale dopo l'idratazione: CTA della home → mappa; guida → altra mappa.
+      // Un link mancante conta come UN fallimento, non interrompe lo smoke.
+      const click = (selector: string) =>
+        page.locator(selector).first().click({ timeout: 8_000 }).then(() => true, () => false);
+      await page.goto(`${BASE}/en`, { waitUntil: 'networkidle', timeout: 30_000 });
+      await click('main a[href="/en/naruto/map"]');
+      await page.waitForURL('**/en/naruto/map', { timeout: 10_000 }).catch(() => {});
+      const homeOk = page.url() === `${BASE}/en/naruto/map`;
+      await page.waitForLoadState('networkidle');
+      await click('details > summary');
+      await click('section[aria-labelledby^="other-worlds-"] a[href="/en/one-piece/map"]');
+      await page.waitForURL('**/en/one-piece/map', { timeout: 10_000 }).catch(() => {});
+      const guideOk = page.url() === `${BASE}/en/one-piece/map`;
+      if (!homeOk || !guideOk) failures += 1;
+      console.log(`${homeOk && guideOk ? '✓' : '✗'} navigazione: home → /en/naruto/map (${homeOk}) · guida → /en/one-piece/map (${guideOk})`);
     }
 
     // HTTP: 404 reale (niente soft-404) e redirect legacy.

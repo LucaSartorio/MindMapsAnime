@@ -10,6 +10,7 @@ import { categoryEntities, seoLocations } from '@/seo/categories';
 import { categoryPath, entityPath, mapPath, timelinePath } from '@/seo/paths';
 import { worldMapImage } from '@/seo/images';
 import { FactList, LinkCards, MapCta, PageShell, Section, SeeAll, SourceNote } from './parts';
+import { OtherWorldMaps } from '@/components/seo/OtherWorldMaps';
 
 const TOP = 12;
 
@@ -229,6 +230,8 @@ export function WorldLandingPage({ resolved, dataset }: { resolved: ResolvedPage
           />
         </Section>
       )}
+
+      <OtherWorldMaps currentWorldId={world.id} lang={lang} />
 
       <SourceNote dataset={dataset} />
     </PageShell>
