@@ -21,8 +21,13 @@
  * CLI: legge l'elenco dei file (uno per riga) da stdin, stampa la decisione e,
  * dentro GitHub Actions, scrive `site=true|false` in $GITHUB_OUTPUT.
  *   git diff --name-only --no-renames HEAD^1 HEAD | node scripts/ci-site-scope.mjs
+ *
+ * Contratto con site-ci.yml: la CI esegue la copia di QUESTO file presente sul
+ * branch base. Mantieni compatibile l'interfaccia (file da stdin → `site=` in
+ * $GITHUB_OUTPUT), oppure cambia workflow e script nella stessa PR sapendo che
+ * la nuova versione vale solo dalla PR successiva.
  */
-import { appendFileSync, readFileSync } from 'node:fs';
+import { appendFileSync, readFileSync, realpathSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
 /** Prefissi dei file che appartengono SOLO alle automazioni social. */
@@ -61,4 +66,11 @@ function main() {
   if (process.env.GITHUB_OUTPUT) appendFileSync(process.env.GITHUB_OUTPUT, `site=${site}\n`);
 }
 
-if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) main();
+const isCli = () => {
+  try {
+    return !!process.argv[1] && realpathSync(fileURLToPath(import.meta.url)) === realpathSync(process.argv[1]);
+  } catch {
+    return false;
+  }
+};
+if (isCli()) main();

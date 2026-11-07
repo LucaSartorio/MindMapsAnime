@@ -74,7 +74,8 @@ npm run social:performance             # scores per anime / character / format /
   translation index).
 - **Site CI** (`.github/workflows/site-ci.yml`, on every PR to `main`): `npm ci` + `npm run build`. A PR whose files
   are ALL under `tools/social-engine/` (or `social-*.yml` workflows) is "social-only" and skips the build
-  (`scripts/ci-site-scope.mjs`, rules read from the BASE branch; tests: `npm run test:ci-scope`); the final
+  (`scripts/ci-site-scope.mjs`, rules read from the BASE branch — protects against mistakes, not hostile PRs, which
+  need review of `.github/` + `package*.json`; tests: `npm run test:ci-scope`); the final
   `Site CI` job always concludes, so it can be a required check without blocking the daily social PRs.
   Keep it read-only (`pull_request`, `contents: read`, no secrets) and never put build logic in the YAML.
 - `npm install` is required first in a fresh checkout (node_modules is not committed).

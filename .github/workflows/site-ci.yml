@@ -13,6 +13,10 @@
 # can later become a required status check without ever staying "Pending".
 # Social workflows (social-*.yml) are untouched and keep validating the queue.
 #
+# Before making `Site CI` a required check: a PR whose head commit message
+# contains `[skip ci]` gets no run (it would stay "Expected"), and a PR with
+# merge conflicts has no merge ref to test (it cannot be merged anyway).
+#
 # Security: `pull_request` (never `pull_request_target`): PR code runs with a
 # read-only token, no secrets, no write permissions, no credentials persisted.
 # Nothing is pushed, so this workflow cannot trigger other workflows (no loops).
@@ -50,12 +54,13 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Test the selection rules
-        run: node --test scripts/ci-site-scope.test.mjs
-
       # The classifier is taken from the BASE branch when it exists there, so a
-      # PR cannot edit the rules to skip its own validation. On the PR that
-      # introduces it, the base has no classifier → full validation.
+      # PR that edits the rules (by mistake) is still classified by the rules
+      # already on main; on the PR that introduces it → full validation. This
+      # guards against mistakes, NOT against a hostile PR: `pull_request` runs
+      # the PR's own copy of this workflow and package.json. The real defence
+      # is review of .github/, scripts/ci-site-scope*, package*.json
+      # (CODEOWNERS + ruleset, see SEC-01). It runs BEFORE any PR code.
       - name: Classify changed files
         id: classify
         run: |
@@ -68,6 +73,10 @@ jobs:
             echo "[site-ci] classifier not on the base branch yet: full validation"
             echo "site=true" >> "$GITHUB_OUTPUT"
           fi
+
+      # PR code runs only after the decision has been written.
+      - name: Test the selection rules
+        run: node --test scripts/ci-site-scope.test.mjs
 
   validate:
     name: Validate & build site
@@ -113,7 +122,12 @@ jobs:
               echo
               echo "Failing checks (from the build log):"
               echo '```'
-              grep -E '\[ERR \]|✗|error TS[0-9]+|npm (ERR!|error)|error during build|\[seo:check\] [0-9]+ ERRORI' "$log" | head -40 || echo "(no known error pattern: see the 'Build with quality gates' step log)"
+              errors=$(grep -E '\[ERR \]|✗|error TS[0-9]+|npm (ERR!|error)|error during build|\[seo:check\] [0-9]+ ERRORI' "$log" || true)
+              if [ -n "$errors" ]; then
+                printf '%s\n' "$errors" | head -40
+              else
+                echo "(no known error pattern: see the 'Build with quality gates' step log)"
+              fi
               echo '```'
             fi
             echo
