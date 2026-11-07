@@ -865,6 +865,8 @@ export const fr = {
     mapLead: 'Carte interactive du monde de {{world}} : lieux, régions, parcours des personnages et chronologie des événements. La recherche (Ctrl+K) permet d’atteindre n’importe quel lieu au clavier.',
     mapLoading: 'Chargement de la carte interactive…',
     exploreWorldMap: 'Explorer la carte de {{world}}',
+    otherWorldsTitle: 'Explorez d’autres mondes anime',
+    worldMapLink: 'Carte interactive de {{world}}',
     worldTimeline: 'Chronologie de {{world}}',
     mapsTitle: 'Les cartes du monde de {{world}}',
     mapsLead: 'L’atlas interactif de {{world}} compte {{count}} cartes : la carte du monde et les sous-cartes qui s’ouvrent depuis ses lieux.',

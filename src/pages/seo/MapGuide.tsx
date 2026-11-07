@@ -10,6 +10,7 @@ import { CardLink } from '@/components/seo/CardLink';
 import type { ResolvedPage } from '@/seo/metadata';
 import { seoLocations } from '@/seo/categories';
 import { categoryPath, entityPath } from '@/seo/paths';
+import { OtherWorldMaps } from '@/components/seo/OtherWorldMaps';
 
 /** Luoghi mostrati per mappa (gli altri sono nell'indice dei luoghi, linkato in fondo). */
 const PLACES_PER_LEVEL = 40;
@@ -24,7 +25,7 @@ const importanceRank = (i: string) => ({ main: 0, secondary: 1, minor: 2 })[i] ?
  * l'anteprima, e la pagina renderizzata restava senza testo né link.
  *
  * Contenuto solo dai dati: ogni livello mappa (nome, descrizione, luoghi),
- * le regioni e i percorsi. I luoghi/percorsi sono VERI link alle loro pagine
+ * le regioni, i percorsi e le mappe degli altri mondi pubblicati (SEO-05). I luoghi/percorsi sono VERI link alle loro pagine
  * (crawlabili, Ctrl/⌘-click), ma il click semplice li apre sulla mappa
  * (`CardLink`): cambia livello se serve, apre la scheda e chiude la guida.
  * Funziona anche senza JS (il `<details>` è nativo). Niente stato React per
@@ -170,6 +171,8 @@ export function MapGuide({ resolved, dataset }: { resolved: ResolvedPage; datase
             </Link>
           )}
         </p>
+
+        <OtherWorldMaps currentWorldId={dataset.world.id} lang={lang} headingLevel={3} className="border-t border-ink-800/70 pt-3" />
       </div>
     </details>
   );

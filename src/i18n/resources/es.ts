@@ -865,6 +865,8 @@ export const es = {
     mapLead: 'Mapa interactivo del mundo de {{world}}: lugares, regiones, recorridos de los personajes y cronología de eventos. Con la búsqueda (Ctrl+K) llegas a cualquier lugar desde el teclado.',
     mapLoading: 'Cargando el mapa interactivo…',
     exploreWorldMap: 'Explora el mapa de {{world}}',
+    otherWorldsTitle: 'Explora otros mundos anime',
+    worldMapLink: 'Mapa interactivo de {{world}}',
     worldTimeline: 'Cronología de {{world}}',
     mapsTitle: 'Los mapas del mundo de {{world}}',
     mapsLead: 'El atlas interactivo de {{world}} se compone de {{count}} mapas: el mapa del mundo y los submapas que se abren desde sus lugares.',

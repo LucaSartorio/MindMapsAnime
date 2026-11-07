@@ -866,6 +866,8 @@ export const en = {
     mapLead: 'Interactive map of the {{world}} world: locations, regions, character journeys and an event timeline. Use search (Ctrl+K) to reach any place from the keyboard.',
     mapLoading: 'Loading the interactive map…',
     exploreWorldMap: 'Explore the {{world}} map',
+    otherWorldsTitle: 'Explore other anime worlds',
+    worldMapLink: '{{world}} interactive map',
     worldTimeline: '{{world}} timeline',
     mapsTitle: 'Maps of the {{world}} world',
     mapsLead: '{{count}} maps make up the interactive {{world}} atlas: the world map and the sub-maps that open from its places.',
