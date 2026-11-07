@@ -25,7 +25,8 @@ components (see "Per-world dynamic config").
 
 ```bash
 npm run dev              # Vite dev server → http://localhost:5173
-npm run build            # tsc -b && test:seo && i18n:audit && vite build && build:ssr && prerender && seo:check (ALL blocking)
+npm run build            # validate:data && validate:i18n && tsc -b && test:seo && i18n:audit && vite build && build:ssr && prerender && seo:check (ALL blocking)
+npm run test:ci-scope    # Site CI selection rules (which PRs are social-only), node --test
 npm run build:ssr        # vite build --ssr src/entry-server.tsx → dist-server/ (build-only, gitignored)
 npm run prerender        # SSG: one static HTML per public page + 404.html + sitemap*.xml + robots.txt + llms.txt
 npm run test:seo         # SEO invariants on sources (slugs, URL round-trip, metadata, hreflang, sitemap)
@@ -67,10 +68,16 @@ npm run social:performance             # scores per anime / character / format /
 
 - **There is no test framework** (the SEO tests use plain `node:assert` in `scripts/`) and
   `npm run lint` (`eslint .`) has no eslint config or dependency installed — do not rely on it.
-  After any change, the gate is `npm run build` (tsc + SEO tests + prerender + seo:check), plus
-  `npm run validate:data` + `npm run validate:i18n` whenever you touch `src/data/` (slug lock,
-  slug collisions, thin content, IT/EN localization), and `npm run seo:slugs` + `npm run i18n:index` when you add
-  entities or merge translations (`test:seo` fails on a stale slug lock or translation index).
+  After any change, the gate is `npm run build` (validate:data + validate:i18n + tsc + SEO tests + prerender +
+  seo:check: slug lock, slug collisions, thin content, IT/EN localization), and `npm run seo:slugs` +
+  `npm run i18n:index` when you add entities or merge translations (`test:seo` fails on a stale slug lock or
+  translation index).
+- **Site CI** (`.github/workflows/site-ci.yml`, on every PR to `main`): `npm ci` + `npm run build`. A PR whose files
+  are ALL under `tools/social-engine/` (or `social-*.yml` workflows) is "social-only" and skips the build
+  (`scripts/ci-site-scope.mjs`, rules read from the BASE branch — protects against mistakes, not hostile PRs, which
+  need review of `.github/` + `package*.json`; tests: `npm run test:ci-scope`); the final
+  `Site CI` job always concludes, so it can be a required check without blocking the daily social PRs.
+  Keep it read-only (`pull_request`, `contents: read`, no secrets) and never put build logic in the YAML.
 - `npm install` is required first in a fresh checkout (node_modules is not committed).
 - `scripts/*.ts` run under `tsx --tsconfig scripts/tsconfig.json` because they import `src/`
   via the `@/` alias. Besides the 4 npm scripts there is per-world tooling in `scripts/`
