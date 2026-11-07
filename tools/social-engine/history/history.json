@@ -2328,6 +2328,84 @@
         }
       ]
     },
+    "character-journey:onepiece:monkey-d-luffy:part-05@en": {
+      "renderId": "character-journey:onepiece:monkey-d-luffy:part-05@en",
+      "contentId": "character-journey:onepiece:monkey-d-luffy:part-05",
+      "template": "characterJourney",
+      "anime": "onepiece",
+      "subject": "monkey-d-luffy",
+      "locale": "en",
+      "variant": null,
+      "segment": "part-05",
+      "segmentFingerprint": "2e8bc93b",
+      "createdAt": "2026-11-07T06:06:07.763Z",
+      "updatedAt": "2026-11-07T06:08:24.812Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-11-07T06:08:24.812Z",
+      "outputFile": "tools/social-engine/output/onepiece_monkey-d-luffy_character-journey_part-05_en.mp4",
+      "manifestFile": "tools/social-engine/output/onepiece_monkey-d-luffy_character-journey_part-05_en.manifest.json",
+      "sourceFile": "0041-onepiece_monkey-d-luffy_character-journey_part-05_en.json",
+      "durationSeconds": 33,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-42345482268-1",
+        "runId": "42345482268",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/42345482268",
+        "video": "videos/onepiece_monkey-d-luffy_character-journey_part-05_en.mp4",
+        "manifest": "manifests/onepiece_monkey-d-luffy_character-journey_part-05_en.manifest.json",
+        "sha256": "bc94ed7534a1f0f3b3e10384c5fea7e12cb7e413da469553ee84490d2c8a821b",
+        "cover": "covers/onepiece_monkey-d-luffy_character-journey_part-05_en.cover.png",
+        "expiresAt": "2026-12-07T06:08:24.812Z"
+      },
+      "social": {
+        "contentType": "character-journey",
+        "animes": [
+          "onepiece"
+        ],
+        "characters": [
+          "onepiece:monkey-d-luffy"
+        ],
+        "characterNames": [
+          "Monkey D. Luffy"
+        ],
+        "part": 5,
+        "partCount": 5,
+        "hookType": "challenge",
+        "hookId": "cj-cont-challenge-1",
+        "hook": "Remember where Part 4 ended? Part 5 starts now.",
+        "ctaType": "site-visit",
+        "cta": "See every place on AniMapVerse.",
+        "durationSeconds": 33,
+        "selection": {
+          "mode": "coldstart",
+          "score": 102.21,
+          "seed": "feed35:character-versus:naruto:sasuke-uchiha-vs-dragonball-goku@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Remember where Part 4 ended? Part 5 starts now.\n\nMonkey D. Luffy's journey across One Piece — Part 5/5: 33 places on the world map.\n\nEvery place, on the interactive map: https://animapverse.com/en/one-piece/characters/monkey-d-luffy\n\nSave it for your next rewatch.\n\n#onepiece #monkeydluffy #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Remember where Part 4 ended? Part 5 starts now. Every place, on the interactive map: https://animapverse.com/en/one-piece/characters/monkey-d-luffy #onepiece #monkeydluffy #anime #animemap #AniMapVerse",
+          "youtubeTitle": "Every Place Monkey D. Luffy Visited 🏴‍☠️ | One Piece Journey Part 5 of 5",
+          "youtubeDescription": "Remember where Part 4 ended? Part 5 starts now.\n\nMonkey D. Luffy's journey across One Piece — Part 5/5: 33 places on the world map.\n\nEvery place, on the interactive map: https://animapverse.com/en/one-piece/characters/monkey-d-luffy\n\nInteractive map: https://animapverse.com/en/one-piece/characters/monkey-d-luffy\n\n#onepiece #monkeydluffy #anime",
+          "facebookCaption": "Remember where Part 4 ended? Part 5 starts now.\n\nMonkey D. Luffy's journey across One Piece — Part 5/5: 33 places on the world map.\n\nEvery place, on the interactive map: https://animapverse.com/en/one-piece/characters/monkey-d-luffy\n\nInteractive map: https://animapverse.com/en/one-piece/characters/monkey-d-luffy",
+          "hashtags": [
+            "#onepiece",
+            "#monkeydluffy",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-journey:onepiece:monkey-d-luffy@it": {
       "renderId": "character-journey:onepiece:monkey-d-luffy@it",
       "contentId": "character-journey:onepiece:monkey-d-luffy",

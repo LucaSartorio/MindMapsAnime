@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T06:18:54.607Z",
+  "generatedAt": "2026-11-07T06:08:25.609Z",
   "locales": [
     "en",
     "it"
@@ -4015,13 +4015,28 @@
             "arcs": 7,
             "journeyArcs": 29
           },
-          "renderedLocales": [],
+          "renderedLocales": [
+            "en"
+          ],
           "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
-          "renderedBefore": false,
+          "renderedBefore": true,
           "publishedBefore": false,
-          "publication": []
+          "publication": [
+            {
+              "renderId": "character-journey:onepiece:monkey-d-luffy:part-05@en",
+              "locale": "en",
+              "variant": null,
+              "status": "notPublished",
+              "platforms": {
+                "instagram": "notScheduled",
+                "facebook": "notScheduled",
+                "tiktok": "notScheduled",
+                "youtube": "notScheduled"
+              }
+            }
+          ]
         },
         {
           "id": "character-journey:onepiece:roronoa-zoro:part-01",
@@ -25864,15 +25879,68 @@
       "metricool"
     ],
     "summary": {
-      "rendered": 40,
+      "rendered": 41,
       "unavailable": 5,
-      "notPublished": 5,
+      "notPublished": 6,
       "scheduled": 29,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0
     },
-    "ready": [],
+    "ready": [
+      {
+        "renderId": "character-journey:onepiece:monkey-d-luffy:part-05@en",
+        "contentId": "character-journey:onepiece:monkey-d-luffy:part-05",
+        "anime": "onepiece",
+        "subject": "monkey-d-luffy",
+        "subjectName": "Monkey D. Luffy",
+        "locale": "en",
+        "variant": null,
+        "segment": "part-05",
+        "partNumber": 5,
+        "partCount": 5,
+        "renderedAt": "2026-11-07T06:08:24.812Z",
+        "durationSeconds": 33,
+        "publicationStatus": "notPublished",
+        "platforms": {
+          "instagram": "notScheduled",
+          "facebook": "notScheduled",
+          "tiktok": "notScheduled",
+          "youtube": "notScheduled"
+        },
+        "artifact": {
+          "name": "animapverse-social-render-42345482268-1",
+          "runId": "42345482268",
+          "runAttempt": "1",
+          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/42345482268",
+          "video": "videos/onepiece_monkey-d-luffy_character-journey_part-05_en.mp4",
+          "manifest": "manifests/onepiece_monkey-d-luffy_character-journey_part-05_en.manifest.json",
+          "sha256": "bc94ed7534a1f0f3b3e10384c5fea7e12cb7e413da469553ee84490d2c8a821b",
+          "cover": "covers/onepiece_monkey-d-luffy_character-journey_part-05_en.cover.png",
+          "expiresAt": "2026-12-07T06:08:24.812Z"
+        },
+        "contentType": "character-journey",
+        "platformMetadata": {
+          "instagramCaption": "Remember where Part 4 ended? Part 5 starts now.\n\nMonkey D. Luffy's journey across One Piece — Part 5/5: 33 places on the world map.\n\nEvery place, on the interactive map: https://animapverse.com/en/one-piece/characters/monkey-d-luffy\n\nSave it for your next rewatch.\n\n#onepiece #monkeydluffy #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Remember where Part 4 ended? Part 5 starts now. Every place, on the interactive map: https://animapverse.com/en/one-piece/characters/monkey-d-luffy #onepiece #monkeydluffy #anime #animemap #AniMapVerse",
+          "youtubeTitle": "Every Place Monkey D. Luffy Visited 🏴‍☠️ | One Piece Journey Part 5 of 5",
+          "youtubeDescription": "Remember where Part 4 ended? Part 5 starts now.\n\nMonkey D. Luffy's journey across One Piece — Part 5/5: 33 places on the world map.\n\nEvery place, on the interactive map: https://animapverse.com/en/one-piece/characters/monkey-d-luffy\n\nInteractive map: https://animapverse.com/en/one-piece/characters/monkey-d-luffy\n\n#onepiece #monkeydluffy #anime",
+          "facebookCaption": "Remember where Part 4 ended? Part 5 starts now.\n\nMonkey D. Luffy's journey across One Piece — Part 5/5: 33 places on the world map.\n\nEvery place, on the interactive map: https://animapverse.com/en/one-piece/characters/monkey-d-luffy\n\nInteractive map: https://animapverse.com/en/one-piece/characters/monkey-d-luffy",
+          "hashtags": [
+            "#onepiece",
+            "#monkeydluffy",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        },
+        "waitFor": {}
+      }
+    ],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",
