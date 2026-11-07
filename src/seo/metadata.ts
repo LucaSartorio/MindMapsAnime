@@ -11,8 +11,8 @@ import type {
   WorldDataset,
 } from '@/types';
 import { SOURCE_LOCALES, type SupportedLocale } from '@/types/i18n';
-import { isFullyTranslated } from '@/data/shared/translations';
 import { findWorldByUrlSlug, getWorldUrlSlug } from '@/data/worlds';
+import { isEntityFullyTranslated } from './translationIndex';
 import { getEntityDisplayName, getFactionTypeLabel, getLocalizedText, getLocationTypeLabel } from '@/utils/localization';
 import { getAbilityTerm, getFactionsTerm, humanizeId } from '@/lib/worldConfig';
 import {
@@ -415,14 +415,22 @@ const PLAIN_STRING_LOCALE: SeoLocale = 'it';
  * - Lingue sorgente (it/en): basta il testo principale (descrizione breve).
  * - Lingue aggiuntive (es): OGNI campo `Localizable` dell'entità deve essere
  *   tradotto — una pagina spagnola con metà dei testi in inglese non è una
- *   pagina spagnola. Un'entità aggiunta ai dati senza traduzione resta quindi
- *   `noindex` in `/es` finché l'overlay non la copre (nessuna build rotta).
+ *   pagina spagnola. La disponibilità è letta dall'indice condiviso
+ *   prerender/client (`npm run i18n:index`): un'entità aggiunta senza
+ *   traduzione resta `noindex` in `/es` finché l'overlay non la copre e
+ *   l'indice non viene rigenerato (`test:seo` fallisce se è obsoleto).
  */
 export function isTranslatedIn(dataset: WorldDataset, category: SeoCategory, id: string, lang: SeoLocale): boolean {
   const e = getSeoEntity(dataset, category, id) as
     | { shortDescription?: Localizable; description?: Localizable }
     | undefined;
-  if (!(SOURCE_LOCALES as readonly string[]).includes(lang)) return !!e && isFullyTranslated(e, lang);
+  // Lingue aggiuntive: dall'indice generato (`npm run i18n:index`), MAI dagli
+  // overlay caricati — il browser ha solo quello della lingua dell'URL, il
+  // prerender tutti: calcolarlo sul dataset darebbe hreflang diversi prima e
+  // dopo l'idratazione (SEO-01). Vedi `src/seo/translationIndex.ts`.
+  if (!(SOURCE_LOCALES as readonly string[]).includes(lang)) {
+    return !!e && isEntityFullyTranslated(dataset, category, id, lang);
+  }
   const v = e?.shortDescription ?? e?.description;
   if (v == null) return lang === PLAIN_STRING_LOCALE;
   if (typeof v === 'string') return lang === PLAIN_STRING_LOCALE;

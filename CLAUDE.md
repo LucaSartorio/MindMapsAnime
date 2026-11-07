@@ -40,6 +40,7 @@ npm run i18n:status      # dataset translation overlays (es, fr): coverage, miss
 npm run i18n:audit       # BLOCKING: every shown label/name exists in every URL language (`-- --locale de` = what a new language needs)
 npm run i18n:extract -- --world naruto --locale es --out tmp/todo.json   # texts to translate (missing + stale)
 npm run i18n:merge -- --world naruto --locale es --from tmp/es.json      # write src/data/<world>/i18n/es.ts + es.meta.json
+npm run i18n:index       # regenerate src/data/translationIndex.ts after every i18n:merge (`-- --check` = verify only)
 npm run extract:boundaries  # regenerate Naruto nation boundary SVG paths from the world PNG
 npm run find:dots        # detect the red village-marker dots in the Naruto PNG, print flow coords
 npm run social:validate  # INTERNAL social video engine: typecheck + engine/pipeline tests (see "Social engine")
@@ -68,7 +69,8 @@ npm run social:performance             # scores per anime / character / format /
   `npm run lint` (`eslint .`) has no eslint config or dependency installed — do not rely on it.
   After any change, the gate is `npm run build` (tsc + SEO tests + prerender + seo:check), plus
   `npm run validate:data` + `npm run validate:i18n` whenever you touch `src/data/` (slug lock,
-  slug collisions, thin content, IT/EN localization), and `npm run seo:slugs` when you add entities.
+  slug collisions, thin content, IT/EN localization), and `npm run seo:slugs` + `npm run i18n:index` when you add
+  entities or merge translations (`test:seo` fails on a stale slug lock or translation index).
 - `npm install` is required first in a fresh checkout (node_modules is not committed).
 - `scripts/*.ts` run under `tsx --tsconfig scripts/tsconfig.json` because they import `src/`
   via the `@/` alias. Besides the 4 npm scripts there is per-world tooling in `scripts/`
@@ -536,8 +538,12 @@ applied in place by `ensureWorldTranslation` (`src/data/registry.ts`, engine in 
 pre-render and scripts use `loadWorldDatasetWithTranslations`, the client applies it in `preloadRoute`/`WorldRoute`
 before rendering. Never edit dataset files to add `es`; use `npm run i18n:extract` → translate → `npm run i18n:merge`
 (`.meta.json` fingerprints the English source so `i18n:status` flags stale translations). An `/es` entity page is
-indexable only if EVERY text of the entity is translated; thin-content is measured on the source text. Publishing a
-world = 100% overlay + loader in `worldTranslationLoaders` + the locale in `translatedLocales` (e.g. `['es', 'fr']`) in `worlds.ts`. Full guide:
+indexable only if EVERY text of the entity is translated; thin-content is measured on the source text. That check reads
+the generated index `src/data/translationIndex.ts` (`npm run i18n:index`, `src/seo/translationIndex.ts`), never the
+overlays loaded at runtime: the browser has only the URL language's overlay, so computing it on the dataset made `/it`
+and `/en` drop their es/fr hreflang after hydration. `test:seo` fails if the index is stale. Publishing a
+world = 100% overlay + loader in `worldTranslationLoaders` + the locale in `translatedLocales` (e.g. `['es', 'fr']`) in `worlds.ts`
++ `npm run i18n:index`. Full guide:
 `docs/I18N.md`.
 
 **Adding a language:** add the code to `SUPPORTED_LOCALES` + its `LOCALE_META`/`LOCALE_FALLBACKS`
@@ -630,7 +636,7 @@ metadata, and every indexable entity has a stable URL. The whole layer lives in 
   derived from the English name (new entities only). Translating or renaming an entity therefore never
   moves its URL. To change a URL on purpose, set `slug: 'new'` and run `npm run seo:slugs` → the old slug
   becomes a permanent redirect in the lock (no chains; `test:seo` checks). Retired slugs stay reserved.
-  After adding entities run `npm run seo:slugs` and commit `slugs.ts` (`validate:data` fails on
+  After adding entities run `npm run seo:slugs` and `npm run i18n:index`, and commit `slugs.ts` + `translationIndex.ts` (`validate:data` fails on
   `slug_not_locked`, `test:seo` on any unlocked entity).
 - **IT/EN localization is mandatory for SEO content**: every narrative `Localizable` field is written
   `{ it, en }` (schema: `src/utils/localizableFields.ts` — `text` fields must be `{ it, en }`, `name` fields
