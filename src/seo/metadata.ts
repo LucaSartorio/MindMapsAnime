@@ -13,6 +13,7 @@ import type {
 import { SOURCE_LOCALES, type SupportedLocale } from '@/types/i18n';
 import { findWorldByUrlSlug, getWorldUrlSlug } from '@/data/worlds';
 import { isEntityFullyTranslated } from './translationIndex';
+import { composeDescription } from './description';
 import { getEntityDisplayName, getFactionTypeLabel, getLocalizedText, getLocationTypeLabel } from '@/utils/localization';
 import { getAbilityTerm, getFactionsTerm, humanizeId } from '@/lib/worldConfig';
 import {
@@ -382,16 +383,12 @@ export function clip(text: string, max: number): string {
   return `${(at > max * 0.6 ? cut.slice(0, at) : cut).replace(/[\s,;:.–—-]+$/, '')}…`;
 }
 
-/** Descrizione = testo reale dell'entità (tagliato) + coda contestuale. */
-function describe(summary: string, tail: string, max = 165): string {
-  const s = summary.replace(/\s+/g, ' ').trim();
-  if (!s) return tail;
-  const end = (x: string) => (/[.!?…]$/.test(x) ? x : `${x}.`);
-  // Testo breve: sempre testo reale + coda contestuale (anche se sfora di poco).
-  if (s.length + tail.length + 1 <= max + 30) return `${end(s)} ${tail}`;
-  const room = max - tail.length - 1;
-  if (room < 60) return clip(s, max);
-  return `${end(clip(s, room))} ${tail}`;
+/**
+ * Descrizione = testo reale dell'entità, tagliato solo a fine frase, + coda
+ * contestuale se c'è spazio (completa o breve). Vedi `src/seo/description.ts`.
+ */
+function describe(summary: string, tail: string, shortTail: string): string {
+  return composeDescription(summary, { long: tail, short: shortTail });
 }
 
 const summaryOf = (e: { shortDescription?: Localizable; description?: Localizable }, lang: SeoLocale) =>
@@ -621,36 +618,36 @@ export function buildPageMeta(resolved: ResolvedPage): PageMeta {
             (c.routeIds?.length ?? 0) > 0 ||
             dataset.routes.some((r) => r.protagonistCharacterIds.includes(c.id) || r.primaryCharacterIds?.includes(c.id));
           title = S.character(name, w, hasJourney);
-          description = describe(summary, S.characterTail(name, w));
+          description = describe(summary, S.characterTail(name, w), S.shortTail(w));
           break;
         }
         case 'locations': {
           const l = e as Location;
           title = S.location(name, getLocationTypeLabel(l.type, lang) || humanizeId(l.type), w);
-          description = describe(summary, S.locationTail(name, w));
+          description = describe(summary, S.locationTail(name, w), S.shortTail(w));
           break;
         }
         case 'factions': {
           const f = e as Faction;
           title = S.faction(name, getFactionTypeLabel(String(f.type), lang) || humanizeId(String(f.type)), w);
-          description = describe(summary, S.factionTail(name, w));
+          description = describe(summary, S.factionTail(name, w), S.shortTail(w));
           break;
         }
         case 'arcs':
           title = S.arc(name, w);
-          description = describe(summary, S.arcTail(name, w));
+          description = describe(summary, S.arcTail(name, w), S.shortTail(w));
           break;
         case 'journeys':
           title = S.journey(name, w);
-          description = describe(summary, S.journeyTail((e as Route).steps.length, w));
+          description = describe(summary, S.journeyTail((e as Route).steps.length, w), S.shortTail(w));
           break;
         case 'abilities':
           title = S.ability(name, getAbilityTerm(dataset.world, lang), w);
-          description = describe(summary, S.abilityTail(name, w));
+          description = describe(summary, S.abilityTail(name, w), S.shortTail(w));
           break;
         case 'regions':
           title = S.region(name, w);
-          description = describe(summary, S.regionTail(name, w));
+          description = describe(summary, S.regionTail(name, w), S.shortTail(w));
           break;
       }
       jsonLd.push(

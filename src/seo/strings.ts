@@ -65,6 +65,8 @@ export interface SeoStrings {
   abilityTail: (name: string, w: string) => string;
   region: (name: string, w: string) => string;
   regionTail: (name: string, w: string) => string;
+  /** Coda breve della description quando quella completa non ci sta (vedi src/seo/description.ts). */
+  shortTail: (w: string) => string;
 }
 
 /** Fatti del dataset usati dalla description della landing di un mondo (tutti derivati dai dati). */
@@ -200,6 +202,7 @@ export const SEO_STRINGS: Record<SeoLocale, SeoStrings> = {
     abilityTail: (name, w) => `Chi usa ${name} e a quali personaggi e fazioni di ${w} è collegata.`,
     region: (name, w) => `${name} — regione di ${w}: luoghi e mappa`,
     regionTail: (name, w) => `Luoghi, fazioni e archi di ${name} sulla mappa interattiva di ${w}.`,
+    shortTail: (w) => `Sulla mappa interattiva di ${w}.`,
   },
   en: {
     home: {
@@ -292,6 +295,7 @@ export const SEO_STRINGS: Record<SeoLocale, SeoStrings> = {
     abilityTail: (name, w) => `Who uses ${name} and which ${w} characters and factions it is connected to.`,
     region: (name, w) => `${name} — ${w} Region: Locations & Map`,
     regionTail: (name, w) => `Locations, factions and story arcs of ${name} on the interactive ${w} map.`,
+    shortTail: (w) => `On the interactive ${w} map.`,
   },
   es: {
     home: {
@@ -384,6 +388,7 @@ export const SEO_STRINGS: Record<SeoLocale, SeoStrings> = {
     abilityTail: (name, w) => `Quién usa ${name} y con qué personajes y facciones de ${w} está conectada.`,
     region: (name, w) => `${name} — región de ${w}: lugares y mapa`,
     regionTail: (name, w) => `Lugares, facciones y arcos de ${name} en el mapa interactivo de ${w}.`,
+    shortTail: (w) => `En el mapa interactivo de ${w}.`,
   },
   fr: {
     home: {
@@ -476,5 +481,6 @@ export const SEO_STRINGS: Record<SeoLocale, SeoStrings> = {
     abilityTail: (name, w) => `Qui utilise ${name} et à quels personnages et factions de ${w} cette technique est liée.`,
     region: (name, w) => `${name} — région de ${w} : lieux et carte`,
     regionTail: (name, w) => `Lieux, factions et arcs de ${name} sur la carte interactive de ${w}.`,
+    shortTail: (w) => `Sur la carte interactive de ${w}.`,
   },
 };

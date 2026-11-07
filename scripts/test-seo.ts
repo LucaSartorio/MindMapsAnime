@@ -39,7 +39,14 @@ import { SEO_CATEGORIES, categoryEntities } from '../src/seo/categories';
 import { getSlugIndex, slugify, RESERVED_SLUGS } from '../src/seo/slug';
 import { absoluteUrl, langFromPath, mapPath, parseSeoPath, swapLangInPath, worldPath } from '../src/seo/paths';
 import { otherWorldMaps, worldsWithMap } from '../src/seo/worldLinks';
-import { buildPageMeta, canonicalTargetPath, resolveSeoPath, isIndexable } from '../src/seo/metadata';
+import { buildPageMeta, canonicalTargetPath, getSeoEntity, resolveSeoPath, isIndexable } from '../src/seo/metadata';
+import {
+  DESCRIPTION_SOFT_MAX,
+  clipAtBoundary,
+  composeDescription,
+  splitSentences,
+} from '../src/seo/description';
+import { getLocalizedText } from '../src/utils/localization';
 import { enumeratePages } from '../src/seo/routes';
 import { buildSitemaps } from '../src/seo/sitemap';
 import { SEO_LOCALES, SITE, isTechnicalPath, seoLocaleFor, worldHasSeoLocale, type SeoLocale } from '../src/seo/config';
@@ -397,6 +404,83 @@ async function main() {
         assert.ok(byPath.get(home)?.page.kind === 'map' && isIndexable(byPath.get(home)!), `CTA home rotta ${home}`);
       }
     }
+  });
+
+  test('description (SEO-04): segmentazione in frasi e taglio di ultima risorsa', () => {
+    // Iniziali, abbreviazioni e decimali non chiudono la frase.
+    assert.deepEqual(splitSentences('Monkey D. Luffy is the captain. He wants the One Piece.'), [
+      'Monkey D. Luffy is the captain.',
+      'He wants the One Piece.',
+    ]);
+    assert.deepEqual(splitSentences('Goku vs. Vegeta, round 2.5 of the fight. Then Gohan arrives!'), [
+      'Goku vs. Vegeta, round 2.5 of the fight.',
+      'Then Gohan arrives!',
+    ]);
+    assert.deepEqual(splitSentences('Kakashi, Gai, ecc. sono jōnin. Il Team 7 parte.'), ['Kakashi, Gai, ecc. sono jōnin.', 'Il Team 7 parte.']);
+    assert.deepEqual(splitSentences('Il dit : « Dépasse tes limites. » Puis il part.'), ['Il dit : « Dépasse tes limites. »', 'Puis il part.']);
+    assert.deepEqual(splitSentences('¿Quién es? ¡Es Luffy!'), ['¿Quién es?', '¡Es Luffy!']);
+    assert.deepEqual(splitSentences('nessuna punteggiatura finale qui'), ['nessuna punteggiatura finale qui']);
+    assert.deepEqual(splitSentences('una frase. minuscola dopo il punto'), ['una frase. minuscola dopo il punto']);
+    // Ultima risorsa: confine di proposizione o di parola, mai a metà parola, sempre entro il limite.
+    const long = 'Una frase lunghissima senza alcun punto che continua, con molte proposizioni e dettagli, e ancora dettagli che non finiscono mai davvero';
+    for (const max of [40, 60, 90, 120]) {
+      const c = clipAtBoundary(long, max);
+      assert.ok(c.length <= max, `clip oltre il limite (${max}): ${c}`);
+      assert.ok(c.endsWith('…'), `clip senza ellissi: ${c}`);
+      assert.ok(long.startsWith(c.slice(0, -1)), `clip non è un prefisso: ${c}`);
+      assert.match(long[c.length - 1] ?? ' ', /[\s,;:—–)]/u, `clip a metà parola: ${c}`);
+    }
+  });
+
+  test('description (SEO-04): composizione — frasi intere, coda solo se ci sta', () => {
+    const tails = { long: 'Discover X on the interactive Y map with all its places and arcs.', short: 'On the interactive Y map.' };
+    // Testo breve: testo + coda completa; punto aggiunto se manca.
+    assert.equal(composeDescription('Captain of the crew', tails), `Captain of the crew. ${tails.long}`);
+    // Vuoto: solo la coda (mai una description vuota).
+    assert.equal(composeDescription('   ', tails), tails.long);
+    // Il caso dell'audit: prima "…" a metà frase, ora frasi intere + coda.
+    const luffy =
+      'Captain of the Straw Hats, gifted with the rubber powers of the Gum-Gum Fruit. He dreams of becoming Pirate King by finding the One Piece. His crew spans the whole Grand Line.';
+    const d = composeDescription(luffy, tails);
+    assert.ok(!d.includes('…'), d);
+    assert.ok(d.startsWith('Captain of the Straw Hats, gifted with the rubber powers of the Gum-Gum Fruit.'), d);
+    assert.ok(d.length <= DESCRIPTION_SOFT_MAX, d);
+    // Frase unica troppo lunga: unico caso con "…", mai a metà parola.
+    const one = `${'parola '.repeat(40)}fine`;
+    const o = composeDescription(one, tails);
+    assert.ok(o.endsWith('…') && o.length <= DESCRIPTION_SOFT_MAX, o);
+  });
+
+  test('description (SEO-04): nessuna pagina entità tagliata a metà frase se una frase intera ci sta', () => {
+    // Regressione: il vecchio describe() riservava ~100 caratteri alla coda e
+    // tagliava il testo dell'entità a metà frase su 7.889 pagine indicizzabili.
+    const problems: string[] = [];
+    let checked = 0;
+    let lastResort = 0;
+    for (const r of pages) {
+      if (r.page.kind !== 'entity' || !isIndexable(r)) continue;
+      const d = buildPageMeta(r).description;
+      const e = getSeoEntity(r.page.dataset, r.page.category, r.page.id) as { shortDescription?: never; description?: never } | undefined;
+      const summary = getLocalizedText(e?.shortDescription ?? e?.description, r.lang).replace(/\s+/g, ' ').trim();
+      checked++;
+      if (!d.trim()) problems.push(`vuota ${r.path}`);
+      if (d.length > DESCRIPTION_SOFT_MAX) problems.push(`troppo lunga (${d.length}) ${r.path}`);
+      if (/([.!?,;:])\s*\1|[.,;:]\s*…|…\s*[.,;:]|\s,/.test(d)) problems.push(`punteggiatura ${r.path}: ${d}`);
+      if (!summary) continue;
+      // Lingua e fonte: la description parte dal testo dell'entità nella lingua della pagina.
+      if (!d.startsWith(summary.slice(0, 30))) problems.push(`non parte dal testo dell'entità (${r.lang}) ${r.path}: ${d}`);
+      const introducedEllipsis = d.includes('…') && !summary.includes('…');
+      if (introducedEllipsis) {
+        lastResort++;
+        if ((splitSentences(summary)[0] ?? summary).length <= DESCRIPTION_SOFT_MAX) {
+          problems.push(`tagliata a metà frase pur avendo una frase intera che ci sta ${r.path}: ${d}`);
+        }
+      }
+    }
+    assert.ok(checked > 13000, `troppe poche pagine entità (${checked})`);
+    assert.equal(problems.length, 0, `${problems.length} description non valide, es.:\n    ${problems.slice(0, 5).join('\n    ')}`);
+    // Ultima risorsa (prima frase > SOFT_MAX): tollerata, ma deve restare rara.
+    assert.ok(lastResort / checked < 0.06, `troppe description di ultima risorsa: ${lastResort}/${checked}`);
   });
 
   test('sitemap: niente duplicati/noindex/route tecniche, copertura completa', () => {
