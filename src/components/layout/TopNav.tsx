@@ -14,6 +14,8 @@ import { LanguageSwitcher } from '@/components/i18n/LanguageSwitcher';
 import { useSeoLang } from '@/seo/useSeoLang';
 import { categoryPath, homePath, langFromPath, mapPath, parseSeoPath, staticPagePath, worldPath } from '@/seo/paths';
 import { worldHasCategory } from '@/seo/metadata';
+import headerLogo72 from '@/assets/brand/animapverse-logo-72.webp';
+import headerLogo108 from '@/assets/brand/animapverse-logo-108.webp';
 
 type ParsedPath = ReturnType<typeof parseSeoPath>;
 
@@ -166,11 +168,15 @@ export function TopNav() {
             className="flex shrink-0 items-center gap-3"
             aria-label={`${t('app.title')} · ${t('nav.home')}`}
           >
+            {/* Logo 36×36: WebP lossless 72/108 px con hash (scripts/header-logo.py),
+                non il favicon.png da 800 KB (PERF-01). */}
             <img
-              src="/favicon.png"
+              src={headerLogo72}
+              srcSet={`${headerLogo72} 2x, ${headerLogo108} 3x`}
               alt=""
               width={36}
               height={36}
+              decoding="async"
               className="h-9 w-9 shrink-0 object-contain"
             />
             {/* Wordmark: nascosto su tablet (md–lg) per lasciare spazio alle tab. */}
