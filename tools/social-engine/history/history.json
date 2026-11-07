@@ -2339,7 +2339,7 @@
       "segment": "part-05",
       "segmentFingerprint": "2e8bc93b",
       "createdAt": "2026-11-07T06:06:07.763Z",
-      "updatedAt": "2026-11-07T06:08:24.812Z",
+      "updatedAt": "2026-11-07T06:16:31.033Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-11-07T06:08:24.812Z",
       "outputFile": "tools/social-engine/output/onepiece_monkey-d-luffy_character-journey_part-05_en.mp4",
@@ -2402,9 +2402,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-07T10:00:00+01:00",
+          "scheduledAt": "2026-11-07T06:11:34Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "419707377",
+          "providerPostUuid": "-3092093763688902865",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-3092093763688902865",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "onepiece_monkey-d-luffy_character-journey_part-05_en.instagram.scheduled.51aadeeba895"
+          ],
+          "updatedAt": "2026-11-07T06:16:31.033Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-07T10:00:00+01:00",
+          "scheduledAt": "2026-11-07T06:11:34Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "419707512",
+          "providerPostUuid": "8381426403689320367",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=8381426403689320367",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "onepiece_monkey-d-luffy_character-journey_part-05_en.facebook.scheduled.50f00a1cec5d"
+          ],
+          "updatedAt": "2026-11-07T06:16:31.033Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-07T10:00:00+01:00",
+          "scheduledAt": "2026-11-07T06:11:34Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "419707738",
+          "providerPostUuid": "6284477450447964939",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=6284477450447964939",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "onepiece_monkey-d-luffy_character-journey_part-05_en.tiktok.scheduled.31c02ebe95b9"
+          ],
+          "updatedAt": "2026-11-07T06:16:31.033Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-07T10:00:00+01:00",
+          "scheduledAt": "2026-11-07T06:11:34Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "419707613",
+          "providerPostUuid": "9129902487209396744",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=9129902487209396744",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "onepiece_monkey-d-luffy_character-journey_part-05_en.youtube.scheduled.606292a57916"
+          ],
+          "updatedAt": "2026-11-07T06:16:31.033Z"
+        }
+      ]
     },
     "character-journey:onepiece:monkey-d-luffy@it": {
       "renderId": "character-journey:onepiece:monkey-d-luffy@it",
