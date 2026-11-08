@@ -590,6 +590,10 @@ async function main() {
         checked++;
       }
     }
+    // Gli originali di Dragon Ball e Black Clover restano accanto ai WebP finché la
+    // versione WebP non è verificata in produzione. Quando verranno rimossi, sostituire
+    // questo controllo con le dimensioni attese congelate (DB 1785×1261 = viewBox,
+    // BC 2970×2100): il test sulle proporzioni (±1 %) da solo non vede un ridimensionamento.
     assert.ok(checked >= 2, 'attese almeno le world map di Dragon Ball e Black Clover');
   });
 

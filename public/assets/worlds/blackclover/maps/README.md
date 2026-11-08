@@ -45,7 +45,12 @@ python3 scripts/optimize-map-images.py           # scrive il .webp se manca (--f
 python3 scripts/optimize-map-images.py --check   # verifica dimensioni e peso, non scrive nulla
 ```
 
-Se sostituisci l'originale, riesegui lo script con `--force`.
+Se sostituisci l'originale, salva il nuovo WebP con un nome nuovo (es. `-v2`, poi aggiorna
+la costante in `mapConstants.ts`): `/assets/worlds/**` non ha hash nel nome e resta in
+cache fino a 8 giorni, quindi riscrivere lo stesso URL con `--force` mostrerebbe a lungo
+la versione vecchia. Non usare `npm run optimize:images` su questa mappa: sovrascrive il
+WebP e cancella l'originale.
+
 ## Sotto-mappe (SVG originali)
 
 Le cinque sotto-mappe — Capitale Reale, fortezza del Regno di Spade, Regno di

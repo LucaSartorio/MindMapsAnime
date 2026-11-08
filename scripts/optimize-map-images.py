@@ -15,8 +15,16 @@ fra le dipendenze del progetto. Questo invece:
     profilo colore: il piano viewBox del map level e le coordinate dei pin non cambiano,
     e la mappa occupa esattamente lo stesso rettangolo sullo schermo;
   - è deterministico: a parità di Pillow/libwebp produce gli stessi byte;
-  - `--check` fallisce (exit 1) se un `.webp` manca, ha dimensioni diverse dall'originale
-    o non è più leggero.
+  - `--check` fallisce (exit 1) se un `.webp` manca, ha dimensioni diverse dall'originale,
+    non è più leggero o non mostra più lo stesso disegno (confronto dei pixel su una
+    miniatura: intercetta un WebP rimasto vecchio dopo la sostituzione dell'originale).
+
+ATTENZIONE: `npm run optimize:images` scrive nello stesso `.webp` (q80) e cancella
+l'originale: non usarlo su queste mappe.
+
+Cache: `/assets/worlds/**` non ha hash nel nome ed è in cache fino a 1 giorno (+7 di
+stale-while-revalidate). Se sostituisci un originale, dai al nuovo file un nome nuovo
+(es. `-v2`) invece di riscrivere lo stesso URL con `--force`.
 
 Qualità scelte confrontando q75/80/85/90 + lossless (SSIM/PSNR con ffmpeg e ritagli
 ingranditi 4× di testi e texture):
@@ -34,7 +42,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from PIL import Image
+from PIL import Image, ImageChops
 
 ROOT = Path(__file__).resolve().parent.parent
 MAPS = ROOT / "public" / "assets" / "worlds"
@@ -50,8 +58,17 @@ def target_path(src: Path) -> Path:
     return src.with_suffix(".webp")
 
 
+# Differenza media massima (0–255) fra le miniature di originale e WebP: la
+# compressione q80/q85 resta sotto 2; un disegno diverso o spostato la supera.
+MAX_THUMB_DIFF = 6.0
+
+
 def convert(src: Path, out: Path, quality: int) -> None:
     with Image.open(src) as im:
+        # Le mappe sono opache: una sorgente con trasparenza va valutata a parte
+        # (convert("RGB") la perderebbe in silenzio).
+        if im.mode not in ("RGB", "L", "P", "CMYK") or "transparency" in im.info:
+            raise SystemExit(f"{src.relative_to(ROOT)}: modalità {im.mode} con trasparenza, conversione non prevista")
         icc = im.info.get("icc_profile")
         rgb = im.convert("RGB")
         kwargs = {"quality": quality, "method": 6}
@@ -69,12 +86,26 @@ def check(src: Path, out: Path) -> list[str]:
             errors.append(f"{out.relative_to(ROOT)}: formato {b.format}, atteso WEBP")
         if a.size != b.size:
             errors.append(f"{out.relative_to(ROOT)}: {b.size} px, l'originale è {a.size} px")
+        else:
+            ta = a.convert("RGB").resize((256, 256), Image.BILINEAR)
+            tb = b.convert("RGB").resize((256, 256), Image.BILINEAR)
+            diff = ImageChops.difference(ta, tb).convert("L")
+            mean = sum(i * n for i, n in enumerate(diff.histogram())) / (256 * 256)
+            if mean > MAX_THUMB_DIFF:
+                errors.append(
+                    f"{out.relative_to(ROOT)}: diverso dall'originale (differenza media {mean:.1f}): "
+                    "rigeneralo con --force"
+                )
     if out.stat().st_size >= src.stat().st_size:
         errors.append(f"{out.relative_to(ROOT)}: non è più leggero dell'originale")
     return errors
 
 
 def main(argv: list[str]) -> int:
+    unknown = [a for a in argv if a not in ("--check", "--force")]
+    if unknown:
+        print(f"opzioni sconosciute: {' '.join(unknown)} (ammesse: --check, --force)", file=sys.stderr)
+        return 2
     only_check = "--check" in argv
     force = "--force" in argv
     errors: list[str] = []
