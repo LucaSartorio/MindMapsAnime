@@ -188,8 +188,8 @@ prima il setup manuale dell'app e dell'environment.
    - **environment `social-state`**:
      - *Deployment branches* → **Selected branches** → esattamente `main`;
      - creato **prima** di unire la PR ai workflow: un job che cita un environment inesistente lo crea senza regole;
-     - secret: la chiave privata; l'App ID può essere una *variable*.
-   - Solo `social-render.yml` e `social-publication-state.yml` possono citare `social-state`, e mai da trigger che
+     - secret `STATE_BOT_PRIVATE_KEY`: la chiave privata; variable `STATE_BOT_CLIENT_ID`: il **Client ID** (l'action v3 usa `client-id`, `app-id` è deprecato).
+   - Solo `social-state-persist.yml` può citare `social-state`, e mai da trigger che
      eseguono input non fidato con ref `main` (`pull_request_target`, `workflow_run`, `issue_comment`).
    - app nella bypass list di `main-pr`, modalità *Always*.
 2. **Prerequisiti sul workflow** (PR dedicata con collaudo; non in questa PR):
@@ -329,7 +329,8 @@ prerequisiti del §7.
 4. **Prima** di unire la PR ai workflow: Repository → Settings → **Environments** → **New environment**
    `social-state`:
    - *Deployment branches and tags* → **Selected branches** → `main` (esatto);
-   - secret: la chiave privata; variable: l'App ID.
+   - secret `STATE_BOT_PRIVATE_KEY`: la chiave privata; variable `STATE_BOT_CLIENT_ID`: il **Client ID** (l'action v3 usa
+     `client-id`, `app-id` è deprecato). Dettagli: `docs/SOCIAL_STATE_BOT.md` §6.
 5. Unisci la PR. *Social render* con `dry_run = true` verifica solo la configurazione: **non** usa il token e non fa
    push. Il collaudo vero è il primo run reale su `main`, da osservare.
 6. Rollback: revert della PR ai workflow (finché `main-pr` non è attivo, si torna subito a `GITHUB_TOKEN`).
