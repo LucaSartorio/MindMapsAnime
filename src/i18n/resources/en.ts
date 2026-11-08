@@ -571,6 +571,13 @@ export const en = {
       timeline:
         'Open the timeline at the bottom and press ▶ Play: the map walks through every event one by one, like a guided story. Pause, resume or stop whenever you like.',
     },
+    // Varianti per dispositivi touch (pointer: coarse): niente rotella, doppio clic o tasto “/”.
+    stepsTouch: {
+      panZoom: 'Drag with one finger to pan; pinch with two fingers or use the +/− buttons to zoom.',
+      pin: 'Tap a pin to open the place details.',
+      submap: 'In the details of a place with a sub-map, tap “Zoom into location” to drill into it.',
+      search: 'Tap the search icon at the top to search within this world.',
+    },
     cta: 'Start exploring',
   },
   common: {

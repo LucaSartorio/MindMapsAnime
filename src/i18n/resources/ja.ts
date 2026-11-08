@@ -565,6 +565,13 @@ export const ja = {
       timeline:
         '下の年表を開いて ▶ 再生を押すと、マップがガイド付きストーリーのように出来事を一つずつ辿ります。いつでも一時停止・再開・停止できます。',
     },
+    // Varianti per dispositivi touch (pointer: coarse): niente rotella, doppio clic o tasto “/”.
+    stepsTouch: {
+      panZoom: '1本指でドラッグして移動、2本指でピンチするか +/− ボタンでズーム。',
+      pin: 'ピンをタップすると場所の詳細が開きます。',
+      submap: 'サブマップを持つ場所の詳細で「この場所を拡大」をタップすると詳細に入れます。',
+      search: '上部の検索アイコンをタップするとこのワールド内を検索できます。',
+    },
     cta: '探索を始める',
   },
   common: {

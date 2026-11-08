@@ -571,6 +571,13 @@ export const es = {
       timeline:
         'Abre la cronología en la parte inferior y pulsa ▶ Reproducir: el mapa recorre todos los eventos uno a uno, como una historia guiada. Pausa, reanuda o detén cuando quieras.',
     },
+    // Varianti per dispositivi touch (pointer: coarse): niente rotella, doppio clic o tasto “/”.
+    stepsTouch: {
+      panZoom: 'Arrastra con un dedo para desplazarte; pellizca con dos dedos o usa los botones +/− para hacer zoom.',
+      pin: 'Toca un marcador para abrir la ficha del lugar.',
+      submap: 'En la ficha de un lugar con submapa, toca «Ampliar el lugar» para entrar en el detalle.',
+      search: 'Toca el icono de búsqueda arriba para buscar dentro de este mundo.',
+    },
     cta: 'Empezar a explorar',
   },
   common: {

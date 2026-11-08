@@ -103,9 +103,13 @@ export function StoryModePanel({ dataset }: StoryModePanelProps) {
   const atEnd = index === events.length - 1;
 
   return (
+    // ≥ sm: pannello laterale ANCORATO ALL'AREA MAPPA (absolute nel contenitore di
+    // WorldLayout), non `fixed` a tutta altezza: essendo non modale, prima copriva
+    // gli strumenti dell'header e i link del footer, che restavano raggiungibili con
+    // Tab ma nascosti (UX-02). Tra sm e md lascia libera la bottom nav.
     <section
       aria-label={t('map.story.title')}
-      className="panel pointer-events-auto fixed z-[55] flex flex-col bg-ink-900/90 shadow-pop inset-x-0 bottom-0 max-h-[72vh] rounded-t-2xl border-t animate-slideUp sm:inset-x-auto sm:right-0 sm:top-0 sm:bottom-0 sm:h-full sm:max-h-none sm:w-[22rem] sm:rounded-none sm:rounded-l-2xl sm:border-l sm:border-t-0 sm:animate-slideInRight"
+      className="panel pointer-events-auto fixed z-[55] flex flex-col bg-ink-900/90 shadow-pop inset-x-0 bottom-0 max-h-[72vh] rounded-t-2xl border-t animate-slideUp sm:absolute sm:inset-x-auto sm:right-0 sm:top-0 sm:bottom-20 sm:max-h-none sm:w-[22rem] sm:rounded-none sm:rounded-l-2xl sm:border-l sm:border-t-0 sm:animate-slideInRight md:bottom-0"
     >
       <header className="flex shrink-0 items-start justify-between gap-3 border-b border-ink-700/60 px-4 py-3">
         <div className="min-w-0">

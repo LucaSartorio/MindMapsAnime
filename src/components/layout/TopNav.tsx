@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useUiStore, useWorldStore } from '@/store';
 import { useReportStore } from '@/store/useReportStore';
+import { useCookieConsent } from '@/store/useCookieConsent';
 import { useLocaleStore } from '@/store/useLocaleStore';
 import { getLocalizedText } from '@/utils/localization';
 import { getAbilityTerm, getFactionsTerm } from '@/lib/worldConfig';
@@ -62,6 +63,7 @@ export function TopNav() {
   const isMobileNavOpen = useUiStore((s) => s.isMobileNavOpen);
   const toggleMobileNav = useUiStore((s) => s.toggleMobileNav);
   const openReport = useReportStore((s) => s.open);
+  const openCookiePreferences = useCookieConsent((s) => s.openPreferences);
   const [searchOpen, setSearchOpen] = useState(false);
   // Stati per l'animazione apertura/chiusura: `mounted` tiene l'elemento nel
   // DOM durante l'uscita, `shown` pilota le classi di transizione.
@@ -287,7 +289,9 @@ export function TopNav() {
         </div>
       </div>
 
-      {/* Menu mobile: voci del mondo (se presente) + About + Segnala. */}
+      {/* Menu mobile: voci del mondo (se presente) + About + Segnala + link legali.
+          I link legali stanno anche qui perché sulla mappa mobile il footer è
+          nascosto (la bottom nav degli strumenti lo copriva, UX-02). */}
       {isMobileNavOpen && (
         <nav
           id="mobile-world-nav"
@@ -331,6 +335,45 @@ export function TopNav() {
                 className="block w-full text-left px-3 py-2 rounded-md text-sm text-ink-300 hover:text-white hover:bg-ink-800/70"
               >
                 🐛 {t('nav.report')}
+              </button>
+            </li>
+            <li className="col-span-2 mt-1 border-t border-ink-700/60 pt-1">
+              <Link
+                to={staticPagePath(lang, 'support')}
+                onClick={() => toggleMobileNav()}
+                className="block px-3 py-2 rounded-md text-sm text-ember-300 hover:text-ember-200 hover:bg-ink-800/70"
+              >
+                <span aria-hidden>♥</span> {t('footer.support')}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to={staticPagePath(lang, 'privacy')}
+                onClick={() => toggleMobileNav()}
+                className="block px-3 py-2 rounded-md text-sm text-ink-300 hover:text-white hover:bg-ink-800/70"
+              >
+                {t('footer.privacy')}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to={staticPagePath(lang, 'cookie-policy')}
+                onClick={() => toggleMobileNav()}
+                className="block px-3 py-2 rounded-md text-sm text-ink-300 hover:text-white hover:bg-ink-800/70"
+              >
+                {t('footer.cookiePolicy')}
+              </Link>
+            </li>
+            <li>
+              <button
+                type="button"
+                onClick={() => {
+                  toggleMobileNav();
+                  openCookiePreferences();
+                }}
+                className="block w-full text-left px-3 py-2 rounded-md text-sm text-ink-300 hover:text-white hover:bg-ink-800/70"
+              >
+                {t('footer.manageCookies')}
               </button>
             </li>
           </ul>

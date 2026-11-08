@@ -45,7 +45,7 @@ export function MapFocusBreadcrumb({ dataset }: MapFocusBreadcrumbProps) {
         type="button"
         onClick={resetSelections}
         aria-label={t('map.focus.exitAria')}
-        className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-ink-200 transition hover:bg-ink-800/70 hover:text-white"
+        className="inline-flex min-h-6 items-center gap-1 rounded-full px-2 py-0.5 text-ink-200 transition hover:bg-ink-800/70 hover:text-white"
       >
         {t('map.focus.exit')}
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden>

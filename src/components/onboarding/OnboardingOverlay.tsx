@@ -1,6 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect, useSyncExternalStore } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useUiStore } from '@/store';
+import { useCookieConsent } from '@/store/useCookieConsent';
 import { Modal } from '@/components/common/Modal';
 
 /**
@@ -10,10 +11,28 @@ import { Modal } from '@/components/common/Modal';
  * e resta riapribile dal pulsante "aiuto" negli overlay mappa. Spiega i gesti
  * base (pan/zoom, click sui pin, sotto-mappe, filtri, ricerca, timeline) così
  * un nuovo utente non si trova davanti a una tela vuota senza indicazioni.
+ *
+ * UX-02: l'apertura automatica aspetta che il banner cookie sia chiuso (prima
+ * il dialog modale copriva i pulsanti del banner e bloccava la scelta), e il flag
+ * "visto" si salva solo quando l'overlay si apre davvero. Sui dispositivi touch
+ * le istruzioni parlano di tocchi e pizzico, non di rotella, doppio clic o "/".
  */
 const SEEN_KEY = 'animeInteractiveMaps.onboarding.v1';
 
 const STEPS = ['panZoom', 'pin', 'submap', 'filters', 'search', 'timeline'] as const;
+
+/** Passi con un testo diverso per i dispositivi touch (`onboarding.stepsTouch`). */
+const TOUCH_STEPS = new Set<(typeof STEPS)[number]>(['panZoom', 'pin', 'submap', 'search']);
+
+const COARSE_QUERY = '(pointer: coarse)';
+function subscribeCoarse(onChange: () => void): () => void {
+  const mql = window.matchMedia?.(COARSE_QUERY);
+  mql?.addEventListener?.('change', onChange);
+  return () => mql?.removeEventListener?.('change', onChange);
+}
+const getCoarse = () => window.matchMedia?.(COARSE_QUERY).matches ?? false;
+/** Pre-render e idratazione: puntatore fine (l'overlay è comunque chiuso). */
+const getCoarseServer = () => false;
 
 const STEP_ICON: Record<(typeof STEPS)[number], string> = {
   panZoom: '✥',
@@ -30,8 +49,14 @@ export function OnboardingOverlay() {
   const openHelp = useUiStore((s) => s.openHelp);
   const closeHelp = useUiStore((s) => s.closeHelp);
 
-  // Apertura automatica al primo accesso assoluto.
+  // Il banner cookie (o il dialog preferenze) ha la precedenza: finché l'utente
+  // non ha scelto, l'onboarding non si apre sopra di lui.
+  const cookieDecisionPending = useCookieConsent((s) => s.isBannerOpen || s.isPreferencesOpen);
+  const coarsePointer = useSyncExternalStore(subscribeCoarse, getCoarse, getCoarseServer);
+
+  // Apertura automatica al primo accesso assoluto, dopo la scelta sui cookie.
   useEffect(() => {
+    if (cookieDecisionPending) return;
     let seen = false;
     try {
       seen = localStorage.getItem(SEEN_KEY) === '1';
@@ -43,10 +68,10 @@ export function OnboardingOverlay() {
       try {
         localStorage.setItem(SEEN_KEY, '1');
       } catch {
-        /* ignora */
+        /* storage non disponibile: l'overlay si riaprirà alla prossima visita */
       }
     }
-  }, [openHelp]);
+  }, [openHelp, cookieDecisionPending]);
 
   return (
     <Modal
@@ -76,7 +101,13 @@ export function OnboardingOverlay() {
             >
               {STEP_ICON[step]}
             </span>
-            <span className="text-ink-200">{t(`onboarding.steps.${step}`)}</span>
+            <span className="text-ink-200">
+              {t(
+                coarsePointer && TOUCH_STEPS.has(step)
+                  ? `onboarding.stepsTouch.${step}`
+                  : `onboarding.steps.${step}`,
+              )}
+            </span>
           </li>
         ))}
       </ul>

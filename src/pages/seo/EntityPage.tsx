@@ -185,7 +185,7 @@ export function EntityPage({
         <ol className="space-y-2 text-sm">
           {list.slice(0, REL_LIMIT).map((ev) => (
             <li key={ev.id} className="panel-soft p-3">
-              <Link to={eventPath(lang, dataset, ev.id)!} className="font-medium text-ink-100 hover:text-chakra-300 hover:underline">
+              <Link to={eventPath(lang, dataset, ev.id)!} className="inline-block py-1 font-medium text-ink-100 hover:text-chakra-300 hover:underline">
                 {text(ev.title)}
               </Link>
               <span className="block text-xs text-ink-300 mt-0.5">

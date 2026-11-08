@@ -53,6 +53,11 @@ function MapNodeBase({ data }: NodeProps) {
   // / evidenziato) hanno la precedenza e usano le classi dedicate qui sotto.
   const categoryColor = LOCATION_TYPE_COLOR[d.type];
   const special = !!d.marked || !!d.selected || !!d.highlighted;
+  // Focus mode (UX-02): si attenuano solo il pallino e l'icona di tipo; il testo
+  // dell'etichetta resta a contrasto AA (WCAG 1.4.3) e il pin resta un nodo
+  // focusabile e cliccabile con il suo nome. Hover e focus da tastiera
+  // ripristinano l'enfasi piena (regole `.map-pin[data-dimmed]` in globals.css).
+  const dimmed = !!d.dimmed && !d.selected && !d.highlighted;
   // Dimensione COSTANTE a schermo: React Flow scala i nodi con lo zoom, quindi
   // le etichette crescevano insieme allo zoom e si sovrapponevano sempre
   // (avvicinarsi non le separava). Contro-scalando di 1/zoom il fattore si
@@ -69,17 +74,14 @@ function MapNodeBase({ data }: NodeProps) {
     >
     <div
       className={cn(
-        'group relative flex items-center gap-2 cursor-pointer select-none',
+        // min-h-[26px]: area cliccabile alta ≥ 24px (WCAG 2.5.8) senza cambiare il disegno;
+        // margine sopra 24 perché la contro-scala usa uno zoom quantizzato (±3 %).
+        'map-pin group relative flex min-h-[26px] items-center gap-2 cursor-pointer select-none',
         d.marked
           ? 'drop-shadow-[0_0_10px_rgba(239,68,68,0.9)]'
           : d.highlighted && 'drop-shadow-[0_0_8px_rgba(255,131,17,0.7)]',
-        // Focus mode: i pin non collegati sfumano, ma tornano pieni al passaggio
-        // del mouse così restano scopribili/cliccabili.
-        d.dimmed &&
-          !d.selected &&
-          !d.highlighted &&
-          'opacity-40 transition-opacity hover:opacity-100',
       )}
+      data-dimmed={dimmed ? '' : undefined}
       style={{ transform: `translate(${-dotRadius}px, -50%)` }}
     >
       <Handle
@@ -94,7 +96,7 @@ function MapNodeBase({ data }: NodeProps) {
       />
       <span
         className={cn(
-          'rounded-full ring-2 transition',
+          'map-pin-dot rounded-full ring-2 transition',
           IMPORTANCE_SIZE[d.importance],
           d.marked
             ? 'bg-red-500 ring-red-300 shadow-[0_0_6px_rgba(239,68,68,0.9)]'
@@ -109,7 +111,7 @@ function MapNodeBase({ data }: NodeProps) {
       />
       <span
         className={cn(
-          'whitespace-nowrap px-2 py-0.5 rounded-md backdrop-blur-sm border transition',
+          'map-pin-label whitespace-nowrap px-2 py-0.5 rounded-md backdrop-blur-sm border transition',
           IMPORTANCE_TEXT[d.importance],
           d.marked
             ? 'bg-red-950/80 border-red-500/70 text-red-100'
@@ -121,7 +123,7 @@ function MapNodeBase({ data }: NodeProps) {
         )}
       >
         <span
-          className={cn('mr-1', special && 'text-current')}
+          className={cn('map-pin-icon mr-1 transition-opacity', special && 'text-current')}
           style={special ? undefined : { color: categoryColor }}
           aria-hidden
         >

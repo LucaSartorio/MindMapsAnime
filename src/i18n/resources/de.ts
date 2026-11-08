@@ -571,6 +571,13 @@ export const de = {
       timeline:
         'Öffne unten die Zeitleiste und drücke ▶ Abspielen: Die Karte durchläuft alle Ereignisse eines nach dem anderen, wie eine geführte Geschichte. Pausiere, setze fort oder stoppe jederzeit.',
     },
+    // Varianti per dispositivi touch (pointer: coarse): niente rotella, doppio clic o tasto “/”.
+    stepsTouch: {
+      panZoom: 'Mit einem Finger ziehen zum Verschieben; mit zwei Fingern zoomen oder die +/−-Schaltflächen nutzen.',
+      pin: 'Tippe auf einen Marker, um die Ortsdetails zu öffnen.',
+      submap: 'Tippe in den Details eines Ortes mit Unterkarte auf „In den Ort zoomen“, um in die Detailansicht zu wechseln.',
+      search: 'Tippe oben auf das Suchsymbol, um in dieser Welt zu suchen.',
+    },
     cta: 'Erkundung starten',
   },
   common: {
