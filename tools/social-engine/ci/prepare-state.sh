@@ -20,7 +20,12 @@ out="${3:?cartella di output}"
 case "$profile" in render|publication) ;; *) echo "::error::profilo non valido: $profile"; exit 1 ;; esac
 
 script="tools/social-engine/ci/state-bundle.mjs"
-node "$script" verify --bundle "$raw" --profile "$profile" >/dev/null
+# Origine attesa (SEC-01): il bundle deve dichiarare il run e il workflow che l'hanno prodotto.
+# Il workflow chiamante verifica le stesse due cose via API prima di arrivare qui.
+expect=()
+[ -n "${STATE_EXPECT_RUN:-}" ] && expect+=(--expect-run "$STATE_EXPECT_RUN")
+[ -n "${STATE_EXPECT_WORKFLOW:-}" ] && expect+=(--expect-workflow "$STATE_EXPECT_WORKFLOW")
+node "$script" verify --bundle "$raw" --profile "$profile" "${expect[@]}" >/dev/null
 base="$(node -e 'const m=JSON.parse(require("fs").readFileSync(process.argv[1]+"/manifest.json","utf8"));process.stdout.write(m.baseSha)' "$raw")"
 
 git fetch --quiet --no-tags origin "+refs/heads/main:refs/remotes/origin/main"
