@@ -64,6 +64,9 @@ export function TopNav() {
   const toggleMobileNav = useUiStore((s) => s.toggleMobileNav);
   const openReport = useReportStore((s) => s.open);
   const openCookiePreferences = useCookieConsent((s) => s.openPreferences);
+  // Il menu mobile si smonta quando apre un dialog: il focus passa prima al
+  // pulsante ☰, così il dialog lo ripristina lì alla chiusura (non su <body>).
+  const mobileNavButtonRef = useRef<HTMLButtonElement>(null);
   const [searchOpen, setSearchOpen] = useState(false);
   // Stati per l'animazione apertura/chiusura: `mounted` tiene l'elemento nel
   // DOM durante l'uscita, `shown` pilota le classi di transizione.
@@ -280,6 +283,7 @@ export function TopNav() {
             type="button"
             onClick={toggleMobileNav}
             aria-expanded={isMobileNavOpen}
+            ref={mobileNavButtonRef}
             aria-controls="mobile-world-nav"
             aria-label={t('nav.openMobileNav')}
             className="md:hidden h-9 w-9 grid place-items-center rounded-md border border-ink-700/70 text-ink-100"
@@ -329,6 +333,7 @@ export function TopNav() {
               <button
                 type="button"
                 onClick={() => {
+                  mobileNavButtonRef.current?.focus();
                   toggleMobileNav();
                   openReport();
                 }}
@@ -368,6 +373,7 @@ export function TopNav() {
               <button
                 type="button"
                 onClick={() => {
+                  mobileNavButtonRef.current?.focus();
                   toggleMobileNav();
                   openCookiePreferences();
                 }}

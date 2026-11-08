@@ -106,7 +106,7 @@ export function ToolRail() {
           galleggiano sulla mappa: si aprono da qui, uno alla volta. */}
       <nav
         aria-label={t('map.tools.rail')}
-        className="pointer-events-auto fixed inset-x-2 bottom-[max(0.5rem,env(safe-area-inset-bottom))] z-30 md:hidden"
+        className="pointer-events-auto fixed inset-x-2 bottom-2 z-30 md:hidden"
       >
         <div className="panel flex items-stretch gap-0.5 rounded-2xl p-1 shadow-panel">
           {[...panelTools, actionTools[actionTools.length - 1]].map((tool) => (

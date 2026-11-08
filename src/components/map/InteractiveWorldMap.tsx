@@ -275,12 +275,16 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
         };
       }
       const loc = entry.location;
+      const label = getLocalizedText(loc.localizedName, locale) || loc.name;
       return {
         id: loc.id,
         type: 'map-node',
         position: { x: loc.x, y: loc.y },
+        // Nome accessibile del nodo focusabile (role="group" di React Flow): senza,
+        // il pin raggiunto con Tab veniva annunciato senza nome (UX-02).
+        ariaLabel: label,
         data: {
-          label: getLocalizedText(loc.localizedName, locale) || loc.name,
+          label,
           type: loc.type,
           importance: loc.importance,
           selected: loc.id === selectedLocationId,

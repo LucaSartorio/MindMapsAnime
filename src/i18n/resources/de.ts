@@ -576,6 +576,7 @@ export const de = {
       panZoom: 'Mit einem Finger ziehen zum Verschieben; mit zwei Fingern zoomen oder die +/−-Schaltflächen nutzen.',
       pin: 'Tippe auf einen Marker, um die Ortsdetails zu öffnen.',
       submap: 'Tippe in den Details eines Ortes mit Unterkarte auf „In den Ort zoomen“, um in die Detailansicht zu wechseln.',
+      filters: 'Tippe unten in der Leiste auf „Filter“, um Orte, Charaktere, Fraktionen und Ereignisse zu filtern.',
       search: 'Tippe oben auf das Suchsymbol, um in dieser Welt zu suchen.',
     },
     cta: 'Erkundung starten',

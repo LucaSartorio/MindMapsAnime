@@ -22,7 +22,10 @@ const SEEN_KEY = 'animeInteractiveMaps.onboarding.v1';
 const STEPS = ['panZoom', 'pin', 'submap', 'filters', 'search', 'timeline'] as const;
 
 /** Passi con un testo diverso per i dispositivi touch (`onboarding.stepsTouch`). */
-const TOUCH_STEPS = new Set<(typeof STEPS)[number]>(['panZoom', 'pin', 'submap', 'search']);
+const TOUCH_STEPS = new Set<(typeof STEPS)[number]>(['panZoom', 'pin', 'submap', 'filters', 'search']);
+
+/** Apertura automatica già avvenuta in questa sessione (anche se lo storage non scrive). */
+let autoOpenedThisSession = false;
 
 const COARSE_QUERY = '(pointer: coarse)';
 function subscribeCoarse(onChange: () => void): () => void {
@@ -56,7 +59,7 @@ export function OnboardingOverlay() {
 
   // Apertura automatica al primo accesso assoluto, dopo la scelta sui cookie.
   useEffect(() => {
-    if (cookieDecisionPending) return;
+    if (cookieDecisionPending || autoOpenedThisSession) return;
     let seen = false;
     try {
       seen = localStorage.getItem(SEEN_KEY) === '1';
@@ -64,6 +67,7 @@ export function OnboardingOverlay() {
       seen = true; // storage non disponibile: non insistere
     }
     if (!seen) {
+      autoOpenedThisSession = true;
       openHelp();
       try {
         localStorage.setItem(SEEN_KEY, '1');

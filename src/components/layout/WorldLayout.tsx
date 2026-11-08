@@ -101,7 +101,9 @@ export function WorldLayout({
 
   return (
     <div
-      className={`relative flex-1 flex flex-col min-h-0${cursorClass}`}
+      // overflow-x-clip: il pannello storia (absolute) entra scorrendo da destra e
+      // non deve creare uno scroll orizzontale temporaneo in <main>.
+      className={`relative flex-1 flex flex-col min-h-0 overflow-x-clip${cursorClass}`}
       style={cursorStyle}
     >
       {/* Canvas mappa: occupa tutto */}
