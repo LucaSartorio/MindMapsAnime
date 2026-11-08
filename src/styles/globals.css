@@ -266,6 +266,12 @@ body {
 .react-flow__node-map-cluster {
   pointer-events: none !important;
 }
+/* Banner cookie aperto (UX-02): l'elemento che riceve il focus viene portato
+   sopra il banner, non lasciato sotto (WCAG 2.4.11). La variabile è impostata da
+   CookieConsent solo mentre il banner è visibile. */
+#main-content {
+  scroll-padding-bottom: var(--cookie-banner-h, 0px);
+}
 /* Focus mode (UX-02): i pin non collegati restano leggibili. Si attenuano solo
    pallino e icona di tipo; l'etichetta passa a un fondo più scuro con testo
    ink-200 (≥ 4.5:1 anche sopra le zone chiare della mappa). Hover e focus da

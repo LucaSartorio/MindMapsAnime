@@ -744,7 +744,8 @@ async function main() {
       const onboarding = fp.locator('[role="dialog"][aria-label="How to explore the map"]');
       const opened = await onboarding.waitFor({ state: 'visible', timeout: 8_000 }).then(() => true, () => false);
       const touchText = opened && (await onboarding.textContent())?.includes('Tap a pin');
-      const focusInside = opened && (await fp.evaluate(() => !!document.activeElement?.closest('[role="dialog"]')));
+      // Il Modal sposta il focus con un breve ritardo (portal): si attende, non si legge subito.
+      const focusInside = opened && (await fp.waitForFunction(() => !!document.activeElement?.closest('[role="dialog"]'), undefined, { timeout: 5_000 }).then(() => true, () => false));
       ux(opened && !!touchText && focusInside, `onboarding dopo la scelta cookie, istruzioni touch, focus nel dialog (aperto ${opened}, touch ${touchText}, focus ${focusInside})`);
       await fp.reload({ waitUntil: 'networkidle' });
       await fp.waitForSelector(mapReady, { timeout: 20_000 });

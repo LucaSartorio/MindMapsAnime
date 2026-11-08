@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Modal } from '@/components/common/Modal';
 import { Button } from '@/components/common/Button';
 import { useCookieConsent } from '@/store/useCookieConsent';
+import { parseSeoPath } from '@/seo/paths';
 
 /**
  * Sistema di consenso ai cookie conforme a GDPR + ePrivacy e alle Linee
@@ -41,6 +42,28 @@ export function CookieConsent() {
     if (bannerVisible) bannerRef.current?.focus();
   }, [bannerVisible]);
 
+  // Il banner non è modale: chi prosegue con Tab non deve finire su elementi
+  // nascosti sotto di esso (WCAG 2.4.11). L'altezza del banner diventa
+  // `--cookie-banner-h`, usata come scroll-padding del contenuto (globals.css):
+  // il browser scorre l'elemento con il focus sopra il banner.
+  useEffect(() => {
+    const el = bannerRef.current;
+    if (!bannerVisible || !el) return;
+    const root = document.documentElement;
+    const apply = () => root.style.setProperty('--cookie-banner-h', `${Math.ceil(el.getBoundingClientRect().height)}px`);
+    apply();
+    const ro = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(apply) : null;
+    ro?.observe(el);
+    return () => {
+      ro?.disconnect();
+      root.style.removeProperty('--cookie-banner-h');
+    };
+  }, [bannerVisible]);
+
+  // Sulla mappa, sotto md, il banner sta SOPRA la bottom nav degli strumenti
+  // invece di coprirla (UX-02): i pulsanti restano visibili e raggiungibili.
+  const onMapPage = parseSeoPath(useLocation().pathname).kind === 'map';
+
   return (
     <>
       {/* Banner di prima scelta */}
@@ -55,7 +78,7 @@ export function CookieConsent() {
           // Il wrapper riceve il focus programmatico (annuncio): l'anello di focus va
           // sul pannello, non sul bordo del wrapper largo quanto la pagina, dove
           // diventava una linea blu sopra i contenuti (UX-02).
-          className="group fixed inset-x-0 bottom-0 z-[55] p-3 sm:p-4 outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
+          className={`group fixed inset-x-0 bottom-0 z-[55] p-3 sm:p-4 outline-none focus-visible:ring-0 focus-visible:ring-offset-0${onMapPage ? ' max-md:bottom-[calc(4.5rem+env(safe-area-inset-bottom))]' : ''}`}
         >
           <div className="mx-auto max-w-3xl panel rounded-2xl shadow-2xl p-5 space-y-4 group-focus-visible:ring-2 group-focus-visible:ring-chakra-400">
             <div className="space-y-1.5">

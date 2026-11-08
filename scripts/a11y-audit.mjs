@@ -80,6 +80,9 @@ const scenarios = [
         const modal = [...document.querySelectorAll('[role="dialog"][aria-modal="true"]')].some((d) => !d.closest('[inert]') && d.getBoundingClientRect().width > 0);
         return !modal && [...banner.querySelectorAll('button')].every((b) => { const r = b.getBoundingClientRect(); const t = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2); return t && (t === b || b.contains(t)); });
       }, 'nessun dialog modale sopra il banner e pulsanti del banner cliccabili');
+      await check(p, () => [...document.querySelectorAll('nav[aria-label="Map tools"] button')].filter((b) => b.getBoundingClientRect().width > 0).every((b) => {
+        const r = b.getBoundingClientRect(); const t = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2); return t && (t === b || b.contains(t));
+      }), 'bottom nav non coperta dal banner');
     } },
   { name: 'mappa mobile: onboarding touch dopo la scelta cookie (prima visita)', firstVisit: true, vp: MOBILE,
     go: async (p) => { await p.goto(BASE + '/en/naruto/map'); await visible(p, MAP_READY, 'mappa'); await p.getByRole('button', { name: 'Reject', exact: true }).click(); },
