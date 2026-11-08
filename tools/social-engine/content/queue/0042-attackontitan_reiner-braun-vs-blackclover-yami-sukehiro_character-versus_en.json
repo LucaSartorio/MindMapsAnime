@@ -1,0 +1,22 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterVersus",
+  "anime": "attackontitan",
+  "subject": "reiner-braun",
+  "opponent": {
+    "anime": "blackclover",
+    "subject": "yami-sukehiro"
+  },
+  "locale": "en",
+  "hook": "Reiner Braun or Yami Sukehiro: who explored more of their world?",
+  "hookType": "curiosity",
+  "hookId": "cv-curiosity-1",
+  "cta": "Reiner Braun or Yami Sukehiro? Tell us.",
+  "ctaType": "comment-pick-side",
+  "selection": {
+    "mode": "coldstart",
+    "score": 91.48,
+    "seed": "feed36:character-journey:onepiece:monkey-d-luffy:part-05@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +23.5, jitter +6.0; +12 main character"
+}
