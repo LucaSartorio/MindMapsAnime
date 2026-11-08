@@ -2827,6 +2827,90 @@
         }
       ]
     },
+    "character-versus:attackontitan:reiner-braun-vs-blackclover-yami-sukehiro@en": {
+      "renderId": "character-versus:attackontitan:reiner-braun-vs-blackclover-yami-sukehiro@en",
+      "contentId": "character-versus:attackontitan:reiner-braun-vs-blackclover-yami-sukehiro",
+      "template": "characterVersus",
+      "anime": "attackontitan",
+      "subject": "reiner-braun-vs-blackclover-yami-sukehiro",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-11-08T06:05:40.011Z",
+      "updatedAt": "2026-11-08T06:06:55.604Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-11-08T06:06:55.604Z",
+      "outputFile": "tools/social-engine/output/attackontitan_reiner-braun-vs-blackclover-yami-sukehiro_character-versus_en.mp4",
+      "manifestFile": "tools/social-engine/output/attackontitan_reiner-braun-vs-blackclover-yami-sukehiro_character-versus_en.manifest.json",
+      "sourceFile": "0042-attackontitan_reiner-braun-vs-blackclover-yami-sukehiro_character-versus_en.json",
+      "durationSeconds": 22,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-42453300702-1",
+        "runId": "42453300702",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/42453300702",
+        "video": "videos/attackontitan_reiner-braun-vs-blackclover-yami-sukehiro_character-versus_en.mp4",
+        "manifest": "manifests/attackontitan_reiner-braun-vs-blackclover-yami-sukehiro_character-versus_en.manifest.json",
+        "sha256": "fe8bd8b6b7b851c3621ad91e4359b0ef341a9aa704983077a953425340ad11fe",
+        "cover": "covers/attackontitan_reiner-braun-vs-blackclover-yami-sukehiro_character-versus_en.cover.png",
+        "expiresAt": "2026-12-08T06:06:55.604Z"
+      },
+      "social": {
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "blackclover"
+        ],
+        "characters": [
+          "attackontitan:reiner-braun",
+          "blackclover:yami-sukehiro"
+        ],
+        "characterNames": [
+          "Reiner Braun",
+          "Yami Sukehiro"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "curiosity",
+        "hookId": "cv-curiosity-1",
+        "hook": "Reiner Braun or Yami Sukehiro: who explored more of their world?",
+        "ctaType": "comment-pick-side",
+        "cta": "Reiner Braun or Yami Sukehiro? Tell us.",
+        "durationSeconds": 22,
+        "selection": {
+          "mode": "coldstart",
+          "score": 91.48,
+          "seed": "feed36:character-journey:onepiece:monkey-d-luffy:part-05@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Reiner Braun or Yami Sukehiro: who explored more of their world?\n\nReiner Braun (Attack on Titan) vs Yami Sukehiro (Black Clover): every place on the map, one winner.\n\nReiner Braun or Yami Sukehiro? Pick a side 👇\n\nSave it for your next rewatch.\n\n#attackontitan #aot #blackclover #reinerbraun #yamisukehiro #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Reiner Braun or Yami Sukehiro: who explored more of their world? Reiner Braun or Yami Sukehiro? Pick a side 👇 #attackontitan #aot #blackclover #reinerbraun #yamisukehiro",
+          "youtubeTitle": "Reiner Braun vs Yami Sukehiro: Who Travelled More? 🧱",
+          "youtubeDescription": "Reiner Braun or Yami Sukehiro: who explored more of their world?\n\nReiner Braun (Attack on Titan) vs Yami Sukehiro (Black Clover): every place on the map, one winner.\n\nReiner Braun or Yami Sukehiro? Pick a side 👇\n\nInteractive map: https://animapverse.com\n\n#attackontitan #aot #blackclover",
+          "facebookCaption": "Reiner Braun or Yami Sukehiro: who explored more of their world?\n\nReiner Braun (Attack on Titan) vs Yami Sukehiro (Black Clover): every place on the map, one winner.\n\nReiner Braun or Yami Sukehiro? Pick a side 👇\n\nInteractive map: https://animapverse.com",
+          "hashtags": [
+            "#attackontitan",
+            "#aot",
+            "#blackclover",
+            "#reinerbraun",
+            "#yamisukehiro",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro@en": {
       "renderId": "character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro@en",
       "contentId": "character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro",

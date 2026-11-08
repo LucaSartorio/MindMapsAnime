@@ -1,19 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-07T06:16:31.054Z",
-  "status": "ready",
+  "generatedAt": "2026-11-08T06:06:56.444Z",
+  "status": "backlog",
   "feedTail": [
-    {
-      "renderId": "guess-character:attackontitan:gabi-braun@en",
-      "contentType": "guess-character",
-      "animes": [
-        "attackontitan"
-      ],
-      "characters": [
-        "attackontitan:gabi-braun"
-      ],
-      "part": null
-    },
     {
       "renderId": "character-journey:jujutsukaisen:maki-zenin@en",
       "contentType": "character-journey",
@@ -72,6 +61,19 @@
         "onepiece:monkey-d-luffy"
       ],
       "part": 5
+    },
+    {
+      "renderId": "character-versus:attackontitan:reiner-braun-vs-blackclover-yami-sukehiro@en",
+      "contentType": "character-versus",
+      "animes": [
+        "attackontitan",
+        "blackclover"
+      ],
+      "characters": [
+        "attackontitan:reiner-braun",
+        "blackclover:yami-sukehiro"
+      ],
+      "part": null
     }
   ],
   "rules": {
@@ -92,502 +94,28 @@
     "error": null
   },
   "backlog": {
-    "unpublished": [],
+    "unpublished": [
+      {
+        "renderId": "character-versus:attackontitan:reiner-braun-vs-blackclover-yami-sukehiro@en",
+        "contentType": "character-versus",
+        "renderedAt": "2026-11-08T06:06:55.604Z",
+        "missing": [
+          "instagram",
+          "facebook",
+          "tiktok",
+          "youtube"
+        ]
+      }
+    ],
     "unfinished": [],
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "feed36:character-journey:onepiece:monkey-d-luffy:part-05@en:samples0",
-  "rejected": {
-    "JOURNEY_PART_ORDER": 38,
-    "MAX_SAME_CHARACTER_STREAK": 19
-  },
-  "considered": 665,
-  "trace": {
-    "traceVersion": 1,
-    "mode": "coldstart",
-    "seed": "feed36:character-journey:onepiece:monkey-d-luffy:part-05@en:samples0",
-    "analytics": {
-      "coldStart": true,
-      "samples": 0,
-      "contents": 0,
-      "minimumSamples": 8
-    },
-    "recent": [
-      {
-        "renderId": "guess-character:attackontitan:gabi-braun@en",
-        "contentType": "guess-character",
-        "animes": [
-          "attackontitan"
-        ],
-        "characters": [
-          "attackontitan:gabi-braun"
-        ]
-      },
-      {
-        "renderId": "character-journey:jujutsukaisen:maki-zenin@en",
-        "contentType": "character-journey",
-        "animes": [
-          "jujutsukaisen"
-        ],
-        "characters": [
-          "jujutsukaisen:maki-zenin"
-        ]
-      },
-      {
-        "renderId": "character-versus:dragonball:piccolo-vs-bleach-ichigo-kurosaki@en",
-        "contentType": "character-versus",
-        "animes": [
-          "dragonball",
-          "bleach"
-        ],
-        "characters": [
-          "dragonball:piccolo",
-          "bleach:ichigo-kurosaki"
-        ]
-      },
-      {
-        "renderId": "character-journey:onepiece:nami:part-01@en",
-        "contentType": "character-journey",
-        "animes": [
-          "onepiece"
-        ],
-        "characters": [
-          "onepiece:nami"
-        ]
-      },
-      {
-        "renderId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-goku@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "dragonball"
-        ],
-        "characters": [
-          "naruto:sasuke-uchiha",
-          "dragonball:goku"
-        ]
-      },
-      {
-        "renderId": "character-journey:onepiece:monkey-d-luffy:part-05@en",
-        "contentType": "character-journey",
-        "animes": [
-          "onepiece"
-        ],
-        "characters": [
-          "onepiece:monkey-d-luffy"
-        ]
-      }
-    ],
-    "constraints": {
-      "sameAnimeStreak": {
-        "animes": [
-          "onepiece"
-        ],
-        "length": 1
-      },
-      "forcedAnimeRotation": false,
-      "blockedAnimes": [],
-      "blockedCharacters": [
-        "onepiece:monkey-d-luffy"
-      ],
-      "characterCooldown": [
-        "attackontitan:gabi-braun",
-        "jujutsukaisen:maki-zenin",
-        "dragonball:piccolo",
-        "bleach:ichigo-kurosaki",
-        "onepiece:nami",
-        "naruto:sasuke-uchiha",
-        "dragonball:goku",
-        "onepiece:monkey-d-luffy"
-      ],
-      "contentTypeStreak": {
-        "contentType": "character-journey",
-        "length": 1
-      }
-    },
-    "hardRulesTriggered": {
-      "JOURNEY_PART_ORDER": 38,
-      "MAX_SAME_CHARACTER_STREAK": 19
-    },
-    "candidates": {
-      "considered": 665,
-      "eligible": 608,
-      "byContentType": {
-        "character-journey": {
-          "considered": 406,
-          "eligible": 368
-        },
-        "guess-character": {
-          "considered": 80,
-          "eligible": 79
-        },
-        "character-versus": {
-          "considered": 179,
-          "eligible": 161
-        }
-      }
-    },
-    "excluded": [
-      {
-        "renderId": "character-versus:hunterxhunter:gon-freecss-vs-onepiece-monkey-d-luffy@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "onepiece"
-        ],
-        "characters": [
-          "hunterxhunter:gon-freecss",
-          "onepiece:monkey-d-luffy"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: onepiece:monkey-d-luffy is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-onepiece-monkey-d-luffy@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "onepiece"
-        ],
-        "characters": [
-          "hunterxhunter:killua-zoldyck",
-          "onepiece:monkey-d-luffy"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: onepiece:monkey-d-luffy is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:kurapika-vs-onepiece-monkey-d-luffy@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "onepiece"
-        ],
-        "characters": [
-          "hunterxhunter:kurapika",
-          "onepiece:monkey-d-luffy"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: onepiece:monkey-d-luffy is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:naruto:naruto-uzumaki-vs-onepiece-monkey-d-luffy@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "onepiece"
-        ],
-        "characters": [
-          "naruto:naruto-uzumaki",
-          "onepiece:monkey-d-luffy"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: onepiece:monkey-d-luffy is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:naruto:obito-uchiha-vs-onepiece-monkey-d-luffy@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "onepiece"
-        ],
-        "characters": [
-          "naruto:obito-uchiha",
-          "onepiece:monkey-d-luffy"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: onepiece:monkey-d-luffy is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:naruto:sasuke-uchiha-vs-onepiece-monkey-d-luffy@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "onepiece"
-        ],
-        "characters": [
-          "naruto:sasuke-uchiha",
-          "onepiece:monkey-d-luffy"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: onepiece:monkey-d-luffy is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:onepiece:monkey-d-luffy-vs-attackontitan-armin-arlert@en",
-        "contentType": "character-versus",
-        "animes": [
-          "onepiece",
-          "attackontitan"
-        ],
-        "characters": [
-          "onepiece:monkey-d-luffy",
-          "attackontitan:armin-arlert"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: onepiece:monkey-d-luffy is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:onepiece:monkey-d-luffy-vs-attackontitan-mikasa-ackerman@en",
-        "contentType": "character-versus",
-        "animes": [
-          "onepiece",
-          "attackontitan"
-        ],
-        "characters": [
-          "onepiece:monkey-d-luffy",
-          "attackontitan:mikasa-ackerman"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: onepiece:monkey-d-luffy is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:onepiece:monkey-d-luffy-vs-attackontitan-reiner-braun@en",
-        "contentType": "character-versus",
-        "animes": [
-          "onepiece",
-          "attackontitan"
-        ],
-        "characters": [
-          "onepiece:monkey-d-luffy",
-          "attackontitan:reiner-braun"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: onepiece:monkey-d-luffy is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:onepiece:monkey-d-luffy-vs-blackclover-asta@en",
-        "contentType": "character-versus",
-        "animes": [
-          "onepiece",
-          "blackclover"
-        ],
-        "characters": [
-          "onepiece:monkey-d-luffy",
-          "blackclover:asta"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: onepiece:monkey-d-luffy is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      }
-    ],
-    "status": "selected",
-    "selectedId": "character-versus:attackontitan:reiner-braun-vs-blackclover-yami-sukehiro",
-    "renderId": "character-versus:attackontitan:reiner-braun-vs-blackclover-yami-sukehiro@en",
-    "contentType": "character-versus",
-    "animes": [
-      "attackontitan",
-      "blackclover"
-    ],
-    "characters": [
-      "attackontitan:reiner-braun",
-      "blackclover:yami-sukehiro"
-    ],
-    "score": 91.48,
-    "base": 79.48,
-    "reasons": [
-      "coldstart: novelty +23.5, jitter +6.0",
-      "+12 main character"
-    ],
-    "ranked": [
-      {
-        "renderId": "character-versus:attackontitan:reiner-braun-vs-blackclover-yami-sukehiro@en",
-        "contentType": "character-versus",
-        "animes": [
-          "attackontitan",
-          "blackclover"
-        ],
-        "score": 91.48,
-        "reasons": [
-          "coldstart: novelty +23.5, jitter +6.0",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "guess-character:attackontitan:ymir-fritz@en",
-        "contentType": "guess-character",
-        "animes": [
-          "attackontitan"
-        ],
-        "score": 91.4,
-        "reasons": [
-          "coldstart: novelty +24.0, jitter +5.4",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "guess-character:attackontitan:hange-zoe@en",
-        "contentType": "guess-character",
-        "animes": [
-          "attackontitan"
-        ],
-        "score": 91.38,
-        "reasons": [
-          "coldstart: novelty +24.0, jitter +5.4",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "guess-character:hunterxhunter:leorio-paradinight@en",
-        "contentType": "guess-character",
-        "animes": [
-          "hunterxhunter"
-        ],
-        "score": 91.36,
-        "reasons": [
-          "coldstart: novelty +24.0, jitter +5.4",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-blackclover-asta@en",
-        "contentType": "character-versus",
-        "animes": [
-          "attackontitan",
-          "blackclover"
-        ],
-        "score": 91.15,
-        "reasons": [
-          "coldstart: novelty +23.5, jitter +5.7",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:gon-freecss-vs-blackclover-noelle-silva@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "blackclover"
-        ],
-        "score": 91.12,
-        "reasons": [
-          "coldstart: novelty +23.5, jitter +5.6",
-          "+12 main character"
-        ]
-      }
-    ],
-    "explanation": [
-      "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
-      "onepiece:monkey-d-luffy excluded in every format (maxSameCharacterStreak 1).",
-      "Selected character-versus:attackontitan:reiner-braun-vs-blackclover-yami-sukehiro@en (character-versus, attackontitan + blackclover) — coldstart, score 91.48 among 608 valid candidate(s)."
-    ]
-  },
-  "pick": {
-    "contentId": "character-versus:attackontitan:reiner-braun-vs-blackclover-yami-sukehiro",
-    "renderId": "character-versus:attackontitan:reiner-braun-vs-blackclover-yami-sukehiro@en",
-    "contentType": "character-versus",
-    "animes": [
-      "attackontitan",
-      "blackclover"
-    ],
-    "characters": [
-      "attackontitan:reiner-braun",
-      "blackclover:yami-sukehiro"
-    ],
-    "part": null,
-    "partCount": null,
-    "score": 91.48,
-    "reasons": [
-      "coldstart: novelty +23.5, jitter +6.0",
-      "+12 main character"
-    ]
-  },
-  "request": {
-    "template": "characterVersus",
-    "anime": "attackontitan",
-    "subject": "reiner-braun",
-    "opponent": {
-      "anime": "blackclover",
-      "subject": "yami-sukehiro"
-    },
-    "locale": "en",
-    "hook": "Reiner Braun or Yami Sukehiro: who explored more of their world?",
-    "hookType": "curiosity",
-    "hookId": "cv-curiosity-1",
-    "cta": "Reiner Braun or Yami Sukehiro? Tell us.",
-    "ctaType": "comment-pick-side",
-    "selection": {
-      "mode": "coldstart",
-      "score": 91.48,
-      "seed": "feed36:character-journey:onepiece:monkey-d-luffy:part-05@en:samples0"
-    },
-    "notes": "growth selector (coldstart): coldstart: novelty +23.5, jitter +6.0; +12 main character"
-  },
-  "alternatives": [
-    {
-      "renderId": "guess-character:attackontitan:ymir-fritz@en",
-      "contentType": "guess-character",
-      "score": 91.4
-    },
-    {
-      "renderId": "guess-character:attackontitan:hange-zoe@en",
-      "contentType": "guess-character",
-      "score": 91.38
-    },
-    {
-      "renderId": "guess-character:hunterxhunter:leorio-paradinight@en",
-      "contentType": "guess-character",
-      "score": 91.36
-    },
-    {
-      "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-blackclover-asta@en",
-      "contentType": "character-versus",
-      "score": 91.15
-    },
-    {
-      "renderId": "character-versus:hunterxhunter:gon-freecss-vs-blackclover-noelle-silva@en",
-      "contentType": "character-versus",
-      "score": 91.12
-    }
-  ],
-  "eligible": 608
+  "seed": "",
+  "reason": "publish the existing render first: character-versus:attackontitan:reiner-braun-vs-blackclover-yami-sukehiro@en (it counts as today's video; no new content)",
+  "alternatives": [],
+  "rejected": {},
+  "considered": 0,
+  "eligible": 0,
+  "trace": null
 }
