@@ -193,9 +193,8 @@ function ownChecks() {
     out.push({ id: 'ux02-pin-name', impact: 'serious', help: 'Pin della mappa focusabile senza nome accessibile', n: unnamed.length,
       sample: unnamed[0].getAttribute('data-id') ?? '', sampleHtml: unnamed[0].outerHTML.slice(0, 120) });
   // 3) Link del footer coperti da altro (es. la bottom nav), senza overlay aperti.
-  // I drawer chiusi restano nel DOM come dialog `inert`: non contano come overlay. Il
-  // banner cookie (dialog non modale) riserva il suo spazio: non giustifica link coperti.
-  const overlayOpen = [...document.querySelectorAll('[role="dialog"]:not([aria-labelledby="cookie-banner-title"]), #mobile-world-nav')].some((e) => !e.closest('[inert]'));
+  // I drawer chiusi restano nel DOM come dialog `inert`: non contano come overlay.
+  const overlayOpen = [...document.querySelectorAll('[role="dialog"], #mobile-world-nav')].some((e) => !e.closest('[inert]'));
   if (!overlayOpen) {
     const covered = [...document.querySelectorAll('footer a, footer button')].filter((e) => {
       const r = e.getBoundingClientRect();

@@ -24,9 +24,7 @@ export function AppShell({ children }: AppShellProps) {
   // pre-renderizzato (che resta identico per tutti, crawler compresi).
   const hydrated = useHydrated();
   return (
-    // padding-bottom: spazio riservato al banner cookie mentre è aperto (variabile
-    // impostata da CookieConsent, 0 altrimenti): nulla di focusabile resta sotto.
-    <div className="h-dvh flex flex-col" style={{ paddingBottom: 'var(--cookie-banner-h, 0px)' }}>
+    <div className="h-dvh flex flex-col">
       {/* Skip link: visibile al focus da tastiera, IN FLUSSO sopra l'header (UX-02).
           Prima era assoluto e copriva logo, ricerca e lingua mentre aveva il focus
           (WCAG 2.5.8: target parzialmente oscurati). */}

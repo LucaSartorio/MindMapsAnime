@@ -45,7 +45,9 @@ export function CookieConsent() {
   // Il banner non è modale: chi prosegue con Tab non deve finire su elementi
   // nascosti sotto di esso (WCAG 2.4.11). La fascia che il banner occupa in fondo
   // alla viewport (dal suo bordo superiore in giù) diventa `--cookie-banner-h`,
-  // riservata dall'AppShell come padding: pagina, footer e mappa restano sopra.
+  // usata come scroll-padding di <main> (globals.css): il browser scorre l'elemento
+  // con il focus sopra il banner. Niente padding sul layout: farebbe spostare e
+  // ridimensionare la mappa alla prima visita.
   useEffect(() => {
     const el = bannerRef.current;
     if (!bannerVisible || !el) return;
