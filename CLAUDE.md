@@ -78,6 +78,11 @@ npm run social:performance             # scores per anime / character / format /
   need review of `.github/` + `package*.json`; tests: `npm run test:ci-scope`); the final
   `Site CI` job always concludes, so it can be a required check without blocking the daily social PRs.
   Keep it read-only (`pull_request`, `contents: read`, no secrets) and never put build logic in the YAML.
+- **Repository security (SEC-01, `docs/SECURITY_SEC-01.md`)**: `.github/CODEOWNERS` owns `.github/`, `package*.json`,
+  `vercel.json`, `.gitattributes`, the CI classifier and all of `tools/social-engine/` except the three agent drop
+  folders (`content/queue/`, `publication/pending/`, `analytics/pending/`). The only check that may become required is
+  `Site CI` (it always concludes). The bot's state commits are direct pushes to `main`: never enable "Require a pull
+  request" / required checks on `main` before they push through an identity in the ruleset bypass list (Level C).
 - `npm install` is required first in a fresh checkout (node_modules is not committed).
 - `scripts/*.ts` run under `tsx --tsconfig scripts/tsconfig.json` because they import `src/`
   via the `@/` alias. Besides the 4 npm scripts there is per-world tooling in `scripts/`
