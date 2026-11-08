@@ -21,7 +21,10 @@ The agent **never renders, never runs the engine, never builds journeys and neve
 5. **reads `render-summary.json`** in the run's artifact `animapverse-social-render-<run_id>-<attempt>`
    (also exposed as the job output `artifact_name`) — `rendered[]` / `failed[]`;
 6. **downloads** the artifact and takes `videos/<file>.mp4` (+ `manifests/<file>.manifest.json`
-   for title/hook/page URL/series facts). A red run = at least one failure: read `failed[]`.
+   for title/hook/page URL/series facts). A red run = at least one failure: read `failed[]`. If `failed[]` is
+   empty, the videos are fine but the **state was not saved** (job *State persisted* red): `catalog.publishing.ready`
+   does not list them yet — do not publish from the artifact, report it (the owner recovers the state,
+   `docs/SOCIAL_STATE_BOT.md` §9).
 
 Never commit MP4s, never touch `history.json`, never set `allowRerender`.
 
