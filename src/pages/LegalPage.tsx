@@ -46,7 +46,7 @@ export function LegalPage({
             {eyebrow}
           </p>
           <h1 className="font-display text-4xl text-ink-100">{title}</h1>
-          <p className="text-xs text-ink-400">{lastUpdated}</p>
+          <p className="text-xs text-ink-300">{lastUpdated}</p>
           {intro && (
             <p className="text-base text-ink-300 leading-relaxed pt-2">{intro}</p>
           )}

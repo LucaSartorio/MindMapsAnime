@@ -120,7 +120,7 @@ export function CookieConsent() {
             <h3 className="text-sm font-semibold text-ink-100">
               {t('cookie.prefs.necessaryTitle')}
             </h3>
-            <p className="text-xs text-ink-400 leading-relaxed mt-1">
+            <p className="text-xs text-ink-300 leading-relaxed mt-1">
               {t('cookie.prefs.necessaryBody')}
             </p>
           </div>
@@ -135,7 +135,7 @@ export function CookieConsent() {
             <h3 className="text-sm font-semibold text-ink-100">
               {t('cookie.prefs.analyticsTitle')}
             </h3>
-            <p className="text-xs text-ink-400 leading-relaxed mt-1">
+            <p className="text-xs text-ink-300 leading-relaxed mt-1">
               {t('cookie.prefs.analyticsBody')}
             </p>
           </div>

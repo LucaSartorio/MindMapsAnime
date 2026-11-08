@@ -105,7 +105,7 @@ export function StoryModePanel({ dataset }: StoryModePanelProps) {
   return (
     <section
       aria-label={t('map.story.title')}
-      className="panel pointer-events-auto fixed z-[55] flex flex-col shadow-pop inset-x-0 bottom-0 max-h-[72vh] rounded-t-2xl border-t animate-slideUp sm:inset-x-auto sm:right-0 sm:top-0 sm:bottom-0 sm:h-full sm:max-h-none sm:w-[22rem] sm:rounded-none sm:rounded-l-2xl sm:border-l sm:border-t-0 sm:animate-slideInRight"
+      className="panel pointer-events-auto fixed z-[55] flex flex-col bg-ink-900/90 shadow-pop inset-x-0 bottom-0 max-h-[72vh] rounded-t-2xl border-t animate-slideUp sm:inset-x-auto sm:right-0 sm:top-0 sm:bottom-0 sm:h-full sm:max-h-none sm:w-[22rem] sm:rounded-none sm:rounded-l-2xl sm:border-l sm:border-t-0 sm:animate-slideInRight"
     >
       <header className="flex shrink-0 items-start justify-between gap-3 border-b border-ink-700/60 px-4 py-3">
         <div className="min-w-0">
@@ -131,7 +131,7 @@ export function StoryModePanel({ dataset }: StoryModePanelProps) {
         <div className="flex-1 p-4 text-sm text-ink-300">{t('map.story.empty')}</div>
       ) : (
         <div className="flex-1 overflow-auto px-4 py-4" aria-live="polite">
-          <p className="font-mono text-[10px] uppercase tracking-widest text-ink-400">
+          <p className="font-mono text-[10px] uppercase tracking-widest text-ink-300">
             #{ev.order} · {getLocalizedText(ev.period, locale)}
           </p>
           <h3 className="mt-1 font-display text-lg leading-tight text-ink-100">
@@ -152,7 +152,7 @@ export function StoryModePanel({ dataset }: StoryModePanelProps) {
             </button>
           )}
           {!loc && (
-            <p className="mt-3 text-[11px] italic text-ink-400">{t('map.story.noLocation')}</p>
+            <p className="mt-3 text-[11px] italic text-ink-300">{t('map.story.noLocation')}</p>
           )}
 
           {chars.length > 0 && (
@@ -195,7 +195,7 @@ export function StoryModePanel({ dataset }: StoryModePanelProps) {
           />
         </div>
         <div className="flex items-center gap-1.5">
-          <span className="mr-auto tabular-nums text-[11px] text-ink-400">
+          <span className="mr-auto tabular-nums text-[11px] text-ink-300">
             {index + 1} / {events.length}
           </span>
           <button

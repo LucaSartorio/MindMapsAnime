@@ -225,7 +225,7 @@ export function CharacterDetailsModal({
         </p>
       )}
       {getLocalizedAliases(character, locale).length > 0 && (
-        <p className="text-xs text-ink-400 italic">
+        <p className="text-xs text-ink-300 italic">
           {t('modals.aliases', { aliases: getLocalizedAliases(character, locale).join(' · ') })}
         </p>
       )}
@@ -248,13 +248,13 @@ export function CharacterDetailsModal({
               >
                 <div className="min-w-0">
                   <p className="text-sm text-ink-100">
-                    <span className="text-ink-500 font-mono text-[11px] mr-1.5">
+                    <span className="text-ink-300 font-mono text-[11px] mr-1.5">
                       #{tr.order}
                     </span>
                     {getLocalizedText(tr.localizedName, locale) || tr.name}
                   </p>
                   {tr.description && (
-                    <p className="text-xs text-ink-400 mt-0.5">
+                    <p className="text-xs text-ink-300 mt-0.5">
                       {getLocalizedText(tr.description, locale)}
                     </p>
                   )}
@@ -294,13 +294,13 @@ export function CharacterDetailsModal({
                       ฿{b.amount}
                     </span>
                     {b.note && (
-                      <span className="text-[11px] text-ink-400 truncate">
+                      <span className="text-[11px] text-ink-300 truncate">
                         {getLocalizedText(b.note, locale)}
                       </span>
                     )}
                   </span>
                   {refs.length > 0 && (
-                    <span className="text-[10px] text-ink-500 font-mono shrink-0">
+                    <span className="text-[10px] text-ink-300 font-mono shrink-0">
                       {refs.join(' · ')}
                     </span>
                   )}
@@ -628,7 +628,7 @@ export function CharacterDetailsModal({
                   <p className="text-ink-100 text-sm">
                     {getLocalizedText(e.title, locale)}
                   </p>
-                  <p className="text-[11px] text-ink-400 mt-0.5">
+                  <p className="text-[11px] text-ink-300 mt-0.5">
                     #{e.order} · {getLocalizedText(e.period, locale)}
                   </p>
                 </button>

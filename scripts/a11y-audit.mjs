@@ -2,12 +2,18 @@ import { chromium } from 'playwright-core';
 import { readFileSync } from 'node:fs';
 
 // Audit a11y automatico (WCAG 2.2 A/AA) con axe-core su tutte le pagine/stati.
-// Uso: avvia `npm run preview` in un terminale, poi `npm run audit:a11y`.
-// Variabili: BASE (url del preview), PW_CHROME (path eseguibile Chromium).
+// Uso: avvia `npm run preview:static` in un terminale, poi `npm run audit:a11y`.
+// Variabili: BASE (url del preview), PW_CHROME (path eseguibile Chromium; senza,
+// quello installato da Playwright).
+// Esce con codice 1 se uno scenario va in errore o se ci sono violazioni.
+// Limiti noti: alcune azioni degli scenari ignorano gli errori (`.catch(() => {})`),
+// quindi uno stato non raggiunto (menu chiuso, modale non aperto) non viene
+// segnalato; il contrasto del testo su sfondi semitrasparenti/immagini resta
+// "incomplete" per axe. Per il contrasto usa `npm run audit:contrast`, che verifica
+// ogni stato e ricostruisce lo sfondo reale.
 const AXE = readFileSync('node_modules/axe-core/axe.min.js', 'utf8');
 const BASE = process.env.BASE || 'http://localhost:4173';
-const EXE =
-  process.env.PW_CHROME || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
+const EXE = process.env.PW_CHROME;
 const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
 
 async function runAxe(page) {
@@ -17,8 +23,9 @@ async function runAxe(page) {
       // eslint-disable-next-line no-undef
       window.axe
         .run(document, { runOnly: { type: 'tag', values: tags } })
-        .then((r) =>
-          r.violations.map((v) => ({
+        .then((r) => ({
+          incomplete: r.incomplete.reduce((n, v) => n + v.nodes.length, 0),
+          violations: r.violations.map((v) => ({
             id: v.id,
             impact: v.impact,
             help: v.help,
@@ -26,7 +33,7 @@ async function runAxe(page) {
             sample: v.nodes[0]?.target?.join(' ') ?? '',
             sampleHtml: (v.nodes[0]?.html ?? '').slice(0, 120),
           })),
-        ),
+        })),
     TAGS,
   );
 }
@@ -75,15 +82,18 @@ const scenarios = [
   { name: 'search overlay open', go: async (p) => { await p.goto(BASE + '/en/naruto/map'); await p.waitForTimeout(600); await accept(p, /accetta tutti|accept all/i); await accept(p, /start exploring|inizia|esplora/i); await p.getByRole('button', { name: /cerca|search/i }).first().click().catch(()=>{}); await p.waitForTimeout(300); } },
 ];
 
-const b = await chromium.launch({ executablePath: EXE });
+const b = await chromium.launch(EXE ? { executablePath: EXE } : {});
 const agg = new Map();
+const errors = [];
+let incompleteTotal = 0;
 for (const s of scenarios) {
   const p = await b.newPage({ viewport: { width: 1280, height: 900 } });
   try {
     await s.go(p);
-    const v = await runAxe(p);
+    const { violations: v, incomplete } = await runAxe(p);
+    incompleteTotal += incomplete;
     const ids = v.map((x) => `${x.id}(${x.n})`).join(', ') || 'clean';
-    console.log(`\n## ${s.name}: ${ids}`);
+    console.log(`\n## ${s.name}: ${ids} · incomplete ${incomplete}`);
     for (const x of v) {
       console.log(`   - [${x.impact}] ${x.id}: ${x.help} | e.g. ${x.sample} :: ${x.sampleHtml}`);
       const k = x.id;
@@ -92,10 +102,14 @@ for (const s of scenarios) {
     }
   } catch (e) {
     console.log(`\n## ${s.name}: ERROR ${e.message}`);
+    errors.push(s.name);
   }
   await p.close();
 }
 console.log('\n\n===== AGGREGATO violazioni uniche =====');
-if (agg.size === 0) console.log('NESSUNA VIOLAZIONE 🎉');
+if (agg.size === 0 && errors.length === 0) console.log('NESSUNA VIOLAZIONE 🎉');
 for (const [id, d] of agg) console.log(`- [${d.impact}] ${id} — ${d.help} (in: ${[...d.scenarios].join(', ')})`);
+console.log(`Nodi "incomplete" (axe non decide, da verificare a mano): ${incompleteTotal}`);
+if (errors.length) console.log(`SCENARI IN ERRORE (non verificati): ${errors.join(', ')}`);
 await b.close();
+process.exit(agg.size || errors.length ? 1 : 0);

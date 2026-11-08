@@ -173,7 +173,7 @@ body {
   /* Campo di input/ricerca coerente (filtri, ricerca opzioni). Il focus ring
      globale (*:focus-visible) fornisce già l'anello AA. */
   .field {
-    @apply w-full rounded-lg border border-ink-600/60 bg-ink-950/50 px-3 py-2 text-sm text-ink-100 placeholder:text-ink-400 outline-none transition focus:border-chakra-500/70;
+    @apply w-full rounded-lg border border-ink-600/60 bg-ink-950/50 px-3 py-2 text-sm text-ink-100 placeholder:text-ink-300 outline-none transition focus:border-chakra-500/70;
   }
 
   /* Badge numerico compatto (conteggio filtri attivi / risultati). */

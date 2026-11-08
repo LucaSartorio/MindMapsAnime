@@ -71,7 +71,7 @@ export function HomePage() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder={t('home.searchWorldsPlaceholder')}
-                className="w-full panel-soft px-3 py-2 text-sm placeholder-ink-400 focus:border-chakra-500"
+                className="w-full panel-soft px-3 py-2 text-sm placeholder-ink-300 focus:border-chakra-500"
               />
             </div>
           </header>

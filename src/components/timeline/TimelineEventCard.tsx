@@ -47,7 +47,7 @@ export function TimelineEventCard({
           : 'hover:border-chakra-500/60',
       )}
     >
-      <div className="flex items-center justify-between text-[10px] uppercase tracking-widest text-ink-400 mb-1 font-mono">
+      <div className="flex items-center justify-between text-[10px] uppercase tracking-widest text-ink-300 mb-1 font-mono">
         <span>#{event.order}</span>
         <span>{period}</span>
       </div>

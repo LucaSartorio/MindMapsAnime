@@ -345,7 +345,7 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
                   </div>
                 )}
                 {filteredVillages.length === 0 ? (
-                  <p className="px-1 py-2 text-xs text-ink-400">{t('filters.noMatches')}</p>
+                  <p className="px-1 py-2 text-xs text-ink-300">{t('filters.noMatches')}</p>
                 ) : (
                   <div className="flex max-h-48 flex-wrap gap-1.5 overflow-auto pr-1">
                     {filteredVillages.map((v) => (
@@ -398,7 +398,7 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
                 </div>
               )}
               {filteredCharacters.length === 0 ? (
-                <p className="px-1 py-2 text-xs text-ink-400">{t('filters.noMatches')}</p>
+                <p className="px-1 py-2 text-xs text-ink-300">{t('filters.noMatches')}</p>
               ) : (
                 <div className="flex max-h-48 flex-wrap gap-1.5 overflow-auto pr-1">
                   {filteredCharacters.map((c) => (
@@ -432,7 +432,7 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
                   </div>
                 )}
                 {filteredFactions.length === 0 ? (
-                  <p className="px-1 py-2 text-xs text-ink-400">{t('filters.noMatches')}</p>
+                  <p className="px-1 py-2 text-xs text-ink-300">{t('filters.noMatches')}</p>
                 ) : (
                   <div className="flex max-h-48 flex-wrap gap-1.5 overflow-auto pr-1">
                     {filteredFactions.map((f) => (
@@ -511,7 +511,7 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
           </div>
 
           <footer className="flex shrink-0 items-center gap-2 border-t border-ink-700/60 px-4 py-3">
-            <span className="mr-auto text-xs text-ink-400" aria-live="polite">
+            <span className="mr-auto text-xs text-ink-300" aria-live="polite">
               {t('filters.resultsCount', { count: resultCount })}
             </span>
             <Button variant="ghost" onClick={() => resetFilters()}>

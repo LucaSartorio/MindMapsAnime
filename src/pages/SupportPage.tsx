@@ -43,7 +43,7 @@ export function SupportPage() {
         ) : (
           <p className="text-xs text-yellow-300/80">{t('support.donateSoon')}</p>
         )}
-        <p className="text-xs text-ink-400">{t('support.note')}</p>
+        <p className="text-xs text-ink-300">{t('support.note')}</p>
       </Card>
 
       <Card className="p-5 space-y-3 text-sm text-ink-300 leading-relaxed">

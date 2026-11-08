@@ -75,7 +75,7 @@ export function Section({
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <h2 id={`${id}-title`} className="font-display text-xl text-ink-100">
           {title}
-          {count != null && <span className="ml-2 text-sm font-sans text-ink-400">({count})</span>}
+          {count != null && <span className="ml-2 text-sm font-sans text-ink-300">({count})</span>}
         </h2>
         {more}
       </div>
@@ -134,7 +134,7 @@ export function LinkCards({
             className="panel-soft block h-full p-4 transition hover:border-chakra-500/60"
           >
             <span className="block font-display text-base text-ink-100">{it.title}</span>
-            {it.meta && <span className="block text-[11px] font-mono uppercase tracking-wide text-ink-400 mt-0.5">{it.meta}</span>}
+            {it.meta && <span className="block text-[11px] font-mono uppercase tracking-wide text-ink-300 mt-0.5">{it.meta}</span>}
             {it.description && (
               <span className="block text-sm text-ink-300 leading-relaxed mt-1.5 line-clamp-3">{it.description}</span>
             )}
@@ -152,7 +152,7 @@ export function FactList({ items }: { items: { label: string; value: ReactNode }
     <dl className="grid gap-x-6 gap-y-2 sm:grid-cols-2 text-sm">
       {shown.map((i) => (
         <div key={i.label} className="flex gap-2 border-b border-ink-800/70 pb-2">
-          <dt className="text-ink-400 shrink-0">{i.label}</dt>
+          <dt className="text-ink-300 shrink-0">{i.label}</dt>
           <dd className="text-ink-100 min-w-0">{i.value}</dd>
         </div>
       ))}
@@ -176,7 +176,7 @@ export function SourceNote({ dataset }: { dataset: WorldDataset }) {
   const md = dataset.world.metadata ?? {};
   const owners = [md.author, md.publisher].filter((x): x is string => typeof x === 'string').join(' / ');
   return (
-    <aside className="text-xs text-ink-400 leading-relaxed border-t border-ink-800/70 pt-4">
+    <aside className="text-xs text-ink-300 leading-relaxed border-t border-ink-800/70 pt-4">
       {t('seoPages.sourceNote', { world: title, owners: owners || title })}
     </aside>
   );

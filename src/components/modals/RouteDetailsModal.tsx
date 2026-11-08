@@ -177,7 +177,6 @@ export function RouteDetailsModal({
                 className={cn(
                   'panel-soft px-3 py-2 flex items-center gap-2 transition',
                   isCurrent && 'border-chakra-400/70 bg-chakra-500/10 shadow-focus',
-                  isDone && 'opacity-60',
                 )}
               >
                 <Badge
@@ -191,19 +190,21 @@ export function RouteDetailsModal({
                     <button
                       type="button"
                       onClick={() => openLocation(loc.id)}
-                      className="text-left text-ink-100 hover:text-chakra-200 truncate block"
+                      // Tappe passate: ✓ + testo secondario (prima l'intera riga era
+                      // al 60 % di opacità, sotto la soglia di contrasto). UX-01.
+                      className={cn('text-left hover:text-chakra-200 truncate block', isDone ? 'text-ink-300' : 'text-ink-100')}
                     >
                       {getLocalizedText(s.title ?? s.label, locale) ||
                         getLocalizedText(loc.localizedName, locale) ||
                         (getLocalizedText(loc.localizedName, locale) || loc.name)}
                     </button>
                   ) : (
-                    <span className="text-ink-100 truncate">
+                    <span className={cn('truncate', isDone ? 'text-ink-300' : 'text-ink-100')}>
                       {getLocalizedText(s.title ?? s.label, locale) || '—'}
                     </span>
                   )}
                   {s.notes && (
-                    <p className="text-[11px] text-ink-400">
+                    <p className="text-[11px] text-ink-300">
                       {getLocalizedText(s.notes, locale)}
                     </p>
                   )}

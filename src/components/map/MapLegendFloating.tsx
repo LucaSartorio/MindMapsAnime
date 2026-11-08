@@ -89,12 +89,12 @@ export function MapLegendFloating({ dataset }: MapLegendFloatingProps) {
                   className={cn(
                     'flex w-full items-center gap-2 rounded-md px-1.5 py-1 text-left transition hover:bg-ink-800/50',
                     active && 'bg-chakra-500/15',
-                    dim && 'opacity-45',
                   )}
                 >
                   <span
                     aria-hidden
-                    className="inline-grid h-4 w-4 shrink-0 place-items-center rounded-full text-[10px]"
+                    // Attenuato solo il simbolo: l'etichetta resta leggibile (UX-01).
+                    className={cn('inline-grid h-4 w-4 shrink-0 place-items-center rounded-full text-[10px]', dim && 'opacity-45')}
                     style={{
                       color: LOCATION_TYPE_COLOR[type],
                       boxShadow: `inset 0 0 0 1.5px ${LOCATION_TYPE_COLOR[type]}`,
@@ -102,7 +102,7 @@ export function MapLegendFloating({ dataset }: MapLegendFloatingProps) {
                   >
                     {LOCATION_TYPE_ICON[type]}
                   </span>
-                  <span className="truncate">{getLocationTypeLabel(type, locale)}</span>
+                  <span className={cn('truncate', dim && 'text-ink-300')}>{getLocationTypeLabel(type, locale)}</span>
                   {active && (
                     <span aria-hidden className="ml-auto text-chakra-300">
                       ✓
@@ -146,7 +146,7 @@ export function MapLegendFloating({ dataset }: MapLegendFloatingProps) {
           </ul>
         )}
 
-        <p className="border-t border-ink-700/40 pt-2 leading-relaxed text-ink-400">
+        <p className="border-t border-ink-700/40 pt-2 leading-relaxed text-ink-300">
           {t('map.legend.filterHint')}
         </p>
       </div>

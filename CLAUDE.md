@@ -459,6 +459,16 @@ and the a11y tree (prevents tabbing into a hidden panel / `aria-hidden-focus`). 
 `npm run audit:a11y` (axe-core, WCAG 2.2 AA) — start `npm run preview:static` first (`BASE=http://localhost:4173`); the scenario list in
 `scripts/a11y-audit.mjs` covers the map, filters drawer, docked schede and search overlay.
 
+**Text contrast (UX-01)** — axe leaves text over translucent panels/gradients/the map as "incomplete", so
+contrast is verified by `npm run audit:contrast` (`scripts/a11y-contrast.mjs`, same `preview:static`
+server): computed colour × opacity over the real background (stacked translucent layers, gradient stops,
+pixel sampling over images), 4.5:1 / 3:1 large text / 3:1 symbol glyphs, every scenario must reach its
+state; it fails on any certain or undetermined failure. Palette rules: informational text is `ink-300` or
+lighter (`ink-400`/`ink-500` only for icons next to a label, `aria-hidden` glyphs and `aria-disabled`
+items); `ink-300` is not AA on `ink-600` or lighter surfaces; panels drawn over the map (docked `Modal`,
+`FloatingPanel`, timeline, active-filter bar) use `bg-ink-900/90`, not the 70 % `.panel`; white text on
+`chakra-600`/`ember-600` or darker. Known open non-conformance: focus-mode dimmed pins (40 % opacity).
+
 ### State (Zustand, `src/store/`)
 - `useWorldStore` — active world + dataset.
 - `useMapStore` — active map level, selected location/route, `filters` (`MapFilters`),

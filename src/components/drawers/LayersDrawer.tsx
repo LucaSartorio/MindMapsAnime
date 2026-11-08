@@ -59,7 +59,7 @@ export function LayersDrawer({ dataset }: LayersDrawerProps) {
               <h2 className="font-display text-base text-ink-100">
                 {t('map.layers.title')}
               </h2>
-              <p className="mt-0.5 text-[11px] text-ink-400">{t('map.layers.subtitle')}</p>
+              <p className="mt-0.5 text-[11px] text-ink-300">{t('map.layers.subtitle')}</p>
             </div>
             <button
               type="button"

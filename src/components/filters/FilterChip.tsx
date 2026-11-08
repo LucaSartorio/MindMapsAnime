@@ -14,7 +14,8 @@ interface FilterChipProps {
 
 const ACTIVE: Record<ChipVariant, string> = {
   accent: 'bg-chakra-600 text-white border-chakra-400 shadow-focus',
-  ember: 'bg-ember-500 text-white border-ember-300',
+  // ember-600: bianco 4,7:1 (ember-500 era 3,2:1). UX-01.
+  ember: 'bg-ember-600 text-white border-ember-300',
   neutral: 'bg-ink-200 text-ink-950 border-ink-100',
 };
 

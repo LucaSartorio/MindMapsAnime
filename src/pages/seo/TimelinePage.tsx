@@ -43,7 +43,7 @@ export function TimelinePage({ resolved, dataset }: { resolved: ResolvedPage; da
           return (
             <li key={e.id} id={eventAnchor(e.id)} className="panel-soft p-4 scroll-mt-24 cv-auto">
               <article className="space-y-1.5">
-                <p className="text-[11px] font-mono uppercase tracking-wide text-ink-400">
+                <p className="text-[11px] font-mono uppercase tracking-wide text-ink-300">
                   {getLocalizedText(e.period, locale)}
                   {arc && (
                     <>
@@ -64,7 +64,7 @@ export function TimelinePage({ resolved, dataset }: { resolved: ResolvedPage; da
                         {getEntityDisplayName(places.get(id), locale)}
                       </Link>
                     ))}
-                  <Link to={mapDeepLink(lang, dataset, 'event', e.id)} className="text-ink-400 hover:text-ink-200 hover:underline">
+                  <Link to={mapDeepLink(lang, dataset, 'event', e.id)} className="text-ink-300 hover:text-ink-200 hover:underline">
                     {t('modals.showOnMap')}
                   </Link>
                 </p>

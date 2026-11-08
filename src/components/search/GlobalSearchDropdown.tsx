@@ -248,7 +248,7 @@ export function GlobalSearchDropdown({
           onFocus={() => setOpen(true)}
           onKeyDown={handleKeyDown}
           placeholder={t('search.placeholder', { world: getLocalizedText(dataset.world.title, locale) })}
-          className="w-full panel-soft pl-8 pr-10 py-2 text-sm placeholder-ink-400 focus:border-chakra-500"
+          className="w-full panel-soft pl-8 pr-10 py-2 text-sm placeholder-ink-300 focus:border-chakra-500"
           role="combobox"
           aria-autocomplete="list"
           aria-expanded={open && results.length > 0}
@@ -260,7 +260,7 @@ export function GlobalSearchDropdown({
         {showKbHint && !query && (
           <kbd
             aria-hidden
-            className="hidden sm:inline-block absolute right-2 top-1/2 -translate-y-1/2 text-[10px] font-mono text-ink-400 border border-ink-700 px-1.5 py-0.5 rounded"
+            className="hidden sm:inline-block absolute right-2 top-1/2 -translate-y-1/2 text-[10px] font-mono text-ink-300 border border-ink-700 px-1.5 py-0.5 rounded"
           >
             /
           </kbd>
@@ -279,7 +279,7 @@ export function GlobalSearchDropdown({
             />
           </div>
           {results.length > 0 && (
-            <div className="hidden border-t border-ink-700/50 px-3 py-1.5 font-mono text-[10px] text-ink-400 sm:block">
+            <div className="hidden border-t border-ink-700/50 px-3 py-1.5 font-mono text-[10px] text-ink-300 sm:block">
               {t('search.navHint')}
             </div>
           )}
