@@ -107,7 +107,7 @@ export function WorldTabs({ tabs, activeKey }: WorldTabsProps) {
           <svg
             aria-hidden
             viewBox="0 0 12 12"
-            className={cn('relative h-3 w-3 text-ink-400 transition-transform', open && 'rotate-180')}
+            className={cn('relative h-3 w-3 text-ink-300 transition-transform', open && 'rotate-180')}
           >
             <path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
           </svg>

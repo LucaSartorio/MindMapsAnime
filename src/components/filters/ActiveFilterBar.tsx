@@ -75,7 +75,7 @@ export function ActiveFilterBar({ dataset, variant }: ActiveFilterBarProps) {
       <div
         role="region"
         aria-label={t('filters.active')}
-        className="panel pointer-events-auto flex max-w-[min(92vw,46rem)] items-center gap-2 p-2 shadow-panel animate-fadeIn"
+        className="panel pointer-events-auto flex max-w-[min(92vw,46rem)] items-center gap-2 bg-ink-900/90 p-2 shadow-panel animate-fadeIn"
       >
         {resultBadge}
         <span className="sr-only" aria-live="polite">

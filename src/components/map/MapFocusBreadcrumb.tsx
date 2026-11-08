@@ -36,7 +36,7 @@ export function MapFocusBreadcrumb({ dataset }: MapFocusBreadcrumbProps) {
   if (!name) return null;
 
   return (
-    <div className="panel pointer-events-auto inline-flex items-center gap-2 py-1 pl-3 pr-1 text-xs shadow-panel animate-fadeIn">
+    <div className="panel pointer-events-auto inline-flex items-center gap-2 bg-ink-900/90 py-1 pl-3 pr-1 text-xs shadow-panel animate-fadeIn">
       <span className="font-mono text-[10px] uppercase tracking-widest text-chakra-300">
         {t('map.focus.label')}
       </span>

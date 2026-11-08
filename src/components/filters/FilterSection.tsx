@@ -44,7 +44,7 @@ export function FilterSection({
           <span
             aria-hidden
             className={cn(
-              'text-ink-400 transition-transform duration-200',
+              'text-ink-300 transition-transform duration-200',
               open ? 'rotate-90' : 'rotate-0',
             )}
           >

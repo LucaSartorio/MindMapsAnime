@@ -62,7 +62,7 @@ export function FloatingPanel({
       </span>
       <span
         aria-hidden
-        className={cn('text-ink-400 transition-transform', isOpen && 'rotate-90')}
+        className={cn('text-ink-300 transition-transform', isOpen && 'rotate-90')}
       >
         ›
       </span>

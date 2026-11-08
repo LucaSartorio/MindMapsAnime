@@ -25,9 +25,10 @@
  *  - ogni scenario verifica di aver raggiunto lo stato richiesto (menu aperto,
  *    modale visibile…): altrimenti è "non eseguito" e l'audit fallisce.
  *
- * Esce con codice 1 se c'è anche un solo contrasto insufficiente certo, una
- * violazione axe `color-contrast` o uno scenario non eseguito. Le altre violazioni
- * axe (es. target-size) e le eccezioni note sono stampate ma non bloccano: questo
+ * Esce con codice 1 se c'è anche un solo contrasto insufficiente certo, un testo
+ * con sfondo rimasto indeterminato, una violazione axe `color-contrast` o uno
+ * scenario non eseguito. Le altre violazioni
+ * axe (es. target-size) e le non conformità note sono stampate ma non bloccano: questo
  * è il controllo del contrasto, non l'audit a11y completo.
  */
 import { chromium } from 'playwright';
@@ -152,6 +153,66 @@ const SCENARIOS = [
       await p.locator('.react-flow__node-map-node .pointer-events-auto').first().dispatchEvent('click');
       return visible(p, '[role="dialog"]:has([role="tablist"])');
     } },
+  { name: 'filtri attivi (chip ember e accent)', viewports: PHONE_DESKTOP,
+    run: async (p) => {
+      if (!(await openMap(p, '/en/naruto/map'))) return false;
+      await p.getByRole('button', { name: /^filters$/i }).first().click();
+      if (!(await visible(p, 'aside[role="dialog"]:not([inert])'))) return false;
+      // Apre tutte le sezioni e attiva un chip ogni 6 (archi, importanza, tipi…).
+      await p.evaluate(() => { for (const b of document.querySelectorAll('aside[role="dialog"]:not([inert]) button[aria-expanded="false"]')) b.click(); });
+      await p.waitForTimeout(300);
+      await p.evaluate(() => { [...document.querySelectorAll('aside[role="dialog"]:not([inert]) button[aria-pressed="false"]')].forEach((b, i) => { if (i % 6 === 0) b.click(); }); });
+      await p.waitForTimeout(300);
+      return p.evaluate(() => document.querySelectorAll('aside[role="dialog"]:not([inert]) button[aria-pressed="true"]').length > 1);
+    } },
+  { name: 'barra dei filtri attivi sulla mappa', viewports: PHONE_DESKTOP,
+    run: async (p) => {
+      if (!(await openMap(p, '/en/naruto/map'))) return false;
+      await p.getByRole('button', { name: /^filters$/i }).first().click();
+      if (!(await visible(p, 'aside[role="dialog"]:not([inert])'))) return false;
+      await p.evaluate(() => { for (const b of document.querySelectorAll('aside[role="dialog"]:not([inert]) button[aria-expanded="false"]')) b.click(); });
+      await p.evaluate(() => document.querySelector('aside[role="dialog"]:not([inert]) button[aria-pressed="false"]')?.click());
+      await p.keyboard.press('Escape');
+      return visible(p, '[role="region"] button:has-text("Clear all")');
+    } },
+  { name: 'legenda con filtro per tipo', viewports: ['d1366'],
+    run: async (p) => {
+      if (!(await openMap(p, '/en/naruto/map'))) return false;
+      await p.getByRole('button', { name: /^legend$/i }).first().click();
+      const row = p.locator('section[aria-label="Legend"] button[aria-pressed="false"]').first();
+      await row.click();
+      return (await p.locator('section[aria-label="Legend"] button[aria-pressed="true"]').count()) === 1;
+    } },
+  { name: 'percorso: stepper avanzato', viewports: PHONE_DESKTOP,
+    run: async (p) => {
+      if (!(await openMap(p, '/en/naruto/map?route=route-team7-waves'))) return false;
+      if (!(await visible(p, '[role="dialog"]'))) return false;
+      // Nome esatto: i drawer chiusi (inert) sono anch'essi role="dialog".
+      const next = p.getByRole('button', { name: 'Next step', exact: true });
+      for (let i = 0; i < 2; i++) await next.click();
+      await p.waitForTimeout(400);
+      return visible(p, '[role="dialog"] li:has-text("✓")');
+    } },
+  { name: 'modalità storia', viewports: PHONE_DESKTOP,
+    run: async (p) => {
+      if (!(await openMap(p, '/en/naruto/map?arc=arc-prologue'))) return false;
+      if (!(await visible(p, '[role="dialog"]'))) return false;
+      await p.getByRole('button', { name: /guided story/i }).first().click();
+      await p.waitForTimeout(600);
+      return visible(p, '[role="progressbar"]');
+    } },
+  { name: 'scheda luogo (tutte le tab)', viewports: ['d1366'],
+    run: async (p) => (await openMap(p, '/en/naruto/map?location=loc-konoha')) && visible(p, '[role="dialog"] [role="tab"]'),
+    states: async (p) => {
+      const tabs = p.locator('[role="dialog"] [role="tab"]');
+      const n = await tabs.count();
+      const out = [];
+      for (let i = 1; i < n; i++) {
+        const label = ((await tabs.nth(i).textContent()) || `tab ${i}`).replace(/\s+/g, ' ').trim();
+        out.push({ label, act: async () => { await tabs.nth(i).click(); return (await tabs.nth(i).getAttribute('aria-selected')) === 'true'; } });
+      }
+      return out;
+    } },
   { name: 'ricerca aperta (con risultati)', viewports: PHONE_DESKTOP,
     run: async (p) => {
       await p.goto(BASE + '/en/naruto', { waitUntil: 'networkidle' });
@@ -253,7 +314,6 @@ function scanVisibleText(opts) {
     if (rect.width * rect.height < 4) continue;
     // Testo nascosto con clip (sr-only) o tagliato a 1px.
     if (cs.clip === 'rect(0px, 0px, 0px, 0px)' || (el.offsetWidth <= 1 && el.offsetHeight <= 1)) continue;
-    seen.add(el);
     const opacity = opacityOf(el);
     if (opacity < 0.01) continue;
     const stack = document.elementsFromPoint(x, y);
@@ -262,20 +322,21 @@ function scanVisibleText(opts) {
     const weight = Number(cs.fontWeight) || 400;
     const large = size >= 24 || (size >= 18.66 && weight >= 700);
     // Solo simboli (ⓘ ⤢ → ✓…): componente grafico, soglia 3:1 (WCAG 1.4.11).
-    const symbol = !/[\p{L}\p{N}]/u.test(text);
+    const symbol = /^[\p{S}\s]+$/u.test(text); // ⓘ ⤢ → ✓ (simboli), non la punteggiatura ( · / —
     const need = large || symbol ? 3 : 4.5;
     const rec = { scenario: opts.scenario, viewport: opts.viewport, text: text.slice(0, 60), where: label(el), size: Math.round(size * 10) / 10, weight, need };
     if (idx < 0 || stack.slice(0, idx).some((e) => !el.contains(e) && !e.contains(el) && (parse(getComputedStyle(e).backgroundColor)?.a ?? 0) > 0.6)) {
-      rec.status = 'coperto';
-      out.push(rec);
+      // Coperto (es. da un overlay): NON segnato come visto, si riprova al prossimo passaggio.
       continue;
     }
+    seen.add(el);
     if (symbol) rec.symbol = true;
     if (el.closest('[aria-hidden="true"]')) rec.exempt = 'aria-hidden (decorativo)';
     else if (el.closest('[role="img"]')) rec.exempt = 'testo dentro un\'immagine (role="img")';
-    // Eccezione NOTA e documentata (non un'esenzione WCAG): in modalità focus la
-    // mappa attenua al 40 % i pin non collegati alla selezione (tornano pieni al
-    // passaggio del mouse). Riportati a parte, non fanno fallire l'audit.
+    // NON CONFORMITÀ NOTA (non un'esenzione WCAG: i pin restano cliccabili): in
+    // modalità focus la mappa attenua al 40 % i pin non collegati alla selezione.
+    // È una scelta di design aperta (UX-02): riportata a parte e contata, non
+    // blocca l'audit; qualunque altro testo sotto soglia lo blocca.
     else if (el.closest('.react-flow__node-map-node, .react-flow__node-map-cluster') && opacity <= 0.41) rec.known = 'pin attenuato dalla modalità focus';
     else if (el.closest(':disabled, [aria-disabled="true"]')) rec.exempt = 'controllo disabilitato';
     // Sfondo: elementi sotto il testo, dall'alto, fino al primo opaco. Ogni
@@ -332,7 +393,7 @@ function scanVisibleText(opts) {
     rec.ratioBest = Math.round(best * 100) / 100;
     if (isSvgText && cs.stroke !== 'none' && parseFloat(cs.strokeWidth) > 0) { rec.status = rec.exempt ? 'esente' : 'da verificare'; rec.reason = 'testo SVG con alone (stroke)'; out.push(rec); continue; }
     if (rec.exempt) rec.status = 'esente';
-    else if (rec.known && worst < need) rec.status = 'eccezione nota';
+    else if (rec.known && worst < need) rec.status = 'non conformità nota';
     else if (worst >= need) rec.status = 'ok';
     else if (best < need) rec.status = 'insufficiente';
     else {
@@ -408,9 +469,10 @@ async function scanScenario(page, scenario, viewport) {
   const scrollers = ['main#main-content', null];
   const resolve = async () => {
     for (const s of await samplePixels(page)) {
-      await page.evaluate(({ i, p10, worstBg }) => {
+      await page.evaluate(({ i, p10, min, worstBg }) => {
         const r = window.__contrastOut[i];
         r.sampled = Math.round(p10 * 100) / 100;
+        r.sampledMin = Math.round(min * 100) / 100;
         r.bg = '#' + worstBg.map((v) => v.toString(16).padStart(2, '0')).join('') + ' (pixel reali)';
         r.ratio = r.sampled;
         r.status = r.exempt ? 'esente' : p10 >= r.need ? 'ok' : 'insufficiente';
@@ -421,6 +483,20 @@ async function scanScenario(page, scenario, viewport) {
   await page.evaluate(scanVisibleText, opts);
   await resolve();
   if (!scenario.focusOnly) {
+    // Contenitori interni scorrevoli e visibili (drawer, corpo delle schede, liste dei pannelli).
+    const inner = await page.evaluate(() => {
+      let n = 0;
+      for (const e of document.querySelectorAll('body *')) {
+        const cs = getComputedStyle(e);
+        if (!/(auto|scroll)/.test(cs.overflowY) || e.scrollHeight <= e.clientHeight + 2 || e.id === 'main-content') continue;
+        const r = e.getBoundingClientRect();
+        if (r.width < 40 || r.height < 40 || cs.visibility !== 'visible' || e.closest('[inert]')) continue;
+        e.setAttribute('data-contrast-scroller', String(n++));
+        if (n >= 12) break;
+      }
+      return n;
+    });
+    for (let k = 0; k < inner; k++) scrollers.push(`[data-contrast-scroller="${k}"]`);
     for (const sel of scrollers) {
       for (let i = 0; i < 40; i++) {
         const moved = await page.evaluate((s) => {
@@ -465,10 +541,16 @@ for (const scenario of SCENARIOS) {
       entry.executed = await scenario.run(page);
       if (entry.executed) {
         await page.waitForTimeout(300);
-        const recs = await scanScenario(page, scenario, vpName);
+        let recs = await scanScenario(page, scenario, vpName);
+        // Stati successivi dello stesso scenario (es. ogni tab di una scheda).
+        for (const st of scenario.states ? await scenario.states(page) : []) {
+          if (!(await st.act())) { entry.executed = false; entry.error = `stato "${st.label}" non raggiunto`; break; }
+          await page.waitForTimeout(250);
+          recs = recs.concat(await scanScenario(page, { ...scenario, name: `${scenario.name} › ${st.label}` }, vpName));
+        }
         report.records.push(...recs);
         const by = (s) => recs.filter((r) => r.status === s).length;
-        Object.assign(entry, { checked: recs.filter((r) => r.status !== 'coperto').length, ok: by('ok'), fail: by('insufficiente'), incomplete: by('da verificare'), exempt: by('esente'), known: by('eccezione nota') });
+        Object.assign(entry, { checked: recs.filter((r) => r.status !== 'coperto').length, ok: by('ok'), fail: by('insufficiente'), incomplete: by('da verificare'), exempt: by('esente'), known: by('non conformità nota') });
         const axe = await runAxe(page);
         entry.axeViolations = axe.violations;
         entry.axeIncomplete = axe.incomplete;
@@ -481,7 +563,7 @@ for (const scenario of SCENARIOS) {
     await ctx.close();
     const tag = !entry.executed ? `NON ESEGUITO (${entry.error})` : `${entry.checked} testi · ${entry.fail} insufficienti · ${entry.incomplete} da verificare · axe ${entry.axeViolations.map((v) => `${v.id}(${v.n})`).join(',') || 'ok'}`;
     const axeContrast = (entry.axeViolations ?? []).some((v) => v.id === 'color-contrast');
-    console.log(`${entry.executed && !entry.fail && !axeContrast ? '✓' : '✗'} ${scenario.name} @${vpName}: ${tag}${entry.known ? ` · ${entry.known} eccezioni note` : ''}`);
+    console.log(`${entry.executed && !entry.fail && !axeContrast ? '✓' : '✗'} ${scenario.name} @${vpName}: ${tag}${entry.known ? ` · ${entry.known} non conformità note` : ''}`);
   }
 }
 await browser.close();
@@ -501,8 +583,8 @@ console.log(`\n=== Contrasti insufficienti certi: ${fails.length} testi (${group
 for (const [k, g] of group(fails)) console.log(`- ${g.n}× ${k}\n    es. "${g.sample}" · ${[...g.scenarios].slice(0, 4).join(', ')}${g.scenarios.size > 4 ? '…' : ''}`);
 console.log(`\n=== Da verificare a mano (sfondo non determinabile): ${incomplete.length} testi ===`);
 for (const [k, g] of group(incomplete).slice(0, 15)) console.log(`- ${g.n}× ${k} · es. "${g.sample}"`);
-const known = report.records.filter((r) => r.status === 'eccezione nota');
-console.log(`\n=== Eccezioni note (documentate, non bloccanti): ${known.length} testi ===`);
+const known = report.records.filter((r) => r.status === 'non conformità nota');
+console.log(`\n=== Non conformità note (WCAG 1.4.3, decisione di design aperta, non bloccanti): ${known.length} testi ===`);
 for (const [k, g] of group(known)) console.log(`- ${g.n}× ${k} · es. "${g.sample}"`);
 const notRun = report.scenarios.filter((s) => !s.executed);
 const axeV = report.scenarios.flatMap((s) => (s.axeViolations ?? []).map((v) => `${v.id} in ${s.scenario}@${s.viewport}`));
@@ -512,9 +594,9 @@ for (const s of report.scenarios) for (const v of s.axeIncomplete ?? []) axeInco
 const checked = report.records.filter((r) => r.status !== 'coperto').length;
 console.log(`\n=== Riepilogo ===
 scenari: ${report.scenarios.length} · eseguiti ${report.scenarios.length - notRun.length} · NON eseguiti ${notRun.length}
-testi controllati: ${checked} · ok ${report.records.filter((r) => r.status === 'ok').length} · insufficienti ${fails.length} · da verificare ${incomplete.length} · esenti ${report.records.filter((r) => r.status === 'esente').length} · eccezioni note ${known.length}
+testi controllati: ${checked} · ok ${report.records.filter((r) => r.status === 'ok').length} · insufficienti ${fails.length} · da verificare ${incomplete.length} · esenti ${report.records.filter((r) => r.status === 'esente').length} · non conformità note ${known.length}
 axe: violazioni ${axeV.length} (color-contrast ${axeContrastV.length})${axeV.length ? ' → ' + [...new Set(axeV.map((v) => v.split(' in ')[0]))].map((id) => `${id}×${axeV.filter((v) => v.startsWith(id + ' ')).length}`).join(', ') : ''} · incomplete (axe non decide) ${JSON.stringify(axeIncomplete)}
 (le violazioni axe diverse dal contrasto sono riportate, non fanno fallire questo controllo: vedi \`npm run audit:a11y\`)`);
 for (const s of notRun) console.log(`  NON ESEGUITO: ${s.scenario}@${s.viewport} — ${s.error}`);
 if (process.env.CONTRAST_JSON) writeFileSync(process.env.CONTRAST_JSON, JSON.stringify(report, null, 1));
-process.exit(fails.length || axeContrastV.length || notRun.length ? 1 : 0);
+process.exit(fails.length || incomplete.length || axeContrastV.length || notRun.length ? 1 : 0);

@@ -70,7 +70,9 @@ export function FeaturedStrip({ title, hint, items }: FeaturedStripProps) {
               <div className="absolute inset-0 bg-gradient-to-t from-ink-950/95 via-ink-950/45 to-ink-950/0 pointer-events-none" />
               <div className="relative h-full flex flex-col justify-end p-3 text-ink-100">
                 {t.caption && (
-                  <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-chakra-300 mb-1 drop-shadow">
+                  // Pillola scura: la didascalia sta sopra l'immagine, dove il gradiente
+                  // è ancora leggero (UX-01).
+                  <p className="mb-1 self-start rounded bg-ink-950/75 px-1.5 py-0.5 font-mono text-[9px] uppercase tracking-[0.18em] text-chakra-300">
                     {t.caption}
                   </p>
                 )}
