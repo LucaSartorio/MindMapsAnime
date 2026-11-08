@@ -33,6 +33,19 @@ public/assets/worlds/blackclover/maps/blackclover-world-map.jpg
   con il percorso atteso; i pin restano comunque cliccabili sopra il
   placeholder.
 
+## File servito: WebP (PERF-02)
+
+Il sito serve `blackclover-world-map.webp`, non `blackclover-world-map.jpg`: è lo stesso
+disegno ricodificato in WebP q80 con **le stesse dimensioni in pixel** (nessun
+ridimensionamento né ritaglio), quindi viewBox e coordinate dei pin non cambiano.
+L'originale resta qui come sorgente. Per rigenerare o verificare il WebP:
+
+```
+python3 scripts/optimize-map-images.py           # scrive il .webp se manca (--force per riscriverlo)
+python3 scripts/optimize-map-images.py --check   # verifica dimensioni e peso, non scrive nulla
+```
+
+Se sostituisci l'originale, riesegui lo script con `--force`.
 ## Sotto-mappe (SVG originali)
 
 Le cinque sotto-mappe — Capitale Reale, fortezza del Regno di Spade, Regno di
