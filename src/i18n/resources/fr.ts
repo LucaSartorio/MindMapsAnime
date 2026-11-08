@@ -576,6 +576,7 @@ export const fr = {
       panZoom: 'Faites glisser un doigt pour vous déplacer ; pincez avec deux doigts ou utilisez les boutons +/− pour zoomer.',
       pin: 'Touchez un repère pour ouvrir la fiche du lieu.',
       submap: 'Dans la fiche d’un lieu doté d’une sous-carte, touchez « Zoomer sur le lieu » pour entrer dans le détail.',
+      filters: 'Touchez « Filtres » dans la barre du bas pour filtrer lieux, personnages, factions et événements.',
       search: 'Touchez l’icône de recherche en haut pour rechercher dans ce monde.',
     },
     cta: 'Commencer à explorer',

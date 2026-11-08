@@ -82,6 +82,7 @@ function MapNodeBase({ data }: NodeProps) {
           : d.highlighted && 'drop-shadow-[0_0_8px_rgba(255,131,17,0.7)]',
       )}
       data-dimmed={dimmed ? '' : undefined}
+      data-marked={d.marked ? '' : undefined}
       style={{ transform: `translate(${-dotRadius}px, -50%)` }}
     >
       <Handle

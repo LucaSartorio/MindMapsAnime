@@ -43,19 +43,22 @@ export function CookieConsent() {
   }, [bannerVisible]);
 
   // Il banner non è modale: chi prosegue con Tab non deve finire su elementi
-  // nascosti sotto di esso (WCAG 2.4.11). L'altezza del banner diventa
-  // `--cookie-banner-h`, usata come scroll-padding del contenuto (globals.css):
-  // il browser scorre l'elemento con il focus sopra il banner.
+  // nascosti sotto di esso (WCAG 2.4.11). La fascia che il banner occupa in fondo
+  // alla viewport (dal suo bordo superiore in giù) diventa `--cookie-banner-h`,
+  // riservata dall'AppShell come padding: pagina, footer e mappa restano sopra.
   useEffect(() => {
     const el = bannerRef.current;
     if (!bannerVisible || !el) return;
     const root = document.documentElement;
-    const apply = () => root.style.setProperty('--cookie-banner-h', `${Math.ceil(el.getBoundingClientRect().height)}px`);
+    const apply = () =>
+      root.style.setProperty('--cookie-banner-h', `${Math.max(0, Math.ceil(window.innerHeight - el.getBoundingClientRect().top))}px`);
     apply();
     const ro = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(apply) : null;
     ro?.observe(el);
+    window.addEventListener('resize', apply);
     return () => {
       ro?.disconnect();
+      window.removeEventListener('resize', apply);
       root.style.removeProperty('--cookie-banner-h');
     };
   }, [bannerVisible]);

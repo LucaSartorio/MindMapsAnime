@@ -576,6 +576,7 @@ export const es = {
       panZoom: 'Arrastra con un dedo para desplazarte; pellizca con dos dedos o usa los botones +/− para hacer zoom.',
       pin: 'Toca un marcador para abrir la ficha del lugar.',
       submap: 'En la ficha de un lugar con submapa, toca «Ampliar el lugar» para entrar en el detalle.',
+      filters: 'Toca «Filtros» en la barra inferior para filtrar lugares, personajes, facciones y eventos.',
       search: 'Toca el icono de búsqueda arriba para buscar dentro de este mundo.',
     },
     cta: 'Empezar a explorar',

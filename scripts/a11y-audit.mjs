@@ -10,7 +10,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 // o lo stato non viene raggiunto lo scenario è "fallito" (non verificato) e l'audit esce
 // con codice 1 — un menu rimasto chiuso non passa più per "pulito". Il report distingue:
 //   - violazioni axe (bloccanti);
-//   - controlli UX-02 propri (bloccanti): area cliccabile dei pin della mappa ≥ 24×24 px
+//   - controlli UX-02 propri (bloccanti): pin con nome accessibile, area cliccabile dei pin ≥ 24×24 px
 //     (WCAG 2.5.8; axe non valuta i pin perché non sono widget ARIA) e link del footer
 //     coperti da altri elementi quando non c'è un overlay aperto;
 //   - nodi "incomplete" (axe non decide; informativi: il contrasto lo verifica
@@ -187,9 +187,15 @@ function ownChecks() {
   if (smallPins.length)
     out.push({ id: 'ux02-pin-target-size', impact: 'serious', help: 'Area cliccabile del pin della mappa sotto 24×24 px (WCAG 2.5.8)', n: smallPins.length,
       sample: smallPins[0].e.textContent.trim().slice(0, 40), sampleHtml: `${Math.round(smallPins[0].r.width)}×${Math.round(smallPins[0].r.height)}` });
-  // 2) Link del footer coperti da altro (es. la bottom nav), senza overlay aperti.
-  // I drawer chiusi restano nel DOM come dialog `inert`: non contano come overlay.
-  const overlayOpen = [...document.querySelectorAll('[role="dialog"], [aria-labelledby="cookie-banner-title"], #mobile-world-nav')].some((e) => !e.closest('[inert]'));
+  // 2) Pin focusabili (role="group" di React Flow) senza nome accessibile.
+  const unnamed = [...document.querySelectorAll('.react-flow__node-map-node')].filter((n) => !(n.getAttribute('aria-label') || '').trim());
+  if (unnamed.length)
+    out.push({ id: 'ux02-pin-name', impact: 'serious', help: 'Pin della mappa focusabile senza nome accessibile', n: unnamed.length,
+      sample: unnamed[0].getAttribute('data-id') ?? '', sampleHtml: unnamed[0].outerHTML.slice(0, 120) });
+  // 3) Link del footer coperti da altro (es. la bottom nav), senza overlay aperti.
+  // I drawer chiusi restano nel DOM come dialog `inert`: non contano come overlay. Il
+  // banner cookie (dialog non modale) riserva il suo spazio: non giustifica link coperti.
+  const overlayOpen = [...document.querySelectorAll('[role="dialog"]:not([aria-labelledby="cookie-banner-title"]), #mobile-world-nav')].some((e) => !e.closest('[inert]'));
   if (!overlayOpen) {
     const covered = [...document.querySelectorAll('footer a, footer button')].filter((e) => {
       const r = e.getBoundingClientRect();
