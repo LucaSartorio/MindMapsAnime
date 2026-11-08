@@ -146,7 +146,7 @@ export function MapLegendFloating({ dataset }: MapLegendFloatingProps) {
           </ul>
         )}
 
-        <p className="border-t border-ink-700/40 pt-2 leading-relaxed text-ink-400">
+        <p className="border-t border-ink-700/40 pt-2 leading-relaxed text-ink-300">
           {t('map.legend.filterHint')}
         </p>
       </div>

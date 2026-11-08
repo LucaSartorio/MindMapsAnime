@@ -131,7 +131,7 @@ export function StoryModePanel({ dataset }: StoryModePanelProps) {
         <div className="flex-1 p-4 text-sm text-ink-300">{t('map.story.empty')}</div>
       ) : (
         <div className="flex-1 overflow-auto px-4 py-4" aria-live="polite">
-          <p className="font-mono text-[10px] uppercase tracking-widest text-ink-400">
+          <p className="font-mono text-[10px] uppercase tracking-widest text-ink-300">
             #{ev.order} · {getLocalizedText(ev.period, locale)}
           </p>
           <h3 className="mt-1 font-display text-lg leading-tight text-ink-100">
@@ -152,7 +152,7 @@ export function StoryModePanel({ dataset }: StoryModePanelProps) {
             </button>
           )}
           {!loc && (
-            <p className="mt-3 text-[11px] italic text-ink-400">{t('map.story.noLocation')}</p>
+            <p className="mt-3 text-[11px] italic text-ink-300">{t('map.story.noLocation')}</p>
           )}
 
           {chars.length > 0 && (
@@ -195,7 +195,7 @@ export function StoryModePanel({ dataset }: StoryModePanelProps) {
           />
         </div>
         <div className="flex items-center gap-1.5">
-          <span className="mr-auto tabular-nums text-[11px] text-ink-400">
+          <span className="mr-auto tabular-nums text-[11px] text-ink-300">
             {index + 1} / {events.length}
           </span>
           <button

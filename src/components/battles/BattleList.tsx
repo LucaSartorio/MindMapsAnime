@@ -57,13 +57,13 @@ export function BattleList({
             <span className="min-w-0">
               {renderEvent(b.event, getLocalizedText(b.event.title, locale))}
               {b.opponents.length > 0 && (
-                <span className="text-ink-400">
+                <span className="text-ink-300">
                   {' '}
                   · {t('battles.vs')} {names(b.opponents)}
                 </span>
               )}
               {b.allies.length > 0 && (
-                <span className="text-ink-500">
+                <span className="text-ink-300">
                   {' '}
                   · {t('battles.with')} {names(b.allies)}
                 </span>
@@ -106,7 +106,7 @@ export function BattleOutcomeLine({
       {b.winner !== undefined ? (
         <>
           {t('battles.wins')} {side(b.sides[b.winner])}
-          <span className="text-ink-400">
+          <span className="text-ink-300">
             {' '}
             ({t('battles.vs')} {side(b.sides.filter((_, i) => i !== b.winner).flat())})
           </span>
@@ -114,7 +114,7 @@ export function BattleOutcomeLine({
       ) : (
         <>
           {t(`battles.${b.result === 'interrupted' ? 'interrupted' : 'draw'}`)}
-          <span className="text-ink-400">
+          <span className="text-ink-300">
             {' '}
             ({b.sides.map((s, i) => (
               <span key={i}>
@@ -125,7 +125,7 @@ export function BattleOutcomeLine({
           </span>
         </>
       )}
-      {b.note && <span className="text-ink-400"> — {getLocalizedText(b.note, locale)}</span>}
+      {b.note && <span className="text-ink-300"> — {getLocalizedText(b.note, locale)}</span>}
     </p>
   );
 }

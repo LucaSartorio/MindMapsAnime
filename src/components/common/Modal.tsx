@@ -163,7 +163,10 @@ export function Modal({
       <div
         ref={dialogRef}
         className={cn(
-          'panel relative z-10 flex w-full flex-col shadow-2xl',
+          // Sfondo più coprente del `.panel` (70 %): la scheda ancorata sta sopra la
+          // mappa, e al 90 % il testo secondario (ink-300) resta ≥ 4,5:1 anche sopra
+          // le zone più chiare dell'immagine (UX-01).
+          'panel relative z-10 flex w-full flex-col bg-ink-900/90 shadow-2xl',
           docked
             ? cn(
                 'max-h-[92dvh] rounded-t-2xl animate-slideUp',

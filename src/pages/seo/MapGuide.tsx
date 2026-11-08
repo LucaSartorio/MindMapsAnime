@@ -73,7 +73,7 @@ export function MapGuide({ resolved, dataset }: { resolved: ResolvedPage; datase
       <div className="panel mt-2 w-[min(24rem,calc(100vw-1.5rem))] max-h-[min(70vh,40rem)] overflow-auto p-4 space-y-5 text-sm">
         <div className="space-y-1.5">
           <h2 className="font-display text-lg text-ink-100">{t('seoPages.mapGuideTitle', { world })}</h2>
-          <p className="text-ink-300">
+          <p className="text-ink-200">
             {t('seoPages.mapGuideLead', { places: places.length, maps: dataset.mapLevels.length })}
           </p>
         </div>
@@ -91,11 +91,11 @@ export function MapGuide({ resolved, dataset }: { resolved: ResolvedPage; datase
             <section key={level.id} aria-labelledby={`guide-${level.id}`} className="space-y-2">
               <h3 id={`guide-${level.id}`} className="font-display text-base text-ink-100">
                 {getLocalizedText(level.localizedName, locale) || level.name}
-                <span className="ml-2 text-xs font-sans text-ink-400">
+                <span className="ml-2 text-xs font-sans text-ink-200">
                   ({t('modals.locationCount', { count: byLevel.get(level.id)?.length ?? 0 })})
                 </span>
               </h3>
-              {description && <p className="text-xs leading-relaxed text-ink-300">{description}</p>}
+              {description && <p className="text-xs leading-relaxed text-ink-200">{description}</p>}
               {list.length > 0 && (
                 <ul className="flex flex-wrap gap-1.5">
                   {list.map((l) => (

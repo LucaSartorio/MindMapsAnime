@@ -213,7 +213,7 @@ export function BoundaryDetailsModal({
                   <p className="text-ink-100 text-xs">
                     {getLocalizedText(e.title, locale)}
                   </p>
-                  <p className="text-[10px] text-ink-400 mt-0.5">
+                  <p className="text-[10px] text-ink-300 mt-0.5">
                     #{e.order} · {getLocalizedText(e.period, locale)}
                   </p>
                 </button>

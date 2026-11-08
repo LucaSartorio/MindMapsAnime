@@ -71,7 +71,7 @@ export function FloatingPanel({
 
   if (!isOpen) {
     return (
-      <div className="panel pointer-events-auto inline-flex items-center px-3 py-1.5 transition hover:border-chakra-500/50">
+      <div className="panel pointer-events-auto inline-flex items-center bg-ink-900/90 px-3 py-1.5 transition hover:border-chakra-500/50">
         {toggle}
       </div>
     );
@@ -81,7 +81,9 @@ export function FloatingPanel({
     <section
       aria-label={title}
       className={cn(
-        'panel pointer-events-auto flex flex-col overflow-hidden',
+        // Sopra la mappa: sfondo al 90 % (il `.panel` è al 70 %), così titoli e testo
+        // restano ≥ 4,5:1 anche sulle zone più chiare dell'immagine (UX-01).
+        'panel pointer-events-auto flex flex-col overflow-hidden bg-ink-900/90',
         className,
       )}
     >

@@ -101,12 +101,12 @@ export function ActiveFilterBar({ dataset, variant }: ActiveFilterBarProps) {
           {t('filters.active')}
           {tokens.length > 0 && <span className="count-badge">{tokens.length}</span>}
         </span>
-        <span aria-live="polite" className="text-[11px] text-ink-400">
+        <span aria-live="polite" className="text-[11px] text-ink-300">
           {t('filters.resultsCount', { count })}
         </span>
       </div>
       {tokens.length === 0 ? (
-        <p className="text-xs text-ink-400">{t('filters.noneActive')}</p>
+        <p className="text-xs text-ink-300">{t('filters.noneActive')}</p>
       ) : (
         <>
           <ul className="flex flex-wrap gap-1.5">

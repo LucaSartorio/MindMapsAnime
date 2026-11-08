@@ -162,7 +162,7 @@ export function LanguageSwitcher() {
               >
                 <Flag as={o.Flag} />
                 <span className="flex-1">{o.label}</span>
-                <span className="font-mono text-[10px] tracking-widest text-ink-400">
+                <span className="font-mono text-[10px] tracking-widest text-ink-300">
                   {o.short}
                 </span>
               </button>

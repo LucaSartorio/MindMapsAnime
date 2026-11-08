@@ -188,7 +188,7 @@ export function EntityPage({
               <Link to={eventPath(lang, dataset, ev.id)!} className="font-medium text-ink-100 hover:text-chakra-300 hover:underline">
                 {text(ev.title)}
               </Link>
-              <span className="block text-xs text-ink-400 mt-0.5">
+              <span className="block text-xs text-ink-300 mt-0.5">
                 {text(ev.period)}
                 {/* Dove accade (se non è la pagina stessa del luogo). */}
                 {ev.locationId && !(category === 'locations' && ev.locationId === id) && named('locations', ev.locationId) && (
@@ -236,7 +236,7 @@ export function EntityPage({
             <dl className="space-y-3">
               {[...byKind].map(([kind, refs]) => (
                 <div key={kind} className="space-y-1.5">
-                  <dt className="text-xs uppercase tracking-wide text-ink-400">{t(`modals.relations.${kind}`)}</dt>
+                  <dt className="text-xs uppercase tracking-wide text-ink-300">{t(`modals.relations.${kind}`)}</dt>
                   <dd>
                     <RefLinks dataset={dataset} lang={lang} refs={refs} limit={REL_LIMIT} />
                   </dd>
@@ -296,7 +296,7 @@ export function EntityPage({
               {[...c.transformations].sort((a, b) => a.order - b.order).map((tr) => (
                 <li key={tr.id} className="text-ink-200">
                   <span className="font-medium text-ink-100">{getEntityDisplayName(tr, locale)}</span>
-                  {tr.kind && <span className="text-ink-400"> · {getTransformationKindLabel(tr.kind, locale)}</span>}
+                  {tr.kind && <span className="text-ink-300"> · {getTransformationKindLabel(tr.kind, locale)}</span>}
                   {tr.description && <span className="block text-ink-300 pl-5">{text(tr.description)}</span>}
                 </li>
               ))}
@@ -311,7 +311,7 @@ export function EntityPage({
               {c.bounties.map((b, i) => (
                 <li key={i}>
                   ฿ {b.amount}
-                  {b.note && <span className="text-ink-400"> — {text(b.note)}</span>}
+                  {b.note && <span className="text-ink-300"> — {text(b.note)}</span>}
                 </li>
               ))}
             </ol>
@@ -491,7 +491,7 @@ export function EntityPage({
                         <Link to={link('locations', loc.id)!} className="text-chakra-300 hover:underline">
                           {getEntityDisplayName(loc, locale)}
                         </Link>
-                        {s.approximateTimeLabel && <span className="text-ink-400"> · {text(s.approximateTimeLabel)}</span>}
+                        {s.approximateTimeLabel && <span className="text-ink-300"> · {text(s.approximateTimeLabel)}</span>}
                       </p>
                     )}
                     {s.description && <p className="text-ink-300 leading-relaxed">{text(s.description)}</p>}

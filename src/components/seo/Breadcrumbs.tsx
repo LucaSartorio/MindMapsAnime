@@ -35,7 +35,7 @@ export function Breadcrumbs({ resolved, className }: BreadcrumbsProps) {
   if (crumbs.length < 2) return null;
   return (
     <nav aria-label={t('seoPages.breadcrumbAria')} className={className}>
-      <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-xs text-ink-400">
+      <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-xs text-ink-300">
         {crumbs.map((c, i) => {
           const last = i === crumbs.length - 1;
           return (

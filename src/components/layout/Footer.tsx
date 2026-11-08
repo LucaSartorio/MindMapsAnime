@@ -59,7 +59,7 @@ export function Footer() {
   return (
     <footer className="shrink-0 border-t border-ink-700/60 bg-ink-950/80 backdrop-blur-md">
       <div className="mx-auto max-w-6xl px-4 py-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 sm:justify-between">
-        <p className="order-2 text-xs text-ink-400 sm:order-1">
+        <p className="order-2 text-xs text-ink-300 sm:order-1">
           © {CURRENT_YEAR} {OWNER}. {t('footer.rights')}
         </p>
 
@@ -93,7 +93,7 @@ export function Footer() {
                     role="img"
                     aria-label={`${label} — ${t('footer.socialSoon')}`}
                     title={`${label} — ${t('footer.socialSoon')}`}
-                    className="inline-flex text-ink-500/70"
+                    className="inline-flex text-ink-400"
                   >
                     <Icon className="h-4 w-4" />
                   </span>
@@ -104,7 +104,7 @@ export function Footer() {
 
           <nav
             aria-label={t('footer.legalNav')}
-            className="flex items-center gap-2 text-[11px] text-ink-400"
+            className="flex items-center gap-2 text-[11px] text-ink-300"
           >
             <Link to={staticPagePath(lang, 'about')} className="hover:text-chakra-300 hover:underline">
               {t('nav.about')}

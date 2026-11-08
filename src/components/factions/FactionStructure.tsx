@@ -19,7 +19,7 @@ function Member({
   return (
     <>
       {c ? renderName(c.id, label || getEntityDisplayName(c, locale)) : <span className="text-ink-100">{label}</span>}
-      {member.role && <span className="text-ink-400"> · {getLocalizedText(member.role, locale)}</span>}
+      {member.role && <span className="text-ink-300"> · {getLocalizedText(member.role, locale)}</span>}
     </>
   );
 }
@@ -50,7 +50,7 @@ export function FactionGroups({
               </li>
             ))}
           </ul>
-          {g.note && <p className="mt-1 text-xs text-ink-400">{getLocalizedText(g.note, locale)}</p>}
+          {g.note && <p className="mt-1 text-xs text-ink-300">{getLocalizedText(g.note, locale)}</p>}
         </li>
       ))}
     </ul>
@@ -73,7 +73,7 @@ export function FactionSuccessions({
     <div className="space-y-3">
       {faction.succession.map((sc, si) => (
         <div key={si}>
-          <p className="text-[11px] font-semibold uppercase tracking-wide text-ink-400">
+          <p className="text-[11px] font-semibold uppercase tracking-wide text-ink-300">
             {getLocalizedText(sc.title, locale)}
           </p>
           <ol className="mt-1 flex flex-wrap items-center gap-1 text-sm text-ink-200">
@@ -85,7 +85,7 @@ export function FactionSuccessions({
                   </span>
                 )}
                 <span className="rounded-md border border-ink-700/60 bg-ink-900/70 px-2 py-0.5">
-                  <span className="mr-1 font-mono text-[11px] text-ink-500">{hi + 1}.</span>
+                  <span className="mr-1 font-mono text-[11px] text-ink-300">{hi + 1}.</span>
                   <Member dataset={dataset} member={h} renderName={renderName} />
                 </span>
               </li>

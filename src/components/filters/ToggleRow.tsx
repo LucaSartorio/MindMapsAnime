@@ -54,7 +54,7 @@ export function ToggleRow({
       <span className="min-w-0 flex-1">
         <span className="block text-sm text-ink-100">{label}</span>
         {description && (
-          <span className="block text-[11px] leading-snug text-ink-400">
+          <span className="block text-[11px] leading-snug text-ink-300">
             {description}
           </span>
         )}

@@ -203,7 +203,7 @@ export function RouteDetailsModal({
                     </span>
                   )}
                   {s.notes && (
-                    <p className="text-[11px] text-ink-400">
+                    <p className="text-[11px] text-ink-300">
                       {getLocalizedText(s.notes, locale)}
                     </p>
                   )}

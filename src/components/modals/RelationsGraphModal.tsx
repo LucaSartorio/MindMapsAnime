@@ -184,7 +184,7 @@ export function RelationsGraphModal({ dataset, characterId }: RelationsGraphModa
         </>
       }
     >
-      <p className="-mt-1 text-xs text-ink-400">{t('modals.relations.subtitle')}</p>
+      <p className="-mt-1 text-xs text-ink-300">{t('modals.relations.subtitle')}</p>
 
       {/* Grafo: rappresentazione visiva. Non focusabile / aria-hidden: l'accesso
           da tastiera passa dall'elenco sotto. */}
@@ -219,7 +219,7 @@ export function RelationsGraphModal({ dataset, characterId }: RelationsGraphModa
       {/* Elenco accessibile: percorso tastiera/screen reader. */}
       <section aria-label={t('modals.relations.list')}>
         {connections.length === 0 ? (
-          <p className="text-sm text-ink-400">{t('modals.relations.empty')}</p>
+          <p className="text-sm text-ink-300">{t('modals.relations.empty')}</p>
         ) : (
           <ul className="flex flex-wrap gap-1.5">
             {connections.map((c) => (
@@ -237,7 +237,7 @@ export function RelationsGraphModal({ dataset, characterId }: RelationsGraphModa
                   <span className="font-medium">
                     {getEntityDisplayName(c.char, locale) || c.char.name}
                   </span>
-                  <span className="text-ink-400">· {c.label}</span>
+                  <span className="text-ink-300">· {c.label}</span>
                 </button>
               </li>
             ))}

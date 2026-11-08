@@ -62,7 +62,7 @@ export function SearchResults({
             {showRelatedHeader && (
               <div
                 role="presentation"
-                className="bg-ink-900/50 px-3 py-1.5 text-[10px] font-display uppercase tracking-widest text-ink-400"
+                className="bg-ink-900/50 px-3 py-1.5 text-[10px] font-display uppercase tracking-widest text-ink-300"
               >
                 {t('search.relatedTo', { title: r.relatedTo })}
               </div>
@@ -82,7 +82,7 @@ export function SearchResults({
               <span className="flex min-w-0 flex-col">
                 <span className="truncate text-sm text-ink-100">{r.title}</span>
                 {r.subtitle && (
-                  <span className="truncate text-xs text-ink-400">{r.subtitle}</span>
+                  <span className="truncate text-xs text-ink-300">{r.subtitle}</span>
                 )}
               </span>
               <span className="chip text-[10px] uppercase tracking-widest">

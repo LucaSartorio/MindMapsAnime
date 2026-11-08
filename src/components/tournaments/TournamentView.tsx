@@ -75,7 +75,7 @@ export function TournamentView({
         </p>
       )}
       {(tournament.mangaChapters?.length || tournament.animeEpisodes?.length) && (
-        <p className="text-xs text-ink-400">
+        <p className="text-xs text-ink-300">
           {tournament.mangaChapters?.length ? <>Manga: {tournament.mangaChapters.join(', ')}</> : null}
           {tournament.mangaChapters?.length && tournament.animeEpisodes?.length ? ' · ' : null}
           {tournament.animeEpisodes?.length ? <>Anime: {tournament.animeEpisodes.join(', ')}</> : null}
@@ -97,7 +97,7 @@ export function TournamentView({
       <div className="space-y-2">
         {tournament.rounds.map((round, ri) => (
           <section key={ri} aria-label={getLocalizedText(round.name, locale)}>
-            <h4 className="text-[11px] font-semibold uppercase tracking-wide text-ink-400">
+            <h4 className="text-[11px] font-semibold uppercase tracking-wide text-ink-300">
               {getLocalizedText(round.name, locale)}
             </h4>
             <ol className="mt-1 space-y-1 text-sm text-ink-200">
@@ -111,7 +111,7 @@ export function TournamentView({
                     noWinner={t('tournaments.noWinner')}
                   />
                   {m.note && (
-                    <span className="text-ink-400"> — {getLocalizedText(m.note, locale)}</span>
+                    <span className="text-ink-300"> — {getLocalizedText(m.note, locale)}</span>
                   )}
                 </li>
               ))}
@@ -140,11 +140,11 @@ function MatchLine({
     <>
       {match.sides.map((side, i) => (
         <span key={i}>
-          {i > 0 && <span className="text-ink-500"> {vs} </span>}
+          {i > 0 && <span className="text-ink-300"> {vs} </span>}
           <span className={match.winner === i ? 'font-semibold text-ember-200' : undefined}>{sideNode(side)}</span>
         </span>
       ))}
-      <span className="text-ink-400">
+      <span className="text-ink-300">
         {' · '}
         {match.winner !== undefined ? (
           <>

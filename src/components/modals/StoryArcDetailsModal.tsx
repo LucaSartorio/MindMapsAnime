@@ -182,7 +182,7 @@ export function StoryArcDetailsModal({
                   <span className="text-ink-100 text-sm flex-1 truncate">
                     {getLocalizedText(e.title, locale)}
                   </span>
-                  <span className="text-[11px] text-ink-400">
+                  <span className="text-[11px] text-ink-300">
                     {getLocalizedText(e.period, locale)}
                   </span>
                 </button>

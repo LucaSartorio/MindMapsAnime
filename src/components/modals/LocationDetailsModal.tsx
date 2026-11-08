@@ -140,7 +140,7 @@ export function LocationDetailsModal({
   const overviewTab = (
     <>
       {location.nameLocal && (
-        <p className="-mt-1 text-xs italic text-ink-300">{getLocalizedText(location.nameLocal, locale)}</p>
+        <p className="-mt-1 text-xs italic text-ink-200">{getLocalizedText(location.nameLocal, locale)}</p>
       )}
       <p className="leading-relaxed">
         {getLocalizedText(location.shortDescription, locale)}
@@ -256,7 +256,7 @@ export function LocationDetailsModal({
             className="panel-soft w-full p-3 text-left transition hover:border-chakra-500/60"
           >
             <p className="text-sm text-ink-100">{getLocalizedText(e.title, locale)}</p>
-            <p className="mt-0.5 text-[11px] text-ink-400">
+            <p className="mt-0.5 text-[11px] text-ink-300">
               #{e.order} · {getLocalizedText(e.period, locale)}
             </p>
           </button>
@@ -371,7 +371,7 @@ export function LocationDetailsModal({
           });
         })()}
       </div>
-      <p className="mt-1.5 text-[10px] text-ink-400">{t('modals.galleryNote')}</p>
+      <p className="mt-1.5 text-[10px] text-ink-300">{t('modals.galleryNote')}</p>
     </>
   );
 
@@ -567,7 +567,7 @@ function TournamentsTab({
     <div className="space-y-3">
       {tournaments.length > 1 && (
         <label className="block text-xs text-ink-300">
-          <span className="mb-1 block font-semibold uppercase tracking-wide text-ink-400">
+          <span className="mb-1 block font-semibold uppercase tracking-wide text-ink-300">
             {t('tournaments.select')}
           </span>
           <select

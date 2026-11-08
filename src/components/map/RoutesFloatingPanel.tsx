@@ -118,7 +118,7 @@ export function RoutesFloatingPanel({ dataset }: RoutesFloatingPanelProps) {
                             {t('map.routesPanel.active')}
                           </span>
                         )}
-                        <span className="shrink-0 text-[10px] text-ink-400">
+                        <span className="shrink-0 text-[10px] text-ink-300">
                           {r.steps.length}
                           <span className="sr-only"> {t('map.routesPanel.stepsLabel')}</span>
                         </span>

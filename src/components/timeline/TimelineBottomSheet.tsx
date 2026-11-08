@@ -123,14 +123,14 @@ export function TimelineBottomSheet({ dataset }: TimelineBottomSheetProps) {
     return (
       <section
         aria-label={t('map.timeline.nowPlaying')}
-        className="panel pointer-events-auto flex w-full items-center gap-2 px-3 py-2 shadow-panel animate-fadeIn"
+        className="panel pointer-events-auto flex w-full items-center gap-2 bg-ink-900/90 px-3 py-2 shadow-panel animate-fadeIn"
       >
         <span aria-hidden className="shrink-0 text-chakra-300">
           ⌛
         </span>
         <div className="min-w-0 flex-1">
           <p className="truncate text-xs text-ink-100" aria-live="polite">
-            <span className="font-mono text-[11px] tabular-nums text-ink-500">
+            <span className="font-mono text-[11px] tabular-nums text-ink-300">
               {index + 1}/{events.length}
             </span>{' '}
             · {currentName}
@@ -177,7 +177,7 @@ export function TimelineBottomSheet({ dataset }: TimelineBottomSheetProps) {
   return (
     <section
       aria-label={t('map.timeline.title')}
-      className="panel pointer-events-auto flex w-full flex-col overflow-hidden"
+      className="panel pointer-events-auto flex w-full flex-col overflow-hidden bg-ink-900/90"
     >
       <header>
         <button
@@ -194,7 +194,7 @@ export function TimelineBottomSheet({ dataset }: TimelineBottomSheetProps) {
             <span className="font-display text-[11px] uppercase tracking-widest text-chakra-300">
               {t('map.timeline.title')}
             </span>
-            <span className="shrink-0 text-[10px] text-ink-400">
+            <span className="shrink-0 text-[10px] text-ink-200">
               {t('map.timeline.events', { count: events.length })}
             </span>
             {route && (

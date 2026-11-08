@@ -61,7 +61,7 @@ export function FilterSection({
         </button>
       </h3>
       <div id={regionId} hidden={!open} className="mt-2">
-        {hint && <p className="mb-2 text-[11px] leading-relaxed text-ink-400">{hint}</p>}
+        {hint && <p className="mb-2 text-[11px] leading-relaxed text-ink-300">{hint}</p>}
         {children}
       </div>
     </section>

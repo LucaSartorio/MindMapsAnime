@@ -51,7 +51,7 @@ function StoryArcCardComponent({
         onOpen={() => onSelect(arc.id)}
         className="text-left w-full flex flex-col gap-3"
       >
-        <div className="flex items-center justify-between text-[10px] uppercase tracking-widest text-ink-400 font-mono">
+        <div className="flex items-center justify-between text-[10px] uppercase tracking-widest text-ink-300 font-mono">
           <span>#{arc.order}</span>
           {saga && <span>{saga}</span>}
         </div>
@@ -59,7 +59,7 @@ function StoryArcCardComponent({
         <p className="text-sm text-ink-300 leading-relaxed line-clamp-3">
           {getLocalizedText(arc.description, locale)}
         </p>
-        {media.length > 0 && <p className="text-xs text-ink-400">{media.join(' · ')}</p>}
+        {media.length > 0 && <p className="text-xs text-ink-300">{media.join(' · ')}</p>}
         <div className="flex flex-wrap items-center gap-1.5 mt-1">
           <CanonPill canon={arc.canon} />
           {arc.referenceStatus && (

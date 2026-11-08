@@ -102,13 +102,13 @@ export function RouteStepper({
         <span className="font-mono text-[10px] uppercase tracking-widest text-chakra-300">
           {t('modals.stepperTitle')}
         </span>
-        <span className="tabular-nums text-[11px] text-ink-400">
+        <span className="tabular-nums text-[11px] text-ink-300">
           {index + 1} / {steps.length}
         </span>
       </div>
 
       <p className="truncate text-sm text-ink-100">
-        <span className="mr-1.5 font-mono text-[11px] text-ink-500">#{current.order}</span>
+        <span className="mr-1.5 font-mono text-[11px] text-ink-300">#{current.order}</span>
         {currentName}
       </p>
 

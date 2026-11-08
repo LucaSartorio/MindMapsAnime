@@ -122,9 +122,9 @@ export function WorldLandingPage({ resolved, dataset }: { resolved: ResolvedPage
                   ) : (
                     <span className="text-ink-100">{name}</span>
                   )}
-                  <span className="text-ink-400"> · {t('modals.locationCount', { count: placesPerLevel(level.id) })}</span>
+                  <span className="text-ink-300"> · {t('modals.locationCount', { count: placesPerLevel(level.id) })}</span>
                   {trigger && !sameName && (
-                    <span className="text-ink-400">
+                    <span className="text-ink-300">
                       {' · '}
                       {t('seoPages.mapsOpensFrom')}{' '}
                       <Link to={href('locations', trigger.id)} className="text-ink-200 hover:text-chakra-300 hover:underline">

@@ -145,7 +145,7 @@ export function WorldCard({ world, eager }: WorldCardProps) {
               {t('worldCard.inArrivo')}
             </span>
           )}
-          <span className="text-[10px] uppercase tracking-widest font-mono text-ink-400">
+          <span className="text-[10px] uppercase tracking-widest font-mono text-ink-300">
             /{getWorldUrlSlug(world)}
           </span>
         </div>

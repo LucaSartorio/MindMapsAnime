@@ -49,7 +49,7 @@ export function FeaturedStrip({ title, hint, items }: FeaturedStripProps) {
         >
           {title}
         </h2>
-        {hint && <p className="text-xs text-ink-400">{hint}</p>}
+        {hint && <p className="text-xs text-ink-300">{hint}</p>}
       </header>
       <ul className="grid gap-3 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
         {items.map((t) => (
@@ -78,7 +78,7 @@ export function FeaturedStrip({ title, hint, items }: FeaturedStripProps) {
                   {t.title}
                 </h3>
                 {t.subtitle && (
-                  <p className="text-[11px] text-ink-300 mt-0.5 line-clamp-1 drop-shadow">
+                  <p className="text-[11px] text-ink-200 mt-0.5 line-clamp-1 drop-shadow">
                     {t.subtitle}
                   </p>
                 )}

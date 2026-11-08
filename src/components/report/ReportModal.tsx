@@ -34,7 +34,7 @@ const ACCESS_KEY =
   'fcb04440-4ad1-4d79-a153-e0148cb1d5bb';
 
 const inputClass =
-  'w-full panel-soft px-3 py-2 text-sm text-ink-100 placeholder-ink-400 focus:border-chakra-500';
+  'w-full panel-soft px-3 py-2 text-sm text-ink-100 placeholder-ink-300 focus:border-chakra-500';
 const labelClass = 'block text-xs font-medium text-ink-200 mb-1';
 
 /**
