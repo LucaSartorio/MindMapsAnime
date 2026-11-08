@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import {
   Background,
   BackgroundVariant,
@@ -7,10 +7,12 @@ import {
   ReactFlowProvider,
   useReactFlow,
   useViewport,
+  getViewportForBounds,
   type Edge,
   type EdgeTypes,
   type Node,
   type NodeTypes,
+  type Viewport,
 } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import type { Location, Route, WorldDataset } from '@/types';
@@ -34,6 +36,12 @@ import { WorldMapBackground } from './WorldMapBackground';
 import { MapBoundaryOverlay } from './MapBoundaryOverlay';
 import { MapLabelsLayer } from './MapLabelsLayer';
 import { markedPlaceIds } from '@/lib/mapMarkers';
+import {
+  MAP_BACKGROUND_NODE_ID,
+  MAP_FIT_PADDING,
+  MAP_MAX_ZOOM,
+  MAP_MIN_ZOOM,
+} from '@/lib/mapViewport';
 
 const NODE_TYPES: NodeTypes = {
   'map-node': MapNode,
@@ -46,7 +54,17 @@ interface InteractiveWorldMapProps {
   dataset: WorldDataset;
 }
 
-const FIT_VIEW_OPTIONS = { padding: 0.18, duration: 600 } as const;
+/**
+ * Inquadratura = il PIANO della mappa (nodo di sfondo), non l'ingombro di tutti i
+ * nodi: i wrapper dei pin, contro-scalati, hanno un layout box molto più grande del
+ * pin visibile e spostavano l'inquadratura. Stessa geometria della vista iniziale
+ * (`initialViewport`) e dell'anteprima statica (`src/lib/mapViewport.ts`).
+ */
+const FIT_VIEW_OPTIONS = {
+  padding: MAP_FIT_PADDING,
+  duration: 600,
+  nodes: [{ id: MAP_BACKGROUND_NODE_ID }],
+};
 
 /**
  * Oltre questo zoom il clustering si scioglie del tutto: a zoom (quasi) massimo
@@ -156,9 +174,13 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
   const layerNodes = useMemo<Node<MapLayerNodeData>[]>(() => {
     return [
       {
-        id: '__layer-background',
+        id: MAP_BACKGROUND_NODE_ID,
         type: 'map-layer',
         position: { x: 0, y: 0 },
+        // Dimensioni note in anticipo: il livello è visibile già nel primo
+        // fotogramma (React Flow nasconde i nodi finché non li ha misurati).
+        initialWidth: activeLevel.width,
+        initialHeight: activeLevel.height,
         data: {
           width: activeLevel.width,
           height: activeLevel.height,
@@ -183,6 +205,8 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
         id: '__layer-boundaries',
         type: 'map-layer',
         position: { x: 0, y: 0 },
+        initialWidth: activeLevel.width,
+        initialHeight: activeLevel.height,
         data: {
           width: activeLevel.width,
           height: activeLevel.height,
@@ -200,6 +224,8 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
         id: '__layer-labels',
         type: 'map-layer',
         position: { x: 0, y: 0 },
+        initialWidth: activeLevel.width,
+        initialHeight: activeLevel.height,
         data: {
           width: activeLevel.width,
           height: activeLevel.height,
@@ -285,6 +311,8 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
       id: '__layer-relations',
       type: 'map-layer',
       position: { x: 0, y: 0 },
+      initialWidth: activeLevel.width,
+      initialHeight: activeLevel.height,
       data: {
         width: activeLevel.width,
         height: activeLevel.height,
@@ -455,43 +483,71 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
     setHoveredBoundary(null);
   }
 
+  // Vista iniziale già inquadrata (PERF-03): senza, React Flow dipingeva il primo
+  // fotogramma a `scale(1)` — un ritaglio della mappa a grandezza piena — e solo
+  // dopo la misura dei nodi faceva il fitView animato. La dimensione del contenitore
+  // si legge prima del primo paint (layout effect → re-render sincrono), poi si usa
+  // la stessa funzione del fitView di React Flow. Piano arrotondato al pixel come la
+  // misura DOM del nodo di sfondo (es. 882.2204 → 882): così il fitView successivo
+  // ritrova la stessa vista e non anima uno spostamento sub-pixel.
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [initialViewport, setInitialViewport] = useState<Viewport | null>(null);
+  useLayoutEffect(() => {
+    const el = containerRef.current;
+    if (!el || initialViewport) return;
+    setInitialViewport(
+      getViewportForBounds(
+        { x: 0, y: 0, width: Math.round(activeLevel.width), height: Math.round(activeLevel.height) },
+        el.clientWidth,
+        el.clientHeight,
+        MAP_MIN_ZOOM,
+        MAP_MAX_ZOOM,
+        MAP_FIT_PADDING,
+      ),
+    );
+  }, [initialViewport, activeLevel.width, activeLevel.height]);
+
   return (
-    <div className="relative h-full w-full">
-      <ReactFlow
-        nodes={nodes}
-        edges={edges}
-        nodeTypes={NODE_TYPES}
-        edgeTypes={EDGE_TYPES}
-        onNodeClick={handleNodeClick}
-        onNodeDoubleClick={handleNodeDoubleClick}
-        onPaneClick={handlePaneClick}
-        onNodeMouseEnter={handleNodeMouseEnter}
-        onNodeMouseLeave={handleNodeMouseLeave}
-        fitView
-        fitViewOptions={FIT_VIEW_OPTIONS}
-        minZoom={0.2}
-        maxZoom={3}
-        defaultEdgeOptions={{ type: 'map-edge' }}
-        proOptions={{ hideAttribution: true }}
-        nodesDraggable={false}
-        elementsSelectable
-        zoomOnScroll
-        zoomOnPinch
-        panOnDrag
-      >
-        <Background
-          variant={BackgroundVariant.Dots}
-          gap={32}
-          size={1}
-          color="rgba(255,255,255,0.04)"
-        />
-        <Controls
-          showInteractive={false}
-          position="top-left"
-          className="!shadow-none"
-          style={{ marginTop: 56 }}
-        />
-      </ReactFlow>
+    <div ref={containerRef} className="relative h-full w-full">
+      {initialViewport && (
+        <ReactFlow
+          nodes={nodes}
+          edges={edges}
+          nodeTypes={NODE_TYPES}
+          edgeTypes={EDGE_TYPES}
+          onNodeClick={handleNodeClick}
+          onNodeDoubleClick={handleNodeDoubleClick}
+          onPaneClick={handlePaneClick}
+          onNodeMouseEnter={handleNodeMouseEnter}
+          onNodeMouseLeave={handleNodeMouseLeave}
+          defaultViewport={initialViewport}
+          fitView
+          fitViewOptions={FIT_VIEW_OPTIONS}
+          minZoom={MAP_MIN_ZOOM}
+          maxZoom={MAP_MAX_ZOOM}
+          defaultEdgeOptions={{ type: 'map-edge' }}
+          proOptions={{ hideAttribution: true }}
+          nodesDraggable={false}
+          elementsSelectable
+          zoomOnScroll
+          zoomOnPinch
+          panOnDrag
+        >
+          <Background
+            variant={BackgroundVariant.Dots}
+            gap={32}
+            size={1}
+            color="rgba(255,255,255,0.04)"
+          />
+          <Controls
+            showInteractive={false}
+            fitViewOptions={FIT_VIEW_OPTIONS}
+            position="top-left"
+            className="!shadow-none"
+            style={{ marginTop: 56 }}
+          />
+        </ReactFlow>
+      )}
     </div>
   );
 }

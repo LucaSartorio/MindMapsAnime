@@ -40,8 +40,13 @@ const WORLD_PAGE_CHUNKS = [CharactersPage, ClansAndFactionsPage, StoryArcsPage, 
 
 /**
  * Precarica chunk + dataset della rotta `pathname` (primo render client).
- * Non precarica la mappa interattiva: sulla rotta /map il primo render mostra
- * l'anteprima statica pre-renderizzata e React Flow arriva subito dopo.
+ *
+ * Sulla rotta /map il primo render mostra l'anteprima statica pre-renderizzata
+ * e la mappa interattiva (React Flow) arriva dopo l'idratazione. Il suo chunk
+ * parte ADESSO, in parallelo al resto e senza essere atteso (PERF-03): prima
+ * veniva richiesto solo dopo l'idratazione, in cascata. Non è nell'HTML come
+ * `modulepreload`: misurato, scaricarlo così presto rubava banda al JS
+ * dell'idratazione e all'immagine della mappa senza montare la mappa prima.
  */
 export async function preloadRoute(pathname: string, locale?: SupportedLocale): Promise<void> {
   const parsed = parseSeoPath(pathname);
@@ -59,6 +64,9 @@ export async function preloadRoute(pathname: string, locale?: SupportedLocale): 
     // Overlay di traduzione della lingua del primo render (es): il primo render
     // client deve già mostrare i testi tradotti dell'HTML statico.
     if (locale) tasks.push(ensureWorldTranslation(world.slug, locale));
+    if (parsed.kind === 'map') {
+      void InteractiveMapView.preload().catch(() => undefined);
+    }
     if (parsed.kind === 'category') {
       const archive: Record<string, { preload: () => Promise<void> }> = {
         characters: CharactersPage,
