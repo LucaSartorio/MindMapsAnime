@@ -467,7 +467,14 @@ state; it fails on any certain or undetermined failure. Palette rules: informati
 lighter (`ink-400`/`ink-500` only for icons next to a label, `aria-hidden` glyphs and `aria-disabled`
 items); `ink-300` is not AA on `ink-600` or lighter surfaces; panels drawn over the map (docked `Modal`,
 `FloatingPanel`, timeline, active-filter bar) use `bg-ink-900/90`, not the 70 % `.panel`; white text on
-`chakra-600`/`ember-600` or darker. Known open non-conformance: focus-mode dimmed pins (40 % opacity).
+`chakra-600`/`ember-600` or darker. Focus-mode dimmed pins dim only the dot + type icon (`.map-pin[data-dimmed]` in
+globals.css); the label text stays AA and the scanner has no exception for them.
+
+**Mobile & targets (UX-02)** — `npm run audit:a11y` scenarios each declare the state they must reach (`expect`) and
+fail if it isn't reached (no swallowed errors); besides axe it checks map-pin hit areas ≥ 24×24 (axe skips pins) and
+footer links covered by other UI. The onboarding auto-opens only after the cookie choice and uses touch wording on
+`(pointer: coarse)`; on the mobile `/map` the footer is hidden (`max-md:hidden`, the bottom tool nav covered it) and
+its links live in the header ☰ menu. `npm run smoke` asserts all of this.
 
 ### State (Zustand, `src/store/`)
 - `useWorldStore` — active world + dataset.

@@ -266,6 +266,31 @@ body {
 .react-flow__node-map-cluster {
   pointer-events: none !important;
 }
+/* Focus mode (UX-02): i pin non collegati restano leggibili. Si attenuano solo
+   pallino e icona di tipo; l'etichetta passa a un fondo più scuro con testo
+   ink-200 (≥ 4.5:1 anche sopra le zone chiare della mappa). Hover e focus da
+   tastiera sul nodo React Flow ripristinano l'enfasi piena. */
+.map-pin[data-dimmed] .map-pin-dot,
+.map-pin[data-dimmed] .map-pin-icon {
+  opacity: 0.4;
+}
+.map-pin[data-dimmed] .map-pin-label {
+  background-color: rgb(7 7 9 / 0.88);
+  border-color: rgb(38 42 54 / 0.35);
+  color: #b6bbcb;
+}
+.map-pin[data-dimmed]:hover .map-pin-dot,
+.map-pin[data-dimmed]:hover .map-pin-icon,
+.react-flow__node:focus-visible .map-pin[data-dimmed] .map-pin-dot,
+.react-flow__node:focus-visible .map-pin[data-dimmed] .map-pin-icon {
+  opacity: 1;
+}
+.map-pin[data-dimmed]:hover .map-pin-label,
+.react-flow__node:focus-visible .map-pin[data-dimmed] .map-pin-label {
+  background-color: rgb(12 13 17 / 0.8);
+  border-color: rgb(38 42 54 / 0.6);
+  color: #e4e7f0;
+}
 .react-flow__minimap {
   background: rgba(12, 13, 17, 0.85) !important;
   border: 1px solid rgba(38, 42, 54, 0.7) !important;

@@ -714,6 +714,115 @@ async function main() {
       await hp.close();
     }
 
+    // ── UX-02: prima visita mobile, footer/bottom nav, pin della mappa ─────────
+    {
+      const RETURNING = `try{localStorage.setItem('animeInteractiveMaps.cookieConsent',JSON.stringify({necessary:true,analytics:false,timestamp:new Date().toISOString(),version:2}));localStorage.setItem('animeInteractiveMaps.onboarding.v1','1')}catch(e){}`;
+      const ux = (ok: boolean, msg: string) => {
+        if (!ok) failures += 1;
+        console.log(`${ok ? '✓' : '✗'} UX-02 ${msg}`);
+      };
+      const mapReady = '.react-flow__node[data-id="__layer-background"] img';
+
+      // 1) Prima visita mobile: il banner cookie non è coperto; l'onboarding (testo
+      //    touch) arriva solo dopo la scelta e una sola volta.
+      const first = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
+      const fp = await first.newPage();
+      await fp.goto(`${BASE}/en/naruto/map`, { waitUntil: 'networkidle', timeout: 30_000 });
+      await fp.waitForSelector(mapReady, { timeout: 20_000 });
+      const banner = await fp.evaluate(() => {
+        const el = document.querySelector('[aria-labelledby="cookie-banner-title"]');
+        const modal = [...document.querySelectorAll('[role="dialog"][aria-modal="true"]')].some((d) => d.getBoundingClientRect().width > 0);
+        const clickable = !!el && [...el.querySelectorAll('button')].every((b) => {
+          const r = b.getBoundingClientRect();
+          const t = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+          return !!t && (t === b || b.contains(t));
+        });
+        return { visible: !!el, modal, clickable };
+      });
+      ux(banner.visible && !banner.modal && banner.clickable, `prima visita mobile: banner cookie cliccabile, nessun dialog sopra (${JSON.stringify(banner)})`);
+      await fp.getByRole('button', { name: 'Reject', exact: true }).click();
+      const onboarding = fp.locator('[role="dialog"][aria-label="How to explore the map"]');
+      const opened = await onboarding.waitFor({ state: 'visible', timeout: 8_000 }).then(() => true, () => false);
+      const touchText = opened && (await onboarding.textContent())?.includes('Tap a pin');
+      const focusInside = opened && (await fp.evaluate(() => !!document.activeElement?.closest('[role="dialog"]')));
+      ux(opened && !!touchText && focusInside, `onboarding dopo la scelta cookie, istruzioni touch, focus nel dialog (aperto ${opened}, touch ${touchText}, focus ${focusInside})`);
+      await fp.reload({ waitUntil: 'networkidle' });
+      await fp.waitForSelector(mapReady, { timeout: 20_000 });
+      const again = await fp.evaluate(() => ({ banner: !!document.querySelector('[aria-labelledby="cookie-banner-title"]'), modal: !!document.querySelector('[role="dialog"][aria-modal="true"]') }));
+      ux(!again.banner && !again.modal, `visita successiva: né banner né onboarding (${JSON.stringify(again)})`);
+      await first.close();
+
+      // 2) Prima visita desktop: istruzioni da mouse/tastiera.
+      const firstDesk = await browser.newContext({ viewport: { width: 1366, height: 768 } });
+      const dp = await firstDesk.newPage();
+      await dp.goto(`${BASE}/en/naruto/map`, { waitUntil: 'networkidle', timeout: 30_000 });
+      await dp.getByRole('button', { name: 'Accept all', exact: true }).click();
+      const deskDialog = dp.locator('[role="dialog"][aria-label="How to explore the map"]');
+      const deskOpened = await deskDialog.waitFor({ state: 'visible', timeout: 8_000 }).then(() => true, () => false);
+      ux(deskOpened && !!(await deskDialog.textContent())?.includes('Click a pin'), 'prima visita desktop: onboarding con istruzioni mouse dopo la scelta cookie');
+      await firstDesk.close();
+
+      // 3) Footer e bottom nav: su mobile la mappa non ha footer coperto, i link legali
+      //    stanno nel menu ☰; su desktop il footer resta.
+      for (const [w, h, mobile] of [[320, 640, true], [390, 844, true], [412, 823, true], [768, 1024, true], [1366, 768, false]] as const) {
+        const ctx = await browser.newContext({ viewport: { width: w, height: h }, isMobile: mobile, hasTouch: mobile });
+        await ctx.addInitScript(RETURNING);
+        const mp = await ctx.newPage();
+        await mp.goto(`${BASE}/en/naruto/map`, { waitUntil: 'networkidle', timeout: 30_000 });
+        await mp.waitForSelector(mapReady, { timeout: 20_000 });
+        const f = await mp.evaluate(() => {
+          const links = [...document.querySelectorAll('footer a, footer button')].filter((e) => e.getBoundingClientRect().width > 0);
+          const covered = links.filter((e) => {
+            const r = e.getBoundingClientRect();
+            const t = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+            return !t || !(t === e || e.contains(t));
+          }).length;
+          const pins = [...document.querySelectorAll('.react-flow__node-map-node .pointer-events-auto > div')]
+            .map((e) => e.getBoundingClientRect())
+            .filter((r) => r.width > 0 && r.bottom > 0 && r.top < innerHeight && r.right > 0 && r.left < innerWidth);
+          return { footerLinks: links.length, covered, pins: pins.length, smallPins: pins.filter((r) => r.width < 24 || r.height < 24).length };
+        });
+        const footerOk = w < 768 ? f.footerLinks === 0 : f.footerLinks > 0 && f.covered === 0;
+        ux(footerOk && f.smallPins === 0 && f.pins > 0, `mappa ${w}px: link footer visibili ${f.footerLinks}, coperti ${f.covered}; pin ${f.pins}, sotto 24px ${f.smallPins}`);
+        if (w < 768) {
+          await mp.locator('button[aria-controls="mobile-world-nav"]').click();
+          const menu = await mp.evaluate(() => {
+            const nav = document.getElementById('mobile-world-nav');
+            const hrefs = [...(nav?.querySelectorAll('a') ?? [])].map((a) => a.getAttribute('href') ?? '');
+            return {
+              privacy: hrefs.some((x) => x.endsWith('/privacy')),
+              cookies: hrefs.some((x) => x.endsWith('/cookie-policy')),
+              support: hrefs.some((x) => x.endsWith('/support')),
+              manage: [...(nav?.querySelectorAll('button') ?? [])].some((b) => b.textContent?.includes('Manage cookies')),
+            };
+          });
+          ux(Object.values(menu).every(Boolean), `mappa ${w}px: menu ☰ con privacy, cookie policy, gestisci cookie, sostieni (${JSON.stringify(menu)})`);
+        }
+        await ctx.close();
+      }
+
+      // 4) Focus mode: i pin attenuati restano leggibili (testo non attenuato).
+      const fctx = await browser.newContext({ viewport: { width: 1366, height: 768 } });
+      await fctx.addInitScript(RETURNING);
+      const fm = await fctx.newPage();
+      await fm.goto(`${BASE}/en/naruto/map?location=loc-konoha`, { waitUntil: 'networkidle', timeout: 30_000 });
+      const dimmedReady = await fm.waitForSelector('.map-pin[data-dimmed]', { timeout: 20_000 }).then(() => true, () => false);
+      const dim = dimmedReady
+        ? await fm.evaluate(() => {
+            const pins = [...document.querySelectorAll<HTMLElement>('.map-pin[data-dimmed]')];
+            const lowOpacity = pins.filter((pin) => {
+              let op = 1;
+              for (let e: HTMLElement | null = pin.querySelector('.map-pin-label'); e; e = e.parentElement) op *= Number(getComputedStyle(e).opacity);
+              return op < 0.99;
+            }).length;
+            const dot = pins[0] ? Number(getComputedStyle(pins[0].querySelector('.map-pin-dot')!).opacity) : 1;
+            return { dimmed: pins.length, lowOpacity, dot };
+          })
+        : { dimmed: 0, lowOpacity: 0, dot: 1 };
+      ux(dim.dimmed > 0 && dim.lowOpacity === 0 && dim.dot < 1, `focus mode: ${dim.dimmed} pin attenuati, etichette a opacità piena (${dim.lowOpacity} attenuate), pallino ${dim.dot}`);
+      await fctx.close();
+    }
+
     await browser.close();
   } catch (err) {
     console.error('Errore durante lo smoke test:', err);

@@ -571,6 +571,13 @@ export const fr = {
       timeline:
         'Ouvrez la chronologie en bas et appuyez sur ▶ Lecture : la carte parcourt tous les événements un par un, comme un récit guidé. Mettez en pause, reprenez ou arrêtez quand vous le souhaitez.',
     },
+    // Varianti per dispositivi touch (pointer: coarse): niente rotella, doppio clic o tasto “/”.
+    stepsTouch: {
+      panZoom: 'Faites glisser un doigt pour vous déplacer ; pincez avec deux doigts ou utilisez les boutons +/− pour zoomer.',
+      pin: 'Touchez un repère pour ouvrir la fiche du lieu.',
+      submap: 'Dans la fiche d’un lieu doté d’une sous-carte, touchez « Zoomer sur le lieu » pour entrer dans le détail.',
+      search: 'Touchez l’icône de recherche en haut pour rechercher dans ce monde.',
+    },
     cta: 'Commencer à explorer',
   },
   common: {

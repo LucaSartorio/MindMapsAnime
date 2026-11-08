@@ -65,7 +65,7 @@ export function RoutesFloatingPanel({ dataset }: RoutesFloatingPanelProps) {
           <button
             type="button"
             onClick={() => setSelectedRoute(null)}
-            className="text-[11px] text-ink-300 hover:text-white px-2 py-0.5 rounded"
+            className="inline-flex min-h-6 items-center text-[11px] text-ink-300 hover:text-white px-2 py-0.5 rounded"
           >
             {t('map.routesPanel.reset')}
           </button>
@@ -92,7 +92,7 @@ export function RoutesFloatingPanel({ dataset }: RoutesFloatingPanelProps) {
                     <li key={r.id}>
                       <div
                         className={
-                          'group flex items-center gap-2 px-2 py-1.5 rounded-md transition ' +
+                          'group flex items-center gap-2 px-2 py-0.5 rounded-md transition ' +
                           (active
                             ? 'bg-ember-500/20 border border-ember-500/50'
                             : 'border border-transparent hover:bg-ink-800/70')
@@ -109,7 +109,7 @@ export function RoutesFloatingPanel({ dataset }: RoutesFloatingPanelProps) {
                           onClick={() =>
                             setSelectedRoute(active ? null : r.id)
                           }
-                          className="flex-1 min-w-0 truncate text-left text-xs text-ink-100"
+                          className="flex-1 min-w-0 truncate py-1 text-left text-xs text-ink-100"
                         >
                           {getLocalizedText(r.localizedName, locale) || r.name}
                         </button>

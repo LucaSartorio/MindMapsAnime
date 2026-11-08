@@ -333,11 +333,10 @@ function scanVisibleText(opts) {
     if (symbol) rec.symbol = true;
     if (el.closest('[aria-hidden="true"]')) rec.exempt = 'aria-hidden (decorativo)';
     else if (el.closest('[role="img"]')) rec.exempt = 'testo dentro un\'immagine (role="img")';
-    // NON CONFORMITÀ NOTA (non un'esenzione WCAG: i pin restano cliccabili): in
-    // modalità focus la mappa attenua al 40 % i pin non collegati alla selezione.
-    // È una scelta di design aperta (UX-02): riportata a parte e contata, non
-    // blocca l'audit; qualunque altro testo sotto soglia lo blocca.
-    else if (el.closest('.react-flow__node-map-node, .react-flow__node-map-cluster') && opacity <= 0.41) rec.known = 'pin attenuato dalla modalità focus';
+    // (UX-02) Nessuna eccezione per i pin attenuati dalla modalità focus: ora si
+    // attenuano solo pallino e icona, il testo dell'etichetta va verificato come
+    // ogni altro e un'eventuale regressione blocca l'audit. `rec.known` resta il
+    // meccanismo per eventuali non conformità note future (oggi nessuna).
     else if (el.closest(':disabled, [aria-disabled="true"]')) rec.exempt = 'controllo disabilitato';
     // Sfondo: elementi sotto il testo, dall'alto, fino al primo opaco. Ogni
     // livello è un colore pieno (con alpha) e/o un gradiente (tutti i suoi stop).

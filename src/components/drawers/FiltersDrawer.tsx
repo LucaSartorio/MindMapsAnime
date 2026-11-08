@@ -259,7 +259,7 @@ export function FiltersDrawer({ dataset }: FiltersDrawerProps) {
                       const i = Number(e.target.value);
                       setFilters({ untilArcId: i < momentArcs.length ? momentArcs[i].id : null });
                     }}
-                    className="w-full accent-chakra-400"
+                    className="h-6 w-full accent-chakra-400"
                   />
                 </label>
               </FilterSection>

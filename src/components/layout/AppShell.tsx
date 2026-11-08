@@ -25,9 +25,12 @@ export function AppShell({ children }: AppShellProps) {
   const hydrated = useHydrated();
   return (
     <div className="h-dvh flex flex-col">
+      {/* Skip link: visibile al focus da tastiera, IN FLUSSO sopra l'header (UX-02).
+          Prima era assoluto e copriva logo, ricerca e lingua mentre aveva il focus
+          (WCAG 2.5.8: target parzialmente oscurati). */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-[80] focus:rounded-md focus:bg-chakra-600 focus:px-4 focus:py-2 focus:text-white focus:shadow-lg"
+        className="sr-only focus:not-sr-only focus:m-2 focus:self-start focus:rounded-md focus:bg-chakra-600 focus:px-4 focus:py-2 focus:text-white focus:shadow-lg"
       >
         {t('a11y.skipToContent')}
       </a>
