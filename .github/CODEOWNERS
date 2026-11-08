@@ -1,27 +1,34 @@
 # CODEOWNERS — SEC-01 (docs/SECURITY_SEC-01.md).
 #
 # Percorsi sensibili: workflow, dipendenze, configurazione di deploy e di merge, il
-# classificatore della Site CI e TUTTO il codice del social engine, che gira nei job
-# con `contents: write` (Social render, Social publication state).
+# classificatore della Site CI, le istruzioni degli agenti (CLAUDE.md, contratti social)
+# e TUTTO il codice del social engine, che gira nei job con `contents: write`
+# (Social render, Social publication state).
 #
 # Da solo questo file NON blocca nulla: GitHub chiede la review del code owner solo
-# se un ruleset su `main` attiva "Require a pull request" + "Require review from Code
-# Owners" (Livello B della guida, da attivare SOLO dopo aver separato le identità
-# degli agenti: l'autore di una PR non può approvarla).
+# se un ruleset su `main` attiva "Require review from Code Owners" (passo 8 della
+# guida, da attivare SOLO dopo aver separato le identità: l'autore di una PR non può
+# approvarla).
 #
 # Le regole successive prevalgono sulle precedenti. Le ultime tre righe, senza
-# owner, escludono i soli file che gli agenti aggiungono ogni giorno con le loro PR
-# (coda, receipt di pubblicazione, snapshot analytics): non richiederanno review.
+# owner, escludono i soli file JSON che gli agenti aggiungono ogni giorno con le loro
+# PR (coda, receipt di pubblicazione, snapshot analytics): non richiederanno review.
 
 /.github/                                   @LucaSartorio
 /package.json                               @LucaSartorio
 /package-lock.json                          @LucaSartorio
+/.npmrc                                     @LucaSartorio
 /vercel.json                                @LucaSartorio
+/api/                                       @LucaSartorio
+/middleware.*                               @LucaSartorio
 /.gitattributes                             @LucaSartorio
 /scripts/ci-site-scope.mjs                  @LucaSartorio
 /scripts/ci-site-scope.test.mjs             @LucaSartorio
+/CLAUDE.md                                  @LucaSartorio
+/docs/SOCIAL_*.md                           @LucaSartorio
+/docs/SECURITY_*.md                         @LucaSartorio
 /tools/social-engine/                       @LucaSartorio
 
-/tools/social-engine/content/queue/
-/tools/social-engine/publication/pending/
-/tools/social-engine/analytics/pending/
+/tools/social-engine/content/queue/*.json
+/tools/social-engine/publication/pending/*.json
+/tools/social-engine/analytics/pending/*.json
