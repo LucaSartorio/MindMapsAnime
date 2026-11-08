@@ -815,6 +815,12 @@ Permanent rules:
   no `pull_request_target`, no secrets, no PAT (`GITHUB_TOKEN`, `contents: write` only on the render job).
 - **MP4 never committed**: videos leave the runner only as workflow artifacts.
 - **Queue JSON are untrusted input**: always validated by the engine (schema, data, duplicates, path guards).
+- **State Bot migration (SEC-01, `docs/SOCIAL_STATE_BOT.md`)**: the state commits are moving from `commit-state.sh` +
+  `GITHUB_TOKEN` to the GitHub App "AniMapVerse State Bot": the work job exports a state bundle
+  (`tools/social-engine/ci/state-bundle.mjs`, zero dependencies, exact allowlist per profile), an unprivileged job
+  prepares it (merge driver + catalog, `prepare-state.sh`) and a privileged job (environment `social-state`, no npm, no
+  app code) pushes it. Never run npm/app code in a job that holds the App token, never widen the allowlist without a
+  test, never add a fallback to other credentials. Tests: `npm run social:state:test` (part of `social:validate`).
 - **History must persist**: the render job commits `history/`, `content/`, `catalog/` back (only those paths), also on
   partial failure; the publication-state job commits `history/`, `publication/`, `catalog/`. Both go through
   `ci/commit-state.sh`, which rebases with the field-level `history.json` merge driver (`.gitattributes`,

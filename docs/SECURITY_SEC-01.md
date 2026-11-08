@@ -177,7 +177,9 @@ Alternative scartate:
   può spingere anche `.github/workflows/`.
 - **Bypass del ruolo admin**: con l'identità condivisa vale anche per agenti e Claude (§2.2).
 
-**Raccomandazione: Opzione 3 + identità dedicata per gli agenti.**
+**Raccomandazione: Opzione 3 + identità dedicata per gli agenti.** Implementazione (sprint 11):
+`docs/SOCIAL_STATE_BOT.md` — script e test nel repository, migrazione dei due workflow in PR Draft che richiedono
+prima il setup manuale dell'app e dell'environment.
 
 1. **GitHub App "AniMapVerse State Bot"** (privata, installata solo su questo repository):
    - permessi Contents R/W e Metadata R; niente Workflows, Administration o Pull requests; nessun webhook;
