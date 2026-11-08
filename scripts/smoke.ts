@@ -575,8 +575,10 @@ async function main() {
           const i = document.querySelector('.react-flow__node[data-id="__layer-background"] img');
           return !!i && i.getAttribute('src') !== src;
         }, worldSrc, { timeout: 8_000 }).then(() => true, () => false), () => false);
+      // Tab "← mondo" del selettore di livello (non le tab di una scheda).
       const back = await page
         .locator('[role="tab"]')
+        .filter({ hasText: '←' })
         .first()
         .click({ timeout: 8_000 })
         .then(() => page.waitForFunction((src) => document.querySelector('.react-flow__node[data-id="__layer-background"] img')?.getAttribute('src') === src, worldSrc, { timeout: 8_000 }).then(() => true, () => false), () => false);

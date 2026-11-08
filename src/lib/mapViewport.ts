@@ -25,4 +25,3 @@ export const MAP_MIN_ZOOM = 0.2;
 export const MAP_MAX_ZOOM = 3;
 /** Nodo React Flow che contiene l'immagine della mappa (piano 0,0 → width×height). */
 export const MAP_BACKGROUND_NODE_ID = '__layer-background';
-

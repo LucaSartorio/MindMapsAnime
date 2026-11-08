@@ -208,7 +208,7 @@ body {
   overflow: hidden;
   container-type: size;
 }
-/* Senza container query o round(): immagine contenuta nel riquadro (come prima). */
+/* Senza container query: immagine contenuta nel riquadro (come prima). */
 .map-preview-img {
   position: absolute;
   inset: 0;
@@ -216,10 +216,11 @@ body {
   height: 100%;
   object-fit: contain;
 }
-@supports (width: 1cqw) and (width: round(down, 1.5px, 1px)) {
+@supports (width: 1cqw) {
   .map-preview-img {
-    --map-pad-x: round(down, calc((100cqw - 100cqw / 1.18) / 2), 1px);
-    --map-pad-y: round(down, calc((100cqh - 100cqh / 1.18) / 2), 1px);
+    /* Senza round() (Chrome 105–124): padding non arrotondato, errore ≤ 1 px. */
+    --map-pad-x: calc((100cqw - 100cqw / 1.18) / 2);
+    --map-pad-y: calc((100cqh - 100cqh / 1.18) / 2);
     inset: auto;
     left: 50%;
     top: 50%;
@@ -235,6 +236,13 @@ body {
     max-width: none;
     height: auto;
     aspect-ratio: var(--map-w) / var(--map-h);
+  }
+}
+@supports (width: 1cqw) and (width: round(down, 1.5px, 1px)) {
+  .map-preview-img {
+    /* Arrotondato per difetto al pixel, come il Math.floor di React Flow. */
+    --map-pad-x: round(down, calc((100cqw - 100cqw / 1.18) / 2), 1px);
+    --map-pad-y: round(down, calc((100cqh - 100cqh / 1.18) / 2), 1px);
   }
 }
 

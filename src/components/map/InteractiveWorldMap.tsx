@@ -487,7 +487,9 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
   // fotogramma a `scale(1)` — un ritaglio della mappa a grandezza piena — e solo
   // dopo la misura dei nodi faceva il fitView animato. La dimensione del contenitore
   // si legge prima del primo paint (layout effect → re-render sincrono), poi si usa
-  // la stessa funzione del fitView di React Flow.
+  // la stessa funzione del fitView di React Flow. Piano arrotondato al pixel come la
+  // misura DOM del nodo di sfondo (es. 882.2204 → 882): così il fitView successivo
+  // ritrova la stessa vista e non anima uno spostamento sub-pixel.
   const containerRef = useRef<HTMLDivElement>(null);
   const [initialViewport, setInitialViewport] = useState<Viewport | null>(null);
   useLayoutEffect(() => {
@@ -495,7 +497,7 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
     if (!el || initialViewport) return;
     setInitialViewport(
       getViewportForBounds(
-        { x: 0, y: 0, width: activeLevel.width, height: activeLevel.height },
+        { x: 0, y: 0, width: Math.round(activeLevel.width), height: Math.round(activeLevel.height) },
         el.clientWidth,
         el.clientHeight,
         MAP_MIN_ZOOM,
@@ -539,6 +541,7 @@ function InteractiveWorldMapInner({ dataset }: InteractiveWorldMapProps) {
           />
           <Controls
             showInteractive={false}
+            fitViewOptions={FIT_VIEW_OPTIONS}
             position="top-left"
             className="!shadow-none"
             style={{ marginTop: 56 }}
