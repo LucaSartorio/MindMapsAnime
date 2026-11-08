@@ -2,7 +2,8 @@
 #
 #   receipt PR merged on main ─► validate ─► apply ALL receipts or NONE
 #   ─► history.json + catalog updated, receipts → publication/applied/ (audit trail)
-#   ─► state committed back.
+#   ─► state committed back by the GitHub App "AniMapVerse State Bot"
+#      (social-state-persist.yml, SEC-01): the apply job has a READ-ONLY token.
 #
 # The repository never publishes and never calls Metricool / Instagram / TikTok /
 # YouTube: the external Publishing Agent does, and reports with receipts.
@@ -29,7 +30,8 @@ concurrency:
   group: animapverse-social-publication-state
   cancel-in-progress: false
 
-# Least privilege: read-only by default; only the apply job may push its state commit.
+# Least privilege: every job is read-only; the state commit is pushed by the State Bot App in
+# the `persist` job of social-state-persist.yml (environment `social-state`, main only).
 permissions:
   contents: read
 
@@ -42,16 +44,21 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
-      contents: write
-    # Loop guard #3 (on top of GITHUB_TOKEN pushes never triggering workflows, and
-    # [skip ci] on the bot commit): never react to the bot's own state commits.
+      contents: read
+    # Loop guards: the State Bot's pushes DO trigger workflows (unlike GITHUB_TOKEN), so its
+    # commits carry [skip ci] (GitHub then starts nothing) + [skip social-publication], and the
+    # job never reacts to the bot's own login (repository variable STATE_BOT_LOGIN) or to the
+    # legacy github-actions[bot] state commits.
     if: >-
       github.event_name == 'workflow_dispatch' ||
       (github.actor != 'github-actions[bot]' &&
+       (vars.STATE_BOT_LOGIN == '' || github.actor != vars.STATE_BOT_LOGIN) &&
        !contains(github.event.head_commit.message, '[skip social-publication]'))
+    outputs:
+      state_artifact: ${{ steps.state-upload.outcome == 'success' && steps.state-export.outputs.name || '' }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0 (= @v4)
         with:
           # The branch HEAD (not the triggering sha): a run that waited in the
           # concurrency queue must see the state committed by the previous run.
@@ -78,7 +85,7 @@ jobs:
 
       - name: Setup Node.js
         if: steps.mode.outputs.pending != '0'
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0 (= @v4)
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
@@ -119,20 +126,27 @@ jobs:
         continue-on-error: true
         run: npm run social:analytics:apply
 
-      # The runner is ephemeral: history, the receipts moved out of pending/
-      # (→ applied/ or failed/) and the refreshed catalog are committed back.
-      # Only these paths are ever staged.
-      - name: Persist publication state
+      # The runner is ephemeral: history, the receipts moved out of pending/ (→ applied/ or
+      # failed/), analytics and the refreshed catalog must reach main. This job has a READ-ONLY
+      # token: it only exports them as a raw state bundle (exact allowlist, also when receipts
+      # were rejected and quarantined); social-state-persist.yml commits them.
+      - name: Export state bundle
+        id: state-export
         if: always() && steps.mode.outputs.mode == 'apply' && steps.mode.outputs.pending != '0'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: ${{ github.ref_name }}
-        # Loop guards: [skip social-publication] + [skip ci] in the message, the
-        # push uses GITHUB_TOKEN (never starts workflows), and the job's `if`.
-        run: >-
-          bash tools/social-engine/ci/commit-state.sh
-          "chore(social): record publication state [skip social-publication] [skip ci]"
-          tools/social-engine/history tools/social-engine/publication tools/social-engine/analytics tools/social-engine/catalog
+        run: |
+          node tools/social-engine/ci/state-bundle.mjs export --repo . --base "$(git rev-parse HEAD)" \
+            --profile publication --out "$RUNNER_TEMP/state-raw"
+          echo "name=social-state-raw-${{ github.run_id }}-${{ github.run_attempt }}-publication" >> "$GITHUB_OUTPUT"
+
+      - name: Upload state bundle
+        id: state-upload
+        if: always() && steps.state-export.outcome == 'success'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: ${{ steps.state-export.outputs.name }}
+          path: ${{ runner.temp }}/state-raw/
+          if-no-files-found: error
+          retention-days: 7
 
       - name: Fail when a receipt was rejected
         if: always() && steps.mode.outputs.pending != '0'
@@ -143,3 +157,52 @@ jobs:
             exit 1
           fi
           echo "Publication state up to date."
+
+  # State commit by the State Bot App (prepare unprivileged → persist privileged); round 2 only
+  # on `conflict` (main changed one of the same files meanwhile). Nothing is ever forced.
+  state:
+    name: Persist state
+    needs: apply
+    if: always() && needs.apply.outputs.state_artifact != ''
+    permissions:
+      contents: read
+      actions: read
+    uses: ./.github/workflows/social-state-persist.yml
+    with:
+      profile: publication
+      raw-artifact: ${{ needs.apply.outputs.state_artifact }}
+      round: '1'
+
+  state-retry:
+    name: Persist state (round 2)
+    needs: [apply, state]
+    if: always() && needs.state.outputs.result == 'conflict'
+    permissions:
+      contents: read
+      actions: read
+    uses: ./.github/workflows/social-state-persist.yml
+    with:
+      profile: publication
+      raw-artifact: ${{ needs.apply.outputs.state_artifact }}
+      round: '2'
+
+  state-check:
+    name: State persisted
+    needs: [apply, state, state-retry]
+    if: always() && needs.apply.outputs.state_artifact != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check
+        env:
+          R1: ${{ needs.state.outputs.result }}
+          J1: ${{ needs.state.result }}
+          R2: ${{ needs.state-retry.outputs.result }}
+          J2: ${{ needs.state-retry.result }}
+          RAW: ${{ needs.apply.outputs.state_artifact }}
+        run: |
+          echo "round1=$J1/$R1 round2=$J2/$R2"
+          ok() { [ "$1" = "success" ] && { [ "$2" = "pushed" ] || [ "$2" = "noop" ]; }; }
+          if ok "$J1" "$R1" || ok "$J2" "$R2"; then echo "State persisted."; exit 0; fi
+          echo "::error::The publication state was NOT saved on main (round 1: $J1/$R1, round 2: $J2/$R2). Nothing was lost: the receipts are still in publication/pending/ on main and the raw bundle $RAW stays in this run for 7 days. Fix the cause, then run 'Social state persist' (Actions → Run workflow, branch main) with profile=publication, raw-artifact=$RAW, raw-run-id=${{ github.run_id }}."
+          exit 1
