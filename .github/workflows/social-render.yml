@@ -1,7 +1,9 @@
 # AniMapVerse — INTERNAL social video cloud renderer.
 #
 #   queue JSON merged on main ─► validate ─► Remotion render (same social-engine as local)
-#   ─► MP4 artifact + render-summary.json ─► state (history/queue/catalog) committed back.
+#   ─► MP4 artifact + render-summary.json ─► state (history/queue/catalog) committed back
+#      by the GitHub App "AniMapVerse State Bot" (social-state-persist.yml, SEC-01):
+#      the render job itself has a READ-ONLY token and never sees the App key.
 #
 # Not part of the public site: no deploy, no secrets, no external API, no publishing
 # (publishing is external; its state comes back through social-publication-state.yml).
@@ -28,7 +30,8 @@ concurrency:
   group: animapverse-social-render
   cancel-in-progress: false
 
-# Least privilege: read-only by default; only the render job may push its state commit.
+# Least privilege: every job is read-only; the state commit is pushed by the State Bot App in
+# the `persist` job of social-state-persist.yml (environment `social-state`, main only).
 permissions:
   contents: read
 
@@ -45,22 +48,26 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     permissions:
-      contents: write
-    # Loop guard #3 (on top of GITHUB_TOKEN pushes never triggering workflows, and
-    # [skip ci] on the bot commit): never react to the bot's own state commits.
+      contents: read
+    # Loop guards: the State Bot's pushes DO trigger workflows (unlike GITHUB_TOKEN), so its
+    # commits carry [skip ci] (GitHub then starts nothing) + [skip social-render], and the job
+    # never reacts to the bot's own login (repository variable STATE_BOT_LOGIN, e.g.
+    # animapverse-state-bot[bot]) or to the legacy github-actions[bot] state commits.
     if: >-
       github.event_name == 'workflow_dispatch' ||
       (github.actor != 'github-actions[bot]' &&
+       (vars.STATE_BOT_LOGIN == '' || github.actor != vars.STATE_BOT_LOGIN) &&
        !contains(github.event.head_commit.message, '[skip social-render]'))
     outputs:
       rendered_count: ${{ steps.report.outputs.rendered_count }}
       failed_count: ${{ steps.report.outputs.failed_count }}
       artifact_name: ${{ steps.report.outputs.artifact_name }}
+      state_artifact: ${{ steps.state-upload.outcome == 'success' && steps.state-export.outputs.name || '' }}
     env:
       SOCIAL_ARTIFACT_NAME: animapverse-social-render-${{ github.run_id }}-${{ github.run_attempt }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0 (= @v4)
         with:
           # The branch HEAD (not the triggering sha): a run that waited in the
           # concurrency queue must see the state committed by the previous run.
@@ -87,7 +94,7 @@ jobs:
 
       - name: Setup Node.js
         if: steps.mode.outputs.queued != '0'
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0 (= @v4)
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
@@ -103,7 +110,7 @@ jobs:
       - name: Restore Chrome Headless Shell cache
         id: chrome-cache
         if: steps.mode.outputs.queued != '0' && steps.mode.outputs.mode == 'render'
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0 (= @v4)
         with:
           path: node_modules/.remotion/chrome-headless-shell
           key: remotion-chrome-headless-shell-${{ runner.os }}-${{ hashFiles('node_modules/@remotion/renderer/package.json') }}
@@ -116,7 +123,7 @@ jobs:
       # red because of a failed video.
       - name: Save Chrome Headless Shell cache
         if: steps.mode.outputs.queued != '0' && steps.mode.outputs.mode == 'render' && steps.chrome-cache.outputs.cache-hit != 'true'
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0 (= @v4)
         with:
           path: node_modules/.remotion/chrome-headless-shell
           key: ${{ steps.chrome-cache.outputs.cache-primary-key }}
@@ -162,7 +169,7 @@ jobs:
       - name: Upload rendered videos
         # Also on partial failure: successful videos + render-summary.json are kept.
         if: always() && steps.mode.outputs.mode == 'render' && steps.report.outputs.has_summary == 'true'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2 (= @v4)
         with:
           name: ${{ env.SOCIAL_ARTIFACT_NAME }}
           path: tools/social-engine/.cache/artifact/
@@ -170,21 +177,27 @@ jobs:
           retention-days: ${{ env.SOCIAL_ARTIFACT_RETENTION_DAYS }}
           compression-level: 0
 
-      # The runner is ephemeral: history, moved queue files (→ rendered/ failed/)
-      # and the refreshed catalog are committed back, or the next run would
-      # render the same content again. Only these paths are ever staged.
-      - name: Persist social history
+      # The runner is ephemeral: history, moved queue files (→ rendered/ failed/) and the
+      # refreshed catalog must reach main, or the next run would render the same content
+      # again. This job has a READ-ONLY token: it only exports them as a raw state bundle
+      # (exact allowlist, also on partial failure); social-state-persist.yml commits them.
+      - name: Export state bundle
+        id: state-export
         if: always() && steps.mode.outputs.mode == 'render' && steps.mode.outputs.queued != '0'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: ${{ github.ref_name }}
-        # Loop guard: [skip ci] + [skip social-render] in the message, and the push
-        # uses GITHUB_TOKEN, whose pushes never start new workflow runs. If Social
-        # publication state committed meanwhile, history.json is merged field by field.
-        run: >-
-          bash tools/social-engine/ci/commit-state.sh
-          "chore(social): record rendered content [skip social-render] [skip ci]"
-          tools/social-engine/history tools/social-engine/content tools/social-engine/catalog
+        run: |
+          node tools/social-engine/ci/state-bundle.mjs export --repo . --base "$(git rev-parse HEAD)" \
+            --profile render --out "$RUNNER_TEMP/state-raw"
+          echo "name=social-state-raw-${{ github.run_id }}-${{ github.run_attempt }}-render" >> "$GITHUB_OUTPUT"
+
+      - name: Upload state bundle
+        id: state-upload
+        if: always() && steps.state-export.outcome == 'success'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: ${{ steps.state-export.outputs.name }}
+          path: ${{ runner.temp }}/state-raw/
+          if-no-files-found: error
+          retention-days: 7
 
       - name: Fail when a video failed
         if: always() && steps.mode.outputs.queued != '0'
@@ -196,3 +209,53 @@ jobs:
             exit 1
           fi
           echo "All good: ${{ steps.report.outputs.rendered_count }} video(s)."
+
+  # State commit by the State Bot App (prepare unprivileged → persist privileged). Round 2 runs
+  # only if main changed one of the same files between prepare and push (`conflict`): it
+  # re-prepares on the newer main with the history.json merge driver. Nothing is ever forced.
+  state:
+    name: Persist state
+    needs: render
+    if: always() && needs.render.outputs.state_artifact != ''
+    permissions:
+      contents: read
+      actions: read
+    uses: ./.github/workflows/social-state-persist.yml
+    with:
+      profile: render
+      raw-artifact: ${{ needs.render.outputs.state_artifact }}
+      round: '1'
+
+  state-retry:
+    name: Persist state (round 2)
+    needs: [render, state]
+    if: always() && needs.state.outputs.result == 'conflict'
+    permissions:
+      contents: read
+      actions: read
+    uses: ./.github/workflows/social-state-persist.yml
+    with:
+      profile: render
+      raw-artifact: ${{ needs.render.outputs.state_artifact }}
+      round: '2'
+
+  state-check:
+    name: State persisted
+    needs: [render, state, state-retry]
+    if: always() && needs.render.outputs.state_artifact != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check
+        env:
+          R1: ${{ needs.state.outputs.result }}
+          J1: ${{ needs.state.result }}
+          R2: ${{ needs.state-retry.outputs.result }}
+          J2: ${{ needs.state-retry.result }}
+          RAW: ${{ needs.render.outputs.state_artifact }}
+        run: |
+          echo "round1=$J1/$R1 round2=$J2/$R2"
+          ok() { [ "$1" = "success" ] && { [ "$2" = "pushed" ] || [ "$2" = "noop" ]; }; }
+          if ok "$J1" "$R1" || ok "$J2" "$R2"; then echo "State persisted."; exit 0; fi
+          echo "::error::The render state was NOT saved on main (round 1: $J1/$R1, round 2: $J2/$R2). Nothing was lost: the raw bundle $RAW stays in this run for 7 days. Fix the cause, then run 'Social state persist' (Actions → Run workflow, branch main) with profile=render, raw-artifact=$RAW, raw-run-id=${{ github.run_id }}. Until then the queue still holds these files: do not merge new queue PRs."
+          exit 1
