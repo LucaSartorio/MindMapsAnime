@@ -194,6 +194,50 @@ body {
   }
 }
 
+/* Anteprima statica della rotta /map (PERF-03): l'immagine occupa lo STESSO
+   rettangolo in cui React Flow disegna la mappa al primo fotogramma
+   (`src/lib/mapViewport.ts`): stessa formula di getViewportForBounds, padding
+   arrotondato per difetto al pixel come fa React Flow, zoom limitato fra min e max.
+   Così il passaggio anteprima → mappa interattiva non sposta né ridimensiona
+   l'immagine. `--map-w`/`--map-h` (piano della mappa) arrivano da MapPage; padding
+   (0.18 → 1.18) e zoom min/max (0.2 / 3) sono le costanti di `mapViewport.ts`,
+   ripetute qui: `npm run smoke` fallisce se i due rettangoli divergono. */
+.map-preview-frame {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  container-type: size;
+}
+/* Senza container query o round(): immagine contenuta nel riquadro (come prima). */
+.map-preview-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+@supports (width: 1cqw) and (width: round(down, 1.5px, 1px)) {
+  .map-preview-img {
+    --map-pad-x: round(down, calc((100cqw - 100cqw / 1.18) / 2), 1px);
+    --map-pad-y: round(down, calc((100cqh - 100cqh / 1.18) / 2), 1px);
+    inset: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(
+      calc(var(--map-w) * 0.2px),
+      min(
+        calc(100cqw - 2 * var(--map-pad-x)),
+        calc((100cqh - 2 * var(--map-pad-y)) * var(--map-w) / var(--map-h))
+      ),
+      calc(var(--map-w) * 3px)
+    );
+    max-width: none;
+    height: auto;
+    aspect-ratio: var(--map-w) / var(--map-h);
+  }
+}
+
 /* Override leggero per React Flow */
 .react-flow__attribution {
   display: none !important;

@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import { Suspense, type CSSProperties } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { WorldDataset } from '@/types';
 import { useLocaleStore } from '@/store/useLocaleStore';
@@ -14,8 +14,10 @@ import { MapGuide } from './MapGuide';
  * ma non è una "scatola nera" per i crawler.
  *
  *  - HTML pre-renderizzato (e primo render client): anteprima statica con
- *    l'immagine della mappa (candidata LCP, precaricata).
- *  - Dopo l'idratazione: React Flow sostituisce l'anteprima. H1 e descrizione
+ *    l'immagine della mappa (candidata LCP, precaricata), nello stesso
+ *    rettangolo in cui React Flow la disegnerà (`src/lib/mapViewport.ts`).
+ *  - Dopo l'idratazione: React Flow sostituisce l'anteprima senza spostare la
+ *    mappa (il suo chunk è già in download da `preloadRoute`). H1 e descrizione
  *    restano come testo accessibile (sr-only) che descrive l'applicazione.
  *  - Sempre (prima E dopo l'idratazione): la `MapGuide`, indice testuale dei
  *    livelli mappa, dei luoghi, delle regioni e dei percorsi con link reali —
@@ -51,8 +53,11 @@ function MapStaticPreview({ dataset }: { dataset: WorldDataset }) {
   const image = worldMapImage(dataset);
   const world = getLocalizedText(dataset.world.title, locale);
 
+  // Stesso rettangolo dell'immagine nella mappa React Flow al primo fotogramma
+  // (vedi `mapViewport.ts`): il passaggio all'interattività non sposta la mappa.
+  // Opacità piena, come nella mappa interattiva: niente cambio di luminosità.
   return (
-    <div className="absolute inset-0 overflow-hidden">
+    <div className="map-preview-frame">
       {image && (
         <img
           src={image.url}
@@ -61,7 +66,9 @@ function MapStaticPreview({ dataset }: { dataset: WorldDataset }) {
           alt={t('seoPages.mapImageAlt', { world })}
           decoding="async"
           {...({ fetchpriority: 'high' } as Record<string, string>)}
-          className="absolute inset-0 h-full w-full object-contain select-none opacity-70"
+          className="map-preview-img select-none"
+          // Dimensioni del piano; padding e zoom min/max sono in globals.css.
+          style={{ '--map-w': image.width, '--map-h': image.height } as CSSProperties}
         />
       )}
       <p

@@ -98,8 +98,8 @@ const CHECKS: Check[] = [
   // `/` → redirect per lingua (307) → home: i mondi disponibili sono link reali.
   { path: '/', anyOf: ['AniMapVerse'], selector: 'a[href^="/en/"]', minCount: 5, hydrated: true },
   { path: '/en/naruto', anyOf: ['Naruto'], selector: 'main h1', minCount: 1, hydrated: true },
-  { path: '/en/naruto/map', anyOf: ['Naruto'], selector: '.react-flow__node', minCount: 10 },
-  { path: '/en/one-piece/map', anyOf: ['One Piece'], selector: '.react-flow__node', minCount: 10 },
+  { path: '/en/naruto/map', anyOf: ['Naruto'], selector: '.react-flow__node', minCount: 10, hydrated: true },
+  { path: '/en/one-piece/map', anyOf: ['One Piece'], selector: '.react-flow__node', minCount: 10, hydrated: true },
   { path: '/it/hunter-x-hunter/map', anyOf: ['Hunter'], selector: '.react-flow__node', minCount: 5 },
   { path: '/en/naruto/characters', anyOf: ['Naruto'], selector: 'input[type=search]', minCount: 1, hydrated: true },
   { path: '/it/one-piece/characters', anyOf: ['One Piece'], selector: 'input[type=search]', minCount: 1 },
@@ -446,6 +446,147 @@ async function main() {
       if (!okFr) failures += 1;
       console.log(`${okFr ? '✓' : '✗'} cambio lingua EN → FR (mondo tradotto): ${page.url().replace(BASE, '')}`);
       await page.evaluate(() => localStorage.setItem('animeInteractiveMaps.locale', 'en'));
+    }
+
+    // PERF-03 — mappa: l'anteprima statica e la mappa React Flow occupano lo
+    // stesso rettangolo e React Flow non si sposta dopo il primo fotogramma
+    // (niente fotogramma a scale(1), niente fitView che salta); il chunk della
+    // mappa è scaricato una volta e solo sulle /map; l'immagine una volta sola.
+    // Verifiche di comportamento, non di tempi (i tempi si misurano a parte).
+    {
+      const viewports = [
+        { name: 'mobile', viewport: { width: 412, height: 823 }, isMobile: true, hasTouch: true },
+        { name: 'desktop', viewport: { width: 1350, height: 940 }, isMobile: false, hasTouch: false },
+      ];
+      const rfImg = '.react-flow__node[data-id="__layer-background"] img';
+      for (const vp of viewports) {
+        for (const path of ['/en/naruto/map', '/en/one-piece/map']) {
+          const opts = { viewport: vp.viewport, isMobile: vp.isMobile, hasTouch: vp.hasTouch };
+          const staticCtx = await browser.newContext({ ...opts, javaScriptEnabled: false });
+          const sp = await staticCtx.newPage();
+          await sp.goto(`${BASE}${path}`, { waitUntil: 'load', timeout: 30_000 });
+          const previewImg = sp.locator('#root img[fetchpriority="high"]').first();
+          const preview = await previewImg.boundingBox({ timeout: 10_000 }).catch(() => null);
+          const imgPath = await previewImg.getAttribute('src', { timeout: 10_000 }).catch(() => null);
+          await staticCtx.close();
+
+          const ctx = await browser.newContext(opts);
+          // Stringa, non funzione: tsx (esbuild keepNames) inietterebbe `__name()`,
+          // che nel browser non esiste e interromperebbe lo script.
+          await ctx.addInitScript(`
+            try { localStorage.setItem('animeInteractiveMaps.onboarding.v1', '1'); } catch (e) {}
+            // Trasformazione del PRIMO fotogramma in cui React Flow esiste.
+            (function tick() {
+              var style = document.querySelector('.react-flow__viewport') && document.querySelector('.react-flow__viewport').getAttribute('style');
+              if (style) window.__firstRf = style; else requestAnimationFrame(tick);
+            })();
+          `);
+          const p = await ctx.newPage();
+          const requested: string[] = [];
+          p.on('request', (r) => requested.push(new URL(r.url()).pathname));
+          await p.goto(`${BASE}${path}`, { waitUntil: 'networkidle', timeout: 30_000 });
+          const loaded = await p
+            .waitForFunction((sel) => {
+              const i = document.querySelector(sel) as HTMLImageElement | null;
+              return !!i && i.complete && i.naturalWidth > 0;
+            }, rfImg, { timeout: 20_000 })
+            .then(() => true, () => false);
+          await p.waitForTimeout(1_200); // oltre la durata di un fitView animato (600 ms)
+          const rf = loaded ? await p.locator(rfImg).boundingBox() : null;
+          const firstRf = await p.evaluate(() => (window as unknown as { __firstRf?: string }).__firstRf ?? '');
+          const nowRf = await p.evaluate(() => document.querySelector('.react-flow__viewport')?.getAttribute('style') ?? '');
+          // translate(x, y) scale(z) → [x, y, z]; il primo fotogramma deve già essere quello finale.
+          const parse = (t: string) => (t.match(/-?[\d.]+(?=px|\))/g) ?? []).map(Number);
+          const [fx, fy, fz] = parse(firstRf);
+          const [nx, ny, nz] = parse(nowRf);
+          const steady = fz !== undefined && Math.abs(fx - nx) <= 2 && Math.abs(fy - ny) <= 2 && Math.abs(fz - nz) <= 0.002;
+          await ctx.close();
+          const delta =
+            preview && rf
+              ? Math.max(
+                  Math.abs(preview.x - rf.x),
+                  Math.abs(preview.y - rf.y),
+                  Math.abs(preview.width - rf.width),
+                  Math.abs(preview.height - rf.height),
+                )
+              : Infinity;
+          const chunks = requested.filter((u) => /^\/assets\/WorldMapPage-[^/]+\.js$/.test(u)).length;
+          const images = requested.filter((u) => u === imgPath).length;
+          const ok = delta <= 2 && steady && chunks === 1 && images === 1;
+          if (!ok) failures += 1;
+          console.log(
+            `${ok ? '✓' : '✗'} mappa ${vp.name} ${path}: anteprima = React Flow (Δ ${delta.toFixed(1)} px), primo fotogramma già inquadrato (${steady}), chunk mappa ×${chunks}, immagine ×${images}`,
+          );
+          if (!ok) console.log(`    anteprima ${JSON.stringify(preview)} · React Flow ${JSON.stringify(rf)} · ${firstRf} → ${nowRf}`);
+        }
+      }
+
+      // Il chunk della mappa (React Flow) non si scarica fuori dalle /map.
+      const offMap: string[] = [];
+      const ctx = await browser.newContext();
+      const p = await ctx.newPage();
+      p.on('request', (r) => {
+        if (/\/assets\/WorldMapPage-[^/]+\.js$/.test(r.url())) offMap.push(new URL(p.url()).pathname);
+      });
+      for (const path of ['/en', '/en/naruto', '/en/naruto/characters/itachi-uchiha', '/fr/one-piece/locations']) {
+        await p.goto(`${BASE}${path}`, { waitUntil: 'networkidle', timeout: 30_000 });
+      }
+      await ctx.close();
+      if (offMap.length) failures += 1;
+      console.log(`${offMap.length ? '✗' : '✓'} chunk della mappa non scaricato fuori dalle /map${offMap.length ? `: ${offMap.join(', ')}` : ''}`);
+
+      // Interattività dopo il caricamento: zoom, selezione di un pin, sotto-mappa, ritorno.
+      const ictx = await browser.newContext({ viewport: { width: 1350, height: 940 } });
+      await ictx.addInitScript(() => {
+        try {
+          localStorage.setItem('animeInteractiveMaps.onboarding.v1', '1');
+        } catch {
+          /* storage non disponibile */
+        }
+      });
+      const page = await ictx.newPage();
+      const errors: string[] = [];
+      page.on('pageerror', (e) => errors.push(e.message));
+      page.on('console', (m: ConsoleMessage) => {
+        if (m.type() === 'error' && !IGNORED.some((x) => m.text().includes(x))) errors.push(m.text());
+      });
+      await page.goto(`${BASE}/en/naruto/map`, { waitUntil: 'networkidle', timeout: 30_000 });
+      await page.waitForSelector(rfImg, { timeout: 20_000 });
+      const transform = () =>
+        page.evaluate(() => (document.querySelector('.react-flow__viewport') as HTMLElement | null)?.style.transform ?? '');
+      const t0 = await transform();
+      await page.click('.react-flow__controls-zoomin');
+      await page.waitForTimeout(500);
+      const zoomed = (await transform()) !== t0;
+      await page.click('.react-flow__controls-fitview');
+      await page.waitForTimeout(500);
+      const pin = page.locator('.react-flow__node[data-id="loc-konoha"] .pointer-events-auto').first();
+      const selected = await pin.click({ timeout: 8_000 }).then(
+        () => page.locator('[role="dialog"]').filter({ hasText: /Konoha/ }).first().waitFor({ state: 'visible', timeout: 8_000 }).then(() => true, () => false),
+        () => false,
+      );
+      const worldSrc = await page.locator(rfImg).getAttribute('src');
+      const submap = await page
+        .locator('[role="dialog"] button')
+        .filter({ hasText: /zoom into location/i })
+        .first()
+        .click({ timeout: 8_000 })
+        .then(() => page.waitForFunction((src) => {
+          const i = document.querySelector('.react-flow__node[data-id="__layer-background"] img');
+          return !!i && i.getAttribute('src') !== src;
+        }, worldSrc, { timeout: 8_000 }).then(() => true, () => false), () => false);
+      const back = await page
+        .locator('[role="tab"]')
+        .first()
+        .click({ timeout: 8_000 })
+        .then(() => page.waitForFunction((src) => document.querySelector('.react-flow__node[data-id="__layer-background"] img')?.getAttribute('src') === src, worldSrc, { timeout: 8_000 }).then(() => true, () => false), () => false);
+      await ictx.close();
+      consoleErrors.push(...errors.map((e) => `mappa interattiva: ${e}`));
+      const ok = zoomed && selected && submap && back && errors.length === 0;
+      if (!ok) failures += 1;
+      console.log(
+        `${ok ? '✓' : '✗'} mappa interattiva: zoom ${zoomed} · pin → scheda ${selected} · sotto-mappa ${submap} · ritorno ${back}${errors.length ? ` (${errors.length} errori console)` : ''}`,
+      );
     }
 
     // Interazione: cliccare una card personaggio deve aprire il modale
