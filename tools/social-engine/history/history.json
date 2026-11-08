@@ -2838,7 +2838,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-11-08T06:05:40.011Z",
-      "updatedAt": "2026-11-08T06:06:55.604Z",
+      "updatedAt": "2026-11-08T06:15:45.050Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-11-08T06:06:55.604Z",
       "outputFile": "tools/social-engine/output/attackontitan_reiner-braun-vs-blackclover-yami-sukehiro_character-versus_en.mp4",
@@ -2907,9 +2907,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-08T10:00:00+01:00",
+          "scheduledAt": "2026-11-08T06:09:54Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "420505787",
+          "providerPostUuid": "-7678024237295189191",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-7678024237295189191",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_reiner-braun-vs-blackclover-yami-sukehiro_character-versus_en.instagram.scheduled.054782f7c8de"
+          ],
+          "updatedAt": "2026-11-08T06:15:45.050Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-08T10:00:00+01:00",
+          "scheduledAt": "2026-11-08T06:09:54Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "420505929",
+          "providerPostUuid": "-812490388137489161",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-812490388137489161",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_reiner-braun-vs-blackclover-yami-sukehiro_character-versus_en.facebook.scheduled.9b15a210e3c4"
+          ],
+          "updatedAt": "2026-11-08T06:15:45.050Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-08T10:00:00+01:00",
+          "scheduledAt": "2026-11-08T06:09:54Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "420506118",
+          "providerPostUuid": "-8528684559306634609",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-8528684559306634609",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_reiner-braun-vs-blackclover-yami-sukehiro_character-versus_en.tiktok.scheduled.d8973cd8ea64"
+          ],
+          "updatedAt": "2026-11-08T06:15:45.050Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-08T10:00:00+01:00",
+          "scheduledAt": "2026-11-08T06:09:54Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "420506026",
+          "providerPostUuid": "-1354628905429939173",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-1354628905429939173",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_reiner-braun-vs-blackclover-yami-sukehiro_character-versus_en.youtube.scheduled.915d14b4e627"
+          ],
+          "updatedAt": "2026-11-08T06:15:45.050Z"
+        }
+      ]
     },
     "character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro@en": {
       "renderId": "character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro@en",

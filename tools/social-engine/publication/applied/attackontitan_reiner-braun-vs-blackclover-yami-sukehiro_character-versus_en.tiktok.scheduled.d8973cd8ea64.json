@@ -1,0 +1,30 @@
+{
+  "receiptId": "attackontitan_reiner-braun-vs-blackclover-yami-sukehiro_character-versus_en.tiktok.scheduled.d8973cd8ea64",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-11-08T06:15:45.050Z",
+  "sourceFile": "20261108T060954Z-attackontitan_reiner-braun-vs-blackclover-yami-sukehiro_character-versus_en-tiktok-scheduled.json",
+  "run": {
+    "runId": "42453997610",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/42453997610",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "character-versus:attackontitan:reiner-braun-vs-blackclover-yami-sukehiro@en",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-11-08T10:00:00+01:00",
+    "recordedAt": "2026-11-08T06:09:54Z",
+    "recordedBy": "chatgpt-work-publishing-agent",
+    "platform": "tiktok",
+    "providerPostId": "420506118",
+    "providerPostUuid": "-8528684559306634609",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-8528684559306634609"
+  }
+}
