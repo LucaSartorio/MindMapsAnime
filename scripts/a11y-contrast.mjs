@@ -7,7 +7,7 @@
  *
  * Variabili: BASE (default http://localhost:4173), PW_CHROME (eseguibile
  * Chromium, se quello di Playwright non è installato), CONTRAST_JSON (file in cui
- * salvare il dettaglio).
+ * salvare il dettaglio), ONLY (regex: esegue solo gli scenari con quel nome).
  *
  * Perché non basta `audit:a11y`: axe-core segna come "incomplete" (non come
  * violazione) il testo su sfondi semitrasparenti, sfumati o sopra immagini, cioè
@@ -527,7 +527,9 @@ async function runAxe(page) {
 const exe = process.env.PW_CHROME;
 const browser = await chromium.launch(exe ? { executablePath: exe } : {});
 const report = { scenarios: [], records: [] };
-for (const scenario of SCENARIOS) {
+// ONLY=<regex>: esegue solo gli scenari il cui nome corrisponde (per ripetere un caso).
+const only = process.env.ONLY ? new RegExp(process.env.ONLY, 'i') : null;
+for (const scenario of SCENARIOS.filter((s) => !only || only.test(s.name))) {
   for (const vpName of scenario.viewports) {
     const vp = VIEWPORTS[vpName];
     const ctx = await browser.newContext({ viewport: { width: vp.width, height: vp.height }, isMobile: vp.isMobile, hasTouch: vp.hasTouch });

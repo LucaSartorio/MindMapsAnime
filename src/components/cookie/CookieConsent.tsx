@@ -52,9 +52,12 @@ export function CookieConsent() {
           aria-labelledby="cookie-banner-title"
           aria-describedby="cookie-banner-desc"
           tabIndex={-1}
-          className="fixed inset-x-0 bottom-0 z-[55] p-3 sm:p-4 outline-none"
+          // Il wrapper riceve il focus programmatico (annuncio): l'anello di focus va
+          // sul pannello, non sul bordo del wrapper largo quanto la pagina, dove
+          // diventava una linea blu sopra i contenuti (UX-02).
+          className="group fixed inset-x-0 bottom-0 z-[55] p-3 sm:p-4 outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
         >
-          <div className="mx-auto max-w-3xl panel rounded-2xl shadow-2xl p-5 space-y-4">
+          <div className="mx-auto max-w-3xl panel rounded-2xl shadow-2xl p-5 space-y-4 group-focus-visible:ring-2 group-focus-visible:ring-chakra-400">
             <div className="space-y-1.5">
               <h2 id="cookie-banner-title" className="font-display text-lg text-ink-100">
                 {t('cookie.banner.title')}

@@ -58,7 +58,9 @@ const openMap = async (p, path) => {
   await p.goto(BASE + path);
   await visible(p, MAP_READY, 'immagine della mappa caricata');
 };
-const railButton = (p, name) => p.locator(`nav[aria-label="Map tools"] button[aria-label="${name}"], nav[aria-label="Map tools"] button:has-text("${name}")`).first();
+// Pulsante degli strumenti mappa: rail verticale (desktop) o bottom nav (mobile),
+// quello visibile nella viewport corrente.
+const railButton = (p, name) => p.locator(`nav[aria-label="Map tools"] button[aria-label="${name}"]:visible, nav[aria-label="Map tools"] button:visible:has-text("${name}")`).first();
 const h1 = (p) => visible(p, 'main h1', '<h1> della pagina');
 
 const scenarios = [
@@ -68,14 +70,14 @@ const scenarios = [
     expect: async (p) => { await visible(p, '[aria-labelledby="cookie-banner-title"]', 'banner cookie'); } },
   { name: 'preferenze cookie (prima visita)', firstVisit: true,
     go: async (p) => { await p.goto(BASE + '/en'); await p.getByRole('button', { name: 'Customize', exact: true }).click(); },
-    expect: async (p) => { await visible(p, '[role="dialog"][aria-modal="true"] [role="switch"]', 'dialog preferenze con interruttore analytics'); } },
+    expect: async (p) => { await visible(p, '[role="dialog"][aria-modal="true"] input[type="checkbox"]', 'dialog preferenze con la casella analytics'); } },
   { name: 'mappa mobile: banner cookie non coperto (prima visita)', firstVisit: true, vp: MOBILE,
     go: async (p) => { await p.goto(BASE + '/en/naruto/map'); await visible(p, MAP_READY, 'mappa'); },
     expect: async (p) => {
       await visible(p, '[aria-labelledby="cookie-banner-title"]', 'banner cookie');
       await check(p, () => {
         const banner = document.querySelector('[aria-labelledby="cookie-banner-title"]');
-        const modal = [...document.querySelectorAll('[role="dialog"][aria-modal="true"]')].some((d) => d.getBoundingClientRect().width > 0);
+        const modal = [...document.querySelectorAll('[role="dialog"][aria-modal="true"]')].some((d) => !d.closest('[inert]') && d.getBoundingClientRect().width > 0);
         return !modal && [...banner.querySelectorAll('button')].every((b) => { const r = b.getBoundingClientRect(); const t = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2); return t && (t === b || b.contains(t)); });
       }, 'nessun dialog modale sopra il banner e pulsanti del banner cliccabili');
     } },
@@ -110,7 +112,7 @@ const scenarios = [
   { name: 'map (naruto)', go: (p) => openMap(p, '/en/naruto/map'), expect: async (p) => { await visible(p, '.react-flow__node-map-node', 'pin della mappa'); } },
   { name: 'map (one piece)', go: (p) => openMap(p, '/en/one-piece/map'), expect: async (p) => { await visible(p, '.react-flow__node-map-node', 'pin della mappa'); } },
   { name: 'map (dragon ball, mobile)', vp: MOBILE, go: (p) => openMap(p, '/en/dragon-ball/map'),
-    expect: async (p) => { await visible(p, 'nav[aria-label="Map tools"]', 'bottom nav'); await hidden(p, 'footer', 'footer nascosto sotto la bottom nav'); } },
+    expect: async (p) => { await visible(p, 'nav[aria-label="Map tools"]:visible', 'bottom nav'); await hidden(p, 'footer', 'footer nascosto sotto la bottom nav'); } },
   { name: 'map guide (open)', go: async (p) => { await openMap(p, '/en/black-clover/map'); await p.locator('details summary').first().click(); },
     expect: async (p) => { await visible(p, 'details[open]', 'guida della mappa aperta'); } },
   { name: 'focus mode (scheda luogo)', go: (p) => openMap(p, '/en/naruto/map?location=loc-konoha'),
@@ -124,13 +126,13 @@ const scenarios = [
   { name: 'layers drawer', go: async (p) => { await openMap(p, '/en/naruto/map'); await railButton(p, 'Layers').click(); },
     expect: async (p) => { await visible(p, `${OPEN_DIALOG} [role="switch"]`, 'drawer livelli aperto'); } },
   { name: 'map panels (legend/routes/timeline)', go: async (p) => { await openMap(p, '/en/naruto/map'); for (const n of ['Legend', 'Routes', 'Timeline']) await railButton(p, n).click(); },
-    expect: async (p) => { await check(p, () => ['Legend', 'Routes', 'Timeline'].every((n) => document.querySelector(`nav[aria-label="Map tools"] button[aria-label="${n}"][aria-pressed="true"]`)), 'legenda, percorsi e timeline aperti'); } },
+    expect: async (p) => { await check(p, () => ['Legend', 'Routes', 'Timeline'].every((n) => [...document.querySelectorAll(`nav[aria-label="Map tools"] button[aria-pressed="true"]`)].some((b) => b.getBoundingClientRect().width > 0 && (b.getAttribute('aria-label') === n || b.textContent.includes(n)))), 'legenda, percorsi e timeline aperti'); } },
   { name: 'legend + routes (dragon ball, mobile)', vp: MOBILE, go: async (p) => { await openMap(p, '/en/dragon-ball/map'); await railButton(p, 'Legend').click(); },
     expect: async (p) => { await visible(p, 'section[aria-label="Legend"] button[aria-pressed]', 'legenda aperta'); } },
   { name: 'location modal (tabs)', go: async (p) => { await openMap(p, '/en/naruto/map'); await p.locator('.react-flow__node[data-id="loc-konoha"] .pointer-events-auto').first().dispatchEvent('click'); },
     expect: async (p) => { await visible(p, '[role="dialog"][aria-modal="true"] [role="tablist"]', 'scheda con schede'); } },
   { name: 'route modal (stepper)', go: (p) => openMap(p, '/en/naruto/map?route=route-team7-waves'),
-    expect: async (p) => { await visible(p, '[role="dialog"] button:has-text("Next step")', 'stepper del percorso'); } },
+    expect: async (p) => { await visible(p, '[role="dialog"] button[aria-label="Next step"]', 'stepper del percorso'); } },
   { name: 'story mode', go: async (p) => { await openMap(p, '/en/naruto/map?arc=arc-prologue'); await p.getByRole('button', { name: /start guided story/i }).click(); },
     expect: async (p) => { await visible(p, 'section[aria-label="Guided story"]', 'pannello storia guidata'); } },
   { name: 'relations graph', go: (p) => openMap(p, '/en/naruto/map?relations=char-itachi'),
@@ -183,7 +185,8 @@ function ownChecks() {
     out.push({ id: 'ux02-pin-target-size', impact: 'serious', help: 'Area cliccabile del pin della mappa sotto 24×24 px (WCAG 2.5.8)', n: smallPins.length,
       sample: smallPins[0].e.textContent.trim().slice(0, 40), sampleHtml: `${Math.round(smallPins[0].r.width)}×${Math.round(smallPins[0].r.height)}` });
   // 2) Link del footer coperti da altro (es. la bottom nav), senza overlay aperti.
-  const overlayOpen = document.querySelector('[role="dialog"][aria-modal="true"], aside[role="dialog"]:not([inert]), [aria-labelledby="cookie-banner-title"], #mobile-world-nav');
+  // I drawer chiusi restano nel DOM come dialog `inert`: non contano come overlay.
+  const overlayOpen = [...document.querySelectorAll('[role="dialog"], [aria-labelledby="cookie-banner-title"], #mobile-world-nav')].some((e) => !e.closest('[inert]'));
   if (!overlayOpen) {
     const covered = [...document.querySelectorAll('footer a, footer button')].filter((e) => {
       const r = e.getBoundingClientRect();

@@ -288,7 +288,7 @@ body {
 .map-pin[data-dimmed]:hover .map-pin-label,
 .react-flow__node:focus-visible .map-pin[data-dimmed] .map-pin-label {
   background-color: rgb(12 13 17 / 0.8);
-  border-color: rgb(38 42 54 / 0.6);
+  border-color: rgb(10 127 230 / 0.6); /* come group-hover:border-chakra-500/60 */
   color: #e4e7f0;
 }
 .react-flow__minimap {

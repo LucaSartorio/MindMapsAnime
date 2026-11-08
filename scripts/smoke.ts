@@ -731,7 +731,7 @@ async function main() {
       await fp.waitForSelector(mapReady, { timeout: 20_000 });
       const banner = await fp.evaluate(() => {
         const el = document.querySelector('[aria-labelledby="cookie-banner-title"]');
-        const modal = [...document.querySelectorAll('[role="dialog"][aria-modal="true"]')].some((d) => d.getBoundingClientRect().width > 0);
+        const modal = [...document.querySelectorAll('[role="dialog"][aria-modal="true"]')].some((d) => !d.closest('[inert]') && d.getBoundingClientRect().width > 0);
         const clickable = !!el && [...el.querySelectorAll('button')].every((b) => {
           const r = b.getBoundingClientRect();
           const t = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
@@ -748,7 +748,7 @@ async function main() {
       ux(opened && !!touchText && focusInside, `onboarding dopo la scelta cookie, istruzioni touch, focus nel dialog (aperto ${opened}, touch ${touchText}, focus ${focusInside})`);
       await fp.reload({ waitUntil: 'networkidle' });
       await fp.waitForSelector(mapReady, { timeout: 20_000 });
-      const again = await fp.evaluate(() => ({ banner: !!document.querySelector('[aria-labelledby="cookie-banner-title"]'), modal: !!document.querySelector('[role="dialog"][aria-modal="true"]') }));
+      const again = await fp.evaluate(() => ({ banner: !!document.querySelector('[aria-labelledby="cookie-banner-title"]'), modal: [...document.querySelectorAll('[role="dialog"][aria-modal="true"]')].some((d) => !d.closest('[inert]')) }));
       ux(!again.banner && !again.modal, `visita successiva: né banner né onboarding (${JSON.stringify(again)})`);
       await first.close();
 
