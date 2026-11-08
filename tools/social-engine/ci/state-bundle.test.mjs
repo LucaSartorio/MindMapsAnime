@@ -230,6 +230,16 @@ test('5. token scaduto (Authentication failed) → errore esplicito', () => {
   assert.throws(() => doPersist(env, out), /non autorizzato/);
 });
 
+test('origine attesa del bundle: run e workflow diversi → rifiutato', () => {
+  const env = setup();
+  const { out } = renderJob(env, renderOne);
+  assert.doesNotThrow(() => verifyBundle(out, 'render', { runId: '123', workflow: 'test' }));
+  assert.throws(() => verifyBundle(out, 'render', { runId: '999' }), /run 123 diverso/);
+  assert.throws(() => verifyBundle(out, 'render', { workflow: 'Social render' }), /workflow "test" diverso/);
+  const r = spawnSync(process.execPath, [SCRIPT, 'verify', '--bundle', out, '--profile', 'render', '--expect-run', '999'], { env: ENV, encoding: 'utf8' });
+  assert.equal(r.status, 1);
+});
+
 test('classificazione dei rifiuti di git push', () => {
   assert.equal(classifyPushError(' ! [rejected]        abc -> main (fetch first)'), 'retry');
   assert.equal(classifyPushError(' ! [rejected] x -> main (non-fast-forward)'), 'retry');
@@ -237,6 +247,9 @@ test('classificazione dei rifiuti di git push', () => {
   assert.equal(classifyPushError('remote: Permission to o/r.git denied to x.\nfatal: unable to access: The requested URL returned error: 403'), 'auth');
   assert.equal(classifyPushError("remote: error: cannot lock ref 'refs/heads/main': is at abc but expected def"), 'retry');
   assert.equal(classifyPushError(' ! [remote rejected] main -> main (incorrect old value provided)'), 'retry');
+  // formato --porcelain (stdout): "!\t<src>:<dst>\t[rejected] (fetch first)"
+  assert.equal(classifyPushError('To https://github.com/o/r.git\n!\tabc:refs/heads/main\t[rejected] (fetch first)\nDone'), 'retry');
+  assert.equal(classifyPushError("To https://github.com/o/r.git\n!\tabc:refs/heads/main\t[remote rejected] (cannot lock ref 'refs/heads/main': is at 1 but expected 2)\nDone"), 'retry');
   assert.equal(classifyPushError('fatal: unable to access: Could not resolve host'), 'other');
 });
 
@@ -253,6 +266,14 @@ test('il token non compare nei parametri né nei log', () => {
   }
 });
 
+test('rifiuto generico riportato solo su stdout (pre-receive hook declined) → errore esplicito, nessun retry', () => {
+  // il remote rifiuta il primo aggiornamento con un messaggio che git riporta come stato del ref
+  const env = setup({ hook: 'if [ ! -f "$GIT_DIR/once" ]; then touch "$GIT_DIR/once"; exit 1; fi' });
+  const { out } = renderJob(env, renderOne);
+  // un rifiuto generico del pre-receive NON è ritentabile: errore esplicito
+  assert.throws(() => doPersist(env, out), /push non riuscito/);
+});
+
 test('push sul branch sbagliato o remote con credenziali → rifiutato', () => {
   const env = setup();
   const { out } = renderJob(env, renderOne);
@@ -262,9 +283,15 @@ test('push sul branch sbagliato o remote con credenziali → rifiutato', () => {
 
 // ─── concorrenza ──────────────────────────────────────────────────────────────────────────
 
+const renderNoCatalog = (w) => {
+  unlinkSync(path.join(w, `${S}/content/queue/0001-a.json`));
+  write(w, `${S}/content/rendered/0001-a.json`, '{"q":1,"rendered":true}\n');
+  write(w, `${S}/history/history.json`, history({ a: { renderStatus: 'rendered' } }));
+};
+
 test('6. main avanza durante la preparazione: percorsi diversi → applicato sopra il nuovo main', () => {
   const env = setup();
-  const { out } = renderJob(env, renderOne);
+  const { out } = renderJob(env, renderNoCatalog);
   const other = env.clone('other');
   write(other, `${S}/content/queue/0002-b.json`, '{"q":2}\n'); // nuova PR di coda mergiata nel frattempo
   sh(other, 'add', '-A'); sh(other, 'commit', '-q', '-m', 'queue b'); sh(other, 'push', '-q', 'origin', 'main');
@@ -272,6 +299,19 @@ test('6. main avanza durante la preparazione: percorsi diversi → applicato sop
   assert.equal(doPersist(env, out).result, 'pushed');
   assert.equal(sh(env.remote, 'rev-parse', 'main^'), mid);
   assert.equal(env.remoteFile(`${S}/content/queue/0002-b.json`).status, 0, 'la nuova coda resta');
+});
+
+test('6c. catalogo nel bundle ma dati/coda cambiati su main dopo la base → conflict (il secondo giro lo rigenera)', () => {
+  const env = setup();
+  const { out } = renderJob(env, renderOne);
+  const other = env.clone('other');
+  write(other, `${S}/content/queue/0002-b.json`, '{"q":2}\n');
+  sh(other, 'add', '-A'); sh(other, 'commit', '-q', '-m', 'queue b'); sh(other, 'push', '-q', 'origin', 'main');
+  const mid = env.remoteHead();
+  const r = doPersist(env, out);
+  assert.equal(r.result, 'conflict');
+  assert.deepEqual(r.conflicts, [`${S}/catalog/catalog.json`]);
+  assert.equal(env.remoteHead(), mid);
 });
 
 test('6b. main avanza toccando lo stesso file → conflict, main invariato', () => {
@@ -403,7 +443,7 @@ test('gitBlobId coincide con git hash-object', () => {
 
 test('7b. due processi di persistenza in parallelo su file diversi → entrambi su main, nessun aggiornamento perso', async () => {
   const env = setup();
-  const a = renderJob(env, renderOne);
+  const a = renderJob(env, renderNoCatalog);
   const b = renderJob(env, (w) => { unlinkSync(path.join(w, `${S}/publication/pending/r1.json`)); write(w, `${S}/publication/applied/r1.json`, '{"r":1}\n'); }, 'publication');
   const { spawn } = await import('node:child_process');
   const run = (bundle, profile) => new Promise((resolve) => {

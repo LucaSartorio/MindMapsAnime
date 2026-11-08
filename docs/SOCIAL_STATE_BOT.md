@@ -82,6 +82,7 @@ PR coda ─► merge ─► Social render
 | Nessuna modifica fuori dallo stato | Allowlist: solo `history.json`, `catalog/*.json`, `content/{queue: delete, rendered, failed}`, `publication/{pending: delete, applied: SOLO add, failed}`, `analytics/{pending: delete, applied: SOLO add, failed, metrics.json}`. Workflow, script, `package.json`, codice, README e schemi sono rifiutati | ✅ |
 | Audit trail immutabile | `publication/applied/` e `analytics/applied/` ammettono solo nuovi file; un contenuto diverso dallo stesso nome → `conflict` | ✅ test 9b |
 | Commit indipendente dal working tree | Commit con indice temporaneo + `commit-tree` sui blob del bundle; le modifiche locali del checkout sono ignorate; modalità `100644` obbligatoria (un symlink su main fa fallire) | ✅ test 12 + symlink |
+| Origine del bundle verificata | Il bundle deve venire da un run di `social-render.yml` / `social-publication-state.yml` **su main**, nello stesso repository, con evento push o workflow_dispatch: lo controlla l'API nel job `prepare`. Il manifest deve dichiarare quel run e quel workflow (`verify --expect-run/--expect-workflow`). Un artifact caricato da un altro run (branch, fork, workflow arbitrario) viene rifiutato | ✅ test + ⚪ verifica API su GitHub |
 | Nessun fallback a credenziali più ampie | Senza `STATE_BOT_TOKEN` la CLI esce con errore; `GITHUB_TOKEN` non viene mai usato per il push | ✅ test 4 |
 | Branch fisso | Solo `refs/heads/main`; environment limitato a `main`; `prepare` rifiuta ref diversi da `main` | ✅ test + ⚪ environment |
 | Action fissate | Ogni `uses:` dei workflow social è fissato a uno SHA (le `@v4` già in uso fissate allo SHA attuale, comportamento invariato) | ✅ test |
@@ -103,6 +104,8 @@ PR coda ─► merge ─► Social render
 - **Il merge vero lo fa il job non privilegiato.** Su `conflict` il secondo giro ri-prepara sul main nuovo con
   il merge driver campo per campo di `history.json` (identico a oggi) e rigenera il catalogo dallo stato
   risultante, così `catalog.publishing.ready` non viene mai da uno stato obsoleto.
+- **Catalogo mai vecchio.** Se il bundle contiene il catalogo e tra la base e main sono cambiati dati del sito o file
+  del social engine, il catalogo del bundle conta come `conflict`. Il secondo giro lo rigenera sul main nuovo.
 - **Un conflitto reale** (stesso campo cambiato da entrambe le parti) fa fallire `prepare` in modo esplicito:
   nulla viene scritto e il bundle grezzo resta 7 giorni per il recupero (§9).
 - **Niente gruppo di concurrency sul persist.** In GitHub un gruppo tiene solo *un* job in attesa e
@@ -160,6 +163,9 @@ Repository → **Settings** → **Environments** → **New environment** → nom
 - **Deployment branches and tags** → **Selected branches and tags** → **Add deployment branch or tag rule**
   → tipo *Branch*, pattern **`main`** (esatto);
 - **Required reviewers**: **nessuno**: bloccherebbe i run automatici delle 06:00;
+- **Allow administrators to bypass configured protection rules**: **togli la spunta**. Oggi agenti e Claude agiscono
+  come te (admin): non verificato se questa opzione esenti anche dalla regola sul branch, quindi va spenta. Non costa
+  nulla, perché non ci sono reviewer;
 - **Wait timer**: nessuno;
 - **Environment secrets** → **Add environment secret** `STATE_BOT_PRIVATE_KEY` → incolla **l'intero
   contenuto** del `.pem` (da `-----BEGIN` a `END…-----`);
@@ -221,8 +227,10 @@ Nel run di *Social render* (lo stesso che l'agente già aspetta, quindi il contr
 2. **Persist state** → *Prepare state* verde, *Persist state (State Bot)* verde. Nel riepilogo: `push: pushed`
    e "pushed as `<slug>[bot]`".
 3. **State persisted** verde.
-4. Su `main`, l'ultimo commit `chore(social): record rendered content [skip social-render] [skip ci]` ha come
-   autore `<slug>[bot]` e tocca solo `tools/social-engine/{history,content,catalog}`.
+4. Su `main`, l'ultimo commit `chore(social): record rendered content [skip social-render] [skip ci]` è stato
+   spinto dall'app e tocca solo `tools/social-engine/{history,content,catalog}`. Il **nome** dell'autore è
+   `<slug>[bot]`: senza l'id numerico nell'email, GitHub potrebbe non collegarlo all'avatar del bot. È solo un
+   aspetto estetico: bypass e loop guard dipendono da chi spinge, non dall'autore.
 5. **Nessun** nuovo run partito da quel commit, grazie a `[skip ci]`. Controlla in *Actions* che non ci sia un
    secondo *Social render* con quel commit.
 6. L'agente di pubblicazione trova il video in `catalog.publishing.ready`, come oggi.
@@ -237,12 +245,20 @@ Nel run di *Social render* (lo stesso che l'agente già aspetta, quindi il contr
 | `Prepare` rosso: "conflitto reale" | Lo stesso campo di `history.json` cambiato da render e publication | Indagare: due workflow hanno scritto lo stesso campo. Correggere su main con una PR, poi recupero |
 | `State persisted` rosso dopo due `conflict` | Main cambiato due volte di fila (raro) | Recupero |
 | *Prepare* rosso: "base non è un antenato di main" | Storia riscritta su main (con il Livello A impossibile) | Indagare prima di tutto |
+| *Export state bundle* rosso nel job di render/apply | Un file di stato fuori allowlist o non valido (nome, JSON, dimensione > 32 MB) | Non esiste un bundle da recuperare: il run è rosso e il lavoro si ripete al run successivo (la coda e le receipt restano dove sono). Correggere la causa con una PR |
+| *Check inputs* rosso: "run non ammesso" | Recupero chiesto per un run che non è di `social-render.yml` / `social-publication-state.yml` su main | Usare il run giusto (quello indicato da **State persisted**) |
 
 **Recupero** (nessun dato perso: le receipt restano in `publication/pending/`, la coda in `content/queue/`, il
 bundle grezzo nell'artifact per 7 giorni):
 1. **Actions** → **Social state persist** → **Run workflow**, branch **main**;
 2. *check-only* ✗, *profile* = `render` o `publication`, *raw-artifact* e *raw-run-id* come indicati
    nell'errore del job **State persisted**.
+
+Il recupero accetta solo bundle prodotti da un run di *Social render* / *Social publication state* **su main**
+(controllo via API + manifest): chi ha accesso in scrittura non può far spingere all'app un artifact preparato in un
+proprio run. In alternativa, *Re-run failed jobs* sul run originale; non è verificato se GitHub ripete solo il job
+fallito o l'intero workflow chiamato. Per le receipt basta anche rilanciare *Social publication state*: quelle in
+`pending/` vengono riapplicate.
 
 ## 10. Attivazione successiva del ruleset `main-pr` (🧭, step E)
 
@@ -289,4 +305,10 @@ run di stato falliscono senza perdere nulla (§9).
   uno stato falso **dentro l'allowlist** (niente codice, niente workflow), che poi passa dal merge driver e
   dalla macchina a stati;
 - `history.json` e il catalogo sono riscritti per intero ogni volta, come oggi;
-- se `main` cambia tre volte durante un persist, servono i due giri più un recupero manuale.
+- se `main` cambia tre volte durante un persist, servono i due giri più un recupero manuale;
+- `Site CI`, l'unico check obbligatorio previsto, non esegue i test di questo script: una PR che tocca solo
+  `tools/social-engine/ci/` o `social-*.yml` è "social-only". I test girano in *Social validate*, che non è
+  obbligatorio: per quei percorsi conta la code-owner review;
+- `prepare-state.sh` legge main senza credenziali, il che funziona finché il repository è pubblico;
+- un run rosso solo per **State persisted** ha `failed[]` vuoto in `render-summary.json`: il contratto dell'agente
+  lo dice esplicitamente (PR 2).

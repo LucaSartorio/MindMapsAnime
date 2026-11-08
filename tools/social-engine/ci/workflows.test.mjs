@@ -23,7 +23,7 @@ const usesLines = (text) => [...text.matchAll(/^\s*uses:\s*(\S+)/gm)].map((m) =>
 test('social-state-persist.yml: segreti solo nel job privilegiato, trigger fidati, action fissate', () => {
   const t = wf('social-state-persist.yml');
   const j = jobs(t);
-  assert.deepEqual(Object.keys(j), ['check', 'prepare', 'persist']);
+  assert.deepEqual(Object.keys(j), ['check', 'check-login', 'prepare', 'persist']);
   const on = triggers(t);
   for (const bad of ['pull_request', 'pull_request_target', 'workflow_run', 'issue_comment', 'push:', 'schedule']) {
     assert.ok(!on.includes(bad), `trigger non ammesso: ${bad}`);
@@ -50,8 +50,24 @@ test('social-state-persist.yml: segreti solo nel job privilegiato, trigger fidat
     assert.equal((j[k].match(/secrets\.STATE_BOT_PRIVATE_KEY/g) ?? []).length, 1);
   }
   // check: niente checkout, niente codice del repository, nessuna scrittura
-  for (const bad of [/actions\/checkout/, /\bnpm\b/, /git push/, /state-bundle\.mjs/]) assert.ok(!bad.test(j.check), `nel job check: ${bad}`);
+  for (const bad of [/actions\/checkout/, /\bnpm\b/, /state-bundle\.mjs/]) assert.ok(!bad.test(j.check), `nel job check: ${bad}`);
+  for (const line of j.check.split('\n').filter((l) => /git\b.*\bpush\b/.test(l))) assert.match(line, /push --dry-run/, 'solo push in dry run');
   assert.match(j.check, /git ls-remote/);
+  // il login va confrontato in un job SENZA environment (variabile di repository)
+  assert.ok(!/environment:/.test(j['check-login']) && !/secrets\./.test(j['check-login']));
+  assert.match(j['check-login'], /vars\.STATE_BOT_LOGIN/);
+  // job con il segreto solo su main (difesa in profondità, oltre alla regola dell'environment)
+  for (const k of ['check', 'persist']) assert.match(j[k], /github\.ref == 'refs\/heads\/main'/);
+  // origine del bundle: run del workflow atteso su main (API) o il run chiamante stesso
+  assert.match(j.prepare, /gh api "repos\/\$\{GITHUB_REPOSITORY\}\/actions\/runs\/\$\{RAW_RUN\}"/);
+  assert.match(j.prepare, /\.github\/workflows\/social-render\.yml/);
+  assert.match(j.prepare, /\.github\/workflows\/social-publication-state\.yml/);
+  assert.match(j.prepare, /\$WF_REF" = "\$\{GITHUB_REPOSITORY\}\/\$\{wf_path\}@refs\/heads\/main"/);
+  assert.match(j.prepare, /STATE_EXPECT_RUN:/);
+  // persist: artifact scaricato PRIMA del checkout fidato, nome dal job prepare, checkout invariato prima del token
+  assert.ok(j.persist.indexOf('download-artifact') < j.persist.indexOf('actions/checkout'), 'download prima del checkout');
+  assert.match(j.persist, /name: \$\{\{ needs\.prepare\.outputs\.final-artifact \}\}/);
+  assert.ok(j.persist.indexOf('Trusted checkout unchanged') < j.persist.indexOf('create-github-app-token'));
   // nessuna credenziale persistita dai checkout; action esterne fissate a uno SHA
   assert.equal((t.match(/persist-credentials: false/g) ?? []).length, (t.match(/actions\/checkout@/g) ?? []).length);
   for (const u of usesLines(t)) assert.match(u, /^[\w./-]+@[0-9a-f]{40}$/, `non fissata a uno SHA: ${u}`);
@@ -85,6 +101,19 @@ for (const m of migrated) {
     for (const u of usesLines(t).filter((x) => !x.startsWith('./'))) assert.match(u, /^[\w./-]+@[0-9a-f]{40}$/, `non fissata a uno SHA: ${u}`);
   });
 }
+
+test('tutti i workflow: nessun trigger con input non fidato, environment social-state solo nel workflow di persistenza', async () => {
+  const { readdirSync } = await import('node:fs');
+  const dir = new URL('../../../.github/workflows/', import.meta.url);
+  for (const f of readdirSync(dir).filter((x) => /\.ya?ml$/.test(x))) {
+    const t = strip(readFileSync(new URL(f, dir), 'utf8'));
+    assert.ok(!/^\s*(pull_request_target|workflow_run|issue_comment):/m.test(t), `${f}: trigger non ammesso`);
+    if (f !== 'social-state-persist.yml') {
+      assert.ok(!/environment:\s*social-state/.test(t), `${f}: environment social-state fuori dal workflow di persistenza`);
+      assert.ok(!/STATE_BOT_PRIVATE_KEY/.test(t), `${f}: chiave del bot fuori dal workflow di persistenza`);
+    }
+  }
+});
 
 test('i commit di stato portano [skip ci] e lo skip del proprio workflow (loop guard)', () => {
   assert.match(PROFILES.render.subject, /\[skip social-render\] \[skip ci\]$/);

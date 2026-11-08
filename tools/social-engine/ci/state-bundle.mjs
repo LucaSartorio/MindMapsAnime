@@ -38,9 +38,9 @@ export const FORMAT = 'animapverse-social-state';
 export const VERSION = 1;
 const ROOT = 'tools/social-engine';
 /** Nome di un file di stato: niente separatori, niente punto iniziale, solo .json. */
-const NAME = '[A-Za-z0-9][A-Za-z0-9._@+-]{0,200}\\.json';
+const NAME = '[A-Za-z0-9][A-Za-z0-9._@+-]{0,480}\\.json';
 const MAX_CHANGES = 2000;
-const MAX_FILE_BYTES = 10 * 1024 * 1024;
+const MAX_FILE_BYTES = 32 * 1024 * 1024; // = MAX_STATE_FILE_BYTES della pipeline
 const MAX_MANIFEST_BYTES = 2 * 1024 * 1024;
 
 /**
@@ -120,7 +120,7 @@ const sha256 = (buf) => createHash('sha256').update(buf).digest('hex');
 
 /** Percorso relativo sicuro: niente assoluti, `..`, `\`, segmenti vuoti o nascosti, controlli. */
 export function assertSafePath(p) {
-  if (typeof p !== 'string' || p.length === 0 || p.length > 400) fail(`percorso non valido: ${JSON.stringify(p)}`);
+  if (typeof p !== 'string' || p.length === 0 || p.length > 600) fail(`percorso non valido: ${JSON.stringify(p)}`);
   // eslint-disable-next-line no-control-regex
   if (/[\x00-\x1f\x7f\\]/.test(p)) fail(`percorso con caratteri non ammessi: ${JSON.stringify(p)}`);
   if (p.startsWith('/') || p !== path.posix.normalize(p)) fail(`percorso non normalizzato o assoluto: ${p}`);
@@ -201,7 +201,7 @@ function walkFiles(dir, rel = '') {
  * Valida un bundle (dato NON fidato) per il profilo atteso. Ritorna il manifest validato.
  * Non legge mai fuori da <bundleDir> e non segue symlink.
  */
-export function verifyBundle(bundleDir, profileName) {
+export function verifyBundle(bundleDir, profileName, expect = {}) {
   const profile = profileOf(profileName);
   const rootSt = lstatSync(bundleDir, { throwIfNoEntry: false });
   if (!rootSt || !rootSt.isDirectory() || rootSt.isSymbolicLink()) fail(`bundle non trovato o non è una cartella: ${bundleDir}`);
@@ -215,6 +215,10 @@ export function verifyBundle(bundleDir, profileName) {
   if (typeof m.baseSha !== 'string' || !HEX40.test(m.baseSha)) fail('manifest: baseSha non valido');
   assertExactKeys(m.source, ['workflow', 'runId', 'runAttempt'], 'manifest.source');
   for (const [k, v] of Object.entries(m.source)) if (typeof v !== 'string' || !SOURCE_VALUE.test(v)) fail(`manifest.source.${k} non valido`);
+  // Origine: il workflow chiamante la verifica anche via API (run, workflow, branch main);
+  // qui si controlla che il manifest dichiari proprio quel run e quel workflow.
+  if (expect.runId !== undefined && m.source.runId !== expect.runId) fail(`manifest: run ${m.source.runId} diverso da quello atteso ${expect.runId}`);
+  if (expect.workflow !== undefined && m.source.workflow !== expect.workflow) fail(`manifest: workflow "${m.source.workflow}" diverso da quello atteso "${expect.workflow}"`);
   if (!Array.isArray(m.changes) || m.changes.length > MAX_CHANGES) fail('manifest: changes deve essere un array (max 2000)');
   const seen = new Set();
   const expectedFiles = new Map();
@@ -237,8 +241,10 @@ export function verifyBundle(bundleDir, profileName) {
   const present = fst ? (fst.isDirectory() && !fst.isSymbolicLink() ? walkFiles(filesDir) : fail('files/ non è una cartella')) : [];
   const presentSet = new Set(present.map((f) => f.rel));
   for (const f of present) if (!expectedFiles.has(f.rel)) fail(`file non dichiarato nel manifest: files/${f.rel}`);
+  const sizes = new Map(present.map((f) => [f.rel, f.size]));
   for (const [p, c] of expectedFiles) {
     if (!presentSet.has(p)) fail(`file dichiarato ma assente: files/${p}`);
+    if (sizes.get(p) !== c.size) fail(`dimensione diversa dal manifest: ${p}`);
     const buf = readFileSync(path.join(filesDir, p));
     if (buf.length !== c.size) fail(`dimensione diversa dal manifest: ${p}`);
     if (sha256(buf) !== c.sha256) fail(`sha256 diverso dal manifest: ${p}`);
@@ -353,6 +359,14 @@ export function planCommit({ repo, bundleDir, profileName, head, author }) {
     else if (cur === next) skipped.push(c.path);
     else conflicts.push(c.path);
   }
+  // Il catalogo deriva da dati del sito, coda e history: se tra base e main è cambiato
+  // qualcosa lì (fuori dai file del bundle), quello del bundle può essere vecchio → conflict,
+  // e il secondo giro lo rigenera sul main nuovo. Mai un catalogo calcolato su uno stato superato.
+  if (m.changes.some((c) => /\/catalog\//.test(c.path))) {
+    const own = new Set(m.changes.map((c) => c.path));
+    const moved = gitText(repo, ['diff', '--name-only', '--no-renames', m.baseSha, head, '--', 'src/data', ROOT]).split('\n').filter((f) => f && !own.has(f));
+    if (moved.length) conflicts.push(...m.changes.filter((c) => /\/catalog\//.test(c.path) && !conflicts.includes(c.path)).map((c) => c.path));
+  }
   if (conflicts.length) return { result: 'conflict', conflicts, skipped, manifest: m };
   if (!apply.length) return { result: 'noop', skipped, manifest: m };
 
@@ -418,8 +432,7 @@ export function classifyPushError(stderr) {
  * <remote> è un URL senza credenziali (https://github.com/owner/repo.git o, nei test, un percorso).
  */
 export function persist({ repo, bundleDir, profileName, remote, branch = 'main', token, author, attempts = 4, sleepMs = (n) => n * 5000, log = console.log }) {
-  if (branch !== 'main' && !process.env.STATE_ALLOW_TEST_BRANCH) fail(`branch non ammesso: ${branch} (solo main)`);
-  if (!/^[A-Za-z0-9._-]+$/.test(branch)) fail('nome di branch non valido');
+  if (branch !== 'main') fail(`branch non ammesso: ${branch} (solo main)`);
   if (!token || typeof token !== 'string' || token.length < 8) fail('token della GitHub App assente: niente push (nessun fallback ad altre credenziali)');
   if (/@/.test(remote) || /\/\/[^/]*:[^/]*@/.test(remote)) fail('il remote non deve contenere credenziali');
   const env = authEnv(token);
@@ -436,10 +449,12 @@ export function persist({ repo, bundleDir, profileName, remote, branch = 'main',
       log(`[state] pushed ${plan.commit.slice(0, 12)} on ${branch} (parent ${head.slice(0, 12)}, ${plan.applied.length} file)`);
       return { ...plan, result: 'pushed', head, attempt };
     }
-    const kind = classifyPushError(r.stderr);
-    if (kind === 'rule') fail(`push rifiutato da una regola del repository (ruleset/branch protection): l'app è nella bypass list? ${tail(r.stderr)}`);
-    if (kind === 'auth') fail(`push non autorizzato (token assente, scaduto o senza Contents: write): ${tail(r.stderr)}`);
-    if (kind !== 'retry') fail(`push non riuscito: ${tail(r.stderr)}`);
+    // con --porcelain lo stato del ref ([rejected] / [remote rejected]) è su stdout
+    const kind = classifyPushError(`${r.stdout.toString()}\n${r.stderr}`);
+    const why = tail(`${r.stdout.toString()}\n${r.stderr}`);
+    if (kind === 'rule') fail(`push rifiutato da una regola del repository (ruleset/branch protection): l'app è nella bypass list? ${why}`);
+    if (kind === 'auth') fail(`push non autorizzato (token assente, scaduto o senza Contents: write): ${why}`);
+    if (kind !== 'retry') fail(`push non riuscito: ${why}`);
     log(`[state] ${branch} è avanzato durante il push (tentativo ${attempt}/${attempts}): nuovo fetch e nuovo plan`);
     if (attempt < attempts) sleepSync(sleepMs(attempt));
   }
@@ -490,7 +505,10 @@ export function main(argv = process.argv.slice(2)) {
       return 0;
     }
     case 'verify': {
-      const m = verifyBundle(need(opts, 'bundle'), need(opts, 'profile'));
+      const expect = {};
+      if (opts['expect-run'] !== undefined) expect.runId = opts['expect-run'];
+      if (opts['expect-workflow'] !== undefined) expect.workflow = opts['expect-workflow'];
+      const m = verifyBundle(need(opts, 'bundle'), need(opts, 'profile'), expect);
       output({ changes: m.changes.length, base: m.baseSha });
       return 0;
     }
