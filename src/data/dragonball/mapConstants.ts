@@ -4,7 +4,9 @@
  * La world map della Terra usa come sfondo il poster fan-made
  * "Dragon Ball World Map" (Kris Ardrey per LocoDog.Store), ora presente in
  * `public/assets/worlds/dragonball/maps/dragonball-world-map.png`
- * (1785 × 1261 px). Il piano viewBox coincide 1:1 con i pixel del PNG, quindi
+ * (1785 × 1261 px), servito come `dragonball-world-map.webp` (stesse dimensioni in
+ * pixel, generato da `python3 scripts/optimize-map-images.py`). Il piano viewBox
+ * coincide 1:1 con i pixel dell'immagine, quindi
  * `location.x/y` sono le coordinate pixel lette direttamente dall'immagine
  * (nessuna conversione necessaria) — estratte con crop/zoom mirati per ogni
  * luogo etichettato sul poster, non stimate.
@@ -35,9 +37,13 @@ export const DRAGONBALL_LOOKOUT_VIEWBOX = { width: 1100, height: 1500 } as const
 export const DRAGONBALL_PAPAYA_VIEWBOX = { width: 1400, height: 1000 } as const;
 export const DRAGONBALL_WEST_CITY_VIEWBOX = { width: 1400, height: 1000 } as const;
 
-/** Path locale dell'immagine di riferimento (vive in public/, servita alla root). */
+/**
+ * Path locale dell'immagine di riferimento (vive in public/, servita alla root).
+ * WebP q85 ricavato dal PNG originale (2,78 MB → 0,53 MB, stesse dimensioni in
+ * pixel: PERF-02). Il PNG resta nel repository come sorgente dello script.
+ */
 export const DRAGONBALL_WORLD_MAP_SRC =
-  '/assets/worlds/dragonball/maps/dragonball-world-map.png';
+  '/assets/worlds/dragonball/maps/dragonball-world-map.webp';
 
 /**
  * Colori delle SAGHE come mostrati nella legenda "SAGAS" in basso a sinistra

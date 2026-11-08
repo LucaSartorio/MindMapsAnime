@@ -13,6 +13,11 @@
  * Uso:  npm run optimize:images
  * Dopo la conversione i file originali (.png/.jpg/.jpeg) vengono rimossi e i
  * riferimenti nei dataset puntano ai nuovi `.webp`.
+ *
+ * ATTENZIONE (PERF-02): agisce su TUTTI i raster e richiede `sharp`, che non è fra
+ * le dipendenze. Sovrascriverebbe i WebP delle world map di Dragon Ball e Black
+ * Clover e ne cancellerebbe gli originali: per quelle mappe usare
+ * `python3 scripts/optimize-map-images.py` (selettivo, non distruttivo).
  */
 import { readdir, stat, unlink } from 'node:fs/promises';
 import { join, extname, basename, dirname } from 'node:path';

@@ -3,7 +3,9 @@
  *
  * La world map usa come sfondo la mappa fan-made "World of Black Clover"
  * (pergamena con la rosa dei venti a cinque petali), attesa in
- * `public/assets/worlds/blackclover/maps/blackclover-world-map.jpg`.
+ * `public/assets/worlds/blackclover/maps/blackclover-world-map.jpg`, servita come
+ * `blackclover-world-map.webp` (stesse dimensioni in pixel, generata da
+ * `python3 scripts/optimize-map-images.py`).
  * Il piano viewBox è **1500 × 1057**: le coordinate `location.x/y` sono lette
  * su quel piano, quindi con un'immagine di dimensioni diverse ma stesso
  * rapporto d'aspetto (~1,42:1) i pin restano allineati senza toccare i dati.
@@ -31,9 +33,13 @@ export const BLACKCLOVER_UNDERWORLD_VIEWBOX = { width: 1200, height: 1400 } as c
  */
 export const BLACKCLOVER_CITY_VIEWBOX = { width: 1200, height: 900 } as const;
 
-/** Path locale dell'immagine di riferimento (vive in public/, servita alla root). */
+/**
+ * Path locale dell'immagine di riferimento (vive in public/, servita alla root).
+ * WebP q80 ricavato dal JPEG originale (1,32 MB → 1,10 MB, stesse dimensioni in
+ * pixel: PERF-02). Il JPEG resta nel repository come sorgente dello script.
+ */
 export const BLACKCLOVER_WORLD_MAP_SRC =
-  '/assets/worlds/blackclover/maps/blackclover-world-map.jpg';
+  '/assets/worlds/blackclover/maps/blackclover-world-map.webp';
 
 /**
  * Colori dei quattro regni, usati per i `Route` narrativi e per il colore

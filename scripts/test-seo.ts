@@ -23,9 +23,16 @@
  *  - parità prerender ↔ idratazione: con il solo overlay della lingua URL (come
  *    nel browser) title, description, canonical, robots e hreflang non cambiano;
  *  - link fra mondi (SEO-05): solo mappe pubblicate, indicizzabili, nella lingua
- *    della pagina, mai la pagina stessa.
+ *    della pagina, mai la pagina stessa;
+ *  - immagini delle mappe (PERF-02): ogni map level punta a un file esistente in
+ *    `public/` con le proporzioni del suo viewBox, un WebP ricavato da un originale
+ *    ne conserva le dimensioni in pixel, la mappa principale (precaricata, LCP della
+ *    `/map`) resta sotto il budget di peso.
  */
 import assert from 'node:assert/strict';
+import { existsSync, readFileSync, statSync } from 'node:fs';
+import { join } from 'node:path';
+import { imageSize } from './image-size';
 import type { WorldDataset } from '../src/types';
 import { animeWorlds } from '../src/data/worlds';
 import {
@@ -541,6 +548,62 @@ async function main() {
           `indice ${c} mancante ${w.slug}`,
         );
       }
+    }
+  });
+
+
+  // PERF-02 — immagini delle mappe. `public/` è servita alla root: `/assets/…` → `public/assets/…`.
+  const PUBLIC_DIR = join(process.cwd(), 'public');
+  /** Peso massimo dell'immagine della mappa principale (precaricata, candidata LCP della /map). */
+  const WORLD_MAP_IMAGE_BUDGET = 1_200_000;
+  const mapImages = [...datasets.values()].flatMap((d) =>
+    d.mapLevels.flatMap((level) => {
+      const asset = level.backgroundAssetId ? d.assets.find((a) => a.id === level.backgroundAssetId) : undefined;
+      return asset?.url ? [{ d, level, url: asset.url, file: join(PUBLIC_DIR, asset.url) }] : [];
+    }),
+  );
+
+  test('mappe: ogni map level ha un\'immagine esistente con le proporzioni del suo viewBox', () => {
+    assert.ok(mapImages.length > 0);
+    for (const { level, url, file } of mapImages) {
+      assert.ok(url.startsWith('/assets/worlds/'), `${level.id}: url non locale ${url}`);
+      assert.ok(existsSync(file), `${level.id}: immagine mancante ${url}`);
+      const size = imageSize(readFileSync(file));
+      assert.ok(size, `${level.id}: formato non riconosciuto ${url}`);
+      const deviation = Math.abs(size!.width / size!.height / (level.width / level.height) - 1);
+      // ±1 %: i file di oggi stanno entro lo 0,6 %; oltre, i pin si spostano a vista.
+      assert.ok(deviation <= 0.01, `${level.id}: ${size!.width}×${size!.height} px contro viewBox ${level.width}×${level.height}`);
+    }
+  });
+
+  test('mappe: un WebP ricavato da un originale ne conserva le dimensioni in pixel (pin allineati)', () => {
+    let checked = 0;
+    for (const { level, url, file } of mapImages) {
+      if (!url.endsWith('.webp')) continue;
+      for (const ext of ['.png', '.jpg', '.jpeg']) {
+        const original = file.replace(/\.webp$/, ext);
+        if (!existsSync(original)) continue;
+        const a = imageSize(readFileSync(original));
+        const b = imageSize(readFileSync(file));
+        assert.deepEqual([b?.width, b?.height], [a?.width, a?.height], `${level.id}: ${url} ridimensionato rispetto a ${ext}`);
+        assert.ok(statSync(file).size < statSync(original).size, `${level.id}: ${url} non è più leggero dell'originale`);
+        checked++;
+      }
+    }
+    // Gli originali di Dragon Ball e Black Clover restano accanto ai WebP finché la
+    // versione WebP non è verificata in produzione. Quando verranno rimossi, sostituire
+    // questo controllo con le dimensioni attese congelate (DB 1785×1261 = viewBox,
+    // BC 2970×2100): il test sulle proporzioni (±1 %) da solo non vede un ridimensionamento.
+    assert.ok(checked >= 2, 'attese almeno le world map di Dragon Ball e Black Clover');
+  });
+
+  test(`mappe: l'immagine della mappa principale di ogni mondo pesa al massimo ${WORLD_MAP_IMAGE_BUDGET.toLocaleString('en')} byte`, () => {
+    for (const d of datasets.values()) {
+      const defaultId = d.world.defaultMapLevelId ?? d.mapLevels[0]?.id;
+      const main = mapImages.find((m) => m.d === d && m.level.id === defaultId);
+      if (!main) continue;
+      const bytes = statSync(main.file).size;
+      assert.ok(bytes <= WORLD_MAP_IMAGE_BUDGET, `${d.world.slug}: ${main.url} pesa ${bytes} byte`);
     }
   });
 
