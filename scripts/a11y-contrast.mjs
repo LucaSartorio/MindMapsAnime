@@ -189,7 +189,7 @@ const SCENARIOS = [
       if (!(await visible(p, '[role="dialog"]'))) return false;
       // Nome esatto: i drawer chiusi (inert) sono anch'essi role="dialog".
       const next = p.getByRole('button', { name: 'Next step', exact: true });
-      for (let i = 0; i < 2; i++) await next.click();
+      await next.click(); // il percorso ha 2 tappe: un passo porta all'ultima
       await p.waitForTimeout(400);
       return visible(p, '[role="dialog"] li:has-text("✓")');
     } },
