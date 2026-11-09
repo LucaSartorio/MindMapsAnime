@@ -1,0 +1,18 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "guessCharacter",
+  "anime": "hunterxhunter",
+  "subject": "killua-zoldyck",
+  "locale": "en",
+  "hook": "Who visited all these places?",
+  "hookType": "question",
+  "hookId": "gc-question-1",
+  "cta": "Did you get it right?",
+  "ctaType": "comment-guess",
+  "selection": {
+    "mode": "coldstart",
+    "score": 91.63,
+    "seed": "feed37:h7972e339:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +24.0, jitter +5.6; +12 main character"
+}
