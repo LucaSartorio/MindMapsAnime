@@ -5689,7 +5689,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-11-09T06:03:32.543Z",
-      "updatedAt": "2026-11-09T06:05:57.473Z",
+      "updatedAt": "2026-11-09T06:13:02.723Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-11-09T06:05:57.473Z",
       "outputFile": "tools/social-engine/output/hunterxhunter_killua-zoldyck_guess-character_en.mp4",
@@ -5752,9 +5752,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-09T10:00:00+01:00",
+          "scheduledAt": "2026-11-09T06:08:46Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "421402483",
+          "providerPostUuid": "-8421783815910308131",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-8421783815910308131",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "hunterxhunter_killua-zoldyck_guess-character_en.instagram.scheduled.9b207b642439"
+          ],
+          "updatedAt": "2026-11-09T06:13:02.723Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-09T10:00:00+01:00",
+          "scheduledAt": "2026-11-09T06:08:46Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "421402604",
+          "providerPostUuid": "-1181175999773061619",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-1181175999773061619",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "hunterxhunter_killua-zoldyck_guess-character_en.facebook.scheduled.516639cd670b"
+          ],
+          "updatedAt": "2026-11-09T06:13:02.723Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-09T10:00:00+01:00",
+          "scheduledAt": "2026-11-09T06:08:46Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "421402875",
+          "providerPostUuid": "1094143673011882356",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=1094143673011882356",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "hunterxhunter_killua-zoldyck_guess-character_en.tiktok.scheduled.46f0357d4ba3"
+          ],
+          "updatedAt": "2026-11-09T06:13:02.723Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-09T10:00:00+01:00",
+          "scheduledAt": "2026-11-09T06:08:46Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "421402727",
+          "providerPostUuid": "8667994010298240190",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=8667994010298240190",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "hunterxhunter_killua-zoldyck_guess-character_en.youtube.scheduled.01880d0d046d"
+          ],
+          "updatedAt": "2026-11-09T06:13:02.723Z"
+        }
+      ]
     },
     "guess-character:onepiece:nico-robin@en": {
       "renderId": "guess-character:onepiece:nico-robin@en",
