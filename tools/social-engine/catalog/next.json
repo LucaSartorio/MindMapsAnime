@@ -1,19 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-08T06:15:45.066Z",
-  "status": "ready",
+  "generatedAt": "2026-11-09T06:05:58.260Z",
+  "status": "backlog",
   "feedTail": [
-    {
-      "renderId": "character-journey:jujutsukaisen:maki-zenin@en",
-      "contentType": "character-journey",
-      "animes": [
-        "jujutsukaisen"
-      ],
-      "characters": [
-        "jujutsukaisen:maki-zenin"
-      ],
-      "part": null
-    },
     {
       "renderId": "character-versus:dragonball:piccolo-vs-bleach-ichigo-kurosaki@en",
       "contentType": "character-versus",
@@ -74,6 +63,17 @@
         "blackclover:yami-sukehiro"
       ],
       "part": null
+    },
+    {
+      "renderId": "guess-character:hunterxhunter:killua-zoldyck@en",
+      "contentType": "guess-character",
+      "animes": [
+        "hunterxhunter"
+      ],
+      "characters": [
+        "hunterxhunter:killua-zoldyck"
+      ],
+      "part": null
     }
   ],
   "rules": {
@@ -94,494 +94,28 @@
     "error": null
   },
   "backlog": {
-    "unpublished": [],
+    "unpublished": [
+      {
+        "renderId": "guess-character:hunterxhunter:killua-zoldyck@en",
+        "contentType": "guess-character",
+        "renderedAt": "2026-11-09T06:05:57.473Z",
+        "missing": [
+          "instagram",
+          "facebook",
+          "tiktok",
+          "youtube"
+        ]
+      }
+    ],
     "unfinished": [],
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "feed37:h7972e339:samples0",
-  "rejected": {
-    "JOURNEY_PART_ORDER": 38,
-    "MAX_SAME_CHARACTER_STREAK": 37
-  },
-  "considered": 664,
-  "trace": {
-    "traceVersion": 1,
-    "mode": "coldstart",
-    "seed": "feed37:h7972e339:samples0",
-    "analytics": {
-      "coldStart": true,
-      "samples": 0,
-      "contents": 0,
-      "minimumSamples": 8
-    },
-    "recent": [
-      {
-        "renderId": "character-journey:jujutsukaisen:maki-zenin@en",
-        "contentType": "character-journey",
-        "animes": [
-          "jujutsukaisen"
-        ],
-        "characters": [
-          "jujutsukaisen:maki-zenin"
-        ]
-      },
-      {
-        "renderId": "character-versus:dragonball:piccolo-vs-bleach-ichigo-kurosaki@en",
-        "contentType": "character-versus",
-        "animes": [
-          "dragonball",
-          "bleach"
-        ],
-        "characters": [
-          "dragonball:piccolo",
-          "bleach:ichigo-kurosaki"
-        ]
-      },
-      {
-        "renderId": "character-journey:onepiece:nami:part-01@en",
-        "contentType": "character-journey",
-        "animes": [
-          "onepiece"
-        ],
-        "characters": [
-          "onepiece:nami"
-        ]
-      },
-      {
-        "renderId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-goku@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "dragonball"
-        ],
-        "characters": [
-          "naruto:sasuke-uchiha",
-          "dragonball:goku"
-        ]
-      },
-      {
-        "renderId": "character-journey:onepiece:monkey-d-luffy:part-05@en",
-        "contentType": "character-journey",
-        "animes": [
-          "onepiece"
-        ],
-        "characters": [
-          "onepiece:monkey-d-luffy"
-        ]
-      },
-      {
-        "renderId": "character-versus:attackontitan:reiner-braun-vs-blackclover-yami-sukehiro@en",
-        "contentType": "character-versus",
-        "animes": [
-          "attackontitan",
-          "blackclover"
-        ],
-        "characters": [
-          "attackontitan:reiner-braun",
-          "blackclover:yami-sukehiro"
-        ]
-      }
-    ],
-    "constraints": {
-      "sameAnimeStreak": {
-        "animes": [
-          "attackontitan",
-          "blackclover"
-        ],
-        "length": 1
-      },
-      "forcedAnimeRotation": false,
-      "blockedAnimes": [],
-      "blockedCharacters": [
-        "attackontitan:reiner-braun",
-        "blackclover:yami-sukehiro"
-      ],
-      "characterCooldown": [
-        "jujutsukaisen:maki-zenin",
-        "dragonball:piccolo",
-        "bleach:ichigo-kurosaki",
-        "onepiece:nami",
-        "naruto:sasuke-uchiha",
-        "dragonball:goku",
-        "onepiece:monkey-d-luffy",
-        "attackontitan:reiner-braun",
-        "blackclover:yami-sukehiro"
-      ],
-      "contentTypeStreak": {
-        "contentType": "character-versus",
-        "length": 1
-      }
-    },
-    "hardRulesTriggered": {
-      "JOURNEY_PART_ORDER": 38,
-      "MAX_SAME_CHARACTER_STREAK": 37
-    },
-    "candidates": {
-      "considered": 664,
-      "eligible": 590,
-      "byContentType": {
-        "character-journey": {
-          "considered": 406,
-          "eligible": 366
-        },
-        "guess-character": {
-          "considered": 80,
-          "eligible": 78
-        },
-        "character-versus": {
-          "considered": 178,
-          "eligible": 146
-        }
-      }
-    },
-    "excluded": [
-      {
-        "renderId": "character-journey:attackontitan:reiner-braun@en",
-        "contentType": "character-journey",
-        "animes": [
-          "attackontitan"
-        ],
-        "characters": [
-          "attackontitan:reiner-braun"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: attackontitan:reiner-braun is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:blackclover:yami-sukehiro:part-01@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:yami-sukehiro"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: blackclover:yami-sukehiro is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:blackclover:yami-sukehiro:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:yami-sukehiro"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER",
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)",
-          "character streak: blackclover:yami-sukehiro is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:attackontitan:armin-arlert-vs-blackclover-yami-sukehiro@en",
-        "contentType": "character-versus",
-        "animes": [
-          "attackontitan",
-          "blackclover"
-        ],
-        "characters": [
-          "attackontitan:armin-arlert",
-          "blackclover:yami-sukehiro"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: blackclover:yami-sukehiro is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-blackclover-yami-sukehiro@en",
-        "contentType": "character-versus",
-        "animes": [
-          "attackontitan",
-          "blackclover"
-        ],
-        "characters": [
-          "attackontitan:mikasa-ackerman",
-          "blackclover:yami-sukehiro"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: blackclover:yami-sukehiro is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:attackontitan:reiner-braun-vs-blackclover-asta@en",
-        "contentType": "character-versus",
-        "animes": [
-          "attackontitan",
-          "blackclover"
-        ],
-        "characters": [
-          "attackontitan:reiner-braun",
-          "blackclover:asta"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: attackontitan:reiner-braun is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:attackontitan:reiner-braun-vs-blackclover-noelle-silva@en",
-        "contentType": "character-versus",
-        "animes": [
-          "attackontitan",
-          "blackclover"
-        ],
-        "characters": [
-          "attackontitan:reiner-braun",
-          "blackclover:noelle-silva"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: attackontitan:reiner-braun is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:attackontitan:reiner-braun-vs-bleach-ichigo-kurosaki@en",
-        "contentType": "character-versus",
-        "animes": [
-          "attackontitan",
-          "bleach"
-        ],
-        "characters": [
-          "attackontitan:reiner-braun",
-          "bleach:ichigo-kurosaki"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: attackontitan:reiner-braun is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:attackontitan:reiner-braun-vs-bleach-rukia-kuchiki@en",
-        "contentType": "character-versus",
-        "animes": [
-          "attackontitan",
-          "bleach"
-        ],
-        "characters": [
-          "attackontitan:reiner-braun",
-          "bleach:rukia-kuchiki"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: attackontitan:reiner-braun is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:attackontitan:reiner-braun-vs-bleach-yasutora-chad-sado@en",
-        "contentType": "character-versus",
-        "animes": [
-          "attackontitan",
-          "bleach"
-        ],
-        "characters": [
-          "attackontitan:reiner-braun",
-          "bleach:yasutora-chad-sado"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: attackontitan:reiner-braun is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      }
-    ],
-    "status": "selected",
-    "selectedId": "guess-character:hunterxhunter:killua-zoldyck",
-    "renderId": "guess-character:hunterxhunter:killua-zoldyck@en",
-    "contentType": "guess-character",
-    "animes": [
-      "hunterxhunter"
-    ],
-    "characters": [
-      "hunterxhunter:killua-zoldyck"
-    ],
-    "score": 91.63,
-    "base": 79.63,
-    "reasons": [
-      "coldstart: novelty +24.0, jitter +5.6",
-      "+12 main character"
-    ],
-    "ranked": [
-      {
-        "renderId": "guess-character:hunterxhunter:killua-zoldyck@en",
-        "contentType": "guess-character",
-        "animes": [
-          "hunterxhunter"
-        ],
-        "score": 91.63,
-        "reasons": [
-          "coldstart: novelty +24.0, jitter +5.6",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "character-journey:hunterxhunter:gon-freecss:part-01@en",
-        "contentType": "character-journey",
-        "animes": [
-          "hunterxhunter"
-        ],
-        "score": 91.22,
-        "reasons": [
-          "coldstart: novelty +21.5, jitter +5.7",
-          "+12 main character",
-          "+2 format below its target share (45% < 50%)"
-        ]
-      },
-      {
-        "renderId": "character-journey:bleach:ulquiorra-cifer@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "score": 90.9,
-        "reasons": [
-          "coldstart: novelty +21.0, jitter +5.9",
-          "+12 main character",
-          "+2 format below its target share (45% < 50%)"
-        ]
-      },
-      {
-        "renderId": "guess-character:onepiece:jinbe@en",
-        "contentType": "guess-character",
-        "animes": [
-          "onepiece"
-        ],
-        "score": 90.71,
-        "reasons": [
-          "coldstart: novelty +23.0, jitter +5.7",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "guess-character:naruto:sakura-haruno@en",
-        "contentType": "guess-character",
-        "animes": [
-          "naruto"
-        ],
-        "score": 90.66,
-        "reasons": [
-          "coldstart: novelty +23.5, jitter +5.2",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "guess-character:bleach:uryu-ishida@en",
-        "contentType": "guess-character",
-        "animes": [
-          "bleach"
-        ],
-        "score": 90.57,
-        "reasons": [
-          "coldstart: novelty +23.5, jitter +5.1",
-          "+12 main character"
-        ]
-      }
-    ],
-    "explanation": [
-      "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
-      "attackontitan:reiner-braun, blackclover:yami-sukehiro excluded in every format (maxSameCharacterStreak 1).",
-      "Selected guess-character:hunterxhunter:killua-zoldyck@en (guess-character, hunterxhunter) — coldstart, score 91.63 among 590 valid candidate(s)."
-    ]
-  },
-  "pick": {
-    "contentId": "guess-character:hunterxhunter:killua-zoldyck",
-    "renderId": "guess-character:hunterxhunter:killua-zoldyck@en",
-    "contentType": "guess-character",
-    "animes": [
-      "hunterxhunter"
-    ],
-    "characters": [
-      "hunterxhunter:killua-zoldyck"
-    ],
-    "part": null,
-    "partCount": null,
-    "score": 91.63,
-    "reasons": [
-      "coldstart: novelty +24.0, jitter +5.6",
-      "+12 main character"
-    ]
-  },
-  "request": {
-    "template": "guessCharacter",
-    "anime": "hunterxhunter",
-    "subject": "killua-zoldyck",
-    "locale": "en",
-    "hook": "Who visited all these places?",
-    "hookType": "question",
-    "hookId": "gc-question-1",
-    "cta": "Did you get it right?",
-    "ctaType": "comment-guess",
-    "selection": {
-      "mode": "coldstart",
-      "score": 91.63,
-      "seed": "feed37:h7972e339:samples0"
-    },
-    "notes": "growth selector (coldstart): coldstart: novelty +24.0, jitter +5.6; +12 main character"
-  },
-  "alternatives": [
-    {
-      "renderId": "character-journey:hunterxhunter:gon-freecss:part-01@en",
-      "contentType": "character-journey",
-      "score": 91.22
-    },
-    {
-      "renderId": "character-journey:bleach:ulquiorra-cifer@en",
-      "contentType": "character-journey",
-      "score": 90.9
-    },
-    {
-      "renderId": "guess-character:onepiece:jinbe@en",
-      "contentType": "guess-character",
-      "score": 90.71
-    },
-    {
-      "renderId": "guess-character:naruto:sakura-haruno@en",
-      "contentType": "guess-character",
-      "score": 90.66
-    },
-    {
-      "renderId": "guess-character:bleach:uryu-ishida@en",
-      "contentType": "guess-character",
-      "score": 90.57
-    }
-  ],
-  "eligible": 590
+  "seed": "",
+  "reason": "publish the existing render first: guess-character:hunterxhunter:killua-zoldyck@en (it counts as today's video; no new content)",
+  "alternatives": [],
+  "rejected": {},
+  "considered": 0,
+  "eligible": 0,
+  "trace": null
 }

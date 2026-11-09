@@ -5678,6 +5678,84 @@
         }
       ]
     },
+    "guess-character:hunterxhunter:killua-zoldyck@en": {
+      "renderId": "guess-character:hunterxhunter:killua-zoldyck@en",
+      "contentId": "guess-character:hunterxhunter:killua-zoldyck",
+      "template": "guessCharacter",
+      "anime": "hunterxhunter",
+      "subject": "killua-zoldyck",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-11-09T06:03:32.543Z",
+      "updatedAt": "2026-11-09T06:05:57.473Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-11-09T06:05:57.473Z",
+      "outputFile": "tools/social-engine/output/hunterxhunter_killua-zoldyck_guess-character_en.mp4",
+      "manifestFile": "tools/social-engine/output/hunterxhunter_killua-zoldyck_guess-character_en.manifest.json",
+      "sourceFile": "0043-hunterxhunter_killua-zoldyck_guess-character_en.json",
+      "durationSeconds": 26,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-42570750609-1",
+        "runId": "42570750609",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/42570750609",
+        "video": "videos/hunterxhunter_killua-zoldyck_guess-character_en.mp4",
+        "manifest": "manifests/hunterxhunter_killua-zoldyck_guess-character_en.manifest.json",
+        "sha256": "945af7499fb580bf47b8bd3f6bca8480eeab0bcaf439887de00559c866b0b042",
+        "cover": "covers/hunterxhunter_killua-zoldyck_guess-character_en.cover.png",
+        "expiresAt": "2026-12-09T06:05:57.473Z"
+      },
+      "social": {
+        "contentType": "guess-character",
+        "animes": [
+          "hunterxhunter"
+        ],
+        "characters": [
+          "hunterxhunter:killua-zoldyck"
+        ],
+        "characterNames": [
+          "Killua Zoldyck"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "question",
+        "hookId": "gc-question-1",
+        "hook": "Who visited all these places?",
+        "ctaType": "comment-guess",
+        "cta": "Did you get it right?",
+        "durationSeconds": 26,
+        "selection": {
+          "mode": "coldstart",
+          "score": 91.63,
+          "seed": "feed37:h7972e339:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Who visited all these places?\n\n6 places, one Hunter x Hunter character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nSave it for your next rewatch.\n\n#hunterxhunter #hxh #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Who visited all these places? Did you get it right? Tell us how many places it took you 👇 #hunterxhunter #hxh #anime #animemap #AniMapVerse",
+          "youtubeTitle": "Guess the Hunter x Hunter Character From the Places They Visited 🎣",
+          "youtubeDescription": "Who visited all these places?\n\n6 places, one Hunter x Hunter character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/hunter-x-hunter/map\n\n#hunterxhunter #hxh #anime",
+          "facebookCaption": "Who visited all these places?\n\n6 places, one Hunter x Hunter character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/hunter-x-hunter/map",
+          "hashtags": [
+            "#hunterxhunter",
+            "#hxh",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "guess-character:onepiece:nico-robin@en": {
       "renderId": "guess-character:onepiece:nico-robin@en",
       "contentId": "guess-character:onepiece:nico-robin",

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-08T06:15:45.066Z",
+  "generatedAt": "2026-11-09T06:05:58.260Z",
   "locales": [
     "en",
     "it"
@@ -16244,13 +16244,28 @@
             "places": 8,
             "clues": 6
           },
-          "renderedLocales": [],
+          "renderedLocales": [
+            "en"
+          ],
           "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
-          "renderedBefore": false,
+          "renderedBefore": true,
           "publishedBefore": false,
-          "publication": []
+          "publication": [
+            {
+              "renderId": "guess-character:hunterxhunter:killua-zoldyck@en",
+              "locale": "en",
+              "variant": null,
+              "status": "notPublished",
+              "platforms": {
+                "instagram": "notScheduled",
+                "facebook": "notScheduled",
+                "tiktok": "notScheduled",
+                "youtube": "notScheduled"
+              }
+            }
+          ]
         },
         {
           "id": "guess-character:hunterxhunter:kurapika",
@@ -25898,15 +25913,68 @@
       "metricool"
     ],
     "summary": {
-      "rendered": 42,
+      "rendered": 43,
       "unavailable": 5,
-      "notPublished": 5,
+      "notPublished": 6,
       "scheduled": 31,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0
     },
-    "ready": [],
+    "ready": [
+      {
+        "renderId": "guess-character:hunterxhunter:killua-zoldyck@en",
+        "contentId": "guess-character:hunterxhunter:killua-zoldyck",
+        "anime": "hunterxhunter",
+        "subject": "killua-zoldyck",
+        "subjectName": "Killua Zoldyck",
+        "locale": "en",
+        "variant": null,
+        "segment": null,
+        "partNumber": null,
+        "partCount": null,
+        "renderedAt": "2026-11-09T06:05:57.473Z",
+        "durationSeconds": 26,
+        "publicationStatus": "notPublished",
+        "platforms": {
+          "instagram": "notScheduled",
+          "facebook": "notScheduled",
+          "tiktok": "notScheduled",
+          "youtube": "notScheduled"
+        },
+        "artifact": {
+          "name": "animapverse-social-render-42570750609-1",
+          "runId": "42570750609",
+          "runAttempt": "1",
+          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/42570750609",
+          "video": "videos/hunterxhunter_killua-zoldyck_guess-character_en.mp4",
+          "manifest": "manifests/hunterxhunter_killua-zoldyck_guess-character_en.manifest.json",
+          "sha256": "945af7499fb580bf47b8bd3f6bca8480eeab0bcaf439887de00559c866b0b042",
+          "cover": "covers/hunterxhunter_killua-zoldyck_guess-character_en.cover.png",
+          "expiresAt": "2026-12-09T06:05:57.473Z"
+        },
+        "contentType": "guess-character",
+        "platformMetadata": {
+          "instagramCaption": "Who visited all these places?\n\n6 places, one Hunter x Hunter character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nSave it for your next rewatch.\n\n#hunterxhunter #hxh #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Who visited all these places? Did you get it right? Tell us how many places it took you 👇 #hunterxhunter #hxh #anime #animemap #AniMapVerse",
+          "youtubeTitle": "Guess the Hunter x Hunter Character From the Places They Visited 🎣",
+          "youtubeDescription": "Who visited all these places?\n\n6 places, one Hunter x Hunter character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/hunter-x-hunter/map\n\n#hunterxhunter #hxh #anime",
+          "facebookCaption": "Who visited all these places?\n\n6 places, one Hunter x Hunter character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/hunter-x-hunter/map",
+          "hashtags": [
+            "#hunterxhunter",
+            "#hxh",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        },
+        "waitFor": {}
+      }
+    ],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",
