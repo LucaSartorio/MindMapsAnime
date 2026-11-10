@@ -1,0 +1,13 @@
+{
+  "receiptVersion": 1,
+  "renderId": "character-journey:jujutsukaisen:megumi-fushiguro@en",
+  "provider": "metricool",
+  "status": "scheduled",
+  "scheduledFor": "2026-11-10T12:00:00+01:00",
+  "recordedAt": "2026-11-10T06:14:20Z",
+  "recordedBy": "chatgpt-work-publishing-agent",
+  "platform": "facebook",
+  "providerPostId": "422768046",
+  "providerPostUuid": "397176576132597604",
+  "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=397176576132597604"
+}
