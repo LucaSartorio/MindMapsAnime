@@ -1,0 +1,315 @@
+# AniMapVerse — INTERNAL: persists the social engine state on `main` through the GitHub App
+# "AniMapVerse State Bot" (SEC-01 · docs/SOCIAL_STATE_BOT.md). Called by Social render and
+# Social publication state; also runnable by hand to RECOVER a run whose state was not saved.
+#
+#   raw state bundle (artifact, from the unprivileged render/apply job)
+#     ─► prepare  (UNPRIVILEGED: npm ci, rebase with the history.json merge driver, catalog
+#                  regenerated, final bundle as artifact — no secret, read-only token)
+#     ─► persist  (PRIVILEGED: environment `social-state`, clean checkout of main, NO npm, NO app
+#                  code, NO merge driver: verify + per-path plan + App token minted last + push)
+#
+# The persist job runs only tools/social-engine/ci/state-bundle.mjs (zero dependencies) from the
+# checkout of main. The App token never reaches the prepare job, git config, URLs or logs.
+# Output `result`: pushed | noop | conflict (main changed one of the same files after prepare:
+# the caller runs a second round, which re-prepares on the newer main).
+name: Social state persist
+
+on:
+  workflow_call:
+    inputs:
+      profile:
+        description: 'render | publication'
+        type: string
+        required: true
+      raw-artifact:
+        description: 'Name of the raw state artifact uploaded by the calling run'
+        type: string
+        required: true
+      round:
+        type: string
+        required: false
+        default: '1'
+    outputs:
+      result:
+        description: 'pushed | noop | conflict'
+        value: ${{ jobs.persist.outputs.result }}
+      commit:
+        description: 'State commit pushed on main (empty unless pushed)'
+        value: ${{ jobs.persist.outputs.commit }}
+  # Manual, on main only (the environment rejects other branches):
+  #   check-only = true → credential check: mints the App token and READS the repository with
+  #                        it (no checkout of PR code, no commit, no push);
+  #   otherwise         → recovery: persists the raw state bundle of an earlier run.
+  workflow_dispatch:
+    inputs:
+      check-only:
+        description: 'Only check the State Bot credentials (no push)'
+        type: boolean
+        default: true
+      profile:
+        description: 'Recovery: profile of the raw bundle'
+        type: choice
+        options: [render, publication]
+        default: render
+      raw-artifact:
+        description: 'Recovery: social-state-raw-<run_id>-<attempt>-<profile>'
+        type: string
+        required: false
+      raw-run-id:
+        description: 'Recovery: run id that uploaded the raw bundle'
+        type: string
+        required: false
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Check State Bot credentials (no push)
+    if: github.event_name == 'workflow_dispatch' && inputs.check-only && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment: social-state
+    permissions:
+      contents: read
+    outputs:
+      slug: ${{ steps.token.outputs.app-slug }}
+    steps:
+      - name: Mint State Bot token
+        id: token
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+        with:
+          client-id: ${{ vars.STATE_BOT_CLIENT_ID }}
+          private-key: ${{ secrets.STATE_BOT_PRIVATE_KEY }}
+          permission-contents: write
+
+      # Authenticates the receive-pack (push) service with a DRY RUN: nothing is sent.
+      - name: Authenticate a push with the App token (dry run, nothing written)
+        env:
+          STATE_BOT_TOKEN: ${{ steps.token.outputs.token }}
+          SLUG: ${{ steps.token.outputs.app-slug }}
+        run: |
+          set -euo pipefail
+          basic=$(printf 'x-access-token:%s' "$STATE_BOT_TOKEN" | base64 -w0)
+          echo "::add-mask::$basic"
+          export GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null GIT_TERMINAL_PROMPT=0
+          export GIT_CONFIG_COUNT=1 GIT_CONFIG_KEY_0=http.https://github.com/.extraheader GIT_CONFIG_VALUE_0="AUTHORIZATION: basic $basic"
+          url="https://github.com/${GITHUB_REPOSITORY}.git"
+          head=$(git ls-remote "$url" refs/heads/main | cut -f1)
+          [ -n "$head" ] || { echo "::error::the App token could not read the repository"; exit 1; }
+          git init -q probe && git -C probe fetch -q --depth=1 "$url" "$head"
+          git -C probe push --dry-run --porcelain "$url" "$head:refs/heads/main"
+          {
+            echo "### State Bot credentials OK"
+            echo "- token minted with Contents: write for \`${SLUG}[bot]\` · push to main authenticated (dry run) at \`$head\`"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  # Without environment on purpose: compares the REPOSITORY variable that the work jobs' if:
+  # really read (an environment variable with the same name would shadow it in the check job).
+  check-login:
+    name: Check STATE_BOT_LOGIN (repository variable)
+    needs: check
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    permissions: {}
+    steps:
+      - name: Compare
+        env:
+          SLUG: ${{ needs.check.outputs.slug }}
+          LOGIN: ${{ vars.STATE_BOT_LOGIN }}
+        run: |
+          if [ "$LOGIN" = "${SLUG}[bot]" ]; then
+            echo "- repository variable STATE_BOT_LOGIN = \`$LOGIN\` ✔" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "::error::set the REPOSITORY variable STATE_BOT_LOGIN to ${SLUG}[bot] (now: ${LOGIN:-unset})"; exit 1
+          fi
+
+  prepare:
+    name: Prepare state (unprivileged)
+    if: ${{ !inputs.check-only }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      # read the origin run (recovery) and download its raw bundle
+      actions: read
+    outputs:
+      final-artifact: ${{ steps.check.outputs.final }}
+    steps:
+      # Origin of the raw bundle (SEC-01): it must come from Social render / Social publication
+      # state running ON MAIN in this repository — the calling run itself (workflow_call), or the
+      # run named by the recovery dispatch, checked through the API. Any other run (branch, fork,
+      # arbitrary workflow uploading a crafted artifact) is refused before anything is read.
+      - name: Check inputs and origin
+        id: check
+        env:
+          PROFILE: ${{ inputs.profile }}
+          RAW: ${{ inputs.raw-artifact }}
+          RAW_RUN: ${{ inputs.raw-run-id }}
+          ROUND: ${{ inputs.round }}
+          REF: ${{ github.ref }}
+          EVENT: ${{ github.event_name }}
+          WF_REF: ${{ github.workflow_ref }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          [[ "$PROFILE" =~ ^(render|publication)$ ]] || { echo "::error::invalid profile"; exit 1; }
+          [[ "$RAW" =~ ^social-state-raw-([0-9]+)-[0-9]+-(render|publication)$ ]] || { echo "::error::invalid raw artifact name"; exit 1; }
+          raw_run="${BASH_REMATCH[1]}"; [ "${BASH_REMATCH[2]}" = "$PROFILE" ] || { echo "::error::artifact profile mismatch"; exit 1; }
+          [ "$REF" = "refs/heads/main" ] || { echo "::error::state is persisted only from main ($REF)"; exit 1; }
+          case "$PROFILE" in
+            render) wf_path=".github/workflows/social-render.yml"; wf_name="Social render" ;;
+            publication) wf_path=".github/workflows/social-publication-state.yml"; wf_name="Social publication state" ;;
+          esac
+          if [ "$EVENT" = "workflow_dispatch" ]; then
+            # recovery: the named run must be a run of the expected workflow on main, in this repository
+            [[ "$RAW_RUN" =~ ^[0-9]+$ ]] || { echo "::error::recovery needs raw-run-id"; exit 1; }
+            [ "$raw_run" = "$RAW_RUN" ] || { echo "::error::the artifact name does not belong to run $RAW_RUN"; exit 1; }
+            gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${RAW_RUN}" \
+              --jq '[.path, .head_branch, .head_repository.full_name, .event] | @tsv' > "$RUNNER_TEMP/origin.tsv"
+            IFS=$'\t' read -r o_path o_branch o_repo o_event < "$RUNNER_TEMP/origin.tsv"
+            [ "$o_path" = "$wf_path" ] && [ "$o_branch" = "main" ] && [ "$o_repo" = "$GITHUB_REPOSITORY" ] \
+              && [[ "$o_event" =~ ^(push|workflow_dispatch)$ ]] \
+              || { echo "::error::run not allowed: $o_path · $o_branch · $o_repo · $o_event (expected $wf_path on main)"; exit 1; }
+            expect_run="$RAW_RUN"
+          else
+            # workflow_call: the bundle comes from this very run, whose workflow must be the expected one on main
+            [ -z "$RAW_RUN" ] || { echo "::error::raw-run-id is for recovery only"; exit 1; }
+            [ "$WF_REF" = "${GITHUB_REPOSITORY}/${wf_path}@refs/heads/main" ] || { echo "::error::caller not allowed: $WF_REF"; exit 1; }
+            [ "$raw_run" = "$GITHUB_RUN_ID" ] || { echo "::error::the artifact name does not belong to this run"; exit 1; }
+            expect_run="$GITHUB_RUN_ID"
+          fi
+          {
+            echo "expect-run=$expect_run"
+            echo "expect-workflow=$wf_name"
+            echo "final=social-state-final-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-${PROFILE}-r${ROUND:-0}"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Checkout main
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          ref: main
+          fetch-depth: 100
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+
+      - name: Download raw state bundle
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: ${{ inputs.raw-artifact }}
+          path: ${{ runner.temp }}/state-raw
+          run-id: ${{ inputs.raw-run-id || github.run_id }}
+          github-token: ${{ github.token }}
+
+      - name: Prepare final bundle (merge driver + catalog, no token)
+        env:
+          PROFILE: ${{ inputs.profile }}
+          STATE_EXPECT_RUN: ${{ steps.check.outputs.expect-run }}
+          STATE_EXPECT_WORKFLOW: ${{ steps.check.outputs.expect-workflow }}
+        run: bash tools/social-engine/ci/prepare-state.sh "$PROFILE" "$RUNNER_TEMP/state-raw" "$RUNNER_TEMP/state-final"
+
+      - name: Upload final state bundle
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: ${{ steps.check.outputs.final }}
+          path: ${{ runner.temp }}/state-final/
+          if-no-files-found: error
+          retention-days: 7
+
+  persist:
+    name: Persist state (State Bot)
+    needs: prepare
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # Holds the App key. Deployment branches: ONLY main (configured by the owner BEFORE this
+    # workflow is merged — see docs/SOCIAL_STATE_BOT.md). No `npm`, no app code in this job.
+    environment: social-state
+    permissions:
+      contents: read
+    outputs:
+      result: ${{ steps.push.outputs.result || steps.plan.outputs.result }}
+      commit: ${{ steps.push.outputs.commit }}
+    steps:
+      # The (untrusted) bundle is downloaded FIRST, outside the workspace; the trusted checkout of
+      # main comes after, so no extraction can touch the script that will receive the token.
+      - name: Download final state bundle
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: ${{ needs.prepare.outputs.final-artifact }}
+          path: ${{ runner.temp }}/state-final
+
+      - name: Checkout main (clean)
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          ref: main
+          fetch-depth: 100
+          persist-credentials: false
+          path: repo
+
+      - name: Record the trusted checkout
+        id: trusted
+        run: echo "sha=$(git -C repo rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      # Untrusted bundle: schema, exact allowlist, no symlinks, sha256, JSON — then a per-path
+      # plan on main's HEAD. No token exists yet.
+      - name: Verify and plan (no token)
+        id: plan
+        env:
+          PROFILE: ${{ inputs.profile }}
+        run: node repo/tools/social-engine/ci/state-bundle.mjs plan --repo repo --bundle "$RUNNER_TEMP/state-final" --profile "$PROFILE" --head HEAD
+
+      - name: Trusted checkout unchanged
+        if: steps.plan.outputs.result == 'commit'
+        env:
+          SHA: ${{ steps.trusted.outputs.sha }}
+        run: |
+          [ "$(git -C repo rev-parse HEAD)" = "$SHA" ] && [ -z "$(git -C repo status --porcelain --untracked-files=all)" ] \
+            || { echo "::error::the trusted checkout changed before the token was minted"; exit 1; }
+
+      # Minted only when there is something to push; revoked by the action's post step.
+      - name: Mint State Bot token
+        id: token
+        if: steps.plan.outputs.result == 'commit'
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+        with:
+          client-id: ${{ vars.STATE_BOT_CLIENT_ID }}
+          private-key: ${{ secrets.STATE_BOT_PRIVATE_KEY }}
+          permission-contents: write
+
+      - name: Push state commit
+        id: push
+        if: steps.plan.outputs.result == 'commit'
+        env:
+          PROFILE: ${{ inputs.profile }}
+          STATE_BOT_TOKEN: ${{ steps.token.outputs.token }}
+          APP_SLUG: ${{ steps.token.outputs.app-slug }}
+        run: >-
+          node repo/tools/social-engine/ci/state-bundle.mjs push
+          --repo repo --bundle "$RUNNER_TEMP/state-final" --profile "$PROFILE"
+          --remote "https://github.com/${GITHUB_REPOSITORY}.git" --app-slug "$APP_SLUG"
+
+      - name: Summary
+        if: always()
+        env:
+          PLAN: ${{ steps.plan.outputs.result }}
+          PUSH: ${{ steps.push.outputs.result }}
+          COMMIT: ${{ steps.push.outputs.commit }}
+          SLUG: ${{ steps.token.outputs.app-slug }}
+          ROUND: ${{ inputs.round }}
+        run: |
+          {
+            echo "### Social state persist (round $ROUND)"
+            echo "- plan: \`${PLAN:-not run}\` · push: \`${PUSH:-not run}\`${COMMIT:+ · commit \`$COMMIT\`}"
+            [ -n "$SLUG" ] && echo "- pushed as \`${SLUG}[bot]\` (set the repository variable STATE_BOT_LOGIN to this login)"
+          } >> "$GITHUB_STEP_SUMMARY"
