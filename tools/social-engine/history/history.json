@@ -922,6 +922,85 @@
         }
       ]
     },
+    "character-journey:jujutsukaisen:megumi-fushiguro@en": {
+      "renderId": "character-journey:jujutsukaisen:megumi-fushiguro@en",
+      "contentId": "character-journey:jujutsukaisen:megumi-fushiguro",
+      "template": "characterJourney",
+      "anime": "jujutsukaisen",
+      "subject": "megumi-fushiguro",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-11-10T06:06:49.326Z",
+      "updatedAt": "2026-11-10T06:11:37.709Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-11-10T06:11:37.709Z",
+      "outputFile": "tools/social-engine/output/jujutsukaisen_megumi-fushiguro_character-journey_en.mp4",
+      "manifestFile": "tools/social-engine/output/jujutsukaisen_megumi-fushiguro_character-journey_en.manifest.json",
+      "sourceFile": "0044-jujutsukaisen_megumi-fushiguro_character-journey_en.json",
+      "durationSeconds": 25,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-42766280038-1",
+        "runId": "42766280038",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/42766280038",
+        "video": "videos/jujutsukaisen_megumi-fushiguro_character-journey_en.mp4",
+        "manifest": "manifests/jujutsukaisen_megumi-fushiguro_character-journey_en.manifest.json",
+        "sha256": "9b51882783a19178d87d9ea332853d9b82b8eae2ed8f60b6a0410e1337fcee34",
+        "cover": "covers/jujutsukaisen_megumi-fushiguro_character-journey_en.cover.png",
+        "expiresAt": "2026-12-10T06:11:37.709Z"
+      },
+      "social": {
+        "contentType": "character-journey",
+        "animes": [
+          "jujutsukaisen"
+        ],
+        "characters": [
+          "jujutsukaisen:megumi-fushiguro"
+        ],
+        "characterNames": [
+          "Megumi Fushiguro"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "fact",
+        "hookId": "cj-fact-2",
+        "hook": "4 places. 3 story arcs. One journey: Megumi Fushiguro.",
+        "ctaType": "comment-next-journey",
+        "cta": "Which journey should we map next?",
+        "durationSeconds": 25,
+        "selection": {
+          "mode": "coldstart",
+          "score": 91.22,
+          "seed": "feed38:guess-character:hunterxhunter:killua-zoldyck@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "4 places. 3 story arcs. One journey: Megumi Fushiguro.\n\nMegumi Fushiguro's journey across Jujutsu Kaisen: 4 places on the world map.\n\nWhich journey should we map next? 👇\n\nSave it for your next rewatch.\n\n#jujutsukaisen #jjk #megumifushiguro #anime #animemap #AniMapVerse",
+          "tiktokCaption": "4 places. 3 story arcs. One journey: Megumi Fushiguro. Which journey should we map next? 👇 #jujutsukaisen #jjk #megumifushiguro #anime #animemap",
+          "youtubeTitle": "Every Place Megumi Fushiguro Visited 🌀 | Jujutsu Kaisen Journey",
+          "youtubeDescription": "4 places. 3 story arcs. One journey: Megumi Fushiguro.\n\nMegumi Fushiguro's journey across Jujutsu Kaisen: 4 places on the world map.\n\nWhich journey should we map next? 👇\n\nInteractive map: https://animapverse.com/en/jujutsu-kaisen/characters/megumi-fushiguro\n\n#jujutsukaisen #jjk #megumifushiguro",
+          "facebookCaption": "4 places. 3 story arcs. One journey: Megumi Fushiguro.\n\nMegumi Fushiguro's journey across Jujutsu Kaisen: 4 places on the world map.\n\nWhich journey should we map next? 👇\n\nInteractive map: https://animapverse.com/en/jujutsu-kaisen/characters/megumi-fushiguro",
+          "hashtags": [
+            "#jujutsukaisen",
+            "#jjk",
+            "#megumifushiguro",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-journey:jujutsukaisen:satoru-gojo@en": {
       "renderId": "character-journey:jujutsukaisen:satoru-gojo@en",
       "contentId": "character-journey:jujutsukaisen:satoru-gojo",
