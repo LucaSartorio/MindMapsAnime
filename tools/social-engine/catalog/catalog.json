@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-10T06:11:38.912Z",
+  "generatedAt": "2026-11-10T06:20:55.172Z",
   "locales": [
     "en",
     "it"
@@ -13206,7 +13206,9 @@
           "renderedLocales": [
             "en"
           ],
-          "scheduledLocales": [],
+          "scheduledLocales": [
+            "en"
+          ],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": true,
@@ -13216,12 +13218,12 @@
               "renderId": "character-journey:jujutsukaisen:megumi-fushiguro@en",
               "locale": "en",
               "variant": null,
-              "status": "notPublished",
+              "status": "scheduled",
               "platforms": {
-                "instagram": "notScheduled",
-                "facebook": "notScheduled",
-                "tiktok": "notScheduled",
-                "youtube": "notScheduled"
+                "instagram": "scheduled",
+                "facebook": "scheduled",
+                "tiktok": "scheduled",
+                "youtube": "scheduled"
               }
             }
           ]
@@ -25932,67 +25934,13 @@
     "summary": {
       "rendered": 44,
       "unavailable": 5,
-      "notPublished": 6,
-      "scheduled": 32,
+      "notPublished": 5,
+      "scheduled": 33,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0
     },
-    "ready": [
-      {
-        "renderId": "character-journey:jujutsukaisen:megumi-fushiguro@en",
-        "contentId": "character-journey:jujutsukaisen:megumi-fushiguro",
-        "anime": "jujutsukaisen",
-        "subject": "megumi-fushiguro",
-        "subjectName": "Megumi Fushiguro",
-        "locale": "en",
-        "variant": null,
-        "segment": null,
-        "partNumber": null,
-        "partCount": null,
-        "renderedAt": "2026-11-10T06:11:37.709Z",
-        "durationSeconds": 25,
-        "publicationStatus": "notPublished",
-        "platforms": {
-          "instagram": "notScheduled",
-          "facebook": "notScheduled",
-          "tiktok": "notScheduled",
-          "youtube": "notScheduled"
-        },
-        "artifact": {
-          "name": "animapverse-social-render-42766280038-1",
-          "runId": "42766280038",
-          "runAttempt": "1",
-          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/42766280038",
-          "video": "videos/jujutsukaisen_megumi-fushiguro_character-journey_en.mp4",
-          "manifest": "manifests/jujutsukaisen_megumi-fushiguro_character-journey_en.manifest.json",
-          "sha256": "9b51882783a19178d87d9ea332853d9b82b8eae2ed8f60b6a0410e1337fcee34",
-          "cover": "covers/jujutsukaisen_megumi-fushiguro_character-journey_en.cover.png",
-          "expiresAt": "2026-12-10T06:11:37.709Z"
-        },
-        "contentType": "character-journey",
-        "platformMetadata": {
-          "instagramCaption": "4 places. 3 story arcs. One journey: Megumi Fushiguro.\n\nMegumi Fushiguro's journey across Jujutsu Kaisen: 4 places on the world map.\n\nWhich journey should we map next? 👇\n\nSave it for your next rewatch.\n\n#jujutsukaisen #jjk #megumifushiguro #anime #animemap #AniMapVerse",
-          "tiktokCaption": "4 places. 3 story arcs. One journey: Megumi Fushiguro. Which journey should we map next? 👇 #jujutsukaisen #jjk #megumifushiguro #anime #animemap",
-          "youtubeTitle": "Every Place Megumi Fushiguro Visited 🌀 | Jujutsu Kaisen Journey",
-          "youtubeDescription": "4 places. 3 story arcs. One journey: Megumi Fushiguro.\n\nMegumi Fushiguro's journey across Jujutsu Kaisen: 4 places on the world map.\n\nWhich journey should we map next? 👇\n\nInteractive map: https://animapverse.com/en/jujutsu-kaisen/characters/megumi-fushiguro\n\n#jujutsukaisen #jjk #megumifushiguro",
-          "facebookCaption": "4 places. 3 story arcs. One journey: Megumi Fushiguro.\n\nMegumi Fushiguro's journey across Jujutsu Kaisen: 4 places on the world map.\n\nWhich journey should we map next? 👇\n\nInteractive map: https://animapverse.com/en/jujutsu-kaisen/characters/megumi-fushiguro",
-          "hashtags": [
-            "#jujutsukaisen",
-            "#jjk",
-            "#megumifushiguro",
-            "#anime",
-            "#animemap",
-            "#AniMapVerse"
-          ],
-          "youtube": {
-            "madeForKids": false
-          },
-          "madeForKids": false
-        },
-        "waitFor": {}
-      }
-    ],
+    "ready": [],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",

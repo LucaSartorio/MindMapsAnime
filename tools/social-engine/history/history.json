@@ -933,7 +933,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-11-10T06:06:49.326Z",
-      "updatedAt": "2026-11-10T06:11:37.709Z",
+      "updatedAt": "2026-11-10T06:20:55.143Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-11-10T06:11:37.709Z",
       "outputFile": "tools/social-engine/output/jujutsukaisen_megumi-fushiguro_character-journey_en.mp4",
@@ -997,9 +997,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-10T12:00:00+01:00",
+          "scheduledAt": "2026-11-10T06:14:20Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "422767891",
+          "providerPostUuid": "7601384799789467133",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=7601384799789467133",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "jujutsukaisen_megumi-fushiguro_character-journey_en.instagram.scheduled.76a7f886b017"
+          ],
+          "updatedAt": "2026-11-10T06:20:55.143Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-10T12:00:00+01:00",
+          "scheduledAt": "2026-11-10T06:14:20Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "422768046",
+          "providerPostUuid": "397176576132597604",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=397176576132597604",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "jujutsukaisen_megumi-fushiguro_character-journey_en.facebook.scheduled.6bd6cf1db1d4"
+          ],
+          "updatedAt": "2026-11-10T06:20:55.143Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-10T12:00:00+01:00",
+          "scheduledAt": "2026-11-10T06:14:20Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "422768315",
+          "providerPostUuid": "-434709267589152443",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-434709267589152443",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "jujutsukaisen_megumi-fushiguro_character-journey_en.tiktok.scheduled.a1364270b967"
+          ],
+          "updatedAt": "2026-11-10T06:20:55.143Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-10T12:00:00+01:00",
+          "scheduledAt": "2026-11-10T06:14:20Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "422768181",
+          "providerPostUuid": "-4857218049247722191",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-4857218049247722191",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "jujutsukaisen_megumi-fushiguro_character-journey_en.youtube.scheduled.05d5b62f24e7"
+          ],
+          "updatedAt": "2026-11-10T06:20:55.143Z"
+        }
+      ]
     },
     "character-journey:jujutsukaisen:satoru-gojo@en": {
       "renderId": "character-journey:jujutsukaisen:satoru-gojo@en",
