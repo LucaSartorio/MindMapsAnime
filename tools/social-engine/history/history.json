@@ -922,6 +922,162 @@
         }
       ]
     },
+    "character-journey:jujutsukaisen:megumi-fushiguro@en": {
+      "renderId": "character-journey:jujutsukaisen:megumi-fushiguro@en",
+      "contentId": "character-journey:jujutsukaisen:megumi-fushiguro",
+      "template": "characterJourney",
+      "anime": "jujutsukaisen",
+      "subject": "megumi-fushiguro",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-11-10T06:06:49.326Z",
+      "updatedAt": "2026-11-10T06:20:55.143Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-11-10T06:11:37.709Z",
+      "outputFile": "tools/social-engine/output/jujutsukaisen_megumi-fushiguro_character-journey_en.mp4",
+      "manifestFile": "tools/social-engine/output/jujutsukaisen_megumi-fushiguro_character-journey_en.manifest.json",
+      "sourceFile": "0044-jujutsukaisen_megumi-fushiguro_character-journey_en.json",
+      "durationSeconds": 25,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-42766280038-1",
+        "runId": "42766280038",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/42766280038",
+        "video": "videos/jujutsukaisen_megumi-fushiguro_character-journey_en.mp4",
+        "manifest": "manifests/jujutsukaisen_megumi-fushiguro_character-journey_en.manifest.json",
+        "sha256": "9b51882783a19178d87d9ea332853d9b82b8eae2ed8f60b6a0410e1337fcee34",
+        "cover": "covers/jujutsukaisen_megumi-fushiguro_character-journey_en.cover.png",
+        "expiresAt": "2026-12-10T06:11:37.709Z"
+      },
+      "social": {
+        "contentType": "character-journey",
+        "animes": [
+          "jujutsukaisen"
+        ],
+        "characters": [
+          "jujutsukaisen:megumi-fushiguro"
+        ],
+        "characterNames": [
+          "Megumi Fushiguro"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "fact",
+        "hookId": "cj-fact-2",
+        "hook": "4 places. 3 story arcs. One journey: Megumi Fushiguro.",
+        "ctaType": "comment-next-journey",
+        "cta": "Which journey should we map next?",
+        "durationSeconds": 25,
+        "selection": {
+          "mode": "coldstart",
+          "score": 91.22,
+          "seed": "feed38:guess-character:hunterxhunter:killua-zoldyck@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "4 places. 3 story arcs. One journey: Megumi Fushiguro.\n\nMegumi Fushiguro's journey across Jujutsu Kaisen: 4 places on the world map.\n\nWhich journey should we map next? 👇\n\nSave it for your next rewatch.\n\n#jujutsukaisen #jjk #megumifushiguro #anime #animemap #AniMapVerse",
+          "tiktokCaption": "4 places. 3 story arcs. One journey: Megumi Fushiguro. Which journey should we map next? 👇 #jujutsukaisen #jjk #megumifushiguro #anime #animemap",
+          "youtubeTitle": "Every Place Megumi Fushiguro Visited 🌀 | Jujutsu Kaisen Journey",
+          "youtubeDescription": "4 places. 3 story arcs. One journey: Megumi Fushiguro.\n\nMegumi Fushiguro's journey across Jujutsu Kaisen: 4 places on the world map.\n\nWhich journey should we map next? 👇\n\nInteractive map: https://animapverse.com/en/jujutsu-kaisen/characters/megumi-fushiguro\n\n#jujutsukaisen #jjk #megumifushiguro",
+          "facebookCaption": "4 places. 3 story arcs. One journey: Megumi Fushiguro.\n\nMegumi Fushiguro's journey across Jujutsu Kaisen: 4 places on the world map.\n\nWhich journey should we map next? 👇\n\nInteractive map: https://animapverse.com/en/jujutsu-kaisen/characters/megumi-fushiguro",
+          "hashtags": [
+            "#jujutsukaisen",
+            "#jjk",
+            "#megumifushiguro",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "scheduled",
+      "publishedAt": null,
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-10T12:00:00+01:00",
+          "scheduledAt": "2026-11-10T06:14:20Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "422767891",
+          "providerPostUuid": "7601384799789467133",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=7601384799789467133",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "jujutsukaisen_megumi-fushiguro_character-journey_en.instagram.scheduled.76a7f886b017"
+          ],
+          "updatedAt": "2026-11-10T06:20:55.143Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-10T12:00:00+01:00",
+          "scheduledAt": "2026-11-10T06:14:20Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "422768046",
+          "providerPostUuid": "397176576132597604",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=397176576132597604",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "jujutsukaisen_megumi-fushiguro_character-journey_en.facebook.scheduled.6bd6cf1db1d4"
+          ],
+          "updatedAt": "2026-11-10T06:20:55.143Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-10T12:00:00+01:00",
+          "scheduledAt": "2026-11-10T06:14:20Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "422768315",
+          "providerPostUuid": "-434709267589152443",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-434709267589152443",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "jujutsukaisen_megumi-fushiguro_character-journey_en.tiktok.scheduled.a1364270b967"
+          ],
+          "updatedAt": "2026-11-10T06:20:55.143Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-10T12:00:00+01:00",
+          "scheduledAt": "2026-11-10T06:14:20Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "422768181",
+          "providerPostUuid": "-4857218049247722191",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-4857218049247722191",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "jujutsukaisen_megumi-fushiguro_character-journey_en.youtube.scheduled.05d5b62f24e7"
+          ],
+          "updatedAt": "2026-11-10T06:20:55.143Z"
+        }
+      ]
+    },
     "character-journey:jujutsukaisen:satoru-gojo@en": {
       "renderId": "character-journey:jujutsukaisen:satoru-gojo@en",
       "contentId": "character-journey:jujutsukaisen:satoru-gojo",
@@ -5675,6 +5831,161 @@
             "bleach_yhwach_guess-character_en.youtube.scheduled.14b4112234ce"
           ],
           "updatedAt": "2026-10-28T06:21:28.331Z"
+        }
+      ]
+    },
+    "guess-character:hunterxhunter:killua-zoldyck@en": {
+      "renderId": "guess-character:hunterxhunter:killua-zoldyck@en",
+      "contentId": "guess-character:hunterxhunter:killua-zoldyck",
+      "template": "guessCharacter",
+      "anime": "hunterxhunter",
+      "subject": "killua-zoldyck",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-11-09T06:03:32.543Z",
+      "updatedAt": "2026-11-09T06:13:02.723Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-11-09T06:05:57.473Z",
+      "outputFile": "tools/social-engine/output/hunterxhunter_killua-zoldyck_guess-character_en.mp4",
+      "manifestFile": "tools/social-engine/output/hunterxhunter_killua-zoldyck_guess-character_en.manifest.json",
+      "sourceFile": "0043-hunterxhunter_killua-zoldyck_guess-character_en.json",
+      "durationSeconds": 26,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-42570750609-1",
+        "runId": "42570750609",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/42570750609",
+        "video": "videos/hunterxhunter_killua-zoldyck_guess-character_en.mp4",
+        "manifest": "manifests/hunterxhunter_killua-zoldyck_guess-character_en.manifest.json",
+        "sha256": "945af7499fb580bf47b8bd3f6bca8480eeab0bcaf439887de00559c866b0b042",
+        "cover": "covers/hunterxhunter_killua-zoldyck_guess-character_en.cover.png",
+        "expiresAt": "2026-12-09T06:05:57.473Z"
+      },
+      "social": {
+        "contentType": "guess-character",
+        "animes": [
+          "hunterxhunter"
+        ],
+        "characters": [
+          "hunterxhunter:killua-zoldyck"
+        ],
+        "characterNames": [
+          "Killua Zoldyck"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "question",
+        "hookId": "gc-question-1",
+        "hook": "Who visited all these places?",
+        "ctaType": "comment-guess",
+        "cta": "Did you get it right?",
+        "durationSeconds": 26,
+        "selection": {
+          "mode": "coldstart",
+          "score": 91.63,
+          "seed": "feed37:h7972e339:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Who visited all these places?\n\n6 places, one Hunter x Hunter character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nSave it for your next rewatch.\n\n#hunterxhunter #hxh #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Who visited all these places? Did you get it right? Tell us how many places it took you 👇 #hunterxhunter #hxh #anime #animemap #AniMapVerse",
+          "youtubeTitle": "Guess the Hunter x Hunter Character From the Places They Visited 🎣",
+          "youtubeDescription": "Who visited all these places?\n\n6 places, one Hunter x Hunter character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/hunter-x-hunter/map\n\n#hunterxhunter #hxh #anime",
+          "facebookCaption": "Who visited all these places?\n\n6 places, one Hunter x Hunter character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/hunter-x-hunter/map",
+          "hashtags": [
+            "#hunterxhunter",
+            "#hxh",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "scheduled",
+      "publishedAt": null,
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-09T10:00:00+01:00",
+          "scheduledAt": "2026-11-09T06:08:46Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "421402483",
+          "providerPostUuid": "-8421783815910308131",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-8421783815910308131",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "hunterxhunter_killua-zoldyck_guess-character_en.instagram.scheduled.9b207b642439"
+          ],
+          "updatedAt": "2026-11-09T06:13:02.723Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-09T10:00:00+01:00",
+          "scheduledAt": "2026-11-09T06:08:46Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "421402604",
+          "providerPostUuid": "-1181175999773061619",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-1181175999773061619",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "hunterxhunter_killua-zoldyck_guess-character_en.facebook.scheduled.516639cd670b"
+          ],
+          "updatedAt": "2026-11-09T06:13:02.723Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-09T10:00:00+01:00",
+          "scheduledAt": "2026-11-09T06:08:46Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "421402875",
+          "providerPostUuid": "1094143673011882356",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=1094143673011882356",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "hunterxhunter_killua-zoldyck_guess-character_en.tiktok.scheduled.46f0357d4ba3"
+          ],
+          "updatedAt": "2026-11-09T06:13:02.723Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-09T10:00:00+01:00",
+          "scheduledAt": "2026-11-09T06:08:46Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "421402727",
+          "providerPostUuid": "8667994010298240190",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=8667994010298240190",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "hunterxhunter_killua-zoldyck_guess-character_en.youtube.scheduled.01880d0d046d"
+          ],
+          "updatedAt": "2026-11-09T06:13:02.723Z"
         }
       ]
     },
