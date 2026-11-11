@@ -197,6 +197,21 @@ commit, niente push. Se fallisce, controlla nell'ordine:
 - permesso Contents;
 - regola `main` dell'environment.
 
+### 6.7 Verifica attraverso il render (senza push)
+
+Il controllo §6.6 gira come workflow principale. Il render invece chiama la persistenza come **workflow
+riutilizzabile** (`workflow_call`), e lì un segreto di environment arriva **solo** se il chiamante usa
+`secrets: inherit`. Senza, il 2026-11-11 la chiave è risultata vuota nel job *Persist state (State Bot)*
+(`The 'private-key' input must be set to a non-empty string`), mentre §6.6 era verde.
+
+Per verificare il percorso reale, senza video e senza push:
+1. **Actions** → **Social render** → **Run workflow**, branch **main**, *dry_run* ✔;
+2. il job **State Bot credentials (dry run) / Check State Bot credentials (no push)** deve essere verde, con
+   "State Bot credentials OK" nel riepilogo.
+
+Va ripetuta dopo ogni modifica a `social-render.yml`, `social-publication-state.yml` o
+`social-state-persist.yml`, e prima di attivare `main-pr`.
+
 ## 7. Migrazione e collaudo
 
 | Step | Chi | Cosa | Effetto sulla produzione |
@@ -240,6 +255,7 @@ Nel run di *Social render* (lo stesso che l'agente già aspetta, quindi il contr
 | Sintomo | Causa probabile | Cosa fare |
 |---|---|---|
 | *Mint State Bot token* rosso | Client ID / chiave / installazione / permesso | §6.6; nessun dato perso |
+| *Mint State Bot token* rosso con `'private-key' input must be set` | Il chiamante non passa `secrets: inherit` al workflow riutilizzabile | Correggere il workflow chiamante con una PR, verificare con §6.7, poi recupero |
 | `push rifiutato da una regola del repository` | Ruleset attivo senza l'app in bypass | Aggiungi l'app al bypass di `main-pr`, o disattiva il ruleset; poi recupero |
 | `push non autorizzato` | Token scaduto o permesso mancante | §6.6, poi recupero |
 | `Prepare` rosso: "conflitto reale" | Lo stesso campo di `history.json` cambiato da render e publication | Indagare: due workflow hanno scritto lo stesso campo. Correggere su main con una PR, poi recupero |
