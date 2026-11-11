@@ -22,13 +22,20 @@ on:
         type: string
         required: true
       raw-artifact:
-        description: 'Name of the raw state artifact uploaded by the calling run'
+        description: 'Name of the raw state artifact uploaded by the calling run (unused with check-only)'
         type: string
-        required: true
+        required: false
+        default: ''
       round:
         type: string
         required: false
         default: '1'
+      # Credential check through workflow_call (Social render → Run workflow with dry_run): proves
+      # that the environment secret reaches this reusable workflow, without any push.
+      check-only:
+        type: boolean
+        required: false
+        default: false
     outputs:
       result:
         description: 'pushed | noop | conflict'
@@ -66,7 +73,7 @@ permissions:
 jobs:
   check:
     name: Check State Bot credentials (no push)
-    if: github.event_name == 'workflow_dispatch' && inputs.check-only && github.ref == 'refs/heads/main'
+    if: inputs.check-only && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     environment: social-state

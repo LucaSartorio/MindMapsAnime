@@ -225,6 +225,10 @@ jobs:
       profile: render
       raw-artifact: ${{ needs.render.outputs.state_artifact }}
       round: '1'
+    # Environment secrets (social-state) reach a reusable workflow only with `inherit`: without it
+    # the App key was empty in the persist job (incident 2026-11-11). Secrets are still referenced
+    # ONLY by the jobs with `environment: social-state` in social-state-persist.yml (tested).
+    secrets: inherit
 
   state-retry:
     name: Persist state (round 2)
@@ -238,6 +242,24 @@ jobs:
       profile: render
       raw-artifact: ${{ needs.render.outputs.state_artifact }}
       round: '2'
+    # Environment secrets (social-state) reach a reusable workflow only with `inherit`: without it
+    # the App key was empty in the persist job (incident 2026-11-11). Secrets are still referenced
+    # ONLY by the jobs with `environment: social-state` in social-state-persist.yml (tested).
+    secrets: inherit
+
+  # Dry run (Actions → Social render → Run workflow, dry_run ✔): also checks the State Bot
+  # credentials THROUGH workflow_call, exactly as the real render will use them. Nothing is pushed.
+  state-credentials:
+    name: State Bot credentials (dry run)
+    if: github.event_name == 'workflow_dispatch' && inputs.dry_run
+    permissions:
+      contents: read
+      actions: read
+    uses: ./.github/workflows/social-state-persist.yml
+    with:
+      profile: render
+      check-only: true
+    secrets: inherit
 
   state-check:
     name: State persisted

@@ -58,6 +58,10 @@ test('social-state-persist.yml: segreti solo nel job privilegiato, trigger fidat
   assert.match(j['check-login'], /vars\.STATE_BOT_LOGIN/);
   // job con il segreto solo su main (difesa in profondità, oltre alla regola dell'environment)
   for (const k of ['check', 'persist']) assert.match(j[k], /github\.ref == 'refs\/heads\/main'/);
+  // check-only anche via workflow_call (dry run di Social render): stesso job, nessun push
+  assert.match(on, /check-only:\n\s+type: boolean\n\s+required: false\n\s+default: false/);
+  assert.match(j.check, /if: inputs\.check-only && github\.ref == 'refs\/heads\/main'/);
+  assert.match(j.prepare, /if: \$\{\{ !inputs\.check-only \}\}/);
   // origine del bundle: run del workflow atteso su main (API) o il run chiamante stesso
   assert.match(j.prepare, /gh api "repos\/\$\{GITHUB_REPOSITORY\}\/actions\/runs\/\$\{RAW_RUN\}"/);
   assert.match(j.prepare, /\.github\/workflows\/social-render\.yml/);
@@ -74,7 +78,7 @@ test('social-state-persist.yml: segreti solo nel job privilegiato, trigger fidat
 });
 
 const migrated = [
-  { file: 'social-render.yml', job: 'render', profile: 'render', skip: '[skip social-render]' },
+  { file: 'social-render.yml', job: 'render', profile: 'render', skip: '[skip social-render]', probe: 'state-credentials' },
   ...(existsSync(new URL('../../../.github/workflows/social-publication-state.yml', import.meta.url)) &&
   wf('social-publication-state.yml').includes('social-state-persist.yml')
     ? [{ file: 'social-publication-state.yml', job: 'apply', profile: 'publication', skip: '[skip social-publication]' }]
@@ -98,6 +102,14 @@ for (const m of migrated) {
       assert.match(j[k], new RegExp(`profile: ${m.profile}\\n`));
     }
     assert.match(j['state-retry'], /needs\.state\.outputs\.result == 'conflict'/);
+    // i segreti di environment arrivano al workflow riutilizzabile solo con `inherit` (incidente 2026-11-11)
+    for (const k of ['state', 'state-retry']) assert.match(j[k], /^ {4}secrets: inherit$/m, `${k}: manca secrets: inherit`);
+    if (m.probe) {
+      assert.match(j[m.probe], /if: github\.event_name == 'workflow_dispatch' && inputs\.dry_run/);
+      assert.match(j[m.probe], /uses: \.\/\.github\/workflows\/social-state-persist\.yml/);
+      assert.match(j[m.probe], /check-only: true/);
+      assert.match(j[m.probe], /^ {4}secrets: inherit$/m);
+    }
     for (const u of usesLines(t).filter((x) => !x.startsWith('./'))) assert.match(u, /^[\w./-]+@[0-9a-f]{40}$/, `non fissata a uno SHA: ${u}`);
   });
 }
@@ -111,6 +123,10 @@ test('tutti i workflow: nessun trigger con input non fidato, environment social-
     if (f !== 'social-state-persist.yml') {
       assert.ok(!/environment:\s*social-state/.test(t), `${f}: environment social-state fuori dal workflow di persistenza`);
       assert.ok(!/STATE_BOT_PRIVATE_KEY/.test(t), `${f}: chiave del bot fuori dal workflow di persistenza`);
+    }
+    // `secrets: inherit` solo verso il workflow di persistenza (job che lo chiamano)
+    for (const [id, body] of Object.entries(jobs(readFileSync(new URL(f, dir), 'utf8')))) {
+      if (/^ {4}secrets: inherit$/m.test(body)) assert.match(body, /uses: \.\/\.github\/workflows\/social-state-persist\.yml/, `${f}/${id}: secrets: inherit verso altro`);
     }
   }
 });
