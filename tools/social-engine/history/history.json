@@ -5680,6 +5680,83 @@
         }
       ]
     },
+    "guess-character:bleach:sosuke-aizen@en": {
+      "renderId": "guess-character:bleach:sosuke-aizen@en",
+      "contentId": "guess-character:bleach:sosuke-aizen",
+      "template": "guessCharacter",
+      "anime": "bleach",
+      "subject": "sosuke-aizen",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-11-11T06:09:24.315Z",
+      "updatedAt": "2026-11-11T06:12:33.207Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-11-11T06:12:33.207Z",
+      "outputFile": "tools/social-engine/output/bleach_sosuke-aizen_guess-character_en.mp4",
+      "manifestFile": "tools/social-engine/output/bleach_sosuke-aizen_guess-character_en.manifest.json",
+      "sourceFile": "0045-bleach_sosuke-aizen_guess-character_en.json",
+      "durationSeconds": 26,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-42970380967-1",
+        "runId": "42970380967",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/42970380967",
+        "video": "videos/bleach_sosuke-aizen_guess-character_en.mp4",
+        "manifest": "manifests/bleach_sosuke-aizen_guess-character_en.manifest.json",
+        "sha256": "cb7e055486d49ed6845681686fccc14291607135c4a7e14b15a684a9223843d6",
+        "cover": "covers/bleach_sosuke-aizen_guess-character_en.cover.png",
+        "expiresAt": "2026-12-11T06:12:33.207Z"
+      },
+      "social": {
+        "contentType": "guess-character",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:sosuke-aizen"
+        ],
+        "characterNames": [
+          "Sōsuke Aizen"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "challenge",
+        "hookId": "gc-challenge-1",
+        "hook": "Guess the Bleach character from the places they visited.",
+        "ctaType": "follow-for-more",
+        "cta": "Follow for the next one.",
+        "durationSeconds": 26,
+        "selection": {
+          "mode": "coldstart",
+          "score": 91.45,
+          "seed": "feed39:character-journey:jujutsukaisen:megumi-fushiguro@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Guess the Bleach character from the places they visited.\n\n6 places, one Bleach character. Guess before the reveal!\n\nFollow for more anime journeys.\n\nSave it for your next rewatch.\n\n#bleach #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Guess the Bleach character from the places they visited. Follow for more anime journeys. #bleach #anime #animemap #AniMapVerse",
+          "youtubeTitle": "Guess the Bleach Character From the Places They Visited ⚔️",
+          "youtubeDescription": "Guess the Bleach character from the places they visited.\n\n6 places, one Bleach character. Guess before the reveal!\n\nSubscribe for more anime journeys.\n\nInteractive map: https://animapverse.com/en/bleach/map\n\n#bleach #anime #animemap",
+          "facebookCaption": "Guess the Bleach character from the places they visited.\n\n6 places, one Bleach character. Guess before the reveal!\n\nFollow for more anime journeys.\n\nInteractive map: https://animapverse.com/en/bleach/map",
+          "hashtags": [
+            "#bleach",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "guess-character:bleach:yhwach@en": {
       "renderId": "guess-character:bleach:yhwach@en",
       "contentId": "guess-character:bleach:yhwach",
