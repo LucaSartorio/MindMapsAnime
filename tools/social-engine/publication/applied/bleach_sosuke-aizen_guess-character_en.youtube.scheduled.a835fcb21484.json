@@ -1,0 +1,30 @@
+{
+  "receiptId": "bleach_sosuke-aizen_guess-character_en.youtube.scheduled.a835fcb21484",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-11-11T07:28:18.915Z",
+  "sourceFile": "20261111T072347Z-bleach_sosuke-aizen_guess-character_en-youtube-scheduled.json",
+  "run": {
+    "runId": "42979697432",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/42979697432",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "guess-character:bleach:sosuke-aizen@en",
+    "platform": "youtube",
+    "provider": "metricool",
+    "status": "scheduled",
+    "recordedAt": "2026-11-11T07:23:47Z",
+    "scheduledFor": "2026-11-11T12:00:00+01:00",
+    "providerPostId": "424087740",
+    "providerPostUuid": "5268705259253022735",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=5268705259253022735",
+    "recordedBy": "chatgpt-work-publishing-agent"
+  }
+}

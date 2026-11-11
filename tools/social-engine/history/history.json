@@ -5691,7 +5691,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-11-11T06:09:24.315Z",
-      "updatedAt": "2026-11-11T06:12:33.207Z",
+      "updatedAt": "2026-11-11T07:28:18.915Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-11-11T06:12:33.207Z",
       "outputFile": "tools/social-engine/output/bleach_sosuke-aizen_guess-character_en.mp4",
@@ -5753,9 +5753,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-11T12:00:00+01:00",
+          "scheduledAt": "2026-11-11T07:23:47Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "424087245",
+          "providerPostUuid": "3903234677485161679",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=3903234677485161679",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "bleach_sosuke-aizen_guess-character_en.instagram.scheduled.9ec678ca2c2f"
+          ],
+          "updatedAt": "2026-11-11T07:28:18.915Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-11T12:00:00+01:00",
+          "scheduledAt": "2026-11-11T07:23:47Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "424087580",
+          "providerPostUuid": "5092884591384153189",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=5092884591384153189",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "bleach_sosuke-aizen_guess-character_en.facebook.scheduled.dbc667e04cc7"
+          ],
+          "updatedAt": "2026-11-11T07:28:18.915Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-11T12:00:00+01:00",
+          "scheduledAt": "2026-11-11T07:23:47Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "424087929",
+          "providerPostUuid": "795066160783115661",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=795066160783115661",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "bleach_sosuke-aizen_guess-character_en.tiktok.scheduled.02e64ba655a5"
+          ],
+          "updatedAt": "2026-11-11T07:28:18.915Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-11T12:00:00+01:00",
+          "scheduledAt": "2026-11-11T07:23:47Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "424087740",
+          "providerPostUuid": "5268705259253022735",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=5268705259253022735",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "bleach_sosuke-aizen_guess-character_en.youtube.scheduled.a835fcb21484"
+          ],
+          "updatedAt": "2026-11-11T07:28:18.915Z"
+        }
+      ]
     },
     "guess-character:bleach:yhwach@en": {
       "renderId": "guess-character:bleach:yhwach@en",

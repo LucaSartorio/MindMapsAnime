@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T07:13:54.151Z",
-  "status": "backlog",
+  "generatedAt": "2026-11-11T07:28:18.939Z",
+  "status": "ready",
   "feedTail": [
     {
       "renderId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-goku@en",
@@ -92,28 +92,485 @@
     "error": null
   },
   "backlog": {
-    "unpublished": [
-      {
-        "renderId": "guess-character:bleach:sosuke-aizen@en",
-        "contentType": "guess-character",
-        "renderedAt": "2026-11-11T06:12:33.207Z",
-        "missing": [
-          "instagram",
-          "facebook",
-          "tiktok",
-          "youtube"
-        ]
-      }
-    ],
+    "unpublished": [],
     "unfinished": [],
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "",
-  "reason": "publish the existing render first: guess-character:bleach:sosuke-aizen@en (it counts as today's video; no new content)",
-  "alternatives": [],
-  "rejected": {},
-  "considered": 0,
-  "eligible": 0,
-  "trace": null
+  "seed": "feed40:guess-character:bleach:sosuke-aizen@en:samples0",
+  "rejected": {
+    "JOURNEY_PART_ORDER": 38,
+    "MAX_SAME_CHARACTER_STREAK": 2
+  },
+  "considered": 661,
+  "trace": {
+    "traceVersion": 1,
+    "mode": "coldstart",
+    "seed": "feed40:guess-character:bleach:sosuke-aizen@en:samples0",
+    "analytics": {
+      "coldStart": true,
+      "samples": 0,
+      "contents": 0,
+      "minimumSamples": 8
+    },
+    "recent": [
+      {
+        "renderId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-goku@en",
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "dragonball"
+        ],
+        "characters": [
+          "naruto:sasuke-uchiha",
+          "dragonball:goku"
+        ]
+      },
+      {
+        "renderId": "character-journey:onepiece:monkey-d-luffy:part-05@en",
+        "contentType": "character-journey",
+        "animes": [
+          "onepiece"
+        ],
+        "characters": [
+          "onepiece:monkey-d-luffy"
+        ]
+      },
+      {
+        "renderId": "character-versus:attackontitan:reiner-braun-vs-blackclover-yami-sukehiro@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "blackclover"
+        ],
+        "characters": [
+          "attackontitan:reiner-braun",
+          "blackclover:yami-sukehiro"
+        ]
+      },
+      {
+        "renderId": "guess-character:hunterxhunter:killua-zoldyck@en",
+        "contentType": "guess-character",
+        "animes": [
+          "hunterxhunter"
+        ],
+        "characters": [
+          "hunterxhunter:killua-zoldyck"
+        ]
+      },
+      {
+        "renderId": "character-journey:jujutsukaisen:megumi-fushiguro@en",
+        "contentType": "character-journey",
+        "animes": [
+          "jujutsukaisen"
+        ],
+        "characters": [
+          "jujutsukaisen:megumi-fushiguro"
+        ]
+      },
+      {
+        "renderId": "guess-character:bleach:sosuke-aizen@en",
+        "contentType": "guess-character",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:sosuke-aizen"
+        ]
+      }
+    ],
+    "constraints": {
+      "sameAnimeStreak": {
+        "animes": [
+          "bleach"
+        ],
+        "length": 1
+      },
+      "forcedAnimeRotation": false,
+      "blockedAnimes": [],
+      "blockedCharacters": [
+        "bleach:sosuke-aizen"
+      ],
+      "characterCooldown": [
+        "naruto:sasuke-uchiha",
+        "dragonball:goku",
+        "onepiece:monkey-d-luffy",
+        "attackontitan:reiner-braun",
+        "blackclover:yami-sukehiro",
+        "hunterxhunter:killua-zoldyck",
+        "jujutsukaisen:megumi-fushiguro",
+        "bleach:sosuke-aizen"
+      ],
+      "contentTypeStreak": {
+        "contentType": "guess-character",
+        "length": 1
+      }
+    },
+    "hardRulesTriggered": {
+      "JOURNEY_PART_ORDER": 38,
+      "MAX_SAME_CHARACTER_STREAK": 2
+    },
+    "candidates": {
+      "considered": 661,
+      "eligible": 622,
+      "byContentType": {
+        "character-journey": {
+          "considered": 405,
+          "eligible": 366
+        },
+        "guess-character": {
+          "considered": 78,
+          "eligible": 78
+        },
+        "character-versus": {
+          "considered": 178,
+          "eligible": 178
+        }
+      }
+    },
+    "excluded": [
+      {
+        "renderId": "character-journey:bleach:sosuke-aizen:part-01@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:sosuke-aizen"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: bleach:sosuke-aizen is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:bleach:sosuke-aizen:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:sosuke-aizen"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER",
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)",
+          "character streak: bleach:sosuke-aizen is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:blackclover:asta:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:asta"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:blackclover:asta:part-03@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:asta"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 3 before Part 2 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:blackclover:noelle-silva:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:noelle-silva"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:blackclover:yami-sukehiro:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:yami-sukehiro"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:blackclover:yuno-grinberryall:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:yuno-grinberryall"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:bleach:byakuya-kuchiki:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:byakuya-kuchiki"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:bleach:ichigo-kurosaki:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:ichigo-kurosaki"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:bleach:ichigo-kurosaki:part-03@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:ichigo-kurosaki"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 3 before Part 2 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      }
+    ],
+    "status": "selected",
+    "selectedId": "character-journey:onepiece:nami:part-02",
+    "renderId": "character-journey:onepiece:nami:part-02@en",
+    "contentType": "character-journey",
+    "animes": [
+      "onepiece"
+    ],
+    "characters": [
+      "onepiece:nami"
+    ],
+    "score": 101.04,
+    "base": 73.04,
+    "reasons": [
+      "coldstart: novelty +20.5, jitter +2.5",
+      "+12 main character",
+      "+14 continues a started series (Part 2 promised)",
+      "+2 format below its target share (45% < 50%)"
+    ],
+    "ranked": [
+      {
+        "renderId": "character-journey:onepiece:nami:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "onepiece"
+        ],
+        "score": 101.04,
+        "reasons": [
+          "coldstart: novelty +20.5, jitter +2.5",
+          "+12 main character",
+          "+14 continues a started series (Part 2 promised)",
+          "+2 format below its target share (45% < 50%)"
+        ]
+      },
+      {
+        "renderId": "character-versus:naruto:obito-uchiha-vs-blackclover-asta@en",
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "blackclover"
+        ],
+        "score": 91.88,
+        "reasons": [
+          "coldstart: novelty +24.0, jitter +5.9",
+          "+12 main character"
+        ]
+      },
+      {
+        "renderId": "character-versus:hunterxhunter:gon-freecss-vs-attackontitan-mikasa-ackerman@en",
+        "contentType": "character-versus",
+        "animes": [
+          "hunterxhunter",
+          "attackontitan"
+        ],
+        "score": 91.3,
+        "reasons": [
+          "coldstart: novelty +23.5, jitter +5.8",
+          "+12 main character"
+        ]
+      },
+      {
+        "renderId": "character-journey:naruto:madara-uchiha@en",
+        "contentType": "character-journey",
+        "animes": [
+          "naruto"
+        ],
+        "score": 91.12,
+        "reasons": [
+          "coldstart: novelty +21.5, jitter +5.6",
+          "+12 main character",
+          "+2 format below its target share (45% < 50%)"
+        ]
+      },
+      {
+        "renderId": "character-versus:naruto:obito-uchiha-vs-dragonball-piccolo@en",
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "dragonball"
+        ],
+        "score": 90.85,
+        "reasons": [
+          "coldstart: novelty +23.5, jitter +5.4",
+          "+12 main character"
+        ]
+      },
+      {
+        "renderId": "character-versus:hunterxhunter:gon-freecss-vs-onepiece-sanji@en",
+        "contentType": "character-versus",
+        "animes": [
+          "hunterxhunter",
+          "onepiece"
+        ],
+        "score": 90.85,
+        "reasons": [
+          "coldstart: novelty +23.0, jitter +5.8",
+          "+12 main character"
+        ]
+      }
+    ],
+    "explanation": [
+      "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
+      "bleach:sosuke-aizen excluded in every format (maxSameCharacterStreak 1).",
+      "Selected character-journey:onepiece:nami:part-02@en (character-journey, onepiece) — coldstart, score 101.04 among 622 valid candidate(s)."
+    ]
+  },
+  "pick": {
+    "contentId": "character-journey:onepiece:nami:part-02",
+    "renderId": "character-journey:onepiece:nami:part-02@en",
+    "contentType": "character-journey",
+    "animes": [
+      "onepiece"
+    ],
+    "characters": [
+      "onepiece:nami"
+    ],
+    "part": 2,
+    "partCount": 3,
+    "score": 101.04,
+    "reasons": [
+      "coldstart: novelty +20.5, jitter +2.5",
+      "+12 main character",
+      "+14 continues a started series (Part 2 promised)",
+      "+2 format below its target share (45% < 50%)"
+    ]
+  },
+  "request": {
+    "template": "characterJourney",
+    "anime": "onepiece",
+    "subject": "nami",
+    "segment": "part-02",
+    "locale": "en",
+    "hook": "Part 2 of 3: Nami's journey keeps growing.",
+    "hookType": "curiosity",
+    "hookId": "cj-cont-curiosity-1",
+    "cta": "Follow for Part 3.",
+    "ctaType": "follow-next-part",
+    "selection": {
+      "mode": "coldstart",
+      "score": 101.04,
+      "seed": "feed40:guess-character:bleach:sosuke-aizen@en:samples0"
+    },
+    "notes": "growth selector (coldstart): coldstart: novelty +20.5, jitter +2.5; +12 main character; +14 continues a started series (Part 2 promised)"
+  },
+  "alternatives": [
+    {
+      "renderId": "character-versus:naruto:obito-uchiha-vs-blackclover-asta@en",
+      "contentType": "character-versus",
+      "score": 91.88
+    },
+    {
+      "renderId": "character-versus:hunterxhunter:gon-freecss-vs-attackontitan-mikasa-ackerman@en",
+      "contentType": "character-versus",
+      "score": 91.3
+    },
+    {
+      "renderId": "character-journey:naruto:madara-uchiha@en",
+      "contentType": "character-journey",
+      "score": 91.12
+    },
+    {
+      "renderId": "character-versus:naruto:obito-uchiha-vs-dragonball-piccolo@en",
+      "contentType": "character-versus",
+      "score": 90.85
+    },
+    {
+      "renderId": "character-versus:hunterxhunter:gon-freecss-vs-onepiece-sanji@en",
+      "contentType": "character-versus",
+      "score": 90.85
+    }
+  ],
+  "eligible": 622
 }
