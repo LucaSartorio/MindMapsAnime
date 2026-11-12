@@ -1,0 +1,18 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterJourney",
+  "anime": "jujutsukaisen",
+  "subject": "megumi-fushiguro",
+  "locale": "en",
+  "hook": "4 places. 3 story arcs. One journey: Megumi Fushiguro.",
+  "hookType": "fact",
+  "hookId": "cj-fact-2",
+  "cta": "Which journey should we map next?",
+  "ctaType": "comment-next-journey",
+  "selection": {
+    "mode": "coldstart",
+    "score": 91.22,
+    "seed": "feed38:guess-character:hunterxhunter:killua-zoldyck@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +21.5, jitter +5.7; +12 main character; +2 format below its target share (45% < 50%)"
+}

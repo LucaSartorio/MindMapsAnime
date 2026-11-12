@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-08T06:15:45.066Z",
+  "generatedAt": "2026-11-12T06:23:16.286Z",
   "locales": [
     "en",
     "it"
@@ -4375,13 +4375,30 @@
             "arcs": 5,
             "journeyArcs": 15
           },
-          "renderedLocales": [],
-          "scheduledLocales": [],
+          "renderedLocales": [
+            "en"
+          ],
+          "scheduledLocales": [
+            "en"
+          ],
           "publishedLocales": [],
           "queuedLocales": [],
-          "renderedBefore": false,
+          "renderedBefore": true,
           "publishedBefore": false,
-          "publication": []
+          "publication": [
+            {
+              "renderId": "character-journey:onepiece:nami:part-02@en",
+              "locale": "en",
+              "variant": null,
+              "status": "scheduled",
+              "platforms": {
+                "instagram": "scheduled",
+                "facebook": "scheduled",
+                "tiktok": "scheduled",
+                "youtube": "scheduled"
+              }
+            }
+          ]
         },
         {
           "id": "character-journey:onepiece:nami:part-03",
@@ -13203,13 +13220,30 @@
             "arcs": 3,
             "journeyArcs": 3
           },
-          "renderedLocales": [],
-          "scheduledLocales": [],
+          "renderedLocales": [
+            "en"
+          ],
+          "scheduledLocales": [
+            "en"
+          ],
           "publishedLocales": [],
           "queuedLocales": [],
-          "renderedBefore": false,
+          "renderedBefore": true,
           "publishedBefore": false,
-          "publication": []
+          "publication": [
+            {
+              "renderId": "character-journey:jujutsukaisen:megumi-fushiguro@en",
+              "locale": "en",
+              "variant": null,
+              "status": "scheduled",
+              "platforms": {
+                "instagram": "scheduled",
+                "facebook": "scheduled",
+                "tiktok": "scheduled",
+                "youtube": "scheduled"
+              }
+            }
+          ]
         },
         {
           "id": "character-journey:jujutsukaisen:satoru-gojo",
@@ -16244,13 +16278,30 @@
             "places": 8,
             "clues": 6
           },
-          "renderedLocales": [],
-          "scheduledLocales": [],
+          "renderedLocales": [
+            "en"
+          ],
+          "scheduledLocales": [
+            "en"
+          ],
           "publishedLocales": [],
           "queuedLocales": [],
-          "renderedBefore": false,
+          "renderedBefore": true,
           "publishedBefore": false,
-          "publication": []
+          "publication": [
+            {
+              "renderId": "guess-character:hunterxhunter:killua-zoldyck@en",
+              "locale": "en",
+              "variant": null,
+              "status": "scheduled",
+              "platforms": {
+                "instagram": "scheduled",
+                "facebook": "scheduled",
+                "tiktok": "scheduled",
+                "youtube": "scheduled"
+              }
+            }
+          ]
         },
         {
           "id": "guess-character:hunterxhunter:kurapika",
@@ -18045,13 +18096,30 @@
             "places": 6,
             "clues": 6
           },
-          "renderedLocales": [],
-          "scheduledLocales": [],
+          "renderedLocales": [
+            "en"
+          ],
+          "scheduledLocales": [
+            "en"
+          ],
           "publishedLocales": [],
           "queuedLocales": [],
-          "renderedBefore": false,
+          "renderedBefore": true,
           "publishedBefore": false,
-          "publication": []
+          "publication": [
+            {
+              "renderId": "guess-character:bleach:sosuke-aizen@en",
+              "locale": "en",
+              "variant": null,
+              "status": "scheduled",
+              "platforms": {
+                "instagram": "scheduled",
+                "facebook": "scheduled",
+                "tiktok": "scheduled",
+                "youtube": "scheduled"
+              }
+            }
+          ]
         },
         {
           "id": "guess-character:bleach:byakuya-kuchiki",
@@ -25898,10 +25966,10 @@
       "metricool"
     ],
     "summary": {
-      "rendered": 42,
+      "rendered": 46,
       "unavailable": 5,
       "notPublished": 5,
-      "scheduled": 31,
+      "scheduled": 35,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0

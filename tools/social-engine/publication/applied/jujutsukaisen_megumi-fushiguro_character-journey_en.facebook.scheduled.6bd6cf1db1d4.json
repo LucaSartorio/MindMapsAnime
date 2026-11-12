@@ -1,0 +1,30 @@
+{
+  "receiptId": "jujutsukaisen_megumi-fushiguro_character-journey_en.facebook.scheduled.6bd6cf1db1d4",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-11-10T06:20:55.143Z",
+  "sourceFile": "20261110T061420Z-jujutsukaisen_megumi-fushiguro_character-journey_en-facebook-scheduled.json",
+  "run": {
+    "runId": "42767865497",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/42767865497",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "character-journey:jujutsukaisen:megumi-fushiguro@en",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-11-10T12:00:00+01:00",
+    "recordedAt": "2026-11-10T06:14:20Z",
+    "recordedBy": "chatgpt-work-publishing-agent",
+    "platform": "facebook",
+    "providerPostId": "422768046",
+    "providerPostUuid": "397176576132597604",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=397176576132597604"
+  }
+}

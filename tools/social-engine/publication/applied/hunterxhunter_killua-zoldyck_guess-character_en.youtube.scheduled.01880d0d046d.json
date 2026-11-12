@@ -1,0 +1,30 @@
+{
+  "receiptId": "hunterxhunter_killua-zoldyck_guess-character_en.youtube.scheduled.01880d0d046d",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-11-09T06:13:02.723Z",
+  "sourceFile": "20261109T060846Z-hunterxhunter_killua-zoldyck_guess-character_en-youtube-scheduled.json",
+  "run": {
+    "runId": "42571670731",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/42571670731",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "guess-character:hunterxhunter:killua-zoldyck@en",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-11-09T10:00:00+01:00",
+    "recordedAt": "2026-11-09T06:08:46Z",
+    "recordedBy": "chatgpt-work-publishing-agent",
+    "platform": "youtube",
+    "providerPostId": "421402727",
+    "providerPostUuid": "8667994010298240190",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=8667994010298240190"
+  }
+}

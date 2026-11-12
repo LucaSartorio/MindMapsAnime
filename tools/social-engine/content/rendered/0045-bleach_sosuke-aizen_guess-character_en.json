@@ -1,0 +1,18 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "guessCharacter",
+  "anime": "bleach",
+  "subject": "sosuke-aizen",
+  "locale": "en",
+  "hook": "Guess the Bleach character from the places they visited.",
+  "hookType": "challenge",
+  "hookId": "gc-challenge-1",
+  "cta": "Follow for the next one.",
+  "ctaType": "follow-for-more",
+  "selection": {
+    "mode": "coldstart",
+    "score": 91.45,
+    "seed": "feed39:character-journey:jujutsukaisen:megumi-fushiguro@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +24.0, jitter +5.4; +12 main character"
+}

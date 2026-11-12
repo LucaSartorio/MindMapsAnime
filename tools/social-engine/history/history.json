@@ -922,6 +922,162 @@
         }
       ]
     },
+    "character-journey:jujutsukaisen:megumi-fushiguro@en": {
+      "renderId": "character-journey:jujutsukaisen:megumi-fushiguro@en",
+      "contentId": "character-journey:jujutsukaisen:megumi-fushiguro",
+      "template": "characterJourney",
+      "anime": "jujutsukaisen",
+      "subject": "megumi-fushiguro",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-11-10T06:06:49.326Z",
+      "updatedAt": "2026-11-10T06:20:55.143Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-11-10T06:11:37.709Z",
+      "outputFile": "tools/social-engine/output/jujutsukaisen_megumi-fushiguro_character-journey_en.mp4",
+      "manifestFile": "tools/social-engine/output/jujutsukaisen_megumi-fushiguro_character-journey_en.manifest.json",
+      "sourceFile": "0044-jujutsukaisen_megumi-fushiguro_character-journey_en.json",
+      "durationSeconds": 25,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-42766280038-1",
+        "runId": "42766280038",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/42766280038",
+        "video": "videos/jujutsukaisen_megumi-fushiguro_character-journey_en.mp4",
+        "manifest": "manifests/jujutsukaisen_megumi-fushiguro_character-journey_en.manifest.json",
+        "sha256": "9b51882783a19178d87d9ea332853d9b82b8eae2ed8f60b6a0410e1337fcee34",
+        "cover": "covers/jujutsukaisen_megumi-fushiguro_character-journey_en.cover.png",
+        "expiresAt": "2026-12-10T06:11:37.709Z"
+      },
+      "social": {
+        "contentType": "character-journey",
+        "animes": [
+          "jujutsukaisen"
+        ],
+        "characters": [
+          "jujutsukaisen:megumi-fushiguro"
+        ],
+        "characterNames": [
+          "Megumi Fushiguro"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "fact",
+        "hookId": "cj-fact-2",
+        "hook": "4 places. 3 story arcs. One journey: Megumi Fushiguro.",
+        "ctaType": "comment-next-journey",
+        "cta": "Which journey should we map next?",
+        "durationSeconds": 25,
+        "selection": {
+          "mode": "coldstart",
+          "score": 91.22,
+          "seed": "feed38:guess-character:hunterxhunter:killua-zoldyck@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "4 places. 3 story arcs. One journey: Megumi Fushiguro.\n\nMegumi Fushiguro's journey across Jujutsu Kaisen: 4 places on the world map.\n\nWhich journey should we map next? 👇\n\nSave it for your next rewatch.\n\n#jujutsukaisen #jjk #megumifushiguro #anime #animemap #AniMapVerse",
+          "tiktokCaption": "4 places. 3 story arcs. One journey: Megumi Fushiguro. Which journey should we map next? 👇 #jujutsukaisen #jjk #megumifushiguro #anime #animemap",
+          "youtubeTitle": "Every Place Megumi Fushiguro Visited 🌀 | Jujutsu Kaisen Journey",
+          "youtubeDescription": "4 places. 3 story arcs. One journey: Megumi Fushiguro.\n\nMegumi Fushiguro's journey across Jujutsu Kaisen: 4 places on the world map.\n\nWhich journey should we map next? 👇\n\nInteractive map: https://animapverse.com/en/jujutsu-kaisen/characters/megumi-fushiguro\n\n#jujutsukaisen #jjk #megumifushiguro",
+          "facebookCaption": "4 places. 3 story arcs. One journey: Megumi Fushiguro.\n\nMegumi Fushiguro's journey across Jujutsu Kaisen: 4 places on the world map.\n\nWhich journey should we map next? 👇\n\nInteractive map: https://animapverse.com/en/jujutsu-kaisen/characters/megumi-fushiguro",
+          "hashtags": [
+            "#jujutsukaisen",
+            "#jjk",
+            "#megumifushiguro",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "scheduled",
+      "publishedAt": null,
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-10T12:00:00+01:00",
+          "scheduledAt": "2026-11-10T06:14:20Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "422767891",
+          "providerPostUuid": "7601384799789467133",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=7601384799789467133",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "jujutsukaisen_megumi-fushiguro_character-journey_en.instagram.scheduled.76a7f886b017"
+          ],
+          "updatedAt": "2026-11-10T06:20:55.143Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-10T12:00:00+01:00",
+          "scheduledAt": "2026-11-10T06:14:20Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "422768046",
+          "providerPostUuid": "397176576132597604",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=397176576132597604",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "jujutsukaisen_megumi-fushiguro_character-journey_en.facebook.scheduled.6bd6cf1db1d4"
+          ],
+          "updatedAt": "2026-11-10T06:20:55.143Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-10T12:00:00+01:00",
+          "scheduledAt": "2026-11-10T06:14:20Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "422768315",
+          "providerPostUuid": "-434709267589152443",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-434709267589152443",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "jujutsukaisen_megumi-fushiguro_character-journey_en.tiktok.scheduled.a1364270b967"
+          ],
+          "updatedAt": "2026-11-10T06:20:55.143Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-10T12:00:00+01:00",
+          "scheduledAt": "2026-11-10T06:14:20Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "422768181",
+          "providerPostUuid": "-4857218049247722191",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-4857218049247722191",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "jujutsukaisen_megumi-fushiguro_character-journey_en.youtube.scheduled.05d5b62f24e7"
+          ],
+          "updatedAt": "2026-11-10T06:20:55.143Z"
+        }
+      ]
+    },
     "character-journey:jujutsukaisen:satoru-gojo@en": {
       "renderId": "character-journey:jujutsukaisen:satoru-gojo@en",
       "contentId": "character-journey:jujutsukaisen:satoru-gojo",
@@ -2661,6 +2817,161 @@
             "onepiece_nami_character-journey_part-01_en.youtube.scheduled.bea4dd7330f2"
           ],
           "updatedAt": "2026-11-05T06:16:07.135Z"
+        }
+      ]
+    },
+    "character-journey:onepiece:nami:part-02@en": {
+      "renderId": "character-journey:onepiece:nami:part-02@en",
+      "contentId": "character-journey:onepiece:nami:part-02",
+      "template": "characterJourney",
+      "anime": "onepiece",
+      "subject": "nami",
+      "locale": "en",
+      "variant": null,
+      "segment": "part-02",
+      "segmentFingerprint": "f7b568b4",
+      "createdAt": "2026-11-12T06:09:57.959Z",
+      "updatedAt": "2026-11-12T06:23:16.272Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-11-12T06:13:48.985Z",
+      "outputFile": "tools/social-engine/output/onepiece_nami_character-journey_part-02_en.mp4",
+      "manifestFile": "tools/social-engine/output/onepiece_nami_character-journey_part-02_en.manifest.json",
+      "sourceFile": "0046-onepiece_nami_character-journey_part-02_en.json",
+      "durationSeconds": 30,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-43166154781-1",
+        "runId": "43166154781",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/43166154781",
+        "video": "videos/onepiece_nami_character-journey_part-02_en.mp4",
+        "manifest": "manifests/onepiece_nami_character-journey_part-02_en.manifest.json",
+        "sha256": "6d77c523db1de717344b6e86891af698c8444061785910a22dcfa76a131d9fad",
+        "cover": "covers/onepiece_nami_character-journey_part-02_en.cover.png",
+        "expiresAt": "2026-12-12T06:13:48.985Z"
+      },
+      "social": {
+        "contentType": "character-journey",
+        "animes": [
+          "onepiece"
+        ],
+        "characters": [
+          "onepiece:nami"
+        ],
+        "characterNames": [
+          "Nami"
+        ],
+        "part": 2,
+        "partCount": 3,
+        "hookType": "curiosity",
+        "hookId": "cj-cont-curiosity-1",
+        "hook": "Part 2 of 3: Nami's journey keeps growing.",
+        "ctaType": "follow-next-part",
+        "cta": "Follow for Part 3.",
+        "durationSeconds": 30,
+        "selection": {
+          "mode": "coldstart",
+          "score": 101.04,
+          "seed": "feed40:guess-character:bleach:sosuke-aizen@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Part 2 of 3: Nami's journey keeps growing.\n\nNami's journey across One Piece — Part 2/3: 17 places on the world map.\n\nFollow for Part 3.\n\nSave it for your next rewatch.\n\n#onepiece #nami #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Part 2 of 3: Nami's journey keeps growing. Follow for Part 3. #onepiece #nami #anime #animemap #AniMapVerse",
+          "youtubeTitle": "Every Place Nami Visited 🏴‍☠️ | One Piece Journey Part 2 of 3",
+          "youtubeDescription": "Part 2 of 3: Nami's journey keeps growing.\n\nNami's journey across One Piece — Part 2/3: 17 places on the world map.\n\nSubscribe for Part 3.\n\nInteractive map: https://animapverse.com/en/one-piece/characters/nami\n\n#onepiece #nami #anime",
+          "facebookCaption": "Part 2 of 3: Nami's journey keeps growing.\n\nNami's journey across One Piece — Part 2/3: 17 places on the world map.\n\nFollow for Part 3.\n\nInteractive map: https://animapverse.com/en/one-piece/characters/nami",
+          "hashtags": [
+            "#onepiece",
+            "#nami",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "scheduled",
+      "publishedAt": null,
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-12T10:00:00+01:00",
+          "scheduledAt": "2026-11-12T06:18:44Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "425310453",
+          "providerPostUuid": "-2481155962953446609",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-2481155962953446609",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "onepiece_nami_character-journey_part-02_en.instagram.scheduled.8625c5e17585"
+          ],
+          "updatedAt": "2026-11-12T06:23:16.272Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-12T10:00:00+01:00",
+          "scheduledAt": "2026-11-12T06:18:44Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "425310716",
+          "providerPostUuid": "-5139033726315510997",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-5139033726315510997",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "onepiece_nami_character-journey_part-02_en.facebook.scheduled.3359a9a3a216"
+          ],
+          "updatedAt": "2026-11-12T06:23:16.272Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-12T10:00:00+01:00",
+          "scheduledAt": "2026-11-12T06:18:44Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "425311215",
+          "providerPostUuid": "7549100463490813846",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=7549100463490813846",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "onepiece_nami_character-journey_part-02_en.tiktok.scheduled.6c9bb5411711"
+          ],
+          "updatedAt": "2026-11-12T06:23:16.272Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-12T10:00:00+01:00",
+          "scheduledAt": "2026-11-12T06:18:44Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "425310997",
+          "providerPostUuid": "-1719620526128017459",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-1719620526128017459",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "onepiece_nami_character-journey_part-02_en.youtube.scheduled.51c80c0dde14"
+          ],
+          "updatedAt": "2026-11-12T06:23:16.272Z"
         }
       ]
     },
@@ -5524,6 +5835,160 @@
         }
       ]
     },
+    "guess-character:bleach:sosuke-aizen@en": {
+      "renderId": "guess-character:bleach:sosuke-aizen@en",
+      "contentId": "guess-character:bleach:sosuke-aizen",
+      "template": "guessCharacter",
+      "anime": "bleach",
+      "subject": "sosuke-aizen",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-11-11T06:09:24.315Z",
+      "updatedAt": "2026-11-11T07:28:18.915Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-11-11T06:12:33.207Z",
+      "outputFile": "tools/social-engine/output/bleach_sosuke-aizen_guess-character_en.mp4",
+      "manifestFile": "tools/social-engine/output/bleach_sosuke-aizen_guess-character_en.manifest.json",
+      "sourceFile": "0045-bleach_sosuke-aizen_guess-character_en.json",
+      "durationSeconds": 26,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-42970380967-1",
+        "runId": "42970380967",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/42970380967",
+        "video": "videos/bleach_sosuke-aizen_guess-character_en.mp4",
+        "manifest": "manifests/bleach_sosuke-aizen_guess-character_en.manifest.json",
+        "sha256": "cb7e055486d49ed6845681686fccc14291607135c4a7e14b15a684a9223843d6",
+        "cover": "covers/bleach_sosuke-aizen_guess-character_en.cover.png",
+        "expiresAt": "2026-12-11T06:12:33.207Z"
+      },
+      "social": {
+        "contentType": "guess-character",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:sosuke-aizen"
+        ],
+        "characterNames": [
+          "Sōsuke Aizen"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "challenge",
+        "hookId": "gc-challenge-1",
+        "hook": "Guess the Bleach character from the places they visited.",
+        "ctaType": "follow-for-more",
+        "cta": "Follow for the next one.",
+        "durationSeconds": 26,
+        "selection": {
+          "mode": "coldstart",
+          "score": 91.45,
+          "seed": "feed39:character-journey:jujutsukaisen:megumi-fushiguro@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Guess the Bleach character from the places they visited.\n\n6 places, one Bleach character. Guess before the reveal!\n\nFollow for more anime journeys.\n\nSave it for your next rewatch.\n\n#bleach #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Guess the Bleach character from the places they visited. Follow for more anime journeys. #bleach #anime #animemap #AniMapVerse",
+          "youtubeTitle": "Guess the Bleach Character From the Places They Visited ⚔️",
+          "youtubeDescription": "Guess the Bleach character from the places they visited.\n\n6 places, one Bleach character. Guess before the reveal!\n\nSubscribe for more anime journeys.\n\nInteractive map: https://animapverse.com/en/bleach/map\n\n#bleach #anime #animemap",
+          "facebookCaption": "Guess the Bleach character from the places they visited.\n\n6 places, one Bleach character. Guess before the reveal!\n\nFollow for more anime journeys.\n\nInteractive map: https://animapverse.com/en/bleach/map",
+          "hashtags": [
+            "#bleach",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "scheduled",
+      "publishedAt": null,
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-11T12:00:00+01:00",
+          "scheduledAt": "2026-11-11T07:23:47Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "424087245",
+          "providerPostUuid": "3903234677485161679",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=3903234677485161679",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "bleach_sosuke-aizen_guess-character_en.instagram.scheduled.9ec678ca2c2f"
+          ],
+          "updatedAt": "2026-11-11T07:28:18.915Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-11T12:00:00+01:00",
+          "scheduledAt": "2026-11-11T07:23:47Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "424087580",
+          "providerPostUuid": "5092884591384153189",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=5092884591384153189",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "bleach_sosuke-aizen_guess-character_en.facebook.scheduled.dbc667e04cc7"
+          ],
+          "updatedAt": "2026-11-11T07:28:18.915Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-11T12:00:00+01:00",
+          "scheduledAt": "2026-11-11T07:23:47Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "424087929",
+          "providerPostUuid": "795066160783115661",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=795066160783115661",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "bleach_sosuke-aizen_guess-character_en.tiktok.scheduled.02e64ba655a5"
+          ],
+          "updatedAt": "2026-11-11T07:28:18.915Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-11T12:00:00+01:00",
+          "scheduledAt": "2026-11-11T07:23:47Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "424087740",
+          "providerPostUuid": "5268705259253022735",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=5268705259253022735",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "bleach_sosuke-aizen_guess-character_en.youtube.scheduled.a835fcb21484"
+          ],
+          "updatedAt": "2026-11-11T07:28:18.915Z"
+        }
+      ]
+    },
     "guess-character:bleach:yhwach@en": {
       "renderId": "guess-character:bleach:yhwach@en",
       "contentId": "guess-character:bleach:yhwach",
@@ -5675,6 +6140,161 @@
             "bleach_yhwach_guess-character_en.youtube.scheduled.14b4112234ce"
           ],
           "updatedAt": "2026-10-28T06:21:28.331Z"
+        }
+      ]
+    },
+    "guess-character:hunterxhunter:killua-zoldyck@en": {
+      "renderId": "guess-character:hunterxhunter:killua-zoldyck@en",
+      "contentId": "guess-character:hunterxhunter:killua-zoldyck",
+      "template": "guessCharacter",
+      "anime": "hunterxhunter",
+      "subject": "killua-zoldyck",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-11-09T06:03:32.543Z",
+      "updatedAt": "2026-11-09T06:13:02.723Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-11-09T06:05:57.473Z",
+      "outputFile": "tools/social-engine/output/hunterxhunter_killua-zoldyck_guess-character_en.mp4",
+      "manifestFile": "tools/social-engine/output/hunterxhunter_killua-zoldyck_guess-character_en.manifest.json",
+      "sourceFile": "0043-hunterxhunter_killua-zoldyck_guess-character_en.json",
+      "durationSeconds": 26,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-42570750609-1",
+        "runId": "42570750609",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/42570750609",
+        "video": "videos/hunterxhunter_killua-zoldyck_guess-character_en.mp4",
+        "manifest": "manifests/hunterxhunter_killua-zoldyck_guess-character_en.manifest.json",
+        "sha256": "945af7499fb580bf47b8bd3f6bca8480eeab0bcaf439887de00559c866b0b042",
+        "cover": "covers/hunterxhunter_killua-zoldyck_guess-character_en.cover.png",
+        "expiresAt": "2026-12-09T06:05:57.473Z"
+      },
+      "social": {
+        "contentType": "guess-character",
+        "animes": [
+          "hunterxhunter"
+        ],
+        "characters": [
+          "hunterxhunter:killua-zoldyck"
+        ],
+        "characterNames": [
+          "Killua Zoldyck"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "question",
+        "hookId": "gc-question-1",
+        "hook": "Who visited all these places?",
+        "ctaType": "comment-guess",
+        "cta": "Did you get it right?",
+        "durationSeconds": 26,
+        "selection": {
+          "mode": "coldstart",
+          "score": 91.63,
+          "seed": "feed37:h7972e339:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Who visited all these places?\n\n6 places, one Hunter x Hunter character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nSave it for your next rewatch.\n\n#hunterxhunter #hxh #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Who visited all these places? Did you get it right? Tell us how many places it took you 👇 #hunterxhunter #hxh #anime #animemap #AniMapVerse",
+          "youtubeTitle": "Guess the Hunter x Hunter Character From the Places They Visited 🎣",
+          "youtubeDescription": "Who visited all these places?\n\n6 places, one Hunter x Hunter character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/hunter-x-hunter/map\n\n#hunterxhunter #hxh #anime",
+          "facebookCaption": "Who visited all these places?\n\n6 places, one Hunter x Hunter character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/hunter-x-hunter/map",
+          "hashtags": [
+            "#hunterxhunter",
+            "#hxh",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "scheduled",
+      "publishedAt": null,
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-09T10:00:00+01:00",
+          "scheduledAt": "2026-11-09T06:08:46Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "421402483",
+          "providerPostUuid": "-8421783815910308131",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-8421783815910308131",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "hunterxhunter_killua-zoldyck_guess-character_en.instagram.scheduled.9b207b642439"
+          ],
+          "updatedAt": "2026-11-09T06:13:02.723Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-09T10:00:00+01:00",
+          "scheduledAt": "2026-11-09T06:08:46Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "421402604",
+          "providerPostUuid": "-1181175999773061619",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-1181175999773061619",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "hunterxhunter_killua-zoldyck_guess-character_en.facebook.scheduled.516639cd670b"
+          ],
+          "updatedAt": "2026-11-09T06:13:02.723Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-09T10:00:00+01:00",
+          "scheduledAt": "2026-11-09T06:08:46Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "421402875",
+          "providerPostUuid": "1094143673011882356",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=1094143673011882356",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "hunterxhunter_killua-zoldyck_guess-character_en.tiktok.scheduled.46f0357d4ba3"
+          ],
+          "updatedAt": "2026-11-09T06:13:02.723Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-09T10:00:00+01:00",
+          "scheduledAt": "2026-11-09T06:08:46Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "421402727",
+          "providerPostUuid": "8667994010298240190",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=8667994010298240190",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "hunterxhunter_killua-zoldyck_guess-character_en.youtube.scheduled.01880d0d046d"
+          ],
+          "updatedAt": "2026-11-09T06:13:02.723Z"
         }
       ]
     },
