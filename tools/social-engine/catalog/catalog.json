@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T07:28:18.939Z",
+  "generatedAt": "2026-11-12T06:13:50.226Z",
   "locales": [
     "en",
     "it"
@@ -4375,13 +4375,28 @@
             "arcs": 5,
             "journeyArcs": 15
           },
-          "renderedLocales": [],
+          "renderedLocales": [
+            "en"
+          ],
           "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
-          "renderedBefore": false,
+          "renderedBefore": true,
           "publishedBefore": false,
-          "publication": []
+          "publication": [
+            {
+              "renderId": "character-journey:onepiece:nami:part-02@en",
+              "locale": "en",
+              "variant": null,
+              "status": "notPublished",
+              "platforms": {
+                "instagram": "notScheduled",
+                "facebook": "notScheduled",
+                "tiktok": "notScheduled",
+                "youtube": "notScheduled"
+              }
+            }
+          ]
         },
         {
           "id": "character-journey:onepiece:nami:part-03",
@@ -25949,15 +25964,68 @@
       "metricool"
     ],
     "summary": {
-      "rendered": 45,
+      "rendered": 46,
       "unavailable": 5,
-      "notPublished": 5,
+      "notPublished": 6,
       "scheduled": 34,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0
     },
-    "ready": [],
+    "ready": [
+      {
+        "renderId": "character-journey:onepiece:nami:part-02@en",
+        "contentId": "character-journey:onepiece:nami:part-02",
+        "anime": "onepiece",
+        "subject": "nami",
+        "subjectName": "Nami",
+        "locale": "en",
+        "variant": null,
+        "segment": "part-02",
+        "partNumber": 2,
+        "partCount": 3,
+        "renderedAt": "2026-11-12T06:13:48.985Z",
+        "durationSeconds": 30,
+        "publicationStatus": "notPublished",
+        "platforms": {
+          "instagram": "notScheduled",
+          "facebook": "notScheduled",
+          "tiktok": "notScheduled",
+          "youtube": "notScheduled"
+        },
+        "artifact": {
+          "name": "animapverse-social-render-43166154781-1",
+          "runId": "43166154781",
+          "runAttempt": "1",
+          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/43166154781",
+          "video": "videos/onepiece_nami_character-journey_part-02_en.mp4",
+          "manifest": "manifests/onepiece_nami_character-journey_part-02_en.manifest.json",
+          "sha256": "6d77c523db1de717344b6e86891af698c8444061785910a22dcfa76a131d9fad",
+          "cover": "covers/onepiece_nami_character-journey_part-02_en.cover.png",
+          "expiresAt": "2026-12-12T06:13:48.985Z"
+        },
+        "contentType": "character-journey",
+        "platformMetadata": {
+          "instagramCaption": "Part 2 of 3: Nami's journey keeps growing.\n\nNami's journey across One Piece — Part 2/3: 17 places on the world map.\n\nFollow for Part 3.\n\nSave it for your next rewatch.\n\n#onepiece #nami #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Part 2 of 3: Nami's journey keeps growing. Follow for Part 3. #onepiece #nami #anime #animemap #AniMapVerse",
+          "youtubeTitle": "Every Place Nami Visited 🏴‍☠️ | One Piece Journey Part 2 of 3",
+          "youtubeDescription": "Part 2 of 3: Nami's journey keeps growing.\n\nNami's journey across One Piece — Part 2/3: 17 places on the world map.\n\nSubscribe for Part 3.\n\nInteractive map: https://animapverse.com/en/one-piece/characters/nami\n\n#onepiece #nami #anime",
+          "facebookCaption": "Part 2 of 3: Nami's journey keeps growing.\n\nNami's journey across One Piece — Part 2/3: 17 places on the world map.\n\nFollow for Part 3.\n\nInteractive map: https://animapverse.com/en/one-piece/characters/nami",
+          "hashtags": [
+            "#onepiece",
+            "#nami",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        },
+        "waitFor": {}
+      }
+    ],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",
