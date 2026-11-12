@@ -1,0 +1,30 @@
+{
+  "receiptId": "onepiece_nami_character-journey_part-02_en.facebook.scheduled.3359a9a3a216",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-11-12T06:23:16.272Z",
+  "sourceFile": "20261112T061844Z-onepiece_nami_character-journey_part-02_en-facebook-scheduled.json",
+  "run": {
+    "runId": "43167756258",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/43167756258",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "character-journey:onepiece:nami:part-02@en",
+    "platform": "facebook",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-11-12T10:00:00+01:00",
+    "providerPostId": "425310716",
+    "providerPostUuid": "-5139033726315510997",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-5139033726315510997",
+    "recordedAt": "2026-11-12T06:18:44Z",
+    "recordedBy": "chatgpt-work-publishing-agent"
+  }
+}
