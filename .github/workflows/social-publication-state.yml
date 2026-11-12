@@ -172,6 +172,10 @@ jobs:
       profile: publication
       raw-artifact: ${{ needs.apply.outputs.state_artifact }}
       round: '1'
+    # Environment secrets (social-state) reach a reusable workflow only with `inherit` (incident
+    # 2026-11-11, docs/SOCIAL_STATE_BOT.md §6.7). The key is still referenced ONLY by the jobs with
+    # `environment: social-state` in social-state-persist.yml (tested).
+    secrets: inherit
 
   state-retry:
     name: Persist state (round 2)
@@ -185,6 +189,10 @@ jobs:
       profile: publication
       raw-artifact: ${{ needs.apply.outputs.state_artifact }}
       round: '2'
+    # Environment secrets (social-state) reach a reusable workflow only with `inherit` (incident
+    # 2026-11-11, docs/SOCIAL_STATE_BOT.md §6.7). The key is still referenced ONLY by the jobs with
+    # `environment: social-state` in social-state-persist.yml (tested).
+    secrets: inherit
 
   state-check:
     name: State persisted

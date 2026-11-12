@@ -821,7 +821,9 @@ Permanent rules:
   (`tools/social-engine/ci/state-bundle.mjs`, zero dependencies, exact allowlist per profile), an unprivileged job
   prepares it (merge driver + catalog, `prepare-state.sh`) and a privileged job (environment `social-state`, no npm, no
   app code) pushes it. Never run npm/app code in a job that holds the App token, never widen the allowlist without a
-  test, never add a fallback to other credentials. Tests: `npm run social:state:test` (part of `social:validate`).
+  test, never add a fallback to other credentials. The callers (`state`/`state-retry` jobs) MUST pass `secrets: inherit`:
+  an environment secret never reaches a reusable workflow otherwise (incident 2026-11-11); verify the real path with
+  Social render → Run workflow `dry_run` (job *State Bot credentials*). Tests: `npm run social:state:test` (part of `social:validate`).
 - **History must persist**: Social render persists `history/`, `content/`, `catalog/` (only those paths), also on
   partial failure; Social publication state persists `history/`, `publication/`, `analytics/`, `catalog/`. Both go
   through `social-state-persist.yml`: `prepare-state.sh` rebases with the field-level `history.json` merge driver
