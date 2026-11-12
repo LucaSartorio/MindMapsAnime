@@ -655,19 +655,25 @@ await test('social-publication-validate.yml: PRs only, read-only, no secrets, va
   assert.match(y, /permissions:\s*\n\s*contents: read/);
   for (const step of ['social:publication:check-scope', 'social:publication:validate', 'social:publication:test']) assert.ok(y.includes(`npm run ${step}`), step);
 });
-await test('social-publication-state.yml: main only, own concurrency group, write only on the job, three loop guards', () => {
+await test('social-publication-state.yml: main only, own concurrency group, read-only, three loop guards, state via the State Bot', () => {
   const y = workflow('social-publication-state.yml');
   assert.match(y, /push:\s*\n\s*branches: \[main\]\s*\n\s*paths:\s*\n\s*- 'tools\/social-engine\/publication\/pending\/\*\*'/);
   assert.match(y, /group: animapverse-social-publication-state\s*\n\s*cancel-in-progress: false/);
   assert.match(y, /^permissions:\s*\n\s*contents: read/m);
-  assert.equal(y.match(/contents: write/g)?.length, 1);
+  // SEC-01: no job holds a write token; the state commit is pushed by the State Bot App
+  // (social-state-persist.yml, environment social-state) — no secret in this workflow.
+  assert.doesNotMatch(y, /contents: write/);
+  assert.doesNotMatch(y, /secrets\./);
+  assert.doesNotMatch(y, /commit-state\.sh/);
   assert.match(y, /github\.actor != 'github-actions\[bot\]'/);
+  assert.match(y, /github\.actor != vars\.STATE_BOT_LOGIN/);
   assert.match(y, /\[skip social-publication\]/);
-  assert.match(y, /\[skip ci\]/);
-  assert.doesNotMatch(y, /^\s*pull_request_target:|metricool\.com\/api|secrets\.(?!GITHUB_TOKEN)/im);
-  // Only state paths are committed, through the shared script (also used by Social render).
-  assert.match(y, /ci\/commit-state\.sh\s*\n\s*"chore\(social\): record publication state \[skip social-publication\] \[skip ci\]"\s*\n\s*tools\/social-engine\/history tools\/social-engine\/publication tools\/social-engine\/analytics tools\/social-engine\/catalog\n/);
-  assert.match(readFileSync(path.join(ENGINE_DIR, 'ci', 'commit-state.sh'), 'utf8'), /git add -A -- "\$@"/);
+  assert.doesNotMatch(y, /^\s*pull_request_target:|metricool\.com\/api/im);
+  // Only state paths are exported (exact allowlist in state-bundle.mjs) and persisted by the App,
+  // whose commit carries [skip social-publication] [skip ci].
+  assert.match(y, /state-bundle\.mjs export --repo \. --base "\$\(git rev-parse HEAD\)" \\\s*\n\s*--profile publication/);
+  assert.match(y, /uses: \.\/\.github\/workflows\/social-state-persist\.yml\s*\n\s*with:\s*\n\s*profile: publication/);
+  assert.match(readFileSync(path.join(ENGINE_DIR, 'ci', 'state-bundle.mjs'), 'utf8'), /'chore\(social\): record publication state \[skip social-publication\] \[skip ci\]'/);
   for (const step of ['social:publication:validate', 'social:publication:apply']) assert.ok(y.includes(`npm run ${step}`), step);
 });
 await test('no provider API, token or SDK anywhere in the engine (the repo never publishes)', () => {

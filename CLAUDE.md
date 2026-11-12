@@ -812,22 +812,27 @@ Permanent rules:
 - **GitHub workflows are the cloud renderer** (`.github/workflows/social-render.yml` on push to `main` touching
   `content/queue/**` + manual dispatch with `dry_run`; `social-validate.yml` on PRs, never renders). They call the
   existing npm scripts only — never put engine/validation logic in YAML, never add a second renderer. PRs never render;
-  no `pull_request_target`, no secrets, no PAT (`GITHUB_TOKEN`, `contents: write` only on the render job).
+  no `pull_request_target`, no PAT; every job has a read-only `GITHUB_TOKEN` and the only secret is the State Bot key,
+  used solely by `social-state-persist.yml` jobs that run in the `social-state` environment (main only).
 - **MP4 never committed**: videos leave the runner only as workflow artifacts.
 - **Queue JSON are untrusted input**: always validated by the engine (schema, data, duplicates, path guards).
-- **State Bot migration (SEC-01, `docs/SOCIAL_STATE_BOT.md`)**: the state commits are moving from `commit-state.sh` +
-  `GITHUB_TOKEN` to the GitHub App "AniMapVerse State Bot": the work job exports a state bundle
+- **State Bot (SEC-01, `docs/SOCIAL_STATE_BOT.md`)**: state commits are pushed by the GitHub App "AniMapVerse State
+  Bot", never by `GITHUB_TOKEN`: the work job (render / apply) exports a state bundle
   (`tools/social-engine/ci/state-bundle.mjs`, zero dependencies, exact allowlist per profile), an unprivileged job
   prepares it (merge driver + catalog, `prepare-state.sh`) and a privileged job (environment `social-state`, no npm, no
   app code) pushes it. Never run npm/app code in a job that holds the App token, never widen the allowlist without a
-  test, never add a fallback to other credentials. Tests: `npm run social:state:test` (part of `social:validate`).
-- **History must persist**: the render job commits `history/`, `content/`, `catalog/` back (only those paths), also on
-  partial failure; the publication-state job commits `history/`, `publication/`, `catalog/`. Both go through
-  `ci/commit-state.sh`, which rebases with the field-level `history.json` merge driver (`.gitattributes`,
-  `cli/merge-history.ts`) if the other workflow committed meanwhile — never hand-merge history.
-- **No workflow loops**: state commits are pushed with `GITHUB_TOKEN` (never triggers workflows), carry
-  `[skip social-render]` / `[skip social-publication]` + `[skip ci]`, and the jobs skip `github-actions[bot]` commits.
-  Keep all three guards. Publication: own concurrency group `animapverse-social-publication-state`, no cancel;
+  test, never add a fallback to other credentials. The callers (`state`/`state-retry` jobs) MUST pass `secrets: inherit`:
+  an environment secret never reaches a reusable workflow otherwise (incident 2026-11-11); verify the real path with
+  Social render → Run workflow `dry_run` (job *State Bot credentials*). Tests: `npm run social:state:test` (part of `social:validate`).
+- **History must persist**: Social render persists `history/`, `content/`, `catalog/` (only those paths), also on
+  partial failure; Social publication state persists `history/`, `publication/`, `analytics/`, `catalog/`. Both go
+  through `social-state-persist.yml`: `prepare-state.sh` rebases with the field-level `history.json` merge driver
+  (`.gitattributes`, `cli/merge-history.ts`) if the other workflow committed meanwhile, the persist job pushes without
+  force (per-path check; `conflict` → a second round re-prepares on the newer main) — never hand-merge history.
+  `ci/commit-state.sh` is the legacy path, kept until the migration is validated (rollback = revert).
+- **No workflow loops**: the State Bot's pushes DO trigger workflows (unlike `GITHUB_TOKEN`), so state commits carry
+  `[skip social-render]` / `[skip social-publication]` + `[skip ci]` (subjects in `state-bundle.mjs`), and the jobs skip
+  both `github-actions[bot]` and the App login (repository variable `STATE_BOT_LOGIN`). Keep all guards. Publication: own concurrency group `animapverse-social-publication-state`, no cancel;
   `social-publication-validate.yml` (PR, read-only) also enforces that a receipt PR only ADDS `publication/pending/*.json`.
 - Fonts come only from the bundled `@fontsource` packages (all subsets), never the OS: Windows and Linux renders match.
 - **CharacterJourney series**: a journey of ≤ 8 places (after projection + same-pin merge) is ONE video with the
