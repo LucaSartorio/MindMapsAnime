@@ -1,0 +1,19 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterJourney",
+  "anime": "onepiece",
+  "subject": "nami",
+  "segment": "part-02",
+  "locale": "en",
+  "hook": "Part 2 of 3: Nami's journey keeps growing.",
+  "hookType": "curiosity",
+  "hookId": "cj-cont-curiosity-1",
+  "cta": "Follow for Part 3.",
+  "ctaType": "follow-next-part",
+  "selection": {
+    "mode": "coldstart",
+    "score": 101.04,
+    "seed": "feed40:guess-character:bleach:sosuke-aizen@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +20.5, jitter +2.5; +12 main character; +14 continues a started series (Part 2 promised)"
+}
