@@ -428,6 +428,85 @@
         }
       ]
     },
+    "character-journey:dragonball:goku:part-04@en": {
+      "renderId": "character-journey:dragonball:goku:part-04@en",
+      "contentId": "character-journey:dragonball:goku:part-04",
+      "template": "characterJourney",
+      "anime": "dragonball",
+      "subject": "goku",
+      "locale": "en",
+      "variant": null,
+      "segment": "part-04",
+      "segmentFingerprint": "d8709fd9",
+      "createdAt": "2026-11-13T06:09:30.100Z",
+      "updatedAt": "2026-11-13T06:12:56.325Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-11-13T06:12:56.325Z",
+      "outputFile": "tools/social-engine/output/dragonball_goku_character-journey_part-04_en.mp4",
+      "manifestFile": "tools/social-engine/output/dragonball_goku_character-journey_part-04_en.manifest.json",
+      "sourceFile": "0047-dragonball_goku_character-journey_part-04_en.json",
+      "durationSeconds": 30,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-43376691118-1",
+        "runId": "43376691118",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/43376691118",
+        "video": "videos/dragonball_goku_character-journey_part-04_en.mp4",
+        "manifest": "manifests/dragonball_goku_character-journey_part-04_en.manifest.json",
+        "sha256": "a381224887afb01341ae84a776fa3b918e0abdc5524fce5e6c997e7ba11e9e7b",
+        "cover": "covers/dragonball_goku_character-journey_part-04_en.cover.png",
+        "expiresAt": "2026-12-13T06:12:56.325Z"
+      },
+      "social": {
+        "contentType": "character-journey",
+        "animes": [
+          "dragonball"
+        ],
+        "characters": [
+          "dragonball:goku"
+        ],
+        "characterNames": [
+          "Goku"
+        ],
+        "part": 4,
+        "partCount": 6,
+        "hookType": "question",
+        "hookId": "cj-cont-question-1",
+        "hook": "Where did Goku go next? Part 4 of 6.",
+        "ctaType": "follow-next-part",
+        "cta": "Follow for Part 5.",
+        "durationSeconds": 30,
+        "selection": {
+          "mode": "coldstart",
+          "score": 92.66,
+          "seed": "feed41:character-journey:onepiece:nami:part-02@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Where did Goku go next? Part 4 of 6.\n\nGoku's journey across Dragon Ball — Part 4/6: 32 places on the world map.\n\nFollow for Part 5.\n\nSave it for your next rewatch.\n\n#dragonball #dbz #goku #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Where did Goku go next? Part 4 of 6. Follow for Part 5. #dragonball #dbz #goku #anime #animemap",
+          "youtubeTitle": "Every Place Goku Visited 🐉 | Dragon Ball Journey Part 4 of 6",
+          "youtubeDescription": "Where did Goku go next? Part 4 of 6.\n\nGoku's journey across Dragon Ball — Part 4/6: 32 places on the world map.\n\nSubscribe for Part 5.\n\nInteractive map: https://animapverse.com/en/dragon-ball/characters/goku\n\n#dragonball #dbz #goku",
+          "facebookCaption": "Where did Goku go next? Part 4 of 6.\n\nGoku's journey across Dragon Ball — Part 4/6: 32 places on the world map.\n\nFollow for Part 5.\n\nInteractive map: https://animapverse.com/en/dragon-ball/characters/goku",
+          "hashtags": [
+            "#dragonball",
+            "#dbz",
+            "#goku",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-journey:hunterxhunter:gon-freecss@en": {
       "renderId": "character-journey:hunterxhunter:gon-freecss@en",
       "contentId": "character-journey:hunterxhunter:gon-freecss",
