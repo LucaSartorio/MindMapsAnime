@@ -1,0 +1,19 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterJourney",
+  "anime": "dragonball",
+  "subject": "goku",
+  "segment": "part-04",
+  "locale": "en",
+  "hook": "Where did Goku go next? Part 4 of 6.",
+  "hookType": "question",
+  "hookId": "cj-cont-question-1",
+  "cta": "Follow for Part 5.",
+  "ctaType": "follow-next-part",
+  "selection": {
+    "mode": "coldstart",
+    "score": 92.66,
+    "seed": "feed41:character-journey:onepiece:nami:part-02@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +21.0, jitter +5.7; +12 main character; -12 format cooldown: 1 character-journey item(s) in a row"
+}
