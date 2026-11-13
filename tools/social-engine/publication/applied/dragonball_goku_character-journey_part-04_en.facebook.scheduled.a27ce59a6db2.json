@@ -1,0 +1,30 @@
+{
+  "receiptId": "dragonball_goku_character-journey_part-04_en.facebook.scheduled.a27ce59a6db2",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-11-13T06:20:02.097Z",
+  "sourceFile": "20261113T061640Z-dragonball_goku_character-journey_part-04_en-facebook-scheduled.json",
+  "run": {
+    "runId": "43377930635",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/43377930635",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "character-journey:dragonball:goku:part-04@en",
+    "platform": "facebook",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-11-13T10:00:00+01:00",
+    "providerPostId": "426582217",
+    "providerPostUuid": "843742700494997559",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=843742700494997559",
+    "recordedAt": "2026-11-13T06:16:40Z",
+    "recordedBy": "chatgpt-work-publishing-agent"
+  }
+}
