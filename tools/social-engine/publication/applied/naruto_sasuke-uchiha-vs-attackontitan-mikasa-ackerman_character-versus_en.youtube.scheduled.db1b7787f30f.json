@@ -1,0 +1,30 @@
+{
+  "receiptId": "naruto_sasuke-uchiha-vs-attackontitan-mikasa-ackerman_character-versus_en.youtube.scheduled.db1b7787f30f",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-11-14T06:12:44.940Z",
+  "sourceFile": "20261114T060719Z-naruto_sasuke-uchiha-vs-attackontitan-mikasa-ackerman_character-versus_en-youtube-scheduled.json",
+  "run": {
+    "runId": "43565184982",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/43565184982",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "character-versus:naruto:sasuke-uchiha-vs-attackontitan-mikasa-ackerman@en",
+    "platform": "youtube",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-11-14T10:00:00+01:00",
+    "providerPostId": "427763690",
+    "providerPostUuid": "5186346995116556739",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=5186346995116556739",
+    "recordedAt": "2026-11-14T06:07:19Z",
+    "recordedBy": "chatgpt-work-publishing-agent"
+  }
+}

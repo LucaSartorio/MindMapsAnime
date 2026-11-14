@@ -4433,7 +4433,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-11-14T06:02:29.905Z",
-      "updatedAt": "2026-11-14T06:04:04.568Z",
+      "updatedAt": "2026-11-14T06:12:44.940Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-11-14T06:04:04.568Z",
       "outputFile": "tools/social-engine/output/naruto_sasuke-uchiha-vs-attackontitan-mikasa-ackerman_character-versus_en.mp4",
@@ -4503,9 +4503,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-14T10:00:00+01:00",
+          "scheduledAt": "2026-11-14T06:07:19Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "427763432",
+          "providerPostUuid": "362654263531553824",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=362654263531553824",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "naruto_sasuke-uchiha-vs-attackontitan-mikasa-ackerman_character-versus_en.instagram.scheduled.b218f52d0f2e"
+          ],
+          "updatedAt": "2026-11-14T06:12:44.940Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-14T10:00:00+01:00",
+          "scheduledAt": "2026-11-14T06:07:19Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "427763617",
+          "providerPostUuid": "3367723240402011325",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=3367723240402011325",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "naruto_sasuke-uchiha-vs-attackontitan-mikasa-ackerman_character-versus_en.facebook.scheduled.a61718bcb500"
+          ],
+          "updatedAt": "2026-11-14T06:12:44.940Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-14T10:00:00+01:00",
+          "scheduledAt": "2026-11-14T06:07:19Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "427763535",
+          "providerPostUuid": "-1255069820335274782",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-1255069820335274782",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "naruto_sasuke-uchiha-vs-attackontitan-mikasa-ackerman_character-versus_en.tiktok.scheduled.91054ab86378"
+          ],
+          "updatedAt": "2026-11-14T06:12:44.940Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-14T10:00:00+01:00",
+          "scheduledAt": "2026-11-14T06:07:19Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "427763690",
+          "providerPostUuid": "5186346995116556739",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=5186346995116556739",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "naruto_sasuke-uchiha-vs-attackontitan-mikasa-ackerman_character-versus_en.youtube.scheduled.db1b7787f30f"
+          ],
+          "updatedAt": "2026-11-14T06:12:44.940Z"
+        }
+      ]
     },
     "character-versus:naruto:sasuke-uchiha-vs-dragonball-goku@en": {
       "renderId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-goku@en",

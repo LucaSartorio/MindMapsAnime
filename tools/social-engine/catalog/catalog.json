@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-14T06:04:05.526Z",
+  "generatedAt": "2026-11-14T06:12:44.959Z",
   "locales": [
     "en",
     "it"
@@ -20439,7 +20439,9 @@
           "renderedLocales": [
             "en"
           ],
-          "scheduledLocales": [],
+          "scheduledLocales": [
+            "en"
+          ],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": true,
@@ -20449,12 +20451,12 @@
               "renderId": "character-versus:naruto:sasuke-uchiha-vs-attackontitan-mikasa-ackerman@en",
               "locale": "en",
               "variant": null,
-              "status": "notPublished",
+              "status": "scheduled",
               "platforms": {
-                "instagram": "notScheduled",
-                "facebook": "notScheduled",
-                "tiktok": "notScheduled",
-                "youtube": "notScheduled"
+                "instagram": "scheduled",
+                "facebook": "scheduled",
+                "tiktok": "scheduled",
+                "youtube": "scheduled"
               }
             }
           ],
@@ -26000,70 +26002,13 @@
     "summary": {
       "rendered": 48,
       "unavailable": 5,
-      "notPublished": 6,
-      "scheduled": 36,
+      "notPublished": 5,
+      "scheduled": 37,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0
     },
-    "ready": [
-      {
-        "renderId": "character-versus:naruto:sasuke-uchiha-vs-attackontitan-mikasa-ackerman@en",
-        "contentId": "character-versus:naruto:sasuke-uchiha-vs-attackontitan-mikasa-ackerman",
-        "anime": "naruto",
-        "subject": "sasuke-uchiha-vs-attackontitan-mikasa-ackerman",
-        "subjectName": "Sasuke Uchiha vs Mikasa Ackerman",
-        "locale": "en",
-        "variant": null,
-        "segment": null,
-        "partNumber": null,
-        "partCount": null,
-        "renderedAt": "2026-11-14T06:04:04.568Z",
-        "durationSeconds": 22,
-        "publicationStatus": "notPublished",
-        "platforms": {
-          "instagram": "notScheduled",
-          "facebook": "notScheduled",
-          "tiktok": "notScheduled",
-          "youtube": "notScheduled"
-        },
-        "artifact": {
-          "name": "animapverse-social-render-43564343504-1",
-          "runId": "43564343504",
-          "runAttempt": "1",
-          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/43564343504",
-          "video": "videos/naruto_sasuke-uchiha-vs-attackontitan-mikasa-ackerman_character-versus_en.mp4",
-          "manifest": "manifests/naruto_sasuke-uchiha-vs-attackontitan-mikasa-ackerman_character-versus_en.manifest.json",
-          "sha256": "9a4ec16ad1219c55c39e305c16a2824f1f2e0d23c0ac954e96d04acac2e19030",
-          "cover": "covers/naruto_sasuke-uchiha-vs-attackontitan-mikasa-ackerman_character-versus_en.cover.png",
-          "expiresAt": "2026-12-14T06:04:04.568Z"
-        },
-        "contentType": "character-versus",
-        "platformMetadata": {
-          "instagramCaption": "Sasuke Uchiha vs Mikasa Ackerman: whose journey is bigger?\n\nSasuke Uchiha (Naruto) vs Mikasa Ackerman (Attack on Titan): every place on the map, one winner.\n\nWho should compete next? Drop a match-up 👇\n\nSave it for your next rewatch.\n\n#naruto #narutoshippuden #attackontitan #aot #sasukeuchiha #mikasaackerman #anime #animemap",
-          "tiktokCaption": "Sasuke Uchiha vs Mikasa Ackerman: whose journey is bigger? Who should compete next? Drop a match-up 👇 #naruto #narutoshippuden #attackontitan #aot #sasukeuchiha",
-          "youtubeTitle": "Sasuke Uchiha vs Mikasa Ackerman: Who Travelled More? 🍥",
-          "youtubeDescription": "Sasuke Uchiha vs Mikasa Ackerman: whose journey is bigger?\n\nSasuke Uchiha (Naruto) vs Mikasa Ackerman (Attack on Titan): every place on the map, one winner.\n\nWho should compete next? Drop a match-up 👇\n\nInteractive map: https://animapverse.com\n\n#naruto #narutoshippuden #attackontitan",
-          "facebookCaption": "Sasuke Uchiha vs Mikasa Ackerman: whose journey is bigger?\n\nSasuke Uchiha (Naruto) vs Mikasa Ackerman (Attack on Titan): every place on the map, one winner.\n\nWho should compete next? Drop a match-up 👇\n\nInteractive map: https://animapverse.com",
-          "hashtags": [
-            "#naruto",
-            "#narutoshippuden",
-            "#attackontitan",
-            "#aot",
-            "#sasukeuchiha",
-            "#mikasaackerman",
-            "#anime",
-            "#animemap",
-            "#AniMapVerse"
-          ],
-          "youtube": {
-            "madeForKids": false
-          },
-          "madeForKids": false
-        },
-        "waitFor": {}
-      }
-    ],
+    "ready": [],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",
