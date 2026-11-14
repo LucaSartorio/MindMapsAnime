@@ -1,0 +1,22 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterVersus",
+  "anime": "naruto",
+  "subject": "sasuke-uchiha",
+  "opponent": {
+    "anime": "attackontitan",
+    "subject": "mikasa-ackerman"
+  },
+  "locale": "en",
+  "hook": "Sasuke Uchiha vs Mikasa Ackerman: whose journey is bigger?",
+  "hookType": "versus",
+  "hookId": "cv-versus-2",
+  "cta": "Who should compete next?",
+  "ctaType": "comment-next-matchup",
+  "selection": {
+    "mode": "coldstart",
+    "score": 91.79,
+    "seed": "feed42:character-journey:dragonball:goku:part-04@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +24.0, jitter +5.8; +12 main character"
+}
