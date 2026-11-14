@@ -4422,6 +4422,91 @@
         }
       ]
     },
+    "character-versus:naruto:sasuke-uchiha-vs-attackontitan-mikasa-ackerman@en": {
+      "renderId": "character-versus:naruto:sasuke-uchiha-vs-attackontitan-mikasa-ackerman@en",
+      "contentId": "character-versus:naruto:sasuke-uchiha-vs-attackontitan-mikasa-ackerman",
+      "template": "characterVersus",
+      "anime": "naruto",
+      "subject": "sasuke-uchiha-vs-attackontitan-mikasa-ackerman",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-11-14T06:02:29.905Z",
+      "updatedAt": "2026-11-14T06:04:04.568Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-11-14T06:04:04.568Z",
+      "outputFile": "tools/social-engine/output/naruto_sasuke-uchiha-vs-attackontitan-mikasa-ackerman_character-versus_en.mp4",
+      "manifestFile": "tools/social-engine/output/naruto_sasuke-uchiha-vs-attackontitan-mikasa-ackerman_character-versus_en.manifest.json",
+      "sourceFile": "0048-naruto_sasuke-uchiha-vs-attackontitan-mikasa-ackerman_character-versus_en.json",
+      "durationSeconds": 22,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-43564343504-1",
+        "runId": "43564343504",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/43564343504",
+        "video": "videos/naruto_sasuke-uchiha-vs-attackontitan-mikasa-ackerman_character-versus_en.mp4",
+        "manifest": "manifests/naruto_sasuke-uchiha-vs-attackontitan-mikasa-ackerman_character-versus_en.manifest.json",
+        "sha256": "9a4ec16ad1219c55c39e305c16a2824f1f2e0d23c0ac954e96d04acac2e19030",
+        "cover": "covers/naruto_sasuke-uchiha-vs-attackontitan-mikasa-ackerman_character-versus_en.cover.png",
+        "expiresAt": "2026-12-14T06:04:04.568Z"
+      },
+      "social": {
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "attackontitan"
+        ],
+        "characters": [
+          "naruto:sasuke-uchiha",
+          "attackontitan:mikasa-ackerman"
+        ],
+        "characterNames": [
+          "Sasuke Uchiha",
+          "Mikasa Ackerman"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "versus",
+        "hookId": "cv-versus-2",
+        "hook": "Sasuke Uchiha vs Mikasa Ackerman: whose journey is bigger?",
+        "ctaType": "comment-next-matchup",
+        "cta": "Who should compete next?",
+        "durationSeconds": 22,
+        "selection": {
+          "mode": "coldstart",
+          "score": 91.79,
+          "seed": "feed42:character-journey:dragonball:goku:part-04@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Sasuke Uchiha vs Mikasa Ackerman: whose journey is bigger?\n\nSasuke Uchiha (Naruto) vs Mikasa Ackerman (Attack on Titan): every place on the map, one winner.\n\nWho should compete next? Drop a match-up 👇\n\nSave it for your next rewatch.\n\n#naruto #narutoshippuden #attackontitan #aot #sasukeuchiha #mikasaackerman #anime #animemap",
+          "tiktokCaption": "Sasuke Uchiha vs Mikasa Ackerman: whose journey is bigger? Who should compete next? Drop a match-up 👇 #naruto #narutoshippuden #attackontitan #aot #sasukeuchiha",
+          "youtubeTitle": "Sasuke Uchiha vs Mikasa Ackerman: Who Travelled More? 🍥",
+          "youtubeDescription": "Sasuke Uchiha vs Mikasa Ackerman: whose journey is bigger?\n\nSasuke Uchiha (Naruto) vs Mikasa Ackerman (Attack on Titan): every place on the map, one winner.\n\nWho should compete next? Drop a match-up 👇\n\nInteractive map: https://animapverse.com\n\n#naruto #narutoshippuden #attackontitan",
+          "facebookCaption": "Sasuke Uchiha vs Mikasa Ackerman: whose journey is bigger?\n\nSasuke Uchiha (Naruto) vs Mikasa Ackerman (Attack on Titan): every place on the map, one winner.\n\nWho should compete next? Drop a match-up 👇\n\nInteractive map: https://animapverse.com",
+          "hashtags": [
+            "#naruto",
+            "#narutoshippuden",
+            "#attackontitan",
+            "#aot",
+            "#sasukeuchiha",
+            "#mikasaackerman",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-versus:naruto:sasuke-uchiha-vs-dragonball-goku@en": {
       "renderId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-goku@en",
       "contentId": "character-versus:naruto:sasuke-uchiha-vs-dragonball-goku",
