@@ -1,0 +1,30 @@
+{
+  "receiptId": "hunterxhunter_gon-freecss_character-journey_part-01_en.instagram.scheduled.444e0aa098e9",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-11-15T06:20:33.852Z",
+  "sourceFile": "20261115T061542Z-hunterxhunter_gon-freecss_character-journey_part-01_en-instagram-scheduled.json",
+  "run": {
+    "runId": "43684969305",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/43684969305",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "character-journey:hunterxhunter:gon-freecss:part-01@en",
+    "platform": "instagram",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-11-15T10:00:00+01:00",
+    "providerPostId": "428628715",
+    "providerPostUuid": "7736538863359578089",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=7736538863359578089",
+    "recordedAt": "2026-11-15T06:15:42Z",
+    "recordedBy": "chatgpt-work-publishing-agent"
+  }
+}

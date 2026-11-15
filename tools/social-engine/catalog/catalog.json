@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-15T06:10:12.613Z",
+  "generatedAt": "2026-11-15T06:20:33.876Z",
   "locales": [
     "en",
     "it"
@@ -2547,7 +2547,9 @@
           "renderedLocales": [
             "en"
           ],
-          "scheduledLocales": [],
+          "scheduledLocales": [
+            "en"
+          ],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": true,
@@ -2557,12 +2559,12 @@
               "renderId": "character-journey:hunterxhunter:gon-freecss:part-01@en",
               "locale": "en",
               "variant": null,
-              "status": "notPublished",
+              "status": "scheduled",
               "platforms": {
-                "instagram": "notScheduled",
-                "facebook": "notScheduled",
-                "tiktok": "notScheduled",
-                "youtube": "notScheduled"
+                "instagram": "scheduled",
+                "facebook": "scheduled",
+                "tiktok": "scheduled",
+                "youtube": "scheduled"
               }
             }
           ]
@@ -26017,67 +26019,13 @@
     "summary": {
       "rendered": 49,
       "unavailable": 5,
-      "notPublished": 6,
-      "scheduled": 37,
+      "notPublished": 5,
+      "scheduled": 38,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0
     },
-    "ready": [
-      {
-        "renderId": "character-journey:hunterxhunter:gon-freecss:part-01@en",
-        "contentId": "character-journey:hunterxhunter:gon-freecss:part-01",
-        "anime": "hunterxhunter",
-        "subject": "gon-freecss",
-        "subjectName": "Gon Freecss",
-        "locale": "en",
-        "variant": null,
-        "segment": "part-01",
-        "partNumber": 1,
-        "partCount": 2,
-        "renderedAt": "2026-11-15T06:10:11.539Z",
-        "durationSeconds": 27,
-        "publicationStatus": "notPublished",
-        "platforms": {
-          "instagram": "notScheduled",
-          "facebook": "notScheduled",
-          "tiktok": "notScheduled",
-          "youtube": "notScheduled"
-        },
-        "artifact": {
-          "name": "animapverse-social-render-43683953219-1",
-          "runId": "43683953219",
-          "runAttempt": "1",
-          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/43683953219",
-          "video": "videos/hunterxhunter_gon-freecss_character-journey_part-01_en.mp4",
-          "manifest": "manifests/hunterxhunter_gon-freecss_character-journey_part-01_en.manifest.json",
-          "sha256": "d2e63d37fc4c16d81f8bb1648f5427c7d08f3a269a73d4da6be71b6516256fd3",
-          "cover": "covers/hunterxhunter_gon-freecss_character-journey_part-01_en.cover.png",
-          "expiresAt": "2026-12-15T06:10:11.539Z"
-        },
-        "contentType": "character-journey",
-        "platformMetadata": {
-          "instagramCaption": "Gon Freecss visited 10 places across Hunter x Hunter.\n\nGon Freecss's journey across Hunter x Hunter — Part 1/2: 10 places on the world map.\n\nFollow for Part 2.\n\nSave it for your next rewatch.\n\n#hunterxhunter #hxh #gonfreecss #anime #animemap #AniMapVerse",
-          "tiktokCaption": "Gon Freecss visited 10 places across Hunter x Hunter. Follow for Part 2. #hunterxhunter #hxh #gonfreecss #anime #animemap",
-          "youtubeTitle": "Every Place Gon Freecss Visited 🎣 | Hunter x Hunter Journey Part 1 of 2",
-          "youtubeDescription": "Gon Freecss visited 10 places across Hunter x Hunter.\n\nGon Freecss's journey across Hunter x Hunter — Part 1/2: 10 places on the world map.\n\nSubscribe for Part 2.\n\nInteractive map: https://animapverse.com/en/hunter-x-hunter/characters/gon-freecss\n\n#hunterxhunter #hxh #gonfreecss",
-          "facebookCaption": "Gon Freecss visited 10 places across Hunter x Hunter.\n\nGon Freecss's journey across Hunter x Hunter — Part 1/2: 10 places on the world map.\n\nFollow for Part 2.\n\nInteractive map: https://animapverse.com/en/hunter-x-hunter/characters/gon-freecss",
-          "hashtags": [
-            "#hunterxhunter",
-            "#hxh",
-            "#gonfreecss",
-            "#anime",
-            "#animemap",
-            "#AniMapVerse"
-          ],
-          "youtube": {
-            "madeForKids": false
-          },
-          "madeForKids": false
-        },
-        "waitFor": {}
-      }
-    ],
+    "ready": [],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",
