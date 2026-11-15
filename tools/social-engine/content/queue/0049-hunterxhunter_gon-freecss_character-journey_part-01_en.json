@@ -1,0 +1,19 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterJourney",
+  "anime": "hunterxhunter",
+  "subject": "gon-freecss",
+  "segment": "part-01",
+  "locale": "en",
+  "hook": "Gon Freecss visited 10 places across Hunter x Hunter.",
+  "hookType": "fact",
+  "hookId": "cj-fact-1",
+  "cta": "Follow for Part 2.",
+  "ctaType": "follow-next-part",
+  "selection": {
+    "mode": "coldstart",
+    "score": 91.39,
+    "seed": "feed43:hb94ba210:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +22.0, jitter +5.4; +12 main character; +2 format below its target share (45% < 50%)"
+}
