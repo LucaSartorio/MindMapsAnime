@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(npm run validate:data *)",
+      "Bash(npm run validate:i18n *)",
+      "Bash(npm run test:seo *)",
+      "Bash(npm run test:ci-scope *)",
+      "Bash(npm run i18n:status *)",
+      "Bash(npm run i18n:audit *)",
+      "Bash(npm run data:coverage *)",
+      "Bash(npm run -s data:coverage *)",
+      "Bash(npm run coverage:chapters *)",
+      "Bash(npm run -s coverage:chapters *)",
+      "Bash(npm run claude:validate *)",
+      "Bash(npm run social:validate *)",
+      "Bash(npm run build)",
+      "Bash(npm run smoke)",
+      "Bash(npx tsc -b *)",
+      "Bash(git status *)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git show *)",
+      "Bash(rg *)"
+    ],
+    "ask": [
+      "Edit(/.github/**)",
+      "Edit(/.claude/settings.json)",
+      "Edit(/.claude/hooks/**)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.local)",
+      "Read(./.env.*.local)",
+      "Edit(/src/data/*/slugs.ts)",
+      "Edit(/src/data/translationIndex.ts)",
+      "Edit(/src/data/*/i18n/*.meta.json)",
+      "Edit(/tools/social-engine/history/**)",
+      "Edit(/tools/social-engine/catalog/**)",
+      "Edit(/tools/social-engine/publication/applied/**)",
+      "Edit(/tools/social-engine/publication/failed/**)",
+      "Edit(/tools/social-engine/analytics/metrics.json)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PROJECT_DIR}/.claude/hooks/guard-bash.mjs\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

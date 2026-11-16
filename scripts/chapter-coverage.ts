@@ -12,7 +12,7 @@
  * capitolo più alto citato nei dati. Informativo: non blocca la build.
  */
 import { animeWorlds } from '@/data/worlds';
-import { loadWorldDataset } from '@/data/registry';
+import { hasWorldDataset, loadWorldDataset } from '@/data/registry';
 
 /** Capitoli totali delle serie concluse (manga principale = chiave ''). */
 const TOTALS: Record<string, Record<string, number>> = {
@@ -63,7 +63,8 @@ function gaps(covered: Set<number>, first: number, total: number): [number, numb
   return out;
 }
 
-for (const world of animeWorlds.filter((w) => w.status === 'available')) {
+// Mondi pubblicati + mondi in costruzione (coming_soon con loader): stessa regola di validate:data.
+for (const world of animeWorlds.filter((w) => w.status === 'available' || hasWorldDataset(w.slug))) {
   if (only.length && !only.includes(world.slug)) continue;
   const dataset = await loadWorldDataset(world.slug);
   if (!dataset) continue;

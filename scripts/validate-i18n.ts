@@ -22,12 +22,13 @@ import type { WorldDataset } from '../src/types';
 
 const strict = process.argv.includes('--strict');
 
-// Tutti i mondi REGISTRATI (data-driven: un mondo nuovo è validato da solo).
+// Tutti i mondi REGISTRATI con un dataset (data-driven: un mondo nuovo è validato da solo), compresi quelli in
+// costruzione (`coming_soon` con loader, non pubblicati): ogni batch deve già essere scritto in IT **e** EN.
 const datasets: Array<[string, WorldDataset]> = [];
 for (const w of animeWorlds) {
-  if (w.status !== 'available' || !hasWorldDataset(w.slug)) continue;
+  if (!hasWorldDataset(w.slug)) continue;
   const d = await loadWorldDatasetWithTranslations(w.slug); // con gli overlay (es)
-  if (d) datasets.push([getLocalizedText(w.title, 'en'), d]);
+  if (d) datasets.push([getLocalizedText(w.title, 'en') + (w.status === 'available' ? '' : ' (wip)'), d]);
 }
 
 const lines: string[] = [];

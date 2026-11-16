@@ -1,0 +1,24 @@
+---
+name: seo-opportunities
+description: Find and rank SEO opportunities and regressions in AniMapVerse (thin/noindex pages, orphan pages, weak internal linking, missing translations blocking /es /fr indexing, duplicate titles/descriptions, sitemap/hreflang/canonical issues) without inventing traffic data. Use for "controlla il SEO", "SEO audit", "opportunità SEO".
+argument-hint: [world] [path-to-search-console-export.csv]
+---
+
+# SEO opportunities: $ARGUMENTS
+
+Owner: `seo-growth-engineer` (read `.claude/rules/seo.md`, `docs/SEO.md`). Never change thresholds, slugs or the
+index/noindex policy to "win" pages.
+
+1. **Facts from the repo** (no Google data unless the owner provides an export path in the arguments):
+   - `npm run data:coverage -- <world>` → thin pages per category, orphans;
+   - `npm run i18n:status` + `translatedLocales` in `worlds.ts` → pages blocked from /es /fr indexing;
+   - `npm run test:seo`; then `npm run build` → `seo:check` output (canonical, hreflang, duplicate titles, broken
+     links), prerender per-language indexable summary;
+   - sample `dist/<lang>/<world>/...` HTML (grep `<title>`, `rel="canonical"`, `hreflang`) only for suspicious pages.
+2. **If an export (CSV) is given**: read it, join on URL path, and use real impressions/clicks/positions to rank.
+3. **Classify every item**: `verified issue` (failing check / evidence in dist) · `opportunity` (data-backed: e.g.
+   40 character pages just under the threshold whose relations exist) · `hypothesis` (needs field data).
+4. **Rank** by (pages affected × likely value) / effort; prefer fixes that improve real content and links
+   (enrichment, relation groups, hub pages) over template text.
+5. **Report** a table: item · class · evidence · pages affected · fix · owner skill (`/enrich-anime-world`,
+   `/sync-translations`, `/fix-ticket`). Implement only if the owner asks.

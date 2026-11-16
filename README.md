@@ -399,6 +399,10 @@ lingue sorgente sono raccolti nei file per-mondo `names.ts`. Vedi
 
 ## ✦ Aggiungere un nuovo anime / manga
 
+> Con Claude Code: `/add-anime-world <mondo>` esegue tutto il flusso in batch riprendibili (manifest in
+> `docs/world-pipeline/`). Sistema di sviluppo multi-agent (agent, skill, regole, verifiche):
+> [`docs/CLAUDE_DEVELOPMENT_SYSTEM.md`](docs/CLAUDE_DEVELOPMENT_SYSTEM.md).
+
 1. **Registra il mondo** in `src/data/worlds.ts` con `slug`, `urlSlug`,
    `status`, `theme`, metadati reali dell'opera (`metadata.author/publisher`) e la
    `config` per-mondo (termine del sistema di poteri, gradi, ruoli, vetrine…):

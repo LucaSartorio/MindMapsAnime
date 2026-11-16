@@ -18,10 +18,17 @@ import { getSlugIndex, slugify } from '../src/seo/slug';
 import { STATIC_PAGES } from '../src/seo/paths';
 import { entityQuality } from '../src/seo/quality';
 
+// Mondi pubblicati + mondi in costruzione (`coming_soon` con un loader già registrato, vedi /add-anime-world):
+// questi ultimi restano privati ovunque (sito, sitemap, catalogo social filtrano su `status === 'available'`),
+// ma la loro integrità referenziale è verificata a ogni batch. I controlli SEO (slug congelati, contenuto minimo)
+// valgono solo per i mondi pubblicati: `npm run seo:slugs` congela gli slug al momento della pubblicazione.
 const datasets: WorldDataset[] = [];
+const inProgress = new Set<string>();
 for (const w of animeWorlds) {
-  if (w.status !== 'available') continue;
-  if (!hasWorldDataset(w.slug)) {
+  if (w.status !== 'available') {
+    if (!hasWorldDataset(w.slug)) continue;
+    inProgress.add(w.slug);
+  } else if (!hasWorldDataset(w.slug)) {
     console.error(`[ERR ] world/${w.slug} · status 'available' ma nessun loader in src/data/registry.ts`);
     process.exit(1);
   }
@@ -39,7 +46,8 @@ for (const dataset of datasets) {
   anyErrors = anyErrors || report.hasErrors;
 
   lines.push('');
-  lines.push(`World: ${getLocalizedText(dataset.world.title, 'en')} (${dataset.world.slug})`);
+  const building = inProgress.has(dataset.world.slug);
+  lines.push(`World: ${getLocalizedText(dataset.world.title, 'en')} (${dataset.world.slug})${building ? ' · IN COSTRUZIONE (non pubblicato: controlli SEO saltati)' : ''}`);
   lines.push('');
   lines.push(`Characters: ${dataset.characters.length}`);
   lines.push(`Factions  : ${dataset.factions.length}`);
@@ -67,6 +75,10 @@ for (const dataset of datasets) {
     for (const w of report.warnings) {
       lines.push(`[WARN] ${w.entity}/${w.id ?? '?'} · ${w.code} · ${w.message}`);
     }
+  }
+  if (building) {
+    lines.push('────────────────────────────────────────');
+    continue;
   }
   // --- SEO: slug delle pagine entità (src/seo/slug.ts + src/data/<world>/slugs.ts) ---
   const slugIndex = getSlugIndex(dataset);

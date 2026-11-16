@@ -12,6 +12,8 @@
     "validate:data": "tsx --tsconfig scripts/tsconfig.json scripts/validate-data.ts",
     "validate:i18n": "tsx --tsconfig scripts/tsconfig.json scripts/validate-i18n.ts",
     "coverage:chapters": "tsx --tsconfig scripts/tsconfig.json scripts/chapter-coverage.ts",
+    "data:coverage": "tsx --tsconfig scripts/tsconfig.json scripts/data-coverage.ts",
+    "claude:validate": "node scripts/validate-claude-config.mjs && node --test .claude/hooks/*.test.mjs",
     "audit:a11y": "node scripts/a11y-audit.mjs",
     "audit:contrast": "node scripts/a11y-contrast.mjs",
     "smoke": "npm run build && tsx --tsconfig scripts/tsconfig.json scripts/smoke.ts",
