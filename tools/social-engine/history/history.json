@@ -6309,6 +6309,83 @@
         }
       ]
     },
+    "guess-character:bleach:renji-abarai@en": {
+      "renderId": "guess-character:bleach:renji-abarai@en",
+      "contentId": "guess-character:bleach:renji-abarai",
+      "template": "guessCharacter",
+      "anime": "bleach",
+      "subject": "renji-abarai",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-11-16T06:05:48.611Z",
+      "updatedAt": "2026-11-16T06:08:20.175Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-11-16T06:08:20.175Z",
+      "outputFile": "tools/social-engine/output/bleach_renji-abarai_guess-character_en.mp4",
+      "manifestFile": "tools/social-engine/output/bleach_renji-abarai_guess-character_en.manifest.json",
+      "sourceFile": "0050-bleach_renji-abarai_guess-character_en.json",
+      "durationSeconds": 26,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-43814420515-1",
+        "runId": "43814420515",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/43814420515",
+        "video": "videos/bleach_renji-abarai_guess-character_en.mp4",
+        "manifest": "manifests/bleach_renji-abarai_guess-character_en.manifest.json",
+        "sha256": "e2cd6fbfa99a4e56efaca83c42c48099e1034162fd8f6abb8eba461b943a79b4",
+        "cover": "covers/bleach_renji-abarai_guess-character_en.cover.png",
+        "expiresAt": "2026-12-16T06:08:20.175Z"
+      },
+      "social": {
+        "contentType": "guess-character",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:renji-abarai"
+        ],
+        "characterNames": [
+          "Renji Abarai"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "challenge",
+        "hookId": "gc-challenge-2",
+        "hook": "Only real Bleach fans get this before the last place.",
+        "ctaType": "comment-guess",
+        "cta": "How many places did you recognize?",
+        "durationSeconds": 26,
+        "selection": {
+          "mode": "coldstart",
+          "score": 91.83,
+          "seed": "feed44:character-journey:hunterxhunter:gon-freecss:part-01@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Only real Bleach fans get this before the last place.\n\n6 places, one Bleach character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nSave it for your next rewatch.\n\n#bleach #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Only real Bleach fans get this before the last place. Did you get it right? Tell us how many places it took you 👇 #bleach #anime #animemap #AniMapVerse",
+          "youtubeTitle": "Guess the Bleach Character From the Places They Visited ⚔️",
+          "youtubeDescription": "Only real Bleach fans get this before the last place.\n\n6 places, one Bleach character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/bleach/map\n\n#bleach #anime #animemap",
+          "facebookCaption": "Only real Bleach fans get this before the last place.\n\n6 places, one Bleach character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/bleach/map",
+          "hashtags": [
+            "#bleach",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "guess-character:bleach:sosuke-aizen@en": {
       "renderId": "guess-character:bleach:sosuke-aizen@en",
       "contentId": "guess-character:bleach:sosuke-aizen",
