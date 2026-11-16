@@ -1,0 +1,18 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "guessCharacter",
+  "anime": "bleach",
+  "subject": "renji-abarai",
+  "locale": "en",
+  "hook": "Only real Bleach fans get this before the last place.",
+  "hookType": "challenge",
+  "hookId": "gc-challenge-2",
+  "cta": "How many places did you recognize?",
+  "ctaType": "comment-guess",
+  "selection": {
+    "mode": "coldstart",
+    "score": 91.83,
+    "seed": "feed44:character-journey:hunterxhunter:gon-freecss:part-01@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +24.0, jitter +5.8; +12 main character"
+}
