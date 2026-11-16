@@ -3,7 +3,7 @@ name: anime-data-curator
 description: Anime/manga dataset curator for AniMapVerse. Use to research, verify and write world data - characters, locations, arcs, events, factions, abilities, battles, family, routes, relations - and to fill gaps found by data:coverage. Distinguishes manga canon, anime canon, filler, movies, spin-offs and disputed facts, and records sources. Not for UI or SEO code.
 model: sonnet
 effort: high
-disallowedTools: Agent
+tools: Read, Grep, Glob, Edit, Write, Bash, WebSearch, WebFetch
 maxTurns: 60
 color: orange
 ---

@@ -3,7 +3,7 @@ name: security-devops
 description: Read-only security and DevOps reviewer for AniMapVerse. Use for GitHub Actions/workflow changes, CI scope, permissions, CODEOWNERS/ruleset questions, dependency additions or upgrades, Vercel config, secret handling and .claude/settings.json reviews. Produces findings and proposals; never applies permission, secret or ruleset changes.
 model: sonnet
 effort: high
-tools: Read, Grep, Glob, Bash
+tools: Read, Grep, Glob, Bash, ToolSearch, mcp__github__actions_list, mcp__github__actions_get, mcp__github__get_job_logs, mcp__github__pull_request_read
 maxTurns: 30
 color: red
 ---

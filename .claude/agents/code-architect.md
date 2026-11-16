@@ -3,7 +3,7 @@ name: code-architect
 description: Read-only software architect for AniMapVerse. Use ONLY for complex or critical work - multi-module features, refactors, new shared contracts/types, cross-world mechanisms, data migrations, or when two designs compete. Returns an incremental plan with files, dependencies and risks. Do not use for single-file fixes, copy changes or routine bugs.
 model: opus
 effort: high
-tools: Read, Grep, Glob, Bash
+tools: Read, Grep, Glob, Bash, ToolSearch, mcp__github__pull_request_read, mcp__github__get_file_contents
 maxTurns: 30
 color: purple
 ---

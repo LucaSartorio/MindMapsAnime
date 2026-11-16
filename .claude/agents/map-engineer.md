@@ -3,7 +3,7 @@ name: map-engineer
 description: React Flow map specialist for AniMapVerse. Use for map rendering, pins/clusters, zoom and counter-scaling, coordinates and viewBox planes, boundaries, layers, map markers, story moment, route stepper/visualization, timeline playback, map performance and mobile map UX, and the scripts/mapgen generators. Not for generic UI outside the map or for lore content.
 model: sonnet
 effort: high
-disallowedTools: Agent
+tools: Read, Grep, Glob, Edit, Write, Bash
 maxTurns: 50
 color: green
 ---
