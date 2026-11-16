@@ -56,6 +56,8 @@ the world stays unpublished (`status: 'coming_soon'`) until the publication gate
 
 Batch rules: write ids with the world prefix (`char-<abbr>-…`), never rename an existing id, every narrative
 text `{ it, en }`, uncertain → `referenceStatus: 'needs_verification'`, filler/anime-only/movie → `canonStatus`.
+Allowed values (`src/types/index.ts`): `canonStatus` = `canon | anime_only | movie | filler | novel | uncertain`;
+`referenceStatus` = `verified | needs_verification | unknown`.
 Large kinds go in several files (`charactersBatch1.ts`…) merged in `index.ts`, like existing worlds.
 
 ## 3. Checkpoint after EVERY batch (this is what makes the work resumable)
