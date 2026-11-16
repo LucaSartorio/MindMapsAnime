@@ -1,0 +1,30 @@
+{
+  "receiptId": "bleach_renji-abarai_guess-character_en.youtube.scheduled.56d4787a2939",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-11-16T06:16:28.880Z",
+  "sourceFile": "20261116T061117Z-bleach_renji-abarai_guess-character_en-youtube-scheduled.json",
+  "run": {
+    "runId": "43815602891",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/43815602891",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "guess-character:bleach:renji-abarai@en",
+    "platform": "youtube",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-11-16T10:00:00+01:00",
+    "providerPostId": "429632060",
+    "providerPostUuid": "-6169957910950820931",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-6169957910950820931",
+    "recordedAt": "2026-11-16T06:11:17Z",
+    "recordedBy": "chatgpt-work-publishing-agent"
+  }
+}
