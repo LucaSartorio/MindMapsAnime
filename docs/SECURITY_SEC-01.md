@@ -228,14 +228,15 @@ team e attori di bypass più fini. Decisione del proprietario; non è necessaria
 - `vercel.json`, e in via preventiva `api/` e `middleware.*` (codice server Vercel);
 - `.gitattributes` (seleziona il merge driver di `history.json`);
 - il classificatore della Site CI e il suo test;
-- `CLAUDE.md` e `docs/SOCIAL_*.md`, che sono di fatto le istruzioni degli agenti;
+- `CLAUDE.md`, `.claude/` (regole, sub-agent, skill, settings e hook di Claude Code, vedi
+  `docs/CLAUDE_DEVELOPMENT_SYSTEM.md`) e `docs/SOCIAL_*.md`, che sono di fatto le istruzioni degli agenti;
 - `docs/SECURITY_*.md`;
 - **tutto** `tools/social-engine/`.
 
 Restano **esclusi** solo i `*.json` aggiunti dagli agenti in `content/queue/`, `publication/pending/` e
 `analytics/pending/`. I README e `.gitkeep` di quelle cartelle restano coperti.
 
-Verifica locale 🟣: 17 regole, owner collaboratore, file campione assegnati come previsto. Alcune regole sono
+Verifica locale 🟣: 17 regole (18 con `/.claude/`, aggiunta dopo la verifica), owner collaboratore, file campione assegnati come previsto. Alcune regole sono
 preventive (`.npmrc`, `api/`, `middleware.*`, oggi assenti).
 
 Dopo il merge apri il file su GitHub: un errore di sintassi viene segnalato con un avviso ⚪.
