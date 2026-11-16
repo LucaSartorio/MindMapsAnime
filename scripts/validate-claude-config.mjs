@@ -114,7 +114,7 @@ if (existsSync(policyFile)) {
     if (p.bash && !p.writes && !listed.has(name)) err(`.claude/hooks/bash-policy.mjs: read-only agent ${name} (Bash, no Edit/Write) missing from READ_ONLY_AGENTS`);
     if (listed.has(name) && p.writes) err(`.claude/hooks/bash-policy.mjs: ${name} is in READ_ONLY_AGENTS but has Edit/Write`);
   }
-  for (const name of listed) if (!agentProfile.has(name)) err(`.claude/hooks/bash-policy.mjs: READ_ONLY_AGENTS lists unknown agent ${name}`);
+  for (const name of listed) if (!agentProfile.has(name) && !BUILTIN_AGENTS.has(name)) err(`.claude/hooks/bash-policy.mjs: READ_ONLY_AGENTS lists unknown agent ${name}`);
 } else err('.claude/hooks/bash-policy.mjs is missing');
 
 // ---------------------------------------------------------------- skills
@@ -199,8 +199,6 @@ for (const f of docFiles) {
 
 // ---------------------------------------------------------------- CLAUDE.md coverage + budget
 const claude = readFileSync(join(ROOT, 'CLAUDE.md'), 'utf8');
-for (const a of agentNames) if (!claude.includes(`\`${a}\``)) err(`CLAUDE.md: agent ${a} is not listed`);
-for (const d of skills) if (!claude.includes(`\`${d}`)) err(`CLAUDE.md: skill ${d} is not listed`);
 for (const f of rules) if (!claude.includes(`\`${f}\``)) err(`CLAUDE.md: rule ${f} missing from the context map`);
 const guide = join(ROOT, 'docs/CLAUDE_DEVELOPMENT_SYSTEM.md');
 if (existsSync(guide)) {

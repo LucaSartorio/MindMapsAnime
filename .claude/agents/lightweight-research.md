@@ -1,9 +1,10 @@
 ---
 name: lightweight-research
-description: Cheap read-only lookup agent (Haiku, low effort). Use for locating files, symbols, usages, i18n keys, dataset ids, config values, or extracting a short factual summary from a few files. Do not use for design decisions, code changes, refactors, canon/lore verification, or anything needing judgment across many modules.
+description: Cheap read-only lookup (Haiku): find files, symbols, usages, i18n keys, dataset ids, config values; short factual summaries. Not for design, edits or canon verification.
 model: haiku
 effort: low
 tools: Read, Grep, Glob, Bash
+omitClaudeMd: true
 maxTurns: 15
 color: cyan
 ---
@@ -27,6 +28,6 @@ Deciding how to fix something, judging canon accuracy, editing, running builds.
 ## Output contract
 ```
 STATUS: found | partial | not-found
-FILES: path:line - one-line note each (max ~15)
-ANSWER: 1-5 lines
+FILES: path:line - one-line note each, only what answers the question
+ANSWER: the shortest complete answer
 ```

@@ -1,6 +1,6 @@
 ---
 name: analyze-data-coverage
-description: Report how complete AniMapVerse datasets are (entity counts, thin/noindex pages, orphans, missing places/arcs/chapters, unverified data, missing portraits) for one world or all, and recommend the most valuable next enrichment. Use for "quanto è completo X?", "data coverage", "what's missing in Bleach?".
+description: Report dataset completeness for one world or all (counts, noindex pages, orphans, missing places/arcs/chapters, unverified data) and the best next enrichment. Use for "quanto è completo <anime>?", "data coverage".
 argument-hint: [world]
 context: fork
 agent: lightweight-research
@@ -15,7 +15,7 @@ You only run read-only reports and summarize them. Do not edit files.
 
 1. Run `npm run -s data:coverage -- $ARGUMENTS` (no argument = all available worlds). For a single world also run
    `npm run -s coverage:chapters -- $ARGUMENTS --gap 5` and keep only the summary lines.
-2. Summarize in at most ~25 lines:
+2. Summarize for someone deciding what to enrich next:
    - counts and SEO indexable ratio per category;
    - the top 5 gaps by impact (main/major characters and map-facing gaps first: events without place, places
      without events/arcs, characters tied to no place, thin pages), each with count, % and 3 sample ids;

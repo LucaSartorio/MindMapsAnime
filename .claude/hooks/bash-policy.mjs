@@ -15,8 +15,9 @@ import { fileURLToPath } from 'node:url';
 import { check as pushReason } from './guard-bash.mjs';
 import { reason as readOnlyReason } from './readonly-bash.mjs';
 
-/** Sub-agents whose Bash must stay read-only. Kept in sync with .claude/agents by `npm run claude:validate`. */
-export const READ_ONLY_AGENTS = new Set(['code-architect', 'security-devops', 'lightweight-research']);
+/** Sub-agents whose Bash must stay read-only: the repo's read-only agents (kept in sync with .claude/agents by
+ * `npm run claude:validate`) + the built-in `Plan` agent, which replaces the former code-architect for design work. */
+export const READ_ONLY_AGENTS = new Set(['Plan', 'security-devops', 'lightweight-research']);
 
 /** Returns `[reason, source]` when the call must be blocked, else null. */
 export function decide(input) {

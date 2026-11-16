@@ -83,7 +83,7 @@ test('bash-policy.mjs applies the read-only policy only to read-only agents', ()
   const hook = fileURLToPath(new URL('./bash-policy.mjs', import.meta.url));
   const run = (agent_type, command) =>
     spawnSync(process.execPath, [hook], { input: JSON.stringify({ agent_type, tool_input: { command } }) }).status;
-  for (const a of ['code-architect', 'security-devops', 'lightweight-research']) {
+  for (const a of ['Plan', 'security-devops', 'lightweight-research']) {
     assert.equal(run(a, 'touch /tmp/x'), 2, a);
     assert.equal(run(a, 'git log -1'), 0, a);
   }

@@ -1,6 +1,6 @@
 ---
 name: social-engine-specialist
-description: Remotion social engine engineer (tools/social-engine). Use to fix bugs, add or improve templates, growth-engine code, catalog/pipeline/schema code and their tests. Never publishes, never changes the editorial plan or production state, never interferes with the daily automations.
+description: Code of the internal Remotion social engine (templates, growth engine, pipeline, schemas, tests). Never publishes or touches production state and daily automations.
 model: sonnet
 effort: medium
 tools: Read, Grep, Glob, Edit, Write, Bash
