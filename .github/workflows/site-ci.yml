@@ -5,6 +5,7 @@
 #   translation-index and prerender↔hydration parity tests) → i18n:audit →
 #   vite build → SSR build → prerender (~16,000 pages) → seo:check
 # Every step is blocking (`&&`); nothing is masked with `|| true`.
+# The scope job also runs `npm run claude:validate` (Claude Code config, no npm ci) on every PR.
 #
 # Social engine separation: the daily agent PRs only touch tools/social-engine/**
 # (queue, publication receipts, analytics snapshots), which the site never
@@ -77,6 +78,12 @@ jobs:
       # PR code runs only after the decision has been written.
       - name: Test the selection rules
         run: node --test scripts/ci-site-scope.test.mjs
+
+      # Claude Code configuration (.claude/ agents, skills, rules, settings, hooks + CLAUDE.md): zero
+      # dependencies (no npm ci), a few seconds, on EVERY PR — social-only included, since a social PR could
+      # still break a rule path or a referenced script. A failure fails `scope`, hence the `Site CI` result.
+      - name: Validate Claude Code configuration
+        run: npm run claude:validate
 
   validate:
     name: Validate & build site

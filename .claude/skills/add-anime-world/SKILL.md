@@ -31,8 +31,12 @@ the world stays unpublished (`status: 'coming_soon'`) until the publication gate
   optional kinds make sense (teams, tournaments, battles, family, structure). Skip categories with no real use.
 - Sources (preference order): official material → databooks/editorial → official adaptation material →
   reputable secondary sources → community wikis for discovery only. Respect licences, robots, rate limits; never
-  bypass protections; never copy prose or images. If no web tool is available in this session, say so and use
-  the `web-fetch` agent from the orchestrator, or stop at a source plan.
+  bypass protections; never copy prose or images. Model memory is never a source.
+- Research tools: delegate research to `anime-data-curator` (its allowlist has WebSearch + WebFetch; a tool missing
+  on the current surface is silently dropped, so check what it actually used). If web tools are unavailable, in
+  Claude Code Cloud the orchestrator may read pages with the harness-provided `web-fetch` agent type (present only
+  where WebFetch is missing; it is not a repo agent) and hand URLs + extracted facts to the curator. Otherwise
+  stop at a source plan and say so: no data without a consulted source.
 
 ## 2. Batches (default order; adapt per world, one batch per step, each resumable)
 | # | Batch | Owner | Exit check |
@@ -52,6 +56,8 @@ the world stays unpublished (`status: 'coming_soon'`) until the publication gate
 
 Batch rules: write ids with the world prefix (`char-<abbr>-…`), never rename an existing id, every narrative
 text `{ it, en }`, uncertain → `referenceStatus: 'needs_verification'`, filler/anime-only/movie → `canonStatus`.
+Allowed values (`src/types/index.ts`): `canonStatus` = `canon | anime_only | movie | filler | novel | uncertain`;
+`referenceStatus` = `verified | needs_verification | unknown`.
 Large kinds go in several files (`charactersBatch1.ts`…) merged in `index.ts`, like existing worlds.
 
 ## 3. Checkpoint after EVERY batch (this is what makes the work resumable)

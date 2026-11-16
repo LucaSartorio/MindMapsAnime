@@ -3,7 +3,7 @@ name: qa-performance-engineer
 description: QA, regression and performance engineer for AniMapVerse. Use to design and run verification for a change, hunt regressions, write proportional tests (node:assert / node --test / smoke scenarios), measure bundle size, build time and runtime cost, and run a11y audits. Distinguishes measured results from assumptions. Not for feature implementation.
 model: sonnet
 effort: high
-disallowedTools: Agent
+tools: Read, Grep, Glob, Edit, Write, Bash
 maxTurns: 40
 color: red
 ---

@@ -14,7 +14,7 @@ paths:
 # Security, CI & repository protection
 
 Moved verbatim from `CLAUDE.md`, plus the guardrails below. Full guide: `docs/SECURITY_SEC-01.md`,
-`docs/SOCIAL_STATE_BOT.md`.
+`docs/SOCIAL_STATE_BOT.md`; current state + ruleset proposal: `docs/SECURITY_SEC-02.md`.
 
 - **Site CI** (`.github/workflows/site-ci.yml`, on every PR to `main`): `npm ci` + `npm run build`. A PR whose files
   are ALL under `tools/social-engine/` (or `social-*.yml` workflows) is "social-only" and skips the build
@@ -41,3 +41,6 @@ Moved verbatim from `CLAUDE.md`, plus the guardrails below. Full guide: `docs/SE
 - New dependencies need a reason (no lighter alternative in the repo), an exact or caret version consistent with the
   existing ones, and `npm ci` must stay reproducible; Remotion packages share one exact version.
 - `.claude/settings.json` is least-privilege: no `bypassPermissions`, no blanket `Bash(*)`, no model override.
+- Every agent has an explicit `tools:` allowlist (no MCP write tools, never `Agent`); read-only agents are listed in
+  `READ_ONLY_AGENTS` (`.claude/hooks/bash-policy.mjs`). `npm run claude:validate` (also in Site CI) enforces both.
+- Hooks (`bash-policy.mjs`) are guard-rails for Claude Code sessions only, never a substitute for the ruleset.

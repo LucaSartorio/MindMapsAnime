@@ -3,7 +3,7 @@ name: frontend-specialist
 description: React/TypeScript/Tailwind UI engineer for AniMapVerse. Use to implement or fix UI features and bugs in components, pages, layout/header, drawers, modals (schede), search, Zustand stores, responsive and accessibility behaviour. Not for React Flow map internals (map-engineer), dataset content (anime-data-curator), or SEO metadata logic (seo-growth-engineer).
 model: sonnet
 effort: medium
-disallowedTools: Agent
+tools: Read, Grep, Glob, Edit, Write, Bash
 maxTurns: 40
 color: blue
 ---

@@ -17,7 +17,9 @@ CLAUDE.md                 core sempre caricato (~13 KB): progetto, orchestrazion
 ├── rules/*.md            dettagli architetturali, caricati SOLO quando si toccano i file corrispondenti (paths)
 ├── agents/*.md           9 sub-agent specializzati (modello + effort + strumenti propri)
 ├── skills/<n>/SKILL.md   12 procedure ripetibili, invocabili con /<nome> [argomenti]
-├── hooks/guard-bash.mjs  blocca push forzati / su main / cancellazioni di branch (+ test)
+├── hooks/bash-policy.mjs hook PreToolUse(Bash): guardia sui push per tutti + sola lettura per gli agent di analisi
+│   ├── guard-bash.mjs     push forzati, su main (anche impliciti), di massa, cancellazioni (+ test)
+│   └── readonly-bash.mjs  allowlist di comandi in sola lettura (+ test)
 └── settings.json         permessi least-privilege + hook (nessun modello forzato)
 scripts/data-coverage.ts          report deterministico delle lacune dei dataset (npm run data:coverage)
 scripts/validate-claude-config.mjs validatore della configurazione (npm run claude:validate)
@@ -32,18 +34,29 @@ verificano ciò che non richiede ragionamento AI.
 
 | Agent | Modello | Effort | Strumenti | Responsabilità | Quando NON usarlo |
 |---|---|---|---|---|---|
-| `code-architect` | opus | high | Read, Grep, Glob, Bash (sola lettura) | piani incrementali per lavori complessi/critici, dipendenze, rischi | fix banali, modifiche a un file |
-| `frontend-specialist` | sonnet | medium | tutti tranne Agent | UI, componenti, store, a11y, responsive, SSR-safety | internals della mappa, contenuti, SEO |
-| `map-engineer` | sonnet | high | tutti tranne Agent | React Flow, pin/cluster, coordinate, mapgen, performance mappa | UI generica, lore |
-| `anime-data-curator` | sonnet | high | tutti tranne Agent | ricerca, verifica, dataset, relazioni, provenienza | codice UI/SEO |
-| `seo-growth-engineer` | sonnet | high | tutti tranne Agent | metadata, canonical, hreflang, sitemap, thin content, linking | inventare dati Search Console |
-| `qa-performance-engineer` | sonnet | high | tutti tranne Agent | verifiche, regressioni, test proporzionati, misure | implementare feature |
-| `social-engine-specialist` | sonnet | medium | tutti tranne Agent | codice del motore social, template, test | pubblicare, stato di produzione, piano editoriale |
-| `security-devops` | sonnet | high | Read, Grep, Glob, Bash (sola lettura) | workflow, permessi, dipendenze, CODEOWNERS, settings | applicare ruleset/secret/permessi |
-| `lightweight-research` | haiku | low | Read, Grep, Glob, Bash (sola lettura) | trovare file/simboli/id, riassunti brevi | decisioni, modifiche, verifica canonica |
+| `code-architect` | opus | high | Read, Grep, Glob, Bash **sola lettura imposta**, ToolSearch, GitHub MCP in lettura (`pull_request_read`, `get_file_contents`) | piani incrementali per lavori complessi/critici, dipendenze, rischi | fix banali, modifiche a un file |
+| `frontend-specialist` | sonnet | medium | Read, Grep, Glob, Edit, Write, Bash | UI, componenti, store, a11y, responsive, SSR-safety | internals della mappa, contenuti, SEO |
+| `map-engineer` | sonnet | high | Read, Grep, Glob, Edit, Write, Bash | React Flow, pin/cluster, coordinate, mapgen, performance mappa | UI generica, lore |
+| `anime-data-curator` | sonnet | high | Read, Grep, Glob, Edit, Write, Bash, WebSearch, WebFetch | ricerca, verifica, dataset, relazioni, provenienza | codice UI/SEO |
+| `seo-growth-engineer` | sonnet | high | Read, Grep, Glob, Edit, Write, Bash, WebFetch | metadata, canonical, hreflang, sitemap, thin content, linking | inventare dati Search Console |
+| `qa-performance-engineer` | sonnet | high | Read, Grep, Glob, Edit, Write, Bash | verifiche, regressioni, test proporzionati, misure | implementare feature |
+| `social-engine-specialist` | sonnet | medium | Read, Grep, Glob, Edit, Write, Bash (nessun MCP, nessun web) | codice del motore social, template, test | pubblicare, stato di produzione, piano editoriale |
+| `security-devops` | sonnet | high | Read, Grep, Glob, Bash **sola lettura imposta**, ToolSearch, GitHub MCP in lettura (Actions, PR) | workflow, permessi, dipendenze, CODEOWNERS, settings | applicare ruleset/secret/permessi |
+| `lightweight-research` | haiku | low | Read, Grep, Glob, Bash **sola lettura imposta** | trovare file/simboli/id, riassunti brevi | decisioni, modifiche, verifica canonica |
 
 Scelte progettuali:
-- **Nessun agent può creare altri agent** (`Agent` escluso): un solo coordinatore, niente catene costose.
+- **Allowlist esplicita per ogni agent** (`tools:`). Senza, un agent eredita *tutti* i tool della sessione: nella
+  versione di #320 gli specialisti avevano anche `mcp__github__merge_pull_request`, `create_or_update_file`,
+  `delete_file` e i tool di sessioni/trigger remoti, che agiscono via API e aggirano qualunque hook su `git`.
+  `claude:validate` ora rifiuta un agent senza `tools:` e ogni tool MCP che non sia di sola lettura.
+- **Nessun agent può creare altri agent** (`Agent` mai in allowlist): un solo coordinatore, niente catene costose.
+- **Tre livelli di restrizione, da non confondere**: (1) istruzioni testuali nel prompt dell'agent: orientano, non
+  impediscono nulla; (2) allowlist `tools:`: impedisce davvero di usare un tool (Edit/Write/MCP); (3) l'hook
+  `bash-policy.mjs`: l'unico modo di limitare *cosa fa Bash*. Per `code-architect`, `security-devops` e
+  `lightweight-research` Bash accetta solo comandi in sola lettura (`rg`, `git log/diff/show/fetch`, validatori,
+  `npm run` di report…); scritture, redirezioni, `git commit/checkout`, `npm install` vengono bloccate.
+- Un tool in allowlist ma assente nella superficie corrente viene ignorato in silenzio (es. Grep/Glob o il GitHub
+  MCP nei processi `claude -p`): gli agent ripiegano su `rg` via Bash.
 - `lightweight-research` esiste perché l'Explore integrato usa il **modello della sessione** (Opus se l'owner usa
   Opus): per semplici ricerche un agent Haiku/low costa molto meno. Per esplorazioni ampie l'Explore integrato resta
   disponibile.
@@ -229,8 +242,15 @@ distingue dati di laboratorio da dati reali (LCP/INP/CLS reali: Vercel Speed Ins
 
 ## 14. GitHub workflow
 
-- Branch di lavoro dedicato; mai push su `main`, mai force push, mai merge o approvazioni automatiche (l'hook
-  `guard-bash.mjs` blocca push forzati, su `main`/`master`, `--mirror`, `--delete`).
+- Branch di lavoro dedicato; mai push su `main`, mai force push, mai merge o approvazioni automatiche. L'hook
+  (`bash-policy.mjs` → `guard-bash.mjs`) blocca: force push (`--force-with-lease` solo su branch di feature), push
+  verso `main`/`master` espliciti **e impliciti** (`git push`, `git push origin`, `git push origin HEAD` risolti da
+  branch corrente, upstream, `push.default`, `remote.<r>.push`), `--all/--branches/--mirror/--prune/--delete`,
+  refspec con `+`, `:` o `*`, anche dentro `bash -c`, `eval`, `$(…)`, wrapper, alias git.
+- **L'hook non equivale a un ruleset**: vale solo per `git` nelle sessioni Claude Code che caricano i settings del
+  repo; non vale per l'API GitHub, per altri strumenti o nei thread *Projects*. Proposta di ruleset: `docs/SECURITY_SEC-02.md`.
+- Site CI esegue `npm run claude:validate` nel job `scope` (ogni PR, anche social, senza `npm ci`): una
+  configurazione `.claude/` non valida rende rosso `Site CI`.
 - PR solo su richiesta dell'owner; Site CI esegue `npm run build` su ogni PR che tocca `.claude/` o `CLAUDE.md`.
 - `.claude/` è sotto CODEOWNERS (`@LucaSartorio`) come `CLAUDE.md`: sono istruzioni per agenti.
 - Le automazioni social (State Bot, PR giornaliere) non vanno mai toccate: vedi `social-safety.md`.
@@ -267,12 +287,30 @@ Verificato in esecuzione durante il bootstrap (Cloud, Claude Code 2.1.325, 2026-
   `claude-haiku-5-5` ($0.0017), i due comandi pre-autorizzati da `allowed-tools` eseguiti senza dinieghi;
 - `npm run data:coverage`, `npm run claude:validate`, `npm run build` (vedi report della PR).
 
-Nominale (configurato, non osservato): l'effort effettivo dei sub-agent (non esposto nell'output), gli agent `opus`
-(`code-architect`, stesso modello dell'orchestratore usato nei test) e le skill non provate singolarmente. Gli agent
-creati a metà sessione non entrano nel registro della sessione corrente (cartella `.claude/agents/` nuova): in una
-sessione nuova `/agents` li elenca e `/tasks` mostra il modello di ogni sub-agent (v2.1.242+).
-Nota: in modalità `-p` su un workspace non ancora "trusted" le regole `allow` di settings.json vengono ignorate
-(deny/ask e hook restano attivi).
+Hardening (2026-11-16, processi `claude -p` nuovi, quindi definizioni aggiornate e cartella *non* trusted):
+- **modello + effort effettivi di tutti i 9 agent**, letti dai transcript dei sub-agent (`~/.claude/projects/<repo>/
+  <sessione>/subagents/*.jsonl`, campi `model` ed `effort` di ogni messaggio): code-architect opus/high ·
+  lightweight-research haiku/low · security-devops, qa-performance-engineer, map-engineer, anime-data-curator,
+  seo-growth-engineer sonnet/high · frontend-specialist, social-engine-specialist sonnet/medium. Il placeholder
+  `${CLAUDE_EFFORT}` invece riporta l'effort della sessione che invoca, anche nei fork: non serve a misurarlo;
+- **sola lettura imposta**: `touch` e redirezioni bloccati per security-devops e lightweight-research, `git log` e
+  `npm run data:coverage` consentiti; uno specialista (qa) può scrivere. Gli hook nel frontmatter degli agent
+  **non** scattano in una cartella non trusted (prova isolata): per questo la politica sta in `settings.json`;
+- **`/review-pr 308`** (PR reale, già mergiata): fork su Opus ($0.42), diff ricostruito con `git fetch` (il GitHub MCP
+  non esiste nei processi `-p`), tentativo di usare `gh` bloccato dall'hook, working tree invariato;
+- **invocazione automatica**: "Quanto è completo il dataset di Bleach?" → `analyze-data-coverage` in fork su Haiku
+  ($0.006); "fai una review della PR 308" → `review-pr` **non** invocato (solo manuale), il modello usa la skill
+  integrata `code-review`;
+- **`/add-anime-world fullmetalalchemist`** in un worktree temporaneo (branch locale mai pushato, poi eliminato):
+  fonti consultate davvero (WebSearch nella sessione, WebFetch nel curator: Wikipedia, VIZ; ANN 403 e Fandom 402
+  scartati), batch 1 + 2 personaggi `{ it, en }`, manifest con fonti e ledger, commit locale, `validate:data`
+  /`validate:i18n`/build verdi; mondo **privato** (solo landing coming-soon `noindex`, assente da sitemap,
+  `llms.txt` e catalogo social). Ripresa in una sessione nuova: batch successivo e decisioni aperte ricavati solo
+  da manifest + git, nessun file modificato. Costo: $0.67 + $0.23.
+
+Non verificato: comportamento nei thread Claude Code *Projects* e nell'app Desktop locale (nessun accesso da qui);
+GitHub MCP dentro un sub-agent di una sessione Cloud interattiva (le definizioni nuove valgono dalla sessione
+successiva, quindi non osservabili in questa).
 
 ## 16. Troubleshooting
 
@@ -285,13 +323,16 @@ Nota: in modalità `-p` su un workspace non ancora "trusted" le regole `allow` d
 | Edit rifiutato su un file generato | è voluto (deny): usa lo script ufficiale |
 | Push rifiutato dall'hook | push forzato o su `main`: usa il branch di lavoro |
 | `npm run lint` | non configurato nel repo (nessun eslint): non è un controllo |
+| Un agent non rispetta un `tools:`/prompt appena modificato | la sessione usa le definizioni lette all'avvio: le modifiche ai file degli agent valgono dalla sessione successiva (osservato) |
+| Hook nel frontmatter di un agent che non scatta | Claude Code salta gli hook del frontmatter degli agent di progetto finché la cartella non è "trusted" (`-p` non lo è mai): per questo le politiche stanno in `settings.json` (`bash-policy.mjs`, che riceve `agent_type`) |
+| Un agent di sola lettura bloccato da `[readonly-bash]` | è voluto: deve proporre la modifica; se un comando di sola lettura legittimo manca, aggiungilo all'allowlist in `readonly-bash.mjs` con un test |
 
 ## 17. Differenze Cloud / locale
 
 | Superficie | CLAUDE.md | rules senza paths | rules con paths | agents | skills | settings/hook |
 |---|---|---|---|---|---|---|
 | CLI / Desktop locale | sì | sì | sì | sì | sì | sì |
-| Cloud (Desktop/web), repo singola | sì | sì | sì (verificato) | sì | sì | sì (verificato) |
+| Cloud (Desktop/web), repo singola | sì | sì | sì (verificato) | sì (verificato) | sì (verificato) | sì (verificato; hook nel frontmatter degli agent no finché la cartella non è trusted) |
 | Cloud multi-repo | non documentato | non documentato | non documentato | non documentato | non documentato | solo plugin: permessi/hook **no** |
 | Thread Cloud di Claude Code **Projects** | sì | sì | **no** | non documentato | **no** | **no** |
 

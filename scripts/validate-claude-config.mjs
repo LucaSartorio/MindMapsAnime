@@ -33,7 +33,7 @@ const SKILL_FIELDS = new Set(['name', 'description', 'when_to_use', 'argument-hi
 const MODELS = new Set(['sonnet', 'opus', 'haiku', 'fable', 'inherit']);
 const EFFORTS = new Set(['low', 'medium', 'high', 'xhigh', 'max']);
 const COLORS = new Set(['red', 'blue', 'green', 'yellow', 'purple', 'orange', 'pink', 'cyan']);
-const TOOLS = new Set(['Read', 'Write', 'Edit', 'NotebookEdit', 'Glob', 'Grep', 'Bash', 'WebFetch', 'WebSearch', 'Agent',
+const TOOLS = new Set(['WebSearch', 'Read', 'Write', 'Edit', 'NotebookEdit', 'Glob', 'Grep', 'Bash', 'WebFetch', 'WebSearch', 'Agent',
   'Skill', 'TodoWrite', 'TaskCreate', 'TaskUpdate', 'TaskList', 'TaskGet', 'Monitor', 'ToolSearch']);
 const BUILTIN_AGENTS = new Set(['Explore', 'Plan', 'general-purpose']);
 const BOOL = /^(true|false|yes|no|on|off|1|0)$/;
@@ -72,6 +72,7 @@ const list = (v) => (Array.isArray(v) ? v : String(v ?? '').split(',').map((s) =
 const agentsDir = join(ROOT, '.claude/agents');
 const agents = existsSync(agentsDir) ? readdirSync(agentsDir).filter((f) => f.endsWith('.md')) : [];
 const agentNames = new Set();
+const agentProfile = new Map();
 for (const f of agents) {
   const file = join(agentsDir, f);
   const { fm, body } = frontmatter(file);
@@ -91,9 +92,30 @@ for (const f of agents) {
   if (fm.maxTurns && !/^\d+$/.test(fm.maxTurns)) err(`${rel(file)}: maxTurns must be an integer`);
   if (fm.color && !COLORS.has(fm.color)) err(`${rel(file)}: invalid color "${fm.color}"`);
   if (fm.permissionMode === 'bypassPermissions') err(`${rel(file)}: bypassPermissions is not allowed in this repo`);
+  // Least privilege: without an explicit `tools:` an agent inherits EVERY tool, MCP writers included
+  // (merge PR, push files, create sessions/triggers…), which bypass the git hook entirely.
+  if (!fm.tools) err(`${rel(file)}: no explicit tools allowlist (inherits all tools, MCP writers included)`);
+  for (const t of list(fm.tools)) {
+    if (t.startsWith('mcp__') && (!/__(?:[a-z]+_)*(get|list|read|search)(?:_[a-z]+)*$/.test(t) || /(write|create|update|delete|merge|push|trigger|run|fork|resolve|add|enable|disable)/.test(t.split('__').pop()))) err(`${rel(file)}: MCP tool "${t}" is not read-only`);
+    if (t === 'Agent') err(`${rel(file)}: sub-agents must not spawn agents (only the orchestrator coordinates)`);
+  }
+  const tl = list(fm.tools);
+  agentProfile.set(fm.name, { bash: tl.includes('Bash'), writes: tl.some((t) => ['Edit', 'Write', 'NotebookEdit'].includes(t)) });
   if (!/STATUS/.test(body)) warn(`${rel(file)}: no output contract (STATUS …) in the body`);
   agentNames.add(fm.name);
 }
+
+// Read-only agents (Bash, no Edit/Write) must be the ones the Bash policy hook restricts, and vice versa.
+const policyFile = join(ROOT, '.claude/hooks/bash-policy.mjs');
+if (existsSync(policyFile)) {
+  const m = readFileSync(policyFile, 'utf8').match(/READ_ONLY_AGENTS = new Set\(\[([^\]]*)\]/);
+  const listed = new Set((m?.[1] ?? '').match(/'[^']+'/g)?.map((x) => x.slice(1, -1)) ?? []);
+  for (const [name, p] of agentProfile) {
+    if (p.bash && !p.writes && !listed.has(name)) err(`.claude/hooks/bash-policy.mjs: read-only agent ${name} (Bash, no Edit/Write) missing from READ_ONLY_AGENTS`);
+    if (listed.has(name) && p.writes) err(`.claude/hooks/bash-policy.mjs: ${name} is in READ_ONLY_AGENTS but has Edit/Write`);
+  }
+  for (const name of listed) if (!agentProfile.has(name)) err(`.claude/hooks/bash-policy.mjs: READ_ONLY_AGENTS lists unknown agent ${name}`);
+} else err('.claude/hooks/bash-policy.mjs is missing');
 
 // ---------------------------------------------------------------- skills
 const skillsDir = join(ROOT, '.claude/skills');

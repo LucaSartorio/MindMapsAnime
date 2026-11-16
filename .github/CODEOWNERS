@@ -24,6 +24,7 @@
 /.gitattributes                             @LucaSartorio
 /scripts/ci-site-scope.mjs                  @LucaSartorio
 /scripts/ci-site-scope.test.mjs             @LucaSartorio
+/scripts/validate-claude-config.mjs         @LucaSartorio
 /CLAUDE.md                                  @LucaSartorio
 /.claude/                                   @LucaSartorio
 /docs/SOCIAL_*.md                           @LucaSartorio
