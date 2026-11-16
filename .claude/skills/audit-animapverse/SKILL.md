@@ -1,7 +1,7 @@
 ---
 name: audit-animapverse
 description: Audit AniMapVerse health (data, SEO, i18n, a11y, perf, security, social, config) with ranked verified findings, or run the full pre-release gate ("release"). Use for "verifica se ci sono bug", "audit", "is it ready to release?".
-argument-hint: [all|data|seo|i18n|a11y|perf|security|social|config|release]
+argument-hint: [all|data|seo|i18n|a11y|perf|security|social|config|code|release]
 ---
 
 # AniMapVerse audit: $ARGUMENTS
@@ -24,9 +24,10 @@ get green. Keep only summaries and failing lines of the logs.
 | data | `npm run validate:data` (errors/warnings per world), `npm run data:coverage` |
 | i18n | `npm run validate:i18n`, `npm run i18n:audit`, `npm run i18n:status` |
 | seo | `npm run test:seo`; for `all`/`seo` `npm run build` (prerender + `seo:check`) |
-| a11y | steps 5 of the release gate |
+| a11y | step 5 of the release gate |
 | perf | chunk sizes from the `vite build` output, largest `dist/assets/*.js` |
-| security | `npm run test:ci-scope`, `npm run claude:validate`, `.github/workflows/*` review |
+| security | `npm run test:ci-scope`, `.github/workflows/*` review |
+| config | `npm run claude:validate` (Claude Code agents, skills, rules, settings, hooks) |
 | social | `npm run social:validate`, `npm run social:editorial:check` (read-only) |
 | code | `rg -n "slug === '" src/components src/lib` (hardcoded worlds), duplicated helpers, unused exports |
 

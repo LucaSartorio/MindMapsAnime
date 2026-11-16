@@ -109,9 +109,9 @@ Rivedi la PR 330                            → /code-review 330 (integrato)
   non dell'agent.
 - `/doctor prompt-audit`: audit di istruzioni obsolete o contraddittorie (non modifica nulla).
 
-Misure di riferimento (2026-11-16, `claude -p`, processo nuovo, stessi prompt) — vedi la PR di ottimizzazione per i
-valori prima/dopo: contesto iniziale del progetto, regole caricate per file, costo di ricerca, task frontend, analisi
-SEO e copertura.
+Metodo per confronti prima/dopo: stessi prompt in processi `claude -p` nuovi, stesso modello; confronta i token di
+input totali (cache inclusa), non i dollari (dipendono dallo stato della cache) e annota il numero di turni. Il peso
+della configurazione = token di un turno banale nel repo meno lo stesso turno in una cartella vuota.
 
 ## 9. Cloud e locale
 

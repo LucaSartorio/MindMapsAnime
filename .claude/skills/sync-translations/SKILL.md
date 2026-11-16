@@ -11,7 +11,7 @@ Read `.claude/rules/i18n.md` and `docs/I18N.md` (workflow + glossaries) first. N
 
 ## Dataset overlays (`<world> es|fr`)
 1. `npm run i18n:status` → missing / stale / orphan counts for `$0` `$1`.
-2. `npm run i18n:extract -- --world $0 --locale $1 --out tmp/$0-$1-todo.json` (tmp/ is a scratch output; do not commit it).
+2. `npm run i18n:extract -- --world $0 --locale $1 --out tmp/$0-$1.json` (tmp/ is a scratch output; do not commit it).
 3. Translate the JSON values (keep keys, placeholders and proper nouns per the glossary in docs/I18N.md; official
    localized names where they exist). Large files: batches of ~200 keys, delegated to `anime-data-curator` when
    terminology needs lore knowledge.
