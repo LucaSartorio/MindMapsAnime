@@ -14,5 +14,6 @@ paths:
   harness. A test must fail on the bug it guards (check it once against the unfixed code when practical).
 - `npm run smoke` builds and drives Chromium (Playwright is pre-installed in cloud sessions, never reinstall it);
   `audit:a11y` / `audit:contrast` need `npm run preview:static` running (`BASE=http://localhost:4173`).
+  `npm run preview` (Vite) answers 200 to ANY path: use `preview:static` for HTTP/404 tests.
 - Report what ran and its result; a passing build is not proof a feature works — exercise the changed path
   (smoke scenario, a dry run, or a targeted script).

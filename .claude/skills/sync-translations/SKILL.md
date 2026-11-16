@@ -1,6 +1,6 @@
 ---
 name: sync-translations
-description: Bring dataset translation overlays (es, fr) and the translation index up to date for a world, or fix UI i18n key drift across the six locales. Use for "aggiorna le traduzioni spagnole di Naruto", "translations are stale", "i18n:audit fails", "publish Bleach in French".
+description: Update es/fr dataset overlays and the translation index for a world, or fix UI i18n key drift across the six locales. Use for "aggiorna le traduzioni spagnole di <anime>", "i18n:audit fails".
 argument-hint: <world|ui> [locale: es|fr]
 ---
 

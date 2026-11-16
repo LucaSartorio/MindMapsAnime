@@ -1,6 +1,6 @@
 ---
 name: optimize-map
-description: Improve an AniMapVerse map - pin layout/collisions, clustering, zoom behaviour, sub-map coverage, legend/filters, route rendering, mobile interaction or map rendering performance - for one world or for the shared map engine. Use for "migliora la mappa di One Piece", "fix zoom", "pins overlap", "map is slow".
+description: Improve a world map or the map engine: pin collisions, clustering, zoom, sub-maps, legend/filters, routes, mobile, rendering performance. Use for "migliora la mappa di <anime>", "pins overlap", "map is slow".
 argument-hint: <world|all> [map level id | issue]
 ---
 

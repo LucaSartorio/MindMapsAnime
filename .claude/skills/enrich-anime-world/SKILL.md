@@ -1,6 +1,6 @@
 ---
 name: enrich-anime-world
-description: Fill gaps and improve data quality of an existing AniMapVerse world (missing relations, thin pages, events without places/chapters, unverified data, missing portraits) in prioritized, verified batches. Use for requests like "completa i dati mancanti di Bleach", "enrich Naruto", "improve One Piece data".
+description: Fill data gaps of an existing world (relations, thin pages, unplaced events, chapters, unverified data, portraits) in prioritized verified batches. Use for "completa i dati di <anime>", "enrich <world>".
 argument-hint: <world> [focus: characters|locations|events|arcs|factions|abilities|relations|portraits|verification]
 ---
 

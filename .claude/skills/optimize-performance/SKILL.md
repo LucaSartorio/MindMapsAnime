@@ -1,6 +1,6 @@
 ---
 name: optimize-performance
-description: Measure and improve AniMapVerse performance - JS bundle and route chunks, images, lazy loading, hydration, React/map rendering cost, memory, prerender/build time, mobile interaction - with baseline and after numbers. Use for "migliora le performance", "the map is slow", "reduce bundle", "build is too slow".
+description: Measure then improve performance (bundle/chunks, images, lazy loading, hydration, React/map rendering, build time, mobile) with baseline and after numbers. Use for "migliora le performance", "reduce bundle".
 argument-hint: [target: bundle|map|hydration|images|build|mobile|all]
 ---
 

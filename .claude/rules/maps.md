@@ -16,129 +16,36 @@ paths:
   - "scripts/{extract-boundaries,find-red-dots,hxh-extract-boundaries,hxh-overlay,optimize-hxh-map,onepiece-pins,image-size,optimize-images}.ts"
 ---
 
-# Maps: React Flow canvas, coordinates, markers, map panels
+# Maps — constraints
 
-Moved verbatim from `CLAUDE.md`. Shared map code must stay world-agnostic: per-world behaviour comes from
-`WorldConfig` / `src/lib/worldMapPrefs.ts` / data, never from `if (world.slug === …)` in a component.
+How it works: `docs/ARCHITECTURE.md` › Maps. Shared map code is world-agnostic: per-world behaviour comes from data or
+config (`worldMapPrefs`, `WorldConfig.mapMarkers`, `presentLocationTypes`), never `if (world.slug === …)`.
 
-### Map rendering (React Flow)
-`src/components/map/InteractiveWorldMap.tsx` composes the map from two kinds of nodes:
-- **Non-interactive "layer" nodes** (`MapLayerNode`) at fixed `(0,0)` with `pointer-events: none`
-  and negative `zIndex`: background image, boundary overlay, labels. Layer node ids are prefixed
-  `__layer-` and ignored by click handlers.
-- **One interactive pin node** (`MapNode`) per visible location. Pins are tinted by
-  category via `LOCATION_TYPE_COLOR` (`src/lib/locationTypes.ts`) — colour is never the only
-  cue (the type icon + label stay), and the selected/highlighted/poneglyph states override it.
-  The floating legend shows the same per-type colour swatches.
-  **Constant screen size**: React Flow scales nodes with the zoom, so pin labels grew with the
-  zoom and always overlapped (zooming never separated close pins). `MapNode`/`MapClusterNode`
-  **counter-scale by `1/zoom`** (`useStore` reading the viewport zoom, quantized to limit
-  re-renders) so pins+labels stay a fixed screen size — zooming genuinely spreads the pins and
-  labels stop piling up. A CSS counter-scale doesn't shrink the *layout* box, so the RF node
-  wrapper stays huge and would block clicks over a big transparent area; the wrappers are
-  `pointer-events:none !important` (globals.css) with only the visible content `pointer-events:auto`
-  (clicks still bubble to `onNodeClick`). The a11y audit clicks that visible content, not the wrapper.
-- **Cluster nodes** (`MapClusterNode`): when many pins crowd together, `clusterLocations`
-  (`src/lib/clusterPins.ts`) merges them into a counted badge. It's grid clustering in **world
-  space** (cell = `targetPx / zoom`, quantized), so it only recomputes on zoom, not pan; the
-  selected pin and active-route steps are kept unclustered so schede/edges never break. Clicking a
-  cluster `fitBounds` to its members (it "opens"). Near-coincident pins (e.g. One Piece
-  Cocoyashi/Arlong, ~3 units apart) are nudged apart by `spreadOverlappingPins` (deterministic,
-  tiny, non-destructive) so they never stack, and clustering **fully dissolves above
-  `CLUSTER_OFF_ZOOM` (2.6)** — at (near) max zoom every pin is individually visible/clickable, so no
-  cluster can get "stuck".
+- **Composition**: layer nodes (`__layer-` ids, `pointer-events: none`, negative zIndex — click handlers ignore them),
+  one `MapNode` pin per visible location, `MapClusterNode`. Pins and clusters counter-scale by `1/zoom` (quantized
+  zoom from `useStore`); React Flow wrappers stay `pointer-events:none !important` and only the visible content is
+  clickable (the a11y audit clicks it).
+- **Colour is never the only cue** (`LOCATION_TYPE_COLOR` + type icon + label); selected/highlighted/poneglyph/marked
+  states override it; the legend uses the same swatches and its rows are `aria-pressed` filters on `filters.locationTypes`.
+- **Clustering** (`clusterPins.ts`): world-space grid recomputed on zoom only; the selected pin and active route
+  steps are never clustered; clusters dissolve above `CLUSTER_OFF_ZOOM` (2.6); click = `fitBounds`; near-coincident
+  pins are nudged by `spreadOverlappingPins` (deterministic, tiny).
+- **Coordinates**: each map level has its own plane = `MapLevel.width/height` (`src/data/<world>/mapConstants.ts`);
+  `x/y`, boundary `svgPathD`, `labelPosition` use it. Replacing an image keeps the viewBox or every pin breaks.
+  Naruto PNG 990×579 → `flowX = px/990*1500`, `flowY = py/579*882.2204`; the PNG scripts (`npm run find:dots`,
+  `npm run extract:boundaries`) already emit flow coordinates. Per-world tooling outside npm: `hxh-extract-boundaries`,
+  `hxh-overlay`, `optimize-hxh-map`, `onepiece-pins.ts`, `onepiece-*.py` (run `.ts` with `tsx --tsconfig scripts/tsconfig.json`).
+- **Generated maps**: every level has an image. Original SVGs come from `python3 scripts/mapgen/<world>.py` (shared
+  `kit.py`; Bleach `scripts/bleach-maps.py`), which also rewrite pin `x/y` (`apply_pins`): move a pin by editing the
+  generator and re-running it, never by hand. Deterministic (fixed seeds, `<use>` symbols, ≤ ~280 KB);
+  `PREVIEW_DIR=<dir>` writes an HTML preview. Never download or trace official maps.
+- **Markers** are views on events tagged `eventTag` (tags in `markerTags.ts` via `withEventTags`): a new marker = config
+  entry + tags, no component edit. **Story moment** (`filters.untilArcId`) and all filters apply in
+  `filterLocations`/`filterEvents`, so pins, count and timeline agree.
+- **Narrative modes** (focus, route stepper, story mode, timeline playback) drive the shared store
+  (`selectedLocation/Route/TimelineEvent`), never React Flow from a modal; the timeline stays filter-free and its
+  playback list does not depend on `selectedLocationId`. Opening a location scheda syncs `selectedLocation`.
+- **Tournaments**: `format: 'bracket'` halves the matches each round (`validate:data` checks it).
 
-`WorldMapBackground` renders the map level's `backgroundAssetId` as an `<img>` when the asset has a
-`url`, otherwise falls back to locally-generated SVG placeholders. Boundaries (`MapBoundaryOverlay` /
-`MapRegionPath`) are transparent clickable SVG paths that highlight on hover/selection — but some
-worlds use a fan-made map that already draws its own borders, so `src/lib/worldMapPrefs.ts`
-(`worldShowsBoundaryHighlight`) disables the highlight overlay for them (e.g. HxH) while keeping pins
-clickable. Clicking a pin opens its location modal; double-clicking a pin with `subMapLevelId` drills
-into the sub-map.
-
-### Coordinate system (important)
-Each world has its OWN viewBox plane equal to its world-map `MapLevel.width`/`height`. All
-`location.x/y`, boundary `svgPathD`, and `labelPosition` values use that plane:
-- Naruto `NARUTO_MAP_VIEWBOX` = 1500 × 882.2204 (`src/data/naruto/mapConstants.ts`)
-- Hunter x Hunter `HXH_MAP_VIEWBOX` = 2000 × 1187 (`src/data/hunterxhunter/mapLevels.ts`)
-- One Piece `ONEPIECE_MAP_VIEWBOX` = 2000 × 1000 (`src/data/onepiece/mapLevels.ts`)
-- Bleach `BLEACH_WORLD_VIEWBOX` = 2000 × 1250; Karakura/Seireitei/Hueco Mundo 1600 × 1000, Reiōkyū
-  1400 × 1000 (`src/data/bleach/mapConstants.ts`). Bleach has no official map: its 5 maps are original
-  SVGs generated by `python3 scripts/bleach-maps.py` (deterministic) into
-  `public/assets/worlds/bleach/maps/` — if you move a landmark there, move its pin too.
-- Attack on Titan `AOT_WORLD_VIEWBOX` = 2000 × 950 (the Earth flipped vertically, from public-domain
-  Natural Earth outlines in `scripts/mapgen/data/`); Paradis 1600 × 1100 (flipped Madagascar, stretched);
-  Walls 1600 × 1240 (Sina 250 / Rose 380 / Maria 480 km to scale); Shiganshina/Trost/Liberio/Paths
-  1400 × 1000 (`src/data/attackontitan/mapConstants.ts`). All 7 are original SVGs generated by
-  `python3 scripts/mapgen/aot.py`, which also rewrites the pins (`apply_pins`).
-- Jujutsu Kaisen `JJK_JAPAN_VIEWBOX` = 1800 × 1600 (Mercator on public-domain Natural Earth prefectures,
-  Okinawa inset, the ten Culling Game colonies); Tokyo 2000 × 1400, Shibuya 1500 × 1700, Jujutsu High
-  campus 1600 × 1100 (imagined: the series shows no plan), Kyoto 1500 × 1500, Sendai 1600 × 1100
-  (`src/data/jujutsukaisen/mapConstants.ts`). All 6 are original SVGs generated by
-  `python3 scripts/mapgen/jjk.py` (real street/station/river geometry for Tokyo/Shibuya/Kyoto/Sendai),
-  which also rewrites the pins (`apply_pins`).
-- **Every map level has an image.** Sub-maps without a usable official/reference map (Naruto's 9
-  villages, HxH 8, One Piece 21, Dragon Ball 7, Black Clover 5) are **original SVG maps** generated by
-  `python3 scripts/mapgen/<world>.py` (`naruto`, `hxh`, `onepiece`, `dragonball`, `blackclover`) on the
-  shared toolkit `scripts/mapgen/kit.py`, wired as `kind: 'map'` assets via `originalMapAsset()`
-  (`src/data/originalMapAssets.ts`; One Piece through `ONEPIECE_ORIGINAL_SUBMAPS`). Each map function
-  declares its pins' positions and the script **rewrites those locations' `x`/`y` in `src/data/<world>/`**
-  (`apply_pins`, idempotent, handles both `id:` objects and the compact `L(...)` form) — so edit the
-  generator, not the coordinates, and re-run it. Deterministic (fixed seeds, `<use>` tree symbols to keep
-  files ≤ ~280 KB). `PREVIEW_DIR=<dir>` also writes an HTML preview with the pins overlaid.
-
-For Naruto the reference PNG is 990 × 579 px, so convert: `flowX = px_x / 990 * 1500`,
-`flowY = px_y / 579 * 882.2204`. Sub-maps have their own width/height. If you replace a map image,
-keep the same viewBox or all pins break. The PNG-reading scripts (`find-red-dots`, `extract-boundaries`,
-via `pngjs`) emit coordinates already converted to the flow plane — paste their output into the data.
-
-### Map markers & tournaments (world-agnostic)
-- **Map markers** (`WorldConfig.mapMarkers`, `src/lib/mapMarkers.ts`): a marker is a *view on events*,
-  not new data — a location is "marked" when it hosts an event tagged `eventTag` (Dragon Ball:
-  `desiderio-del-drago` = every wish to a dragon). `FiltersDrawer` gets one toggle per marker present in
-  the dataset (`filters.highlightMarkers`), marked pins turn red like One Piece's Poneglyphs
-  (`MapNode.marked`), clusters containing one turn red too, and so do the pins that drill into a sub-map
-  containing one. The location scheda/page lists the marker's events (`sectionTitle`). New world = add a
-  config entry + tag the events; no component edits.
-  Tags for events that already exist live in `src/data/<world>/markerTags.ts` (`withEventTags`). Markers today:
-  `vita-e-morte` (deaths & resurrections, every world), dragon wishes + Dragon Ball hunts, Devil Fruits eaten (One
-  Piece, besides the Poneglyph toggle), Sukuna's fingers, Tailed Beasts, Nine Titans, Hōgyoku, Ging's trail, devils.
-- **Story moment** (`filters.untilArcId`, `src/lib/storyMoment.ts`): an anti-spoiler range slider in `FiltersDrawer`.
-  A place exists from the first arc it appears in (its `arcIds` + its events' arcs), an event from its arc; places/events
-  without arc info stay visible. Applied in `filterLocations`/`filterEvents`, so pins, count and timeline agree.
-- **Tournaments** (`WorldDataset.tournaments`, `Tournament` in `src/types/index.ts`): rounds → matches →
-  sides (characters or a label, e.g. a pseudonym like "Jackie Chun" with the real character linked).
-  `format: 'bracket'` (each round has half the matches of the previous one — `validate:data` checks it)
-  is drawn as an SVG bracket by `TournamentView` (`src/components/tournaments/`); `'rounds'` is a list.
-  Shown in the **"Tornei" tab** of the hosting location's scheda (selector when several) and in the
-  location's SEO page; a pin that opens a sub-map also shows the tournaments held inside it
-  (`tournamentsAt`). Participants become graph relations of the location.
-
-### Focus mode & route stepper (narrative interactions)
-- **Focus mode**: when a location or route is selected, `InteractiveWorldMap` computes a "related"
-  set (same arc / same characters / same route) and passes `dimmed` to the unrelated `MapNode`s, so
-  the connected context stands out. `MapFocusBreadcrumb` shows what's in focus + an "exit" that
-  clears the selection; clicking the map pane (`onPaneClick`) also exits.
-- **Route stepper** (`src/components/map/RouteStepper.tsx`, embedded in `RouteDetailsModal`): "follow
-  the route" — Prev/Next + auto **Play** walk the map through a route's steps by setting
-  `selectedRoute` + `selectedLocation` in the store (the canvas centres/highlights each step). No
-  React Flow access needed from the modal — it drives the shared store, the map reacts. The step
-  **index is controlled by `RouteDetailsModal`** (`activeIndex`/`onActiveIndexChange`), so the
-  scheda's steps-order list highlights the current step (`aria-current="step"`, glow) and marks the
-  passed ones done (✓) as playback advances — you see at a glance where you've arrived.
-
-### Floating map panels (legend · routes · timeline)
-The over-map panels share `FloatingPanel` (`src/components/common/FloatingPanel.tsx`), a WAI-ARIA
-**disclosure**: one title button with `aria-expanded`/`aria-controls` + rotating chevron toggles the
-content (state is announced, not just visual). `MapLegendFloating` is also an **interactive filter** —
-each type row is an `aria-pressed` toggle bound to `filters.locationTypes` (same state as the drawer,
-so no divergence), with per-type colour swatches and a "show all" reset. `RoutesFloatingPanel` marks
-the active route with `aria-pressed` + a non-colour "Active" badge; `TimelineBottomSheet`'s header is
-a single disclosure button (no mouse-only `div`), and its event strip is a labelled list.
-
-**Timeline playback**: the timeline is deliberately **filter-free** (lean). Its "▶ Riproduci" button
-starts a **play-all-events** walk (like a whole-world story mode): each tick sets `selectedTimelineEvent`
-+ `selectedLocation` so the map centres/focuses event-by-event. While playing, the sheet **collapses to
-a compact player bar** (progress + Pausa/Riprendi + Stop) shown only during playback; `isTimelineOpen`
-stays true so `useMapMode` reports `timeline`. Playback walks a route-scoped-or-all list that is
-independent of `selectedLocationId` (which the walk itself sets), so it never shrinks mid-play.
+Checks: `npx tsc -b`; `npm run validate:data` after coordinate/data changes; `npm run build` + `npm run smoke`; for an
+engine change look at worlds with different maps (Naruto PNG, One Piece, a generated SVG world); generator preview.

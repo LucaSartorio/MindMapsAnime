@@ -1,6 +1,6 @@
 ---
 name: add-anime-world
-description: Create a complete new anime/manga world in AniMapVerse (dataset, WorldConfig, maps, translations, SEO) through resumable, verified batches. Use when the user asks to add/create/start a new anime or manga world (e.g. "Aggiungi Fullmetal Alchemist", "add Frieren"), or to resume a world creation in progress.
+description: Create a new anime/manga world in resumable, verified batches (sources, canon perimeter, dataset, map, IT/EN, private until approved). Use for "aggiungi <anime>", "add <manga> world", or to resume one.
 argument-hint: <world slug, url slug or title> [resume]
 ---
 
@@ -41,7 +41,7 @@ the world stays unpublished (`status: 'coming_soon'`) until the publication gate
 ## 2. Batches (default order; adapt per world, one batch per step, each resumable)
 | # | Batch | Owner | Exit check |
 |---|---|---|---|
-| 1 | `worlds.ts` entry (status stays `coming_soon`), `WorldConfig`, theme, `metadata.author/publisher`, `src/data/<slug>/` skeleton + `index.ts` + loader in `registry.ts` | orchestrator / code-architect if config needs new shapes | `npx tsc -b`, `npm run validate:data` |
+| 1 | `worlds.ts` entry (status stays `coming_soon`), `WorldConfig`, theme, `metadata.author/publisher`, `src/data/<slug>/` skeleton + `index.ts` + loader in `registry.ts` | orchestrator (built-in `Plan` agent if config needs new shapes) | `npx tsc -b`, `npm run validate:data` |
 | 2 | Map levels + map plan: original SVG via a new `scripts/mapgen/<slug>.py` on `kit.py` (or a clearly licensed asset) | map-engineer | generator runs, preview checked, viewBox recorded in `mapConstants.ts` |
 | 3 | Main characters (main/major) | anime-data-curator | validate:data + validate:i18n |
 | 4 | Places, nations/regions (pins from the generator) | anime-data-curator + map-engineer | validate:data, coordinates in range |

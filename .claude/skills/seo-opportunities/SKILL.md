@@ -1,6 +1,6 @@
 ---
 name: seo-opportunities
-description: Find and rank SEO opportunities and regressions in AniMapVerse (thin/noindex pages, orphan pages, weak internal linking, missing translations blocking /es /fr indexing, duplicate titles/descriptions, sitemap/hreflang/canonical issues) without inventing traffic data. Use for "controlla il SEO", "SEO audit", "opportunità SEO".
+description: Find and rank SEO issues and opportunities (thin/noindex, orphans, internal links, /es /fr translation gaps, titles, sitemap/hreflang/canonical) without inventing traffic data. Use for "controlla il SEO".
 argument-hint: [world] [path-to-search-console-export.csv]
 ---
 
@@ -21,4 +21,4 @@ index/noindex policy to "win" pages.
 4. **Rank** by (pages affected × likely value) / effort; prefer fixes that improve real content and links
    (enrichment, relation groups, hub pages) over template text.
 5. **Report** a table: item · class · evidence · pages affected · fix · owner skill (`/enrich-anime-world`,
-   `/sync-translations`, `/fix-ticket`). Implement only if the owner asks.
+   `/sync-translations`, `/optimize-map`). Implement only if the owner asks.

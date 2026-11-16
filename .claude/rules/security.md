@@ -13,8 +13,8 @@ paths:
 
 # Security, CI & repository protection
 
-Moved verbatim from `CLAUDE.md`, plus the guardrails below. Full guide: `docs/SECURITY_SEC-01.md`,
-`docs/SOCIAL_STATE_BOT.md`; current state + ruleset proposal: `docs/SECURITY_SEC-02.md`.
+Full guide: `docs/SECURITY_SEC-01.md`, `docs/SOCIAL_STATE_BOT.md`; current state + ruleset proposal:
+`docs/SECURITY_SEC-02.md`.
 
 - **Site CI** (`.github/workflows/site-ci.yml`, on every PR to `main`): `npm ci` + `npm run build`. A PR whose files
   are ALL under `tools/social-engine/` (or `social-*.yml` workflows) is "social-only" and skips the build

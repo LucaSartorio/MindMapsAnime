@@ -1,6 +1,6 @@
 ---
 name: seo-growth-engineer
-description: Technical/programmatic SEO engineer for AniMapVerse. Use for metadata, canonical, hreflang, sitemap, index/noindex, structured data, internal linking, thin-content analysis, slug stability, i18n URL coverage and SEO opportunity audits. Not for inventing Search Console data or inflating page counts.
+description: Technical/programmatic SEO: metadata, canonical, hreflang, sitemap, index/noindex, structured data, internal links, thin content, slug stability, i18n URL coverage.
 model: sonnet
 effort: high
 tools: Read, Grep, Glob, Edit, Write, Bash, WebFetch

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Read-only Bash policy for the READ-ONLY sub-agents (code-architect, security-devops, lightweight-research),
+ * Read-only Bash policy for the READ-ONLY sub-agents (Plan, security-devops, lightweight-research),
  * applied by the PreToolUse hook `bash-policy.mjs` when `agent_type` is one of them. Their `tools:` allowlist already removes Edit/Write/MCP writers;
  * this closes the remaining gap: Bash can write (`sed -i`, `>`, `git commit`, `npm install`…).
  *
