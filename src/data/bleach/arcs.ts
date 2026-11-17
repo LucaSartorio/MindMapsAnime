@@ -400,7 +400,7 @@ export const bleachArcs: StoryArc[] = [
     nationIds: ['nation-bl-reiokyu', 'nation-bl-wandenreich', 'nation-bl-living-world'],
     characterIds: ['char-bl-yhwach', 'char-bl-soul-king', 'char-bl-ukitake', 'char-bl-ichigo', 'char-bl-uryu', 'char-bl-aizen', 'char-bl-haschwalth', 'char-bl-askin', 'char-bl-bazz-b', 'char-bl-urahara', 'char-bl-yoruichi', 'char-bl-grimmjow', 'char-bl-orihime', 'char-bl-chad', 'char-bl-renji', 'char-bl-kazui', 'char-bl-ichika'],
     factionIds: ['faction-bl-wandenreich', 'faction-bl-schutzstaffel', 'faction-bl-karakura-group'],
-    eventIds: ['evt-bl-soul-king-absorbed', 'evt-bl-ukitake-mimihagi', 'evt-bl-askin-vs-urahara', 'evt-bl-bazz-b-vs-haschwalth', 'evt-bl-ichigo-vs-haschwalth', 'evt-bl-uryu-vs-haschwalth', 'evt-bl-yhwach-defeated', 'evt-bl-epilogue'],
+    eventIds: ['evt-bl-soul-king-absorbed', 'evt-bl-ukitake-mimihagi', 'evt-bl-askin-vs-urahara', 'evt-bl-bazz-b-vs-haschwalth', 'evt-bl-uryu-vs-haschwalth', 'evt-bl-yhwach-defeated', 'evt-bl-epilogue'],
     mangaChapters: ['~614-686'],
     animeEpisodes: ['TYBW parte 4 (2026)'],
     canon: 'canon',
