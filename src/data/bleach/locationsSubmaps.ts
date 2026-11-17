@@ -934,7 +934,7 @@ export const bleachLocationsSubmaps: Location[] = [
     },
     nationId: 'nation-bl-wandenreich',
     characterIds: ['char-bl-yhwach', 'char-bl-haschwalth', 'char-bl-ichigo', 'char-bl-uryu', 'char-bl-aizen', 'char-bl-askin', 'char-bl-urahara', 'char-bl-yoruichi', 'char-bl-grimmjow', 'char-bl-nelliel', 'char-bl-renji', 'char-bl-orihime', 'char-bl-chad'],
-    eventIds: ['evt-bl-askin-vs-urahara', 'evt-bl-ichigo-vs-haschwalth', 'evt-bl-uryu-vs-haschwalth', 'evt-bl-yhwach-defeated'],
+    eventIds: ['evt-bl-askin-vs-urahara', 'evt-bl-uryu-vs-haschwalth', 'evt-bl-yhwach-defeated'],
     arcIds: ['arc-bl-tybw-calamity'],
     importance: 'main',
     tags: ['wahrwelt', 'battaglia-finale', 'yhwach'],

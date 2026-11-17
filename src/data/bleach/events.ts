@@ -2133,21 +2133,6 @@ export const bleachEvents: TimelineEvent[] = [
     tags: ['scontro', 'sternritter'],
   }),
   ev({
-    id: 'evt-bl-ichigo-vs-haschwalth',
-    title: { it: 'Ichigo contro Haschwalth', en: 'Ichigo vs Haschwalth' },
-    description: {
-      it: "Sulla strada per la torre di Yhwach, Ichigo affronta il Gran Maestro degli Sternritter, il cui Schrift The Balance devia sugli avversari le ferite che riceve.",
-      en: "On the way to Yhwach's tower, Ichigo faces the Grand Master of the Sternritter, whose Schrift The Balance diverts the wounds he receives onto his opponents.",
-    },
-    period: P.bloodWar,
-    arcId: 'arc-bl-tybw-calamity',
-    locationId: 'loc-bl-wahrwelt',
-    characterIds: ['char-bl-ichigo', 'char-bl-haschwalth', 'char-bl-renji', 'char-bl-orihime', 'char-bl-chad'],
-    order: 1400,
-    referenceStatus: 'needs_verification',
-    tags: ['scontro', 'sternritter'],
-  }),
-  ev({
     id: 'evt-bl-uryu-vs-haschwalth',
     title: { it: 'Uryū contro Haschwalth', en: 'Uryū vs Haschwalth' },
     description: {

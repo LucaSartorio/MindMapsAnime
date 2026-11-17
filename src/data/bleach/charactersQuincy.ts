@@ -71,7 +71,7 @@ export const bleachCharactersQuincy: Character[] = [
       { targetCharacterId: 'char-bl-yhwach', label: { it: 'Il suo imperatore e la sua «metà»', en: "His emperor and his 'other half'" } },
     ],
     locationIds: ['loc-bl-silbern', 'loc-bl-division-1', 'loc-bl-senjumaru-palace', 'loc-bl-soul-king-palace', 'loc-bl-wahrwelt'],
-    eventIds: ['evt-bl-wandenreich-declaration', 'evt-bl-ichigo-vs-yhwach-first', 'evt-bl-royal-guard-falls', 'evt-bl-soul-king-absorbed', 'evt-bl-ichigo-vs-haschwalth', 'evt-bl-uryu-vs-haschwalth'],
+    eventIds: ['evt-bl-wandenreich-declaration', 'evt-bl-ichigo-vs-yhwach-first', 'evt-bl-royal-guard-falls', 'evt-bl-soul-king-absorbed', 'evt-bl-uryu-vs-haschwalth'],
     arcIds: ['arc-bl-tybw-blood-warfare', 'arc-bl-tybw-separation', 'arc-bl-tybw-calamity'],
     shortDescription: {
       it: "Il Gran Maestro degli Sternritter e successore designato di Yhwach, lettera «B», The Balance: redistribuisce la sfortuna, deviando sui nemici le ferite che riceve.",

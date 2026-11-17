@@ -5,16 +5,16 @@
   one-shot "Kon-so Reisai" (2021, event `evt-bl-konso-reisai`); "Burn the Witch" is not in the dataset
 - adaptations flagged as: anime-original arcs (Bount, Amagai, Zanpakutō Rebellion, Gotei Invasion) and the Menos Forest
   episodes → `canon: 'filler'`; the TYBW anime is treated as manga-faithful (episode numbers are only references)
-- last update: 2026-11-17 · next step: batch 4 — es/fr translation sync (then Division 2/4/9/10, ch. 556-560)
+- last update: 2026-11-17 · next step: verification pass on the 48 `needs_verification` items against the manga; events for the Division 2/4/9/10 barracks and ch. 556-560
 
 ## Batches (enrichment)
 
 | # | Batch | Status | Counts | Commit | Notes |
 |---|---|---|---|---|---|
 | 1 | relations + thin pages | done | +5 events (118 → 123); ~6 events edited (characterIds); ~3 abilities (`longDescription`, 2 set to needs_verification) | 22a3005 | gaps: thin abilities 3 → 0, characters without event 6 → 0, locations without event 12 → 7 |
-| 2 | event chapters + needs_verification | done | `mangaChapters`/`animeEpisodes` on 29 of the 31 events (31 → 2 left); manga coverage 351 → 451/686 ch.; needs_verification 39 → 35; 2 text fields fixed (isshin-vs-grand-fisher description, las-noches-wall shortDescription) | | 2 events left without reference: `evt-bl-kyoraku-captain-commander`, `evt-bl-ichigo-vs-haschwalth` |
-| 3 | chapter-gap events | done | +14 events (123 → 137), all `needs_verification`; ~31 existing events got real chapter ranges; manga coverage 451 → 601/686 ch. (66% → 88%); gaps ≥5 ch.: 18 → 1 (556-560) | | no text edited on existing events; `evt-bl-ichigo-vs-haschwalth` proposed for removal (see Open issues) |
-| 4 | es/fr translation sync | todo | batch-1 fields (13) + batch-2 text (2) + batch-3: 14 new events (title + description) | | `i18n:extract` → translate → `i18n:merge` → `i18n:index` |
+| 2 | event chapters + needs_verification | done | `mangaChapters`/`animeEpisodes` on 29 of the 31 events (31 → 2 left); manga coverage 351 → 451/686 ch.; needs_verification 39 → 35; 2 text fields fixed (isshin-vs-grand-fisher description, las-noches-wall shortDescription) | 9a84cc7 | 2 events left without reference: `evt-bl-kyoraku-captain-commander`, `evt-bl-ichigo-vs-haschwalth` |
+| 3 | chapter-gap events | done | +14 events (123 → 137), all `needs_verification`; ~31 existing events got real chapter ranges; manga coverage 451 → 601/686 ch. (66% → 88%); gaps ≥5 ch.: 18 → 1 (556-560) | 43dc753 | no text edited on existing events; `evt-bl-ichigo-vs-haschwalth` proposed for removal (see Open issues) |
+| 4 | es/fr translation sync + cleanup | done | 43 texts per locale merged (es, fr); bleach es/fr back to 100 % (0 missing / stale / orphans); `evt-bl-ichigo-vs-haschwalth` removed (137 → 136 events) | | removed from events, Yhwach `eventIds`, `arc-bl-tybw-calamity`, Wahrwelt sub-location and es/fr overlays: in the manga Uryū, not Ichigo, stays to face Haschwalth (ch. 661); events have no URL, so no SEO impact |
 
 ## Sources
 
@@ -61,7 +61,7 @@
 | evt-bl-kyoraku-captain-commander | chapter not established (Yamamoto dies ch. ~510-511) | — | unknown | left without reference |
 | evt-bl-giselle-zombies | ch. 580, 590-596 confirmed for the zombies/Mayuri; "Giselle kills Bambietta" unconfirmed | S3 | unverified | stays needs_verification |
 
-| evt-bl-ichigo-vs-haschwalth | the manga has Uryū (not Ichigo) fight Haschwalth: ch. 661 Uryū stays behind while Ichigo, Orihime, Chad climb; Haschwalth destroys the Sun Gate | S3 | disputed | event unchanged, needs_verification; proposed removal, referenced by `arcs.ts` (tybw-calamity eventIds), `locationsSubmaps.ts` (wahrwelt eventIds), `charactersQuincy.ts` (Yhwach eventIds) and es/fr overlays |
+| evt-bl-ichigo-vs-haschwalth | the manga has Uryū (not Ichigo) fight Haschwalth: ch. 661 Uryū stays behind while Ichigo, Orihime, Chad climb; Haschwalth destroys the Sun Gate | S3 | disputed | event removed in batch 4 (claim unsupported); the duel lives in `evt-bl-uryu-vs-haschwalth` |
 | evt-bl-kyoraku-captain-commander | ch. 538 does not show it; chapter not found (Yamamoto dies ch. ~511) | S3 | unknown | no reference |
 | batch-3 new events (all needs_verification) | evt-bl-kon-in-ichigo-body 13-16 · hinamori-vs-hitsugaya 129-132 · advance-team-karakura 196-199 · hueco-mundo-gatekeepers 241-244 · fake-karakura-standoff 314-316 · lieutenants-vs-fraccion 329-334 · asauchi-trial 521-523, 527 · uryu-successor 543 · bazz-b-bg9-vs-captains 547-553 · bambietta-vollstandig 554-555 · headless-star 584-589 · uryu-betrayal 619-620 · dangai-elevator 624-626 · ichigo-vs-yhwach-rematch 673-676 | S3b | unverified | one fan-summary source; locations chosen from existing ones (Silbern for Wandenreich scenes) |
 | evt-bl-grimmjow-raid, substitute-badge, royal-guard-falls, kyoraku-vs-lille | `~` ranges replaced by 199-213, 181-182, 597-603, 646-654 | S3b, S5 | unverified | royal-guard-falls and kyoraku-vs-lille stay needs_verification |
@@ -72,4 +72,5 @@
 - Locations hosting no event: `loc-bl-division-2`, `-4`, `-9`, `-10` (no verified event found yet); `loc-bl-reiokyu`,
   `loc-bl-karakura`, `loc-bl-las-noches` are containers with a `subMapLevelId` (events live on their sub-locations).
 - Chapter gap left: 556-560 (Mask De Masculine / Bambietta continuation; no summary found). Division 2/4/9/10 barracks still host no event.
-- es/fr translation (batch 4): 14 new batch-3 events + batch-1 fields (13) + batch-2 text edits: `evt-bl-isshin-vs-grand-fisher.description`, `loc-bl-las-noches-wall.shortDescription`.
+- `evt-bl-kyoraku-captain-commander`: still no chapter reference (ch. 538 does not show the appointment).
+- 48 `needs_verification` items rest on secondary sources only (no direct manga access): a pass against the volumes would lift most of them.
