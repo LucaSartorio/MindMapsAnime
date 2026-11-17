@@ -1,0 +1,30 @@
+{
+  "receiptId": "blackclover_yuno-grinberryall_character-journey_part-01_en.youtube.scheduled.5ae8d9a52dd1",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-11-17T06:21:59.245Z",
+  "sourceFile": "20261117T061551Z-blackclover_yuno-grinberryall_character-journey_part-01_en-youtube-scheduled.json",
+  "run": {
+    "runId": "44030632907",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/44030632907",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "character-journey:blackclover:yuno-grinberryall:part-01@en",
+    "platform": "youtube",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-11-17T12:00:00+01:00",
+    "providerPostId": "431044720",
+    "providerPostUuid": "118385060641852268",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=118385060641852268",
+    "recordedAt": "2026-11-17T06:15:51Z",
+    "recordedBy": "chatgpt-work-publishing-agent"
+  }
+}
