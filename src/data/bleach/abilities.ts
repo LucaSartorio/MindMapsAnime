@@ -317,6 +317,11 @@ export const bleachAbilities: Jutsu[] = [
   ab('gamuza', 'Gamuza', 'hollow', R, ['nelliel'], {
     it: "«Utae, Gamuza» — «Canta»: la Resurrección di Nelliel, un corpo da centauro e la lancia a doppia punta Lanzador Verde.",
     en: '"Utae, Gamuza" — "Declare": Nelliel\'s Resurrección, a centaur\'s body and the double-pointed lance Lanzador Verde.',
+  }, {
+    longDescription: {
+      it: "Nel libera la Resurrección durante lo scontro con Nnoitra (cap. 296): prende la forma di un centauro e impugna una lunga lancia a doppia punta. Con il colpo Lanzador Verde la scaglia attraverso la spada di Nnoitra fino alla sua spalla. Poi la trasformazione si spezza di colpo: Nel torna bambina, Gamuza svanisce e Nnoitra ne approfitta per calpestarla.",
+      en: "Nel releases her Resurrección during the clash with Nnoitra (ch. 296): she takes the shape of a centaur and wields a long double-pointed lance. With the Lanzador Verde attack she hurls it through Nnoitra's sword and into his shoulder. Then the transformation suddenly breaks: Nel reverts to a child, Gamuza vanishes and Nnoitra takes the chance to stamp on her.",
+    },
   }),
 
   /* ============================== QUINCY ============================== */
@@ -363,6 +368,12 @@ export const bleachAbilities: Jutsu[] = [
   ab('antithesis', 'The Antithesis', 'quincy', SCHRIFT, ['uryu'], {
     it: "Lo Schrift «A» donato a Uryū come successore di Yhwach: inverte ciò che è accaduto fra due punti, scambiando le ferite fra sé e l'avversario.",
     en: "The Schrift 'A' bestowed on Uryū as Yhwach's successor: it reverses what happened between two points, swapping wounds between himself and his opponent.",
+  }, {
+    referenceStatus: 'needs_verification',
+    longDescription: {
+      it: "Yhwach nomina Uryū suo successore e gli fa bere il proprio sangue, annunciando che il suo potere si risveglierà e porterà la stessa lettera, la A (cap. 543). Antithesis inverte ciò che è già accaduto fra due bersagli: nel duello con Haschwalth, nato dal sospetto di tradimento del Gran Maestro (cap. 659), Uryū svela il potere facendo comparire su di lui tutte le ferite che ha subìto. Lo stesso Haschwalth lo riconosce come forse l'unica arma capace di fermare Yhwach.",
+      en: "Yhwach names Uryū his successor and has him drink his own blood, announcing that his power will awaken and bear the same letter, the A (ch. 543). Antithesis reverses what has already happened between two targets: in the duel with Haschwalth, which begins when the Grand Master suspects him of treason (ch. 659), Uryū reveals the power by making all the wounds he has suffered appear on his opponent. Haschwalth himself recognises it as perhaps the only weapon able to stop Yhwach.",
+    },
   }),
   ab('explode', 'The Explode', 'quincy', SCHRIFT, ['bambietta'], {
     it: "Lo Schrift «E» di Bambietta: qualunque cosa venga colpita dalla sua energia esplode. Con questo potere e il medaglione mette in difficoltà Komamura.",
@@ -431,6 +442,12 @@ export const bleachAbilities: Jutsu[] = [
   ab('power', 'The Power', 'quincy', SCHRIFT, ['meninas'], {
     it: "Lo Schrift «P» di Meninas McAllon: una forza fisica smisurata in un corpo minuto.",
     en: "Meninas McAllon's Schrift 'P': immense physical strength in a petite body.",
+  }, {
+    referenceStatus: 'needs_verification',
+    longDescription: {
+      it: "Lo Schrift «P» dà a Meninas una forza fuori scala: i suoi muscoli si gonfiano a dismisura e un solo braccio le basta per scagliare un edificio. Dopo il debutto (cap. 544) la si vede all'opera nell'assalto delle Bambies a Kenpachi, già provato dallo scontro con Gremmy: lo schiaccia in un cratere e poi fa crollare un edificio sugli Shinigami accorsi in suo aiuto (cap. 580).",
+      en: "The Schrift 'P' gives Meninas off-the-scale strength: her muscles swell enormously and a single arm is enough for her to hurl a building. After her debut (ch. 544) she is seen at work in the Bambies' assault on Kenpachi, already worn down by his clash with Gremmy: she smashes him into a crater and then brings a building down on the Soul Reapers rushing to help him (ch. 580).",
+    },
   }),
 
   /* ======================= POTERI UMANI E FULLBRING ======================= */

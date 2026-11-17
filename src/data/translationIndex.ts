@@ -29,11 +29,19 @@ export const TRANSLATION_GAPS: TranslationGapIndex = {
   "bleach": {
     "es": {
       "entities": 411,
-      "gaps": []
+      "gaps": [
+        "abilities:zan-bl-antithesis",
+        "abilities:zan-bl-gamuza",
+        "abilities:zan-bl-power"
+      ]
     },
     "fr": {
       "entities": 411,
-      "gaps": []
+      "gaps": [
+        "abilities:zan-bl-antithesis",
+        "abilities:zan-bl-gamuza",
+        "abilities:zan-bl-power"
+      ]
     }
   },
   "dragonball": {
