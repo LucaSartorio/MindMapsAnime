@@ -537,8 +537,8 @@ export const bleachLocationsSubmaps: Location[] = [
     x: 520,
     y: 575,
     shortDescription: {
-      it: "Il muro bianco della cupola, così vasto da sembrare una montagna. Ichigo e Chad lo sfondano a colpi di Getsuga Tenshō e di Brazo, entrando nei corridoi bui della fortezza.",
-      en: "The dome's white wall, so vast it looks like a mountain. Ichigo and Chad smash through it with Getsuga Tenshō and Brazo, entering the fortress's dark corridors.",
+      it: "Il muro bianco della cupola, così vasto da sembrare una montagna. Ichigo e Renji lo sfondano unendo Zangetsu e Zabimaru, e il gruppo entra nei corridoi bui della fortezza.",
+      en: "The dome's white wall, so vast it looks like a mountain. Ichigo and Renji blast through it by combining Zangetsu and Zabimaru, and the party enters the fortress's dark corridors.",
     },
     nationId: 'nation-bl-hueco-mundo',
     characterIds: ['char-bl-ichigo', 'char-bl-chad', 'char-bl-uryu', 'char-bl-rukia', 'char-bl-renji'],
