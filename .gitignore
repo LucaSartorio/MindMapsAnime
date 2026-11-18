@@ -9,6 +9,10 @@ lerna-debug.log*
 
 node_modules
 dist
+# Local environment files (may hold keys): only the template is tracked
+.env
+.env.*
+!.env.example
 dist-ssr
 *.local
 

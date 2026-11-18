@@ -16,7 +16,7 @@ argument-hint: <world> [focus: characters|locations|events|arcs|factions|abiliti
    Usefulness for maps, social journeys and SEO beats the raw number of new entities. Never pad text to pass a threshold.
 3. **Batches** of one kind or one arc (≈ 10-30 entities), delegated to `anime-data-curator` with the exact ids and
    gaps to address. Each batch: research/verify → edit using the world's existing files/kits → `npm run validate:data`
-   → `npm run validate:i18n` → `npm run seo:slugs` + `npm run i18n:index` if entities were added → re-run
+   → `npm run validate:i18n` → `npm run seo:slugs` + `npm run i18n:index` if entities were added → `npx tsc -b` → re-run
    `data:coverage` to prove the delta → update the manifest (create it from `docs/world-pipeline/README.md` if
    missing) → commit.
 4. If the world is published in /es or /fr (`translatedLocales` in `worlds.ts`), changed/added texts make the

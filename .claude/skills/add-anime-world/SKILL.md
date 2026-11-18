@@ -53,7 +53,7 @@ the world stays unpublished (`status: 'coming_soon'`) until the publication gate
 | 9 | Power system (abilities) | anime-data-curator | validate:data |
 | 10 | Routes/journeys, secondary characters, enrichment, `appearance.ts` portraits for main/major | curator + frontend for art checks | data:coverage gaps reviewed |
 | 11 | Translations: `{ it, en }` everywhere; es/fr overlays only if the owner wants the world on /es /fr (`/sync-translations`) | curator | validate:i18n, i18n:audit |
-| 12 | Publication gate: `npm run seo:slugs` + import `slugs.ts`, `npm run i18n:index`, flip `status: 'available'` **only with owner approval**, then `npm run social:catalog` (commit `catalog/*.json`) + `npm run social:validate`, full `npm run build` + `npm run smoke`, `seo-growth-engineer` spot check | qa-performance-engineer + seo-growth-engineer | build + smoke green |
+| 12 | Publication gate: `npm run seo:slugs` + import `slugs.ts`, `npm run i18n:index`, flip `status: 'available'` **only with owner approval**, then `npm run social:catalog` (commit `catalog/*.json`) + `npm run social:validate`, `npm run smoke` (runs the full build first: no separate `npm run build`), `seo-growth-engineer` spot check | qa-performance-engineer + seo-growth-engineer | build + smoke green |
 
 Batch rules: write ids with the world prefix (`char-<abbr>-…`), never rename an existing id, every narrative
 text `{ it, en }`, uncertain → `referenceStatus: 'needs_verification'`, filler/anime-only/movie → `canonStatus`.

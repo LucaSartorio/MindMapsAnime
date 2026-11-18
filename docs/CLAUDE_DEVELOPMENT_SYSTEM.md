@@ -8,7 +8,7 @@ già da solo (verificato con misure, §8).
 
 | Componente | Quando entra nel contesto | Contenuto |
 |---|---|---|
-| `CLAUDE.md` (~7,8k caratteri) | ogni sessione e ogni sub-agent (tranne `lightweight-research`) | progetto, criteri di lavoro e delega, mappa del contesto, comandi principali, invarianti, matrice di validazione, git |
+| `CLAUDE.md` (~9,6k caratteri, ~44,2k token di un turno banale con Sonnet, §8) | ogni sessione e ogni sub-agent (tranne `lightweight-research`) | progetto, triage T0-T3, delega, escalation, contratto di completamento, mappa del contesto, comandi, invarianti, matrice di validazione, git |
 | `.claude/rules/*.md` (10 file, `paths`) | quando si legge/modifica un file corrispondente | solo vincoli, errori da evitare e verifiche dell'area |
 | `docs/ARCHITECTURE.md` | solo se letto (on-demand) | come funziona il codice e perché: descrizioni, decisioni e misure storiche (testo originale di CLAUDE.md, invariato) |
 | Descrizioni di agent e skill | ogni sessione (le skill manuali no) | una riga ciascuna, per il routing |
@@ -69,7 +69,10 @@ Tre livelli, da non confondere:
    Claude Code li salta nelle cartelle non trusted e nei processi `-p`.
 
 `settings.json`: allow per validatori e report, ask su `.github/**` e sui file di hook/settings, deny sulla lettura di
-`.env` e sulla modifica dei file generati o di stato. **Gli hook non sostituiscono il ruleset di `main`**
+`.env`, `.env.local`, `.env.*.local`, `.env.{production,development,test}` e sulla modifica dei file generati o di
+stato. `.gitignore` esclude `.env` e `.env.*` (tranne `.env.example`): una chiave locale non finisce in un commit. Il
+deny di `Read` non copre `cat .env` via Bash: vale l'istruzione di `security.md` (oggi nel repo non esiste alcun `.env`).
+**Gli hook non sostituiscono il ruleset di `main`**
 (`docs/SECURITY_SEC-02.md`): valgono solo per `git` nelle sessioni Claude Code.
 
 ## 5. CI
@@ -113,6 +116,46 @@ Metodo per confronti prima/dopo: stessi prompt in processi `claude -p` nuovi, st
 input totali (cache inclusa), non i dollari (dipendono dallo stato della cache) e annota il numero di turni. Il peso
 della configurazione = token di un turno banale nel repo meno lo stesso turno in una cartella vuota.
 
+**Riepilogo**: `node scripts/claude-usage-report.mjs [--outcomes esiti.json] <run.json|sessione.jsonl>…` (test:
+`node --test scripts/claude-usage-report.test.mjs`). Per riga: modelli, effort, token input/output/cache, durata,
+turni, tool call e deleghe (dai transcript, sub-agent inclusi), costo API stimato; totale, task risolti (`pass` in
+`esiti.json`, assegnato a mano dopo aver verificato il risultato), token e costo **per task risolto**. Non stampa
+prompt, risposte né input dei tool. I transcript ripetono lo stesso `usage` su ogni blocco di una risposta: lo script
+deduplica per `requestId` (senza, i token risultano moltiplicati). Il costo è la stima API a listino: non è
+l'addebito dell'abbonamento né il consumo dei limiti d'uso.
+
+**Insidie verificate (2026-11-18, Cloud, Claude Code 2.1.327)**:
+- `CLAUDE.md` è caricato solo nella cartella del repository: in una copia in scratchpad (anche dopo `git init`) non
+  lo era. Per confrontare due versioni della configurazione si scambiano i file nel checkout
+  (`git checkout <sha> -- CLAUDE.md .claude`, poi `git checkout HEAD -- CLAUDE.md .claude`), alternando le esecuzioni.
+- `claude -p` in una cartella non *trusted* ignora `permissions.allow` di `settings.json` (i comandi di sola lettura
+  girano comunque, gli altri no): passare gli stessi `--allowedTools` a entrambe le esecuzioni.
+- La varianza di un singolo task dipende dalla strategia di ricerca del modello (es. una finestra `rg -A8` troppo
+  corta → un tool call in più): servono ≥ 3 esecuzioni per lato e non si dichiarano differenze dentro la varianza.
+
+**Set di benchmark** (stesso modello, ≥ 3 esecuzioni per versione, alternate; nessun push, nessuna produzione):
+
+| # | Livello | Task | Esito `pass` se |
+|---|---|---|---|
+| 1 | T0 | "Which file registers the world whose slug is 'bleach', and what is its status? Answer only as path:line + status." | `src/data/worlds.ts`, riga dell'entry, `available` |
+| 2 | T1 | rigiocare una piccola PR UI già mergiata sul suo commit base, in un worktree usa e getta | check della matrice verdi, diff equivalente a quello mergiato |
+| 3 | T2 (analisi) | `/analyze-data-coverage bleach` | numeri identici a `npm run -s data:coverage -- bleach` |
+| 4 | T2 (verifica) | `/audit-animapverse perf` | una sola build, chunk riportati = output di `vite build` |
+| 5 | T2/T3 | rigiocare una PR multi-modulo già mergiata (es. #328) sul suo base, senza push | stessi check della PR verdi, nessuna regressione allo smoke |
+
+**Misure registrate**:
+
+| Misura (2026-11-18, Cloud 4 vCPU) | Prima (`main` 96c28a4) | Dopo (questo branch) | Differenza |
+|---|---|---|---|
+| `npm run build` | 91,6 s | invariato | — |
+| fase browser di `npm run smoke` (dopo la build) | fallita in 1,6 s (Chromium non trovato) | 82 s, OK | smoke di nuovo utilizzabile in Cloud |
+| sequenza "build poi smoke" sullo stesso albero (release gate, `optimize-map`, `optimize-performance`, agent frontend/map) | ≈ 265 s (2 build + browser) | ≈ 174 s (1 build + browser) | −1 build ≈ −92 s per occorrenza |
+| turno banale ("OK", Sonnet, 3+3 run) | 43.615 token | 44.189 token | +574 token (+1,3 %) a sessione: costo del triage/escalation in `CLAUDE.md` |
+| task 1 (T0, Sonnet, 3+3 run, tutti `pass`) | media 90.072 token · 2 turni · 1 tool call · 3,1 s | media 120.314 token · 2,7 turni · 1,7 tool call · 3,7 s | dentro la varianza: in 2 run "dopo" il primo `rg` non arrivava alla riga di `status` |
+
+I task 2-5 non sono ancora stati misurati: nessuna baseline, nessun risparmio di token dichiarato. Il beneficio atteso
+del triage (meno deleghe e build inutili, escalation senza tentativi ciechi) va verificato con loro.
+
 ## 9. Cloud e locale
 
 | Superficie | CLAUDE.md | rules con `paths` | agent | skill | settings/hook |
@@ -122,6 +165,8 @@ della configurazione = token di un turno banale nel repo meno lo stesso turno in
 | Thread Cloud di *Projects* | sì | **no** | non documentato | **no** | **no** |
 
 Nei thread *Projects* il core dice di leggere a mano rule e `SKILL.md`; le protezioni restano CI, CODEOWNERS e ruleset.
+Nei processi `claude -p` (benchmark, automazioni) la cartella non è *trusted*: `permissions.allow` è ignorato, mentre
+l'hook di `settings.json` gira (§4); `CLAUDE.md` si carica solo dentro il repository (§8).
 Le modifiche ai file degli agent valgono dalla sessione successiva.
 
 ## 10. Troubleshooting
@@ -143,3 +188,43 @@ Le modifiche ai file degli agent valgono dalla sessione successiva.
 - Nuovo agent o skill solo se una misura mostra un vantaggio (costo, isolamento del contesto, procedura specifica del
   progetto) rispetto a Claude Code e agli strumenti integrati; aggiungerlo qui, poi `npm run claude:validate`.
 - Nuova area di codice → aggiornare i `paths` della rule competente.
+
+## 12. Routing: triage, escalation e completamento
+
+Il criterio è in `CLAUDE.md` (*Classify, then act*); qui il perché e la meccanica. Il rischio prevale sulla dimensione
+del diff: una riga in un workflow è T3, cento righe di dati di un mondo sono T2.
+
+| Livello | Chi lavora | Controlli |
+|---|---|---|
+| T0 diretto | sessione principale con `rg`/validatori; nessun sub-agent | solo il controllo deterministico pertinente, nessuna build |
+| T1 circoscritto | sessione principale, o uno specialista se isolare il contesto conviene | mirati durante il lavoro, la riga della matrice prima della consegna |
+| T2 articolato | skill + specialisti necessari, modifiche serializzate; agent `Plan` se il disegno non è ovvio | matrice completa, una build/smoke finale |
+| T3 critico | sessione principale; `Plan` e `security-devops` in sola lettura; review indipendente `/code-review` / `/security-review` | gate completo; approvazione del proprietario per permessi, secret, ruleset, produzione |
+
+**Trajectory routing**: nessun agent dedicato. Dopo l'esplorazione iniziale la sessione rivaluta il livello se il
+raggio d'azione cresce (store condiviso, hydration SSR, route SEO, CI, stato social) e lo alza *prima* di modificare.
+
+**Escalation (casi A-D di `CLAUDE.md`)**: un solo intervento per fallimento, sempre con un'informazione nuova.
+- A, contesto mancante → leggere il file/la rule mancante e rieseguire il solo controllo fallito.
+- B, errore implementativo circoscritto → una correzione mirata e lo stesso controllo.
+- C, ragionamento errato con i fatti giusti → più effort o un modello più forte: nella sessione principale lo decide il
+  proprietario (`/model`, effort); per uno specialista si rilancia la singola delega con l'override `model` (precedenza
+  in §2) passando l'evidenza raccolta, senza ripetere la ricerca. Mai cambiare frontmatter o variabili globali per un task.
+- D, stesso fallimento dopo una correzione, o area critica → stop: causa, evidenze, opzioni. Mai aggirare un hook, un
+  deny o un controllo.
+
+**Contratto di completamento**: il report finale della sessione usa `STATUS: PASS | FAIL | PARTIAL | BLOCKED`; gli
+stati degli agent si traducono (`done`/`batch-done`/`found`/`ok`/`pass` → PASS solo se i controlli sono stati eseguiti;
+`partial` → PARTIAL; `blocked` → BLOCKED; `fail` → FAIL). Seguono file, controlli eseguiti con esito reale, controlli
+non eseguiti e perché, rischi residui, passi manuali. Nessun agent `verifier` né Stop hook: `qa-performance-engineer`,
+`/code-review` e i validatori bastano, e uno Stop hook con la build costerebbe ~90 s a ogni risposta.
+
+**Cascade dei controlli**: prima i più economici (validatori ~1 s, `claude:validate` ~1 s, `tsc -b`, `test:seo`
+~8 s), stop al primo fallimento; i superset una volta per stato dell'albero (`smoke` ⊃ `build` ⊃ validatori,
+`tsc -b`, `test:seo`, `i18n:audit`).
+
+**Del Model Routing Playbook non si applica**: router esterni o classificatori automatici del modello (il modello
+della sessione è del proprietario, gli specialisti hanno il loro nel frontmatter); worker generici `quick`/`build`/
+`deep` (duplicherebbero gli specialisti senza la loro conoscenza del dominio); modifica automatica degli effort (nessuna
+misura riproducibile lo giustifica); escalation automatica tra modelli (la sessione non può cambiare il proprio modello;
+la policy C la rende esplicita); nuovi agent, hook o skill.

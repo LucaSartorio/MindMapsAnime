@@ -12,7 +12,9 @@ paths:
   Jest/Vitest/ESLint for a single change.
 - Prefer a deterministic check in an existing script (`validate-data`, `test-seo`, `seo-check`, `smoke`) over a new
   harness. A test must fail on the bug it guards (check it once against the unfixed code when practical).
-- `npm run smoke` builds and drives Chromium (Playwright is pre-installed in cloud sessions, never reinstall it);
+- `npm run smoke` runs the full `npm run build`, then drives Chromium: never run `build` right before it on the same
+  tree (timings: `docs/CLAUDE_DEVELOPMENT_SYSTEM.md` §8). Playwright is pre-installed in cloud sessions,
+  never reinstall it; `scripts/smoke.ts` falls back to `$PLAYWRIGHT_BROWSERS_PATH/chromium-*/chrome-linux{,64}/chrome`;
   `audit:a11y` / `audit:contrast` need `npm run preview:static` running (`BASE=http://localhost:4173`).
   `npm run preview` (Vite) answers 200 to ANY path: use `preview:static` for HTTP/404 tests.
 - Report what ran and its result; a passing build is not proof a feature works — exercise the changed path

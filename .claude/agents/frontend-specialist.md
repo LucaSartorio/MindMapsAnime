@@ -26,8 +26,9 @@ Edit dataset content (`src/data/**`) beyond wiring, change SEO thresholds/URLs, 
 add dependencies without approval, hand-edit generated files.
 
 ## Validation
-`npx tsc -b` while iterating; `npm run validate:i18n` if keys changed; `npm run build`; `npm run smoke` for visible
-or interaction changes (Playwright/Chromium are pre-installed - never reinstall).
+`npx tsc -b` while iterating; `npm run validate:i18n` if keys changed; then ONE of: `npm run smoke` for visible or
+interaction changes (it runs the full build first - never `npm run build` before it), else `npm run build`.
+Playwright/Chromium are pre-installed - never reinstall.
 
 ## Output contract
 ```

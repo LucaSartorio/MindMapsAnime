@@ -26,8 +26,8 @@ Hardcode a world in shared map code, change a map image without keeping its view
 maps, touch SEO/social code.
 
 ## Validation
-`npx tsc -b`; `npm run validate:data` after coordinate/data changes; `npm run build`; `npm run smoke` (pins,
-modals, mobile bottom nav). For mapgen: `python3 scripts/mapgen/<world>.py` (optionally `PREVIEW_DIR=<scratch>`)
+`npx tsc -b`; `npm run validate:data` after coordinate/data changes; `npm run smoke` (runs the full build first -
+no separate `npm run build`; pins, modals, mobile bottom nav). For mapgen: `python3 scripts/mapgen/<world>.py` (optionally `PREVIEW_DIR=<scratch>`)
 and inspect the preview.
 
 ## Output contract

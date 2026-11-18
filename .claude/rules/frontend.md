@@ -41,6 +41,6 @@ How it works (decisions, measurements): `docs/ARCHITECTURE.md` › Frontend. Vis
   `aria-hidden` glyphs, `aria-disabled`); `ink-300` is not AA on `ink-600` or lighter; panels over the map use
   `bg-ink-900/90`, not `.panel`; white text only on `chakra-600`/`ember-600` or darker; dimmed pins dim only dot + icon.
 
-Checks: `npx tsc -b` → `npm run build`; `npm run smoke` for any visible/interaction change (header: 5 routes × 6
-viewports, modals, mobile, hydration kept); a11y: `npm run preview:static`, then `BASE=http://localhost:4173 npm run
+Checks: `npx tsc -b` → `npm run smoke` for any visible/interaction change (it includes the full build; header: 5
+routes × 6 viewports, modals, mobile, hydration kept), else `npm run build`; a11y: `npm run preview:static`, then `BASE=http://localhost:4173 npm run
 audit:a11y` and `npm run audit:contrast` (each scenario declares the state it must reach).
