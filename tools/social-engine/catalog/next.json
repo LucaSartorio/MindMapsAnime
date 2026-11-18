@@ -1,19 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-18T06:30:56.431Z",
-  "status": "ready",
+  "generatedAt": "2026-11-18T06:42:38.243Z",
+  "status": "backlog",
   "feedTail": [
-    {
-      "renderId": "character-journey:onepiece:nami:part-02@en",
-      "contentType": "character-journey",
-      "animes": [
-        "onepiece"
-      ],
-      "characters": [
-        "onepiece:nami"
-      ],
-      "part": 2
-    },
     {
       "renderId": "character-journey:dragonball:goku:part-04@en",
       "contentType": "character-journey",
@@ -70,6 +59,19 @@
         "blackclover:yuno-grinberryall"
       ],
       "part": 1
+    },
+    {
+      "renderId": "character-versus:naruto:obito-uchiha-vs-bleach-yasutora-chad-sado@en",
+      "contentType": "character-versus",
+      "animes": [
+        "naruto",
+        "bleach"
+      ],
+      "characters": [
+        "naruto:obito-uchiha",
+        "bleach:yasutora-chad-sado"
+      ],
+      "part": null
     }
   ],
   "rules": {
@@ -90,487 +92,28 @@
     "error": null
   },
   "backlog": {
-    "unpublished": [],
+    "unpublished": [
+      {
+        "renderId": "character-versus:naruto:obito-uchiha-vs-bleach-yasutora-chad-sado@en",
+        "contentType": "character-versus",
+        "renderedAt": "2026-11-18T06:42:37.507Z",
+        "missing": [
+          "instagram",
+          "facebook",
+          "tiktok",
+          "youtube"
+        ]
+      }
+    ],
     "unfinished": [],
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "feed46:character-journey:blackclover:yuno-grinberryall:part-01@en:samples0",
-  "rejected": {
-    "JOURNEY_PART_ORDER": 35,
-    "JOURNEY_PART_SPACING": 1,
-    "MAX_SAME_CHARACTER_STREAK": 2
-  },
-  "considered": 662,
-  "trace": {
-    "traceVersion": 1,
-    "mode": "coldstart",
-    "seed": "feed46:character-journey:blackclover:yuno-grinberryall:part-01@en:samples0",
-    "analytics": {
-      "coldStart": true,
-      "samples": 0,
-      "contents": 0,
-      "minimumSamples": 8
-    },
-    "recent": [
-      {
-        "renderId": "character-journey:onepiece:nami:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "onepiece"
-        ],
-        "characters": [
-          "onepiece:nami"
-        ]
-      },
-      {
-        "renderId": "character-journey:dragonball:goku:part-04@en",
-        "contentType": "character-journey",
-        "animes": [
-          "dragonball"
-        ],
-        "characters": [
-          "dragonball:goku"
-        ]
-      },
-      {
-        "renderId": "character-versus:naruto:sasuke-uchiha-vs-attackontitan-mikasa-ackerman@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "attackontitan"
-        ],
-        "characters": [
-          "naruto:sasuke-uchiha",
-          "attackontitan:mikasa-ackerman"
-        ]
-      },
-      {
-        "renderId": "character-journey:hunterxhunter:gon-freecss:part-01@en",
-        "contentType": "character-journey",
-        "animes": [
-          "hunterxhunter"
-        ],
-        "characters": [
-          "hunterxhunter:gon-freecss"
-        ]
-      },
-      {
-        "renderId": "guess-character:bleach:renji-abarai@en",
-        "contentType": "guess-character",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:renji-abarai"
-        ]
-      },
-      {
-        "renderId": "character-journey:blackclover:yuno-grinberryall:part-01@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:yuno-grinberryall"
-        ]
-      }
-    ],
-    "constraints": {
-      "sameAnimeStreak": {
-        "animes": [
-          "blackclover"
-        ],
-        "length": 1
-      },
-      "forcedAnimeRotation": false,
-      "blockedAnimes": [],
-      "blockedCharacters": [
-        "blackclover:yuno-grinberryall"
-      ],
-      "characterCooldown": [
-        "onepiece:nami",
-        "dragonball:goku",
-        "naruto:sasuke-uchiha",
-        "attackontitan:mikasa-ackerman",
-        "hunterxhunter:gon-freecss",
-        "bleach:renji-abarai",
-        "blackclover:yuno-grinberryall"
-      ],
-      "contentTypeStreak": {
-        "contentType": "character-journey",
-        "length": 1
-      }
-    },
-    "hardRulesTriggered": {
-      "JOURNEY_PART_ORDER": 35,
-      "JOURNEY_PART_SPACING": 1,
-      "MAX_SAME_CHARACTER_STREAK": 2
-    },
-    "candidates": {
-      "considered": 662,
-      "eligible": 625,
-      "byContentType": {
-        "character-journey": {
-          "considered": 407,
-          "eligible": 371
-        },
-        "guess-character": {
-          "considered": 78,
-          "eligible": 77
-        },
-        "character-versus": {
-          "considered": 177,
-          "eligible": 177
-        }
-      }
-    },
-    "excluded": [
-      {
-        "renderId": "character-journey:blackclover:yuno-grinberryall:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:yuno-grinberryall"
-        ],
-        "reasons": [
-          "JOURNEY_PART_SPACING",
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "journey spacing: only 0 item(s) since Part 1 (min 2)",
-          "character streak: blackclover:yuno-grinberryall is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "guess-character:blackclover:yuno-grinberryall@en",
-        "contentType": "guess-character",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:yuno-grinberryall"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: blackclover:yuno-grinberryall is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:blackclover:asta:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:asta"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:blackclover:asta:part-03@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:asta"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 3 before Part 2 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:blackclover:noelle-silva:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:noelle-silva"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:blackclover:yami-sukehiro:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:yami-sukehiro"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:bleach:byakuya-kuchiki:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:byakuya-kuchiki"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:bleach:ichigo-kurosaki:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:ichigo-kurosaki"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:bleach:ichigo-kurosaki:part-03@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:ichigo-kurosaki"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 3 before Part 2 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:bleach:ichigo-kurosaki:part-04@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:ichigo-kurosaki"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 4 before Part 3 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      }
-    ],
-    "status": "selected",
-    "selectedId": "character-versus:naruto:obito-uchiha-vs-bleach-yasutora-chad-sado",
-    "renderId": "character-versus:naruto:obito-uchiha-vs-bleach-yasutora-chad-sado@en",
-    "contentType": "character-versus",
-    "animes": [
-      "naruto",
-      "bleach"
-    ],
-    "characters": [
-      "naruto:obito-uchiha",
-      "bleach:yasutora-chad-sado"
-    ],
-    "score": 91.86,
-    "base": 79.86,
-    "reasons": [
-      "coldstart: novelty +24.0, jitter +5.9",
-      "+12 main character"
-    ],
-    "ranked": [
-      {
-        "renderId": "character-versus:naruto:obito-uchiha-vs-bleach-yasutora-chad-sado@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "bleach"
-        ],
-        "score": 91.86,
-        "reasons": [
-          "coldstart: novelty +24.0, jitter +5.9",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "character-versus:attackontitan:reiner-braun-vs-bleach-yasutora-chad-sado@en",
-        "contentType": "character-versus",
-        "animes": [
-          "attackontitan",
-          "bleach"
-        ],
-        "score": 91.84,
-        "reasons": [
-          "coldstart: novelty +24.0, jitter +5.8",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:kurapika-vs-dragonball-piccolo@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "dragonball"
-        ],
-        "score": 91.83,
-        "reasons": [
-          "coldstart: novelty +24.0, jitter +5.8",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "character-versus:naruto:obito-uchiha-vs-bleach-rukia-kuchiki@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "bleach"
-        ],
-        "score": 91.77,
-        "reasons": [
-          "coldstart: novelty +24.0, jitter +5.8",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "character-versus:dragonball:vegeta-vs-bleach-ichigo-kurosaki@en",
-        "contentType": "character-versus",
-        "animes": [
-          "dragonball",
-          "bleach"
-        ],
-        "score": 91.7,
-        "reasons": [
-          "coldstart: novelty +24.0, jitter +5.7",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "character-versus:dragonball:vegeta-vs-bleach-rukia-kuchiki@en",
-        "contentType": "character-versus",
-        "animes": [
-          "dragonball",
-          "bleach"
-        ],
-        "score": 91.66,
-        "reasons": [
-          "coldstart: novelty +24.0, jitter +5.7",
-          "+12 main character"
-        ]
-      }
-    ],
-    "explanation": [
-      "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
-      "blackclover:yuno-grinberryall excluded in every format (maxSameCharacterStreak 1).",
-      "1 series part(s) wait for spacing (≥ 2 items between parts).",
-      "Selected character-versus:naruto:obito-uchiha-vs-bleach-yasutora-chad-sado@en (character-versus, naruto + bleach) — coldstart, score 91.86 among 625 valid candidate(s)."
-    ]
-  },
-  "pick": {
-    "contentId": "character-versus:naruto:obito-uchiha-vs-bleach-yasutora-chad-sado",
-    "renderId": "character-versus:naruto:obito-uchiha-vs-bleach-yasutora-chad-sado@en",
-    "contentType": "character-versus",
-    "animes": [
-      "naruto",
-      "bleach"
-    ],
-    "characters": [
-      "naruto:obito-uchiha",
-      "bleach:yasutora-chad-sado"
-    ],
-    "part": null,
-    "partCount": null,
-    "score": 91.86,
-    "reasons": [
-      "coldstart: novelty +24.0, jitter +5.9",
-      "+12 main character"
-    ]
-  },
-  "request": {
-    "template": "characterVersus",
-    "anime": "naruto",
-    "subject": "obito-uchiha",
-    "opponent": {
-      "anime": "bleach",
-      "subject": "yasutora-chad-sado"
-    },
-    "locale": "en",
-    "hook": "Who covered more ground, Obito Uchiha or Yasutora \"Chad\" Sado?",
-    "hookType": "question",
-    "hookId": "cv-question-1",
-    "cta": "Obito Uchiha or Yasutora \"Chad\" Sado? Tell us.",
-    "ctaType": "comment-pick-side",
-    "selection": {
-      "mode": "coldstart",
-      "score": 91.86,
-      "seed": "feed46:character-journey:blackclover:yuno-grinberryall:part-01@en:samples0"
-    },
-    "notes": "growth selector (coldstart): coldstart: novelty +24.0, jitter +5.9; +12 main character"
-  },
-  "alternatives": [
-    {
-      "renderId": "character-versus:attackontitan:reiner-braun-vs-bleach-yasutora-chad-sado@en",
-      "contentType": "character-versus",
-      "score": 91.84
-    },
-    {
-      "renderId": "character-versus:hunterxhunter:kurapika-vs-dragonball-piccolo@en",
-      "contentType": "character-versus",
-      "score": 91.83
-    },
-    {
-      "renderId": "character-versus:naruto:obito-uchiha-vs-bleach-rukia-kuchiki@en",
-      "contentType": "character-versus",
-      "score": 91.77
-    },
-    {
-      "renderId": "character-versus:dragonball:vegeta-vs-bleach-ichigo-kurosaki@en",
-      "contentType": "character-versus",
-      "score": 91.7
-    },
-    {
-      "renderId": "character-versus:dragonball:vegeta-vs-bleach-rukia-kuchiki@en",
-      "contentType": "character-versus",
-      "score": 91.66
-    }
-  ],
-  "eligible": 625
+  "seed": "",
+  "reason": "publish the existing render first: character-versus:naruto:obito-uchiha-vs-bleach-yasutora-chad-sado@en (it counts as today's video; no new content)",
+  "alternatives": [],
+  "rejected": {},
+  "considered": 0,
+  "eligible": 0,
+  "trace": null
 }

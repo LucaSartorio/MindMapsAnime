@@ -4571,6 +4571,90 @@
         }
       ]
     },
+    "character-versus:naruto:obito-uchiha-vs-bleach-yasutora-chad-sado@en": {
+      "renderId": "character-versus:naruto:obito-uchiha-vs-bleach-yasutora-chad-sado@en",
+      "contentId": "character-versus:naruto:obito-uchiha-vs-bleach-yasutora-chad-sado",
+      "template": "characterVersus",
+      "anime": "naruto",
+      "subject": "obito-uchiha-vs-bleach-yasutora-chad-sado",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-11-18T06:41:24.846Z",
+      "updatedAt": "2026-11-18T06:42:37.507Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-11-18T06:42:37.507Z",
+      "outputFile": "tools/social-engine/output/naruto_obito-uchiha-vs-bleach-yasutora-chad-sado_character-versus_en.mp4",
+      "manifestFile": "tools/social-engine/output/naruto_obito-uchiha-vs-bleach-yasutora-chad-sado_character-versus_en.manifest.json",
+      "sourceFile": "0052-naruto_obito-uchiha-vs-bleach-yasutora-chad-sado_character-versus_en.json",
+      "durationSeconds": 22,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-44253138048-1",
+        "runId": "44253138048",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/44253138048",
+        "video": "videos/naruto_obito-uchiha-vs-bleach-yasutora-chad-sado_character-versus_en.mp4",
+        "manifest": "manifests/naruto_obito-uchiha-vs-bleach-yasutora-chad-sado_character-versus_en.manifest.json",
+        "sha256": "b9cd1fbffebc5ed1500df387811a9cba7228b60a2c869df5eadc9ef3d28609b5",
+        "cover": "covers/naruto_obito-uchiha-vs-bleach-yasutora-chad-sado_character-versus_en.cover.png",
+        "expiresAt": "2026-12-18T06:42:37.507Z"
+      },
+      "social": {
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "bleach"
+        ],
+        "characters": [
+          "naruto:obito-uchiha",
+          "bleach:yasutora-chad-sado"
+        ],
+        "characterNames": [
+          "Obito Uchiha",
+          "Yasutora \"Chad\" Sado"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "question",
+        "hookId": "cv-question-1",
+        "hook": "Who covered more ground, Obito Uchiha or Yasutora \"Chad\" Sado?",
+        "ctaType": "comment-pick-side",
+        "cta": "Obito Uchiha or Yasutora \"Chad\" Sado? Tell us.",
+        "durationSeconds": 22,
+        "selection": {
+          "mode": "coldstart",
+          "score": 91.86,
+          "seed": "feed46:character-journey:blackclover:yuno-grinberryall:part-01@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Who covered more ground, Obito Uchiha or Yasutora \"Chad\" Sado?\n\nObito Uchiha (Naruto) vs Yasutora \"Chad\" Sado (Bleach): every place on the map, one winner.\n\nObito Uchiha or Yasutora \"Chad\" Sado? Pick a side 👇\n\nSave it for your next rewatch.\n\n#naruto #narutoshippuden #bleach #obitouchiha #yasutorachadsado #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Who covered more ground, Obito Uchiha or Yasutora \"Chad\" Sado? Obito Uchiha or Yasutora \"Chad\" Sado? Pick a side 👇 #naruto #narutoshippuden #bleach #obitouchiha #yasutorachadsado",
+          "youtubeTitle": "Obito Uchiha vs Yasutora \"Chad\" Sado: Who Travelled More? 🍥",
+          "youtubeDescription": "Who covered more ground, Obito Uchiha or Yasutora \"Chad\" Sado?\n\nObito Uchiha (Naruto) vs Yasutora \"Chad\" Sado (Bleach): every place on the map, one winner.\n\nObito Uchiha or Yasutora \"Chad\" Sado? Pick a side 👇\n\nInteractive map: https://animapverse.com\n\n#naruto #narutoshippuden #bleach",
+          "facebookCaption": "Who covered more ground, Obito Uchiha or Yasutora \"Chad\" Sado?\n\nObito Uchiha (Naruto) vs Yasutora \"Chad\" Sado (Bleach): every place on the map, one winner.\n\nObito Uchiha or Yasutora \"Chad\" Sado? Pick a side 👇\n\nInteractive map: https://animapverse.com",
+          "hashtags": [
+            "#naruto",
+            "#narutoshippuden",
+            "#bleach",
+            "#obitouchiha",
+            "#yasutorachadsado",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-versus:naruto:obito-uchiha-vs-hunterxhunter-killua-zoldyck@en": {
       "renderId": "character-versus:naruto:obito-uchiha-vs-hunterxhunter-killua-zoldyck@en",
       "contentId": "character-versus:naruto:obito-uchiha-vs-hunterxhunter-killua-zoldyck",
