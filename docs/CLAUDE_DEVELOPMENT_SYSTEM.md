@@ -71,8 +71,16 @@ Tre livelli, da non confondere:
    solo indirizzi, `p`/`d`/`q`… e `s///` con flag `gpiImM`) e l'esecuzione di comandi via git (`git -c`,
    `--config-env`, `--exec-path=`, `--ext-diff`, `--upload-pack`, `grep -O`; `git -c core.fsmonitor=…` e
    `diff.external` verificati), via `rg --pre`, `sort --compress-program` e via variabili `GIT_*`, `PAGER`,
-   `LESSOPEN`, `NODE_OPTIONS`, `HOME`, `XDG_CONFIG_HOME`. Resta un'allowlist
-   euristica: un guard-rail, non un confine di sicurezza.
+   `LESSOPEN`, `NODE_OPTIONS`, `HOME`, `XDG_CONFIG_HOME`. Hotfix 2026-11-18: `sed` è analizzato come getopt (`-e'…'`,
+   `-ne'…'`, `--expression`; opzioni sconosciute o abbreviate rifiutate: prima lo script attaccato a `-e` era ignorato e
+   veniva controllato il nome del file), abbreviazioni GNU/git delle opzioni pericolose (`sort --outp=`, `git fetch
+   --upload-p=`, `git grep --open-files=`), `tree -fo`; rifiutate per gli agent di sola lettura le espansioni che il
+   lexer non vede (`$VAR`, `${…}`, `{a,b}`, `$'…'`) e `$(…)` come nome del programma. Il lexer condiviso decodifica
+   `$'…'` come bash (`\'` non chiude la stringa: prima nascondeva un intero comando, `git push --force origin main`
+   incluso) e rappresenta l'output di `$(…)`/backtick con il segnaposto `$`; il guard dei push rifiuta un `git push` con
+   argomenti espansi e i push impliciti/`HEAD` dopo `cd`/`-C` verso una directory non risolvibile (`$(…)`, `$VAR`, `cd -`,
+   `~`). Resta un'analisi statica euristica: un guard-rail, non un confine di sicurezza (es. un nome di programma
+   costruito con variabili, `G=git; $G push …`, resta invisibile al guard dei push: lo copre solo il ruleset di `main`).
 
 `settings.json`: allow per validatori e report, ask su `.github/**` e sui file di hook/settings, deny sulla lettura di
 `.env`, `.env.local`, `.env.*.local`, `.env.{production,development,test}` e sulla modifica dei file generati o di
@@ -208,7 +216,7 @@ Le modifiche ai file degli agent valgono dalla sessione successiva.
 | Un agent usa un modello/effort diverso | variabili `CLAUDE_CODE_SUBAGENT_MODEL(_FORCE)`/`CLAUDE_CODE_EFFORT_LEVEL`, `availableModels` o override della delega; controllare i transcript |
 | Un agent ignora un `tools:` appena cambiato | definizioni lette all'avvio della sessione |
 | `[readonly-bash]` blocca un agent di analisi | voluto; se manca un comando di sola lettura legittimo, aggiungerlo in `readonly-bash.mjs` con un test |
-| `[guard-bash]` blocca un push | push forzato o verso `main`: usare il branch di lavoro |
+| `[guard-bash]` blocca un push | push forzato o verso `main`: usare il branch di lavoro; "shell expansion" o "unresolved directory": scrivere remote e branch letteralmente (`git push -u origin claude/x`, non `"$(git branch --show-current)"`) |
 | Edit rifiutato su un file generato | voluto (deny): usare lo script ufficiale |
 | Una rule non si carica | il file non corrisponde ai `paths` (`claude:validate` segnala i glob morti) |
 
