@@ -33,7 +33,12 @@ function maskQuotes(s) {
 
 function gitReason(args) {
   let i = 0;
-  while (i < args.length && args[i].startsWith('-')) i += args[i] === '-C' || args[i] === '-c' ? 2 : 1;
+  while (i < args.length && args[i].startsWith('-')) {
+    // `-c key=value` / `--config-env` / `--exec-path` can point core.fsmonitor, diff.external, core.pager… at any
+    // program, which then runs inside an otherwise read-only subcommand (verified with `status` and `diff`).
+    if (args[i] === '-c' || /^--config-env(=|$)|^--exec-path=/.test(args[i])) return `git ${args[i]} can make git run arbitrary commands`;
+    i += args[i] === '-C' ? 2 : 1;
+  }
   const sub = args[i];
   const rest = args.slice(i + 1);
   const pos = rest.filter((a) => !a.startsWith('-'));
@@ -50,7 +55,51 @@ function gitReason(args) {
   if (sub === 'reflog' && pos.length && pos[0] !== 'show') return 'git reflog (other than show) is not read-only';
   if (sub === 'worktree' && pos[0] !== 'list') return 'git worktree (other than list) is not read-only';
   if ((sub === 'diff' || sub === 'log' || sub === 'show') && has('--output')) return `git ${sub} --output writes a file`;
+  if (has('--ext-diff')) return 'git --ext-diff runs an external program';
+  if (has('--upload-pack', '--receive-pack', '--exec') || (sub === 'ls-remote' && rest.includes('-u'))) return `git ${sub} with a custom pack program runs arbitrary commands`;
+  if (sub === 'grep' && rest.some((a) => /^-O|^--open-files-in-pager/.test(a))) return 'git grep -O runs a pager program';
   return null;
+}
+
+/** Variables that make an allowed program run another program (git, pagers, node) or read another git config. */
+const EXEC_ENV = /^(GIT_[A-Z0-9_]*|PAGER|LESSOPEN|LESSCLOSE|NODE_OPTIONS|HOME|XDG_CONFIG_HOME)=/;
+
+/** Number of operands, skipping the values of the given options. */
+function operands(args, valueOptions = []) {
+  let n = 0;
+  for (let k = 0; k < args.length; k++) {
+    if (valueOptions.includes(args[k])) k++;
+    else if (args[k] === '-' || !args[k].startsWith('-')) n++;
+  }
+  return n;
+}
+
+// sed: only addresses + print/delete/quit/hold-style commands and `s///` with flags g p i I m M N. Anything else
+// (the `w`/`W` write and `e` execute commands, the `s///w`/`s///e` flags, `r`, blocks) is refused: fail closed.
+const SED_ADDR = String.raw`(?:\d+(?:~\d+)?|\$|\/(?:\\.|[^\/\\\n])*\/[IM]?)`;
+const SED_SUBST = String.raw`s([^\\\n\s])(?:\\.|(?!\1)[^\\\n])*\1(?:\\.|(?!\1)[^\\\n])*\1[gpiImM0-9]*`;
+const SED_CMD = new RegExp(String.raw`\s*(?:${SED_ADDR}(?:\s*,\s*${SED_ADDR})?\s*!?\s*)?(?:[pPdDlnNxhHgGz=]|[qQ]\d*|${SED_SUBST})\s*(?:;|\n|$)`, 'y');
+function sedScriptIsReadOnly(script) {
+  for (let pos = 0; pos < script.trimEnd().length;) {
+    SED_CMD.lastIndex = pos;
+    const m = SED_CMD.exec(script);
+    if (!m || !m[0].length) return false;
+    pos += m[0].length;
+  }
+  return true;
+}
+function sedReason(args) {
+  const scripts = [];
+  let operand = null;
+  for (let k = 0; k < args.length; k++) {
+    const a = args[k];
+    if (a === '--file' || a.startsWith('--file=') || /^-[a-zA-Z]*f/.test(a)) return 'sed -f runs a script file';
+    if (a === '--expression' || /^-[a-zA-Z]*e$/.test(a)) scripts.push(args[++k] ?? '');
+    else if (a.startsWith('--expression=')) scripts.push(a.slice(13));
+    else if (!a.startsWith('-') && operand === null) operand = a;
+  }
+  if (!scripts.length && operand !== null) scripts.push(operand);
+  return scripts.every(sedScriptIsReadOnly) ? null : 'sed script with commands other than print/delete/substitute (w, e, r…) is not read-only';
 }
 
 function commandReason(t) {
@@ -58,6 +107,8 @@ function commandReason(t) {
   if (i > 0 && basename(t[0]) === 'sudo') return 'sudo is not allowed';
   const prog = basename(t[i] ?? '');
   const args = t.slice(i + 1);
+  const assigned = [...t.slice(0, i), ...(prog === 'export' ? args : [])].find((a) => EXEC_ENV.test(a)) ?? (EXEC_ENV.test(prog) ? prog : null);
+  if (assigned) return `setting ${assigned.split('=')[0]} can make an allowed program run another one`;
   if (!prog) return null;
   if (/^[A-Za-z_]\w*=/.test(prog)) return null;
   if (['bash', 'sh', 'zsh', 'dash'].includes(prog)) {
@@ -67,6 +118,13 @@ function commandReason(t) {
   if (!PROGRAMS.has(prog)) return `${prog} is not in the read-only allowlist`;
   if (prog === 'find' && args.some((a) => /^-(delete|exec|execdir|ok|okdir|fprint0?|fprintf|fls)$/.test(a))) return 'find with -delete/-exec/-fprint is not read-only';
   if (prog === 'sed' && args.some((a) => a === '--in-place' || a.startsWith('--in-place=') || /^-[a-zA-Z]*i/.test(a))) return 'sed -i edits files';
+  if (prog === 'sed') { const r = sedReason(args); if (r) return r; }
+  if (prog === 'sort' && args.some((a) => a === '--output' || a.startsWith('--output=') || /^-[a-zA-Z]*o/.test(a))) return 'sort -o writes a file';
+  if (prog === 'sort' && args.some((a) => a.startsWith('--compress-program'))) return 'sort --compress-program runs a program';
+  if (prog === 'rg' && args.some((a) => a === '--pre' || a.startsWith('--pre='))) return 'rg --pre runs a program on every file';
+  if (prog === 'tree' && args.some((a) => a === '-o')) return 'tree -o writes a file';
+  if (prog === 'uniq' && operands(args, ['-f', '-s', '-w']) > 1) return 'uniq with an OUTPUT operand writes a file';
+  if (prog === 'xxd' && operands(args, ['-c', '-g', '-l', '-o', '-s', '-n', '-cols', '-groupsize', '-len', '-seek', '-name']) > 1) return 'xxd with an outfile writes a file';
   if (prog === 'awk' && args.some((a) => /system\s*\(|print[^|]*>|\|\s*getline|fflush/.test(a))) return 'awk script that writes or runs commands';
   if (prog === 'git') return gitReason(args);
   if (prog === 'npm') {

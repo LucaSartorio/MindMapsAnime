@@ -46,4 +46,8 @@ Permanent rules:
 
 Checks: `npm run social:validate` (+ `social:growth:test`, `social:publication:test` when relevant; `social:catalog` /
 `social:schema` when data or limits change; `npm run social:render:queue:dry` or `npm run social:agent -- --dry-run`)
-→ `npm run build` (the public site must be unaffected).
+→ `npm run build` (the public site must be unaffected). **Engine-only exception**: when every changed file is under
+`tools/social-engine/` (commit, then `git diff --name-only origin/main...HEAD | grep -v '^tools/social-engine/'` prints
+nothing), skip the build: nothing in the site build reads `tools/`, `social:validate` fails if `src/`
+imports the engine, and Site CI skips it for the same PR. Any other file (`src/` shared logic, `package*.json`,
+`scripts/`, workflows, data) → full build.

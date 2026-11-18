@@ -41,7 +41,7 @@ Worlds and their status (`available` | `coming_soon`) are registered in `src/dat
   frontmatter. Never set `CLAUDE_CODE_SUBAGENT_MODEL(_FORCE)` or `CLAUDE_CODE_EFFORT_LEVEL` globally.
 - **Tokens**: deterministic checks before reasoning (validators, `npm run data:coverage`, `rg`); read only the part of
   a file you need, never whole datasets or `dist/` HTML; summarize logs (failing lines only); do not redo an analysis
-  or re-run a check that is still valid for the same tree.
+  or re-run a check that is still valid for the same state (`node scripts/state-fingerprint.mjs` unchanged; else re-run).
 
 ## Context map (path-scoped rules)
 
@@ -105,7 +105,7 @@ check. `scripts/*.ts` run with `tsx --tsconfig scripts/tsconfig.json` (they impo
 | Dataset content | `validate:data` → `validate:i18n` → `seo:slugs` + `i18n:index` if entities were added → `social:catalog` + `social:validate` if an `available` world changed → `build` |
 | Translations / overlays | `i18n:status` → `i18n:index` → `validate:i18n` + `i18n:audit` → `build` |
 | SEO layer | `test:seo` → `build` (prerender + `seo:check`) |
-| Social engine | `social:validate` (+ dry runs, see `social-safety.md`) → `build` |
+| Social engine | `social:validate` (+ dry runs, see `social-safety.md`) → `build`, skipped only if every changed file is under `tools/social-engine/` (Site CI skips it too) |
 | Workflows / CI / package*.json | `security-devops` review + `test:ci-scope` + `build` |
 | `.claude/` config | `claude:validate` |
 

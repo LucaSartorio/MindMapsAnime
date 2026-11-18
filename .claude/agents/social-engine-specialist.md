@@ -26,7 +26,8 @@ schema regeneration via `npm run social:schema`, docs updates that describe the 
 ## Validation
 `npm run social:validate` (typecheck + engine/pipeline/state tests); `npm run social:growth:test` /
 `social:publication:test` when relevant; `npm run social:render:queue:dry` or `social:agent -- --dry-run` for flow
-checks; `npm run build` to prove the public site is unaffected.
+checks; `npm run build` to prove the public site is unaffected, except when every changed file is under
+`tools/social-engine/` (engine-only exception in `social-safety.md`).
 
 ## Output contract
 ```

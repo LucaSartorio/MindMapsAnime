@@ -1,13 +1,20 @@
 ---
 name: seo-opportunities
 description: Find and rank SEO issues and opportunities (thin/noindex, orphans, internal links, /es /fr translation gaps, titles, sitemap/hreflang/canonical) without inventing traffic data. Use for "controlla il SEO".
-argument-hint: [world] [path-to-search-console-export.csv]
+argument-hint: [world] [quick] [path-to-search-console-export.csv]
 ---
 
 # SEO opportunities: $ARGUMENTS
 
 Owner: `seo-growth-engineer` (read `.claude/rules/seo.md`, `docs/SEO.md`). Never change thresholds, slugs or the
 index/noindex policy to "win" pages.
+
+**Mode**: FULL (default, all of step 1) unless the arguments contain the word `quick`. A request for a complete
+check, a release, or anything about canonical/hreflang/sitemap/titles/links in the HTML is always FULL. QUICK skips
+`npm run build` and the `dist/` sample: it uses `data:coverage` (incl. its per-category indexable counts),
+`i18n:status`, `translatedLocales` and `test:seo`, and every item that needs the generated HTML (canonical, hreflang,
+sitemap, duplicate titles, broken links, the prerender per-language summary) is reported as
+`not verified — needs FULL`, never as verified or absent.
 
 1. **Facts from the repo** (no Google data unless the owner provides an export path in the arguments):
    - `npm run data:coverage -- <world>` → thin pages per category, orphans;
