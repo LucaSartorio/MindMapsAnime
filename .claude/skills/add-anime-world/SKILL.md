@@ -19,7 +19,8 @@ the world stays unpublished (`status: 'coming_soon'`) until the publication gate
 4. While the world is `coming_soon` **with a loader in `registry.ts`** it is "in progress": private everywhere (site,
    sitemap, social catalog all require `status: 'available'`), but `npm run validate:data` and `npm run validate:i18n`
    already check it (integrity + IT/EN), so `main` stays green batch after batch. SEO slug locks and thin-content
-   checks start at publication (batch 12). If the world is already registered (e.g. `fullmetalalchemist`), extend its
+   checks start at publication (batch 12). A world already `available` is extended with `/enrich-anime-world` (its
+   social catalog must be regenerated with the data). If the world is already registered (e.g. `fullmetalalchemist`), extend its
    entry: keep `id`/`slug`/`urlSlug`, review `config`/`theme`, fill `availableMapLevelIds`/default level in batch 2.
 
 ## 1. Discovery (no data written yet) → manifest sections "Scope" and "Sources"
@@ -52,7 +53,7 @@ the world stays unpublished (`status: 'coming_soon'`) until the publication gate
 | 9 | Power system (abilities) | anime-data-curator | validate:data |
 | 10 | Routes/journeys, secondary characters, enrichment, `appearance.ts` portraits for main/major | curator + frontend for art checks | data:coverage gaps reviewed |
 | 11 | Translations: `{ it, en }` everywhere; es/fr overlays only if the owner wants the world on /es /fr (`/sync-translations`) | curator | validate:i18n, i18n:audit |
-| 12 | Publication gate: `npm run seo:slugs` + import `slugs.ts`, `npm run i18n:index`, flip `status: 'available'` **only with owner approval**, full `npm run build` + `npm run smoke`, `seo-growth-engineer` spot check | qa-performance-engineer + seo-growth-engineer | build + smoke green |
+| 12 | Publication gate: `npm run seo:slugs` + import `slugs.ts`, `npm run i18n:index`, flip `status: 'available'` **only with owner approval**, then `npm run social:catalog` (commit `catalog/*.json`) + `npm run social:validate`, full `npm run build` + `npm run smoke`, `seo-growth-engineer` spot check | qa-performance-engineer + seo-growth-engineer | build + smoke green |
 
 Batch rules: write ids with the world prefix (`char-<abbr>-…`), never rename an existing id, every narrative
 text `{ it, en }`, uncertain → `referenceStatus: 'needs_verification'`, filler/anime-only/movie → `canonStatus`.

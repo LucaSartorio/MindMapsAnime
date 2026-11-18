@@ -22,5 +22,7 @@ argument-hint: <world> [focus: characters|locations|events|arcs|factions|abiliti
 4. If the world is published in /es or /fr (`translatedLocales` in `worlds.ts`), changed/added texts make the
    overlays stale: run `npm run i18n:status` and plan `/sync-translations <world> es|fr` (pages are noindex in that
    language until 100 % translated).
-5. **Finish:** `npm run build`. Report gap counts before → after (from data:coverage), entities added/edited,
+5. **Finish:** rebase on `main`, then `npm run social:catalog` (the world is `available`, so its social catalog
+   changes with the data) and commit `tools/social-engine/catalog/*.json` → `npm run social:validate` →
+   `npm run build`. Report gap counts before → after (from data:coverage), entities added/edited,
    sources, remaining needs_verification and disputes, SEO impact (indexable before → after), checks run.

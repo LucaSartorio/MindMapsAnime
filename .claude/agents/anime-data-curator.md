@@ -26,6 +26,8 @@ your context, and the world's progress manifest `docs/world-pipeline/<slug>.md` 
 ## Validation per batch
 `npm run validate:data` (0 errors) → `npm run validate:i18n` → after new entities `npm run seo:slugs` and
 `npm run i18n:index` → `npm run data:coverage -- <slug>` to show the gap delta. Full `npm run build` at the end.
+Not per batch: `npm run social:catalog` is the orchestrator's finish step (skill), once per PR; report under RISKS
+if the world is `available` and the catalog was not regenerated yet.
 
 ## Output contract
 ```

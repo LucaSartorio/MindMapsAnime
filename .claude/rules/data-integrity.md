@@ -58,4 +58,15 @@ progress of a world live in `docs/world-pipeline/<slug>.md` (README there). Dete
    `npm run validate:i18n` and `npm run build`. No SEO work is needed: pages, metadata, hreflang, sitemap, header and
    home links and `llms.txt` are generated from the data.
 
-Checks: `validate:data` → `validate:i18n` → `seo:slugs` + `i18n:index` after adding entities → `build`.
+## Derived artifacts (regenerate with the generator, never by hand)
+
+A data change is finished only when the files derived from it are regenerated and committed in the same PR:
+`seo:slugs` (`src/data/<slug>/slugs.ts`) and `i18n:index` (`translationIndex.ts`) after adding entities, and
+`npm run social:catalog` (`tools/social-engine/catalog/*.json`) whenever the data of an `available` world changes or a
+world's `status` flips — the catalog only lists `available` worlds, so a `coming_soon` world in progress needs it only
+at publication. Run it once at the end (after the last rebase on `main`), then `npm run social:validate`; on a
+conflict in `catalog/*.json` keep `main`'s version and re-run the generator. *Social validate* runs on `src/**` PRs
+and fails on a stale catalog.
+
+Checks: `validate:data` → `validate:i18n` → `seo:slugs` + `i18n:index` after adding entities → `social:catalog` +
+`social:validate` if an `available` world changed → `build`.

@@ -88,7 +88,7 @@ check. `scripts/*.ts` run with `tsx --tsconfig scripts/tsconfig.json` (they impo
 | --- | --- |
 | UI component / page / store | `npx tsc -b` while iterating → `npm run build`; `npm run smoke` for visible/interaction changes |
 | Map code or map data | as UI + the map in `npm run smoke`; re-run the `mapgen` generator if a landmark moved |
-| Dataset content | `validate:data` → `validate:i18n` → `seo:slugs` + `i18n:index` if entities were added → `build` |
+| Dataset content | `validate:data` → `validate:i18n` → `seo:slugs` + `i18n:index` if entities were added → `social:catalog` + `social:validate` if an `available` world changed → `build` |
 | Translations / overlays | `i18n:status` → `i18n:index` → `validate:i18n` + `i18n:audit` → `build` |
 | SEO layer | `test:seo` → `build` (prerender + `seo:check`) |
 | Social engine | `social:validate` (+ dry runs, see `social-safety.md`) → `build` |

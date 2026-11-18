@@ -2,6 +2,10 @@
 #
 # Runs on pull requests that touch the social engine or its queue, so a PR with
 # an invalid / duplicated / unrenderable queue JSON goes red before merge.
+# Also on `src/**`: the catalog is derived from the site's datasets and helpers,
+# so a data PR that leaves catalog/catalog.json stale goes red here (the
+# "catalog is up to date" test) instead of blocking the next daily queue PR.
+# Fix: `npm run social:catalog` and commit catalog/*.json (generator output only).
 # Rendering happens only after merge (social-render.yml).
 name: Social validate
 
@@ -9,6 +13,7 @@ on:
   pull_request:
     paths:
       - 'tools/social-engine/**'
+      - 'src/**'
       - '.github/workflows/social-*.yml'
       - 'package.json'
       - 'package-lock.json'
