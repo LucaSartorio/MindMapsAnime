@@ -3,13 +3,14 @@
  * Claude Code usage summary for the before/after benchmark (docs/CLAUDE_DEVELOPMENT_SYSTEM.md §8).
  * Zero dependencies, read-only, local. Prints numbers only: never prompts, results, tool inputs or file contents.
  *
- * Inputs (any mix, one row each):
+ * Inputs (one row each; never pass a run's JSON AND its own transcript in one report: tokens would count twice):
  *   - `<run>.json`  = output of `claude -p --output-format json "<prompt>" > <run>.json`
  *                     (duration, turns, usage, modelUsage, total_cost_usd = estimated API cost);
  *   - `<session>.jsonl` = transcript under ~/.claude/projects/<repo>/ (tool calls, delegations, models, effort);
  *                     its sub-agent transcripts `<session>/subagents/*.jsonl` are added automatically.
  * Transcripts repeat the same `usage` on every content block of one API response: requests are de-duplicated by
- * `requestId` (fallback `message.id`), otherwise tokens would be counted several times.
+ * `requestId` (fallback `message.id`), otherwise tokens would be counted several times. A transcript's duration is the
+ * wall-clock span of its entries (idle time of an interactive session included): compare durations of `-p` runs.
  *
  *   node scripts/claude-usage-report.mjs [--outcomes outcomes.json] [--json] <files…>
  * outcomes.json = { "<file basename>": "pass" | "fail" | "partial" | "blocked" } (filled by hand after checking the
@@ -17,9 +18,8 @@
  * Tests: node --test scripts/claude-usage-report.test.mjs
  */
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
-import { basename, dirname, join } from 'node:path';
+import { basename, dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { resolve } from 'node:path';
 
 const DELEGATION_TOOLS = new Set(['Agent', 'Task']);
 
@@ -133,7 +133,11 @@ function main(argv) {
   let json = false;
   for (let i = 0; i < argv.length; i++) {
     if (argv[i] === '--json') json = true;
-    else if (argv[i] === '--outcomes') outcomes = JSON.parse(readFileSync(argv[++i], 'utf8'));
+    else if (argv[i] === '--outcomes') {
+      const f = argv[++i];
+      if (!f || !existsSync(f)) { console.error('--outcomes needs an existing JSON file'); process.exit(2); }
+      outcomes = JSON.parse(readFileSync(f, 'utf8'));
+    }
     else files.push(argv[i]);
   }
   if (!files.length) {

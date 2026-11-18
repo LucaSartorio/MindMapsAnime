@@ -11,9 +11,9 @@ get green. Keep only summaries and failing lines of the logs.
 
 ## Release gate (`release`) — run in order, stop at the first blocking failure, answer GO / NO-GO
 1. `git status` clean or explained; `git diff origin/main --stat` (flag `dist/`, `*.mp4`, state JSON, `.env*`, lockfile churn).
-2. Cheap gates first: `npm run claude:validate` · `npm run test:ci-scope` · `npm run social:validate` if
+2. `npm ci` first if `package-lock.json` changed. Cheap gates: `npm run claude:validate` · `npm run test:ci-scope` · `npm run social:validate` if
    `tools/social-engine/` or data/shared `src/` used by the engine changed.
-3. `npm ci` if `package-lock.json` changed, then `npm run smoke`: it runs the full `npm run build` first (record
+3. `npm run smoke`: it runs the full `npm run build` first (record
    duration, prerender per-language summary and chunk sizes from that output) and then the browser test. Never run a
    separate `npm run build` before it: it would build the same tree twice.
 4. `npm run preview:static` (background, serves the `dist/` of step 3) → `BASE=http://localhost:4173 npm run audit:a11y`
