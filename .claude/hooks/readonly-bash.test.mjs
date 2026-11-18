@@ -50,6 +50,34 @@ const allowed = [
   'FOO=1 npm run validate:data',
   'export LANG=C',
   'rg --pre-glob "*.ts" foo src',
+  // sed scripts in every option form, read-only only
+  "sed -e 's/a/b/g' file",
+  "sed -ne '1,3p' file",
+  "sed -ne'1,3p' file",
+  "sed -e's/a/b/g' file",
+  "sed -nEe's/(a)/\\1/p' file",
+  "sed --expression='1,3p' file",
+  "sed --expression '1,3p' file",
+  "sed -n -e '1p' -e '/x/p' -e '$p' file",
+  "sed -n -l 80 'l' file",
+  "sed -s -n '1p' a b",
+  "sed -n -- '1,3p' file",
+  "sed --quiet --regexp-extended 's/a+/b/p' file",
+  // options next to the dangerous ones stay allowed
+  'sort --numeric-sort --check a',
+  'git grep --count --or -e a -e b',
+  'git fetch --update-head-ok origin main',
+  'tree -fL 2 src',
+  // `$` that the shell does not expand
+  "sed -n '$p' f",
+  'rg -n "foo$" src',
+  'grep -E "^a$|b$" f',
+  'echo "cost: \\$5"',
+  'git log --format="%H %s" -3',
+  // braces the shell does not expand
+  'find src -name "*.{ts,tsx}"',
+  "rg -g '*.{ts,tsx}' foo src",
+  '{ git log -1; }',
 ];
 const blocked = [
   'echo hi > file.txt',
@@ -125,6 +153,53 @@ const blocked = [
   'HOME=/tmp/h git status',
   'XDG_CONFIG_HOME=/tmp/h git log',
   'git --exec-path=/tmp/bin status',
+  // sed: script attached to -e / -ne (2026-11-18 hotfix). Before it, the attached script was ignored and the input
+  // file name was checked as the script, so a file named `p`, `1p` or `d` (it need not exist: GNU sed opens `w`
+  // files while parsing) made these pass.
+  "sed -e'w /tmp/x' p",
+  "sed -ne'w /tmp/x' p",
+  "sed -ne'1w /tmp/x' 1p",
+  "sed -e's/a/b/w /tmp/x' p",
+  "sed -ne'1e touch /tmp/x' d",
+  "sed -nEe'w /tmp/x' p",
+  "sed --expression='w /tmp/x' p",
+  "sed --expression 'w /tmp/x' p",
+  "sed -n -e '1p' -e 'w /tmp/x' p",
+  "sed -n -e'1p' -e'w /tmp/x' p",
+  "sed -nf script.sed p",
+  'sed --file=script.sed p',
+  'sed --file script.sed p',
+  "sed --expr='w /tmp/x' p",
+  "sed -n -x '1p' p",
+  "sed -n --follow-symlinks '1p' p",
+  'sed -n',
+  "sed -n -e",
+  "sed -n -- 'w /tmp/x' p",
+  // unambiguous long-option abbreviations (GNU getopt, git parse-options) and grouped short options, each verified
+  // to write or execute with the real program
+  'sort --outp=/tmp/x a',
+  'sort --compress-prog=touch a',
+  "git fetch --upload-p='touch x' /tmp/r",
+  "git ls-remote --upload='touch x' /tmp/r",
+  'git grep --open-files=touch foo',
+  'tree -fo out.txt src',
+  // parameter expansion: the hook sees `$P`, the shell runs its value (verified: `P='w FILE'; sed -n "$P" f` writes)
+  "P='w /tmp/x'; sed -n \"$P\" f",
+  'sed -n $P f',
+  'sort $O a',
+  'sort "${O}" a',
+  'x=foo; rg $x src',
+  'git log -1 "$@"',
+  // brace expansion: the lexer splits at `{`, bash expands (verified: `sort a {-o FILE,/bin/cat}` writes FILE)
+  'sort a {-o/tmp/x,/bin/cat}',
+  'sort a -{o/tmp/x,u}',
+  'echo {1..3}',
+  // command substitution as the program (the lexer produced an empty, never-checked program name) and ANSI-C quoting
+  '$(echo rm) -rf dist',
+  '"$(echo touch)" x',
+  '$(echo sort) -o/tmp/x a',
+  `echo $'\\''; rm -rf dist; echo "'"`,
+  "sort a $'-o/tmp/x'",
 ];
 
 for (const c of allowed) test(`allows: ${c}`, () => assert.equal(reason(c), null, c));

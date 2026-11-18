@@ -31,6 +31,9 @@ function maskQuotes(s) {
   return s.replace(/'[^']*'|"(?:\\.|[^"\\])*"/g, (m) => ' '.repeat(m.length));
 }
 
+/** `--name[=v]` written in full or as the unambiguous prefix GNU getopt and git parse-options accept (`--outp`). */
+const longOpt = (a, full) => { const n = a.split('=')[0]; return n.length > 2 && n.startsWith('--') && full.startsWith(n); };
+
 function gitReason(args) {
   let i = 0;
   while (i < args.length && args[i].startsWith('-')) {
@@ -56,8 +59,8 @@ function gitReason(args) {
   if (sub === 'worktree' && pos[0] !== 'list') return 'git worktree (other than list) is not read-only';
   if ((sub === 'diff' || sub === 'log' || sub === 'show') && has('--output')) return `git ${sub} --output writes a file`;
   if (has('--ext-diff')) return 'git --ext-diff runs an external program';
-  if (has('--upload-pack', '--receive-pack', '--exec') || (sub === 'ls-remote' && rest.includes('-u'))) return `git ${sub} with a custom pack program runs arbitrary commands`;
-  if (sub === 'grep' && rest.some((a) => /^-O|^--open-files-in-pager/.test(a))) return 'git grep -O runs a pager program';
+  if (has('--exec') || rest.some((a) => longOpt(a, '--upload-pack') || longOpt(a, '--receive-pack')) || (sub === 'ls-remote' && rest.includes('-u'))) return `git ${sub} with a custom pack program runs arbitrary commands`;
+  if (sub === 'grep' && rest.some((a) => /^-O/.test(a) || longOpt(a, '--open-files-in-pager'))) return 'git grep -O runs a pager program';
   return null;
 }
 
@@ -88,18 +91,45 @@ function sedScriptIsReadOnly(script) {
   }
   return true;
 }
+// GNU sed options, parsed like getopt: short flags may be grouped (`-nE`), `-e`/`-l` take the rest of the word or
+// the next word (`-e'1p'`, `-ne'1p'`, `-e '1p'`). Before this, `-eSCRIPT` was neither collected nor refused and the
+// first operand (any file name, e.g. `p`) was checked as the script. Anything not listed here is refused.
+const SED_FLAGS = new Set(['n', 'E', 'r', 's', 'u', 'z']);
+const SED_LONG_FLAGS = new Set(['--quiet', '--silent', '--regexp-extended', '--separate', '--unbuffered', '--null-data',
+  '--posix', '--debug', '--sandbox']);
 function sedReason(args) {
+  const SCRIPT = 'sed script with commands other than print/delete/substitute (w, e, r…) is not read-only';
   const scripts = [];
   let operand = null;
   for (let k = 0; k < args.length; k++) {
     const a = args[k];
-    if (a === '--file' || a.startsWith('--file=') || /^-[a-zA-Z]*f/.test(a)) return 'sed -f runs a script file';
-    if (a === '--expression' || /^-[a-zA-Z]*e$/.test(a)) scripts.push(args[++k] ?? '');
-    else if (a.startsWith('--expression=')) scripts.push(a.slice(13));
-    else if (!a.startsWith('-') && operand === null) operand = a;
+    if (a === '--') { if (operand === null) operand = args[k + 1] ?? null; break; }
+    if (a === '-' || !a.startsWith('-')) { if (operand === null) operand = a; continue; }
+    if (a.startsWith('--')) {
+      if (a === '--expression') { if (k + 1 >= args.length) return SCRIPT; scripts.push(args[++k]); }
+      else if (a.startsWith('--expression=')) scripts.push(a.slice('--expression='.length));
+      else if (a === '--line-length') k++;
+      else if (!a.startsWith('--line-length=') && !SED_LONG_FLAGS.has(a)) return `sed option ${a.split('=')[0]} is not known to be read-only`;
+      continue;
+    }
+    for (let j = 1; j < a.length; j++) {
+      const c = a[j];
+      if (SED_FLAGS.has(c)) continue;
+      if (c === 'e' || c === 'l') {
+        const value = j + 1 < a.length ? a.slice(j + 1) : args[++k];
+        if (value === undefined) return SCRIPT;
+        if (c === 'e') scripts.push(value);
+        break;
+      }
+      if (c === 'f') return 'sed -f runs a script file';
+      return `sed option -${c} is not known to be read-only`;
+    }
   }
-  if (!scripts.length && operand !== null) scripts.push(operand);
-  return scripts.every(sedScriptIsReadOnly) ? null : 'sed script with commands other than print/delete/substitute (w, e, r…) is not read-only';
+  if (!scripts.length) {
+    if (operand === null) return SCRIPT;
+    scripts.push(operand);
+  }
+  return scripts.every(sedScriptIsReadOnly) ? null : SCRIPT;
 }
 
 function commandReason(t) {
@@ -119,10 +149,10 @@ function commandReason(t) {
   if (prog === 'find' && args.some((a) => /^-(delete|exec|execdir|ok|okdir|fprint0?|fprintf|fls)$/.test(a))) return 'find with -delete/-exec/-fprint is not read-only';
   if (prog === 'sed' && args.some((a) => a === '--in-place' || a.startsWith('--in-place=') || /^-[a-zA-Z]*i/.test(a))) return 'sed -i edits files';
   if (prog === 'sed') { const r = sedReason(args); if (r) return r; }
-  if (prog === 'sort' && args.some((a) => a === '--output' || a.startsWith('--output=') || /^-[a-zA-Z]*o/.test(a))) return 'sort -o writes a file';
-  if (prog === 'sort' && args.some((a) => a.startsWith('--compress-program'))) return 'sort --compress-program runs a program';
+  if (prog === 'sort' && args.some((a) => longOpt(a, '--output') || /^-[a-zA-Z]*o/.test(a))) return 'sort -o writes a file';
+  if (prog === 'sort' && args.some((a) => longOpt(a, '--compress-program'))) return 'sort --compress-program runs a program';
   if (prog === 'rg' && args.some((a) => a === '--pre' || a.startsWith('--pre='))) return 'rg --pre runs a program on every file';
-  if (prog === 'tree' && args.some((a) => a === '-o')) return 'tree -o writes a file';
+  if (prog === 'tree' && args.some((a) => /^-[a-zA-Z]*o/.test(a))) return 'tree -o writes a file';
   if (prog === 'uniq' && operands(args, ['-f', '-s', '-w']) > 1) return 'uniq with an OUTPUT operand writes a file';
   if (prog === 'xxd' && operands(args, ['-c', '-g', '-l', '-o', '-s', '-n', '-cols', '-groupsize', '-len', '-seek', '-name']) > 1) return 'xxd with an outfile writes a file';
   if (prog === 'awk' && args.some((a) => /system\s*\(|print[^|]*>|\|\s*getline|fflush/.test(a))) return 'awk script that writes or runs commands';
@@ -148,10 +178,38 @@ function commandReason(t) {
   return null;
 }
 
+/**
+ * Shell expansions the lexer cannot see, so the policy would check text the shell never runs:
+ *  - parameters (`$NAME`, `${…}`, `$1`, `$@`…): the lexer drops quotes and checks the literal `$P` while the shell
+ *    runs its value (`P='w FILE'; sed -n "$P" f` writes);
+ *  - unquoted brace expansion (`{a,b}`, `{1..3}`): the lexer splits at `{`, so `sort a {-o FILE,/bin/cat}` looked
+ *    like `sort a` + `cat` while bash runs `sort a -o FILE /bin/cat`.
+ *  - ANSI-C quoting `$'…'`: escapes can spell any option (`$'\x2do'` is `-o`).
+ * Single-quoted text and `\x` are literal, braces are literal inside double quotes; `$(…)` is a command substitution,
+ * checked as its own command (its unknown output is the program `$` for the lexer, never allowlisted).
+ * Known false positive (fail closed): `$` inside single quotes nested in `"$(…)"`.
+ */
+function hasHiddenExpansion(text) {
+  let dq = false;
+  for (let k = 0; k < text.length; k++) {
+    const c = text[k];
+    if (c === '\\') { k++; continue; }
+    if (c === "'" && !dq) { const end = text.indexOf("'", k + 1); if (end < 0) return true; k = end; continue; }
+    if (c === '"') { dq = !dq; continue; }
+    if (c === '$' && /[A-Za-z_0-9@*#?!${'-]/.test(text[k + 1] ?? '')) return true; // incl. ANSI-C $'…' (\x2d = -)
+    if (c === '{' && !dq && text[k - 1] !== '$' && /\S/.test(text[k + 1] ?? ' ')) {
+      const close = text.indexOf('}', k + 1);
+      if (close > 0 && /,|\.\./.test(text.slice(k + 1, close))) return true;
+    }
+  }
+  return false;
+}
+
 /** Returns a reason string if the command is not read-only, else null. */
 export function reason(command) {
   if (typeof command !== 'string' || !command.trim()) return null;
   const text = stripHeredocs(command);
+  if (hasHiddenExpansion(text)) return 'shell expansion ($VAR, {a,b}) hides the real arguments from the read-only check';
   if (/<<-?\s*['"]?[\w.-]+/.test(command) && />/.test(maskQuotes(command.split('\n')[0]).replace(/<</g, ''))) {
     return 'writing a heredoc to a file is not read-only';
   }

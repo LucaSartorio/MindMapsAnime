@@ -84,6 +84,30 @@ const blocked = [
   // aliases
   ['aliases', 'git ship'],
   ['aliases', 'git p'],
+  // ANSI-C quoting: `\'` does not end $'…' in bash; before the 2026-11-18 hotfix the lexer ended it there, swallowed
+  // the next command as quoted text and decoded nothing (bash -n accepts all of these)
+  ['feat', `echo $'\\''; git push --force origin feat/x; echo "'"`],
+  ['feat', `echo $'\\''; git push origin main #'`],
+  ['feat', "git push origin $'ma\\x69n'"],
+  ['feat', "git push origin $'main'"],
+  ['feat', "git push $'--force' origin feat/x"],
+  ['feat', "$'\\x67it' $'\\x70\\x75sh' origin main"],
+  ['feat', "bash -c $'git push --force origin main'"],
+  ['feat', "git push $'\\455\\455force' origin feat/x"], // octal > 0377: bash keeps the low byte, \455 = '-'
+  // values the guard cannot see: command substitution and parameters in push arguments
+  ['feat', 'git push origin $(echo main)'],
+  ['feat', 'git push origin "$(echo main)"'],
+  ['feat', 'git push origin `echo main`'],
+  ['feat', 'git push $(echo --force) origin feat/x'],
+  ['feat', 'B=main; git push origin $B'],
+  ['feat', 'git push origin "${B}"'],
+  // directory decided at run time: implicit or HEAD pushes cannot be resolved (`cd $(…)` was a regression of the
+  // placeholder above; `cd "$HOME"`, `cd -` were already unchecked)
+  ['main', 'cd $(git rev-parse --show-toplevel) && git push'],
+  ['main', 'git -C "$(pwd)" push'],
+  ['main', 'cd "$HOME" && cd - && git push'],
+  ['main', 'cd ~/repo && git push origin HEAD'],
+  ['aliases', 'git -C "$(pwd)" ship'],
 ];
 const allowed = [
   ['feat', 'git push'],
@@ -104,6 +128,16 @@ const allowed = [
   ['main', 'rg "push.*main" .claude'],
   ['main', "python3 - <<'EOF'\ns = 'git push --dry-run origin HEAD:main'\nEOF"],
   ['main', "cat > f.md <<EOF\n  git push --force origin main\nEOF"],
+  // ANSI-C strings and substitutions outside `git push` stay allowed
+  ['main', "printf $'a\\tb\\n'"],
+  ['main', "echo $'it\\'s'"],
+  ['feat', "git push origin feat/x && echo $'done\\n'"],
+  ['main', "IFS=$'\\n'; git log --oneline -3"],
+  ['main', 'git log $(git merge-base HEAD origin/main)..HEAD'],
+  ['main', 'echo "branch: $(git rev-parse --abbrev-ref HEAD)"'],
+  ['feat', 'cd $(git rev-parse --show-toplevel) && git push origin feat/x'],
+  ['feat', 'cd "$HOME" && git status'],
+  ['main', 'git -C "$(pwd)" log -1'],
 ];
 
 for (const [r, c] of blocked) test(`blocks [${r}] ${c.split('\n').join(' ⏎ ')}`, () => assert.ok(check(c, { cwd: repos[r] }), c));
