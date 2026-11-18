@@ -69,8 +69,9 @@ Tre livelli, da non confondere:
    Claude Code li salta nelle cartelle non trusted e nei processi `-p`. Dal 2026-11-18 la sola lettura chiude anche
    le scritture indirette (`sort -o`, `uniq IN OUT`, `xxd IN OUT`, `tree -o`, `sed` con `w`/`W`/`e`/`r`/`-f`: ammessi
    solo indirizzi, `p`/`d`/`q`… e `s///` con flag `gpiImM`) e l'esecuzione di comandi via git (`git -c`,
-   `--config-env`, `--exec-path`, `--ext-diff`, `--upload-pack`, `grep -O`; `git -c core.fsmonitor=…` e
-   `diff.external` verificati) e via variabili `GIT_*`, `PAGER`, `LESSOPEN`, `NODE_OPTIONS`. Resta un'allowlist
+   `--config-env`, `--exec-path=`, `--ext-diff`, `--upload-pack`, `grep -O`; `git -c core.fsmonitor=…` e
+   `diff.external` verificati), via `rg --pre`, `sort --compress-program` e via variabili `GIT_*`, `PAGER`,
+   `LESSOPEN`, `NODE_OPTIONS`, `HOME`, `XDG_CONFIG_HOME`. Resta un'allowlist
    euristica: un guard-rail, non un confine di sicurezza.
 
 `settings.json`: allow per validatori e report, ask su `.github/**` e sui file di hook/settings, deny sulla lettura di

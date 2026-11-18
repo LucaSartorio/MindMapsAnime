@@ -60,15 +60,14 @@ export function components(cwd = process.cwd()) {
   };
 }
 
-export function fingerprint(cwd = process.cwd()) {
-  const c = components(cwd);
-  return sha(JSON.stringify(c)).slice(0, 20);
-}
+export const hashOf = (c) => sha(JSON.stringify(c)).slice(0, 20);
+export const fingerprint = (cwd = process.cwd()) => hashOf(components(cwd));
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1])) {
   try {
-    if (process.argv.includes('--explain')) for (const [k, v] of Object.entries(components())) console.log(`${k.padEnd(12)} ${v}`);
-    console.log(`state-fingerprint ${fingerprint()}`);
+    const c = components();
+    if (process.argv.includes('--explain')) for (const [k, v] of Object.entries(c)) console.log(`${k.padEnd(12)} ${v}`);
+    console.log(`state-fingerprint ${hashOf(c)}`);
   } catch (e) {
     console.error(`[state-fingerprint] no fingerprint (${e.message.split('\n')[0]}): re-run the check`);
     process.exit(1);

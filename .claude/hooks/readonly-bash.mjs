@@ -36,7 +36,7 @@ function gitReason(args) {
   while (i < args.length && args[i].startsWith('-')) {
     // `-c key=value` / `--config-env` / `--exec-path` can point core.fsmonitor, diff.external, core.pager… at any
     // program, which then runs inside an otherwise read-only subcommand (verified with `status` and `diff`).
-    if (args[i] === '-c' || /^--(config-env|exec-path)(=|$)/.test(args[i])) return `git ${args[i]} can make git run arbitrary commands`;
+    if (args[i] === '-c' || /^--config-env(=|$)|^--exec-path=/.test(args[i])) return `git ${args[i]} can make git run arbitrary commands`;
     i += args[i] === '-C' ? 2 : 1;
   }
   const sub = args[i];
@@ -61,8 +61,8 @@ function gitReason(args) {
   return null;
 }
 
-/** Variables that make an allowed program run another program (git, pagers, node). */
-const EXEC_ENV = /^(GIT_[A-Z_]*|PAGER|LESSOPEN|LESSCLOSE|NODE_OPTIONS)=/;
+/** Variables that make an allowed program run another program (git, pagers, node) or read another git config. */
+const EXEC_ENV = /^(GIT_[A-Z0-9_]*|PAGER|LESSOPEN|LESSCLOSE|NODE_OPTIONS|HOME|XDG_CONFIG_HOME)=/;
 
 /** Number of operands, skipping the values of the given options. */
 function operands(args, valueOptions = []) {
@@ -120,6 +120,8 @@ function commandReason(t) {
   if (prog === 'sed' && args.some((a) => a === '--in-place' || a.startsWith('--in-place=') || /^-[a-zA-Z]*i/.test(a))) return 'sed -i edits files';
   if (prog === 'sed') { const r = sedReason(args); if (r) return r; }
   if (prog === 'sort' && args.some((a) => a === '--output' || a.startsWith('--output=') || /^-[a-zA-Z]*o/.test(a))) return 'sort -o writes a file';
+  if (prog === 'sort' && args.some((a) => a.startsWith('--compress-program'))) return 'sort --compress-program runs a program';
+  if (prog === 'rg' && args.some((a) => a === '--pre' || a.startsWith('--pre='))) return 'rg --pre runs a program on every file';
   if (prog === 'tree' && args.some((a) => a === '-o')) return 'tree -o writes a file';
   if (prog === 'uniq' && operands(args, ['-f', '-s', '-w']) > 1) return 'uniq with an OUTPUT operand writes a file';
   if (prog === 'xxd' && operands(args, ['-c', '-g', '-l', '-o', '-s', '-n', '-cols', '-groupsize', '-len', '-seek', '-name']) > 1) return 'xxd with an outfile writes a file';

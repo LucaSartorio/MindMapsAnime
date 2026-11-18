@@ -49,6 +49,7 @@ const allowed = [
   'git grep -n foo',
   'FOO=1 npm run validate:data',
   'export LANG=C',
+  'rg --pre-glob "*.ts" foo src',
 ];
 const blocked = [
   'echo hi > file.txt',
@@ -117,6 +118,13 @@ const blocked = [
   'GIT_EXTERNAL_DIFF=x; git diff',
   "PAGER='touch y' git log",
   'NODE_OPTIONS=--require=./x.js npm run validate:data',
+  "rg --pre 'touch /tmp/x' foo src",
+  'rg --pre=sh foo src',
+  "sort -S 1 --compress-program='touch' a",
+  'GIT_CONFIG_KEY_0=core.fsmonitor git status',
+  'HOME=/tmp/h git status',
+  'XDG_CONFIG_HOME=/tmp/h git log',
+  'git --exec-path=/tmp/bin status',
 ];
 
 for (const c of allowed) test(`allows: ${c}`, () => assert.equal(reason(c), null, c));
