@@ -48,7 +48,7 @@ delega → frontmatter → `CLAUDE_CODE_SUBAGENT_MODEL` → modello della sessio
 | `/enrich-anime-world <mondo> [focus]` | lacune di un mondo esistente, batch prioritizzati con delta misurato | auto + manuale |
 | `/analyze-data-coverage [mondo]` | report di completezza (fork economico su Haiku) | auto + manuale |
 | `/optimize-map <mondo\|all> [livello\|problema]` | collisioni, cluster, zoom, sotto-mappe, generatori, performance mappa | auto + manuale |
-| `/seo-opportunities [mondo] [export.csv]` | problemi verificati / opportunità / ipotesi SEO | auto + manuale |
+| `/seo-opportunities [mondo] [quick] [export.csv]` | problemi verificati / opportunità / ipotesi SEO | auto + manuale |
 | `/sync-translations <mondo\|ui> [es\|fr]` | overlay es/fr, indice traduzioni, chiavi UI | auto + manuale |
 | `/optimize-performance [target]` | baseline → modifica → misura (vieta lo script distruttivo `optimize:images`) | auto + manuale |
 | `/audit-animapverse [area\|release]` | audit con risultati verificati; `release` = gate completo GO/NO-GO | auto + manuale |
@@ -66,12 +66,25 @@ Tre livelli, da non confondere:
    `main`/`master` (anche impliciti: `git push`, `git push origin HEAD` risolti da branch, upstream, `push.default`),
    di massa o cancellazioni, anche dentro `bash -c`, `eval`, `$(…)`, alias; per `Plan`, `security-devops` e
    `lightweight-research` ammette solo comandi in sola lettura. Gli hook nel frontmatter degli agent non si usano:
-   Claude Code li salta nelle cartelle non trusted e nei processi `-p`.
+   Claude Code li salta nelle cartelle non trusted e nei processi `-p`. Dal 2026-11-18 la sola lettura chiude anche
+   le scritture indirette (`sort -o`, `uniq IN OUT`, `xxd IN OUT`, `tree -o`, `sed` con `w`/`W`/`e`/`r`/`-f`: ammessi
+   solo indirizzi, `p`/`d`/`q`… e `s///` con flag `gpiImM`) e l'esecuzione di comandi via git (`git -c`,
+   `--config-env`, `--exec-path`, `--ext-diff`, `--upload-pack`, `grep -O`; `git -c core.fsmonitor=…` e
+   `diff.external` verificati) e via variabili `GIT_*`, `PAGER`, `LESSOPEN`, `NODE_OPTIONS`. Resta un'allowlist
+   euristica: un guard-rail, non un confine di sicurezza.
 
 `settings.json`: allow per validatori e report, ask su `.github/**` e sui file di hook/settings, deny sulla lettura di
 `.env`, `.env.local`, `.env.*.local`, `.env.{production,development,test}` e sulla modifica dei file generati o di
-stato. `.gitignore` esclude `.env` e `.env.*` (tranne `.env.example`): una chiave locale non finisce in un commit. Il
-deny di `Read` non copre `cat .env` via Bash: vale l'istruzione di `security.md` (oggi nel repo non esiste alcun `.env`).
+stato. `.gitignore` esclude `.env` e `.env.*` (tranne `.env.example`): una chiave locale non finisce in un commit.
+Secondo la documentazione (permissions, verificata 2026-11-18) i deny di `Read` valgono per i tool di file, per i
+comandi Bash riconosciuti che nominano il file (`cat`, `head`, `tail`, `sed`, redirezioni) e best-effort per
+Grep/Glob, e si applicano anche in cartelle non trusted e in `claude -p`; non coprono comandi che leggono senza
+nominare il file (`grep -r pattern .`) né sottoprocessi arbitrari (es. uno script Node). Vale l'istruzione di `security.md`;
+oggi nel repo non esiste alcun `.env`. **Sandbox nativo non attivato dal repo**: su Linux richiede `bubblewrap`/`socat`,
+assenti nell'immagine Cloud, e senza di essi Claude Code esegue i comandi senza sandbox (con `failIfUnavailable` uscirebbe
+all'avvio); l'isolamento di rete bloccherebbe npm e il proxy. Localmente il proprietario può attivarlo nelle impostazioni
+utente (`sandbox.enabled`, `sandbox.filesystem.denyRead` per i `.env`); i thread *Projects* ignorano comunque
+`settings.json`.
 **Gli hook non sostituiscono il ruleset di `main`**
 (`docs/SECURITY_SEC-02.md`): valgono solo per `git` nelle sessioni Claude Code.
 
@@ -156,6 +169,23 @@ l'addebito dell'abbonamento né il consumo dei limiti d'uso.
 I task 2-5 non sono ancora stati misurati: nessuna baseline, nessun risparmio di token dichiarato. Il beneficio atteso
 del triage (meno deleghe e build inutili, escalation senza tentativi ciechi) va verificato con loro.
 
+**Delega `/analyze-data-coverage` (2026-11-18, `claude -p --model opus`, stessi `--allowedTools`, run alternati)**:
+A = la sessione principale esegue gli stessi passi della skill (Skill e Agent disattivati); B = la skill attuale
+(`context: fork` → `lightweight-research`, Haiku). Correttezza verificata sul testo contro l'output deterministico
+(numeri chiave, range di capitoli, `NEXT ACTION`; per `frieren` nessun dataset e nessun numero inventato).
+
+| Scenario | A: token · costo API stimato · durata | B: token · costo · durata | Corretti A / B |
+|---|---|---|---|
+| `bleach` (report piccolo, n=3) | 235.712 · $0,239 (±0,158) · 24,3 s | 12.169 · $0,001 · 7,9 s | 3/3 · 3/3 |
+| `naruto` (report articolato, n=3) | 89.124 · $0,117 · 21,8 s | 14.611 · $0,002 · 8,4 s | 3/3 · 3/3 |
+| `frieren` (nessun dataset, n=3) | 247.819 · $0,142 · 20,3 s | 15.248 · $0,001 · 5,2 s | 3/3 · 3/3 |
+| tutti i mondi (n=2) | 486.326 · $0,358 · 52,8 s | 36.823 · $0,003 · 16,0 s | 2/2 · 2/2 |
+
+Decisione: configurazione invariata (B è corretta quanto A, con costo e durata nettamente inferiori in tutti gli
+scenari). Limite del metodo: con `claude -p "/skill"` la skill in fork gira senza alcun turno del modello principale
+(`num_turns` 0, solo Haiku in `modelUsage`); in sessione interattiva si aggiunge il turno che riporta il risultato,
+quindi il costo reale di B è un po' più alto di quello misurato.
+
 ## 9. Cloud e locale
 
 | Superficie | CLAUDE.md | rules con `paths` | agent | skill | settings/hook |
@@ -221,7 +251,11 @@ non eseguiti e perché, rischi residui, passi manuali. Nessun agent `verifier` n
 
 **Cascade dei controlli**: prima i più economici (validatori ~1 s, `claude:validate` ~1 s, `tsc -b`, `test:seo`
 ~8 s), stop al primo fallimento; i superset una volta per stato dell'albero (`smoke` ⊃ `build` ⊃ validatori,
-`tsc -b`, `test:seo`, `i18n:audit`).
+`tsc -b`, `test:seo`, `i18n:audit`). Uno stato è "lo stesso" solo se `node scripts/state-fingerprint.mjs` stampa lo
+stesso valore (contenuto di file tracciati e non tracciati, dipendenze installate, stat dei `.env*` senza aprirli,
+Node, variabili di build; ~70 ms; test `node --test scripts/state-fingerprint.test.mjs`, non in CI per non legare le PR
+social quotidiane a un test che usa git): l'elenco dei file non tracciati non basta (contenuto modificato con lo stesso
+nome). Modifiche solo sotto `tools/social-engine/`: `social:validate` senza build (`social-safety.md`), come la Site CI.
 
 **Del Model Routing Playbook non si applica**: router esterni o classificatori automatici del modello (il modello
 della sessione è del proprietario, gli specialisti hanno il loro nel frontmatter); worker generici `quick`/`build`/
