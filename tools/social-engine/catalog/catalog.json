@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-17T06:21:59.268Z",
+  "generatedAt": "2026-11-18T06:30:56.431Z",
   "locales": [
     "en",
     "it"
@@ -47,10 +47,10 @@
           "excluded": 45
         },
         "bleach": {
-          "characters": 71,
-          "videos": 81,
+          "characters": 76,
+          "videos": 87,
           "series": 8,
-          "excluded": 76
+          "excluded": 71
         },
         "jujutsukaisen": {
           "characters": 19,
@@ -10218,30 +10218,27 @@
             "id": "character-journey:bleach:ichigo-kurosaki",
             "segment": "part-01",
             "partNumber": 1,
-            "partCount": 3,
+            "partCount": 4,
             "previousId": null,
             "nextId": "character-journey:bleach:ichigo-kurosaki:part-02",
             "arcIds": [
               "arc-bl-agent",
-              "arc-bl-ss-entry",
-              "arc-bl-arrancar-arrival"
+              "arc-bl-ss-entry"
             ],
             "arcTitles": {
               "en": [
                 "The Substitute",
-                "Soul Society: The Sneak Entry",
-                "Arrancar: The Arrival"
+                "Soul Society: The Sneak Entry"
               ],
               "it": [
                 "Lo Sostituto Shinigami",
-                "Soul Society: l'infiltrazione",
-                "Arrancar: l'arrivo"
+                "Soul Society: l'infiltrazione"
               ]
             },
             "firstArc": "The Substitute",
-            "lastArc": "Arrancar: The Arrival",
+            "lastArc": "Soul Society: The Sneak Entry",
             "segmentationVersion": 1,
-            "fingerprint": "6b062d44"
+            "fingerprint": "049a1afc"
           },
           "displayName": {
             "en": "Ichigo Kurosaki",
@@ -10251,13 +10248,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 30,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "main",
-            "places": 20,
-            "animatedStops": 6,
-            "arcs": 3,
-            "journeyArcs": 11
+            "places": 22,
+            "animatedStops": 5,
+            "arcs": 2,
+            "journeyArcs": 13
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -10276,33 +10273,33 @@
             "id": "character-journey:bleach:ichigo-kurosaki",
             "segment": "part-02",
             "partNumber": 2,
-            "partCount": 3,
+            "partCount": 4,
             "previousId": "character-journey:bleach:ichigo-kurosaki:part-01",
             "nextId": "character-journey:bleach:ichigo-kurosaki:part-03",
             "arcIds": [
+              "arc-bl-arrancar-arrival",
               "arc-bl-hueco-mundo",
               "arc-bl-amagai",
-              "arc-bl-fake-karakura",
-              "arc-bl-zanpakuto-rebellion"
+              "arc-bl-fake-karakura"
             ],
             "arcTitles": {
               "en": [
+                "Arrancar: The Arrival",
                 "Arrancar: Hueco Mundo",
                 "The New Captain Shūsuke Amagai",
-                "The Battle of Fake Karakura Town",
-                "Zanpakutō Unknown Tales"
+                "The Battle of Fake Karakura Town"
               ],
               "it": [
+                "Arrancar: l'arrivo",
                 "Arrancar: Hueco Mundo",
                 "Il nuovo capitano Shūsuke Amagai",
-                "La battaglia della Karakura replica",
-                "La ribellione delle Zanpakutō"
+                "La battaglia della Karakura replica"
               ]
             },
-            "firstArc": "Arrancar: Hueco Mundo",
-            "lastArc": "Zanpakutō Unknown Tales",
+            "firstArc": "Arrancar: The Arrival",
+            "lastArc": "The Battle of Fake Karakura Town",
             "segmentationVersion": 1,
-            "fingerprint": "96253026"
+            "fingerprint": "abdafff7"
           },
           "displayName": {
             "en": "Ichigo Kurosaki",
@@ -10315,10 +10312,10 @@
           "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 20,
+            "places": 22,
             "animatedStops": 6,
             "arcs": 4,
-            "journeyArcs": 11
+            "journeyArcs": 13
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -10337,33 +10334,27 @@
             "id": "character-journey:bleach:ichigo-kurosaki",
             "segment": "part-03",
             "partNumber": 3,
-            "partCount": 3,
+            "partCount": 4,
             "previousId": "character-journey:bleach:ichigo-kurosaki:part-02",
-            "nextId": null,
+            "nextId": "character-journey:bleach:ichigo-kurosaki:part-04",
             "arcIds": [
-              "arc-bl-lost-substitute",
-              "arc-bl-tybw-blood-warfare",
-              "arc-bl-tybw-separation",
-              "arc-bl-hell"
+              "arc-bl-zanpakuto-rebellion",
+              "arc-bl-lost-substitute"
             ],
             "arcTitles": {
               "en": [
-                "The Lost Substitute Shinigami",
-                "Thousand-Year Blood War: The Blood Warfare",
-                "Thousand-Year Blood War: The Separation",
-                "No Breaths From Hell"
+                "Zanpakutō Unknown Tales",
+                "The Lost Substitute Shinigami"
               ],
               "it": [
-                "Lo Sostituto Shinigami perduto",
-                "Guerra dei Mille Anni: la dichiarazione di guerra",
-                "Guerra dei Mille Anni: la separazione",
-                "Il one-shot dell'Inferno (No Breaths From Hell)"
+                "La ribellione delle Zanpakutō",
+                "Lo Sostituto Shinigami perduto"
               ]
             },
-            "firstArc": "The Lost Substitute Shinigami",
-            "lastArc": "No Breaths From Hell",
+            "firstArc": "Zanpakutō Unknown Tales",
+            "lastArc": "The Lost Substitute Shinigami",
             "segmentationVersion": 1,
-            "fingerprint": "01f1aa9e"
+            "fingerprint": "033aee4f"
           },
           "displayName": {
             "en": "Ichigo Kurosaki",
@@ -10373,13 +10364,77 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 36,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "main",
-            "places": 20,
-            "animatedStops": 8,
-            "arcs": 4,
-            "journeyArcs": 11
+            "places": 22,
+            "animatedStops": 5,
+            "arcs": 2,
+            "journeyArcs": 13
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:ichigo-kurosaki:part-04",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "ichigo-kurosaki",
+          "series": {
+            "id": "character-journey:bleach:ichigo-kurosaki",
+            "segment": "part-04",
+            "partNumber": 4,
+            "partCount": 4,
+            "previousId": "character-journey:bleach:ichigo-kurosaki:part-03",
+            "nextId": null,
+            "arcIds": [
+              "arc-bl-tybw-blood-warfare",
+              "arc-bl-tybw-separation",
+              "arc-bl-tybw-conflict",
+              "arc-bl-tybw-calamity",
+              "arc-bl-hell"
+            ],
+            "arcTitles": {
+              "en": [
+                "Thousand-Year Blood War: The Blood Warfare",
+                "Thousand-Year Blood War: The Separation",
+                "Thousand-Year Blood War: The Conflict",
+                "Thousand-Year Blood War: The Calamity",
+                "No Breaths From Hell"
+              ],
+              "it": [
+                "Guerra dei Mille Anni: la dichiarazione di guerra",
+                "Guerra dei Mille Anni: la separazione",
+                "Guerra dei Mille Anni: il conflitto",
+                "Guerra dei Mille Anni: la calamità",
+                "Il one-shot dell'Inferno (No Breaths From Hell)"
+              ]
+            },
+            "firstArc": "Thousand-Year Blood War: The Blood Warfare",
+            "lastArc": "No Breaths From Hell",
+            "segmentationVersion": 1,
+            "fingerprint": "990cc18a"
+          },
+          "displayName": {
+            "en": "Ichigo Kurosaki",
+            "it": "Ichigo Kurosaki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 30,
+          "facts": {
+            "importance": "main",
+            "places": 22,
+            "animatedStops": 6,
+            "arcs": 5,
+            "journeyArcs": 13
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -10402,20 +10457,23 @@
             "previousId": null,
             "nextId": "character-journey:bleach:rukia-kuchiki:part-02",
             "arcIds": [
-              "arc-bl-ss-entry"
+              "arc-bl-ss-entry",
+              "arc-bl-ss-rescue"
             ],
             "arcTitles": {
               "en": [
-                "Soul Society: The Sneak Entry"
+                "Soul Society: The Sneak Entry",
+                "Soul Society: The Rescue"
               ],
               "it": [
-                "Soul Society: l'infiltrazione"
+                "Soul Society: l'infiltrazione",
+                "Soul Society: il salvataggio"
               ]
             },
             "firstArc": "Soul Society: The Sneak Entry",
-            "lastArc": "Soul Society: The Sneak Entry",
+            "lastArc": "Soul Society: The Rescue",
             "segmentationVersion": 1,
-            "fingerprint": "ae3e7e79"
+            "fingerprint": "5359ecba"
           },
           "displayName": {
             "en": "Rukia Kuchiki",
@@ -10425,12 +10483,12 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 36,
           "facts": {
             "importance": "main",
-            "places": 19,
-            "animatedStops": 5,
-            "arcs": 1,
+            "places": 20,
+            "animatedStops": 8,
+            "arcs": 2,
             "journeyArcs": 12
           },
           "renderedLocales": [],
@@ -10454,29 +10512,35 @@
             "previousId": "character-journey:bleach:rukia-kuchiki:part-01",
             "nextId": "character-journey:bleach:rukia-kuchiki:part-03",
             "arcIds": [
-              "arc-bl-ss-rescue",
               "arc-bl-agent",
+              "arc-bl-ss-rescue",
               "arc-bl-arrancar-arrival",
-              "arc-bl-hueco-mundo"
+              "arc-bl-hueco-mundo",
+              "arc-bl-amagai",
+              "arc-bl-fake-karakura"
             ],
             "arcTitles": {
               "en": [
-                "Soul Society: The Rescue",
                 "The Substitute",
+                "Soul Society: The Rescue",
                 "Arrancar: The Arrival",
-                "Arrancar: Hueco Mundo"
+                "Arrancar: Hueco Mundo",
+                "The New Captain Shūsuke Amagai",
+                "The Battle of Fake Karakura Town"
               ],
               "it": [
-                "Soul Society: il salvataggio",
                 "Lo Sostituto Shinigami",
+                "Soul Society: il salvataggio",
                 "Arrancar: l'arrivo",
-                "Arrancar: Hueco Mundo"
+                "Arrancar: Hueco Mundo",
+                "Il nuovo capitano Shūsuke Amagai",
+                "La battaglia della Karakura replica"
               ]
             },
-            "firstArc": "Soul Society: The Rescue",
-            "lastArc": "Arrancar: Hueco Mundo",
+            "firstArc": "The Substitute",
+            "lastArc": "The Battle of Fake Karakura Town",
             "segmentationVersion": 1,
-            "fingerprint": "ff54382d"
+            "fingerprint": "a586cece"
           },
           "displayName": {
             "en": "Rukia Kuchiki",
@@ -10486,12 +10550,12 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 33,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 19,
-            "animatedStops": 7,
-            "arcs": 4,
+            "places": 20,
+            "animatedStops": 6,
+            "arcs": 6,
             "journeyArcs": 12
           },
           "renderedLocales": [],
@@ -10515,8 +10579,6 @@
             "previousId": "character-journey:bleach:rukia-kuchiki:part-02",
             "nextId": null,
             "arcIds": [
-              "arc-bl-amagai",
-              "arc-bl-fake-karakura",
               "arc-bl-zanpakuto-rebellion",
               "arc-bl-lost-substitute",
               "arc-bl-tybw-separation",
@@ -10525,8 +10587,6 @@
             ],
             "arcTitles": {
               "en": [
-                "The New Captain Shūsuke Amagai",
-                "The Battle of Fake Karakura Town",
                 "Zanpakutō Unknown Tales",
                 "The Lost Substitute Shinigami",
                 "Thousand-Year Blood War: The Separation",
@@ -10534,8 +10594,6 @@
                 "No Breaths From Hell"
               ],
               "it": [
-                "Il nuovo capitano Shūsuke Amagai",
-                "La battaglia della Karakura replica",
                 "La ribellione delle Zanpakutō",
                 "Lo Sostituto Shinigami perduto",
                 "Guerra dei Mille Anni: la separazione",
@@ -10543,10 +10601,10 @@
                 "Il one-shot dell'Inferno (No Breaths From Hell)"
               ]
             },
-            "firstArc": "The New Captain Shūsuke Amagai",
+            "firstArc": "Zanpakutō Unknown Tales",
             "lastArc": "No Breaths From Hell",
             "segmentationVersion": 1,
-            "fingerprint": "81269d33"
+            "fingerprint": "2a0c8729"
           },
           "displayName": {
             "en": "Rukia Kuchiki",
@@ -10556,12 +10614,12 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 33,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 19,
-            "animatedStops": 7,
-            "arcs": 7,
+            "places": 20,
+            "animatedStops": 6,
+            "arcs": 5,
             "journeyArcs": 12
           },
           "renderedLocales": [],
@@ -10617,10 +10675,10 @@
           "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "main",
-            "places": 11,
+            "places": 12,
             "animatedStops": 5,
             "arcs": 3,
-            "journeyArcs": 7
+            "journeyArcs": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -10646,6 +10704,7 @@
               "arc-bl-hueco-mundo",
               "arc-bl-lost-substitute",
               "arc-bl-tybw-blood-warfare",
+              "arc-bl-tybw-conflict",
               "arc-bl-tybw-calamity"
             ],
             "arcTitles": {
@@ -10653,19 +10712,21 @@
                 "Arrancar: Hueco Mundo",
                 "The Lost Substitute Shinigami",
                 "Thousand-Year Blood War: The Blood Warfare",
+                "Thousand-Year Blood War: The Conflict",
                 "Thousand-Year Blood War: The Calamity"
               ],
               "it": [
                 "Arrancar: Hueco Mundo",
                 "Lo Sostituto Shinigami perduto",
                 "Guerra dei Mille Anni: la dichiarazione di guerra",
+                "Guerra dei Mille Anni: il conflitto",
                 "Guerra dei Mille Anni: la calamità"
               ]
             },
             "firstArc": "Arrancar: Hueco Mundo",
             "lastArc": "Thousand-Year Blood War: The Calamity",
             "segmentationVersion": 1,
-            "fingerprint": "ac7efc98"
+            "fingerprint": "d6e207e8"
           },
           "displayName": {
             "en": "Orihime Inoue",
@@ -10675,13 +10736,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 30,
+          "recommendedDurationSeconds": 33,
           "facts": {
             "importance": "main",
-            "places": 11,
-            "animatedStops": 6,
-            "arcs": 4,
-            "journeyArcs": 7
+            "places": 12,
+            "animatedStops": 7,
+            "arcs": 5,
+            "journeyArcs": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -10858,7 +10919,7 @@
             "places": 13,
             "animatedStops": 6,
             "arcs": 3,
-            "journeyArcs": 7
+            "journeyArcs": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -10884,6 +10945,7 @@
               "arc-bl-hueco-mundo",
               "arc-bl-lost-substitute",
               "arc-bl-tybw-blood-warfare",
+              "arc-bl-tybw-conflict",
               "arc-bl-tybw-calamity"
             ],
             "arcTitles": {
@@ -10891,19 +10953,21 @@
                 "Arrancar: Hueco Mundo",
                 "The Lost Substitute Shinigami",
                 "Thousand-Year Blood War: The Blood Warfare",
+                "Thousand-Year Blood War: The Conflict",
                 "Thousand-Year Blood War: The Calamity"
               ],
               "it": [
                 "Arrancar: Hueco Mundo",
                 "Lo Sostituto Shinigami perduto",
                 "Guerra dei Mille Anni: la dichiarazione di guerra",
+                "Guerra dei Mille Anni: il conflitto",
                 "Guerra dei Mille Anni: la calamità"
               ]
             },
             "firstArc": "Arrancar: Hueco Mundo",
             "lastArc": "Thousand-Year Blood War: The Calamity",
             "segmentationVersion": 1,
-            "fingerprint": "1b838742"
+            "fingerprint": "37ee538e"
           },
           "displayName": {
             "en": "Yasutora \"Chad\" Sado",
@@ -10918,8 +10982,8 @@
             "importance": "main",
             "places": 13,
             "animatedStops": 7,
-            "arcs": 4,
-            "journeyArcs": 7
+            "arcs": 5,
+            "journeyArcs": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -11123,11 +11187,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 33,
+          "recommendedDurationSeconds": 36,
           "facts": {
             "importance": "main",
-            "places": 7,
-            "animatedStops": 7,
+            "places": 8,
+            "animatedStops": 8,
             "arcs": 7,
             "journeyArcs": 7
           },
@@ -11153,11 +11217,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 33,
+          "recommendedDurationSeconds": 36,
           "facts": {
             "importance": "major",
-            "places": 7,
-            "animatedStops": 7,
+            "places": 8,
+            "animatedStops": 8,
             "arcs": 6,
             "journeyArcs": 6
           },
@@ -11396,10 +11460,10 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "minor",
-            "places": 2,
-            "animatedStops": 2,
-            "arcs": 2,
-            "journeyArcs": 2
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -11632,13 +11696,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "supporting",
-            "places": 2,
-            "animatedStops": 2,
-            "arcs": 2,
-            "journeyArcs": 2
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 3,
+            "journeyArcs": 3
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -11663,24 +11727,27 @@
             "arcIds": [
               "arc-bl-ss-rescue",
               "arc-bl-agent",
-              "arc-bl-hueco-mundo"
+              "arc-bl-hueco-mundo",
+              "arc-bl-zanpakuto-rebellion"
             ],
             "arcTitles": {
               "en": [
                 "Soul Society: The Rescue",
                 "The Substitute",
-                "Arrancar: Hueco Mundo"
+                "Arrancar: Hueco Mundo",
+                "Zanpakutō Unknown Tales"
               ],
               "it": [
                 "Soul Society: il salvataggio",
                 "Lo Sostituto Shinigami",
-                "Arrancar: Hueco Mundo"
+                "Arrancar: Hueco Mundo",
+                "La ribellione delle Zanpakutō"
               ]
             },
             "firstArc": "Soul Society: The Rescue",
-            "lastArc": "Arrancar: Hueco Mundo",
+            "lastArc": "Zanpakutō Unknown Tales",
             "segmentationVersion": 1,
-            "fingerprint": "44b4d5f1"
+            "fingerprint": "fd768164"
           },
           "displayName": {
             "en": "Byakuya Kuchiki",
@@ -11690,13 +11757,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 25,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "main",
-            "places": 9,
-            "animatedStops": 4,
-            "arcs": 3,
-            "journeyArcs": 8
+            "places": 10,
+            "animatedStops": 5,
+            "arcs": 4,
+            "journeyArcs": 9
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -11719,32 +11786,32 @@
             "previousId": "character-journey:bleach:byakuya-kuchiki:part-01",
             "nextId": null,
             "arcIds": [
-              "arc-bl-zanpakuto-rebellion",
               "arc-bl-lost-substitute",
               "arc-bl-tybw-blood-warfare",
               "arc-bl-tybw-separation",
-              "arc-bl-tybw-conflict"
+              "arc-bl-tybw-conflict",
+              "arc-bl-tybw-calamity"
             ],
             "arcTitles": {
               "en": [
-                "Zanpakutō Unknown Tales",
                 "The Lost Substitute Shinigami",
                 "Thousand-Year Blood War: The Blood Warfare",
                 "Thousand-Year Blood War: The Separation",
-                "Thousand-Year Blood War: The Conflict"
+                "Thousand-Year Blood War: The Conflict",
+                "Thousand-Year Blood War: The Calamity"
               ],
               "it": [
-                "La ribellione delle Zanpakutō",
                 "Lo Sostituto Shinigami perduto",
                 "Guerra dei Mille Anni: la dichiarazione di guerra",
                 "Guerra dei Mille Anni: la separazione",
-                "Guerra dei Mille Anni: il conflitto"
+                "Guerra dei Mille Anni: il conflitto",
+                "Guerra dei Mille Anni: la calamità"
               ]
             },
-            "firstArc": "Zanpakutō Unknown Tales",
-            "lastArc": "Thousand-Year Blood War: The Conflict",
+            "firstArc": "The Lost Substitute Shinigami",
+            "lastArc": "Thousand-Year Blood War: The Calamity",
             "segmentationVersion": 1,
-            "fingerprint": "5b5535a5"
+            "fingerprint": "f639bda5"
           },
           "displayName": {
             "en": "Byakuya Kuchiki",
@@ -11757,10 +11824,10 @@
           "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "main",
-            "places": 9,
+            "places": 10,
             "animatedStops": 5,
             "arcs": 5,
-            "journeyArcs": 8
+            "journeyArcs": 9
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -12016,6 +12083,36 @@
           "publication": []
         },
         {
+          "id": "character-journey:bleach:shuhei-hisagi",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "shuhei-hisagi",
+          "series": null,
+          "displayName": {
+            "en": "Shūhei Hisagi",
+            "it": "Shūhei Hisagi"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
           "id": "character-journey:bleach:toshiro-hitsugaya",
           "anime": "bleach",
           "animeTitle": "Bleach",
@@ -12029,13 +12126,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 25,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "major",
-            "places": 4,
-            "animatedStops": 4,
-            "arcs": 4,
-            "journeyArcs": 4
+            "places": 5,
+            "animatedStops": 5,
+            "arcs": 5,
+            "journeyArcs": 5
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -12059,11 +12156,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 25,
+          "recommendedDurationSeconds": 27,
           "facts": {
             "importance": "supporting",
-            "places": 4,
-            "animatedStops": 4,
+            "places": 5,
+            "animatedStops": 5,
             "arcs": 4,
             "journeyArcs": 4
           },
@@ -12209,13 +12306,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 27,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "major",
-            "places": 5,
-            "animatedStops": 5,
-            "arcs": 5,
-            "journeyArcs": 5
+            "places": 6,
+            "animatedStops": 6,
+            "arcs": 6,
+            "journeyArcs": 6
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -12392,10 +12489,10 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "major",
-            "places": 2,
-            "animatedStops": 2,
-            "arcs": 2,
-            "journeyArcs": 2
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -12856,6 +12953,66 @@
           "publication": []
         },
         {
+          "id": "character-journey:bleach:riruka-dokugamine",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "riruka-dokugamine",
+          "series": null,
+          "displayName": {
+            "en": "Riruka Dokugamine",
+            "it": "Riruka Dokugamine"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:yukio-hans-vorarlberna",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "yukio-hans-vorarlberna",
+          "series": null,
+          "displayName": {
+            "en": "Yukio Hans Vorarlberna",
+            "it": "Yukio Hans Vorarlberna"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
           "id": "character-journey:bleach:tier-harribel",
           "anime": "bleach",
           "animeTitle": "Bleach",
@@ -12929,11 +13086,11 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 24,
+          "recommendedDurationSeconds": 25,
           "facts": {
             "importance": "major",
-            "places": 3,
-            "animatedStops": 3,
+            "places": 4,
+            "animatedStops": 4,
             "arcs": 3,
             "journeyArcs": 3
           },
@@ -12992,8 +13149,8 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "major",
-            "places": 2,
-            "animatedStops": 2,
+            "places": 3,
+            "animatedStops": 3,
             "arcs": 2,
             "journeyArcs": 2
           },
@@ -13049,13 +13206,13 @@
             "en",
             "it"
           ],
-          "recommendedDurationSeconds": 25,
+          "recommendedDurationSeconds": 30,
           "facts": {
             "importance": "main",
-            "places": 4,
-            "animatedStops": 4,
-            "arcs": 3,
-            "journeyArcs": 3
+            "places": 6,
+            "animatedStops": 6,
+            "arcs": 5,
+            "journeyArcs": 5
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -13082,6 +13239,66 @@
           "recommendedDurationSeconds": 24,
           "facts": {
             "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:askin-nakk-le-vaar",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "askin-nakk-le-vaar",
+          "series": null,
+          "displayName": {
+            "en": "Askin Nakk Le Vaar",
+            "it": "Askin Nakk Le Vaar"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 1,
+            "journeyArcs": 1
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:bleach:bazz-b",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "bazz-b",
+          "series": null,
+          "displayName": {
+            "en": "Bazz-B",
+            "it": "Bazz-B"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "minor",
             "places": 2,
             "animatedStops": 2,
             "arcs": 2,
@@ -15870,10 +16087,10 @@
           "excluded": 31
         },
         "bleach": {
-          "characters": 15,
-          "videos": 15,
+          "characters": 16,
+          "videos": 16,
           "series": 0,
-          "excluded": 20
+          "excluded": 19
         },
         "jujutsukaisen": {
           "characters": 0,
@@ -17856,7 +18073,7 @@
           "recommendedDurationSeconds": 26,
           "facts": {
             "importance": "main",
-            "places": 10,
+            "places": 11,
             "clues": 6
           },
           "renderedLocales": [],
@@ -17959,7 +18176,7 @@
           "recommendedDurationSeconds": 26,
           "facts": {
             "importance": "main",
-            "places": 9,
+            "places": 8,
             "clues": 6
           },
           "renderedLocales": [],
@@ -18244,6 +18461,34 @@
               }
             }
           ]
+        },
+        {
+          "id": "guess-character:bleach:toshiro-hitsugaya",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "toshiro-hitsugaya",
+          "series": null,
+          "displayName": {
+            "en": "Tōshirō Hitsugaya",
+            "it": "Tōshirō Hitsugaya"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 21,
+          "facts": {
+            "importance": "major",
+            "places": 4,
+            "clues": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
         },
         {
           "id": "guess-character:bleach:jushiro-ukitake",
@@ -19122,6 +19367,44 @@
           }
         },
         {
+          "id": "character-versus:naruto:naruto-uzumaki-vs-bleach-rukia-kuchiki",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "naruto-uzumaki-vs-bleach-rukia-kuchiki",
+          "series": null,
+          "displayName": {
+            "en": "Naruto Uzumaki vs Rukia Kuchiki",
+            "it": "Naruto Uzumaki vs Rukia Kuchiki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "bleach",
+            "opponentSubject": "rukia-kuchiki",
+            "placesA": 10,
+            "placesB": 11
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "naruto-uzumaki",
+            "opponent": {
+              "anime": "bleach",
+              "subject": "rukia-kuchiki"
+            }
+          }
+        },
+        {
           "id": "character-versus:naruto:naruto-uzumaki-vs-bleach-ichigo-kurosaki",
           "anime": "naruto",
           "animeTitle": "Naruto",
@@ -19160,44 +19443,6 @@
           }
         },
         {
-          "id": "character-versus:naruto:naruto-uzumaki-vs-bleach-rukia-kuchiki",
-          "anime": "naruto",
-          "animeTitle": "Naruto",
-          "subject": "naruto-uzumaki-vs-bleach-rukia-kuchiki",
-          "series": null,
-          "displayName": {
-            "en": "Naruto Uzumaki vs Rukia Kuchiki",
-            "it": "Naruto Uzumaki vs Rukia Kuchiki"
-          },
-          "locales": [
-            "en",
-            "it"
-          ],
-          "recommendedDurationSeconds": 22,
-          "facts": {
-            "importance": "main",
-            "opponentImportance": "main",
-            "opponentAnime": "bleach",
-            "opponentSubject": "rukia-kuchiki",
-            "placesA": 10,
-            "placesB": 10
-          },
-          "renderedLocales": [],
-          "scheduledLocales": [],
-          "publishedLocales": [],
-          "queuedLocales": [],
-          "renderedBefore": false,
-          "publishedBefore": false,
-          "publication": [],
-          "request": {
-            "subject": "naruto-uzumaki",
-            "opponent": {
-              "anime": "bleach",
-              "subject": "rukia-kuchiki"
-            }
-          }
-        },
-        {
           "id": "character-versus:naruto:naruto-uzumaki-vs-bleach-yasutora-chad-sado",
           "anime": "naruto",
           "animeTitle": "Naruto",
@@ -19218,7 +19463,7 @@
             "opponentAnime": "bleach",
             "opponentSubject": "yasutora-chad-sado",
             "placesA": 10,
-            "placesB": 9
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -19823,6 +20068,44 @@
           }
         },
         {
+          "id": "character-versus:naruto:obito-uchiha-vs-bleach-rukia-kuchiki",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "obito-uchiha-vs-bleach-rukia-kuchiki",
+          "series": null,
+          "displayName": {
+            "en": "Obito Uchiha vs Rukia Kuchiki",
+            "it": "Obito Uchiha vs Rukia Kuchiki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "bleach",
+            "opponentSubject": "rukia-kuchiki",
+            "placesA": 9,
+            "placesB": 11
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "obito-uchiha",
+            "opponent": {
+              "anime": "bleach",
+              "subject": "rukia-kuchiki"
+            }
+          }
+        },
+        {
           "id": "character-versus:naruto:obito-uchiha-vs-bleach-ichigo-kurosaki",
           "anime": "naruto",
           "animeTitle": "Naruto",
@@ -19861,44 +20144,6 @@
           }
         },
         {
-          "id": "character-versus:naruto:obito-uchiha-vs-bleach-rukia-kuchiki",
-          "anime": "naruto",
-          "animeTitle": "Naruto",
-          "subject": "obito-uchiha-vs-bleach-rukia-kuchiki",
-          "series": null,
-          "displayName": {
-            "en": "Obito Uchiha vs Rukia Kuchiki",
-            "it": "Obito Uchiha vs Rukia Kuchiki"
-          },
-          "locales": [
-            "en",
-            "it"
-          ],
-          "recommendedDurationSeconds": 22,
-          "facts": {
-            "importance": "main",
-            "opponentImportance": "main",
-            "opponentAnime": "bleach",
-            "opponentSubject": "rukia-kuchiki",
-            "placesA": 9,
-            "placesB": 10
-          },
-          "renderedLocales": [],
-          "scheduledLocales": [],
-          "publishedLocales": [],
-          "queuedLocales": [],
-          "renderedBefore": false,
-          "publishedBefore": false,
-          "publication": [],
-          "request": {
-            "subject": "obito-uchiha",
-            "opponent": {
-              "anime": "bleach",
-              "subject": "rukia-kuchiki"
-            }
-          }
-        },
-        {
           "id": "character-versus:naruto:obito-uchiha-vs-bleach-yasutora-chad-sado",
           "anime": "naruto",
           "animeTitle": "Naruto",
@@ -19919,7 +20164,7 @@
             "opponentAnime": "bleach",
             "opponentSubject": "yasutora-chad-sado",
             "placesA": 9,
-            "placesB": 9
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -20558,6 +20803,44 @@
           }
         },
         {
+          "id": "character-versus:naruto:sasuke-uchiha-vs-bleach-rukia-kuchiki",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "sasuke-uchiha-vs-bleach-rukia-kuchiki",
+          "series": null,
+          "displayName": {
+            "en": "Sasuke Uchiha vs Rukia Kuchiki",
+            "it": "Sasuke Uchiha vs Rukia Kuchiki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "bleach",
+            "opponentSubject": "rukia-kuchiki",
+            "placesA": 9,
+            "placesB": 11
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "sasuke-uchiha",
+            "opponent": {
+              "anime": "bleach",
+              "subject": "rukia-kuchiki"
+            }
+          }
+        },
+        {
           "id": "character-versus:naruto:sasuke-uchiha-vs-bleach-ichigo-kurosaki",
           "anime": "naruto",
           "animeTitle": "Naruto",
@@ -20596,44 +20879,6 @@
           }
         },
         {
-          "id": "character-versus:naruto:sasuke-uchiha-vs-bleach-rukia-kuchiki",
-          "anime": "naruto",
-          "animeTitle": "Naruto",
-          "subject": "sasuke-uchiha-vs-bleach-rukia-kuchiki",
-          "series": null,
-          "displayName": {
-            "en": "Sasuke Uchiha vs Rukia Kuchiki",
-            "it": "Sasuke Uchiha vs Rukia Kuchiki"
-          },
-          "locales": [
-            "en",
-            "it"
-          ],
-          "recommendedDurationSeconds": 22,
-          "facts": {
-            "importance": "main",
-            "opponentImportance": "main",
-            "opponentAnime": "bleach",
-            "opponentSubject": "rukia-kuchiki",
-            "placesA": 9,
-            "placesB": 10
-          },
-          "renderedLocales": [],
-          "scheduledLocales": [],
-          "publishedLocales": [],
-          "queuedLocales": [],
-          "renderedBefore": false,
-          "publishedBefore": false,
-          "publication": [],
-          "request": {
-            "subject": "sasuke-uchiha",
-            "opponent": {
-              "anime": "bleach",
-              "subject": "rukia-kuchiki"
-            }
-          }
-        },
-        {
           "id": "character-versus:naruto:sasuke-uchiha-vs-bleach-yasutora-chad-sado",
           "anime": "naruto",
           "animeTitle": "Naruto",
@@ -20654,7 +20899,7 @@
             "opponentAnime": "bleach",
             "opponentSubject": "yasutora-chad-sado",
             "placesA": 9,
-            "placesB": 9
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -21128,6 +21373,44 @@
           }
         },
         {
+          "id": "character-versus:hunterxhunter:gon-freecss-vs-bleach-rukia-kuchiki",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "gon-freecss-vs-bleach-rukia-kuchiki",
+          "series": null,
+          "displayName": {
+            "en": "Gon Freecss vs Rukia Kuchiki",
+            "it": "Gon Freecss vs Rukia Kuchiki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "bleach",
+            "opponentSubject": "rukia-kuchiki",
+            "placesA": 9,
+            "placesB": 11
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "gon-freecss",
+            "opponent": {
+              "anime": "bleach",
+              "subject": "rukia-kuchiki"
+            }
+          }
+        },
+        {
           "id": "character-versus:hunterxhunter:gon-freecss-vs-bleach-ichigo-kurosaki",
           "anime": "hunterxhunter",
           "animeTitle": "Hunter x Hunter",
@@ -21166,44 +21449,6 @@
           }
         },
         {
-          "id": "character-versus:hunterxhunter:gon-freecss-vs-bleach-rukia-kuchiki",
-          "anime": "hunterxhunter",
-          "animeTitle": "Hunter x Hunter",
-          "subject": "gon-freecss-vs-bleach-rukia-kuchiki",
-          "series": null,
-          "displayName": {
-            "en": "Gon Freecss vs Rukia Kuchiki",
-            "it": "Gon Freecss vs Rukia Kuchiki"
-          },
-          "locales": [
-            "en",
-            "it"
-          ],
-          "recommendedDurationSeconds": 22,
-          "facts": {
-            "importance": "main",
-            "opponentImportance": "main",
-            "opponentAnime": "bleach",
-            "opponentSubject": "rukia-kuchiki",
-            "placesA": 9,
-            "placesB": 10
-          },
-          "renderedLocales": [],
-          "scheduledLocales": [],
-          "publishedLocales": [],
-          "queuedLocales": [],
-          "renderedBefore": false,
-          "publishedBefore": false,
-          "publication": [],
-          "request": {
-            "subject": "gon-freecss",
-            "opponent": {
-              "anime": "bleach",
-              "subject": "rukia-kuchiki"
-            }
-          }
-        },
-        {
           "id": "character-versus:hunterxhunter:gon-freecss-vs-bleach-yasutora-chad-sado",
           "anime": "hunterxhunter",
           "animeTitle": "Hunter x Hunter",
@@ -21224,7 +21469,7 @@
             "opponentAnime": "bleach",
             "opponentSubject": "yasutora-chad-sado",
             "placesA": 9,
-            "placesB": 9
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -21698,6 +21943,44 @@
           }
         },
         {
+          "id": "character-versus:hunterxhunter:killua-zoldyck-vs-bleach-rukia-kuchiki",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "killua-zoldyck-vs-bleach-rukia-kuchiki",
+          "series": null,
+          "displayName": {
+            "en": "Killua Zoldyck vs Rukia Kuchiki",
+            "it": "Killua Zoldyck vs Rukia Kuchiki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "bleach",
+            "opponentSubject": "rukia-kuchiki",
+            "placesA": 8,
+            "placesB": 11
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "killua-zoldyck",
+            "opponent": {
+              "anime": "bleach",
+              "subject": "rukia-kuchiki"
+            }
+          }
+        },
+        {
           "id": "character-versus:hunterxhunter:killua-zoldyck-vs-bleach-ichigo-kurosaki",
           "anime": "hunterxhunter",
           "animeTitle": "Hunter x Hunter",
@@ -21736,44 +22019,6 @@
           }
         },
         {
-          "id": "character-versus:hunterxhunter:killua-zoldyck-vs-bleach-rukia-kuchiki",
-          "anime": "hunterxhunter",
-          "animeTitle": "Hunter x Hunter",
-          "subject": "killua-zoldyck-vs-bleach-rukia-kuchiki",
-          "series": null,
-          "displayName": {
-            "en": "Killua Zoldyck vs Rukia Kuchiki",
-            "it": "Killua Zoldyck vs Rukia Kuchiki"
-          },
-          "locales": [
-            "en",
-            "it"
-          ],
-          "recommendedDurationSeconds": 22,
-          "facts": {
-            "importance": "main",
-            "opponentImportance": "main",
-            "opponentAnime": "bleach",
-            "opponentSubject": "rukia-kuchiki",
-            "placesA": 8,
-            "placesB": 10
-          },
-          "renderedLocales": [],
-          "scheduledLocales": [],
-          "publishedLocales": [],
-          "queuedLocales": [],
-          "renderedBefore": false,
-          "publishedBefore": false,
-          "publication": [],
-          "request": {
-            "subject": "killua-zoldyck",
-            "opponent": {
-              "anime": "bleach",
-              "subject": "rukia-kuchiki"
-            }
-          }
-        },
-        {
           "id": "character-versus:hunterxhunter:killua-zoldyck-vs-bleach-yasutora-chad-sado",
           "anime": "hunterxhunter",
           "animeTitle": "Hunter x Hunter",
@@ -21794,7 +22039,7 @@
             "opponentAnime": "bleach",
             "opponentSubject": "yasutora-chad-sado",
             "placesA": 8,
-            "placesB": 9
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -22285,6 +22530,44 @@
           }
         },
         {
+          "id": "character-versus:hunterxhunter:kurapika-vs-bleach-rukia-kuchiki",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "kurapika-vs-bleach-rukia-kuchiki",
+          "series": null,
+          "displayName": {
+            "en": "Kurapika vs Rukia Kuchiki",
+            "it": "Kurapika vs Rukia Kuchiki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "bleach",
+            "opponentSubject": "rukia-kuchiki",
+            "placesA": 4,
+            "placesB": 11
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "kurapika",
+            "opponent": {
+              "anime": "bleach",
+              "subject": "rukia-kuchiki"
+            }
+          }
+        },
+        {
           "id": "character-versus:hunterxhunter:kurapika-vs-bleach-ichigo-kurosaki",
           "anime": "hunterxhunter",
           "animeTitle": "Hunter x Hunter",
@@ -22323,44 +22606,6 @@
           }
         },
         {
-          "id": "character-versus:hunterxhunter:kurapika-vs-bleach-rukia-kuchiki",
-          "anime": "hunterxhunter",
-          "animeTitle": "Hunter x Hunter",
-          "subject": "kurapika-vs-bleach-rukia-kuchiki",
-          "series": null,
-          "displayName": {
-            "en": "Kurapika vs Rukia Kuchiki",
-            "it": "Kurapika vs Rukia Kuchiki"
-          },
-          "locales": [
-            "en",
-            "it"
-          ],
-          "recommendedDurationSeconds": 22,
-          "facts": {
-            "importance": "main",
-            "opponentImportance": "main",
-            "opponentAnime": "bleach",
-            "opponentSubject": "rukia-kuchiki",
-            "placesA": 4,
-            "placesB": 10
-          },
-          "renderedLocales": [],
-          "scheduledLocales": [],
-          "publishedLocales": [],
-          "queuedLocales": [],
-          "renderedBefore": false,
-          "publishedBefore": false,
-          "publication": [],
-          "request": {
-            "subject": "kurapika",
-            "opponent": {
-              "anime": "bleach",
-              "subject": "rukia-kuchiki"
-            }
-          }
-        },
-        {
           "id": "character-versus:hunterxhunter:kurapika-vs-bleach-yasutora-chad-sado",
           "anime": "hunterxhunter",
           "animeTitle": "Hunter x Hunter",
@@ -22381,7 +22626,7 @@
             "opponentAnime": "bleach",
             "opponentSubject": "yasutora-chad-sado",
             "placesA": 4,
-            "placesB": 9
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -22741,6 +22986,44 @@
           }
         },
         {
+          "id": "character-versus:onepiece:monkey-d-luffy-vs-bleach-rukia-kuchiki",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "monkey-d-luffy-vs-bleach-rukia-kuchiki",
+          "series": null,
+          "displayName": {
+            "en": "Monkey D. Luffy vs Rukia Kuchiki",
+            "it": "Monkey D. Rufy vs Rukia Kuchiki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "bleach",
+            "opponentSubject": "rukia-kuchiki",
+            "placesA": 31,
+            "placesB": 11
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "monkey-d-luffy",
+            "opponent": {
+              "anime": "bleach",
+              "subject": "rukia-kuchiki"
+            }
+          }
+        },
+        {
           "id": "character-versus:onepiece:monkey-d-luffy-vs-bleach-ichigo-kurosaki",
           "anime": "onepiece",
           "animeTitle": "One Piece",
@@ -22779,44 +23062,6 @@
           }
         },
         {
-          "id": "character-versus:onepiece:monkey-d-luffy-vs-bleach-rukia-kuchiki",
-          "anime": "onepiece",
-          "animeTitle": "One Piece",
-          "subject": "monkey-d-luffy-vs-bleach-rukia-kuchiki",
-          "series": null,
-          "displayName": {
-            "en": "Monkey D. Luffy vs Rukia Kuchiki",
-            "it": "Monkey D. Rufy vs Rukia Kuchiki"
-          },
-          "locales": [
-            "en",
-            "it"
-          ],
-          "recommendedDurationSeconds": 22,
-          "facts": {
-            "importance": "main",
-            "opponentImportance": "main",
-            "opponentAnime": "bleach",
-            "opponentSubject": "rukia-kuchiki",
-            "placesA": 31,
-            "placesB": 10
-          },
-          "renderedLocales": [],
-          "scheduledLocales": [],
-          "publishedLocales": [],
-          "queuedLocales": [],
-          "renderedBefore": false,
-          "publishedBefore": false,
-          "publication": [],
-          "request": {
-            "subject": "monkey-d-luffy",
-            "opponent": {
-              "anime": "bleach",
-              "subject": "rukia-kuchiki"
-            }
-          }
-        },
-        {
           "id": "character-versus:onepiece:monkey-d-luffy-vs-bleach-yasutora-chad-sado",
           "anime": "onepiece",
           "animeTitle": "One Piece",
@@ -22837,7 +23082,7 @@
             "opponentAnime": "bleach",
             "opponentSubject": "yasutora-chad-sado",
             "placesA": 31,
-            "placesB": 9
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -23197,6 +23442,44 @@
           }
         },
         {
+          "id": "character-versus:onepiece:roronoa-zoro-vs-bleach-rukia-kuchiki",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "roronoa-zoro-vs-bleach-rukia-kuchiki",
+          "series": null,
+          "displayName": {
+            "en": "Roronoa Zoro vs Rukia Kuchiki",
+            "it": "Roronoa Zoro vs Rukia Kuchiki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "bleach",
+            "opponentSubject": "rukia-kuchiki",
+            "placesA": 20,
+            "placesB": 11
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "roronoa-zoro",
+            "opponent": {
+              "anime": "bleach",
+              "subject": "rukia-kuchiki"
+            }
+          }
+        },
+        {
           "id": "character-versus:onepiece:roronoa-zoro-vs-bleach-ichigo-kurosaki",
           "anime": "onepiece",
           "animeTitle": "One Piece",
@@ -23235,44 +23518,6 @@
           }
         },
         {
-          "id": "character-versus:onepiece:roronoa-zoro-vs-bleach-rukia-kuchiki",
-          "anime": "onepiece",
-          "animeTitle": "One Piece",
-          "subject": "roronoa-zoro-vs-bleach-rukia-kuchiki",
-          "series": null,
-          "displayName": {
-            "en": "Roronoa Zoro vs Rukia Kuchiki",
-            "it": "Roronoa Zoro vs Rukia Kuchiki"
-          },
-          "locales": [
-            "en",
-            "it"
-          ],
-          "recommendedDurationSeconds": 22,
-          "facts": {
-            "importance": "main",
-            "opponentImportance": "main",
-            "opponentAnime": "bleach",
-            "opponentSubject": "rukia-kuchiki",
-            "placesA": 20,
-            "placesB": 10
-          },
-          "renderedLocales": [],
-          "scheduledLocales": [],
-          "publishedLocales": [],
-          "queuedLocales": [],
-          "renderedBefore": false,
-          "publishedBefore": false,
-          "publication": [],
-          "request": {
-            "subject": "roronoa-zoro",
-            "opponent": {
-              "anime": "bleach",
-              "subject": "rukia-kuchiki"
-            }
-          }
-        },
-        {
           "id": "character-versus:onepiece:roronoa-zoro-vs-bleach-yasutora-chad-sado",
           "anime": "onepiece",
           "animeTitle": "One Piece",
@@ -23293,7 +23538,7 @@
             "opponentAnime": "bleach",
             "opponentSubject": "yasutora-chad-sado",
             "placesA": 20,
-            "placesB": 9
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -23653,6 +23898,44 @@
           }
         },
         {
+          "id": "character-versus:onepiece:sanji-vs-bleach-rukia-kuchiki",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "sanji-vs-bleach-rukia-kuchiki",
+          "series": null,
+          "displayName": {
+            "en": "Sanji vs Rukia Kuchiki",
+            "it": "Sanji vs Rukia Kuchiki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "bleach",
+            "opponentSubject": "rukia-kuchiki",
+            "placesA": 18,
+            "placesB": 11
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "sanji",
+            "opponent": {
+              "anime": "bleach",
+              "subject": "rukia-kuchiki"
+            }
+          }
+        },
+        {
           "id": "character-versus:onepiece:sanji-vs-bleach-ichigo-kurosaki",
           "anime": "onepiece",
           "animeTitle": "One Piece",
@@ -23691,44 +23974,6 @@
           }
         },
         {
-          "id": "character-versus:onepiece:sanji-vs-bleach-rukia-kuchiki",
-          "anime": "onepiece",
-          "animeTitle": "One Piece",
-          "subject": "sanji-vs-bleach-rukia-kuchiki",
-          "series": null,
-          "displayName": {
-            "en": "Sanji vs Rukia Kuchiki",
-            "it": "Sanji vs Rukia Kuchiki"
-          },
-          "locales": [
-            "en",
-            "it"
-          ],
-          "recommendedDurationSeconds": 22,
-          "facts": {
-            "importance": "main",
-            "opponentImportance": "main",
-            "opponentAnime": "bleach",
-            "opponentSubject": "rukia-kuchiki",
-            "placesA": 18,
-            "placesB": 10
-          },
-          "renderedLocales": [],
-          "scheduledLocales": [],
-          "publishedLocales": [],
-          "queuedLocales": [],
-          "renderedBefore": false,
-          "publishedBefore": false,
-          "publication": [],
-          "request": {
-            "subject": "sanji",
-            "opponent": {
-              "anime": "bleach",
-              "subject": "rukia-kuchiki"
-            }
-          }
-        },
-        {
           "id": "character-versus:onepiece:sanji-vs-bleach-yasutora-chad-sado",
           "anime": "onepiece",
           "animeTitle": "One Piece",
@@ -23749,7 +23994,7 @@
             "opponentAnime": "bleach",
             "opponentSubject": "yasutora-chad-sado",
             "placesA": 18,
-            "placesB": 9
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -24012,6 +24257,44 @@
           }
         },
         {
+          "id": "character-versus:dragonball:goku-vs-bleach-rukia-kuchiki",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "goku-vs-bleach-rukia-kuchiki",
+          "series": null,
+          "displayName": {
+            "en": "Goku vs Rukia Kuchiki",
+            "it": "Son Goku vs Rukia Kuchiki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "bleach",
+            "opponentSubject": "rukia-kuchiki",
+            "placesA": 17,
+            "placesB": 11
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "goku",
+            "opponent": {
+              "anime": "bleach",
+              "subject": "rukia-kuchiki"
+            }
+          }
+        },
+        {
           "id": "character-versus:dragonball:goku-vs-bleach-ichigo-kurosaki",
           "anime": "dragonball",
           "animeTitle": "Dragon Ball",
@@ -24050,44 +24333,6 @@
           }
         },
         {
-          "id": "character-versus:dragonball:goku-vs-bleach-rukia-kuchiki",
-          "anime": "dragonball",
-          "animeTitle": "Dragon Ball",
-          "subject": "goku-vs-bleach-rukia-kuchiki",
-          "series": null,
-          "displayName": {
-            "en": "Goku vs Rukia Kuchiki",
-            "it": "Son Goku vs Rukia Kuchiki"
-          },
-          "locales": [
-            "en",
-            "it"
-          ],
-          "recommendedDurationSeconds": 22,
-          "facts": {
-            "importance": "main",
-            "opponentImportance": "main",
-            "opponentAnime": "bleach",
-            "opponentSubject": "rukia-kuchiki",
-            "placesA": 17,
-            "placesB": 10
-          },
-          "renderedLocales": [],
-          "scheduledLocales": [],
-          "publishedLocales": [],
-          "queuedLocales": [],
-          "renderedBefore": false,
-          "publishedBefore": false,
-          "publication": [],
-          "request": {
-            "subject": "goku",
-            "opponent": {
-              "anime": "bleach",
-              "subject": "rukia-kuchiki"
-            }
-          }
-        },
-        {
           "id": "character-versus:dragonball:goku-vs-bleach-yasutora-chad-sado",
           "anime": "dragonball",
           "animeTitle": "Dragon Ball",
@@ -24108,7 +24353,7 @@
             "opponentAnime": "bleach",
             "opponentSubject": "yasutora-chad-sado",
             "placesA": 17,
-            "placesB": 9
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -24354,6 +24599,44 @@
           }
         },
         {
+          "id": "character-versus:dragonball:piccolo-vs-bleach-rukia-kuchiki",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "piccolo-vs-bleach-rukia-kuchiki",
+          "series": null,
+          "displayName": {
+            "en": "Piccolo vs Rukia Kuchiki",
+            "it": "Piccolo vs Rukia Kuchiki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "bleach",
+            "opponentSubject": "rukia-kuchiki",
+            "placesA": 11,
+            "placesB": 11
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "piccolo",
+            "opponent": {
+              "anime": "bleach",
+              "subject": "rukia-kuchiki"
+            }
+          }
+        },
+        {
           "id": "character-versus:dragonball:piccolo-vs-bleach-ichigo-kurosaki",
           "anime": "dragonball",
           "animeTitle": "Dragon Ball",
@@ -24409,44 +24692,6 @@
           }
         },
         {
-          "id": "character-versus:dragonball:piccolo-vs-bleach-rukia-kuchiki",
-          "anime": "dragonball",
-          "animeTitle": "Dragon Ball",
-          "subject": "piccolo-vs-bleach-rukia-kuchiki",
-          "series": null,
-          "displayName": {
-            "en": "Piccolo vs Rukia Kuchiki",
-            "it": "Piccolo vs Rukia Kuchiki"
-          },
-          "locales": [
-            "en",
-            "it"
-          ],
-          "recommendedDurationSeconds": 22,
-          "facts": {
-            "importance": "main",
-            "opponentImportance": "main",
-            "opponentAnime": "bleach",
-            "opponentSubject": "rukia-kuchiki",
-            "placesA": 11,
-            "placesB": 10
-          },
-          "renderedLocales": [],
-          "scheduledLocales": [],
-          "publishedLocales": [],
-          "queuedLocales": [],
-          "renderedBefore": false,
-          "publishedBefore": false,
-          "publication": [],
-          "request": {
-            "subject": "piccolo",
-            "opponent": {
-              "anime": "bleach",
-              "subject": "rukia-kuchiki"
-            }
-          }
-        },
-        {
           "id": "character-versus:dragonball:piccolo-vs-bleach-yasutora-chad-sado",
           "anime": "dragonball",
           "animeTitle": "Dragon Ball",
@@ -24467,7 +24712,7 @@
             "opponentAnime": "bleach",
             "opponentSubject": "yasutora-chad-sado",
             "placesA": 11,
-            "placesB": 9
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -24713,6 +24958,44 @@
           }
         },
         {
+          "id": "character-versus:dragonball:vegeta-vs-bleach-rukia-kuchiki",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "vegeta-vs-bleach-rukia-kuchiki",
+          "series": null,
+          "displayName": {
+            "en": "Vegeta vs Rukia Kuchiki",
+            "it": "Vegeta vs Rukia Kuchiki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "bleach",
+            "opponentSubject": "rukia-kuchiki",
+            "placesA": 10,
+            "placesB": 11
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "vegeta",
+            "opponent": {
+              "anime": "bleach",
+              "subject": "rukia-kuchiki"
+            }
+          }
+        },
+        {
           "id": "character-versus:dragonball:vegeta-vs-bleach-ichigo-kurosaki",
           "anime": "dragonball",
           "animeTitle": "Dragon Ball",
@@ -24751,44 +25034,6 @@
           }
         },
         {
-          "id": "character-versus:dragonball:vegeta-vs-bleach-rukia-kuchiki",
-          "anime": "dragonball",
-          "animeTitle": "Dragon Ball",
-          "subject": "vegeta-vs-bleach-rukia-kuchiki",
-          "series": null,
-          "displayName": {
-            "en": "Vegeta vs Rukia Kuchiki",
-            "it": "Vegeta vs Rukia Kuchiki"
-          },
-          "locales": [
-            "en",
-            "it"
-          ],
-          "recommendedDurationSeconds": 22,
-          "facts": {
-            "importance": "main",
-            "opponentImportance": "main",
-            "opponentAnime": "bleach",
-            "opponentSubject": "rukia-kuchiki",
-            "placesA": 10,
-            "placesB": 10
-          },
-          "renderedLocales": [],
-          "scheduledLocales": [],
-          "publishedLocales": [],
-          "queuedLocales": [],
-          "renderedBefore": false,
-          "publishedBefore": false,
-          "publication": [],
-          "request": {
-            "subject": "vegeta",
-            "opponent": {
-              "anime": "bleach",
-              "subject": "rukia-kuchiki"
-            }
-          }
-        },
-        {
           "id": "character-versus:dragonball:vegeta-vs-bleach-yasutora-chad-sado",
           "anime": "dragonball",
           "animeTitle": "Dragon Ball",
@@ -24809,7 +25054,7 @@
             "opponentAnime": "bleach",
             "opponentSubject": "yasutora-chad-sado",
             "placesA": 10,
-            "placesB": 9
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -24941,6 +25186,44 @@
           }
         },
         {
+          "id": "character-versus:attackontitan:armin-arlert-vs-bleach-rukia-kuchiki",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "armin-arlert-vs-bleach-rukia-kuchiki",
+          "series": null,
+          "displayName": {
+            "en": "Armin Arlert vs Rukia Kuchiki",
+            "it": "Armin Arlert vs Rukia Kuchiki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "bleach",
+            "opponentSubject": "rukia-kuchiki",
+            "placesA": 5,
+            "placesB": 11
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "armin-arlert",
+            "opponent": {
+              "anime": "bleach",
+              "subject": "rukia-kuchiki"
+            }
+          }
+        },
+        {
           "id": "character-versus:attackontitan:armin-arlert-vs-bleach-ichigo-kurosaki",
           "anime": "attackontitan",
           "animeTitle": "Attack on Titan",
@@ -24979,44 +25262,6 @@
           }
         },
         {
-          "id": "character-versus:attackontitan:armin-arlert-vs-bleach-rukia-kuchiki",
-          "anime": "attackontitan",
-          "animeTitle": "Attack on Titan",
-          "subject": "armin-arlert-vs-bleach-rukia-kuchiki",
-          "series": null,
-          "displayName": {
-            "en": "Armin Arlert vs Rukia Kuchiki",
-            "it": "Armin Arlert vs Rukia Kuchiki"
-          },
-          "locales": [
-            "en",
-            "it"
-          ],
-          "recommendedDurationSeconds": 22,
-          "facts": {
-            "importance": "main",
-            "opponentImportance": "main",
-            "opponentAnime": "bleach",
-            "opponentSubject": "rukia-kuchiki",
-            "placesA": 5,
-            "placesB": 10
-          },
-          "renderedLocales": [],
-          "scheduledLocales": [],
-          "publishedLocales": [],
-          "queuedLocales": [],
-          "renderedBefore": false,
-          "publishedBefore": false,
-          "publication": [],
-          "request": {
-            "subject": "armin-arlert",
-            "opponent": {
-              "anime": "bleach",
-              "subject": "rukia-kuchiki"
-            }
-          }
-        },
-        {
           "id": "character-versus:attackontitan:armin-arlert-vs-bleach-yasutora-chad-sado",
           "anime": "attackontitan",
           "animeTitle": "Attack on Titan",
@@ -25037,7 +25282,7 @@
             "opponentAnime": "bleach",
             "opponentSubject": "yasutora-chad-sado",
             "placesA": 5,
-            "placesB": 9
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -25169,6 +25414,44 @@
           }
         },
         {
+          "id": "character-versus:attackontitan:mikasa-ackerman-vs-bleach-rukia-kuchiki",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "mikasa-ackerman-vs-bleach-rukia-kuchiki",
+          "series": null,
+          "displayName": {
+            "en": "Mikasa Ackerman vs Rukia Kuchiki",
+            "it": "Mikasa Ackerman vs Rukia Kuchiki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "bleach",
+            "opponentSubject": "rukia-kuchiki",
+            "placesA": 5,
+            "placesB": 11
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "mikasa-ackerman",
+            "opponent": {
+              "anime": "bleach",
+              "subject": "rukia-kuchiki"
+            }
+          }
+        },
+        {
           "id": "character-versus:attackontitan:mikasa-ackerman-vs-bleach-ichigo-kurosaki",
           "anime": "attackontitan",
           "animeTitle": "Attack on Titan",
@@ -25207,44 +25490,6 @@
           }
         },
         {
-          "id": "character-versus:attackontitan:mikasa-ackerman-vs-bleach-rukia-kuchiki",
-          "anime": "attackontitan",
-          "animeTitle": "Attack on Titan",
-          "subject": "mikasa-ackerman-vs-bleach-rukia-kuchiki",
-          "series": null,
-          "displayName": {
-            "en": "Mikasa Ackerman vs Rukia Kuchiki",
-            "it": "Mikasa Ackerman vs Rukia Kuchiki"
-          },
-          "locales": [
-            "en",
-            "it"
-          ],
-          "recommendedDurationSeconds": 22,
-          "facts": {
-            "importance": "main",
-            "opponentImportance": "main",
-            "opponentAnime": "bleach",
-            "opponentSubject": "rukia-kuchiki",
-            "placesA": 5,
-            "placesB": 10
-          },
-          "renderedLocales": [],
-          "scheduledLocales": [],
-          "publishedLocales": [],
-          "queuedLocales": [],
-          "renderedBefore": false,
-          "publishedBefore": false,
-          "publication": [],
-          "request": {
-            "subject": "mikasa-ackerman",
-            "opponent": {
-              "anime": "bleach",
-              "subject": "rukia-kuchiki"
-            }
-          }
-        },
-        {
           "id": "character-versus:attackontitan:mikasa-ackerman-vs-bleach-yasutora-chad-sado",
           "anime": "attackontitan",
           "animeTitle": "Attack on Titan",
@@ -25265,7 +25510,7 @@
             "opponentAnime": "bleach",
             "opponentSubject": "yasutora-chad-sado",
             "placesA": 5,
-            "placesB": 9
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -25416,6 +25661,44 @@
           }
         },
         {
+          "id": "character-versus:attackontitan:reiner-braun-vs-bleach-rukia-kuchiki",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "reiner-braun-vs-bleach-rukia-kuchiki",
+          "series": null,
+          "displayName": {
+            "en": "Reiner Braun vs Rukia Kuchiki",
+            "it": "Reiner Braun vs Rukia Kuchiki"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "bleach",
+            "opponentSubject": "rukia-kuchiki",
+            "placesA": 5,
+            "placesB": 11
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "reiner-braun",
+            "opponent": {
+              "anime": "bleach",
+              "subject": "rukia-kuchiki"
+            }
+          }
+        },
+        {
           "id": "character-versus:attackontitan:reiner-braun-vs-bleach-ichigo-kurosaki",
           "anime": "attackontitan",
           "animeTitle": "Attack on Titan",
@@ -25454,44 +25737,6 @@
           }
         },
         {
-          "id": "character-versus:attackontitan:reiner-braun-vs-bleach-rukia-kuchiki",
-          "anime": "attackontitan",
-          "animeTitle": "Attack on Titan",
-          "subject": "reiner-braun-vs-bleach-rukia-kuchiki",
-          "series": null,
-          "displayName": {
-            "en": "Reiner Braun vs Rukia Kuchiki",
-            "it": "Reiner Braun vs Rukia Kuchiki"
-          },
-          "locales": [
-            "en",
-            "it"
-          ],
-          "recommendedDurationSeconds": 22,
-          "facts": {
-            "importance": "main",
-            "opponentImportance": "main",
-            "opponentAnime": "bleach",
-            "opponentSubject": "rukia-kuchiki",
-            "placesA": 5,
-            "placesB": 10
-          },
-          "renderedLocales": [],
-          "scheduledLocales": [],
-          "publishedLocales": [],
-          "queuedLocales": [],
-          "renderedBefore": false,
-          "publishedBefore": false,
-          "publication": [],
-          "request": {
-            "subject": "reiner-braun",
-            "opponent": {
-              "anime": "bleach",
-              "subject": "rukia-kuchiki"
-            }
-          }
-        },
-        {
           "id": "character-versus:attackontitan:reiner-braun-vs-bleach-yasutora-chad-sado",
           "anime": "attackontitan",
           "animeTitle": "Attack on Titan",
@@ -25512,7 +25757,7 @@
             "opponentAnime": "bleach",
             "opponentSubject": "yasutora-chad-sado",
             "placesA": 5,
-            "placesB": 9
+            "placesB": 8
           },
           "renderedLocales": [],
           "scheduledLocales": [],
@@ -25661,6 +25906,137 @@
           }
         },
         {
+          "id": "character-versus:bleach:rukia-kuchiki-vs-blackclover-asta",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "rukia-kuchiki-vs-blackclover-asta",
+          "series": null,
+          "displayName": {
+            "en": "Rukia Kuchiki vs Asta",
+            "it": "Rukia Kuchiki vs Asta"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "blackclover",
+            "opponentSubject": "asta",
+            "placesA": 11,
+            "placesB": 13
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "rukia-kuchiki",
+            "opponent": {
+              "anime": "blackclover",
+              "subject": "asta"
+            }
+          }
+        },
+        {
+          "id": "character-versus:bleach:rukia-kuchiki-vs-blackclover-noelle-silva",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "rukia-kuchiki-vs-blackclover-noelle-silva",
+          "series": null,
+          "displayName": {
+            "en": "Rukia Kuchiki vs Noelle Silva",
+            "it": "Rukia Kuchiki vs Noelle Silva"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "blackclover",
+            "opponentSubject": "noelle-silva",
+            "placesA": 11,
+            "placesB": 9
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "rukia-kuchiki",
+            "opponent": {
+              "anime": "blackclover",
+              "subject": "noelle-silva"
+            }
+          }
+        },
+        {
+          "id": "character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "rukia-kuchiki-vs-blackclover-yami-sukehiro",
+          "series": null,
+          "displayName": {
+            "en": "Rukia Kuchiki vs Yami Sukehiro",
+            "it": "Rukia Kuchiki vs Yami Sukehiro"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "blackclover",
+            "opponentSubject": "yami-sukehiro",
+            "placesA": 11,
+            "placesB": 8
+          },
+          "renderedLocales": [
+            "en"
+          ],
+          "scheduledLocales": [
+            "en"
+          ],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": true,
+          "publishedBefore": false,
+          "publication": [
+            {
+              "renderId": "character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro@en",
+              "locale": "en",
+              "variant": null,
+              "status": "scheduled",
+              "platforms": {
+                "instagram": "scheduled",
+                "facebook": "scheduled",
+                "tiktok": "scheduled",
+                "youtube": "scheduled"
+              }
+            }
+          ],
+          "request": {
+            "subject": "rukia-kuchiki",
+            "opponent": {
+              "anime": "blackclover",
+              "subject": "yami-sukehiro"
+            }
+          }
+        },
+        {
           "id": "character-versus:bleach:ichigo-kurosaki-vs-blackclover-asta",
           "anime": "bleach",
           "animeTitle": "Bleach",
@@ -25775,137 +26151,6 @@
           }
         },
         {
-          "id": "character-versus:bleach:rukia-kuchiki-vs-blackclover-asta",
-          "anime": "bleach",
-          "animeTitle": "Bleach",
-          "subject": "rukia-kuchiki-vs-blackclover-asta",
-          "series": null,
-          "displayName": {
-            "en": "Rukia Kuchiki vs Asta",
-            "it": "Rukia Kuchiki vs Asta"
-          },
-          "locales": [
-            "en",
-            "it"
-          ],
-          "recommendedDurationSeconds": 22,
-          "facts": {
-            "importance": "main",
-            "opponentImportance": "main",
-            "opponentAnime": "blackclover",
-            "opponentSubject": "asta",
-            "placesA": 10,
-            "placesB": 13
-          },
-          "renderedLocales": [],
-          "scheduledLocales": [],
-          "publishedLocales": [],
-          "queuedLocales": [],
-          "renderedBefore": false,
-          "publishedBefore": false,
-          "publication": [],
-          "request": {
-            "subject": "rukia-kuchiki",
-            "opponent": {
-              "anime": "blackclover",
-              "subject": "asta"
-            }
-          }
-        },
-        {
-          "id": "character-versus:bleach:rukia-kuchiki-vs-blackclover-noelle-silva",
-          "anime": "bleach",
-          "animeTitle": "Bleach",
-          "subject": "rukia-kuchiki-vs-blackclover-noelle-silva",
-          "series": null,
-          "displayName": {
-            "en": "Rukia Kuchiki vs Noelle Silva",
-            "it": "Rukia Kuchiki vs Noelle Silva"
-          },
-          "locales": [
-            "en",
-            "it"
-          ],
-          "recommendedDurationSeconds": 22,
-          "facts": {
-            "importance": "main",
-            "opponentImportance": "main",
-            "opponentAnime": "blackclover",
-            "opponentSubject": "noelle-silva",
-            "placesA": 10,
-            "placesB": 9
-          },
-          "renderedLocales": [],
-          "scheduledLocales": [],
-          "publishedLocales": [],
-          "queuedLocales": [],
-          "renderedBefore": false,
-          "publishedBefore": false,
-          "publication": [],
-          "request": {
-            "subject": "rukia-kuchiki",
-            "opponent": {
-              "anime": "blackclover",
-              "subject": "noelle-silva"
-            }
-          }
-        },
-        {
-          "id": "character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro",
-          "anime": "bleach",
-          "animeTitle": "Bleach",
-          "subject": "rukia-kuchiki-vs-blackclover-yami-sukehiro",
-          "series": null,
-          "displayName": {
-            "en": "Rukia Kuchiki vs Yami Sukehiro",
-            "it": "Rukia Kuchiki vs Yami Sukehiro"
-          },
-          "locales": [
-            "en",
-            "it"
-          ],
-          "recommendedDurationSeconds": 22,
-          "facts": {
-            "importance": "main",
-            "opponentImportance": "main",
-            "opponentAnime": "blackclover",
-            "opponentSubject": "yami-sukehiro",
-            "placesA": 10,
-            "placesB": 8
-          },
-          "renderedLocales": [
-            "en"
-          ],
-          "scheduledLocales": [
-            "en"
-          ],
-          "publishedLocales": [],
-          "queuedLocales": [],
-          "renderedBefore": true,
-          "publishedBefore": false,
-          "publication": [
-            {
-              "renderId": "character-versus:bleach:rukia-kuchiki-vs-blackclover-yami-sukehiro@en",
-              "locale": "en",
-              "variant": null,
-              "status": "scheduled",
-              "platforms": {
-                "instagram": "scheduled",
-                "facebook": "scheduled",
-                "tiktok": "scheduled",
-                "youtube": "scheduled"
-              }
-            }
-          ],
-          "request": {
-            "subject": "rukia-kuchiki",
-            "opponent": {
-              "anime": "blackclover",
-              "subject": "yami-sukehiro"
-            }
-          }
-        },
-        {
           "id": "character-versus:bleach:yasutora-chad-sado-vs-blackclover-asta",
           "anime": "bleach",
           "animeTitle": "Bleach",
@@ -25925,7 +26170,7 @@
             "opponentImportance": "main",
             "opponentAnime": "blackclover",
             "opponentSubject": "asta",
-            "placesA": 9,
+            "placesA": 8,
             "placesB": 13
           },
           "renderedLocales": [
@@ -25980,7 +26225,7 @@
             "opponentImportance": "main",
             "opponentAnime": "blackclover",
             "opponentSubject": "noelle-silva",
-            "placesA": 9,
+            "placesA": 8,
             "placesB": 9
           },
           "renderedLocales": [],
@@ -26018,7 +26263,7 @@
             "opponentImportance": "main",
             "opponentAnime": "blackclover",
             "opponentSubject": "yami-sukehiro",
-            "placesA": 9,
+            "placesA": 8,
             "placesB": 8
           },
           "renderedLocales": [],
