@@ -14,6 +14,15 @@ Seguito di `docs/SECURITY_SEC-01.md` (piano completo, passi 1-8) dopo la migrazi
 | PR quotidiane degli agenti | aperte e mergiate con l'identità `LucaSartorio` dopo i check (es. #318, #319) |
 | PR di Claude Code | push su branch `claude/*`, PR come `LucaSartorio` (#320) |
 
+**Ri-verifica 2026-11-18** (stessa API pubblica, sola lettura; nessuna modifica): `main` ancora `protected: false`,
+`required_status_checks.enforcement_level: off`; `rulesets` e `rules/branches/main` ancora `[]`. Dal 2026-11-13 tutti
+i commit di stato su `main` sono di `animapverse-state-bot[bot]` (2 al giorno, l'ultimo `96c28a4`); i commit
+`github-actions[bot]` si fermano al 2026-11-12. *Social render* e *Social publication state*: `success` negli ultimi 8
+run (11-11 → 11-18); *Site CI*: `success` sulle ultime 8 PR (social e `claude/*`). Nel first-parent di `main` dal
+2026-10-15 ogni commit non-bot arriva da una PR (anche `3011e1c`, senza numero nel titolo: è la PR #329): la fase B
+non romperebbe flussi esistenti. Non verificabili senza accesso autenticato: la variabile `STATE_BOT_LOGIN`, il job
+*State Bot credentials (dry run)*, i permessi dell'installazione dell'App.
+
 Conseguenza: oggi chiunque agisca come proprietario (tu, gli agenti ChatGPT, Claude) **può** fare push diretto, force
 push o cancellare `main`. Gli hook di `.claude/` lo impediscono solo alle sessioni Claude Code che li caricano (non nei
 thread Cloud di *Projects*, non via API GitHub/MCP): sono un guard-rail, non una protezione.
@@ -72,6 +81,30 @@ curl -s https://api.github.com/repos/LucaSartorio/MindMapsAnime/rules/branches/m
 ```
 
 Deve elencare `deletion` e `non_fast_forward` (fase A), poi `pull_request` e `required_status_checks` (fase B).
+
+## 4-bis. Procedura operativa per il proprietario (aggiornata 2026-11-18)
+
+| Passo | Fase A — `main-baseline` | Fase B — `main-pr` |
+|---|---|---|
+| Stato rilevato | nessuna protezione (§1) | idem; State Bot stabile da 6 giorni (§1) |
+| Modifica | ruleset *Active* su `main`: *Restrict deletions* + *Block force pushes*, bypass vuoto | *Require a pull request* (0 approvazioni) + *Require status checks* = `Site CI` (GitHub Actions, senza "up to date"), bypass **solo** `AniMapVerse State Bot` (*Always*) |
+| Prerequisiti | nessuno (i push del bot sono fast-forward) | i 4 di §3 fase B: dry run delle credenziali, `STATE_BOT_LOGIN` = `animapverse-state-bot[bot]`, nessun `[skip ci]` nelle PR, `Site CI` che conclude sempre |
+| Operazione del proprietario | Settings → Rules → Rulesets → New branch ruleset | idem, poco prima del ciclo delle ~06:00 UTC |
+| Verifica | `curl` di §4 → `deletion`, `non_fast_forward`; il ciclo social successivo resta verde | `curl` di §4 → anche `pull_request`, `required_status_checks`; nel ciclo successivo: commit `record rendered content` e `record publication state` del bot su `main`, PR coda/receipt mergiate, *Rules → Insights* senza rifiuti |
+| Rollback | ruleset → *Enforcement status: Disabled* | `main-pr` → *Disabled*, poi *Re-run failed jobs* di *Social render* / *Social publication state* (lo stato non salvato viene ripersistito) |
+
+Le sessioni Claude non eseguono nessuno di questi passi (`.claude/rules/security.md`): li applica il proprietario.
+
+## 4-ter. Altri rilievi (2026-11-18)
+
+- `social-validate.yml` e `social-publication-validate.yml` usano `actions/checkout@v4` e `actions/setup-node@v4`
+  (tag mobile) invece degli SHA fissati del resto dei workflow. Sono job `pull_request` in sola lettura senza secret:
+  rischio basso, ma una tag riscritta a monte eseguirebbe codice nuovo nella CI delle PR quotidiane. Proposta:
+  fissare gli stessi SHA di `site-ci.yml` (`checkout@11d5960…` v4.4.0, `setup-node@49933ea…` v4.4.0) in una PR
+  dedicata con review del proprietario, perché sono workflow delle automazioni social.
+- `.gitignore` non escludeva `.env`/`.env.production`: corretto (`.env`, `.env.*`, eccetto `.env.example`).
+- Un hook di sessione non impedisce a Claude di fare push su branch `social/*` (es. `d8b33c0` di Claude sul branch della PR #326). La
+  protezione giusta resta organizzativa (CLAUDE.md: "never touch their branches") e, in fase C, la code-owner review.
 
 ## 5. Fuori da questa proposta
 
