@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-17T06:21:59.268Z",
+  "generatedAt": "2026-11-18T06:30:56.431Z",
   "templates": {
     "characterJourney": {
       "byReason": {
-        "single_location": 511,
-        "no_journey_data": 570
+        "single_location": 512,
+        "no_journey_data": 564
       },
       "items": [
         {
@@ -6110,7 +6110,7 @@
           "subject": "kanae-katagiri",
           "subjectId": "char-bl-katagiri",
           "displayName": "Kanae Katagiri",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "bleach",
@@ -6163,13 +6163,6 @@
         },
         {
           "anime": "bleach",
-          "subject": "shuhei-hisagi",
-          "subjectId": "char-bl-hisagi",
-          "displayName": "Shūhei Hisagi",
-          "reason": "single_location"
-        },
-        {
-          "anime": "bleach",
           "subject": "akon",
           "subjectId": "char-bl-akon",
           "displayName": "Akon",
@@ -6180,14 +6173,14 @@
           "subject": "kiyone-kotetsu",
           "subjectId": "char-bl-kiyone",
           "displayName": "Kiyone Kotetsu",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "bleach",
           "subject": "sentaro-kotsubaki",
           "subjectId": "char-bl-sentaro",
           "displayName": "Sentarō Kotsubaki",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "bleach",
@@ -6201,7 +6194,7 @@
           "subject": "ginrei-kuchiki",
           "subjectId": "char-bl-ginrei",
           "displayName": "Ginrei Kuchiki",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "bleach",
@@ -6212,23 +6205,9 @@
         },
         {
           "anime": "bleach",
-          "subject": "riruka-dokugamine",
-          "subjectId": "char-bl-riruka",
-          "displayName": "Riruka Dokugamine",
-          "reason": "single_location"
-        },
-        {
-          "anime": "bleach",
           "subject": "jackie-tristan",
           "subjectId": "char-bl-jackie",
           "displayName": "Jackie Tristan",
-          "reason": "single_location"
-        },
-        {
-          "anime": "bleach",
-          "subject": "yukio-hans-vorarlberna",
-          "subjectId": "char-bl-yukio",
-          "displayName": "Yukio Hans Vorarlberna",
           "reason": "single_location"
         },
         {
@@ -6243,7 +6222,7 @@
           "subject": "moe-shishigawara",
           "subjectId": "char-bl-moe",
           "displayName": "Moe Shishigawara",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "bleach",
@@ -6467,7 +6446,7 @@
           "subject": "rudbornn-chelute",
           "subjectId": "char-bl-rudbornn",
           "displayName": "Rudbornn Chelute",
-          "reason": "no_journey_data"
+          "reason": "single_location"
         },
         {
           "anime": "bleach",
@@ -6502,20 +6481,6 @@
           "subject": "bambietta-basterbine",
           "subjectId": "char-bl-bambietta",
           "displayName": "Bambietta Basterbine",
-          "reason": "single_location"
-        },
-        {
-          "anime": "bleach",
-          "subject": "askin-nakk-le-vaar",
-          "subjectId": "char-bl-askin",
-          "displayName": "Askin Nakk Le Vaar",
-          "reason": "single_location"
-        },
-        {
-          "anime": "bleach",
-          "subject": "bazz-b",
-          "subjectId": "char-bl-bazz-b",
-          "displayName": "Bazz-B",
           "reason": "single_location"
         },
         {
@@ -7579,7 +7544,7 @@
     },
     "guessCharacter": {
       "byReason": {
-        "not_guessable": 193,
+        "not_guessable": 192,
         "no_journey_data": 9
       },
       "items": [
@@ -8737,14 +8702,6 @@
         },
         {
           "anime": "bleach",
-          "subject": "toshiro-hitsugaya",
-          "subjectId": "char-bl-hitsugaya",
-          "displayName": "Tōshirō Hitsugaya",
-          "reason": "not_guessable",
-          "detail": "3 spoiler-free places"
-        },
-        {
-          "anime": "bleach",
           "subject": "kenpachi-zaraki",
           "subjectId": "char-bl-kenpachi",
           "displayName": "Kenpachi Zaraki",
@@ -8821,7 +8778,7 @@
           "subjectId": "char-bl-grimmjow",
           "displayName": "Grimmjow Jaegerjaquez",
           "reason": "not_guessable",
-          "detail": "2 spoiler-free places"
+          "detail": "3 spoiler-free places"
         },
         {
           "anime": "bleach",
@@ -8829,7 +8786,7 @@
           "subjectId": "char-bl-nelliel",
           "displayName": "Nelliel Tu Odelschwanck (Nel)",
           "reason": "not_guessable",
-          "detail": "2 spoiler-free places"
+          "detail": "3 spoiler-free places"
         },
         {
           "anime": "bleach",
