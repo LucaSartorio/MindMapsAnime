@@ -4582,7 +4582,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-11-18T06:41:24.846Z",
-      "updatedAt": "2026-11-18T06:42:37.507Z",
+      "updatedAt": "2026-11-18T07:12:50.566Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-11-18T06:42:37.507Z",
       "outputFile": "tools/social-engine/output/naruto_obito-uchiha-vs-bleach-yasutora-chad-sado_character-versus_en.mp4",
@@ -4651,9 +4651,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-18T12:00:00+01:00",
+          "scheduledAt": "2026-11-18T08:09:15+01:00",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "432457630",
+          "providerPostUuid": "22992381923839603",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=22992381923839603",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "naruto_obito-uchiha-vs-bleach-yasutora-chad-sado_character-versus_en.instagram.scheduled.2ccb7789d990"
+          ],
+          "updatedAt": "2026-11-18T07:12:50.566Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-18T12:00:00+01:00",
+          "scheduledAt": "2026-11-18T08:09:15+01:00",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "432457857",
+          "providerPostUuid": "5769775890426774179",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=5769775890426774179",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "naruto_obito-uchiha-vs-bleach-yasutora-chad-sado_character-versus_en.facebook.scheduled.8e99a334e7a3"
+          ],
+          "updatedAt": "2026-11-18T07:12:50.566Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-18T12:00:00+01:00",
+          "scheduledAt": "2026-11-18T08:09:15+01:00",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "432458066",
+          "providerPostUuid": "-4867202375299019749",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-4867202375299019749",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "naruto_obito-uchiha-vs-bleach-yasutora-chad-sado_character-versus_en.tiktok.scheduled.50f278e4db3f"
+          ],
+          "updatedAt": "2026-11-18T07:12:50.566Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-18T12:00:00+01:00",
+          "scheduledAt": "2026-11-18T08:09:15+01:00",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "432457900",
+          "providerPostUuid": "-1173358175983747042",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-1173358175983747042",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "naruto_obito-uchiha-vs-bleach-yasutora-chad-sado_character-versus_en.youtube.scheduled.c9827f0de8fa"
+          ],
+          "updatedAt": "2026-11-18T07:12:50.566Z"
+        }
+      ]
     },
     "character-versus:naruto:obito-uchiha-vs-hunterxhunter-killua-zoldyck@en": {
       "renderId": "character-versus:naruto:obito-uchiha-vs-hunterxhunter-killua-zoldyck@en",

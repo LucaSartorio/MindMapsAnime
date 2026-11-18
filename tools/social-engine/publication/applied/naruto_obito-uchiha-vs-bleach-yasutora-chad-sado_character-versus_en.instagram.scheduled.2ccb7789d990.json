@@ -1,0 +1,30 @@
+{
+  "receiptId": "naruto_obito-uchiha-vs-bleach-yasutora-chad-sado_character-versus_en.instagram.scheduled.2ccb7789d990",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-11-18T07:12:50.566Z",
+  "sourceFile": "20261118T070915Z-naruto_obito-uchiha-vs-bleach-yasutora-chad-sado_character-versus_en-instagram-scheduled.json",
+  "run": {
+    "runId": "44257087912",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/44257087912",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "character-versus:naruto:obito-uchiha-vs-bleach-yasutora-chad-sado@en",
+    "platform": "instagram",
+    "provider": "metricool",
+    "status": "scheduled",
+    "recordedAt": "2026-11-18T08:09:15+01:00",
+    "scheduledFor": "2026-11-18T12:00:00+01:00",
+    "providerPostId": "432457630",
+    "providerPostUuid": "22992381923839603",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=22992381923839603",
+    "recordedBy": "chatgpt-social-publishing-agent"
+  }
+}
