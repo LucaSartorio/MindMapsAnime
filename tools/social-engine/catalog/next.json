@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-17T06:21:59.268Z",
+  "generatedAt": "2026-11-18T06:30:56.431Z",
   "status": "ready",
   "feedTail": [
     {
@@ -97,11 +97,11 @@
   "mode": "coldstart",
   "seed": "feed46:character-journey:blackclover:yuno-grinberryall:part-01@en:samples0",
   "rejected": {
-    "JOURNEY_PART_ORDER": 34,
+    "JOURNEY_PART_ORDER": 35,
     "JOURNEY_PART_SPACING": 1,
     "MAX_SAME_CHARACTER_STREAK": 2
   },
-  "considered": 655,
+  "considered": 662,
   "trace": {
     "traceVersion": 1,
     "mode": "coldstart",
@@ -203,21 +203,21 @@
       }
     },
     "hardRulesTriggered": {
-      "JOURNEY_PART_ORDER": 34,
+      "JOURNEY_PART_ORDER": 35,
       "JOURNEY_PART_SPACING": 1,
       "MAX_SAME_CHARACTER_STREAK": 2
     },
     "candidates": {
-      "considered": 655,
-      "eligible": 619,
+      "considered": 662,
+      "eligible": 625,
       "byContentType": {
         "character-journey": {
-          "considered": 401,
-          "eligible": 366
+          "considered": 407,
+          "eligible": 371
         },
         "guess-character": {
-          "considered": 77,
-          "eligible": 76
+          "considered": 78,
+          "eligible": 77
         },
         "character-versus": {
           "considered": 177,
@@ -382,74 +382,74 @@
         "potentialScore": 62
       },
       {
-        "renderId": "character-journey:bleach:orihime-inoue:part-02@en",
+        "renderId": "character-journey:bleach:ichigo-kurosaki:part-04@en",
         "contentType": "character-journey",
         "animes": [
           "bleach"
         ],
         "characters": [
-          "bleach:orihime-inoue"
+          "bleach:ichigo-kurosaki"
         ],
         "reasons": [
           "JOURNEY_PART_ORDER"
         ],
         "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+          "sequence: Part 4 before Part 3 (never publish parts out of order)"
         ],
         "potentialScore": 62
       }
     ],
     "status": "selected",
-    "selectedId": "character-versus:naruto:obito-uchiha-vs-attackontitan-armin-arlert",
-    "renderId": "character-versus:naruto:obito-uchiha-vs-attackontitan-armin-arlert@en",
+    "selectedId": "character-versus:naruto:obito-uchiha-vs-bleach-yasutora-chad-sado",
+    "renderId": "character-versus:naruto:obito-uchiha-vs-bleach-yasutora-chad-sado@en",
     "contentType": "character-versus",
     "animes": [
       "naruto",
-      "attackontitan"
+      "bleach"
     ],
     "characters": [
       "naruto:obito-uchiha",
-      "attackontitan:armin-arlert"
+      "bleach:yasutora-chad-sado"
     ],
-    "score": 92.46,
-    "base": 80.46,
+    "score": 91.86,
+    "base": 79.86,
     "reasons": [
-      "coldstart: novelty +24.5, jitter +6.0",
+      "coldstart: novelty +24.0, jitter +5.9",
       "+12 main character"
     ],
     "ranked": [
       {
-        "renderId": "character-versus:naruto:obito-uchiha-vs-attackontitan-armin-arlert@en",
+        "renderId": "character-versus:naruto:obito-uchiha-vs-bleach-yasutora-chad-sado@en",
         "contentType": "character-versus",
         "animes": [
           "naruto",
-          "attackontitan"
-        ],
-        "score": 92.46,
-        "reasons": [
-          "coldstart: novelty +24.5, jitter +6.0",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-attackontitan-reiner-braun@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "attackontitan"
-        ],
-        "score": 92.43,
-        "reasons": [
-          "coldstart: novelty +24.5, jitter +5.9",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:kurapika-vs-bleach-rukia-kuchiki@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
           "bleach"
+        ],
+        "score": 91.86,
+        "reasons": [
+          "coldstart: novelty +24.0, jitter +5.9",
+          "+12 main character"
+        ]
+      },
+      {
+        "renderId": "character-versus:attackontitan:reiner-braun-vs-bleach-yasutora-chad-sado@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "bleach"
+        ],
+        "score": 91.84,
+        "reasons": [
+          "coldstart: novelty +24.0, jitter +5.8",
+          "+12 main character"
+        ]
+      },
+      {
+        "renderId": "character-versus:hunterxhunter:kurapika-vs-dragonball-piccolo@en",
+        "contentType": "character-versus",
+        "animes": [
+          "hunterxhunter",
+          "dragonball"
         ],
         "score": 91.83,
         "reasons": [
@@ -458,38 +458,39 @@
         ]
       },
       {
-        "renderId": "character-versus:naruto:naruto-uzumaki-vs-bleach-ichigo-kurosaki@en",
+        "renderId": "character-versus:naruto:obito-uchiha-vs-bleach-rukia-kuchiki@en",
         "contentType": "character-versus",
         "animes": [
           "naruto",
           "bleach"
         ],
-        "score": 91.81,
+        "score": 91.77,
         "reasons": [
           "coldstart: novelty +24.0, jitter +5.8",
           "+12 main character"
         ]
       },
       {
-        "renderId": "guess-character:naruto:sakura-haruno@en",
-        "contentType": "guess-character",
+        "renderId": "character-versus:dragonball:vegeta-vs-bleach-ichigo-kurosaki@en",
+        "contentType": "character-versus",
         "animes": [
-          "naruto"
+          "dragonball",
+          "bleach"
         ],
-        "score": 91.74,
+        "score": 91.7,
         "reasons": [
           "coldstart: novelty +24.0, jitter +5.7",
           "+12 main character"
         ]
       },
       {
-        "renderId": "character-versus:attackontitan:armin-arlert-vs-bleach-rukia-kuchiki@en",
+        "renderId": "character-versus:dragonball:vegeta-vs-bleach-rukia-kuchiki@en",
         "contentType": "character-versus",
         "animes": [
-          "attackontitan",
+          "dragonball",
           "bleach"
         ],
-        "score": 91.7,
+        "score": 91.66,
         "reasons": [
           "coldstart: novelty +24.0, jitter +5.7",
           "+12 main character"
@@ -500,26 +501,26 @@
       "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
       "blackclover:yuno-grinberryall excluded in every format (maxSameCharacterStreak 1).",
       "1 series part(s) wait for spacing (≥ 2 items between parts).",
-      "Selected character-versus:naruto:obito-uchiha-vs-attackontitan-armin-arlert@en (character-versus, naruto + attackontitan) — coldstart, score 92.46 among 619 valid candidate(s)."
+      "Selected character-versus:naruto:obito-uchiha-vs-bleach-yasutora-chad-sado@en (character-versus, naruto + bleach) — coldstart, score 91.86 among 625 valid candidate(s)."
     ]
   },
   "pick": {
-    "contentId": "character-versus:naruto:obito-uchiha-vs-attackontitan-armin-arlert",
-    "renderId": "character-versus:naruto:obito-uchiha-vs-attackontitan-armin-arlert@en",
+    "contentId": "character-versus:naruto:obito-uchiha-vs-bleach-yasutora-chad-sado",
+    "renderId": "character-versus:naruto:obito-uchiha-vs-bleach-yasutora-chad-sado@en",
     "contentType": "character-versus",
     "animes": [
       "naruto",
-      "attackontitan"
+      "bleach"
     ],
     "characters": [
       "naruto:obito-uchiha",
-      "attackontitan:armin-arlert"
+      "bleach:yasutora-chad-sado"
     ],
     "part": null,
     "partCount": null,
-    "score": 92.46,
+    "score": 91.86,
     "reasons": [
-      "coldstart: novelty +24.5, jitter +6.0",
+      "coldstart: novelty +24.0, jitter +5.9",
       "+12 main character"
     ]
   },
@@ -528,48 +529,48 @@
     "anime": "naruto",
     "subject": "obito-uchiha",
     "opponent": {
-      "anime": "attackontitan",
-      "subject": "armin-arlert"
+      "anime": "bleach",
+      "subject": "yasutora-chad-sado"
     },
     "locale": "en",
-    "hook": "Who covered more ground, Obito Uchiha or Armin Arlert?",
+    "hook": "Who covered more ground, Obito Uchiha or Yasutora \"Chad\" Sado?",
     "hookType": "question",
     "hookId": "cv-question-1",
-    "cta": "Obito Uchiha or Armin Arlert? Tell us.",
+    "cta": "Obito Uchiha or Yasutora \"Chad\" Sado? Tell us.",
     "ctaType": "comment-pick-side",
     "selection": {
       "mode": "coldstart",
-      "score": 92.46,
+      "score": 91.86,
       "seed": "feed46:character-journey:blackclover:yuno-grinberryall:part-01@en:samples0"
     },
-    "notes": "growth selector (coldstart): coldstart: novelty +24.5, jitter +6.0; +12 main character"
+    "notes": "growth selector (coldstart): coldstart: novelty +24.0, jitter +5.9; +12 main character"
   },
   "alternatives": [
     {
-      "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-attackontitan-reiner-braun@en",
+      "renderId": "character-versus:attackontitan:reiner-braun-vs-bleach-yasutora-chad-sado@en",
       "contentType": "character-versus",
-      "score": 92.43
+      "score": 91.84
     },
     {
-      "renderId": "character-versus:hunterxhunter:kurapika-vs-bleach-rukia-kuchiki@en",
+      "renderId": "character-versus:hunterxhunter:kurapika-vs-dragonball-piccolo@en",
       "contentType": "character-versus",
       "score": 91.83
     },
     {
-      "renderId": "character-versus:naruto:naruto-uzumaki-vs-bleach-ichigo-kurosaki@en",
+      "renderId": "character-versus:naruto:obito-uchiha-vs-bleach-rukia-kuchiki@en",
       "contentType": "character-versus",
-      "score": 91.81
+      "score": 91.77
     },
     {
-      "renderId": "guess-character:naruto:sakura-haruno@en",
-      "contentType": "guess-character",
-      "score": 91.74
-    },
-    {
-      "renderId": "character-versus:attackontitan:armin-arlert-vs-bleach-rukia-kuchiki@en",
+      "renderId": "character-versus:dragonball:vegeta-vs-bleach-ichigo-kurosaki@en",
       "contentType": "character-versus",
       "score": 91.7
+    },
+    {
+      "renderId": "character-versus:dragonball:vegeta-vs-bleach-rukia-kuchiki@en",
+      "contentType": "character-versus",
+      "score": 91.66
     }
   ],
-  "eligible": 619
+  "eligible": 625
 }
