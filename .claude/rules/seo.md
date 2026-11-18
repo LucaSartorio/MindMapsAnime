@@ -46,4 +46,5 @@ own metadata; the SEO layer (`src/seo/`) is data-driven: never hand-write SEO fo
 
 **Checklist for every new feature / entity type / page**: URL · metadata IT/EN · canonical · hreflang · sitemap ·
 internal links + breadcrumbs · structured data (only if truthful) · index/noindex · SSR-safety of the first render.
-Checks: `npm run test:seo` → `npm run build` (prerender + `seo:check`, blocking); `npm run smoke` for UI changes.
+Checks: `npm run test:seo` → `npm run build` (prerender + `seo:check`, blocking), or `npm run smoke` instead of
+`build` for UI changes (smoke runs the same build first).

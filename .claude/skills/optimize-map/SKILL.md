@@ -20,6 +20,7 @@ Owner: `map-engineer` (read `.claude/rules/maps.md`). Shared map code stays worl
    `WorldConfig.mapMarkers`).
 3. **Implement** the smallest change; for engine changes check at least two other worlds with different maps
    (e.g. Naruto PNG + One Piece SVG + Bleach generated).
-4. **Verify**: `npx tsc -b`, `npm run validate:data`, `npm run build`, `npm run smoke`; for generators open the
+4. **Verify**: `npx tsc -b`, `npm run validate:data`, then `npm run smoke` (it runs the full build first: no separate
+   `npm run build`); for generators open the
    `PREVIEW_DIR` HTML; compare before/after numbers when the goal was performance.
 5. **Report**: problem → cause → fix → evidence (screens/metrics) → worlds checked → residual issues.

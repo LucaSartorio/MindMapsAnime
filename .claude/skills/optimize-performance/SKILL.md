@@ -22,6 +22,6 @@ measurements taken the same way.
    every zoom tick, unmemoized dataset scans, oversized SVG/PNG).
 3. **Change one thing at a time**, keep readability; respect SSR/hydration (lazy chunks go through `lazyWithPreload`
    in `src/routes/lazyPages.tsx` so pre-render keeps working).
-4. **Re-measure** with the same command; keep the change only if it helps and nothing regresses (`npm run build`,
-   `npm run smoke`).
+4. **Re-measure** with the same command; keep the change only if it helps and nothing regresses (`npm run smoke`,
+   which runs the full build first: no separate `npm run build`).
 5. **Report** table: metric · baseline · after · delta · method; regressions; rollback note (commit to revert).

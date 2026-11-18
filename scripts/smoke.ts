@@ -21,15 +21,19 @@ const BASE = `http://localhost:${PORT}`;
  * Risolve un eseguibile Chromium. Usa quello di default di Playwright; se manca
  * (es. il numero di build scaricato non combacia con la versione installata,
  * tipico in ambienti con cache browser preesistente) ripiega su un qualsiasi
- * chromium già presente in PLAYWRIGHT_BROWSERS_PATH.
+ * chromium già presente in PLAYWRIGHT_BROWSERS_PATH. Le build recenti usano
+ * `chrome-linux64/` (prima `chrome-linux/`): senza entrambe le cartelle, nelle
+ * sessioni Cloud lo smoke falliva dopo la build completa.
  */
 function resolveExecutablePath(): string | undefined {
   const dir = process.env.PLAYWRIGHT_BROWSERS_PATH;
   if (!dir || !existsSync(dir)) return undefined;
   for (const entry of readdirSync(dir)) {
     if (!entry.startsWith('chromium-')) continue;
-    const exe = `${dir}/${entry}/chrome-linux/chrome`;
-    if (existsSync(exe)) return exe;
+    for (const sub of ['chrome-linux', 'chrome-linux64']) {
+      const exe = `${dir}/${entry}/${sub}/chrome`;
+      if (existsSync(exe)) return exe;
+    }
   }
   return undefined;
 }

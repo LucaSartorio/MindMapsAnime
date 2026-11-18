@@ -15,19 +15,33 @@ Worlds and their status (`available` | `coming_soon`) are registered in `src/dat
 
 ## Working here
 
-- **Classify, then act.** Trivial or single-area work: do it directly with a targeted check. Multi-module work: short
-  plan, read-only analysis in parallel, edits serialized, full gate. Critical work (security, CI/workflows, social
-  production, global SEO, data migrations, widely shared components): deeper analysis + an independent review
-  (built-in `/code-review`) + full gate; permissions, secrets, rulesets or production state need the owner's
-  explicit approval.
+- **Classify, then act** — risk outranks diff size:
+  - **T0 direct** (find a file/id, read config, a deterministic check): `rg`/a validator yourself; no agent, no build.
+  - **T1 scoped** (small UI bug, local edit, clear requirements): direct, or one specialist if isolation pays off;
+    targeted checks while iterating, the matrix gate before delivery.
+  - **T2 multi-part** (dataset enrichment, maps, multi-module feature, non-global SEO): 5-10 line plan, the matching
+    skill, only the specialists needed, edits serialized; full matrix checks.
+  - **T3 critical** (security, CI/workflows, global SEO, architecture, data migrations, social production state,
+    widely shared components): risks + plan before editing, independent review (`/code-review`, `/security-review`),
+    full gate; permissions, secrets, rulesets or production state need the owner's explicit approval.
+  - **Re-classify** when exploration shows a wider blast radius (shared store, SSR hydration, SEO routes, CI, social
+    state): upgrade the tier before editing.
 - **Delegate only when it pays off.** Each sub-agent starts with ~20k tokens of context: a one-line lookup is cheaper
   with `rg`. Delegate to keep large outputs (logs, audits, research) out of this context, to use a cheaper model, or
-  for a domain specialist. Specialists cannot spawn agents; never let two agents edit the same files at once.
+  for a domain specialist; hand it the facts already gathered (paths, ids, failing output) so it does not re-explore.
+  Specialists cannot spawn agents; never let two agents edit the same files at once.
+- **A check fails → diagnose, then one move** (never retry without new information): missing context → read it, re-run
+  that check · local implementation slip → one targeted fix, re-run the failed check · wrong reasoning with the right
+  facts → escalate (higher effort or stronger model where the session allows, else say so) with the evidence gathered
+  · same failure again, or critical → stop and report cause, evidence, options. Never work around a guard or a check.
+- **Done = verified.** Close with `STATUS: PASS | FAIL | PARTIAL | BLOCKED`, files changed, checks run with real
+  results, checks skipped and why, residual risks, manual steps for the owner. Edited code alone is not done.
 - **Skills** (`.claude/skills/`) load on demand; where they are not available (Claude Code *Projects* threads), read
   the `SKILL.md` and follow it. **Models**: the owner picks the session model/effort; agents carry their own in
   frontmatter. Never set `CLAUDE_CODE_SUBAGENT_MODEL(_FORCE)` or `CLAUDE_CODE_EFFORT_LEVEL` globally.
 - **Tokens**: deterministic checks before reasoning (validators, `npm run data:coverage`, `rg`); read only the part of
-  a file you need, never whole datasets or `dist/` HTML; summarize logs.
+  a file you need, never whole datasets or `dist/` HTML; summarize logs (failing lines only); do not redo an analysis
+  or re-run a check that is still valid for the same tree.
 
 ## Context map (path-scoped rules)
 
@@ -86,8 +100,8 @@ check. `scripts/*.ts` run with `tsx --tsconfig scripts/tsconfig.json` (they impo
 
 | Change | Minimum checks |
 | --- | --- |
-| UI component / page / store | `npx tsc -b` while iterating → `npm run build`; `npm run smoke` for visible/interaction changes |
-| Map code or map data | as UI + the map in `npm run smoke`; re-run the `mapgen` generator if a landmark moved |
+| UI component / page / store | `npx tsc -b` while iterating → `npm run smoke` for visible/interaction changes, else `npm run build` |
+| Map code or map data | `npx tsc -b` → `npm run smoke` (map scenarios); re-run the `mapgen` generator if a landmark moved |
 | Dataset content | `validate:data` → `validate:i18n` → `seo:slugs` + `i18n:index` if entities were added → `social:catalog` + `social:validate` if an `available` world changed → `build` |
 | Translations / overlays | `i18n:status` → `i18n:index` → `validate:i18n` + `i18n:audit` → `build` |
 | SEO layer | `test:seo` → `build` (prerender + `seo:check`) |
@@ -95,7 +109,9 @@ check. `scripts/*.ts` run with `tsx --tsconfig scripts/tsconfig.json` (they impo
 | Workflows / CI / package*.json | `security-devops` review + `test:ci-scope` + `build` |
 | `.claude/` config | `claude:validate` |
 
-Report exactly what ran and its result.
+Cheapest first, stop at the first failure. Supersets run once per tree state: `smoke` = `build` + browser (never
+`build` then `smoke`); `build` already runs `validate:data`, `validate:i18n`, `tsc -b`, `test:seo`, `i18n:audit`, so a
+batch loop runs the validators and one `build`/`smoke` closes the task. Report exactly what ran and its result.
 
 ## Git & delivery
 

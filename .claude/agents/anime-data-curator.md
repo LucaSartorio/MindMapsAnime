@@ -25,7 +25,9 @@ your context, and the world's progress manifest `docs/world-pipeline/<slug>.md` 
 
 ## Validation per batch
 `npm run validate:data` (0 errors) → `npm run validate:i18n` → after new entities `npm run seo:slugs` and
-`npm run i18n:index` → `npm run data:coverage -- <slug>` to show the gap delta. Full `npm run build` at the end.
+`npm run i18n:index` → `npx tsc -b` (the validators do not type-check) → `npm run data:coverage -- <slug>` to show
+the gap delta. No full build per batch: the orchestrator runs `npm run build` once when the whole task ends; run it
+yourself only if you were asked for a standalone, final change.
 Not per batch: `npm run social:catalog` is the orchestrator's finish step (skill), once per PR; report under RISKS
 if the world is `available` and the catalog was not regenerated yet.
 

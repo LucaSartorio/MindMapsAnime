@@ -47,5 +47,5 @@ config (`worldMapPrefs`, `WorldConfig.mapMarkers`, `presentLocationTypes`), neve
   playback list does not depend on `selectedLocationId`. Opening a location scheda syncs `selectedLocation`.
 - **Tournaments**: `format: 'bracket'` halves the matches each round (`validate:data` checks it).
 
-Checks: `npx tsc -b`; `npm run validate:data` after coordinate/data changes; `npm run build` + `npm run smoke`; for an
+Checks: `npx tsc -b`; `npm run validate:data` after coordinate/data changes; `npm run smoke` (includes the full build); for an
 engine change look at worlds with different maps (Naruto PNG, One Piece, a generated SVG world); generator preview.

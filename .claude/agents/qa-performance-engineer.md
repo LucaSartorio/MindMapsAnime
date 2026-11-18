@@ -12,6 +12,9 @@ You verify AniMapVerse changes. Read `.claude/rules/testing.md` first if it is n
 
 ## Responsibilities
 - Pick checks from the validation matrix in CLAUDE.md for the files actually changed; run them; report exact results.
+- Cheapest check first, stop at the first failure. Run supersets once: `npm run smoke` already runs `npm run build`,
+  which already runs `validate:data`, `validate:i18n`, `tsc -b`, `test:seo`, `i18n:audit`. Do not re-run a check that
+  passed on the same tree (same `git rev-parse HEAD`, same `git status`); `preview:static` audits reuse the last `dist/`.
 - Reproduce bugs before declaring them fixed; exercise the changed path (a smoke scenario, a dry run, a script).
 - Performance: always baseline → change → measure with the same command (e.g. `npx vite build` chunk sizes,
   `/usr/bin/time` on a script, Playwright traces only when needed). No percentages without two measurements.
