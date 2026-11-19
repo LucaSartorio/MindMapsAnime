@@ -3453,7 +3453,7 @@
       "segment": "part-03",
       "segmentFingerprint": "0ede3b8f",
       "createdAt": "2026-11-19T06:05:35.360Z",
-      "updatedAt": "2026-11-19T06:08:05.909Z",
+      "updatedAt": "2026-11-19T06:16:55.981Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-11-19T06:08:05.909Z",
       "outputFile": "tools/social-engine/output/onepiece_nami_character-journey_part-03_en.mp4",
@@ -3516,9 +3516,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-19T10:00:00+01:00",
+          "scheduledAt": "2026-11-19T06:11:31Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "433808859",
+          "providerPostUuid": "-4356157706399297659",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-4356157706399297659",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "onepiece_nami_character-journey_part-03_en.instagram.scheduled.654b06e0bc82"
+          ],
+          "updatedAt": "2026-11-19T06:16:55.981Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-19T10:00:00+01:00",
+          "scheduledAt": "2026-11-19T06:11:31Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "433808964",
+          "providerPostUuid": "2018144787625888613",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=2018144787625888613",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "onepiece_nami_character-journey_part-03_en.facebook.scheduled.842674096689"
+          ],
+          "updatedAt": "2026-11-19T06:16:55.981Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-19T10:00:00+01:00",
+          "scheduledAt": "2026-11-19T06:11:31Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "433808776",
+          "providerPostUuid": "-3062769246367299979",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-3062769246367299979",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "onepiece_nami_character-journey_part-03_en.tiktok.scheduled.563481300fff"
+          ],
+          "updatedAt": "2026-11-19T06:16:55.981Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-19T10:00:00+01:00",
+          "scheduledAt": "2026-11-19T06:11:31Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "433808632",
+          "providerPostUuid": "102265207203381334",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=102265207203381334",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "onepiece_nami_character-journey_part-03_en.youtube.scheduled.e53e970d1b59"
+          ],
+          "updatedAt": "2026-11-19T06:16:55.981Z"
+        }
+      ]
     },
     "character-versus:attackontitan:mikasa-ackerman-vs-blackclover-noelle-silva@en": {
       "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-blackclover-noelle-silva@en",
