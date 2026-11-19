@@ -3442,6 +3442,84 @@
         }
       ]
     },
+    "character-journey:onepiece:nami:part-03@en": {
+      "renderId": "character-journey:onepiece:nami:part-03@en",
+      "contentId": "character-journey:onepiece:nami:part-03",
+      "template": "characterJourney",
+      "anime": "onepiece",
+      "subject": "nami",
+      "locale": "en",
+      "variant": null,
+      "segment": "part-03",
+      "segmentFingerprint": "0ede3b8f",
+      "createdAt": "2026-11-19T06:05:35.360Z",
+      "updatedAt": "2026-11-19T06:08:05.909Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-11-19T06:08:05.909Z",
+      "outputFile": "tools/social-engine/output/onepiece_nami_character-journey_part-03_en.mp4",
+      "manifestFile": "tools/social-engine/output/onepiece_nami_character-journey_part-03_en.manifest.json",
+      "sourceFile": "0053-onepiece_nami_character-journey_part-03_en.json",
+      "durationSeconds": 30,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-44469573501-1",
+        "runId": "44469573501",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/44469573501",
+        "video": "videos/onepiece_nami_character-journey_part-03_en.mp4",
+        "manifest": "manifests/onepiece_nami_character-journey_part-03_en.manifest.json",
+        "sha256": "85fe52e9ca2348e7d65ec2361d784d70ded0d77cfe2884ecc614da00dd5b5a16",
+        "cover": "covers/onepiece_nami_character-journey_part-03_en.cover.png",
+        "expiresAt": "2026-12-19T06:08:05.909Z"
+      },
+      "social": {
+        "contentType": "character-journey",
+        "animes": [
+          "onepiece"
+        ],
+        "characters": [
+          "onepiece:nami"
+        ],
+        "characterNames": [
+          "Nami"
+        ],
+        "part": 3,
+        "partCount": 3,
+        "hookType": "fact",
+        "hookId": "cj-last-fact-1",
+        "hook": "The final stretch of Nami's journey — Part 3 of 3.",
+        "ctaType": "comment-next-journey",
+        "cta": "Which journey should we map next?",
+        "durationSeconds": 30,
+        "selection": {
+          "mode": "coldstart",
+          "score": 103.99,
+          "seed": "feed47:h4056357d:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "The final stretch of Nami's journey — Part 3 of 3.\n\nNami's journey across One Piece — Part 3/3: 17 places on the world map.\n\nWhich journey should we map next? 👇\n\nSave it for your next rewatch.\n\n#onepiece #nami #anime #animemap #AniMapVerse",
+          "tiktokCaption": "The final stretch of Nami's journey — Part 3 of 3. Which journey should we map next? 👇 #onepiece #nami #anime #animemap #AniMapVerse",
+          "youtubeTitle": "Every Place Nami Visited 🏴‍☠️ | One Piece Journey Part 3 of 3",
+          "youtubeDescription": "The final stretch of Nami's journey — Part 3 of 3.\n\nNami's journey across One Piece — Part 3/3: 17 places on the world map.\n\nWhich journey should we map next? 👇\n\nInteractive map: https://animapverse.com/en/one-piece/characters/nami\n\n#onepiece #nami #anime",
+          "facebookCaption": "The final stretch of Nami's journey — Part 3 of 3.\n\nNami's journey across One Piece — Part 3/3: 17 places on the world map.\n\nWhich journey should we map next? 👇\n\nInteractive map: https://animapverse.com/en/one-piece/characters/nami",
+          "hashtags": [
+            "#onepiece",
+            "#nami",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-versus:attackontitan:mikasa-ackerman-vs-blackclover-noelle-silva@en": {
       "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-blackclover-noelle-silva@en",
       "contentId": "character-versus:attackontitan:mikasa-ackerman-vs-blackclover-noelle-silva",
