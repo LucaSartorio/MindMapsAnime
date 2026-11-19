@@ -1,0 +1,19 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterJourney",
+  "anime": "onepiece",
+  "subject": "nami",
+  "segment": "part-03",
+  "locale": "en",
+  "hook": "The final stretch of Nami's journey — Part 3 of 3.",
+  "hookType": "fact",
+  "hookId": "cj-last-fact-1",
+  "cta": "Which journey should we map next?",
+  "ctaType": "comment-next-journey",
+  "selection": {
+    "mode": "coldstart",
+    "score": 103.99,
+    "seed": "feed47:h4056357d:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +20.0, jitter +6.0; +12 main character; +14 continues a started series (Part 3 promised)"
+}
