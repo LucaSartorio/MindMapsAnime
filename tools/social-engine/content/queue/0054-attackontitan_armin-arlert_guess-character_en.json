@@ -1,0 +1,18 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "guessCharacter",
+  "anime": "attackontitan",
+  "subject": "armin-arlert",
+  "locale": "en",
+  "hook": "Guess the Attack on Titan character from the places they visited.",
+  "hookType": "challenge",
+  "hookId": "gc-challenge-1",
+  "cta": "Did you get it right?",
+  "ctaType": "comment-guess",
+  "selection": {
+    "mode": "coldstart",
+    "score": 96.39,
+    "seed": "feed48:character-journey:onepiece:nami:part-03@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +24.5, jitter +5.9; +12 main character; +4 format below its target share (20% < 25%)"
+}
