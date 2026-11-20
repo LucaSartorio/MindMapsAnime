@@ -5706,7 +5706,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-11-20T06:05:46.050Z",
-      "updatedAt": "2026-11-20T06:09:22.879Z",
+      "updatedAt": "2026-11-20T06:18:29.075Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-11-20T06:09:22.879Z",
       "outputFile": "tools/social-engine/output/attackontitan_armin-arlert_guess-character_en.mp4",
@@ -5769,9 +5769,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-20T10:00:00+01:00",
+          "scheduledAt": "2026-11-20T06:12:01Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "435165301",
+          "providerPostUuid": "3900741506268479640",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=3900741506268479640",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_armin-arlert_guess-character_en.instagram.scheduled.f106139a0364"
+          ],
+          "updatedAt": "2026-11-20T06:18:29.075Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-20T10:00:00+01:00",
+          "scheduledAt": "2026-11-20T06:12:01Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "435165494",
+          "providerPostUuid": "5390197198361874281",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=5390197198361874281",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_armin-arlert_guess-character_en.facebook.scheduled.571c5a9756b4"
+          ],
+          "updatedAt": "2026-11-20T06:18:29.075Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-20T10:00:00+01:00",
+          "scheduledAt": "2026-11-20T06:12:01Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "435165429",
+          "providerPostUuid": "1699097983556011469",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=1699097983556011469",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_armin-arlert_guess-character_en.tiktok.scheduled.967ffad494a4"
+          ],
+          "updatedAt": "2026-11-20T06:18:29.075Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-20T10:00:00+01:00",
+          "scheduledAt": "2026-11-20T06:12:01Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "435165373",
+          "providerPostUuid": "8367053852665007506",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=8367053852665007506",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_armin-arlert_guess-character_en.youtube.scheduled.958c1108d75a"
+          ],
+          "updatedAt": "2026-11-20T06:18:29.075Z"
+        }
+      ]
     },
     "guess-character:attackontitan:gabi-braun@en": {
       "renderId": "guess-character:attackontitan:gabi-braun@en",

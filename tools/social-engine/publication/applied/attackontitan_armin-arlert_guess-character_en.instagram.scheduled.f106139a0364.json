@@ -1,0 +1,30 @@
+{
+  "receiptId": "attackontitan_armin-arlert_guess-character_en.instagram.scheduled.f106139a0364",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-11-20T06:18:29.075Z",
+  "sourceFile": "20261120T061201Z-attackontitan_armin-arlert_guess-character_en-instagram-scheduled.json",
+  "run": {
+    "runId": "44686840372",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/44686840372",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "guess-character:attackontitan:armin-arlert@en",
+    "platform": "instagram",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-11-20T10:00:00+01:00",
+    "providerPostId": "435165301",
+    "providerPostUuid": "3900741506268479640",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=3900741506268479640",
+    "recordedAt": "2026-11-20T06:12:01Z",
+    "recordedBy": "chatgpt-work-publishing-agent"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-20T06:09:23.883Z",
+  "generatedAt": "2026-11-20T06:18:29.101Z",
   "locales": [
     "en",
     "it"
@@ -17664,7 +17664,9 @@
           "renderedLocales": [
             "en"
           ],
-          "scheduledLocales": [],
+          "scheduledLocales": [
+            "en"
+          ],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": true,
@@ -17674,12 +17676,12 @@
               "renderId": "guess-character:attackontitan:armin-arlert@en",
               "locale": "en",
               "variant": null,
-              "status": "notPublished",
+              "status": "scheduled",
               "platforms": {
-                "instagram": "notScheduled",
-                "facebook": "notScheduled",
-                "tiktok": "notScheduled",
-                "youtube": "notScheduled"
+                "instagram": "scheduled",
+                "facebook": "scheduled",
+                "tiktok": "scheduled",
+                "youtube": "scheduled"
               }
             }
           ]
@@ -26347,66 +26349,13 @@
     "summary": {
       "rendered": 54,
       "unavailable": 5,
-      "notPublished": 6,
-      "scheduled": 42,
+      "notPublished": 5,
+      "scheduled": 43,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0
     },
-    "ready": [
-      {
-        "renderId": "guess-character:attackontitan:armin-arlert@en",
-        "contentId": "guess-character:attackontitan:armin-arlert",
-        "anime": "attackontitan",
-        "subject": "armin-arlert",
-        "subjectName": "Armin Arlert",
-        "locale": "en",
-        "variant": null,
-        "segment": null,
-        "partNumber": null,
-        "partCount": null,
-        "renderedAt": "2026-11-20T06:09:22.879Z",
-        "durationSeconds": 24,
-        "publicationStatus": "notPublished",
-        "platforms": {
-          "instagram": "notScheduled",
-          "facebook": "notScheduled",
-          "tiktok": "notScheduled",
-          "youtube": "notScheduled"
-        },
-        "artifact": {
-          "name": "animapverse-social-render-44685331228-1",
-          "runId": "44685331228",
-          "runAttempt": "1",
-          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/44685331228",
-          "video": "videos/attackontitan_armin-arlert_guess-character_en.mp4",
-          "manifest": "manifests/attackontitan_armin-arlert_guess-character_en.manifest.json",
-          "sha256": "d7437c8bcea9289f84621e7889478b0cee78214ce8909fcf6788387ca613ed7c",
-          "cover": "covers/attackontitan_armin-arlert_guess-character_en.cover.png",
-          "expiresAt": "2026-12-20T06:09:22.879Z"
-        },
-        "contentType": "guess-character",
-        "platformMetadata": {
-          "instagramCaption": "Guess the Attack on Titan character from the places they visited.\n\n5 places, one Attack on Titan character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nSave it for your next rewatch.\n\n#attackontitan #aot #anime #animemap #AniMapVerse",
-          "tiktokCaption": "Guess the Attack on Titan character from the places they visited. Did you get it right? Tell us how many places it took you 👇 #attackontitan #aot #anime #animemap #AniMapVerse",
-          "youtubeTitle": "Guess the Attack on Titan Character From the Places They Visited 🧱",
-          "youtubeDescription": "Guess the Attack on Titan character from the places they visited.\n\n5 places, one Attack on Titan character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/attack-on-titan/map\n\n#attackontitan #aot #anime",
-          "facebookCaption": "Guess the Attack on Titan character from the places they visited.\n\n5 places, one Attack on Titan character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/attack-on-titan/map",
-          "hashtags": [
-            "#attackontitan",
-            "#aot",
-            "#anime",
-            "#animemap",
-            "#AniMapVerse"
-          ],
-          "youtube": {
-            "madeForKids": false
-          },
-          "madeForKids": false
-        },
-        "waitFor": {}
-      }
-    ],
+    "ready": [],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",
