@@ -1,21 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-19T06:16:55.996Z",
-  "status": "ready",
+  "generatedAt": "2026-11-20T06:09:23.883Z",
+  "status": "backlog",
   "feedTail": [
-    {
-      "renderId": "character-versus:naruto:sasuke-uchiha-vs-attackontitan-mikasa-ackerman@en",
-      "contentType": "character-versus",
-      "animes": [
-        "naruto",
-        "attackontitan"
-      ],
-      "characters": [
-        "naruto:sasuke-uchiha",
-        "attackontitan:mikasa-ackerman"
-      ],
-      "part": null
-    },
     {
       "renderId": "character-journey:hunterxhunter:gon-freecss:part-01@en",
       "contentType": "character-journey",
@@ -72,6 +59,17 @@
         "onepiece:nami"
       ],
       "part": 3
+    },
+    {
+      "renderId": "guess-character:attackontitan:armin-arlert@en",
+      "contentType": "guess-character",
+      "animes": [
+        "attackontitan"
+      ],
+      "characters": [
+        "attackontitan:armin-arlert"
+      ],
+      "part": null
     }
   ],
   "rules": {
@@ -92,479 +90,28 @@
     "error": null
   },
   "backlog": {
-    "unpublished": [],
+    "unpublished": [
+      {
+        "renderId": "guess-character:attackontitan:armin-arlert@en",
+        "contentType": "guess-character",
+        "renderedAt": "2026-11-20T06:09:22.879Z",
+        "missing": [
+          "instagram",
+          "facebook",
+          "tiktok",
+          "youtube"
+        ]
+      }
+    ],
     "unfinished": [],
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "feed48:character-journey:onepiece:nami:part-03@en:samples0",
-  "rejected": {
-    "JOURNEY_PART_ORDER": 35,
-    "MAX_SAME_CHARACTER_STREAK": 1
-  },
-  "considered": 660,
-  "trace": {
-    "traceVersion": 1,
-    "mode": "coldstart",
-    "seed": "feed48:character-journey:onepiece:nami:part-03@en:samples0",
-    "analytics": {
-      "coldStart": true,
-      "samples": 0,
-      "contents": 0,
-      "minimumSamples": 8
-    },
-    "recent": [
-      {
-        "renderId": "character-versus:naruto:sasuke-uchiha-vs-attackontitan-mikasa-ackerman@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "attackontitan"
-        ],
-        "characters": [
-          "naruto:sasuke-uchiha",
-          "attackontitan:mikasa-ackerman"
-        ]
-      },
-      {
-        "renderId": "character-journey:hunterxhunter:gon-freecss:part-01@en",
-        "contentType": "character-journey",
-        "animes": [
-          "hunterxhunter"
-        ],
-        "characters": [
-          "hunterxhunter:gon-freecss"
-        ]
-      },
-      {
-        "renderId": "guess-character:bleach:renji-abarai@en",
-        "contentType": "guess-character",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:renji-abarai"
-        ]
-      },
-      {
-        "renderId": "character-journey:blackclover:yuno-grinberryall:part-01@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:yuno-grinberryall"
-        ]
-      },
-      {
-        "renderId": "character-versus:naruto:obito-uchiha-vs-bleach-yasutora-chad-sado@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "bleach"
-        ],
-        "characters": [
-          "naruto:obito-uchiha",
-          "bleach:yasutora-chad-sado"
-        ]
-      },
-      {
-        "renderId": "character-journey:onepiece:nami:part-03@en",
-        "contentType": "character-journey",
-        "animes": [
-          "onepiece"
-        ],
-        "characters": [
-          "onepiece:nami"
-        ]
-      }
-    ],
-    "constraints": {
-      "sameAnimeStreak": {
-        "animes": [
-          "onepiece"
-        ],
-        "length": 1
-      },
-      "forcedAnimeRotation": false,
-      "blockedAnimes": [],
-      "blockedCharacters": [
-        "onepiece:nami"
-      ],
-      "characterCooldown": [
-        "naruto:sasuke-uchiha",
-        "attackontitan:mikasa-ackerman",
-        "hunterxhunter:gon-freecss",
-        "bleach:renji-abarai",
-        "blackclover:yuno-grinberryall",
-        "naruto:obito-uchiha",
-        "bleach:yasutora-chad-sado",
-        "onepiece:nami"
-      ],
-      "contentTypeStreak": {
-        "contentType": "character-journey",
-        "length": 1
-      }
-    },
-    "hardRulesTriggered": {
-      "JOURNEY_PART_ORDER": 35,
-      "MAX_SAME_CHARACTER_STREAK": 1
-    },
-    "candidates": {
-      "considered": 660,
-      "eligible": 624,
-      "byContentType": {
-        "character-journey": {
-          "considered": 406,
-          "eligible": 371
-        },
-        "guess-character": {
-          "considered": 78,
-          "eligible": 77
-        },
-        "character-versus": {
-          "considered": 176,
-          "eligible": 176
-        }
-      }
-    },
-    "excluded": [
-      {
-        "renderId": "guess-character:onepiece:nami@en",
-        "contentType": "guess-character",
-        "animes": [
-          "onepiece"
-        ],
-        "characters": [
-          "onepiece:nami"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: onepiece:nami is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:blackclover:asta:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:asta"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:blackclover:asta:part-03@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:asta"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 3 before Part 2 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:blackclover:noelle-silva:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:noelle-silva"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:blackclover:yami-sukehiro:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:yami-sukehiro"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:bleach:byakuya-kuchiki:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:byakuya-kuchiki"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:bleach:ichigo-kurosaki:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:ichigo-kurosaki"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:bleach:ichigo-kurosaki:part-03@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:ichigo-kurosaki"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 3 before Part 2 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:bleach:ichigo-kurosaki:part-04@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:ichigo-kurosaki"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 4 before Part 3 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:bleach:orihime-inoue:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:orihime-inoue"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      }
-    ],
-    "status": "selected",
-    "selectedId": "guess-character:attackontitan:armin-arlert",
-    "renderId": "guess-character:attackontitan:armin-arlert@en",
-    "contentType": "guess-character",
-    "animes": [
-      "attackontitan"
-    ],
-    "characters": [
-      "attackontitan:armin-arlert"
-    ],
-    "score": 96.39,
-    "base": 80.39,
-    "reasons": [
-      "coldstart: novelty +24.5, jitter +5.9",
-      "+12 main character",
-      "+4 format below its target share (20% < 25%)"
-    ],
-    "ranked": [
-      {
-        "renderId": "guess-character:attackontitan:armin-arlert@en",
-        "contentType": "guess-character",
-        "animes": [
-          "attackontitan"
-        ],
-        "score": 96.39,
-        "reasons": [
-          "coldstart: novelty +24.5, jitter +5.9",
-          "+12 main character",
-          "+4 format below its target share (20% < 25%)"
-        ]
-      },
-      {
-        "renderId": "guess-character:hunterxhunter:leorio-paradinight@en",
-        "contentType": "guess-character",
-        "animes": [
-          "hunterxhunter"
-        ],
-        "score": 95.04,
-        "reasons": [
-          "coldstart: novelty +24.5, jitter +4.5",
-          "+12 main character",
-          "+4 format below its target share (20% < 25%)"
-        ]
-      },
-      {
-        "renderId": "guess-character:bleach:uryu-ishida@en",
-        "contentType": "guess-character",
-        "animes": [
-          "bleach"
-        ],
-        "score": 95.04,
-        "reasons": [
-          "coldstart: novelty +23.5, jitter +5.5",
-          "+12 main character",
-          "+4 format below its target share (20% < 25%)"
-        ]
-      },
-      {
-        "renderId": "guess-character:hunterxhunter:kurapika@en",
-        "contentType": "guess-character",
-        "animes": [
-          "hunterxhunter"
-        ],
-        "score": 94.93,
-        "reasons": [
-          "coldstart: novelty +24.5, jitter +4.4",
-          "+12 main character",
-          "+4 format below its target share (20% < 25%)"
-        ]
-      },
-      {
-        "renderId": "guess-character:attackontitan:ymir-fritz@en",
-        "contentType": "guess-character",
-        "animes": [
-          "attackontitan"
-        ],
-        "score": 94.71,
-        "reasons": [
-          "coldstart: novelty +24.5, jitter +4.2",
-          "+12 main character",
-          "+4 format below its target share (20% < 25%)"
-        ]
-      },
-      {
-        "renderId": "guess-character:bleach:rukia-kuchiki@en",
-        "contentType": "guess-character",
-        "animes": [
-          "bleach"
-        ],
-        "score": 94.61,
-        "reasons": [
-          "coldstart: novelty +23.5, jitter +5.1",
-          "+12 main character",
-          "+4 format below its target share (20% < 25%)"
-        ]
-      }
-    ],
-    "explanation": [
-      "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
-      "onepiece:nami excluded in every format (maxSameCharacterStreak 1).",
-      "Selected guess-character:attackontitan:armin-arlert@en (guess-character, attackontitan) — coldstart, score 96.39 among 624 valid candidate(s)."
-    ]
-  },
-  "pick": {
-    "contentId": "guess-character:attackontitan:armin-arlert",
-    "renderId": "guess-character:attackontitan:armin-arlert@en",
-    "contentType": "guess-character",
-    "animes": [
-      "attackontitan"
-    ],
-    "characters": [
-      "attackontitan:armin-arlert"
-    ],
-    "part": null,
-    "partCount": null,
-    "score": 96.39,
-    "reasons": [
-      "coldstart: novelty +24.5, jitter +5.9",
-      "+12 main character",
-      "+4 format below its target share (20% < 25%)"
-    ]
-  },
-  "request": {
-    "template": "guessCharacter",
-    "anime": "attackontitan",
-    "subject": "armin-arlert",
-    "locale": "en",
-    "hook": "Guess the Attack on Titan character from the places they visited.",
-    "hookType": "challenge",
-    "hookId": "gc-challenge-1",
-    "cta": "Did you get it right?",
-    "ctaType": "comment-guess",
-    "selection": {
-      "mode": "coldstart",
-      "score": 96.39,
-      "seed": "feed48:character-journey:onepiece:nami:part-03@en:samples0"
-    },
-    "notes": "growth selector (coldstart): coldstart: novelty +24.5, jitter +5.9; +12 main character; +4 format below its target share (20% < 25%)"
-  },
-  "alternatives": [
-    {
-      "renderId": "guess-character:hunterxhunter:leorio-paradinight@en",
-      "contentType": "guess-character",
-      "score": 95.04
-    },
-    {
-      "renderId": "guess-character:bleach:uryu-ishida@en",
-      "contentType": "guess-character",
-      "score": 95.04
-    },
-    {
-      "renderId": "guess-character:hunterxhunter:kurapika@en",
-      "contentType": "guess-character",
-      "score": 94.93
-    },
-    {
-      "renderId": "guess-character:attackontitan:ymir-fritz@en",
-      "contentType": "guess-character",
-      "score": 94.71
-    },
-    {
-      "renderId": "guess-character:bleach:rukia-kuchiki@en",
-      "contentType": "guess-character",
-      "score": 94.61
-    }
-  ],
-  "eligible": 624
+  "seed": "",
+  "reason": "publish the existing render first: guess-character:attackontitan:armin-arlert@en (it counts as today's video; no new content)",
+  "alternatives": [],
+  "rejected": {},
+  "considered": 0,
+  "eligible": 0,
+  "trace": null
 }

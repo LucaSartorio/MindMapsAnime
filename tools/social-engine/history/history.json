@@ -5695,6 +5695,84 @@
         }
       ]
     },
+    "guess-character:attackontitan:armin-arlert@en": {
+      "renderId": "guess-character:attackontitan:armin-arlert@en",
+      "contentId": "guess-character:attackontitan:armin-arlert",
+      "template": "guessCharacter",
+      "anime": "attackontitan",
+      "subject": "armin-arlert",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-11-20T06:05:46.050Z",
+      "updatedAt": "2026-11-20T06:09:22.879Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-11-20T06:09:22.879Z",
+      "outputFile": "tools/social-engine/output/attackontitan_armin-arlert_guess-character_en.mp4",
+      "manifestFile": "tools/social-engine/output/attackontitan_armin-arlert_guess-character_en.manifest.json",
+      "sourceFile": "0054-attackontitan_armin-arlert_guess-character_en.json",
+      "durationSeconds": 24,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-44685331228-1",
+        "runId": "44685331228",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/44685331228",
+        "video": "videos/attackontitan_armin-arlert_guess-character_en.mp4",
+        "manifest": "manifests/attackontitan_armin-arlert_guess-character_en.manifest.json",
+        "sha256": "d7437c8bcea9289f84621e7889478b0cee78214ce8909fcf6788387ca613ed7c",
+        "cover": "covers/attackontitan_armin-arlert_guess-character_en.cover.png",
+        "expiresAt": "2026-12-20T06:09:22.879Z"
+      },
+      "social": {
+        "contentType": "guess-character",
+        "animes": [
+          "attackontitan"
+        ],
+        "characters": [
+          "attackontitan:armin-arlert"
+        ],
+        "characterNames": [
+          "Armin Arlert"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "challenge",
+        "hookId": "gc-challenge-1",
+        "hook": "Guess the Attack on Titan character from the places they visited.",
+        "ctaType": "comment-guess",
+        "cta": "Did you get it right?",
+        "durationSeconds": 24,
+        "selection": {
+          "mode": "coldstart",
+          "score": 96.39,
+          "seed": "feed48:character-journey:onepiece:nami:part-03@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Guess the Attack on Titan character from the places they visited.\n\n5 places, one Attack on Titan character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nSave it for your next rewatch.\n\n#attackontitan #aot #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Guess the Attack on Titan character from the places they visited. Did you get it right? Tell us how many places it took you 👇 #attackontitan #aot #anime #animemap #AniMapVerse",
+          "youtubeTitle": "Guess the Attack on Titan Character From the Places They Visited 🧱",
+          "youtubeDescription": "Guess the Attack on Titan character from the places they visited.\n\n5 places, one Attack on Titan character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/attack-on-titan/map\n\n#attackontitan #aot #anime",
+          "facebookCaption": "Guess the Attack on Titan character from the places they visited.\n\n5 places, one Attack on Titan character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/attack-on-titan/map",
+          "hashtags": [
+            "#attackontitan",
+            "#aot",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "guess-character:attackontitan:gabi-braun@en": {
       "renderId": "guess-character:attackontitan:gabi-braun@en",
       "contentId": "guess-character:attackontitan:gabi-braun",
