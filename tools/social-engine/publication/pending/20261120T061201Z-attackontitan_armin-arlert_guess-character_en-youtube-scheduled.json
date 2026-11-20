@@ -1,0 +1,13 @@
+{
+  "receiptVersion": 1,
+  "renderId": "guess-character:attackontitan:armin-arlert@en",
+  "platform": "youtube",
+  "provider": "metricool",
+  "status": "scheduled",
+  "scheduledFor": "2026-11-20T10:00:00+01:00",
+  "providerPostId": "435165373",
+  "providerPostUuid": "8367053852665007506",
+  "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=8367053852665007506",
+  "recordedAt": "2026-11-20T06:12:01Z",
+  "recordedBy": "chatgpt-work-publishing-agent"
+}
