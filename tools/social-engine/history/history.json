@@ -739,6 +739,85 @@
         }
       ]
     },
+    "character-journey:dragonball:goku:part-05@en": {
+      "renderId": "character-journey:dragonball:goku:part-05@en",
+      "contentId": "character-journey:dragonball:goku:part-05",
+      "template": "characterJourney",
+      "anime": "dragonball",
+      "subject": "goku",
+      "locale": "en",
+      "variant": null,
+      "segment": "part-05",
+      "segmentFingerprint": "1f032a52",
+      "createdAt": "2026-11-21T06:03:29.743Z",
+      "updatedAt": "2026-11-21T06:07:00.141Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-11-21T06:07:00.141Z",
+      "outputFile": "tools/social-engine/output/dragonball_goku_character-journey_part-05_en.mp4",
+      "manifestFile": "tools/social-engine/output/dragonball_goku_character-journey_part-05_en.manifest.json",
+      "sourceFile": "0055-dragonball_goku_character-journey_part-05_en.json",
+      "durationSeconds": 30,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-44873698506-1",
+        "runId": "44873698506",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/44873698506",
+        "video": "videos/dragonball_goku_character-journey_part-05_en.mp4",
+        "manifest": "manifests/dragonball_goku_character-journey_part-05_en.manifest.json",
+        "sha256": "6ed71f92297cffd0998c265f8e176c4c543b48c42a8fa0d150bbcdf28546c120",
+        "cover": "covers/dragonball_goku_character-journey_part-05_en.cover.png",
+        "expiresAt": "2026-12-21T06:07:00.141Z"
+      },
+      "social": {
+        "contentType": "character-journey",
+        "animes": [
+          "dragonball"
+        ],
+        "characters": [
+          "dragonball:goku"
+        ],
+        "characterNames": [
+          "Goku"
+        ],
+        "part": 5,
+        "partCount": 6,
+        "hookType": "curiosity",
+        "hookId": "cj-cont-curiosity-1",
+        "hook": "Part 5 of 6: Goku's journey keeps growing.",
+        "ctaType": "follow-next-part",
+        "cta": "Follow for Part 6.",
+        "durationSeconds": 30,
+        "selection": {
+          "mode": "coldstart",
+          "score": 99.03,
+          "seed": "feed49:guess-character:attackontitan:armin-arlert@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Part 5 of 6: Goku's journey keeps growing.\n\nGoku's journey across Dragon Ball — Part 5/6: 32 places on the world map.\n\nFollow for Part 6.\n\nSave it for your next rewatch.\n\n#dragonball #dbz #goku #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Part 5 of 6: Goku's journey keeps growing. Follow for Part 6. #dragonball #dbz #goku #anime #animemap",
+          "youtubeTitle": "Every Place Goku Visited 🐉 | Dragon Ball Journey Part 5 of 6",
+          "youtubeDescription": "Part 5 of 6: Goku's journey keeps growing.\n\nGoku's journey across Dragon Ball — Part 5/6: 32 places on the world map.\n\nSubscribe for Part 6.\n\nInteractive map: https://animapverse.com/en/dragon-ball/characters/goku\n\n#dragonball #dbz #goku",
+          "facebookCaption": "Part 5 of 6: Goku's journey keeps growing.\n\nGoku's journey across Dragon Ball — Part 5/6: 32 places on the world map.\n\nFollow for Part 6.\n\nInteractive map: https://animapverse.com/en/dragon-ball/characters/goku",
+          "hashtags": [
+            "#dragonball",
+            "#dbz",
+            "#goku",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-journey:hunterxhunter:gon-freecss:part-01@en": {
       "renderId": "character-journey:hunterxhunter:gon-freecss:part-01@en",
       "contentId": "character-journey:hunterxhunter:gon-freecss:part-01",
