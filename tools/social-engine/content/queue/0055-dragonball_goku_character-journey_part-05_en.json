@@ -1,0 +1,19 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterJourney",
+  "anime": "dragonball",
+  "subject": "goku",
+  "segment": "part-05",
+  "locale": "en",
+  "hook": "Part 5 of 6: Goku's journey keeps growing.",
+  "hookType": "curiosity",
+  "hookId": "cj-cont-curiosity-1",
+  "cta": "Follow for Part 6.",
+  "ctaType": "follow-next-part",
+  "selection": {
+    "mode": "coldstart",
+    "score": 99.03,
+    "seed": "feed49:guess-character:attackontitan:armin-arlert@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +21.0, jitter +0.0; +12 main character; +14 continues a started series (Part 5 promised)"
+}
