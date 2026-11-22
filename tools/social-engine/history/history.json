@@ -4558,6 +4558,90 @@
         }
       ]
     },
+    "character-versus:hunterxhunter:gon-freecss-vs-blackclover-yami-sukehiro@en": {
+      "renderId": "character-versus:hunterxhunter:gon-freecss-vs-blackclover-yami-sukehiro@en",
+      "contentId": "character-versus:hunterxhunter:gon-freecss-vs-blackclover-yami-sukehiro",
+      "template": "characterVersus",
+      "anime": "hunterxhunter",
+      "subject": "gon-freecss-vs-blackclover-yami-sukehiro",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-11-22T06:04:08.430Z",
+      "updatedAt": "2026-11-22T06:06:00.962Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-11-22T06:06:00.962Z",
+      "outputFile": "tools/social-engine/output/hunterxhunter_gon-freecss-vs-blackclover-yami-sukehiro_character-versus_en.mp4",
+      "manifestFile": "tools/social-engine/output/hunterxhunter_gon-freecss-vs-blackclover-yami-sukehiro_character-versus_en.manifest.json",
+      "sourceFile": "0056-hunterxhunter_gon-freecss-vs-blackclover-yami-sukehiro_character-versus_en.json",
+      "durationSeconds": 22,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-44992043772-1",
+        "runId": "44992043772",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/44992043772",
+        "video": "videos/hunterxhunter_gon-freecss-vs-blackclover-yami-sukehiro_character-versus_en.mp4",
+        "manifest": "manifests/hunterxhunter_gon-freecss-vs-blackclover-yami-sukehiro_character-versus_en.manifest.json",
+        "sha256": "a5eb16740e494f3a0992af44ec5a0e8cf2a183050080ead119999dcdcd996ceb",
+        "cover": "covers/hunterxhunter_gon-freecss-vs-blackclover-yami-sukehiro_character-versus_en.cover.png",
+        "expiresAt": "2026-12-22T06:06:00.962Z"
+      },
+      "social": {
+        "contentType": "character-versus",
+        "animes": [
+          "hunterxhunter",
+          "blackclover"
+        ],
+        "characters": [
+          "hunterxhunter:gon-freecss",
+          "blackclover:yami-sukehiro"
+        ],
+        "characterNames": [
+          "Gon Freecss",
+          "Yami Sukehiro"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "versus",
+        "hookId": "cv-versus-1",
+        "hook": "Who travelled more: Gon Freecss or Yami Sukehiro?",
+        "ctaType": "follow-for-more",
+        "cta": "Follow for the next match-up.",
+        "durationSeconds": 22,
+        "selection": {
+          "mode": "coldstart",
+          "score": 92.44,
+          "seed": "feed50:character-journey:dragonball:goku:part-05@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Who travelled more: Gon Freecss or Yami Sukehiro?\n\nGon Freecss (Hunter x Hunter) vs Yami Sukehiro (Black Clover): every place on the map, one winner.\n\nFollow for more anime journeys.\n\nSave it for your next rewatch.\n\n#hunterxhunter #hxh #blackclover #gonfreecss #yamisukehiro #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Who travelled more: Gon Freecss or Yami Sukehiro? Follow for more anime journeys. #hunterxhunter #hxh #blackclover #gonfreecss #yamisukehiro",
+          "youtubeTitle": "Gon Freecss vs Yami Sukehiro: Who Travelled More? 🎣",
+          "youtubeDescription": "Who travelled more: Gon Freecss or Yami Sukehiro?\n\nGon Freecss (Hunter x Hunter) vs Yami Sukehiro (Black Clover): every place on the map, one winner.\n\nSubscribe for more anime journeys.\n\nInteractive map: https://animapverse.com\n\n#hunterxhunter #hxh #blackclover",
+          "facebookCaption": "Who travelled more: Gon Freecss or Yami Sukehiro?\n\nGon Freecss (Hunter x Hunter) vs Yami Sukehiro (Black Clover): every place on the map, one winner.\n\nFollow for more anime journeys.\n\nInteractive map: https://animapverse.com",
+          "hashtags": [
+            "#hunterxhunter",
+            "#hxh",
+            "#blackclover",
+            "#gonfreecss",
+            "#yamisukehiro",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-versus:hunterxhunter:kurapika-vs-dragonball-goku@en": {
       "renderId": "character-versus:hunterxhunter:kurapika-vs-dragonball-goku@en",
       "contentId": "character-versus:hunterxhunter:kurapika-vs-dragonball-goku",

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-21T06:14:34.674Z",
+  "generatedAt": "2026-11-22T06:06:02.160Z",
   "locales": [
     "en",
     "it"
@@ -21653,13 +21653,28 @@
             "placesA": 9,
             "placesB": 8
           },
-          "renderedLocales": [],
+          "renderedLocales": [
+            "en"
+          ],
           "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
-          "renderedBefore": false,
+          "renderedBefore": true,
           "publishedBefore": false,
-          "publication": [],
+          "publication": [
+            {
+              "renderId": "character-versus:hunterxhunter:gon-freecss-vs-blackclover-yami-sukehiro@en",
+              "locale": "en",
+              "variant": null,
+              "status": "notPublished",
+              "platforms": {
+                "instagram": "notScheduled",
+                "facebook": "notScheduled",
+                "tiktok": "notScheduled",
+                "youtube": "notScheduled"
+              }
+            }
+          ],
           "request": {
             "subject": "gon-freecss",
             "opponent": {
@@ -26364,15 +26379,71 @@
       "metricool"
     ],
     "summary": {
-      "rendered": 55,
+      "rendered": 56,
       "unavailable": 5,
-      "notPublished": 5,
+      "notPublished": 6,
       "scheduled": 44,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0
     },
-    "ready": [],
+    "ready": [
+      {
+        "renderId": "character-versus:hunterxhunter:gon-freecss-vs-blackclover-yami-sukehiro@en",
+        "contentId": "character-versus:hunterxhunter:gon-freecss-vs-blackclover-yami-sukehiro",
+        "anime": "hunterxhunter",
+        "subject": "gon-freecss-vs-blackclover-yami-sukehiro",
+        "subjectName": "Gon Freecss vs Yami Sukehiro",
+        "locale": "en",
+        "variant": null,
+        "segment": null,
+        "partNumber": null,
+        "partCount": null,
+        "renderedAt": "2026-11-22T06:06:00.962Z",
+        "durationSeconds": 22,
+        "publicationStatus": "notPublished",
+        "platforms": {
+          "instagram": "notScheduled",
+          "facebook": "notScheduled",
+          "tiktok": "notScheduled",
+          "youtube": "notScheduled"
+        },
+        "artifact": {
+          "name": "animapverse-social-render-44992043772-1",
+          "runId": "44992043772",
+          "runAttempt": "1",
+          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/44992043772",
+          "video": "videos/hunterxhunter_gon-freecss-vs-blackclover-yami-sukehiro_character-versus_en.mp4",
+          "manifest": "manifests/hunterxhunter_gon-freecss-vs-blackclover-yami-sukehiro_character-versus_en.manifest.json",
+          "sha256": "a5eb16740e494f3a0992af44ec5a0e8cf2a183050080ead119999dcdcd996ceb",
+          "cover": "covers/hunterxhunter_gon-freecss-vs-blackclover-yami-sukehiro_character-versus_en.cover.png",
+          "expiresAt": "2026-12-22T06:06:00.962Z"
+        },
+        "contentType": "character-versus",
+        "platformMetadata": {
+          "instagramCaption": "Who travelled more: Gon Freecss or Yami Sukehiro?\n\nGon Freecss (Hunter x Hunter) vs Yami Sukehiro (Black Clover): every place on the map, one winner.\n\nFollow for more anime journeys.\n\nSave it for your next rewatch.\n\n#hunterxhunter #hxh #blackclover #gonfreecss #yamisukehiro #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Who travelled more: Gon Freecss or Yami Sukehiro? Follow for more anime journeys. #hunterxhunter #hxh #blackclover #gonfreecss #yamisukehiro",
+          "youtubeTitle": "Gon Freecss vs Yami Sukehiro: Who Travelled More? 🎣",
+          "youtubeDescription": "Who travelled more: Gon Freecss or Yami Sukehiro?\n\nGon Freecss (Hunter x Hunter) vs Yami Sukehiro (Black Clover): every place on the map, one winner.\n\nSubscribe for more anime journeys.\n\nInteractive map: https://animapverse.com\n\n#hunterxhunter #hxh #blackclover",
+          "facebookCaption": "Who travelled more: Gon Freecss or Yami Sukehiro?\n\nGon Freecss (Hunter x Hunter) vs Yami Sukehiro (Black Clover): every place on the map, one winner.\n\nFollow for more anime journeys.\n\nInteractive map: https://animapverse.com",
+          "hashtags": [
+            "#hunterxhunter",
+            "#hxh",
+            "#blackclover",
+            "#gonfreecss",
+            "#yamisukehiro",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        },
+        "waitFor": {}
+      }
+    ],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",

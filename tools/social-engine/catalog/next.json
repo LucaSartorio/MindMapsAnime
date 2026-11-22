@@ -1,19 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-21T06:14:34.674Z",
-  "status": "ready",
+  "generatedAt": "2026-11-22T06:06:02.160Z",
+  "status": "backlog",
   "feedTail": [
-    {
-      "renderId": "guess-character:bleach:renji-abarai@en",
-      "contentType": "guess-character",
-      "animes": [
-        "bleach"
-      ],
-      "characters": [
-        "bleach:renji-abarai"
-      ],
-      "part": null
-    },
     {
       "renderId": "character-journey:blackclover:yuno-grinberryall:part-01@en",
       "contentType": "character-journey",
@@ -70,6 +59,19 @@
         "dragonball:goku"
       ],
       "part": 5
+    },
+    {
+      "renderId": "character-versus:hunterxhunter:gon-freecss-vs-blackclover-yami-sukehiro@en",
+      "contentType": "character-versus",
+      "animes": [
+        "hunterxhunter",
+        "blackclover"
+      ],
+      "characters": [
+        "hunterxhunter:gon-freecss",
+        "blackclover:yami-sukehiro"
+      ],
+      "part": null
     }
   ],
   "rules": {
@@ -90,504 +92,28 @@
     "error": null
   },
   "backlog": {
-    "unpublished": [],
+    "unpublished": [
+      {
+        "renderId": "character-versus:hunterxhunter:gon-freecss-vs-blackclover-yami-sukehiro@en",
+        "contentType": "character-versus",
+        "renderedAt": "2026-11-22T06:06:00.962Z",
+        "missing": [
+          "instagram",
+          "facebook",
+          "tiktok",
+          "youtube"
+        ]
+      }
+    ],
     "unfinished": [],
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "feed50:character-journey:dragonball:goku:part-05@en:samples0",
-  "rejected": {
-    "JOURNEY_PART_ORDER": 34,
-    "JOURNEY_PART_SPACING": 1,
-    "MAX_SAME_CHARACTER_STREAK": 18
-  },
-  "considered": 658,
-  "trace": {
-    "traceVersion": 1,
-    "mode": "coldstart",
-    "seed": "feed50:character-journey:dragonball:goku:part-05@en:samples0",
-    "analytics": {
-      "coldStart": true,
-      "samples": 0,
-      "contents": 0,
-      "minimumSamples": 8
-    },
-    "recent": [
-      {
-        "renderId": "guess-character:bleach:renji-abarai@en",
-        "contentType": "guess-character",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:renji-abarai"
-        ]
-      },
-      {
-        "renderId": "character-journey:blackclover:yuno-grinberryall:part-01@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:yuno-grinberryall"
-        ]
-      },
-      {
-        "renderId": "character-versus:naruto:obito-uchiha-vs-bleach-yasutora-chad-sado@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "bleach"
-        ],
-        "characters": [
-          "naruto:obito-uchiha",
-          "bleach:yasutora-chad-sado"
-        ]
-      },
-      {
-        "renderId": "character-journey:onepiece:nami:part-03@en",
-        "contentType": "character-journey",
-        "animes": [
-          "onepiece"
-        ],
-        "characters": [
-          "onepiece:nami"
-        ]
-      },
-      {
-        "renderId": "guess-character:attackontitan:armin-arlert@en",
-        "contentType": "guess-character",
-        "animes": [
-          "attackontitan"
-        ],
-        "characters": [
-          "attackontitan:armin-arlert"
-        ]
-      },
-      {
-        "renderId": "character-journey:dragonball:goku:part-05@en",
-        "contentType": "character-journey",
-        "animes": [
-          "dragonball"
-        ],
-        "characters": [
-          "dragonball:goku"
-        ]
-      }
-    ],
-    "constraints": {
-      "sameAnimeStreak": {
-        "animes": [
-          "dragonball"
-        ],
-        "length": 1
-      },
-      "forcedAnimeRotation": false,
-      "blockedAnimes": [],
-      "blockedCharacters": [
-        "dragonball:goku"
-      ],
-      "characterCooldown": [
-        "bleach:renji-abarai",
-        "blackclover:yuno-grinberryall",
-        "naruto:obito-uchiha",
-        "bleach:yasutora-chad-sado",
-        "onepiece:nami",
-        "attackontitan:armin-arlert",
-        "dragonball:goku"
-      ],
-      "contentTypeStreak": {
-        "contentType": "character-journey",
-        "length": 1
-      }
-    },
-    "hardRulesTriggered": {
-      "JOURNEY_PART_ORDER": 34,
-      "JOURNEY_PART_SPACING": 1,
-      "MAX_SAME_CHARACTER_STREAK": 18
-    },
-    "candidates": {
-      "considered": 658,
-      "eligible": 606,
-      "byContentType": {
-        "character-journey": {
-          "considered": 405,
-          "eligible": 370
-        },
-        "guess-character": {
-          "considered": 77,
-          "eligible": 76
-        },
-        "character-versus": {
-          "considered": 176,
-          "eligible": 160
-        }
-      }
-    },
-    "excluded": [
-      {
-        "renderId": "character-journey:dragonball:goku:part-06@en",
-        "contentType": "character-journey",
-        "animes": [
-          "dragonball"
-        ],
-        "characters": [
-          "dragonball:goku"
-        ],
-        "reasons": [
-          "JOURNEY_PART_SPACING",
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "journey spacing: only 0 item(s) since Part 5 (min 2)",
-          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:dragonball:goku-vs-attackontitan-armin-arlert@en",
-        "contentType": "character-versus",
-        "animes": [
-          "dragonball",
-          "attackontitan"
-        ],
-        "characters": [
-          "dragonball:goku",
-          "attackontitan:armin-arlert"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:dragonball:goku-vs-attackontitan-mikasa-ackerman@en",
-        "contentType": "character-versus",
-        "animes": [
-          "dragonball",
-          "attackontitan"
-        ],
-        "characters": [
-          "dragonball:goku",
-          "attackontitan:mikasa-ackerman"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:dragonball:goku-vs-attackontitan-reiner-braun@en",
-        "contentType": "character-versus",
-        "animes": [
-          "dragonball",
-          "attackontitan"
-        ],
-        "characters": [
-          "dragonball:goku",
-          "attackontitan:reiner-braun"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:dragonball:goku-vs-blackclover-asta@en",
-        "contentType": "character-versus",
-        "animes": [
-          "dragonball",
-          "blackclover"
-        ],
-        "characters": [
-          "dragonball:goku",
-          "blackclover:asta"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:dragonball:goku-vs-blackclover-noelle-silva@en",
-        "contentType": "character-versus",
-        "animes": [
-          "dragonball",
-          "blackclover"
-        ],
-        "characters": [
-          "dragonball:goku",
-          "blackclover:noelle-silva"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:dragonball:goku-vs-blackclover-yami-sukehiro@en",
-        "contentType": "character-versus",
-        "animes": [
-          "dragonball",
-          "blackclover"
-        ],
-        "characters": [
-          "dragonball:goku",
-          "blackclover:yami-sukehiro"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:dragonball:goku-vs-bleach-ichigo-kurosaki@en",
-        "contentType": "character-versus",
-        "animes": [
-          "dragonball",
-          "bleach"
-        ],
-        "characters": [
-          "dragonball:goku",
-          "bleach:ichigo-kurosaki"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:dragonball:goku-vs-bleach-rukia-kuchiki@en",
-        "contentType": "character-versus",
-        "animes": [
-          "dragonball",
-          "bleach"
-        ],
-        "characters": [
-          "dragonball:goku",
-          "bleach:rukia-kuchiki"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:dragonball:goku-vs-bleach-yasutora-chad-sado@en",
-        "contentType": "character-versus",
-        "animes": [
-          "dragonball",
-          "bleach"
-        ],
-        "characters": [
-          "dragonball:goku",
-          "bleach:yasutora-chad-sado"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: dragonball:goku is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      }
-    ],
-    "status": "selected",
-    "selectedId": "character-versus:hunterxhunter:gon-freecss-vs-blackclover-yami-sukehiro",
-    "renderId": "character-versus:hunterxhunter:gon-freecss-vs-blackclover-yami-sukehiro@en",
-    "contentType": "character-versus",
-    "animes": [
-      "hunterxhunter",
-      "blackclover"
-    ],
-    "characters": [
-      "hunterxhunter:gon-freecss",
-      "blackclover:yami-sukehiro"
-    ],
-    "score": 92.44,
-    "base": 80.44,
-    "reasons": [
-      "coldstart: novelty +24.5, jitter +5.9",
-      "+12 main character"
-    ],
-    "ranked": [
-      {
-        "renderId": "character-versus:hunterxhunter:gon-freecss-vs-blackclover-yami-sukehiro@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "blackclover"
-        ],
-        "score": 92.44,
-        "reasons": [
-          "coldstart: novelty +24.5, jitter +5.9",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "character-versus:attackontitan:reiner-braun-vs-bleach-rukia-kuchiki@en",
-        "contentType": "character-versus",
-        "animes": [
-          "attackontitan",
-          "bleach"
-        ],
-        "score": 91.98,
-        "reasons": [
-          "coldstart: novelty +24.0, jitter +6.0",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:kurapika-vs-blackclover-yami-sukehiro@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "blackclover"
-        ],
-        "score": 91.81,
-        "reasons": [
-          "coldstart: novelty +24.5, jitter +5.3",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-attackontitan-reiner-braun@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "attackontitan"
-        ],
-        "score": 91.77,
-        "reasons": [
-          "coldstart: novelty +24.0, jitter +5.8",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "character-versus:naruto:naruto-uzumaki-vs-bleach-ichigo-kurosaki@en",
-        "contentType": "character-versus",
-        "animes": [
-          "naruto",
-          "bleach"
-        ],
-        "score": 91.68,
-        "reasons": [
-          "coldstart: novelty +24.0, jitter +5.7",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "guess-character:hunterxhunter:gon-freecss@en",
-        "contentType": "guess-character",
-        "animes": [
-          "hunterxhunter"
-        ],
-        "score": 91.67,
-        "reasons": [
-          "coldstart: novelty +24.0, jitter +5.7",
-          "+12 main character"
-        ]
-      }
-    ],
-    "explanation": [
-      "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
-      "dragonball:goku excluded in every format (maxSameCharacterStreak 1).",
-      "1 series part(s) wait for spacing (≥ 2 items between parts).",
-      "Selected character-versus:hunterxhunter:gon-freecss-vs-blackclover-yami-sukehiro@en (character-versus, hunterxhunter + blackclover) — coldstart, score 92.44 among 606 valid candidate(s)."
-    ]
-  },
-  "pick": {
-    "contentId": "character-versus:hunterxhunter:gon-freecss-vs-blackclover-yami-sukehiro",
-    "renderId": "character-versus:hunterxhunter:gon-freecss-vs-blackclover-yami-sukehiro@en",
-    "contentType": "character-versus",
-    "animes": [
-      "hunterxhunter",
-      "blackclover"
-    ],
-    "characters": [
-      "hunterxhunter:gon-freecss",
-      "blackclover:yami-sukehiro"
-    ],
-    "part": null,
-    "partCount": null,
-    "score": 92.44,
-    "reasons": [
-      "coldstart: novelty +24.5, jitter +5.9",
-      "+12 main character"
-    ]
-  },
-  "request": {
-    "template": "characterVersus",
-    "anime": "hunterxhunter",
-    "subject": "gon-freecss",
-    "opponent": {
-      "anime": "blackclover",
-      "subject": "yami-sukehiro"
-    },
-    "locale": "en",
-    "hook": "Who travelled more: Gon Freecss or Yami Sukehiro?",
-    "hookType": "versus",
-    "hookId": "cv-versus-1",
-    "cta": "Follow for the next match-up.",
-    "ctaType": "follow-for-more",
-    "selection": {
-      "mode": "coldstart",
-      "score": 92.44,
-      "seed": "feed50:character-journey:dragonball:goku:part-05@en:samples0"
-    },
-    "notes": "growth selector (coldstart): coldstart: novelty +24.5, jitter +5.9; +12 main character"
-  },
-  "alternatives": [
-    {
-      "renderId": "character-versus:attackontitan:reiner-braun-vs-bleach-rukia-kuchiki@en",
-      "contentType": "character-versus",
-      "score": 91.98
-    },
-    {
-      "renderId": "character-versus:hunterxhunter:kurapika-vs-blackclover-yami-sukehiro@en",
-      "contentType": "character-versus",
-      "score": 91.81
-    },
-    {
-      "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-attackontitan-reiner-braun@en",
-      "contentType": "character-versus",
-      "score": 91.77
-    },
-    {
-      "renderId": "character-versus:naruto:naruto-uzumaki-vs-bleach-ichigo-kurosaki@en",
-      "contentType": "character-versus",
-      "score": 91.68
-    },
-    {
-      "renderId": "guess-character:hunterxhunter:gon-freecss@en",
-      "contentType": "guess-character",
-      "score": 91.67
-    }
-  ],
-  "eligible": 606
+  "seed": "",
+  "reason": "publish the existing render first: character-versus:hunterxhunter:gon-freecss-vs-blackclover-yami-sukehiro@en (it counts as today's video; no new content)",
+  "alternatives": [],
+  "rejected": {},
+  "considered": 0,
+  "eligible": 0,
+  "trace": null
 }
