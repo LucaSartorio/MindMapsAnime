@@ -4569,7 +4569,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-11-22T06:04:08.430Z",
-      "updatedAt": "2026-11-22T06:06:00.962Z",
+      "updatedAt": "2026-11-22T06:15:49.251Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-11-22T06:06:00.962Z",
       "outputFile": "tools/social-engine/output/hunterxhunter_gon-freecss-vs-blackclover-yami-sukehiro_character-versus_en.mp4",
@@ -4638,9 +4638,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-22T10:00:00+01:00",
+          "scheduledAt": "2026-11-22T06:09:28Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "437300919",
+          "providerPostUuid": "8056850614287682716",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=8056850614287682716",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "hunterxhunter_gon-freecss-vs-blackclover-yami-sukehiro_character-versus_en.instagram.scheduled.07369098a826"
+          ],
+          "updatedAt": "2026-11-22T06:15:49.251Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-22T10:00:00+01:00",
+          "scheduledAt": "2026-11-22T06:09:28Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "437300975",
+          "providerPostUuid": "4696218466682816853",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=4696218466682816853",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "hunterxhunter_gon-freecss-vs-blackclover-yami-sukehiro_character-versus_en.facebook.scheduled.b35b9c497f8c"
+          ],
+          "updatedAt": "2026-11-22T06:15:49.251Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-22T10:00:00+01:00",
+          "scheduledAt": "2026-11-22T06:09:28Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "437301020",
+          "providerPostUuid": "-665584401570839562",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-665584401570839562",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "hunterxhunter_gon-freecss-vs-blackclover-yami-sukehiro_character-versus_en.tiktok.scheduled.6848c131ead1"
+          ],
+          "updatedAt": "2026-11-22T06:15:49.251Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-22T10:00:00+01:00",
+          "scheduledAt": "2026-11-22T06:09:28Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "437301072",
+          "providerPostUuid": "-2428561172591195632",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-2428561172591195632",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "hunterxhunter_gon-freecss-vs-blackclover-yami-sukehiro_character-versus_en.youtube.scheduled.c48da79a3390"
+          ],
+          "updatedAt": "2026-11-22T06:15:49.251Z"
+        }
+      ]
     },
     "character-versus:hunterxhunter:kurapika-vs-dragonball-goku@en": {
       "renderId": "character-versus:hunterxhunter:kurapika-vs-dragonball-goku@en",

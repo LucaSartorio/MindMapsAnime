@@ -1,0 +1,30 @@
+{
+  "receiptId": "hunterxhunter_gon-freecss-vs-blackclover-yami-sukehiro_character-versus_en.facebook.scheduled.b35b9c497f8c",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-11-22T06:15:49.251Z",
+  "sourceFile": "20261122T060928Z-hunterxhunter_gon-freecss-vs-blackclover-yami-sukehiro_character-versus_en-facebook-scheduled.json",
+  "run": {
+    "runId": "44992919569",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/44992919569",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "character-versus:hunterxhunter:gon-freecss-vs-blackclover-yami-sukehiro@en",
+    "platform": "facebook",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-11-22T10:00:00+01:00",
+    "providerPostId": "437300975",
+    "providerPostUuid": "4696218466682816853",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=4696218466682816853",
+    "recordedAt": "2026-11-22T06:09:28Z",
+    "recordedBy": "chatgpt-work-publishing-agent"
+  }
+}
