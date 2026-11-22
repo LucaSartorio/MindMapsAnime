@@ -1,0 +1,22 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterVersus",
+  "anime": "hunterxhunter",
+  "subject": "gon-freecss",
+  "opponent": {
+    "anime": "blackclover",
+    "subject": "yami-sukehiro"
+  },
+  "locale": "en",
+  "hook": "Who travelled more: Gon Freecss or Yami Sukehiro?",
+  "hookType": "versus",
+  "hookId": "cv-versus-1",
+  "cta": "Follow for the next match-up.",
+  "ctaType": "follow-for-more",
+  "selection": {
+    "mode": "coldstart",
+    "score": 92.44,
+    "seed": "feed50:character-journey:dragonball:goku:part-05@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +24.5, jitter +5.9; +12 main character"
+}
