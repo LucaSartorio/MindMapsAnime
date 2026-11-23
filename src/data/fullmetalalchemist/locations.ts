@@ -59,8 +59,8 @@ export const fmaLocations: Location[] = [
     boundaryId: 'bnd-fma-east',
     referenceStatus: 'needs_verification',
     shortDescription: {
-      it: 'La terra degli ishvaliani, nell\'Area Est di Amestris. La posizione precisa dentro l\'area non è documentata: il pin è indicativo.',
-      en: 'The land of the Ishvalans, in the East Area of Amestris. Its exact position inside the area is not documented: the pin is indicative.',
+      it: 'La terra degli ishvaliani, nell\'Area Est di Amestris.',
+      en: 'The land of the Ishvalans, in the East Area of Amestris.',
     },
     tags: ['ishval'],
   }),

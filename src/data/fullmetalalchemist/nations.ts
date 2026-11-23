@@ -58,8 +58,8 @@ export const fmaNations: Nation[] = [
     name: 'Aerugo',
     type: 'minor_nation',
     description: {
-      it: 'Paese confinante a sud di Amestris. Delle sue dimensioni e dei suoi confini non è documentato altro.',
-      en: 'The neighbouring country to the south of Amestris. Nothing else about its size or borders is documented here.',
+      it: 'Paese confinante a sud di Amestris.',
+      en: 'The neighbouring country to the south of Amestris.',
     },
     labelPosition: { x: 750, y: 905 },
     color: '#40504d',
