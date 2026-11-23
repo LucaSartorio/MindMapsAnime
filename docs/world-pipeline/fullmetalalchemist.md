@@ -10,7 +10,7 @@
   (diverges from the manga after the early volumes), **excluded**; the film *The Sacred Star of Milos* (2011,
   anime-original) → **included** as `canonStatus: 'movie'` (owner decision 2026-11-23); live-action films excluded
 - id prefix: `fma` (`char-fma-…`, `loc-fma-…`, `evt-fma-…`, `arc-fma-…`, `faction-fma-…`); dataset export `fmaDataset`
-- last update: 2026-11-23 · next step: batch 10 part B — portraits (`appearance.ts`) for main/major characters; batch 4 stays partial until a source gives the remaining city positions
+- last update: 2026-11-23 · next step: batch 11 — translations ({ it, en } check; es/fr only if the owner asks); batch 4 stays partial until a source gives the remaining city positions
 
 ## Model mapping (discovery, to confirm per batch with sources)
 
@@ -36,7 +36,7 @@
 | 7 | factions, relations, family | done | factions 11 (9 manga + 2 movie; 3 needs_verification); family 3 links; 13 characters got extra relations | (this commit) | `factions.ts` (types army/organization/clan/group, already labelled), `structure.ts` (`factionKit` organigrams; people without a page only as labels), `family.ts` (Hohenheim → Edward, Alphonse; Edward–Winry); membership in `Faction.characterIds` (like JJK); relations only added, none rewritten. Relatives without a page (Trisha, Rockbell and Armstrong parents, Gracia/Elicia Hughes, Sig Curtis, Emperor of Xing) → batch 10 |
 | 8 | battles, markers | done | battles 11; markers 3 (deaths `morte` 16 tagged / 3 placed · homunculi `omuncoli` 26 / 3 · philosopher's stone `pietra-filosofale` 15 / 3) | (this commit) | `battles.ts` (`battleKit` → `applyBattles`), `markerTags.ts` (`withEventTags`), `config.mapMarkers` in `worlds.ts`; sides ⊂ event characterIds (no event edited); outcomes only where stated; `interrupted` for Scar vs Elrics, Olivier vs Sloth, Mustang vs Envy; Pride consuming Gluttony NOT a battle (removed by the orchestrator: an ally absorbed, not a fight); no tournaments in the work; most tagged events stay off the map until batch 4 places more cities |
 | 9 | power system | done | abilities 30 (28 canon + 2 movie; 2 needs_verification); 6 categories; 29/30 indexable | (this commit) | `FMA_ABILITY_CATEGORIES` in `config.ts` → `ability.categories` (principle, amestrian_alchemy, alkahestry, forbidden_alchemy, homunculus, milos); no `ability.attribute` (source-of-power facet rests on community material); no automail entries (technology, not alchemy); `abilities.ts` with `jutsu.characterIds` → derived `character.jutsuIds`; art falls back to the world motif (`magic_circle`), no `WORLD_FORMS` mapping needed; thin: `scar-reconstruction`; orphan: `chimeric-alchemy` (no user page until batch 10). The brief's "red water" for Milos was the orchestrator's mistake (2003-anime concept): not in the sources, correctly not modelled |
-| 10 | routes, secondary chars, portraits | in-progress | part A done: +24 characters (52 total; 23 canon + 1 movie; 14 needs_verification); family 3 → 15 links; 9 organigram labels → members; 17 event `characterIds` additions; 0 hand-written routes (1 derived journey) | (this commit) | `charactersSecondary.ts` + Miranda in `charactersMilos.ts`; people linked to events only where the event text already names them; `chimeric-alchemy` orphan resolved (Tucker); Alex/Olivier now siblings (father Philip), Ling/May half-siblings (Emperor of Xing); skipped: Xiao Mei (only "May's pet panda"), Armstrong mother/sisters (unnamed), Sheska, Slicer brothers. Part B (portraits, `appearance.ts`) next. Arc Mining Town text rephrased (i18n false positive) |
+| 10 | routes, secondary chars, portraits | done | part A done: +24 characters (52 total; 23 canon + 1 movie; 14 needs_verification); family 3 → 15 links; 9 organigram labels → members; 17 event `characterIds` additions; 0 hand-written routes (1 derived journey) | (this commit) | `charactersSecondary.ts` + Miranda in `charactersMilos.ts`; people linked to events only where the event text already names them; `chimeric-alchemy` orphan resolved (Tucker); Alex/Olivier now siblings (father Philip), Ling/May half-siblings (Emperor of Xing); skipped: Xiao Mei (only "May's pet panda"), Armstrong mother/sisters (unnamed), Sheska, Slicer brothers. Part B: 26/26 main/major portraits in `appearance.ts` (`withAppearance` applied last), built only from textual descriptions; colours mostly from community profile sites (S27-S29, partly 2003-anime oriented) → to recheck; unsourced details left to kit defaults (generic faces for Sloth, Julia, Melvin; default short hair makes several women look generic). Arc Mining Town text rephrased (i18n false positive) |
 | 11 | translations | todo | | | `{ it, en }` throughout; es/fr only if the owner asks |
 | 12 | publication gate | todo | | | owner approval required to flip `status` |
 
@@ -68,6 +68,10 @@
 | S23 | web search results (TV Tropes, fan wikis) on alkahestry and Kimblee | community, snippets | corroboration only | nothing relied on |
 | S24 | Japanese Wikipedia, 鋼の錬金術師の登場人物一覧 (raw wikitext) | encyclopedia | Rockbell parents (Urey, Sara), Philip Gargantos Armstrong, Emperor of Xing, Miles/Buccaneer ranks, Fuery, Ross/Brosh | single detailed source for several minor facts |
 | S25 | MyAnimeList character pages (Urey/Yuriy, Sara/Sarah Rockbell, Philip Gargantos Armstrong) | community database, snippets | corroboration of names / romanisation only | search snippets |
+| S26 | CBR, Hohenheim backstory article (cbr.com/fullmetal-alchemist-hohenheim-edward-alphonse-dad-backstory-fathers-plan/) | editorial | Hohenheim's blond ponytail and beard | web fetch |
+| S27 | absoluteanime.com FMA character profiles | community, 2003-anime oriented | hair/eye colours of most portraits | web fetch; weak — recheck before publication |
+| S28 | animemanga.com character pages (Edward, Armstrong, Gluttony) | community database | Ed's braid and gold eyes; Armstrong's lock, moustache, eyes; Gluttony's look | web fetch |
+| S29 | absoluteanime.com Brotherhood profiles (Lan Fan, Ling, May) | community | hair/eye colours for the Xing characters | web fetch |
 | S17 | aggregator / search summaries for ch. 3-4 | community / aggregator | short Mining Town / Battle on the Train descriptions only | search summary only; low reliability |
 
 Batch 3 also used S6 (Milos film characters) and S2 (full chapter table, as context).
@@ -164,12 +168,20 @@ Batch 5 also re-used S2 (volume ↔ chapter table; it names no arcs), S6 (Milos 
 | char-fma-gracia-hughes, char-fma-elicia-hughes | fate after the story | — | unknown | `status: 'unknown'` |
 | char-fma-dolcetto, -loa, -martel, -bido | spellings and species; deaths | S9, S24 | unverified (spelling) | 2003-anime variants ignored |
 | tec-fma-chimeric-alchemy | Tucker as user | S9 | editorial | ability text does not name him |
+| char-fma-* (portraits) | hair/eye colours | S27, S28, S29, ACDB snippets | unverified (community, partly 2003-anime oriented) | the manga is B&W; recheck against official colour art or drop colours |
+| char-fma-alphonse-elric | closed steel helm with slit | S9/S10 ("large suit of armor") | approximation | human form not portrayed (sources conflict on colours) |
+| char-fma-scar | red eyes, white hair; X scar on the brow | S27, S10 | unverified (colours) | `scar_x_forehead` |
+| char-fma-father, char-fma-pride | cyclops-like form; multi-eyed shadow | S9 | verified (secondary) | closest kit shapes |
+| char-fma-greed | purplish-pink eyes | S27 | unverified | hex is an approximation |
+| char-fma-sloth, -julia-crichton, -melvin-voyager | no appearance sourced | — | unknown | kit default face; not canonical |
+| (portraits) | hairstyles mostly unsourced → kit default short hair | — | gap | several female characters look generic; needs a text source for hairstyles |
 | (batch 3) | Italian renderings of titles/epithets (e.g. «Alchimista d'Acciaio») | — | unverified | no official Italian edition consulted; aliases/descriptions only, revisable without touching ids |
 
 ## Open issues
 
 - Source access: the FMA fandom wiki refuses direct fetches; no primary (manga) access. City positions for batch 4
   need a better source (e.g. the manga chapter that shows the country map, or an authorised wiki read).
+- Portraits: colours rest on community profile sites; hairstyles largely unsourced (women render with default short hair). Decide before publication: find sources, or accept as placeholders.
 - Batch 4 partial: the nation-labels layer (off by default) duplicates the SVG labels when enabled — decide before publication whether to drop SVG labels or the `labelPosition`s.
 - No sourced railway lines and no sourced Central City layout → no railway layer, no Central sub-map for now.
 - `npm run data:coverage -- fullmetalalchemist` prints nothing while the dataset is empty.

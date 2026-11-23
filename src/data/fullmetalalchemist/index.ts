@@ -23,6 +23,8 @@ import { withFactionExtras } from '../shared/factionKit';
 import { withFamily } from '../shared/familyKit';
 import { applyBattles } from '../shared/battleKit';
 import { withEventTags } from '../shared/eventTagKit';
+import { withAppearance } from '../shared/appearanceKit';
+import { fmaAppearance } from './appearance';
 
 const fullmetalAlchemist = animeWorlds.find((w) => w.slug === 'fullmetalalchemist')!;
 
@@ -78,4 +80,7 @@ const fmaBaseDataset: WorldDataset = {
   assets: fmaAssets,
 };
 
-export const fmaDataset: WorldDataset = withEventTags(withFactionExtras(withFamily(fmaBaseDataset, fmaFamily, 'char-fma-'), fmaStructure), fmaMarkerTags);
+const fmaTaggedDataset: WorldDataset = withEventTags(withFactionExtras(withFamily(fmaBaseDataset, fmaFamily, 'char-fma-'), fmaStructure), fmaMarkerTags);
+
+/** Aspetto dei personaggi principali per i ritratti SVG generati (`appearance.ts`), applicato per ultimo. */
+export const fmaDataset: WorldDataset = withAppearance(fmaTaggedDataset, fmaAppearance, 'char-fma-');
