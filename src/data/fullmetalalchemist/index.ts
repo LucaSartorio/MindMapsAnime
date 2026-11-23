@@ -2,6 +2,10 @@ import type { WorldDataset } from '@/types';
 import { animeWorlds } from '@/data/worlds';
 import { fmaAssets } from './assets';
 import { fmaMapLevels } from './mapLevels';
+import { fmaCharactersAmestris } from './charactersAmestris';
+import { fmaCharactersHomunculi } from './charactersHomunculi';
+import { fmaCharactersXing } from './charactersXing';
+import { fmaCharactersMilos } from './charactersMilos';
 
 const fullmetalAlchemist = animeWorlds.find((w) => w.slug === 'fullmetalalchemist')!;
 
@@ -23,7 +27,12 @@ export const fmaDataset: WorldDataset = {
   mapLevels: fmaMapLevels,
   nations: [],
   locations: [],
-  characters: [],
+  characters: [
+    ...fmaCharactersAmestris,
+    ...fmaCharactersXing,
+    ...fmaCharactersHomunculi,
+    ...fmaCharactersMilos,
+  ],
   factions: [],
   arcs: [],
   events: [],

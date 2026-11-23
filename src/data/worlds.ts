@@ -23,6 +23,7 @@ import {
   JJK_ROLES,
   JJK_TECHNIQUE_CATEGORIES,
 } from '@/data/jujutsukaisen/config';
+import { FMA_ROLES } from '@/data/fullmetalalchemist/config';
 
 /**
  * Registro generico di tutti gli anime/manga supportati o pianificati.
@@ -736,6 +737,7 @@ export const animeWorlds: AnimeWorld[] = [
         categoryTerm: { it: 'Tipo', en: 'Type', ja: 'タイプ', fr: 'Type', de: 'Typ', es: 'Tipo' },
       },
       characterRank: { term: { it: 'Grado militare', en: 'Military rank', ja: '軍の階級', fr: 'Grade militaire', de: 'Militärrang', es: 'Rango militar' } },
+      characterRoles: FMA_ROLES,
       nationTerm: { it: 'Nazione / Regione', en: 'Nation / Region', ja: '国 / 地方', fr: 'Nation / Région', de: 'Nation / Region', es: 'Nación / Región' },
       factionsTerm: { it: 'Fazioni & Organizzazioni', en: 'Factions & Organizations', ja: '勢力と組織', fr: 'Factions & Organisations', de: 'Fraktionen & Organisationen', es: 'Facciones y organizaciones' },
       placesTerm: { it: 'luoghi', en: 'places', ja: '場所', fr: 'lieux', de: 'Orte', es: 'lugares' },

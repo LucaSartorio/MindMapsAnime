@@ -10,7 +10,7 @@
   (diverges from the manga after the early volumes), **excluded**; the film *The Sacred Star of Milos* (2011,
   anime-original) → **included** as `canonStatus: 'movie'` (owner decision 2026-11-23); live-action films excluded
 - id prefix: `fma` (`char-fma-…`, `loc-fma-…`, `evt-fma-…`, `arc-fma-…`, `faction-fma-…`); dataset export `fmaDataset`
-- last update: 2026-11-23 · next step: batch 3 — main characters (anime-data-curator); batch 4 needs better sources for city positions
+- last update: 2026-11-23 · next step: batch 4 — places + nations/regions (needs a better source for city positions); else batch 5 — arcs
 
 ## Model mapping (discovery, to confirm per batch with sources)
 
@@ -29,7 +29,7 @@
 |---|---|---|---|---|---|
 | 1 | config + skeleton + loader | done | all kinds 0 | 54bdf82 | existing `worlds.ts` entry kept (id/slug/urlSlug/theme/metadata/config unchanged, metadata matches S2); `src/data/fullmetalalchemist/index.ts` + loader in `registry.ts`; `WORLD_STYLES` placeholder entry already present |
 | 2 | map levels + generator | done | levels 1 (`fma-map-world`, viewBox 1500×1000) | (this commit) | schematic original SVG (76 KB, deterministic) from `scripts/mapgen/fullmetalalchemist.py`: abstract Amestris outline, 5 areas, Drachma/Briggs N, Creta W, Aerugo S, Xing + desert E; no cities, no railways, no sub-maps. Area polygons `AMESTRIS_AREAS` (central/north/east/south/west) + `AREA_LABELS` ready for `MapBoundary` in batch 4; `PINS` empty |
-| 3 | main characters | todo | chars 0 | | |
+| 3 | main characters | done | chars 28 (2 main, 24 major, 2 supporting; 25 canon + 3 movie); 6 needs_verification | (this commit) | files `charactersAmestris/Xing/Homunculi/Milos.ts` + `characterHelpers.ts`; `FMA_ROLES` (7 roles) in `config.ts` → `WorldConfig.characterRoles`; no nation/place/faction/event/family links yet (later batches); first manga appearance only for Ed, Al (ch. 1), Mustang (ch. 4), Scar (ch. 5); inferred Brotherhood "Ep. 1" removed by the orchestrator (not sourced) |
 | 4 | places, nations/regions | todo | | | |
 | 5 | arcs | todo | | | |
 | 6 | events | todo | | | `mangaChapters` per event |
@@ -52,6 +52,13 @@
 | S6 | Wikipedia, "Fullmetal Alchemist the Movie: The Sacred Star of Milos" | encyclopedia | Table City on the Amestris–Creta border; the Valley | web fetch |
 | S7 | Wikipedia, "Amestris (Fullmetal Alchemist)", "Fullmetal Alchemist", "Fullmetal Alchemist: Brotherhood" | encyclopedia | Central City capital; Briggs north; few foreign countries named | web fetch; no detailed geography |
 | S8 | Fullmetal Alchemist Wiki (fma.fandom.com: Amestris, List of Locations, city pages, Xerxes, Nationwide Transmutation Circle) | community (discovery only) | leads on city positions (East/South/West/North City, Rush Valley, Dublith, Baschool, Reole, Xerxes) | direct fetch blocked (HTTP 402/403): only search-result summaries; nothing from here is `verified` |
+| S9 | Wikipedia, "List of Fullmetal Alchemist characters" | encyclopedia | Japanese names, ranks, roles, Homunculi abilities/fates, Hohenheim, Xing characters | web fetch via summarizer; ~100k of ~188k characters read; summaries sometimes mix the 2003 anime → only manga-consistent statements used |
+| S10 | Wikipedia, "Edward Elric", "Alphonse Elric", "Roy Mustang", "Scar (Fullmetal Alchemist)" | encyclopedia | first appearances (Ed/Al ch. 1, Mustang ch. 4, Scar ch. 5), Mustang's blinding, Scar's backstory | web fetch |
+| S11 | Wikipedia, "Fullmetal Alchemist" (main article) | encyclopedia | manga ending summary | web fetch (first 100k characters) |
+| S12 | Screen Rant, "Fullmetal Alchemist Endings Explained" (screenrant.com/fullmetal-alchemist-endings-explained-manga-brotherhood-ed-al/) | editorial | manga epilogue (Ed/Winry, Al to Xing, Havoc, Scar, Ling, Pinako) | web fetch; does not cover Olivier, Izumi, Hawkeye |
+| S13 | TV Tropes (Scar), mirror of an old Wikipedia "State Military characters" article | community / mirror | discovery only | search summaries only; nothing relied on |
+
+Batch 3 also used S6 (Milos film characters) and S2 (full chapter table, as context).
 
 ## Ledger (significant claims only)
 
@@ -64,6 +71,17 @@
 | (batch 4) | Ishval in the East Area; its position inside the area (south-east?) | S4, S5 (area) · S8 (position) | unverified (position) | pin position must be marked needs_verification |
 | (batch 4) | Resembool's area; Liore "western desert"; Dublith / Rush Valley in the South | S8 | unverified / unknown | do not place without a better source |
 | (batch 4) | Table City / the Valley (Milos) on the Amestris–Creta border | S6 | verified (coarse) | `canonStatus: 'movie'` |
+| char-fma-roy-mustang | rank "Brigadier General (formerly Colonel)" | S9, S10 | unverified | S9 summary garbled; epilogue rank not confirmed → needs_verification |
+| char-fma-riza-hawkeye | alive at the end | search snippet only | unverified | needs_verification |
+| char-fma-alex-louis-armstrong | alive at the end; rank Major | S9 (rank) | unverified (status) | needs_verification |
+| char-fma-olivier-mira-armstrong | alive at the end | S10 (Scar page), review snippet | unverified | needs_verification |
+| char-fma-izumi-curtis | alive; treated by Hohenheim; Sloth fight with Armstrong and Sig | S9 | unverified | needs_verification |
+| char-fma-greed | order of the two incarnations (original body vs Ling's body) | S9 | unverified | one entry; text avoids claiming the order; needs_verification |
+| char-fma-father | `status: 'deceased'` for being pulled back into the Gate | S9 | disputed (semantic) | description explains it; `unknown` is the alternative |
+| char-fma-melvin-voyager, char-fma-ashleigh-crichton | what Atlas did to the real Ashleigh | S6 | disputed (inside the source) | text says "attacked"; he survives as Colonel Herschel |
+| (batch 3) | first manga appearance of 24/28 characters | — | unknown | left blank; the "earliest chapters cited" in S9 are not first appearances |
+| char-fma-may-chang, char-fma-ling-yao, char-fma-king-bradley | names "May Chang" (Viz) vs "Mei Chan"; "Ling Yao" (official English) vs "Lin Yao"; rank "Führer" | S9, S11, S12 | note | official English forms used |
+| (batch 3) | Italian renderings of titles/epithets (e.g. «Alchimista d'Acciaio») | — | unverified | no official Italian edition consulted; aliases/descriptions only, revisable without touching ids |
 
 ## Open issues
 
