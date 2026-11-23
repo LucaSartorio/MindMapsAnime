@@ -1,16 +1,16 @@
 import type { Location } from '@/types';
 
 /**
- * Luoghi di Fullmetal Alchemist (batch 4, perimetro ridotto): SOLO quelli la cui area è documentata (S4, S5, S6).
- * Non compaiono (posizione non documentata): Resembool, Liore, Youswell, le città capoluogo, Dublith, Rush Valley,
- * Baschool, Xenotime, le rovine di Xerxes, il Quinto Laboratorio, le ferrovie.
+ * Luoghi di Fullmetal Alchemist (batch 4): SOLO quelli la cui AREA è documentata (S30-S34, S36; Baschool, Fotset e
+ * Pendleton da fonti singole o di comunità → `needs_verification`). Non compaiono: Xenotime, Aquroya, Kishua (solo anime
+ * 2003), Asbeck (canone non confermato), i sotto-luoghi di Central City, il Quinto Laboratorio, le ferrovie.
  *
  * `x`/`y` sono scritte da `apply_pins` del generatore `scripts/mapgen/fullmetalalchemist.py` (dizionario `PINS`,
  * piano 1500 × 1000): non modificarle a mano. Il posto esatto dentro l'area è schematico.
  * `eventIds`/`arcIds` non sono salvati qui: derivano dal `locationId` degli eventi.
  */
 const loc = (l: Omit<Location, 'worldId' | 'mapLevelId' | 'nationId' | 'canonStatus' | 'referenceStatus'> &
-  Partial<Pick<Location, 'canonStatus' | 'referenceStatus'>>): Location => ({
+  Partial<Pick<Location, 'nationId' | 'canonStatus' | 'referenceStatus'>>): Location => ({
   worldId: 'world-fullmetalalchemist',
   mapLevelId: 'fma-map-world',
   nationId: 'nation-fma-amestris',
@@ -78,5 +78,214 @@ export const fmaLocations: Location[] = [
       en: 'A remote area on the Amestris-Creta border, reached by train, in the film \'The Sacred Star of Milos\' (2011). The Valley of Milos lies around and below it.',
     },
     tags: ['film', 'milos', 'confine'],
+  }),
+  loc({
+    id: 'loc-fma-east-city',
+    name: 'East City',
+    type: 'city',
+    x: 1010,
+    y: 450,
+    importance: 'secondary',
+    boundaryId: 'bnd-fma-east',
+    shortDescription: {
+      it: "Il capoluogo dell'Area Est e sede del Quartier Generale Orientale.",
+      en: "The regional centre of the East Area and seat of Eastern Headquarters.",
+    },
+    tags: ['capoluogo', 'east-city'],
+  }),
+  loc({
+    id: 'loc-fma-resembool',
+    name: 'Resembool',
+    type: 'village',
+    x: 995,
+    y: 595,
+    importance: 'main',
+    boundaryId: 'bnd-fma-east',
+    characterIds: ['char-fma-winry-rockbell', 'char-fma-pinako-rockbell', 'char-fma-edward-elric', 'char-fma-alphonse-elric'],
+    shortDescription: {
+      it: "Villaggio di campagna dell'Area Est, noto per l'allevamento di pecore e dotato di una stazione ferroviaria: è il paese dei fratelli Elric e la casa dei Rockbell. La zona della stazione fu bruciata durante la guerra di Ishval.",
+      en: "A country village in the East Area, known for sheep farming and served by a railway station: the Elric brothers' hometown and the Rockbells' home. The station area was burned during the Ishvalan war.",
+    },
+    tags: ['resembool', 'automail'],
+  }),
+  loc({
+    id: 'loc-fma-liore',
+    name: 'Liore',
+    type: 'city',
+    x: 1100,
+    y: 385,
+    importance: 'secondary',
+    boundaryId: 'bnd-fma-east',
+    shortDescription: {
+      it: "Città sulla frontiera orientale di Amestris, nell'Area Est.",
+      en: "A town on the eastern frontier of Amestris, in the East Area.",
+    },
+    longDescription: {
+      it: "Città sulla frontiera orientale di Amestris, nell'Area Est. La rivolta che vi scoppia è orchestrata da Envy, che si finge padre Cornello.",
+      en: "A town on the eastern frontier of Amestris, in the East Area. The riot that breaks out there is staged by Envy, posing as Father Cornello.",
+    },
+    tags: ['liore'],
+  }),
+  loc({
+    id: 'loc-fma-youswell',
+    name: 'Youswell',
+    type: 'city',
+    x: 1125,
+    y: 455,
+    importance: 'secondary',
+    boundaryId: 'bnd-fma-east',
+    shortDescription: {
+      it: "Città di minatori e di carbone al margine orientale di Amestris, accanto al Grande Deserto Orientale, soprannominata «la fine dell'est».",
+      en: "A coal-mining town at the eastern edge of Amestris, next to the Great Eastern Desert, nicknamed 'the end of the east'.",
+    },
+    tags: ['youswell', 'miners'],
+  }),
+  loc({
+    id: 'loc-fma-dublith',
+    name: 'Dublith',
+    type: 'city',
+    x: 570,
+    y: 775,
+    importance: 'secondary',
+    boundaryId: 'bnd-fma-south',
+    characterIds: ['char-fma-izumi-curtis', 'char-fma-sig-curtis'],
+    shortDescription: {
+      it: "Città di villeggiatura estiva dell'Area Sud e casa di Izumi Curtis. Il locale Devil's Nest, base di Greed, si trova qui.",
+      en: "A summer resort town in the South Area and the home of Izumi Curtis. The Devil's Nest bar, Greed's base, is here.",
+    },
+    longDescription: {
+      it: "Città di villeggiatura estiva dell'Area Sud e casa di Izumi Curtis. Il locale Devil's Nest, base di Greed, si trova qui. Accanto alla città c'è il lago Kaoru, con al centro l'isola di Yock.",
+      en: "A summer resort town in the South Area and the home of Izumi Curtis. The Devil's Nest bar, Greed's base, is here. Beside the town lies Lake Kaoru, with Yock Island in it.",
+    },
+    tags: ['dublith', 'izumi'],
+  }),
+  loc({
+    id: 'loc-fma-rush-valley',
+    name: 'Rush Valley',
+    type: 'city',
+    x: 640,
+    y: 690,
+    importance: 'secondary',
+    boundaryId: 'bnd-fma-south',
+    shortDescription: {
+      it: "Città degli automail nelle montagne dell'Area Sud, sulla strada fra Central e Dublith, cresciuta in fretta durante la guerra di Ishval.",
+      en: "The automail town in the mountains of the South Area, on the way from Central to Dublith, which boomed during the Ishvalan war.",
+    },
+    tags: ['rush-valley', 'automail'],
+  }),
+  loc({
+    id: 'loc-fma-south-city',
+    name: 'South City',
+    type: 'city',
+    x: 900,
+    y: 780,
+    importance: 'secondary',
+    boundaryId: 'bnd-fma-south',
+    shortDescription: {
+      it: "Il capoluogo dell'Area Sud e sede del Quartier Generale Meridionale, vicino al fronte con Aerugo.",
+      en: "The regional centre of the South Area and seat of Southern Headquarters, near the front with Aerugo.",
+    },
+    tags: ['capoluogo'],
+  }),
+  loc({
+    id: 'loc-fma-north-city',
+    name: 'North City',
+    type: 'city',
+    x: 630,
+    y: 345,
+    importance: 'secondary',
+    boundaryId: 'bnd-fma-north',
+    shortDescription: {
+      it: "Il capoluogo dell'Area Nord e sede del Quartier Generale Settentrionale. Fort Briggs si trova a nord della città.",
+      en: "The regional centre of the North Area and seat of Northern Headquarters. Fort Briggs lies north of the city.",
+    },
+    tags: ['capoluogo'],
+  }),
+  loc({
+    id: 'loc-fma-baschool',
+    name: 'Baschool',
+    type: 'ruins',
+    x: 910,
+    y: 300,
+    importance: 'minor',
+    boundaryId: 'bnd-fma-north',
+    referenceStatus: 'needs_verification',
+    shortDescription: {
+      it: "Città mineraria abbandonata a est di Fort Briggs, nell'Area Nord.",
+      en: "An abandoned mining town east of Fort Briggs, in the North Area.",
+    },
+    tags: ['baschool', 'miniera'],
+  }),
+  loc({
+    id: 'loc-fma-west-city',
+    name: 'West City',
+    type: 'city',
+    x: 480,
+    y: 625,
+    importance: 'secondary',
+    boundaryId: 'bnd-fma-west',
+    shortDescription: {
+      it: "Il capoluogo dell'Area Ovest e sede del Quartier Generale Occidentale.",
+      en: "The regional centre of the West Area and seat of Western Headquarters.",
+    },
+    tags: ['capoluogo'],
+  }),
+  loc({
+    id: 'loc-fma-kanama',
+    name: 'Kanama',
+    type: 'region',
+    x: 775,
+    y: 635,
+    importance: 'minor',
+    boundaryId: 'bnd-fma-central',
+    shortDescription: {
+      it: "Quartiere povero alla periferia meridionale di Central City.",
+      en: "A slum on the southern outskirts of Central City.",
+    },
+    tags: ['kanama', 'slum'],
+  }),
+  loc({
+    id: 'loc-fma-ruins-of-xerxes',
+    name: 'Ruins of Xerxes',
+    type: 'ruins',
+    x: 1260,
+    y: 420,
+    importance: 'secondary',
+    nationId: undefined,
+    shortDescription: {
+      it: "Le rovine di Xerxes, nel Grande Deserto Orientale fra Amestris e Xing. Vi vivono alcuni profughi ishvaliani.",
+      en: "The ruins of Xerxes, in the Great Eastern Desert between Amestris and Xing. Some Ishvalan refugees live there.",
+    },
+    tags: ['xerxes', 'deserto'],
+  }),
+  loc({
+    id: 'loc-fma-fotset',
+    name: 'Fotset',
+    type: 'city',
+    x: 990,
+    y: 770,
+    importance: 'minor',
+    boundaryId: 'bnd-fma-south',
+    referenceStatus: 'needs_verification',
+    shortDescription: {
+      it: "Città sul fronte con Aerugo, al confine meridionale di Amestris.",
+      en: "A town on the Aerugo front, on the southern border of Amestris.",
+    },
+    tags: ['confine', 'aerugo'],
+  }),
+  loc({
+    id: 'loc-fma-pendleton',
+    name: 'Pendleton',
+    type: 'city',
+    x: 390,
+    y: 450,
+    importance: 'minor',
+    boundaryId: 'bnd-fma-west',
+    referenceStatus: 'needs_verification',
+    shortDescription: {
+      it: "Città sul fronte con Creta, al confine occidentale di Amestris.",
+      en: "A town on the Creta front, on the western border of Amestris.",
+    },
+    tags: ['confine', 'creta'],
   }),
 ];

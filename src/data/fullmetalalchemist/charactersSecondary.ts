@@ -166,6 +166,7 @@ export const fmaCharactersSecondary: Character[] = [
   }),
   ch({
     id: 'char-fma-sig-curtis',
+    locationIds: ['loc-fma-dublith'],
     name: 'Sig Curtis',
     japaneseName: 'シグ・カーティス',
     importance: 'supporting',

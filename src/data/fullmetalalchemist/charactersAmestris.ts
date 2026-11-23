@@ -14,6 +14,7 @@ import { ch } from './characterHelpers';
 export const fmaCharactersAmestris: Character[] = [
   ch({
     id: 'char-fma-edward-elric',
+    locationIds: ['loc-fma-resembool'],
     name: 'Edward Elric',
     japaneseName: 'エドワード・エルリック',
     aliases: [{ it: 'Alchimista d\'Acciaio', en: 'Fullmetal Alchemist' }],
@@ -47,6 +48,7 @@ export const fmaCharactersAmestris: Character[] = [
   }),
   ch({
     id: 'char-fma-alphonse-elric',
+    locationIds: ['loc-fma-resembool'],
     name: 'Alphonse Elric',
     japaneseName: 'アルフォンス・エルリック',
     importance: 'main',
@@ -74,6 +76,7 @@ export const fmaCharactersAmestris: Character[] = [
   }),
   ch({
     id: 'char-fma-winry-rockbell',
+    locationIds: ['loc-fma-resembool'],
     name: 'Winry Rockbell',
     japaneseName: 'ウィンリィ・ロックベル',
     importance: 'major',
@@ -100,6 +103,7 @@ export const fmaCharactersAmestris: Character[] = [
   }),
   ch({
     id: 'char-fma-pinako-rockbell',
+    locationIds: ['loc-fma-resembool'],
     name: 'Pinako Rockbell',
     japaneseName: 'ピナコ・ロックベル',
     importance: 'supporting',
@@ -313,6 +317,7 @@ export const fmaCharactersAmestris: Character[] = [
   }),
   ch({
     id: 'char-fma-izumi-curtis',
+    locationIds: ['loc-fma-dublith'],
     name: 'Izumi Curtis',
     japaneseName: 'イズミ・カーティス',
     importance: 'major',

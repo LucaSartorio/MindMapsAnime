@@ -69,6 +69,7 @@ export const fmaEventsEarly: TimelineEvent[] = [
   }),
   ev({
     id: 'evt-fma-cornello-exposed-liore',
+    locationId: 'loc-fma-liore',
     title: { it: 'Cornello smascherato a Liore', en: 'Cornello exposed in Liore' },
     description: {
       it: 'A Liore un predicatore, padre Cornello, fa passare per miracoli del dio Leto i prodigi di una presunta Pietra Filosofale. Edward e Alphonse smontano l\'inganno; poi Lust uccide Cornello e Gluttony lo divora: è il primo incontro con gli Homunculi.',
@@ -85,6 +86,7 @@ export const fmaEventsEarly: TimelineEvent[] = [
   }),
   ev({
     id: 'evt-fma-youswell-mining-town',
+    locationId: 'loc-fma-youswell',
     title: { it: 'Youswell, la città mineraria', en: 'Youswell, the mining town' },
     description: {
       it: 'Un capitolo a sé: i fratelli fanno tappa a Youswell, città di minatori oppressa da un ufficiale locale, e aiutano la popolazione. Brotherhood salta l\'episodio.',
@@ -135,6 +137,7 @@ export const fmaEventsEarly: TimelineEvent[] = [
   }),
   ev({
     id: 'evt-fma-scar-attacks-elrics',
+    locationId: 'loc-fma-east-city',
     title: { it: 'Scar attacca i fratelli a East City', en: 'Scar attacks the brothers in East City' },
     description: {
       it: 'Scar ferisce Alphonse e distrugge il braccio destro di Edward con la sua alchimia di distruzione. Scar fugge; Mustang e Armstrong riconoscono nell\'assalitore un ishvaliano sopravvissuto alla guerra, l\'assassino che prende di mira gli alchimisti di Stato.',
@@ -151,6 +154,7 @@ export const fmaEventsEarly: TimelineEvent[] = [
   }),
   ev({
     id: 'evt-fma-automail-repair-resembool',
+    locationId: 'loc-fma-resembool',
     title: { it: 'Il nuovo automail a Resembool', en: 'New automail in Resembool' },
     description: {
       it: 'Armstrong accompagna i fratelli a Resembool, il loro paese: Winry e la nonna Pinako montano un nuovo automail a Edward, che ricostruisce anche l\'armatura di Alphonse. Armstrong incontra il dottor Marcoh, ex medico della guerra di Ishval, che accenna alla propria ricerca sulla Pietra.',
@@ -233,6 +237,7 @@ export const fmaEventsEarly: TimelineEvent[] = [
   }),
   ev({
     id: 'evt-fma-winry-in-rush-valley',
+    locationId: 'loc-fma-rush-valley',
     title: { it: 'Winry a Rush Valley', en: 'Winry in Rush Valley' },
     description: {
       it: 'Winry va a Rush Valley, la città degli ingegneri di automail: conosce il collega Dominic e aiuta a far nascere un bambino. Brotherhood la racconta in un episodio autonomo.',
@@ -249,6 +254,7 @@ export const fmaEventsEarly: TimelineEvent[] = [
   }),
   ev({
     id: 'evt-fma-meeting-izumi',
+    locationId: 'loc-fma-dublith',
     title: { it: 'L\'incontro con Izumi Curtis', en: 'Meeting Izumi Curtis' },
     description: {
       it: 'A Dublith i fratelli vanno dalla loro maestra Izumi, che li aveva addestrati. Quando scopre il loro segreto, Izumi confessa di aver tentato anche lei una trasmutazione umana per riportare in vita il figlio.',
@@ -297,6 +303,7 @@ export const fmaEventsEarly: TimelineEvent[] = [
   }),
   ev({
     id: 'evt-fma-ling-arrives-in-amestris',
+    locationId: 'loc-fma-rush-valley',
     title: { it: 'Ling e May arrivano ad Amestris', en: 'Ling and May reach Amestris' },
     description: {
       it: 'Scar sconfigge un altro alchimista di Stato mentre il principe Ling Yao, del lontano Xing, e la sua guardia Lan Fan cercano la Pietra Filosofale; a Rush Valley i fratelli li incontrano e si scontrano con loro. May Chang, un\'altra xingese, sta cercando la stessa cosa.',
@@ -362,6 +369,7 @@ export const fmaEventsEarly: TimelineEvent[] = [
   }),
   ev({
     id: 'evt-fma-hohenheim-at-trishas-grave',
+    locationId: 'loc-fma-resembool',
     title: { it: 'Hohenheim sulla tomba di Trisha', en: 'Hohenheim at Trisha\'s grave' },
     description: {
       it: 'A Resembool Edward trova sulla tomba della madre suo padre Hohenheim.',

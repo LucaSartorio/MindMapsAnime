@@ -9,8 +9,10 @@ Disegna SOLO ciò che le fonti sostengono:
     Creta a OVEST, Aerugo a SUD, Xing a EST oltre un grande deserto. I vicini sono mostrati solo in parte,
     sfumati ai bordi della mappa.
 Il profilo del confine di Amestris NON è documentato: è un contorno organico astratto, non vincolante.
-Nessuna città, nessuna ferrovia: solo 4 pin (`PINS`, applicati con `apply_pins`) per i luoghi la cui area è documentata
-(Central City, Fort Briggs, Ishval, Table City).
+Nessuna ferrovia e nessun nome di città nell'SVG: i luoghi sono pin React Flow (`PINS`, applicati con `apply_pins`),
+uno per ogni luogo la cui AREA è documentata (capoluoghi, Resembool, Liore, Youswell, Dublith, Rush Valley, Kanama,
+Baschool, Fotset, Pendleton, Ishval, Fort Briggs, Table City, Central City) più le rovine di Xerxes nel deserto a est.
+Il posto esatto dentro l'area è schematico (solo le relazioni "a est di", "sul confine con" sono sostenute dalle fonti).
 
 I poligoni delle cinque aree vivono come DATI NOMINATI (`AMESTRIS_AREAS`, piano 1500 × 1000, vertici condivisi
 senza buchi): il batch dei confini li emette come `MapBoundary` senza ridisegnarli.
@@ -169,7 +171,7 @@ def _edge_margin(p: Pt, poly_pts: list[Pt]) -> float:
 def _pin(area: str, p: Pt, min_margin: float) -> Pt:
     """Arrotonda il pin (come fa `apply_pins`) e verifica che stia DENTRO l'area, a distanza minima dai bordi."""
     q = (float(round(p[0])), float(round(p[1])))
-    pts = AMESTRIS_AREAS[area]
+    pts = NEIGHBOURS["desert"] if area == "desert" else AMESTRIS_AREAS[area]
     if not _pip(q[0], q[1], pts):
         raise SystemExit(f"pin fuori dall'area {area}: {q}")
     if _edge_margin(q, pts) < min_margin:
@@ -183,12 +185,43 @@ _BRIGGS_TOP = min(OUT_N, key=lambda p: p[1])
 _TABLE_EDGE = min(OUT_W, key=lambda p: p[0])
 # Central City: vicino al centro del poligono centrale, sotto l'etichetta dell'area.
 # Ishval: dentro l'Area Est (posizione interna NON documentata: il luogo è `needs_verification`), lontano dai bordi.
+# Posizioni relative sostenute dalle fonti (il resto è schematico): Youswell al margine orientale dell'Est, vicino al deserto;
+# Liore sulla frontiera orientale; Resembool dentro l'Est (a sud-est di Central); North City a sud di Briggs; Baschool a est
+# di Briggs; Rush Valley fra Central e Dublith; Kanama subito a sud di Central City; South City / Fotset verso Aerugo;
+# West City / Pendleton verso Creta; rovine di Xerxes nel Grande Deserto Orientale tra Amestris e Xing.
 PINS: dict[str, Pt] = {
     "loc-fma-central-city": _pin("central", (AREA_LABELS["central"][0], AREA_LABELS["central"][1] + 70), 40),
+    "loc-fma-kanama": _pin("central", (775, 635), 14),
     "loc-fma-fort-briggs": _pin("north", (_BRIGGS_TOP[0], _BRIGGS_TOP[1] + 26), 12),
+    "loc-fma-north-city": _pin("north", (630, 345), 25),
+    "loc-fma-baschool": _pin("north", (910, 300), 25),
+    "loc-fma-east-city": _pin("east", (1010, 450), 25),
+    "loc-fma-youswell": _pin("east", (1125, 455), 20),
+    "loc-fma-liore": _pin("east", (1100, 385), 25),
+    "loc-fma-resembool": _pin("east", (995, 595), 25),
     "loc-fma-ishval": _pin("east", (1070, 610), 60),
+    "loc-fma-rush-valley": _pin("south", (640, 690), 25),
+    "loc-fma-dublith": _pin("south", (570, 775), 25),
+    "loc-fma-south-city": _pin("south", (900, 780), 25),
+    "loc-fma-fotset": _pin("south", (990, 770), 18),
+    "loc-fma-west-city": _pin("west", (480, 625), 25),
+    "loc-fma-pendleton": _pin("west", (390, 450), 20),
     "loc-fma-table-city": _pin("west", (_TABLE_EDGE[0] + 28, _TABLE_EDGE[1]), 12),
+    "loc-fma-ruins-of-xerxes": _pin("desert", (1260, 420), 40),
 }
+
+
+def _check_pin_spacing(pins: dict[str, Pt], min_dist: float = 45.0) -> None:
+    """Nessun pin deve collidere con un altro (distanza minima in unità del piano 1500 × 1000)."""
+    ids = list(pins)
+    for i, a in enumerate(ids):
+        for b in ids[i + 1:]:
+            d = math.hypot(pins[a][0] - pins[b][0], pins[a][1] - pins[b][1])
+            if d < min_dist:
+                raise SystemExit(f"pin troppo vicini: {a} / {b} ({d:.1f} < {min_dist})")
+
+
+_check_pin_spacing(PINS)
 
 # Il generatore emette anche la GEOMETRIA dei confini delle cinque aree (una sola fonte di verità):
 # `src/data/fullmetalalchemist/boundaryGeometry.ts`, importato dalla scheda a mano `boundaries.ts`.

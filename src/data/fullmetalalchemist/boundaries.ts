@@ -41,7 +41,7 @@ export const fmaBoundaries: MapBoundary[] = [
       it: 'L\'area centrale di Amestris, che comprende la capitale Central City.',
       en: 'The central area of Amestris, which contains the capital Central City.',
     },
-    relatedLocationIds: ['loc-fma-central-city'],
+    relatedLocationIds: ['loc-fma-central-city', 'loc-fma-kanama'],
   }),
   area('north', {
     slug: 'north-area',
@@ -52,7 +52,7 @@ export const fmaBoundaries: MapBoundary[] = [
       it: 'L\'area settentrionale di Amestris. Il suo punto più a nord, sul confine con la Drachma, è Fort Briggs.',
       en: 'The northern area of Amestris. Its northernmost point, on the Drachma border, is Fort Briggs.',
     },
-    relatedLocationIds: ['loc-fma-fort-briggs'],
+    relatedLocationIds: ['loc-fma-fort-briggs', 'loc-fma-north-city', 'loc-fma-baschool'],
   }),
   area('east', {
     slug: 'east-area',
@@ -63,7 +63,7 @@ export const fmaBoundaries: MapBoundary[] = [
       it: 'L\'area orientale di Amestris, in cui si trova Ishval.',
       en: 'The eastern area of Amestris, where Ishval lies.',
     },
-    relatedLocationIds: ['loc-fma-ishval'],
+    relatedLocationIds: ['loc-fma-east-city', 'loc-fma-resembool', 'loc-fma-liore', 'loc-fma-youswell', 'loc-fma-ishval'],
   }),
   area('south', {
     slug: 'south-area',
@@ -74,7 +74,7 @@ export const fmaBoundaries: MapBoundary[] = [
       it: 'L\'area meridionale di Amestris; a sud del paese si trova Aerugo.',
       en: 'The southern area of Amestris; Aerugo lies to the south of the country.',
     },
-    relatedLocationIds: [],
+    relatedLocationIds: ['loc-fma-dublith', 'loc-fma-rush-valley', 'loc-fma-south-city', 'loc-fma-fotset'],
   }),
   area('west', {
     slug: 'west-area',
@@ -85,6 +85,6 @@ export const fmaBoundaries: MapBoundary[] = [
       it: 'L\'area occidentale di Amestris; a ovest del paese si trova Creta. Sul confine con Creta sorge Table City, nel film «La Stella Sacra di Milos».',
       en: 'The western area of Amestris; Creta lies to the west of the country. Table City, in the film \'The Sacred Star of Milos\', stands on the border with Creta.',
     },
-    relatedLocationIds: ['loc-fma-table-city'],
+    relatedLocationIds: ['loc-fma-west-city', 'loc-fma-pendleton', 'loc-fma-table-city'],
   }),
 ];

@@ -12,6 +12,7 @@ import { P } from './periods';
 export const fmaEventsWar: TimelineEvent[] = [
   ev({
     id: 'evt-fma-xerxes-falls',
+    locationId: 'loc-fma-ruins-of-xerxes',
     title: { it: 'La caduta di Xerxes', en: 'The fall of Xerxes' },
     description: {
       it: 'Nel flashback raccontato da Hohenheim, a Xerxes un essere racchiuso in una fiala, Homunculus, spinge il re a cercare l\'immortalità. La trasmutazione usa l\'intero paese come sacrificio: sopravvivono solo l\'essere e l\'uomo che prenderà il nome di Van Hohenheim. È l\'origine di Father.',
