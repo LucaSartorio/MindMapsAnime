@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-22T06:15:49.274Z",
+  "generatedAt": "2026-11-23T06:04:27.648Z",
   "locales": [
     "en",
     "it"
@@ -16793,13 +16793,28 @@
             "places": 20,
             "clues": 6
           },
-          "renderedLocales": [],
+          "renderedLocales": [
+            "en"
+          ],
           "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
-          "renderedBefore": false,
+          "renderedBefore": true,
           "publishedBefore": false,
-          "publication": []
+          "publication": [
+            {
+              "renderId": "guess-character:onepiece:roronoa-zoro@en",
+              "locale": "en",
+              "variant": null,
+              "status": "notPublished",
+              "platforms": {
+                "instagram": "notScheduled",
+                "facebook": "notScheduled",
+                "tiktok": "notScheduled",
+                "youtube": "notScheduled"
+              }
+            }
+          ]
         },
         {
           "id": "guess-character:onepiece:nami",
@@ -26381,15 +26396,67 @@
       "metricool"
     ],
     "summary": {
-      "rendered": 56,
+      "rendered": 57,
       "unavailable": 5,
-      "notPublished": 5,
+      "notPublished": 6,
       "scheduled": 45,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0
     },
-    "ready": [],
+    "ready": [
+      {
+        "renderId": "guess-character:onepiece:roronoa-zoro@en",
+        "contentId": "guess-character:onepiece:roronoa-zoro",
+        "anime": "onepiece",
+        "subject": "roronoa-zoro",
+        "subjectName": "Roronoa Zoro",
+        "locale": "en",
+        "variant": null,
+        "segment": null,
+        "partNumber": null,
+        "partCount": null,
+        "renderedAt": "2026-11-23T06:04:26.644Z",
+        "durationSeconds": 26,
+        "publicationStatus": "notPublished",
+        "platforms": {
+          "instagram": "notScheduled",
+          "facebook": "notScheduled",
+          "tiktok": "notScheduled",
+          "youtube": "notScheduled"
+        },
+        "artifact": {
+          "name": "animapverse-social-render-45121421296-1",
+          "runId": "45121421296",
+          "runAttempt": "1",
+          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/45121421296",
+          "video": "videos/onepiece_roronoa-zoro_guess-character_en.mp4",
+          "manifest": "manifests/onepiece_roronoa-zoro_guess-character_en.manifest.json",
+          "sha256": "e218d7fef6065d669ffce1ab81caa0e04dd236da3f930c78dd5740fdc8e9861a",
+          "cover": "covers/onepiece_roronoa-zoro_guess-character_en.cover.png",
+          "expiresAt": "2026-12-23T06:04:26.644Z"
+        },
+        "contentType": "guess-character",
+        "platformMetadata": {
+          "instagramCaption": "Can you guess this One Piece character?\n\n6 places, one One Piece character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nSave it for your next rewatch.\n\n#onepiece #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Can you guess this One Piece character? Did you get it right? Tell us how many places it took you 👇 #onepiece #anime #animemap #AniMapVerse",
+          "youtubeTitle": "Guess the One Piece Character From the Places They Visited 🏴‍☠️",
+          "youtubeDescription": "Can you guess this One Piece character?\n\n6 places, one One Piece character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/one-piece/map\n\n#onepiece #anime #animemap",
+          "facebookCaption": "Can you guess this One Piece character?\n\n6 places, one One Piece character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/one-piece/map",
+          "hashtags": [
+            "#onepiece",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        },
+        "waitFor": {}
+      }
+    ],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",

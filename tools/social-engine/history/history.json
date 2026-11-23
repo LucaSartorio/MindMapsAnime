@@ -8022,6 +8022,83 @@
           "updatedAt": "2026-10-20T05:19:18.786Z"
         }
       ]
+    },
+    "guess-character:onepiece:roronoa-zoro@en": {
+      "renderId": "guess-character:onepiece:roronoa-zoro@en",
+      "contentId": "guess-character:onepiece:roronoa-zoro",
+      "template": "guessCharacter",
+      "anime": "onepiece",
+      "subject": "roronoa-zoro",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-11-23T06:02:09.463Z",
+      "updatedAt": "2026-11-23T06:04:26.644Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-11-23T06:04:26.644Z",
+      "outputFile": "tools/social-engine/output/onepiece_roronoa-zoro_guess-character_en.mp4",
+      "manifestFile": "tools/social-engine/output/onepiece_roronoa-zoro_guess-character_en.manifest.json",
+      "sourceFile": "0057-onepiece_roronoa-zoro_guess-character_en.json",
+      "durationSeconds": 26,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-45121421296-1",
+        "runId": "45121421296",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/45121421296",
+        "video": "videos/onepiece_roronoa-zoro_guess-character_en.mp4",
+        "manifest": "manifests/onepiece_roronoa-zoro_guess-character_en.manifest.json",
+        "sha256": "e218d7fef6065d669ffce1ab81caa0e04dd236da3f930c78dd5740fdc8e9861a",
+        "cover": "covers/onepiece_roronoa-zoro_guess-character_en.cover.png",
+        "expiresAt": "2026-12-23T06:04:26.644Z"
+      },
+      "social": {
+        "contentType": "guess-character",
+        "animes": [
+          "onepiece"
+        ],
+        "characters": [
+          "onepiece:roronoa-zoro"
+        ],
+        "characterNames": [
+          "Roronoa Zoro"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "question",
+        "hookId": "gc-question-2",
+        "hook": "Can you guess this One Piece character?",
+        "ctaType": "comment-guess",
+        "cta": "Did you get it right?",
+        "durationSeconds": 26,
+        "selection": {
+          "mode": "coldstart",
+          "score": 95.26,
+          "seed": "feed51:h6c31f46e:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Can you guess this One Piece character?\n\n6 places, one One Piece character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nSave it for your next rewatch.\n\n#onepiece #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Can you guess this One Piece character? Did you get it right? Tell us how many places it took you 👇 #onepiece #anime #animemap #AniMapVerse",
+          "youtubeTitle": "Guess the One Piece Character From the Places They Visited 🏴‍☠️",
+          "youtubeDescription": "Can you guess this One Piece character?\n\n6 places, one One Piece character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/one-piece/map\n\n#onepiece #anime #animemap",
+          "facebookCaption": "Can you guess this One Piece character?\n\n6 places, one One Piece character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/one-piece/map",
+          "hashtags": [
+            "#onepiece",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
     }
   }
 }
