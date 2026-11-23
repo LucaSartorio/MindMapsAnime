@@ -1,4 +1,4 @@
-import type { StoryArc, TimelineEvent, WorldDataset } from '@/types';
+import type { Character, StoryArc, TimelineEvent, WorldDataset } from '@/types';
 import { animeWorlds } from '@/data/worlds';
 import { fmaAssets } from './assets';
 import { fmaMapLevels } from './mapLevels';
@@ -17,6 +17,7 @@ import { fmaStructure } from './structure';
 import { fmaFamily } from './family';
 import { fmaBattles } from './battles';
 import { fmaMarkerTags } from './markerTags';
+import { fmaAbilities } from './abilities';
 import { withFactionExtras } from '../shared/factionKit';
 import { withFamily } from '../shared/familyKit';
 import { applyBattles } from '../shared/battleKit';
@@ -26,6 +27,21 @@ const fullmetalAlchemist = animeWorlds.find((w) => w.slug === 'fullmetalalchemis
 
 // Eventi in ordine cronologico della storia (`order`); gli `eventIds` degli archi sono derivati da qui (una sola fonte di verità).
 const events: TimelineEvent[] = applyBattles([...fmaEventsEarly, ...fmaEventsWar], fmaBattles).sort((a, b) => a.order - b.order);
+
+/**
+ * Le tecniche dichiarano i propri utilizzatori (`jutsu.characterIds`): la scheda del
+ * personaggio le riceve in `jutsuIds`, così la relazione è sempre bidirezionale.
+ */
+const characters: Character[] = [
+  ...fmaCharactersAmestris,
+  ...fmaCharactersXing,
+  ...fmaCharactersHomunculi,
+  ...fmaCharactersMilos,
+].map((c) => {
+  const derived = fmaAbilities.filter((a) => a.characterIds?.includes(c.id)).map((a) => a.id);
+  const jutsuIds = [...new Set([...(c.jutsuIds ?? []), ...derived])];
+  return jutsuIds.length ? { ...c, jutsuIds } : c;
+});
 
 const arcs: StoryArc[] = fmaArcs.map((arc) => ({
   ...arc,
@@ -51,17 +67,12 @@ const fmaBaseDataset: WorldDataset = {
   nations: fmaNations,
   boundaries: fmaBoundaries,
   locations: fmaLocations,
-  characters: [
-    ...fmaCharactersAmestris,
-    ...fmaCharactersXing,
-    ...fmaCharactersHomunculi,
-    ...fmaCharactersMilos,
-  ],
+  characters,
   factions: fmaFactions,
   arcs,
   events,
   routes: [],
-  jutsu: [],
+  jutsu: fmaAbilities,
   assets: fmaAssets,
 };
 

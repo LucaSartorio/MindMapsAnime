@@ -10,7 +10,7 @@
   (diverges from the manga after the early volumes), **excluded**; the film *The Sacred Star of Milos* (2011,
   anime-original) → **included** as `canonStatus: 'movie'` (owner decision 2026-11-23); live-action films excluded
 - id prefix: `fma` (`char-fma-…`, `loc-fma-…`, `evt-fma-…`, `arc-fma-…`, `faction-fma-…`); dataset export `fmaDataset`
-- last update: 2026-11-23 · next step: batch 9 — power system (alchemy categories + abilities); batch 4 stays partial until a source gives the remaining city positions
+- last update: 2026-11-23 · next step: batch 10 — secondary characters, routes, portraits (`appearance.ts`); batch 4 stays partial until a source gives the remaining city positions
 
 ## Model mapping (discovery, to confirm per batch with sources)
 
@@ -35,7 +35,7 @@
 | 6 | events | done | events 57 (53 manga with `mangaChapters` + 4 Milos `movie`); 41 verified / 16 needs_verification; manga coverage 100/108 ch. (93 %), 0 gaps ≥ 5 | (this commit) | `eventHelpers.ts`, `periods.ts` (editorial phase labels, no in-story dates), `eventsEarly.ts` (31), `eventsWar.ts` (26); ≥ 1 event per arc; backstory (Xerxes, Hohenheim, Ishval, human transmutation) at order 10-60 with the chapters where the manga shows it; no `locationId(s)`/`factionIds`/`battle` yet; `verified` = event in a Brotherhood summary + chapter pinned by ≥ 2 signals (titles S2, footnotes S9/S10); uncovered single chapters: 22, 25, 26, 28, 63, 80, 81, 98 |
 | 7 | factions, relations, family | done | factions 11 (9 manga + 2 movie; 3 needs_verification); family 3 links; 13 characters got extra relations | (this commit) | `factions.ts` (types army/organization/clan/group, already labelled), `structure.ts` (`factionKit` organigrams; people without a page only as labels), `family.ts` (Hohenheim → Edward, Alphonse; Edward–Winry); membership in `Faction.characterIds` (like JJK); relations only added, none rewritten. Relatives without a page (Trisha, Rockbell and Armstrong parents, Gracia/Elicia Hughes, Sig Curtis, Emperor of Xing) → batch 10 |
 | 8 | battles, markers | done | battles 11; markers 3 (deaths `morte` 16 tagged / 3 placed · homunculi `omuncoli` 26 / 3 · philosopher's stone `pietra-filosofale` 15 / 3) | (this commit) | `battles.ts` (`battleKit` → `applyBattles`), `markerTags.ts` (`withEventTags`), `config.mapMarkers` in `worlds.ts`; sides ⊂ event characterIds (no event edited); outcomes only where stated; `interrupted` for Scar vs Elrics, Olivier vs Sloth, Mustang vs Envy; Pride consuming Gluttony NOT a battle (removed by the orchestrator: an ally absorbed, not a fight); no tournaments in the work; most tagged events stay off the map until batch 4 places more cities |
-| 9 | power system | todo | | | categories in `WorldConfig` |
+| 9 | power system | done | abilities 30 (28 canon + 2 movie; 2 needs_verification); 6 categories; 29/30 indexable | (this commit) | `FMA_ABILITY_CATEGORIES` in `config.ts` → `ability.categories` (principle, amestrian_alchemy, alkahestry, forbidden_alchemy, homunculus, milos); no `ability.attribute` (source-of-power facet rests on community material); no automail entries (technology, not alchemy); `abilities.ts` with `jutsu.characterIds` → derived `character.jutsuIds`; art falls back to the world motif (`magic_circle`), no `WORLD_FORMS` mapping needed; thin: `scar-reconstruction`; orphan: `chimeric-alchemy` (no user page until batch 10). The brief's "red water" for Milos was the orchestrator's mistake (2003-anime concept): not in the sources, correctly not modelled |
 | 10 | routes, secondary chars, portraits | todo | | | |
 | 11 | translations | todo | | | `{ it, en }` throughout; es/fr only if the owner asks |
 | 12 | publication gate | todo | | | owner approval required to flip `status` |
@@ -63,9 +63,14 @@
 | S18 | /Film, "How the Fullmetal Alchemist: Brotherhood anime shortchanges the manga's best arc"; Yen Press vol. 15 blurb; Goodreads review | editorial / publisher blurb | Ishval flashback = vol. 15 (ch. 58-61), condensed into ep. 30 | search snippets only |
 | S19 | daddyjim.ai chapter/episode pages (ch. 1, ch. 23, ep. 40) | community / aggregator | ep. 40 ↔ ch. 74-76, ch. 23 = human transmutation, ch. 1 summary | search snippets only; low reliability |
 | S20 | web search "Fort Briggs, Olivier, Buccaneer, Miles" (CBR, MyAnimeList, otakuauthor, fandom snippets) | community / editorial, snippets | corroboration only: Briggs guards the Drachma border; Miles, Buccaneer under Olivier | snippets; ranks conflict → no ranks used |
+| S21 | Japanese Wikipedia, 鋼の錬金術師 | encyclopedia | Japanese terms (錬丹術 qi-based and medical, 人体錬成, 真理の扉, 錬成陣, 等価交換, 賢者の石, 合成獣, 機械鎧) | web fetch (first 100k of 155k characters) |
+| S22 | CBR, "Fullmetal Alchemist: Most Powerful Alchemy, Ranked" (cbr.com/fullmetal-alchemist-most-powerful-alchemy-ranked/) | editorial | blood seal, chimeric alchemy, Scar's arms, alkahestry near Father, Stone as an item | web fetch; Scar's left-arm claim single-source |
+| S23 | web search results (TV Tropes, fan wikis) on alkahestry and Kimblee | community, snippets | corroboration only | nothing relied on |
 | S17 | aggregator / search summaries for ch. 3-4 | community / aggregator | short Mining Town / Battle on the Train descriptions only | search summary only; low reliability |
 
 Batch 3 also used S6 (Milos film characters) and S2 (full chapter table, as context).
+
+Batch 9 re-read S11 (Setting section), S9 (powers), S10 (Scar, Mustang, Ed, Al), S6 (Milos alchemy, Sanguine Star).
 
 Batch 7 re-read S9 (both halves: military, Mustang's squadron, Homunculi, Ishvalans, Xing clans, Greed's chimeras, Briggs, family facts) and S6 (Black Bats, Cretan army).
 
@@ -136,6 +141,17 @@ Batch 5 also re-used S2 (volume ↔ chapter table; it names no arcs), S6 (Milos 
 | evt-fma-pride-devours-gluttony | ep. 47 (Lan Fan shreds Gluttony) vs ep. 48 (Pride consumes him) | S16 | disputed (inside source) | only "Pride consumes Gluttony"; no battle record |
 | evt-fma-briggs-repels-drachma | battle sides Olivier vs Kimblee (Kimblee prepares the attack with Drachma) | event text (S16 ep. 43) | verified (secondary) | |
 | markers (batch 8) | tag lists follow event descriptions; `morte` includes mass deaths (Xerxes, Ishval); Bradley/Father count as Homunculi (faction) | event texts, S9 | editorial | marker labels in ja/fr/de/es are own translations |
+| (batch 9) | categories and the single-facet model; no automail | S11, S21, S9, S22 | editorial | no official classification; revisable without touching ids |
+| tec-fma-scar-destruction | filed under alkahestry (arm tied to his brother's research) | S9, S22 | editorial classification | power itself verified |
+| tec-fma-scar-reconstruction | the left arm reconstructs what the right destroys | S22 only | unverified | needs_verification; thin page |
+| tec-fma-alchemy-negation | Father negates tectonic-energy alchemy; Scar and alkahestry not blocked | S9, S22 | verified (secondary) | "tectonic" from S9 only |
+| tec-fma-alchemy-without-a-circle | Alphonse gains it "eventually" | S10 | unverified (when) | |
+| tec-fma-alkahestry | developed by Hohenheim; Alphonse studies it in Xing | S9, event text | unverified | |
+| tec-fma-qi-sensing | filed under alkahestry | S9, S21 | editorial | sensing ≠ strictly alkahestry |
+| tec-fma-homunculus-regeneration | users limited to Lust, Gluttony, Envy, Greed | S9 | unverified (users) | |
+| tec-fma-ultimate-eye | the Eye's speed hampered by Bradley's aging | S9 | unverified | |
+| tec-fma-sanguine-star | Stone or not; one Star or two (Ashleigh and Julia) | S6 | disputed (inside source) | needs_verification |
+| tec-fma-* | Italian names/texts and some ja category labels are own translations | — | unofficial | revisable |
 | (batch 3) | Italian renderings of titles/epithets (e.g. «Alchimista d'Acciaio») | — | unverified | no official Italian edition consulted; aliases/descriptions only, revisable without touching ids |
 
 ## Open issues

@@ -23,7 +23,7 @@ import {
   JJK_ROLES,
   JJK_TECHNIQUE_CATEGORIES,
 } from '@/data/jujutsukaisen/config';
-import { FMA_ROLES } from '@/data/fullmetalalchemist/config';
+import { FMA_ABILITY_CATEGORIES, FMA_ROLES } from '@/data/fullmetalalchemist/config';
 
 /**
  * Registro generico di tutti gli anime/manga supportati o pianificati.
@@ -735,6 +735,7 @@ export const animeWorlds: AnimeWorld[] = [
       ability: {
         term: { it: 'Alchimia', en: 'Alchemy', ja: '錬金術', fr: 'Alchimie', de: 'Alchemie', es: 'Alquimia' },
         categoryTerm: { it: 'Tipo', en: 'Type', ja: 'タイプ', fr: 'Type', de: 'Typ', es: 'Tipo' },
+        categories: FMA_ABILITY_CATEGORIES,
       },
       characterRank: { term: { it: 'Grado militare', en: 'Military rank', ja: '軍の階級', fr: 'Grade militaire', de: 'Militärrang', es: 'Rango militar' } },
       characterRoles: FMA_ROLES,
