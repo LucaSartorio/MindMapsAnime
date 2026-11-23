@@ -16,8 +16,8 @@ export const onepieceLocationsEastBlue: Location[] = [
     name: 'Dawn Island',
     localizedName: { it: 'Isola di Dawn', en: 'Dawn Island' },
     type: 'landmark',
-    x: 1780,
-    y: 162,
+    x: 1782,
+    y: 160,
     shortDescription: {
       it: "L'isola natale di Monkey D. Rufy, Ace e Sabo, nel Regno di Goa. Da qui parte il sogno di diventare Re dei Pirati.",
       en: "The home island of Monkey D. Luffy, Ace and Sabo, within the Goa Kingdom. The dream of becoming Pirate King sets sail from here.",
@@ -37,8 +37,8 @@ export const onepieceLocationsEastBlue: Location[] = [
     name: 'Foosha Village',
     localizedName: { it: 'Villaggio di Foosha', en: 'Foosha Village' },
     type: 'village',
-    x: 1778,
-    y: 174,
+    x: 1780,
+    y: 175,
     shortDescription: {
       it: "Il villaggio di Dawn Island dove Rufy cresce e dove Shanks gli affida il suo cappello di paglia, promettendogli di restituirlo da grande pirata.",
       en: "The Dawn Island village where Luffy grows up and where Shanks entrusts him with his straw hat, to be returned once he becomes a great pirate.",
@@ -59,7 +59,7 @@ export const onepieceLocationsEastBlue: Location[] = [
     name: 'Goa Kingdom',
     localizedName: { it: 'Regno di Goa', en: 'Goa Kingdom' },
     type: 'city',
-    x: 1769,
+    x: 1767,
     y: 172,
     shortDescription: {
       it: "Il regno di Dawn Island: una città elegante affacciata sul Grey Terminal, la discarica dove crebbe Sabo. Simbolo del divario tra nobiltà e reietti.",

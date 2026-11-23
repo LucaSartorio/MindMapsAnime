@@ -317,7 +317,7 @@ export const onepieceLocationsParadise: Location[] = [
     localizedName: { it: 'Water Seven', en: 'Water Seven' },
     type: 'city',
     x: 1626,
-    y: 481,
+    y: 483,
     shortDescription: {
       it: "«La città dell'acqua»: metropoli di canali e cantieri navali, patria dei migliori carpentieri. Qui nasce la Thousand Sunny e Franky si unisce alla ciurma.",
       en: "'The city of water': a metropolis of canals and shipyards, home of the finest shipwrights. Here the Thousand Sunny is born and Franky joins the crew.",
