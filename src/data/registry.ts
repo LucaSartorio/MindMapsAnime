@@ -122,6 +122,10 @@ const worldTranslationLoaders: Record<string, Partial<Record<SupportedLocale, ()
     es: () => import('@/data/jujutsukaisen/i18n/es').then((m) => m.default),
     fr: () => import('@/data/jujutsukaisen/i18n/fr').then((m) => m.default),
   },
+  fullmetalalchemist: {
+    es: () => import('@/data/fullmetalalchemist/i18n/es').then((m) => m.default),
+    fr: () => import('@/data/fullmetalalchemist/i18n/fr').then((m) => m.default),
+  },
 };
 
 const appliedTranslations = new Set<string>();

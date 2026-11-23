@@ -458,8 +458,8 @@ export const fmaEventsEarly: TimelineEvent[] = [
       en: 'When the Black Bats attack Table City, Melvin kills their commander Miranda and reveals he is Atlas, a former Crichton guard who killed Julia\'s parents and took Ashleigh\'s identity. The Cretan colonel Herschel is in fact the real Ashleigh.',
     },
     longDescription: {
-      it: 'Wikipedia (S6) e la voce dei personaggi non concordano su cosa abbia fatto esattamente Atlas al vero Ashleigh: il testo dice solo che gli ha preso il volto e l\'identità.',
-      en: 'Wikipedia (S6) and the character list do not agree on exactly what Atlas did to the real Ashleigh: the text only says he took his face and identity.',
+      it: 'Le fonti non concordano su cosa abbia fatto esattamente Atlas al vero Ashleigh: il testo dice solo che gli ha preso il volto e l\'identità.',
+      en: 'The sources do not agree on exactly what Atlas did to the real Ashleigh: the text only says he took his face and identity.',
     },
     period: P.film,
     arcId: 'arc-fma-sacred-star-of-milos',

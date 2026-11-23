@@ -723,6 +723,7 @@ export const animeWorlds: AnimeWorld[] = [
       background: '#0c0d11',
     },
     defaultMapLevelId: 'fma-map-world',
+    translatedLocales: ['es', 'fr'],
     availableMapLevelIds: ['fma-map-world'],
     tags: ['shonen', 'alchimia', 'hiromu arakawa', 'square enix'],
     metadata: {
