@@ -12,6 +12,11 @@ import { fmaBoundaries } from './boundaries';
 import { fmaLocations } from './locations';
 import { fmaEventsEarly } from './eventsEarly';
 import { fmaEventsWar } from './eventsWar';
+import { fmaFactions } from './factions';
+import { fmaStructure } from './structure';
+import { fmaFamily } from './family';
+import { withFactionExtras } from '../shared/factionKit';
+import { withFamily } from '../shared/familyKit';
 
 const fullmetalAlchemist = animeWorlds.find((w) => w.slug === 'fullmetalalchemist')!;
 
@@ -36,7 +41,7 @@ const arcs: StoryArc[] = fmaArcs.map((arc) => ({
  * (sito, sitemap, catalogo social) ma `validate:data` / `validate:i18n` lo controllano già.
  * Prefisso degli id: `fma` (`char-fma-…`, `loc-fma-…`, `evt-fma-…`).
  */
-export const fmaDataset: WorldDataset = {
+const fmaBaseDataset: WorldDataset = {
   world: fullmetalAlchemist,
   mapLevels: fmaMapLevels,
   nations: fmaNations,
@@ -48,10 +53,12 @@ export const fmaDataset: WorldDataset = {
     ...fmaCharactersHomunculi,
     ...fmaCharactersMilos,
   ],
-  factions: [],
+  factions: fmaFactions,
   arcs,
   events,
   routes: [],
   jutsu: [],
   assets: fmaAssets,
 };
+
+export const fmaDataset: WorldDataset = withFactionExtras(withFamily(fmaBaseDataset, fmaFamily, 'char-fma-'), fmaStructure);

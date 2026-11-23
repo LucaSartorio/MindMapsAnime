@@ -16,11 +16,12 @@ export const fmaCharactersXing: Character[] = [
     rank: { it: 'Principe di Xing', en: 'Prince of Xing' },
     gender: 'male',
     status: 'alive',
-    allies: ['char-fma-lan-fan', 'char-fma-alphonse-elric', 'char-fma-greed'],
+    allies: ['char-fma-lan-fan', 'char-fma-alphonse-elric', 'char-fma-greed', 'char-fma-may-chang'],
     enemies: ['char-fma-father'],
     relationships: [
       { targetCharacterId: 'char-fma-lan-fan', label: { it: 'Guardia del corpo e fedele compagna', en: 'Bodyguard and loyal companion' } },
       { targetCharacterId: 'char-fma-greed', label: { it: 'Homunculus che si impossessa del suo corpo; i due finiscono per collaborare', en: 'Homunculus that takes over his body; the two end up cooperating' } },
+      { targetCharacterId: 'char-fma-may-chang', label: { it: 'Un’altra figlia dell’imperatore di Xing; le promette di non punire le altre famiglie', en: 'Another child of the Xingese emperor; he promises not to punish the other families' } },
     ],
     shortDescription: {
       it: "Principe di Xing in cerca dell'immortalità per assicurarsi il trono, e per un periodo ospite dell'homunculus Greed.",
@@ -69,6 +70,7 @@ export const fmaCharactersXing: Character[] = [
     relationships: [
       { targetCharacterId: 'char-fma-alphonse-elric', label: { it: 'Compagno di squadra, che si affeziona a lei', en: 'Teammate who grows fond of her' } },
       { targetCharacterId: 'char-fma-scar', label: { it: 'Compagno di squadra nella prima parte della storia', en: 'Teammate in the earlier part of the story' } },
+      { targetCharacterId: 'char-fma-ling-yao', label: { it: 'Un altro figlio dell’imperatore di Xing; nel finale lui la rassicura di non punire le altre famiglie', en: 'Another child of the Xingese emperor; in the finale he reassures her he will not punish the other families' } },
     ],
     shortDescription: {
       it: "Principessa di Xing e utilizzatrice di alcahestria, alleata prima di Scar e poi di Alphonse.",

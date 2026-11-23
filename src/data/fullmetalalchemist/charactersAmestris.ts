@@ -33,6 +33,7 @@ export const fmaCharactersAmestris: Character[] = [
       { targetCharacterId: 'char-fma-roy-mustang', label: { it: 'Superiore che lo recluta come Alchimista di Stato', en: 'Superior who recruits him as a State Alchemist' } },
       { targetCharacterId: 'char-fma-van-hohenheim', label: { it: 'Padre che lasciò la famiglia', en: 'Father who left the family' } },
       { targetCharacterId: 'char-fma-father', label: { it: "L'avversario finale, sconfitto da Edward", en: 'The final enemy, defeated by Edward' } },
+      { targetCharacterId: 'char-fma-greed', label: { it: 'Lo recluta come alleato dopo che Greed rompe con Father', en: 'Recruits him as an ally after he breaks away from Father' } },
     ],
     shortDescription: {
       it: "Il giovane Alchimista di Stato che, dopo una trasmutazione umana fallita, cerca la Pietra Filosofale per restituire a sé e al fratello i corpi perduti.",
@@ -85,6 +86,7 @@ export const fmaCharactersAmestris: Character[] = [
       { targetCharacterId: 'char-fma-edward-elric', label: { it: "Amico d'infanzia che assiste con gli automail; poi suo marito", en: 'Childhood friend she maintains automail for; later her husband' } },
       { targetCharacterId: 'char-fma-pinako-rockbell', label: { it: 'Nonna e maestra di meccanica', en: 'Grandmother and mechanics mentor' } },
       { targetCharacterId: 'char-fma-scar', label: { it: 'Ha ucciso i suoi genitori; più avanti i loro cammini si incrociano di nuovo', en: 'He killed her parents; their paths later cross again' } },
+      { targetCharacterId: 'char-fma-alphonse-elric', label: { it: 'Amico d’infanzia', en: 'Childhood friend' } },
     ],
     shortDescription: {
       it: "Talentuosa meccanica di automail e amica d'infanzia dei fratelli Elric, che mantiene le protesi di Edward.",
@@ -107,6 +109,8 @@ export const fmaCharactersAmestris: Character[] = [
     allies: ['char-fma-winry-rockbell', 'char-fma-edward-elric', 'char-fma-alphonse-elric'],
     relationships: [
       { targetCharacterId: 'char-fma-winry-rockbell', label: { it: 'Nipote, cresciuta da lei', en: 'Granddaughter she raised' } },
+      { targetCharacterId: 'char-fma-edward-elric', label: { it: 'Tutrice dopo la morte di Trisha', en: 'Guardian after Trisha’s death' } },
+      { targetCharacterId: 'char-fma-alphonse-elric', label: { it: 'Tutrice dopo la morte di Trisha', en: 'Guardian after Trisha’s death' } },
     ],
     shortDescription: {
       it: "Chirurga e ingegnera di automail di Resembool, nonna di Winry e tutrice dei fratelli Elric dopo la morte della madre.",
@@ -132,6 +136,7 @@ export const fmaCharactersAmestris: Character[] = [
       { targetCharacterId: 'char-fma-edward-elric', label: { it: 'Figlio maggiore', en: 'Elder son' } },
       { targetCharacterId: 'char-fma-alphonse-elric', label: { it: 'Figlio minore', en: 'Younger son' } },
       { targetCharacterId: 'char-fma-father', label: { it: 'Creatore involontario (da suo sangue) e nemico da secoli', en: "Involuntary source (from his blood) and enemy for centuries" } },
+      { targetCharacterId: 'char-fma-izumi-curtis', label: { it: 'La cura dal vomito di sangue', en: 'Treats her for vomiting blood' } },
     ],
     shortDescription: {
       it: "Il padre dei fratelli Elric: un ex schiavo del regno di Xerxes, divenuto immortale, che lavora da secoli per fermare Father.",
@@ -156,12 +161,13 @@ export const fmaCharactersAmestris: Character[] = [
     firstMangaAppearance: 'Ch. 4',
     referenceStatus: 'needs_verification',
     allies: ['char-fma-riza-hawkeye', 'char-fma-maes-hughes', 'char-fma-jean-havoc', 'char-fma-edward-elric', 'char-fma-alex-louis-armstrong', 'char-fma-olivier-mira-armstrong'],
-    enemies: ['char-fma-king-bradley', 'char-fma-lust'],
+    enemies: ['char-fma-king-bradley', 'char-fma-lust', 'char-fma-envy'],
     relationships: [
       { targetCharacterId: 'char-fma-riza-hawkeye', label: { it: 'Assistente fidata, che lo guida dopo la sua cecità', en: 'Trusted adjutant, who guides him after he loses his sight' } },
       { targetCharacterId: 'char-fma-maes-hughes', label: { it: 'Migliore amico, la cui morte lo spinge contro i vertici militari', en: 'Best friend, whose death turns him against the military leadership' } },
       { targetCharacterId: 'char-fma-lust', label: { it: 'La uccide bruciandola', en: 'He kills her by burning her' } },
       { targetCharacterId: 'char-fma-edward-elric', label: { it: 'Lo recluta come Alchimista di Stato', en: 'Recruits him as a State Alchemist' } },
+      { targetCharacterId: 'char-fma-envy', label: { it: 'Lo affronta dopo la morte di Hughes; Edward lo convince a fermarsi', en: 'Confronts it after Hughes’s death; Edward persuades him to stop' } },
     ],
     shortDescription: {
       it: "L'ambizioso Alchimista di Fuoco dell'esercito di Amestris, che punta alla carica di Führer e si ribella al controllo degli Homunculi.",
@@ -212,6 +218,8 @@ export const fmaCharactersAmestris: Character[] = [
     relationships: [
       { targetCharacterId: 'char-fma-roy-mustang', label: { it: 'Migliore amico e fonte di informazioni riservate', en: 'Best friend and source of classified information' } },
       { targetCharacterId: 'char-fma-envy', label: { it: 'Il suo assassino', en: 'His killer' } },
+      { targetCharacterId: 'char-fma-edward-elric', label: { it: 'Gli offre consigli e ospitalità', en: 'Offers him advice and hospitality' } },
+      { targetCharacterId: 'char-fma-alphonse-elric', label: { it: 'Gli offre consigli e ospitalità', en: 'Offers him advice and hospitality' } },
     ],
     shortDescription: {
       it: "Ufficiale dei servizi segreti e migliore amico di Mustang, uomo chiacchierone e devoto alla famiglia, ucciso da Envy.",
@@ -286,9 +294,12 @@ export const fmaCharactersAmestris: Character[] = [
     status: 'alive',
     referenceStatus: 'needs_verification',
     allies: ['char-fma-roy-mustang', 'char-fma-alex-louis-armstrong', 'char-fma-scar'],
+    enemies: ['char-fma-sloth'],
     relationships: [
       { targetCharacterId: 'char-fma-alex-louis-armstrong', label: { it: 'Fratello minore, che sa battere in combattimento', en: 'Younger brother, whom she can beat in combat' } },
       { targetCharacterId: 'char-fma-scar', label: { it: 'Gli salva la vita e lo convince ad aiutare la ricostruzione del suo popolo', en: 'Saves his life and persuades him to help rebuild his people' } },
+      { targetCharacterId: 'char-fma-roy-mustang', label: { it: 'Si allea con lui per prendere il controllo dello Stato', en: 'Allies with him to take control of the state' } },
+      { targetCharacterId: 'char-fma-sloth', label: { it: 'Lo ferma quando emerge dal sottosuolo; poi lo uccide insieme al fratello, a Izumi e a Sig', en: 'Stops it when it emerges from underground; later kills it together with her brother, Izumi and Sig' } },
     ],
     shortDescription: {
       it: "Maggiore generale che comanda la Fortezza di Briggs contro Drachma, sorella maggiore di Alex Louis Armstrong.",
@@ -315,6 +326,8 @@ export const fmaCharactersAmestris: Character[] = [
     relationships: [
       { targetCharacterId: 'char-fma-edward-elric', label: { it: 'Allievo', en: 'Student' } },
       { targetCharacterId: 'char-fma-alphonse-elric', label: { it: 'Allievo', en: 'Student' } },
+      { targetCharacterId: 'char-fma-van-hohenheim', label: { it: 'Si occupa di curare la sua malattia', en: 'Treats her illness' } },
+      { targetCharacterId: 'char-fma-alex-louis-armstrong', label: { it: 'Combatte con lui, la sorella e Sig contro Sloth', en: 'Fights Sloth alongside him, his sister and Sig' } },
     ],
     shortDescription: {
       it: "Macellaia e casalinga che è stata la maestra di alchimia dei fratelli Elric; usa l'alchimia senza cerchio di trasmutazione.",

@@ -10,7 +10,7 @@
   (diverges from the manga after the early volumes), **excluded**; the film *The Sacred Star of Milos* (2011,
   anime-original) → **included** as `canonStatus: 'movie'` (owner decision 2026-11-23); live-action films excluded
 - id prefix: `fma` (`char-fma-…`, `loc-fma-…`, `evt-fma-…`, `arc-fma-…`, `faction-fma-…`); dataset export `fmaDataset`
-- last update: 2026-11-23 · next step: batch 7 — factions, relations, family; batch 4 stays partial until a source gives the remaining city positions
+- last update: 2026-11-23 · next step: batch 8 — battles + map markers (no tournaments); batch 4 stays partial until a source gives the remaining city positions
 
 ## Model mapping (discovery, to confirm per batch with sources)
 
@@ -33,7 +33,7 @@
 | 4 | places, nations/regions (reduced scope, owner "option a") | partial | nations 5, boundaries 5, locations 4; 11 events placed | (this commit) | nations Amestris/Drachma/Creta/Aerugo (verified) + Xing (needs_verification); 5 area boundaries `bnd-fma-*` with geometry GENERATED into `boundaryGeometry.ts` from `AMESTRIS_AREAS`; locations Central City, Fort Briggs, Ishval (needs_verification: position inside East), Table City (`movie`); pins from `PINS` in the generator (checked inside their area); events linked only when their own text names the place. Still missing: every city with an unsourced position (Resembool, Liore, Youswell, East/West/South/North City, Dublith, Rush Valley, Baschool, Xerxes, Fifth Laboratory) |
 | 5 | arcs | done | arcs 18 (17 manga covering ch. 1-108 contiguously + 1 movie); all needs_verification | (this commit) | `arcs.ts`; names/boundaries are an editorial convention (no official arcs, single source S14); Brotherhood episode ranges from a community list (S15) cross-checked with episode titles (S16); Milos at `order` 13 (S6 editors place it around ep. 21); no `saga` grouping (none sourced); `eventIds` derived from events in `index.ts` |
 | 6 | events | done | events 57 (53 manga with `mangaChapters` + 4 Milos `movie`); 41 verified / 16 needs_verification; manga coverage 100/108 ch. (93 %), 0 gaps ≥ 5 | (this commit) | `eventHelpers.ts`, `periods.ts` (editorial phase labels, no in-story dates), `eventsEarly.ts` (31), `eventsWar.ts` (26); ≥ 1 event per arc; backstory (Xerxes, Hohenheim, Ishval, human transmutation) at order 10-60 with the chapters where the manga shows it; no `locationId(s)`/`factionIds`/`battle` yet; `verified` = event in a Brotherhood summary + chapter pinned by ≥ 2 signals (titles S2, footnotes S9/S10); uncovered single chapters: 22, 25, 26, 28, 63, 80, 81, 98 |
-| 7 | factions, relations, family | todo | | | |
+| 7 | factions, relations, family | done | factions 11 (9 manga + 2 movie; 3 needs_verification); family 3 links; 13 characters got extra relations | (this commit) | `factions.ts` (types army/organization/clan/group, already labelled), `structure.ts` (`factionKit` organigrams; people without a page only as labels), `family.ts` (Hohenheim → Edward, Alphonse; Edward–Winry); membership in `Faction.characterIds` (like JJK); relations only added, none rewritten. Relatives without a page (Trisha, Rockbell and Armstrong parents, Gracia/Elicia Hughes, Sig Curtis, Emperor of Xing) → batch 10 |
 | 8 | battles, markers | todo | | | no tournaments |
 | 9 | power system | todo | | | categories in `WorldConfig` |
 | 10 | routes, secondary chars, portraits | todo | | | |
@@ -62,9 +62,12 @@
 | S16 | Wikipedia, "List of Fullmetal Alchemist: Brotherhood episodes" | encyclopedia | episode titles + summaries (descriptions; title cross-check of S15 boundaries) | web fetch |
 | S18 | /Film, "How the Fullmetal Alchemist: Brotherhood anime shortchanges the manga's best arc"; Yen Press vol. 15 blurb; Goodreads review | editorial / publisher blurb | Ishval flashback = vol. 15 (ch. 58-61), condensed into ep. 30 | search snippets only |
 | S19 | daddyjim.ai chapter/episode pages (ch. 1, ch. 23, ep. 40) | community / aggregator | ep. 40 ↔ ch. 74-76, ch. 23 = human transmutation, ch. 1 summary | search snippets only; low reliability |
+| S20 | web search "Fort Briggs, Olivier, Buccaneer, Miles" (CBR, MyAnimeList, otakuauthor, fandom snippets) | community / editorial, snippets | corroboration only: Briggs guards the Drachma border; Miles, Buccaneer under Olivier | snippets; ranks conflict → no ranks used |
 | S17 | aggregator / search summaries for ch. 3-4 | community / aggregator | short Mining Town / Battle on the Train descriptions only | search summary only; low reliability |
 
 Batch 3 also used S6 (Milos film characters) and S2 (full chapter table, as context).
+
+Batch 7 re-read S9 (both halves: military, Mustang's squadron, Homunculi, Ishvalans, Xing clans, Greed's chimeras, Briggs, family facts) and S6 (Black Bats, Cretan army).
 
 Batch 6 re-read S2 (full chapter-title table), S16 (episode summaries ep. 1-64), S9 (in full: chapter footnotes), S10 (chapter citations, partly inconsistent), S6 (Milos plot). Not reachable: supersummary.com (HTTP 429); no per-chapter summary site found.
 
@@ -119,6 +122,14 @@ Batch 5 also re-used S2 (volume ↔ chapter table; it names no arcs), S6 (Milos 
 | evt-fma-* → loc-fma-central-city | events whose text says "Central" are placed in Central City | S4, S5 (capital in Central) | interpretation | 5 events; "Central" is used for the capital in the sources |
 | nation-fma-creta, nation-fma-aerugo, nation-fma-xing | nation `type` (`minor_nation`, `uncertain`) | — | editorial | size not sourced; Drachma `great_nation` = "larger than Amestris" (S4) |
 | map labels | area/nation names drawn in the SVG and in `labelPosition` | — | note | the "nation labels" layer is off by default (like Naruto's PNG): turning it on doubles the text; decide before publication |
+| faction-fma-state-military | members Bradley, Mustang, Hawkeye, Hughes, Havoc, A. L. Armstrong, Olivier, Kimblee | S9 | verified (secondary) | Edward only in State Alchemists (no rank stated) |
+| faction-fma-mustang-squadron | group and its name | S9 (section title) | editorial name | needs_verification; chess code names not used |
+| faction-fma-briggs-garrison | troops answer only to Olivier; Miles, Buccaneer; Falman transferred | S9, S20 | unverified (thin) | one dataset member |
+| faction-fma-homunculi | Father as leader, Greed rogue, Bradley and Pride included | S9 | verified (secondary) | origin "flaws extracted from Father" not used (possible 2003 mix) |
+| faction-fma-greeds-gang | gang, members, chimera names (Dolcetto/Loa/Martel spellings vary) | S9 | unverified | needs_verification; name editorial |
+| faction-fma-yao-clan, faction-fma-chang-clan | Ling / May "represent" their clans; 50 clans under one emperor | S9 | verified (secondary) | no `leaderIds` ("represents" ≠ head) |
+| faction-fma-milos-black-bats | Black Bats and the Milos resistance as one movement | S6 | editorial | needs_verification; Julia's membership not stated |
+| faction-fma-cretan-army-milos | Herschel commands the Cretan army | S6 | verified (secondary) | `movie` |
 | (batch 3) | Italian renderings of titles/epithets (e.g. «Alchimista d'Acciaio») | — | unverified | no official Italian edition consulted; aliases/descriptions only, revisable without touching ids |
 
 ## Open issues

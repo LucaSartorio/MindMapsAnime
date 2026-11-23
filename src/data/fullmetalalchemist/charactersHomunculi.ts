@@ -52,6 +52,7 @@ export const fmaCharactersHomunculi: Character[] = [
       { targetCharacterId: 'char-fma-father', label: { it: 'Creatore: gli ha impiantato la Pietra Filosofale', en: 'Creator: implanted the Philosopher\'s Stone in him' } },
       { targetCharacterId: 'char-fma-scar', label: { it: 'Gli causa le ferite mortali', en: 'Inflicts his fatal wounds' } },
       { targetCharacterId: 'char-fma-pride', label: { it: "Pride vive come Selim, il suo «figlio adottivo»", en: "Pride lives as Selim, his 'adopted son'" } },
+      { targetCharacterId: 'char-fma-lan-fan', label: { it: 'Le taglia un braccio in combattimento', en: 'Cuts off her arm in combat' } },
     ],
     shortDescription: {
       it: "Il Führer di Amestris, in realtà l'homunculus Wrath: un umano cresciuto come capo ideale a cui Father ha impiantato una Pietra Filosofale.",
@@ -152,10 +153,11 @@ export const fmaCharactersHomunculi: Character[] = [
     race: 'homunculus',
     status: 'deceased',
     allies: ['char-fma-father'],
-    enemies: ['char-fma-edward-elric', 'char-fma-maes-hughes'],
+    enemies: ['char-fma-edward-elric', 'char-fma-maes-hughes', 'char-fma-roy-mustang'],
     relationships: [
       { targetCharacterId: 'char-fma-maes-hughes', label: { it: 'Lo uccide', en: 'Kills him' } },
       { targetCharacterId: 'char-fma-edward-elric', label: { it: "La sua fine è provocata dalle parole di Edward sulla forza degli umani", en: "Its end is triggered by Edward's words about human resilience" } },
+      { targetCharacterId: 'char-fma-roy-mustang', label: { it: 'Lo affronta dopo la morte di Hughes e ammette l’omicidio', en: 'Faces him after Hughes’s death and admits to the murder' } },
     ],
     shortDescription: {
       it: "Homunculus mutaforma specializzato in infiltrazioni e imitazioni, responsabile della morte di Hughes.",
@@ -183,6 +185,7 @@ export const fmaCharactersHomunculi: Character[] = [
     relationships: [
       { targetCharacterId: 'char-fma-ling-yao', label: { it: 'Si impossessa del suo corpo; infine si sacrifica per salvarlo', en: 'Takes over his body; finally sacrifices himself to save him' } },
       { targetCharacterId: 'char-fma-father', label: { it: 'In una fase viene fuso e divorato da Father; nell\'ultima si sacrifica per indebolirlo', en: 'In one phase he is melted down and consumed by Father; in the last he sacrifices himself to weaken him' } },
+      { targetCharacterId: 'char-fma-edward-elric', label: { it: 'Edward lo recluta come alleato', en: 'Edward recruits him as an ally' } },
     ],
     shortDescription: {
       it: "Homunculus ribelle dall'armatura di carbonio, che si impossessa del corpo di Ling Yao e stringe amicizia con Edward.",
@@ -205,10 +208,11 @@ export const fmaCharactersHomunculi: Character[] = [
     gender: 'male',
     status: 'deceased',
     allies: ['char-fma-father'],
-    enemies: ['char-fma-alex-louis-armstrong', 'char-fma-izumi-curtis'],
+    enemies: ['char-fma-alex-louis-armstrong', 'char-fma-izumi-curtis', 'char-fma-olivier-mira-armstrong'],
     relationships: [
       { targetCharacterId: 'char-fma-alex-louis-armstrong', label: { it: 'Lo uccide insieme alla sorella, a Izumi e a Sig', en: 'Kills it together with his sister, Izumi and Sig' } },
       { targetCharacterId: 'char-fma-izumi-curtis', label: { it: 'Viene ucciso anche da lei e da Sig Curtis', en: 'Also killed by her and Sig Curtis' } },
+      { targetCharacterId: 'char-fma-olivier-mira-armstrong', label: { it: 'Viene fermato e poi ucciso anche da lei', en: 'Stopped and later killed by her too' } },
     ],
     shortDescription: {
       it: "Homunculus dell'accidia, il più forte e veloce del gruppo, a guardia di Father.",
