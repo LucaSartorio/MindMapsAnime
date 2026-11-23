@@ -68,7 +68,7 @@ export const fmaAbilities: Jutsu[] = [
     it: "Kimblee, l'«Alchimista Cremisi», ha cerchi tatuati sui palmi e, battendo le mani, trasforma in una bomba qualsiasi cosa tocchi. Nella guerra di Ishval la usa per massacrare, aiutandosi con una Pietra Filosofale imperfetta che ne amplifica i poteri.",
     en: 'Kimblee, the Crimson Alchemist, has circles tattooed on his palms and, by clapping, turns anything he touches into a bomb. In the Ishvalan war he uses it to massacre, helped by an imperfect Philosopher\'s Stone that amplifies his powers.',
   }, { localizedName: { it: 'Alchimia esplosiva', en: 'Explosive alchemy' }, tags: ['esplosione'] }),
-  ab('chimeric-alchemy', 'Chimeric alchemy', 'amestrian_alchemy', [], {
+  ab('chimeric-alchemy', 'Chimeric alchemy', 'amestrian_alchemy', ['shou-tucker'], {
     it: "La fusione di due o più esseri viventi in una chimera: richiede una profonda conoscenza dell'anatomia, e invertirla è ancora più difficile. Il Capitolo 1 la mostra già; chimere umane vengono create in segreto dall'esercito.",
     en: 'The fusion of two or more living beings into a chimera: it demands deep knowledge of anatomy, and reversing it is harder still. Chapter 1 already shows it; human chimeras are created in secret by the military.',
   }, { localizedName: { it: 'Alchimia chimerica', en: 'Chimeric alchemy', ja: '合成獣' }, japaneseName: '合成獣', clanIds: ['faction-fma-greeds-gang'], tags: ['chimere'] }),

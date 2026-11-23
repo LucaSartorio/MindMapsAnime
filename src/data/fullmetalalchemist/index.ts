@@ -3,6 +3,7 @@ import { animeWorlds } from '@/data/worlds';
 import { fmaAssets } from './assets';
 import { fmaMapLevels } from './mapLevels';
 import { fmaCharactersAmestris } from './charactersAmestris';
+import { fmaCharactersSecondary } from './charactersSecondary';
 import { fmaCharactersHomunculi } from './charactersHomunculi';
 import { fmaCharactersXing } from './charactersXing';
 import { fmaCharactersMilos } from './charactersMilos';
@@ -34,6 +35,7 @@ const events: TimelineEvent[] = applyBattles([...fmaEventsEarly, ...fmaEventsWar
  */
 const characters: Character[] = [
   ...fmaCharactersAmestris,
+  ...fmaCharactersSecondary,
   ...fmaCharactersXing,
   ...fmaCharactersHomunculi,
   ...fmaCharactersMilos,

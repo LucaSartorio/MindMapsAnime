@@ -4,7 +4,7 @@ const { m, x, g } = factionKit('char-fma-');
 
 /**
  * Organigrammi (scheda e pagina della fazione). `m()` = personaggio del dataset; `x()` = persona senza scheda
- * (solo il nome, candidata a un batch successivo). Gradi come in `characters*.ts` (fonte S9).
+ * (solo il nome; dal batch 10 restano `x()` solo Xiao Mei, la panda di May, che non ha una scheda). Gradi come in `characters*.ts` (fonte S9).
  */
 export const fmaStructure: Record<string, FactionExtras> = {
   'faction-fma-state-military': {
@@ -30,7 +30,7 @@ export const fmaStructure: Record<string, FactionExtras> = {
         m('roy-mustang', L('Alchimista di Fuoco', 'Flame Alchemist')),
         m('alex-louis-armstrong', L('Alchimista del Braccio Forte', 'Strong Arm Alchemist')),
         m('solf-j-kimblee', L('Alchimista Cremisi', 'Crimson Alchemist')),
-        x(L('Shou Tucker'), L('titolo ottenuto creando una chimera parlante', 'title earned by creating a talking chimera')),
+        m('shou-tucker', L('titolo ottenuto creando una chimera parlante', 'title earned by creating a talking chimera')),
       ]),
     ],
   },
@@ -40,19 +40,19 @@ export const fmaStructure: Record<string, FactionExtras> = {
       g(L('Subordinati', 'Subordinates'), [
         m('riza-hawkeye', L('tenente', 'First Lieutenant')),
         m('jean-havoc', L('sottotenente', 'Second Lieutenant')),
-        x(L('Falman'), L('sottufficiale', 'Warrant Officer')),
-        x(L('Breda'), L('sottotenente', 'Second Lieutenant')),
-        x(L('Fuery'), L('sergente maggiore', 'Sergeant Major')),
-      ], L('Breda, Falman e Fuery non hanno ancora una scheda.', 'Breda, Falman and Fuery do not have a character page yet.')),
+        m('vato-falman', L('sottufficiale', 'Warrant Officer')),
+        m('heymans-breda', L('sottotenente', 'Second Lieutenant')),
+        m('kain-fuery', L('sergente maggiore', 'Sergeant Major')),
+      ]),
     ],
   },
   'faction-fma-briggs-garrison': {
     structure: [
       g(L('Comandante', 'Commander'), [m('olivier-mira-armstrong', L('maggiore generale', 'Major General'))]),
       g(L('Ufficiali e soldati', 'Officers and soldiers'), [
-        x(L('Miles'), L('per un quarto ishvaliano', 'a quarter Ishvalan')),
-        x(L('Buccaneer'), L('muore combattendo Bradley', 'dies fighting Bradley')),
-        x(L('Falman'), L('trasferito a Briggs', 'transferred to Briggs')),
+        m('miles', L('per un quarto ishvaliano', 'a quarter Ishvalan')),
+        m('buccaneer', L('muore combattendo Bradley', 'dies fighting Bradley')),
+        m('vato-falman', L('trasferito a Briggs', 'transferred to Briggs')),
       ]),
     ],
   },
@@ -74,10 +74,10 @@ export const fmaStructure: Record<string, FactionExtras> = {
     structure: [
       g(L('Capo', 'Leader'), [m('greed')]),
       g(L('Seguaci', 'Followers'), [
-        x(L('Dolcetto'), L('chimera umana (cane)', 'human chimera (dog)')),
-        x(L('Loa'), L('chimera umana (bue)', 'human chimera (ox)')),
-        x(L('Martel'), L('chimera umana (serpente)', 'human chimera (snake)')),
-        x(L('Bido'), L('subalterno', 'subordinate')),
+        m('dolcetto', L('chimera umana (cane)', 'human chimera (dog)')),
+        m('loa', L('chimera umana (bue)', 'human chimera (ox)')),
+        m('martel', L('chimera umana (serpente)', 'human chimera (snake)')),
+        m('bido', L('chimera umana (geco)', 'human chimera (gecko)')),
       ], L('Altri membri, come Ulchi, non sono elencati.', 'Other members, such as Ulchi, are not listed.')),
     ],
   },
@@ -86,7 +86,7 @@ export const fmaStructure: Record<string, FactionExtras> = {
       g(L('Rappresentante e fedeli', 'Representative and retainers'), [
         m('ling-yao', L('dodicesimo principe, rappresenta il clan', 'twelfth prince, represents the clan')),
         m('lan-fan', L('guardia del corpo', 'bodyguard')),
-        x(L('Fu'), L('guardia del corpo, nonno di Lan Fan', "bodyguard, Lan Fan's grandfather")),
+        m('fu', L('guardia del corpo, nonno di Lan Fan', "bodyguard, Lan Fan's grandfather")),
       ]),
     ],
   },
@@ -102,7 +102,7 @@ export const fmaStructure: Record<string, FactionExtras> = {
     structure: [
       g(L('Resistenza di Milos', 'Milosian resistance'), [
         m('julia-crichton', L('alchimista cresciuta dalla resistenza', 'alchemist raised by the resistance')),
-        x(L('Miranda'), L('comandante dei Pipistrelli Neri, uccisa da Atlas', 'commander of the Black Bats, killed by Atlas')),
+        m('miranda', L('comandante dei Pipistrelli Neri, uccisa da Atlas', 'commander of the Black Bats, killed by Atlas')),
       ]),
     ],
   },

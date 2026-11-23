@@ -10,7 +10,7 @@
   (diverges from the manga after the early volumes), **excluded**; the film *The Sacred Star of Milos* (2011,
   anime-original) → **included** as `canonStatus: 'movie'` (owner decision 2026-11-23); live-action films excluded
 - id prefix: `fma` (`char-fma-…`, `loc-fma-…`, `evt-fma-…`, `arc-fma-…`, `faction-fma-…`); dataset export `fmaDataset`
-- last update: 2026-11-23 · next step: batch 10 — secondary characters, routes, portraits (`appearance.ts`); batch 4 stays partial until a source gives the remaining city positions
+- last update: 2026-11-23 · next step: batch 10 part B — portraits (`appearance.ts`) for main/major characters; batch 4 stays partial until a source gives the remaining city positions
 
 ## Model mapping (discovery, to confirm per batch with sources)
 
@@ -36,7 +36,7 @@
 | 7 | factions, relations, family | done | factions 11 (9 manga + 2 movie; 3 needs_verification); family 3 links; 13 characters got extra relations | (this commit) | `factions.ts` (types army/organization/clan/group, already labelled), `structure.ts` (`factionKit` organigrams; people without a page only as labels), `family.ts` (Hohenheim → Edward, Alphonse; Edward–Winry); membership in `Faction.characterIds` (like JJK); relations only added, none rewritten. Relatives without a page (Trisha, Rockbell and Armstrong parents, Gracia/Elicia Hughes, Sig Curtis, Emperor of Xing) → batch 10 |
 | 8 | battles, markers | done | battles 11; markers 3 (deaths `morte` 16 tagged / 3 placed · homunculi `omuncoli` 26 / 3 · philosopher's stone `pietra-filosofale` 15 / 3) | (this commit) | `battles.ts` (`battleKit` → `applyBattles`), `markerTags.ts` (`withEventTags`), `config.mapMarkers` in `worlds.ts`; sides ⊂ event characterIds (no event edited); outcomes only where stated; `interrupted` for Scar vs Elrics, Olivier vs Sloth, Mustang vs Envy; Pride consuming Gluttony NOT a battle (removed by the orchestrator: an ally absorbed, not a fight); no tournaments in the work; most tagged events stay off the map until batch 4 places more cities |
 | 9 | power system | done | abilities 30 (28 canon + 2 movie; 2 needs_verification); 6 categories; 29/30 indexable | (this commit) | `FMA_ABILITY_CATEGORIES` in `config.ts` → `ability.categories` (principle, amestrian_alchemy, alkahestry, forbidden_alchemy, homunculus, milos); no `ability.attribute` (source-of-power facet rests on community material); no automail entries (technology, not alchemy); `abilities.ts` with `jutsu.characterIds` → derived `character.jutsuIds`; art falls back to the world motif (`magic_circle`), no `WORLD_FORMS` mapping needed; thin: `scar-reconstruction`; orphan: `chimeric-alchemy` (no user page until batch 10). The brief's "red water" for Milos was the orchestrator's mistake (2003-anime concept): not in the sources, correctly not modelled |
-| 10 | routes, secondary chars, portraits | todo | | | |
+| 10 | routes, secondary chars, portraits | in-progress | part A done: +24 characters (52 total; 23 canon + 1 movie; 14 needs_verification); family 3 → 15 links; 9 organigram labels → members; 17 event `characterIds` additions; 0 hand-written routes (1 derived journey) | (this commit) | `charactersSecondary.ts` + Miranda in `charactersMilos.ts`; people linked to events only where the event text already names them; `chimeric-alchemy` orphan resolved (Tucker); Alex/Olivier now siblings (father Philip), Ling/May half-siblings (Emperor of Xing); skipped: Xiao Mei (only "May's pet panda"), Armstrong mother/sisters (unnamed), Sheska, Slicer brothers. Part B (portraits, `appearance.ts`) next. Arc Mining Town text rephrased (i18n false positive) |
 | 11 | translations | todo | | | `{ it, en }` throughout; es/fr only if the owner asks |
 | 12 | publication gate | todo | | | owner approval required to flip `status` |
 
@@ -66,9 +66,13 @@
 | S21 | Japanese Wikipedia, 鋼の錬金術師 | encyclopedia | Japanese terms (錬丹術 qi-based and medical, 人体錬成, 真理の扉, 錬成陣, 等価交換, 賢者の石, 合成獣, 機械鎧) | web fetch (first 100k of 155k characters) |
 | S22 | CBR, "Fullmetal Alchemist: Most Powerful Alchemy, Ranked" (cbr.com/fullmetal-alchemist-most-powerful-alchemy-ranked/) | editorial | blood seal, chimeric alchemy, Scar's arms, alkahestry near Father, Stone as an item | web fetch; Scar's left-arm claim single-source |
 | S23 | web search results (TV Tropes, fan wikis) on alkahestry and Kimblee | community, snippets | corroboration only | nothing relied on |
+| S24 | Japanese Wikipedia, 鋼の錬金術師の登場人物一覧 (raw wikitext) | encyclopedia | Rockbell parents (Urey, Sara), Philip Gargantos Armstrong, Emperor of Xing, Miles/Buccaneer ranks, Fuery, Ross/Brosh | single detailed source for several minor facts |
+| S25 | MyAnimeList character pages (Urey/Yuriy, Sara/Sarah Rockbell, Philip Gargantos Armstrong) | community database, snippets | corroboration of names / romanisation only | search snippets |
 | S17 | aggregator / search summaries for ch. 3-4 | community / aggregator | short Mining Town / Battle on the Train descriptions only | search summary only; low reliability |
 
 Batch 3 also used S6 (Milos film characters) and S2 (full chapter table, as context).
+
+Batch 10A re-read S9 as raw wikitext incl. footnotes (Trisha, Tucker, Marcoh, Barry, Sig, Breda/Falman/Fuery, Ross/Brosh, Greed's chimeras, Fu, Emperor) and S6 (Miranda).
 
 Batch 9 re-read S11 (Setting section), S9 (powers), S10 (Scar, Mustang, Ed, Al), S6 (Milos alchemy, Sanguine Star).
 
@@ -152,6 +156,14 @@ Batch 5 also re-used S2 (volume ↔ chapter table; it names no arcs), S6 (Milos 
 | tec-fma-ultimate-eye | the Eye's speed hampered by Bradley's aging | S9 | unverified | |
 | tec-fma-sanguine-star | Stone or not; one Star or two (Ashleigh and Julia) | S6 | disputed (inside source) | needs_verification |
 | tec-fma-* | Italian names/texts and some ja category labels are own translations | — | unofficial | revisable |
+| char-fma-urey-rockbell, char-fma-sara-rockbell | names/romanisation (Urey/Yuriy, Sara/Sarah); Winry's parents, killed by Scar | S24, S25 | unverified (spelling) | needs_verification |
+| char-fma-philip-gargantos-armstrong | father of Alex and Olivier; retired general officer | S24, S25 | unverified | mother unnamed → no page |
+| char-fma-emperor-of-xing | unnamed; 43 children; dies after Ling's return | S9 (43), S24 | unverified | never appears; page named by role |
+| char-fma-miles, char-fma-buccaneer | ranks Major / Captain | S24 only | unverified | conflicts noted in S20; Buccaneer's death verified (S9 + S24) |
+| char-fma-sig-curtis, -heymans-breda, -vato-falman, -kain-fuery, -denny-brosh | alive at the end | S9, S24 | unverified | needs_verification |
+| char-fma-gracia-hughes, char-fma-elicia-hughes | fate after the story | — | unknown | `status: 'unknown'` |
+| char-fma-dolcetto, -loa, -martel, -bido | spellings and species; deaths | S9, S24 | unverified (spelling) | 2003-anime variants ignored |
+| tec-fma-chimeric-alchemy | Tucker as user | S9 | editorial | ability text does not name him |
 | (batch 3) | Italian renderings of titles/epithets (e.g. «Alchimista d'Acciaio») | — | unverified | no official Italian edition consulted; aliases/descriptions only, revisable without touching ids |
 
 ## Open issues

@@ -84,4 +84,30 @@ export const fmaCharactersMilos: Character[] = [
     },
     tags: ['film', 'milos', 'impostore'],
   }),
+  ch({
+    id: 'char-fma-miranda',
+    name: 'Miranda',
+    japaneseName: 'ミランダ',
+    canonStatus: 'movie',
+    importance: 'minor',
+    role: ['ally'],
+    gender: 'female',
+    status: 'deceased',
+    allies: ['char-fma-julia-crichton', 'char-fma-edward-elric', 'char-fma-alphonse-elric'],
+    enemies: ['char-fma-melvin-voyager'],
+    relationships: [
+      { targetCharacterId: 'char-fma-julia-crichton', label: { it: 'Cerca di salvarla dalla prigione; con lei cerca di ottenere la Stella Sanguigna', en: 'Tries to rescue her from prison; seeks the Sanguine Star with her' } },
+      { targetCharacterId: 'char-fma-melvin-voyager', label: { it: 'Viene ferita a morte da lui, che usa il suo sangue per attivare il cerchio', en: 'Fatally wounded by him, who uses her blood to activate the circle' } },
+      { targetCharacterId: 'char-fma-edward-elric', label: { it: 'Spiega ai fratelli Elric la missione dei Pipistrelli Neri', en: 'Explains the Black Bats\' mission to the Elric brothers' } },
+    ],
+    shortDescription: {
+      it: "Comandante dei Pipistrelli Neri, la fazione ribelle di Milos: viene uccisa da Atlas, che usa il suo sangue per il cerchio della Stella.",
+      en: "A commander of the Black Bats, the rebel faction of Milos: she is killed by Atlas, who uses her blood for the Star's circle.",
+    },
+    longDescription: {
+      it: "Miranda guida i Pipistrelli Neri, i ribelli di Milos che vogliono riprendersi Table City dagli occupanti di Amestris. Nella loro base spiega ai fratelli Elric lo scopo della resistenza: usare la Stella Sanguigna per controllare una fonte di calore chiamata magma; descrive la Stella come una «pietra rossa luminosa di potere», e i fratelli temono che sia una Pietra Filosofale. Nell'assalto a Table City Atlas la ferisce a morte e usa il suo sangue per attivare il cerchio tridimensionale che crea la Stella. Il personaggio esiste solo nel film (2011).",
+      en: "Miranda leads the Black Bats, the Milosian rebels who want to reclaim Table City from its Amestrian occupiers. In their base she explains the resistance's goal to the Elric brothers: to use the Sanguine Star to control a heat source called magma; she describes the Star as a 'red glowing stone of power', and the brothers fear it may be a Philosopher's Stone. In the assault on Table City Atlas fatally wounds her and uses her blood to activate the three-dimensional circle that creates the Star. The character exists only in the 2011 film.",
+    },
+    tags: ['film', 'milos', 'resistenza'],
+  }),
 ];

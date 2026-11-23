@@ -15,8 +15,8 @@ const fac = (f: Omit<Faction, 'worldId'>): Faction => ({
  *  - `clan`         → i clan Yao e Chang di Xing;
  *  - `group`        → gli Homunculi, la squadra di Mustang, gli ishvaliani, la banda di Greed, i Pipistrelli Neri.
  *
- * `characterIds` elenca solo personaggi del dataset (28); chi non ha scheda compare per nome nell'organigramma
- * (`structure.ts`, `x()`) o solo nel testo. Organigrammi e ruoli: `structure.ts`.
+ * `characterIds` elenca solo personaggi del dataset (52 dopo il batch 10); chi non ha scheda compare per nome
+ * nell'organigramma (`structure.ts`, `x()`) o solo nel testo. Organigrammi e ruoli: `structure.ts`.
  * Fonti: S9 (Wikipedia, elenco dei personaggi), S5 (Briggs), S6 (film di Milos) — vedi il manifesto della pipeline.
  */
 export const fmaFactions: Faction[] = [
@@ -71,6 +71,7 @@ export const fmaFactions: Faction[] = [
       'char-fma-roy-mustang',
       'char-fma-alex-louis-armstrong',
       'char-fma-solf-j-kimblee',
+      'char-fma-shou-tucker',
     ],
     arcIds: ['arc-fma-scar'],
     tags: ['alchimisti-di-stato', 'esercito'],
@@ -86,11 +87,18 @@ export const fmaFactions: Faction[] = [
       en: "The group of subordinates loyal to Roy Mustang: Hawkeye, Havoc, Breda, Falman and Fuery. It has no official name.",
     },
     longDescription: {
-      it: "Ciascuno dei suoi membri fu scelto per una qualità specifica; gli Homunculi spezzano il gruppo trasferendo i suoi componenti in sedi diverse. Breda, Fuery e Hawkeye lasciano poi l'esercito per aiutare Mustang a rovesciare Bradley. Havoc, paralizzato da Lust, resta al suo fianco anche dopo l'infortunio. I nomi Breda, Falman e Fuery compaiono solo nell'organigramma: non hanno ancora una scheda.",
-      en: "Each member was picked for a specific quality; the Homunculi break the group up by transferring its members to different postings. Breda, Fuery and Hawkeye later leave the military to help Mustang overthrow Bradley. Havoc, paralysed by Lust, stays at his side even after the injury. Breda, Falman and Fuery appear only in the structure chart: they do not have a character page yet.",
+      it: "Ciascuno dei suoi membri fu scelto per una qualità specifica; gli Homunculi spezzano il gruppo trasferendo i suoi componenti in sedi diverse. Breda, Fuery e Hawkeye lasciano poi l'esercito per aiutare Mustang a rovesciare Bradley. Havoc, paralizzato da Lust, resta al suo fianco anche dopo l'infortunio. Breda, Falman e Fuery hanno ciascuno una scheda.",
+      en: "Each member was picked for a specific quality; the Homunculi break the group up by transferring its members to different postings. Breda, Fuery and Hawkeye later leave the military to help Mustang overthrow Bradley. Havoc, paralysed by Lust, stays at his side even after the injury. Breda, Falman and Fuery each have a character page.",
     },
     leaderIds: ['char-fma-roy-mustang'],
-    characterIds: ['char-fma-roy-mustang', 'char-fma-riza-hawkeye', 'char-fma-jean-havoc'],
+    characterIds: [
+      'char-fma-roy-mustang',
+      'char-fma-riza-hawkeye',
+      'char-fma-jean-havoc',
+      'char-fma-vato-falman',
+      'char-fma-heymans-breda',
+      'char-fma-kain-fuery',
+    ],
     arcIds: ['arc-fma-briggs'],
     tags: ['esercito', 'mustang'],
     referenceStatus: 'needs_verification',
@@ -112,7 +120,7 @@ export const fmaFactions: Faction[] = [
       en: "Briggs soldiers answer only to Olivier, even though she does not have direct control of the fort. Among them are Miles, a quarter Ishvalan, who stays in the military hoping to change views of the Ishvalans, and Buccaneer, who dies fighting Bradley; Falman is transferred to Briggs after Mustang's squad is broken up. When the Homunculi threaten the government, Olivier brings the troops to Central.",
     },
     leaderIds: ['char-fma-olivier-mira-armstrong'],
-    characterIds: ['char-fma-olivier-mira-armstrong'],
+    characterIds: ['char-fma-olivier-mira-armstrong', 'char-fma-miles', 'char-fma-buccaneer', 'char-fma-vato-falman'],
     locationIds: ['loc-fma-fort-briggs'],
     arcIds: ['arc-fma-briggs'],
     tags: ['briggs', 'esercito', 'drachma'],
@@ -159,11 +167,11 @@ export const fmaFactions: Faction[] = [
       en: "Greed's followers, including his human chimeras Dolcetto, Loa and Martel, with Bido. Their hideout is the Devil's Nest bar.",
     },
     longDescription: {
-      it: "Greed li considera suoi «possedimenti». Bradley fa irruzione al Devil's Nest per catturarlo; nell'assalto i suoi soldati uccidono Ulchi. I nomi dei membri variano a seconda delle edizioni (Dolcetto/Dorochet, Loa/Law/Roa, Martel/Marta) e nessuno ha ancora una scheda: compaiono solo nell'organigramma.",
-      en: "Greed regards them as his 'possessions'. Bradley raids the Devil's Nest to capture him; in the attack his soldiers kill Ulchi. Member names vary between editions (Dolcetto/Dorochet, Loa/Law/Roa, Martel/Marta) and none has a character page yet: they appear only in the structure chart.",
+      it: "Greed li considera suoi «possedimenti». Bradley fa irruzione al Devil's Nest per catturarlo; nell'assalto i suoi soldati uccidono Ulchi. I nomi dei membri variano a seconda delle edizioni (Dolcetto/Dorochet, Loa/Law/Roa, Martel/Marta) e ciascuno ha una scheda (Dolcetto, Loa, Martel, Bido).",
+      en: "Greed regards them as his 'possessions'. Bradley raids the Devil's Nest to capture him; in the attack his soldiers kill Ulchi. Member names vary between editions (Dolcetto/Dorochet, Loa/Law/Roa, Martel/Marta) and each has a character page (Dolcetto, Loa, Martel, Bido).",
     },
     leaderIds: ['char-fma-greed'],
-    characterIds: ['char-fma-greed'],
+    characterIds: ['char-fma-greed', 'char-fma-dolcetto', 'char-fma-loa', 'char-fma-martel', 'char-fma-bido'],
     arcIds: ['arc-fma-briggs'],
     tags: ['greed', 'chimere'],
     referenceStatus: 'needs_verification',
@@ -206,7 +214,7 @@ export const fmaFactions: Faction[] = [
       en: "Xing is divided into fifty clans under one emperor, who fathered a child in each family. Ling, the twelfth prince, aims to replace his father and believes power depends on the people's support; after the war he becomes emperor intending to unite the clans. Fu, his bodyguard and Lan Fan's grandfather, does not have a character page yet.",
     },
     leaderIds: [],
-    characterIds: ['char-fma-ling-yao', 'char-fma-lan-fan'],
+    characterIds: ['char-fma-ling-yao', 'char-fma-lan-fan', 'char-fma-fu'],
     arcIds: ['arc-fma-envoy-from-the-east'],
     tags: ['xing', 'clan'],
   }),
@@ -245,7 +253,7 @@ export const fmaFactions: Faction[] = [
       en: "Milos stood on the hill where Table City now stands; first Creta and then Amestris invaded and occupied it, forcing the Milosians to live in the Valley in poverty. Julia wants to use the Philosopher's Stone to win Milos's independence, which is finally declared. Sources describe the Black Bats as Milos's rebel faction and Julia as part of Milos's resistance: we treat them as the same movement, but Julia's membership of the Black Bats is not explicitly stated.",
     },
     leaderIds: [],
-    characterIds: ['char-fma-julia-crichton'],
+    characterIds: ['char-fma-julia-crichton', 'char-fma-miranda'],
     locationIds: ['loc-fma-table-city'],
     arcIds: ['arc-fma-sacred-star-of-milos'],
     tags: ['film', 'milos', 'resistenza'],

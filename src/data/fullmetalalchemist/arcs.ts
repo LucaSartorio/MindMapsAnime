@@ -47,7 +47,7 @@ export const fmaArcs: StoryArc[] = [
     period: { it: 'Volume 1 (cap. 3)', en: 'Volume 1 (ch. 3)' },
     order: 2,
     description: {
-      it: "Episodio breve di un solo capitolo («The Mining Town»): i fratelli passano da Youswell, città di minatori oppressa dalle tasse di un ufficiale locale, e aiutano la popolazione.",
+      it: "Episodio breve di un solo capitolo, il terzo: i fratelli passano da Youswell, città di minatori oppressa dalle tasse di un ufficiale locale, e aiutano la popolazione.",
       en: "A one-chapter episode ('The Mining Town'): the brothers stop in Youswell, a miners' town squeezed by the taxes of a local officer, and help its people.",
     },
     characterIds: ['char-fma-edward-elric', 'char-fma-alphonse-elric'],
