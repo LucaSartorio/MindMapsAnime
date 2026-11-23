@@ -7,11 +7,13 @@ import { fmaCharactersHomunculi } from './charactersHomunculi';
 import { fmaCharactersXing } from './charactersXing';
 import { fmaCharactersMilos } from './charactersMilos';
 import { fmaArcs } from './arcs';
+import { fmaEventsEarly } from './eventsEarly';
+import { fmaEventsWar } from './eventsWar';
 
 const fullmetalAlchemist = animeWorlds.find((w) => w.slug === 'fullmetalalchemist')!;
 
-// Eventi: ancora nessuno (batch 6); gli `eventIds` degli archi sono derivati da qui (una sola fonte di verità).
-const events: TimelineEvent[] = [];
+// Eventi in ordine cronologico della storia (`order`); gli `eventIds` degli archi sono derivati da qui (una sola fonte di verità).
+const events: TimelineEvent[] = [...fmaEventsEarly, ...fmaEventsWar].sort((a, b) => a.order - b.order);
 
 const arcs: StoryArc[] = fmaArcs.map((arc) => ({
   ...arc,
