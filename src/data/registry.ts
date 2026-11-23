@@ -30,7 +30,6 @@ const worldDatasetLoaders: Record<string, () => Promise<WorldDataset>> = {
     import('@/data/attackontitan').then((m) => m.aotDataset),
   jujutsukaisen: () =>
     import('@/data/jujutsukaisen').then((m) => m.jjkDataset),
-  // In costruzione (`coming_soon`): privato finché non viene pubblicato, ma già validato.
   fullmetalalchemist: () =>
     import('@/data/fullmetalalchemist').then((m) => m.fmaDataset),
 };

@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-23T06:12:51.316Z",
+  "generatedAt": "2026-11-23T19:40:45.446Z",
   "templates": {
     "characterJourney": {
       "byReason": {
-        "single_location": 512,
-        "no_journey_data": 564
+        "single_location": 527,
+        "no_journey_data": 588
       },
       "items": [
         {
@@ -6568,6 +6568,279 @@
           "reason": "single_location"
         },
         {
+          "anime": "fullmetalalchemist",
+          "subject": "pinako-rockbell",
+          "subjectId": "char-fma-pinako-rockbell",
+          "displayName": "Pinako Rockbell",
+          "reason": "single_location"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "maes-hughes",
+          "subjectId": "char-fma-maes-hughes",
+          "displayName": "Maes Hughes",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "jean-havoc",
+          "subjectId": "char-fma-jean-havoc",
+          "displayName": "Jean Havoc",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "olivier-mira-armstrong",
+          "subjectId": "char-fma-olivier-mira-armstrong",
+          "displayName": "Olivier Mira Armstrong",
+          "reason": "single_location"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "izumi-curtis",
+          "subjectId": "char-fma-izumi-curtis",
+          "displayName": "Izumi Curtis",
+          "reason": "single_location"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "trisha-elric",
+          "subjectId": "char-fma-trisha-elric",
+          "displayName": "Trisha Elric",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "urey-rockbell",
+          "subjectId": "char-fma-urey-rockbell",
+          "displayName": "Urey Rockbell",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "sara-rockbell",
+          "subjectId": "char-fma-sara-rockbell",
+          "displayName": "Sara Rockbell",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "philip-gargantos-armstrong",
+          "subjectId": "char-fma-philip-gargantos-armstrong",
+          "displayName": "Philip Gargantos Armstrong",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "gracia-hughes",
+          "subjectId": "char-fma-gracia-hughes",
+          "displayName": "Gracia Hughes",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "elicia-hughes",
+          "subjectId": "char-fma-elicia-hughes",
+          "displayName": "Elicia Hughes",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "sig-curtis",
+          "subjectId": "char-fma-sig-curtis",
+          "displayName": "Sig Curtis",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "emperor-of-xing",
+          "subjectId": "char-fma-emperor-of-xing",
+          "displayName": "Emperor of Xing",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "heymans-breda",
+          "subjectId": "char-fma-heymans-breda",
+          "displayName": "Heymans Breda",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "vato-falman",
+          "subjectId": "char-fma-vato-falman",
+          "displayName": "Vato Falman",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "kain-fuery",
+          "subjectId": "char-fma-kain-fuery",
+          "displayName": "Kain Fuery",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "miles",
+          "subjectId": "char-fma-miles",
+          "displayName": "Miles",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "buccaneer",
+          "subjectId": "char-fma-buccaneer",
+          "displayName": "Buccaneer",
+          "reason": "single_location"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "fu",
+          "subjectId": "char-fma-fu",
+          "displayName": "Fu",
+          "reason": "single_location"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "dolcetto",
+          "subjectId": "char-fma-dolcetto",
+          "displayName": "Dolcetto",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "loa",
+          "subjectId": "char-fma-loa",
+          "displayName": "Loa",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "martel",
+          "subjectId": "char-fma-martel",
+          "displayName": "Martel",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "bido",
+          "subjectId": "char-fma-bido",
+          "displayName": "Bido",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "shou-tucker",
+          "subjectId": "char-fma-shou-tucker",
+          "displayName": "Shou Tucker",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "maria-ross",
+          "subjectId": "char-fma-maria-ross",
+          "displayName": "Maria Ross",
+          "reason": "single_location"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "denny-brosh",
+          "subjectId": "char-fma-denny-brosh",
+          "displayName": "Denny Brosh",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "barry-the-chopper",
+          "subjectId": "char-fma-barry-the-chopper",
+          "displayName": "Barry the Chopper",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "lan-fan",
+          "subjectId": "char-fma-lan-fan",
+          "displayName": "Lan Fan",
+          "reason": "single_location"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "father",
+          "subjectId": "char-fma-father",
+          "displayName": "Father",
+          "reason": "single_location"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "king-bradley",
+          "subjectId": "char-fma-king-bradley",
+          "displayName": "King Bradley",
+          "reason": "single_location"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "pride",
+          "subjectId": "char-fma-pride",
+          "displayName": "Pride",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "lust",
+          "subjectId": "char-fma-lust",
+          "displayName": "Lust",
+          "reason": "single_location"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "gluttony",
+          "subjectId": "char-fma-gluttony",
+          "displayName": "Gluttony",
+          "reason": "single_location"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "greed",
+          "subjectId": "char-fma-greed",
+          "displayName": "Greed",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "sloth",
+          "subjectId": "char-fma-sloth",
+          "displayName": "Sloth",
+          "reason": "no_journey_data"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "julia-crichton",
+          "subjectId": "char-fma-julia-crichton",
+          "displayName": "Julia Crichton",
+          "reason": "single_location"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "ashleigh-crichton",
+          "subjectId": "char-fma-ashleigh-crichton",
+          "displayName": "Ashleigh Crichton",
+          "reason": "single_location"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "melvin-voyager",
+          "subjectId": "char-fma-melvin-voyager",
+          "displayName": "Melvin Voyager",
+          "reason": "single_location"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "miranda",
+          "subjectId": "char-fma-miranda",
+          "displayName": "Miranda",
+          "reason": "single_location"
+        },
+        {
           "anime": "jujutsukaisen",
           "subject": "nobara-kugisaki",
           "subjectId": "char-jjk-nobara",
@@ -7544,8 +7817,8 @@
     },
     "guessCharacter": {
       "byReason": {
-        "not_guessable": 192,
-        "no_journey_data": 9
+        "not_guessable": 211,
+        "no_journey_data": 13
       },
       "items": [
         {
@@ -8795,6 +9068,190 @@
           "displayName": "Jugram Haschwalth",
           "reason": "not_guessable",
           "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "winry-rockbell",
+          "subjectId": "char-fma-winry-rockbell",
+          "displayName": "Winry Rockbell",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "van-hohenheim",
+          "subjectId": "char-fma-van-hohenheim",
+          "displayName": "Van Hohenheim",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "roy-mustang",
+          "subjectId": "char-fma-roy-mustang",
+          "displayName": "Roy Mustang",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "riza-hawkeye",
+          "subjectId": "char-fma-riza-hawkeye",
+          "displayName": "Riza Hawkeye",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "maes-hughes",
+          "subjectId": "char-fma-maes-hughes",
+          "displayName": "Maes Hughes",
+          "reason": "no_journey_data",
+          "detail": "0 spoiler-free places"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "alex-louis-armstrong",
+          "subjectId": "char-fma-alex-louis-armstrong",
+          "displayName": "Alex Louis Armstrong",
+          "reason": "not_guessable",
+          "detail": "3 spoiler-free places"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "olivier-mira-armstrong",
+          "subjectId": "char-fma-olivier-mira-armstrong",
+          "displayName": "Olivier Mira Armstrong",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "izumi-curtis",
+          "subjectId": "char-fma-izumi-curtis",
+          "displayName": "Izumi Curtis",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "solf-j-kimblee",
+          "subjectId": "char-fma-solf-j-kimblee",
+          "displayName": "Solf J. Kimblee",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "ling-yao",
+          "subjectId": "char-fma-ling-yao",
+          "displayName": "Ling Yao",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "lan-fan",
+          "subjectId": "char-fma-lan-fan",
+          "displayName": "Lan Fan",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "may-chang",
+          "subjectId": "char-fma-may-chang",
+          "displayName": "May Chang",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "father",
+          "subjectId": "char-fma-father",
+          "displayName": "Father",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "king-bradley",
+          "subjectId": "char-fma-king-bradley",
+          "displayName": "King Bradley",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "pride",
+          "subjectId": "char-fma-pride",
+          "displayName": "Pride",
+          "reason": "no_journey_data",
+          "detail": "0 spoiler-free places"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "lust",
+          "subjectId": "char-fma-lust",
+          "displayName": "Lust",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "gluttony",
+          "subjectId": "char-fma-gluttony",
+          "displayName": "Gluttony",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "envy",
+          "subjectId": "char-fma-envy",
+          "displayName": "Envy",
+          "reason": "not_guessable",
+          "detail": "2 spoiler-free places"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "greed",
+          "subjectId": "char-fma-greed",
+          "displayName": "Greed",
+          "reason": "no_journey_data",
+          "detail": "0 spoiler-free places"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "sloth",
+          "subjectId": "char-fma-sloth",
+          "displayName": "Sloth",
+          "reason": "no_journey_data",
+          "detail": "0 spoiler-free places"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "julia-crichton",
+          "subjectId": "char-fma-julia-crichton",
+          "displayName": "Julia Crichton",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "ashleigh-crichton",
+          "subjectId": "char-fma-ashleigh-crichton",
+          "displayName": "Ashleigh Crichton",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
+        },
+        {
+          "anime": "fullmetalalchemist",
+          "subject": "melvin-voyager",
+          "subjectId": "char-fma-melvin-voyager",
+          "displayName": "Melvin Voyager",
+          "reason": "not_guessable",
+          "detail": "1 spoiler-free places"
         },
         {
           "anime": "jujutsukaisen",

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-23T06:12:51.316Z",
+  "generatedAt": "2026-11-23T19:40:45.446Z",
   "status": "ready",
   "feedTail": [
     {
@@ -99,10 +99,10 @@
   "mode": "coldstart",
   "seed": "feed52:guess-character:onepiece:roronoa-zoro@en:samples0",
   "rejected": {
-    "JOURNEY_PART_ORDER": 34,
-    "MAX_SAME_CHARACTER_STREAK": 21
+    "JOURNEY_PART_ORDER": 36,
+    "MAX_SAME_CHARACTER_STREAK": 24
   },
-  "considered": 656,
+  "considered": 737,
   "trace": {
     "traceVersion": 1,
     "mode": "coldstart",
@@ -207,24 +207,24 @@
       }
     },
     "hardRulesTriggered": {
-      "JOURNEY_PART_ORDER": 34,
-      "MAX_SAME_CHARACTER_STREAK": 21
+      "JOURNEY_PART_ORDER": 36,
+      "MAX_SAME_CHARACTER_STREAK": 24
     },
     "candidates": {
-      "considered": 656,
-      "eligible": 603,
+      "considered": 737,
+      "eligible": 679,
       "byContentType": {
         "character-journey": {
-          "considered": 405,
-          "eligible": 370
+          "considered": 420,
+          "eligible": 383
         },
         "guess-character": {
-          "considered": 76,
-          "eligible": 76
+          "considered": 79,
+          "eligible": 79
         },
         "character-versus": {
-          "considered": 175,
-          "eligible": 157
+          "considered": 238,
+          "eligible": 217
         }
       }
     },
@@ -428,10 +428,10 @@
     "characters": [
       "blackclover:yuno-grinberryall"
     ],
-    "score": 102.4,
-    "base": 74.4,
+    "score": 104.59,
+    "base": 76.59,
     "reasons": [
-      "coldstart: novelty +21.0, jitter +3.4",
+      "coldstart: novelty +21.0, jitter +5.6",
       "+12 main character",
       "+14 continues a started series (Part 2 promised)",
       "+2 format below its target share (45% < 50%)"
@@ -443,63 +443,50 @@
         "animes": [
           "blackclover"
         ],
-        "score": 102.4,
+        "score": 104.59,
         "reasons": [
-          "coldstart: novelty +21.0, jitter +3.4",
+          "coldstart: novelty +21.0, jitter +5.6",
           "+12 main character",
           "+14 continues a started series (Part 2 promised)",
           "+2 format below its target share (45% < 50%)"
         ]
       },
       {
-        "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-blackclover-noelle-silva@en",
+        "renderId": "character-versus:fullmetalalchemist:edward-elric-vs-blackclover-asta@en",
         "contentType": "character-versus",
         "animes": [
-          "hunterxhunter",
+          "fullmetalalchemist",
           "blackclover"
         ],
-        "score": 91.48,
+        "score": 91.74,
         "reasons": [
-          "coldstart: novelty +23.5, jitter +6.0",
+          "coldstart: novelty +24.0, jitter +5.7",
           "+12 main character"
         ]
       },
       {
-        "renderId": "character-versus:bleach:ichigo-kurosaki-vs-blackclover-noelle-silva@en",
-        "contentType": "character-versus",
-        "animes": [
-          "bleach",
-          "blackclover"
-        ],
-        "score": 91.46,
-        "reasons": [
-          "coldstart: novelty +23.5, jitter +6.0",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:kurapika-vs-attackontitan-reiner-braun@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "attackontitan"
-        ],
-        "score": 91.36,
-        "reasons": [
-          "coldstart: novelty +23.5, jitter +5.9",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "character-versus:dragonball:vegeta-vs-blackclover-noelle-silva@en",
+        "renderId": "character-versus:dragonball:vegeta-vs-blackclover-asta@en",
         "contentType": "character-versus",
         "animes": [
           "dragonball",
           "blackclover"
         ],
-        "score": 91.21,
+        "score": 91.5,
         "reasons": [
-          "coldstart: novelty +23.5, jitter +5.7",
+          "coldstart: novelty +23.5, jitter +6.0",
+          "+12 main character"
+        ]
+      },
+      {
+        "renderId": "character-versus:dragonball:piccolo-vs-fullmetalalchemist-scar@en",
+        "contentType": "character-versus",
+        "animes": [
+          "dragonball",
+          "fullmetalalchemist"
+        ],
+        "score": 91.47,
+        "reasons": [
+          "coldstart: novelty +23.5, jitter +6.0",
           "+12 main character"
         ]
       },
@@ -510,9 +497,22 @@
           "naruto",
           "attackontitan"
         ],
-        "score": 91.17,
+        "score": 91.4,
         "reasons": [
-          "coldstart: novelty +23.5, jitter +5.7",
+          "coldstart: novelty +23.5, jitter +5.9",
+          "+12 main character"
+        ]
+      },
+      {
+        "renderId": "character-versus:attackontitan:reiner-braun-vs-fullmetalalchemist-edward-elric@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "fullmetalalchemist"
+        ],
+        "score": 91.37,
+        "reasons": [
+          "coldstart: novelty +24.0, jitter +5.4",
           "+12 main character"
         ]
       }
@@ -520,7 +520,7 @@
     "explanation": [
       "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
       "onepiece:roronoa-zoro excluded in every format (maxSameCharacterStreak 1).",
-      "Selected character-journey:blackclover:yuno-grinberryall:part-02@en (character-journey, blackclover) — coldstart, score 102.4 among 603 valid candidate(s)."
+      "Selected character-journey:blackclover:yuno-grinberryall:part-02@en (character-journey, blackclover) — coldstart, score 104.59 among 679 valid candidate(s)."
     ]
   },
   "pick": {
@@ -535,9 +535,9 @@
     ],
     "part": 2,
     "partCount": 2,
-    "score": 102.4,
+    "score": 104.59,
     "reasons": [
-      "coldstart: novelty +21.0, jitter +3.4",
+      "coldstart: novelty +21.0, jitter +5.6",
       "+12 main character",
       "+14 continues a started series (Part 2 promised)",
       "+2 format below its target share (45% < 50%)"
@@ -556,37 +556,37 @@
     "ctaType": "comment-missed-location",
     "selection": {
       "mode": "coldstart",
-      "score": 102.4,
+      "score": 104.59,
       "seed": "feed52:guess-character:onepiece:roronoa-zoro@en:samples0"
     },
-    "notes": "growth selector (coldstart): coldstart: novelty +21.0, jitter +3.4; +12 main character; +14 continues a started series (Part 2 promised)"
+    "notes": "growth selector (coldstart): coldstart: novelty +21.0, jitter +5.6; +12 main character; +14 continues a started series (Part 2 promised)"
   },
   "alternatives": [
     {
-      "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-blackclover-noelle-silva@en",
+      "renderId": "character-versus:fullmetalalchemist:edward-elric-vs-blackclover-asta@en",
       "contentType": "character-versus",
-      "score": 91.48
+      "score": 91.74
     },
     {
-      "renderId": "character-versus:bleach:ichigo-kurosaki-vs-blackclover-noelle-silva@en",
+      "renderId": "character-versus:dragonball:vegeta-vs-blackclover-asta@en",
       "contentType": "character-versus",
-      "score": 91.46
+      "score": 91.5
     },
     {
-      "renderId": "character-versus:hunterxhunter:kurapika-vs-attackontitan-reiner-braun@en",
+      "renderId": "character-versus:dragonball:piccolo-vs-fullmetalalchemist-scar@en",
       "contentType": "character-versus",
-      "score": 91.36
-    },
-    {
-      "renderId": "character-versus:dragonball:vegeta-vs-blackclover-noelle-silva@en",
-      "contentType": "character-versus",
-      "score": 91.21
+      "score": 91.47
     },
     {
       "renderId": "character-versus:naruto:naruto-uzumaki-vs-attackontitan-mikasa-ackerman@en",
       "contentType": "character-versus",
-      "score": 91.17
+      "score": 91.4
+    },
+    {
+      "renderId": "character-versus:attackontitan:reiner-braun-vs-fullmetalalchemist-edward-elric@en",
+      "contentType": "character-versus",
+      "score": 91.37
     }
   ],
-  "eligible": 603
+  "eligible": 679
 }

@@ -1,7 +1,7 @@
 # Fullmetal Alchemist — world pipeline
 
-- slug: `fullmetalalchemist` · urlSlug: `fullmetal-alchemist` · status in worlds.ts: coming_soon (loader registered,
-  dataset in progress: private everywhere, checked by `validate:data` / `validate:i18n`)
+- slug: `fullmetalalchemist` · urlSlug: `fullmetal-alchemist` · status in worlds.ts: available (owner approval
+  2026-11-23; published in it/en/es/fr once this branch is merged)
 - canon perimeter: the manga by Hiromu Arakawa (Square Enix, Monthly Shōnen Gangan, Aug 2001 issue → Jul 2010 issue;
   108 chapters, 27 tankōbon volumes). Bonus/gaiden stories in the volumes are outside the 108-chapter count and
   are added only if a batch needs them (flag them in the ledger)
@@ -10,7 +10,7 @@
   (diverges from the manga after the early volumes), **excluded**; the film *The Sacred Star of Milos* (2011,
   anime-original) → **included** as `canonStatus: 'movie'` (owner decision 2026-11-23); live-action films excluded
 - id prefix: `fma` (`char-fma-…`, `loc-fma-…`, `evt-fma-…`, `arc-fma-…`, `faction-fma-…`); dataset export `fmaDataset`
-- last update: 2026-11-23 · next step: batch 12 — publication gate (owner approval required to flip status); batch 4 stays partial until a source gives the remaining city positions
+- last update: 2026-11-23 · next step: owner review + merge of the branch; then verification passes on needs_verification items (manga volumes, Norma/Kurokawa editions)
 
 ## Model mapping (discovery, to confirm per batch with sources)
 
@@ -39,7 +39,7 @@
 | 10 | routes, secondary chars, portraits | done | part A done: +24 characters (52 total; 23 canon + 1 movie; 14 needs_verification); family 3 → 15 links; 9 organigram labels → members; 17 event `characterIds` additions; 0 hand-written routes (1 derived journey) | (this commit) | `charactersSecondary.ts` + Miranda in `charactersMilos.ts`; people linked to events only where the event text already names them; `chimeric-alchemy` orphan resolved (Tucker); Alex/Olivier now siblings (father Philip), Ling/May half-siblings (Emperor of Xing); skipped: Xiao Mei (only "May's pet panda"), Armstrong mother/sisters (unnamed), Sheska, Slicer brothers. Part B: 26/26 main/major portraits in `appearance.ts` (`withAppearance` applied last), built only from textual descriptions; colours mostly from community profile sites (S27-S29, partly 2003-anime oriented) → to recheck; unsourced details left to kit defaults (generic faces for Sloth, Julia, Melvin; default short hair makes several women look generic). Arc Mining Town text rephrased (i18n false positive) |
 | 11 | translations | done | it/en 100 % (validate:i18n 0/0); es 767/767 and fr 767/767 overlay texts (15 world-config strings live inline in `worlds.ts`) | (this commit) | owner asked for it/en/es/fr: overlays `i18n/es.ts`, `i18n/fr.ts` via i18n:extract → translate → i18n:merge (0 stale); loaders in `worldTranslationLoaders`, `translatedLocales: ['es','fr']`; `i18n:index` skips non-published worlds (FMA enters the index at publication); `i18n:audit` OK. Official es/fr terms checked only against es.wikipedia / fr.vikidia (no publisher glossary): Homunculi names, place names and quoted chapter titles kept in English; many epithets are own translations. Orchestrator removed internal source ids "(S24)", "(S6)" from 6 public texts (it/en/es/fr) |
 | 11b | provenance cleanup (pre-publication) | done | 17 provenance-only event `longDescription`s removed; ~20 content texts rewritten without source notes (it/en/es/fr); epilogue: Brotherhood-only Havoc detail dropped from the canon event | (this commit) | provenance lives only in this manifest (sources + ledger); entity uncertainty is carried by `referenceStatus`, not by text; overlays 750/750 per locale, 0 stale, 0 orphans; indexable counts unchanged |
-| 12 | publication gate | todo | | | owner approval required to flip `status` |
+| 12 | publication gate | done (pending smoke result) | | | owner approval required to flip `status` |
 
 ## Sources
 

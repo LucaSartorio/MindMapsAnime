@@ -498,6 +498,7 @@ export const RACE_LABELS: Record<Race, LocalizedText> = {
   devil: { it: 'Diavolo', en: 'Devil', es: 'Demonio', ja: '悪魔', fr: 'Démon', de: 'Teufel' },
   elf: { it: 'Elfo', en: 'Elf', es: 'Elfo', ja: 'エルフ', fr: 'Elfe', de: 'Elf' },
   spirit: { it: 'Spirito', en: 'Spirit', es: 'Espíritu', ja: '精霊', fr: 'Esprit', de: 'Geist' },
+  homunculus: { it: 'Homunculus', en: 'Homunculus', es: 'Homúnculo', ja: 'ホムンクルス', fr: 'Homonculus', de: 'Homunkulus' },
   saiyan: {
     it: 'Saiyan',
     en: 'Saiyan',

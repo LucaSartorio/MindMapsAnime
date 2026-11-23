@@ -112,6 +112,7 @@ export type NinjaRank =
  */
 export type Race =
   | 'saiyan'
+  | 'homunculus'
   | 'saiyan_hybrid'
   | 'human'
   | 'namekian'

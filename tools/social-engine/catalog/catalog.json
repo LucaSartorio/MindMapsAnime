@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-23T06:12:51.316Z",
+  "generatedAt": "2026-11-23T19:40:45.446Z",
   "locales": [
     "en",
     "it"
@@ -51,6 +51,12 @@
           "videos": 87,
           "series": 8,
           "excluded": 71
+        },
+        "fullmetalalchemist": {
+          "characters": 13,
+          "videos": 15,
+          "series": 2,
+          "excluded": 39
         },
         "jujutsukaisen": {
           "characters": 19,
@@ -13437,6 +13443,604 @@
           "publication": []
         },
         {
+          "id": "character-journey:fullmetalalchemist:edward-elric:part-01",
+          "anime": "fullmetalalchemist",
+          "animeTitle": "Fullmetal Alchemist",
+          "subject": "edward-elric",
+          "series": {
+            "id": "character-journey:fullmetalalchemist:edward-elric",
+            "segment": "part-01",
+            "partNumber": 1,
+            "partCount": 2,
+            "previousId": null,
+            "nextId": "character-journey:fullmetalalchemist:edward-elric:part-02",
+            "arcIds": [
+              "arc-fma-separate-ways",
+              "arc-fma-sacred-star-of-milos",
+              "arc-fma-scars-of-ishval",
+              "arc-fma-city-of-heresy",
+              "arc-fma-mining-town",
+              "arc-fma-scar"
+            ],
+            "arcTitles": {
+              "en": [
+                "Separate Ways",
+                "The Sacred Star of Milos",
+                "Scars of Ishval",
+                "City of Heresy",
+                "Mining Town",
+                "Scar"
+              ],
+              "it": [
+                "Strade separate",
+                "La stella sacra di Milos",
+                "Le cicatrici di Ishval",
+                "La città dell'eresia",
+                "La città mineraria",
+                "Scar"
+              ]
+            },
+            "firstArc": "Separate Ways",
+            "lastArc": "Scar",
+            "segmentationVersion": 1,
+            "fingerprint": "c8a4b36f"
+          },
+          "displayName": {
+            "en": "Edward Elric",
+            "it": "Edward Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 30,
+          "facts": {
+            "importance": "main",
+            "places": 14,
+            "animatedStops": 6,
+            "arcs": 6,
+            "journeyArcs": 13
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:fullmetalalchemist:edward-elric:part-02",
+          "anime": "fullmetalalchemist",
+          "animeTitle": "Fullmetal Alchemist",
+          "subject": "edward-elric",
+          "series": {
+            "id": "character-journey:fullmetalalchemist:edward-elric",
+            "segment": "part-02",
+            "partNumber": 2,
+            "partCount": 2,
+            "previousId": "character-journey:fullmetalalchemist:edward-elric:part-01",
+            "nextId": null,
+            "arcIds": [
+              "arc-fma-search-for-the-philosophers-stone",
+              "arc-fma-dublith",
+              "arc-fma-envoy-from-the-east",
+              "arc-fma-hunt-for-the-homunculi",
+              "arc-fma-philosopher-from-the-west",
+              "arc-fma-briggs",
+              "arc-fma-promised-day"
+            ],
+            "arcTitles": {
+              "en": [
+                "Search for the Philosopher's Stone",
+                "Dublith",
+                "Envoy from the East",
+                "Hunt for the Homunculi",
+                "Philosopher from the West",
+                "Briggs",
+                "Promised Day"
+              ],
+              "it": [
+                "Alla ricerca della Pietra Filosofale",
+                "Dublith",
+                "L'emissario dell'Est",
+                "A caccia degli Homunculi",
+                "Il filosofo dell'Ovest",
+                "Briggs",
+                "Il Giorno Promesso"
+              ]
+            },
+            "firstArc": "Search for the Philosopher's Stone",
+            "lastArc": "Promised Day",
+            "segmentationVersion": 1,
+            "fingerprint": "f20b1905"
+          },
+          "displayName": {
+            "en": "Edward Elric",
+            "it": "Edward Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 36,
+          "facts": {
+            "importance": "main",
+            "places": 14,
+            "animatedStops": 8,
+            "arcs": 7,
+            "journeyArcs": 13
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:fullmetalalchemist:alphonse-elric:part-01",
+          "anime": "fullmetalalchemist",
+          "animeTitle": "Fullmetal Alchemist",
+          "subject": "alphonse-elric",
+          "series": {
+            "id": "character-journey:fullmetalalchemist:alphonse-elric",
+            "segment": "part-01",
+            "partNumber": 1,
+            "partCount": 2,
+            "previousId": null,
+            "nextId": "character-journey:fullmetalalchemist:alphonse-elric:part-02",
+            "arcIds": [
+              "arc-fma-city-of-heresy",
+              "arc-fma-mining-town",
+              "arc-fma-scar",
+              "arc-fma-search-for-the-philosophers-stone",
+              "arc-fma-dublith"
+            ],
+            "arcTitles": {
+              "en": [
+                "City of Heresy",
+                "Mining Town",
+                "Scar",
+                "Search for the Philosopher's Stone",
+                "Dublith"
+              ],
+              "it": [
+                "La città dell'eresia",
+                "La città mineraria",
+                "Scar",
+                "Alla ricerca della Pietra Filosofale",
+                "Dublith"
+              ]
+            },
+            "firstArc": "City of Heresy",
+            "lastArc": "Dublith",
+            "segmentationVersion": 1,
+            "fingerprint": "5995c94f"
+          },
+          "displayName": {
+            "en": "Alphonse Elric",
+            "it": "Alphonse Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 30,
+          "facts": {
+            "importance": "main",
+            "places": 12,
+            "animatedStops": 6,
+            "arcs": 5,
+            "journeyArcs": 11
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:fullmetalalchemist:alphonse-elric:part-02",
+          "anime": "fullmetalalchemist",
+          "animeTitle": "Fullmetal Alchemist",
+          "subject": "alphonse-elric",
+          "series": {
+            "id": "character-journey:fullmetalalchemist:alphonse-elric",
+            "segment": "part-02",
+            "partNumber": 2,
+            "partCount": 2,
+            "previousId": "character-journey:fullmetalalchemist:alphonse-elric:part-01",
+            "nextId": null,
+            "arcIds": [
+              "arc-fma-envoy-from-the-east",
+              "arc-fma-hunt-for-the-homunculi",
+              "arc-fma-philosopher-from-the-west",
+              "arc-fma-sacred-star-of-milos",
+              "arc-fma-briggs",
+              "arc-fma-promised-day"
+            ],
+            "arcTitles": {
+              "en": [
+                "Envoy from the East",
+                "Hunt for the Homunculi",
+                "Philosopher from the West",
+                "The Sacred Star of Milos",
+                "Briggs",
+                "Promised Day"
+              ],
+              "it": [
+                "L'emissario dell'Est",
+                "A caccia degli Homunculi",
+                "Il filosofo dell'Ovest",
+                "La stella sacra di Milos",
+                "Briggs",
+                "Il Giorno Promesso"
+              ]
+            },
+            "firstArc": "Envoy from the East",
+            "lastArc": "Promised Day",
+            "segmentationVersion": 1,
+            "fingerprint": "11cc89eb"
+          },
+          "displayName": {
+            "en": "Alphonse Elric",
+            "it": "Alphonse Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 30,
+          "facts": {
+            "importance": "main",
+            "places": 12,
+            "animatedStops": 6,
+            "arcs": 6,
+            "journeyArcs": 11
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:fullmetalalchemist:winry-rockbell",
+          "anime": "fullmetalalchemist",
+          "animeTitle": "Fullmetal Alchemist",
+          "subject": "winry-rockbell",
+          "series": null,
+          "displayName": {
+            "en": "Winry Rockbell",
+            "it": "Winry Rockbell"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:fullmetalalchemist:van-hohenheim",
+          "anime": "fullmetalalchemist",
+          "animeTitle": "Fullmetal Alchemist",
+          "subject": "van-hohenheim",
+          "series": null,
+          "displayName": {
+            "en": "Van Hohenheim",
+            "it": "Van Hohenheim"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:fullmetalalchemist:roy-mustang",
+          "anime": "fullmetalalchemist",
+          "animeTitle": "Fullmetal Alchemist",
+          "subject": "roy-mustang",
+          "series": null,
+          "displayName": {
+            "en": "Roy Mustang",
+            "it": "Roy Mustang"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:fullmetalalchemist:riza-hawkeye",
+          "anime": "fullmetalalchemist",
+          "animeTitle": "Fullmetal Alchemist",
+          "subject": "riza-hawkeye",
+          "series": null,
+          "displayName": {
+            "en": "Riza Hawkeye",
+            "it": "Riza Hawkeye"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:fullmetalalchemist:alex-louis-armstrong",
+          "anime": "fullmetalalchemist",
+          "animeTitle": "Fullmetal Alchemist",
+          "subject": "alex-louis-armstrong",
+          "series": null,
+          "displayName": {
+            "en": "Alex Louis Armstrong",
+            "it": "Alex Louis Armstrong"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 3,
+            "journeyArcs": 3
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:fullmetalalchemist:scar",
+          "anime": "fullmetalalchemist",
+          "animeTitle": "Fullmetal Alchemist",
+          "subject": "scar",
+          "series": null,
+          "displayName": {
+            "en": "Scar",
+            "it": "Scar"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 25,
+          "facts": {
+            "importance": "major",
+            "places": 4,
+            "animatedStops": 4,
+            "arcs": 4,
+            "journeyArcs": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:fullmetalalchemist:solf-j-kimblee",
+          "anime": "fullmetalalchemist",
+          "animeTitle": "Fullmetal Alchemist",
+          "subject": "solf-j-kimblee",
+          "series": null,
+          "displayName": {
+            "en": "Solf J. Kimblee",
+            "it": "Solf J. Kimblee"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:fullmetalalchemist:tim-marcoh",
+          "anime": "fullmetalalchemist",
+          "animeTitle": "Fullmetal Alchemist",
+          "subject": "tim-marcoh",
+          "series": null,
+          "displayName": {
+            "en": "Tim Marcoh",
+            "it": "Tim Marcoh"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "supporting",
+            "places": 3,
+            "animatedStops": 3,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:fullmetalalchemist:ling-yao",
+          "anime": "fullmetalalchemist",
+          "animeTitle": "Fullmetal Alchemist",
+          "subject": "ling-yao",
+          "series": null,
+          "displayName": {
+            "en": "Ling Yao",
+            "it": "Ling Yao"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:fullmetalalchemist:may-chang",
+          "anime": "fullmetalalchemist",
+          "animeTitle": "Fullmetal Alchemist",
+          "subject": "may-chang",
+          "series": null,
+          "displayName": {
+            "en": "May Chang",
+            "it": "May Chang"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "character-journey:fullmetalalchemist:envy",
+          "anime": "fullmetalalchemist",
+          "animeTitle": "Fullmetal Alchemist",
+          "subject": "envy",
+          "series": null,
+          "displayName": {
+            "en": "Envy",
+            "it": "Envy"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 24,
+          "facts": {
+            "importance": "major",
+            "places": 2,
+            "animatedStops": 2,
+            "arcs": 2,
+            "journeyArcs": 2
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
           "id": "character-journey:jujutsukaisen:yuji-itadori",
           "anime": "jujutsukaisen",
           "animeTitle": "Jujutsu Kaisen",
@@ -16126,6 +16730,12 @@
           "series": 0,
           "excluded": 19
         },
+        "fullmetalalchemist": {
+          "characters": 3,
+          "videos": 3,
+          "series": 0,
+          "excluded": 23
+        },
         "jujutsukaisen": {
           "characters": 0,
           "videos": 0,
@@ -18632,6 +19242,90 @@
           ]
         },
         {
+          "id": "guess-character:fullmetalalchemist:edward-elric",
+          "anime": "fullmetalalchemist",
+          "animeTitle": "Fullmetal Alchemist",
+          "subject": "edward-elric",
+          "series": null,
+          "displayName": {
+            "en": "Edward Elric",
+            "it": "Edward Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 26,
+          "facts": {
+            "importance": "main",
+            "places": 10,
+            "clues": 6
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "guess-character:fullmetalalchemist:alphonse-elric",
+          "anime": "fullmetalalchemist",
+          "animeTitle": "Fullmetal Alchemist",
+          "subject": "alphonse-elric",
+          "series": null,
+          "displayName": {
+            "en": "Alphonse Elric",
+            "it": "Alphonse Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 26,
+          "facts": {
+            "importance": "main",
+            "places": 9,
+            "clues": 6
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
+          "id": "guess-character:fullmetalalchemist:scar",
+          "anime": "fullmetalalchemist",
+          "animeTitle": "Fullmetal Alchemist",
+          "subject": "scar",
+          "series": null,
+          "displayName": {
+            "en": "Scar",
+            "it": "Scar"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 21,
+          "facts": {
+            "importance": "major",
+            "places": 4,
+            "clues": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": []
+        },
+        {
           "id": "guess-character:blackclover:asta",
           "anime": "blackclover",
           "animeTitle": "Black Clover",
@@ -18912,36 +19606,42 @@
       },
       "summary": {
         "naruto": {
+          "characters": 63,
+          "videos": 63,
+          "series": 0,
+          "excluded": 0
+        },
+        "hunterxhunter": {
           "characters": 54,
           "videos": 54,
           "series": 0,
           "excluded": 0
         },
-        "hunterxhunter": {
+        "onepiece": {
           "characters": 45,
           "videos": 45,
           "series": 0,
           "excluded": 0
         },
-        "onepiece": {
+        "dragonball": {
           "characters": 36,
           "videos": 36,
           "series": 0,
           "excluded": 0
         },
-        "dragonball": {
+        "attackontitan": {
           "characters": 27,
           "videos": 27,
           "series": 0,
           "excluded": 0
         },
-        "attackontitan": {
+        "bleach": {
           "characters": 18,
           "videos": 18,
           "series": 0,
           "excluded": 0
         },
-        "bleach": {
+        "fullmetalalchemist": {
           "characters": 9,
           "videos": 9,
           "series": 0,
@@ -19545,6 +20245,120 @@
             "opponent": {
               "anime": "bleach",
               "subject": "yasutora-chad-sado"
+            }
+          }
+        },
+        {
+          "id": "character-versus:naruto:naruto-uzumaki-vs-fullmetalalchemist-edward-elric",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "naruto-uzumaki-vs-fullmetalalchemist-edward-elric",
+          "series": null,
+          "displayName": {
+            "en": "Naruto Uzumaki vs Edward Elric",
+            "it": "Naruto Uzumaki vs Edward Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "edward-elric",
+            "placesA": 10,
+            "placesB": 10
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "naruto-uzumaki",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "edward-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:naruto:naruto-uzumaki-vs-fullmetalalchemist-alphonse-elric",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "naruto-uzumaki-vs-fullmetalalchemist-alphonse-elric",
+          "series": null,
+          "displayName": {
+            "en": "Naruto Uzumaki vs Alphonse Elric",
+            "it": "Naruto Uzumaki vs Alphonse Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "alphonse-elric",
+            "placesA": 10,
+            "placesB": 9
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "naruto-uzumaki",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "alphonse-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:naruto:naruto-uzumaki-vs-fullmetalalchemist-scar",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "naruto-uzumaki-vs-fullmetalalchemist-scar",
+          "series": null,
+          "displayName": {
+            "en": "Naruto Uzumaki vs Scar",
+            "it": "Naruto Uzumaki vs Scar"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "major",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "scar",
+            "placesA": 10,
+            "placesB": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "naruto-uzumaki",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "scar"
             }
           }
         },
@@ -20263,6 +21077,120 @@
             "opponent": {
               "anime": "bleach",
               "subject": "yasutora-chad-sado"
+            }
+          }
+        },
+        {
+          "id": "character-versus:naruto:obito-uchiha-vs-fullmetalalchemist-edward-elric",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "obito-uchiha-vs-fullmetalalchemist-edward-elric",
+          "series": null,
+          "displayName": {
+            "en": "Obito Uchiha vs Edward Elric",
+            "it": "Obito Uchiha vs Edward Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "edward-elric",
+            "placesA": 9,
+            "placesB": 10
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "obito-uchiha",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "edward-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:naruto:obito-uchiha-vs-fullmetalalchemist-alphonse-elric",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "obito-uchiha-vs-fullmetalalchemist-alphonse-elric",
+          "series": null,
+          "displayName": {
+            "en": "Obito Uchiha vs Alphonse Elric",
+            "it": "Obito Uchiha vs Alphonse Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "alphonse-elric",
+            "placesA": 9,
+            "placesB": 9
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "obito-uchiha",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "alphonse-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:naruto:obito-uchiha-vs-fullmetalalchemist-scar",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "obito-uchiha-vs-fullmetalalchemist-scar",
+          "series": null,
+          "displayName": {
+            "en": "Obito Uchiha vs Scar",
+            "it": "Obito Uchiha vs Scar"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "major",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "scar",
+            "placesA": 9,
+            "placesB": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "obito-uchiha",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "scar"
             }
           }
         },
@@ -21002,6 +21930,120 @@
           }
         },
         {
+          "id": "character-versus:naruto:sasuke-uchiha-vs-fullmetalalchemist-edward-elric",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "sasuke-uchiha-vs-fullmetalalchemist-edward-elric",
+          "series": null,
+          "displayName": {
+            "en": "Sasuke Uchiha vs Edward Elric",
+            "it": "Sasuke Uchiha vs Edward Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "edward-elric",
+            "placesA": 9,
+            "placesB": 10
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "sasuke-uchiha",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "edward-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:naruto:sasuke-uchiha-vs-fullmetalalchemist-alphonse-elric",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "sasuke-uchiha-vs-fullmetalalchemist-alphonse-elric",
+          "series": null,
+          "displayName": {
+            "en": "Sasuke Uchiha vs Alphonse Elric",
+            "it": "Sasuke Uchiha vs Alphonse Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "alphonse-elric",
+            "placesA": 9,
+            "placesB": 9
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "sasuke-uchiha",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "alphonse-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:naruto:sasuke-uchiha-vs-fullmetalalchemist-scar",
+          "anime": "naruto",
+          "animeTitle": "Naruto",
+          "subject": "sasuke-uchiha-vs-fullmetalalchemist-scar",
+          "series": null,
+          "displayName": {
+            "en": "Sasuke Uchiha vs Scar",
+            "it": "Sasuke Uchiha vs Scar"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "major",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "scar",
+            "placesA": 9,
+            "placesB": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "sasuke-uchiha",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "scar"
+            }
+          }
+        },
+        {
           "id": "character-versus:naruto:sasuke-uchiha-vs-blackclover-asta",
           "anime": "naruto",
           "animeTitle": "Naruto",
@@ -21568,6 +22610,120 @@
             "opponent": {
               "anime": "bleach",
               "subject": "yasutora-chad-sado"
+            }
+          }
+        },
+        {
+          "id": "character-versus:hunterxhunter:gon-freecss-vs-fullmetalalchemist-edward-elric",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "gon-freecss-vs-fullmetalalchemist-edward-elric",
+          "series": null,
+          "displayName": {
+            "en": "Gon Freecss vs Edward Elric",
+            "it": "Gon Freecss vs Edward Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "edward-elric",
+            "placesA": 9,
+            "placesB": 10
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "gon-freecss",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "edward-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:hunterxhunter:gon-freecss-vs-fullmetalalchemist-alphonse-elric",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "gon-freecss-vs-fullmetalalchemist-alphonse-elric",
+          "series": null,
+          "displayName": {
+            "en": "Gon Freecss vs Alphonse Elric",
+            "it": "Gon Freecss vs Alphonse Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "alphonse-elric",
+            "placesA": 9,
+            "placesB": 9
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "gon-freecss",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "alphonse-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:hunterxhunter:gon-freecss-vs-fullmetalalchemist-scar",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "gon-freecss-vs-fullmetalalchemist-scar",
+          "series": null,
+          "displayName": {
+            "en": "Gon Freecss vs Scar",
+            "it": "Gon Freecss vs Scar"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "major",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "scar",
+            "placesA": 9,
+            "placesB": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "gon-freecss",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "scar"
             }
           }
         },
@@ -22159,6 +23315,120 @@
           }
         },
         {
+          "id": "character-versus:hunterxhunter:killua-zoldyck-vs-fullmetalalchemist-edward-elric",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "killua-zoldyck-vs-fullmetalalchemist-edward-elric",
+          "series": null,
+          "displayName": {
+            "en": "Killua Zoldyck vs Edward Elric",
+            "it": "Killua Zoldyck vs Edward Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "edward-elric",
+            "placesA": 8,
+            "placesB": 10
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "killua-zoldyck",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "edward-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:hunterxhunter:killua-zoldyck-vs-fullmetalalchemist-alphonse-elric",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "killua-zoldyck-vs-fullmetalalchemist-alphonse-elric",
+          "series": null,
+          "displayName": {
+            "en": "Killua Zoldyck vs Alphonse Elric",
+            "it": "Killua Zoldyck vs Alphonse Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "alphonse-elric",
+            "placesA": 8,
+            "placesB": 9
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "killua-zoldyck",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "alphonse-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:hunterxhunter:killua-zoldyck-vs-fullmetalalchemist-scar",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "killua-zoldyck-vs-fullmetalalchemist-scar",
+          "series": null,
+          "displayName": {
+            "en": "Killua Zoldyck vs Scar",
+            "it": "Killua Zoldyck vs Scar"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "major",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "scar",
+            "placesA": 8,
+            "placesB": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "killua-zoldyck",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "scar"
+            }
+          }
+        },
+        {
           "id": "character-versus:hunterxhunter:killua-zoldyck-vs-blackclover-asta",
           "anime": "hunterxhunter",
           "animeTitle": "Hunter x Hunter",
@@ -22746,6 +24016,120 @@
           }
         },
         {
+          "id": "character-versus:hunterxhunter:kurapika-vs-fullmetalalchemist-edward-elric",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "kurapika-vs-fullmetalalchemist-edward-elric",
+          "series": null,
+          "displayName": {
+            "en": "Kurapika vs Edward Elric",
+            "it": "Kurapika vs Edward Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "edward-elric",
+            "placesA": 4,
+            "placesB": 10
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "kurapika",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "edward-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:hunterxhunter:kurapika-vs-fullmetalalchemist-alphonse-elric",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "kurapika-vs-fullmetalalchemist-alphonse-elric",
+          "series": null,
+          "displayName": {
+            "en": "Kurapika vs Alphonse Elric",
+            "it": "Kurapika vs Alphonse Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "alphonse-elric",
+            "placesA": 4,
+            "placesB": 9
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "kurapika",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "alphonse-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:hunterxhunter:kurapika-vs-fullmetalalchemist-scar",
+          "anime": "hunterxhunter",
+          "animeTitle": "Hunter x Hunter",
+          "subject": "kurapika-vs-fullmetalalchemist-scar",
+          "series": null,
+          "displayName": {
+            "en": "Kurapika vs Scar",
+            "it": "Kurapika vs Scar"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "major",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "scar",
+            "placesA": 4,
+            "placesB": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "kurapika",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "scar"
+            }
+          }
+        },
+        {
           "id": "character-versus:hunterxhunter:kurapika-vs-blackclover-asta",
           "anime": "hunterxhunter",
           "animeTitle": "Hunter x Hunter",
@@ -23198,6 +24582,120 @@
             "opponent": {
               "anime": "bleach",
               "subject": "yasutora-chad-sado"
+            }
+          }
+        },
+        {
+          "id": "character-versus:onepiece:monkey-d-luffy-vs-fullmetalalchemist-edward-elric",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "monkey-d-luffy-vs-fullmetalalchemist-edward-elric",
+          "series": null,
+          "displayName": {
+            "en": "Monkey D. Luffy vs Edward Elric",
+            "it": "Monkey D. Rufy vs Edward Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "edward-elric",
+            "placesA": 31,
+            "placesB": 10
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "monkey-d-luffy",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "edward-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:onepiece:monkey-d-luffy-vs-fullmetalalchemist-alphonse-elric",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "monkey-d-luffy-vs-fullmetalalchemist-alphonse-elric",
+          "series": null,
+          "displayName": {
+            "en": "Monkey D. Luffy vs Alphonse Elric",
+            "it": "Monkey D. Rufy vs Alphonse Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "alphonse-elric",
+            "placesA": 31,
+            "placesB": 9
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "monkey-d-luffy",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "alphonse-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:onepiece:monkey-d-luffy-vs-fullmetalalchemist-scar",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "monkey-d-luffy-vs-fullmetalalchemist-scar",
+          "series": null,
+          "displayName": {
+            "en": "Monkey D. Luffy vs Scar",
+            "it": "Monkey D. Rufy vs Scar"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "major",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "scar",
+            "placesA": 31,
+            "placesB": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "monkey-d-luffy",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "scar"
             }
           }
         },
@@ -23658,6 +25156,120 @@
           }
         },
         {
+          "id": "character-versus:onepiece:roronoa-zoro-vs-fullmetalalchemist-edward-elric",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "roronoa-zoro-vs-fullmetalalchemist-edward-elric",
+          "series": null,
+          "displayName": {
+            "en": "Roronoa Zoro vs Edward Elric",
+            "it": "Roronoa Zoro vs Edward Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "edward-elric",
+            "placesA": 20,
+            "placesB": 10
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "roronoa-zoro",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "edward-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:onepiece:roronoa-zoro-vs-fullmetalalchemist-alphonse-elric",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "roronoa-zoro-vs-fullmetalalchemist-alphonse-elric",
+          "series": null,
+          "displayName": {
+            "en": "Roronoa Zoro vs Alphonse Elric",
+            "it": "Roronoa Zoro vs Alphonse Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "alphonse-elric",
+            "placesA": 20,
+            "placesB": 9
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "roronoa-zoro",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "alphonse-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:onepiece:roronoa-zoro-vs-fullmetalalchemist-scar",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "roronoa-zoro-vs-fullmetalalchemist-scar",
+          "series": null,
+          "displayName": {
+            "en": "Roronoa Zoro vs Scar",
+            "it": "Roronoa Zoro vs Scar"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "major",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "scar",
+            "placesA": 20,
+            "placesB": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "roronoa-zoro",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "scar"
+            }
+          }
+        },
+        {
           "id": "character-versus:onepiece:roronoa-zoro-vs-blackclover-asta",
           "anime": "onepiece",
           "animeTitle": "One Piece",
@@ -24114,6 +25726,120 @@
           }
         },
         {
+          "id": "character-versus:onepiece:sanji-vs-fullmetalalchemist-edward-elric",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "sanji-vs-fullmetalalchemist-edward-elric",
+          "series": null,
+          "displayName": {
+            "en": "Sanji vs Edward Elric",
+            "it": "Sanji vs Edward Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "edward-elric",
+            "placesA": 18,
+            "placesB": 10
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "sanji",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "edward-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:onepiece:sanji-vs-fullmetalalchemist-alphonse-elric",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "sanji-vs-fullmetalalchemist-alphonse-elric",
+          "series": null,
+          "displayName": {
+            "en": "Sanji vs Alphonse Elric",
+            "it": "Sanji vs Alphonse Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "alphonse-elric",
+            "placesA": 18,
+            "placesB": 9
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "sanji",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "alphonse-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:onepiece:sanji-vs-fullmetalalchemist-scar",
+          "anime": "onepiece",
+          "animeTitle": "One Piece",
+          "subject": "sanji-vs-fullmetalalchemist-scar",
+          "series": null,
+          "displayName": {
+            "en": "Sanji vs Scar",
+            "it": "Sanji vs Scar"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "major",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "scar",
+            "placesA": 18,
+            "placesB": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "sanji",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "scar"
+            }
+          }
+        },
+        {
           "id": "character-versus:onepiece:sanji-vs-blackclover-asta",
           "anime": "onepiece",
           "animeTitle": "One Piece",
@@ -24469,6 +26195,120 @@
             "opponent": {
               "anime": "bleach",
               "subject": "yasutora-chad-sado"
+            }
+          }
+        },
+        {
+          "id": "character-versus:dragonball:goku-vs-fullmetalalchemist-edward-elric",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "goku-vs-fullmetalalchemist-edward-elric",
+          "series": null,
+          "displayName": {
+            "en": "Goku vs Edward Elric",
+            "it": "Son Goku vs Edward Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "edward-elric",
+            "placesA": 17,
+            "placesB": 10
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "goku",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "edward-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:dragonball:goku-vs-fullmetalalchemist-alphonse-elric",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "goku-vs-fullmetalalchemist-alphonse-elric",
+          "series": null,
+          "displayName": {
+            "en": "Goku vs Alphonse Elric",
+            "it": "Son Goku vs Alphonse Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "alphonse-elric",
+            "placesA": 17,
+            "placesB": 9
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "goku",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "alphonse-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:dragonball:goku-vs-fullmetalalchemist-scar",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "goku-vs-fullmetalalchemist-scar",
+          "series": null,
+          "displayName": {
+            "en": "Goku vs Scar",
+            "it": "Son Goku vs Scar"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "major",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "scar",
+            "placesA": 17,
+            "placesB": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "goku",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "scar"
             }
           }
         },
@@ -24832,6 +26672,120 @@
           }
         },
         {
+          "id": "character-versus:dragonball:piccolo-vs-fullmetalalchemist-edward-elric",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "piccolo-vs-fullmetalalchemist-edward-elric",
+          "series": null,
+          "displayName": {
+            "en": "Piccolo vs Edward Elric",
+            "it": "Piccolo vs Edward Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "edward-elric",
+            "placesA": 11,
+            "placesB": 10
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "piccolo",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "edward-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:dragonball:piccolo-vs-fullmetalalchemist-alphonse-elric",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "piccolo-vs-fullmetalalchemist-alphonse-elric",
+          "series": null,
+          "displayName": {
+            "en": "Piccolo vs Alphonse Elric",
+            "it": "Piccolo vs Alphonse Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "alphonse-elric",
+            "placesA": 11,
+            "placesB": 9
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "piccolo",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "alphonse-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:dragonball:piccolo-vs-fullmetalalchemist-scar",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "piccolo-vs-fullmetalalchemist-scar",
+          "series": null,
+          "displayName": {
+            "en": "Piccolo vs Scar",
+            "it": "Piccolo vs Scar"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "major",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "scar",
+            "placesA": 11,
+            "placesB": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "piccolo",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "scar"
+            }
+          }
+        },
+        {
           "id": "character-versus:dragonball:piccolo-vs-blackclover-asta",
           "anime": "dragonball",
           "animeTitle": "Dragon Ball",
@@ -25174,6 +27128,120 @@
           }
         },
         {
+          "id": "character-versus:dragonball:vegeta-vs-fullmetalalchemist-edward-elric",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "vegeta-vs-fullmetalalchemist-edward-elric",
+          "series": null,
+          "displayName": {
+            "en": "Vegeta vs Edward Elric",
+            "it": "Vegeta vs Edward Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "edward-elric",
+            "placesA": 10,
+            "placesB": 10
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "vegeta",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "edward-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:dragonball:vegeta-vs-fullmetalalchemist-alphonse-elric",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "vegeta-vs-fullmetalalchemist-alphonse-elric",
+          "series": null,
+          "displayName": {
+            "en": "Vegeta vs Alphonse Elric",
+            "it": "Vegeta vs Alphonse Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "alphonse-elric",
+            "placesA": 10,
+            "placesB": 9
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "vegeta",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "alphonse-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:dragonball:vegeta-vs-fullmetalalchemist-scar",
+          "anime": "dragonball",
+          "animeTitle": "Dragon Ball",
+          "subject": "vegeta-vs-fullmetalalchemist-scar",
+          "series": null,
+          "displayName": {
+            "en": "Vegeta vs Scar",
+            "it": "Vegeta vs Scar"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "major",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "scar",
+            "placesA": 10,
+            "placesB": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "vegeta",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "scar"
+            }
+          }
+        },
+        {
           "id": "character-versus:dragonball:vegeta-vs-blackclover-asta",
           "anime": "dragonball",
           "animeTitle": "Dragon Ball",
@@ -25402,6 +27470,120 @@
           }
         },
         {
+          "id": "character-versus:attackontitan:armin-arlert-vs-fullmetalalchemist-edward-elric",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "armin-arlert-vs-fullmetalalchemist-edward-elric",
+          "series": null,
+          "displayName": {
+            "en": "Armin Arlert vs Edward Elric",
+            "it": "Armin Arlert vs Edward Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "edward-elric",
+            "placesA": 5,
+            "placesB": 10
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "armin-arlert",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "edward-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:attackontitan:armin-arlert-vs-fullmetalalchemist-alphonse-elric",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "armin-arlert-vs-fullmetalalchemist-alphonse-elric",
+          "series": null,
+          "displayName": {
+            "en": "Armin Arlert vs Alphonse Elric",
+            "it": "Armin Arlert vs Alphonse Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "alphonse-elric",
+            "placesA": 5,
+            "placesB": 9
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "armin-arlert",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "alphonse-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:attackontitan:armin-arlert-vs-fullmetalalchemist-scar",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "armin-arlert-vs-fullmetalalchemist-scar",
+          "series": null,
+          "displayName": {
+            "en": "Armin Arlert vs Scar",
+            "it": "Armin Arlert vs Scar"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "major",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "scar",
+            "placesA": 5,
+            "placesB": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "armin-arlert",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "scar"
+            }
+          }
+        },
+        {
           "id": "character-versus:attackontitan:armin-arlert-vs-blackclover-asta",
           "anime": "attackontitan",
           "animeTitle": "Attack on Titan",
@@ -25626,6 +27808,120 @@
             "opponent": {
               "anime": "bleach",
               "subject": "yasutora-chad-sado"
+            }
+          }
+        },
+        {
+          "id": "character-versus:attackontitan:mikasa-ackerman-vs-fullmetalalchemist-edward-elric",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "mikasa-ackerman-vs-fullmetalalchemist-edward-elric",
+          "series": null,
+          "displayName": {
+            "en": "Mikasa Ackerman vs Edward Elric",
+            "it": "Mikasa Ackerman vs Edward Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "edward-elric",
+            "placesA": 5,
+            "placesB": 10
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "mikasa-ackerman",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "edward-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:attackontitan:mikasa-ackerman-vs-fullmetalalchemist-alphonse-elric",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "mikasa-ackerman-vs-fullmetalalchemist-alphonse-elric",
+          "series": null,
+          "displayName": {
+            "en": "Mikasa Ackerman vs Alphonse Elric",
+            "it": "Mikasa Ackerman vs Alphonse Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "alphonse-elric",
+            "placesA": 5,
+            "placesB": 9
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "mikasa-ackerman",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "alphonse-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:attackontitan:mikasa-ackerman-vs-fullmetalalchemist-scar",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "mikasa-ackerman-vs-fullmetalalchemist-scar",
+          "series": null,
+          "displayName": {
+            "en": "Mikasa Ackerman vs Scar",
+            "it": "Mikasa Ackerman vs Scar"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "major",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "scar",
+            "placesA": 5,
+            "placesB": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "mikasa-ackerman",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "scar"
             }
           }
         },
@@ -25877,6 +28173,120 @@
           }
         },
         {
+          "id": "character-versus:attackontitan:reiner-braun-vs-fullmetalalchemist-edward-elric",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "reiner-braun-vs-fullmetalalchemist-edward-elric",
+          "series": null,
+          "displayName": {
+            "en": "Reiner Braun vs Edward Elric",
+            "it": "Reiner Braun vs Edward Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "edward-elric",
+            "placesA": 5,
+            "placesB": 10
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "reiner-braun",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "edward-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:attackontitan:reiner-braun-vs-fullmetalalchemist-alphonse-elric",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "reiner-braun-vs-fullmetalalchemist-alphonse-elric",
+          "series": null,
+          "displayName": {
+            "en": "Reiner Braun vs Alphonse Elric",
+            "it": "Reiner Braun vs Alphonse Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "alphonse-elric",
+            "placesA": 5,
+            "placesB": 9
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "reiner-braun",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "alphonse-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:attackontitan:reiner-braun-vs-fullmetalalchemist-scar",
+          "anime": "attackontitan",
+          "animeTitle": "Attack on Titan",
+          "subject": "reiner-braun-vs-fullmetalalchemist-scar",
+          "series": null,
+          "displayName": {
+            "en": "Reiner Braun vs Scar",
+            "it": "Reiner Braun vs Scar"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "major",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "scar",
+            "placesA": 5,
+            "placesB": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "reiner-braun",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "scar"
+            }
+          }
+        },
+        {
           "id": "character-versus:attackontitan:reiner-braun-vs-blackclover-asta",
           "anime": "attackontitan",
           "animeTitle": "Attack on Titan",
@@ -26004,6 +28414,120 @@
             "opponent": {
               "anime": "blackclover",
               "subject": "yami-sukehiro"
+            }
+          }
+        },
+        {
+          "id": "character-versus:bleach:rukia-kuchiki-vs-fullmetalalchemist-edward-elric",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "rukia-kuchiki-vs-fullmetalalchemist-edward-elric",
+          "series": null,
+          "displayName": {
+            "en": "Rukia Kuchiki vs Edward Elric",
+            "it": "Rukia Kuchiki vs Edward Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "edward-elric",
+            "placesA": 11,
+            "placesB": 10
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "rukia-kuchiki",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "edward-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:bleach:rukia-kuchiki-vs-fullmetalalchemist-alphonse-elric",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "rukia-kuchiki-vs-fullmetalalchemist-alphonse-elric",
+          "series": null,
+          "displayName": {
+            "en": "Rukia Kuchiki vs Alphonse Elric",
+            "it": "Rukia Kuchiki vs Alphonse Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "alphonse-elric",
+            "placesA": 11,
+            "placesB": 9
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "rukia-kuchiki",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "alphonse-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:bleach:rukia-kuchiki-vs-fullmetalalchemist-scar",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "rukia-kuchiki-vs-fullmetalalchemist-scar",
+          "series": null,
+          "displayName": {
+            "en": "Rukia Kuchiki vs Scar",
+            "it": "Rukia Kuchiki vs Scar"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "major",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "scar",
+            "placesA": 11,
+            "placesB": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "rukia-kuchiki",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "scar"
             }
           }
         },
@@ -26139,6 +28663,120 @@
           }
         },
         {
+          "id": "character-versus:bleach:ichigo-kurosaki-vs-fullmetalalchemist-edward-elric",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "ichigo-kurosaki-vs-fullmetalalchemist-edward-elric",
+          "series": null,
+          "displayName": {
+            "en": "Ichigo Kurosaki vs Edward Elric",
+            "it": "Ichigo Kurosaki vs Edward Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "edward-elric",
+            "placesA": 10,
+            "placesB": 10
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "ichigo-kurosaki",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "edward-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:bleach:ichigo-kurosaki-vs-fullmetalalchemist-alphonse-elric",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "ichigo-kurosaki-vs-fullmetalalchemist-alphonse-elric",
+          "series": null,
+          "displayName": {
+            "en": "Ichigo Kurosaki vs Alphonse Elric",
+            "it": "Ichigo Kurosaki vs Alphonse Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "alphonse-elric",
+            "placesA": 10,
+            "placesB": 9
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "ichigo-kurosaki",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "alphonse-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:bleach:ichigo-kurosaki-vs-fullmetalalchemist-scar",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "ichigo-kurosaki-vs-fullmetalalchemist-scar",
+          "series": null,
+          "displayName": {
+            "en": "Ichigo Kurosaki vs Scar",
+            "it": "Ichigo Kurosaki vs Scar"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "major",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "scar",
+            "placesA": 10,
+            "placesB": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "ichigo-kurosaki",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "scar"
+            }
+          }
+        },
+        {
           "id": "character-versus:bleach:ichigo-kurosaki-vs-blackclover-asta",
           "anime": "bleach",
           "animeTitle": "Bleach",
@@ -26249,6 +28887,120 @@
             "opponent": {
               "anime": "blackclover",
               "subject": "yami-sukehiro"
+            }
+          }
+        },
+        {
+          "id": "character-versus:bleach:yasutora-chad-sado-vs-fullmetalalchemist-edward-elric",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "yasutora-chad-sado-vs-fullmetalalchemist-edward-elric",
+          "series": null,
+          "displayName": {
+            "en": "Yasutora \"Chad\" Sado vs Edward Elric",
+            "it": "Yasutora «Chad» Sado vs Edward Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "edward-elric",
+            "placesA": 8,
+            "placesB": 10
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "yasutora-chad-sado",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "edward-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:bleach:yasutora-chad-sado-vs-fullmetalalchemist-alphonse-elric",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "yasutora-chad-sado-vs-fullmetalalchemist-alphonse-elric",
+          "series": null,
+          "displayName": {
+            "en": "Yasutora \"Chad\" Sado vs Alphonse Elric",
+            "it": "Yasutora «Chad» Sado vs Alphonse Elric"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "alphonse-elric",
+            "placesA": 8,
+            "placesB": 9
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "yasutora-chad-sado",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "alphonse-elric"
+            }
+          }
+        },
+        {
+          "id": "character-versus:bleach:yasutora-chad-sado-vs-fullmetalalchemist-scar",
+          "anime": "bleach",
+          "animeTitle": "Bleach",
+          "subject": "yasutora-chad-sado-vs-fullmetalalchemist-scar",
+          "series": null,
+          "displayName": {
+            "en": "Yasutora \"Chad\" Sado vs Scar",
+            "it": "Yasutora «Chad» Sado vs Scar"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "major",
+            "opponentAnime": "fullmetalalchemist",
+            "opponentSubject": "scar",
+            "placesA": 8,
+            "placesB": 4
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "yasutora-chad-sado",
+            "opponent": {
+              "anime": "fullmetalalchemist",
+              "subject": "scar"
             }
           }
         },
@@ -26377,6 +29129,348 @@
           "publication": [],
           "request": {
             "subject": "yasutora-chad-sado",
+            "opponent": {
+              "anime": "blackclover",
+              "subject": "yami-sukehiro"
+            }
+          }
+        },
+        {
+          "id": "character-versus:fullmetalalchemist:edward-elric-vs-blackclover-asta",
+          "anime": "fullmetalalchemist",
+          "animeTitle": "Fullmetal Alchemist",
+          "subject": "edward-elric-vs-blackclover-asta",
+          "series": null,
+          "displayName": {
+            "en": "Edward Elric vs Asta",
+            "it": "Edward Elric vs Asta"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "blackclover",
+            "opponentSubject": "asta",
+            "placesA": 10,
+            "placesB": 13
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "edward-elric",
+            "opponent": {
+              "anime": "blackclover",
+              "subject": "asta"
+            }
+          }
+        },
+        {
+          "id": "character-versus:fullmetalalchemist:edward-elric-vs-blackclover-noelle-silva",
+          "anime": "fullmetalalchemist",
+          "animeTitle": "Fullmetal Alchemist",
+          "subject": "edward-elric-vs-blackclover-noelle-silva",
+          "series": null,
+          "displayName": {
+            "en": "Edward Elric vs Noelle Silva",
+            "it": "Edward Elric vs Noelle Silva"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "blackclover",
+            "opponentSubject": "noelle-silva",
+            "placesA": 10,
+            "placesB": 9
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "edward-elric",
+            "opponent": {
+              "anime": "blackclover",
+              "subject": "noelle-silva"
+            }
+          }
+        },
+        {
+          "id": "character-versus:fullmetalalchemist:edward-elric-vs-blackclover-yami-sukehiro",
+          "anime": "fullmetalalchemist",
+          "animeTitle": "Fullmetal Alchemist",
+          "subject": "edward-elric-vs-blackclover-yami-sukehiro",
+          "series": null,
+          "displayName": {
+            "en": "Edward Elric vs Yami Sukehiro",
+            "it": "Edward Elric vs Yami Sukehiro"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "blackclover",
+            "opponentSubject": "yami-sukehiro",
+            "placesA": 10,
+            "placesB": 8
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "edward-elric",
+            "opponent": {
+              "anime": "blackclover",
+              "subject": "yami-sukehiro"
+            }
+          }
+        },
+        {
+          "id": "character-versus:fullmetalalchemist:alphonse-elric-vs-blackclover-asta",
+          "anime": "fullmetalalchemist",
+          "animeTitle": "Fullmetal Alchemist",
+          "subject": "alphonse-elric-vs-blackclover-asta",
+          "series": null,
+          "displayName": {
+            "en": "Alphonse Elric vs Asta",
+            "it": "Alphonse Elric vs Asta"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "blackclover",
+            "opponentSubject": "asta",
+            "placesA": 9,
+            "placesB": 13
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "alphonse-elric",
+            "opponent": {
+              "anime": "blackclover",
+              "subject": "asta"
+            }
+          }
+        },
+        {
+          "id": "character-versus:fullmetalalchemist:alphonse-elric-vs-blackclover-noelle-silva",
+          "anime": "fullmetalalchemist",
+          "animeTitle": "Fullmetal Alchemist",
+          "subject": "alphonse-elric-vs-blackclover-noelle-silva",
+          "series": null,
+          "displayName": {
+            "en": "Alphonse Elric vs Noelle Silva",
+            "it": "Alphonse Elric vs Noelle Silva"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "blackclover",
+            "opponentSubject": "noelle-silva",
+            "placesA": 9,
+            "placesB": 9
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "alphonse-elric",
+            "opponent": {
+              "anime": "blackclover",
+              "subject": "noelle-silva"
+            }
+          }
+        },
+        {
+          "id": "character-versus:fullmetalalchemist:alphonse-elric-vs-blackclover-yami-sukehiro",
+          "anime": "fullmetalalchemist",
+          "animeTitle": "Fullmetal Alchemist",
+          "subject": "alphonse-elric-vs-blackclover-yami-sukehiro",
+          "series": null,
+          "displayName": {
+            "en": "Alphonse Elric vs Yami Sukehiro",
+            "it": "Alphonse Elric vs Yami Sukehiro"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "main",
+            "opponentImportance": "main",
+            "opponentAnime": "blackclover",
+            "opponentSubject": "yami-sukehiro",
+            "placesA": 9,
+            "placesB": 8
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "alphonse-elric",
+            "opponent": {
+              "anime": "blackclover",
+              "subject": "yami-sukehiro"
+            }
+          }
+        },
+        {
+          "id": "character-versus:fullmetalalchemist:scar-vs-blackclover-asta",
+          "anime": "fullmetalalchemist",
+          "animeTitle": "Fullmetal Alchemist",
+          "subject": "scar-vs-blackclover-asta",
+          "series": null,
+          "displayName": {
+            "en": "Scar vs Asta",
+            "it": "Scar vs Asta"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "major",
+            "opponentImportance": "main",
+            "opponentAnime": "blackclover",
+            "opponentSubject": "asta",
+            "placesA": 4,
+            "placesB": 13
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "scar",
+            "opponent": {
+              "anime": "blackclover",
+              "subject": "asta"
+            }
+          }
+        },
+        {
+          "id": "character-versus:fullmetalalchemist:scar-vs-blackclover-noelle-silva",
+          "anime": "fullmetalalchemist",
+          "animeTitle": "Fullmetal Alchemist",
+          "subject": "scar-vs-blackclover-noelle-silva",
+          "series": null,
+          "displayName": {
+            "en": "Scar vs Noelle Silva",
+            "it": "Scar vs Noelle Silva"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "major",
+            "opponentImportance": "main",
+            "opponentAnime": "blackclover",
+            "opponentSubject": "noelle-silva",
+            "placesA": 4,
+            "placesB": 9
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "scar",
+            "opponent": {
+              "anime": "blackclover",
+              "subject": "noelle-silva"
+            }
+          }
+        },
+        {
+          "id": "character-versus:fullmetalalchemist:scar-vs-blackclover-yami-sukehiro",
+          "anime": "fullmetalalchemist",
+          "animeTitle": "Fullmetal Alchemist",
+          "subject": "scar-vs-blackclover-yami-sukehiro",
+          "series": null,
+          "displayName": {
+            "en": "Scar vs Yami Sukehiro",
+            "it": "Scar vs Yami Sukehiro"
+          },
+          "locales": [
+            "en",
+            "it"
+          ],
+          "recommendedDurationSeconds": 22,
+          "facts": {
+            "importance": "major",
+            "opponentImportance": "main",
+            "opponentAnime": "blackclover",
+            "opponentSubject": "yami-sukehiro",
+            "placesA": 4,
+            "placesB": 8
+          },
+          "renderedLocales": [],
+          "scheduledLocales": [],
+          "publishedLocales": [],
+          "queuedLocales": [],
+          "renderedBefore": false,
+          "publishedBefore": false,
+          "publication": [],
+          "request": {
+            "subject": "scar",
             "opponent": {
               "anime": "blackclover",
               "subject": "yami-sukehiro"

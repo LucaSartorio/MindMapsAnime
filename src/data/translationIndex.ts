@@ -46,6 +46,16 @@ export const TRANSLATION_GAPS: TranslationGapIndex = {
       "gaps": []
     }
   },
+  "fullmetalalchemist": {
+    "es": {
+      "entities": 140,
+      "gaps": []
+    },
+    "fr": {
+      "entities": 140,
+      "gaps": []
+    }
+  },
   "hunterxhunter": {
     "es": {
       "entities": 384,
