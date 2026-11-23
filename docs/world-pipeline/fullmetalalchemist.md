@@ -182,8 +182,9 @@ Batch 5 also re-used S2 (volume ↔ chapter table; it names no arcs), S6 (Milos 
 
 - Source access: the FMA fandom wiki refuses direct fetches; no primary (manga) access. City positions for batch 4
   need a better source (e.g. the manga chapter that shows the country map, or an authorised wiki read).
-- Translations: es/fr keep Homunculi names (Lust, Greed…), "Ishval" and quoted chapter titles in English; Spanish wiki uses Lujuria/Codicia…, "Ishbal", "Generalísimo" — owner decision if localized names are wanted.
-- Portraits: colours rest on community profile sites; hairstyles largely unsourced (women render with default short hair). Decide before publication: find sources, or accept as placeholders.
+- Translations: owner decision 2026-11-23 — use the official es/fr names where the localization changed them, keep English where it did not (in progress).
+- Map: owner decision 2026-11-23 — enrich the map as much as sources allow (research in progress).
+- Portraits: owner decision 2026-11-23 — accepted as placeholders (colours from community profiles, hairstyles largely unsourced); revisit if official colour art / databook text becomes available.
 - Batch 4 partial: the nation-labels layer (off by default) duplicates the SVG labels when enabled — decide before publication whether to drop SVG labels or the `labelPosition`s.
 - No sourced railway lines and no sourced Central City layout → no railway layer, no Central sub-map for now.
 - `npm run data:coverage -- fullmetalalchemist` prints nothing while the dataset is empty.
