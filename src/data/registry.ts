@@ -30,6 +30,8 @@ const worldDatasetLoaders: Record<string, () => Promise<WorldDataset>> = {
     import('@/data/attackontitan').then((m) => m.aotDataset),
   jujutsukaisen: () =>
     import('@/data/jujutsukaisen').then((m) => m.jjkDataset),
+  fullmetalalchemist: () =>
+    import('@/data/fullmetalalchemist').then((m) => m.fmaDataset),
 };
 
 /** Cache dei dataset già caricati (gli oggetti sono singleton immutabili). */
@@ -118,6 +120,10 @@ const worldTranslationLoaders: Record<string, Partial<Record<SupportedLocale, ()
   jujutsukaisen: {
     es: () => import('@/data/jujutsukaisen/i18n/es').then((m) => m.default),
     fr: () => import('@/data/jujutsukaisen/i18n/fr').then((m) => m.default),
+  },
+  fullmetalalchemist: {
+    es: () => import('@/data/fullmetalalchemist/i18n/es').then((m) => m.default),
+    fr: () => import('@/data/fullmetalalchemist/i18n/fr').then((m) => m.default),
   },
 };
 

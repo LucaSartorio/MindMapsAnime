@@ -1,0 +1,227 @@
+import type { Character } from '@/types';
+import { ch } from './characterHelpers';
+
+/**
+ * Fullmetal Alchemist · Father e gli Homunculi dei sette peccati capitali (versione del manga e
+ * di Brotherhood: l'origine di Lust, Envy, Greed e Sloth nell'anime del 2003 è una continuity
+ * esclusa e NON è descritta qui). King Bradley è Wrath, un umano al quale è stata impiantata
+ * una Pietra Filosofale. `race: 'homunculus'`; i legami (`allies`/`enemies`) collegano solo
+ * personaggi del dataset. Il capitolo di prima apparizione è omesso: non ancora verificato.
+ */
+export const fmaCharactersHomunculi: Character[] = [
+  ch({
+    id: 'char-fma-father',
+    name: 'Father',
+    japaneseName: 'お父様',
+    importance: 'major',
+    role: ['antagonist', 'homunculus'],
+    race: 'homunculus',
+    gender: 'male',
+    status: 'deceased',
+    allies: ['char-fma-pride', 'char-fma-lust', 'char-fma-gluttony', 'char-fma-envy', 'char-fma-greed', 'char-fma-sloth', 'char-fma-king-bradley'],
+    enemies: ['char-fma-edward-elric', 'char-fma-van-hohenheim', 'char-fma-scar'],
+    relationships: [
+      { targetCharacterId: 'char-fma-van-hohenheim', label: { it: 'Creato dal suo sangue nel regno di Xerxes', en: 'Created from his blood in the kingdom of Xerxes' } },
+      { targetCharacterId: 'char-fma-pride', label: { it: 'Il primo homunculus che crea', en: 'The first homunculus he creates' } },
+      { targetCharacterId: 'char-fma-edward-elric', label: { it: 'Lo sconfigge nello scontro finale', en: 'Defeated by him in the final battle' } },
+    ],
+    shortDescription: {
+      it: "L'antagonista principale: il creatore degli Homunculi, nato dal sangue di Hohenheim, che trama per ottenere un sapere infinito.",
+      en: 'The main antagonist: creator of the Homunculi, born from Hohenheim\'s blood, who plots to obtain infinite knowledge.',
+    },
+    longDescription: {
+      it: "Father nasce nel regno di Xerxes dal sangue dello schiavo Van Hohenheim, per volontà del re, con l'obiettivo di ottenere conoscenza infinita. Può cambiare forma e assorbire anime, e può annullare l'alchimia che attinge all'energia tellurica. Crea gli Homunculi e muove nell'ombra l'esercito di Amestris. Edward lo trafigge al petto nello scontro finale, e «Dio» lo rovescia e lo trascina nel Portale della Verità, dove la Verità lo rinchiude di nuovo togliendogli la libertà. Non è una morte convenzionale: nel dataset lo stato «deceduto» indica la sua sconfitta definitiva nella storia.",
+      en: "Father is born in the kingdom of Xerxes from the blood of the slave Van Hohenheim, at the king's behest, with the aim of obtaining infinite knowledge. He can change shape and absorb souls, and can negate alchemy that draws on tectonic energy. He creates the Homunculi and moves the Amestris military from the shadows. Edward pierces his chest in the final battle, and 'God' turns him inside out and drags him into the Gate of Truth, where Truth locks him away again, taking his freedom. It is not a conventional death: in this dataset the 'deceased' status marks his definitive defeat within the story.",
+    },
+    tags: ['xerxes', 'homunculus'],
+  }),
+  ch({
+    id: 'char-fma-king-bradley',
+    name: 'King Bradley',
+    japaneseName: 'キング・ブラッドレイ',
+    aliases: [{ it: 'Wrath, l\'Ira', en: 'Wrath' }],
+    importance: 'major',
+    role: ['villain', 'homunculus', 'military'],
+    race: 'homunculus',
+    rank: { it: 'Führer', en: 'Führer' },
+    gender: 'male',
+    status: 'deceased',
+    allies: ['char-fma-father', 'char-fma-pride'],
+    enemies: ['char-fma-scar', 'char-fma-lan-fan', 'char-fma-roy-mustang', 'char-fma-riza-hawkeye'],
+    relationships: [
+      { targetCharacterId: 'char-fma-father', label: { it: 'Creatore: gli ha impiantato la Pietra Filosofale', en: 'Creator: implanted the Philosopher\'s Stone in him' } },
+      { targetCharacterId: 'char-fma-scar', label: { it: 'Gli causa le ferite mortali', en: 'Inflicts his fatal wounds' } },
+      { targetCharacterId: 'char-fma-pride', label: { it: "Pride vive come Selim, il suo «figlio adottivo»", en: "Pride lives as Selim, his 'adopted son'" } },
+      { targetCharacterId: 'char-fma-lan-fan', label: { it: 'Le taglia un braccio in combattimento', en: 'Cuts off her arm in combat' } },
+    ],
+    shortDescription: {
+      it: "Il Führer di Amestris, in realtà l'homunculus Wrath: un umano cresciuto come capo ideale a cui Father ha impiantato una Pietra Filosofale.",
+      en: "The Führer of Amestris, in truth the homunculus Wrath: a human raised as the ideal leader into whom Father implanted a Philosopher's Stone.",
+    },
+    longDescription: {
+      it: "Bradley fu allevato per diventare il leader ideale di Amestris; Father gli iniettò una Pietra Filosofale nel sangue, e fu l'unico a sopravvivere. Come Wrath possiede l'«Occhio Supremo», che gli fa prevedere le mosse dell'avversario e gli dà una vista superiore, ed è uno spadaccino abile. Guida lo Stato da Führer mentre serve il piano di Father. Perde entrambe le braccia contro Scar, il che gli è fatale, e il suo corpo invecchia rapidamente mentre muore. In questo dataset segue il manga: la versione del 2003 che lo vuole figlio di Pride ne è estranea.",
+      en: "Bradley was raised to become the ideal leader of Amestris; Father injected a Philosopher's Stone into his blood, and he was the only one to survive. As Wrath he has the 'Ultimate Eye', which lets him predict an opponent's moves and gives him superior eyesight, and he is a skilled swordsman. He runs the state as Führer while serving Father's plan. He loses both arms to Scar, which proves fatal, and his body ages rapidly as he dies. This dataset follows the manga: the 2003 version, which makes Wrath a separate homunculus, does not apply.",
+    },
+    tags: ['fuhrer', 'wrath', 'homunculus'],
+  }),
+  ch({
+    id: 'char-fma-pride',
+    name: 'Pride',
+    japaneseName: 'プライド',
+    aliases: [{ it: "Superbia", en: 'Pride, the Arrogant' }],
+    importance: 'major',
+    role: ['villain', 'homunculus'],
+    race: 'homunculus',
+    gender: 'male',
+    status: 'alive',
+    allies: ['char-fma-father', 'char-fma-king-bradley'],
+    enemies: ['char-fma-edward-elric'],
+    relationships: [
+      { targetCharacterId: 'char-fma-father', label: { it: 'Il primo homunculus creato da Father', en: 'The first homunculus created by Father' } },
+      { targetCharacterId: 'char-fma-gluttony', label: { it: 'Lo divora per assorbirne i poteri', en: 'Devours him to absorb his abilities' } },
+      { targetCharacterId: 'char-fma-edward-elric', label: { it: 'Distrugge il suo corpo ospite, ma Pride sopravvive come feto', en: 'Edward destroys its host body, but Pride survives as a fetus-like form' } },
+    ],
+    shortDescription: {
+      it: "Il primo homunculus di Father, che vive sotto le spoglie di Selim, figlio adottivo del Führer, e manipola chi tocca la sua ombra.",
+      en: "Father's first homunculus, who lives as Selim, the Führer's adopted son, and manipulates whatever its shadow touches.",
+    },
+    longDescription: {
+      it: "Pride è il primo homunculus creato da Father; la sua vera forma ricorda quella di Father ed è fatta di ombra con molti occhi. Distrugge o manipola ciò che la sua ombra tocca, vede attraverso di essa, può impossessarsi di altri e acquisisce i tratti di ciò che divora, come Gluttony. Vive come Selim Bradley, figlio adottivo del Führer. Edward distrugge il corpo ospite e Pride è ridotto a una piccola forma simile a un feto, che viene poi cresciuta di nuovo dalla madre adottiva: non muore.",
+      en: "Pride is the first homunculus created by Father; its true form resembles Father's own and is made of shadow with many eyes. It destroys or manipulates whatever its shadow touches, sees through it, can possess others and takes on the traits of what it devours, as with Gluttony. It lives as Selim Bradley, the Führer's adopted son. Edward destroys the host body and Pride is reduced to a small fetus-like form, which is then raised again by its adoptive mother: it does not die.",
+    },
+    tags: ['superbia', 'homunculus', 'selim'],
+  }),
+  ch({
+    id: 'char-fma-lust',
+    name: 'Lust',
+    japaneseName: 'ラスト',
+    aliases: [{ it: 'Lussuria · la Lancia Suprema', en: 'Lust · the Ultimate Spear' }],
+    importance: 'major',
+    role: ['villain', 'homunculus'],
+    race: 'homunculus',
+    gender: 'female',
+    status: 'deceased',
+    allies: ['char-fma-father'],
+    enemies: ['char-fma-roy-mustang', 'char-fma-jean-havoc'],
+    relationships: [
+      { targetCharacterId: 'char-fma-jean-havoc', label: { it: 'Lo frequenta per carpirgli informazioni, poi lo pugnala', en: 'Dates him to get information, then stabs him' } },
+      { targetCharacterId: 'char-fma-roy-mustang', label: { it: "La brucia finché la sua Pietra si esaurisce", en: 'He burns her until her Stone is depleted' } },
+    ],
+    shortDescription: {
+      it: "Homunculus assassina con dita estensibili capaci di tagliare quasi ogni materia, nota come la «Lancia Suprema».",
+      en: "Homunculus assassin with extensible fingers able to cut through nearly any material, known as the 'Ultimate Spear'.",
+    },
+    longDescription: {
+      it: "Lust è l'homunculus della lussuria, chiamata «Lancia Suprema» (最強の矛). Le sue dita si allungano a dismisura e tagliano quasi ogni sostanza della Terra. Si avvicina a Jean Havoc per estorcergli informazioni su Mustang e lo lascia paralizzato trafiggendogli la colonna. Muore per mano di Mustang, che la brucia finché la sua Pietra Filosofale è esaurita.",
+      en: "Lust is the homunculus of lust, called the 'Ultimate Spear' (最強の矛). Her fingers extend to great lengths and cut through nearly any substance on Earth. She approaches Jean Havoc to extract information about Mustang and leaves him paralysed by stabbing him through the spine. She dies at Mustang's hands, who burns her until her Philosopher's Stone is depleted.",
+    },
+    tags: ['lussuria', 'homunculus'],
+  }),
+  ch({
+    id: 'char-fma-gluttony',
+    name: 'Gluttony',
+    japaneseName: 'グラトニー',
+    aliases: [{ it: 'Gola', en: 'Gluttony, the Voracious' }],
+    importance: 'major',
+    role: ['villain', 'homunculus'],
+    race: 'homunculus',
+    gender: 'male',
+    status: 'deceased',
+    allies: ['char-fma-father'],
+    enemies: ['char-fma-greed', 'char-fma-lan-fan'],
+    relationships: [
+      { targetCharacterId: 'char-fma-pride', label: { it: 'Viene divorato da Pride', en: 'Devoured by Pride' } },
+      { targetCharacterId: 'char-fma-greed', label: { it: 'Greed lo uccide più volte', en: 'Greed kills him repeatedly' } },
+    ],
+    shortDescription: {
+      it: "L'homunculus insaziabile nato dal fallito tentativo di Father di creare un Portale: il suo stomaco divora ciò che ingerisce.",
+      en: "The insatiable homunculus born from Father's failed attempt to create a Gate: his stomach swallows whatever he eats.",
+    },
+    longDescription: {
+      it: "Gluttony è il frutto del tentativo fallito di Father di creare un Portale della Verità. Ha mascelle potenti e saliva acida; quando si attiva, lo stomaco si apre mostrando un Occhio della Provvidenza deformato e le costole diventano denti estensibili. Ciò che ingerisce finisce in una dimensione infernale piena di sangue. Greed e Lan Fan lo uccidono più volte; alla fine viene divorato da Pride, che ne assorbe i poteri.",
+      en: "Gluttony is the product of Father's failed attempt to create a Gate of Truth. He has powerful jaws and acidic saliva; when activated, his stomach opens to reveal a corrupted Eye of Providence and his ribs become extensible teeth. Whatever he swallows is sent to a hellish dimension full of blood. Greed and Lan Fan kill him repeatedly; in the end he is devoured by Pride, who absorbs his abilities.",
+    },
+    tags: ['gola', 'homunculus'],
+  }),
+  ch({
+    id: 'char-fma-envy',
+    name: 'Envy',
+    japaneseName: 'エンヴィー',
+    aliases: [{ it: 'Invidia', en: 'Envy, the Jealous' }],
+    importance: 'major',
+    role: ['villain', 'homunculus'],
+    race: 'homunculus',
+    status: 'deceased',
+    allies: ['char-fma-father'],
+    enemies: ['char-fma-edward-elric', 'char-fma-maes-hughes', 'char-fma-roy-mustang'],
+    relationships: [
+      { targetCharacterId: 'char-fma-maes-hughes', label: { it: 'Lo uccide', en: 'Kills him' } },
+      { targetCharacterId: 'char-fma-edward-elric', label: { it: "La sua fine è provocata dalle parole di Edward sulla forza degli umani", en: "Its end is triggered by Edward's words about human resilience" } },
+      { targetCharacterId: 'char-fma-roy-mustang', label: { it: 'Lo affronta dopo la morte di Hughes e ammette l’omicidio', en: 'Faces him after Hughes’s death and admits to the murder' } },
+    ],
+    shortDescription: {
+      it: "Homunculus mutaforma specializzato in infiltrazioni e imitazioni, responsabile della morte di Hughes.",
+      en: 'Shapeshifting homunculus specialised in infiltration and impersonation, responsible for Hughes\'s death.',
+    },
+    longDescription: {
+      it: "Envy può assumere qualsiasi aspetto e una forma mostruosa gigantesca, e usa queste capacità per infiltrarsi e imitare le persone: uccide Maes Hughes presentandosi come sua moglie Gracia. Alla fine, quando Edward capisce che Envy invidia la capacità degli umani di rialzarsi, si strappa e frantuma la propria Pietra Filosofale e muore.",
+      en: "Envy can take any appearance as well as a massive monstrous form, and uses these abilities to infiltrate and impersonate people: it kills Maes Hughes by appearing as his wife Gracia. In the end, when Edward realises that Envy is jealous of humans' ability to get back up, it tears out and crushes its own Philosopher's Stone and dies.",
+    },
+    tags: ['invidia', 'homunculus', 'mutaforma'],
+  }),
+  ch({
+    id: 'char-fma-greed',
+    name: 'Greed',
+    japaneseName: 'グリード',
+    aliases: [{ it: "Avarizia · lo Scudo Supremo", en: 'Greed · the Ultimate Shield' }],
+    importance: 'major',
+    role: ['antagonist', 'homunculus'],
+    race: 'homunculus',
+    gender: 'male',
+    status: 'deceased',
+    referenceStatus: 'needs_verification',
+    allies: ['char-fma-ling-yao', 'char-fma-edward-elric'],
+    enemies: ['char-fma-father', 'char-fma-gluttony'],
+    relationships: [
+      { targetCharacterId: 'char-fma-ling-yao', label: { it: 'Si impossessa del suo corpo; infine si sacrifica per salvarlo', en: 'Takes over his body; finally sacrifices himself to save him' } },
+      { targetCharacterId: 'char-fma-father', label: { it: 'In una fase viene fuso e divorato da Father; nell\'ultima si sacrifica per indebolirlo', en: 'In one phase he is melted down and consumed by Father; in the last he sacrifices himself to weaken him' } },
+      { targetCharacterId: 'char-fma-edward-elric', label: { it: 'Edward lo recluta come alleato', en: 'Edward recruits him as an ally' } },
+    ],
+    shortDescription: {
+      it: "Homunculus ribelle dall'armatura di carbonio, che si impossessa del corpo di Ling Yao e stringe amicizia con Edward.",
+      en: 'Rebel homunculus with carbon armor, who takes over Ling Yao\'s body and befriends Edward.',
+    },
+    longDescription: {
+      it: "Greed è l'homunculus dell'avarizia, chiamato «Scudo Supremo» (最強の盾): riorganizza il carbonio del proprio corpo in un'armatura dura come il diamante. Greed compare in due fasi: una prima incarnazione fusa nella sua Pietra e divorata da Father, e la fase in cui occupa il corpo di Ling Yao, in cui diventa amico di Edward e infine si sacrifica trasferendosi in un Father indebolito: ne rende fragile il guscio e viene distrutto quando Father lo morde. Il dataset le tratta come un'unica voce; l'ordine esatto delle fasi va ancora verificato sul manga.",
+      en: "Greed is the homunculus of greed, called the 'Ultimate Shield' (最強の盾): he rearranges the carbon of his body into diamond-hard armor. Greed appears in two phases: a first incarnation melted into his Stone and consumed by Father, and the phase in which he occupies Ling Yao's body, becomes close to Edward and finally sacrifices himself by transferring into a weakened Father: he makes his shell fragile and is destroyed when Father bites down on him. The dataset treats them as a single entry; the exact order of the phases still needs checking against the manga.",
+    },
+    tags: ['avarizia', 'homunculus', 'ling'],
+  }),
+  ch({
+    id: 'char-fma-sloth',
+    name: 'Sloth',
+    japaneseName: 'スロウス',
+    aliases: [{ it: 'Accidia', en: 'Sloth, the Indolent' }],
+    importance: 'major',
+    role: ['villain', 'homunculus'],
+    race: 'homunculus',
+    gender: 'male',
+    status: 'deceased',
+    allies: ['char-fma-father'],
+    enemies: ['char-fma-alex-louis-armstrong', 'char-fma-izumi-curtis', 'char-fma-olivier-mira-armstrong'],
+    relationships: [
+      { targetCharacterId: 'char-fma-alex-louis-armstrong', label: { it: 'Lo uccide insieme alla sorella, a Izumi e a Sig', en: 'Kills it together with his sister, Izumi and Sig' } },
+      { targetCharacterId: 'char-fma-izumi-curtis', label: { it: 'Viene ucciso anche da lei e da Sig Curtis', en: 'Also killed by her and Sig Curtis' } },
+      { targetCharacterId: 'char-fma-olivier-mira-armstrong', label: { it: 'Viene fermato e poi ucciso anche da lei', en: 'Stopped and later killed by her too' } },
+    ],
+    shortDescription: {
+      it: "Homunculus dell'accidia, il più forte e veloce del gruppo, a guardia di Father.",
+      en: 'Homunculus of sloth, the strongest and fastest of the group, guarding Father.',
+    },
+    longDescription: {
+      it: "Sloth è un homunculus fisicamente potentissimo e il più veloce, pigro per natura, che fa da guardia a Father. Nel manga viene ucciso dai fratelli Armstrong insieme a Izumi e a Sig Curtis, e accetta la morte con un sorriso.",
+      en: 'Sloth is a physically very powerful homunculus, the fastest of them, lazy by nature, who stands guard over Father. In the manga he is killed by the Armstrong siblings together with Izumi and Sig Curtis, and accepts death with a smile.',
+    },
+    tags: ['accidia', 'homunculus'],
+  }),
+];

@@ -23,6 +23,7 @@ import {
   JJK_ROLES,
   JJK_TECHNIQUE_CATEGORIES,
 } from '@/data/jujutsukaisen/config';
+import { FMA_ABILITY_CATEGORIES, FMA_ROLES } from '@/data/fullmetalalchemist/config';
 
 /**
  * Registro generico di tutti gli anime/manga supportati o pianificati.
@@ -707,21 +708,23 @@ export const animeWorlds: AnimeWorld[] = [
       es: 'Amestris · Intercambio equivalente',
     },
     description: {
-      it: 'Il viaggio di Edward e Alphonse Elric è in arrivo: Amestris con Central, Resembool, Ishval e Briggs, il regno di Xing e la ricerca della Pietra Filosofale.',
-      en: 'Edward and Alphonse Elric\'s journey is coming: Amestris with Central, Resembool, Ishval and Briggs, the kingdom of Xing and the search for the Philosopher\'s Stone.',
-      ja: 'エドワードとアルフォンス・エルリックの旅が近日公開。セントラル、リゼンブール、イシュヴァール、ブリッグズを擁するアメストリス、シン国、そして賢者の石の探求。',
-      fr: 'Le voyage d’Edward et Alphonse Elric arrive bientôt : Amestris avec Central, Resembool, Ishval et Briggs, le royaume de Xing et la quête de la Pierre philosophale.',
-      de: 'Die Reise von Edward und Alphonse Elric kommt bald: Amestris mit Central, Resembool, Ishval und Briggs, das Königreich Xing und die Suche nach dem Stein der Weisen.',
-      es: 'El viaje de Edward y Alphonse Elric está en camino: Amestris con Central, Resembool, Ishval y Briggs, el reino de Xing y la búsqueda de la Piedra Filosofal.',
+      it: "Amestris ricostruita in una mappa originale: le cinque aree con Central City, Resembool, Ishval, Dublith e la fortezza di Briggs, i paesi vicini e il deserto di Xerxes verso Xing. Edward e Alphonse Elric e la ricerca della Pietra Filosofale, l'esercito e gli Alchimisti di Stato, gli Homunculi e Father, dalla guerra di Ishval al Giorno Promesso, più il film «La Stella Sacra di Milos».",
+      en: "Amestris rebuilt in an original map: the five areas with Central City, Resembool, Ishval, Dublith and the fortress of Briggs, the neighbouring countries and the desert of Xerxes toward Xing. Edward and Alphonse Elric and the search for the Philosopher's Stone, the military and the State Alchemists, the Homunculi and Father, from the Ishvalan war to the Promised Day, plus the film The Sacred Star of Milos.",
+      ja: 'オリジナル地図で再構成したアメストリス：セントラル、リゼンブール、イシュヴァール、ダブリス、ブリッグズ要塞を擁する五つの地方、近隣諸国、そしてシンへ続くクセルクセスの砂漠。エドワードとアルフォンス・エルリック、賢者の石の探求、軍と国家錬金術師、ホムンクルスたち——イシュヴァールの戦いから最終決戦まで。映画『The Sacred Star of Milos』も収録。',
+      fr: "Amestris reconstituée dans une carte originale : les cinq zones avec Central City, Resembool, Ishbal, Dublith et la forteresse de Briggs, les pays voisins et le désert de Xerxes vers Xing. Edward et Alphonse Elric et la quête de la pierre philosophale, l'armée et les Alchimistes d'État, les Homonculus et Père, de la guerre d'Ishbal au Jour promis, plus le film L'Étoile sacrée de Milos.",
+      de: 'Amestris auf einer originalen Karte rekonstruiert: die fünf Gebiete mit Central City, Resembool, Ishval, Dublith und der Festung Briggs, die Nachbarländer und die Wüste von Xerxes Richtung Xing. Edward und Alphonse Elric und die Suche nach dem Stein der Weisen, das Militär und die Staatsalchemisten, die Homunculi und Father, vom Ishval-Krieg bis zum Versprochenen Tag, dazu der Film The Sacred Star of Milos.',
+      es: "Amestris reconstruida en un mapa original: las cinco áreas con Central City, Resembool, Ishbal, Dublith y la fortaleza de Briggs, los países vecinos y el desierto de Xerxes hacia Xing. Edward y Alphonse Elric y la búsqueda de la Piedra Filosofal, el ejército y los Alquimistas Estatales, los homúnculos y Padre, de la guerra de Ishbal al Día Prometido, además de la película La estrella sagrada de Milos.",
     },
-    status: 'coming_soon',
+    status: 'available',
     theme: {
       primary: '#b8232f',
       accent: '#d4af37',
       highlight: '#4a90d9',
       background: '#0c0d11',
     },
-    availableMapLevelIds: [],
+    defaultMapLevelId: 'fma-map-world',
+    translatedLocales: ['es', 'fr'],
+    availableMapLevelIds: ['fma-map-world'],
     tags: ['shonen', 'alchimia', 'hiromu arakawa', 'square enix'],
     metadata: {
       author: 'Hiromu Arakawa',
@@ -733,11 +736,36 @@ export const animeWorlds: AnimeWorld[] = [
       ability: {
         term: { it: 'Alchimia', en: 'Alchemy', ja: '錬金術', fr: 'Alchimie', de: 'Alchemie', es: 'Alquimia' },
         categoryTerm: { it: 'Tipo', en: 'Type', ja: 'タイプ', fr: 'Type', de: 'Typ', es: 'Tipo' },
+        categories: FMA_ABILITY_CATEGORIES,
       },
       characterRank: { term: { it: 'Grado militare', en: 'Military rank', ja: '軍の階級', fr: 'Grade militaire', de: 'Militärrang', es: 'Rango militar' } },
+      characterRoles: FMA_ROLES,
       nationTerm: { it: 'Nazione / Regione', en: 'Nation / Region', ja: '国 / 地方', fr: 'Nation / Région', de: 'Nation / Region', es: 'Nación / Región' },
       factionsTerm: { it: 'Fazioni & Organizzazioni', en: 'Factions & Organizations', ja: '勢力と組織', fr: 'Factions & Organisations', de: 'Fraktionen & Organisationen', es: 'Facciones y organizaciones' },
       placesTerm: { it: 'luoghi', en: 'places', ja: '場所', fr: 'lieux', de: 'Orte', es: 'lugares' },
+      mapMarkers: [
+        {
+          id: 'deaths',
+          eventTag: 'morte',
+          icon: '✝',
+          filterLabel: { it: 'Evidenzia le morti', en: 'Highlight deaths', ja: '死を強調', fr: 'Mettre en évidence les morts', de: 'Tode hervorheben', es: 'Resaltar muertes' },
+          sectionTitle: { it: 'Morti in questo luogo', en: 'Deaths at this place', ja: 'この場所での死', fr: 'Morts en ce lieu', de: 'Tode an diesem Ort', es: 'Muertes en este lugar' },
+        },
+        {
+          id: 'homunculi',
+          eventTag: 'omuncoli',
+          icon: '⚗',
+          filterLabel: { it: 'Evidenzia gli incontri con gli Homunculus', en: 'Highlight Homunculi encounters', ja: 'ホムンクルスとの遭遇を強調', fr: 'Mettre en évidence les rencontres avec les Homunculus', de: 'Begegnungen mit Homunculi hervorheben', es: 'Resaltar los encuentros con los Homúnculos' },
+          sectionTitle: { it: 'Homunculus incontrati qui', en: 'Homunculi encountered here', ja: 'ここで遭遇したホムンクルス', fr: 'Homunculus rencontrés ici', de: 'Hier begegnete Homunculi', es: 'Homúnculos encontrados aquí' },
+        },
+        {
+          id: 'philosophers-stone',
+          eventTag: 'pietra-filosofale',
+          icon: '◆',
+          filterLabel: { it: 'Evidenzia la Pietra Filosofale', en: 'Highlight the Philosopher\'s Stone', ja: '賢者の石を強調', fr: 'Mettre en évidence la Pierre philosophale', de: 'Den Stein der Weisen hervorheben', es: 'Resaltar la Piedra Filosofal' },
+          sectionTitle: { it: 'Pietra Filosofale in questo luogo', en: 'The Philosopher\'s Stone at this place', ja: 'この場所の賢者の石', fr: 'La Pierre philosophale en ce lieu', de: 'Der Stein der Weisen an diesem Ort', es: 'La Piedra Filosofal en este lugar' },
+        },
+      ],
     },
   },
   {
