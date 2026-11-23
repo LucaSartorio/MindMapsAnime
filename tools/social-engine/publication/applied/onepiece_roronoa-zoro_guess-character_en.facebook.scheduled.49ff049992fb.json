@@ -1,0 +1,30 @@
+{
+  "receiptId": "onepiece_roronoa-zoro_guess-character_en.facebook.scheduled.49ff049992fb",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-11-23T06:12:51.297Z",
+  "sourceFile": "20261123T060730Z-onepiece_roronoa-zoro_guess-character_en-facebook-scheduled.json",
+  "run": {
+    "runId": "45122578970",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/45122578970",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "guess-character:onepiece:roronoa-zoro@en",
+    "platform": "facebook",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-11-23T12:00:00+01:00",
+    "providerPostId": "438331299",
+    "providerPostUuid": "-2012851774259181364",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-2012851774259181364",
+    "recordedAt": "2026-11-23T06:07:30Z",
+    "recordedBy": "chatgpt-work-publishing-agent"
+  }
+}

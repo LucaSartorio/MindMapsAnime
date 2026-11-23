@@ -8034,7 +8034,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-11-23T06:02:09.463Z",
-      "updatedAt": "2026-11-23T06:04:26.644Z",
+      "updatedAt": "2026-11-23T06:12:51.297Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-11-23T06:04:26.644Z",
       "outputFile": "tools/social-engine/output/onepiece_roronoa-zoro_guess-character_en.mp4",
@@ -8096,9 +8096,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-23T12:00:00+01:00",
+          "scheduledAt": "2026-11-23T06:07:30Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "438331383",
+          "providerPostUuid": "-906717173038821416",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-906717173038821416",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "onepiece_roronoa-zoro_guess-character_en.instagram.scheduled.85c5148e2bf1"
+          ],
+          "updatedAt": "2026-11-23T06:12:51.297Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-23T12:00:00+01:00",
+          "scheduledAt": "2026-11-23T06:07:30Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "438331299",
+          "providerPostUuid": "-2012851774259181364",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-2012851774259181364",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "onepiece_roronoa-zoro_guess-character_en.facebook.scheduled.49ff049992fb"
+          ],
+          "updatedAt": "2026-11-23T06:12:51.297Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-23T12:00:00+01:00",
+          "scheduledAt": "2026-11-23T06:07:30Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "438331135",
+          "providerPostUuid": "4769636265210499061",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=4769636265210499061",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "onepiece_roronoa-zoro_guess-character_en.tiktok.scheduled.a637743219c0"
+          ],
+          "updatedAt": "2026-11-23T06:12:51.297Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-23T12:00:00+01:00",
+          "scheduledAt": "2026-11-23T06:07:30Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "438331212",
+          "providerPostUuid": "-2537898902161505383",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-2537898902161505383",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "onepiece_roronoa-zoro_guess-character_en.youtube.scheduled.3101f4eba776"
+          ],
+          "updatedAt": "2026-11-23T06:12:51.297Z"
+        }
+      ]
     }
   }
 }
