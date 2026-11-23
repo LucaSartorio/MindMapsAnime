@@ -1,0 +1,13 @@
+{
+  "receiptVersion": 1,
+  "renderId": "guess-character:onepiece:roronoa-zoro@en",
+  "platform": "facebook",
+  "provider": "metricool",
+  "status": "scheduled",
+  "scheduledFor": "2026-11-23T12:00:00+01:00",
+  "providerPostId": "438331299",
+  "providerPostUuid": "-2012851774259181364",
+  "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-2012851774259181364",
+  "recordedAt": "2026-11-23T06:07:30Z",
+  "recordedBy": "chatgpt-work-publishing-agent"
+}
