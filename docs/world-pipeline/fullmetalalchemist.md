@@ -57,13 +57,12 @@
 | S11 | Wikipedia, "Fullmetal Alchemist" (main article) | encyclopedia | manga ending summary | web fetch (first 100k characters) |
 | S12 | Screen Rant, "Fullmetal Alchemist Endings Explained" (screenrant.com/fullmetal-alchemist-endings-explained-manga-brotherhood-ed-al/) | editorial | manga epilogue (Ed/Winry, Al to Xing, Havoc, Scar, Ling, Pinako) | web fetch; does not cover Olivier, Izumi, Hawkeye |
 | S13 | TV Tropes (Scar), mirror of an old Wikipedia "State Military characters" article | community / mirror | discovery only | search summaries only; nothing relied on |
-
-Batch 3 also used S6 (Milos film characters) and S2 (full chapter table, as context).
-
 | S14 | Epic Stream, "All Fullmetal Alchemist Arcs in Order" (epicstream.com/article/fullmetal-alchemist-arcs-in-order) | editorial, single source | the 17 manga arc names + chapter ranges | web fetch; gives no basis for its division |
 | S15 | MyAnimeList user stack "Fullmetal Alchemist Anime Watch Guide" (myanimelist.net/stacks/58056) | community, user-made | Brotherhood episode range per arc | web fetch; not authoritative |
 | S16 | Wikipedia, "List of Fullmetal Alchemist: Brotherhood episodes" | encyclopedia | episode titles + summaries (descriptions; title cross-check of S15 boundaries) | web fetch |
 | S17 | aggregator / search summaries for ch. 3-4 | community / aggregator | short Mining Town / Battle on the Train descriptions only | search summary only; low reliability |
+
+Batch 3 also used S6 (Milos film characters) and S2 (full chapter table, as context).
 
 Batch 5 also re-used S2 (volume ↔ chapter table; it names no arcs), S6 (Milos placement), S11 (plot sequence).
 
