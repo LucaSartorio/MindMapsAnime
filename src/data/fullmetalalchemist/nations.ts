@@ -70,8 +70,8 @@ export const fmaNations: Nation[] = [
     name: 'Xing',
     type: 'uncertain',
     description: {
-      it: 'Paese a est di Amestris, oltre un deserto. La posizione deriva da una sola fonte della community e resta da verificare.',
-      en: 'A country east of Amestris, beyond a desert. The position comes from a single community source and still needs verification.',
+      it: 'Paese a est di Amestris, oltre un deserto.',
+      en: 'A country east of Amestris, beyond a desert.',
     },
     referenceStatus: 'needs_verification',
     labelPosition: { x: 1432, y: 520 },

@@ -256,8 +256,8 @@ export const fmaArcs: StoryArc[] = [
     name: 'The Sacred Star of Milos',
     localizedName: { it: 'La stella sacra di Milos', en: 'The Sacred Star of Milos' },
     period: {
-      it: 'Fra gli episodi 15 e 24 di Brotherhood (stima di Wikipedia)',
-      en: 'Between Brotherhood episodes 15 and 24 (a Wikipedia estimate)',
+      it: 'Film (2011)',
+      en: 'Film (2011)',
     },
     order: 13,
     description: {
@@ -265,8 +265,8 @@ export const fmaArcs: StoryArc[] = [
       en: "A 2011 animated film with an original story, not taken from the manga. Edward and Alphonse follow an escaped convict, Melvin Voyager, to Table City on the Amestris-Creta border; there they find that the 'Sanguine Star' may be a Philosopher's Stone and are drawn into the conflict between the Milosians, the Black Bats and the Cretan army.",
     },
     longDescription: {
-      it: "Wikipedia colloca il film (da una stima dei suoi redattori, non da una dichiarazione ufficiale) intorno all'episodio 21 di Brotherhood, in ogni caso fra i 15 e i 24, nel periodo in cui Edward ha capito che il corpo di Alphonse esiste da qualche parte. Arakawa non ha partecipato alla produzione. La collocazione fra «Philosopher from the West» e «Scar's Return» è quindi approssimativa.",
-      en: "Wikipedia places the film (by its editors' own estimate, not an official statement) around Brotherhood episode 21, in any case between 15 and 24, at the time when Edward has realised that Alphonse's body exists somewhere. Arakawa was not on the staff. Its placement between 'Philosopher from the West' and 'Scar's Return' is therefore approximate.",
+      it: "Il film si colloca nel periodo in cui Edward ha capito che il corpo di Alphonse esiste da qualche parte. È una storia originale: Hiromu Arakawa non ha partecipato alla produzione.",
+      en: "The film is set at the time when Edward has realised that Alphonse's body exists somewhere. It is an original story: Hiromu Arakawa was not on the staff.",
     },
     characterIds: [
       'char-fma-edward-elric',
@@ -371,8 +371,8 @@ export const fmaArcs: StoryArc[] = [
       en: "The Elrics reach Fort Briggs, commanded by Olivier Mira Armstrong, and face Sloth. The tunnel proves to be a giant transmutation circle and a nationwide circle is discovered; Kimblee tempts Edward into hunting Scar; Hohenheim reveals the truth about Xerxes. Greed allies with Edward and Ling warns that Father will try to open the Gate on the Promised Day.",
     },
     longDescription: {
-      it: "È l'arco più lungo del manga (21 capitoli). Contiene il racconto di Xerxes (capitolo 75, «The Last Days of Xerxes»; in Brotherhood l'episodio 40, dove Father ricorda l'origine degli Homunculi) e i capitoli su Selim/Pride. Il flashback su Xerxes non è trattato come arco a sé perché i suoi confini non sono confermati da una fonte.",
-      en: "It is the longest arc in the manga (21 chapters). It contains the Xerxes story (chapter 75, 'The Last Days of Xerxes'; in Brotherhood episode 40, where Father recalls the origin of the Homunculi) and the chapters on Selim/Pride. The Xerxes flashback is not treated as a separate arc because its boundaries are not confirmed by a source.",
+      it: "È l'arco più lungo del manga (21 capitoli). Contiene il racconto di Xerxes (capitolo 75, «The Last Days of Xerxes»; in Brotherhood l'episodio 40, dove Father ricorda l'origine degli Homunculi) e i capitoli su Selim/Pride.",
+      en: "It is the longest arc in the manga (21 chapters). It contains the Xerxes story (chapter 75, 'The Last Days of Xerxes'; in Brotherhood episode 40, where Father recalls the origin of the Homunculi) and the chapters on Selim/Pride.",
     },
     characterIds: [
       'char-fma-edward-elric',

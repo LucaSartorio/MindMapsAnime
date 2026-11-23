@@ -17,10 +17,6 @@ export const fmaEventsWar: TimelineEvent[] = [
       it: 'Nel flashback raccontato da Hohenheim, a Xerxes un essere racchiuso in una fiala, Homunculus, spinge il re a cercare l\'immortalità. La trasmutazione usa l\'intero paese come sacrificio: sopravvivono solo l\'essere e l\'uomo che prenderà il nome di Van Hohenheim. È l\'origine di Father.',
       en: 'In the flashback told by Hohenheim, in Xerxes a being kept in a flask, Homunculus, pushes the king to seek immortality. The transmutation uses the whole country as the sacrifice: only the being and the man who will take the name Van Hohenheim survive. It is the origin of Father.',
     },
-    longDescription: {
-      it: 'Il capitolo 75 si intitola «The Last Days of Xerxes». I dettagli su chi abbia creato chi variano fra i riassunti consultati (Brotherhood, wiki); il testo resta volutamente generico e va riletto sul manga.',
-      en: 'Chapter 75 is titled \'The Last Days of Xerxes\'. The details of who created whom vary across the summaries consulted (Brotherhood, wikis); the text stays deliberately generic and should be checked against the manga.',
-    },
     period: P.remote,
     arcId: 'arc-fma-briggs',
     characterIds: ['char-fma-van-hohenheim', 'char-fma-father'],
@@ -54,8 +50,8 @@ export const fmaEventsWar: TimelineEvent[] = [
       en: 'The long flashback of volume 15 shows how the Ishval war turns into an extermination: State Alchemists are deployed against the Ishvalans, among them Mustang, the \'Hero of Ishbal\', and Kimblee. Hawkeye explains to Edward the part they played.',
     },
     longDescription: {
-      it: 'I capitoli 58-61 («The Footsteps of Ruin», «The Immoral Alchemist», «In the Absence of God», «The Hero of Ishbal») formano il volume 15, descritto dagli editori e dalle recensioni come un flashback completo sulla guerra; Brotherhood lo condensa nell\'episodio 30. Il prologo con Marcoh è il capitolo 57.',
-      en: 'Chapters 58-61 (\'The Footsteps of Ruin\', \'The Immoral Alchemist\', \'In the Absence of God\', \'The Hero of Ishbal\') make up volume 15, described by the publisher and by reviews as a full flashback on the war; Brotherhood condenses it into episode 30. The frame story with Marcoh is chapter 57.',
+      it: 'I capitoli 58-61 («The Footsteps of Ruin», «The Immoral Alchemist», «In the Absence of God», «The Hero of Ishbal») formano il volume 15, un flashback completo sulla guerra; Brotherhood lo condensa nell\'episodio 30. Il prologo con Marcoh è il capitolo 57.',
+      en: 'Chapters 58-61 (\'The Footsteps of Ruin\', \'The Immoral Alchemist\', \'In the Absence of God\', \'The Hero of Ishbal\') make up volume 15, a full flashback on the war; Brotherhood condenses it into episode 30. The frame story with Marcoh is chapter 57.',
     },
     period: P.backstory,
     arcId: 'arc-fma-scars-of-ishval',
@@ -73,10 +69,6 @@ export const fmaEventsWar: TimelineEvent[] = [
     description: {
       it: 'Marcoh chiede a Scar di ucciderlo; Scar accetta in cambio della verità sulla guerra. Marcoh confessa che Bradley approvò lo sterminio degli ishvaliani e che lui stesso produsse pietre dalle loro vite. Più avanti Scar lo risparmia e il gruppo si dirige a nord, sulle tracce delle ricerche del fratello.',
       en: 'Marcoh asks Scar to kill him; Scar agrees in exchange for the truth about the war. Marcoh confesses that Bradley approved the extermination of the Ishvalans and that he himself made stones out of their lives. Later Scar spares him and the group heads north, following the trail of his brother\'s research.',
-    },
-    longDescription: {
-      it: 'La confessione è ricavata da Brotherhood (ep. 29-30); i capitoli 57 e 62 provengono dalle citazioni di Wikipedia per Scar. Che Marcoh fosse in mano ai militari o agli Homunculi in quel momento non è stato verificato.',
-      en: 'The confession comes from Brotherhood (ep. 29-30); chapters 57 and 62 come from Wikipedia\'s citations for Scar. Whether Marcoh was in military or Homunculi hands at the time was not verified.',
     },
     period: P.ishval,
     arcId: 'arc-fma-scars-of-ishval',
@@ -111,10 +103,6 @@ export const fmaEventsWar: TimelineEvent[] = [
       it: 'Olivier interroga i fratelli; quando Sloth emerge dal sottosuolo è lei a fermarlo, congelandolo. Edward e Falman capiscono che la galleria sotto il forte è un enorme cerchio di trasmutazione destinato a creare pietre.',
       en: 'Olivier questions the brothers; when Sloth emerges from underground it is she who stops him by freezing him. Edward and Falman realise that the tunnel beneath the fort is a giant transmutation circle meant to make stones.',
     },
-    longDescription: {
-      it: 'I capitoli 66 («The Snow Queen») e 67 sono ancorati a Wikipedia; la scoperta della galleria (cap. 67-69) non ha una citazione esplicita: intervallo dedotto dai titoli.',
-      en: 'Chapters 66 (\'The Snow Queen\') and 67 are anchored on Wikipedia; the discovery of the tunnel (ch. 67-69) has no explicit citation: range inferred from the titles.',
-    },
     period: P.ishval,
     arcId: 'arc-fma-briggs',
     characterIds: ['char-fma-olivier-mira-armstrong', 'char-fma-edward-elric', 'char-fma-alphonse-elric', 'char-fma-sloth', 'char-fma-vato-falman'],
@@ -132,8 +120,8 @@ export const fmaEventsWar: TimelineEvent[] = [
       en: 'Selim Bradley, the Führer\'s son, turns out to be Pride, the first homunculus. Around the same time Kimblee tempts Edward with a stone if he will hunt for Scar and Marcoh, and Winry joins the brothers.',
     },
     longDescription: {
-      it: 'Il capitolo 70 si intitola «The First Homunculus»; l\'offerta di Kimblee è collocata nel 71 dal titolo («In the Grip of the Red Lotus»), non da una citazione.',
-      en: 'Chapter 70 is titled \'The First Homunculus\'; Kimblee\'s offer is placed at 71 on the basis of the title (\'In the Grip of the Red Lotus\'), not on a citation.',
+      it: 'Il capitolo 70 si intitola «The First Homunculus»; il 71 «In the Grip of the Red Lotus».',
+      en: 'Chapter 70 is titled \'The First Homunculus\'; chapter 71 is \'In the Grip of the Red Lotus\'.',
     },
     period: P.ishval,
     arcId: 'arc-fma-briggs',
@@ -166,10 +154,6 @@ export const fmaEventsWar: TimelineEvent[] = [
     description: {
       it: 'May decifra gli appunti del fratello di Scar e i ragazzi capiscono che i cerchi di trasmutazione disseminati nel Paese formano un unico, gigantesco cerchio. Hohenheim dice a Pride di avvertire Father che sta arrivando.',
       en: 'May deciphers the notes of Scar\'s brother and the group realises that the transmutation circles scattered across the country form a single, gigantic one. Hohenheim tells Pride to warn Father that he is coming.',
-    },
-    longDescription: {
-      it: 'Il capitolo 77 si intitola «The Tables Are Turned; A New Transmutation Circle»; il messaggio di Hohenheim a Pride è collocato nel 78 solo per prudenza (Wikipedia cita il 78 per Pride).',
-      en: 'Chapter 77 is titled \'The Tables Are Turned; A New Transmutation Circle\'; Hohenheim\'s message to Pride is placed at 78 only to be safe (Wikipedia cites 78 for Pride).',
     },
     period: P.ishval,
     arcId: 'arc-fma-briggs',
@@ -208,10 +192,6 @@ export const fmaEventsWar: TimelineEvent[] = [
       it: 'Greed uccide per errore Bido e, risvegliati i suoi ricordi, sfida Bradley, ma è sopraffatto e fugge. Edward lo recluta come alleato e Ling avverte che Father vuole aprire il Portale nel «Giorno Promesso».',
       en: 'Greed accidentally kills Bido and, with his memories restored, confronts Bradley but is overwhelmed and escapes. Edward recruits him as an ally and Ling warns that Father plans to open the Gate on the Promised Day.',
     },
-    longDescription: {
-      it: 'Il capitolo 83 si intitola «The Promised Day»; Wikipedia ancora a 82-83 la morte di Bido e la defezione di Greed.',
-      en: 'Chapter 83 is titled \'The Promised Day\'; Wikipedia anchors Bido\'s death and Greed\'s defection at 82-83.',
-    },
     period: P.ishval,
     arcId: 'arc-fma-briggs',
     characterIds: ['char-fma-greed', 'char-fma-edward-elric', 'char-fma-ling-yao', 'char-fma-king-bradley', 'char-fma-bido'],
@@ -227,10 +207,6 @@ export const fmaEventsWar: TimelineEvent[] = [
     description: {
       it: 'Winry torna a casa avvisata da Edward, mentre Alphonse viene catturato da Gluttony e Pride. Hohenheim spiega il Giorno Promesso in cambio delle ultime parole di Trisha; Edward spegne le luci della città per contrastare Pride.',
       en: 'Winry returns home warned by Edward, while Alphonse is captured by Gluttony and Pride. Hohenheim explains the Promised Day in exchange for Trisha\'s last words; Edward blacks out the slums to counter Pride.',
-    },
-    longDescription: {
-      it: 'Intervallo indicativo: i titoli dei capitoli 84-88 e le citazioni di Wikipedia (cap. 88 per la debolezza di Pride alla luce) lo sostengono solo in parte.',
-      en: 'An indicative range: the titles of chapters 84-88 and Wikipedia\'s citations (ch. 88 for Pride\'s weakness to bright light) support it only in part.',
     },
     period: P.promised,
     arcId: 'arc-fma-promised-day',
@@ -296,10 +272,6 @@ export const fmaEventsWar: TimelineEvent[] = [
     description: {
       it: 'Alphonse si scontra con Pride e Kimblee; Heinkel morde Kimblee, ferendolo a morte. Kimblee finisce divorato da Pride.',
       en: 'Alphonse fights Pride and Kimblee; Heinkel bites Kimblee, wounding him fatally. Kimblee ends up devoured by Pride.',
-    },
-    longDescription: {
-      it: 'Che Pride divori Kimblee è attestato solo dalle citazioni di Wikipedia (cap. 93), non da Brotherhood.',
-      en: 'That Pride devours Kimblee is attested only by Wikipedia\'s citations (ch. 93), not by Brotherhood.',
     },
     period: P.promised,
     arcId: 'arc-fma-promised-day',
@@ -438,10 +410,6 @@ export const fmaEventsWar: TimelineEvent[] = [
       it: 'Un colpo di Father inchioda il braccio di Edward; Alphonse paga con la propria anima per restituirgli il braccio destro. Greed si sacrifica per indebolire Father e Edward lo colpisce al petto, mandandolo oltre il Portale per sempre.',
       en: 'A blast from Father pins Edward\'s arm; Alphonse pays with his own soul to give Edward his right arm back. Greed sacrifices himself to weaken Father and Edward punches through his chest, sending him through the Gate for good.',
     },
-    longDescription: {
-      it: 'Wikipedia colloca la sconfitta di Father sia al capitolo 107 sia al 108 e il sacrificio di Greed al 108; l\'intervallo copre entrambi.',
-      en: 'Wikipedia places Father\'s defeat at both chapter 107 and 108 and Greed\'s sacrifice at 108; the range covers both.',
-    },
     period: P.promised,
     arcId: 'arc-fma-promised-day',
     characterIds: ['char-fma-edward-elric', 'char-fma-alphonse-elric', 'char-fma-father', 'char-fma-greed'],
@@ -471,12 +439,8 @@ export const fmaEventsWar: TimelineEvent[] = [
     id: 'evt-fma-journeys-end-epilogue',
     title: { it: 'La fine del viaggio e l\'epilogo', en: 'Journey\'s end and the epilogue' },
     description: {
-      it: 'Hohenheim muore in pace accanto alla tomba di Trisha. Mustang lavora alla riconciliazione con gli ishvaliani, vuole che la prima pietra restituisca le gambe a Havoc, e Marcoh gli restituisce la vista. I fratelli si separano: Alphonse parte per Xing a studiare l\'alkahestry, mentre Edward e Winry si sposano e hanno due figli.',
-      en: 'Hohenheim dies peacefully beside Trisha\'s grave. Mustang works toward reconciliation with the Ishvalans, insists that Havoc\'s legs be restored first, and Marcoh restores his sight. The brothers part ways: Alphonse leaves for Xing to study alkahestry, while Edward and Winry marry and have two children.',
-    },
-    longDescription: {
-      it: 'Il capitolo 108 si intitola «The Journey\'s End». Il resto dell\'epilogo (altri personaggi) non è qui dettagliato; la richiesta per Havoc viene dal riassunto dell\'episodio 64 di Brotherhood.',
-      en: 'Chapter 108 is titled \'The Journey\'s End\'. The rest of the epilogue (other characters) is not detailed here; the Havoc request comes from the Brotherhood episode 64 summary.',
+      it: 'Hohenheim muore in pace accanto alla tomba di Trisha. Mustang lavora alla riconciliazione con gli ishvaliani e Marcoh gli restituisce la vista. I fratelli si separano: Alphonse parte per Xing a studiare l\'alkahestry, mentre Edward e Winry si sposano e hanno due figli.',
+      en: 'Hohenheim dies peacefully beside Trisha\'s grave. Mustang works toward reconciliation with the Ishvalans, and Marcoh restores his sight. The brothers part ways: Alphonse leaves for Xing to study alkahestry, while Edward and Winry marry and have two children.',
     },
     period: P.epilogue,
     arcId: 'arc-fma-promised-day',

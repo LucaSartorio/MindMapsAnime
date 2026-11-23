@@ -39,8 +39,8 @@ export const fmaEventsEarly: TimelineEvent[] = [
       en: 'Years before the story begins, Edward and Alphonse try to bring their mother back with a human transmutation. The rite fails: Edward loses a leg and Alphonse his entire body, and Edward gives up an arm to bind his brother\'s soul to a suit of armor.',
     },
     longDescription: {
-      it: 'Il capitolo 23 si intitola «Knocking on Heaven\'s Door». In Brotherhood lo stesso flashback si trova nell\'episodio 2 («The First Day»), che mostra anche l\'incontro con la Verità; la collocazione esatta dei dettagli nei capitoli 22-24 non è stata verificata sul manga.',
-      en: 'Chapter 23 is titled \'Knocking on Heaven\'s Door\'. In Brotherhood the same flashback is in episode 2 (\'The First Day\'), which also shows the encounter with Truth; the exact placement of the details across chapters 22-24 was not checked against the manga.',
+      it: 'Il capitolo 23 si intitola «Knocking on Heaven\'s Door». In Brotherhood lo stesso flashback si trova nell\'episodio 2 («The First Day»), che mostra anche l\'incontro con la Verità.',
+      en: 'Chapter 23 is titled \'Knocking on Heaven\'s Door\'. In Brotherhood the same flashback is in episode 2 (\'The First Day\'), which also shows the encounter with Truth.',
     },
     period: P.backstory,
     arcId: 'arc-fma-dublith',
@@ -57,10 +57,6 @@ export const fmaEventsEarly: TimelineEvent[] = [
     description: {
       it: 'Dopo il fallimento Roy Mustang recluta Edward nell\'esercito: il ragazzo ottiene il titolo di Alchimista d\'Acciaio e, con esso, l\'accesso alle risorse militari per cercare un modo di recuperare i loro corpi.',
       en: 'After the failure Roy Mustang recruits Edward into the military: the boy earns the title of Fullmetal Alchemist and, with it, access to the military\'s resources for finding a way to recover their bodies.',
-    },
-    longDescription: {
-      it: 'Il capitolo 24 porta il titolo «Fullmetal Alchemist»; l\'episodio 2 di Brotherhood mostra la reclutazione. Il numero di capitolo è dedotto dal titolo e dalla corrispondenza con l\'episodio, non letto sul manga.',
-      en: 'Chapter 24 carries the title \'Fullmetal Alchemist\'; Brotherhood episode 2 shows the recruitment. The chapter number is inferred from the title and the episode match, not read from the manga.',
     },
     period: P.backstory,
     arcId: 'arc-fma-dublith',
@@ -176,10 +172,6 @@ export const fmaEventsEarly: TimelineEvent[] = [
       it: 'A Central una sede della biblioteca di Stato viene incendiata, ma Sheska, che ricorda a memoria ciò che legge, ricostruisce la ricerca cifrata di Marcoh. I fratelli scoprono così che la Pietra Filosofale si fabbrica con sacrifici umani e si dirigono verso un laboratorio sospetto.',
       en: 'In Central a branch of the state library burns, but Sheska, who remembers everything she reads, reconstructs Marcoh\'s coded research. The brothers learn that the Philosopher\'s Stone is made from human sacrifices and head for a suspicious laboratory.',
     },
-    longDescription: {
-      it: 'Il capitolo 10 si intitola «The Philosopher\'s Stone»; l\'attribuzione è dedotta dal titolo e dal riassunto di Brotherhood, non verificata sul manga.',
-      en: 'Chapter 10 is titled \'The Philosopher\'s Stone\'; the attribution is inferred from the title and the Brotherhood summary, not checked against the manga.',
-    },
     period: P.start,
     arcId: 'arc-fma-search-for-the-philosophers-stone',
     locationId: 'loc-fma-central-city',
@@ -212,10 +204,6 @@ export const fmaEventsEarly: TimelineEvent[] = [
     description: {
       it: 'Con l\'automail riparato da Winry a Central, Edward e Alphonse litigano sul dubbio di Alphonse di essere reale, poi si riconciliano. Il Führer Bradley li avverte all\'ospedale e i due decidono di andare da Izumi insieme a Winry.',
       en: 'With Edward\'s automail repaired by Winry in Central, he and Alphonse quarrel over Alphonse\'s doubt about being real, then reconcile. Führer Bradley warns them at the hospital and the two decide to visit Izumi together with Winry.',
-    },
-    longDescription: {
-      it: 'Intervallo dedotto dai titoli dei capitoli 14 e 15 e dalla corrispondenza con Brotherhood; non verificato sul manga.',
-      en: 'Range inferred from the titles of chapters 14 and 15 and the Brotherhood match; not checked against the manga.',
     },
     period: P.start,
     arcId: 'arc-fma-separate-ways',
@@ -265,10 +253,6 @@ export const fmaEventsEarly: TimelineEvent[] = [
     description: {
       it: 'A Dublith i fratelli vanno dalla loro maestra Izumi, che li aveva addestrati. Quando scopre il loro segreto, Izumi confessa di aver tentato anche lei una trasmutazione umana per riportare in vita il figlio.',
       en: 'In Dublith the brothers visit their teacher Izumi, who had trained them. When she learns their secret, Izumi confesses that she too attempted a human transmutation to bring back her child.',
-    },
-    longDescription: {
-      it: 'I capitoli 20-21 si intitolano «The Terror of the Teacher» e «The Brothers\' Secret»; l\'intervallo è dedotto dai titoli e dall\'inizio dell\'arco, la posizione precisa della confessione non è stata verificata.',
-      en: 'Chapters 20-21 are titled \'The Terror of the Teacher\' and \'The Brothers\' Secret\'; the range is inferred from the titles and the start of the arc, the exact position of the confession was not checked.',
     },
     period: P.homunculi,
     arcId: 'arc-fma-dublith',
@@ -351,10 +335,6 @@ export const fmaEventsEarly: TimelineEvent[] = [
       it: 'Barry libera Ross e Ling dalla prigione. Mustang finge di uccidere Ross col fuoco per metterla al sicuro e far credere ai nemici che sia morta, mentre Armstrong riporta Edward verso Resembool.',
       en: 'Barry breaks Ross and Ling out of jail. Mustang pretends to kill Ross with fire to protect her and convince his enemies she is dead, while Armstrong drags Edward back toward Resembool.',
     },
-    longDescription: {
-      it: 'I capitoli esatti non sono stabiliti: Wikipedia ne cita due diversi per la finta morte e il loro ordine non è coerente con i titoli; l\'intervallo è dedotto dall\'ordine dei capitoli e dalla chiusura dell\'arco al capitolo 39.',
-      en: 'The exact chapters are not established: Wikipedia cites two different ones for the faked death and their order does not match the titles; the range is inferred from the chapter order and the arc closing at chapter 39.',
-    },
     period: P.homunculi,
     arcId: 'arc-fma-hunt-for-the-homunculi',
     characterIds: ['char-fma-roy-mustang', 'char-fma-edward-elric', 'char-fma-alex-louis-armstrong', 'char-fma-ling-yao', 'char-fma-maria-ross', 'char-fma-barry-the-chopper'],
@@ -386,10 +366,6 @@ export const fmaEventsEarly: TimelineEvent[] = [
     description: {
       it: 'A Resembool Edward trova sulla tomba della madre suo padre Hohenheim.',
       en: 'In Resembool Edward finds his father Hohenheim at their mother\'s grave.',
-    },
-    longDescription: {
-      it: 'Il capitolo 40 si intitola «Philosopher from the West», il 42 «The Father Standing Before a Grave»: l\'intervallo è dedotto dai titoli e dalla corrispondenza con Brotherhood, non dal manga.',
-      en: 'Chapter 40 is titled \'Philosopher from the West\', chapter 42 \'The Father Standing Before a Grave\': the range is inferred from the titles and the Brotherhood match, not from the manga.',
     },
     period: P.homunculi,
     arcId: 'arc-fma-philosopher-from-the-west',
@@ -457,10 +433,6 @@ export const fmaEventsEarly: TimelineEvent[] = [
       it: 'Quando i Black Bats attaccano Table City, Melvin uccide il loro comandante Miranda e rivela di essere Atlas, ex guardia dei Crichton che ha tolto la vita ai genitori di Julia e ha preso l\'identità di Ashleigh. Il colonnello cretese Herschel è in realtà il vero Ashleigh.',
       en: 'When the Black Bats attack Table City, Melvin kills their commander Miranda and reveals he is Atlas, a former Crichton guard who killed Julia\'s parents and took Ashleigh\'s identity. The Cretan colonel Herschel is in fact the real Ashleigh.',
     },
-    longDescription: {
-      it: 'Le fonti non concordano su cosa abbia fatto esattamente Atlas al vero Ashleigh: il testo dice solo che gli ha preso il volto e l\'identità.',
-      en: 'The sources do not agree on exactly what Atlas did to the real Ashleigh: the text only says he took his face and identity.',
-    },
     period: P.film,
     arcId: 'arc-fma-sacred-star-of-milos',
     locationId: 'loc-fma-table-city',
@@ -525,10 +497,6 @@ export const fmaEventsEarly: TimelineEvent[] = [
     description: {
       it: 'Gluttony inghiotte Edward, Ling ed Envy. Edward affronta Envy e, con una pietra, apre il Portale per liberare sé stesso e gli altri; Alphonse convince Gluttony a portarlo da Father. Nel Portale Edward vede il corpo di Alphonse, ma non può riprenderselo.',
       en: 'Gluttony swallows Edward, Ling and Envy. Edward fights Envy and uses a stone to open the Gate to free himself and the others; Alphonse persuades Gluttony to take him to Father. At the Gate Edward sees Alphonse\'s body but cannot retrieve it.',
-    },
-    longDescription: {
-      it: 'Capitoli dedotti dai titoli (50-53) e dalle citazioni di Wikipedia per il Portale di Gluttony (cap. 51) e la vera forma di Envy (cap. 53); intervallo largo per prudenza.',
-      en: 'Chapters inferred from the titles (50-53) and from Wikipedia citations for Gluttony\'s Gate (ch. 51) and Envy\'s true form (ch. 53); a wide range to be safe.',
     },
     period: P.homunculi,
     arcId: 'arc-fma-belly-of-the-beast',
