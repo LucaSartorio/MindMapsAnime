@@ -9,7 +9,8 @@ Disegna SOLO ciò che le fonti sostengono:
     Creta a OVEST, Aerugo a SUD, Xing a EST oltre un grande deserto. I vicini sono mostrati solo in parte,
     sfumati ai bordi della mappa.
 Il profilo del confine di Amestris NON è documentato: è un contorno organico astratto, non vincolante.
-Nessuna città, nessuna ferrovia: i pin arrivano con `apply_pins` (dizionario `PINS`, per ora vuoto).
+Nessuna città, nessuna ferrovia: solo 4 pin (`PINS`, applicati con `apply_pins`) per i luoghi la cui area è documentata
+(Central City, Fort Briggs, Ishval, Table City).
 
 I poligoni delle cinque aree vivono come DATI NOMINATI (`AMESTRIS_AREAS`, piano 1500 × 1000, vertici condivisi
 senza buchi): il batch dei confini li emette come `MapBoundary` senza ridisegnarli.
@@ -23,7 +24,7 @@ import random
 import sys
 
 sys.path.insert(0, __file__.rsplit("/", 1)[0])
-from kit import (SERIF, Svg, apply_pins, compass, curved_text, dots, f, mountain, out_path, plaque, poly,
+from kit import (ROOT, SERIF, Svg, apply_pins, compass, curved_text, dots, f, mountain, out_path, plaque, poly,
                  preview, region_label, text)
 
 W, H = 1500, 1000
@@ -138,8 +139,91 @@ NEIGHBOURS: dict[str, list[Pt]] = {
     "desert": _rev(_DRA_E[_I1:]) + _XING_W[1:] + _rev(_AER_E[:_I2 + 1])[1:] + _rev(OUT_E)[1:-1],
 }
 
-# Pin: nessuno in questo batch (arrivano con `apply_pins`: luogo -> (x, y) sul piano 1500 × 1000).
-PINS: dict[str, Pt] = {}
+
+
+def _pip(x: float, y: float, pts: list[Pt]) -> bool:
+    inside = False
+    j = len(pts) - 1
+    for i in range(len(pts)):
+        xi, yi = pts[i]
+        xj, yj = pts[j]
+        if (yi > y) != (yj > y) and x < (xj - xi) * (y - yi) / (yj - yi) + xi:
+            inside = not inside
+        j = i
+    return inside
+
+
+# =============================================================================
+# PIN (batch 4: solo i luoghi con un'area documentata), derivati dalla geometria
+# =============================================================================
+def _seg_dist(p: Pt, a: Pt, b: Pt) -> float:
+    dx, dy = b[0] - a[0], b[1] - a[1]
+    t = 0.0 if dx == dy == 0 else max(0.0, min(1.0, ((p[0] - a[0]) * dx + (p[1] - a[1]) * dy) / (dx * dx + dy * dy)))
+    return math.hypot(p[0] - (a[0] + t * dx), p[1] - (a[1] + t * dy))
+
+
+def _edge_margin(p: Pt, poly_pts: list[Pt]) -> float:
+    return min(_seg_dist(p, poly_pts[i], poly_pts[(i + 1) % len(poly_pts)]) for i in range(len(poly_pts)))
+
+
+def _pin(area: str, p: Pt, min_margin: float) -> Pt:
+    """Arrotonda il pin (come fa `apply_pins`) e verifica che stia DENTRO l'area, a distanza minima dai bordi."""
+    q = (float(round(p[0])), float(round(p[1])))
+    pts = AMESTRIS_AREAS[area]
+    if not _pip(q[0], q[1], pts):
+        raise SystemExit(f"pin fuori dall'area {area}: {q}")
+    if _edge_margin(q, pts) < min_margin:
+        raise SystemExit(f"pin troppo vicino al bordo dell'area {area}: {q} ({_edge_margin(q, pts):.1f} < {min_margin})")
+    return q
+
+
+# Fort Briggs: il punto più a nord dell'Area Nord (confine con Drachma, sotto i Monti Briggs), spostato verso l'interno.
+_BRIGGS_TOP = min(OUT_N, key=lambda p: p[1])
+# Table City: sul confine occidentale con Creta (il punto più a ovest del profilo), spostato verso l'interno.
+_TABLE_EDGE = min(OUT_W, key=lambda p: p[0])
+# Central City: vicino al centro del poligono centrale, sotto l'etichetta dell'area.
+# Ishval: dentro l'Area Est (posizione interna NON documentata: il luogo è `needs_verification`), lontano dai bordi.
+PINS: dict[str, Pt] = {
+    "loc-fma-central-city": _pin("central", (AREA_LABELS["central"][0], AREA_LABELS["central"][1] + 70), 40),
+    "loc-fma-fort-briggs": _pin("north", (_BRIGGS_TOP[0], _BRIGGS_TOP[1] + 26), 12),
+    "loc-fma-ishval": _pin("east", (1070, 610), 60),
+    "loc-fma-table-city": _pin("west", (_TABLE_EDGE[0] + 28, _TABLE_EDGE[1]), 12),
+}
+
+# Il generatore emette anche la GEOMETRIA dei confini delle cinque aree (una sola fonte di verità):
+# `src/data/fullmetalalchemist/boundaryGeometry.ts`, importato dalla scheda a mano `boundaries.ts`.
+GEOMETRY_TS = "boundaryGeometry.ts"
+
+
+def _d(pts: list[Pt]) -> str:
+    def n(v: float) -> str:
+        s = f"{v:.1f}"
+        return s[:-2] if s.endswith(".0") else s
+    return "M " + " L ".join(f"{n(x)} {n(y)}" for x, y in pts) + " Z"
+
+
+def write_boundary_geometry() -> None:
+    import os
+    path = os.path.join(ROOT, "src", "data", WORLD_DIR, GEOMETRY_TS)
+    lines = [
+        "/**",
+        " * GENERATO da `python3 scripts/mapgen/fullmetalalchemist.py` (non modificare a mano).",
+        " * Geometria SCHEMATICA delle cinque aree di Amestris sul piano 1500 × 1000 del livello `fma-map-world`:",
+        " * stessi poligoni (`AMESTRIS_AREAS`) e stesse etichette (`AREA_LABELS`) disegnati nell'SVG.",
+        " * Il profilo e i confini interni non sono documentati dall'opera.",
+        " */",
+        "export type FmaAreaKey = 'central' | 'north' | 'east' | 'south' | 'west';",
+        "",
+        "export const FMA_AREA_GEOMETRY: Record<FmaAreaKey, { svgPathD: string; labelPosition: { x: number; y: number } }> = {",
+    ]
+    for key in ("central", "north", "east", "south", "west"):
+        x, y = AREA_LABELS[key]
+        lines += [f"  {key}: {{", f"    svgPathD: '{_d(AMESTRIS_AREAS[key])}',",
+                  f"    labelPosition: {{ x: {round(x)}, y: {round(y)} }},", "  },"]
+    lines += ["};", ""]
+    new = "\n".join(lines)
+    if not os.path.exists(path) or open(path, encoding="utf-8").read() != new:
+        open(path, "w", encoding="utf-8").write(new)
 
 
 # =============================================================================
@@ -250,18 +334,6 @@ def build() -> Svg:
     return svg
 
 
-def _pip(x: float, y: float, pts: list[Pt]) -> bool:
-    inside = False
-    j = len(pts) - 1
-    for i in range(len(pts)):
-        xi, yi = pts[i]
-        xj, yj = pts[j]
-        if (yi > y) != (yj > y) and x < (xj - xi) * (y - yi) / (yj - yi) + xi:
-            inside = not inside
-        j = i
-    return inside
-
-
 def _range(points: list[Pt], rng: random.Random) -> list[str]:
     out: list[str] = []
     for x, y in points:
@@ -275,4 +347,5 @@ if __name__ == "__main__":
     svg = build()
     svg.save(out_path(WORLD_DIR, "fullmetalalchemist-world-map.svg"))
     preview(svg.path, PINS, svg.w, svg.h)
+    write_boundary_geometry()
     apply_pins(WORLD_DIR, PINS)

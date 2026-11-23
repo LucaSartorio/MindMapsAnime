@@ -7,6 +7,9 @@ import { fmaCharactersHomunculi } from './charactersHomunculi';
 import { fmaCharactersXing } from './charactersXing';
 import { fmaCharactersMilos } from './charactersMilos';
 import { fmaArcs } from './arcs';
+import { fmaNations } from './nations';
+import { fmaBoundaries } from './boundaries';
+import { fmaLocations } from './locations';
 import { fmaEventsEarly } from './eventsEarly';
 import { fmaEventsWar } from './eventsWar';
 
@@ -36,8 +39,9 @@ const arcs: StoryArc[] = fmaArcs.map((arc) => ({
 export const fmaDataset: WorldDataset = {
   world: fullmetalAlchemist,
   mapLevels: fmaMapLevels,
-  nations: [],
-  locations: [],
+  nations: fmaNations,
+  boundaries: fmaBoundaries,
+  locations: fmaLocations,
   characters: [
     ...fmaCharactersAmestris,
     ...fmaCharactersXing,

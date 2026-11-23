@@ -10,7 +10,7 @@
   (diverges from the manga after the early volumes), **excluded**; the film *The Sacred Star of Milos* (2011,
   anime-original) → **included** as `canonStatus: 'movie'` (owner decision 2026-11-23); live-action films excluded
 - id prefix: `fma` (`char-fma-…`, `loc-fma-…`, `evt-fma-…`, `arc-fma-…`, `faction-fma-…`); dataset export `fmaDataset`
-- last update: 2026-11-23 · next step: batch 4 — places + nations/regions, then add `locationIds`/`nationIds` to the 57 events (needs a source for city positions); else batch 7 — factions, relations, family
+- last update: 2026-11-23 · next step: batch 7 — factions, relations, family; batch 4 stays partial until a source gives the remaining city positions
 
 ## Model mapping (discovery, to confirm per batch with sources)
 
@@ -30,7 +30,7 @@
 | 1 | config + skeleton + loader | done | all kinds 0 | 54bdf82 | existing `worlds.ts` entry kept (id/slug/urlSlug/theme/metadata/config unchanged, metadata matches S2); `src/data/fullmetalalchemist/index.ts` + loader in `registry.ts`; `WORLD_STYLES` placeholder entry already present |
 | 2 | map levels + generator | done | levels 1 (`fma-map-world`, viewBox 1500×1000) | (this commit) | schematic original SVG (76 KB, deterministic) from `scripts/mapgen/fullmetalalchemist.py`: abstract Amestris outline, 5 areas, Drachma/Briggs N, Creta W, Aerugo S, Xing + desert E; no cities, no railways, no sub-maps. Area polygons `AMESTRIS_AREAS` (central/north/east/south/west) + `AREA_LABELS` ready for `MapBoundary` in batch 4; `PINS` empty |
 | 3 | main characters | done | chars 28 (2 main, 24 major, 2 supporting; 25 canon + 3 movie); 6 needs_verification | (this commit) | files `charactersAmestris/Xing/Homunculi/Milos.ts` + `characterHelpers.ts`; `FMA_ROLES` (7 roles) in `config.ts` → `WorldConfig.characterRoles`; no nation/place/faction/event/family links yet (later batches); first manga appearance only for Ed, Al (ch. 1), Mustang (ch. 4), Scar (ch. 5); inferred Brotherhood "Ep. 1" removed by the orchestrator (not sourced) |
-| 4 | places, nations/regions | todo | | | |
+| 4 | places, nations/regions (reduced scope, owner "option a") | partial | nations 5, boundaries 5, locations 4; 11 events placed | (this commit) | nations Amestris/Drachma/Creta/Aerugo (verified) + Xing (needs_verification); 5 area boundaries `bnd-fma-*` with geometry GENERATED into `boundaryGeometry.ts` from `AMESTRIS_AREAS`; locations Central City, Fort Briggs, Ishval (needs_verification: position inside East), Table City (`movie`); pins from `PINS` in the generator (checked inside their area); events linked only when their own text names the place. Still missing: every city with an unsourced position (Resembool, Liore, Youswell, East/West/South/North City, Dublith, Rush Valley, Baschool, Xerxes, Fifth Laboratory) |
 | 5 | arcs | done | arcs 18 (17 manga covering ch. 1-108 contiguously + 1 movie); all needs_verification | (this commit) | `arcs.ts`; names/boundaries are an editorial convention (no official arcs, single source S14); Brotherhood episode ranges from a community list (S15) cross-checked with episode titles (S16); Milos at `order` 13 (S6 editors place it around ep. 21); no `saga` grouping (none sourced); `eventIds` derived from events in `index.ts` |
 | 6 | events | done | events 57 (53 manga with `mangaChapters` + 4 Milos `movie`); 41 verified / 16 needs_verification; manga coverage 100/108 ch. (93 %), 0 gaps ≥ 5 | (this commit) | `eventHelpers.ts`, `periods.ts` (editorial phase labels, no in-story dates), `eventsEarly.ts` (31), `eventsWar.ts` (26); ≥ 1 event per arc; backstory (Xerxes, Hohenheim, Ishval, human transmutation) at order 10-60 with the chapters where the manga shows it; no `locationId(s)`/`factionIds`/`battle` yet; `verified` = event in a Brotherhood summary + chapter pinned by ≥ 2 signals (titles S2, footnotes S9/S10); uncovered single chapters: 22, 25, 26, 28, 63, 80, 81, 98 |
 | 7 | factions, relations, family | todo | | | |
@@ -115,11 +115,16 @@ Batch 5 also re-used S2 (volume ↔ chapter table; it names no arcs), S6 (Milos 
 | evt-fma-journeys-end-epilogue | Havoc's legs request | S16 ep. 64 only | Brotherhood only | flagged in longDescription |
 | evt-fma-milos-atlas-unmasked | what Atlas did to the real Ashleigh | S6 | disputed (inside source) | text: "took his face and identity" |
 | evt-fma-* | Brotherhood reorders some chapters (e.g. ep. 18-19 vs ch. 39-41) | S16, S2 | note | `animeEpisodes` are references, not mappings |
+| loc-fma-ishval | pin position inside the East Area | S4, S5 (area) | unverified (position) | needs_verification |
+| evt-fma-* → loc-fma-central-city | events whose text says "Central" are placed in Central City | S4, S5 (capital in Central) | interpretation | 5 events; "Central" is used for the capital in the sources |
+| nation-fma-creta, nation-fma-aerugo, nation-fma-xing | nation `type` (`minor_nation`, `uncertain`) | — | editorial | size not sourced; Drachma `great_nation` = "larger than Amestris" (S4) |
+| map labels | area/nation names drawn in the SVG and in `labelPosition` | — | note | the "nation labels" layer is off by default (like Naruto's PNG): turning it on doubles the text; decide before publication |
 | (batch 3) | Italian renderings of titles/epithets (e.g. «Alchimista d'Acciaio») | — | unverified | no official Italian edition consulted; aliases/descriptions only, revisable without touching ids |
 
 ## Open issues
 
 - Source access: the FMA fandom wiki refuses direct fetches; no primary (manga) access. City positions for batch 4
   need a better source (e.g. the manga chapter that shows the country map, or an authorised wiki read).
+- Batch 4 partial: the nation-labels layer (off by default) duplicates the SVG labels when enabled — decide before publication whether to drop SVG labels or the `labelPosition`s.
 - No sourced railway lines and no sourced Central City layout → no railway layer, no Central sub-map for now.
 - `npm run data:coverage -- fullmetalalchemist` prints nothing while the dataset is empty.
