@@ -10,7 +10,7 @@
   (diverges from the manga after the early volumes), **excluded**; the film *The Sacred Star of Milos* (2011,
   anime-original) → **included** as `canonStatus: 'movie'` (owner decision 2026-11-23); live-action films excluded
 - id prefix: `fma` (`char-fma-…`, `loc-fma-…`, `evt-fma-…`, `arc-fma-…`, `faction-fma-…`); dataset export `fmaDataset`
-- last update: 2026-11-23 · next step: batch 8 — battles + map markers (no tournaments); batch 4 stays partial until a source gives the remaining city positions
+- last update: 2026-11-23 · next step: batch 9 — power system (alchemy categories + abilities); batch 4 stays partial until a source gives the remaining city positions
 
 ## Model mapping (discovery, to confirm per batch with sources)
 
@@ -34,7 +34,7 @@
 | 5 | arcs | done | arcs 18 (17 manga covering ch. 1-108 contiguously + 1 movie); all needs_verification | (this commit) | `arcs.ts`; names/boundaries are an editorial convention (no official arcs, single source S14); Brotherhood episode ranges from a community list (S15) cross-checked with episode titles (S16); Milos at `order` 13 (S6 editors place it around ep. 21); no `saga` grouping (none sourced); `eventIds` derived from events in `index.ts` |
 | 6 | events | done | events 57 (53 manga with `mangaChapters` + 4 Milos `movie`); 41 verified / 16 needs_verification; manga coverage 100/108 ch. (93 %), 0 gaps ≥ 5 | (this commit) | `eventHelpers.ts`, `periods.ts` (editorial phase labels, no in-story dates), `eventsEarly.ts` (31), `eventsWar.ts` (26); ≥ 1 event per arc; backstory (Xerxes, Hohenheim, Ishval, human transmutation) at order 10-60 with the chapters where the manga shows it; no `locationId(s)`/`factionIds`/`battle` yet; `verified` = event in a Brotherhood summary + chapter pinned by ≥ 2 signals (titles S2, footnotes S9/S10); uncovered single chapters: 22, 25, 26, 28, 63, 80, 81, 98 |
 | 7 | factions, relations, family | done | factions 11 (9 manga + 2 movie; 3 needs_verification); family 3 links; 13 characters got extra relations | (this commit) | `factions.ts` (types army/organization/clan/group, already labelled), `structure.ts` (`factionKit` organigrams; people without a page only as labels), `family.ts` (Hohenheim → Edward, Alphonse; Edward–Winry); membership in `Faction.characterIds` (like JJK); relations only added, none rewritten. Relatives without a page (Trisha, Rockbell and Armstrong parents, Gracia/Elicia Hughes, Sig Curtis, Emperor of Xing) → batch 10 |
-| 8 | battles, markers | todo | | | no tournaments |
+| 8 | battles, markers | done | battles 11; markers 3 (deaths `morte` 16 tagged / 3 placed · homunculi `omuncoli` 26 / 3 · philosopher's stone `pietra-filosofale` 15 / 3) | (this commit) | `battles.ts` (`battleKit` → `applyBattles`), `markerTags.ts` (`withEventTags`), `config.mapMarkers` in `worlds.ts`; sides ⊂ event characterIds (no event edited); outcomes only where stated; `interrupted` for Scar vs Elrics, Olivier vs Sloth, Mustang vs Envy; Pride consuming Gluttony NOT a battle (removed by the orchestrator: an ally absorbed, not a fight); no tournaments in the work; most tagged events stay off the map until batch 4 places more cities |
 | 9 | power system | todo | | | categories in `WorldConfig` |
 | 10 | routes, secondary chars, portraits | todo | | | |
 | 11 | translations | todo | | | `{ it, en }` throughout; es/fr only if the owner asks |
@@ -130,6 +130,12 @@ Batch 5 also re-used S2 (volume ↔ chapter table; it names no arcs), S6 (Milos 
 | faction-fma-yao-clan, faction-fma-chang-clan | Ling / May "represent" their clans; 50 clans under one emperor | S9 | verified (secondary) | no `leaderIds` ("represents" ≠ head) |
 | faction-fma-milos-black-bats | Black Bats and the Milos resistance as one movement | S6 | editorial | needs_verification; Julia's membership not stated |
 | faction-fma-cretan-army-milos | Herschel commands the Cretan army | S6 | verified (secondary) | `movie` |
+| battles (batch 8) | outcomes from Brotherhood summaries + event texts | S16, S9, S10 | unverified (proxy) | no outcome beyond what sources state |
+| evt-fma-olivier-and-sloth | Olivier freezes/halts Sloth, does not defeat him | S16 ep. 35 | unverified | `interrupted` |
+| evt-fma-mustang-burns-envy | Edward stops Mustang; Envy destroys his own stone | S16 ep. 53-54 | verified (secondary) | `interrupted` |
+| evt-fma-pride-devours-gluttony | ep. 47 (Lan Fan shreds Gluttony) vs ep. 48 (Pride consumes him) | S16 | disputed (inside source) | only "Pride consumes Gluttony"; no battle record |
+| evt-fma-briggs-repels-drachma | battle sides Olivier vs Kimblee (Kimblee prepares the attack with Drachma) | event text (S16 ep. 43) | verified (secondary) | |
+| markers (batch 8) | tag lists follow event descriptions; `morte` includes mass deaths (Xerxes, Ishval); Bradley/Father count as Homunculi (faction) | event texts, S9 | editorial | marker labels in ja/fr/de/es are own translations |
 | (batch 3) | Italian renderings of titles/epithets (e.g. «Alchimista d'Acciaio») | — | unverified | no official Italian edition consulted; aliases/descriptions only, revisable without touching ids |
 
 ## Open issues

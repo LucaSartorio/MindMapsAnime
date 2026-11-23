@@ -741,6 +741,29 @@ export const animeWorlds: AnimeWorld[] = [
       nationTerm: { it: 'Nazione / Regione', en: 'Nation / Region', ja: '国 / 地方', fr: 'Nation / Région', de: 'Nation / Region', es: 'Nación / Región' },
       factionsTerm: { it: 'Fazioni & Organizzazioni', en: 'Factions & Organizations', ja: '勢力と組織', fr: 'Factions & Organisations', de: 'Fraktionen & Organisationen', es: 'Facciones y organizaciones' },
       placesTerm: { it: 'luoghi', en: 'places', ja: '場所', fr: 'lieux', de: 'Orte', es: 'lugares' },
+      mapMarkers: [
+        {
+          id: 'deaths',
+          eventTag: 'morte',
+          icon: '✝',
+          filterLabel: { it: 'Evidenzia le morti', en: 'Highlight deaths', ja: '死を強調', fr: 'Mettre en évidence les morts', de: 'Tode hervorheben', es: 'Resaltar muertes' },
+          sectionTitle: { it: 'Morti in questo luogo', en: 'Deaths at this place', ja: 'この場所での死', fr: 'Morts en ce lieu', de: 'Tode an diesem Ort', es: 'Muertes en este lugar' },
+        },
+        {
+          id: 'homunculi',
+          eventTag: 'omuncoli',
+          icon: '⚗',
+          filterLabel: { it: 'Evidenzia gli incontri con gli Homunculus', en: 'Highlight Homunculi encounters', ja: 'ホムンクルスとの遭遇を強調', fr: 'Mettre en évidence les rencontres avec les Homunculus', de: 'Begegnungen mit Homunculi hervorheben', es: 'Resaltar los encuentros con los Homúnculos' },
+          sectionTitle: { it: 'Homunculus incontrati qui', en: 'Homunculi encountered here', ja: 'ここで遭遇したホムンクルス', fr: 'Homunculus rencontrés ici', de: 'Hier begegnete Homunculi', es: 'Homúnculos encontrados aquí' },
+        },
+        {
+          id: 'philosophers-stone',
+          eventTag: 'pietra-filosofale',
+          icon: '◆',
+          filterLabel: { it: 'Evidenzia la Pietra Filosofale', en: 'Highlight the Philosopher\'s Stone', ja: '賢者の石を強調', fr: 'Mettre en évidence la Pierre philosophale', de: 'Den Stein der Weisen hervorheben', es: 'Resaltar la Piedra Filosofal' },
+          sectionTitle: { it: 'Pietra Filosofale in questo luogo', en: 'The Philosopher\'s Stone at this place', ja: 'この場所の賢者の石', fr: 'La Pierre philosophale en ce lieu', de: 'Der Stein der Weisen an diesem Ort', es: 'La Piedra Filosofal en este lugar' },
+        },
+      ],
     },
   },
   {

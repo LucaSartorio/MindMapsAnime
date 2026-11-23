@@ -15,13 +15,17 @@ import { fmaEventsWar } from './eventsWar';
 import { fmaFactions } from './factions';
 import { fmaStructure } from './structure';
 import { fmaFamily } from './family';
+import { fmaBattles } from './battles';
+import { fmaMarkerTags } from './markerTags';
 import { withFactionExtras } from '../shared/factionKit';
 import { withFamily } from '../shared/familyKit';
+import { applyBattles } from '../shared/battleKit';
+import { withEventTags } from '../shared/eventTagKit';
 
 const fullmetalAlchemist = animeWorlds.find((w) => w.slug === 'fullmetalalchemist')!;
 
 // Eventi in ordine cronologico della storia (`order`); gli `eventIds` degli archi sono derivati da qui (una sola fonte di verità).
-const events: TimelineEvent[] = [...fmaEventsEarly, ...fmaEventsWar].sort((a, b) => a.order - b.order);
+const events: TimelineEvent[] = applyBattles([...fmaEventsEarly, ...fmaEventsWar], fmaBattles).sort((a, b) => a.order - b.order);
 
 const arcs: StoryArc[] = fmaArcs.map((arc) => ({
   ...arc,
@@ -61,4 +65,4 @@ const fmaBaseDataset: WorldDataset = {
   assets: fmaAssets,
 };
 
-export const fmaDataset: WorldDataset = withFactionExtras(withFamily(fmaBaseDataset, fmaFamily, 'char-fma-'), fmaStructure);
+export const fmaDataset: WorldDataset = withEventTags(withFactionExtras(withFamily(fmaBaseDataset, fmaFamily, 'char-fma-'), fmaStructure), fmaMarkerTags);
