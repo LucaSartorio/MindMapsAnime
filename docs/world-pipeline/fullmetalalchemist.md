@@ -10,7 +10,7 @@
   (diverges from the manga after the early volumes), **excluded**; the film *The Sacred Star of Milos* (2011,
   anime-original) → **included** as `canonStatus: 'movie'` (owner decision 2026-11-23); live-action films excluded
 - id prefix: `fma` (`char-fma-…`, `loc-fma-…`, `evt-fma-…`, `arc-fma-…`, `faction-fma-…`); dataset export `fmaDataset`
-- last update: 2026-11-23 · next step: batch 4 — places + nations/regions (needs a better source for city positions); else batch 5 — arcs
+- last update: 2026-11-23 · next step: batch 6 — events with `mangaChapters` + `arcId` (no `locationIds` until batch 4); batch 4 still needs a source for city positions
 
 ## Model mapping (discovery, to confirm per batch with sources)
 
@@ -31,7 +31,7 @@
 | 2 | map levels + generator | done | levels 1 (`fma-map-world`, viewBox 1500×1000) | (this commit) | schematic original SVG (76 KB, deterministic) from `scripts/mapgen/fullmetalalchemist.py`: abstract Amestris outline, 5 areas, Drachma/Briggs N, Creta W, Aerugo S, Xing + desert E; no cities, no railways, no sub-maps. Area polygons `AMESTRIS_AREAS` (central/north/east/south/west) + `AREA_LABELS` ready for `MapBoundary` in batch 4; `PINS` empty |
 | 3 | main characters | done | chars 28 (2 main, 24 major, 2 supporting; 25 canon + 3 movie); 6 needs_verification | (this commit) | files `charactersAmestris/Xing/Homunculi/Milos.ts` + `characterHelpers.ts`; `FMA_ROLES` (7 roles) in `config.ts` → `WorldConfig.characterRoles`; no nation/place/faction/event/family links yet (later batches); first manga appearance only for Ed, Al (ch. 1), Mustang (ch. 4), Scar (ch. 5); inferred Brotherhood "Ep. 1" removed by the orchestrator (not sourced) |
 | 4 | places, nations/regions | todo | | | |
-| 5 | arcs | todo | | | |
+| 5 | arcs | done | arcs 18 (17 manga covering ch. 1-108 contiguously + 1 movie); all needs_verification | (this commit) | `arcs.ts`; names/boundaries are an editorial convention (no official arcs, single source S14); Brotherhood episode ranges from a community list (S15) cross-checked with episode titles (S16); Milos at `order` 13 (S6 editors place it around ep. 21); no `saga` grouping (none sourced); `eventIds` derived from events in `index.ts` |
 | 6 | events | todo | | | `mangaChapters` per event |
 | 7 | factions, relations, family | todo | | | |
 | 8 | battles, markers | todo | | | no tournaments |
@@ -60,6 +60,13 @@
 
 Batch 3 also used S6 (Milos film characters) and S2 (full chapter table, as context).
 
+| S14 | Epic Stream, "All Fullmetal Alchemist Arcs in Order" (epicstream.com/article/fullmetal-alchemist-arcs-in-order) | editorial, single source | the 17 manga arc names + chapter ranges | web fetch; gives no basis for its division |
+| S15 | MyAnimeList user stack "Fullmetal Alchemist Anime Watch Guide" (myanimelist.net/stacks/58056) | community, user-made | Brotherhood episode range per arc | web fetch; not authoritative |
+| S16 | Wikipedia, "List of Fullmetal Alchemist: Brotherhood episodes" | encyclopedia | episode titles + summaries (descriptions; title cross-check of S15 boundaries) | web fetch |
+| S17 | aggregator / search summaries for ch. 3-4 | community / aggregator | short Mining Town / Battle on the Train descriptions only | search summary only; low reliability |
+
+Batch 5 also re-used S2 (volume ↔ chapter table; it names no arcs), S6 (Milos placement), S11 (plot sequence).
+
 ## Ledger (significant claims only)
 
 | entity id | claim | source(s) | status | note |
@@ -81,6 +88,15 @@ Batch 3 also used S6 (Milos film characters) and S2 (full chapter table, as cont
 | char-fma-melvin-voyager, char-fma-ashleigh-crichton | what Atlas did to the real Ashleigh | S6 | disputed (inside the source) | text says "attacked"; he survives as Colonel Herschel |
 | (batch 3) | first manga appearance of 24/28 characters | — | unknown | left blank; the "earliest chapters cited" in S9 are not first appearances |
 | char-fma-may-chang, char-fma-ling-yao, char-fma-king-bradley | names "May Chang" (Viz) vs "Mei Chan"; "Ling Yao" (official English) vs "Lin Yao"; rank "Führer" | S9, S11, S12 | note | official English forms used |
+| arc-fma-* (manga) | the 17-arc division and chapter boundaries | S14 | unverified (editorial) | no official arcs; all needs_verification |
+| arc-fma-* (manga) | Brotherhood episode ranges | S15 + S16 title cross-check | unverified | ep. 19 and 29 shared by two arcs; ep. 1-2 sit in Dublith (Brotherhood opens out of order) |
+| arc-fma-mining-town, arc-fma-battle-on-the-train | content of ch. 3 and 4 | S2 titles, S17 | unverified (thin) | check against vol. 1; no episodes listed |
+| arc-fma-rush-valley | the Elrics' presence in ch. 17-19 | — | unknown | only Winry listed |
+| arc-fma-sacred-star-of-milos | placement at `order` 13 (around ep. 21, range ep. 15-24) | S6 | editor estimate | not official; move to the end if a strict order is preferred |
+| arc-fma-* | descriptions paraphrased from Brotherhood summaries (manga-faithful per S3) | S16, S11 | proxy source | manga not consulted directly |
+| arc-fma-briggs | Xerxes flashback (ch. 75, ep. 40) kept inside the arc | S2, S16 | unverified boundaries | longDescription only |
+| arc-fma-promised-day | volume gaiden (vol. 3, 4, 7, 8, 14, 23, 24, 27) outside the 108 chapters | S2 | note | not added |
+| arc-fma-* | Italian arc names are own translations | — | unofficial | revisable without touching ids |
 | (batch 3) | Italian renderings of titles/epithets (e.g. «Alchimista d'Acciaio») | — | unverified | no official Italian edition consulted; aliases/descriptions only, revisable without touching ids |
 
 ## Open issues

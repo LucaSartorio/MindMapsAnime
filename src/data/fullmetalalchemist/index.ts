@@ -1,4 +1,4 @@
-import type { WorldDataset } from '@/types';
+import type { StoryArc, TimelineEvent, WorldDataset } from '@/types';
 import { animeWorlds } from '@/data/worlds';
 import { fmaAssets } from './assets';
 import { fmaMapLevels } from './mapLevels';
@@ -6,8 +6,17 @@ import { fmaCharactersAmestris } from './charactersAmestris';
 import { fmaCharactersHomunculi } from './charactersHomunculi';
 import { fmaCharactersXing } from './charactersXing';
 import { fmaCharactersMilos } from './charactersMilos';
+import { fmaArcs } from './arcs';
 
 const fullmetalAlchemist = animeWorlds.find((w) => w.slug === 'fullmetalalchemist')!;
+
+// Eventi: ancora nessuno (batch 6); gli `eventIds` degli archi sono derivati da qui (una sola fonte di verità).
+const events: TimelineEvent[] = [];
+
+const arcs: StoryArc[] = fmaArcs.map((arc) => ({
+  ...arc,
+  eventIds: events.filter((e) => e.arcId === arc.id).map((e) => e.id),
+}));
 
 /**
  * Dataset Fullmetal Alchemist — IN COSTRUZIONE (`status: 'coming_soon'` in `worlds.ts`).
@@ -34,8 +43,8 @@ export const fmaDataset: WorldDataset = {
     ...fmaCharactersMilos,
   ],
   factions: [],
-  arcs: [],
-  events: [],
+  arcs,
+  events,
   routes: [],
   jutsu: [],
   assets: fmaAssets,
