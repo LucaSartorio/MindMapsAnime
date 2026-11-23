@@ -414,7 +414,7 @@ export const onepieceLocationsBlues: Location[] = [
     localizedName: { it: 'Regno di Sorbet', en: 'Sorbet Kingdom' },
     type: 'city',
     x: 1708,
-    y: 799,
+    y: 803,
     shortDescription: {
       it: "Regno di South Blue, patria di Bartholomew Orso e Jewelry Bonney, segnato dall'oppressione di un Nobile Mondiale e dalla ribellione dei suoi abitanti.",
       en: "A South Blue kingdom, home of Bartholomew Kuma and Jewelry Bonney, scarred by a World Noble's oppression and its people's revolt.",
@@ -511,8 +511,8 @@ export const onepieceLocationsBlues: Location[] = [
     name: 'Church',
     localizedName: { it: 'La Chiesa', en: 'Church' },
     type: 'sacred_place',
-    x: 1715,
-    y: 790,
+    x: 1716,
+    y: 789,
     shortDescription: {
       it: "Luogo di culto di South Blue presso Castle Town ed Elderly Village.",
       en: 'A South Blue place of worship near Castle Town and Elderly Village.',

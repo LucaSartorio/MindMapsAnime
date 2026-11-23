@@ -207,7 +207,7 @@ export const onepieceLocationsNewWorld: Location[] = [
     name: 'Karakuri Island',
     localizedName: { it: 'Isola di Karakuri', en: 'Karakuri Island' },
     type: 'landmark',
-    x: 1734,
+    x: 1729,
     y: 457,
     shortDescription: {
       it: "Isola invernale del Nuovo Mondo, terra natale del genio Vegapunk e luogo dove Franky si ricostruì il corpo durante i due anni di separazione.",
@@ -226,8 +226,8 @@ export const onepieceLocationsNewWorld: Location[] = [
     name: 'Baldimore',
     localizedName: { it: 'Baldimore', en: 'Baldimore' },
     type: 'city',
-    x: 1739,
-    y: 459,
+    x: 1742,
+    y: 458,
     shortDescription: {
       it: "Cittadina dell'Isola Karakuri (Future Island), patria del giovane dottor Vegapunk e luogo dove Franky si allenò per due anni con la sua tecnologia.",
       en: "A town on Karakuri Island (Future Island), home of the young Dr. Vegapunk and the place where Franky trained for two years with his technology.",
