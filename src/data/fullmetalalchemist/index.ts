@@ -1,5 +1,7 @@
 import type { WorldDataset } from '@/types';
 import { animeWorlds } from '@/data/worlds';
+import { fmaAssets } from './assets';
+import { fmaMapLevels } from './mapLevels';
 
 const fullmetalAlchemist = animeWorlds.find((w) => w.slug === 'fullmetalalchemist')!;
 
@@ -9,6 +11,7 @@ const fullmetalAlchemist = animeWorlds.find((w) => w.slug === 'fullmetalalchemis
  * Perimetro canonico: il manga di Hiromu Arakawa (108 capitoli, 27 volumi, Monthly Shōnen
  * Gangan 2001-2010). «Brotherhood» (2009-2010) segue il manga ed è usato solo come riferimento
  * per gli episodi; l'anime del 2003 e il suo film sono una continuity separata, esclusa.
+ * Il film «La Stella Sacra di Milos» (2011, originale dell'anime) è incluso con `canonStatus: 'movie'`.
  *
  * Il mondo viene popolato a batch verificati (`/add-anime-world`): stato, fonti e ledger in
  * `docs/world-pipeline/fullmetalalchemist.md`. Finché resta `coming_soon` è privato ovunque
@@ -17,7 +20,7 @@ const fullmetalAlchemist = animeWorlds.find((w) => w.slug === 'fullmetalalchemis
  */
 export const fmaDataset: WorldDataset = {
   world: fullmetalAlchemist,
-  mapLevels: [],
+  mapLevels: fmaMapLevels,
   nations: [],
   locations: [],
   characters: [],
@@ -26,5 +29,5 @@ export const fmaDataset: WorldDataset = {
   events: [],
   routes: [],
   jutsu: [],
-  assets: [],
+  assets: fmaAssets,
 };

@@ -10,7 +10,7 @@
   (diverges from the manga after the early volumes), **excluded**; the film *The Sacred Star of Milos* (2011,
   anime-original) → **included** as `canonStatus: 'movie'` (owner decision 2026-11-23); live-action films excluded
 - id prefix: `fma` (`char-fma-…`, `loc-fma-…`, `evt-fma-…`, `arc-fma-…`, `faction-fma-…`); dataset export `fmaDataset`
-- last update: 2026-11-23 · next step: batch 2 — map levels + `scripts/mapgen/fullmetalalchemist.py` (map-engineer)
+- last update: 2026-11-23 · next step: batch 3 — main characters (anime-data-curator); batch 4 needs better sources for city positions
 
 ## Model mapping (discovery, to confirm per batch with sources)
 
@@ -28,7 +28,7 @@
 | # | Batch | Status | Counts | Commit | Notes |
 |---|---|---|---|---|---|
 | 1 | config + skeleton + loader | done | all kinds 0 | 54bdf82 | existing `worlds.ts` entry kept (id/slug/urlSlug/theme/metadata/config unchanged, metadata matches S2); `src/data/fullmetalalchemist/index.ts` + loader in `registry.ts`; `WORLD_STYLES` placeholder entry already present |
-| 2 | map levels + generator | todo | levels 0 | | fill `availableMapLevelIds` + default level |
+| 2 | map levels + generator | done | levels 1 (`fma-map-world`, viewBox 1500×1000) | (this commit) | schematic original SVG (76 KB, deterministic) from `scripts/mapgen/fullmetalalchemist.py`: abstract Amestris outline, 5 areas, Drachma/Briggs N, Creta W, Aerugo S, Xing + desert E; no cities, no railways, no sub-maps. Area polygons `AMESTRIS_AREAS` (central/north/east/south/west) + `AREA_LABELS` ready for `MapBoundary` in batch 4; `PINS` empty |
 | 3 | main characters | todo | chars 0 | | |
 | 4 | places, nations/regions | todo | | | |
 | 5 | arcs | todo | | | |

@@ -721,7 +721,8 @@ export const animeWorlds: AnimeWorld[] = [
       highlight: '#4a90d9',
       background: '#0c0d11',
     },
-    availableMapLevelIds: [],
+    defaultMapLevelId: 'fma-map-world',
+    availableMapLevelIds: ['fma-map-world'],
     tags: ['shonen', 'alchimia', 'hiromu arakawa', 'square enix'],
     metadata: {
       author: 'Hiromu Arakawa',
