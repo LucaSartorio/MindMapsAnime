@@ -156,6 +156,84 @@
         }
       ]
     },
+    "character-journey:blackclover:yuno-grinberryall:part-02@en": {
+      "renderId": "character-journey:blackclover:yuno-grinberryall:part-02@en",
+      "contentId": "character-journey:blackclover:yuno-grinberryall:part-02",
+      "template": "characterJourney",
+      "anime": "blackclover",
+      "subject": "yuno-grinberryall",
+      "locale": "en",
+      "variant": null,
+      "segment": "part-02",
+      "segmentFingerprint": "1a234ab9",
+      "createdAt": "2026-11-24T06:09:48.903Z",
+      "updatedAt": "2026-11-24T06:12:41.557Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-11-24T06:12:41.557Z",
+      "outputFile": "tools/social-engine/output/blackclover_yuno-grinberryall_character-journey_part-02_en.mp4",
+      "manifestFile": "tools/social-engine/output/blackclover_yuno-grinberryall_character-journey_part-02_en.manifest.json",
+      "sourceFile": "0058-blackclover_yuno-grinberryall_character-journey_part-02_en.json",
+      "durationSeconds": 30,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-45338318616-1",
+        "runId": "45338318616",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/45338318616",
+        "video": "videos/blackclover_yuno-grinberryall_character-journey_part-02_en.mp4",
+        "manifest": "manifests/blackclover_yuno-grinberryall_character-journey_part-02_en.manifest.json",
+        "sha256": "89066d367bf0f5b767fef93a9c8743b36998a6c9fe12f9898e7f491ad63888f7",
+        "cover": "covers/blackclover_yuno-grinberryall_character-journey_part-02_en.cover.png",
+        "expiresAt": "2026-12-24T06:12:41.557Z"
+      },
+      "social": {
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:yuno-grinberryall"
+        ],
+        "characterNames": [
+          "Yuno Grinberryall"
+        ],
+        "part": 2,
+        "partCount": 2,
+        "hookType": "fact",
+        "hookId": "cj-last-fact-1",
+        "hook": "The final stretch of Yuno Grinberryall's journey — Part 2 of 2.",
+        "ctaType": "comment-missed-location",
+        "cta": "Which location did we miss?",
+        "durationSeconds": 30,
+        "selection": {
+          "mode": "coldstart",
+          "score": 104.59,
+          "seed": "feed52:guess-character:onepiece:roronoa-zoro@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "The final stretch of Yuno Grinberryall's journey — Part 2 of 2.\n\nYuno Grinberryall's journey across Black Clover — Part 2/2: 11 places on the world map.\n\nWhich location did we miss? 👇\n\nSave it for your next rewatch.\n\n#blackclover #yunogrinberryall #anime #animemap #AniMapVerse",
+          "tiktokCaption": "The final stretch of Yuno Grinberryall's journey — Part 2 of 2. Which location did we miss? 👇 #blackclover #yunogrinberryall #anime #animemap #AniMapVerse",
+          "youtubeTitle": "Every Place Yuno Grinberryall Visited 📖 | Black Clover Journey Part 2 of 2",
+          "youtubeDescription": "The final stretch of Yuno Grinberryall's journey — Part 2 of 2.\n\nYuno Grinberryall's journey across Black Clover — Part 2/2: 11 places on the world map.\n\nWhich location did we miss? 👇\n\nInteractive map: https://animapverse.com/en/black-clover/characters/yuno-grinberryall\n\n#blackclover #yunogrinberryall #anime",
+          "facebookCaption": "The final stretch of Yuno Grinberryall's journey — Part 2 of 2.\n\nYuno Grinberryall's journey across Black Clover — Part 2/2: 11 places on the world map.\n\nWhich location did we miss? 👇\n\nInteractive map: https://animapverse.com/en/black-clover/characters/yuno-grinberryall",
+          "hashtags": [
+            "#blackclover",
+            "#yunogrinberryall",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-journey:dragonball:goku:part-01@en": {
       "renderId": "character-journey:dragonball:goku:part-01@en",
       "contentId": "character-journey:dragonball:goku:part-01",
