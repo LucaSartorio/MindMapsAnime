@@ -1,0 +1,19 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterJourney",
+  "anime": "blackclover",
+  "subject": "yuno-grinberryall",
+  "segment": "part-02",
+  "locale": "en",
+  "hook": "The final stretch of Yuno Grinberryall's journey — Part 2 of 2.",
+  "hookType": "fact",
+  "hookId": "cj-last-fact-1",
+  "cta": "Which location did we miss?",
+  "ctaType": "comment-missed-location",
+  "selection": {
+    "mode": "coldstart",
+    "score": 104.59,
+    "seed": "feed52:guess-character:onepiece:roronoa-zoro@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +21.0, jitter +5.6; +12 main character; +14 continues a started series (Part 2 promised)"
+}
