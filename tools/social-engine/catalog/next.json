@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-24T06:12:42.442Z",
-  "status": "backlog",
+  "generatedAt": "2026-11-24T06:22:14.492Z",
+  "status": "ready",
   "feedTail": [
     {
       "renderId": "character-journey:onepiece:nami:part-03@en",
@@ -90,28 +90,478 @@
     "error": null
   },
   "backlog": {
-    "unpublished": [
-      {
-        "renderId": "character-journey:blackclover:yuno-grinberryall:part-02@en",
-        "contentType": "character-journey",
-        "renderedAt": "2026-11-24T06:12:41.557Z",
-        "missing": [
-          "instagram",
-          "facebook",
-          "tiktok",
-          "youtube"
-        ]
-      }
-    ],
+    "unpublished": [],
     "unfinished": [],
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "",
-  "reason": "publish the existing render first: character-journey:blackclover:yuno-grinberryall:part-02@en (it counts as today's video; no new content)",
-  "alternatives": [],
-  "rejected": {},
-  "considered": 0,
-  "eligible": 0,
-  "trace": null
+  "seed": "feed53:character-journey:blackclover:yuno-grinberryall:part-02@en:samples0",
+  "rejected": {
+    "JOURNEY_PART_ORDER": 36,
+    "MAX_SAME_CHARACTER_STREAK": 1
+  },
+  "considered": 736,
+  "trace": {
+    "traceVersion": 1,
+    "mode": "coldstart",
+    "seed": "feed53:character-journey:blackclover:yuno-grinberryall:part-02@en:samples0",
+    "analytics": {
+      "coldStart": true,
+      "samples": 0,
+      "contents": 0,
+      "minimumSamples": 8
+    },
+    "recent": [
+      {
+        "renderId": "character-journey:onepiece:nami:part-03@en",
+        "contentType": "character-journey",
+        "animes": [
+          "onepiece"
+        ],
+        "characters": [
+          "onepiece:nami"
+        ]
+      },
+      {
+        "renderId": "guess-character:attackontitan:armin-arlert@en",
+        "contentType": "guess-character",
+        "animes": [
+          "attackontitan"
+        ],
+        "characters": [
+          "attackontitan:armin-arlert"
+        ]
+      },
+      {
+        "renderId": "character-journey:dragonball:goku:part-05@en",
+        "contentType": "character-journey",
+        "animes": [
+          "dragonball"
+        ],
+        "characters": [
+          "dragonball:goku"
+        ]
+      },
+      {
+        "renderId": "character-versus:hunterxhunter:gon-freecss-vs-blackclover-yami-sukehiro@en",
+        "contentType": "character-versus",
+        "animes": [
+          "hunterxhunter",
+          "blackclover"
+        ],
+        "characters": [
+          "hunterxhunter:gon-freecss",
+          "blackclover:yami-sukehiro"
+        ]
+      },
+      {
+        "renderId": "guess-character:onepiece:roronoa-zoro@en",
+        "contentType": "guess-character",
+        "animes": [
+          "onepiece"
+        ],
+        "characters": [
+          "onepiece:roronoa-zoro"
+        ]
+      },
+      {
+        "renderId": "character-journey:blackclover:yuno-grinberryall:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:yuno-grinberryall"
+        ]
+      }
+    ],
+    "constraints": {
+      "sameAnimeStreak": {
+        "animes": [
+          "blackclover"
+        ],
+        "length": 1
+      },
+      "forcedAnimeRotation": false,
+      "blockedAnimes": [],
+      "blockedCharacters": [
+        "blackclover:yuno-grinberryall"
+      ],
+      "characterCooldown": [
+        "onepiece:nami",
+        "attackontitan:armin-arlert",
+        "dragonball:goku",
+        "hunterxhunter:gon-freecss",
+        "blackclover:yami-sukehiro",
+        "onepiece:roronoa-zoro",
+        "blackclover:yuno-grinberryall"
+      ],
+      "contentTypeStreak": {
+        "contentType": "character-journey",
+        "length": 1
+      }
+    },
+    "hardRulesTriggered": {
+      "JOURNEY_PART_ORDER": 36,
+      "MAX_SAME_CHARACTER_STREAK": 1
+    },
+    "candidates": {
+      "considered": 736,
+      "eligible": 699,
+      "byContentType": {
+        "character-journey": {
+          "considered": 419,
+          "eligible": 383
+        },
+        "guess-character": {
+          "considered": 79,
+          "eligible": 78
+        },
+        "character-versus": {
+          "considered": 238,
+          "eligible": 238
+        }
+      }
+    },
+    "excluded": [
+      {
+        "renderId": "guess-character:blackclover:yuno-grinberryall@en",
+        "contentType": "guess-character",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:yuno-grinberryall"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: blackclover:yuno-grinberryall is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:blackclover:asta:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:asta"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:blackclover:asta:part-03@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:asta"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 3 before Part 2 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:blackclover:noelle-silva:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:noelle-silva"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:blackclover:yami-sukehiro:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:yami-sukehiro"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:bleach:byakuya-kuchiki:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:byakuya-kuchiki"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:bleach:ichigo-kurosaki:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:ichigo-kurosaki"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:bleach:ichigo-kurosaki:part-03@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:ichigo-kurosaki"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 3 before Part 2 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:bleach:ichigo-kurosaki:part-04@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:ichigo-kurosaki"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 4 before Part 3 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:bleach:orihime-inoue:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "bleach"
+        ],
+        "characters": [
+          "bleach:orihime-inoue"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)"
+        ],
+        "potentialScore": 62
+      }
+    ],
+    "status": "selected",
+    "selectedId": "character-versus:bleach:rukia-kuchiki-vs-fullmetalalchemist-edward-elric",
+    "renderId": "character-versus:bleach:rukia-kuchiki-vs-fullmetalalchemist-edward-elric@en",
+    "contentType": "character-versus",
+    "animes": [
+      "bleach",
+      "fullmetalalchemist"
+    ],
+    "characters": [
+      "bleach:rukia-kuchiki",
+      "fullmetalalchemist:edward-elric"
+    ],
+    "score": 91.4,
+    "base": 79.4,
+    "reasons": [
+      "coldstart: novelty +23.5, jitter +5.9",
+      "+12 main character"
+    ],
+    "ranked": [
+      {
+        "renderId": "character-versus:bleach:rukia-kuchiki-vs-fullmetalalchemist-edward-elric@en",
+        "contentType": "character-versus",
+        "animes": [
+          "bleach",
+          "fullmetalalchemist"
+        ],
+        "score": 91.4,
+        "reasons": [
+          "coldstart: novelty +23.5, jitter +5.9",
+          "+12 main character"
+        ]
+      },
+      {
+        "renderId": "guess-character:bleach:byakuya-kuchiki@en",
+        "contentType": "guess-character",
+        "animes": [
+          "bleach"
+        ],
+        "score": 91.35,
+        "reasons": [
+          "coldstart: novelty +23.5, jitter +5.8",
+          "+12 main character"
+        ]
+      },
+      {
+        "renderId": "guess-character:naruto:kakashi-hatake@en",
+        "contentType": "guess-character",
+        "animes": [
+          "naruto"
+        ],
+        "score": 91.35,
+        "reasons": [
+          "coldstart: novelty +23.5, jitter +5.8",
+          "+12 main character"
+        ]
+      },
+      {
+        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-fullmetalalchemist-scar@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "fullmetalalchemist"
+        ],
+        "score": 91.33,
+        "reasons": [
+          "coldstart: novelty +24.0, jitter +5.3",
+          "+12 main character"
+        ]
+      },
+      {
+        "renderId": "guess-character:bleach:yasutora-chad-sado@en",
+        "contentType": "guess-character",
+        "animes": [
+          "bleach"
+        ],
+        "score": 91.28,
+        "reasons": [
+          "coldstart: novelty +23.5, jitter +5.8",
+          "+12 main character"
+        ]
+      },
+      {
+        "renderId": "guess-character:attackontitan:hange-zoe@en",
+        "contentType": "guess-character",
+        "animes": [
+          "attackontitan"
+        ],
+        "score": 91.24,
+        "reasons": [
+          "coldstart: novelty +24.0, jitter +5.2",
+          "+12 main character"
+        ]
+      }
+    ],
+    "explanation": [
+      "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
+      "blackclover:yuno-grinberryall excluded in every format (maxSameCharacterStreak 1).",
+      "Selected character-versus:bleach:rukia-kuchiki-vs-fullmetalalchemist-edward-elric@en (character-versus, bleach + fullmetalalchemist) — coldstart, score 91.4 among 699 valid candidate(s)."
+    ]
+  },
+  "pick": {
+    "contentId": "character-versus:bleach:rukia-kuchiki-vs-fullmetalalchemist-edward-elric",
+    "renderId": "character-versus:bleach:rukia-kuchiki-vs-fullmetalalchemist-edward-elric@en",
+    "contentType": "character-versus",
+    "animes": [
+      "bleach",
+      "fullmetalalchemist"
+    ],
+    "characters": [
+      "bleach:rukia-kuchiki",
+      "fullmetalalchemist:edward-elric"
+    ],
+    "part": null,
+    "partCount": null,
+    "score": 91.4,
+    "reasons": [
+      "coldstart: novelty +23.5, jitter +5.9",
+      "+12 main character"
+    ]
+  },
+  "request": {
+    "template": "characterVersus",
+    "anime": "bleach",
+    "subject": "rukia-kuchiki",
+    "opponent": {
+      "anime": "fullmetalalchemist",
+      "subject": "edward-elric"
+    },
+    "locale": "en",
+    "hook": "Pick your side before the reveal: Rukia Kuchiki or Edward Elric?",
+    "hookType": "challenge",
+    "hookId": "cv-challenge-1",
+    "cta": "Follow for the next match-up.",
+    "ctaType": "follow-for-more",
+    "selection": {
+      "mode": "coldstart",
+      "score": 91.4,
+      "seed": "feed53:character-journey:blackclover:yuno-grinberryall:part-02@en:samples0"
+    },
+    "notes": "growth selector (coldstart): coldstart: novelty +23.5, jitter +5.9; +12 main character"
+  },
+  "alternatives": [
+    {
+      "renderId": "guess-character:bleach:byakuya-kuchiki@en",
+      "contentType": "guess-character",
+      "score": 91.35
+    },
+    {
+      "renderId": "guess-character:naruto:kakashi-hatake@en",
+      "contentType": "guess-character",
+      "score": 91.35
+    },
+    {
+      "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-fullmetalalchemist-scar@en",
+      "contentType": "character-versus",
+      "score": 91.33
+    },
+    {
+      "renderId": "guess-character:bleach:yasutora-chad-sado@en",
+      "contentType": "guess-character",
+      "score": 91.28
+    },
+    {
+      "renderId": "guess-character:attackontitan:hange-zoe@en",
+      "contentType": "guess-character",
+      "score": 91.24
+    }
+  ],
+  "eligible": 699
 }

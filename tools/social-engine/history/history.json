@@ -167,7 +167,7 @@
       "segment": "part-02",
       "segmentFingerprint": "1a234ab9",
       "createdAt": "2026-11-24T06:09:48.903Z",
-      "updatedAt": "2026-11-24T06:12:41.557Z",
+      "updatedAt": "2026-11-24T06:22:14.466Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-11-24T06:12:41.557Z",
       "outputFile": "tools/social-engine/output/blackclover_yuno-grinberryall_character-journey_part-02_en.mp4",
@@ -230,9 +230,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-24T12:00:00+01:00",
+          "scheduledAt": "2026-11-24T06:16:47Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "439849785",
+          "providerPostUuid": "-6923603451216969070",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-6923603451216969070",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "blackclover_yuno-grinberryall_character-journey_part-02_en.instagram.scheduled.5676aab91ffe"
+          ],
+          "updatedAt": "2026-11-24T06:22:14.466Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-24T12:00:00+01:00",
+          "scheduledAt": "2026-11-24T06:16:47Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "439849988",
+          "providerPostUuid": "-3341050123330368056",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-3341050123330368056",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "blackclover_yuno-grinberryall_character-journey_part-02_en.facebook.scheduled.ea3d6c5637ef"
+          ],
+          "updatedAt": "2026-11-24T06:22:14.466Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-24T12:00:00+01:00",
+          "scheduledAt": "2026-11-24T06:16:47Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "439849370",
+          "providerPostUuid": "1893332393012052162",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=1893332393012052162",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "blackclover_yuno-grinberryall_character-journey_part-02_en.tiktok.scheduled.3ac2ac2fb208"
+          ],
+          "updatedAt": "2026-11-24T06:22:14.466Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-24T12:00:00+01:00",
+          "scheduledAt": "2026-11-24T06:16:47Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "439849590",
+          "providerPostUuid": "-614601939987970038",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-614601939987970038",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "blackclover_yuno-grinberryall_character-journey_part-02_en.youtube.scheduled.7880bbfb6ca3"
+          ],
+          "updatedAt": "2026-11-24T06:22:14.466Z"
+        }
+      ]
     },
     "character-journey:dragonball:goku:part-01@en": {
       "renderId": "character-journey:dragonball:goku:part-01@en",

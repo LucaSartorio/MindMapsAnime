@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-24T06:12:42.442Z",
+  "generatedAt": "2026-11-24T06:22:14.492Z",
   "locales": [
     "en",
     "it"
@@ -15538,7 +15538,9 @@
           "renderedLocales": [
             "en"
           ],
-          "scheduledLocales": [],
+          "scheduledLocales": [
+            "en"
+          ],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": true,
@@ -15548,12 +15550,12 @@
               "renderId": "character-journey:blackclover:yuno-grinberryall:part-02@en",
               "locale": "en",
               "variant": null,
-              "status": "notPublished",
+              "status": "scheduled",
               "platforms": {
-                "instagram": "notScheduled",
-                "facebook": "notScheduled",
-                "tiktok": "notScheduled",
-                "youtube": "notScheduled"
+                "instagram": "scheduled",
+                "facebook": "scheduled",
+                "tiktok": "scheduled",
+                "youtube": "scheduled"
               }
             }
           ]
@@ -29509,66 +29511,13 @@
     "summary": {
       "rendered": 58,
       "unavailable": 5,
-      "notPublished": 6,
-      "scheduled": 46,
+      "notPublished": 5,
+      "scheduled": 47,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0
     },
-    "ready": [
-      {
-        "renderId": "character-journey:blackclover:yuno-grinberryall:part-02@en",
-        "contentId": "character-journey:blackclover:yuno-grinberryall:part-02",
-        "anime": "blackclover",
-        "subject": "yuno-grinberryall",
-        "subjectName": "Yuno Grinberryall",
-        "locale": "en",
-        "variant": null,
-        "segment": "part-02",
-        "partNumber": 2,
-        "partCount": 2,
-        "renderedAt": "2026-11-24T06:12:41.557Z",
-        "durationSeconds": 30,
-        "publicationStatus": "notPublished",
-        "platforms": {
-          "instagram": "notScheduled",
-          "facebook": "notScheduled",
-          "tiktok": "notScheduled",
-          "youtube": "notScheduled"
-        },
-        "artifact": {
-          "name": "animapverse-social-render-45338318616-1",
-          "runId": "45338318616",
-          "runAttempt": "1",
-          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/45338318616",
-          "video": "videos/blackclover_yuno-grinberryall_character-journey_part-02_en.mp4",
-          "manifest": "manifests/blackclover_yuno-grinberryall_character-journey_part-02_en.manifest.json",
-          "sha256": "89066d367bf0f5b767fef93a9c8743b36998a6c9fe12f9898e7f491ad63888f7",
-          "cover": "covers/blackclover_yuno-grinberryall_character-journey_part-02_en.cover.png",
-          "expiresAt": "2026-12-24T06:12:41.557Z"
-        },
-        "contentType": "character-journey",
-        "platformMetadata": {
-          "instagramCaption": "The final stretch of Yuno Grinberryall's journey — Part 2 of 2.\n\nYuno Grinberryall's journey across Black Clover — Part 2/2: 11 places on the world map.\n\nWhich location did we miss? 👇\n\nSave it for your next rewatch.\n\n#blackclover #yunogrinberryall #anime #animemap #AniMapVerse",
-          "tiktokCaption": "The final stretch of Yuno Grinberryall's journey — Part 2 of 2. Which location did we miss? 👇 #blackclover #yunogrinberryall #anime #animemap #AniMapVerse",
-          "youtubeTitle": "Every Place Yuno Grinberryall Visited 📖 | Black Clover Journey Part 2 of 2",
-          "youtubeDescription": "The final stretch of Yuno Grinberryall's journey — Part 2 of 2.\n\nYuno Grinberryall's journey across Black Clover — Part 2/2: 11 places on the world map.\n\nWhich location did we miss? 👇\n\nInteractive map: https://animapverse.com/en/black-clover/characters/yuno-grinberryall\n\n#blackclover #yunogrinberryall #anime",
-          "facebookCaption": "The final stretch of Yuno Grinberryall's journey — Part 2 of 2.\n\nYuno Grinberryall's journey across Black Clover — Part 2/2: 11 places on the world map.\n\nWhich location did we miss? 👇\n\nInteractive map: https://animapverse.com/en/black-clover/characters/yuno-grinberryall",
-          "hashtags": [
-            "#blackclover",
-            "#yunogrinberryall",
-            "#anime",
-            "#animemap",
-            "#AniMapVerse"
-          ],
-          "youtube": {
-            "madeForKids": false
-          },
-          "madeForKids": false
-        },
-        "waitFor": {}
-      }
-    ],
+    "ready": [],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",
