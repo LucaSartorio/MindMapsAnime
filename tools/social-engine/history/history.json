@@ -4403,7 +4403,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-11-25T06:05:48.143Z",
-      "updatedAt": "2026-11-25T06:07:45.755Z",
+      "updatedAt": "2026-11-25T06:18:37.040Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-11-25T06:07:45.755Z",
       "outputFile": "tools/social-engine/output/bleach_rukia-kuchiki-vs-fullmetalalchemist-edward-elric_character-versus_en.mp4",
@@ -4471,9 +4471,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-25T12:00:00+01:00",
+          "scheduledAt": "2026-11-25T06:11:13Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "441302045",
+          "providerPostUuid": "-1682192372752232787",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-1682192372752232787",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "bleach_rukia-kuchiki-vs-fullmetalalchemist-edward-elric_character-versus_en.instagram.scheduled.21bf1a8ee578"
+          ],
+          "updatedAt": "2026-11-25T06:18:37.040Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-25T12:00:00+01:00",
+          "scheduledAt": "2026-11-25T06:11:13Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "441301961",
+          "providerPostUuid": "-5378484023136531467",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-5378484023136531467",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "bleach_rukia-kuchiki-vs-fullmetalalchemist-edward-elric_character-versus_en.facebook.scheduled.b182c4b000af"
+          ],
+          "updatedAt": "2026-11-25T06:18:37.040Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-25T12:00:00+01:00",
+          "scheduledAt": "2026-11-25T06:11:13Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "441301915",
+          "providerPostUuid": "-6553308668809359524",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-6553308668809359524",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "bleach_rukia-kuchiki-vs-fullmetalalchemist-edward-elric_character-versus_en.tiktok.scheduled.bd21f01ee208"
+          ],
+          "updatedAt": "2026-11-25T06:18:37.040Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-25T12:00:00+01:00",
+          "scheduledAt": "2026-11-25T06:11:13Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "441302007",
+          "providerPostUuid": "-1487559770256096159",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-1487559770256096159",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "bleach_rukia-kuchiki-vs-fullmetalalchemist-edward-elric_character-versus_en.youtube.scheduled.de2ca0f51db4"
+          ],
+          "updatedAt": "2026-11-25T06:18:37.040Z"
+        }
+      ]
     },
     "character-versus:bleach:yasutora-chad-sado-vs-blackclover-asta@en": {
       "renderId": "character-versus:bleach:yasutora-chad-sado-vs-blackclover-asta@en",

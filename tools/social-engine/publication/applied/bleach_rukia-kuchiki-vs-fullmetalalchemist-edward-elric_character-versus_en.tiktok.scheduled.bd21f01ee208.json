@@ -1,0 +1,30 @@
+{
+  "receiptId": "bleach_rukia-kuchiki-vs-fullmetalalchemist-edward-elric_character-versus_en.tiktok.scheduled.bd21f01ee208",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-11-25T06:18:37.040Z",
+  "sourceFile": "20261125T061113Z-bleach_rukia-kuchiki-vs-fullmetalalchemist-edward-elric_character-versus_en-tiktok-scheduled.json",
+  "run": {
+    "runId": "45559607950",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/45559607950",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "character-versus:bleach:rukia-kuchiki-vs-fullmetalalchemist-edward-elric@en",
+    "platform": "tiktok",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-11-25T12:00:00+01:00",
+    "providerPostId": "441301915",
+    "providerPostUuid": "-6553308668809359524",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-6553308668809359524",
+    "recordedAt": "2026-11-25T06:11:13Z",
+    "recordedBy": "chatgpt-work-publishing-agent"
+  }
+}
