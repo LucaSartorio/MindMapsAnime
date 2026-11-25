@@ -4392,6 +4392,89 @@
         }
       ]
     },
+    "character-versus:bleach:rukia-kuchiki-vs-fullmetalalchemist-edward-elric@en": {
+      "renderId": "character-versus:bleach:rukia-kuchiki-vs-fullmetalalchemist-edward-elric@en",
+      "contentId": "character-versus:bleach:rukia-kuchiki-vs-fullmetalalchemist-edward-elric",
+      "template": "characterVersus",
+      "anime": "bleach",
+      "subject": "rukia-kuchiki-vs-fullmetalalchemist-edward-elric",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-11-25T06:05:48.143Z",
+      "updatedAt": "2026-11-25T06:07:45.755Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-11-25T06:07:45.755Z",
+      "outputFile": "tools/social-engine/output/bleach_rukia-kuchiki-vs-fullmetalalchemist-edward-elric_character-versus_en.mp4",
+      "manifestFile": "tools/social-engine/output/bleach_rukia-kuchiki-vs-fullmetalalchemist-edward-elric_character-versus_en.manifest.json",
+      "sourceFile": "0059-bleach_rukia-kuchiki-vs-fullmetalalchemist-edward-elric_character-versus_en.json",
+      "durationSeconds": 22,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-45558038102-1",
+        "runId": "45558038102",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/45558038102",
+        "video": "videos/bleach_rukia-kuchiki-vs-fullmetalalchemist-edward-elric_character-versus_en.mp4",
+        "manifest": "manifests/bleach_rukia-kuchiki-vs-fullmetalalchemist-edward-elric_character-versus_en.manifest.json",
+        "sha256": "24ac7c3d900beb4e46fbd259ba993b18e02408f95c7ca6e3c006bb86c4cfafdd",
+        "cover": "covers/bleach_rukia-kuchiki-vs-fullmetalalchemist-edward-elric_character-versus_en.cover.png",
+        "expiresAt": "2026-12-25T06:07:45.755Z"
+      },
+      "social": {
+        "contentType": "character-versus",
+        "animes": [
+          "bleach",
+          "fullmetalalchemist"
+        ],
+        "characters": [
+          "bleach:rukia-kuchiki",
+          "fullmetalalchemist:edward-elric"
+        ],
+        "characterNames": [
+          "Rukia Kuchiki",
+          "Edward Elric"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "challenge",
+        "hookId": "cv-challenge-1",
+        "hook": "Pick your side before the reveal: Rukia Kuchiki or Edward Elric?",
+        "ctaType": "follow-for-more",
+        "cta": "Follow for the next match-up.",
+        "durationSeconds": 22,
+        "selection": {
+          "mode": "coldstart",
+          "score": 91.4,
+          "seed": "feed53:character-journey:blackclover:yuno-grinberryall:part-02@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "Pick your side before the reveal: Rukia Kuchiki or Edward Elric?\n\nRukia Kuchiki (Bleach) vs Edward Elric (Fullmetal Alchemist): every place on the map, one winner.\n\nFollow for more anime journeys.\n\nSave it for your next rewatch.\n\n#bleach #fullmetalalchemist #rukiakuchiki #edwardelric #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Pick your side before the reveal: Rukia Kuchiki or Edward Elric? Follow for more anime journeys. #bleach #fullmetalalchemist #rukiakuchiki #edwardelric #anime",
+          "youtubeTitle": "Rukia Kuchiki vs Edward Elric: Who Travelled More? ⚔️",
+          "youtubeDescription": "Pick your side before the reveal: Rukia Kuchiki or Edward Elric?\n\nRukia Kuchiki (Bleach) vs Edward Elric (Fullmetal Alchemist): every place on the map, one winner.\n\nSubscribe for more anime journeys.\n\nInteractive map: https://animapverse.com\n\n#bleach #fullmetalalchemist #rukiakuchiki",
+          "facebookCaption": "Pick your side before the reveal: Rukia Kuchiki or Edward Elric?\n\nRukia Kuchiki (Bleach) vs Edward Elric (Fullmetal Alchemist): every place on the map, one winner.\n\nFollow for more anime journeys.\n\nInteractive map: https://animapverse.com",
+          "hashtags": [
+            "#bleach",
+            "#fullmetalalchemist",
+            "#rukiakuchiki",
+            "#edwardelric",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-versus:bleach:yasutora-chad-sado-vs-blackclover-asta@en": {
       "renderId": "character-versus:bleach:yasutora-chad-sado-vs-blackclover-asta@en",
       "contentId": "character-versus:bleach:yasutora-chad-sado-vs-blackclover-asta",

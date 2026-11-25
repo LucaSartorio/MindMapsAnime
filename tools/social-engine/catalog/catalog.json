@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-24T06:22:14.492Z",
+  "generatedAt": "2026-11-25T06:07:46.833Z",
   "locales": [
     "en",
     "it"
@@ -28457,13 +28457,28 @@
             "placesA": 11,
             "placesB": 10
           },
-          "renderedLocales": [],
+          "renderedLocales": [
+            "en"
+          ],
           "scheduledLocales": [],
           "publishedLocales": [],
           "queuedLocales": [],
-          "renderedBefore": false,
+          "renderedBefore": true,
           "publishedBefore": false,
-          "publication": [],
+          "publication": [
+            {
+              "renderId": "character-versus:bleach:rukia-kuchiki-vs-fullmetalalchemist-edward-elric@en",
+              "locale": "en",
+              "variant": null,
+              "status": "notPublished",
+              "platforms": {
+                "instagram": "notScheduled",
+                "facebook": "notScheduled",
+                "tiktok": "notScheduled",
+                "youtube": "notScheduled"
+              }
+            }
+          ],
           "request": {
             "subject": "rukia-kuchiki",
             "opponent": {
@@ -29509,15 +29524,70 @@
       "metricool"
     ],
     "summary": {
-      "rendered": 58,
+      "rendered": 59,
       "unavailable": 5,
-      "notPublished": 5,
+      "notPublished": 6,
       "scheduled": 47,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0
     },
-    "ready": [],
+    "ready": [
+      {
+        "renderId": "character-versus:bleach:rukia-kuchiki-vs-fullmetalalchemist-edward-elric@en",
+        "contentId": "character-versus:bleach:rukia-kuchiki-vs-fullmetalalchemist-edward-elric",
+        "anime": "bleach",
+        "subject": "rukia-kuchiki-vs-fullmetalalchemist-edward-elric",
+        "subjectName": "Rukia Kuchiki vs Edward Elric",
+        "locale": "en",
+        "variant": null,
+        "segment": null,
+        "partNumber": null,
+        "partCount": null,
+        "renderedAt": "2026-11-25T06:07:45.755Z",
+        "durationSeconds": 22,
+        "publicationStatus": "notPublished",
+        "platforms": {
+          "instagram": "notScheduled",
+          "facebook": "notScheduled",
+          "tiktok": "notScheduled",
+          "youtube": "notScheduled"
+        },
+        "artifact": {
+          "name": "animapverse-social-render-45558038102-1",
+          "runId": "45558038102",
+          "runAttempt": "1",
+          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/45558038102",
+          "video": "videos/bleach_rukia-kuchiki-vs-fullmetalalchemist-edward-elric_character-versus_en.mp4",
+          "manifest": "manifests/bleach_rukia-kuchiki-vs-fullmetalalchemist-edward-elric_character-versus_en.manifest.json",
+          "sha256": "24ac7c3d900beb4e46fbd259ba993b18e02408f95c7ca6e3c006bb86c4cfafdd",
+          "cover": "covers/bleach_rukia-kuchiki-vs-fullmetalalchemist-edward-elric_character-versus_en.cover.png",
+          "expiresAt": "2026-12-25T06:07:45.755Z"
+        },
+        "contentType": "character-versus",
+        "platformMetadata": {
+          "instagramCaption": "Pick your side before the reveal: Rukia Kuchiki or Edward Elric?\n\nRukia Kuchiki (Bleach) vs Edward Elric (Fullmetal Alchemist): every place on the map, one winner.\n\nFollow for more anime journeys.\n\nSave it for your next rewatch.\n\n#bleach #fullmetalalchemist #rukiakuchiki #edwardelric #anime #animemap #AniMapVerse",
+          "tiktokCaption": "Pick your side before the reveal: Rukia Kuchiki or Edward Elric? Follow for more anime journeys. #bleach #fullmetalalchemist #rukiakuchiki #edwardelric #anime",
+          "youtubeTitle": "Rukia Kuchiki vs Edward Elric: Who Travelled More? ⚔️",
+          "youtubeDescription": "Pick your side before the reveal: Rukia Kuchiki or Edward Elric?\n\nRukia Kuchiki (Bleach) vs Edward Elric (Fullmetal Alchemist): every place on the map, one winner.\n\nSubscribe for more anime journeys.\n\nInteractive map: https://animapverse.com\n\n#bleach #fullmetalalchemist #rukiakuchiki",
+          "facebookCaption": "Pick your side before the reveal: Rukia Kuchiki or Edward Elric?\n\nRukia Kuchiki (Bleach) vs Edward Elric (Fullmetal Alchemist): every place on the map, one winner.\n\nFollow for more anime journeys.\n\nInteractive map: https://animapverse.com",
+          "hashtags": [
+            "#bleach",
+            "#fullmetalalchemist",
+            "#rukiakuchiki",
+            "#edwardelric",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        },
+        "waitFor": {}
+      }
+    ],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",
