@@ -1,0 +1,22 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterVersus",
+  "anime": "bleach",
+  "subject": "rukia-kuchiki",
+  "opponent": {
+    "anime": "fullmetalalchemist",
+    "subject": "edward-elric"
+  },
+  "locale": "en",
+  "hook": "Pick your side before the reveal: Rukia Kuchiki or Edward Elric?",
+  "hookType": "challenge",
+  "hookId": "cv-challenge-1",
+  "cta": "Follow for the next match-up.",
+  "ctaType": "follow-for-more",
+  "selection": {
+    "mode": "coldstart",
+    "score": 91.4,
+    "seed": "feed53:character-journey:blackclover:yuno-grinberryall:part-02@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +23.5, jitter +5.9; +12 main character"
+}
