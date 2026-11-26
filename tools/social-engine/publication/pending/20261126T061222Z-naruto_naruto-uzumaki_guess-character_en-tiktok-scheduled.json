@@ -1,0 +1,13 @@
+{
+  "receiptVersion": 1,
+  "renderId": "guess-character:naruto:naruto-uzumaki@en",
+  "platform": "tiktok",
+  "provider": "metricool",
+  "status": "scheduled",
+  "scheduledFor": "2026-11-26T10:00:00+01:00",
+  "providerPostId": "442698679",
+  "providerPostUuid": "-7062681935782657021",
+  "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-7062681935782657021",
+  "recordedAt": "2026-11-26T06:12:22Z",
+  "recordedBy": "chatgpt-work-publishing-agent"
+}
