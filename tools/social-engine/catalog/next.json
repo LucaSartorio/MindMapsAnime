@@ -1,19 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-25T06:18:37.066Z",
-  "status": "ready",
+  "generatedAt": "2026-11-26T06:09:30.612Z",
+  "status": "backlog",
   "feedTail": [
-    {
-      "renderId": "guess-character:attackontitan:armin-arlert@en",
-      "contentType": "guess-character",
-      "animes": [
-        "attackontitan"
-      ],
-      "characters": [
-        "attackontitan:armin-arlert"
-      ],
-      "part": null
-    },
     {
       "renderId": "character-journey:dragonball:goku:part-05@en",
       "contentType": "character-journey",
@@ -72,6 +61,17 @@
         "fullmetalalchemist:edward-elric"
       ],
       "part": null
+    },
+    {
+      "renderId": "guess-character:naruto:naruto-uzumaki@en",
+      "contentType": "guess-character",
+      "animes": [
+        "naruto"
+      ],
+      "characters": [
+        "naruto:naruto-uzumaki"
+      ],
+      "part": null
     }
   ],
   "rules": {
@@ -92,491 +92,28 @@
     "error": null
   },
   "backlog": {
-    "unpublished": [],
+    "unpublished": [
+      {
+        "renderId": "guess-character:naruto:naruto-uzumaki@en",
+        "contentType": "guess-character",
+        "renderedAt": "2026-11-26T06:09:29.601Z",
+        "missing": [
+          "instagram",
+          "facebook",
+          "tiktok",
+          "youtube"
+        ]
+      }
+    ],
     "unfinished": [],
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "feed54:hc30f1479:samples0",
-  "rejected": {
-    "JOURNEY_PART_ORDER": 36,
-    "MAX_SAME_CHARACTER_STREAK": 46
-  },
-  "considered": 735,
-  "trace": {
-    "traceVersion": 1,
-    "mode": "coldstart",
-    "seed": "feed54:hc30f1479:samples0",
-    "analytics": {
-      "coldStart": true,
-      "samples": 0,
-      "contents": 0,
-      "minimumSamples": 8
-    },
-    "recent": [
-      {
-        "renderId": "guess-character:attackontitan:armin-arlert@en",
-        "contentType": "guess-character",
-        "animes": [
-          "attackontitan"
-        ],
-        "characters": [
-          "attackontitan:armin-arlert"
-        ]
-      },
-      {
-        "renderId": "character-journey:dragonball:goku:part-05@en",
-        "contentType": "character-journey",
-        "animes": [
-          "dragonball"
-        ],
-        "characters": [
-          "dragonball:goku"
-        ]
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:gon-freecss-vs-blackclover-yami-sukehiro@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "blackclover"
-        ],
-        "characters": [
-          "hunterxhunter:gon-freecss",
-          "blackclover:yami-sukehiro"
-        ]
-      },
-      {
-        "renderId": "guess-character:onepiece:roronoa-zoro@en",
-        "contentType": "guess-character",
-        "animes": [
-          "onepiece"
-        ],
-        "characters": [
-          "onepiece:roronoa-zoro"
-        ]
-      },
-      {
-        "renderId": "character-journey:blackclover:yuno-grinberryall:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:yuno-grinberryall"
-        ]
-      },
-      {
-        "renderId": "character-versus:bleach:rukia-kuchiki-vs-fullmetalalchemist-edward-elric@en",
-        "contentType": "character-versus",
-        "animes": [
-          "bleach",
-          "fullmetalalchemist"
-        ],
-        "characters": [
-          "bleach:rukia-kuchiki",
-          "fullmetalalchemist:edward-elric"
-        ]
-      }
-    ],
-    "constraints": {
-      "sameAnimeStreak": {
-        "animes": [
-          "bleach",
-          "fullmetalalchemist"
-        ],
-        "length": 1
-      },
-      "forcedAnimeRotation": false,
-      "blockedAnimes": [],
-      "blockedCharacters": [
-        "bleach:rukia-kuchiki",
-        "fullmetalalchemist:edward-elric"
-      ],
-      "characterCooldown": [
-        "attackontitan:armin-arlert",
-        "dragonball:goku",
-        "hunterxhunter:gon-freecss",
-        "blackclover:yami-sukehiro",
-        "onepiece:roronoa-zoro",
-        "blackclover:yuno-grinberryall",
-        "bleach:rukia-kuchiki",
-        "fullmetalalchemist:edward-elric"
-      ],
-      "contentTypeStreak": {
-        "contentType": "character-versus",
-        "length": 1
-      }
-    },
-    "hardRulesTriggered": {
-      "JOURNEY_PART_ORDER": 36,
-      "MAX_SAME_CHARACTER_STREAK": 46
-    },
-    "candidates": {
-      "considered": 735,
-      "eligible": 656,
-      "byContentType": {
-        "character-journey": {
-          "considered": 419,
-          "eligible": 381
-        },
-        "guess-character": {
-          "considered": 79,
-          "eligible": 77
-        },
-        "character-versus": {
-          "considered": 237,
-          "eligible": 198
-        }
-      }
-    },
-    "excluded": [
-      {
-        "renderId": "character-journey:bleach:rukia-kuchiki:part-01@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:rukia-kuchiki"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: bleach:rukia-kuchiki is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:bleach:rukia-kuchiki:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:rukia-kuchiki"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER",
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)",
-          "character streak: bleach:rukia-kuchiki is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:bleach:rukia-kuchiki:part-03@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:rukia-kuchiki"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER",
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "sequence: Part 3 before Part 2 (never publish parts out of order)",
-          "character streak: bleach:rukia-kuchiki is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:fullmetalalchemist:edward-elric:part-01@en",
-        "contentType": "character-journey",
-        "animes": [
-          "fullmetalalchemist"
-        ],
-        "characters": [
-          "fullmetalalchemist:edward-elric"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: fullmetalalchemist:edward-elric is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:fullmetalalchemist:edward-elric:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "fullmetalalchemist"
-        ],
-        "characters": [
-          "fullmetalalchemist:edward-elric"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER",
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)",
-          "character streak: fullmetalalchemist:edward-elric is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:attackontitan:armin-arlert-vs-bleach-rukia-kuchiki@en",
-        "contentType": "character-versus",
-        "animes": [
-          "attackontitan",
-          "bleach"
-        ],
-        "characters": [
-          "attackontitan:armin-arlert",
-          "bleach:rukia-kuchiki"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: bleach:rukia-kuchiki is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:attackontitan:armin-arlert-vs-fullmetalalchemist-edward-elric@en",
-        "contentType": "character-versus",
-        "animes": [
-          "attackontitan",
-          "fullmetalalchemist"
-        ],
-        "characters": [
-          "attackontitan:armin-arlert",
-          "fullmetalalchemist:edward-elric"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: fullmetalalchemist:edward-elric is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-bleach-rukia-kuchiki@en",
-        "contentType": "character-versus",
-        "animes": [
-          "attackontitan",
-          "bleach"
-        ],
-        "characters": [
-          "attackontitan:mikasa-ackerman",
-          "bleach:rukia-kuchiki"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: bleach:rukia-kuchiki is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-fullmetalalchemist-edward-elric@en",
-        "contentType": "character-versus",
-        "animes": [
-          "attackontitan",
-          "fullmetalalchemist"
-        ],
-        "characters": [
-          "attackontitan:mikasa-ackerman",
-          "fullmetalalchemist:edward-elric"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: fullmetalalchemist:edward-elric is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-versus:attackontitan:reiner-braun-vs-bleach-rukia-kuchiki@en",
-        "contentType": "character-versus",
-        "animes": [
-          "attackontitan",
-          "bleach"
-        ],
-        "characters": [
-          "attackontitan:reiner-braun",
-          "bleach:rukia-kuchiki"
-        ],
-        "reasons": [
-          "MAX_SAME_CHARACTER_STREAK"
-        ],
-        "messages": [
-          "character streak: bleach:rukia-kuchiki is in the last 1 item(s) (max 1)"
-        ],
-        "potentialScore": 62
-      }
-    ],
-    "status": "selected",
-    "selectedId": "guess-character:naruto:naruto-uzumaki",
-    "renderId": "guess-character:naruto:naruto-uzumaki@en",
-    "contentType": "guess-character",
-    "animes": [
-      "naruto"
-    ],
-    "characters": [
-      "naruto:naruto-uzumaki"
-    ],
-    "score": 91.4,
-    "base": 79.4,
-    "reasons": [
-      "coldstart: novelty +24.0, jitter +5.4",
-      "+12 main character"
-    ],
-    "ranked": [
-      {
-        "renderId": "guess-character:naruto:naruto-uzumaki@en",
-        "contentType": "guess-character",
-        "animes": [
-          "naruto"
-        ],
-        "score": 91.4,
-        "reasons": [
-          "coldstart: novelty +24.0, jitter +5.4",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "guess-character:attackontitan:falco-grice@en",
-        "contentType": "guess-character",
-        "animes": [
-          "attackontitan"
-        ],
-        "score": 91.25,
-        "reasons": [
-          "coldstart: novelty +24.0, jitter +5.2",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "guess-character:dragonball:piccolo@en",
-        "contentType": "guess-character",
-        "animes": [
-          "dragonball"
-        ],
-        "score": 91.11,
-        "reasons": [
-          "coldstart: novelty +23.5, jitter +5.6",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "character-journey:attackontitan:grisha-yeager@en",
-        "contentType": "character-journey",
-        "animes": [
-          "attackontitan"
-        ],
-        "score": 91,
-        "reasons": [
-          "coldstart: novelty +21.0, jitter +6.0",
-          "+12 main character",
-          "+2 format below its target share (45% < 50%)"
-        ]
-      },
-      {
-        "renderId": "character-journey:naruto:sakura-haruno:part-01@en",
-        "contentType": "character-journey",
-        "animes": [
-          "naruto"
-        ],
-        "score": 90.95,
-        "reasons": [
-          "coldstart: novelty +21.0, jitter +5.9",
-          "+12 main character",
-          "+2 format below its target share (45% < 50%)"
-        ]
-      },
-      {
-        "renderId": "guess-character:naruto:sasuke-uchiha@en",
-        "contentType": "guess-character",
-        "animes": [
-          "naruto"
-        ],
-        "score": 90.81,
-        "reasons": [
-          "coldstart: novelty +24.0, jitter +4.8",
-          "+12 main character"
-        ]
-      }
-    ],
-    "explanation": [
-      "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
-      "bleach:rukia-kuchiki, fullmetalalchemist:edward-elric excluded in every format (maxSameCharacterStreak 1).",
-      "Selected guess-character:naruto:naruto-uzumaki@en (guess-character, naruto) — coldstart, score 91.4 among 656 valid candidate(s)."
-    ]
-  },
-  "pick": {
-    "contentId": "guess-character:naruto:naruto-uzumaki",
-    "renderId": "guess-character:naruto:naruto-uzumaki@en",
-    "contentType": "guess-character",
-    "animes": [
-      "naruto"
-    ],
-    "characters": [
-      "naruto:naruto-uzumaki"
-    ],
-    "part": null,
-    "partCount": null,
-    "score": 91.4,
-    "reasons": [
-      "coldstart: novelty +24.0, jitter +5.4",
-      "+12 main character"
-    ]
-  },
-  "request": {
-    "template": "guessCharacter",
-    "anime": "naruto",
-    "subject": "naruto-uzumaki",
-    "locale": "en",
-    "hook": "6 places. One Naruto character. Who is it?",
-    "hookType": "curiosity",
-    "hookId": "gc-curiosity-1",
-    "cta": "How many places did you recognize?",
-    "ctaType": "comment-guess",
-    "selection": {
-      "mode": "coldstart",
-      "score": 91.4,
-      "seed": "feed54:hc30f1479:samples0"
-    },
-    "notes": "growth selector (coldstart): coldstart: novelty +24.0, jitter +5.4; +12 main character"
-  },
-  "alternatives": [
-    {
-      "renderId": "guess-character:attackontitan:falco-grice@en",
-      "contentType": "guess-character",
-      "score": 91.25
-    },
-    {
-      "renderId": "guess-character:dragonball:piccolo@en",
-      "contentType": "guess-character",
-      "score": 91.11
-    },
-    {
-      "renderId": "character-journey:attackontitan:grisha-yeager@en",
-      "contentType": "character-journey",
-      "score": 91
-    },
-    {
-      "renderId": "character-journey:naruto:sakura-haruno:part-01@en",
-      "contentType": "character-journey",
-      "score": 90.95
-    },
-    {
-      "renderId": "guess-character:naruto:sasuke-uchiha@en",
-      "contentType": "guess-character",
-      "score": 90.81
-    }
-  ],
-  "eligible": 656
+  "seed": "",
+  "reason": "publish the existing render first: guess-character:naruto:naruto-uzumaki@en (it counts as today's video; no new content)",
+  "alternatives": [],
+  "rejected": {},
+  "considered": 0,
+  "eligible": 0,
+  "trace": null
 }

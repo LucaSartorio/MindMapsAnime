@@ -8184,6 +8184,84 @@
         }
       ]
     },
+    "guess-character:naruto:naruto-uzumaki@en": {
+      "renderId": "guess-character:naruto:naruto-uzumaki@en",
+      "contentId": "guess-character:naruto:naruto-uzumaki",
+      "template": "guessCharacter",
+      "anime": "naruto",
+      "subject": "naruto-uzumaki",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-11-26T06:06:56.150Z",
+      "updatedAt": "2026-11-26T06:09:29.601Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-11-26T06:09:29.601Z",
+      "outputFile": "tools/social-engine/output/naruto_naruto-uzumaki_guess-character_en.mp4",
+      "manifestFile": "tools/social-engine/output/naruto_naruto-uzumaki_guess-character_en.manifest.json",
+      "sourceFile": "0060-naruto_naruto-uzumaki_guess-character_en.json",
+      "durationSeconds": 26,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-45765916906-1",
+        "runId": "45765916906",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/45765916906",
+        "video": "videos/naruto_naruto-uzumaki_guess-character_en.mp4",
+        "manifest": "manifests/naruto_naruto-uzumaki_guess-character_en.manifest.json",
+        "sha256": "12f185426bc72a21884dfe8835e39efbae1263fbe3d2b9dad7f44419c03a0312",
+        "cover": "covers/naruto_naruto-uzumaki_guess-character_en.cover.png",
+        "expiresAt": "2026-12-26T06:09:29.601Z"
+      },
+      "social": {
+        "contentType": "guess-character",
+        "animes": [
+          "naruto"
+        ],
+        "characters": [
+          "naruto:naruto-uzumaki"
+        ],
+        "characterNames": [
+          "Naruto Uzumaki"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "curiosity",
+        "hookId": "gc-curiosity-1",
+        "hook": "6 places. One Naruto character. Who is it?",
+        "ctaType": "comment-guess",
+        "cta": "How many places did you recognize?",
+        "durationSeconds": 26,
+        "selection": {
+          "mode": "coldstart",
+          "score": 91.4,
+          "seed": "feed54:hc30f1479:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "6 places. One Naruto character. Who is it?\n\n6 places, one Naruto character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nSave it for your next rewatch.\n\n#naruto #narutoshippuden #anime #animemap #AniMapVerse",
+          "tiktokCaption": "6 places. One Naruto character. Who is it? Did you get it right? Tell us how many places it took you 👇 #naruto #narutoshippuden #anime #animemap #AniMapVerse",
+          "youtubeTitle": "Guess the Naruto Character From the Places They Visited 🍥",
+          "youtubeDescription": "6 places. One Naruto character. Who is it?\n\n6 places, one Naruto character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/naruto/map\n\n#naruto #narutoshippuden #anime",
+          "facebookCaption": "6 places. One Naruto character. Who is it?\n\n6 places, one Naruto character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/naruto/map",
+          "hashtags": [
+            "#naruto",
+            "#narutoshippuden",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "guess-character:onepiece:nico-robin@en": {
       "renderId": "guess-character:onepiece:nico-robin@en",
       "contentId": "guess-character:onepiece:nico-robin",
