@@ -8195,7 +8195,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-11-26T06:06:56.150Z",
-      "updatedAt": "2026-11-26T06:09:29.601Z",
+      "updatedAt": "2026-11-26T06:19:46.004Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-11-26T06:09:29.601Z",
       "outputFile": "tools/social-engine/output/naruto_naruto-uzumaki_guess-character_en.mp4",
@@ -8258,9 +8258,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-26T10:00:00+01:00",
+          "scheduledAt": "2026-11-26T06:12:22Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "442698511",
+          "providerPostUuid": "-1787772068433606724",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-1787772068433606724",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "naruto_naruto-uzumaki_guess-character_en.instagram.scheduled.b771f024371d"
+          ],
+          "updatedAt": "2026-11-26T06:19:46.004Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-26T10:00:00+01:00",
+          "scheduledAt": "2026-11-26T06:12:22Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "442698564",
+          "providerPostUuid": "4140391569811197501",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=4140391569811197501",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "naruto_naruto-uzumaki_guess-character_en.facebook.scheduled.e588a4e42afd"
+          ],
+          "updatedAt": "2026-11-26T06:19:46.004Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-26T10:00:00+01:00",
+          "scheduledAt": "2026-11-26T06:12:22Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "442698679",
+          "providerPostUuid": "-7062681935782657021",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-7062681935782657021",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "naruto_naruto-uzumaki_guess-character_en.tiktok.scheduled.b0fbfcaa9d44"
+          ],
+          "updatedAt": "2026-11-26T06:19:46.004Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-26T10:00:00+01:00",
+          "scheduledAt": "2026-11-26T06:12:22Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "442698619",
+          "providerPostUuid": "-5855865517669986944",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-5855865517669986944",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "naruto_naruto-uzumaki_guess-character_en.youtube.scheduled.00af24260243"
+          ],
+          "updatedAt": "2026-11-26T06:19:46.004Z"
+        }
+      ]
     },
     "guess-character:onepiece:nico-robin@en": {
       "renderId": "guess-character:onepiece:nico-robin@en",

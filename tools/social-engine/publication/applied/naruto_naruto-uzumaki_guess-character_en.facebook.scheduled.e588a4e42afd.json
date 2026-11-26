@@ -1,0 +1,30 @@
+{
+  "receiptId": "naruto_naruto-uzumaki_guess-character_en.facebook.scheduled.e588a4e42afd",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-11-26T06:19:46.004Z",
+  "sourceFile": "20261126T061222Z-naruto_naruto-uzumaki_guess-character_en-facebook-scheduled.json",
+  "run": {
+    "runId": "45767398180",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/45767398180",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "guess-character:naruto:naruto-uzumaki@en",
+    "platform": "facebook",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-11-26T10:00:00+01:00",
+    "providerPostId": "442698564",
+    "providerPostUuid": "4140391569811197501",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=4140391569811197501",
+    "recordedAt": "2026-11-26T06:12:22Z",
+    "recordedBy": "chatgpt-work-publishing-agent"
+  }
+}

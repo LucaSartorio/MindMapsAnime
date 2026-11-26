@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-26T06:09:30.612Z",
+  "generatedAt": "2026-11-26T06:19:46.025Z",
   "locales": [
     "en",
     "it"
@@ -16790,7 +16790,9 @@
           "renderedLocales": [
             "en"
           ],
-          "scheduledLocales": [],
+          "scheduledLocales": [
+            "en"
+          ],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": true,
@@ -16800,12 +16802,12 @@
               "renderId": "guess-character:naruto:naruto-uzumaki@en",
               "locale": "en",
               "variant": null,
-              "status": "notPublished",
+              "status": "scheduled",
               "platforms": {
-                "instagram": "notScheduled",
-                "facebook": "notScheduled",
-                "tiktok": "notScheduled",
-                "youtube": "notScheduled"
+                "instagram": "scheduled",
+                "facebook": "scheduled",
+                "tiktok": "scheduled",
+                "youtube": "scheduled"
               }
             }
           ]
@@ -29543,66 +29545,13 @@
     "summary": {
       "rendered": 60,
       "unavailable": 5,
-      "notPublished": 6,
-      "scheduled": 48,
+      "notPublished": 5,
+      "scheduled": 49,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0
     },
-    "ready": [
-      {
-        "renderId": "guess-character:naruto:naruto-uzumaki@en",
-        "contentId": "guess-character:naruto:naruto-uzumaki",
-        "anime": "naruto",
-        "subject": "naruto-uzumaki",
-        "subjectName": "Naruto Uzumaki",
-        "locale": "en",
-        "variant": null,
-        "segment": null,
-        "partNumber": null,
-        "partCount": null,
-        "renderedAt": "2026-11-26T06:09:29.601Z",
-        "durationSeconds": 26,
-        "publicationStatus": "notPublished",
-        "platforms": {
-          "instagram": "notScheduled",
-          "facebook": "notScheduled",
-          "tiktok": "notScheduled",
-          "youtube": "notScheduled"
-        },
-        "artifact": {
-          "name": "animapverse-social-render-45765916906-1",
-          "runId": "45765916906",
-          "runAttempt": "1",
-          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/45765916906",
-          "video": "videos/naruto_naruto-uzumaki_guess-character_en.mp4",
-          "manifest": "manifests/naruto_naruto-uzumaki_guess-character_en.manifest.json",
-          "sha256": "12f185426bc72a21884dfe8835e39efbae1263fbe3d2b9dad7f44419c03a0312",
-          "cover": "covers/naruto_naruto-uzumaki_guess-character_en.cover.png",
-          "expiresAt": "2026-12-26T06:09:29.601Z"
-        },
-        "contentType": "guess-character",
-        "platformMetadata": {
-          "instagramCaption": "6 places. One Naruto character. Who is it?\n\n6 places, one Naruto character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nSave it for your next rewatch.\n\n#naruto #narutoshippuden #anime #animemap #AniMapVerse",
-          "tiktokCaption": "6 places. One Naruto character. Who is it? Did you get it right? Tell us how many places it took you 👇 #naruto #narutoshippuden #anime #animemap #AniMapVerse",
-          "youtubeTitle": "Guess the Naruto Character From the Places They Visited 🍥",
-          "youtubeDescription": "6 places. One Naruto character. Who is it?\n\n6 places, one Naruto character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/naruto/map\n\n#naruto #narutoshippuden #anime",
-          "facebookCaption": "6 places. One Naruto character. Who is it?\n\n6 places, one Naruto character. Guess before the reveal!\n\nDid you get it right? Tell us how many places it took you 👇\n\nInteractive map: https://animapverse.com/en/naruto/map",
-          "hashtags": [
-            "#naruto",
-            "#narutoshippuden",
-            "#anime",
-            "#animemap",
-            "#AniMapVerse"
-          ],
-          "youtube": {
-            "madeForKids": false
-          },
-          "madeForKids": false
-        },
-        "waitFor": {}
-      }
-    ],
+    "ready": [],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",

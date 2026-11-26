@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-26T06:09:30.612Z",
-  "status": "backlog",
+  "generatedAt": "2026-11-26T06:19:46.025Z",
+  "status": "ready",
   "feedTail": [
     {
       "renderId": "character-journey:dragonball:goku:part-05@en",
@@ -92,28 +92,499 @@
     "error": null
   },
   "backlog": {
-    "unpublished": [
-      {
-        "renderId": "guess-character:naruto:naruto-uzumaki@en",
-        "contentType": "guess-character",
-        "renderedAt": "2026-11-26T06:09:29.601Z",
-        "missing": [
-          "instagram",
-          "facebook",
-          "tiktok",
-          "youtube"
-        ]
-      }
-    ],
+    "unpublished": [],
     "unfinished": [],
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "",
-  "reason": "publish the existing render first: guess-character:naruto:naruto-uzumaki@en (it counts as today's video; no new content)",
-  "alternatives": [],
-  "rejected": {},
-  "considered": 0,
-  "eligible": 0,
-  "trace": null
+  "seed": "feed55:guess-character:naruto:naruto-uzumaki@en:samples0",
+  "rejected": {
+    "JOURNEY_PART_ORDER": 36,
+    "MAX_SAME_CHARACTER_STREAK": 20
+  },
+  "considered": 734,
+  "trace": {
+    "traceVersion": 1,
+    "mode": "coldstart",
+    "seed": "feed55:guess-character:naruto:naruto-uzumaki@en:samples0",
+    "analytics": {
+      "coldStart": true,
+      "samples": 0,
+      "contents": 0,
+      "minimumSamples": 8
+    },
+    "recent": [
+      {
+        "renderId": "character-journey:dragonball:goku:part-05@en",
+        "contentType": "character-journey",
+        "animes": [
+          "dragonball"
+        ],
+        "characters": [
+          "dragonball:goku"
+        ]
+      },
+      {
+        "renderId": "character-versus:hunterxhunter:gon-freecss-vs-blackclover-yami-sukehiro@en",
+        "contentType": "character-versus",
+        "animes": [
+          "hunterxhunter",
+          "blackclover"
+        ],
+        "characters": [
+          "hunterxhunter:gon-freecss",
+          "blackclover:yami-sukehiro"
+        ]
+      },
+      {
+        "renderId": "guess-character:onepiece:roronoa-zoro@en",
+        "contentType": "guess-character",
+        "animes": [
+          "onepiece"
+        ],
+        "characters": [
+          "onepiece:roronoa-zoro"
+        ]
+      },
+      {
+        "renderId": "character-journey:blackclover:yuno-grinberryall:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:yuno-grinberryall"
+        ]
+      },
+      {
+        "renderId": "character-versus:bleach:rukia-kuchiki-vs-fullmetalalchemist-edward-elric@en",
+        "contentType": "character-versus",
+        "animes": [
+          "bleach",
+          "fullmetalalchemist"
+        ],
+        "characters": [
+          "bleach:rukia-kuchiki",
+          "fullmetalalchemist:edward-elric"
+        ]
+      },
+      {
+        "renderId": "guess-character:naruto:naruto-uzumaki@en",
+        "contentType": "guess-character",
+        "animes": [
+          "naruto"
+        ],
+        "characters": [
+          "naruto:naruto-uzumaki"
+        ]
+      }
+    ],
+    "constraints": {
+      "sameAnimeStreak": {
+        "animes": [
+          "naruto"
+        ],
+        "length": 1
+      },
+      "forcedAnimeRotation": false,
+      "blockedAnimes": [],
+      "blockedCharacters": [
+        "naruto:naruto-uzumaki"
+      ],
+      "characterCooldown": [
+        "dragonball:goku",
+        "hunterxhunter:gon-freecss",
+        "blackclover:yami-sukehiro",
+        "onepiece:roronoa-zoro",
+        "blackclover:yuno-grinberryall",
+        "bleach:rukia-kuchiki",
+        "fullmetalalchemist:edward-elric",
+        "naruto:naruto-uzumaki"
+      ],
+      "contentTypeStreak": {
+        "contentType": "guess-character",
+        "length": 1
+      }
+    },
+    "hardRulesTriggered": {
+      "JOURNEY_PART_ORDER": 36,
+      "MAX_SAME_CHARACTER_STREAK": 20
+    },
+    "candidates": {
+      "considered": 734,
+      "eligible": 678,
+      "byContentType": {
+        "character-journey": {
+          "considered": 419,
+          "eligible": 383
+        },
+        "guess-character": {
+          "considered": 78,
+          "eligible": 78
+        },
+        "character-versus": {
+          "considered": 237,
+          "eligible": 217
+        }
+      }
+    },
+    "excluded": [
+      {
+        "renderId": "character-versus:naruto:naruto-uzumaki-vs-attackontitan-armin-arlert@en",
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "attackontitan"
+        ],
+        "characters": [
+          "naruto:naruto-uzumaki",
+          "attackontitan:armin-arlert"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: naruto:naruto-uzumaki is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:naruto:naruto-uzumaki-vs-attackontitan-mikasa-ackerman@en",
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "attackontitan"
+        ],
+        "characters": [
+          "naruto:naruto-uzumaki",
+          "attackontitan:mikasa-ackerman"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: naruto:naruto-uzumaki is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:naruto:naruto-uzumaki-vs-attackontitan-reiner-braun@en",
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "attackontitan"
+        ],
+        "characters": [
+          "naruto:naruto-uzumaki",
+          "attackontitan:reiner-braun"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: naruto:naruto-uzumaki is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:naruto:naruto-uzumaki-vs-blackclover-asta@en",
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "blackclover"
+        ],
+        "characters": [
+          "naruto:naruto-uzumaki",
+          "blackclover:asta"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: naruto:naruto-uzumaki is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:naruto:naruto-uzumaki-vs-blackclover-noelle-silva@en",
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "blackclover"
+        ],
+        "characters": [
+          "naruto:naruto-uzumaki",
+          "blackclover:noelle-silva"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: naruto:naruto-uzumaki is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:naruto:naruto-uzumaki-vs-blackclover-yami-sukehiro@en",
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "blackclover"
+        ],
+        "characters": [
+          "naruto:naruto-uzumaki",
+          "blackclover:yami-sukehiro"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: naruto:naruto-uzumaki is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:naruto:naruto-uzumaki-vs-bleach-ichigo-kurosaki@en",
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "bleach"
+        ],
+        "characters": [
+          "naruto:naruto-uzumaki",
+          "bleach:ichigo-kurosaki"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: naruto:naruto-uzumaki is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:naruto:naruto-uzumaki-vs-bleach-rukia-kuchiki@en",
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "bleach"
+        ],
+        "characters": [
+          "naruto:naruto-uzumaki",
+          "bleach:rukia-kuchiki"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: naruto:naruto-uzumaki is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:naruto:naruto-uzumaki-vs-bleach-yasutora-chad-sado@en",
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "bleach"
+        ],
+        "characters": [
+          "naruto:naruto-uzumaki",
+          "bleach:yasutora-chad-sado"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: naruto:naruto-uzumaki is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:naruto:naruto-uzumaki-vs-dragonball-goku@en",
+        "contentType": "character-versus",
+        "animes": [
+          "naruto",
+          "dragonball"
+        ],
+        "characters": [
+          "naruto:naruto-uzumaki",
+          "dragonball:goku"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: naruto:naruto-uzumaki is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      }
+    ],
+    "status": "selected",
+    "selectedId": "character-journey:jujutsukaisen:suguru-geto",
+    "renderId": "character-journey:jujutsukaisen:suguru-geto@en",
+    "contentType": "character-journey",
+    "animes": [
+      "jujutsukaisen"
+    ],
+    "characters": [
+      "jujutsukaisen:suguru-geto"
+    ],
+    "score": 91.91,
+    "base": 77.91,
+    "reasons": [
+      "coldstart: novelty +22.5, jitter +5.4",
+      "+12 main character",
+      "+2 format below its target share (45% < 50%)"
+    ],
+    "ranked": [
+      {
+        "renderId": "character-journey:jujutsukaisen:suguru-geto@en",
+        "contentType": "character-journey",
+        "animes": [
+          "jujutsukaisen"
+        ],
+        "score": 91.91,
+        "reasons": [
+          "coldstart: novelty +22.5, jitter +5.4",
+          "+12 main character",
+          "+2 format below its target share (45% < 50%)"
+        ]
+      },
+      {
+        "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-attackontitan-reiner-braun@en",
+        "contentType": "character-versus",
+        "animes": [
+          "hunterxhunter",
+          "attackontitan"
+        ],
+        "score": 91.88,
+        "reasons": [
+          "coldstart: novelty +24.0, jitter +5.9",
+          "+12 main character"
+        ]
+      },
+      {
+        "renderId": "character-journey:jujutsukaisen:ryomen-sukuna@en",
+        "contentType": "character-journey",
+        "animes": [
+          "jujutsukaisen"
+        ],
+        "score": 91.51,
+        "reasons": [
+          "coldstart: novelty +22.5, jitter +5.0",
+          "+12 main character",
+          "+2 format below its target share (45% < 50%)"
+        ]
+      },
+      {
+        "renderId": "character-journey:attackontitan:reiner-braun@en",
+        "contentType": "character-journey",
+        "animes": [
+          "attackontitan"
+        ],
+        "score": 91.39,
+        "reasons": [
+          "coldstart: novelty +21.5, jitter +5.9",
+          "+12 main character",
+          "+2 format below its target share (45% < 50%)"
+        ]
+      },
+      {
+        "renderId": "character-versus:dragonball:piccolo-vs-attackontitan-reiner-braun@en",
+        "contentType": "character-versus",
+        "animes": [
+          "dragonball",
+          "attackontitan"
+        ],
+        "score": 91.26,
+        "reasons": [
+          "coldstart: novelty +23.5, jitter +5.8",
+          "+12 main character"
+        ]
+      },
+      {
+        "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-onepiece-monkey-d-luffy@en",
+        "contentType": "character-versus",
+        "animes": [
+          "hunterxhunter",
+          "onepiece"
+        ],
+        "score": 90.83,
+        "reasons": [
+          "coldstart: novelty +23.0, jitter +5.8",
+          "+12 main character"
+        ]
+      }
+    ],
+    "explanation": [
+      "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
+      "naruto:naruto-uzumaki excluded in every format (maxSameCharacterStreak 1).",
+      "Selected character-journey:jujutsukaisen:suguru-geto@en (character-journey, jujutsukaisen) — coldstart, score 91.91 among 678 valid candidate(s)."
+    ]
+  },
+  "pick": {
+    "contentId": "character-journey:jujutsukaisen:suguru-geto",
+    "renderId": "character-journey:jujutsukaisen:suguru-geto@en",
+    "contentType": "character-journey",
+    "animes": [
+      "jujutsukaisen"
+    ],
+    "characters": [
+      "jujutsukaisen:suguru-geto"
+    ],
+    "part": null,
+    "partCount": null,
+    "score": 91.91,
+    "reasons": [
+      "coldstart: novelty +22.5, jitter +5.4",
+      "+12 main character",
+      "+2 format below its target share (45% < 50%)"
+    ]
+  },
+  "request": {
+    "template": "characterJourney",
+    "anime": "jujutsukaisen",
+    "subject": "suguru-geto",
+    "locale": "en",
+    "hook": "How well do you know where Suguru Geto has been?",
+    "hookType": "question",
+    "hookId": "cj-question-3",
+    "cta": "Which journey should we map next?",
+    "ctaType": "comment-next-journey",
+    "selection": {
+      "mode": "coldstart",
+      "score": 91.91,
+      "seed": "feed55:guess-character:naruto:naruto-uzumaki@en:samples0"
+    },
+    "notes": "growth selector (coldstart): coldstart: novelty +22.5, jitter +5.4; +12 main character; +2 format below its target share (45% < 50%)"
+  },
+  "alternatives": [
+    {
+      "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-attackontitan-reiner-braun@en",
+      "contentType": "character-versus",
+      "score": 91.88
+    },
+    {
+      "renderId": "character-journey:jujutsukaisen:ryomen-sukuna@en",
+      "contentType": "character-journey",
+      "score": 91.51
+    },
+    {
+      "renderId": "character-journey:attackontitan:reiner-braun@en",
+      "contentType": "character-journey",
+      "score": 91.39
+    },
+    {
+      "renderId": "character-versus:dragonball:piccolo-vs-attackontitan-reiner-braun@en",
+      "contentType": "character-versus",
+      "score": 91.26
+    },
+    {
+      "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-onepiece-monkey-d-luffy@en",
+      "contentType": "character-versus",
+      "score": 90.83
+    }
+  ],
+  "eligible": 678
 }
