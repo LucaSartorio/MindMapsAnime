@@ -1,0 +1,18 @@
+{
+  "$schema": "../../schemas/social-content.schema.json",
+  "template": "characterJourney",
+  "anime": "jujutsukaisen",
+  "subject": "suguru-geto",
+  "locale": "en",
+  "hook": "How well do you know where Suguru Geto has been?",
+  "hookType": "question",
+  "hookId": "cj-question-3",
+  "cta": "Which journey should we map next?",
+  "ctaType": "comment-next-journey",
+  "selection": {
+    "mode": "coldstart",
+    "score": 91.91,
+    "seed": "feed55:guess-character:naruto:naruto-uzumaki@en:samples0"
+  },
+  "notes": "growth selector (coldstart): coldstart: novelty +22.5, jitter +5.4; +12 main character; +2 format below its target share (45% < 50%)"
+}
