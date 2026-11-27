@@ -130,6 +130,24 @@ slow at `low` → a notice suggests leaving. The choice is remembered in `localS
 | Click → usable viewer | — | 0.76 s median (local server, no network latency) | `benchmark:3d` |
 | FPS 30 mobile / 60 desktop | — | **not measured**: SwiftShader gives ~8 fps on CPU (126 ms/frame) | needs real devices |
 
+**Ordinary navigation, production build vs `origin/main`** (same machine, interleaved A/B, 7 runs each, local
+static server without compression or latency):
+
+| Metric | `main` | this branch | Note |
+|---|---|---|---|
+| Entry chunk | 543.1 KB raw / 176.6 KB gzip | 546.6 / 178.8 | +2.1 KB gzip: `explorer3d.*` UI keys of the bundled it/en locales |
+| WorldRoute chunk (launcher) | 119.4 / 28.0 KB | 123.7 / 29.4 KB | +1.4 KB gzip: button, host, registry, store, manifests |
+| JS transferred: home / map / character / location | 530.8 / 2225.9 / 2032.7 / 2032.7 KB raw | 534.2 / 2233.4 / 2040.2 / 2040.2 | +0.3–0.6 %; 3D chunks requested: 0 |
+| Requests per page | 18 / 32 / 28 / 27 | identical | |
+| LCP median (range) home · map · location | 104 (92–128) · 148 (112–432) · 176 (168–212) ms | 108 (84–108) · 124 (104–396) · 196 (168–216) ms | inside run-to-run variance |
+| CLS / lab TBT | 0–0.005 / 0–1 ms | identical | |
+| `npm run build` | 80 s | 92 s | n = 1 each; adds validate:3d (~1.5 s), test:3d:unit (~1 s), three bundling |
+| `dist/` size | 618.6 MB | 610.9 MB | shorter modulepreload lists (Rollup regrouped chunks) + one never-fetched 3D chunk (571 KB raw) |
+
+Traffic of the viewer (one full open, compressed as Vercel serves it): ~143 KB brotli / ~171 KB gzip, then cached
+(`/assets/*` immutable). Estimate per month: 1,000 opens ≈ 0.14–0.17 GB, 10,000 ≈ 1.4–1.7 GB, 100,000 ≈
+14–17 GB (upper bound: every open a first visit). No new function, server, GPU or plan change.
+
 Frame-time numbers from software rendering on a shared runner prove only that the loop works; FPS on phones and
 desktop GPUs must be measured by the owner on real devices (manual step). FPS is never a blocking CI gate.
 

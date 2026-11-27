@@ -32,7 +32,7 @@
 | Hotspot placement inside the ship | interpretive | links are canon (dataset), positions are a choice |
 | Sign | generic | shows the dataset name in a generic serif font, not the work's logo |
 
-## Measurements (2026-11-27, flag-on build, SwiftShader)
+## Measurements (2026-11-27, flag-on build, SwiftShader, state-fingerprint `5bd14b165f9914e82912`)
 | Metric | low | high | method |
 |---|---|---|---|
 | Draw calls (exterior) | 14 | 20 | `test:3d` |
