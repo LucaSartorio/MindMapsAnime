@@ -62,6 +62,8 @@ export interface ZoneDef {
   reconstruction: ReconstructionStatus;
   /** Used for "which zone am I in" and to decide which interior groups are visible. */
   bounds: Box3Def;
+  /** Plan footprint inside `bounds`: the whole box (default) or the ellipse inscribed in its XZ rectangle. */
+  footprint?: 'box' | 'ellipse';
 }
 
 export interface SpawnDef {

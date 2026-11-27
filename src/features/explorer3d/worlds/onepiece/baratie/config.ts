@@ -48,7 +48,7 @@ export const definition: SceneDefinition = {
     { id: 'terrace-top', kind: 'terrace', interior: false, reconstruction: 'canon', bounds: { min: [-10.6, T2_TOP - 0.3, -6.2], max: [4.7, T2_TOP + 2.2, 6.2] } },
     { id: 'outer-stairs', kind: 'stairs', interior: false, reconstruction: 'interpretive', bounds: { min: [-6.6, DECK_Y - 0.5, -11.7], max: [1.6, T1_TOP + 0.7, -9.8] } },
     { id: 'upper-stairs', kind: 'stairs', interior: false, reconstruction: 'interpretive', bounds: { min: [-7.1, T1_TOP - 0.3, 5.6], max: [0.9, T2_TOP + 0.7, 7.7] } },
-    { id: 'dining-hall', kind: 'diningHall', interior: true, reconstruction: 'canon', bounds: { min: [-18, DECK_Y - 0.5, -10.2], max: [12, T1_TOP - 0.4, 10.2] } },
+    { id: 'dining-hall', kind: 'diningHall', interior: true, reconstruction: 'canon', footprint: 'ellipse', bounds: { min: [-18, DECK_Y - 0.5, -10.2], max: [12, T1_TOP - 0.4, 10.2] } },
     { id: 'hall-stairs', kind: 'stairs', interior: true, reconstruction: 'interpretive', bounds: { min: [-2.5, DECK_Y - 0.5, 3.6], max: [4.5, T1_TOP - 0.1, 5.4] } },
     { id: 'kitchen', kind: 'kitchen', interior: true, reconstruction: 'canon', bounds: { min: [-10.5, T1_TOP - 0.3, -6], max: [4.5, T2_TOP - 0.3, 6] } },
     { id: 'quarters', kind: 'upperFloor', interior: true, reconstruction: 'interpretive', bounds: { min: [-8.1, T2_TOP - 0.3, -3.4], max: [-0.9, T3_TOP, 3.4] } },

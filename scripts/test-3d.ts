@@ -7,8 +7,8 @@
  *      3D chunk;
  *   2. the viewer opens on click, downloads only its chunks, renders, measures timings/draw calls/triangles;
  *   3. orbit (drag, wheel) and on-demand rendering (the loop stops when idle);
- *   4. exploration: walking through the door into the hall, a wall stops the player, outer stairs to the terrace,
- *      the fin edge cannot be crossed, reset position;
+ *   4. exploration (routes from the scene's config): through the door into the hall, a curved wall stops the
+ *      player, every stair flight reaches its level, the fin edge cannot be crossed, reset position;
  *   5. hotspots: 3D marker click, list focus, "open the entry" opens the existing scheda;
  *   6. quality presets; 7. ten open/close cycles (WebGL contexts, canvases, listeners, rAF, heap);
  *   8. browser back closes the viewer; 9. other languages; 10. mobile (touch joystick); 11. reduced motion;
@@ -31,7 +31,26 @@ import {
   type ExplorerReport,
 } from './explorer3d-lab';
 
+import { definition as baratie, PLAN as BARATIE_PLAN, FIN_Y, T1_TOP, T2_TOP } from '../src/features/explorer3d/worlds/onepiece/baratie/config';
+
 const PORT = Number(process.env.PORT ?? 4193);
+/**
+ * Scene-specific walking routes for the gate, built from the scene's own config (spawn ids, levels, plan): a scene
+ * rebuild moves the data, never hardcoded coordinates here.
+ */
+const spawnOf = (id: string) => {
+  const sp = baratie.spawns.find((x) => x.id === id);
+  if (!sp) throw new Error(`spawn ${id} missing in ${baratie.id}`);
+  return sp;
+};
+const ellipseZ = (x: number) => BARATIE_PLAN.t1.rz * Math.sqrt(Math.max(0, 1 - ((x - BARATIE_PLAN.t1.cx) / BARATIE_PLAN.t1.rx) ** 2));
+const ROUTES = {
+  climbs: [
+    { name: 'outer stairs lead to the terrace', spawn: 'outer-stairs-bottom', level: T1_TOP, interior: null as string | null },
+    { name: 'upper stairs lead to the top terrace', spawn: 'upper-stairs-bottom', level: T2_TOP, interior: null },
+    { name: 'hall stairs lead to the kitchen (middle level)', spawn: 'hall-stairs-bottom', level: T1_TOP, interior: 'kitchen' },
+  ],
+};
 const BASE = `http://localhost:${PORT}`;
 const MAP = '/en/one-piece/map?location=loc-op-baratie';
 const args = process.argv.slice(2);
@@ -178,6 +197,10 @@ async function holdKey(page: Page, key: string, until: () => Promise<boolean>, t
     await page.keyboard.up(key);
   }
 }
+const teleportSpawn = (page: Page, id: string, yaw?: number) => {
+  const sp = spawnOf(id);
+  return teleport(page, [sp.position[0], sp.position[1], sp.position[2]], yaw ?? sp.yaw);
+};
 const teleport = (page: Page, position: [number, number, number], yaw: number) =>
   page.evaluate(([p, y]) => {
     const s = (window as unknown as { __explorer3d: { session: { setMode(m: string): void; walk: { teleport(sp: unknown): void } } } }).__explorer3d.session;
@@ -202,7 +225,7 @@ async function measureViewer(browser: Browser, report: ExplorerReport) {
   const exterior = await stats(page);
   const timings = await page.evaluate(() => (window as unknown as { __explorer3d: { timings: Record<string, unknown> } }).__explorer3d.timings);
   // Frame time while walking (continuous loop): rAF deltas sampled in the page for 3 s.
-  await teleport(page, [14.4, 3, 0], Math.PI / 2);
+  await teleportSpawn(page, baratie.defaultSpawn);
   await page.keyboard.down('KeyW');
   const frames = await page.evaluate(
     () =>
@@ -344,42 +367,48 @@ async function main() {
     await check('walk from the bow through the door into the hall (zone loading)', async () => {
       await page.click('[data-explorer3d="mode-explore"]');
       await page.locator('[data-explorer3d="viewer"][data-mode="explore"]').waitFor();
-      const before = await stats(page);
-      assert(before.interiors.length === 0 || before.interiors.includes('ground'), 'unexpected interiors');
-      await holdKey(page, 'KeyW', async () => (await stats(page)).zone === 'corridor', 25_000);
-      await holdKey(page, 'KeyW', async () => false, 2500);
+      await teleportSpawn(page, baratie.defaultSpawn);
+      await holdKey(page, 'KeyW', async () => (await stats(page)).zone === 'dining-hall', 25_000);
+      await holdKey(page, 'KeyW', async () => false, 1500);
       const s = await stats(page);
-      assert(s.interiors.includes('ground'), 'ground interior not built');
-      assert(s.feet.x > -7, `walked through the corridor wall: x=${s.feet.x.toFixed(2)}`);
-      assert(s.feet.x < -4.2, `did not reach the corridor: x=${s.feet.x.toFixed(2)} zone=${s.zone}`);
-      return `stopped at x=${s.feet.x.toFixed(2)} by the kitchen wall (zone ${s.zone})`;
+      assert(s.zone === 'dining-hall', `did not enter the hall: zone ${s.zone} at ${JSON.stringify(s.feet)}`);
+      assert(s.interiors.includes('hall'), `hall interior not built (${s.interiors})`);
+      return `inside at x=${s.feet.x.toFixed(2)} (zone ${s.zone}, interiors ${s.interiors.join('+')})`;
     });
-    await check('outer stairs lead to the terrace', async () => {
-      await teleport(page, [0.3, 3, -8.9], -Math.PI / 2);
-      await holdKey(page, 'KeyW', async () => (await stats(page)).feet.y > 7.4, 25_000);
-      const s = await stats(page);
-      assert(Math.abs(s.feet.y - 7.5) < 0.05, `y=${s.feet.y}`);
-      return `reached y=${s.feet.y.toFixed(2)} (${s.zone})`;
-    });
-    await check('kitchen stairs lead to the upper floor', async () => {
-      await teleport(page, [-13, 3, 1.4], 0);
-      await holdKey(page, 'KeyW', async () => (await stats(page)).feet.y > 7.4, 25_000);
-      await holdKey(page, 'KeyW', async () => false, 800);
-      const s = await stats(page);
-      assert(Math.abs(s.feet.y - 7.5) < 0.05 && s.interiors.includes('upper'), `y=${s.feet.y} interiors=${s.interiors}`);
-      return `zone ${s.zone}`;
-    });
-    await check('the fin edge cannot be crossed (no fall into the ocean)', async () => {
-      await teleport(page, [-3, 2.7, -14.5], 0);
+    await check('a curved wall stops the player', async () => {
+      const sp = spawnOf('hall');
+      await teleportSpawn(page, 'hall', Math.PI); // face +z, towards the oval wall
       await holdKey(page, 'KeyW', async () => false, 5000);
       const s = await stats(page);
-      assert(s.feet.z > -20.2 && s.feet.y > 2.5, `z=${s.feet.z} y=${s.feet.y}`);
-      return `stopped at z=${s.feet.z.toFixed(2)}`;
+      const wallZ = ellipseZ(sp.position[0]);
+      assert(s.feet.z < wallZ + 0.05, `crossed the wall: z=${s.feet.z.toFixed(2)} wall≈${wallZ.toFixed(2)}`);
+      assert(s.feet.z > wallZ - 1.2, `stopped too early: z=${s.feet.z.toFixed(2)} wall≈${wallZ.toFixed(2)}`);
+      return `stopped at z=${s.feet.z.toFixed(2)} (wall ≈ ${wallZ.toFixed(2)})`;
+    });
+    for (const r of ROUTES.climbs) {
+      await check(r.name, async () => {
+        await teleportSpawn(page, r.spawn);
+        await holdKey(page, 'KeyW', async () => (await stats(page)).feet.y > r.level - 0.1, 25_000);
+        await holdKey(page, 'KeyW', async () => false, 700);
+        const s = await stats(page);
+        assert(Math.abs(s.feet.y - r.level) < 0.05, `y=${s.feet.y.toFixed(2)} expected ${r.level}`);
+        if (r.interior) assert(s.interiors.includes(r.interior), `${r.interior} not built (${s.interiors})`);
+        return `reached y=${s.feet.y.toFixed(2)} (${s.zone})`;
+      });
+    }
+    await check('the fin edge cannot be crossed (no fall into the ocean)', async () => {
+      await teleportSpawn(page, 'fin-port', 0); // face −z, outwards
+      await holdKey(page, 'KeyW', async () => false, 5000);
+      const s = await stats(page);
+      assert(Math.abs(s.feet.y - FIN_Y) < 0.05, `left the fin: y=${s.feet.y}`);
+      assert(s.feet.z > -24, `z=${s.feet.z}`);
+      return `stopped at z=${s.feet.z.toFixed(2)} on the fin (y=${s.feet.y.toFixed(2)})`;
     });
     await check('reset returns to the spawn', async () => {
       await page.click('[data-explorer3d="reset"]');
       const s = await stats(page);
-      assert(Math.abs(s.feet.x - 14.4) < 0.01 && Math.abs(s.feet.z) < 0.01, JSON.stringify(s.feet));
+      const d = spawnOf(baratie.defaultSpawn).position;
+      assert(Math.abs(s.feet.x - d[0]) < 0.01 && Math.abs(s.feet.z - d[2]) < 0.01, JSON.stringify(s.feet));
     });
 
     console.log('[test:3d] 5. hotspots');

@@ -9,6 +9,9 @@ import { AutoQualityController, QUALITY_PRESETS, initialAutoLevel, resolveQualit
 import { createRandom } from './random';
 import { ResourceTracker } from './resources';
 import { SceneRenderer, type RendererStats } from './SceneRenderer';
+import { zoneAt } from './zones';
+
+export { zoneAt };
 import type { SceneBuild, SceneModule, ZoneBuild } from './sceneModule';
 
 export type ExplorerMode = 'observe' | 'explore';
@@ -37,22 +40,6 @@ export interface SessionOptions {
 }
 
 const tmp = new Vector3();
-
-/** Smallest zone containing the point (interiors are smaller than the exterior that contains them). */
-export function zoneAt(def: SceneDefinition, p: Feet): ZoneDef | null {
-  let best: ZoneDef | null = null;
-  let bestVol = Infinity;
-  for (const z of def.zones) {
-    const { min, max } = z.bounds;
-    if (p.x < min[0] || p.x > max[0] || p.y < min[1] - 0.2 || p.y > max[1] || p.z < min[2] || p.z > max[2]) continue;
-    const vol = (max[0] - min[0]) * (max[1] - min[1]) * (max[2] - min[2]);
-    if (vol < bestVol) {
-      best = z;
-      bestVol = vol;
-    }
-  }
-  return best;
-}
 
 function deviceHints(view: SceneRenderer): DeviceHints {
   const gl = view.renderer.getContext();
