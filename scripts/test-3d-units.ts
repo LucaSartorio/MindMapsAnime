@@ -6,6 +6,8 @@ import assert from 'node:assert/strict';
 import { CollisionWorld, floorHeightAt, type Feet } from '../src/features/explorer3d/engine/collision';
 import { AutoQualityController, initialAutoLevel, QUALITY_PRESETS } from '../src/features/explorer3d/engine/quality';
 import { createRandom } from '../src/features/explorer3d/engine/random';
+import { zoneAt } from '../src/features/explorer3d/engine/zones';
+import type { SceneDefinition } from '../src/features/explorer3d/types';
 import { analyseBundle, isExplorerModule } from './vite/explorer3dGuard';
 
 let passed = 0;
@@ -193,6 +195,20 @@ test('a static path from a route to three.js fails', () => {
 test('an emitted binary model fails', () => {
   const r = analyseBundle({ a: chunk('assets/index.js', { isEntry: true }), m: { type: 'asset', fileName: 'assets/ship-abc.glb' } as never });
   assert.equal(r.violations.length, 1);
+});
+
+console.log('explorer3d · zones');
+test('interior zones win over the exterior deck that contains them; elliptic footprints skip box corners', () => {
+  const def = {
+    zones: [
+      { id: 'deck', kind: 'deck', interior: false, reconstruction: 'canon', bounds: { min: [-20, 0, -10], max: [20, 2, 10] } },
+      { id: 'hall', kind: 'diningHall', interior: true, reconstruction: 'canon', footprint: 'ellipse', bounds: { min: [-15, 0, -8], max: [15, 4, 8] } },
+    ],
+  } as unknown as SceneDefinition;
+  assert.equal(zoneAt(def, { x: 0, y: 0, z: 0 })?.id, 'hall', 'room inside a smaller-volume deck box');
+  assert.equal(zoneAt(def, { x: 14, y: 0, z: 7.5 })?.id, 'deck', 'box corner outside the oval');
+  assert.equal(zoneAt(def, { x: 0, y: 3, z: 0 })?.id, 'hall');
+  assert.equal(zoneAt(def, { x: 30, y: 0, z: 0 }), null);
 });
 
 console.log('explorer3d · determinism');

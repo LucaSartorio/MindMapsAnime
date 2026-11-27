@@ -17,6 +17,7 @@
     "benchmark:3d": "tsx --tsconfig scripts/tsconfig.json scripts/test-3d.ts --no-build --benchmark",
     "benchmark:3d:bundle": "node scripts/explorer3d-bundle-report.mjs",
     "benchmark:3d:lab": "tsx --tsconfig scripts/tsconfig.json scripts/explorer3d-lab.ts",
+    "capture:3d": "tsx --tsconfig scripts/tsconfig.json scripts/explorer3d-capture.ts",
     "coverage:chapters": "tsx --tsconfig scripts/tsconfig.json scripts/chapter-coverage.ts",
     "data:coverage": "tsx --tsconfig scripts/tsconfig.json scripts/data-coverage.ts",
     "claude:validate": "node scripts/validate-claude-config.mjs && node --test .claude/hooks/*.test.mjs",

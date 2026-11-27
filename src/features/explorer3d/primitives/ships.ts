@@ -1,4 +1,4 @@
-import { BufferAttribute, BufferGeometry, ExtrudeGeometry, Shape, Vector2 } from 'three';
+import { BufferAttribute, BufferGeometry, ExtrudeGeometry, Path, Shape, ShapeGeometry, Vector2 } from 'three';
 import type { ResourceTracker } from '../engine/resources';
 
 /**
@@ -205,4 +205,76 @@ export function deckFloorSlices(
     out.push({ minX: a, maxX: b, minZ: -w, maxZ: w, y, tag: o.tag });
   }
   return out;
+}
+
+/**
+ * Billowed square sail: a (segU × segV) patch in local XY (width along X, height along Y, hanging below y = 0),
+ * bulging towards +Z by `bulge` (max at the centre, pinned along the top yard). Both faces are emitted, so it reads
+ * from any side with a single-sided material. `color(u, v)` gives stripes/patterns (u, v ∈ [0, 1]).
+ */
+export function sailGeometry(
+  tracker: ResourceTracker,
+  width: number,
+  height: number,
+  bulge: number,
+  segU: number,
+  segV: number,
+  color: (u: number, v: number) => [number, number, number],
+): BufferGeometry {
+  const pos: number[] = [];
+  const col: number[] = [];
+  const vtx = (u: number, v: number) => {
+    const x = (u - 0.5) * width;
+    const y = -v * height;
+    const z = bulge * Math.sin(Math.PI * u) * Math.sin(Math.PI * Math.min(1, 0.15 + v * 0.95));
+    return [x, y, z];
+  };
+  for (let i = 0; i < segU; i++) {
+    for (let j = 0; j < segV; j++) {
+      const u0 = i / segU;
+      const u1 = (i + 1) / segU;
+      const v0 = j / segV;
+      const v1 = (j + 1) / segV;
+      const a = vtx(u0, v0);
+      const b = vtx(u1, v0);
+      const c = vtx(u1, v1);
+      const d = vtx(u0, v1);
+      const cc = color((u0 + u1) / 2, (v0 + v1) / 2);
+      // front (+Z) and back faces
+      for (const tri of [[a, d, c], [a, c, b], [a, c, d], [a, b, c]]) {
+        for (const p of tri) {
+          pos.push(p[0], p[1], p[2]);
+          col.push(cc[0], cc[1], cc[2]);
+        }
+      }
+    }
+  }
+  const g = tracker.track(new BufferGeometry());
+  g.setAttribute('position', new BufferAttribute(new Float32Array(pos), 3));
+  g.setAttribute('color', new BufferAttribute(new Float32Array(col), 3));
+  g.computeVertexNormals();
+  return g;
+}
+
+/**
+ * Flat horizontal surface from a plan outline (x, z) with optional holes (ring terraces, stairwells), at height `y`,
+ * facing up (floors, roofs) or down (ceilings). Concave outlines are fine (earcut triangulation).
+ */
+export function flatShape(
+  tracker: ResourceTracker,
+  outline: ReadonlyArray<readonly [number, number]>,
+  holes: ReadonlyArray<ReadonlyArray<readonly [number, number]>>,
+  y: number,
+  facing: 'up' | 'down',
+  curveSegments = 1,
+): BufferGeometry {
+  // Up: the shape plane is mapped with rotateX(-π/2), which sends local (x, y) to world (x, -y): feed (x, -z).
+  const sign = facing === 'up' ? -1 : 1;
+  const shape = new Shape(outline.map(([x, z]) => new Vector2(x, sign * z)));
+  for (const h of holes) shape.holes.push(new Path(h.map(([x, z]) => new Vector2(x, sign * z))));
+  const g = tracker.track(new ShapeGeometry(shape, curveSegments));
+  g.rotateX(facing === 'up' ? -Math.PI / 2 : Math.PI / 2);
+  g.translate(0, y, 0);
+  g.computeVertexNormals();
+  return g;
 }

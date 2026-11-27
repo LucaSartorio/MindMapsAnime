@@ -25,7 +25,8 @@ You verify AniMapVerse changes. Read `.claude/rules/testing.md` first if it is n
 - Tests stay proportional: no new framework; extend existing scripts.
 - 3D explorer: `npm run test:3d` (flag-on full build + browser scenarios: no 3D request on ordinary pages, 10×
   open/close lifecycle, contexts/listeners/heap), `npm run benchmark:3d` (reuses it), `benchmark:3d:bundle`,
-  `benchmark:3d:lab`. `renderer.info` gives counts, not GPU bytes; SwiftShader frame times are not device FPS; never
+  `benchmark:3d:lab`; after visual changes, `npm run capture:3d` before/after sheets on the same views and quality.
+  `renderer.info` gives counts, not GPU bytes; SwiftShader frame times are not device FPS; never
   make FPS a blocking gate on shared runners.
 
 ## Must not

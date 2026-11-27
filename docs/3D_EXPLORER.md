@@ -126,12 +126,12 @@ slow at `low` → a notice suggests leaving. The choice is remembered in `localS
 | Budget | Target | Measured | Method |
 |---|---|---|---|
 | Shared 3D engine download | ≤ 1 MB compressed | viewer 16.4 KB + three 140.6 KB gzip (14.8 + 115.6 KB brotli) | `npm run benchmark:3d:bundle` |
-| Baratie code | ≤ 250 KB compressed | 14.1 KB gzip / 12.5 KB brotli | same |
+| Baratie code | ≤ 250 KB compressed | 22.5 KB gzip / 19.7 KB brotli (fidelity upgrade; 14.1 KB before) | same |
 | 3D bytes during ordinary navigation | 0 | 0 requests on 5 page types | `test:3d` §1, smoke |
-| Draw calls | mobile 50–100, desktop 100–200 | low 14 · high 20 (exterior); low 14 inside | `test:3d`, `benchmark:3d` |
-| Visible triangles | mobile 50–100k, desktop 100–300k | low 8.8k · high 74.8k (exterior); low 21.7k inside | same |
-| Scene generation | — | 30–35 ms (low), ~66 ms (high, dev) | session timings |
-| Click → usable viewer | — | 0.76 s median (local server, no network latency) | `benchmark:3d` |
+| Draw calls | mobile 50–100, desktop 100–200 | low 16 · high 24 (exterior); low 18 inside; ≤ 30 with every interior on high | `test:3d`, `benchmark:3d` |
+| Visible triangles | mobile 50–100k, desktop 100–300k | low 20.8k · high 134k (exterior); low 35.2k inside; ≤ 167k with every interior on high | same |
+| Scene generation | — | 55 ms (low), ~130 ms (high, dev); interiors 8–32 ms on first entry | session timings |
+| Click → usable viewer | — | 0.87 s median (local server, no network latency) | `benchmark:3d` |
 | FPS 30 mobile / 60 desktop | — | **not measured**: SwiftShader gives ~8 fps on CPU (126 ms/frame) | needs real devices |
 
 **Ordinary navigation, production build vs `origin/main`** (same machine, interleaved A/B, 7 runs each, local
@@ -157,24 +157,49 @@ desktop GPUs must be measured by the owner on real devices (manual step). FPS is
 
 ## 8. Adding a location (summary of `/create-3d-location`)
 
-1. Check the location and its links in the dataset (hotspots may only use them). 2. Collect textual sources, decide
-canon vs interpretive, open `docs/explorer3d/<scene-id>.md` from the template. 3. Write
-`worlds/<world>/<location>/config.ts` (`export const definition`) and `scene.ts` (`export const scene`).
-4. Register in `launcher/manifests.ts` (`status: 'prototype'`) and `launcher/loaders.ts` (flag-gated `import()`).
-5. `npm run validate:3d && npm run test:3d:unit && npx tsc -b`, visual QA with screenshots in `npm run dev`,
-`npm run test:3d`, `npm run benchmark:3d`, `npm run smoke`. No engine change is needed unless the scene needs a
-new capability (then: world-agnostic, documented here).
+1. Check the location and its links in the dataset (hotspots may only use them). 2. Collect references (§8.1),
+decide canon vs interpretive, open `docs/explorer3d/<scene-id>.md` from the template. 3. Write
+`worlds/<world>/<location>/config.ts` (plan constants + `export const definition`) and `scene.ts`
+(`export const scene`). 4. Register in `launcher/manifests.ts` (`status: 'prototype'`) and `launcher/loaders.ts`
+(flag-gated `import()`). 5. `npm run validate:3d && npm run test:3d:unit && npx tsc -b`, visual iterations with
+`npm run capture:3d` in `npm run dev`, `npm run test:3d`, `npm run benchmark:3d`, `npm run smoke`. No engine change
+is needed unless the scene needs a new capability (then: world-agnostic, documented here).
+
+### 8.1 Reference-driven modelling and fidelity iterations
+
+Text alone gives the parts of a place, not its look: the Baratie's first version (text-only) had the right parts
+with wrong colours, masses and silhouette. The method (`/create-3d-location … fidelity`, and §2/§5 of the skill for
+new scenes):
+- **References**: original anime first, then manga, then official merchandise (model kits: stylized, compressed
+  proportions — read shapes/colours/layout, not dimensions), owner-provided images. Only legitimately accessible
+  sources; blocked pages (paywall, anti-bot) are dropped, never worked around. Images are looked at in the
+  scratchpad only: never committed, embedded, traced or sampled into textures. Each is listed in the scene ledger.
+- **Captures**: `npm run capture:3d -- <scene-id> --out <dir> [--quality low|medium|high] [--compare <before-dir>]`
+  renders fixed views (hero, bow, side, rear, top, sea from the scene camera; one walking view per spawn) with the UI
+  hidden; `--compare-only <before> <after>` builds a before/after sheet (`compare.html` + `compare.png`).
+- **Loop**: differences ranked silhouette/proportions → palette → details; one round of changes; same views again;
+  keep only visible, regression-free improvements; probe oddities with a raycast before editing; log every round.
+  No similarity percentages, no claims about images that could not be opened.
 
 ### Reusable components
 
-- `PartBuilder` (`primitives/parts.ts`): unit box/cylinder/sphere/prism + transforms into a batch.
-- `wall` (doors, glazed windows, portholes, frames → colliders), `slab`, `stairs` (treads + ramp floor + side
-  walls), `railing` (posts as details, colliders along any polyline), `gableRoof` (`primitives/architecture.ts`).
-- `loftGeometry`, `hullRings`, `deckOutline`, `deckFloorSlices`, `flatPolygon`, `ellipsoidRings`,
-  `extrudedSilhouette` (`primitives/ships.ts`): hulls, decks, organic heads, fins, tails, signs.
+- `PartBuilder` (`primitives/parts.ts`): unit box, cylinder (optional arc), sphere, torus (optional arc), prism,
+  square frustum + transforms into a batch. `GeometryBatch` colour functions receive position, normal and the source
+  vertex colour (`SOURCE_COLORS`): two-tone walls (outside/inside from the normal), stripes, gradients for free.
+- `segmentWall` (any plan segment; rectangular/arched windows with cross or leaded-diamond glazing, doors with
+  fanlights and optional open leaves that keep the doorway walkable, frames → colliders), `wall`
+  (axis-aligned, portholes), `slab`, `stairs` (treads + ramp floor + side walls), `railing`, `latticeBand`
+  (balustrades/friezes with X panels), `gableRoof`, `hipRoof`, plans (`ellipsePlan`, `chamferedPlan`, `openLoop`),
+  `planFloors` (walkable slices of a convex plan, with stairwell holes), `segmentColliders`
+  (`primitives/architecture.ts`).
+- `loftGeometry`, `hullRings`, `deckOutline`, `deckFloorSlices`, `flatPolygon`, `flatShape` (plans with holes, up or
+  down), `ellipsoidRings`, `extrudedSilhouette`, `sailGeometry` (billowed, double-sided, patterned)
+  (`primitives/ships.ts`): hulls, decks, ring terraces, ceilings, organic heads, fins, tails, sails.
 - `chairGeometry`, `roundTableGeometry`, `instanced`, `chairsAround` (`primitives/furniture.ts`).
 - `createOcean` (toon bands, foam rings around a footprint, optional waves), `createSky`, `createClouds`,
   `createDaylight` (`primitives/environment.ts`).
+- Zones (`engine/zones.ts`): interior zones win over the exterior that contains them; `footprint: 'ellipse'` for
+  oval rooms.
 - Engine: `CollisionWorld` (AABB walls + flat/ramp floors, step up/snap down, no walking off floors),
   `OrbitCameraController`, `WalkController` (WASD, pointer lock on explicit click, drag look, joystick),
   `HotspotLayer` (screen-sized markers, shape + colour per entity type).

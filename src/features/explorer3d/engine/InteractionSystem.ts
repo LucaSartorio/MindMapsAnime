@@ -1,4 +1,4 @@
-import { CanvasTexture, Group, Raycaster, Sprite, SpriteMaterial, Vector2, type Camera } from 'three';
+import { CanvasTexture, Group, Raycaster, SRGBColorSpace, Sprite, SpriteMaterial, Vector2, type Camera } from 'three';
 import type { HotspotDef, HotspotEntityType } from '../types';
 import type { ResourceTracker } from './resources';
 
@@ -51,6 +51,7 @@ function markerTexture(tracker: ResourceTracker, type: HotspotEntityType): Canva
     g.fillRect(37, 26, 28, 18);
   }
   const tex = tracker.track(new CanvasTexture(c));
+  tex.colorSpace = SRGBColorSpace;
   tex.anisotropy = 1;
   return tex;
 }

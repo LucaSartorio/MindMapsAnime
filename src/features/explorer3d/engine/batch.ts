@@ -12,8 +12,15 @@ import {
 } from 'three';
 import type { ResourceTracker } from './resources';
 
-/** Per-vertex colour: a constant, or a function of the world-space position/normal (stripes, gradients). */
-export type ColorSpec = Color | string | ((p: Vector3, n: Vector3) => Color);
+/**
+ * Per-vertex colour: a constant, or a function of the world-space position/normal (stripes, gradients). When the
+ * source geometry has its own `color` attribute, the function also receives that vertex colour (`src`).
+ */
+export type ColorSpec = Color | string | ((p: Vector3, n: Vector3, src?: Color) => Color);
+
+/** Keeps the colours baked into the source geometry (e.g. a striped sail). */
+export const SOURCE_COLORS: ColorSpec = (_p, _n, src) => src ?? WHITE;
+const WHITE = new Color(1, 1, 1);
 
 /** Growable Float32 buffer (avoids number[] → Float32Array copies of large meshes). */
 class FloatBuffer {
@@ -38,6 +45,7 @@ const tmpP = new Vector3();
 const tmpN = new Vector3();
 const tmpNormalMatrix = new Matrix3();
 const tmpColor = new Color();
+const tmpSrc = new Color();
 
 /**
  * Collects many small parts (already-built `BufferGeometry` + transform + colour) and bakes them into ONE
@@ -53,6 +61,7 @@ export class GeometryBatch {
   add(geo: BufferGeometry, matrix: Matrix4, color: ColorSpec): void {
     const position = geo.getAttribute('position');
     const normal = geo.getAttribute('normal');
+    const srcColor = geo.getAttribute('color');
     const index = geo.getIndex();
     tmpNormalMatrix.getNormalMatrix(matrix);
     const fixed = typeof color === 'function' ? null : color instanceof Color ? color : tmpColor.set(color).clone();
@@ -63,7 +72,9 @@ export class GeometryBatch {
       tmpN.fromBufferAttribute(normal, v).applyMatrix3(tmpNormalMatrix).normalize();
       this.pos.push3(tmpP.x, tmpP.y, tmpP.z);
       this.nor.push3(tmpN.x, tmpN.y, tmpN.z);
-      const c = fixed ?? (color as (p: Vector3, n: Vector3) => Color)(tmpP, tmpN);
+      const c =
+        fixed ??
+        (color as (p: Vector3, n: Vector3, src?: Color) => Color)(tmpP, tmpN, srcColor ? tmpSrc.fromBufferAttribute(srcColor as never, v) : undefined);
       this.col.push3(c.r, c.g, c.b);
     }
     this.parts++;

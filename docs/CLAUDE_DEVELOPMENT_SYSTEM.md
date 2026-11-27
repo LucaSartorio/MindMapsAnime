@@ -52,7 +52,7 @@ delega → frontmatter → `CLAUDE_CODE_SUBAGENT_MODEL` → modello della sessio
 | `/seo-opportunities [mondo] [quick] [export.csv]` | problemi verificati / opportunità / ipotesi SEO | auto + manuale |
 | `/sync-translations <mondo\|ui> [es\|fr]` | overlay es/fr, indice traduzioni, chiavi UI | auto + manuale |
 | `/optimize-performance [target]` | baseline → modifica → misura (vieta lo script distruttivo `optimize:images`) | auto + manuale |
-| `/create-3d-location <mondo> <luogo> [exterior\|explorable\|optimize\|resume]` | scena 3D procedurale di un luogo esistente in milestone riprendibili (ledger `docs/explorer3d/<id>.md`), QA visiva, budget, gate | auto + manuale |
+| `/create-3d-location <mondo> <luogo> [exterior\|explorable\|fidelity\|optimize\|resume]` | scena 3D procedurale di un luogo esistente in milestone riprendibili (ledger `docs/explorer3d/<id>.md`), guidata da riferimenti visivi, iterazioni con screenshot (`capture:3d`), budget, gate | auto + manuale |
 | `/audit-animapverse [area\|release]` | audit con risultati verificati; `release` = gate completo GO/NO-GO | auto + manuale |
 
 Le skill sono scoperte automaticamente da `.claude/skills/` (nessun index, nessuna `.claude/commands/`: i comandi sono
@@ -301,4 +301,14 @@ Riferimento tecnico: `docs/3D_EXPLORER.md`; vincoli: `.claude/rules/explorer-3d.
   carica solo toccando file 3D; skill e agent solo all'invocazione.
 - **Cloud vs locale**: stessi comandi. In Cloud Chromium è in `/opt/pw-browsers/chromium` e il WebGL è SwiftShader
   (correttezza e misure relative); FPS su telefoni/GPU reali solo in locale dal proprietario.
+- **Fedeltà visiva (2026-11-27)**: la sola descrizione testuale produceva le parti giuste con colori, masse e
+  silhouette sbagliati. Metodo ora riutilizzabile, senza nuovi agent, skill o hook: modalità `fidelity` della stessa
+  skill, sezioni "References & rights" e "Visual QA loop" anche per `exterior`/`explorable`; lo strumento
+  `npm run capture:3d` (viste fisse derivate dalla camera della scena + una per spawn, foglio prima/dopo) sostituisce
+  gli script usa e getta; `3d-world-engineer` e `qa-performance-engineer` lo citano; la rule aggiunge solo
+  l'invariante sui riferimenti (consultati e mai incorporati, mai ottenuti aggirando blocchi). Costo di contesto: rule
+  +~450 caratteri (caricata solo sui file 3D), nessuna modifica a `CLAUDE.md`.
+- **Riferimenti e permessi**: in Cloud il classificatore dei permessi ha negato il recupero di pagine Fandom tramite
+  API (la pagina HTML è dietro un challenge anti-bot): è il comportamento voluto, la skill dice di abbandonare la fonte
+  e chiedere immagini al proprietario.
 
