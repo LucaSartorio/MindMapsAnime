@@ -12,6 +12,8 @@ React Router + i18next; Vercel. **No backend, no database**: all content is Type
 Worlds and their status (`available` | `coming_soon`) are registered in `src/data/worlds.ts`. The app is
 **dataset-driven**: a new world = a dataset + a `WorldConfig`, zero component edits.
 `tools/social-engine/` is a separate, internal Remotion video pipeline with daily production automations.
+`src/features/explorer3d/` is an optional, lazy-loaded procedural 3D viewer of locations (plain Three.js; scenes are
+code, no model files; prototype scenes only with `VITE_EXPLORER_3D=1` or `npm run dev`).
 
 ## Working here
 
@@ -51,14 +53,15 @@ in your context (Projects threads load only rules without `paths`), read it firs
 markers, narrative modes · `frontend.md` UI primitives, header, store/SSR, a11y, contrast · `graph.md` knowledge graph
 and relations · `entity-art.md` placeholders and portraits · `i18n.md` locales, `Localizable`, overlays · `seo.md`
 URLs, slugs, metadata, indexing · `social-safety.md` social engine production safety · `security.md` CI, CODEOWNERS,
-guardrails · `testing.md` how to test and report.
+guardrails · `testing.md` how to test and report · `explorer-3d.md` 3D explorer (skill `/create-3d-location`, agent
+`3d-world-engineer`).
 
 ## Commands
 
 ```bash
 npm install              # first, in a fresh checkout
 npm run dev              # Vite dev server → http://localhost:5173
-npm run build            # validate:data → validate:i18n → tsc -b → test:seo → i18n:audit → vite → SSR → prerender → seo:check (ALL blocking)
+npm run build            # validate:data → validate:i18n → validate:3d → test:3d:unit → tsc -b → test:seo → i18n:audit → vite (+3D chunk guard) → SSR → prerender → seo:check (ALL blocking)
 npm run smoke            # build + browser smoke test (routes, hydration, language switch, 404, modals, header)
 npm run validate:data    # integrity of every registered dataset (exit 1 on errors)
 npm run validate:i18n    # UI keys aligned in all 6 locales + every dataset Localizable is { it, en }
@@ -68,6 +71,7 @@ npm run i18n:index       # regenerate src/data/translationIndex.ts (after adding
 npm run preview:static   # serve dist/ with Vercel semantics (real 404s) → :4173
 npm run data:coverage    # per-world gap report; `-- <world> [--json]`
 npm run claude:validate  # .claude/ config + hook tests (also in Site CI)
+npm run test:3d          # 3D explorer: flag-on full build + Chromium scenarios (benchmark:3d reuses it)
 ```
 
 Area commands live in their rules (i18n overlays, map scripts, social engine) and in `package.json`. There is no
@@ -95,6 +99,8 @@ check. `scripts/*.ts` run with `tsx --tsconfig scripts/tsconfig.json` (they impo
   publishes; production state changes only through its pipeline (`social-safety.md`).
 - **Copyright**: no downloaded or traced official artwork, no copied prose; every `AssetReference` has `license`,
   `author`, `source`, `url`.
+- **3D stays optional**: ordinary code imports only `src/features/explorer3d/launcher/` (+ `types.ts`), never the
+  engine or `three`; no 3D byte before an explicit click (`validate:3d` + build guard + `test:3d` enforce it).
 
 ## Validation matrix (run what the change touches; all of it before a PR)
 
@@ -107,6 +113,7 @@ check. `scripts/*.ts` run with `tsx --tsconfig scripts/tsconfig.json` (they impo
 | SEO layer | `test:seo` → `build` (prerender + `seo:check`) |
 | Social engine | `social:validate` (+ dry runs, see `social-safety.md`) → `build`, skipped only if every changed file is under `tools/social-engine/` (Site CI skips it too) |
 | Workflows / CI / package*.json | `security-devops` review + `test:ci-scope` + `build` |
+| 3D explorer (`src/features/explorer3d/`) | `validate:3d` + `test:3d:unit` → `npx tsc -b` → `test:3d` (+ screenshots for visual changes) → `smoke` |
 | `.claude/` config | `claude:validate` |
 
 Cheapest first, stop at the first failure. Supersets run once per tree state: `smoke` = `build` + browser (never

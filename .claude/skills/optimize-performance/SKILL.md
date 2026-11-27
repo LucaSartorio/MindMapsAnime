@@ -1,7 +1,7 @@
 ---
 name: optimize-performance
 description: Measure then improve performance (bundle/chunks, images, lazy loading, hydration, React/map rendering, build time, mobile) with baseline and after numbers. Use for "migliora le performance", "reduce bundle".
-argument-hint: [target: bundle|map|hydration|images|build|mobile|all]
+argument-hint: [target: bundle|map|hydration|images|build|mobile|3d|all]
 ---
 
 # Optimize performance: $ARGUMENTS
@@ -17,6 +17,10 @@ measurements taken the same way.
    - images: list the largest files (`find public/assets -type f -size +200k -exec ls -lh {} +`). Never run
      `npm run optimize:images` (destructive: deletes originals, needs `sharp`, PERF-02); map rasters go through
      `python3 scripts/optimize-map-images.py` (selective, non-destructive) only after a baseline.
+   - 3d (a scene of `src/features/explorer3d`): `npm run test:3d` once (flag-on build), then `npm run benchmark:3d`
+     (open ms, build ms, draw calls, triangles, frame time), `npm run benchmark:3d:bundle` (chunk gzip/brotli,
+     eager JS per page) and `npm run benchmark:3d:lab` (ordinary pages: LCP/CLS/TBT, 3D requests = 0). Budgets and
+     levers: `docs/3D_EXPLORER.md`; geometry changes go to `3d-world-engineer`.
    Lab numbers ≠ field data (LCP/INP/CLS for real users live in Vercel Speed Insights, not in the repo).
 2. **Find the cause** before changing code (largest module in the chunk, unnecessary eager import, re-render on
    every zoom tick, unmemoized dataset scans, oversized SVG/PNG).

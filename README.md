@@ -147,6 +147,12 @@ Il flusso di traduzione è descritto in [`docs/I18N.md`](docs/I18N.md).
 - **Obiettivo di accessibilità WCAG 2.2 AA** — pattern WAI-ARIA (tab, disclosure, combobox,
   switch), focus trap/restore, `inert`; verifica con `npm run audit:a11y`
   (axe-core).
+- **Esplorazione 3D (prototipo)** — alcuni luoghi possono avere una scena 3D
+  generata interamente via codice (Three.js, nessun modello esterno), aperta dal
+  pulsante «Esplora in 3D» della scheda: modalità osservazione ed esplorazione
+  (WASD/mouse, joystick su mobile), hotspot verso le schede esistenti. Caricata solo
+  al click; il Baratie è un prototipo attivo solo con `VITE_EXPLORER_3D=1` o in
+  `npm run dev`. Dettagli: [`docs/3D_EXPLORER.md`](docs/3D_EXPLORER.md).
 
 ---
 
@@ -168,6 +174,8 @@ npm run seo:check           # verifica l'HTML generato in dist/ (canonical, href
 npm run preview:static      # serve dist/ con la semantica di Vercel (redirect, 404 veri) → :4173
 npm run preview             # anteprima Vite (NB: risponde 200 a qualsiasi path)
 npm run smoke               # build + test browser: rotte, idratazione, lingue, modali, 404 e header
+npm run test:3d             # esploratore 3D: build con prototipi + scenari Chromium (rete, lifecycle, controlli)
+npm run validate:3d         # registry 3D, hotspot ↔ dataset, isolamento degli import, policy asset (nella build)
 
 npm run validate:data       # valida TUTTI i dataset (ref rotti, coords, duplicati) — exit 1 se errori
 npm run validate:i18n       # chiavi UI nelle 6 lingue + testi narrativi obbligatori IT/EN

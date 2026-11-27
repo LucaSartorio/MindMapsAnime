@@ -20,6 +20,10 @@ Read `.claude/rules/seo.md` and `docs/SEO.md` (relevant sections) first.
 - No Search Console/analytics data exists in the repo: label findings as **verified** (from code/tests/dist),
   **plausible opportunity**, or **hypothesis**. Use CSV/exports only if the owner provides them.
 
+## 3D explorer
+The 3D viewer has no URL, no prerendered output and no metadata: confirm a change keeps it that way (no new route
+or page per scene, a canvas never replaces indexable HTML, schede and internal links unchanged).
+
 ## Useful deterministic checks
 `npm run test:seo`, `npm run build` (prerender + `seo:check`), `npm run data:coverage -- <world>` (thin pages,
 orphans), `npm run i18n:audit`, `npm run i18n:status`, grep of `dist/` for a sample page.

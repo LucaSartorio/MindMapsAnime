@@ -1,7 +1,7 @@
 ---
 name: audit-animapverse
 description: Audit AniMapVerse health (data, SEO, i18n, a11y, perf, security, social, config) with ranked verified findings, or run the full pre-release gate ("release"). Use for "verifica se ci sono bug", "audit", "is it ready to release?".
-argument-hint: [all|data|seo|i18n|a11y|perf|security|social|config|code|release]
+argument-hint: [all|data|seo|i18n|a11y|perf|security|social|config|code|3d|release]
 ---
 
 # AniMapVerse audit: $ARGUMENTS
@@ -30,6 +30,7 @@ get green. Keep only summaries and failing lines of the logs.
 | perf | chunk sizes from the `vite build` output, largest `dist/assets/*.js` |
 | security | `npm run test:ci-scope`, `.github/workflows/*` review |
 | config | `npm run claude:validate` (Claude Code agents, skills, rules, settings, hooks) |
+| 3d | `npm run validate:3d`, `npm run test:3d:unit`; only when asked or when `src/features/explorer3d/` changed: `npm run test:3d` (own flag-on build) |
 | social | `npm run social:validate`, `npm run social:editorial:check` (read-only) |
 | code | `rg -n "slug === '" src/components src/lib` (hardcoded worlds), duplicated helpers, unused exports |
 

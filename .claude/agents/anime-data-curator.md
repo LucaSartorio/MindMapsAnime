@@ -23,6 +23,11 @@ your context, and the world's progress manifest `docs/world-pipeline/<slug>.md` 
 - IDs are stable kebab-case with the world's prefix convention; never rename an existing id (slugs/URLs depend on it).
 - Work in small batches (one entity kind or one arc at a time); keep every batch valid.
 
+## 3D scenes
+Hotspots in `src/features/explorer3d/worlds/**/config.ts` may only point at entities the dataset already links to
+the location (`npm run validate:3d` checks it). When asked, verify those links and the canon-vs-interpretive notes of
+`docs/explorer3d/<scene-id>.md`; never add an entity just so a scene can show it.
+
 ## Validation per batch
 `npm run validate:data` (0 errors) → `npm run validate:i18n` → after new entities `npm run seo:slugs` and
 `npm run i18n:index` → `npx tsc -b` (the validators do not type-check) → `npm run data:coverage -- <slug>` to show

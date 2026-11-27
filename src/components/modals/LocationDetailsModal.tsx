@@ -28,6 +28,7 @@ import { tournamentsAt } from '@/lib/tournaments';
 import type { Tournament } from '@/types';
 import { mapPath } from '@/seo/paths';
 import { useSeoLang } from '@/seo/useSeoLang';
+import { Explorer3DButton } from '@/features/explorer3d/launcher/Explorer3DButton';
 
 const PONEGLYPH_KIND_LABEL: Record<PoneglyphKind, LocalizedText> = {
   road: {
@@ -459,6 +460,8 @@ export function LocationDetailsModal({
       }
       footer={
         <>
+          {/* Renders only for locations with an enabled 3D scene (none in production builds today). */}
+          <Explorer3DButton worldId={dataset.world.id} locationId={location.id} onOpen={close} />
           {location.subMapLevelId && (
             <Button
               variant="ember"

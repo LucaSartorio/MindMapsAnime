@@ -10,6 +10,7 @@ import { RouteDetailsModal } from './RouteDetailsModal';
 import { BoundaryDetailsModal } from './BoundaryDetailsModal';
 import { NationDetailsModal } from './NationDetailsModal';
 import { JutsuDetailsModal } from './JutsuDetailsModal';
+import { Explorer3DHost } from '@/features/explorer3d/launcher/Explorer3DHost';
 
 // Lazy: la vista relazioni usa React Flow (~150 KB). Importata staticamente
 // trascinava React Flow in ogni pagina di mondo (anche archivi e pagine SEO).
@@ -26,6 +27,16 @@ interface ModalRootProps {
  * il tipo è derivato da useUiStore.activeModal.
  */
 export function ModalRoot({ dataset }: ModalRootProps) {
+  return (
+    <>
+      {/* 3D viewer host: renders nothing (and loads nothing) until "Explore in 3D" is clicked. */}
+      <Explorer3DHost dataset={dataset} />
+      <ActiveModal dataset={dataset} />
+    </>
+  );
+}
+
+function ActiveModal({ dataset }: ModalRootProps) {
   const activeModal = useUiStore((s) => s.activeModal);
   if (!activeModal) return null;
 

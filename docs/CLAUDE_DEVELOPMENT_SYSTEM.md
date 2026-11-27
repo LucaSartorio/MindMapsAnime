@@ -8,8 +8,8 @@ già da solo (verificato con misure, §8).
 
 | Componente | Quando entra nel contesto | Contenuto |
 |---|---|---|
-| `CLAUDE.md` (~9,6k caratteri, ~44,2k token di un turno banale con Sonnet, §8) | ogni sessione e ogni sub-agent (tranne `lightweight-research`) | progetto, triage T0-T3, delega, escalation, contratto di completamento, mappa del contesto, comandi, invarianti, matrice di validazione, git |
-| `.claude/rules/*.md` (10 file, `paths`) | quando si legge/modifica un file corrispondente | solo vincoli, errori da evitare e verifiche dell'area |
+| `CLAUDE.md` (~10,6k caratteri dal 2026-11-27, ~44,2k token di un turno banale con Sonnet, §8) | ogni sessione e ogni sub-agent (tranne `lightweight-research`) | progetto, triage T0-T3, delega, escalation, contratto di completamento, mappa del contesto, comandi, invarianti, matrice di validazione, git |
+| `.claude/rules/*.md` (11 file, `paths`) | quando si legge/modifica un file corrispondente | solo vincoli, errori da evitare e verifiche dell'area |
 | `docs/ARCHITECTURE.md` | solo se letto (on-demand) | come funziona il codice e perché: descrizioni, decisioni e misure storiche (testo originale di CLAUDE.md, invariato) |
 | Descrizioni di agent e skill | ogni sessione (le skill manuali no) | una riga ciascuna, per il routing |
 | Corpo di skill e agent | solo all'invocazione | la procedura |
@@ -18,7 +18,7 @@ già da solo (verificato con misure, §8).
 Fonte unica per ogni vincolo: invarianti trasversali in `CLAUDE.md`, vincoli d'area nella rule, contratti social in
 `docs/SOCIAL_*.md`, SEO in `docs/SEO.md`, i18n in `docs/I18N.md`. `ARCHITECTURE.md` spiega, non prescrive.
 
-## 2. Sub-agent (8)
+## 2. Sub-agent (9)
 
 | Agent | Modello · effort | Tool | Perché esiste |
 |---|---|---|---|
@@ -29,6 +29,7 @@ Fonte unica per ogni vincolo: invarianti trasversali in `CLAUDE.md`, vincoli d'a
 | `qa-performance-engineer` | sonnet · high | Read, Grep, Glob, Edit, Write, Bash | build, smoke, audit a11y e misure con i log fuori dal contesto principale |
 | `social-engine-specialist` | sonnet · medium | Read, Grep, Glob, Edit, Write, Bash | codice del motore social, nessun MCP/web |
 | `security-devops` | sonnet · high | Read, Grep, Glob, Bash (**sola lettura imposta**), GitHub MCP in lettura | review di workflow, permessi, dipendenze |
+| `3d-world-engineer` | sonnet · high | Read, Grep, Glob, Edit, Write, Bash | scene 3D procedurali, motore Three.js, lifecycle GPU, QA visiva con screenshot fuori dal contesto principale (§13) |
 | `lightweight-research` | haiku · low, `omitClaudeMd` | Read, Grep, Glob, Bash (**sola lettura imposta**) | ricerche economiche; esegue il fork di `/analyze-data-coverage` |
 
 Funzioni coperte da strumenti integrati di Claude Code (nessun duplicato nel repo): progettazione → agent `Plan`
@@ -40,7 +41,7 @@ delega → frontmatter → `CLAUDE_CODE_SUBAGENT_MODEL` → modello della sessio
 `CLAUDE_CODE_EFFORT_LEVEL` vince su tutto (non impostarla). Verifica: i transcript dei sub-agent
 (`~/.claude/projects/<repo>/<sessione>/subagents/*.jsonl`) registrano `model` ed `effort` di ogni messaggio.
 
-## 3. Skill (8)
+## 3. Skill (9)
 
 | Comando | Cosa automatizza | Invocazione |
 |---|---|---|
@@ -51,6 +52,7 @@ delega → frontmatter → `CLAUDE_CODE_SUBAGENT_MODEL` → modello della sessio
 | `/seo-opportunities [mondo] [quick] [export.csv]` | problemi verificati / opportunità / ipotesi SEO | auto + manuale |
 | `/sync-translations <mondo\|ui> [es\|fr]` | overlay es/fr, indice traduzioni, chiavi UI | auto + manuale |
 | `/optimize-performance [target]` | baseline → modifica → misura (vieta lo script distruttivo `optimize:images`) | auto + manuale |
+| `/create-3d-location <mondo> <luogo> [exterior\|explorable\|optimize\|resume]` | scena 3D procedurale di un luogo esistente in milestone riprendibili (ledger `docs/explorer3d/<id>.md`), QA visiva, budget, gate | auto + manuale |
 | `/audit-animapverse [area\|release]` | audit con risultati verificati; `release` = gate completo GO/NO-GO | auto + manuale |
 
 Le skill sono scoperte automaticamente da `.claude/skills/` (nessun index, nessuna `.claude/commands/`: i comandi sono
@@ -124,6 +126,7 @@ I pin di Wano si sovrappongono              → /optimize-map onepiece
 Controlla il SEO di Naruto                  → /seo-opportunities naruto
 Rivedi la PR 330                            → /code-review 330 (integrato)
 È pronto per il rilascio?                   → /audit-animapverse release
+Crea il 3D del Going Merry                  → /create-3d-location onepiece going-merry
 ```
 
 ## 8. Misurare
@@ -271,3 +274,31 @@ della sessione è del proprietario, gli specialisti hanno il loro nel frontmatte
 `deep` (duplicherebbero gli specialisti senza la loro conoscenza del dominio); modifica automatica degli effort (nessuna
 misura riproducibile lo giustifica); escalation automatica tra modelli (la sessione non può cambiare il proprio modello;
 la policy C la rende esplicita); nuovi agent, hook o skill.
+
+## 13. Dominio 3D (`src/features/explorer3d`, dal 2026-11-27)
+
+Riferimento tecnico: `docs/3D_EXPLORER.md`; vincoli: `.claude/rules/explorer-3d.md`; procedura: `/create-3d-location`.
+
+- **Perché un agent dedicato** (`3d-world-engineer`): il dominio (geometria procedurale, materiali, collisioni,
+  lifecycle delle risorse GPU) non coincide con `map-engineer` (React Flow) né con `frontend-specialist` (UI). Misura
+  della prima scena (Baratie): ~15 screenshot e 3 probe nel browser per arrivare a un risultato corretto (normali
+  invertite, tappi dei loft, zoccolo che copriva il pavimento trovato con un raycast): in un agent restano fuori dal
+  contesto della sessione principale e girano su Sonnet. Una location semplice richiede solo questo agent + i gate.
+- **Aggiornamenti mirati** agli agent esistenti: confine 2D/3D (`map-engineer`), UI del viewer e lazy loading
+  (`frontend-specialist`), `test:3d`/benchmark e limiti delle misure SwiftShader (`qa-performance-engineer`), verifica
+  dei legami degli hotspot (`anime-data-curator`), nessuna superficie SEO (`seo-growth-engineer`), dipendenze e guardia
+  di build (`security-devops`, sempre in sola lettura). Agent social e `lightweight-research` invariati.
+- **Hook invariati** (decisione motivata): i rischi del dominio (import statici del motore, dipendenze 3D nel bundle,
+  modelli binari, risorse remote, contratto del registry, budget) sono coperti da controlli deterministici nei gate,
+  non da hook: `validate:3d` (AST dei sorgenti, ~1,5 s, dentro `npm run build`), la guardia sul grafo dei chunk di
+  Rollup (dentro ogni `vite build`, quindi anche in Site CI), `test:3d:unit` (~1 s, dentro la build) e `test:3d`
+  (browser, prima della consegna). Un hook su ogni Edit costerebbe tempo a ogni modifica e vedrebbe solo il testo
+  (regex fragili); `bash-policy.mjs` e le protezioni esistenti restano identici. `settings.json` non è stato toccato.
+- **CI**: nessuna modifica ai workflow né a `scripts/ci-site-scope.mjs`: i file 3D stanno in `src/`/`scripts/`,
+  quindi le PR che li toccano eseguono già la build completa (che ora include validatore, test unitari e guardia).
+  Benchmark FPS e `test:3d` non sono gate CI (rendering software su runner condivisi = misure instabili).
+- **Contesto**: +~750 caratteri in `CLAUDE.md` (riga di progetto, mappa, invariante, matrice); la rule (~2,7k) si
+  carica solo toccando file 3D; skill e agent solo all'invocazione.
+- **Cloud vs locale**: stessi comandi. In Cloud Chromium è in `/opt/pw-browsers/chromium` e il WebGL è SwiftShader
+  (correttezza e misure relative); FPS su telefoni/GPU reali solo in locale dal proprietario.
+

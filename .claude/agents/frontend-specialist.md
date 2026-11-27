@@ -20,6 +20,9 @@ text) before editing if they are not already in your context.
   contrast palette rules (UX-01/UX-02).
 - Every user-facing string (incl. `aria-label`) as an i18n key in all six resource files.
 - World-agnostic: labels from `src/lib/worldConfig.ts`, never `if (world.slug === ...)`.
+- 3D viewer UI (`src/features/explorer3d/{launcher,viewer}`, read `explorer-3d.md`): the site reaches it only through
+  `launcher/` (never a static import of the engine or `three`), dialog a11y (focus, Esc, hotspot list), touch joystick,
+  safe areas, reduced motion. Scene geometry and the engine are `3d-world-engineer`'s.
 
 ## Must not
 Edit dataset content (`src/data/**`) beyond wiring, change SEO thresholds/URLs, touch `tools/social-engine/`,

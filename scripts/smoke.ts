@@ -12,6 +12,7 @@
 import { spawn, type ChildProcess } from 'node:child_process';
 import { existsSync, readdirSync } from 'node:fs';
 import { chromium, type ConsoleMessage } from 'playwright';
+import { isExplorerRequest, readExplorerReport } from './explorer3d-lab';
 import { worldsWithMap } from '../src/seo/worldLinks';
 
 const PORT = 4188;
@@ -231,6 +232,12 @@ async function main() {
       if (m.type() === 'error' && !IGNORED.some((s) => text.includes(s))) {
         consoleErrors.push(`console: ${text}`);
       }
+    });
+    // 3D explorer: la navigazione ordinaria non scarica mai i chunk 3D (elenco dalla guardia di build).
+    const explorerReport = readExplorerReport();
+    const explorerHits: string[] = [];
+    page.on('request', (r) => {
+      if (isExplorerRequest(r.url(), explorerReport)) explorerHits.push(r.url());
     });
     // 404/5xx su URL reali (asset/chunk mancanti), escluse risorse benigne.
     page.on('response', (r) => {
@@ -826,6 +833,13 @@ async function main() {
         : { dimmed: 0, lowOpacity: 0, dot: 1 };
       ux(dim.dimmed > 0 && dim.lowOpacity === 0 && dim.dot < 1, `focus mode: ${dim.dimmed} pin attenuati, etichette a opacità piena (${dim.lowOpacity} attenuate), pallino ${dim.dot}`);
       await fctx.close();
+    }
+
+    if (explorerHits.length) {
+      failures += 1;
+      console.log(`  ✗ navigazione ordinaria: ${explorerHits.length} richieste a chunk 3D (${explorerHits.slice(0, 3).join(', ')})`);
+    } else {
+      console.log(`  ✓ navigazione ordinaria: nessuna richiesta 3D (${explorerReport ? explorerReport.chunks.length : 0} chunk 3D nella build)`);
     }
 
     await browser.close();
