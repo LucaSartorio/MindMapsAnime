@@ -1,6 +1,7 @@
 # Baratie (One Piece) — 3D scene ledger
 
-- scene id: `onepiece-baratie` · location id: `loc-op-baratie` · status: **prototype** · rights: **pending-owner-review**
+- scene id: `onepiece-baratie` · location id: `loc-op-baratie` · status: **available** (public since 2026-11-27) ·
+  rights: **owner-approved — not verified**
 - files: `src/features/explorer3d/worlds/onepiece/baratie/{config,scene}.ts`
 
 ## Milestones
@@ -11,6 +12,17 @@
 | 3 | interiors + exploration | done | ground floor (hall, corridor, kitchen, stairs) + upper floor, zone-loaded; plinth bug found by raycast |
 | 4 | hotspots + integration | done | 7 hotspots, all on ids linked to `loc-op-baratie` |
 | 5 | optimization + budgets | done | see measurements; real-device FPS still to measure |
+| 6 | publication | done | owner request 2026-11-27: manifest `available`, loader ungated, `rights: 'owner-approved'` |
+
+## Publication (2026-11-27)
+The owner asked to make the scene public on animapverse.com. Recorded as `rights: 'owner-approved'` with
+`provenance.publication` in `config.ts`: a publication decision, **not** a rights clearance. Open questions:
+- no licence or permission from the rights holders of One Piece has been requested or verified;
+- no legal review of whether a recognizable 3D reconstruction of the setting fits the site's fan-reference use;
+- the primary wiki description could not be read (HTTP 402): proportions rely on secondary textual sources;
+- the location name appears on the sign (generic font, dataset text, not the official logo).
+Moving to `rights: 'cleared'` requires these to be resolved by the owner. Rollback: set the manifest back to
+`prototype`, re-gate the loader and `rights: 'pending-owner-review'` (one commit; the build drops the scene again).
 
 ## Sources (textual)
 - Dataset: `loc-op-baratie`, `arc-op-baratie` (ch. 43-68), `evt-op-baratie-krieg`, `evt-op-zoro-vs-mihawk`,
@@ -42,6 +54,6 @@
 | Build (generation) | ~35 ms | ~66 ms (dev) | session timings |
 
 ## Open issues / next step
-- Owner: decide on rights and publication (`available`), then run `/create-3d-location onepiece baratie optimize`
-  on real phones/GPUs to measure FPS.
+- Owner: resolve the open rights questions above (or keep `owner-approved`), and measure FPS on real phones/GPUs
+  (`/create-3d-location onepiece baratie optimize`).
 - Possible improvements: deployable/folded fin variants, Krieg's galleon as an optional prop, more interior props.

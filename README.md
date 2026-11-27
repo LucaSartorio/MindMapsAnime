@@ -147,12 +147,12 @@ Il flusso di traduzione è descritto in [`docs/I18N.md`](docs/I18N.md).
 - **Obiettivo di accessibilità WCAG 2.2 AA** — pattern WAI-ARIA (tab, disclosure, combobox,
   switch), focus trap/restore, `inert`; verifica con `npm run audit:a11y`
   (axe-core).
-- **Esplorazione 3D (prototipo)** — alcuni luoghi possono avere una scena 3D
-  generata interamente via codice (Three.js, nessun modello esterno), aperta dal
-  pulsante «Esplora in 3D» della scheda: modalità osservazione ed esplorazione
-  (WASD/mouse, joystick su mobile), hotspot verso le schede esistenti. Caricata solo
-  al click; il Baratie è un prototipo attivo solo con `VITE_EXPLORER_3D=1` o in
-  `npm run dev`. Dettagli: [`docs/3D_EXPLORER.md`](docs/3D_EXPLORER.md).
+- **Esplorazione 3D** — alcuni luoghi hanno una scena 3D generata interamente via
+  codice (Three.js, nessun modello esterno), aperta dal pulsante «Esplora in 3D»
+  della scheda: modalità osservazione ed esplorazione (WASD/mouse, joystick su
+  mobile), hotspot verso le schede esistenti. Caricata solo al click. Pubblica: il
+  Baratie (One Piece); le altre scene restano prototipi, attivi solo con
+  `VITE_EXPLORER_3D=1` o in `npm run dev`. Dettagli: [`docs/3D_EXPLORER.md`](docs/3D_EXPLORER.md).
 
 ---
 

@@ -15,7 +15,6 @@ type SceneLoader = () => Promise<SceneModule>;
  * the syntax tree of this file. The `import()` here is the only path from the site to a scene's code.
  */
 export const SCENE_LOADERS: Readonly<Record<string, SceneLoader | undefined>> = {
-  'onepiece-baratie': __EXPLORER_3D_PROTOTYPES__
-    ? () => import('../worlds/onepiece/baratie/scene').then((m) => m.scene)
-    : undefined,
+  // available (public): never gated. New scenes start as `__EXPLORER_3D_PROTOTYPES__ ? () => import(…) : undefined`.
+  'onepiece-baratie': () => import('../worlds/onepiece/baratie/scene').then((m) => m.scene),
 };

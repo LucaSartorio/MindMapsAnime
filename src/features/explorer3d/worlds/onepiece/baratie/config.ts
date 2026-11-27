@@ -61,7 +61,19 @@ export const definition: SceneDefinition = {
       { kind: 'reference', label: 'Ch. 53 "Mackerel Head": the fish-head prow is the detachable Sabagashira No. 1' },
       { kind: 'reference', label: 'Krieg battle: the chefs raise the two side fins as a battle platform' },
     ],
-    rights: 'pending-owner-review',
+    // Published on the owner's explicit request. This is NOT a verified rights clearance: see `unresolved`.
+    rights: 'owner-approved',
+    publication: {
+      approvedBy: 'owner',
+      date: '2026-11-27',
+      reference: 'Owner request to make the Baratie 3D exploration public on animapverse.com; docs/explorer3d/onepiece-baratie.md',
+      unresolved: [
+        'No licence or permission from the rights holders of One Piece has been requested or verified.',
+        'No legal review of whether a recognizable 3D reconstruction of the setting fits the site\'s fan-reference use.',
+        'The primary wiki description could not be read (HTTP 402): proportions rely on secondary textual sources.',
+        'The location name appears on the sign (generic font, dataset text, not the official logo).',
+      ],
+    },
     notes: [
       'Shapes are stylized and built only from code; no official artwork, model or texture was used or traced.',
       'Canon: floating restaurant ship, large fish-head prow, two deployable side fins used as a battle platform, mast, kitchen and dining hall.',
