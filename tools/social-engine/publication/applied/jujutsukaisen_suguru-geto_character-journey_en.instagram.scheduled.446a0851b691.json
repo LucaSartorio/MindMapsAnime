@@ -1,0 +1,30 @@
+{
+  "receiptId": "jujutsukaisen_suguru-geto_character-journey_en.instagram.scheduled.446a0851b691",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-11-27T06:18:37.462Z",
+  "sourceFile": "20261127T061313Z-jujutsukaisen_suguru-geto_character-journey_en-instagram-scheduled.json",
+  "run": {
+    "runId": "45950994206",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/45950994206",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "character-journey:jujutsukaisen:suguru-geto@en",
+    "platform": "instagram",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-11-27T10:00:00+01:00",
+    "providerPostId": "443969046",
+    "providerPostUuid": "2010443319471459860",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=2010443319471459860",
+    "recordedAt": "2026-11-27T06:13:13Z",
+    "recordedBy": "chatgpt-work-publishing-agent"
+  }
+}

@@ -2023,7 +2023,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-11-27T06:05:42.840Z",
-      "updatedAt": "2026-11-27T06:09:55.339Z",
+      "updatedAt": "2026-11-27T06:18:37.462Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-11-27T06:09:55.339Z",
       "outputFile": "tools/social-engine/output/jujutsukaisen_suguru-geto_character-journey_en.mp4",
@@ -2087,9 +2087,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-27T10:00:00+01:00",
+          "scheduledAt": "2026-11-27T06:13:13Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "443969046",
+          "providerPostUuid": "2010443319471459860",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=2010443319471459860",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "jujutsukaisen_suguru-geto_character-journey_en.instagram.scheduled.446a0851b691"
+          ],
+          "updatedAt": "2026-11-27T06:18:37.462Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-27T10:00:00+01:00",
+          "scheduledAt": "2026-11-27T06:13:13Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "443969098",
+          "providerPostUuid": "-2549658975592102576",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-2549658975592102576",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "jujutsukaisen_suguru-geto_character-journey_en.facebook.scheduled.e77d2b6317eb"
+          ],
+          "updatedAt": "2026-11-27T06:18:37.462Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-27T10:00:00+01:00",
+          "scheduledAt": "2026-11-27T06:13:13Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "443969247",
+          "providerPostUuid": "6581930366403232123",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=6581930366403232123",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "jujutsukaisen_suguru-geto_character-journey_en.tiktok.scheduled.4a8e2287826c"
+          ],
+          "updatedAt": "2026-11-27T06:18:37.462Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-27T10:00:00+01:00",
+          "scheduledAt": "2026-11-27T06:13:13Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "443969165",
+          "providerPostUuid": "-4779932439709070425",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-4779932439709070425",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "jujutsukaisen_suguru-geto_character-journey_en.youtube.scheduled.7e2aa6b1ecaf"
+          ],
+          "updatedAt": "2026-11-27T06:18:37.462Z"
+        }
+      ]
     },
     "character-journey:jujutsukaisen:yuji-itadori@en": {
       "renderId": "character-journey:jujutsukaisen:yuji-itadori@en",
