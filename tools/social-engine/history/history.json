@@ -2012,6 +2012,85 @@
         }
       ]
     },
+    "character-journey:jujutsukaisen:suguru-geto@en": {
+      "renderId": "character-journey:jujutsukaisen:suguru-geto@en",
+      "contentId": "character-journey:jujutsukaisen:suguru-geto",
+      "template": "characterJourney",
+      "anime": "jujutsukaisen",
+      "subject": "suguru-geto",
+      "locale": "en",
+      "variant": null,
+      "segment": null,
+      "segmentFingerprint": null,
+      "createdAt": "2026-11-27T06:05:42.840Z",
+      "updatedAt": "2026-11-27T06:09:55.339Z",
+      "renderStatus": "rendered",
+      "renderedAt": "2026-11-27T06:09:55.339Z",
+      "outputFile": "tools/social-engine/output/jujutsukaisen_suguru-geto_character-journey_en.mp4",
+      "manifestFile": "tools/social-engine/output/jujutsukaisen_suguru-geto_character-journey_en.manifest.json",
+      "sourceFile": "0061-jujutsukaisen_suguru-geto_character-journey_en.json",
+      "durationSeconds": 24,
+      "attempts": 1,
+      "lastError": null,
+      "artifact": {
+        "name": "animapverse-social-render-45949623660-1",
+        "runId": "45949623660",
+        "runAttempt": "1",
+        "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/45949623660",
+        "video": "videos/jujutsukaisen_suguru-geto_character-journey_en.mp4",
+        "manifest": "manifests/jujutsukaisen_suguru-geto_character-journey_en.manifest.json",
+        "sha256": "57f0758d23bcf591ce20eece2dd0ec69246c03b14613437dfd3cd1cbf1770b19",
+        "cover": "covers/jujutsukaisen_suguru-geto_character-journey_en.cover.png",
+        "expiresAt": "2026-12-27T06:09:55.339Z"
+      },
+      "social": {
+        "contentType": "character-journey",
+        "animes": [
+          "jujutsukaisen"
+        ],
+        "characters": [
+          "jujutsukaisen:suguru-geto"
+        ],
+        "characterNames": [
+          "Suguru Geto"
+        ],
+        "part": null,
+        "partCount": null,
+        "hookType": "question",
+        "hookId": "cj-question-3",
+        "hook": "How well do you know where Suguru Geto has been?",
+        "ctaType": "comment-next-journey",
+        "cta": "Which journey should we map next?",
+        "durationSeconds": 24,
+        "selection": {
+          "mode": "coldstart",
+          "score": 91.91,
+          "seed": "feed55:guess-character:naruto:naruto-uzumaki@en:samples0"
+        },
+        "platformMetadata": {
+          "instagramCaption": "How well do you know where Suguru Geto has been?\n\nSuguru Geto's journey across Jujutsu Kaisen: 3 places on the world map.\n\nWhich journey should we map next? 👇\n\nSave it for your next rewatch.\n\n#jujutsukaisen #jjk #sugurugeto #anime #animemap #AniMapVerse",
+          "tiktokCaption": "How well do you know where Suguru Geto has been? Which journey should we map next? 👇 #jujutsukaisen #jjk #sugurugeto #anime #animemap",
+          "youtubeTitle": "Every Place Suguru Geto Visited 🌀 | Jujutsu Kaisen Journey",
+          "youtubeDescription": "How well do you know where Suguru Geto has been?\n\nSuguru Geto's journey across Jujutsu Kaisen: 3 places on the world map.\n\nWhich journey should we map next? 👇\n\nInteractive map: https://animapverse.com/en/jujutsu-kaisen/characters/suguru-geto\n\n#jujutsukaisen #jjk #sugurugeto",
+          "facebookCaption": "How well do you know where Suguru Geto has been?\n\nSuguru Geto's journey across Jujutsu Kaisen: 3 places on the world map.\n\nWhich journey should we map next? 👇\n\nInteractive map: https://animapverse.com/en/jujutsu-kaisen/characters/suguru-geto",
+          "hashtags": [
+            "#jujutsukaisen",
+            "#jjk",
+            "#sugurugeto",
+            "#anime",
+            "#animemap",
+            "#AniMapVerse"
+          ],
+          "youtube": {
+            "madeForKids": false
+          },
+          "madeForKids": false
+        }
+      },
+      "publicationStatus": "notPublished",
+      "publishedAt": null,
+      "platforms": []
+    },
     "character-journey:jujutsukaisen:yuji-itadori@en": {
       "renderId": "character-journey:jujutsukaisen:yuji-itadori@en",
       "contentId": "character-journey:jujutsukaisen:yuji-itadori",
