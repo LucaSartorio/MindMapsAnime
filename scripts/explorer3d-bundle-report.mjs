@@ -4,8 +4,8 @@
  *
  * For a fixed set of prerendered pages it lists every JS/CSS file the HTML loads eagerly (`<script src>`,
  * `modulepreload`, stylesheet) and reports raw / gzip / brotli sizes, plus the size of every emitted chunk that
- * contains the 3D explorer (`dist/assets/explorer3d-*.json` written by the build guard, see
- * `scripts/vite/explorer3dGuard.ts`). It only reads files: same `dist/` → same numbers, so a baseline taken before a
+ * contains the 3D explorer (listed by the build guard `scripts/vite/explorer3dGuard.ts` in
+ * `node_modules/.cache/animapverse/explorer3d-report.json`). It only reads files: same `dist/` → same numbers, so a baseline taken before a
  * change is comparable with one taken after it. `--json` prints machine-readable output.
  *
  * It is a measurement, not a gate: the blocking checks are the build guard (chunk graph) and `npm run test:3d`
@@ -66,11 +66,13 @@ for (const page of PAGES) {
   pages.push({ page, files: files.length, js: sum(files.filter((f) => f.endsWith('.js'))), css: sum(files.filter((f) => f.endsWith('.css'))) });
 }
 
-// Chunks that carry the 3D explorer, as recorded by the build guard.
+// Chunks that carry the 3D explorer, as recorded by the build guard (only if it describes this dist/).
 let explorer = null;
-const reportFile = join(DIST, 'assets', 'explorer3d-report.json');
-if (existsSync(reportFile)) {
-  const r = JSON.parse(readFileSync(reportFile, 'utf8'));
+const reportFile = 'node_modules/.cache/animapverse/explorer3d-report.json';
+const entryHtml = existsSync(join(DIST, 'index.html')) ? readFileSync(join(DIST, 'index.html'), 'utf8') : '';
+const guard = existsSync(reportFile) ? JSON.parse(readFileSync(reportFile, 'utf8')) : null;
+if (guard && guard.entry && entryHtml.includes(`/${guard.entry}`)) {
+  const r = guard;
   const files = (r.chunks ?? []).map((c) => `assets/${c.file}`).filter((f) => existsSync(join(DIST, f)));
   explorer = { enabled: r.enabled, chunks: (r.chunks ?? []).map((c) => ({ ...c, ...sizes(`assets/${c.file}`) })), total: sum(files) };
 }
@@ -88,7 +90,7 @@ if (json) {
     else console.log(`  ${p.page}: ${p.files} files · JS ${kb(p.js.raw)} / ${kb(p.js.gzip)} / ${kb(p.js.brotli)} · CSS ${kb(p.css.raw)} / ${kb(p.css.gzip)}`);
   }
   console.log(`  all emitted JS: ${assets.length} files, ${kb(allJs)} raw`);
-  if (!explorer) console.log('  explorer3d: no report (build without the guard)');
+  if (!explorer) console.log('  explorer3d: no guard report for this dist/ (rebuild)');
   else {
     console.log(`  explorer3d (${explorer.enabled ? 'flag ON' : 'flag OFF'}): ${explorer.chunks.length} chunks · ${kb(explorer.total.raw)} / ${kb(explorer.total.gzip)} / ${kb(explorer.total.brotli)}`);
     for (const c of explorer.chunks) console.log(`    ${c.file} [${c.kind}] ${kb(c.raw)} / ${kb(c.gzip)} / ${kb(c.brotli)}`);

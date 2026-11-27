@@ -5,6 +5,9 @@ import type { SceneRenderer } from '../SceneRenderer';
 
 const tmp = new Vector3();
 const sph = new Spherical();
+const last = new Vector3();
+/** Below this camera travel per frame (metres) inertia is invisible: stop rendering instead of easing for seconds. */
+const SETTLE_EPS = 0.004;
 
 /**
  * Observation mode: orbit / zoom / pan around the location (three.js OrbitControls), on-demand rendering with
@@ -14,6 +17,9 @@ export class OrbitCameraController {
   readonly controls: OrbitControls;
   private interacting = false;
   private enabled = false;
+  private stillFrames = 0;
+  /** True while the frame hook itself calls `controls.update()`: its 'change' must not request another frame. */
+  private inHook = false;
   private readonly removeHook: () => void;
 
   constructor(
@@ -37,15 +43,28 @@ export class OrbitCameraController {
     this.controls = c;
     this.removeHook = view.addFrameHook(() => {
       if (!this.enabled) return false;
+      last.copy(view.camera.position);
+      this.inHook = true;
       const changed = c.update();
+      this.inHook = false;
       this.clampTarget();
-      return changed || this.interacting;
+      if (this.interacting) {
+        this.stillFrames = 0;
+        return true;
+      }
+      // OrbitControls damping decays per frame, so on slow devices it lasts for seconds: end it once the motion is
+      // no longer visible (3 frames under SETTLE_EPS).
+      this.stillFrames = changed && last.distanceTo(view.camera.position) > SETTLE_EPS ? 0 : this.stillFrames + 1;
+      return this.stillFrames < 3;
     });
   }
 
-  private readonly onChange = () => this.view.requestRender();
+  private readonly onChange = () => {
+    if (!this.inHook) this.view.requestRender();
+  };
   private readonly onStart = () => {
     this.interacting = true;
+    this.stillFrames = 0;
     this.view.requestRender();
   };
   private readonly onEnd = () => {

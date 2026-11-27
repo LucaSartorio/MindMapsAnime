@@ -16,7 +16,7 @@ import {
   loftGeometry,
   type HullProfile,
 } from '../../../primitives/ships';
-import { baratieDefinition, DECK_Y, UPPER_Y } from './config';
+import { definition, DECK_Y, UPPER_Y } from './config';
 
 /**
  * Baratie — procedural builder. Everything below is generated from numbers: no model, no image file.
@@ -578,4 +578,4 @@ function build(ctx: BuildContext): SceneBuild {
   };
 }
 
-export const scene: SceneModule = { definition: baratieDefinition, build };
+export const scene: SceneModule = { definition, build };

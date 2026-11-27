@@ -10,7 +10,7 @@ import type { SceneDefinition } from '../../../types';
 export const DECK_Y = 3;
 export const UPPER_Y = 7.5;
 
-export const baratieDefinition: SceneDefinition = {
+export const definition: SceneDefinition = {
   id: 'onepiece-baratie',
   worldId: 'world-onepiece',
   locationId: 'loc-op-baratie',

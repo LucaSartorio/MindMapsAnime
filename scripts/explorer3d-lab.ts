@@ -63,21 +63,26 @@ export async function startStaticServer(port: number): Promise<ChildProcess> {
   }
 }
 
-/** Files of the 3D explorer as recorded by the build guard (`dist/assets/explorer3d-report.json`). */
+/** Files of the 3D explorer as recorded by the build guard (`scripts/vite/explorer3dGuard.ts`). */
 export interface ExplorerReport {
   enabled: boolean;
-  chunks: Array<{ file: string; kind: string }>;
+  entry: string | null;
+  chunks: Array<{ file: string; kind: string; bytes: number }>;
 }
+export const REPORT_FILE = 'node_modules/.cache/animapverse/explorer3d-report.json';
+
+/** The guard report, only if it describes the build currently in `dist/` (same entry chunk). */
 export function readExplorerReport(): ExplorerReport | null {
-  const p = join(DIST, 'assets', 'explorer3d-report.json');
-  return existsSync(p) ? (JSON.parse(readFileSync(p, 'utf8')) as ExplorerReport) : null;
+  if (!existsSync(REPORT_FILE) || !existsSync(join(DIST, 'index.html'))) return null;
+  const r = JSON.parse(readFileSync(REPORT_FILE, 'utf8')) as ExplorerReport;
+  const html = readFileSync(join(DIST, 'index.html'), 'utf8');
+  return r.entry && html.includes(`/${r.entry}`) ? r : null;
 }
 
 /** True when a request URL belongs to the 3D explorer (a guard-listed chunk or anything named after three.js). */
 export function isExplorerRequest(url: string, report: ExplorerReport | null): boolean {
   const path = url.replace(/^https?:\/\/[^/]+/, '').split('?')[0];
   if (report?.chunks.some((c) => path === `/assets/${c.file}`)) return true;
-  if (path.endsWith('explorer3d-report.json')) return true;
   return /\/assets\/[^/]*three[^/]*\.js$/i.test(path);
 }
 
