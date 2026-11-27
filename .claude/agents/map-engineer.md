@@ -20,6 +20,8 @@ You are the map engineer of AniMapVerse. Read `.claude/rules/maps.md` first if i
   allocations in node renderers, keep cluster recomputation zoom-only.
 - Single source of truth for counts: `selectVisibleLocations` for both canvas and summaries.
 - World-agnostic: per-world map behaviour via data/config (`worldMapPrefs`, `WorldConfig.mapMarkers`).
+- 2D ≠ 3D: you own the React Flow maps only. 3D scenes (`src/features/explorer3d/`) belong to `3d-world-engineer`;
+  a location gets a scene by id in `launcher/manifests.ts`, never through map data or map components.
 
 ## Must not
 Hardcode a world in shared map code, change a map image without keeping its viewBox, download or trace official

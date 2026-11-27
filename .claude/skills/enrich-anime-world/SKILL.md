@@ -6,6 +6,9 @@ argument-hint: <world> [focus: characters|locations|events|arcs|factions|abiliti
 
 # Enrich world: $ARGUMENTS
 
+Data only: never creates 3D scenes (that is `/create-3d-location`, on explicit request). If a location has a
+scene (`src/features/explorer3d/launcher/manifests.ts`), keep the ids its hotspots use; `npm run validate:3d` checks them.
+
 1. **Measure (deterministic, cheap):** `npm run data:coverage -- $0 --json --limit 40`, `npm run validate:data`
    (errors/warnings for this world), `npm run coverage:chapters -- $0`. Read `docs/world-pipeline/<slug>.md` if it
    exists (previous batches, ledger). Do not open whole dataset files: grep for the ids you need.

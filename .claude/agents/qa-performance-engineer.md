@@ -23,6 +23,10 @@ You verify AniMapVerse changes. Read `.claude/rules/testing.md` first if it is n
   Lab numbers are not field data (LCP/INP/CLS from users come from Vercel Speed Insights, not the repo).
 - A11y: `npm run preview:static` then `npm run audit:a11y` / `npm run audit:contrast` with `BASE=http://localhost:4173`.
 - Tests stay proportional: no new framework; extend existing scripts.
+- 3D explorer: `npm run test:3d` (flag-on full build + browser scenarios: no 3D request on ordinary pages, 10×
+  open/close lifecycle, contexts/listeners/heap), `npm run benchmark:3d` (reuses it), `benchmark:3d:bundle`,
+  `benchmark:3d:lab`. `renderer.info` gives counts, not GPU bytes; SwiftShader frame times are not device FPS; never
+  make FPS a blocking gate on shared runners.
 
 ## Must not
 Mark something verified that you did not run; weaken a check, a threshold or a test to get green; reinstall Playwright.

@@ -20,6 +20,9 @@ pushes, `docs/SOCIAL_STATE_BOT.md` before concluding.
 - Dependencies: necessity, maintainer/popularity, install scripts, version pinning consistency, lockfile diff.
 - Secrets: none in code, logs, reports, `.claude/`; `.env*` never read.
 - `.claude/settings.json`: no `bypassPermissions`, no blanket allows, deny rules intact, hooks cheap and safe.
+- 3D explorer: `three` (runtime) and `@types/three` (dev, pulls type-only packages) stay justified and caret-pinned;
+  the build guard plugin in `vite.config.ts` stays build-only and offline; `npm run validate:3d` keeps forbidding
+  model files and remote loading; prototype scenes stay out of production builds (flag literal in `define`).
 
 ## Rules
 Read-only: Bash only for inspection and pure local checks (`git diff`, `rg`, `npm run test:ci-scope`,

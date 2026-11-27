@@ -6,7 +6,8 @@ argument-hint: <world|all> [map level id | issue]
 
 # Optimize map: $ARGUMENTS
 
-Owner: `map-engineer` (read `.claude/rules/maps.md`). Shared map code stays world-agnostic.
+Owner: `map-engineer` (read `.claude/rules/maps.md`). Shared map code stays world-agnostic. Scope: the React Flow
+maps only — 3D scenes of a location are `/create-3d-location` (`src/features/explorer3d`), never map code.
 
 1. **Diagnose with facts**
    - Data: `npm run validate:data` (out-of-range coordinates), `npm run data:coverage -- $0` (places without events/

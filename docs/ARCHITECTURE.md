@@ -15,6 +15,7 @@ verbatim so no design decision is lost; update it when the architecture changes.
 - [i18n](#i18n)
 - [SEO](#seo)
 - [Social engine (internal)](#social-safety)
+- [3D explorer](#explorer-3d)
 
 <a id="data-integrity"></a>
 ## Datasets, WorldConfig, kits, adding a world
@@ -847,3 +848,16 @@ Permanent rules:
   (~2.8 s each). More places → more parts, never longer videos. Agents omit `durationSeconds`.
 - After changing it: `npm run social:validate` (+ `social:catalog`/`social:schema` when data/limits change, and a
   `--dry-run`/`--still` render) and `npm run build` (the public build must stay unaffected).
+
+<a id="explorer-3d"></a>
+## 3D explorer
+
+Full reference (architecture, lifecycle, budgets, measurements, how to add a location, scalability, rights):
+`docs/3D_EXPLORER.md`. In short: `src/features/explorer3d/` is an optional procedural Three.js viewer opened from
+the location scheda ("Explore in 3D"). Only `launcher/` (three-free: manifests, flag-gated loaders, button, host,
+store) is part of ordinary chunks; the engine, viewer and scenes are reached through dynamic `import()` after an
+explicit click, which a Rollup guard (`scripts/vite/explorer3dGuard.ts`), `npm run validate:3d` and
+`npm run test:3d` verify on the chunk graph, the sources and real network requests. Prototype scenes are compiled
+only with `VITE_EXPLORER_3D=1` / `npm run dev`. Decision (2026-11-27): plain Three.js instead of React Three Fiber —
+explicit lifecycle and on-demand rendering without a reconciler; geometry baked into vertex-coloured batches.
+
