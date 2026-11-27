@@ -12,7 +12,9 @@
 import { spawn, type ChildProcess } from 'node:child_process';
 import { existsSync, readdirSync } from 'node:fs';
 import { chromium, type ConsoleMessage } from 'playwright';
-import { isExplorerRequest, readExplorerReport } from './explorer3d-lab';
+import { isExplorerRequest, launchBrowser as launchWebGLBrowser, readExplorerReport, WEBGL_ARGS } from './explorer3d-lab';
+import { SCENE_MANIFESTS } from '../src/features/explorer3d/launcher/manifests';
+import { animeWorlds, getWorldUrlSlug } from '../src/data/worlds';
 import { worldsWithMap } from '../src/seo/worldLinks';
 
 const PORT = 4188;
@@ -840,6 +842,51 @@ async function main() {
       console.log(`  ✗ navigazione ordinaria: ${explorerHits.length} richieste a chunk 3D (${explorerHits.slice(0, 3).join(', ')})`);
     } else {
       console.log(`  ✓ navigazione ordinaria: nessuna richiesta 3D (${explorerReport ? explorerReport.chunks.length : 0} chunk 3D nella build)`);
+    }
+
+    // Scene 3D pubbliche (`available`) nella build di produzione: pulsante nella scheda, nessun byte 3D prima del
+    // click, viewer pronto, chiusura senza canvas residui. Browser dedicato con WebGL software (SwiftShader).
+    for (const scene of SCENE_MANIFESTS.filter((m) => m.status === 'available')) {
+      const world = animeWorlds.find((w) => w.id === scene.worldId);
+      if (!world) continue;
+      const path = `/en/${getWorldUrlSlug(world)}/map?location=${scene.locationId}`;
+      const glBrowser = await launchWebGLBrowser(WEBGL_ARGS);
+      try {
+        const gctx = await glBrowser.newContext({ viewport: { width: 1366, height: 800 } });
+        await gctx.addInitScript({ content: `try{localStorage.setItem('animeInteractiveMaps.cookieConsent',JSON.stringify({necessary:true,analytics:false,timestamp:new Date().toISOString(),version:2}));localStorage.setItem('animeInteractiveMaps.onboarding.v1','1')}catch(e){}` });
+        const gp = await gctx.newPage();
+        const reqs: string[] = [];
+        const errs: string[] = [];
+        gp.on('request', (r) => reqs.push(r.url()));
+        gp.on('pageerror', (e) => errs.push(e.message));
+        await gp.goto(`${BASE}${path}`, { waitUntil: 'networkidle', timeout: 30_000 });
+        const button = gp.getByRole('button', { name: /Explore in 3D/ });
+        const visible = await button.waitFor({ timeout: 20_000 }).then(() => true, () => false);
+        const before = reqs.filter((u) => isExplorerRequest(u, explorerReport)).length;
+        let ready = false;
+        let closedClean = false;
+        let fetched = 0;
+        if (visible && before === 0) {
+          await button.click();
+          ready = await gp.waitForSelector('[data-explorer3d="viewer"][data-status="ready"]', { timeout: 60_000 }).then(() => true, () => false);
+          fetched = reqs.filter((u) => isExplorerRequest(u, explorerReport)).length;
+          if (ready) {
+            await gp.click('[data-explorer3d="close"]');
+            await gp.waitForSelector('[data-explorer3d="viewer"]', { state: 'detached', timeout: 20_000 }).catch(() => undefined);
+            closedClean = (await gp.locator('canvas[data-explorer3d="canvas"]').count()) === 0 && (await gp.locator('[data-explorer3d="viewer"]').count()) === 0;
+          }
+        }
+        const ok = visible && before === 0 && ready && closedClean && errs.length === 0 && fetched > 0;
+        if (!ok) failures += 1;
+        console.log(
+          `  ${ok ? '✓' : '✗'} 3D ${scene.id}: pulsante ${visible ? 'visibile' : 'assente'}, ${before} richieste 3D prima del click, ` +
+            `viewer ${ready ? 'pronto' : 'non pronto'} (${fetched} chunk 3D), chiusura ${closedClean ? 'pulita' : 'con residui'}` +
+            (errs.length ? `, errori: ${errs.slice(0, 2).join(' | ')}` : ''),
+        );
+        await gctx.close();
+      } finally {
+        await glBrowser.close();
+      }
     }
 
     await browser.close();

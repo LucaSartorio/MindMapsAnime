@@ -91,14 +91,30 @@ export interface SourceRef {
   url?: string;
 }
 
+export interface PublicationDecision {
+  approvedBy: 'owner';
+  /** ISO date (YYYY-MM-DD) of the decision. */
+  date: string;
+  /** Where the decision is recorded (request, PR, ledger). */
+  reference: string;
+  /** Rights/provenance questions still open at publication time (shown by `validate:3d`). */
+  unresolved: string[];
+}
+
 export interface ProvenanceDef {
   /** Always `procedural`: no imported model, no downloaded texture, no traced artwork. */
   method: 'procedural';
   author: string;
   license: string;
   sources: SourceRef[];
-  /** Rights review of distributing this reconstruction: `available` scenes require `cleared`. */
-  rights: 'pending-owner-review' | 'cleared';
+  /**
+   * Rights status of distributing this reconstruction. `available` scenes need `cleared` (rights verified) or
+   * `owner-approved` (the owner decided to publish; rights NOT verified — `publication` records it and its open
+   * questions). Never write `cleared` without a verified clearance.
+   */
+  rights: 'pending-owner-review' | 'owner-approved' | 'cleared';
+  /** Required with `rights: 'owner-approved'`: who decided, when, where it is recorded, what is still unresolved. */
+  publication?: PublicationDecision;
   /** Free-form notes (English, for maintainers): which parts are interpretive and why. */
   notes: string[];
 }

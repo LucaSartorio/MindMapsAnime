@@ -12,7 +12,7 @@ export const SCENE_MANIFESTS: readonly SceneManifest[] = [
     id: 'onepiece-baratie',
     worldId: 'world-onepiece',
     locationId: 'loc-op-baratie',
-    // Prototype: rights of distributing a faithful reconstruction are not reviewed yet (docs/3D_EXPLORER.md).
-    status: 'prototype',
+    // Public since 2026-11-27 by owner decision; rights not verified (provenance.publication in its config.ts).
+    status: 'available',
   },
 ];

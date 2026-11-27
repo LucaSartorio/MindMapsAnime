@@ -20,8 +20,9 @@ How it works, budgets, how to add a location: `docs/3D_EXPLORER.md`. Procedure: 
   static import, a preload/prefetch, an idle/hover prefetch or an SSR path to it. Gates: `validate:3d` (sources) +
   build guard (chunk graph, fails `vite build`) + `test:3d` / smoke (no 3D request on ordinary pages).
 - **Launcher stays tiny and three-free**; `manifests.ts` is metadata only. A `prototype` loader is wrapped in
-  `__EXPLORER_3D_PROTOTYPES__ ? … : undefined` (production drops its code); `available` needs owner approval,
-  `provenance.rights: 'cleared'` and a public world.
+  `__EXPLORER_3D_PROTOTYPES__ ? … : undefined` (production drops its code); `available` needs an ungated loader,
+  a public world and `provenance.rights` `'cleared'` (verified clearance only) or `'owner-approved'` + a
+  `provenance.publication` record with the open questions. Never enable the flag globally or claim unverified rights.
 - **World-agnostic engine**: no world/location names, ids or colours in `engine/`, `primitives/`, `materials/`,
   `viewer/`; per-scene data lives in `worlds/<world>/<location>/config.ts`, geometry in `scene.ts`.
 - **No duplicated narrative**: hotspots reference existing dataset ids that the dataset already ties to the location

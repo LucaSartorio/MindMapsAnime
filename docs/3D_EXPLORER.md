@@ -59,11 +59,15 @@ Three independent gates keep this true:
 3. `npm run test:3d` and `npm run smoke`: real Chromium requests on ordinary pages contain no 3D chunk.
 
 **Feature flag.** `vite.config.ts` defines `__EXPLORER_3D_PROTOTYPES__` = `npm run dev` or `VITE_EXPLORER_3D=1`.
-Production builds leave it false: the prototype loader becomes `undefined` and Rollup does not even emit the scene
-chunk (verified: no `scene-*.js` in a flag-off `dist/`). The generic viewer + three.js chunk is still emitted
-(~147 KB gzip, never requested): it keeps the guard meaningful on every production/CI build. Prototypes can be
-tested locally (`npm run dev`) or on a preview built with `VITE_EXPLORER_3D=1`. Making a scene public = status
-`available`, loader not gated, `provenance.rights: 'cleared'` — owner decision (§10).
+Production builds leave it false: a prototype loader becomes `undefined` and Rollup does not even emit its scene
+chunk. The flag is never switched on for production: scenes become public one by one. Prototypes can be tested
+locally (`npm run dev`) or on a preview built with `VITE_EXPLORER_3D=1`. Making a scene public = manifest status
+`available` + an ungated loader + `provenance.rights` `'cleared'` (rights verified) or `'owner-approved'` (owner
+decision recorded in `provenance.publication` with its open questions) — `validate:3d` enforces all three (§10).
+
+**Public scenes (production):** `onepiece-baratie` since 2026-11-27 (owner-approved, rights not verified). Its scene
+chunk, the viewer and three.js are emitted in `dist/` and downloaded only after the click; ordinary pages still
+request none of them (build guard, smoke, `test:3d`).
 
 **SSR.** Server and first client render are identical: the button depends only on build-time data; the host renders
 nothing while closed; WebGL, `window` and `document` are touched only in click handlers and effects. The SSR build
@@ -117,7 +121,7 @@ next level's target), 3 s cooldown, and a level abandoned for slowness is never 
 slow at `low` → a notice suggests leaving. The choice is remembered in `localStorage` (try/catch, per viewer).
 `prefers-reduced-motion`: no orbit inertia, no water animation.
 
-## 7. Budgets and measurements (Baratie prototype, 2026-11-27, Cloud 4 vCPU, Chromium headless + SwiftShader)
+## 7. Budgets and measurements (Baratie, 2026-11-27, Cloud 4 vCPU, Chromium headless + SwiftShader)
 
 | Budget | Target | Measured | Method |
 |---|---|---|---|
@@ -199,6 +203,14 @@ teleport to the zone's spawn.
 - The procedural reconstruction is original code, but a faithful representation of a protected location may still
   raise rights questions: every scene starts as `prototype` (not deployed to production), with
   `provenance.rights: 'pending-owner-review'`. Publishing needs the owner's explicit approval.
+- Rights states: `pending-owner-review` (prototype only) · `owner-approved` (public by owner decision; rights NOT
+  verified; `provenance.publication` = who, when, where recorded, unresolved questions, and `validate:3d` prints a
+  warning on every build) · `cleared` (a verified clearance exists — never set it without one). A scene can move from
+  `owner-approved` to `cleared` only when the open questions are actually resolved.
+- Baratie: `owner-approved` on 2026-11-27. Open questions (also in `docs/explorer3d/onepiece-baratie.md`): no licence
+  or permission from the rights holders requested or verified; no legal review of a recognizable 3D reconstruction
+  under the site's fan-reference use; primary wiki description unreadable (proportions from secondary sources); the
+  location name on the sign.
 - `provenance` lists sources (textual references, chapters), author, licence and notes that separate canon from
   interpretive parts; zones carry `reconstruction`, shown in the UI as "Interpretive reconstruction".
 - Known limits: no real-device FPS yet; collisions are AABB-based (curved hulls use slices/short boxes); auto quality

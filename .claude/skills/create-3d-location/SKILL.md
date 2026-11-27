@@ -27,7 +27,9 @@ link is missing in the dataset, stop and propose a data change (`anime-data-cura
 Textual sources only (wiki/summary pages via WebSearch/WebFetch or the harness `web-fetch` agent; chapter/episode
 references): shape, parts, colours, rooms. No images downloaded, traced or embedded. Record in the ledger what is
 canon vs interpretive and why. The scene starts as `status: 'prototype'` with `provenance.rights:
-'pending-owner-review'`; only the owner can approve `available`.
+'pending-owner-review'`; only the owner can approve `available`. Publishing (on the owner's explicit request only):
+manifest `available`, ungated loader, `rights: 'owner-approved'` + `provenance.publication` (date, reference,
+unresolved questions) unless a verified clearance exists (`'cleared'`); never flip the global flag.
 
 ## 3. Scope & plan (5-10 lines in the ledger)
 Exterior parts, interior zones (only documented rooms are `canon`), walkable areas, hotspot placement, target

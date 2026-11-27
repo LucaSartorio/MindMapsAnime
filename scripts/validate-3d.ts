@@ -6,7 +6,7 @@
  *     `__EXPLORER_3D_PROTOTYPES__ ? … : undefined` (so production builds drop it), an `available` one is not.
  *  3. Scene definitions: ids, zones, spawns, bounds; every hotspot points at an existing entity that the dataset
  *     already ties to the location, with no `needs_verification` data; provenance complete; `available` scenes need
- *     `rights: 'cleared'`.
+ *     `rights: 'cleared'` (verified) or `'owner-approved'` with a `publication` record listing the open questions.
  *  4. Asset policy: no binary 3D model in the repository; explorer code loads nothing remote (no URLs, no fetch, no
  *     three.js loaders).
  *  5. Import isolation (syntax trees of every file under `src/`): outside the explorer, only `launcher/` and
@@ -230,7 +230,21 @@ async function checkDefinition(m: SceneManifest): Promise<void> {
   if (!p.sources?.length) err(scope, 'provenance needs at least one source');
   if (!p.notes?.length) err(scope, 'provenance needs notes (canon vs interpretive parts)');
   for (const s of p.sources ?? []) if (s.url && !/^https:\/\//.test(s.url)) err(scope, `source url must be https: ${s.url}`);
-  if (m.status === 'available' && p.rights !== 'cleared') err(scope, "available scene requires provenance.rights 'cleared' (owner approval)");
+  if (m.status === 'available' && p.rights !== 'cleared' && p.rights !== 'owner-approved') {
+    err(scope, "available scene requires provenance.rights 'cleared' (verified) or 'owner-approved' (owner decision + publication record)");
+  }
+  if (p.rights === 'owner-approved') {
+    const d = p.publication;
+    if (!d || d.approvedBy !== 'owner' || !/^\d{4}-\d{2}-\d{2}$/.test(d.date) || !d.reference?.trim() || !Array.isArray(d.unresolved)) {
+      err(scope, "rights 'owner-approved' needs provenance.publication { approvedBy: 'owner', date: YYYY-MM-DD, reference, unresolved[] }");
+    } else if (d.unresolved.length === 0) {
+      err(scope, "rights 'owner-approved' with no unresolved question: if rights were verified use 'cleared', else list what is open");
+    } else {
+      warn(scope, `public with owner approval (${d.date}); rights NOT verified, ${d.unresolved.length} open question(s): see provenance.publication`);
+    }
+  } else if (p.publication) {
+    err(scope, `provenance.publication is only for rights 'owner-approved' (found '${p.rights}')`);
+  }
   if (!def.zones.some((z) => z.reconstruction === 'interpretive') && p.notes.every((n) => !/interpretive/i.test(n))) {
     warn(scope, 'no interpretive part declared: double-check that every element is documented in the work');
   }
