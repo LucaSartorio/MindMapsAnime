@@ -1,13 +1,20 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'node:path';
+import { explorer3dGuard } from './scripts/vite/explorer3dGuard';
 
 // Configurazione Vite per Mappe Interattive
 export default defineConfig(({ command, isSsrBuild }) => {
   const isBuild = command === 'build';
+  // 3D explorer: `prototype` scenes exist only in `npm run dev` and in builds with VITE_EXPLORER_3D=1. Production
+  // builds leave the flag off, so prototype scene code is dropped by Rollup (docs/3D_EXPLORER.md).
+  const explorerPrototypes = command === 'serve' || process.env.VITE_EXPLORER_3D === '1';
 
   return {
-    plugins: [react()],
+    plugins: [react(), explorer3dGuard({ enabled: explorerPrototypes, ssr: !!isSsrBuild, root: __dirname })],
+    define: {
+      __EXPLORER_3D_PROTOTYPES__: JSON.stringify(explorerPrototypes),
+    },
     resolve: {
       alias: {
         '@': path.resolve(__dirname, './src'),
