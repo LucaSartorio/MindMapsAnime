@@ -47,18 +47,25 @@ look is inferred from the model kit + text, so an owner-provided set of anime fr
 | 3 | planks invisible (sparse vertex colours); lips too small | ink seam lines following the hull curvature, bigger duck lips | drawn plank look; head close to the kit |
 | 4 | holes beside arched window heads; washed-out sign; harsh shade; shadow acne indoors | arch masonry closed + half-disc glass; sRGB canvas textures; softer toon ramp; shadow bias | clean arches, crisp sign, softer anime shading |
 | 5 | arched doors blocked by full disc/ring; sails small vs kit | fanlight above a clear doorway, half-ring frames; larger sails, wider stripes | doors walkable and readable; sail mass as in the kit |
-| 6 | interiors: more atmosphere (agent pass) | see below | see below |
+| 6 | interiors too bare (`3d-world-engineer` pass, 2 rounds) | hall: aisle runner, sconces + framed panels on the piers, plants, back-bar with mirror/bottles/stools, lectern; kitchen: tiled backsplash, utensil rail, oven doors, pots/pans, sink, dish rack, butcher block, cold-room door, pendants; quarters: coloured blankets, rug, chests, hammock, coat rails, lantern | interior +13.4k triangles on high (budget +15k), 0 extra draw calls |
 
-## Measurements (2026-11-27, flag-on build, SwiftShader, state-fingerprint `5bd14b165f9914e82912`)
-| Metric | low | high | method |
+## Measurements (2026-11-27, after the fidelity upgrade, state-fingerprint `bbe2cffbb477bb632d71`, Chromium + SwiftShader)
+| Metric | before (text-only) | after | method |
 |---|---|---|---|
-| Draw calls (exterior) | 14 | 20 | `test:3d` |
-| Triangles (exterior) | 8,822 | 74,790 | `test:3d` |
-| Triangles (interior, ground floor) | 21,728 | — | `benchmark:3d` |
-| Scene chunk | 37.7 KB raw · 14.1 KB gzip · 12.5 KB brotli | | `benchmark:3d:bundle` |
-| Build (generation) | ~35 ms | ~66 ms (dev) | session timings |
+| Draw calls, exterior (low · high) | 14 · 20 | 16 · 24 | `test:3d` |
+| Triangles, exterior (low · high) | 8,822 · 74,790 | 20,818 · 134,186 | `test:3d` |
+| Triangles, inside the hall incl. exterior (low) | 21,728 | 35,190 | `benchmark:3d` (median of 3) |
+| Frame with every interior loaded (high) | 89,740 | 166,734 | capture stats |
+| Scene chunk | 37.7 KB raw · 14.1 KB gzip · 12.5 KB brotli | 61.8 · 22.5 · 19.7 KB | `benchmark:3d:bundle` (budget 250 KB) |
+| Shared engine (viewer + three) | 157.0 KB gzip | 157.8 KB gzip | same |
+| Scene generation (low) · click → ready | 35 ms · 758 ms | 55 ms · 865 ms | `benchmark:3d` (median of 3, local server) |
+| Frame time while walking (low, software GL) | 126.8 ms mean | 132.6 ms mean | not device FPS |
+| Lifecycle 10× | 0 contexts, listeners stable | 0 contexts, listeners stable, heap 29.2 → 23.6 MB | `test:3d` |
+| Ordinary map page eager JS | 574.0 KB gzip | 574.0 KB gzip | `benchmark:3d:bundle` on the production build |
 
 ## Open issues / next step
 - Owner: resolve the open rights questions above (or keep `owner-approved`), and measure FPS on real phones/GPUs
   (`/create-3d-location onepiece baratie optimize`).
+- Best next fidelity input: frames from the original anime (Baratie arc) supplied by the owner — the current look
+  follows the official model kit + text; run `/create-3d-location onepiece baratie fidelity` with them.
 - Possible improvements: deployable/folded fin variants, Krieg's galleon as an optional prop, more interior props.

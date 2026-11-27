@@ -126,12 +126,12 @@ slow at `low` → a notice suggests leaving. The choice is remembered in `localS
 | Budget | Target | Measured | Method |
 |---|---|---|---|
 | Shared 3D engine download | ≤ 1 MB compressed | viewer 16.4 KB + three 140.6 KB gzip (14.8 + 115.6 KB brotli) | `npm run benchmark:3d:bundle` |
-| Baratie code | ≤ 250 KB compressed | 14.1 KB gzip / 12.5 KB brotli | same |
+| Baratie code | ≤ 250 KB compressed | 22.5 KB gzip / 19.7 KB brotli (fidelity upgrade; 14.1 KB before) | same |
 | 3D bytes during ordinary navigation | 0 | 0 requests on 5 page types | `test:3d` §1, smoke |
-| Draw calls | mobile 50–100, desktop 100–200 | low 14 · high 20 (exterior); low 14 inside | `test:3d`, `benchmark:3d` |
-| Visible triangles | mobile 50–100k, desktop 100–300k | low 8.8k · high 74.8k (exterior); low 21.7k inside | same |
-| Scene generation | — | 30–35 ms (low), ~66 ms (high, dev) | session timings |
-| Click → usable viewer | — | 0.76 s median (local server, no network latency) | `benchmark:3d` |
+| Draw calls | mobile 50–100, desktop 100–200 | low 16 · high 24 (exterior); low 18 inside; ≤ 30 with every interior on high | `test:3d`, `benchmark:3d` |
+| Visible triangles | mobile 50–100k, desktop 100–300k | low 20.8k · high 134k (exterior); low 35.2k inside; ≤ 167k with every interior on high | same |
+| Scene generation | — | 55 ms (low), ~130 ms (high, dev); interiors 8–32 ms on first entry | session timings |
+| Click → usable viewer | — | 0.87 s median (local server, no network latency) | `benchmark:3d` |
 | FPS 30 mobile / 60 desktop | — | **not measured**: SwiftShader gives ~8 fps on CPU (126 ms/frame) | needs real devices |
 
 **Ordinary navigation, production build vs `origin/main`** (same machine, interleaved A/B, 7 runs each, local

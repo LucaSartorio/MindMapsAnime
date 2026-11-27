@@ -96,6 +96,16 @@ const C = {
   tile: '#e8e4da',
   tile2: '#cfc9bc',
   plant: '#3f9b55',
+  plantDark: '#2d7a45',
+  terracotta: '#b86b3c',
+  carpet: '#9c2f35',
+  carpetDark: '#7a2228',
+  slate: '#2f4a3f',
+  woodLight: '#d6ad6c',
+  woodDark: '#573320',
+  cold: '#9fdcf0',
+  mirror: '#cfe6ee',
+  bulb: '#fff0c4',
 };
 
 /** Round, slightly egg-shaped hull (wider at mid-length), very full sections: the "bowl" of the reference. */
@@ -660,6 +670,60 @@ function interiorMeshes(ctx: BuildContext, name: string, b: Batches, extra: Obje
 const insideEllipse = (x: number, z: number, margin: number) =>
   ((x - PLAN.t1.cx) / (PLAN.t1.rx - margin)) ** 2 + ((z - PLAN.t1.cz) / (PLAN.t1.rz - margin)) ** 2 <= 1;
 
+/** Local frame on a wall: `at(u, y, w)` = u along the wall, w out of the wall into the room; `yaw` turns +z into the room. */
+interface WallFrame {
+  yaw: number;
+  at: (u: number, y: number, w: number) => XYZ;
+}
+function wallFrame(x: number, z: number, nx: number, nz: number): WallFrame {
+  return { yaw: Math.atan2(nx, nz), at: (u, y, w) => [x + nz * u + nx * w, y, z - nx * u + nz * w] };
+}
+/** Inner-wall frame at vertex `i` of the T1 plan (the piers between two windows), pulled `inset` into the room. */
+function t1Pier(p1: Plan, i: number, inset: number): WallFrame {
+  const { cx, cz, rx, rz } = PLAN.t1;
+  const [x, z] = p1[i];
+  let nx = -(x - cx) / (rx * rx);
+  let nz = -(z - cz) / (rz * rz);
+  const l = Math.hypot(nx, nz);
+  nx /= l;
+  nz /= l;
+  return wallFrame(x + nx * inset, z + nz * inset, nx, nz);
+}
+/** Vertices of the T1 plan next to a door (no decoration there). */
+const DOOR_PIERS = new Set([25, 0, 12, 13, 6, 7]);
+
+/** Brass wall sconce with a warm glass shade. */
+function sconce(pb: PartBuilder, b: Batches, f: WallFrame, y: number): void {
+  const rot: XYZ = [0, f.yaw, 0];
+  pb.box(b.solid, f.at(0, y, 0.03), [0.2, 0.5, 0.06], C.brass, rot);
+  pb.box(b.solid, f.at(0, y - 0.1, 0.16), [0.05, 0.05, 0.22], C.brass, rot);
+  pb.cylinder(b.solid, f.at(0, y - 0.04, 0.27), 0.1, 0.06, C.brass, { segments: 8, taper: 1.3 });
+  pb.sphere(b.glow, f.at(0, y + 0.08, 0.27), [0.12, 0.17, 0.12], C.glassWarm, 8);
+}
+
+/** Wall picture (frame + flat canvas with a sun disc and a wave strip), no text. */
+function framedPicture(pb: PartBuilder, b: Batches, f: WallFrame, y: number, canvas: string, accent: string): void {
+  const rot: XYZ = [0, f.yaw, 0];
+  pb.box(b.solid, f.at(0, y, 0.03), [1.0, 0.78, 0.05], C.wood, rot);
+  pb.box(b.solid, f.at(0, y, 0.06), [0.84, 0.62, 0.02], canvas, rot);
+  pb.cylinder(b.solid, f.at(-0.18, y + 0.1, 0.075), 0.13, 0.02, accent, { segments: 10, rot: [Math.PI / 2, f.yaw, 0] });
+  pb.box(b.solid, f.at(0, y - 0.22, 0.075), [0.84, 0.16, 0.012], C.trim, rot);
+}
+
+/** Potted floor plant (pot, stem, two foliage blobs). */
+function pottedPlant(pb: PartBuilder, b: GeometryBatch, x: number, y: number, z: number, scale = 1): void {
+  pb.cylinder(b, [x, y + 0.22 * scale, z], 0.28 * scale, 0.44 * scale, C.terracotta, { segments: 10, taper: 1.25 });
+  pb.cylinder(b, [x, y + 0.7 * scale, z], 0.04 * scale, 0.6 * scale, C.woodDark, { segments: 5 });
+  pb.sphere(b, [x, y + 1.2 * scale, z], [0.42 * scale, 0.5 * scale, 0.42 * scale], C.plant, 9);
+  pb.sphere(b, [x + 0.12 * scale, y + 1.65 * scale, z - 0.06 * scale], [0.28 * scale, 0.32 * scale, 0.28 * scale], C.plantDark, 8);
+}
+
+function bottle(pb: PartBuilder, b: GeometryBatch, x: number, y: number, z: number, color: string): void {
+  pb.cylinder(b, [x, y + 0.14, z], 0.065, 0.28, color, { segments: 6 });
+  pb.cylinder(b, [x, y + 0.36, z], 0.028, 0.16, color, { segments: 5 });
+  pb.cylinder(b, [x, y + 0.45, z], 0.032, 0.03, C.brass, { segments: 5 });
+}
+
 function buildHall(ctx: BuildContext): ZoneBuild {
   const low = ctx.level === 'low';
   const pb = new PartBuilder(ctx.tracker, low ? 0.5 : 1);
@@ -701,11 +765,45 @@ function buildHall(ctx: BuildContext): ZoneBuild {
   pb.boxMinMax(b.solid, [-13.6, DECK_Y, -5.8], [-12.6, DECK_Y + 1.1, -2.2], C.wood);
   pb.boxMinMax(b.solid, [-13.7, DECK_Y + 1.1, -5.9], [-12.5, DECK_Y + 1.2, -2.1], C.deck);
   walls.push({ minX: -13.7, maxX: -12.5, minY: DECK_Y, maxY: DECK_Y + 1.2, minZ: -5.9, maxZ: -2.1 });
-  pb.boxMinMax(b.solid, [-14.9, DECK_Y, -5.2], [-14.5, DECK_Y + 2.8, -2.8], C.wood);
-  for (let i = 0; i < 9; i++) {
-    pb.cylinder(b.glow, [-14.6, DECK_Y + 1.25 + Math.floor(i / 3) * 0.6, -4.8 + (i % 3) * 0.8], 0.09, 0.4, ['#6fbf73', '#c2563e', '#e3c46a'][i % 3], { segments: 6 });
+  // Back-bar: tall cabinet with a mirror, three lit shelves of bottles, menu slate on top.
+  pb.boxMinMax(b.solid, [-14.95, DECK_Y, -5.2], [-14.6, DECK_Y + 1.05, -2.8], C.wood);
+  pb.boxMinMax(b.solid, [-14.95, DECK_Y + 1.05, -5.2], [-14.82, DECK_Y + 3.0, -2.8], C.wood);
+  pb.boxMinMax(b.solid, [-14.82, DECK_Y + 1.2, -5.05], [-14.8, DECK_Y + 2.9, -2.95], C.mirror);
+  pb.boxMinMax(b.solid, [-14.98, DECK_Y + 2.98, -5.3], [-14.5, DECK_Y + 3.08, -2.7], C.brass);
+  const bottleColors = ['#4fa866', '#b8503a', '#e3b94f', '#4e86c4', '#d8e6e0', '#8a5a9a'];
+  for (let s = 0; s < 3; s++) {
+    const sy = DECK_Y + 1.3 + s * 0.6;
+    pb.boxMinMax(b.solid, [-14.82, sy, -5.15], [-14.32, sy + 0.05, -2.85], C.wood);
+    pb.boxMinMax(b.glow, [-14.8, sy - 0.02, -5.0], [-14.55, sy, -3.0], C.glassWarm);
+    if (low && s !== 1) continue;
+    for (let k = 0; k < 7; k++) bottle(pb, b.solid, -14.55, sy + 0.05, -4.85 + k * 0.32 + (s % 2) * 0.05, bottleColors[(k + s * 2) % bottleColors.length]);
   }
-  walls.push({ minX: -15, maxX: -14.4, minY: DECK_Y, maxY: DECK_Y + 2.8, minZ: -5.3, maxZ: -2.7 });
+  // Menu slate above the shelves (cream "lines", no text).
+  pb.boxMinMax(b.solid, [-14.95, DECK_Y + 3.12, -5.0], [-14.8, DECK_Y + 3.82, -3.0], C.wood);
+  pb.boxMinMax(b.solid, [-14.8, DECK_Y + 3.18, -4.94], [-14.77, DECK_Y + 3.76, -3.06], C.slate);
+  if (!low) {
+    for (let k = 0; k < 4; k++) pb.boxMinMax(b.solid, [-14.77, DECK_Y + 3.6 - k * 0.12, -4.8], [-14.755, DECK_Y + 3.64 - k * 0.12, -4.8 + 1.5 - k * 0.22], C.trim);
+    pb.boxMinMax(b.solid, [-14.77, DECK_Y + 3.24, -4.0], [-14.755, DECK_Y + 3.3, -3.2], C.gold);
+  }
+  walls.push({ minX: -15, maxX: -14.3, minY: DECK_Y, maxY: DECK_Y + 3.1, minZ: -5.3, maxZ: -2.7 });
+  // Counter front: panels, brass foot rail, glasses on top, pendant lamps, stools.
+  if (!low) {
+    for (let k = 0; k < 3; k++) pb.boxMinMax(b.solid, [-12.52, DECK_Y + 0.15, -5.55 + k * 1.15], [-12.48, DECK_Y + 0.95, -4.6 + k * 1.15], C.woodDark);
+    pb.cylinder(b.solid, [-12.35, DECK_Y + 0.25, -4.0], 0.035, 3.4, C.brass, { segments: 6, rot: [Math.PI / 2, 0, 0] });
+    for (let k = 0; k < 5; k++) pb.cylinder(b.solid, [-13.0, DECK_Y + 1.26, -5.4 + k * 0.5], 0.06, 0.14, C.mirror, { segments: 6, taper: 1.3 });
+    for (const z of [-5.0, -4.0, -3.0]) {
+      pb.cylinder(b.solid, [-13.1, T1_TOP - 0.75, z], 0.012, 0.8, C.iron, { segments: 4 });
+      pb.cylinder(b.solid, [-13.1, DECK_Y + 3.15, z], 0.24, 0.2, C.terracotta, { segments: 10, taper: 0.35 });
+      pb.sphere(b.glow, [-13.1, DECK_Y + 3.02, z], 0.09, C.bulb, 8);
+    }
+  }
+  for (let k = 0; k < 4; k++) {
+    const z = -5.2 + k * 0.8;
+    pb.cylinder(b.solid, [-11.95, DECK_Y + 0.74, z], 0.22, 0.09, C.cushion, { segments: 10 });
+    pb.cylinder(b.solid, [-11.95, DECK_Y + 0.36, z], 0.04, 0.7, C.iron, { segments: 5 });
+    pb.cylinder(b.solid, [-11.95, DECK_Y + 0.03, z], 0.2, 0.05, C.iron, { segments: 8 });
+  }
+  walls.push({ minX: -12.28, maxX: -11.62, minY: DECK_Y, maxY: DECK_Y + 0.85, minZ: -5.5, maxZ: -2.5 });
   // Chandeliers (brass rings with warm bulbs).
   for (const x of [-9, -3, 3, 8.4]) {
     pb.cylinder(b.solid, [x, T1_TOP - 0.85, 0], 0.025, 0.5, C.brass, { segments: 4 });
@@ -720,6 +818,44 @@ function buildHall(ctx: BuildContext): ZoneBuild {
     pb.cylinder(b.solid, [10.6, DECK_Y + 0.35, z], 0.35, 0.7, '#b86b3c', { segments: 10, taper: 1.2 });
     pb.sphere(b.solid, [10.6, DECK_Y + 1.1, z], [0.55, 0.6, 0.55], C.plant, 10);
     walls.push({ minX: 10.2, maxX: 11, minY: DECK_Y, maxY: DECK_Y + 1.5, minZ: z - 0.4, maxZ: z + 0.4 });
+  }
+
+  // Red carpet runner down the aisle (front door → back door), gold edging, welcome mat. Flat: purely visual.
+  pb.boxMinMax(b.solid, [-16.4, DECK_Y + 0.035, -0.9], [11.4, DECK_Y + 0.06, 0.9], C.carpet);
+  pb.boxMinMax(b.solid, [-16.4, DECK_Y + 0.06, -0.9], [11.4, DECK_Y + 0.065, -0.78], C.gold);
+  pb.boxMinMax(b.solid, [-16.4, DECK_Y + 0.06, 0.78], [11.4, DECK_Y + 0.065, 0.9], C.gold);
+  if (!low) {
+    for (let x = -15.5; x < 11; x += 2.2) pb.boxMinMax(b.solid, [x, DECK_Y + 0.06, -0.7], [x + 0.9, DECK_Y + 0.064, 0.7], C.carpetDark);
+    pb.boxMinMax(b.solid, [11.0, DECK_Y + 0.065, -0.8], [11.8, DECK_Y + 0.08, 0.8], C.woodDark);
+  }
+
+  // Host lectern near the front door: slanted desk, reservation book, small brass lamp.
+  pb.boxMinMax(b.solid, [9.4, DECK_Y, -3.25], [10.0, DECK_Y + 0.95, -2.75], C.wood);
+  pb.box(b.solid, [9.7, DECK_Y + 1.04, -3.0], [0.74, 0.05, 0.6], C.woodLight, [0, 0, 0.28]);
+  pb.box(b.solid, [9.68, DECK_Y + 1.1, -3.0], [0.34, 0.03, 0.44], C.cloth, [0, 0, 0.28]);
+  pb.boxMinMax(b.solid, [9.38, DECK_Y + 0.9, -3.28], [10.02, DECK_Y + 0.96, -2.72], C.brass);
+  pb.cylinder(b.solid, [9.95, DECK_Y + 1.35, -3.15], 0.012, 0.4, C.brass, { segments: 4 });
+  pb.sphere(b.glow, [9.95, DECK_Y + 1.6, -3.15], 0.09, C.bulb, 8);
+  walls.push({ minX: 9.35, maxX: 10.05, minY: DECK_Y, maxY: DECK_Y + 1.3, minZ: -3.3, maxZ: -2.7 });
+
+  // Wall sconces + framed pictures on the piers between the windows, a few potted plants at the foot of the bare ones.
+  const picColors: Array<[string, string]> = [['#6fb7d9', '#fbe9a0'], ['#f2a54a', '#fff3d6'], ['#8fd1b0', '#f7d36a'], ['#e48b86', '#fff3d6']];
+  for (let i = 0; i < p1.length; i++) {
+    if (DOOR_PIERS.has(i)) continue;
+    if (low && i % 2) continue;
+    const f = t1Pier(p1, i, 0.19);
+    if (i % 2 === 0) {
+      sconce(pb, b, f, DECK_Y + 2.95);
+      if (!low) framedPicture(pb, b, f, DECK_Y + 1.8, picColors[(i / 2) % picColors.length][0], picColors[(i / 2) % picColors.length][1]);
+    } else {
+      sconce(pb, b, f, DECK_Y + 2.45);
+      if (!low && [3, 9, 15, 19, 23].includes(i)) {
+        const q = t1Pier(p1, i, 0.65);
+        const [px, , pz] = q.at(0, 0, 0);
+        pottedPlant(pb, b.solid, px, DECK_Y, pz);
+        walls.push({ minX: px - 0.35, maxX: px + 0.35, minY: DECK_Y, maxY: DECK_Y + 1.9, minZ: pz - 0.35, maxZ: pz + 0.35 });
+      }
+    }
   }
 
   // Stairs up to the kitchen (canon: the kitchen is the middle level).
@@ -760,21 +896,95 @@ function buildKitchen(ctx: BuildContext): ZoneBuild {
   for (let i = 0; i < 6; i++) {
     const z = -2.7 + i * 1.08;
     pb.cylinder(b.glow, [-9.6, y + 0.98, z], 0.28, 0.04, C.flame, { segments: 10 });
-    if (i % 2 === 0) pb.cylinder(b.solid, [-9.6, y + 1.3, z], 0.36, 0.6, C.steel, { segments: 12 });
-    else pb.cylinder(b.solid, [-9.6, y + 1.06, z], 0.42, 0.1, C.iron, { segments: 12 });
+    if (i % 2 === 0) {
+      // Stock pot with lid, knob and two side handles.
+      pb.cylinder(b.solid, [-9.6, y + 1.3, z], 0.36, 0.6, C.steel, { segments: 12 });
+      pb.cylinder(b.solid, [-9.6, y + 1.12, z], 0.37, 0.05, C.iron, { segments: 12 });
+      pb.cylinder(b.solid, [-9.6, y + 1.62, z], 0.38, 0.05, C.steel, { segments: 12 });
+      pb.sphere(b.solid, [-9.6, y + 1.69, z], 0.05, C.brass, 6);
+      if (!low) for (const s of [-1, 1]) pb.box(b.solid, [-9.6, y + 1.5, z + s * 0.41], [0.1, 0.04, 0.09], C.iron);
+    } else {
+      // Frying pan with a long handle pointing along the range (kept clear of the aisle).
+      pb.cylinder(b.solid, [-9.6, y + 1.06, z], 0.42, 0.1, C.iron, { segments: 12 });
+      pb.cylinder(b.solid, [-9.6, y + 1.1, z], 0.34, 0.03, C.stove, { segments: 12 });
+      pb.box(b.solid, [-9.6, y + 1.08, z + 0.62], [0.07, 0.04, 0.4], C.woodDark);
+    }
   }
   pb.boxMinMax(b.solid, [-10.2, y + 2.35, -3.4], [-8.8, y + 3.0, 3.4], C.steel);
   walls.push({ minX: -10.2, maxX: -9.05, minY: y, maxY: y + 1.2, minZ: -3.25, maxZ: 3.25 });
+  // Range front: oven doors with handles, knobs; tiled backsplash, utensil rail, flue, warm light under the hood.
+  for (const z of [-2.1, 0, 2.1]) {
+    pb.boxMinMax(b.solid, [-9.12, y + 0.08, z - 0.45], [-9.08, y + 0.62, z + 0.45], C.steel);
+    pb.boxMinMax(b.solid, [-9.1, y + 0.55, z - 0.35], [-9.04, y + 0.6, z + 0.35], C.brass);
+  }
+  for (let i = 0; i < 6; i++) pb.cylinder(b.solid, [-9.1, y + 0.8, -2.7 + i * 1.08], 0.045, 0.05, C.steel, { segments: 6, rot: [0, 0, Math.PI / 2] });
+  pb.boxMinMax(b.solid, [-10.34, y + 0.95, -3.7], [-10.2, y + 2.35, 3.7], C.tile);
+  pb.boxMinMax(b.glow, [-9.7, y + 2.32, -3.1], [-9.5, y + 2.35, 3.1], C.bulb);
+  pb.boxMinMax(b.solid, [-9.85, y + 3.0, -0.45], [-9.25, y + 3.5, 0.45], C.steel);
+  if (!low) {
+    for (let k = 1; k < 4; k++) pb.boxMinMax(b.solid, [-10.2, y + 0.95 + k * 0.35, -3.7], [-10.19, y + 0.97 + k * 0.35, 3.7], C.tile2);
+    pb.cylinder(b.solid, [-10.1, y + 1.95, 0], 0.02, 6.0, C.iron, { segments: 5, rot: [Math.PI / 2, 0, 0] });
+    for (let k = 0; k < 10; k++) {
+      const z = -2.7 + k * 0.6;
+      pb.cylinder(b.solid, [-10.1, y + 1.7, z], 0.018, 0.45, k % 2 ? C.woodDark : C.iron, { segments: 5 });
+      if (k % 3 === 0) pb.sphere(b.solid, [-10.1, y + 1.44, z], [0.07, 0.04, 0.07], C.steel, 7);
+      else if (k % 3 === 1) pb.box(b.solid, [-10.1, y + 1.5, z], [0.015, 0.16, 0.11], C.steel);
+      else pb.cylinder(b.solid, [-10.1, y + 1.46, z], 0.045, 0.18, C.steel, { segments: 6, taper: 0.4 });
+    }
+  }
   // Counter with sink along the −z face, island with a hanging pot rack, shelves along +z.
   pb.boxMinMax(b.solid, [-8.1, y, -5.75], [-4.5, y + 0.92, -4.95], C.wood);
   pb.boxMinMax(b.solid, [-8.15, y + 0.92, -5.8], [-4.45, y + 1.0, -4.9], C.steel);
-  pb.boxMinMax(b.solid, [-6.9, y + 0.6, -5.6], [-5.9, y + 0.98, -5.05], '#9fb3c2');
   walls.push({ minX: -8.15, maxX: -4.45, minY: y, maxY: y + 1, minZ: -5.8, maxZ: -4.9 });
+  // Sink basin + gooseneck tap, drawer fronts, dish rack with plates, bowl stack.
+  pb.boxMinMax(b.solid, [-6.85, y + 1.0, -5.65], [-5.95, y + 1.012, -5.05], '#6e7f8a');
+  pb.cylinder(b.solid, [-6.4, y + 1.2, -5.7], 0.03, 0.4, C.steel, { segments: 6 });
+  pb.cylinder(b.solid, [-6.4, y + 1.4, -5.57], 0.03, 0.28, C.steel, { segments: 6, rot: [Math.PI / 2, 0, 0] });
+  pb.box(b.solid, [-6.4, y + 1.1, -5.7], [0.2, 0.05, 0.05], C.brass);
+  for (const x of [-7.6, -7.15]) {
+    pb.cylinder(b.solid, [x, y + 1.06, -5.4], 0.2, 0.12, C.cloth, { segments: 10, taper: 1.5 });
+    pb.cylinder(b.solid, [x, y + 1.17, -5.4], 0.19, 0.1, C.cloth, { segments: 10, taper: 1.5 });
+  }
+  if (!low) {
+    for (let k = 0; k < 3; k++) {
+      const x = -7.55 + k * 1.15;
+      if (Math.abs(x + 6.4) < 0.6) continue;
+      pb.boxMinMax(b.solid, [x - 0.45, y + 0.5, -4.96], [x + 0.45, y + 0.82, -4.93], C.woodLight);
+      pb.sphere(b.solid, [x, y + 0.66, -4.9], 0.035, C.brass, 6);
+    }
+    pb.boxMinMax(b.solid, [-6.85, y + 0.12, -4.96], [-5.95, y + 0.82, -4.93], C.woodLight);
+    pb.sphere(b.solid, [-6.4, y + 0.5, -4.9], 0.035, C.brass, 6);
+    // Dish rack on the counter (wire frame, plates standing on edge).
+    pb.boxMinMax(b.solid, [-5.55, y + 1.0, -5.62], [-4.6, y + 1.03, -5.2], C.steel);
+    for (const z of [-5.6, -5.22]) pb.boxMinMax(b.solid, [-5.55, y + 1.03, z], [-4.6, y + 1.07, z + 0.02], C.steel);
+    for (let k = 0; k < 6; k++) pb.cylinder(b.solid, [-5.45 + k * 0.15, y + 1.2, -5.41], 0.16, 0.025, C.cloth, { segments: 10, rot: [0, 0, Math.PI / 2] });
+  }
   pb.boxMinMax(b.solid, [-6.9, y, -1.2], [-4.6, y + 0.9, 1.2], C.wood);
   pb.boxMinMax(b.solid, [-7.0, y + 0.9, -1.3], [-4.5, y + 1.0, 1.3], C.deck);
   pb.cylinder(b.solid, [-5.4, y + 1.35, 0.4], 0.45, 0.6, C.steel, { segments: 14 });
   pb.boxMinMax(b.solid, [-6.3, y + 1.0, -0.7], [-5.4, y + 1.06, -0.1], '#e0c08a');
   walls.push({ minX: -7.0, maxX: -4.5, minY: y, maxY: y + 1, minZ: -1.3, maxZ: 1.3 });
+  // Island: butcher block with a cleaver, knives on the board, vegetables, a knife block, drawer fronts.
+  pb.boxMinMax(b.solid, [-6.85, y + 1.0, 0.45], [-6.25, y + 1.2, 1.1], C.woodLight);
+  pb.boxMinMax(b.solid, [-6.85, y + 1.1, 0.45], [-6.25, y + 1.115, 1.1], C.wood);
+  pb.box(b.solid, [-6.55, y + 1.33, 0.78], [0.2, 0.15, 0.014], C.steel, [0, 0, 0.12]);
+  pb.box(b.solid, [-6.55, y + 1.45, 0.78], [0.035, 0.14, 0.03], C.woodDark, [0, 0, 0.12]);
+  for (let k = 0; k < 3; k++) {
+    const z = -0.62 + k * 0.17;
+    pb.box(b.solid, [-6.03, y + 1.075, z], [0.34, 0.014, 0.05 - k * 0.006], C.steel);
+    pb.box(b.solid, [-5.76, y + 1.085, z], [0.14, 0.03, 0.03], C.woodDark);
+  }
+  pb.boxMinMax(b.solid, [-4.95, y + 1.0, -0.95], [-4.65, y + 1.3, -0.6], C.woodDark);
+  if (!low) {
+    for (let k = 0; k < 4; k++) pb.box(b.solid, [-4.85 + (k % 2) * 0.1, y + 1.32, -0.84 + (k >> 1) * 0.12], [0.03, 0.1, 0.03], k % 2 ? C.iron : C.woodLight);
+    for (let k = 0; k < 3; k++) pb.cylinder(b.solid, [-6.1, y + 1.09, 0.45 + k * 0.1], 0.025, 0.22, '#e8892a', { segments: 6, taper: 0.5, rot: [0, 0, Math.PI / 2] });
+    pb.sphere(b.solid, [-6.1, y + 1.12, 0.95], 0.11, C.plant, 8);
+    pb.sphere(b.solid, [-5.85, y + 1.1, 0.75], 0.07, '#d9452b', 7);
+    pb.sphere(b.solid, [-5.98, y + 1.09, 0.65], 0.06, '#d9452b', 7);
+    for (let k = 0; k < 3; k++) pb.boxMinMax(b.solid, [-6.94, y + 0.25, -1.0 + k * 0.7], [-6.9, y + 0.8, -0.4 + k * 0.7], C.woodLight);
+    // Pot-rack chains.
+    for (const x of [-6.85, -4.65]) pb.cylinder(b.solid, [x, T2_TOP - 0.65, 0], 0.012, 0.7, C.iron, { segments: 4 });
+  }
   pb.boxMinMax(b.solid, [-6.9, T2_TOP - 1.0, -0.05], [-4.6, T2_TOP - 0.95, 0.05], C.iron);
   for (let i = 0; i < 6; i++) pb.cylinder(b.solid, [-6.6 + i * 0.4, T2_TOP - 1.35, 0], 0.17, 0.28, i % 2 ? C.steel : '#b86b3c', { segments: 10 });
   for (const [x0, x1] of [[-8.2, -3.8]] as const) {
@@ -783,37 +993,151 @@ function buildKitchen(ctx: BuildContext): ZoneBuild {
   }
   // Rails around the stairwell (the stair side walls are the colliders).
   for (const z of [hs.minZ - 0.05, hs.maxZ + 0.05]) railing(pb, b.solid, { points: [[hs.minX + 0.2, z], [hs.maxX - 0.3, z]], y, height: 1.0, postSpacing: 1.1, color: C.brass });
-  for (const z of [-3, 3]) pb.sphere(b.glow, [-4, T2_TOP - 0.5, z], 0.25, C.glassWarm, 10);
+  // Warm light: flat dome lamps on the ceiling + copper pendants over the counter.
+  for (const [x, z] of [[-4, -3], [-4, 3], [0.5, -3], [0.5, 2.2], [-8, -3.6], [-8, 3.6]] as const) {
+    pb.torus(b.solid, [x, T2_TOP - 0.34, z], 0.3, 0.03, C.brass, { segments: 12, rot: [Math.PI / 2, 0, 0] });
+    pb.sphere(b.glow, [x, T2_TOP - 0.4, z], [0.28, 0.12, 0.28], C.glassWarm, 10);
+  }
+  for (const x of [-7.3, -6.2, -5.1]) {
+    pb.cylinder(b.solid, [x, T2_TOP - 0.7, -4.5], 0.012, 0.6, C.iron, { segments: 4 });
+    pb.cylinder(b.solid, [x, T2_TOP - 1.08, -4.5], 0.24, 0.2, C.terracotta, { segments: 10, taper: 0.35 });
+    pb.sphere(b.glow, [x, T2_TOP - 1.2, -4.5], 0.09, C.bulb, 8);
+  }
+  // Walk-in cold room door on the +x wall (between the two windows), crates and sacks beside it.
+  const dx = PLAN.t2.cx + PLAN.t2.hx;
+  pb.boxMinMax(b.solid, [dx - 0.3, y, -0.72], [dx - 0.17, y + 2.45, -0.6], C.kitchenLow);
+  pb.boxMinMax(b.solid, [dx - 0.3, y, 0.6], [dx - 0.17, y + 2.45, 0.72], C.kitchenLow);
+  pb.boxMinMax(b.solid, [dx - 0.3, y + 2.33, -0.72], [dx - 0.17, y + 2.45, 0.72], C.kitchenLow);
+  pb.boxMinMax(b.solid, [dx - 0.32, y, -0.6], [dx - 0.2, y + 2.33, 0.6], C.steel);
+  pb.boxMinMax(b.solid, [dx - 0.34, y + 0.2, -0.45], [dx - 0.32, y + 2.1, 0.45], '#c9d3da');
+  pb.boxMinMax(b.solid, [dx - 0.45, y + 1.05, 0.38], [dx - 0.34, y + 1.1, 0.5], C.brass);
+  pb.boxMinMax(b.solid, [dx - 0.45, y + 0.85, 0.44], [dx - 0.4, y + 1.3, 0.5], C.brass);
+  walls.push({ minX: dx - 0.5, maxX: dx, minY: y, maxY: y + 2.5, minZ: -0.75, maxZ: 0.75 });
+  if (!low) {
+    pb.cylinder(b.glow, [dx - 0.345, y + 1.75, -0.2], 0.12, 0.02, C.cold, { segments: 10, rot: [0, 0, Math.PI / 2] });
+    for (const z of [-1.9, 1.9]) {
+      pb.boxMinMax(b.solid, [dx - 0.85, y, z - 0.3], [dx - 0.2, y + 0.55, z + 0.3], C.wood);
+      for (const dyy of [0.12, 0.42]) pb.boxMinMax(b.solid, [dx - 0.87, y + dyy, z - 0.31], [dx - 0.2, y + dyy + 0.07, z + 0.31], C.woodLight);
+      walls.push({ minX: dx - 0.9, maxX: dx - 0.15, minY: y, maxY: y + 0.6, minZ: z - 0.34, maxZ: z + 0.34 });
+    }
+    pb.sphere(b.solid, [dx - 0.55, y + 0.72, 1.9], [0.3, 0.17, 0.26], C.tile, 8);
+    pb.sphere(b.solid, [dx - 0.6, y + 0.68, -1.9], [0.26, 0.15, 0.24], C.woodLight, 8);
+    pb.cylinder(b.solid, [dx - 1.1, y + 0.4, 2.7], 0.3, 0.8, C.wood, { segments: 10, taper: 0.92 });
+    pb.torus(b.solid, [dx - 1.1, y + 0.55, 2.7], 0.31, 0.02, C.iron, { segments: 10, rot: [Math.PI / 2, 0, 0] });
+    walls.push({ minX: dx - 1.45, maxX: dx - 0.75, minY: y, maxY: y + 0.8, minZ: 2.35, maxZ: 3.05 });
+  }
   return { object: interiorMeshes(ctx, 'kitchen', b), colliders: { floors: [], walls } };
 }
 
 function buildQuarters(ctx: BuildContext): ZoneBuild {
-  const pb = new PartBuilder(ctx.tracker, ctx.level === 'low' ? 0.5 : 1);
+  const low = ctx.level === 'low';
+  const pb = new PartBuilder(ctx.tracker, low ? 0.5 : 1);
   const b: Batches = { solid: new GeometryBatch(), glow: new GeometryBatch() };
   const walls: WallBox[] = [];
   const y = T2_TOP;
   const { cx, hx, hz } = PLAN.t3;
+  const x0 = cx - hx; // back (−x) wall
   pb.boxMinMax(b.solid, [cx - hx + 0.15, y, -hz + 0.15], [cx + hx - 0.15, y + 0.03, hz - 0.15], C.floorHall);
   pb.custom(b.solid, flatShape(ctx.tracker, t3Plan(), [], T3_TOP - 0.1, 'down'), [0, 0, 0], C.ceiling);
-  // Two bunk beds against the back wall, a table with stools, lockers (cooks' quarters: interpretive layout).
+  // Rug under the table.
+  pb.cylinder(b.solid, [cx + 0.6, y + 0.04, 0], 1.6, 0.02, C.carpet, { segments: 20 });
+  pb.cylinder(b.solid, [cx + 0.6, y + 0.05, 0], 1.3, 0.02, C.carpetDark, { segments: 20 });
+  pb.cylinder(b.solid, [cx + 0.6, y + 0.06, 0], 1.05, 0.02, C.carpet, { segments: 20 });
+  // Two bunk beds against the back wall, each bunk with its own blanket (cooks' quarters: interpretive layout).
+  const blankets = ['#c8453a', '#3f74b8', '#4f9a5c', '#e0b13a'];
+  let bed = 0;
   for (const z0 of [-3.1, 1.1]) {
     for (const lvl of [0.45, 1.55]) {
-      pb.boxMinMax(b.solid, [cx - hx + 0.25, y + lvl, z0], [cx - hx + 2.15, y + lvl + 0.12, z0 + 2], C.wood);
-      pb.boxMinMax(b.solid, [cx - hx + 0.3, y + lvl + 0.12, z0 + 0.05], [cx - hx + 2.1, y + lvl + 0.3, z0 + 1.95], C.cloth);
-      pb.boxMinMax(b.solid, [cx - hx + 0.35, y + lvl + 0.3, z0 + 0.2], [cx - hx + 0.85, y + lvl + 0.45, z0 + 1.8], '#d8e3ea');
+      pb.boxMinMax(b.solid, [x0 + 0.25, y + lvl, z0], [x0 + 2.15, y + lvl + 0.12, z0 + 2], C.wood);
+      pb.boxMinMax(b.solid, [x0 + 0.3, y + lvl + 0.12, z0 + 0.05], [x0 + 2.1, y + lvl + 0.3, z0 + 1.95], C.cloth);
+      pb.boxMinMax(b.solid, [x0 + 0.35, y + lvl + 0.3, z0 + 0.2], [x0 + 0.85, y + lvl + 0.45, z0 + 1.8], '#d8e3ea');
+      const col = blankets[bed++ % blankets.length];
+      pb.boxMinMax(b.solid, [x0 + 0.95, y + lvl + 0.3, z0 + 0.03], [x0 + 2.14, y + lvl + 0.38, z0 + 1.97], col);
+      pb.boxMinMax(b.solid, [x0 + 2.14, y + lvl + 0.16, z0 + 0.03], [x0 + 2.19, y + lvl + 0.38, z0 + 1.97], col);
+      if (!low) pb.boxMinMax(b.solid, [x0 + 1.45, y + lvl + 0.38, z0 + 0.03], [x0 + 1.6, y + lvl + 0.385, z0 + 1.97], C.trim);
     }
     for (const [dx, dz] of [[0.25, 0], [2.05, 0], [0.25, 1.9], [2.05, 1.9]] as const) {
-      pb.boxMinMax(b.solid, [cx - hx + dx, y, z0 + dz], [cx - hx + dx + 0.1, y + 2.0, z0 + dz + 0.1], C.wood);
+      pb.boxMinMax(b.solid, [x0 + dx, y, z0 + dz], [x0 + dx + 0.1, y + 2.0, z0 + dz + 0.1], C.wood);
     }
     walls.push({ minX: cx - hx, maxX: cx - hx + 2.25, minY: y, maxY: y + 2.1, minZ: z0, maxZ: z0 + 2 });
   }
+  // Round table with stools, a lamp, a mug and a deck of cards; hanging lantern above.
   pb.cylinder(b.solid, [cx + 0.6, y + 0.72, 0], 0.7, 0.06, C.wood, { segments: 14 });
   pb.cylinder(b.solid, [cx + 0.6, y + 0.36, 0], 0.08, 0.7, C.wood, { segments: 6 });
   for (const a of [0, 2.1, 4.2]) pb.cylinder(b.solid, [cx + 0.6 + Math.cos(a) * 1.0, y + 0.25, Math.sin(a) * 1.0], 0.22, 0.5, C.wood, { segments: 8 });
   walls.push({ minX: cx - 0.2, maxX: cx + 1.4, minY: y, maxY: y + 0.8, minZ: -0.8, maxZ: 0.8 });
+  pb.cylinder(b.solid, [cx + 0.6, y + 0.78, 0.15], 0.08, 0.08, C.brass, { segments: 8 });
+  pb.sphere(b.glow, [cx + 0.6, y + 0.9, 0.15], [0.07, 0.09, 0.07], C.glassWarm, 8);
+  pb.cylinder(b.solid, [cx + 0.95, y + 0.81, -0.2], 0.05, 0.1, C.steel, { segments: 8, taper: 1.15 });
+  pb.box(b.solid, [cx + 0.25, y + 0.77, -0.3], [0.14, 0.02, 0.2], C.cloth, [0, 0.4, 0]);
+  pb.cylinder(b.solid, [cx + 0.6, T3_TOP - 0.45, 0], 0.012, 0.7, C.iron, { segments: 4 });
+  pb.cylinder(b.solid, [cx + 0.6, T3_TOP - 0.72, 0], 0.12, 0.05, C.brass, { segments: 8, taper: 0.5 });
+  pb.cylinder(b.glow, [cx + 0.6, T3_TOP - 0.92, 0], 0.13, 0.32, C.glassWarm, { segments: 8, taper: 0.85 });
+  pb.cylinder(b.solid, [cx + 0.6, T3_TOP - 1.1, 0], 0.11, 0.05, C.brass, { segments: 8 });
+  if (!low) for (let k = 0; k < 4; k++) pb.box(b.solid, [cx + 0.6 + Math.cos((k * Math.PI) / 2 + 0.78) * 0.125, T3_TOP - 0.92, Math.sin((k * Math.PI) / 2 + 0.78) * 0.125], [0.02, 0.34, 0.02], C.brass);
+  // Bedside table with a lamp and books between the bunks, under the window.
+  pb.boxMinMax(b.solid, [x0 + 0.1, y + 0.62, -0.45], [x0 + 0.7, y + 0.68, 0.45], C.woodLight);
+  for (const [dx, dz] of [[0.14, -0.4], [0.66, -0.4], [0.14, 0.4], [0.66, 0.4]] as const) pb.boxMinMax(b.solid, [x0 + dx - 0.03, y, dz - 0.03], [x0 + dx + 0.03, y + 0.62, dz + 0.03], C.wood);
+  pb.boxMinMax(b.solid, [x0 + 0.1, y + 0.4, -0.42], [x0 + 0.7, y + 0.6, 0.42], C.wood);
+  pb.cylinder(b.solid, [x0 + 0.4, y + 0.71, 0.15], 0.09, 0.06, C.brass, { segments: 8 });
+  pb.cylinder(b.solid, [x0 + 0.4, y + 0.88, 0.15], 0.015, 0.3, C.brass, { segments: 4 });
+  pb.cylinder(b.solid, [x0 + 0.4, y + 1.08, 0.15], 0.2, 0.22, '#f3d9a0', { segments: 10, taper: 0.6 });
+  pb.sphere(b.glow, [x0 + 0.4, y + 1.05, 0.15], 0.09, C.bulb, 8);
+  pb.boxMinMax(b.solid, [x0 + 0.2, y + 0.68, -0.35], [x0 + 0.45, y + 0.74, -0.1], '#3f74b8');
+  pb.boxMinMax(b.solid, [x0 + 0.2, y + 0.74, -0.34], [x0 + 0.44, y + 0.79, -0.12], '#c8453a');
+  walls.push({ minX: x0, maxX: x0 + 0.75, minY: y, maxY: y + 0.75, minZ: -0.5, maxZ: 0.5 });
+  // Sea chests at the foot of the bunks (half-cylinder lids, brass bands).
+  for (const [z, col] of [[-1.55 - 0.7, C.woodDark], [1.55 + 0.7, C.wood]] as const) {
+    const cxx = x0 + 2.55;
+    pb.boxMinMax(b.solid, [cxx - 0.3, y, z - 0.5], [cxx + 0.3, y + 0.38, z + 0.5], col);
+    pb.cylinder(b.solid, [cxx, y + 0.38, z], 0.22, 1.0, col, { segments: 10, scaleZ: 1.36, rot: [0, Math.PI / 2, Math.PI / 2], arc: { start: 0, length: Math.PI } });
+    for (const dz of [-0.33, 0.33]) pb.boxMinMax(b.solid, [cxx - 0.31, y, z + dz - 0.04], [cxx + 0.31, y + 0.4, z + dz + 0.04], C.brass);
+    pb.sphere(b.solid, [cxx + 0.31, y + 0.4, z], 0.045, C.brass, 6);
+    walls.push({ minX: cxx - 0.3, maxX: cxx + 0.32, minY: y, maxY: y + 0.62, minZ: z - 0.5, maxZ: z + 0.5 });
+  }
+  // Hammock slung along the −z wall under the windows.
+  const hxA = cx - 0.3;
+  const hxB = cx + hx - 1.45;
+  const hzc = -hz + 0.45;
+  const segs = low ? 4 : 8;
+  const sag = 0.35;
+  const hy = (u: number) => y + 1.05 - sag * (1 - (2 * u - 1) ** 2);
+  for (let k = 0; k < segs; k++) {
+    const u0 = k / segs;
+    const u1 = (k + 1) / segs;
+    const xa = hxA + (hxB - hxA) * u0;
+    const xb = hxA + (hxB - hxA) * u1;
+    pb.box(b.solid, [(xa + xb) / 2, (hy(u0) + hy(u1)) / 2, hzc], [Math.hypot(xb - xa, hy(u1) - hy(u0)) + 0.01, 0.06, 0.62], k % 2 ? '#e8d9b0' : '#d9c590', [0, 0, Math.atan2(hy(u1) - hy(u0), xb - xa)]);
+    if (k >= 1 && k <= segs - 3) pb.box(b.solid, [(xa + xb) / 2, (hy(u0) + hy(u1)) / 2 + 0.05, hzc], [Math.hypot(xb - xa, hy(u1) - hy(u0)) + 0.01, 0.05, 0.5], '#c8453a', [0, 0, Math.atan2(hy(u1) - hy(u0), xb - xa)]);
+  }
+  for (const [px, dir] of [[hxA - 0.08, 1], [hxB + 0.08, -1]] as const) {
+    pb.boxMinMax(b.solid, [px - 0.05, y, hzc - 0.05], [px + 0.05, y + 1.5, hzc + 0.05], C.wood);
+    pb.box(b.solid, [px + dir * 0.06, y + 1.05, hzc], [0.14, 0.03, 0.03], C.brass);
+  }
+  walls.push({ minX: hxA - 0.15, maxX: hxB + 0.15, minY: y, maxY: y + 1.1, minZ: hzc - 0.35, maxZ: hzc + 0.35 });
+  // Coat rails beside the door (+x wall): toques, jackets, an apron. Wall-hung, kept clear of the doorway.
+  const wx = cx + hx - 0.22;
+  for (const s of [1, -1]) {
+    pb.boxMinMax(b.solid, [wx - 0.03, y + 1.7, s > 0 ? 1.0 : -3.0], [wx + 0.05, y + 1.78, s > 0 ? 3.0 : -1.0], C.wood);
+    for (let k = 0; k < 4; k++) pb.sphere(b.solid, [wx - 0.06, y + 1.66, s * (1.25 + k * 0.5)], 0.035, C.brass, 6);
+    walls.push({ minX: wx - 0.3, maxX: wx + 0.1, minY: y + 0.7, maxY: y + 1.85, minZ: s > 0 ? 1.0 : -3.0, maxZ: s > 0 ? 3.0 : -1.0 });
+  }
+  pb.box(b.solid, [wx - 0.12, y + 1.2, 1.75], [0.12, 0.8, 0.4], '#3f74b8');
+  pb.box(b.solid, [wx - 0.1, y + 1.28, 2.25], [0.06, 0.8, 0.42], C.cloth);
+  pb.box(b.solid, [wx - 0.12, y + 1.2, -2.75], [0.12, 0.8, 0.4], '#c8453a');
+  for (const z of [1.25, 2.75, -2.25]) {
+    pb.cylinder(b.solid, [wx - 0.14, y + 1.5, z], 0.12, 0.2, C.cloth, { segments: 10 });
+    pb.sphere(b.solid, [wx - 0.14, y + 1.64, z], [0.16, 0.12, 0.16], C.cloth, 9);
+  }
+  pb.sphere(b.solid, [wx - 0.14, y + 1.1, -1.25], [0.15, 0.2, 0.15], '#a8794a', 8);
+  // Locker doors on the +z wall.
   pb.boxMinMax(b.solid, [cx + 0.2, y, hz - 0.65], [cx + 2.8, y + 2.0, hz - 0.15], '#5f8fa3');
   walls.push({ minX: cx + 0.2, maxX: cx + 2.8, minY: y, maxY: y + 2, minZ: hz - 0.7, maxZ: hz });
-  pb.sphere(b.glow, [cx, T3_TOP - 0.3, 0], 0.16, C.glassWarm, 10);
+  if (!low) {
+    for (const x of [cx + 1.07, cx + 1.93]) pb.boxMinMax(b.solid, [x - 0.015, y + 0.05, hz - 0.67], [x + 0.015, y + 1.95, hz - 0.65], C.iron);
+    for (const x of [cx + 0.9, cx + 1.1, cx + 1.76, cx + 1.96]) pb.box(b.solid, [x, y + 1.0, hz - 0.68], [0.04, 0.2, 0.03], C.brass);
+    pb.boxMinMax(b.solid, [cx + 0.2, y + 2.0, hz - 0.65], [cx + 2.8, y + 2.06, hz - 0.15], C.trim);
+  }
   return { object: interiorMeshes(ctx, 'quarters', b), colliders: { floors: [], walls } };
 }
 
