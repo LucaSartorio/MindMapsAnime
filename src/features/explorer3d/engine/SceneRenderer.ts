@@ -86,6 +86,20 @@ export class SceneRenderer {
       opts.onContextLost();
     });
     this.listen(this.canvas, 'webglcontextrestored', () => opts.onContextRestored());
+    this.watchPixelRatio();
+  }
+
+  /** Re-evaluates DPR when it changes without a resize (window moved to another screen, browser zoom). */
+  private watchPixelRatio(): void {
+    if (this.disposed || !window.matchMedia) return;
+    const mq = window.matchMedia(`(resolution: ${window.devicePixelRatio || 1}dppx)`);
+    const onChange = () => {
+      mq.removeEventListener('change', onChange);
+      this.resize();
+      this.watchPixelRatio();
+    };
+    mq.addEventListener('change', onChange);
+    this.cleanups.push(() => mq.removeEventListener('change', onChange));
   }
 
   private listen<K extends string>(target: EventTarget, type: K, fn: (e: Event) => void): void {

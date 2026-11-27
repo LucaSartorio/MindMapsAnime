@@ -109,9 +109,14 @@ export function Explorer3DHost({ dataset }: { dataset: WorldDataset }) {
     [closeSession, openRef],
   );
 
-  if (!session) return null;
-  const manifest = findSceneById(session.sceneId);
-  if (!manifest || manifest.worldId !== dataset.world.id) return null;
+  const manifest = session ? findSceneById(session.sceneId) : undefined;
+  const resolvable = !!manifest && manifest.worldId === dataset.world.id;
+  // A session that cannot be shown here (other world, scene disabled) is closed, never left dangling.
+  useEffect(() => {
+    if (session && !resolvable) closeSession();
+  }, [session, resolvable, closeSession]);
+
+  if (!session || !manifest || !resolvable) return null;
 
   return (
     <ViewerBoundary

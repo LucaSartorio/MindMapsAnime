@@ -97,6 +97,7 @@ export class ExplorerSession {
   private readonly interiors = new Map<string, ZoneBuild>();
   private auto: AutoQualityController | null = null;
   private preference: QualityPreference;
+  private struggling = false;
   private zone: ZoneDef | null = null;
   private pointer: { x: number; y: number; t: number } | null = null;
   /** Listeners of the session (canvas taps): removed in `dispose()`. */
@@ -114,7 +115,11 @@ export class ExplorerSession {
     this.def = module.definition;
     this.preference = opts.preference;
     this.view = new SceneRenderer(host, {
-      antialias: opts.preference !== 'low',
+      // MSAA only where it pays: explicit medium/high, or auto on a fine pointer with a low-DPR screen.
+      antialias:
+        opts.preference === 'medium' ||
+        opts.preference === 'high' ||
+        (opts.preference === 'auto' && (window.devicePixelRatio || 1) < 2 && !(window.matchMedia?.('(pointer: coarse)').matches ?? false)),
       onContextLost: () => opts.events.onContextLost?.(),
       onContextRestored: () => undefined,
     });
@@ -241,12 +246,15 @@ export class ExplorerSession {
   private onFrameTime(ms: number): void {
     if (!this.auto) return;
     const next = this.auto.sample(ms);
+    const struggling = this.auto.struggling;
     if (next) {
       this.level = next;
       this.applyRuntimeQuality();
-      this.opts.events.onQualityChange?.(next, this.auto.struggling);
-    } else if (this.auto.struggling) {
-      this.opts.events.onQualityChange?.(this.level, true);
+    }
+    // Events only on transitions: never one React update per frame.
+    if (next || struggling !== this.struggling) {
+      this.struggling = struggling;
+      this.opts.events.onQualityChange?.(this.level, struggling);
     }
   }
 
@@ -363,6 +371,7 @@ export class ExplorerSession {
   setQualityPreference(pref: QualityPreference): void {
     if (pref === this.preference) return;
     this.preference = pref;
+    this.struggling = false;
     if (pref === 'auto') {
       this.auto = new AutoQualityController(this.level);
       this.opts.events.onQualityChange?.(this.level, false);

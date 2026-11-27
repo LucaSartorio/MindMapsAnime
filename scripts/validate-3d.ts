@@ -17,6 +17,7 @@
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { dirname, join, relative, resolve } from 'node:path';
 import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 import ts from 'typescript';
 import type { WorldDataset } from '../src/types';
 import type { SceneDefinition, SceneManifest } from '../src/features/explorer3d/types';
@@ -24,7 +25,7 @@ import { animeWorlds } from '../src/data/worlds';
 import { hasWorldDataset, loadWorldDataset } from '../src/data/registry';
 import { SCENE_MANIFESTS } from '../src/features/explorer3d/launcher/manifests';
 
-const ROOT = resolve(dirname(new URL(import.meta.url).pathname), '..');
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const SRC = join(ROOT, 'src');
 const EXPLORER = join(SRC, 'features/explorer3d');
 const LAUNCHER = join(EXPLORER, 'launcher');

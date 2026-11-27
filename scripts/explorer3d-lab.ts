@@ -82,8 +82,9 @@ export function readExplorerReport(): ExplorerReport | null {
 /** True when a request URL belongs to the 3D explorer (a guard-listed chunk or anything named after three.js). */
 export function isExplorerRequest(url: string, report: ExplorerReport | null): boolean {
   const path = url.replace(/^https?:\/\/[^/]+/, '').split('?')[0];
-  if (report?.chunks.some((c) => path === `/assets/${c.file}`)) return true;
-  return /\/assets\/[^/]*three[^/]*\.js$/i.test(path);
+  if (report) return report.chunks.some((c) => path === `/assets/${c.file}`);
+  // Without a guard report, only three.js's own chunk name is a reliable signal (data modules may contain "three").
+  return /\/assets\/three\.module-[^/]*\.js$/.test(path);
 }
 
 export interface PageMetrics {
