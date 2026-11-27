@@ -31,7 +31,8 @@ export interface MaterialKit {
 
 /** 4-band light ramp: the "anime" look of MeshToonMaterial comes from this texture. */
 function gradientRamp(tracker: ResourceTracker): DataTexture {
-  const tones = [90, 150, 215, 255];
+  // Soft anime shading: the darkest band stays readable (reference: lit, colourful surfaces even in shade).
+  const tones = [128, 178, 228, 255];
   const data = new Uint8Array(tones.length * 4);
   tones.forEach((v, i) => data.set([v, v, v, 255], i * 4));
   const tex = tracker.track(new DataTexture(data, tones.length, 1, RGBAFormat));

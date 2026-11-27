@@ -215,8 +215,8 @@ export function createDaylight(ctx: BuildContext, sunDirection: Vector3, shadowH
     cam.bottom = -shadowHalfExtent;
     cam.near = 10;
     cam.far = 200;
-    sun.shadow.bias = -0.0008;
-    sun.shadow.normalBias = 0.04;
+    sun.shadow.bias = -0.0012;
+    sun.shadow.normalBias = 0.09;
   }
   group.add(hemi, ambient, sun, sun.target);
   return { group, sun };

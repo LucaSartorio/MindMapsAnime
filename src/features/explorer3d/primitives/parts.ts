@@ -1,4 +1,5 @@
 import {
+  TorusGeometry,
   BoxGeometry,
   BufferAttribute,
   BufferGeometry,
@@ -30,6 +31,8 @@ export class PartBuilder {
   private readonly cylinders = new Map<string, BufferGeometry>();
   private readonly spheres = new Map<number, BufferGeometry>();
   private prismGeo: BufferGeometry | null = null;
+  private readonly tori = new Map<string, BufferGeometry>();
+  private readonly frusta = new Map<string, BufferGeometry>();
 
   constructor(
     private readonly tracker: ResourceTracker,
@@ -65,13 +68,20 @@ export class PartBuilder {
   }
 
   /** Cylinder (or cone/frustum) centred at `at`, axis along local Y. `taper` = radiusTop / radiusBottom. */
-  cylinder(b: GeometryBatch, at: XYZ, radius: number, height: number, color: ColorSpec, o: { segments?: number; taper?: number; rot?: XYZ; scaleZ?: number } = {}): void {
+  cylinder(
+    b: GeometryBatch,
+    at: XYZ,
+    radius: number,
+    height: number,
+    color: ColorSpec,
+    o: { segments?: number; taper?: number; rot?: XYZ; scaleZ?: number; arc?: { start: number; length: number } } = {},
+  ): void {
     const segments = this.seg(o.segments ?? 16);
     const taper = o.taper ?? 1;
-    const key = `${segments}:${taper.toFixed(3)}`;
+    const key = `${segments}:${taper.toFixed(3)}:${o.arc ? `${o.arc.start.toFixed(3)}/${o.arc.length.toFixed(3)}` : ''}`;
     let geo = this.cylinders.get(key);
     if (!geo) {
-      geo = this.tracker.track(new CylinderGeometry(taper, 1, 1, segments, 1, false));
+      geo = this.tracker.track(new CylinderGeometry(taper, 1, 1, segments, 1, false, o.arc?.start ?? 0, o.arc?.length ?? Math.PI * 2));
       this.cylinders.set(key, geo);
     }
     b.add(geo, this.matrix(at, o.rot, [radius, height, radius * (o.scaleZ ?? 1)]), color);
@@ -95,6 +105,39 @@ export class PartBuilder {
   prism(b: GeometryBatch, at: XYZ, size: XYZ, color: ColorSpec, rot: XYZ = [0, 0, 0]): void {
     if (!this.prismGeo) this.prismGeo = this.tracker.track(buildPrism());
     b.add(this.prismGeo, this.matrix(at, rot, size), color);
+  }
+
+  /**
+   * Torus (rings, lips, collars, life buoys) in the local XY plane; `tube` is relative to the unit radius, so
+   * `scale` stretches it into elliptic rings. Geometries are cached per (tube, segments).
+   */
+  torus(b: GeometryBatch, at: XYZ, radius: number, tube: number, color: ColorSpec, o: { segments?: number; rot?: XYZ; scale?: XYZ; arc?: number } = {}): void {
+    const radial = this.seg(o.segments ?? 24);
+    const tubular = Math.max(4, Math.round(radial / 3));
+    const t = tube / radius;
+    const arc = o.arc ?? Math.PI * 2;
+    const key = `${radial}:${t.toFixed(3)}:${arc.toFixed(3)}`;
+    let geo = this.tori.get(key);
+    if (!geo) {
+      geo = this.tracker.track(new TorusGeometry(1, t, tubular, radial, arc));
+      this.tori.set(key, geo);
+    }
+    const sc = o.scale ?? [1, 1, 1];
+    b.add(geo, this.matrix(at, o.rot, [radius * sc[0], radius * sc[1], radius * sc[2]]), color);
+  }
+
+  /**
+   * Square frustum with half side 1 at the base and `taper` at the top, axis Y, height 1 (hip roofs, pedestals).
+   * The 45° turn is baked into the cached geometry so non-uniform `size` stays a rectangle.
+   */
+  squareFrustum(b: GeometryBatch, at: XYZ, size: XYZ, color: ColorSpec, taper: number): void {
+    const key = taper.toFixed(3);
+    let geo = this.frusta.get(key);
+    if (!geo) {
+      geo = this.tracker.track(new CylinderGeometry(taper * Math.SQRT2, Math.SQRT2, 1, 4, 1, false).rotateY(Math.PI / 4));
+      this.frusta.set(key, geo);
+    }
+    b.add(geo, this.matrix(at, [0, 0, 0], size), color);
   }
 
   /** Adds an arbitrary (tracked by the caller) geometry. */
