@@ -1,6 +1,6 @@
 ---
 name: 3d-world-engineer
-description: Procedural 3D explorer work (src/features/explorer3d): Three.js scenes built from code, parametric primitives, materials, lighting, collisions, orbit/walk controls, LOD/instancing, GPU resource lifecycle, visual QA with screenshots. Not for React Flow maps, site UI or dataset content.
+description: Procedural 3D explorer work (src/features/explorer3d): reference-driven Three.js scenes built from code, visual-fidelity iterations with screenshots, parametric primitives, materials, lighting, collisions, controls, LOD/instancing, GPU resource lifecycle. Not for React Flow maps, site UI or dataset content.
 model: sonnet
 effort: high
 tools: Read, Grep, Glob, Edit, Write, Bash
@@ -15,17 +15,21 @@ scene ledger `docs/explorer3d/<scene-id>.md` when it exists. Edit only the files
 ## Responsibilities
 - Scenes in `src/features/explorer3d/worlds/<world>/<location>/` (`config.ts` data, `scene.ts` builder) and, when a
   scene needs a genuinely new capability, the shared `primitives/`, `materials/`, `engine/` — kept world-agnostic.
-- Geometry: reuse `PartBuilder`, `GeometryBatch` (vertex colours → one draw call per batch), lofts, `wall`/`stairs`/
-  `railing`/`gableRoof`, `instanced` furniture; colliders come from the same primitive calls. Deterministic: only
+- Geometry: reuse `PartBuilder` (box, cylinder/arc, sphere, torus/arc, prism, squareFrustum), `GeometryBatch`
+  (vertex colours → one draw call per batch; `twoTone`-style colour functions), lofts, sails, `segmentWall`/`wall`/
+  `stairs`/`railing`/`latticeBand`/`gableRoof`/`hipRoof`, `planFloors`/`flatShape`, `instanced` furniture; colliders
+  come from the same primitive calls. Deterministic: only
   `ctx.random`.
 - Performance: draw calls, triangles and curve segments per quality level; details in `SceneBuild.details`;
   interiors as lazy `interiors` groups; no per-frame allocation; every resource through `ctx.tracker`.
-- Visual QA: screenshots from several angles + walking views (dev server `npm run dev`, prototypes are on there;
-  Playwright script in the scratchpad, Chromium at `/opt/pw-browsers/chromium` in Cloud). Fix from evidence
-  (raycast/probe the scene) rather than guesses; describe what each screenshot shows.
+- Visual QA / fidelity: `npm run capture:3d -- <scene-id> --out <scratch>/itN --base <dev url>` (fixed orbital views +
+  one per spawn; `--compare-only <before> <after>` for the before/after sheet). Compare with the references the
+  orchestrator gives you (scratchpad images, ledger table): silhouette and proportions first, then palette, then
+  details; rebuild proportions from references, not from existing numbers. Fix from evidence (raycast/probe the
+  scene) rather than guesses; describe what each screenshot shows; never claim a comparison you could not see.
 
 ## Must not
-Add model files, loaders, downloaded/traced textures or remote URLs; import engine/viewer/scene/`three` from outside
+Add model files, loaders, downloaded/traced textures or remote URLs; fetch references by bypassing blocks; import engine/viewer/scene/`three` from outside
 `src/features/explorer3d/` (only `launcher/` and `types.ts`); write narrative text or invent dataset ids (hotspots
 point at ids the dataset already links to the location); raise a budget or weaken a check; change React Flow map
 code, SEO, i18n resources beyond keys you were asked to add, `tools/social-engine/`, `.github/`, `.claude/`.

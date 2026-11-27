@@ -23,8 +23,15 @@ prose or images; cite and summarize.
 | 4 | hotspots + integration | | |
 | 5 | optimization + budgets | | |
 
-## Sources (textual)
-- <chapter/episode/page title> — what it establishes
+## References (looked at only — never committed, embedded or traced)
+| Source (URL or "owner") | Kind (anime / manga / official model / text) | Shows | Used for | Confidence |
+|---|---|---|---|---|
+
+Blocked or unreadable sources (and why):
+
+## Visual iterations
+| # | Captures (scratch dir) | Main differences vs references | Changes | Result |
+|---|---|---|---|---|
 
 ## Canon vs interpretive
 | Element | Status | Why |

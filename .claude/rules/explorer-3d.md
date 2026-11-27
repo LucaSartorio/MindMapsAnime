@@ -1,7 +1,7 @@
 ---
 paths:
   - "src/features/explorer3d/**"
-  - "scripts/{validate-3d,test-3d,test-3d-units,explorer3d-lab}.ts"
+  - "scripts/{validate-3d,test-3d,test-3d-units,explorer3d-lab,explorer3d-capture}.ts"
   - "scripts/explorer3d-bundle-report.mjs"
   - "scripts/vite/explorer3dGuard.ts"
   - "docs/3D_EXPLORER.md"
@@ -13,8 +13,11 @@ paths:
 How it works, budgets, how to add a location: `docs/3D_EXPLORER.md`. Procedure: `/create-3d-location`.
 
 - **Procedural only**: geometry, materials and textures come from TypeScript (`primitives/`, canvas/data textures).
-  No glb/gltf/fbx/obj, no downloaded or traced artwork/textures, no three.js loaders, no remote URL, no AI-generated
-  models. `validate:3d` (repo + AST) and the build guard (emitted files) enforce it.
+  No glb/gltf/fbx/obj, no downloaded or traced artwork/textures, no three.js loaders, no remote URL (citations go in
+  the ledger), no AI-generated models. `validate:3d` (repo + AST) and the build guard (emitted files) enforce it.
+- **References**: visual references are only looked at (scratchpad, never committed or sampled into textures) and
+  only if legitimately accessible — never bypass paywalls, anti-bot challenges or blocked pages via other endpoints;
+  each is listed in `docs/explorer3d/<scene-id>.md`; no comparison is claimed with an image that was not opened.
 - **Isolation**: ordinary code imports only `src/features/explorer3d/launcher/**` and `types.ts`; everything else
   (engine, viewer, primitives, scenes, `three`) is reached only through the `import()` in `launcher/`. Never add a
   static import, a preload/prefetch, an idle/hover prefetch or an SSR path to it. Gates: `validate:3d` (sources) +
