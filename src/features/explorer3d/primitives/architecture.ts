@@ -411,6 +411,12 @@ export interface SegmentWallSpec {
   openings?: SegmentOpening[];
   collide?: boolean;
   tag?: string;
+  /** Glazing bars: `cross` (mullion + transom) or `diamond` (diagonal leaded panes, skipped when `detail` is false). */
+  glazing?: 'cross' | 'diamond';
+  /** Draw small decorative parts (diamond glazing, door leaves' portholes). False on low quality. */
+  detail?: boolean;
+  /** Door leaf left OPEN against the wall (doorways stay walkable): colour and the side it swings to (±1 = left/right normal). */
+  doorLeaf?: { color: ColorSpec; side: 1 | -1; porthole?: ColorSpec };
 }
 
 /**
@@ -463,10 +469,54 @@ export function segmentWall(pb: PartBuilder, bt: Batches, s: SegmentWallSpec): W
     if (o.kind !== 'door') {
       box(u0, u1, o.bottom, rectTop, s.thickness * 0.4, s.glassColor ?? '#8fc8ee', bt.glow);
       if (s.collide !== false) colliders.push(...segmentColliders(at(u0), at(u1), s.y0 + o.bottom, s.y0 + o.top, s.thickness / 2, s.tag));
-      if (s.frameColor) {
+      if (s.frameColor && s.glazing === 'diamond' && s.detail !== false) {
+        // Leaded diamond panes: lines (u − u0) = sign·(v − v0) + c, clipped to the glass rectangle.
+        const step = 0.32;
+        const W = u1 - u0;
+        const v0 = o.bottom;
+        const H = rectTop - v0;
+        for (const sign of [1, -1]) {
+          const cMin = sign > 0 ? -H : 0;
+          const cMax = sign > 0 ? W : W + H;
+          for (let c = cMin + step / 2; c < cMax; c += step) {
+            const cand: Array<[number, number]> = [
+              [c, 0],
+              [sign * H + c, H],
+              [0, -c * sign],
+              [W, (W - c) * sign],
+            ];
+            const pts = cand.filter(([du, dv]) => du >= -1e-6 && du <= W + 1e-6 && dv >= -1e-6 && dv <= H + 1e-6);
+            if (pts.length < 2) continue;
+            let best: [[number, number], [number, number]] = [pts[0], pts[1]];
+            for (const p of pts) for (const q of pts) if (Math.hypot(p[0] - q[0], p[1] - q[1]) > Math.hypot(best[0][0] - best[1][0], best[0][1] - best[1][1])) best = [p, q];
+            const [[ua, va], [ub, vb]] = best;
+            const len = Math.hypot(ub - ua, vb - va);
+            if (len < 0.05) continue;
+            const [cx, cz] = at(u0 + (ua + ub) / 2);
+            pb.box(bt.solid, [cx, s.y0 + v0 + (va + vb) / 2, cz], [len, 0.03, s.thickness * 0.5], s.frameColor, [0, yaw, Math.atan2(vb - va, ub - ua)]);
+          }
+        }
+      } else if (s.frameColor) {
         // Mullion + transom: the cross that makes a glazed window read at any distance.
         box((u0 + u1) / 2 - 0.035, (u0 + u1) / 2 + 0.035, o.bottom, rectTop, s.thickness + 0.06, s.frameColor);
         box(u0, u1, (o.bottom + rectTop) / 2 - 0.035, (o.bottom + rectTop) / 2 + 0.035, s.thickness + 0.06, s.frameColor);
+      }
+    } else if (s.doorLeaf) {
+      // Open leaf hinged at u0, swung ~165° to one side of the wall: the doorway stays clear for walking.
+      const w = u1 - u0;
+      const h = rectTop - o.bottom;
+      const nx = -dz * s.doorLeaf.side;
+      const nz = dx * s.doorLeaf.side;
+      const [hx, hz] = at(u0);
+      const ang = (165 * Math.PI) / 180; // almost flat against the wall
+      const lx = Math.cos(ang) * dx + Math.sin(ang) * nx;
+      const lz = Math.cos(ang) * dz + Math.sin(ang) * nz;
+      const cx = hx + (lx * w) / 2 + nx * (s.thickness / 2);
+      const cz = hz + (lz * w) / 2 + nz * (s.thickness / 2);
+      const leafYaw = Math.atan2(-lz, lx);
+      pb.box(bt.solid, [cx, s.y0 + o.bottom + h / 2, cz], [w, h, 0.08], s.doorLeaf.color, [0, leafYaw, 0]);
+      if (s.doorLeaf.porthole && s.detail !== false) {
+        pb.cylinder(bt.glow, [cx, s.y0 + o.bottom + h * 0.68, cz], Math.min(0.18, w * 0.18), 0.1, s.doorLeaf.porthole, { segments: 10, rot: [Math.PI / 2, leafYaw, 0] });
       }
     }
     if (s.frameColor) {

@@ -54,8 +54,8 @@ const C = {
   gold: '#e9b83b',
   eye: '#141414',
   eyeRing: '#f4c534',
-  wall: '#72cfb0',
-  wallLow: '#58b896',
+  wall: '#a3dcc6',
+  wallLow: '#86c9b1',
   wallIn: '#f3ead2',
   wainscot: '#8d5631',
   kitchenIn: '#eef1ec',
@@ -66,8 +66,11 @@ const C = {
   frame: '#f0c44a',
   glass: '#5b96cc',
   glassWarm: '#ffd88a',
-  deck: '#d8c290',
-  seam: '#b39a68',
+  deck: '#ecdcb8',
+  seam: '#c9b48a',
+  stairTread: '#f2ead8',
+  door: '#d4553a',
+  signBlue: '#4f9fd6',
   fin: '#dcc796',
   finRim: '#a98c5a',
   roof: '#ef6b2b',
@@ -410,7 +413,8 @@ function buildTiers(ctx: BuildContext, pb: PartBuilder, b: Batches, detail: Geom
   const p2 = t2Plan();
   const p3 = t3Plan();
   const { cx, cz } = PLAN.t1;
-  const glassFrame = { frameColor: C.frame, glassColor: C.glass };
+  // Anime stills: yellow frames with leaded diamond panes; doors are red-orange leaves with a porthole.
+  const glassFrame = { frameColor: C.frame, glassColor: C.glass, glazing: 'diamond' as const, detail: !low, doorLeaf: { color: C.door, side: 1 as const, porthole: C.glass } };
 
   // ---- T1: oval dining hall walls (mint outside, cream + wood wainscot inside).
   const t1Color = twoTone(cx, cz, [C.wall, C.wallLow, DECK_Y + 0.55], [C.wallIn, C.wainscot, DECK_Y + 1.05]);
@@ -482,14 +486,14 @@ function buildTiers(ctx: BuildContext, pb: PartBuilder, b: Batches, detail: Geom
   }
 
   // ---- Stairs: deck → T1 terrace (outside, −z), T1 → T2 terrace (outside, +z).
-  const s1 = stairs(pb, b.solid, { axis: 'x', uBottom: 1.5, uTop: -5, c0: -11.6, c1: -10.45, yBottom: DECK_Y, yTop: T1_TOP, steps: 15, color: C.deck, stringerColor: C.lattice, sides: true });
+  const s1 = stairs(pb, b.solid, { axis: 'x', uBottom: 1.5, uTop: -5, c0: -11.6, c1: -10.45, yBottom: DECK_Y, yTop: T1_TOP, steps: 15, color: C.stairTread, stringerColor: C.lattice, sides: true });
   floors.push(s1.floor);
   walls.push(...s1.walls);
   floors.push(slab(pb, b.solid, { minX: -6.6, maxX: -5, minZ: -11.6, maxZ: -9.3, y: T1_TOP, thickness: 0.3, color: C.deck })!);
   walls.push(...latticeBand(pb, b.solid, { points: [[-5, -11.55], [-6.55, -11.55], [-6.55, -10.1]], y: T1_TOP, height: 0.95, panel: 0.8, boardColor: C.lattice, crossColor: C.trim, railColor: C.trim, crosses: !low, collide: true }));
   pb.box(b.solid, [-5.8, (DECK_Y + T1_TOP) / 2, -11.5], [0.3, T1_TOP - DECK_Y, 0.3], C.lattice);
 
-  const s2 = stairs(pb, b.solid, { axis: 'x', uBottom: -7, uTop: -1, c0: 6.4, c1: 7.6, yBottom: T1_TOP, yTop: T2_TOP, steps: 13, color: C.deck, stringerColor: C.lattice, sides: true });
+  const s2 = stairs(pb, b.solid, { axis: 'x', uBottom: -7, uTop: -1, c0: 6.4, c1: 7.6, yBottom: T1_TOP, yTop: T2_TOP, steps: 13, color: C.stairTread, stringerColor: C.lattice, sides: true });
   floors.push(s2.floor);
   walls.push(...s2.walls);
   floors.push(slab(pb, b.solid, { minX: -1, maxX: 0.95, minZ: 5.3, maxZ: 7.6, y: T2_TOP, thickness: 0.3, color: C.deck })!);
@@ -517,7 +521,7 @@ function buildMasts(ctx: BuildContext, pb: PartBuilder, solid: GeometryBatch, cl
   for (const m of masts) {
     const h = m.top - m.base;
     pb.cylinder(solid, [m.x, m.base + h / 2, 0], 0.36, h, C.mast, { segments: 12, taper: 0.62 });
-    for (let y = m.base + 2.5; y < m.top - 1; y += 3) pb.cylinder(solid, [m.x, y, 0], 0.42, 0.22, C.mastBand, { segments: 12 });
+    for (let y = m.base + 1.2; y < m.top - 1; y += 1.4) pb.cylinder(solid, [m.x, y, 0], 0.41, 0.3, C.mastBand, { segments: 12 });
     // Mast-head block + white flag with a red band (generic, no emblem).
     pb.box(solid, [m.x, m.top - 0.4, 0], [0.7, 0.7, 0.7], C.mastBand);
     pb.box(solid, [m.x - 1.0, m.top + 0.4, 0], [1.6, 1.0, 0.06], C.flag);
@@ -552,6 +556,14 @@ function buildProps(ctx: BuildContext, pb: PartBuilder, glow: GeometryBatch, det
     }
     walls.push({ minX: x - 0.55, maxX: x + 0.55, minY: DECK_Y, maxY: DECK_Y + 1.1, minZ: z - 0.55, maxZ: z + 0.55 });
   }
+  // Barrels with a white rope band and crates by the front door (anime still, episode 21).
+  for (const [x, z] of [[13.4, -3.4], [13.4, 3.6]] as const) {
+    pb.cylinder(detail, [x, DECK_Y + 0.5, z], 0.42, 1, '#b07a45', { segments: 12, taper: 0.9 });
+    pb.cylinder(detail, [x, DECK_Y + 0.55, z], 0.445, 0.16, '#f4efe2', { segments: 12 });
+    walls.push({ minX: x - 0.5, maxX: x + 0.5, minY: DECK_Y, maxY: DECK_Y + 1.1, minZ: z - 0.5, maxZ: z + 0.5 });
+  }
+  pb.box(detail, [12.9, DECK_Y + 0.35, -4.4], [0.8, 0.7, 0.8], '#d8b77c', [0, 0.3, 0]);
+  walls.push({ minX: 12.4, maxX: 13.4, minY: DECK_Y, maxY: DECK_Y + 0.8, minZ: -4.9, maxZ: -3.9 });
   // Lanterns on the terrace balustrade and by the front door.
   for (const [x, z] of [[11.2, -2.6], [11.2, 2.6]] as const) {
     pb.cylinder(detail, [x, DECK_Y + 1.8, z], 0.05, 1.6, C.iron, { segments: 4 });
@@ -608,8 +620,12 @@ function signs(ctx: BuildContext): Object3D[] {
       g.fillRect(0, h - 10, w, 10);
       g.textAlign = 'center';
       g.textBaseline = 'middle';
-      g.font = '700 104px Cinzel, Georgia, "Times New Roman", serif';
-      g.fillStyle = '#5a1f18';
+      // Anime stills: light-blue capitals with a dark outline on the white band.
+      g.font = '800 108px Cinzel, Georgia, "Times New Roman", serif';
+      g.lineWidth = 9;
+      g.strokeStyle = '#1f3550';
+      g.strokeText(ctx.locationName.toUpperCase(), w / 2, h / 2 + 4, w - 260);
+      g.fillStyle = C.signBlue;
       g.fillText(ctx.locationName.toUpperCase(), w / 2, h / 2 + 4, w - 260);
       ring(g, 70, h / 2, 46);
       ring(g, w - 70, h / 2, 46);

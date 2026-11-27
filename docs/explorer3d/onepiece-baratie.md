@@ -13,7 +13,7 @@
 | 4 | hotspots + integration | done | 7 hotspots, all on ids linked to `loc-op-baratie` |
 | 5 | optimization + budgets | done | see measurements; real-device FPS still to measure |
 | 6 | publication | done | owner request 2026-11-27: manifest `available`, loader ungated, `rights: 'owner-approved'` |
-| 7 | fidelity upgrade | done | reference-driven rebuild, 6 iterations (below) |
+| 7 | fidelity upgrade | done | reference-driven rebuild, 7 iterations (below), official anime stills in round 7 |
 
 ## Publication (2026-11-27)
 The owner asked to make the scene public on animapverse.com. Recorded as `rights: 'owner-approved'` with
@@ -33,10 +33,16 @@ Moving to `rights: 'cleared'` requires these to be resolved by the owner. Rollba
 | Ch. 53 "Mackerel Head" summaries | text | detachable fish-head prow (Sabagashira No. 1) | head as a separate part with a collar | high |
 | [Dalong.net review of Bandai Grand Ship Collection #10 Baratie](https://www.dalong.net/reviews/etc/oc10/oc10_p_e.htm), photos 03, 05, 08, 11, 12, 16 | official model kit (stylized) | white ball head with orange duck lips + cannons, gold rim; round orange planked hull; mint tiers with blue arched windows, yellow frames, dark-red lattice bands with white crosses; octagonal middle tier with the name band + life rings; hip-roofed top house (orange, white top); two mint masts, dark ratlines, yellow/white striped sails; tall orange stern plate with yellow rim; wooden sea-deck fins | silhouette, masses, palette, details | medium-high for shapes/colours, LOW for proportions (the kit is compressed) |
 
+| [Official episode pages one-piece.com/anime/19 … /30](https://one-piece.com/anime/20/index.html) — one still per episode, viewed in a browser as a visitor (direct image requests are refused by hotlink protection and were NOT worked around) | original anime (official) | ep. 21: deck by a wall — pale mint wall, leaded diamond windows in thick yellow frames, red-orange arched door with a porthole, cream planks, barrels with white rope, dark-red lattice rail; ep. 25/30: white name band with light-blue outlined capitals and red/white life rings, lattice band above, arched yellow-framed window; ep. 27: lattice rails, mint mast with pale bands; ep. 23: curved warm-orange structure with maroon rails and pale stairs | palette, windows, doors, sign, deck props, stairs colour | high for what is visible; interiors are not shown |
+
 Blocked or unreadable sources: onepiece.fandom.com pages (HTTP 402 / Cloudflare challenge to the fetcher); the
 MediaWiki API route to the same content was refused by the session's permission policy as a bypass and was not
 pursued; sportskeeda and one-piecewiki pages (HTTP 403). No anime screenshots were available: the original-anime
-look is inferred from the model kit + text, so an owner-provided set of anime frames is the best next input.
+look was inferred from the model kit + text until the official episode stills above were found.
+Manga chapters 42-68 and full episodes 19-30: NOT accessible legitimately from this environment (official readers
+offer only the first/latest chapters for free; streaming needs an account and is DRM-protected; free copies online
+are unauthorized and were not used). The model cannot watch video anyway: frames or pages from the owner's legal
+copies (volumes 5-8, episodes 19-30), especially of the dining hall and kitchen, are the best next input.
 
 ## Visual iterations (2026-11-27, captures in the session scratchpad, SwiftShader)
 | # | Main differences vs references | Changes | Result |
@@ -48,6 +54,7 @@ look is inferred from the model kit + text, so an owner-provided set of anime fr
 | 4 | holes beside arched window heads; washed-out sign; harsh shade; shadow acne indoors | arch masonry closed + half-disc glass; sRGB canvas textures; softer toon ramp; shadow bias | clean arches, crisp sign, softer anime shading |
 | 5 | arched doors blocked by full disc/ring; sails small vs kit | fanlight above a clear doorway, half-ring frames; larger sails, wider stripes | doors walkable and readable; sail mass as in the kit |
 | 6 | interiors too bare (`3d-world-engineer` pass, 2 rounds) | hall: aisle runner, sconces + framed panels on the piers, plants, back-bar with mirror/bottles/stools, lectern; kitchen: tiled backsplash, utensil rail, oven doors, pots/pans, sink, dish rack, butcher block, cold-room door, pendants; quarters: coloured blankets, rug, chests, hammock, coat rails, lantern | interior +13.4k triangles on high (budget +15k), 0 extra draw calls |
+| 7 | anime stills vs build: sign lettering colour, window glazing, doors, wall/deck tints | light-blue outlined lettering, leaded diamond panes (new `glazing: 'diamond'`), open red-orange door leaves with porthole (new `doorLeaf`, doorways stay walkable), paler mint walls, cream deck and stair treads, barrels with rope bands, denser mast bands | matches the official stills on those points; `test:3d` 30/30 |
 
 ## Measurements (2026-11-27, after the fidelity upgrade, state-fingerprint `bbe2cffbb477bb632d71`, Chromium + SwiftShader)
 | Metric | before (text-only) | after | method |

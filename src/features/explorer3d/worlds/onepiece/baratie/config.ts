@@ -86,6 +86,7 @@ export const definition: SceneDefinition = {
       { kind: 'reference', label: 'Krieg battle: the chefs raise the two side fins as a battle platform' },
       { kind: 'reference', label: 'Fan wiki summaries via search: oval ship, round bottom, four levels (dining, kitchen, cooks\' quarters, fins), cannons in the mouth and along the sides' },
       { kind: 'reference', label: 'Bandai Grand Ship Collection #10 Baratie (official model, 2014): review photos, looked at only for shapes and colours (citation in docs/explorer3d/onepiece-baratie.md)' },
+      { kind: 'anime', label: 'Official episode stills, episodes 19-30 (one-piece.com episode pages, viewed as a visitor): ep. 21, 25, 27, 30 show the deck, walls, doors, windows and the name band' },
     ],
     // Published on the owner's explicit request. This is NOT a verified rights clearance: see `unresolved`.
     rights: 'owner-approved',
@@ -103,7 +104,8 @@ export const definition: SceneDefinition = {
     notes: [
       'Shapes are stylized and built only from code; no official artwork, model or texture was embedded, traced or distributed. Reference photos were only looked at.',
       'Canon (work + official model kit): round orange hull with planks, white fish head with orange lips and cannons in the mouth, mint-green tiered restaurant with lattice bands and arched windows, two masts with yellow/white striped sails, wooden battle fins, dining hall below and kitchen on the middle level.',
-      'From the official model kit only (supplementary, stylized): the tall orange stern plate, the hip-roofed top house, ring terraces and the sign band layout.',
+      'From the official anime stills: light-blue outlined lettering on the white name band, leaded diamond window panes in yellow frames, red-orange doors with a porthole, pale mint walls, cream deck planks, barrels with a white rope band.',
+      'From the official model kit only (supplementary, stylized): the tall orange stern plate, the hip-roofed top house, ring terraces.',
       'Interpretive: exact proportions (the model is compressed), stair positions, interior layouts and furniture, the cooks\' quarters interior, fins shown deployed.',
       'Hotspot placement inside the ship is interpretive; each hotspot links an entity the dataset already ties to loc-op-baratie.',
       'The sign shows the location name from the dataset in a generic font, not the logo of the work; the top sign is a fork-and-knife pictogram (no text).',

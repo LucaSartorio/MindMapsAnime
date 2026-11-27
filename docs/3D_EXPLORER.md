@@ -186,7 +186,8 @@ new scenes):
 - `PartBuilder` (`primitives/parts.ts`): unit box, cylinder (optional arc), sphere, torus (optional arc), prism,
   square frustum + transforms into a batch. `GeometryBatch` colour functions receive position, normal and the source
   vertex colour (`SOURCE_COLORS`): two-tone walls (outside/inside from the normal), stripes, gradients for free.
-- `segmentWall` (any plan segment; rectangular/arched windows, doors with fanlights, frames → colliders), `wall`
+- `segmentWall` (any plan segment; rectangular/arched windows with cross or leaded-diamond glazing, doors with
+  fanlights and optional open leaves that keep the doorway walkable, frames → colliders), `wall`
   (axis-aligned, portholes), `slab`, `stairs` (treads + ramp floor + side walls), `railing`, `latticeBand`
   (balustrades/friezes with X panels), `gableRoof`, `hipRoof`, plans (`ellipsePlan`, `chamferedPlan`, `openLoop`),
   `planFloors` (walkable slices of a convex plan, with stairwell holes), `segmentColliders`
