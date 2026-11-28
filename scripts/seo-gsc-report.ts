@@ -107,6 +107,13 @@ const METRIC_RE: [MetricName, RegExp][] = [
   ['ctr', /\bctr$/i],
   ['position', /\b(position|posizione)$/i],
 ];
+/** Stesse metriche in testa all'etichetta ("Clic ultimi 28 giorni"). */
+const METRIC_FIRST_RE: [MetricName, RegExp][] = [
+  ['clicks', /^(clicks?|clic)\b/i],
+  ['impressions', /^(impressions?|impressioni)\b/i],
+  ['ctr', /^ctr\b/i],
+  ['position', /^(position|posizione)\b/i],
+];
 
 export function dimensionOf(header: string): Dimension {
   const h = header.toLowerCase();
@@ -140,15 +147,14 @@ export function mapHeaders(header: string[], swap = false): HeaderMap {
   header.forEach((h, i) => {
     if (i === 0) return;
     const t = h.trim();
-    for (const [name, re] of METRIC_RE) {
-      const m = re.exec(t);
-      if (!m) continue;
-      const prefix = t.slice(0, m.index).trim();
-      const cols = byPrefix.get(prefix) ?? {};
-      cols[name] = i;
-      byPrefix.set(prefix, cols);
-      break;
-    }
+    const hit =
+      METRIC_RE.map(([name, re]) => ({ name, m: re.exec(t), first: false })).find((x) => x.m) ??
+      METRIC_FIRST_RE.map(([name, re]) => ({ name, m: re.exec(t), first: true })).find((x) => x.m);
+    if (!hit?.m) return;
+    const prefix = (hit.first ? t.slice(hit.m[0].length) : t.slice(0, hit.m.index)).trim();
+    const cols = byPrefix.get(prefix) ?? {};
+    cols[hit.name] = i;
+    byPrefix.set(prefix, cols);
   });
   const prefixes = [...byPrefix.keys()];
   const dimension = dimensionOf(header[0] ?? '');
@@ -201,22 +207,22 @@ export function readDetailRows(text: string): DetailRow[] | null {
   const [header, ...body] = parseCsv(text);
   const idx = (re: RegExp) => header.findIndex((h) => re.test(h.trim().toLowerCase()));
   const c = {
-    date: idx(/^(date|data|day)$/),
+    date: idx(/^(date|data|day|data_date)$/),
     query: idx(/^(query|queries)$/),
     page: idx(/^(page|pagina|url|landing_page)$/),
     clicks: idx(/^(clicks|clic)$/),
     impressions: idx(/^(impressions|impressioni)$/),
-    position: idx(/^(position|posizione|avg_position|sum_position)$/),
+    position: idx(/^(position|posizione|avg_position|sum_position|sum_top_position)$/),
     country: idx(/^(country|paese)$/),
     device: idx(/^(device|dispositivo)$/),
   };
   if (c.date < 0 || c.clicks < 0 || c.impressions < 0 || (c.query < 0 && c.page < 0)) return null;
-  const sumPos = /sum_position/.test(header[c.position] ?? '');
+  const sumPos = /sum_(top_)?position/.test(header[c.position] ?? '');
   return body.map((r) => {
     const impressions = parseCount(r[c.impressions]);
     const pos = c.position >= 0 ? parseNumber(r[c.position]) : 0;
     return {
-      date: (r[c.date] ?? '').trim().slice(0, 10),
+      date: isoDate(r[c.date] ?? ''),
       query: c.query >= 0 ? r[c.query].trim() : '',
       page: c.page >= 0 ? r[c.page].trim() : '',
       clicks: parseCount(r[c.clicks]),
@@ -227,6 +233,18 @@ export function readDetailRows(text: string): DetailRow[] | null {
       device: c.device >= 0 ? r[c.device] : undefined,
     };
   });
+}
+
+/** Data di una riga → AAAA-MM-GG (accetta anche AAAAMMGG e GG/MM/AAAA), così il confronto con `--split` è corretto. */
+export function isoDate(raw: string): string {
+  const s = raw.trim();
+  let m = /^(\d{4})-(\d{2})-(\d{2})/.exec(s);
+  if (m) return `${m[1]}-${m[2]}-${m[3]}`;
+  m = /^(\d{4})(\d{2})(\d{2})$/.exec(s);
+  if (m) return `${m[1]}-${m[2]}-${m[3]}`;
+  m = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/.exec(s);
+  if (m) return `${m[3]}-${m[2].padStart(2, '0')}-${m[1].padStart(2, '0')}`;
+  return s;
 }
 
 function add(m: Metrics, clicks: number, impressions: number, position: number) {
@@ -335,11 +353,24 @@ const byLoss = (rows: DimRow[]) =>
 
 /* ------------------------------ stato in dist ------------------------------ */
 
+let redirectRes: RegExp[] | undefined;
+/** Sorgenti dei redirect statici di `vercel.json` (senza condizioni `has`): non sono 404. */
+function vercelRedirected(root: string, path: string): boolean {
+  if (!redirectRes) {
+    const file = join(root, 'vercel.json');
+    const cfg = existsSync(file) ? (JSON.parse(readFileSync(file, 'utf8')) as { redirects?: { source: string; has?: unknown }[] }) : {};
+    redirectRes = (cfg.redirects ?? [])
+      .filter((r) => !r.has)
+      .map((r) => new RegExp('^' + r.source.replace(/\/:[a-z]+\*/gi, '(?:/.*)?').replace(/:[a-z]+/gi, '[^/]+') + '$'));
+  }
+  return redirectRes.some((re) => re.test(path));
+}
+
 function distState(root: string, path: string): string | undefined {
   const dist = join(root, 'dist');
   if (!existsSync(dist)) return undefined;
   const file = join(dist, path === '/' ? 'index.html' : `${path}/index.html`);
-  if (!existsSync(file)) return '404 (nessuna pagina)';
+  if (!existsSync(file)) return vercelRedirected(root, path) ? 'redirect (vercel.json)' : '404 (nessuna pagina)';
   const head = readFileSync(file, 'utf8').slice(0, 6000);
   if (/http-equiv="refresh"/.test(head)) return 'redirect';
   if (/name="robots" content="noindex/.test(head)) return 'noindex';
@@ -382,6 +413,12 @@ function main() {
       continue;
     }
     const { map, rows } = readUiExport(text, swap);
+    const metricCols = Object.keys(map.periods.after).length + Object.keys(map.periods.before ?? {}).length;
+    if (map.dimension !== 'unknown' && metricCols === 0) {
+      console.error(`[seo:gsc] ${basename(f)}: nessuna colonna di metrica riconosciuta (intestazioni: ${parseCsv(text)[0].join(' | ')}): file ignorato`);
+      labels.push(`${basename(f)}: IGNORATO — intestazioni delle metriche non riconosciute`);
+      continue;
+    }
     if (map.dimension === 'unknown' || !map.periods.before) {
       labels.push(`${basename(f)}: ignorato (${map.dimension === 'unknown' ? 'dimensione non riconosciuta' : 'non è un export in modalità confronto'})`);
       continue;
@@ -390,7 +427,7 @@ function main() {
     labels.push(`${basename(f)}: ${map.dimension}, prima = "${map.labels.before}", dopo = "${map.labels.after}", ${rows.length} righe`);
   }
   if (detail.length) {
-    if (!split) {
+    if (!split || !/^\d{4}-\d{2}-\d{2}$/.test(split)) {
       console.error('righe dettagliate: serve --split AAAA-MM-GG (primo giorno del periodo "dopo")');
       process.exit(1);
     }

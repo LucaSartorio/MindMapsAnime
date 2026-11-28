@@ -84,7 +84,7 @@ export function groupOf(url: string): string {
   if (parts.length === 2) return ['about', 'support', 'privacy', 'cookie-policy'].includes(second) ? `${lang}|-|static` : `${lang}|${second}|landing`;
   const kind = parts[2];
   if (kind === 'map' || kind === 'timeline') return `${lang}|${second}|${kind}`;
-  if (parts.length === 3 || parts[3] === 'page') return `${lang}|${second}|${kind}:index`;
+  if (parts.length === 3 || (parts.length === 5 && parts[3] === 'page' && /^\d+$/.test(parts[4]))) return `${lang}|${second}|${kind}:index`;
   return `${lang}|${second}|${kind}`;
 }
 

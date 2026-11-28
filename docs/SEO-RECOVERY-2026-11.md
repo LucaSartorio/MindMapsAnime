@@ -168,6 +168,7 @@ traffico/campioni (CrUX raggruppa solo URL con visite), non un errore tecnico.
 | `.claude/agents/seo-growth-engineer.md`, `.claude/skills/seo-opportunities/SKILL.md`, `.claude/rules/seo.md` | playbook dei cali, gate baseline, uso dell'analizzatore |
 | `src/data/naruto/charactersBatch1.ts` | Fukasaku `deceased` |
 | `docs/seo-recovery/thin-entity-pages-2026-11.csv` | lista per arricchimento / decisione |
+| `scripts/a11y-contrast.mjs` | (commit separato) il campionamento dei pixel ignora l'anello/ombra degli overlay fissi che non contengono il testo: il fallimento "home + cookie banner @320" su `main` era l'anello di focus del banner, non lo sfondo del testo |
 
 ### 7.1 Banner cookie e LCP (commit separato, revertibile da solo)
 
@@ -206,8 +207,7 @@ confronto A (25/10) ↔ C (`main`) è nella §3.
 
 - Conferma della causa con i dati query × pagina (§11).
 - Programma di arricchimento delle 722 entità (per priorità GSC), decisione sulle 35 candidate E, strategia es/fr.
-- `www` 307; contrasto della card Jujutsu Kaisen della home a 320 px (`audit:contrast`, preesistente su `main`,
-  task separato).
+- `www` 307.
 
 ## 11. Azioni richieste al proprietario
 
@@ -237,6 +237,10 @@ confronto A (25/10) ↔ C (`main`) è nella §3.
    crescite. Le entità che restano sotto soglia dopo il tentativo → noindex con lista approvata.
 4. **Nessuna nuova espansione di massa** (mondi o lingue interi in pochi giorni) finché i segnali non si stabilizzano;
    pubblicazione a lotti, ognuno con controllo di qualità.
+
+Limiti noti della baseline (bloccano per scelta, si risolvono con `npm run seo:baseline` motivato nella PR): molte
+entità brevi aggiunte a un gruppo esistente (mediana del testo −25 %), ≥ 20 nuove pagine noindex o canonicalizzate
+in un gruppo. Conflitto di merge sul file: versione di `main`, build, `seo:baseline`.
 
 Rollback: revert del commit. La baseline può bloccare una PR legittima: `npm run seo:baseline` + commit (diff
 visibile in review); in caso di falso positivo sistematico si alzano le soglie in `scripts/seo-baseline.ts` (non i

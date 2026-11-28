@@ -44,7 +44,7 @@ import { imageSize } from './image-size';
 import { runInNewContext } from 'node:vm';
 import { COOKIE_CONSENT_MAX_AGE_DAYS, COOKIE_CONSENT_STORAGE_KEY, COOKIE_CONSENT_VERSION } from '../src/store/useCookieConsent';
 import { buildBaseline, compareBaseline, groupOf, type PageSample } from './seo-baseline';
-import { cannibalization, mapHeaders, normalizePath, parseCount, parseNumber, readDetailRows, readUiExport, templateOf } from './seo-gsc-report';
+import { cannibalization, isoDate, mapHeaders, normalizePath, parseCount, parseNumber, readDetailRows, readUiExport, templateOf } from './seo-gsc-report';
 import type { WorldDataset } from '../src/types';
 import { animeWorlds } from '../src/data/worlds';
 import {
@@ -628,6 +628,7 @@ async function main() {
     assert.equal(groupOf('/fr/naruto/characters'), 'fr|naruto|characters:index');
     assert.equal(groupOf('/fr/naruto/characters/page/3'), 'fr|naruto|characters:index');
     assert.equal(groupOf('/es/naruto/characters/fukasaku'), 'es|naruto|characters');
+    assert.equal(groupOf('/en/naruto/characters/page'), 'en|naruto|characters', 'uno slug "page" è un\'entità');
   });
 
   test('baseline SEO: regressioni di massa bloccanti, crescita improvvisa come avviso', () => {
@@ -693,6 +694,14 @@ async function main() {
     assert.equal(can[0].query, 'naruto map');
     assert.deepEqual(can[0].pages.map((p) => p.page), ['/en/naruto', '/en/naruto/map']);
     assert.equal(readDetailRows('Top pages,Clicks\n/en,1\n'), null, 'un export UI non è un insieme di righe dettagliate');
+    // Metrica in testa all'etichetta.
+    const first = readUiExport('Pagine,Clic ultimi 28 giorni,Clic periodo precedente,Impressioni ultimi 28 giorni,Impressioni periodo precedente\n/en,1,4,10,90\n');
+    assert.deepEqual([first.rows[0].before.impressions, first.rows[0].after.impressions, first.rows[0].before.clicks], [90, 10, 4]);
+    // BigQuery bulk export: data_date, url, sum_top_position (0-based, sommato).
+    const bq = readDetailRows('data_date,query,url,impressions,clicks,sum_top_position\n2026-10-20,naruto map,https://animapverse.com/en/naruto,100,5,300\n')!;
+    assert.ok(bq, 'export BigQuery riconosciuto');
+    assert.equal(bq[0].position, 4);
+    assert.deepEqual([isoDate('20261026'), isoDate('26/10/2026'), isoDate('2026-10-26T00:00:00Z')], ['2026-10-26', '2026-10-26', '2026-10-26']);
   });
 
   test('banner cookie: lo script di <head> riconosce un consenso valido come lo store', () => {
