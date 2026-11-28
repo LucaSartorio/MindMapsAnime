@@ -19,9 +19,9 @@ interface AppShellProps {
  */
 export function AppShell({ children }: AppShellProps) {
   const { t } = useTranslation();
-  // Banner cookie e modale segnalazioni dipendono da stato solo-browser
-  // (consenso in localStorage): montati dopo l'idratazione, mai nell'HTML
-  // pre-renderizzato (che resta identico per tutti, crawler compresi).
+  // La modale segnalazioni dipende da stato solo-browser: montata dopo
+  // l'idratazione. Il banner cookie invece è nell'HTML pre-renderizzato (LCP) e
+  // gestisce da sé il consenso sconosciuto lato server (vedi CookieConsent).
   const hydrated = useHydrated();
   return (
     <div className="h-dvh flex flex-col">
@@ -42,12 +42,8 @@ export function AppShell({ children }: AppShellProps) {
         {children}
       </main>
       <Footer />
-      {hydrated && (
-        <>
-          <CookieConsent />
-          <ReportModal />
-        </>
-      )}
+      <CookieConsent />
+      {hydrated && <ReportModal />}
     </div>
   );
 }

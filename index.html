@@ -23,6 +23,13 @@
       navigazione SPA, tag marcati `data-seo`). Vedi docs/SEO.md.
     -->
     <title>AniMapVerse</title>
+    <!--
+      Banner cookie pre-renderizzato (LCP): con un consenso valido già salvato
+      lo si nasconde PRIMA del primo paint. Stesse regole di readStoredConsent in
+      src/store/useCookieConsent.ts (chiave, versione, 180 giorni): l'allineamento
+      è verificato da scripts/test-seo.ts. Nessun dato lascia il browser.
+    -->
+    <script>try{var c=JSON.parse(localStorage.getItem('animeInteractiveMaps.cookieConsent')||'null'),t=c&&typeof c.timestamp==='string'?Date.parse(c.timestamp):NaN;if(c&&c.version===2&&t===t&&Date.now()-t<=15552000000)document.documentElement.setAttribute('data-cookie-consent','')}catch(e){}</script>
     <!--seo-head-->
     <!-- I font sono self-hosted (vedi src/main.tsx): nessuna richiesta a
          CDN di terze parti, nessun indirizzo IP trasmesso a Google. -->

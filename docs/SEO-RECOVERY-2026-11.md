@@ -128,7 +128,7 @@ collegamenti esistono ma il testo che li spiega manca.
 | P0 | Scala dei contenuti programmatici superiore alla loro profondità (crescita 3,6× in 9 giorni; ~2.900 URL sottili) | **Strategia + lista**; richiede decisioni del proprietario (§11) |
 | P1 | Nessun controllo contro regressioni o crescite di massa (categoria sparita, noindex/canonical in massa, template svuotati) | **Corretto**: baseline in `seo:check` |
 | P1 | Mancano i dati GSC per confermare la causa e scegliere le pagine | **Azione del proprietario** (§11) + `npm run seo:gsc` pronto |
-| P2 | Prima visita: l'LCP è il banner cookie, montato dopo l'idratazione (mobile limitato: Fukasaku 1,4–4,1 s, `/en/one-piece` ~6 s; contenuto dipinto a ~0,6 s) | **Task separato proposto** (componente condiviso e legale: T3, PR dedicata) |
+| P2 | Prima visita: l'LCP è il banner cookie, montato dopo l'idratazione (mobile limitato, produzione: Fukasaku 1,4–4,1 s, `/en/one-piece` ~6 s; contenuto dipinto a ~0,6 s) | **Corretto** in un commit separato (§7.1) |
 | P2 | `www` → apex con 307 | **Azione del proprietario** (Vercel → Domains → redirect 308) |
 | P2 | Strategia `/es` `/fr` (metà degli URL indicizzabili, traduzioni AI) | in attesa del segmento per lingua in GSC |
 | P3 | Fukasaku segnato vivo (muore nell'assalto di Pain) | **Corretto** (`status: 'deceased'`) |
@@ -169,6 +169,26 @@ traffico/campioni (CrUX raggruppa solo URL con visite), non un errore tecnico.
 | `src/data/naruto/charactersBatch1.ts` | Fukasaku `deceased` |
 | `docs/seo-recovery/thin-entity-pages-2026-11.csv` | lista per arricchimento / decisione |
 
+### 7.1 Banner cookie e LCP (commit separato, revertibile da solo)
+
+Il banner era montato solo dopo l'idratazione (dataset del mondo incluso) e diventava l'elemento LCP delle prime
+visite. Ora è nell'HTML pre-renderizzato; uno script di `<head>` (`index.html`, stesse regole di chiave, versione e
+scadenza dello store, verificate in sandbox da `test-seo`) lo nasconde prima del primo paint se esiste un consenso
+valido; SSR e primo render client restano identici, dopo l'idratazione decide lo store; il dialog preferenze resta
+solo client; il link all'informativa usa la lingua dell'URL (`/en/cookie-policy`, prima `/cookie-policy` →
+redirect verso `/it`). Consenso, focus, padding di scorrimento e ordine dell'onboarding invariati.
+
+| Pagina (Moto G4, CPU 4×, 1,6 Mbps, `preview:static` senza compressione, mediana di 3) | LCP prima | LCP dopo |
+| --- | ---: | ---: |
+| `/en/naruto/characters/fukasaku` | 9.988 ms | 2.820 ms |
+| `/en/one-piece` | 15.752 ms | 3.244 ms |
+| `/en/one-piece/characters/monkey-d-luffy` · `/en/black-clover/abilities/anti-magic` · `/en` | 3.304 · 2.772 · 2.644 ms | 3.304 · 2.808 · 2.608 ms |
+
+CLS ≤ 0,064 ovunque (invariato entro il rumore). Su `/en/one-piece/map` l'LCP resta l'immagine della mappa (scelta
+progettuale, precaricata) e sull'indice da 863 KB `/it/naruto/characters` il banner arriva in fondo all'HTML non
+compresso del server locale: in produzione la pagina pesa 60 KB (brotli). Visitatore di ritorno: banner nascosto
+prima dell'idratazione (nessun flash) e rimosso dopo. Rollback: revert del solo commit del banner.
+
 Ogni nuovo controllo è stato provato contro la regressione che deve bloccare (noindex su 300 personaggi Naruto,
 `<main>` svuotato, posizione del breadcrumb errata, link rimossi verso una pagina): tutti falliscono come atteso.
 
@@ -186,7 +206,8 @@ confronto A (25/10) ↔ C (`main`) è nella §3.
 
 - Conferma della causa con i dati query × pagina (§11).
 - Programma di arricchimento delle 722 entità (per priorità GSC), decisione sulle 35 candidate E, strategia es/fr.
-- LCP del banner cookie (task separato), `www` 307.
+- `www` 307; contrasto della card Jujutsu Kaisen della home a 320 px (`audit:contrast`, preesistente su `main`,
+  task separato).
 
 ## 11. Azioni richieste al proprietario
 

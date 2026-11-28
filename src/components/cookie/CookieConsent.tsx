@@ -4,7 +4,9 @@ import { useTranslation } from 'react-i18next';
 import { Modal } from '@/components/common/Modal';
 import { Button } from '@/components/common/Button';
 import { useCookieConsent } from '@/store/useCookieConsent';
-import { parseSeoPath } from '@/seo/paths';
+import { parseSeoPath, staticPagePath } from '@/seo/paths';
+import { useSeoLang } from '@/seo/useSeoLang';
+import { useHydrated } from '@/lib/useHydrated';
 
 /**
  * Sistema di consenso ai cookie conforme a GDPR + ePrivacy e alle Linee
@@ -14,6 +16,13 @@ import { parseSeoPath } from '@/seo/paths';
  *    tecnici).
  *  - Dialog preferenze granulari (tecnici sempre attivi, analytics opt-in).
  *  - Richiamabile in ogni momento dal footer ("Gestisci cookie").
+ *
+ * Il banner è nell'HTML pre-renderizzato (prima visita = primo paint, non dopo
+ * l'idratazione: altrimenti diventava l'elemento LCP a 1,4–6 s su mobile). Il
+ * server non conosce il consenso: SSR e primo render client mostrano sempre il
+ * banner marcato `data-cookie-banner-prerender`, che lo script in `<head>`
+ * (index.html) nasconde se esiste un consenso valido; dopo l'idratazione decide
+ * lo store. Il dialog preferenze resta solo client.
  */
 export function CookieConsent() {
   const { t } = useTranslation();
@@ -25,6 +34,8 @@ export function CookieConsent() {
   const savePreferences = useCookieConsent((s) => s.savePreferences);
   const openPreferences = useCookieConsent((s) => s.openPreferences);
   const closePreferences = useCookieConsent((s) => s.closePreferences);
+  const hydrated = useHydrated();
+  const lang = useSeoLang();
 
   // Stato locale del toggle analytics nel dialog preferenze.
   const [analytics, setAnalytics] = useState(consent?.analytics ?? false);
@@ -68,13 +79,17 @@ export function CookieConsent() {
   // Sulla mappa, sotto md, il banner sta SOPRA la bottom nav degli strumenti
   // invece di coprirla (UX-02): i pulsanti restano visibili e raggiungibili.
   const onMapPage = parseSeoPath(useLocation().pathname).kind === 'map';
+  // Prima dell'idratazione il consenso non è noto: banner sempre nel markup (lo
+  // nasconde il CSS se lo script di <head> ha trovato un consenso valido).
+  const showBanner = hydrated ? bannerVisible : true;
 
   return (
     <>
       {/* Banner di prima scelta */}
-      {bannerVisible && (
+      {showBanner && (
         <div
           ref={bannerRef}
+          data-cookie-banner-prerender={hydrated ? undefined : ''}
           role="dialog"
           aria-modal="false"
           aria-labelledby="cookie-banner-title"
@@ -93,7 +108,7 @@ export function CookieConsent() {
               <p id="cookie-banner-desc" className="text-sm text-ink-300 leading-relaxed">
                 {t('cookie.banner.body')}{' '}
                 <Link
-                  to="/cookie-policy"
+                  to={staticPagePath(lang, 'cookie-policy')}
                   className="text-chakra-300 hover:underline"
                 >
                   {t('cookie.banner.readMore')}
@@ -116,69 +131,71 @@ export function CookieConsent() {
         </div>
       )}
 
-      {/* Dialog preferenze granulari */}
-      <Modal
-        open={isPreferencesOpen}
-        onClose={closePreferences}
-        title={t('cookie.prefs.title')}
-        size="md"
-        shareable={false}
-        footer={
-          <>
-            <Button variant="ghost" onClick={rejectAll}>
-              {t('cookie.actions.rejectAll')}
-            </Button>
-            <Button variant="ghost" onClick={() => savePreferences(analytics)}>
-              {t('cookie.actions.save')}
-            </Button>
-            <Button variant="primary" onClick={acceptAll}>
-              {t('cookie.actions.acceptAll')}
-            </Button>
-          </>
-        }
-      >
-        <p className="text-sm text-ink-300 leading-relaxed">
-          {t('cookie.prefs.intro')}{' '}
-          <Link to="/cookie-policy" className="text-chakra-300 hover:underline">
-            {t('cookie.banner.readMore')}
-          </Link>
-          .
-        </p>
+      {/* Dialog preferenze granulari (solo client: si apre su richiesta) */}
+      {hydrated && (
+        <Modal
+          open={isPreferencesOpen}
+          onClose={closePreferences}
+          title={t('cookie.prefs.title')}
+          size="md"
+          shareable={false}
+          footer={
+            <>
+              <Button variant="ghost" onClick={rejectAll}>
+                {t('cookie.actions.rejectAll')}
+              </Button>
+              <Button variant="ghost" onClick={() => savePreferences(analytics)}>
+                {t('cookie.actions.save')}
+              </Button>
+              <Button variant="primary" onClick={acceptAll}>
+                {t('cookie.actions.acceptAll')}
+              </Button>
+            </>
+          }
+        >
+          <p className="text-sm text-ink-300 leading-relaxed">
+            {t('cookie.prefs.intro')}{' '}
+            <Link to={staticPagePath(lang, 'cookie-policy')} className="text-chakra-300 hover:underline">
+              {t('cookie.banner.readMore')}
+            </Link>
+            .
+          </p>
 
-        {/* Cookie tecnici: sempre attivi */}
-        <div className="panel-soft p-4 flex items-start justify-between gap-4">
-          <div>
-            <h3 className="text-sm font-semibold text-ink-100">
-              {t('cookie.prefs.necessaryTitle')}
-            </h3>
-            <p className="text-xs text-ink-300 leading-relaxed mt-1">
-              {t('cookie.prefs.necessaryBody')}
-            </p>
+          {/* Cookie tecnici: sempre attivi */}
+          <div className="panel-soft p-4 flex items-start justify-between gap-4">
+            <div>
+              <h3 className="text-sm font-semibold text-ink-100">
+                {t('cookie.prefs.necessaryTitle')}
+              </h3>
+              <p className="text-xs text-ink-300 leading-relaxed mt-1">
+                {t('cookie.prefs.necessaryBody')}
+              </p>
+            </div>
+            <span className="shrink-0 text-xs font-mono uppercase tracking-wider text-chakra-300 mt-1">
+              {t('cookie.prefs.alwaysOn')}
+            </span>
           </div>
-          <span className="shrink-0 text-xs font-mono uppercase tracking-wider text-chakra-300 mt-1">
-            {t('cookie.prefs.alwaysOn')}
-          </span>
-        </div>
 
-        {/* Cookie analytics: opt-in */}
-        <label className="panel-soft p-4 flex items-start justify-between gap-4 cursor-pointer">
-          <div>
-            <h3 className="text-sm font-semibold text-ink-100">
-              {t('cookie.prefs.analyticsTitle')}
-            </h3>
-            <p className="text-xs text-ink-300 leading-relaxed mt-1">
-              {t('cookie.prefs.analyticsBody')}
-            </p>
-          </div>
-          <input
-            type="checkbox"
-            checked={analytics}
-            onChange={(e) => setAnalytics(e.target.checked)}
-            className="mt-1 h-5 w-5 shrink-0 accent-chakra-500"
-            aria-label={t('cookie.prefs.analyticsTitle')}
-          />
-        </label>
-      </Modal>
+          {/* Cookie analytics: opt-in */}
+          <label className="panel-soft p-4 flex items-start justify-between gap-4 cursor-pointer">
+            <div>
+              <h3 className="text-sm font-semibold text-ink-100">
+                {t('cookie.prefs.analyticsTitle')}
+              </h3>
+              <p className="text-xs text-ink-300 leading-relaxed mt-1">
+                {t('cookie.prefs.analyticsBody')}
+              </p>
+            </div>
+            <input
+              type="checkbox"
+              checked={analytics}
+              onChange={(e) => setAnalytics(e.target.checked)}
+              className="mt-1 h-5 w-5 shrink-0 accent-chakra-500"
+              aria-label={t('cookie.prefs.analyticsTitle')}
+            />
+          </label>
+        </Modal>
+      )}
     </>
   );
 }

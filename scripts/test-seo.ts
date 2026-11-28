@@ -32,12 +32,17 @@
  *    bloccanti (categoria sparita, noindex in massa, testo/link del template
  *    dimezzati), crescite improvvise come avviso, variazioni minime ignorate;
  *  - analisi export Search Console (`scripts/seo-gsc-report.ts`): intestazioni
- *    it/en, modalità confronto, numeri localizzati, template per URL.
+ *    it/en, modalità confronto, numeri localizzati, template per URL;
+ *  - banner cookie pre-renderizzato: lo script di `<head>` che lo nasconde prima
+ *    del paint applica le stesse regole del consenso dello store (chiave,
+ *    versione, scadenza), eseguito in una sandbox.
  */
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { imageSize } from './image-size';
+import { runInNewContext } from 'node:vm';
+import { COOKIE_CONSENT_MAX_AGE_DAYS, COOKIE_CONSENT_STORAGE_KEY, COOKIE_CONSENT_VERSION } from '../src/store/useCookieConsent';
 import { buildBaseline, compareBaseline, groupOf, type PageSample } from './seo-baseline';
 import { cannibalization, mapHeaders, normalizePath, parseCount, parseNumber, readDetailRows, readUiExport, templateOf } from './seo-gsc-report';
 import type { WorldDataset } from '../src/types';
@@ -688,6 +693,30 @@ async function main() {
     assert.equal(can[0].query, 'naruto map');
     assert.deepEqual(can[0].pages.map((p) => p.page), ['/en/naruto', '/en/naruto/map']);
     assert.equal(readDetailRows('Top pages,Clicks\n/en,1\n'), null, 'un export UI non è un insieme di righe dettagliate');
+  });
+
+  test('banner cookie: lo script di <head> riconosce un consenso valido come lo store', () => {
+    const html = readFileSync(join(process.cwd(), 'index.html'), 'utf8');
+    const script = /<script>(try\{[\s\S]*?data-cookie-consent[\s\S]*?)<\/script>/.exec(html)?.[1];
+    assert.ok(script, 'script anti-flash del banner assente da index.html');
+    const run = (stored: unknown) => {
+      const attrs: Record<string, string> = {};
+      const store = new Map<string, string>(stored === undefined ? [] : [[COOKIE_CONSENT_STORAGE_KEY, JSON.stringify(stored)]]);
+      runInNewContext(script!, {
+        localStorage: { getItem: (k: string) => store.get(k) ?? null },
+        document: { documentElement: { setAttribute: (k: string, v: string) => (attrs[k] = v) } },
+        JSON, Date,
+      });
+      return 'data-cookie-consent' in attrs;
+    };
+    const day = 24 * 60 * 60 * 1000;
+    const at = (daysAgo: number) => new Date(Date.now() - daysAgo * day).toISOString();
+    assert.equal(run(undefined), false, 'nessun consenso → banner visibile');
+    assert.equal(run({ necessary: true, analytics: false, timestamp: at(1), version: COOKIE_CONSENT_VERSION }), true, 'consenso valido → nascosto');
+    assert.equal(run({ necessary: true, analytics: true, timestamp: at(COOKIE_CONSENT_MAX_AGE_DAYS - 1), version: COOKIE_CONSENT_VERSION }), true, 'non ancora scaduto');
+    assert.equal(run({ necessary: true, analytics: true, timestamp: at(COOKIE_CONSENT_MAX_AGE_DAYS + 1), version: COOKIE_CONSENT_VERSION }), false, 'scaduto → banner');
+    assert.equal(run({ necessary: true, analytics: true, timestamp: at(1), version: COOKIE_CONSENT_VERSION - 1 }), false, 'versione precedente → banner');
+    assert.equal(run({ necessary: true, analytics: true, version: COOKIE_CONSENT_VERSION }), false, 'senza data → banner');
   });
 
   console.log(`\n${passed} test superati${process.exitCode ? ' — CI SONO FALLIMENTI' : ''}`);
