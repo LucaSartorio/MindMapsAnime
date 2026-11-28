@@ -1,21 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-27T06:18:37.485Z",
-  "status": "ready",
+  "generatedAt": "2026-11-28T06:04:34.235Z",
+  "status": "backlog",
   "feedTail": [
-    {
-      "renderId": "character-versus:hunterxhunter:gon-freecss-vs-blackclover-yami-sukehiro@en",
-      "contentType": "character-versus",
-      "animes": [
-        "hunterxhunter",
-        "blackclover"
-      ],
-      "characters": [
-        "hunterxhunter:gon-freecss",
-        "blackclover:yami-sukehiro"
-      ],
-      "part": null
-    },
     {
       "renderId": "guess-character:onepiece:roronoa-zoro@en",
       "contentType": "guess-character",
@@ -72,6 +59,19 @@
         "jujutsukaisen:suguru-geto"
       ],
       "part": null
+    },
+    {
+      "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-fullmetalalchemist-alphonse-elric@en",
+      "contentType": "character-versus",
+      "animes": [
+        "attackontitan",
+        "fullmetalalchemist"
+      ],
+      "characters": [
+        "attackontitan:mikasa-ackerman",
+        "fullmetalalchemist:alphonse-elric"
+      ],
+      "part": null
     }
   ],
   "rules": {
@@ -92,483 +92,28 @@
     "error": null
   },
   "backlog": {
-    "unpublished": [],
+    "unpublished": [
+      {
+        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-fullmetalalchemist-alphonse-elric@en",
+        "contentType": "character-versus",
+        "renderedAt": "2026-11-28T06:04:33.523Z",
+        "missing": [
+          "instagram",
+          "facebook",
+          "tiktok",
+          "youtube"
+        ]
+      }
+    ],
     "unfinished": [],
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "feed56:character-journey:jujutsukaisen:suguru-geto@en:samples0",
-  "rejected": {
-    "JOURNEY_PART_ORDER": 36
-  },
-  "considered": 733,
-  "trace": {
-    "traceVersion": 1,
-    "mode": "coldstart",
-    "seed": "feed56:character-journey:jujutsukaisen:suguru-geto@en:samples0",
-    "analytics": {
-      "coldStart": true,
-      "samples": 0,
-      "contents": 0,
-      "minimumSamples": 8
-    },
-    "recent": [
-      {
-        "renderId": "character-versus:hunterxhunter:gon-freecss-vs-blackclover-yami-sukehiro@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "blackclover"
-        ],
-        "characters": [
-          "hunterxhunter:gon-freecss",
-          "blackclover:yami-sukehiro"
-        ]
-      },
-      {
-        "renderId": "guess-character:onepiece:roronoa-zoro@en",
-        "contentType": "guess-character",
-        "animes": [
-          "onepiece"
-        ],
-        "characters": [
-          "onepiece:roronoa-zoro"
-        ]
-      },
-      {
-        "renderId": "character-journey:blackclover:yuno-grinberryall:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:yuno-grinberryall"
-        ]
-      },
-      {
-        "renderId": "character-versus:bleach:rukia-kuchiki-vs-fullmetalalchemist-edward-elric@en",
-        "contentType": "character-versus",
-        "animes": [
-          "bleach",
-          "fullmetalalchemist"
-        ],
-        "characters": [
-          "bleach:rukia-kuchiki",
-          "fullmetalalchemist:edward-elric"
-        ]
-      },
-      {
-        "renderId": "guess-character:naruto:naruto-uzumaki@en",
-        "contentType": "guess-character",
-        "animes": [
-          "naruto"
-        ],
-        "characters": [
-          "naruto:naruto-uzumaki"
-        ]
-      },
-      {
-        "renderId": "character-journey:jujutsukaisen:suguru-geto@en",
-        "contentType": "character-journey",
-        "animes": [
-          "jujutsukaisen"
-        ],
-        "characters": [
-          "jujutsukaisen:suguru-geto"
-        ]
-      }
-    ],
-    "constraints": {
-      "sameAnimeStreak": {
-        "animes": [
-          "jujutsukaisen"
-        ],
-        "length": 1
-      },
-      "forcedAnimeRotation": false,
-      "blockedAnimes": [],
-      "blockedCharacters": [
-        "jujutsukaisen:suguru-geto"
-      ],
-      "characterCooldown": [
-        "hunterxhunter:gon-freecss",
-        "blackclover:yami-sukehiro",
-        "onepiece:roronoa-zoro",
-        "blackclover:yuno-grinberryall",
-        "bleach:rukia-kuchiki",
-        "fullmetalalchemist:edward-elric",
-        "naruto:naruto-uzumaki",
-        "jujutsukaisen:suguru-geto"
-      ],
-      "contentTypeStreak": {
-        "contentType": "character-journey",
-        "length": 1
-      }
-    },
-    "hardRulesTriggered": {
-      "JOURNEY_PART_ORDER": 36
-    },
-    "candidates": {
-      "considered": 733,
-      "eligible": 697,
-      "byContentType": {
-        "character-journey": {
-          "considered": 418,
-          "eligible": 382
-        },
-        "guess-character": {
-          "considered": 78,
-          "eligible": 78
-        },
-        "character-versus": {
-          "considered": 237,
-          "eligible": 237
-        }
-      }
-    },
-    "excluded": [
-      {
-        "renderId": "character-journey:blackclover:asta:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:asta"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:blackclover:asta:part-03@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:asta"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 3 before Part 2 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:blackclover:noelle-silva:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:noelle-silva"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:blackclover:yami-sukehiro:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "blackclover"
-        ],
-        "characters": [
-          "blackclover:yami-sukehiro"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:bleach:byakuya-kuchiki:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:byakuya-kuchiki"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:bleach:ichigo-kurosaki:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:ichigo-kurosaki"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:bleach:ichigo-kurosaki:part-03@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:ichigo-kurosaki"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 3 before Part 2 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:bleach:ichigo-kurosaki:part-04@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:ichigo-kurosaki"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 4 before Part 3 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:bleach:orihime-inoue:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:orihime-inoue"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      },
-      {
-        "renderId": "character-journey:bleach:renji-abarai:part-02@en",
-        "contentType": "character-journey",
-        "animes": [
-          "bleach"
-        ],
-        "characters": [
-          "bleach:renji-abarai"
-        ],
-        "reasons": [
-          "JOURNEY_PART_ORDER"
-        ],
-        "messages": [
-          "sequence: Part 2 before Part 1 (never publish parts out of order)"
-        ],
-        "potentialScore": 62
-      }
-    ],
-    "status": "selected",
-    "selectedId": "character-versus:attackontitan:mikasa-ackerman-vs-fullmetalalchemist-alphonse-elric",
-    "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-fullmetalalchemist-alphonse-elric@en",
-    "contentType": "character-versus",
-    "animes": [
-      "attackontitan",
-      "fullmetalalchemist"
-    ],
-    "characters": [
-      "attackontitan:mikasa-ackerman",
-      "fullmetalalchemist:alphonse-elric"
-    ],
-    "score": 91.89,
-    "base": 79.89,
-    "reasons": [
-      "coldstart: novelty +24.0, jitter +5.9",
-      "+12 main character"
-    ],
-    "ranked": [
-      {
-        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-fullmetalalchemist-alphonse-elric@en",
-        "contentType": "character-versus",
-        "animes": [
-          "attackontitan",
-          "fullmetalalchemist"
-        ],
-        "score": 91.89,
-        "reasons": [
-          "coldstart: novelty +24.0, jitter +5.9",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "guess-character:attackontitan:falco-grice@en",
-        "contentType": "guess-character",
-        "animes": [
-          "attackontitan"
-        ],
-        "score": 91.78,
-        "reasons": [
-          "coldstart: novelty +24.0, jitter +5.8",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-attackontitan-armin-arlert@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "attackontitan"
-        ],
-        "score": 91.6,
-        "reasons": [
-          "coldstart: novelty +24.0, jitter +5.6",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-dragonball-vegeta@en",
-        "contentType": "character-versus",
-        "animes": [
-          "hunterxhunter",
-          "dragonball"
-        ],
-        "score": 91.38,
-        "reasons": [
-          "coldstart: novelty +23.5, jitter +5.9",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "guess-character:bleach:yasutora-chad-sado@en",
-        "contentType": "guess-character",
-        "animes": [
-          "bleach"
-        ],
-        "score": 91.3,
-        "reasons": [
-          "coldstart: novelty +23.5, jitter +5.8",
-          "+12 main character"
-        ]
-      },
-      {
-        "renderId": "character-journey:dragonball:goku:part-06@en",
-        "contentType": "character-journey",
-        "animes": [
-          "dragonball"
-        ],
-        "score": 91.26,
-        "reasons": [
-          "coldstart: novelty +20.5, jitter +4.8",
-          "+12 main character",
-          "-12 format cooldown: 1 character-journey item(s) in a row",
-          "+14 continues a started series (Part 6 promised)",
-          "+2 format below its target share (45% < 50%)"
-        ]
-      }
-    ],
-    "explanation": [
-      "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
-      "jujutsukaisen:suguru-geto excluded in every format (maxSameCharacterStreak 1).",
-      "Selected character-versus:attackontitan:mikasa-ackerman-vs-fullmetalalchemist-alphonse-elric@en (character-versus, attackontitan + fullmetalalchemist) — coldstart, score 91.89 among 697 valid candidate(s)."
-    ]
-  },
-  "pick": {
-    "contentId": "character-versus:attackontitan:mikasa-ackerman-vs-fullmetalalchemist-alphonse-elric",
-    "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-fullmetalalchemist-alphonse-elric@en",
-    "contentType": "character-versus",
-    "animes": [
-      "attackontitan",
-      "fullmetalalchemist"
-    ],
-    "characters": [
-      "attackontitan:mikasa-ackerman",
-      "fullmetalalchemist:alphonse-elric"
-    ],
-    "part": null,
-    "partCount": null,
-    "score": 91.89,
-    "reasons": [
-      "coldstart: novelty +24.0, jitter +5.9",
-      "+12 main character"
-    ]
-  },
-  "request": {
-    "template": "characterVersus",
-    "anime": "attackontitan",
-    "subject": "mikasa-ackerman",
-    "opponent": {
-      "anime": "fullmetalalchemist",
-      "subject": "alphonse-elric"
-    },
-    "locale": "en",
-    "hook": "Mikasa Ackerman vs Alphonse Elric: whose journey is bigger?",
-    "hookType": "versus",
-    "hookId": "cv-versus-2",
-    "cta": "Who should compete next?",
-    "ctaType": "comment-next-matchup",
-    "selection": {
-      "mode": "coldstart",
-      "score": 91.89,
-      "seed": "feed56:character-journey:jujutsukaisen:suguru-geto@en:samples0"
-    },
-    "notes": "growth selector (coldstart): coldstart: novelty +24.0, jitter +5.9; +12 main character"
-  },
-  "alternatives": [
-    {
-      "renderId": "guess-character:attackontitan:falco-grice@en",
-      "contentType": "guess-character",
-      "score": 91.78
-    },
-    {
-      "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-attackontitan-armin-arlert@en",
-      "contentType": "character-versus",
-      "score": 91.6
-    },
-    {
-      "renderId": "character-versus:hunterxhunter:killua-zoldyck-vs-dragonball-vegeta@en",
-      "contentType": "character-versus",
-      "score": 91.38
-    },
-    {
-      "renderId": "guess-character:bleach:yasutora-chad-sado@en",
-      "contentType": "guess-character",
-      "score": 91.3
-    },
-    {
-      "renderId": "character-journey:dragonball:goku:part-06@en",
-      "contentType": "character-journey",
-      "score": 91.26
-    }
-  ],
-  "eligible": 697
+  "seed": "",
+  "reason": "publish the existing render first: character-versus:attackontitan:mikasa-ackerman-vs-fullmetalalchemist-alphonse-elric@en (it counts as today's video; no new content)",
+  "alternatives": [],
+  "rejected": {},
+  "considered": 0,
+  "eligible": 0,
+  "trace": null
 }
