@@ -27,12 +27,19 @@
  *  - immagini delle mappe (PERF-02): ogni map level punta a un file esistente in
  *    `public/` con le proporzioni del suo viewBox, un WebP ricavato da un originale
  *    ne conserva le dimensioni in pixel, la mappa principale (precaricata, LCP della
- *    `/map`) resta sotto il budget di peso.
+ *    `/map`) resta sotto il budget di peso;
+ *  - baseline SEO (`scripts/seo-baseline.ts`): gruppi per URL, regressioni di massa
+ *    bloccanti (categoria sparita, noindex in massa, testo/link del template
+ *    dimezzati), crescite improvvise come avviso, variazioni minime ignorate;
+ *  - analisi export Search Console (`scripts/seo-gsc-report.ts`): intestazioni
+ *    it/en, modalità confronto, numeri localizzati, template per URL.
  */
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { imageSize } from './image-size';
+import { buildBaseline, compareBaseline, groupOf, type PageSample } from './seo-baseline';
+import { cannibalization, mapHeaders, normalizePath, parseCount, parseNumber, readDetailRows, readUiExport, templateOf } from './seo-gsc-report';
 import type { WorldDataset } from '../src/types';
 import { animeWorlds } from '../src/data/worlds';
 import {
@@ -605,6 +612,82 @@ async function main() {
       const bytes = statSync(main.file).size;
       assert.ok(bytes <= WORLD_MAP_IMAGE_BUDGET, `${d.world.slug}: ${main.url} pesa ${bytes} byte`);
     }
+  });
+
+  test('baseline SEO: gruppi derivati dall\'URL', () => {
+    assert.equal(groupOf('/en'), 'en|-|static');
+    assert.equal(groupOf('/it/about'), 'it|-|static');
+    assert.equal(groupOf('/en/naruto'), 'en|naruto|landing');
+    assert.equal(groupOf('/en/naruto/map'), 'en|naruto|map');
+    assert.equal(groupOf('/en/naruto/timeline/page/2'), 'en|naruto|timeline');
+    assert.equal(groupOf('/fr/naruto/characters'), 'fr|naruto|characters:index');
+    assert.equal(groupOf('/fr/naruto/characters/page/3'), 'fr|naruto|characters:index');
+    assert.equal(groupOf('/es/naruto/characters/fukasaku'), 'es|naruto|characters');
+  });
+
+  test('baseline SEO: regressioni di massa bloccanti, crescita improvvisa come avviso', () => {
+    const page = (url: string, o: Partial<PageSample> = {}): PageSample => ({
+      url, indexable: true, canonicalized: false, noindex: false, mainText: 900, mainLinks: 12, ...o,
+    });
+    const chars = (n: number, o: Partial<PageSample> = {}) =>
+      Array.from({ length: n }, (_, i) => page(`/en/naruto/characters/c${i}`, o));
+    const abil = Array.from({ length: 100 }, (_, i) => page(`/en/naruto/abilities/a${i}`));
+    const base = buildBaseline([...chars(100), ...abil], 200);
+    const same = compareBaseline(base, buildBaseline([...chars(100), ...abil], 200));
+    assert.deepEqual([same.errors, same.warnings], [[], []], 'nessuna variazione → nessun segnale');
+    const small = compareBaseline(base, buildBaseline([...chars(97), ...abil], 197));
+    assert.deepEqual([small.errors, small.warnings], [[], []], 'un calo del 3 % è rumore');
+
+    const gone = compareBaseline(base, buildBaseline(abil, 100));
+    assert.ok(gone.errors.some((e) => e.includes('en|naruto|characters') && e.includes('sparito')), 'categoria sparita');
+    assert.ok(gone.errors.some((e) => e.includes('indicizzabili totali')), 'calo totale');
+
+    const noindex = compareBaseline(base, buildBaseline([...chars(60), ...chars(40, { indexable: false, noindex: true }).map((p, i) => ({ ...p, url: `/en/naruto/characters/n${i}` })), ...abil], 160));
+    assert.ok(noindex.errors.some((e) => e.includes('quota noindex')), 'noindex in massa');
+    assert.ok(noindex.errors.some((e) => e.includes('indicizzabili 100 → 60')), 'calo del gruppo');
+
+    const thin = compareBaseline(base, buildBaseline([...chars(100, { mainText: 400 }), ...abil], 200));
+    assert.ok(thin.errors.some((e) => e.includes('testo principale mediano 900 → 400')), 'template che perde testo');
+    const nolinks = compareBaseline(base, buildBaseline([...chars(100, { mainLinks: 2 }), ...abil], 200));
+    assert.ok(nolinks.errors.some((e) => e.includes('link contestuali')), 'navigazione contestuale persa');
+    const canon = compareBaseline(base, buildBaseline([...chars(70), ...chars(30, { indexable: false, canonicalized: true }).map((p, i) => ({ ...p, url: `/en/naruto/characters/k${i}` })), ...abil], 170));
+    assert.ok(canon.errors.some((e) => e.includes('canonical verso altre pagine 0 → 30')), 'canonical cambiate in massa');
+
+    const growth = compareBaseline(base, buildBaseline([...chars(100), ...abil, ...Array.from({ length: 80 }, (_, i) => page(`/en/naruto/abilities/b${i}`))], 280));
+    assert.deepEqual(growth.errors, [], 'la crescita non blocca');
+    assert.ok(growth.warnings.some((w) => w.includes('en|naruto|abilities') && w.includes('qualità')), 'crescita improvvisa segnalata');
+    const newWorld = compareBaseline(base, buildBaseline([...chars(100), ...abil, page('/en/bleach')], 201));
+    assert.ok(newWorld.notes.some((n) => n.includes('en|bleach|landing')) && newWorld.errors.length === 0, 'nuovo mondo = nota');
+  });
+
+  test('export Search Console: intestazioni it/en, periodi, numeri localizzati, template', () => {
+    assert.equal(parseNumber('11,1'), 11.1);
+    assert.equal(parseNumber('0,52%'), 0.52);
+    assert.equal(parseNumber('12.5%'), 12.5);
+    assert.equal(parseNumber('1,234'), 1234);
+    assert.equal(parseCount('1.234'), 1234);
+    assert.equal(parseCount('18573'), 18573);
+    // Interfaccia in italiano, confronto: GSC elenca prima il periodo recente.
+    const it = mapHeaders(['Pagine principali', 'Ultimi 28 giorni Clic', 'Periodo precedente Clic', 'Ultimi 28 giorni Impressioni', 'Periodo precedente Impressioni', 'Ultimi 28 giorni Posizione', 'Periodo precedente Posizione']);
+    assert.equal(it.dimension, 'page');
+    assert.equal(it.labels.before, 'Periodo precedente');
+    assert.equal(it.labels.after, 'Ultimi 28 giorni');
+    // Intervalli personalizzati: il periodo "prima" è quello con la data di inizio minore.
+    const custom = mapHeaders(['Top queries', '28/09/2026 - 25/10/2026 Clicks', '26/10/2026 - 22/11/2026 Clicks']);
+    assert.equal(custom.dimension, 'query');
+    assert.equal(custom.labels.before, '28/09/2026 - 25/10/2026');
+    const ui = readUiExport('\uFEFFTop pages,Last 28 days Clicks,Previous 28 days Clicks,Last 28 days Impressions,Previous 28 days Impressions,Last 28 days Position,Previous 28 days Position\nhttps://animapverse.com/en/naruto/characters/fukasaku/,0,3,10,"1,200",55.2,11.4\n');
+    assert.deepEqual(ui.rows[0].before, { clicks: 3, impressions: 1200, posSum: 11.4 * 1200 });
+    assert.equal(ui.rows[0].after.impressions, 10);
+    assert.equal(normalizePath(ui.rows[0].key), '/en/naruto/characters/fukasaku');
+    assert.equal(templateOf('https://mind-maps-anime.vercel.app/it/naruto/characters/page/2?x=1'), 'it|naruto|characters:index');
+    // Righe dettagliate (API): split per data e cannibalizzazione query × pagina.
+    const rows = readDetailRows('date,query,page,clicks,impressions,position\n2026-10-20,naruto map,https://animapverse.com/en/naruto,5,300,4\n2026-10-21,naruto map,https://animapverse.com/en/naruto/map,2,200,8\n2026-10-27,naruto map,https://animapverse.com/en/naruto,0,20,40\n')!;
+    assert.equal(rows.length, 3);
+    const can = cannibalization(rows, '2026-10-26');
+    assert.equal(can[0].query, 'naruto map');
+    assert.deepEqual(can[0].pages.map((p) => p.page), ['/en/naruto', '/en/naruto/map']);
+    assert.equal(readDetailRows('Top pages,Clicks\n/en,1\n'), null, 'un export UI non è un insieme di righe dettagliate');
   });
 
   console.log(`\n${passed} test superati${process.exitCode ? ' — CI SONO FALLIMENTI' : ''}`);

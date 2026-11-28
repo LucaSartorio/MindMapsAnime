@@ -1,7 +1,7 @@
 ---
 name: seo-opportunities
 description: Find and rank SEO issues and opportunities (thin/noindex, orphans, internal links, /es /fr translation gaps, titles, sitemap/hreflang/canonical) without inventing traffic data. Use for "controlla il SEO".
-argument-hint: [world] [quick] [path-to-search-console-export.csv]
+argument-hint: [world] [quick] [path-to-search-console-export(.csv|dir)] [--split YYYY-MM-DD]
 ---
 
 # SEO opportunities: $ARGUMENTS
@@ -21,8 +21,13 @@ sitemap, duplicate titles, broken links, the prerender per-language summary) is 
    - `npm run i18n:status` + `translatedLocales` in `worlds.ts` → pages blocked from /es /fr indexing;
    - `npm run test:seo`; then `npm run build` → `seo:check` output (canonical, hreflang, duplicate titles, broken
      links), prerender per-language indexable summary;
-   - sample `dist/<lang>/<world>/...` HTML (grep `<title>`, `rel="canonical"`, `hreflang`) only for suspicious pages.
-2. **If an export (CSV) is given**: read it, join on URL path, and use real impressions/clicks/positions to rank.
+   - sample `dist/<lang>/<world>/...` HTML (grep `<title>`, `rel="canonical"`, `hreflang`) only for suspicious pages;
+   - `[baseline]` lines of `seo:check` (mass changes vs `scripts/seo-baseline.json`): a regression is a verified issue.
+2. **If an export (CSV or folder) is given**: `npm run seo:gsc -- <path> [--split YYYY-MM-DD] --out <scratch>/gsc.md`
+   (Compare-mode UI exports in it/en, or API/BigQuery rows), then rank with its real impressions/clicks/positions:
+   losses by page, query, template, language and world, position buckets, control group, lost pages that are now
+   404/noindex in `dist/`. Never read the CSV by hand row by row; never estimate numbers it does not contain.
+   For a traffic DROP follow the playbook in `.claude/agents/seo-growth-engineer.md` before proposing fixes.
 3. **Classify every item**: `verified issue` (failing check / evidence in dist) · `opportunity` (data-backed: e.g.
    40 character pages just under the threshold whose relations exist) · `hypothesis` (needs field data).
 4. **Rank** by (pages affected × likely value) / effort; prefer fixes that improve real content and links

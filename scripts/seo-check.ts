@@ -19,12 +19,19 @@
  *    redirect dichiarato (niente 404 interni);
  *  - sitemap: XML ben formato, URL unici, canonici, indicizzabili, nessuna
  *    route tecnica, copertura completa delle pagine indicizzabili;
- *  - robots.txt, 404.html, vercel.json (niente fallback SPA → soft-404).
+ *  - robots.txt, 404.html, vercel.json (niente fallback SPA → soft-404);
+ *  - contenuto: ogni pagina indicizzabile ha testo reale in `<main>` (non solo
+ *    la cornice) e almeno un link interno in ingresso da un'altra pagina (niente
+ *    orfane); BreadcrumbList con posizioni 1..n e voci verso pagine esistenti;
+ *  - baseline (`scripts/seo-baseline.ts`): regressioni di massa per gruppo
+ *    lingua|mondo|tipo rispetto a `scripts/seo-baseline.json`. Con
+ *    `--update-baseline` (`npm run seo:baseline`) riscrive la baseline.
  */
-import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { looksEnglish, looksItalian } from '../src/utils/localizableFields';
+import { buildBaseline, compareBaseline, type PageSample, type SeoBaseline } from './seo-baseline';
 
 // Parole funzionali spagnole: un testo che le contiene non è inglese anche se
 // cita un titolo inglese (es. il film "The Last").
@@ -89,7 +96,14 @@ interface PageInfo {
   canonicalized: boolean;
   redirectPage: boolean;
   links: string[];
+  /** Caratteri di testo in `<main>` senza nav/footer/script/svg (il contenuto, non la cornice). */
+  mainText: number;
+  /** Link interni in `<main>` senza nav/footer (collegamenti contestuali). */
+  mainLinks: number;
 }
+
+/** Testo minimo in `<main>` di una pagina indicizzabile (la 404 ne ha ~130, la pagina più breve ~440). */
+const MIN_MAIN_TEXT = 250;
 
 const attr = (tag: string, name: string) => {
   const m = new RegExp(`\\s${name}="([^"]*)"`).exec(tag);
@@ -139,6 +153,7 @@ function parsePage(file: string): PageInfo {
       try {
         const j = JSON.parse(m[1]);
         if (!j['@context'] || !j['@type']) err(`${where}: JSON-LD senza @context/@type`);
+        if (j['@type'] === 'BreadcrumbList') breadcrumbs.push({ url, items: j.itemListElement });
       } catch {
         err(`${where}: JSON-LD non valido`);
       }
@@ -152,9 +167,16 @@ function parsePage(file: string): PageInfo {
   }
 
   const hrefs = [...body.matchAll(/<a\s[^>]*href="([^"]+)"/g)].map((m) => decode(m[1]));
-  return { url, lang, title, description, robots, canonical, alternates, indexable, canonicalized, redirectPage, links: hrefs };
+  const main = (/<main[\s>][\s\S]*?<\/main>/.exec(body)?.[0] ?? '').replace(
+    /<(script|style|svg|nav|footer)[\s>][\s\S]*?<\/\1>/g,
+    ' ',
+  );
+  const mainText = decode(main.replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim().length;
+  const mainLinks = (main.match(/<a\s[^>]*href="\//g) ?? []).length;
+  return { url, lang, title, description, robots, canonical, alternates, indexable, canonicalized, redirectPage, links: hrefs, mainText, mainLinks };
 }
 
+const breadcrumbs: { url: string; items: unknown }[] = [];
 const htmlFiles = allFiles.filter((f) => f.endsWith('.html'));
 const pages = new Map<string, PageInfo>();
 for (const f of htmlFiles) {
@@ -317,6 +339,36 @@ for (const p of pages.values()) {
   if (p.indexable && !inSitemap.has(ORIGIN + p.url)) err(`pagina indicizzabile assente dalla sitemap: ${p.url}`);
 }
 
+/* ---------------- contenuto, orfane, breadcrumb strutturati --------------- */
+
+const inbound = new Map<string, number>();
+for (const p of pages.values()) {
+  for (const href of new Set(p.links)) {
+    if (!href.startsWith('/') || href.startsWith('//')) continue;
+    const path = href.split('#')[0].split('?')[0].replace(/\/$/, '') || '/';
+    if (path !== p.url) inbound.set(path, (inbound.get(path) ?? 0) + 1);
+  }
+}
+for (const p of pages.values()) {
+  if (!p.indexable || p.redirectPage) continue;
+  if (p.mainText < MIN_MAIN_TEXT) err(`${p.url}: contenuto principale quasi vuoto (${p.mainText} caratteri in <main>)`);
+  if (p.url !== '/' && !inbound.get(p.url)) err(`${p.url}: pagina indicizzabile orfana (nessun link interno in ingresso)`);
+}
+for (const { url, items } of breadcrumbs) {
+  if (!Array.isArray(items) || items.length === 0) {
+    err(`${url}: BreadcrumbList senza itemListElement`);
+    continue;
+  }
+  items.forEach((it: { position?: unknown; name?: unknown; item?: unknown }, i: number) => {
+    if (it.position !== i + 1) err(`${url}: BreadcrumbList posizione ${String(it.position)} (attesa ${i + 1})`);
+    if (typeof it.name !== 'string' || !it.name.trim()) err(`${url}: BreadcrumbList voce ${i + 1} senza name`);
+    if (typeof it.item === 'string') {
+      const path = it.item.replace(ORIGIN, '') || '/';
+      if (!it.item.startsWith(ORIGIN) || !exists(path)) err(`${url}: BreadcrumbList voce ${i + 1} → ${it.item} inesistente`);
+    } else if (i < items.length - 1) err(`${url}: BreadcrumbList voce ${i + 1} senza item`);
+  });
+}
+
 /* ------------------------- robots / 404 / altro ------------------------ */
 
 const robotsPath = join(DIST, 'robots.txt');
@@ -338,6 +390,41 @@ else {
 
 /* ------------------------------- report ------------------------------- */
 
+/* ------------------------------- baseline ------------------------------ */
+
+const BASELINE_FILE = join(ROOT, 'scripts', 'seo-baseline.json');
+const samples: PageSample[] = [...pages.values()]
+  .filter((p) => !p.redirectPage)
+  .map((p) => ({
+    url: p.url,
+    indexable: p.indexable,
+    canonicalized: p.canonicalized,
+    noindex: /noindex/.test(p.robots),
+    mainText: p.mainText,
+    mainLinks: p.mainLinks,
+  }));
+const current = buildBaseline(samples, inSitemap.size);
+const notes: string[] = [];
+if (process.argv.includes('--update-baseline')) {
+  if (errors.length) {
+    console.error('[seo:check] baseline NON aggiornata: correggi prima gli errori qui sotto.');
+  } else {
+    writeFileSync(BASELINE_FILE, JSON.stringify(current, null, 2) + '\n', 'utf8');
+    console.log(`[seo:check] baseline aggiornata: ${relative(ROOT, BASELINE_FILE)} (${Object.keys(current.groups).length} gruppi)`);
+  }
+} else if (!existsSync(BASELINE_FILE)) {
+  warn('baseline SEO assente: esegui `npm run seo:baseline` dopo la build e committa scripts/seo-baseline.json');
+} else {
+  const base = JSON.parse(readFileSync(BASELINE_FILE, 'utf8')) as SeoBaseline;
+  const cmp = compareBaseline(base, current);
+  for (const e of cmp.errors) err(e);
+  for (const w of cmp.warnings) warn(w);
+  notes.push(...cmp.notes);
+  if (cmp.errors.length) {
+    err('[baseline] se la variazione è voluta: `npm run seo:baseline` e committa scripts/seo-baseline.json (motivandola nella PR)');
+  }
+}
+
 const indexable = [...pages.values()].filter((p) => p.indexable && !p.redirectPage);
 const canonicalizedCount = [...pages.values()].filter((p) => p.canonicalized && !p.redirectPage).length;
 const byLang = new Map<string, number>();
@@ -345,13 +432,18 @@ for (const p of indexable) byLang.set(p.lang, (byLang.get(p.lang) ?? 0) + 1);
 console.log(
   `[seo:check] ${pages.size} pagine · ${indexable.length} indicizzabili (${[...byLang].map(([l, n]) => `${l}: ${n}`).join(', ')}) · ${canonicalizedCount} canonicalizzate altrove · ${inSitemap.size} URL in sitemap · ${linkCount} link interni verificati`,
 );
+for (const n of notes.slice(0, 10)) console.log('  ℹ', n);
 if (warnings.length) {
+  // Gli avvisi della baseline (variazioni di massa) prima di quelli per pagina.
+  const sorted = [...warnings.filter((w) => w.startsWith('[baseline]')), ...warnings.filter((w) => !w.startsWith('[baseline]'))];
   console.log(`[seo:check] ${warnings.length} avvisi (primi 10):`);
-  for (const w of warnings.slice(0, 10)) console.log('  ⚠', w);
+  for (const w of sorted.slice(0, 10)) console.log('  ⚠', w);
 }
 if (errors.length) {
+  // Le regressioni di massa (baseline) prima degli errori per pagina che le causano.
+  const sorted = [...errors.filter((e) => e.startsWith('[baseline]')), ...errors.filter((e) => !e.startsWith('[baseline]'))];
   console.error(`[seo:check] ${errors.length} ERRORI (primi 40):`);
-  for (const e of errors.slice(0, 40)) console.error('  ✗', e);
+  for (const e of sorted.slice(0, 40)) console.error('  ✗', e);
   process.exit(1);
 }
 console.log('[seo:check] OK');
