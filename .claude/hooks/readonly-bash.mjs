@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
- * Read-only Bash policy for the READ-ONLY sub-agents (Plan, security-devops, lightweight-research),
+ * Read-only Bash policy for the READ-ONLY sub-agents (Plan, security-devops, lightweight-research, configuration-reviewer)
+ * and the confined writer configuration-manager,
  * applied by the PreToolUse hook `bash-policy.mjs` when `agent_type` is one of them. Their `tools:` allowlist already removes Edit/Write/MCP writers;
  * this closes the remaining gap: Bash can write (`sed -i`, `>`, `git commit`, `npm install`…).
  *
@@ -21,7 +22,7 @@ const GIT_READ = new Set(['log', 'show', 'diff', 'status', 'rev-parse', 'ls-file
   'var', 'version', 'help', 'fetch', 'branch', 'remote', 'config', 'tag', 'stash', 'reflog', 'worktree', 'ls-remote']);
 /** npm scripts that only read or validate (no state, no generated files). */
 export const NPM_READ = new Set(['validate:data', 'validate:i18n', 'test:seo', 'test:ci-scope', 'i18n:status', 'i18n:audit',
-  'data:coverage', 'coverage:chapters', 'claude:validate', 'social:validate', 'social:state:test', 'social:growth:test',
+  'data:coverage', 'coverage:chapters', 'claude:validate', 'claude:docs', 'claude:bench', 'social:validate', 'social:state:test', 'social:growth:test',
   'social:publication:test', 'social:editorial:check', 'social:editorial:check:selection', 'social:publication:list',
   'social:analytics:list', 'social:publication:validate', 'social:analytics:validate', 'social:validate:queue']);
 const NODE_SCRIPTS = new Set(['scripts/validate-claude-config.mjs', 'scripts/ci-site-scope.mjs']);

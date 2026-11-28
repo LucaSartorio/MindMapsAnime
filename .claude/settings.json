@@ -13,6 +13,8 @@
       "Bash(npm run coverage:chapters *)",
       "Bash(npm run -s coverage:chapters *)",
       "Bash(npm run claude:validate *)",
+      "Bash(npm run claude:docs *)",
+      "Bash(npm run -s claude:bench *)",
       "Bash(npm run social:validate *)",
       "Bash(npm run build)",
       "Bash(npm run smoke)",
@@ -26,7 +28,13 @@
     "ask": [
       "Edit(/.github/**)",
       "Edit(/.claude/settings.json)",
-      "Edit(/.claude/hooks/**)"
+      "Edit(/.claude/hooks/**)",
+      "Edit(/CLAUDE.md)",
+      "Edit(/AGENTS.md)",
+      "Edit(/scripts/validate-claude-config.mjs)",
+      "Edit(/.claude/agents/configuration-manager.md)",
+      "Edit(/.claude/agents/configuration-reviewer.md)",
+      "Edit(/.claude/skills/auto-config/**)"
     ],
     "deny": [
       "Read(./.env)",
@@ -42,7 +50,9 @@
       "Edit(/tools/social-engine/catalog/**)",
       "Edit(/tools/social-engine/publication/applied/**)",
       "Edit(/tools/social-engine/publication/failed/**)",
-      "Edit(/tools/social-engine/analytics/metrics.json)"
+      "Edit(/tools/social-engine/analytics/metrics.json)",
+      "Edit(/.claude/security-posture.json)",
+      "Edit(/.claude/skills/auto-config/references/docs-lock.json)"
     ]
   },
   "hooks": {
@@ -53,6 +63,16 @@
           {
             "type": "command",
             "command": "node \"${CLAUDE_PROJECT_DIR}/.claude/hooks/bash-policy.mjs\"",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PROJECT_DIR}/.claude/hooks/config-path-guard.mjs\"",
             "timeout": 10
           }
         ]

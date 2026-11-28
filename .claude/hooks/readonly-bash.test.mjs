@@ -209,11 +209,20 @@ test('bash-policy.mjs applies the read-only policy only to read-only agents', ()
   const hook = fileURLToPath(new URL('./bash-policy.mjs', import.meta.url));
   const run = (agent_type, command) =>
     spawnSync(process.execPath, [hook], { input: JSON.stringify({ agent_type, tool_input: { command } }) }).status;
-  for (const a of ['Plan', 'security-devops', 'lightweight-research']) {
+  for (const a of ['Plan', 'security-devops', 'lightweight-research', 'configuration-reviewer', 'configuration-manager']) {
     assert.equal(run(a, 'touch /tmp/x'), 2, a);
     assert.equal(run(a, 'git log -1'), 0, a);
   }
   assert.equal(run('frontend-specialist', 'echo hi > /tmp/allowed-for-writers'), 0);
   assert.equal(run(undefined, 'npm run build'), 0); // main session: only the push guard
+  // read-only report scripts of the auto-config system; their writing counterparts stay blocked
+  for (const a of ['configuration-reviewer', 'configuration-manager']) {
+    assert.equal(run(a, 'npm run claude:docs -- search hooks'), 0, a);
+    assert.equal(run(a, 'npm run -s claude:bench'), 0, a);
+    assert.equal(run(a, 'npm run claude:validate'), 0, a);
+    for (const c of ['npm run claude:docs:sync', 'npm run claude:docs:lock', 'npm run claude:posture:update',
+      'node .claude/skills/auto-config/scripts/docs-rag.mjs sync', 'node .claude/hooks/posture.mjs --write',
+      'echo x > CLAUDE.md', "sed -i 's/a/b/' .claude/settings.json", 'git commit -am x']) assert.equal(run(a, c), 2, `${a}: ${c}`);
+  }
   assert.equal(spawnSync(process.execPath, [hook], { input: 'not json' }).status, 2); // fail closed
 });

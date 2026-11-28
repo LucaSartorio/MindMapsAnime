@@ -1,0 +1,20 @@
+{
+  "$comment": "Trigger set for /auto-config (skill-creator format: query + should_trigger). Near-misses come from neighbouring skills.",
+  "skill": "auto-config",
+  "queries": [
+    { "query": "Mi serve un agente specializzato nell'analisi delle regressioni SEO", "should_trigger": true },
+    { "query": "crea una skill per riassumere gli export di Search Console", "should_trigger": true },
+    { "query": "ottimizza gli agenti Claude Code del repo, consumano troppi token", "should_trigger": true },
+    { "query": "audit della configurazione Claude: agenti, skill e hook sono ancora conformi alla documentazione?", "should_trigger": true },
+    { "query": "Anthropic ha aggiornato la documentazione dei subagent, dobbiamo cambiare qualcosa?", "should_trigger": true },
+    { "query": "/auto-config status", "should_trigger": true },
+    { "query": "is our .claude setup still valid with the latest Claude Code release?", "should_trigger": true },
+    { "query": "controlla il SEO di Naruto", "should_trigger": false },
+    { "query": "verifica se ci sono bug nel sito", "should_trigger": false },
+    { "query": "aggiungi Frieren ad AniMapVerse", "should_trigger": false },
+    { "query": "rivedi la PR 330", "should_trigger": false },
+    { "query": "allow npm test without asking me every time", "should_trigger": false },
+    { "query": "migliora le performance della mappa di One Piece", "should_trigger": false },
+    { "query": "is it ready to release?", "should_trigger": false }
+  ]
+}
