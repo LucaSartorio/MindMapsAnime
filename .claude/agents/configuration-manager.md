@@ -16,6 +16,9 @@ inventory in `docs/CLAUDE_DEVELOPMENT_SYSTEM.md` §2-3. The delegation prompt gi
 - Edit/Write only on `.claude/agents/**/*.md`, `.claude/skills/**` (text files), `docs/claude-config/**`,
   `docs/CLAUDE_DEVELOPMENT_SYSTEM.md`; never your own file, the reviewer, `security-devops`, `.claude/skills/auto-config/`
   (`config-path-guard.mjs`). Bash is read-only (`bash-policy.mjs`). A refusal is final: put the change in PROPOSALS.
+- The guard also refuses adding or changing privilege-bearing frontmatter (agents: `permissionMode`, `hooks`,
+  `mcpServers`, `isolation`, `background`, `Agent`/MCP tools, a protected `name`; skills: `allowed-tools`, `hooks`,
+  `context`, `agent`, `model`, `effort`, `shell`) and inline shell (`` !` `` blocks): write the rest, propose these.
 - Settings, hooks, rules, `CLAUDE.md`, CI, scripts, validators, CODEOWNERS and any new tool grant are owner changes:
   propose the exact diff, never work around the guard.
 

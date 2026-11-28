@@ -44,14 +44,15 @@ jobs:
       - name: Report
         run: |
           set -o pipefail
+          # The output quotes headings of fetched pages: neutralise fences so it cannot break out of the blocks below.
           {
             echo '### Claude Code docs drift since docs-lock.json'
             echo '```'
-            npm run -s claude:docs -- drift
+            npm run -s claude:docs -- drift | sed 's/`/'"'"'/g'
             echo '```'
             echo '### Official fields / hook events vs validator'
             echo '```'
-            npm run -s claude:docs -- fields
+            npm run -s claude:docs -- fields | sed 's/`/'"'"'/g'
             echo '```'
           } | tee -a "$GITHUB_STEP_SUMMARY"
 

@@ -44,8 +44,9 @@ const validate = (root) => {
   const r = spawnSync(process.execPath, [VALIDATOR], { cwd: root, encoding: 'utf8' });
   return { code: r.status, out: r.stdout + r.stderr };
 };
+const PLAIN = '---\nname: probe\ndescription: d\ntools: Read\n---\nbody\n';
 const guard = (root, file) => spawnSync(process.execPath, [join(root, '.claude/hooks/config-path-guard.mjs')], {
-  input: JSON.stringify({ agent_type: 'configuration-manager', tool_name: 'Edit', tool_input: { file_path: join(root, file) }, cwd: root }),
+  input: JSON.stringify({ agent_type: 'configuration-manager', tool_name: 'Write', tool_input: { file_path: join(root, file), content: PLAIN }, cwd: root }),
   env: { ...process.env, CLAUDE_PROJECT_DIR: root },
 }).status;
 
@@ -169,12 +170,16 @@ test('Scenario K — an external source cannot lift an internal restriction', ()
 test('Scenario M — the guard behaves the same with CLAUDE_PROJECT_DIR (local CLI) or only cwd (other surfaces)', () => {
   const { root } = fixture();
   const hook = join(root, '.claude/hooks/config-path-guard.mjs');
-  const input = (f) => JSON.stringify({ agent_type: 'configuration-manager', tool_input: { file_path: join(root, f) }, cwd: root });
+  const input = (f) => JSON.stringify({ agent_type: 'configuration-manager', tool_input: { file_path: join(root, f), content: PLAIN }, cwd: root });
   const env = { ...process.env };
   delete env.CLAUDE_PROJECT_DIR;
   assert.equal(spawnSync(process.execPath, [hook], { input: input('CLAUDE.md'), env }).status, 2);
   assert.equal(spawnSync(process.execPath, [hook], { input: input('.claude/agents/x.md'), env }).status, 0);
   assert.equal(spawnSync(process.execPath, [hook], { input: input('CLAUDE.md'), env: { ...env, CLAUDE_PROJECT_DIR: root } }).status, 2);
+});
+
+test('benchmark refuses option-like or odd refs', () => {
+  for (const ref of ['--output=/tmp/x', '-p', 'HEAD;rm', 'a b']) assert.throws(() => reader(REPO, ref), /invalid git ref/);
 });
 
 test('benchmark compares git refs of the real repository', () => {

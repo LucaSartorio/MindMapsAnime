@@ -30,7 +30,7 @@ export const HASHED = ['.claude/hooks/*.mjs', 'scripts/validate-claude-config.mj
   '.claude/agents/configuration-reviewer.md', '.claude/agents/security-devops.md', '.claude/rules/security.md',
   '.claude/skills/auto-config/SKILL.md', '.claude/skills/auto-config/references/policy.md',
   '.claude/skills/auto-config/references/sources.json', '.claude/skills/auto-config/scripts/*.mjs',
-  '.github/CODEOWNERS', '.github/workflows/site-ci.yml'];
+  '.github/CODEOWNERS', '.github/workflows/site-ci.yml', '.github/workflows/claude-config-maintenance.yml', '.mcp.json'];
 
 const sha = (t) => createHash('sha256').update(t.replace(/\r\n?/g, '\n')).digest('hex').slice(0, 16);
 const sortList = (v) => (v === undefined ? undefined : [...(Array.isArray(v) ? v : String(v).split(/[,\s]+/))].map((s) => s.trim()).filter(Boolean).sort());
@@ -50,6 +50,21 @@ function fm(text) {
   return out;
 }
 
+/** Verbatim lines (nested ones included, e.g. hooks: → command:) of the privilege-bearing frontmatter keys. */
+const PRIV_KEYS = new Set(['tools', 'disallowedTools', 'permissionMode', 'mcpServers', 'hooks', 'isolation', 'allowed-tools', 'disallowed-tools', 'context', 'agent', 'shell']);
+function privBlock(t) {
+  if (!t.startsWith('---\n')) return '';
+  const end = t.indexOf('\n---', 4);
+  let keep = false;
+  return t.slice(4, end < 0 ? 4 : end).split('\n').filter((line) => {
+    const k = line.match(/^([A-Za-z_][\w-]*):/);
+    if (k) keep = PRIV_KEYS.has(k[1]);
+    return keep;
+  }).join('\n');
+}
+const sortKeys = (v) => (Array.isArray(v) ? v.map(sortKeys) : v && typeof v === 'object' ? Object.fromEntries(Object.keys(v).sort().map((k) => [k, sortKeys(v[k])])) : v);
+const pkgScripts = (root) => { try { return JSON.parse(readFileSync(join(root, 'package.json'), 'utf8')).scripts ?? {}; } catch { return {}; } };
+
 const setFrom = (file, name) => {
   if (!existsSync(file)) return null;
   const m = readFileSync(file, 'utf8').match(new RegExp(`${name} = new Set\\(\\[([^\\]]*)\\]`));
@@ -68,7 +83,7 @@ export function compute(root) {
   if (existsSync(agentDir))
     for (const f of globSync('**/*.md', { cwd: agentDir }).sort()) {
       const a = fm(readFileSync(join(agentDir, f), 'utf8'));
-      agents[a.name ?? basename(f, '.md')] = { tools: sortList(a.tools) ?? '(all)', disallowedTools: sortList(a.disallowedTools), permissionMode: a.permissionMode, mcpServers: a.mcpServers, hooks: a.hooks, isolation: a.isolation };
+      agents[a.name ?? basename(f, '.md')] = { privileged: sha(privBlock(readFileSync(join(agentDir, f), 'utf8'))), tools: sortList(a.tools) ?? '(all)', disallowedTools: sortList(a.disallowedTools), permissionMode: a.permissionMode, mcpServers: a.mcpServers, hooks: a.hooks, isolation: a.isolation };
     }
   const skills = {};
   const skillDir = p('.claude/skills');
@@ -77,14 +92,18 @@ export function compute(root) {
       const f = join(skillDir, d, 'SKILL.md');
       if (!statSync(join(skillDir, d)).isDirectory() || !existsSync(f)) continue;
       const s = fm(readFileSync(f, 'utf8'));
-      skills[d] = { allowedTools: sortList(s['allowed-tools']), context: s.context, agent: s.agent, hooks: s.hooks, disableModelInvocation: s['disable-model-invocation'] };
+      skills[d] = { privileged: sha(privBlock(readFileSync(f, 'utf8'))), allowedTools: sortList(s['allowed-tools']), context: s.context, agent: s.agent, hooks: s.hooks, disableModelInvocation: s['disable-model-invocation'] };
     }
   const files = {};
   for (const g of HASHED) for (const f of globSync(g, { cwd: root }).sort()) files[f] = sha(readFileSync(p(f), 'utf8'));
   return JSON.parse(JSON.stringify({
     settings: { allow: sortList(perms.allow ?? []), ask: sortList(perms.ask ?? []), deny: sortList(perms.deny ?? []), defaultMode: perms.defaultMode,
-      additionalDirectories: perms.additionalDirectories, hooks, env: Object.keys(settings.env ?? {}).sort(), sandbox: settings.sandbox,
-      disableAllHooks: settings.disableAllHooks, enabledPlugins: settings.enabledPlugins },
+      additionalDirectories: perms.additionalDirectories, hooks, env: settings.env, sandbox: settings.sandbox,
+      disableAllHooks: settings.disableAllHooks, enabledPlugins: settings.enabledPlugins,
+      // every other key (statusLine, apiKeyHelper, MCP enablement, agent, permissions.* toggles…), as one hash
+      rest: sha(JSON.stringify(sortKeys({ ...settings, permissions: { ...perms, allow: undefined, ask: undefined, deny: undefined }, hooks: undefined, env: undefined }))) },
+    // the read-only allowlist trusts these script names, so their commands are part of the posture
+    packageScripts: Object.fromEntries(Object.entries(pkgScripts(root)).filter(([k]) => /^claude:/.test(k)).sort()),
     readOnlyAgents: setFrom(p('.claude/hooks/bash-policy.mjs'), 'READ_ONLY_AGENTS'),
     confinedAgents: setFrom(p('.claude/hooks/config-path-guard.mjs'), 'CONFINED_AGENTS'),
     agents, skills, files,

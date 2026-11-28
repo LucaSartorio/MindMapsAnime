@@ -112,7 +112,8 @@ export async function fetchDoc(url, { allow, limits, fetchImpl = globalThis.fetc
 // ------------------------------------------------------------------ text handling
 /** Remove what a reader never sees but a model would: HTML comments, zero-width and bidi control characters. */
 export function sanitize(text) {
-  return text.replace(/\r\n?/g, '\n').replace(/<!--[\s\S]*?-->/g, '').replace(/[​-‏‪-‮⁠-⁤﻿]/g, '');
+  return text.replace(/\r\n?/g, '\n').replace(/<!--[\s\S]*?-->/g, '').replace(/[\u200B-\u200F\u202A-\u202E\u2060-\u2064\uFEFF]/g, '')
+    .replace(/<<<\s*UNTRUSTED-DOC|UNTRUSTED-DOC\s*>>>/gi, '[fence marker removed]'); // a page cannot close its own fence
 }
 
 const INJECTION = [

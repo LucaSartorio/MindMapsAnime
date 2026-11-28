@@ -36,7 +36,7 @@ voce in `CLAUDE.md` (nessun costo di contesto aggiuntivo oltre alle tre descrizi
 | Peso per sessione dei nuovi componenti (`/context`) | — | manager 84 + reviewer 78 + skill ~90 ≈ **252 token** | misurato dal client (stima interna di Claude Code) |
 | Turno banale "OK", Sonnet, 3+3 run (input totale) | 45.197 · 45.201 · 45.200 | 44.958 · 44.960 · 44.961 | misurato; **non confrontabile**: il prompt di sistema include lo stato git (commit recenti, file modificati), cambiato fra le due serie |
 | Contesto sempre caricato (`claude:bench`) | 14.807 car. | 15.236 car. (+2,9 %, ≈ +107 token) | stima chars/4 |
-| `npm run claude:validate` | ~1 s, 179 test | 1,6 s, 344 test | misurato |
+| `npm run claude:validate` | ~1 s, 179 test | ~2 s, 382 test | misurato |
 | `/auto-config audit` (A) | — | 4 turni · 155k token input (95 % cache) · 16,8 s · $0,24 · 0 file modificati | misurato |
 | `/auto-config create` agente regressioni SEO (B) | — | 4 turni · 157k · 16,3 s · $0,14 · **nessun agente creato** (riuso corretto) | misurato |
 | `/auto-config create` skill note di rilascio (C) | — | 8 turni principali + 4 subagent · 2,42 M token totali · $1,54 (Sonnet $0,70, Opus $0,85) | misurato; la durata riportata (20,9 s) esclude i subagent in background |
@@ -67,6 +67,13 @@ dell'abbonamento, varianza di B/C (1 run ciascuno: nessuna differenza dichiarata
 
 Mutation check: tolta la rimozione dei commenti HTML, il ricontrollo dei redirect o la risoluzione dei symlink, i
 test falliscono (1, 1 e 4 casi).
+
+## 4b. Review di sicurezza indipendente
+
+`security-devops` (sola lettura, Sonnet): `issues`, 0 critici · 2 high · 3 medium · 7 low. Gli high sono stati
+riprodotti con chiamate dirette alla policy prima della correzione (tutte restituivano `null`, cioè ammesse) e
+corretti con test di regressione: dettaglio nella guida §14. Dopo le correzioni: policy di sola lettura 201 test,
+guardia dei percorsi 48, postura 17, script della skill 21; `claude:validate` completo 382 test, verde.
 
 ## 5. Fonti (recuperate il 2026-11-28, sha256 dei contenuti in `references/docs-lock.json`)
 

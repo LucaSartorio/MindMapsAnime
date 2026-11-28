@@ -202,6 +202,14 @@ const blocked = [
   "sort a $'-o/tmp/x'",
 ];
 
+allowed.push('node --test .claude/hooks/a.test.mjs scripts/b.test.mjs', 'node --test --test-name-pattern guard .claude/hooks/x.test.mjs',
+  'node --test --test-reporter=dot x.test.mjs', 'cat .env.example', 'npm run claude:docs -- search --prefix words', 'npx tsc --noEmit -p tsconfig.json');
+// security-devops review 2026-11-28: writes/exec through allowed programs, .env reads
+blocked.push('node --test --import "data:text/javascript,1" x.test.mjs', 'node --test --require ./x.cjs x.test.mjs',
+  'node --test --test-reporter-destination=/tmp/x x.test.mjs', 'node --test --test-reporter=./evil.mjs x.test.mjs', 'node --test evil.mjs',
+  'npx tsc --noEmit --incremental --tsBuildInfoFile /tmp/x', 'npx tsc -b --outDir /tmp/x', 'cat .env', 'rg KEY .env.local', 'head -1 ./.env',
+  'grep x .env.production', 'cat < .env', 'npm run claude:bench --script-shell=/tmp/x', 'npm --prefix /tmp run claude:bench',
+  'npm_config_script_shell=/tmp/x npm run claude:bench', 'npm -w x run claude:bench');
 for (const c of allowed) test(`allows: ${c}`, () => assert.equal(reason(c), null, c));
 for (const c of blocked) test(`blocks: ${c.split('\n').join(' ⏎ ')}`, () => assert.ok(reason(c), c));
 

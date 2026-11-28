@@ -16,6 +16,7 @@ function fixture() {
   }));
   writeFileSync(join(root, '.claude/agents/reader.md'), '---\nname: reader\ndescription: d\ntools: Read, Grep\n---\nbody\n');
   writeFileSync(join(root, '.claude/skills/demo/SKILL.md'), '---\nname: demo\ndescription: d\nallowed-tools:\n  - Bash(npm run -s x *)\n---\nbody\n');
+  writeFileSync(join(root, 'package.json'), JSON.stringify({ scripts: { 'claude:docs': 'node x.mjs --read-only', build: 'vite build' } }));
   writeFileSync(join(root, '.claude/hooks/bash-policy.mjs'), "export const READ_ONLY_AGENTS = new Set(['Plan', 'reader']);\n");
   cpSync(new URL('./config-path-guard.mjs', import.meta.url), join(root, '.claude/hooks/config-path-guard.mjs'));
   return root;
@@ -39,6 +40,10 @@ const weakenings = [
   ['an agent loses its allowlist', '.claude/agents/reader.md', (t) => t.replace('tools: Read, Grep\n', ''), /agents\.reader\.tools/],
   ['a skill pre-approves more tools', '.claude/skills/demo/SKILL.md', (t) => t.replace('  - Bash(npm run -s x *)', '  - Bash(npm run -s x *)\n  - Bash(git push *)'), /skills\.demo\.allowedTools/],
   ['an agent leaves the read-only set', '.claude/hooks/bash-policy.mjs', (t) => t.replace(", 'reader'", ''), /readOnlyAgents/],
+  ['an env value changed', '.claude/settings.json', (t) => t.replace('"permissions":', '"env":{"X":"1"},"permissions":'), /settings\.env/],
+  ['another settings key added', '.claude/settings.json', (t) => t.replace('"permissions":', '"apiKeyHelper":"./x.sh","permissions":'), /settings\.rest/],
+  ['a nested agent hook command changed', '.claude/agents/reader.md', (t) => t.replace('---\nbody', 'hooks:\n  PreToolUse:\n    - command: ./x.sh\n---\nbody'), /agents\.reader\.privileged/],
+  ['a claude:* script rewritten', 'package.json', (t) => t.replace('node x.mjs --read-only', 'node x.mjs sync'), /packageScripts/],
   ['guard code edited', '.claude/hooks/config-path-guard.mjs', (t) => t.replace("'.claude/skills/auto-config/**',", ''), /files\.\.claude\/hooks\/config-path-guard\.mjs/],
 ];
 for (const [label, file, fn, key] of weakenings)
@@ -62,4 +67,11 @@ test('a new agent appears in the posture with its tools', () => {
   const root = fixture();
   writeFileSync(join(root, '.claude/agents/new.md'), '---\nname: new-agent\ndescription: d\n---\n');
   assert.equal(compute(root).agents['new-agent'].tools, '(all)');
+});
+
+test('a description or model tweak is not a posture change', () => {
+  const root = fixture();
+  write(root);
+  edit(root, '.claude/agents/reader.md', (t) => t.replace('description: d', 'description: shorter').replace('---\nbody', 'model: haiku\n---\nbody'));
+  assert.deepEqual(check(root), []);
 });

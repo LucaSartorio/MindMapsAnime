@@ -70,7 +70,15 @@
         }
       ]
     },
-    "env": []
+    "rest": "06061d91e34b9a81"
+  },
+  "packageScripts": {
+    "claude:bench": "node .claude/skills/auto-config/scripts/config-bench.mjs",
+    "claude:docs": "node .claude/skills/auto-config/scripts/docs-rag.mjs --read-only",
+    "claude:docs:lock": "node .claude/skills/auto-config/scripts/docs-rag.mjs lock",
+    "claude:docs:sync": "node .claude/skills/auto-config/scripts/docs-rag.mjs sync",
+    "claude:posture:update": "node .claude/hooks/posture.mjs --write",
+    "claude:validate": "node scripts/validate-claude-config.mjs && node --test .claude/hooks/*.test.mjs .claude/skills/*/scripts/*.test.mjs"
   },
   "readOnlyAgents": [
     "Plan",
@@ -83,6 +91,7 @@
   ],
   "agents": {
     "3d-world-engineer": {
+      "privileged": "41652c1de990677b",
       "tools": [
         "Bash",
         "Edit",
@@ -93,6 +102,7 @@
       ]
     },
     "anime-data-curator": {
+      "privileged": "fb9afdb75705928b",
       "tools": [
         "Bash",
         "Edit",
@@ -105,6 +115,7 @@
       ]
     },
     "configuration-manager": {
+      "privileged": "41652c1de990677b",
       "tools": [
         "Bash",
         "Edit",
@@ -115,6 +126,7 @@
       ]
     },
     "configuration-reviewer": {
+      "privileged": "22fa54d8f57cff80",
       "tools": [
         "Bash",
         "Glob",
@@ -123,6 +135,7 @@
       ]
     },
     "frontend-specialist": {
+      "privileged": "41652c1de990677b",
       "tools": [
         "Bash",
         "Edit",
@@ -133,6 +146,7 @@
       ]
     },
     "lightweight-research": {
+      "privileged": "22fa54d8f57cff80",
       "tools": [
         "Bash",
         "Glob",
@@ -141,6 +155,7 @@
       ]
     },
     "map-engineer": {
+      "privileged": "41652c1de990677b",
       "tools": [
         "Bash",
         "Edit",
@@ -151,6 +166,7 @@
       ]
     },
     "qa-performance-engineer": {
+      "privileged": "41652c1de990677b",
       "tools": [
         "Bash",
         "Edit",
@@ -161,6 +177,7 @@
       ]
     },
     "security-devops": {
+      "privileged": "4eef604f9ce8c18d",
       "tools": [
         "Bash",
         "Glob",
@@ -174,6 +191,7 @@
       ]
     },
     "seo-growth-engineer": {
+      "privileged": "51c4ff6451ac1492",
       "tools": [
         "Bash",
         "Edit",
@@ -185,6 +203,7 @@
       ]
     },
     "social-engine-specialist": {
+      "privileged": "41652c1de990677b",
       "tools": [
         "Bash",
         "Edit",
@@ -196,8 +215,11 @@
     }
   },
   "skills": {
-    "add-anime-world": {},
+    "add-anime-world": {
+      "privileged": "e3b0c44298fc1c14"
+    },
     "analyze-data-coverage": {
+      "privileged": "f874c0bab735f29a",
       "allowedTools": [
         "Bash(npm run -s coverage:chapters *)",
         "Bash(npm run -s data:coverage *)"
@@ -205,43 +227,59 @@
       "context": "fork",
       "agent": "lightweight-research"
     },
-    "audit-animapverse": {},
+    "audit-animapverse": {
+      "privileged": "e3b0c44298fc1c14"
+    },
     "auto-config": {
+      "privileged": "6864447cc2047f94",
       "allowedTools": [
         "Bash(npm run -s claude:bench *)",
         "Bash(npm run claude:docs *)"
       ]
     },
-    "create-3d-location": {},
-    "enrich-anime-world": {},
-    "optimize-map": {},
-    "optimize-performance": {},
-    "seo-opportunities": {},
-    "sync-translations": {}
+    "create-3d-location": {
+      "privileged": "e3b0c44298fc1c14"
+    },
+    "enrich-anime-world": {
+      "privileged": "e3b0c44298fc1c14"
+    },
+    "optimize-map": {
+      "privileged": "e3b0c44298fc1c14"
+    },
+    "optimize-performance": {
+      "privileged": "e3b0c44298fc1c14"
+    },
+    "seo-opportunities": {
+      "privileged": "e3b0c44298fc1c14"
+    },
+    "sync-translations": {
+      "privileged": "e3b0c44298fc1c14"
+    }
   },
   "files": {
     ".claude/hooks/bash-policy.mjs": "62b28d082525cf54",
-    ".claude/hooks/config-path-guard.mjs": "aae61e023e742835",
-    ".claude/hooks/config-path-guard.test.mjs": "4cfbb8453b4e3b88",
+    ".claude/hooks/config-path-guard.mjs": "2d357a086b733168",
+    ".claude/hooks/config-path-guard.test.mjs": "79959e2538448472",
     ".claude/hooks/guard-bash.mjs": "562676932a3e93bc",
     ".claude/hooks/guard-bash.test.mjs": "eb59c504959bb8b6",
-    ".claude/hooks/posture.mjs": "b7148c6734f8617d",
-    ".claude/hooks/posture.test.mjs": "d8dc1f7b910d09c5",
-    ".claude/hooks/readonly-bash.mjs": "44077b1d3b73f6a1",
-    ".claude/hooks/readonly-bash.test.mjs": "65059e351eda9d7d",
+    ".claude/hooks/posture.mjs": "58e60d352d6e8029",
+    ".claude/hooks/posture.test.mjs": "a0fcb99129b4bfea",
+    ".claude/hooks/readonly-bash.mjs": "5b87bdecabc8a82c",
+    ".claude/hooks/readonly-bash.test.mjs": "4d159d1d88cd5807",
     "scripts/validate-claude-config.mjs": "23dfcbf9e938451d",
-    ".claude/agents/configuration-manager.md": "8a3adefadbfc9bbb",
-    ".claude/agents/configuration-reviewer.md": "d7a132f6795d4b09",
+    ".claude/agents/configuration-manager.md": "cdacb385364c506c",
+    ".claude/agents/configuration-reviewer.md": "b6bfa3c89258da11",
     ".claude/agents/security-devops.md": "f727007d9319c1b2",
     ".claude/rules/security.md": "126a1f64b81213aa",
-    ".claude/skills/auto-config/SKILL.md": "a0f8001102cbfb23",
+    ".claude/skills/auto-config/SKILL.md": "b2987b08bd78b67b",
     ".claude/skills/auto-config/references/policy.md": "916d7c8228769425",
     ".claude/skills/auto-config/references/sources.json": "a4c669c9fde2306e",
-    ".claude/skills/auto-config/scripts/config-bench.mjs": "be63260488ea6291",
-    ".claude/skills/auto-config/scripts/docs-rag.mjs": "3bf4b0eaf4ca65ef",
-    ".claude/skills/auto-config/scripts/docs-rag.test.mjs": "022c93fb3ac9ed0a",
-    ".claude/skills/auto-config/scripts/scenarios.test.mjs": "4d20cdfeb4ce284a",
+    ".claude/skills/auto-config/scripts/config-bench.mjs": "b05ff87f3dbc26c9",
+    ".claude/skills/auto-config/scripts/docs-rag.mjs": "53050f327e1c9ded",
+    ".claude/skills/auto-config/scripts/docs-rag.test.mjs": "d510df4005c424a0",
+    ".claude/skills/auto-config/scripts/scenarios.test.mjs": "bec90f331ddcbea2",
     ".github/CODEOWNERS": "fc7d948e5a4267a8",
-    ".github/workflows/site-ci.yml": "2bd5dd6decbc0ae1"
+    ".github/workflows/site-ci.yml": "2bd5dd6decbc0ae1",
+    ".github/workflows/claude-config-maintenance.yml": "ec2d1bc3446aacd4"
   }
 }

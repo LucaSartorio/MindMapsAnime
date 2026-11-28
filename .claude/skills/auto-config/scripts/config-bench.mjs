@@ -12,7 +12,7 @@
  * Tests: node --test .claude/skills/auto-config/scripts/config-bench.test.mjs
  */
 import { execFileSync } from 'node:child_process';
-import { globSync, readFileSync } from 'node:fs';
+import { globSync, lstatSync, readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -21,10 +21,12 @@ const PATTERNS = [/^CLAUDE\.md$/, /^AGENTS\.md$/, /^\.claude\/agents\/.+\.md$/, 
 /** Reader over the working tree (`ref` undefined) or a git ref. */
 export function reader(root, ref) {
   if (!ref) {
-    const files = globSync(['CLAUDE.md', 'AGENTS.md', '.claude/**/*'], { cwd: root }).map((f) => f.split('\\').join('/')).filter((f) => PATTERNS.some((p) => p.test(f)));
+    const files = globSync(['CLAUDE.md', 'AGENTS.md', '.claude/**/*'], { cwd: root }).map((f) => f.split('\\').join('/'))
+      .filter((f) => PATTERNS.some((p) => p.test(f)) && !lstatSync(join(root, f)).isSymbolicLink());
     return { files, read: (f) => readFileSync(join(root, f), 'utf8') };
   }
-  const git = (...a) => execFileSync('git', ['-C', root, ...a], { encoding: 'utf8', maxBuffer: 64 << 20 });
+  if (!/^[A-Za-z0-9._/@^~-]+$/.test(ref) || ref.startsWith('-')) throw new Error(`invalid git ref "${ref}"`);
+  const git = (...a) => execFileSync('git', ['-C', root, ...a], { encoding: 'utf8', maxBuffer: 64 << 20, env: { ...process.env, GIT_PAGER: 'cat', PAGER: 'cat' } });
   const files = git('ls-tree', '-r', '--name-only', ref, '--', 'CLAUDE.md', 'AGENTS.md', '.claude').split('\n').filter((f) => PATTERNS.some((p) => p.test(f)));
   return { files, read: (f) => git('show', `${ref}:${f}`) };
 }

@@ -376,6 +376,20 @@ claude:posture:update`); una singola modifica fatta dal sistema = `git revert <c
 CODEOWNERS, ruleset, validatori, reviewer e manager, skill e policy `auto-config`, allowlist delle fonti, plugin o
 servizi esterni, ogni differenza dello snapshot di postura (policy §2).
 
+**Review di sicurezza (`security-devops`, 2026-11-28)**: 0 critici, 2 high, 3 medium, 7 low. Corretti nella stessa
+PR, ognuno con test: `node --test` accettava qualsiasi opzione (`--import`, `--test-reporter-destination`) e `npx tsc`
+scritture a percorso libero (`--tsBuildInfoFile`, `--outDir`): la policy di sola lettura, usata anche dagli agent
+read-only esistenti, ora ammette solo file di test e opzioni di selezione; confronto case-insensitive dei percorsi
+protetti (macOS/Windows), segmenti `.`/spazio finali, `:` e `~` rifiutati, symlink (anche pendenti) rifiutati, tutte
+le chiavi di percorso controllate; frontmatter che concede privilegi e shell inline bloccati in sessione; lo snapshot
+copre anche valori `env`, le altre chiavi di `settings.json`, gli script `claude:*` di `package.json`, i blocchi di
+frontmatter privilegiati (anche annidati), il workflow di manutenzione e `.mcp.json`; `cat .env` e simili rifiutati
+dalla policy di sola lettura (preesistente); opzioni `npm` che cambiano shell/prefisso e variabili `npm_config_*`
+rifiutate; ref del benchmark validati; marcatori `UNTRUSTED-DOC` neutralizzati nelle pagine; backtick neutralizzati
+nel riepilogo del workflow. Non corretto: `bash-policy.mjs` importa i moduli delle guardie, quindi un errore di
+sintassi in uno di essi fa uscire l'hook con un codice non bloccante (stesso schema preesistente di `guard-bash.mjs`;
+coperto dai test in CI, file modificabili solo con conferma del proprietario).
+
 **Rischi residui** (non coperti tecnicamente): il main session può modificare i file protetti dopo una richiesta di
 conferma (`ask`) e rigenerare lo snapshot: il controllo finale è la review del code owner, che diventa bloccante
 solo con il ruleset di SEC-02; una PR ostile può riscrivere validatore e snapshot insieme (stesso limite della Site
