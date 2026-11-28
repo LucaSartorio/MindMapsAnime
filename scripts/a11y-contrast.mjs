@@ -429,6 +429,21 @@ async function samplePixels(page) {
     await page.evaluate((k) => {
       const el = document.querySelector(`[data-contrast-k="${k}"]`);
       for (const [prop, val] of [['color', 'transparent'], ['-webkit-text-fill-color', 'transparent'], ['fill', 'transparent'], ['stroke', 'transparent'], ['text-shadow', 'none']]) el.style.setProperty(prop, val, 'important');
+      // L'ombra/anello di focus di un overlay fisso (es. `ring-2` del banner cookie)
+      // è disegnata FUORI dal suo box: `elementsFromPoint` non la vede, quindi un
+      // testo appena sopra il bordo dell'overlay risulta "non coperto" ma la foto
+      // del suo rettangolo include l'anello. È occlusione, non lo sfondo del testo:
+      // durante la foto si spengono le ombre degli overlay fissi che NON contengono
+      // il testo (quelle dei testi dentro l'overlay restano).
+      for (const o of document.querySelectorAll('body *')) {
+        if (getComputedStyle(o).position === 'fixed' && !o.contains(el)) o.setAttribute('data-contrast-overlay', '');
+      }
+      if (!document.getElementById('contrast-overlay-style')) {
+        const st = document.createElement('style');
+        st.id = 'contrast-overlay-style';
+        st.textContent = '[data-contrast-overlay],[data-contrast-overlay] *{box-shadow:none !important}';
+        document.head.appendChild(st);
+      }
     }, it.k);
     const png = PNG.sync.read(await page.screenshot({ clip, animations: 'disabled', caret: 'hide' }));
     await page.evaluate((k) => {
@@ -436,6 +451,7 @@ async function samplePixels(page) {
       for (const prop of ['color', '-webkit-text-fill-color', 'fill', 'stroke', 'text-shadow']) el.style.removeProperty(prop);
       el.removeAttribute('data-contrast-sample');
       el.removeAttribute('data-contrast-k');
+      for (const o of document.querySelectorAll('[data-contrast-overlay]')) o.removeAttribute('data-contrast-overlay');
     }, it.k);
     const lum = (r, g, b) => {
       const f = (v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; };
