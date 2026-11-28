@@ -202,6 +202,14 @@ const blocked = [
   "sort a $'-o/tmp/x'",
 ];
 
+allowed.push('node --test .claude/hooks/a.test.mjs scripts/b.test.mjs', 'node --test --test-name-pattern guard .claude/hooks/x.test.mjs',
+  'node --test --test-reporter=dot x.test.mjs', 'cat .env.example', 'npm run claude:docs -- search --prefix words', 'npx tsc --noEmit -p tsconfig.json');
+// security-devops review 2026-11-28: writes/exec through allowed programs, .env reads
+blocked.push('node --test --import "data:text/javascript,1" x.test.mjs', 'node --test --require ./x.cjs x.test.mjs',
+  'node --test --test-reporter-destination=/tmp/x x.test.mjs', 'node --test --test-reporter=./evil.mjs x.test.mjs', 'node --test evil.mjs',
+  'npx tsc --noEmit --incremental --tsBuildInfoFile /tmp/x', 'npx tsc -b --outDir /tmp/x', 'cat .env', 'rg KEY .env.local', 'head -1 ./.env',
+  'grep x .env.production', 'cat < .env', 'npm run claude:bench --script-shell=/tmp/x', 'npm --prefix /tmp run claude:bench',
+  'npm_config_script_shell=/tmp/x npm run claude:bench', 'npm -w x run claude:bench');
 for (const c of allowed) test(`allows: ${c}`, () => assert.equal(reason(c), null, c));
 for (const c of blocked) test(`blocks: ${c.split('\n').join(' ⏎ ')}`, () => assert.ok(reason(c), c));
 
@@ -209,11 +217,20 @@ test('bash-policy.mjs applies the read-only policy only to read-only agents', ()
   const hook = fileURLToPath(new URL('./bash-policy.mjs', import.meta.url));
   const run = (agent_type, command) =>
     spawnSync(process.execPath, [hook], { input: JSON.stringify({ agent_type, tool_input: { command } }) }).status;
-  for (const a of ['Plan', 'security-devops', 'lightweight-research']) {
+  for (const a of ['Plan', 'security-devops', 'lightweight-research', 'configuration-reviewer', 'configuration-manager']) {
     assert.equal(run(a, 'touch /tmp/x'), 2, a);
     assert.equal(run(a, 'git log -1'), 0, a);
   }
   assert.equal(run('frontend-specialist', 'echo hi > /tmp/allowed-for-writers'), 0);
   assert.equal(run(undefined, 'npm run build'), 0); // main session: only the push guard
+  // read-only report scripts of the auto-config system; their writing counterparts stay blocked
+  for (const a of ['configuration-reviewer', 'configuration-manager']) {
+    assert.equal(run(a, 'npm run claude:docs -- search hooks'), 0, a);
+    assert.equal(run(a, 'npm run -s claude:bench'), 0, a);
+    assert.equal(run(a, 'npm run claude:validate'), 0, a);
+    for (const c of ['npm run claude:docs:sync', 'npm run claude:docs:lock', 'npm run claude:posture:update',
+      'node .claude/skills/auto-config/scripts/docs-rag.mjs sync', 'node .claude/hooks/posture.mjs --write',
+      'echo x > CLAUDE.md', "sed -i 's/a/b/' .claude/settings.json", 'git commit -am x']) assert.equal(run(a, c), 2, `${a}: ${c}`);
+  }
   assert.equal(spawnSync(process.execPath, [hook], { input: 'not json' }).status, 2); // fail closed
 });

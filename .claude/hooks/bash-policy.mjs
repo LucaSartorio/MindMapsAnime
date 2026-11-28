@@ -12,12 +12,13 @@
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { CONFINED_AGENTS } from './config-path-guard.mjs';
 import { check as pushReason } from './guard-bash.mjs';
 import { reason as readOnlyReason } from './readonly-bash.mjs';
 
 /** Sub-agents whose Bash must stay read-only: the repo's read-only agents (kept in sync with .claude/agents by
  * `npm run claude:validate`) + the built-in `Plan` agent, which replaces the former code-architect for design work. */
-export const READ_ONLY_AGENTS = new Set(['Plan', 'security-devops', 'lightweight-research']);
+export const READ_ONLY_AGENTS = new Set(['Plan', 'security-devops', 'lightweight-research', 'configuration-reviewer']);
 
 /** Returns `[reason, source]` when the call must be blocked, else null. */
 export function decide(input) {
@@ -26,6 +27,11 @@ export function decide(input) {
   if (agent && READ_ONLY_AGENTS.has(agent)) {
     const r = readOnlyReason(command);
     if (r) return [`${r}. Agent ${agent} is read-only: report the change as a proposal instead`, 'readonly-bash'];
+  }
+  // Confined writers (config-path-guard.mjs): Edit/Write limited to an allowlist, so Bash must not write either.
+  if (agent && CONFINED_AGENTS.has(agent)) {
+    const r = readOnlyReason(command);
+    if (r) return [`${r}. Agent ${agent} has read-only Bash: write configuration files with Edit/Write (path-guarded) or propose the command`, 'readonly-bash'];
   }
   const p = pushReason(command, { cwd: input?.cwd || process.cwd() });
   return p ? [`${p}. See .claude/rules/security.md and CLAUDE.md "Git & delivery"`, 'guard-bash'] : null;

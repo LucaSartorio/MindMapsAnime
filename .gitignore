@@ -45,3 +45,6 @@ tools/social-engine/.cache/
 tools/social-engine/audio/*
 !tools/social-engine/audio/README.md
 tools/social-engine/**/*.tmp
+
+# Claude Code docs RAG cache (official docs, re-fetched by `npm run claude:docs:sync`; versions in docs-lock.json)
+.claude/cache/

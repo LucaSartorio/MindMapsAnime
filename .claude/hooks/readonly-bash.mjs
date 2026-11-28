@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
- * Read-only Bash policy for the READ-ONLY sub-agents (Plan, security-devops, lightweight-research),
+ * Read-only Bash policy for the READ-ONLY sub-agents (Plan, security-devops, lightweight-research, configuration-reviewer)
+ * and the confined writer configuration-manager,
  * applied by the PreToolUse hook `bash-policy.mjs` when `agent_type` is one of them. Their `tools:` allowlist already removes Edit/Write/MCP writers;
  * this closes the remaining gap: Bash can write (`sed -i`, `>`, `git commit`, `npm install`…).
  *
@@ -21,7 +22,7 @@ const GIT_READ = new Set(['log', 'show', 'diff', 'status', 'rev-parse', 'ls-file
   'var', 'version', 'help', 'fetch', 'branch', 'remote', 'config', 'tag', 'stash', 'reflog', 'worktree', 'ls-remote']);
 /** npm scripts that only read or validate (no state, no generated files). */
 export const NPM_READ = new Set(['validate:data', 'validate:i18n', 'test:seo', 'test:ci-scope', 'i18n:status', 'i18n:audit',
-  'data:coverage', 'coverage:chapters', 'claude:validate', 'social:validate', 'social:state:test', 'social:growth:test',
+  'data:coverage', 'coverage:chapters', 'claude:validate', 'claude:docs', 'claude:bench', 'social:validate', 'social:state:test', 'social:growth:test',
   'social:publication:test', 'social:editorial:check', 'social:editorial:check:selection', 'social:publication:list',
   'social:analytics:list', 'social:publication:validate', 'social:analytics:validate', 'social:validate:queue']);
 const NODE_SCRIPTS = new Set(['scripts/validate-claude-config.mjs', 'scripts/ci-site-scope.mjs']);
@@ -65,7 +66,15 @@ function gitReason(args) {
 }
 
 /** Variables that make an allowed program run another program (git, pagers, node) or read another git config. */
-const EXEC_ENV = /^(GIT_[A-Z0-9_]*|PAGER|LESSOPEN|LESSCLOSE|NODE_OPTIONS|HOME|XDG_CONFIG_HOME)=/;
+const EXEC_ENV = /^(GIT_[A-Z0-9_]*|PAGER|LESSOPEN|LESSCLOSE|NODE_OPTIONS|HOME|XDG_CONFIG_HOME|npm_config_[A-Za-z0-9_]*|NPM_CONFIG_[A-Z0-9_]*)=/;
+/** npm options that change which shell/config/package runs the script. */
+const NPM_EXEC_OPT = /^(--(script-shell|prefix|userconfig|globalconfig|workspaces?|node-options|cache|init-module|call|include-workspace-root)(=|$)|-w$|-C$|-c$)/;
+/** `node --test` options that only select or format tests (anything else, e.g. --import, could run or write). */
+const NODE_TEST_OPT = /^--(test-name-pattern|test-skip-pattern|test-reporter|test-concurrency|test-timeout)(=.+)?$|^--test-only$/;
+/** tsc options that write a file at a caller-chosen path. */
+const TSC_WRITE_OPT = /^--(tsBuildInfoFile|outFile|outDir|declarationDir|incremental|generateTrace|generateCpuProfile|out)(=|$)/i;
+/** A .env file (secrets) named as an operand; only the template is readable. */
+const ENV_FILE = /(^|[\s/'"=<:])\.env(?!\.example(?=$|[\s'"|;&)]))(\.[\w.-]*)?(?=$|[\s'"|;&)*])/;
 
 /** Number of operands, skipping the values of the given options. */
 function operands(args, valueOptions = []) {
@@ -158,6 +167,9 @@ function commandReason(t) {
   if (prog === 'awk' && args.some((a) => /system\s*\(|print[^|]*>|\|\s*getline|fflush/.test(a))) return 'awk script that writes or runs commands';
   if (prog === 'git') return gitReason(args);
   if (prog === 'npm') {
+    const own = args.includes('--') ? args.slice(0, args.indexOf('--')) : args;
+    const bad = own.find((x) => NPM_EXEC_OPT.test(x));
+    if (bad) return `npm ${bad} changes what runs the script`;
     const a = args.filter((x) => x !== '-s' && x !== '--silent');
     if (a[0] === 'run' || a[0] === 'run-script') return NPM_READ.has(a[1]) ? null : `npm run ${a[1]} is not a read-only script`;
     if (['ls', 'list', 'view', 'outdated', 'why', 'explain', '--version', '-v'].includes(a[0])) return null;
@@ -166,11 +178,19 @@ function commandReason(t) {
   }
   if (prog === 'npx') {
     const a = args.filter((x) => x !== '--no-install' && x !== '--no');
+    if (a.some((x) => TSC_WRITE_OPT.test(x))) return `npx ${a.find((x) => TSC_WRITE_OPT.test(x))} writes a file`;
     if (a[0] === 'tsc' && (a.includes('--noEmit') || a.includes('-b') || a.includes('--build'))) return null;
     return `npx ${a[0] ?? ''} is not read-only`;
   }
   if (prog === 'node') {
-    if (args[0] === '--test') return null;
+    if (args[0] === '--test') {
+      for (let k = 1; k < args.length; k++) {
+        const x = args[k];
+        if (/^--test-(name|skip)-pattern$/.test(x)) { k++; continue; }
+        if (x.startsWith('-') ? !NODE_TEST_OPT.test(x) || /^--test-reporter=(?!(spec|tap|dot|junit)$)/.test(x) : !/\.test\.(mjs|cjs|js|ts)$/.test(x)) return `node --test: "${x}" is not a test file or a test-selection option`;
+      }
+      return null;
+    }
     if (args[0] && NODE_SCRIPTS.has(args[0].replace(/^\.\//, ''))) return null;
     if (['--version', '-v'].includes(args[0])) return null;
     return 'node: only `node --test …` and the repo validators are allowed';
@@ -208,6 +228,7 @@ function hasHiddenExpansion(text) {
 /** Returns a reason string if the command is not read-only, else null. */
 export function reason(command) {
   if (typeof command !== 'string' || !command.trim()) return null;
+  if (ENV_FILE.test(command)) return 'reading .env files is not allowed (secrets; only .env.example)';
   const text = stripHeredocs(command);
   if (hasHiddenExpansion(text)) return 'shell expansion ($VAR, {a,b}) hides the real arguments from the read-only check';
   if (/<<-?\s*['"]?[\w.-]+/.test(command) && />/.test(maskQuotes(command.split('\n')[0]).replace(/<</g, ''))) {

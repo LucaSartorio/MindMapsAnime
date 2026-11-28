@@ -18,7 +18,7 @@ già da solo (verificato con misure, §8).
 Fonte unica per ogni vincolo: invarianti trasversali in `CLAUDE.md`, vincoli d'area nella rule, contratti social in
 `docs/SOCIAL_*.md`, SEO in `docs/SEO.md`, i18n in `docs/I18N.md`. `ARCHITECTURE.md` spiega, non prescrive.
 
-## 2. Sub-agent (9)
+## 2. Sub-agent (11)
 
 | Agent | Modello · effort | Tool | Perché esiste |
 |---|---|---|---|
@@ -31,6 +31,8 @@ Fonte unica per ogni vincolo: invarianti trasversali in `CLAUDE.md`, vincoli d'a
 | `security-devops` | sonnet · high | Read, Grep, Glob, Bash (**sola lettura imposta**), GitHub MCP in lettura | review di workflow, permessi, dipendenze |
 | `3d-world-engineer` | sonnet · high | Read, Grep, Glob, Edit, Write, Bash | scene 3D procedurali, motore Three.js, lifecycle GPU, QA visiva con screenshot fuori dal contesto principale (§13) |
 | `lightweight-research` | haiku · low, `omitClaudeMd` | Read, Grep, Glob, Bash (**sola lettura imposta**) | ricerche economiche; esegue il fork di `/analyze-data-coverage` |
+| `configuration-manager` | sonnet · high | Read, Grep, Glob, Edit, Write, Bash (**scritture confinate** da `config-path-guard.mjs`, Bash in sola lettura) | progetta/crea/ottimizza agent e skill per `/auto-config` (§14) |
+| `configuration-reviewer` | opus · high | Read, Grep, Glob, Bash (**sola lettura imposta**) | review indipendente delle modifiche di configurazione (§14); raro e critico, quindi Opus |
 
 Funzioni coperte da strumenti integrati di Claude Code (nessun duplicato nel repo): progettazione → agent `Plan`
 (stesso modello della sessione, sola lettura imposta dall'hook); review indipendente di diff/PR → `/code-review
@@ -41,7 +43,7 @@ delega → frontmatter → `CLAUDE_CODE_SUBAGENT_MODEL` → modello della sessio
 `CLAUDE_CODE_EFFORT_LEVEL` vince su tutto (non impostarla). Verifica: i transcript dei sub-agent
 (`~/.claude/projects/<repo>/<sessione>/subagents/*.jsonl`) registrano `model` ed `effort` di ogni messaggio.
 
-## 3. Skill (9)
+## 3. Skill (10)
 
 | Comando | Cosa automatizza | Invocazione |
 |---|---|---|
@@ -54,6 +56,7 @@ delega → frontmatter → `CLAUDE_CODE_SUBAGENT_MODEL` → modello della sessio
 | `/optimize-performance [target]` | baseline → modifica → misura (vieta lo script distruttivo `optimize:images`) | auto + manuale |
 | `/create-3d-location <mondo> <luogo> [exterior\|explorable\|fidelity\|optimize\|resume]` | scena 3D procedurale di un luogo esistente in milestone riprendibili (ledger `docs/explorer3d/<id>.md`), guidata da riferimenti visivi, iterazioni con screenshot (`capture:3d`), budget, gate | auto + manuale |
 | `/audit-animapverse [area\|release]` | audit con risultati verificati; `release` = gate completo GO/NO-GO | auto + manuale |
+| `/auto-config [audit\|status\|validate\|update\|benchmark\|optimize\|create <richiesta>\|full]` | manutenzione dell'ecosistema Claude Code con RAG della documentazione Anthropic, modifiche confinate e review indipendente (§14) | auto + manuale |
 
 Le skill sono scoperte automaticamente da `.claude/skills/` (nessun index, nessuna `.claude/commands/`: i comandi sono
 confluiti nelle skill). Nel contesto entra solo la descrizione; il corpo all'invocazione.
@@ -96,6 +99,10 @@ assenti nell'immagine Cloud, e senza di essi Claude Code esegue i comandi senza 
 all'avvio); l'isolamento di rete bloccherebbe npm e il proxy. Localmente il proprietario può attivarlo nelle impostazioni
 utente (`sandbox.enabled`, `sandbox.filesystem.denyRead` per i `.env`); i thread *Projects* ignorano comunque
 `settings.json`.
+Dal 2026-11-28: `config-path-guard.mjs` (PreToolUse `Edit|Write|NotebookEdit`) confina le scritture di
+`configuration-manager` e `bash-policy.mjs` gli applica la sola lettura su Bash; lo snapshot
+`.claude/security-posture.json` (`posture.mjs`, dentro `claude:validate`) rende visibile e bloccante in CI ogni
+modifica di permessi, hook, tool degli agent e codice delle guardie (§14).
 **Gli hook non sostituiscono il ruleset di `main`**
 (`docs/SECURITY_SEC-02.md`): valgono solo per `git` nelle sessioni Claude Code.
 
@@ -105,7 +112,10 @@ Site CI esegue `npm run claude:validate` nel job `scope` (ogni PR, anche social,
 validatore controlla: campi YAML noti, nomi, modelli/effort, allowlist esplicite, solo tool MCP di lettura, lista
 read-only allineata all'hook, `paths` delle rules che corrispondono a file reali, ogni `npm run` e file citato
 esistente, rules elencate nella mappa del contesto, agent e skill documentati qui, budget di `CLAUDE.md`; poi i test
-degli hook.
+degli hook. Dal 2026-11-28 anche: eventi e matcher degli hook, agent confinati collegati all'hook, file citati
+dalle skill, trigger set (`evals/triggers.json`), cicli skill → agent → skill, descrizioni sovrapposte (warning),
+`AGENTS.md` non importato (warning), postura di sicurezza = snapshot; poi i test di `.claude/hooks/` e
+`.claude/skills/*/scripts/`. Il workflow manuale `claude-config-maintenance.yml` produce solo un report (§14).
 
 ## 6. World Engine (`/add-anime-world`, `/enrich-anime-world`)
 
@@ -127,6 +137,8 @@ Controlla il SEO di Naruto                  → /seo-opportunities naruto
 Rivedi la PR 330                            → /code-review 330 (integrato)
 È pronto per il rilascio?                   → /audit-animapverse release
 Crea il 3D del Going Merry                  → /create-3d-location onepiece going-merry
+Mi serve un agente per le regressioni SEO   → /auto-config create agente per le regressioni SEO
+La configurazione Claude è ancora valida?   → /auto-config audit
 ```
 
 ## 8. Misurare
@@ -312,3 +324,74 @@ Riferimento tecnico: `docs/3D_EXPLORER.md`; vincoli: `.claude/rules/explorer-3d.
   API (la pagina HTML è dietro un challenge anti-bot): è il comportamento voluto, la skill dice di abbandonare la fonte
   e chiedere immagini al proprietario.
 
+
+## 14. Auto-configurazione dell'ecosistema (`/auto-config`, dal 2026-11-28)
+
+Procedura: `.claude/skills/auto-config/SKILL.md`; regole (gerarchia delle fonti, matrice di approvazione, ordine di
+decisione, limiti, routing, criteri di accettazione): `.claude/skills/auto-config/references/policy.md`; benchmark:
+`references/benchmark.md`; report delle esecuzioni misurate: `docs/claude-config/`.
+
+**Componenti** (riuso prima di tutto: validatore, hook, `claude-usage-report.mjs`, routing per frontmatter e T0-T3
+esistenti sono estesi, non duplicati):
+
+| Componente | Ruolo | Protezione tecnica |
+|---|---|---|
+| `auto-config/scripts/docs-rag.mjs` (`npm run claude:docs`, `:sync`, `:lock`) | RAG della documentazione ufficiale: cache locale gitignorata (`.claude/cache/`), ricerca BM25 per sezione con limite di caratteri, `status`/`drift`/`fields`/`show` | allowlist host+percorso (anche sui redirect), timeout 20 s, 2 MB, 2 retry, nessun eseguibile; commenti HTML e caratteri invisibili rimossi, righe "istruttive" segnalate, estratti recintati `UNTRUSTED-DOC`; offline → `DEGRADED` |
+| `references/docs-lock.json` | versioni (sha256 per pagina e per sezione) su cui la configurazione è stata verificata | file generato: deny in `settings.json` |
+| `configuration-manager` | analizza, progetta, crea/ottimizza agent e skill | `config-path-guard.mjs`: scrive solo `.claude/agents/**/*.md`, `.claude/skills/**`, `docs/claude-config/**`, questa guida, solo file di testo; mai sé stesso, il reviewer, `security-devops`, la skill `auto-config`; percorsi reali verificati (symlink, `..`, fuori progetto); Bash in sola lettura |
+| `configuration-reviewer` | approva o blocca con evidenze | sola lettura imposta (`READ_ONLY_AGENTS`); non approva permessi: lo fa il proprietario |
+| `auto-config/scripts/config-bench.mjs` (`npm run claude:bench`) | benchmark statico base ↔ head: contesto sempre caricato, peso dei componenti, privilegi, protezioni, righe duplicate, flag di accettazione | — |
+| `.claude/hooks/posture.mjs` + `.claude/security-posture.json` | snapshot della postura: permessi, hook, tool/permessi di agent e skill, insiemi read-only/confinati, hash di guardie, validatore, reviewer/manager, skill, CODEOWNERS, Site CI | `claude:validate` (Site CI, ogni PR) fallisce a ogni differenza; si accetta solo con `npm run claude:posture:update` + commit, rivisto dal code owner; deny Edit sullo snapshot, script di scrittura fuori dall'allowlist di sola lettura |
+| `.github/workflows/claude-config-maintenance.yml` | report periodico (drift, campi ufficiali, validazione) | solo `workflow_dispatch` (schedule commentata), `contents: read`, nessun secret, nessun modello |
+
+Gli script stanno in `.claude/skills/auto-config/scripts/` (coperti dalla riga `/.claude/` di CODEOWNERS); i test
+(`node --test`, nessun framework) girano in `claude:validate`: scenari A-M in `scenarios.test.mjs`,
+`docs-rag.test.mjs`, `.claude/hooks/{config-path-guard,posture}.test.mjs`.
+
+**Uso**
+
+```text
+/auto-config                 = audit (nessuna modifica)
+/auto-config status          stato di cache docs, metriche, ultime modifiche
+/auto-config update          sync docs → drift → campi ufficiali vs validatore → classificazione (non modifica)
+/auto-config benchmark       npm run -s claude:bench -- --base origin/main
+/auto-config create <cosa>   "mi serve un agente per X": riuso → estensione → script → nuovo componente (uno)
+/auto-config optimize [x]    riduce duplicati/verbosità con beneficio misurato
+/auto-config full            update + audit + optimize dei soli risultati con beneficio concreto
+```
+
+Senza skill (thread *Projects*): `npm run claude:docs -- search "<termini>"`, `npm run -s claude:bench`,
+`npm run claude:validate`, poi leggere `SKILL.md` e seguirlo.
+
+**Cloud e locale**: comandi identici; in Cloud la rete raggiunge `code.claude.com` e `raw.githubusercontent.com`
+(verificato 2026-11-28), localmente pure; senza rete il RAG lavora dalla cache o si ferma (`DEGRADED`). Gli hook
+valgono nelle sessioni Cloud su repo singola e in locale (§9), non nei thread *Projects*, dove restano CI,
+snapshot e CODEOWNERS. Le definizioni degli agent nuovi valgono dalla sessione successiva.
+
+**Disattivare / rollback**: disattivare solo la skill = `disable-model-invocation: true` nel suo frontmatter (resta
+invocabile con `/auto-config`); rimuovere tutto = revert della PR che l'ha introdotto (poi `npm run
+claude:posture:update`); una singola modifica fatta dal sistema = `git revert <commit>` (un commit per ciclo).
+
+**Approvazione manuale del proprietario**: permessi e `settings.json`, hook, rules, `CLAUDE.md`/`AGENTS.md`, CI,
+CODEOWNERS, ruleset, validatori, reviewer e manager, skill e policy `auto-config`, allowlist delle fonti, plugin o
+servizi esterni, ogni differenza dello snapshot di postura (policy §2).
+
+**Review di sicurezza (`security-devops`, 2026-11-28)**: 0 critici, 2 high, 3 medium, 7 low. Corretti nella stessa
+PR, ognuno con test: `node --test` accettava qualsiasi opzione (`--import`, `--test-reporter-destination`) e `npx tsc`
+scritture a percorso libero (`--tsBuildInfoFile`, `--outDir`): la policy di sola lettura, usata anche dagli agent
+read-only esistenti, ora ammette solo file di test e opzioni di selezione; confronto case-insensitive dei percorsi
+protetti (macOS/Windows), segmenti `.`/spazio finali, `:` e `~` rifiutati, symlink (anche pendenti) rifiutati, tutte
+le chiavi di percorso controllate; frontmatter che concede privilegi e shell inline bloccati in sessione; lo snapshot
+copre anche valori `env`, le altre chiavi di `settings.json`, gli script `claude:*` di `package.json`, i blocchi di
+frontmatter privilegiati (anche annidati), il workflow di manutenzione e `.mcp.json`; `cat .env` e simili rifiutati
+dalla policy di sola lettura (preesistente); opzioni `npm` che cambiano shell/prefisso e variabili `npm_config_*`
+rifiutate; ref del benchmark validati; marcatori `UNTRUSTED-DOC` neutralizzati nelle pagine; backtick neutralizzati
+nel riepilogo del workflow. Non corretto: `bash-policy.mjs` importa i moduli delle guardie, quindi un errore di
+sintassi in uno di essi fa uscire l'hook con un codice non bloccante (stesso schema preesistente di `guard-bash.mjs`;
+coperto dai test in CI, file modificabili solo con conferma del proprietario).
+
+**Rischi residui** (non coperti tecnicamente): il main session può modificare i file protetti dopo una richiesta di
+conferma (`ask`) e rigenerare lo snapshot: il controllo finale è la review del code owner, che diventa bloccante
+solo con il ruleset di SEC-02; una PR ostile può riscrivere validatore e snapshot insieme (stesso limite della Site
+CI); la rilevazione di prompt injection è euristica (gli estratti restano comunque dati); `≈tokens` del benchmark
+statico è una stima, i token reali si misurano con `claude -p` (`references/benchmark.md`).

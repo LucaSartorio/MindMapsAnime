@@ -1,0 +1,27 @@
+{
+  "$comment": "Allowlist of official Anthropic sources for the Claude Code docs RAG (docs-rag.mjs). Only these hosts/path prefixes are fetched, redirects included. Edit = change to the auto-config protections (owner approval, security-posture).",
+  "version": 1,
+  "allow": [
+    { "host": "code.claude.com", "pathPrefix": "/docs/" },
+    { "host": "raw.githubusercontent.com", "pathPrefix": "/anthropics/skills/main/" },
+    { "host": "raw.githubusercontent.com", "pathPrefix": "/anthropics/claude-code/main/" }
+  ],
+  "limits": { "timeoutMs": 20000, "maxBytes": 2000000, "retries": 2, "maxRedirects": 3, "maxAgeHours": 168 },
+  "index": { "id": "llms", "url": "https://code.claude.com/docs/llms.txt" },
+  "discoverKeywords": ["agent", "skill", "hook", "setting", "memory", "permission", "plugin", "model", "context", "sandbox", "claude directory"],
+  "sources": [
+    { "id": "sub-agents", "url": "https://code.claude.com/docs/en/sub-agents.md", "topics": ["agent", "frontmatter", "tools", "model", "delegation"] },
+    { "id": "skills", "url": "https://code.claude.com/docs/en/skills.md", "topics": ["skill", "frontmatter", "arguments", "trigger"] },
+    { "id": "hooks", "url": "https://code.claude.com/docs/en/hooks.md", "topics": ["hook", "events", "matcher", "PreToolUse"] },
+    { "id": "memory", "url": "https://code.claude.com/docs/en/memory.md", "topics": ["CLAUDE.md", "AGENTS.md", "rules", "imports"] },
+    { "id": "settings", "url": "https://code.claude.com/docs/en/settings.md", "topics": ["settings", "precedence", "scopes"] },
+    { "id": "permissions", "url": "https://code.claude.com/docs/en/permissions.md", "topics": ["permissions", "allow", "deny", "ask"] },
+    { "id": "best-practices", "url": "https://code.claude.com/docs/en/best-practices.md", "topics": ["context", "workflow"] },
+    { "id": "claude-directory", "url": "https://code.claude.com/docs/en/claude-directory.md", "topics": [".claude", "layout"] },
+    { "id": "features-overview", "url": "https://code.claude.com/docs/en/features-overview.md", "topics": ["skills vs agents", "hooks", "MCP"] },
+    { "id": "model-config", "url": "https://code.claude.com/docs/en/model-config.md", "topics": ["model", "effort", "aliases"] },
+    { "id": "changelog", "url": "https://code.claude.com/docs/en/changelog.md", "topics": ["changelog", "deprecation", "breaking"], "maxChars": 120000 },
+    { "id": "skill-creator", "url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/skill-creator/SKILL.md", "topics": ["skill creation", "evals", "description optimization"] },
+    { "id": "claude-code-readme", "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/README.md", "topics": ["overview"] }
+  ]
+}

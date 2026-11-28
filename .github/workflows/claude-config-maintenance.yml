@@ -1,0 +1,60 @@
+# Claude Code configuration maintenance — REPORT ONLY (docs/CLAUDE_DEVELOPMENT_SYSTEM.md §14).
+#
+# Re-fetches the allowlisted official Anthropic docs into a throwaway cache, then reports what changed since the
+# reviewed versions in docs-lock.json (drift), official frontmatter fields / hook events vs the validator (fields),
+# and the configuration checks. No model, no secrets, no npm install, read-only token, nothing written back.
+# Acting on the report is a human decision (`/auto-config update` in a session).
+#
+# Manual only (Actions → "Claude config maintenance" → Run workflow). To make it weekly, the owner uncomments the
+# `schedule` block; it costs ~1 runner minute per run.
+name: Claude config maintenance
+
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: '17 6 * * 1' # Mondays 06:17 UTC
+
+permissions:
+  contents: read
+
+concurrency:
+  group: claude-config-maintenance
+  cancel-in-progress: true
+
+jobs:
+  report:
+    name: Docs drift report
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+
+      # Each step is blocking: a failed fetch fails the run instead of producing a report from no data.
+      - name: Fetch official docs (allowlisted hosts only)
+        run: npm run claude:docs:sync -- --strict
+
+      - name: Report
+        run: |
+          set -o pipefail
+          # The output quotes headings of fetched pages: neutralise fences so it cannot break out of the blocks below.
+          {
+            echo '### Claude Code docs drift since docs-lock.json'
+            echo '```'
+            npm run -s claude:docs -- drift | sed 's/`/'"'"'/g'
+            echo '```'
+            echo '### Official fields / hook events vs validator'
+            echo '```'
+            npm run -s claude:docs -- fields | sed 's/`/'"'"'/g'
+            echo '```'
+          } | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Validate Claude Code configuration
+        run: npm run claude:validate
