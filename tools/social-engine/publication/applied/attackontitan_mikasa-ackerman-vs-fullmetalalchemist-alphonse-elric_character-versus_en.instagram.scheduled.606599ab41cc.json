@@ -1,0 +1,30 @@
+{
+  "receiptId": "attackontitan_mikasa-ackerman-vs-fullmetalalchemist-alphonse-elric_character-versus_en.instagram.scheduled.606599ab41cc",
+  "outcome": "applied",
+  "transition": {
+    "from": "notScheduled",
+    "to": "scheduled"
+  },
+  "note": null,
+  "appliedAt": "2026-11-28T06:12:51.759Z",
+  "sourceFile": "20261128T060918Z-attackontitan_mikasa-ackerman-vs-fullmetalalchemist-alphonse-elric_character-versus_en-instagram-scheduled.json",
+  "run": {
+    "runId": "46115545253",
+    "runAttempt": "1",
+    "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/46115545253",
+    "workflow": "Social publication state"
+  },
+  "receipt": {
+    "receiptVersion": 1,
+    "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-fullmetalalchemist-alphonse-elric@en",
+    "platform": "instagram",
+    "provider": "metricool",
+    "status": "scheduled",
+    "scheduledFor": "2026-11-28T12:00:00+01:00",
+    "providerPostId": "445176210",
+    "providerPostUuid": "-2463589015018321378",
+    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-2463589015018321378",
+    "recordedAt": "2026-11-28T06:09:18Z",
+    "recordedBy": "chatgpt-work-publishing-agent"
+  }
+}

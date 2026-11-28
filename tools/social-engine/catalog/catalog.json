@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-28T06:04:34.235Z",
+  "generatedAt": "2026-11-28T06:12:51.775Z",
   "locales": [
     "en",
     "it"
@@ -27926,7 +27926,9 @@
           "renderedLocales": [
             "en"
           ],
-          "scheduledLocales": [],
+          "scheduledLocales": [
+            "en"
+          ],
           "publishedLocales": [],
           "queuedLocales": [],
           "renderedBefore": true,
@@ -27936,12 +27938,12 @@
               "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-fullmetalalchemist-alphonse-elric@en",
               "locale": "en",
               "variant": null,
-              "status": "notPublished",
+              "status": "scheduled",
               "platforms": {
-                "instagram": "notScheduled",
-                "facebook": "notScheduled",
-                "tiktok": "notScheduled",
-                "youtube": "notScheduled"
+                "instagram": "scheduled",
+                "facebook": "scheduled",
+                "tiktok": "scheduled",
+                "youtube": "scheduled"
               }
             }
           ],
@@ -29577,69 +29579,13 @@
     "summary": {
       "rendered": 62,
       "unavailable": 5,
-      "notPublished": 6,
-      "scheduled": 50,
+      "notPublished": 5,
+      "scheduled": 51,
       "partiallyPublished": 3,
       "published": 3,
       "failed": 0
     },
-    "ready": [
-      {
-        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-fullmetalalchemist-alphonse-elric@en",
-        "contentId": "character-versus:attackontitan:mikasa-ackerman-vs-fullmetalalchemist-alphonse-elric",
-        "anime": "attackontitan",
-        "subject": "mikasa-ackerman-vs-fullmetalalchemist-alphonse-elric",
-        "subjectName": "Mikasa Ackerman vs Alphonse Elric",
-        "locale": "en",
-        "variant": null,
-        "segment": null,
-        "partNumber": null,
-        "partCount": null,
-        "renderedAt": "2026-11-28T06:04:33.523Z",
-        "durationSeconds": 22,
-        "publicationStatus": "notPublished",
-        "platforms": {
-          "instagram": "notScheduled",
-          "facebook": "notScheduled",
-          "tiktok": "notScheduled",
-          "youtube": "notScheduled"
-        },
-        "artifact": {
-          "name": "animapverse-social-render-46114783030-1",
-          "runId": "46114783030",
-          "runAttempt": "1",
-          "runUrl": "https://github.com/LucaSartorio/MindMapsAnime/actions/runs/46114783030",
-          "video": "videos/attackontitan_mikasa-ackerman-vs-fullmetalalchemist-alphonse-elric_character-versus_en.mp4",
-          "manifest": "manifests/attackontitan_mikasa-ackerman-vs-fullmetalalchemist-alphonse-elric_character-versus_en.manifest.json",
-          "sha256": "45a2698142d57adcb0cf7e4cf086c1535cd7367dc08521914d9c8be797976128",
-          "cover": "covers/attackontitan_mikasa-ackerman-vs-fullmetalalchemist-alphonse-elric_character-versus_en.cover.png",
-          "expiresAt": "2026-12-28T06:04:33.523Z"
-        },
-        "contentType": "character-versus",
-        "platformMetadata": {
-          "instagramCaption": "Mikasa Ackerman vs Alphonse Elric: whose journey is bigger?\n\nMikasa Ackerman (Attack on Titan) vs Alphonse Elric (Fullmetal Alchemist): every place on the map, one winner.\n\nWho should compete next? Drop a match-up 👇\n\nSave it for your next rewatch.\n\n#attackontitan #aot #fullmetalalchemist #mikasaackerman #alphonseelric #anime #animemap #AniMapVerse",
-          "tiktokCaption": "Mikasa Ackerman vs Alphonse Elric: whose journey is bigger? Who should compete next? Drop a match-up 👇 #attackontitan #aot #fullmetalalchemist #mikasaackerman #alphonseelric",
-          "youtubeTitle": "Mikasa Ackerman vs Alphonse Elric: Who Travelled More? 🧱",
-          "youtubeDescription": "Mikasa Ackerman vs Alphonse Elric: whose journey is bigger?\n\nMikasa Ackerman (Attack on Titan) vs Alphonse Elric (Fullmetal Alchemist): every place on the map, one winner.\n\nWho should compete next? Drop a match-up 👇\n\nInteractive map: https://animapverse.com\n\n#attackontitan #aot #fullmetalalchemist",
-          "facebookCaption": "Mikasa Ackerman vs Alphonse Elric: whose journey is bigger?\n\nMikasa Ackerman (Attack on Titan) vs Alphonse Elric (Fullmetal Alchemist): every place on the map, one winner.\n\nWho should compete next? Drop a match-up 👇\n\nInteractive map: https://animapverse.com",
-          "hashtags": [
-            "#attackontitan",
-            "#aot",
-            "#fullmetalalchemist",
-            "#mikasaackerman",
-            "#alphonseelric",
-            "#anime",
-            "#animemap",
-            "#AniMapVerse"
-          ],
-          "youtube": {
-            "madeForKids": false
-          },
-          "madeForKids": false
-        },
-        "waitFor": {}
-      }
-    ],
+    "ready": [],
     "unavailable": [
       {
         "renderId": "character-journey:naruto:itachi-uchiha@it",

@@ -4238,7 +4238,7 @@
       "segment": null,
       "segmentFingerprint": null,
       "createdAt": "2026-11-28T06:03:09.360Z",
-      "updatedAt": "2026-11-28T06:04:33.523Z",
+      "updatedAt": "2026-11-28T06:12:51.759Z",
       "renderStatus": "rendered",
       "renderedAt": "2026-11-28T06:04:33.523Z",
       "outputFile": "tools/social-engine/output/attackontitan_mikasa-ackerman-vs-fullmetalalchemist-alphonse-elric_character-versus_en.mp4",
@@ -4307,9 +4307,86 @@
           "madeForKids": false
         }
       },
-      "publicationStatus": "notPublished",
+      "publicationStatus": "scheduled",
       "publishedAt": null,
-      "platforms": []
+      "platforms": [
+        {
+          "platform": "instagram",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-28T12:00:00+01:00",
+          "scheduledAt": "2026-11-28T06:09:18Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "445176210",
+          "providerPostUuid": "-2463589015018321378",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-2463589015018321378",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_mikasa-ackerman-vs-fullmetalalchemist-alphonse-elric_character-versus_en.instagram.scheduled.606599ab41cc"
+          ],
+          "updatedAt": "2026-11-28T06:12:51.759Z"
+        },
+        {
+          "platform": "facebook",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-28T12:00:00+01:00",
+          "scheduledAt": "2026-11-28T06:09:18Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "445176223",
+          "providerPostUuid": "-223731214211069884",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-223731214211069884",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_mikasa-ackerman-vs-fullmetalalchemist-alphonse-elric_character-versus_en.facebook.scheduled.d1b4be8c0afc"
+          ],
+          "updatedAt": "2026-11-28T06:12:51.759Z"
+        },
+        {
+          "platform": "tiktok",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-28T12:00:00+01:00",
+          "scheduledAt": "2026-11-28T06:09:18Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "445176266",
+          "providerPostUuid": "-7919591094259726281",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-7919591094259726281",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_mikasa-ackerman-vs-fullmetalalchemist-alphonse-elric_character-versus_en.tiktok.scheduled.4c3025fdcf07"
+          ],
+          "updatedAt": "2026-11-28T06:12:51.759Z"
+        },
+        {
+          "platform": "youtube",
+          "provider": "metricool",
+          "status": "scheduled",
+          "scheduledFor": "2026-11-28T12:00:00+01:00",
+          "scheduledAt": "2026-11-28T06:09:18Z",
+          "publishedAt": null,
+          "failedAt": null,
+          "providerPostId": "445176241",
+          "providerPostUuid": "-3576754771382222399",
+          "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=6468337&openWithPostUuid=-3576754771382222399",
+          "publicUrl": null,
+          "lastError": null,
+          "attempts": 1,
+          "receipts": [
+            "attackontitan_mikasa-ackerman-vs-fullmetalalchemist-alphonse-elric_character-versus_en.youtube.scheduled.434bae7c501f"
+          ],
+          "updatedAt": "2026-11-28T06:12:51.759Z"
+        }
+      ]
     },
     "character-versus:attackontitan:reiner-braun-vs-blackclover-yami-sukehiro@en": {
       "renderId": "character-versus:attackontitan:reiner-braun-vs-blackclover-yami-sukehiro@en",

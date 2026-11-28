@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-28T06:04:34.235Z",
-  "status": "backlog",
+  "generatedAt": "2026-11-28T06:12:51.775Z",
+  "status": "ready",
   "feedTail": [
     {
       "renderId": "guess-character:onepiece:roronoa-zoro@en",
@@ -92,28 +92,502 @@
     "error": null
   },
   "backlog": {
-    "unpublished": [
-      {
-        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-fullmetalalchemist-alphonse-elric@en",
-        "contentType": "character-versus",
-        "renderedAt": "2026-11-28T06:04:33.523Z",
-        "missing": [
-          "instagram",
-          "facebook",
-          "tiktok",
-          "youtube"
-        ]
-      }
-    ],
+    "unpublished": [],
     "unfinished": [],
     "inProgress": []
   },
   "mode": "coldstart",
-  "seed": "",
-  "reason": "publish the existing render first: character-versus:attackontitan:mikasa-ackerman-vs-fullmetalalchemist-alphonse-elric@en (it counts as today's video; no new content)",
-  "alternatives": [],
-  "rejected": {},
-  "considered": 0,
-  "eligible": 0,
-  "trace": null
+  "seed": "feed57:h553e3ee5:samples0",
+  "rejected": {
+    "JOURNEY_PART_ORDER": 36,
+    "MAX_SAME_CHARACTER_STREAK": 43
+  },
+  "considered": 732,
+  "trace": {
+    "traceVersion": 1,
+    "mode": "coldstart",
+    "seed": "feed57:h553e3ee5:samples0",
+    "analytics": {
+      "coldStart": true,
+      "samples": 0,
+      "contents": 0,
+      "minimumSamples": 8
+    },
+    "recent": [
+      {
+        "renderId": "guess-character:onepiece:roronoa-zoro@en",
+        "contentType": "guess-character",
+        "animes": [
+          "onepiece"
+        ],
+        "characters": [
+          "onepiece:roronoa-zoro"
+        ]
+      },
+      {
+        "renderId": "character-journey:blackclover:yuno-grinberryall:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "blackclover"
+        ],
+        "characters": [
+          "blackclover:yuno-grinberryall"
+        ]
+      },
+      {
+        "renderId": "character-versus:bleach:rukia-kuchiki-vs-fullmetalalchemist-edward-elric@en",
+        "contentType": "character-versus",
+        "animes": [
+          "bleach",
+          "fullmetalalchemist"
+        ],
+        "characters": [
+          "bleach:rukia-kuchiki",
+          "fullmetalalchemist:edward-elric"
+        ]
+      },
+      {
+        "renderId": "guess-character:naruto:naruto-uzumaki@en",
+        "contentType": "guess-character",
+        "animes": [
+          "naruto"
+        ],
+        "characters": [
+          "naruto:naruto-uzumaki"
+        ]
+      },
+      {
+        "renderId": "character-journey:jujutsukaisen:suguru-geto@en",
+        "contentType": "character-journey",
+        "animes": [
+          "jujutsukaisen"
+        ],
+        "characters": [
+          "jujutsukaisen:suguru-geto"
+        ]
+      },
+      {
+        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-fullmetalalchemist-alphonse-elric@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "fullmetalalchemist"
+        ],
+        "characters": [
+          "attackontitan:mikasa-ackerman",
+          "fullmetalalchemist:alphonse-elric"
+        ]
+      }
+    ],
+    "constraints": {
+      "sameAnimeStreak": {
+        "animes": [
+          "attackontitan",
+          "fullmetalalchemist"
+        ],
+        "length": 1
+      },
+      "forcedAnimeRotation": false,
+      "blockedAnimes": [],
+      "blockedCharacters": [
+        "attackontitan:mikasa-ackerman",
+        "fullmetalalchemist:alphonse-elric"
+      ],
+      "characterCooldown": [
+        "onepiece:roronoa-zoro",
+        "blackclover:yuno-grinberryall",
+        "bleach:rukia-kuchiki",
+        "fullmetalalchemist:edward-elric",
+        "naruto:naruto-uzumaki",
+        "jujutsukaisen:suguru-geto",
+        "attackontitan:mikasa-ackerman",
+        "fullmetalalchemist:alphonse-elric"
+      ],
+      "contentTypeStreak": {
+        "contentType": "character-versus",
+        "length": 1
+      }
+    },
+    "hardRulesTriggered": {
+      "JOURNEY_PART_ORDER": 36,
+      "MAX_SAME_CHARACTER_STREAK": 43
+    },
+    "candidates": {
+      "considered": 732,
+      "eligible": 654,
+      "byContentType": {
+        "character-journey": {
+          "considered": 418,
+          "eligible": 380
+        },
+        "guess-character": {
+          "considered": 78,
+          "eligible": 76
+        },
+        "character-versus": {
+          "considered": 236,
+          "eligible": 198
+        }
+      }
+    },
+    "excluded": [
+      {
+        "renderId": "character-journey:attackontitan:mikasa-ackerman@en",
+        "contentType": "character-journey",
+        "animes": [
+          "attackontitan"
+        ],
+        "characters": [
+          "attackontitan:mikasa-ackerman"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: attackontitan:mikasa-ackerman is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:fullmetalalchemist:alphonse-elric:part-01@en",
+        "contentType": "character-journey",
+        "animes": [
+          "fullmetalalchemist"
+        ],
+        "characters": [
+          "fullmetalalchemist:alphonse-elric"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: fullmetalalchemist:alphonse-elric is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-journey:fullmetalalchemist:alphonse-elric:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "fullmetalalchemist"
+        ],
+        "characters": [
+          "fullmetalalchemist:alphonse-elric"
+        ],
+        "reasons": [
+          "JOURNEY_PART_ORDER",
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "sequence: Part 2 before Part 1 (never publish parts out of order)",
+          "character streak: fullmetalalchemist:alphonse-elric is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:attackontitan:armin-arlert-vs-fullmetalalchemist-alphonse-elric@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "fullmetalalchemist"
+        ],
+        "characters": [
+          "attackontitan:armin-arlert",
+          "fullmetalalchemist:alphonse-elric"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: fullmetalalchemist:alphonse-elric is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-blackclover-asta@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "blackclover"
+        ],
+        "characters": [
+          "attackontitan:mikasa-ackerman",
+          "blackclover:asta"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: attackontitan:mikasa-ackerman is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-blackclover-yami-sukehiro@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "blackclover"
+        ],
+        "characters": [
+          "attackontitan:mikasa-ackerman",
+          "blackclover:yami-sukehiro"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: attackontitan:mikasa-ackerman is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-bleach-ichigo-kurosaki@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "bleach"
+        ],
+        "characters": [
+          "attackontitan:mikasa-ackerman",
+          "bleach:ichigo-kurosaki"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: attackontitan:mikasa-ackerman is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-bleach-rukia-kuchiki@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "bleach"
+        ],
+        "characters": [
+          "attackontitan:mikasa-ackerman",
+          "bleach:rukia-kuchiki"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: attackontitan:mikasa-ackerman is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-bleach-yasutora-chad-sado@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "bleach"
+        ],
+        "characters": [
+          "attackontitan:mikasa-ackerman",
+          "bleach:yasutora-chad-sado"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: attackontitan:mikasa-ackerman is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      },
+      {
+        "renderId": "character-versus:attackontitan:mikasa-ackerman-vs-fullmetalalchemist-edward-elric@en",
+        "contentType": "character-versus",
+        "animes": [
+          "attackontitan",
+          "fullmetalalchemist"
+        ],
+        "characters": [
+          "attackontitan:mikasa-ackerman",
+          "fullmetalalchemist:edward-elric"
+        ],
+        "reasons": [
+          "MAX_SAME_CHARACTER_STREAK"
+        ],
+        "messages": [
+          "character streak: attackontitan:mikasa-ackerman is in the last 1 item(s) (max 1)"
+        ],
+        "potentialScore": 62
+      }
+    ],
+    "status": "selected",
+    "selectedId": "character-journey:hunterxhunter:gon-freecss:part-02",
+    "renderId": "character-journey:hunterxhunter:gon-freecss:part-02@en",
+    "contentType": "character-journey",
+    "animes": [
+      "hunterxhunter"
+    ],
+    "characters": [
+      "hunterxhunter:gon-freecss"
+    ],
+    "score": 104.28,
+    "base": 76.28,
+    "reasons": [
+      "coldstart: novelty +21.5, jitter +4.8",
+      "+12 main character",
+      "+14 continues a started series (Part 2 promised)",
+      "+2 format below its target share (45% < 50%)"
+    ],
+    "ranked": [
+      {
+        "renderId": "character-journey:hunterxhunter:gon-freecss:part-02@en",
+        "contentType": "character-journey",
+        "animes": [
+          "hunterxhunter"
+        ],
+        "score": 104.28,
+        "reasons": [
+          "coldstart: novelty +21.5, jitter +4.8",
+          "+12 main character",
+          "+14 continues a started series (Part 2 promised)",
+          "+2 format below its target share (45% < 50%)"
+        ]
+      },
+      {
+        "renderId": "character-journey:dragonball:goku:part-06@en",
+        "contentType": "character-journey",
+        "animes": [
+          "dragonball"
+        ],
+        "score": 100.24,
+        "reasons": [
+          "coldstart: novelty +21.5, jitter +0.7",
+          "+12 main character",
+          "+14 continues a started series (Part 6 promised)",
+          "+2 format below its target share (45% < 50%)"
+        ]
+      },
+      {
+        "renderId": "character-journey:dragonball:piccolo:part-01@en",
+        "contentType": "character-journey",
+        "animes": [
+          "dragonball"
+        ],
+        "score": 91.36,
+        "reasons": [
+          "coldstart: novelty +21.5, jitter +5.9",
+          "+12 main character",
+          "+2 format below its target share (45% < 50%)"
+        ]
+      },
+      {
+        "renderId": "character-journey:dragonball:majin-buu@en",
+        "contentType": "character-journey",
+        "animes": [
+          "dragonball"
+        ],
+        "score": 91.19,
+        "reasons": [
+          "coldstart: novelty +21.5, jitter +5.7",
+          "+12 main character",
+          "+2 format below its target share (45% < 50%)"
+        ]
+      },
+      {
+        "renderId": "character-journey:hunterxhunter:kurapika@en",
+        "contentType": "character-journey",
+        "animes": [
+          "hunterxhunter"
+        ],
+        "score": 91.19,
+        "reasons": [
+          "coldstart: novelty +21.5, jitter +5.7",
+          "+12 main character",
+          "+2 format below its target share (45% < 50%)"
+        ]
+      },
+      {
+        "renderId": "character-journey:jujutsukaisen:ryomen-sukuna@en",
+        "contentType": "character-journey",
+        "animes": [
+          "jujutsukaisen"
+        ],
+        "score": 90.93,
+        "reasons": [
+          "coldstart: novelty +22.0, jitter +4.9",
+          "+12 main character",
+          "+2 format below its target share (45% < 50%)"
+        ]
+      }
+    ],
+    "explanation": [
+      "Cold start: 0 scored video(s) < minimumSamples 8 → editorial/variety selection (performance not used yet).",
+      "attackontitan:mikasa-ackerman, fullmetalalchemist:alphonse-elric excluded in every format (maxSameCharacterStreak 1).",
+      "Selected character-journey:hunterxhunter:gon-freecss:part-02@en (character-journey, hunterxhunter) — coldstart, score 104.28 among 654 valid candidate(s)."
+    ]
+  },
+  "pick": {
+    "contentId": "character-journey:hunterxhunter:gon-freecss:part-02",
+    "renderId": "character-journey:hunterxhunter:gon-freecss:part-02@en",
+    "contentType": "character-journey",
+    "animes": [
+      "hunterxhunter"
+    ],
+    "characters": [
+      "hunterxhunter:gon-freecss"
+    ],
+    "part": 2,
+    "partCount": 2,
+    "score": 104.28,
+    "reasons": [
+      "coldstart: novelty +21.5, jitter +4.8",
+      "+12 main character",
+      "+14 continues a started series (Part 2 promised)",
+      "+2 format below its target share (45% < 50%)"
+    ]
+  },
+  "request": {
+    "template": "characterJourney",
+    "anime": "hunterxhunter",
+    "subject": "gon-freecss",
+    "segment": "part-02",
+    "locale": "en",
+    "hook": "The final stretch of Gon Freecss's journey — Part 2 of 2.",
+    "hookType": "fact",
+    "hookId": "cj-last-fact-1",
+    "cta": "Which location did we miss?",
+    "ctaType": "comment-missed-location",
+    "selection": {
+      "mode": "coldstart",
+      "score": 104.28,
+      "seed": "feed57:h553e3ee5:samples0"
+    },
+    "notes": "growth selector (coldstart): coldstart: novelty +21.5, jitter +4.8; +12 main character; +14 continues a started series (Part 2 promised)"
+  },
+  "alternatives": [
+    {
+      "renderId": "character-journey:dragonball:goku:part-06@en",
+      "contentType": "character-journey",
+      "score": 100.24
+    },
+    {
+      "renderId": "character-journey:dragonball:piccolo:part-01@en",
+      "contentType": "character-journey",
+      "score": 91.36
+    },
+    {
+      "renderId": "character-journey:dragonball:majin-buu@en",
+      "contentType": "character-journey",
+      "score": 91.19
+    },
+    {
+      "renderId": "character-journey:hunterxhunter:kurapika@en",
+      "contentType": "character-journey",
+      "score": 91.19
+    },
+    {
+      "renderId": "character-journey:jujutsukaisen:ryomen-sukuna@en",
+      "contentType": "character-journey",
+      "score": 90.93
+    }
+  ],
+  "eligible": 654
 }
