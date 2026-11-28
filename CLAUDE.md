@@ -66,6 +66,8 @@ npm run smoke            # build + browser smoke test (routes, hydration, langua
 npm run validate:data    # integrity of every registered dataset (exit 1 on errors)
 npm run validate:i18n    # UI keys aligned in all 6 locales + every dataset Localizable is { it, en }
 npm run test:seo         # SEO invariants on sources (slugs, URL round-trip, metadata, hreflang, sitemap)
+npm run seo:baseline     # after a build: rewrite scripts/seo-baseline.json (intended mass SEO change; commit it)
+npm run seo:gsc -- <dir> # analyse Search Console CSV exports (losses by page/query/template, position buckets)
 npm run seo:slugs        # freeze SEO slugs into src/data/<world>/slugs.ts (after adding entities)
 npm run i18n:index       # regenerate src/data/translationIndex.ts (after adding entities or merging overlays)
 npm run preview:static   # serve dist/ with Vercel semantics (real 404s) → :4173

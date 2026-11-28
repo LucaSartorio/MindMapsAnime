@@ -1,0 +1,5010 @@
+{
+  "version": 1,
+  "totals": {
+    "pages": 16701,
+    "indexable": 14348,
+    "sitemap": 14348
+  },
+  "groups": {
+    "-|-|static": {
+      "pages": 1,
+      "indexable": 0,
+      "noindex": 1,
+      "canonicalized": 0,
+      "medianText": 0,
+      "medianLinks": 0
+    },
+    "en|-|static": {
+      "pages": 5,
+      "indexable": 3,
+      "noindex": 2,
+      "canonicalized": 0,
+      "medianText": 1036,
+      "medianLinks": 1
+    },
+    "en|attack-on-titan|abilities": {
+      "pages": 40,
+      "indexable": 40,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 695,
+      "medianLinks": 6
+    },
+    "en|attack-on-titan|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 10220,
+      "medianLinks": 40
+    },
+    "en|attack-on-titan|arcs": {
+      "pages": 14,
+      "indexable": 14,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 3125,
+      "medianLinks": 39
+    },
+    "en|attack-on-titan|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5539,
+      "medianLinks": 14
+    },
+    "en|attack-on-titan|characters": {
+      "pages": 82,
+      "indexable": 82,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1780,
+      "medianLinks": 19
+    },
+    "en|attack-on-titan|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 22589,
+      "medianLinks": 82
+    },
+    "en|attack-on-titan|factions": {
+      "pages": 24,
+      "indexable": 24,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2178,
+      "medianLinks": 22
+    },
+    "en|attack-on-titan|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 6559,
+      "medianLinks": 24
+    },
+    "en|attack-on-titan|journeys": {
+      "pages": 33,
+      "indexable": 14,
+      "noindex": 0,
+      "canonicalized": 19,
+      "medianText": 1061,
+      "medianLinks": 20
+    },
+    "en|attack-on-titan|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5776,
+      "medianLinks": 34
+    },
+    "en|attack-on-titan|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 14321,
+      "medianLinks": 107
+    },
+    "en|attack-on-titan|locations": {
+      "pages": 70,
+      "indexable": 70,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2041,
+      "medianLinks": 54
+    },
+    "en|attack-on-titan|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 14041,
+      "medianLinks": 71
+    },
+    "en|attack-on-titan|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 4568,
+      "medianLinks": 101
+    },
+    "en|attack-on-titan|regions": {
+      "pages": 8,
+      "indexable": 8,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 863,
+      "medianLinks": 15
+    },
+    "en|attack-on-titan|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2324,
+      "medianLinks": 9
+    },
+    "en|attack-on-titan|timeline": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 33683,
+      "medianLinks": 372
+    },
+    "en|black-clover|abilities": {
+      "pages": 91,
+      "indexable": 89,
+      "noindex": 2,
+      "canonicalized": 0,
+      "medianText": 576,
+      "medianLinks": 6
+    },
+    "en|black-clover|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 16527,
+      "medianLinks": 91
+    },
+    "en|black-clover|arcs": {
+      "pages": 19,
+      "indexable": 19,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2411,
+      "medianLinks": 32
+    },
+    "en|black-clover|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 6445,
+      "medianLinks": 19
+    },
+    "en|black-clover|characters": {
+      "pages": 137,
+      "indexable": 131,
+      "noindex": 6,
+      "canonicalized": 0,
+      "medianText": 1286,
+      "medianLinks": 17
+    },
+    "en|black-clover|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 29104,
+      "medianLinks": 137
+    },
+    "en|black-clover|factions": {
+      "pages": 43,
+      "indexable": 43,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1094,
+      "medianLinks": 19
+    },
+    "en|black-clover|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 7418,
+      "medianLinks": 43
+    },
+    "en|black-clover|journeys": {
+      "pages": 23,
+      "indexable": 11,
+      "noindex": 0,
+      "canonicalized": 12,
+      "medianText": 1165,
+      "medianLinks": 16
+    },
+    "en|black-clover|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 4373,
+      "medianLinks": 24
+    },
+    "en|black-clover|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 11842,
+      "medianLinks": 111
+    },
+    "en|black-clover|locations": {
+      "pages": 85,
+      "indexable": 82,
+      "noindex": 3,
+      "canonicalized": 0,
+      "medianText": 1596,
+      "medianLinks": 42
+    },
+    "en|black-clover|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 14332,
+      "medianLinks": 86
+    },
+    "en|black-clover|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5092,
+      "medianLinks": 111
+    },
+    "en|black-clover|regions": {
+      "pages": 8,
+      "indexable": 8,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 702,
+      "medianLinks": 11
+    },
+    "en|black-clover|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1895,
+      "medianLinks": 9
+    },
+    "en|black-clover|timeline": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 23638,
+      "medianLinks": 247
+    },
+    "en|bleach|abilities": {
+      "pages": 102,
+      "indexable": 102,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 645,
+      "medianLinks": 4
+    },
+    "en|bleach|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 23599,
+      "medianLinks": 102
+    },
+    "en|bleach|arcs": {
+      "pages": 17,
+      "indexable": 17,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 3604,
+      "medianLinks": 54
+    },
+    "en|bleach|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 6500,
+      "medianLinks": 17
+    },
+    "en|bleach|characters": {
+      "pages": 147,
+      "indexable": 147,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1762,
+      "medianLinks": 20
+    },
+    "en|bleach|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 41482,
+      "medianLinks": 147
+    },
+    "en|bleach|factions": {
+      "pages": 34,
+      "indexable": 34,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1371,
+      "medianLinks": 18
+    },
+    "en|bleach|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 7373,
+      "medianLinks": 34
+    },
+    "en|bleach|journeys": {
+      "pages": 31,
+      "indexable": 13,
+      "noindex": 0,
+      "canonicalized": 18,
+      "medianText": 1150,
+      "medianLinks": 16
+    },
+    "en|bleach|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5667,
+      "medianLinks": 32
+    },
+    "en|bleach|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 14806,
+      "medianLinks": 107
+    },
+    "en|bleach|locations": {
+      "pages": 73,
+      "indexable": 73,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2434,
+      "medianLinks": 58
+    },
+    "en|bleach|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 16431,
+      "medianLinks": 74
+    },
+    "en|bleach|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 4861,
+      "medianLinks": 103
+    },
+    "en|bleach|regions": {
+      "pages": 7,
+      "indexable": 7,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 712,
+      "medianLinks": 11
+    },
+    "en|bleach|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1865,
+      "medianLinks": 8
+    },
+    "en|bleach|timeline": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 41899,
+      "medianLinks": 414
+    },
+    "en|demon-slayer|landing": {
+      "pages": 1,
+      "indexable": 0,
+      "noindex": 1,
+      "canonicalized": 0,
+      "medianText": 0,
+      "medianLinks": 0
+    },
+    "en|dragon-ball|abilities": {
+      "pages": 110,
+      "indexable": 107,
+      "noindex": 3,
+      "canonicalized": 0,
+      "medianText": 605,
+      "medianLinks": 4
+    },
+    "en|dragon-ball|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 27062,
+      "medianLinks": 110
+    },
+    "en|dragon-ball|arcs": {
+      "pages": 37,
+      "indexable": 37,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1732,
+      "medianLinks": 19
+    },
+    "en|dragon-ball|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 10274,
+      "medianLinks": 37
+    },
+    "en|dragon-ball|characters": {
+      "pages": 184,
+      "indexable": 165,
+      "noindex": 19,
+      "canonicalized": 0,
+      "medianText": 1153,
+      "medianLinks": 13
+    },
+    "en|dragon-ball|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 40885,
+      "medianLinks": 184
+    },
+    "en|dragon-ball|factions": {
+      "pages": 21,
+      "indexable": 21,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 691,
+      "medianLinks": 13
+    },
+    "en|dragon-ball|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 4159,
+      "medianLinks": 21
+    },
+    "en|dragon-ball|journeys": {
+      "pages": 27,
+      "indexable": 21,
+      "noindex": 0,
+      "canonicalized": 6,
+      "medianText": 1005,
+      "medianLinks": 17
+    },
+    "en|dragon-ball|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 6436,
+      "medianLinks": 28
+    },
+    "en|dragon-ball|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 13958,
+      "medianLinks": 129
+    },
+    "en|dragon-ball|locations": {
+      "pages": 106,
+      "indexable": 95,
+      "noindex": 11,
+      "canonicalized": 0,
+      "medianText": 1948,
+      "medianLinks": 55
+    },
+    "en|dragon-ball|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 19989,
+      "medianLinks": 107
+    },
+    "en|dragon-ball|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5764,
+      "medianLinks": 117
+    },
+    "en|dragon-ball|regions": {
+      "pages": 6,
+      "indexable": 6,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 595,
+      "medianLinks": 3
+    },
+    "en|dragon-ball|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1555,
+      "medianLinks": 7
+    },
+    "en|dragon-ball|timeline": {
+      "pages": 2,
+      "indexable": 2,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2983,
+      "medianLinks": 24
+    },
+    "en|fairy-tail|landing": {
+      "pages": 1,
+      "indexable": 0,
+      "noindex": 1,
+      "canonicalized": 0,
+      "medianText": 0,
+      "medianLinks": 0
+    },
+    "en|frieren|landing": {
+      "pages": 1,
+      "indexable": 0,
+      "noindex": 1,
+      "canonicalized": 0,
+      "medianText": 0,
+      "medianLinks": 0
+    },
+    "en|fullmetal-alchemist|abilities": {
+      "pages": 30,
+      "indexable": 29,
+      "noindex": 1,
+      "canonicalized": 0,
+      "medianText": 654,
+      "medianLinks": 3
+    },
+    "en|fullmetal-alchemist|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 8269,
+      "medianLinks": 30
+    },
+    "en|fullmetal-alchemist|arcs": {
+      "pages": 18,
+      "indexable": 18,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1349,
+      "medianLinks": 11
+    },
+    "en|fullmetal-alchemist|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 6302,
+      "medianLinks": 18
+    },
+    "en|fullmetal-alchemist|characters": {
+      "pages": 52,
+      "indexable": 52,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1667,
+      "medianLinks": 12
+    },
+    "en|fullmetal-alchemist|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 8672,
+      "medianLinks": 52
+    },
+    "en|fullmetal-alchemist|factions": {
+      "pages": 11,
+      "indexable": 11,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1265,
+      "medianLinks": 14
+    },
+    "en|fullmetal-alchemist|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2272,
+      "medianLinks": 11
+    },
+    "en|fullmetal-alchemist|journeys": {
+      "pages": 6,
+      "indexable": 0,
+      "noindex": 0,
+      "canonicalized": 6,
+      "medianText": 0,
+      "medianLinks": 0
+    },
+    "en|fullmetal-alchemist|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1282,
+      "medianLinks": 7
+    },
+    "en|fullmetal-alchemist|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 10391,
+      "medianLinks": 94
+    },
+    "en|fullmetal-alchemist|locations": {
+      "pages": 18,
+      "indexable": 10,
+      "noindex": 8,
+      "canonicalized": 0,
+      "medianText": 1476,
+      "medianLinks": 17
+    },
+    "en|fullmetal-alchemist|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2540,
+      "medianLinks": 19
+    },
+    "en|fullmetal-alchemist|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1630,
+      "medianLinks": 40
+    },
+    "en|fullmetal-alchemist|regions": {
+      "pages": 5,
+      "indexable": 1,
+      "noindex": 4,
+      "canonicalized": 0,
+      "medianText": 813,
+      "medianLinks": 27
+    },
+    "en|fullmetal-alchemist|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 892,
+      "medianLinks": 6
+    },
+    "en|fullmetal-alchemist|timeline": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 17134,
+      "medianLinks": 135
+    },
+    "en|hunter-x-hunter|abilities": {
+      "pages": 73,
+      "indexable": 59,
+      "noindex": 14,
+      "canonicalized": 0,
+      "medianText": 697,
+      "medianLinks": 3
+    },
+    "en|hunter-x-hunter|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 11358,
+      "medianLinks": 73
+    },
+    "en|hunter-x-hunter|arcs": {
+      "pages": 8,
+      "indexable": 8,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2784,
+      "medianLinks": 54
+    },
+    "en|hunter-x-hunter|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2444,
+      "medianLinks": 8
+    },
+    "en|hunter-x-hunter|characters": {
+      "pages": 165,
+      "indexable": 133,
+      "noindex": 32,
+      "canonicalized": 0,
+      "medianText": 1097,
+      "medianLinks": 13
+    },
+    "en|hunter-x-hunter|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 24896,
+      "medianLinks": 165
+    },
+    "en|hunter-x-hunter|factions": {
+      "pages": 24,
+      "indexable": 23,
+      "noindex": 1,
+      "canonicalized": 0,
+      "medianText": 942,
+      "medianLinks": 11
+    },
+    "en|hunter-x-hunter|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 4438,
+      "medianLinks": 24
+    },
+    "en|hunter-x-hunter|journeys": {
+      "pages": 20,
+      "indexable": 16,
+      "noindex": 0,
+      "canonicalized": 4,
+      "medianText": 859,
+      "medianLinks": 14
+    },
+    "en|hunter-x-hunter|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 3619,
+      "medianLinks": 21
+    },
+    "en|hunter-x-hunter|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 10697,
+      "medianLinks": 112
+    },
+    "en|hunter-x-hunter|locations": {
+      "pages": 77,
+      "indexable": 48,
+      "noindex": 29,
+      "canonicalized": 0,
+      "medianText": 1223,
+      "medianLinks": 18
+    },
+    "en|hunter-x-hunter|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 11262,
+      "medianLinks": 78
+    },
+    "en|hunter-x-hunter|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 4254,
+      "medianLinks": 117
+    },
+    "en|hunter-x-hunter|regions": {
+      "pages": 17,
+      "indexable": 5,
+      "noindex": 12,
+      "canonicalized": 0,
+      "medianText": 669,
+      "medianLinks": 8
+    },
+    "en|hunter-x-hunter|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2598,
+      "medianLinks": 18
+    },
+    "en|hunter-x-hunter|timeline": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 26484,
+      "medianLinks": 352
+    },
+    "en|jujutsu-kaisen|abilities": {
+      "pages": 68,
+      "indexable": 68,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 661,
+      "medianLinks": 4
+    },
+    "en|jujutsu-kaisen|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 16145,
+      "medianLinks": 68
+    },
+    "en|jujutsu-kaisen|arcs": {
+      "pages": 13,
+      "indexable": 13,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2128,
+      "medianLinks": 26
+    },
+    "en|jujutsu-kaisen|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5166,
+      "medianLinks": 13
+    },
+    "en|jujutsu-kaisen|characters": {
+      "pages": 72,
+      "indexable": 71,
+      "noindex": 1,
+      "canonicalized": 0,
+      "medianText": 1484,
+      "medianLinks": 17
+    },
+    "en|jujutsu-kaisen|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 20120,
+      "medianLinks": 72
+    },
+    "en|jujutsu-kaisen|factions": {
+      "pages": 15,
+      "indexable": 15,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1960,
+      "medianLinks": 20
+    },
+    "en|jujutsu-kaisen|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 4216,
+      "medianLinks": 15
+    },
+    "en|jujutsu-kaisen|journeys": {
+      "pages": 24,
+      "indexable": 12,
+      "noindex": 0,
+      "canonicalized": 12,
+      "medianText": 1102,
+      "medianLinks": 20
+    },
+    "en|jujutsu-kaisen|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 4623,
+      "medianLinks": 25
+    },
+    "en|jujutsu-kaisen|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 14986,
+      "medianLinks": 109
+    },
+    "en|jujutsu-kaisen|locations": {
+      "pages": 44,
+      "indexable": 44,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1536,
+      "medianLinks": 35
+    },
+    "en|jujutsu-kaisen|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 10039,
+      "medianLinks": 45
+    },
+    "en|jujutsu-kaisen|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 3618,
+      "medianLinks": 79
+    },
+    "en|jujutsu-kaisen|regions": {
+      "pages": 12,
+      "indexable": 7,
+      "noindex": 5,
+      "canonicalized": 0,
+      "medianText": 587,
+      "medianLinks": 4
+    },
+    "en|jujutsu-kaisen|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2404,
+      "medianLinks": 13
+    },
+    "en|jujutsu-kaisen|timeline": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 25570,
+      "medianLinks": 260
+    },
+    "en|naruto|abilities": {
+      "pages": 153,
+      "indexable": 144,
+      "noindex": 9,
+      "canonicalized": 0,
+      "medianText": 631,
+      "medianLinks": 4
+    },
+    "en|naruto|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 30144,
+      "medianLinks": 153
+    },
+    "en|naruto|arcs": {
+      "pages": 32,
+      "indexable": 32,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1264,
+      "medianLinks": 16
+    },
+    "en|naruto|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 8391,
+      "medianLinks": 32
+    },
+    "en|naruto|characters": {
+      "pages": 253,
+      "indexable": 218,
+      "noindex": 35,
+      "canonicalized": 0,
+      "medianText": 938,
+      "medianLinks": 10
+    },
+    "en|naruto|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 41001,
+      "medianLinks": 253
+    },
+    "en|naruto|factions": {
+      "pages": 57,
+      "indexable": 57,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 740,
+      "medianLinks": 8
+    },
+    "en|naruto|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 12657,
+      "medianLinks": 57
+    },
+    "en|naruto|journeys": {
+      "pages": 47,
+      "indexable": 38,
+      "noindex": 5,
+      "canonicalized": 4,
+      "medianText": 692,
+      "medianLinks": 8
+    },
+    "en|naruto|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5554,
+      "medianLinks": 48
+    },
+    "en|naruto|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 9511,
+      "medianLinks": 147
+    },
+    "en|naruto|locations": {
+      "pages": 108,
+      "indexable": 65,
+      "noindex": 43,
+      "canonicalized": 0,
+      "medianText": 903,
+      "medianLinks": 14
+    },
+    "en|naruto|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 10038,
+      "medianLinks": 109
+    },
+    "en|naruto|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 4320,
+      "medianLinks": 153
+    },
+    "en|naruto|regions": {
+      "pages": 27,
+      "indexable": 9,
+      "noindex": 18,
+      "canonicalized": 0,
+      "medianText": 508,
+      "medianLinks": 9
+    },
+    "en|naruto|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2640,
+      "medianLinks": 28
+    },
+    "en|naruto|timeline": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 33900,
+      "medianLinks": 435
+    },
+    "en|one-piece|abilities": {
+      "pages": 125,
+      "indexable": 119,
+      "noindex": 6,
+      "canonicalized": 0,
+      "medianText": 654,
+      "medianLinks": 4
+    },
+    "en|one-piece|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 16619,
+      "medianLinks": 125
+    },
+    "en|one-piece|arcs": {
+      "pages": 37,
+      "indexable": 37,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2198,
+      "medianLinks": 24
+    },
+    "en|one-piece|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 13159,
+      "medianLinks": 37
+    },
+    "en|one-piece|characters": {
+      "pages": 418,
+      "indexable": 409,
+      "noindex": 9,
+      "canonicalized": 0,
+      "medianText": 842,
+      "medianLinks": 8
+    },
+    "en|one-piece|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 60694,
+      "medianLinks": 418
+    },
+    "en|one-piece|factions": {
+      "pages": 83,
+      "indexable": 73,
+      "noindex": 10,
+      "canonicalized": 0,
+      "medianText": 844,
+      "medianLinks": 9
+    },
+    "en|one-piece|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 12974,
+      "medianLinks": 83
+    },
+    "en|one-piece|journeys": {
+      "pages": 46,
+      "indexable": 22,
+      "noindex": 0,
+      "canonicalized": 24,
+      "medianText": 674,
+      "medianLinks": 7
+    },
+    "en|one-piece|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 8106,
+      "medianLinks": 47
+    },
+    "en|one-piece|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 12877,
+      "medianLinks": 150
+    },
+    "en|one-piece|locations": {
+      "pages": 330,
+      "indexable": 137,
+      "noindex": 193,
+      "canonicalized": 0,
+      "medianText": 1092,
+      "medianLinks": 17
+    },
+    "en|one-piece|locations:index": {
+      "pages": 2,
+      "indexable": 2,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 21594,
+      "medianLinks": 151
+    },
+    "en|one-piece|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 8985,
+      "medianLinks": 263
+    },
+    "en|one-piece|regions": {
+      "pages": 8,
+      "indexable": 8,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 954,
+      "medianLinks": 21
+    },
+    "en|one-piece|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2394,
+      "medianLinks": 9
+    },
+    "en|one-piece|timeline": {
+      "pages": 2,
+      "indexable": 2,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 11133,
+      "medianLinks": 138
+    },
+    "en|toriko|landing": {
+      "pages": 1,
+      "indexable": 0,
+      "noindex": 1,
+      "canonicalized": 0,
+      "medianText": 0,
+      "medianLinks": 0
+    },
+    "es|-|static": {
+      "pages": 5,
+      "indexable": 3,
+      "noindex": 2,
+      "canonicalized": 0,
+      "medianText": 1173,
+      "medianLinks": 1
+    },
+    "es|attack-on-titan|abilities": {
+      "pages": 40,
+      "indexable": 40,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 797,
+      "medianLinks": 6
+    },
+    "es|attack-on-titan|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 11286,
+      "medianLinks": 40
+    },
+    "es|attack-on-titan|arcs": {
+      "pages": 14,
+      "indexable": 14,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 3411,
+      "medianLinks": 39
+    },
+    "es|attack-on-titan|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5901,
+      "medianLinks": 14
+    },
+    "es|attack-on-titan|characters": {
+      "pages": 82,
+      "indexable": 82,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1960,
+      "medianLinks": 19
+    },
+    "es|attack-on-titan|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 24298,
+      "medianLinks": 82
+    },
+    "es|attack-on-titan|factions": {
+      "pages": 24,
+      "indexable": 24,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2388,
+      "medianLinks": 22
+    },
+    "es|attack-on-titan|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 7293,
+      "medianLinks": 24
+    },
+    "es|attack-on-titan|journeys": {
+      "pages": 33,
+      "indexable": 14,
+      "noindex": 0,
+      "canonicalized": 19,
+      "medianText": 1192,
+      "medianLinks": 20
+    },
+    "es|attack-on-titan|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5933,
+      "medianLinks": 34
+    },
+    "es|attack-on-titan|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 15197,
+      "medianLinks": 107
+    },
+    "es|attack-on-titan|locations": {
+      "pages": 70,
+      "indexable": 70,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2315,
+      "medianLinks": 54
+    },
+    "es|attack-on-titan|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 15406,
+      "medianLinks": 71
+    },
+    "es|attack-on-titan|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5167,
+      "medianLinks": 101
+    },
+    "es|attack-on-titan|regions": {
+      "pages": 8,
+      "indexable": 8,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 943,
+      "medianLinks": 15
+    },
+    "es|attack-on-titan|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2481,
+      "medianLinks": 9
+    },
+    "es|attack-on-titan|timeline": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 36552,
+      "medianLinks": 372
+    },
+    "es|black-clover|abilities": {
+      "pages": 91,
+      "indexable": 89,
+      "noindex": 2,
+      "canonicalized": 0,
+      "medianText": 650,
+      "medianLinks": 6
+    },
+    "es|black-clover|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 17919,
+      "medianLinks": 91
+    },
+    "es|black-clover|arcs": {
+      "pages": 19,
+      "indexable": 19,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2675,
+      "medianLinks": 32
+    },
+    "es|black-clover|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 7047,
+      "medianLinks": 19
+    },
+    "es|black-clover|characters": {
+      "pages": 137,
+      "indexable": 131,
+      "noindex": 6,
+      "canonicalized": 0,
+      "medianText": 1431,
+      "medianLinks": 17
+    },
+    "es|black-clover|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 31510,
+      "medianLinks": 137
+    },
+    "es|black-clover|factions": {
+      "pages": 43,
+      "indexable": 43,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1262,
+      "medianLinks": 19
+    },
+    "es|black-clover|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 8055,
+      "medianLinks": 43
+    },
+    "es|black-clover|journeys": {
+      "pages": 23,
+      "indexable": 11,
+      "noindex": 0,
+      "canonicalized": 12,
+      "medianText": 1312,
+      "medianLinks": 16
+    },
+    "es|black-clover|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 4538,
+      "medianLinks": 24
+    },
+    "es|black-clover|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 12710,
+      "medianLinks": 111
+    },
+    "es|black-clover|locations": {
+      "pages": 85,
+      "indexable": 82,
+      "noindex": 3,
+      "canonicalized": 0,
+      "medianText": 1888,
+      "medianLinks": 42
+    },
+    "es|black-clover|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 15824,
+      "medianLinks": 86
+    },
+    "es|black-clover|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5826,
+      "medianLinks": 111
+    },
+    "es|black-clover|regions": {
+      "pages": 8,
+      "indexable": 8,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 771,
+      "medianLinks": 11
+    },
+    "es|black-clover|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2028,
+      "medianLinks": 9
+    },
+    "es|black-clover|timeline": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 26535,
+      "medianLinks": 247
+    },
+    "es|bleach|abilities": {
+      "pages": 102,
+      "indexable": 102,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 721,
+      "medianLinks": 4
+    },
+    "es|bleach|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 24133,
+      "medianLinks": 102
+    },
+    "es|bleach|arcs": {
+      "pages": 17,
+      "indexable": 17,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 3826,
+      "medianLinks": 54
+    },
+    "es|bleach|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 7062,
+      "medianLinks": 17
+    },
+    "es|bleach|characters": {
+      "pages": 147,
+      "indexable": 147,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1908,
+      "medianLinks": 20
+    },
+    "es|bleach|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 43234,
+      "medianLinks": 147
+    },
+    "es|bleach|factions": {
+      "pages": 34,
+      "indexable": 34,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1485,
+      "medianLinks": 18
+    },
+    "es|bleach|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 7842,
+      "medianLinks": 34
+    },
+    "es|bleach|journeys": {
+      "pages": 31,
+      "indexable": 13,
+      "noindex": 0,
+      "canonicalized": 18,
+      "medianText": 1302,
+      "medianLinks": 16
+    },
+    "es|bleach|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5770,
+      "medianLinks": 32
+    },
+    "es|bleach|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 15539,
+      "medianLinks": 107
+    },
+    "es|bleach|locations": {
+      "pages": 73,
+      "indexable": 73,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2744,
+      "medianLinks": 58
+    },
+    "es|bleach|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 17491,
+      "medianLinks": 74
+    },
+    "es|bleach|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5357,
+      "medianLinks": 103
+    },
+    "es|bleach|regions": {
+      "pages": 7,
+      "indexable": 7,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 809,
+      "medianLinks": 11
+    },
+    "es|bleach|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1991,
+      "medianLinks": 8
+    },
+    "es|bleach|timeline": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 45475,
+      "medianLinks": 414
+    },
+    "es|dragon-ball|abilities": {
+      "pages": 110,
+      "indexable": 107,
+      "noindex": 3,
+      "canonicalized": 0,
+      "medianText": 681,
+      "medianLinks": 4
+    },
+    "es|dragon-ball|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 29155,
+      "medianLinks": 110
+    },
+    "es|dragon-ball|arcs": {
+      "pages": 37,
+      "indexable": 37,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1891,
+      "medianLinks": 19
+    },
+    "es|dragon-ball|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 11281,
+      "medianLinks": 37
+    },
+    "es|dragon-ball|characters": {
+      "pages": 184,
+      "indexable": 165,
+      "noindex": 19,
+      "canonicalized": 0,
+      "medianText": 1286,
+      "medianLinks": 13
+    },
+    "es|dragon-ball|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 43832,
+      "medianLinks": 184
+    },
+    "es|dragon-ball|factions": {
+      "pages": 21,
+      "indexable": 21,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 778,
+      "medianLinks": 13
+    },
+    "es|dragon-ball|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 4543,
+      "medianLinks": 21
+    },
+    "es|dragon-ball|journeys": {
+      "pages": 27,
+      "indexable": 21,
+      "noindex": 0,
+      "canonicalized": 6,
+      "medianText": 1142,
+      "medianLinks": 17
+    },
+    "es|dragon-ball|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 6725,
+      "medianLinks": 28
+    },
+    "es|dragon-ball|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 14994,
+      "medianLinks": 129
+    },
+    "es|dragon-ball|locations": {
+      "pages": 106,
+      "indexable": 95,
+      "noindex": 11,
+      "canonicalized": 0,
+      "medianText": 2236,
+      "medianLinks": 55
+    },
+    "es|dragon-ball|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 22024,
+      "medianLinks": 107
+    },
+    "es|dragon-ball|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 6320,
+      "medianLinks": 117
+    },
+    "es|dragon-ball|regions": {
+      "pages": 6,
+      "indexable": 6,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 675,
+      "medianLinks": 3
+    },
+    "es|dragon-ball|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1720,
+      "medianLinks": 7
+    },
+    "es|dragon-ball|timeline": {
+      "pages": 2,
+      "indexable": 2,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 3288,
+      "medianLinks": 24
+    },
+    "es|fullmetal-alchemist|abilities": {
+      "pages": 30,
+      "indexable": 29,
+      "noindex": 1,
+      "canonicalized": 0,
+      "medianText": 722,
+      "medianLinks": 3
+    },
+    "es|fullmetal-alchemist|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 8900,
+      "medianLinks": 30
+    },
+    "es|fullmetal-alchemist|arcs": {
+      "pages": 18,
+      "indexable": 18,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1451,
+      "medianLinks": 11
+    },
+    "es|fullmetal-alchemist|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 6635,
+      "medianLinks": 18
+    },
+    "es|fullmetal-alchemist|characters": {
+      "pages": 52,
+      "indexable": 52,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1770,
+      "medianLinks": 12
+    },
+    "es|fullmetal-alchemist|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 8956,
+      "medianLinks": 52
+    },
+    "es|fullmetal-alchemist|factions": {
+      "pages": 11,
+      "indexable": 11,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1354,
+      "medianLinks": 14
+    },
+    "es|fullmetal-alchemist|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2501,
+      "medianLinks": 11
+    },
+    "es|fullmetal-alchemist|journeys": {
+      "pages": 6,
+      "indexable": 0,
+      "noindex": 0,
+      "canonicalized": 6,
+      "medianText": 0,
+      "medianLinks": 0
+    },
+    "es|fullmetal-alchemist|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1338,
+      "medianLinks": 7
+    },
+    "es|fullmetal-alchemist|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 10984,
+      "medianLinks": 94
+    },
+    "es|fullmetal-alchemist|locations": {
+      "pages": 18,
+      "indexable": 10,
+      "noindex": 8,
+      "canonicalized": 0,
+      "medianText": 1583,
+      "medianLinks": 17
+    },
+    "es|fullmetal-alchemist|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2745,
+      "medianLinks": 19
+    },
+    "es|fullmetal-alchemist|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1761,
+      "medianLinks": 40
+    },
+    "es|fullmetal-alchemist|regions": {
+      "pages": 5,
+      "indexable": 1,
+      "noindex": 4,
+      "canonicalized": 0,
+      "medianText": 876,
+      "medianLinks": 27
+    },
+    "es|fullmetal-alchemist|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 926,
+      "medianLinks": 6
+    },
+    "es|fullmetal-alchemist|timeline": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 18349,
+      "medianLinks": 135
+    },
+    "es|hunter-x-hunter|abilities": {
+      "pages": 73,
+      "indexable": 59,
+      "noindex": 14,
+      "canonicalized": 0,
+      "medianText": 777,
+      "medianLinks": 3
+    },
+    "es|hunter-x-hunter|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 12759,
+      "medianLinks": 73
+    },
+    "es|hunter-x-hunter|arcs": {
+      "pages": 8,
+      "indexable": 8,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 3074,
+      "medianLinks": 54
+    },
+    "es|hunter-x-hunter|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2810,
+      "medianLinks": 8
+    },
+    "es|hunter-x-hunter|characters": {
+      "pages": 165,
+      "indexable": 133,
+      "noindex": 32,
+      "canonicalized": 0,
+      "medianText": 1253,
+      "medianLinks": 13
+    },
+    "es|hunter-x-hunter|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 27756,
+      "medianLinks": 165
+    },
+    "es|hunter-x-hunter|factions": {
+      "pages": 24,
+      "indexable": 23,
+      "noindex": 1,
+      "canonicalized": 0,
+      "medianText": 1102,
+      "medianLinks": 11
+    },
+    "es|hunter-x-hunter|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 4977,
+      "medianLinks": 24
+    },
+    "es|hunter-x-hunter|journeys": {
+      "pages": 20,
+      "indexable": 16,
+      "noindex": 0,
+      "canonicalized": 4,
+      "medianText": 986,
+      "medianLinks": 14
+    },
+    "es|hunter-x-hunter|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 3960,
+      "medianLinks": 21
+    },
+    "es|hunter-x-hunter|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 11803,
+      "medianLinks": 112
+    },
+    "es|hunter-x-hunter|locations": {
+      "pages": 77,
+      "indexable": 48,
+      "noindex": 29,
+      "canonicalized": 0,
+      "medianText": 1380,
+      "medianLinks": 18
+    },
+    "es|hunter-x-hunter|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 12688,
+      "medianLinks": 78
+    },
+    "es|hunter-x-hunter|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 4753,
+      "medianLinks": 117
+    },
+    "es|hunter-x-hunter|regions": {
+      "pages": 17,
+      "indexable": 5,
+      "noindex": 12,
+      "canonicalized": 0,
+      "medianText": 746,
+      "medianLinks": 8
+    },
+    "es|hunter-x-hunter|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2825,
+      "medianLinks": 18
+    },
+    "es|hunter-x-hunter|timeline": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 30389,
+      "medianLinks": 352
+    },
+    "es|jujutsu-kaisen|abilities": {
+      "pages": 68,
+      "indexable": 68,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 724,
+      "medianLinks": 4
+    },
+    "es|jujutsu-kaisen|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 17151,
+      "medianLinks": 68
+    },
+    "es|jujutsu-kaisen|arcs": {
+      "pages": 13,
+      "indexable": 13,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2277,
+      "medianLinks": 26
+    },
+    "es|jujutsu-kaisen|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5469,
+      "medianLinks": 13
+    },
+    "es|jujutsu-kaisen|characters": {
+      "pages": 72,
+      "indexable": 71,
+      "noindex": 1,
+      "canonicalized": 0,
+      "medianText": 1648,
+      "medianLinks": 17
+    },
+    "es|jujutsu-kaisen|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 21667,
+      "medianLinks": 72
+    },
+    "es|jujutsu-kaisen|factions": {
+      "pages": 15,
+      "indexable": 15,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2126,
+      "medianLinks": 20
+    },
+    "es|jujutsu-kaisen|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 4600,
+      "medianLinks": 15
+    },
+    "es|jujutsu-kaisen|journeys": {
+      "pages": 24,
+      "indexable": 12,
+      "noindex": 0,
+      "canonicalized": 12,
+      "medianText": 1221,
+      "medianLinks": 20
+    },
+    "es|jujutsu-kaisen|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 4887,
+      "medianLinks": 25
+    },
+    "es|jujutsu-kaisen|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 16086,
+      "medianLinks": 109
+    },
+    "es|jujutsu-kaisen|locations": {
+      "pages": 44,
+      "indexable": 44,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1709,
+      "medianLinks": 35
+    },
+    "es|jujutsu-kaisen|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 11062,
+      "medianLinks": 45
+    },
+    "es|jujutsu-kaisen|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 3964,
+      "medianLinks": 79
+    },
+    "es|jujutsu-kaisen|regions": {
+      "pages": 12,
+      "indexable": 7,
+      "noindex": 5,
+      "canonicalized": 0,
+      "medianText": 632,
+      "medianLinks": 4
+    },
+    "es|jujutsu-kaisen|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2560,
+      "medianLinks": 13
+    },
+    "es|jujutsu-kaisen|timeline": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 28045,
+      "medianLinks": 260
+    },
+    "es|naruto|abilities": {
+      "pages": 153,
+      "indexable": 144,
+      "noindex": 9,
+      "canonicalized": 0,
+      "medianText": 708,
+      "medianLinks": 4
+    },
+    "es|naruto|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 32696,
+      "medianLinks": 153
+    },
+    "es|naruto|arcs": {
+      "pages": 32,
+      "indexable": 32,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1404,
+      "medianLinks": 16
+    },
+    "es|naruto|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 8998,
+      "medianLinks": 32
+    },
+    "es|naruto|characters": {
+      "pages": 253,
+      "indexable": 218,
+      "noindex": 35,
+      "canonicalized": 0,
+      "medianText": 1038,
+      "medianLinks": 10
+    },
+    "es|naruto|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 43393,
+      "medianLinks": 253
+    },
+    "es|naruto|factions": {
+      "pages": 57,
+      "indexable": 57,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 823,
+      "medianLinks": 8
+    },
+    "es|naruto|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 13659,
+      "medianLinks": 57
+    },
+    "es|naruto|journeys": {
+      "pages": 47,
+      "indexable": 38,
+      "noindex": 5,
+      "canonicalized": 4,
+      "medianText": 802,
+      "medianLinks": 8
+    },
+    "es|naruto|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5851,
+      "medianLinks": 48
+    },
+    "es|naruto|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 10543,
+      "medianLinks": 147
+    },
+    "es|naruto|locations": {
+      "pages": 108,
+      "indexable": 65,
+      "noindex": 43,
+      "canonicalized": 0,
+      "medianText": 1028,
+      "medianLinks": 14
+    },
+    "es|naruto|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 11630,
+      "medianLinks": 109
+    },
+    "es|naruto|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5046,
+      "medianLinks": 153
+    },
+    "es|naruto|regions": {
+      "pages": 27,
+      "indexable": 9,
+      "noindex": 18,
+      "canonicalized": 0,
+      "medianText": 587,
+      "medianLinks": 9
+    },
+    "es|naruto|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2888,
+      "medianLinks": 28
+    },
+    "es|naruto|timeline": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 38056,
+      "medianLinks": 435
+    },
+    "es|one-piece|abilities": {
+      "pages": 125,
+      "indexable": 119,
+      "noindex": 6,
+      "canonicalized": 0,
+      "medianText": 749,
+      "medianLinks": 4
+    },
+    "es|one-piece|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 17834,
+      "medianLinks": 125
+    },
+    "es|one-piece|arcs": {
+      "pages": 37,
+      "indexable": 37,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2345,
+      "medianLinks": 24
+    },
+    "es|one-piece|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 14040,
+      "medianLinks": 37
+    },
+    "es|one-piece|characters": {
+      "pages": 418,
+      "indexable": 409,
+      "noindex": 9,
+      "canonicalized": 0,
+      "medianText": 938,
+      "medianLinks": 8
+    },
+    "es|one-piece|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 64198,
+      "medianLinks": 418
+    },
+    "es|one-piece|factions": {
+      "pages": 83,
+      "indexable": 73,
+      "noindex": 10,
+      "canonicalized": 0,
+      "medianText": 950,
+      "medianLinks": 9
+    },
+    "es|one-piece|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 14512,
+      "medianLinks": 83
+    },
+    "es|one-piece|journeys": {
+      "pages": 46,
+      "indexable": 22,
+      "noindex": 0,
+      "canonicalized": 24,
+      "medianText": 755,
+      "medianLinks": 7
+    },
+    "es|one-piece|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 8288,
+      "medianLinks": 47
+    },
+    "es|one-piece|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 13896,
+      "medianLinks": 150
+    },
+    "es|one-piece|locations": {
+      "pages": 330,
+      "indexable": 137,
+      "noindex": 193,
+      "canonicalized": 0,
+      "medianText": 1168,
+      "medianLinks": 17
+    },
+    "es|one-piece|locations:index": {
+      "pages": 2,
+      "indexable": 2,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 23407,
+      "medianLinks": 151
+    },
+    "es|one-piece|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 9478,
+      "medianLinks": 263
+    },
+    "es|one-piece|regions": {
+      "pages": 8,
+      "indexable": 8,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1083,
+      "medianLinks": 21
+    },
+    "es|one-piece|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2530,
+      "medianLinks": 9
+    },
+    "es|one-piece|timeline": {
+      "pages": 2,
+      "indexable": 2,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 12084,
+      "medianLinks": 138
+    },
+    "fr|-|static": {
+      "pages": 5,
+      "indexable": 3,
+      "noindex": 2,
+      "canonicalized": 0,
+      "medianText": 1280,
+      "medianLinks": 1
+    },
+    "fr|attack-on-titan|abilities": {
+      "pages": 40,
+      "indexable": 40,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 808,
+      "medianLinks": 6
+    },
+    "fr|attack-on-titan|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 11817,
+      "medianLinks": 40
+    },
+    "fr|attack-on-titan|arcs": {
+      "pages": 14,
+      "indexable": 14,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 3522,
+      "medianLinks": 39
+    },
+    "fr|attack-on-titan|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 6185,
+      "medianLinks": 14
+    },
+    "fr|attack-on-titan|characters": {
+      "pages": 82,
+      "indexable": 82,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2023,
+      "medianLinks": 19
+    },
+    "fr|attack-on-titan|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 25027,
+      "medianLinks": 82
+    },
+    "fr|attack-on-titan|factions": {
+      "pages": 24,
+      "indexable": 24,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2505,
+      "medianLinks": 22
+    },
+    "fr|attack-on-titan|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 7675,
+      "medianLinks": 24
+    },
+    "fr|attack-on-titan|journeys": {
+      "pages": 33,
+      "indexable": 14,
+      "noindex": 0,
+      "canonicalized": 19,
+      "medianText": 1167,
+      "medianLinks": 20
+    },
+    "fr|attack-on-titan|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 6465,
+      "medianLinks": 34
+    },
+    "fr|attack-on-titan|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 15997,
+      "medianLinks": 107
+    },
+    "fr|attack-on-titan|locations": {
+      "pages": 70,
+      "indexable": 70,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2356,
+      "medianLinks": 54
+    },
+    "fr|attack-on-titan|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 15300,
+      "medianLinks": 71
+    },
+    "fr|attack-on-titan|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5159,
+      "medianLinks": 101
+    },
+    "fr|attack-on-titan|regions": {
+      "pages": 8,
+      "indexable": 8,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 966,
+      "medianLinks": 15
+    },
+    "fr|attack-on-titan|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2480,
+      "medianLinks": 9
+    },
+    "fr|attack-on-titan|timeline": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 39072,
+      "medianLinks": 372
+    },
+    "fr|black-clover|abilities": {
+      "pages": 91,
+      "indexable": 89,
+      "noindex": 2,
+      "canonicalized": 0,
+      "medianText": 665,
+      "medianLinks": 6
+    },
+    "fr|black-clover|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 19133,
+      "medianLinks": 91
+    },
+    "fr|black-clover|arcs": {
+      "pages": 19,
+      "indexable": 19,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2822,
+      "medianLinks": 32
+    },
+    "fr|black-clover|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 7227,
+      "medianLinks": 19
+    },
+    "fr|black-clover|characters": {
+      "pages": 137,
+      "indexable": 131,
+      "noindex": 6,
+      "canonicalized": 0,
+      "medianText": 1465,
+      "medianLinks": 17
+    },
+    "fr|black-clover|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 32531,
+      "medianLinks": 137
+    },
+    "fr|black-clover|factions": {
+      "pages": 43,
+      "indexable": 43,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1266,
+      "medianLinks": 19
+    },
+    "fr|black-clover|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 8426,
+      "medianLinks": 43
+    },
+    "fr|black-clover|journeys": {
+      "pages": 23,
+      "indexable": 11,
+      "noindex": 0,
+      "canonicalized": 12,
+      "medianText": 1329,
+      "medianLinks": 16
+    },
+    "fr|black-clover|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 4990,
+      "medianLinks": 24
+    },
+    "fr|black-clover|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 13555,
+      "medianLinks": 111
+    },
+    "fr|black-clover|locations": {
+      "pages": 85,
+      "indexable": 82,
+      "noindex": 3,
+      "canonicalized": 0,
+      "medianText": 1843,
+      "medianLinks": 42
+    },
+    "fr|black-clover|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 16457,
+      "medianLinks": 86
+    },
+    "fr|black-clover|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5960,
+      "medianLinks": 111
+    },
+    "fr|black-clover|regions": {
+      "pages": 8,
+      "indexable": 8,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 780,
+      "medianLinks": 11
+    },
+    "fr|black-clover|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2006,
+      "medianLinks": 9
+    },
+    "fr|black-clover|timeline": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 27978,
+      "medianLinks": 247
+    },
+    "fr|bleach|abilities": {
+      "pages": 102,
+      "indexable": 102,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 725,
+      "medianLinks": 4
+    },
+    "fr|bleach|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 25064,
+      "medianLinks": 102
+    },
+    "fr|bleach|arcs": {
+      "pages": 17,
+      "indexable": 17,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 3809,
+      "medianLinks": 54
+    },
+    "fr|bleach|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 6999,
+      "medianLinks": 17
+    },
+    "fr|bleach|characters": {
+      "pages": 147,
+      "indexable": 147,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1919,
+      "medianLinks": 20
+    },
+    "fr|bleach|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 43719,
+      "medianLinks": 147
+    },
+    "fr|bleach|factions": {
+      "pages": 34,
+      "indexable": 34,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1479,
+      "medianLinks": 18
+    },
+    "fr|bleach|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 7799,
+      "medianLinks": 34
+    },
+    "fr|bleach|journeys": {
+      "pages": 31,
+      "indexable": 13,
+      "noindex": 0,
+      "canonicalized": 18,
+      "medianText": 1227,
+      "medianLinks": 16
+    },
+    "fr|bleach|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 6090,
+      "medianLinks": 32
+    },
+    "fr|bleach|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 15677,
+      "medianLinks": 107
+    },
+    "fr|bleach|locations": {
+      "pages": 73,
+      "indexable": 73,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2678,
+      "medianLinks": 58
+    },
+    "fr|bleach|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 17623,
+      "medianLinks": 74
+    },
+    "fr|bleach|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5283,
+      "medianLinks": 103
+    },
+    "fr|bleach|regions": {
+      "pages": 7,
+      "indexable": 7,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 760,
+      "medianLinks": 11
+    },
+    "fr|bleach|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1924,
+      "medianLinks": 8
+    },
+    "fr|bleach|timeline": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 45983,
+      "medianLinks": 414
+    },
+    "fr|dragon-ball|abilities": {
+      "pages": 110,
+      "indexable": 107,
+      "noindex": 3,
+      "canonicalized": 0,
+      "medianText": 709,
+      "medianLinks": 4
+    },
+    "fr|dragon-ball|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 31246,
+      "medianLinks": 110
+    },
+    "fr|dragon-ball|arcs": {
+      "pages": 37,
+      "indexable": 37,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2019,
+      "medianLinks": 19
+    },
+    "fr|dragon-ball|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 11727,
+      "medianLinks": 37
+    },
+    "fr|dragon-ball|characters": {
+      "pages": 184,
+      "indexable": 165,
+      "noindex": 19,
+      "canonicalized": 0,
+      "medianText": 1292,
+      "medianLinks": 13
+    },
+    "fr|dragon-ball|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 44800,
+      "medianLinks": 184
+    },
+    "fr|dragon-ball|factions": {
+      "pages": 21,
+      "indexable": 21,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 779,
+      "medianLinks": 13
+    },
+    "fr|dragon-ball|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 4710,
+      "medianLinks": 21
+    },
+    "fr|dragon-ball|journeys": {
+      "pages": 27,
+      "indexable": 21,
+      "noindex": 0,
+      "canonicalized": 6,
+      "medianText": 1120,
+      "medianLinks": 17
+    },
+    "fr|dragon-ball|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 7093,
+      "medianLinks": 28
+    },
+    "fr|dragon-ball|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 15919,
+      "medianLinks": 129
+    },
+    "fr|dragon-ball|locations": {
+      "pages": 106,
+      "indexable": 95,
+      "noindex": 11,
+      "canonicalized": 0,
+      "medianText": 2163,
+      "medianLinks": 55
+    },
+    "fr|dragon-ball|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 22437,
+      "medianLinks": 107
+    },
+    "fr|dragon-ball|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 6396,
+      "medianLinks": 117
+    },
+    "fr|dragon-ball|regions": {
+      "pages": 6,
+      "indexable": 6,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 675,
+      "medianLinks": 3
+    },
+    "fr|dragon-ball|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1720,
+      "medianLinks": 7
+    },
+    "fr|dragon-ball|timeline": {
+      "pages": 2,
+      "indexable": 2,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 3557,
+      "medianLinks": 24
+    },
+    "fr|fullmetal-alchemist|abilities": {
+      "pages": 30,
+      "indexable": 29,
+      "noindex": 1,
+      "canonicalized": 0,
+      "medianText": 733,
+      "medianLinks": 3
+    },
+    "fr|fullmetal-alchemist|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 9519,
+      "medianLinks": 30
+    },
+    "fr|fullmetal-alchemist|arcs": {
+      "pages": 18,
+      "indexable": 18,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1448,
+      "medianLinks": 11
+    },
+    "fr|fullmetal-alchemist|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 7004,
+      "medianLinks": 18
+    },
+    "fr|fullmetal-alchemist|characters": {
+      "pages": 52,
+      "indexable": 52,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1814,
+      "medianLinks": 12
+    },
+    "fr|fullmetal-alchemist|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 9144,
+      "medianLinks": 52
+    },
+    "fr|fullmetal-alchemist|factions": {
+      "pages": 11,
+      "indexable": 11,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1336,
+      "medianLinks": 14
+    },
+    "fr|fullmetal-alchemist|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2521,
+      "medianLinks": 11
+    },
+    "fr|fullmetal-alchemist|journeys": {
+      "pages": 6,
+      "indexable": 0,
+      "noindex": 0,
+      "canonicalized": 6,
+      "medianText": 0,
+      "medianLinks": 0
+    },
+    "fr|fullmetal-alchemist|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1435,
+      "medianLinks": 7
+    },
+    "fr|fullmetal-alchemist|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 11534,
+      "medianLinks": 94
+    },
+    "fr|fullmetal-alchemist|locations": {
+      "pages": 18,
+      "indexable": 10,
+      "noindex": 8,
+      "canonicalized": 0,
+      "medianText": 1591,
+      "medianLinks": 17
+    },
+    "fr|fullmetal-alchemist|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2831,
+      "medianLinks": 19
+    },
+    "fr|fullmetal-alchemist|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1829,
+      "medianLinks": 40
+    },
+    "fr|fullmetal-alchemist|regions": {
+      "pages": 5,
+      "indexable": 1,
+      "noindex": 4,
+      "canonicalized": 0,
+      "medianText": 880,
+      "medianLinks": 27
+    },
+    "fr|fullmetal-alchemist|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 960,
+      "medianLinks": 6
+    },
+    "fr|fullmetal-alchemist|timeline": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 19107,
+      "medianLinks": 135
+    },
+    "fr|hunter-x-hunter|abilities": {
+      "pages": 73,
+      "indexable": 59,
+      "noindex": 14,
+      "canonicalized": 0,
+      "medianText": 816,
+      "medianLinks": 3
+    },
+    "fr|hunter-x-hunter|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 13434,
+      "medianLinks": 73
+    },
+    "fr|hunter-x-hunter|arcs": {
+      "pages": 8,
+      "indexable": 8,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 3172,
+      "medianLinks": 54
+    },
+    "fr|hunter-x-hunter|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2924,
+      "medianLinks": 8
+    },
+    "fr|hunter-x-hunter|characters": {
+      "pages": 165,
+      "indexable": 133,
+      "noindex": 32,
+      "canonicalized": 0,
+      "medianText": 1270,
+      "medianLinks": 13
+    },
+    "fr|hunter-x-hunter|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 28167,
+      "medianLinks": 165
+    },
+    "fr|hunter-x-hunter|factions": {
+      "pages": 24,
+      "indexable": 23,
+      "noindex": 1,
+      "canonicalized": 0,
+      "medianText": 1099,
+      "medianLinks": 11
+    },
+    "fr|hunter-x-hunter|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5210,
+      "medianLinks": 24
+    },
+    "fr|hunter-x-hunter|journeys": {
+      "pages": 20,
+      "indexable": 16,
+      "noindex": 0,
+      "canonicalized": 4,
+      "medianText": 969,
+      "medianLinks": 14
+    },
+    "fr|hunter-x-hunter|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 4214,
+      "medianLinks": 21
+    },
+    "fr|hunter-x-hunter|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 12412,
+      "medianLinks": 112
+    },
+    "fr|hunter-x-hunter|locations": {
+      "pages": 77,
+      "indexable": 48,
+      "noindex": 29,
+      "canonicalized": 0,
+      "medianText": 1431,
+      "medianLinks": 18
+    },
+    "fr|hunter-x-hunter|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 13030,
+      "medianLinks": 78
+    },
+    "fr|hunter-x-hunter|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 4897,
+      "medianLinks": 117
+    },
+    "fr|hunter-x-hunter|regions": {
+      "pages": 17,
+      "indexable": 5,
+      "noindex": 12,
+      "canonicalized": 0,
+      "medianText": 731,
+      "medianLinks": 8
+    },
+    "fr|hunter-x-hunter|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2834,
+      "medianLinks": 18
+    },
+    "fr|hunter-x-hunter|timeline": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 31908,
+      "medianLinks": 352
+    },
+    "fr|jujutsu-kaisen|abilities": {
+      "pages": 68,
+      "indexable": 68,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 745,
+      "medianLinks": 4
+    },
+    "fr|jujutsu-kaisen|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 17955,
+      "medianLinks": 68
+    },
+    "fr|jujutsu-kaisen|arcs": {
+      "pages": 13,
+      "indexable": 13,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2333,
+      "medianLinks": 26
+    },
+    "fr|jujutsu-kaisen|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5784,
+      "medianLinks": 13
+    },
+    "fr|jujutsu-kaisen|characters": {
+      "pages": 72,
+      "indexable": 71,
+      "noindex": 1,
+      "canonicalized": 0,
+      "medianText": 1638,
+      "medianLinks": 17
+    },
+    "fr|jujutsu-kaisen|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 22480,
+      "medianLinks": 72
+    },
+    "fr|jujutsu-kaisen|factions": {
+      "pages": 15,
+      "indexable": 15,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2179,
+      "medianLinks": 20
+    },
+    "fr|jujutsu-kaisen|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 4907,
+      "medianLinks": 15
+    },
+    "fr|jujutsu-kaisen|journeys": {
+      "pages": 24,
+      "indexable": 12,
+      "noindex": 0,
+      "canonicalized": 12,
+      "medianText": 1200,
+      "medianLinks": 20
+    },
+    "fr|jujutsu-kaisen|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5218,
+      "medianLinks": 25
+    },
+    "fr|jujutsu-kaisen|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 17037,
+      "medianLinks": 109
+    },
+    "fr|jujutsu-kaisen|locations": {
+      "pages": 44,
+      "indexable": 44,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1737,
+      "medianLinks": 35
+    },
+    "fr|jujutsu-kaisen|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 11555,
+      "medianLinks": 45
+    },
+    "fr|jujutsu-kaisen|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 4157,
+      "medianLinks": 79
+    },
+    "fr|jujutsu-kaisen|regions": {
+      "pages": 12,
+      "indexable": 7,
+      "noindex": 5,
+      "canonicalized": 0,
+      "medianText": 642,
+      "medianLinks": 4
+    },
+    "fr|jujutsu-kaisen|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2698,
+      "medianLinks": 13
+    },
+    "fr|jujutsu-kaisen|timeline": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 29447,
+      "medianLinks": 260
+    },
+    "fr|naruto|abilities": {
+      "pages": 153,
+      "indexable": 144,
+      "noindex": 9,
+      "canonicalized": 0,
+      "medianText": 709,
+      "medianLinks": 4
+    },
+    "fr|naruto|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 33310,
+      "medianLinks": 153
+    },
+    "fr|naruto|arcs": {
+      "pages": 32,
+      "indexable": 32,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1409,
+      "medianLinks": 16
+    },
+    "fr|naruto|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 9245,
+      "medianLinks": 32
+    },
+    "fr|naruto|characters": {
+      "pages": 253,
+      "indexable": 218,
+      "noindex": 35,
+      "canonicalized": 0,
+      "medianText": 1046,
+      "medianLinks": 10
+    },
+    "fr|naruto|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 44444,
+      "medianLinks": 253
+    },
+    "fr|naruto|factions": {
+      "pages": 57,
+      "indexable": 57,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 824,
+      "medianLinks": 8
+    },
+    "fr|naruto|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 14174,
+      "medianLinks": 57
+    },
+    "fr|naruto|journeys": {
+      "pages": 47,
+      "indexable": 38,
+      "noindex": 5,
+      "canonicalized": 4,
+      "medianText": 795,
+      "medianLinks": 8
+    },
+    "fr|naruto|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 6270,
+      "medianLinks": 48
+    },
+    "fr|naruto|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 10932,
+      "medianLinks": 147
+    },
+    "fr|naruto|locations": {
+      "pages": 108,
+      "indexable": 65,
+      "noindex": 43,
+      "canonicalized": 0,
+      "medianText": 1030,
+      "medianLinks": 14
+    },
+    "fr|naruto|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 11773,
+      "medianLinks": 109
+    },
+    "fr|naruto|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5014,
+      "medianLinks": 153
+    },
+    "fr|naruto|regions": {
+      "pages": 27,
+      "indexable": 9,
+      "noindex": 18,
+      "canonicalized": 0,
+      "medianText": 594,
+      "medianLinks": 9
+    },
+    "fr|naruto|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2821,
+      "medianLinks": 28
+    },
+    "fr|naruto|timeline": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 39798,
+      "medianLinks": 435
+    },
+    "fr|one-piece|abilities": {
+      "pages": 125,
+      "indexable": 119,
+      "noindex": 6,
+      "canonicalized": 0,
+      "medianText": 761,
+      "medianLinks": 4
+    },
+    "fr|one-piece|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 18869,
+      "medianLinks": 125
+    },
+    "fr|one-piece|arcs": {
+      "pages": 37,
+      "indexable": 37,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2393,
+      "medianLinks": 24
+    },
+    "fr|one-piece|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 14733,
+      "medianLinks": 37
+    },
+    "fr|one-piece|characters": {
+      "pages": 418,
+      "indexable": 409,
+      "noindex": 9,
+      "canonicalized": 0,
+      "medianText": 945,
+      "medianLinks": 8
+    },
+    "fr|one-piece|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 67276,
+      "medianLinks": 418
+    },
+    "fr|one-piece|factions": {
+      "pages": 83,
+      "indexable": 73,
+      "noindex": 10,
+      "canonicalized": 0,
+      "medianText": 963,
+      "medianLinks": 9
+    },
+    "fr|one-piece|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 14992,
+      "medianLinks": 83
+    },
+    "fr|one-piece|journeys": {
+      "pages": 46,
+      "indexable": 22,
+      "noindex": 0,
+      "canonicalized": 24,
+      "medianText": 743,
+      "medianLinks": 7
+    },
+    "fr|one-piece|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 9140,
+      "medianLinks": 47
+    },
+    "fr|one-piece|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 14482,
+      "medianLinks": 150
+    },
+    "fr|one-piece|locations": {
+      "pages": 330,
+      "indexable": 137,
+      "noindex": 193,
+      "canonicalized": 0,
+      "medianText": 1204,
+      "medianLinks": 17
+    },
+    "fr|one-piece|locations:index": {
+      "pages": 2,
+      "indexable": 2,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 23946,
+      "medianLinks": 151
+    },
+    "fr|one-piece|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 9805,
+      "medianLinks": 263
+    },
+    "fr|one-piece|regions": {
+      "pages": 8,
+      "indexable": 8,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1084,
+      "medianLinks": 21
+    },
+    "fr|one-piece|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2629,
+      "medianLinks": 9
+    },
+    "fr|one-piece|timeline": {
+      "pages": 2,
+      "indexable": 2,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 12852,
+      "medianLinks": 138
+    },
+    "it|-|static": {
+      "pages": 5,
+      "indexable": 3,
+      "noindex": 2,
+      "canonicalized": 0,
+      "medianText": 1111,
+      "medianLinks": 1
+    },
+    "it|attack-on-titan|abilities": {
+      "pages": 40,
+      "indexable": 40,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 765,
+      "medianLinks": 6
+    },
+    "it|attack-on-titan|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 11154,
+      "medianLinks": 40
+    },
+    "it|attack-on-titan|arcs": {
+      "pages": 14,
+      "indexable": 14,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 3266,
+      "medianLinks": 39
+    },
+    "it|attack-on-titan|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5608,
+      "medianLinks": 14
+    },
+    "it|attack-on-titan|characters": {
+      "pages": 82,
+      "indexable": 82,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1870,
+      "medianLinks": 19
+    },
+    "it|attack-on-titan|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 23779,
+      "medianLinks": 82
+    },
+    "it|attack-on-titan|factions": {
+      "pages": 24,
+      "indexable": 24,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2287,
+      "medianLinks": 22
+    },
+    "it|attack-on-titan|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 6892,
+      "medianLinks": 24
+    },
+    "it|attack-on-titan|journeys": {
+      "pages": 33,
+      "indexable": 14,
+      "noindex": 0,
+      "canonicalized": 19,
+      "medianText": 1183,
+      "medianLinks": 20
+    },
+    "it|attack-on-titan|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5777,
+      "medianLinks": 34
+    },
+    "it|attack-on-titan|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 15051,
+      "medianLinks": 107
+    },
+    "it|attack-on-titan|locations": {
+      "pages": 70,
+      "indexable": 70,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2223,
+      "medianLinks": 54
+    },
+    "it|attack-on-titan|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 14998,
+      "medianLinks": 71
+    },
+    "it|attack-on-titan|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 4997,
+      "medianLinks": 101
+    },
+    "it|attack-on-titan|regions": {
+      "pages": 8,
+      "indexable": 8,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 910,
+      "medianLinks": 15
+    },
+    "it|attack-on-titan|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2435,
+      "medianLinks": 9
+    },
+    "it|attack-on-titan|timeline": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 36007,
+      "medianLinks": 372
+    },
+    "it|black-clover|abilities": {
+      "pages": 91,
+      "indexable": 89,
+      "noindex": 2,
+      "canonicalized": 0,
+      "medianText": 641,
+      "medianLinks": 6
+    },
+    "it|black-clover|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 18775,
+      "medianLinks": 91
+    },
+    "it|black-clover|arcs": {
+      "pages": 19,
+      "indexable": 19,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2643,
+      "medianLinks": 32
+    },
+    "it|black-clover|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 6947,
+      "medianLinks": 19
+    },
+    "it|black-clover|characters": {
+      "pages": 137,
+      "indexable": 131,
+      "noindex": 6,
+      "canonicalized": 0,
+      "medianText": 1410,
+      "medianLinks": 17
+    },
+    "it|black-clover|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 31349,
+      "medianLinks": 137
+    },
+    "it|black-clover|factions": {
+      "pages": 43,
+      "indexable": 43,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1254,
+      "medianLinks": 19
+    },
+    "it|black-clover|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 7995,
+      "medianLinks": 43
+    },
+    "it|black-clover|journeys": {
+      "pages": 23,
+      "indexable": 11,
+      "noindex": 0,
+      "canonicalized": 12,
+      "medianText": 1244,
+      "medianLinks": 16
+    },
+    "it|black-clover|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 4494,
+      "medianLinks": 24
+    },
+    "it|black-clover|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 12796,
+      "medianLinks": 111
+    },
+    "it|black-clover|locations": {
+      "pages": 85,
+      "indexable": 82,
+      "noindex": 3,
+      "canonicalized": 0,
+      "medianText": 1810,
+      "medianLinks": 42
+    },
+    "it|black-clover|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 15662,
+      "medianLinks": 86
+    },
+    "it|black-clover|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5565,
+      "medianLinks": 111
+    },
+    "it|black-clover|regions": {
+      "pages": 8,
+      "indexable": 8,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 750,
+      "medianLinks": 11
+    },
+    "it|black-clover|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1883,
+      "medianLinks": 9
+    },
+    "it|black-clover|timeline": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 26742,
+      "medianLinks": 247
+    },
+    "it|bleach|abilities": {
+      "pages": 102,
+      "indexable": 102,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 696,
+      "medianLinks": 4
+    },
+    "it|bleach|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 23946,
+      "medianLinks": 102
+    },
+    "it|bleach|arcs": {
+      "pages": 17,
+      "indexable": 17,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 3676,
+      "medianLinks": 54
+    },
+    "it|bleach|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 6780,
+      "medianLinks": 17
+    },
+    "it|bleach|characters": {
+      "pages": 147,
+      "indexable": 147,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1877,
+      "medianLinks": 20
+    },
+    "it|bleach|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 41568,
+      "medianLinks": 147
+    },
+    "it|bleach|factions": {
+      "pages": 34,
+      "indexable": 34,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1418,
+      "medianLinks": 18
+    },
+    "it|bleach|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 7486,
+      "medianLinks": 34
+    },
+    "it|bleach|journeys": {
+      "pages": 31,
+      "indexable": 13,
+      "noindex": 0,
+      "canonicalized": 18,
+      "medianText": 1204,
+      "medianLinks": 16
+    },
+    "it|bleach|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5586,
+      "medianLinks": 32
+    },
+    "it|bleach|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 15150,
+      "medianLinks": 107
+    },
+    "it|bleach|locations": {
+      "pages": 73,
+      "indexable": 73,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2569,
+      "medianLinks": 58
+    },
+    "it|bleach|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 17279,
+      "medianLinks": 74
+    },
+    "it|bleach|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5022,
+      "medianLinks": 103
+    },
+    "it|bleach|regions": {
+      "pages": 7,
+      "indexable": 7,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 744,
+      "medianLinks": 11
+    },
+    "it|bleach|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1858,
+      "medianLinks": 8
+    },
+    "it|bleach|timeline": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 44050,
+      "medianLinks": 414
+    },
+    "it|demon-slayer|landing": {
+      "pages": 1,
+      "indexable": 0,
+      "noindex": 1,
+      "canonicalized": 0,
+      "medianText": 0,
+      "medianLinks": 0
+    },
+    "it|dragon-ball|abilities": {
+      "pages": 110,
+      "indexable": 107,
+      "noindex": 3,
+      "canonicalized": 0,
+      "medianText": 663,
+      "medianLinks": 4
+    },
+    "it|dragon-ball|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 29029,
+      "medianLinks": 110
+    },
+    "it|dragon-ball|arcs": {
+      "pages": 37,
+      "indexable": 37,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1857,
+      "medianLinks": 19
+    },
+    "it|dragon-ball|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 10996,
+      "medianLinks": 37
+    },
+    "it|dragon-ball|characters": {
+      "pages": 184,
+      "indexable": 165,
+      "noindex": 19,
+      "canonicalized": 0,
+      "medianText": 1249,
+      "medianLinks": 13
+    },
+    "it|dragon-ball|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 43392,
+      "medianLinks": 184
+    },
+    "it|dragon-ball|factions": {
+      "pages": 21,
+      "indexable": 21,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 756,
+      "medianLinks": 13
+    },
+    "it|dragon-ball|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 4467,
+      "medianLinks": 21
+    },
+    "it|dragon-ball|journeys": {
+      "pages": 27,
+      "indexable": 21,
+      "noindex": 0,
+      "canonicalized": 6,
+      "medianText": 1096,
+      "medianLinks": 17
+    },
+    "it|dragon-ball|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 6726,
+      "medianLinks": 28
+    },
+    "it|dragon-ball|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 14996,
+      "medianLinks": 129
+    },
+    "it|dragon-ball|locations": {
+      "pages": 106,
+      "indexable": 95,
+      "noindex": 11,
+      "canonicalized": 0,
+      "medianText": 2200,
+      "medianLinks": 55
+    },
+    "it|dragon-ball|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 21594,
+      "medianLinks": 107
+    },
+    "it|dragon-ball|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 6321,
+      "medianLinks": 117
+    },
+    "it|dragon-ball|regions": {
+      "pages": 6,
+      "indexable": 6,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 641,
+      "medianLinks": 3
+    },
+    "it|dragon-ball|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1635,
+      "medianLinks": 7
+    },
+    "it|dragon-ball|timeline": {
+      "pages": 2,
+      "indexable": 2,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 3318,
+      "medianLinks": 24
+    },
+    "it|fairy-tail|landing": {
+      "pages": 1,
+      "indexable": 0,
+      "noindex": 1,
+      "canonicalized": 0,
+      "medianText": 0,
+      "medianLinks": 0
+    },
+    "it|frieren|landing": {
+      "pages": 1,
+      "indexable": 0,
+      "noindex": 1,
+      "canonicalized": 0,
+      "medianText": 0,
+      "medianLinks": 0
+    },
+    "it|fullmetal-alchemist|abilities": {
+      "pages": 30,
+      "indexable": 29,
+      "noindex": 1,
+      "canonicalized": 0,
+      "medianText": 700,
+      "medianLinks": 3
+    },
+    "it|fullmetal-alchemist|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 8977,
+      "medianLinks": 30
+    },
+    "it|fullmetal-alchemist|arcs": {
+      "pages": 18,
+      "indexable": 18,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1427,
+      "medianLinks": 11
+    },
+    "it|fullmetal-alchemist|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 6532,
+      "medianLinks": 18
+    },
+    "it|fullmetal-alchemist|characters": {
+      "pages": 52,
+      "indexable": 52,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1741,
+      "medianLinks": 12
+    },
+    "it|fullmetal-alchemist|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 8684,
+      "medianLinks": 52
+    },
+    "it|fullmetal-alchemist|factions": {
+      "pages": 11,
+      "indexable": 11,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1312,
+      "medianLinks": 14
+    },
+    "it|fullmetal-alchemist|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2374,
+      "medianLinks": 11
+    },
+    "it|fullmetal-alchemist|journeys": {
+      "pages": 6,
+      "indexable": 0,
+      "noindex": 0,
+      "canonicalized": 6,
+      "medianText": 0,
+      "medianLinks": 0
+    },
+    "it|fullmetal-alchemist|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1288,
+      "medianLinks": 7
+    },
+    "it|fullmetal-alchemist|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 10975,
+      "medianLinks": 94
+    },
+    "it|fullmetal-alchemist|locations": {
+      "pages": 18,
+      "indexable": 10,
+      "noindex": 8,
+      "canonicalized": 0,
+      "medianText": 1528,
+      "medianLinks": 17
+    },
+    "it|fullmetal-alchemist|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2736,
+      "medianLinks": 19
+    },
+    "it|fullmetal-alchemist|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1714,
+      "medianLinks": 40
+    },
+    "it|fullmetal-alchemist|regions": {
+      "pages": 5,
+      "indexable": 1,
+      "noindex": 4,
+      "canonicalized": 0,
+      "medianText": 857,
+      "medianLinks": 27
+    },
+    "it|fullmetal-alchemist|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 868,
+      "medianLinks": 6
+    },
+    "it|fullmetal-alchemist|timeline": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 18622,
+      "medianLinks": 135
+    },
+    "it|hunter-x-hunter|abilities": {
+      "pages": 73,
+      "indexable": 59,
+      "noindex": 14,
+      "canonicalized": 0,
+      "medianText": 778,
+      "medianLinks": 3
+    },
+    "it|hunter-x-hunter|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 13455,
+      "medianLinks": 73
+    },
+    "it|hunter-x-hunter|arcs": {
+      "pages": 8,
+      "indexable": 8,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 3027,
+      "medianLinks": 54
+    },
+    "it|hunter-x-hunter|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2756,
+      "medianLinks": 8
+    },
+    "it|hunter-x-hunter|characters": {
+      "pages": 165,
+      "indexable": 133,
+      "noindex": 32,
+      "canonicalized": 0,
+      "medianText": 1234,
+      "medianLinks": 13
+    },
+    "it|hunter-x-hunter|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 27849,
+      "medianLinks": 165
+    },
+    "it|hunter-x-hunter|factions": {
+      "pages": 24,
+      "indexable": 23,
+      "noindex": 1,
+      "canonicalized": 0,
+      "medianText": 1051,
+      "medianLinks": 11
+    },
+    "it|hunter-x-hunter|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 4854,
+      "medianLinks": 24
+    },
+    "it|hunter-x-hunter|journeys": {
+      "pages": 20,
+      "indexable": 16,
+      "noindex": 0,
+      "canonicalized": 4,
+      "medianText": 944,
+      "medianLinks": 14
+    },
+    "it|hunter-x-hunter|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 3903,
+      "medianLinks": 21
+    },
+    "it|hunter-x-hunter|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 11564,
+      "medianLinks": 112
+    },
+    "it|hunter-x-hunter|locations": {
+      "pages": 77,
+      "indexable": 48,
+      "noindex": 29,
+      "canonicalized": 0,
+      "medianText": 1388,
+      "medianLinks": 18
+    },
+    "it|hunter-x-hunter|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 12738,
+      "medianLinks": 78
+    },
+    "it|hunter-x-hunter|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 4763,
+      "medianLinks": 117
+    },
+    "it|hunter-x-hunter|regions": {
+      "pages": 17,
+      "indexable": 5,
+      "noindex": 12,
+      "canonicalized": 0,
+      "medianText": 724,
+      "medianLinks": 8
+    },
+    "it|hunter-x-hunter|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2796,
+      "medianLinks": 18
+    },
+    "it|hunter-x-hunter|timeline": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 30291,
+      "medianLinks": 352
+    },
+    "it|jujutsu-kaisen|abilities": {
+      "pages": 68,
+      "indexable": 68,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 713,
+      "medianLinks": 4
+    },
+    "it|jujutsu-kaisen|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 16943,
+      "medianLinks": 68
+    },
+    "it|jujutsu-kaisen|arcs": {
+      "pages": 13,
+      "indexable": 13,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2252,
+      "medianLinks": 26
+    },
+    "it|jujutsu-kaisen|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5319,
+      "medianLinks": 13
+    },
+    "it|jujutsu-kaisen|characters": {
+      "pages": 72,
+      "indexable": 71,
+      "noindex": 1,
+      "canonicalized": 0,
+      "medianText": 1589,
+      "medianLinks": 17
+    },
+    "it|jujutsu-kaisen|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 21542,
+      "medianLinks": 72
+    },
+    "it|jujutsu-kaisen|factions": {
+      "pages": 15,
+      "indexable": 15,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2000,
+      "medianLinks": 20
+    },
+    "it|jujutsu-kaisen|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 4543,
+      "medianLinks": 15
+    },
+    "it|jujutsu-kaisen|journeys": {
+      "pages": 24,
+      "indexable": 12,
+      "noindex": 0,
+      "canonicalized": 12,
+      "medianText": 1162,
+      "medianLinks": 20
+    },
+    "it|jujutsu-kaisen|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 4824,
+      "medianLinks": 25
+    },
+    "it|jujutsu-kaisen|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 15873,
+      "medianLinks": 109
+    },
+    "it|jujutsu-kaisen|locations": {
+      "pages": 44,
+      "indexable": 44,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1670,
+      "medianLinks": 35
+    },
+    "it|jujutsu-kaisen|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 10853,
+      "medianLinks": 45
+    },
+    "it|jujutsu-kaisen|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 3965,
+      "medianLinks": 79
+    },
+    "it|jujutsu-kaisen|regions": {
+      "pages": 12,
+      "indexable": 7,
+      "noindex": 5,
+      "canonicalized": 0,
+      "medianText": 597,
+      "medianLinks": 4
+    },
+    "it|jujutsu-kaisen|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2444,
+      "medianLinks": 13
+    },
+    "it|jujutsu-kaisen|timeline": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 27320,
+      "medianLinks": 260
+    },
+    "it|naruto|abilities": {
+      "pages": 153,
+      "indexable": 144,
+      "noindex": 9,
+      "canonicalized": 0,
+      "medianText": 692,
+      "medianLinks": 4
+    },
+    "it|naruto|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 32515,
+      "medianLinks": 153
+    },
+    "it|naruto|arcs": {
+      "pages": 32,
+      "indexable": 32,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1338,
+      "medianLinks": 16
+    },
+    "it|naruto|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 8647,
+      "medianLinks": 32
+    },
+    "it|naruto|characters": {
+      "pages": 253,
+      "indexable": 218,
+      "noindex": 35,
+      "canonicalized": 0,
+      "medianText": 1003,
+      "medianLinks": 10
+    },
+    "it|naruto|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 42258,
+      "medianLinks": 253
+    },
+    "it|naruto|factions": {
+      "pages": 57,
+      "indexable": 57,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 804,
+      "medianLinks": 8
+    },
+    "it|naruto|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 13445,
+      "medianLinks": 57
+    },
+    "it|naruto|journeys": {
+      "pages": 47,
+      "indexable": 38,
+      "noindex": 5,
+      "canonicalized": 4,
+      "medianText": 771,
+      "medianLinks": 8
+    },
+    "it|naruto|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5622,
+      "medianLinks": 48
+    },
+    "it|naruto|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 10247,
+      "medianLinks": 147
+    },
+    "it|naruto|locations": {
+      "pages": 108,
+      "indexable": 65,
+      "noindex": 43,
+      "canonicalized": 0,
+      "medianText": 989,
+      "medianLinks": 14
+    },
+    "it|naruto|locations:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 11555,
+      "medianLinks": 109
+    },
+    "it|naruto|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 5006,
+      "medianLinks": 153
+    },
+    "it|naruto|regions": {
+      "pages": 27,
+      "indexable": 9,
+      "noindex": 18,
+      "canonicalized": 0,
+      "medianText": 566,
+      "medianLinks": 9
+    },
+    "it|naruto|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2714,
+      "medianLinks": 28
+    },
+    "it|naruto|timeline": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 36428,
+      "medianLinks": 435
+    },
+    "it|one-piece|abilities": {
+      "pages": 125,
+      "indexable": 119,
+      "noindex": 6,
+      "canonicalized": 0,
+      "medianText": 732,
+      "medianLinks": 4
+    },
+    "it|one-piece|abilities:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 18337,
+      "medianLinks": 125
+    },
+    "it|one-piece|arcs": {
+      "pages": 37,
+      "indexable": 37,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2292,
+      "medianLinks": 24
+    },
+    "it|one-piece|arcs:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 13798,
+      "medianLinks": 37
+    },
+    "it|one-piece|characters": {
+      "pages": 418,
+      "indexable": 409,
+      "noindex": 9,
+      "canonicalized": 0,
+      "medianText": 910,
+      "medianLinks": 8
+    },
+    "it|one-piece|characters:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 62421,
+      "medianLinks": 418
+    },
+    "it|one-piece|factions": {
+      "pages": 83,
+      "indexable": 73,
+      "noindex": 10,
+      "canonicalized": 0,
+      "medianText": 909,
+      "medianLinks": 9
+    },
+    "it|one-piece|factions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 13494,
+      "medianLinks": 83
+    },
+    "it|one-piece|journeys": {
+      "pages": 46,
+      "indexable": 22,
+      "noindex": 0,
+      "canonicalized": 24,
+      "medianText": 719,
+      "medianLinks": 7
+    },
+    "it|one-piece|journeys:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 8134,
+      "medianLinks": 47
+    },
+    "it|one-piece|landing": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 13423,
+      "medianLinks": 150
+    },
+    "it|one-piece|locations": {
+      "pages": 330,
+      "indexable": 137,
+      "noindex": 193,
+      "canonicalized": 0,
+      "medianText": 1188,
+      "medianLinks": 17
+    },
+    "it|one-piece|locations:index": {
+      "pages": 2,
+      "indexable": 2,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 23167,
+      "medianLinks": 151
+    },
+    "it|one-piece|map": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 9742,
+      "medianLinks": 263
+    },
+    "it|one-piece|regions": {
+      "pages": 8,
+      "indexable": 8,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 1067,
+      "medianLinks": 21
+    },
+    "it|one-piece|regions:index": {
+      "pages": 1,
+      "indexable": 1,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 2418,
+      "medianLinks": 9
+    },
+    "it|one-piece|timeline": {
+      "pages": 2,
+      "indexable": 2,
+      "noindex": 0,
+      "canonicalized": 0,
+      "medianText": 11982,
+      "medianLinks": 138
+    },
+    "it|toriko|landing": {
+      "pages": 1,
+      "indexable": 0,
+      "noindex": 1,
+      "canonicalized": 0,
+      "medianText": 0,
+      "medianLinks": 0
+    }
+  }
+}

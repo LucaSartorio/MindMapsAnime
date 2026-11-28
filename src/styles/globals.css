@@ -76,6 +76,13 @@
 /* Perf: salta render/layout/paint delle card archivio fuori viewport.
    `contain-intrinsic-size` riserva l'altezza stimata così scrollbar e scroll
    restano stabili. Nei browser senza supporto la regola è ignorata. */
+/* Banner cookie nell'HTML pre-renderizzato: nascosto prima del primo paint se lo
+   script in <head> (index.html) ha trovato un consenso valido. Vale solo fino
+   all'idratazione: poi React toglie l'attributo e decide lo store. */
+html[data-cookie-consent] [data-cookie-banner-prerender] {
+  display: none;
+}
+
 .cv-auto {
   content-visibility: auto;
   contain-intrinsic-size: auto 320px;

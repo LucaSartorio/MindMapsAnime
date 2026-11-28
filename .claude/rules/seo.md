@@ -4,7 +4,8 @@ paths:
   - "src/pages/seo/**"
   - "src/components/seo/**"
   - "src/data/*/slugs.ts"
-  - "scripts/{prerender,seo-check,test-seo,sync-slugs,serve-static}.ts"
+  - "scripts/{prerender,seo-check,seo-baseline,seo-gsc-report,test-seo,sync-slugs,serve-static}.ts"
+  - "scripts/seo-baseline.json"
   - "vercel.json"
   - "index.html"
   - "docs/SEO.md"
@@ -43,6 +44,12 @@ own metadata; the SEO layer (`src/seo/`) is data-driven: never hand-write SEO fo
   ratings, dates, authors or ownership. Sitemaps carry no `lastmod` without a per-URL source.
 - **SSR-safety**: identical server/first-client render; route chunks via `lazyWithPreload` in `src/routes/lazyPages.tsx`;
   one `<h1>` per page. Technical routes (`/og/*`, `/share/*`, `/social/*`, `/render/*`) are never indexable.
+- **Baseline** (`scripts/seo-baseline.json`, compared by `seo:check`): mass drops in indexable pages, noindex or
+  canonical surges, and template text/link losses per lang|world|type are blocking; sudden growth is a warning that
+  needs a quality check. Intended change → `npm run seo:baseline` after the build, commit it, explain it in the PR
+  (expected for: many short entities added to a group, ≥ 20 new noindex/canonicalized pages in a group). On a merge
+  conflict in `seo-baseline.json`, take `main`'s version, rebuild and re-run `seo:baseline`; never hand-edit it.
+  Search Console exports are analysed with `npm run seo:gsc`, never by hand.
 
 **Checklist for every new feature / entity type / page**: URL · metadata IT/EN · canonical · hreflang · sitemap ·
 internal links + breadcrumbs · structured data (only if truthful) · index/noindex · SSR-safety of the first render.

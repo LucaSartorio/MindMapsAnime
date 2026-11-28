@@ -474,7 +474,7 @@ export const narutoCharactersBatch1: Character[] = [
     allies: ['char-naruto', 'char-jiraiya'],
     locationIds: ['loc-mt-myoboku'],
     arcIds: ['arc-pain-assault', 'arc-jiraiya-gallant'],
-    status: 'alive',
+    status: 'deceased',
     canonStatus: 'canon',
     referenceStatus: 'verified',
     tags: ['toad', 'sage', 'myoboku', 'mentor'],

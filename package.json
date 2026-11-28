@@ -29,6 +29,8 @@
     "optimize:images": "tsx --tsconfig scripts/tsconfig.json scripts/optimize-images.ts",
     "build:ssr": "vite build --ssr src/entry-server.tsx --outDir dist-server",
     "seo:check": "tsx --tsconfig scripts/tsconfig.json scripts/seo-check.ts",
+    "seo:baseline": "tsx --tsconfig scripts/tsconfig.json scripts/seo-check.ts --update-baseline",
+    "seo:gsc": "tsx --tsconfig scripts/tsconfig.json scripts/seo-gsc-report.ts",
     "test:ci-scope": "node --test scripts/ci-site-scope.test.mjs",
     "test:seo": "tsx --tsconfig scripts/tsconfig.json scripts/test-seo.ts",
     "preview:static": "tsx --tsconfig scripts/tsconfig.json scripts/serve-static.ts",
