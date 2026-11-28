@@ -35,6 +35,8 @@ deterministic checks and the owner's review are the gate.
 10. Works in Cloud and local (guide §9), or the limitation is documented.
 
 ## Output contract
+Two verdicts only: anything that must change before the commit is a `block` (with the required fix); `approve` may
+carry low-severity notes that are optional. `blocked` = you could not review (missing diff, failing tool).
 ```
 STATUS: approve | block | blocked
 VERDICT: one line

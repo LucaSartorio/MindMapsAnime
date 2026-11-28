@@ -36,7 +36,9 @@ Report with policy §8. No finding → `STATUS: PASS`, `CHANGES: none`.
    run `npm run claude:posture:update` yourself unless the owner approves those exact keys.
 4. Review: delegate to `configuration-reviewer` with the base sha, the diff stat, the gate output and the manager
    report. `block` → one manager fix pass with the findings, then one re-review; still `block` → stop, keep the
-   diff uncommitted, report. Never approve on the reviewer's behalf.
+   diff uncommitted, report. Never approve on the reviewer's behalf and never edit the reviewed diff yourself: any
+   change after the last `approve` goes through the manager and a re-review (within the 2+2 budget), or is reported
+   as unreviewed with `STATUS: PARTIAL`.
 5. Deliver: commit on the working branch (one coherent commit, message lists the benefit and the doc sources); open
    a PR only if the owner asked. Nothing changed → no commit, no PR.
 
